@@ -1,7 +1,7 @@
 ---
 title: Comandos do Windows PowerShell para RSS e vRSS
-description: Neste tópico, você aprenderá a localizar rapidamente as informações de referência técnica sobre comandos do Windows PowerShell para RSS Receive Side Scaling () e o vRSS (RSS virtual).
-ms.prod: windows-server-threshold
+description: Neste tópico, você aprenderá a localizar rapidamente informações de referência técnica sobre os comandos do Windows PowerShell para RSS (recepção lateral) e o vRSS (RSS virtual).
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 49e93b9f-46d9-4cee-bcda-1c4634893ddd
@@ -10,49 +10,49 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/05/2018
-ms.openlocfilehash: 10039388009e32c10d71067b835bad65db5607ef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bb915f72e53d28c73a9c2e405b3b0edd656953db
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833257"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405278"
 ---
 # <a name="windows-powershell-commands-for-rss-and-vrss"></a>Comandos do Windows PowerShell para RSS e vRSS
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Neste tópico, você aprenderá a localizar rapidamente as informações de referência técnica sobre comandos do Windows PowerShell para Receive Side Scaling \(RSS\) e o RSS virtual \(vRSS\).
+Neste tópico, você aprenderá a localizar rapidamente as informações de referência técnica sobre os comandos do Windows PowerShell para receber o dimensionamento do lado \(RSS @ no__t-1 e o virtual RSS \(vRSS @ no__t-3.
 
-Use os seguintes comandos RSS para configurar o RSS em um computador físico com vários processadores ou vários núcleos. Você pode usar os mesmos comandos para configurar o vRSS em uma máquina virtual \(VM\) que está executando um sistema operacional com suporte. Para obter mais informações, consulte [Cmdlets do adaptador de rede no Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps).
+Use os comandos RSS a seguir para configurar o RSS em um computador físico com vários processadores ou vários núcleos. Você pode usar os mesmos comandos para configurar o vRSS em uma máquina virtual \(VM @ no__t-1 que esteja executando um sistema operacional com suporte. Para obter mais informações, consulte [cmdlets do adaptador de rede no Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps).
 
 ## <a name="configure-vmq"></a>Configurar a VMQ
 
-o vRSS requer que a VMQ está habilitado e configurado. Você pode usar os seguintes comandos do Windows PowerShell para gerenciar as configurações de VMQ.
+o vRSS requer que a VMQ esteja habilitada e configurada. Você pode usar os seguintes comandos do Windows PowerShell para gerenciar as configurações de VMQ.
 
-- [Disable-NetAdapterVmq](https://docs.microsoft.com/powershell/module/netadapter/disable-netadaptervmq?view=win10-ps)
-- [Enable-NetAdapterVmq](https://docs.microsoft.com/powershell/module/netadapter/enable-netadaptervmq?view=win10-ps)
+- [Desabilitar-NetAdapterVmq](https://docs.microsoft.com/powershell/module/netadapter/disable-netadaptervmq?view=win10-ps)
+- [Habilitar-NetAdapterVmq](https://docs.microsoft.com/powershell/module/netadapter/enable-netadaptervmq?view=win10-ps)
 - [Get-NetAdapterVmq](https://docs.microsoft.com/powershell/module/netadapter/get-netadaptervmq?view=win10-ps)
 - [Set-NetAdapterVmq](https://docs.microsoft.com/powershell/module/netadapter/set-netadaptervmq?view=win10-ps)
 
 ## <a name="enable-and-configure-rss-on-a-native-host"></a>Habilitar e configurar o RSS em um host nativo
 
-Use os seguintes comandos do PowerShell para configurar o RSS em um host nativo, bem como gerenciar o RSS em uma VM ou em um host virtual vNIC (NIC). Alguns dos parâmetros desses comandos também podem afetar a fila de máquina Virtual \(VMQ\) no host do Hyper-V.  
+Use os comandos do PowerShell a seguir para configurar o RSS em um host nativo, bem como gerenciar o RSS em uma VM ou em uma NIC virtual do host (vNIC). Alguns dos parâmetros desses comandos também podem afetar Fila de Máquina Virtual \(VMQ @ no__t-1 no host Hyper-V.  
 
 >[!IMPORTANT]
->Habilitar o RSS em uma VM ou em uma vNIC do host é um pré-requisito para habilitar e usar o vRSS.
+>Habilitar o RSS em uma VM ou em um host vNIC é um pré-requisito para habilitar e usar o vRSS.
 
-- [Disable-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/disable-netadapterrss?view=win10-ps)
-- [Enable-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/enable-netadapterrss?view=win10-ps)
+- [Desabilitar-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/disable-netadapterrss?view=win10-ps)
+- [Habilitar-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/enable-netadapterrss?view=win10-ps)
 - [Get-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
 - [Set-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
 
-## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>Habilite o vRSS sobre o Hyper\-porta do comutador Virtual V
+## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>Habilitar o vRSS na porta do comutador virtual Hyper @ no__t-0V
 
-Além de habilitar o RSS em VM, o vRSS requer que você habilite o vRSS sobre o Hyper\-porta do comutador Virtual V. 
+Além de habilitar o RSS na VM, o vRSS exige que você habilite o vRSS na porta do comutador virtual Hyper @ no__t-0V. 
 
-Determinar as configurações de presentes de vRSS e habilitar ou desabilitar o recurso de uma VM.
+Determine as configurações atuais para vRSS e habilite ou desabilite o recurso para uma VM.
 
-   **Exiba as configurações atuais:** 
+   **Exibir as configurações atuais:** 
 
    ```PowerShell
    Get-VMNetworkAdapter <vm-name> | fl
@@ -64,11 +64,11 @@ Determinar as configurações de presentes de vRSS e habilitar ou desabilitar o 
    Set-VMNetworkAdapter <vm-name> -VrssEnabled [$True|$False]
    ```
 
-## <a name="enable-or-disable-vrss-on-a-host-vnic"></a>Habilitar ou desabilitar o vRSS em uma vNIC do host
+## <a name="enable-or-disable-vrss-on-a-host-vnic"></a>Habilitar ou desabilitar o vRSS em um host vNIC
 
-Determinar as configurações de presentes de vRSS e habilitar ou desabilitar o recurso para uma vNIC do host.
+Determine as configurações atuais para vRSS e habilite ou desabilite o recurso para um host vNIC.
 
-   **Exiba as configurações atuais:** 
+   **Exibir as configurações atuais:** 
 
    ```PowerShell
    Get-VMNetworkAdapter -ManagementOS | fl
@@ -80,14 +80,14 @@ Determinar as configurações de presentes de vRSS e habilitar ou desabilitar o 
    Set-VMNetworkAdapter -ManagementOS -VrssEnabled [$True|$False]
    ```
 
-## <a name="configure-the-scheduling-mode-on-the-hyper-v-virtual-switch-port"></a>Configurar o modo de agendamento na porta do comutador virtual Hyper-V 
+## <a name="configure-the-scheduling-mode-on-the-hyper-v-virtual-switch-port"></a>Configurar o modo de agendamento na porta do comutador virtual do Hyper-V 
 >Aplica-se a: Windows Server 2019
 
-2019 do Windows Server, o vRSS pode atualizar os processadores lógicos usados para processar o tráfego de rede dinamicamente.  Dispositivos com drivers com suporte têm esse modo agendamento habilitado por padrão. 
+No Windows Server 2019, o vRSS pode atualizar os processadores lógicos usados para processar o tráfego de rede dinamicamente.  Os dispositivos com drivers com suporte têm esse modo de agendamento habilitado por padrão. 
 
-Determinar o modo de agendamento presente em um sistema ou modificar o modo de agendamento para uma VM.
+Determine o modo de agendamento atual em um sistema ou modifique o modo de agendamento de uma VM.
 
-   **Exiba as configurações atuais:** 
+   **Exibir as configurações atuais:** 
 
    ```PowerShell
    Get-VMNetworkAdapter <vm-name> | Select 'VRSSQueue'
@@ -99,12 +99,12 @@ Determinar o modo de agendamento presente em um sistema ou modificar o modo de a
    Set-VMNetworkAdapter <vm-name> -VrssQueueSchedulingMode [Dynamic|$StaticVrss|StaticVMQ]
    ```
 
-## <a name="configure-the-scheduling-mode-on-a-host-vnic"></a>Configurar o modo de agendamento em uma vNIC do host
+## <a name="configure-the-scheduling-mode-on-a-host-vnic"></a>Configurar o modo de agendamento em um host vNIC
 >Aplica-se a: Windows Server 2019
 
-Para determinar o modo de apresentação de agendamento ou modificar o modo de agendamento para uma vNIC do host, use os seguintes comandos do Windows PowerShell:
+Para determinar o modo de agendamento atual ou para modificar o modo de agendamento de um host vNIC, use os seguintes comandos do Windows PowerShell:
 
-   **Exiba as configurações atuais:** 
+   **Exibir as configurações atuais:** 
 
    ```PowerShell
    Get-VMNetworkAdapter -ManagementOS | Select 'VRSSQueue'
@@ -118,9 +118,9 @@ Para determinar o modo de apresentação de agendamento ou modificar o modo de a
 
 
 ## <a name="related-topics"></a>Tópicos relacionados 
-Para obter mais informações, consulte os seguintes tópicos de referência.
+Para obter mais informações, consulte os tópicos de referência a seguir.
 
 - [Get-VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmnetworkadapter)
 - [Set-VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/set-vmnetworkadapter)
 
-Para obter mais informações, consulte [Virtual Receive Side Scaling (vRSS)](vrss-top.md).
+Para obter mais informações, consulte [vRSS (recepção virtual)](vrss-top.md).

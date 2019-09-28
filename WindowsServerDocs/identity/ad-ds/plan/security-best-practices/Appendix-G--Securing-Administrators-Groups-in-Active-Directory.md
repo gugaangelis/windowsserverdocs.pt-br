@@ -1,36 +1,36 @@
 ---
 ms.assetid: 4baefbd3-038f-44c0-85ba-f24e9722b757
-title: Apêndice G - proteger grupos de administradores no Active Directory
+title: Apêndice G-protegendo grupos de administradores no Active Directory
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2912dfc534d751d4aa121d238dffc36c07562d76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cdea04e211b1873ff51c4bc3dc9ff24e746ead69
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882707"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408647"
 ---
-# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice g: Protegendo grupos de administradores no Active Directory
+# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice G: Protegendo grupos de administradores no Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice g: Protegendo grupos de administradores no Active Directory  
-Como é o caso com os grupos de Admins. do EA (Enterprise) e os administradores de domínio (DA), a associação no grupo de administradores (BA) interno deve ser necessária somente em cenários de recuperação de desastre ou de compilação. Não deve haver nenhuma conta de usuário diárias no grupo Administradores, exceto a conta interna administrador para o domínio, se ele foi protegido conforme descrito em [apêndice d: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
+## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice G: Protegendo grupos de administradores no Active Directory  
+Como é o caso dos grupos Enterprise Admins (EA) e admins. do domínio (DA), a associação no grupo Administradores internos (BA) deve ser necessária apenas em cenários de compilação ou recuperação de desastres. Não deve haver contas de usuário do dia a dia no grupo Administradores, com exceção da conta interna de administrador para o domínio, se ele tiver sido protegido, conforme descrito em [Appendix D: Protegendo contas de administrador internas no Active Directory @ no__t-0.  
 
-Os administradores são, por padrão, os proprietários da maioria dos objetos do AD DS em seus respectivos domínios. Associação neste grupo pode ser necessário em cenários de recuperação de desastre ou de compilação no qual a propriedade ou a capacidade de assumir a propriedade de objetos é necessária. Além disso, DAs e EAs herdar um número de seus direitos e permissões por meio de sua associação padrão no grupo de administradores. Grupo padrão de aninhamento de grupos privilegiados no Active Directory não deve ser modificado e o grupo de administradores de cada domínio deve ser protegido conforme descrito nas instruções passo a passo que seguem.  
+Os administradores são, por padrão, os proprietários da maioria dos objetos AD DS em seus respectivos domínios. A associação a esse grupo pode ser necessária em cenários de compilação ou recuperação de desastres nos quais a propriedade ou a capacidade de apropriar-se de objetos é necessária. Além disso, o DAs e EAs herdam vários direitos e permissões em virtude de sua associação padrão no grupo Administradores. O aninhamento de grupo padrão para grupos com privilégios no Active Directory não deve ser modificado, e o grupo de administradores de cada domínio deve ser protegido conforme descrito nas instruções passo a passo a seguir.  
 
-Para o grupo de administradores em cada domínio na floresta:  
+Para o grupo Administradores em cada domínio na floresta:  
 
-1.  Remova todos os membros do grupo de administradores, com a possível exceção da conta interna de administrador para o domínio, desde que ele foi protegido conforme descrito em [apêndice d: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
+1.  Remova todos os membros do grupo Administradores, com a possível exceção da conta de administrador interno para o domínio, desde que ele tenha sido protegido conforme descrito em [Appendix D: Protegendo contas de administrador internas no Active Directory @ no__t-0.  
 
-2.  Nos GPOs vinculados a OUs que contenham servidores membro e estações de trabalho em cada domínio, o grupo DA deve ser adicionado aos direitos de usuário no **direitos de usuário do computador \ Diretivas \ Configurações de segurança locais \ Policies\ Atribuição**:  
+2.  Em GPOs vinculados a UOs que contêm servidores membros e estações de trabalho em cada domínio, o grupo BA deve ser adicionado aos seguintes direitos de usuário em Computer \ Diretivas \ \ **políticas \ Atribuição de direitos de usuário**:  
 
     -   Negar o acesso a este computador a partir da rede  
 
@@ -38,7 +38,7 @@ Para o grupo de administradores em cada domínio na floresta:
 
     -   Negar o logon como um serviço  
 
-3.  Em controladores de domínio OU em cada domínio na floresta, o grupo de administradores deve receber os seguintes direitos de usuário:  
+3.  Na UO Controladores de domínio em cada domínio na floresta, o grupo Administradores deve receber os seguintes direitos de usuário:  
 
     -   Acesso a este computador da rede  
 
@@ -46,287 +46,287 @@ Para o grupo de administradores em cada domínio na floresta:
 
     -   Permitir logon por meio dos Serviços de Área de Trabalho Remota  
 
-4.  A auditoria deve ser configurada para enviar alertas se todas as modificações são feitas para as propriedades ou a associação do grupo Administradores.  
+4.  A auditoria deve ser configurada para enviar alertas se qualquer modificação for feita nas propriedades ou na associação do grupo Administradores.  
 
 #### <a name="step-by-step-instructions-for-removing-all-members-from-the-administrators-group"></a>Instruções passo a passo para remover todos os membros do grupo de administradores  
 
-1.  Na **Gerenciador de servidores**, clique em **ferramentas**e clique em **Active Directory Users and Computers**.  
+1.  Em **Gerenciador do servidor**, clique em **ferramentas**e em **Active Directory usuários e computadores**.  
 
 2.  Para remover todos os membros do grupo Administradores, execute as seguintes etapas:  
 
-    1.  Clique duas vezes o **administradores** agrupar e clique no **membros** guia.  
+    1.  Clique duas vezes no grupo **Administradores** e clique na guia **Membros** .  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_79.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_79.gif)  
 
-    2.  Selecione um membro do grupo, clique em **remova**, clique em **Yes**e clique em **Okey**.  
+    2.  Selecione um membro do grupo, clique em **remover**, em **Sim**e em **OK**.  
 
-3.  Repita a etapa 2 até que todos os membros do grupo Administradores foram removidos.  
+3.  Repita a etapa 2 até que todos os membros do grupo Administradores tenham sido removidos.  
 
-#### <a name="step-by-step-instructions-to-secure-administrators-groups-in-active-directory"></a>Instruções passo a passo para proteger grupos de administradores no Active Directory  
+#### <a name="step-by-step-instructions-to-secure-administrators-groups-in-active-directory"></a>Instruções detalhadas para proteger grupos de administradores no Active Directory  
 
-1.  Na **Gerenciador de servidores**, clique em **ferramentas**e clique em **Group Policy Management**.  
+1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda &lt;floresta&gt;\Domains\\&lt;domínio&gt;e então **objetos de diretiva de grupo** (onde &lt;floresta&gt; é o nome da floresta e &lt;domínio&gt; é o nome do domínio no qual você deseja definir a política de grupo).  
+2.  Na árvore de console, expanda &lt;Forest @ no__t-1\Domains @ no__t-2 @ no__t-3Domain @ no__t-4 e, em seguida, **política de grupo objetos** (em que &lt;Forest @ no__t-7 é o nome da floresta e &lt;Domain @ no__t-9 é o nome do domínio no qual você deseja Defina o Política de Grupo).  
 
-3.  Na árvore de console, clique com botão direito **Group Policy Objects**e clique em **New**.  
+3.  Na árvore de console, clique com o botão direito do mouse em **política de grupo objetos**e clique em **novo**.  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)  
 
-4.  No **novo GPO** caixa de diálogo, digite <GPO Name>e clique em **Okey** (onde *nome do GPO* é o nome desse GPO).  
+4.  Na caixa de diálogo **novo GPO** , digite <GPO Name> e clique em **OK** (em que *nome do GPO* é o nome desse GPO).  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)  
 
-5.  No painel de detalhes, clique com botão direito **<GPO Name>** e clique em **editar**.  
+5.  No painel de detalhes, clique com o botão direito do mouse em **<GPO Name>** e clique em **Editar**.  
 
-6.  Navegue até **computador \ Diretivas \ Configurações de segurança \ diretivas**e clique em **atribuição de direitos de usuário**.  
+6.  Navegue até **computador \ \ Diretivas**\ \ políticas e clique em **atribuição de direitos de usuário**.  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_82.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_82.gif)  
 
-7.  Configure os direitos de usuário para impedir que membros do grupo administradores acessem os servidores membro e estações de trabalho pela rede, fazendo o seguinte:  
+7.  Configure os direitos de usuário para impedir que os membros do grupo administradores acessem servidores membros e estações de trabalho na rede fazendo o seguinte:  
 
-    1.  Clique duas vezes em **negar acesso a este computador pela rede** e selecione **definir estas configurações de política**.  
+    1.  Clique duas vezes em **negar acesso a este computador da rede** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo** e clique em **procurar**.  
+    2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Tipo de **administradores**, clique em **verificar nomes**e clique em **Okey**.  
+    3.  Digite **Administradores**, clique em **verificar nomes**e clique em **OK**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_83.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_83.gif)  
 
-    4.  Clique em **Okey**, e **Okey** novamente.  
+    4.  Clique em **OK**e em **OK** novamente.  
 
-8.  Configure os direitos de usuário para impedir que os membros do grupo Administradores de fazer logon como um trabalho em lotes, fazendo o seguinte:  
+8.  Configure os direitos de usuário para impedir que os membros do grupo Administradores façam logon como um trabalho em lotes fazendo o seguinte:  
 
     1.  Clique duas vezes em **Negar logon como um trabalho em lotes** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo** e clique em **procurar**.  
+    2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Tipo de **administradores**, clique em **verificar nomes**e clique em **Okey**.  
+    3.  Digite **Administradores**, clique em **verificar nomes**e clique em **OK**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_84.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_84.gif)  
 
-    4.  Clique em **Okey**, e **Okey** novamente.  
+    4.  Clique em **OK**e em **OK** novamente.  
 
-9. Configure os direitos de usuário para impedir que os membros do grupo Administradores de fazer logon como um serviço da seguinte maneira:  
+9. Configure os direitos de usuário para impedir que os membros do grupo Administradores façam logon como um serviço fazendo o seguinte:  
 
     1.  Clique duas vezes em **Negar logon como um serviço** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo** e clique em **procurar**.  
+    2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Tipo de **administradores**, clique em **verificar nomes**e clique em **Okey**.  
+    3.  Digite **Administradores**, clique em **verificar nomes**e clique em **OK**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_85.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_85.gif)  
 
-    4.  Clique em **Okey**, e **Okey** novamente.  
+    4.  Clique em **OK**e em **OK** novamente.  
 
-10. Para sair **Editor de gerenciamento de diretiva de grupo**, clique em **arquivo**e clique em **sair**.  
+10. Para sair **Editor de gerenciamento de política de grupo**, clique em **arquivo**e em **sair**.  
 
-11. Na **gerenciamento de política de grupo**, vincule o GPO para o servidor membro e a estação de trabalho UOs, fazendo o seguinte:  
+11. No **Gerenciamento de política de grupo**, VINCULE o GPO ao servidor membro e às UOs de estação de trabalho fazendo o seguinte:  
 
-    1.  Navegue até a &lt;floresta&gt;> \Domains\\&lt;domínio&gt; (onde &lt;floresta&gt; é o nome da floresta e &lt;domínio&gt; é o nome do domínio no qual você deseja definir a política de grupo).  
+    1.  Navegue até o &lt;Forest @ no__t-1 > \Domains @ no__t-2 @ no__t-3Domain @ no__t-4 (em que &lt;Forest @ no__t-6 é o nome da floresta e &lt;Domain @ no__t-8 é o nome do domínio no qual você deseja definir o Política de Grupo).  
 
-    2.  A unidade Organizacional que o GPO será aplicado a e clique com o botão direito **vincular um GPO existente**.  
+    2.  Clique com o botão direito do mouse na UO à qual o GPO será aplicado e clique em **vincular um GPO existente**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_86.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_86.gif)  
 
-    3.  Selecione o GPO que você acabou de criar e clique em **Okey**.  
+    3.  Selecione o GPO que você acabou de criar e clique em **OK**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_87.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_87.gif)  
 
-    4.  Crie links para todas as outras UOs que contêm as estações de trabalho.  
+    4.  Crie links para todas as outras UOs que contêm estações de trabalho.  
 
     5.  Crie links para todas as outras UOs que contêm servidores membro.  
 
         > [!IMPORTANT]  
-        > Se os servidores de salto são usadas para administrar controladores de domínio e o Active Directory, certifique-se de que os servidores de salto estão localizados em uma unidade Organizacional ao qual este GPOs não está vinculado.  
+        > Se os servidores de salto forem usados para administrar controladores de domínio e Active Directory, verifique se os servidores de salto estão localizados em uma UO à qual esses GPOs não estão vinculados.  
 
         > [!NOTE]  
-        > Quando você implementa restrições no grupo de administradores em GPOs, o Windows aplicam as configurações para os membros do grupo de administradores local do computador além do grupo de administradores do domínio. Portanto, você deve usar o cuidado ao implementar restrições no grupo de administradores. Embora proibindo de rede, lote e logons de serviço para os membros do grupo Administradores é aconselhável onde quer que seja viável para implementação, não restringir logons locais ou logons por meio dos serviços de área de trabalho remota. Esses tipos de logon de bloqueio pode bloquear administração legítima de um computador por membros do grupo Administradores local.  
+        > Quando você implementa restrições no grupo Administradores em GPOs, o Windows aplica as configurações aos membros do grupo de administradores locais de um computador, além do grupo de administradores do domínio. Portanto, você deve ter cuidado ao implementar restrições no grupo Administradores. Embora seja recomendável proibir logons de rede, lote e serviço para membros do grupo Administradores, sempre que for viável implementá-los, não restringir logons locais ou logons por meio de Serviços de Área de Trabalho Remota. O bloqueio desses tipos de logon pode bloquear a administração legítima de um computador por membros do grupo local de administradores.  
         >   
-        > A captura de tela a seguir mostra as definições de configuração que bloqueiam o uso indevido do interna local e domínio da conta do administrador, além de uso indevido dos grupos internos de administradores de domínio ou local. Observe que o **Negar logon pelos serviços de área de trabalho remota** direito de usuário não inclui o grupo de administradores, porque os incluí-lo nesta configuração também bloqueia esses logons para contas que são membros do computador local Grupo de administradores. Se serviços em computadores são configurados para executar no contexto de qualquer um dos grupos privilegiados descritos nesta seção, implementar essas configurações pode causar falhas em aplicativos e serviços. Portanto, assim como acontece com todas as recomendações nesta seção, você deve testar as configurações de aplicabilidade no seu ambiente.  
+        > A captura de tela a seguir mostra as definições de configuração que bloqueiam o uso indevido de contas internas de administrador de domínio e locais, além do uso indevido de grupos internos de administradores locais ou de domínio. Observe que o direito de usuário **Negar logon pelo serviços de área de trabalho remota** não inclui o grupo Administradores, pois incluí-lo nessa configuração também bloquearia esses logons para contas que são membros do grupo Administradores do computador local. Se os serviços em computadores estiverem configurados para serem executados no contexto de qualquer um dos grupos privilegiados descritos nesta seção, a implementação dessas configurações poderá fazer com que os serviços e aplicativos falhem. Portanto, assim como todas as recomendações nesta seção, você deve testar exaustivamente as configurações de aplicabilidade em seu ambiente.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_88.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_88.gif)  
 
-#### <a name="step-by-step-instructions-to-grant-user-rights-to-the-administrators-group"></a>Instruções passo a passo para conceder direitos ao grupo de administradores  
+#### <a name="step-by-step-instructions-to-grant-user-rights-to-the-administrators-group"></a>Instruções passo a passo para conceder direitos de usuário ao grupo de administradores  
 
-1.  Na **Gerenciador de servidores**, clique em **ferramentas**e clique em **Group Policy Management**.  
+1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda <Forest>\Domains\\<Domain>e então **objetos de diretiva de grupo** (onde <Forest> é o nome da floresta e <Domain> é o nome do domínio em que você deseja Defina a política de grupo).  
+2.  Na árvore de console, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
 
-3.  Na árvore de console, clique com botão direito **Group Policy Objects**e clique em **New**.  
+3.  Na árvore de console, clique com o botão direito do mouse em **política de grupo objetos**e clique em **novo**.  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)  
 
-4.  No **novo GPO** caixa de diálogo, digite <GPO Name>e clique em **Okey** (onde <GPO Name> é o nome desse GPO).  
+4.  Na caixa de diálogo **novo GPO** , digite <GPO Name> e clique em **OK** (em que <GPO Name> é o nome desse GPO).  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)  
 
-5.  No painel de detalhes, clique com botão direito **<GPO Name>** e clique em **editar**.  
+5.  No painel de detalhes, clique com o botão direito do mouse em **<GPO Name>** e clique em **Editar**.  
 
-6.  Navegue até **computador \ Diretivas \ Configurações de segurança \ diretivas**e clique em **atribuição de direitos de usuário**.  
+6.  Navegue até **computador \ \ Diretivas**\ \ políticas e clique em **atribuição de direitos de usuário**.  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_91.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_91.gif)  
 
-7.  Configure os direitos de usuário para permitir que os membros do grupo Administradores para acessar os controladores de domínio pela rede, fazendo o seguinte:  
+7.  Configure os direitos de usuário para permitir que os membros do grupo administradores acessem os controladores de domínio pela rede fazendo o seguinte:  
 
-    1.  Clique duas vezes em **acesso a este computador pela rede** e selecione **definir estas configurações de política**.  
+    1.  Clique duas vezes em **acesso a este computador da rede** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo** e clique em **procurar**.  
+    2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Clique em **adicionar usuário ou grupo** e clique em **procurar**.  
+    3.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_92.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_92.gif)  
 
-    4.  Clique em **Okey**, e **Okey** novamente.  
+    4.  Clique em **OK**e em **OK** novamente.  
 
-8.  Configure os direitos de usuário para permitir que os membros do grupo administradores fazer logon localmente, fazendo o seguinte:  
+8.  Configure os direitos de usuário para permitir que os membros do grupo Administradores façam logon localmente fazendo o seguinte:  
 
-    1.  Clique duas vezes em **permitir logon localmente** e selecione **definir estas configurações de política**.  
+    1.  Clique duas vezes em **Permitir logon localmente** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo** e clique em **procurar**.  
+    2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Tipo de **administradores**, clique em verificar **nomes**e clique em **Okey**.  
+    3.  Digite **Administradores**, clique em verificar **nomes**e clique em **OK**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_93.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_93.gif)  
 
-    4.  Clique em **Okey**, e **Okey** novamente.  
+    4.  Clique em **OK**e em **OK** novamente.  
 
-9. Configure os direitos de usuário para permitir que os membros do grupo administradores fazer logon por meio dos serviços de área de trabalho remota, fazendo o seguinte:  
+9. Configure os direitos de usuário para permitir que os membros do grupo Administradores façam logon por meio de Serviços de Área de Trabalho Remota fazendo o seguinte:  
 
-    1.  Clique duas vezes em **permitir logon pelos serviços de área de trabalho remota** e selecione **definir estas configurações de política**.  
+    1.  Clique duas vezes em **Permitir logon por meio de serviços de área de trabalho remota** e selecione **definir estas configurações de política**.  
 
-    2.  Clique em **adicionar usuário ou grupo** e clique em **procurar**.  
+    2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Tipo de **administradores**, clique em **verificar nomes**e clique em **Okey**.  
+    3.  Digite **Administradores**, clique em **verificar nomes**e clique em **OK**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_94.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_94.gif)  
 
-    4.  Clique em **Okey**, e **Okey** novamente.  
+    4.  Clique em **OK**e em **OK** novamente.  
 
-10. Para sair **Editor de gerenciamento de diretiva de grupo**, clique em **arquivo**e clique em **sair**.  
+10. Para sair **Editor de gerenciamento de política de grupo**, clique em **arquivo**e em **sair**.  
 
-11. Na **gerenciamento de política de grupo**, vincular o GPO à UO de controladores de domínio, fazendo o seguinte:  
+11. No **Gerenciamento de política de grupo**, VINCULE o GPO à UO Controladores de domínio fazendo o seguinte:  
 
-    1.  Navegue até a <Forest>\Domains\\ <Domain> (onde <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir a política de grupo).  
+    1.  Navegue até o <Forest> \ Domains @ no__t-1 @ no__t-2 (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
 
-    2.  Os controladores de domínio UO e clique com o botão direito **vincular um GPO existente**.  
+    2.  Clique com o botão direito do mouse na UO Controladores de domínio e clique em **vincular um GPO existente**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_95.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_95.gif)  
 
-    3.  Selecione o GPO que você acabou de criar e clique em **Okey**.  
+    3.  Selecione o GPO que você acabou de criar e clique em **OK**.  
 
-        ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_96.gif)  
+        ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_96.gif)  
 
 #### <a name="verification-steps"></a>Etapas de verificação  
 
-##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>Verifique as configurações de GPO "Negar acesso a este computador pela rede"  
-Em qualquer servidor membro ou estação de trabalho que não é afetada pelas alterações de GPO (como "servidor de salto"), tente acessar um servidor membro ou estação de trabalho na rede que é afetada pelas alterações de GPO. Para verificar as configurações de GPO, tente mapear a unidade do sistema usando o **NET USE** comando.  
+##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>Verificar as configurações de GPO "negar acesso a este computador pela rede"  
+De qualquer servidor membro ou estação de trabalho que não seja afetada pelas alterações de GPO (como um "servidor de salto"), tente acessar um servidor membro ou estação de trabalho na rede que é afetada pelas alterações de GPO. Para verificar as configurações do GPO, tente mapear a unidade do sistema usando o comando **net use** .  
 
 1.  Faça logon localmente usando uma conta que seja membro do grupo Administradores.  
 
-2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-3.  No **pesquisa** , digite **prompt de comando**, clique com botão direito **Prompt de comando**e, em seguida, clique em **executar como administrador** para abrir o alto prompt de comando.  
+3.  Na caixa de **pesquisa** , digite **prompt de comando**, clique com o botão direito do mouse em prompt de **comando**e clique em **Executar como administrador** para abrir um prompt de comando com privilégios elevados.  
 
-4.  Quando solicitado a aprovar a elevação, clique em **Sim**.  
+4.  Quando for solicitado a aprovar a elevação, clique em **Sim**.  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)  
 
-5.  No **Prompt de comando** , digite **net use \\ \\ \<nome do servidor\>\c$**, onde \<nome do servidor\> é o nome do servidor membro ou estação de trabalho que você está tentando acessar pela rede.  
+5.  Na janela do **prompt de comando** , digite **net use \\ @ no__t-3 @ No__t-4Server Name @ no__t-5\c $** , em que \<Server Name @ no__t-7 é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
 
-6.  A captura de tela a seguir mostra a mensagem de erro deve aparecer.  
+6.  A captura de tela a seguir mostra a mensagem de erro que deve aparecer.  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_98.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_98.gif)  
 
-##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>Verifique as configurações de GPO "Negar logon como um trabalho em lotes"  
-De qualquer servidor membro ou estação de trabalho afetados pelas alterações de GPO, faça logon localmente.  
+##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>Verificar as configurações de GPO "Negar logon como um trabalho em lotes"  
+De qualquer servidor membro ou estação de trabalho afetada pelas alterações do GPO, faça logon localmente.  
 
 ###### <a name="create-a-batch-file"></a>Criar um arquivo em lotes  
 
-1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-2.  No **pesquisa** , digite **bloco de notas**e clique em **o bloco de notas**.  
+2.  Na caixa de **pesquisa** , digite **bloco de notas**e clique em **bloco de notas**.  
 
-3.  Na **bloco de notas**, digite **dir c:**.  
+3.  No **bloco de notas**, digite **dir c:** .  
 
-4.  Clique em **arquivo**e clique em **Salvar como**.  
+4.  Clique em **arquivo**e em **salvar como**.  
 
-5.  No **nome do arquivo** , digite  **<Filename>. bat** (onde <Filename> é o nome do novo arquivo em lotes).  
+5.  No campo **nome do arquivo** , digite **@no__t -2. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
 
 ###### <a name="schedule-a-task"></a>Agendar uma tarefa  
 
-1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+1.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-2.  No **pesquisa** , digite **Agendador de tarefas**e clique em **Agendador de tarefas**.  
+2.  Na caixa de **pesquisa** , digite **Agendador de tarefas**e clique em **Agendador de tarefas**.  
 
     > [!NOTE]  
-    > Em computadores que executam o Windows 8, na caixa de pesquisa, digite agendar tarefas e clique em tarefas de agendamento.  
+    > Em computadores que executam o Windows 8, na caixa de pesquisa, digite agendar tarefas e clique em agendar tarefas.  
 
 3.  Clique em **ação**e clique em **criar tarefa**.  
 
-4.  No **criar tarefa** caixa de diálogo, digite **<Task Name>** (onde <Task Name> é o nome da nova tarefa).  
+4.  Na caixa de diálogo **criar tarefa** , digite **<Task Name>** (em que <Task Name> é o nome da nova tarefa).  
 
-5.  Clique o **ações** guia e, em seguida, clique em **New**.  
+5.  Clique na guia **ações** e clique em **novo**.  
 
-6.  No **ação** campo, selecione **iniciar um programa**.  
+6.  No campo **ação** , selecione **Iniciar um programa**.  
 
-7.  No **programa/script** , clique em **procurar**, localize e selecione o arquivo de lote criado na **criar um arquivo em lotes** seção e, em seguida, clique em **abrir**.  
+7.  No campo **programa/script** , clique em **procurar**, localize e selecione o arquivo em lotes criado na seção **criar um arquivo em lotes** e clique em **abrir**.  
 
 8.  Clique em **OK**.  
 
 9. Clique na guia **Geral**.  
 
-10. No **opções de segurança** , clique em **Alterar usuário ou grupo**.  
+10. No campo **Opções de segurança** , clique em **Alterar usuário ou grupo**.  
 
-11. Digite o nome de uma conta que seja membro do grupo Administradores, clique em **verificar nomes**e clique em **Okey**.  
+11. Digite o nome de uma conta que seja membro do grupo Administradores, clique em **verificar nomes**e clique em **OK**.  
 
-12. Selecione **Executar estando o usuário não está conectado onor** e **não armazenam senha**. A tarefa só terá acesso aos recursos do computador local.  
+12. Selecione **executar se o usuário estiver registrado em Onor** e não **armazenar a senha**. A tarefa só terá acesso aos recursos do computador local.  
 
 13. Clique em **OK**.  
 
-14. Deve aparecer uma caixa de diálogo, a conta de usuário solicitando credenciais para executar a tarefa.  
+14. Uma caixa de diálogo deve ser exibida, solicitando credenciais de conta de usuário para executar a tarefa.  
 
-15. Depois de inserir a senha, clique em **Okey**.  
+15. Depois de inserir a senha, clique em **OK**.  
 
-16. Deve aparecer uma caixa de diálogo semelhante à seguinte.  
+16. Uma caixa de diálogo semelhante à seguinte deve aparecer.  
 
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_99.gif)  
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_99.gif)  
 
-##### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>Verifique as configurações de GPO "Negar logon como um serviço"  
+##### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>Verificar as configurações de GPO "Negar logon como um serviço"  
 
-1.  De qualquer servidor membro ou estação de trabalho afetados pelas alterações de GPO, faça logon localmente.  
+1.  De qualquer servidor membro ou estação de trabalho afetada pelas alterações do GPO, faça logon localmente.  
 
-2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
+2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
 
-3.  No **pesquisa** , digite **services**e clique em **serviços**.  
+3.  Na caixa de **pesquisa** , digite **Serviços**e clique em **Serviços**.  
 
-4.  Localize e clique duas vezes em **Spooler de impressão**.  
-
-5.  Clique na guia **Fazer Logon**.  
-
-6.  No **fazer logon como** campo, selecione **esta conta**.  
-
-7.  Clique em **navegue**, digite o nome de uma conta que seja membro do grupo Administradores, clique em **verificar nomes**e clique em **Okey**.  
-
-8.  No **senha** e **Confirmar senha** campos, digite a senha da conta selecionada e clique em **Okey**.  
-
-9. Clique em **Okey** mais três vezes.  
-
-10. Clique com botão direito **Spooler de impressão** e clique em **reiniciar**.  
-
-11. Quando o serviço for reiniciado, deve aparecer uma caixa de diálogo semelhante à seguinte.  
-
-    ![grupos de administração seguras](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_100.png)  
-
-##### <a name="revert-changes-to-the-printer-spooler-service"></a>Reverter alterações para o serviço de Spooler da impressora  
-
-1.  De qualquer servidor membro ou estação de trabalho afetados pelas alterações de GPO, faça logon localmente.  
-
-2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando o **botões** barra for exibida, clique em **pesquisa**.  
-
-3.  No **pesquisa** , digite **services**e clique em **serviços**.  
-
-4.  Localize e clique duas vezes em **Spooler de impressão**.  
+4.  Localize e clique duas vezes em **spooler de impressão**.  
 
 5.  Clique na guia **Fazer Logon**.  
 
-6.  No **fazer logon como** , clique em **sistema Local** da conta e, em seguida, clique em **Okey**.  
+6.  No campo **fazer logon como** , selecione **esta conta**.  
+
+7.  Clique em **procurar**, digite o nome de uma conta que seja membro do grupo Administradores, clique em **verificar nomes**e clique em **OK**.  
+
+8.  Nos campos **senha** e **Confirmar senha** , digite a senha da conta selecionada e clique em **OK**.  
+
+9. Clique em **OK** mais três vezes.  
+
+10. Clique com o botão direito do mouse em **spooler de impressão** e clique em **reiniciar**.  
+
+11. Quando o serviço for reiniciado, uma caixa de diálogo semelhante à seguinte deverá ser exibida.  
+
+    ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_100.png)  
+
+##### <a name="revert-changes-to-the-printer-spooler-service"></a>Reverter alterações para o serviço spooler de impressora  
+
+1.  De qualquer servidor membro ou estação de trabalho afetada pelas alterações do GPO, faça logon localmente.  
+
+2.  Com o mouse, mova o ponteiro para o canto superior direito ou inferior direito da tela. Quando a **barra** de botões for exibida, clique em **Pesquisar**.  
+
+3.  Na caixa de **pesquisa** , digite **Serviços**e clique em **Serviços**.  
+
+4.  Localize e clique duas vezes em **spooler de impressão**.  
+
+5.  Clique na guia **Fazer Logon**.  
+
+6.  No campo **fazer logon como** , clique em conta **sistema local** e clique em **OK**.  

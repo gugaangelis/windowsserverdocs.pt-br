@@ -1,19 +1,19 @@
 ---
 title: Gerenciar a ponte do Data Center (DCB)
 description: Este tópico fornece instruções sobre como usar comandos do Windows PowerShell para gerenciar a ponte do Data Center no Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fd6e8e5dd0bb4103011269473c3e1091739c775e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d635f96516040fcb30504f752c8194b0323c63f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869802"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405772"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>Gerenciar a ponte do Data Center (DCB)
 
@@ -109,7 +109,7 @@ Você pode usar o comando **New-NetQosTrafficClass** para criar uma classe de tr
     SMB  ETS   30   4Global
       
 
-Por padrão, todos os valores 802.1 p são mapeados para uma classe de tráfego padrão, que tem 100% da largura de banda do link físico. O comando **New-NetQosTrafficClass** cria uma nova classe de tráfego, para a qual qualquer pacote marcado com o valor 4 de prioridade 802.1 p é mapeado. O algoritmo \(de seleção de\) transmissão TSA é ETs e tem 30% da largura de banda.
+Por padrão, todos os valores 802.1 p são mapeados para uma classe de tráfego padrão, que tem 100% da largura de banda do link físico. O comando **New-NetQosTrafficClass** cria uma nova classe de tráfego, para a qual qualquer pacote marcado com o valor 4 de prioridade 802.1 p é mapeado. O algoritmo de seleção de transmissão \(TSA @ no__t-1 é ETS e tem 30% da largura de banda.
 
 Você pode criar até sete novas classes de tráfego. Incluindo a classe de tráfego padrão, pode haver no máximo oito classes de tráfego no sistema. No entanto, um adaptador de rede compatível com DCB pode não oferecer suporte a muitas classes de tráfego no hardware. Se você criar mais classes de tráfego do que o pode ser acomodado em um adaptador de rede e habilitar o DCB nesse adaptador de rede, o driver de miniporta relatará um erro ao sistema operacional. O erro é registrado no log de eventos.
 

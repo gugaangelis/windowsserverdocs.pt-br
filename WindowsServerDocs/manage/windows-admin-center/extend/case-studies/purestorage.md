@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: cfd9d31d388b9acb1a4a4fa40b3975b235a8634b
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.prod: windows-server
+ms.openlocfilehash: c6ab75a2375368d7c87d9dffd6175eb611508dd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546612"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406955"
 ---
 # <a name="pure-storage-extension"></a>Extensão de armazenamento pura
 
@@ -27,7 +27,7 @@ Quando começou a Pesquisar novamente o caso de uso com "Project Honolulu", eles
 
 ![Extensão de armazenamento pura](../../media/extend-case-study-purestorage/purestorage-1.png)
 
-> <cite>"Nós integramos um conjunto de recursos que imita nossa interface da Web FlashArray para habilitar o gerenciamento direto no centro de administração do Windows. Nossos clientes e parceiros se beneficiarão de um único painel de vidro versus a necessidade de trabalhar com duas ferramentas de gerenciamento diferentes. Além dos benefícios de ponto único de gerenciamento, os clientes poderão gerenciar contextualmente os servidores do Windows que estão conectados à FlashArray. "</cite>
+> <cite> "nós integramos um conjunto de recursos que imita nossa interface da Web FlashArray para habilitar o gerenciamento direto no centro de administração do Windows. Nossos clientes e parceiros se beneficiarão de um único painel de vidro versus a necessidade de trabalhar com duas ferramentas de gerenciamento diferentes. Além dos benefícios de ponto único de gerenciamento, os clientes poderão gerenciar contextualmente os servidores do Windows que estão conectados à FlashArray. " </cite>
 >
 > --Barkz, diretor técnico da Microsoft Solutions & integração, armazenamento puro
 

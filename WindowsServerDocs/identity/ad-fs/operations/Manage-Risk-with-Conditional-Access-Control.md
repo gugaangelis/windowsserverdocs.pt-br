@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2c399467a8bb70e723a86618aa37fc54425f4e7d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e73cf77e9590496f0ff3f881fd8ac4556450b5f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189053"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357763"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>Gerenciar riscos com Controle de Acesso Condicional
 
 
 
 
--   [Controle de acesso à chave de conceitos condicional no AD FS](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
+-   [Principais conceitos-controle de acesso condicional no AD FS](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [Gerenciamento de riscos com controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
+-   [Gerenciando riscos com o controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
-## <a name="BKMK_1"></a>Principais conceitos - controle de acesso condicional no AD FS
-A função geral do AD FS é emitir um token de acesso que contém um conjunto de declarações. A decisão sobre quais declarações do AD FS aceita e emite é regida pelas regras de declaração.
+## <a name="BKMK_1"></a>Principais conceitos-controle de acesso condicional no AD FS
+A função geral do AD FS é emitir um token de acesso que contenha um conjunto de declarações. A decisão sobre o que as declarações AD FS aceita e os problemas são governadas por regras de declaração.
 
-Controle de acesso no AD FS é implementado com regras de declaração de autorização de emissão que são usadas para emitir uma permissão ou negar as declarações que determinarão se um usuário ou um grupo de usuários terão permissão para acessar os recursos do AD FS-protegido ou não. As regras de autorização só podem ser definidas em objetos de confiança da terceira parte confiável.
+O controle de acesso no AD FS é implementado com regras de declaração de autorização de emissão que são usadas para emitir uma permissão ou negar declarações que determinarão se um usuário ou grupo de usuários terá permissão para acessar recursos protegidos por AD FS ou não. As regras de autorização só podem ser definidas em objetos de confiança da terceira parte confiável.
 
 |Opção de regras|Lógica de regras|
 |---------------|--------------|
@@ -38,9 +38,9 @@ Controle de acesso no AD FS é implementado com regras de declaração de autori
 
 Para obter mais informações sobre essas opções de regra e lógica, consulte [When to Use an Authorization Claim Rule](https://technet.microsoft.com/library/ee913560.aspx).
 
-No AD FS no Windows Server 2012 R2, o controle de acesso é aprimorado com vários fatores, incluindo o usuário, dispositivo, local e dados de autenticação. Isso é possibilitado por uma maior variedade de tipos de declaração disponíveis para as regras de declaração de autorização.  Em outras palavras, no AD FS no Windows Server 2012 R2, você pode impor o controle de acesso condicional com base na associação de grupo ou identidade de usuário, o local de rede, o dispositivo (seja ele ingresso, para obter mais informações, consulte [ingresso no local de trabalho em qualquer uma Dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)) e o estado de autenticação (se a autenticação multifator (MFA) foi executada).
+No AD FS no Windows Server 2012 R2, o controle de acesso é aprimorado com vários fatores, incluindo dados de usuário, dispositivo, local e autenticação. Isso é possibilitado por uma maior variedade de tipos de declaração disponíveis para as regras de declaração de autorização.  Em outras palavras, em AD FS no Windows Server 2012 R2, você pode impor o controle de acesso condicional com base na identidade do usuário ou na associação de grupo, local de rede, dispositivo (independentemente de ele ser ingressado no local de trabalho, para obter mais informações, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO) e a autenticação de segundo fator direta entre aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)) e o estado de autenticação (se a MFA (autenticação multifator) foi executada).
 
-Controle de acesso condicional no AD FS no Windows Server 2012 R2 oferece os seguintes benefícios:
+O controle de acesso condicional no AD FS no Windows Server 2012 R2 oferece os seguintes benefícios:
 
 -   Políticas de autorização por aplicação flexíveis e expressivas, através das quais é possível permitir ou negar acesso com base em usuário, dispositivo, local de rede e estado de autenticação
 
@@ -50,9 +50,9 @@ Controle de acesso condicional no AD FS no Windows Server 2012 R2 oferece os seg
 
 -   Suporte a Windows PowerShell e linguagem de declarações avançada para cenários avançados de controle de acesso condicional
 
--   Personalizado (por terceira parte confiável o aplicativo de terceiros) mensagens de "Acesso negado". Para obter mais informações, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx). Ao conseguir personalizar essas mensagens, é possível explicar por que um usuário está tendo seu acesso negado e também facilitar a atualização de autoatendimento onde é possível, por exemplo, alertando usuários para que ingressem seus dispositivos no local de trabalho. Para obter mais informações, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+-   Mensagens de ' acesso negado ' personalizadas (por aplicativo de terceira parte confiável). Para obter mais informações, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx). Ao conseguir personalizar essas mensagens, é possível explicar por que um usuário está tendo seu acesso negado e também facilitar a atualização de autoatendimento onde é possível, por exemplo, alertando usuários para que ingressem seus dispositivos no local de trabalho. Para obter mais informações, consulte [ingresse no local de trabalho de qualquer dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
-A tabela a seguir inclui todos os tipos de declaração disponíveis no AD FS no Windows Server 2012 R2 a ser usado para implementar o controle de acesso condicional.
+A tabela a seguir inclui todos os tipos de declaração disponíveis em AD FS no Windows Server 2012 R2 a serem usados para implementar o controle de acesso condicional.
 
 |Tipo de declaração|Descrição|
 |--------------|---------------|
@@ -64,7 +64,7 @@ A tabela a seguir inclui todos os tipos de declaração disponíveis no AD FS no
 |Endereço de email do AD FS 1 x|O endereço de email do usuário ao interoperar com AD FS 1.1 ou AD FS 1.0.|
 |Grupo|Um grupo do qual o usuário é membro.|
 |UPN do AD FS 1 x|O UPN do usuário ao interoperar com AD FS 1.1 ou AD FS 1.0.|
-|Função|Uma função que o usuário tenha.|
+|Role|Uma função que o usuário tenha.|
 |Sobrenome|O sobrenome do usuário.|
 |PPID|O identificador privado do usuário.|
 |ID do nome|O identificador de nome SAML do usuário.|
@@ -80,7 +80,7 @@ A tabela a seguir inclui todos os tipos de declaração disponíveis no AD FS no
 |O usuário está registrado|O usuário está registrado para usar esse dispositivo.|
 |Identificador do dispositivo|O identificador do dispositivo.|
 |Identificador de registro do dispositivo|Identificador para registro do dispositivo.|
-|Nome de exibição do registro do dispositivo|Nome de exibição de registro do dispositivo.|
+|Nome de exibição do registro do dispositivo|Nome de exibição do registro do dispositivo.|
 |Tipo de SO do dispositivo|Tipo do sistema operacional do dispositivo.|
 |Versão de SO do dispositivo|Versão do sistema operacional do dispositivo.|
 |O dispositivo é gerenciado|O dispositivo é gerenciado por um serviço de gerenciamento.|
@@ -119,16 +119,16 @@ A tabela a seguir inclui todos os tipos de declaração disponíveis no AD FS no
 |URL de atualização da senha|Usado para exibir o endereço Web do serviço de atualização da senha.|
 |Referências de métodos de autenticação|Usado para indicar todos os métodos de autenticação usados para autenticar o usuário.|
 
-## <a name="BKMK_2"></a>Gerenciamento de riscos com controle de acesso condicional
+## <a name="BKMK_2"></a>Gerenciando riscos com o controle de acesso condicional
 Usando as configurações disponíveis, há muitas maneiras de gerenciar o risco implementando controle de acesso condicional.
 
 ### <a name="common-scenarios"></a>Cenários comuns
-Por exemplo, imagine um cenário simples de implementação de controle de acesso condicional com base em dados de associação de grupo do usuário para um aplicativo específico (terceira parte confiável). Em outras palavras, você pode configurar uma regra de autorização de emissão no servidor de federação para permitir que os usuários que pertencem a um determinado grupo no AD do acesso de domínio para um aplicativo específico que é protegido pelo AD FS.  As passo a passo instruções detalhadas (usando a interface do usuário e o Windows PowerShell) para implementar esse cenário são abordadas em [guia passo a passo: Gerencie riscos com controle de acesso condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md). Para concluir as etapas neste passo a passo, você deve configurar um ambiente de laboratório e siga as etapas em [configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+Por exemplo, imagine um cenário simples de implementação do controle de acesso condicional com base nos dados de associação de grupo do usuário para um aplicativo específico (confiança de terceira parte confiável). Em outras palavras, você pode configurar uma regra de autorização de emissão no servidor de Federação para permitir que os usuários que pertencem a um determinado grupo em seu domínio do AD acessem um aplicativo específico protegido pelo AD FS.  As instruções detalhadas passo a passo (usando a interface do usuário e o Windows PowerShell) para implementar esse cenário são abordadas no guia [Walkthrough: Gerencie o risco com o controle de acesso condicional @ no__t-0. Para concluir as etapas neste passo a passos, você deve configurar um ambiente de laboratório e seguir as etapas em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 ### <a name="advanced-scenarios"></a>Cenários avançados
-Outros exemplos de implementação de controle de acesso condicional no AD FS no Windows Server 2012 R2 incluem o seguinte:
+Outros exemplos de implementação do controle de acesso condicional no AD FS no Windows Server 2012 R2 incluem o seguinte:
 
--   Permitir o acesso a um aplicativo protegido pelo AD FS somente se a identidade do usuário foi validada com MFA
+-   Permitir acesso a um aplicativo protegido por AD FS somente se a identidade desse usuário tiver sido validada com MFA
 
     É possível usar o seguinte código:
 
@@ -139,7 +139,7 @@ Outros exemplos de implementação de controle de acesso condicional no AD FS no
 
     ```
 
--   Permitir o acesso a um aplicativo protegido pelo AD FS somente se a solicitação de acesso estiver vindo de um dispositivo ingressado no local de trabalho que está registrado para o usuário
+-   Permitir acesso a um aplicativo protegido por AD FS somente se a solicitação de acesso for proveniente de um dispositivo ingressado no local de trabalho que está registrado para o usuário
 
     É possível usar o seguinte código:
 
@@ -150,7 +150,7 @@ Outros exemplos de implementação de controle de acesso condicional no AD FS no
 
     ```
 
--   Permitir o acesso a um aplicativo protegido pelo AD FS somente se a solicitação de acesso estiver vindo de um dispositivo ingressado no local de trabalho que está registrado para um usuário cuja identidade foi validada com MFA
+-   Permitir o acesso a um aplicativo protegido por AD FS somente se a solicitação de acesso for proveniente de um dispositivo ingressado no local de trabalho que está registrado para um usuário cuja identidade foi validada com MFA
 
     É possível usar o seguinte código
 
@@ -162,7 +162,7 @@ Outros exemplos de implementação de controle de acesso condicional no AD FS no
 
     ```
 
--   Permitir o acesso extranet a um aplicativo protegido pelo AD FS somente se a solicitação de acesso estiver vindo de um usuário cuja identidade foi validada com MFA.
+-   Permitir acesso de extranet a um aplicativo protegido por AD FS somente se a solicitação de acesso for proveniente de um usuário cuja identidade tenha sido validada com MFA.
 
     É possível usar o seguinte código:
 
@@ -175,8 +175,7 @@ Outros exemplos de implementação de controle de acesso condicional no AD FS no
     ```
 
 ## <a name="see-also"></a>Consulte também
-[Guia passo a passo: Gerencie riscos com controle de acesso condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-[configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[Guia passo a passo: Gerencie o risco com o controle de acesso condicional @ no__t-0 @ no__t-1[Configure o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

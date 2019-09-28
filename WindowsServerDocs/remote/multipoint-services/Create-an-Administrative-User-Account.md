@@ -1,8 +1,8 @@
 ---
 title: Criar uma conta de usuário administrativo
-description: Criar uma conta com privilégios administrativos no MultiPoint Services
+description: Criar uma conta com privilégios administrativos nos serviços do MultiPoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: bf460107e57de5e19f8eaa311e497e9d984680e7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6737f7b96396a13aa18485095e0687425cf8b93e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879757"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389703"
 ---
 # <a name="create-an-administrative-user-account"></a>Criar uma conta de usuário administrativo
-Crie *contas de usuário administrativo* para as pessoas que gerenciarão o sistema MultiPoint Services. Para ver quem tem acesso administrativo, no Gerenciador do MultiPoint, clique o **usuários** guia. Contas de usuário administrativo são exibidas na coluna Tipo de conta como **Administrador**. *Os usuários administrativos* têm acesso a todas as tarefas do MultiPoint Manager que alteram as configurações de área de trabalho e do sistema, como:  
+Crie *contas de usuário administrativo* para as pessoas que gerenciarão o sistema MultiPoint Services. Para ver quem tem acesso administrativo, no MultiPoint Manager, clique na guia **usuários** . Contas de usuário administrativo são exibidas na coluna Tipo de conta como **Administrador**. *Os usuários administrativos* têm acesso a todas as tarefas do Gerenciador do MultiPoint que alteram as configurações da área de trabalho e do sistema, como:  
   
 -   Criação de contas  
   
@@ -40,7 +40,7 @@ Para obter mais informações sobre problemas que você, como usuário administr
   
 #### <a name="to-create-an-administrative-user-account"></a>Para criar uma conta de usuário administrativo  
   
-1.  No Gerenciador do MultiPoint, clique o **usuários** guia.  
+1.  No Gerenciador do MultiPoint, clique na guia **usuários** .  
   
 2.  Em **Tarefas de usuários**, clique em **Adicionar conta de usuário**. O assistente **Adicionar conta de usuário** é aberto.  
   

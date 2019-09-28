@@ -1,38 +1,38 @@
 ---
 title: Desenvolver uma extensão de ferramenta
-description: Desenvolver uma extensão da ferramenta Windows Admin Center SDK (projeto Paulo)
+description: Desenvolver uma extensão de ferramenta SDK do Windows Admin Center (projeto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 31d8dbd3df4c44b6e0a3780b022dfbd9fffdffec
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.prod: windows-server
+ms.openlocfilehash: de2cbf3a47771555eef02cd7d18f93b2b33227b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452585"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406904"
 ---
 # <a name="develop-a-tool-extension"></a>Desenvolver uma extensão de ferramenta
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-Uma extensão de ferramenta é a principal maneira dos usuários interagem com o Windows Admin Center para gerenciar uma conexão, como um servidor ou cluster. Quando você clica em uma conexão na tela inicial do Windows Admin Center e conectar-se, você, em seguida, verá uma lista de ferramentas no painel de navegação à esquerda. Quando você clica em uma ferramenta, a extensão de ferramenta é carregada e exibida no painel direito.
+Uma extensão de ferramenta é a principal maneira que os usuários interagem com o centro de administração do Windows para gerenciar uma conexão, como um servidor ou cluster. Ao clicar em uma conexão na tela inicial do centro de administração do Windows e conectar-se, você verá uma lista de ferramentas no painel de navegação à esquerda. Quando você clica em uma ferramenta, a extensão de ferramenta é carregada e exibida no painel direito.
 
-Quando uma extensão de ferramenta é carregada, ele pode execute chamadas WMI ou scripts do PowerShell em um servidor de destino ou cluster e exibir informações na interface do usuário ou comandos com base na entrada do usuário. As extensões de ferramentas definem quais soluções ele deve ser exibido, resultando em um conjunto diferente de ferramentas para cada solução.
+Quando uma extensão de ferramenta é carregada, ela pode executar chamadas WMI ou scripts do PowerShell em um servidor de destino ou cluster e exibir informações na interface do usuário ou executar comandos com base na entrada do usuário. As extensões de ferramenta definem quais soluções devem ser exibidas, resultando em um conjunto diferente de ferramentas para cada solução.
 
 > [!NOTE]
-> Não estiver familiarizado com os tipos de extensão diferentes? Saiba mais sobre o [tipos de arquitetura e a extensão de extensibilidade](understand-extensions.md).
+> Não está familiarizado com os tipos de extensão diferentes? Saiba mais sobre a [arquitetura de extensibilidade e os tipos de extensão](understand-extensions.md).
 
 ## <a name="prepare-your-environment"></a>Prepare o ambiente
 
-Se você ainda não o fez [preparar o ambiente](prepare-development-environment.md) instalando dependências e globais pré-requisitos necessários para todos os projetos.
+Se você ainda não fez isso, [Prepare seu ambiente](prepare-development-environment.md) instalando dependências e pré-requisitos globais necessários para todos os projetos.
 
-## <a name="create-a-new-tool-extension-with-the-windows-admin-center-cli"></a>Criar uma nova extensão de ferramenta com a CLI do Windows Admin Center ##
+## <a name="create-a-new-tool-extension-with-the-windows-admin-center-cli"></a>Criar uma nova extensão de ferramenta com a CLI do centro de administração do Windows ##
 
-Depois que todas as dependências instaladas, você está pronto para criar sua nova extensão de ferramenta.  Criar ou procurar uma pasta que contém os arquivos de projeto, abra um prompt de comando e definir essa pasta como o diretório de trabalho.  Usando a CLI do Windows Admin Center que foi instalado anteriormente, crie uma nova extensão com a seguinte sintaxe:
+Depois de ter todas as dependências instaladas, você estará pronto para criar sua nova extensão de ferramenta.  Crie ou navegue até uma pasta que contém os arquivos de projeto, abra um prompt de comando e defina essa pasta como o diretório de trabalho.  Usando a CLI do centro de administração do Windows que foi instalada anteriormente, crie uma nova extensão com a seguinte sintaxe:
 
 ``` cmd
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
@@ -40,7 +40,7 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 
 | Valor | Explicação | Exemplo |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | Nome da sua empresa (com espaços) | ```Contoso Inc``` |
+| ```{!Company Name}``` | O nome da sua empresa (com espaços) | ```Contoso Inc``` |
 | ```{!Tool Name}``` | O nome da ferramenta (com espaços) | ```Manage Foo Works``` |
 
 Aqui está um uso de exemplo:
@@ -49,49 +49,49 @@ Aqui está um uso de exemplo:
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-Isso cria uma nova pasta dentro do diretório de trabalho atual usando o nome especificado para sua ferramenta, copia todos os arquivos de modelo necessário para seu projeto e configura os arquivos com o nome da empresa e a ferramenta.  
+Isso cria uma nova pasta dentro do diretório de trabalho atual usando o nome especificado para sua ferramenta, copia todos os arquivos de modelo necessários em seu projeto e configura os arquivos com o nome da sua empresa e da ferramenta.  
 
-Em seguida, altere o diretório para a pasta que acabou de criar e, em seguida, instalar as dependências necessárias locais executando o seguinte comando:
+Em seguida, altere o diretório para a pasta recém-criada e instale as dependências locais necessárias executando o seguinte comando:
 
 ``` cmd
 npm install
 ```
 
-Quando isso for concluído, você configurou tudo o que você precisa carregar sua extensão de novo no Windows Admin Center. 
+Quando isso for concluído, você configurou tudo o que precisa para carregar sua nova extensão no centro de administração do Windows. 
 
-## <a name="add-content-to-your-extension"></a>Adicionar conteúdo a sua extensão
+## <a name="add-content-to-your-extension"></a>Adicionar conteúdo à sua extensão
 
-Agora que você criou uma extensão com a CLI do Windows Admin Center, você está pronto para personalizar o conteúdo.  Confira estes guias para obter exemplos de como você pode fazer:
+Agora que você criou uma extensão com a CLI do centro de administração do Windows, você está pronto para personalizar o conteúdo.  Consulte estes guias para obter exemplos do que você pode fazer:
 
 - Adicionar um [módulo vazio](guides/add-module.md)
-- Adicionar um [iFrame](guides/add-iframe.md)
+- Adicionar um [iframe](guides/add-iframe.md)
  
-Ainda mais exemplos podem ser encontrados nossos [site do GitHub SDK](https://aka.ms/wacsdk):
--  [Ferramentas de desenvolvedor](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) é uma extensão totalmente funcional que pode ser carregado por sideload no Windows Admin Center e contém um rico conjunto de exemplos de funcionalidade e a ferramenta de exemplo que você pode procurar e usar em sua própria extensão.
+Ainda mais exemplos podem ser encontrados nosso [site do SDK do GitHub](https://aka.ms/wacsdk):
+-  [Ferramentas para desenvolvedores](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) é uma extensão totalmente funcional que pode ser carregada no centro de administração do Windows e contém uma rica coleção de exemplos de funcionalidade e de ferramentas que você pode procurar e usar em sua própria extensão.
 
-## <a name="customize-your-extensions-icon"></a>Personalizar o ícone da sua extensão
+## <a name="customize-your-extensions-icon"></a>Personalizar o ícone da extensão
 
-Você pode personalizar o ícone que mostra para a sua extensão na lista de ferramenta.  Para fazer isso, modifique todas ```icon``` entradas no ```manifest.json``` para a sua extensão:
+Você pode personalizar o ícone que aparece para sua extensão na lista de ferramentas.  Para fazer isso, modifique todas as entradas ```icon``` em ```manifest.json``` para sua extensão:
 
 ``` json
 "icon": "{!icon-uri}",
 ```
 
-| Valor | Explicação | Uri de exemplo |
+| Valor | Explicação | URI de exemplo |
 | ----- | ----------- | ------- |
-| ```{!icon-uri}``` | O local do seu recurso de ícone | ```assets/foo-icon.svg``` |
+| ```{!icon-uri}``` | O local do recurso de ícone | ```assets/foo-icon.svg``` |
 
-OBSERVAÇÃO: Atualmente, os ícones personalizados não são visíveis ao lado de carregar sua extensão no modo de desenvolvimento.  Como alternativa, remova o conteúdo de ```target``` da seguinte maneira:
+OBSERVAÇÃO:  Atualmente, os ícones personalizados não são visíveis ao carregar o lado de sua extensão no modo de desenvolvimento.  Como alternativa, remova o conteúdo de ```target``` da seguinte maneira:
 
 ``` json
 "target": "",
 ```
 
-Essa configuração só é válida para sideload no modo de desenvolvimento, portanto, é importante preservar o valor contido no ```target``` e, em seguida, restaurá-lo antes de publicar sua extensão.
+Essa configuração só é válida para o carregamento lateral no modo dev, portanto, é importante preservar o valor contido em ```target``` e restaurá-lo antes de publicar sua extensão.
 
-## <a name="build-and-side-load-your-extension"></a>Compilação e o lado carregam sua extensão
+## <a name="build-and-side-load-your-extension"></a>Compilar e carregar lado sua extensão
 
-Em seguida, compilação e o lado carregam sua extensão Windows Admin Center.  Abra uma janela de comando, altere o diretório para seu diretório de origem, em seguida, você estará pronto para compilar.
+Em seguida, compile e carregue sua extensão no centro de administração do Windows.  Abra uma janela de comando, altere o diretório para o diretório de origem e, em seguida, você estará pronto para compilar.
 
 * Compilar e servir com gulp:
 
@@ -116,6 +116,6 @@ Seu projeto pode ser transferido por sideload em uma instância local do Windows
 
 Seu projeto agora estará visível na lista Ferramentas com (sideloaded) ao lado do nome.
 
-## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>Uma versão diferente do SDK do Windows Admin Center de destino
+## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>Direcionar uma versão diferente do SDK do centro de administração do Windows
 
-É fácil manter sua extensão atualizada com as alterações do SDK e plataforma.  Leia sobre como [direcionar uma versão diferente](target-sdk-version.md) do SDK do Windows Admin Center.
+Manter sua extensão atualizada com alterações do SDK e alterações na plataforma é fácil.  Leia sobre como [direcionar uma versão diferente](target-sdk-version.md) do SDK do centro de administração do Windows.

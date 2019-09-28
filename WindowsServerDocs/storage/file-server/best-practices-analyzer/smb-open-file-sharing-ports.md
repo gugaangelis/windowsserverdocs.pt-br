@@ -2,17 +2,17 @@
 title: SMBS As portas de compartilhamento de arquivo e impressora devem estar abertas
 TOCTitle: 'SMB: File and printer sharing ports should be open'
 ms.date: 07/02/2012
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: a22801be6ec73b6819a190c793d28feae4edcf69
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 22cd926fdb873538631a6f6850157dceb5a020d7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560427"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385835"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMBS As portas de compartilhamento de arquivo e impressora devem estar abertas
 
@@ -21,7 +21,7 @@ Atualizado: 2 de fevereiro de 2011
 
 Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012, Windows Server 2008 R2
 
-*Este tópico destina-se a resolver um problema específico identificado por uma verificação de Analisador de Práticas Recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram os serviços de arquivo Analisador de Práticas Recomendadas executados neles e estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações* , consulte [analisador de práticas recomendadas](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
+o tópico *This destina-se a resolver um problema específico identificado por uma verificação de Analisador de Práticas Recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram os serviços de arquivo Analisador de Práticas Recomendadas executados neles e estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações, consulte @ no__t-0 [analisador de práticas recomendadas](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
 
 
 <table>
@@ -43,7 +43,7 @@ Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e 
 <td><p>Erro</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Categoria</strong></p></td>
+<td><p><strong>Categorias</strong></p></td>
 <td><p>Configuração</p></td>
 </tr>
 </tbody>
@@ -75,5 +75,5 @@ A associação ao grupo **Administradores** , ou equivalente, é o mínimo neces
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Noções básicas sobre pastas compartilhadas e o Firewall do Windows](https://technet.microsoft.com/library/cc731402.aspx) (https://technet.microsoft.com/library/cc731402.aspx)
+[Noções básicas sobre pastas compartilhadas e o Firewall do Windows](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
 

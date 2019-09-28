@@ -1,9 +1,9 @@
 ---
-title: 'Guia de laboratório de teste: demonstrar o DirectAccess em um Cluster com NLB do Windows'
-description: Este tópico faz parte do guia de laboratório de teste - demonstração do DirectAccess em um Cluster com Windows NLB para o Windows Server 2016
+title: Guia de laboratório de teste – demonstrar o DirectAccess em um cluster com o NLB do Windows
+description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess em um cluster com o NLB do Windows para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2318fa58a343b24ec401390b3cbbd6f22fe86870
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: e0c82f9f56ea680c11cd612e17326fe7cf96aeca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281596"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388432"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guia do laboratório de teste: Demonstrar o DirectAccess em um Cluster com NLB do Windows
+# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guia do laboratório de teste: Demonstrar o DirectAccess em um cluster com o NLB do Windows
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Acesso remoto é uma função de servidor no Windows Server 2016, Windows Server 2012 R2 e sistemas operacionais Server 2012 que permite que usuários remotos acessem com segurança os recursos da rede interna usando DirectAccess ou RRAS VPN. Este guia contém instruções passo a passo para estender o [guia do laboratório de teste: Demonstrar a instalação de servidor único do DirectAccess com misto de IPv4 e IPv6](https://go.microsoft.com/fwlink/p/?LinkId=237004) para demonstrar o balanceamento de carga de rede do DirectAccess e a configuração de cluster.  
+O acesso remoto é uma função de servidor nos sistemas operacionais Windows Server 2016, Windows Server 2012 R2 e Server 2012 que permite que os usuários remotos acessem com segurança recursos de rede internos usando DirectAccess ou VPN RRAS. Este guia contém instruções passo a passo para estender o guia de laboratório do [Test: Demonstre a configuração do servidor único do DirectAccess com IPv4 misto e IPv6 @ no__t-0 para demonstrar o balanceamento de carga de rede do DirectAccess e a configuração de cluster.  
   
 ## <a name="about-this-guide"></a>Sobre este guia  
 Este guia contém instruções para a configuração e demonstração do Acesso Remoto usando seis servidores e dois computadores clientes. O teste de laboratório de Acesso Remoto concluído com NLB simula uma intranet, a Internet e uma rede doméstica e demonstra a funcionalidade de Acesso Remoto em diferentes cenários de conexão à Internet.  

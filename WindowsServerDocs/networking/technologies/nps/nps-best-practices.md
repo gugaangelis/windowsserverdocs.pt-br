@@ -2,24 +2,24 @@
 title: Práticas recomendadas do Servidor de Políticas de Rede
 description: Este tópico fornece as práticas recomendadas para implantar e gerenciar o servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a0bfa96e5fb3b562c23904ebef096d06e0c2d3c8
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 364783e2188152fc5c57bba04991ae124b0bb8d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546547"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405498"
 ---
 # <a name="network-policy-server-best-practices"></a>Práticas recomendadas do Servidor de Políticas de Rede
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para saber mais sobre as práticas recomendadas para implantar e gerenciar o \(NPS\)do servidor de políticas de rede.
+Você pode usar este tópico para saber mais sobre as práticas recomendadas para implantar e gerenciar o servidor de políticas de rede \(NPS @ no__t-1.
 
 As seções a seguir fornecem as práticas recomendadas para diferentes aspectos da implantação do NPS.
 
@@ -35,7 +35,7 @@ Há dois tipos de contabilidade, ou registro em log, no NPS:
 
 Para fazer o uso mais eficaz do log do NPS:
 
-- Ative o registro \(em\) log inicialmente para os registros de autenticação e de estatísticas. Modifique essas seleções depois de determinar o que é apropriado para o seu ambiente.
+- Ative o registro em log \(initially @ no__t-1 para os registros de autenticação e de estatísticas. Modifique essas seleções depois de determinar o que é apropriado para o seu ambiente.
 
 - Verifique se o log de eventos está configurado com uma capacidade suficiente para manter seus logs.
 
@@ -45,9 +45,9 @@ Para fazer o uso mais eficaz do log do NPS:
 
 - Se os servidores de acesso à rede e os servidores proxy RADIUS enviarem periodicamente mensagens de solicitação de conexão fictícia ao NPS para verificar se o NPS está online, use a configuração do registro **ping User-Name** . Essa configuração configura o NPS para rejeitar automaticamente essas solicitações de conexão falsas sem processá-las. Além disso, o NPS não registra as transações que envolvem o nome de usuário fictício em nenhum arquivo de log, o que torna o log de eventos mais fácil de interpretar.
 
-- Desabilite o encaminhamento de notificação do NAS. Você pode desabilitar o encaminhamento de mensagens de início e de parada de servidores de acesso à rede (NASs) para membros de um grupo de servidores RADIUS remotos configurado no NPS. Para obter mais informações, consulte desabilitar o encaminhamento de [notificação do nas](nps-disable-nas-notifications.md).
+- Desabilite o encaminhamento de notificação do NAS. Você pode desabilitar o encaminhamento de mensagens de início e de parada de servidores de acesso à rede (NASs) para membros de um grupo de servidores RADIUS remotos configurado no NPS. Para obter mais informações, consulte [desabilitar o encaminhamento de notificação do nas](nps-disable-nas-notifications.md).
 
-Para obter mais informações, consulte [Configure Network Policy Server](nps-accounting-configure.md)Accounting.
+Para obter mais informações, consulte [Configure Network Policy Server Accounting](nps-accounting-configure.md).
 
 - Para fornecer failover e redundância com o log de SQL Server, coloque dois computadores executando SQL Server em sub-redes diferentes. Use o assistente de SQL Server **criar publicação** para configurar a replicação de banco de dados entre os dois servidores. Para obter mais informações, consulte [SQL Server documentação técnica](https://msdn.microsoft.com/library/ms130214.aspx) e [replicação do SQL Server](https://msdn.microsoft.com/library/ms151198.aspx).
 
@@ -55,8 +55,8 @@ Para obter mais informações, consulte [Configure Network Policy Server](nps-ac
 
 A seguir estão as práticas recomendadas para autenticação.
 
-- Use métodos de autenticação baseados em certificado, \(como EAP\) protegido do protocolo\) PEAP e Extensible Authentication \(Protocol para autenticação forte. Não use métodos de autenticação somente de senha porque eles são vulneráveis a uma variedade de ataques e não são seguros. Para a autenticação sem fio segura,\-o\-uso do PEAP MS CHAP v2 é recomendado, pois o NPS comprova sua identidade para clientes sem fio usando um certificado de servidor, enquanto os usuários provam sua identidade com seu nome de usuário e senha.  Para obter mais informações sobre como usar o NPS em sua implantação sem fio, consulte [implantar o acesso sem fio autenticado baseado em senha 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access).
-- Implante sua \(própria AC\) de autoridade de certificação&reg; com Active Directory \(serviços de\) certificados AD CS ao usar métodos de autenticação com base em certificado forte, como PEAP e EAP, que exigir o uso de um certificado de servidor no NPSs. Você também pode usar sua autoridade de certificação para registrar certificados de computador e certificados de usuário. Para obter mais informações sobre como implantar certificados de servidor em servidores de acesso remoto e NPS, consulte [implantar certificados de servidor para implantações com e sem fio 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments).
+- Use métodos de autenticação baseados em certificado, como o protocolo de autenticação extensível protegido \(PEAP @ no__t-1 e o protocolo de autenticação extensível \(EAP @ no__t-3 para autenticação forte. Não use métodos de autenticação somente de senha porque eles são vulneráveis a uma variedade de ataques e não são seguros. Para uma autenticação sem fio segura, o uso do PEAP @ no__t-0MS @ no__t-1CHAP V2 é recomendado, pois o NPS comprova sua identidade para clientes sem fio usando um certificado de servidor, enquanto os usuários provam sua identidade com seu nome de usuário e senha.  Para obter mais informações sobre como usar o NPS em sua implantação sem fio, consulte [implantar o acesso sem fio autenticado baseado em senha 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access).
+- Implante sua própria autoridade de certificação \(CA @ no__t-1 com Active Directory @ no__t-2 Certificate Services \(AD CS @ no__t-4 ao usar métodos de autenticação com base em certificado forte, como PEAP e EAP, que exigem o uso de um servidor certificado em NPSs. Você também pode usar sua autoridade de certificação para registrar certificados de computador e certificados de usuário. Para obter mais informações sobre como implantar certificados de servidor em servidores de acesso remoto e NPS, consulte [implantar certificados de servidor para implantações com e sem fio 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments).
 
 > [!IMPORTANT]
 > O NPS (servidor de diretivas de rede) não oferece suporte ao uso de caracteres ASCII estendidos em senhas.
@@ -85,9 +85,9 @@ A seguir estão as práticas recomendadas para o ajuste de desempenho do NPS.
 
 - Para otimizar a autenticação NPS e os tempos de resposta de autorização e minimizar o tráfego de rede, instale o NPS em um controlador de domínio.
 
-- Quando os nomes \(de entidade\) de segurança universal UPNs ou os domínios do Windows Server 2008 e do Windows Server 2003 são usados, o NPS usa o catálogo global para autenticar usuários. Para minimizar o tempo necessário para fazer isso, instale o NPS em um servidor de catálogo global ou em um servidor que esteja na mesma sub-rede que o servidor de catálogo global.
+- Quando os nomes de entidade de segurança universal \(UPNs @ no__t-1 ou os domínios do Windows Server 2008 e do Windows Server 2003 são usados, o NPS usa o catálogo global para autenticar usuários. Para minimizar o tempo necessário para fazer isso, instale o NPS em um servidor de catálogo global ou em um servidor que esteja na mesma sub-rede que o servidor de catálogo global.
 
-- Quando você tiver grupos de servidores RADIUS remotos configurados e, em políticas de solicitação de conexão NPS, desmarque a caixa de seleção **registrar informações de contabilização nos servidores no seguinte grupo de servidores remotos RADIUS** , esses grupos ainda serão enviados acesso à rede servidor \(nas\) iniciar e parar mensagens de notificação. Isso cria tráfego de rede desnecessário. Para eliminar esse tráfego, desabilite o encaminhamento de notificação do NAS para servidores individuais em cada grupo de servidores RADIUS remotos desmarcando a caixa de seleção **iniciar a rede e parar notificações neste servidor** .
+- Quando você tiver grupos de servidores RADIUS remotos configurados e, em políticas de solicitação de conexão NPS, desmarque a caixa de seleção **registrar informações de contabilização nos servidores no seguinte grupo de servidores remotos RADIUS** , esses grupos ainda serão enviados acesso à rede Server \(NAS @ no__t-2 iniciar e parar mensagens de notificação. Isso cria tráfego de rede desnecessário. Para eliminar esse tráfego, desabilite o encaminhamento de notificação do NAS para servidores individuais em cada grupo de servidores RADIUS remotos desmarcando a caixa de seleção **iniciar a rede e parar notificações neste servidor** .
 
 ## <a name="using-nps-in-large-organizations"></a>Usando o NPS em grandes organizações
 
@@ -97,7 +97,7 @@ A seguir estão as práticas recomendadas para usar o NPS em grandes organizaç�
 
 - Use um nome principal de usuário para se referir aos usuários sempre que possível. Um usuário pode ter o mesmo nome de entidade de usuário, independentemente da Associação de domínio. Essa prática fornece escalabilidade que pode ser necessária em organizações com um grande número de domínios.
 
-- Se você instalou o NPS \(\) do servidor de políticas de rede em um computador que não seja um controlador de domínio e o NPS estiver recebendo um grande número de solicitações de autenticação por segundo, você poderá melhorar o desempenho do NPS aumentando o número de autenticações simultâneas permitidas entre o NPS e o controlador de domínio. Para saber mais, veja 
+- Se você instalou o servidor de políticas de rede \(NPS @ no__t-1 em um computador diferente de um controlador de domínio e o NPS estiver recebendo um grande número de solicitações de autenticação por segundo, você poderá melhorar o desempenho do NPS aumentando o número de autenticações permitidas entre o NPS e o controlador de domínio. Para obter mais informações, consulte . 
 
 ## <a name="security-issues"></a>Problemas de segurança
 
@@ -105,7 +105,7 @@ A seguir estão as práticas recomendadas para a redução de problemas de segur
 
 Quando você estiver administrando um NPS remotamente, não envie dados confidenciais (por exemplo, segredos ou senhas compartilhadas) pela rede em texto sem formatação. Há dois métodos recomendados para a administração remota do NPSs:
 
-- Use Serviços de Área de Trabalho Remota para acessar o NPS. Quando você usa Serviços de Área de Trabalho Remota, os dados não são enviados entre o cliente e o servidor. Somente a interface do usuário do servidor (por exemplo, a imagem do console do sistema operacional e do NPS) é enviada para o cliente Serviços de Área de Trabalho Remota, que é chamado de&reg; conexão de área de trabalho remota no Windows 10. O cliente envia a entrada de teclado e mouse, que é processada localmente pelo servidor que tem Serviços de Área de Trabalho Remota habilitado. Quando Serviços de Área de Trabalho Remota usuários fazem logon, eles podem exibir apenas suas sessões de cliente individuais, que são gerenciadas pelo servidor e são independentes umas das outras. Além disso, Conexão de Área de Trabalho Remota fornece criptografia de 128 bits entre o cliente e o servidor.
+- Use Serviços de Área de Trabalho Remota para acessar o NPS. Quando você usa Serviços de Área de Trabalho Remota, os dados não são enviados entre o cliente e o servidor. Somente a interface do usuário do servidor (por exemplo, a imagem do console do sistema operacional e do NPS) é enviada para o cliente Serviços de Área de Trabalho Remota, que é chamado de Conexão de Área de Trabalho Remota no Windows @ no__t-0 10. O cliente envia a entrada de teclado e mouse, que é processada localmente pelo servidor que tem Serviços de Área de Trabalho Remota habilitado. Quando Serviços de Área de Trabalho Remota usuários fazem logon, eles podem exibir apenas suas sessões de cliente individuais, que são gerenciadas pelo servidor e são independentes umas das outras. Além disso, Conexão de Área de Trabalho Remota fornece criptografia de 128 bits entre o cliente e o servidor.
 
 - Use o IPsec (Internet Protocol Security) para criptografar dados confidenciais. Você pode usar o IPsec para criptografar a comunicação entre o NPS e o computador cliente remoto que você está usando para administrar o NPS. Para administrar o servidor remotamente, você pode instalar o [ferramentas de administração de servidor remoto para Windows 10](https://www.microsoft.com/download/details.aspx?id=45520) no computador cliente. Após a instalação, use o MMC (console de gerenciamento Microsoft) para adicionar o snap-in do NPS ao console do.
 

@@ -2,7 +2,7 @@
 title: Habilitar ou desabilitar a Proteção de disco
 description: Saiba como usar a proteção de disco com os serviços do MultiPoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.assetid: 00aba4c4-0244-4b39-8c85-c46fd96e1d6a
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: d037b0843f5ba50c98e0d6e7cb10836c8d6fa23a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ad5f12a3901a3faf3559abae76e0ba924dce2eb9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871753"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389755"
 ---
 # <a name="enable-or-disable-disk-protection"></a>Habilitar ou desabilitar a Proteção de disco
 O recurso Proteção de Disco permite que você redefina seu sistema MultiPoint Services para um estado especificado sempre que o sistema for reiniciado. Usando a Proteção de Disco, os usuários podem temporariamente fazer alterações no sistema MultiPoint Services e, em seguida, essas alterações são descartadas quando o servidor é reiniciado. Exemplos de alterações que serão descartadas quando o servidor for reiniciado incluem a personalização do perfil de um usuário, a gravação de arquivos, a alteração de configurações ou a instalação de aplicativos.  

@@ -2,7 +2,7 @@
 title: ren
 description: Saiba como renomear um arquivo ou diretório com o comando ren.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 34c761cb08916d277f8f7f1c58d57a05ed2c8daf
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2ba3f6a13dc03c0b6a5561be9f0f692546a25149
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441813"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384582"
 ---
 # <a name="ren"></a>ren
 
-Renomeia a arquivos ou diretórios. Esse comando é igual a **Renomear** comando.
+Renomeia arquivos ou diretórios. Esse comando é o mesmo que o comando **renomear** .
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -37,27 +37,27 @@ rename [<Drive>:][<Path>]<FileName1> <FileName2>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[\<Drive>:][\<Path>]\<FileName1>|Especifica o local e o nome do arquivo ou conjunto de arquivos que você deseja renomear. *Arquivo1* pode incluir caracteres curinga ( **&#42;** e **?** ).|
-|\<FileName2>|Especifica o novo nome para o arquivo. Você pode usar caracteres curinga para especificar os novos nomes para vários arquivos.|
+|[\<Drive >:] [\<Path >] \<FileName1 >|Especifica o local e o nome do arquivo ou conjunto de arquivos que você deseja renomear. *Arquivo1* pode incluir caracteres curinga ( **&#42;** e **?** ).|
+|\<FileName2 >|Especifica o novo nome para o arquivo. Você pode usar caracteres curinga para especificar novos nomes para vários arquivos.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
 - Você não pode especificar uma nova unidade ou caminho ao renomear arquivos.
-- Não é possível usar o **ren** comando para renomear arquivos entre unidades ou mover arquivos para um diretório diferente.
-- Você pode usar caracteres curinga ( **&#42;** e **?** ) em um *FileName* parâmetro. Caracteres que são representados por caracteres curinga em *FileName2* serão idênticos aos caracteres correspondentes nos *arquivo1*.
-- *FileName2* deve ser um nome de arquivo exclusivo. Se *FileName2* corresponde a um nome de arquivo existente **ren** exibe a seguinte mensagem:  
+- Você não pode usar o comando **Ren** para renomear arquivos entre unidades ou para mover arquivos para um diretório diferente.
+- Você pode usar caracteres curinga ( **&#42;** e **?** ) em qualquer parâmetro *filename* . Os caracteres representados por caracteres curinga em *arquivo2* serão idênticos aos caracteres correspondentes em *arquivo1*.
+- *Arquivo2* deve ser um nome de arquivo exclusivo. Se *arquivo2* corresponder a um nome de arquivo existente, **Ren** exibirá a seguinte mensagem:  
   ```
   Duplicate file name or file not found
   ```
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para alterar todas as extensões de nome de arquivo. txt no diretório atual para extensões. doc, digite:
 ```
 ren *.txt *.doc 
 ```
-Para alterar o nome de um diretório de Cap10 para Parte10, digite:
+Para alterar o nome de um diretório de Chap10 para Part10, digite:
 ```
 ren chap10 part10 
 ```

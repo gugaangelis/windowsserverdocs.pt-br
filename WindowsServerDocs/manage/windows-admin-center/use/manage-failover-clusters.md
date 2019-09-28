@@ -1,48 +1,48 @@
 ---
-title: Gerenciar Clusters de Failover com o Windows Admin Center
-description: Gerenciar Clusters de Failover com o Windows Admin Center (projeto Paulo)
+title: Gerenciar clusters de failover com o centro de administração do Windows
+description: Gerenciar clusters de failover com o centro de administração do Windows (projeto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: f7e14581f7f6b14b0cf39308de236b68a07e8c9f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.prod: windows-server
+ms.openlocfilehash: 16e758f0a8746d41adcdafb2bc1be2d91a3fc29c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824067"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406809"
 ---
-# <a name="manage-failover-clusters-with-windows-admin-center"></a>Gerenciar Clusters de Failover com o Windows Admin Center
+# <a name="manage-failover-clusters-with-windows-admin-center"></a>Gerenciar clusters de failover com o centro de administração do Windows
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 > [!Tip]
 > Novo no Windows Admin Center?
 > [Saiba mais sobre o Windows Admin Center](../understand/windows-admin-center.md) ou [Baixe agora](https://aka.ms/windowsadmincenter).
 
-## <a name="managing-failover-clusters"></a>Gerenciar clusters de failover
-[Clustering de failover](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview) é um recurso do Windows Server que permite a você agrupar vários servidores em um cluster e tolerante a falhas para aumentar a disponibilidade e escalabilidade de aplicativos e serviços, como o servidor de arquivos de escalabilidade horizontal, Hyper-V e Microsoft SQL Server.
+## <a name="managing-failover-clusters"></a>Gerenciando clusters de failover
+O [clustering de failover](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview) é um recurso do Windows Server que permite agrupar vários servidores juntos em um cluster tolerante a falhas para aumentar a disponibilidade e a escalabilidade de aplicativos e serviços, como o servidor de arquivos de escalabilidade horizontal, o Hyper-V e o Microsoft SQL Server.
 
-Embora você possa gerenciar nós de cluster de failover como servidores individuais, adicionando-os como [conexões de servidor](manage-servers.md) no do Windows Admin Center, você também pode adicioná-los como clusters de Failover para exibir e gerenciar recursos de cluster, armazenamento, rede, nós, funções, as máquinas virtuais e comutadores virtuais.
+Embora você possa gerenciar nós de cluster de failover como servidores individuais adicionando-os como [conexões de servidor](manage-servers.md) no centro de administração do Windows, você também pode adicioná-los como clusters de failover para exibir e gerenciar recursos de cluster, armazenamento, rede, nós, funções, virtual computadores e comutadores virtuais.
 
 ![Tela de visão geral do cluster de failover](../media/manage-failover-clusters/fcm-overview.png)
 
-## <a name="adding-a-failover-cluster-to-windows-admin-center"></a>A adição de um cluster de failover do Windows Admin Center
-Para adicionar um cluster para Windows Admin Center:
+## <a name="adding-a-failover-cluster-to-windows-admin-center"></a>Adicionando um cluster de failover ao centro de administração do Windows
+Para adicionar um cluster ao centro de administração do Windows:
 
-1. Clique em **+ adicionar** em todas as conexões.
-2. Optar por adicionar um **Conexão de Failover**.
-3. Digite o nome do cluster e, se solicitado, as credenciais a usar.
-4. Você terá a opção de adicionar os nós do cluster como conexões de servidor individuais em Windows Admin Center.
-5. Clique em **enviar** para concluir.
+1. Clique em **+ Adicionar** em todas as conexões.
+2. Escolha Adicionar uma **conexão de failover**.
+3. Digite o nome do cluster e, se solicitado, as credenciais a serem usadas.
+4. Você terá a opção de adicionar os nós de cluster como conexões de servidor individuais no centro de administração do Windows.
+5. Clique em **Enviar** para concluir.
 
-O cluster será adicionado à sua lista de conexão na página de visão geral. Clique nele para se conectar ao cluster.
+O cluster será adicionado à sua lista de conexões na página Visão geral. Clique para se conectar ao cluster.
 
 > [!NOTE]
-> Você também pode gerenciar hiperconvergente em cluster adicionando o cluster como um [conexão de Cluster Hyper-Converged](manage-hyper-converged.md) no Windows Admin Center.
+> Você também pode gerenciar o cluster hiperconvergente adicionando o cluster como uma [conexão de cluster hiperconvergente](manage-hyper-converged.md) no centro de administração do Windows.
 
 ## <a name="tools"></a>Ferramentas
 
@@ -51,22 +51,22 @@ As seguintes ferramentas estão disponíveis para conexões de cluster de failov
 | Ferramenta | Descrição |
 | ---- | ----------- |
 | Visão geral | Exibir detalhes do cluster de failover e gerenciar recursos de cluster |
-| Discos | Compartilhado do cluster de modo de exibição discos e volumes |
+| Discos | Exibir volumes e discos compartilhados do cluster |
 | Redes | Exibir redes no cluster |
 | Nós | Exibir e gerenciar nós de cluster |
 | Funções | Gerenciar funções de cluster ou criar uma função vazia |
-| Atualizações | Gerenciar atualizações com suporte a Cluster |
+| Atualizações | Gerenciar atualizações com suporte a cluster (requer [CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)) |
 | [Máquinas Virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
-| Comutadores Virtuais | Exibir e gerenciar os comutadores virtuais |
+| Comutadores Virtuais | Exibir e gerenciar comutadores virtuais |
 
-## <a name="more-coming"></a>Aguarde mais
+## <a name="more-coming"></a>Mais em breve
 
-Gerenciamento de cluster de failover no Windows Admin Center ativamente está em desenvolvimento e novos recursos serão adicionados no futuro próximo. Você pode exibir o status e votar em recursos no UserVoice:
+O gerenciamento de cluster de failover no centro de administração do Windows está ativamente em desenvolvimento e novos recursos serão adicionados em breve. Você pode exibir o status e votar para recursos no UserVoice:
 
 |Solicitação de recurso|
 |-------|
 | [Mostrar mais informações de disco clusterizado](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31740424--cluster-more-disk-info-in-failover-cluster-manag) |
 | [Suporte a ações de cluster adicionais](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/33558076--fcm-full-csv-management-cycle-in-one-place) |
-| [Suporte a clusters convergentes executando o Hyper-V e o servidor de arquivos de escalabilidade horizontal em diferentes clusters](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31729741--cluster-support-for-converged-architecture) |
-| [Cache de bloco CSV do modo de exibição](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31669477--cluster-csv-block-cache) |
-| [Ver todos os ou propor o novo recurso](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bcluster%5D) |
+| [Suporte a clusters convergidos que executam o Hyper-V e Servidor de Arquivos de Escalabilidade Horizontal em clusters diferentes](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31729741--cluster-support-for-converged-architecture) |
+| [Exibir cache de bloco CSV](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31669477--cluster-csv-block-cache) |
+| [Ver todo ou propor novo recurso](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bcluster%5D) |

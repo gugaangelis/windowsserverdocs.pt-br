@@ -3,7 +3,7 @@ title: Planejar uma infraestrutura de rede definida pelo software
 description: Este tópico fornece informações sobre como planejar sua implantação de infraestrutura de SDN (rede definida pelo software).
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: virtual-network
 ms.suite: na
@@ -14,12 +14,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: pashort
 author: shortpatti
 ms.date: 08/10/2018
-ms.openlocfilehash: e2c125867b461cee9f694849db5c8f61be91211d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ed2dc8861366b929de346d5bd5b3d40998cc8dd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869938"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355791"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planejar uma infraestrutura de rede definida pelo software
 
@@ -236,7 +236,7 @@ Qualquer tipo de armazenamento compatível com o Hyper-V, compartilhado ou local
 **Requisitos de computação do host**  
 A tabela a seguir mostra os requisitos mínimos de hardware e software para os quatro hosts físicos usados na implantação de exemplo.  
 
-Host|Requisitos de Hardware|Requisitos de software|  
+Host|Requisitos de Hardware|Requisitos de Software|  
 --------|-------------------------|-------------------------  
 |Host do Hyper-v físico|CPU de 4-core de 2,66 GHz<br /><br />32 GB de RAM<br /><br />300 GB de espaço em disco<br /><br />1 GB/s (ou mais rápido) adaptador de rede física|SISTEMAS Windows Server 2016<br /><br />Função do Hyper-V instalada|  
 

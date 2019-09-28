@@ -1,8 +1,8 @@
 ---
 title: Criar SC
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7931ddc91b91d5fce01335f4b090d0305790f65c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8ea8f1c33472b7ac95ec0282a50d902a9d7cf84d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826497"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384368"
 ---
 # <a name="sc-create"></a>Criar SC
 
@@ -38,28 +38,28 @@ sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ServerName>|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato de convenção de nomenclatura Universal (UNC) (por exemplo, \\ \\myserver). Para executar SC.exe localmente, omita este parâmetro.|
-|\<ServiceName>|Especifica o nome do serviço retornado pelo **getkeyname** operação.|
-|tipo = {próprios \| compartilham \| kernel \| sist \| rec \| interagir tipo = {próprio \| compartilhar}}|Especifica o tipo de serviço. A configuração padrão é **tipo = próprio**.</br>**próprio** -Especifica que o serviço é executado em seu próprio processo. Ele não compartilha um arquivo executável com outros serviços. Essa é a configuração padrão.</br>**compartilhar** -Especifica que o serviço é executado como um processo compartilhado. Ele compartilha um arquivo executável com outros serviços.</br>**kernel** -Especifica um driver.</br>**sist** -Especifica um driver de sistema de arquivos.</br>**Rec** -Especifica um driver de sistema reconhecido do arquivo (identifica os sistemas de arquivo usados no computador).</br>**interagir** -Especifica que o serviço pode interagir com a área de trabalho, recebendo entrada de usuários. Serviços interativos devem ser executados sob a conta LocalSystem. Esse tipo deve ser usado em conjunto com **tipo = próprios** ou **tipo = compartilhado**. Usando o **tipo = interagir** por si só irá gerar um erro de "parâmetro inválido".|
-|Iniciar = {boot \| system \| automática \| demanda \| desabilitada}|Especifica o tipo de início para o serviço. A configuração padrão é **iniciar = demand**.</br>**inicialização** -Especifica um driver de dispositivo que é carregado pelo carregador de inicialização.</br>**sistema** -Especifica um driver de dispositivo for iniciado durante a inicialização do kernel.</br>**auto** -Especifica um serviço que inicia automaticamente cada vez que o computador for reiniciado. Observe que o serviço é executado mesmo se ninguém faz logon computador.</br>**demanda** -Especifica um serviço que deve ser iniciado manualmente. Isso é o valor padrão se **iniciar =** não for especificado.</br>**desabilitado** -Especifica um serviço que não pode ser iniciado. Para iniciar um serviço desativado, altere o tipo de início para algum outro valor.|
-|erro = {normal \| graves \| crítica \| ignorar}|Especifica a gravidade do erro se o serviço falhar quando o computador é iniciado. A configuração padrão é **erro = normal**.</br>**normal** -Especifica que o erro está registrado. Uma caixa de mensagem é exibida, informando ao usuário que um serviço falhou ao iniciar. A inicialização continuará. Essa é a configuração padrão.</br>**Grave** -Especifica que o erro está registrado (se possível). O computador tenta reiniciar com a última configuração válida. Isso pode resultar em um computador que está sendo capaz de reiniciar, mas ainda pode ser não é possível executar o serviço.</br>**crítico** -Especifica que o erro está registrado (se possível). O computador tenta reiniciar com a última configuração válida. Se a última configuração válida falhar, também haverá falha e o processo de inicialização for interrompida com um erro de parada.</br>**Ignorar** -Especifica que o erro é registrado e a inicialização continua. Nenhuma notificação é fornecida para o usuário além do registro do erro no log de eventos.|
-|binpath= \<BinaryPathName>|Especifica um caminho para o arquivo binário do serviço. Não há nenhum padrão para **binpath =**, e essa cadeia de caracteres deve ser fornecida.|
-|group= \<LoadOrderGroup>|Especifica o nome do grupo do qual esse serviço é um membro. A lista de grupos é armazenada no registro na **HKLM\System\CurrentControlSet\Control\ServiceGroupOrder.** subchave. O valor padrão é nulo.|
-|marca = {Sim \| nenhuma}|Especifica se uma TagID deve ser obtido da chamada CreateService. Marcas são usadas somente para drivers de inicialização do computador e do sistema.|
-|depend= \<dependencies>|Especifica os nomes de serviços ou grupos que devem ser iniciados antes que esse serviço é iniciado. Os nomes são separados por barras (/).|
-|obj= {\<AccountName> \| \<ObjectName>}|Especifica o nome de uma conta na qual um serviço será executado, ou especifica um nome de objeto do driver do Windows no qual o driver será executado.|
-|displayname= \<DisplayName>|Especifica um nome amigável que pode ser usado por programas de interface do usuário para identificar o serviço.|
-|senha = \<senha >|Especifica uma senha. Isso é necessário se uma conta diferente de LocalSystem for usada.|
+|\<ServerName >|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo, \\ @ no__t-1myserver). Para executar o SC. exe localmente, omita esse parâmetro.|
+|\<ServiceName >|Especifica o nome do serviço retornado pela operação **GetKeyName** .|
+|tipo = {próprio \| compartilhamento \| kernel \| arquivos de \| REC \| interagir tipo = {próprio compartilhamento de \|}}|Especifica o tipo de serviço. A configuração padrão é **Type =** is.</br>**próprio** -especifica que o serviço é executado em seu próprio processo. Ele não compartilha um arquivo executável com outros serviços. Essa é a configuração padrão.</br>**compartilhamento** – especifica que o serviço é executado como um processo compartilhado. Ele compartilha um arquivo executável com outros serviços.</br>**kernel** -especifica um driver.</br>**arquivos** -especifica um driver de sistema de arquivos.</br>**REC** -especifica um driver reconhecido pelo sistema de arquivos (identifica os sistemas de arquivos usados no computador).</br>**interagir** -especifica que o serviço pode interagir com a área de trabalho, recebendo entrada de usuários. Os serviços interativos devem ser executados na conta LocalSystem. Esse tipo deve ser usado em conjunto com **Type = próprio** ou **Type = Shared**. Usar **Type = interagir** por si só gerará um erro de "parâmetro inválido".|
+|start = {boot \| sistema \| auto \| demanda \| Disabled}|Especifica o tipo de início para o serviço. A configuração padrão é **Iniciar = demanda**.</br>**boot** -especifica um driver de dispositivo que é carregado pelo carregador de inicialização.</br>**sistema** -especifica um driver de dispositivo que é iniciado durante a inicialização do kernel.</br>**automaticamente** especifica um serviço que é iniciado automaticamente cada vez que o computador é reiniciado. Observe que o serviço é executado mesmo que não haja um logon no computador.</br>**demanda** -especifica um serviço que deve ser iniciado manualmente. Esse será o valor padrão se **Start =** não for especificado.</br>**Disabled** -especifica um serviço que não pode ser iniciado. Para iniciar um serviço desabilitado, altere o tipo de início para algum outro valor.|
+|erro = {normal \| grave \| crítico \| ignorar}|Especifica a severidade do erro se o serviço falhar quando o computador for iniciado. A configuração padrão é **Error = normal**.</br>**normal** -especifica que o erro é registrado. Uma caixa de mensagem é exibida, informando ao usuário que um serviço falhou ao ser iniciado. A inicialização continuará. Essa é a configuração padrão.</br>**grave** -especifica que o erro é registrado (se possível). O computador tenta reiniciar com a última configuração válida conhecida. Isso pode fazer com que o computador possa ser reiniciado, mas o serviço ainda pode não ser executado.</br>**crítico** -especifica que o erro é registrado (se possível). O computador tenta reiniciar com a última configuração válida conhecida. Se a configuração válida mais conhecida falhar, a inicialização também falhará e o processo de inicialização é interrompido com um erro de parada.</br>**ignorar** – especifica que o erro é registrado e a inicialização continua. Nenhuma notificação é dada ao usuário além de registrar o erro no log de eventos.|
+|BinPath = \<BinaryPathName >|Especifica um caminho para o arquivo binário do serviço. Não há nenhum padrão para **BinPath =** , e essa cadeia de caracteres deve ser fornecida.|
+|Group = \<LoadOrderGroup >|Especifica o nome do grupo do qual esse serviço é membro. A lista de grupos é armazenada no registro na subchave **HKLM\System\CurrentControlSet\Control\ServiceGroupOrder** . O valor padrão é NULL.|
+|marca = {Sim \| não}|Especifica se um TagID deve ser obtido ou não da chamada CreateService. As marcas são usadas somente para os drivers inicialização e início do sistema.|
+|depend = \<dependencies >|Especifica os nomes de serviços ou grupos que devem ser iniciados antes do início desse serviço. Os nomes são separados por barras (/).|
+|obj = {\<AccountName > \| \<ObjectName >}|Especifica o nome de uma conta na qual um serviço será executado ou especifica um nome do objeto de driver do Windows no qual o driver será executado.|
+|DisplayName = \<DisplayName >|Especifica um nome amigável que pode ser usado por programas de interface do usuário para identificar o serviço.|
+|Password = \<Password >|Especifica uma senha. Isso será necessário se uma conta diferente de LocalSystem for usada.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   Para cada opção de linha de comando, o sinal de igual é parte do nome da opção.
--   Um espaço é necessário entre uma opção e seu valor (por exemplo, **tipo = próprio**. Se o espaço for omitido a operação falhará.
+-   Para cada opção de linha de comando, o sinal de igual faz parte do nome da opção.
+-   Um espaço é necessário entre uma opção e seu valor (por exemplo, **tipo = próprio**. Se o espaço for omitido, a operação falhará.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Os exemplos a seguir mostram como você pode usar o **sc criar** comando:
+Os exemplos a seguir mostram como você pode usar o comando **SC Create** :
 ```
 sc \\myserver create NewService binpath= c:\windows\system32\NewServ.exe
 sc create NewService binpath= c:\windows\system32\NewServ.exe type= share start= auto depend= "+TDI NetBIOS"
@@ -67,4 +67,4 @@ sc create NewService binpath= c:\windows\system32\NewServ.exe type= share start=
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

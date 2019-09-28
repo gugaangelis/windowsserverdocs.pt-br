@@ -3,7 +3,7 @@ title: Planejamento do site do MultiPoint Services
 description: Informações de planejamento para implantações de serviços do MultiPoint no Windows Server 2016
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 063783cd-d748-489e-b175-46eadc993f7a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 3d49b2861d81a938fb20544c3edeb0976ac6d327
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871636"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389600"
 ---
 # <a name="multipoint-services-site-planning"></a>Planejamento do site do MultiPoint Services
 Você deve considerar o local em que um ou mais computadores que executam os serviços do MultiPoint e suas estações associadas serão implantados.  

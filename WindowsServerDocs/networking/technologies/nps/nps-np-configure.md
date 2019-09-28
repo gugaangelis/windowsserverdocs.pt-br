@@ -1,225 +1,225 @@
 ---
 title: Configurar políticas de rede
-description: Este tópico fornece uma visão geral da configuração de diretiva de rede para o servidor de políticas de rede no Windows Server 2016.
+description: Este tópico fornece uma visão geral da configuração de política de rede para o servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: fe77655a-e2be-4949-92e1-aaaa215d86ea
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e8a03a6c67ddd59549cefc9742ca92e0702f92a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2bde42ba9b9489ddcd8fb3673ec5ddf1fd4d970
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841997"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396354"
 ---
 # <a name="configure-network-policies"></a>Configurar políticas de rede
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para configurar políticas de rede no NPS.
 
-## <a name="add-a-network-policy"></a>Adicione uma diretiva de rede
+## <a name="add-a-network-policy"></a>Adicionar uma política de rede
 
-Servidor de diretivas de rede \(NPS\) usa políticas e as propriedades de discagem das contas de usuário para determinar se uma solicitação de conexão está autorizada a conectar-se à rede de rede.
+O servidor de políticas de rede \(NPS @ no__t-1 usa políticas de rede e as propriedades de discagem de contas de usuário para determinar se uma solicitação de conexão está autorizada a se conectar à rede.
 
-Você pode usar este procedimento para configurar uma nova política de rede no console do NPS ou o console de acesso remoto.
+Você pode usar este procedimento para configurar uma nova política de rede no console do NPS ou no console de acesso remoto.
 
-### <a name="performing-authorization"></a>Execução de autorização
+### <a name="performing-authorization"></a>Executando autorização
 
-Quando o NPS realiza a autorização de uma solicitação de conexão, ele compara a solicitação com cada diretiva de rede na lista ordenada de políticas, começando com a primeira diretiva e, em seguida, movendo para baixo na lista de políticas configuradas. Se o NPS encontrar uma diretiva cujas condições correspondem à solicitação de conexão, o NPS usa a política de correspondência e as propriedades de discagem da conta de usuário para executar a autorização. Se as propriedades de discagem da conta de usuário são configuradas para conceder acesso ou controlar o acesso por meio da diretiva de rede e a solicitação de conexão for autorizada, o NPS aplica as configurações que são configuradas na política de rede para a conexão.
+Quando o NPS executa a autorização de uma solicitação de conexão, ele compara a solicitação com cada política de rede na lista ordenada de políticas, começando pela primeira política e, em seguida, movendo a lista de políticas configuradas. Se o NPS encontrar uma política cujas condições correspondam à solicitação de conexão, o NPS usará a política de correspondência e as propriedades de discagem da conta de usuário para executar a autorização. Se as propriedades de discagem da conta de usuário estiverem configuradas para conceder acesso ou controlar o acesso por meio da diretiva de rede e a solicitação de conexão for autorizada, o NPS aplicará as configurações definidas na política de rede para a conexão.
 
-Se o NPS não encontrar uma diretiva de rede que corresponda à solicitação de conexão, a solicitação de conexão é rejeitada, a menos que as propriedades de discagem na conta de usuário são definidas para conceder acesso.
+Se o NPS não encontrar uma política de rede que corresponda à solicitação de conexão, a solicitação de conexão será rejeitada, a menos que as propriedades de discagem na conta de usuário estejam definidas para conceder acesso.
 
-Se as propriedades de discagem da conta de usuário são definidas para negar acesso, a solicitação de conexão é rejeitada pelo NPS.
+Se as propriedades de discagem da conta de usuário estiverem definidas para negar acesso, a solicitação de conexão será rejeitada pelo NPS.
 
 ### <a name="key-settings"></a>Configurações de chave
 
-Quando você usa o Assistente de nova diretiva de rede para criar uma política de rede, o valor que você especificar na **método de conexão de rede** é usado para configurar automaticamente o **tipo de política** condição: 
+Quando você usa o assistente de nova política de rede para criar uma política de rede, o valor que você especifica no **método de conexão de rede** é usado para configurar automaticamente a condição de tipo de **política** : 
 
-- Se você mantiver o valor padrão não especificado, a política de rede que você criar será avaliada pelo NPS para todos os tipos de conexão de rede que estão usando qualquer tipo de servidor de acesso de rede (NAS).
-- Se você especificar um método de conexão de rede, o NPS avalia a política de rede somente se a solicitação de conexão se origina do tipo de rede do servidor de acesso que você especificar.
+- Se você mantiver o valor padrão de não especificado, a política de rede que você criar será avaliada pelo NPS para todos os tipos de conexão de rede que estão usando qualquer tipo de NAS (servidor de acesso à rede).
+- Se você especificar um método de conexão de rede, o NPS avaliará a diretiva de rede somente se a solicitação de conexão for proveniente do tipo de servidor de acesso à rede que você especificar.
 
-Sobre o **permissão de acesso** página, você deve selecionar **acesso concedido** se desejar que a política para permitir que os usuários se conectem à sua rede. Se você quiser impedir que os usuários se conectem à sua rede, selecione a política **acesso negado**. 
+Na página **permissão de acesso** , você deve selecionar **acesso concedido** se desejar que a política permita que os usuários se conectem à sua rede. Se você quiser que a política impeça que os usuários se conectem à sua rede, selecione **acesso negado**. 
 
-Se você quiser que a permissão de acesso seja determinado pelo usuário dial-in de propriedades da conta no Active Directory&reg; serviços de domínio \(AD DS\), você pode selecionar o **acesso é determinado pelas propriedades de usuário Dial-in** caixa de seleção.
+Se você quiser que a permissão de acesso seja determinada pelas propriedades de discagem da conta de usuário no Active Directory @ no__t-0 Domain Services \(AD DS @ no__t-2, você poderá marcar a caixa de seleção o **acesso é determinado pela propriedade de discagem do usuário** .
 
 Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
 
 ### <a name="to-add-a-network-policy"></a>Para adicionar uma política de rede 
 
-1. Abra o console do NPS e, em seguida, clique duas vezes **políticas**.
+1. Abra o console do NPS e clique duas vezes em **políticas**.
 
-2. Na árvore de console, clique com botão direito **diretivas de rede**e clique em **New**. Abre o Assistente de nova diretiva de rede.
+2. Na árvore de console, clique com o botão direito do mouse em **políticas de rede**e clique em **novo**. O assistente de nova política de rede é aberto.
 
-3. Use o Assistente de nova diretiva de rede para criar uma política.
+3. Use o assistente de nova política de rede para criar uma política.
 
-## <a name="create-network-policies-for-dial-up-or-vpn-with-a-wizard"></a>Criar políticas de rede para conexões discadas ou VPN com um assistente
+## <a name="create-network-policies-for-dial-up-or-vpn-with-a-wizard"></a>Criar políticas de rede para dial-up ou VPN com um assistente
 
-Você pode usar este procedimento para criar a conexão de diretivas de solicitação e necessárias para implantar servidores dial-up ou rede virtual privada de políticas de rede \(VPN\) servidores como Remote Authentication Dial-In User Service \(RADIUS\) clientes para o servidor NPS RADIUS.
+Você pode usar este procedimento para criar as políticas de solicitação de conexão e as políticas de rede necessárias para implantar servidores dial-up ou rede privada virtual \(VPN @ no__t-1 como serviço RADIUS \(RADIUS @ no__t-3 clientes para o servidor RADIUS NPS.
 
 >[!NOTE]
->Computadores cliente, como laptops e outros computadores que executam sistemas operacionais cliente, não são clientes RADIUS. Os clientes RADIUS são servidores de acesso à rede — como pontos de acesso sem fio, comutadores de autenticação 802.1X, rede virtual privada \(VPN\) servidores e os servidores de discagem — porque esses dispositivos usam o protocolo RADIUS para se comunicar com servidores RADIUS, como NPSs.
+>Computadores cliente, como computadores laptop e outros computadores que executam sistemas operacionais cliente, não são clientes RADIUS. Os clientes RADIUS são servidores de acesso à rede — como pontos de acesso sem fio, comutadores de autenticação 802.1 X, rede privada virtual \(VPN @ no__t-1 e servidores dial-up — porque esses dispositivos usam o protocolo RADIUS para se comunicar com o RADIUS servidores como o NPSs.
 
-Este procedimento explica como abrir o novo Assistente de Dial-up ou conexões de rede Virtual privada no NPS.
+Este procedimento explica como abrir o novo assistente de conexões de rede virtual privada ou dial-up no NPS.
 
-Depois de executar o assistente, as políticas a seguir são criadas:
+Depois de executar o assistente, as seguintes políticas são criadas:
 
-- Diretiva de solicitação de uma conexão
-- Uma diretiva de rede
+- Uma política de solicitação de conexão
+- Uma política de rede
 
-Você pode executar o novo Assistente de Dial-up ou conexões de rede Virtual privada toda vez que você precisa criar novas políticas para servidores dial-up e VPN.
+Você pode executar o novo assistente de conexões de rede virtual privada ou dial-up toda vez que precisar criar novas políticas para servidores de conexão discada e servidores VPN.
 
-Executar o Assistente de nova Dial-up ou conexões de rede Virtual privada não é a única etapa necessária para implantar servidores VPN ou dial-up como clientes RADIUS para o NPS. Ambos os métodos de acesso de rede exigem que você implante os componentes de hardware e software adicionais.
-
-Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
-
-### <a name="to-create-policies-for-dial-up-or-vpn-with-a-wizard"></a>Para criar diretivas para dial-up ou VPN com um assistente
-
-1. Abra o console do NPS. Se ainda não estiver selecionado, clique em **NPS \(Local\)**. Se você quiser criar políticas em um NPS remoto, selecione o servidor.
-
-2. Na **guia de Introdução** e **configuração padrão**, selecione **servidor RADIUS para conexões de VPN ou Dial-Up**. O texto e os links abaixo do texto mudam para refletir sua seleção.
-
-3. Clique em **configurar VPN ou Dial-Up com um assistente**. O novo Assistente de Dial-up ou conexões de rede privada Virtual é aberto.
-
-4. Siga as instruções no Assistente para concluir a criação de suas políticas de novo.
-
-## <a name="create-network-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Criar políticas de rede de 802.1 X com ou sem fio com um assistente
-
-Você pode usar este procedimento para criar a diretiva de solicitação de conexão e a diretiva de rede que são necessários para implantar comutadores de autenticação 802.1X ou pontos de acesso sem fio 802.1 X como clientes RADIUS Remote Authentication Dial-In usuário Service () para o NPS Servidor RADIUS.
-
-Este procedimento explica como iniciar o Assistente de novo IEEE 802.1 X com fio e seguras conexões sem fio no NPS.
-
-Depois de executar o assistente, as políticas a seguir são criadas:
-
-- Diretiva de solicitação de uma conexão
-- Uma diretiva de rede
-
-Você pode executar o Assistente de novo IEEE 802.1 X com fio e seguras conexões sem fio toda vez que você precisa criar novas políticas de acesso 802.1 X.
-
-Executar o Assistente de novo IEEE 802.1 X com fio e seguras conexões sem fio não é a única etapa necessária para implantar autenticação 802.1 X comutadores e pontos de acesso sem fio como clientes RADIUS para o NPS. Ambos os métodos de acesso de rede exigem que você implante os componentes de hardware e software adicionais.
+A execução do novo assistente de conexões de rede virtual privada ou dial-up não é a única etapa necessária para implantar servidores VPN ou discadas como clientes RADIUS para o NPS. Os dois métodos de acesso à rede exigem que você implante componentes de hardware e software adicionais.
 
 Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
 
-### <a name="to-create-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Para criar diretivas para 802.1 X com ou sem fio com um assistente
+### <a name="to-create-policies-for-dial-up-or-vpn-with-a-wizard"></a>Para criar políticas para dial-up ou VPN com um assistente
 
-1. No NPS, no Gerenciador do servidor, clique em **ferramentas**e, em seguida, clique em **Network Policy Server**. Abre o console do NPS. 
+1. Abra o console do NPS. Se ainda não estiver selecionado, clique em **NPS \(local\)** . Se você quiser criar políticas em um NPS remoto, selecione o servidor.
 
-2. Se ainda não estiver selecionado, clique em **NPS \(Local\)**. Se você quiser criar políticas em um NPS remoto, selecione o servidor.
+2. Em **introdução** e **configuração padrão**, selecione **servidor RADIUS para conexões dial-up ou VPN**. O texto e os links sob o texto são alterados para refletir sua seleção.
 
-3. Na **guia de Introdução** e **configuração padrão**, selecione **servidor RADIUS para conexões com fio ou de 802.1X sem fio**. O texto e os links abaixo do texto mudam para refletir sua seleção.
+3. Clique em **Configurar VPN ou dial-up com um assistente**. O novo assistente para conexão discada ou rede virtual privada é aberto.
 
-4. Clique em **configurar 802.1 X usando um assistente**. Abre o Assistente de novo IEEE 802.1 X com fio e seguras conexões sem fio.
+4. Siga as instruções no Assistente para concluir a criação de suas novas políticas.
 
-5. Siga as instruções no Assistente para concluir a criação de suas políticas de novo.
+## <a name="create-network-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Criar políticas de rede para 802.1 X com ou sem fio com um assistente
+
+Você pode usar este procedimento para criar a política de solicitação de conexão e a política de rede que são necessárias para implantar comutadores de autenticação 802.1 X ou pontos de acesso sem fio 802.1 X como clientes RADIUS (serviço RADIUS) para o NPS Servidor RADIUS.
+
+Este procedimento explica como iniciar o novo assistente de conexões sem fio e com fio IEEE 802.1 X seguro no NPS.
+
+Depois de executar o assistente, as seguintes políticas são criadas:
+
+- Uma política de solicitação de conexão
+- Uma política de rede
+
+Você pode executar o novo assistente de conexões com fio e sem fio IEEE 802.1 X seguras toda vez que precisar criar novas políticas para acesso 802.1 X.
+
+A execução do novo assistente de conexões com e sem fio IEEE 802.1 X seguro não é a única etapa necessária para implantar comutadores de autenticação 802.1 X e pontos de acesso sem fio como clientes RADIUS para o NPS. Os dois métodos de acesso à rede exigem que você implante componentes de hardware e software adicionais.
+
+Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+
+### <a name="to-create-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Para criar políticas para 802.1 X com ou sem fio com um assistente
+
+1. No NPS, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto. 
+
+2. Se ainda não estiver selecionado, clique em **NPS \(local\)** . Se você quiser criar políticas em um NPS remoto, selecione o servidor.
+
+3. Em **introdução** e **configuração padrão**, selecione **servidor RADIUS para conexões 802.1 x sem fio ou com fio**. O texto e os links sob o texto são alterados para refletir sua seleção.
+
+4. Clique em **Configurar 802.1 x usando um assistente**. O novo assistente de conexões com e sem fio IEEE 802.1 X seguro é aberto.
+
+5. Siga as instruções no Assistente para concluir a criação de suas novas políticas.
 
 ## <a name="configure-nps-to-ignore-user-account-dial-in-properties"></a>Configurar o NPS para ignorar as propriedades de discagem da conta de usuário
 
-Use este procedimento para configurar uma política de rede do NPS para ignorar as propriedades de discagem das contas de usuário no Active Directory durante o processo de autorização. Contas de usuário no Active Directory Users and Computers têm propriedades de discagem que NPS avalia durante o processo de autorização, a menos que o **permissão de acesso de rede** propriedade da conta de usuário é definida como **controle acesso por meio da diretiva de rede do NPS**. 
+Use este procedimento para configurar uma política de rede NPS para ignorar as propriedades de discagem de contas de usuário no Active Directory durante o processo de autorização. As contas de usuário no Active Directory usuários e computadores têm propriedades de discagem que o NPS avalia durante o processo de autorização, a menos que a propriedade **permissão de acesso à rede** da conta de usuário esteja definida para controlar o **acesso por meio da política de rede do NPS** . 
 
-Há duas circunstâncias em que você talvez queira configurar o NPS para ignorar as propriedades de discagem das contas de usuário no Active Directory:
+Há duas circunstâncias em que você pode desejar configurar o NPS para ignorar as propriedades de discagem de contas de usuário no Active Directory:
 
-- Quando você deseja simplificar a autorização do NPS usando a diretiva de rede, mas não todas as suas contas de usuário tem o **permissão de acesso de rede** propriedade definida como **controlar o acesso por meio da diretiva de rede do NPS**. Por exemplo, algumas contas de usuário podem ter o **permissão de acesso de rede** propriedade da conta de usuário definida como **negar acesso** ou **permitir o acesso**.
+- Quando você deseja simplificar a autorização do NPS usando a política de rede, mas nem todas as suas contas de usuário têm a propriedade de **permissão de acesso à rede** definida para controlar o **acesso por meio da política de rede do NPS**. Por exemplo, algumas contas de usuário podem ter a propriedade **permissão de acesso à rede** da conta de usuário definida para **negar acesso** ou **permitir acesso**.
 
-- Quando outras propriedades de discagem das contas de usuário não são aplicáveis para o tipo de conexão que é configurado na política de rede. Por exemplo, as propriedades que o **permissão de acesso de rede** configuração são aplicáveis somente a dial-in ou conexões VPN, mas a política de rede que você está criando é para conexões de comutador de autenticação ou sem fio.
+- Quando outras propriedades de discagem de contas de usuário não são aplicáveis ao tipo de conexão que está configurado na política de rede. Por exemplo, propriedades diferentes da configuração de **permissão de acesso à rede** são aplicáveis somente a conexões dial-in ou VPN, mas a política de rede que você está criando é para conexões de comutador sem fio ou de autenticação.
 
-Você pode usar este procedimento para configurar o NPS para ignorar as propriedades de discagem da conta de usuário. Se uma solicitação de conexão corresponder a política de rede em que essa caixa de seleção está marcada, o NPS não usa as propriedades de discagem da conta de usuário para determinar se o computador ou usuário está autorizado a acessar a rede; somente as configurações na diretiva de rede são usadas para determinar a autorização.
+Você pode usar este procedimento para configurar o NPS para ignorar as propriedades de discagem da conta de usuário. Se uma solicitação de conexão corresponder à política de rede em que essa caixa de seleção está marcada, o NPS não usará as propriedades de discagem da conta de usuário para determinar se o usuário ou o computador está autorizado a acessar a rede; somente as configurações na política de rede são usadas para determinar a autorização.
 
-Associação na **administradores**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 
-1. No NPS, no Gerenciador do servidor, clique em **ferramentas**e, em seguida, clique em **Network Policy Server**. Abre o console do NPS.
+1. No NPS, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto.
 
-2. Clique duas vezes em **políticas**, clique em **políticas de rede**e, em seguida, no painel de detalhes, clique duas vezes na política que você deseja configurar.
+2. Clique duas vezes em **políticas**, em **políticas de rede**e, no painel de detalhes, clique duas vezes na política que você deseja configurar.
 
-3. Na política **propriedades** caixa de diálogo a **visão geral** guia **permissão de acesso**, selecione o **ignorar conta de usuário dial-in propriedades**caixa de seleção e, em seguida, clique em **Okey**.
+3. Na caixa de **diálogo Propriedades** da política, na guia **visão geral** , em **permissão de acesso**, marque a caixa de seleção **ignorar Propriedades de discagem da conta de usuário** e clique em **OK**.
 
 ### <a name="to-configure-nps-to-ignore-user-account-dial-in-properties"></a>Para configurar o NPS para ignorar as propriedades de discagem da conta de usuário
 
 
 
-## <a name="configure-nps-for-vlans"></a>Configurar o NPS para VLANs
+## <a name="configure-nps-for-vlans"></a>Configurar NPS para VLANs
 
-Usando servidores de acesso de rede com suporte a VLAN e o NPS no Windows Server 2016, você pode fornecer a grupos de usuários com acesso somente aos recursos da rede que são apropriadas para suas permissões de segurança. Por exemplo, você pode fornecer os visitantes com acesso sem fio à Internet sem permitir o acesso à rede da sua organização. 
+Ao usar servidores de acesso à rede com reconhecimento de VLAN e NPS no Windows Server 2016, você pode fornecer grupos de usuários com acesso apenas aos recursos de rede apropriados para suas permissões de segurança. Por exemplo, você pode fornecer aos visitantes acesso sem fio à Internet sem permitir acesso à rede da sua organização. 
 
-Além disso, VLANs permitem logicamente recursos de rede grupo que existem em diferentes locais físicos ou em diferentes sub-redes físicas. Por exemplo, os membros do departamento de vendas e seus recursos de rede, como computadores cliente, servidores e impressoras, podem estar localizados em vários prédios diferentes da sua organização, mas você pode colocar todos esses recursos em uma VLAN que usa o mesmo IP intervalo de endereços. As funções, da perspectiva do usuário final, como uma única sub-rede e VLAN.
+Além disso, as VLANs permitem que você agrupe logicamente os recursos de rede que existem em diferentes locais físicos ou em sub-redes físicas diferentes. Por exemplo, os membros do seu departamento de vendas e seus recursos de rede, como computadores cliente, servidores e impressoras, podem estar localizados em vários prédios diferentes na sua organização, mas você pode posicionar todos esses recursos em uma VLAN que usa o mesmo IP intervalo de endereços. A VLAN, em seguida, funciona, da perspectiva do usuário final, como uma única sub-rede.
 
-Quando você deseja separar uma rede entre diferentes grupos de usuários, você também pode usar VLANs. Depois de determinar como você deseja definir seus grupos, você pode criar grupos de segurança no snap-in computadores e usuários do Active Directory e, em seguida, adicionar membros aos grupos.
+Você também pode usar VLANs quando quiser separar uma rede entre diferentes grupos de usuários. Depois de determinar como deseja definir seus grupos, você pode criar grupos de segurança no snap-in Active Directory usuários e computadores e, em seguida, adicionar membros aos grupos.
 
 ### <a name="configure-a-network-policy-for-vlans"></a>Configurar uma política de rede para VLANs
 
-Você pode usar este procedimento para configurar uma política de rede que atribui usuários a uma VLAN. Quando você usa o hardware de rede de reconhecimento de VLAN, como roteadores, comutadores e acessar os controladores, você pode configurar a política de rede para instruir os servidores de acesso para colocar os membros de grupos do Active Directory em VLANs específicas. Essa capacidade de agrupar recursos de rede lógica com VLANs fornece flexibilidade ao projetar e implementar soluções de rede.
+Você pode usar este procedimento para configurar uma política de rede que atribui usuários a uma VLAN. Ao usar o hardware de rede com reconhecimento de VLAN, como roteadores, comutadores e controladores de acesso, você pode configurar a política de rede para instruir os servidores de acesso a inserir membros de grupos de Active Directory específicos em VLANs específicas. Essa capacidade de agrupar recursos de rede logicamente com VLANs fornece flexibilidade ao projetar e implementar soluções de rede.
 
-Quando você define as configurações de uma política de rede do NPS para uso com VLANs, você deve configurar os atributos **Tunnel-Medium-Type**, **Tunnel-Pvt-Group-ID**, **detipodetúnel**, e **túnel marca**. 
+Ao definir as configurações de uma política de rede NPS para uso com VLANs, você deve configurar os atributos **Tunnel-Medium**, **Tunnel-Pvt-Group-ID**, **túnel-Type**e **Tunnel-Tag**. 
 
-Esse procedimento é fornecido como uma diretriz; sua configuração de rede pode requerer configurações diferentes daqueles descritos abaixo.
+Esse procedimento é fornecido como uma diretriz; sua configuração de rede pode exigir configurações diferentes das descritas abaixo.
 
-Associação na **administradores**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 
 ### <a name="to-configure-a-network-policy-for-vlans"></a>Para configurar uma política de rede para VLANs
 
-1. No NPS, no Gerenciador do servidor, clique em **ferramentas**e, em seguida, clique em **Network Policy Server**. Abre o console do NPS.
+1. No NPS, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto.
 
-2. Clique duas vezes em **políticas**, clique em **políticas de rede**e, em seguida, no painel de detalhes, clique duas vezes na política que você deseja configurar.
+2. Clique duas vezes em **políticas**, em **políticas de rede**e, no painel de detalhes, clique duas vezes na política que você deseja configurar.
 
-3. Na política **propriedades** caixa de diálogo, clique o **configurações** guia.
+3. Na caixa de diálogo **Propriedades** da política, clique na guia **configurações** .
 
-4. Na diretiva **propriedades**, na **configurações**, na **atributos RADIUS**, certifique-se de que **padrão** está selecionado.
+4. Em **Propriedades**da política, em **configurações**, em **atributos RADIUS**, verifique se **padrão** está selecionado.
 
-5. No painel de detalhes, na **atributos**, o **tipo de serviço** atributo estiver configurado com um valor padrão de **enquadramento**. Por padrão, para as políticas com métodos de acesso de VPN e dial-up, o **protocolo de enquadramento** atributo estiver configurado com um valor de **PPP**. Para especificar atributos de conexão adicionais necessários para VLANs, clique em **adicionar**. O **adicionar o atributo RADIUS padrão** caixa de diálogo é aberta.
+5. No painel de detalhes, em **atributos**, o atributo **Service-Type** é configurado com um valor padrão de **Framed**. Por padrão, para políticas com métodos de acesso de VPN e dial-up, o atributo **Framed-Protocol** é configurado com um valor de **PPP**. Para especificar atributos de conexão adicionais necessários para VLANs, clique em **Adicionar**. A caixa de diálogo **Adicionar atributo RADIUS padrão** é aberta.
 
-6. Na **adicionar o atributo RADIUS padrão**, nos atributos, role para baixo e adicione os seguintes atributos:
+6. Em **Adicionar atributo RADIUS padrão**, em atributos, role para baixo e adicione os seguintes atributos:
 
-    - **Tipo de túnel médio**. Selecione um valor apropriado para as seleções anteriores feitas para a política. Por exemplo, se você estiver configurando a política de rede for uma diretiva sem fio, selecione **valor: 802 (inclui todos os 802 mídia mais formato canônico de Ethernet)**.
+    - **Tunnel-Medium-Type**. Selecione um valor apropriado para as seleções anteriores que você fez para a política. Por exemplo, se a política de rede que você está configurando for uma política sem fio, selecione **Value: 802 (inclui todas as mídias 802, mais o formato canônico Ethernet)** .
 
-    - **Tunnel-Pvt-Group-ID**. Insira o número inteiro que representa o número VLAN ao qual os membros do grupo serão atribuídos. 
+    - **Tunnel-Pvt-Group-ID**. Insira o inteiro que representa o número de VLAN ao qual os membros do grupo serão atribuídos. 
 
-    - **Tipo de túnel**. Selecione **LANs virtuais (VLAN)**.
+    - **Tipo de túnel**. Selecione **redes virtuais (VLAN)** .
 
 
-7. Na **adicionar o atributo RADIUS padrão**, clique em **fechar**. 
+7. Em **Adicionar atributo RADIUS padrão**, clique em **fechar**. 
 
-8. Se seu servidor de acesso de rede (NAS) requer o uso do **marca de túnel** do atributo, use as etapas a seguir para adicionar o **túnel marca** de atributo para a política de rede. Se a documentação do NAS não menciona esse atributo, não o adicione à política. Se necessário, adicione os atributos da seguinte maneira:
+8. Se o seu NAS (servidor de acesso à rede) exigir o uso do atributo **Tunnel-Tag** , use as etapas a seguir para adicionar o atributo **Tunnel-Tag** à política de rede. Se a documentação do NAS não mencionar esse atributo, não o adicione à política. Se necessário, adicione os atributos da seguinte maneira:
 
-    - Na diretiva **propriedades**, na **configurações**, na **atributos RADIUS**, clique em **específicas de fornecedor**. 
+    - Em **Propriedades**da política, **em configurações**, em **atributos RADIUS**, clique em **específico do fornecedor**. 
 
-    - No painel de detalhes, clique em **adicionar**. O **Adicionar atributo específico do fornecedor** caixa de diálogo é aberta.
+    - No painel de detalhes, clique em **Adicionar**. A caixa de diálogo **Adicionar atributo específico do fornecedor** é aberta.
 
-    - Na **atributos**, role para baixo e selecione **túnel marca**e, em seguida, clique em **adicionar**. O **informações de atributo** caixa de diálogo é aberta. 
+    - Em **atributos**, role para baixo até e selecione **Tunnel-Tag**e, em seguida, clique em **Adicionar**. A caixa de diálogo **informações de atributo** é aberta. 
 
-    - Na **valor do atributo**, digite o valor que você obteve na documentação do hardware.
+    - Em **valor do atributo**, digite o valor que você obteve da documentação do hardware.
 
 ## <a name="configure-the-eap-payload-size"></a>Configurar o tamanho da carga EAP
 
-Em alguns casos, roteadores ou firewalls descartar pacotes porque eles são configurados para descartar pacotes que exigem a fragmentação.
+Em alguns casos, roteadores ou firewalls descartam pacotes porque eles são configurados para descartar pacotes que exigem fragmentação.
 
-Quando você implanta o NPS com as políticas de rede que usam o protocolo de autenticação extensível \(EAP\) com Transport Layer Security \(TLS\), ou EAP-TLS como método de autenticação, o máximo padrão unidade de transmissão \(MTU\) que o NPS usa para cargas EAP é 1500 bytes. 
+Quando você implanta o NPS com políticas de rede que usam o protocolo de autenticação extensível \(EAP @ no__t-1 com segurança de camada de transporte \(TLS @ no__t-3, ou EAP-TLS, como um método de autenticação, a unidade máxima de transmissão padrão \(MTU @ No_ _T-5 que o NPS usa para cargas de EAP é de 1500 bytes. 
 
-Esse tamanho máximo para a carga EAP pode criar mensagens RADIUS que exigem a fragmentação por um roteador ou firewall entre o NPS e um cliente RADIUS. Se esse for o caso, um roteador ou firewall posicionado entre o cliente RADIUS e o NPS pode descartar silenciosamente alguns fragmentos, resultando em falha de autenticação e a incapacidade de se conectar à rede do cliente de acesso.
+Esse tamanho máximo para a carga EAP pode criar mensagens RADIUS que exigem fragmentação por um roteador ou firewall entre o NPS e um cliente RADIUS. Se esse for o caso, um roteador ou firewall posicionado entre o cliente RADIUS e o NPS pode descartar silenciosamente alguns fragmentos, resultando em falha de autenticação e a incapacidade do cliente de acesso para se conectar à rede.
 
-Use o procedimento a seguir para reduzir o tamanho máximo que o NPS usa para cargas EAP, ajustando o atributo de MTU de enquadramento em uma política de rede para um valor maior do que 1344.
+Use o procedimento a seguir para reduzir o tamanho máximo que o NPS usa para cargas de EAP, ajustando o atributo frame-MTU em uma política de rede para um valor não maior que 1344.
 
-Associação na **administradores**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 
-### <a name="to-configure-the-framed-mtu-attribute"></a>Para configurar o atributo de MTU de enquadramento
+### <a name="to-configure-the-framed-mtu-attribute"></a>Para configurar o atributo frame-MTU
 
-1. No NPS, no Gerenciador do servidor, clique em **ferramentas**e, em seguida, clique em **Network Policy Server**. Abre o console do NPS.
+1. No NPS, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto.
  
-2. Clique duas vezes em **políticas**, clique em **políticas de rede**e, em seguida, no painel de detalhes, clique duas vezes na política que você deseja configurar.
+2. Clique duas vezes em **políticas**, em **políticas de rede**e, no painel de detalhes, clique duas vezes na política que você deseja configurar.
 
-3. Na política **propriedades** caixa de diálogo, clique o **configurações** guia.
+3. Na caixa de diálogo **Propriedades** da política, clique na guia **configurações** .
 
-4. Na **as configurações**, na **atributos RADIUS**, clique em **padrão**. No painel de detalhes, clique em **adicionar**. O **adicionar o atributo RADIUS padrão** caixa de diálogo é aberta.
+4. Em **configurações**, em **atributos RADIUS**, clique em **padrão**. No painel de detalhes, clique em **Adicionar**. A caixa de diálogo **Adicionar atributo RADIUS padrão** é aberta.
 
-5. Na **atributos**, role para baixo e clique em **MTU de enquadramento**e, em seguida, clique em **adicionar**. O **informações de atributo** caixa de diálogo é aberta.
+5. Em **atributos**, role para baixo e clique em **frame-MTU**e, em seguida, clique em **Adicionar**. A caixa de diálogo **informações de atributo** é aberta.
 
-6. Na **valor do atributo**, digite um valor igual ou menor que **1344**. Clique em **Okey**, clique em **Close**e, em seguida, clique em **Okey**.
+6. Em **valor do atributo**, digite um valor igual ou menor que **1344**. Clique em **OK**, em **fechar**e em **OK**.
 
 
 
-Para obter mais informações sobre as políticas de rede, consulte [diretivas de rede](nps-np-overview.md).
+Para obter mais informações sobre diretivas de rede, consulte [Network Policies](nps-np-overview.md).
 
-Para obter exemplos de sintaxe de correspondência para especificar atributos de política de rede, consulte [usar expressões regulares no NPS](nps-crp-reg-expressions.md).
+Para obter exemplos de sintaxe de correspondência de padrões para especificar atributos de política de rede, consulte [usar expressões regulares no NPS](nps-crp-reg-expressions.md).
 
 Para obter mais informações sobre o NPS, consulte [servidor de diretivas de rede (NPS)](nps-top.md).

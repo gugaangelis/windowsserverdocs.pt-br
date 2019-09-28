@@ -2,18 +2,18 @@
 title: Mudar o tempo que os clientes armazenam as referências
 description: Este artigo descreve como mudar o tempo que os clientes armazenam as referências
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 08a1212c983de6e2492609330c1be222286e9e8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c6fcf64dc15404ca59e3ce5552b258f782441cfb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888767"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402263"
 ---
 # <a name="change-the-amount-of-time-that-clients-cache-referrals"></a>Mudar o tempo que os clientes armazenam as referências em cache
 
@@ -27,7 +27,7 @@ Uma referência é uma lista ordenada de destinos que um computador cliente rece
 
 2.  Na árvore de console, no nó **Namespaces**, clique com o botão direito do mouse em um namespace e, em seguida, clique em **Propriedades**.
 
-3.  Na guia **Referências**, na caixa **Duração do cache (em segundos)**, digite o período de tempo (em segundos) que os clientes armazenam em cache as referências da raiz do namespace. A configuração padrão é de 300 segundos (cinco minutos).
+3.  Na guia **Referências**, na caixa **Duração do cache (em segundos)** , digite o período de tempo (em segundos) que os clientes armazenam em cache as referências da raiz do namespace. A configuração padrão é de 300 segundos (cinco minutos).
 
 > [!TIP]
 > Para mudar o tempo que os clientes armazenam as referências de raiz do namespace usando Windows PowerShell, use o [Set-DfsnRoot TimeToLiveSec](https://technet.microsoft.com/library/jj884281.aspx) cmdlet. Esses cmdlets foram introduzidos no Windows Server 2012.
@@ -38,11 +38,11 @@ Uma referência é uma lista ordenada de destinos que um computador cliente rece
 
 2.  Na árvore de console, no nó **Namespaces**, clique com o botão direito do mouse em uma pasta com destinos e, em seguida, clique em **Propriedades**.
 
-3.  Na guia **Referências**, na caixa **Duração do cache (em segundos)**, digite o período de tempo (em segundos) que os clientes armazenam em cache as referências da pasta. A configuração padrão é de 1.800 segundos (30 minutos).
+3.  Na guia **Referências**, na caixa **Duração do cache (em segundos)** , digite o período de tempo (em segundos) que os clientes armazenam em cache as referências da pasta. A configuração padrão é de 1.800 segundos (30 minutos).
 
 ## <a name="see-also"></a>Consulte também
 
--   [Ajuste os Namespaces do DFS](tuning-dfs-namespaces.md)
--   [Delegar permissões de gerenciamento para Namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
+-   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
+-   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
 
 

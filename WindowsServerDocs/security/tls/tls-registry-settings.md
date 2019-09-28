@@ -2,7 +2,7 @@
 title: Configurações de registro de TLS (segurança de camada de transporte)
 description: Segurança do Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
-ms.openlocfilehash: 83146bd8a65b90994ed90a6dda29a4bc00a2533a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870303"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403403"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configurações de registro de TLS (segurança de camada de transporte)
 
@@ -245,7 +245,7 @@ Tabela de subchaves SSL 2,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Cliente | Controla o uso do SSL 2,0 no cliente SSL. |
+| Remota | Controla o uso do SSL 2,0 no cliente SSL. |
 | Servidor | Controla o uso do SSL 2,0 no servidor SSL. |
 
 Para desabilitar o SSL 2,0 para cliente ou servidor, altere o valor de DWORD para 0. Se um aplicativo SSPI solicitar o uso do SSL 2,0, ele será negado. 
@@ -272,7 +272,7 @@ Tabela de subchaves SSL 3,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Cliente | Controla o uso do SSL 3,0 no cliente SSL. |
+| Remota | Controla o uso do SSL 3,0 no cliente SSL. |
 | Servidor | Controla o uso do SSL 3,0 no servidor SSL. |
 
 Para desabilitar o SSL 3,0 para cliente ou servidor, altere o valor de DWORD para 0.
@@ -298,7 +298,7 @@ Tabela de subchaves TLS 1,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Cliente | Controla o uso do TLS 1,0 no cliente TLS. |
+| Remota | Controla o uso do TLS 1,0 no cliente TLS. |
 | Servidor | Controla o uso do TLS 1,0 no servidor TLS. |
 
 Para desabilitar o TLS 1,0 para cliente ou servidor, altere o valor de DWORD para 0.
@@ -324,7 +324,7 @@ Tabela de subchaves TLS 1,1
 
 | Subchave | Descrição |
 |--------|-------------|
-| Cliente | Controla o uso do TLS 1,1 no cliente TLS. |
+| Remota | Controla o uso do TLS 1,1 no cliente TLS. |
 | Servidor | Controla o uso do TLS 1,1 no servidor TLS. |
 
 Para desabilitar o TLS 1,1 para cliente ou servidor, altere o valor de DWORD para 0.
@@ -350,7 +350,7 @@ Tabela de subchaves TLS 1,2
 
 | Subchave | Descrição |
 |--------|-------------|
-| Cliente | Controla o uso do TLS 1,2 no cliente TLS. |
+| Remota | Controla o uso do TLS 1,2 no cliente TLS. |
 | Servidor | Controla o uso do TLS 1,2 no servidor TLS. |
 
 Para desabilitar o TLS 1,2 para cliente ou servidor, altere o valor de DWORD para 0.
@@ -376,7 +376,7 @@ Tabela de subchaves do DTLS 1,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Cliente | Controla o uso do DTLS 1,0 no cliente do DTLS. |
+| Remota | Controla o uso do DTLS 1,0 no cliente do DTLS. |
 | Servidor | Controla o uso do DTLS 1,0 no servidor DTLS. |
 
 Para desabilitar o DTLS 1,0 para cliente ou servidor, altere o valor de DWORD para 0.
@@ -402,7 +402,7 @@ Tabela de subchaves do DTLS 1,2
 
 | Subchave | Descrição |
 |--------|-------------|
-| Cliente | Controla o uso do DTLS 1,2 no cliente do DTLS. |
+| Remota | Controla o uso do DTLS 1,2 no cliente do DTLS. |
 | Servidor | Controla o uso do DTLS 1,2 no servidor DTLS. |
 
 

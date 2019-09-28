@@ -7,18 +7,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4e8f55428271771e612fd3b35c0e650c62d35ac8
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 77cf91126cc628fb7fefef3eca8e7189f3e9eb10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191175"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408026"
 ---
 # <a name="planning-federation-server-placement"></a>Planejando o posicionamento do servidor de federação
 
-Os componentes mais críticos de um serviços de Federação do Active Directory \(do AD FS\) implantação é o servidor de Federação. Portanto, é importante que você planeje sua estratégia de posicionamento do servidor de federação com cuidado, incluindo quando e onde implantar servidores de Federação. As informações nos tópicos a seguir podem ajudá-lo a determinar quando e onde para criar uma federação de servidor ou farm de servidores de Federação e se deseja usar esse servidor de federação na conta de parceiro função, a função de parceiro de recurso ou ambos:  
+O componente mais crítico de uma implantação Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 é o servidor de Federação. Portanto, é importante planejar a estratégia de posicionamento do servidor de Federação com cuidado, incluindo quando e onde implantar servidores de Federação. As informações nos tópicos a seguir podem ajudá-lo a determinar quando e onde criar um servidor de Federação ou um farm de servidores de Federação e se deseja usar esse servidor de Federação na função de parceiro de conta, a função de parceiro de recurso ou ambos:  
   
 -   [Analisar a função do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
@@ -28,16 +28,16 @@ Os componentes mais críticos de um serviços de Federação do Active Directory
   
 -   [Onde posicionar um servidor de federação](Where-to-Place-a-Federation-Server.md)  
   
--   [Quando criar um Farm de servidores de Federação](When-to-Create-a-Federation-Server-Farm.md)  
+-   [Quando criar um farm de servidores de Federação](When-to-Create-a-Federation-Server-Farm.md)  
   
 -   [Requisitos de certificado para servidores de federação](Certificate-Requirements-for-Federation-Servers.md)  
   
 -   [Requisitos de resolução de nomes para servidores de federação](Name-Resolution-Requirements-for-Federation-Servers.md)  
   
 > [!NOTE]  
-> Embora essas informações possam ajudar com o planejamento do posicionamento dos servidores de federação, ela não explica como determinar o número adequado de servidores de Federação e os requisitos de hardware para cada design do AD FS.  
+> Embora essas informações possam ajudar no planejamento de posicionamento para servidores de Federação, ela não explica como determinar o número adequado de servidores de Federação e os requisitos de hardware para cada design de AD FS.  
   
-Para obter exemplos de como um servidor de Federação pode ser colocado em qualquer um dos dois AD FS primário cenários de design, consulte [mapeando suas metas de implantação para um Design do AD FS](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md).  
+Para obter exemplos de como um servidor de Federação pode ser colocado em qualquer um dos dois cenários de design de AD FS primários, consulte [mapeando suas metas de implantação para um design de AD FS](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md).  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

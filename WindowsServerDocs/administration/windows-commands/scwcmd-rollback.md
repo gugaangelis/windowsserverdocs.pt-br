@@ -1,8 +1,8 @@
 ---
 title: Scwcmd rollback
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d6cd79c7068d86915141a37b5a4510bddefc94c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f089ea3e6e5d5b95080356dd239272b95a76b37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852197"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371206"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
 > Aplica-se a: Windows Server 2012 R2, Windows Server 2012
 
-Aplica-se a política de reversão mais recente disponível e, em seguida, exclui essa diretiva de reversão.
+Aplica a política de reversão mais recente disponível e, em seguida, exclui essa política de reversão.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,16 +36,16 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/m:\<ComputerName>|Especifica o nome NetBIOS, nome DNS ou endereço IP de um computador em que a operação de reversão deve ser executada.|
-|/u:\<UserName>|Especifica uma conta de usuário alternativas para usar ao executar uma reversão remota. O padrão é o conectado no usuário.|
-|/pw:\<senha >|Especifica uma credencial de usuário alternativas para usar ao executar uma reversão remota. O padrão é o conectado no usuário.|
+|/m: \<ComputerName >|Especifica o nome NetBIOS, o nome DNS ou o endereço IP de um computador em que a operação de reversão deve ser executada.|
+|/u: \<UserName >|Especifica uma conta de usuário alternativa a ser usada ao executar uma reversão remota. O padrão é o usuário conectado.|
+|/PW: \<Password >|Especifica uma credencial de usuário alternativa a ser usada ao executar uma reversão remota. O padrão é o usuário conectado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-Scwcmd.exe só está disponível em computadores que executam o Windows Server 2008 R2, Windows Server 2008 ou Windows Server 2003.
+Scwcmd. exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="BKMK_Examples"></a>Disso
 
 Para reverter a política de segurança em um computador no endereço IP 172.16.0.0, digite:
 ```
@@ -54,4 +54,4 @@ scwcmd rollback /m:172.16.0.0
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

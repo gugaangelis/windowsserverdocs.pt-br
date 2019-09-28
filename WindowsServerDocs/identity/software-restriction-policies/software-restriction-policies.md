@@ -2,7 +2,7 @@
 title: Políticas de restrição de software
 description: Segurança do Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-software-restriction-policies
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: ab44013b947d33adc12c54b527415bf16c46a4c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b06d038e919e2f4904d60b88ad223493c4f818eb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875817"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357667"
 ---
 # <a name="software-restriction-policies"></a>Políticas de restrição de software
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico para profissionais de TI descreve as políticas de restrição de Software (SRP) no Windows Server 2012 e Windows 8 e fornece links para informações técnicas sobre políticas SRP a partir do Windows Server 2003.
+Este tópico para o profissional de ti descreve as políticas de restrição de software (SRP) no Windows Server 2012 e no Windows 8 e fornece links para informações técnicas sobre o SRP a partir do Windows Server 2003.
 
-Para procedimentos e dicas de solução de problemas, consulte [administrar políticas de restrição de Software](administer-software-restriction-policies.md) e [solucionar problemas de políticas de restrição de Software](troubleshoot-software-restriction-policies.md).
+Para obter procedimentos e dicas de solução de problemas, consulte [administrar políticas de restrição](administer-software-restriction-policies.md) de software e [solucionar problemas de diretivas de restrição de software](troubleshoot-software-restriction-policies.md).
 
 ## <a name="BKMK_OVER"></a>Descrição de diretivas de restrição de software
 A política SRP (Política de Restrição de Software) é um recurso baseado em políticas de grupo que identifica programas de software que são executados em um domínio e que controla a capacidade desses programas de serem executados. As políticas de restrição de software são parte da estratégia de segurança e gerenciamento da Microsoft para ajudar empresas a aumentar a confiabilidade, integridade e gerenciabilidade de seus computadores.
@@ -58,7 +58,7 @@ Especificamente, os administradores podem usar as políticas de restrição de s
 
 -   Evitar que arquivos executáveis sejam executados no computador local, na unidade organizacional (OU), no site, ou no domínio. Isso seria apropriado em casos em que você não estiver usando políticas de restrição de software para resolver possíveis problemas com usuários mal-intencionados.
 
-## <a name="BKMK_NEW"></a>Funcionalidades novas e alteradas
+## <a name="BKMK_NEW"></a>Funcionalidade nova e alterada
 Não há alterações na funcionalidade para Políticas de Restrição de Software.
 
 ## <a name="BKMK_DEP"></a>Funcionalidade removida ou preterida
@@ -81,7 +81,7 @@ Se seu projeto solicitar a implantação do domínio dessas políticas, além da
 
 -   Política de Grupo
 
-## <a name="BKMK_INSTALL"></a>Informações do Gerenciador do servidor
+## <a name="BKMK_INSTALL"></a>Informações de Gerenciador do Servidor
 As Políticas de Restrição de Software são uma extensão do Editor de Política de Grupo e não são instaladas por meio do Gerenciador do Servidor, Adicionar Funções e Recursos.
 
 ## <a name="BKMK_LINKS"></a>Consulte também
@@ -89,14 +89,14 @@ A tabela a seguir fornece links para os recursos relevantes para compreensão e 
 
 |Tipo de conteúdo|Referências|
 |--------|-------|
-|**Avaliação do produto**|[Bloqueio de aplicativo com políticas de restrição de Software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-|**Planejamento**|[Software Restriction Policies Technical Overview](software-restriction-policies-technical-overview.md) (Windows Server 2012)<br /><br />[Referência técnica de políticas de restrição de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
+|**Avaliação do produto**|[Bloqueio de aplicativo com políticas de restrição de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
+|**Planejamento**|[Visão geral técnica das políticas de restrição de software](software-restriction-policies-technical-overview.md) (Windows Server 2012)<br /><br />[Referência técnica de políticas de restrição de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
 |**Implantação**|Nenhum recurso disponível.|
-|**Operações**|[Administrar políticas de restrição de Software](administer-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Ajuda do produto de políticas de restrição de software](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
-|**Solução de problemas**|[Solucionar problemas de políticas de restrição de Software](troubleshoot-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Solução de problemas de políticas de restrição de software](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows Server 2003)|
+|**Operações**|[Administrar políticas de restrição de software](administer-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Ajuda do produto de políticas de restrição de software](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
+|**Solução de problemas**|[Solucionar problemas de diretivas de restrição de software](troubleshoot-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Solução de problemas de políticas de restrição de software](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows Server 2003)|
 |**Segurança**|[Ameaças e contramedidas para políticas de restrição de software](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx) (Windows Server 2008)<br /><br />[Ameaças e contramedidas para políticas de restrição de software](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx) (Windows Server 2008 R2)|
 |**Ferramentas e configurações**|[Ferramentas e configurações de políticas de restrição de software](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx) (Windows Server 2003)|
-|**Recursos da comunidade**|[Bloqueio de aplicativo com políticas de restrição de Software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
+|**Recursos da comunidade**|[Bloqueio de aplicativo com políticas de restrição de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
 
 
 

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 546507254f796e6a2fbe71e3ba30a7597ea51295
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 82dd9cec2c75a796eb0def508082508a5d0dbf5f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869265"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385427"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>Quando usar uma associação a um grupo de envio como uma regra de declaração
 Você pode usar essa regra em serviços de Federação do Active Directory (AD FS) \(AD FS\) quando desejar emitir um novo valor de declaração de saída somente para os usuários que são membros de um grupo de segurança de Active Directory especificado. Quando você usa essa regra, emite uma declaração única para apenas o grupo especificado e que corresponde à lógica da regra, conforme descrito na tabela a seguir.  

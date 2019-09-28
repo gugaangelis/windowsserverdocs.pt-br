@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: adb587412d65506c35705c5eaa8dbea8c660d117
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: f78c60ccd65b4c9148d53d894c572a4402948806
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590371"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407682"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configure métodos de autenticação adicionais para AD FS
 
@@ -23,7 +23,7 @@ Para habilitar o Multi-Factor Authentication (MFA), você deve selecionar pelo m
 > [!NOTE]
 > Se você selecionar a Autenticação de Certificado, verifique se os certificados de cartão inteligente foram provisionados de forma segura e se têm requisitos de PIN.
 
-Você sabia que o Microsoft Azure fornece uma funcionalidade semelhante na nuvem? Saiba mais sobre as [Soluções de identidade do Microsoft Azure](http://aka.ms/m2w274).<br /><br />Criar uma solução de identidade híbrida no Microsoft Azure:<br /> - [Saiba mais sobre a autenticação multifator do Azure.](http://aka.ms/ey6o9r)<br /> - [Gerencie identidades para ambientes híbridos de floresta única usando a autenticação de nuvem.](http://aka.ms/g1jat8)<br /> - [Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais.](http://aka.ms/kt1bbm)
+Você sabia que o Microsoft Azure fornece uma funcionalidade semelhante na nuvem? Saiba mais sobre as [Soluções de identidade do Microsoft Azure](http://aka.ms/m2w274).<br /><br />Criar uma solução de identidade híbrida no Microsoft Azure:<br /> - [saiba mais sobre a autenticação multifator do Azure.](http://aka.ms/ey6o9r)<br /> - [gerenciar identidades para ambientes híbridos de floresta única usando a autenticação de nuvem.](http://aka.ms/g1jat8)<br /> - [gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais.](http://aka.ms/kt1bbm)
 
 ## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Métodos de autenticação adicionais de terceiros e da Microsoft
 Você também pode configurar e habilitar métodos de autenticação da Microsoft e de terceiros no AD FS no Windows Server 2012 R2. Uma vez instalado e registrado com AD FS, você pode impor a MFA como parte da política de autenticação global ou de terceiros.
@@ -45,7 +45,7 @@ Mideye | Provedor de autenticação Mideye para ADFS | [Mideye autenticação de
 |Uma identidade| Defender AD FS|[Adaptador de AD FS do defender](https://www.oneidentity.com/products/defender/)|
 |Identidade de ping|Adaptador de MFA de pingid para AD FS|[Adaptador de MFA de pingid para AD FS](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_PingIDforADFSSSO.html)|
 |RSA, A Divisão de Segurança da EMC|RSA SecurID Authentication Agent para Serviços de Federação do Microsoft Active Directory|[Agente de autenticação RSA SecurID para Microsoft Serviços de Federação do Active Directory (AD FS)](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)|
-|SafeNet, Inc.|SafeNet Authentication Service (SAS) Agent para AD FS|[Serviço de autenticação SafeNet: Guia de configuração do agente de AD FS](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)|
+|SafeNet, Inc.|SafeNet Authentication Service (SAS) Agent para AD FS|Serviço de autenticação [SafeNet: Guia de configuração do agente de AD FS @ no__t-0|
 |SecureMFA|Provedor de OTP SecureMFA| [Provedores de autenticação multifator do ADFS](https://www.securemfa.com/)|
 |Swisscom|Serviço de Autenticação de ID Móvel e Serviços de Assinatura|[Serviço de autenticação de ID móvel](http://swisscom.ch/mid)|
 |Symantec|Symantec Validation e ID Protection Service (VIP)|[Protocolo VIP (validação e serviço de proteção de ID) da Symantec](http://www.symantec.com/vip-authentication-service)|

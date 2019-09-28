@@ -2,7 +2,7 @@
 title: Reiniciar ou desligar sistemas MultiPoint
 description: Saiba como desligar ou reiniciar um ou mais sistemas
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,24 +13,24 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 33622c38dc6e0b95e8f54ec7e93c3cf60a7cf2aa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6f0c5c0f444130f0b8bcb3540c0b2e243de755e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845737"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395075"
 ---
 # <a name="restart-or-shut-down-multipoint-systems"></a>Reiniciar ou desligar sistemas MultiPoint
-Você pode reiniciar ou desligar um sistema MultiPoint Services ou vários sistemas MultiPoint Services no MultiPoint Dashboard.  
+Você pode reiniciar ou desligar um sistema de serviços do MultiPoint ou vários sistemas de serviços do MultiPoint no painel do MultiPoint.  
   
-## <a name="restart-a-multipoint-services-system-or-multiple-systems"></a>Reiniciar um sistema MultiPoint Services ou vários sistemas  
+## <a name="restart-a-multipoint-services-system-or-multiple-systems"></a>Reiniciar um sistema de serviços do MultiPoint ou vários sistemas  
   
 1.  Clique em **sistemas**.  
   
-2.  Clique na imagem em miniatura do servidor que deseja reiniciar e, em seguida, na **Hardware** , clique em **reiniciar**.  
+2.  Clique na imagem em miniatura do servidor que você deseja reiniciar e, na guia **hardware** , clique em **reiniciar**.  
   
 ## <a name="to-shut-down-a-multipoint-services-system-or-multiple-systems"></a>Para desligar um sistema ou vários sistemas MultiPoint Services  
   
-1.  Clique o **sistemas** guia.  
+1.  Clique na guia **sistemas** .  
   
-2.  Clique na imagem em miniatura do servidor que deseja reiniciar e, em seguida, na **Hardware** , clique em **desligar**.
+2.  Clique na imagem em miniatura do servidor que você deseja reiniciar e, na guia **hardware** , clique em **desligar**.

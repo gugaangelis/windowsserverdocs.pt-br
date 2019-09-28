@@ -1,8 +1,8 @@
 ---
 title: qprocess
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,26 +13,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a50cb5eae3a0fa329fff1f39870722c323507000
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b3111d4e980395c1a7c971af715017d455e1a29c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872317"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384921"
 ---
 # <a name="qprocess"></a>qprocess
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe informações sobre processos em execução em um servidor de Host de sessão de área de trabalho remota (Host de sessão de área de trabalho remota).
+Exibe informações sobre os processos que estão sendo executados em um servidor Host da Sessão da Área de Trabalho Remota (Host da Sessão RD).
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir o que há de novo na versão mais recente, consulte [novidades novo nos serviços de área de trabalho remota no Windows Server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
+> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
 
 ## <a name="remarks"></a>Comentários
-Esse comando é igual a **processo de consulta** comando.
+Esse comando é o mesmo que o comando de **processo de consulta** .
 
 #### <a name="additional-references"></a>Referências adicionais
 [processo de consulta](query-process.md)
 [chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[Remote Desktop Services &#40;serviços de Terminal&#41; referência de comandos](remote-desktop-services-terminal-services-command-reference.md)
+[serviços de área de trabalho remota &#40;referência de comando de serviços&#41; de terminal](remote-desktop-services-terminal-services-command-reference.md)

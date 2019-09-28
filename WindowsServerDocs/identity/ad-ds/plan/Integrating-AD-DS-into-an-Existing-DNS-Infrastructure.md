@@ -7,60 +7,60 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 62405ea9ee38bb3fa457b7731e26fbffb2594797
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f4bb480be4696f15f0a63c20ab47042264584d2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891037"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402556"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>Integrando o AD DS a uma infraestrutura de DNS existente
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Se sua organização já tiver um serviço existente do servidor do sistema de nome de domínio (DNS), o DNS para o proprietário de serviços de domínio Active Directory (AD DS) deve trabalhar com o proprietário do DNS para sua organização a integrar o AD DS com a infra-estrutura existente. Isso envolve a criação de um servidor DNS e a configuração do cliente DNS.  
+Se sua organização já tiver um serviço de servidor de DNS (sistema de nomes de domínio) existente, o proprietário do DNS para Active Directory Domain Services (AD DS) deverá funcionar com o proprietário do DNS da sua organização para integrar AD DS à infraestrutura existente. Isso envolve a criação de um servidor DNS e a configuração do cliente DNS.  
   
 ## <a name="creating-a-dns-server-configuration"></a>Criando uma configuração de servidor DNS  
-Ao integrar o AD DS com um namespace DNS existente, recomendamos que você faça o seguinte:  
+Ao integrar AD DS com um namespace DNS existente, recomendamos que você faça o seguinte:  
   
--   Instale o serviço servidor DNS em cada controlador de domínio na floresta. Isso fornece tolerância a falhas, se um dos servidores DNS não estiver disponível. Dessa forma, os controladores de domínio não é necessário confiar em outros servidores DNS para resolução de nome. Isso também simplifica o ambiente de gerenciamento porque todos os controladores de domínio têm uma configuração uniforme.  
+-   Instale o serviço do servidor DNS em cada controlador de domínio na floresta. Isso fornece tolerância a falhas se um dos servidores DNS não estiver disponível. Dessa forma, os controladores de domínio não precisam confiar em outros servidores DNS para a resolução de nomes. Isso também simplifica o ambiente de gerenciamento, pois todos os controladores de domínio têm uma configuração uniforme.  
   
--   Configure o controlador de domínio de raiz de floresta do Active Directory para hospedar a zona DNS de floresta do Active Directory.  
+-   Configure o controlador de domínio raiz da floresta Active Directory para hospedar a zona DNS para a floresta Active Directory.  
   
--   Configure controladores de domínio para cada domínio regional hospedar as zonas DNS que correspondem aos seus domínios do Active Directory.  
+-   Configure os controladores de domínio para cada domínio regional para hospedar as zonas DNS que correspondem aos seus domínios de Active Directory.  
   
--   Configurar a zona que contém os registros de localizador de toda a floresta do Active Directory (ou seja, msdcs. *ForestName* zona) para replicar para todos os servidores DNS da floresta usando a partição de diretório de aplicativo de DNS de floresta.  
-  
-    > [!NOTE]  
-    > Quando o serviço servidor DNS é instalado com o Active Directory domínio serviços de Assistente de instalação (recomendamos essa opção), todas as tarefas anteriores são executadas automaticamente. Para obter mais informações, consulte [implantação de um domínio raiz de floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
+-   Configure a zona que contém os Active Directory registros de localizador de toda a floresta (isto é, o _ msdcs. *nomedafloresta* Zone) a ser replicada em todos os servidores DNS na floresta usando a partição de diretório de aplicativo DNS de toda a floresta.  
   
     > [!NOTE]  
-    > AD DS usa registros de localizador de toda a floresta para permitir que os parceiros de replicação para localizar uns aos outros e para permitir que os clientes localizar servidores de catálogo global. AD DS armazena os registros de localizador de toda a floresta na zona MSDCS. *forestname* zona. Como as informações na zona devem ser amplamente disponíveis, nesta zona é replicada para todos os servidores DNS na floresta por meio da partição de diretório de aplicativo de DNS de floresta.  
+    > Quando o serviço do servidor DNS é instalado com o Assistente para Instalação do Active Directory Domain Services (recomendamos essa opção), todas as tarefas anteriores são executadas automaticamente. Para obter mais informações, consulte [implantando um domínio raiz de floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
   
-A estrutura DNS existente permanece intacta. Você não precisa mover quaisquer servidores ou zonas. Basta criar uma delegação para as zonas DNS integradas ao Active Directory de sua hierarquia DNS existente.  
+    > [!NOTE]  
+    > AD DS usa registros de localizador em toda a floresta para permitir que os parceiros de replicação encontrem um ao outro e para permitir que os clientes encontrem servidores de catálogo global. AD DS armazena os registros de localizador de toda a floresta no _ msdcs. zona *nomedafloresta* . Como as informações na zona devem estar amplamente disponíveis, essa zona é replicada para todos os servidores DNS na floresta por meio da partição de diretório de aplicativos DNS em toda a floresta.  
+  
+A estrutura DNS existente permanece intacta. Você não precisa mover nenhum servidor ou zona. Você simplesmente precisa criar uma delegação para suas zonas de DNS integradas ao Active Directory da sua hierarquia de DNS existente.  
   
 ## <a name="creating-the-dns-client-configuration"></a>Criando a configuração do cliente DNS  
-Para configurar o DNS em computadores cliente, o DNS para o proprietário do AD DS deve especificar o esquema e como os clientes irão localizar os servidores DNS de nomeação do computador. A tabela a seguir lista as nossas configurações recomendadas para esses elementos de design.  
+Para configurar o DNS em computadores cliente, o DNS para AD DS proprietário deve especificar o esquema de nomenclatura do computador e como os clientes irão localizar servidores DNS. A tabela a seguir lista nossas configurações recomendadas para esses elementos de design.  
   
 |Elemento de design|Configuração|  
 |------------------|-----------------|  
-|Nomenclatura de computador|Use o padrão de nomenclatura. Quando um Windows 2000, Windows XP, Windows Server 2003, Windows Server 2008 ou o computador baseado no Windows Vista ingressa em um domínio, o computador em si atribui um nome de domínio totalmente qualificado (FQDN) que inclui o nome do host do computador e o nome do ativo Domínio de diretório.|  
-|Configuração do resolvedor de cliente|Configure computadores cliente para apontar para qualquer servidor DNS na rede.|  
+|Nomeação do computador|Use a nomenclatura padrão. Quando um computador com Windows 2000, Windows XP, Windows Server 2003, Windows Server 2008 ou Windows Vista ingressa em um domínio, o computador atribui a ele mesmo um FQDN (nome de domínio totalmente qualificado) que compreende o nome do host do computador e o nome do ativo Domínio do diretório.|  
+|Configuração do resolvedor de cliente|Configure os computadores cliente para apontarem para qualquer servidor DNS na rede.|  
   
 > [!NOTE]  
-> Clientes do Active Directory e controladores de domínio dinamicamente podem registrar seus nomes DNS, mesmo se eles não estão apontando para o servidor DNS autoritativo para seus nomes.  
+> Active Directory clientes e controladores de domínio podem registrar dinamicamente seus nomes DNS mesmo se eles não estiverem apontando para o servidor DNS que é autoritativo para seus nomes.  
   
-Um computador pode ter um nome DNS existente diferente se a organização, estaticamente registrado anteriormente no computador no DNS ou se a organização implantou uma solução integrada de protocolo de configuração de Host dinâmico (DHCP). Se seus computadores cliente já tiverem um nome DNS registrado, quando o domínio ao qual elas são unidas é atualizado para o AD DS do Windows Server 2008, eles terá dois nomes diferentes:  
+Um computador pode ter um nome DNS existente diferente se a organização tiver, estaticamente, registrado o computador no DNS ou se a organização tiver implantado anteriormente uma solução de DHCP (protocolo de configuração de host dinâmico) integrada. Se os computadores cliente já tiverem um nome DNS registrado, quando o domínio ao qual eles são ingressados for atualizado para o Windows Server 2008 AD DS, eles terão dois nomes diferentes:  
   
 -   O nome DNS existente  
   
--   O novo nome de domínio totalmente qualificado (FQDN)  
+-   O novo FQDN (nome de domínio totalmente qualificado)  
   
-Os clientes ainda podem ser localizados por qualquer nome. Qualquer existente de DNS, DHCP ou solução integrada de DHCP/DNS permanece intacta. Os novos nomes primários são criados automaticamente e atualizados por meio de atualização dinâmica. Elas são limpas automaticamente por meio de eliminação.  
+Os clientes ainda podem ser localizados por um dos nomes. Qualquer solução de DNS/DHCP integrada ou DNS existente é deixada intacta. Os novos nomes primários são criados automaticamente e atualizados por meio da atualização dinâmica. Eles são limpos automaticamente por meio de eliminação.  
   
-Se você quiser aproveitar a autenticação Kerberos ao se conectar a um servidor que executa o Windows 2000, Windows Server 2003 ou Windows Server 2008, certifique-se de que o cliente se conecta ao servidor usando o nome primário.  
+Se você quiser tirar proveito da autenticação Kerberos ao se conectar a um servidor que executa o Windows 2000, o Windows Server 2003 ou o Windows Server 2008, você deve garantir que o cliente se conecte ao servidor usando o nome primário.  
   
 
 

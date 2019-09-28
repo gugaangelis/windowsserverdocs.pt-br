@@ -1,6 +1,6 @@
 ---
 title: Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: brianlic
 ms.technology: storage
@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: O FSRM (Gerenciador de recursos de servidor de arquivos) é uma ferramenta que permite gerenciar e classificar dados em um servidor de arquivos do Windows Server.
-ms.openlocfilehash: 49e7731c9f1e0f312728894e99bc88b0391738d8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866949"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394169"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
 
@@ -88,7 +88,7 @@ Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diár
                     System Reserved \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
         C                           \\?\Volume{8d3c9e8a-0000-0000-0000-501f00000000}\
        ```
-    2. De volta ao editor do registro, clique com o botão direito do mouse na chave **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** e selecione **novo** > **valor de cadeia de caracteres múltipla**.
+    2. De volta ao editor do registro, clique com o botão direito do mouse na chave **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** e selecione **novo** **valor de cadeia de caracteres múltipla** > .
     3. Nomeie o valor `SkipUSNCreationForVolumes`.
     4. Insira o caminho de cada volume no qual você ignora a criação de um diário de alterações, colocando cada caminho em uma linha separada. Por exemplo:
 
@@ -98,7 +98,7 @@ Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diár
         ```
 
         > [!NOTE] 
-        > O editor do registro pode informar que removeu cadeias de caracteres vazias, exibindo este aviso de que você pode desconsiderar com segurança: *Os dados do tipo REG_MULTI_SZ não podem conter cadeias de caracteres vazias. O editor do registro removerá todas as cadeias de caracteres vazias encontradas.*
+        > O editor do registro pode informar que removeu cadeias de caracteres vazias, exibindo este aviso de que você pode desconsiderar com segurança: *Data do tipo REG_MULTI_SZ não pode conter cadeias de caracteres vazias. O editor do registro removerá todas as cadeias de caracteres vazias encontradas.*
 
 7. Inicie o serviço SRMSVC. Por exemplo, em uma sessão do PowerShell `Start-Service SrmSvc`, insira.
 

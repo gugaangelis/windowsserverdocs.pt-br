@@ -1,40 +1,40 @@
 ---
-title: Recuperação de floresta do AD - remover o catálogo global
+title: Recuperação de floresta do AD-remover o catálogo global
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 60087a62-11e6-4750-a70e-510f35315688
 ms.technology: identity-adds
-ms.openlocfilehash: d730ce65fc179aee6a98f7cfc1a5b693bfcd6c93
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3ba1336828ad6031ce7fb47a659d084494466e4a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817067"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71409095"
 ---
-# <a name="ad-forest-recovery---removing-the-global-catalog"></a>Recuperação de floresta do AD - remover o catálogo global  
+# <a name="ad-forest-recovery---removing-the-global-catalog"></a>Recuperação de floresta do AD-removendo o catálogo global  
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 e 2012 R2, Windows Server 2008 e 2008 R2
 
  Use o procedimento a seguir para remover o catálogo global de um controlador de domínio. 
   
- Restaurar um servidor de catálogo global de backup pode resultar no catálogo global contendo dados mais recentes para uma de suas réplicas parciais do domínio correspondente que é autoritativo para que a réplica parcial. Nesse caso, os dados mais recentes não serão removidos do catálogo global em ainda poderão ser replicados em outros servidores de catálogo global. Como resultado, mesmo que você restaurar um controlador de domínio era um servidor de catálogo global, ou inadvertidamente ou pois esse era o backup solitário confiáveis, você deve remover o catálogo global logo após a operação de restauração for concluída. Quando o catálogo global é removido, o computador remove todas as suas réplicas parciais. 
+ A restauração de um servidor de catálogo global a partir do backup pode fazer com que o catálogo global Mantenha os dados mais recentes de uma de suas réplicas parciais do que o domínio correspondente que é autoritativo para essa réplica parcial. Nesse caso, os dados mais recentes não serão removidos do catálogo global e poderão até mesmo replicar para outros servidores de catálogo global. Como resultado, mesmo que você tenha restaurado um controlador de domínio que era um servidor de catálogo global, seja inadvertidamente ou porque esse era o backup solitários confiável, você deverá remover o catálogo global logo após a conclusão da operação de restauração. Quando o catálogo global é removido, o computador remove todas as suas réplicas parciais. 
   
-## <a name="to-remove-the-global-catalog-using-active-directory-sites-and-services"></a>Para remover o catálogo global usando os serviços e Sites do Active Directory  
+## <a name="to-remove-the-global-catalog-using-active-directory-sites-and-services"></a>Para remover o catálogo global usando Active Directory sites e serviços  
  
-1. Abra o Gerenciador do servidor, clique em **ferramentas** e clique em **serviços e Sites do Active Directory**. 
-2. Na árvore de console, expanda o **Sites** contêiner e, em seguida, selecione o site apropriado que contém o servidor de destino. 
-3. Expanda o **servidores** contêiner e, em seguida, expanda o *server* objeto para o controlador de domínio do qual você deseja remover o catálogo global. 
-4. Clique com botão direito **configurações de NTDS**e, em seguida, clique em **propriedades**. 
-5. Desmarque a **Catálogo Global** caixa de seleção. 
-   ![Remover o GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
+1. Abra Gerenciador do Servidor, clique em **ferramentas** e em **Active Directory sites e serviços**. 
+2. Na árvore de console, expanda o contêiner **sites** e selecione o site apropriado que contém o servidor de destino. 
+3. Expanda o contêiner **servidores** e expanda o objeto de *servidor* para o controlador de domínio do qual você deseja remover o catálogo global. 
+4. Clique com o botão direito do mouse em **Configurações NTDS**e clique em **Propriedades**. 
+5. Desmarque a caixa de seleção **catálogo global** . 
+   ![Remove GC @ no__t-1
 6. Clique em **Aplicar**.
   
-## <a name="to-remove-the-global-catalog-using-repadmin"></a>Para remover o catálogo global usando Repadmin  
+## <a name="to-remove-the-global-catalog-using-repadmin"></a>Para remover o catálogo global usando repadmin  
   
 Abra um prompt de comando com privilégios elevados, digite o seguinte comando e pressione ENTER:  
 
@@ -44,5 +44,5 @@ Abra um prompt de comando com privilégios elevados, digite o seguinte comando e
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Guia de recuperação da floresta do AD](AD-Forest-Recovery-Guide.md)
-- [Recuperação de floresta do AD - procedimentos](AD-Forest-Recovery-Procedures.md)
+- [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
+- [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)

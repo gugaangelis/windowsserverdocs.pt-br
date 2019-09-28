@@ -1,81 +1,81 @@
 ---
-title: Recuperação de floresta do AD - fazer backup de um servidor completo
+title: Recuperação de floresta do AD-fazendo backup de um servidor completo
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: fec8de8ea1dadb392f6a3bd1c881e8df2266f404
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4377c1d993b4f6d30cf8ca8a7d149b741d7f8d2f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846517"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369364"
 ---
-# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperação de floresta do AD - fazer backup de um servidor completo  
+# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperação de floresta do AD-fazendo backup de um servidor completo  
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 e 2012 R2, Windows Server 2008 e 2008 R2
 
-Um backup completo do servidor é recomendado para se preparar para uma recuperação de floresta, porque ele pode ser restaurado para um hardware diferente ou uma instância diferente do sistema operacional.  Usando o Backup do Windows Server, você pode executar um backup completo do seu servidor. 
+Um backup de servidor completo é recomendado para se preparar para uma recuperação de floresta, pois ela pode ser restaurada para um hardware diferente ou para uma instância diferente do sistema operacional.  Usando Backup do Windows Server você pode executar um backup completo do servidor. 
 
 ## <a name="windows-server-backup"></a>Backup do Windows Server
 
-Backup do Windows Server não está instalado por padrão. No Windows Server 2016 e no Windows Server 2012 R2, instale-o seguindo as etapas abaixo.
+O Backup do Windows Server não é instalado por padrão. No Windows Server 2016 e no Windows Server 2012 R2, instale-o seguindo as etapas abaixo.
 
 >[!NOTE]
->Esteja ciente de que as etapas podem variar ligeiramente entre o Windows Server 2016 e Windows Server 2012 R2.
+>Esteja ciente de que as etapas podem variar um pouco entre o Windows Server 2016 e o Windows Server 2012 R2.
 
-Para obter as etapas para instalá-lo no Windows Server 2008 e Windows Server 2008 R2, consulte [instalando o Backup do Windows Server](https://technet.microsoft.com/library/cc771232.aspx).  
+Para obter as etapas para instalá-lo no Windows Server 2008 e no Windows Server 2008 R2, consulte [instalando backup do Windows Server](https://technet.microsoft.com/library/cc771232.aspx).  
 
 ### <a name="to-install-windows-server-backup"></a>Para instalar o Backup do Windows Server
 
-1. Abra **Gerenciador de servidores** e clique em **adicionar funções e recursos**.
-2. Sobre o **assistente Adicionar funções e recursos** clique em **próxima**.
-3. Sobre o **tipo de instalação** tela, deixe o padrão **instalação baseada em função ou recurso** e clique em **próxima**.
-4. Sobre o **seleção de servidor** tela, clique em **próxima**.
-5. Sobre o **funções de servidor** tela clique **próxima**.
-6. Sobre o **recursos** tela, selecione **Backup do Windows Server** e clique em **próxima**
-   ![instalar o Backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
+1. Abra **Gerenciador do servidor** e clique em **adicionar funções e recursos**.
+2. No **Assistente Adicionar funções e recursos,** clique em **Avançar**.
+3. Na tela **tipo de instalação** , deixe a instalação padrão baseada em **função ou recurso** e clique em **Avançar**.
+4. Na tela de **seleção de servidor** , clique em **Avançar**.
+5. Na tela **funções de servidor** , clique em **Avançar**.
+6. Na tela **recursos** , selecione **backup do Windows Server** e clique em **Avançar**
+    @ no__t-4Install backup @ no__t-5
 7. Clique em **Instalar**.
-8. Depois que a instalação for concluída, clique em **fechar**.
+8. Quando a instalação for concluída, clique em **fechar**.
 
-### <a name="to-perform-a-backup-with-windows-server-backup"></a>Para executar um backup com o Backup do Windows Server
+### <a name="to-perform-a-backup-with-windows-server-backup"></a>Para executar um backup com Backup do Windows Server
 
-1. Abra **Gerenciador de servidores**, clique em **ferramentas**e, em seguida, clique em **Backup do Windows Server**.
-   - No Windows Server 2008 R2 e Windows Server 2008, clique em **inicie**, aponte para **ferramentas administrativas**e, em seguida, clique em **Backup do Windows Server**.
+1. Abra **Gerenciador do servidor**, clique em **ferramentas**e, em seguida, clique em **backup do Windows Server**.
+   - No Windows Server 2008 R2 e no Windows Server 2008, clique em **Iniciar**, aponte para **Ferramentas administrativas**e clique em **backup do Windows Server**.
 
-   ![Instalar o Backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
+   ![Instalar backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
 
-2. Se você for solicitado, além de **User Account Control** caixa de diálogo, forneça as credenciais de operador de Backup e, em seguida, clique em **Okey**.
-3. Clique em **Backup Local**.
+2. Se solicitado, na caixa de diálogo **controle de conta de usuário** , forneça credenciais de operador de backup e clique em **OK**.
+3. Clique em **backup local**.
 4. No menu **Ação**, clique em **Backup único**.
-5. No Assistente de Backup uma vez, sobre o **as opções de Backup** , clique em **diferentes opções**e, em seguida, clique em **próxima**.
+5. No assistente de backup único, na página **Opções de backup** , clique em **opções diferentes**e, em seguida, clique em **Avançar**.
 
-   ![Instalar o Backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
+   ![Instalar backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. Sobre o **Selecionar configuração de backup** , clique em **servidor completo (recomendado)** e, em seguida, clique em **próxima**.
-7. Sobre o **especificar tipo de destino** , clique em **unidades locais** ou **pasta compartilhada remota**e, em seguida, clique em **Avançar**.
-8. Sobre o **Selecionar destino do Backup** , escolha o local de backup.  Se você tiver selecionado locais unidade escolha uma unidade local ou se você selecionou remoto compartilhamento Escolha um compartilhamento de rede.
-9. Na tela de confirmação, clique em **Backup**.
+6. Na página **selecionar configuração de backup** , clique em **servidor completo (recomendado)** e, em seguida, clique em **Avançar**.
+7. Na página **especificar tipo de destino** , clique **em unidades locais** ou **pasta compartilhada remota**e, em seguida, clique em **Avançar**.
+8. Na página **Selecionar destino do backup** , escolha o local do backup.  Se você selecionou unidade local, escolha uma unidade local ou, se você selecionou compartilhamento remoto, escolha um compartilhamento de rede.
+9. Na tela de confirmação, clique em **backup**.
 
-   ![Instalar o Backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
+   ![Instalar backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
 
-10. Quando tiver terminado, clique em **fechar**.
-11. Feche o Backup do Windows Server.
+10. Depois que isso for concluído, clique em **fechar**.
+11. Feche Backup do Windows Server.
 
 >[!NOTE]
->Se você receber um erro indicando que nenhum local de armazenamento de backup estiver disponível, você precisará excluir um dos volumes que foi selecionado ou adicionar um novo volume ou compartilhamento remoto.
->Se você receber um aviso informando que o volume selecionado também está incluído na lista de itens para backup, determine se deseja ou não remover e clique em **Okey**.
+>Se você receber um erro informando que não há local de armazenamento de backup disponível, será necessário excluir um dos volumes que foram selecionados ou adicionar um novo volume ou compartilhamento remoto.
+>Se você receber um aviso informando que o volume selecionado também está incluído na lista de itens para backup, determine se deseja ou não remover e clique em **OK**.
 
-## <a name="using-wbadminexe-to-backup-a-windows-server"></a>Usando Wbadmin.exe para fazer backup de um servidor do windows
+## <a name="using-wbadminexe-to-backup-a-windows-server"></a>Usando o Wbadmin. exe para fazer backup de um Windows Server
 
-Wbadmin.exe é um utilitário de linha de comando que lhe permite fazer backup e restaurar seu sistema operacional, volumes, arquivos, pastas e aplicativos em um prompt de comando.
+O Wbadmin. exe é um utilitário de linha de comando que permite fazer backup e restaurar seu sistema operacional, volumes, arquivos, pastas e aplicativos a partir de um prompt de comando.
 
-### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para executar um backup completo do servidor usando Wbadmin.exe
+### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para executar um backup completo do servidor usando o Wbadmin. exe
   
 - Abra um prompt de comando com privilégios elevados, digite o seguinte comando e pressione ENTER:  
 
@@ -83,9 +83,9 @@ Wbadmin.exe é um utilitário de linha de comando que lhe permite fazer backup e
    wbadmin start backup -backuptarget:<Drive_letter_to store_backup>: -include:<Drive_letter_to_include>:
    ```
 
-   ![Instalar o Backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup5.png)
+   ![Instalar backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup5.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Guia de recuperação da floresta do AD](AD-Forest-Recovery-Guide.md)
-- [Recuperação de floresta do AD - procedimentos](AD-Forest-Recovery-Procedures.md)
+- [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
+- [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)

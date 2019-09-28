@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 72524fcc71f722daeb8238bc3cffc6d38a611098
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.prod: windows-server
+ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406787"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
@@ -135,7 +135,7 @@ Os recursos a seguir têm suporte no backup:
 - Iniciar ou parar um trabalho de backup
 - Exibir o histórico e o status do trabalho de backup
 - Exibir pontos de recuperação e recuperar dados
-- Excluir dados de backup
+- excluir dados de backup
 
 ## <a name="certificates"></a>Certificados
 
@@ -156,7 +156,7 @@ Os seguintes recursos têm suporte em certificados:
 
 ## <a name="containers"></a>Contêineres
 
-Os contêineres permitem exibir os contêineres em um host de contêiner do Windows Server. No caso de um contêiner do Windows Server Core em execução, você pode exibir os logs de eventos e acessar a CLI do contêiner.
+Os **contêineres** permitem exibir os contêineres em um host de contêiner do Windows Server. No caso de um contêiner do Windows Server Core em execução, você pode exibir os logs de eventos e acessar a CLI do contêiner.
 
 [**Exibir comentários e recursos propostos para contêineres**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D).
 
@@ -453,7 +453,7 @@ Use a **réplica de armazenamento** para gerenciar a replicação de armazenamen
 
 ## <a name="system-insights"></a>Insights do Sistema
 
-O **System** insights apresenta a análise preditiva nativamente no Windows Server para ajudar a fornecer uma visão mais detalhada do funcionamento do servidor.
+O **System insights** apresenta a análise preditiva nativamente no Windows Server para ajudar a fornecer uma visão mais detalhada do funcionamento do servidor.
 [Obtenha uma visão geral do System insights](http://aka.ms/systeminsights)
 
 >[!NOTE]

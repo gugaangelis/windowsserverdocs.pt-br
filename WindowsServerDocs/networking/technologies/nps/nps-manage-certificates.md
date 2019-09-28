@@ -2,130 +2,130 @@
 title: Gerenciar certificados usados com NPS
 description: Este tópico fornece informações sobre como usar certificados de servidor com o servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 204a4ef4-9d78-4a62-9940-43cc0e1c39d0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 73f3d6a1e9dc6ae1520b1d685b6b05b5f3aed601
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b83f68b52a9cceef779e5204e295bbc9e45e7a14
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864227"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396201"
 ---
 # <a name="manage-certificates-used-with-nps"></a>Gerenciar certificados usados com NPS
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Se você implantar um método de autenticação baseada em certificado, como Extensible Authentication Protocol\-Transport Layer Security \(EAP\-TLS\), Protected Extensible Authentication Protocol\-Transport Layer Security \(PEAP\-TLS\)e o PEAP\-Microsoft Challenge Handshake Authentication Protocol versão 2 \(MS\-CHAP v2\), você deve registrar um certificado de servidor a todos os seus NPSs. O certificado do servidor deve:
+Se você implantar um método de autenticação baseado em certificado, como o protocolo de autenticação extensível @ no__t-0Transport Layer Security \(EAP @ no__t-2TLS @ no__t-3, protocolo de autenticação extensível protegido @ no__t-4Transport Layer Security @no__ t-5PEAP @ no__t-6TLS @ no__t-7 e PEAP @ no__t-8Microsoft Challenge Handshake Authentication Protocol versão 2 \(MS @ no__t-10CHAP v2 @ no__t-11, você deve registrar um certificado de servidor para todos os seus NPSs. O certificado do servidor deve:
 
-- Atender os requisitos mínimos do servidor de certificado conforme descrito em [configurar modelos de certificado para PEAP e EAP requisitos](nps-manage-cert-requirements.md)
+- Atenda aos requisitos mínimos de certificado do servidor, conforme descrito em [configurar modelos de certificado para os requisitos de PEAP e EAP](nps-manage-cert-requirements.md)
 
-- Ser emitido por uma autoridade de certificação \(autoridade de certificação\) que é confiável para computadores cliente. Uma autoridade de certificação é confiável quando seu certificado não existe no repositório de certificados de autoridades de certificação raiz confiável para o usuário atual e o computador local.
+- Ser emitido por uma autoridade de certificação \(CA @ no__t-1 que é confiável para computadores cliente. Uma CA é confiável quando seu certificado existe no repositório de certificados de autoridades de certificação raiz confiáveis para o usuário atual e o computador local.
 
-As instruções a seguir auxiliam no gerenciamento de certificados do NPS em implantações em que a AC raiz confiável é uma autoridade de certificação de terceiros, como a Verisign, ou é uma autoridade de certificação que você tenha implantado para sua infraestrutura de chave pública \(PKI\) usando o Active Directory Serviços de certificados do Active \(AD CS\).
+As instruções a seguir auxiliam no gerenciamento de certificados NPS em implantações em que a autoridade de certificação raiz confiável é uma CA de terceiros, como a Verisign, ou é uma AC implantada para sua infraestrutura de chave pública \(PKI @ no__t-1 usando Active Directory Serviços de certificados \(AD CS @ no__t-3.
 
-## <a name="change-the-cached-tls-handle-expiry"></a>Alterar a expiração do identificador de TLS em cache
+## <a name="change-the-cached-tls-handle-expiry"></a>Alterar a expiração do identificador TLS em cache
 
-Durante os processos de autenticação inicial para o EAP\-TLS, PEAP\-TLS e PEAP\-MS\-CHAP v2, o NPS armazena em cache uma parte das propriedades de conexão TLS do cliente está se conectando. O cliente também armazena em cache uma parte das propriedades de conexão TLS do NPS.
+Durante os processos de autenticação inicial para EAP @ no__t-0TLS, PEAP @ no__t-1TLS e PEAP @ no__t-2 MS @ no__t-3CHAP v2, o NPS armazena em cache uma parte das propriedades de conexão TLS do cliente que está se conectando. O cliente também armazena em cache uma parte das propriedades de conexão TLS do NPS.
 
-Cada coleção individual dessas propriedades de conexão TLS é chamada de um identificador TLS.
+Cada coleção individual dessas propriedades de conexão TLS é chamada de identificador TLS.
 
-Computadores cliente podem armazenar em cache os identificadores TLS para vários autenticadores, enquanto NPSs pode armazenar em cache os identificadores de TLS de vários computadores cliente.
+Os computadores cliente podem armazenar em cache os identificadores TLS para vários autenticadores, enquanto NPSs pode armazenar em cache os identificadores TLS de vários computadores cliente.
 
-Os identificadores TLS em cache no cliente e servidor permitem que o processo de reautenticação ocorra mais rapidamente. Por exemplo, quando um computador sem fio faz a autenticação novamente com um NPS, o NPS pode examinar o identificador TLS para o cliente sem fio e podem determinar rapidamente a conexão de cliente é uma reconexão. O NPS autoriza a conexão sem executar a autenticação completa.
+Os identificadores TLS em cache no cliente e no servidor permitem que o processo de reautenticação ocorra com mais rapidez. Por exemplo, quando um computador sem fio é reautenticado com um NPS, o NPS pode examinar o identificador TLS do cliente sem fio e pode determinar rapidamente que a conexão do cliente é uma reconexão. O NPS autoriza a conexão sem executar a autenticação completa.
 
-Do mesmo modo, o cliente examina a alça TLS para o NPS, determina que ele é uma reconexão e não precisa realizar a autenticação de servidor.
+De forma correspondente, o cliente examina o identificador TLS do NPS, determina se ele é uma reconexão e não precisa executar a autenticação do servidor.
 
-Em computadores que executam o Windows 10 e Windows Server 2016, a expiração do identificador TLS padrão é de 10 horas.
+Em computadores que executam o Windows 10 e o Windows Server 2016, a expiração do identificador TLS padrão é de 10 horas.
 
-Em algumas circunstâncias, convém aumentar ou diminuir o tempo de expiração do identificador TLS.
+Em algumas circunstâncias, talvez você queira aumentar ou diminuir o tempo de expiração do identificador TLS.
 
-Por exemplo, você talvez queira diminuir o tempo de expiração do identificador TLS em circunstâncias em que o certificado de usuário é revogado por um administrador e o certificado expirou. Nesse cenário, o usuário pode ainda se conectar à rede se um NPS tem um identificador TLS em cache que não tenha expirado. Reduzindo os TLS identificador expiração pode ajudar a impedir que esses usuários com certificados revogados reconectar-se.
+Por exemplo, talvez você queira diminuir o tempo de expiração do identificador TLS em circunstâncias em que o certificado de um usuário é revogado por um administrador e o certificado expirou. Nesse cenário, o usuário ainda poderá se conectar à rede se um NPS tiver um identificador TLS em cache que não tenha expirado. Reduzir a expiração do identificador TLS pode ajudar a impedir que esses usuários com certificados revogados se reconectem.
 
 >[!NOTE]
->A melhor solução para esse cenário é para desabilitar a conta de usuário no Active Directory ou para remover a conta de usuário do grupo do Active Directory que tem permissão para se conectar à rede na diretiva de rede. A propagação dessas alterações para todos os controladores de domínio também pode ser atrasada, no entanto, devido à latência de replicação. 
+>A melhor solução para esse cenário é desabilitar a conta de usuário no Active Directory ou remover a conta de usuário do grupo de Active Directory que recebe permissão para se conectar à rede na diretiva de rede. No entanto, a propagação dessas alterações para todos os controladores de domínio também pode ser atrasada, devido à latência de replicação. 
 
 ## <a name="configure-the-tls-handle-expiry-time-on-client-computers"></a>Configurar o tempo de expiração do identificador TLS em computadores cliente
 
-Você pode usar este procedimento para alterar a quantidade de tempo que os computadores cliente armazenam em cache o identificador TLS de um NPS. Depois de autenticar com êxito um NPS, computadores cliente armazenar em cache as propriedades de conexão TLS do NPS como um identificador TLS. O identificador TLS tem uma duração padrão de 10 horas \(36,000,000 milissegundos\). Você pode aumentar ou diminuir o tempo de expiração do identificador TLS usando o procedimento a seguir.
+Você pode usar este procedimento para alterar a quantidade de tempo em que os computadores cliente armazenam em cache o identificador TLS de um NPS. Depois de autenticar com êxito um NPS, os computadores cliente armazenam em cache as propriedades de conexão TLS do NPS como um identificador TLS. O identificador TLS tem uma duração padrão de 10 horas \(36.000.000 milissegundos @ no__t-1. Você pode aumentar ou diminuir o tempo de expiração do identificador TLS usando o procedimento a seguir.
 
-Associação na **administradores**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 
 >[!IMPORTANT]
 >Esse procedimento deve ser executado em um NPS, não em um computador cliente.
 
-### <a name="to-configure-the-tls-handle-expiry-time-on-client-computers"></a>Para configurar TLS lidar com a hora de expiração em computadores cliente
+### <a name="to-configure-the-tls-handle-expiry-time-on-client-computers"></a>Para configurar o tempo de expiração do identificador TLS em computadores cliente
 
-1. Em um NPS, abra o Editor do registro.
+1. Em um NPS, abra o editor do registro.
 
-2. Navegue até a chave do registro **HKEY\_LOCAL\_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
+2. Navegue até a chave do registro **HKEY @ no__t-1LOCAL @ no__t-2MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
 
-3. Sobre o **editar** menu, clique em **New**e, em seguida, clique em **chave**.
+3. No menu **Editar** , clique em **novo**e em **chave**.
 
-4. Tipo de **ClientCacheTime**, e pressione ENTER.
+4. Digite **ClientCacheTime**e pressione Enter.
 
-5. Clique com botão direito **ClientCacheTime**, clique em **New**e, em seguida, clique em **valor DWORD (32 bits)**.
+5. Clique com o botão direito do mouse em **ClientCacheTime**, clique em **novo**e em **valor DWORD (32 bits)** .
 
-6. Digite a quantidade de tempo, em milissegundos, que você deseja que computadores cliente para armazenar em cache o identificador TLS de um NPS depois que a primeira autenticação bem-sucedida tente, o NPS.
+6. Digite a quantidade de tempo, em milissegundos, que você deseja que os computadores cliente armazenem em cache o identificador TLS de um NPS após a primeira tentativa de autenticação bem-sucedida pelo NPS.
 
 ## <a name="configure-the-tls-handle-expiry-time-on-npss"></a>Configurar o tempo de expiração do identificador TLS em NPSs
 
-Use este procedimento para alterar a quantidade de tempo que NPSs armazenar em cache o identificador TLS de computadores cliente. Depois de autenticar com êxito um cliente de acesso, NPSs armazenar em cache as propriedades de conexão TLS do computador cliente como um identificador TLS. O identificador TLS tem uma duração padrão de 10 horas \(36,000,000 milissegundos\). Você pode aumentar ou diminuir o tempo de expiração do identificador TLS usando o procedimento a seguir.
+Use este procedimento para alterar a quantidade de tempo que o NPSs armazena em cache o identificador TLS de computadores cliente. Depois de autenticar com êxito um cliente de acesso, NPSs cache as propriedades de conexão TLS do computador cliente como um identificador TLS. O identificador TLS tem uma duração padrão de 10 horas \(36.000.000 milissegundos @ no__t-1. Você pode aumentar ou diminuir o tempo de expiração do identificador TLS usando o procedimento a seguir.
 
-Associação na **administradores**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 
 >[!IMPORTANT]
 >Esse procedimento deve ser executado em um NPS, não em um computador cliente.
 
-### <a name="to-configure-the-tls-handle-expiry-time-on-npss"></a>Para configurar TLS lidar com a hora de expiração em NPSs
+### <a name="to-configure-the-tls-handle-expiry-time-on-npss"></a>Para configurar o tempo de expiração do identificador TLS em NPSs
 
-1. Em um NPS, abra o Editor do registro.
+1. Em um NPS, abra o editor do registro.
 
-2. Navegue até a chave do registro **HKEY\_LOCAL\_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
+2. Navegue até a chave do registro **HKEY @ no__t-1LOCAL @ no__t-2MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
 
-3. Sobre o **editar** menu, clique em **New**e, em seguida, clique em **chave**.
+3. No menu **Editar** , clique em **novo**e em **chave**.
 
-4. Tipo de **ServerCacheTime**, e pressione ENTER.
+4. Digite **ServerCacheTime**e pressione Enter.
 
-5. Clique com botão direito **ServerCacheTime**, clique em **New**e, em seguida, clique em **valor DWORD (32 bits)**.
+5. Clique com o botão direito do mouse em **ServerCacheTime**, clique em **novo**e em **valor DWORD (32 bits)** .
 
-6. Digite a quantidade de tempo, em milissegundos, que você deseja NPSs para armazenar em cache o identificador TLS de um computador cliente após a autenticação bem-sucedida de primeira tentativa pelo cliente.
+6. Digite o período de tempo, em milissegundos, que você deseja que o NPSs armazene em cache o identificador TLS de um computador cliente após a primeira tentativa de autenticação bem-sucedida pelo cliente.
 
-## <a name="obtain-the-sha-1-hash-of-a-trusted-root-ca-certificate"></a>Obter o valor de Hash SHA-1 de um certificado de autoridade de certificação raiz confiável
+## <a name="obtain-the-sha-1-hash-of-a-trusted-root-ca-certificate"></a>Obter o hash SHA-1 de um certificado de autoridade de certificação raiz confiável
 
-Use este procedimento para obter o algoritmo de Hash seguro (SHA-1) hash de uma autoridade de certificação (CA) raiz confiável de um certificado que está instalado no computador local. Em algumas circunstâncias, como ao implantar a política de grupo, é necessário designar um certificado usando o hash SHA-1 do certificado.
+Use este procedimento para obter o hash de SHA-1 (algoritmo de hash seguro) de uma AC (autoridade de certificação) raiz confiável de um certificado instalado no computador local. Em algumas circunstâncias, como ao implantar Política de Grupo, é necessário designar um certificado usando o hash SHA-1 do certificado.
 
-Ao usar a diretiva de grupo, você pode designar um ou mais certificados de autoridade de certificação raiz confiáveis que os clientes devem usar para autenticar o NPS durante o processo de autenticação mútua com EAP ou PEAP. Para designar um certificado de autoridade de certificação raiz confiáveis que os clientes devem usar para validar o certificado do servidor, você pode inserir o hash SHA-1 do certificado.
+Ao usar Política de Grupo, você pode designar um ou mais certificados de autoridade de certificação raiz confiáveis que os clientes devem usar para autenticar o NPS durante o processo de autenticação mútua com EAP ou PEAP. Para designar um certificado de AC raiz confiável que os clientes devem usar para validar o certificado do servidor, você pode inserir o hash SHA-1 do certificado.
 
-Este procedimento demonstra como obter o SHA-1 hash de um certificado de autoridade de certificação raiz confiável usando o snap-in de certificados Microsoft Management Console (MMC). 
+Este procedimento demonstra como obter o hash SHA-1 de um certificado de AC raiz confiável usando o snap-in de certificados do MMC (console de gerenciamento Microsoft). 
 
-Para concluir este procedimento, você deve ser um membro do **usuários** grupo no computador local.
+Para concluir este procedimento, você deve ser um membro do grupo **usuários** no computador local.
 
-### <a name="to-obtain-the-sha-1-hash-of-a-trusted-root-ca-certificate"></a>Para obter o SHA-1 hash de um certificado de AC raiz confiável
+### <a name="to-obtain-the-sha-1-hash-of-a-trusted-root-ca-certificate"></a>Para obter o hash SHA-1 de um certificado de autoridade de certificação raiz confiável
 
-1. Na caixa de diálogo Executar ou do Windows PowerShell, digite **mmc**, e pressione ENTER. O Console de gerenciamento Microsoft \(MMC\) é aberta. No MMC, clique em **arquivo**, em seguida, clique em **Snap\in Adicionar/remover**. A caixa de diálogo **Adicionar ou Remover Snap-ins** é aberta.
+1. Na caixa de diálogo Executar ou no Windows PowerShell, digite **MMC**e pressione Enter. O console de gerenciamento Microsoft \(MMC @ no__t-1 é aberto. No MMC, clique em **arquivo**e, em seguida, clique em **Adicionar/remover Snap\in**. A caixa de diálogo **Adicionar ou Remover Snap-ins** é aberta.
 
-2. Em **Adicionar ou Remover Snap-ins**, em **Snap-ins disponíveis**, clique duas vezes em **Certificados**. O Assistente de snap-in de certificados é aberto. Clique em **Conta de computador** e em **Avançar**.
+2. Em **Adicionar ou Remover Snap-ins**, em **Snap-ins disponíveis**, clique duas vezes em **Certificados**. O assistente de snap-in de certificados é aberto. Clique em **Conta de computador** e em **Avançar**.
 
-3. Na **Selecionar computador**, certifique-se de que **computador Local (o computador onde este console está sendo executado)** está selecionado, clique em **concluir**e, em seguida, clique em **Okey**.
+3. Em **Selecionar computador**, verifique se **o computador local (o computador no qual este console está sendo executado)** está selecionado, clique em **concluir**e em **OK**.
 
-4. No painel esquerdo, clique duas vezes **certificados (computador Local)** e, em seguida, clique duas vezes o **autoridades de certificação raiz confiáveis** pasta.
+4. No painel esquerdo, clique duas vezes em **certificados (computador local)** e, em seguida, clique duas vezes na pasta **autoridades de certificação raiz confiáveis** .
 
-5. O **certificados** pasta é uma subpasta das **autoridades de certificação raiz confiáveis** pasta. Clique na pasta **Certificados**.
+5. A pasta **certificados** é uma subpasta da pasta **autoridades de certificação raiz confiáveis** . Clique na pasta **Certificados**.
 
-6. No painel de detalhes, procure o certificado para sua autoridade de certificação de raiz confiável. Clique duas vezes no certificado. A caixa de diálogo **Certificado** é aberta.
+6. No painel de detalhes, navegue até o certificado de sua AC raiz confiável. Clique duas vezes no certificado. A caixa de diálogo **Certificado** é aberta.
 
 7. Na caixa de diálogo **Certificado**, clique na guia **Detalhes**.
 
-8. Na lista de campos, role e selecione **impressão digital**.
+8. Na lista de campos, role para e selecione **impressão digital**.
 
-9. No painel inferior, a cadeia de caracteres hexadecimal que é o hash SHA-1 do seu certificado é exibida. Selecione o hash SHA-1 e, em seguida, pressione o atalho de teclado do Windows para o comando de cópia \(CTRL\+C\) para copiar o hash para a área de transferência do Windows.
+9. No painel inferior, a cadeia de caracteres hexadecimal que é o hash SHA-1 do seu certificado é exibida. Selecione o hash SHA-1 e, em seguida, pressione o atalho de teclado do Windows para o comando de cópia \(CTRL @ no__t-1C @ no__t-2 para copiar o hash para a área de transferência do Windows.
 
-10. Abra o local para o qual você deseja colar o hash SHA-1, localizar corretamente o cursor e, em seguida, pressione o atalho de teclado do Windows para o comando Colar \(CTRL\+V\). 
+10. Abra o local no qual você deseja colar o hash SHA-1, localize corretamente o cursor e, em seguida, pressione o atalho de teclado do Windows para o comando colar \(CTRL @ no__t-1V @ no__t-2. 
 
-Para obter mais informações sobre certificados e NPS, consulte [configurar modelos de certificado para PEAP e EAP requisitos](nps-manage-cert-requirements.md).
+Para obter mais informações sobre certificados e NPS, consulte [configurar modelos de certificado para requisitos de PEAP e EAP](nps-manage-cert-requirements.md).
 
 Para obter mais informações sobre o NPS, consulte [servidor de diretivas de rede (NPS)](nps-top.md).

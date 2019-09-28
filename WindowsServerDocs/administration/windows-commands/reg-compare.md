@@ -1,8 +1,8 @@
 ---
-title: comparação de reg
-description: 'Tópico de comandos do Windows para * * *- '
+title: Reg Compare
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83bb010af4bfbf38ce41001d6a6001d5a3996090
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bfccc1f64b0113967a52e3ac0516d800cfea3532
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441925"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384722"
 ---
-# <a name="reg-compare"></a>comparação de reg
+# <a name="reg-compare"></a>Reg Compare
 
 
 
-Compara especificado subchaves do registro ou entradas.
+Compara as entradas ou subchaves do registro especificadas.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,49 +38,49 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 |    Parâmetro    |                                                                                                                                                                                                                                                                                          Descrição                                                                                                                                                                                                                                                                                           |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   \<KeyName1>   |                                                               Especifica o caminho completo da primeira subchave a ser comparado. Para especificar um computador remoto, inclua o nome do computador (no formato \\ \\ComputerName\) como parte do *KeyName*. A omissão \\ \\ComputerName\ faz com que a operação padrão no computador local. O *KeyName* deve incluir uma chave de raiz válido. As chaves de raiz válido para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves válidas são: HKLM e HKU.                                                                |
-|   \<KeyName2>   | Especifica o caminho completo da segunda subchave a ser comparado. Para especificar um computador remoto, inclua o nome do computador (no formato \\ \\ComputerName\) como parte do *KeyName*. A omissão \\ \\ComputerName\ faz com que a operação padrão no computador local. Especificar somente o nome do computador no *KeyName2* faz com que a operação usar o caminho até a subchave especificada na *Nomedachave1*. O *KeyName* deve incluir uma chave de raiz válido. As chaves de raiz válido para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves válidas são: HKLM e HKU. |
-| /v \<ValueName> |                                                                                                                                                                                                                                                                     Especifica o nome do valor a ser comparado à subchave.                                                                                                                                                                                                                                                                      |
-|       /ve       |                                                                                                                                                                                                                                                         Especifica que apenas as entradas que têm um nome de valor de null devem ser comparadas.                                                                                                                                                                                                                                                         |
-|      [{/oa      |                                                                                                                                                                                                                                                                                              /od                                                                                                                                                                                                                                                                                               |
-|       /oa       |                                                                                                                                                                                                                                             Especifica que todas as diferenças e as correspondências são exibidas. Por padrão, apenas as diferenças são listadas.                                                                                                                                                                                                                                             |
-|       /od       |                                                                                                                                                                                                                                                          Especifica que apenas as diferenças são exibidas. Esse é o comportamento padrão.                                                                                                                                                                                                                                                          |
-|       /os       |                                                                                                                                                                                                                                                    Especifica que apenas as correspondências são exibidas. Por padrão, apenas as diferenças são listadas.                                                                                                                                                                                                                                                     |
-|       /on       |                                                                                                                                                                                                                                                       Especifica que nada é exibido. Por padrão, apenas as diferenças são listadas.                                                                                                                                                                                                                                                        |
+|   \<KeyName1 >   |                                                               Especifica o caminho completo da primeira subchave a ser comparada. Para especificar um computador remoto, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.                                                                |
+|   \<KeyName2 >   | Especifica o caminho completo da segunda subchave a ser comparada. Para especificar um computador remoto, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. Especificar apenas o nome do computador em *KeyName2* faz com que a operação use o caminho para a subchave especificada em *KeyName1*. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU. |
+| /v \<ValueName > |                                                                                                                                                                                                                                                                     Especifica o nome do valor a ser comparado sob a subchave.                                                                                                                                                                                                                                                                      |
+|       /ve       |                                                                                                                                                                                                                                                         Especifica que somente as entradas que têm um nome de valor nulo devem ser comparadas.                                                                                                                                                                                                                                                         |
+|      [{/oa      |                                                                                                                                                                                                                                                                                              /OD                                                                                                                                                                                                                                                                                               |
+|       /oa       |                                                                                                                                                                                                                                             Especifica que todas as diferenças e correspondências são exibidas. Por padrão, somente as diferenças são listadas.                                                                                                                                                                                                                                             |
+|       /OD       |                                                                                                                                                                                                                                                          Especifica que apenas as diferenças são exibidas. Esse é o comportamento padrão.                                                                                                                                                                                                                                                          |
+|       /os       |                                                                                                                                                                                                                                                    Especifica que somente as correspondências são exibidas. Por padrão, somente as diferenças são listadas.                                                                                                                                                                                                                                                     |
+|       /on       |                                                                                                                                                                                                                                                       Especifica que nada é exibido. Por padrão, somente as diferenças são listadas.                                                                                                                                                                                                                                                        |
 |       /s        |                                                                                                                                                                                                                                                                         Compara todas as subchaves e entradas recursivamente.                                                                                                                                                                                                                                                                          |
-|       /?        |                                                                                                                                                                                                                                                                    Exibe a Ajuda para **reg compare** no prompt de comando.                                                                                                                                                                                                                                                                    |
+|       /?        |                                                                                                                                                                                                                                                                    Exibe a ajuda para **reg Compare** no prompt de comando.                                                                                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentários
 
-A tabela a seguir lista os valores de retornados para **reg compare**.
+A tabela a seguir lista os valores de retorno para **reg Compare**.
 
 |Valor|Descrição|
 |-----|-----------|
-|0|A comparação for bem-sucedida e o resultado é idêntico.|
+|0|A comparação é bem-sucedida e o resultado é idêntico.|
 |1|Falha na comparação.|
-|2|A comparação foi bem-sucedida e as diferenças foram encontradas.|
+|2|A comparação foi bem-sucedida e foram encontradas diferenças.|
 
 A tabela a seguir lista os símbolos exibidos nos resultados.
 
 |Símbolo|Descrição|
 |------|-----------|
-|=|*Nomedachave1* dados são iguais a *KeyName2* dados.|
-|<|*Nomedachave1* dados são menor que *KeyName2* dados.|
-|>|*Nomedachave1* dados são maiores que *KeyName2* dados.|
+|=|Os dados de *KeyName1* são iguais aos dados de *KeyName2* .|
+|<|Os dados de *KeyName1* são menores que os dados de *KeyName2* .|
+|>|Os dados de *KeyName1* são maiores que os dados de *KeyName2* .|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para comparar todos os valores na chave **MyApp** com todos os valores sob a chave **SaveMyApp**, tipo:
+Para comparar todos os valores na chave **MyApp** com todos os valores na chave **SaveMyApp**, digite:
 
 REG COMPARE HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp
 
-Para comparar o valor para a versão na chave **MyCo** e o valor para a versão sob a chave **MyCo1**, tipo:
+Para comparar o valor da versão sob a chave **MYCO** e o valor da versão sob a chave **MyCo1**, digite:
 
-REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1 /v versão
+REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1/v versão
 
-Para comparar todas as subchaves e valores em HKLM\Software\MyCo no computador chamado ZODÍACO com todas as subchaves e valores em HKLM\Software\MyCo no computador local, digite:
+Para comparar todas as subchaves e valores em HKLM\Software\MyCo no computador chamado ZODIAC com todas as subchaves e valores em HKLM\Software\MyCo no computador local, digite:
 
-COMPARAR REG \\ \\ZODIAC\HKLM\Software\MyCo \\ \\. /s
+REG COMPARE \\ @ no__t-1ZODIAC\HKLM\Software\MyCo \\ @ no__t-3. /s
 
 #### <a name="additional-references"></a>Referências adicionais
 

@@ -1,19 +1,19 @@
 ---
 title: Usando a limpeza de disco no Windows Server
 description: Saiba como usar opções de linha de comando para configurar a ferramenta de limpeza de disco (cleanmgr. exe) para limpar automaticamente determinados arquivos.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 4bf32520dc6fa2be36d44fbd66a7efc885a8f5d7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402121"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Usando a limpeza de disco no Windows Server
 

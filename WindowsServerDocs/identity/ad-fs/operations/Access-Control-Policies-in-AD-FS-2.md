@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b73baacc1115359b1d3d8b494cc285b5edd7c5fc
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866032"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358447"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Políticas de controle de acesso de cliente no AD FS 2,0
 As políticas de acesso para cliente no Serviços de Federação do Active Directory (AD FS) 2,0 permitem que você restrinja ou conceda acesso a recursos aos usuários.  Este documento descreve como habilitar as políticas de acesso do cliente no AD FS 2,0 e como configurar os cenários mais comuns.
@@ -166,11 +166,11 @@ O exemplo a seguir habilita o acesso de clientes internos com base no endereço 
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              Regra de AD FS padrão para permitir o acesso a todos os usuários. Essa regra já deve existir na lista de regras de autorização de emissão de confiança de terceira parte confiável da plataforma de identidade Microsoft Office 365.              |                                  = > problema (tipo = "<https://schemas.microsoft.com/authorization/claims/permit>", valor = "verdadeiro");                                   |
 |                               Adicionar essa cláusula a uma nova regra personalizada especifica que a solicitação vem do proxy do servidor de Federação (ou seja, tem o cabeçalho x-MS-Proxy)                                |                                                                                                                                                                    |
-|                                                                                 É recomendável que todas as regras incluam isso.                                                                                  |                                    Exists ([type = =<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>""])                                    |
-|                                                         Usado para estabelecer que a solicitação é de um cliente com um IP no intervalo aceitável definido.                                                         | Not Exists ([type = =<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>"", valor = ~ "Regex de endereço IP público fornecido pelo cliente"]) |
+|                                                                                 É recomendável que todas as regras incluam isso.                                                                                  |                                    Exists ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
+|                                                         Usado para estabelecer que a solicitação é de um cliente com um IP no intervalo aceitável definido.                                                         | Não existe ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", valor = ~ "Regex de endereço IP público fornecido pelo cliente"]) |
 |                                    Essa cláusula é usada para especificar que, se o aplicativo que está sendo acessado não for Microsoft. Exchange. ActiveSync, a solicitação deverá ser negada.                                     |       Não existe ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>", valor = = "Microsoft. Exchange. ActiveSync"])        |
 |                                                      Essa regra permite que você determine se a chamada foi por meio de um navegador da Web e não será negada.                                                      |              Não existe ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", valor = = "/adfs/ls/"])               |
-| Essa regra declara que os únicos usuários em um determinado grupo de Active Directory (com base no valor de SID) devem ser negados. Adicionar não a essa instrução significa que um grupo de usuários será permitido, independentemente do local. |             Exists ([tipo = =<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>"", valor = ~ "{valor de Sid de grupo do grupo do AD permitido}"])              |
+| Essa regra declara que os únicos usuários em um determinado grupo de Active Directory (com base no valor de SID) devem ser negados. Adicionar não a essa instrução significa que um grupo de usuários será permitido, independentemente do local. |             Exists ([type = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", valor = ~ "{valor SID do grupo do grupo AD permitido}"])              |
 |                                                                Essa é uma cláusula necessária para emitir uma negação quando todas as condições anteriores forem atendidas.                                                                 |                                   = > problema (tipo = "<https://schemas.microsoft.com/authorization/claims/deny>", valor = "verdadeiro");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>Criando a expressão de intervalo de endereços IP
@@ -209,7 +209,7 @@ Estendendo isso, podemos corresponder dois endereços IP diferentes com uma expr
 
 Portanto, um exemplo para corresponder apenas a dois endereços (como 192.168.1.1 ou 10.0.0.1) seria: \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 
-Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere:\.\b192\.168\.1 ([1-9] | 1 [0-9] | 2 [0-5]) \b
+Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192 @ no__t-0168 @ no__t-11 @ no__t-2 ([1-9] | 1 [0-9] | 2 [0-5]) \b
 
 >[!Note] 
 >O endereço IP é tratado como cadeia de caracteres e não como um número.
@@ -229,9 +229,9 @@ O seguinte corresponde aos intervalos necessários para a parte do endereço ap�
 >[!Note]
 >Os parênteses devem ser posicionados corretamente, para que você não comece a corresponder a outras partes de endereços IP.
 
-Com o bloco 192 correspondente, podemos gravar uma expressão semelhante para o 10 bloco: \b10\.0\.0\.([1-9] | 1 [0-4]) \b
+Com o bloco 192 correspondente, podemos gravar uma expressão semelhante para o 10 bloco: \b10 @ no__t-00 @ no__t-10 @ no__t-2 ([1-9] | 1 [0-4]) \b
 
-E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14\."\.:\.\b192 168 1 ([1-9] | 1 [0-9] | 2 [0-5])\.\b\.| \b10 0 0\. ([1-9] | 1 [0-4]) \b
+E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14": \b192 @ no__t-0168 @ no__t-11 @ no__t-2 ([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10 @ no__t-30 @ no__t-40 @ no__t-5 ([1-9] | 1 [0-4]) \b
 
 #### <a name="testing-the-expression"></a>Testando a expressão
 

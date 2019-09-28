@@ -1,33 +1,33 @@
 ---
 title: Contadores de desempenho relacionados à rede
 description: Este tópico faz parte do guia de ajuste de desempenho do subsistema de rede para o Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bcb0c1c5a08a306fbd9b419d0c458c3bc54e1786
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7ebff972d670f3fd0b8d12959d161bce03ac487e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446199"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401843"
 ---
 # <a name="network-related-performance-counters"></a>Contadores de desempenho relacionados à rede
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico lista os contadores que são relevantes para o gerenciamento de desempenho de rede e contém as seções a seguir.  
+Este tópico lista os contadores que são relevantes para gerenciar o desempenho de rede e contém as seções a seguir.  
   
 -   [Utilização de recursos](#bkmk_ru)  
   
 -   [Possíveis problemas de rede](#bkmk_np)  
   
--   [Receber o desempenho do lado união (RSC)](#bkmk_rsc)  
+-   [Desempenho de União lateral de recebimento (RSC)](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a> Utilização de recursos  
+##  <a name="bkmk_ru"></a>Utilização de recursos  
 
 Os contadores de desempenho a seguir são relevantes para a utilização de recursos de rede.  
   
@@ -45,11 +45,11 @@ Os contadores de desempenho a seguir são relevantes para a utilização de recu
   
   -   Segmentos retransmitidos/s  
   
-- Interface(*) de rede, adaptador de rede (\*)  
+- Interface de rede (*), adaptador de rede (\*)  
   
-  - Bytes recebidos/s  
+  - Bytes Recebidos/s  
   
-  - Bytes enviados/s  
+  - Bytes Enviados/s  
   
   - Pacotes recebidos/s  
   
@@ -57,23 +57,23 @@ Os contadores de desempenho a seguir são relevantes para a utilização de recu
   
   - Comprimento da fila de saída  
   
-    Esse contador é o comprimento da fila de pacotes de saída \(em pacotes\). Se isso for maior que 2, ocorrer atrasos. Você deve encontrar o afunilamento e eliminá-lo, se possível. Porque o NDIS enfileira as solicitações, esse comprimento deve ser sempre 0.  
+    Esse contador é o comprimento da fila de pacotes de saída \(in pacotes @ no__t-1. Se isso for maior do que 2, ocorrerão atrasos. Você deve encontrar o afunilamento e eliminá-lo se puder. Como o NDIS enfileira as solicitações, esse comprimento deve ser sempre 0.  
   
 - Informações do processador  
   
-  - % Tempo do processador  
+  - % Tempo do Processador  
   
   - Interrupções/s  
   
-  - DPCs enfileiradas/s  
+  - DPCs enfileirados/s  
   
-    Esse contador é uma taxa média no qual as DPCs foram adicionadas à fila de DPCS do processador lógico. Cada processador lógico tem sua própria fila DPC. Esse contador mede a taxa na qual as DPCs são adicionadas à fila, não o número de DPCs na fila. Ele exibe a diferença entre os valores que foram observados nas últimas duas amostras, divididas pela duração do intervalo de amostragem.  
+    Esse contador é uma taxa média na qual as DPCs foram adicionadas à fila de DPC do processador lógico. Cada processador lógico tem sua própria fila de DPC. Esse contador mede a taxa na qual as DPCs são adicionadas à fila, não o número de DPCs na fila. Ele exibe a diferença entre os valores que foram observados nos dois últimos exemplos, divididos pela duração do intervalo de amostragem.  
   
-##  <a name="bkmk_np"></a> Possíveis problemas de rede  
+##  <a name="bkmk_np"></a>Possíveis problemas de rede  
 
 Os contadores de desempenho a seguir são relevantes para possíveis problemas de rede.  
   
--   Interface(*) de rede, adaptador de rede (\*)  
+-   Interface de rede (*), adaptador de rede (\*)  
   
     -   Pacotes recebidos descartados  
   
@@ -93,44 +93,44 @@ Os contadores de desempenho a seguir são relevantes para possíveis problemas d
   
 -   TCPv4, TCPv6  
   
-    -   Falhas de Conexão  
+    -   Falhas de conexão  
   
     -   Conexões redefinidas  
   
 -   Política de QoS de rede  
   
-    -   Pacotes eliminados  
+    -   Pacotes removidos  
   
-    -   Pacotes descartados/s  
+    -   Pacotes eliminados/s  
   
--   Por Processor Network Interface Card Activity  
+-   Atividade da placa de interface de rede por processador  
   
-    -   Recursos insuficientes de recebimento indicações/s  
+    -   Indicações de recebimento de recursos baixos/s  
   
-    -   Recursos insuficientes recebido pacotes/s  
+    -   Pacotes de recursos baixos recebidos/s  
   
--   Microsoft Winsock BSP  
+-   BSP Microsoft Winsock  
   
-    -   Datagramas descartadas  
+    -   Datagramas removidos  
   
-    -   Datagramas descartadas/s  
+    -   Datagramas removidos/s  
   
     -   Conexões rejeitadas  
   
     -   Conexões rejeitadas/s  
   
-##  <a name="bkmk_rsc"></a> Receber o desempenho do lado união (RSC)  
+##  <a name="bkmk_rsc"></a>Desempenho de União lateral de recebimento (RSC)  
 
-Os contadores de desempenho a seguir são relevantes para o desempenho de RSC.  
+Os contadores de desempenho a seguir são relevantes para o desempenho do RSC.  
   
 -   Adaptador de rede(*)  
   
-    -   Conexões TCP RSC Active Directory  
+    -   Conexões TCP ativas RSC  
   
-    -   Tamanho da média de pacotes TCP RSC  
+    -   Tamanho médio de pacote RSC de TCP  
   
-    -   TCP RSC unidas pacotes/s  
+    -   Pacotes de União RSC TCP/s  
   
-    -   TCP RSC exceções/s
+    -   Exceções RSC de TCP/s
 
-Para obter links para todos os tópicos neste guia, consulte [ajuste de desempenho do subsistema de rede](net-sub-performance-top.md).
+Para obter links para todos os tópicos deste guia, consulte [ajuste de desempenho do subsistema de rede](net-sub-performance-top.md).

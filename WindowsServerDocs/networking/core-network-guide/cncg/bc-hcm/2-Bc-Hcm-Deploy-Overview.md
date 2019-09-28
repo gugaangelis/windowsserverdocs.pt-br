@@ -1,90 +1,90 @@
 ---
 title: Visão geral da implantação do modo de cache hospedado BranchCache
-description: Este guia fornece instruções sobre como implantar o BranchCache no modo de cache hospedado em computadores que executam o Windows Server 2016 e Windows 10
+description: Este guia fornece instruções sobre como implantar o BranchCache no modo de cache hospedado em computadores que executam o Windows Server 2016 e o Windows 10
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 930a9b4872a7a79351055841a5d716dd99df0fa9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dc6ade92eb5fe04271033973911ccb98e871d236
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829507"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406378"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>Visão geral da implantação do modo de cache hospedado BranchCache
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Você pode usar este guia para implantar um servidor de cache hospedado do BranchCache em uma filial em que os computadores estão associados a um domínio. Você pode usar este tópico para obter uma visão geral do processo de implantação modo de Cache hospedado do BranchCache.
+Você pode usar este guia para implantar um servidor de cache hospedado do BranchCache em uma filial em que os computadores são ingressados em um domínio. Você pode usar este tópico para obter uma visão geral do processo de implantação do modo de cache hospedado do BranchCache.
 
-Esta visão geral inclui a infraestrutura do BranchCache que você precisa, bem como uma simples visão geral passo a passo de implantação.
+Esta visão geral inclui a infraestrutura do BranchCache de que você precisa, bem como uma visão geral passo a passo simples de implantação.
 
-## <a name="bkmk_components"></a>Infraestrutura de implantação de servidor de Cache hospedada
+## <a name="bkmk_components"></a>Infraestrutura de implantação do servidor de cache hospedado
 
-Nessa implantação, o servidor de cache hospedado é implantado usando pontos de conexão de serviço no Active Directory Domain Services \(AD DS\), e você tem a opção com o BranchCache no Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012, efetuar o prehash do conteúdo compartilhado na Web e de arquivos com base em servidores de conteúdo, em seguida, pré-carregar o conteúdo em servidores de cache hospedado.
+Nessa implantação, o servidor de cache hospedado é implantado usando pontos de conexão de serviço no Active Directory Domain Services \(AD DS @ no__t-1, e você tem a opção com o BranchCache no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012, para prearmazenar o conteúdo compartilhado em servidores de conteúdo baseados na Web e em arquivos, pré-carregar o conteúdo em servidores de cache hospedados.
 
-A ilustração a seguir mostra a infraestrutura que é necessário para implantar um servidor de cache hospedado do BranchCache.
+A ilustração a seguir mostra a infraestrutura necessária para implantar um servidor de cache hospedado do BranchCache.
 
-![Visão geral do modo de Cache hospedado do BranchCache](../../../media/BranchCache-Hcm-Overview/Bc-Hcm-Overview.jpg)
+![Visão geral do modo de cache hospedado do BranchCache](../../../media/BranchCache-Hcm-Overview/Bc-Hcm-Overview.jpg)
 
 > [!IMPORTANT]
-> Embora essa implantação descreve os servidores de conteúdo de um data center na nuvem, você pode usar este guia para implantar um servidor de cache hospedado do BranchCache, independentemente de onde implantar seus servidores de conteúdo no seu escritório principal ou em um local de nuvem.
+> Embora essa implantação descreva os servidores de conteúdo em uma nuvem data center, você pode usar este guia para implantar um servidor de cache hospedado do BranchCache, independentemente de onde você implanta seus servidores de conteúdo – em seu escritório principal ou em um local de nuvem.
 
 ### <a name="hcs1-in-the-branch-office"></a>HCS1 na filial
 
-Você deve configurar este computador como um servidor de cache hospedado. Se você optar por pré-hash dados do servidor de conteúdo, de modo que você pode pré-carregar o conteúdo em seus servidores de cache hospedado, você pode importar pacotes de dados que contêm o conteúdo de seus servidores Web e de arquivos.
+Você deve configurar este computador como um servidor de cache hospedado. Se você optar por fazer o hash de dados do servidor de conteúdo para poder pré-carregar o conteúdo em seus servidores de cache hospedados, poderá importar pacotes de dados que contêm o conteúdo de seus servidores Web e de arquivos.
 
-### <a name="web1-in-the-cloud-data-center"></a>WEB1 no Centro de dados de nuvem
+### <a name="web1-in-the-cloud-data-center"></a>WEB1 na nuvem data center
 
-WEB1 é um BranchCache\-habilitado o servidor de conteúdo. Se você optar por pré-hash dados do servidor de conteúdo, de modo que você pode pré-carregar o conteúdo em seus servidores de cache hospedado, você pode prehash do conteúdo compartilhado no WEB1, e criar um pacote de dados que você copia HCS1.
+WEB1 é um servidor de conteúdo do BranchCache @ no__t-0enabled. Se você optar por prefazer o hash de dados do servidor de conteúdo para poder pré-carregar o conteúdo em seus servidores de cache hospedados, você poderá prearmazenar o conteúdo compartilhado em WEB1 e, em seguida, criar um pacote de dados que você copia para o HCS1.
 
-### <a name="file1-in-the-cloud-data-center"></a>File1 no Centro de dados de nuvem
+### <a name="file1-in-the-cloud-data-center"></a>FILE1 na nuvem data center
 
-File1 é um BranchCache\-habilitado o servidor de conteúdo. Se você optar por pré-hash dados do servidor de conteúdo, de modo que você pode pré-carregar o conteúdo em seus servidores de cache hospedado, você pode prehash do conteúdo compartilhado no FILE1 e crie um pacote de dados que você copiar para HCS1.
+ARQUIVO1 é um servidor de conteúdo BranchCache @ no__t-0enabled. Se você optar por prefazer o hash de dados do servidor de conteúdo para poder pré-carregar o conteúdo em seus servidores de cache hospedados, você poderá prefazer o hash do conteúdo compartilhado no ARQUIVO1 e, em seguida, criar um pacote de dados que você copia para HCS1.
   
 ### <a name="dc1-in-the-main-office"></a>DC1 no escritório principal
 
-DC1 é um controlador de domínio, e você deve configurar a política de domínio padrão ou outra política que é mais apropriada para sua implantação, com as configurações de diretiva de grupo do BranchCache para habilitar a descoberta de Cache hospedado automática pelo ponto de Conexão de serviço.
+DC1 é um controlador de domínio e você deve configurar a política de domínio padrão ou outra política mais apropriada para sua implantação, com o BranchCache Política de Grupo configurações para habilitar a descoberta automática de cache hospedado pelo ponto de conexão de serviço.
 
-Quando os computadores cliente na filial tiverem atualizado de diretiva de grupo e essa configuração de política é aplicada, eles automaticamente localizarem e começarem a usar o servidor de cache hospedado na filial.
+Quando os computadores cliente na ramificação tiverem Política de Grupo atualizados e essa configuração de política for aplicada, ele automaticamente localiza e começa a usar o servidor de cache hospedado na filial.
 
 ### <a name="client-computers-in-the-branch-office"></a>Computadores cliente na filial
 
-Você deve atualizar a diretiva de grupo em computadores cliente para aplicar novas configurações de diretiva de grupo do BranchCache e para permitir que os clientes localizar e usar o servidor de cache hospedado.
+Você deve atualizar Política de Grupo em computadores cliente para aplicar novas configurações de Política de Grupo do BranchCache e para permitir que os clientes localizem e usem o servidor de cache hospedado.
 
-## <a name="bkmk_overview"></a>Visão geral de processo da implantação servidor de Cache hospedado
-
->[!NOTE]
->Os detalhes de como executar essas etapas são fornecidos na seção [implantação do modo de Cache hospedado do BranchCache](4-Bc-Hcm-Deployment.md).
-
-O processo de implantação de um servidor de Cache hospedado do BranchCache ocorre nesses estágios:
+## <a name="bkmk_overview"></a>Visão geral do processo de implantação do servidor de cache hospedado
 
 >[!NOTE]
->Algumas das etapas a seguir são opcionais, como aquelas etapas que demonstram como pré-hash e pré-carregar conteúdo em servidores de cache hospedado. Quando você implanta o BranchCache no modo de cache hospedado, não é necessário para o conteúdo prehash em sua Web e o arquivo de servidores de conteúdo, para criar um pacote de dados e para importar o pacote de dados para pré-carregar seus servidores de cache hospedado com conteúdo. As etapas são indicadas como opcionais nesta seção e na seção [implantação do modo de Cache hospedado do BranchCache](4-Bc-Hcm-Deployment.md) para que você possa ignorá-los se você preferir.
+>Os detalhes de como executar essas etapas são fornecidos na seção implantação do [modo de cache hospedado do BranchCache](4-Bc-Hcm-Deployment.md).
 
-1. Em HCS1, use comandos do Windows PowerShell para configurar o computador como um servidor de cache hospedado e registrar um ponto de Conexão de serviço no Active Directory.
+O processo de implantação de um servidor de cache hospedado do BranchCache ocorre nestes estágios:
 
-2. \(Opcional\) em HCS1, se os valores padrão de BranchCache não coincidem com as metas de implantação do servidor e de cache hospedado, configure a quantidade de espaço em disco que você deseja alocar para o cache hospedado. Também configure o local do disco que você prefira para o cache hospedado.
+>[!NOTE]
+>Algumas das etapas a seguir são opcionais, como as etapas que demonstram como prehash e pré-carregamento de conteúdo em servidores de cache hospedados. Quando você implanta o BranchCache no modo de cache hospedado, não é necessário colocar o conteúdo de pré-hash em seus servidores de conteúdo da Web e de arquivo, criar um pacote de dados e importar o pacote de dados para pré-carregar seus servidores de cache hospedados com o conteúdo. As etapas são indicadas como opcionais nesta seção e na seção [implantação do modo de cache hospedado do BranchCache](4-Bc-Hcm-Deployment.md) para que você possa ignorá-las se preferir.
 
-3. \(Opcional\) pré-hash do conteúdo nos servidores de conteúdo, criar pacotes de dados e pré-carregar conteúdo no servidor de cache hospedado.
+1. No HCS1, use os comandos do Windows PowerShell para configurar o computador como um servidor de cache hospedado e registrar um ponto de conexão de serviço no Active Directory.
+
+2. \(Optional @ no__t-1 no HCS1, se os valores padrão do BranchCache não corresponderem aos seus objetivos de implantação para o servidor e o cache hospedado, configure a quantidade de espaço em disco que você deseja alocar para o cache hospedado. Configure também o local do disco que você prefere para o cache hospedado.
+
+3. \(Optional @ no__t-1 conteúdo de pré-hash em servidores de conteúdo, criar pacotes de dados e pré-carregar conteúdo no servidor de cache hospedado.
 
     > [!NOTE]
-    > Realizar o hash prévio e pré-Carregando conteúdo do servidor de cache hospedado é opcional, no entanto, se você escolher efetuar o prehash e pré-carregamento, você deve executar todas as etapas abaixo que são aplicável à sua implantação. \(Por exemplo, se você não tiver servidores Web, você não precisará realizar qualquer uma das etapas relacionadas ao realizar o hash prévio e o pré-carregamento de conteúdo do servidor Web.\)
+    > O pré-hash e o pré-carregamento de conteúdo em seu servidor de cache hospedado são opcionais. no entanto, se você optar por prehash e Preload, deverá executar todas as etapas abaixo aplicáveis à sua implantação. \(For exemplo, se você não tiver servidores Web, não precisará executar nenhuma das etapas relacionadas ao prehash e ao pré-carregamento do conteúdo do servidor Web. \)
 
-    1. No WEB1, pré-hash do conteúdo do servidor Web e criar um pacote de dados.
+    1. Em WEB1, o conteúdo do servidor Web de prehash e criar um pacote de dados.
 
-    2. No FILE1, pré-hash do conteúdo do servidor de arquivo e crie um pacote de dados.
+    2. Em ARQUIVO1, conteúdo de servidor de arquivos prehash e criar um pacote de dados.
 
-    3. A partir do WEB1 e FILE1, copie os pacotes de dados para o servidor de cache hospedado HCS1.
+    3. Em WEB1 e ARQUIVO1, copie os pacotes de dados para o servidor de cache hospedado HCS1.
 
-    4. HCS1, importe os pacotes de dados para pré-carregar o cache de dados.
+    4. No HCS1, importe os pacotes de dados para pré-carregar o cache de dados.
 
-4. No DC1, configure ingressado no domínio branch office computadores de cliente para o modo de cache hospedado por meio da configuração de diretiva de grupo com configurações de política do BranchCache.
+4. No DC1, configure computadores cliente da filial ingressada no domínio para o modo de cache hospedado Configurando Política de Grupo com as configurações de política do BranchCache.
 
-5. Em computadores cliente, atualize a diretiva de grupo.
+5. Em computadores cliente, atualize Política de Grupo.
 
-Para continuar com este guia, consulte [BranchCache Hosted Cache de modo de planejamento de implantação](3-Bc-Hcm-Plan.md).
+Para continuar com este guia, consulte [planejamento de implantação do modo de cache hospedado do BranchCache](3-Bc-Hcm-Plan.md).

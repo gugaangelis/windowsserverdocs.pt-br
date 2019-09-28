@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3189056de8feff65d37b1846059d871c99ee9ede
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 49246d9df294b966f0ba38b1d3c1f361ce5f1d5f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869224"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407262"
 ---
 # <a name="when-to-use-an-authorization-claim-rule"></a>Quando usar uma regra de declaração de autorização
 Você pode usar essa regra em serviços de Federação do Active Directory (AD FS) \(AD FS\) quando precisar pegar um tipo de declaração de entrada e aplicar uma ação que determinará se um usuário terá o acesso permitido ou negado com base no valor que você Especifique na regra. Quando você usa essa regra, você passa ou transforma quaisquer declarações que correspondem à lógica da regra a seguir, com base em uma das opções configuradas na regra:  

@@ -6,36 +6,36 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 6150b52030734c57b345aea731302650bcbddbfd
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 6306b87dd06774bfde5ffc3ff98818d47d0c858f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192131"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408377"
 ---
 # <a name="implementing-your-ad-fs-design-plan"></a>Implementando seu plano de design do AD FS
 
-As seguintes condições ambientais e os requisitos são fatores importantes na implementação de seus serviços de Federação do Active Directory \(do AD FS\) plano de design:  
+As seguintes condições e requisitos ambientais são fatores importantes na implementação do plano de design Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1:  
   
--   **Parceiros com suporte:** Normalmente, você usa o AD FS para trabalhar com organizações parceiras. Para estabelecer a federação de identidades, determine as organizações com o qual você deseja formar uma parceria. Depois que uma implantação de linha de base do AD FS está em vigor, operando com parceiros envolve adicionar parceiros, excluindo os parceiros e atualizar informações do parceiro. Alterações em parcerias podem ocorrer por vários motivos. Por exemplo, sua implantação do AD FS pode exigir atualizações de parceria se seu parceiro altera seus negócios significativamente, sua organização se torna parte de uma organização maior ou de uma federação de organizações ou sua organização é adquirida por outro empresa. Em qualquer cenário em que você federar identidades de vários domínios, você precisará saber os domínios \(parceiros\) que atualmente oferecem suporte a você e todos os domínios adicionais que representam possíveis parceiros.  
+-   **Parceiros com suporte:** Normalmente, você usa AD FS para trabalhar com organizações parceiras. Para estabelecer a Federação de identidade, determine as organizações com as quais você deseja formar uma parceria. Depois que uma linha de base AD FS implantação está em vigor, a operação com parceiros envolve a adição de parceiros, a exclusão de parceiros e a atualização de informações de parceiros. As alterações nas parcerias podem ocorrer por vários motivos. Por exemplo, sua implantação de AD FS pode exigir atualizações de parceria se seu parceiro alterar sua empresa de forma significativa, sua organização se tornará parte de uma organização maior ou de uma federação de organizações, ou sua organização será adquirida por um outro corporativa. Em qualquer cenário no qual você federa identidades de vários domínios, você precisará saber os domínios \(partners @ no__t-1 que você tem suporte atualmente e todos os domínios adicionais que representam parceiros em potencial.  
   
--   **Aplicativos com suporte e tipos de serviço:** Alguns aplicativos e serviços exigem acesso aos recursos do sistema operacional, enquanto outras são "reconhecimento de declaração." É importante entender os tipos de aplicativos e serviços que o AD FS dá suporte para que você pode formular os requisitos de administração.  
+-   **Tipos de aplicativos e serviços com suporte:** Alguns aplicativos e serviços exigem acesso aos recursos do sistema operacional, enquanto outros são "reconhecimento de declarações". É importante entender os tipos de aplicativos e serviços que AD FS dá suporte para que você possa formular os requisitos de administração.  
   
--   **Diagramas de arquitetura lógicos e físicos ou topologia de implantação:** Você precisará saber:  
+-   **Diagramas lógicos e de arquitetura física ou topologia de implantação:** Você precisará saber:  
   
-    -   Se os servidores de Federação funcionará em um conjunto de servidores de farm ou em um único servidor.  
+    -   Se os servidores de Federação funcionarão em um conjunto de servidores em farm ou em um único servidor.  
   
     -   Onde sua rede implanta firewalls e proxies.  
   
-    -   O local dos recursos e se os usuários estão acessando recursos de dentro de sua organização, fora da organização, ou ambos.  
+    -   O local dos recursos e se os usuários estão acessando recursos de dentro da sua organização, fora da organização ou ambos.  
   
-## <a name="how-to-implement-your-ad-fs-design-using-this-guide"></a>Como implementar o design do AD FS usando este guia  
-A próxima etapa na implementação do seu design é determinar em qual ordem de cada tarefa de implantação deve ser executada. Este guia usa listas de verificação para ajudá-lo a passar pelas várias tarefas de implantação para servidores e aplicativos que são necessárias para implementar seu plano de design. Listas de verificação pai e filho são usadas conforme o necessário para representar a ordem em que as tarefas para um específico do AD FS design deve ser processado.  
+## <a name="how-to-implement-your-ad-fs-design-using-this-guide"></a>Como implementar seu design de AD FS usando este guia  
+A próxima etapa na implementação do design é determinar em qual ordem cada tarefa de implantação deve ser executada. Este guia usa listas de verificação para ajudá-lo a passar pelas várias tarefas de implantação para servidores e aplicativos que são necessárias para implementar seu plano de design. As listas de verificação pai e filho são usadas conforme necessário para representar a ordem na qual as tarefas para um design de AD FS específico devem ser processadas.  
   
-Use as seguintes listas de verificação pai nesta seção do guia para se familiarizar com as tarefas de implantação para implementar o design preferencial de AD FS da sua organização:  
+Use as seguintes listas de verificação pai nesta seção do guia para se familiarizar com as tarefas de implantação para implementar o design de AD FS preferencial de sua organização:  
   
 -   [Lista de verificação: Como implementar um design SSO da Web](Checklist--Implementing-a-Web-SSO-Design.md)  
   

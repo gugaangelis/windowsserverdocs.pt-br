@@ -1,9 +1,9 @@
 ---
-title: ETAPA 6 de testar a conectividade do DirectAccess da sub-rede da rede doméstica
-description: Este tópico faz parte do guia de laboratório de teste - demonstrar o DirectAccess com autenticação OTP e SecurID de RSA para o Windows Server 2016
+title: ETAPA 6 teste a conectividade do DirectAccess da sub-rede HomeNet
+description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess com autenticação OTP e RSA SecurID para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,56 +12,56 @@ ms.topic: article
 ms.assetid: b9b77cfd-8dd4-476b-a118-f3d6bf59e7b1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c19376b7301068639ba1315af5e9f5a9a4514b3b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9cce81998c6041aea223da29979a53d6069f599c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283050"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404747"
 ---
-# <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>ETAPA 6 de testar a conectividade do DirectAccess da sub-rede da rede doméstica
+# <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>ETAPA 6 teste a conectividade do DirectAccess da sub-rede HomeNet
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-A implantação do DirectAccess senha única (OTP) agora está concluída e você pode começar a testar a conectividade de sub-rede da rede doméstica.  
+A implantação de OTP (senha de uso único) do DirectAccess agora está concluída e você pode começar a testar a conectividade da sub-rede HomeNet.  
   
-### <a name="to-test-otp-functionality-from-the-homenet-subnet-on-client1"></a>Para testar a funcionalidade OTP da sub-rede da rede doméstica em CLIENT1  
+### <a name="to-test-otp-functionality-from-the-homenet-subnet-on-client1"></a>Para testar a funcionalidade de OTP da sub-rede HomeNet em CLIENT1  
   
-1. Em CLIENT1, certifique-se de que você efetuou logon como **User1**.  
+1. Em CLIENT1, certifique-se de que você está conectado como **Usuário1**.  
   
-2. No **inicie** tela, digite**powershell.exe**, clique com botão direito **powershell**, clique em **avançado**e, em seguida, clique em **executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+2. Na tela **Iniciar** , digite**PowerShell. exe**, clique com o botão direito do mouse em **PowerShell**, clique em **avançado**e, em seguida, clique em **Executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
-3. Na janela do Windows PowerShell, digite **gpupdate /force**, e pressione ENTER.  
+3. Na janela do Windows PowerShell, digite **gpupdate/force**e pressione Enter.  
   
-4. Desconecte CLIENT1 da sub-rede Corpnet e conectá-lo à sub-rede da rede doméstica.  
+4. Desconecte o CLIENT1 da sub-rede corpnet e conecte-o à sub-rede HomeNet.  
   
-5. Em CLIENT1, abra o Internet Explorer e, na barra de endereços, digite **https://app1.corp.contoso.com/** e pressione ENTER. Pressione F5.  
+5. Em CLIENT1, abra o Internet Explorer e, na barra de endereços, digite **https://app1.corp.contoso.com/** e pressione Enter. Pressione F5.  
   
-   Não deve abrir o site.  
+   O site não deve abrir.  
   
-6. Sobre o **inicie** tela, digite**RSA**e clique em **RSA SecurID Token**.  
+6. Na tela **Iniciar** , digite**RSA**e clique em **token RSA SecurID**.  
   
-7. Aguarde até que o token RSA SecurID altera a senha de uso única e, em seguida, clique em **cópia**.  
+7. Aguarde até que o token RSA SecurID altere a senha de uso único e, em seguida, clique em **copiar**.  
   
 8. Clique no ícone **Conexões de rede** na área de notificação para acessar o Gerenciador de Mídia do DA.  
   
-9. Clique em **Conexão de DirectAccess da Contoso**e clique em **continuar**.  
+9. Clique em **conexão do contoso DirectAccess**e clique em **continuar**.  
   
-10. Pressione Control + Alt + Delete e, em seguida, clique no **senha única (OTP)** lado a lado.  
+10. Pressione Ctrl + Alt + Delete e clique no bloco **OTP (senha de uso único)** .  
   
-11. Cole o código de token do oito dígito copiados anteriormente e, em seguida, clique em **Okey**. Aguarde a autenticação seja concluída. O status de Conexão do DirectAccess no local de trabalho agora será **Connected**.  
+11. Cole o tokencode de oito dígitos copiado anteriormente e clique em **OK**. Aguarde a conclusão da autenticação. O status da conexão do local de trabalho do DirectAccess agora será **conectado**.  
   
-12. No Internet Explorer, na barra de endereços, digite **https://app1.corp.contoso.com/** e pressione ENTER. Pressione F5. Você verá o site de IIS padrão no APP1.  
+12. No Internet Explorer, na barra de endereços, digite **https://app1.corp.contoso.com/** e pressione Enter. Pressione F5. Você verá o site de IIS padrão no APP1.  
   
-13. Na barra de endereços do Internet Explorer, digite **https://app2.corp.contoso.com/** e pressione ENTER. Pressione F5. Você verá o site do IIS padrão no APP2.  
+13. Na barra de endereços do Internet Explorer, digite **https://app2.corp.contoso.com/** e pressione Enter. Pressione F5. Você verá o site do IIS padrão em APP2.  
   
-14. Sobre o **inicie** tela, digite<strong>\\\app1\files</strong>, e pressione ENTER.  
+14. Na tela **Iniciar** , digite<strong>\\ \ APP1\FILES</strong>e pressione Enter.  
   
-15. No **arquivos** janela de pasta compartilhada, clique duas vezes o **example** arquivo. Você verá o conteúdo do arquivo example.  
+15. Na janela pasta compartilhada **arquivos** , clique duas vezes no arquivo **example. txt** . Você verá o conteúdo do arquivo example. txt.  
   
-16. Sobre o **inicie** tela, digite<strong>\\\app2\files</strong>, e pressione ENTER.  
+16. Na tela **Iniciar** , digite<strong>\\ \ APP2\FILES</strong>e pressione Enter.  
   
-17. No **arquivos** janela de pasta compartilhada, clique duas vezes o **Document. txt de texto novo** arquivo. Você verá o conteúdo do arquivo Document. txt de texto novo.  
+17. Na janela pasta compartilhada **arquivos** , clique duas vezes no **novo arquivo Text. txt** . Você verá o conteúdo do novo arquivo text document. txt.  
   
 
 

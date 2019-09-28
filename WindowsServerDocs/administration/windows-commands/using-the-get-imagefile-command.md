@@ -1,8 +1,8 @@
 ---
-title: Usando o comando get-ImageFile
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Get-ImageFile
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bbe5ece95d1f9821a27b96e56bc34576a0f5f33
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c8136585e04caca02ab16c7b4ca11a825cf400d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827617"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392139"
 ---
-# <a name="using-the-get-imagefile-command"></a>Usando o comando get-ImageFile
+# <a name="using-the-get-imagefile-command"></a>Usando o comando Get-ImageFile
 
 
 
-Recupera informações sobre as imagens contidos em um arquivo de imagem do Windows (. wim).
+Recupera informações sobre as imagens contidas em um arquivo de imagem do Windows (. wim).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,10 +36,10 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/ ImageFile:\<caminho do arquivo WIM >|Especifica o nome de arquivo e caminho completo do arquivo. wim.|
-|[/Detailed]|Retorna todos os metadados de imagem de cada imagem. Se essa opção não for usada, o comportamento padrão é retornar somente o nome da imagem, descrição e nome de arquivo.|
+|/ImageFile: caminho de arquivo de \<WIM >|Especifica o caminho completo e o nome do arquivo. wim.|
+|[/Detailed]|Retorna todos os metadados de imagem de cada imagem. Se essa opção não for usada, o comportamento padrão será retornar apenas o nome da imagem, a descrição e o nome do arquivo.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
 Para exibir informações sobre uma imagem, digite:
 ```
@@ -52,4 +52,4 @@ WDSUTIL /Verbose /Get-ImageFile /ImageFile:"\\Server\Share\My Folder \install.wi
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

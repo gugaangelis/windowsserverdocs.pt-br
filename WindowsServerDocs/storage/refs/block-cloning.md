@@ -7,18 +7,18 @@ ms.author: gawatu
 manager: gawatu
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: 54165700209320eee50fc63d98d78cbf4a92d053
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81186624e19f9235cbdf8c7f0d44bd2927a68099
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838107"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394016"
 ---
 # <a name="block-cloning-on-refs"></a>Clonagem de blocos em ReFS
 
->Aplica-se a: 2019, Windows Server 2016, Windows Server (canal semestral) do Windows Server
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
 A clonagem de blocos instrui o sistema de arquivos a copiar um intervalo de bytes do arquivo em nome de um aplicativo, onde o arquivo de destino pode ser igual ao ou diferente do arquivo de origem. As operações de cópia, infelizmente, são caras, pois disparam leituras e gravações caras para os dados físicos subjacentes. 
 
@@ -64,8 +64,8 @@ Após a gravação de modificação, a região B ainda é compartilhada pelos do
 
 ## <a name="see-also"></a>Consulte também
 
--   [Visão geral de reFS](refs-overview.md)
--   [Fluxos de integridade de reFS](integrity-streams.md)
--   [Visão geral direta de espaços de armazenamento](../storage-spaces/storage-spaces-direct-overview.md)
+-   [Visão geral do ReFS](refs-overview.md)
+-   [Fluxos de integridade ReFS](integrity-streams.md)
+-   [Visão geral de Espaços de Armazenamento Diretos](../storage-spaces/storage-spaces-direct-overview.md)
 -   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
 -   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)

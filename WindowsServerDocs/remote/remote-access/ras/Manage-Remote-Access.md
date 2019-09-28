@@ -3,7 +3,7 @@ title: Gerenciar Acesso Remoto
 description: Este tópico fornece informações sobre como gerenciar o acesso remoto no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,20 +12,20 @@ ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3b2c251f99be455ec11e3ea3ef25ca14c8399de2
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 2b9065b2d4541063c8cd6f09d47f48a9ba7833e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282976"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404659"
 ---
 # <a name="manage-remote-access"></a>Gerenciar Acesso Remoto
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 O cenário de implantação do gerenciamento de cliente remoto do DirectAccess usa o DirectAccess para manter os clientes pela Internet. Esta seção explica o cenário, incluindo suas fases, funções, recursos e links para recursos adicionais.  
   
-Windows Server 2016 e Windows Server 2012 combinam o DirectAccess e o roteamento e acesso remoto (RRAS) VPN em uma única função de acesso remoto.   
+O Windows Server 2016 e o Windows Server 2012 combinam o DirectAccess e o serviço de roteamento e acesso remoto (RRAS) para uma única função de acesso remoto.   
   
 > [!NOTE]  
 > Além deste tópico, estão disponíveis os seguintes tópicos de gerenciamento de acesso remoto.  
@@ -56,15 +56,15 @@ Há apenas alguns computadores e requisitos de rede para planejar esse cenário.
 -   **Clientes DirectAccess**: Decida quais computadores gerenciados serão configurados como clientes do DirectAccess.  
   
 ### <a name="configure-the-deployment"></a>Configurar a implantação  
-Configurar a implantação consiste em várias etapas. Como por exemplo:  
+Configurar a implantação consiste em várias etapas. Elas incluem:  
   
 1.  **Configurar a infraestrutura**: Configure as definições de DNS, adicione o servidor e os computadores cliente a um domínio, se necessário, e configure os grupos de segurança do Active Directory.  
   
-    Nesse cenário de implantação, os GPOs (Objetos de Política de Grupo) são criados automaticamente pelo acesso remoto. Para opções avançadas de GPO de certificado, consulte [Implantando acesso remoto avançado](assetId:///3475e527-541f-4a34-b940-18d481ac59f6).  
+    Nesse cenário de implantação, os GPOs (Objetos de Política de Grupo) são criados automaticamente pelo acesso remoto. Para opções de GPO de certificado avançado, consulte [implantando o acesso remoto avançado](assetId:///3475e527-541f-4a34-b940-18d481ac59f6).  
   
 2.  **Configurar o servidor de acesso remoto e as configurações de rede**: Configure adaptadores de rede, endereços IP e roteamento.  
   
-3.  **Definir as configurações do certificado**: Nesse cenário de implantação, o Assistente de Introdução cria certificados autoassinados, portanto, não há nenhuma necessidade de configurar a infraestrutura de certificado mais avançada.  
+3.  **Definir as configurações do certificado**: Nesse cenário de implantação, o assistente de Introdução cria certificados autoassinados, portanto, não é necessário configurar a infraestrutura de certificado mais avançada.  
   
 4.  **Configurar o servidor de local de rede**:  Neste cenário, o servidor de local de rede será instalado no servidor de acesso remoto.  
   
@@ -77,7 +77,7 @@ Configurar a implantação consiste em várias etapas. Como por exemplo:
 ## <a name="BKMK_APP"></a>Aplicativos práticos  
 Implantar um servidor de Acesso Remoto único para gerenciar clientes DirectAccess fornece:  
   
--   **Facilidade de acesso**: Gerenciado cliente para computadores que executam o Windows 8 ou Windows 7 podem ser configurados como computadores cliente do DirectAccess. Eles podem acessar os recursos da rede interna por meio do DirectAccess sempre que estiverem conectados à Internet, sem necessidade de entrar em uma conexão VPN. Computadores cliente que não executam um desses sistemas operacionais podem se conectar à rede interna via VPN. O DirectAccess e a VPN são gerenciados no mesmo console e com o mesmo conjunto de assistentes.  
+-   **Facilidade de acesso**: Os computadores cliente gerenciados que executam o Windows 8 ou o Windows 7 podem ser configurados como computadores cliente do DirectAccess. Eles podem acessar os recursos da rede interna por meio do DirectAccess sempre que estiverem conectados à Internet, sem necessidade de entrar em uma conexão VPN. Computadores cliente que não executam um desses sistemas operacionais podem se conectar à rede interna via VPN. O DirectAccess e a VPN são gerenciados no mesmo console e com o mesmo conjunto de assistentes.  
   
 -   **Facilidade de gerenciamento**: Computadores cliente DirectAccess conectados à Internet podem ser gerenciados remotamente por administradores de acesso remoto usando o DirectAccess, mesmo quando os computadores cliente não estão localizados na rede corporativa interna. Os computadores cliente que não atendem aos requisitos corporativos podem ser corrigidos automaticamente por servidores de gerenciamento. Um ou mais servidores de Acesso Remoto podem ser gerenciados a partir de um único console de Gerenciamento de Acesso Remoto.  
   
@@ -86,15 +86,15 @@ A tabela a seguir lista funções e recursos necessários para o cenário:
   
 |Função ou recurso|Como este cenário tem suporte|  
 |----------|-----------------|  
-|*Função de acesso remoto*|Essa função é instalada e desinstalada usando o console de Gerenciador do Servidor ou o Windows PowerShell. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e os Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função na função de servidor NPAS (Serviços de Acesso e Política de Rede). A função Acesso Remoto consiste em dois componentes:<br /><br />1.  VPN do DirectAccess e RRAS (Serviços de Roteamento e Acesso Remoto): DirectAccess e VPN são gerenciados no console de gerenciamento de acesso remoto.<br />2.  RRAS: Os recursos são gerenciados no console de roteamento e acesso remoto.<br /><br />A função de servidor de acesso remoto depende dos seguintes recursos:<br /><br />-O servidor web (IIS): Necessário para configurar o servidor de local de rede e a investigação Web padrão.<br />-Banco de dados interno do Windows: Usado para contabilidade local no servidor de Acesso Remoto.|  
-|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Por padrão em um servidor de acesso remoto quando a função acesso remoto está instalada e oferece suporte a interface de usuário do console de gerenciamento remoto.<br />-Como uma opção em um servidor que não esteja executando a função de servidor de acesso remoto. Nesse caso, é usado para o gerenciamento remoto de um servidor de acesso remoto.<br /><br />Esse recurso consiste no seguinte:<br /><br />-Ferramentas de linha de comando e GUI de acesso remoto<br />-Módulo de acesso remoto para o Windows PowerShell<br /><br />As dependências incluem:<br /><br />-Console de gerenciamento de diretiva de grupo<br />-Kit de administração do Gerenciador de Conexão RAS (CMAK)<br />-   Windows PowerShell 3.0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
+|*Função de acesso remoto*|Essa função é instalada e desinstalada usando o console de Gerenciador do Servidor ou o Windows PowerShell. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e os Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função na função de servidor NPAS (Serviços de Acesso e Política de Rede). A função Acesso Remoto consiste em dois componentes:<br /><br />1.  VPN do DirectAccess e RRAS (Serviços de Roteamento e Acesso Remoto): DirectAccess e VPN são gerenciados no console de gerenciamento de acesso remoto.<br />2.  RRAS: Os recursos são gerenciados no console de roteamento e acesso remoto.<br /><br />A função de servidor de acesso remoto depende dos seguintes recursos:<br /><br />-Servidor Web (IIS): Necessário para configurar o servidor de local de rede e a investigação Web padrão.<br />-Banco de dados interno do Windows: Usado para contabilidade local no servidor de Acesso Remoto.|  
+|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Por padrão, em um servidor de acesso remoto quando a função de acesso remoto está instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Como uma opção em um servidor que não está executando a função de servidor de acesso remoto. Nesse caso, é usado para o gerenciamento remoto de um servidor de acesso remoto.<br /><br />Esse recurso consiste no seguinte:<br /><br />-GUI de acesso remoto e ferramentas de linha de comando<br />-Módulo de acesso remoto para Windows PowerShell<br /><br />As dependências incluem:<br /><br />-Console de Gerenciamento de Política de Grupo<br />-Kit de administração do Gerenciador de conexões RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
   
 ## <a name="BKMK_HARD"></a>Requisitos de hardware  
 Os requisitos de hardware para este cenário incluem o seguinte:  
   
 ### <a name="server-requirements"></a>Requisitos de servidor  
   
--   Um computador que atenda aos requisitos de hardware do Windows Server 2016. Para obter mais informações, consulte Windows Server 2016 [requisitos de sistema](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements-and-installation).  
+-   Um computador que atenda aos requisitos de hardware do Windows Server 2016. Para obter mais informações, consulte requisitos de [sistema](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements-and-installation)do Windows Server 2016.  
   
 -   O servidor deve ter pelo menos um adaptador de rede instalado e habilitado. Deve haver apenas um adaptador conectado à rede interna corporativa e apenas um conectado à rede externa (Internet).  
   
@@ -112,7 +112,7 @@ Os requisitos de hardware para este cenário incluem o seguinte:
   
 -   Durante o gerenciamento remoto de computadores cliente DirectAccess, os clientes iniciam comunicações com servidores de gerenciamento, como controladores de domínio, servidores de configuração do System Center e servidores de HRA (autoridade de registro de integridade). Esses servidores fornecem serviços que incluem atualizações do Windows e de antivírus e conformidade do cliente de NAP (Proteção de Acesso à Rede). Você deve implantar os servidores necessários antes de iniciar a implantação do acesso remoto.  
   
--   É necessário um servidor DNS executando o Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 ou Windows Server 2008 com SP2.  
+-   É necessário um servidor DNS que executa o Windows Server 2016, o Windows Server 2012 R2, o Windows Server 2012, o Windows Server 2008 R2 ou o Windows Server 2008 com SP2.  
   
 ## <a name="BKMK_SOFT"></a>Requisitos de software  
 Os requisitos de software para este cenário incluem:  

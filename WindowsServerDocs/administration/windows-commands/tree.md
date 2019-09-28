@@ -1,8 +1,8 @@
 ---
 title: tree
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de22de1c9d62ba79c1aa68248109cca88009703a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 22875e63526dc3465021c9aa990f6cea388b81e4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872627"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385619"
 ---
 # <a name="tree"></a>tree
 
 
 
-Exibe a estrutura do diretório de um caminho ou do disco em uma unidade graficamente.
+Exibe a estrutura de diretório de um caminho ou do disco em uma unidade graficamente.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,23 +38,23 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Drive>:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
-|\<Caminho >|Especifica o diretório para o qual você deseja exibir a estrutura do diretório.|
+|> de @no__t 0Drive:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
+|\<Path >|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
 |/f|Exibe os nomes dos arquivos em cada diretório.|
-|/a|Especifica que **árvore** é usar caracteres de texto em vez de caracteres de gráfico para mostrar as linhas que vinculam os subdiretórios.|
+|SRDF|Especifica que a **árvore** deve usar caracteres de texto em vez de caracteres gráficos para mostrar as linhas que vinculam subdiretórios.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-A estrutura exibida pelo **árvore** depende dos parâmetros que você especifica no prompt de comando. Se você não especificar uma unidade ou caminho, **árvore** exibirá a estrutura de árvore iniciando com o diretório atual da unidade atual.
+A estrutura exibida pela **árvore** depende dos parâmetros que você especificar no prompt de comando. Se você não especificar uma unidade ou caminho, a **árvore** exibirá a estrutura de árvore que começa com o diretório atual da unidade atual.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para exibir os nomes de todas as subpastas no disco em sua unidade atual, digite:
+Para exibir os nomes de todos os subdiretórios no disco na unidade atual, digite:
 ```
 tree \
 ```
-Para exibir uma tela por vez, os arquivos em todos os diretórios na unidade C, digite:
+Para exibir uma tela de cada vez, os arquivos em todos os diretórios na unidade C, digite:
 ```
 tree c:\ /f | more 
 ```
@@ -65,4 +65,4 @@ tree c:\ /f  prn
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

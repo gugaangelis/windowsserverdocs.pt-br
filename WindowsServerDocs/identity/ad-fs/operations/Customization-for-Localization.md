@@ -7,21 +7,21 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3cf209756c27c72836c7e2e1e58e84f3f5af2ca9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ba3441d362960e054791ca3d6872dba6c7bd9a12
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357984"
 ---
 # <a name="customization-for-localization"></a>Personalização para localização 
 
 
 É possível localizar conteúdo da Web em idiomas diferentes do inglês. Lembre-se das seguintes considerações quando localizar.  
   
-Depois de personalizar o conteúdo, a personalização terá prioridade; portanto, você deve personalizar para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Quando você configura o conteúdo localizado, configurá-lo com um país\-menos localidade primeiro, por exemplo, "en", antes de configurar um país e região\-localidade específica, como "en\-us".  
+Depois de personalizar o conteúdo, a personalização terá prioridade; portanto, você deve personalizar para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Ao configurar conteúdo localizado, configure-o com uma localidade @ no__t-0less primeiro, por exemplo, "en", antes de configurar uma localidade de país e região @ no__t-1specific, como "en @ no__t-2US".  
   
 Seguem alguns exemplos de código adicional.  
   
@@ -41,7 +41,7 @@ Seguem alguns exemplos de código adicional.
     Set-AdfsGlobalWebContent -ErrorPageDescriptionText "Il s'agit de description de page erreur de Contoso" –locale "fr"  
  
   
-Se você quiser personalizar o conteúdo da web em idiomas diferentes do inglês que requerem a entrada de Unicode, recomendamos que você use o Windows PowerShell ISE. Para obter informações adicionais, consulte [Apresentando o Windows PowerShell ISE](https://technet.microsoft.com/library/dd315244.aspx).  
+Se você quiser personalizar o conteúdo da Web para idiomas diferentes do inglês que exijam a entrada do Unicode, recomendamos o uso do ISE do Windows PowerShell. Para obter informações adicionais, consulte [Apresentando o Windows PowerShell ISE](https://technet.microsoft.com/library/dd315244.aspx).  
 
 ## <a name="additional-references"></a>Referências adicionais 
-[AD FS Sign-personalização de usuário](AD-FS-user-sign-in-customization.md) 
+[AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md) 

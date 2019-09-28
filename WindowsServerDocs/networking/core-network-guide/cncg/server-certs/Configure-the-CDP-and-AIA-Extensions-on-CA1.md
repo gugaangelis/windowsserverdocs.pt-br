@@ -4,17 +4,17 @@ description: Este tópico faz parte do guia implantar certificados de servidor p
 manager: dougkim
 ms.topic: article
 ms.assetid: f77a3989-9f92-41ef-92a8-031651dd73a8
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
 ms.date: 07/26/2018
-ms.openlocfilehash: 74d77347e0ca1dffbca4e2cf6f17b9faa25d55bf
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 94304f6ae2604dad9f1d21be62d19e4a57a7a1ae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560500"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356173"
 ---
 # <a name="configure-the-cdp-and-aia-extensions-on-ca1"></a>Configurar as extensões CDP e AIA em CA1
 
@@ -35,25 +35,25 @@ Para executar esse procedimento, você deve ser membro de admins. do domínio.
   
 3.  Clique na guia **Extensões**. Verifique se **selecionar extensão** está definido como **CDP (ponto de distribuição de CRL)** e, em **especificar locais dos quais os usuários podem obter uma CRL (lista de certificados**revogados), faça o seguinte:  
   
-    1.  Selecione a entrada `file://\\<ServerDNSName>\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
+    1.  Selecione a entrada `file://\\<ServerDNSName>\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
   
-    2.  Selecione a entrada `http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
+    2.  Selecione a entrada `http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
   
-    3.  Selecione a entrada que começa com o caminho `ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>`e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
+    3.  Selecione a entrada que começa com o caminho `ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>` e, em seguida, clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
   
 4.  Em **especificar locais dos quais os usuários podem obter uma CRL (lista de certificados revogados)** , clique em **Adicionar**. A caixa de diálogo **Adicionar local** é aberta.  
   
-5.  Em **Adicionar local**, em **local**, digite `http://pki.corp.contoso.com/pki/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`e, em seguida, clique em **OK**. Isso retornará para a caixa de diálogo Propriedades da autoridade de certificação.  
+5.  Em **Adicionar local**, em **local**, digite `http://pki.corp.contoso.com/pki/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` e clique em **OK**. Isso retornará para a caixa de diálogo Propriedades da autoridade de certificação.  
   
 6.  Na guia **extensões** , marque as seguintes caixas de seleção:  
   
-    -   **Incluir em CRLs. Os clientes usam isso para localizar os locais de CRL delta**  
+    -   **Include em CRLs. Os clientes usam isso para localizar os locais de CRL delta @ no__t-0  
   
     -   **Incluir na extensão de CDP de certificados emitidos**  
   
 7.  Em **especificar locais dos quais os usuários podem obter uma CRL (lista de certificados revogados)** , clique em **Adicionar**. A caixa de diálogo **Adicionar local** é aberta.  
   
-8.  Em **Adicionar local**, em **local**, digite `file://\\pki.corp.contoso.com\pki\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`e, em seguida, clique em **OK**. Isso retornará para a caixa de diálogo Propriedades da autoridade de certificação.  
+8.  Em **Adicionar local**, em **local**, digite `file://\\pki.corp.contoso.com\pki\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` e clique em **OK**. Isso retornará para a caixa de diálogo Propriedades da autoridade de certificação.  
   
 9. Na guia **extensões** , marque as seguintes caixas de seleção:  
   
@@ -63,15 +63,15 @@ Para executar esse procedimento, você deve ser membro de admins. do domínio.
   
 10. Altere **selecionar extensão** para **acesso a informações de autoridade (AIA)** e, em **especificar locais dos quais os usuários podem obter uma CRL (lista de certificados revogados)** , faça o seguinte:  
   
-    1.  Selecione a entrada que começa com o caminho `ldap:///CN=<CATruncatedName>,CN=AIA,CN=Public Key Services`e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
+    1.  Selecione a entrada que começa com o caminho `ldap:///CN=<CATruncatedName>,CN=AIA,CN=Public Key Services` e, em seguida, clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
   
-    2.  Selecione a entrada `http://<ServerDNSName>/CertEnroll/<ServerDNSName>_<CaName><CertificateName>.crt`e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
+    2.  Selecione a entrada `http://<ServerDNSName>/CertEnroll/<ServerDNSName>_<CaName><CertificateName>.crt` e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
   
-    3.  Selecione a entrada `file://\\<ServerDNSName>\CertEnroll\<ServerDNSName><CaName><CertificateName>.crt`e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
+    3.  Selecione a entrada `file://\\<ServerDNSName>\CertEnroll\<ServerDNSName><CaName><CertificateName>.crt` e clique em **remover**. Em **confirmar remoção**, clique em **Sim**.  
   
 11. Em **especificar locais dos quais os usuários podem obter o certificado para essa autoridade de certificação**, clique em **Adicionar**. A caixa de diálogo **Adicionar local** é aberta.  
   
-12. Em **Adicionar local**, em **local**, digite `http://pki.corp.contoso.com/pki/<ServerDNSName>_<CaName><CertificateName>.crt`e, em seguida, clique em **OK**. Isso retornará para a caixa de diálogo Propriedades da autoridade de certificação.  
+12. Em **Adicionar local**, em **local**, digite `http://pki.corp.contoso.com/pki/<ServerDNSName>_<CaName><CertificateName>.crt` e clique em **OK**. Isso retornará para a caixa de diálogo Propriedades da autoridade de certificação.  
   
 13. Na guia **extensões** , selecione **incluir no AIA de certificados emitidos**.  
   

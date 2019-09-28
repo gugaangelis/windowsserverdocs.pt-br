@@ -1,18 +1,18 @@
 ---
 title: Novidades na rede
-description: Este tópico fornece uma visão geral sobre novos recursos e tecnologias de rede no Windows Server 2016
-ms.prod: windows-server-threshold
+description: Este tópico fornece informações de visão geral sobre os novos recursos e as tecnologias de rede no Windows Server 2016
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 43ce6290f6559be7cb078032b79519d1681506d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da2166d28edda5662797824d9b26ad930f51083c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829187"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406752"
 ---
 # <a name="whats-new-in-networking"></a>Novidades na rede
 
@@ -21,56 +21,56 @@ ms.locfileid: "59829187"
 A seguir estão as tecnologias de rede novas ou aprimoradas no Windows Server 2016.  
   UPD este tópico contém as seções a seguir.  
   
--   [Novas tecnologias e recursos de rede](#bkmk_features)  
+-   [Novos recursos e tecnologias de rede](#bkmk_features)  
   
 -   [Novos recursos para tecnologias de rede adicionais](#bkmk_existing)  
   
-## <a name="bkmk_features"></a>Novas tecnologias e recursos de rede
+## <a name="bkmk_features"></a>Novos recursos e tecnologias de rede
 
-A rede é uma parte fundamental da plataforma de Software definidas SDDC (Datacenter) e Windows Server 2016 fornece tecnologias de Software Defined Networking (SDN) novas e aprimoradas para ajudá-lo a mover para uma solução SDDC totalmente para a sua organização.  
+A rede é uma parte fundamental da plataforma do Data Center (SDDC) definida pelo software, e o Windows Server 2016 fornece tecnologias de SDN (rede definida pelo software) novas e aprimoradas para ajudá-lo a migrar para uma solução SDDC totalmente realizada para sua organização.  
   
-Quando você gerencia redes como um recurso definida pelo software, você pode descrever os requisitos de infraestrutura do aplicativo uma vez e, em seguida, escolha onde o aplicativo é executado – localmente ou na nuvem.  Essa consistência significa que seus aplicativos agora são mais fáceis de escala e você pode executar perfeitamente os aplicativos, em qualquer lugar, com confiança igual em torno de segurança, desempenho, qualidade de serviço e disponibilidade.  
+Ao gerenciar redes como um recurso de software definido, você pode descrever os requisitos de infraestrutura de um aplicativo uma vez e, em seguida, escolher onde o aplicativo é executado no local ou na nuvem.  Essa consistência significa que agora os aplicativos são mais fáceis de dimensionar e você pode executar aplicativos de forma simples, em qualquer lugar, com confiança igual em relação à segurança, ao desempenho, à qualidade do serviço e à disponibilidade.  
   
 As seções a seguir contêm informações sobre esses novos recursos e tecnologias de rede.  
   
 ### <a name="software-defined-networking-infrastructure"></a>Infraestrutura de rede definida pelo software
 
-A seguir estão as tecnologias de infraestrutura SDN novas ou aprimoradas.  
+A seguir estão as tecnologias de infraestrutura de SDN novas ou aprimoradas.  
   
--   **Controlador de rede**. Novo no Windows Server 2016, o controlador de rede fornece um ponto centralizado e programável de automação para gerenciar, configurar, monitorar e solucionar problemas de infraestrutura de rede física e virtual em seu datacenter. Usando o Controlador de Rede, você pode automatizar a configuração da infraestrutura de rede em vez de executar a configuração manual dos dispositivos e dos serviços de rede. Para obter mais informações, consulte [controlador de rede](sdn/technologies/network-controller/Network-Controller.md) e [implantar redes definidas por Software usando scripts](https://technet.microsoft.com/library/mt427380.aspx).  
+-   **Controlador de rede**. Novidade no Windows Server 2016, o controlador de rede fornece um ponto de automação centralizado e programável para gerenciar, configurar, monitorar e solucionar problemas de infraestrutura de rede física e virtual em seu datacenter. Usando o Controlador de Rede, você pode automatizar a configuração da infraestrutura de rede em vez de executar a configuração manual dos dispositivos e dos serviços de rede. Para obter mais informações, consulte [controlador de rede](sdn/technologies/network-controller/Network-Controller.md) e [implantar redes definidas por software usando scripts](https://technet.microsoft.com/library/mt427380.aspx).  
   
--   **Comutador Virtual Hyper-V**. O comutador Virtual do Hyper-V é executado nos hosts Hyper-V e permite que você crie distribuído comutação e roteamento, e uma camada de imposição de política que é compatível com o Microsoft Azure e alinhado. Para saber mais, consulte [Comutador Virtual do Hyper-V](../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).  
+-   **Comutador virtual do Hyper-V**. O comutador virtual do Hyper-V é executado em hosts Hyper-V e permite que você crie comutação distribuída e roteamento e uma camada de imposição de política que esteja alinhada e compatível com Microsoft Azure. Para saber mais, consulte [Comutador Virtual do Hyper-V](../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).  
   
--   **Virtualização de função (NFV) de rede**. No software de hoje datacenters definidos, as funções de rede que estão sendo executadas por dispositivos de hardware (como balanceadores de carga, firewalls, roteadores, comutadores e assim por diante) são cada vez mais sendo implantados como soluções de virtualização. Essa "virtualização da função de rede" é uma progressão natural de virtualização do servidor e de virtualização de rede. Soluções de virtualização são emergentes e criando um novo mercado rapidamente. Eles continuam a gerar interesse e obter um impulso em ambas as plataformas de virtualização e serviços de nuvem. As seguintes tecnologias NFV estão disponíveis no Windows Server 2016.  
+-   **NFV (virtualização de função de rede)** . Nos data centers definidos pelo software de hoje, as funções de rede que estão sendo executadas por dispositivos de hardware (como balanceadores de carga, firewalls, roteadores, comutadores etc.) são cada vez mais implantadas como dispositivos virtuais. Essa "virtualização da função de rede" é uma progressão natural de virtualização do servidor e de virtualização de rede. Os dispositivos virtuais estão surgindo rapidamente e criando um mercado totalmente novo. Eles continuam gerando interesse e conquistam impulso nas plataformas de virtualização e nos serviços de nuvem. As tecnologias NFV a seguir estão disponíveis no Windows Server 2016.  
   
-    -   **Firewall do Datacenter**. Esse firewall distribuído fornece listas de controle de acesso granular (ACLs), permitindo que você aplique políticas de firewall no nível da interface VM ou no nível de sub-rede.  
+    -   **Firewall do datacenter**. Esse firewall distribuído fornece ACLs (listas de controle de acesso) granulares, permitindo que você aplique políticas de firewall no nível da interface da VM ou no nível da sub-rede.  
   
-        Para obter mais informações, consulte [visão geral do Firewall do Datacenter](sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md).  
+        Para obter mais informações, consulte [visão geral do firewall do datacenter](sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md).  
   
-    -   **Gateway de RAS**. Você pode usar o Gateway de RAS para rotear o tráfego entre redes virtuais e redes físicas, incluindo conexões de VPN site a site do seu datacenter de nuvem para locais remotos de seus locatários. Especificamente, você pode implantar o protocolo IKE versão 2 (IKEv2) site a site redes virtuais privadas (VPNs), VPN de camada 3 (L3) e gateways de encapsulamento de roteamento genérico (GRE). Além disso, os pools de gateway e redundância M + N dos gateways agora têm suporte; e Border Gateway Protocol (BGP) com recursos de refletor de rota fornece roteamento dinâmico entre as redes para todos os cenários de gateway (IKEv2 VPN, VPN GRE e L3 VPN).  
+    -   **Gateway de Ras**. Você pode usar o gateway de RAS para roteamento de tráfego entre redes virtuais e redes físicas, incluindo conexões VPN site a site de seu datacenter de nuvem para sites remotos de seus locatários. Especificamente, você pode implantar protocolo IKE a IKEv2 (redes virtuais privadas) site a site (VPNs), VPN de camada 3 (L3) e gateways de túnel de roteamento genérico (GRE). Além disso, agora há suporte para pools de gateway e redundância M + N de gateways; e Border Gateway Protocol (BGP) com recursos de refletor de rota fornecem roteamento dinâmico entre redes para todos os cenários de gateway (VPN IKEv2, VPN GRE e VPN L3).  
   
-        Para obter mais informações, consulte [o que há de novo no Gateway RAS](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) e [Gateway RAS para SDN](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md).  
+        Para obter mais informações, consulte [What ' s New in RAS gateway](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) and [RAS gateway for Sdn](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md).  
           
-    - **O balanceador de carga de software (SLB) e endereços de rede NAT (conversão)**. O norte-Sul e Leste-Oeste da camada 4 balanceador de carga e NAT melhora a taxa de transferência, oferecendo suporte a retorno de servidor direto, com a qual o tráfego de rede de retorno pode ignorar o balanceamento de carga multiplexador.  
-       Para obter mais informações, consulte [balanceamento de carga de Software &#40;SLB&#41; para SDN](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).  
+    - **Load Balancer de software (SLB) e conversão de endereços de rede (NAT)** . O balanceador de carga da camada 4-Sul e leste-oeste e o NAT aprimoram a taxa de transferência ao dar suporte ao retorno direto de servidor, com o qual o tráfego de rede de retorno pode ignorar o multiplexador de balanceamento de carga.  
+       Para obter mais informações, consulte [ &#40;SLB&#41; de balanceamento de carga de software para Sdn](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).  
   
-    Para obter mais informações, consulte [a virtualização de rede função](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md).  
+    Para obter mais informações, consulte [virtualização de função de rede](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md).  
   
--   **Padronizado protocolos**. Controlador de rede usa REST Representational State Transfer () em sua interface northbound com cargas de notação JSON (JavaScript Object). A interface de southbound do controlador de rede usa vSwitch aberto protocolo de gerenciamento de banco de dados (OVSDB).  
+-   **Protocolos padronizados**. O controlador de rede usa a transferência de estado de reapresentação (REST) em sua interface Northbound com cargas JavaScript Object Notation (JSON). A interface Southbound do controlador de rede usa o protocolo de gerenciamento de banco de dados vSwitch (OVSDB) aberto.  
   
--   **Tecnologias de encapsulamento flexível**. Essas tecnologias operam no plano de dados e dar suporte a LAN Virtual extensível (VxLAN) e rede virtualização genérico roteamento NVGRE (encapsulamento). Para obter mais informações, consulte [túnel GRE no Windows Server 2016](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md).  
+-   **Tecnologias de encapsulamento flexíveis**. Essas tecnologias operam no plano de dados e dão suporte tanto ao VxLAN (virtual Extensible LAN) quanto ao NVGRE (encapsulamento de roteamento genérico de virtualização de rede). Para obter mais informações, consulte [túnel GRE no Windows Server 2016](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md).  
   
-Para obter mais informações sobre o SDN, consulte [rede definida pelo Software &#40;SDN&#41;](sdn/software-defined-networking.md).  
+Para obter mais informações sobre SDN, consulte [rede &#40;definida pelo&#41;software Sdn](sdn/software-defined-networking.md).  
   
 ### <a name="cloud-scale-fundamentals"></a>Conceitos básicos de escala de nuvem
  
-Os fundamentos de escala de nuvem seguir agora estão disponíveis.  
+Os conceitos básicos de escala de nuvem a seguir agora estão disponíveis.  
   
--   **Convergido placa de Interface de rede (NIC)**. A NIC convergida permite que você use um único adaptador de rede para o gerenciamento de armazenamento habilitados para RDMA de acesso de memória direto remoto e o tráfego de locatário. Isso reduz as despesas de capital que estão associadas a cada servidor em seu datacenter, porque você precisa de menos adaptadores de rede para gerenciar diferentes tipos de tráfego por servidor.  
+-   **NIC (placa de interface de rede) convergida**. A NIC convergida permite que você use um único adaptador de rede para gerenciamento, armazenamento habilitado para RDMA (acesso remoto direto à memória) e tráfego de locatário. Isso reduz as despesas de capital associadas a cada servidor em seu datacenter, pois você precisa de menos adaptadores de rede para gerenciar diferentes tipos de tráfego por servidor.  
   
--   **Pacote direto**.  Pacote direto fornece uma infraestrutura de processamento de pacote de baixa latência e taxa de transferência de tráfego de rede de alta.  
+-   **Pacote direto**.  O pacote direto fornece uma alta taxa de transferência de tráfego de rede e uma infra-estrutura de processamento de pacotes de baixa latência.  
   
--   **Switch Embedded Teaming (SET)**.        CONJUNTO é uma solução de agrupamento NIC que está integrada no comutador Virtual Hyper-V. CONJUNTO permite que o agrupamento de até oito NICS físicas em uma única equipe de conjunto, o que melhora a disponibilidade e fornece o failover. No Windows Server 2016, você pode criar um conjunto de equipes que são restritos ao uso de RDMA e o bloco de mensagens de servidor (SMB). Além disso, você pode usar o conjunto de equipes para distribuir o tráfego de rede para virtualização de rede do Hyper-V. Para obter mais informações, consulte [remotos acesso direto à memória &#40;RDMA&#41; e agrupamento incorporado do comutador &#40;definir&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
+-   **Alterne a equipe inserida (Set)** .        O conjunto é uma solução de agrupamento NIC integrada ao comutador virtual Hyper-V. SET permite o agrupamento de até oito NICS físicas em uma única equipe de conjunto, o que melhora a disponibilidade e fornece failover. No Windows Server 2016, você pode criar equipes definidas que são restritas ao uso de protocolo SMB e RDMA. Além disso, você pode usar o SET Teams para distribuir o tráfego de rede para virtualização de rede Hyper-V. Para obter mais informações, [consulte Remote Direct Memory &#40;Access&#41; RDMA e switch Embedded &#40;Integration&#41;Set](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
   
 ## <a name="bkmk_existing"></a>Novos recursos para tecnologias de rede adicionais
 
@@ -79,73 +79,73 @@ Esta seção contém informações sobre os novos recursos para tecnologias de r
 ## <a name="bkmk_dhcp"></a>DHCP  
 O DHCP é um padrão IETF (Internet Engineering Task Force) projetado para reduzir a carga administrativa e a complexidade da configuração de hosts em uma rede baseada em TCP/IP, por exemplo, uma intranet privada. Usando o serviço de servidor DHCP, o processo de configuração de TCP/IP em clientes DHCP é automático.  
   
-Para obter mais informações, consulte [o que há de novo no DHCP](technologies/dhcp/What-s-New-in-DHCP.md).  
+Para obter mais informações, consulte [What ' s New in DHCP](technologies/dhcp/What-s-New-in-DHCP.md).  
   
 ## <a name="bkmk_dns"></a>DNS  
 DNS é um sistema usado em redes TCP/IP para nomear computadores e serviços de rede. A nomeação DNS localiza computadores e serviços por meio de nomes simples. Quando um usuário insere um nome DNS em um aplicativo, os serviços DNS podem resolvê-lo para outra informação associada a ele, como um endereço IP.  
   
-Veja a seguir informações sobre o cliente DNS e servidor DNS.  
+Veja a seguir informações sobre o cliente DNS e o servidor DNS.  
   
 ### <a name="bkmk_dnsc"></a>Cliente DNS  
 A seguir estão as tecnologias de cliente DNS novas ou aprimoradas.  
   
--   **Associação de serviço cliente DNS**. No Windows 10, o serviço cliente DNS oferece suporte avançado para computadores com mais de uma interface de rede.  
+-   **Associação de serviço do cliente DNS**. No Windows 10, o serviço cliente DNS oferece suporte aprimorado para computadores com mais de uma interface de rede.  
   
-Para obter mais informações, consulte [que há de novo no cliente DNS no Windows Server 2016](dns/What-s-New-in-DNS-Client.md)  
+Para obter mais informações, consulte [o que há de novo no cliente DNS no Windows Server 2016](dns/What-s-New-in-DNS-Client.md)  
   
 ### <a name="bkmk_dnss"></a>Servidor DNS  
 A seguir estão as tecnologias de servidor DNS novas ou aprimoradas.  
   
--   **Políticas de DNS**.  Você pode configurar políticas DNS para especificar como um servidor DNS responde a consultas DNS. As respostas DNS podem ser baseadas em endereço IP do cliente (local), hora do dia e vários outros parâmetros. Políticas de DNS permitem DNS reconhecimento de local, o gerenciamento de tráfego, balanceamento de carga, o DNS com partição de rede e outros cenários.  
+-   **Políticas de DNS**.  Você pode configurar as políticas de DNS para especificar como um servidor DNS responde a consultas DNS. As respostas DNS podem ser baseadas no endereço IP do cliente (local), na hora do dia e em vários outros parâmetros. As políticas de DNS habilitam o DNS com reconhecimento de local, o gerenciamento de tráfego, o balanceamento de carga, o DNS de divisão e outros cenários.  
   
--   **Suporte de Nano Server para o arquivo com base em DNS**, você pode implantar o servidor DNS no Windows Server 2016 em uma imagem do Nano Server. Essa opção de implantação está disponível para você, se você estiver usando o arquivo com base em DNS. Pelo servidor DNS em execução em uma imagem do Nano Server, você pode executar seus servidores DNS com o volume reduzido, inicialização rápida e aplicação de patch minimizados.  
+-   **Suporte do nano Server para DNS baseado em arquivo**, você pode implantar o servidor DNS no Windows Server 2016 em uma imagem do nano Server. Essa opção de implantação estará disponível se você estiver usando DNS baseado em arquivo. Ao executar o servidor DNS em uma imagem do nano Server, você pode executar seus servidores DNS com espaço reduzido, inicialização rápida e aplicação de patch minimizada.  
   
     > [!NOTE]   
-    > DNS integrado ao Active Directory não tem suporte no Nano Server.  
+    > Não há suporte para o DNS integrado Active Directory no nano Server.  
   
--   **(RRL) limitação de taxa de resposta**.  Você pode habilitar a limitação de taxa de resposta nos servidores DNS. Ao fazer isso, você deve evitar a possibilidade de sistemas mal-intencionado usando seus servidores DNS para iniciar um ataque de negação de serviço em um cliente DNS.  
+-   **Limitação de taxa de resposta (RRL)** .  Você pode habilitar a limitação da taxa de resposta em seus servidores DNS. Ao fazer isso, você evita a possibilidade de sistemas mal-intencionados que usam seus servidores DNS para iniciar um ataque de negação de serviço em um cliente DNS.  
   
--   **Autenticação baseada em DNS de entidades nomeadas (painel)**.   Você pode usar registros TLSA (autenticação de segurança de camada de transporte) para fornecer informações para os clientes DNS que o estado de qual autoridade de certificação (CA), eles devem esperar um certificado de nome de domínio. Isso impede ataques man-in-the-middle, onde alguém pode corromper o cache do DNS para apontar para seu próprio site e fornecer um certificado emitidos por eles de uma autoridade de certificação diferente.  
+-   **Autenticação baseada em DNS de entidades nomeadas (sundanês)** .   Você pode usar os registros TLSA (autenticação de segurança de camada de transporte) para fornecer informações aos clientes DNS que afirmam qual autoridade de certificação (CA) eles devem esperar um certificado para seu nome de domínio. Isso impede ataques man-in-the-Middle, em que alguém pode corromper o cache DNS para apontar para seu próprio site e fornecer um certificado emitido por uma autoridade de certificação diferente.  
   
--   **Suporte de registro desconhecido**.   
-     Você pode adicionar os registros que não são explicitamente suportados pelo servidor DNS do Windows usando a funcionalidade de registro desconhecido.  
+-   **Suporte a registro desconhecido**.   
+     Você pode adicionar registros que não são explicitamente suportados pelo servidor DNS do Windows usando a funcionalidade de registro desconhecida.  
   
--   **Dicas de raízes de IPv6**.   
-     Você pode usar o IPV6 nativo, suporte a dicas de raiz para executar a resolução de nome de internet usando os servidores raiz de IPV6.  
+-   **Dicas de raiz IPv6**.   
+     Você pode usar o suporte de dicas de raiz IPV6 nativo para executar a resolução de nomes da Internet usando os servidores raiz IPV6.  
   
--   **Suporte do Windows PowerShell aprimorado**.   
+-   **Suporte aprimorado do Windows PowerShell**.   
       Novos cmdlets do Windows PowerShell estão disponíveis para o servidor DNS.  
   
-Para obter mais informações, consulte [que há de novo no servidor DNS no Windows Server 2016](dns/What-s-New-in-DNS-Server.md)  
+Para obter mais informações, consulte [o que há de novo no servidor DNS no Windows server 2016](dns/What-s-New-in-DNS-Server.md)  
   
 ## <a name="bkmk_GRE"></a>Túnel GRE  
-Gateway de RAS agora dá suporte a túneis de encapsulamento de roteamento genérico (GRE) de alta disponibilidade para redundância M + N dos gateways e conexões de site a site. GRE é um protocolo de túnel leve que pode encapsular uma ampla variedade de protocolos de camada de rede em links de ponto a ponto virtuais por meio de uma ligação entre redes de protocolo de Internet.  
+O gateway de RAS agora dá suporte a túneis GRE (encapsulamento de roteamento genérico) de alta disponibilidade para conexões site a site e a redundância M + N de gateways. GRE é um protocolo de túnel leve que pode encapsular uma ampla variedade de protocolos de camada de rede em links de ponto a ponto virtuais por meio de uma ligação entre redes de protocolo de Internet.  
   
 Para obter mais informações, consulte [túnel GRE no Windows Server 2016](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md).  
   
 ## <a name="HNV"></a>Virtualização de rede Hyper-V  
-Introduzido no Windows Server 2012, a virtualização de rede do Hyper-V (HNV) habilita a virtualização de redes de cliente em uma infraestrutura de rede física compartilhada. Com mínimas alterações necessárias na malha de rede física, HNV fornece provedores de serviço a agilidade para implantar e migrar cargas de trabalho de locatário em qualquer lugar em três nuvens: a nuvem do provedor de serviço, a nuvem privada ou a nuvem pública do Microsoft Azure.  
+Introduzido no Windows Server 2012, a HNV (virtualização de rede do Hyper-V) permite a virtualização de redes de clientes sobre uma infraestrutura de rede física compartilhada. Com as alterações mínimas necessárias na malha de rede física, o HNV dá aos provedores de serviços a agilidade para implantar e migrar cargas de trabalho de locatário em qualquer lugar nas três nuvens: a nuvem do provedor de serviços, a nuvem privada ou a nuvem pública Microsoft Azure.  
   
-Para obter mais informações, consulte [Novidades na virtualização de rede do Hyper-V no Windows Server 2016](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
+Para obter mais informações, consulte [o que há de novo na virtualização de rede Hyper-V no Windows Server 2016](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
   
 ## <a name="bkmk_ipam"></a>IPAM  
-O IPAM fornece funcionalidades de administração e monitoramento altamente personalizáveis para o endereço IP e a infraestrutura DNS em uma rede da organização. O IPAM pode monitorar, auditar e gerenciar servidores que executam o protocolo de configuração de Host dinâmico (DHCP) e o sistema de nome de domínio (DNS).  
+O IPAM fornece recursos de monitoramento e administração altamente personalizáveis para o endereço IP e a infraestrutura de DNS em uma rede da organização. Usando o IPAM, você pode monitorar, auditar e gerenciar servidores que estão executando o protocolo DHCP e o DNS (sistema de nomes de domínio).  
   
--   **Aprimorado o gerenciamento de endereço IP**.  
-     Funcionalidades do IPAM são aprimoradas para cenários como o tratamento de sub-redes /32 IPv4 e IPv6 /128 e Localizando livres sub-redes de endereço IP e intervalos em um bloco de endereço IP.  
+-   **Gerenciamento de endereços IP aprimorado**.  
+     Os recursos do IPAM são aprimorados para cenários como tratar sub-redes IPv4/32 e IPv6/128 e localizar sub-redes de endereço IP e intervalos livres em um bloco de endereço IP.  
   
--   **Aprimorado o gerenciamento de serviços DNS**.  
-     O IPAM dá suporte a registro de recurso DNS encaminhador condicional e gerenciamento de zona DNS para os servidores DNS integrado ao Active Directory e o backup em arquivo ingressado no domínio.  
+-   **Gerenciamento de serviço DNS avançado**.  
+     O IPAM dá suporte ao registro de recurso DNS, encaminhador condicional e gerenciamento de zona DNS para servidores DNS integrados ao domínio Active Directory e com backup em arquivo.  
   
--   **Gerenciamento de endereço (DDI) do DNS, DHCP e IP integrado**.  
-     Várias novas experiências e operações de gerenciamento do ciclo de vida integrada estão habilitadas, como visualizar todos os recursos DNS registros que pertencem a um IP endereço, automatizada de inventário de endereços IP com base em registros de recursos DNS e o gerenciamento de ciclo de vida do endereço IP para operações de DNS e DHCP.  
+-   **DNS integrado, DHCP e gerenciamento de endereço IP (DDI)** .  
+     Várias experiências novas e operações de gerenciamento de ciclo de vida integradas são habilitadas, como visualização de todos os registros de recursos DNS que pertencem a um endereço IP, inventário automatizado de endereços IP com base em registros de recursos DNS e gerenciamento de ciclo de vida de endereço IP para operações de DNS e DHCP.  
   
--   **Suporte a várias florestas do Active Directory**.  
-     Você pode usar o IPAM para gerenciar os servidores DNS e DHCP de várias florestas do Active Directory quando há uma relação de confiança bidirecional entre a floresta em que o IPAM é instalado e cada uma das florestas remotas.  
+-   **Suporte a florestas múltiplas Active Directory**.  
+     Você pode usar o IPAM para gerenciar os servidores DNS e DHCP de várias florestas do Active Directory quando há uma relação de confiança bidirecional entre a floresta em que o IPAM está instalado e cada uma das florestas remotas.  
   
 -   **Suporte do Windows PowerShell para controle de acesso baseado em função**.  
-     Você pode usar o Windows PowerShell para definir escopos de acesso nos objetos do IPAM.  
+     Você pode usar o Windows PowerShell para definir escopos de acesso em objetos IPAM.  
   
-Para obter mais informações, consulte [Novidades no IPAM](technologies/ipam/What-s-New-in-IPAM.md) e [Manage IPAM](technologies/ipam/Manage-IPAM.md).  
+Para obter mais informações, consulte [o que há de novo no IPAM](technologies/ipam/What-s-New-in-IPAM.md) e [gerenciar o IPAM](technologies/ipam/Manage-IPAM.md).  
   
 

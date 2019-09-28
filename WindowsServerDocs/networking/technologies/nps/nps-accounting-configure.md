@@ -2,19 +2,19 @@
 title: Configurar a contabilização do Servidor de Políticas de Rede
 description: Este tópico fornece informações sobre o arquivo de texto e o log de SQL Server para o servidor de políticas de rede no Windows Server 2016.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: dfde2e21-f3d5-41e8-8492-cb3f0d028afb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/25/2018
-ms.openlocfilehash: f16e4093ed58f2a2fadc4b9faa1fa42c0c157ca3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0c154d4d4534f4c343107eecd158974b92903e39
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871898"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405567"
 ---
 # <a name="configure-network-policy-server-accounting"></a>Configurar a contabilização do Servidor de Políticas de Rede
 
@@ -55,7 +55,7 @@ Para impedir que os arquivos de log preencham o disco rígido, é altamente reco
 
 - Para enviar os dados do arquivo de log para coleta por outro processo, você pode configurar o NPS para gravar em um pipe nomeado. Para usar pipes nomeados, defina a pasta do \\arquivo de \\log como .\pipe ou ComputerName\pipe. O programa de servidor de pipe nomeado cria um pipe \\nomeado chamado .\pipe\iaslog.log para aceitar os dados. Na caixa de diálogo Propriedades do arquivo local, em criar um novo arquivo de log, selecione nunca (tamanho de arquivo ilimitado) ao usar pipes nomeados.
 
-- O diretório do arquivo de log pode ser criado usando variáveis de ambiente do sistema (em vez de variáveis de usuário), como% systemdrive%,% SystemRoot% e% WINDIR%. Por exemplo, o caminho a seguir, usando a variável de ambiente% windir%, localiza o arquivo de log no diretório do sistema na subpasta \System32\Logs (ou seja\),%windir%\System32\Logs.
+- O diretório do arquivo de log pode ser criado usando variáveis de ambiente do sistema (em vez de variáveis de usuário), como% systemdrive%,% SystemRoot% e% WINDIR%. Por exemplo, o caminho a seguir, usando a variável de ambiente% windir%, localiza o arquivo de log no diretório do sistema na subpasta \System32\Logs (ou seja,%windir%\System32\Logs @ no__t-0.
 
 - Alternar formatos de arquivo de log não faz com que um novo log seja criado. Se você alterar os formatos de arquivo de log, o arquivo que estiver ativo no momento da alteração conterá uma combinação dos dois formatos (os registros no início do log terão o formato anterior e os registros no final do log terão o novo formato).
 

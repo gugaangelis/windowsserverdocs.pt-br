@@ -1,9 +1,9 @@
 ---
-title: Etapa 2 configurar o APP1
-description: Este tópico faz parte do guia de laboratório de teste - demonstrar o DirectAccess com autenticação OTP e SecurID de RSA para o Windows Server 2016
+title: ETAPA 2 configurar o APP1
+description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess com autenticação OTP e RSA SecurID para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,88 +12,88 @@ ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 093f8215691b21d7b7fefc3b1c51f3a41af9bea6
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ea96a30caeedc188a5a41c097a5c8a90e2b5dbc7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283130"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388208"
 ---
-# <a name="step-2-configure-app1"></a>Etapa 2 configurar o APP1
+# <a name="step-2-configure-app1"></a>ETAPA 2 configurar o APP1
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Use as etapas a seguir para preparar o APP1 para o suporte OTP:  
+Use as etapas a seguir para preparar o APP1 para o suporte a OTP:  
   
-1. Para criar e implantar um modelo de certificado usado para assinar as solicitações de certificado OTP. Configure um modelo de certificado usado para assinar as solicitações de certificado OTP.  
+1. Para criar e implantar um modelo de certificado usado para assinar solicitações de certificado OTP. Configure um modelo de certificado usado para assinar solicitações de certificado OTP.  
   
-2. Para criar e implantar um modelo de certificado para certificados OTP emitidos pela autoridade de certificação corporativa. Configure um modelo de certificado para certificados OTP emitidos pela autoridade de certificação corporativa.  
+2. Para criar e implantar um modelo de certificado para certificados OTP emitidos pela AC corporativa. Configure um modelo de certificado para certificados OTP emitidos pela AC corporativa.  
   
 > [!WARNING]  
-> O design deste guia de laboratório de teste inclui servidores de infraestrutura, como um controlador de domínio e uma autoridade de certificação (CA) que executam o Windows Server 2012 R2 ou Windows Server 2012. Usando este guia de laboratório de teste para configurar os servidores de infraestrutura que estão executando outros sistemas operacionais não foi testado e instruções para configurar outros sistemas operacionais não estão incluídas neste guia.  
+> O design deste guia de laboratório de teste inclui servidores de infraestrutura, como um controlador de domínio e uma CA (autoridade de certificação) que executam o Windows Server 2012 R2 ou o Windows Server 2012. O uso deste guia de laboratório de teste para configurar servidores de infraestrutura que executam outros sistemas operacionais não foi testado e as instruções para configurar outros sistemas operacionais não estão incluídas neste guia.  
   
-## <a name="DAOTPRA"></a>Para criar e implantar um modelo de certificado usado para assinar as solicitações de certificado OTP  
+## <a name="DAOTPRA"></a>Para criar e implantar um modelo de certificado usado para assinar solicitações de certificado OTP  
   
-1.  Execute **certtmpl**, e pressione ENTER.  
+1.  Execute **certtmpl. msc**e pressione Enter.  
   
-2.  No Console de modelos de certificado, no painel de detalhes, clique com botão direito do **computador** modelo e clique em **Duplicar modelo**.  
+2.  No console modelos de certificado, no painel de detalhes, clique com o botão direito do mouse no modelo de **computador** e clique em **duplicar modelo**.  
   
-3.  No **propriedades do novo modelo** caixa de diálogo o **compatibilidade** guia, o **autoridade de certificação** , selecione o sistema operacional que você deseja e o  **Alterações resultantes** caixa de diálogo clicar **Okey**. No **destinatário do certificado** lista Selecione o sistema operacional que você deseja, e, nas **alterações resultantes** clique da caixa de diálogo **Okey**.  
+3.  Na caixa **de diálogo Propriedades do novo modelo** , na guia **compatibilidade** , na lista **autoridade de certificação** , selecione o sistema operacional desejado e, na caixa de diálogo **alterações resultantes** , clique em **OK**. Na lista **destinatário do certificado** , selecione o sistema operacional desejado e, na caixa de diálogo **alterações resultantes** , clique em **OK**.  
   
-4.  Sobre o **propriedades do novo modelo** caixa de diálogo, clique o **geral** guia.  
+4.  Na caixa **de diálogo Propriedades do novo modelo** , clique na guia **geral** .  
   
-5.  Sobre o **gerais** guia **nome de exibição do modelo**, tipo **DAOTPRA**. Defina a **período de validade** como 2 dias e defina o **período de renovação** para 1 dia. Se o **modelos de certificado** aviso é exibido, clique em **Okey**.  
+5.  Na guia **geral** , em **nome de exibição do modelo**, digite **DAOTPRA**. Defina o **período de validade** como 2 dias e defina o **período de renovação** como 1 dia. Se o aviso de **modelos de certificado** for exibido, clique em **OK**.  
   
 6.  Clique na guia **Segurança** e clique em **Adicionar**.  
   
-7.  Sobre o **selecionar usuários, computadores, contas de serviço ou grupos** caixa de diálogo, clique em **tipos de objeto**. Sobre o **tipos de objetos** caixa de diálogo, selecione **computadores**e, em seguida, clique em **Okey**. No **digite os nomes de objeto para selecionar** , digite **CN=edge1**, clique em **Okey**e, no **permitir** coluna, selecione o **leitura** , **Registrar**, e **registrar automaticamente** caixas de seleção. Clique em **usuários autenticados**, selecione o **leitura** caixa de seleção sob o **permitir** coluna e desmarque todas as outras caixas de seleção. Clique em **computadores do domínio**e desmarque **registrar** sob o **permitir** coluna. Clique em **Admins. do domínio** e **administradores de empresa** e clique em **controle total** sob o **permitir** coluna para ambos. Clique em **Aplicar**.  
+7.  Na caixa de diálogo **Selecionar usuários, computadores, contas de serviço ou grupos** , clique em **tipos de objeto**. Na caixa de diálogo **tipos de objeto** , selecione **computadores**e clique em **OK**. Na caixa **Inserir os nomes de objeto a serem selecionados** , digite **EDGE1**, clique em **OK**e, na coluna **permitir** , marque as caixas de seleção **ler**, **registrar**e **registrar automaticamente** . Clique em **usuários autenticados**, marque a caixa de seleção **ler** na coluna **permitir** e desmarque todas as outras caixas de seleção. Clique em **computadores de domínio**e desmarque **registrar** na coluna **permitir** . Clique em **Admins** . do domínio e em **administradores corporativos** e clique em **controle total** na coluna **permitir** para ambos. Clique em **Aplicar**.  
   
-8.  Clique o **nome da entidade** guia e, em seguida, clique em **compilar com as informações do Active Directory do**. No **formato de nome de assunto:** lista select **nome DNS**, certifique-se de que o **nome DNS** caixa está marcada e clique em **aplicar**.  
+8.  Clique na guia **nome da entidade** e, em seguida, clique em **criar com base nessa Active Directory informações**. No **formato nome da entidade:** selecione **nome DNS**, verifique se a caixa **nome DNS** está marcada e clique em **aplicar**.  
   
-9. Clique o **extensões** guia, selecione **políticas de aplicativo** e, em seguida, clique em **editar**. Remova todas as políticas de aplicativo existente. Clique em **Add**e, na **adicionar política de aplicativo** caixa de diálogo, clique em **New**, insira **DA OTP RA** no **nome:** campo e **1.3.6.1.4.1.311.81.1.1** na **identificador de objeto:** campo e, em seguida, clique em **Okey**. Sobre o **adicionar política de aplicativo** caixa de diálogo, clique em **Okey**. Sobre o **Editar extensão de políticas de aplicativo**, clique em **Okey**. Sobre o **propriedades do novo modelo** caixa de diálogo, clique em **Okey**.  
+9. Clique na guia **extensões** , selecione **políticas de aplicativo** e clique em **Editar**. Remova todas as políticas de aplicativo existentes. Clique **em Adicionar**e, na caixa de diálogo **Adicionar política de aplicativo** , clique em **novo**, insira **ra da OTP do da** no campo **nome:** e **1.3.6.1.4.1.311.81.1.1** no campo **identificador do objeto:** e clique em **OK**. Na caixa de diálogo **Adicionar política de aplicativo** , clique em **OK**. Na **extensão editar políticas de aplicativo**, clique em **OK**. Na caixa **de diálogo Propriedades do novo modelo** , clique em **OK**.  
   
-## <a name="DAOTPLogon"></a>Para criar e implantar um modelo de certificado para certificados OTP emitidos pela autoridade de certificação corporativa  
+## <a name="DAOTPLogon"></a>Para criar e implantar um modelo de certificado para certificados OTP emitidos pela AC corporativa  
   
-1.  No Console de modelos de certificado, no painel de detalhes, clique com botão direito do **Logon de cartão inteligente** modelo e clique em **Duplicar modelo**.  
+1.  No console modelos de certificado, no painel de detalhes, clique com o botão direito do mouse no modelo de **logon de cartão inteligente** e clique em **duplicar modelo**.  
   
-2.  No **propriedades do novo modelo** caixa de diálogo a **compatibilidade** guia o **autoridade de certificação** lista, clique no sistema operacional que você deseja usar e, na **Alterações resultantes** caixa de diálogo, clique em **Okey**. No **destinatário do certificado** lista Selecione o sistema operacional que você deseja usar, e, na **alterações resultantes** caixa de diálogo clicar **Okey**.  
+2.  Na caixa **de diálogo Propriedades do novo modelo** , na guia **compatibilidade** da lista **autoridade de certificação** , clique no sistema operacional que você deseja usar e, na caixa de diálogo **alterações resultantes** , clique em **OK**. Na lista **destinatário do certificado** , selecione o sistema operacional que você deseja usar e, na caixa de diálogo **alterações resultantes** , clique em **OK**.  
   
-3.  Sobre o **propriedades do novo modelo** caixa de diálogo, clique o **geral** guia.  
+3.  Na caixa **de diálogo Propriedades do novo modelo** , clique na guia **geral** .  
   
-4.  Sobre o **gerais** guia **nome de exibição do modelo**, tipo **DAOTPLogon**. No **período de validade**, na lista suspensa, clique em **horas**diante a **modelos de certificado** caixa de diálogo, clique em **Okey**e certifique-se Se o número de horas é definido como 1. Na **período de renovação**, digite **0**.  
+4.  Na guia **geral** , em **nome de exibição do modelo**, digite **DAOTPLogon**. Em **período de validade**, na lista suspensa, clique em **horas**, na caixa de diálogo **modelos de certificado** , clique em **OK**e verifique se o número de horas está definido como 1. Em **período de renovação**, digite **0**.  
   
     > [!IMPORTANT]  
-    > **Autoridade de certificação do Windows Server 2003**. Em situações em que a autoridade de certificação (CA) está em um computador que está executando o Windows Server 2003 e, em seguida, o modelo de certificado deve ser configurado em um computador diferente. Isso é necessário porque a definição de **período de validade** nas horas não é possível quando executando versões do Windows anteriores ao Windows Server 2008 e Windows Vista. Se o computador que você pode usar para configurar o modelo não tem a função de servidor de serviços de certificados do Active Directory instalada, ou se ele for um computador cliente, em seguida, você precisa instalar o snap-in de modelos de certificado. Para obter mais informações, consulte [instalar o Snap-In de modelos de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
+    > **AC do Windows Server 2003**. Em situações em que a autoridade de certificação (CA) está em um computador que está executando o Windows Server 2003, o modelo de certificado deve ser configurado em um computador diferente. Isso é necessário porque a definição do **período de validade** em horas não é possível ao executar versões do Windows antes do windows Server 2008 e do Windows Vista. Se o computador que você usa para configurar o modelo não tiver a função de servidor de serviços de certificados Active Directory instalada, ou se for um computador cliente, talvez seja necessário instalar o snap-in de modelos de certificado. Para obter mais informações, consulte [instalar o snap-in de modelos de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
     >   
-    > **Autoridade de certificação do Windows Server 2008 R2**. Se você já tiver implantado uma autoridade de certificação (CA) que está executando o Windows Server 2008 R2, você deve configurar o modelo de certificado **período de renovação** 1 ou 2 horas e o **período de validade** para ser maior do que o **período de renovação**, mas não mais de 4 horas. Se você configurar um modelo de certificado **período de validade** de mais de 4 horas, com uma autoridade de certificação que esteja executando o Windows Server 2008 R2, o Assistente de instalação do DirectAccess não pode detectar o modelo de certificado e o DirectAccess a instalação falhará.  
+    > **AC do Windows Server 2008 R2**. Se você já tiver implantado uma autoridade de certificação (CA) que executa o Windows Server 2008 R2, deverá configurar o **período de renovação** do modelo de certificado para 1 ou 2 horas, e o **período de validade** será maior do que o **período de renovação**, Mas não mais de 4 horas. Se você configurar um período de **validade** de um modelo de certificado de mais de 4 horas com uma AC que esteja executando o Windows Server 2008 R2, o assistente de instalação do DirectAccess não poderá detectar o modelo de certificado e a instalação do DirectAccess falhará.  
   
-5.  Clique o **segurança** guia, selecione **Authenticated Users**, no **permitir** coluna e selecione o **leitura** e **registrar**  caixas de seleção. Clique em **OK**. Clique em **Admins. do domínio** e **administradores de empresa**e clique em **controle total** sob o **permitir** coluna para ambos. Clique em **Aplicar**.  
+5.  Clique na guia **segurança** , selecione **usuários autenticados**, na coluna **permitir** , e marque as caixas de seleção **ler** e **registrar** . Clique em **OK**. Clique em **Admins** . do domínio e **Administração de empresa**e clique em **controle total** na coluna **permitir** para ambos. Clique em **Aplicar**.  
   
-6.  Clique o **nome da entidade** guia e, em seguida, clique em **compilar com as informações do Active Directory do**. No **formato de nome de assunto:** lista select **nome totalmente diferenciado**, certifique-se de que o **nome principal do usuário (UPN)** caixa está marcada e clique em **aplicar** .  
+6.  Clique na guia **nome da entidade** e, em seguida, clique em **criar com base nessa Active Directory informações**. No **formato nome da entidade:** selecione o **nome totalmente diferenciado**, verifique se a caixa **nome principal do usuário (UPN)** está marcada e clique em **aplicar**.  
   
-7.  Clique o **Server** guia, selecione o **não armazenar certificados e solicitações no banco de dados da autoridade de certificação** caixa de seleção, desmarque o **não incluem informações de revogação em certificados emitidos** caixa de seleção e, em seguida, o **propriedades do novo modelo** caixa de diálogo, clique em **aplicar**.  
+7.  Clique na guia **servidor** , marque a caixa de seleção não **armazenar certificados e solicitações no banco de dados de autoridade de certificação** , desmarque a caixa de seleção não **incluir informações de revogação em certificados emitidos** e, em seguida, nas **Propriedades do novo modelo** , clique em **aplicar**.  
   
-8.  Clique o **requisitos de emissão** guia, selecione o **esse número de assinaturas autorizadas:** caixa de seleção, defina o valor como 1. No **tipo de política exigido na assinatura:** lista select **política de aplicativo**e, nas **política de aplicativo** lista select **DA OTP RA**. Sobre o **propriedades do novo modelo** caixa de diálogo, clique em **Okey**.  
+8.  Clique na guia **requisitos de emissão** , marque a caixa de seleção **este número de assinaturas autorizadas:** e defina o valor como 1. No **tipo de política necessário em assinatura:** lista Selecione **política de aplicativo**e, na lista política de **aplicativo** , selecione **da OTP ra**. Na caixa **de diálogo Propriedades do novo modelo** , clique em **OK**.  
   
-9. Clique o **extensões** guia e, na **políticas de aplicativo** clique em **editar**. Exclua **autenticação de cliente**, mantenha **SmartCardLogon**e clique em **Okey** duas vezes.  
+9. Clique na guia **extensões** e, em **políticas de aplicativo** , clique em **Editar**. Exclua a **autenticação do cliente**, mantenha **SmartCardLogon**e clique em **OK** duas vezes.  
   
 10. Feche o Console de Modelos de Certificado.  
   
-11. Sobre o **inicie** tela, digite**certsrv**, e pressione ENTER.  
+11. Na tela **Iniciar** , digite**certsrv. msc**e pressione Enter.  
   
-12. Na árvore de console autoridade de certificação, expanda **corp-APP1-CA-1**, clique em **modelos de certificado**, clique com botão direito **modelos de certificado**, aponte para **New**e clique em **modelo de certificado a ser emitido**.  
+12. Na árvore de console da autoridade de certificação, expanda **Corp-App1-CA-1**, clique em **modelos de certificado**, clique com o botão direito do mouse em **modelos de certificado**, aponte para **novo**e clique em **modelo de certificado a ser emitido**.  
   
-13. Na lista de modelos de certificado, clique em **DAOTPRA** e **DAOTPLogon**e clique em **Okey**.  
+13. Na lista de modelos de certificado, clique em **DAOTPRA** e **DAOTPLogon**e clique em **OK**.  
   
-14. No painel de detalhes do console, você deverá ver a **DAOTPRA** modelo de certificado com um **finalidade** dos **DA OTP RA** e o **DAOTPLogon** modelo de certificado com um **finalidade** de **Logon de cartão inteligente**.  
+14. No painel de detalhes do console, você deve ver o modelo de certificado **DAOTPRA** com uma **finalidade pretendida** de **ra da OTP da** e o modelo de certificado **DAOTPLogon** com uma **finalidade pretendida** de **logon de cartão inteligente** .  
   
 15. Reinicie os serviços.  
   
 16. Feche a console da Autoridade de Certificação.  
   
-17. Abra um prompt de comando com privilégios elevados. Tipo de **CertUtil.exe - SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**, e pressione ENTER.  
+17. Abra um prompt de comando com privilégios elevados. Digite **certutil. exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**e pressione Enter.  
   
-18. Deixe a janela de Prompt de comando aberta para a próxima etapa.  
+18. Deixe a janela de prompt de comando aberta para a próxima etapa.  
   
 
 

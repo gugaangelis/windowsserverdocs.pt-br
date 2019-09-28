@@ -7,90 +7,90 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 569bea74fe7750eaf2b410a552876e0862b1e24b
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 418bc5d53a2bd11afa8563b07bbff76c89495715
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191088"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407973"
 ---
 # <a name="planning-for-federation-server-capacity"></a>Planning for Federation Server Capacity (Planejando a capacidade do servidor de federação)
 
-Planejamento de capacidade para servidores de Federação ajuda a estimar:  
+O planejamento de capacidade para servidores de Federação ajuda a estimar:  
   
--   Quais fatores aumentar o tamanho do banco de dados de configuração do AD FS.  
+-   Quais fatores crescem o tamanho do banco de dados de configuração do AD FS.  
   
--   Os requisitos de hardware apropriado para cada servidor de Federação.  
+-   Os requisitos de hardware apropriados para cada servidor de Federação.  
   
--   O número de servidores de federação para colocar em cada organização.  
+-   O número de servidores de Federação a serem colocados em cada organização.  
   
-Servidores de Federação emitem tokens de segurança para usuários. Esses tokens são apresentados para uma terceira parte confiável para consumo. Servidores de Federação emitem tokens de segurança depois de autenticar um usuário ou depois de receber um token de segurança emitido anteriormente por um serviço de Federação do parceiro. Um token de segurança é solicitado de um serviço de federação, quando os usuários inicialmente entram em aplicativos federados ou quando seus tokens de segurança expirarem enquanto eles estão acessando aplicativos federados.  
+Os servidores de Federação emitem tokens de segurança para usuários. Esses tokens são apresentados a uma terceira parte confiável para consumo. Os servidores de Federação emitem tokens de segurança depois de autenticar um usuário ou depois de receber um token de segurança emitido anteriormente por um parceiro Serviço de Federação. Um token de segurança é solicitado de um Serviço de Federação quando os usuários entram inicialmente em aplicativos federados ou quando seus tokens de segurança expiram enquanto estão acessando aplicativos federados.  
   
-Servidores de Federação são criados para acomodar alta\-configurações de farm de servidores de disponibilidade que usam o balanceamento de carga de rede da Microsoft \(NLB\) tecnologia. Servidores de Federação em uma configuração de farm podem atender a solicitações de forma independente, sem acessar quaisquer componentes comuns do farm para cada solicitação. Portanto, há pouca sobrecarga envolvida na expansão de uma implantação de servidor de Federação.  
+Os servidores de Federação são projetados para acomodar configurações de farm de servidores high @ no__t-0availability que usam a tecnologia \(NLB @ no__t-2 do balanceamento de carga de rede da Microsoft. Os servidores de Federação em uma configuração de farm podem atender solicitações de forma independente, sem acessar nenhum componente de farm comum para cada solicitação. Portanto, há pouca sobrecarga envolvida na expansão de uma implantação de servidor de Federação.  
   
-**Recomendações:**  
+**Recommendations**  
   
--   Para a missão\-alta ou crítica\-implantações de disponibilidade, recomendamos que você crie um farm de servidores de Federação pequenos em cada organização parceira, pelo menos dois servidores de federação por farm, para fornecer tolerância a falhas.  
+-   Para implantações de missão @ no__t-0critical ou alta @ no__t-1availability, recomendamos que você crie um farm de servidores de Federação pequeno em cada organização parceira, com pelo menos dois servidores de Federação por farm, para fornecer tolerância a falhas.  
   
--   Com a necessidade de alta disponibilidade e a facilidade de dimensionar os servidores de federação, a expansão é o método recomendado para manipular o grande número de solicitações por segundo para um determinado serviço de Federação. Escalar verticalmente, além da configuração de base neste guia é improvável que produzir ganhos de tratamento de capacidade significativa.  
+-   Com a necessidade de alta disponibilidade e a facilidade de escalar servidores de Federação, escalar horizontalmente é o método recomendado para lidar com números altos de solicitações por segundo para um determinado Serviço de Federação. A expansão para cima além da configuração básica neste guia é improvável de produzir ganhos de manipulação de capacidade significativos.  
   
-## <a name="ad-fs-configuration-database-size-and-growth"></a>Crescimento e tamanho de banco de dados de configuração do AD FS  
-O tamanho do banco de dados de configuração do AD FS é geralmente considerado ser pequeno, e o tamanho do banco de dados não tendem a ser uma consideração importante em implantações do AD FS.  O tamanho exato do banco de dados de configuração do AD FS pode depender muito o número de relações de confiança e a relação de confiança associada\-metadados relacionados — como declarações, regras de declaração, monitoramento e as configurações definidas para cada objeto de confiança. À medida que cresce o número de entradas de relação de confiança no banco de dados de configuração, aumenta a necessidade de mais espaço em disco.  
+## <a name="ad-fs-configuration-database-size-and-growth"></a>Tamanho e crescimento do banco de dados de configuração AD FS  
+O tamanho do banco de dados de configuração de AD FS geralmente é considerado pequeno, e o tamanho do banco de dados não tende a ser uma consideração importante em implantações de AD FS.  O tamanho preciso do banco de dados de configuração do AD FS pode depender muito do número de relações de confiança e dos metadados de confiança @ no__t-0related associados, como declarações, regras de declaração e configurações de monitoramento configuradas para cada relação de confiança. À medida que o número de entradas de confiança no banco de dados de configuração cresce, a necessidade de mais espaço em disco.  
   
-Para obter informações de implantação adicionais sobre o banco de dados de configuração do AD FS, consulte [considerações de topologia de implantação do AD FS](AD-FS-Deployment-Topology-Considerations.md).  
+Para obter informações adicionais de implantação sobre o banco de dados de configuração do AD FS, consulte [AD FS considerações sobre topologia de implantação](AD-FS-Deployment-Topology-Considerations.md).  
   
-## <a name="memory-cpu-and-disk-space-requirements"></a>Requisitos de espaço de memória, CPU e disco  
-Felizmente, os requisitos de espaço de memória, CPU e disco para servidores de Federação são modestos, e eles não provavelmente serão um fator determinante em decisões de hardware. Para obter mais informações sobre requisitos de hardware, consulte [apêndice a: Revisar os requisitos do AD FS](Appendix-A--Reviewing-AD-FS-Requirements.md).  
-  
-> [!NOTE]  
-> Em testes que foram executados pela equipe de produto do AD FS usando um farm de servidores de Federação configurado com um SQL Server dedicado para armazenar o banco de dados de configuração do AD FS, a carga total no SQL Server tendia a ficar baixo. Em um teste usando um quatro\-federação\-farm de servidores que foi configurado para usar um único SQL Server, utilização da CPU não excedeu 10%, apesar de teste que trouxe os servidores de federação para utilização de destino.  
-  
-## <a name="bk_estimatefs"></a>Estimar o número de servidores de federação para sua organização  
-Em um esforço para simplificar o processo para servidores de federação de planejamento de hardware, a equipe de produto do AD FS desenvolveu a planilha de dimensionamento para planejamento de capacidade do AD FS. Essa planilha do Excel inclui Calculadora\-com a funcionalidade que tomará os dados de uso esperado que você fornecer sobre os usuários em sua organização e retornar um número ideal recomendado de servidores de federação para o seu ambiente de produção do AD FS .  
+## <a name="memory-cpu-and-disk-space-requirements"></a>Requisitos de memória, CPU e espaço em disco  
+Felizmente, os requisitos de memória, CPU e espaço em disco para servidores de Federação são modestos e, provavelmente, não são um fator determinante em decisões de hardware. Para obter mais informações sobre os requisitos de hardware, consulte [Appendix A: Revisando os requisitos de AD FS @ no__t-0.  
   
 > [!NOTE]  
-> O número de servidores de federação que essa planilha recomendará baseia-se sobre as especificações de hardware e de rede que a equipe de produto do AD FS usada durante o teste. Portanto, o número de servidores de federação que a planilha será recomendável deve ser compreendido dentro desse contexto.  Para obter mais informações sobre as especificações usadas durante o teste, consulte o tópico intitulado [planejamento de capacidade do servidor do AD FS](Planning-for-AD-FS-Server-Capacity.md).  
+> Em testes que foram executados pela equipe de produto AD FS usando um farm de servidores de Federação configurado com um SQL Server dedicado para armazenar o banco de dados de configuração do AD FS, a carga geral no SQL Server tendiam para ser baixa. Em um teste usando um farm de quatro @ no__t-0federation @ no__t-1server que foi configurado para usar um único SQL Server, a utilização da CPU não excedeu 10% apesar do teste que trouxesse os servidores de Federação para a utilização de destino.  
   
-### <a name="using-the-ad-fs-capacity-planning-sizing-spreadsheet"></a>Usando a planilha de dimensionamento do planejamento de capacidade do AD FS  
-Quando você usa essa planilha, você precisará selecionar um valor \(ambos **40%** , **60%** , ou **80%** \) que melhor representa o percentual de total de usuários que você espera que enviará solicitações de autenticação para seus servidores de Federação durante períodos de pico de uso.  
-  
-Em seguida, você precisará selecionar um valor \(ambos **1 minuto**, **15 minutos**, ou **1 hora** \) que melhor representa o período de tempo esperado o período de uso de pico para a última. Por exemplo, você pode estimar a 40% como o valor para o número total de usuários que farão logon em um período de 15 minutos, ou que 60% dos usuários farão logon em um período de 1 hora. Juntos, esses valores definem o perfil de carga de pico pelo qual sua recomendação de dimensionamento será calculada.  
-  
-Em seguida, você precisará especificar o número total de usuários que precisarão ter o logon único\-sobre o acesso às declarações de destino\-reconhecimento de aplicativo, dependendo se os usuários são:  
-  
--   Fazer logon no Active Directory de um computador local que está fisicamente conectado à sua rede corporativa \(por meio da autenticação integrada do Windows\)  
-  
--   Fazer logon no Active Directory remotamente a partir de um computador que não está fisicamente conectado à sua rede corporativa \(por meio do Windows integrado autenticação ou nome de usuário e senha\)  
-  
--   Partir de outra organização e são a tentativa de acessar as declarações de destino\-aplicativo com reconhecimento de um parceiro confiável  
-  
--   De um provedor de identidade SAML 2.0 e está tentando acessar as declarações de destino\-aplicativo com reconhecimento de  
-  
-#### <a name="how-to-use-this-spreadsheet"></a>Como usar essa planilha  
-Você pode usar as etapas a seguir para cada instância de farm de servidor de federação que você planeja implantar para determinar o número recomendado de servidores de Federação.  
-  
-1.  Baixe e abra o [planilha de dimensionamento do planejamento do AD FS capacidade para o Windows Server 2012 R2](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacityPlanning.xlsx) ou o [planilha de dimensionamento do planejamento do AD FS capacidade para o Windows Server 2016](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx).
-  
-2.  Na célula à direita do **durante o período de uso do sistema de pico, espero que essa porcentagem dos usuários se autentiquem** de célula, clique na célula e, em seguida, use a\-para baixo as setas para selecionar a utilização de sistema estimados nível, tanto **40%** , **60%** ou **80%** para a implantação.  
-  
-3.  Na célula à direita do **dentro do período de tempo seguinte** de célula, clique na célula e, em seguida, use a operação de soltar\-para baixo as setas para selecionar **1 minuto**, **de15minutos**, ou **1 hora** para selecionar a duração da carga de pico.  
-  
-4.  Na célula à direita do **Enter número estimado de aplicativos internos \(como o SharePoint \(2007 ou 2010\) ou aplicativos web com reconhecimento de declarações\)**  de célula, digite o número aplicativos internos, você usará em sua organização.  
-  
-5.  Na célula à direita do **Enter número estimado de aplicativos online \(, como Office 365 Exchange Online, SharePoint Online ou o Lync Online\)**  de célula, digite o número de aplicativos online ou serviços que serão usados em sua organização.  
-  
-6.  Na célula intitulada **número de usuários**, digite um número em cada linha que se aplica a um cenário de aplicativo de exemplo, os usuários serão precisa de logon único\-no acesso a. Essa coluna deve conter o número de usuários definidos, não os usuários de pico por segundo. Se as tentativas de acesso feitas para o aplicativo devem primeiro ir por meio da página de descoberta de realm inicial, digite **Y**. Se você não tiver certeza de que essa seleção, digite **Y**.  
-  
-7.  Examine as seguintes recomendadas valores que são fornecidos:  
-  
-    1.  Para obter o número total de servidores de Federação recomendados, consulte a célula inferior direita que está realçada em cinza.  
-  
-    2.  Para o número de servidores recomendados para cada cenário de aplicativo de exemplo, consulte a célula na linha que está realçada em cinza.  
+## <a name="bk_estimatefs"></a>Estimar o número de servidores de Federação para sua organização  
+Em um esforço para simplificar o processo de planejamento de hardware para servidores de Federação, a equipe de produto AD FS desenvolveu a planilha de dimensionamento de planejamento de capacidade AD FS. Esta planilha do Excel inclui a funcionalidade de calculadora @ no__t-0like que usará os dados de uso esperados que você fornece sobre os usuários em sua organização e retornará um número ideal de servidores de Federação recomendados para seu ambiente de produção AD FS.  
   
 > [!NOTE]  
-> O valor que será calculado automaticamente na célula à direita da célula intitulada **o número Total de servidores de Federação recomendado** na parte inferior da planilha contém uma fórmula que adicionará um buffer adicional de 20% para o soma total de todos os valores em cada uma das linhas individuais precede. A fórmula adicionada para o **Número Total de servidores de Federação recomendado** célula se baseia nesse buffer ao seu total número recomendado de servidores de Federação implantado para torná-lo muito improvável que nunca atingirá a carga total no farm seu ponto de saturação.  
+> O número de servidores de Federação que essa planilha recomendará é baseado nas especificações de hardware e rede que a equipe de produto AD FS usada durante o teste. Portanto, o número de servidores de Federação que a planilha recomendará deve ser compreendido nesse contexto.  Para obter mais informações sobre as especificações usadas durante o teste, consulte o tópico intitulada [planejando a capacidade do AD FS Server](Planning-for-AD-FS-Server-Capacity.md).  
+  
+### <a name="using-the-ad-fs-capacity-planning-sizing-spreadsheet"></a>Usando a planilha de dimensionamento de planejamento de capacidade AD FS  
+Ao usar essa planilha, você precisará selecionar um valor \(either **40%** , **60%** ou **80%** \) que melhor represente o percentual do total de usuários que você espera que enviem solicitações de autenticação para seus servidores de Federação durante períodos de pico de uso.  
+  
+Em seguida, você precisará selecionar um valor \(either **1 minuto**, **15 minutos**ou uma **hora**\) que melhor represente o período de tempo que você espera para a última hora do pico de uso. Por exemplo, você pode estimar 40% como o valor do número total de usuários que efetuarão logon dentro de um período de 15 minutos ou que 60% dos usuários entrarão em um período de 1 hora. Juntos, esses valores definem o perfil de carga de pico pelo qual sua recomendação de dimensionamento será calculada.  
+  
+Em seguida, você precisará especificar o número total de usuários que exigirão o acesso de logon único @ no__t-0on ao aplicativo Claims @ no__t-1aware de destino, com base em se os usuários são:  
+  
+-   Logon em Active Directory de um computador local que está conectado fisicamente à sua rede corporativa \(through autenticação integrada do Windows @ no__t-1  
+  
+-   Fazer logon no Active Directory remotamente de um computador que não está conectado fisicamente à sua rede corporativa \(through autenticação integrada do Windows ou nome de usuário e senha @ no__t-1  
+  
+-   De outra organização e está tentando acessar o aplicativo de declarações de destino @ no__t-0aware de um parceiro confiável  
+  
+-   De um provedor de identidade SAML 2,0 e está tentando acessar o aplicativo de declarações de destino @ no__t-0aware  
+  
+#### <a name="how-to-use-this-spreadsheet"></a>Como usar esta planilha  
+Você pode usar as etapas a seguir para cada instância de farm de servidores de Federação que planeja implantar para determinar o número recomendado de servidores de Federação.  
+  
+1.  Baixe e abra a [planilha de dimensionamento de planejamento de capacidade AD FS para o Windows server 2012 R2](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacityPlanning.xlsx) ou a [planilha de dimensionamento de planejamento de capacidade AD FS para o Windows Server 2016](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx).
+  
+2.  Na célula à direita do **período de uso do sistema de pico, espero que esse percentual dos meus usuários autentiquem** a célula, clique na célula e, em seguida, use as setas soltar @ no__t-1down para selecionar o nível de utilização estimado do sistema, **40%** , **60%** ou **80%** para a implantação.  
+  
+3.  Na célula à direita da célula de **tempo seguinte** , clique na célula e use as setas para soltar @ no__t-1down para selecionar **1 minuto**, **15 minutos**ou **1 hora** para selecionar a duração da carga de pico.  
+  
+4.  Na célula à direita do **Inserir número estimado de aplicativos internos \(such como SharePoint \(2007 ou 2010 @ no__t-3 ou aplicativos Web com reconhecimento de declarações @ no__t-4** , digite o número de aplicativos internos que você usará em seu organizações.  
+  
+5.  Na célula à direita do **Inserir número estimado de aplicativos online \(such como Office 365 Exchange Online, SharePoint Online ou Lync Online @ no__t-2** , digite o número de aplicativos ou serviços online que você usará em sua organização.  
+  
+6.  Sob a célula intitulada **número de usuários**, digite um número em cada linha que se aplica a um cenário de aplicativo de exemplo que seus usuários precisarão de acesso de logon único @ no__t-1on para. Essa coluna deve conter o número de usuários definidos, e não os usuários de pico por segundo. Se as tentativas de acesso feitas ao aplicativo precisarem primeiro passar pela página de descoberta de realm inicial, digite **Y**. Se você não tiver certeza dessa seleção, digite **Y**.  
+  
+7.  Examine os seguintes valores recomendados que são fornecidos:  
+  
+    1.  Para o número total de servidores de Federação recomendados, consulte a célula inferior direita que é realçada em cinza.  
+  
+    2.  Para o número de servidores recomendados para cada cenário de aplicativo de exemplo, consulte a célula na linha realçada em cinza.  
+  
+> [!NOTE]  
+> O valor que será calculado automaticamente na célula à direita da célula intitulada **número total de servidores de Federação recomendados** na parte inferior da planilha contém uma fórmula que adicionará um buffer adicional de 20% ao total da soma de todos os valores em cada uma das linhas individuais que o antecedem. A fórmula adicionada ao **número total de servidores de Federação recomendados** compilações de célula nesse buffer para o número total recomendado de servidores de Federação implantados para tornar muito improvável que a carga geral no farm sempre atingirá seu ponto de saturação.  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

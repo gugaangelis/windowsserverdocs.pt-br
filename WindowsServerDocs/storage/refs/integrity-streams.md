@@ -6,18 +6,18 @@ ms.author: jgerend
 manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 11f0a696fb843f5cd8b4a7ff3318c28d6c1adeb8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0e41d7ae577bf7e9227ff0c02689d916f1008a3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871337"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403040"
 ---
 # <a name="refs-integrity-streams"></a>Fluxos de integridade ReFS
->Aplica-se a: 2019 do Windows Server, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semestral), Windows 10
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semestral), Windows 10
 
 Os fluxos de integridade são um recurso opcional do ReFS que valida e mantém a integridade dos dados usando somas de verificação. Embora o ReFS sempre use somas de verificação para metadados, por padrão, o ReFS não gera ou valida somas de verificação para dados de arquivos. Fluxos de integridade é um recurso opcional que permite que os usuários utilizam somas de verificação para dados de arquivo. Quando fluxos de integridade estiverem habilitados, ReFS pode determinar claramente se os dados são válidos ou corrompidos. Além disso, o ReFS e os Espaços de Armazenamento podem corrigir dados e metadados corrompidos automaticamente em conjunto.
 
@@ -27,7 +27,7 @@ Os fluxos de integridade podem ser habilitados para arquivos individuais, diret�
 
 Depois que os fluxos de integridade são habilitados, o ReFS criam e mantêm uma soma de verificação para os arquivos especificados nos metadados do arquivo. Essa soma de verificação permite que o ReFS valide a integridade dos dados antes de acessá-los. Antes de retornar dados que tenham fluxos de integridade habilitados, o ReFS calculam a soma de verificação primeiro:
 
-![Calcular a soma de verificação para dados de arquivo](media/compute-checksum.gif)
+![Calcular soma de verificação para dados de arquivo](media/compute-checksum.gif)
 
 Em seguida, essa soma de verificação é comparada com a soma de verificação contida nos metadados do arquivo. Se as somas de verificação coincidirem, os dados serão marcados como válidos e retornados ao usuário. Se as somas de verificação não coincidirem, então os dados estão corrompidos. A resiliência do volume determina como o ReFS responde a danos:
 
@@ -38,7 +38,7 @@ Em seguida, essa soma de verificação é comparada com a soma de verificação 
 
 O ReFS registrará todos os danos no Log de Eventos do Sistema, e no log constará se os danos foram corrigidos. 
 
-![Gravação corretiva restaura a integridade dos dados](media/corrective-write.gif)
+![Integridade de dados das restaurações de gravação corretivas](media/corrective-write.gif)
 
 ## <a name="performance"></a>Desempenho 
 
@@ -95,6 +95,6 @@ PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 
 ## <a name="see-also"></a>Consulte também
 
--   [Visão geral de reFS](refs-overview.md)
--   [Clonagem de bloco reFS](block-cloning.md)
--   [Visão geral direta de espaços de armazenamento](../storage-spaces/storage-spaces-direct-overview.md)
+-   [Visão geral do ReFS](refs-overview.md)
+-   [Clonagem de bloco ReFS](block-cloning.md)
+-   [Visão geral de Espaços de Armazenamento Diretos](../storage-spaces/storage-spaces-direct-overview.md)

@@ -7,52 +7,52 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7550bdcea4e7b06d31463744bfdc3319c012c62c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ed7663242ae254ecea945a749ee3ce5fac8f96f6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880357"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408837"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>Permitindo que os clientes localizem o controlador de domínio mais próximo
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Se você tiver um controlador de domínio que executa o Windows Server 2008 ou mais recente, você pode fazer ele possível para computadores cliente que executam o Windows Vista ou mais recente ou o Windows Server 2008 ou mais recente para localizar os controladores de domínio de forma mais eficiente, habilitando o **tentar Avançar Site mais próximo** configuração de diretiva de grupo. Esta configuração aprimora o localizador de controlador de domínio (DC Locator), ajudando a simplificar o tráfego de rede, especialmente em grandes empresas que têm várias filiais e em sites.
+Se você tiver um controlador de domínio que executa o Windows Server 2008 ou mais recente, poderá torná-lo possível para computadores cliente que executam o Windows Vista ou mais recente ou o Windows Server 2008 ou mais recente para localizar controladores de domínio com mais eficiência, habilitando o **novo site mais próximo** Configuração de política de grupo. Essa configuração melhora o localizador de controlador de domínio (localizador de DC) ajudando a simplificar o tráfego de rede, especialmente em grandes empresas que têm muitas filiais e sites.
 
-Essa nova configuração pode afetar como você configura os custos de link de site porque ele afeta a ordem na qual os controladores de domínio estão localizados. Para empresas que têm muitos sites de hub e filiais, você pode reduzir significativamente o tráfego do Active Directory na rede, garantindo que os clientes fazer failover para o próximo site mais próximo de hub quando eles não é possível encontrar um controlador de domínio no site mais próximo do hub.
+Essa nova configuração pode afetar a maneira como você configura os custos do link do site, pois ele afeta a ordem em que os controladores de domínio estão localizados. Para empresas que têm muitos sites de Hub e filiais, você pode reduzir significativamente o tráfego de Active Directory na rede, garantindo que os clientes realizem failover para o site de Hub mais próximo quando não conseguirem encontrar um controlador de domínio no site de Hub mais próximo.
 
-Como uma prática recomendada geral, você deve simplificar a sua topologia de site e os custos de link de site tanto quanto possível, se você habilitar a **tentar Site mais próximo** configuração. Em empresas com muitos sites de hub, isso pode simplificar a todos os planos que fazer para lidar com situações em que os clientes em um site precisam fazer failover para um controlador de domínio em outro site.
+Como uma prática recomendada geral, você deve simplificar a topologia do site e os custos do link do site o máximo possível se habilitar a configuração do **site tentar mais próximo** . Em empresas com muitos sites de Hub, isso pode simplificar os planos que você faz para lidar com situações em que os clientes de um site precisam fazer failover para um controlador de domínio em outro site.
 
-Por padrão, o **tentar Site mais próximo** não está habilitada. Quando a configuração não está habilitada, o localizador de controlador de domínio usa o seguinte algoritmo para localizar um controlador de domínio:
-
-- Tente localizar um controlador de domínio no mesmo site.
-- Se nenhum controlador de domínio está disponível no mesmo site, tente localizar qualquer controlador de domínio no domínio.
-
-> [!NOTE]
-> Isso é o mesmo algoritmo que o localizador de controlador de domínio usado nas versões anteriores do Active Directory. Para obter mais informações, consulte o artigo [como o suporte de DNS para funciona do Active Directory](https://go.microsoft.com/fwlink/?LinkId=108587).
-
-Se você habilitar a **tentar Site mais próximo** configuração, o localizador de controlador de domínio usa o seguinte algoritmo para localizar um controlador de domínio:
+Por padrão, a configuração **tentar site mais próximo** não está habilitada. Quando a configuração não estiver habilitada, o localizador de DC usará o seguinte algoritmo para localizar um controlador de domínio:
 
 - Tente localizar um controlador de domínio no mesmo site.
-- Se nenhum controlador de domínio está disponível no mesmo site, tente localizar um controlador de domínio no próximo site mais próximo. Um site é mais próximo, se ele tiver um site-link menor custo que outro site com um site-link mais alto custo.
-- Se nenhum controlador de domínio está disponível no próximo site mais próximo, tente localizar qualquer controlador de domínio no domínio.
-
-O **tentar Site mais próximo** configuração funciona em coordenação com cobertura de site automática. Por exemplo, se o site mais próximo não tem nenhum controlador de domínio, o localizador de controlador de domínio tenta encontrar o controlador de domínio que executa a cobertura de site automática para o site.
-
-Por padrão, o localizador de DC não considera qualquer site que contém um controlador de domínio somente leitura (RODC) quando ele determina o próximo site mais próximo. Além disso, quando o cliente recebe uma resposta do controlador de domínio que executa uma versão anterior ao Windows Server 2008, o comportamento de localizador do controlador de domínio é o mesmo que quando o, em seguida, a configuração não está habilitado.
-
-Por exemplo, suponha que uma topologia de site tem quatro sites com os valores de link de site na ilustração a seguir. Neste exemplo, todos os controladores de domínio são controladores de domínio graváveis que executam o Windows Server 2008 ou mais recente.
-
-![habilitar clientes para localizar o controlador de domínio](media/Enabling-Clients-to-Locate-the-Next-Closest-Domain-Controller/beff4087-fb2a-463b-96ac-d440a9e29b75.gif)
-
-Quando o **tentar Site mais próximo** configuração de diretiva de grupo está habilitada neste exemplo, se um computador cliente em Site_B tenta localizar um controlador de domínio, ele primeiro tenta encontrar um controlador de domínio em seu próprio Site_B. Se nenhum estiver disponível no Site_B, ele tenta encontrar um controlador de domínio em Site_A.
-
-Se a configuração não estiver habilitada, o cliente tenta localizar um controlador de domínio em Site_A, Site_C ou Site_D se nenhum controlador de domínio está disponível no Site_B.
+- Se nenhum controlador de domínio estiver disponível no mesmo site, tente localizar qualquer controlador de domínio no domínio.
 
 > [!NOTE]
-> O **tentar Site mais próximo** configuração funciona em coordenação com cobertura de site automática. Por exemplo, se o site mais próximo não tem nenhum controlador de domínio, o localizador de controlador de domínio tenta encontrar o controlador de domínio que executa a cobertura de site automática para o site.
+> Esse é o mesmo algoritmo que o localizador de DC usado em versões anteriores do Active Directory. Para obter mais informações, consulte o artigo [como o suporte a DNS para Active Directory funciona](https://go.microsoft.com/fwlink/?LinkId=108587).
 
-Para aplicar a **tentar Site mais próximo** configuração, você pode criar um objeto de diretiva de grupo (GPO) e vinculá-lo ao objeto apropriado para sua organização, ou você pode modificar a diretiva de domínio padrão para que ele afeta todos os clientes que executam o Windows Vista ou mais recente e no Windows Server 2008 ou mais recente no domínio. Para obter mais informações sobre como definir as **tentar Site mais próximo** , consulte [habilitar clientes para localizar um controlador de domínio no próximo Site mais próximo](https://technet.microsoft.com/library/cc772592.aspx).
+Se você habilitar a configuração de **experimentar o site mais próximo** , o localizador de DC usará o seguinte algoritmo para localizar um controlador de domínio:
+
+- Tente localizar um controlador de domínio no mesmo site.
+- Se nenhum controlador de domínio estiver disponível no mesmo site, tente encontrar um controlador de domínio no próximo site mais próximo. Um site ficará mais próximo se tiver um custo de link de site inferior a outro site com um custo de link de site mais alto.
+- Se nenhum controlador de domínio estiver disponível no próximo site mais próximo, tente localizar qualquer controlador de domínio no domínio.
+
+A configuração **Experimente o site mais próximo** funciona em coordenação com a cobertura automática de site. Por exemplo, se o site mais próximo não tiver nenhum controlador de domínio, o localizador de DC tentará localizar o controlador de domínio que executa a cobertura automática de site para esse site.
+
+Por padrão, o localizador de DC não considera nenhum site que contenha um RODC (controlador de domínio somente leitura) ao determinar o próximo site mais próximo. Além disso, quando o cliente recebe uma resposta de um controlador de domínio que executa uma versão anterior ao Windows Server 2008, o comportamento do localizador de DC é o mesmo que a configuração não está habilitada.
+
+Por exemplo, suponha que uma topologia de site tenha quatro sites com os valores de link de site na ilustração a seguir. Neste exemplo, todos os controladores de domínio são controladores de domínio graváveis que executam o Windows Server 2008 ou mais recente.
+
+![permitindo que os clientes localizem o DC](media/Enabling-Clients-to-Locate-the-Next-Closest-Domain-Controller/beff4087-fb2a-463b-96ac-d440a9e29b75.gif)
+
+Quando a configuração tentar Política de Grupo do **site mais próximo** estiver habilitada neste exemplo, se um computador cliente no Site_B tentar localizar um controlador de domínio, ele primeiro tentará localizar um controlador de domínio em seu próprio Site_B. Se nenhum estiver disponível em Site_B, ele tentará encontrar um controlador de domínio em Site_A.
+
+Se a configuração não estiver habilitada, o cliente tentará localizar um controlador de domínio em Site_A, Site_C ou Site_D se nenhum controlador de domínio estiver disponível no Site_B.
+
+> [!NOTE]
+> A configuração **Experimente o site mais próximo** funciona em coordenação com a cobertura automática de site. Por exemplo, se o site mais próximo não tiver nenhum controlador de domínio, o localizador de DC tentará localizar o controlador de domínio que executa a cobertura automática de site para esse site.
+
+Para aplicar a configuração **experimentar o site mais próximo** , você pode criar um objeto de política de grupo (GPO) e vinculá-lo ao objeto apropriado para sua organização ou pode modificar a política de domínio padrão para que ela afete todos os clientes que executam o Windows Vista ou mais recente e Windows Server 2008 ou mais recente no domínio. Para obter mais informações sobre como definir a configuração do **site try Next mais** próximo, consulte [habilitar clientes para localizar um controlador de domínio no próximo site mais](https://technet.microsoft.com/library/cc772592.aspx)próximo.

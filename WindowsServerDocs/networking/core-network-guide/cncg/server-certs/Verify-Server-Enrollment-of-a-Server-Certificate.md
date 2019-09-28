@@ -1,60 +1,60 @@
 ---
 title: Verificar registro de servidor de um certificado do servidor
-description: Este tópico faz parte do guia de certificados de servidor de implantação para 802.1 X com fio e implantações sem fio
+description: Este tópico faz parte do guia implantar certificados de servidor para implantações com e sem fio 802.1 X
 manager: brianlic
 ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 45ba7a9a7fc5b9622ab1b9a94f38f4bf4de13192
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5f87db78d6f07d11c36193b1a56cf66bd44e7160
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850897"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356094"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>Verificar registro de servidor de um certificado do servidor
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este procedimento para verificar se os seus servidores do servidor de diretivas de rede (NPS) tem um certificado do servidor da autoridade de certificação (CA) registrados.   
+Você pode usar este procedimento para verificar se os servidores do servidor de diretivas de rede (NPS) registraram um certificado de servidor da autoridade de certificação (CA).   
   
 >[!NOTE]  
->Associação a **Admins. do domínio** grupo é o mínimo necessário para concluir esses procedimentos.  
+>A associação no grupo **Admins** . do domínio é o mínimo necessário para concluir esses procedimentos.  
   
-## <a name="verify-network-policy-server-nps-enrollment-of-a-server-certificate"></a>Verificar o registro do servidor de diretivas de rede (NPS) de um certificado de servidor  
+## <a name="verify-network-policy-server-nps-enrollment-of-a-server-certificate"></a>Verificar o registro do servidor de políticas de rede (NPS) de um certificado do servidor  
   
-Como o NPS é usado para autenticar e autorizar solicitações de conexão de rede, é importante garantir que o certificado do servidor que você tiver emitido para NPSs é válido quando usada em diretivas de rede.  
+Como o NPS é usado para autenticar e autorizar solicitações de conexão de rede, é importante garantir que o certificado do servidor emitido para NPSs seja válido quando usado em políticas de rede.  
   
-Para verificar se um certificado de servidor está configurado corretamente e está registrado para o NPS, você deve configurar uma política de rede de teste e permitir que o NPS verificar se o NPS pode usar o certificado para autenticação.  
+Para verificar se um certificado de servidor está configurado corretamente e registrado no NPS, você deve configurar uma política de rede de teste e permitir que o NPS Verifique se o NPS pode usar o certificado para autenticação.  
   
 ### <a name="to-verify-nps-enrollment-of-a-server-certificate"></a>Para verificar o registro de NPS de um certificado de servidor  
   
-1.  No Gerenciador do servidor, clique em **ferramentas**e, em seguida, clique em **Network Policy Server**. A rede política de servidor Microsoft Management Console (MMC) é aberto.  
+1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console de gerenciamento Microsoft (MMC) do servidor de diretivas de rede é aberto.  
   
-2.  Clique duas vezes em **diretivas**, clique com botão direito **políticas de rede**e clique em **New**. Abre o Assistente de nova diretiva de rede.  
+2.  Clique duas vezes em **políticas**, clique com o botão direito do mouse em **políticas de rede**e clique em **novo**. O assistente de nova política de rede é aberto.  
   
-3.  Na **especificar o nome de política de rede e o tipo de Conexão**, na **nome da política**, tipo **testar política**. Certifique-se de que **tipo de servidor de acesso de rede** tem o valor **Unspecified**e, em seguida, clique em **próxima**.  
+3.  Em **especificar nome da política de rede e tipo de conexão**, em **nome da política**, digite **política de teste**. Verifique se o **tipo de servidor de acesso à rede** tem o valor **não especificado**e clique em **Avançar**.  
   
-4.  Na **especificar condições**, clique em **Add**. Na **Selecionar condição**, clique em **grupos do Windows**e, em seguida, clique em **adicionar**.  
+4.  Em **especificar condições**, clique em **Adicionar**. Em **Selecionar condição**, clique em **grupos do Windows**e, em seguida, clique em **Adicionar**.  
   
-5.  Na **grupos**, clique em **adicionar grupos**. No **Selecionar grupo**, digite **os usuários do domínio**, e pressione ENTER. Clique em **OK** e em **Avançar**.  
+5.  Em **grupos**, clique em **Adicionar grupos**. Em **selecionar grupo**, digite **usuários do domínio**e pressione Enter. Clique em **OK** e em **Avançar**.  
   
-6.  Na **especificar a permissão de acesso**, certifique-se de que **acesso concedido** está selecionado e, em seguida, clique em **próxima**.  
+6.  Em **especificar permissão de acesso**, verifique se **acesso concedido** está selecionado e clique em **Avançar**.  
   
-7.  Na **configurar métodos de autenticação**, clique em **Add**. Na **Adicionar EAP**, clique em **Microsoft: EAP protegido (PEAP)** e, em seguida, clique em **Okey**. Na **tipos de EAP**, selecione **Microsoft: EAP protegido (PEAP)** e, em seguida, clique em **editar**. O **editar propriedades de EAP protegidas** caixa de diálogo é aberta.  
+7.  Em **Configurar métodos de autenticação**, clique em **Adicionar**. Em **Adicionar EAP**, clique em **Microsoft: EAP protegido (PEAP)**  e clique em **OK**. Em **tipos de EAP**, selecione **Microsoft: EAP protegido (PEAP)**  e clique em **Editar**. A caixa de diálogo **Editar propriedades EAP protegidas** é aberta.  
   
-8.  No **editar propriedades de EAP protegidas** na caixa **certificado emitido para o**, NPS exibe o nome do seu certificado de servidor no formato *ComputerName*. *Domínio*. Por exemplo, se o NPS é chamado de NPS-01 e seu domínio for exemplo.com, o NPS exibe o certificado **NPS 01.example.com**. Além disso, no **emissor**, o nome de sua autoridade de certificação é exibido e, na **data de validade**, a data de expiração do certificado do servidor é mostrada. Isso demonstra que o NPS registrou um certificado de servidor válido que pode ser usada para provar sua identidade para computadores cliente que estão tentando acessar a rede por meio de seus servidores de acesso de rede, como servidores de rede virtual privada (VPN), 802.1 X capaz pontos de acesso sem fio, servidores de Gateway de área de trabalho remota e 802.1 comutadores Ethernet compatíveis com X.  
+8.  Na caixa de diálogo **Editar propriedades EAP protegidas** , em **certificado emitido para**, o NPS exibe o nome do certificado do servidor no formato *ComputerName*. *Domínio*. Por exemplo, se o seu NPS for chamado de NPS-01 e seu domínio for example.com, o NPS exibirá o certificado **NPS-01.example.com**. Além disso, no **emissor**, o nome da autoridade de certificação é exibido e, na **data de expiração**, a data de expiração do certificado do servidor é mostrada. Isso demonstra que o NPS registrou um certificado de servidor válido que pode ser usado para provar sua identidade para os computadores cliente que estão tentando acessar a rede por meio de seus servidores de acesso à rede, como servidores de rede virtual privada (VPN), compatíveis com 802.1 X pontos de acesso sem fio, Área de Trabalho Remota servidores de gateway e comutadores Ethernet compatíveis com 802.1 X.  
   
     > [!IMPORTANT]  
-    > Se o NPS não exibe um certificado de servidor válido e se ele fornece a mensagem de que esse certificado não pode ser encontrado no computador local, há dois motivos possíveis para esse problema. É possível que a diretiva de grupo não atualizada corretamente, e o NPS não registrou um certificado da autoridade de certificação. Nessa circunstância, reinicie o NPS. Quando o computador for reiniciado, política de grupo é atualizada e você pode executar esse procedimento novamente para verificar que o certificado do servidor está registrado. Se a atualização de diretiva de grupo não resolver esse problema, o modelo de certificado, o registro automático de certificado ou ambos não estão configurados corretamente. Para resolver esses problemas, comece no início deste guia e executar todas as etapas novamente para garantir que as configurações que você forneceu são precisas.  
+    > Se o NPS não exibir um certificado de servidor válido e se ele fornecer a mensagem de que esse certificado não pode ser encontrado no computador local, haverá duas razões possíveis para esse problema. É possível que Política de Grupo não tenha sido atualizada corretamente, e o NPS não registrou um certificado da autoridade de certificação. Nessa circunstância, reinicie o NPS. Quando o computador for reiniciado, Política de Grupo será atualizado e você poderá executar esse procedimento novamente para verificar se o certificado do servidor está registrado. Se a atualização Política de Grupo não resolver esse problema, o modelo de certificado, o registro automático de certificado ou ambos não estão configurados corretamente. Para resolver esses problemas, comece no início deste guia e execute todas as etapas novamente para garantir que as configurações fornecidas sejam precisas.  
   
-9. Quando você verificar a presença de um certificado de servidor válido, você pode clicar **Okey** e **Cancelar** para sair do Assistente de nova diretiva de rede.  
+9. Depois de verificar a presença de um certificado de servidor válido, você pode clicar em **OK** e em **Cancelar** para sair do assistente de nova política de rede.  
   
     > [!NOTE]  
-    > Porque você não estiver Concluindo o assistente, a política de rede de teste não é criada no NPS.  
+    > Como você não está concluindo o assistente, a política de rede de teste não é criada no NPS.  
   
 
 

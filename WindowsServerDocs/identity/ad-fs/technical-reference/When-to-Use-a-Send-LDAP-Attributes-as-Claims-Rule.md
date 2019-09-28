@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1210918067bbb71ea26dff4db11561bbeb09dbd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 08382a8eccaafac257165587fe7b6c18a8ecfbbc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869249"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407271"
 ---
 # <a name="when-to-use-a-send-ldap-attributes-as-claims-rule"></a>Quando usar uma regra Enviar Atributos LDAP como Declarações
 Você pode usar essa regra em serviços de Federação do Active Directory (AD FS) \(AD FS\) quando desejar emitir declarações de saída que contenham valores reais de atributo LDAP \(\) do protocolo de acesso Lightweight Directory que existem em um repositório de atributos e, em seguida, associar um tipo de declaração a cada um dos atributos LDAP. Para obter mais informações sobre repositórios de atributos, consulte [a função de repositórios de atributos](The-Role-of-Attribute-Stores.md).  

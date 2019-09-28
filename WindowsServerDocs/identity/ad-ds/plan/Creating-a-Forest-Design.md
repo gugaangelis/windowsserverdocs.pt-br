@@ -7,27 +7,27 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a581d8ae7fab68937a3c48e43dd66baa786ba356
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd327507dbd4a60d550d3e20cdd3e042910da1bb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851687"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402716"
 ---
 # <a name="creating-a-forest-design"></a>Criar um design de floresta
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Criar um design de floresta envolve identificar primeiro os grupos em sua organização que possuem os recursos disponíveis para hospedar uma floresta do Active Directory e, em seguida, definindo seus requisitos de design de floresta. Por fim, você precisa determinar o número de florestas que você precisa para atender às necessidades da sua organização.  
+Criar um design de floresta envolve primeiro identificar os grupos dentro da sua organização que têm os recursos disponíveis para hospedar uma floresta Active Directory e, em seguida, definir os requisitos de design da floresta. Por fim, você precisa determinar o número de florestas necessárias para atender às necessidades de sua organização.  
   
-Depois de mapear todos os seus requisitos de design para modelos de florestas e selecione o modelo de floresta que atenda às necessidades da sua organização, o documento de design de floresta proposto. Inclua em sua documentação que o nome do grupo para o qual a floresta é criada, as informações de contato para o proprietário da floresta, o tipo de floresta para cada floresta que você inclua e os requisitos de cada floresta é projetado para atender. Esta documentação ajudarão a equipe de design para garantir que todas as pessoas apropriadas estejam envolvidas no processo de design e para esclarecer o escopo do projeto de implantação.  
+Depois de Mapear todos os seus requisitos de design para modelos de floresta e selecionar o modelo de floresta que atende às necessidades de sua organização, documente o design de floresta proposto. Inclua em sua documentação o nome do grupo para o qual a floresta foi projetada, as informações de contato do proprietário da floresta, o tipo de floresta para cada floresta que você inclui e os requisitos que cada floresta foi projetada para atender. Esta documentação ajudará a equipe de design a garantir que todas as pessoas apropriadas estejam envolvidas no processo de design e esclareçam o escopo do projeto de implantação.  
   
-Para uma planilha ajudar a documentar o design de floresta proposto, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip da [trabalho auxílios para Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558) e abra "floresta Design"(DSSLOGI_3.doc).  
+Para uma planilha para ajudá-lo a documentar o design de floresta proposto, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip em [ajudas de trabalho para o kit de implantação do Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) e abra "design de floresta" (DSSLOGI_3. doc ).  
   
 ## <a name="in-this-section"></a>Nesta seção  
   
-- [Identificar os requisitos de Design de floresta](../../ad-ds/plan/Identifying-Forest-Design-Requirements.md)  
+- [Como identificar requisitos de design de floresta](../../ad-ds/plan/Identifying-Forest-Design-Requirements.md)  
   
-- [Determinando o número de florestas necessário](../../ad-ds/plan/Determining-the-Number-of-Forests-Required.md)  
+- [Como determinar o número de florestas necessárias](../../ad-ds/plan/Determining-the-Number-of-Forests-Required.md)  

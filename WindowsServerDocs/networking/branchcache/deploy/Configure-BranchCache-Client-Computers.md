@@ -1,33 +1,33 @@
 ---
 title: Configurar BranchCache em computadores cliente
-description: Este tópico faz parte do BranchCache implantação guia para o Windows Server 2016, que demonstra como implantar o BranchCache nos modos de cache hospedado e distribuído para otimizar o uso de largura de banda WAN em filiais
+description: Este tópico faz parte do guia de implantação do BranchCache para o Windows Server 2016, que demonstra como implantar o BranchCache em modos de cache distribuídos e hospedados para otimizar o uso de largura de banda WAN em filiais
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: e16dbea9-0f0a-41db-b460-14a1a7ad7540
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f0161f31ecb595fbf1df3515790610fd2c75d1a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d301d2bccac4ce2aae92fe6824601603195d3ef7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876967"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406508"
 ---
 # <a name="configure-branchcache-client-computers"></a>Configurar BranchCache em computadores cliente
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar os tópicos a seguir para configurar o membro e não de domínio computadores membros do domínio cliente como o cache distribuído do BranchCache ou clientes do modo de cache hospedado.  
+Você pode usar os tópicos a seguir para configurar computadores cliente de membro de domínio e não membro de domínio como clientes do modo de cache distribuído do BranchCache ou de host hospedado.  
   
--   [Usar a política de grupo para configurar computadores clientes membros do domínio](../../branchcache/deploy/Use-Group-Policy-to-Configure-Domain-Member-Client-Computers.md)  
+-   [Usar Política de Grupo para configurar computadores cliente membro do domínio](../../branchcache/deploy/Use-Group-Policy-to-Configure-Domain-Member-Client-Computers.md)  
   
--   [Usar o Windows PowerShell para configurar os computadores cliente não membro de domínio](../../branchcache/deploy/Use-Windows-PowerShell-to-Configure-Non-Domain-Member-Client-Computers.md)  
+-   [Usar o Windows PowerShell para configurar computadores cliente que não são membros do domínio](../../branchcache/deploy/Use-Windows-PowerShell-to-Configure-Non-Domain-Member-Client-Computers.md)  
   
--   [Configurar regras de Firewall para que sejam membros do domínio permitir o tráfego do BranchCache](../../branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md)  
+-   [Configurar regras de firewall para membros que não sejam de domínio para permitir o tráfego do BranchCache](../../branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md)  
   
--   [Verifique as configurações do computador cliente](../../branchcache/deploy/Verify-Client-Computer-Settings.md)  
+-   [Verificar as configurações do computador cliente](../../branchcache/deploy/Verify-Client-Computer-Settings.md)  
   
 
 

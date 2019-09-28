@@ -2,7 +2,7 @@
 title: Introdução a contas de serviços gerenciados de grupo
 description: Segurança do Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-gmsa
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3d07f137aa40b26b4f4fd69c050415b82608ed7e
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 8086ce329c532e07363fd22fe424a9a1dda04250
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546360"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386888"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Introdução a contas de serviços gerenciados de grupo
 
@@ -59,10 +59,10 @@ Os serviços têm as entidades a seguir entre as quais escolher, e cada uma dela
 |Entidades|Escopo|Serviços com suporte|Gerenciamento de senhas|
 |-------|-----|-----------|------------|
 |Conta de Computador do sistema do Windows|Domínio|Limitado a um servidor ingressado no domínio|O computador gerencia|
-|Conta de Computador sem o sistema do Windows|Domínio|Qualquer servidor ingressado no domínio|Nenhum|
+|Conta de Computador sem o sistema do Windows|Domínio|Qualquer servidor ingressado no domínio|Nenhuma|
 |Conta Virtual|Local|Limitado a um servidor|O computador gerencia|
 |Conta de Serviço Gerenciado independente do Windows 7|Domínio|Limitado a um servidor ingressado no domínio|O computador gerencia|
-|Conta de Usuário|Domínio|Qualquer servidor ingressado no domínio|Nenhum|
+|Conta de Usuário|Domínio|Qualquer servidor ingressado no domínio|Nenhuma|
 |Conta de Serviço Gerenciado de Grupo|Domínio|Qualquer servidor ingressado no domínio do Windows Server 2012|O controlador de domínio gerencia e o host recupera|
 
 Uma conta de computador do Windows, uma sMSA (Conta de Serviço Gerenciado independente) do Windows 7 ou contas virtuais não podem ser compartilhadas em diversos sistemas. Se você configurasse uma conta para serviços em farms de servidores a serem compartilhados, teria que escolher uma conta de usuário ou uma conta de computador separada do sistema do Windows. De qualquer maneira, essas contas não têm a funcionalidade de gerenciamento de senhas de ponto único de controle. Isso cria um problema em que cada organização precisa criar uma solução dispendiosa para atualizar chaves do serviço no Active Directory e distribuir as chaves a todas as instâncias desses serviços.
@@ -153,7 +153,7 @@ A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade 
 
 2.  No prompt de comando do Windows PowerShell, digite os comandos a seguir e pressione ENTER. (O módulo Active Directory será carregado automaticamente.)
 
-    **New-ADServiceAccount [-name] <string> -dNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-sAMAccountName <string> -servicePrincipalName < cadeia de caracteres [] >**
+    **New-ADServiceAccount [-name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName <string>-servicePrincipalName < cadeia de caracteres [] >**
 
     |Parâmetro|String|Exemplo|
     |-------|-----|------|
@@ -185,7 +185,7 @@ A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade 
 
 2.  No prompt de comando do módulo Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
 
-    **New-ADServiceAccount [-name] <string> -RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
+    **New-ADServiceAccount [-name] <string>-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
 
     |Parâmetro|String|Exemplo|
     |-------|-----|------|
@@ -247,11 +247,11 @@ A associação em **Admins. do Domínio**, **Opers. de Contas**ou a capacidade d
 
 2.  No prompt de comando do módulo Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
 
-    **Get-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  No prompt de comando do módulo Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
 
-    **Set-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Set-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |Parâmetro|String|Exemplo|
 |-------|-----|------|
@@ -307,11 +307,11 @@ A associação em **Admins. do Domínio**, **Opers. de Contas**ou a capacidade d
 
 2.  No prompt de comando do módulo Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
 
-    **Get-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  No prompt de comando do módulo Active Directory do Windows PowerShell, digite os seguintes comandos e pressione ENTER:
 
-    **Set-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Set-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |Parâmetro|String|Exemplo|
 |-------|-----|------|

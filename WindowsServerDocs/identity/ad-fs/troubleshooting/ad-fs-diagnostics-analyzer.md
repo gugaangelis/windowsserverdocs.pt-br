@@ -7,18 +7,18 @@ manager: mtillman
 ms.reviewer: anandyadavMSFT
 ms.date: 03/29/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6b6b7563aaa1f3c7d706cfdd172faf18417623e5
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 5d56a84680467359b68ae1ab115801d82a34c822
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546594"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407239"
 ---
 # <a name="ad-fs-help-diagnostics-analyzer"></a>Analisador de diagnóstico do AD FS ajuda
 
-AD FS tem várias configurações que dão suporte à ampla variedade de funcionalidades que ele fornece para a autenticação e o desenvolvimento de aplicativos. Durante a solução de problemas, é recomendável garantir que todas as configurações de AD FS estejam configuradas corretamente. Às vezes, fazer uma verificação manual dessas configurações pode ser demorado. AD FS o help Diagnostics Analyzer pode ajudar a executar as verificações básicas usando o módulo ADFSToolbox do PowerShell. Depois de executar as verificações, AD FS ajuda fornece o analisador de [diagnóstico](https://aka.ms/adfsdiagnosticsanalyzer) para ajudá-lo a visualizar facilmente os resultados e a oferecer etapas de correção.
+AD FS tem várias configurações que dão suporte à ampla variedade de funcionalidades que ele fornece para a autenticação e o desenvolvimento de aplicativos. Durante a solução de problemas, é recomendável garantir que todas as configurações de AD FS estejam configuradas corretamente. Às vezes, fazer uma verificação manual dessas configurações pode ser demorado. AD FS o help Diagnostics Analyzer pode ajudar a executar as verificações básicas usando o módulo ADFSToolbox do PowerShell. Depois de executar as verificações, AD FS ajuda fornece o [analisador de diagnóstico](https://aka.ms/adfsdiagnosticsanalyzer) para ajudá-lo a visualizar facilmente os resultados e a oferecer etapas de correção.
 
 A operação completa leva 3 etapas simples:
 
@@ -26,7 +26,7 @@ A operação completa leva 3 etapas simples:
 2. Execute o diagnóstico e carregue o arquivo para AD FS ajuda
 3. Exibir análise de diagnóstico e resolver problemas
 
-Vá para [AD FS Help Diagnostics Analyzer (https://aka.ms/adfsdiagnosticsanalyzer) ](https://aka.ms/adfsdiagnosticsanalyzer) para iniciar a solução de problemas.
+Vá para [AD FS Help Diagnostics Analyzer (https://aka.ms/adfsdiagnosticsanalyzer)](https://aka.ms/adfsdiagnosticsanalyzer) para iniciar a solução de problemas.
 
 ![AD FS ferramenta Analisador de diagnóstico na ajuda do AD FS](media/ad-fs-diagonostics-analyzer/home.png)
 
@@ -82,11 +82,11 @@ Em um servidor 2016 ou superior AD FS farm, o comando lerá a lista de servidore
     Export-AdfsDiagnosticsFile -ServerNames @("adfs1.contoso.com", "adfs2.contoso.com")
 ```
 
-O resultado é um arquivo JSON que é criado no mesmo diretório em que o comando foi executado. O nome do arquivo é AdfsDiagnosticsFile-\<timestamp.\> Um nome de arquivo de exemplo é AdfsDiagnosticsFile-07312019-184201. JSON.
+O resultado é um arquivo JSON que é criado no mesmo diretório em que o comando foi executado. O nome do arquivo é AdfsDiagnosticsFile-\<timestamp @ no__t-1. Um nome de arquivo de exemplo é AdfsDiagnosticsFile-07312019-184201. JSON.
 
 ## <a name="step-3-upload-the-diagnostics-file"></a>Etapa 3: Carregar o arquivo de diagnóstico
 
-Na etapa 3, [https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer) em usar o navegador de arquivos para selecionar o arquivo de resultado a ser carregado.
+Na etapa 3 em [https://aka.ms/adfsdiagnosticsanalyzer,](https://aka.ms/adfsdiagnosticsanalyzer) use o navegador de arquivos para selecionar o arquivo de resultado a ser carregado.
 
 Clique em **carregar** para concluir o carregamento.
 
@@ -104,7 +104,7 @@ Há cinco seções dos resultados do teste:
 4. Não executado: Esta seção contém a lista de testes que não puderam ser executados devido a informações ausentes.
 5. Não aplicável: Esta seção contém a lista de testes que não foram executados porque eles não são aplicáveis para o servidor específico no qual o comando estava em execução.
 
-![Ferramenta do analisador de diagnóstico de AD FS](media/ad-fs-diagonostics-analyzer/step3a_v3.png) -lista de resultados de teste cada resultado de teste é exibido com detalhes que descrevem o teste e a resolução das etapas:
+ferramenta do analisador de diagnóstico ![AD FS-lista de resultados de teste @ no__t-1 cada resultado de teste é exibido com detalhes que descrevem o teste e a resolução das etapas:
 
 1. Nome do teste: Nome do teste que foi executado
 2. Descrição: Uma descrição do teste.

@@ -1,7 +1,7 @@
 ---
 title: Criar um comutador virtual para máquinas virtuais do Hyper-V
 description: Fornece instruções sobre como criar um comutador virtual usando o Gerenciador do Hyper-V ou o Windows PowerShell
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 3c0ba19183dd68a86d995293f663accf10e91df9
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: f1a814060e763545411b5c4345367638a5161ac2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546384"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392927"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Criar um comutador virtual para máquinas virtuais do Hyper-V
 
@@ -53,7 +53,7 @@ A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos r
     |Nome da configuração|Descrição|  
     |----------------|---------------|  
     |Permitir que o sistema de operacional de gerenciamento compartilhe esse adaptador de rede|Selecione esta opção se desejar permitir que o host Hyper-V Compartilhe o uso do comutador virtual e NIC ou equipe NIC com a máquina virtual. Com isso habilitado, o host pode usar qualquer uma das configurações definidas para o comutador virtual, como configurações de QoS (qualidade de serviço), configurações de segurança ou outros recursos do comutador virtual Hyper-V.|  
-    |Habilitar SR-IOV (virtualização de e/s de raiz única)|Selecione esta opção somente se você quiser permitir que o tráfego da máquina virtual ignore o comutador da máquina virtual e vá diretamente para a NIC física. Para obter mais informações, consulte virtualização de [e/s de raiz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) na referência do pôster Companion: Rede do Hyper-V.|  
+    |Habilitar SR-IOV (virtualização de e/s de raiz única)|Selecione esta opção somente se você quiser permitir que o tráfego da máquina virtual ignore o comutador da máquina virtual e vá diretamente para a NIC física. Para obter mais informações, consulte [virtualização de e/s de raiz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) na referência do pôster Companion: Rede do Hyper-V.|  
   
 7.  Se você quiser isolar o tráfego de rede do sistema operacional do host Hyper-V de gerenciamento ou outras máquinas virtuais que compartilham o mesmo comutador virtual, selecione **habilitar identificação de LAN virtual para o sistema operacional de gerenciamento**. Você pode alterar a ID de VLAN para qualquer número ou deixar o padrão. Esse é o número de identificação de LAN virtual que o sistema operacional de gerenciamento usará para toda a comunicação de rede por meio desse comutador virtual.  
   
@@ -95,7 +95,7 @@ A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos r
     New-VMSwitch -name PrivateSwitch -SwitchType Private  
     ```  
   
-Para obter scripts mais avançados do Windows PowerShell que abrangem recursos de comutador virtual aprimorados ou novos no Windows Server 2016, consulte [acesso remoto direto à memória e agrupamento integrado](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)de comutador.  
+Para obter scripts mais avançados do Windows PowerShell que abrangem recursos de comutador virtual aprimorados ou novos no Windows Server 2016, consulte [acesso remoto direto à memória e agrupamento integrado de comutador](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
 
   
 ## <a name="next-step"></a>Próximas etapas  

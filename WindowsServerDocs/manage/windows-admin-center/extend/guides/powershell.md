@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c30f8a9b856db8250a16210931e6f8dd73c07aa7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 6e99fc43d4acb7a70dfd3a8ba19dae6492c41b2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869612"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357045"
 ---
 # <a name="using-powershell-in-your-extension"></a>Como usar o PowerShell em sua extensão #
 
@@ -92,7 +92,7 @@ Ao fornecer o nome do nó para o método CreateSession, uma nova sessão do Powe
 ### <a name="key-options"></a>Opções de chave ###
 Algumas opções estão disponíveis ao chamar a API do PowerShell. Cada vez que uma sessão é criada, ela pode ser criada com ou sem uma chave. 
 
-**Chaves** Isso cria uma sessão com chave que pode ser pesquisada e reutilizada, mesmo entre componentes (o que significa que Component1 pode criar uma sessão com a chave "SME-ROCKS", e Component2 pode usar essa mesma sessão). Se uma chave for fornecida, a sessão criada deverá ser descartada chamando Dispose () como foi feito no exemplo acima. Uma sessão não deve ser mantida sem ser descartada por mais de 5 minutos. 
+**Chave:** Isso cria uma sessão com chave que pode ser pesquisada e reutilizada, mesmo entre componentes (o que significa que Component1 pode criar uma sessão com a chave "SME-ROCKS", e Component2 pode usar essa mesma sessão). Se uma chave for fornecida, a sessão criada deverá ser descartada chamando Dispose () como foi feito no exemplo acima. Uma sessão não deve ser mantida sem ser descartada por mais de 5 minutos. 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```

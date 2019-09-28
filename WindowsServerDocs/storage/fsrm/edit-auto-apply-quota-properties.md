@@ -2,18 +2,18 @@
 title: Editar propriedades de cota de aplicação automática
 description: Este artigo descreve como editar aplicação automática a propriedades de cota
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: aa2155268d42293ade925d53da5e29142d13aae4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b4fda5cdfeed8df02fee922c8dc5fddc75c56ff
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878057"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403120"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>Editar propriedades de cota de aplicação automática
 
@@ -44,7 +44,7 @@ Quando você faz alterações em uma cota aplicada automaticamente, você tem a 
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de cotas](quota-management.md)
--   [Crie uma cota de aplicação](create-auto-apply-quota.md)
+-   [Gerenciamento de cota](quota-management.md)
+-   [Criar uma cota de aplicação automática](create-auto-apply-quota.md)
 
 

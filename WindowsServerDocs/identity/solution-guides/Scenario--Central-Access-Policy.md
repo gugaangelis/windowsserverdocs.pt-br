@@ -1,20 +1,20 @@
 ---
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
-title: Política de acesso Central do cenário
+title: Política de acesso central do cenário
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1ec4165209b726609b1f9b2caeab02fb5072c756
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91fd437895e765d4d73f3a200f76a5f8f96b52f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873407"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407092"
 ---
 # <a name="scenario-central-access-policy"></a>Cenário: Política de Acesso Central
 
@@ -30,7 +30,7 @@ Políticas de acesso organizacional orientadas por requisitos de conformidade e 
   
 -   Criar uma política de acesso central que se aplique a todos os arquivos que contêm PII onde quer que eles estejam localizados em servidores de arquivos em toda a organização.  
   
-A iniciativa de implantar e reforçar uma política de autorização pode surgir por diversas razões e se aplicam a vários níveis da organização. Veja a seguir alguns exemplos de tipos de política:  
+A iniciativa para implantar e impor uma política de autorização pode chegar por vários motivos e se aplicar a vários níveis da organização. Veja a seguir alguns exemplos de tipos de política:  
   
 -   **Política de autorização para toda a organização.** Geralmente iniciada no departamento de segurança das informações, essa política de autorização é orientada pelos requisitos de conformidade e alto nível da organização, sendo relevante para toda a organização. Por exemplo, arquivos de alto impacto nos negócios são acessíveis apenas a funcionários em tempo integral.  
   
@@ -54,11 +54,11 @@ Uma regra de política de acesso central tem as seguintes partes lógicas:
   
 As duas figuras a seguir mostram o fluxo de trabalho de acesso central e políticas de auditoria.  
   
-![guias de soluções](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)  
+![guias de solução](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)  
   
 **Figura 1** Acesso central e conceitos de política de auditoria  
   
-![guias de soluções](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)  
+![guias de solução](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)  
   
 **Figura 2** Fluxo de trabalho da política de acesso central  
   
@@ -72,25 +72,25 @@ A política de autorização central combina os seguintes componentes:
   
 A figura a seguir demonstra como combinar políticas em listas de política para controlar centralmente o acesso aos arquivos.  
   
-![guias de soluções](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide3.JPG)  
+![guias de solução](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide3.JPG)  
   
 **Figura 3** Combinando políticas  
   
 ## <a name="in-this-scenario"></a>Neste cenário  
 As políticas a seguir estão disponíveis para políticas de acesso central:  
   
--   [Planejar uma implantação de política de acesso Central](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)  
+-   [Planejar uma implantação de política de acesso central](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)  
   
--   [Implantar uma política de acesso Central &#40;etapas de demonstração&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
+-   [Implantar uma política &#40;de acesso central etapas de demonstração&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
   
--   [Controle de acesso dinâmico: Visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   
 ## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista as funções e os recursos que fazem parte deste cenário e descreve como dar suporte a ele.  
   
 |Função/recurso|Como este cenário tem suporte|  
 |-----------------|---------------------------------|  
-|Função de Serviços de Domínio do Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite a criação de declarações de usuário e declarações de dispositivo, identidades compostas, (declarações de usuário + dispositivo), novos modelos de CAP (política) de acesso central e o uso de classificação de arquivos informações em decisões de autorização.|  
+|Função de Serviços de Domínio do Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite a criação de declarações de usuário e declarações de dispositivo, identidade composta, (declarações de usuário e dispositivo), novos modelos de CAP (política de acesso central) e o uso de classificação de arquivos informações em decisões de autorização.|  
 |Função Servidor de Serviços de Arquivo e Armazenamento|Serviços de Arquivo e Armazenamento oferecem tecnologias que ajudam a configurar e gerenciar um ou mais servidores de arquivos, os quais são servidores que fornecem localizações centrais na rede na qual é possível armazenar arquivos e compartilhá-los com os usuários. Se os usuários da rede precisam ter acesso aos mesmos arquivos e aplicativos, ou se o backup centralizado e gerenciamento de arquivos são importantes para sua organização, você deve configurar um ou mais computadores como servidor de arquivos, adicionando a função de Serviços de Arquivo e Armazenamento e os serviços de função apropriados aos computadores.|  
 |Computador cliente Windows|Os usuários podem acessar arquivos e pastas da rede por meio do computador cliente.|  
   

@@ -7,51 +7,51 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1721190bf592b6f7a1274d60d47bbc755eeff1c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21bece55ef64a552ddc641befd94d3ce19e78db6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820647"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408887"
 ---
 # <a name="determining-the-number-of-forests-required"></a>Determinando o número de florestas necessárias
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para determinar o número de florestas que você deve implantar, você precisa cuidadosamente identificar e avaliar os requisitos de isolamento e autonomia para cada grupo em sua organização e mapear esses requisitos para os modelos de design de floresta apropriada.  
+Para determinar o número de florestas que você deve implantar, você precisa identificar cuidadosamente e avaliar os requisitos de isolamento e autonomia para cada grupo em sua organização e mapear esses requisitos para os modelos de design de floresta apropriados.  
   
-Ao determinar o número de florestas ao implantar para sua organização, considere o seguinte:  
+Ao determinar o número de florestas a serem implantadas para sua organização, considere o seguinte:  
   
--   Requisitos de isolamento de limitam suas escolhas de design. Portanto, se você identificar os requisitos de isolamento, certifique-se de que os grupos, na verdade, exigem o isolamento de dados e que a autonomia de dados não é suficiente para suas necessidades. Certifique-se de que os vários grupos em sua organização entender claramente os conceitos de autonomia e isolamento.  
+-   Os requisitos de isolamento limitam suas opções de design. Portanto, se você identificar os requisitos de isolamento, certifique-se de que os grupos realmente exigem isolamento de dados e que a autonomia de dados não seja suficiente para suas necessidades. Certifique-se de que os vários grupos em sua organização entendam claramente os conceitos de isolamento e autonomia.  
   
--   Negociar o design pode ser um processo demorado. Ele pode ser difícil para os grupos para chegar a um acordo sobre a propriedade e usa para os recursos disponíveis. Certifique-se de que você fornecer tempo suficiente para os grupos em sua organização para conduzir pesquisas adequadas para identificar suas necessidades. Defina prazos firme para decisões de design e obtenha um consenso de todas as partes sobre os prazos estabelecidos.  
+-   Negociar o design pode ser um processo demorado. Pode ser difícil para os grupos chegarem a um contrato de propriedade e usos para os recursos disponíveis. Certifique-se de permitir tempo suficiente para os grupos em sua organização realizarem pesquisas adequadas para identificar suas necessidades. Defina prazos para decisões de design e obtenha consenso de todas as partes nos prazos estabelecidos.  
   
--   Determinar o número de florestas ao implantar envolve custos em relação a benefícios de balanceamento. Um modelo de floresta única é a opção mais econômica e exige o mínimo de sobrecarga administrativa. Embora um grupo na organização pode preferir as operações de serviço autônoma, pode ser mais econômico para a organização inscrever-se à entrega de serviços de um grupo de TI (tecnologia) de informação centralizados e confiável. Isso permite que o grupo de gerenciamento de dados próprio, sem criar os custos do gerenciamento de serviços. Os custos em relação a benefícios de balanceamento pode exigir entradas do Patrocinador executivo.  
+-   Determinar o número de florestas a serem implantadas envolve o balanceamento de custos em relação aos benefícios. Um modelo de floresta única é a opção mais econômica e requer a menor quantidade de sobrecarga administrativa. Embora um grupo na organização possa preferir operações de serviço autônomos, pode ser mais econômico para a organização assinar a entrega de serviços de um grupo de ti (tecnologia de informação) centralizado e confiável. Isso permite que o grupo tenha o próprio gerenciamento de dados sem criar os custos adicionais de gerenciamento de serviços. O balanceamento de custos em relação aos benefícios pode exigir a entrada do patrocinador executivo.  
   
-    Uma única floresta é a configuração mais fácil de gerenciar. Ele permite a colaboração máximo dentro do ambiente porque:  
+    Uma única floresta é a configuração mais fácil de gerenciar. Ele permite a colaboração máxima no ambiente porque:  
   
-    -   Todos os objetos em uma única floresta estão listados no catálogo global. Portanto, nenhuma sincronização entre florestas é necessária.  
+    -   Todos os objetos em uma única floresta são listados no catálogo global. Portanto, nenhuma sincronização entre florestas é necessária.  
   
-    -   Gerenciamento de uma infra-estrutura duplicado não é necessário.  
+    -   O gerenciamento de uma infraestrutura duplicada não é necessário.  
   
--   Não recomendamos co-ownership de uma única floresta por duas organizações de TI autônomas e separadas. No futuro, as metas dos dois grupos de TI podem ser alteradas, para que eles não podem aceitar controle compartilhado.  
+-   Não recomendamos a copropriedade de uma única floresta por duas organizações de ti separadas e autônomas. No futuro, os objetivos dos dois grupos de ti podem mudar, para que eles não possam mais aceitar o controle compartilhado.  
   
--   Não recomendamos a administração de serviços de terceirização a mais de um fora do parceiro. Organizações multinacionais que têm grupos em diferentes países ou regiões podem optar por terceirizar a administração do serviço a um parceiro externo diferente para cada país ou região. Como vários parceiros externos não podem ser isolados uns dos outros, as ações de um parceiro podem afetar o serviço do outro, o que torna difícil manter os parceiros responsável com relação a seus contratos de nível de serviço.  
+-   Não é recomendável terceirizar a administração do serviço para mais de um parceiro externo. Organizações multinacionais que têm grupos em diferentes países ou regiões podem optar por terceirizar a administração de serviços para um parceiro externo diferente para cada país ou região. Como vários parceiros externos não podem ser isolados um do outro, as ações de um parceiro podem afetar o serviço do outro, o que dificulta a manutenção dos parceiros em seus contratos de nível de serviço.  
   
--   Apenas uma instância de um domínio do Active Directory deve existir a qualquer momento. Microsoft não oferece suporte a clonagem, divisão ou copiando controladores de domínio de um domínio em uma tentativa de estabelecer uma segunda instância do mesmo domínio. Para obter mais informações sobre essa limitação, consulte a seção a seguir.  
+-   Somente uma instância de um domínio de Active Directory deve existir a qualquer momento. A Microsoft não oferece suporte à clonagem, divisão ou cópia de controladores de domínio de um domínio em uma tentativa de estabelecer uma segunda instância do mesmo domínio. Para obter mais informações sobre essa limitação, consulte a seção a seguir.  
   
 ## <a name="restructuring-limitations"></a>Limitações de reestruturação  
-Quando uma empresa adquire outra empresa, unidade de negócios, ou linha de produto, a empresa compra também poderá adquirir correspondentes ativos de TI do vendedor. Especificamente, o comprador talvez queira adquirir alguns ou todos os controladores de domínio que hospedam as contas de usuário, contas de computador e grupos de segurança que correspondem aos ativos de negócios que devem ser adquiridos. Os únicos métodos com suporte para o comprador adquirir os ativos de TI que estão armazenados na floresta do Active Directory do vendedor são da seguinte maneira:  
+Quando uma empresa adquire outra empresa, unidade de negócios ou linha de produtos, a empresa de compra também pode querer adquirir os ativos de ti correspondentes do vendedor. Especificamente, o comprador pode querer adquirir alguns ou todos os controladores de domínio que hospedam as contas de usuário, contas de computador e grupos de segurança que correspondem aos ativos de negócios que devem ser adquiridos. Os únicos métodos com suporte para o comprador adquirir os ativos de ti armazenados na floresta Active Directory do vendedor são os seguintes:  
   
-1.  Adquira a única instância da floresta, incluindo todos os controladores de domínio e dados do diretório em toda a floresta do vendedor.  
+1.  Adquira a única instância da floresta, incluindo todos os controladores de domínio e dados de diretório na floresta inteira do vendedor.  
   
-2.  Migre os dados de diretório necessários de domínios ou florestas do vendedor para um ou mais dos domínios do comprador. O destino para essa migração pode ser uma totalmente nova floresta ou um ou mais domínios existentes que já foram implantados na floresta do comprador.  
+2.  Migre os dados de diretório necessários da floresta ou dos domínios do vendedor para um ou mais dos domínios do comprador. O destino para tal migração pode ser uma floresta totalmente nova ou um ou mais domínios existentes que já estão implantados na floresta do comprador.  
   
 Essa limitação de suporte existe porque:  
   
--   Cada domínio em uma floresta do Active Directory é atribuído a uma identidade exclusiva durante a criação da floresta. Copiando controladores de domínio de um domínio original para um comprometimento de domínio clonado a segurança de domínios e a floresta. Ameaças para o domínio original e o domínio clonado incluem o seguinte:  
+-   Cada domínio em uma floresta Active Directory é atribuído a uma identidade exclusiva durante a criação da floresta. A cópia de controladores de domínio de um domínio original para um domínio clonado compromete a segurança dos domínios e da floresta. As ameaças ao domínio original e ao domínio clonado incluem o seguinte:  
   
     -   Compartilhamento de senhas que podem ser usadas para obter acesso aos recursos  
   
@@ -59,15 +59,15 @@ Essa limitação de suporte existe porque:
   
     -   Mapeamento de endereços IP para nomes de computador  
   
-    -   Adições, exclusões e modificações de informações de diretório se os controladores de domínio em um domínio clonado nunca estabelecer conectividade de rede com controladores de domínio do domínio original  
+    -   Adições, exclusões e modificações de informações de diretório se os controladores de domínio em um domínio clonado estabelecerem conectividade de rede com controladores de domínio do domínio original  
   
--   Domínios clonados compartilham uma identidade de segurança comum; Portanto, as relações de confiança não são estabelecidas entre elas, mesmo se um ou ambos os domínios foram renomeados.  
+-   Os domínios clonados compartilham uma identidade de segurança comum; Portanto, as relações de confiança não podem ser estabelecidas entre elas, mesmo que um ou ambos os domínios tenham sido renomeados.  
   
 ## <a name="in-this-section"></a>Nesta seção  
   
--   [Modelos de Design de floresta](https://technet.microsoft.com/library/cc770439.aspx)  
+-   [Modelos de design de floresta](https://technet.microsoft.com/library/cc770439.aspx)  
   
--   [Requisitos de mapeamento de Design para modelos de Design de floresta](Forest-Design-Models.md)  
+-   [Mapeamento de requisitos de design para modelos de design de floresta](Forest-Design-Models.md)  
   
 -   [Usando o modelo de floresta de domínio organizacional](../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md)  
   

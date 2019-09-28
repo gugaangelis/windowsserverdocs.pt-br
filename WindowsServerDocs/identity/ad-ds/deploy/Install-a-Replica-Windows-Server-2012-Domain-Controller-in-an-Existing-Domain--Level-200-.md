@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a7fec85301e2b70fb64f35f0b6e345adde29eed0
-ms.sourcegitcommit: 67833e36b8b2c6194a1426a974c5ad9c859fa4c9
+ms.openlocfilehash: 5e72c18d3aa49774cf73d5365748e7bf20764b22
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329651"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390837"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Instalar uma réplica de controlador de domínio do Windows Server 2012 em um domínio existente (nível 200)
 

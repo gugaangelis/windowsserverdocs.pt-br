@@ -2,19 +2,19 @@
 title: Use expressões regulares no NPS
 description: Este tópico explica o uso de expressões regulares para correspondência de padrões no NPS no Windows Server. Você pode usar essa sintaxe para especificar as condições de atributos de diretiva de rede e territórios RADIUS.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: jgerend
 author: jasongerend
 msdate: 08/16/2019
-ms.openlocfilehash: 76615fcccfe06333a76f872b52d2e88182fd60e5
-ms.sourcegitcommit: e58e1646ffd75d4a89576d967b2dbbbb84764303
+ms.openlocfilehash: 94bb9b54dba046c57c6f82e6a52a71adbcf4ce75
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "69584792"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396380"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Use expressões regulares no NPS
 
@@ -26,7 +26,7 @@ Este tópico explica o uso de expressões regulares para correspondência de pad
 
 Você pode usar a tabela a seguir como uma origem de referência ao criar expressões regulares com a sintaxe de correspondência de padrões. Observe que os padrões de expressão regular geralmente são circundados por barras (/).
 
-|  Espaço  |  Descrição  |   Exemplo                                                                 |
+|  espaço  |  Descrição  |   Exemplo                                                                 |
 | ----------- | ------------- | ------------------------------------------------------------------------  |
 |     `\ `     | Indica que o caractere a seguir é um caractere especial ou deve ser interpretado literalmente.  | `/n/ matches the character "n" while the sequence /\n/ matches a line feed or newline character.`  |
 |     `^`     |                                                                 Corresponde ao início da entrada ou linha.                                                                  |                                                                 &nbsp;                                                                  |
@@ -35,28 +35,28 @@ Você pode usar a tabela a seguir como uma origem de referência ao criar expres
 |     `+`     |                                                              Corresponde ao caractere anterior uma ou mais vezes.                                                              |                                                   `/zo+/ matches "zoo" but not "z."`                                                    |
 |     `?`     |                                                              Corresponde ao caractere anterior zero ou uma vez.                                                              |                                                 `/a?ve?/ matches the "ve" in "never."`                                                  |
 |     `.`     |                                                           Faz a correspondência de qualquer caractere único, exceto um caractere de nova linha.                                                           |                                                                 &nbsp;                                                                  |
-| `(pattern)` |                         Corresponde a "Pattern" e lembra a correspondência.<br />Para `(` corresponder os caracteres literais e `)` (parênteses), `\(` use `\)`ou.                         |                                                                 &nbsp;                                                                  |
+| `(pattern)` |                         Corresponde a "Pattern" e lembra a correspondência.<br />Para corresponder os caracteres literais `(` e `)` (parênteses), use `\(` ou `\)`.                         |                                                                 &nbsp;                                                                  |
 |   `x | y `  |                                                                               Corresponde a x ou y.                                                          |
-|   `{n} `    |                                                          Corresponde exatamente às n \(vezes que n é\-um inteiro\)não negativo.                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
-|   `{n,}`    |                                                          Corresponde a pelo menos n \(vezes que n é\-um inteiro\)não negativo.                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
-|   `{n,m}`   |                                                Corresponde a pelo menos n e no máximo m \(vezes m e n são\-inteiros\)não negativos.                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
-|   `[xyz]`   |                                                       Faz a correspondência de qualquer um dos \(caracteres incluídos em\)um conjunto de caracteres.                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
-|  `[^xyz]`   |                                                  Corresponde a qualquer caractere que não esteja \(embutido em um\)conjunto de caracteres negativo.                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
-|    `\b`     |                                                              Corresponde a um limite \(de palavra por exemplo,\)um espaço.                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
+|   `{n} `    |                                                          Corresponde exatamente a n vezes \(N é um inteiro não no__t-1negative @ no__t-2.                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
+|   `{n,}`    |                                                          Corresponde a pelo menos n vezes \(N é um inteiro não no__t-1negative @ no__t-2.                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
+|   `{n,m}`   |                                                Corresponde a pelo menos n e no máximo m vezes \(m e n são inteiros não no__t-1negative @ no__t-2.                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
+|   `[xyz]`   |                                                       Faz a correspondência de qualquer um dos caracteres incluídos \(A conjunto de caracteres @ no__t-1.                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
+|  `[^xyz]`   |                                                  Corresponde a qualquer caractere que não esteja entre @no__t 0A de caractere negativo definido @ no__t-1.                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
+|    `\b`     |                                                              Corresponde a um limite de palavra @no__t exemplo-0for, um espaço @ no__t-1.                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
 |    `\B`     |                                                                         Corresponde a um limite de não palavra.                                                                          |                                             `/ea*r\B/ matches the "ear" in "never early."`                                              |
-|    `\d`     |                                                       Corresponde a um caractere \(de dígito equivalente a dígitos de 0\)a 9.                                                        |                                                                 &nbsp;                                                                  |
-|    `\D`     |                                                           Corresponde a um caractere \(não dígito equivalente a. `[^0-9]` \)                                                           |                                                                 &nbsp;                                                                  |
+|    `\d`     |                                                       Corresponde a um caractere de dígito \(equivalent a dígitos de 0 a 9 @ no__t-1.                                                        |                                                                 &nbsp;                                                                  |
+|    `\D`     |                                                           Corresponde a um caractere não dígito \(equivalent a `[^0-9]` @ no__t-2.                                                           |                                                                 &nbsp;                                                                  |
 |    `\f`     |                                                                        Corresponde a um caractere de feed de formulário.                                                                        |                                                                 &nbsp;                                                                  |
 |    `\n`     |                                                                        Corresponde a um caractere de alimentação de linha.                                                                        |                                                                 &nbsp;                                                                  |
 |    `\r`     |                                                                     Corresponde a um caractere de retorno de carro.                                                                     |                                                                 &nbsp;                                                                  |
-|    `\s`     |                                   Corresponde a qualquer caractere de espaço em branco, incluindo espaço, tabulação e `[ \f\n\r\t\v]`avanço \(de formulário equivalente a \).                                   |                                                                 &nbsp;                                                                  |
-|    `\S`     |                                                  Corresponde a qualquer caractere \(que não seja espaço em branco equivalente a. `[^ \f\n\r\t\v]` \)                                                   |                                                                 &nbsp;                                                                  |
+|    `\s`     |                                   Corresponde a qualquer caractere de espaço em branco, incluindo espaço, tabulação e feed de formulário \(equivalent a `[ \f\n\r\t\v]` @ no__t-2.                                   |                                                                 &nbsp;                                                                  |
+|    `\S`     |                                                  Corresponde a qualquer caractere que não seja espaço em branco \(equivalent a `[^ \f\n\r\t\v]` @ no__t-2.                                                   |                                                                 &nbsp;                                                                  |
 |    `\t`     |                                                                           Corresponde a um caractere de tabulação.                                                                           |                                                                 &nbsp;                                                                  |
 |    `\v`     |                                                                      Corresponde a um caractere de tabulação vertical.                                                                       |                                                                 &nbsp;                                                                  |
-|    `\w`     |                                              Corresponde a qualquer caractere de palavra, incluindo \(sublinhado equivalente a `[A-Za-z0-9_]` \).                                              |                                                                 &nbsp;                                                                  |
-|    `\W`     |                                           Corresponde a qualquer\-caractere que não seja palavra, \(excluindo `[^A-Za-z0-9_]`o sublinhado equivalente a \).                                           |                                                                 &nbsp;                                                                  |
-|   `\num`    | Refere-se a \(correspondências `?num`lembradas, em que\)num é um inteiro positivo.  Essa opção pode ser usada somente na caixa de texto **substituir** ao configurar a manipulação de atributos. |                                       `\1`Substitui o que está armazenado na primeira correspondência lembrada.                                       |
-|   `/n/ `    |                      Permite a inserção de códigos ASCII em expressões \( `?n`regulares, em que n é um valor\)de escape octal, hexadecimal ou Decimal.                       |                                                                 &nbsp;                                                                  |
+|    `\w`     |                                              Corresponde a qualquer caractere de palavra, incluindo sublinhado \(equivalent a `[A-Za-z0-9_]` @ no__t-2.                                              |                                                                 &nbsp;                                                                  |
+|    `\W`     |                                           Corresponde a qualquer caractere que não seja @ no__t-0word, excluindo sublinhado \(equivalent para `[^A-Za-z0-9_]` @ no__t-3.                                           |                                                                 &nbsp;                                                                  |
+|   `\num`    | Refere-se a correspondências lembradas \( @ no__t-1, em que num é um inteiro positivo @ no__t-2.  Essa opção pode ser usada somente na caixa de texto **substituir** ao configurar a manipulação de atributos. |                                       `\1` substitui o que é armazenado na primeira correspondência lembrada.                                       |
+|   `/n/ `    |                      Permite a inserção de códigos ASCII em expressões regulares \( @ no__t-1, em que n é um valor de escape octal, hexadecimal ou decimal @ no__t-2.                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>Exemplos de atributos de política de rede
 
@@ -76,31 +76,31 @@ Os exemplos a seguir descrevem o uso da sintaxe de correspondência de padrões 
 
 **Para remover a parte de realm do atributo de nome de usuário**
 
-Em um cenário de dial-up terceirizado no qual um ISP \(\) do provedor de serviços de Internet roteia solicitações de conexão para um NPS da organização, o proxy RADIUS do ISP pode exigir um nome de realm para rotear a solicitação de autenticação. No entanto, o NPS pode não reconhecer a parte do nome de realm do nome de usuário. Portanto, o nome do Realm deve ser removido pelo proxy RADIUS do ISP antes de ser encaminhado para o NPS da organização.
+Em um cenário de dial-up terceirizado no qual um provedor de serviços de Internet \(ISP @ no__t-1 roteia solicitações de conexão para um NPS da organização, o proxy RADIUS do ISP pode exigir um nome de realm para rotear a solicitação de autenticação. No entanto, o NPS pode não reconhecer a parte do nome de realm do nome de usuário. Portanto, o nome do Realm deve ser removido pelo proxy RADIUS do ISP antes de ser encaminhado para o NPS da organização.
 
-- Localizar: @microsoft \.com
+- Find: @microsoft @ no__t-1Com
 
 - Substitua:
 
-**Para substituir <em>user@example.microsoft.com</em> por _example. Microsoft. com\user_**
+**Para substituir <em>user@example.microsoft.com</em> por _exemplo. Microsoft. com\user_**
 
-- Considerar`(.*)@(.*)`
+- Localizar: `(.*)@(.*)`
 
-- Substitua`$2\$1`
+- Substituir: `$2\$1`
 
 
 
 **Para substituir o _domínio \ usuário_ por _specific_domain\user_**
 
-- Considerar`(.*)\\(.*)`
+- Localizar: `(.*)\\(.*)`
 
-- Substitua: *specific_domain*`\$2`
+- Replace: *specific_domain*`\$2`
 
 
 
 <strong>Para substituir o *usuário* por *user@specific_domain</strong>*
 
-- Considerar`$`
+- Localizar: `$`
 
 - Substituir: @*specific_domain*
 
@@ -108,14 +108,14 @@ Em um cenário de dial-up terceirizado no qual um ISP \(\) do provedor de servi�
 
 Você pode criar regras de roteamento que encaminham mensagens RADIUS com um nome de realm especificado para um conjunto de servidores RADIUS quando o NPS é usado como um proxy RADIUS. A seguir, uma sintaxe recomendada para roteamento de solicitações com base no nome de realm.
 
-- **Nome NetBIOS**:`WCOAST`
-- **Padrão**:`^wcoast\\`
+- **Nome NetBIOS**: `WCOAST`
+- **Padrão**: `^wcoast\\`
 
 No exemplo a seguir, wcoast.microsoft.com é um sufixo UPN (nome principal de usuário) exclusivo para o DNS ou Active Directory domínio wcoast.microsoft.com. Usando o padrão fornecido, o proxy NPS pode rotear mensagens com base no nome NetBIOS do domínio ou no sufixo UPN.
 
-- **Nome NetBIOS**:`WCOAST`
-- **Sufixo UPN**:`wcoast.microsoft.com`
-- **Padrão**:`^wcoast\\|@wcoast\.microsoft\.com$`
+- **Nome NetBIOS**: `WCOAST`
+- **Sufixo UPN**: `wcoast.microsoft.com`
+- **Padrão**: `^wcoast\\|@wcoast\.microsoft\.com$`
 
 
 Para obter mais informações sobre como gerenciar o NPS, consulte [gerenciar o servidor de políticas de rede](nps-manage-top.md).

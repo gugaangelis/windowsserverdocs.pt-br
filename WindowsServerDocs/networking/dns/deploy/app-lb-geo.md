@@ -1,57 +1,57 @@
 ---
 title: Usar a Política de DNS para balanceamento de aplicativo com reconhecimento de localização geográfica
-description: Este tópico faz parte do DNS política cenário guia para o Windows Server 2016
+description: Este tópico faz parte do guia de cenário de política DNS do Windows Server 2016
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9f76163e6b064ac3225ab4d755afd548e1cb720b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ea3f959612de0f2bc56a887ba73aba47f1d3f141
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446416"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406219"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>Usar a Política de DNS para balanceamento de aplicativo com reconhecimento de localização geográfica
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para aprender a configurar a política DNS para um aplicativo de balanceamento de carga com reconhecimento de localização geográfica.
+Você pode usar este tópico para aprender a configurar a política DNS para balancear a carga de um aplicativo com reconhecimento de localização geográfica.
 
-O tópico anterior neste guia [usar a política de DNS para balanceamento de carga do aplicativo](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb), usa um exemplo de uma empresa fictícia - serviços de brinde do Contoso - que fornece o universo on-line de serviços e que tem um site chamado contosogiftservices.com. O balanceamento de carga de serviços do Contoso presente seu aplicativo Web online entre os servidores em data centers na América do Norte localizado em Seattle, WA, Chicago, IL e Dallas, Texas.
+O tópico anterior neste guia, [usar política de DNS para balanceamento de carga de aplicativo](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb), usa um exemplo de uma empresa fictícia-serviços de presente da Contoso, que fornece serviços de oferta online e que tem um site chamado contosogiftservices.com. Os serviços de presentes da Contoso balanceam seu aplicativo Web online entre os servidores nos data centers da América do Norte localizados em Seattle, WA, Chicago, IL e Dallas, TX.
 
 >[!NOTE]
->É recomendável que você se familiarizar com o tópico [usar a política de DNS para balanceamento de carga do aplicativo](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb) antes de executar as instruções nesse cenário.
+>É recomendável que você se familiarize com o tópico [usar a política DNS para balanceamento de carga do aplicativo](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb) antes de executar as instruções neste cenário.
 
-Este tópico usa a infraestrutura de rede e a empresa fictícia mesma como base para uma nova implantação de exemplo que inclui reconhecimento de localização geográfica.
+Este tópico usa a mesma infraestrutura de rede e empresa fictícia como base para uma nova implantação de exemplo que inclui reconhecimento de localização geográfica.
 
-Neste exemplo, Contoso presente serviços com êxito está expandindo sua presença em todo o mundo.
+Neste exemplo, os serviços de presentes da Contoso estão expandindo com êxito sua presença em todo o mundo.
 
-Semelhante da América do Norte, a empresa agora tem servidores web hospedados em data centers europeus.
+Semelhante à América do Norte, a empresa agora tem servidores Web hospedados em data centers europeus.
 
-Os administradores de DNS do Contoso presente serviços deseja configurar o aplicativo de balanceamento de carga para data centers europeus de maneira semelhante para a implementação de política DNS nos Estados Unidos, com o tráfego de aplicativo distribuído entre os servidores Web que estão localizados em Dublin, Irlanda, Amsterdã, Holanda e em outro lugar.
+Os administradores de DNS dos serviços de presentes da Contoso desejam configurar o balanceamento de carga de aplicativos para data centers europeus de maneira semelhante à implementação da política DNS na Estados Unidos, com o tráfego de aplicativos distribuído entre os servidores Web que estão localizados no Dublin, Irlanda, Amsterdã, Holanda e em outro lugar.
 
-Os administradores de DNS também deseja que todas as consultas de outros locais no mundo distribuído igualmente entre todos os seus data centers.
+Os administradores de DNS também desejam que todas as consultas de outros locais no mundo sejam distribuídas igualmente entre todos os seus data centers.
 
-Nas próximas seções, você pode aprender como atingir as metas semelhantes dos administradores do DNS do Contoso na sua própria rede.
+Nas próximas seções, você pode aprender a atingir metas semelhantes às dos administradores de DNS da Contoso em sua própria rede.
 
-## <a name="how-to-configure-application-load-balancing-with-geo-location-awareness"></a>Como configurar o aplicativo balanceamento de carga com reconhecimento de localização geográfica
+## <a name="how-to-configure-application-load-balancing-with-geo-location-awareness"></a>Como configurar o balanceamento de carga de aplicativo com reconhecimento de localização geográfica
 
-As seções a seguir mostram como configurar a política de DNS para balanceamento de aplicativo com reconhecimento de localização geográfica.
+As seções a seguir mostram como configurar a política DNS para balanceamento de carga de aplicativo com reconhecimento de localização geográfica.
 
 >[!IMPORTANT]
->As seções a seguir incluem comandos do Windows PowerShell de exemplo que contêm valores de exemplo para muitos parâmetros. Certifique-se de que você substitua os valores de exemplo nesses comandos com os valores que são apropriadas para sua implantação antes de executar esses comandos.
+>As seções a seguir incluem exemplos de comandos do Windows PowerShell que contêm valores de exemplo para muitos parâmetros. Certifique-se de substituir os valores de exemplo nesses comandos por valores apropriados para sua implantação antes de executar esses comandos.
 
-### <a name="bkmk_clientsubnets"></a>Crie as sub-redes de cliente DNS
+### <a name="bkmk_clientsubnets"></a>Criar as sub-redes do cliente DNS
 
-Primeiro, você deve identificar a sub-redes ou espaço de endereço IP das regiões América do Norte e Europa.
+Você deve primeiro identificar as sub-redes ou o espaço de endereço IP das regiões América do Norte e Europa.
 
-Você pode obter essas informações de mapas de Geo-IP. Com base nessas distribuições IP geográfico, você deve criar as sub-redes de cliente DNS.
+Você pode obter essas informações de mapas de IP geográfico. Com base nessas distribuições de IP geográfico, você deve criar as sub-redes de cliente DNS.
 
-Uma sub-rede de cliente DNS é um agrupamento lógico de sub-redes IPv4 ou IPv6 do qual as consultas são enviadas para um servidor DNS.
+Uma sub-rede de cliente DNS é um agrupamento lógico de sub-redes IPv4 ou IPv6 do qual as consultas são enviadas a um servidor DNS.
 
 Você pode usar os seguintes comandos do Windows PowerShell para criar sub-redes de cliente DNS. 
 
@@ -59,22 +59,22 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar sub-redes
     Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
     Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
     
-Para obter mais informações, consulte [DnsServerClientSubnet adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 ### <a name="bkmk_zscopes2"></a>Criar os escopos de zona
 
-Depois que as sub-redes de cliente estão em vigor, você deve particionar a zona contosogiftservices.com em escopos de zona diferente, cada um para um data center.
+Depois que as sub-redes do cliente estiverem em vigor, você deverá particionar a zona contosogiftservices.com em escopos de zona diferentes, cada uma para um datacenter.
 
-Um escopo de zona é uma instância exclusiva da zona. Uma zona DNS pode ter vários escopos de zona, com cada escopo de zona que contém seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com diferentes endereços IP ou os mesmos endereços IP.
+Um escopo de zona é uma instância exclusiva da zona. Uma zona DNS pode ter vários escopos de zona, com cada escopo de zona contendo seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com endereços IP diferentes ou os mesmos endereços IP.
 
 >[!NOTE]
->Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e operações de DNS herdadas funcionam neste escopo.
+>Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e as operações de DNS herdadas funcionam nesse escopo.
 
-O cenário anterior sobre o balanceamento de carga do aplicativo demonstra como configurar três escopos de zona para data centers na América do Norte.
+O cenário anterior sobre balanceamento de carga de aplicativo demonstra como configurar três escopos de zona para datacenters em América do Norte.
 
-Com os comandos a seguir, você pode criar dois escopos mais de zona, cada uma para os datacenters Dublin e Amsterdã. 
+Com os comandos a seguir, você pode criar mais dois escopos de zona, um para os data centers Dublin e Amsterdã. 
 
-Você pode adicionar esses escopos de zona sem quaisquer alterações para os três escopos de zona da América do Norte existentes na mesma região. Além disso, depois de criar esses escopos de zona, você não precisa reiniciar o servidor DNS.
+Você pode adicionar esses escopos de zona sem qualquer alteração nos três escopos de zona de América do Norte existentes na mesma zona. Além disso, depois de criar esses escopos de zona, você não precisa reiniciar o servidor DNS.
 
 Você pode usar os seguintes comandos do Windows PowerShell para criar escopos de zona.
 
@@ -83,13 +83,13 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar escopos d
     Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
     
 
-Para obter mais informações, consulte [DnsServerZoneScope adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records2"></a>Adicionar registros para os escopos de zona
+### <a name="bkmk_records2"></a>Adicionar registros aos escopos de zona
 
-Agora você deve adicionar os registros que representa o host do servidor web para os escopos de zona.
+Agora você deve adicionar os registros que representam o host do servidor Web nos escopos de zona.
 
-Os registros para os datacenters América foram adicionados no cenário anterior. Você pode usar os seguintes comandos do Windows PowerShell para adicionar registros para os escopos de zona para data centers europeus.
+Os registros dos data centers da América foram adicionados no cenário anterior. Você pode usar os seguintes comandos do Windows PowerShell para adicionar registros aos escopos de zona para data centers europeus.
  
     
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
@@ -98,17 +98,17 @@ Os registros para os datacenters América foram adicionados no cenário anterior
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-### <a name="bkmk_policies2"></a>Crie as políticas de DNS
+### <a name="bkmk_policies2"></a>Criar as políticas de DNS
 
-Depois que você criou as partições (escopos de zona) e adicionar registros, você deve criar políticas DNS que distribui as consultas de entrada nesses escopos.
+Depois de criar as partições (escopos de zona) e adicionar registros, você deve criar políticas de DNS que distribuem as consultas de entrada entre esses escopos.
 
-Neste exemplo, distribuição de consultas em servidores de aplicativos em diferentes data centers atende aos critérios a seguir.
+Para este exemplo, a distribuição de consultas entre servidores de aplicativos em data centers diferentes atende aos critérios a seguir.
 
-1. Quando a consulta DNS é proveniente de uma fonte em uma sub-rede de cliente na América do Norte, 50% das respostas DNS apontar para o Centro de dados de Seattle, 25% das respostas aponte para o data center de Chicago e 25% restantes de respostas de apontar para o datacenter de Dallas.
-2. Quando a consulta DNS é proveniente de uma fonte em uma sub-rede de cliente europeu, 50% das respostas DNS apontar para o datacenter em Dublin e 50% das respostas DNS apontar para o datacenter Amsterdã.
-3. Quando a consulta derivar de qualquer outro lugar no mundo, as respostas DNS são distribuídas entre todos os datacenters de cinco.
+1. Quando a consulta DNS é recebida de uma origem em uma sub-rede do cliente norte-americano, 50% das respostas DNS apontam para o data center de Seattle, 25% das respostas apontam para o datacenter de Chicago e os 25% de respostas restantes apontam para o datacenter de Dallas.
+2. Quando a consulta DNS é recebida de uma origem em uma sub-rede do cliente Europeu, 50% das respostas DNS apontam para o datacenter Dublin e 50% das respostas DNS apontam para o datacenter Amsterdã.
+3. Quando a consulta é proveniente de qualquer outro lugar do mundo, as respostas DNS são distribuídas entre todos os cinco data centers.
 
-Você pode usar os seguintes comandos do Windows PowerShell para implementar essas políticas DNS.
+Você pode usar os seguintes comandos do Windows PowerShell para implementar essas políticas de DNS.
 
     
     Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
@@ -119,8 +119,8 @@ Você pode usar os seguintes comandos do Windows PowerShell para implementar ess
     
     
 
-Para obter mais informações, consulte [DnsServerQueryResolutionPolicy adicionar](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
-Você agora criou com êxito uma política DNS que fornece o aplicativo balanceamento de carga entre servidores Web que estão localizados em diferentes data cinco centers em vários continentes.
+Agora você criou com êxito uma política de DNS que fornece balanceamento de carga de aplicativo entre servidores Web localizados em cinco data centers diferentes em vários continentes.
 
-Você pode criar milhares de políticas DNS de acordo com seu tráfego de requisitos de gerenciamento e todas as novas políticas são aplicadas dinamicamente - sem reiniciar o servidor DNS - nas consultas de entrada.
+Você pode criar milhares de políticas de DNS de acordo com seus requisitos de gerenciamento de tráfego e todas as novas políticas são aplicadas dinamicamente, sem reiniciar o servidor DNS-em consultas de entrada.

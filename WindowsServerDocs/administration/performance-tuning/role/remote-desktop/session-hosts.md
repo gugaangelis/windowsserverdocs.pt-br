@@ -1,203 +1,203 @@
 ---
-title: Hosts de sessão da área de trabalho remota de ajuste de desempenho
-description: Ajuste de desempenho diretrizes para Hosts de sessão de área de trabalho remota
-ms.prod: windows-server-threshold
+title: Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
+description: Diretrizes de ajuste de desempenho para hosts de sessão Área de Trabalho Remota
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e95671718616fc7c81977434e83a227c858fca17
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: c50c0c981362bd96ed3bf1c603cde6bfeec289f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811414"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385023"
 ---
-# <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão da área de trabalho remota de ajuste de desempenho
+# <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 
 
-Este tópico discute como selecionar o hardware do Host da sessão da área de trabalho remota (Host de sessão de área de trabalho remota), ajustar o host e ajustar os aplicativos.
+Este tópico discute como selecionar o hardware de Host da Sessão da Área de Trabalho Remota (Host da Sessão RD), ajustar o host e ajustar os aplicativos.
 
 **Neste tópico:**
 
--   [Selecionando o hardware adequado para desempenho](#selecting-the-proper-hardware-for-performance)
+-   [Selecionando o hardware apropriado para o desempenho](#selecting-the-proper-hardware-for-performance)
 
--   [Ajustando aplicativos para o Host de sessão de área de trabalho remota](#tuning-applications-for-remote-desktop-session-host)
+-   [Ajustando aplicativos para Host da Sessão da Área de Trabalho Remota](#tuning-applications-for-remote-desktop-session-host)
 
--   [Host da sessão da área de trabalho remota parâmetros de ajuste](#remote-desktop-session-host-tuning-parameters)
+-   [Host da Sessão da Área de Trabalho Remota parâmetros de ajuste](#remote-desktop-session-host-tuning-parameters)
 
 ## <a name="selecting-the-proper-hardware-for-performance"></a>Selecionar o hardware adequado para desempenho
 
 
-Para uma implantação de servidor de Host de sessão de área de trabalho remota, a escolha de hardware será regida pelo conjunto de aplicativos e como os usuários usá-los. Os principais fatores que afetam o número de usuários e a experiência deles são CPU, memória, disco e gráficos. Esta seção contém diretrizes adicionais que são específicas para os servidores de Host de sessão de área de trabalho remota e está relacionada principalmente ao ambiente de vários usuário de servidores de Host de sessão de área de trabalho remota.
+Para uma implantação do Host da Sessão RD Server, a escolha do hardware é regida pelo conjunto de aplicativos e como os usuários os usam. Os principais fatores que afetam o número de usuários e sua experiência são CPU, memória, disco e gráficos. Esta seção contém diretrizes adicionais específicas para Host da Sessão RD servidores e está principalmente relacionada ao ambiente de vários usuários de servidores Host da Sessão RD.
 
 ### <a name="cpu-configuration"></a>Configuração da CPU
 
-Configuração da CPU é conceitualmente determinada multiplicando-se a CPU necessária para dar suporte a uma sessão pelo número de sessões que o sistema deve dar suporte, mantendo uma zona de buffer para lidar com picos temporários. Vários processadores lógicos podem ajudar a reduzir situações anormais de congestionamento da CPU, que geralmente são causadas por alguns segmentos overactive contidos por um número semelhante de processadores lógicos.
+A configuração de CPU é determinada de acordo com a multiplicação da CPU necessária para dar suporte a uma sessão pelo número de sessões às quais o sistema deve dar suporte, mantendo, ao mesmo tempo, uma zona de buffer para lidar com picos temporários. Vários processadores lógicos podem ajudar a reduzir situações de congestionamento de CPU anormal, que geralmente são causadas por alguns threads superativos que estão contidos por um número semelhante de processadores lógicos.
 
-Portanto, os processadores lógicos mais em um sistema, quanto menor a margem Amortecedor deve ser criada para a estimativa de uso da CPU, o que resulta em uma porcentagem maior de carga ativa por CPU. Um fator importante a lembrar é que se duplicar o número de CPUs faz a capacidade de CPU não double.
+Portanto, quanto mais processadores lógicos estiver em um sistema, menor será a margem de amortecedor que deve ser incorporada à estimativa de uso da CPU, o que resultará em um percentual maior de carga ativa por CPU. Um fator importante a ser lembrado é que dobrar o número de CPUs não dá uma capacidade de CPU dupla.
 
 ### <a name="memory-configuration"></a>Configuração de memória
 
-Configuração de memória é dependente de aplicativos que os usuários empreguem; No entanto, a quantidade necessária de memória pode ser estimada usando a fórmula a seguir: TotalMem = OSMem + SessionMem \* NS
+A configuração de memória depende dos aplicativos que os usuários empregam; no entanto, a quantidade necessária de memória pode ser estimada usando a seguinte fórmula: TotalMem = OSMem + SessionMem \* NS
 
-OSMem é a quantidade de memória que do sistema operacional precisa para ser executado (como imagens binárias do sistema, estruturas de dados e assim por diante), SessionMem é quanto os processos em execução em uma sessão da memória exigem e NS é o número de sessões ativas de destino. A quantidade de memória necessária para uma sessão é determinada principalmente pela referência de memória privada definido para aplicativos e processos de sistema que estão em execução na sessão. Páginas de código ou dados compartilhadas tem pouco efeito, porque apenas uma cópia está presente no sistema.
+OSMem é a quantidade de memória que o sistema operacional exige para ser executado (como imagens binárias do sistema, estruturas de dados etc.), SessionMem é a quantidade de processos de memória em execução em uma sessão necessária, e NS é o número de destino de sessões ativas. A quantidade de memória necessária para uma sessão é basicamente determinada pela referência de memória privada definida para aplicativos e processos do sistema em execução dentro da sessão. O código compartilhado ou as páginas de dados têm pouco efeito porque apenas uma cópia está presente no sistema.
 
-Uma observação interessante (supondo que o sistema de disco que está fazendo backup de arquivo de paginação não altera) é que, quanto maior o número de sessões simultâneas ativas, o sistema de planos de suporte, quanto maior a alocação de memória por sessão deve ser. Se a quantidade de memória é alocada por sessão não for aumentada, o número de falhas de página que sessões ativas gera aumenta com o número de sessões. Essas falhas, eventualmente, saturar o subsistema de e/s. Aumentando a quantidade de memória é alocada por sessão, a probabilidade de incorrer em falhas de página diminui, que ajuda a reduzir a taxa geral de falhas de página.
+Uma observação interessante (supondo que o sistema de disco que está fazendo backup do arquivo de paginação não é alterado) é que quanto maior o número de sessões ativas simultâneas que o sistema planeja oferecer suporte, maior será a alocação de memória por sessão. Se a quantidade de memória alocada por sessão não for aumentada, o número de falhas de página que as sessões ativas geram aumenta com o número de sessões. Essas falhas eventualmente sobrecarregam o subsistema de e/s. Ao aumentar a quantidade de memória alocada por sessão, a probabilidade de incorrer em falhas de página diminui, o que ajuda a reduzir a taxa geral de falhas de página.
 
 ### <a name="disk-configuration"></a>Configuração de disco
 
-Armazenamento é um dos aspectos mais ignorados quando você configura servidores Host da sessão de área de trabalho remota, e pode ser a limitação mais comuns em sistemas que são implantados no campo.
+O armazenamento é um dos aspectos mais despercebidos quando você configura servidores de Host da Sessão RD, e pode ser a limitação mais comum em sistemas implantados no campo.
 
-A atividade de disco que é gerada em um servidor de Host de sessão de área de trabalho remota típica afeta as seguintes áreas:
+A atividade de disco gerada em um servidor Host da Sessão RD típico afeta as seguintes áreas:
 
--   Arquivos do sistema e os binários do aplicativo
+-   Arquivos do sistema e binários do aplicativo
 
--   Arquivos de página
+-   Arquivos de paginação
 
 -   Perfis de usuário e dados de usuário
 
-O ideal é que essas áreas devem ser feitas por dispositivos de armazenamento distinto. Usar as configurações de RAID distribuídas ou outros tipos de armazenamento de alto desempenho ainda mais melhora o desempenho. É altamente recomendável que você use adaptadores de armazenamento com o cache de gravação de bateria. Controladores com o cache de gravação de disco oferecem suporte aprimorado para as operações de gravação síncrona. Como todos os usuários têm uma seção separada, operações de gravação síncrona são significativamente mais comuns em um servidor de Host de sessão de área de trabalho remota. Hives do registro periodicamente são salvos em disco por meio de operações de gravação síncrona. Para habilitar essas otimizações, no console do gerenciamento de disco, abra o **propriedades** caixa de diálogo para o disco de destino e, na **diretivas** guia, selecione o **Ativar gravação em cache em o disco** e **desativar a liberação de buffer de cache de gravação do Windows** nas caixas de seleção de dispositivo.
+O ideal é que essas áreas sejam submetidas a backup por dispositivos de armazenamento distintos. O uso de configurações de RAID distribuídas ou outros tipos de armazenamento de alto desempenho melhora ainda mais o desempenho. É altamente recomendável que você use adaptadores de armazenamento com cache de gravação com suporte de bateria. Os controladores com cache de gravação em disco oferecem suporte aprimorado para operações de gravação síncronas. Como todos os usuários têm um Hive separado, as operações de gravação síncrona são significativamente mais comuns em um servidor de Host da Sessão RD. Os hives do registro são salvos periodicamente no disco usando operações de gravação síncronas. Para habilitar essas otimizações, no console de gerenciamento de disco, abra a caixa de diálogo **Propriedades** do disco de destino e, na guia **políticas** , selecione **Habilitar cache de gravação no disco** e **desativar o buffer de cache de gravação do Windows liberando** nas caixas de seleção do dispositivo.
 
 ### <a name="network-configuration"></a>Configuração de rede
 
-Uso de rede para um servidor de Host de sessão de área de trabalho remota inclui duas categorias principais:
+O uso de rede para um servidor de Host da Sessão RD inclui duas categorias principais:
 
--   Uso do tráfego de conexão de Host de sessão de área de trabalho remota é determinado quase que exclusivamente pelos padrões de desenho que são exibidos pelos aplicativos em execução dentro de sessões e o tráfego de e/s redirecionada de dispositivos.
+-   O uso do tráfego de conexão Host da Sessão RD é determinado quase exclusivamente pelos padrões de desenho que são reportados pelos aplicativos em execução dentro das sessões e o tráfego de e/s de dispositivos redirecionados.
 
-    Por exemplo, aplicativos de tratamento de processamento de texto e dados de entrada consumam largura de banda de aproximadamente 10 a 100 kilobits por segundo, enquanto que gráficos sofisticados e reprodução de vídeo causar aumentos significativos no uso de largura de banda.
+    Por exemplo, os aplicativos que manipulam o processamento de texto e a entrada de dados consomem largura de banda de aproximadamente 10 a 100 kilobits por segundo, enquanto gráficos avançados e reprodução de vídeo causam aumentos significativos no uso de largura de banda
 
--   Conexões de back-end, como perfis móveis, aplicativo acesso aos compartilhamentos de arquivos, servidores de banco de dados, servidores de email e servidores HTTP.
+-   Conexões de back-end, como perfis móveis, acesso a aplicativos a compartilhamentos de arquivos, servidores de banco de dados, servidores de email e servidores HTTP.
 
-    O volume e o perfil de tráfego de rede é específico para cada implantação.
+    O volume e o perfil do tráfego de rede são específicos para cada implantação.
 
-## <a name="tuning-applications-for-remote-desktop-session-host"></a>Ajustando aplicativos para o Host de sessão de área de trabalho remota
+## <a name="tuning-applications-for-remote-desktop-session-host"></a>Ajustando aplicativos para Host da Sessão da Área de Trabalho Remota
 
 
-A maioria do uso da CPU em um servidor Host de sessão de área de trabalho remota é orientada por aplicativos. Aplicativos da área de trabalho normalmente são otimizados em direção a capacidade de resposta com o objetivo de minimizar o tempo que levará a um aplicativo para responder a uma solicitação de usuário. No entanto, em um ambiente de servidor, é igualmente importante minimizar a quantidade total de uso da CPU que é necessária para concluir uma ação para evitar afetar negativamente outras sessões.
+A maior parte do uso da CPU em um servidor Host da Sessão RD é orientada por aplicativos. Os aplicativos de desktop geralmente são otimizados para a capacidade de resposta com o objetivo de minimizar quanto tempo um aplicativo leva para responder a uma solicitação de usuário. No entanto, em um ambiente de servidor, é igualmente importante minimizar a quantidade total de uso da CPU necessária para concluir uma ação para evitar afetar negativamente outras sessões.
 
-Quando você configura os aplicativos que devem ser usados em um servidor Host de sessão de área de trabalho remota, considere as seguintes sugestões:
+Considere as seguintes sugestões ao configurar aplicativos que serão usados em um servidor de Host da Sessão RD:
 
 -   Minimizar o processamento de loop ocioso em segundo plano
 
-    Exemplos típicos são desabilitar a verificação de ortografia e gramática em segundo plano, dados de indexação para pesquisa, e gravações em segundo plano.
+    Exemplos típicos estão desabilitando a gramática em segundo plano e verificação ortográfica, indexação de dados para pesquisa e gravações em segundo plano.
 
--   Minimize a frequência com que um aplicativo executa uma verificação de estado ou a atualização.
+-   Minimize a frequência com que um aplicativo executa uma verificação de estado ou uma atualização.
 
-    Desabilitar esses comportamentos ou aumentar o intervalo entre iterações de sondagem e o timer de acionamento significativamente beneficia o uso da CPU porque o efeito de tais atividades é amplificado rapidamente para muitas sessões ativas. Exemplos típicos são ícones de status de conexão e atualizações de informações da barra de status.
+    A desabilitação desses comportamentos ou o aumento do intervalo entre as iterações de sondagem e o acionamento do temporizador beneficia significativamente o uso da CPU, pois o efeito dessas atividades é rapidamente amplificado para muitas sessões ativas. Exemplos típicos são os ícones de status da conexão e as informações da barra de status.
 
--   Minimize a contenção de recursos entre os aplicativos, reduzindo sua frequência de sincronização.
+-   Minimize a contenção de recursos entre aplicativos, reduzindo sua frequência de sincronização.
 
-    Exemplos de tais recursos incluem as chaves do registro e arquivos de configuração. Exemplos de componentes de aplicativos e recursos são um indicador de status (como notificações de shell), operações de indexação ou monitoramento de alterações e sincronização offline.
+    Exemplos desses recursos incluem chaves do registro e arquivos de configuração. Exemplos de componentes e recursos de aplicativos são indicadores de status (como notificações de Shell), indexação em segundo plano ou monitoramento de alterações e sincronização offline.
 
--   Desabilite os processos desnecessários que estão registrados para começar com entrada do usuário ou uma inicialização de sessão.
+-   Desabilite os processos desnecessários que estão registrados para começar com a entrada do usuário ou uma inicialização da sessão.
 
-    Esses processos podem contribuir significativamente o custo de uso da CPU ao criar uma nova sessão de usuário, que geralmente é um processo intensivo de CPU, e pode ser muito caro em cenários de manhã. Use MsConfig.exe ou o MsInfo32.exe para obter uma lista de processos que são iniciados na entrada do usuário. Para obter mais informações, você pode usar [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
+    Esses processos podem contribuir significativamente com o custo do uso da CPU ao criar uma nova sessão de usuário, que geralmente é um processo intensivo de CPU, e pode ser muito caro em cenários de manhã. Use o MsConfig. exe ou o MsInfo32. exe para obter uma lista de processos que são iniciados na entrada do usuário. Para obter informações mais detalhadas, você pode usar o [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
 
 Para o consumo de memória, você deve considerar o seguinte:
 
--   Verifique se que as DLLs carregadas por um aplicativo não são realocados.
+-   Verifique se as DLLs carregadas por um aplicativo não estão realocadas.
 
-    -   DLLs realocados podem ser verificados selecionando o modo de exibição do processo de DLL, conforme mostrado na figura a seguir, usando [Process Explorer](https://technet.microsoft.com/sysinternals/bb896653.aspx).
+    -   DLLs realocadas podem ser verificadas selecionando processar exibição de DLL, conforme mostrado na figura a seguir, usando o [Gerenciador de processos](https://technet.microsoft.com/sysinternals/bb896653.aspx).
 
-    -   Aqui podemos ver que y.dll foi realocado porque x.dll já ocupado seu endereço de base padrão e não foi habilitado o ASLR
+    -   Aqui, podemos ver que y. dll foi realocado porque x. dll já ocupava seu endereço base padrão e a ASLR não estava habilitada
 
-        ![dlls realocados](../../media/perftune-guide-relocated-dlls.png)
+        ![DLLs realocadas](../../media/perftune-guide-relocated-dlls.png)
 
-        Se as DLLs são realocadas, é impossível compartilhar código entre as sessões, que aumenta significativamente o volume de uma sessão. Isso é um dos problemas mais comuns de desempenho relacionados à memória em um servidor Host de sessão de área de trabalho remota.
+        Se as DLLs forem realocadas, é impossível compartilhar seu código entre as sessões, o que aumenta significativamente a superfície de uma sessão. Esse é um dos problemas de desempenho mais comuns relacionados à memória em um servidor Host da Sessão RD.
 
--   Para aplicativos comuns de runtime (CLR) do idioma, use o gerador de imagem nativa (Ngen.exe) para aumentar o compartilhamento de página e reduzir a sobrecarga da CPU.
+-   Para aplicativos Common Language Runtime (CLR), use o gerador de imagem nativa (NGen. exe) para aumentar o compartilhamento de página e reduzir a sobrecarga da CPU.
 
-    Quando possível, aplica técnicas semelhantes a outros mecanismos de execução semelhantes.
+    Quando possível, aplique técnicas semelhantes a outros mecanismos de execução semelhantes.
 
-## <a name="remote-desktop-session-host-tuning-parameters"></a>Host da sessão da área de trabalho remota parâmetros de ajuste
+## <a name="remote-desktop-session-host-tuning-parameters"></a>Host da Sessão da Área de Trabalho Remota parâmetros de ajuste
 
 
 ### <a name="page-file"></a>Arquivo de paginação
 
-Tamanho do arquivo de página insuficiente pode causar memória falhas de alocação em aplicativos ou componentes do sistema. Você pode usar o contador de desempenho de bytes de memória confirmada de monitorar quanta memória virtual confirmada no sistema.
+O tamanho do arquivo de paginação insuficiente pode causar falhas de alocação de memória em aplicativos ou componentes do sistema. Você pode usar o contador de desempenho bytes de memória para o confirmados para monitorar a quantidade de memória virtual confirmada no sistema.
 
 ### <a name="antivirus"></a>Antivírus
 
-Instalando o software antivírus em um servidor de Host de sessão de área de trabalho remota bastante afeta o desempenho geral do sistema, especialmente o uso da CPU. É altamente recomendável que você excluir da lista ativa monitoramento todas as pastas que contêm arquivos temporários, especialmente aquelas que serviços e outros componentes do sistema geram.
+A instalação do software antivírus em um Host da Sessão RD Server afeta muito o desempenho geral do sistema, especialmente o uso da CPU. É altamente recomendável que você exclua da lista de monitoramento ativo todas as pastas que mantêm arquivos temporários, especialmente aqueles que os serviços e outros componentes do sistema geram.
 
 ### <a name="task-scheduler"></a>Agendador de Tarefas
 
-O Agendador de tarefas permite que você examine a lista de tarefas que estão agendadas para diferentes eventos. Para um servidor de Host de sessão de área de trabalho remota, é útil se concentrar especificamente nas tarefas que são configurados para executar em ocioso, na entrada do usuário ou sessão se conectar e desconectar. Por causa das especificidades da implantação, muitas dessas tarefas podem ser desnecessárias.
+Agendador de Tarefas permite que você examine a lista de tarefas que estão agendadas para eventos diferentes. Para um servidor de Host da Sessão RD, é útil se concentrar especificamente nas tarefas que são configuradas para serem executadas em tempo ocioso, na entrada do usuário ou na conexão e na desconexão da sessão. Devido às especificidades da implantação, muitas dessas tarefas podem ser desnecessárias.
 
 ### <a name="desktop-notification-icons"></a>Ícones de notificação da área de trabalho
 
-Ícones de notificação na área de trabalho podem ter mecanismos de atualização relativamente caros. Você deve desabilitar as notificações, removendo o componente que registra-os da lista de inicialização ou alterando a configuração em aplicativos e componentes do sistema para desabilitá-los. Você pode usar **personalizar ícones de notificações** para examinar a lista de notificações que estão disponíveis no servidor.
+Os ícones de notificação na área de trabalho podem ter mecanismos de atualização bastante caros. Você deve desabilitar todas as notificações removendo o componente que os registra na lista de inicialização ou alterando a configuração em aplicativos e componentes do sistema para desabilitá-los. Você pode usar os **ícones personalizar notificações** para examinar a lista de notificações disponíveis no servidor.
 
 ### <a name="remotefx-data-compression"></a>Compactação de dados do RemoteFX
 
-Microsoft RemoteFX compactação pode ser configurada por meio da política de grupo sob **configuração do computador &gt; modelos administrativos &gt; componentes do Windows &gt; Remote Desktop Services &gt; remoto Host de sessão da área de trabalho &gt; ambiente de sessões remotas &gt; configurar a compactação de dados do RemoteFX**. Três valores são possíveis:
+Microsoft RemoteFX compactação pode ser configurada usando Política de Grupo em **configuração do computador &gt; Modelos Administrativos &gt; componentes do Windows &gt; Serviços de Área de Trabalho Remota &gt; host da sessão da área de trabalho remota &gt; remoto Ambiente de sessão &gt; configure a compactação para dados do RemoteFX**. Três valores são possíveis:
 
--   **Otimizado para usar menos memória** consome a menor quantidade de memória por sessão, mas tem a menor taxa de compactação e, portanto, o mais alto consumo de largura de banda.
+-   **Otimizado para usar menos memória** Consome a menor quantidade de memória por sessão, mas tem a menor taxa de compactação e, portanto, o consumo de largura de banda mais alto.
 
--   **Equilibra a largura de banda de rede e memória** reduzido o consumo de largura de banda enquanto aumenta um pouco o consumo de memória (aproximadamente 200 KB por sessão).
+-   **Equilibra a memória e a largura de banda da rede** Redução do consumo de largura de banda enquanto aumenta a margem de consumo de memória (aproximadamente 200 KB por sessão).
 
--   **Otimizado para usar menos largura de banda de rede** reduz ainda mais o uso de largura de banda de rede a um custo de aproximadamente 2 MB por sessão. Se você quiser usar essa configuração, você deve avaliar o número máximo de sessões e testar a esse nível com essa configuração antes de colocar o servidor em produção.
+-   **Otimizado para usar menos largura de banda de rede** Reduz ainda mais o uso de largura de banda de rede a um custo de aproximadamente 2 MB por sessão. Se você quiser usar essa configuração, avalie o número máximo de sessões e teste para esse nível com essa configuração antes de posicionar o servidor em produção.
 
-Você também pode optar por não usar um algoritmo de compactação do RemoteFX. Escolher não usar um algoritmo de compactação do RemoteFX irá usar mais largura de banda de rede e só é recomendado se você estiver usando um dispositivo de hardware que foi projetado para otimizar o tráfego de rede. Mesmo se você optar por não usar um algoritmo de compactação do RemoteFX, alguns dados de gráficos serão compactados.
+Você também pode optar por não usar um algoritmo de compactação do RemoteFX. Optar por não usar um algoritmo de compactação do RemoteFX usará mais largura de banda de rede e será recomendado apenas se você estiver usando um dispositivo de hardware projetado para otimizar o tráfego de rede. Mesmo que você opte por não usar um algoritmo de compactação do RemoteFX, alguns dados gráficos serão compactados.
 
 ### <a name="device-redirection"></a>Redirecionamento de dispositivo
 
-Redirecionamento de dispositivo pode ser configurado usando diretiva de grupo sob **configuração do computador &gt; modelos administrativos &gt; componentes do Windows &gt; Remote Desktop Services &gt; área de trabalho remota Host de sessão &gt; dispositivo e o redirecionamento de recursos** ou usando o **coleção de sessão** no Gerenciador do servidor de caixa de propriedades.
+O redirecionamento de dispositivo pode ser configurado usando Política de Grupo em **configuração do computador &gt; Modelos Administrativos &gt; componentes do Windows &gt; Serviços de Área de Trabalho Remota &gt; host da sessão da área de trabalho remota dispositivo e recurso &gt; Redirecionamento** ou usando a caixa de propriedades **coleção de sessões** no Gerenciador do servidor.
 
-Em geral, o redirecionamento de dispositivo aumenta quanto as conexões de servidor de Host de sessão de área de trabalho remota de largura de banda de rede usam porque os dados são trocados entre os dispositivos nos computadores cliente e os processos em execução na sessão de servidor. A extensão do aumento é uma função da frequência de operações que são executadas pelos aplicativos que estão em execução no servidor em relação os dispositivos redirecionados.
+Geralmente, o redirecionamento de dispositivo aumenta a quantidade de largura de banda de rede Host da Sessão RD conexões do servidor, pois os dados são trocados entre dispositivos nos computadores cliente e processos que estão em execução na sessão do servidor. A extensão do aumento é uma função da frequência das operações executadas pelos aplicativos que estão em execução no servidor em relação aos dispositivos redirecionados.
 
-Redirecionamento de impressora e Plug and Play redirecionamento de dispositivo também aumenta o uso de CPU ao entrar. Você pode redirecionar impressoras de duas maneiras:
+O redirecionamento de impressora e Plug and Play redirecionamento de dispositivo também aumenta o uso da CPU na entrada. Você pode redirecionar impressoras de duas maneiras:
 
--   Correspondência com base no driver redirecionamento de impressora quando um driver de impressora deve ser instalado no servidor. Versões anteriores do Windows Server usam neste método.
+-   O redirecionamento baseado em driver de impressora correspondente quando um driver para a impressora deve ser instalado no servidor. Versões anteriores do Windows Server usavam esse método.
 
--   Introduzido no Windows Server 2008, o redirecionamento de driver de impressora Easy Print usa um driver de impressora comum para todas as impressoras.
+-   Introduzido no Windows Server 2008, o redirecionamento de driver de impressora de impressão fácil usa um driver de impressora comum para todas as impressoras.
 
-É recomendável o método Easy Print porque ele faz com que menos uso de CPU para a instalação de impressora em tempo de conexão. O método de driver correspondente faz com que o aumento no uso da CPU porque requer que o serviço de spooler para carregar drivers diferentes. Para o uso de largura de banda, Easy Print faz com que o uso de largura de banda de rede um pouco maior, mas não é significativa o suficiente para compensar os benefícios de desempenho, gerenciabilidade e confiabilidade.
+Recomendamos o método Print fácil porque ele causa menos uso da CPU para a instalação da impressora no momento da conexão. O método de driver correspondente causa um aumento no uso da CPU porque requer que o serviço de spooler carregue drivers diferentes. Para o uso da largura de banda, a impressão fácil causa um aumento no uso da largura de banda da rede, mas não é significativa o suficiente para deslocar os outros benefícios de desempenho, capacidade de gerenciamento e confiabilidade.
 
-Redirecionamento de áudio faz com que um fluxo de tráfego de rede. Redirecionamento de áudio também permite que os usuários executem aplicativos de multimídia que normalmente têm alto consumo de CPU.
+O redirecionamento de áudio causa um fluxo constante de tráfego de rede. O redirecionamento de áudio também permite que os usuários executem aplicativos multimídia que normalmente têm alto consumo de CPU.
 
 ### <a name="client-experience-settings"></a>Configurações de experiência do cliente
 
-Por padrão, a Conexão de área de trabalho remota (RDC) escolhe automaticamente o direito de experiência de configuração com base na adequação da conexão de rede entre os computadores cliente e servidor. É recomendável que a configuração de RDC permaneça com **detectar a qualidade da conexão automaticamente**.
+Por padrão, Conexão de Área de Trabalho Remota (RDC) escolhe automaticamente a configuração de experiência correta com base na adequação da conexão de rede entre o servidor e os computadores cliente. Recomendamos que a configuração de RDC permaneça em **detectar qualidade de conexão automaticamente**.
 
-Para usuários avançados, o RDC fornece controle sobre uma variedade de configurações que influenciam o desempenho de largura de banda de rede para a conexão dos serviços de área de trabalho remota. Você pode acessar as configurações a seguir usando o **experiência** guia Conexão de área de trabalho remota ou como as configurações no arquivo RDP.
+Para usuários avançados, a RDC fornece controle sobre uma variedade de configurações que influenciam o desempenho da largura de banda da rede para a conexão Serviços de Área de Trabalho Remota. Você pode acessar as configurações a seguir usando a guia **experiência** em conexão de área de trabalho remota ou como configurações no arquivo RDP.
 
-As configurações a seguir se aplicam ao se conectar a qualquer computador:
+As seguintes configurações se aplicam ao se conectar a qualquer computador:
 
--   **Desabilitar o papel de parede** (desabilitar papel de parede: i:0#.w|Contoso) não mostra o papel de parede da área de trabalho em conexões redirecionadas. Essa configuração pode reduzir significativamente o uso de largura de banda se o papel de parede da área de trabalho consiste em uma imagem ou outros tipos de conteúdo com custos significativos para o desenho.
+-   **Desabilitar papel de parede** (desabilitar papel de parede: i: 0) não mostra o papel de parede da área de trabalho em conexões redirecionadas. Essa configuração pode reduzir significativamente o uso de largura de banda se o papel de parede da área de trabalho consiste em uma imagem ou outro conteúdo com custos significativos para o desenho.
 
--   **Cache de bitmap** (Bitmapcachepersistenable:i:1) quando essa configuração estiver habilitada, ele cria um cache do lado do cliente de bitmaps que são processados na sessão. Ele fornece uma melhoria significativa no uso de largura de banda, e ele sempre deve ser habilitado (a menos que haja outras considerações de segurança).
+-   **Cache de bitmap** (Bitmapcachepersistenable: i: 1) quando essa configuração é habilitada, ela cria um cache do lado do cliente de bitmaps que são processados na sessão. Ele fornece uma melhoria significativa no uso da largura de banda e deve ser sempre habilitado (a menos que haja outras considerações de segurança).
 
--   **Mostrar conteúdo do windows ao arrastar** (desabilitar a janela inteira arrastar: i:1) quando essa configuração estiver desabilitada, ela reduz a largura de banda, exibindo somente o quadro de janela, em vez de todo o conteúdo quando a janela é arrastada.
+-   **Mostrar o conteúdo do Windows ao arrastar** (desabilitar a janela inteira arrastar: i: 1) quando essa configuração for desabilitada, ela reduzirá a largura de banda exibindo apenas o quadro da janela em vez de todo o conteúdo quando a janela for arrastada.
 
--   **Animação de menus e janelas** (Disable menu anims:i:1 e Disable cursor configuração: i:1): Quando essas configurações são desabilitadas, ele reduz a largura de banda, desabilitando a animação em menus (por exemplo, o esmaecimento) e cursores.
+-   **Animação de menu e janela** (desabilite o menu anims: i: 1 e desabilite a configuração do cursor: i: 1): Quando essas configurações são desabilitadas, reduz a largura de banda desabilitando a animação em menus (como esmaecimento) e cursores.
 
--   **Suavização de fonte** (Permitir suavização de fonte: i:0#.w|Contoso) suporte a renderização de fonte ClearType de controles. Ao se conectar a computadores que executam o Windows 8 ou Windows Server 2012 e superior, habilitar ou desabilitar essa configuração não tem um impacto significativo sobre o uso de largura de banda. No entanto, para computadores que executam versões anteriores ao Windows 7 e Windows 2008 R2, habilitar essa configuração afeta o consumo de largura de banda de rede significativamente.
+-   **Suavização de fontes** (permitir suavização de fontes: i: 0) controla o suporte à renderização de fonte ClearType. Ao se conectar a computadores que executam o Windows 8 ou o Windows Server 2012 e posterior, a habilitação ou desabilitação dessa configuração não tem um impacto significativo no uso da largura de banda. No entanto, para computadores que executam versões anteriores ao Windows 7 e Windows 2008 R2, a habilitação dessa configuração afeta significativamente o consumo de largura de banda da rede.
 
 As configurações a seguir se aplicam somente ao se conectar a computadores que executam o Windows 7 e versões anteriores do sistema operacional:
 
--   **Composição da área de trabalho** essa configuração tem suporte apenas para uma sessão remota para um computador que executa o Windows 7 ou Windows Server 2008 R2.
+-   **Composição de área de trabalho** Essa configuração tem suporte apenas para uma sessão remota em um computador que executa o Windows 7 ou o Windows Server 2008 R2.
 
--   **Estilos visuais** (Desabilitar temas: i:1) quando essa configuração estiver desabilitada, ela reduz a largura de banda, simplificando desenhos de tema que usam o tema clássico.
+-   **Estilos visuais** (desabilitar temas: i: 1) quando essa configuração é desabilitada, ela reduz a largura de banda simplificando desenhos de tema que usam o tema clássico.
 
-Usando o **experiência** guia dentro de Conexão de área de trabalho remota, você pode escolher sua velocidade de conexão de influenciar o desempenho de largura de banda de rede. O exemplo a seguir lista as opções que estão disponíveis para configurar sua velocidade de conexão:
+Usando a guia **experiência** em conexão de área de trabalho remota, você pode escolher a velocidade de conexão para influenciar o desempenho da largura de banda da rede. O seguinte lista as opções disponíveis para configurar a velocidade de conexão:
 
--   **Detectar a qualidade da conexão automaticamente** (tipo de Conexão: i:7) quando essa configuração estiver habilitada, a Conexão de área de trabalho remota escolhe automaticamente configurações resultarão na experiência de usuário ideal com base na qualidade da conexão. (Essa configuração é recomendada ao se conectar a computadores que executam o Windows 8 ou Windows Server 2012 e superior).
+-   **Detectar a qualidade da conexão automaticamente** (tipo de conexão: i: 7) quando essa configuração é habilitada, conexão de área de trabalho remota escolhe automaticamente as configurações que resultarão na melhor experiência do usuário com base na qualidade da conexão. (Essa configuração é recomendada ao se conectar a computadores que executam o Windows 8 ou o Windows Server 2012 e posterior).
 
--   **Modem (56 Kbps)** (tipo de Conexão: i:1) essa configuração permite que o bitmap persistente em cache.
+-   **Modem (56 Kbps)** (tipo de conexão: i: 1) essa configuração habilita o Caching de bitmap persistente.
 
--   **Baixa velocidade banda larga (256 Kbps - 2 Mbps)** (tipo de Conexão: i:2) essa configuração permite que os estilos de cache e o visual de bitmap persistente.
+-   **Banda larga de baixa velocidade (256 kbps-2 Mbps)** (tipo de conexão: i: 2) essa configuração habilita o cache de bitmap persistente e estilos visuais.
 
--   **Celular/satélite (2 Mbps - 16 Mbps com alta latência)** (tipo de Conexão: i:3) essa configuração permite que a composição da área de trabalho, bitmap persistente em cache, os estilos visuais e plano de fundo da área de trabalho.
+-   **Celular/satélite (2 Mbps-16 Mbps com alta latência)** (tipo de conexão: i: 3) essa configuração habilita a composição da área de trabalho, o cache de bitmap persistente, os estilos visuais e o plano de fundo da área de trabalho.
 
--   **Banda larga a alta velocidade (2 Mbps – 10 Mbps)** (tipo de Conexão: i:4) essa configuração permite que a composição da área de trabalho, Mostrar conteúdo do windows ao arrastar, animação de menus e janelas, bitmap persistente em cache, os estilos visuais e plano de fundo da área de trabalho.
+-   **Banda larga de alta velocidade (2 Mbps – 10 Mbps)** (tipo de conexão: i: 4) essa configuração habilita a composição de área de trabalho, mostra o conteúdo do Windows ao arrastar, animação de menu e janela, cache de bitmap persistente, estilos visuais e plano de fundo da área de trabalho.
 
--   **Rede de longa distância (10 Mbps ou superior com alta latência)** (tipo de Conexão: i:5) essa configuração permite que a composição da área de trabalho, Mostrar conteúdo do windows ao arrastar, animação de menus e janelas, bitmap persistente em cache, os estilos visuais e plano de fundo da área de trabalho.
+-   **WAN (10 Mbps ou superior com alta latência)** (tipo de conexão: i: 5) essa configuração habilita a composição de área de trabalho, mostra o conteúdo do Windows ao arrastar, animação de menu e janela, cache de bitmap persistente, estilos visuais e plano de fundo da área de trabalho.
 
--   **LAN (10 Mbps ou superior)** (tipo de Conexão: i:6) essa configuração permite que a composição da área de trabalho, Mostrar conteúdo do windows ao arrastar, animação de menus e janelas, bitmap persistente em cache, temas e plano de fundo da área de trabalho.
+-   **LAN (10 Mbps ou superior)** (tipo de conexão: i: 6) essa configuração habilita a composição de área de trabalho, mostra o conteúdo do Windows ao arrastar, animação de menu e janela, cache de bitmap persistente, temas e plano de fundo da área de trabalho.
 
 ### <a name="desktop-size"></a>Tamanho da área de trabalho
 
-Tamanho da área de trabalho para sessões remotas pode ser controlado usando a guia Exibir na Conexão de área de trabalho remota ou usando o arquivo de configuração de RDP (desktopwidth:i:1152 e desktopheight:i:864). Quanto maior o tamanho da área de trabalho, quanto maior o consumo de memória e largura de banda que está associado essa sessão. O tamanho máximo de área de trabalho atual é de 4096 x 2048.
+O tamanho da área de trabalho para sessões remotas pode ser controlado usando a guia Exibir em Conexão de Área de Trabalho Remota ou usando o arquivo de configuração de RDP (desktopwidth: i: 1152 e desktopheight: i: 864). Quanto maior o tamanho da área de trabalho, maior será o consumo de memória e largura de banda associado a essa sessão. O tamanho máximo atual da área de trabalho é 4096 x 2048.

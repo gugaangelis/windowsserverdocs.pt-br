@@ -1,33 +1,33 @@
 ---
 title: Saída monitoração na rede virtual
-description: Um aspecto fundamental de monetização de rede de nuvem é a saída de largura de banda de rede. Por exemplo, transferências de dados de saída o modelo de negócios no Microsoft Azure. Dados de saída são cobrados com base na quantidade total de dados que saem dos datacenters do Azure pela Internet em um determinado ciclo de cobrança.
+description: Um aspecto fundamental do monetização de rede em nuvem é A saída da largura de banda da rede. Por exemplo-transferências de dados de saída no modelo de negócios Microsoft Azure. Os dados de saída são cobrados com base na quantidade total de dados que saem dos data centers do Azure pela Internet em um determinado ciclo de cobrança.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 10/02/2018
-ms.openlocfilehash: bdfb2b7321d5a4d119c9710e9ad93fc2e91ea536
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792287"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406011"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>Saída de medição em uma rede virtual
 
 >Aplica-se a: Windows Server 2019
 
 
-Um aspecto fundamental de monetização de rede de nuvem é ser capaz de cobrar pelo uso da largura de banda de rede. Dados de saída são cobrados com base na quantidade total de dados que saem do data center por meio da Internet em um determinado ciclo de cobrança.
+Um aspecto fundamental do monetização de rede em nuvem é ser capaz de cobrar pela utilização da largura de banda da rede. Os dados de saída são cobrados com base na quantidade total de dados que saem do data center pela Internet em um determinado ciclo de cobrança.
 
-Medição de saída para o tráfego de rede SDN no Windows Server 2019 habilita a capacidade de oferecer os medidores de uso para transferências de dados. Tráfego de rede que deixa a cada rede virtual, mas permanece dentro do data center pode por rastreados separadamente para que ele pode ser excluído de cálculos de cobrança. Os pacotes associados para endereços IP de destino que não estão incluídos em um dos intervalos de endereços não faturados são controlados à medida que cobradas de transferências de dados.
+A medição de saída para o tráfego de rede SDN no Windows Server 2019 permite a capacidade de oferecer medidores de uso para transferências de dados de saída. O tráfego de rede que deixa cada rede virtual, mas permanece dentro do data center pode ser acompanhado separadamente para que possa ser excluído dos cálculos de cobrança. Os pacotes associados aos endereços IP de destino que não estão incluídos em um dos intervalos de endereços não faturados são controlados como transferências de dados de saída cobradas.
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>(Lista de permissões de intervalos de IP) de intervalos de endereços de rede virtual não faturado
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de endereços não cobrados da rede virtual (lista branca de intervalos de IP)
 
-Você pode encontrar os intervalos de endereços não faturados sob o **UnbilledAddressRanges** propriedade de uma rede virtual existente. Por padrão, não há nenhum intervalo de endereço adicionado.
+Você pode encontrar intervalos de endereços não faturados na propriedade **UnbilledAddressRanges** de uma rede virtual existente. Por padrão, não há nenhum intervalo de endereços adicionado.
 
    ```PowerShell
    import-module NetworkController
@@ -36,7 +36,7 @@ Você pode encontrar os intervalos de endereços não faturados sob o **Unbilled
    (Get-NetworkControllerVirtualNetwork -ConnectionURI $URI -ResourceId "VNet1").properties
    ```
 
-A saída será semelhante a este:
+A saída terá uma aparência semelhante a esta:
    ```
     AddressSpace           : Microsoft.Windows.NetworkController.AddressSpace
     DhcpOptions            :
@@ -51,11 +51,11 @@ A saída será semelhante a este:
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>Exemplo: Gerenciar os intervalos de endereços de demonstrativos de uma rede virtual
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>Exemplo: Gerenciar os intervalos de endereços não faturados de uma rede virtual
 
-Você pode gerenciar o conjunto de prefixos de sub-rede IP para excluir da medição de egresso cobrado definindo a **UnbilledAddressRange** propriedade de uma rede virtual.  Qualquer tráfego enviado por interfaces de rede em uma rede virtual com um endereço IP de destino que corresponde a um dos prefixos não será incluído na propriedade BilledEgressBytes.
+Você pode gerenciar o conjunto de prefixos de sub-rede IP para excluir da medição de egresso cobrada definindo a propriedade **UnbilledAddressRange** de uma rede virtual.  Qualquer tráfego enviado por interfaces de rede na rede virtual com um endereço IP de destino que corresponda a um dos prefixos não será incluído na propriedade BilledEgressBytes.
 
-1.  Atualizar o **UnbilledAddressRanges** propriedade para conter as sub-redes que não serão cobradas para acesso.
+1.  Atualize a propriedade **UnbilledAddressRanges** para conter as sub-redes que não serão cobradas pelo acesso.
 
     ```PowerShell
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1"
@@ -63,15 +63,15 @@ Você pode gerenciar o conjunto de prefixos de sub-rede IP para excluir da medi�
     ```
 
     >[!TIP]
-    >Se estiver adicionando várias sub-redes IP, use uma vírgula entre cada uma das sub-redes IP.  Não inclua espaços antes ou após a vírgula.
+    >Se estiver adicionando várias sub-redes IP, use uma vírgula entre cada uma das sub-redes IP.  Não inclua nenhum espaço antes ou depois da vírgula.
 
-2.  Atualizar o recurso de rede Virtual com a modificação **UnbilledAddressRanges** propriedade.
+2.  Atualize o recurso de rede virtual com a propriedade **UnbilledAddressRanges** modificada.
 
     ```PowerShell
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "VNet1" -Properties $unbilled.Properties -PassInnerException
     ```
 
-    A saída será semelhante a este:
+    A saída terá uma aparência semelhante a esta:
       ```
          Confirm
          Performing the operation 'New-NetworkControllerVirtualNetwork' on entities of type
@@ -90,13 +90,13 @@ Você pode gerenciar o conjunto de prefixos de sub-rede IP para excluir da medi�
       ```
 
 
-3. Verifique a rede Virtual para ver o configurado **UnbilledAddressRanges**.
+3. Verifique a rede virtual para ver o **UnbilledAddressRanges**configurado.
 
    ```PowerShell
    (Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1").properties
    ```
 
-   A saída agora será semelhante a este:
+   A saída agora terá uma aparência semelhante a esta:
    ```
    AddressSpace           : Microsoft.Windows.NetworkController.AddressSpace
    DhcpOptions            :
@@ -110,23 +110,23 @@ Você pode gerenciar o conjunto de prefixos de sub-rede IP para excluir da medi�
    LogicalNetwork         : Microsoft.Windows.NetworkController.LogicalNetwork
    ```
 
-## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>Verifique o cobrado o uso de demonstrativos de saída de uma rede virtual
+## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>Verificar o uso de egresso não cobrado de uma rede virtual cobrada
 
-Depois de configurar o **UnbilledAddressRanges** propriedade, você pode verificar o uso de demonstrativos e cobrado o valor de saída de cada sub-rede em uma rede virtual. O tráfego de saída de atualizações a cada quatro minutos com o total de bytes dos intervalos de demonstrativos e cobrados.
+Depois de configurar a propriedade **UnbilledAddressRanges** , você pode verificar o uso de egresso cobrado e não faturado de cada sub-rede em uma rede virtual. O tráfego de saída é atualizado a cada quatro minutos com o total de bytes dos intervalos cobrados e não cobrados.
 
 As seguintes propriedades estão disponíveis para cada sub-rede virtual:
 
--   **UnbilledEgressBytes** mostra o número de demonstrativos de bytes enviados por interfaces de rede conectados a essa sub-rede virtual. Bytes não faturados estão bytes enviados aos intervalos de endereços que fazem parte do **UnbilledAddressRanges** propriedade da rede virtual pai.
+-   **UnbilledEgressBytes** mostra o número de bytes não cobrados enviados por interfaces de rede conectadas a esta sub-rede virtual. Bytes não faturados são bytes enviados a intervalos de endereços que fazem parte da propriedade **UnbilledAddressRanges** da rede virtual pai.
 
--   **BilledEgressBytes** mostra o número de cobrado bytes enviados por adaptadores de rede conectados a essa sub-rede virtual. Cobrado bytes são bytes enviados aos intervalos de endereços que não são parte dos **UnbilledAddressRanges** propriedade da rede virtual pai.
+-   **BilledEgressBytes** mostra o número de bytes cobrados enviados por interfaces de rede conectadas a esta sub-rede virtual. Bytes cobrados são bytes enviados a intervalos de endereços que não fazem parte da propriedade **UnbilledAddressRanges** da rede virtual pai.
 
-Use o exemplo a seguir para o uso de saída de consulta:
+Use o exemplo a seguir para consultar o uso de egresso:
 
 ```PowerShell
 (Get-NetworkControllerVirtualNetwork -ConnectionURI $URI -ResourceId "VNet1").properties.subnets.properties | ft AddressPrefix,BilledEgressBytes,UnbilledEgressBytes
 ```
 
-A saída será semelhante a este:
+A saída terá uma aparência semelhante a esta:
 ```
 AddressPrefix BilledEgressBytes UnbilledEgressBytes
 ------------- ----------------- -------------------

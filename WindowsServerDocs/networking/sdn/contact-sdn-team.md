@@ -1,49 +1,49 @@
 ---
 title: Entrar em contato com a equipe de rede na nuvem e Datacenter
-description: Esta página foi projetada para informar os clientes sobre os melhores métodos para alcançar a equipe SDN em vários contextos.
+description: Esta página foi projetada para informar os clientes sobre os melhores métodos para alcançar a equipe de SDN em vários contextos.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: pashort
 author: kallie-b
-ms.openlocfilehash: dd67fe27c048a15903d18dca43cf331a025933b3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a62a661fc9bb665f71f0e16cb3298ff52f3137db
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446385"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355991"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Entrar em contato com a equipe de rede na nuvem e Datacenter
 
 > Aplica-se a: Windows Server 2016
 
-Da Microsoft **rede definida pelo Software \(SDN\)**  e **contêiner à rede** soluções são criadas pela equipe de rede de nuvem e Datacenter. Use esta página para ser entre em contato com a equipe – para fazer perguntas, forneçam comentários, relate bugs ou fazer solicitações de recurso.
+A **rede definida pelo software da Microsoft \(SDN @ no__t-2** e as soluções de **rede de contêiner** são criadas pelo datacenter e pela equipe de rede de nuvem. Use esta página para estar em contato com a equipe – para fazer perguntas, fornecer comentários, relatar bugs ou fazer solicitações de recursos.
 
-Há várias vias para entrar em contato com o Microsoft teams e, embora façamos o melhor na equipe do SDN a seguir todas as avenidas usadas pela nossa comunidade, aqui está uma lista de fóruns que tendem a ser os mais ativos. *Esses são os principais recursos para nossos usuários e como tal, eles são as vias que é o mais próximo possível assistir.*
+Há muitos caminhos para entrar em contato com as equipes da Microsoft e, embora possamos fazer o melhor na equipe de SDN para seguir todas as avenidas usadas pela nossa comunidade, aqui está uma lista de fóruns que tendem a ser os mais ativos. *Esses são os principais recursos para nossos usuários e, por isso, eles são os caminhos que vimos mais próximos.*
 
-## <a name="twitterhttpstwittercommicrosoftsdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
+## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
-Recentemente, lançamos nossa presença no Twitter como [ @Microsoft_SDN ](https://twitter.com/Microsoft_SDN). Fique à vontade para usar nosso manipulador do Twitter para fazer perguntas, fornecer comentários ou solicitações de documentação do recurso.
-> Além de um lugar onde você pode entrar em contato com comentários/perguntas/solicitações, considere o lugar do Twitter para obter seu feed"" em tudo relacionados à rede de contêiner do SDN e do Windows – Twitter é o primeiro lugar, vamos **poste notícias**, anunciar **novos recursos** e aponte a comunidade para todos os nossos **blogs e os recursos mais recentes**.
+Recentemente, lançamos nossa presença no Twitter como [@Microsoft_SDN](https://twitter.com/Microsoft_SDN). Sinta-se à vontade para usar nosso identificador do Twitter para fazer perguntas, fornecer comentários ou fazer solicitações de recursos/documentação.
+> Além de um local onde você pode entrar em contato com perguntas/comentários/solicitações, considere o Twitter no lugar para colocar seu "feed" em tudo que o SDN e o sistema de rede de contêiner do Windows estão relacionados-o Twitter é o primeiro lugar em que publicaremos **notícias**, anunciaremos **novo recursos** e apontar a Comunidade para todos os nossos **Blogs e recursos mais recentes**.
 
-## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([repositório Microsoft/SDN](https://github.com/Microsoft/SDN/issues))
-Vá [aqui](https://github.com/Microsoft/SDN/issues) para enviar os problemas à equipe de SDN por meio de nosso repositório do GitHub. Isso é o melhor lugar para **Obtenha ajuda de solução de problemas** ou **relate bugs**.
+## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([repositório Microsoft/Sdn](https://github.com/Microsoft/SDN/issues))
+Acesse [aqui](https://github.com/Microsoft/SDN/issues) para enviar problemas para a equipe de Sdn por meio de nosso repositório github. Este é o melhor lugar para **obter ajuda para solucionar problemas** ou **Relatar bugs**.
 
-> O GitHub é o melhor lugar para falar conosco sobre tópicos que envolvem mais detalhes e os tipos de coisas que você pode se encaixar facilmente em um Tweet. *Precisa de ajuda com sua implantação do SDN? Não tiver certeza sobre como nossos recursos podem atender às necessidades exclusivas de sua organização? Estar são mantidos por um bug potencial?* Todos os bons motivos para entrar em contato conosco enviando um problema do GitHub.
+> O GitHub é o melhor lugar para entrar em contato conosco sobre tópicos que envolvem mais detalhes do que os tipos de coisas que você poderia facilmente ajustar a um tweet. *Need ajuda com sua implantação de SDN? Não tem certeza de como nossos recursos poderiam se adequar às necessidades exclusivas da sua organização? Sendo mantido por um bug potencial?* Todos os bons motivos para entrar em contato conosco enviando um problema do GitHub.
 
 ## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
-Nossos [documentação de rede do contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) podem ser encontrados na [(docs.microsoft.com) do Microsoft Docs](https://docs.microsoft.com/), que tem **funcionalidade interna de comentário**. Para manter ou para responder a um comentário no Microsoft Docs, basta entrar no, role para baixo até o final da página Microsoft Docs que você deseja fazer referência, em seguida, fazer e enviar seu comentário lá.
+Nossa [documentação de rede de contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) pode ser encontrada em [Microsoft docs (docs.Microsoft.com)](https://docs.microsoft.com/), que tem **funcionalidade de comentário interna**. Para deixar ou responder a um comentário em Microsoft Docs apenas entrar, role para baixo até a parte inferior da página Microsoft Docs que você deseja referenciar e, em seguida, faça e envie seu comentário.
 
-> [Microsoft Docs](https://docs.microsoft.com/) é o novo site de documentação unificada da Microsoft. Enquanto a maioria da nossa equipe [documentação de SDN](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking) permanece no TechNet, nosso [documentação de rede do contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) está agora no Microsoft Docs.
+> [Microsoft docs](https://docs.microsoft.com/) é o novo site de documentação unificado da Microsoft. Embora a maior parte da [documentação de Sdn](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking) da nossa equipe permaneça no TechNet, nossa documentação de [rede de contêineres](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) está agora em Microsoft docs.
 > 
-> *Em geral, se você executar em um tópico no Microsoft Docs que faíscas uma pergunta ou deixa você que desejam mais, apenas deixe um comentário na página para compartilhar seus comentários com a equipe da Microsoft que pode ajudar.*
+> *Em geral, se você encontrar um tópico sobre Microsoft Docs que Spark uma pergunta ou deixar que você queira mais, basta deixar um comentário nessa página para compartilhar seus comentários com a equipe da Microsoft que pode ajudar.*
 
-## <a name="container-specific-forums"></a>Fóruns de contêineres específicos
-Fique à vontade para usar qualquer Avenida nesta página para fornecer comentários relacionados à rede de contêiner e contêineres. No entanto, se você estiver procurando fóruns de principal da Microsoft para a comunidade do contêiner especificamente, consulte o seguinte:
-- [Voz do usuário](https://windowsserver.uservoice.com/forums/304624-containers) – melhor para *solicitações de recursos*
-- [GitHub (repositório de virtualização)](https://github.com/Microsoft/Virtualization-Documentation) – melhor para busca *ajuda de solução de problemas* e *relatar bugs*
+## <a name="container-specific-forums"></a>Fóruns específicos do contêiner
+Sinta-se à vontade para usar qualquer Avenida nessa página para fornecer comentários relacionados aos contêineres e à rede de contêineres. No entanto, se você estiver procurando os fóruns principais da Microsoft para a comunidade de contêineres especificamente, consulte o seguinte:
+- [User Voice](https://windowsserver.uservoice.com/forums/304624-containers) -melhor para *solicitações de recursos*
+- [GitHub (repositório de virtualização)](https://github.com/Microsoft/Virtualization-Documentation) -melhor para procurar erros de *relatório* e *ajuda de solução de problemas*
 
-### <a name="not-seeing-the-forum-for-you"></a>Não consegue ver o fórum para você? 
-Sempre que possível, incentivamos o uso de nossos fóruns públicos para que pode se beneficiar do acesso da comunidade mais abrangente para as perguntas e comentários que vêm de nossa maneira. No entanto, reconhecemos que há situações em que o email é simplesmente a maneira preferencial para entrar em contato conosco. Se você estiver usando uma das situações, envie-em um email sdn_feedback@microsoft.com e ficaremos felizes em saber de você.
+### <a name="not-seeing-the-forum-for-you"></a>Não está vendo o fórum para você? 
+Sempre que possível, incentivamos o uso de nossos fóruns públicos para que a comunidade mais ampla possa se beneficiar do acesso às perguntas e aos comentários que chegarem ao nosso caminho. No entanto, também reconhecemos que há situações em que o email é simplesmente a maneira preferida de entrar em contato conosco. Se você estiver em uma dessas situações, envie-nos um email para sdn_feedback@microsoft.com e ficaremos felizes em ouvir de você.

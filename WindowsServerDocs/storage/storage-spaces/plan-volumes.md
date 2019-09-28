@@ -1,7 +1,7 @@
 ---
 ms.assetid: 342173ca-4e10-44f4-b2c9-02a6c26f7a4a
 title: Planejamento de volumes nos Espaços de Armazenamento Diretos
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a04a362b65af8f184037d26728a1c147ca8ef948
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: 52c600068d5dd447ff9faa7c40788664e222a83a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469667"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366894"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planejamento de volumes nos Espaços de Armazenamento Diretos
 
@@ -22,32 +22,32 @@ ms.locfileid: "67469667"
 
 Este tópico fornece diretrizes de como planejar volumes em Espaços de Armazenamento Diretos para atender às necessidades de desempenho e capacidade de cargas de trabalho, incluindo escolher o sistema de arquivos, tipo de resiliência e tamanho.
 
-## <a name="review-what-are-volumes"></a>Revisão: Quais são os volumes
+## <a name="review-what-are-volumes"></a>Revê O que são volumes
 
-Os volumes são onde você coloca os arquivos que precisam de suas cargas de trabalho, como o VHD ou arquivos VHDX para máquinas virtuais Hyper-V. Os volumes combinam as unidades no pool de armazenamento para apresentar a tolerância, escalabilidade e benefícios de desempenho de Espaços de Armazenamento Diretos.
+Os volumes são onde você coloca os arquivos de que suas cargas de trabalho precisam, como arquivos VHD ou VHDX para máquinas virtuais do Hyper-V. Os volumes combinam as unidades no pool de armazenamento para apresentar a tolerância, escalabilidade e benefícios de desempenho de Espaços de Armazenamento Diretos.
 
    >[!NOTE]
    > Em toda a documentação de Espaços de Armazenamento Direto, usamos o termo "volume" para nos referir conjuntamente ao volume e ao disco virtual sob ele, incluindo a funcionalidade fornecida por outros recursos internos do Windows, como Volumes Compartilhados do Cluster (CSV) e ReFS. Não é necessário entender essas distinções no nível de implementação para planejar e implantar com êxito Espaços de Armazenamento Diretos.
 
 ![o que são volumes](media/plan-volumes/what-are-volumes.png)
 
-Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criado, elas aparecem em **C:\ClusterStorage\\**  em todos os servidores.
+Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criadas, elas aparecem em **C:\ClusterStorage @ no__t-1** em todos os servidores.
 
 ![pasta de captura de tela csv](media/plan-volumes/csv-folder-screenshot.png)
 
 ## <a name="choosing-how-many-volumes-to-create"></a>Escolhendo quantos volumes criar
 
-Recomendamos criar um número de volumes múltiplo do número de servidores no cluster. Por exemplo, se você tiver 4 servidores, você terá um desempenho mais consistente com 4 volumes totais que com 3 ou 5. Isso permite que o cluster distribua a "propriedade" do volume (um servidor manipula coordenação de metadados para cada volume) uniformemente entre servidores.
+Recomendamos criar um número de volumes múltiplo do número de servidores no cluster. Por exemplo, se você tiver quatro servidores, ocorrerá um desempenho mais consistente com 4 volumes totais do que com 3 ou 5. Isso permite que o cluster distribua a "propriedade" do volume (um servidor manipula coordenação de metadados para cada volume) uniformemente entre servidores.
 
-É recomendável limitar o número total de volumes:
+É recomendável limitar o número total de volumes para:
 
 | Windows Server 2016          | Windows Server 2019          |
 |------------------------------|------------------------------|
-| Até 32 volumes por cluster | Volumes de até 64 por cluster |
+| Até 32 volumes por cluster | Até 64 volumes por cluster |
 
 ## <a name="choosing-the-filesystem"></a>Escolhendo o sistema de arquivos
 
-Recomendamos usar o novo [Sistema de Arquivos Resiliente (ReFS)](../refs/refs-overview.md) para Espaços de Armazenamento Diretos. ReFS é o sistema de arquivos premier voltado para virtualização e oferece muitas vantagens, incluindo acelerações de desempenho espetaculares e proteção interna contra corrupção de dados. Ele dá suporte a quase todos os principais recursos do NTFS, incluindo a eliminação de duplicação no Windows Server, versão 1709 e posterior. Consulte o ReFS [tabela de comparação de recursos](../refs/refs-overview.md#feature-comparison) para obter detalhes.
+Recomendamos usar o novo [Sistema de Arquivos Resiliente (ReFS)](../refs/refs-overview.md) para Espaços de Armazenamento Diretos. ReFS é o sistema de arquivos premier voltado para virtualização e oferece muitas vantagens, incluindo acelerações de desempenho espetaculares e proteção interna contra corrupção de dados. Ele dá suporte a quase todos os principais recursos do NTFS, incluindo eliminação de duplicação de dados no Windows Server, versão 1709 e posterior. Consulte a [tabela de comparação de recursos](../refs/refs-overview.md#feature-comparison) ReFS para obter detalhes.
 
 Se sua carga de trabalho requerer um recurso a que o ReFS ainda não dá suporte, você pode usar o NTFS.
 
@@ -63,37 +63,37 @@ Os volumes em Espaços de Armazenamento Diretos fornecem resiliência para se pr
 
 ### <a name="with-two-servers"></a>Com dois servidores
 
-Com dois servidores no cluster, você pode usar o espelhamento bidirecional. Se você estiver executando o Windows Server 2019, você também pode usar resiliência aninhada.
+Com dois servidores no cluster, você pode usar o espelhamento bidirecional. Se você estiver executando o Windows Server 2019, também poderá usar resiliência aninhada.
 
-Espelhamento bidirecional mantém duas cópias de todos os dados, uma cópia dos discos em cada servidor. Sua eficiência de armazenamento é de 50% — para gravar a 1 TB de dados, você precisa de pelo menos 2 TB de capacidade de armazenamento físico no pool de armazenamento. Espelhamento bidirecional com segurança pode tolerar uma falha de hardware por vez (um servidor ou disco).
+O espelhamento bidirecional mantém duas cópias de todos os dados, uma cópia nas unidades de cada servidor. Sua eficiência de armazenamento é de 50% – para gravar 1 TB de dados, você precisa de pelo menos 2 TB de capacidade de armazenamento físico no pool de armazenamento. O espelhamento bidirecional pode tolerar com segurança uma falha de hardware por vez (um servidor ou unidade).
 
 ![espelhamento bidirecional](media/plan-volumes/two-way-mirror.png)
 
-Resiliência aninhada (disponível apenas no Windows Server 2019) fornece resiliência de dados entre servidores com espelhamento bidirecional, em seguida, adiciona resiliência dentro de um servidor com aceleração de espelho de paridade ou espelhamento bidirecional. O aninhamento fornece resiliência de dados, mesmo quando um servidor estiver indisponível ou reiniciar. Sua eficiência de armazenamento é 25% com espelhamento bidirecional aninhados e aproximadamente 35 a 40% para paridade aninhada acelerada de espelho. Resiliência aninhada com segurança pode tolerar duas falhas de hardware por vez (duas unidades, ou um servidor e uma unidade no servidor restante). Devido a essa resiliência de dados adicionados, é recomendável usar resiliência aninhada em implantações de produção de clusters de dois servidores, se você estiver executando o Windows Server 2019. Para obter mais informações, consulte [Nested resiliência](nested-resiliency.md).
+A resiliência aninhada (disponível somente no Windows Server 2019) fornece resiliência de dados entre servidores com espelhamento bidirecional e, em seguida, adiciona resiliência em um servidor com espelhamento bidirecional ou paridade acelerada por espelho. O aninhamento fornece resiliência de dados mesmo quando um servidor está reiniciando ou indisponível. Sua eficiência de armazenamento é de 25% com espelhamento bidirecional aninhado e cerca de 35-40% para paridade com aceleração de espelho aninhado. A resiliência aninhada pode tolerar com segurança duas falhas de hardware por vez (duas unidades ou um servidor e uma unidade no servidor restante). Por causa dessa resiliência de dados adicionada, recomendamos o uso de resiliência aninhada em implantações de produção de clusters de dois servidores, se você estiver executando o Windows Server 2019. Para obter mais informações, consulte [resiliência aninhada](nested-resiliency.md).
 
-![Paridade de aceleração de espelho aninhada](media/nested-resiliency/nested-mirror-accelerated-parity.png)
+![Espelhamento aninhado-paridade acelerada](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>Com três servidores
 
-Com três servidores, você deve usar o espelhamento de três voas para melhor tolerância de falhas e melhor desempenho. O espelhamento de três vias mantém três cópias de todos os dados, uma cópia nas unidades em cada servidor. A eficiência de armazenamento é de 33,3% – para gravar 1 TB de dados, é necessário ter pelo menos 3 TB de capacidade de armazenamento físico no pool de armazenamento. O espelhamento de três vias pode tolerar com segurança [pelo menos dois problemas de hardware (unidade ou servidor) por vez](storage-spaces-fault-tolerance.md#examples). Se 2 nós ficam indisponíveis o pool de armazenamento perderá quorum, já que 2/3 dos discos não estão disponíveis e os discos virtuais serão inacessíveis. No entanto, um nó pode ficar inativo e um ou mais discos em outro nó podem falhar e os discos virtuais permanecerão online. Por exemplo, se você estiver reiniciando um servidor quando, de repente, outra unidade ou servidor falhar, todos os dados permanecem seguros e continuamente acessíveis.
+Com três servidores, você deve usar o espelhamento de três voas para melhor tolerância de falhas e melhor desempenho. O espelhamento de três vias mantém três cópias de todos os dados, uma cópia nas unidades em cada servidor. A eficiência de armazenamento é de 33,3% – para gravar 1 TB de dados, é necessário ter pelo menos 3 TB de capacidade de armazenamento físico no pool de armazenamento. O espelhamento de três vias pode tolerar com segurança [pelo menos dois problemas de hardware (unidade ou servidor) por vez](storage-spaces-fault-tolerance.md#examples). Se 2 nós ficarem indisponíveis, o pool de armazenamento perderá o quorum, uma vez que 2/3 dos discos não estão disponíveis e os discos virtuais ficarão inacessíveis. No entanto, um nó pode estar inoperante e um ou mais discos em outro nó podem falhar e os discos virtuais permanecerão online. Por exemplo, se você estiver reiniciando um servidor quando, de repente, outra unidade ou servidor falhar, todos os dados permanecem seguros e continuamente acessíveis.
 
 ![espelhamento triplo](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>Com quatro ou mais servidores
 
-Com quatro ou mais servidores, você pode escolher para cada volume se deseja usar o espelhamento tridimensional, paridade dupla (geralmente chamada de "codificação de eliminação") ou combinar os dois com paridade acelerada de espelho.
+Com quatro ou mais servidores, você pode escolher para cada volume se deseja usar o espelhamento de três vias, paridade dupla (geralmente chamada de "codificação de apagamento") ou misturar os dois com paridade acelerada por espelho.
 
-A paridade dupla fornece a mesma tolerância a falhas que o espelhamento de três vias, mas com melhor eficiência de armazenamento. Com quatro servidores, sua eficiência de armazenamento é 50.0%—to armazenar 2 TB de dados, você precisa de 4 TB de capacidade de armazenamento físico no pool de armazenamento. Isso aumenta a eficiência de armazenamento para 66,7% com sete servidores e continua a aumentar até 80,0% de eficiência de armazenamento. A desvantagem é que codificação de paridade tem um processamento mais intensivo, o que pode limitar seu desempenho.
+A paridade dupla fornece a mesma tolerância a falhas que o espelhamento de três vias, mas com melhor eficiência de armazenamento. Com quatro servidores, sua eficiência de armazenamento é 50.0% – para armazenar 2 TB de dados, você precisa de 4 TB de capacidade de armazenamento físico no pool de armazenamento. Isso aumenta a eficiência de armazenamento para 66,7% com sete servidores e continua a aumentar até 80,0% de eficiência de armazenamento. A desvantagem é que codificação de paridade tem um processamento mais intensivo, o que pode limitar seu desempenho.
 
 ![paridade dupla](media/plan-volumes/dual-parity.png)
 
-O tipo de resiliência a ser usado depende das necessidades de sua carga de trabalho. Aqui está uma tabela que resume quais cargas de trabalho são uma boa opção para cada tipo de resiliência, bem como a eficiência de armazenamento e desempenho de cada tipo de resiliência.
+O tipo de resiliência a ser usado depende das necessidades de sua carga de trabalho. Aqui está uma tabela que resume quais cargas de trabalho são uma boa opção para cada tipo de resiliência, bem como a eficiência de desempenho e armazenamento de cada tipo de resiliência.
 
-| Tipo de resiliência | Eficiência de capacidade | Velocidade | Cargas de trabalho |
+| Tipo de resiliência | Eficiência da capacidade | Velocidade | Cargas de trabalho |
 | ------------------- | ----------------------  | --------- | ------------- |
-| **Espelho**         | ![Mostrando de eficiência de armazenamento 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>Espelho de três formas: 33% <br>Duas-way-espelho: 50%     |![Mostrando desempenho 100%](media/plan-volumes/three-way-mirror-perf.png)<br> Maior desempenho  | Cargas de trabalho virtualizadas<br> Bancos de dados<br>Outras cargas de trabalho de alto desempenho |
-| **Paridade acelerada por espelho** |![Mostrando cerca de 50% de eficiência de armazenamento](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> Depende de proporção de espelho e paridade | ![Desempenho mostrando cerca de 20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>Muito mais lento do que espelham, mas até duas vezes mais rápido paridade dupla<br> Melhor para leituras e gravações sequenciais grandes | Backup e arquivamento<br> Infraestrutura de área de trabalho virtualizada     |
-| **Paridade dupla**               | ![Mostrando cerca de 80% de eficiência de armazenamento](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 servidores: 50% <br>16 servidores: até 80% | ![Desempenho mostrando cerca de 10%](media/plan-volumes/dual-parity-perf.png)<br>Latência de e/s mais alta e uso de CPU em gravações<br> Melhor para leituras e gravações sequenciais grandes | Backup e arquivamento<br> Infraestrutura de área de trabalho virtualizada  |
+| **Espelho**         | ![Eficiência de armazenamento mostrando 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>Espelho de três vias: 33% <br>Espelho bidirecional: 50%     |![Desempenho mostrando 100%](media/plan-volumes/three-way-mirror-perf.png)<br> Desempenho mais alto  | Cargas de trabalho virtualizadas<br> Bancos de dados<br>Outras cargas de trabalho de alto desempenho |
+| **Paridade acelerada por espelho** |![Eficiência de armazenamento mostrando cerca de 50%](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> Depende da proporção de espelho e paridade | ![Desempenho mostrando cerca de 20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>Muito mais lento do que o espelho, mas até duas vezes mais rápido que a dupla paridade<br> Melhor para gravações e leituras sequenciais grandes | Arquivamento e backup<br> Infraestrutura de área de trabalho virtualizada     |
+| **Paridade dupla**               | ![Eficiência de armazenamento mostrando cerca de 80%](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 servidores: 50% <br>16 servidores: até 80% | ![Desempenho mostrando cerca de 10%](media/plan-volumes/dual-parity-perf.png)<br>Latência de e/s mais alta & uso da CPU em gravações<br> Melhor para gravações e leituras sequenciais grandes | Arquivamento e backup<br> Infraestrutura de área de trabalho virtualizada  |
 
 #### <a name="when-performance-matters-most"></a>Quando desempenho é o mais importante
 
@@ -113,7 +113,7 @@ Cargas de trabalho que gravam em passos grandes e sequenciais, como destinos de 
 A eficiência de armazenamento resultante depende das proporções que você escolher. Consulte [esta demonstração](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s) para obter alguns exemplos.
 
    > [!TIP]
-   > Se você observar uma abrupta diminuição no desempenho de gravação parcialmente por meio de ingestão de dados, isso pode indicar que a parte de espelho não é grande o suficiente ou se paridade acelerada de espelho não está adequada para seu caso de uso. Por exemplo, se gravar o desempenho diminuirá de 400 MB/s para 40 MB/s, considere expandir a parte espelho ou alternar para o espelho de três vias.
+   > Se você observar uma diminuição abrupta no desempenho de gravação MSRC durante por meio da ingestão de dados, isso pode indicar que a parte espelho não é grande o suficiente ou que a paridade acelerada por espelhamento não é adequada para seu caso de uso. Por exemplo, se o desempenho de gravação diminuir de 400 MB/s para 40 MB/s, considere expandir a parte do espelho ou alternar para o espelho de três vias.
 
 ### <a name="about-deployments-with-nvme-ssd-and-hdd"></a>Sobre as implantações com o NVMe, SSD e HDD
 
@@ -133,7 +133,7 @@ Em implantações com todos os três tipos de unidades, somente as unidades mais
 | Até 32 TB         | Até 64 TB         |
 
    > [!TIP]
-   > Se você usar uma solução de backup que depende do serviço de cópias de sombra de Volume (VSS) e o provedor de software de Volsnap — como é comum com cargas de trabalho de servidor de arquivo — limitar o tamanho do volume a 10 TB melhorará o desempenho e confiabilidade. As soluções de backup que usam a mais recente API RCT Hyper-V e/ou a clonagem de blocos ReFS e/ou as APIs de backup SQL nativas executam bem até 32 TB ou mais.
+   > Se você usar uma solução de backup que dependa do VSS (serviço de cópias de sombra de volume) e do provedor de software VolSnap, como é comum com cargas de trabalho de servidor de arquivos, limitar o tamanho do volume a 10 TB melhorará o desempenho e a confiabilidade. As soluções de backup que usam a mais recente API RCT Hyper-V e/ou a clonagem de blocos ReFS e/ou as APIs de backup SQL nativas executam bem até 32 TB ou mais.
 
 ### <a name="footprint"></a>Superfície
 
@@ -201,6 +201,6 @@ Consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.m
 
 ### <a name="see-also"></a>Consulte também
 
-- [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
-- [Escolhendo unidades para espaços de armazenamento diretos](choosing-drives.md)
+- [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
+- [Escolhendo unidades para Espaços de Armazenamento Diretos](choosing-drives.md)
 - [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)

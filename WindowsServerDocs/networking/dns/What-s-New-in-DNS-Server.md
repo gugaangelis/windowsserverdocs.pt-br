@@ -1,153 +1,153 @@
 ---
 title: O que há de novo no servidor DNS no Windows Server
-description: Este tópico fornece uma visão geral dos novos recursos do servidor DNS no Windows Server 2016 e versões posteriores
+description: Este tópico fornece uma visão geral dos novos recursos no servidor DNS no Windows Server 2016 e versões posteriores
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 665e411eda834a59c6dbe3581611b9b58bd006f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: de502d7be023d12e3350063e467a60356b2472c4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833567"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406240"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>O que há de novo no servidor DNS no Windows Server
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico descreve a funcionalidade do servidor de sistema de nome de domínio (DNS) é nova ou alterada no Windows Server 2016.  
+Este tópico descreve a funcionalidade de servidor DNS (sistema de nomes de domínio) que é nova ou alterada no Windows Server 2016.  
   
 No Windows Server 2016, o servidor DNS oferece suporte aprimorado nas seguintes áreas.  
   
 |Funcionalidade|Novo ou melhorado|Descrição|  
 |-----------------|-------------------|---------------|  
-|Políticas de DNS|Novo|Você pode configurar políticas DNS para especificar como um servidor DNS responde a consultas DNS. As respostas DNS podem ser baseadas em endereço IP do cliente (local), hora do dia e vários outros parâmetros. Políticas de DNS permitem DNS reconhecimento de local, o gerenciamento de tráfego, balanceamento de carga, o DNS com partição de rede e outros cenários.|  
-|Taxa de resposta de limitação (RRL)|Novo|Você pode habilitar a limitação de taxa de resposta nos servidores DNS. Ao fazer isso, você deve evitar a possibilidade de sistemas mal-intencionado usando seus servidores DNS para iniciar um ataque de negação de serviço em um cliente DNS.|  
-|Autenticação baseada em DNS de entidades nomeadas (painel)|Novo|Você pode usar registros TLSA (autenticação de segurança de camada de transporte) para fornecer informações para os clientes DNS que o que eles devem esperar um certificado de nome de domínio da autoridade de certificação de estado. Isso impede ataques man-in-the-middle, onde alguém pode corromper o cache do DNS para apontar para seu próprio site e fornecer um certificado emitidos por eles de uma autoridade de certificação diferente.|  
-|Suporte de registro desconhecido|Novo|Você pode adicionar os registros que não são explicitamente suportados pelo servidor DNS do Windows usando a funcionalidade de registro desconhecido.|  
-|Dicas de raízes de IPv6|Novo|Você pode usar o IPV6 nativo, suporte a dicas de raiz para executar a resolução de nome de internet usando os servidores raiz de IPV6.|  
+|Políticas de DNS|Novo|Você pode configurar as políticas de DNS para especificar como um servidor DNS responde a consultas DNS. As respostas DNS podem ser baseadas no endereço IP do cliente (local), na hora do dia e em vários outros parâmetros. As políticas de DNS habilitam o DNS com reconhecimento de local, o gerenciamento de tráfego, o balanceamento de carga, o DNS de divisão e outros cenários.|  
+|Limitação de taxa de resposta (RRL)|Novo|Você pode habilitar a limitação da taxa de resposta em seus servidores DNS. Ao fazer isso, você evita a possibilidade de sistemas mal-intencionados que usam seus servidores DNS para iniciar um ataque de negação de serviço em um cliente DNS.|  
+|Autenticação baseada em DNS de entidades nomeadas (SUNDANÊS)|Novo|Você pode usar os registros TLSA (autenticação de segurança de camada de transporte) para fornecer informações aos clientes DNS que afirmam a qual AC eles devem esperar um certificado para seu nome de domínio. Isso impede ataques man-in-the-Middle, em que alguém pode corromper o cache DNS para apontar para seu próprio site e fornecer um certificado emitido por uma autoridade de certificação diferente.|  
+|Suporte a registro desconhecido|Novo|Você pode adicionar registros que não são explicitamente suportados pelo servidor DNS do Windows usando a funcionalidade de registro desconhecida.|  
+|Dicas de raiz IPv6|Novo|Você pode usar o suporte de dicas de raiz IPV6 nativo para executar a resolução de nomes da Internet usando os servidores raiz IPV6.|  
 |Suporte do Windows PowerShell|Melhorado|Novos cmdlets do Windows PowerShell estão disponíveis para o servidor DNS.|  
   
 ## <a name="dns-policies"></a>Políticas de DNS
 
-Você pode usar a política de DNS para o gerenciamento de tráfego, com base na hora do dia, para gerenciar um único servidor DNS configurado para dividir as respostas DNS inteligentes com base de localização geográfica\-implantação cérebro, aplicação de filtros em consultas DNS e muito mais. Os itens a seguir fornecem mais detalhes sobre esses recursos.
+Você pode usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica, respostas de DNS inteligente com base na hora do dia, para gerenciar um único servidor DNS configurado para a implantação de Split @ no__t-0brain, aplicar filtros em consultas DNS e muito mais. Os itens a seguir fornecem mais detalhes sobre esses recursos.
 
--   **Balanceamento de carga do aplicativo.** Quando você tiver implantado várias instâncias de um aplicativo em locais diferentes, você pode usar a política de DNS para balancear a carga de tráfego entre as instâncias de aplicativo diferente, alocar dinamicamente a carga de tráfego para o aplicativo.
+-   **Balanceamento de carga do aplicativo.** Quando você implantou várias instâncias de um aplicativo em locais diferentes, você pode usar a política DNS para balancear a carga de tráfego entre as diferentes instâncias de aplicativo, alocando dinamicamente a carga de tráfego para o aplicativo.
 
--   **Geográfica\-o gerenciamento de tráfego baseados na localização.** Você pode usar a política de DNS para permitir que os servidores DNS primário e secundário responder a consultas de cliente DNS baseadas na localização geográfica do cliente e o recurso ao qual o cliente está tentando se conectar, fornecendo o cliente com o endereço IP do mais próximo recurso. 
+-   **Gerenciamento de tráfego baseado em @ no__t-1Location geográfico.** Você pode usar a política DNS para permitir que servidores DNS primários e secundários respondam a consultas de cliente DNS com base na localização geográfica do cliente e do recurso ao qual o cliente está tentando se conectar, fornecendo ao cliente o endereço IP do mais próximo Kit. 
 
--   **Divida o cérebro DNS.** Com divisão\-cérebro DNS, registros de DNS são divididos em escopos de zona diferente no mesmo servidor DNS e clientes DNS recebem uma resposta com base em se os clientes são clientes internos ou externos. Você pode configurar a divisão\-cérebro DNS para zonas integrada ao Active Directory ou para as zonas em servidores DNS autônomos.
+-   **DNS de divisão de cérebro.** Com o DNS de divisão @ no__t-0brain, os registros DNS são divididos em escopos de zona diferentes no mesmo servidor DNS, e os clientes DNS recebem uma resposta com base em se os clientes são clientes internos ou externos. Você pode configurar o DNS de divisão @ no__t-0brain para Active Directory zonas integradas ou para zonas em servidores DNS autônomos.
 
--   **A filtragem.** Você pode configurar a política de DNS para criar filtros de consulta que são baseados em critérios fornecidos por você. Filtros de consulta na política de DNS permitem que você configure o servidor DNS para responder de maneira personalizada com base na consulta DNS e do cliente DNS que envia a consulta DNS. 
--   **Análise forense.** Você pode usar a política de DNS para redirecionar os clientes mal-intencionados de DNS para um não\-endereço IP existente em vez de direcioná-las para o computador que estão tentando alcançar.
+-   **Aplica.** Você pode configurar a política DNS para criar filtros de consulta baseados em critérios fornecidos por você. Os filtros de consulta na política DNS permitem configurar o servidor DNS para responder de uma maneira personalizada com base na consulta DNS e no cliente DNS que envia a consulta DNS. 
+-   **Análise forense.** Você pode usar a política DNS para redirecionar clientes DNS mal-intencionados para um endereço IP que não seja @ no__t-0existent em vez de direcioná-los para o computador que estão tentando acessar.
 
--   **Hora do dia com base em redirecionamento.** Você pode usar a política de DNS para distribuir o tráfego de aplicativo entre diferentes instâncias distribuídas geograficamente de um aplicativo por meio de políticas DNS com base na hora do dia. 
+-   **Hora do redirecionamento com base no dia.** Você pode usar a política DNS para distribuir o tráfego de aplicativos em diferentes instâncias distribuídas geograficamente de um aplicativo usando políticas de DNS com base na hora do dia. 
   
-Você também pode usar políticas DNS para o DNS integrado ao Active Directory zonas.
+Você também pode usar políticas de DNS para Active Directory zonas DNS integradas.
 
-Para obter mais informações, consulte o [guia de cenário de política de DNS](deploy/DNS-Policies-Overview.md).
+Para obter mais informações, consulte o [Guia de cenários de política de DNS](deploy/DNS-Policies-Overview.md).
 
-## <a name="response-rate-limiting"></a>Limitação de taxa de resposta
+## <a name="response-rate-limiting"></a>Limitação da taxa de resposta
 
-Você pode configurar as configurações de RRL para controlar como responder a solicitações para um cliente DNS quando o servidor recebe várias solicitações de direcionamento do mesmo cliente. Ao fazer isso, você pode impedir que alguém envie um ataque dos (negação de serviço) usando seus servidores DNS. Por exemplo, um bot net pode enviar solicitações para seu servidor DNS usando o endereço IP de um terceiro computador como o solicitante. Sem RRL, seus servidores DNS podem responder a todas as solicitações, inundação o terceiro computador. Quando você usa RRL, você pode configurar as seguintes configurações:  
+Você pode definir configurações de RRL para controlar como responder a solicitações para um cliente DNS quando o servidor recebe várias solicitações direcionadas ao mesmo cliente. Ao fazer isso, você pode impedir que alguém envie um ataque de negação de serviço (dos) usando seus servidores DNS. Por exemplo, uma rede de bot pode enviar solicitações para o servidor DNS usando o endereço IP de um terceiro computador como o solicitante. Sem o RRL, os servidores DNS podem responder a todas as solicitações, inundando o terceiro computador. Ao usar o RRL, você pode definir as seguintes configurações:  
   
--   **Respostas por segundo**. Isso é o número máximo de vezes que a mesma resposta será dado a um cliente dentro de um segundo.  
+-   **Respostas por segundo**. Este é o número máximo de vezes que a mesma resposta será dada a um cliente dentro de um segundo.  
   
--   **Erros por segundo**. Isso é o número máximo de vezes que uma resposta de erro será enviada ao cliente mesmo dentro de um segundo.  
+-   **Erros por segundo**. Este é o número máximo de vezes que uma resposta de erro será enviada para o mesmo cliente dentro de um segundo.  
   
--   **Janela**. Isso é o número de segundos para o qual as respostas a um cliente serão suspenso se muitas solicitações são feitas.  
+-   **Janela**. Este é o número de segundos para o qual as respostas a um cliente serão suspensas se muitas solicitações forem feitas.  
   
--   **Taxa de vazamento**. Essa é a frequência com que o servidor DNS responderá a uma consulta durante o tempo que as respostas são suspensos. Por exemplo, se o servidor suspende as respostas a um cliente por 10 segundos, e a taxa de vazamento for 5, o servidor ainda responderá a uma consulta para cada 5 consultas enviadas. Isso permite que os clientes legítimos para obter respostas, mesmo quando o servidor DNS está sendo aplicada na sua sub-rede ou o FQDN de limitação de taxa de resposta.  
+-   **Taxa de perda**. Essa é a frequência com que o servidor DNS responderá a uma consulta durante as respostas de tempo que são suspensas. Por exemplo, se o servidor suspender as respostas a um cliente por 10 segundos e a taxa de vazamento for 5, o servidor ainda responderá a uma consulta para cada 5 consultas enviadas. Isso permite que os clientes legítimos obtenham respostas mesmo quando o servidor DNS estiver aplicando a limitação de taxa de resposta em sua sub-rede ou FQDN.  
   
--   **Taxa de TC**. Isso é usado para informar o cliente tentar se conectar com o TCP quando respostas para o cliente são suspensos. Por exemplo, se a taxa de TC é 3 e o servidor suspende as respostas para um determinado cliente, o servidor emite uma solicitação de conexão TCP para cada 3 consultas recebidas. Verifique se que o valor de taxa de TC é menor do que a taxa de vazamento, dar a opção para se conectar via TCP antes de vazamento de respostas de cliente.  
+-   **Taxa de TC**. Isso é usado para instruir o cliente a tentar se conectar com TCP quando as respostas para o cliente são suspensas. Por exemplo, se a taxa de TC for 3 e o servidor suspender as respostas para um determinado cliente, o servidor emitirá uma solicitação de conexão TCP para cada 3 consultas recebidas. Verifique se o valor da taxa de TC é menor que a taxa de vazamento, para dar ao cliente a opção de se conectar via TCP antes de vazar as respostas.  
   
--   **Respostas máximo**. Isso é o número máximo de respostas, que o servidor emitirá a um cliente, enquanto as respostas são suspensos.  
+-   **Máximo de respostas**. Esse é o número máximo de respostas que o servidor emitirá para um cliente enquanto as respostas são suspensas.  
   
--   **Domínios de permissões**. Esta é uma lista de domínios a serem excluídos das configurações de RRL.  
+-   **Domínios de lista branca**. Esta é uma lista de domínios a serem excluídos das configurações de RRL.  
   
--   **Lista de permissões de sub-redes**. Esta é uma lista de sub-redes a serem excluídos das configurações de RRL.  
+-   **Sub-redes de lista branca**. Esta é uma lista de sub-redes a serem excluídas das configurações de RRL.  
   
--   **Interfaces de servidor da lista de permissões**. Esta é uma lista de interfaces de servidor DNS a serem excluídos das configurações de RRL.  
+-   **Interfaces de servidor de lista**de permissões. Esta é uma lista de interfaces do servidor DNS a ser excluída das configurações de RRL.  
   
-## <a name="dane-support"></a>Suporte de painel
+## <a name="dane-support"></a>Suporte ao SUNDANÊS
 
-Você pode usar o suporte do painel \(RFC 6394 e 6698\) especificar para os clientes DNS que eles devem esperar que certificados sejam emitidos de para nomes de domínios da autoridade de certificação hospedado no seu servidor DNS. Isso evita uma forma de ataque man-in-the-middle onde alguém é capaz de corromper um cache DNS e um nome DNS para seus próprios endereços IP.  
+Você pode usar o suporte a SUNDANÊS \(RFC 6394 e 6698 @ no__t-1 para especificar para seus clientes DNS qual AC eles devem esperar que os certificados sejam emitidos para os nomes de domínios hospedados no seu servidor DNS. Isso impede uma forma de ataque man-in-the-Middle, em que alguém é capaz de corromper um cache DNS e apontar um nome DNS para seu próprio endereço IP.  
   
-Por exemplo, imagine que você hospedar um site seguro que usa o SSL em www.contoso.com, usando um certificado de uma autoridade bem conhecido chamado CA1. Alguém ainda poderá obter um certificado para www.contoso.com de um diferente, não-para-conhecido, certificado de autoridade chamada CA2. Em seguida, a entidade que hospeda o site falso www.contoso.com poderá corromper o cache DNS de um cliente ou servidor para apontar www.contoto.com para seu site falso. O usuário final verá um certificado de CA2 e pode simplesmente confirmá-la e conectar-se ao site falso. Com o painel, o cliente seria fazer uma solicitação para o servidor DNS de contoso.com pedindo para o registro TLSA e saber se o certificado para www.contoso.com era problemas por CA1. Se obtiver um certificado de autoridade de certificação de outra, a conexão será anulada.  
+Por exemplo, imagine que você hospede um site seguro que usa SSL em www.contoso.com usando um certificado de uma autoridade bem conhecida chamada CA1. Alguém ainda poderá obter um certificado para www.contoso.com de uma autoridade de certificação diferente, e não tão conhecida, denominada CA2. Em seguida, a entidade que hospeda o site da www.contoso.com falsa pode ser capaz de corromper o cache DNS de um cliente ou servidor para apontar www.contoto.com para seu site falso. O usuário final receberá um certificado de CA2 e poderá simplesmente refirmá-lo e conectar-se ao site falso. Com o SUNDANÊS, o cliente fará uma solicitação ao servidor DNS para contoso.com solicitando o registro TLSA e aprenderia que o certificado para www.contoso.com foi emitido por CA1. Se for apresentado um certificado de outra CA, a conexão será anulada.  
   
-## <a name="unknown-record-support"></a>Suporte de registro desconhecido
+## <a name="unknown-record-support"></a>Suporte a registro desconhecido
 
-Um "registro desconhecido" é um registro de recurso cujo formato RDATA não é conhecido para o servidor DNS. O suporte adicionado recentemente para tipos de registro desconhecido (RFC 3597) significa que você pode adicionar os tipos de registro sem suporte para as zonas de servidor DNS do Windows no formato binário durante a transmissão. As janelas de resolvedor de cache já tem a capacidade de processar tipos de registro desconhecido. Servidor DNS do Windows não fará qualquer processamento específico registro para os registros de desconhecido, mas será enviá-lo novamente nas respostas se a consulta for recebida para ele.  
+Um "registro desconhecido" é um RR cujo formato RDATA não é conhecido pelo servidor DNS. O suporte recém-adicionado para tipos de registro desconhecido (RFC 3597) significa que você pode adicionar os tipos de registro sem suporte nas zonas de servidor DNS do Windows no formato binário durante a transmissão. O resolvedor de cache do Windows já tem a capacidade de processar tipos de registros desconhecidos. O servidor DNS do Windows não fará nenhum processamento específico de registro para os registros desconhecidos, mas o enviará de volta em respostas se as consultas forem recebidas para ele.  
   
-## <a name="ipv6-root-hints"></a>Dicas de raízes de IPv6
+## <a name="ipv6-root-hints"></a>Dicas de raiz IPv6
 
-As dicas de raiz de IPV6, conforme publicado pelo IANA, foram adicionadas para o servidor DNS do windows. As consultas de nome de internet agora podem usar servidores raiz de IPv6 para a execução de resoluções de nome.
+As dicas de raiz IPV6, conforme publicado pela IANA, foram adicionadas ao servidor DNS do Windows. As consultas de nome de Internet agora podem usar servidores raiz IPv6 para executar resoluções de nomes.
 
 ## <a name="windows-powershell-support"></a>Suporte ao Windows PowerShell
 
-Os seguintes novos cmdlets do Windows PowerShell e os parâmetros são introduzidos no Windows Server 2016.
+Os novos cmdlets e parâmetros do Windows PowerShell a seguir são introduzidos no Windows Server 2016.
   
--   **Add-DnsServerRecursionScope**. Esse cmdlet cria um novo escopo de recursão no servidor DNS. Escopos de recursão são usados pelas políticas DNS para especificar uma lista de encaminhadores a ser usado em uma consulta DNS.  
+-   **Add-DnsServerRecursionScope**. Esse cmdlet cria um novo escopo de recursão no servidor DNS. Os escopos de recursão são usados pelas políticas de DNS para especificar uma lista de encaminhadores a serem usados em uma consulta DNS.  
   
--   **Remove-DnsServerRecursionScope**. Esse cmdlet Remove os escopos de recursão existentes.  
+-   **Remove-DnsServerRecursionScope**. Esse cmdlet Remove escopos de recursão existentes.  
   
 -   **Set-DnsServerRecursionScope**. Esse cmdlet altera as configurações de um escopo de recursão existente.  
   
--   **Get-DnsServerRecursionScope**. Este cmdlet recupera informações sobre escopos de recursão existente.  
+-   **Get-DnsServerRecursionScope**. Esse cmdlet recupera informações sobre escopos de recursão existentes.  
   
--   **Add-DnsServerClientSubnet**. Esse cmdlet cria uma nova sub-rede do cliente DNS. Subredes são usados pelas políticas DNS para identificar onde um cliente DNS está localizado.  
+-   **Add-DnsServerClientSubnet**. Esse cmdlet cria uma nova sub-rede de cliente DNS. As sub-redes são usadas pelas políticas de DNS para identificar onde um cliente DNS está localizado.  
   
--   **Remove-DnsServerClientSubnet**. Esse cmdlet Remove sub-redes existentes de cliente DNS.  
+-   **Remove-DnsServerClientSubnet**. Esse cmdlet Remove as sub-redes de cliente DNS existentes.  
   
 -   **Set-DnsServerClientSubnet**. Esse cmdlet altera as configurações de uma sub-rede de cliente DNS existente.  
   
--   **Get-DnsServerClientSubnet**. Este cmdlet recupera informações sobre sub-redes existentes de cliente DNS.  
+-   **Get-DnsServerClientSubnet**. Esse cmdlet recupera informações sobre sub-redes de cliente DNS existentes.  
   
--   **Add-DnsServerQueryResolutionPolicy**. Esse cmdlet cria uma nova política de resolução de consulta DNS. Políticas de resolução de consulta DNS são usadas para especificar como, ou se, uma consulta está respondida, com base em critérios diferentes.  
+-   **Add-DnsServerQueryResolutionPolicy**. Esse cmdlet cria uma nova política de resolução de consulta DNS. As políticas de resolução de consulta DNS são usadas para especificar como, ou se, uma consulta é respondida, com base em critérios diferentes.  
   
--   **Remove-DnsServerQueryResolutionPolicy**. Este cmdlet removerá as políticas DNS existentes.  
+-   **Remove-DnsServerQueryResolutionPolicy**. Esse cmdlet Remove as políticas DNS existentes.  
   
 -   **Set-DnsServerQueryResolutionPolicy**. Esse cmdlet altera as configurações de uma política DNS existente.  
   
--   **Get-DnsServerQueryResolutionPolicy**. Este cmdlet recupera informações sobre as políticas DNS existentes.  
+-   **Get-DnsServerQueryResolutionPolicy**. Esse cmdlet recupera informações sobre as políticas de DNS existentes.  
   
--   **Enable-DnsServerPolicy**. Esse cmdlet permite que as políticas DNS existentes.  
+-   **Enable-DnsServerPolicy**. Esse cmdlet habilita as políticas DNS existentes.  
   
--   **Disable-DnsServerPolicy**. Esse cmdlet desativa as políticas DNS existentes.  
+-   **Disable-DnsServerPolicy**. Esse cmdlet desabilita as políticas de DNS existentes.  
   
--   **Add-DnsServerZoneTransferPolicy**. Esse cmdlet cria uma nova política de transferência de zona de servidor DNS. Políticas de transferência de zona DNS especificam se deseja negar ou ignorar uma transferência de zona com base em critérios diferentes.  
+-   **Add-DnsServerZoneTransferPolicy**. Esse cmdlet cria uma nova política de transferência de zona do servidor DNS. Políticas de transferência de zona DNS especifique se deseja negar ou ignorar uma transferência de zona com base em critérios diferentes.  
   
--   **Remove-DnsServerZoneTransferPolicy**. Esse cmdlet Remove existentes políticas de transferência de zona para servidor DNS.  
+-   **Remove-DnsServerZoneTransferPolicy**. Este cmdlet Remove as políticas de transferência de zona do servidor DNS existentes.  
   
--   **Set-DnsServerZoneTransferPolicy**. Esse cmdlet altera as configurações de uma política de transferência de zona de servidor DNS existente.  
+-   **Set-DnsServerZoneTransferPolicy**. Este cmdlet altera as configurações de uma política de transferência de zona de servidor DNS existente.  
   
--   **Get-DnsServerResponseRateLimiting**. Este cmdlet recupera as configurações de RRL.  
+-   **Get-DnsServerResponseRateLimiting**. Esse cmdlet recupera as configurações de RRL.  
   
--   **Set-DnsServerResponseRateLimiting**. Esse cmdlet altera as configurações de RRL.  
+-   **Set-DnsServerResponseRateLimiting**. Esse cmdlet altera a configurações de RRL.  
   
--   **Add-DnsServerResponseRateLimitingExceptionlist**. Esse cmdlet cria uma lista de exceções RRL no servidor DNS.  
+-   **Add-DnsServerResponseRateLimitingExceptionlist**. Esse cmdlet cria uma lista de exceções de RRL no servidor DNS.  
   
--   **Get-DnsServerResponseRateLimitingExceptionlist**. Este cmdlet recupera RRL excception listas.  
+-   **Get-DnsServerResponseRateLimitingExceptionlist**. Esse cmdlet recupera as listas de excception de RRL.  
   
--   **Remove-DnsServerResponseRateLimitingExceptionlist**. Este cmdlet removerá uma lista de exceção RRL existente.  
+-   **Remove-DnsServerResponseRateLimitingExceptionlist**. Esse cmdlet Remove uma lista de exceções de RRL existente.  
   
--   **Set-DnsServerResponseRateLimitingExceptionlist**. Esse cmdlet altera RRL listas de exceção.  
+-   **Set-DnsServerResponseRateLimitingExceptionlist**. Esse cmdlet altera as listas de exceções de RRL.  
   
--   **Add-DnsServerResourceRecord**. Esse cmdlet foi atualizado para dar suporte a tipo de registro desconhecido.  
+-   **Add-DnsServerResourceRecord**. Este cmdlet foi atualizado para dar suporte ao tipo de registro desconhecido.  
   
--   **Get-DnsServerResourceRecord**. Esse cmdlet foi atualizado para dar suporte a tipo de registro desconhecido.  
+-   **Get-DnsServerResourceRecord**. Este cmdlet foi atualizado para dar suporte ao tipo de registro desconhecido.  
   
--   **Remove-DnsServerResourceRecord**. Esse cmdlet foi atualizado para dar suporte a tipo de registro desconhecido.  
+-   **Remove-DnsServerResourceRecord**. Este cmdlet foi atualizado para dar suporte ao tipo de registro desconhecido.  
   
--   **Set-DnsServerResourceRecord**. Esse cmdlet foi atualizado para dar suporte a tipo de registro desconhecido
+-   **Set-DnsServerResourceRecord**. Este cmdlet foi atualizado para dar suporte ao tipo de registro desconhecido
 
-Para obter mais informações, consulte os seguintes tópicos de referência de comando do Windows PowerShell do Windows Server 2016.
+Para obter mais informações, consulte os seguintes tópicos de referência de comando do Windows Server 2016 do Windows PowerShell.
 
-- [Módulo de DnsServer](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
+- [Módulo DnsServer](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
 - [Módulo DnsClient](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
 
 ## <a name="see-also"></a>Consulte também  

@@ -2,18 +2,18 @@
 title: Criar uma exceção de triagem de arquivo
 description: Este artigo descreve como criar uma exceção de triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1f0e93cb2535862b9259d438de00c3b769c2282c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6a0fa660db6b03104b585c8ee78a4f20aafe5c88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866297"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403149"
 ---
 # <a name="create-a-file-screen-exception"></a>Criar uma exceção de triagem de arquivo
 
@@ -40,14 +40,14 @@ Atribuir grupos de arquivos para determinar quais tipos de arquivo serão permit
 4.  Para especificar quais arquivos devem ser excluídos da triagem de arquivo:
 
     -   Em **Grupos de arquivos**, selecione cada grupo de arquivos que você deseja excluir da triagem de arquivo. (Para marcar a caixa de seleção do grupo de arquivos, clique duas vezes no rótulo do grupo de arquivos.)
-    -   Se você quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo de arquivo e clique em **editar**.
+    -   Se você quiser exibir os tipos de arquivo que um grupo de arquivos inclui e exclui, clique no rótulo do grupo de arquivos e clique em **Editar**.
     -   Para criar um novo grupo de arquivos, clique em **Criar**.
 
 5.  Clique em **OK**.
 
 ## <a name="see-also"></a>Consulte também
 
--   [Gerenciamento de triagem de arquivo](file-screening-management.md)
+-   [Gerenciamento de triagem de arquivos](file-screening-management.md)
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)
 
 

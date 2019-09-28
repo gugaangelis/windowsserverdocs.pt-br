@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c1f3a7f7004b573fece71cdaf2f43661c13ad496
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 9c04db3196d1e806e50af9164b3c8bcdfb19b079
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869631"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406888"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>Criar um provedor de conexão para uma extensão de solução
 
@@ -124,7 +124,7 @@ Propriedades de status:
   | 2 | Não autorizado |
   | 3 | Erro |
   | 4 | Fatais |
-  | 5 | Unknown |
+  | 5 | Desconhecido |
 
 * <strong>Detalhes</strong> -detalhes adicionais que descrevem o tipo de retorno de status.
 

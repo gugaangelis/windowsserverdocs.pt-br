@@ -6,14 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cee87ce864e333b98e92fa64e939f2ead7edc156
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: fdadbefc138562246c72f7707b303d966bff0989
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407194"
 ---
 # <a name="ad-fs-troubleshooting---certificates"></a>Solução de problemas AD FS-certificados
 AD FS requer os seguintes certificados para funcionar corretamente.  Se qualquer um deles não tiver sido instalado ou configurado corretamente, os problemas podem surgir.  
@@ -46,7 +46,7 @@ Veja a seguir uma lista de coisas que podem surgir e que devem ser verificadas a
 ## <a name="common-certificate-errors"></a>Erros comuns de certificado
 A tabela a seguir é uma lista de erros comuns e possíveis causas.
 
-|evento|Causa|Resolução
+|Evento|Causa|Resolução
 |-----|-----|-----|
 |Evento 249-não foi possível encontrar um certificado no repositório de certificados. Em cenários de substituição de certificado, isso pode potencialmente causar uma falha quando a Serviço de Federação está assinando ou descriptografando usando esse certificado.|O certificado em questão não está presente no repositório de certificados local ou a conta de serviço não tem permissão para a chave privada do certificado.|Verifique se o certificado está instalado no repositório do LocalMAchine\My no servidor de AD FS. Verifique se a conta de serviço AD FS tem acesso de leitura à chave privada do certificado.|
 |Evento 315-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de assinatura de confiança do provedor de declarações.|O certificado não foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|

@@ -1,19 +1,19 @@
 ---
 ms.assetid: 134840f3-c416-4a10-ad73-ef7855b206f7
 title: Visão geral da inicialização do destino iSCSI
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: b3ec6dad0b3fcc9ef595350c7df09505beba1103
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c359c7929ff90968d16e92b1128f4fc8ebde37c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838797"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402991"
 ---
 # <a name="iscsi-target-boot-overview"></a>Visão geral da inicialização do destino iSCSI
 
@@ -22,7 +22,7 @@ ms.locfileid: "59838797"
 O Servidor de Destino iSCSI no Windows Server permite inicializar centenas de computadores por meio de uma única imagem do sistema operacional, armazenada em um local centralizado. Isso aumenta a eficiência, a capacidade de gerenciamento, a disponibilidade e a segurança.  
   
 ## <a name="BKMK_OVER"></a>Descrição do recurso  
-Usando discos rígidos virtuais diferenciais \(VHDs\), você pode usar uma imagem de sistema operacional \(a "imagem mestra"\) para inicializar até 256 computadores. Por exemplo, vamos supor que você implantou o Windows Server com uma imagem de sistema operacional de aproximadamente 20 GB e você usou duas unidades de disco espelhadas para atuar como o volume de inicialização. Seria necessário cerca de 10 TB de armazenamento somente para a imagem de sistema operacional para inicializar 256 computadores. Com o Servidor de Destino iSCSI, você usará 40 GB para a imagem base do sistema operacional e 2 GB para discos rígidos virtuais diferenciais por instância do servidor, totalizando 552 GB para as imagens do sistema operacional. Isso proporciona uma economia de mais de 90% em armazenamento somente para as imagens do sistema operacional.  
+Usando discos rígidos virtuais diferenciais \(VHDs @ no__t-1, você pode usar uma única imagem do sistema operacional \(The "imagem mestra" \) para inicializar até 256 computadores. Como exemplo, vamos supor que você implantou o Windows Server com uma imagem do sistema operacional de aproximadamente 20 GB e usou duas unidades de disco espelhadas para atuar como o volume de inicialização. Seria necessário cerca de 10 TB de armazenamento somente para a imagem de sistema operacional para inicializar 256 computadores. Com o Servidor de Destino iSCSI, você usará 40 GB para a imagem base do sistema operacional e 2 GB para discos rígidos virtuais diferenciais por instância do servidor, totalizando 552 GB para as imagens do sistema operacional. Isso proporciona uma economia de mais de 90% em armazenamento somente para as imagens do sistema operacional.  
   
 ## <a name="BKMK_APP"></a>Aplicativos práticos  
 Usar uma imagem controlada do sistema operacional oferece os seguintes benefícios:  
@@ -37,7 +37,7 @@ Usar uma imagem controlada do sistema operacional oferece os seguintes benefíci
 > Vários fornecedores oferecem uma solução de inicialização SAN \(rede de área de armazenamento\), que pode ser usada pelo Servidor de Destino iSCSI no Windows Server em hardware de mercadoria.  
   
 ## <a name="BKMK_HARD"></a>Requisitos de hardware  
-O Servidor de Destino iSCSI não exige hardware especial para verificação funcional. Nos data centers com implantações em grande escala\-, o design deve ser validado em relação a um hardware específico. Para referência, testes internos da Microsoft indicaram que uma implantação de 256 computadores exigia 24x15k\-discos em uma configuração RAID 10 para o armazenamento de RPM. Uma largura de banda de rede de 10 GB é ideal. Uma estimativa geral é de 60 servidores de inicialização iSCSI por adaptador de rede de 1 GB.  
+O Servidor de Destino iSCSI não exige hardware especial para verificação funcional. Nos data centers com implantações em grande escala\-, o design deve ser validado em relação a um hardware específico. Para referência, o teste interno da Microsoft indicou que uma implantação de computador 256 exigiu discos 24x15k @ no__t-0RPM em uma configuração de RAID 10 para armazenamento. Uma largura de banda de rede de 10 GB é ideal. Uma estimativa geral é de 60 servidores de inicialização iSCSI por adaptador de rede de 1 GB.  
   
 Não é necessário ter um adaptador de rede para esse cenário, e um carregador de inicialização de software pode ser usado \(como o firmware de inicialização de software livre iPXE\).  
   

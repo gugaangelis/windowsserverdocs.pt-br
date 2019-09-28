@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 951e7d74a3370d9863d747e349d7fe701615e225
-ms.sourcegitcommit: 2e38b26742f3b16c153170d6f5219c020a8e9383
+ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896814"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407534"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Gerenciando protocolos SSL/TLS e conjuntos de codificação para AD FS
 A documentação a seguir fornece informações sobre como desabilitar e habilitar determinados protocolos TLS/SSL e conjuntos de codificação que são usados pelo AD FS
@@ -262,14 +262,14 @@ Para obter uma lista completa de pacotes de criptografia com suporte, consulte [
 Os aplicativos .NET Framework 3.5/4.0/4.5. x podem alternar o protocolo padrão para TLS 1,2 habilitando a chave do registro SchUseStrongCrypto.  Essa chave do registro forçará os aplicativos .NET a usarem o TLS 1,2.
 
 > [!IMPORTANT]
-> Para AD FS no Windows Server 2016 e no Windows Server 2012 R2, você precisa usar a chave .NET Framework 4.0/4.5. x:  HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.30319
+> Para AD FS no Windows Server 2016 e no Windows Server 2012 R2, você precisa usar a chave .NET Framework 4.0/4.5. x:  HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0. NETFramework\v4.0.30319
 
 
 Para o .NET Framework 3,5, use a seguinte chave do registro:
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework\v2.0.50727] "SchUseStrongCrypto" = DWORD: 00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft @ no__t-0. NETFramework\v2.0.50727] "SchUseStrongCrypto" = DWORD: 00000001
 
-Para o .NET Framework 4.0/4.5. x, use a seguinte chave do registro: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.30319 "SchUseStrongCrypto" = DWORD: 00000001
+Para o .NET Framework 4.0/4.5. x, use a seguinte chave do registro: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0. NETFramework\v4.0.30319 "SchUseStrongCrypto" = DWORD: 00000001
 
 ![Autenticação forte](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
 

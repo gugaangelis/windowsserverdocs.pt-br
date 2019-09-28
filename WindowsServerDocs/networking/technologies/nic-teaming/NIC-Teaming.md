@@ -3,7 +3,7 @@ title: Agrupamento NIC
 description: Neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-nict
@@ -13,12 +13,12 @@ ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
 ms.date: 09/10/2018
-ms.openlocfilehash: acbb01acb39990126d5dce1d0811aefb8c931164
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2356de674bfc6e57c9444136b1244934464a2d02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871914"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396502"
 ---
 # <a name="nic-teaming"></a>Agrupamento NIC
 

@@ -1,9 +1,9 @@
 ---
 title: Habilitar BranchCache em um compartilhamento de arquivos (opcional)
-description: Este tópico faz parte do BranchCache implantação guia para o Windows Server 2016, que demonstra como implantar o BranchCache nos modos de cache hospedado e distribuído para otimizar o uso de largura de banda WAN em filiais
+description: Este tópico faz parte do guia de implantação do BranchCache para o Windows Server 2016, que demonstra como implantar o BranchCache em modos de cache distribuídos e hospedados para otimizar o uso de largura de banda WAN em filiais
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-bc
@@ -12,21 +12,21 @@ ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fd1757f6da011c2f774d8f97f628e5f0e87d3bf7
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 37bab11a0914a3f6854314016bb59297aa6954f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284030"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406358"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>Habilitar BranchCache em um compartilhamento de arquivos (opcional)
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este procedimento para habilitar o BranchCache em um compartilhamento de arquivos.  
   
 > [!IMPORTANT]  
-> Você não precisará executar este procedimento se você definir a configuração de publicação de hash com o valor **permitir a publicação de hash para todas as pastas compartilhadas**.  
+> Você não precisará executar esse procedimento se definir a configuração de publicação de hash com o valor **Permitir publicação de hash para todas as pastas compartilhadas**.  
   
 A associação a **Administradores** ou equivalente é o requisito mínimo para a execução deste procedimento.  
   
@@ -36,15 +36,15 @@ A associação a **Administradores** ou equivalente é o requisito mínimo para 
   
 2.  No MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**. A caixa de diálogo **Adicionar ou Remover Snap-ins** é aberta.  
   
-3.  Na **adicionar ou Remover Snap-ins**, na **snap-ins disponíveis**, clique duas vezes em **pastas compartilhadas**. O Assistente de pastas compartilhadas é aberto com o objeto de computador Local selecionado. Configurar o modo de exibição que você preferir, clique em **terminar**e, em seguida, clique em **Okey**.  
+3.  Em **Adicionar ou remover snap-ins**, em **snap-ins disponíveis**, clique duas vezes em **pastas compartilhadas**. O assistente de pastas compartilhadas é aberto com o objeto computador local selecionado. Configure o modo de exibição que você preferir, clique em **concluir**e em **OK**.  
   
-4.  Clique duas vezes em **(Local) de pastas compartilhadas**e, em seguida, clique em **compartilhamentos**.  
+4.  Clique duas vezes em **pastas compartilhadas (local)** e em **compartilhamentos**.  
   
-5.  No painel de detalhes, clique com botão direito um compartilhamento e, em seguida, clique em **propriedades**. O compartilhamento **propriedades** caixa de diálogo é aberta.  
+5.  No painel de detalhes, clique com o botão direito do mouse em um compartilhamento e clique em **Propriedades**. A caixa de diálogo **Propriedades** do compartilhamento é aberta.  
   
-6.  No **propriedades** caixa de diálogo do **gerais** , clique em **configurações off-line**. O **configurações off-line** caixa de diálogo é aberta.  
+6.  Na caixa de diálogo **Propriedades** , na guia **geral** , clique em **configurações offline**. A caixa de diálogo **configurações offline** é aberta.  
   
-7.  Certifique-se de que **somente os arquivos e programas especificados pelos usuários ficam disponíveis offline** está selecionado e, em seguida, clique em **habilitar BranchCache**.  
+7.  Verifique se **somente os arquivos e programas que os usuários especificam estão disponíveis offline** está selecionado e clique em **Habilitar BranchCache**.  
   
 8.  Clique em **OK** duas vezes.  
   

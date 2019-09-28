@@ -7,21 +7,21 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3be14b824038e9424b86c40bfd657dd988fa99e9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 29760dcc0dffe9fe29289f20f1abca4cfd8325b1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189872"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407696"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>Configurar o AD FS para enviar solicitações de expiração de senha
 
 
-Você pode configurar os serviços de Federação do Active Directory (AD FS) para enviar solicitações de expiração de senha para a terceira parte (aplicativos) que é protegidas pelo AD FS. Como essas declarações são usadas depende do aplicativo. Por exemplo, com o Office 365, como a terceira, as atualizações foram implementadas ao Exchange e Outlook para notificar os usuários federados das suas senhas estar expirado em breve.
+Você pode configurar Serviços de Federação do Active Directory (AD FS) (AD FS) para enviar declarações de expiração de senha para os aplicativos de confiança de terceira parte confiável que são protegidos pelo ADFS. A forma como essas declarações são usadas depende do aplicativo. Por exemplo, com o Office 365 como sua terceira parte confiável, as atualizações foram implementadas para o Exchange e o Outlook para notificar os usuários federados sobre suas senhas em breve.
 
-Para configurar o AD FS para enviar a senha de expiração de declarações para uma terceira parte confiável, você deve adicionar as seguintes regras de declaração para essa terceira parte confiável:
+Para configurar AD FS para enviar declarações de expiração de senha a uma relação de confiança de terceira parte confiável, você deve adicionar as seguintes regras de declaração a esta relação de confiança de terceira parte confiável:
 
 ```
 @RuleName = "Issue Password Expiry Claims"
@@ -30,10 +30,10 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 ```
 
 > [!NOTE]
-> Declarações de expiração de senha só estão disponíveis para o nome de usuário e senha e o Microsoft Passport para tipos de autenticação do trabalho.  Se o usuário é autenticado usando a autenticação integrada do Windows e do Passport não está configurado, as declarações não estará disponíveis e os usuários não verão as notificações de expiração de senha.
+> As declarações de expiração de senha só estão disponíveis para nome de usuário e senha e Microsoft Passport for Work tipos de autenticação.  Se o usuário autenticar usando a autenticação integrada do Windows e o Passport não estiver configurado, as declarações não estarão disponíveis e os usuários não verão as notificações de expiração de senha.
 
 > [!NOTE]
-> Há uma janela de 14 dias para que as declarações enviadas serão preenchidas somente se a senha expirará dentro de 14 dias.
+> Há uma janela de 14 dias para que as declarações enviadas só sejam populadas se a senha estiver expirando em 14 dias.
 
 ## <a name="see-also"></a>Consulte também
 [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)

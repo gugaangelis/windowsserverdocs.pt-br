@@ -1,9 +1,9 @@
 ---
 title: Clustering convidado em uma rede virtual
-description: Máquinas virtuais conectadas a uma rede virtual só têm permissão para usar os endereços IP que o controlador de rede atribuído a se comunicar pela rede.  Tecnologias de clustering que exigem um endereço IP flutuante, como o Clustering de Failover da Microsoft, exigem algumas etapas adicionais para funcionar corretamente.
+description: As máquinas virtuais conectadas a uma rede virtual só têm permissão para usar os endereços IP que o controlador de rede atribuiu para se comunicar na rede.  As tecnologias de clustering que exigem um endereço IP flutuante, como o clustering de failover da Microsoft, exigem algumas etapas adicionais para funcionar corretamente.
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,29 +13,29 @@ ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/26/2018
-ms.openlocfilehash: 97c20fd07d06b609686daf4d6308a9f248873036
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 05704beeae27bd9de9ad0c5cf578581c650a976f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446346"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406038"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>Clustering convidado em uma rede virtual
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Máquinas virtuais conectadas a uma rede virtual só têm permissão para usar os endereços IP que o controlador de rede atribuído a se comunicar pela rede.  Tecnologias de clustering que exigem um endereço IP flutuante, como o Clustering de Failover da Microsoft, exigem algumas etapas adicionais para funcionar corretamente.
+As máquinas virtuais conectadas a uma rede virtual só têm permissão para usar os endereços IP que o controlador de rede atribuiu para se comunicar na rede.  As tecnologias de clustering que exigem um endereço IP flutuante, como o clustering de failover da Microsoft, exigem algumas etapas adicionais para funcionar corretamente.
 
-O método para fazer o IP flutuante acessível é usar um balanceador de carga de Software \(SLB\) IP virtual \(VIP\).  O balanceador de carga de software deve ser configurado com uma investigação de integridade em uma porta em que IP para que o SLB direciona o tráfego para o computador que atualmente possui esse IP.
+O método para tornar o IP flutuante acessível é usar um software Load Balancer \(SLB @ no__t-1 virtual IP \(VIP @ no__t-3.  O balanceador de carga de software deve ser configurado com uma investigação de integridade em uma porta nesse IP para que o SLB direcione o tráfego para o computador que atualmente tem esse IP.
 
 
-## <a name="example-load-balancer-configuration"></a>Exemplo: Configuração de Balanceador de carga
+## <a name="example-load-balancer-configuration"></a>Exemplo: Configuração do balanceador de carga
 
-Este exemplo pressupõe que você já criou as VMs que se tornarão nós do cluster e anexada-los a uma rede Virtual.  Para obter diretrizes, consulte [criar uma VM e conectar-se a uma rede Virtual do locatário ou VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).  
+Este exemplo pressupõe que você já criou as VMs que se tornarão nós de cluster e as anexará a uma rede virtual.  Para obter diretrizes, consulte [criar uma VM e conectar-se a uma rede virtual de locatário ou VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).  
 
-Neste exemplo você criará um endereço IP virtual (192.168.2.100) para representar o endereço IP flutuante do cluster e configure uma investigação de integridade para monitorar a porta TCP 59999, para determinar qual nó está ativo.
+Neste exemplo, você criará um endereço IP virtual (192.168.2.100) para representar o endereço IP flutuante do cluster e configurará uma investigação de integridade para monitorar a porta TCP 59999 para determinar qual nó é o ativo.
 
-1. Selecione o VIP.<p>Prepare-se atribuir um endereço IP VIP, que pode ser qualquer endereço não utilizado ou reservado na mesma sub-rede que os nós do cluster.  O VIP deve corresponder ao endereço flutuante do cluster.
+1. Selecione o VIP.<p>Prepare atribuindo um endereço IP VIP, que pode ser qualquer endereço não usado ou reservado na mesma sub-rede que os nós do cluster.  O VIP deve corresponder ao endereço flutuante do cluster.
 
    ```PowerShell
    $VIP = "192.168.2.100"
@@ -50,7 +50,7 @@ Neste exemplo você criará um endereço IP virtual (192.168.2.100) para represe
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. Criar um front\-endereço IP final.
+3. Crie um endereço IP do front @ no__t-0end.
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -63,7 +63,7 @@ Neste exemplo você criará um endereço IP virtual (192.168.2.100) para represe
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. Crie um back\-terminar o pool para conter os nós do cluster.
+4. Crie um pool de back @ no__t-0end para conter os nós de cluster.
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -73,10 +73,10 @@ Neste exemplo você criará um endereço IP virtual (192.168.2.100) para represe
    $LoadBalancerProperties.backendAddressPools += $BackEnd
    ```
 
-5. Adicione uma investigação para detectar o endereço flutuante está atualmente ativo no nó de cluster. 
+5. Adicione uma investigação para detectar em qual nó de cluster o endereço flutuante está ativo no momento. 
 
    >[!NOTE]
-   >A consulta de investigação em relação ao endereço de permanente da VM na porta definida abaixo.  A porta só deve responder no nó ativo. 
+   >A consulta de investigação em relação ao endereço permanente da VM na porta definida abaixo.  A porta deve responder somente no nó ativo. 
 
    ```PowerShell
    $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
@@ -90,7 +90,7 @@ Neste exemplo você criará um endereço IP virtual (192.168.2.100) para represe
    $lbprobe.properties.NumberOfProbes = 11
    ```
 
-6. Adicione regras para a porta TCP 1433 de balanceamento de carga.<p>Você pode modificar o protocolo e porta, conforme necessário.  Você também pode repetir esta etapa várias vezes para portas adicionais e protcols neste VIP.  É importante que EnableFloatingIP está definido como $true, porque isso informa ao balanceador de carga para enviar o pacote para o nó com o VIP original em vigor.
+6. Adicione as regras de balanceamento de carga para a porta TCP 1433.<p>Você pode modificar o protocolo e a porta conforme necessário.  Você também pode repetir essa etapa várias vezes para portas adicionais e protcols nesse VIP.  É importante que EnableFloatingIP esteja definido como $true porque isso diz ao balanceador de carga para enviar o pacote para o nó com o VIP original em vigor.
 
    ```PowerShell
    $LoadBalancerProperties.loadbalancingRules += $lbrule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
@@ -112,7 +112,7 @@ Neste exemplo você criará um endereço IP virtual (192.168.2.100) para represe
    $lb = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $ResourceId -Properties $LoadBalancerProperties -Force
    ```
 
-8. Adicione nós do cluster para o pool de back-end.<p>Você pode adicionar nós ao pool de quantas forem necessárias para o cluster.
+8. Adicione os nós de cluster ao pool de back-end.<p>Você pode adicionar tantos nós ao pool quanto necessário para o cluster.
 
    ```PowerShell
    # Cluster Node 1
@@ -128,15 +128,15 @@ Neste exemplo você criará um endereço IP virtual (192.168.2.100) para represe
    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
    ```
 
-   Depois que você criou o balanceador de carga e adicionado os adaptadores de rede para o pool de back-end, você está pronto para configurar o cluster.  
+   Depois de criar o balanceador de carga e adicionar as interfaces de rede ao pool de back-end, você estará pronto para configurar o cluster.  
 
-9. (Opcional) Se você estiver usando um Cluster de Failover do Microsoft, continue com o exemplo a seguir. 
+9. Adicional Se você estiver usando um cluster de failover da Microsoft, continue com o próximo exemplo. 
 
 ## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>Exemplo 2: Configurando um cluster de failover da Microsoft
 
-Você pode usar as etapas a seguir para configurar um cluster de failover.
+Você pode usar as etapas a seguir para configurar um cluster de failover do.
 
-1. Instalar e configurar as propriedades de um cluster de failover.
+1. Instale e configure as propriedades de um cluster de failover.
 
    ```PowerShell
    add-windowsfeature failover-clustering -IncludeManagementTools
@@ -163,7 +163,7 @@ Você pode usar as etapas a seguir para configurar um cluster de failover.
    Stop-ClusterResource "Cluster Name" 
    ```
 
-4. Defina o cluster IP, porta de investigação.<p>O endereço IP deve corresponder ao endereço ip de front-end usado no exemplo anterior, e a porta de investigação deve corresponder à porta de investigação no exemplo anterior.
+4. Defina o IP do cluster e a porta de investigação.<p>O endereço IP deve corresponder ao endereço IP de front-end usado no exemplo anterior, e a porta de investigação deve corresponder à porta de investigação no exemplo anterior.
 
    ```PowerShell
    Get-ClusterResource "Cluster IP Address" | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
@@ -182,6 +182,6 @@ Você pode usar as etapas a seguir para configurar um cluster de failover.
    Add-ClusterNode $nodes[1]
    ```
 
-_**O cluster está ativo.** _ O tráfego direcionado para o VIP na porta especificada é direcionado ao nó ativo.
+_**O cluster está ativo.**_ O tráfego que vai para o VIP na porta especificada é direcionado para o nó ativo.
 
 ---

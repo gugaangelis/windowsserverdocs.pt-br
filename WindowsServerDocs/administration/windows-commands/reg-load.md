@@ -1,8 +1,8 @@
 ---
-title: Carga de reg
-description: 'Tópico de comandos do Windows para * * *- '
+title: carga reg
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebc75ad78b7334f4d48a085f6870a443b31fa2a9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db661e311e3fe8c393750716de5dab375e7817f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852187"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384702"
 ---
-# <a name="reg-load"></a>Carga de reg
+# <a name="reg-load"></a>carga reg
 
 
 
-Gravações salva subchaves e entradas em uma subchave diferente no registro. Deve ser usada com arquivos temporários que são usados para solução de problemas ou editar entradas do registro.
+Grava subchaves e entradas salvas em uma subchave diferente no registro. Destinado a uso com arquivos temporários que são usados para solução de problemas ou edição de entradas do registro.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -38,26 +38,26 @@ reg load KeyName FileName
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName>|Especifica o caminho completo da subchave a ser carregado. Para especificar computadores remotos, inclua o nome do computador (no formato \\ \\ComputerName\) como parte do *KeyName*. A omissão \\ \\ComputerName\ faz com que a operação padrão no computador local. O *KeyName* deve incluir uma chave de raiz válido. As chaves de raiz válido para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves válidas são: HKLM e HKU.|
-|\<FileName>|Especifica o nome e caminho do arquivo a ser carregado. Esse arquivo deve ser criado com antecedência, usando o **reg salvar** operação e uma extensão de HIV.|
-|/?|Exibe a Ajuda para **reg carga** no prompt de comando.|
+|\<KeyName >|Especifica o caminho completo da subchave a ser carregada. Para especificar computadores remotos, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|\<Nome de arquivo >|Especifica o nome e o caminho do arquivo a ser carregado. Esse arquivo deve ser criado com antecedência usando a operação **reg Save** e uma extensão. HIV.|
+|/?|Exibe a ajuda para a **carga reg** no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-A tabela a seguir lista os valores retornados para o **reg carga** operação.
+A tabela a seguir lista os valores de retorno para a operação **reg Load** .
 
 |Valor|Descrição|
 |-----|-----------|
 |0|Êxito|
 |1|Falha|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para carregar o arquivo chamado TempHive à chave HKLM\TempHive, digite:
+Para carregar o arquivo chamado TempHive. HIV na chave HKLM\TempHive, digite:
 ```
 REG LOAD HKLM\TempHive TempHive.hiv
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)

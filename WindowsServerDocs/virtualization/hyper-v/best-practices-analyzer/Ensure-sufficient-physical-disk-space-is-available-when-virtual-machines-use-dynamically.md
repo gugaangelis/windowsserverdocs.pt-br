@@ -1,7 +1,7 @@
 ---
-title: Certifique-se de espaço suficiente em disco físico está disponível quando as máquinas virtuais usam discos rígidos virtuais de expansão dinâmica
-description: Versão online do texto para essa regra do analisador de práticas recomendadas.
-ms.prod: windows-server-threshold
+title: Garantir que o espaço em disco físico suficiente esteja disponível quando as máquinas virtuais usam discos rígidos virtuais de expansão dinâmica
+description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 9e3e3e64-4b3a-4b9d-acf1-e4df61a04f1e
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 09e481b99594ac543dadab2b60bf9b3f4c29e54b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c38d7c11a05eef9d29097e625fec2830000cf550
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883287"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393636"
 ---
-# <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically-expanding-virtual-hard-disks"></a>Certifique-se de espaço suficiente em disco físico está disponível quando as máquinas virtuais usam discos rígidos virtuais de expansão dinâmica
+# <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically-expanding-virtual-hard-disks"></a>Garantir que o espaço em disco físico suficiente esteja disponível quando as máquinas virtuais usam discos rígidos virtuais de expansão dinâmica
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre as práticas recomendadas e varreduras, consulte [Run Best Practices Analyzer Scans e Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
-|**Recurso do produto**|Hyper-V|  
-|**Severidade**|Aviso|  
-|**categoria**|Configuração|  
+|**Produto/recurso**|Hyper-V|  
+|**Severity**|Aviso|  
+|**Categorias**|Configuração|  
   
-Nas seções a seguir, itálico indica o texto de interface do usuário que aparece na ferramenta Analisador de práticas recomendadas para esse problema.  
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
 ## <a name="issue"></a>Problema  
 *Uma ou mais máquinas virtuais estão usando discos rígidos virtuais de expansão dinâmica.*  
   
 ## <a name="impact"></a>Impacto  
-*Expandir dinamicamente discos rígidos virtuais exigem espaço disponível no volume do host, de forma que pode ser alocado espaço quando ocorrem gravações em discos rígidos virtuais. Se o espaço disponível está esgotado, qualquer máquina virtual que se baseia no armazenamento físico pode ser afetada. Isso afeta as seguintes máquinas virtuais:*  
+os discos rígidos virtuais de expansão @no__t 0Dynamically exigem o espaço disponível no volume de hospedagem para que o espaço possa ser alocado quando as gravações nos discos rígidos virtuais ocorrerem. Se o espaço disponível for esgotado, qualquer máquina virtual que dependa do armazenamento físico poderá ser afetada. Isso afeta as seguintes máquinas virtuais: *  
   
-\<lista de máquinas virtuais >  
+\<list de máquinas virtuais >  
   
 ## <a name="resolution"></a>Resolução  
-*Monitorar espaço em disco disponível para garantir espaço suficiente está disponível para expansão. Considere desligar a máquina virtual e use o Assistente para edição de disco no Gerenciador do Hyper-V para converter cada disco rígido expansível dinamicamente para esta máquina virtual em um disco de rígido de virtual de tamanho fixo.*  
+*Monitor espaço em disco disponível para garantir que haja espaço suficiente disponível para expansão. É recomendável desligar a máquina virtual e usar o assistente para editar disco no Gerenciador do Hyper-V para converter cada disco rígido virtual de expansão dinâmica dessa máquina virtual em um disco rígido virtual de tamanho fixo.*  
   
 
 

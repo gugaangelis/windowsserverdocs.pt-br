@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e3a746ec003cf312ffe0b9804f84a55c98aa8089
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 5725f4a7761d08a25ee8c67c0568977e3646397e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190995"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407942"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>Preparar computadores cliente no parceiro de conta
 
-A maneira mais fácil para um administrador em uma conta de organização para preparar os computadores cliente para o acesso aos serviços de Federação do Active Directory do parceiro \(do AD FS\) aplicativos federados é usar a diretiva de grupo. A Política de Grupo fornece uma maneira conveniente de você enviar por push configurações e certificados específicos necessários para a federação para todos os computadores cliente que serão usados para acessar os aplicativos federados.  
+A maneira mais fácil de um administrador em uma organização de parceiro de conta preparar computadores cliente para acesso a aplicativos federados Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 é usar Política de Grupo. A Política de Grupo fornece uma maneira conveniente de você enviar por push configurações e certificados específicos necessários para a federação para todos os computadores cliente que serão usados para acessar os aplicativos federados.  
   
-Para que os computadores cliente podem acessar diretamente os aplicativos federados sem prompts de certificado ou prompts de relacionados ao site confiáveis, é recomendável primeiro preparar cada computador cliente antes de implantar o AD FS em larga escala em sua organização. Considere usar a Política de Grupo para automaticamente:  
+Para que os computadores cliente possam acessar diretamente aplicativos federados sem prompts de certificado ou prompts relacionados ao site confiável, recomendamos que você primeiro Prepare cada computador cliente antes de implantar AD FS amplamente em sua organização. Considere usar a Política de Grupo para automaticamente:  
   
--   Configure o Internet Explorer em cada computador cliente para confiar no servidor de federação de conta.  
+-   Configure o Internet Explorer em cada computador cliente para confiar no servidor de Federação da conta.  
   
     Para obter mais informações, consulte [configurar computadores de cliente para confiar no servidor de federação de conta](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
   
--   Instalar o servidor de federação de conta apropriado, o servidor de federação de recurso e o servidor Web Secure Sockets Layer \(SSL\) certificados \(ou o equivalente em certificados vinculados a uma raiz confiável\) em cada computador cliente.  
+-   Instale o servidor de Federação de conta apropriado, o servidor de Federação de recursos e o servidor Web protocolo SSL \(SSL @ no__t-1 certificados \(or certificados equivalentes que se encadeadom a uma raiz confiável @ no__t-3 em cada computador cliente.  
   
-    Para obter mais informações, consulte [distribuir certificados para computadores cliente usando a diretiva de grupo](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md).  
+    Para obter mais informações, consulte [distribuir certificados para computadores cliente usando política de grupo](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md).  
   
 
 ## <a name="see-also"></a>Consulte também

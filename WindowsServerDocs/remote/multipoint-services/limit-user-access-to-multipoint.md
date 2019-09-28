@@ -1,9 +1,9 @@
 ---
-title: Limitar o acesso de usuário para o servidor
-description: Saiba como conceder ou negar acesso aos serviços do MultiPoint para usuários e grupos
+title: Limitar o acesso do usuário ao servidor
+description: Saiba como conceder ou negar acesso a serviços do MultiPoint para usuários e grupos
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,26 +13,26 @@ ms.assetid: 4cabd4f1-a764-4be6-bc6e-0a5f5566390c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 1466e19152847a6c7d88f77162c50ec73a5a7d27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62f2a3f9b94ac3f0474636c34e8ec1f81c568cad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830807"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389062"
 ---
-# <a name="limit-users-access-to-the-multipoint-server"></a>Limitar o acesso dos usuários para o Multipoint server
-Se você ingressar MultiPoint server a um domínio do Active Directory ou usar contas de usuário local, todos os usuários têm acesso ao MultiPoint server por padrão. Antes de permitir que os usuários façam logon em estações em seu ambiente do MultiPoint Services, você deve restringir o acesso ao servidor.  
+# <a name="limit-users-access-to-the-multipoint-server"></a>Limitar o acesso dos usuários ao MultiPoint Server
+Se você ingressar o MultiPoint Server em um Active Directory domínio ou usar contas de usuário local, todos os usuários terão acesso ao MultiPoint Server por padrão. Antes de permitir que os usuários façam logon nas estações em seu ambiente de serviços do MultiPoint, você deve restringir o acesso ao servidor.  
   
-Qualquer usuário no grupo de usuários da área de trabalho remota pode fazer logon MultiPoint server. Por padrão, o usuário grupo Todos é um membro do grupo usuários da área de trabalho remota e, portanto, todos os usuários locais e usuários de domínio podem fazer logon no servidor do MultiPoint. Para restringir o acesso ao MultiPoint Server, remova o todos usuário de grupo do grupo de usuários da área de trabalho remota e, em seguida, adicionar usuários ou grupos específicos ao grupo usuários da área de trabalho remota.  
+Qualquer usuário no grupo Área de Trabalho Remota usuários pode fazer logon no MultiPoint Server. Por padrão, o grupo de usuários todos é membro do grupo Área de Trabalho Remota usuários e, portanto, cada usuário local e usuário de domínio pode fazer logon no MultiPoint Server. Para restringir o acesso ao MultiPoint Server, remova o grupo de usuários Everyone do grupo Área de Trabalho Remota Users e, em seguida, adicione usuários ou grupos específicos ao grupo Área de Trabalho Remota usuários.  
   
-## <a name="add-or-remove-users-or-groups-to-the-remote-desktop-users-group"></a>Adicionar ou remover usuários ou grupos ao grupo usuários da área de trabalho remota  
+## <a name="add-or-remove-users-or-groups-to-the-remote-desktop-users-group"></a>Adicionar ou remover usuários ou grupos no grupo Área de Trabalho Remota usuários  
   
-1.  Dos **inicie** tela, abra **gerenciamento de computador**.  
+1.  Na tela **Iniciar** , abra **Gerenciamento do computador**.  
   
-2.  Na árvore de console, sob **usuários e grupos locais**, clique em **grupos**.  
+2.  Na árvore de console, em **usuários e grupos locais**, clique em **grupos**.  
   
-3.  Clique duas vezes **Remote Desktop Users**e siga as instruções para adicionar ou remover usuários.  
+3.  Clique duas vezes **área de trabalho remota usuários**e siga as instruções para adicionar ou remover usuários.  
   
-    -   Para restringir o acesso geral para o servidor, remova o grupo Todos.  
+    -   Para restringir o acesso geral ao servidor, remova o grupo todos.  
   
-    -   Para dar aos usuários acesso a seu MultiPoint server em estações, adicione cada conta local ou cada conta de usuário ou grupo de domínio ao grupo de usuários da área de trabalho remota.  
+    -   Para dar acesso às estações aos usuários do MultiPoint Server, adicione cada conta local ou cada usuário de domínio ou conta de grupo ao grupo Área de Trabalho Remota usuários.  

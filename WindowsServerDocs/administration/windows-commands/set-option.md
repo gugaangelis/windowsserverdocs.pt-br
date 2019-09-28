@@ -1,8 +1,8 @@
 ---
-title: Opção Set
-description: 'Tópico de comandos do Windows para * * *- '
+title: Opção set
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c4756627d19d296d02fa11ac67ef80080ddf318
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9b9174f219654e99eb9441abe3342c31b5089ef5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441361"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384053"
 ---
-# <a name="set-option"></a>Opção Set
+# <a name="set-option"></a>Opção set
 
 
 
-Define as opções para criação de cópias de sombra. Se usado sem parâmetros, **defina a opção** exibe a Ajuda no prompt de comando.
+Define as opções para a criação da cópia de sombra. Se usado sem parâmetros, a **opção Set** exibirá a ajuda no prompt de comando.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,11 +36,11 @@ set option {[differential | plex] [transportable] [[rollbackrecover] [txfrecover
 
 |     Parâmetro     |                                                                                                  Descrição                                                                                                  |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   [differential   |                                                                                                     plex]                                                                                                     |
-|  [transportáveis]  |                       Especifica que a cópia de sombra não deve ser importada. O arquivo. cab de metadados mais tarde pode ser usado para importar a cópia de sombra para o mesmo ou em outro computador.                       |
-| [rollbackrecover] |                     Sinaliza usassem *AutoRecuperação* durante a **PostSnapshot** eventos. Isso é útil se a cópia de sombra será usada para reversão (por exemplo, com a mineração de dados).                      |
-|   [txfrecover]    |                                                               Solicitações de VSS para fazer a cópia de sombra transacionalmente consistente durante a criação.                                                                |
-|  [noautorecover]  | Gravadores é interrompida e o sistema de arquivos de realizar qualquer alteração de recuperação para a cópia de sombra para um estado transacionalmente consistente. **Noautorecover** não pode ser usado com **txfrecover** ou **rollbackrecover**. |
+|   [diferencial   |                                                                                                     plexos                                                                                                     |
+|  transportáveis  |                       Especifica que a cópia de sombra ainda não deve ser importada. O arquivo Metadata. cab pode ser usado posteriormente para importar a cópia de sombra para o mesmo computador ou outro.                       |
+| [rollbackrecover] |                     Sinaliza os gravadores para usar a *recuperação automática* durante o evento de **pós-instantâneo** . Isso será útil se a cópia de sombra for usada para reversão (por exemplo, com Data Mining).                      |
+|   [txfrecover]    |                                                               Solicita que o VSS torne a cópia de sombra transacionalmente consistente durante a criação.                                                                |
+|  [noautorecover]  | Interrompe gravadores e o sistema de arquivos de executar qualquer alteração de recuperação na cópia de sombra para um estado transacionalmente consistente. **Noautorecover** não pode ser usado com **txfrecover** ou **rollbackrecover**. |
 
 #### <a name="additional-references"></a>Referências adicionais
 

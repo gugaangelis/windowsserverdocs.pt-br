@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 441dad92611e1a4a1135bd15bbcdfd05f38c1be3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: afc05f395753e5c5614e92d109d71e05980d5d92
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445823"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407172"
 ---
 # <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
@@ -24,11 +24,11 @@ Este tópico explica como configurar a assistência para acesso negado e verific
   
 **Neste documento**  
   
--   [Etapa 1: Configurar a assistência para acesso negado](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
+-   [Etapa 1: Configurar a assistência de acesso negado @ no__t-0  
   
--   [Etapa 2: Definir as configurações de notificação de email](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
+-   [Etapa 2: Definir as configurações de notificação de email @ no__t-0  
   
--   [Etapa 3: Verificar se a assistência para acesso negado está configurada corretamente](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
+-   [Etapa 3: Verifique se a assistência de acesso negado está configurada corretamente @ no__t-0  
   
 > [!NOTE]  
 > Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -70,7 +70,7 @@ Você pode configurar a assistência para acesso negado para o domínio usando a
   
     3.  Deixe as configurações padrão restantes.  
   
-![guias de soluções](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -118,7 +118,7 @@ Você também pode configurar a assistência para acesso negado individualmente 
   
 8.  Clique em **OK**.  
   
-![guias de soluções](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.
   
@@ -142,7 +142,7 @@ Depois de configurar a assistência para acesso negado, você deve habilitá-la 
   
 5.  Clique em **Habilitado** e em **OK**.  
   
-![guias de soluções](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação. 
   
@@ -181,7 +181,7 @@ Você também pode especificar uma mensagem de acesso negado separada para cada 
   
 7.  Clique em **OK** e em **Fechar**.  
   
-![guias de soluções](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação. 
   
@@ -204,13 +204,13 @@ Você deve definir as configurações de notificação por email em cada servido
   
     -   Na caixa **Nome do servidor SMTP ou endereço IP** , digite o nome do endereço IP do servidor SMTP em sua organização.  
   
-    -   No **administradores destinatários padrão** e **padrão 'From' endereço de email** , digite o endereço de email do administrador do servidor de arquivos.  
+    -   Nas caixas **destinatários do administrador padrão** e **endereço de email padrão ' de '** , digite o endereço de email do administrador do servidor de arquivos.  
   
 5.  Clique em **Enviar Email de Teste** para assegurar que as notificações de email estejam configuradas corretamente.  
   
 6.  Clique em **OK**.  
   
-![guias de soluções](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.
   
@@ -219,16 +219,16 @@ set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com"
 ```  
   
 ## <a name="BKMK_3"></a>Etapa 3: Verificar se a assistência para acesso negado está configurada corretamente  
-Você pode verificar se a assistência para acesso negado está configurada corretamente por um usuário que está executando o Windows 8 tentam acessar um compartilhamento ou um arquivo em que compartilham o que não tiverem acesso ao. Quando a mensagem de acesso negado aparecer, o usuário deverá ver um botão **Solicitar Assistência** . Depois de clicar no botão Solicitar Assistência, o usuário pode especificar um motivo para o acesso e, em seguida, enviar um email para o proprietário da pasta ou o administrador do servidor de arquivos. O proprietário da pasta ou o administrador do servidor de arquivos pode verificar se o email chegou e se contém os elementos adequados.  
+Você pode verificar se a assistência com acesso negado está configurada corretamente, tendo um usuário que está executando o Windows 8, tentar acessar um compartilhamento ou um arquivo nesse compartilhamento ao qual eles não têm acesso. Quando a mensagem de acesso negado aparecer, o usuário deverá ver um botão **Solicitar Assistência** . Depois de clicar no botão Solicitar Assistência, o usuário pode especificar um motivo para o acesso e, em seguida, enviar um email para o proprietário da pasta ou o administrador do servidor de arquivos. O proprietário da pasta ou o administrador do servidor de arquivos pode verificar se o email chegou e se contém os elementos adequados.  
   
 > [!IMPORTANT]  
-> Se você quiser verificar a assistência para acesso negado por um usuário que está executando o Windows Server 2012, você deve instalar a experiência Desktop antes de se conectar ao compartilhamento de arquivos.  
+> Se você quiser verificar a assistência com acesso negado tendo um usuário que esteja executando o Windows Server 2012, você deve instalar a experiência desktop antes de se conectar ao compartilhamento de arquivos.  
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
 -   [Cenário: assistência para acesso negado](Scenario--Access-Denied-Assistance.md)  
   
--   [Planejar a assistência para acesso negado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
+-   [Planejar a assistência de acesso negado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
 -   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   

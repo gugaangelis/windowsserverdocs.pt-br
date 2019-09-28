@@ -2,7 +2,7 @@
 title: Criar uma conta de usuário do MultiPoint Dashboard
 ms.custom: na
 description: Criar uma conta para usar com o painel
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9f16da5882b09d0f1b49135b2eb87f1be57fe845
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b4e5fb85ae1dcaf7bd698f052e990e6ac1ac8dbc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814487"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389774"
 ---
 # <a name="create-a-multipoint-dashboard-user-account"></a>Criar uma conta de usuário do MultiPoint Dashboard
-Crie contas de usuário do MultiPoint Dashboard para os usuários que acessarão regularmente estações, mas que não gerenciarão seu sistema MultiPoint Services. Os usuários com contas de usuário do MultiPoint Dashboard podem executar a maioria dos aplicativos e salvar os arquivos, mas não é possível executar o Gerenciador do MultiPoint. Para ver quem tem acesso de usuário do MultiPoint Dashboard, no Gerenciador do MultiPoint, clique o **usuários** guia. As contas de usuário do MultiPoint Dashboard são exibidas na coluna Tipo de conta como **Usuário do MultiPoint Dashboard**.  
+Crie contas de usuário do painel do MultiPoint para os usuários que acessarão as estações regularmente, mas que não gerenciarão seu sistema de serviços do MultiPoint. Os usuários com contas de usuário do painel do MultiPoint podem executar a maioria dos aplicativos e salvar arquivos, mas não podem executar o Gerenciador do MultiPoint. Para ver quem tem o acesso de usuário do painel do MultiPoint, no MultiPoint Manager, clique na guia **usuários** . As contas de usuário do MultiPoint Dashboard são exibidas na coluna Tipo de conta como **Usuário do MultiPoint Dashboard**.  
   
 Se seus usuários do MultiPoint Services armazenarem documentos particulares no Windows, cada usuário deverá fazer logon no sistema MultiPoint Services usando um nome de usuário exclusivo e uma senha.  
   
@@ -30,7 +30,7 @@ Se seus usuários do MultiPoint Services armazenarem documentos particulares no 
   
 #### <a name="to-create-a-multipoint-dashboard-user-account"></a>Para criar uma conta de usuário do MultiPoint Dashboard  
   
-1.  No Gerenciador do MultiPoint, clique o **usuários** guia.  
+1.  No Gerenciador do MultiPoint, clique na guia **usuários** .  
   
 2.  Em **Tarefas de usuários**, clique em **Adicionar conta de usuário**. O assistente **Adicionar conta de usuário** é aberto.  
   
@@ -44,7 +44,7 @@ Se seus usuários do MultiPoint Services armazenarem documentos particulares no 
   
 7.  No nível da página de acesso, selecione **Usuário do MultiPoint Dashboard** e, em seguida, clique em **Avançar**.  
   
-8.  Clique em **concluir**.  
+8.  Clique em **Finalizar**.  
   
 ## <a name="see-also"></a>Consulte também  
 [Considerações sobre conta de usuário](User-Account-Considerations.md)

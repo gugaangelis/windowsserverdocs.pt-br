@@ -1,25 +1,25 @@
 ---
-title: Sombras de exclusão vssadmin
-description: Uma descrição do comando vssadmin delete sombras.
-ms.prod: windows-server-threshold
+title: Vssadmin excluir sombras
+description: Uma descrição do comando VSSadmin Delete Shadows.
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 83074017e4ae412cf0aec654f6ab5901ad8039e2
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 9779da98ecb43245fe206390d9b70471f15d706e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63706623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362607"
 ---
-# <a name="vssadmin-delete-shadows"></a>Sombras de exclusão vssadmin
+# <a name="vssadmin-delete-shadows"></a>Vssadmin excluir sombras
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Exclui as cópias de sombra do volume especificado.
+Exclui as cópias de sombra de um volume especificado.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -31,15 +31,15 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 |Parâmetro|Descrição|
 |---|---|
-|/for=\<ForVolumeSpec>|Especifica a cópia de sombra do volume que será excluída.|
-|/oldest|Exclui apenas a cópia de sombra mais antiga.|
-|/all|Exclui todas as cópias de sombra do volume especificado.|
-|/shadow=\<ShadowID>|Exclui a cópia de sombra especificada pelo ShadowID. Para obter a ID da cópia de sombra, use o **vssadmin lista sombras** comando. Quando você inserir uma ID de cópia de sombra, use o seguinte formato, onde cada *X* representa um caractere hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/for = \<ForVolumeSpec >|Especifica qual cópia de sombra do volume será excluída.|
+|/oldest|Exclui somente a cópia de sombra mais antiga.|
+|/All|Exclui todas as cópias de sombra do volume especificado.|
+|/Shadow = \<ShadowID >|Exclui a cópia de sombra especificada por Shadowid. Para obter a ID da cópia de sombra, use o comando **VSSadmin list Shadows** . Ao inserir uma ID de cópia de sombra, use o seguinte formato, em que cada *X* representa um caractere hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 |/quiet|Especifica que o comando não exibirá mensagens durante a execução.|
 
 ## <a name="remarks"></a>Comentários
 
-Você só pode excluir as cópias de sombra com o tipo acessíveis ao cliente.
+Você só pode excluir cópias de sombra com o tipo acessível pelo cliente.
 
 ## <a name="examples"></a>Exemplos
 
@@ -53,4 +53,4 @@ vssadmin delete shadows /for=c: /oldest
 
 * [Chave de sintaxe de linha de comando](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [Vssadmin](vssadmin.md)
-* [Vssadmin lista sombras](vssadmin-list-shadows.md)
+* [Vssadmin da lista de sombras](vssadmin-list-shadows.md)

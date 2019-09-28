@@ -1,38 +1,38 @@
 ---
 title: Desenvolver uma extensão de ferramenta
-description: Desenvolver uma extensão da ferramenta Windows Admin Center SDK (projeto Paulo)
+description: Desenvolver uma extensão de ferramenta SDK do Windows Admin Center (projeto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 1a068c0d33887e8e9287ff15c1aa14f3dc84915a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: c5c87be882a32958946198eb6ff1b9d7000577e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445937"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385293"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>Instalar a carga de extensão em um nó gerenciado
 
->Aplica-se a: Windows Admin Center, Windows Admin Center Preview
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 ## <a name="setup"></a>Configuração
 > [!NOTE]
-> Para seguir este guia, você precisa criar 1.2.1904.02001 ou superior. Para verificar seu build número abrir Windows Admin Center e clique no ponto de interrogação no canto superior direito.
+> Para seguir este guia, você precisará de Build 1.2.1904.02001 ou superior. Para verificar seu número de Build, abra o centro de administração do Windows e clique no ponto de interrogação no canto superior direito.
 
-Se você ainda não fez isso, crie uma [extensão de ferramentas](../develop-tool.md) para Windows Admin Center. Depois de concluir esta marca Observação dos valores usados durante a criação de uma extensão:
+Se você ainda não fez isso, crie uma [extensão de ferramenta](../develop-tool.md) para o centro de administração do Windows. Depois de concluir isso, anote os valores usados ao criar uma extensão:
 
 | Valor | Explicação | Exemplo |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | Nome da sua empresa (com espaços) | ```Contoso``` |
+| ```{!Company Name}``` | O nome da sua empresa (com espaços) | ```Contoso``` |
 | ```{!Tool Name}``` | O nome da ferramenta (com espaços) | ```InstallOnNode``` |
 
-Dentro de sua pasta de extensão da ferramenta criar uma ```Node``` pasta (```{!Tool Name}\Node```). Qualquer coisa colocados nessa pasta será copiada para o nó gerenciado ao usar essa API. Adicione os arquivos necessários para seu caso de uso. 
+Dentro de sua pasta de extensão de ferramenta, crie uma pasta ```Node``` (```{!Tool Name}\Node```). Qualquer coisa colocada nesta pasta será copiada para o nó gerenciado ao usar essa API. Adicione todos os arquivos necessários para seu caso de uso. 
 
-Crie também um ```{!Tool Name}\Node\installNode.ps1``` script. Esse script será executado no nó gerenciado depois que todos os arquivos são copiados do ```{!Tool Name}\Node``` pasta para o nó gerenciado. Adicione nenhuma lógica adicional para seu caso de uso. Um exemplo ```{!Tool Name}\Node\installNode.ps1``` arquivo:
+Crie também um script ```{!Tool Name}\Node\installNode.ps1```. Esse script será executado no nó gerenciado depois que todos os arquivos forem copiados da pasta ```{!Tool Name}\Node``` para o nó gerenciado. Adicione qualquer lógica adicional para seu caso de uso. Um arquivo de exemplo ```{!Tool Name}\Node\installNode.ps1```:
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -40,12 +40,12 @@ echo 'Success'
 ```
 
 > [!NOTE]
-> ```{!Tool Name}\Node\installNode.ps1``` tem um nome específico que a API irá procurar. Alterar o nome deste arquivo fará com que um erro.
+> ```{!Tool Name}\Node\installNode.ps1``` tem um nome específico que a API procurará. A alteração do nome desse arquivo causará um erro.
 
 
 ## <a name="integration-with-ui"></a>Integração com a interface do usuário
 
-Atualização ```\src\app\default.component.ts``` ao seguinte:
+Atualize ```\src\app\default.component.ts``` para o seguinte:
 
 ``` ts
 import { Component } from '@angular/core';
@@ -88,7 +88,7 @@ export class DefaultComponent {
 
 }
 ```
-Atualize os espaços reservados para valores que foram usados ao criar a extensão:
+Atualizar espaços reservados para valores que foram usados ao criar a extensão:
 ``` ts
 this.post('contoso.install-on-node', '1.0.0',
       this.appContextService.activeConnection.nodeName).subscribe(
@@ -111,7 +111,7 @@ Também atualizar ```\src\app\default.component.html``` para:
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
 <p *ngIf="response">{{response}}</p>
 ```
-Finalmente, ```\src\app\default.module.ts```:
+E, por último ```\src\app\default.module.ts```:
 ``` ts
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -132,13 +132,13 @@ export class DefaultModule { }
 
 ```
 
-## <a name="creating-and-installing-a-nuget-package"></a>Criando e instalando um pacote do NuGet
+## <a name="creating-and-installing-a-nuget-package"></a>Criando e instalando um pacote NuGet
 
-A última etapa é criar um pacote do NuGet com os arquivos que adicionamos e, em seguida, instalar esse pacote em Windows Admin Center.
+A última etapa é criar um pacote NuGet com os arquivos que adicionamos e, em seguida, instalando esse pacote no centro de administração do Windows.
 
-Siga as [extensões publicação](../publish-extensions.md) guia se você não tiver criado um pacote de extensão antes. 
+Siga o guia de [extensões de publicação](../publish-extensions.md) se você não tiver criado um pacote de extensão antes. 
 > [!IMPORTANT]
-> Em seu arquivo. NuSpec para essa extensão, é importante que o ```<id>``` valor corresponde ao nome no seu projeto ```manifest.json``` e o ```<version>``` coincide com o que foi adicionado ao ```\src\app\default.component.ts```. Também adicionar uma entrada em ```<files>```: 
+> No seu arquivo. nuspec para essa extensão, é importante que o valor ```<id>``` corresponda ao nome no ```manifest.json``` do seu projeto e o ```<version>``` corresponde ao que foi adicionado ao ```\src\app\default.component.ts```. Adicione também uma entrada em ```<files>```: 
 > 
 > ```<file src="Node\**\*.*" target="Node" />```.
 
@@ -165,4 +165,4 @@ Siga as [extensões publicação](../publish-extensions.md) guia se você não t
 </package>
 ```
 
-Depois que esse pacote é criado, adicione um caminho para o feed. No Windows Admin Center, vá para Configurações > extensões > Feeds e adicione o caminho para onde o pacote existe. Quando terminar a sua extensão que está sendo instalado, você deve ser capaz de clicar o ```install``` botão e a API serão chamado.  
+Depois que esse pacote for criado, adicione um caminho para esse feed. No centro de administração do Windows, acesse Configurações > extensões > feeds e adicione o caminho para onde o pacote existe. Quando a extensão for concluída, você poderá clicar no botão ```install``` e a API será chamada.  

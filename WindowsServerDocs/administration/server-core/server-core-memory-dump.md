@@ -1,18 +1,18 @@
 ---
 title: Configurar arquivos de despejo de memória para a instalação do Server Core
 description: Saiba como configurar arquivos de despejo de memória para uma instalação do Server Core do Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 0cea3118abce156acdd9ad933518015a25f8afbf
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 4f1baa52fc9f0ebfe8afae35d86b7a7238d56223
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476557"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383393"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar arquivos de despejo de memória para a instalação do Server Core
 
@@ -39,10 +39,10 @@ Você não precisa ter o arquivo de paginação na partição em que o sistema o
 3. Clique em **editar > novo > valor da cadeia de caracteres**.
 4. Nomeie o novo valor **DedicatedDumpFile**e pressione Enter.
 5. Clique com o botão direito do mouse em **DedicatedDumpFile**e clique em **Modificar**.
-6. Em **valor** do tipo  **\<de\>dados\\unidade:\<Dedicateddumpfile\>. sys**e clique em **OK**.
+6. Em tipo de **dados de valor** **\<Drive @ no__t-3: @no__t -4\<Dedicateddumpfile.sys @ no__t-6**e clique em **OK**.
 
    >[!NOTE] 
-   > Substitua \<a\> unidade por uma unidade que tenha espaço em disco suficiente para o arquivo de paginação e\> substitua \<Dedicateddumpfile. dmp pelo caminho completo do arquivo dedicado.
+   > Substitua \<Drive @ no__t-1 por uma unidade que tenha espaço em disco suficiente para o arquivo de paginação e substitua @no__t -2Dedicateddumpfile. dmp @ no__t-3 pelo caminho completo do arquivo dedicado.
  
 7. Clique em **editar > novo > valor DWORD**.
 8. Digite **DumpFileSize**e pressione Enter.
@@ -65,7 +65,7 @@ O destino padrão para **DebugFilePath** é%SystemRoot%\Memory.dmp. Para alterar
 wmic RECOVEROS set DebugFilePath = <FilePath>
 ```
 
-Defina \<FilePath\> como o caminho de destino. Por exemplo, o comando a seguir define o caminho de destino de despejo de memória para C:\WINDOWS\MEMORY. DMP 
+Defina \<FilePath @ no__t-1 para o caminho de destino. Por exemplo, o comando a seguir define o caminho de destino de despejo de memória para C:\WINDOWS\MEMORY. DMP 
 
 ```
 wmic RECOVEROS set DebugFilePath = C:\WINDOWS\MEMORY.DMP
@@ -85,7 +85,7 @@ Para alterar o tipo de despejo de memória atual, execute o seguinte comando:
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<O\> valor pode ser 0, 1, 2 ou 3, conforme definido abaixo.
+\<Value @ no__t-1 pode ser 0, 1, 2 ou 3, conforme definido abaixo.
 
 - 0: Desabilite a remoção de um despejo de memória.
 - 1: Despejo de memória completo. Registra todo o conteúdo da memória do sistema quando o computador é interrompido inesperadamente. Um despejo de memória cheio pode conter dados de processos que estavam em execução quando o despejo de memória foi coletado.
@@ -100,9 +100,9 @@ Por padrão, o servidor é reiniciado automaticamente após gerar um despejo de 
 wmic RECOVEROS get AutoReboot
 ```
 
-Se o valor de  reinicialização automática for true, o servidor será reiniciado automaticamente após gerar um despejo de memória. Nenhuma configuração é necessária e você pode prosseguir para a próxima etapa.
+Se o valor de **reinicialização** automática for true, o servidor será reiniciado automaticamente após gerar um despejo de memória. Nenhuma configuração é necessária e você pode prosseguir para a próxima etapa.
 
-Se o valor de  reinicialização automática for false, o servidor não será reiniciado automaticamente. Execute o seguinte comando para alterar o valor:
+Se o valor de **reinicialização** automática for false, o servidor não será reiniciado automaticamente. Execute o seguinte comando para alterar o valor:
 
 ```
 wmic RECOVEROS set AutoReboot = true

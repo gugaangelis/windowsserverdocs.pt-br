@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0acfa6eec1d83c246c43ad32f7548ea771eb3c11
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 994eadfa205b62c5a512ab130c71fa6c22d1cff6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445764"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357538"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
@@ -26,13 +26,13 @@ Você pode definir períodos de retenção para pastas e colocar arquivos em ret
   
 -   [Pré-requisitos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [Etapa 1: Criar definições de propriedade do recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [Etapa 1: Criar definições de propriedade de recurso @ no__t-0  
   
--   [Etapa 2: Configurar notificações](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
+-   [Etapa 2: Configurar notificações @ no__t-0  
   
--   [Etapa 3: Criar uma tarefa de gerenciamento de arquivos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
+-   [Etapa 3: Criar uma tarefa de gerenciamento de arquivos @ no__t-0  
   
--   [Etapa 4: Classificar um arquivo manualmente](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
+-   [Etapa 4: Classificar um arquivo manualmente @ no__t-0  
   
 > [!NOTE]  
 > Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -57,7 +57,7 @@ Nessa etapa, habilitamos as propriedades do recurso Período de Retenção e Des
   
 5.  Clique com o botão direito do mouse em **Descoberta**e em **Habilitar**.  
   
-![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -87,11 +87,11 @@ Nessa etapa, usamos o console do Gerenciador de Recursos de Servidor de Arquivos
   
     -   Na caixa **Administradores destinatários padrão**, digite o endereço de email do administrador que deve receber a notificação.  
   
-    -   No **padrão "De" endereço de email** , digite o endereço de email que deve ser usado para enviar as notificações.  
+    -   Na caixa de **endereço de email padrão "de"** , digite o endereço de email que deve ser usado para enviar as notificações.  
   
 6.  Clique em **OK**.  
   
-![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -142,7 +142,7 @@ Nessa etapa, usamos o console do Gerenciador de Recursos de Servidor de Arquivos
   
 11. Clique em **OK**.  
   
-![guias de soluções](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![solution guia](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -187,7 +187,7 @@ Nessa etapa, classificamos manualmente um arquivo para ficar em retenção legal
   
 -   [Cenário: implementar a retenção de informações em servidores de arquivos](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
--   [Plano para retenção de informações em servidores de arquivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
+-   [Planejar a retenção de informações em servidores de arquivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
 -   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   

@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7d78258d8f1db9889b6d2db8c497780940ed35a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890647"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357571"
 ---
 # <a name="deploy-claims-across-forests"></a>Implantar declarações em florestas
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-No Windows Server 2012, um tipo de declaração é uma afirmação sobre o objeto com o qual ele está associado. Tipos de declaração são definidos por floresta no Active Directory. Há muitos cenários em que uma entidade de segurança pode precisar atravessar um limite de confiança para acessar recursos em uma floresta confiável. A transformação de declarações entre florestas no Windows Server 2012 permite que você transforme as declarações de entrada e saída que atravessam florestas para que as declarações sejam reconhecidas e aceitas em florestas confiantes e confiáveis. Estes são alguns dos cenários reais para a transformação de declarações:  
+No Windows Server 2012, um tipo de declaração é uma asserção sobre o objeto ao qual ele está associado. Tipos de declaração são definidos por floresta no Active Directory. Há muitos cenários em que uma entidade de segurança pode precisar atravessar um limite de confiança para acessar recursos em uma floresta confiável. A transformação de declarações entre florestas no Windows Server 2012 permite que você transforme as declarações de saída e de entrada que atravessam as florestas para que as declarações sejam reconhecidas e aceitas nas florestas confiante e confiável. Estes são alguns dos cenários reais para a transformação de declarações:  
   
 -   Florestas confiantes podem usar transformação de declaração como uma proteção contra elevação de privilégio, filtrando as declarações de entrada com valores específicos.  
   
@@ -31,7 +31,7 @@ No Windows Server 2012, um tipo de declaração é uma afirmação sobre o objet
 -   Você também pode usar transformação de declaração para mapear diferentes tipos de declaração entre as florestas confiantes e confiáveis. Isso pode ser usado para generalizar o tipo de declaração, o valor da declaração, ou ambos. Sem isso, você precisará padronizar os dados entre as florestas antes de usar as declarações. Generalizar declarações entre as florestas confiantes e confiáveis reduz os custos de TI.  
   
 ## <a name="claim-transformation-rules"></a>Regras de transformação de declaração  
-A sintaxe de linguagem da regra de transformação divide uma única regra em duas partes principais: uma série de instruções de condição e a declaração do problema. Cada instrução de condição tem dois subcomponentes: o identificador de declaração e a condição. A declaração do problema contém palavras-chave, delimitadores e uma expressão de problema. A declaração da condição começa opcionalmente com uma variável de identificador de declaração, que representa a declaração de entrada correspondente. A condição verifica a expressão. Se a declaração de entrada não corresponder à condição, o mecanismo de transformação ignorará a declaração do problema e avaliará a próxima declaração de entrada em relação à regra de transformação. Se todas as condições corresponderem à declaração de entrada, ele processará a declaração do problema.  
+A sintaxe de linguagem da regra de transformação divide uma única regra em duas partes principais: uma série de instruções de condição e a declaração do problema. Cada instrução de condição tem dois subcomponentes: o identificador de declaração e a condição. A instrução Issue contém palavras-chave, delimitadores e uma expressão de problema. A declaração da condição começa opcionalmente com uma variável de identificador de declaração, que representa a declaração de entrada correspondente. A condição verifica a expressão. Se a declaração de entrada não corresponder à condição, o mecanismo de transformação ignorará a declaração do problema e avaliará a próxima declaração de entrada em relação à regra de transformação. Se todas as condições corresponderem à declaração de entrada, ele processará a declaração do problema.  
   
 Para obter informações detalhadas sobre linguagem de regras de declaração, consulte [Claims Transformation Rules Language](Claims-Transformation-Rules-Language.md).  
   
@@ -45,7 +45,7 @@ Por padrão, uma floresta confiável permite a passagem de todas as declaraçõe
 ## <a name="in-this-scenario"></a>Neste cenário  
 A orientação a seguir está disponível para este cenário:  
   
--   [Implantar declarações em florestas &#40;etapas de demonstração&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
+-   [Etapas de demonstração de &#40;implantar declarações entre florestas&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
   
 -   [Linguagem de regras de transformação de declarações](Claims-Transformation-Rules-Language.md)  
   

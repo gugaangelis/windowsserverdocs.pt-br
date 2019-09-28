@@ -6,17 +6,17 @@ manager: mtillman
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: it-pro
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 ms.date: 05/01/2018
-ms.openlocfilehash: cd145402ed70aa52da7188dee9dd64ce17fea155
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d393ad4af81ee1c24fa5f28b8a3b05217e7b34dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871880"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396295"
 ---
 # <a name="network-policy-server-user-data-collection"></a>Coleta de dados de usuário do servidor de políticas de rede
 
@@ -41,7 +41,7 @@ Este documento explica como localizar informações de usuário coletadas pelo N
 
 Se os dados de contabilidade estiverem habilitados e configurados, os registros das tentativas de autenticação do NPS de um usuário poderão ser obtidos em SQL Server ou nos arquivos de log, dependendo da configuração. 
 
-Se os dados de contabilidade estiverem configurados para SQL Server, consulte para todos `'<username>'`os registros em que user_name =.
+Se os dados de contabilidade estiverem configurados para SQL Server, consulte para todos os registros em que User_Name = `'<username>'`.
 
 Se os dados de contabilidade estiverem configurados para um arquivo de log, pesquise o `<username>` arquivo de log para localizar todas as entradas de log.
 

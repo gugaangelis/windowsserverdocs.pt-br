@@ -2,19 +2,19 @@
 title: Kerberos com o nome da entidade de serviço (SPN)
 description: O controlador de rede dá suporte a vários métodos de autenticação para comunicação com clientes de gerenciamento. Você pode usar a autenticação baseada em Kerberos, a autenticação baseada em certificado X509. Você também tem a opção de não usar autenticação para implantações de teste.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 8c8c5367eeda576f87ac5de20b7885a1a29aeb4d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 78d5d2144e0def8e69a2a4ae5fdc2d7718936710
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355772"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos com o nome da entidade de serviço (SPN)
 

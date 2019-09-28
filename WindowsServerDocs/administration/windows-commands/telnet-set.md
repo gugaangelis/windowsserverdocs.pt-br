@@ -1,8 +1,8 @@
 ---
 title: conjunto de Telnet
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b68ce0ee87d80b25cf13db5bebc6c407a9fe091f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e39e2812edc9cd5f169a046def26beebda1d007e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441024"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383625"
 ---
-# <a name="telnet-set"></a>telnet: set
+# <a name="telnet-set"></a>Telnet: definir
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Define as opções.   
+Define opções.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] [logging] [mode {console | stream}] [ntlm] [term {ansi | vt100 | vt52 | vtnt}] [?]  
@@ -33,23 +33,23 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 
 |                    Parâmetro                     |                                                                                                                                              Descrição                                                                                                                                              |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                     bsasdel                      |                                                                                                                                 Envia **Backspace** como um **excluir**.                                                                                                                                  |
-|                       CRLF                       |                                                                                                        Envia a CR e LF (0x0D, 0A x 0) quando o **Enter** tecla é pressionada. Conhecido como o novo modo de linha.                                                                                                        |
-|                     delasbs                      |                                                                                                                                 Envia **exclua** como um **Backspace**.                                                                                                                                  |
-|                escape <Character>                | Define o caractere de escape usado para inserir o prompt de cliente telnet. O caractere de escape pode ser um único caractere, ou ele pode ser uma combinação de **CTRL** chave além de um caractere. Para definir uma combinação de teclas de controle, mantenha pressionada a **CTRL** pressionada enquanto você digita o caractere que você deseja atribuir. |
-|                    eco local                     |                                                                                                                                         Ativa o eco local.                                                                                                                                          |
-|                logfile <FileName>                |                                                                                               Registra a sessão de telnet atual para o arquivo local. O log começa automaticamente quando você define esta opção.                                                                                               |
-|                     logging                      |                                                                                                                  Ativa o registro em log. Se nenhum arquivo de log for definido, uma mensagem de erro é exibida.                                                                                                                   |
-|           modo de {console &#124; tela}           |                                                                                                                                       Define o modo de operação.                                                                                                                                        |
-|                       ntlm                       |                                                                                                                                     Ativa a autenticação NTLM.                                                                                                                                     |
-| term {ansi &#124; vt100 &#124; vt52 &#124; vtnt} |                                                                                                                                        Define o tipo de terminal.                                                                                                                                        |
-|                        ?                         |                                                                                                                                    Exibe a Ajuda para este comando.                                                                                                                                    |
+|                     bsasdel                      |                                                                                                                                 Envia **Backspace** como uma **exclusão**.                                                                                                                                  |
+|                       CRLF                       |                                                                                                        Envia CR & LF (0x0D, 0x 0A) quando a tecla **Enter** é pressionada. Conhecido como modo de nova linha.                                                                                                        |
+|                     delasbs                      |                                                                                                                                 Envia **delete** como um **Backspace**.                                                                                                                                  |
+|                @no__t de escape-0                | Define o caractere de escape usado para entrar no prompt do cliente Telnet. O caractere de escape pode ser um único caractere ou pode ser uma combinação da tecla **Ctrl** mais um caractere. Para definir uma combinação de chave de controle, mantenha pressionada a tecla **Ctrl** enquanto digita o caractere que você deseja atribuir. |
+|                    localecho                     |                                                                                                                                         Ativa o eco local.                                                                                                                                          |
+|                arquivo de log <FileName>                |                                                                                               Registra a sessão Telnet atual no arquivo local. O registro em log inicia automaticamente quando você define essa opção.                                                                                               |
+|                     logging                      |                                                                                                                  Ativa o registro em log. Se nenhum arquivo de log estiver definido, uma mensagem de erro será exibida.                                                                                                                   |
+|           Mode {tela &#124; do console}           |                                                                                                                                       Define o modo de operação.                                                                                                                                        |
+|                       NTLM                       |                                                                                                                                     Ativa a autenticação NTLM.                                                                                                                                     |
+| termo {ANSI &#124; vt100 &#124; vt52 &#124; VTNT} |                                                                                                                                        Define o tipo de terminal.                                                                                                                                        |
+|                        ?                         |                                                                                                                                    Exibe a ajuda para este comando.                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentários  
-1. Você pode usar o **unset** comando para desativar uma opção definida anteriormente.  
-2. Em versões diferentes do inglês do telnet, o **conjunto de código** <option> está disponível. **Conjunto de código** <option> define o código atual definido como uma opção, que pode ser qualquer um dos seguintes: **shift JIS**, **EUC japonês**, **JIS Kanji**, **JIS Kanji (78)** , **DEC Kanji**, **NEC Kanji**. Você deve definir o mesmo código definido no computador remoto.  
-   ## <a name="BKMK_Examples"></a>Exemplos  
-   Definir o arquivo de log e iniciar o registro em log para o arquivo local tnlog.txt  
+1. Você pode usar o comando de **desdefinição** para desativar uma opção que foi definida anteriormente.  
+2. Em versões diferentes do inglês do telnet, o **codeset** <option> está disponível. O conjunto de **código** <option> define o código atual definido como uma opção, que pode ser qualquer um dos seguintes: **Shift JIS**, **EUC japonês**, **JIS kanji**, **JIS kanji (78)** , **Dec kanji**, **NEC kanji**. Você deve definir o mesmo conjunto de código no computador remoto.  
+   ## <a name="BKMK_Examples"></a>Disso  
+   Defina o arquivo de log e comece a fazer logon no arquivo local tnlog. txt  
    ```  
    set logfile tnlog.txt  
    ```  

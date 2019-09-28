@@ -7,30 +7,30 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 15a6c095648795badfae6f68f1ba2f9270219db8
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 0cc7a9202813cd3f8d45a72305d13ad197f5b04d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191456"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359156"
 ---
 # <a name="determine-your-federated-application-strategy-in-the-resource-partner"></a>Determinar sua estratégia de aplicativo federado no parceiro de recurso
 
-Uma parte importante da criação de um novo serviços de Federação do Active Directory \(do AD FS\) infra-estrutura na organização do parceiro de recurso é determinar o conjunto completo de aplicativos e serviços que serão usados para participar de Federação e quais parceiros de conta serão os destinatários desses recursos. Antes de criar uma estratégia de serviços e aplicativo federado, considere as seguintes perguntas:  
+Uma parte importante da criação de uma nova infraestrutura de Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 na organização do parceiro de recursos é determinar seu conjunto completo de aplicativos e serviços que serão usados para participar da Federação e quais parceiros de conta serão os destinatários desses recursos. Antes de criar uma estratégia de serviços e aplicativo federado, considere as seguintes perguntas:  
   
--   Será habilitará e implantará um aplicativo ASP.NET ou um Windows Communication Foundation \(WCF\) serviço de Federação?  
+-   Você estará Habilitando e implantando um aplicativo ASP.NET ou um serviço Windows Communication Foundation \(WCF @ no__t-1 para Federação?  
   
 -   Os usuários em sua rede corporativa precisarão de acesso ao serviço ou aplicativo federado por meio da Autenticação integrada do Windows?  
   
 -   O serviço ou aplicativo federado será usado pelos usuários na sua rede de perímetro? Em caso afirmativo, a Autenticação Integrada do Windows será necessária?  
   
--   São todos os servidores Web que hospedam aplicativos federados estão executando um sistema operacional Windows Server e serviços de informações da Internet \(IIS\)?  
+-   Todos os servidores Web que hospedam aplicativos federados que executam um sistema operacional Windows Server e Serviços de Informações da Internet \(IIS @ no__t-1?  
   
 -   Para quem o serviço ou aplicativo federado fornecerá recursos?  
   
-Respondendo a essas perguntas ajudará você a planejar um design sólido do AD FS. Também ajudará você na criação de uma estratégia de serviços e aplicativo federado que seja econômica e eficiente em termos de recursos. Para obter mais informações sobre como criar a estratégia de serviços e aplicativo federado apropriada para sua organização, consulte os tópicos a seguir neste guia:  
+Responder a essas perguntas ajudará você a planejar um design de AD FS sólido. Também ajudará você na criação de uma estratégia de serviços e aplicativo federado que seja econômica e eficiente em termos de recursos. Para obter mais informações sobre como criar a estratégia de serviços e aplicativo federado apropriada para sua organização, consulte os tópicos a seguir neste guia:  
   
 -   [Fornecer a seus usuários do Active Directory acesso a aplicativos e serviços com reconhecimento de declarações](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
@@ -38,7 +38,7 @@ Respondendo a essas perguntas ajudará você a planejar um design sólido do AD 
   
 -   [Fornecer a usuários de outra organização acesso a seus aplicativos e serviços com reconhecimento de declarações](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
-Para obter mais informações sobre como criar um declarações\-aplicativo com reconhecimento de ASP.NET ou serviço do WCF, consulte [Windows Identity Foundation SDK](https://go.microsoft.com/fwlink/?LinkId=122266).  
+Para obter mais informações sobre como criar um aplicativo de declarações @ no__t-0aware ASP.NET ou serviço WCF, consulte [Windows Identity Foundation SDK](https://go.microsoft.com/fwlink/?LinkId=122266).  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -1,9 +1,9 @@
 ---
-title: Planilha de planejamento para a migração do MultiPoint Services
-description: Fornece as planilhas de planejamento para ajudá-lo a migrar para o MultiPoint Services no Windows Server 2016
+title: Planilha de planejamento para migração de serviços do MultiPoint
+description: Fornece planilhas de planejamento para ajudá-lo a migrar para os serviços do MultiPoint no Windows Server 2016
 ms.custom: na
 ms.date: 07/29/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,38 +13,38 @@ ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: a9d9b62bced9be90c658b79338c6f4ef07710fc3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d3d2ecca4062d28d210196d9191e08710eb731c2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880577"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394633"
 ---
-# <a name="planning-worksheet-for-multipoint-services-migration"></a>Planilha de planejamento para a migração do MultiPoint Services
+# <a name="planning-worksheet-for-multipoint-services-migration"></a>Planilha de planejamento para migração de serviços do MultiPoint
 
 >Aplica-se a: Windows Server 2016
 
-Use as listas e tabelas a seguir para coletar as configurações que necessárias durante a migração do MultiPoint Services.
+Use as listas e tabelas a seguir para coletar as configurações necessárias durante a migração dos serviços do MultiPoint.
 
 ## <a name="source-server-settings"></a>Configurações do servidor de origem
 
-Você pode encontrar as configurações do servidor sobre o **Home** guia no Gerenciador do MultiPoint. Coloque uma marca de seleção ao lado de cada configuração em uso no servidor de origem.
+Você pode encontrar as configurações do servidor na guia **início** do Gerenciador do MultiPoint. Coloque uma marca de seleção ao lado de cada configuração em uso no servidor de origem.
 
 - Permitir que uma conta tenha várias sessões.
 - Permitir que este computador seja gerenciado remotamente.
-- Permitir o monitoramento de áreas de trabalho deste computador.
-- Sempre inicie no modo de console.
-- Não mostre notificação de privacidade no primeiro logon do usuário.
+- Permitir o monitoramento das áreas de trabalho deste computador.
+- Sempre iniciar no modo de console.
+- Não mostrar notificação de privacidade no primeiro logon do usuário.
 - Atribua um IP exclusivo a cada estação.
-- Permita mensagens Instantâneas entre o MultiPoint Dashboard e sessões de usuário neste computador.
-- Permitir a orquestração de sessões de usuário do MultiPoint Dashboard e de administrador.
-- Permite que as estações usam a renderização de hardware GPU.
+- Permitir mensagens instantâneas entre o painel do MultiPoint e as sessões de usuário neste computador.
+- Permitir orquestração de sessões de usuário do painel do MultiPoint e do administrador.
+- Permitir que as estações usem a renderização de hardware de GPU.
 
 ## <a name="managed-servers-and-computers"></a>Computadores e servidores gerenciados
 
-Registre os nomes dos servidores gerenciados e computadores. Você pode encontrar essas informações sobre o **Home** guia no Gerenciador do MultiPoint.
+Registre os nomes dos servidores e computadores gerenciados. Você pode encontrar essas informações na guia **página inicial** do MultiPoint Manager.
 
-| Computador | Nome do computador |
+| Computer | Nome do computador |
 |----------|---------------|
 | 1        |               |
 | 2        |               |
@@ -58,9 +58,9 @@ Registre os nomes dos servidores gerenciados e computadores. Você pode encontra
 | 10       |               |
 
 
-## <a name="stations"></a>Estações
+## <a name="stations"></a>Rádio
 
-Registre estações locais e suas configurações. Você pode encontrar essas informações sobre o **estações** guia no Gerenciador do MultiPoint.
+Registre as estações locais e suas configurações. Você pode encontrar essas informações na guia **estações** no MultiPoint Manager.
 
 | #  | Nome da estação | Conta de usuário de logon automático | Orientação de exibição |
 |----|--------------|-------------------------|---------------------|
@@ -75,9 +75,9 @@ Registre estações locais e suas configurações. Você pode encontrar essas in
 | 9  |              |                         |                     |
 | 10 |              |                         |                     |
 
-## <a name="administrators-and-multipoint-dashboard-users"></a>Os administradores e usuários do MultiPoint Dashboard
+## <a name="administrators-and-multipoint-dashboard-users"></a>Administradores e usuários do painel do MultiPoint
 
-Copie os nomes de usuário para os administradores e usuários do MultiPoint Dashboard. Você pode encontrar essas informações sobre o **usuários** guia no Gerenciador do MultiPoint.
+Copie os nomes de usuário para os administradores e os usuários do painel do MultiPoint. Você pode encontrar essas informações na guia **usuários** no MultiPoint Manager.
 
 Administradores:
 
@@ -96,9 +96,9 @@ Usuários do painel:
 - Nome do usuário:
 - Nome do usuário:
 
-## <a name="vdi-template-and-virtual-desktops"></a>Modelo VDI e áreas de trabalho virtuais
+## <a name="vdi-template-and-virtual-desktops"></a>Modelo de VDI e áreas de trabalho virtuais
 
-Registre as informações do modelo VDI e os nomes das áreas de trabalho virtuais em sua implantação de MultiPoint Services. Você pode encontrar essas informações sobre o **áreas de trabalho virtuais** guia no Gerenciador do MultiPoint.
+Registre as informações do modelo de VDI e os nomes das áreas de trabalho virtuais na implantação dos serviços do MultiPoint. Você pode encontrar essas informações na guia **áreas de trabalho virtuais** no MultiPoint Manager.
 
 **Local do modelo de VDI**: 
 

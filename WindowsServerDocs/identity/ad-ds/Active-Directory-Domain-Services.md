@@ -7,27 +7,27 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7b35eee77b69714580a859402a8942621efdc180
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52f77e2cb60be66d8be2e3927fe0f97c2c945994
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821877"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391016"
 ---
 # <a name="active-directory-domain-services"></a>Active Directory Domain Services
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
   
-Você encontrará links para conteúdo de serviços de domínio do Active Directory nesta página.   
+Você encontrará links para o conteúdo do Domínio do Active Directory Services nesta página.   
 
 
-* [O que há de novo nos serviços de domínio do Active Directory](../whats-new-active-directory-domain-services.md)  
-* [Introdução ao AD DS](../ad-ds/AD-DS-Getting-Started.md)   
-* [Planejamento e Design do AD DS](../ad-ds/plan/AD-DS-Design-and-Planning.md)  
+* [Novidades no Active Directory Domain Services](../whats-new-active-directory-domain-services.md)  
+* [AD DS Introdução](../ad-ds/AD-DS-Getting-Started.md)   
+* [Planejamento e design do AD DS](../ad-ds/plan/AD-DS-Design-and-Planning.md)  
 * [Implantação do AD DS](../ad-ds/deploy/AD-DS-Deployment.md)  
 * [Operações do AD DS](../ad-ds/manage/component-updates/AD-DS-Operations.md)   
-* [Virtualização de serviços de domínio do Active Directory](../ad-ds/get-started/virtual-dc/Active-Directory-Domain-Services-Virtualization.md)  
+* [Virtualização do Active Directory Domain Services](../ad-ds/get-started/virtual-dc/Active-Directory-Domain-Services-Virtualization.md)  
 * [Solução de problemas do AD DS](../ad-ds/manage/AD-DS-Troubleshooting.md)

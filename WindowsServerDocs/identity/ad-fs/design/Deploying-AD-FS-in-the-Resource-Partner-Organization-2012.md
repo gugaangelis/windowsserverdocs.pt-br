@@ -7,22 +7,22 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 87849e1d7a5eb8fef24a551dfc681c65a202f027
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f4741fcc683a8a22318caa47d5cbd66352862a86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191542"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408138"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>Implantando o AD FS na organização do parceiro de recurso
 
-A organização do parceiro de recurso nos serviços de Federação do Active Directory \(do AD FS\) representa a organização cujos servidores Web podem ser protegidos por um recurso\-servidor de federação de lado. O servidor de federação no parceiro de recurso usa os tokens de segurança que são produzidos pelo parceiro de conta fornecer declarações aos servidores Web que estão localizados no parceiro de recurso.  
+A organização do parceiro de recurso no Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 representa a organização cujos servidores Web podem ser protegidos por um servidor de Federação do recurso @ no__t-2side. O servidor de Federação no parceiro de recurso usa os tokens de segurança que são produzidos pelo parceiro de conta para fornecer declarações aos servidores Web que estão localizados no parceiro de recurso.  
   
-Em cenários em que você precisa fornecer acesso a serviços federados ou aplicativos para vários usuários diferentes — quando alguns usuários residem em diferentes organizações — você pode configurar o servidor de federação de recurso para que você possa implantar vários parceiros de conta.  
+Em cenários em que você precisa fornecer acesso a serviços federados ou aplicativos a muitos usuários diferentes — quando alguns usuários residem em diferentes organizações — você pode configurar o servidor de Federação de recursos para que possa implantar vários parceiros de conta.  
   
-Para obter mais informações sobre como instalar e configurar uma organização do parceiro de recurso, consulte [lista de verificação: Configurando a organização do parceiro de recurso](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md).  
+Para obter mais informações sobre como configurar e configurar uma organização de parceiro de recurso, consulte [Checklist: Configurando a organização do parceiro de recurso @ no__t-0.  
   
 ## <a name="in-this-section"></a>Nesta seção  
   
