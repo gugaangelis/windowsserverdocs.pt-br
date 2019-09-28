@@ -1,8 +1,8 @@
 ---
 title: Wbadmin start systemstaterecovery
-description: 'Tópico de comandos do Windows para * * *- '
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4282da2011c39daec0315a7f3836d5517f29debb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6ae534eed26629be264b698869edc57232e2b571
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440199"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362216"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>Wbadmin start systemstaterecovery
 
 
 
-Executa uma recuperação de estado do sistema para um local e de um backup que você especificar.
+Executa uma recuperação de estado do sistema em um local e de um backup que você especificar.
 
 > [!NOTE]
-> Backup do Windows Server não fazer backup ou recuperação hives do registro de usuário (HKEY_CURRENT_USER) como parte do backup do estado do sistema ou recuperação de estado do sistema.
+> Backup do Windows Server não faz backup ou recupera hives de usuário do registro (HKEY_CURRENT_USER) como parte do backup do estado do sistema ou da recuperação do estado do sistema.
 
-Para executar uma recuperação de estado do sistema com essa subcomando, você deve ser um membro dos **operadores de Backup** grupo ou o **administradores** grupo, ou você deve ter sido recebido as permissões apropriadas. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um atalho de prompt de comando com privilégios elevados **Prompt de comando**e, em seguida, clique em **executar como administrador**.)
+Para executar uma recuperação de estado do sistema com esse subcomando, você deve ser um membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -46,7 +46,7 @@ wbadmin start systemstaterecovery
 [-authsysvol]
 [-quiet]
 ```
-Sintaxe para o Windows Server 2008 R2 ou posterior:
+Sintaxe do Windows Server 2008 R2 ou posterior:
 ```
 wbadmin start systemstaterecovery
 -version:<VersionIdentifier>
@@ -63,22 +63,22 @@ wbadmin start systemstaterecovery
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-versão|Especifica o identificador de versão para o backup recuperar no MM/DD/AAAA-formato hh: mm. Se você não souber o identificador de versão, digite **wbadmin obter versões**.|
-|-showsummary|Informa o resumo da última recuperação de estado do sistema (após o reinício necessário para concluir a operação). Esse parâmetro não pode ser acompanhado por quaisquer outros parâmetros.|
-|-backupTarget|Especifica o local de armazenamento que contém o backup ou backups que você deseja recuperar. Esse parâmetro é útil quando o local de armazenamento é diferente de onde os backups desse computador geralmente são armazenados.|
-|-machine|Especifica o nome do computador que você deseja recuperar. Esse parâmetro é útil quando vários computadores tiverem sido copiados para o mesmo local. Deve ser usado quando o **- backupTarget** parâmetro for especificado.|
-|-recoveryTarget|Especifica o diretório para restaurar para. Esse parâmetro é útil se o backup é restaurado para um local alternativo.|
-|-authsysvol|Se usado, executa uma restauração autoritativa do SYSVOL (o diretório compartilhado do Volume do sistema).|
-|-autoReboot|Especifica para reiniciar o sistema no final da operação de recuperação de estado do sistema. Esse parâmetro é válido somente para uma recuperação no local original. Não é recomendável que usar esse parâmetro se você precisar executar etapas após a operação de recuperação.|
+|-versão|Especifica o identificador de versão para o backup a ser recuperado no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.|
+|-Resumo dos|Relata o resumo da última recuperação de estado do sistema (após a reinicialização necessária para concluir a operação). Este parâmetro não pode ser acompanhado por nenhum outro parâmetro.|
+|-backupTarget|Especifica o local de armazenamento que contém os backups ou backups que você deseja recuperar. Esse parâmetro é útil quando o local de armazenamento é diferente de onde os backups desse computador geralmente são armazenados.|
+|-computador|Especifica o nome do computador que você deseja recuperar. Esse parâmetro é útil quando é feito o backup de vários computadores no mesmo local. Deve ser usado quando o parâmetro **-backupTarget** é especificado.|
+|-recoveryTarget|Especifica o diretório para o qual restaurar. Esse parâmetro será útil se o backup for restaurado para um local alternativo.|
+|-authsysvol|Se usado, executa uma restauração autoritativa do SYSVOL (o diretório de volume compartilhado do sistema).|
+|-reinicialização|Especifica a reinicialização do sistema no final da operação de recuperação do estado do sistema. Esse parâmetro é válido somente para uma recuperação no local original. Não recomendamos que você use esse parâmetro se precisar executar etapas após a operação de recuperação.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-- Para executar uma recuperação de estado do sistema do backup de 31/03/2013 às 9 da manhã, digite:  
+- Para executar uma recuperação de estado do sistema do backup de 03/31/2013 às 9:00, digite:  
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- Para executar uma recuperação de estado do sistema do backup de 30/04/2013 às 9 da manhã que é armazenado no recurso compartilhado \\ \\servername\share para o server01, digite:  
+- Para executar uma recuperação de estado do sistema do backup de 04/30/2013 às 9:00. que é armazenado no recurso compartilhado \\ @ no__t-1servername\share para Server01, digite:  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
@@ -87,4 +87,4 @@ wbadmin start systemstaterecovery
 
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx) cmdlet
+-   Cmdlet [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx)

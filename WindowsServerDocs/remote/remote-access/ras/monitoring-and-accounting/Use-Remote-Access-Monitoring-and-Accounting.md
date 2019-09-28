@@ -1,9 +1,9 @@
 ---
 title: Usar monitoramento e contabilidade de Acesso Remoto
-description: Este tópico faz parte do guia de monitoramento de acesso remoto e contabilização no Windows Server 2016.
+description: Este tópico faz parte do guia de monitoramento e contabilidade de acesso remoto no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c794d4b8169c81c63162f119467f5f03d10ce756
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: eb7c052358bc50f9b466b7ac862e77be7b044685
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282650"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367153"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>Usar monitoramento e contabilidade de Acesso Remoto
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 O monitoramento de Acesso Remoto relata a atividade e o status do usuário remoto para o DirectAccess e as conexões VPN. Ele rastreia o número e a duração das conexões do cliente (entre outras estatísticas) e monitora o status das operações do servidor. Um console de monitoramento fácil de usar apresenta uma exibição de toda a infraestrutura de Acesso Remoto. As exibições de monitoramento estão disponíveis para configurações de servidor individual, cluster e multissite.  
   
@@ -32,7 +32,7 @@ O monitoramento de Acesso Remoto relata a atividade e o status do usuário remot
 >   
 > -   [Monitorar a carga existente no servidor de acesso remoto](Monitor-the-existing-load-on-the-Remote-Access-server.md)  
 > -   [Monitorar o status de distribuição de configuração de servidor de acesso remoto](Monitor-the-configuration-distribution-status-of-the-Remote-Access-server.md)  
-> -   [Monitorar o Status de operações do servidor de acesso remoto e seus componentes](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)  
+> -   [Monitorar o status de operações do servidor de acesso remoto e seus componentes](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)  
 > -   [Identificar e resolver problemas de operações do servidor de acesso remoto](Identify-and-resolve-Remote-Access-server-operations-problems.md)  
 > -   [Monitorar a atividade e o status dos clientes remotos conectados](Monitor-connected-remote-clients-for-activity-and-status.md)  
 > -   [Gerar um relatório de uso para os clientes remotos usando dados históricos](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  

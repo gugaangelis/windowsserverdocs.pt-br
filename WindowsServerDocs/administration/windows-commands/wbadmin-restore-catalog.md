@@ -1,8 +1,8 @@
 ---
-title: Catálogo de restauração de WBADMIN
-description: 'Tópico de comandos do Windows para * * *- '
+title: Wbadmin restore catalog
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5876a44b178025baac7ee5901cdc32c1b5d33dad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0d646440ca9b30f9fa30fb1ac3ff08458b8e44d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851707"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362332"
 ---
-# <a name="wbadmin-restore-catalog"></a>Catálogo de restauração de WBADMIN
+# <a name="wbadmin-restore-catalog"></a>Wbadmin restore catalog
 
 
 
-Recupera um catálogo de backup para o computador local de um local de armazenamento que você especificar.
+Recupera um catálogo de backup do computador local de um local de armazenamento que você especificar.
 
-Para recuperar um catálogo de backup com este subcomando, você deve ser um membro do **operadores de Backup** grupo ou o **administradores** grupo, ou você deve ter sido recebido as permissões apropriadas. Além disso, você deve executar **wbadmin** em um prompt de comando elevado. (Para abrir um atalho de prompt de comando com privilégios elevados **Prompt de comando**e, em seguida, clique em **executar como administrador**.)
+Para recuperar um catálogo de backup com este subcomando, você deve ser um membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
 Para obter exemplos de como usar esse subcomando, consulte [exemplos](#BKMK_examples).
 
@@ -43,27 +43,27 @@ wbadmin restore catalog
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-backupTarget|Especifica o local do catálogo de backup do sistema, como era o momento depois que o backup foi criado.|
-|-machine|Especifica o nome do computador que você deseja recuperar para o catálogo de backup. Use quando backups de vários computadores foram armazenados no mesmo local. Deve ser usado quando **- backupTarget** for especificado.|
+|-backupTarget|Especifica o local do catálogo de backup do sistema como ele estava no ponto em que o backup foi criado.|
+|-computador|Especifica o nome do computador para o qual você deseja recuperar o catálogo de backup. Use quando os backups de vários computadores tiverem sido armazenados no mesmo local. Deve ser usado quando **-backupTarget** é especificado.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
 ## <a name="remarks"></a>Comentários
 
-Se o local (disco, DVD ou pasta compartilhada remota) onde armazenar seus backups for danificado ou perdido e não pode ser usado para restaurar o catálogo de backup, use **wbadmin Excluir catálogo** para excluir o catálogo corrompido. Nesse caso, você deve criar um novo backup depois que o catálogo de backup é excluído.
+Se o local (disco, DVD ou pasta compartilhada remota) em que você armazena seus backups estiver danificado ou perdido e não puder ser usado para restaurar o catálogo de backup, use **Wbadmin Delete Catalog** para excluir o catálogo corrompido. Nesse caso, você deve criar um novo backup depois que o catálogo de backup for excluído.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="BKMK_examples"></a>Disso
 
-Para restaurar um catálogo de um backup armazenado em disco d, digite:
+Para restaurar um catálogo de um backup armazenado em disco d:, digite:
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-Para restaurar um catálogo de um backup armazenado na pasta compartilhada \\ \\servername\share de server01, digite:
+Para restaurar um catálogo de um backup armazenado na pasta compartilhada \\ @ no__t-1servername\share de Server01, digite:
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
 #### <a name="additional-references"></a>Referências adicionais
 
--   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+-   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Restauração WBCatalog](https://technet.microsoft.com/library/jj902437.aspx) cmdlet
+-   Cmdlet [Restore-WBCatalog](https://technet.microsoft.com/library/jj902437.aspx)

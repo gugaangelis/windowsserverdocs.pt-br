@@ -1,9 +1,9 @@
 ---
 title: Etapa 2 configurar o servidor RADIUS
-description: Este tópico faz parte do guia de implantação de acesso remoto com autenticação OTP no Windows Server 2016.
+description: Este tópico faz parte do guia implantar o acesso remoto com autenticação OTP no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,49 +12,49 @@ ms.topic: article
 ms.assetid: 0326818f-9144-496c-b946-f82be4eefbd3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9c111ce52f2cca0cc37ea4d5b873c5fde12bce18
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 00ea76d6995f875e509a3bc9ef0bab3d2689c52b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282447"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367023"
 ---
 # <a name="step-2-configure-the-radius-server"></a>Etapa 2 configurar o servidor RADIUS
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Antes de configurar o servidor de acesso remoto para dar suporte ao suporte de DirectAccess com a OTP, configure o servidor RADIUS.  
+Antes de configurar o servidor de acesso remoto para dar suporte ao DirectAccess com suporte a OTP, configure o servidor RADIUS.  
   
 |Tarefa|Descrição|  
 |----|--------|  
-|[2.1. Configurar os tokens de distribuição de software do RADIUS](#BKMK_1.1)|No servidor RADIUS configure tokens de distribuição de software.|  
-|[2.2. Configure as informações de segurança RADIUS](#BKMK_1.2)|No servidor RADIUS, configure as portas e o segredo compartilhado a ser usado.|  
-|[2.3 adicionando a conta de usuário para a investigação de OTP](#BKMK_Probe)|No servidor RADIUS, crie uma nova conta de usuário para a investigação de OTP.|  
-|[2.4 sincronizar com o Active Directory](#BKMK_Active)|No servidor RADIUS crie contas de usuário sincronizadas com contas do Active Directory.|  
-|[2.5 configurar o agente de autenticação RADIUS](#BKMK_AuthAgent)|Configure o servidor de acesso remoto como um agente de autenticação de RADIUS.|  
+|,1. Configurar os tokens de distribuição de software RADIUS @ no__t-0|No servidor RADIUS, configure os tokens de distribuição de software.|  
+|,2. Configurar as informações de segurança do RADIUS @ no__t-0|No servidor RADIUS, configure as portas e o segredo compartilhado a serem usados.|  
+|[2,3 adicionando conta de usuário para investigação de OTP](#BKMK_Probe)|No servidor RADIUS, crie uma nova conta de usuário para investigação de OTP.|  
+|[2,4 sincronizar com Active Directory](#BKMK_Active)|No servidor RADIUS, crie contas de usuário sincronizadas com contas de Active Directory.|  
+|[2,5 configurar o agente de autenticação RADIUS](#BKMK_AuthAgent)|Configure o servidor de acesso remoto como um agente de autenticação RADIUS.|  
   
-## <a name="BKMK_1.1"></a>2.1 configurar os tokens de distribuição de software do RADIUS  
-O servidor RADIUS deve ser configurado com a licença necessária e tokens de distribuição de software e/ou hardware a ser usado pelo DirectAccess com a OTP. Esse processo será específico para cada implementação do fornecedor RADIUS.  
+## <a name="BKMK_1.1"></a>2,1 configurar os tokens de distribuição de software RADIUS  
+O servidor RADIUS deve ser configurado com os tokens de licença e software e/ou de distribuição de hardware necessários a serem usados pelo DirectAccess com OTP. Esse processo será específico para cada implementação de fornecedor RADIUS.  
   
-## <a name="BKMK_1.2"></a>2.2 configurar as informações de segurança RADIUS  
-O servidor RADIUS usa portas UDP para fins de comunicação, e cada fornecedor RADIUS tem seus próprio as portas UDP padrão para a comunicação de entrada e saída. Para o servidor RADIUS trabalhar com o servidor de acesso remoto, certifique-se de que todos os firewalls no ambiente são configurados para permitir o tráfego UDP entre os servidores DirectAccess e OTP nas portas necessárias conforme necessário.  
+## <a name="BKMK_1.2"></a>2,2 configurar as informações de segurança do RADIUS  
+O servidor RADIUS usa portas UDP para fins de comunicação, e cada fornecedor RADIUS tem suas próprias portas UDP padrão para comunicação de entrada e saída. Para que o servidor RADIUS funcione com o servidor de acesso remoto, verifique se todos os firewalls no ambiente estão configurados para permitir o tráfego UDP entre os servidores do DirectAccess e de OTP nas portas necessárias, conforme necessário.  
   
-O servidor RADIUS usa um segredo compartilhado para fins de autenticação. Configurar o servidor RADIUS com uma senha forte para o segredo compartilhado e observe que isso será usado ao configurar a configuração do computador cliente do servidor DirectAccess para uso com o DirectAccess com OTP.  
+O servidor RADIUS usa um segredo compartilhado para fins de autenticação. Configure o servidor RADIUS com uma senha forte para o segredo compartilhado e observe que isso será usado ao configurar a configuração do computador cliente do servidor DirectAccess para uso com o DirectAccess com OTP.  
   
-## <a name="BKMK_Probe"></a>2.3 adicionando a conta de usuário para a investigação de OTP  
-No servidor RADIUS, crie uma nova conta de usuário chamada **DAProbeUser** e dê a ele a senha **DAProbePass**.  
+## <a name="BKMK_Probe"></a>2,3 adicionando conta de usuário para investigação de OTP  
+No servidor RADIUS, crie uma nova conta de usuário chamada **DAProbeUser** e dê a ela a senha **DAProbePass**.  
   
-## <a name="BKMK_Active"></a>2.4 sincronizar com o Active Directory  
-O servidor RADIUS deve ter contas de usuário que correspondem aos usuários no Active Directory que estiver usando o DirectAccess com a OTP.  
+## <a name="BKMK_Active"></a>2,4 sincronizar com Active Directory  
+O servidor RADIUS deve ter contas de usuário que correspondam aos usuários no Active Directory que usará o DirectAccess com OTP.  
   
-#### <a name="to-synchronize-the-radius-and-active-directory-users"></a>Para sincronizar os usuários do RADIUS e o Active Directory  
+#### <a name="to-synchronize-the-radius-and-active-directory-users"></a>Para sincronizar os usuários RADIUS e Active Directory  
   
-1.  Registre as informações de usuário do Active Directory para o DirectAccess todos com usuários OTP.  
+1.  Registre as informações do usuário de Active Directory para todos os DirectAccess com usuários de OTP.  
   
-2.  Use o procedimento específico do fornecedor para criar usuário idêntico **domínio \ nomedeusuário** contas que foram registradas no servidor RADIUS.  
+2.  Use o procedimento específico do fornecedor para criar contas de **domínio \ nome** de usuário idênticas no servidor RADIUS que foram registradas.  
   
-## <a name="BKMK_AuthAgent"></a>2.5 configurar o agente de autenticação RADIUS  
-O servidor de acesso remoto deve ser configurado como um agente de autenticação de RADIUS para o DirectAccess com a implementação de OTP. Siga as instruções do fornecedor RADIUS para configurar o servidor de acesso remoto como um agente de autenticação de RADIUS.  
+## <a name="BKMK_AuthAgent"></a>2,5 configurar o agente de autenticação RADIUS  
+O servidor de acesso remoto deve ser configurado como um agente de autenticação RADIUS para o DirectAccess com a implementação de OTP. Siga as instruções do fornecedor RADIUS para configurar o servidor de acesso remoto como um agente de autenticação RADIUS.  
   
 
 

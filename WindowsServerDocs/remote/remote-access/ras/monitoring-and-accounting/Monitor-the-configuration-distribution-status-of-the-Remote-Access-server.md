@@ -1,9 +1,9 @@
 ---
 title: Monitorar o status de distribuição da configuração do servidor de acesso remoto
-description: Este tópico faz parte do guia de monitoramento de acesso remoto e contabilização no Windows Server 2016.
+description: Este tópico faz parte do guia de monitoramento e contabilidade de acesso remoto no Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: de285d13-9e54-4c46-88f0-607182e5e3dc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ab5deea9d594d6e9570d2472b5628a3d5fb8d616
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 3218e1110bc17979fdda949956f551997859f5ed
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282722"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71368253"
 ---
 # <a name="monitor-the-configuration-distribution-status-of-the-remote-access-server"></a>Monitorar o status de distribuição da configuração do servidor de acesso remoto
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-**Observação:** Windows Server 2012 combina o DirectAccess e o serviço de acesso remoto (RAS) em uma única função de acesso remoto.  
+**Observação:** O Windows Server 2012 combina o DirectAccess e o serviço de acesso remoto (RAS) em uma única função de acesso remoto.  
   
 O Console de Gerenciamento de Acesso Remoto compara as versões de configuração de todos os servidores monitorados para verificar se eles coincidem e se estão usando a versão de configuração mais recente. Isso mostra se a versão de configuração mais recente (que está especificada em Objetos de Política de Grupo ou GPOs) foi distribuída a todos os servidores e se ela foi aplicada com êxito nos servidores.  
   
@@ -39,13 +39,13 @@ A tabela a seguir mostra as mensagens geradas pelo bloco **Status de Configuraç
   
 |||||  
 |-|-|-|-|  
-|Gravidade|Message|Significado|O que fazer?|  
+|severity|Message|Significado|O que fazer?|  
 |Êxito|A configuração foi distribuída com êxito.|A configuração no GPO foi aplicada com êxito no servidor.|Nenhuma ação é necessária.|  
-|Aviso|Configuração para o servidor [*nome do servidor*] não recuperada do controlador de domínio. O GPO não está vinculado.|A configuração no GPO ainda não atingiu o servidor. Isso pode ser devido ao fato de o GPO não estar vinculado ao servidor.|Vincule o GPO a um escopo de gerenciamento que é aplicado ao servidor ou em um cenário GPO de preparação, exporte manualmente as configurações do GPO de preparação e importe-as para o GPO de produção. Para obter mais informações sobre GPOs de preparo, consulte **Gerenciando GPOs de acesso remoto com permissões limitadas** na [Step-1-Plan-the-DirectAccess-Infrastructure](../../directaccess/single-server-advanced/Step-1-Plan-the-DirectAccess-Infrastructure.md). Para etapas de preparação de GPO, consulte **configurando GPOs de acesso remoto com permissões limitadas** em [etapa 1: Configurar a infraestrutura do DirectAccess](../../directaccess/single-server-advanced/Step-1-Configuring-DirectAccess-Infrastructure.md).|  
+|Aviso|Configuração para o servidor [*nome do servidor*] não recuperada do controlador de domínio. O GPO não está vinculado.|A configuração no GPO ainda não atingiu o servidor. Isso pode ser devido ao fato de o GPO não estar vinculado ao servidor.|Vincule o GPO a um escopo de gerenciamento que é aplicado ao servidor ou em um cenário GPO de preparação, exporte manualmente as configurações do GPO de preparação e importe-as para o GPO de produção. Para obter mais informações sobre os GPOs de preparo, consulte **Gerenciando GPOs de acesso remoto com permissões limitadas** na [etapa-1-Plan-The-DirectAccess-Infrastructure](../../directaccess/single-server-advanced/Step-1-Plan-the-DirectAccess-Infrastructure.md). Para etapas de preparo de GPO, consulte **Configurando GPOs de acesso remoto com permissões limitadas** no [step 1: Configure a infraestrutura do DirectAccess @ no__t-0.|  
 |Aviso|A configuração para o servidor [*nome do servidor*] ainda não foi recuperada do controlador de domínio.|A configuração no GPO ainda não atingiu o servidor.<br /><br />Pode levar até 10 minutos para propagar uma nova configuração.|Permitir mais tempo para que as políticas sejam atualizadas no servidor.|  
-|Erro|A configuração para o servidor [*nome do servidor*] não pode ser recuperada do controlador de domínio.|A configuração no GPO não atingiu o servidor e passaram-se mais de 10 minutos desde que a configuração foi alterada.|Isso poderia ocorrer em um dos seguintes cenários:<br /><br />-O servidor não tem conectividade com o domínio para atualizar as políticas. Você pode executar o "gpupdate /force" no servidor para forçar uma atualização da política.<br />-Replicação de GPO talvez seja necessário para recuperar a configuração atualizada.<br />-Não há nenhum controlador de domínio gravável no site do Active Directory do servidor de acesso remoto.<br /><br />Aguarde que os GPOs repliquem a todos os controladores de domínio e, em seguida, use o cmdlet do Windows PowerShell **Set-DAEntryPointDC** para associar o ponto de entrada a um controlador de domínio gravável no Active Directory no servidor de Acesso Remoto.|  
+|Erro|A configuração para o servidor [*nome do servidor*] não pode ser recuperada do controlador de domínio.|A configuração no GPO não atingiu o servidor e passaram-se mais de 10 minutos desde que a configuração foi alterada.|Isso poderia ocorrer em um dos seguintes cenários:<br /><br />-O servidor não tem conectividade com o domínio para atualizar as políticas. Você pode executar "gpupdate/force" no servidor para forçar uma atualização de política.<br />-A replicação de GPO pode ser necessária para recuperar a configuração atualizada.<br />-Não há nenhum controlador de domínio gravável no site de Active Directory do servidor de acesso remoto.<br /><br />Aguarde que os GPOs repliquem a todos os controladores de domínio e, em seguida, use o cmdlet do Windows PowerShell **Set-DAEntryPointDC** para associar o ponto de entrada a um controlador de domínio gravável no Active Directory no servidor de Acesso Remoto.|  
 |Aviso|A configuração para o servidor [*nome do servidor*] foi recuperada do controlador de domínio, mas ainda não foi aplicada.|A configuração no GPO atingiu o servidor, mas ainda não foi aplicada.<br /><br />A aplicação de uma configuração pode levar até 15 minutos.|Permitir mais tempo para que a configuração seja completamente aplicada ao servidor.|  
-|Erro|A configuração do servidor [*nome do servidor*] recuperada do controlador de domínio não pode ser aplicada.|A configuração no GPO atingiu o servidor, mas não foi aplicada com êxito, e passaram-se mais de 15 minutos desde que a configuração foi alterada.|Isso poderia ocorrer em um dos seguintes cenários:<br /><br />1.  A configuração está, atualmente, no processo de ser aplicada. Isso é mostrado como um erro porque ele pode ter levado muito tempo para recuperar a configuração do GPO.<br />    Para verificar se essa é a razão, use o **Agendador de Tarefas** e navegue até Microsoft\Windows\RemoteAccess para verificar se o **RAConfigTask** está atualmente em execução.<br />2.  Se o **RAConfigTask** não estiver atualmente em execução, ele pode ter falhado ao aplicar a configuração no servidor.<br />    Verifique se há erros em **Visualizador de Eventos** no canal de operações do servidor de Acesso Remoto, que está localizado em \Applications and Services Logs\Microsoft\Windows\RemoteAccess-RemoteAccessServer.<br />    Verifique se há erros em **STATUS DE OPERAÇÕES** no Console de Gerenciamento de Acesso Remoto. Para obter mais informações, consulte [Monitorar o status das operações do servidor de Acesso Remoto e seus componentes](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md).|  
+|Erro|A configuração do servidor [*nome do servidor*] recuperada do controlador de domínio não pode ser aplicada.|A configuração no GPO atingiu o servidor, mas não foi aplicada com êxito, e passaram-se mais de 15 minutos desde que a configuração foi alterada.|Isso poderia ocorrer em um dos seguintes cenários:<br /><br />1.  A configuração está, atualmente, no processo de ser aplicada. Isso é mostrado como um erro porque pode ter levado muito tempo para recuperar a configuração do GPO.<br />    Para verificar se essa é a razão, use o **Agendador de Tarefas** e navegue até Microsoft\Windows\RemoteAccess para verificar se o **RAConfigTask** está atualmente em execução.<br />2.  Se o **RAConfigTask** não estiver atualmente em execução, ele pode ter falhado ao aplicar a configuração no servidor.<br />    Verifique se há erros em **Visualizador de Eventos** no canal de operações do servidor de Acesso Remoto, que está localizado em \Applications and Services Logs\Microsoft\Windows\RemoteAccess-RemoteAccessServer.<br />    Verifique se há erros em **STATUS DE OPERAÇÕES** no Console de Gerenciamento de Acesso Remoto. Para obter mais informações, consulte [Monitorar o status das operações do servidor de Acesso Remoto e seus componentes](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md).|  
 |Erro|Configuração de servidores multissite recuperada do controlador de domínio. A configuração não corresponde com todos os servidores.|Há uma inconsistência entre as versões de configuração dos GPOs de servidor na implantação multissite.<br /><br />Idealmente, todos os GPOs de servidor para todos os pontos de entrada terão a mesma configuração global, mas por alguma razão, eles estão fora de sincronia.|Isso pode ocorrer quando uma alteração de configuração falha e não é revertida com êxito.<br /><br />Você deve restaurar os GPOs de um estado de backup em que todos os GPOs de servidor estejam sincronizados. Para obter informações sobre um script que você pode usar, consulte [fazer backup e restaurar a configuração de acesso remoto](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6).|  
   
 

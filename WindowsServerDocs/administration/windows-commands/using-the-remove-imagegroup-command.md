@@ -1,8 +1,8 @@
 ---
-title: Usando o comando remove-ImageGroup
-description: 'Tópico de comandos do Windows para * * *- '
+title: Usando o comando Remove-MyImage
+description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: df6af7fbd19cc95dfbffa0a5c0e2a4b3e33fb82c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51d9636013fef182c4abb74ae196e08c51ff11d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877887"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362748"
 ---
-# <a name="using-the-remove-imagegroup-command"></a>Usando o comando remove-ImageGroup
+# <a name="using-the-remove-imagegroup-command"></a>Usando o comando Remove-MyImage
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -32,17 +32,17 @@ wdsutil [Options] /remove-ImageGroumediaGroup:<Image group name> [/Server:<Serve
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-mediaGroup:<Image group name>|Especifica o nome do grupo a imagem a ser removido|
+The Media: <Image group name>|Especifica o nome do grupo de imagens a ser removido|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-## <a name="BKMK_examples"></a>Exemplos
-Para remover o grupo de imagens, digite o seguinte:
+## <a name="BKMK_examples"></a>Disso
+Para remover o grupo de imagens, digite um dos seguintes:
 ```
 wdsutil /remove-ImageGroumediaGroup:ImageGroup1
 wdsutil /verbose /remove-ImageGroumediaGroup:"My Image Group" /Server:MyWDSServer 
 ```
 #### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando add-ImageGroup](using-the-add-imagegroup-command.md)
-[usando o comando get-AllImageGroups](using-the-get-allimagegroups-command.md) 
- [ Usando o comando get-ImageGroup](using-the-get-imagegroup-command.md)
-[subcomando: set-ImageGroup](subcommand-set-imagegroup.md)
+A [chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[usando o comando Add-Image do](using-the-add-imagegroup-command.md)
+[usando o comando Get-AllImageGroups](using-the-get-allimagegroups-command.md)
+[usando o comando Get-Image myCommand](using-the-get-imagegroup-command.md)
+[subcomando: Set-Image](subcommand-set-imagegroup.md)
