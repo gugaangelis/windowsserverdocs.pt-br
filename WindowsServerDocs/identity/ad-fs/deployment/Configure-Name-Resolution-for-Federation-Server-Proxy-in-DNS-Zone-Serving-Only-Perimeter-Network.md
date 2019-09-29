@@ -6,62 +6,62 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7d046c720c5c6250b6efa03e068aa66e2a6bbe3d
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: de4627f2e03e6432f4e678cd9ca932819cb483d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828520"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408431"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>Configurar resolução de nomes para um servidor de proxy em uma zona DNS que atende apenas a rede de perímetro
 
 
-Para que a resolução de nomes pode funcionar com êxito para um servidor de Federação em um Active Directory Federation Services \(do AD FS\) cenário no qual sistema de nomes de domínio de um ou mais \(DNS\) zonas servem apenas o perímetro rede, as seguintes tarefas devem ser concluídas:  
+Para que a resolução de nomes possa funcionar com êxito para um servidor de Federação em um cenário Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1, no qual um ou mais sistemas de nome de domínio \(DNS @ no__t-3 zonas servem apenas para a rede de perímetro, o seguinte as tarefas devem ser concluídas:  
   
--   O arquivo de hosts no proxy de servidor de federação deve ser atualizado para adicionar o endereço IP de um servidor de Federação.  
+-   O arquivo de hosts no proxy do servidor de Federação deve ser atualizado para adicionar o endereço IP de um servidor de Federação.  
   
--   DNS na rede de perímetro deve ser configurado para resolver o que nome para o proxy do servidor de Federação do host de todas as solicitações de cliente para o AD FS. Para fazer isso, você pode adicionar um host \(um\) registro de recurso DNS de perímetro para o proxy do servidor de Federação.  
+-   O DNS na rede de perímetro deve ser configurado para resolver todas as solicitações de cliente para o nome de host AD FS para o proxy do servidor de Federação. Para fazer isso, adicione um registro de recurso de host \(A @ no__t-1 ao DNS de perímetro para o proxy do servidor de Federação.  
   
 > [!NOTE]  
-> Estes procedimentos pressupõem que um host \(um\) registro de recurso para o servidor de Federação já foi criado no escritório corporativo de rede DNS. Se este registro ainda não existir, crie esse registro e, em seguida, executar esses procedimentos. Para obter mais informações sobre como criar o host \(um\) registro de recurso para o servidor de federação, consulte [adicionar um Host &#40;A&#41; registro de recurso ao DNS corporativo para um servidor de Federação](Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md).  
+> Esses procedimentos pressupõem que um registro de recurso de host \(A @ no__t-1 para o servidor de Federação já foi criado no DNS da rede corporativa. Se esse registro ainda não existir, crie esse registro e execute esses procedimentos. Para obter mais informações sobre como criar o registro de recurso host \(A @ no__t-1 para o servidor de Federação, consulte [Adicionar &#40;um&#41; host um registro de recurso ao DNS corporativo para um servidor de Federação](Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md).  
   
-## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Adicione o endereço IP de um servidor de federação para o arquivo de hosts  
-Para que um proxy do servidor de Federação possa funcionar conforme o esperado na rede de perímetro do parceiro de conta, você deve adicionar uma entrada ao arquivo hosts em que proxy do servidor de federação que aponta para o nome do host DNS do servidor de Federação \(por exemplo, fs.fabrikam.com \) e o endereço IP \(por exemplo, 192.168.1.4\) na rede corporativa do parceiro de conta. A adição dessa entrada ao arquivo hosts impede que o proxy do servidor de federação entre em contato com a própria para resolver um cliente\-iniciou a chamada para um servidor de federação no parceiro de conta.  
+## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Adicionar o endereço IP de um servidor de Federação ao arquivo de hosts  
+Para que um proxy de servidor de federação possa funcionar conforme o esperado na rede de perímetro de um parceiro de conta, você deve adicionar uma entrada ao arquivo de hosts nesse proxy do servidor de Federação que aponta para o nome de host DNS de um servidor de Federação \(for exemplo, FS. fabrikam. com @ no__t-1 e endereço IP \(For exemplo, 192.168.1.4 @ no__t-3 na rede corporativa do parceiro de conta. Adicionar essa entrada ao arquivo de hosts impede que o proxy do servidor de federação entre em contato para resolver uma chamada de cliente @ no__t-0initiated para um servidor de Federação no parceiro de conta.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-#### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Para adicionar o endereço IP de um servidor de federação para o arquivo de hosts  
+#### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Para adicionar o endereço IP de um servidor de Federação ao arquivo de hosts  
   
-1.  Navegue até % systemroot %\\Winnt\\System32\\pasta de diretório de Drivers e localize o **hosts** arquivo.  
+1.  Navegue até a pasta% SystemRoot% \\Winnt @ no__t-1System32 @ no__t-2Drivers Directory e localize o arquivo **hosts** .  
   
 2.  Inicie o Bloco de Notas e abra o arquivo de **hosts**.  
   
-3.  Adicione o endereço IP e o nome do host de um servidor de federação no parceiro de conta para o **hosts** de arquivos, conforme mostrado no exemplo a seguir:  
+3.  Adicione o endereço IP e o nome de host de um servidor de Federação no parceiro de conta para o arquivo de **hosts** , conforme mostrado no exemplo a seguir:  
   
     **192.168.1.4fs.fabrikam.com**  
   
 4.  Salve e feche o arquivo.  
   
-## <a name="add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>Adicionar um host \(um\) registro DNS de perímetro para um proxy do servidor de federação de recurso  
-Para que os clientes na Internet podem acessar um servidor de federação com êxito por meio de um proxy do servidor de Federação recém-implantados, você deve primeiro criar um host \(um\) registro de recurso DNS de perímetro. Este registro de recurso resolve o nome do host do servidor de federação de conta \(por exemplo, fs.fabrikam.com\) para o endereço IP do proxy de servidor de federação de conta \(por exemplo, 131.107.27.68\) no rede de perímetro.  
+## <a name="add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>Adicionar um registro de recurso do host \(A @ no__t-1 ao DNS de perímetro para um proxy de servidor de Federação  
+Para que os clientes na Internet possam acessar com êxito um servidor de Federação por meio de um proxy de servidor de Federação implantado recentemente, você deve primeiro criar um registro de recurso de host \(A @ no__t-1 no DNS de perímetro. Esse registro de recurso resolve o nome do host do servidor de Federação de conta \(for exemplo, FS. fabrikam. com @ no__t-1 para o endereço IP do proxy do servidor de Federação de conta \(For exemplo, 131.107.27.68 @ no__t-3 na rede de perímetro.  
   
 > [!NOTE]  
-> Supõe-se que você está usando um servidor DNS, executando o Windows 2000 Server, Windows Server 2003 ou Windows Server 2008 com o serviço do servidor DNS, para controlar a zona DNS de perímetro.  
+> Supõe-se que você esteja usando um servidor DNS, executando o Windows 2000 Server, o Windows Server 2003 ou o Windows Server 2008 com o serviço do servidor DNS, para controlar a zona DNS do perímetro.  
   
-Associação na **administradores**, ou equivalente, é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e associações de grupos em [domínio grupos padrão Local e](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-#### <a name="to-add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>Para adicionar um host \(um\) registro DNS de perímetro para um proxy do servidor de federação de recurso  
+#### <a name="to-add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>Para adicionar um registro de recurso de host \(A @ no__t-1 ao DNS de perímetro para um proxy de servidor de Federação  
   
-1.  Em um servidor DNS para a rede de perímetro, abra o snap DNS\-no. Clique em **inicie**, aponte para **ferramentas administrativas**e, em seguida, clique em **DNS**.  
+1.  Em um servidor DNS para a rede de perímetro, abra o snap do DNS @ no__t-0in. Clique em **Iniciar**, aponte para **Ferramentas administrativas**e clique em **DNS**.  
   
-2.  Na árvore de console, com o botão direito\-clique na zona de pesquisa direta aplicável e, em seguida, clique em **novo Host \(A ou AAAA\)** .  
+2.  Na árvore de console, clique em @ no__t-0click a zona de pesquisa direta aplicável e, em seguida, em **novo Host \(A ou aaaa @ no__t-3**.  
   
-3.  Na **nome**, digite apenas o nome do computador do servidor de Federação. Por exemplo, para o nome de domínio totalmente qualificado \(FQDN\) fs.fabrikam.com, digite **fs**.  
+3.  Em **nome**, digite apenas o nome do computador do servidor de Federação. Por exemplo, para o nome de domínio totalmente qualificado \(FQDN @ no__t-1 fs.fabrikam.com, digite **FS**.  
   
-4.  Na **endereço IP**, digite o endereço IP do novo proxy de servidor de federação, por exemplo, **131.107.27.68**.  
+4.  Em **endereço IP**, digite o endereço IP para o novo proxy de servidor de Federação, por exemplo, **131.107.27.68**.  
   
 5.  Clique em **Adicionar Host**.  
   
