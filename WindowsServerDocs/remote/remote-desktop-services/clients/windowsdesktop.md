@@ -2,7 +2,7 @@
 title: Introdução ao cliente da Área de Trabalho do Windows
 description: Informações básicas sobre o cliente da Área de Trabalho do Windows.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/13/2019
+ms.date: 09/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c864ba0e51054a553bfd53f845bd4d1c9ff3c8ba
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 961d636fb59b33d0c562ec25d13174abbe766606
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988234"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404077"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -39,7 +39,18 @@ No momento, é possível baixar o cliente do Windows 64 bits. Atualizaremos essa
 
 É possível instalar o cliente do usuário atual, que não requer direitos de administrador, ou seu administrador pode instalar e configurar o cliente para que todos os usuários no dispositivo possam acessá-lo.
 
-Depois de instalado, o cliente pode ser iniciado no menu Iniciar pesquisando **Área de Trabalho Remota**.
+Depois de instalar o cliente, você pode iniciá-lo no menu Iniciar procurando **Área de Trabalho Remota**.
+
+## <a name="update-the-client"></a>Atualizar o cliente
+
+Você será notificado sempre que uma nova versão do cliente estiver disponível, desde que seu administrador não tenha desabilitado as notificações. A notificação será exibida na Central de Conexões ou na Central de Ações do Windows. Para atualizar o cliente, basta selecionar a notificação.
+
+Também é possível pesquisar manualmente novas atualizações para o cliente:
+
+1. Na Central de Conexão, toque no menu de estouro ( **...** ) na barra de comandos na parte superior do cliente.
+2. Selecione **Sobre** no menu suspenso.
+3. Toque em **Verificar se há atualizações**.
+4. Se houver uma atualização disponível, toque em **Instalar atualização** para atualizar o cliente.
 
 ## <a name="feeds"></a>Feeds
 
@@ -84,20 +95,30 @@ Esta seção ensinará como cancelar a assinatura de um feed. É possível cance
 2. Selecione **Cancelar assinatura** no menu suspenso.
 3. Examine a caixa de diálogo e selecione **Continuar**.
 
-## <a name="update-the-client"></a>Atualizar o cliente
+## <a name="managed-desktops"></a>Áreas de trabalho gerenciadas
 
-A menos que tenha sido desabilitado por um administrador, você será notificado quando uma nova versão do cliente estiver disponível. Essa notificação pode ser mostrada diretamente na Central de Conexão ou na Central de Ações do Windows. Selecione a notificação para iniciar o processo de atualização.
+Os workspaces podem conter vários recursos gerenciados, incluindo áreas de trabalho. Ao acessar uma área de trabalho gerenciada, você tem acesso a todos os aplicativos instalados por seu administrador.
 
-Também é possível pesquisar manualmente novas atualizações para o cliente:
+### <a name="desktop-settings"></a>Configurações da área de trabalho
 
-1. Na Central de Conexão, toque no menu de estouro ( **...** ) na barra de comandos na parte superior do cliente.
-2. Selecione **Sobre** no menu suspenso.
-3. Toque em **Verificar se há atualizações**.
-4. Se houver uma atualização disponível, toque em **Instalar atualização** para atualizar o cliente.
+É possível definir algumas das configurações para recursos da área de trabalho a fim de garantir que a experiência atenda às suas necessidades. Para acessar a lista de configurações disponíveis:
 
-## <a name="providing-feedback"></a>Fornecendo comentários
+1. Na Central de Conexões, clique com o botão direito do mouse em um recurso da área de trabalho.
+2. Selecione **Configurações** no menu suspenso.
+3. O painel Configurações será exibido no lado direito do cliente que exibe o nome da área de trabalho.
 
-Tem uma sugestão de recursos ou deseja relatar um problema? Conte-nos usando o [Hub de Comentários](feedback-hub://?tabid=2&contextid=883) que também pode ser acessado do cliente:
+O cliente usará as configurações definidas pelo administrador, a menos que você desative a opção **Usar configurações padrão**. Isso permite que você configure as seguintes opções:
+
+- **Usar todos os monitores** alterna a sessão da área de trabalho entre o uso de todos os monitores locais disponíveis e apenas um monitor.
+- **Iniciar em tela inteira** determina se a sessão será iniciada no modo de tela inteira ou de janela. Essa configuração é habilitada automaticamente ao usar todos os monitores.
+- **Atualizar a resolução ao redimensionar** altera o comportamento quando você redimensiona a sessão no modo de janela. Se habilitada, a resolução da área de trabalho remota será atualizada para corresponder ao tamanho da janela local. Se desabilitada, a sessão reterá a resolução especificada em **Resolução** por toda a duração. Essa configuração é habilitada automaticamente ao usar todos os monitores.
+- A **Resolução** permite que você especifique a resolução da área de trabalho remota. A sessão reterá essa resolução por toda a duração. Essa configuração será desabilitada automaticamente caso a resolução seja definida como atualizar ao redimensionar.
+- **Alterar o tamanho do texto e dos aplicativos** especifica o tamanho do conteúdo da sessão. Essa configuração se aplica somente ao se conectar ao Windows 8.1 e posterior ou ao Windows Server 2012 R2 e posterior. Essa configuração será desabilitada automaticamente caso a resolução seja definida como atualizar ao redimensionar.
+- **Ajustar a sessão à janela** determina como a sessão é exibida quando a resolução da área de trabalho remota difere do tamanho da janela local. Quando habilitado, o conteúdo da sessão será redimensionado para se ajustar dentro da janela enquanto preserva a taxa de proporção da sessão. Quando desabilitadas, as barras de rolagem ou as áreas pretas serão mostradas quando a resolução e o tamanho da janela não corresponderem.
+
+## <a name="provide-feedback"></a>Fornecer comentários
+
+Tem uma sugestão de recursos ou deseja relatar um problema? Conte-nos usando o [Hub de Comentários](feedback-hub://?tabid=2&contextid=883). Você também pode acessar o Hub de Feedback por meio do cliente:
 
 1. Na Central de Conexão, toque no menu de estouro ( **...** ) na barra de comandos na parte superior do cliente.
 2. Selecione **Comentários** no menu suspenso para abrir o Hub de Comentários.

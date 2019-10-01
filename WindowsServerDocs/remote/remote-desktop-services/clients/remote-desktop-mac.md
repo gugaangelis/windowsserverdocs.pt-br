@@ -2,7 +2,7 @@
 title: Introdução ao cliente para macOS
 description: Saiba como configurar o cliente da Área de Trabalho Remota para Mac
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8836ab500e97b68efbcdd0cd1ca5bcbe39d79334
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 1512589315489f5bc351ff105a56694e0947463b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150919"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404140"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -159,7 +159,7 @@ Os layouts de teclado do Mac são diferentes dos layouts de teclado do Windows.
 - As teclas de função podem ser ativadas na sessão pressionando a tecla FN (por exemplo: FN+F1).
 - A tecla Alt à direita da barra de espaço no teclado Mac é igual à tecla Alt Gr/Alt à direita no Windows.
 
-Por padrão, a sessão remota usará a mesma localidade do teclado do sistema operacional no qual você estiver executando o cliente. Se seu Mac estiver executando um sistema operacional em inglês dos EUA, o idioma também será usado nas sessões remotas. Se a localidade de teclado do sistema operacional não for usada, verifique a configuração de teclado no computador remoto e altere-a manualmente. Confira as [Perguntas Frequentes de Cliente de Área de Trabalho Remota](remote-desktop-client-faq.md) para obter mais informações sobre teclados e localidades.
+Por padrão, a sessão remota usará a mesma localidade do teclado do sistema operacional no qual você estiver executando o cliente. (Caso seu Mac esteja executando um sistema operacional em inglês dos EUA, o idioma também será usado nas sessões remotas.) Caso a localidade de teclado do sistema operacional não seja usada, verifique a configuração de teclado no computador remoto e altere-a manualmente. Confira as [Perguntas Frequentes de Cliente de Área de Trabalho Remota](remote-desktop-client-faq.md) para obter mais informações sobre teclados e localidades.
 
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>Suporte para autorização e autenticação conectável do gateway de Área de Trabalho Remota

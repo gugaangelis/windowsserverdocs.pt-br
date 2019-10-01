@@ -1,7 +1,7 @@
 ---
 title: Implantar o seu ambiente de Área de Trabalho Remota
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: Etapas básicas para implantar um ambiente de Área de Trabalho Remota.
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e00be471b2607ad4bc8cc8e11652d428419b4fd6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805136"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404019"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>Implantar o seu ambiente de Área de Trabalho Remota
 
@@ -46,7 +46,7 @@ Se você estiver usando máquinas virtuais para qualquer um dos servidores dos S
 4.  Ative o Servidor de Licenças RD e adicione-o ao grupo Servidores de Licença:  
     1.  No Gerenciador do Servidor, clique em **Ferramentas > Serviços de Terminal > Gerenciador de Licenciamento de Área de Trabalho Remota**.  
     2.  No Gerenciador de Licenciamento de Área de Trabalho Remota, selecione o servidor e clique em **Ação > Ativar Servidor**.  
-    3.  Adote os valores padrão no Assistente para Ativação do Servidor aceitando os padrões até chegar à página **Informações da empresa**. Verifique as informações da sua empresa.  
+    3.  Aceite os valores padrão no Assistente para Ativação do Servidor. Continue aceitando valores padrão até chegar à página **Informações sobre a empresa**. Verifique as informações da sua empresa.  
     4.  Aceite os padrões para as páginas restantes até a página final. Desmarque **Iniciar Assistente para Instalação de Licenças agora** e clique em **Concluir**.  
     5.  Clique em **Ação > Examinar Configuração > Adicionar ao Grupo > OK**. Insira as credenciais para um usuário no grupo Administradores do DC AAD e registre como SCP. Esta etapa pode não funcionar se você estiver usando o Azure AD Domain Services, porém, é possível ignorar os avisos ou erros.  
 5.  Adicione o servidor de Gateway de Área de Trabalho Remota e o nome do certificado:  

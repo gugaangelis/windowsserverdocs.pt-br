@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 943026c04055919fefd7002c50144d28413de1a7
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.prod: windows-server
+ms.openlocfilehash: e235c8013afa573712feaec75bbd1ca195c0e307
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357003"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,7 +129,7 @@ O **Windows Admin Center** (conhecido anteriormente como **Project Honolulu**) �
 
 Saiba mais sobre as versões mais recentes dos nossos recursos:
 
-- A versão 1909 apresenta o tipo de conexão específica da VM do Azure e unifica os tipos de conexão para clusters de failover tradicionais e clusters de HCI.
+- A versão [1909](https://aka.ms/wac1909) apresenta o tipo de conexão específica da VM do Azure e unifica os tipos de conexão para clusters de failover tradicionais e clusters de HCI.
 - A versão [1908](https://aka.ms/wac1908) adicionou atualizações visuais, Packetmon, FlowLog Audit, integração do Azure Monitor para clusters e suporte ao WinRM por HTTPS (porta 5986).
 - A versão [1907](https://aka.ms/wac1907) adicionou links de estimativa de custo do Azure e realizou melhorias na importação/exportação e marcação de máquinas virtuais.
 - A versão [1906](https://aka.ms/wac1906) adicionou VMs de importação/exportação, alternância de contas do Azure, adição de conexões do Azure, experimento de configurações de conectividade, melhorias de desempenho e ferramenta de criação de perfil de desempenho.
