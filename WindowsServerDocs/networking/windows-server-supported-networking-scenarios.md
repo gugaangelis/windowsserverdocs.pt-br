@@ -96,7 +96,7 @@ Os cenários de plataforma de rede permitem que você:
   
 -   Configure SET para distribuir SMB direto e o tráfego RDMA flui entre até dois adaptadores de rede.  
   
-Para obter mais informações, [consulte Remote Direct Memory &#40;Access&#41; RDMA e switch Embedded &#40;Integration&#41;Set](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
+Para obter mais informações, [cAcesso remoto direto à memória RDMA -e troca de equipe inserida SET](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
   
 #### <a name="bkmk_switch"></a>Cenários de comutador virtual do Hyper-V
 
