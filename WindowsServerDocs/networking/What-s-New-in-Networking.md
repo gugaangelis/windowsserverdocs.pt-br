@@ -70,7 +70,7 @@ Os conceitos básicos de escala de nuvem a seguir agora estão disponíveis.
   
 -   **Pacote direto**.  O pacote direto fornece uma alta taxa de transferência de tráfego de rede e uma infra-estrutura de processamento de pacotes de baixa latência.  
   
--   **Alterne a equipe inserida (Set)** .        O conjunto é uma solução de agrupamento NIC integrada ao comutador virtual Hyper-V. SET permite o agrupamento de até oito NICS físicas em uma única equipe de conjunto, o que melhora a disponibilidade e fornece failover. No Windows Server 2016, você pode criar equipes definidas que são restritas ao uso de protocolo SMB e RDMA. Além disso, você pode usar o SET Teams para distribuir o tráfego de rede para virtualização de rede Hyper-V. Para obter mais informações, [consulte Remote Direct Memory &#40;Access&#41; RDMA e switch Embedded &#40;Integration&#41;Set](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
+-   **Alterne a equipe inserida (Set)** .        O conjunto é uma solução de agrupamento NIC integrada ao comutador virtual Hyper-V. SET permite o agrupamento de até oito NICS físicas em uma única equipe de conjunto, o que melhora a disponibilidade e fornece failover. No Windows Server 2016, você pode criar equipes definidas que são restritas ao uso de protocolo SMB e RDMA. Além disso, você pode usar o SET Teams para distribuir o tráfego de rede para virtualização de rede Hyper-V. Para obter mais informações,consulte [Acesso remoto direto à memória &#40;Access&#41; RDMA e troca de equipe inserida &#40;Integration&#41;Set](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
   
 ## <a name="bkmk_existing"></a>Novos recursos para tecnologias de rede adicionais
 
