@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 3/26/2019
 ms.localizationpriority: ''
-ms.openlocfilehash: 497fa201c500919fc857d25166d37ce87613d0f0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 549cc6dbeec3d414e886f6ebf32315ae13627812
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872013"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940804"
 ---
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>Entender e implantar a memória persistente
@@ -26,8 +26,7 @@ A memória persistente (ou PMem) é um novo tipo de tecnologia de memória que o
 
 ## <a name="background"></a>Informações preliminares
 
-O PMem é um tipo de DRAM (NVDIMM) não volátil que tem a velocidade de DRAM, mas retém seu conteúdo de memória por meio de ciclos de energia (o conteúdo da memória permanece mesmo quando a energia do sistema fica inativa no caso de uma perda de energia inesperada, um desligamento iniciado pelo usuário, uma falha do sistema, etc.). Por isso, retomar de onde você parou é significativamente mais rápido, já que o conteúdo da sua RAM não precisa ser recarregado. Outra característica exclusiva é que o PMem é endereçável por byte, o que significa que você também pode usá-lo como armazenamento (motivo pelo qual você pode ouvir o PMem ser chamado de memória de classe de armazenamento).
-
+O PMem é um tipo de memória RAM não volátil (NVDIMM) que mantém seu conteúdo por meio de ciclos de energia. O conteúdo da memória permanece mesmo quando a energia do sistema fica inativa em caso de perda de energia inesperada, desligamento iniciado pelo usuário, falha do sistema, etc. Essa característica exclusiva significa que você também pode usar o PMem como armazenamento – e é por isso que você pode ouvir o PMem ser chamado de "memória de classe de armazenamento".
 
 Para ver alguns desses benefícios, vamos examinar a demonstração do Microsoft Ignite 2018:
 
@@ -57,13 +56,13 @@ A tabela a seguir tem os números de desempenho completos:
 
 ### <a name="supported-hardware"></a>Hardware com suporte
 
-A tabela a seguir mostra o hardware de memória persistente com suporte para o Windows Server 2019 e o Windows Server 2016. Observe que o Intel Optane dá suporte especificamente ao modo de memória e ao modo de aplicativo direto. O Windows Server 2019 dá suporte a operações de modo misto.
+A tabela a seguir mostra o hardware de memória persistente com suporte para o Windows Server 2019 e o Windows Server 2016. Observe que o Intel Optane dá suporte à memória (ou seja, volátil) e ao aplicativo direto (ou seja, modo persistente).
 
 | Tecnologia de memória persistente                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
-| **NVDIMM-N** no modo de aplicativo-direto                                       | Suportado                | Suportado                |
-| **Intel Optane™ memória persistente de DC** no modo de aplicativo-direto             | Sem Suporte            | Suportado                |
-| **Intel Optane™ memória persistente de DC** no modo de memória de dois níveis (2LM) | Sem Suporte            | Suportado                |
+| **NVDIMM-N** no modo persistente                                  | Suportado                | Suportado                |
+| **Intel Optane™ memória persistente de DC** no modo direto do aplicativo             | Sem Suporte            | Suportado                |
+| **Intel Optane™ memória persistente de DC** no modo de memória | Suportado            | Suportado                |
 
 Agora, vamos nos aprofundar em como você configura a memória persistente.
 
@@ -71,7 +70,7 @@ Agora, vamos nos aprofundar em como você configura a memória persistente.
 
 ### <a name="understanding-interleave-sets"></a>Noções básicas sobre conjuntos de intercalação
 
-Lembre-se de que o NVDIMM-N reside em um slot de DIMM (memória) padrão, colocando os dados mais próximos do processador (portanto, reduzindo a latência e buscando melhor desempenho). Para se basear nisso, um conjunto de intercalação é quando dois ou mais NVDIMMs criam uma intercalação de N vias definida para fornecer operações de leitura/gravação de listras para maior taxa de transferência. As configurações mais comuns são intercalações de 2 vias ou de 4 vias.
+Lembre-se de que um NVDIMM reside em um slot de DIMM (memória) padrão, colocando os dados mais próximos do processador (portanto, reduzindo a latência e buscando melhor desempenho). Para se basear nisso, um conjunto de intercalação é quando dois ou mais NVDIMMs criam uma intercalação de N vias definida para fornecer operações de leitura/gravação de listras para maior taxa de transferência. As configurações mais comuns são intercalações de 2 vias ou de 4 vias.
 
 Conjuntos intercalados geralmente podem ser criados no BIOS de uma plataforma para fazer com que vários dispositivos de memória persistentes apareçam como um único disco lógico para o Windows Server. Cada disco lógico de memória persistente contém um conjunto intercalado de dispositivos físicos executando:
 

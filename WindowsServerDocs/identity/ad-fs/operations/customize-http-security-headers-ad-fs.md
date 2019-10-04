@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1042ad4dae0b023c9816dff798c25b05b60eccf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407442"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935040"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019 
  
@@ -53,7 +53,7 @@ Set-AdfsResponseHeaders -EnableResponseHeaders $false
 ### <a name="http-strict-transport-security-hsts"></a>HTTP Strict-Transport-Security (HSTS) 
 HSTS é um mecanismo de diretiva de segurança da Web que ajuda a mitigar ataques de downgrade de protocolo e seqüestro de cookie para serviços que têm pontos de extremidade HTTP e HTTPS. Ele permite que os servidores Web declarem que os navegadores da Web (ou outros agentes de usuário de conformidade) só devem interagir com ele usando HTTPS e nunca por meio do protocolo HTTP.  
  
-Todos os pontos de extremidade AD FS para o tráfego de autenticação na Web são abertos exclusivamente por HTTPS. Como resultado, AD FS atenua efetivamente as ameaças que o mecanismo de política de segurança de transporte estrito de HTTP fornece (por padrão, não há nenhum downgrade para HTTP, pois não há ouvintes em HTTP). O cabeçalho pode ser personalizado definindo os seguintes parâmetros 
+Todos os pontos de extremidade AD FS para o tráfego de autenticação na Web são abertos exclusivamente por HTTPS. Como resultado, AD FS atenua efetivamente as ameaças que o mecanismo de política de segurança de transporte estrito de HTTP fornece (por padrão, não há nenhum downgrade para HTTP, pois não há ouvintes em HTTP). O cabeçalho pode ser personalizado definindo os seguintes parâmetros:
  
 - **Max-age =&lt;tempo&gt; de expiração** – o tempo de expiração (em segundos) especifica por quanto tempo o site só deve ser acessado usando HTTPS. O valor padrão e recomendado é 31536000 segundos (1 ano).  
 - **includeSubDomains** – é um parâmetro opcional. Se especificado, a regra HSTS também se aplicará a todos os subdomínios.  
@@ -107,7 +107,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ```
 
 ### <a name="x-xss-protection"></a>X-XSS-Protection 
-Esse cabeçalho de resposta de segurança HTTP é usado para interromper o carregamento de páginas da Web quando ataques XSS (script entre sites) são detectados por navegadores. Isso é chamado de filtragem XSS. O cabeçalho pode ser definido como um dos valores a seguir 
+Esse cabeçalho de resposta de segurança HTTP é usado para interromper o carregamento de páginas da Web quando ataques XSS (script entre sites) são detectados por navegadores. Isso é chamado de filtragem XSS. O cabeçalho pode ser definido como um dos seguintes valores:
  
 - **0** – desabilita a filtragem XSS. Não recomendado.  
 - **1** – habilita a filtragem XSS. Se um ataque XSS for detectado, o navegador limpará a página.   
@@ -138,7 +138,7 @@ A segurança do navegador da Web impede que uma página da Web faça solicitaç�
 Para entender melhor a solicitação de CORS, vamos analisar um cenário em que um aplicativo de página única (SPA) precisa chamar uma API da Web com um domínio diferente. Além disso, vamos considerar que o SPA e a API estão configurados no ADFS 2019 e AD FS tem CORS habilitado, ou seja, AD FS pode identificar cabeçalhos CORS na solicitação HTTP, validar valores de cabeçalho e incluir cabeçalhos CORS apropriados na resposta (detalhes sobre como habilitar e Configure o CORS na seção AD FS 2019 na personalização CORS abaixo). Fluxo de exemplo: 
 
 1. O usuário acessa o SPA por meio do navegador do cliente e é redirecionado para AD FS ponto de extremidade de autorização para autenticação. Como o SPA está configurado para o fluxo de concessão implícito, a solicitação retorna um token de ID de acesso + para o navegador após a autenticação bem-sucedida.  
-2. Após a autenticação do usuário, o JavaScript de front-end incluído no SPA faz uma solicitação para acessar a API da Web. A solicitação é redirecionada para AD FS com os cabeçalhos a seguir
+2. Após a autenticação do usuário, o JavaScript de front-end incluído no SPA faz uma solicitação para acessar a API da Web. A solicitação é redirecionada para AD FS com os seguintes cabeçalhos:
     - Opções – descreve as opções de comunicação para o recurso de destino 
     - Origem – inclui a origem da API Web
     - Access-Control-Request-Method – identifica o método HTTP (por exemplo, DELETE) a ser usado quando a solicitação real é feita 
@@ -146,11 +146,11 @@ Para entender melhor a solicitação de CORS, vamos analisar um cenário em que 
     
    >[!NOTE]
    >A solicitação CORS é semelhante a uma solicitação HTTP padrão. no entanto, a presença de um cabeçalho de origem sinaliza que a solicitação de entrada está relacionada a CORS. 
-3. AD FS verifica se a origem da API da Web incluída no cabeçalho está listada nas origens confiáveis configuradas no AD FS (detalhes sobre como modificar as origens confiáveis na seção de personalização do CORS abaixo). AD FS, em seguida, responde com os cabeçalhos a seguir.  
+3. AD FS verifica se a origem da API da Web incluída no cabeçalho está listada nas origens confiáveis configuradas no AD FS (detalhes sobre como modificar as origens confiáveis na seção de personalização do CORS abaixo). AD FS, em seguida, responde com os seguintes cabeçalhos:  
     - Acesso-controle-permitir-Origin – valor igual ao cabeçalho de origem 
     - Access-Control-Allow-Method – valor igual ao cabeçalho Access-Control-Request-Method 
     - Access-Control-Allow-Headers-Value igual ao cabeçalho Access-Control-request-headers 
-4. O navegador envia a solicitação real, incluindo os seguintes cabeçalhos 
+4. O navegador envia a solicitação real, incluindo os seguintes cabeçalhos:
     - Método HTTP (por exemplo, DELETE) 
     - Origem – inclui a origem da API Web 
     - Todos os cabeçalhos incluídos no cabeçalho de resposta Access-Control-Allow-Headers 
@@ -199,7 +199,7 @@ Se uma diretiva estiver explicitamente listada, o valor especificado substituir�
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 
 ```
-As fontes a seguir podem ser definidas para a política padrão-src 
+As seguintes fontes podem ser definidas para a política default-src:
  
 - ' self ' – especificar isso restringe a origem do conteúdo a ser carregado na origem da página da Web 
 - ' não seguro-embutido ' – especificar isso na política permite o uso de JavaScript embutido e CSS 
@@ -223,7 +223,7 @@ Uma vez definido, o novo cabeçalho é enviado na resposta de AD FS (trecho de c
  
 ![Fiddler](media/customize-http-security-headers-ad-fs/header2.png)
 
-## <a name="web-browswer-compatibility"></a>Compatibilidade de plug Web
+## <a name="web-browser-compatibility"></a>Compatibilidade do navegador da Web
 Use a tabela a seguir e os links para determinar quais navegadores da Web são compatíveis com cada um dos cabeçalhos de resposta de segurança.
 
 |Cabeçalhos de resposta de segurança HTTP|Compatibilidade do navegador|
@@ -236,5 +236,5 @@ Use a tabela a seguir e os links para determinar quais navegadores da Web são c
 
 ## <a name="next"></a>Próximo
 
-- [Usar AD FS guias de troublehshooting de ajuda](https://aka.ms/adfshelp/troubleshooting )
+- [Usar AD FS guias de solução de problemas de ajuda](https://aka.ms/adfshelp/troubleshooting )
 - [Solução de problemas do AD FS](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

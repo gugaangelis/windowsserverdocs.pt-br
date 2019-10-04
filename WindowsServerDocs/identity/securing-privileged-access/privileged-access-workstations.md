@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 29e3785d1c004d669e0060854acb6af1d2953644
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb91ca583fd71a7fbe38369606d2dcc4a816d8aa
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357920"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935013"
 ---
 # <a name="privileged-access-workstations"></a>Estações de trabalho com acesso privilegiado
 
@@ -511,66 +511,136 @@ Nesta seção, você criará um novo GPO "PAW Configuration-User", que fornecer�
 Nesta seção, configuraremos as políticas de grupo para impedir que contas com privilégios administrativos façam logon em hosts de camadas inferiores.
 
 1. Crie o novo GPO **Restringir Logon na Estação de Trabalho** essa configuração restringirá o logon de contas de administrador de Camada 0 e Camada 1 em estações de trabalho padrão.  Esse GPO deve ser vinculado à UO de nível superior "estações de trabalho" e ter as seguintes configurações:
-   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar Rights     Administração de domínio administradores de domínios administradores de contas domínio \ administradores operadores de backup operadores de impressão operadores de servidor operadores de domínio somente leitura controladores de domínio Política de Grupo criadores proprietários criptografia Oper ators
+   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar Rights
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Grupos internos da camada 0, consulte equivalência da camada 0 para obter mais detalhes.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Todos os grupos criados personalizados com acesso de camada 0 efetivo, consulte equivalência da camada 0 para obter mais detalhes.
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > This Group was created earlier in Phase 1.
+     > [!NOTE]
+     > Este grupo foi criado anteriormente na fase 1.
 
-   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar de logon como um serviço, selecione **definir estas configurações de política** e adicione os grupos de camada 0 e 1:     Administração de domínio administradores de domínios administradores de contas domínio \ administradores operadores de backup operadores de impressão operadores de servidor operadores de domínio somente leitura controladores de domínio Política de Grupo criadores proprietários criptografia Oper ators
+   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar de logon como um serviço, selecione **definir estas configurações de política** e adicione os grupos de camada 0 e 1:
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Observação: Grupos internos da camada 0, consulte equivalência da camada 0 para obter mais detalhes.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Observação: Todos os grupos criados personalizados com acesso de camada 0 efetivo, consulte equivalência da camada 0 para obter mais detalhes.
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > Note: This Group was created earlier in Phase 1
+     > [!NOTE]
+     > Observação: Este grupo foi criado anteriormente na fase 1
 
 2. Criar o novo GPO de **logon de servidor restrito** -essa configuração restringirá as contas de administrador da camada 0 de fazer logon nos servidores da camada 1.  Esse GPO deve ser vinculado à UO de nível superior da "servidores da camada 1" e ter as seguintes configurações:
-   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar     Administração de domínio administradores de domínios administradores de contas domínio \ administradores operadores de backup operadores de impressão operadores de servidor operadores de domínio somente leitura controladores de domínio Política de Grupo criadores proprietários criptografia Oper ators
+   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar de logon como um serviço, selecione **definir estas configurações de política**     Administração de domínio administradores de domínios administradores de contas domínio \ administradores operadores de backup operadores de impressão operadores de servidor operadores de domínio somente leitura controladores de domínio Política de Grupo criadores proprietários criptografia Oper ators
-
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Negar logon local, selecione **definir estas configurações de política** e     Administradores de domínio administradores de grupo Administradores de conta operadores de backup operadores de impressão operadores de domínio Opers. controladores de domínio somente leitura Política de Grupo criadores proprietários operadores de criptografia
-
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Grupos internos da camada 0, consulte equivalência da camada 0 para obter mais detalhes.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Todos os grupos criados personalizados com acesso de camada 0 efetivo, consulte equivalência da camada 0 para obter mais detalhes.
+
+   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ negar de logon como um serviço, selecione **definir estas configurações de política**
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > Grupos internos da camada 0, consulte equivalência da camada 0 para obter mais detalhes.
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > Todos os grupos criados personalizados com acesso de camada 0 efetivo, consulte equivalência da camada 0 para obter mais detalhes.
+
+   * No computador \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Negar logon local, selecione **definir estas configurações de política** e
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > Observação: Grupos internos da camada 0, consulte equivalência da camada 0 para obter mais detalhes.
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > Observação: Todos os grupos criados personalizados com acesso de camada 0 efetivo, consulte equivalência da camada 0 para obter mais detalhes.
 
 #### <a name="deploy-your-paws"></a>Implantar sua(s) PAW(s)
 

@@ -2,13 +2,13 @@
 author: shortpatti
 ms.author: pashort
 ms.date: 10/02/2018
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms:topic: include
-ms.openlocfilehash: cdd92fcb1e4caab18d12f276f8090ffe449d3623
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 616f61fbb82cdda6351e5f717d93d3a31a4e340f
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823937"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935088"
 ---
-Com modos dependentes de comutador, a opção para que os membros da equipe NIC estão conectados determina como distribuir o tráfego de rede de entrada entre os membros da equipe NIC. O switch possui independência completa para determinar como distribuir o tráfego de rede entre os membros da equipe NIC.
+Com os modos dependentes de switch, o comutador ao qual os membros da equipe NIC estão conectados determina como distribuir o tráfego de rede de entrada entre os membros da equipe NIC. A opção tem uma independência completa para determinar como distribuir o tráfego de rede entre os membros da equipe da NIC.

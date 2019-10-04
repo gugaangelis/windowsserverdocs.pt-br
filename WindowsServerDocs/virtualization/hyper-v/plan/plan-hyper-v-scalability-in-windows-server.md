@@ -1,5 +1,5 @@
 ---
-title: Planejar a escalabilidade do Hyper-V no Windows Server 2016
+title: Planejar a escalabilidade do Hyper-V no Windows Server 2016 e no Windows Server 2019
 description: Lista o número máximo com suporte para os componentes que você pode adicionar ou remover do Hyper-V e de máquinas virtuais, como a quantidade de memória e quantos processadores virtuais.
 ms.prod: windows-server
 ms.service: na
@@ -10,14 +10,14 @@ ms.topic: article
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: 3d94d8475f5de8d6b3d1d3f0bc549a8791e1d0c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 493f7926a6ef686e6d47c1a3120a65ed0799b0db
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364065"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71934951"
 ---
-# <a name="plan-for-hyper-v-scalability-in-windows-server-2016"></a>Planejar a escalabilidade do Hyper-V no Windows Server 2016
+# <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Planejar a escalabilidade do Hyper-V no Windows Server 2016 e no Windows Server 2019
 
 > Aplica-se a: Windows Server 2016, Windows Server 2019
   

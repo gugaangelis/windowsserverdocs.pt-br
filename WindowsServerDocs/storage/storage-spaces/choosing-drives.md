@@ -7,14 +7,14 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 10/08/2018
+ms.date: 09/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b02d26e8a2f2cd699d8e1eda95cf72fe71396a21
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 21ba41f636c95660d16055908f6bef857b0f3608
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402899"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71934991"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 
@@ -114,9 +114,7 @@ O cache deve ser dimensionado para acomodar o conjunto de trabalho de seus aplic
 
 ### <a name="general"></a>Geral
 
-É recomendável limitar a capacidade de armazenamento total por servidor a aproximadamente 100 TB. Quanto maior a capacidade de armazenamento por servidor, mais tempo é necessário para ressincronizar os dados após a inatividade ou reinicialização, como na aplicação de atualizações de software.
-
-O tamanho máximo atual por pool de armazenamento é de 4 petabyte (PB) (4.000 TB) para o Windows Server 2019 ou 1 petabyte para Windows Server 2016.
+É recomendável limitar a capacidade de armazenamento total por servidor a aproximadamente 400 terabytes (TB). Quanto maior a capacidade de armazenamento por servidor, mais tempo é necessário para ressincronizar os dados após a inatividade ou reinicialização, como na aplicação de atualizações de software. O tamanho máximo atual por pool de armazenamento é de 4 petabyte (PB) (4.000 TB) para o Windows Server 2019 ou 1 petabyte para Windows Server 2016.
 
 ## <a name="see-also"></a>Consulte também
 

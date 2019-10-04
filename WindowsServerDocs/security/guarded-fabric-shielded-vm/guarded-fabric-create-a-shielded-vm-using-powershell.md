@@ -6,13 +6,13 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: 888177c1288216c28f7d4c0a667fd81e93bdce8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: 317da0ae3c41d142db6f5a076fd3004d9970b815
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402394"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940750"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>Criar uma VM blindada usando o PowerShell
 
@@ -90,6 +90,19 @@ Depois que o módulo estiver instalado, você estará pronto para provisionar su
 
 ```powershell
 New-ShieldedVM -Name 'MyShieldedVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait
+```
+
+Se o arquivo de resposta de dados de blindagem incluir valores de especialização, você poderá fornecer os valores de substituição para New-ShieldedVM. Neste exemplo, o arquivo de resposta é configurado com valores de espaço reservado para um endereço IPv4 estático.
+
+```powershell
+$specializationValues = @{
+    "@IP4Addr-1@" = "192.168.1.10"
+    "@MacAddr-1@" = "Ethernet"
+    "@Prefix-1-1@" = "192.168.1.0/24"
+    "@NextHop-1-1@" = "192.168.1.254"
+}
+New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -SpecializationValues $specializationValues -Wait
+
 ```
 
 Se o seu disco de modelo contiver um sistema operacional baseado em Linux, inclua o sinalizador `-Linux` ao executar o comando:
