@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51d9636013fef182c4abb74ae196e08c51ff11d8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 30e4c2c7c5cf2668d62e96d8d2a54dc33e3d2a55
+ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362748"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960946"
 ---
 # <a name="using-the-remove-imagegroup-command"></a>Usando o comando Remove-MyImage
 
@@ -40,9 +40,9 @@ Para remover o grupo de imagens, digite um dos seguintes:
 wdsutil /remove-ImageGroumediaGroup:ImageGroup1
 wdsutil /verbose /remove-ImageGroumediaGroup:"My Image Group" /Server:MyWDSServer 
 ```
-#### <a name="additional-references"></a>Referências adicionais
-A [chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando Add-Image do](using-the-add-imagegroup-command.md)
-[usando o comando Get-AllImageGroups](using-the-get-allimagegroups-command.md)
-[usando o comando Get-Image myCommand](using-the-get-imagegroup-command.md)
-[subcomando: Set-Image](subcommand-set-imagegroup.md)
+#### <a name="additional-references"></a>referências adicionais
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+[Usando o comando Add-Imageus](using-the-add-imagegroup-command.md)  
+[Usando o comando Get-AllImageGroups](using-the-get-allimagegroups-command.md)  
+[Usando o comando Get-Imageus](using-the-get-imagegroup-command.md)  
+[Subcomando: Set-grupo de imagens](subcommand-set-imagegroup.md)  
