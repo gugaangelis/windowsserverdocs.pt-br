@@ -47,7 +47,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 |-s \<ServerName >|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|
 |-u \<UserName >-w \<Password >|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|
 |-h \<path >|Especifica o caminho para o arquivo de driver. Se você não especificar um caminho, será usado o caminho para o local onde o Windows foi instalado.|
-|-i @no__t -0Filename. inf >|Especifica o caminho completo e o nome do arquivo para o driver que você deseja instalar. Se você não especificar um nome de arquivo, o script usará um dos arquivos. inf de impressora da caixa de entrada no subdiretório inf do diretório do Windows.<br /><br />Se o caminho do driver não for especificado, o script pesquisará os arquivos de driver no arquivo. cab do driver.|
+|-i \<Filename.inf>|Especifica o caminho completo e o nome do arquivo para o driver que você deseja instalar. Se você não especificar um nome de arquivo, o script usará um dos arquivos. inf de impressora da caixa de entrada no subdiretório inf do diretório do Windows.<br /><br />Se o caminho do driver não for especificado, o script pesquisará os arquivos de driver no arquivo. cab do driver.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
