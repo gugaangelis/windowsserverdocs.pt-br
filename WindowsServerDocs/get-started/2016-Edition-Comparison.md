@@ -1,84 +1,82 @@
 ---
 title: Produtos e edições do Windows Server 2016
-description: Explica diferenças nas edições Standard e Datacenter
-ms.custom: na
+description: Explica as diferenças nas edições Windows Server Standard e Windows Server Datacenter
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.date: 01/03/2017
+ms.date: 10/04/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-a932-80cab33f419e
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d32d596746d2ff137fe2517a6430976f9e77ce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2940e5ad75fab90f717284eabafd555573cab35
+ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391883"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973857"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparação das edições Standard e Datacenter do Windows Server 2016
 
 > Aplica-se a: Windows Server 2016
   
 ## <a name="locks-and-limits"></a>Bloqueios e limites
-|Bloqueios e limites|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
-|Número máximo de usuários|Com base em CALs|Com base em CALs|
-|Máximo de conexões SMB|16777216|16777216|
-|Máximo de conexões RRAS|ilimitado|ilimitado|
-|Máximo de conexões IAS|2147483647|2147483647|
-|Máximo de conexões RDS|65535|65535|
-|Número máximo de soquetes 64 bits|64|64|
-|Número máximo de núcleos|ilimitado|ilimitado|
-|RAM Máxima|24 TB|24 TB|
-|Pode ser usado como convidado para virtualização|Sim; 2 máquinas virtuais, além de um host do Hyper-V por licença|Sim; máquinas virtuais ilimitadas, além de um host do Hyper-V por licença|
-|Servidor pode ingressar em um domínio|sim|sim|
-|Proteção/firewall da rede de borda|não|não|
-|DirectAccess|sim|sim|
-|Codecs DLNA e streaming de mídia Web|Sim, se instalado como servidor com Experiência Desktop|Sim, se instalado como servidor com Experiência Desktop|
+
+| Bloqueios e limites | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
+| ------------------- |---------- | --------------------------- |  
+| Número máximo de usuários | Com base em CALs   | Com base em CALs     |
+| Máximo de conexões SMB | 16.777.216      | 16.777.216          |
+| Máximo de conexões RRAS| ilimitado       | ilimitado         |
+| Máximo de conexões IAS | 2\.147.483.647   | 2\.147.483.647        |
+| Máximo de conexões RDS | 65535           | 65535             |
+| Número máximo de soquetes 64 bits | 64     | 64                |
+| Número máximo de núcleos | ilimitado       | ilimitado      |
+| RAM Máxima             | 24 TB           | 24 TB             |
+| Pode ser usado como convidado para virtualização | Sim; 2 máquinas virtuais, além de um host do Hyper-V por licença | Sim; <strong>máquinas virtuais ilimitadas</strong>, além de um host do Hyper-V por licença |
+| Servidor pode ingressar em um domínio | sim            | sim                |
+| Proteção/firewall da rede de borda | não     | não                 |
+| DirectAccess            | sim             | sim                |
+| Codecs DLNA e streaming de mídia Web | Sim, se instalado como servidor com Experiência Desktop | Sim, se instalado como servidor com Experiência Desktop |
 
 ## <a name="server-roles"></a>Funções de servidor
-|Funções do Windows Server disponíveis|Serviços de função|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|----------|---------------------------|  
-|Serviços de Certificados do Active Directory| |Sim|Sim|
-|Active Directory Domain Services| |Sim|Sim|
-|Serviços de Federação do Active Directory (AD FS)| |Sim|Sim|
-|AD Lightweight Directory Services| |Sim|Sim|
-|AD Rights Management Services| |Sim|Sim|
-|Atestado de integridade de dispositivo| |Sim|Sim|
-|Servidor DHCP| |Sim|Sim|
-|Servidor DNS| |Sim|Sim|
-|Servidor de Fax| |Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Servidor de arquivos|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|BranchCache para arquivos de rede|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Eliminação de Duplicação de Dados|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Namespaces DFS|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Replicação do DFS|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Gerenciador de Recursos de Servidor de Arquivos|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Serviço de Agente VSS de Servidor de Arquivos|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|iSCSI Target Server|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Provedor de Armazenamento do destino iSCSI|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Servidor para NFS|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Pastas de trabalho|Sim|Sim|
-|Serviços de Arquivo e Armazenamento|Serviços de armazenamento|Sim|Sim|
-|Serviço Guardião de Host| |Sim|Sim|
-|Hyper-V| |Sim|Sim; inclusive máquinas virtuais blindadas|
-|MultiPoint Services| |Sim|Sim|
-|Controlador de rede| |Não|Sim|
-|Network Policy and Access Services| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
-|Serviços de impressão e documentos| |Sim|Sim|
-|Acesso remoto| |Sim|Sim|
-|Serviços da Área de Trabalho Remota| |Sim|Sim|
-|Serviços de Ativação por Volume| |Sim|Sim|
-|Web Services (IIS)| |Sim|Sim|
-|Serviços de Implantação do Windows| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
-|Experiência do Windows Server Essentials| |Sim|Sim|
-|Windows Server Update Services| |Sim|Sim|
+
+| Funções do Windows Server disponíveis     | Serviços de função | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
+| -------------------                | ----------    | ----------                   | ---------------------------    |  
+| Serviços de Certificados do Active Directory|              | Sim                          | Sim                            |
+| Active Directory Domain Services    |               | Sim                          | Sim                            |
+| Serviços de Federação do Active Directory (AD FS)|               | Sim                          | Sim                            |
+| AD Lightweight Directory Services| |Sim|Sim|
+| AD Rights Management Services| |Sim|Sim|
+| Atestado de integridade de dispositivo| |Sim|Sim|
+| Servidor DHCP| |Sim|Sim|
+| Servidor DNS| |Sim|Sim|
+| Servidor de Fax| |Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Servidor de arquivos|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|BranchCache para arquivos de rede|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Eliminação de Duplicação de Dados|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Namespaces DFS|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Replicação do DFS|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Gerenciador de Recursos de Servidor de Arquivos|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Serviço de Agente VSS de Servidor de Arquivos|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|iSCSI Target Server|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Provedor de Armazenamento do destino iSCSI|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Servidor para NFS|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Pastas de trabalho|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Serviços de armazenamento|Sim|Sim|
+| Serviço Guardião de Host| |Sim|Sim|
+| Hyper-V| |Sim|Sim; <strong>inclusive máquinas virtuais blindadas</strong>|
+| MultiPoint Services| |Sim|Sim|
+| Controlador de rede| |Não| <strong>Sim</strong> |
+| Network Policy and Access Services| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
+| Serviços de impressão e documentos| |Sim|Sim|
+| Acesso remoto| |Sim|Sim|
+| Serviços da Área de Trabalho Remota| |Sim|Sim|
+| Serviços de Ativação por Volume| |Sim|Sim|
+| Web Services (IIS)| |Sim|Sim|
+| Serviços de Implantação do Windows| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
+| Experiência do Windows Server Essentials| |Sim|Sim|
+| Windows Server Update Services| |Sim|Sim|
 
 ## <a name="features"></a>Recursos
 
@@ -97,7 +95,7 @@ ms.locfileid: "71391883"
 |Armazenamento Avançado|Sim|Sim|
 |Clustering de failover|Sim|Sim|
 |Gerenciamento de Política de Grupo|Sim|Sim|
-|Suporte do Hyper-V ao Guardião de Host|Não|Sim|
+|Suporte do Hyper-V ao Guardião de Host|Não|<strong>Sim</strong> |
 |Qualidade de Serviço de E/S|Sim|Sim|
 |Núcleo da Web Hospedável do IIS|Sim|Sim|
 |Cliente de Impressão via Internet|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
@@ -123,7 +121,7 @@ ms.locfileid: "71391883"
 |Limite de Largura de Banda do SMB|Sim|Sim|
 |Servidor SMTP|Sim|Sim|
 |Serviço SNMP|Sim|Sim|
-|Balanceador de Carga de Software|Não|Sim|
+|Balanceador de Carga de Software|Não| <strong>Sim</strong> |
 |Réplica de Armazenamento|Não|Sim|
 |Cliente Telnet|Sim|Sim|
 |Cliente TFTP|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
@@ -160,15 +158,15 @@ ms.locfileid: "71391883"
 |Opção de instalação do Nano Server|Sim|Sim|
 |Gerenciador do Servidor|Sim|Sim|
 |SMB Direct e SMB sobre RDMA|Sim|Sim|
-|Redes definidas por software|Não|Sim|
-|Serviço de Gerenciamento de Armazenamento|Sim|Sim|
+| Redes definidas por software | Não | <strong>Sim</strong> |
+|Réplica de Armazenamento | Não | <strong>Sim</strong> |
 |Espaços de Armazenamento|Sim|Sim|
-|Espaços de Armazenamento Diretos|Não|Sim|
+|Espaços de Armazenamento Diretos|Não| <strong>Sim</strong> |
 |Serviços de Ativação por Volume|Sim|Sim|
 |Integração VSS (Serviço de Cópias de Sombra de Volume)|Sim|Sim|
 |Windows Server Update Services|Sim|Sim|
 |Gerenciador de Recursos de Sistema do Windows|Sim|Sim|
 |Log de Licença de Servidor|Sim|Sim|
-|Ativação herdada|Como convidado, se hospedado no Datacenter|Pode ser host ou convidado|
+|Ativação herdada|Como convidado, se hospedado no Datacenter| <strong>Pode ser host ou convidado</strong> |
 |Pastas de trabalho|Sim|Sim|
 

@@ -14,12 +14,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d11e8ad0cac1f9cf024097450e90d9be95d950b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 829608ae1a4c6b78b3b191f248ed4a4195500669
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387762"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940713"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -221,7 +221,7 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 |---------------|----------------------|-------------------------------------------------------------------------|
 | Toque direto  | Clique com o botão esquerdo do mouse           | Toque com um dedo                                                     |
 | Toque direto  | Clique com o botão direito do mouse          | Tocar com um dedo e segurar e soltar                              |
-| Ponteiro do mouse | Zoom                 | Usar dois dedos e pinçar para aplicar zoom ou aumentar o espaço entre os dedos para reduzi-lo. |
+| Ponteiro do mouse | Zoom                 | Usar dois dedos e pinçar para reduzir o zoom ou aumentar o espaço entre os dedos para ampliar. |
 | Ponteiro do mouse | Clique com o botão esquerdo do mouse           | Toque com um dedo                                                     |
 | Ponteiro do mouse | Clique com o botão esquerdo do mouse e arraste  | Tocar duas vezes e segurar com um dedo e arrastar                          |
 | Ponteiro do mouse | Clique com o botão direito do mouse          | Tocar com dois dedos                                                    |

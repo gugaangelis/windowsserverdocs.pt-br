@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3111d4e980395c1a7c971af715017d455e1a29c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 51693f81e8e394df02bf35f1a6d91ed06b98e4bb
+ms.sourcegitcommit: c9d856c22b42d2a4fb8fe6acc6c5b6be673647f2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384921"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165040"
 ---
 # <a name="qprocess"></a>qprocess
 
@@ -32,7 +32,7 @@ Exibe informações sobre os processos que estão sendo executados em um servido
 ## <a name="remarks"></a>Comentários
 Esse comando é o mesmo que o comando de **processo de consulta** .
 
-#### <a name="additional-references"></a>Referências adicionais
-[processo de consulta](query-process.md)
-[chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[serviços de área de trabalho remota &#40;referência de comando de serviços&#41; de terminal](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>Referências adicionais
+[processo de consulta](query-process.md)  
+[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+[Serviços de Área de Trabalho Remota &#40;referência de&#41; comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)  

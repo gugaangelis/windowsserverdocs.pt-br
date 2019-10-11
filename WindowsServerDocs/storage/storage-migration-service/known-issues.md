@@ -4,16 +4,16 @@ description: Problemas conhecidos e suporte de solução de problemas para o ser
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 07/09/2019
+ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 150c9f1e70df4f634886ea65efd9c61ef075f26a
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: e3ec7ee787fb6fd2e8e9f59249a6c4013a76b377
+ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940699"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252362"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -48,7 +48,7 @@ Para resolver, use ou atualize para o Windows Server 2019 Build 1809 ou posterio
 
 Ao usar a versão 0,57 da extensão de serviço de migração de armazenamento no centro de administração do Windows e você chegar à fase de transferência, não será possível selecionar um IP estático para um endereço. Você é forçado a usar o DHCP.
 
-Para resolver esse problema, no centro de administração do Windows, procure por **configurações** > **extensões** para um alerta informando que o serviço de migração de armazenamento de versão atualizado 0.57.2 está disponível para instalação. Talvez seja necessário reiniciar a guia do navegador para o centro de administração do Windows.
+Para resolver esse problema, no centro de administração do Windows, procure em **configurações** > **extensões** para um alerta informando que o serviço de migração de armazenamento de versão atualizado 0.57.2 está disponível para instalação. Talvez seja necessário reiniciar a guia do navegador para o centro de administração do Windows.
 
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>A validação de transferência do serviço de migração de armazenamento falha com o erro "o acesso foi negado para a política de filtro de token no computador de destino"
 
@@ -225,7 +225,7 @@ Trabalho: ID de Foo2: Estado de 20ac3f75-4945-41d1-9a79-d11dbb57798b: Erro com f
   Usuário:          Computador do serviço de rede:      FS02. Descrição do TailwindTraders.net: Não foi possível inventariar um computador.
 Trabalho: computador Foo2: FS01. Estado de TailwindTraders.net: Erro com falha:-2147463168 mensagem de erro: Diretrizes: Verifique o erro detalhado e verifique se os requisitos de inventário foram atendidos. O inventário não pôde determinar os aspectos do computador de origem especificado. Isso pode ser devido à falta de permissões ou privilégios na origem ou em uma porta de firewall bloqueada.
   
-Esse erro é causado por um defeito de código no serviço de migração de armazenamento quando você fornece credenciais de migração na forma de um UPN (nome principal do usuário)meghan@contoso.com, como ' '. O serviço Orchestrator do serviço de migração de armazenamento não analisa corretamente esse formato, o que leva a uma falha em uma pesquisa de domínio que foi adicionada para suporte de migração de cluster em KB4512534 e 19H1.
+Esse erro é causado por um defeito de código no serviço de migração de armazenamento quando você fornece credenciais de migração na forma de um UPN (nome principal de usuário), como ' meghan@contoso.com '. O serviço Orchestrator do serviço de migração de armazenamento não analisa corretamente esse formato, o que leva a uma falha em uma pesquisa de domínio que foi adicionada para suporte de migração de cluster em KB4512534 e 19H1.
 
 Para solucionar esse problema, forneça credenciais no formato domínio \ usuário, como ' Contoso\Meghan '.
 
@@ -264,6 +264,28 @@ Ao tentar executar o inventário com o servidor do Orchestrator do serviço de m
     There are no more endpoints available from the endpoint mapper  
 
 Para solucionar esse problema, desinstale temporariamente a atualização cumulativa KB4512534 (e qualquer uma que o tenha substituído) do computador Orchestrator do serviço de migração de armazenamento. Quando a migração for concluída, reinstale a atualização cumulativa mais recente.  
+
+Observe que, em algumas circunstâncias, a desinstalação de KB4512534 ou de suas atualizações substitutas pode fazer com que o serviço de migração de armazenamento não seja mais iniciado. Para resolver esse problema, você pode fazer backup e excluir o banco de dados do serviço de migração de armazenamento:
+
+1.  Abra um prompt cmd elevado, no qual você é membro de administradores no servidor Orchestrator do serviço de migração de armazenamento e execute:
+
+     ```
+     MD c:\ProgramData\Microsoft\StorageMigrationService\backup
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService\* /grant Administrators:(GA)
+
+     XCOPY c:\ProgramData\Microsoft\StorageMigrationService\* .\backup\*
+
+     DEL c:\ProgramData\Microsoft\StorageMigrationService\* /q
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService  /GRANT networkservice:F /T /C
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA)F /T /C
+     ```
+   
+2.  Inicie o serviço de serviço de migração de armazenamento, que criará um novo banco de dados.
+
+
 
 ## <a name="see-also"></a>Consulte também
 

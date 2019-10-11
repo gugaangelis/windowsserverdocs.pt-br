@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b1dd3b728f941d9c3732abccf19363cf631284e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387753"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935032"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Perguntas frequentes sobre os clientes de área de trabalho remota
 
@@ -166,7 +166,7 @@ Para usar duas ou mais telas, faça o seguinte:
 2. Habilite **Usar todos os monitores** e **Tela inteira**.
 
 ### <a name="is-bi-directional-sound-supported"></a>Há suporte para som bidirecional?
-Não há suporte para som upstream (do cliente ao servidor, para microfones) pelo Cliente de Área de trabalho Remota.
+O som bidirecional pode ser configurado no cliente do Windows por conexão. As configurações relevantes podem ser acessadas na seção **Áudio remoto** da guia de opções **Recursos Locais**.
 
 ### <a name="what-can-i-do-if-the-sound-wont-play"></a>O que fazer se o som não for reproduzido?
 Saia da sessão (não apenas se desconecte, saia totalmente) e entre novamente.

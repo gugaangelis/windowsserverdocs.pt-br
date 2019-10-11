@@ -1,24 +1,20 @@
 ---
 title: chkdsk
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para chkdsk, que verifica o sistema de arquivos e os metadados do sistema de arquivos de um volume para erros lógicos e físicos.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 62912a3c-d2cc-4ef6-9679-43709a286035
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: lizapo
-ms.date: 10/16/2017
-ms.openlocfilehash: fac941a0ad5638fafa86d31a9af1cce1cc475823
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 10/09/2019
+ms.openlocfilehash: 130b51e472ebf3d900186d6d63e318c88a340579
+ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379441"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252356"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -43,19 +39,27 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 
 ## <a name="parameters"></a>Parâmetros
 
-|      Parâmetro      |                                                                                                                      Descrição                                                                                                                       |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      \<Volume >      |                                                                                     Especifica a letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume.                                                                                     |
+|      Parâmetro       |                  Descrição                                    |
+| -------------------- | ------------------------------------------------------------------------ |
+|      \<Volume >      | Especifica a letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume.  |
 | [\<Path >] <FileName> | Use somente com FAT (tabela de alocação de arquivos) e FAT32. Especifica o local e o nome de um arquivo ou conjunto de arquivos que você deseja que o **chkdsk** Verifique a fragmentação. Você pode usar o **?** e **&#42;** caracteres curinga para especificar vários arquivos. |
-|         /f          |                             Corrige erros no disco. O disco deve estar bloqueado. Se **chkdsk** não puder bloquear a unidade, será exibida uma mensagem perguntando se você deseja verificar a unidade na próxima vez que reiniciar o computador.                             |
-|         /v          |                                                                                       Exibe o nome de cada arquivo em cada diretório à medida que o disco é verificado.                                                                                        |
-|         /r          |                                   Localiza setores inválidos e recupera informações legíveis. O disco deve estar bloqueado. **/r** inclui a funcionalidade de **/f**, com a análise adicional de erros de disco físico.                                   |
-|         /x          |                                                  Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para a unidade são invalidados. **/x** também inclui a funcionalidade de **/f**.                                                   |
-|         /i          |                                                           Use somente com NTFS. Executa uma verificação menos rigorosa de entradas de índice, o que reduz a quantidade de tempo necessária para executar **chkdsk**.                                                            |
-|         /c          |                                                          Use somente com NTFS. Não verifica os ciclos dentro da estrutura de pastas, o que reduz a quantidade de tempo necessária para executar **chkdsk**.                                                           |
-|    /l [: \<Size >]     |                                                         Use somente com NTFS. Altera o tamanho do arquivo de log para o tamanho que você digitar. Se você omitir o parâmetro de tamanho, **/l** exibirá o tamanho atual.                                                          |
-|         /b.          |           Somente NTFS: Limpa a lista de clusters inválidos no volume e examina novamente todos os clusters alocados e livres para erros. **/b** inclui a funcionalidade de **/r**. Use esse parâmetro após a geração de imagens de um volume para uma nova unidade de disco rígido.            |
-|         /?          |                                                                                                          Exibe a ajuda no prompt de comando.                                                                                                          |
+|         /f          | Corrige erros no disco. O disco deve estar bloqueado. Se **chkdsk** não puder bloquear a unidade, será exibida uma mensagem perguntando se você deseja verificar a unidade na próxima vez que reiniciar o computador. |
+|         /v          | Exibe o nome de cada arquivo em cada diretório à medida que o disco é verificado.     |
+|         /r          | Localiza setores inválidos e recupera informações legíveis. O disco deve estar bloqueado. **/r** inclui a funcionalidade de **/f**, com a análise adicional de erros de disco físico.                                   |
+|         /x          | Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para a unidade são invalidados. **/x** também inclui a funcionalidade de **/f**.  |
+|         /i          | Use somente com NTFS. Executa uma verificação menos rigorosa de entradas de índice, o que reduz a quantidade de tempo necessária para executar **chkdsk**.  |
+|         /c          | Use somente com NTFS. Não verifica os ciclos dentro da estrutura de pastas, o que reduz a quantidade de tempo necessária para executar **chkdsk**.  |
+|    /l [: \<Size >]     | Use somente com NTFS. Altera o tamanho do arquivo de log para o tamanho que você digitar. Se você omitir o parâmetro de tamanho, **/l** exibirá o tamanho atual. |
+|         /b.          | Somente NTFS: Limpa a lista de clusters inválidos no volume e examina novamente todos os clusters alocados e livres para erros. **/b** inclui a funcionalidade de **/r**. Use esse parâmetro após a geração de imagens de um volume para uma nova unidade de disco rígido.            |
+| /Scan               | Somente NTFS: Executa uma verificação online no volume. |
+| /forceofflinefix    | Somente NTFS: (Deve ser usado com "/Scan"). Ignorar todo o reparo online; todos os defeitos encontrados são enfileirados para reparo offline (ou seja, "chkdsk/spotfix"). |
+| /perf               | Somente NTFS: (Deve ser usado com "/Scan"). O usa mais recursos do sistema para concluir uma verificação o mais rápido possível. Isso pode afetar o desempenho negativo em outras tarefas em execução no sistema.|
+| /spotfix            | Somente NTFS: Executa a correção de pontos no volume. |
+| /sdcleanup          | Somente NTFS: O lixo coleta dados de descritor de segurança desnecessários (implica/F). |
+| /offlinescanandfix  | Executa uma verificação offline e corrige o volume. |
+| /freeorphanedchains | FAT/FAT32/exFAT apenas: Libera quaisquer cadeias de cluster órfãs em vez de recuperar seu conteúdo. |
+| /markclean          | FAT/FAT32/exFAT apenas: Marca o volume limpo se nenhuma corrupção for detectada, mesmo se/F não tiver sido especificado. |
+|         /?          | Exibe a ajuda no prompt de comando.                       |
 
 ## <a name="remarks"></a>Comentários
 
@@ -137,6 +141,7 @@ chkdsk *.*
 ```
 
 **Chkdsk** exibe um relatório de status e lista os arquivos que correspondem às especificações de arquivo que têm blocos não contíguos.
-#### <a name="additional-references"></a>Referências adicionais
+
+## <a name="additional-references"></a>Referências adicionais
 
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
