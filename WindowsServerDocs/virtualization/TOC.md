@@ -51,6 +51,7 @@
 #### [Habilitar o hardware de monitoramento de desempenho da Intel](hyper-v/manage/Performance-Monitoring-Hardware.md)
 #### [Mover VMs com a migração dinâmica](hyper-v/manage/Live-migration-overview.md)
 ##### [Visão geral da migração dinâmica](hyper-v/manage/Live-migration-overview.md)
+
 ##### [Configurar hosts para migração dinâmica](hyper-v/deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md) 
 ##### [Usar a migração dinâmica sem clustering de failover](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
 
