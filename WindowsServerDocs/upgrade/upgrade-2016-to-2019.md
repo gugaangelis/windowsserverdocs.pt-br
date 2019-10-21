@@ -7,12 +7,12 @@ ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 99133f2c582b180f240740fc2f39e99527bc0cf8
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 62fe4f00cef121e6241a403ee339047cda9488b5
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124816"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591085"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>Atualizar o Windows Server 2016 para o Windows Server 2019
 
@@ -24,13 +24,13 @@ Antes de iniciar a atualização do Windows Server, recomendamos que você colet
 
 ### <a name="to-collect-your-info"></a>Para coletar suas informações
 
-1. Abra um prompt de comando, vá `c:\Windows\system32`para e digite **SystemInfo. exe**.
+1. Abra um prompt de comando, vá para `c:\Windows\system32` e digite **SystemInfo. exe**.
 
 2. Copie, Cole e armazene as informações do sistema resultantes em algum lugar do seu dispositivo.
 
 3. Digite **ipconfig/all** no prompt de comando e, em seguida, copie e cole as informações de configuração resultantes no mesmo local acima.
 
-4. Abra o editor do registro, vá para o hive HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion e, em seguida, copie e cole o **BuildlabEx** do Windows Server (versão) e o **EditionID** (edição) no mesmo local acima.
+4. Abra o editor do registro, vá para a chave de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` e, em seguida, copie e cole o **BuildlabEx** do Windows Server (versão) e o **EditionID** (edição) no mesmo local acima.
 
 Depois de coletar todas as suas informações relacionadas ao Windows Server, é altamente recomendável que você faça backup de seu sistema operacional, aplicativos e máquinas virtuais. Você também deve **desligar**, **migrar rapidamente**ou **migrar ao vivo** todas as máquinas virtuais em execução no momento no servidor. Você não pode ter máquinas virtuais em execução durante a atualização in-loco.
 
@@ -80,11 +80,11 @@ Após a conclusão da atualização, você deve verificar se a atualização par
 
 ### <a name="to-make-sure-your-upgrade-was-successful"></a>Para verificar se a atualização foi bem-sucedida
 
-1. Abra o editor do registro, vá para o hive HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion e exiba o **NomeDoProduto**. Você deve ver sua edição do Windows Server 2019, por exemplo, **Windows server 2019 datacenter**.
+1. Abra o editor do registro, vá para a chave de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` e exiba o **NomeDoProduto**. Você deve ver sua edição do Windows Server 2019, por exemplo, **Windows server 2019 datacenter**.
 
 2. Verifique se todos os seus aplicativos estão em execução e se as conexões do cliente com os aplicativos foram bem-sucedidas.
 
-Se você acredita que algo pode ter ficado errado durante a atualização, copie e compacte o `C:\Windows\Panther`diretório (normalmente) e entre em contato com o `%SystemRoot%\Panther` suporte da Microsoft.
+Se você acredita que algo pode ter ficado errado durante a atualização, copie e compacte o diretório `%SystemRoot%\Panther` (geralmente `C:\Windows\Panther`) e entre em contato com o suporte da Microsoft.
 
 ## <a name="related-articles"></a>Artigos relacionados
 

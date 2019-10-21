@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08cf41ec9b6ac30699013112216a538dcf625fd5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a1737275bf6321525bbba56cd4d6a77ef973423
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372840"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591022"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Altera o nome do servidor raiz usado para consultas.
 ## <a name="syntax"></a>Sintaxe
@@ -39,5 +39,5 @@ set root=<RootServer>
 ## <a name="remarks"></a>Comentários
 - O subcomando **set root** afeta o subcomando **raiz** .
   ## <a name="additional-references"></a>Referências adicionais
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md) 
   [raiz do nslookup](nslookup-root.md)

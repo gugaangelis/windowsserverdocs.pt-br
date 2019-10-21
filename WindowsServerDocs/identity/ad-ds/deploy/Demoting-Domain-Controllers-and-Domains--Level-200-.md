@@ -9,12 +9,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00f3851ce74a496bd530c8ea682ea312f8b06a0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390927"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588098"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Rebaixando controladores de domínio e domínios
 
@@ -36,7 +36,7 @@ Este tópico explica como remover o AD DS usando o Gerenciador do Servidor ou o 
 |||  
 |-|-|  
 |**Cmdlets ADDSDeployment e ServerManager**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Uninstall-AddsDomainController|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
+|Uninstall-ADDSDomainController|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
 |Uninstall-WindowsFeature/Remove-WindowsFeature|***-Nome***<br /><br />***-IncludeManagementTools***<br /><br />*-Reiniciar*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
   
 > [!NOTE]  
@@ -104,7 +104,7 @@ Você pode configurar opções de rebaixamento na página **Credenciais** . Forn
    > [!WARNING]  
    > Não selecione essa opção, a menos que o controlador de domínio não possa contatar outros controladores de domínio e *não haja outra maneira razoável* de solucionar o problema de rede. O rebaixamento forçado resulta em metadados órfãos no Active Directory, nos controladores de domínio remanescentes na floresta. Além disso, todas as alterações que não foram replicadas nesse controlador de domínio, como senhas ou novas contas de usuário, serão perdidas definitivamente. Metadados órfãos são a principal causa da significativa porcentagem de casos no Atendimento ao Cliente da Microsoft para AD DS, Exchange, SQL e outros softwares.  
    >
-   > Se você forçar o rebaixamento de um controlador de domínio, *execute* manual e imediatamente a limpeza dos metadados. Para conhecer as etapas, examine [Limpar metadados do servidor](https://technet.microsoft.com/library/cc816907(WS.10).aspx).  
+   > Se você forçar o rebaixamento de um controlador de domínio, *execute* manual e imediatamente a limpeza dos metadados. Para conhecer as etapas, examine [Limpar metadados do servidor](ad-ds-metadata-cleanup.md).  
 
    ![Assistente de configuração de Active Directory Domain Services – remoção de credenciais de força](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)  
   
@@ -188,7 +188,7 @@ A página **Confirmação** mostra o rebaixamento planejado. Ela não lista as o
 Clique em **Rebaixar** para executar o seguinte cmdlet de Implantação do AD DS:
 
 ```
-Uninstall-DomainController
+Uninstall-ADDSDomainController
 ```
 
 Use o argumento opcional **Whatif** com o **Uninstall-ADDSDomainController** e o cmdlet para examinar as informações da configuração. Isso permite que você veja os valores explícitos e implícitos de argumento de um cmdlet.
@@ -208,7 +208,7 @@ Quando a página **Rebaixamento** é exibida, a configuração do controlador de
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log
 
-Como **Uninstall-AddsDomainController** e **Uninstall-WindowsFeature** possuem somente uma ação cada, eles são mostrados nesta fase de Confirmação com os argumentos mínimos necessários. Pressionar ENTER inicia o processo irrevogável de rebaixamento e reinicia o computador.
+Como o **Uninstall-ADDSDomainController** e o **Uninstall-WindowsFeature** têm apenas uma ação cada, eles são mostrados aqui na fase de confirmação com os argumentos mínimos necessários. Pressionar ENTER inicia o processo irrevogável de rebaixamento e reinicia o computador.
 
 ![Desinstalação do PowerShell-exemplo de ADDSDomainController](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallConfirm.png)
 

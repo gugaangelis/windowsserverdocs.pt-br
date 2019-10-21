@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 0325a37e38845ea9482a6ed260e2bb3b493cc79a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2721f1c744c5c03d8e4bce0508fd23fa5237f95f
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394002"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591095"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridade acelerada por espelho
 
@@ -23,7 +23,7 @@ Espaços de armazenamento podem fornecer tolerância a falhas de dados usando du
 
 ![Volume de paridade acelerada por espelho](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
 
-## <a name="background"></a>Informações preliminares
+## <a name="background"></a>Histórico
 
 Esquemas de resiliência de espelhamento e paridade têm características de armazenamento e desempenho fundamentalmente diferentes:
 - A resiliência do espelho permite que os usuários obtenham desempenho rápido de gravação, mas replicar os dados para cada cópia não é eficiente em termos de espaço. 
@@ -47,38 +47,38 @@ Quando os dados são movidos de espelhamento para paridade, os dados são lidos,
 
 ## <a name="io-on-mirror-accelerated-parity"></a>E/S de paridade acelerada por espelho
 ### <a name="io-behavior"></a>Comportamento de E/S
-**Registra** As gravações de entrada dos serviços ReFS são de três maneiras distintas:
+**Gravações:** ReFS oferece manutenção a gravações recebidas de três maneiras distintas:
 
 1.  **Gravações no espelho:**
 
     - **1a.** Se a gravação de entrada modificar os dados existentes no espelho, ReFS modificará os dados no local.
     - **1B.** Se a gravação de entrada for uma nova gravação e o ReFS encontrar com êxito espaço livre suficiente em espelho para suportar essa gravação, o ReFS escreve no espelho.
-    ![Write-to-Mirror](media/mirror-accelerated-parity/Write-to-Mirror.png)
+    ](media/mirror-accelerated-parity/Write-to-Mirror.png) de ![Write para espelhamento
 
 2. **Gravações no espelho, realocadas da paridade:**
 
     Se a gravação de entrada modificar os dados que estão em paridade, e ReFS puder encontrar com êxito espaço livre suficiente no espelho para atender à gravação de entrada, ReFS primeiro invalidará os dados anteriores na paridade e, em seguida, gravará no espelho. Essa invalidação é uma operação de metadados rápida e barata que ajuda a aumentar significativamente o desempenho de gravação feito a paridade.
-    ![Realocada-gravação](media/mirror-accelerated-parity/Reallocated-Write.png)
+    ](media/mirror-accelerated-parity/Reallocated-Write.png) de ![Reallocated-gravação
 
 3. **Gravações na paridade:**
     
     Se o ReFS não conseguir encontrar com sucesso espaço livre suficiente no espelhamento, o ReFS escreverá novos dados na paridade ou modificará dados existentes na paridade diretamente. A seção "Otimizações de desempenho" abaixo fornece orientações que ajudam a minimizar gravações na paridade.
-    ![Write-to-Parity](media/mirror-accelerated-parity/Write-to-Parity.png)
+    ](media/mirror-accelerated-parity/Write-to-Parity.png) de ![Write para paridade
 
-**Pareça** ReFS será lido diretamente da camada que contém os dados relevantes. Se a paridade é construída com HDDs, o cache em espaços de armazenamento direto armazenará em cache esses dados para acelerar leituras futuras. 
+**Leituras:** ReFS lerá diretamente da camada que contém os dados relevantes. Se a paridade é construída com HDDs, o cache em espaços de armazenamento direto armazenará em cache esses dados para acelerar leituras futuras. 
 
 > [!NOTE]
 > Leituras nunca causam ReFS para girar dados de volta para a faixa de espelho. 
 
 ### <a name="io-performance"></a>Desempenho de e/s
 
-**Registra** Cada tipo de gravação descrito acima tem suas próprias características de desempenho. Em termos gerais, gravações para o nível de espelho são muito mais rápidas que as gravações realocadas, e estas são significativamente mais rápidas que gravações feitas diretamente para a faixa de paridade. Essa relação é ilustrada com a desigualdade abaixo: 
+**Gravações:** cada tipo de gravação descrito acima tem suas próprias características de desempenho. Em termos gerais, gravações para o nível de espelho são muito mais rápidas que as gravações realocadas, e estas são significativamente mais rápidas que gravações feitas diretamente para a faixa de paridade. Essa relação é ilustrada com a desigualdade abaixo: 
 
 
 - **Camada de espelho > gravações realocadas > camada de paridade >**
 
 
-**Pareça** Não há impacto significativo no desempenho negativo ao ler a partir da paridade:
+**Leituras:** não há nenhum impacto de desempenho significativo, negativo durante a leitura de paridade:
 - Se o espelho e a paridade forem construídos com o mesmo tipo de mídia, o desempenho de leitura será equivalente. 
 - Se o espelho e a paridade são construídos com diferentes tipos de mídia — espelhado SSDs, paridade HDDs, por exemplo —[o cache no Espaços de Armazenamento Diretos](../storage-spaces/understand-the-cache.md) ajudará cache de dados muito utilizados para acelerar quaisquer leituras de paridade.
 
@@ -86,7 +86,7 @@ Quando os dados são movidos de espelhamento para paridade, os dados são lidos,
 
 Na versão semianual deste Outono, ReFS apresenta compactação, o que melhora substancialmente o desempenho de volumes de paridade acelerados por espelhamento que estão 90 +% cheio. 
 
-**Seguindo** Anteriormente, como os volumes de paridade acelerados por espelhamento ficaram cheios, o desempenho desses volumes pode ser prejudicado. O desempenho degrada porque dados altos e baixos se tornam mistos em todos os volumes extras. Isso significa que menos dados quentes podem ser armazenados em espelho porque os dados quentes ocupam espaço no espelho que pode ser, de outra forma, usado por dados quentes. Armazenando dados quentes em espelho é fundamental para manter o alto desempenho como gravações diretas para espelhar de forma muito mais rápida as leituras e gravações realocadas de magnitude mais rápido do que grava diretamente à paridade. Dessa forma, ter dados frios em espelho é ruim para o desempenho, pois reduz a probabilidade do ReFS poder gravar diretamente ao espelho. 
+**Em segundo plano:** anteriormente, conforme os volumes de paridade com aceleração de espelho se tornam completos, o desempenho desses volumes pode ser degradado. O desempenho degrada porque dados altos e baixos se tornam mistos em todos os volumes extras. Isso significa que menos dados quentes podem ser armazenados em espelho porque os dados quentes ocupam espaço no espelho que pode ser, de outra forma, usado por dados quentes. Armazenando dados quentes em espelho é fundamental para manter o alto desempenho como gravações diretas para espelhar de forma muito mais rápida as leituras e gravações realocadas de magnitude mais rápido do que grava diretamente à paridade. Dessa forma, ter dados frios em espelho é ruim para o desempenho, pois reduz a probabilidade do ReFS poder gravar diretamente ao espelho. 
 
 Compactação de ReFS corrige esses problemas de desempenho, liberando espaço no espelho para dados quentes. A compactação primeiro consolida todos os dados — de espelho e paridade — em paridade. Isso reduz a fragmentação dentro do volume e aumenta a quantidade de espaço endereçável no espelho. Mais importante, esse processo permite que o ReFS consolide dados quentes novamente em espelho:
 -   Quando chegam novas gravações, elas serão mais usados no espelho. Assim, dados recém-criados ou quentes residem em espelho. 
@@ -101,10 +101,17 @@ Compactação de ReFS corrige esses problemas de desempenho, liberando espaço n
 
 ReFS mantém contadores de desempenho para ajudar a avaliar o desempenho de paridade com aceleração de espelho. 
 - Conforme descrito acima na seção Write to Parity, ReFS será gravado diretamente na paridade quando não conseguir encontrar espaço livre no espelho. Em geral, isso ocorre quando a faixa de espelho preenche mais rápido do que o ReFS consegue girar dados na paridade. Em outras palavras, a rotação ReFS não é capaz de acompanhar a taxa de inclusão. Os contadores de desempenho abaixo identificam quando o ReFS grava diretamente na paridade:
+
   ```
+  # Windows Server 2016
   ReFS\Data allocations slow tier/sec
   ReFS\Metadata allocations slow tier/sec
+
+  # Windows Server 2019
+  ReFS\Allocation of Data Clusters on Slow Tier/sec
+  ReFS\Allocation of Metadata Clusters on Slow Tier/sec
   ```
+
 - Se esses contadores forem diferentes de zero, isso indica que o ReFS não está girando dados rápidos o suficiente de espelho. Para ajudar a minimizar esse problema, um pode mudar a agressividade de rotação ou aumentar o tamanho da camada espelhada.
 
 ### <a name="rotation-aggressiveness"></a>Agressividade de rotação
@@ -114,9 +121,9 @@ O ReFS começa a girar dados depois do espelho atingir um limite especificado de
 -   Valores menores permitem que o ReFS transfira proativamente dados e receba da melhor forma os E/S de entrada. Isso é aplicável a cargas de trabalho pesados para processamento, como armazenamento de arquivamento. Valores menores, no entanto, podem degradar o desempenho para cargas de trabalho de finalidade geral. Girar desnecessariamente dados fora o nível de espelho carregará uma penalidade de desempenho. 
 
 O ReFS apresenta um parâmetro ajustável para ajustar esse limite, que é configurável usando uma chave do registro. Essa chave do registro deve ser configurada em **cada nó em uma implantação direta de espaços de armazenamento**, e uma reinicialização é necessária para que todas as alterações entrem em vigor. 
--   **Chave:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
--   **Valor (DWORD):** DataDestageSsdFillRatioThreshold
--   **ValueType** Percentual
+-   **Key:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
+-   **ValueName (DWORD):** DataDestageSsdFillRatioThreshold
+-   **ValueType:** Percentage
 
 Se essa chave do registro não estiver definida, o ReFS usará um valor padrão de 85%.  Esse valor padrão é recomendado para a maioria das implantações e valores abaixo de 50% não são recomendados. O comando do PowerShell a seguir demonstra como definir essa chave do registro com um valor de 75%: 
 ```PowerShell

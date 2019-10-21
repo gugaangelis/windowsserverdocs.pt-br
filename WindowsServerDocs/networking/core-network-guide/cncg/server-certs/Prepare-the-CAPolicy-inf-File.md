@@ -8,15 +8,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 810f6f8ba9e33f1f26f49f542ad6d23819deb463
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2af3a621991627addb94238e84cceb357fb47731
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406283"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588086"
 ---
 # <a name="capolicyinf-syntax"></a>Sintaxe de CAPolicy. inf
->   Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>   Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 O CAPolicy. inf é um arquivo de configuração que define as extensões, as restrições e outras definições de configuração que são aplicadas a um certificado de autoridade de certificação raiz e a todos os certificados emitidos pela autoridade de certificação raiz. O arquivo CAPolicy. inf deve ser instalado em um servidor host antes que a rotina de instalação para a autoridade de certificação raiz comece. Quando as restrições de segurança em uma autoridade de certificação raiz devem ser modificadas, o certificado raiz deve ser renovado e um arquivo. inf de capolicye atualizado deve ser instalado no servidor antes do início do processo de renovação.
 
@@ -42,7 +42,7 @@ Os termos a seguir são usados para descrever a estrutura do arquivo. inf:
 
 -   _Valor_ – é o parâmetro e é exibido à direita do sinal de igual.
 
-No exemplo a seguir, **[Version]** é a seção, **Signature** é a chave e **"\$Windows NT @ no__t-4"** é o valor.
+No exemplo a seguir, **[Version]** é a seção, **Signature** é a chave e **"\$Windows NT \$"** é o valor.
 
 Exemplo:
 
@@ -116,7 +116,7 @@ Algumas informações adicionais sobre esta seção:
 
 -   As aspas devem envolver URLs com espaços.
 
--   Se nenhuma URL for especificada, ou seja, se a seção **[CRLDistributionPoint]** existir no arquivo, mas estiver vazia – a extensão de acesso às informações da autoridade será omitida do certificado de autoridade de certificação raiz. Isso geralmente é preferível ao configurar uma AC raiz. O Windows não executa a verificação de revogação em um certificado de autoridade de certificação raiz, portanto, a extensão de CDP é supérflua em um certificado de autoridade de certificação raiz.
+-   Se nenhuma URL for especificada, ou seja, se a seção **[CRLDistributionPoint]** existir no arquivo, mas estiver vazia – a extensão do ponto de distribuição da CRL será omitida do certificado de autoridade de certificação raiz. Isso geralmente é preferível ao configurar uma AC raiz. O Windows não executa a verificação de revogação em um certificado de autoridade de certificação raiz, portanto, a extensão de CDP é supérflua em um certificado de autoridade de certificação raiz.
 
 -    A CA pode publicar no arquivo UNC, por exemplo, para um compartilhamento que representa a pasta de um site em que um cliente recupera via HTTP.
 
@@ -142,7 +142,7 @@ Algumas observações adicionais sobre a seção acesso a informações da autor
 
 -   As URLs com espaços devem estar entre aspas.
 
--   Se nenhuma URL for especificada, ou seja, se a seção **[AuthorityInformationAccess]** existir no arquivo, mas estiver vazia – a extensão do ponto de distribuição da CRL será omitida do certificado de autoridade de certificação raiz. Novamente, essa seria a configuração preferida no caso de um certificado de autoridade de certificação raiz, pois não há nenhuma autoridade mais alta do que uma autoridade de certificação raiz que precisaria ser referenciada por um link para seu certificado.
+-   Se nenhuma URL for especificada, ou seja, se a seção **[AuthorityInformationAccess]** existir no arquivo, mas estiver vazia – a extensão de acesso às informações da autoridade será omitida do certificado de autoridade de certificação raiz. Novamente, essa seria a configuração preferida no caso de um certificado de autoridade de certificação raiz, pois não há nenhuma autoridade mais alta do que uma autoridade de certificação raiz que precisaria ser referenciada por um link para seu certificado.
 
 ### <a name="certsrv_server"></a>certsrv_Server
 
@@ -170,11 +170,11 @@ EnableKeyCounting=0
 
 Ao renovar um certificado de autoridade de certificação com um novo par de chaves, o comprimento da chave pode ser aumentado ou diminuído. Por exemplo, se você tiver definido um tamanho de chave de autoridade de certificação raiz de 4096 bytes ou mais, descubra que você tem aplicativos Java ou dispositivos de rede que só podem dar suporte a tamanhos de chave de 2048 bytes. Se você aumentar ou diminuir o tamanho, deverá reemitir todos os certificados emitidos por essa autoridade de certificação.
 
-**RenewalValidityPeriod** e **RenewalValidityPeriodUnits** estabelecem o tempo de vida do novo certificado de autoridade de certificação raiz ao renovar o certificado de autoridade de certificação raiz antigo. Ele se aplica somente a uma CA raiz. O tempo de vida do certificado de uma autoridade de certificação subordinada é determinado por seu superior. RenewalValidityPeriod pode ter os seguintes valores: Horas, dias, semanas, meses e anos.
+**RenewalValidityPeriod** e **RenewalValidityPeriodUnits** estabelecem o tempo de vida do novo certificado de autoridade de certificação raiz ao renovar o certificado de autoridade de certificação raiz antigo. Ele se aplica somente a uma CA raiz. O tempo de vida do certificado de uma autoridade de certificação subordinada é determinado por seu superior. RenewalValidityPeriod pode ter os seguintes valores: horas, dias, semanas, meses e anos.
 
-**CRLPeriod** e **CRLPeriodUnits** estabelecem o período de validade para a CRL base. **CRLPeriod** pode ter os seguintes valores: Horas, dias, semanas, meses e anos.
+**CRLPeriod** e **CRLPeriodUnits** estabelecem o período de validade para a CRL base. **CRLPeriod** pode ter os seguintes valores: horas, dias, semanas, meses e anos.
 
-**CRLDeltaPeriod** e **CRLDeltaPeriodUnits** estabelecem o período de validade da CRL delta. **CRLDeltaPeriod** pode ter os seguintes valores: Horas, dias, semanas, meses e anos.
+**CRLDeltaPeriod** e **CRLDeltaPeriodUnits** estabelecem o período de validade da CRL delta. **CRLDeltaPeriod** pode ter os seguintes valores: horas, dias, semanas, meses e anos.
 
 Cada uma dessas configurações pode ser configurada depois que a AC tiver sido instalada:
 
@@ -193,18 +193,17 @@ Em uma instalação padrão da autoridade de certificação, um subconjunto dos 
 
 Talvez você não queira emitir certificados imediatamente após a instalação de uma CA, para que você possa usar a configuração LoadDefaultTemplates para impedir que os modelos padrão sejam adicionados à AC corporativa. Se não houver modelos configurados na autoridade de certificação, ele poderá emitir nenhum certificado.
 
-**AlternateSignatureAlgorithm** configura a autoridade de certificação para dar suporte ao\#formato de assinatura PKCS 1 v 2.1 para as solicitações de certificado de autoridade de certificação e certificado. Quando definido como 1 em uma AC raiz, o certificado de autoridade de certificação\#incluirá o formato de assinatura PKCS 1 v 2.1. Quando definido em uma AC subordinada, a autoridade de certificação subordinada criará uma solicitação de\#certificado que inclui o formato de assinatura PKCS 1 v 2.1.
+**AlternateSignatureAlgorithm** configura a AC para dar suporte ao formato de assinatura PKCS \#1 v 2.1 para as solicitações de certificado e certificado de autoridade de certificação. Quando definido como 1 em uma AC raiz, o certificado de autoridade de certificação incluirá o formato de assinatura PKCS \#1 V 2.1. Quando definido em uma autoridade de certificação subordinada, a autoridade de certificação subordinada criará uma solicitação de certificado que inclui o formato de assinatura PKCS \#1 V 2.1.
 
 **ForceUTF8** altera a codificação padrão de nomes diferenciados relativos (RDNS) em nomes diferenciados de assunto e emissor para UTF-8. Somente os RDNs que dão suporte a UTF-8, como os que são definidos como tipos de cadeia de caracteres de diretório por uma RFC, são afetados. Por exemplo, o RDN para o controlador de domínio (DC) dá suporte à codificação como IA5 ou UTF-8, enquanto o RDN de país (C) dá suporte apenas à codificação como uma cadeia de caracteres imprimível. Portanto, a diretiva ForceUTF8 afetará um RDN DC, mas não afetará um RDN C.
 
 **EnableKeyCounting** configura a autoridade de certificação para incrementar um contador sempre que a chave de assinatura da autoridade de certificação é usada. Não habilite essa configuração a menos que você tenha um HSM (módulo de segurança de hardware) e um CSP (provedor de serviços de criptografia) associado que ofereça suporte à contagem de chaves. Nem o CSP forte da Microsoft nem o KSP (provedor de armazenamento de chaves de software) da Microsoft oferece suporte à contagem de chaves.
 
-
 ## <a name="create-the-capolicyinf-file"></a>Criar o arquivo CAPolicy. inf
 
 Antes de instalar o AD CS, você configura o arquivo CAPolicy. inf com configurações específicas para sua implantação.
 
-**Forem** Você deve ser um membro do grupo Administradores.
+**Pré-requisito:** Você deve ser um membro do grupo Administradores.
 
 1. No computador em que você está planejando instalar o AD CS, abra o Windows PowerShell, digite **notepad c:\CAPolicy.inf** e pressione Enter.
 
@@ -255,4 +254,4 @@ Antes de instalar o AD CS, você configura o arquivo CAPolicy. inf com configura
 9. Feche o Bloco de Notas.
 
 > [!IMPORTANT]
->   No arquivo CAPolicy. inf, você pode ver que há uma linha especificando a https://pki.corp.contoso.com/pki/cps.txt URL. A seção Política Interna do CAPolicy.inf é mostrada apenas como um exemplo de como você poderia especificar o local de uma CPS (declaração de prática de certificação). Neste guia, você não é instruído a criar a declaração de prática de certificado (CPS).
+>   No arquivo CAPolicy. inf, você pode ver que há uma linha especificando a URL https://pki.corp.contoso.com/pki/cps.txt. A seção Política Interna do CAPolicy.inf é mostrada apenas como um exemplo de como você poderia especificar o local de uma CPS (declaração de prática de certificação). Neste guia, você não é instruído a criar a declaração de prática de certificado (CPS).

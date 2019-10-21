@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d930cbf7acbfceab16f2fa619aaaac6e789c131
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7a5f9b819f16d058feb1dee74a8408ed174e04c
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373645"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588050"
 ---
 # <a name="mklink"></a>mklink
 Cria um link simbólico.
@@ -44,7 +44,7 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 
 ## <a name="BKMK_examples"></a>Disso
 
-O exemplo seguintes demonstra a criação e a remoção de um link simbólico chamado MyFolder e MyFile. File do diretório raiz para o diretório \Users\User1\Documents e um exemplo. File localizado no diretório:
+O exemplo a seguir demonstra a criação e a remoção de um link simbólico chamado MyFolder e MyFile. File do diretório raiz para o diretório \Users\User1\Documents e um exemplo. File localizado no diretório:
 ```
 mklink /d \MyFolder \Users\User1\Documents
 mklink /h \MyFile.file \User1\Documents\example.file

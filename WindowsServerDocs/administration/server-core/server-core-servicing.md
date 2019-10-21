@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: eacb80d89e7bcc95d6b5c12269d7587dc7d6870c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d670add6e4b4fc7369c48905bb297642ae07ff20
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383323"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588062"
 ---
 # <a name="patch-a-server-core-installation"></a>Corrigir uma instalação do Server Core
 
@@ -39,14 +39,14 @@ Use as etapas a seguir para corrigir o servidor automaticamente com Windows Upda
 
 1. Verifique a configuração atual de Windows Update:
    ```
-   %systemroot%\system32\Cscript scregedit.wsf /AU /v 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU /v 
    ```
 
 2. Para habilitar as atualizações automáticas:
 
    ```
    Net stop wuauserv 
-   %systemroot%\system32\Cscript scregedit.wsf /AU 4 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 4 
    Net start wuauserv
    ```  
 
@@ -54,7 +54,7 @@ Use as etapas a seguir para corrigir o servidor automaticamente com Windows Upda
 
    ```
    Net stop wuauserv 
-   %systemroot%\system32\Cscript scregedit.wsf /AU 1 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 1 
    Net start wuauserv 
    ```
 

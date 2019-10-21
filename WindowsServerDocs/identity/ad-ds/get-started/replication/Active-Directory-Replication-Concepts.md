@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d426b9923b569c8475862c1426a9dd310dc0b798
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ccc1801ba325fec4d7273b503ccb799966122b99
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390553"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591078"
 ---
 # <a name="active-directory-replication-concepts"></a>Conceitos de replicação do Active Directory
 
@@ -52,7 +52,7 @@ O Knowledge Consistency Checker (KCC) cria objetos de conexão automaticamente, 
 ## <a name="BKMK_2"></a>KCC  
 O KCC é um processo interno que é executado em todos os controladores de domínio e gera a topologia de replicação para a floresta de Active Directory. O KCC cria topologias de replicação separadas dependendo se a replicação está ocorrendo dentro de um site (intra-site) ou entre sites (entre sites). O KCC também ajusta dinamicamente a topologia para acomodar a adição de novos controladores de domínio, a remoção de controladores de domínio existentes, a movimentação de controladores de domínio de e para sites, a alteração de custos e agendas e controladores de domínio que estão temporariamente indisponível ou em um estado de erro.  
   
-Em um site, as conexões entre controladores de domínio graváveis são sempre organizadas em um anel bidirecional, com conexões de atalho adicionais para reduzir a latência em sites grandes. Por outro lado, a topologia entre sites é uma disposição em camadas de árvores de abrangência, o que significa que existe uma conexão entre sites entre dois sites para cada partição de diretório e geralmente não contém conexões de atalho. Para obter mais informações sobre árvores de abrangência e topologia de replicação de Active Directory, consulte Active Directory referência técnica da topologia de replicação ([https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)).  
+Em um site, as conexões entre controladores de domínio graváveis são sempre organizadas em um anel bidirecional, com conexões de atalho adicionais para reduzir a latência em sites grandes. Por outro lado, a topologia entre sites é uma disposição em camadas de árvores de abrangência, o que significa que existe uma conexão entre sites entre dois sites para cada partição de diretório e geralmente não contém conexões de atalho. Para obter mais informações sobre árvores de abrangência e topologia de replicação de Active Directory, consulte Active Directory referência técnica da topologia de replicação ([ https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)).  
   
 Em cada controlador de domínio, o KCC cria rotas de replicação criando objetos de conexão de entrada unidirecionais que definem conexões de outros controladores de domínio. Para controladores de domínio no mesmo site, o KCC cria objetos de conexão automaticamente sem intervenção administrativa. Quando você tem mais de um site, configura links de site entre sites, e um único KCC em cada site cria automaticamente conexões entre sites também.  
   
@@ -64,7 +64,7 @@ Um dos benefícios da implantação do RODC nesse cenário é a replicação uni
   
 No entanto, um desafio administrativo realçado pela topologia hub-spoke em versões anteriores do sistema operacional Windows Server é que, depois de adicionar um novo controlador de domínio bridgehead no Hub, não há um mecanismo automático para redistribuir o conexões de replicação entre os controladores de domínio da ramificação e os controladores de domínio do hub para aproveitar o novo controlador de domínio do Hub.  
   
-Para controladores de domínio do Windows Server 2003, você pode reequilibrar a carga de trabalho usando uma ferramenta como o Adlb. exe do guia de implantação da filial do Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)).  
+Para controladores de domínio do Windows Server 2003, você pode reequilibrar a carga de trabalho usando uma ferramenta como o Adlb. exe do guia de implantação do Windows Server 2003 Branch Office ([ https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)).  
   
 Para RODCs do Windows Server 2008, o funcionamento normal do KCC fornece algum rebalanceamento, o que elimina a necessidade de usar uma ferramenta adicional, como o Adlb. exe. A nova funcionalidade é habilitada por padrão. Você pode desabilitá-lo adicionando o seguinte conjunto de chaves do registro no RODC:  
   
@@ -73,7 +73,7 @@ Para RODCs do Windows Server 2008, o funcionamento normal do KCC fornece algum r
 **"Balanceamento de carga de BH aleatório permitido"**  
 **1 = habilitado (padrão), 0 = desabilitado**  
   
-Para obter mais informações sobre como esses aprimoramentos do KCC funcionam, consulte Planejando e implantando Active Directory Domain Services para filiais ([https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)).  
+Para obter mais informações sobre como esses aprimoramentos do KCC funcionam, consulte Planejamento e implantação de Active Directory Domain Services para filiais ([ https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)).  
   
 ## <a name="BKMK_3"></a>Funcionalidade de failover  
 Os sites asseguram que a replicação seja roteada em relação a falhas de rede e controladores de domínio offline. O KCC é executado em intervalos especificados para ajustar a topologia de replicação para alterações que ocorrem em AD DS, como quando novos controladores de domínio são adicionados e novos sites são criados. O KCC revisa o status de replicação das conexões existentes para determinar se as conexões não estão funcionando. Se uma conexão não estiver funcionando devido a um controlador de domínio com falha, o KCC criará automaticamente conexões temporárias com outros parceiros de replicação (se disponíveis) para garantir que a replicação ocorra. Se todos os controladores de domínio em um site estiverem indisponíveis, o KCC criará automaticamente conexões de replicação entre os controladores de domínio de outro site.  

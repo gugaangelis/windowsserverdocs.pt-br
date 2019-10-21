@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: aa1f8f8f31abd85a1ad106a3c4764fc4ccf74258
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 406563a07d3760c2846c201410f3a7b8f1c2829b
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384773"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588051"
 ---
 # <a name="rdpsign"></a>rdpsign
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Permite que você assine digitalmente um arquivo protocolo RDP (. RDP).
-Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
 
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
@@ -39,14 +39,15 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 |Parâmetro|Descrição|
 |-------|--------|
-|/SHA1 \<hash >|Especifica a impressão digital, que é o hash Secure Hash Algorithm 1 (SHA1) do certificado de autenticação que está incluído no repositório de certificados.|
+|/SHA1 \<hash >|Especifica a impressão digital, que é o hash Secure Hash Algorithm 1 (SHA1) do certificado de autenticação que está incluído no repositório de certificados. Usado no Windows Server 2012 R2 e mais antigo.|
+|/SHA256 \<hash >|Especifica a impressão digital, que é o hash do algoritmo de hash seguro 256 (SHA256) do certificado de autenticação que está incluído no repositório de certificados. Substitui/SHA1 no Windows Server 2016 e mais recente.|
 |/q|Modo silencioso. Nenhuma saída quando o comando for bem sucedido e a saída mínima se o comando falhar.|
-|/v|Modo detalhado. Exibe todos os avisos, mensagens e status.|
+|/v|modo detalhado. Exibe todos os avisos, mensagens e status.|
 |/l|Testa os resultados de assinatura e saída sem realmente substituir nenhum dos arquivos de entrada.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
--   A impressão digital do certificado SHA1 deve representar um Publicador de arquivo. rdp confiável. Para obter a impressão digital do certificado, abra o snap-in certificados, clique duas vezes no certificado que você deseja usar (no repositório de certificados do computador local ou em seu armazenamento de certificados pessoais), clique na guia **detalhes** e, em seguida, noLista de campos, clique em **impressão digital**.
+-   A impressão digital do certificado SHA1 ou SHA256 deve representar um Publicador de arquivo. rdp confiável. Para obter a impressão digital do certificado, abra o snap-in certificados, clique duas vezes no certificado que você deseja usar (no repositório de certificados do computador local ou em seu armazenamento de certificados pessoais), clique na guia **detalhes** e, em seguida, noLista de campos, clique em **impressão digital**.
 
     > [!NOTE]
     > Ao copiar a impressão digital para uso com a ferramenta rdpsign. exe, você deve remover os espaços.
@@ -71,5 +72,5 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
   ## <a name="see-also"></a>Consulte também
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md) 
   [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)

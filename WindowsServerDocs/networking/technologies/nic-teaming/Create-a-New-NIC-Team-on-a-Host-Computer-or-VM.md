@@ -13,16 +13,16 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: f1e7e27100d801d226adf79e078d8b16ddbcd308
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1785b34741ce525a5bdd27b77a0e52fc2ca6c1b6
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401928"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591101"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>Criar uma nova equipe de NIC em um computador host ou VM
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, você cria uma nova equipe NIC em um computador host ou em uma VM (máquina virtual) do Hyper-V que executa o Windows Server 2016.  
 
@@ -175,7 +175,7 @@ Você deve ter a associação em **Administradores**ou equivalente.
        |                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
        |----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
        |              **Agrupamento estático**              |                                                                                                                                              Exige que você configure manualmente o comutador e o host para identificar quais links formam a equipe. Como essa é uma solução configurada estaticamente, não há nenhum protocolo adicional para ajudar o comutador e o host a identificar cabos conectados incorretamente ou outros erros que poderiam fazer com que a equipe não funcione. Normalmente, comutadores de classe de servidor dão suporte para esse modo.                                                                                                                                              |
-       | **Protocolo de controle de agregação de link (LACP)** | Diferentemente do agrupamento estático, o modo de agrupamento do LACP identifica dinamicamente os links que estão conectados entre o host e o comutador. Essa conexão dinâmica permite a criação automática de uma equipe e, teoricamente, mas raramente na prática, a expansão e a redução de uma equipe simplesmente pela transmissão ou recebimento de pacotes de LACP da entidade de mesmo nível. Todas as opções de classe de servidor dão suporte a LACP e todas exigem que o operador de rede habilite o LACP administrativamente na porta do comutador. Quando você configura um modo de agrupamento do LACP, o agrupamento NIC sempre opera no modo ativo do LACP com um temporizador curto.  Nenhuma opção está disponível atualmente para modificar o temporizador ou alterar o modo LACP. |
+       | **Protocolo de controle de agregação de link (LACP)** | Diferentemente do agrupamento estático, o modo de agrupamento do LACP identifica dinamicamente os links que estão conectados entre o host e o comutador. Essa conexão dinâmica permite a criação automática de uma equipe e, teoricamente, mas raramente na prática, a expansão e a redução de uma equipe simplesmente pela transmissão ou recebimento de pacotes de LACP da entidade de mesmo nível. Todas as opções de classe de servidor dão suporte a LACP e todas exigem que o operador de rede habilite o LACP administrativamente na porta do comutador. Quando você configura um modo de agrupamento do LACP, o agrupamento NIC sempre opera no modo ativo do LACP.  Por padrão, o agrupamento NIC usa um temporizador curto (3 segundos), mas você pode configurar um longo timer (90 segundos) com `Set-NetLbfoTeam`. |
 
        ---
 
@@ -210,12 +210,12 @@ _**Congratula!**_  Você criou uma nova equipe NIC em um computador host ou VM.
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-- [Agrupamento NIC](NIC-Teaming.md): Neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.   
+- [Agrupamento NIC](NIC-Teaming.md): neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.   
 
-- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Quando você configura uma equipe NIC com o modo independente de comutador e endereço hash ou distribuição dinâmica de carga, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário no tráfego de saída. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
+- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): ao configurar uma equipe NIC com o modo independente de comutador e de endereço hash ou distribuição dinâmica de carga, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário na saída tráfico. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
 
-- [Configurações de agrupamento NIC](nic-teaming-settings.md): Neste tópico, fornecemos uma visão geral das propriedades da equipe da NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
+- [Configurações de agrupamento NIC](nic-teaming-settings.md): neste tópico, fornecemos uma visão geral das propriedades da equipe NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
 
-- [Solução de problemas de agrupamento NIC](Troubleshooting-NIC-Teaming.md): Neste tópico, discutiremos maneiras de solucionar problemas de agrupamento de NIC, como hardware, comutador físico de valores e desabilitar ou habilitar adaptadores de rede usando o Windows PowerShell. 
+- [Solução de problemas de agrupamento NIC](Troubleshooting-NIC-Teaming.md): neste tópico, discutimos maneiras de solucionar problemas de agrupamento de NIC, como hardware, comutador físico de valores e desabilitar ou habilitar adaptadores de rede usando o Windows PowerShell. 
 
 ---
