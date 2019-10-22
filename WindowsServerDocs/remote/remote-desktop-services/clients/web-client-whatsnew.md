@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d233708c6d206569f42f2a883bd342e90813f6a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcbd3292bcd4653a4568492a996d53c17f465aa8
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404101"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591048"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novidades do cliente Web
 
@@ -27,12 +27,22 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 > [!NOTE]
 > Alteramos o sistema de controle de versão para o cliente da Web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da Web irão conter números (no formato "W.X.Y.Z"). Os números de versão para o cliente Web de Área de Trabalho Remota sempre terminarão com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente Web de Área de Trabalho Remota Virtual do Windows alterará o último dígito até a próxima versão do cliente Web da Área de Trabalho Remota (por exemplo, 1.0.18.1).
 
+## <a name="updates-for-version-10200"></a>Atualizações para a versão 1.0.20.0
+*Data da publicação: 18/10/2019*
+
+- Adição de suporte para conexões a hosts Windows 7 e Windows Server 2008 R2.
+- Correção de um problema em que determinados ícones de aplicativo eram exibidos como blocos transparentes.
+- Correção de problemas de conexão do navegador Internet Explorer no Windows 7.
+- Correção de desconexões inesperadas que ocorriam quando o navegador era redimensionado.
+- Aprimoramentos na acessibilidade.
+- Atualização de bibliotecas de terceiros.
+
 ## <a name="updates-for-version-10180"></a>Atualizações para a versão 1.0.18.0
 *Data da publicação: 14/5/2019*
 
 - Configuração do Método de Inicialização de Recursos adicionada à guia Configurações, permitindo que os usuários abram recursos no navegador ou baixem um arquivo .rdp para lidar com outro cliente. Essa configuração pode ser definida pelo seu administrador. Os detalhes adicionais relacionados às configurações de administrador desse recurso podem ser encontrados na [documentação de configuração do cliente Web](remote-desktop-web-client-admin.md).
 - Corrigidos os problemas de processamento de cor, possibilitando cores mais vivas em sua sessão remota.
-- Revisadas as mensagens de erro relacionadas a erros de feed de recurso remoto. 
+- Revisadas as mensagens de erro relacionadas a erros de feed de recurso remoto.
 - Adicionado suporte para mais atalhos do office, como colar especial (Ctrl+Alt+V).
 - Adicionado o atalho de teclado para os usuários chamarem a tecla Windows na sessão remota (Alt+F3)
 - Atualizadas as mensagens de erro para usuários que tentavam a autenticação usando uma senha expirada.
@@ -105,4 +115,3 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 - Copiar/colar o texto da área de transferência com **Ctrl+C** e **Ctrl+V**.
 - Imprimir em um arquivo PDF.
 - Localizado em 18 idiomas.
- 
