@@ -4,15 +4,15 @@ description: Diretrizes de ajuste de desempenho para hosts de sessão Área de T
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS
+ms.author: HammadBu; VladmiS; DenisGun
 author: phstee
-ms.date: 10/16/2017
-ms.openlocfilehash: c50c0c981362bd96ed3bf1c603cde6bfeec289f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 10/22/2019
+ms.openlocfilehash: b439b0cbab66f98a1f74faeb7bff996b30a188d5
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385023"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812335"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 
@@ -130,9 +130,9 @@ Agendador de Tarefas permite que você examine a lista de tarefas que estão age
 
 Os ícones de notificação na área de trabalho podem ter mecanismos de atualização bastante caros. Você deve desabilitar todas as notificações removendo o componente que os registra na lista de inicialização ou alterando a configuração em aplicativos e componentes do sistema para desabilitá-los. Você pode usar os **ícones personalizar notificações** para examinar a lista de notificações disponíveis no servidor.
 
-### <a name="remotefx-data-compression"></a>Compactação de dados do RemoteFX
+### <a name="remote-desktop-protocol-data-compression"></a>Compactação de dados protocolo RDP
 
-Microsoft RemoteFX compactação pode ser configurada usando Política de Grupo em **configuração do computador &gt; Modelos Administrativos &gt; componentes do Windows &gt; Serviços de Área de Trabalho Remota &gt; host da sessão da área de trabalho remota &gt; remoto Ambiente de sessão &gt; configure a compactação para dados do RemoteFX**. Três valores são possíveis:
+Protocolo RDP compactação pode ser configurada usando Política de Grupo em **configuração do computador** &gt; **modelos administrativos** &gt; **componentes do Windows** **&gt; serviços de área de trabalho remota &gt;** **Host da Sessão da Área de Trabalho Remota** &gt; **ambiente de sessão remota** &gt; **Configurar a compactação para dados do RemoteFX**. Três valores são possíveis:
 
 -   **Otimizado para usar menos memória** Consome a menor quantidade de memória por sessão, mas tem a menor taxa de compactação e, portanto, o consumo de largura de banda mais alto.
 
@@ -140,11 +140,11 @@ Microsoft RemoteFX compactação pode ser configurada usando Política de Grupo 
 
 -   **Otimizado para usar menos largura de banda de rede** Reduz ainda mais o uso de largura de banda de rede a um custo de aproximadamente 2 MB por sessão. Se você quiser usar essa configuração, avalie o número máximo de sessões e teste para esse nível com essa configuração antes de posicionar o servidor em produção.
 
-Você também pode optar por não usar um algoritmo de compactação do RemoteFX. Optar por não usar um algoritmo de compactação do RemoteFX usará mais largura de banda de rede e será recomendado apenas se você estiver usando um dispositivo de hardware projetado para otimizar o tráfego de rede. Mesmo que você opte por não usar um algoritmo de compactação do RemoteFX, alguns dados gráficos serão compactados.
+Você também pode optar por não usar um algoritmo de compactação protocolo RDP, portanto, é recomendável usá-lo apenas com um dispositivo de hardware criado para otimizar o tráfego de rede. Mesmo que você opte por não usar um algoritmo de compactação, alguns dados gráficos serão compactados.
 
 ### <a name="device-redirection"></a>Redirecionamento de dispositivo
 
-O redirecionamento de dispositivo pode ser configurado usando Política de Grupo em **configuração do computador &gt; Modelos Administrativos &gt; componentes do Windows &gt; Serviços de Área de Trabalho Remota &gt; host da sessão da área de trabalho remota dispositivo e recurso &gt; Redirecionamento** ou usando a caixa de propriedades **coleção de sessões** no Gerenciador do servidor.
+O redirecionamento de dispositivo pode ser configurado usando Política de Grupo em **configuração do computador** &gt; **modelos administrativos** &gt; **componentes do Windows** &gt; serviços de área de trabalho remota **remoto Host de sessão de desktop** &gt; **redirecionamento de dispositivo e recurso** ou usando a caixa de propriedades **coleção de sessões** no Gerenciador do servidor.
 
 Geralmente, o redirecionamento de dispositivo aumenta a quantidade de largura de banda de rede Host da Sessão RD conexões do servidor, pois os dados são trocados entre dispositivos nos computadores cliente e processos que estão em execução na sessão do servidor. A extensão do aumento é uma função da frequência das operações executadas pelos aplicativos que estão em execução no servidor em relação aos dispositivos redirecionados.
 
@@ -172,7 +172,7 @@ As seguintes configurações se aplicam ao se conectar a qualquer computador:
 
 -   **Mostrar o conteúdo do Windows ao arrastar** (desabilitar a janela inteira arrastar: i: 1) quando essa configuração for desabilitada, ela reduzirá a largura de banda exibindo apenas o quadro da janela em vez de todo o conteúdo quando a janela for arrastada.
 
--   **Animação de menu e janela** (desabilite o menu anims: i: 1 e desabilite a configuração do cursor: i: 1): Quando essas configurações são desabilitadas, reduz a largura de banda desabilitando a animação em menus (como esmaecimento) e cursores.
+-   **Animação de menu e janela** (desabilite o menu anims: i: 1 e desabilite a configuração do cursor: i: 1): quando essas configurações são desabilitadas, ela reduz a largura de banda ao desabilitar a animação em menus (como esmaecimento) e cursores.
 
 -   **Suavização de fontes** (permitir suavização de fontes: i: 0) controla o suporte à renderização de fonte ClearType. Ao se conectar a computadores que executam o Windows 8 ou o Windows Server 2012 e posterior, a habilitação ou desabilitação dessa configuração não tem um impacto significativo no uso da largura de banda. No entanto, para computadores que executam versões anteriores ao Windows 7 e Windows 2008 R2, a habilitação dessa configuração afeta significativamente o consumo de largura de banda da rede.
 
