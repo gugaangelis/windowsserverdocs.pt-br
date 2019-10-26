@@ -10,14 +10,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
-ms.date: 09/16/2016
+ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: 7429cd9cb87db310a716136c171de47cfe0892f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9386733911ca81ad60d038854bd68e5603aae4cf
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387363"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812278"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>Usar as áreas de trabalho de sessão pessoal com os Serviços de Área de Trabalho Remota
 
@@ -100,6 +100,3 @@ O cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta as associações
 
 
 Todos os novos cmdlets dão suporte aos parâmetros comuns: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer e -OutVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).
-
-## <a name="hardware-accelerated-graphics"></a>Aceleração de gráficos por hardware
-O Windows Server 2016 estende a tecnologia do adaptador gráfico RemoteFX 3D (vGPU) para ser compatível com OpenGL e dar suporte a VMs convidadas do Windows Server 2016 de usuário único. Você pode combinar as áreas de trabalho de sessão pessoal com os novos recursos vGPU para dar suporte aos aplicativos hospedados que exijam a aceleração de gráficos. Como alternativa, você pode combinar as áreas de trabalho de sessão pessoal com o novo recurso DDA (Atribuição de dispositivo discreto) para também dar suporte aos aplicativos hospedados que exijam a aceleração de gráficos.
