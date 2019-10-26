@@ -9,16 +9,17 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 3b37abaf5a2341aff66ff0064ecc4f52faf47f06
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 08/21/2019
+ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
+ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393000"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923874"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implantar dispositivos gráficos usando a atribuição de dispositivo discreta
 
->Aplica-se a: Microsoft Hyper-V Server 2016, Windows Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019  
+> Aplica-se a: Microsoft Hyper-V Server 2016, Windows Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019  
 
 A partir do Windows Server 2016, você pode usar a atribuição de dispositivo discreta ou DDA para passar um dispositivo PCIe inteiro para uma VM.  Isso permitirá o acesso de alto desempenho a dispositivos como o [armazenamento da NVMe](./Deploying-storage-devices-using-dda.md) ou placas gráficas de dentro de uma VM, ao mesmo tempo em que pode aproveitar os drivers nativos dos dispositivos.  Visite o [plano para implantar dispositivos usando a atribuição de dispositivo discreto](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md) para obter mais detalhes sobre quais dispositivos funcionam, quais são as possíveis implicações de segurança, etc.
 
@@ -60,10 +61,10 @@ Alguns hardwares têm melhor desempenho se a VM estiver configurada de uma deter
 ## <a name="dismount-the-device-from-the-host-partition"></a>Desmontar o dispositivo da partição de host
 ### <a name="optional---install-the-partitioning-driver"></a>Opcional – instalar o driver de particionamento
 A atribuição de dispositivos discretos fornece aos dispositivos de hardware a capacidade de fornecer um driver de mitigação de segurança com seus equipamentos.  Observe que esse driver não é o mesmo que o driver de dispositivo que será instalado na VM convidada.  Cabe à vontade do fornecedor de hardware fornecer esse driver, no entanto, se eles o fornecerem, instale-o antes de desmontar o dispositivo da partição de host.  Entre em contato com o fornecedor do hardware para obter mais informações sobre se eles têm um driver de mitigação
-> Se nenhum driver de particionamento for fornecido, durante a desmontagem, você `-force` deverá usar a opção para ignorar o aviso de segurança. Leia mais sobre as implicações de segurança de fazer isso em [planejar a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
+> Se nenhum driver de particionamento for fornecido, durante a desmontagem, você deverá usar a opção `-force` para ignorar o aviso de segurança. Leia mais sobre as implicações de segurança de fazer isso em [planejar a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
 
 ### <a name="locating-the-devices-location-path"></a>Localizando o caminho do local do dispositivo
-O caminho do local PCI é necessário para desmontar e montar o dispositivo do host.  Um caminho de local de exemplo é semelhante ao `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`seguinte:.  Para obter mais detalhes sobre o local, encontre o caminho de localização: [Planeje a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
+O caminho do local PCI é necessário para desmontar e montar o dispositivo do host.  Um caminho de local de exemplo é semelhante ao seguinte: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`.  Para obter mais detalhes sobre o local, encontre o caminho de localização: [planeje a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
 
 ### <a name="disable-the-device"></a>Desabilitar o dispositivo
 Usando o Device Manager ou o PowerShell, verifique se o dispositivo está "desabilitado".  
@@ -99,7 +100,7 @@ Mount-VMHostAssignableDevice -LocationPath $locationPath
 ```
 Você pode reabilitar o dispositivo no Gerenciador de dispositivos e o sistema operacional do host poderá interagir com o dispositivo novamente.
 
-## <a name="examples"></a>Exemplos
+## <a name="example"></a>Exemplo
 
 ### <a name="mounting-a-gpu-to-a-vm"></a>Montando uma GPU em uma VM
 Neste exemplo, usamos o PowerShell para configurar uma VM chamada "ddatest1" para pegar a primeira GPU disponível pelo fabricante NVIDIA e atribuí-la à VM.  
@@ -131,3 +132,13 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 #Assign the device to the guest VM.
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
+
+## <a name="troubleshooting"></a>Painel de controle da
+
+Se você tiver passado uma GPU em uma VM, mas Área de Trabalho Remota ou um aplicativo não estiver reconhecendo a GPU, verifique os seguintes problemas comuns:
+
+- Verifique se você instalou a versão mais recente do driver com suporte do fornecedor da GPU e se o driver não está relatando erros verificando o estado do dispositivo em Device Manager.
+- Verifique se o dispositivo tem espaço MMIO suficiente alocado na VM. Para saber mais, confira [MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space).
+- Verifique se você está usando uma GPU à qual o fornecedor oferece suporte para uso nessa configuração. Por exemplo, alguns fornecedores impedem que seus cartões de consumidor funcionem quando passados para uma VM.
+- Verifique se o aplicativo que está sendo executado dá suporte à execução dentro de uma VM e se a GPU e seus drivers associados têm suporte no aplicativo. Alguns aplicativos têm permissões de lista de GPUs e ambientes.
+- Se você estiver usando a função de Host da Sessão da Área de Trabalho Remota ou os serviços do Windows MultiPoint no convidado, será necessário certificar-se de que uma entrada de Política de Grupo específica está definida para permitir o uso da GPU padrão. Usando um objeto Política de Grupo aplicado ao convidado (ou ao Editor de Política de Grupo Local no convidado), navegue até o seguinte Política de Grupo item: configuração do **computador** > **modelos de administrador** > **componentes do Windows** > **Serviços de Área de Trabalho Remota** > **host da sessão da área de trabalho remota** > **ambiente de sessão remota** > **use o adaptador gráfico de hardware padrão para todas as sessões de serviços de área de trabalho remota**. Defina esse valor como habilitado e reinicialize a VM depois que a política for aplicada.
