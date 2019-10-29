@@ -13,18 +13,37 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: eaf242309dbdbd4716ea8f39e7ebcb1d9225b53a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c04909e9e0cfbf71b6632c154ac8b9b20b5bac10
+ms.sourcegitcommit: b4b0e73ce35f8b594eb467a2bb2aa91bd6d86369
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387327"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893084"
 ---
 # <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>Serviços de Área de Trabalho Remota: atenda a tipos diferentes de usuários
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Escale sua implantação dependendo da necessidade esperada de cada tipo de usuário.
-Por exemplo, os usuários podem realizar a entrada de dados em aplicativos leves, manipular grandes conjuntos de dados com aplicativos de produtividade, como o Office, ou trabalhar com aplicativos pesados de engenharia ou elementos gráficos.
+Os Serviços de Área de Trabalho Remota têm suporte de diferentes tipos de cargas de trabalho. Escale sua implantação dependendo da necessidade esperada de cada tipo de usuário.
 
-Recomendamos carregar um teste de implantação com testes de estresse e simulação do uso na vida real. Varie o tamanho da carga para evitar surpresas. Verifique se a capacidade de resposta atende aos requisitos do usuário e se todo o sistema é resiliente. Crie testes de carga com ferramentas de simulação, como LoginVSI, que verifica a capacidade da implantação para atender às necessidades dos usuários. 
+## <a name="types-of-users"></a>Tipos de usuários
+
+### <a name="knowledge-user"></a>Usuário de conhecimento
+
+Os usuários de conhecimento usam aplicativos de produtividade leves como o Microsoft Word, o Excel, o Outlook e o navegador Microsoft Edge.
+
+### <a name="professional-user"></a>Usuário profissional
+
+Os usuários profissionais usam navegadores da Internet e aplicativos de produtividade, além de dar suporte a cargas de trabalho mais intensivas, como o desenvolvimento de software e a criação de conteúdo multimídia.
+
+### <a name="power-user"></a>Usuário avançado
+
+Os usuários avançados usam aplicativos de engenharia e gráficos como o CAD (design auxiliado por computador) e o Adobe Photoshop. As GPUs são muitas vezes uma boa opção para usuários que usam regularmente programas com uso intensivo de gráficos para renderização de vídeo, design 3D e simulações.
+
+Para saber mais sobre a aceleração de gráficos, confira [Escolher a tecnologia de renderização de elementos gráficos](rds-graphics-virtualization.md).
+
+O Azure tem outras opções de implantação de aceleração de gráficos e vários tamanhos de VM de GPU disponíveis. Saiba mais sobre isso em [Tamanhos de máquinas virtuais otimizadas para GPU](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu).
+
+## <a name="test-workload"></a>Carga de trabalho de testes
+
+É recomendável fazer testes de carga das implantações com testes de estresse e simulações de uso da vida real. É possível usar ferramentas de simulação como o LoginVSI para fazer o teste de carga da implantação. Verifique se o sistema é responsivo e resiliente o suficiente para atender às necessidades do usuários e lembre-se de variar o tamanho da carga para evitar surpresas.

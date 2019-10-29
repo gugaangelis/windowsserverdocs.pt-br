@@ -11,14 +11,14 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 manager: jasgro
-ms.date: 08/22/2019
+ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 261023223b56e235320b7ad414fa91206420b1ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2d3a871165812ac3a27e65b5f52cc56a05c9efe
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360840"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812297"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Recursos removidos ou planejados para substituição começando no Windows Server 2019
 
@@ -41,6 +41,7 @@ Estamos removendo os seguintes recursos e funcionalidades da imagem de produto i
 | Digitalização de Negócios, também chamada de DSM (Gerenciamento de Digitalização Distribuída)|Estamos removendo essa funcionalidade de gerenciamento do scanner e verificação de segurança: não há dispositivos compatíveis com esse recurso. |
 | Componentes de impressão: agora um componente opcional para instalações Server Core|Em versões anteriores do Windows Server, os componentes de impressão estavam *desabilitados* por padrão na opção de instalação Server Core. Alteramos isso no Windows Server 2016, habilitando-os por padrão. No Windows Server de 2019, esses componentes de impressão novamente são desabilitados por padrão para o Server Core. Se você precisar habilitar os componentes de impressão, poderá fazer isso executando o cmdlet **Install-WindowsFeature Print-Server**. |
 | [Agente de Conexão de Área de Trabalho Remota e Host de Virtualização de Área de Trabalho Remota](../remote/remote-desktop-services/desktop-hosting-service.md) em uma instalação Server Core|A maioria das implantações de Serviços de Área de Trabalho Remota têm essas funções colocalizadas com o RDSH (Host da Sessão da Área de Trabalho Remota), que requer um servidor com Experiência desktop; para ser consistente com RDSH, estamos alterando essas funções para também exigirem o servidor com Experiência desktop. Essas funções de RDS não estão mais disponíveis para uso em uma [instalação Server Core](../administration/server-core/what-is-server-core.md). Se você precisa [implantar essas funções como parte da sua infraestrutura de área de trabalho remota](../remote/remote-desktop-services/rds-deploy-infrastructure.md), você pode [instalá-los no Windows Server com Experiência desktop](../get-started/getting-started-with-server-with-desktop-experience.md). <br/><br/>Essas funções também são incluídas na opção de instalação da Experiência desktop do Windows Server 2019. |
+| [vGPU (Adaptador de vídeo RemoteFX 3D)](../remote/remote-desktop-services/rds-remotefx-vgpu.md)|Estamos desenvolvendo novas opções de aceleração de elementos gráficos para ambientes virtualizados. Você também pode usar a [DDA (Atribuição de Dispositivos Discretos)](../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md) como alternativa. |
 
 ## <a name="features-were-no-longer-developing"></a>Recursos que não desenvolvemos mais
 

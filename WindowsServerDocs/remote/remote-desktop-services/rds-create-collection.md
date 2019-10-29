@@ -7,18 +7,18 @@ ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 11/08/2016
+ms.date: 10/22/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: cec1ae43b51b17da5617f95e13b839d4ecfbb40c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404002"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812250"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>Criar uma coleção de serviços de área de trabalho remota para aplicativos e áreas de trabalho a executar
 
@@ -33,7 +33,7 @@ Antes de criar uma coleção, decida qual tipo de coleção é necessária: sess
  
 Com uma sessão em pool, vários usuários acessam um pool compartilhado de recursos, enquanto na sessão de área de trabalho pessoal, os usuários recebem sua própria área de trabalho dentro do pool. A sessão em pool fornece o menor custo geral, enquanto as sessões pessoais permitem que os usuários personalizem sua experiência de área de trabalho.
 
-Se for necessário compartilhar aplicativos hospedados que fazem uso intensivo de gráficos, você pode combinar as áreas de trabalho de sessões pessoais com vGPU do RemoteFX configurado para aceleração de gráficos. Como alternativa, você pode combinar as áreas de trabalho de sessão pessoal com o novo recurso DDA (Atribuição de dispositivo discreto) para também dar suporte aos aplicativos hospedados que exijam a aceleração de gráficos. Confira [Qual tecnologia de virtualização de gráficos é ideal para você](rds-graphics-virtualization.md) para acessar mais informações.
+Se for preciso compartilhar aplicativos hospedados com uso intensivo de gráficos, combine as áreas de trabalho de sessão pessoal com a nova funcionalidade DDA (Atribuição de Dispositivo Discreto) para também oferecer suporte aos aplicativos hospedados que exijam a aceleração de gráficos. Confira [Qual tecnologia de virtualização de gráficos é ideal para você](rds-graphics-virtualization.md) para acessar mais informações.
 
 
 Independentemente do tipo de coleção que você escolher, preencha essas coleções com RemoteApps, os programas e recursos que os usuários podem acessar em qualquer dispositivo com suporte e que trabalham com o mesmo que o programa estava em execução no local.
