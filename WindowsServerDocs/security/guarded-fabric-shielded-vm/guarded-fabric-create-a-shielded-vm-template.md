@@ -8,16 +8,17 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 686fd2ed5969d191240bbd726f1d759e9974f08a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70014c04bbb4425fe3c3fd0379f10cf00abe00ee
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386685"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986440"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada do Windows
 
->Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2019
+
 
 Assim como acontece com as VMs regulares, você pode criar um modelo de VM (por exemplo, um [modelo de VM no Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-library-add-vm-templates)) para tornar mais fácil para os locatários e administradores implantar novas VMs na malha usando um disco de modelo. Como as VMs blindadas são ativos sensíveis à segurança, há etapas adicionais para criar um modelo de VM que dá suporte à blindagem. Este tópico aborda as etapas para criar um disco de modelo blindado e um modelo de VM no VMM.
 
@@ -27,13 +28,13 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 Primeiro, prepare um disco do sistema operacional que será executado por meio do assistente de criação de disco de modelo blindado. Esse disco será usado como o disco do sistema operacional nas VMs de seu locatário. Você pode usar qualquer ferramenta existente para criar esse disco, como o Microsoft Desktop Image Service Manager (DISM), ou configurar manualmente uma VM com um VHDX em branco e instalar o sistema operacional nesse disco. Ao configurar o disco, ele deve aderir aos seguintes requisitos específicos para VMs de geração 2 e/ou blindadas: 
 
-| Requisito para VHDX | Reason |
+| Requisito para VHDX | Motivo |
 |-----------|----|
 |Deve ser um disco de tabela de partição GUID (GPT) | Necessário para máquinas virtuais de geração 2 para dar suporte a UEFI|
-|O tipo de disco deve ser **básico** em oposição ao **dinâmico**. <br>Observação: Isso se refere ao tipo de disco lógico, não ao recurso VHDX "de expansão dinâmica" com suporte do Hyper-V. | O BitLocker não dá suporte a discos dinâmicos.|
+|O tipo de disco deve ser **básico** em oposição ao **dinâmico**. <br>Observação: isso se refere ao tipo de disco lógico, não ao recurso VHDX "de expansão dinâmica" com suporte do Hyper-V. | O BitLocker não dá suporte a discos dinâmicos.|
 |O disco tem pelo menos duas partições. Uma partição deve incluir a unidade na qual o Windows está instalado. Esta é a unidade que o BitLocker irá criptografar. A outra partição é a partição ativa, que contém o carregador de inicialização e permanece descriptografada para que o computador possa ser iniciado.|Necessário para o BitLocker|
 |O sistema de arquivos é NTFS | Necessário para o BitLocker|
-|O sistema operacional instalado no VHDX é um dos seguintes:<br>-Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 <br>-Windows 10, Windows 8.1, Windows 8| Necessário para dar suporte a máquinas virtuais de geração 2 e ao modelo de inicialização segura da Microsoft|
+|O sistema operacional instalado no VHDX é um dos seguintes:<br>-Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 <br>-Windows 10, Windows 8.1, Windows 8| Necessário para dar suporte a máquinas virtuais de geração 2 e ao modelo de inicialização segura da Microsoft|
 |O sistema operacional deve ser generalizado (executar Sysprep. exe) | O provisionamento de modelo envolve a especialização de VMs para a carga de trabalho de um locatário específico| 
 
 > [!NOTE]
@@ -50,7 +51,7 @@ Para usar um disco de modelo com VMs blindadas, o disco deve ser preparado e cri
 > [!NOTE]
 > O assistente de disco de modelo modificará o disco de modelo que você especificar no local. Talvez você queira fazer uma cópia do VHDX desprotegido antes de executar o assistente para fazer atualizações no disco mais tarde. Você não poderá modificar um disco que tenha sido protegido com o assistente de disco de modelo.
 
-Execute as seguintes etapas em um computador que executa o Windows Server 2016 (não precisa ser um host protegido ou um servidor do VMM):
+Execute as etapas a seguir em um computador que esteja executando o Windows Server 2016, Windows 10 (com as ferramentas de gerenciamento de servidor remoto, RSAT instalado) ou posterior (não precisa ser um host protegido ou um servidor do VMM):
 
 1. Copie o VHDX generalizado criado em [preparar um vhdx do sistema operacional](#prepare-an-operating-system-vhdx) para o servidor, se ele ainda não estiver lá.
 
@@ -92,7 +93,7 @@ Se você usar o VMM, siga as etapas nas seções restantes neste tópico para in
 
 Se você usar o VMM, depois de criar um disco de modelo, você precisará copiá-lo para um compartilhamento de biblioteca do VMM para que os hosts possam baixar e usar o disco ao provisionar novas VMs. Use o procedimento a seguir para copiar o disco de modelo na biblioteca do VMM e, em seguida, atualizar a biblioteca.
 
-1. Copie o arquivo VHDX para a pasta de compartilhamento de biblioteca do VMM. Se você usou a configuração padrão do VMM, copie o disco do modelo para _\\ @ no__t-2\MSSCVMMLibrary\VHDs_.
+1. Copie o arquivo VHDX para a pasta de compartilhamento de biblioteca do VMM. Se você usou a configuração padrão do VMM, copie o disco do modelo para _\\<vmmserver>\MSSCVMMLibrary\VHDs_.
 
 2. Atualize o servidor de biblioteca. Abra o espaço de trabalho **biblioteca** , expanda **servidores de biblioteca**, clique com o botão direito do mouse no servidor de biblioteca que você deseja atualizar e clique em **Atualizar**.
 
@@ -135,7 +136,8 @@ Depois que o modelo é criado, os locatários podem usá-lo para criar novas má
 
 ## <a name="prepare-and-protect-the-vhdx-using-powershell"></a>Preparar e proteger o VHDX usando o PowerShell
 
-Como alternativa à execução do assistente de disco de modelo, você pode copiar o disco de modelo e o certificado para um computador que esteja executando o RSAT e executar [Protect-TemplateDisk @ no__t-1 para iniciar o processo de assinatura.
+Como alternativa para executar o assistente de disco de modelo, você pode copiar o disco de modelo e o certificado para um computador que esteja executando o RSAT e executar [Protect-TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
+) para iniciar o processo de assinatura.
 O exemplo a seguir usa as informações de nome e versão especificadas pelos parâmetros _TemplateName_ e _version_ .
 O VHDX que você fornecer ao parâmetro `-Path` será substituído pelo disco de modelo atualizado, portanto, certifique-se de fazer uma cópia antes de executar o comando.
 

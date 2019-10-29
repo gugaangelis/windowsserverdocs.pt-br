@@ -1,25 +1,25 @@
 ---
 title: Visão geral do serviço de migração de armazenamento
-description: O Serviço de Migração de Armazenamento facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados nos servidores e, em seguida, transfere os dados e a configuração para servidores mais recentes — tudo sem aplicativos ou usuários precisando mudar tudo.
+description: O serviço de migração de armazenamento facilita a migração do armazenamento para o Windows Server ou para o Azure. Ele fornece uma ferramenta gráfica que inventaria dados em servidores Windows e Linux e, em seguida, transfere os dados para servidores mais recentes ou para máquinas virtuais do Azure. O serviço de migração de armazenamento também fornece a opção de transferir a identidade de um servidor para o servidor de destino para que os aplicativos e usuários possam acessar seus dados sem alterar os links ou os caminhos.
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 08/16/2019
+ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 022b0c3445c007960c490159f6580a702233ee41
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 712befacaf1d5bddd4f9bd993ce0d423b15cba36
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402981"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986455"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server (canal semestral)
 
-O Serviço de Migração de Armazenamento facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados nos servidores e, em seguida, transfere os dados e a configuração para servidores mais recentes — tudo sem aplicativos ou usuários precisando mudar tudo.
+O serviço de migração de armazenamento facilita a migração do armazenamento para o Windows Server ou para o Azure. Ele fornece uma ferramenta gráfica que inventaria dados em servidores Windows e Linux e, em seguida, transfere os dados para servidores mais recentes ou para máquinas virtuais do Azure. O serviço de migração de armazenamento também fornece a opção de transferir a identidade de um servidor para o servidor de destino para que os aplicativos e usuários possam acessar seus dados sem alterar os links ou os caminhos.
 
 Este tópico discute por que você desejaria usar o serviço de migração de armazenamento, como funciona o processo de migração e quais são os requisitos para os servidores de origem e de destino.
 
@@ -34,7 +34,7 @@ Use o serviço de migração de armazenamento porque você tem um servidor (ou m
 
 ![Diagrama mostrando o serviço de migração de armazenamento migrando arquivos & configuração de servidores de origem para servidores de destino, VMs do Azure ou Sincronização de Arquivos do Azure.](media/overview/storage-migration-service-diagram.png)
 
-**Figura 1: Origens e destinos do serviço de migração de armazenamento**
+**Figura 1: origens e destinos do serviço de migração de armazenamento**
 
 ## <a name="how-the-migration-process-works"></a>Como funciona o processo de migração
 
@@ -44,8 +44,8 @@ A migração é um processo de três etapas:
 2. **Transfira (Copie) os dados** dos servidores de origem para os servidores de destino.
 3. **Recortar para os novos servidores** (opcional).<br>Os servidores de destino assumem as identidades anteriores dos servidores de origem para que os aplicativos e os usuários não precisem alterar nada. <br>Os servidores de origem entram em um estado de manutenção em que eles ainda contêm os mesmos arquivos que sempre têm (nunca removemos arquivos dos servidores de origem), mas não estão disponíveis para usuários e aplicativos. Em seguida, você pode encerrar os servidores de sua conveniência.
 
-![Captura de tela mostrando um servidor pronto para ser](media/migrate/inventory.png)
-examinado**Figura 2: Servidores de inventário do serviço de migração de armazenamento**
+![captura de tela mostrando um servidor pronto para ser examinado](media/migrate/inventory.png)
+**Figura 2: servidores de inventário do serviço de migração de armazenamento**
 
 ## <a name="requirements"></a>Requisitos
 
@@ -96,7 +96,7 @@ O servidor de origem deve executar um dos seguintes sistemas operacionais:
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 
-Observação: O Windows Small Business Server e o Windows Server Essentials são controladores de domínio. O serviço de migração de armazenamento ainda não pode ser reduzido dos controladores de domínio, mas pode inventariar e transferir arquivos deles.   
+Observação: o Windows Small Business Server e o Windows Server Essentials são controladores de domínio. O serviço de migração de armazenamento ainda não pode ser reduzido dos controladores de domínio, mas pode inventariar e transferir arquivos deles.   
 
 Você pode migrar os seguintes tipos de fonte adicionais se o Orchestrator estiver executando o Windows Server, versão 1903 ou posterior, ou se o orquestrador estiver executando uma versão anterior do Windows Server com o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
