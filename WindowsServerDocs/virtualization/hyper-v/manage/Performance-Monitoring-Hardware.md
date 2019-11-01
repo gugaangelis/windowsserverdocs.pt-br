@@ -8,12 +8,12 @@ ms.author: ifufondu
 manager: chhuybre
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: 6938739d7c8efdf60c859d2d5ea5bc63246ae4fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 515831df6b97271b52c4a715fd979f2afff4a3a1
+ms.sourcegitcommit: f73662069329b1abf6aa950c2a826bc113718857
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364102"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73240348"
 ---
 # <a name="enable-intel-performance-monitoring-hardware-in-a-hyper-v-virtual-machine"></a>Habilitar o hardware de monitoramento de desempenho Intel em uma máquina virtual Hyper-V
 
@@ -23,31 +23,43 @@ Os processadores Intel contêm recursos coletivamente chamados de monitoramento 
 
 Para habilitar o monitoramento de desempenho de hardware em uma máquina virtual, você precisará de:
 
-- Um processador Intel com hardware de monitoramento de desempenho (por exemplo, PMU, PEBS, XISTENTE)
+- Um processador Intel com hardware de monitoramento de desempenho (por exemplo, PMU, PEBS, LBR).  Consulte [este documento]( https://software.intel.com/en-us/vtune-amplifier-cookbook-configuring-a-hyper-v-virtual-machine-for-hardware-based-hotspots-analysis) da Intel para determinar a qual hardware de monitoramento de desempenho o seu sistema dá suporte.
 - Windows Server 2019 ou Windows 10 versão 1809 (atualização de outubro de 2018) ou posterior
 - Uma máquina virtual do Hyper-V _sem_ [virtualização aninhada](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) que também está no estado parado
- 
+
+Para habilitar o hardware de monitoramento de desempenho do XISTENTE (rastreamento do processador Intel) no futuro em uma máquina virtual, você precisará de:
+
+- Um processador Intel que dá suporte a XISTENTE e ao recurso PT2GPA.  Consulte [este documento]( https://software.intel.com/en-us/vtune-amplifier-cookbook-configuring-a-hyper-v-virtual-machine-for-hardware-based-hotspots-analysis) da Intel para determinar a qual hardware de monitoramento de desempenho o seu sistema dá suporte.
+- Windows Server versão 1903 (SAC) ou Windows 10 versão 1903 (atualização de maio de 2019) ou posterior
+- Uma máquina virtual do Hyper-V _sem_ [virtualização aninhada](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) que também está no estado parado
+
 ## <a name="enabling-performance-monitoring-components-in-a-virtual-machine"></a>Habilitando componentes de monitoramento de desempenho em uma máquina virtual
 
-Para habilitar diferentes componentes de monitoramento de desempenho para uma máquina virtual convidada `Set-VMProcessor` específica, use o cmdlet do PowerShell:
- 
+Para habilitar diferentes componentes de monitoramento de desempenho para uma máquina virtual convidada específica, use o cmdlet `Set-VMProcessor` PowerShell durante a execução como administrador:
+
 ``` Powershell
-# Enable all components
+# Enable all components except IPT
 Set-VMProcessor MyVMName -Perfmon @("pmu", "lbr", "pebs")
 ```
- 
+
 ``` Powershell
 # Enable a specific component
 Set-VMProcessor MyVMName -Perfmon @("pmu")
 ```
- 
+
+``` Powershell
+# Enable IPT 
+Set-VMProcessor MyVMName -Perfmon @("ipt")
+```
+
 ``` Powershell
 # Disable all components
 Set-VMProcessor MyVMName -Perfmon @()
 ```
 > [!NOTE]
-> Ao habilitar os componentes de monitoramento de desempenho `"pebs"` , se for especificado `"pmu"` , deverá ser especificado.  Além disso, a habilitação de um componente que não é suportado pelos processadores físicos do host resultará em uma falha de inicialização da máquina virtual.
- 
+> Ao habilitar os componentes de monitoramento de desempenho, se `"pebs"` for especificado, `"pmu"` também deverá ser especificado. Só há suporte para PEBS em hardware que tenha uma versão PMU > = 4. Habilitar um componente que não é suportado pelos processadores físicos do host resultará em uma falha de inicialização da máquina virtual.
+
 ## <a name="effects-of-enabling-performance-monitoring-hardware-on-saverestore-export-and-live-migration"></a>Efeitos de habilitar o monitoramento de desempenho de hardware em salvar/restaurar, exportar e migração dinâmica
- 
+
 A Microsoft não recomenda a migração ao vivo ou o salvamento/restauração de máquinas virtuais com o monitoramento de desempenho de hardware entre sistemas com hardware Intel diferente. O comportamento específico de monitoramento de desempenho de hardware geralmente é não-arquitetônico e muda entre os sistemas de hardware Intel.  Mover uma máquina virtual em execução entre sistemas diferentes pode resultar em comportamento imprevisível dos contadores que não são de arquitetura.
+
