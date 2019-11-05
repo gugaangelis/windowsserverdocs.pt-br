@@ -8,23 +8,23 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: f4e772550aaba6fe9a4f78a6032eaabde4aeb0bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406864"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567094"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solução de problemas do Windows Admin Center
 
-> Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+> Aplica-se a: centro de administração do Windows, versão prévia do centro de administração do Windows
 
 > [!Important]
-> Este guia ajudará você a diagnosticar e resolver problemas que impedem o uso do Windows Admin Center. Se tiver problemas com uma ferramenta específica, verifique se você encontrou um [problema conhecido.](http://aka.ms/wacknownissues)
+> Este guia ajudará você a diagnosticar e resolver problemas que impedem o uso do Windows Admin Center. Se tiver problemas com uma ferramenta específica, verifique se você encontrou um [problema conhecido.](https://aka.ms/wacknownissues)
 
-## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>O instalador falha com a mensagem: **_Não foi possível carregar o módulo ' Microsoft. PowerShell. LocalAccounts '._**
+## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>Falha do instalador com a mensagem:  **_o módulo ' Microsoft. PowerShell. LocalAccounts ' não pôde ser carregado._**
 
-Isso pode acontecer se o caminho padrão do módulo do PowerShell tiver sido modificado ou removido. Para resolver o problema, certifique-se de que ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` é o **primeiro** item em sua variável de ambiente PSModulePath. Você pode conseguir isso com a seguinte linha do PowerShell:
+Isso pode acontecer se o caminho padrão do módulo do PowerShell tiver sido modificado ou removido. Para resolver o problema, verifique se ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` é o **primeiro** item em sua variável de ambiente PSModulePath. Você pode conseguir isso com a seguinte linha do PowerShell:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PSModulePath","%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules;" + ([Environment]::GetEnvironmentVariable("PSModulePath","User")),"User")
@@ -53,12 +53,6 @@ Isso pode acontecer se o caminho padrão do módulo do PowerShell tiver sido mod
 
 ### <a name="if-youve-installed-windows-admin-center-as-a-gateway-on-windows-server"></a>Se você instalou o Windows Admin Center como um **Gateway no Windows Server**
 
-* Você atualizou de uma versão anterior do centro de administração do Windows? Verifique se a regra de firewall não foi excluída devido a [esse problema conhecido](known-issues.md#upgrade). Use o comando do PowerShell abaixo para determinar se a regra existe. Caso contrário, siga [estas instruções](known-issues.md#upgrade) para recriá-lo.
-    
-    ```powershell
-    Get-NetFirewallRule -DisplayName "SmeInboundOpenException"
-    ```
-
 * [Verifique a versão do Windows](#check-the-windows-version) do cliente e servidor.
 
 * Verifique se que você está usando o Microsoft Edge ou o Google Chrome como seu navegador da Web.
@@ -66,7 +60,7 @@ Isso pode acontecer se o caminho padrão do módulo do PowerShell tiver sido mod
 * No servidor, abra o Gerenciador de tarefas > serviços e verifique se o **ServerManagementGateway/centro de administração do Windows** está em execução.
 ![](../media/Service-TaskMan.PNG)
 
-* Testar a conexão de rede com o gateway (substitua \<values > com as informações de sua implantação)
+* Testar a conexão de rede com o gateway (substituir \<valores > com as informações de sua implantação)
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
@@ -96,7 +90,7 @@ Isso pode acontecer se o caminho padrão do módulo do PowerShell tiver sido mod
 
 * Isso pode ter limpado suas configurações de hosts confiáveis. [Siga estas instruções para atualizar suas configurações de hosts confiáveis.](#configure-trustedhosts) 
 
-## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>Recebo a mensagem: "Não é possível conectar-se com segurança a esta página. Isso pode ocorrer porque o site usa configurações de segurança de TLS desatualizadas ou não seguras.
+## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>Recebo a mensagem: "não é possível conectar-se com segurança a esta página. Isso pode ocorrer porque o site usa configurações de segurança de TLS desatualizadas ou não seguras.
 
 Seu computador está restrito a conexões HTTP/2. O centro de administração do Windows usa a autenticação integrada do Windows, que não tem suporte no HTTP/2. Adicione os dois valores de registro a seguir na chave ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` no **computador que está executando o navegador** para remover a restrição http/2:
 
@@ -111,11 +105,11 @@ Essas três ferramentas exigem o protocolo WebSocket, que normalmente é bloquea
 
 ## <a name="i-can-connect-to-some-servers-but-not-others"></a>Posso me conectar somente a alguns servidores
 
-* Faça logon no computador do gateway localmente e tente ```Enter-PSSession <machine name>``` no PowerShell, substituindo o nome do \<machine > pelo nome do computador que você está tentando gerenciar no centro de administração do Windows. 
+* Faça logon no computador do gateway localmente e tente ```Enter-PSSession <machine name>``` no PowerShell, substituindo \<nome do computador > pelo nome do computador que você está tentando gerenciar no centro de administração do Windows. 
 
 * Se o ambiente usa um grupo de trabalho em vez de um domínio, consulte [usar o Windows Admin Center em um grupo de trabalho](#using-windows-admin-center-in-a-workgroup).
 
-* **Usando contas de administrador local:** Se você estiver usando uma conta de usuário local que não seja a conta de administrador interno, será necessário habilitar a política no computador de destino executando o seguinte comando no PowerShell ou em um prompt de comando como administrador no computador de destino:
+* **Usar contas de administrador local:** se estiver usando uma conta de usuário local que não é a conta de administrador interno, você deverá habilitar a política na máquina de destino executando o seguinte comando no PowerShell ou em um Prompt de comando como administrador no computador de destino:
 
     ```
     REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
@@ -213,7 +207,7 @@ Envie-nos um email em wacFeedbackAzure@microsoft.com com as seguintes informaç�
 * Descreva seu problema e as etapas necessárias para reproduzir o problema. 
 * Você registrou anteriormente seu gateway no Azure usando o script baixável New-AadApp. ps1 e, em seguida, atualizo para a versão 1807? Ou você registrou seu gateway no Azure usando a interface do usuário das configurações do gateway > Azure?
 * Sua conta do Azure está associada a vários diretórios/locatários?
-    * Se sim: Ao registrar o aplicativo do Azure AD no centro de administração do Windows, o diretório foi usado para o diretório padrão no Azure? 
+    * Se sim: ao registrar o aplicativo do Azure AD no centro de administração do Windows, o diretório foi usado no diretório padrão no Azure? 
 * Sua conta do Azure tem acesso a várias assinaturas?
 * A assinatura que você estava usando tem a cobrança anexada?
 * Você fez logon em várias contas do Azure quando encontrou o problema?

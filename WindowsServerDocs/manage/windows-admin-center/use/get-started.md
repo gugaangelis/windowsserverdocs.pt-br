@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 68b5c7b2c5bc8e93d653514b2664d96b97b07a9e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fac17cd5975eeb699f205888edbe3f1c30b43394
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406841"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567143"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introdução ao centro de administração do Windows
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 > [!Tip]
 > Novo no Windows Admin Center?
@@ -56,9 +56,9 @@ Depois de concluir a instalação do centro de administração do Windows, você
 
    ![](../media/launch/addserver0.png)
 
-2. Escolha Adicionar um servidor, cluster de failover ou conexão de cluster hiperconvergente:
+2. Escolha Adicionar um servidor, cluster, computador Windows ou uma VM do Azure:
     
-   ![](../media/launch/addserver1.png)
+   ![](../media/launch/ChooseConnectionType.png)
 
 3. Digite o nome do servidor ou cluster a ser gerenciado e clique em **Enviar**. O servidor ou cluster será adicionado à sua lista de conexões na página Visão geral.
 
@@ -75,7 +75,7 @@ Depois de concluir a instalação do centro de administração do Windows, você
  2. Clique em **procurar** e selecione um arquivo de texto que contenha uma vírgula ou uma nova linha separada por uma lista de FQDNs para os servidores que você deseja adicionar.
 
 > [!Note]
-> O arquivo. csv criado exportando [suas conexões com o PowerShell](#use-powershell-to-import-or-export-your-connections-with-tags) contém informações adicionais além dos nomes de servidor e não é compatível com esse método de importação.
+> O arquivo. csv criado [exportando suas conexões com o PowerShell](#use-powershell-to-import-or-export-your-connections-with-tags) contém informações adicionais além dos nomes de servidor e não é compatível com esse método de importação.
 
   **--OU--**
 
@@ -117,7 +117,7 @@ Você pode aplicar as credenciais a todas as conexões, que as armazenará em ca
 
 **Solução de senha de administrador local (LAPSos)**
 
-Se seu ambiente usa [lapsos](https://technet.microsoft.com/mt227395.aspx)e você tem o centro de administração do Windows instalado em seu PC com Windows 10, você pode usar as credenciais de lapso para autenticar com o nó gerenciado. **Se você usar esse cenário,** [forneça comentários](http://aka.ms/WACFeedback).
+Se seu ambiente usa [lapsos](https://technet.microsoft.com/mt227395.aspx)e você tem o centro de administração do Windows instalado em seu PC com Windows 10, você pode usar as credenciais de lapso para autenticar com o nó gerenciado. **Se você usar esse cenário,** [forneça comentários](https://aka.ms/WACFeedback).
 
 ## <a name="using-tags-to-organize-your-connections"></a>Usando marcas para organizar suas conexões
 
@@ -166,7 +166,7 @@ Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 
 ### <a name="csv-file-format-for-importing-connections"></a>Formato de arquivo CSV para importar conexões
 
-O formato do arquivo CSV começa com os quatro cabeçalhos ```"name","type","tags","groupId"```, seguidos por cada conexão em uma nova linha.
+O formato do arquivo CSV começa com os quatro cabeçalhos ```"name","type","tags","groupId"```, seguido por cada conexão em uma nova linha.
 
 **nome** é o FQDN da conexão
 
@@ -181,7 +181,7 @@ O formato do arquivo CSV começa com os quatro cabeçalhos ```"name","type","tag
 
 as **marcas** são separadas por pipe.
 
-**GroupId** é usado para conexões compartilhadas. Use o valor ```global``` desta coluna para fazer com que esta seja uma conexão compartilhada.
+**GroupId** é usado para conexões compartilhadas. Use o valor ```global``` nesta coluna para torná-la uma conexão compartilhada.
 
 ### <a name="example-csv-file-for-importing-connections"></a>Exemplo de arquivo CSV para importar conexões
 
