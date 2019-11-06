@@ -27,6 +27,7 @@
 ## Uso
 ### [Introdução](use/get-started.md)
 ### [Gerenciar servidores](use/manage-servers.md)
+### [Implantar a infraestrutura hiperconvergente](use/deploy-hyperconverged-infrastructure.md)
 ### [Gerenciar a infraestrutura hiperconvergente](use/manage-hyper-converged.md)
 ### [Gerenciar clusters de failover](use/manage-failover-clusters.md)
 ### [Gerenciar máquinas virtuais Hyper-V](use/manage-virtual-machines.md)
