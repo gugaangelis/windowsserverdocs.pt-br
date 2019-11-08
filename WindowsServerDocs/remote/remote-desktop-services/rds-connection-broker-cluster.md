@@ -87,7 +87,7 @@ Se estiver usando a infraestrutura do Azure, você poderá criar um [Balanceador
       1. Nas **Configurações**, clique em **Regras de balanceamento de carga** e em **Adicionar**.   
       2. Insira um nome (por exemplo, RDP), selecione **TCP** como o **Protocolo**, digite **3389** na **Porta** e na **Porta de back-end** e clique em **OK**.   
 5. Adicione um registro DNS para o balanceador de carga:   
-      1. Conecte-se à máquina virtual de servidor RDMS (por exemplo, Contoso-CB1). ***Confira o artigo [Preparar a VM do Agente de Conexão de Área de Trabalho Remota](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) para obter as etapas de conexão à VM.   
+      1. Conecte-se à máquina virtual de servidor RDMS (por exemplo, Contoso-CB1). Confira o artigo [Preparar a VM do Agente de Conexão de Área de Trabalho Remota](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) para obter as etapas de conexão à VM.   
       2. No Gerenciador do Servidor, clique em **Ferramentas > DNS**.   
       3. No painel esquerdo, expanda **DNS**, clique na máquina DNS, clique em **Zonas de pesquisa direta** e em seu nome de domínio (por exemplo, Contoso.com). Pode levar alguns segundos para o servidor DNS processar a consulta para obter as informações.  
       4. Clique em **Ação > Novo Host (A ou AAAA)** .   
