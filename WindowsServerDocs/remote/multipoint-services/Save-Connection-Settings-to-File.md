@@ -37,7 +37,7 @@ Há três tipos de arquivos de conexão que você pode criar:
   
 2.  Na coluna **computador** , clique no nome do computador para o qual você deseja salvar as configurações de conexão em um arquivo.  
   
-3.  Em**tarefas*** nome do computador *, clique em **salvar conexões com o arquivo**. A página **Salvar configurações de conexão no arquivo** é exibida.  
+3.  Em**tarefas** *nome do computador*, clique em **salvar conexões com o arquivo**. A página **Salvar configurações de conexão no arquivo** é exibida.  
   
 4.  Escolha o tipo de arquivo de conexão que você deseja criar e, em seguida, clique em **OK**.  
   
