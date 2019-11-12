@@ -10,14 +10,14 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 175c4dbd23bac1822365ce80f05d69509d27321c
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 54352f47a31826b91b5696eb90104ca166a4299d
+ms.sourcegitcommit: 18f6b104e73e0397009283d55bee7984ac7ef0d1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935018"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73632657"
 ---
-## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Diretrizes para desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop
+# <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Diretrizes para desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop
 
 Aplica-se a: Windows Server 2016
 
@@ -47,7 +47,7 @@ Tarefas agendadas:
 
 (Acesse também as informações sobre todos os serviços detalhados neste artigo exibindo a planilha do Microsoft Excel anexada: [Diretrizes para desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
 
-<br />
+
 
 ### <a name="disabling-services-not-installed-by-default"></a>Como desabilitar serviços não instalados por padrão
 
@@ -57,10 +57,10 @@ A Microsoft recomenda a aplicação de políticas para desabilitar serviços que
 -  Uma linha de base ou um parâmetro de comparação que desabilita um serviço Windows não padrão (por exemplo, o W3SVC) fornecerá a alguns auditores a impressão equivocada de que a tecnologia (por exemplo, o IIS) não é inerentemente segura e nunca deve ser usada.
 -  Se o recurso (e o serviço) nunca é instalado, isso apenas adiciona uma pilha desnecessária à linha de base e ao trabalho de verificação.
 
-<br />
+
 Para todos os serviços do sistema listados neste documento, as duas seguintes tabelas oferecem uma explicação das colunas e a Microsoft recomenda a habilitação e a desabilitação dos serviços do sistema no Windows Server 2016 com Experiência Desktop: 
 
-<br />
+
 
 ### <a name="explanation-of-columns"></a>Explicação das colunas
 
@@ -68,12 +68,12 @@ Para todos os serviços do sistema listados neste documento, as duas seguintes t
 |---|---|
 |**Descrição do serviço**|   A descrição do serviço, com base na descrição de sc.exe.|
 |**Nome** |Nome da chave (interna) do serviço|
-|**Instalação** |Sempre instalado: O serviço está no Server Core e no Server com Experiência Desktop  <br /> Somente com a Experiência Desktop: O serviço está no Windows Server 2016 com Experiência Desktop, mas ***não*** está no Server Core |
+|**Instalação** |Sempre instalado: O serviço está no Server Core e no Server com a Experiência Desktop. Somente com a Experiência Desktop: O serviço está no Windows Server 2016 com Experiência Desktop, mas ***não*** está no Server Core |
 |**StartType**  |Tipo de início do serviço no Windows Server 2016|
 |**Recomendação** |Recomendação/orientação da Microsoft sobre como desabilitar esse serviço no Windows Server 2016 em uma implantação corporativa típica e bem gerenciada e em que o servidor não está sendo usado como uma substituição da área de trabalho do usuário final.|
 |**Comentários** |Explicação adicional|
 
-<br />
+
 
 ### <a name="explanation-of-microsoft-recommendations"></a>Explicação sobre as recomendações da Microsoft
 
@@ -84,11 +84,11 @@ Para todos os serviços do sistema listados neste documento, as duas seguintes t
 |**Já desabilitado**|  Esse serviço está desabilitado por padrão; não há necessidade de imposição com uma política|
 |**Deve ser desabilitado** |Esse serviço nunca deve ser habilitado em um sistema corporativo bem gerenciado.|
 
-<br />
+
 
 As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop:
 
-<br />
+
 
 ##  <a name="activex-installer-axinstsv"></a>Instalador do ActiveX (AxInstSV)
 
@@ -102,7 +102,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Pode ser desabilitado se o recurso não é necessário |
 
 
-<br />
+
 
 ## <a name="alljoyn-router-service"></a>Serviço de roteador AllJoyn   
 
@@ -116,7 +116,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |       |
 | | |
 
-<br />
+
 
 ## <a name="app-readiness"></a>Preparação de Aplicativos
 
@@ -130,7 +130,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 **Comentários**    |   
 | | |
 
-<br />
+
 
 ##  <a name="application-identity"></a>Identidade do Aplicativo
 
@@ -144,7 +144,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 **Comentários**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-information"></a>Informações do Aplicativo 
 
@@ -158,7 +158,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Dá suporte à elevação do UAC na mesma área de trabalho
 |||     
 
-<br />
+
 
 ##  <a name="application-layer-gateway-service"></a>Serviço de Gateway de Camada de Aplicativo       
 
@@ -172,7 +172,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-management"></a>Gerenciamento de aplicativos      
 
@@ -186,7 +186,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="appx-deployment-service-appxsvc"></a>Serviço de Implantação do AppX (AppXSVC)       
 
@@ -200,7 +200,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="auto-time-zone-updater"></a>Atualizador de Fuso Horário Automático           
 
@@ -214,7 +214,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="background-intelligent-transfer-service"></a>BITS          
 
@@ -228,7 +228,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="background-tasks-infrastructure-service"></a>Serviço de infraestrutura de tarefas em segundo plano      
@@ -243,7 +243,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="base-filtering-engine"></a>Mecanismo de Filtragem Base            
 
@@ -257,7 +257,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="bluetooth-support-service"></a>Serviço de Suporte do Bluetooth            
 
@@ -271,7 +271,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Pode ser desabilitado se não é usado. Outro mecanismo de desabilitação: https://technet.microsoft.com/library/dd252791.aspx
 |||         
 
-<br />          
+
 
 
 ## <a name="cdpusersvc"></a>CDPUserSvc           
@@ -286,7 +286,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Modelo de serviço de usuário
 |||         
 
-<br />          
+
 
 
 ##  <a name="certificate-propagation"></a>Propagação de Certificado     
@@ -301,7 +301,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="client-license-service-clipsvc"></a>Serviço de Licença do Cliente (ClipSVC)        
 
@@ -315,7 +315,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cng-key-isolation"></a>Isolamento de Chave CNG
 
@@ -329,7 +329,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-event-system"></a>Sistema de Eventos COM+       
 
@@ -343,7 +343,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-system-application"></a>Aplicativo de Sistema COM+     
 
@@ -357,7 +357,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="computer-browser"></a>Pesquisador de Computadores        
 
@@ -371,7 +371,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-devices-platform-service"></a>Serviço de Plataforma de Dispositivos Conectados       
 
@@ -385,7 +385,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-user-experiences-and-telemetry"></a>Experiência do Usuário Conectado e Telemetria     
 
@@ -399,7 +399,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="contact-data"></a>Dados de Contato        
 
@@ -413,7 +413,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Modelo de serviço de usuário
 |||         
 
-<br />          
+
 
 ## <a name="coremessaging"></a>CoreMessaging            
 
@@ -427,7 +427,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="credential-manager"></a>Gerenciador de Credenciais           
 
@@ -441,7 +441,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cryptographic-services"></a>Serviços de Criptografia           
 
@@ -455,7 +455,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="data-sharing-service"></a>Serviço de Compartilhamento de Dados         
 
@@ -469,7 +469,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="datacollectionpublishingservice"></a>DataCollectionPublishingService          
 
@@ -483,7 +483,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dcom-server-process-launcher"></a>Inicializador de Processo do Servidor DCOM         
 
@@ -497,7 +497,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-association-service"></a>Serviço de Associação de Dispositivo      
 
@@ -511,7 +511,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-install-service"></a>Serviço de Instalação de Dispositivo
 
@@ -525,7 +525,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |
 |||
 
-<br />          
+
 
 ##  <a name="device-management-enrollment-service"></a>Serviço de Registro de Gerenciamento de Dispositivos        
 
@@ -539,7 +539,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="device-setup-manager"></a>Gerenciador de Instalação de Dispositivo         
 
@@ -553,7 +553,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="devquery-background-discovery-broker"></a>Agente de descoberta em segundo plano de DevQuery         
 
@@ -567,7 +567,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dhcp-client"></a>Cliente DHCP          
 
@@ -581,7 +581,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-policy-service"></a>Serviço de Política de Diagnóstico            
 
@@ -595,7 +595,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="diagnostic-service-host"></a>Host de Serviço de Diagnóstico     
 
@@ -609,7 +609,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-system-host"></a>Host do Sistema de Diagnóstico           
 
@@ -623,7 +623,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-link-tracking-client"></a>Cliente de Rastreamento de Link Distribuído            
 
@@ -637,7 +637,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-transaction-coordinator"></a>Coordenador de Transações Distribuídas     
 
@@ -651,7 +651,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="dmwappushsvc"></a>dmwappushsvc        
 
@@ -665,7 +665,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Serviço necessário em dispositivos cliente do Intune, do MDM e de tecnologias de gerenciamento semelhantes e do Filtro de Gravação Unificado. Não é necessário para o Server.
 |||         
 
-<br />      
+
 
 ##  <a name="dns-client"></a>Cliente DNS      
 
@@ -679,7 +679,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="downloaded-maps-manager"></a>Gerenciador de Mapas Baixados     
 
@@ -693,7 +693,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   A desabilitação interrompe aplicativos que dependem do serviço; pode ser desabilitado se os aplicativos não dependem dele
 |||         
 
-<br />          
+
 
 ## <a name="embedded-mode"></a>Modo Inserido            
 
@@ -707,7 +707,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="encrypting-file-system-efs"></a>EFS (Encrypting File System, sistema de arquivos com criptografia)
 
@@ -721,7 +721,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**   |
 |||                 
 
-<br />  
+
 
 ## <a name="enterprise-app-management-service"></a>Serviço de Gerenciamento de Aplicativos Empresariais            
 
@@ -735,7 +735,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="extensible-authentication-protocol"></a>Protocolo EAP (Extensible Authentication Protocol)           
 
@@ -749,7 +749,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-provider-host"></a>Host de Provedor da Descoberta de Função         
 
@@ -763,7 +763,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-resource-publication"></a>Publicação de Recursos da Descoberta de Função      
 
@@ -777,7 +777,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="geolocation-service"></a>Serviço de Geolocalização          
 
@@ -791,7 +791,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   A desabilitação interrompe aplicativos que dependem do serviço; pode ser desabilitado se os aplicativos não dependem dele
 |||         
 
-<br />          
+
 
 ##  <a name="group-policy-client"></a>Cliente de Diretiva de Grupo     
 
@@ -805,7 +805,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="human-interface-device-service"></a>Serviço de Dispositivos de Interface Humana           
@@ -820,7 +820,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="hv-host-service"></a>Serviço de Host HV     
 
@@ -834,7 +834,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Aperfeiçoamento de desempenho para VMs convidadas. Não usado hoje, exceto para VMs explicitamente populadas, mas será usado no Application Guard
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-data-exchange-service"></a>Serviço de Troca de Dados do Hyper-V        
 
@@ -848,7 +848,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||         
 
-<br />      
+
 
 ## <a name="hyper-v-guest-service-interface"></a>Interface de Serviço de Convidado do Hyper-V          
 
@@ -862,7 +862,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||         
 
-<br />  
+
 
 ## <a name="hyper-v-guest-shutdown-service"></a>Serviço de Desligamento de Convidado do Hyper-V           
 
@@ -876,7 +876,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||         
 
-<br />
+
 
 ## <a name="hyper-v-heartbeat-service"></a>Serviço de Pulsação do Hyper-V
 | | |
@@ -889,7 +889,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||
 
-<br />          
+
 
 ## <a name="hyper-v-powershell-direct-service"></a>Serviço do PowerShell Direct do Hyper-V            
 
@@ -903,7 +903,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-remote-desktop-virtualization-service"></a>Serviço de Virtualização de Área de Trabalho Remota do Hyper-V            
 
@@ -917,7 +917,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-time-synchronization-service"></a>Serviço de Sincronização de Data/Hora do Hyper-V         
 
@@ -931,7 +931,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-volume-shadow-copy-requestor"></a>Solicitante de Cópia de Sombra de Volume do Hyper-V         
 
@@ -945,7 +945,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Confira HvHost
 |||         
 
-<br />          
+
 
 ## <a name="ike-and-authip-ipsec-keying-modules"></a>Módulos de Chave IKE e AuthIP IPsec          
 
@@ -959,7 +959,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |    
 |||         
 
-<br />          
+
 
 ## <a name="interactive-services-detection"></a>Detecção de Serviços Interativos           
 
@@ -973,7 +973,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />  
+
 
 ## <a name="internet-connection-sharing-ics"></a>ICS (Compartilhamento de Conexão com a Internet)            
 
@@ -987,7 +987,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Necessário para clientes usados como hotspots Wi-Fi e também em ambas as extremidades da projeção Miracast. O ICS pode ser bloqueado com a configuração de GPO "Proibir o uso do Compartilhamento de Conexão com a Internet na rede de domínio DNS"
 |||         
 
-<br />          
+
 
 ## <a name="ip-helper"></a>Auxiliar de IP            
 
@@ -1001,7 +1001,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 
 ##  <a name="ipsec-policy-agent"></a>Agente de Política IPsec      
@@ -1016,7 +1016,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
+
 
 ##  <a name="kdc-proxy-server-service-kps"></a>Serviço KPS (Servidor Proxy do KDC)      
 
@@ -1030,7 +1030,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ktmrm-for-distributed-transaction-coordinator"></a>KtmRm para Coordenador de Transações Distribuídas            
 
@@ -1044,7 +1044,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
+
 
 ##  <a name="link-layer-topology-discovery-mapper"></a>Mapeador da Descoberta de Topologia da Camada de Link        
 
@@ -1058,7 +1058,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Pode ser desabilitado se não há dependências do Mapa de Rede
 |||         
 
-<br />
+
 
 ## <a name="local-session-manager"></a>Gerenciador de Sessão Local                    
 
@@ -1072,7 +1072,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||                 
 
-<br />                  
+
 
 ## <a name="microsoft-r-diagnostics-hub-standard-collector"></a>Coletor Padrão do Hub de Diagnóstico da Microsoft (R)         
 
@@ -1086,7 +1086,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
+
 
 ## <a name="microsoft-account-sign-in-assistant"></a>Assistente de Credenciais de Conta Microsoft
 | | |
@@ -1099,7 +1099,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   As contas Microsoft não estão disponíveis no Windows Server
 |||
 
-<br />          
+
 
 ##  <a name="microsoft-app-v-client"></a>Cliente Microsoft App-V      
 
@@ -1113,7 +1113,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-iscsi-initiator-service"></a>Serviço Iniciador Microsoft iSCSI            
 
@@ -1127,7 +1127,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Nossos dados de diagnóstico indicam que isso é usado no cliente, bem como no servidor. Não há nenhum benefício em desabilitá-lo.
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport"></a>Microsoft Passport           
 
@@ -1141,7 +1141,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Necessário para logons com PIN/Hello, que não são compatíveis com o Server
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport-container"></a>Contêiner do Microsoft Passport         
 
@@ -1155,7 +1155,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-software-shadow-copy-provider"></a>Provedor de Cópias de Sombra de Software da Microsoft          
 
@@ -1169,7 +1169,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-storage-spaces-smp"></a>SMP dos Espaços de Armazenamento da Microsoft         
 
@@ -1183,7 +1183,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   As APIs de gerenciamento de armazenamento falharão sem esse serviço. Exemplo: "Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage".
 |||         
 
-<br />          
+
 
 ## <a name="nettcp-port-sharing-service"></a>Serviço de Compartilhamento de Porta Net.Tcp         
 
@@ -1197,7 +1197,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="netlogon"></a>Netlogon         
 
@@ -1211,7 +1211,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-connection-broker"></a>Agente de Conexão de Rede            
 
@@ -1225,7 +1225,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connections"></a>Conexões de Rede         
 
@@ -1239,7 +1239,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connectivity-assistant"></a>Assistente de Conectividade de Rede      
 
@@ -1253,7 +1253,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="network-list-service"></a>Serviço da Lista de Redes        
 
@@ -1267,7 +1267,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-location-awareness"></a>Reconhecimento de localizações de rede           
 
@@ -1281,7 +1281,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-setup-service"></a>Serviço de Configuração de Rede       
 
@@ -1295,7 +1295,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-store-interface-service"></a>Serviço de interface NSI      
 
@@ -1309,7 +1309,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="offline-files"></a>Arquivos Offline            
 
@@ -1323,7 +1323,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="optimize-drives"></a>Otimizar unidades          
 
@@ -1337,7 +1337,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
+
 
 ## <a name="performance-counter-dll-host"></a>Host de DLL de Contador de Desempenho         
 
@@ -1351,7 +1351,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="performance-logs--alerts"></a>Logs e Alertas de Desempenho            
 
@@ -1365,7 +1365,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="phone-service"></a>Serviço de Telefone       
 
@@ -1379,7 +1379,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Usado por aplicativos modernos de VoIP
 |||         
 
-<br />          
+
 
 ##      <a name="plug-and-play"></a>Plug and Play       
 
@@ -1393,7 +1393,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="portable-device-enumerator-service"></a>Serviço Enumerador de Dispositivos Portáteis           
 
@@ -1407,7 +1407,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="power"></a>Potência            
 
@@ -1421,7 +1421,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="print-spooler"></a>Spooler de impressão            
 
@@ -1435,7 +1435,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Em um controlador de domínio, a instalação da função de controlador de domínio adiciona um thread ao serviço de spooler responsável por executar a remoção de impressão – remoção dos objetos obsoletos da fila de impressão do Active Directory.  Se o serviço de spooler não estiver em execução em, pelo menos, um controlador de domínio em cada site, o AD não terá meios para remover as filas antigas que não existem mais. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
 |||         
 
-<br />          
+
 
 ##  <a name="printer-extensions-and-notifications"></a>Extensões e Notificações da Impressora        
 
@@ -1449,7 +1449,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="problem-reports-and-solutions-control-panel-support"></a>Suporte do Painel de Controle Relatórios de Problemas e Soluções     
 
@@ -1463,7 +1463,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="program-compatibility-assistant-service"></a>Serviço Auxiliar de Compatibilidade de Programas     
 
@@ -1477,7 +1477,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="quality-windows-audio-video-experience"></a>Quality Windows Audio-Video Experience      
 
@@ -1491,7 +1491,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Serviço QoS do lado do cliente
 |||         
 
-<br />          
+
 
 ##      <a name="radio-management-service"></a>Serviço de Gerenciamento de Rádio        
 
@@ -1505,7 +1505,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-auto-connection-manager"></a>Gerenciador de Conexões de Acesso Remoto Automático            
 
@@ -1519,7 +1519,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-connection-manager"></a>Gerenciador de Conexões de Acesso Remoto         
 
@@ -1533,7 +1533,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-configuration"></a>Configuração da Área de Trabalho Remota         
 
@@ -1547,7 +1547,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-services"></a>Serviços da Área de Trabalho Remota          
 
@@ -1561,7 +1561,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-desktop-services-usermode-port-redirector"></a>Redirecionador de Portas do Modo de Usuário dos Serviços de Área de Trabalho Remota        
 
@@ -1575,7 +1575,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Dá suporte a redirecionamentos no servidor da conexão.
 |||         
 
-<br />          
+
 
 ## <a name="remote-procedure-call-rpc"></a>RPC (Chamada de Procedimento Remoto)          
 
@@ -1589,7 +1589,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-procedure-call-rpc-locator"></a>Localizador RPC (chamada de procedimento remoto)             
 
@@ -1603,7 +1603,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |       |
 |||             
 
-<br />              
+
 
 ## <a name="remote-registry"></a>Registro Remoto          
 
@@ -1617,7 +1617,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="resultant-set-of-policy-provider"></a>Conjunto Resultante do Provedor de Políticas            
 
@@ -1631,7 +1631,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="routing-and-remote-access"></a>Roteamento e Acesso Remoto            
 
@@ -1645,7 +1645,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Já desabilitado
 |||         
 
-<br />          
+
 
 ## <a name="rpc-endpoint-mapper"></a>Mapeador de ponto de extremidade RPC          
 
@@ -1659,7 +1659,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secondary-logon"></a>Logon Secundário     
 
@@ -1673,7 +1673,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secure-socket-tunneling-protocol-service"></a>Serviço Protocolo SSTP            
 
@@ -1687,7 +1687,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   A desabilitação interrompe o RRAS   |
 |||             
 
-<br />              
+
 
 ## <a name="security-accounts-manager"></a>Gerenciador de Contas de Segurança            
 
@@ -1701,7 +1701,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sensor-data-service"></a>Serviço de Dados de Sensor  
 
@@ -1715,7 +1715,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />  
+
 
 ## <a name="sensor-monitoring-service"></a>Serviço de monitoramento de sensor            
 
@@ -1729,21 +1729,17 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
-
 ## <a name="sensor-service"></a>Serviço de Sensor
 
 | | |
 |---|---|
-|   **Descrição do serviço** |   Um serviço para sensores que gerencia diferentes funcionalidades de sensores. Gerencia o SDO (Orientação de Dispositivo Simples) e o Histórico dos sensores. Carrega o sensor de SDO que relata alterações de orientação do dispositivo.  Se esse serviço for interrompido ou desabilitado, o sensor de SDO não será carregado e, portanto, a rotação automática não ocorrerá. A coleta do histórico dos sensores também será interrompida.
+|   **Descrição do serviço** |   Um serviço para sensores que gerencia a funcionalidade de diferentes sensores. Gerencia o SDO (Orientação de Dispositivo Simples) e o Histórico dos sensores. Carrega o sensor de SDO que relata alterações de orientação do dispositivo.  Se esse serviço for interrompido ou desabilitado, o sensor de SDO não será carregado e, portanto, a rotação automática não ocorrerá. A coleta do histórico dos sensores também será interrompida.
 |   **Nome do serviço**    |   SensorService
 |   **Instalação**    |   Somente com a Experiência Desktop
 |   **StartType**   |   Manual
 |   **Recomendação**  |   Pode ser desabilitado
 |   **Comentários**    |
 |||
-  
-<br />          
 
 ## <a name="server"></a>Servidor           
 
@@ -1757,7 +1753,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Necessário para gerenciamento remoto, IPC$ e compartilhamento de arquivos SMB
 |||         
 
-<br />          
+
 
 ## <a name="shell-hardware-detection"></a>Detecção do Hardware do Shell             
 
@@ -1771,7 +1767,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card"></a>Cartão inteligente           
 
@@ -1785,7 +1781,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card-device-enumeration-service"></a>Serviço de Enumeração de Dispositivos de Cartão Inteligente                    
 
@@ -1799,7 +1795,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Necessário quase que exclusivamente para aplicativos do WinRT    |
 |||             
 
-<br />              
+
 
 ## <a name="smart-card-removal-policy"></a>Política de Remoção de Cartão Inteligente        
 
@@ -1813,7 +1809,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="snmp-trap"></a>Interceptação SNMP            
 
@@ -1827,7 +1823,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="software-protection"></a>Proteção de Software             
 
@@ -1841,7 +1837,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="special-administration-console-helper"></a>Assistente do Console de Administração Especial        
 
@@ -1855,7 +1851,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="spot-verifier"></a>Verificador de Pontos            
 
@@ -1869,7 +1865,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ssdp-discovery"></a>Descoberta SSDP           
 
@@ -1883,7 +1879,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="state-repository-service"></a>Serviço de Repositório de Estado         
 
@@ -1897,7 +1893,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="still-image-acquisition-events"></a>Eventos de Aquisição de Imagens Estáticas
 
@@ -1911,7 +1907,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />  
+
 
 ## <a name="storage-service"></a>Serviço de Armazenamento          
 
@@ -1925,7 +1921,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="storage-tiers-management"></a>Gerenciamento de Camadas de Armazenamento        
 
@@ -1939,7 +1935,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="superfetch"></a>Superfetch          
 
@@ -1953,7 +1949,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sync-host"></a>Host de Sincronização            
 
@@ -1967,7 +1963,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Modelo de serviço de usuário
 |||         
 
-<br />          
+
 
 ## <a name="system-event-notification-service"></a>Serviço de Notificação de Eventos do Sistema            
 
@@ -1981,7 +1977,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="system-events-broker"></a>Agente de Eventos do Sistema             
 
@@ -1995,7 +1991,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Apesar do fato de sua descrição implicar que ele só se destine a aplicativos do WinRT, ele é necessário para o Agendador de Tarefas, o serviço de infraestrutura do agente e outros componentes internos.
 |||         
 
-<br />          
+
 
 ## <a name="task-scheduler"></a>Agendador de Tarefas           
 
@@ -2009,7 +2005,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="tcpip-netbios-helper"></a>Auxiliar NetBIOS TCP/IP            
 
@@ -2023,7 +2019,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="telephony"></a>Telefonia           
 
@@ -2037,7 +2033,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   A desabilitação interrompe o RRAS
 |||         
 
-<br />          
+
 
 ## <a name="themes"></a>Temas           
 
@@ -2051,7 +2047,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Não é possível definir temas de acessibilidade quando esse serviço é desabilitado
 |||         
 
-<br />  
+
 
 ## <a name="tile-data-model-server"></a>Servidor de modelo de Dados de Bloco           
 
@@ -2065,7 +2061,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   O menu Iniciar é interrompido se esse serviço é desabilitado
 |||         
 
-<br />          
+
 
 ##  <a name="time-broker"></a>Agente de Tempo     
 
@@ -2079,7 +2075,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Apesar do fato de sua descrição implicar que ele só se destine a aplicativos do WinRT, ele é necessário para o Agendador de Tarefas, o serviço de infraestrutura do agente e outros componentes internos.
 |||         
 
-<br />          
+
 
 ## <a name="touch-keyboard-and-handwriting-panel-service"></a>Serviço de Teclado Virtual e Painel de Manuscrito         
 
@@ -2093,7 +2089,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="update-orchestrator-service-for-windows-update"></a>Serviço de Atualizações do Orchestrator para Windows Update           
 
@@ -2107,7 +2103,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   A descrição do serviço estava ausente na v1607; o Windows Update (incluindo o WSUS) depende desse serviço.
 |||         
 
-<br />          
+
 
 ## <a name="upnp-device-host"></a>Host de Dispositivo UPnP         
 
@@ -2121,7 +2117,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-access-logging-service"></a>Serviço de Log de Acesso do Usuário          
 
@@ -2135,7 +2131,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-data-access"></a>Acesso a Dados de Usuário        
 
@@ -2149,7 +2145,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Modelo de serviço de usuário
 |||         
 
-<br />          
+
 
 ## <a name="user-data-storage"></a>Armazenamento de Dados de Usuário            
 
@@ -2163,7 +2159,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Modelo de serviço de usuário
 |||         
 
-<br />          
+
 
 ## <a name="user-experience-virtualization-service"></a>Serviço User Experience Virtualization           
 
@@ -2177,13 +2173,13 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-manager"></a>Gerenciador de Usuários        
 
 | | |           
 |---|---|   
-|   **Descrição do serviço** |   O Gerenciador de Usuários fornece os componentes do tempo de execução necessários para a interação de vários usuários.  Se esse serviço for interrompido, alguns aplicativos poderão não funcionar corretamente.
+|   **Descrição do serviço** |   O Gerenciador de Usuários fornece os componentes do runtime necessários para a interação de vários usuários.  Se esse serviço for interrompido, alguns aplicativos poderão não funcionar corretamente.
 |   **Nome do serviço**    |   UserManager
 |   **Instalação**    |   Sempre instalado
 |   **StartType**   |   Automática
@@ -2191,7 +2187,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-profile-service"></a>Serviço Perfil do Usuário         
 
@@ -2205,7 +2201,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="virtual-disk"></a>Disco Virtual             
 
@@ -2219,7 +2215,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="volume-shadow-copy"></a>Cópias de Sombra de Volume           
 
@@ -2233,7 +2229,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="walletservice"></a>WalletService           
 
@@ -2247,7 +2243,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio"></a>Áudio do Windows            
 
@@ -2261,7 +2257,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio-endpoint-builder"></a>Construtor de Pontos de Extremidade de Áudio do Windows           
 
@@ -2275,7 +2271,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-biometric-service"></a>Serviço de Biometria do Windows            
 
@@ -2289,7 +2285,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-camera-frame-server"></a>Servidor de Quadros de Câmera do Windows         
 
@@ -2303,7 +2299,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-connection-manager"></a>Gerenciador de Conexões do Windows           
 
@@ -2317,7 +2313,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-network-inspection-service"></a>Serviço de Inspeção de Rede do Windows Defender          
 
@@ -2331,7 +2327,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-service"></a>Serviço Windows Defender         
 
@@ -2345,7 +2341,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-driver-foundation---user-mode-driver-framework"></a>Windows Driver Foundation – Estrutura do Driver de Modo de Usuário           
 
@@ -2359,7 +2355,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-encryption-provider-host-service"></a>Serviço de Host do Provedor de Criptografia do Windows     
 
@@ -2373,7 +2369,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-error-reporting-service"></a>Serviço de Relatório de Erros do Windows          
 
@@ -2387,7 +2383,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Coleta e envia dados de falha/travamento usados pela MS e por ISVs/IHVs de terceiros. Os dados são usados para diagnosticar bugs que induzem falhas, que podem incluir bugs de segurança. Também necessário para o Relatório de Erros Corporativo
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-collector"></a>Coletor de Eventos do Windows          
 
@@ -2401,7 +2397,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Coleta eventos ETW (incluindo eventos de segurança) para capacidade de gerenciamento e diagnóstico.  Muitos dos recursos e muitas das ferramentas de terceiros dependem dele, incluindo ferramentas de auditoria de segurança
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-log"></a>Log de eventos do Windows            
 
@@ -2415,7 +2411,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-firewall"></a>Firewall do Windows         
 
@@ -2429,7 +2425,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-font-cache-service"></a>Serviço de Cache de Fontes do Windows      
 
@@ -2443,7 +2439,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-image-acquisition-wia"></a>WIA (Windows Image Acquisition)          
 
@@ -2457,7 +2453,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-insider-service"></a>Serviço do Participante do Programa Windows Insider     
 
@@ -2471,7 +2467,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   O Server não dá suporte à liberação de versões de pré-lançamento e, portanto, ele não é operacional no Server. O recurso também pode ser desabilitado por meio do GP.
 |||         
 
-<br />          
+
 
 ##  <a name="windows-installer"></a>Windows Installer       
 
@@ -2485,7 +2481,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-license-manager-service"></a>Serviço de Gerenciador de Licença do Windows          
 
@@ -2499,7 +2495,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-management-instrumentation"></a>Instrumentação de Gerenciamento do Windows       
 
@@ -2513,7 +2509,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-mobile-hotspot-service"></a>Serviço de Hotspot Móvel do Windows          
 
@@ -2527,7 +2523,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-modules-installer"></a>Instalador de Módulos do Windows        
 
@@ -2541,7 +2537,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-push-notifications-system-service"></a>Serviço do Sistema de Notificações por Push do Windows            
 
@@ -2555,7 +2551,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Necessário para blocos dinâmicos e outros recursos
 |||         
 
-<br />      
+
 
 ## <a name="windows-push-notifications-user-service"></a>Serviço de Usuário de Notificações por Push do Windows          
 
@@ -2569,7 +2565,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Modelo de serviço de usuário
 |||         
 
-<br />
+
 
 ## <a name="windows-remote-management-ws-management"></a>Gerenciamento Remoto do Windows (WS-Management)
 | | |
@@ -2582,7 +2578,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Necessário para gerenciamento remoto
 |||
 
-<br />          
+
 
 ##  <a name="windows-search"></a>Windows Search      
 
@@ -2596,7 +2592,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-time"></a>Tempo do Windows        
 
@@ -2610,7 +2606,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-update"></a>Windows Update           
 
@@ -2624,7 +2620,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="winhttp-web-proxy-auto-discovery-service"></a>Serviço de Descoberta Automática de Proxy Web do WinHTTP         
 
@@ -2638,7 +2634,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Qualquer recurso que use a pilha de rede pode ter uma dependência funcional desse serviço. Muitas organizações dependem disso para configurar o roteamento de proxy HTTP de suas redes internas.  Sem ele, todas as conexões HTTP originadas internamente com a Internet falharão.
 |||         
 
-<br />          
+
 
 ## <a name="wired-autoconfig"></a>Serviço de Configuração Automática de Rede com Fio         
 
@@ -2652,7 +2648,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="wmi-performance-adapter"></a>Adaptador de Desempenho WMI          
 
@@ -2666,7 +2662,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="workstation"></a>Estação de Trabalho          
 
@@ -2680,7 +2676,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />
+
 
 ## <a name="xbox-live-auth-manager"></a>Gerenciador de Autenticação Xbox Live           
 
@@ -2694,7 +2690,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   
 |||         
 
-<br />          
+
 
 ## <a name="xbox-live-game-save"></a>Salvamento de Jogo do Xbox Live          
 
@@ -2708,6 +2704,6 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |   Esse serviço sincroniza os dados de salvamento de jogos habilitados para salvamento do Xbox Live.  Se esse serviço for interrompido, não será feito upload dos dados de salvamento de jogos no Xbox Live nem baixados dele.
 |||         
 
-<br /> 
-<br /> 
+
+
 

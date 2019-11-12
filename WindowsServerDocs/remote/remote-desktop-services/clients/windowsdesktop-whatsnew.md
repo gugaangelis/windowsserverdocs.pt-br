@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4325bd7b33c16d972cac980e17c10bacbfeffd8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387593"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567067"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -31,7 +31,25 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 |Grupo de usuários |Versão  |
 |-----------|---------|
 |Public     |1.2.247  |
-|Participante do Programa Windows Insider    |1.2.247  |
+|Participante do Programa Windows Insider    |1.2.428  |
+
+## <a name="updates-for-version-12428"></a>Atualizações para a versão 1.2.428
+
+*Data da publicação: 31/10/2019*
+
+- Uma versão prévia das versões de 32 bits e ARM64 do cliente já está disponível.
+- Agora o cliente salva todas as alterações feitas na barra de conexão (como a posição, o tamanho e o estado de fixação) e aplica essas alterações em todas as sessões iniciadas.
+- Informações de gateway e caixas de diálogo de status de conexão atualizadas.
+- Resolvido um problema que fazia com que duas credenciais solicitassem acesso ao mesmo tempo ao tentar se conectar depois de expirado o token do Azure Active Directory.
+- Agora, no Windows 7, os usuários que tinham suas credenciais salvas são devidamente solicitados a fornecê-las novamente quando o servidor as desautoriza.
+- Agora o prompt do Azure Active Directory aparece na frente da janela de conexão ao reconectar.
+- Agora os itens fixados na barra de tarefas são atualizados durante uma atualização do feed.
+- Aprimorada a rolagem no Centro de Conexão ao usar o toque.
+- Removida a linha vazia do menu suspenso de resolução.
+- Entradas desnecessárias removidas do Gerenciador de Credenciais do Windows.
+- Agora as sessões de desktop são dimensionadas corretamente ao sair do modo de tela inteira.
+- Agora a caixa de diálogo de desconexão do RemoteApp aparece no primeiro plano quando você retoma a sessão depois de entrar no modo de suspensão.
+- Resolvidos problemas de acessibilidade como a navegação por teclado.
 
 ## <a name="updates-for-version-12247"></a>Atualizações para a versão 1.2.247
 

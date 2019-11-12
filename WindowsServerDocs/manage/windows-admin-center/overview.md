@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: e235c8013afa573712feaec75bbd1ca195c0e307
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357003"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567130"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,9 +25,9 @@ O **Windows Admin Center** (conhecido anteriormente como **Project Honolulu**) �
 
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
 
-![Infográfico do Windows Admin Center](media/WAC1809Poster_thumb.PNG)
+![Infográfico do Windows Admin Center](media/WAC1910Poster_thumb.PNG)
 
-[Baixar o PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1809Poster.pdf)
+[Baixar o PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
 
 ## <a name="quick-start"></a>Início rápido
 
@@ -86,6 +86,7 @@ O **Windows Admin Center** (conhecido anteriormente como **Project Honolulu**) �
             <ul>
             <li><a href="use/get-started.md">Iniciar e adicionar conexões</a>
             <li><a href="use/manage-servers.md">Gerenciar servidores</a>
+            <li><a href="use/deploy-hyperconverged-infrastructure.md">Implantar a infraestrutura hiperconvergente</a>
             <li><a href="use/manage-hyper-converged.md">Gerenciar a infraestrutura hiperconvergente</a>
             <li><a href="use/manage-failover-clusters.md">Gerenciar clusters de failover</a>
             <li><a href="use/manage-virtual-machines.md">Gerenciar máquinas virtuais</a>
@@ -129,11 +130,12 @@ O **Windows Admin Center** (conhecido anteriormente como **Project Honolulu**) �
 
 Saiba mais sobre as versões mais recentes dos nossos recursos:
 
+- A versão [1910](https://aka.ms/wac1910) é a mais recente a entrar em disponibilidade geral – ela introduz vários novos serviços híbridos do Azure e traz ao canal de disponibilidade geral recursos que, anteriormente, estavam em versão prévia.
 - A versão [1909](https://aka.ms/wac1909) apresenta o tipo de conexão específica da VM do Azure e unifica os tipos de conexão para clusters de failover tradicionais e clusters de HCI.
 - A versão [1908](https://aka.ms/wac1908) adicionou atualizações visuais, Packetmon, FlowLog Audit, integração do Azure Monitor para clusters e suporte ao WinRM por HTTPS (porta 5986).
 - A versão [1907](https://aka.ms/wac1907) adicionou links de estimativa de custo do Azure e realizou melhorias na importação/exportação e marcação de máquinas virtuais.
 - A versão [1906](https://aka.ms/wac1906) adicionou VMs de importação/exportação, alternância de contas do Azure, adição de conexões do Azure, experimento de configurações de conectividade, melhorias de desempenho e ferramenta de criação de perfil de desempenho.
-- A versão 1904.1 é a mais recente com disponibilidade geral – uma atualização de manutenção para melhorar a estabilidade dos plug-ins de gateway.
+- A versão 1904.1 foi uma atualização de manutenção para melhorar a estabilidade dos plug-ins de gateway.
 - A versão [1904](https://aka.ms/wac1904) tinha disponibilidade geral e introduziu a ferramenta Serviços Híbridos do Azure, além de contar com recursos que estavam em versão prévia anteriormente no canal de disponibilidade geral.
 - A versão [1903](https://aka.ms/wac1903) acrescentou notificações por email do Azure Monitor, a capacidade de adicionar conexões de servidor ou PC no Active Directory e novas ferramentas para gerenciar o Active Directory, o DHCP e o DNS.
 - A versão [1902](https://aka.ms/wac1902) acrescentou uma lista de conexões compartilhadas e melhorias no gerenciamento da SDN (rede definida por software), incluindo novas ferramentas de SDN para gerenciar ACLs, conexões de gateway e redes lógicas.

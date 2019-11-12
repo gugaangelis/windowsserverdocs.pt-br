@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 961d636fb59b33d0c562ec25d13174abbe766606
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404077"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567171"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -33,13 +33,15 @@ ms.locfileid: "71404077"
 
 ## <a name="install-the-client"></a>Instalar o cliente
 
-No momento, é possível baixar o cliente do Windows 64 bits. Atualizaremos essa lista conforme o cliente disponibilizar mais versões do Windows.
+Escolha o cliente que corresponda à sua versão do Windows:
 
-- [Cliente do Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Windows 32 bits – Versão Prévia](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Windows ARM64 – Versão Prévia](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 É possível instalar o cliente do usuário atual, que não requer direitos de administrador, ou seu administrador pode instalar e configurar o cliente para que todos os usuários no dispositivo possam acessá-lo.
 
-Depois de instalar o cliente, você pode iniciá-lo no menu Iniciar procurando **Área de Trabalho Remota**.
+Depois de instalar o cliente, será possível iniciá-lo por meio do menu Iniciar pesquisando por **Área de Trabalho Remota**.
 
 ## <a name="update-the-client"></a>Atualizar o cliente
 
