@@ -11,12 +11,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: f491f283861098bbe98e253cb2ff1d5cee2ac57f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b7fc4c6266c7d8e3255c35b105f92d4f2de9a2c
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365461"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956113"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 
@@ -31,7 +31,8 @@ Alguns sistemas operacionais têm o Integration Services integrado. Outros exige
 A seguir estão as versões do Windows Server com suporte como sistemas operacionais convidados para o Hyper-V no Windows Server 2016 e no Windows Server 2019. 
   
 |Sistema operacional convidado (servidor)|Número máximo de processadores virtuais|Serviços de Integração|Observações|  
-|-------------------------------------|----------------------------------------|------------------------|---------|  
+|-------------------------------------|----------------------------------------|------------------------|---------| 
+|Windows Server, versão 1909 |240 para geração 2;<br>64 para geração 1|Internos|Maior que 240 o suporte ao processador virtual requer o Windows Server, versão 1903 ou sistemas operacionais convidados posteriores.| 
 |Windows Server, versão 1903 |240 para geração 2;<br>64 para geração 1|Internos||
 |Windows Server, versão 1809 |240 para geração 2;<br>64 para geração 1|Internos|| 
 |Windows Server 2019 |240 para geração 2;<br>64 para geração 1|Internos||
@@ -50,7 +51,7 @@ A seguir estão as versões do cliente Windows com suporte como sistemas operaci
 |-------------------------------------|----------------------------------------|------------------------|---------|  
 |Windows 10|32|Internos||  
 |Windows 8.1|32|Internos||  
-|Windows 7 com Service Pack 1 (SP1)|4|Atualize os serviços de integração depois de configurar o sistema operacional convidado.|Edições Ultimate, Enterprise e Professional (32 bits e 64 bits).|  
+|Windows 7 com Service Pack 1 (SP1)|추가를 클릭합니다.|Atualize os serviços de integração depois de configurar o sistema operacional convidado.|Edições Ultimate, Enterprise e Professional (32 bits e 64 bits).|  
   
 ## <a name="guest-operating-system-support-on-other-versions-of-windows"></a>Suporte do sistema operacional convidado em outras versões do Windows  
 
@@ -59,7 +60,7 @@ A tabela a seguir fornece links para informações sobre os sistemas operacionai
 |Sistema operacional do host|Tópico|  
 |-------------------------|---------|  
 |Windows 10|[Sistemas operacionais convidados com suporte para o Hyper-V cliente no Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|  
-|Windows Server 2012 R2 e Windows 8.1|-   [sistemas operacionais convidados Windows com suporte para o Hyper-V no Windows Server 2012 R2 e Windows 8.1](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [máquinas virtuais Linux e FreeBSD no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|  
+|Windows Server 2012 R2 e Windows 8.1|-   [sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server 2012 R2 e Windows 8.1](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [máquinas virtuais Linux e FreeBSD no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|  
 |Windows Server 2012 e Windows 8|[Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server 2012 e no Windows 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|  
 |Windows Server 2008 e Windows Server 2008 R2|[Sobre máquinas virtuais e sistemas operacionais convidados](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|  
   
