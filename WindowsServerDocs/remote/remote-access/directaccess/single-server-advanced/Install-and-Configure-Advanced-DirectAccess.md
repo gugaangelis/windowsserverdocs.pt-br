@@ -21,19 +21,19 @@ ms.locfileid: "71388644"
 ---
 # <a name="install-and-configure-advanced-directaccess"></a>Instalar e configurar o DirectAccess avançado
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Esta visão geral lista as etapas de configuração necessárias para implantar um único servidor DirectAccess executando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 com IPv4 e IPv6.  
   
--   [Etapa 1: Configure a infraestrutura avançada do DirectAccess @ no__t-0.  
+-   [Etapa 1: configurar a infraestrutura avançada do DirectAccess](da-adv-configure-s1-infrastructure.md).  
   
     Nessa fase, você configura as definições de rede e do servidor, requisitos de certificado, configurações de DNS (Sistema de Nomes de Domínio), implantação do servidor de local de rede, servidores de gerenciamento do DirectAccess, configurações do Active Directory e GPOs (Objetos de Política de Grupo).  
   
--   [Etapa 2: Configure servidores DirectAccess avançados @ no__t-0.  
+-   [Etapa 2: configurar servidores DirectAccess avançados](da-adv-configure-s2-servers.md).  
   
     Nessa fase, você configura os computadores cliente, as configurações de servidor, os servidores de infraestrutura e os servidores de aplicativos do DirectAccess.  
   
--   [Etapa 3: Verifique a implantação avançada do DirectAccess @ no__t-0.  
+-   [Etapa 3: verificar a implantação avançada do DirectAccess](da-adv-configure-s3-verify.md).  
   
     Essa etapa descreve as etapas para verificar a implantação.  
   

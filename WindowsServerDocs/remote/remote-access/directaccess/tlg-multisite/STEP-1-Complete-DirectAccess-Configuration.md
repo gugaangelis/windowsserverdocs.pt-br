@@ -21,6 +21,6 @@ ms.locfileid: "71404815"
 ---
 # <a name="step-1-complete-the-directaccess-configuration"></a>ETAPA 1 concluir a configuração do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-A primeira etapa é concluir todas as etapas no guia de laboratório do [Test: Demonstre a configuração do servidor único do DirectAccess com IPv4 misto e IPv6 @ no__t-0. Se você já tiver concluído as etapas nos guias de laboratório de teste e salvo um instantâneo ou uma imagem de disco do laboratório de teste, poderá restaurar o instantâneo ou a imagem e começar com a próxima etapa. 
+A primeira etapa é concluir todas as etapas no guia de [laboratório de teste: demonstrar a configuração do servidor único do DirectAccess com IPv4 e IPv6 mistos](https://go.microsoft.com/fwlink/p/?LinkId=237004). Se você já tiver concluído as etapas nos guias de laboratório de teste e salvo um instantâneo ou uma imagem de disco do laboratório de teste, poderá restaurar o instantâneo ou a imagem e começar com a próxima etapa. 

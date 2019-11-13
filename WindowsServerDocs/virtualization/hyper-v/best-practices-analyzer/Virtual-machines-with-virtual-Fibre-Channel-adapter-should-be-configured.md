@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Informações|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
   
@@ -36,9 +36,9 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *Uma ou mais máquinas virtuais não têm uma conexão altamente disponível com o armazenamento baseado em Fibre Channel porque essas máquinas virtuais são configuradas com um adaptador de Fibre Channel virtual que está conectado a apenas um HBA (adaptador de barramento de host).*  
   
 ## <a name="impact"></a>**Causa**  
-a falha de @no__t 0A do adaptador de barramento de host pode bloquear a conexão de Fibre Channel entre o armazenamento e as máquinas virtuais. Isso afeta as seguintes máquinas virtuais: *  
+*Uma falha do adaptador de barramento de host pode bloquear a conexão de Fibre Channel entre o armazenamento e as máquinas virtuais. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
 *Adicione outra conexão da máquina virtual ao adaptador de barramento de host e configure o MPIO (Multipath I/O) no sistema operacional convidado para estabelecer conexões de Fibre Channel redundantes.*  

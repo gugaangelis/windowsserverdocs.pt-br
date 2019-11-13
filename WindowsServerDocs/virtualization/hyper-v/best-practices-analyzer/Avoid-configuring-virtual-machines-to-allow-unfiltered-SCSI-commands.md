@@ -30,7 +30,7 @@ ms.locfileid: "71365274"
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Operações|  
+|**Categoria**|Operações|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -40,13 +40,13 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 ## <a name="impact"></a>Impacto  
   
-a filtragem de comandos SCSI @no__t 0Bypassing representa um risco de segurança. Essa configuração deve ser habilitada somente se for necessária para compatibilidade com aplicativos de armazenamento em execução no sistema operacional convidado. As seguintes máquinas virtuais estão configuradas para permitir comandos SCSI não filtrados: *  
+*Ignorar a filtragem de comando SCSI representa um risco de segurança. Essa configuração deve ser habilitada somente se for necessária para compatibilidade com aplicativos de armazenamento em execução no sistema operacional convidado. As seguintes máquinas virtuais estão configuradas para permitir comandos SCSI não filtrados:*  
   
-\<list de nomes de máquina virtual >  
+\<lista de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   
-*Contact seu fornecedor de armazenamento para determinar se essa configuração é necessária. Além disso, se o sistema operacional de gerenciamento ou outros sistemas operacionais convidados estiverem comprometidos ou apresentarem comportamento incomum, reconfigure a máquina virtual para bloquear os comandos.*  
+*Entre em contato com seu fornecedor de armazenamento para determinar se essa configuração é necessária. Além disso, se o sistema operacional de gerenciamento ou outros sistemas operacionais convidados estiverem comprometidos ou apresentarem comportamento incomum, reconfigure a máquina virtual para bloquear os comandos.*  
   
 
 

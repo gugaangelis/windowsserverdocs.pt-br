@@ -21,7 +21,7 @@ ms.locfileid: "71404928"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>Etapa 2 planejar implantações avançadas do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Depois de planejar a infraestrutura do DirectAccess, a próxima etapa para implantar o DirectAccess avançado em um único servidor com IPv4 e IPv6 é planejar as configurações do Assistente de configuração de acesso remoto.  
   
@@ -138,7 +138,7 @@ Por padrão, quando você estende a autenticação a servidores de aplicativos, 
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 Planejar DirectAccess e clientes VPN de terceiros  
 Alguns clientes VPN de terceiros não criam conexões na pasta Conexões de Rede. Isso pode levar o DirectAccess a determinar que não há conectividade de intranet quando a conexão VPN é estabelecida, embora haja conectividade com a Intranet. Isso ocorre quando clientes VPN de terceiros registram as interfaces definindo-as como tipos de ponto de extremidade NDIS (especificação da interface do dispositivo de rede). Você pode habilitar a coexistência com esses tipos de clientes VPN definindo o valor do Registro como 1 nos clientes do DirectAccess:  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
   
 Alguns clientes VPN de terceiros usam uma configuração de túnel dividido, que permite ao computador cliente VPN acessar a Internet diretamente, sem precisar enviar o tráfego pela conexão VPN para a Intranet.  
   
@@ -146,11 +146,11 @@ As configurações de túnel dividido, em geral, deixam a configuração do Gate
   
 Se a conexão do VPN listar o gateway padrão como vazio ou somente zeros (0.0.0.0), seu cliente de VPN está configurado desta maneira. Por padrão, o cliente DirectAccess não identifica configurações de túnel dividido. Para configurar clientes DirectAccess para detectarem esses tipos de configurações de cliente VPN e coexistirem com elas, defina o valor do Registro a seguir como 1:  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
   
 ## <a name="previous-step"></a>Etapa anterior  
   
--   [Etapa 1: Planejar a infraestrutura do DirectAccess @ no__t-0  
+-   [Etapa 1: planejar a infraestrutura do DirectAccess](da-adv-plan-s1-infrastructure.md)  
   
 
 

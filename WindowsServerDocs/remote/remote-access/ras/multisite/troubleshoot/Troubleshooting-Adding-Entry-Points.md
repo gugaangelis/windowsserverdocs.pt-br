@@ -21,7 +21,7 @@ ms.locfileid: "71404469"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>Solução de problemas da adição de pontos de entrada
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico contém informações sobre como solucionar problemas relacionados ao comando `Add-DAEntryPoint`. Para confirmar que o erro recebido está relacionado à adição de um ponto de entrada, procure a ID de evento 10067 no Log de Eventos do Windows.  
   
@@ -43,7 +43,7 @@ Execute o comando especificando o parâmetro *RemoteAccessServer* com o nome do 
   
 O Acesso Remoto não está configurado no computador especificado pelo parâmetro *ComputerName* ou no computador em que você executa o comando.  
   
-Ao adicionar um novo ponto de entrada a uma implantação multissite, você deve especificar dois parâmetros: *ComputerName* e *RemoteAccessServer*. *ComputerName* é o nome de um servidor que já faz parte da implantação multissite, enquanto *RemoteAccessServer* é o nome do servidor que você deseja adicionar como o novo ponto de entrada. Se a execução for feita em um computador que faz parte da implantação multissite, o parâmetro ComputerName não será necessário.  
+Ao adicionar um novo ponto de entrada a uma implantação multissite, você precisa especificar dois parâmetros: *ComputerName* e *RemoteAccessServer*. *ComputerName* é o nome de um servidor que já faz parte da implantação multissite, enquanto *RemoteAccessServer* é o nome do servidor que você deseja adicionar como o novo ponto de entrada. Se a execução for feita em um computador que faz parte da implantação multissite, o parâmetro ComputerName não será necessário.  
   
 **Solução**  
   
@@ -147,7 +147,7 @@ Quando o DirectAccess é instalado pela primeira vez, o adaptador de rede intern
   
     **Solução**  
   
-    Se a rede interna inteira estiver configurada com endereços IPv6 e IPv4, considere a possibilidade de mudar para uma implantação IPv6+IPv4 a fim de aproveitar os benefícios das tecnologias IPv6. Consulte "transição de um IPv4 puro para uma rede corporativa IPv6 + IPv4" em [Step 3: Planeje a implantação multissite @ no__t-0.  
+    Se a rede interna inteira estiver configurada com endereços IPv6 e IPv4, considere a possibilidade de mudar para uma implantação IPv6+IPv4 a fim de aproveitar os benefícios das tecnologias IPv6. Consulte "transição de um IPv4 puro para uma rede corporativa IPv6 + IPv4" na [etapa 3: planejar a implantação](assetId:///19d49dbf-1786-47bb-ab97-f0458c53d91d)multissite.  
   
 -   **Problema 2**  
   
@@ -191,7 +191,7 @@ Quando o DirectAccess é instalado pela primeira vez, o adaptador de rede intern
   
 -   **Problema 1**  
   
-    **Erro recebido**. O domínio especificado no parâmetro ServerGpoName < server_GPO > não existe. Em vez disso, especifique o domínio < nome_do_domínio >.  
+    **Erro recebido**. O domínio especificado no parâmetro ServerGpoName < server_GPO > não existe. Em vez disso, especifique o < de domínio domain_name >.  
   
     **Causa**  
   
@@ -203,7 +203,7 @@ Quando o DirectAccess é instalado pela primeira vez, o adaptador de rede intern
   
 -   **Problema 2**  
   
-    **Erro recebido**. O GPO do servidor deve estar localizado no domínio do servidor de acesso remoto. Especifique o domínio < nome_do_domínio > no parâmetro ServerGpoName.  
+    **Erro recebido**. O GPO do servidor deve estar localizado no domínio do servidor de acesso remoto. Especifique o < de domínio domain_name > no parâmetro ServerGpoName.  
   
     **Causa**  
   
@@ -235,7 +235,7 @@ Para isentar um endereço das regras de NRPT:
 Quando você adiciona sufixos de nome sem especificar um endereço de servidor, o sufixo é tratado como uma isenção de NRPT.  
   
 ## <a name="saving-server-gpo-settings"></a>Salvando configurações de GPO de servidor  
-**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto para o GPO < GPO_name >.  
+**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO < GPO_name >.  
   
 Para solucionar esse erro, consulte Salvando configurações de GPO do servidor na [solução de problemas habilitando multissite](https://technet.microsoft.com/library/jj591658.aspx).  
   

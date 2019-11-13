@@ -30,7 +30,7 @@ ms.locfileid: "71365224"
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Operações|  
+|**Categoria**|Operações|  
 
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
@@ -43,13 +43,13 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 ## <a name="impact"></a>Impacto  
   
-o espaço de @no__t 0Available pode ficar no disco físico que armazena os arquivos de pontos de verificação. Se isso ocorrer, nenhuma operação de disco adicional poderá ser executada no armazenamento físico. Qualquer máquina virtual que dependa do armazenamento físico poderá ser afetada. *  
+*O espaço disponível pode ficar no disco físico que armazena os arquivos de pontos de verificação. Se isso ocorrer, nenhuma operação de disco adicional poderá ser executada no armazenamento físico. Qualquer máquina virtual que dependa do armazenamento físico poderá ser afetada.*  
   
 Se o espaço em disco físico for esgotado, qualquer máquina virtual em execução que tenha pontos de verificação ou discos rígidos virtuais armazenados nesse disco poderá ser pausada automaticamente. O Gerenciador do Hyper-V mostra o status dessas máquinas virtuais como "pausado-crítico".  
   
 ## <a name="resolution"></a>Resolução  
   
-*If a máquina virtual executa uma carga de trabalho de servidor em um ambiente de produção, coloque a máquina virtual offline e, em seguida, use o Gerenciador do Hyper-V para aplicar ou excluir os pontos de verificação. Para excluir pontos de verificação, você deve desligar a máquina virtual para concluir o processo.*  
+*Se a máquina virtual executar uma carga de trabalho de servidor em um ambiente de produção, coloque a máquina virtual offline e, em seguida, use o Gerenciador do Hyper-V para aplicar ou excluir os pontos de verificação. Para excluir pontos de verificação, você deve desligar a máquina virtual para concluir o processo.*  
   
 > [!NOTE]  
 > Os pontos de verificação de produção agora estão disponíveis como uma alternativa aos pontos de verificação padrão. Para obter detalhes, consulte [escolher entre pontos de verificação padrão ou de produção](../manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md).  

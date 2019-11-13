@@ -22,7 +22,7 @@ ms.locfileid: "71406111"
 ---
 # <a name="configure-datacenter-firewall-access-control-lists-acls"></a>Configurar listas de controle de acesso (ACLs) do firewall do datacenter
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Depois de criar uma ACL e atribuí-la a uma sub-rede virtual, talvez você queira substituir essa ACL padrão na sub-rede virtual por uma ACL específica para uma interface de rede individual.  Nesse caso, você aplica ACLs específicas diretamente às interfaces de rede anexadas a VLANs, em vez da rede virtual. Se você tiver ACLs definidas na sub-rede virtual conectada à interface de rede, ambas as ACLs serão aplicadas e priorizará as ACLs de interface de rede acima das ACLs de sub-rede virtual.
 
@@ -31,11 +31,11 @@ Depois de criar uma ACL e atribuí-la a uma sub-rede virtual, talvez você queir
 
 Neste tópico, mostramos como adicionar uma ACL a uma interface de rede. Também mostramos como remover uma ACL de uma interface de rede usando o Windows PowerShell e a API REST do controlador de rede.
 
-- [Exemplo Adicionar uma ACL a uma interface de rede @ no__t-0
-- [Exemplo Remover uma ACL de uma interface de rede usando o Windows PowerShell e a API REST do controlador de rede @ no__t-0
+- [Exemplo: adicionar uma ACL a uma interface de rede](#example-add-an-acl-to-a-network-interface)
+- [Exemplo: remover uma ACL de uma interface de rede usando o Windows PowerShell e a API REST do controlador de rede](#example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api)
 
 
-## <a name="example-add-an-acl-to-a-network-interface"></a>Exemplo: Adicionar uma ACL a uma interface de rede
+## <a name="example-add-an-acl-to-a-network-interface"></a>Exemplo: adicionar uma ACL a uma interface de rede
 Neste exemplo, demonstramos como adicionar uma ACL a uma rede virtual. 
 
 >[!TIP]
@@ -65,7 +65,7 @@ Neste exemplo, demonstramos como adicionar uma ACL a uma rede virtual.
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
    ```
  
-## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>Exemplo: Remover uma ACL de uma interface de rede usando o Windows PowerShell e a API REST do controlador de rede
+## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>Exemplo: remover uma ACL de uma interface de rede usando o Windows PowerShell e a API REST do controlador de rede
 Neste exemplo, mostramos como remover uma ACL. A remoção de uma ACL aplica o conjunto de regras padrão à interface de rede. O conjunto padrão de regras permite todo o tráfego de saída, mas bloqueia todo o tráfego de entrada.
 
 >[!NOTE]

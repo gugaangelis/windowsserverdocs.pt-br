@@ -21,7 +21,7 @@ ms.locfileid: "71404395"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>Etapa 2 planejar a implantação do servidor RADIUS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois de implantar um único servidor de acesso remoto, planeje o servidor de autenticação OTP (senha de uso único).  
   
@@ -40,7 +40,7 @@ Observe o seguinte ao planejar um servidor RADIUS para autenticação OTP:
   
 -   Ao implantar o servidor RADIUS, você configura um segredo compartilhado e o número da porta para o tráfego RADIUS. Anote esses detalhes; Eles são necessários quando você configura o servidor de acesso remoto.  
   
-Você pode exibir um exemplo de guia de laboratório de teste que configura a autenticação de OTP com um servidor RSA SecurID no guia de laboratório do [Test: Demonstre o DirectAccess com autenticação de OTP e RSA SecurID @ no__t-0.  
+Você pode exibir um exemplo de guia de laboratório de teste que configura a autenticação de OTP com um servidor RSA SecurID no [Guia de laboratório de teste: demonstre o DirectAccess com autenticação OTP e RSA SecurID](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid).  
   
   
   

@@ -15,21 +15,21 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365774"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: Etapa 3, configurar pastas de trabalho
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve a terceira etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Sobre](deploy-work-folders-adfs-overview.md)  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 1, configurar AD FS @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 2, AD FS trabalho de pós-configuração @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 4, configurar o proxy de aplicativo Web @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 4, configurar o proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 5, configurar clientes @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
 >   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
@@ -42,7 +42,7 @@ Para instalar Pastas de trabalho, você precisará de um servidor que tenha ingr
 Como exemplo de teste, ingresse o computador que executará Pastas de Trabalho no domínio Contoso e configure a interface da rede, conforme descrito nas seções a seguir. 
 
 ### <a name="set-the-server-ip-address"></a>Defina o endereço IP do servidor  
-Altere o endereço IP do servidor para um endereço IP estático. Para o exemplo de teste, use a classe IP A, que é 192.168.0.170/máscara de sub-rede: 255.255.0.0/gateway padrão: 192.168.0.1/DNS preferencial: 192.168.0.150 (o endereço IP do seu controlador de domínio). 
+Altere o endereço IP do servidor para um endereço IP estático. Como exemplo de teste, use a classe IP A, que é 192.168.0.170 / máscara de sub-rede: 255.255.0.0 / Gateway Padrão: 192.168.0.1 / DNS Preferencial: 192.168.0.150 (o endereço IP do controlador de domínio). 
   
 ### <a name="create-the-cname-record-for-work-folders"></a>Criar o registro CNAME para Pastas de Trabalho  
 Para criar o registro CNAME para Pastas de Trabalho, siga estas etapas:  
@@ -189,7 +189,7 @@ Para concluir a configuração de Pastas de Trabalho, conclua estas etapas adici
 ### <a name="bind-the-certificate"></a>Associar o certificado  
 Pastas de Trabalho se comunica apenas via SSL e deve ter o certificado autoassinado criado anteriormente (ou emitido pela autoridade de certificação) associado à porta.  
   
-Há dois métodos que você pode usar para associar o certificado à porta por meio do Windows PowerShell: Cmdlets do IIS e netsh.  
+Existem dois métodos que você pode usar para associar o certificado à porta via Windows PowerShell: netsh e cmdlets do IIS.  
   
 #### <a name="bind-the-certificate-by-using-netsh"></a>Associar o certificado usando o netsh  
 Para usar o utilitário de script de linha de comando netsh no Windows PowerShell, você deve redirecionar o comando para netsh. O script de exemplo a seguir localiza o certificado com a entidade **workfolders.contoso.com** e a associa à porta 443 usando o netsh:  
@@ -271,9 +271,9 @@ O certificado autoassinado de Pastas de Trabalho deve ser exportado para que voc
   
 -   O cliente Windows não ingressado no domínio  
   
-Para exportar o certificado, siga as mesmas etapas usadas para exportar o certificado de AD FS anteriormente, conforme descrito em pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 2, AD FS trabalho de pós-configuração @ no__t-0, exporte o certificado AD FS.  
+Para exportar o certificado, siga as mesmas etapas usadas para exportar o certificado do AD FS anteriormente, conforme descrito em [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md), Exportar o certificado do AD FS.  
   
-Próxima etapa: Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 4, configurar o proxy de aplicativo Web @ no__t-0  
+Próxima etapa: [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
 ## <a name="see-also"></a>Consulte também  
 [Visão geral das pastas de trabalho](Work-Folders-Overview.md)  

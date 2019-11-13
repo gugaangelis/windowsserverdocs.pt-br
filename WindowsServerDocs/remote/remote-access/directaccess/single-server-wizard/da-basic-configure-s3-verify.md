@@ -21,7 +21,7 @@ ms.locfileid: "71388533"
 ---
 # <a name="step-3-verify-deployments"></a>Etapa 3 verificar implantações
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como verificar se você configurou corretamente a implantação básica do DirectAccess.  
   
@@ -39,7 +39,7 @@ Este tópico descreve como verificar se você configurou corretamente a implanta
   
 ## <a name="BKMK_Links"></a>Etapa anterior  
   
--   [Etapa 2: Configurar o servidor DirectAccess @ no__t-0  
+-   [Etapa 2: configurar o servidor DirectAccess](da-basic-configure-s2-server.md)  
   
 
 

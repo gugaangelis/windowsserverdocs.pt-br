@@ -24,8 +24,8 @@ ms.locfileid: "71404321"
 
 Nesta etapa, você implanta o certificado raiz de acesso condicional como certificado raiz confiável para autenticação de VPN para seu AD local.
 
-- [**Anterior** Etapa 7.3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md)
-- [**Última** Etapa 7.5. Criar perfis VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
+- [**Anterior:** Etapa 7,3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md)
+- [**Em seguida:** Etapa 7,5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
 1. Na página **conectividade VPN** , selecione **baixar certificado**.
 
@@ -39,8 +39,8 @@ Nesta etapa, você implanta o certificado raiz de acesso condicional como certif
 
    | Comando | Descrição |
    | --- | --- |
-   | `certutil -dspublish -f VpnCert.cer RootCA` | Cria dois contêineres **Gen 1 da AC raiz de VPN da Microsoft** nos contêineres **CN = AIA** e **CN = autoridades de certificação** e publica cada certificado raiz como um valor no atributo _cACertificate_ da raiz de **VPN da Microsoft Contêineres da CA Gen 1** . |
-   | `certutil -dspublish -f VpnCert.cer NTAuthCA` | Cria um contêiner **CN = NTAuthCertificates** nos contêineres **CN = AIA** e **CN = autoridades de certificação** e publica cada certificado raiz como um valor no atributo _cACertificate_ do **CN = Contêiner NTAuthCertificates** . |
+   | `certutil -dspublish -f VpnCert.cer RootCA` | Cria dois contêineres **Gen 1 da AC raiz de VPN da Microsoft** nos contêineres **CN = AIA** e **CN = autoridades de certificação** e publica cada certificado raiz como um valor no atributo _CACertificate_ dos contêineres **Gen 1 do Microsoft VPN root CA** . |
+   | `certutil -dspublish -f VpnCert.cer NTAuthCA` | Cria um contêiner **CN = NTAuthCertificates** nos contêineres **CN = AIA** e **CN = autoridades de certificação** e publica cada certificado raiz como um valor no atributo _cACertificate_ do contêiner **CN = NTAuthCertificates** . |
    | `gpupdate /force` | Agiliza a adição dos certificados raiz aos computadores cliente e Windows Server. |
 
 3. Verifique se os certificados raiz estão presentes no repositório NTauth corporativo e mostram como confiáveis:
@@ -59,4 +59,4 @@ Nesta etapa, você implanta o certificado raiz de acesso condicional como certif
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Etapa 7.5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10 @ no__t-0: Nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune para implantar uma política de configuração de dispositivo VPN. Se você quiser que o script do SCCM ou do PowerShell crie perfis do VPNv2, consulte [configurações do CSP do VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes.
+[Etapa 7,5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md): nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune para implantar uma política de configuração de dispositivo VPN. Se você quiser que o script do SCCM ou do PowerShell crie perfis do VPNv2, consulte [configurações do CSP do VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes.

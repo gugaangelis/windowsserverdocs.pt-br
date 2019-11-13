@@ -15,21 +15,21 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365755"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: Etapa 4, configurar o proxy de aplicativo Web
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve a quarta etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Sobre](deploy-work-folders-adfs-overview.md)  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 1, configurar AD FS @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 2, AD FS trabalho de pós-configuração @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 3, configurar pastas de trabalho @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 3, configurar pastas de trabalho](deploy-work-folders-adfs-step3.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 5, configurar clientes @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
 
 > [!NOTE]
 >   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
@@ -140,7 +140,7 @@ A próxima etapa é publicar um aplicativo Web que disponibilizará Pastas de Tr
   
    URL externa: **https://workfolders.contoso.com**  
   
-   Certificado externo: **O certificado de pastas de trabalho que você instalou anteriormente**  
+   Certificado externo: **o certificado de Pastas de Trabalho instalado anteriormente**  
   
    URL do servidor de back-end: **https://workfolders.contoso.com**  
   
@@ -150,7 +150,7 @@ A próxima etapa é publicar um aplicativo Web que disponibilizará Pastas de Tr
     >[!NOTE]
     > Se você tiver vários servidores de Pastas de Trabalho, você precisa publicar um aplicativo Web de Pastas de Trabalho para cada servidor das Pastas de Trabalho (repita as etapas 1 a 10).  
   
-Próxima etapa: Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 5, configurar clientes @ no__t-0  
+Próxima etapa: [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 ## <a name="see-also"></a>Consulte também  
 [Visão geral das pastas de trabalho](Work-Folders-Overview.md)  

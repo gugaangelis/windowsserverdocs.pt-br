@@ -18,11 +18,11 @@ ms.locfileid: "71359173"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>Implantando o AD FS na organização do parceiro de recurso
 
-A organização do parceiro de recurso no Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 representa a organização cujos servidores Web podem ser protegidos por um servidor de Federação do recurso @ no__t-2side. O servidor de Federação no parceiro de recurso usa os tokens de segurança que são produzidos pelo parceiro de conta para fornecer declarações aos servidores Web que estão localizados no parceiro de recurso.  
+A organização do parceiro de recurso no Serviços de Federação do Active Directory (AD FS) \(AD FS\) representa a organização cujos servidores Web podem ser protegidos por um recurso\-servidor de Federação. O servidor de Federação no parceiro de recurso usa os tokens de segurança que são produzidos pelo parceiro de conta para fornecer declarações aos servidores Web que estão localizados no parceiro de recurso.  
   
 Em cenários em que você precisa fornecer acesso a serviços federados ou aplicativos a muitos usuários diferentes — quando alguns usuários residem em diferentes organizações — você pode configurar o servidor de Federação de recursos para que possa implantar vários parceiros de conta.  
   
-Para obter mais informações sobre como configurar e configurar uma organização de parceiro de recurso, consulte [Checklist: Configurando a organização do parceiro de recurso @ no__t-0.  
+Para obter mais informações sobre como instalar e configurar a organização do parceiro de recurso, consulte [Checklist: Configuring the Resource Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md).  
   
 ## <a name="in-this-section"></a>Nesta seção  
   

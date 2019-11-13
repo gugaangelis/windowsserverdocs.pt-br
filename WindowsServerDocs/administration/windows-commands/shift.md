@@ -43,11 +43,11 @@ shift [/n <N>]
 
 ## <a name="remarks"></a>Comentários
 
-- O comando **Shift** altera os valores dos parâmetros de lote **% 0** a **% 9** copiando cada parâmetro para o anterior — o valor de **% 1** é copiado para **% 0**, o valor de **% 2** é copiado para **% 1**e assim por diante. Isso é útil para gravar um arquivo em lotes que executa a mesma operação em qualquer número de parâmetros.
-- Se as extensões de comando estiverem habilitadas, o comando **Shift** dará suporte à opção de linha de comando **/n** . A opção **/n** especifica o início da mudança no argumento enésimo, em que **n** é qualquer valor de 0 a 8. Por exemplo, **Shift/2** mudaria **% 3** para **% 2**, **% 4** para **% 3**e assim por diante e deixará **% 0** e **% 1** não afetado. As extensões de comando são habilitadas por padrão.
-- Você pode usar o comando **Shift** para criar um arquivo em lotes que pode aceitar mais de 10 parâmetros de lote. Se você especificar mais de 10 parâmetros na linha de comando, aqueles que aparecerem após o décimo ( **% 9**) serão deslocados um de cada vez em **% 9**.
-- O comando **Shift** não tem nenhum efeito no parâmetro batch **% @ no__t-3***.
-- Não há nenhum comando de **deslocamento** para trás. Depois de implementar o comando **Shift** , você não pode recuperar o parâmetro de lote ( **% 0**) que existia antes da mudança.
+- O comando **Shift** altera os valores dos parâmetros de lote **%0** a **%9** copiando cada parâmetro para o anterior — o valor de **%1** é copiado para **%0**, o valor de **%2** é copiado para **%1**e assim por diante. Isso é útil para gravar um arquivo em lotes que executa a mesma operação em qualquer número de parâmetros.
+- Se as extensões de comando estiverem habilitadas, o comando **Shift** dará suporte à opção de linha de comando **/n** . A opção **/n** especifica o início da mudança no argumento enésimo, em que **n** é qualquer valor de 0 a 8. Por exemplo, **Shift/2** mudaria **%3** para **%2**, **%4** para **%3**e assim por diante e deixará **%0** e **%1** não afetado. As extensões de comando são habilitadas por padrão.
+- Você pode usar o comando **Shift** para criar um arquivo em lotes que pode aceitar mais de 10 parâmetros de lote. Se você especificar mais de 10 parâmetros na linha de comando, aqueles que aparecerem após o décimo ( **%9**) serão deslocados um de cada vez em **%9**.
+- O comando **Shift** não tem nenhum efeito sobre o **%\\** * parâmetro de lote.
+- Não há nenhum comando de **deslocamento** para trás. Depois de implementar o comando **Shift** , você não pode recuperar o parâmetro de lote ( **%0**) que existia antes da mudança.
 
 ## <a name="BKMK_examples"></a>Disso
 

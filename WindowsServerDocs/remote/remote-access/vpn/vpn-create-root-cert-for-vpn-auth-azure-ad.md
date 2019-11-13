@@ -22,8 +22,8 @@ ms.locfileid: "71388010"
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação da CRL (lista de certificados revogados)](vpn-config-eap-tls-to-ignore-crl-checking.md)
-- [**Última** Etapa 7.3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md)
+- [**Anterior:** Etapa 7,1. Configurar o EAP-TLS para ignorar a verificação da CRL (lista de certificados revogados)](vpn-config-eap-tls-to-ignore-crl-checking.md)
+- [**Em seguida:** Etapa 7,3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md)
 
 Nesta etapa, você configura certificados raiz de acesso condicional para autenticação VPN com o Azure AD, que cria automaticamente um aplicativo de nuvem chamado servidor VPN no locatário. Para configurar o acesso condicional para conectividade VPN, você precisa:
 
@@ -53,4 +53,4 @@ Em seguida, o cliente VPN envia os problemas de certificado pelo Azure AD para a
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Etapa 7.3. Configurar a política de acesso condicional @ no__t-0: Nesta etapa, você configura a política de acesso condicional para conectividade VPN.
+[Etapa 7,3. Configurar a política de acesso condicional](vpn-config-conditional-access-policy.md): nesta etapa, você configura a política de acesso condicional para conectividade VPN.

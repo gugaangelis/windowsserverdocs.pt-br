@@ -51,7 +51,7 @@ Se você precisar restaurar Active Directory para um hardware diferente, crie ba
 
 Se a hora da ocorrência da falha for desconhecida, investigue mais para identificar os backups que mantêm o último estado de segurança da floresta. Essa abordagem é menos desejável. Portanto, é altamente recomendável que você mantenha logs detalhados sobre o estado de integridade de AD DS diariamente para que, se houver uma falha em toda a floresta, o tempo aproximado de falha possa ser identificado. Você também deve manter uma cópia local dos backups para permitir uma recuperação mais rápida.
 
-Se Active Directory Lixeira estiver habilitada, o tempo de vida do backup será igual ao valor **deletedObjectLifetime** ou ao valor **tombstoneLifetime** , o que for menor. Para obter mais informações, consulte [Active Directory guia](https://go.microsoft.com/fwlink/?LinkId=178657) passo a passo da lixeira (https://go.microsoft.com/fwlink/?LinkId=178657).
+Se Active Directory Lixeira estiver habilitada, o tempo de vida do backup será igual ao valor **deletedObjectLifetime** ou ao valor **tombstoneLifetime** , o que for menor. Para obter mais informações, consulte [Active Directory guia passo a passo da lixeira](https://go.microsoft.com/fwlink/?LinkId=178657) (https://go.microsoft.com/fwlink/?LinkId=178657).
 
 Como alternativa, você também pode usar a ferramenta de montagem de banco de dados Active Directory (Dsamain. exe) e uma ferramenta LDAP (Lightweight Directory Access Protocol), como Ldp. exe ou Active Directory usuários e computadores, para identificar qual backup tem o último estado de segurança do floresta. A ferramenta de montagem de banco de dados Active Directory, que está incluída nos sistemas operacionais Windows Server 2008 e posteriores do Windows Server, expõe Active Directory dados armazenados em backups ou instantâneos como um servidor LDAP. Em seguida, você pode usar uma ferramenta LDAP para procurar os dados. Essa abordagem tem a vantagem de não exigir que você reinicie qualquer DC no Modo de Restauração dos Serviços de Diretório (DSRM) para examinar o conteúdo do backup de AD DS.
 
@@ -76,13 +76,13 @@ Escolha um controlador de domínio que melhor atenda aos seguintes critérios:
 - Um DC que era um servidor DNS (sistema de nomes de domínio) antes da falha. Isso poupa o tempo necessário para reinstalar o DNS.
 - Se você também usar os serviços de implantação do Windows, escolha um DC que não esteja configurado para usar o desbloqueio de rede do BitLocker. Nesse caso, o desbloqueio de rede do BitLocker não tem suporte a ser usado para o primeiro controlador de domínio que você restaura do backup durante uma recuperação de floresta.
 
-   O desbloqueio de rede do BitLocker como o *único* protetor de chave *não pode* ser usado em DCS nos quais você implantou o WDS (serviços de implantação do Windows), pois isso resulta em um cenário em que o primeiro DC requer Active Directory e o WDS funcione para automático. Mas antes de restaurar o primeiro controlador de domínio, Active Directory ainda não está disponível para o WDS, portanto, ele não pode desbloquear.
+   O desbloqueio de rede do BitLocker como o *único* protetor de chave *não pode* ser usado em DCS nos quais você implantou o WDS (serviços de implantação do Windows), pois isso resulta em um cenário em que o primeiro DC requer Active Directory e o WDS funcione para desbloquear. Mas antes de restaurar o primeiro controlador de domínio, Active Directory ainda não está disponível para o WDS, portanto, ele não pode desbloquear.
 
    Para determinar se um controlador de domínio está configurado para usar o desbloqueio de rede do BitLocker, verifique se um certificado de desbloqueio de rede está identificado na seguinte chave do registro:
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-Mantenha os procedimentos de segurança ao manipular ou restaurar arquivos de backup que incluem Active Directory. A urgência que acompanha a recuperação da floresta pode levar intencionalmente à desprocura de práticas recomendadas de segurança. Para obter mais informações, consulte a seção "estabelecendo estratégias de backup e restauração do controlador de domínio" no guia de prática do [Best para proteger as instalações de Active Directory e as operações cotidianas: Parte II @ no__t-0.
+Mantenha os procedimentos de segurança ao manipular ou restaurar arquivos de backup que incluem Active Directory. A urgência que acompanha a recuperação da floresta pode levar intencionalmente à desprocura de práticas recomendadas de segurança. Para obter mais informações, consulte a seção "estabelecendo estratégias de backup e restauração do controlador de domínio" no [Guia de práticas recomendadas para proteger Active Directory instalações e operações cotidianas: parte II](https://technet.microsoft.com/library/bb727066.aspx).
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>Identificar a estrutura de floresta e as funções de controlador de domínio atuais
 
@@ -109,7 +109,7 @@ Neste exemplo, há quatro candidatos de backup: DC_1, DC_2, DC_4 e DC_5. Desses 
 - É um servidor DNS. Portanto, o DNS não precisa ser reinstalado.  
 
 > [!NOTE]
-> Como o DC_5 não é um servidor de catálogo global, ele também tem uma vantagem em que o catálogo global não precisa ser removido após a restauração. Mas se o DC também é um servidor de catálogo global não é um fator decisivo porque, a partir do Windows Server 2012, todos os DCs são servidores de catálogo global por padrão e a remoção e a adição do catálogo global após a restauração é recomendada como parte da floresta processo de recuperação em qualquer caso.  
+> Como DC_5 não é um servidor de catálogo global, ele também tem uma vantagem em que o catálogo global não precisa ser removido após a restauração. Mas se o DC também é um servidor de catálogo global não é um fator decisivo porque, a partir do Windows Server 2012, todos os DCs são servidores de catálogo global por padrão e a remoção e a adição do catálogo global após a restauração é recomendada como parte da floresta processo de recuperação em qualquer caso.  
 
 ## <a name="recover-the-forest-in-isolation"></a>Recuperar a floresta isoladamente
 

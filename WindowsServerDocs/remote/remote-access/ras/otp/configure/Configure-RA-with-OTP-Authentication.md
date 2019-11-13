@@ -21,18 +21,18 @@ ms.locfileid: "71404420"
 ---
 # <a name="configure-remote-access-with-otp-authentication"></a>Configurar acesso remoto com autenticação OTP
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
  O Windows Server 2016 e o Windows Server 2012 combinam o DirectAccess e o serviço de roteamento e acesso remoto (RRAS) para uma única função de acesso remoto. Esta visão geral fornece uma introdução às etapas de configuração necessárias para implantar uma única implantação de multissite de acesso remoto do Windows Server 2016 ou Windows Server 2012.  
 
 
-- [Etapa 1: Implemente uma implantação de acesso remoto de servidor único @ no__t-0. Instale e configure um único servidor de acesso remoto. Para obter instruções, consulte [implantar um único servidor DirectAccess com configurações avançadas](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings).
+- [Etapa 1: implementar uma implantação de acesso remoto de servidor único](../../multisite/configure/Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md). Instale e configure um único servidor de acesso remoto. Para obter instruções, consulte [implantar um único servidor DirectAccess com configurações avançadas](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings).
 
-- [Etapa 2: Configure o servidor RADIUS @ no__t-0.
+- [Etapa 2: configurar o servidor RADIUS](Step-2-Configure-the-RADIUS-Server.md).
 
-- [Etapa 3: Configure o servidor de acesso remoto para a OTP @ no__t-0.
+- [Etapa 3: configurar o servidor de acesso remoto para OTP](Step-3-Configure-the-Remote-Access-Server-for-OTP.md).
 
-- [Etapa 4: Verifique o DirectAccess com a OTP @ no__t-0.
+- [Etapa 4: verificar o DirectAccess com OTP](Step-4-Verify-DirectAccess-with-OTP.md).
   
 
 

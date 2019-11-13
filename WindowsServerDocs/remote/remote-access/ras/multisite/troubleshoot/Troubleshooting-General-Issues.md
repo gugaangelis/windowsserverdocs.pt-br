@@ -21,7 +21,7 @@ ms.locfileid: "71404451"
 ---
 # <a name="troubleshooting-general-issues"></a>Solução de problemas gerais
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico contém informações de solução de problemas gerais relacionadas ao acesso remoto.  
   
@@ -43,7 +43,7 @@ Como alternativa, use os cmdlets de configuração em vez de usar o console de g
 > [!NOTE]  
 > Esse cenário não ocorre quando o GPO do servidor do ponto de entrada atual não está disponível.  
   
-Você pode usar o cmdlet `Get-DAEntryPointDC` para listar todos os controladores de domínio que armazenam GPOs do servidor e `Get-DAMultiSite` em conjunto com o `Get-RemoteAccess` para recuperar uma lista completa dos GPOs do servidor na implantação. Por exemplo:  
+Você pode usar o cmdlet `Get-DAEntryPointDC` para listar todos os controladores de domínio que armazenam GPOs do servidor e `Get-DAMultiSite` em conjunto com `Get-RemoteAccess` para recuperar uma lista completa dos GPOs do servidor na implantação. Por exemplo:  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   
@@ -78,7 +78,7 @@ Se um cliente já tiver sido atualizado ou o DCA não estiver configurado, mova 
   
 -   **Problema 1**  
   
-    **Erro recebido**. Não é possível acessar o controlador de domínio < domain_controller > para < server_name ou entry_point_name >.  
+    **Erro recebido**. O controlador de domínio < domain_controller > não pode ser acessado para < server_name ou entry_point_name >.  
   
     **Causa**  
   
@@ -86,11 +86,11 @@ Se um cliente já tiver sido atualizado ou o DCA não estiver configurado, mova 
   
     **Solução**  
   
-    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor", descrito em ,4. Configure GPOs @ no__t-0.  
+    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor", descrito em [2,4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 -   **Problema 2**  
   
-    **Erro recebido**. O controlador de domínio primário no domínio < nome_do_domínio > não pode ser acessado.  
+    **Erro recebido**. O controlador de domínio primário no domínio < domain_name > não pode ser acessado.  
   
     **Causa**  
   
@@ -98,7 +98,7 @@ Se um cliente já tiver sido atualizado ou o DCA não estiver configurado, mova 
   
     **Solução**  
   
-    Siga o procedimento "para transferir a função de emulador de PDC", descrito em ,4. Configure GPOs @ no__t-0.  
+    Siga o procedimento "para transferir a função de emulador de PDC", descrito em [2,4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 
 

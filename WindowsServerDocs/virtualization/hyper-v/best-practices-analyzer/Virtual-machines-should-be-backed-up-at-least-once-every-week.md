@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Erro|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -36,12 +36,12 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *Uma ou mais máquinas virtuais não foram submetidas a backup na última semana.*  
   
 ## <a name="impact"></a>Impacto  
-a perda de dados de @no__t 0Significant poderá ocorrer se a máquina virtual encontrar um problema e um backup recente não existir. Isso afeta as seguintes máquinas virtuais: *  
+*Uma perda significativa de dados poderá ocorrer se a máquina virtual encontrar um problema e um backup recente não existir. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>Resolução  
-*Schedule um backup das máquinas virtuais para executar pelo menos uma vez por semana. Você poderá ignorar essa regra se essa máquina virtual for uma réplica e sua máquina virtual primária estiver sendo submetida a backup, ou se esta for a máquina virtual primária e sua réplica estiver sendo submetida a backup.*  
+*Agende um backup das máquinas virtuais para ser executado pelo menos uma vez por semana. Você poderá ignorar essa regra se essa máquina virtual for uma réplica e sua máquina virtual primária estiver sendo submetida a backup, ou se esta for a máquina virtual primária e sua réplica estiver sendo submetida a backup.*  
   
 
 

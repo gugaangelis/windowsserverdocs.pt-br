@@ -20,7 +20,7 @@ ms.locfileid: "71361246"
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico fornece uma visão geral do cluster @ no__t-0Aware atualizando \(CAU @ no__t-2, um recurso que automatiza o processo de atualização de software em servidores clusterizados enquanto mantém a disponibilidade.
+Este tópico fornece uma visão geral da atualização de\-com reconhecimento de cluster \(CAU\), um recurso que automatiza o processo de atualização de software em servidores clusterizados, mantendo a disponibilidade.
 
 > [!NOTE]
 > Ao atualizar [espaços de armazenamento diretos](../storage/storage-spaces/storage-spaces-direct-overview.md) clusters, é recomendável usar a atualização com suporte a cluster.
@@ -36,40 +36,40 @@ A atualização com suporte a cluster é um recurso automatizado que permite atu
 6. Restaura as funções clusterizadas no nó.
 7. Move para atualizar o próximo nó.
 
-Para várias funções clusterizadas no cluster, o processo de atualização automática dispara um failover planejado. Isso pode provocar uma interrupção de serviço transitória nos clientes conectados. No entanto, no caso de cargas de trabalho continuamente disponíveis, como o Hyper @ no__t-0V com migração dinâmica ou servidor de arquivos com failover transparente de SMB, a atualização com suporte a cluster pode coordenar atualizações de cluster sem afetar a disponibilidade do serviço.    
+Para várias funções clusterizadas no cluster, o processo de atualização automática dispara um failover planejado. Isso pode provocar uma interrupção de serviço transitória nos clientes conectados. No entanto, no caso de cargas de trabalho continuamente disponíveis, como o Hyper\-V com migração dinâmica ou servidor de arquivos com failover transparente de SMB, a atualização com suporte a cluster pode coordenar atualizações de cluster sem afetar a disponibilidade do serviço.    
   
 ## <a name="practical-applications"></a>Aplicações práticas  
   
--   A CAU reduz as interrupções de serviço em serviços clusterizados, reduz a necessidade de soluções alternativas de atualização manual e torna o processo de atualização de cluster do final @ no__t-0to @ no__t-1Fim mais confiável para o administrador. Quando o recurso CAU é usado em conjunto com cargas de trabalho de cluster disponíveis continuamente, como servidores de arquivos disponíveis continuamente \(file de carga de trabalho de servidor com failover transparente SMB @ no__t-1 ou Hyper @ no__t-2V, as atualizações de cluster podem ser executadas com impacto zero sobre a disponibilidade do serviço para clientes.  
+-   A CAU reduz as interrupções de serviço em serviços clusterizados, reduz a necessidade de soluções alternativas de atualização manual e torna o\-final\-processo de atualização de cluster final mais confiável para o administrador. Quando o recurso CAU é usado em conjunto com as cargas de trabalho de cluster disponíveis continuamente, como servidores de arquivos continuamente disponíveis \(carga de trabalho do servidor de arquivos com o failover transparente do SMB\) ou o Hyper\-V, as atualizações de cluster podem ser executadas com impacto zero na disponibilidade do serviço para clientes.  
   
--   A CAU facilita a adoção de processos de TI consistentes em toda a empresa. A atualização de perfis de execução pode ser criada para diferentes classes de clusters de failover e, em seguida, gerenciada centralmente em um compartilhamento de arquivos para garantir que as implantações de CAU em toda a organização de ti apliquem atualizações de forma consistente, mesmo que os clusters sejam gerenciados por diferentes linhas @ no__t-0of @ no__t-1business ou Administrators.  
+-   A CAU facilita a adoção de processos de TI consistentes em toda a empresa. A atualização de perfis de execução pode ser criada para diferentes classes de clusters de failover e, em seguida, gerenciada centralmente em um compartilhamento de arquivos para garantir que as implantações de CAU em toda a organização de ti apliquem atualizações de forma consistente, mesmo que os clusters sejam gerenciados por diferentes linhas\-de\-negócios ou administradores.  
   
 -   A CAU pode agendar as Execuções de Atualização diariamente, semanalmente ou mensalmente para coordenar as atualizações de cluster com outros processos de gerenciamento de TI.  
   
--   A CAU fornece uma arquitetura extensível para atualizar o inventário de software de cluster em uma maneira de cluster @ no__t-0aware. Isso pode ser usado por editores para coordenar a instalação de atualizações de software que não são publicadas em Windows Update ou Microsoft Update ou que não estão disponíveis na Microsoft, por exemplo, atualizações para drivers de dispositivo que não são @ no__t-0Microsoft.  
+-   A CAU fornece uma arquitetura extensível para atualizar o inventário de software de cluster em um cluster\-de modo ciente. Isso pode ser usado por editores para coordenar a instalação de atualizações de software que não são publicadas em Windows Update ou Microsoft Update ou que não estão disponíveis na Microsoft, por exemplo, atualizações de drivers de dispositivo não\-Microsoft.  
   
--   O modo Self @ no__t-0updating da CAU permite um dispositivo "cluster pronto" \(A de máquinas físicas clusterizadas, normalmente empacotadas em um chassi @ no__t-2 para atualizar a si mesma. Normalmente, esses dispositivos são implantados nas filiais locais com suporte mínimo de TI para gerenciar os clusters. O modo Self @ no__t-0updating oferece excelente valor nesses cenários de implantação.  
+-   O modo de atualização de auto\-da CAU permite que um dispositivo "cluster pronto" \(um conjunto de máquinas físicas clusterizadas, normalmente empacotadas em um chassi\) para atualizar a si mesma. Normalmente, esses dispositivos são implantados nas filiais locais com suporte mínimo de TI para gerenciar os clusters. O modo de atualização de auto\-oferece um ótimo valor nesses cenários de implantação.  
   
 ## <a name="important-functionality"></a>Funcionalidade importante  
 Veja a seguir uma descrição da funcionalidade de atualização importante com suporte a cluster:  
   
--   Uma interface do usuário \(UI @ no__t-1-a janela de atualização com reconhecimento de cluster-e um conjunto de cmdlets que você pode usar para visualizar, aplicar, monitorar e relatar as atualizações  
+-   Uma interface do usuário \(UI\)-a janela de atualização com reconhecimento de cluster-e um conjunto de cmdlets que você pode usar para visualizar, aplicar, monitorar e relatar as atualizações  
   
--   Uma automação do end @ no__t-0to @ no__t-1Fim da operação do cluster @ no__t-2updating \(AN execute @ no__t-4, orquestrada por um ou mais computadores do coordenador de atualização  
+-   Um\-final para\-a automação final do cluster\-operação de atualização \(uma execução de atualização\), orquestrada por um ou mais computadores do coordenador de atualização  
   
--   Um plug @ no__t-0in padrão que se integra com a infraestrutura existente do agente de Windows Update \(WUA @ no__t-2 e Windows Server Update Services \(WSUS @ no__t-4 no Windows Server para aplicar atualizações importantes da Microsoft  
+-   Um plug\-padrão no que se integra ao agente Windows Update existente \(WUA\) e Windows Server Update Services \(a infraestrutura\) do WSUS no Windows Server para aplicar atualizações importantes da Microsoft  
   
--   Um segundo plug @ no__t-0in que pode ser usado para aplicar hotfixes da Microsoft e que pode ser personalizado para aplicar atualizações não-1Microsoft no__t  
+-   Um segundo plug\-no que pode ser usado para aplicar hotfixes da Microsoft e que pode ser personalizado para aplicar atualizações não\-Microsoft  
   
 -   Perfis de Execução de Atualização que você configura com as definições das opções de Execução de Atualização, como o número máximo de vezes que a atualização será repetida por nó. Os Perfis de Execução de Atualização permitem que você reutilize rapidamente as mesmas configurações nas Execuções de Atualização e compartilhe facilmente as configurações de atualização com outros clusters de failover.  
   
--   Uma arquitetura extensível que dá suporte ao desenvolvimento de novo plug @ no__t-0in para coordenar outras ferramentas @ no__t-1updating de nó em todo o cluster, como instaladores de software personalizados, ferramentas de atualização de BIOS e adaptador de host ou adaptador de rede \(HBA @ no__t-3 Atualizando ferramentas.  
+-   Uma arquitetura extensível que dá suporte a novos plug\-no desenvolvimento para coordenar outros\-ferramentas de atualização de nó no cluster, como instaladores de software personalizados, ferramentas de atualização de BIOS e adaptador de rede ou adaptador de barramento de host \(ferramentas de atualização de HBA\).  
   
 A atualização com suporte a cluster pode coordenar a operação de atualização de cluster completa em dois modos:  
   
--   **Modo Self @ no__t-1updating** Para esse modo, a função clusterizada CAU é configurada como uma carga de trabalho no cluster de failover que deve ser atualizada e uma agenda de atualização associada é definida. O cluster se atualiza em horários agendados usando um padrão ou um perfil personalizado para Execução de Atualização. Durante a execução da atualização, o processo do coordenador de atualização da CAU é iniciado no nó que atualmente possui a função clusterizada CAU e o processo executa as atualizações sequencialmente em cada nó de cluster. Para atualizar o nó do cluster atual, a função clusterizada da CAU faz failover para outro nó do cluster, e um novo processo do Coordenador de Atualização nesse nó assume o controle da Execução de Atualização. No modo Self @ no__t-0updating, a CAU pode atualizar o cluster de failover usando um processo de atualização totalmente automatizado, end @ no__t-1to @ no__t-2end. Um administrador também pode disparar atualizações em @ no__t-0demand nesse modo ou simplesmente usar a abordagem Remote @ no__t-1updating, se desejado. No modo Self @ no__t-0updating, um administrador pode obter informações resumidas sobre uma execução de atualização em andamento, conectando-se ao cluster e executando o cmdlet **Get @ no__t-2CauRun** do Windows PowerShell.  
+-   **Modo de atualização de auto\-** Para esse modo, a função clusterizada CAU é configurada como uma carga de trabalho no cluster de failover que deve ser atualizada e uma agenda de atualização associada é definida. O cluster se atualiza em horários agendados usando um padrão ou um perfil personalizado para Execução de Atualização. Durante a execução da atualização, o processo do coordenador de atualização da CAU é iniciado no nó que atualmente possui a função clusterizada CAU e o processo executa as atualizações sequencialmente em cada nó de cluster. Para atualizar o nó do cluster atual, a função clusterizada da CAU faz failover para outro nó do cluster, e um novo processo do Coordenador de Atualização nesse nó assume o controle da Execução de Atualização. No modo de atualização de auto\-, a CAU pode atualizar o cluster de failover usando um\-final totalmente automatizado para\-finalizar o processo de atualização. Um administrador também pode disparar atualizações em\-demanda nesse modo ou simplesmente usar a abordagem de atualização de\-remota, se desejado. No modo de atualização de auto\-, um administrador pode obter informações resumidas sobre uma execução de atualização em andamento, conectando-se ao cluster e executando o cmdlet **get\-CauRun** do Windows PowerShell.  
   
--   **Modo @ no__t-1Updating remoto** Para esse modo, um computador remoto, que é chamado de coordenador de atualização, é configurado com as ferramentas de CAU. O Coordenador de Atualização não é um membro do cluster que é atualizado durante a Execução de Atualização. No computador remoto, o administrador dispara uma execução de atualização em @ no__t-0demand usando um perfil de execução de atualização padrão ou personalizado. O modo @ no__t-0updating remoto é útil para monitorar o andamento real de @ no__t-1time durante a execução da atualização e para clusters em execução em instalações do Server Core.  
+-   **Modo de atualização de\-remoto** Para esse modo, um computador remoto, que é chamado de coordenador de atualização, é configurado com as ferramentas de CAU. O Coordenador de Atualização não é um membro do cluster que é atualizado durante a Execução de Atualização. No computador remoto, o administrador dispara uma execução de atualização de\-demanda usando um perfil de execução de atualização padrão ou personalizada. O modo de atualização de\-remoto é útil para monitorar o andamento real\-tempo durante a execução da atualização e para clusters em execução em instalações do Server Core.  
   
 ## <a name="hardware-and-software-requirements"></a>Requisitos de hardware e software  
 
@@ -80,7 +80,7 @@ Para usar a CAU, instale o recurso de clustering de failover no Windows Server e
 
 Para instalar o recurso Clustering de Failover, você pode usar as seguintes ferramentas:
 - Adicionar assistente de funções e recursos no Gerenciador de Servidores
-- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)@no__t-cmdlet do PowerShell do 1Windows
+- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps) cmdlet do Windows PowerShell
 - Ferramenta de linha de comando de Gerenciamento e Manutenção de Imagens de Implantação (DISM)
 
 Para obter mais informações, consulte [instalar o recurso de cluster de failover](create-failover-cluster.md#install-the-failover-clustering-feature).
@@ -89,27 +89,27 @@ Você também deve instalar as ferramentas de clustering de failover, que fazem 
 
 Você deve instalar as Ferramentas de Clustering de Failover da seguinte maneira para dar suporte aos diferentes modos de atualização da CAU:
 
-- Para usar a CAU no modo Self @ no__t-0updating, instale as ferramentas de clustering de failover em cada nó de cluster.   
+- Para usar a CAU no modo de atualização de auto\-, instale as ferramentas de clustering de failover em cada nó de cluster.   
   
-- Para habilitar o modo @ no__t-0updating remoto, instale as ferramentas de clustering de failover em um computador que tenha conectividade de rede com o cluster de failover.  
+- Para habilitar o modo de atualização de\-remoto, instale as ferramentas de clustering de failover em um computador que tenha conectividade de rede com o cluster de failover.  
   
 > [!NOTE]  
 > -   Você não pode usar as ferramentas de clustering de failover no Windows Server 2012 para gerenciar a atualização com suporte a cluster em uma versão mais recente do Windows Server. 
-> -   Para usar a CAU somente no modo Remote @ no__t-0updating, a instalação das ferramentas de clustering de failover nos nós do cluster não é necessária. No entanto, alguns recursos da CAU não estarão disponíveis. Para obter mais informações, consulte [requisitos e práticas recomendadas para a atualização do cluster @ no__t-1Aware](cluster-aware-updating-requirements.md).  
-> -   A menos que você esteja usando a CAU somente no modo Self @ no__t-0updating, o computador no qual as ferramentas CAU estão instaladas e que coordena as atualizações não podem ser membros do cluster de failover.  
+> -   Para usar a CAU somente no modo de atualização de\-remota, a instalação das ferramentas de clustering de failover nos nós de cluster não é necessária. No entanto, alguns recursos da CAU não estarão disponíveis. Para obter mais informações, consulte [requisitos e práticas recomendadas para atualização com reconhecimento de\-de cluster](cluster-aware-updating-requirements.md).  
+> -   A menos que você esteja usando a CAU somente no modo de atualização de auto\-, o computador no qual as ferramentas de CAU estão instaladas e que coordena as atualizações não pode ser um membro do cluster de failover.  
   
 ### <a name="enabling-self-updating-mode"></a>Habilitando o modo de autoatualização
 Para habilitar o modo de autoatualização, você deve adicionar a função clusterizada de atualização com suporte de cluster ao cluster de failover. Para fazer isso, use um dos seguintes métodos:
 - Em Gerenciador do Servidor, selecione **ferramentas** > **atualização com suporte a cluster**e, em seguida, na janela de atualização com suporte a cluster, selecione **Configurar opções de autoatualização de cluster**. 
 - Em uma sessão do PowerShell, execute o cmdlet [Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) .  
   
-Para desinstalar a CAU, desinstale o recurso de clustering de failover ou as ferramentas de clustering de failover usando Gerenciador do Servidor, o cmdlet [Uninstall-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) ou o comando DISM @ no__t-1line Tools.  
+Para desinstalar a CAU, desinstale o recurso de clustering de failover ou as ferramentas de clustering de failover usando Gerenciador do Servidor, o cmdlet [Uninstall-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) ou o comando DISM\-ferramentas de linha.  
   
 ### <a name="additional-requirements-and-best-practices"></a>Requisitos adicionais e práticas recomendadas  
 
 Para que a CAU atualize os nós do cluster com êxito, e para obter mais diretrizes sobre como configurar o ambiente de cluster de failover para usar a CAU, execute o Analisador de Práticas Recomendadas da CAU.  
   
-Para obter requisitos detalhados e práticas recomendadas para usar a CAU e informações sobre como executar o Analisador de Práticas Recomendadas CAU, consulte [requisitos e práticas recomendadas para a atualização do cluster @ no__t-1Aware](cluster-aware-updating-requirements.md).  
+Para obter requisitos detalhados e práticas recomendadas para usar a CAU e informações sobre como executar o Analisador de Práticas Recomendadas CAU, consulte [requisitos e práticas recomendadas para atualização com reconhecimento de\-de cluster](cluster-aware-updating-requirements.md).  
   
 ### <a name="starting-cluster-aware-updating"></a>Iniciando atualização com suporte a cluster  
   
@@ -119,23 +119,23 @@ Para obter requisitos detalhados e práticas recomendadas para usar a CAU e info
   
 2.  Siga um destes procedimentos:  
   
-    -   No menu **ferramentas** , clique em **cluster @ No__t-2Aware atualizando**.  
+    -   No menu **ferramentas** , clique em **cluster\-atualização de reconhecimento**.  
   
-    -   Se um ou mais nós de cluster, ou o cluster, for adicionado ao Gerenciador do Servidor, na página **todos os servidores** , clique com o botão direito @ no__t-1CLICK o nome de um nó \(or o nome do cluster @ no__t-3 e clique em **Atualizar cluster**.  
+    -   Se um ou mais nós de cluster, ou o cluster, for adicionado ao Gerenciador do Servidor, na página **todos os servidores** , com o botão direito\-clique no nome de um nó \(ou o nome do\)de cluster e clique em **Atualizar cluster**.  
   
 ## <a name="see-also"></a>Consulte também  
 Os links a seguir fornecem mais informações sobre como usar a atualização com suporte a cluster.  
   
--   [Requisitos e práticas recomendadas para a atualização do cluster @ no__t-1Aware](cluster-aware-updating.md)  
+-   [Requisitos e práticas recomendadas para atualização com reconhecimento de\-de cluster](cluster-aware-updating.md)  
   
--   Atualização de @no__t 0Cluster @ no__t-1Aware: perguntas frequentes](cluster-aware-updating-faq.md)  
+-   [Atualização com reconhecimento de\-de cluster: perguntas frequentes](cluster-aware-updating-faq.md)  
   
 -   [Opções avançadas e atualizando perfis de execução para a CAU](cluster-aware-updating-options.md)  
   
--   [Como funciona a CAU do plug-no__t-1ins](cluster-aware-updating-plug-ins.md)  
+-   [Como funcionam os plug\-ins da CAU](cluster-aware-updating-plug-ins.md)  
   
--   [Cmdlets de atualização do cluster @ no__t-1Aware no Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)  
+-   [Cmdlets de atualização com reconhecimento de\-de cluster no Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)  
   
--   [Cluster @ no__t-1Aware atualizando a referência de plug @ no__t-2in](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)  
+-   [\-de plug-in de atualização de\-com reconhecimento de cluster em referência](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)  
   
 

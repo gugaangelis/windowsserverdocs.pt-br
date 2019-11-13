@@ -68,7 +68,7 @@ Essas tabelas contêm a configuração padrão do Windows, as recomendações de
 |Categoria ou subcategoria da política de auditoria|Padrão do Windows<br /><br />Falha de êxito|Recomendação de linha de base<br /><br />Falha de êxito|Recomendação mais forte<br /><br />Falha de êxito|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Logon da conta**||||  
-|Auditoria da validação de credenciais|Não|Sim não|Sim Sim|  
+|Validação de Credenciais de Auditoria|Não|Sim não|Sim Sim|  
 |Auditoria do serviço de autenticação Kerberos|||Sim Sim|  
 |Auditoria das operações do tíquete de serviço Kerberos|||Sim Sim|  
 |Auditoria de outros eventos de logon de conta|||Sim Sim|  
@@ -146,7 +146,7 @@ Essas tabelas contêm a configuração padrão do Windows, as recomendações de
 |Categoria ou subcategoria da política de auditoria|Padrão do Windows<br /><br />Falha de êxito|Recomendação de linha de base<br /><br />Falha de êxito|Recomendação mais forte<br /><br />Falha de êxito|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Logon da conta**||||  
-|Auditoria da validação de credenciais|Não|Sim Sim|Sim Sim|  
+|Validação de Credenciais de Auditoria|Não|Sim Sim|Sim Sim|  
 |Auditoria do serviço de autenticação Kerberos|||Sim Sim|  
 |Auditoria das operações do tíquete de serviço Kerberos|||Sim Sim|  
 |Auditoria de outros eventos de logon de conta|||Sim Sim|  
@@ -257,7 +257,7 @@ Um exemplo do segundo evento é:
 
 Um número Aberrant de logons com falha pode indicar um ataque de adivinhação de senha. Para que uma empresa forneça um alerta para um número excepcionalmente alto de logons com falha, eles devem primeiro compreender os níveis normais de logons com falha em seu ambiente antes de um evento de segurança mal-intencionado.  
 
-Para obter uma lista abrangente de eventos que você deve incluir ao monitorar sinais de comprometimento, consulte [Appendix L: Eventos para monitorar @ no__t-0.  
+Para obter uma lista abrangente de eventos que você deve incluir ao monitorar sinais de comprometimento, consulte o [Apêndice L: eventos a serem monitorados](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md).  
 
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>Active Directory objetos e atributos a serem monitorados  
 A seguir estão as contas, os grupos e os atributos que você deve monitorar para ajudá-lo a detectar tentativas de comprometer sua instalação de Active Directory Domain Services.  
@@ -270,11 +270,11 @@ A seguir estão as contas, os grupos e os atributos que você deve monitorar par
 
 -   Contas com e com privilégios de VIP no AD DS. Monitore alterações, especialmente alterações em atributos na guia conta (por exemplo, CN, nome, sAMAccountName, userPrincipalName ou userAccountControl). Além de monitorar as contas, restrinja quem pode modificar as contas para o menor conjunto de usuários administrativos possível.  
 
-Consulte [Appendix L: Eventos para monitorar @ no__t-0 para uma lista de eventos recomendados a serem monitorados, suas classificações de criticalidade e um resumo de mensagem de evento.  
+Consulte o [Apêndice L: eventos para monitorar](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) uma lista de eventos recomendados a serem monitorados, suas classificações de criticalidade e um resumo de mensagem de evento.  
 
 -   Agrupe os servidores pela classificação de suas cargas de trabalho, o que permite identificar rapidamente os servidores que devem ser mais bem monitorados e mais rigorosamente configurados  
 
--   Alterações nas propriedades e Associação dos grupos de AD DS a seguir: Enterprise Admins (EA), administradores de domínio (DA), administradores (BA) e administradores de esquema (SA)  
+-   Alterações nas propriedades e Associação dos seguintes grupos de AD DS: administradores corporativos (EA), administradores de domínio (DA), administradores (BA) e administradores de esquema (SA)  
 
 -   Contas com privilégios desabilitadas (como contas de administrador internas no Active Directory e em sistemas Membros) para habilitar as contas  
 
@@ -298,12 +298,12 @@ Examine os links a seguir para obter informações adicionais sobre o monitorame
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>Lista geral de Criticalidades de recomendação de ID de evento de segurança  
 Todas as recomendações de ID de evento são acompanhadas por uma classificação de criticalidade da seguinte maneira:  
 
-**Elevada** As IDs de evento com uma classificação de criticalidade alta devem ser sempre e imediatamente alertados e investigados.  
+**Alta:** As IDs de evento com uma classificação de criticalidade alta devem ser sempre e imediatamente alertados e investigados.  
 
-**Médio** Uma ID de evento com uma classificação de criticalidade média pode indicar atividades mal-intencionadas, mas deve ser acompanhada por alguma outra anormalidade (por exemplo, um número incomum ocorrendo em um período de tempo específico, ocorrências inesperadas ou ocorrências em um computador que Normalmente, não seria esperado registrar o evento.). Um evento de criticalidade médio também pode ser coletado como uma métrica e comparado ao longo do tempo.  
+**Médio:** Uma ID de evento com uma classificação de criticalidade média pode indicar atividades mal-intencionadas, mas deve ser acompanhada por alguma outra anormalidade (por exemplo, um número incomum ocorrendo em um período de tempo específico, ocorrências inesperadas ou ocorrências em um computador que normalmente não seria esperado para registrar o evento.). Um evento de criticalidade médio também pode ser coletado como uma métrica e comparado ao longo do tempo.  
 
-**Pequena** E a ID do evento com poucos eventos de criticalidade não devem obter atenção ou causar alertas, a menos que correlacionem-se com eventos de criticalidade médios ou altos.  
+**Baixo:** E a ID do evento com poucos eventos de criticalidade não devem obter atenção ou causar alertas, a menos que correlacionem-se com eventos de criticalidade médios ou altos.  
 
 Essas recomendações destinam-se a fornecer um guia de linha de base para o administrador. Todas as recomendações devem ser examinadas minuciosamente antes da implementação em um ambiente de produção.  
 
-Consulte [Appendix L: Eventos para monitorar @ no__t-0 para uma lista dos eventos recomendados a serem monitorados, suas classificações de criticalidade e um resumo de mensagem de evento.  
+Consulte o [Apêndice L: eventos para monitorar](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) uma lista dos eventos recomendados a serem monitorados, suas classificações de criticalidade e um resumo de mensagem de evento.  

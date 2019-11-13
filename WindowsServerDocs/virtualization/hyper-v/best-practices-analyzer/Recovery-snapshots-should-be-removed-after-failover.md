@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016| 
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Operações|  
+|**Categoria**|Operações|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -36,9 +36,9 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *Uma máquina virtual com failover tem um ou mais instantâneos de recuperação.*  
   
 ## <a name="impact"></a>**Causa**  
-o espaço de @no__t 0Available pode ficar no disco físico que armazena os arquivos de instantâneo. Se isso ocorrer, nenhuma operação de disco adicional poderá ser executada no armazenamento físico. Qualquer máquina virtual que dependa do armazenamento físico poderá ser afetada. Isso afeta as seguintes máquinas virtuais: *  
+*O espaço disponível pode ficar no disco físico que armazena os arquivos de instantâneo. Se isso ocorrer, nenhuma operação de disco adicional poderá ser executada no armazenamento físico. Qualquer máquina virtual que dependa do armazenamento físico poderá ser afetada. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
 *Para cada máquina virtual com failover, use o cmdlet Complete-VMFailover no Windows PowerShell para remover os instantâneos de recuperação e indicar a conclusão do failover.*  

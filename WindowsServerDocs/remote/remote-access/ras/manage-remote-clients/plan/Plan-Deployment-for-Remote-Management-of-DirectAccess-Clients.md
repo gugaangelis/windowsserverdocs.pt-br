@@ -21,13 +21,13 @@ ms.locfileid: "71404582"
 ---
 # <a name="plan-deployment-for-remote-management-of-directaccess-clients"></a>Planejar implantação do gerenciamento remoto de clientes do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Os tópicos a seguir fornecem etapas de planejamento para a implantação de um único servidor de acesso remoto em execução que pode ser usado para o gerenciamento remoto de clientes DirectAccess.  
   
-[Etapa 1: Planejar a infraestrutura de acesso remoto @ no__t-0: Este tópico ajuda você a planejar a topologia de rede e as configurações do servidor, requisitos de firewall, requisitos de certificado, requisitos de sistema de nome de domínio, configuração de servidor de local de rede do DirectAccess e servidores de gerenciamento, Active Directory requisitos e Política de Grupo a criação do objeto.  
+[Etapa 1: planejar a infraestrutura de acesso remoto](Step-1-Plan-the-Remote-Access-Infrastructure.md): Este tópico ajuda você a planejar a topologia de rede e as configurações do servidor, requisitos de firewall, requisitos de certificado, requisitos de sistema de nome de domínio, configuração de servidor de local de rede e servidores de gerenciamento do directaccess, Active Directory requisitos e política de grupo criação de objeto.  
   
-[Etapa 2: Planejar a implantação de acesso remoto @ no__t-0: Planejar as estratégias de implantação de cliente e servidor e as configurações dos servidores de infraestrutura.  
+[Etapa 2: planejar a implantação de acesso remoto](Step-2-Plan-the-Remote-Access-Deployment.md): planejar estratégias de implantação de cliente e servidor e configurações de servidores de infraestrutura.  
 
   
 

@@ -21,7 +21,7 @@ ms.locfileid: "71361455"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS e o site do catálogo
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 O site do catálogo é o local da Microsoft no qual você pode importar hotfixes e drivers de hardware.
 
@@ -64,7 +64,7 @@ Os administradores do WSUS podem considerar a restrição de acesso aos hotfixes
 
     -   Selecione **autenticação do Windows** e clique em **habilitar** no painel **ações** à direita.
 
-2.  Crie um grupo de destino do WSUS para os computadores que precisam do hotfix e adicione-os ao grupo. Para obter mais informações sobre computadores e grupos, consulte [Gerenciando computadores cliente do WSUS e grupos de computadores do WSUS](managing-wsus-client-computers-and-wsus-computer-groups.md) neste guia e a seção [3,3. Configurar grupos de computadores do WSUS @ no__t-0 da etapa 3: Configure o WSUS, no guia de implantação do WSUS.
+2.  Crie um grupo de destino do WSUS para os computadores que precisam do hotfix e adicione-os ao grupo. Para obter mais informações sobre computadores e grupos, consulte [Gerenciando computadores cliente do WSUS e grupos de computadores do WSUS](managing-wsus-client-computers-and-wsus-computer-groups.md) neste guia e a seção [3,3. Configurar grupos de computadores do WSUS](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups) da etapa 3: configurar o WSUS, no guia de implantação do WSUS.
 
 3.  Baixe os arquivos para o hotfix.
 

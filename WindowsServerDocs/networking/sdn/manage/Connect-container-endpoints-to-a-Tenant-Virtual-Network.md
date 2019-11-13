@@ -22,7 +22,7 @@ ms.locfileid: "71355822"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conectar pontos de extremidade do contêiner a uma rede virtual do locatário
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, mostraremos como conectar pontos de extremidade do contêiner a uma rede virtual de locatário existente criada por meio de SDN. Use o driver de rede *l2bridge* (e, opcionalmente, *l2tunnel*) disponível com o plug-in libnetwork do Windows para o Docker para criar uma rede de contêiner na VM de locatário.
 
@@ -61,12 +61,15 @@ A diferença entre os drivers *l2bridge* e *l2tunnel* é:
 
 ## <a name="workflow"></a>Fluxo de Trabalho
 
-[1. Adicione várias configurações de IP a um recurso de NIC de VM existente por meio do controlador de rede (host Hyper-V) ](#1-add-multiple-ip-configurations) @ no__t-1 @ no__t-22. Habilite o proxy de rede no host para alocar endereços IP de AC para pontos de extremidade de contêiner (host Hyper-V) ](#2-enable-the-network-proxy) @ no__t-1 @ no__t-23. Instale o plug-in de nuvem privada para atribuir endereços IP de autoridade de certificação aos pontos de extremidade do contêiner (VM do host do contêiner) ](#3-install-the-private-cloud-plug-in) @ no__t-1 @ no__t-24. Criar uma rede *l2bridge* ou *l2tunnel* usando o Docker (VM do Host do contêiner) ](#4-create-an-l2bridge-container-network)
+[1. Adicione várias configurações de IP a um recurso de NIC de VM existente por meio do controlador de rede (host Hyper-V)](#1-add-multiple-ip-configurations)
+[2. Habilite o proxy de rede no host para alocar endereços IP de CA para pontos de extremidade de contêiner (host Hyper-V)](#2-enable-the-network-proxy)
+[3. Instale o plug-in de nuvem privada para atribuir endereços IP de autoridade de certificação aos pontos de extremidade do contêiner (VM do host do contêiner)](#3-install-the-private-cloud-plug-in)
+[4. Criar uma rede *l2bridge* ou *l2tunnel* usando o Docker (VM do host do contêiner)](#4-create-an-l2bridge-container-network)
 
 >[!NOTE]
 >Não há suporte para várias configurações de IP em recursos de NIC de VM criados por meio de System Center Virtual Machine Manager. É recomendável para esses tipos de implantações que você cria o recurso NIC da VM fora da banda usando o PowerShell do controlador de rede.
 
-### <a name="1-add-multiple-ip-configurations"></a>1. Adicionar várias configurações de IP
+### <a name="1-add-multiple-ip-configurations"></a>1. adicionar várias configurações de IP
 Nesta etapa, assumimos que a NIC da VM da máquina virtual de locatário tem uma configuração de IP com o endereço IP de 192.168.1.9 e está anexada a uma ID de recurso de VNet de ' VNet1 ' e recurso de sub-rede VM de ' Subnet1 ' na sub-rede IP 192.168.1.0/24. Adicionamos 10 endereços IP para contêineres de 192.168.1.101-192.168.1.110.
 
 ```powershell
@@ -117,7 +120,7 @@ foreach ($i in 1..10)
 New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties $vmnic.Properties -ConnectionUri $uri
 ```
 
-### <a name="2-enable-the-network-proxy"></a>2. Habilitar o proxy de rede
+### <a name="2-enable-the-network-proxy"></a>2. habilitar o proxy de rede
 Nesta etapa, você habilita o proxy de rede para alocar vários endereços IP para a máquina virtual do host do contêiner. 
 
 Para habilitar o proxy de rede, execute o script [ConfigureMCNP. ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1) no **host Hyper-V** que hospeda a máquina virtual de host (locatário) do contêiner.
@@ -126,7 +129,7 @@ Para habilitar o proxy de rede, execute o script [ConfigureMCNP. ps1](https://gi
 PS C:\> ConfigureMCNP.ps1
 ```
 
-### <a name="3-install-the-private-cloud-plug-in"></a>3. Instalar o plug-in de nuvem privada
+### <a name="3-install-the-private-cloud-plug-in"></a>3. instalar o plug-in de nuvem privada
 Nesta etapa, você instala um plug-in para permitir que o HNS se comunique com o proxy de rede no host Hyper-V.
 
 Para instalar o plug-in, execute o script [InstallPrivateCloudPlugin. ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro da **máquina virtual de host (locatário) do contêiner**.
@@ -136,7 +139,7 @@ Para instalar o plug-in, execute o script [InstallPrivateCloudPlugin. ps1](https
 PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
-### <a name="4-create-an-l2bridge-container-network"></a>4. Criar uma rede de contêiner *l2bridge*
+### <a name="4-create-an-l2bridge-container-network"></a>4. criar uma rede de contêiner *l2bridge*
 Nesta etapa, você usa o comando `docker network create` na **máquina virtual do host do contêiner (locatário)** para criar uma rede l2bridge. 
 
 ```powershell

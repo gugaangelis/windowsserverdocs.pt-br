@@ -22,9 +22,9 @@ ms.locfileid: "71359263"
   
 -   [Etapa 1:-exportar configurações de serviço](#step-1-export-service-settings)  
   
--   [Etapa 2: Fazer backup de repositórios de atributos personalizados @ no__t-0  
+-   [Etapa 2: fazer backup de repositórios de atributos personalizados](#step-2-back-up-custom-attribute-stores)  
   
--   [Etapa 3: Fazer backup de personalizações de página da Web @ no__t-0  
+-   [Etapa 3: fazer backup de personalizações de página da Web](#step-3-back-up-webpage-customizations)  
   
 ## <a name="step-1-export-service-settings"></a>Etapa 1: Exportar configurações do serviço  
  Para exportar configurações de serviço, realize o seguinte procedimento:  
@@ -56,7 +56,7 @@ Para encontrar o valor da identidade, examine a coluna **Fazer logon como** do *
  Para fazer backup de todas as personalizações de página da Web, copie as páginas da Web do AD FS e o arquivo **web.config** do diretório mapeado para o caminho virtual **“/adfs/ls”** no IIS. Por padrão, ele fica no diretório **%systemdrive%\inetpub\adfs\ls**.  
 
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

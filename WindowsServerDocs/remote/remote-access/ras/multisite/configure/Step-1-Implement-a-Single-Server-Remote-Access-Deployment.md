@@ -21,7 +21,7 @@ ms.locfileid: "71404490"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>Etapa 1 implementar uma implantação de acesso remoto de servidor único
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 A primeira etapa de configuração para implantar o acesso remoto em uma topologia multissite é implementar uma implantação avançada de servidor único e, em seguida, planejar adicionar servidores a cada ponto de entrada multissite.  
   
@@ -30,7 +30,7 @@ Antes de configurar uma implantação multissite, você deve configurar uma impl
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 2: Configurar a infraestrutura multissite @ no__t-0  
+-   [Etapa 2: configurar a infraestrutura multissite](Step-2-Configure-the-Multisite-Infrastructure.md)  
 
 
 

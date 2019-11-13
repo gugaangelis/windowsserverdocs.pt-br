@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Operacional** <br />**Sistema**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -36,9 +36,9 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *Um ou mais discos rígidos virtuais têm um tamanho de setor físico menor do que o tamanho do setor físico do armazenamento no qual o arquivo do disco rígido virtual está localizado.*  
   
 ## <a name="impact"></a>**Causa**  
-problemas de @no__t 0Performance podem ocorrer na máquina virtual ou no aplicativo que usa o disco rígido virtual. Isso afeta as seguintes máquinas virtuais: *  
+*Podem ocorrer problemas de desempenho na máquina virtual ou no aplicativo que usa o disco rígido virtual. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
 *Siga um destes procedimentos:*  

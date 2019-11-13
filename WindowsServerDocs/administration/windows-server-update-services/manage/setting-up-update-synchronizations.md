@@ -22,7 +22,7 @@ ms.locfileid: "71361600"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configurar sincronizações de atualização
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Durante a sincronização, um servidor WSUS baixa atualizações (arquivos e metadados de atualização) de uma origem de atualização. Ele também baixa novas classificações e categorias de produtos, se houver. Quando o servidor do WSUS for sincronizado pela primeira vez, ele baixará todas as atualizações que você especificou quando configurou as opções de sincronização. Após a primeira sincronização, o servidor WSUS baixa apenas as atualizações da origem da atualização, bem como as revisões em metadados para atualizações existentes e as expirações para atualizações.
 
@@ -38,7 +38,7 @@ Um servidor WSUS baixa atualizações com base nos produtos ou nas famílias de 
 
 Você pode especificar produtos e classificações de atualização na página **Opções** em **produtos e classificações**. Os produtos são listados em uma hierarquia, agrupados por família de produtos. Se você selecionar Windows, selecionará automaticamente todos os produtos que se enquadram na hierarquia do produto. Selecionando a caixa de seleção pai, você seleciona todos os itens sob ele, bem como todas as versões futuras. marcar as caixas de seleção filho não marcará as caixas de seleção pai. A configuração padrão para produtos é todos os produtos do Windows, e a configuração padrão de classificações é crítica e atualizações de segurança.
 
-Se um servidor WSUS estiver sendo executado no modo de réplica, você não poderá executar essa tarefa. Para obter mais informações sobre o modo de réplica, consulte [executando o modo de réplica do WSUS](running-wsus-replica-mode.md)e [step 1: Prepare-se para a implantação do WSUS @ no__t-0.
+Se um servidor WSUS estiver sendo executado no modo de réplica, você não poderá executar essa tarefa. Para obter mais informações sobre o modo de réplica, consulte [executando o modo de réplica do WSUS](running-wsus-replica-mode.md)e [etapa 1: preparar para a implantação do WSUS](../plan/plan-your-wsus-deployment.md).
 
 ##### <a name="to-specify-update-products-and-classifications-for-synchronization"></a>Para especificar produtos e classificações de atualização para sincronização
 
@@ -87,9 +87,9 @@ A origem da atualização é o local do qual o servidor do WSUS obtém suas atua
 
 As opções para personalizar como o servidor do WSUS sincroniza com a origem de atualização incluem o seguinte:
 
--   Você pode especificar uma porta personalizada para sincronização. Para obter informações sobre como configurar portas, consulte [Step 3: Configure o WSUS @ no__t-0 no guia de implantação do WSUS.
+-   Você pode especificar uma porta personalizada para sincronização. Para obter informações sobre como configurar portas, consulte [etapa 3: configurar o WSUS](../deploy/2-configure-wsus.md) no guia de implantação do WSUS.
 
--   Você pode usar SSL (Secure Socket Layers) para proteger a sincronização de informações de atualização entre servidores WSUS. Para obter mais informações sobre como usar o SSL, consulte a seção "3,5. Proteger o WSUS com o protocolo de protocolo SSL "de [Step 3: Configure o WSUS @ no__t-0 no guia de implantação do WSUS.
+-   Você pode usar SSL (Secure Socket Layers) para proteger a sincronização de informações de atualização entre servidores WSUS. Para obter mais informações sobre como usar o SSL, consulte a seção "3,5. Proteger o WSUS com o protocolo protocolo SSL "da [etapa 3: configurar o WSUS](../deploy/2-configure-wsus.md) no guia de implantação do WSUS.
 
 ## <a name="synchronizing-manually-or-automatically"></a>Sincronizando manual ou automaticamente
 Você pode sincronizar o servidor do WSUS manualmente ou especificar um horário para que ele seja sincronizado automaticamente.

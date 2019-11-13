@@ -19,7 +19,7 @@ ms.locfileid: "71361705"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>Etapa 1: Instalar a função de servidor do WSUS
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 A próxima etapa na implantação do servidor do WSUS é instalar a função de servidor do WSUS. O procedimento a seguir descreve como instalar a função de servidor do WSUS usando o Gerenciador do Servidor.
 
@@ -63,5 +63,5 @@ A próxima etapa na implantação do servidor do WSUS é instalar a função de 
 14. No **Gerenciador do Servidor**, verifique se uma notificação aparece informando que é necessário reiniciar. Esse comportamento pode variar de acordo com a função de servidor instalada. Se for necessário reiniciar, não se esqueça de reiniciar o servidor para concluir a instalação.
 
 > [!IMPORTANT]
-> Neste ponto, o processo de instalação é concluído, no entanto, para que o WSUS seja funcional, você precisa prosseguir para o [Step 2: Configure o WSUS @ no__t-0.
+> Neste ponto, o processo de instalação é concluído, no entanto, para que o WSUS seja funcional, você precisa prosseguir para a [etapa 2: configurar o WSUS](2-configure-wsus.md).
 

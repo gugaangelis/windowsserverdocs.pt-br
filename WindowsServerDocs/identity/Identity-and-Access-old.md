@@ -19,10 +19,10 @@ ms.locfileid: "71391124"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Identidade e Acesso no Windows Server 2016
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 >[!TIP]
-> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
+> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
 
  Os novos recursos a seguir na Identidade melhoram a capacidade para as organizações protegerem ambientes do Active Directory e ajuda a migrar para implantações apenas na nuvem e implantações híbridas, onde alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados no local. Os aprimoramentos são abordados nas seções a seguir.
 
@@ -36,8 +36,8 @@ Lista todos os novos recursos disponíveis para o AD DS no Windows Server 2016.
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41httpstechnetmicrosoftcomlibrarydn903243aspx"></a>[Privileged Access Management para Active Directory Domain Services &#40;AD DS&#41;](https://technet.microsoft.com/library/dn903243.aspx)
 Gerenciamento de Acesso Privilegiado (PAM) para os Serviços de Domínio do Active Directory (AD DS) é uma solução baseada no Microsoft Identity Manager (MIM) e no Windows Server 2012 R2 e Windows Server 2016.
 
-## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>[Windows 10 para a empresa: Maneiras de usar dispositivos para o trabalho @ no__t-0
-O Windows 10 oferece a capacidade de aproveitar o Azure Active Directory. Os dispositivos Windows 10 podem ser conectados ao Azure AD e os usuários podem fazer logon no Windows com contas do Azure AD ou adicionar sua ID do Azure para obter acesso aos recursos e aplicativos de negócios.
+## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>[Windows 10 para a empresa: maneiras de usar dispositivos para o trabalho](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)
+O Windows 10 oferece a capacidade de aproveitar o Azure Active Directory. Os dispositivos Windows 10 podem ser conectados ao Azure AD e os usuários podem entrar no Windows com contas do Azure AD ou adicionar sua ID do Azure para obter acesso aos recursos e aplicativos de negócios.
 
 ## <a name="active-directory-domain-servicesidentityad-dsactive-directory-domain-servicesmd"></a>[Active Directory Domain Services](../identity/ad-ds/Active-Directory-Domain-Services.md)
 Documentação detalhada sobre todos os recursos disponíveis para o AD DS no Windows Server 2016.

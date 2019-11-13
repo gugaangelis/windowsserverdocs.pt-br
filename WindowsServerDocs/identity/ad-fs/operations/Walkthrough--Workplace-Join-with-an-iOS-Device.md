@@ -22,13 +22,13 @@ ms.locfileid: "71407490"
 > [!IMPORTANT] 
 > Esse método é relevante somente para clientes totalmente locais. Clientes híbridos ou somente de nuvem não devem usar esse método para registrar seus dispositivos iOS. E esse método não é compatível quando os clientes locais decidem mudar para a nuvem. O registro do dispositivo deve ser cancelado e registrado na nuvem. 
 
-Este tópico demonstra o Ingresso no Local de Trabalho em um dispositivo iOS. Você deve concluir as etapas na seção [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) para poder experimentar este passo a passos. Você pode usar o dispositivo para acessar o mesmo aplicativo Web da empresa que você acessou em [Walkthrough: Workplace Join com um dispositivo Windows @ no__t-0.
+Este tópico demonstra o Ingresso no Local de Trabalho em um dispositivo iOS. Você deve concluir as etapas na seção [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) para poder experimentar este passo a passos. Você pode usar o dispositivo para acessar o mesmo aplicativo Web da empresa que você acessou em [passo a passos: Workplace Join com um dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md).
 
 
 ## <a name="join-an-ios-device-with-workplace-join"></a>Ingressar em um dispositivo iOS com o Ingresso no Local de Trabalho
 
 > [!IMPORTANT]
-> Quando o DRS local é configurado, o dispositivo iOS deve confiar no certificado SSL que foi usado para configurar Serviços de Federação do Active Directory (AD FS) (AD FS) no [Step 2: Configure o servidor de Federação (ADFS1) com o serviço de registro de dispositivo @ no__t-0, para que Workplace Join seja bem-sucedidos.
+> Quando o DRS local é configurado, o dispositivo iOS deve confiar no certificado SSL (Secure Socket Layer) usado para configurar o AD FS (Serviços de Federação do Active Directory) no [Step 2: Configure the federation server (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4), para que o Ingresso no Local de Trabalho tenha êxito.
 > 
 > -   Se o certificado SSL do AD FS tiver sido emitido em uma AC (autoridade de certificação) de teste, instale o certificado de autoridade de certificação em seu dispositivo iOS.
 > -   Se seu certificado de autoridade de certificação estiver publicado em um site, você poderá navegar pelo site em seu dispositivo iOS e instalar o certificado.
@@ -37,11 +37,11 @@ Nesta demonstração, você ingressa o dispositivo no local de trabalho.
 
 #### <a name="to-join-an-ios-device-to-a-workplace"></a>Para ingressar um dispositivo iOS em um local de trabalho
 
-1. -   **Quando o serviço Registro de Dispositivo do Active Directory do Azure é o DRS configurado:** Abra o Apple Safari e navegue até Registro de Dispositivos do Azure Active Directory ponto de extremidade de perfil do serviço over-the-Air para dispositivos iOS, < `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > em que < `yourdomainname` > é o nome de domínio que você configurou com Azure Active Directory. Por exemplo, se seu nome de domínio for contoso.com, a URL seria: `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
+1. -   **Quando registro de dispositivos do Azure Active Directory serviço é o DRS configurado:** Abra o Apple Safari e navegue até Registro de Dispositivos do Azure Active Directory ponto de extremidade de perfil do serviço over-the-Air para dispositivos iOS, <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > em que <`yourdomainname`> é o nome de domínio que você configurou com o Azure Active Directory. Por exemplo, se seu nome de domínio for contoso.com, a URL seria: `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-   -   **Quando DRS local é o DRS configurado**: Abra o Apple Safari e navegue até o ponto de extremidade do perfil do DRS (serviço de registro de dispositivo) para dispositivos iOS, `https://adf1s.contoso.com/enrollmentserver/otaprofile`
+   -   **Quando o DRS local é o DRS configurado**: Abra o Apple Safari e navegue até o ponto de extremidade do perfil do DRS (serviço de registro de dispositivo) por meio do ar para dispositivos iOS, `https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-   Há muitas maneiras de se comunicar esta URL aos usuários. Uma maneira recomendada é publicando a URL em uma mensagem negada de acesso de aplicativo personalizado no AD FS. Isso é abordado na seção a seguir: [Criar uma política de acesso do aplicativo e uma mensagem personalizada de acesso negado](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+   Há muitas maneiras de se comunicar esta URL aos usuários. Uma maneira recomendada é publicando a URL em uma mensagem negada de acesso de aplicativo personalizado no AD FS. Isso é abordado na seção a seguir: [Criar uma política de acesso do aplicativo e mensagem negada de acesso personalizado](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
 2. Faça logon na página da Web usando uma conta de domínio da empresa: <strong>roberth@contoso.com</strong> e senha: <strong>P@ssword</strong>.
 
@@ -63,7 +63,7 @@ Nesta demonstração, você ingressa o dispositivo no local de trabalho.
 
 - [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [Passo a passo: Ingressar no local de trabalho com um dispositivo do Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [Walkthrough: Workplace Join com um dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
 
 

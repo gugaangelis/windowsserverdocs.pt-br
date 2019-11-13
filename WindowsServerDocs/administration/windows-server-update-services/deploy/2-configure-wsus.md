@@ -19,17 +19,17 @@ ms.locfileid: "71361666"
 ---
 # <a name="step-2-configure-wsus"></a>Etapa 2: Configurar o WSUS
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Depois de instalar a função de servidor do WSUS no servidor, você precisará configurá-lo adequadamente. A lista de verificação a seguir resume as etapas envolvidas na execução da configuração inicial do servidor do WSUS.
 
 |Tarefa|Descrição|
 |----|--------|
-|,1. Configurar conexões de rede @ no__t-0|Configure a rede de cluster usando o Assistente de Configuração de Rede.|
-|,2. Configurar o WSUS usando o assistente de configuração do WSUS @ no__t-0|Use o assistente de configuração do WSUS para executar a configuração básica do WSUS.|
-|,3. Configurar grupos de computadores do WSUS @ no__t-0|Crie grupos de computadores no console de administração do WSUS para gerenciar atualizações na sua organização.|
-|,4. Configurar atualizações do cliente @ no__t-0|Especifique como e quando as atualizações automáticas são aplicadas aos computadores cliente.|
-|,5. Proteger o WSUS com o protocolo protocolo SSL @ no__t-0|Configure o protocolo SSL para ajudar a proteger o WSUS (Windows Server Update Services).|
+|[2,1. configurar conexões de rede](#21-configure-network-connections)|Configure a rede de cluster usando o Assistente de Configuração de Rede.|
+|[2,2. configurar o WSUS usando o assistente de configuração do WSUS](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|Use o assistente de configuração do WSUS para executar a configuração básica do WSUS.|
+|[2,3. configurar grupos de computadores do WSUS](#23-configure-wsus-computer-groups)|Crie grupos de computadores no console de administração do WSUS para gerenciar atualizações na sua organização.|
+|[2,4. configurar atualizações do cliente](#24-configure-client-updates)|Especifique como e quando as atualizações automáticas são aplicadas aos computadores cliente.|
+|[2,5. proteger o WSUS com o protocolo protocolo SSL](#25-secure-wsus-with-the-secure-sockets-layer-protocol)|Configure o protocolo SSL para ajudar a proteger o WSUS (Windows Server Update Services).|
 
 ## <a name="21-configure-network-connections"></a>2.1. Configurar as conexões de rede
 Para começar o processo de configuração, verifique se sabe as respostas às seguintes perguntas:
@@ -56,33 +56,33 @@ Quando você tiver as respostas a essas perguntas, poderá começar a configurar
 ### <a name="211-connection-from-the-wsus-server-to-the-internet"></a>2.1.1. Conexão do servidor do WSUS com a Internet
 Se houver um firewall corporativo entre o WSUS e a Internet, convém configurar o firewall para garantir que o WSUS possa obter atualizações. Para obter atualizações do Microsoft Update, o servidor do WSUS usa a porta 443 para o protocolo HTTPS. Embora a maioria dos firewalls corporativos permita esse tipo de tráfego, há algumas empresas que restringem o acesso à Internet dos servidores devido às políticas de segurança da empresa. Se sua empresa restringe o acesso, você precisa obter autorização para permitir o acesso à Internet do WSUS à seguinte lista de URLs:
 
-- http @ no__t-0//windowsupdate. Microsoft. com
+- http\://windowsupdate.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
+- http\://\*. windowsupdate.microsoft.com
 
-- https @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
+- \:https //\*. windowsupdate.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.update.microsoft.com
+- http\://\*. update.microsoft.com
 
-- https @ no__t-0 @ no__t-1\*.update.microsoft.com
+- \:https //\*. update.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.windowsupdate.com
+- http\://\*. windowsupdate.com
 
-- http @ no__t-0//download. windowsupdate. com
+- http\://download.windowsupdate.com
 
-- https @ no__t-0//download. Microsoft. com
+- \:https//download.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.download.windowsupdate.com
+- http\://\*. download.windowsupdate.com
 
-- http @ no__t-0//wustat. Windows. com
+- http\://wustat.windows.com
 
-- http @ no__t-0//NtServicePack. Microsoft. com
+- http\://ntservicepack.microsoft.com
 
-- http @ no__t-0//go. Microsoft. com
+- http\://go.microsoft.com
 
-- http @ no__t-0//DL. Delivery. mp. Microsoft. com
+- http\://dl.delivery.mp.microsoft.com
 
-- https @ no__t-0//DL. Delivery. mp. Microsoft. com
+- \:https//dl.delivery.mp.microsoft.com
 
 > [!IMPORTANT]
 > Para um cenário no qual o WSUS não consegue obter atualizações devido a configurações de firewall, consulte o [artigo 885819](https://support.microsoft.com/kb/885819) na base de dados de conhecimento Microsoft.
@@ -123,7 +123,7 @@ Para configurar dois servidores proxy, cada um dos quais lidará com um protocol
 
 4.  Na janela do prompt de comando, vá para a pasta C:\Program Files\Update Services\Tools Digite o seguinte comando:
 
-    **WSUSutil ConfigureSSlproxy [< proxy_server proxy_port >]-enable**, em que:
+    **WSUSutil ConfigureSSlproxy [< proxy_server proxy_port >] – habilitar**, em que:
 
     1.  proxy_server é o nome do servidor proxy que dá suporte ao HTTPS.
 
@@ -232,7 +232,7 @@ Este procedimento pressupõe que você esteja usando o Assistente de Configuraç
 Agora que você executou a configuração básica do WSUS, leia as próximas seções para saber mais detalhes sobre como alterar as configurações usando o Console de Gerenciamento do WSUS.
 
 ## <a name="23-configure-wsus-computer-groups"></a>2.3. Configurar grupos de computadores do WSUS
-os grupos de computadores são uma parte importante das implantações do Windows Server Update Services (WSUS). Os grupos de computadores permitem testar e direcionar atualizações para computadores específicos. Há dois grupos de computadores padrão: Todos os computadores e computadores não atribuídos. Por padrão, quando cada computador cliente contata pela primeira vez o servidor do WSUS, o servidor adiciona esse computador cliente a ambos os grupos.
+os grupos de computadores são uma parte importante das implantações do Windows Server Update Services (WSUS). Os grupos de computadores permitem testar e direcionar atualizações para computadores específicos. Há dois grupos de computadores padrão: todos os computadores e computadores não atribuídos. Por padrão, quando cada computador cliente contata pela primeira vez o servidor do WSUS, o servidor adiciona esse computador cliente a ambos os grupos.
 
 Você pode criar quantos grupos de computadores personalizados precisar para gerenciar atualizações em sua organização. Como prática recomendada, crie pelo menos um grupo de computadores para testar as atualizações antes de implantá-las em outros computadores de sua organização.
 
@@ -262,9 +262,9 @@ A Instalação do WSUS configura automaticamente o IIS para que distribua a vers
 
 Use os procedimentos a seguir para configurar as Atualizações Automáticas para computadores clientes:
 
--   [Etapa 4: Definir as configurações da Política de Grupo para atualizações automáticas](4-configure-group-policy-settings-for-automatic-updates.md)
+-   [Etapa 4: definir configurações de Política de Grupo para Atualizações Automáticas](4-configure-group-policy-settings-for-automatic-updates.md)
 
--   ,3. Configurar grupos de computadores @ no__t-0 neste tópico
+-   [2,3. configurar grupos de computadores](#23-configure-wsus-computer-groups) neste tópico
 
 ### <a name="configure-automatic-updates-in-group-policy"></a>Configurar Atualizações Automáticas na Política de Grupo
 
@@ -389,7 +389,7 @@ O WSUS requer duas portas para o SSL: uma porta que usa HTTPS para enviar metada
 
 2.  Vá para **Iniciar**, digite **cmd**, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.
 
-3.  Navegue até a pasta _% ProgramFiles%_ **\\Update Services @ no__t-3Tools @ no__t-4** .
+3.  Navegue até a pasta _% ProgramFiles%_ **\\Update Services\\Tools\\** .
 
 4.  Na janela do prompt de comando, digite o seguinte comando:
 

@@ -21,14 +21,14 @@ ms.locfileid: "71367023"
 ---
 # <a name="step-2-configure-the-radius-server"></a>Etapa 2 configurar o servidor RADIUS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Antes de configurar o servidor de acesso remoto para dar suporte ao DirectAccess com suporte a OTP, configure o servidor RADIUS.  
   
 |Tarefa|Descrição|  
 |----|--------|  
-|,1. Configurar os tokens de distribuição de software RADIUS @ no__t-0|No servidor RADIUS, configure os tokens de distribuição de software.|  
-|,2. Configurar as informações de segurança do RADIUS @ no__t-0|No servidor RADIUS, configure as portas e o segredo compartilhado a serem usados.|  
+|[2,1. configurar os tokens de distribuição de software RADIUS](#BKMK_1.1)|No servidor RADIUS, configure os tokens de distribuição de software.|  
+|[2,2. configurar as informações de segurança do RADIUS](#BKMK_1.2)|No servidor RADIUS, configure as portas e o segredo compartilhado a serem usados.|  
 |[2,3 adicionando conta de usuário para investigação de OTP](#BKMK_Probe)|No servidor RADIUS, crie uma nova conta de usuário para investigação de OTP.|  
 |[2,4 sincronizar com Active Directory](#BKMK_Active)|No servidor RADIUS, crie contas de usuário sincronizadas com contas de Active Directory.|  
 |[2,5 configurar o agente de autenticação RADIUS](#BKMK_AuthAgent)|Configure o servidor de acesso remoto como um agente de autenticação RADIUS.|  

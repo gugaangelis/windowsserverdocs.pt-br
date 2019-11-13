@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
 
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
@@ -38,7 +38,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 ## <a name="impact"></a>Impacto  
   
-o sistema operacional convidado @no__t 0The e os aplicativos podem não ter um bom desempenho. Pode não haver memória suficiente para executar vários aplicativos ao mesmo tempo. Isso afeta as seguintes máquinas virtuais: *  
+*O sistema operacional convidado e os aplicativos podem não ter um bom desempenho. Pode não haver memória suficiente para executar vários aplicativos ao mesmo tempo. Isso afeta as seguintes máquinas virtuais:*  
 ```  
 <list of virtual machine names>  
 ```  

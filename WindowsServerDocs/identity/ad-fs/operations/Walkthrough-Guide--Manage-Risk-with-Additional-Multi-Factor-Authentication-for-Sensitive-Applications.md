@@ -28,15 +28,15 @@ Para obter mais informações sobre MFA e mecanismos de autenticação no AD FS,
 
 Este passo a passo consiste nas seguintes seções:
 
--   [Etapa 1: Configurando o ambiente de laboratório @ no__t-0
+-   [Etapa 1: Configurando o ambiente de laboratório](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [Etapa 2: Verifique o mecanismo de autenticação de AD FS padrão @ no__t-0
+-   [Etapa 2: verificar o mecanismo de autenticação de AD FS padrão](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)
 
--   [Etapa 3: Configurar a MFA no seu servidor de Federação @ no__t-0
+-   [Etapa 3: configurar a MFA no servidor de Federação](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_3)
 
--   [Etapa 4: Verificar o mecanismo de MFA @ no__t-0
+-   [Etapa 4: verificar o mecanismo de MFA](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
 
-## <a name="BKMK_1"></a>Etapa 1: Configuração do ambiente de laboratório
+## <a name="BKMK_1"></a>Etapa 1: Configurando o ambiente de laboratório
 Para concluir este passo a passo, é necessário um ambiente que consiste nos seguintes componentes:
 
 -   Um domínio Active Directory com um usuário de teste e contas de grupo, em execução no Windows Server 2012 R2 ou em um domínio de Active Directory em execução no Windows Server 2008, Windows Server 2008 R2 ou Windows Server 2012 com seu esquema atualizado para o Windows Server 2012 R2
@@ -54,7 +54,7 @@ Nesse ambiente, o servidor de federação emite as declarações que são necess
 
 Para obter instruções sobre como configurar esse ambiente, consulte [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
-## <a name="BKMK_2"></a>Etapa 2: Verificar mecanismo de autenticação AD FS padrão
+## <a name="BKMK_2"></a>Etapa 2: verificar o mecanismo de autenticação de AD FS padrão
 Nesta etapa, você verificará o mecanismo de controle de acesso do AD FS padrão (**Autenticação de Formulários** para extranet e **Autenticação do Windows** para intranet), no qual o usuário é redirecionado para a página de entrada do AD FS, fornece credenciais válidas e recebe o acesso ao aplicativo. Você pode usar a conta do AD de **Robert Hatley** e o aplicativo de exemplo **ClaimApp** que você configurou em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 1.  No computador cliente, abra uma janela do navegador e navegue até o aplicativo de exemplo: **https://webserv1.contoso.com/claimapp** .
@@ -65,7 +65,7 @@ Nesta etapa, você verificará o mecanismo de controle de acesso do AD FS padrã
 
     Você receberá acesso ao aplicativo.
 
-## <a name="BKMK_3"></a>Etapa 3: Configure o MFA no seu servidor de federação
+## <a name="BKMK_3"></a>Etapa 3: configurar a MFA no servidor de Federação
 Há duas partes para configurar o MFA em AD FS no Windows Server 2012 R2:
 
 -   [Selecione um método de autenticação adicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_5)
@@ -137,7 +137,7 @@ Conclua os procedimentos a seguir para baixar, configurar e selecionar a **auten
 
     3.  **Diretório** -o locatário do Windows Azure Active Directory ao qual o provedor de autenticação multifator está associado. Isso é opcional, já que o provedor não precisa estar ligado ao Active Directory do Windows Azure durante a proteção de aplicativos no local.
 
-7.  Depois de clicar em criar, o provedor da autenticação multifator será criado e você verá uma mensagem dizendo:  Provedor da Autenticação Multifator criado com êxito.  Clique em **Ok**.
+7.  Depois que você clicar em criar, o Provedor de Autenticação Multifator será criado e deve ser exibida uma mensagem informando que o provedor de autenticação multifator foi criado com sucesso.  Clique em **Ok**.
 
 Em seguida, é preciso baixar o servidor de autenticação multifator do Windows Azure. É possível fazer isso inicializando o portal de autenticação multifator do Windows Azure através do portal do Windows Azure.
 
@@ -232,7 +232,7 @@ Para habilitar a MFA, é preciso configurar a política da MFA no servidor de fe
     > [!NOTE]
     > Substitua <group_SID> pelo valor do SID de seu grupo **Finanças** do AD.
 
-## <a name="BKMK_4"></a>Etapa 4: verificar o mecanismo da MFA
+## <a name="BKMK_4"></a>Etapa 4: verificar o mecanismo de MFA
 Nesta etapa, você verificará a funcionalidade da MFA que configurou na etapa anterior. É possível usar o procedimento a seguir para verificar se o usuário do AD **Eduardo Gomes** pode acessar seu aplicativo de exemplo e, dessa vez, é necessário passar por MFA porque ele pertence ao grupo **Finanças**.
 
 1.  No computador cliente, abra uma janela do navegador e navegue até o aplicativo de exemplo: **https://webserv1.contoso.com/claimapp** .
@@ -243,7 +243,7 @@ Nesta etapa, você verificará a funcionalidade da MFA que configurou na etapa a
 
     Neste ponto, por causa da política do MFA que você configurou, o usuário será solicitado a passar por uma autenticação adicional. O texto de mensagem padrão é **por motivos de segurança, exigimos informações adicionais para verificar a sua conta.** No entanto, esse texto é totalmente personalizável. Para obter mais informações sobre como personalizar a experiência de entrada, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
 
-    Se você configurou a autenticação de certificado como o método de autenticação adicional, o texto de mensagem padrão será **Select um certificado que você deseja usar para autenticação. Se você cancelar a operação, feche o navegador e tente novamente.**
+    Se você configurou a autenticação de certificado como o método de autenticação adicional, o texto de mensagem padrão é **Selecione um certificado que você deseja usar para autenticação. Se você cancelar a operação, feche seu navegador e tente novamente.**
 
     Se você configurou o Microsoft Azure Multi-Factor Authentication como o método de autenticação adicional, o texto de mensagem padrão é **Uma chamada será enviada para seu telefone para concluir sua autenticação.** Para obter mais informações sobre como entrar com o Microsoft Azure Multi-Factor Authentication e usando várias opções para o método preferencial de verificação, consulte [Visão geral do Microsoft Azure Multi-Factor Authentication](https://technet.microsoft.com/library/dn249479.aspx).
 

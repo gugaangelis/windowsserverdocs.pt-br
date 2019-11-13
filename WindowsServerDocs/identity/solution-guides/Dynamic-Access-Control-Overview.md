@@ -92,7 +92,7 @@ Todo controlador de domínio precisa ter a mesma configuração de política de 
 ### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>Suporte no Active Directory para armazenar as declarações de usuários e dispositivos, as propriedades de recursos e os objetos de política de acesso central.  
   
 ### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>Suporte para usar a Política de Grupo para implantar os objetos de política de acesso central.  
-A configuração de Política de Grupo a seguir permite que você implante objetos de política de acesso central em servidores de arquivos em sua organização: **Computer Configuration\Policies\ Windows \ Settings\File System\Central Access Policy**.  
+A configuração da Política de Grupo a seguir permite implantar objetos de política de acesso central em servidores de arquivos de sua organização: **Configuração do Computador\Políticas\Configurações do Windows\Configurações de Segurança\Sistema de Arquivos\Política de Acesso Central**.  
   
 ### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>Suporte à autorização de arquivo baseada em declarações e à auditoria de sistemas de arquivos usando a Política de Grupo e a Auditoria de Acesso a Objeto Global  
 Você deve habilitar a auditoria de políticas de acesso central de preparo para fazer auditoria do acesso efetivo da política de acesso central usando as permissões propostas. Defina essa configuração para o computador em **Configuração Avançada de Política de Auditoria** nas **Configurações de Segurança** de um objeto de Política de Grupo (GPO). Depois de definir a configuração de segurança no GPO, você poderá implantar o GPO nos computadores em sua rede.  
@@ -128,7 +128,7 @@ Se as declarações forem transformadas quando saírem de uma floresta, todos os
 Um servidor de arquivos que executa o Windows Server 2012 ou Windows Server 2012 R2 deve ter uma configuração de Política de Grupo que especifica se é preciso obter declarações de usuário para tokens de usuário que não carregam declarações. Esta configuração é definida por padrão como **Automático**, o que resulta na **Habilitação** da configuração da Política de Grupo quando há uma política central que contém as declarações de usuário ou dispositivo para esse servidor de arquivos. Se o servidor de arquivos tiver ACLs discricionárias que incluem declarações de usuário, você precisará definir essa Política de Grupo como **Habilitada** para que o servidor saiba solicitar declarações em nome dos usuários que não as fornecem quando acessam o servidor.  
   
 ## <a name="additional-resource"></a>Recurso adicional  
-Para obter informações sobre como implementar soluções baseadas nessa tecnologia, consulte controle de acesso [Dynamic: Visão geral do cenário @ no__t-0.  
+Para obter informações sobre como implementar soluções baseadas nessa tecnologia, consulte [controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md).  
   
 
 

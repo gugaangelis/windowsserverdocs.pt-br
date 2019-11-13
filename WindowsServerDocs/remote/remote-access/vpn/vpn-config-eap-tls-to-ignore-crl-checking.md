@@ -26,8 +26,8 @@ ms.locfileid: "71388067"
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Etapa 7. Adicional Acesso condicional para conectividade VPN usando o Azure AD](ad-ca-vpn-connectivity-windows10.md)
-- [**Última** Etapa 7.2. Criar certificados raiz para autenticação de VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**Anterior:** Etapa 7. Adicional Acesso condicional para conectividade VPN usando o Azure AD](ad-ca-vpn-connectivity-windows10.md)
+- [**Em seguida:** Etapa 7,2. Criar certificados raiz para autenticação de VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 >[!IMPORTANT]
 >A falha na implementação dessa alteração do registro fará com que as conexões IKEv2 usando certificados de nuvem com PEAP falhem, mas conexões IKEv2 usando certificados de autenticação de cliente emitidos pela AC local continuarão funcionando.
@@ -45,7 +45,7 @@ Como o método de autenticação é EAP-TLS, esse valor de registro só é neces
 
 1. Abra o **regedit. exe** no servidor NPS.
 
-2. Navegue até **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**.
+2. Navegue até **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**.
 
 3. Selecione **editar > novo** e selecione o **valor DWORD (32 bits)** e insira **IgnoreNoRevocationCheck**.
 
@@ -64,4 +64,4 @@ Para obter mais informações, consulte [como habilitar ou desabilitar a CRL (ve
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Etapa 7.2. Criar certificados raiz para autenticação de VPN com o Azure AD @ no__t-0: Nesta etapa, você configura certificados raiz de acesso condicional para autenticação VPN com o Azure AD, que cria automaticamente um aplicativo de nuvem do servidor VPN no locatário.
+[Etapa 7,2. Criar certificados raiz para autenticação VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md): nesta etapa, você configura certificados raiz de acesso condicional para autenticação VPN com o Azure AD, que cria automaticamente um aplicativo de nuvem do servidor VPN no locatário.

@@ -19,11 +19,11 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388432"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guia do laboratório de teste: Demonstrar o DirectAccess em um cluster com o NLB do Windows
+# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guia de Teste de Laboratório: demonstrar o DirectAccess em um cluster com Windows NLB
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-O acesso remoto é uma função de servidor nos sistemas operacionais Windows Server 2016, Windows Server 2012 R2 e Server 2012 que permite que os usuários remotos acessem com segurança recursos de rede internos usando DirectAccess ou VPN RRAS. Este guia contém instruções passo a passo para estender o guia de laboratório do [Test: Demonstre a configuração do servidor único do DirectAccess com IPv4 misto e IPv6 @ no__t-0 para demonstrar o balanceamento de carga de rede do DirectAccess e a configuração de cluster.  
+O acesso remoto é uma função de servidor nos sistemas operacionais Windows Server 2016, Windows Server 2012 R2 e Server 2012 que permite que os usuários remotos acessem com segurança recursos de rede internos usando DirectAccess ou VPN RRAS. Este guia contém instruções passo a passo para a extensão do [Guia de Teste de Laboratório: demonstrar a instalação de servidor único de DirectAccess com misto de IPv4 e IPv6](https://go.microsoft.com/fwlink/p/?LinkId=237004) para demonstrar o Balanceamento de Carga de Rede do DirectAccess e a configuração de cluster.  
   
 ## <a name="about-this-guide"></a>Sobre este guia  
 Este guia contém instruções para a configuração e demonstração do Acesso Remoto usando seis servidores e dois computadores clientes. O teste de laboratório de Acesso Remoto concluído com NLB simula uma intranet, a Internet e uma rede doméstica e demonstra a funcionalidade de Acesso Remoto em diferentes cenários de conexão à Internet.  

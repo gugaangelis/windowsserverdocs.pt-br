@@ -21,7 +21,7 @@ ms.locfileid: "71367412"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>Etapa 2 preparar servidores de cluster
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Antes de configurar uma implantação de cluster, você prepara servidores adicionais para adicionar ao cluster.  
   
@@ -85,7 +85,7 @@ Para configurar um cluster de acesso remoto, você deve instalar o recurso de ba
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 3: Configurar um cluster com balanceamento de carga @ no__t-0  
+-   [Etapa 3: configurar um cluster com balanceamento de carga](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   
 
 

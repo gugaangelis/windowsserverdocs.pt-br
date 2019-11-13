@@ -50,13 +50,13 @@ O script abaixo pode ser executado diretamente do portal do Azure. Se você opta
 
 | Nome da variável | Finalidade |
 | :---: | :--- |
-| adminUsername | Nome de usuário a ser configurado em cada VM como o administrador local. |
-| adminPassword | Senha de texto não criptografado a ser configurada em cada VM como a senha de administrador local. |
-| resourceGroupName | Nome a ser usado para o grupo de recursos. Não deve duplicar um nome existente. |
+| AdminUsername | Nome de usuário a ser configurado em cada VM como o administrador local. |
+| AdminPassword | Senha de texto não criptografado a ser configurada em cada VM como a senha de administrador local. |
+| ResourceGroupName | Nome a ser usado para o grupo de recursos. Não deve duplicar um nome existente. |
 | Location | Nome do local do Azure no qual você deseja implantar. Listar regiões com suporte para a assinatura atual usando `az account list-locations`. |
 | VNetName | O nome para atribuir a rede virtual do Azure não deve duplicar um nome existente. |
 | VNetAddress | Escopo de IP a ser usado para a rede do Azure. Não deve duplicar um intervalo existente. |
-| subnetName | Nome para atribuir a sub-rede IP. Não deve duplicar um nome existente. |
+| SubnetName | Nome para atribuir a sub-rede IP. Não deve duplicar um nome existente. |
 | SubnetAddress | Endereço de sub-rede para os controladores de domínio. Deve ser uma sub-rede dentro da VNet. |
 | AvailabilitySet | Nome do conjunto de disponibilidade em que as VMs do controlador de domínio ingressarão. |
 | VMSize | Tamanho de VM do Azure padrão disponível no local para implantação. |
@@ -159,7 +159,8 @@ Se as máquinas virtuais do Azure criadas como parte desse processo forem uma ex
 
 Depois de promover os novos controladores de domínio no Azure, eles precisarão ser definidos para os servidores DNS primários e secundários para a rede virtual, e quaisquer servidores DNS locais serão rebaixados para o terciário e posterior. Mais informações sobre como alterar servidores DNS podem ser encontradas no artigo [criar, alterar ou excluir uma rede virtual](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers).
 
-Informações sobre como estender uma rede local para o Azure podem ser encontradas no artigo [Creating uma conexão VPN site a site @ no__t-1.
+Informações sobre como estender uma rede local para o Azure podem ser encontradas no artigo [criando uma conexão VPN site a site](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+).
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>Configurar as VMs e instalar Active Directory Domain Services
 

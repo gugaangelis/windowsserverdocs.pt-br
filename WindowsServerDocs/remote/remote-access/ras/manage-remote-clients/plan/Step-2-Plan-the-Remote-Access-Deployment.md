@@ -21,12 +21,12 @@ ms.locfileid: "71404579"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>Etapa 2 planejar a implantação de acesso remoto
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois de planejar a infraestrutura que você pretende usar para configurar seu único servidor de acesso remoto para o gerenciamento remoto de clientes DirectAccess, você estará pronto para planejar as configurações que o assistente de configuração de acesso remoto usará.  
   
 > [!NOTE]  
-> Antes de continuar com essas tarefas, consulte [Step 1: Planeje a infraestrutura de acesso remoto @ no__t-0.  
+> Antes de continuar com essas tarefas, consulte [etapa 1: planejar a infraestrutura de acesso remoto](Step-1-Plan-the-Remote-Access-Infrastructure.md).  
   
 |Tarefa|Descrição|  
 |----|--------|  
@@ -76,9 +76,9 @@ As decisões que você precisa fazer ao planejar a implantação do servidor de 
   
     Há duas topologias disponíveis ao implantar um servidor de acesso remoto:  
   
-    -   **Dois adaptadores**: Com dois adaptadores de rede, o acesso remoto pode ser configurado com um adaptador de rede conectado diretamente à Internet e o outro conectado à rede interna. Ou, como alternativa, o servidor é instalado atrás de um dispositivo de borda, como um firewall ou um roteador. Nessa configuração, um adaptador de rede é conectado à rede de perímetro e o outro é conectado à rede interna.  
+    -   **Dois adaptadores**: com dois adaptadores de rede, o acesso remoto pode ser configurado com um adaptador de rede conectado diretamente à Internet e o outro conectado à rede interna. Ou, como alternativa, o servidor é instalado atrás de um dispositivo de borda, como um firewall ou um roteador. Nessa configuração, um adaptador de rede é conectado à rede de perímetro e o outro é conectado à rede interna.  
   
-    -   **Adaptador de rede único**: Nessa configuração, o servidor de acesso remoto é instalado atrás de um dispositivo de borda, como um firewall ou um roteador. O adaptador de rede é conectado à rede interna.  
+    -   **Adaptador de rede único**: nessa configuração, o servidor de acesso remoto é instalado atrás de um dispositivo de borda, como um firewall ou um roteador. O adaptador de rede é conectado à rede interna.  
 
 -   **Adaptadores de rede**  
   
@@ -96,9 +96,9 @@ As decisões que você precisa fazer ao planejar a implantação do servidor de 
   
     Você pode escolher um dos seguintes métodos para autenticar clientes do DirectAccess no servidor de acesso remoto:  
   
-    -   **Autenticação do usuário**: Você pode habilitar os usuários para autenticação com credenciais do Active Directory ou com autenticação em dois fatores.  
+    -   **Autenticação de usuário**: você pode habilitar usuários para autenticar com Active Directory credenciais ou com a autenticação de dois fatores.  
   
-    -   **Autenticação do computador**: Você pode configurar a autenticação do computador para usar certificados. Ou o servidor de acesso remoto pode atuar como um proxy para autenticação Kerberos sem a necessidade de certificados. 
+    -   **Autenticação do computador**: você pode configurar a autenticação do computador para usar certificados. Ou o servidor de acesso remoto pode atuar como um proxy para autenticação Kerberos sem a necessidade de certificados. 
   
     -   **Clientes do Windows 7** Por padrão, os computadores cliente que executam o Windows 7 não podem se conectar a uma implantação de acesso remoto que executa o Windows Server 2012. Se você tiver clientes que executam o Windows 7 em sua organização que exigem acesso remoto a recursos internos, você poderá permitir que eles se conectem. Qualquer computador cliente que poderá receber acesso aos recursos internos deverá ser membro de um grupo de segurança especificado no Assistente de configuração do cliente do DirectAccess.  
   
@@ -120,7 +120,7 @@ O acesso remoto requer três tipos de servidores de infraestrutura:
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Etapa 1: Planejar a infraestrutura de acesso remoto](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
+-   [Etapa 1: planejar a infraestrutura de acesso remoto](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
   
 
 

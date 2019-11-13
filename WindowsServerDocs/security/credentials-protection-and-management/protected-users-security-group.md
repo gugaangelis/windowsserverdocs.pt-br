@@ -22,7 +22,7 @@ ms.locfileid: "71403780"
 ---
 # <a name="protected-users-security-group"></a>Grupo de segurança de usuários protegidos
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico destinado a profissionais de TI descreve o grupo de segurança do Active Directory chamado Usuários Protegidos e explica como ele funciona. Esse grupo foi introduzido nos controladores de domínio do Windows Server 2012 R2.
 
@@ -31,7 +31,7 @@ Este tópico destinado a profissionais de TI descreve o grupo de segurança do A
 Esse grupo de segurança é projetado como parte de uma estratégia para gerenciar a exposição de credenciais dentro da empresa. Os membros deste grupo possuem proteções não configuráveis automaticamente aplicadas às suas contas. A associação ao grupo Usuários protegidos visa restringir e proteger proativamente por padrão. O único método de modificar tais proteções de uma conta é removê-la do grupo de segurança.
 
 > [!WARNING]
-> As contas para serviços e computadores nunca devem ser membros do grupo usuários protegidos. Esse grupo fornece proteção incompleta, de qualquer forma, porque a senha ou o certificado está sempre disponível no host. A autenticação falhará com o erro \"the nome de usuário ou a senha está incorreta @ no__t-1 para qualquer serviço ou computador adicionado ao grupo de usuários protegidos.
+> As contas para serviços e computadores nunca devem ser membros do grupo usuários protegidos. Esse grupo fornece proteção incompleta, de qualquer forma, porque a senha ou o certificado está sempre disponível no host. A autenticação falhará com o erro \"o nome de usuário ou a senha estiver incorreta\" para qualquer serviço ou computador adicionado ao grupo de usuários protegidos.
 
 Esse grupo global relacionado ao domínio dispara proteção não configurável em dispositivos e computadores host que executam o Windows Server 2012 R2 e o Windows 8.1 ou posterior para usuários em domínios com um controlador de domínio primário executando o Windows Server 2012 R2. Isso reduz significativamente a superfície de memória padrão de credenciais quando os usuários entram em computadores com essas proteções.
 
@@ -67,7 +67,7 @@ A tabela a seguir especifica as propriedades do grupo Usuários protegidos.
 |-------|-----|
 |SID/RID conhecido|S-1-5-21-<domain>-525|
 |Tipo|Domínio global|
-|Contêiner padrão|CN = Users, DC = <domain>, DC =|
+|Contêiner padrão|CN = Users, DC =<domain>, DC =|
 |Membros padrão|Nenhuma|
 |Membro padrão de|Nenhuma|
 |Protegido por ADMINSDHOLDER?|Não|
@@ -90,7 +90,7 @@ Quando o usuário conectado for membro do grupo de usuários protegidos, as segu
 -   A partir do Windows 8.1 e do Windows Server 2012 R2, o Windows Digest não armazenará em cache as credenciais de texto sem formatação do usuário mesmo quando o Windows Digest estiver habilitado.
 
 > [!Note]
-> Depois de instalar o [Microsoft Security Advisory 2871997](https://technet.microsoft.com/library/security/2871997) , o resumo do Windows continuará a armazenar as credenciais em cache até a chave do registro ser configurada. Consulte consultoria de segurança [Microsoft: Atualização para melhorar a proteção e o gerenciamento de credenciais: 13 de maio de 2014 @ no__t-0 para obter instruções.
+> Depois de instalar o [Microsoft Security Advisory 2871997](https://technet.microsoft.com/library/security/2871997) , o resumo do Windows continuará a armazenar as credenciais em cache até a chave do registro ser configurada. Consulte [consultoria de segurança da Microsoft: atualizar para melhorar a proteção e o gerenciamento de credenciais: 13 de maio de 2014](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obter instruções.
 
 -   O NTLM não armazenará em cache as credenciais de texto sem formatação do usuário ou a função unidirecional do NT (NTOWF).
 
@@ -121,7 +121,7 @@ Dois logs administrativos operacionais estão disponíveis para ajudar a solucio
 |ID e log de evento|Descrição|
 |----------|--------|
 |104<br /><br />**ProtectedUser-Client**|Motivo: O pacote de segurança no cliente não contém as credenciais.<br /><br />O erro é registrado em log no computador cliente quando a conta é um membro do grupo de segurança Usuários protegidos. Este evento indica que o pacote de segurança não armazena em cache as credenciais necessárias para autenticar o servidor.<br /><br />Exibe os nomes do pacote, usuário, domínio e servidor.|
-|304<br /><br />**ProtectedUser-Client**|Motivo: O pacote de segurança não armazena as credenciais do usuário protegido.<br /><br />Um evento informativo é registrado no cliente para indicar que o pacote de segurança não armazena em cache as credenciais de entrada do usuário. Espera-se que o Digest (WDigest), Delegação de credenciais (CredSSP) e NTLM falhem ao entrar com credenciais para Usuários protegidos. Os aplicativos ainda funcionarão se solicitarem as credenciais.<br /><br />Exibe os nomes do pacote, usuário e domínio.|
+|304<br /><br />**ProtectedUser-Client**|Motivo: o pacote de segurança não armazena as credenciais do usuário protegido.<br /><br />Um evento informativo é registrado no cliente para indicar que o pacote de segurança não armazena em cache as credenciais de entrada do usuário. Espera-se que o Digest (WDigest), Delegação de credenciais (CredSSP) e NTLM falhem ao entrar com credenciais para Usuários protegidos. Os aplicativos ainda funcionarão se solicitarem as credenciais.<br /><br />Exibe os nomes do pacote, usuário e domínio.|
 |100<br /><br />**ProtectedUserFailures-DomainController**|Motivo: Uma falha de logon de NTLM que ocorre em uma conta presente no grupo de segurança Usuários protegidos.<br /><br />Um erro é registrado em log no controlador de domínio para indicar que a autenticação NTLM falhou porque a conta era membro do grupo de segurança Usuários protegidos.<br /><br />Exibe os nomes da conta e do dispositivo.|
 |104<br /><br />**ProtectedUserFailures-DomainController**|Motivo: Tipos de criptografia DES ou RC4 são usados para a autenticação do Kerberos e uma falha de entrada ocorre para um usuário do grupo de segurança de Usuário protegido.<br /><br />A pré-autenticação do Kerberos falhou porque os tipos de criptografia DES e RC4 não podem ser usados quando a conta é membro do grupo de segurança de Usuários protegidos.<br /><br />(AES é aceitável.)|
 |303<br /><br />**ProtectedUserSuccesses-DomainController**|Motivo: Um TGT do Kerberos foi emitido com êxito para um membro do grupo de Usuários protegidos.|

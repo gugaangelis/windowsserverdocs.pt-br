@@ -23,7 +23,7 @@ ms.locfileid: "71407520"
 
 -   [Configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
--   [Guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+-   [Guia de instruções: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 
 -   [Configurar métodos de autenticação adicionais para AD FS](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
@@ -37,7 +37,7 @@ Esse guia contém as seguintes informações:
     > [!NOTE]
     > Em AD FS no Windows Server 2012 R2, você pode habilitar a MFA com base no local de rede, na identidade do dispositivo e na identidade do usuário ou na associação de grupo.
 
-    Para obter instruções passo a passo detalhadas para configurar e verificar esse cenário, consulte o guia do [Walkthrough: Gerencie riscos com autenticação multifator adicional para aplicativos](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)confidenciais.
+    Para obter instruções passo a passo detalhadas para configurar e verificar esse cenário, consulte [guia passo a passos: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).
 
 ## <a name="BKMK_1"></a>Principais conceitos-mecanismos de autenticação no AD FS
 
@@ -51,7 +51,7 @@ O Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server
     -   Habilitar a autenticação de dispositivos para autenticação de dois fatores contínua. Isso vincula a identidade do usuário ao dispositivo registrado que é usado para acessar o recurso, oferecendo, portanto, uma verificação de identidade composta mais segura antes que os recursos protegidos sejam acessados.
 
         > [!NOTE]
-        > Para obter mais informações sobre o objeto de dispositivo, o serviço de registro de dispositivo, o Workplace Join e o dispositivo como autenticação de dois fatores e SSO contínuos, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e autenticação de segundo fator direta entre a empresa Aplicativos](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+        > Para obter mais informações sobre o objeto de dispositivo, o serviço de registro de dispositivo, o Workplace Join e o dispositivo como autenticação de dois fatores e SSO contínuos, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e autenticação de segundo fator direta entre aplicativos da empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
     -   Defina o requisito de MFA para todo o acesso à extranet ou condicionalmente com base na identidade do usuário, no local de rede ou em um dispositivo usado para acessar recursos protegidos.
 
@@ -72,7 +72,7 @@ Uma política de autenticação global se aplica a todas as terceiras partes con
 
 -   Definições e métodos para a MFA
 
--   Se a autenticação de dispositivo está habilitada. Para obter mais informações, consulte [ingresse no local de trabalho de qualquer dispositivo para SSO e contínuo segundo fator de autenticação em aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+-   Se a autenticação de dispositivo está habilitada. Para obter mais informações, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
 As políticas de autenticação por objeto de confiança da terceira parte confiável aplicam-se especificamente às tentativas de acessar esse objeto de confiança da terceira parte confiável (aplicativo ou serviço). É possível configurar as seguintes definições como parte da política de autenticação por objeto de confiança da terceira parte confiável:
 
@@ -94,7 +94,7 @@ Ao selecionar mais de um método de autenticação, você habilita seus usuário
 Você habilita também a autenticação de dispositivos para autenticação de dois fatores contínua. Isso vincula a identidade do usuário ao dispositivo registrado que é usado para acessar o recurso, oferecendo, portanto, uma verificação de identidade composta mais segura antes que os recursos protegidos sejam acessados.
 
 > [!NOTE]
-> Para obter mais informações sobre o objeto de dispositivo, o serviço de registro de dispositivo, o Workplace Join e o dispositivo como autenticação de dois fatores e SSO contínuos, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e autenticação de segundo fator direta entre a empresa Aplicativos](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+> Para obter mais informações sobre o objeto de dispositivo, o serviço de registro de dispositivo, o Workplace Join e o dispositivo como autenticação de dois fatores e SSO contínuos, consulte [ingressar no local de trabalho de qualquer dispositivo para SSO e autenticação de segundo fator direta entre aplicativos da empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
 Se você especificar o método de autenticação do Windows (opção padrão) para seus recursos de intranet, as solicitações de autenticação serão submetidas a esse método sem problemas em navegadores que oferecem suporte a autenticação do Windows.
 
@@ -123,24 +123,24 @@ Nesse cenário, você habilita a MFA com base nos dados de associação de grupo
 
 Mais especificamente, nesse cenário, você habilita uma política de autenticação para um aplicativo de teste baseado em declarações chamado **claimapp**, pela qual um usuário do AD de **Robert Hatley** será requisitado a passar por MFA porque pertence ao **Finance** do grupo AD.
 
-As instruções da etapa passo a passo para configurar e verificar esse cenário são fornecidas no guia [Walkthrough: Gerencie riscos com autenticação multifator adicional para aplicativos](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)confidenciais. Para concluir as etapas neste passo a passos, você deve configurar um ambiente de laboratório e seguir as etapas em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+As instruções da etapa passo a passo para configurar e verificar esse cenário são fornecidas no [Guia de instruções: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md). Para concluir as etapas neste passo a passos, você deve configurar um ambiente de laboratório e seguir as etapas em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 Outros cenários de habilitação de MFA no AD FS incluem o seguinte:
 
--   Habilitar a MFA, se a solicitação de acesso provir da extranet. Você pode modificar o código apresentado na seção "configurar a política de MFA" do guia [Walkthrough: Gerencie o risco com a autenticação multifator adicional para aplicativos confidenciais @ no__t-0 com o seguinte:
+-   Habilitar a MFA, se a solicitação de acesso provir da extranet. Você pode modificar o código apresentado na seção "configurar a política de MFA" do [Guia de explicação: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
 
     ```
     'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'
     ```
 
--   Habilitar a MFA, se a solicitação de acesso provir de um dispositivo que não está ingressado no local de trabalho.  Você pode modificar o código apresentado na seção "configurar a política de MFA" do guia [Walkthrough: Gerencie o risco com a autenticação multifator adicional para aplicativos confidenciais @ no__t-0 com o seguinte:
+-   Habilitar a MFA, se a solicitação de acesso provir de um dispositivo que não está ingressado no local de trabalho.  Você pode modificar o código apresentado na seção "configurar a política de MFA" do [Guia de explicação: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
 
     ```
     'NOT EXISTS([type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"]) => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
 
     ```
 
--   Habilitar a MFA, se o acesso estiver vindo de um usuário com um dispositivo que está ingressado no local de trabalho, mas não está registrado para esse usuário. Você pode modificar o código apresentado na seção "configurar a política de MFA" do guia [Walkthrough: Gerencie o risco com a autenticação multifator adicional para aplicativos confidenciais @ no__t-0 com o seguinte:
+-   Habilitar a MFA, se o acesso estiver vindo de um usuário com um dispositivo que está ingressado no local de trabalho, mas não está registrado para esse usuário. Você pode modificar o código apresentado na seção "configurar a política de MFA" do [Guia de explicação: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) com o seguinte:
 
     ```
     'c:[type=="https://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser", value == "false"] => issue (type="https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn");'
@@ -148,7 +148,8 @@ Outros cenários de habilitação de MFA no AD FS incluem o seguinte:
     ```
 
 ## <a name="see-also"></a>Consulte também
-[Guia passo a passo: Gerencie o risco com a autenticação multifator adicional para aplicativos confidenciais @ no__t-0 @ no__t-1[Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[Guia de instruções: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+[Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

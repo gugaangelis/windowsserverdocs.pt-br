@@ -21,12 +21,12 @@ ms.locfileid: "71404433"
 ---
 # <a name="troubleshooting-web-probe-urls"></a>Solução de problemas com URLs de investigação da Web
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico contém informações sobre como solucionar problemas relacionados ao comando `Set-DAEntryPointDC`. Para confirmar que o erro recebido está relacionado à configuração do controlador de domínio de ponto de entrada, procure a ID de evento 10065 no Log de Eventos do Windows.  
   
 ## <a name="SaveGPOSettings"></a>Salvando configurações de GPO do servidor  
-**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto para o GPO < GPO_name >.  
+**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO < GPO_name >.  
   
 Para solucionar esse erro, consulte Salvando configurações de GPO do servidor.  
   
@@ -92,7 +92,7 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
 -   **Problema 1**  
   
-    **Erro recebido**. Não é possível acessar o controlador de domínio < domain_controller >. Verifique a conectividade da rede e a disponibilidade do controlador de domínio.  
+    **Erro recebido**. O controlador de domínio < domain_controller > não pode ser acessado. Verifique a conectividade da rede e a disponibilidade do controlador de domínio.  
   
     **Causa**  
   
@@ -116,7 +116,7 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
 -   **Problema 3**  
   
-    **Erro recebido**. Não é possível acessar o controlador de domínio < domain_controller > para% 2! s!.  
+    **Erro recebido**. O controlador de domínio < domain_controller > não pode ser acessado para %2! s!.  
   
     **Causa**  
   
@@ -124,11 +124,11 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
     **Solução**  
   
-    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor", descrito em ,4. Configure GPOs @ no__t-0.  
+    Siga o procedimento "para alterar o controlador de domínio que gerencia GPOs de servidor", descrito em [2,4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 -   **Problema 4**  
   
-    **Erro recebido**. O controlador de domínio primário no domínio < nome_do_domínio > não pode ser acessado.  
+    **Erro recebido**. O controlador de domínio primário no domínio < domain_name > não pode ser acessado.  
   
     **Causa**  
   
@@ -136,7 +136,7 @@ Assegure-se de que o computador remoto possa ser acessado através do RPC e de q
   
     **Solução**  
   
-    Siga o procedimento "para transferir a função de emulador de PDC", descrito em ,4. Configure GPOs @ no__t-0.  
+    Siga o procedimento "para transferir a função de emulador de PDC", descrito em [2,4. Configurar GPOs](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 ## <a name="read-only-domain-controller"></a>Controlador de domínio somente leitura  
 **Erro recebido**. O controlador de domínio < domain_controller > é somente leitura. Especifique um controlador de domínio que não seja somente leitura.  
@@ -153,7 +153,7 @@ Quando o cmdlet `Set-DAEntryPointDC` é utilizado, o parâmetro *NewDC* é usado
   
 -   **Problema 1**  
   
-    **Erro recebido**. O GPO < GPO_name > no controlador de domínio < o > de previous_domain_controller não pode ser recuperado do controlador de domínio < replacement_domain_controller > porque eles não estão no mesmo domínio.  
+    **Erro recebido**. O GPO < GPO_name > no controlador de domínio < previous_domain_controller > não pode ser recuperado do controlador de domínio < replacement_domain_controller do > porque eles não estão no mesmo domínio.  
   
     **Causa**  
   
@@ -165,7 +165,7 @@ Quando o cmdlet `Set-DAEntryPointDC` é utilizado, o parâmetro *NewDC* é usado
   
 -   **Problema 2**  
   
-    **Erro recebido**. O GPO < GPO_name > no controlador de domínio < o > de previous_domain_controller não pode ser recuperado do controlador de domínio < replacement_domain_controller >. Aguarde até a conclusão da replicação do domínio e tente de novo.  
+    **Erro recebido**. O GPO < GPO_name > no controlador de domínio < previous_domain_controller > não podem ser recuperados do controlador de domínio < replacement_domain_controller do. Aguarde até a conclusão da replicação do domínio e tente de novo.  
   
     **Causa**  
   
@@ -214,7 +214,7 @@ Certifique-se de que o nome do ponto de entrada esteja escrito corretamente e de
   
 -   **Problema 2**  
   
-    **Erro recebido**. As configurações não podem ser salvas no registro no servidor < server_name > no ponto de entrada < entry_point_name >.  
+    **Erro recebido**. Não é possível salvar as configurações no registro no servidor < server_name > no ponto de entrada < entry_point_name >.  
   
     **Causa**  
   

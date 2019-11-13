@@ -21,7 +21,7 @@ ms.locfileid: "71394384"
 
 Este tópico discute como solucionar problemas de carregamento e descarregamento de perfis de usuário usando eventos e logs de rastreamento. As seções a seguir descrevem como usar os três logs de eventos que registram informações de perfil do usuário.
 
-## <a name="step-1-checking-events-in-the-application-log"></a>Etapa 1: Verificando eventos no log do aplicativo
+## <a name="step-1-checking-events-in-the-application-log"></a>Etapa 1: verificando eventos no log do aplicativo
 
 A primeira etapa na solução de problemas com o carregamento e o descarregamento de perfis de usuário (incluindo perfis de usuários móveis) é usar Visualizador de Eventos para examinar os eventos de aviso e de erro que o serviço de perfil de usuário registra no log do aplicativo.
 
@@ -38,7 +38,7 @@ Veja como exibir eventos de serviços de perfil de usuário no log do aplicativo
 >[!NOTE]
 >Você pode ignorar com segurança o evento 1530 do serviço de perfil de usuário "o Windows detectou que o arquivo de registro ainda está em uso por outros aplicativos ou serviços".
 
-## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>Etapa 2: Exibir o log operacional para o serviço de perfil de usuário
+## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>Etapa 2: exibir o log operacional para o serviço de perfil de usuário
 
 Se você não puder resolver o problema usando o log do aplicativo sozinho, use o procedimento a seguir para exibir os eventos do serviço de perfil do usuário no log operacional. Esse log mostra alguns dos trabalhos internos do serviço e pode ajudar a identificar onde o problema é carregado ou descarregado no processo de carregamento do perfil.
 
@@ -49,7 +49,7 @@ Veja como exibir o log operacional para o serviço de perfil de usuário:
 1. Na árvore de console do Visualizador de Eventos, navegue **até logs de aplicativos e serviços**, em seguida, **Microsoft**, **Windows**, serviço de **perfil de usuário**e, em seguida, **operacional**.
 2. Examine os eventos que ocorreram em vez do erro ou dos eventos de aviso que você anotou no log do aplicativo.
 
-## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>Etapa 3: Habilitar e exibir logs analíticos e de depuração
+## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>Etapa 3: habilitar e exibir logs analíticos e de depuração
 
 Se precisar de mais detalhes do que o log operacional fornece, você poderá habilitar os logs analíticos e de depuração no computador afetado. Esse nível de registro em log é muito mais detalhado e deve ser desabilitado, exceto ao tentar solucionar um problema.
 
@@ -58,7 +58,7 @@ Veja como habilitar e exibir logs analíticos e de depuração:
 1. No painel **ações** de visualizador de eventos, selecione **Exibir**e, em seguida, selecione **Mostrar logs analíticos e de depuração**.
 2. Navegue até **aplicativos e serviços logs**, em seguida, **Microsoft**, **Windows**, **serviço de perfil de usuário**e **diagnóstico**.
 3. Selecione **habilitar log** e, em seguida, selecione **Sim**. Isso habilita o log de diagnóstico, que iniciará o registro em log.
-4. Se você precisar de informações ainda mais detalhadas, consulte [Step 4: Criando e decodificando um Trace @ no__t-0 para obter mais informações sobre como criar um log de rastreamento.
+4. Se você precisar de informações ainda mais detalhadas, consulte [etapa 4: Criando e decodificando um rastreamento](#step-4-creating-and-decoding-a-trace) para obter mais informações sobre como criar um log de rastreamento.
 5. Quando você terminar de solucionar o problema, navegue até o log de **diagnóstico** , **selecione Desabilitar log**, selecione **Exibir** e desmarque a caixa de seleção **Mostrar logs analíticos e de depuração** para ocultar o log analítico e de depuração.
 
 ## <a name="step-4-creating-and-decoding-a-trace"></a>Etapa 4: Criando e decodificando um rastreamento
@@ -70,7 +70,7 @@ A melhor estratégia ao usar o rastreamento de ETL é primeiro capturar o menor 
 Veja como criar e decodificar um rastreamento para o serviço de perfil de usuário:
 
 1. Faça logon no computador em que o usuário está enfrentando problemas, usando uma conta que seja membro do grupo local de administradores.
-2. Em um prompt de comandos com privilégios elevados, insira os comandos a seguir, em que *\<Path @ no__t-2* é o caminho para uma pasta local que você criou anteriormente, por exemplo C: \\logs:
+2. Em um prompt de comando elevado, insira os comandos a seguir, em que *\<caminho\>* é o caminho para uma pasta local que você criou anteriormente, por exemplo C: logs de\\:
         
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
@@ -84,7 +84,7 @@ Veja como criar e decodificar um rastreamento para o serviço de perfil de usuá
     ```PowerShell
     logman stop -n RUP -ets
     ```
-7. Digite o seguinte comando para exportar o arquivo ETL para um arquivo legível no diretório atual (provavelmente a pasta base ou a pasta% WINDIR% \\System32):
+7. Digite o seguinte comando para exportar o arquivo ETL para um arquivo legível no diretório atual (provavelmente a pasta base ou a pasta% WINDIR%\\system32):
     
     ```PowerShell
     Tracerpt <path>\RUP.etl

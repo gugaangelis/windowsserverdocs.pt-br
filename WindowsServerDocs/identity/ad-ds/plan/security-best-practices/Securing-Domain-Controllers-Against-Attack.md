@@ -20,7 +20,7 @@ ms.locfileid: "71367624"
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Número de @no__t 0Law três: Se uma pessoa mal-intencionada tiver acesso físico irrestrito ao seu computador, ele não será mais o seu computador. * - [leis imutáveis de segurança (versão 2,0)](https://technet.microsoft.com/security/hh278941.aspx)  
+*Número da lei três: se uma pessoa mal-intencionada tiver acesso físico irrestrito ao seu computador, ele não será mais o seu computador.* - [dez leis imutáveis de segurança (versão 2,0)](https://technet.microsoft.com/security/hh278941.aspx)  
   
 Os controladores de domínio fornecem o armazenamento físico para o banco de dados de AD DS, além de fornecer os serviços e os dados que permitem às empresas gerenciar efetivamente seus servidores, estações de trabalho, usuários e aplicativos. Se o acesso privilegiado a um controlador de domínio for obtido por um usuário mal-intencionado, esse usuário poderá modificar, corromper ou destruir o banco de dados AD DS e, por extensão, todos os sistemas e contas que são gerenciados pelo Active Directory.  
   
@@ -36,7 +36,7 @@ Esta seção fornece informações sobre a proteção física de controladores d
   
 #### <a name="physical-domain-controllers"></a>Controladores de domínio físicos
 
-Em data centers, os controladores de domínio físicos devem ser instalados em racks seguros dedicados ou em compartimentos separados da população geral do servidor. Quando possível, os controladores de domínio devem ser configurados com chips de Trusted Platform Module (TPM) e todos os volumes nos servidores do controlador de domínio devem ser protegidos via Criptografia de Unidade de Disco BitLocker. O BitLocker geralmente adiciona sobrecarga de desempenho em percentuais de dígito único, mas protege o diretório contra comprometimento, mesmo se os discos forem removidos do servidor. O BitLocker também pode ajudar a proteger sistemas contra ataques, como rootkits, pois a modificação de arquivos de inicialização fará com que o servidor inicialize no modo de recuperação para que os binários originais possam ser carregados. Se um controlador de domínio estiver configurado para usar RAID de software, SCSI conectado em série, armazenamento SAN/NAS ou volumes dinâmicos, o BitLocker não poderá ser implementado, portanto, o armazenamento localmente anexado (com ou sem RAID de hardware) deverá ser usado em controladores de domínio sempre que possível.  
+Em data centers, os controladores de domínio físicos devem ser instalados em racks seguros dedicados ou em compartimentos separados da população geral do servidor. Quando possível, os controladores de domínio devem ser configurados com chips de Trusted Platform Module (TPM) e todos os volumes nos servidores do controlador de domínio devem ser protegidos via Criptografia de Unidade de Disco BitLocker. O BitLocker geralmente adiciona sobrecarga de desempenho em percentuais de dígito único, mas protege o diretório contra comprometimento, mesmo se os discos forem removidos do servidor. O BitLocker também pode ajudar a proteger sistemas contra ataques, como rootkits, pois a modificação de arquivos de inicialização fará com que o servidor inicialize no modo de recuperação para que os binários originais possam ser carregados. Se um controlador de domínio estiver configurado para usar RAID de software, SCSI anexado em série, armazenamento SAN/NAS ou volumes dinâmicos, o BitLocker não poderá ser implementado, portanto, o armazenamento localmente anexado (com ou sem RAID de hardware) deverá ser usado em controladores de domínio sempre que possível.  
   
 #### <a name="virtual-domain-controllers"></a>Controladores de domínio virtual 
 
@@ -70,7 +70,7 @@ Todos os controladores de domínio devem ser bloqueados na compilação inicial.
   
 ### <a name="microsoft-security-compliance-toolkit"></a>Kit de ferramentas de conformidade de segurança da Microsoft
 
-As configurações do controlador de domínio [do Microsoft Security Compliance Toolkit](https://www.microsoft.com/download/details.aspx?id=55319) podem ser combinadas com as configurações do assistente de configuração de segurança para produzir linhas de base de configuração abrangentes para controladores de domínio implantados e impostos por GPOs implantados em a UO dos controladores de domínio em Active Directory.  
+As configurações do controlador de domínio [do Microsoft Security Compliance Toolkit](https://www.microsoft.com/download/details.aspx?id=55319) podem ser combinadas com as configurações do assistente de configuração de segurança para produzir linhas de base de configuração abrangentes para controladores de domínio implantados e impostos por GPOs implantados na UO Controladores de domínio em Active Directory.  
   
 ### <a name="rdp-restrictions"></a>Restrições de RDP
 
@@ -84,7 +84,7 @@ Embora possa parecer bem intuitivo, você deve considerar a aplicação de patch
 
 Uma das verificações executadas como parte de uma avaliação de segurança Active Directory é o uso e a configuração do Internet Explorer em controladores de domínio. O Internet Explorer (ou qualquer outro navegador da Web) não deve ser usado em controladores de domínio, mas a análise de milhares de controladores de domínio revelou vários casos em que usuários com privilégios usaram o Internet Explorer para navegar na intranet da organização ou na IP.  
   
-Conforme descrito anteriormente na seção "configuração incorreta" de [avenidas para comprometer](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md), navegar na Internet (ou em uma intranet infectada) de um dos computadores mais potentes em uma infraestrutura do Windows usando uma conta altamente privilegiada (que é a única as contas com permissão para fazer logon localmente em controladores de domínio por padrão) apresentam um risco extraordinário à segurança de uma organização. Seja por meio de uma unidade por download ou por download de "utilitários" infectados por malware, os invasores podem obter acesso a tudo o que precisam para comprometer completamente ou destruir o ambiente de Active Directory.  
+Conforme descrito anteriormente na seção "configuração incorreta" de [caminhos para comprometer](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md), navegar na Internet (ou em uma intranet infectada) de um dos computadores mais potentes em uma infraestrutura do Windows usando uma conta altamente privilegiada (que são as únicas contas permitidas para fazer logon localmente em controladores de domínio por padrão) apresenta um risco extraordinário à segurança de uma organização. Seja por meio de uma unidade por download ou por download de "utilitários" infectados por malware, os invasores podem obter acesso a tudo o que precisam para comprometer completamente ou destruir o ambiente de Active Directory.  
   
 Embora o Windows Server 2012, o Windows Server 2008 R2, o Windows Server 2008 e as versões atuais do Internet Explorer ofereçam várias proteções contra downloads mal-intencionados, na maioria dos casos em que os controladores de domínio e contas com privilégios foram usados para Navegue pela Internet, os controladores de domínio estavam executando o Windows Server 2003 ou as proteções oferecidas por sistemas operacionais e navegadores mais recentes foram desabilitadas intencionalmente.  
   
@@ -92,7 +92,7 @@ Iniciar navegadores da Web em controladores de domínio deve ser proibido não a
   
 ### <a name="perimeter-firewall-restrictions"></a>Restrições de firewall do perímetro
 
-Os firewalls de perímetro devem ser configurados para bloquear conexões de saída de controladores de domínio para a Internet. Embora os controladores de domínio possam precisar se comunicar entre os limites do site, os firewalls de perímetro podem ser configurados para permitir a comunicação entre sites seguindo as diretrizes fornecidas em [como configurar um firewall para domínios e relações de confiança](https://support.microsoft.com/kb/179442) no Suporte da Microsoft site.  
+Os firewalls de perímetro devem ser configurados para bloquear conexões de saída de controladores de domínio para a Internet. Embora os controladores de domínio possam precisar se comunicar entre os limites do site, os firewalls de perímetro podem ser configurados para permitir a comunicação entre sites seguindo as diretrizes fornecidas em [como configurar um firewall para domínios e relações de confiança](https://support.microsoft.com/kb/179442) no site suporte da Microsoft.  
   
 ### <a name="dc-firewall-configurations"></a>Configurações de firewall do DC  
 

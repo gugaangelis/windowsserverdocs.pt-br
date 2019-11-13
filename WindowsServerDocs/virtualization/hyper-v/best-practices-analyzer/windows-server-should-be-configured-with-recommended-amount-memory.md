@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
   
@@ -36,9 +36,9 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *Uma máquina virtual que executa o Windows Server 2016 é configurada com menos do que a quantidade recomendada de RAM, que é de 1 GB.*  
   
 ## <a name="impact"></a>**Causa**  
-o sistema operacional convidado @no__t 0The e os aplicativos podem não ter um bom desempenho. Pode não haver memória suficiente para executar vários aplicativos ao mesmo tempo. Isso afeta as seguintes máquinas virtuais: *  
+*O sistema operacional convidado e os aplicativos podem não ter um bom desempenho. Pode não haver memória suficiente para executar vários aplicativos ao mesmo tempo. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais > 
+\<lista de máquinas virtuais > 
   
 ## <a name="resolution"></a>**Resolução**  
 *Use o Gerenciador do Hyper-V para aumentar a memória alocada para esta máquina virtual para pelo menos 1 GB.*  

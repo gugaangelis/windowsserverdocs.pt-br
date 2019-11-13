@@ -1,5 +1,5 @@
 ---
-title: SMBS As portas de compartilhamento de arquivo e impressora devem estar abertas
+title: 'SMB: portas de compartilhamento de arquivo e impressora devem ser abertas'
 TOCTitle: 'SMB: File and printer sharing ports should be open'
 ms.date: 07/02/2012
 ms.prod: windows-server
@@ -14,14 +14,14 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71385835"
 ---
-# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMBS As portas de compartilhamento de arquivo e impressora devem estar abertas
+# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: portas de compartilhamento de arquivo e impressora devem ser abertas
 
 
 Atualizado: 2 de fevereiro de 2011
 
 Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012, Windows Server 2008 R2
 
-o tópico *This destina-se a resolver um problema específico identificado por uma verificação de Analisador de Práticas Recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram os serviços de arquivo Analisador de Práticas Recomendadas executados neles e estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações, consulte @ no__t-0 [analisador de práticas recomendadas](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
+*Este tópico destina-se a resolver um problema específico identificado por uma verificação de analisador de práticas recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram os serviços de arquivo Analisador de Práticas Recomendadas executados neles e estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações, consulte* [analisador de práticas recomendadas](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
 
 
 <table>
@@ -43,7 +43,7 @@ o tópico *This destina-se a resolver um problema específico identificado por u
 <td><p>Erro</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Categorias</strong></p></td>
+<td><p><strong>Categoria</strong></p></td>
 <td><p>Configuração</p></td>
 </tr>
 </tbody>

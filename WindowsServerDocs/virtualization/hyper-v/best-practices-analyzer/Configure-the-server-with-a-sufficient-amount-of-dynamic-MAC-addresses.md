@@ -21,14 +21,14 @@ ms.locfileid: "71364940"
 
 >Aplica-se a: Windows Server 2016
 
-o tópico *This destina-se a resolver um problema específico identificado por uma verificação de Analisador de Práticas Recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram o Analisador de Práticas Recomendadas do Hyper-V executados em relação a eles e que estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações, consulte @ no__t-0 [analisador de práticas recomendadas](https://go.microsoft.com/fwlink/?LinkId=122786).  
+*Este tópico destina-se a resolver um problema específico identificado por uma verificação de analisador de práticas recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram o Analisador de Práticas Recomendadas do Hyper-V executados em relação a eles e que estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações, consulte* [analisador de práticas recomendadas](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
 |Propriedade|Detalhes|  
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   

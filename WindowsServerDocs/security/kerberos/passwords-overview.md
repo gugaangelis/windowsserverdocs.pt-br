@@ -22,7 +22,7 @@ ms.locfileid: "71403508"
 ---
 # <a name="passwords-overview"></a>Visão geral de senhas
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico para o profissional de ti descreve as senhas conforme usadas nos sistemas operacionais Windows, além de links para documentação e discussões sobre o uso de senhas em uma estratégia de gerenciamento de credenciais.
 
@@ -35,9 +35,9 @@ Para obter mais informações sobre senhas do Windows, consulte [visão geral t�
 No Windows e em muitos outros sistemas operacionais, o método mais comum para autenticar a identidade de um usuário é usar uma senha secreta. Proteger seu ambiente de rede requer que senhas fortes sejam usadas por todos os usuários. Isso ajuda a evitar a ameaça de um usuário mal-intencionado adivinhar uma senha fraca, seja por meio de métodos manuais ou usando ferramentas, para adquirir as credenciais de uma conta de usuário comprometida. Isso é especialmente verdadeiro para contas administrativas. Quando você altera uma senha complexa regularmente, ela reduz a probabilidade de um ataque de senha comprometer essa conta.
 
 ## <a name="BKMK_NEW"></a>Funcionalidade nova e alterada
-No Windows Server 2012 e no Windows 8, as senhas de imagem são novas. As senhas de imagem são uma combinação de uma imagem selecionada pelo usuário, juntamente com uma série de gestos. A funcionalidade de senha de imagem está desabilitada nos computadores do domínio @ no__t-0joined. Links para obter mais informações sobre senhas de imagem estão listados em [Consulte também](#BKMK_LINKS) abaixo.
+No Windows Server 2012 e no Windows 8, as senhas de imagem são novas. As senhas de imagem são uma combinação de uma imagem selecionada pelo usuário, juntamente com uma série de gestos. A funcionalidade de senha de imagem está desabilitada no domínio\-computadores associados. Links para obter mais informações sobre senhas de imagem estão listados em [Consulte também](#BKMK_LINKS) abaixo.
 
-Não houve alteração na funcionalidade de senha no Windows Server 2012 e no Windows 8. Nenhuma nova configuração de Política de Grupo foi adicionada. No entanto, foram feitas melhorias e aprimoramentos no gerenciamento de credenciais \(and senha @ no__t-1, como com senhas de imagem, o armário de credenciais e a entrada no Windows 8 com um conta Microsoft, anteriormente conhecido como Windows Live ID.
+Não houve alteração na funcionalidade de senha no Windows Server 2012 e no Windows 8. Nenhuma nova configuração de Política de Grupo foi adicionada. No entanto, melhorias e aprimoramentos foram feitos em \(de credencial e gerenciamento de\) de senha, como com senhas de imagem, o armário de credenciais e a entrada no Windows 8 com um conta Microsoft, anteriormente conhecido como Windows Live ID.
 
 ## <a name="BKMK_DEP"></a>Funcionalidade preterida
 Nenhuma funcionalidade de senha foi preterida no Windows Server 2012 e no Windows 8.
@@ -53,7 +53,7 @@ Esta tabela lista recursos adicionais para recursos de senha, tecnologia e geren
 |**Documentação do cenário**|[Protegendo sua identidade digital](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**Operações**|[Active Directory usuários e computadores](https://technet.microsoft.com/library/cc754217.aspx)|
 |**Solução de problemas**|[Descubra quando sua senha expira \- Active Directory Blog do PowerShell](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
-|**Segurança**| Guia do Windows Server 2008 R2 e do Windows 7 [Threats e contramedidas: Políticas de conta @ no__t-0<br /><br />Diretrizes para [alterar e criar senhas fortes](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
+|**Segurança**| [Guia de ameaças e contramedidas](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx) do windows Server 2008 R2 e do Windows 7: políticas de conta<br /><br />Diretrizes para [alterar e criar senhas fortes](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
 |**Ferramentas e configurações**|[Referência de configurações de Política de Grupo para Windows e Windows Server no centro de download da Microsoft](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
 |**Recursos da comunidade**|[Protegendo sua identidade digital](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Entrar no Windows 8 com um Windows Live ID](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[Entrando com uma senha de imagem](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[Otimizando a segurança de senha de imagem](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 

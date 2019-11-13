@@ -88,7 +88,7 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
     |Valor do parâmetro|Nível de segurança|Configuração de proteção|  
     |-------------------|------------------|----------------------|  
     |Requerer|O servidor está totalmente protegido.|A proteção estendida é imposta e sempre necessária.|  
-    |Allow|O servidor está parcialmente protegido.|A proteção estendida é imposta nos casos em que os sistemas envolvidos foram atualizados para dar suporte a ela.|  
+    |Permitir|O servidor está parcialmente protegido.|A proteção estendida é imposta nos casos em que os sistemas envolvidos foram atualizados para dar suporte a ela.|  
     |Nenhuma|O servidor está vulnerável.|A proteção estendida não é imposta.|  
   
 -   **Se você estiver usando registro em log e rastreamento, garanta a privacidade de qualquer informação confidencial.**  
@@ -129,7 +129,7 @@ As práticas recomendadas de segurança a seguir são específicas para o uso de
   
 -   **Minimize a área da superfície do SQL Server.**  
   
-    Habilite somente os terminais do SQL Server necessários. Por padrão, o SQL Server fornece um único ponto de extremidade TCP integrado que não pode ser removido. Por AD FS, você deve habilitar esse ponto de extremidade TCP para autenticação Kerberos. Para analisar os terminais de TCP atuais para ver se portas TCP definidas pelo usuário adicionais foram adicionados a uma instalação do SQL, use a instrução de consulta "SELECT * FROM sys.tcp_endpoints" em uma sessão Transact-SQL (T-SQL). Para obter mais informações sobre SQL Server configuração de ponto de extremidade, consulte [How para: Configure o Mecanismo de Banco de Dados para escutar em várias portas TCP @ no__t-0 (https://go.microsoft.com/fwlink/?LinkID=189231).  
+    Habilite somente os terminais do SQL Server necessários. Por padrão, o SQL Server fornece um único ponto de extremidade TCP integrado que não pode ser removido. Por AD FS, você deve habilitar esse ponto de extremidade TCP para autenticação Kerberos. Para analisar os terminais de TCP atuais para ver se portas TCP definidas pelo usuário adicionais foram adicionados a uma instalação do SQL, use a instrução de consulta "SELECT * FROM sys.tcp_endpoints" em uma sessão Transact-SQL (T-SQL). Para obter mais informações sobre SQL Server configuração de ponto de extremidade, consulte [como configurar o mecanismo de banco de dados para escutar em várias portas TCP](https://go.microsoft.com/fwlink/?LinkID=189231) (https://go.microsoft.com/fwlink/?LinkID=189231).  
   
 -   **Evite usar a autenticação baseada em SQL.**  
   

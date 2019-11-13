@@ -21,15 +21,15 @@ Para se preparar para migrar (mesma migração de servidor) um servidor de Feder
   
 Para exportar os dados de configuração do AD FS, realize as seguintes tarefas:  
   
--   [Etapa 1:  Exportar configurações do serviço @ no__t-0  
+-   [Etapa 1: exportar configurações de serviço](#step-1-export-service-settings)  
   
--   [Etapa 2:  Exportar relações de confiança do provedor de declarações @ no__t-0  
+-   [Etapa 2: exportar relações de confiança do provedor de declarações](#step-2-export-claims-provider-trusts)  
   
--   [Etapa 3:  Exportar confianças de terceira parte confiável @ no__t-0  
+-   [Etapa 3: exportar as relações de confiança de terceira parte confiável](#step-3-export-relying-party-trusts)  
   
--   [Etapa 4:  Fazer backup de repositórios de atributos personalizados @ no__t-0  
+-   [Etapa 4: fazer backup de repositórios de atributos personalizados](#step-4-back-up-custom-attribute-stores)  
   
--   [Etapa 5:  Fazer backup de personalizações de página da Web @ no__t-0  
+-   [Etapa 5: fazer backup de personalizações de página da Web](#step-5-back-up-webpage-customizations)  
   
 ## <a name="step-1-export-service-settings"></a>Etapa 1: Exportar configurações do serviço  
  Para exportar configurações de serviço, realize o seguinte procedimento:  
@@ -87,28 +87,28 @@ Para isso, abra o Windows PowerShell e execute o seguinte comando para adicionar
   
 Para isso, abra o Windows PowerShell e execute o seguinte comando para adicionar os cmdlets do AD FS à sessão do Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Depois, execute o seguinte comando para exportar todas as descrições de declaração personalizadas para um arquivo: `Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.  
   
-##  <a name="step-2-export-claims-provider-trusts"></a>Etapa 2: Exportar objetos de confiança do provedor de declarações  
+##  <a name="step-2-export-claims-provider-trusts"></a>Etapa 2: exportar relações de confiança do provedor de declarações  
  Para exportar objetos de confiança do provedor de declarações, execute o seguinte procedimento:  
   
 ### <a name="to-export-claims-provider-trusts"></a>Para exportar os objetos de confiança do provedor de declarações  
   
 1.  Você pode usar o Windows PowerShell para exportar todos os objetos de confiança do provedor de declarações. Abra o Windows PowerShell e execute o seguinte comando para adicionar os cmdlets do AD FS à sessão do Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Em seguida, execute o seguinte comando para exportar todos os objetos de confiança do provedor de declarações: `PSH:>Get-ADFSClaimsProviderTrust | Out-File “.\cptrusts.txt”`.  
   
-## <a name="step-3-export-relying-party-trusts"></a>Etapa 3: Exportar objetos de confiança da terceira parte confiável  
+## <a name="step-3-export-relying-party-trusts"></a>Etapa 3: exportar as relações de confiança de terceira parte confiável  
  Para exportar objetos de confiança da terceira parte confiável, execute o seguinte procedimento:  
   
 ### <a name="to-export-relying-party-trusts"></a>Para exportar os objetos de confiança da terceira parte confiável  
   
 1.  Para exportar todos os objetos de confiança da terceira parte confiável, abra o Windows PowerShell e execute o seguinte comando para adicionar os cmdlets do AD FS à sessão do Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Em seguida, execute o seguinte comando para exportar todos os objetos de confiança do provedor de declarações:`PSH:>Get-ADFSRelyingPartyTrust | Out-File “.\rptrusts.txt”`.  
   
-## <a name="step-4-back-up-custom-attribute-stores"></a>Etapa 4: Fazer backup de repositórios de atributos personalizados  
+## <a name="step-4-back-up-custom-attribute-stores"></a>Etapa 4: fazer backup de repositórios de atributos personalizados  
  É possível encontrar informações sobre repositórios de atributos personalizados em uso pelo AD FS usando o Windows PowerShell. Abra o Windows PowerShell e execute o seguinte comando para adicionar os cmdlets do AD FS à sessão do Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Em seguida, execute o seguinte comando para encontrar informações sobre repositórios de atributos personalizados: `PSH:>Get-ADFSAttributeStore`. As etapas para atualização ou migração de repositórios de atributos personalizados variam.  
   
 ## <a name="step-5-back-up-webpage-customizations"></a>Etapa 5: Fazer backup de personalizações de página da Web  
  Para fazer backup de todas as personalizações de página da Web, copie as páginas da Web do AD FS e o arquivo **web.config** do diretório mapeado para o caminho virtual **“/adfs/ls”** no IIS. Por padrão, ele fica no diretório **%systemdrive%\inetpub\adfs\ls**.  
 
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

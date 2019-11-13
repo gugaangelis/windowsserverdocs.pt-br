@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -36,12 +36,12 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *Uma ou mais máquinas virtuais selecionadas para replicação estão configuradas para autenticação Kerberos.*  
   
 ## <a name="impact"></a>**Causa**  
-o tráfego de rede de replicação @no__t 0The do servidor primário para o servidor de replicação não é criptografado. Isso afeta as seguintes máquinas virtuais: *  
+*O tráfego de rede de replicação do servidor primário para o servidor de replicação não é criptografado. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
-*If outro método está sendo usado para executar a criptografia, você pode ignorá-lo. Caso contrário, modifique as configurações da máquina virtual para escolher autenticação baseada em certificado.*  
+*Se outro método estiver sendo usado para executar a criptografia, você poderá ignorá-lo. Caso contrário, modifique as configurações da máquina virtual para escolher autenticação baseada em certificado.*  
   
 
 

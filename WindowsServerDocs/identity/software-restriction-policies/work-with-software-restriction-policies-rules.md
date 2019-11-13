@@ -88,7 +88,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
 2.  Na árvore de console, clique em **Opções de segurança** localizadas em configurações de segurança/políticas locais.
 
-3.  No painel de detalhes, clique duas vezes em configurações de **System: Use regras de certificado em executáveis do Windows para diretivas de restrição de software @ no__t-0.
+3.  No painel de detalhes, clique duas vezes em **Configurações do sistema: usar regras de certificado em arquivos executáveis do Windows para políticas de restrição de software**.
 
 4.  Siga um destes procedimentos e clique em **OK**:
 
@@ -112,7 +112,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
 7.  Na árvore de console, clique em **Opções de segurança** localizadas em *GroupPolicyObject* [*ComputerName*] política/configuração do computador/configurações do Windows/configurações de segurança/políticas locais/.
 
-8.  No painel de detalhes, clique duas vezes em configurações de **System: Use regras de certificado em executáveis do Windows para diretivas de restrição de software @ no__t-0.
+8.  No painel de detalhes, clique duas vezes em **Configurações do sistema: usar regras de certificado em arquivos executáveis do Windows para políticas de restrição de software**.
 
 9. Se essa configuração de política não tiver sido definida ainda, marque a caixa de seleção **Definir estas configurações de políticas**.
 
@@ -134,7 +134,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
 5.  Na árvore de console, clique em **Opções de segurança** localizadas em *GroupPolicyObject*[*ComputerName*] política/configuração do computador/configurações do Windows/configurações de segurança/políticas locais.
 
-6.  No painel de detalhes, clique duas vezes em configurações de **System: Use regras de certificado em executáveis do Windows para diretivas de restrição de software @ no__t-0.
+6.  No painel de detalhes, clique duas vezes em **Configurações do sistema: usar regras de certificado em arquivos executáveis do Windows para políticas de restrição de software**.
 
 7.  Se essa configuração de política não tiver sido definida ainda, marque a caixa de seleção **Definir estas configurações de políticas**.
 
@@ -150,7 +150,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
 2.  Na árvore de console, clique em **Opções de Segurança**, localizado em *GroupPolicyObject* [*Nome_do_Computador*] Política/Configuração do computador/Configurações do Windows/Configurações de segurança/Políticas locais.
 
-3.  No painel de detalhes, clique duas vezes em configurações de **System: Use regras de certificado em executáveis do Windows para diretivas de restrição de software @ no__t-0.
+3.  No painel de detalhes, clique duas vezes em **Configurações do sistema: usar regras de certificado em arquivos executáveis do Windows para políticas de restrição de software**.
 
 4.  Se essa configuração de política não tiver sido definida ainda, marque a caixa de seleção **Definir estas configurações de políticas**.
 
@@ -310,7 +310,7 @@ Como essas regras são especificadas pelo caminho, se um programa de software fo
 
 5.  Em **caminho**, Cole o nome da chave do registro, seguido pelo nome do valor.
 
-6.  Coloque o caminho do registro em sinais de porcentagem (%), por exemplo,%HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%.
+6.  Coloque o caminho do registro em sinais de porcentagem (%), por exemplo,% HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%.
 
 7.  Em **nível de segurança**, clique em não **permitido** ou **irrestrito**.
 

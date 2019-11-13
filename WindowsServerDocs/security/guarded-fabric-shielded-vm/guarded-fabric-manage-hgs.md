@@ -76,7 +76,7 @@ Em um computador remoto que tenha conectividade de rede com o HGS, execute os se
 Enter-PSSession -ComputerName <hgsnode> -Credential '<hgsdomain>\hgsreviewer01' -ConfigurationName 'microsoft.windows.hgs'
 ```
 
-Em seguida, você pode verificar quais comandos são permitidos na sessão com `Get-Command` e executar os comandos permitidos para auditar a configuração.
+Em seguida, você pode verificar quais comandos são permitidos na sessão com `Get-Command` e executar quaisquer comandos permitidos para auditar a configuração.
 No exemplo abaixo, estamos verificando quais políticas estão habilitadas no HGS.
 
 ```powershell
@@ -201,7 +201,7 @@ Export-HgsServerState -Path C:\temp\HGSBackup.xml
 
 **Fazendo backup de certificados**
 
-O comando `Export-HgsServerState` fará o backup de qualquer certificado baseado em PFX adicionado ao HGS no momento em que o comando for executado.
+O comando `Export-HgsServerState` fará backup de qualquer certificado baseado em PFX adicionado ao HGS no momento em que o comando for executado.
 Se você adicionou certificados ao HGS usando uma impressão digital (típica para certificados não exportáveis e com suporte a hardware), será necessário fazer backup manual das chaves privadas para seus certificados.
 Para identificar quais certificados são registrados com o HGS e precisar fazer backup manual, execute o seguinte comando do PowerShell em qualquer nó de servidor HGS em funcionamento.
 
@@ -260,9 +260,9 @@ Você será solicitado a inserir a senha que você especificou ao criar o backup
 Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 ```
 
-Se você quiser importar políticas de atestado confiáveis do administrador ou políticas de atestado confiáveis do TPM, poderá fazer isso especificando os sinalizadores `-ImportActiveDirectoryModeState` ou `-ImportTpmModeState` para [Import-HgsServerState](https://technet.microsoft.com/library/mt652168.aspx).
+Se você quiser importar políticas de atestado confiável de administrador ou políticas de atestado confiáveis do TPM, poderá fazer isso especificando o `-ImportActiveDirectoryModeState` ou `-ImportTpmModeState` sinalizadores para [Import-HgsServerState](https://technet.microsoft.com/library/mt652168.aspx).
 
-Verifique se a atualização cumulativa mais recente do Windows Server 2016 está instalada antes de executar `Import-HgsServerState`.
+Verifique se a atualização cumulativa mais recente do Windows Server 2016 está instalada antes de executar o `Import-HgsServerState`.
 A falha em fazer isso pode resultar em um erro de importação.
 
 > [!NOTE]
@@ -280,7 +280,7 @@ Como lembrete, os certificados adicionados ao HGS usando impressões digitais ex
 Você precisará repetir essa etapa em cada nó adicional que adicionar ao cluster HGS restaurado.
 
 #### <a name="review-imported-attestation-policies"></a>Examinar as políticas de atestado importadas
-Depois de importar as configurações de um backup, é recomendável examinar de forma minuciosa todas as políticas importadas usando `Get-HgsAttestationPolicy` para garantir que apenas os hosts nos quais você confia para executar VMs blindadas possam atestar com êxito.
+Depois de importar as configurações de um backup, é recomendável examinar de forma minuciosa todas as políticas importadas usando `Get-HgsAttestationPolicy` para garantir que somente os hosts nos quais você confia para executar VMs blindadas possam atestar com êxito.
 Se você encontrar quaisquer políticas que não correspondam mais à sua postura de segurança, poderá [desabilitá-las ou removê-las](#review-attestation-policies).
 
 #### <a name="run-diagnostics-to-check-system-state"></a>Executar o diagnóstico para verificar o estado do sistema
@@ -355,8 +355,8 @@ Hgs_BitLockerEnabled           | Requer que o BitLocker esteja habilitado no hos
 Hgs_IommuEnabled               | Requer que o host tenha um dispositivo IOMMU em uso para evitar ataques de acesso direto à memória. Desabilitar essa política e usar hosts sem uma IOMMU habilitada pode expor segredos de VM de locatário para ataques de memória direta.
 Hgs_NoHibernation              | Requer que a hibernação seja desabilitada no host Hyper-V. Desabilitar essa política pode permitir que os hosts salvem a memória da VM blindada em um arquivo de hibernação não criptografado.
 Hgs_NoDumps                    | Requer que os despejos de memória sejam desabilitados no host Hyper-V. Se você desabilitar essa política, é recomendável configurar a criptografia de despejo para impedir que a memória da VM blindada seja salva em arquivos de despejo de falha não criptografados.
-Hgs_DumpEncryption             | Requer despejos de memória, se habilitado no host Hyper-V, para serem criptografados com uma chave de criptografia confiável pelo HGS. Essa política não se aplicará se os despejos não estiverem habilitados no host. Se essa política e *HgS @ no__t-1NoDumps* estiverem desabilitadas, a memória da VM blindada poderá ser salva em um arquivo de despejo não criptografado.
-Hgs_DumpEncryptionKey          | Política negativa para garantir que os hosts configurados para permitir despejos de memória estejam usando uma chave de criptografia de arquivo de despejo definida pelo administrador conhecida como HGS. Esta política não se aplica quando *HgS @ no__t-1DumpEncryption* está desabilitado.
+Hgs_DumpEncryption             | Requer despejos de memória, se habilitado no host Hyper-V, para serem criptografados com uma chave de criptografia confiável pelo HGS. Essa política não se aplicará se os despejos não estiverem habilitados no host. Se essa política e *Hgs\_Nodumps* forem desabilitadas, a memória da VM blindada poderá ser salva em um arquivo de despejo não criptografado.
+Hgs_DumpEncryptionKey          | Política negativa para garantir que os hosts configurados para permitir despejos de memória estejam usando uma chave de criptografia de arquivo de despejo definida pelo administrador conhecida como HGS. Esta política não se aplica quando o *Hgs\_DumpEncryption* está desabilitado.
 
 ### <a name="authorizing-new-guarded-hosts"></a>Autorizando novos hosts protegidos
 Para autorizar um novo host a se tornar um host protegido (por exemplo, atestado com êxito), o HGS deve confiar no host e (quando configurado para usar o atestado confiável do TPM) o software em execução.
@@ -468,10 +468,10 @@ Add-HgsAttestationCiPolicy -Name 'WS2016-Hardware01' -Path 'C:\temp\ws2016-hardw
 
 **Adicionando uma chave de criptografia de despejo de memória**
 
-Quando a política *HgS @ no__t-1NoDumps* está desabilitada e a política *HgS @ no__t-3DumpEncryption* está habilitada, os hosts protegidos têm permissão para que os despejos de memória (incluindo despejos de falhas) sejam habilitados, desde que esses despejos sejam criptografados. Os hosts protegidos passarão por atestado apenas se tiverem despejos de memória desabilitados ou estiverem criptografando-os com uma chave conhecida por HGS. Por padrão, nenhuma chave de criptografia de despejo é configurada no HGS.
+Quando a política do *hgs\_Nodumps* está desabilitada e a política *DumpEncryption do HgS\_* está habilitada, os hosts protegidos têm permissão para que os despejos de memória (incluindo os despejos de falhas) sejam habilitados, desde que esses despejos sejam criptografados. Os hosts protegidos passarão por atestado apenas se tiverem despejos de memória desabilitados ou estiverem criptografando-os com uma chave conhecida por HGS. Por padrão, nenhuma chave de criptografia de despejo é configurada no HGS.
 
 Para adicionar uma chave de criptografia de despejo ao HGS, use o cmdlet `Add-HgsAttestationDumpPolicy` para fornecer o HGS com o hash de sua chave de criptografia de despejo.
-Se você capturar uma linha de base do TPM em um host Hyper-V configurado com a criptografia de despejo, o hash será incluído no tcglog e poderá ser fornecido ao cmdlet `Add-HgsAttestationDumpPolicy`.
+Se você capturar uma linha de base do TPM em um host Hyper-V configurado com a criptografia de despejo, o hash será incluído no tcglog e poderá ser fornecido para o cmdlet `Add-HgsAttestationDumpPolicy`.
 
 ```powershell
 Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey01' -Path 'C:\temp\TpmBaselineWithDumpEncryptionKey.tcglog'
@@ -497,7 +497,7 @@ Essas URLs podem ser obtidas executando `Get-HgsServer` em qualquer nó HGS.
 Set-HgsClientConfiguration -KeyProtectionServerUrl 'http://hgs.bastion.local/KeyProtection' -AttestationServerUrl 'http://hgs.bastion.local/Attestation'
 ```
 
-Se o status resultante não indicar "IsHostGuarded: True "você precisará solucionar problemas de configuração.
+Se o status resultante não indicar "IsHostGuarded: true", você precisará solucionar o problema da configuração.
 No host que falhou o atestado, execute o seguinte comando para obter um relatório detalhado sobre problemas que podem ajudá-lo a resolver o atestado com falha.
 
 ```powershell
@@ -586,7 +586,7 @@ Os dois motivos mais comuns para adicionar novas chaves ao HGS são:
 
 O processo para adicionar as novas chaves difere com base no tipo de certificado que você está usando.
 
-**Opção 1: Adicionando um certificado armazenado em um HSM @ no__t-0
+**Opção 1: adicionar um certificado armazenado em um HSM**
 
 Nossa abordagem recomendada para proteger chaves HGS é usar certificados criados em um módulo de segurança de hardware (HSM).
 Os HSMs garantem que o uso de suas chaves esteja vinculado ao acesso físico a um dispositivo sensível à segurança em seu datacenter.
@@ -607,7 +607,7 @@ Consulte a documentação do fornecedor do HSM para obter as etapas e os recurso
     Add-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint "99887766554433221100FFEEDDCCBBAA"
     ```
 
-**Opção 2: Adicionando certificados de software não exportáveis @ no__t-0
+**Opção 2: adicionando certificados de software não exportáveis**
 
 Se você tiver um certificado com suporte de software emitido por uma autoridade de certificação pública ou de sua empresa que tenha uma chave privada não exportável, será necessário adicionar seu certificado ao HGS usando sua impressão digital.
 1. Instale o certificado em seu computador de acordo com as instruções da autoridade de certificação.
@@ -622,7 +622,7 @@ Se você tiver um certificado com suporte de software emitido por uma autoridade
 > Será necessário instalar manualmente a chave privada e conceder acesso de leitura à conta gMSA em cada nó HGS.
 > O HGS não pode replicar automaticamente chaves privadas para *qualquer* certificado registrado por sua impressão digital.
 
-**Option 3: Adicionando certificados armazenados em arquivos PFX @ no__t-0
+**Opção 3: adicionar certificados armazenados em arquivos PFX**
 
 Se você tiver um certificado com suporte de software com uma chave privada exportável que possa ser armazenada no formato de arquivo PFX e protegido por uma senha, o HGS poderá gerenciar automaticamente seus certificados para você.
 Os certificados adicionados com arquivos PFX são replicados automaticamente para cada nó do cluster HGS e o HGS protege o acesso às chaves privadas.

@@ -21,7 +21,7 @@ ms.locfileid: "71404409"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>Etapa 1 implementar uma implantação de acesso remoto de servidor único
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 A primeira etapa de configuração para implantar o acesso remoto com OTP é implementar uma implantação avançada de servidor único e, em seguida, planejar a adição do servidor RADIUS.  
   
@@ -30,7 +30,7 @@ Antes de configurar o acesso remoto com OTP, você deve configurar uma implanta�
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 2: Configurar o servidor RADIUS @ no__t-0  
+-   [Etapa 2: configurar o servidor RADIUS](Step-2-Configure-the-RADIUS-Server.md)  
   
 
 

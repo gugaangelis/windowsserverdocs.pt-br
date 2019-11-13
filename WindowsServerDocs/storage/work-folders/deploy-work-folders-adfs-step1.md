@@ -15,21 +15,21 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365790"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: Etapa 1, configurar AD FS
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 1, Configurar o AD FS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve a primeira etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Sobre](deploy-work-folders-adfs-overview.md)  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 2, AD FS trabalho de pós-configuração @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 3, configurar pastas de trabalho @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 3, configurar pastas de trabalho](deploy-work-folders-adfs-step3.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 4, configurar o proxy de aplicativo Web @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 4, configurar o proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 5, configurar clientes @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
 >   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
@@ -104,7 +104,7 @@ No exemplo de teste, os valores são:
 O SAN enterpriseregistration é necessário para Workplace Join.  
   
 ### <a name="set-the-server-ip-address"></a>Defina o endereço IP do servidor  
-Altere o endereço IP do servidor para um endereço IP estático. Para o exemplo de teste, use a classe IP A, que é 192.168.0.160/máscara de sub-rede: 255.255.0.0/gateway padrão: 192.168.0.1/DNS preferencial: 192.168.0.150 (o endereço IP do seu controlador de domínio @ no__t-0.  
+Altere o endereço IP do servidor para um endereço IP estático. Como exemplo de teste, use a classe IP A, que é 192.168.0.160 / máscara de sub-rede: 255.255.0.0 / Gateway Padrão: 192.168.0.1 / DNS Preferencial: 192.168.0.150 (o endereço IP do controlador de domínio\).  
   
 ## <a name="install-the-ad-fs-role-service"></a>Instalar o serviço de função do AD FS  
 Para instalar o AD FS, siga estas etapas:  
@@ -182,7 +182,7 @@ $thumbprint = $cert.Thumbprint
 Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayName "Contoso Corporation" –FederationServiceName blueadfs.contoso.com -GroupServiceAccountIdentifier contoso\ADFSService$ -OverwriteConfiguration -ErrorAction Stop  
 ```  
   
-Próxima etapa: Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 2, AD FS trabalho de pós-configuração @ no__t-0  
+Próxima etapa: [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
   
 ## <a name="see-also"></a>Consulte também  
 [Visão geral das pastas de trabalho](Work-Folders-Overview.md)  

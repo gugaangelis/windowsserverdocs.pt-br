@@ -32,7 +32,7 @@ Depois de criar um mapa de local, documente o tipo de link de comunicação, a v
   
 A largura de banda refere-se à quantidade de dados que você pode transmitir por um canal de comunicação em um determinado período de tempo. A largura de banda disponível refere-se à quantidade de largura de banda realmente disponível para uso por AD DS. Você pode obter as informações de largura de banda disponíveis do seu grupo de rede ou pode analisar o tráfego em cada link usando um analisador de protocolo, como Monitor de Rede. Para obter informações sobre como instalar Monitor de Rede, consulte o artigo [monitorando o tráfego de rede](https://go.microsoft.com/fwlink/?LinkId=107058).  
   
-Documente cada local e os outros locais que estão vinculados a ele. Além disso, registre o tipo de link de comunicação e sua largura de banda disponível. Para uma planilha para ajudá-lo a listar os links de comunicação e a largura de banda disponível, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abra "geográfico Locais e links de comunicação "(DSSTOPO_1. doc).  
+Documente cada local e os outros locais que estão vinculados a ele. Além disso, registre o tipo de link de comunicação e sua largura de banda disponível. Para uma planilha para ajudá-lo a listar os links de comunicação e a largura de banda disponível, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abra "locais geográficos e links de comunicação" (DSSTOPO_1. doc).  
   
 ## <a name="listing-ip-subnets-within-each-location"></a>Listando sub-redes IP em cada local
 
@@ -40,13 +40,13 @@ Depois de documentar os links de comunicação e a largura de banda disponível 
   
 O AD DS associa uma estação de trabalho a um site comparando o endereço IP da estação de trabalho com as sub-redes associadas a cada site. À medida que você adiciona controladores de domínio a um domínio, AD DS também examina seus endereços IP e os coloca no site mais apropriado.  
   
-Para uma planilha para ajudá-lo a listar as sub-redes IP em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir "locais e sub-redes" ( DSSTOPO_2. doc).  
+Para uma planilha para ajudá-lo a listar as sub-redes IP em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir "locais e sub-redes" (DSSTOPO_2. doc).  
   
 > [!NOTE]  
-> Além dos endereços IP versão 4 (IPv4), o Windows Server também dá suporte a prefixos de sub-rede IP versão 6 (IPv6). Para obter uma planilha para ajudá-lo a listar os prefixos de sub-rede IPv6, consulte [Appendix A: Locais e prefixos de sub-rede @ no__t-0.  
+> Além dos endereços IP versão 4 (IPv4), o Windows Server também dá suporte a prefixos de sub-rede IP versão 6 (IPv6). Para uma planilha para ajudá-lo a listar os prefixos de sub-rede IPv6, consulte o [Apêndice a: locais e prefixos de sub-rede](../../ad-ds/plan/Appendix-A--Locations-and-Subnet-Prefixes.md).  
 
 ## <a name="listing-domains-and-number-of-users-for-each-location"></a>Listando domínios e número de usuários para cada local
 
 O número de usuários para cada domínio regional representado em um local é um dos fatores que determinam o posicionamento de controladores de domínio regionais e servidores de catálogo global, que é a próxima etapa no processo de design da topologia do site. Por exemplo, planeje posicionar um controlador de domínio regional em um local que contenha mais de 100 usuários de domínio regional para que eles ainda possam fazer logon no domínio se o link de WAN falhar.  
   
-Registre os locais, os domínios que são representados em cada local e o número de usuários para cada domínio que é representado em cada local. Para uma planilha para ajudá-lo a listar os domínios e o número de usuários que são representados em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip, e abra "domínios e usuários em cada local" (DSSTOPO_3. doc).  
+Registre os locais, os domínios que são representados em cada local e o número de usuários para cada domínio que é representado em cada local. Para uma planilha para ajudá-lo a listar os domínios e o número de usuários que são representados em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir "domínios e usuários em cada local" (DSSTOPO_3. doc).  

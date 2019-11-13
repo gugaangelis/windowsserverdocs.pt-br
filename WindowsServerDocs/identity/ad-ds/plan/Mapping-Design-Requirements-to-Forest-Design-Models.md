@@ -31,19 +31,19 @@ Se nem todos os grupos em sua organização puderem compartilhar uma única flor
 
 |Cenário|Conectividade limitada|Isolamento de dados|Autonomia de dados|Isolamento de serviço|Autonomia do serviço|  
 |------------|------------------------|------------------|-----------------|---------------------|--------------------|  
-|[Cenário 1: Unir uma floresta existente para autonomia de dados @ no__t-0|Não|Não|Sim|Não|Não|  
-|[Cenário 2: Usar uma floresta ou domínio organizacional para autonomia de serviço @ no__t-0|Não|Não|N/D|Não|Sim|  
-|[Scenario 3: Usar uma floresta organizacional ou uma floresta de recursos para isolamento de serviço @ no__t-0|Não|Não|N/D|Sim|N/D|  
-|[Scenario 4: Usar uma floresta organizacional ou uma floresta de acesso restrito para isolamento de dados @ no__t-0|N/D|Sim|N/D|N/D|N/D|  
-|[Scenario 5: Use uma floresta organizacional ou reconfigure o firewall para conectividade limitada @ no__t-0|Sim|Não|N/D|Não|Não|  
-|[Scenario 6: Use uma floresta ou domínio organizacional e reconfigure o firewall para autonomia de serviço com conectividade limitada @ no__t-0|Sim|Não|N/D|Não|Sim|  
-|[Scenario 7: Use uma floresta de recursos e reconfigure o firewall para o isolamento de serviço com conectividade limitada @ no__t-0|Sim|Não|N/D|Sim|N/D|  
+|[Cenário 1: unir uma floresta existente para autonomia de dados](#BKMK_1)|Não|Não|Sim|Não|Não|  
+|[Cenário 2: usar uma floresta organizacional ou um domínio para autonomia de serviço](#BKMK_2)|Não|Não|N/D|Não|Sim|  
+|[Cenário 3: usar uma floresta organizacional ou uma floresta de recursos para o isolamento de serviço](#BKMK_3)|Não|Não|N/D|Sim|N/D|  
+|[Cenário 4: usar uma floresta organizacional ou uma floresta de acesso restrito para isolamento de dados](#BKMK_4)|N/D|Sim|N/D|N/D|N/D|  
+|[Cenário 5: usar uma floresta organizacional ou reconfigurar o firewall para conectividade limitada](#BKMK_5)|Sim|Não|N/D|Não|Não|  
+|[Cenário 6: usar uma floresta ou domínio organizacional e reconfigurar o firewall para autonomia de serviço com conectividade limitada](#BKMK_6)|Sim|Não|N/D|Não|Sim|  
+|[Cenário 7: usar uma floresta de recursos e reconfigurar o firewall para isolamento de serviço com conectividade limitada](#BKMK_7)|Sim|Não|N/D|Sim|N/D|  
 
-## <a name="BKMK_1"></a>Cenário 1: Unir uma floresta existente para autonomia de dados  
+## <a name="BKMK_1"></a>Cenário 1: unir uma floresta existente para autonomia de dados  
 
 Você pode atender a um requisito de autonomia de dados simplesmente hospedando o grupo em UOs (unidades organizacionais) em uma floresta organizacional existente. Delegue o controle sobre as UOs para os administradores de dados desse grupo para alcançar a autonomia dos dados. Para obter mais informações sobre como delegar o controle usando UOs, consulte [criando um design de unidade organizacional](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md).  
   
-## <a name="BKMK_2"></a>Cenário 2: Usar uma floresta ou domínio organizacional para autonomia de serviço  
+## <a name="BKMK_2"></a>Cenário 2: usar uma floresta organizacional ou um domínio para autonomia de serviço  
 
 Se um grupo em sua organização identificar a autonomia do serviço como um requisito, recomendamos que você primeiro reconsidere esse requisito. A obtenção de autonomia de serviço cria mais sobrecarga de gerenciamento e custos adicionais para a organização. Certifique-se de que o requisito de autonomia de serviço não seja simplesmente conveniente e que você possa justificar os custos envolvidos para atender a esse requisito.  
   
@@ -55,7 +55,7 @@ Você pode atender a um requisito de autonomia de serviço seguindo um destes pr
 
 Para obter mais informações sobre como usar domínios organizacionais, consulte [usando o modelo de floresta de domínio organizacional](../../ad-ds/plan/../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md).  
 
-## <a name="BKMK_3"></a>Cenário 3: Usar uma floresta organizacional ou uma floresta de recursos para o isolamento de serviço  
+## <a name="BKMK_3"></a>Cenário 3: usar uma floresta organizacional ou uma floresta de recursos para o isolamento de serviço  
 
 Você pode atender a um requisito de isolamento de serviço seguindo um destes procedimentos:  
 
@@ -77,7 +77,7 @@ As considerações sobre o isolamento de serviço incluem o seguinte:
 
 - O isolamento de serviço requer a criação de uma floresta adicional. Avalie se o custo de manutenção da infraestrutura para dar suporte à floresta adicional supera os custos associados à perda de acesso aos recursos devido à falta de disponibilidade de uma floresta organizacional.  
 
-## <a name="BKMK_4"></a>Cenário 4: Usar uma floresta organizacional ou uma floresta de acesso restrito para isolamento de dados  
+## <a name="BKMK_4"></a>Cenário 4: usar uma floresta organizacional ou uma floresta de acesso restrito para isolamento de dados  
 
 Você pode obter o isolamento de dados seguindo um destes procedimentos:  
 
@@ -109,7 +109,7 @@ As considerações para criar florestas para isolamento de dados incluem o segui
    > [!NOTE]  
    > Se existir alguma conectividade de rede entre uma floresta de acesso restrito e outra rede, a possibilidade existe para que os dados na área restrita sejam transmitidos para a outra rede.  
 
-## <a name="BKMK_5"></a>Cenário 5: Usar uma floresta organizacional ou reconfigurar o firewall para conectividade limitada  
+## <a name="BKMK_5"></a>Cenário 5: usar uma floresta organizacional ou reconfigurar o firewall para conectividade limitada  
 
 Para atender a um requisito de conectividade limitado, você pode executar um dos seguintes procedimentos:  
 
@@ -119,7 +119,7 @@ Para atender a um requisito de conectividade limitado, você pode executar um do
 
 Para obter mais informações sobre como configurar firewalls para uso com o Active Directory Domain Services (AD DS), consulte [Active Directory em redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=37928).  
 
-## <a name="BKMK_6"></a>Cenário 6: Usar uma floresta ou domínio organizacional e reconfigurar o firewall para autonomia de serviço com conectividade limitada  
+## <a name="BKMK_6"></a>Cenário 6: usar uma floresta ou domínio organizacional e reconfigurar o firewall para autonomia de serviço com conectividade limitada  
 
 Se um grupo em sua organização identificar a autonomia do serviço como um requisito, recomendamos que você primeiro reconsidere esse requisito. A obtenção de autonomia de serviço cria mais sobrecarga de gerenciamento e custos adicionais para a organização. Certifique-se de que o requisito de autonomia de serviço não seja simplesmente conveniente e que você possa justificar os custos envolvidos para atender a esse requisito.  
 
@@ -131,7 +131,7 @@ Se a conectividade limitada for um problema e você tiver um requisito de autono
 
 Você também precisa abrir o firewall o suficiente para permitir que Active Directory tráfego passe. Para obter mais informações sobre como configurar firewalls para uso com o AD DS, consulte [Active Directory em redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=37928).  
 
-## <a name="BKMK_7"></a>Cenário 7: Usar uma floresta de recursos e reconfigurar o firewall para o isolamento de serviço com conectividade limitada  
+## <a name="BKMK_7"></a>Cenário 7: usar uma floresta de recursos e reconfigurar o firewall para isolamento de serviço com conectividade limitada  
 
 Se a conectividade limitada for um problema e você tiver um requisito para o isolamento de serviço, você poderá executar um dos seguintes procedimentos:  
 

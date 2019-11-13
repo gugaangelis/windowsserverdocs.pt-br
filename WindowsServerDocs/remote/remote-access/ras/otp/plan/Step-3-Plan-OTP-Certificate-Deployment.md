@@ -21,7 +21,7 @@ ms.locfileid: "71366951"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>Etapa 3 planejar a implantação do certificado OTP
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois de planejar o servidor RADIUS, você deve planejar os requisitos de AC (autoridade de certificação), incluindo a AC que emitirá certificados de OTP (senha de uso único), o modelo de certificado de OTP e o certificado de autoridade de registro usado pelo remoto Servidor de acesso para assinar todas as solicitações de certificado de OTP do cliente do DirectAccess. Esses certificados são usados da seguinte maneira:  
   
@@ -75,7 +75,7 @@ Quando os clientes do DirectAccess solicitam um certificado de OTP, o servidor d
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 4: Planejar a OTP para o servidor de acesso remoto @ no__t-0  
+-   [Etapa 4: planejar a OTP para o servidor de acesso remoto](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
 
 

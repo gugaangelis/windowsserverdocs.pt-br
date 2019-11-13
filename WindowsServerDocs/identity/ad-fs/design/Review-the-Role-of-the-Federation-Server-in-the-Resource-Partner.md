@@ -18,15 +18,15 @@ ms.locfileid: "71358972"
 ---
 # <a name="review-the-role-of-the-federation-server-in-the-resource-partner"></a>Analisar a função do servidor de federação no parceiro de recurso
 
-O servidor de Federação na organização do parceiro de recurso intercepta tokens de segurança de entrada que são enviados por um servidor de Federação de conta, valida-os e os assina e, em seguida, emite seus próprios tokens de segurança destinados ao aplicativo Web @ no__t-0based .  
+O servidor de Federação na organização do parceiro de recurso intercepta tokens de segurança de entrada que são enviados por um servidor de Federação de conta, valida-os e os assina e, em seguida, emite seus próprios tokens de segurança destinados ao aplicativo baseado na Web\-.  
   
 > [!NOTE]  
-> Quando usuários federados usam seus navegadores da Web para acessar aplicativos Web @ no__t-0based, o servidor de Federação na organização do parceiro de recurso cria um novo cookie de autenticação e grava-o no navegador. Esse cookie permite recursos individuais @ no__t-0sign @ no__t-1on \(SSO @ no__t-3 para que os usuários não precisem fazer logon novamente no servidor de Federação no parceiro de conta quando os usuários tentarem acessar diferentes aplicativos Web @ no__t-4based no recurso parceiro.  
+> Quando usuários federados usam seus navegadores da Web para acessar aplicativos baseados na Web\-, o servidor de Federação na organização do parceiro de recurso cria um novo cookie de autenticação e grava-o no navegador. Esse cookie habilita o logon único de\-\-em recursos de\) SSO \(para que os usuários não precisem fazer logon novamente no servidor de Federação no parceiro de conta quando os usuários tentarem acessar diferentes aplicativos baseados na Web\-no parceiro de recurso.  
   
 No design de SSO da Web, pelo menos um servidor de Federação deve ser instalado na rede de perímetro. No design de SSO da Web federado, deve haver pelo menos um servidor de Federação instalado na rede corporativa da organização do parceiro de conta e pelo menos um servidor de Federação instalado na rede corporativa da organização do parceiro de recurso.  
   
 > [!NOTE]  
-> Antes de configurar um computador do servidor de Federação na organização do parceiro de recurso, você deve primeiro ingressar o computador em qualquer Active Directory domínio na organização do parceiro de recurso. Para obter mais informações, consulte [Checklist: Configurando um servidor de Federação @ no__t-0.  
+> Antes de configurar um computador do servidor de Federação na organização do parceiro de recurso, você deve primeiro ingressar o computador em qualquer Active Directory domínio na organização do parceiro de recurso. Para obter mais informações, consulte [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md).  
   
 ## <a name="see-also"></a>Consulte também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -21,15 +21,15 @@ ms.locfileid: "71404598"
 ---
 # <a name="install-and-configure-deployment-for-remote-management-of-directaccess-clients"></a>Instalar e configurar a implantação para o gerenciamento remoto de clientes DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico apresenta as etapas de configuração necessárias para implantar um único servidor de acesso remoto que pode ser usado para o gerenciamento remoto de clientes DirectAccess.  
   
--   [Etapa 1: Configurar a infraestrutura de acesso remoto @ no__t-0: Este tópico descreve como definir configurações de rede e servidor, requisitos de certificado, configurações de DNS, implantação de servidor de local de rede, servidores de gerenciamento do DirectAccess, configurações de Active Directory e Política de Grupo objetos.  
+-   [Etapa 1: configurar a infraestrutura de acesso remoto](Step-1-Configure-the-Remote-Access-Infrastructure.md): Este tópico descreve como definir configurações de rede e servidor, requisitos de certificado, configurações de DNS, implantação de servidor de local de rede, servidores de gerenciamento do DirectAccess, configurações de Active Directory e objetos de política de grupo.  
   
--   [Etapa 2: Configurar o servidor de acesso remoto @ no__t-0: Este tópico descreve como configurar os computadores cliente do DirectAccess, as configurações do servidor e os servidores de aplicativos e de infraestrutura.  
+-   [Etapa 2: configurar o servidor de acesso remoto](Step-2-Configure-the-Remote-Access-Server.md): Este tópico descreve como configurar computadores cliente do DirectAccess, configurações do servidor e servidores de infraestrutura e de aplicativo.  
   
--   [Etapa 3: Verifique a implantação @ no__t-0: Este tópico descreve como verificar a implantação.  
+-   [Etapa 3: verificar a implantação](Step-3-Verify-the-Deployment_2.md): Este tópico descreve como verificar a implantação.  
   
 
 

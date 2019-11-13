@@ -49,9 +49,9 @@ O maior uso de memória variável dentro do LSASs é o cache de buffer do banco 
 
 Há um uso de memória variável pelo armazenamento de versão do ESE (a parte vermelha no diagrama acima). A quantidade de memória usada depende se você tem o Windows Server 2019 ou versões mais antigas do Windows.
 
-- Nas 2019 versões do Windows Server, o LSASs, por padrão, pode usar até 400 MB de memória (dependendo do número de CPUs) em um computador de 64 bits para o armazenamento de versão do ESE. Para obter mais informações sobre como o armazenamento de versão é usado, consulte a seguinte postagem de blog do ASKDS por Ryan Ries: [O armazenamento de versão chamado e todos eles estão fora dos buckets](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415).
+- Nas 2019 versões do Windows Server, o LSASs, por padrão, pode usar até 400 MB de memória (dependendo do número de CPUs) em um computador de 64 bits para o armazenamento de versão do ESE. Para obter mais informações sobre como o repositório de versão é usado, consulte a seguinte postagem do blog ASKDS por Ryan Ries: [o armazenamento de versão chamado e todos eles estão fora dos buckets](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415).
 
-- No Windows Server 2019, isso é simplificado e quando o serviço NTDS é iniciado pela primeira vez, o tamanho do armazenamento de versão do ESE agora é calculado como 10% da RAM física, com um mínimo de 400 MB e um máximo de 4 GB. Para obter ótimos detalhes sobre isso e solução de problemas de armazenamento de versão, consulte outro blog excelente de Ryan Ries: [Aprofunde-se: Active Directory alterações no repositório de versão do ESE no servidor 2019 @ no__t-0.
+- No Windows Server 2019, isso é simplificado e quando o serviço NTDS é iniciado pela primeira vez, o tamanho do armazenamento de versão do ESE agora é calculado como 10% da RAM física, com um mínimo de 400 MB e um máximo de 4 GB. Para obter ótimos detalhes sobre isso e solução de problemas de armazenamento de versão, consulte outro blog excelente do Ryan Ries: [aprofundamento: Active Directory as alterações no repositório de versão do ESE no servidor 2019](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Deep-Dive-Active-Directory-ESE-Version-Store-Changes-in-Server/ba-p/400510).
 
 ## <a name="other-memory-use"></a>Outro uso de memória
 
@@ -63,7 +63,7 @@ Para obter um desempenho ideal, o LSASs leva o máximo de RAM possível em um de
 
 Por isso e para aumentar o desempenho, é uma boa prática limitar ou minimizar o número de programas em um controlador de domínio. Se não houver nenhuma solicitação de memória, o LSASs usará essa memória para armazenar em cache o banco de dados Active Directory e, portanto, obter o desempenho ideal.
 
-Quando você observar que um controlador de domínio tem problemas de desempenho, observe também os processos com utilização de memória significativa. Eles podem ter um problema que você precisa solucionar. Eles podem incluir componentes da Microsoft. Certifique-se de acompanhar as atualizações de manutenção recentes @ no__t-0Microsoft inclui soluções para utilização excessiva de memória como parte das atualizações de qualidade, que também podem ajudar o desempenho do seu DC.
+Quando você observar que um controlador de domínio tem problemas de desempenho, observe também os processos com utilização de memória significativa. Eles podem ter um problema que você precisa solucionar. Eles podem incluir componentes da Microsoft. Verifique se você acompanha as atualizações de manutenção recentes&mdash;a Microsoft inclui soluções para utilização excessiva de memória como parte das atualizações de qualidade, o que também pode ajudar o desempenho do seu DC.
 
 Há instalações internas do sistema operacional que podem consumir RAM significativa dependendo do perfil de uso:
 

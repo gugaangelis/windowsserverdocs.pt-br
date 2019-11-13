@@ -22,17 +22,17 @@ ms.locfileid: "71404627"
 ---
 # <a name="configure-a-remote-access-cluster"></a>Configurar um cluster de acesso remoto
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
  O Windows Server 2016 e o Windows Server 2012 combinam Always On VPN e o serviço de roteamento e acesso remoto (RRAS) em uma única função de acesso remoto. Esta visão geral fornece uma introdução às etapas de configuração necessárias para implantar um único servidor de acesso remoto do Windows Server 2016 ou Windows Server 2012 em um cluster de balanceamento de carga.
   
--  Etapa 1: [Implante um servidor VPN AlwaysOn com opções avançadas](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md).
+-  Etapa 1: [implantar um servidor VPN AlwaysOn com opções avançadas](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md).
   
--   [Etapa 2: Preparar servidores de cluster @ no__t-0.  
+-   [Etapa 2: preparar servidores de cluster](Step-2-Prepare-Cluster-Servers.md).  
   
--   [Etapa 3: Configure um cluster com balanceamento de carga @ no__t-0.  
+-   [Etapa 3: configurar um cluster de balanceamento de carga](Step-3-Configure-a-Load-Balanced-Cluster.md).  
   
--   [Etapa 4: Verifique o cluster @ no__t-0.  
+-   [Etapa 4: verificar o cluster](Step-4-Verify-the-Cluster.md).  
   
 
 

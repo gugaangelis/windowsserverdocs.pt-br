@@ -21,7 +21,7 @@ ms.locfileid: "71404538"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como configurar uma implantação de várias florestas do Acesso Remoto em vários cenários possíveis. Todos os cenários pressupõem que o DirectAccess esteja implantado em uma única floresta chamada Forest1 e que você o esteja configurando para operar com uma nova floresta chamada Forest2.  
   
@@ -73,7 +73,7 @@ Observe os seguintes termos ao configurar a OTP em uma implantação de várias 
   
 -   Floresta da conta-todas as outras florestas na topologia.  
   
-O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Consulte [AD CS: Script PKISync. ps1 para registro de certificado entre florestas @ no__t-0.  
+O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Consulte [AD CS: PKISync.ps1 Script for Cross-forest Certificate Enrollment (AD CS: script PKISync.ps1 para registro de certificado entre florestas)](https://technet.microsoft.com/library/ff961506.aspx).  
   
 > [!NOTE]  
 > Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -100,7 +100,7 @@ O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Cons
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>  
     ```  
   
-    (Se você executar o comando na AC raiz, poderá omitir as informações de conexão,-config < nome do computador > \\ < root-CA-Name >)  
+    (Se você executar o comando na AC raiz, poderá omitir as informações de conexão,-config < nome do computador >\\< root-CA-Name >)  
   
     1.  Importe o certificado de AC raiz da etapa anterior para a AC da floresta de contas executando o seguinte comando em um prompt de comando com privilégios elevados:  
   
@@ -108,7 +108,7 @@ O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Cons
         certutil -dspublish -f <root-ca-cert-filename.cer> RootCA  
         ```  
   
-    2.  Conceda as permissões de leitura/gravação aos modelos de certificado de floresta de recursos para a floresta \<Account @ no__t-1 @ no__t-2 < conta de administrador @ no__t-3.  
+    2.  Conceda as permissões de leitura/gravação aos modelos de certificado da floresta de recursos para a floresta \<conta\>\\< conta de administrador\>.  
   
     3.  Extraia todos os certificados de AC corporativa da floresta de recursos executando o seguinte comando em um prompt de comando com privilégios elevados:  
   
@@ -116,7 +116,7 @@ O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Cons
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>  
         ```  
   
-        (Se você executar o comando na AC raiz, poderá omitir as informações de conexão,-config < nome do computador > \\ < root-CA-Name >)  
+        (Se você executar o comando na AC raiz, poderá omitir as informações de conexão,-config < nome do computador >\\< root-CA-Name >)  
   
     4.  Importe os certificados de AC corporativa da etapa anterior para a AC da floresta de contas executando os seguintes comandos em um prompt de comando com privilégios elevados:  
   
@@ -179,7 +179,7 @@ A lista de pesquisa de sufixos DNS permite que os clientes usem nomes de rótulo
   
 3.  Na página **DNS** , especifique na tabela os sufixos de nome adicionais que fazem parte da rede corporativa na Forest2. Em **Endereço do Servidor DNS**, especifique o endereço do servidor DNS manualmente ou clicando em **Detectar**. Se você não inserir o endereço, as novas entradas serão aplicadas como isenções NRPT. Em seguida, clique em **Avançar**.  
   
-4.  Opcional: na página **Lista de Pesquisa de Sufixos DNS**, adicione qualquer sufixo DNS ao inseri-lo na caixa **Novo Sufixo** e clicar em **Adicionar**. Em seguida, clique em **Avançar**.  
+4.  Opcional: na página **Lista de Pesquisa de Sufixos DNS** , adicione qualquer sufixo DNS ao inseri-lo na caixa **Novo Sufixo** e clicar em **Adicionar**. Em seguida, clique em **Avançar**.  
   
 5.  Na página **Gerenciamento** , clique em **Concluir**.  
   

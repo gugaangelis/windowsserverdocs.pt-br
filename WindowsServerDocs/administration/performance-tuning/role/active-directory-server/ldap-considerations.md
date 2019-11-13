@@ -47,12 +47,12 @@ Atributos de indexação são úteis ao pesquisar objetos que têm o nome do atr
 
 - Grandes volumes de consultas com altas durações estão causando consumo e esgotamento de threads de LDAP do ATQ. Monitore os seguintes contadores de desempenho:
 
-    - **NTDS @ no__t-1Request latência** – isso está sujeito a quanto tempo a solicitação leva para ser processada. Active Directory expirar solicitações após 120 segundos (padrão), no entanto, a maioria deve ser executada com mais rapidez e as consultas extremamente longas devem ficar ocultas nos números gerais. Procure alterações nesta linha de base, em vez de limites absolutos.
+    - **\\a latência de solicitação de NTDS** – isso está sujeito a quanto tempo a solicitação leva para ser processada. Active Directory expirar solicitações após 120 segundos (padrão), no entanto, a maioria deve ser executada com mais rapidez e as consultas extremamente longas devem ficar ocultas nos números gerais. Procure alterações nesta linha de base, em vez de limites absolutos.
 
         > [!NOTE]
         > Os valores altos aqui também podem ser indicadores de atrasos em solicitações de "proxy" para outros domínios e verificações de CRL.
 
-    - **NTDS @ no__t-1Estimated atraso da fila** – isso deve idealmente ser próximo de 0 para um desempenho ideal, pois isso significa que as solicitações não gastam tempo esperando para serem atendidas.
+    - **NTDS\\atraso estimado da fila** – é ideal que isso seja próximo de 0 para o desempenho ideal, pois isso significa que as solicitações não gastam tempo esperando para serem atendidas.
 
 Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens:
 
@@ -60,11 +60,11 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 -   [Acompanhamento de pesquisas caras e ineficientes](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   Active Directory conjunto de coletores de dados de diagnóstico no monitor de desempenho ([Son do SPA: Conjuntos de coletores de dados do AD em Win2008 e além de @ no__t-0)
+-   Active Directory conjunto de coletores de dados de diagnóstico no monitor de desempenho ([filho de Spa: conjuntos de coletores de dados do AD em Win2008 e além](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
 
 -   [Supervisor de desempenho de servidor da Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Pacote Advisor Active Directory
 
--   Pesquisa usando qualquer filtro, além de "(objectClass = \*)" que usa o índice ancestrais.
+-   Pesquisa usando qualquer filtro além de "(objectClass =\*)" que usa o índice ancestrais.
 
 ### <a name="other-index-considerations"></a>Outras considerações de índice
 
@@ -80,11 +80,11 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 -   Os índices de tupla são necessários para dar suporte a cadeias de caracteres de pesquisa e finais de pesquisa. Os índices de tupla não são necessários para as cadeias de caracteres de pesquisa iniciais.
 
-    -   Cadeia de caracteres de pesquisa inicial – (samAccountName = MYPC @ no__t-0)
+    -   Cadeia de caracteres de pesquisa inicial – (samAccountName = MYPC\*)
 
-    -   Cadeia de pesquisa medial-(samAccountName = \*MYPC @ no__t-1)
+    -   Cadeia de pesquisa medial-(samAccountName =\*MYPC\*)
 
-    -   Cadeia de caracteres de pesquisa final – (samAccountName = \*MYPC $)
+    -   Cadeia de caracteres de pesquisa final – (samAccountName =\*MYPC $)
 
 -   A criação de um índice irá gerar e/s de disco enquanto o índice está sendo compilado. Isso é feito em um thread em segundo plano com prioridade mais baixa e solicitações de entrada serão priorizadas sobre a compilação do índice. Se o planejamento de capacidade para o ambiente tiver sido feito corretamente, isso deverá ser transparente. No entanto, cenários de gravação intensa ou um ambiente em que a carga no armazenamento do controlador de domínio é desconhecido pode prejudicar a experiência do cliente e deve ser feito fora do horário de expediente.
 

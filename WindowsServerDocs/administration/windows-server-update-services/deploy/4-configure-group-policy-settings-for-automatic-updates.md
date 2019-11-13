@@ -19,19 +19,19 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361656"
 ---
-# <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Etapa 4: Definir configurações de Política de Grupo para Atualizações Automáticas
+# <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Etapa 4: Definir as configurações da política de grupo para atualizações automáticas
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Em um ambiente do Active Directory, você pode usar Política de Grupo para definir como computadores e usuários (mencionados neste documento como clientes do WSUS) podem interagir com as atualizações do Windows para obter atualizações automáticas do Windows Server Update Services (WSUS).
 
 Este tópico contém duas seções principais:
 
-[Política de grupo configurações para atualizações do cliente do WSUS](#group-policy-settings-for-wsus-client-updates), que fornece orientação prescritiva e detalhes comportamentais sobre as configurações de Windows Update e Agendador de manutenção de política de grupo que controlam como os clientes WSUS podem interagir com Windows Update para obter atualizações automáticas.
+[Política de grupo configurações para atualizações do cliente do WSUS](#group-policy-settings-for-wsus-client-updates), que fornece orientações prescritivas e detalhes comportamentais sobre as configurações de Windows Update e Agendador de manutenção de política de grupo que controlam como os clientes WSUS podem interagir com Windows Update para obter atualizações automáticas.
 
 As [informações complementares](#supplemental-information) têm as seguintes seções:
 
--   [Acessar as configurações de Windows Update no política de grupo](#accessing-the-windows-update-settings-in-group-policy), que fornece orientação geral sobre como usar o editor de gerenciamento política de grupo e informações sobre como acessar as configurações de extensões de política de serviços de atualização e o Agendador de manutenção no grupo Regras.
+-   [Acessar as configurações de Windows Update no política de grupo](#accessing-the-windows-update-settings-in-group-policy), que fornece orientação geral sobre como usar o editor de gerenciamento política de grupo e informações sobre como acessar as configurações de extensões de política de serviços de atualização e o Agendador de manutenção no política de grupo.
 
 -   [Alterações no WSUS relevantes para este guia](#changes-to-wsus-relevant-to-this-guide): para administradores familiarizados com o WSUS 3,2 e versões anteriores, esta seção fornece um breve resumo das principais diferenças entre a versão atual e a anterior do WSUS relevantes para este guia.
 
@@ -40,11 +40,11 @@ As [informações complementares](#supplemental-information) têm as seguintes s
 ## <a name="group-policy-settings-for-wsus-client-updates"></a>Configurações de Política de Grupo para atualizações do cliente do WSUS
 Esta seção fornece informações sobre três extensões de Política de Grupo. Nessas extensões, você encontrará as configurações que você pode usar para configurar como os clientes WSUS podem interagir com Windows Update para receber atualizações automáticas.
 
--   [Configuração do computador &gt; Windows Update configurações de política](#computer-configuration--windows-update-policy-settings)
+-   [Configuração do computador &gt; configurações de política de Windows Update](#computer-configuration--windows-update-policy-settings)
 
 -   [Configuração do computador &gt; configurações de política do Agendador de manutenção](#computer-configuration--maintenance-scheduler-policy-settings)
 
--   [Configuração de usuário &gt; Windows Update configurações de política](#user-configuration--windows-update-policy-settings)
+-   [Configuração do usuário &gt; configurações de política de Windows Update](#user-configuration--windows-update-policy-settings)
 
 > [!NOTE]
 > Este tópico pressupõe que você já usa o e está familiarizado com o Política de Grupo. Se você não estiver familiarizado com Política de Grupo, é recomendável revisar as informações na seção [informações complementares](#supplemental-information) deste documento antes de tentar definir as configurações de política para o WSUS.
@@ -84,7 +84,7 @@ Esta seção fornece detalhes sobre as seguintes configurações de política ba
 
 -   [Ativar notificações de software](#turn-on-software-notifications)
 
-No GPME, as políticas de Windows Update para a configuração baseada em computador estão localizadas no caminho: *Policyname* > **configuração do computador**@no__t-**3 políticas** > **Modelos Administrativos** > **componentes do Windows** > **Windows Update**.
+No GPME, as políticas de Windows Update para a configuração baseada em computador estão localizadas em caminho: *política* > **configuração do computador** > **políticas** > **modelos administrativos** > **componentes do Windows** ** > Windows Update.**
 
 > [!NOTE]
 > Por padrão, essas configurações não são definidas.
@@ -125,7 +125,7 @@ Especifica se usuários não administrativos receberão notificações de atuali
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
 |**Não configurado**|Especifica que os usuários sempre verão uma janela de controle de conta e exigem permissões elevadas para realizar essas tarefas. Um administrador local pode alterar essa configuração usando o editor de Política de Grupo local.|
-|**Habilitada**|Especifica que a atualização automática do Windows e o Microsoft Update incluirão não administradores ao determinar qual usuário conectado receberá notificações de atualização. Usuários não administrativos poderão instalar todo o conteúdo de atualização opcional, recomendado e importante para o qual receberam uma notificação. Os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para instalar essas atualizações, exceto no caso de atualizações que contêm interface do usuário, contrato de licença de usuário final ou alterações de configuração de Windows Update.<br /><br />Há duas situações em que o efeito dessa configuração depende do computador operacional:<br /><br />1.  **Ocultar** ou **restaurar** atualizações<br />2.  **Cancelar** uma instalação de atualização<br /><br />No Windows Vista ou no Windows XP, se essa configuração de política estiver habilitada, os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações.<br /><br />No Windows Vista, se essa configuração de política estiver habilitada, os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações. Se essa configuração de política não estiver habilitada, os usuários sempre verão uma janela de controle de conta e precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações.<br /><br />No Windows 7, essa configuração de política não tem nenhum efeito. Os usuários sempre verão uma janela de controle de conta e precisarão de permissões elevadas para realizar essas tarefas.<br /><br />No Windows 8 e no Windows RT, essa configuração de política não tem nenhum efeito.|
+|**Habilitada**|Especifica que a atualização automática do Windows e o Microsoft Update incluirão não administradores ao determinar qual usuário conectado receberá notificações de atualização. Usuários não administrativos poderão instalar todo o conteúdo de atualização opcional, recomendado e importante para o qual receberam uma notificação. Os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para instalar essas atualizações, exceto no caso de atualizações que contêm interface do usuário, contrato de licença de usuário final ou alterações de configuração de Windows Update.<br /><br />Há duas situações em que o efeito dessa configuração depende do computador operacional:<br /><br />1. **ocultar** ou **restaurar** atualizações<br />2. **Cancelar** uma instalação de atualização<br /><br />No Windows Vista ou no Windows XP, se essa configuração de política estiver habilitada, os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações.<br /><br />No Windows Vista, se essa configuração de política estiver habilitada, os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações. Se essa configuração de política não estiver habilitada, os usuários sempre verão uma janela de controle de conta e precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações.<br /><br />No Windows 7, essa configuração de política não tem nenhum efeito. Os usuários sempre verão uma janela de controle de conta e precisarão de permissões elevadas para realizar essas tarefas.<br /><br />No Windows 8 e no Windows RT, essa configuração de política não tem nenhum efeito.|
 |**Desabilitada**|Especifica que somente administradores conectados recebem notificações de atualização. **Observação:** No Windows 8 e no Windows RT, essa configuração de política é habilitada por padrão. Em todas as versões anteriores do Windows, ele é desabilitado por padrão.|
 
 **Opções:** Não há opções para essa configuração.
@@ -212,7 +212,7 @@ Para usar essa configuração, selecione **habilitado**e, em **Opções** , em *
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
 |**Não configurado**|Especifica que o uso de atualizações automáticas não está especificado no nível de Política de Grupo. No entanto, um administrador de computador ainda pode configurar as atualizações automáticas no painel de controle.|
-|**Habilitada**|Especifica que o Windows reconhece quando o computador está online e usa sua conexão com a Internet para pesquisar Windows Update de atualizações disponíveis.<br /><br />Quando habilitado, os administradores locais terão permissão para usar o painel de controle Windows Update para selecionar uma opção de configuração de sua escolha. No entanto, os administradores locais não terão permissão para desabilitar a configuração para Atualizações Automáticas.<br /><br />-   **2-notificar para baixar e notificar para instalar**<br />    Quando Windows Update localizar atualizações que se aplicam ao computador, os usuários serão notificados de que as atualizações estão prontas para download. Os usuários podem executar Windows Update para baixar e instalar as atualizações disponíveis.<br />-   **3-baixar automaticamente e notificar para instalar** (configuração padrão)<br />    Windows Update localiza as atualizações aplicáveis e as baixa em segundo plano; o usuário não é notificado ou interrompido durante o processo. Quando os downloads forem concluídos, os usuários serão notificados de que há atualizações prontas para serem instaladas. Os usuários podem executar Windows Update para instalar as atualizações baixadas.<br />-   **4-baixar automaticamente e agendar a instalação**<br />    Você pode especificar o agendamento usando as opções nessa configuração de Política de Grupo. Se nenhuma agenda for especificada, o agendamento padrão para todas as instalações será todos os dias às 3:00. Se alguma atualização exigir uma reinicialização para concluir a instalação, o Windows reiniciará o computador automaticamente. (se um usuário estiver conectado ao computador quando o Windows estiver pronto para ser reiniciado, o usuário será notificado e terá a opção de atrasar a reinicialização.) **Observação:** iniciando o Windows 8, você pode definir as atualizações a serem instaladas durante a manutenção automática em vez de usar uma agenda específica vinculada a Windows Update. A manutenção automática instalará atualizações quando o computador não estiver em uso e evitará a instalação de atualizações quando o computador estiver sendo executado com baterias. Se a manutenção automática não puder instalar atualizações em dias, Windows Update instalará atualizações imediatamente. Os usuários serão notificados sobre uma reinicialização pendente. Uma reinicialização pendente só ocorrerá se não houver nenhum potencial para perda acidental de dados.    Você pode especificar opções de agendamento nas configurações do Agendador de manutenção do GPME, que estão localizadas no caminho, *policyname* > **configuração do computador** > **políticas** > **modelos administrativos** >  **Componentes do Windows** > **Agendador de manutenção**1 limite de ativação de**manutenção automática**. Consulte a seção desta referência intitulada: [Configurações do Agendador de manutenção](#computer-configuration--maintenance-scheduler-policy-settings), para obter detalhes de configuração.    **5-permitir que o administrador local escolha a configuração**<br />-Especifica se os administradores locais têm permissão para usar o painel de controle de Atualizações Automáticas para selecionar uma opção de configuração de sua escolha, por exemplo, se os administradores locais podem escolher um horário de instalação agendado.<br />    Os administradores locais não poderão desabilitar a configuração para as Atualizações Automáticas.|
+|**Habilitada**|Especifica que o Windows reconhece quando o computador está online e usa sua conexão com a Internet para pesquisar Windows Update de atualizações disponíveis.<br /><br />Quando habilitado, os administradores locais terão permissão para usar o painel de controle Windows Update para selecionar uma opção de configuração de sua escolha. No entanto, os administradores locais não terão permissão para desabilitar a configuração para Atualizações Automáticas.<br /><br />-   **2-notificar para baixar e notificar para instalar**<br />    Quando Windows Update localizar atualizações que se aplicam ao computador, os usuários serão notificados de que as atualizações estão prontas para download. Os usuários podem executar Windows Update para baixar e instalar as atualizações disponíveis.<br />-   **3-baixar automaticamente e notificar para instalar** (configuração padrão)<br />    Windows Update localiza as atualizações aplicáveis e as baixa em segundo plano; o usuário não é notificado ou interrompido durante o processo. Quando os downloads forem concluídos, os usuários serão notificados de que há atualizações prontas para serem instaladas. Os usuários podem executar Windows Update para instalar as atualizações baixadas.<br />-   **4-baixar automaticamente e agendar a instalação**<br />    Você pode especificar o agendamento usando as opções nessa configuração de Política de Grupo. Se nenhuma agenda for especificada, o agendamento padrão para todas as instalações será todos os dias às 3:00. Se alguma atualização exigir uma reinicialização para concluir a instalação, o Windows reiniciará o computador automaticamente. (se um usuário estiver conectado ao computador quando o Windows estiver pronto para ser reiniciado, o usuário será notificado e terá a opção de atrasar a reinicialização.) **Observação:** iniciando o Windows 8, você pode definir as atualizações a serem instaladas durante a manutenção automática em vez de usar uma agenda específica vinculada a Windows Update. A manutenção automática instalará atualizações quando o computador não estiver em uso e evitará a instalação de atualizações quando o computador estiver sendo executado com baterias. Se a manutenção automática não puder instalar atualizações em dias, Windows Update instalará atualizações imediatamente. Os usuários serão notificados sobre uma reinicialização pendente. Uma reinicialização pendente só ocorrerá se não houver nenhum potencial para perda acidental de dados.    Você pode especificar opções de agendamento nas configurações do Agendador de manutenção do GPME, que estão localizadas no caminho, *policyname* > **configuração do computador** > **políticas** > **modelos administrativos** > **componentes do Windows** > o **Agendador de manutenção** > limite de ativação de **manutenção automática**. Consulte a seção desta referência intitulada: [configurações do Agendador de manutenção](#computer-configuration--maintenance-scheduler-policy-settings), para obter detalhes de configuração.    **5-permitir que o administrador local escolha a configuração**<br />-Especifica se os administradores locais têm permissão para usar o painel de controle de Atualizações Automáticas para selecionar uma opção de configuração de sua escolha, por exemplo, se os administradores locais podem escolher um horário de instalação agendado.<br />    Os administradores locais não poderão desabilitar a configuração para as Atualizações Automáticas.|
 |**Desabilitada**|Especifica que todas as atualizações do cliente que estão disponíveis no serviço de Windows Update público devem ser baixadas manualmente da Internet e instaladas.|
 
 #### <a name="delay-restart-for-scheduled-installations"></a>Atrasar reinicialização para instalações agendadas
@@ -223,7 +223,7 @@ Especifica a quantidade de tempo Atualizações Automáticas aguardará antes de
 |Sistemas operacionais Windows que ainda estão em seu [ciclo de vida de suporte de produtos Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. Se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
+> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
 
 |||
 |-|-|
@@ -242,18 +242,18 @@ Essa configuração de política permite que você especifique se a opção **in
 |Sistemas operacionais Windows que ainda estão em seu [ciclo de vida de suporte de produtos Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Essa configuração de política não tem impacto se a**configuração do computador** >  *política* > **políticas** > **Modelos Administrativos** > **componentes do Windows** > **Windows Update**@no_ _T-11 não**exibe a opção "instalar atualizações e desligar" em desligar a configuração da política de diálogo do Windows** está habilitada.
+> Essa configuração de política não tem impacto se a *política* > **configuração do computador** > **políticas** > modelos administrativos **componentes** do Windows ** >  > Windows Update** não **exibe a opção "instalar atualizações e desligar" em desligar a configuração da política de diálogo do Windows** está habilitada. > 
 
 |||
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
 |**Não configurado**|Especifica que **instalar atualizações e desligar** será a opção padrão na caixa de diálogo **desligar o Windows** se houver atualizações disponíveis para instalação no momento em que o usuário selecionar a opção desligar para desligar o computador.|
-|**Habilitada**|Se você habilitar essa configuração de política, a última opção de desligar do usuário (por exemplo, hibernar ou reiniciar) será a opção padrão na caixa de diálogo **desligar o Windows** , independentemente de a opção **instalar atualizações e desligar** estar disponível no **O que você deseja que o computador faça?** AdicionarMenu.|
+|**Habilitada**|Se você habilitar essa configuração de política, a última opção de desligamento do usuário (por exemplo, hibernar ou reiniciar) será a opção padrão na caixa de diálogo **desligar o Windows** , independentemente de a opção **instalar atualizações e desligar** estar disponível no menu **o que você deseja que o computador faça?** .|
 |**Desabilitada**|Especifica que **instalar atualizações e desligar** será a opção padrão na caixa de diálogo **desligar o Windows** se houver atualizações disponíveis para instalação no momento em que o usuário selecionar a opção desligar para desligar o computador.|
 
 **Opções:** Não há opções para essa configuração.
 
-#### <a name="do-not-connect-to-any-windows-update-internet-locations"></a>Não se conectar a locais de Internet do Windows Update
+#### <a name="do-not-connect-to-any-windows-update-internet-locations"></a>Não conectar a localizações do Windows Update na Internet
 Mesmo quando Windows Update estiver configurado para receber atualizações de um serviço de atualização da intranet, ele recuperará periodicamente as informações do serviço de Windows Update público para habilitar conexões futuras com Windows Update e outros serviços, como Microsoft Update ou Microsoft Store.
 
 Habilitar essa política desabilitará a funcionalidade para recuperar periodicamente as informações do serviço de atualização do Windows Server público e poderá fazer com que a conexão com os serviços públicos, como Microsoft Store, pare de funcionar.
@@ -340,7 +340,7 @@ Especifica que para concluir uma instalação agendada, Atualizações Automáti
 |Sistemas operacionais Windows que ainda estão em seu [ciclo de vida de suporte de produtos Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. Se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
+> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
 
 |||
 |-|-|
@@ -359,7 +359,7 @@ Especifica a quantidade de tempo para Atualizações Automáticas aguardar antes
 |Sistemas operacionais Windows que ainda estão em seu [ciclo de vida de suporte de produtos Microsoft](https://support.microsoft.com/gp/lifeselect).|Windows RT|
 
 > [!IMPORTANT]
-> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. Se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
+> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
 
 > [!NOTE]
 > Essa política não tem nenhum efeito em computadores que executam o Windows RT.
@@ -383,7 +383,7 @@ Se o status for definido como **não configurado**, uma instalação agendada pe
 |Sistemas operacionais Windows que ainda estão em seu [ciclo de vida de suporte de produtos Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. Se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
+> Essa política se aplica somente quando Atualizações Automáticas está configurado para executar instalações agendadas de atualizações. se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
 
 |||
 |-|-|
@@ -466,7 +466,7 @@ se a configuração de política "Configurar Atualizações Automáticas" estive
 **Opções:** Não há opções para essa configuração.
 
 ### <a name="computer-configuration--maintenance-scheduler-policy-settings"></a>Configuração do computador > configurações de política do Agendador de manutenção
-Na configuração definir Atualizações Automáticas, você selecionou a opção **4 – baixar automaticamente e agendar a instalação**. você pode especificar as configurações do Agendador de manutenção de agendamento no GPMC para computadores que executam o Windows 8 e o Windows RT. Se você não selecionou a opção 4 na configuração "definir Atualizações Automáticas", não será necessário definir essas configurações para fins de atualizações automáticas. As configurações do Agendador de manutenção estão localizadas no caminho: *Policyname* > **configuração do computador**@no__t-**3 políticas** > **Modelos Administrativos** >  componentes do**Windows** > **Agendador de manutenção**. A extensão do Agendador de manutenção do Política de Grupo contém as seguintes configurações:
+Na configuração definir Atualizações Automáticas, você selecionou a opção **4 – baixar automaticamente e agendar a instalação**. você pode especificar as configurações do Agendador de manutenção de agendamento no GPMC para computadores que executam o Windows 8 e o Windows RT. Se você não selecionou a opção 4 na configuração "definir Atualizações Automáticas", não será necessário definir essas configurações para fins de atualizações automáticas. As configurações do Agendador de manutenção estão localizadas em caminho: *política* > **configuração do computador** > **políticas** > **modelos administrativos** **componentes do Windows** > o **Agendador de manutenção**. >  A extensão do Agendador de manutenção do Política de Grupo contém as seguintes configurações:
 
 -   [Limite de ativação de manutenção automática](#automatic-maintenance-activation-boundary)
 
@@ -489,9 +489,9 @@ O limite de ativação de manutenção é o horário agendado diário no qual a 
 |||
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
-|**Não configurado**|Se essa configuração de política não estiver configurada, a hora agendada diária, conforme especificado em computadores cliente na **central de ações** >  painel de controle de**manutenção automática** será aplicada.|
-|**Habilitada**|A habilitação dessa configuração de política substitui todas as configurações padrão ou modificadas definidas em computadores cliente no **painel de controle** > **central de ações** > **manutenção automática** (ou em algumas versões de cliente, **manutenção**).|
-|**Desabilitada**|Se você definir essa configuração de política como **desabilitada**, a hora agendada diária, conforme especificado na **central de ações** > **manutenção automática**, no painel de controle será aplicada.|
+|**Não configurado**|Se essa configuração de política não estiver configurada, o horário agendado diariamente, conforme especificado em computadores cliente na **central de ações** > painel de controle de **manutenção automática** será aplicado.|
+|**Habilitada**|A habilitação dessa configuração de política substitui qualquer configuração padrão ou modificada configurada em computadores cliente no **painel de controle** > a **central de ações** > **manutenção automática** (ou em algumas versões de cliente, **manutenção**).|
+|**Desabilitada**|Se você definir essa configuração de política como **desabilitada**, o horário agendado diariamente, conforme especificado na **central de ações** > **manutenção automática**, no painel de controle será aplicado.|
 
 #### <a name="automatic-maintenance-random-delay"></a>Atraso aleatório na manutenção automática
 Essa configuração de política permite que você configure o atraso aleatório de ativação de manutenção automática.
@@ -532,9 +532,9 @@ A política de ativação de manutenção especifica se a manutenção automáti
 |||
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
-|**Não configurado**|Se você não definir essa configuração de política, a configuração de ativação, conforme especificado na **central de ações** >  painel de controle de**manutenção automática** será aplicada.|
+|**Não configurado**|Se você não definir essa configuração de política, a configuração de ativação, conforme especificado na **central de ações** > painel de controle de **manutenção automática** será aplicada.|
 |**Habilitada**|Se você habilitar essa configuração de política, a manutenção automática tentará definir uma política de ativação do sistema operacional e fará uma solicitação de ativação para a hora agendada diária, se necessário.|
-|**Desabilitada**|Se você desabilitar essa configuração de política, a configuração de ativação, conforme especificado na **central de ações** >  painel de controle de**manutenção automática** será aplicada.|
+|**Desabilitada**|Se você desabilitar essa configuração de política, a configuração de ativação, conforme especificado na **central de ações** > painel de controle de **manutenção automática** será aplicada.|
 
 ### <a name="user-configuration--windows-update-policy-settings"></a>Configuração do usuário > configurações de política de Windows Update
 Esta seção fornece detalhes sobre as seguintes configurações de política baseadas no usuário:
@@ -545,7 +545,7 @@ Esta seção fornece detalhes sobre as seguintes configurações de política ba
 
 -   [remover o acesso para usar todos os recursos de Windows Update](#remove-access-to-use-all-windows-update-features)
 
-No GPMC, as configurações de usuário para atualizações automáticas do computador estão localizadas no caminho: *Policyname* > **configuração de usuário**@no__t-**3 políticas** > **Modelos Administrativos** > **componentes do Windows** > **Windows Update**. As configurações são listadas na mesma ordem em que aparecem na configuração do computador e nas extensões de configuração do usuário em Política de Grupo, quando a guia **configurações** da política de Windows Update é selecionada para classificar as configurações em ordem alfabética.
+No GPMC, as configurações de usuário para atualizações automáticas de computador estão localizadas em caminho: *policyname* > **políticas** de > de **configuração de usuário** > **modelos administrativos** > **componentes do Windows** ** > Windows Update.** As configurações são listadas na mesma ordem em que aparecem na configuração do computador e nas extensões de configuração do usuário em Política de Grupo, quando a guia **configurações** da política de Windows Update é selecionada para classificar as configurações em ordem alfabética.
 
 > [!NOTE]
 > Por padrão, a menos que indicado de outra forma, essas configurações não são configuradas.
@@ -577,13 +577,13 @@ Especifica se a opção **instalar atualizações e desligar** é permitida como
 |Sistemas operacionais Windows que ainda estão em seu [ciclo de vida de suporte de produtos Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Essa configuração de política não tem impacto se a**configuração de usuário** *PolicyName* >   > **políticas** > **Modelos Administrativos** > **componentes do Windows** > **Windows Update**@no__ t-11 não**exibe a opção "instalar atualizações e desligar" na caixa de diálogo desligar o Windows** está habilitada.
+> Essa configuração de política não tem impacto se o *policyname > política* de ** > de** configuração de **usuário** > **modelos administrativos** **componentes do Windows** >  > Windows Update não exibir a **opção "instalar atualizações e desligar" na caixa de diálogo desligar o Windows** está habilitada. > 
 
 |||
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
 |**Não configurado**|Especifica se a opção **instalar atualizações e desligar** será a opção padrão na caixa de diálogo **desligar o Windows** se houver atualizações disponíveis para instalação no momento em que o usuário selecionar a opção desligar para desligar o computador.|
-|**Habilitada**|Especifica se a última opção de desligamento do usuário (por exemplo, hibernação ou reinicialização) é a opção padrão na caixa de diálogo **desligar o Windows** , independentemente de a **opção instalar atualizações e desligar** estar disponível no **que você Quer que o computador faça?** AdicionarMenu.|
+|**Habilitada**|Especifica se a última opção de desligamento do usuário (por exemplo, hibernação ou reinicialização) é a opção padrão na caixa de diálogo **desligar o Windows** , independentemente de a **opção instalar atualizações e desligar** estar disponível no menu **o que você deseja que o computador faça?** .|
 |**Desabilitada**|Especifica se a opção **instalar atualizações e desligar** será a opção padrão na caixa de diálogo **desligar o Windows** se houver atualizações disponíveis para instalação no momento em que o usuário selecionar a opção desligar para desligar o computador.|
 
 **Opções:** Não há opções para essa configuração.
@@ -599,7 +599,7 @@ Essa configuração permite remover o acesso de cliente do WSUS ao Windows Updat
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
 |**Não configurado**|Os usuários podem se conectar ao site Windows Update.|
-|**Habilitada**|**Importante:** se habilitar, todos os recursos de Windows Update serão removidos. Isso inclui bloquear o acesso ao site Windows Update em https://windowsupdate.microsoft.com, no hiperlink Windows Update no menu iniciar ou na tela iniciar, e também no menu **ferramentas** no Internet Explorer. A atualização automática do Windows também está desabilitada; o usuário não será notificado nem receberá atualizações críticas do Windows Update. Essa configuração também impede que Device Manager instalem automaticamente atualizações de driver do site Windows Update.<br /><br />Quando habilitado, você pode configurar uma das seguintes opções de notificação:<br /><br />-   **0-não mostrar notificações**<br />    Essa configuração removerá todo o acesso a Windows Update recursos e nenhuma notificação será mostrada.<br />-   **1-Mostrar notificações necessárias de reinicialização**<br />    Essa configuração mostrará notificações sobre reinicializações necessárias para concluir uma instalação. **Observação:** Em computadores que executam o Windows 8 e o Windows RT, se essa política estiver habilitada, somente as notificações relacionadas a reinicializações e a incapacidade de detectar atualizações serão mostradas. Não há suporte para as opções de notificação. As notificações na tela de entrada são sempre exibidas.|
+|**Habilitada**|**Importante:** se habilitar, todos os recursos de Windows Update serão removidos. Isso inclui bloquear o acesso ao site Windows Update em https://windowsupdate.microsoft.com, no hiperlink Windows Update no menu iniciar ou na tela iniciar, e também no menu **ferramentas** do Internet Explorer. A atualização automática do Windows também está desabilitada; o usuário não será notificado nem receberá atualizações críticas do Windows Update. Essa configuração também impede que Device Manager instalem automaticamente atualizações de driver do site Windows Update.<br /><br />Quando habilitado, você pode configurar uma das seguintes opções de notificação:<br /><br />-   **0-não mostrar notificações**<br />    Essa configuração removerá todo o acesso a Windows Update recursos e nenhuma notificação será mostrada.<br />-   **1-Mostrar notificações necessárias de reinicialização**<br />    Essa configuração mostrará notificações sobre reinicializações necessárias para concluir uma instalação. **Observação:** Em computadores que executam o Windows 8 e o Windows RT, se essa política estiver habilitada, somente as notificações relacionadas a reinicializações e a incapacidade de detectar atualizações serão mostradas. Não há suporte para as opções de notificação. As notificações na tela de entrada são sempre exibidas.|
 |**Desabilitada**|Os usuários podem se conectar ao site Windows Update.|
 
 **Opções:** Consulte **habilitado** na tabela para essa configuração.
@@ -636,11 +636,11 @@ O procedimento a seguir descreve como abrir o GPMC em seu controlador de domíni
 
 1.  No Política de Grupo Editor de gerenciamento, siga um destes procedimentos:
 
-    -   **Abra a Windows Update de configuração do computador > a extensão de política de grupo**. Navegue até: *Policyname* > **configuração do computador**@no__t-**3 políticas** / **Modelos Administrativos** > **componentes do Windows** > **Windows Update**.
+    -   **Abra a Windows Update de configuração do computador > a extensão de política de grupo**. Navegue até: *policyname* > **configuração do computador** > **políticas** / **modelos administrativos** > **componentes do Windows** > **Windows Update**.
 
-    -   **Abra a extensão de Windows Update de configuração de usuário > do política de grupo**. Navegue até: *Policyname* > **configuração de usuário**@no__t-**3 políticas** > **Modelos Administrativos** > **componentes do Windows** > **Windows Update**.
+    -   **Abra a extensão de Windows Update de configuração de usuário > do política de grupo**. Navegue até: *policyname* > **políticas** de > de **configuração de usuário** > **modelos administrativos** > **componentes do Windows** > Windows Update.
 
-    -   **Abra a configuração do computador > extensão do Agendador de manutenção do política de grupo**. No GPOE, navegue até *policyname* > **configuração do computador**@no__t-**3 políticas** > **Modelos Administrativos** >  componentes do**Windows** > **Agendador de manutenção**.
+    -   **Abra a configuração do computador > extensão do Agendador de manutenção do política de grupo**. Em GPOE, navegue até *policyname* > **configuração do computador** > **políticas** > **modelos administrativos** > **componentes do Windows** > o **Agendador de manutenção**.
 
 Para obter mais informações sobre o Política de Grupo, consulte [política de grupo visão geral](https://technet.microsoft.com/library/hh831791.aspx(v=ws.12)).
 
@@ -682,7 +682,7 @@ Veja a seguir uma lista de termos usados neste guia.
 
 |Termo|Definição|
 |----|-------|
-|Atualizações Automáticas|**Um serviço que é executado em computadores Windows** (atualizações automáticas): Refere-se ao componente de computador cliente interno dos sistemas operacionais Microsoft Windows Vista, Windows Server 2003, Windows XP e Windows 2000 com SP3 para obter atualizações de Microsoft Update ou Windows Update.<br /><br />**Referência casual** (atualizações automáticas): O termo usado para descrever quando o agente de Windows Update agenda e baixa automaticamente as atualizações.|
+|Atualizações Automáticas|**Um serviço que é executado em computadores Windows** (atualizações automáticas): refere-se ao componente de computador cliente interno dos sistemas operacionais Microsoft Windows Vista, windows Server 2003, Windows XP e Windows 2000 com SP3 para obter atualizações de Microsoft Update ou Windows Update.<br /><br />**Referência casual** (atualizações automáticas): o termo usado para descrever quando o agente de Windows Update agenda e baixa automaticamente as atualizações.|
 |servidor autônomo|Use para fazer referência a um servidor de Windows Server Update Services downstream (WSUS) no qual os administradores podem gerenciar os componentes do WSUS.|
 |servidor downstream|Use para fazer referência a um servidor de Windows Server Update Services (WSUS) que obtém atualizações de outro servidor do WSUS em vez de Microsoft Update ou Windows Update.|
 |Extensão de Política de Grupo (e: extensão de Política de Grupo|Uma coleção de configurações em Política de Grupo que são usadas para controlar como os usuários e computadores (aos quais as políticas se aplicam) podem configurar e usar vários serviços e recursos do Windows. Os administradores podem usar o WSUS com Política de Grupo para a configuração do lado do cliente do cliente Atualizações Automáticas, para ajudar a garantir que os usuários finais não possam desabilitar ou burlar políticas de atualização corporativa.<br /><br />O WSUS não requer o uso do Active Directory ou do Política de Grupo. A configuração do cliente também pode ser aplicada usando a política de grupo local ou modificando o registro do Windows.|
@@ -691,7 +691,7 @@ Veja a seguir uma lista de termos usados neste guia.
 |Microsoft Update|**Um site de download da Microsoft baseado na Internet:** Um site da Internet da Microsoft que armazena e distribui atualizações para computadores Windows (drivers de dispositivo), sistemas operacionais Windows e outros produtos de software da Microsoft.|
 |SUS (Software Update Services)|O SUS foi o produto predecessor da Windows Server Update Services (WSUS).|
 |atualizações|Qualquer uma coleção de revisões de software, hotfixes, Service Packs, pacotes de recursos e drivers de dispositivo que podem ser instalados em um computador para estender a funcionalidade ou melhorar o desempenho e a segurança.|
-|arquivos de atualização|Os arquivos necessários para instalar uma atualização em um computador.|
+|Arquivos de atualização|Os arquivos necessários para instalar uma atualização em um computador.|
 |atualizar informações (também conhecidas como metadados de atualização)|As informações sobre uma atualização, em oposição aos arquivos binários de atualização em um pacote de atualização. Por exemplo, os metadados fornecem informações para as propriedades de uma atualização, permitindo que você descubra o que a atualização é útil. Os metadados também incluem termos de licença para software Microsoft. O pacote de metadados baixado para uma atualização normalmente é muito menor do que o pacote de arquivo de atualização real.|
 |atualizar origem|O local para o qual um servidor de Windows Server Update Services (WSUS) sincroniza para obter arquivos de atualização. Esse local pode ser Microsoft Update ou um servidor WSUS upstream.|
 |servidor upstream|Um servidor Windows Server Update Services (WSUS) que fornece arquivos de atualização para outro servidor WSUS, que, por sua vez, é chamado de servidor downstream.|

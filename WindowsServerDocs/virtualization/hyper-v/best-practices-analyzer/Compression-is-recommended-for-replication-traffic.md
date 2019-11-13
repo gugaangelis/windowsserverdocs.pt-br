@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -36,12 +36,12 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *O tráfego de replicação enviado pela rede do servidor primário para o servidor de réplica é descompactado.*  
   
 ## <a name="impact"></a>Impacto  
-o tráfego de @no__t 0Replication usará mais largura de banda do que o necessário. Isso afeta as seguintes máquinas virtuais: *  
+*O tráfego de replicação usará mais largura de banda do que o necessário. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>Resolução  
-Réplica do Hyper-V de @no__t 0Configure para compactar os dados transmitidos pela rede nas configurações da máquina virtual no Gerenciador do Hyper-V. Você também pode usar ferramentas fora do Hyper-V para executar a compactação. *  
+*Configure a réplica do Hyper-V para compactar os dados transmitidos pela rede nas configurações da máquina virtual no Gerenciador do Hyper-V. Você também pode usar ferramentas fora do Hyper-V para executar a compactação.*  
   
 
 
