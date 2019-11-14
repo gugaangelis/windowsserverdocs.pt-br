@@ -1,6 +1,6 @@
 # [Introdução ao Windows Server 2019](get-started-19.md) 
 ## [Novidades no Windows Server 2019](whats-new-19.md)
-## [Novidades no Windows Server, versão 1903](whats-new-in-windows-server-1903.md)
+## [Novidades no Windows Server, versões 1903 e 1909](whats-new-in-windows-server-1903-1909.md)
 ## [Comparação dos canais de manutenção](servicing-channels-19.md)
 ## [Instalar | Atualizar | Migrar](install-upgrade-migrate-19.md)
 ## [Notas sobre a versão: problemas importantes no Windows Server 2019](rel-notes-19.md)
