@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   

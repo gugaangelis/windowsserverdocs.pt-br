@@ -39,15 +39,15 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 |Parâmetro|Descrição|
 |-------|--------|
-|/SHA1 \<hash >|Especifica a impressão digital, que é o hash Secure Hash Algorithm 1 (SHA1) do certificado de autenticação que está incluído no repositório de certificados. Usado no Windows Server 2012 R2 e mais antigo.|
-|/SHA256 \<hash >|Especifica a impressão digital, que é o hash do algoritmo de hash seguro 256 (SHA256) do certificado de autenticação que está incluído no repositório de certificados. Substitui/SHA1 no Windows Server 2016 e mais recente.|
+|> hash \</SHA1|Especifica a impressão digital, que é o hash Secure Hash Algorithm 1 (SHA1) do certificado de autenticação que está incluído no repositório de certificados. Usado no Windows Server 2012 R2 e mais antigo.|
+|> hash \</SHA256|Especifica a impressão digital, que é o hash do algoritmo de hash seguro 256 (SHA256) do certificado de autenticação que está incluído no repositório de certificados. Substitui/SHA1 no Windows Server 2016 e mais recente.|
 |/q|Modo silencioso. Nenhuma saída quando o comando for bem sucedido e a saída mínima se o comando falhar.|
 |/v|modo detalhado. Exibe todos os avisos, mensagens e status.|
 |/l|Testa os resultados de assinatura e saída sem realmente substituir nenhum dos arquivos de entrada.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
--   A impressão digital do certificado SHA1 ou SHA256 deve representar um Publicador de arquivo. rdp confiável. Para obter a impressão digital do certificado, abra o snap-in certificados, clique duas vezes no certificado que você deseja usar (no repositório de certificados do computador local ou em seu armazenamento de certificados pessoais), clique na guia **detalhes** e, em seguida, noLista de campos, clique em **impressão digital**.
+-   A impressão digital do certificado SHA1 ou SHA256 deve representar um Publicador de arquivo. rdp confiável. Para obter a impressão digital do certificado, abra o snap-in certificados, clique duas vezes no certificado que você deseja usar (no repositório de certificados do computador local ou em seu armazenamento de certificados pessoais), clique na guia **detalhes** e, na lista **campo** , clique em **impressão digital**.
 
     > [!NOTE]
     > Ao copiar a impressão digital para uso com a ferramenta rdpsign. exe, você deve remover os espaços.
@@ -72,5 +72,5 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
   ## <a name="see-also"></a>Consulte também
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md) 
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
   [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)

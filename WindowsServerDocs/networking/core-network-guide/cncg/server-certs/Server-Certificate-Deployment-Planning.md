@@ -17,7 +17,7 @@ ms.locfileid: "71356109"
 ---
 # <a name="server-certificate-deployment-planning"></a>Planejamento da implantação de certificado do servidor
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Antes de implantar certificados de servidor, você deve planejar os seguintes itens:  
   

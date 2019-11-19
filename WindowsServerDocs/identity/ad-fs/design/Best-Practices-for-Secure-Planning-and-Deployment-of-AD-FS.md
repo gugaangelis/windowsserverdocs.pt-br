@@ -89,7 +89,7 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
     |-------------------|------------------|----------------------|  
     |Requerer|O servidor está totalmente protegido.|A proteção estendida é imposta e sempre necessária.|  
     |Permitir|O servidor está parcialmente protegido.|A proteção estendida é imposta nos casos em que os sistemas envolvidos foram atualizados para dar suporte a ela.|  
-    |Nenhuma|O servidor está vulnerável.|A proteção estendida não é imposta.|  
+    |Nenhum|O servidor está vulnerável.|A proteção estendida não é imposta.|  
   
 -   **Se você estiver usando registro em log e rastreamento, garanta a privacidade de qualquer informação confidencial.**  
   
