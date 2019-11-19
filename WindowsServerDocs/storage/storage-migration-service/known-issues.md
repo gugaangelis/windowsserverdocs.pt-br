@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5889ae43c4b572ae75c8df10d0c47fc21337d558
-ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
+ms.openlocfilehash: e20913b1245ce7e453b87e9b88a7a418a5c71de2
+ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413254"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166176"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -44,21 +44,11 @@ A extensão de serviço de migração de armazenamento do Windows Admin Center �
 
 Para resolver, use ou atualize para o Windows Server 2019 Build 1809 ou posterior.
 
-## <a name="storage-migration-service-doesnt-let-you-choose-static-ip-on-cutover"></a>O serviço de migração de armazenamento não permite que você escolha o IP estático na transferência
-
-Ao usar a versão 0,57 da extensão de serviço de migração de armazenamento no centro de administração do Windows e você chegar à fase de transferência, não será possível selecionar um IP estático para um endereço. Você é forçado a usar o DHCP.
-
-Para resolver esse problema, no centro de administração do Windows, procure **configurações**  > **extensões** para um alerta informando que o serviço de migração de armazenamento de versão atualizado 0.57.2 está disponível para instalação. Talvez seja necessário reiniciar a guia do navegador para o centro de administração do Windows.
-
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>A validação de transferência do serviço de migração de armazenamento falha com o erro "o acesso foi negado para a política de filtro de token no computador de destino"
 
 Ao executar a validação de transferência, você receberá o erro "falha: acesso negado para a política de filtro de token no computador de destino". Isso ocorre mesmo que você tenha fornecido credenciais de administrador local corretas para os computadores de origem e de destino.
 
-Esse problema é causado por um defeito de código no Windows Server 2019. O problema ocorrerá quando você estiver usando o computador de destino como um orquestrador de serviço de migração de armazenamento.
-
-Para contornar esse problema, instale o serviço de migração de armazenamento em um computador com Windows Server 2019 que não seja o destino de migração pretendido e, em seguida, conecte-se a esse servidor com o centro de administração do Windows e execute a migração.
-
-Corrigimos isso em uma versão posterior do Windows Server. Abra um caso de suporte por meio de [suporte da Microsoft](https://support.microsoft.com) para solicitar que uma backport dessa correção seja criada.
+Esse problema foi corrigido na atualização do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) . 
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>O serviço de migração de armazenamento não está incluído na avaliação do Windows Server 2019 ou no Windows Server 2019 Essentials Edition
 
@@ -105,16 +95,6 @@ Para contornar esse problema:
 
 Pretendemos alterar esse comportamento em uma versão posterior do Windows Server 2019.  
 
-## <a name="cutover-fails-when-migrating-between-networks"></a>A transferência falha ao migrar entre redes
-
-Ao migrar para um computador de destino executado em uma rede diferente da origem, como uma instância de IaaS do Azure, a transferência não será concluída quando a origem estiver usando um endereço IP estático. 
-
-Esse comportamento é por design, para evitar problemas de conectividade após a migração de usuários, aplicativos e scripts que se conectam por meio do endereço IP. Quando o endereço IP for movido do computador de origem antigo para o novo destino de destino, ele não corresponderá às novas informações de sub-rede de rede e, talvez, DNS e WINS.
-
-Para solucionar esse problema, execute uma migração para um computador na mesma rede. Em seguida, mova esse computador para uma nova rede e reatribua suas informações de IP. Por exemplo, se estiver migrando para o Azure IaaS, primeiro migre para uma VM local e, em seguida, use migrações para Azure para mudar a VM para o Azure.  
-
-Corrigimos esse problema em uma versão posterior do centro de administração do Windows. Agora, permitimos que você especifique migrações que não alteram as configurações de rede do servidor de destino. A extensão atualizada será listada aqui quando liberada. 
-
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>Avisos de validação para proxy de destino e privilégios administrativos de credencial
 
 Ao validar um trabalho de transferência, você verá os seguintes avisos:
@@ -153,7 +133,7 @@ Arquivo de origem:
 
 Arquivo de destino:
 
-  icacls d:\test\thatcher.png/Save out. txt/t Thatcher. png D:AI (A;; FA;;; BA) (A;; 0 x1301bf;;;D U) (A;; 0 x1200a9;;;D D) (A; ID; FA;;; BA) (A; ID; FA;;; SY) (A; ID; 0x1200a9;;; BU)**S:PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/Save out. txt/t Thatcher. png D:AI (A;; FA;;; BA) (A;; 0 x1301bf;;;D U) (A;; 0 x1200a9;;;D D) (A; ID; FA;;; BA) (A; ID; FA;;; SY) (A; ID; 0x1200a9;;; BU)**S: PAINO_ACCESS_CONTROL**
 
 Log de depuração DFSR:
 
@@ -163,17 +143,7 @@ Log de depuração DFSR:
 
   Clonar hash de ACL:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** LastWriteTime: 20190308 18:09:44.876 FileSizeLow: 1131654 FileSizeHigh: 0 Atributos: 32 
 
-Esse problema é causado por um defeito de código em uma biblioteca usada pelo serviço de migração de armazenamento para definir SACL (ACLs de auditoria de segurança). Uma SACL não nula não é definida intencionalmente quando a SACL estava vazia, liderando o DFSR para identificar corretamente uma incompatibilidade de hash. 
-
-Para solucionar esse problema, continue usando o Robocopy para [as operações de pré-propagação de DFSR e clonagem de banco de dados DFSR](../dfs-replication/preseed-dfsr-with-robocopy.md) em vez do serviço de migração de armazenamento. Estamos investigando esse problema e pretendemos resolver isso em uma versão mais recente do Windows Server e, possivelmente, em uma Windows Update com backport. 
-
-## <a name="error-404-when-downloading-csv-logs"></a>Erro 404 ao baixar logs CSV
-
-Ao tentar baixar os logs de transferência ou de erro no final de uma operação de transferência, você recebe o erro:
-
-  $jobname: log de transferência: erro do AJAX 404
-
-Esse erro será esperado se você não tiver habilitado a regra de firewall "compartilhamento de arquivos e impressoras (SMB-in)" no servidor do Orchestrator. Os downloads de arquivos do centro de administração do Windows exigem a porta TCP/445 (SMB) em computadores conectados.  
+Esse problema é corrigido pela atualização do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Erro "não foi possível transferir o armazenamento em nenhum dos pontos de extremidade" ao transferir do Windows Server 2008 R2
 
@@ -213,7 +183,7 @@ Esse erro será esperado se sua conta de migração não tiver pelo menos permis
 
 ## <a name="error-0x80005000-when-running-inventory"></a>Erro 0x80005000 ao executar o inventário
 
-Depois de instalar o [KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534) e tentar executar o inventário, o inventário falhará com erros:
+Depois de instalar o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) e tentar executar o inventário, o inventário falhará com erros:
 
   EXCEÇÃO de HRESULT: 0x80005000
   
@@ -287,7 +257,7 @@ Observe que, em algumas circunstâncias, a desinstalação de KB4512534 ou de su
    
 2.  Inicie o serviço de serviço de migração de armazenamento, que criará um novo banco de dados.
 
-## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>Erro "falha de CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO em relação ao recurso de NetName" e falha de transferência de cluster do Windows Server 2008 R2
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>Erro "falha na CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO em relação ao recurso do NetName" e a transferência de cluster do Windows Server 2008 R2 falha
 
 Ao tentar executar o corte de uma origem de cluster do Windows Server 2008 R2, a sobreCorte fica presa na fase "renomeando o computador de origem..." e você receberá o seguinte erro:
 
@@ -306,6 +276,43 @@ Ao tentar executar o corte de uma origem de cluster do Windows Server 2008 R2, a
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
 Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso de servidor de arquivos de origem do cluster e o endereço IP e, em seguida, alterando o IP e o cluster de destino de NetName Endereço para corresponder à fonte original. 
+
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-comnputer"></a>A transferência trava em "38% mapeando interfaces de rede no comnputer de origem..." 
+
+Ao tentar executar o recorte de um computador de origem, ter definido o computador de origem para usar um novo endereço IP estático (não DHCP) em uma ou mais interfaces de rede, o corte é paralisado na fase "38% mapeando interfaces de rede no comnputer de origem..." e você receberá o seguinte erro no log de eventos do SMS:
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          11/13/2019 3:47:06 PM
+    Event ID:      20494
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      orc2019-rtm.corp.contoso.com
+    Description:
+    Couldn't set the IP address on the network adapter.
+
+    Computer: fs12.corp.contoso.com
+    Adapter: microsoft hyper-v network adapter
+    IP address: 10.0.0.99
+    Network mask: 16
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+Examinining o computador de origem mostra que o endereço IP original não é alterado. 
+
+Esse problema não ocorrerá se você selecionou "usar DHCP" na tela do centro de administração do Windows "configurar a transferência", somente se você especificar um novo endereço IP estático, sub-rede e gateway. 
+
+Esse problema é causado por uma regressão na atualização do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) . Atualmente, há duas soluções alternativas para esse problema:
+
+  - Antes de recortar: em vez de definir um novo endereço IP estático na transferência, selecione "usar DHCP" e certifique-se de que um escopo DHCP cubra essa sub-rede. O SMS configurará o computador de origem para usar o DHCP em interfaces do computador de origem e substituirá normalmente. 
+  
+  - Se a recorte já estiver paralisada: faça logon no computador de origem e habilite o DHCP em suas interfaces de rede, depois de garantir que um escopo DHCP cubra essa sub-rede. Quando o computador de origem adquire um endereço IP fornecido pelo DHCP, o SMS continuará com a recortar normalmente.
+  
+Em ambas as soluções alternativas, após a conclusão da recorte, você pode definir um endereço IP estático no computador de origem antigo, como você verá ajustar e parar de usar o DHCP.   
 
 ## <a name="see-also"></a>Consulte também
 

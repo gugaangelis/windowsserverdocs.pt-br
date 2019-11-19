@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a52676ffc89c9fc5ce0eba4f44407e76520fef0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407434"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163095"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o AD FS (FAQ)
 
@@ -71,6 +71,8 @@ O AD FS dá suporte a várias configurações de várias florestas e se baseia n
 - No caso de uma relação de confiança de floresta unidirecional, como uma floresta DMZ contendo identidades de parceiros, é recomendável implantar o ADFS na floresta Corp e tratar a floresta DMZ como outra confiança do provedor de declarações local conectada via LDAP. Nesse caso, a autenticação integrada do Windows não funcionará para os usuários da floresta DMZ e será necessário executar a autenticação de senha, pois esse é o único mecanismo com suporte para LDAP. Caso não seja possível buscar essa opção, você precisaria configurar outro ADFS na floresta DMZ e adicioná-lo como confiança do provedor de declarações no ADFS na floresta Corp. Os usuários precisarão realizar a descoberta de realm inicial, mas a autenticação integrada do Windows e a autenticação de senha funcionarão. Faça as alterações apropriadas nas regras de emissão no ADFS na floresta DMZ, pois o ADFS na floresta Corp não poderá obter informações adicionais do usuário sobre o usuário da floresta DMZ.
 - Enquanto as relações de confiança no nível do domínio têm suporte e podem funcionar, é altamente recomendável que você se mova para um modelo de confiança no nível da floresta. Além disso, você precisaria garantir que o roteamento UPN e a resolução de nomes NETBIOS tenham que funcionar com precisão.
 
+>[!NOTE]  
+>Se a autenticação do facultativos for usada com uma configuração de confiança bidirecional, verifique se o usuário do chamador recebeu a permissão "permitir autenticação" na conta de serviço de destino. 
 
 
 ## <a name="design"></a>Criar
@@ -110,10 +112,10 @@ O valor da declaração "sub" é o hash da ID do cliente + valor da declaração
 O tempo de vida do token de atualização será o tempo de vida do token que o ADFS obteve da confiança do provedor de declarações remota. O tempo de vida do token de acesso será o tempo de vida do token da terceira parte confiável para a qual o token de acesso está sendo emitido.
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>Preciso retornar escopos de perfil e de email além do escopo de OpenId. Posso obter informações adicionais usando escopos? Como fazer isso no AD FS?
-Você pode usar o id_token personalizado para adicionar informações relevantes no próprio id_token. Para obter mais informações, consulte o artigo [Personalizar declarações a serem emitidas no id_token](../development/Custom-Id-Tokens-in-AD-FS.md).
+Você pode usar id_token personalizadas para adicionar informações relevantes no id_token em si. Para obter mais informações, consulte o artigo [Personalizar declarações a serem emitidas no id_token](../development/Custom-Id-Tokens-in-AD-FS.md).
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>Como emitir BLOBs JSON dentro de tokens JWT?
-Um ValueType especial ("<http://www.w3.org/2001/XMLSchema#json>") e um caractere de escape (\x22) para isso foi adicionado no AD FS 2016. Use o exemplo a seguir para a regra de emissão e também a saída final do token de acesso.
+Um ValueType especial ("<http://www.w3.org/2001/XMLSchema#json>") e um caractere de escape (\x22) para isso foi adicionado em AD FS 2016. Use o exemplo a seguir para a regra de emissão e também a saída final do token de acesso.
 
 Regra de emissão de exemplo:
 
@@ -131,7 +133,7 @@ Com AD FS no servidor 2019, agora você pode passar o valor do recurso inserido 
 O AD FS no servidor 2019 dá suporte à chave de prova de PKCE (troca de código para fluxo de concessão de código de autorização OAuth
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>Quais escopos permitidos têm suporte pelo AD FS?
-- Aza-se estiver usando [extensões de protocolo OAuth 2,0 para clientes do Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, bem como Configurando o refresh_token_ o campo expires_in para o tempo de vida do novo token de atualização primário se um for imposto.
+- Aza-se estiver usando [extensões de protocolo OAuth 2,0 para clientes do Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, bem como definirá o campo refresh_token_expires_in como o tempo de vida do novo token de atualização primário se um for imposto.
 - OpenID – permite que o aplicativo solicite o uso do protocolo de autorização OpenID Connect.
 - logon_cert-o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon interativamente usuários autenticados. O servidor de AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em base64 ou uma resposta de PKI completa de CMC. Mais detalhes estão disponíveis [aqui](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
 - user_impersonation-o escopo de user_impersonation é necessário para solicitar com êxito um token de acesso em nome de AD FS. Para obter detalhes sobre como usar esse escopo, consulte [criar um aplicativo de várias camadas usando obo (em nome de) usando OAuth com AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
@@ -217,8 +219,8 @@ Além disso, AD FS 2016 (com os patches mais atualizados) e AD FS suporte a 2019
 ### <a name="x-ms-forwarded-client-ip-does-not-contain-the-ip-of-the-client-but-contains-ip-of-the-firewall-in-front-of-the-proxy-where-can-i-get-the-right-ip-of-the-client"></a>X-MS-encaminhar-Client-IP não contém o IP do cliente, mas contém o IP do firewall na frente do proxy. Onde posso obter o IP correto do cliente?
 Não é recomendável fazer terminação SSL antes de WAP. Caso o encerramento de SSL seja feito na frente do WAP, o X-MS-Forwarded-Client-IP conterá o IP do dispositivo de rede na frente do WAP. Veja abaixo uma breve descrição das várias declarações relacionadas a IP com suporte pelo AD FS:
  - x-MS-Client-IP: IP de rede do dispositivo que se conectou ao STS.  No caso de uma solicitação de extranet, isso sempre contém o IP do WAP.
- - x-MS-encaminhar-Client-IP: Declaração de valores múltiplos que conterá quaisquer valores encaminhados ao ADFS pelo Exchange Online, além do endereço IP do dispositivo que se conectou ao WAP.
- - Userip: Para solicitações de extranet, essa declaração conterá o valor de x-MS-encaminhar-Client-IP.  Para solicitações de intranet, essa declaração conterá o mesmo valor de x-MS-Client-IP.
+ - x-MS-encaminhar-Client-IP: declaração de valores múltiplos que conterá quaisquer valores encaminhados ao ADFS pelo Exchange Online, além do endereço IP do dispositivo que se conectou ao WAP.
+ - Userip: para solicitações de extranet, essa declaração conterá o valor de x-MS-encaminhar-Client-IP.  Para solicitações de intranet, essa declaração conterá o mesmo valor de x-MS-Client-IP.
 
  Além disso, no AD FS 2016 (com os patches mais atualizados) e versões posteriores também dão suporte à captura do cabeçalho x-forwardd-for. Qualquer balanceador de carga ou dispositivo de rede que não encaminhar na camada 3 (o IP é preservado) deve adicionar o IP do cliente de entrada ao cabeçalho x-forwardd-for padrão do setor. 
 
@@ -299,7 +301,7 @@ Execute a atualização no restante dos servidores AD FS e WAP de maneira semelh
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>O ADFS tem suporte quando os servidores de proxy de aplicativo Web (WAP) estão atrás do firewall do aplicativo Web do Azure (WAF)?
 Os servidores de aplicativos Web e ADFS oferecem suporte a qualquer firewall que não execute terminação SSL no ponto de extremidade. Além disso, os servidores ADFS/WAP têm mecanismos internos para evitar ataques comuns da Web, como scripts entre sites, proxy do ADFS e atender a todos os requisitos definidos pelo [protocolo MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx).
 
-### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>Estou vendo um "evento 441: Foi encontrado um token com uma chave de associação de token inválido. " O que devo fazer para resolver isso?
+### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>Estou vendo um "evento 441: um token com uma chave de associação de token inválido foi encontrado". O que devo fazer para resolver isso?
 No AD FS 2016, a associação de token é habilitada automaticamente e causa vários problemas conhecidos com cenários de proxy e Federação que resultam nesse erro. Para resolver isso, execute o seguinte comando do PowerShell e remova o suporte de associação de token.
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`

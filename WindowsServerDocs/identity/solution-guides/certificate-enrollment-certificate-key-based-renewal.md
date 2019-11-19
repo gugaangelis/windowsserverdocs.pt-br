@@ -4,23 +4,24 @@ description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
-ms.date: 11/1/2019
+ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: a5fea6681376abf6ea9ada67e31b10369256ea81
-ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
+ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413453"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163105"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configurando Serviço Web de Registro de Certificado para renovação baseada em chave de certificado em uma porta personalizada
 
-<!-- <Author(s): Jitesh Thakur, Meera Mohideen, Ankit Tyagi.-->  
+> Autores: Jitesh Thakur, Meera Mohideen, consultores técnicos com o grupo do Windows.
+Engenheiro de suporte do ankit Tyagi com o grupo do Windows
 
 ## <a name="summary"></a>Resumo
 
-Este artigo fornece instruções passo a passo para implementar o Serviço Web de Registro de Certificado (ou o CEP (política de registro de certificado)/CES (serviço de registro de certificado) em uma porta personalizada diferente de 443 para a renovação baseada em chave de certificado a ser tomada vantagem do recurso de renovação automática do CEP e do CES.
+Este artigo fornece instruções passo a passo para implementar o Serviço Web de Política de Registro de Certificado (CEP) e o Serviço Web de Registro de Certificado (CES) em uma porta personalizada diferente de 443 para a renovação baseada em chave de certificado para tirar proveito do recurso de renovação de CEP e CES.
 
 Este artigo também explica como o CEP e o CES funcionam e fornece diretrizes de instalação.
 
@@ -134,7 +135,7 @@ Esse comando instala o Serviço Web de Registro de Certificado (CES) para usar a
 Após uma instalação bem-sucedida, você espera ver a exibição a seguir no console do Gerenciador do Serviços de Informações da Internet (IIS).
 ![o Gerenciador do IIS](media/certificate-enrollment-certificate-key-based-renewal-4.png) 
 
-Em **site padrão**, selecione **KeyBasedRenewal_ADPolicyProvider_CEP_Certificate**e, em seguida, abra **configurações do aplicativo**. Observe a **ID** e o **URI**.
+Em **site padrão**, selecione **ADPolicyProvider_CEP_UsernamePassword**e, em seguida, abra **configurações do aplicativo**. Observe a **ID** e o **URI**.
 
 Você pode adicionar um **nome amigável** para o gerenciamento.
 
@@ -176,7 +177,7 @@ Após uma instalação bem-sucedida, você espera ver a exibição a seguir no c
 Selecione **KeyBasedRenewal_ADPolicyProvider_CEP_Certificate** em **site padrão** e abra **configurações do aplicativo**. Anote a **ID** e o **URI**. Você pode adicionar um **nome amigável** para o gerenciamento.
 
 > [!Note]
-> Se a instância estiver instalada em um novo servidor e a ID for diferente e informando que a ID é diferente, verifique se a ID é a mesma que é usada na instância CEPCES01. Você pode copiar e colar o valor diretamente.
+> Se a instância estiver instalada em um novo servidor, clique duas vezes na ID para certificar-se de que a ID é a mesma que foi gerada na instância CEPCES01. Você pode copiar e colar o valor diretamente se ele for diferente.
 
 #### <a name="complete-certificate-enrollment-web-services-configuration"></a>Concluir a configuração de serviços Web de registro de certificado
 
@@ -185,6 +186,9 @@ Para poder registrar o certificado em nome da funcionalidade do CEP e do CES, vo
 ##### <a name="step-1-create-a-computer-account-of-the-workgroup-computer-in-active-directory"></a>Etapa 1: criar uma conta de computador do computador do grupo de trabalho no Active Directory
 
 Essa conta será usada para autenticação em relação à renovação baseada em chave e à opção "publicar no Active Directory" no modelo de certificado.
+
+> [!Note]
+> Você não precisa ingressar no domínio no computador cliente. Essa conta entra em imagem durante a autenticação baseada em certificado no KBR para o serviço dsmapper.
 
 ![Novo objeto](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
  
@@ -198,7 +202,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 ```
 
 > [!Note]
-> Neste comando, <cepcessvc> é a conta de serviço e < CA1. contoso. com > é a autoridade de certificação.
+> Neste comando, \<cepcessvc\> é a conta de serviço e < CA1. contoso. com > é a autoridade de certificação.
 
 > [!Important]
 > Não estamos habilitando o sinalizador RENEWALONBEHALOF na autoridade de certificação nessa configuração porque estamos usando a delegação restrita para fazer o mesmo trabalho para nós. Isso nos permite evitar a adição da permissão para a conta de serviço à segurança da autoridade de certificação.
@@ -212,19 +216,21 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 3. Altere a configuração de porta padrão de 443 para sua porta personalizada. A captura de tela de exemplo mostra uma configuração de porta de 49999.
    ![alterar a porta](media/certificate-enrollment-certificate-key-based-renewal-7.png) 
 
-##### <a name="step-4-edit-the-ca-enrollment-services-object"></a>Etapa 4: editar o objeto de serviços de registro de autoridade de certificação
+##### <a name="step-4-edit-the-ca-enrollment-services-object-on-active-directory"></a>Etapa 4: editar o objeto de serviços de registro de autoridade de certificação no Active Directory
 
 1. Em um controlador de domínio, abra ADSIEdit. msc.
 
-2. Conecte-se à partição de configuração e navegue até o objeto serviços de registro de autoridade de certificação:
+2. [Conecte-se à partição de configuração](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))e navegue até o objeto serviços de registro de autoridade de certificação:
    
    CN = ENTCA, CN = Serviços de registro, CN = Serviços de chave pública, CN = Serviços, CN = Configuração, DC = contoso, DC = com
 
-3. Edite o objeto e altere o atributo msPKI-Enroll-Servers usando a porta personalizada com os URIs de servidor CEP e CES encontrados nas configurações do aplicativo. Por exemplo:
+3. Clique com o botão direito do mouse e edite o objeto CA. Altere o atributo **msPKI-Enroll-Servers** usando a porta personalizada com seus URIs de servidor CEP e CES que foram encontrados nas configurações do aplicativo. Por exemplo:
 
-   140 https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
-   181 https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
-
+   ```
+   140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
+   181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
+   ```
+   
    ![ADSI Edit](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>Configurar o computador cliente
@@ -269,9 +275,9 @@ No computador cliente, configure as políticas de registro e a política de regi
 
 ## <a name="testing-the-setup"></a>Testando a instalação
 
-Para garantir que a renovação automática esteja funcionando, verifique se a renovação manual funciona usando a mesma chave. Você não deve ser solicitado a inserir o nome de usuário e a senha.  Além disso, você deve ser solicitado a selecionar um certificado "ao se registrar. Isso é esperado.
+Para garantir que a renovação automática esteja funcionando, verifique se a renovação manual funciona renovando o certificado com a mesma chave usando o MMC. Além disso, você deve ser solicitado a selecionar um certificado durante a renovação. Você pode escolher o certificado que registramos anteriormente. O prompt é esperado.
 
-Abra o repositório de certificados pessoais do computador e adicione a exibição "certificados arquivados". Para fazer isso, use um dos métodos a seguir.
+Abra o repositório de certificados pessoais do computador e adicione a exibição "certificados arquivados". Para fazer isso, adicione o snap-in de conta do computador local a MMC. exe, realce **certificados (computador local)** clicando nele, clique em **Exibir** na **guia ação** à direita ou na parte superior do MMC, clique em **Opções de exibição**, selecione **certificados arquivados**e clique em **OK**.
 
 ### <a name="method-1"></a>Método 1 
 
@@ -285,11 +291,11 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 ### <a name="method-2"></a>Método 2
 
-Avance a configuração de tempo em múltiplos de 8 para quando a validade do certificado expirar.
+Avance a hora e a data no computador cliente para o horário de renovação do modelo de certificado.
 
-Por exemplo, o certificado de exemplo foi emitido às 4:00 no dia 18 do mês, expira em 4:00 no mês 20, e tem uma configuração de validade de 2 dias e uma configuração de renovação de 8 horas. O mecanismo de registro automático é disparado na reinicialização em um intervalo de aproximadamente 8 horas.
+Por exemplo, o modelo de certificado tem uma configuração de validade de 2 dias e uma configuração de renovação de 8 horas configurada. O certificado de exemplo foi emitido às 4:00 A.M. no dia 18 do mês, expira às 4:00 da manhã no dia 20. O mecanismo de registro automático é disparado na reinicialização e a cada intervalo de 8 horas (aproximadamente).
 
-Portanto, se você adiantar o tempo até 8:10 P.M. no dia 19, a execução de **certutil-Pulse** (para disparar o mecanismo da AE) registra o certificado para você.
+Portanto, se você adiantar o tempo até 8:10 P.M. no dia 19, uma vez que nossa janela de renovação foi definida como 8 horas no modelo, executar certutil-Pulse (para disparar o mecanismo da AE) registra o certificado para você.
 
 ![.](media/certificate-enrollment-certificate-key-based-renewal-15.png)
  
