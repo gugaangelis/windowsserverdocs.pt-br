@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567171"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019597"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -36,8 +36,8 @@ ms.locfileid: "73567171"
 Escolha o cliente que corresponda à sua versão do Windows:
 
 - [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
-- [Windows 32 bits – Versão Prévia](https://go.microsoft.com/fwlink/?linkid=2098960)
-- [Windows ARM64 – Versão Prévia](https://go.microsoft.com/fwlink/?linkid=2098961)
+- [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 É possível instalar o cliente do usuário atual, que não requer direitos de administrador, ou seu administrador pode instalar e configurar o cliente para que todos os usuários no dispositivo possam acessá-lo.
 

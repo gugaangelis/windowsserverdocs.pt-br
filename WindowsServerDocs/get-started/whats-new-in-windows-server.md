@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a093f873ee925a2763ba5243f868204bd077f3
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 1ce821c2e793792032e2f91aa806b1bd8d8a76f6
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000649"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956067"
 ---
 # <a name="whats-new-in-windows-server"></a>Novidades no Windows Server
 
@@ -28,9 +28,9 @@ Versões do LTSC (Canal de Manutenção em Longo Prazo):
 
 Versões do Canal Semestral:
 
-- [Novidades no Windows Server, versão 1903](../get-started-19/whats-new-in-windows-server-1903.md)
+- [Novidades no Windows Server, versões 1903 e 1909](../get-started-19/whats-new-in-windows-server-1903-1909.md)
 - [Novidades no Windows Server, versão 1809](whats-new-in-windows-server-1809.md)
-- [Novidades no Windows Server, versão 1803](whats-new-in-windows-server-1803.md)
+- [Novidades no Windows Server, versão 1803](whats-new-in-windows-server-1803.md) (sem suporte a partir de 12 de novembro de 2019)
 - [Novidades no Windows Server, versão 1709](whats-new-in-windows-server-1709.md) (sem suporte a partir de 9 de abril de 2019)
 
 As versões do Canal semestral do Windows Server fornecem novos recursos de sistema operacional em um ritmo mais rápido. Uma nova versão é lançada a cada seis meses e tem suporte por 18 meses. Verifique as [Informações sobre versão do Windows Server](windows-server-release-info.md) e a [Página de suporte do ciclo de vida](https://support.microsoft.com/lifecycle) para datas de suporte e use sempre a versão mais recente, se possível.

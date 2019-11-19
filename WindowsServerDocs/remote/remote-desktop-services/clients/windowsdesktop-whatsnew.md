@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567067"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019590"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -30,14 +30,14 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Public     |1.2.247  |
-|Participante do Programa Windows Insider    |1.2.428  |
+|Public     |1.2.431  |
+|Participante do Programa Windows Insider    |1.2.431  |
 
-## <a name="updates-for-version-12428"></a>Atualizações para a versão 1.2.428
+## <a name="updates-for-version-12431"></a>Atualizações da versão 1.2.431
 
-*Data da publicação: 31/10/2019*
+*Data da publicação: 12/11/2019*
 
-- Uma versão prévia das versões de 32 bits e ARM64 do cliente já está disponível.
+- As versões de 32 bits e ARM64 do cliente já estão disponíveis!
 - Agora o cliente salva todas as alterações feitas na barra de conexão (como a posição, o tamanho e o estado de fixação) e aplica essas alterações em todas as sessões iniciadas.
 - Informações de gateway e caixas de diálogo de status de conexão atualizadas.
 - Resolvido um problema que fazia com que duas credenciais solicitassem acesso ao mesmo tempo ao tentar se conectar depois de expirado o token do Azure Active Directory.
