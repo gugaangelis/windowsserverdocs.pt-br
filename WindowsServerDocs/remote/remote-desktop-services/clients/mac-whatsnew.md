@@ -11,38 +11,100 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 11/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cc09a60882c481cea974508b0ef967aad0ed82fa
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: b44f7c14dce8a8c319f9240c24ebcd8e2d4f7202
+ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940641"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166169"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novidades do cliente para macOS
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para macOS](remote-desktop-mac.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
-Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda > Relatar um problema**.
+Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda** > **Relatar um problema**.
+
+## <a name="updates-for-version-1034"></a>Atualizações para a versão 10.3.4
+
+*Data da publicação: 18/11/2019*
+
+Estamos trabalhando intensamente ouvindo seus comentários e reunimos uma coleção de correções de bugs e atualizações de recursos.
+
+- Ao se conectar por meio de um gateway de área de trabalho remota com autenticação multifator, a conexão do gateway será mantida aberta para evitar o surgimento de múltiplos prompts de MFA.
+- Toda a interface do usuário do cliente agora é totalmente acessível pelo teclado, com suporte a VoiceOver.
+- Os arquivos copiados para a área de transferência na sessão remota agora são transferidos somente ao colar para o computador local.
+- As URLs copiadas para a área de transferência na sessão remota agora são coladas corretamente no computador local.
+- O fator de escala de comunicação remota para dar suporte a telas Retina agora está disponível para cenários com vários monitores.
+- Foi abordado um problema de compatibilidade com servidores de Área de Trabalho Remota baseados em FreeRDP que estavam causando problemas de conectividade em cenários de redirecionamento.
+- Resolvida a questão de compatibilidade de redirecionamento de cartão inteligente com versões futuras do Windows 10.
+- Resolvido um problema específico do macOS 10.15 em que o espaço disponível incorreto era relatado para pastas redirecionadas.
+- As conexões de PC publicadas são representadas com um novo ícone na guia Workspaces.
+- "Feeds" agora são chamados de "Workspaces" e "Desktops" agora são chamados de "PCs".
+- Corrigidas as inconsistências e bugs na manipulação de conta de usuário na interface do usuário de preferências.
+- Muitas correções de bugs para fazer com que as coisas sejam executadas de modo mais estável e confiável.
+
+## <a name="updates-for-version-1033"></a>Atualizações para a versão 10.3.3
+
+*Data da publicação: 18/11/2019*
+
+Reunimos uma atualização de recurso e corrigimos bugs para a versão 10.3.3.
+
+Primeiro, adicionamos os padrões do usuário para desabilitar o cartão inteligente, a área de transferência, o microfone, a câmera e o redirecionamento de pasta:
+
+- ClientSettings.DisableSmartcardRedirection
+- ClientSettings.DisableClipboardRedirection
+- ClientSettings.DisableMicrophoneRedirection
+- ClientSettings.DisableCameraRedirection
+- ClientSettings.DisableFolderRedirection
+
+Em seguida, as correções de bugs:
+
+- Resolvido um problema que estava fazendo com que redimensionamentos de janela de sessão programática não fossem detectados.
+- Corrigido um problema em que o conteúdo da janela da sessão parecia pequeno ao se conectar no modo de janela (com a exibição dinâmica habilitada).
+- Foi abordada uma cintilação inicial que ocorria ao se conectar a uma sessão no modo de janela com a exibição dinâmica habilitada.
+- Corrigidas as pinturas de gráficos incorretas que ocorriam quando conectado ao Windows 7 depois de alternar o ajuste à janela com a exibição dinâmica habilitada.
+- Corrigido um bug que fazia com que um nome de dispositivo incorreto fosse enviado para a sessão remota (interrompendo o licenciamento em alguns aplicativos de terceiros).
+- Resolvido um problema em que as janelas do aplicativo remoto ocupavam um monitor inteiro quando maximizadas.
+- Resolvido um problema em que a interface do usuário de permissões de acesso aparecia sob as janelas locais.
+- Realizada a limpeza do código de desligamento para garantir que o cliente seja fechado de modo mais confiável.
+
+## <a name="updates-for-version-1032"></a>Atualizações para a versão 10.3.2
+
+*Data da publicação: 18/11/2019*
+
+Nesta versão, corrigimos um bug que colocava a exibição em baixa resolução durante a conexão com uma sessão
+
+## <a name="updates-for-version-1031"></a>Atualizações para a versão 10.3.1
+
+*Data da publicação: 18/11/2019*
+
+Reunimos algumas correções para abordar as regressões que acabaram fazendo parte da versão 10.3.0.
+
+- Problemas de conectividade abordados com servidores de gateway de área de trabalho remota que estavam usando chaves assimétricas de 4.096 bits.
+- Corrigido um bug que fazia com que o cliente deixasse de responder aleatoriamente ao baixar recursos de feed.
+- Corrigido um bug que fazia com que o cliente falhasse ao abrir.
+- Corrigido um bug que fazia com que o cliente falhasse ao importar conexões da Área de Trabalho Remota, versão 8.
 
 ## <a name="updates-for-version-1030"></a>Atualizações para a versão 10.3.0
+
 *Data da publicação: 27/08/2019*
 
 Há algumas semanas desde a última atualização, mas trabalhamos duro durante esse período. A versão 10.3.0 traz alguns recursos novos e muitas correções subjacentes.
 
- - Agora é possível redirecionar a câmera ao se conectar ao Windows 10 1809, Windows Server 2019 e posterior.
- - No Mojave e no Catalina, adicionamos uma nova caixa de diálogo que solicita sua permissão para usar o microfone e a câmera para redirecionamento de dispositivo.
- - O fluxo de assinatura do feed foi reescrito para ser mais simples e mais rápido.
- - O redirecionamento da área de transferência agora inclui RTF (Rich Text Format).
- - Ao inserir sua senha, você tem a opção de revelá-la com uma caixa de seleção "Mostrar senha".
- - Cenários abordados em que a janela de sessão passava de um monitor ao outro.
- - A Central de Conexão exibe ícones de aplicativos remotos de alta resolução (quando disponíveis).
- - Cmd + A é mapeado para Ctrl + A quando os atalhos da área de transferência do Mac estão sendo usados.
- - Cmd + R agora atualiza todos os feeds assinados.
- - Novas opções de clique secundário foram adicionadas para expandir ou recolher todos os grupos ou feeds na Central de Conexão.
- - Adicionada uma nova opção de clique secundário para alterar o tamanho do ícone na guia Feeds da Central de Conexão.
- - Um novo ícone de aplicativo simplificado e mais limpo.
+- Agora é possível redirecionar a câmera ao se conectar ao Windows 10 1809, Windows Server 2019 e posterior.
+- No Mojave e no Catalina, adicionamos uma nova caixa de diálogo que solicita sua permissão para usar o microfone e a câmera para redirecionamento de dispositivo.
+- O fluxo de assinatura do feed foi reescrito para ser mais simples e mais rápido.
+- O redirecionamento da área de transferência agora inclui RTF (Rich Text Format).
+- Ao inserir sua senha, você tem a opção de revelá-la com uma caixa de seleção "Mostrar senha".
+- Cenários abordados em que a janela de sessão passava de um monitor ao outro.
+- A Central de Conexão exibe ícones de aplicativos remotos de alta resolução (quando disponíveis).
+- Cmd + A é mapeado para Ctrl + A quando os atalhos da área de transferência do Mac estão sendo usados.
+- Cmd + R agora atualiza todos os feeds assinados.
+- Novas opções de clique secundário foram adicionadas para expandir ou recolher todos os grupos ou feeds na Central de Conexão.
+- Adicionada uma nova opção de clique secundário para alterar o tamanho do ícone na guia Feeds da Central de Conexão.
+- Um ícone de aplicativo novo, simplificado e limpo.
 
 ## <a name="updates-for-version-10213"></a>Atualizações para a versão 10.2.13
 
