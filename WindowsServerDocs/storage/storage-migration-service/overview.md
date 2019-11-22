@@ -1,6 +1,6 @@
 ---
-title: Visão geral do serviço de migração de armazenamento
-description: O serviço de migração de armazenamento facilita a migração do armazenamento para o Windows Server ou para o Azure. Ele fornece uma ferramenta gráfica que inventaria dados em servidores Windows e Linux e, em seguida, transfere os dados para servidores mais recentes ou para máquinas virtuais do Azure. O serviço de migração de armazenamento também fornece a opção de transferir a identidade de um servidor para o servidor de destino para que os aplicativos e usuários possam acessar seus dados sem alterar os links ou os caminhos.
+title: Storage Migration Service overview
+description: Storage Migration Service makes it easier to migrate storage to Windows Server or to Azure. It provides a graphical tool that inventories data on Windows and Linux servers and then transfers the data to newer servers or to Azure virtual machines. Storage Migration Service also provides the option to transfer the identity of a server to the destination server so that apps and users can access their data without changing links or paths.
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
@@ -8,76 +8,76 @@ ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 712befacaf1d5bddd4f9bd993ce0d423b15cba36
-ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
+ms.openlocfilehash: 5963035846814f2ec3fd3417e629f71b146cc73e
+ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72986455"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74310378"
 ---
-# <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
+# <a name="storage-migration-service-overview"></a>Storage Migration Service overview
 
->Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server (canal semestral)
+>Applies to: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server (Semi-Annual Channel)
 
-O serviço de migração de armazenamento facilita a migração do armazenamento para o Windows Server ou para o Azure. Ele fornece uma ferramenta gráfica que inventaria dados em servidores Windows e Linux e, em seguida, transfere os dados para servidores mais recentes ou para máquinas virtuais do Azure. O serviço de migração de armazenamento também fornece a opção de transferir a identidade de um servidor para o servidor de destino para que os aplicativos e usuários possam acessar seus dados sem alterar os links ou os caminhos.
+Storage Migration Service makes it easier to migrate storage to Windows Server or to Azure. It provides a graphical tool that inventories data on Windows and Linux servers and then transfers the data to newer servers or to Azure virtual machines. Storage Migration Service also provides the option to transfer the identity of a server to the destination server so that apps and users can access their data without changing links or paths.
 
-Este tópico discute por que você desejaria usar o serviço de migração de armazenamento, como funciona o processo de migração e quais são os requisitos para os servidores de origem e de destino.
+This topic discusses why you'd want to use Storage Migration Service, how the migration process works, and what the requirements are for source and destination servers.
 
-## <a name="why-use-storage-migration-service"></a>Por que usar o serviço de migração de armazenamento
+## <a name="why-use-storage-migration-service"></a>Why use Storage Migration Service
 
-Use o serviço de migração de armazenamento porque você tem um servidor (ou muitos servidores) que deseja migrar para um hardware ou máquinas virtuais mais recentes. O serviço de migração de armazenamento foi projetado para ajudar fazendo o seguinte:
+Use Storage Migration Service because you've got a server (or a lot of servers) that you want to migrate to newer hardware or virtual machines. Storage Migration Service is designed to help by doing the following:
 
-- Inventariar vários servidores e seus dados
-- Transferência rápida de arquivos, compartilhamentos de arquivos e configuração de segurança dos servidores de origem
-- Opcionalmente, assuma a identidade dos servidores de origem (também conhecidos como recortar) para que os usuários e aplicativos não precisem alterar nada para acessar os dados existentes
-- Gerenciar uma ou várias migrações da interface do usuário do centro de administração do Windows
+- Inventory multiple servers and their data
+- Rapidly transfer files, file shares, and security configuration from the source servers
+- Optionally take over the identity of the source servers (also known as cutting over) so that users and apps don't have to change anything to access existing data
+- Manage one or multiple migrations from the Windows Admin Center user interface
 
-![Diagrama mostrando o serviço de migração de armazenamento migrando arquivos & configuração de servidores de origem para servidores de destino, VMs do Azure ou Sincronização de Arquivos do Azure.](media/overview/storage-migration-service-diagram.png)
+![Diagram showing Storage Migration Service migrating files & configuration from source servers to destination servers, Azure VMs, or Azure File Sync.](media/overview/storage-migration-service-diagram.png)
 
-**Figura 1: origens e destinos do serviço de migração de armazenamento**
+**Figure 1: Storage Migration Service sources and destinations**
 
-## <a name="how-the-migration-process-works"></a>Como funciona o processo de migração
+## <a name="how-the-migration-process-works"></a>How the migration process works
 
-A migração é um processo de três etapas:
+Migration is a three-step process:
 
-1. **Servidores de inventário** para coletar informações sobre seus arquivos e a configuração (mostrados na Figura 2).
-2. **Transfira (Copie) os dados** dos servidores de origem para os servidores de destino.
-3. **Recortar para os novos servidores** (opcional).<br>Os servidores de destino assumem as identidades anteriores dos servidores de origem para que os aplicativos e os usuários não precisem alterar nada. <br>Os servidores de origem entram em um estado de manutenção em que eles ainda contêm os mesmos arquivos que sempre têm (nunca removemos arquivos dos servidores de origem), mas não estão disponíveis para usuários e aplicativos. Em seguida, você pode encerrar os servidores de sua conveniência.
+1. **Inventory servers** to gather info about their files and configuration (shown in Figure 2).
+2. **Transfer (copy) data** from the source servers to the destination servers.
+3. **Cut over to the new servers** (optional).<br>The destination servers assume the source servers' former identities so that apps and users don't have to change anything. <br>The source servers enter a maintenance state where they still contain the same files they always have (we never remove files from the source servers) but are unavailable to users and apps. You can then decommission the servers at your convenience.
 
-![captura de tela mostrando um servidor pronto para ser examinado](media/migrate/inventory.png)
-**Figura 2: servidores de inventário do serviço de migração de armazenamento**
+![Screenshot showing a server ready to be scanned](media/migrate/inventory.png)
+**Figure 2: Storage Migration Service inventorying servers**
 
 ## <a name="requirements"></a>Requisitos
 
-Para usar o serviço de migração de armazenamento, você precisa do seguinte:
+To use Storage Migration Service, you need the following:
 
-- Um **servidor de origem** ou **cluster de failover** para migrar arquivos e dados de
-- Um **servidor de destino** que executa o Windows Server 2019 (clusterizado ou autônomo) para migrar para o. O Windows Server 2016 e o Windows Server 2012 R2 funcionam bem, mas estão em cerca de 50% mais lento
-- Um **servidor do Orchestrator** que executa o Windows Server 2019 para gerenciar a migração  <br>Se estiver migrando apenas alguns servidores e um dos servidores estiver executando o Windows Server 2019, você poderá usá-lo como o Orchestrator. Se você estiver migrando mais servidores, recomendamos o uso de um servidor Orchestrator separado.
-- Um **PC ou servidor que executa o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md)**  para executar a interface do usuário do serviço de migração de armazenamento, a menos que você prefira usar o PowerShell para gerenciar a migração. O centro de administração do Windows e a versão 2019 do Windows Server devem ter, no mínimo, a versão 1809.
+- A **source server** or **failover cluster** to migrate files and data from
+- A **destination server** running Windows Server 2019 (clustered or standalone) to migrate to. Windows Server 2016 and Windows Server 2012 R2 work as well but are around 50% slower
+- An **orchestrator server** running Windows Server 2019 to manage the migration  <br>If you're migrating only a few servers and one of the servers is running Windows Server 2019, you can use that as the orchestrator. If you're migrating more servers, we recommend using a separate orchestrator server.
+- A **PC or server running [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** to run the Storage Migration Service user interface, unless you prefer using PowerShell to manage the migration. The Windows Admin Center and Windows Server 2019 version must both be at least version 1809.
 
-É altamente recomendável que os computadores Orchestrator e de destino tenham pelo menos dois núcleos ou dois vCPUs, e pelo menos 2 GB de memória. As operações de inventário e transferência são significativamente mais rápidas com mais processadores e memória.
+We strongly recommend that the orchestrator and destination computers have at least two cores or two vCPUs, and at least 2 GB of memory. Inventory and transfer operations are significantly faster with more processors and memory.
 
-### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>Requisitos de segurança, o serviço de proxy de serviço de migração de armazenamento e as portas de firewall
+### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>Security requirements, the Storage Migration Service proxy service, and firewall ports
 
-- Uma conta de migração que é um administrador nos computadores de origem e no computador do Orchestrator.
-- Uma conta de migração que é um administrador nos computadores de destino e no computador Orchestrator.
-- O computador Orchestrator deve ter a regra de firewall de compartilhamento de arquivos e impressoras (SMB-in *) habilitada*.
-- Os computadores de origem e de destino devem ter as seguintes regras de firewall habilitadas para *entrada* (embora você já possa tê-las habilitadas):
+- A migration account that is an administrator on the source computers and the orchestrator computer.
+- A migration account that is an administrator on the destination computers and the orchestrator computer.
+- The orchestrator computer must have the File and Printer Sharing (SMB-In) firewall rule enabled *inbound*.
+- The source and destination computers must have the following firewall rules enabled *inbound* (though you might already have them enabled):
   - Compartilhamento de arquivos e de impressora (SMB-Entrada)
-  - Serviço Netlogon (NP-in)
-  - Instrumentação de Gerenciamento do Windows (DCOM-in)
+  - Netlogon Service (NP-In)
+  - Windows Management Instrumentation (DCOM-In)
   - Instrumentação de Gerenciamento do Windows (WMI-In)
   
   > [!TIP]
-  > A instalação do serviço de proxy de serviço de migração de armazenamento em um computador com Windows Server 2019 abre automaticamente as portas de firewall necessárias nesse computador. Para fazer isso, conecte-se ao servidor de destino no centro de administração do Windows e vá para **Gerenciador do servidor** (no centro de administração do windows) > **funções e recursos**, selecione **proxy de serviço de migração de armazenamento**e, em seguida, selecione **instalar**.
+  > Installing the Storage Migration Service Proxy service on a Windows Server 2019 computer automatically opens the necessary firewall ports on that computer. To do so, connect to the destination server in Windows Admin Center and then go to **Server Manager** (in Windows Admin Center) > **Roles and features**, select **Storage Migration Service Proxy**, and then select **Install**.
 
 
-- Se os computadores pertencerem a um domínio Active Directory Domain Services, todos deverão pertencer à mesma floresta. O servidor de destino também deve estar no mesmo domínio que o servidor de origem se você quiser transferir o nome de domínio da origem para o destino ao recortar. A transferência tecnicamente funciona entre domínios, mas o nome de domínio totalmente qualificado do destino será diferente da origem...
+- If the computers belong to an Active Directory Domain Services domain, they should all belong to the same forest. The destination server must also be in the same domain as the source server if you want to transfer the source's domain name to the destination when cutting over. Cutover technically works across domains, but the fully-qualified domain name of the destination will be different from the source...
 
-### <a name="requirements-for-source-servers"></a>Requisitos para servidores de origem
+### <a name="requirements-for-source-servers"></a>Requirements for source servers
 
-O servidor de origem deve executar um dos seguintes sistemas operacionais:
+The source server must run one of the following operating systems:
 
 - Windows Server, Canal Semestral
 - Windows Server 2019
@@ -95,23 +95,28 @@ O servidor de origem deve executar um dos seguintes sistemas operacionais:
 - Windows Server 2012 R2 Essentials
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
+- Windows Storage Server 2008
+- Windows Storage Server 2008 R2
+- Windows Storage Server 2012
+- Windows Storage Server 2012 R2
+- Windows Storage Server 2016
 
-Observação: o Windows Small Business Server e o Windows Server Essentials são controladores de domínio. O serviço de migração de armazenamento ainda não pode ser reduzido dos controladores de domínio, mas pode inventariar e transferir arquivos deles.   
+Note: Windows Small Business Server and Windows Server Essentials are domain controllers. Storage Migration Service can't yet cut over from domain controllers, but can inventory and transfer files from them.   
 
-Você pode migrar os seguintes tipos de fonte adicionais se o Orchestrator estiver executando o Windows Server, versão 1903 ou posterior, ou se o orquestrador estiver executando uma versão anterior do Windows Server com o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
+You can migrate the following additional source types if the orchestrator is running Windows Server, version 1903 or later, or if the orchestrator is running an earlier version of Windows Server with [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) installed:
 
 - Clusters de failover
-- Servidores Linux que usam o samba. Testamos o seguinte:
+- Linux servers that use Samba. We've tested the following:
     - CentOS 7
     - Debian GNU/Linux 8
-    - RedHat Enterprise Linux 7,6
+    - RedHat Enterprise Linux 7.6
     - SUSE Linux Enterprise Server (SLES) 11 SP4
-    - Ubuntu 16, 4 LTS e 12.04.5 LTS
-    - Samba 4,8, 4,7, 4,3, 4,2 e 3,6
+    - Ubuntu 16.04 LTS and 12.04.5 LTS
+    - Samba 4.8, 4.7, 4.3, 4.2, and 3.6
 
-### <a name="requirements-for-destination-servers"></a>Requisitos para servidores de destino
+### <a name="requirements-for-destination-servers"></a>Requirements for destination servers
 
-O servidor de destino deve executar um dos seguintes sistemas operacionais:
+The destination server must run one of the following operating systems:
 
 - Windows Server, Canal Semestral
 - Windows Server 2019
@@ -119,20 +124,20 @@ O servidor de destino deve executar um dos seguintes sistemas operacionais:
 - Windows Server 2012 R2
 
 > [!TIP]
-> Os servidores de destino que executam o Windows Server 2019 ou o Windows Server, canal semestral ou posterior têm o dobro do desempenho de transferência de versões anteriores do Windows Server. Esse aumento de desempenho ocorre devido à inclusão de um serviço de proxy de serviço de migração de armazenamento interno, que também abre as portas de firewall necessárias, se ainda não estiverem abertas.
+> Destination servers running Windows Server 2019 or Windows Server, Semi-Annual Channel or later have double the transfer performance of earlier versions of Windows Server. This performance boost is due to the inclusion of a built-in Storage Migration Service proxy service, which also opens the necessary firewall ports if they're not already open.
 
-## <a name="whats-new-in-storage-migration-service"></a>O que há de novo no serviço de migração de armazenamento
+## <a name="whats-new-in-storage-migration-service"></a>What's new in Storage Migration Service
 
-Os novos recursos a seguir estão disponíveis ao executar o Storage Migration Server Orchestrator no Windows Server, versão 1903 ou posterior, ou uma versão anterior do Windows Server com o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
+The following new features are available when running the Storage Migration Server orchestrator on Windows Server, version 1903 or later, or an earlier version of Windows Server with [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) installed:
 
 - Migrar usuários e grupos locais para o novo servidor
-- Migrar o armazenamento de clusters de failover, migrar para clusters de failover e migrar entre servidores autônomos e clusters de failover
+- Migrate storage from failover clusters, migrate to failover clusters, and migrate between standalone servers and failover clusters
 - Migrar o armazenamento de um servidor Linux que usa o Samba
 - Sincronização mais fácil de compartilhamentos integrados no Azure usando a Sincronização de Arquivos do Azure
 - Migrar para novas redes, como o Azure
 
 ## <a name="see-also"></a>Consulte também
 
-- [Migrar um servidor de arquivos usando o serviço de migração de armazenamento](migrate-data.md)
-- [Perguntas frequentes sobre serviços de migração de armazenamento](faq.md)
-- [Problemas conhecidos do serviço de migração de armazenamento](known-issues.md)
+- [Migrate a file server by using Storage Migration Service](migrate-data.md)
+- [Storage Migration Services frequently asked questions (FAQ)](faq.md)
+- [Storage Migration Service known issues](known-issues.md)
