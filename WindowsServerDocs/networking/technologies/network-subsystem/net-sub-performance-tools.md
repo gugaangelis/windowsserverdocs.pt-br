@@ -18,7 +18,7 @@ ms.locfileid: "71405512"
 ---
 # <a name="performance-tools-for-network-workloads"></a>Ferramentas de desempenho para cargas de trabalho de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre as ferramentas de desempenho.
 
@@ -26,13 +26,13 @@ Este tópico contém seções sobre o cliente para a ferramenta de tráfego de s
 
 ##  <a name="bkmk_tuning"></a>Ferramenta de tráfego de cliente para servidor
 
-A ferramenta cliente para servidor de tráfego \(ctsTraffic @ no__t-1 fornece a capacidade de criar e verificar o tráfego de rede.
+O cliente para o tráfego de servidor \(ferramenta de\) ctsTraffic fornece a capacidade de criar e verificar o tráfego de rede.
 
 Para obter mais informações e baixar a ferramenta, consulte [ctsTraffic (tráfego de cliente para servidor)](https://github.com/Microsoft/ctsTraffic).
   
 ##  <a name="bkmk_size"></a>Tamanho da janela TCP/IP
 
-Para adaptadores de 1 GB, as configurações mostradas na tabela anterior devem fornecer boa taxa de transferência, pois NTttcp define o tamanho da janela TCP padrão como 64 K por meio de uma opção de processador lógico específica \(SO_RCVBUF @ no__t-1 para a conexão. Isso fornece um bom desempenho em uma rede de baixa latência.  
+Para adaptadores de 1 GB, as configurações mostradas na tabela anterior devem fornecer boa taxa de transferência, pois NTttcp define o tamanho padrão da janela TCP como 64 K por meio de uma opção de processador lógico específica \(SO_RCVBUF\) para a conexão. Isso fornece um bom desempenho em uma rede de baixa latência.  
 
 Por outro lado, para redes de alta latência ou para adaptadores de 10 GB, o valor padrão de tamanho de janela TCP para NTttcp gera um desempenho inferior ao ideal. Em ambos os casos, você deve ajustar o tamanho da janela TCP para permitir o produto de atraso de largura de banda maior.  
 
@@ -40,7 +40,7 @@ Você pode definir estaticamente o tamanho da janela TCP para um valor grande us
 
 ##  <a name="bkmk_advisor"></a>Supervisor de desempenho de servidor da Microsoft
 
-O Microsoft Server performance Advisor \(SPA @ no__t-1 ajuda os administradores de ti a coletar métricas para identificar, comparar e diagnosticar possíveis problemas de desempenho em um Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 ou Implantação do Windows Server 2008. 
+O Microsoft Server performance Advisor \(SPA\) ajuda os administradores de ti a coletar métricas para identificar, comparar e diagnosticar possíveis problemas de desempenho em uma implantação do Windows Server 2016, do Windows Server 2012 R2, do Windows Server 2012, do Windows Server 2008 R2 ou do Windows Server 2008. 
 
 O SPA gera gráficos e relatórios de diagnóstico abrangentes, além de fornecer recomendações para ajudá-lo a analisar rapidamente os problemas e desenvolver ações corretivas.  
   

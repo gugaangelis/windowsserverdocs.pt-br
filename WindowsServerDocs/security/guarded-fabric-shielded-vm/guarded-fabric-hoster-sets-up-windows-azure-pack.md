@@ -50,9 +50,9 @@ Instale e configure o Pacote do Microsoft Azure (WAP) no computador em que você
 
 2.  Baixe e instale o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx). Se o computador não estiver conectado à Internet, siga as [instruções de instalação offline](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
-3.  Abra o Web Platform Installer e localize **Windows Azure Pack: Portal e API Express @ no__t-0 na guia **produtos** . Clique em **Adicionar**e **Instale** na parte inferior da janela.
+3.  Abra o Web Platform Installer e localize **pacote do Microsoft Azure: portal e API Express** na guia **produtos** . clique em **Adicionar**e **Instale** na parte inferior da janela.
 
-4.  Continue com a instalação. Após a conclusão da instalação, o site de configuração (*https://&lt;wapserver @ no__t-2:30101/* ) é aberto no navegador da Web. Neste site, forneça informações sobre o SQL Server e conclua a configuração de WAP.
+4.  Continue com a instalação. Após a conclusão da instalação, o site de configuração (*https://&lt;wapserver&gt;: 30101/* ) é aberto no navegador da Web. Neste site, forneça informações sobre o SQL Server e conclua a configuração de WAP.
 
 Para obter ajuda sobre como configurar Pacote do Microsoft Azure, consulte [instalar uma implantação expressa do pacote do Microsoft Azure](https://technet.microsoft.com/dn296439.aspx).
 
@@ -63,7 +63,7 @@ Para obter ajuda sobre como configurar Pacote do Microsoft Azure, consulte [inst
 
 Antes de usar Pacote do Microsoft Azure, você já deve tê-lo instalado e configurado para sua infraestrutura.
 
-1.  Navegue até o portal de administração do Pacote do Microsoft Azure em *https://&lt;wapserver @ no__t-2:30091*e, em seguida, faça logon usando suas credenciais de administrador.
+1.  Navegue até o portal de administração do Pacote do Microsoft Azure em *https://&lt;wapserver&gt;: 30091*e, em seguida, faça logon usando suas credenciais de administrador.
 
 2.  No painel esquerdo, clique em **nuvens de VM**.
 
@@ -77,7 +77,7 @@ Antes de usar Pacote do Microsoft Azure, você já deve tê-lo instalado e confi
 
 Para permitir que os locatários criem VMs em WAP, você deve primeiro criar um plano de hospedagem para o qual os locatários podem assinar. Os planos definem as nuvens de VM permitidas, os modelos, as redes e as entidades de cobrança para seus locatários.
 
-1. No painel inferior do portal, clique em **+ novo** &gt; **plano** &gt; **criar plano**.
+1. No painel inferior do portal, clique em **+ novo** **plano** de &gt; &gt; **criar plano**.
 
 2. Na primeira etapa do assistente, escolha um nome para seu plano. Esse é o nome que seus locatários verão ao assinar.
 

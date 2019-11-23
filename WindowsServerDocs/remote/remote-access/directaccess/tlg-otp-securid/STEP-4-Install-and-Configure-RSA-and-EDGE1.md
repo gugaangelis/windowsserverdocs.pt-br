@@ -21,7 +21,7 @@ ms.locfileid: "71404754"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>ETAPA 4 instalar e configurar o RSA e o EDGE1
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 O RSA é o servidor RADIUS e OTP e é instalado antes de configurar o RADIUS e a OTP.  
   
@@ -255,7 +255,7 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
     6.  Na caixa de diálogo **download de arquivo** , clique em **salvar**, navegue até C:\RSA instalação e clique em **salvar**. Clique em **fechar** na caixa de diálogo **baixar completo** .  
   
-    7.  Da cópia de mídia do Gerenciador de autenticação RSA \auth_mgr\windows-x86_64\am\rsa-ace_nsload\win32-5.0-x86\agent_nsload.exe para a instalação do C:\RSA.  
+    7.  Na cópia de mídia do Gerenciador de autenticação RSA \ auth_mgr \Windows-x86_64 \am\rsa-ace_nsload \win32-5.0-x86\ agent_nsload. exe para a instalação do C:\RSA.  
   
 ## <a name="BKMK_DAProbeUser"></a>Criar DAProbeUser  
   
@@ -268,7 +268,7 @@ Use este procedimento para instalar o token de software SecurID em CLIENT1.
   
 #### <a name="install-securid-software-token"></a>Instalar o token de software SecurID  
   
-1.  No computador CLIENT1, crie a pasta C:\RSA files. Copie o arquivo Software_Tokens. zip da instalação do C:\RSA no computador RSA para arquivos C:\RSA. Extraia o arquivo User1_000031701832. SDTID para os arquivos C:\RSA em CLIENT1.  
+1.  No computador CLIENT1, crie a pasta C:\RSA files. Copie o arquivo Software_Tokens. zip da instalação do C:\RSA no computador RSA para arquivos C:\RSA. Extraia o arquivo User1_000031701832. SDTID para arquivos C:\RSA em CLIENT1.  
   
 2.  Acesse a fonte de mídia do token de software RSA SecurID e clique duas vezes em RSASECURIDTOKEN410 na pasta do **aplicativo cliente SecurID SoftwareToken** para iniciar a instalação RSA SecurID. Se a mensagem **Abrir arquivo – aviso de segurança** for exibida, clique em **executar**.  
   
@@ -284,7 +284,7 @@ Use este procedimento para instalar o token de software SecurID em CLIENT1.
   
 8.  Clique em **Importar do arquivo**.  
   
-9. Clique em **procurar**, selecione C:\RSA Files\User1_000031701832.SDTID e clique em **abrir**.  
+9. Clique em **procurar**, selecione C:\RSA arquivos \ USER1_000031701832. SDTID e clique em **abrir**.  
   
 10. Clique em **OK** duas vezes.  
   
@@ -295,7 +295,7 @@ Use este procedimento para configurar o EDGE1 para executar a autenticação RSA
   
 1. No EDGE1, abra o Windows Explorer e crie os arquivos da pasta C:\RSA. Navegue até a mídia de instalação do RSA ACE.  
   
-2. Copie os arquivos agent_nsload. exe, AM_Config. zip e EDGE1_NodeSecret. zip da mídia RSA para os arquivos C:\RSA.  
+2. Copie os arquivos agent_nsload. exe, AM_Config. zip e EDGE1_NodeSecret. zip da mídia RSA para arquivos C:\RSA.  
   
 3. Extraia o conteúdo de ambos os arquivos zip para os seguintes locais:  
   
@@ -303,11 +303,11 @@ Use este procedimento para configurar o EDGE1 para executar a autenticação RSA
   
    2.  C:\Windows\SysWOW64\  
   
-4. Copie agent_nsload. exe para C:\Windows\SysWOW64 @ no__t-0.  
+4. Copie agent_nsload. exe para C:\Windows\SysWOW64\\.  
   
 5. Abra um prompt de comando com privilégios elevados e navegue até C:\Windows\SysWOW64.  
   
-6. Digite **agent_nsload. exe-f nodesecret. rec-p <password>,** em que <password> é a senha forte que você criou durante a configuração inicial do RSA. Pressione Enter.  
+6. Digite **agent_nsload. exe-f nodesecret. rec-p <password>** em que <password> é a senha forte que você criou durante a configuração inicial do RSA. Pressione Enter.  
   
 7. Copiar C:\Windows\SysWOW64\securid para C:\Windows\System32.  
   
@@ -335,7 +335,7 @@ Use este procedimento para configurar a OTP para o DirectAccess e verificar a co
   
 8.  Na seção **servidores de AC de OTP** , selecione App1.Corp.contoso.com e clique em **Adicionar**. Clique em **Avançar**.  
   
-9. Na página **modelos de certificado de OTP** , clique em **procurar** para selecionar um modelo de certificado usado para o registro de certificados emitidos para autenticação OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPLogon** . Clique em **OK**. Clique em **procurar** para selecionar um modelo de certificado usado para registrar o certificado usado pelo servidor de acesso remoto para assinar solicitações de registro de certificado OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPRA**. Clique em **Ok**. Clique em **Avançar**.  
+9. Na página **modelos de certificado de OTP** , clique em **procurar** para selecionar um modelo de certificado usado para o registro de certificados emitidos para autenticação OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPLogon**. Clique em **OK**. Clique em **procurar** para selecionar um modelo de certificado usado para registrar o certificado usado pelo servidor de acesso remoto para assinar solicitações de registro de certificado OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPRA**. Clique em **Ok**. Clique em **Avançar**.  
   
 10. Na página **instalação do servidor de acesso remoto** , clique em **concluir**e clique em **concluir** no **Assistente de especialista do DirectAccess**.  
   

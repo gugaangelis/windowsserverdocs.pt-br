@@ -17,7 +17,7 @@ ms.locfileid: "71405452"
 ---
 # <a name="configure-remote-radius-server-groups"></a>Configurar grupos de servidores RADIUS remotos
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para configurar grupos de servidores remotos RADIUS quando desejar configurar o NPS para atuar como um servidor proxy e encaminhar solicitações de conexão para outros NPSs para processamento.
 
@@ -37,11 +37,11 @@ Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necess
 1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede** para abrir o console do NPS.
 2. Na árvore de console, clique duas vezes em **clientes e servidores RADIUS**, clique com o botão direito do mouse em **grupos de servidores RADIUS remotos**e clique em **novo**.
 3. A caixa de diálogo **novo grupo de servidores remotos RADIUS** é aberta. Em **nome do grupo**, digite um nome para o grupo de servidores remotos RADIUS.
-4. **Em servidores RADIUS**, clique em **Adicionar**. A caixa de diálogo **adicionar servidores RADIUS** é aberta. Digite o endereço IP do servidor RADIUS que você deseja adicionar ao grupo ou digite o nome de domínio totalmente qualificado \(FQDN @ no__t-1 do servidor RADIUS e, em seguida, clique em **verificar**.
+4. **Em servidores RADIUS**, clique em **Adicionar**. A caixa de diálogo **adicionar servidores RADIUS** é aberta. Digite o endereço IP do servidor RADIUS que você deseja adicionar ao grupo ou digite o nome de domínio totalmente qualificado \(FQDN\) do servidor RADIUS e, em seguida, clique em **verificar**.
 5. Em **adicionar servidores RADIUS**, clique na guia **Autenticação/Contabilização** . Em **segredo compartilhado** e **confirmar segredo compartilhado**, digite o segredo compartilhado. Você deve usar o mesmo segredo compartilhado ao configurar o computador local como um cliente RADIUS no servidor RADIUS remoto.
 6. Se você não estiver usando o protocolo EAP para autenticação, clique em **solicitar deve conter o atributo autenticador de mensagem**. O EAP usa o atributo de autenticador de mensagem por padrão.
 7. Verifique se os números de porta de autenticação e contabilização estão corretos para sua implantação.
-8. Se você usar um segredo compartilhado diferente para contabilidade, em **contabilidade**, desmarque a caixa de seleção **usar o mesmo segredo compartilhado para autenticação e contabilização** e, em seguida, digite o segredo compartilhado de contabilidade em **segredo compartilhado** e **confirme compartilhado segredo**.
+8. Se você usar um segredo compartilhado diferente para contabilidade, em **contabilidade**, desmarque a caixa de seleção **usar o mesmo segredo compartilhado para autenticação e contabilização** e, em seguida, digite o segredo compartilhado de contabilidade em **segredo compartilhado** e **confirme segredo compartilhado**.
 9. Se você não quiser encaminhar mensagens de início e parada do servidor de acesso à rede para o servidor RADIUS remoto, desmarque a caixa de seleção **encaminhar notificações do servidor de acesso à rede para este servidor** .
 
 Para obter mais informações sobre como gerenciar o NPS, consulte [gerenciar o servidor de políticas de rede](nps-manage-top.md).

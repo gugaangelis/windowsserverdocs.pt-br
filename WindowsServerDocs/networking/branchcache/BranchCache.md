@@ -21,7 +21,7 @@ ms.locfileid: "71406764"
 ---
 # <a name="branchcache"></a>BranchCache
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico, que é direcionado a profissionais de TI (tecnologia da informação), fornece informações gerais sobre o BranchCache, incluindo os modos, os recursos e as capacidades do BranchCache, bem como a funcionalidade do BranchCache disponível em sistemas operacionais diferentes.
 
@@ -190,11 +190,11 @@ Você pode usar Gerenciador do Servidor no Windows Server 2016 para instalar o r
 
 |Funcionalidade|Local no computador|Instalar este elemento do BranchCache|
 |-----------------|---------------------|------------------------------------|
-|Servidor de aplicativos com base no @no__t de servidor de conteúdo-0BITS @ no__t-1|Matriz ou datacenter na nuvem|Recurso BranchCache|
-|Servidor de conteúdo \(Web Server @ no__t-1|Matriz ou datacenter na nuvem|Recurso BranchCache|
-|Servidor de conteúdo \(file Server usando o protocolo SMB @ no__t-1|Matriz ou datacenter na nuvem|Serviço de função BranchCache para Arquivos de Rede da função de servidor Serviços de Arquivo|
+|O servidor de conteúdo \(servidor de aplicativos baseado em BITS\)|Matriz ou datacenter na nuvem|Recurso BranchCache|
+|Servidor Web \(servidor de conteúdo\)|Matriz ou datacenter na nuvem|Recurso BranchCache|
+|Servidor de conteúdo do \(servidor de arquivos usando o protocolo SMB\)|Matriz ou datacenter na nuvem|Serviço de função BranchCache para Arquivos de Rede da função de servidor Serviços de Arquivo|
 |Servidor de cache hospedado|Filial|Recurso BranchCache com modo de servidor de cache hospedado habilitado|
-|Computador cliente habilitado por BranchCache|Filial|Nenhuma instalação necessária; Basta habilitar o BranchCache e um modo de BranchCache \(distributed ou um @ no__t-1 hospedado no cliente|
+|Computador cliente habilitado por BranchCache|Filial|Nenhuma instalação necessária; Basta habilitar o BranchCache e um modo de BranchCache \(\) distribuída ou hospedado no cliente|
 
 Para instalar o serviço de função ou o recurso, abra o Gerenciador do Servidor e selecione os computadores nos quais deseja habilitar a funcionalidade BranchCache. No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**. O assistente **Adicionar Funções e Recursos** será aberto. Conforme executa o assistente, faça as seguintes seleções:
 
@@ -322,19 +322,19 @@ Além disso, o BranchCache manipula as informações de conteúdo com o mesmo n�
 
 O fluxo das informações de conteúdo e do conteúdo real é dividido em quatro fases:
 
-1.  processos de @no__t 0BranchCache: Solicitar conteúdo @ no__t-0
+1.  [Processos do BranchCache: conteúdo da solicitação](#BKMK_8)
 
-2.  processos de @no__t 0BranchCache: Localizar conteúdo @ no__t-0
+2.  [Processos do BranchCache: localizar conteúdo](#BKMK_9)
 
-3.  processos de @no__t 0BranchCache: Recuperar conteúdo @ no__t-0
+3.  [Processos do BranchCache: recuperar conteúdo](#BKMK_10)
 
-4.  processos de @no__t 0BranchCache: Conteúdo do cache @ no__t-0
+4.  [Processos do BranchCache: conteúdo do cache](#BKMK_11)
 
 As seções a seguir descrevem essas fases.
 
-## <a name="BKMK_8"></a>Processos do BranchCache: solicitar conteúdo
+## <a name="BKMK_8"></a>Processos do BranchCache: conteúdo da solicitação
 
-Na primeira fase, o computador cliente na filial solicita conteúdo (como um arquivo ou página da Web) de um servidor de conteúdo em um local remoto, como uma matriz. O servidor de conteúdo verifica se o computador cliente está autorizado a receber o conteúdo solicitado. Se o computador cliente for autorizado e o servidor de conteúdo e o cliente forem BranchCache @ no__t-0enabled, o servidor de conteúdo gerará informações de conteúdo.
+Na primeira fase, o computador cliente na filial solicita conteúdo (como um arquivo ou página da Web) de um servidor de conteúdo em um local remoto, como uma matriz. O servidor de conteúdo verifica se o computador cliente está autorizado a receber o conteúdo solicitado. Se o computador cliente estiver autorizado e o servidor de conteúdo e o cliente estiverem com o BranchCache\-habilitado, o servidor de conteúdo gerará informações de conteúdo.
 
 Em seguida, o servidor de conteúdo envia as informações de conteúdo ao computador cliente usando o mesmo protocolo que seria usado para o conteúdo real. 
 
@@ -376,7 +376,7 @@ Depois que o conteúdo é recebido, ele é adicionado ao cache local, seja no co
 
 Depois que um computador cliente localiza o conteúdo desejado no host de conteúdo (que é um servidor de cache hospedado ou um computador cliente no modo de cache distribuído), o computador cliente começa o processo de recuperar o conteúdo.
 
-Primeiro, o computador cliente envia uma solicitação ao host de conteúdo para o primeiro bloco necessário. A solicitação contém o ID do segmento e o intervalo de blocos que identificam o conteúdo desejado. Como apenas um bloco é enviado, o intervalo contém somente um bloco (atualmente, não há suporte à solicitação de vários blocos). O cliente também armazena a solicitação na lista local de solicitações pendentes.  
+Primeiro, o computador cliente envia uma solicitação ao host de conteúdo para o primeiro bloco necessário. A solicitação contém o ID do segmento e o intervalo de blocos que identificam o conteúdo desejado. Como apenas um bloco é enviado, o intervalo contém somente um bloco (Atualmente, não há suporte para solicitações para vários blocos.) O cliente também armazena a solicitação em sua lista de solicitações pendentes local.  
 
 Após receber uma mensagem de solicitação válida de um cliente, o host de conteúdo verifica se o bloco especificado na solicitação existe no cache de conteúdo do host de conteúdo.
 
@@ -421,7 +421,7 @@ As principais ameaças à segurança nesta camada incluem:
 
     *Um cliente é sobrecarregado com solicitações de dados*. Os protocolos do BranchCache incorporam contadores e temporizadores de gerenciamento de fila para evitar a sobrecarga dos clientes.
 
-## <a name="BKMK_11"></a>Processos do BranchCache: armazenar conteúdo em cache
+## <a name="BKMK_11"></a>Processos do BranchCache: conteúdo do cache
 
 Em computadores clientes no modo de cache distribuído e servidores de cache hospedado localizados em filiais, os caches de conteúdo são criados ao longo do tempo, à medida que o conteúdo é recuperado por links WAN.
 
@@ -448,7 +448,7 @@ Para atualizar o servidor de cache hospedado usando o Protocolo de Cache Hospeda
 
 ### <a name="hosted-cache-mode-cache-population"></a>População de cache do modo de cache hospedado
 
-O processo de adicionar conteúdo ao cache do servidor de cache hospedado em uma filial começa quando o cliente envia um INITIAL_OFFER_MESSAGE, que inclui a ID do segmento. A ID de segmento na solicitação INITIAL_OFFER_MESSAGE é usada para recuperar o hash de segmento correspondente de dados, a lista de hashes de bloco e o segredo de segmento do cache de blocos do servidor de cache hospedado. Se o servidor de cache hospedado já tiver todas as informações de conteúdo de um segmento específico, a resposta a INITIAL_OFFER_MESSAGE será OK, e nenhuma solicitação de download de blocos ocorrerá.
+O processo de adicionar conteúdo ao cache do servidor de cache hospedado em uma filial começa quando o cliente envia um INITIAL_OFFER_MESSAGE, que inclui a ID do segmento. A ID de segmento na solicitação de INITIAL_OFFER_MESSAGE é usada para recuperar o hash de segmento correspondente de dados, a lista de hashes de bloco e o segredo de segmento do cache de blocos do servidor de cache hospedado. Se o servidor de cache hospedado já tiver todas as informações de conteúdo de um segmento específico, a resposta a INITIAL_OFFER_MESSAGE será OK, e nenhuma solicitação de download de blocos ocorrerá.
 
 Se o servidor de cache hospedado não tiver todos os blocos de dados oferecidos associados aos hashes de bloco no segmento, a resposta a INITIAL_OFFER_MESSAGE será INTERESTED. Em seguida, o cliente enviará SEGMENT_INFO_MESSAGE, que descreve o segmento único oferecido. O servidor de cache hospedado responde com uma mensagem de OK e inicia o download dos blocos ausentes do computador cliente que realizou a oferta.
 

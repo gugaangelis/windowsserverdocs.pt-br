@@ -42,15 +42,15 @@ Os seguintes subcomandos estão disponíveis o tempo todo:
 |-----------|-----------|
 |class|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
 |path|Sai do modo de alias padrão do WMIC para acessar instâncias diretamente no esquema do WMI.|
-|Noticioso|Exibe os valores atuais de todas as opções globais.|
+|noticioso|Exibe os valores atuais de todas as opções globais.|
 |[sair \| sair]|Sai do Shell de comando do WMIC.|
 
 ## <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|</parameter>|Descrição de @no__t 0Concise, começa com um verbo. >|
-|</param2>|Descrição concisa de @no__t 0Another, começa com um verbo. >|
+|</parameter>|\<Descrição concisa, começa com um verbo. >|
+|</param2>|\<outra descrição concisa, começa com um verbo. >|
 
 
 ## <a name="BKMK_examples"></a>Disso

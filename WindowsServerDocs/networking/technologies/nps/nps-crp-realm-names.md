@@ -17,7 +17,7 @@ ms.locfileid: "71405468"
 ---
 # <a name="realm-names"></a>Nomes de realm
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 
 Você pode usar este tópico para obter uma visão geral do uso de nomes de territórios no processamento de solicitação de conexão do servidor de políticas de rede.
@@ -26,7 +26,7 @@ O atributo RADIUS de nome de usuário é uma cadeia de caracteres que normalment
 
 Em outro exemplo, se o atributo RADIUS de nome de usuário contiver o nome de usuário user1@example.com, user1 será o nome da conta de usuário e example.com será o nome do realm. Os nomes de realm podem ser apresentados no nome de usuário como um prefixo ou como um sufixo:
 
-- **Example\user1**. Neste exemplo, o **exemplo** de nome de realm é um prefixo; e também é o nome de um domínio Active Directory @ no__t-1 Domain Services \(AD DS @ no__t-3.
+- **Example\user1**. Neste exemplo, o **exemplo** de nome de realm é um prefixo; e também é o nome de um Active Directory&reg; serviços de domínio \(AD DS domínio\).
 
 - <strong>user1@example.com</strong>. Neste exemplo, o nome do Realm **example.com** é um sufixo; e é um nome de domínio DNS ou o nome de um domínio AD DS.
 
@@ -58,7 +58,7 @@ Antes que a mensagem RADIUS seja processada localmente (quando o NPS está sendo
 
 Você pode configurar regras de manipulação de atributo para o atributo User-Name para alterar o seguinte:
 
-- Remova o nome de realm do nome de usuário \(also conhecido como realm de remoção @ no__t-1. Por exemplo, o nome de usuário user1@example.com é alterado para Usuário1.
+- Remova o nome de realm do nome de usuário \(também conhecido como\)de remoção de realm. Por exemplo, o nome de usuário user1@example.com é alterado para Usuário1.
 
 - Altere o nome do Realm, mas não sua sintaxe. Por exemplo, o nome de usuário user1@example.com é alterado para user1@wcoast.example.com.
 

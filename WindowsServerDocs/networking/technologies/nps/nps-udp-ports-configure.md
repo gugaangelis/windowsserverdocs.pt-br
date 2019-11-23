@@ -17,16 +17,16 @@ ms.locfileid: "71405311"
 ---
 # <a name="configure-nps-udp-port-information"></a>Configurar informações da porta UDP do NPS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar o procedimento a seguir para configurar as portas que o servidor de diretivas de rede (NPS) usa para o tráfego de estatísticas e autenticação do serviço RADIUS @no__t 0RADIUS @ no__t-1.
+Você pode usar o procedimento a seguir para configurar as portas que o servidor de diretivas de rede (NPS) usa para o serviço RADIUS \(RADIUS\) autenticação e o tráfego de contabilização.
 
-Por padrão, o NPS escuta o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 para o protocolo IP versão 6 \(IPv6 @ no__t-1 e IPv4 para todos os adaptadores de rede instalados.
+Por padrão, o NPS escuta o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 para o protocolo IP versão 6 \(IPv6\) e IPv4 para todos os adaptadores de rede instalados.
 
 >[!NOTE]
 >Se você desinstalar o IPv4 ou IPv6 em um adaptador de rede, o NPS não monitorará o tráfego RADIUS para o protocolo desinstalado.
 
-Os valores de porta de 1812 para autenticação e 1813 para contabilidade são portas RADIUS padrão definidas pela Internet Engineering Task Force \(IETF @ no__t-1 nas RFCs 2865 e 2866. No entanto, por padrão, muitos servidores de acesso usam as portas 1645 para solicitações de autenticação e 1646 para solicitações de contabilização. Não importa quais números de porta você decidir usar, verifique se o NPS e o servidor de acesso estão configurados para usar os mesmos.
+Os valores de porta de 1812 para autenticação e 1813 para contabilidade são portas RADIUS padrão definidas pela Internet Engineering Task Force \(IETF\) nas RFCs 2865 e 2866. No entanto, por padrão, muitos servidores de acesso usam as portas 1645 para solicitações de autenticação e 1646 para solicitações de contabilização. Não importa quais números de porta você decidir usar, verifique se o NPS e o servidor de acesso estão configurados para usar os mesmos.
 
 >FUNDAMENTAL Se você não usar os números de porta RADIUS padrão, deverá configurar exceções no firewall para o computador local para permitir o tráfego RADIUS nas novas portas. Para obter mais informações, consulte [Configurar firewalls para tráfego RADIUS](nps-firewalls-configure.md).
 

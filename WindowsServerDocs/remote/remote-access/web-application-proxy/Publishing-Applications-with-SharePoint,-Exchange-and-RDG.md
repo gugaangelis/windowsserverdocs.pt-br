@@ -20,7 +20,7 @@ ms.locfileid: "71404239"
 
 >Aplica-se a: Windows Server 2016
 
-o conteúdo de @no__t 0This é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/). **  
+**Esse conteúdo é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
 
 Este tópico descreve as tarefas necessárias para publicar o SharePoint Server, o Exchange Server ou o gateway de Área de Trabalho Remota (RDP) por meio do proxy de aplicativo Web.  
 
@@ -46,7 +46,7 @@ A tabela a seguir descreve os serviços do Exchange que você pode publicar por 
 
 |    Serviço do Exchange    |                                                                            Pré-autenticação                                                                            |                                                                                                                                       Observações                                                                                                                                        |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Outlook Web App     | -AD FS usando a autenticação não baseada em declarações<br />-Passagem<br />-AD FS usando a autenticação baseada em declarações para o Exchange 2013 Service Pack 1 (SP1) local |                                                                  Para saber mais, confira: [Usando AD FS autenticação baseada em declarações com o Outlook Web App e o Eat](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
+|    Outlook Web App     | -AD FS usando a autenticação não baseada em declarações<br />-Passagem<br />-AD FS usando a autenticação baseada em declarações para o Exchange 2013 Service Pack 1 (SP1) local |                                                                  Para obter mais informações, consulte [Usando autenticação baseada em declarações do AD FS com o Outlook Web App e o EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Painel de controle do Exchange |                                                                               Passagem                                                                               |                                                                                                                                                                                                                                                                                    |
 |    Outlook em Qualquer Lugar    |                                                                               Passagem                                                                               | Você deve publicar as três URLs para o Outlook em Qualquer Lugar funcionar corretamente:<br /><br />-A URL de descoberta automática.<br />-O nome de host externo do servidor Exchange; ou seja, a URL que está configurada para os clientes se conectarem.<br />-O FQDN interno do Exchange Server. |
 |  Exchange ActiveSync   |                                                     Passagem<br/> AD FS usando o protocolo HTTP Basic Authorization                                                      |                                                                                                                                                                                                                                                                                    |
@@ -66,9 +66,9 @@ Se você quiser restringir o acesso ao gateway de acesso remoto e adicionar pré
 
 1. A instalação será diferente dependendo se suas funções de Acesso via Web de trabalho remota (/RDWeb) e de gateway de área de trabalho remota (RPC) estão no mesmo servidor ou em servidores diferentes.  
 
-2. Se as funções de gateway RD Acesso via Web e RD estiverem hospedadas no mesmo servidor RDG, você poderá simplesmente publicar o FQDN raiz no proxy de aplicativo Web, como, https://rdg.contoso.com/.  
+2. Se as funções RD Acesso via Web e RD Gateway estiverem hospedadas no mesmo servidor RDG, você poderá simplesmente publicar o FQDN raiz no proxy de aplicativo Web, como https://rdg.contoso.com/.  
 
-   Você também pode publicar os dois diretórios virtuais individualmente, por exemplo, <https://rdg.contoso.com/rdweb/> e https://rdg.contoso.com/rpc/.  
+   Você também pode publicar os dois diretórios virtuais individualmente, por exemplo,<https://rdg.contoso.com/rdweb/> e https://rdg.contoso.com/rpc/.  
 
 3. Se o Acesso via Web RD e o gateway de área de trabalho remota estiverem hospedados em servidores RDG separados, você precisará publicar os dois diretórios virtuais individualmente. Você pode usar o mesmo ou FQDN externo diferente, por exemplo, https://rdweb.contoso.com/rdweb/ e https://gateway.contoso.com/rpc/.  
 
@@ -106,7 +106,7 @@ Se você quiser restringir o acesso ao gateway de acesso remoto e adicionar pré
 
         Essa é a terceira parte confiável que será usada ao publicar o aplicativo no proxy de aplicativo Web.  
 
-4.  Publique a raiz do site (por exemplo, https://rdg.contoso.com/ ) no proxy de aplicativo Web. Defina a pré-autenticação como AD FS e use a confiança de terceira parte confiável que você criou acima. Isso permitirá/RDWeb e/RPC usarem o mesmo cookie de autenticação de proxy de aplicativo Web.  
+4.  Publique a raiz do site (por exemplo, https://rdg.contoso.com/) no proxy de aplicativo Web. Defina a pré-autenticação como AD FS e use a confiança de terceira parte confiável que você criou acima. Isso permitirá/RDWeb e/RPC usarem o mesmo cookie de autenticação de proxy de aplicativo Web.  
 
     É possível publicar/RDWeb e/RPC como aplicativos separados e até mesmo usar diferentes servidores publicados. Você só precisa garantir que você publique usando a mesma relação de confiança de terceira parte confiável que o token do proxy de aplicativo Web é emitido para a relação de confiança de terceira parte confiável e, portanto, válido entre aplicativos publicados com a mesma confiança de terceira parte confiável.  
 
@@ -118,7 +118,7 @@ Se você quiser restringir o acesso ao gateway de acesso remoto e adicionar pré
 
 6.  Desabilite a propriedade de cookie HttpOnly no proxy de aplicativo Web no aplicativo publicado RDG. Para permitir que o controle ActiveX RDG o acesso ao cookie de autenticação de proxy de aplicativo Web, você precisa desabilitar a propriedade HttpOnly no cookie de proxy de aplicativo Web.  
 
-    Isso requer que o seguinte seja instalado o [hotfix do proxy de aplicativo Web](https://support.microsoft.com/en-gb/kb/3000850) ou o [https://support.microsoft.com/en-gb/kb/3000850](https://support.microsoft.com/en-gb/kb/3000850).  
+    Isso requer que o [hotfix do proxy de aplicativo Web](https://support.microsoft.com/en-gb/kb/3000850) seja instalado ou o [https://support.microsoft.com/en-gb/kb/3000850](https://support.microsoft.com/en-gb/kb/3000850).  
 
     Depois de instalar o hotfix, execute o seguinte script do PowerShell no servidor proxy de aplicativo Web especificando o nome do aplicativo relevante:  
 
@@ -146,7 +146,7 @@ Se você quiser restringir o acesso ao gateway de acesso remoto e adicionar pré
 
         1.  Faça logon na Terminal Server com uma conta que tenha privilégios de administrador.  
 
-        2.  Acesse **iniciar** >**Ferramentas administrativas** > **serviços de terminal** > **TS RemoteApp Manager.**  
+        2.  Acesse **iniciar** >**Ferramentas administrativas** > **serviços de terminal** > **Gerenciador de TS RemoteApp.**  
 
         3.  No painel **visão geral** do gerenciador de TS RemoteApp, ao lado de configurações de RDP, clique em **alterar**.  
 

@@ -21,7 +21,7 @@ ms.locfileid: "71407817"
 
 Este tutorial fornece instruções para implementar uma autenticação em nome de (OBO) usando AD FS no Windows Server 2016 TP5 ou posterior. Para saber mais sobre a autenticação OBO, leia [AD FS cenários de aplicativos e fluxos do OpenID Connect/OAuth](../../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
->AVISO: O exemplo que você pode criar aqui é apenas para fins educacionais. Essas instruções são para a implementação mais simples e mínima possível para expor os elementos necessários do modelo. O exemplo pode não incluir todos os aspectos do tratamento de erros e outras funcionalidades relacionadas e se concentrar apenas em obter uma autenticação OBO bem-sucedida.
+>Aviso: o exemplo que você pode criar aqui é apenas para fins educacionais. Essas instruções são para a implementação mais simples e mínima possível para expor os elementos necessários do modelo. O exemplo pode não incluir todos os aspectos do tratamento de erros e outras funcionalidades relacionadas e se concentrar apenas em obter uma autenticação OBO bem-sucedida.
 
 ## <a name="overview"></a>Visão geral
 
@@ -62,9 +62,9 @@ O exemplo também usa o SQL LocalDB v 11.0. Instale o SQL LocalDB antes de traba
 ## <a name="setting-up-the-environment"></a>Configurando o ambiente
 Trabalharemos com uma configuração básica do:
 
-1. **DC**: Controlador de domínio para o domínio no qual AD FS será hospedado
-2. **Servidor de AD FS**: O servidor de AD FS para o domínio
-3. **Máquina de desenvolvimento**: Computador onde o Visual Studio foi instalado e desenvolverei nosso exemplo
+1. **DC**: controlador de domínio para o domínio no qual AD FS será hospedado
+2. **Servidor de AD FS**: o servidor de AD FS para o domínio
+3. **Máquina de desenvolvimento**: computador onde o Visual Studio foi instalado e desenvolverei nosso exemplo
 
 Você pode, se desejar, usar apenas duas máquinas. Um para DC/ADFS e outro para desenvolver o exemplo.
 
@@ -85,8 +85,8 @@ No Shell ou na linha de comando:
 
 Assim que abrir a solução WebAPI-OnBehalfOf-DotNet. sln, você observará que tem dois projetos na solução
 
-* **ToDoListClient**: Isso servirá como o cliente OpenID com o qual o usuário estará interagindo
-* **ToDoListService**: Esse será o aplicativo/serviço de camada intermediária do servidor que irá interagir com outro WebAPI de back-end OBO o usuário autenticado
+* **ToDoListClient**: Isso servirá como o cliente OpenID com o qual o usuário será interagindo
+* **ToDoListService**: este será o aplicativo/serviço do servidor de camada intermediária que irá interagir com outro WebAPI de back-end obo o usuário autenticado
 
 Como você pode ver, precisaremos adicionar outro projeto posteriormente, que atuará como o recurso que será acessado pelo ToDoListService da camada intermediária.
 
@@ -102,7 +102,7 @@ Abra o MMC de gerenciamento de AD FS e adicione um novo grupo de aplicativos. Se
 
 Clique em avançar e você verá a página para fornecer informações sobre o aplicativo cliente. Forneça um nome apropriado para o aplicativo cliente no AD FS. Copie o identificador de cliente e salve-o em algum lugar que você possa acessar posteriormente, pois isso será necessário na configuração do aplicativo no Visual Studio.
 
->Observação: O URI de redirecionamento pode ser qualquer URI arbitrário, pois ele realmente não é usado no caso de clientes nativos
+>Observação: o URI de redirecionamento pode ser qualquer URI arbitrário, pois ele realmente não é usado no caso de clientes nativos
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO11.PNG)
 
@@ -122,7 +122,7 @@ Clique em avançar e a página configurar permissões de aplicativo será exibid
 
 Clique em avançar para exibir a página Resumo. Percorra o restante do assistente e conclua a configuração.
 
-Para habilitar a autenticação em nome de, precisamos garantir que AD FS retorna um token de acesso com escopo user_impersonation ao cliente. Modifique a emissão de declarações para ToDoListServiceWebApi para incluir as três seguintes regras personalizadas:
+Para habilitar a autenticação em nome de, precisamos garantir que AD FS retorna um token de acesso com user_impersonation de escopo ao cliente. Modifique a emissão de declarações para ToDoListServiceWebApi para incluir as três seguintes regras personalizadas:
 
     @RuleName = "All claims"
     c:[]
@@ -276,8 +276,8 @@ Continue com o restante do assistente, como quando configuramos o ToDoListServic
 
 | Chave                      | Valor                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ida: público             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI de ToDoListService, por exemplo, https://localhost:44321/                                                                                         |
-| Ida: ClientID             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI de ToDoListService, por exemplo, <https://localhost:44321/> </br>**É muito importante que o ida: Audience e Ida: ClientID correspondam um ao outro** |
+| Ida: público             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI ToDoListService, por exemplo, https://localhost:44321/                                                                                         |
+| Ida: ClientID             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI ToDoListService, por exemplo, <https://localhost:44321/> </br>**É muito importante que o ida: Audience e Ida: ClientID correspondam um ao outro** |
 | Ida: ClientSecret         | Esse é o segredo que AD FS gerado quando você estava Configurando o cliente ToDoListService no AD FS                                                                                                                   |
 | Ida: AdfsMetadataEndpoint | Essa é a URL para seus metadados de AD FS, por exemplo, https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
 | Ida: OBOWebAPIBase        | Esse é o endereço base que usaremos para chamar a API de back-end, por exemplo, https://localhost:44300                                                                                                                     |
@@ -494,10 +494,10 @@ Na operação bem-sucedida, você verá que o item foi adicionado à lista com a
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 Você também pode ver os rastreamentos detalhados sobre o Fiddler. Inicie o Fiddler e habilite a descriptografia de HTTPS. Você pode ver que fazemos duas solicitações para o ponto de extremidade/ADFS/oautincludes.
-Na primeira interação, apresentamos o código de acesso ao ponto de extremidade do token e obtemos um token de acesso para https://localhost:44321/ ![ AD FS OBO @ no__t-2
+Na primeira interação, apresentamos o código de acesso ao ponto de extremidade do token e obtemos um token de acesso para https://localhost:44321/ ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
-Na segunda interação com o ponto de extremidade do token, você pode ver que temos o **requested_token_use** definido como **on_behalf_of** e estamos usando o token de acesso obtido para o serviço Web de camada intermediária, ou seja, https://localhost:44321/ como a declaração para obter o token em nome de.
-![AD FS OBO @ NO__T-1
+Na segunda interação com o ponto de extremidade do token, você pode ver que temos **requested_token_use** definido como **on_behalf_of** e estamos usando o token de acesso obtido para o serviço Web de camada intermediária, ou seja, https://localhost:44321/ como a declaração para obter o token em nome de.
+![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>Próximas etapas
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

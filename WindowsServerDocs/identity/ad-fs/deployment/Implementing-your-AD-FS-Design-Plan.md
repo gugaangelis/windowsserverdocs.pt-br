@@ -18,9 +18,9 @@ ms.locfileid: "71408377"
 ---
 # <a name="implementing-your-ad-fs-design-plan"></a>Implementando seu plano de design do AD FS
 
-As seguintes condições e requisitos ambientais são fatores importantes na implementação do plano de design Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1:  
+As seguintes condições e requisitos ambientais são fatores importantes na implementação do seu Serviços de Federação do Active Directory (AD FS) \(AD FS plano de design\):  
   
--   **Parceiros com suporte:** Normalmente, você usa AD FS para trabalhar com organizações parceiras. Para estabelecer a Federação de identidade, determine as organizações com as quais você deseja formar uma parceria. Depois que uma linha de base AD FS implantação está em vigor, a operação com parceiros envolve a adição de parceiros, a exclusão de parceiros e a atualização de informações de parceiros. As alterações nas parcerias podem ocorrer por vários motivos. Por exemplo, sua implantação de AD FS pode exigir atualizações de parceria se seu parceiro alterar sua empresa de forma significativa, sua organização se tornará parte de uma organização maior ou de uma federação de organizações, ou sua organização será adquirida por um outro corporativa. Em qualquer cenário no qual você federa identidades de vários domínios, você precisará saber os domínios \(partners @ no__t-1 que você tem suporte atualmente e todos os domínios adicionais que representam parceiros em potencial.  
+-   **Parceiros com suporte:** Normalmente, você usa AD FS para trabalhar com organizações parceiras. Para estabelecer a Federação de identidade, determine as organizações com as quais você deseja formar uma parceria. Depois que uma linha de base AD FS implantação está em vigor, a operação com parceiros envolve a adição de parceiros, a exclusão de parceiros e a atualização de informações de parceiros. As alterações nas parcerias podem ocorrer por vários motivos. Por exemplo, sua implantação de AD FS pode exigir atualizações de parceria se seu parceiro alterar sua empresa de forma significativa, sua organização se tornará parte de uma organização maior ou de uma federação de organizações, ou sua organização será adquirida por um outro corporativa. Em qualquer cenário no qual você federa identidades de vários domínios, você precisará conhecer os domínios \(parceiros\) que você está atualmente dando suporte e todos os domínios adicionais que representam parceiros em potencial.  
   
 -   **Tipos de aplicativos e serviços com suporte:** Alguns aplicativos e serviços exigem acesso aos recursos do sistema operacional, enquanto outros são "reconhecimento de declarações". É importante entender os tipos de aplicativos e serviços que AD FS dá suporte para que você possa formular os requisitos de administração.  
   
@@ -37,6 +37,6 @@ A próxima etapa na implementação do design é determinar em qual ordem cada t
   
 Use as seguintes listas de verificação pai nesta seção do guia para se familiarizar com as tarefas de implantação para implementar o design de AD FS preferencial de sua organização:  
   
--   [Lista de verificação: Como implementar um design SSO da Web](Checklist--Implementing-a-Web-SSO-Design.md)  
+-   [Lista de verificação: Implementando um design de SSO da Web](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [Lista de verificação: Como implementar um design de SSO da Web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [Lista de verificação: Implementando um design de SSO da Web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  

@@ -21,7 +21,7 @@ ms.locfileid: "71404917"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>Etapa 2 configurar o servidor DirectAccess básico
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como definir as configurações de cliente e servidor necessárias para uma implantação básica do DirectAccess. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [planejar uma implantação básica do DirectAccess](Plan-a-Basic-DirectAccess-Deployment.md).  
   
@@ -53,7 +53,7 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 7.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
-0Windows-](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 Os seguintes cmdlets ou cmdlets do Windows PowerShell instalam a função de acesso remoto: 
 
@@ -95,7 +95,7 @@ Os seguintes cmdlets ou cmdlets do Windows PowerShell instalam a função de ace
     > [!NOTE]  
     > Por padrão, o Assistente do Guia de Introdução implanta o DirectAccess em todos os laptops e notebooks no domínio por meio da aplicação de um filtro WMI ao GOP de configurações do cliente.  
   
-5.  Clique em **Finalizar**.  
+5.  Clique em **Concluir**.  
   
 6.  Como não há nenhuma KPI usada nessa implantação de testes, se não forem encontrados certificados, o assistente provisionará certificados autoassinados automaticamente para IP-HTTPS e o Servidor de Local de Rede e habilitará o proxy Kerberos automaticamente. O assistente também habilitará NAT64 e DNS64 para conversão de protocolos no ambiente somente IPv4. Depois que o assistente for concluído com êxito aplicando a configuração, clique em **fechar**.  
   
@@ -121,7 +121,7 @@ Os seguintes cmdlets ou cmdlets do Windows PowerShell instalam a função de ace
   
 ## <a name="BKMK_Links"></a>Etapa anterior  
   
--   [Etapa 1: Configurar a infraestrutura do DirectAccess](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
+-   [Etapa 1: configurar a infraestrutura do DirectAccess](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   
 ## <a name="next-step"></a>Próximas etapas  
   

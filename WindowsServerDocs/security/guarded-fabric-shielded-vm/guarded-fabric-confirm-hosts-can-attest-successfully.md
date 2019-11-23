@@ -31,7 +31,7 @@ Um administrador de malha precisa confirmar que os hosts Hyper-V podem ser execu
 
 3. Configure as URLs de proteção e atestado de chave do host:
 
-    - **Por meio do Windows PowerShell**: Você pode configurar a proteção de chave e as URLs de atestado executando o comando a seguir em um console do Windows PowerShell elevado. Para &lt;FQDN @ no__t-1, use o FQDN (nome de domínio totalmente qualificado) do seu cluster HGS (por exemplo, HgS. bastiões. local ou peça ao administrador do HGS para executar o cmdlet **Get-HgsServer** no servidor HgS para recuperar as URLs).
+    - **Por meio do Windows PowerShell**: você pode configurar a proteção de chave e as URLs de atestado executando o comando a seguir em um console do Windows PowerShell elevado. Para &lt;&gt;FQDN, use o FQDN (nome de domínio totalmente qualificado) do seu cluster HGS (por exemplo, HgS. bastiões. local ou peça ao administrador HGS que execute o cmdlet **Get-HgsServer** no servidor HgS para recuperar as URLs).
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'
@@ -39,7 +39,7 @@ Um administrador de malha precisa confirmar que os hosts Hyper-V podem ser execu
 
         Para configurar um servidor HGS de fallback, repita esse comando e especifique as URLs de fallback para a proteção de chave e os serviços de atestado. Para obter mais informações, consulte [configuração de fallback](guarded-fabric-manage-branch-office.md#fallback-configuration).
 
-    - **Por meio do VMM**: Se estiver usando o System Center 2016-Virtual Machine Manager (VMM), você poderá configurar o atestado e as URLs de proteção de chave no VMM. Para obter detalhes, consulte [definir configurações globais do HgS](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings) em **provisionar hosts protegidos no VMM**.
+    - **Por meio do VMM**: se você estiver usando o System Center 2016-Virtual Machine Manager (VMM), poderá configurar o atestado e as URLs de proteção de chave no VMM. Para obter detalhes, consulte [definir configurações globais do HgS](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings) em **provisionar hosts protegidos no VMM**.
 
     >**Observações**
     > - Se o administrador HGS [habilitou o HTTPS no servidor HgS](guarded-fabric-configure-hgs-https.md), inicie as URLs com `https://`.

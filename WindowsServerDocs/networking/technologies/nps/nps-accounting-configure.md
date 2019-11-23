@@ -18,7 +18,7 @@ ms.locfileid: "71405567"
 ---
 # <a name="configure-network-policy-server-accounting"></a>Configurar a contabilização do Servidor de Políticas de Rede
 
-Há três tipos de log para NPS \(\)do servidor de políticas de rede:
+Há três tipos de log para o servidor de diretivas de rede \(\)NPS:
 
 - **Log de eventos**. Usado principalmente para auditoria e solução de problemas de tentativas de conexão. Você pode configurar o log de eventos do NPS obtendo as propriedades do NPS no console do NPS.
 
@@ -53,9 +53,9 @@ Para obter mais informações sobre como interpretar arquivos de log, consulte [
 
 Para impedir que os arquivos de log preencham o disco rígido, é altamente recomendável mantê-los em uma partição separada da partição do sistema. O seguinte fornece mais informações sobre como configurar a contabilidade para o NPS:
 
-- Para enviar os dados do arquivo de log para coleta por outro processo, você pode configurar o NPS para gravar em um pipe nomeado. Para usar pipes nomeados, defina a pasta do \\arquivo de \\log como .\pipe ou ComputerName\pipe. O programa de servidor de pipe nomeado cria um pipe \\nomeado chamado .\pipe\iaslog.log para aceitar os dados. Na caixa de diálogo Propriedades do arquivo local, em criar um novo arquivo de log, selecione nunca (tamanho de arquivo ilimitado) ao usar pipes nomeados.
+- Para enviar os dados do arquivo de log para coleta por outro processo, você pode configurar o NPS para gravar em um pipe nomeado. Para usar pipes nomeados, defina a pasta do arquivo de log para \\.\pipe ou \\ComputerName\pipe. O programa de servidor de pipe nomeado cria um pipe nomeado chamado \\.\pipe\iaslog.log para aceitar os dados. Na caixa de diálogo Propriedades do arquivo local, em criar um novo arquivo de log, selecione nunca (tamanho de arquivo ilimitado) ao usar pipes nomeados.
 
-- O diretório do arquivo de log pode ser criado usando variáveis de ambiente do sistema (em vez de variáveis de usuário), como% systemdrive%,% SystemRoot% e% WINDIR%. Por exemplo, o caminho a seguir, usando a variável de ambiente% windir%, localiza o arquivo de log no diretório do sistema na subpasta \System32\Logs (ou seja,%windir%\System32\Logs @ no__t-0.
+- O diretório do arquivo de log pode ser criado usando variáveis de ambiente do sistema (em vez de variáveis de usuário), como% systemdrive%,% SystemRoot% e% WINDIR%. Por exemplo, o caminho a seguir, usando a variável de ambiente% windir%, localiza o arquivo de log no diretório do sistema na subpasta \System32\Logs (ou seja,%windir%\System32\Logs\).
 
 - Alternar formatos de arquivo de log não faz com que um novo log seja criado. Se você alterar os formatos de arquivo de log, o arquivo que estiver ativo no momento da alteração conterá uma combinação dos dois formatos (os registros no início do log terão o formato anterior e os registros no final do log terão o novo formato).
 
@@ -75,13 +75,13 @@ A associação no grupo **Admins** . do domínio é o mínimo necessário para e
 5. Em **ação de falha no log**, selecione **se o log falhar, descarte as solicitações de conexão** se você quiser que o NPS interrompa o processamento de mensagens de solicitação de acesso quando os arquivos de log estiverem cheios ou indisponíveis por algum motivo. Se você quiser que o NPS continue a processar solicitações de conexão se o log falhar, não marque essa caixa de seleção.
 6. Na caixa de diálogo **Propriedades do arquivo de log** , clique na guia arquivo de **log** .
 7. Na guia **arquivo de log** , em **diretório**, digite o local onde você deseja armazenar os arquivos de log do NPS. O local padrão é a pasta systemroot\System32\LogFiles.<br>Se você não fornecer uma instrução de caminho completo no **diretório do arquivo de log**, o caminho padrão será usado. Por exemplo, se você digitar **NPSLogFile** no **diretório do arquivo de log**, o arquivo estará localizado em%SystemRoot%\System32\NPSLogFile.
-8. Em **formato**, clique em **compatível com DTS**. Se preferir, você pode selecionar um formato de arquivo herdado, como **ODBC \(Legacy\)**  ou **ias \(Legacy.\)**<br>Os tipos de arquivo herdados do **ODBC** e do **ias** contêm um subconjunto das informações que o NPS envia para seu banco de dados SQL Server. O formato XML do tipo de arquivo em **conformidade com DTS** é idêntico ao formato XML que o NPS usa para importar dados para seu SQL Server Database. Portanto, o formato de arquivo **compatível com DTS** fornece uma transferência mais eficiente e completa de dados para o banco de SQL Server padrão para NPS.
+8. Em **formato**, clique em **compatível com DTS**. Se preferir, você pode selecionar um formato de arquivo herdado, como **ODBC \(herdado\)** ou **ias \(herdado\)** .<br>Os tipos de arquivo herdados do **ODBC** e do **ias** contêm um subconjunto das informações que o NPS envia para seu banco de dados SQL Server. O formato XML do tipo de arquivo em **conformidade com DTS** é idêntico ao formato XML que o NPS usa para importar dados para seu SQL Server Database. Portanto, o formato de arquivo **compatível com DTS** fornece uma transferência mais eficiente e completa de dados para o banco de SQL Server padrão para NPS.
 9. Em **criar um novo arquivo de log**, para configurar o NPS para iniciar novos arquivos de log em intervalos especificados, clique no intervalo que você deseja usar:
     - Para atividade de log e volume de transação pesada, clique em **diariamente**.
     - Para volumes de transações menores e atividade de registro em log, clique em **semanal** ou **mensalmente**.
-    - Para armazenar todas as transações em um arquivo de log, clique em  **\(tamanho\)de arquivo nunca ilimitado**.
+    - Para armazenar todas as transações em um arquivo de log, clique em **nunca \(tamanho de arquivo ilimitado\)** .
     - Para limitar o tamanho de cada arquivo de log, clique em **quando o arquivo de log atingir esse tamanho**e, em seguida, digite um tamanho de arquivo, após o qual um novo log será criado. O tamanho padrão é 10 megabytes (MB).
-10. Se você quiser que o NPS exclua arquivos de log antigos para criar espaço em disco para novos arquivos de log quando o disco rígido estiver perto da capacidade, verifique se **quando o disco está cheio excluir arquivos de log mais antigos** está selecionado. No entanto, essa opção não estará disponível se o valor de **criar um novo arquivo de log** nunca  **\(for um\)tamanho de arquivo ilimitado**. Além disso, se o arquivo de log mais antigo for o arquivo de log atual, ele não será excluído.
+10. Se você quiser que o NPS exclua arquivos de log antigos para criar espaço em disco para novos arquivos de log quando o disco rígido estiver perto da capacidade, verifique se **quando o disco está cheio excluir arquivos de log mais antigos** está selecionado. No entanto, essa opção não estará disponível se o valor de **criar um novo arquivo de log** **nunca \(tamanho de arquivo ilimitado\)** . Além disso, se o arquivo de log mais antigo for o arquivo de log atual, ele não será excluído.
 
 ## <a name="configure-nps-sql-server-logging"></a>Configurar o log de SQL Server do NPS
 
@@ -130,9 +130,9 @@ O ping User-Name pode ser adicionado à seguinte chave do registro como um valor
 
 `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\IAS\Parameters`
 
-- **Nome**:`ping user-name`
-- **Tipo**:`REG_SZ`
-- **Dados**:  *Nome de usuário*
+- **Nome**: `ping user-name`
+- **Tipo**: `REG_SZ`
+- **Dados**: *nome de usuário*
 
 >[!TIP]
 >Para indicar mais de um nome de usuário para um valor de **nome de usuário de ping** , insira um padrão de nome, como um nome DNS, incluindo caracteres curinga, em **dados**.

@@ -41,24 +41,24 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 
 |      Parâmetro       |                  Descrição                                    |
 | -------------------- | ------------------------------------------------------------------------ |
-|      \<Volume >      | Especifica a letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume.  |
-| [\<Path >] <FileName> | Use somente com FAT (tabela de alocação de arquivos) e FAT32. Especifica o local e o nome de um arquivo ou conjunto de arquivos que você deseja que o **chkdsk** Verifique a fragmentação. Você pode usar o **?** e **&#42;** caracteres curinga para especificar vários arquivos. |
+|      \<volume >      | Especifica a letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume.  |
+| [\<Path >]<FileName> | Use somente com FAT (tabela de alocação de arquivos) e FAT32. Especifica o local e o nome de um arquivo ou conjunto de arquivos que você deseja que o **chkdsk** Verifique a fragmentação. Você pode usar o **?** e **&#42;** caracteres curinga para especificar vários arquivos. |
 |         /f          | Corrige erros no disco. O disco deve estar bloqueado. Se **chkdsk** não puder bloquear a unidade, será exibida uma mensagem perguntando se você deseja verificar a unidade na próxima vez que reiniciar o computador. |
 |         /v          | Exibe o nome de cada arquivo em cada diretório à medida que o disco é verificado.     |
 |         /r          | Localiza setores inválidos e recupera informações legíveis. O disco deve estar bloqueado. **/r** inclui a funcionalidade de **/f**, com a análise adicional de erros de disco físico.                                   |
 |         /x          | Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para a unidade são invalidados. **/x** também inclui a funcionalidade de **/f**.  |
 |         /i          | Use somente com NTFS. Executa uma verificação menos rigorosa de entradas de índice, o que reduz a quantidade de tempo necessária para executar **chkdsk**.  |
 |         /c          | Use somente com NTFS. Não verifica os ciclos dentro da estrutura de pastas, o que reduz a quantidade de tempo necessária para executar **chkdsk**.  |
-|    /l [: \<Size >]     | Use somente com NTFS. Altera o tamanho do arquivo de log para o tamanho que você digitar. Se você omitir o parâmetro de tamanho, **/l** exibirá o tamanho atual. |
-|         /b.          | Somente NTFS: Limpa a lista de clusters inválidos no volume e examina novamente todos os clusters alocados e livres para erros. **/b** inclui a funcionalidade de **/r**. Use esse parâmetro após a geração de imagens de um volume para uma nova unidade de disco rígido.            |
-| /Scan               | Somente NTFS: Executa uma verificação online no volume. |
-| /forceofflinefix    | Somente NTFS: (Deve ser usado com "/Scan"). Ignorar todo o reparo online; todos os defeitos encontrados são enfileirados para reparo offline (ou seja, "chkdsk/spotfix"). |
-| /perf               | Somente NTFS: (Deve ser usado com "/Scan"). O usa mais recursos do sistema para concluir uma verificação o mais rápido possível. Isso pode afetar o desempenho negativo em outras tarefas em execução no sistema.|
-| /spotfix            | Somente NTFS: Executa a correção de pontos no volume. |
-| /sdcleanup          | Somente NTFS: O lixo coleta dados de descritor de segurança desnecessários (implica/F). |
+|    /l [:\<tamanho >]     | Use somente com NTFS. Altera o tamanho do arquivo de log para o tamanho que você digitar. Se você omitir o parâmetro de tamanho, **/l** exibirá o tamanho atual. |
+|         /b.          | Somente NTFS: limpa a lista de clusters inválidos no volume e examina novamente todos os clusters alocados e livres para erros. **/b** inclui a funcionalidade de **/r**. Use esse parâmetro após a geração de imagens de um volume para uma nova unidade de disco rígido.            |
+| /Scan               | Somente NTFS: executa uma verificação online no volume. |
+| /forceofflinefix    | Somente NTFS: (deve ser usado com "/Scan"). Ignorar todo o reparo online; todos os defeitos encontrados são enfileirados para reparo offline (ou seja, "chkdsk/spotfix"). |
+| /perf               | Somente NTFS: (deve ser usado com "/Scan"). O usa mais recursos do sistema para concluir uma verificação o mais rápido possível. Isso pode afetar o desempenho negativo em outras tarefas em execução no sistema.|
+| /spotfix            | Somente NTFS: executa a correção de pontos no volume. |
+| /sdcleanup          | Somente NTFS: o lixo coleta dados de descritor de segurança desnecessários (implica/F). |
 | /offlinescanandfix  | Executa uma verificação offline e corrige o volume. |
-| /freeorphanedchains | FAT/FAT32/exFAT apenas: Libera quaisquer cadeias de cluster órfãs em vez de recuperar seu conteúdo. |
-| /markclean          | FAT/FAT32/exFAT apenas: Marca o volume limpo se nenhuma corrupção for detectada, mesmo se/F não tiver sido especificado. |
+| /freeorphanedchains | FAT/FAT32/exFAT somente: libera quaisquer cadeias de cluster órfãs em vez de recuperar seu conteúdo. |
+| /markclean          | FAT/FAT32/exFAT somente: marca o volume limpo se nenhuma corrupção for detectada, mesmo se/F não tiver sido especificado. |
 |         /?          | Exibe a ajuda no prompt de comando.                       |
 
 ## <a name="remarks"></a>Comentários
@@ -91,7 +91,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
   Convert lost chains to files?  
   ``` 
 
-  Se você pressionar **s**, o Windows salvará cada cadeia perdida no diretório raiz como um arquivo com um nome no arquivo de formato @ no__t-1nnnn >. chk. Quando **chkdsk** for concluído, você poderá verificar esses arquivos para ver se eles contêm os dados necessários. Se você pressionar **N**, o Windows corrigirá o disco, mas não salvará o conteúdo das unidades de alocação perdidas.
+  Se você pressionar **s**, o Windows salvará cada cadeia perdida no diretório raiz como um arquivo com um nome no arquivo de formato\<nnnn >. chk. Quando **chkdsk** for concluído, você poderá verificar esses arquivos para ver se eles contêm os dados necessários. Se você pressionar **N**, o Windows corrigirá o disco, mas não salvará o conteúdo das unidades de alocação perdidas.
 
   Se você não usar o parâmetro **/f** , **chkdsk** exibirá uma mensagem informando que o arquivo precisa ser corrigido, mas não corrigirá nenhum erro.
 

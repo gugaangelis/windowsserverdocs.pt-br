@@ -33,7 +33,7 @@ A ilustração a seguir mostra as etapas para implantar o Windows Server 2008 AD
   
 A consolidação de domínios de recursos e domínios de conta que são atualizados no lugar de um ambiente do Windows Server 2003 como parte do seu Windows Server 2008 AD DS implantação pode exigir a reestruturação de domínio entre florestas ou intraflorestal. A reestruturação de AD DS domínios entre florestas ajuda a reduzir a complexidade da representação da sua organização no AD DS e ajuda a reduzir os custos administrativos associados. A reestruturação de AD DS domínios em uma floresta ajuda a diminuir a sobrecarga administrativa para sua organização, reduzindo o tráfego de replicação, reduzindo a quantidade de administração de usuários e grupos necessária e simplificando a administração do grupo Regras. Para obter mais informações, consulte Guia de migração do ADMT v 3.1 ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
   
-Para obter uma lista de tarefas detalhadas que você pode usar para planejar e implantar AD DS em uma organização que esteja executando o Windows Server 2003 Active Directory, consulte [Checklist: Implantando AD DS em uma organização do Windows Server 2003 @ no__t-0.  
+Para obter uma lista de tarefas detalhadas que você pode usar para planejar e implantar AD DS em uma organização que esteja executando o Windows Server 2003 Active Directory, consulte [lista de verificação: Implantando AD DS em uma organização do Windows server 2003](https://technet.microsoft.com/library/cc771407.aspx).  
   
 
 

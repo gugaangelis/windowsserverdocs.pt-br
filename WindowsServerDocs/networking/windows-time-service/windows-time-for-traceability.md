@@ -49,7 +49,7 @@ Esse evento é registrado quando o serviço de tempo do Windows (W32Time) é ini
 |Descrição do evento |Início do serviço |
 |Detalhes |Ocorre na inicialização do W32time |
 |Dados registrados |<ul><li>Hora atual em UTC</li><li>Contagem de tiques atual</li><li>Configuração do W32Time</li><li>Configuração do provedor de tempo</li><li>Taxa de relógio</li></ul> |
-|Mecanismo de limitação  |nenhuma. Esse evento é acionado toda vez que o serviço é iniciado. |
+|Mecanismo de limitação  |Nenhum. Esse evento é acionado toda vez que o serviço é iniciado. |
 
 **Exemplo:**
 ```
@@ -79,7 +79,7 @@ Esse evento é registrado quando o serviço de tempo do Windows (W32Time) está 
 |Descrição do evento |Interrupção de serviço |
 |Detalhes |Ocorre no desligamento W32time |
 |Dados registrados |<ul><li>Hora atual em UTC</li><li>Contagem de tiques atual</li></ul> |
-|Mecanismo de limitação  |nenhuma. Esse evento é acionado toda vez que o serviço é interrompido. |
+|Mecanismo de limitação  |Nenhum. Esse evento é acionado toda vez que o serviço é interrompido. |
 
 **Texto de exemplo:** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
@@ -119,7 +119,7 @@ Isso registra cada instância quando a hora do sistema é modificada usando a AP
 |||
 |---|---|
 |Descrição do evento |A hora do sistema está definida |
-|Mecanismo de limitação  |nenhuma.<br><br>Isso deve acontecer raramente em sistemas com sincronização de tempo razoável e queremos registrar em log a cada vez que ocorrer. Ignoramos a configuração de TimeJumpAuditOffset ao registrar esse evento, pois essa configuração foi destinada a restringir eventos no log de eventos do sistema Windows. |
+|Mecanismo de limitação  |Nenhum.<br><br>Isso deve acontecer raramente em sistemas com sincronização de tempo razoável e queremos registrar em log a cada vez que ocorrer. Ignoramos a configuração de TimeJumpAuditOffset ao registrar esse evento, pois essa configuração foi destinada a restringir eventos no log de eventos do sistema Windows. |
 
 # <a name="262tab262"></a>[262](#tab/262)
 
@@ -135,7 +135,7 @@ Isso registra cada instância quando a hora do sistema é modificada usando a AP
 |---|---|
 |Descrição do evento |Alteração nas configurações de serviço de tempo ou na lista de provedores de tempo carregados. |
 |Detalhes |A releitura das configurações do W32time pode fazer com que determinadas configurações críticas sejam modificadas na memória, o que pode afetar a precisão geral da sincronização de tempo.<br><br>O W32time registra cada ocorrência ao reler suas configurações, o que proporciona o possível impacto na sincronização de tempo. |
-|Mecanismo de limitação  |nenhuma.<br><br>Esse evento ocorre somente quando uma atualização de administrador ou GP altera os provedores de tempo e, em seguida, dispara o W32time. Queremos registrar cada instância de alteração das configurações. |
+|Mecanismo de limitação  |Nenhum.<br><br>Esse evento ocorre somente quando uma atualização de administrador ou GP altera os provedores de tempo e, em seguida, dispara o W32time. Queremos registrar cada instância de alteração das configurações. |
 
 
 # <a name="264tab264"></a>[264](#tab/264)
@@ -152,7 +152,7 @@ Isso registra cada instância quando a hora do sistema é modificada usando a AP
 |---|---|
 |Descrição do evento |Alterações de origem de serviço de tempo ou de número de estrato |
 |Detalhes |A fonte de tempo W32time e o número de estrato são fatores importantes na rastreabilidade de tempo e as alterações a elas devem ser registradas em log. Se W32time não tiver nenhuma fonte de tempo e você não tiver configurado como uma fonte de tempo confiável, ele interromperá o anúncio como um servidor de horário e responderá a solicitações com alguns parâmetros inválidos. Esse evento é essencial para acompanhar as alterações de estado em uma topologia de NTP. |
-|Mecanismo de limitação  |nenhuma. |
+|Mecanismo de limitação  |Nenhum. |
 
 
 # <a name="266tab266"></a>[266](#tab/266)

@@ -47,7 +47,7 @@ Este documento fornece informações detalhadas sobre como migrar um farm do SQL
 7. Quando todos os servidores no farm de SQL Server forem atualizados para o Windows Server 2012, restaure as personalizações restantes do AD FS, como repositórios de atributos personalizados.  
 
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

@@ -81,7 +81,7 @@ A tabela a seguir mostra quais versões de 32 bits do Windows você pode usar co
 
 ### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>Suporte ao sistema operacional de convidado CentOS e Red Hat Enterprise Linux
 
-A tabela a seguir mostra quais versões do Red Hat Enterprise Linux \(RHEL @ no__t-1 e CentOS você pode usar como um sistema operacional convidado para máquinas virtuais de geração 1 e geração 2.
+A tabela a seguir mostra quais versões do Red Hat Enterprise Linux \(RHEL\) e CentOS você pode usar como um sistema operacional convidado para máquinas virtuais de geração 1 e geração 2.
 
 |Versões do sistema operacional|1ª geração|2ª geração|  
 |-----------------------------|----------------|----------------|  

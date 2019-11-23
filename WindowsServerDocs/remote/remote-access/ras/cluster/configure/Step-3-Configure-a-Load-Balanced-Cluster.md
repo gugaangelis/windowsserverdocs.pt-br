@@ -21,7 +21,7 @@ ms.locfileid: "71404634"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>Etapa 3: configurar um cluster com balanceamento de carga
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois de preparar os servidores para o cluster, configure o balanceamento de carga no servidor único, configure os certificados necessários e implante o cluster.  
   
@@ -69,9 +69,9 @@ Depois de preparar os servidores para o cluster, configure o balanceamento de ca
   
 4.  Dependendo do que você escolheu nas etapas de planejamento:  
   
-    1.  NLB do Windows: Na página **método de balanceamento de carga** , clique em **usar NLB (balanceamento de carga de rede) do Windows**e clique em **Avançar**.  
+    1.  NLB do Windows: na página **método de balanceamento de carga** , clique em **usar NLB (balanceamento de carga de rede) do Windows**e clique em **Avançar**.  
   
-    2.  Balanceador de carga externo: Na página **método de balanceamento de carga** , clique em **usar um balanceador de carga externo**e, em seguida, clique em **Avançar**.  
+    2.  Balanceador de carga externo: na página **método de balanceamento de carga** , clique em **usar um balanceador de carga externo**e, em seguida, clique em **Avançar**.  
   
 5.  Em uma única implantação de adaptador de rede, na página **endereços IP dedicados** , faça o seguinte e clique em **Avançar**:  
   
@@ -100,7 +100,7 @@ Depois de preparar os servidores para o cluster, configure o balanceamento de ca
     > [!NOTE]  
     > Se o balanceamento de carga externo estiver sendo usado, anote os IPs virtuais e forneça-os como nos balanceadores de carga externos.  
   
-0Windows-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -247,7 +247,7 @@ A associação no grupo local **Administradores**, ou equivalente, é o mínimo 
   
 12. Na caixa de diálogo **adicionando e removendo servidores** , clique em **fechar**.  
   
-0Windows-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -277,7 +277,7 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 7.  Na caixa de diálogo **adicionando e removendo servidores** , clique em **fechar**.  
   
-0Windows-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -298,7 +298,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 4.  Na caixa de diálogo **desabilitar balanceamento de carga** , clique em **fechar**.  
   
-0Windows-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -317,7 +317,7 @@ Clicar em **remover definições de configuração** removerá o acesso remoto e
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 4: Verificando o cluster @ no__t-0  
+-   [Etapa 4: verificando o cluster](Step-4-Verify-the-Cluster.md)  
   
 
 

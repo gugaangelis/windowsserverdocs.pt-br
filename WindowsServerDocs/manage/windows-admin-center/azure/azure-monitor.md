@@ -22,7 +22,7 @@ ms.locfileid: "71407012"
 [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) é uma solução que coleta, analisa e atua na telemetria de uma variedade de recursos, incluindo servidores Windows e VMS, tanto localmente quanto na nuvem. Embora Azure Monitor receba dados de VMs do Azure e outros recursos do Azure, este artigo se concentra em como o Azure Monitor funciona com servidores e VMs locais, especificamente com o centro de administração do Windows. Se você estiver interessado em saber como usar Azure Monitor para receber alertas de email sobre o cluster hiperconvergente, leia sobre como [usar Azure monitor para enviar emails para serviço de integridade falhas](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor).
 
 ## <a name="how-does-azure-monitor-work"></a>Como funciona Azure Monitor?
-Os dados ![img @ no__t-1 gerados de servidores locais do Windows são coletados em um espaço de trabalho Log Analytics no Azure Monitor. Em um espaço de trabalho, você pode habilitar várias soluções de monitoramento — conjuntos de lógica que fornecem informações para um cenário específico. Por exemplo, Gerenciamento de Atualizações do Azure, a central de segurança do Azure e Azure Monitor para VMs são soluções de monitoramento que podem ser habilitadas em um espaço de trabalho. 
+![img](../media/azure-monitor-diagram.png) dados gerados de servidores locais do Windows são coletados em um espaço de trabalho Log Analytics no Azure Monitor. Em um espaço de trabalho, você pode habilitar várias soluções de monitoramento — conjuntos de lógica que fornecem informações para um cenário específico. Por exemplo, Gerenciamento de Atualizações do Azure, a central de segurança do Azure e Azure Monitor para VMs são soluções de monitoramento que podem ser habilitadas em um espaço de trabalho. 
 
 Quando você habilita uma solução de monitoramento em um espaço de trabalho Log Analytics, todos os servidores que se reportam a esse espaço de trabalho começarão a coletar dados relevantes para essa solução, para que a solução possa gerar insights para todos os servidores no espaço de trabalho. 
 
@@ -51,7 +51,7 @@ Se você quiser adicionar outra solução de monitoramento de dentro do WAC no m
 Se você se conectar a um servidor diferente, mas já tiver configurado um Log Analytics espaço de trabalho (por meio de WAC ou manualmente no portal do Azure), você também poderá instalar o agente do MMA no servidor e conectá-lo a um espaço de trabalho existente. Quando você conecta um servidor a um espaço de trabalho, ele inicia automaticamente a coleta de dados e a geração de relatórios para soluções instaladas nesse espaço de trabalho.
 
 ## <a name="azure-monitor-for-virtual-machines-aka-virtual-machine-insights"></a>Azure Monitor para máquinas virtuais (também conhecido como Insights de máquina virtual)
->Aplica-se a: Windows Admin Center Preview
+>Aplica-se a: versão prévia do centro de administração do Windows
 
 Quando você define Azure Monitor para VMs nas configurações do servidor, o centro de administração do Windows habilita a solução Azure Monitor para VMs, também conhecida como insights de máquina virtual. Essa solução permite monitorar a integridade e os eventos do servidor, criar alertas de email, obter uma exibição consolidada do desempenho do servidor em seu ambiente e Visualizar aplicativos, sistemas e serviços conectados a um determinado servidor.
 

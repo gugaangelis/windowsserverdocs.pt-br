@@ -19,9 +19,9 @@ ms.locfileid: "71405256"
 ---
 # <a name="enable-vrss-on-a-virtual-network-adapter"></a>Habilitar vRSS em um adaptador de rede virtual
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-O RSS virtual \(vRSS @ no__t-1 requer o suporte a Fila de Máquina Virtual \(VMQ @ no__t-3 do adaptador físico. Se a VMQ estiver desabilitada ou não for suportada, o dimensionamento virtual no lado do recebimento será desabilitado. 
+O\) virtual RSS \(vRSS requer Fila de Máquina Virtual \(suporte à VMQ\) do adaptador físico. Se a VMQ estiver desabilitada ou não for suportada, o dimensionamento virtual no lado do recebimento será desabilitado. 
 
 Para obter mais informações, consulte [planejar o uso de vRSS](vrss-plan.md).
 

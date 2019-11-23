@@ -17,7 +17,7 @@ ms.locfileid: "71405344"
 ---
 # <a name="network-policies"></a>Políticas de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma visão geral das políticas de rede no NPS.
 
@@ -30,7 +30,7 @@ As políticas de rede são conjuntos de condições, restrições e configuraç�
 
 No processamento das solicitações de conexão como um servidor RADIUS, o NPS executa a autenticação e a autorização da solicitação de conexão. Durante o processo de autenticação, o NPS verifica a identidade do usuário ou computador que está se conectando à rede. Durante o processo de autorização, o NPS determina se o usuário ou o computador tem permissão para acessar a rede.
 
-Para fazer essas determinações, o NPS usa políticas de rede que são configuradas no console do NPS. O NPS também examina as propriedades de discagem da conta de usuário em Active Directory @ no__t-0 Domain Services \(AD DS @ no__t-2 para executar a autorização.
+Para fazer essas determinações, o NPS usa políticas de rede que são configuradas no console do NPS. O NPS também examina as propriedades de discagem da conta de usuário em Active Directory&reg; serviços de domínio \(AD DS\) para executar a autorização.
 
 ## <a name="network-policies---an-ordered-set-of-rules"></a>Políticas de rede-um conjunto ordenado de regras
 

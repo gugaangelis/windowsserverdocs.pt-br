@@ -21,7 +21,7 @@ ms.locfileid: "71358152"
 
 O documento a seguir irá orientá-lo na instalação e configuração do acesso condicional local com dispositivos registrados.
 
-![Acesso condicional](media/Using-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![acesso condicional](media/Using-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ## <a name="infrastructure-pre-requisites"></a>Pré-requisitos de infraestrutura
 Os seguintes pré-requisitos são necessários para que você possa começar com o acesso condicional local. 
@@ -51,7 +51,7 @@ Para usar o acesso condicional local com dispositivos registrados, você deve pr
 Para verificar seu nível de esquema, faça o seguinte:
 
 1.  Você pode usar o ADSIEdit ou o LDP e conectar-se ao contexto de nomenclatura do esquema.  
-2.  Usando o ADSIEdit, clique com o botão direito do mouse em "CN = Schema, CN = Configuration, DC = <domain>, DC = <com> e selecione Propriedades.  Domínio relpace e as partes com com suas informações de floresta.
+2.  Usando o ADSIEdit, clique com o botão direito do mouse em "CN = Schema, CN = Configuration, DC =<domain>, DC =<com> e selecione Propriedades.  Domínio relpace e as partes com com suas informações de floresta.
 3.  No editor de atributos, localize o atributo objectVersion e ele dirá sua versão.  
 
 ![ADSI Edit](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
@@ -86,7 +86,7 @@ Se o farm do AD FS já não estiver configurado para Autenticação de dispositi
 
 ![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
->Observação: Os comandos abaixo exigem as ferramentas de administração do Active Directory, por isso, se o servidor de federação também não for um controlador de domínio, instale as ferramentas usando a etapa 1 abaixo.  Caso contrário, você pode ignorar a etapa 1.  
+>Observação: os comandos a seguir exigem ferramentas de administração de Active Directory, portanto, se o servidor de Federação não for também um controlador de domínio, primeiro instale as ferramentas usando a etapa 1 abaixo.  Caso contrário, você pode ignorar a etapa 1.  
 
 1.  Execute o assistente de **Adicionar funções e recursos** e selecione recurso **Ferramentas de administração de servidor remoto** -> **Ferramentas de administração de função** -> **Ferramentas do AD DS e AD LDS** -> Escolha o **Módulo do Active Directory para Windows PowerShell** e as **Ferramentas do AD DS**.
 
@@ -98,7 +98,7 @@ Se o farm do AD FS já não estiver configurado para Autenticação de dispositi
    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
 3. Na janela pop-up, clique em Sim.
 
->Observação: Se o serviço do AD FS está configurado para usar uma conta GMSA, insira o nome da conta no formato "domain\accountname$"
+>Observação: se o serviço de AD FS estiver configurado para usar uma conta do GMSA, insira o nome da conta no formato "DOMAIN\ACCOUNTNAME $"
 
 ![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
 
@@ -211,7 +211,7 @@ Para obter informações sobre como habilitar o Windows 10 com o Microsoft Passp
 Para habilitar o registro automático de MDM de dispositivos registrados para que você possa usar a declaração IsCompliant em sua política de controle de acesso, siga as etapas [aqui.](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
 
 ## <a name="troubleshooting"></a>Solução de problemas  
-1.  Se você receber um erro em `Initialize-ADDeviceRegistration` que reclama sobre um objeto já existente no estado incorreto, como "o objeto de serviço do DRS foi encontrado sem todos os atributos necessários", você poderá ter executado Azure AD Connect comandos do PowerShell anteriormente e ter um configuração parcial no AD DS.  Tente excluir manualmente os objetos em **CN = Configuração de registro de dispositivo, CN = Services, CN = Configuration, DC = &lt;domain @ no__t-2** e tente novamente.  
+1.  Se você receber um erro em `Initialize-ADDeviceRegistration` que reclama sobre um objeto já existente no estado incorreto, como "o objeto do serviço DRS foi encontrado sem todos os atributos necessários", você pode ter executado Azure AD Connect comandos do PowerShell anteriormente e ter uma configuração parcial no AD DS.  Tente excluir manualmente os objetos em **CN = Configuração de registro de dispositivo, CN = Services, CN = Configuration, DC =&lt;domínio&gt;** e tente novamente.  
 2.  Para clientes ingressados no domínio do Windows 10  
     1. Para verificar se a autenticação do dispositivo está funcionando, entre no cliente ingressado no domínio como uma conta de usuário de teste. Para disparar o provisionamento rapidamente, bloqueie e desbloqueie a área de trabalho pelo menos uma vez.   
     2. Instruções para verificar o link de credenciais de chave STK no objeto AD DS (a sincronização ainda precisa ser executada duas vezes?)  

@@ -31,7 +31,7 @@ Para migrar um proxy de servidor de Federação AD FS 2,0 para o Windows Server 
 > [!IMPORTANT]
 >  Como resultado da atualização do sistema operacional, a configuração de proxy do AD FS neste servidor é perdida e a função do servidor do AD FS 2.0 é removida. A função de servidor do Windows Server 2012 AD FS está instalada, mas não está configurada. Você deverá criar manualmente a configuração original de proxy do AD FS e restaurar as configurações de proxy restantes do AD FS para concluir a migração do proxy do servidor de federação.  
   
-4. Você pode criar a configuração original de proxy do AD FS usando o **Assistente de configuração de proxy do servidor de federação do AD FS**. Para obter mais informações, consulte [configurar um computador para a função de Proxy do servidor de Federação](configure-a-computer-for-the-federation-server-proxy-role.md). Ao executar o assistente, use as informações coletadas em Preparar para migrar o proxy do servidor de federação do AD FS 2.0, da seguinte maneira:  
+4. Você pode criar a configuração original de proxy do AD FS usando o **Assistente de configuração de proxy do servidor de federação do AD FS**. Para obter mais informações, consulte [Configure a Computer for the Federation Server Proxy Role](configure-a-computer-for-the-federation-server-proxy-role.md). Ao executar o assistente, use as informações coletadas em Preparar para migrar o proxy do servidor de federação do AD FS 2.0, da seguinte maneira:  
   
  
 |**Opção de entrada do assistente de proxy do servidor de Federação**|**Use o seguinte valor**|
@@ -41,7 +41,7 @@ Para migrar um proxy de servidor de Federação AD FS 2,0 para o Windows Server 
 |**Endereço do servidor proxy HTTP**|Insira o valor ForwardProxyUrl do arquivo proxyproperties.txt|  
 |Solicitação de credenciais|Insira as credenciais de uma conta que seja um administrador do servidor de Federação do AD FS ou a conta de serviço na qual o serviço de federação do AD FS é executado.|  
   
-5. Atualize suas páginas da web do AD FS neste servidor. Se você fez backup de suas páginas da Web de proxy de AD FS personalizadas ao preparar o proxy do servidor de Federação para a migração, use os dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** Como resultado da configuração de proxy de AD FS no Windows Server 2012.  
+5. Atualize suas páginas da web do AD FS neste servidor. Se você tiver feito backup de suas páginas da Web de proxy de AD FS personalizadas ao preparar o proxy do servidor de Federação para a migração, use os dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** como resultado da configuração de proxy de AD FS no Windows Server 2012.  
   
 6. Adicione este servidor volta ao balanceador de carga.  
   
@@ -49,7 +49,7 @@ Para migrar um proxy de servidor de Federação AD FS 2,0 para o Windows Server 
   
   
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

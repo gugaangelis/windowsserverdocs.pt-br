@@ -16,17 +16,17 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405543"
 ---
-# <a name="network-shell-netsh"></a>@No__t do Shell de rede-0Netsh @ no__t-1
+# <a name="network-shell-netsh"></a>\(do Shell de rede\) netsh
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 O Shell de rede (netsh) é um utilitário de linha de comando que permite configurar e exibir o status de várias funções e componentes do servidor de comunicações de rede depois que eles são instalados em computadores que executam o Windows Server 2016.
 
-Algumas tecnologias de cliente, como o protocolo de configuração de host dinâmico \(DHCP @ no__t-1 e o BranchCache, também fornecem comandos netsh que permitem configurar computadores cliente que executam o Windows 10.
+Algumas tecnologias de cliente, como o protocolo de configuração de host dinâmico \(DHCP\) Client e BranchCache, também fornecem comandos netsh que permitem configurar computadores cliente que executam o Windows 10.
 
-Na maioria dos casos, os comandos netsh fornecem a mesma funcionalidade que está disponível quando você usa o console de gerenciamento Microsoft \(MMC @ no__t-1 snap @ no__t-2in para cada função de servidor de rede ou recurso de rede. Por exemplo, você pode configurar o servidor de políticas de rede \(NPS @ no__t-1 usando o snap-in do MMC do NPS ou os comandos netsh no contexto **netsh nps** .
+Na maioria dos casos, os comandos netsh fornecem a mesma funcionalidade que está disponível quando você usa o console de gerenciamento Microsoft \(MMC\) snap\-no para cada função de servidor de rede ou recurso de rede. Por exemplo, você pode configurar o servidor de políticas de rede \(NPS\) usando o snap-in do MMC do NPS ou os comandos netsh no contexto **netsh nps** .
 
-Além disso, há comandos netsh para tecnologias de rede, como para IPv6, ponte de rede e chamada de procedimento remoto \(RPC @ no__t-1, que não estão disponíveis no Windows Server como um snap-in do MMC.
+Além disso, há comandos netsh para tecnologias de rede, como para IPv6, ponte de rede e chamada de procedimento remoto \(\)RPC, que não estão disponíveis no Windows Server como um snap-in do MMC.
 
 >[!IMPORTANT]
 >É recomendável que você use o Windows PowerShell para gerenciar as tecnologias de rede no [Windows Server 2016 e no Windows 10](https://technet.microsoft.com/library/mt156917.aspx) em vez do Shell de rede. O Shell de rede é incluído para compatibilidade com seus scripts, no entanto, e seu uso tem suporte.
@@ -37,6 +37,6 @@ A referência técnica do netsh fornece uma referência de comando netsh abrange
   
 ### <a name="content-availability"></a>Disponibilidade do conteúdo  
   
-A referência técnica do Shell de rede está disponível para download na ajuda do Windows \( *. chm @ no__t-1 formato da galeria do TechNet: [Referência técnica de netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
+A referência técnica do Shell de rede está disponível para download na ajuda do Windows \(*. chm\) formato da galeria do TechNet: [referência técnica de netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
   
 ---

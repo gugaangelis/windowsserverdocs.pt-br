@@ -17,9 +17,9 @@ ms.locfileid: "71405772"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>Gerenciar a ponte do Data Center (DCB)
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico fornece instruções sobre como usar comandos do Windows PowerShell para configurar a ponte \(do Data Center DCB\) em um adaptador de rede compatível com DCB\-que está instalado em um computador que está executando o Windows Server 2016 ou Windows 10.
+Este tópico fornece instruções sobre como usar comandos do Windows PowerShell para configurar a ponte do Data Center \(DCB\) em um adaptador de rede compatível com o DCB\-instalado em um computador que esteja executando o Windows Server 2016 ou o Windows 10.
 
 ## <a name="install-dcb-in-windows-server-2016-or-windows-10"></a>Instalar o DCB no Windows Server 2016 ou no Windows 10
 
@@ -30,7 +30,7 @@ Para obter informações sobre os pré-requisitos para usar e como instalar o DC
 
 Antes do Windows Server 2016, todas as configurações de DCB foram aplicadas universalmente a todos os adaptadores de rede que suportavam DCB. 
 
-No Windows Server 2016, você pode aplicar configurações de DCB ao repositório de política global ou ao repositório\(de política individual s.\) Quando as políticas individuais são aplicadas, elas substituem todas as configurações de política global.
+No Windows Server 2016, você pode aplicar configurações DCB ao repositório de política global ou ao repositório de política individual\(s\). Quando as políticas individuais são aplicadas, elas substituem todas as configurações de política global.
 
 As configurações de classe de tráfego, PFC e atribuição de prioridade de aplicativo no nível do sistema não são aplicadas em adaptadores de rede até que você faça o seguinte.
 
@@ -109,7 +109,7 @@ Você pode usar o comando **New-NetQosTrafficClass** para criar uma classe de tr
     SMB  ETS   30   4Global
       
 
-Por padrão, todos os valores 802.1 p são mapeados para uma classe de tráfego padrão, que tem 100% da largura de banda do link físico. O comando **New-NetQosTrafficClass** cria uma nova classe de tráfego, para a qual qualquer pacote marcado com o valor 4 de prioridade 802.1 p é mapeado. O algoritmo de seleção de transmissão \(TSA @ no__t-1 é ETS e tem 30% da largura de banda.
+Por padrão, todos os valores 802.1 p são mapeados para uma classe de tráfego padrão, que tem 100% da largura de banda do link físico. O comando **New-NetQosTrafficClass** cria uma nova classe de tráfego, para a qual qualquer pacote marcado com o valor 4 de prioridade 802.1 p é mapeado. O algoritmo de seleção de transmissão \(TSA\) é ETS e tem 30% da largura de banda.
 
 Você pode criar até sete novas classes de tráfego. Incluindo a classe de tráfego padrão, pode haver no máximo oito classes de tráfego no sistema. No entanto, um adaptador de rede compatível com DCB pode não oferecer suporte a muitas classes de tráfego no hardware. Se você criar mais classes de tráfego do que o pode ser acomodado em um adaptador de rede e habilitar o DCB nesse adaptador de rede, o driver de miniporta relatará um erro ao sistema operacional. O erro é registrado no log de eventos.
 
@@ -144,11 +144,11 @@ Em seguida, você pode usar o comando **Get-NetQosTrafficClass** para exibir as 
 
 Depois de criar uma classe de tráfego, você pode alterar suas configurações de forma independente. As configurações que podem ser alteradas incluem:
 
-1. Alocação \(de largura de banda – BandwidthPercentage\)
+1. Alocação de largura de banda \(-BandwidthPercentage\)
 
-2. TSA (\-algoritmo\)
+2. \) de algoritmo do TSA (\-
 
-3. Mapeamento \(de prioridade-prioridade\)
+3. Mapeamento de prioridade \(\) de prioridade
 
 ### <a name="remove-a-traffic-class"></a>Remover uma classe de tráfego
 
@@ -175,7 +175,7 @@ Depois de remover uma classe de tráfego, o valor de 802.1 p mapeado para essa c
 
 Todos os exemplos acima definem as políticas globais. Veja a seguir exemplos de como você pode definir e obter políticas por NIC. 
 
-O campo "Policyset" muda de global para AdapterSpecific. Quando as políticas AdapterSpecific são mostradas, o \(índice\) de interface ifIndex \(e\) o nome de interface ifAlias também são exibidos.
+O campo "Policyset" muda de global para AdapterSpecific. Quando as políticas de AdapterSpecific são mostradas, o índice de interface \(ifIndex\) e o nome da interface \(ifAlias\) também são exibidos.
 
 ```
 PS C:\> Get-NetQosTrafficClass
@@ -476,12 +476,12 @@ Há comandos DCB do Windows PowerShell para o Windows Server 2016 e o Windows Se
 
 ### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>Comandos do Windows PowerShell 2016 do Windows Server para DCB
 
-O tópico a seguir para o Windows Server 2016 fornece descrições e sintaxe de cmdlets do Windows PowerShell \(para\) toda a ponte de\)Data Center DCB a qualidade dos cmdlets específicos de QoS\-de serviço \(. Ela lista os cmdlets em ordem alfabética com base no verbo no início do cmdlet.
+O tópico a seguir para o Windows Server 2016 fornece descrições e sintaxe de cmdlets do Windows PowerShell para toda a ponte do Data Center \(DCB\) Quality of Service \(QoS \-\)os cmdlets específicos. Ela lista os cmdlets em ordem alfabética com base no verbo no início do cmdlet.
 
 - [Módulo DcbQoS](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>Comandos do Windows PowerShell para DCB do Windows Server 2012 R2
 
-O tópico a seguir para o Windows Server 2012 R2 fornece descrições e sintaxe de cmdlets do Windows PowerShell \(para\) toda a ponte de\)Data Center DCB a qualidade dos cmdlets específicos de QoS\-de serviço \(. Ela lista os cmdlets em ordem alfabética com base no verbo no início do cmdlet.
+O tópico a seguir para o Windows Server 2012 R2 fornece descrições e sintaxe de cmdlets do Windows PowerShell para toda a ponte de data center \(DCB\) qualidade de serviço \(QoS \-\)os cmdlets específicos. Ela lista os cmdlets em ordem alfabética com base no verbo no início do cmdlet.
 
 - [Cmdlets de QoS (qualidade de serviço) DCB (ponte de Data Center) no Windows PowerShell](https://technet.microsoft.com/library/hh967440.aspx)

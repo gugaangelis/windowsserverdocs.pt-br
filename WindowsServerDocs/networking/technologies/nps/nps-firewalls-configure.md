@@ -17,7 +17,7 @@ ms.locfileid: "71405443"
 ---
 # <a name="configure-firewalls-for-radius-traffic"></a>Configurar firewalls para tráfego RADIUS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Os firewalls podem ser configurados para permitir ou bloquear tipos de tráfego IP de e para o computador ou dispositivo no qual o firewall está sendo executado. Se os firewalls não estiverem configurados corretamente para permitir o tráfego RADIUS entre clientes RADIUS, proxies RADIUS e servidores RADIUS, a autenticação de acesso à rede poderá falhar, impedindo que os usuários acessem recursos de rede. 
 
@@ -28,7 +28,7 @@ Talvez seja necessário configurar dois tipos de firewalls para permitir o tráf
 
 ## <a name="windows-firewall-on-the-local-nps"></a>Firewall do Windows no NPS local
 
-Por padrão, o NPS envia e recebe o tráfego RADIUS usando o protocolo de datagrama de usuário \(UDP @ no__t-1 portas 1812, 1813, 1645 e 1646. O Windows Defender firewall no NPS é configurado automaticamente com exceções, durante a instalação do NPS, para permitir que esse tráfego RADIUS seja enviado e recebido.
+Por padrão, o NPS envia e recebe o tráfego RADIUS usando o protocolo de datagrama do usuário \(portas UDP\) 1812, 1813, 1645 e 1646. O Windows Defender firewall no NPS é configurado automaticamente com exceções, durante a instalação do NPS, para permitir que esse tráfego RADIUS seja enviado e recebido.
 
 Portanto, se você estiver usando as portas UDP padrão, não será necessário alterar a configuração do Windows Defender firewall para permitir o tráfego RADIUS de e para o NPSs.
 
@@ -50,7 +50,7 @@ Para acessar o controlador de domínio na intranet, o NPS pode ter:
 
 ## <a name="configuring-the-internet-firewall"></a>Configurando o firewall da Internet
 
-O firewall que está conectado à Internet deve ser configurado com filtros de entrada e saída em sua interface de Internet \(and, opcionalmente, sua interface de perímetro de rede @ no__t-1, para permitir o encaminhamento de mensagens RADIUS entre o NPS e o RADIUS clientes ou proxies na Internet. Filtros adicionais podem ser usados para permitir a passagem de tráfego para servidores Web, servidores VPN e outros tipos de servidores na rede de perímetro.
+O firewall que está conectado à Internet deve ser configurado com filtros de entrada e saída em sua interface de Internet \(e, opcionalmente, sua interface de perímetro de rede\), para permitir o encaminhamento de mensagens RADIUS entre os clientes NPS e RADIUS ou proxies na Internet. Filtros adicionais podem ser usados para permitir a passagem de tráfego para servidores Web, servidores VPN e outros tipos de servidores na rede de perímetro.
 
 Filtros de pacotes de entrada e saída separados podem ser configurados na interface da Internet e na interface de rede de perímetro.
 
@@ -60,8 +60,8 @@ Configure os seguintes filtros de pacote de entrada na interface de Internet do 
 
 - Endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1812 (0x714) do NPS.  Esse filtro permite o tráfego de autenticação RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2865. Se você estiver usando uma porta diferente, substitua esse número de porta para 1812.
 - Endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1813 (0x715) do NPS. Esse filtro permite o tráfego de contabilização RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2866. Se você estiver usando uma porta diferente, substitua esse número de porta para 1813.
-- \(Optional @ no__t-1 endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1645 \(0x66D @ no__t-3 do NPS. Esse filtro permite o tráfego de autenticação RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
-- \(Optional @ no__t-1 endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1646 \(0x66E @ no__t-3 do NPS. Esse filtro permite o tráfego de contabilização RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de destino\) opcional da interface de rede de perímetro e a porta de destino UDP de 1645 \(0x66D\) do NPS. Esse filtro permite o tráfego de autenticação RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de destino\) opcional da interface de rede de perímetro e a porta de destino UDP de 1646 \(0x66E\) do NPS. Esse filtro permite o tráfego de contabilização RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
 
 ### <a name="configure-output-filters-on-the-internet-interface"></a>Configurar filtros de saída na interface de Internet
 
@@ -69,8 +69,8 @@ Configure os seguintes filtros de saída na interface de Internet do firewall pa
 
 - Endereço IP de origem da interface de rede de perímetro e porta de origem UDP 1812 (0x714) do NPS. Esse filtro permite o tráfego de autenticação RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2865. Se você estiver usando uma porta diferente, substitua esse número de porta para 1812.
 - Endereço IP de origem da interface de rede de perímetro e porta de origem UDP 1813 (0x715) do NPS. Esse filtro permite o tráfego de contabilização RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2866. Se você estiver usando uma porta diferente, substitua esse número de porta para 1813.
-- \(Optional @ no__t-1 endereço IP de origem da interface de rede de perímetro e a porta de origem UDP 1645 \(0x66D @ no__t-3 do NPS. Esse filtro permite o tráfego de autenticação RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
-- \(Optional @ no__t-1 endereço IP de origem da interface de rede de perímetro e a porta de origem UDP 1646 \(0x66E @ no__t-3 do NPS. Esse filtro permite o tráfego de contabilização RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de origem\) opcional da interface de rede de perímetro e a porta de origem UDP 1645 \(0x66D\) do NPS. Esse filtro permite o tráfego de autenticação RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de origem\) opcional da interface de rede de perímetro e a porta de origem UDP 1646 \(0x66E\) do NPS. Esse filtro permite o tráfego de contabilização RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
 
 ### <a name="configure-input-filters-on-the-perimeter-network-interface"></a>Configurar filtros de entrada na interface de rede de perímetro
 
@@ -78,8 +78,8 @@ Configure os seguintes filtros de entrada na interface de rede de perímetro do 
 
 - Endereço IP de origem da interface de rede de perímetro e porta de origem UDP 1812 (0x714) do NPS. Esse filtro permite o tráfego de autenticação RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2865. Se você estiver usando uma porta diferente, substitua esse número de porta para 1812.
 - Endereço IP de origem da interface de rede de perímetro e porta de origem UDP 1813 (0x715) do NPS. Esse filtro permite o tráfego de contabilização RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2866. Se você estiver usando uma porta diferente, substitua esse número de porta para 1813.
-- \(Optional @ no__t-1 endereço IP de origem da interface de rede de perímetro e a porta de origem UDP 1645 \(0x66D @ no__t-3 do NPS. Esse filtro permite o tráfego de autenticação RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
-- \(Optional @ no__t-1 endereço IP de origem da interface de rede de perímetro e a porta de origem UDP 1646 \(0x66E @ no__t-3 do NPS. Esse filtro permite o tráfego de contabilização RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de origem\) opcional da interface de rede de perímetro e a porta de origem UDP 1645 \(0x66D\) do NPS. Esse filtro permite o tráfego de autenticação RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de origem\) opcional da interface de rede de perímetro e a porta de origem UDP 1646 \(0x66E\) do NPS. Esse filtro permite o tráfego de contabilização RADIUS do NPS para clientes RADIUS baseados na Internet. Essa é a porta UDP usada por clientes RADIUS mais antigos.
 
 ### <a name="configure-output-filters-on-the-perimeter-network-interface"></a>Configurar filtros de saída na interface de rede de perímetro
 
@@ -87,8 +87,8 @@ Configure os seguintes filtros de pacotes de saída na interface de rede de per�
 
 - Endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1812 (0x714) do NPS. Esse filtro permite o tráfego de autenticação RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2865. Se você estiver usando uma porta diferente, substitua esse número de porta para 1812.
 - Endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1813 (0x715) do NPS. Esse filtro permite o tráfego de contabilização RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP padrão usada pelo NPS, conforme definido no RFC 2866. Se você estiver usando uma porta diferente, substitua esse número de porta para 1813.
-- \(Optional @ no__t-1 endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1645 \(0x66D @ no__t-3 do NPS. Esse filtro permite o tráfego de autenticação RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
-- \(Optional @ no__t-1 endereço IP de destino da interface de rede de perímetro e porta de destino UDP de 1646 \(0x66E @ no__t-3 do NPS. Esse filtro permite o tráfego de contabilização RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de destino\) opcional da interface de rede de perímetro e a porta de destino UDP de 1645 \(0x66D\) do NPS. Esse filtro permite o tráfego de autenticação RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
+- \(endereço IP de destino\) opcional da interface de rede de perímetro e a porta de destino UDP de 1646 \(0x66E\) do NPS. Esse filtro permite o tráfego de contabilização RADIUS de clientes RADIUS baseados na Internet para o NPS. Essa é a porta UDP usada por clientes RADIUS mais antigos.
 
 Para maior segurança, você pode usar os endereços IP de cada cliente RADIUS que envia os pacotes por meio do firewall para definir filtros para o tráfego entre o cliente e o endereço IP do NPS na rede de perímetro.
 

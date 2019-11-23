@@ -17,7 +17,7 @@ ms.locfileid: "71355653"
 ---
 # <a name="network-controller"></a>Controlador de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Novidade no Windows Server 2016, o controlador de rede fornece um ponto de automação centralizado e programável para gerenciar, configurar, monitorar e solucionar problemas de infraestrutura de rede física e virtual em seu datacenter. 
 
@@ -34,23 +34,23 @@ Usando o Controlador de Rede, você pode automatizar a configuração da infraes
 
 ## <a name="bkmk_overview"></a>Visão geral do controlador de rede
 
-O controlador de rede é uma função de servidor altamente disponível e escalonável e fornece uma interface de programação de aplicativo \(API @ no__t-1 que permite que o controlador de rede se comunique com a rede e uma segunda API que permite que você se comunique com o Controlador de rede.
+O controlador de rede é uma função de servidor altamente disponível e escalonável e fornece uma interface de programação de aplicativo \(\) de API que permite que o controlador de rede se comunique com a rede e uma segunda API que permite que você se comunique com o controlador de rede.
 
 Você pode implantar o controlador de rede em ambientes de domínio e fora do domínio. Em ambientes de domínio, o controlador de rede autentica usuários e dispositivos de rede usando o Kerberos; em ambientes que não são de domínio, você deve implantar certificados para autenticação.
 
 >[!IMPORTANT]
->Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma máquina virtual do Hyper-V \(VM @ no__t-1 que está instalado em um host do Hyper-V. Depois de ter instalado o controlador de rede em VMs em três hosts Hyper @ no__t-0V diferentes, você deve habilitar os hosts do Hyper @ no__t-1V para a rede definida pelo software \(SDN @ no__t-3 adicionando os hosts ao controlador de rede usando o Windows PowerShell comando **New-NetworkControllerServer**. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione. Para obter mais informações, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma máquina virtual do Hyper-V \(\) da VM que está instalada em um host do Hyper-V. Depois de instalar o controlador de rede em VMs em três hosts Hyper\-V diferentes, você deve habilitar os hosts do Hyper\-V para a rede definida pelo software \(SDN\) adicionando os hosts ao controlador de rede usando o comando **New-NetworkControllerServer**do Windows PowerShell. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione. Para obter mais informações, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
 
 O Controlador de Rede se comunica com os dispositivos, os serviços e os componentes de rede usando a API Southbound. Com a API Southbound, o Controlador de Rede pode descobrir dispositivos de rede, detectar configurações de serviço e reunir todas as informações que você precisa sobre a rede. Além disso, a API Southbound fornece ao Controlador de Rede um caminho para enviar informações à infraestrutura de rede, como as alterações de configuração que você fez.
 
 A API Northbound do Controlador de Rede fornece a capacidade de reunir informações da rede por meio do Controlador de Rede a fim de usá-las para monitorar e configurar a rede.
 
-A API do controlador de rede Northbound permite que você configure, monitore, solucione problemas e implante novos dispositivos na rede usando o Windows PowerShell, a transferência de estado de reapresentação \(REST @ no__t-1 API ou um aplicativo de gerenciamento com um gráfico interface do usuário, como System Center Virtual Machine Manager.
+A API do controlador de rede Northbound permite que você configure, monitore, solucione problemas e implante novos dispositivos na rede usando o Windows PowerShell, a transferência de estado de reapresentação \(REST\) API ou um aplicativo de gerenciamento com uma interface gráfica do usuário, como System Center Virtual Machine Manager.
 
 >[!NOTE]
 >A API Northbound do Controlador de Rede é implementada como uma interface REST.
 
-Você pode gerenciar sua rede de datacenter com o controlador de rede usando aplicativos de gerenciamento, como System Center Virtual Machine Manager \(SCVMM @ no__t-1 e System Center Operations Manager \(SCOM @ no__t-3, pois o controlador de rede permite configurar, monitorar, programar e solucionar problemas da infraestrutura de rede sob seu controle.
+Você pode gerenciar sua rede de datacenter com o controlador de rede usando aplicativos de gerenciamento, como System Center Virtual Machine Manager \(SCVMM\)e System Center Operations Manager \(SCOM\), pois o controlador de rede permite configurar, monitorar, programar e solucionar problemas da infraestrutura de rede sob seu controle.
 
 Usando o Windows PowerShell, a API REST ou um aplicativo de gerenciamento, você pode usar o Controlador de Rede para gerenciar a seguinte infraestrutura de rede física e virtual:
 
@@ -58,7 +58,7 @@ Usando o Windows PowerShell, a API REST ou um aplicativo de gerenciamento, você
 
 - Firewall do datacenter
 
-- Serviço de acesso remoto \(RAS @ no__t-1 gateways de multilocatário, gateways virtuais e pools de gateway
+- Serviço de acesso remoto \(RAS\) gateways de multilocatário, gateways virtuais e pools de gateway
 
 - Balanceadores de carga de software
 
@@ -66,7 +66,7 @@ Na ilustração a seguir, um administrador usa uma ferramenta de gerenciamento q
 
 ![Visão geral do controlador de rede](../../../media/Network-Controller/NetController_overview.png)  
 
-Se você estiver implantando o controlador de rede em um ambiente de laboratório de teste, poderá executar a função de servidor do controlador de rede em uma máquina virtual Hyper-V \(VM @ no__t-1 que está instalado em um host Hyper-V.
+Se você estiver implantando o controlador de rede em um ambiente de laboratório de teste, poderá executar a função de servidor do controlador de rede em uma máquina virtual do Hyper-V \(\) da VM instalada em um host do Hyper-V.
 
 Para alta disponibilidade em data centers maiores, você pode implantar um cluster usando três VMs instaladas em três ou mais hosts Hyper-V. Para obter mais informações, consulte [alta disponibilidade do controlador de rede](network-controller-high-availability.md).
 
@@ -128,7 +128,7 @@ Para obter mais informações sobre o gateway RAS, consulte [Gateway de RAS para
 
 ## <a name="network-controller-deployment-options"></a>Opções de implantação do controlador de rede
 
-Para implantar o controlador de rede usando System Center Virtual Machine Manager \(VMM @ no__t-1, consulte [configurar um controlador de rede Sdn na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
+Para implantar o controlador de rede usando System Center Virtual Machine Manager \(\)do VMM, consulte [configurar um controlador de rede Sdn na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
 
 Para implantar o controlador de rede usando scripts, consulte [implantar uma infraestrutura de rede definida pelo software usando scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 

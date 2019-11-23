@@ -30,9 +30,9 @@ Este tópico explica como instalar a [Eliminação de Duplicação de Dados](ove
 
 ### <a id="install-dedup-via-server-manager"></a>Instalar a eliminação de duplicação de dados usando Gerenciador do Servidor
 1. No assistente Adicionar Funções e Recursos, selecione **Funções de Servidor** e **Eliminação de Duplicação de Dados**.  
-eliminação de duplicação de dados ![Install via Gerenciador do Servidor: selecione eliminação de duplicação de dados de funções de servidor @ no__t-1
+![instalar a eliminação de duplicação de dados via Gerenciador do Servidor: selecione eliminação de duplicação de dados de funções de servidor](media/install-dedup-via-server-manager-1.png)
 2. Clique em **Avançar** até o botão **Instalar** ficar ativo e, em seguida, clique em **Instalar**.  
-eliminação de duplicação de dados ![Install via Gerenciador do Servidor: clique em instalar @ no__t-1
+![instalar a eliminação de duplicação de dados via Gerenciador do Servidor: clique em instalar](media/install-dedup-via-server-manager-2.png)
 
 ### <a id="install-dedup-via-powershell"></a>Instalar a eliminação de duplicação de dados usando o PowerShell
 Para instalar a Eliminação de Duplicação de Dados, execute o seguinte comando do PowerShell como administrador:  
@@ -46,8 +46,8 @@ Para instalar a Eliminação de Duplicação de Dados em uma instalação do Nan
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
     <br />
-    <strong>--OU--</strong>
-    @ NO__T-2<br />
+    <strong>--Ou--</strong>
+    <br />
     Conecte-se remotamente à instância do Nano Server com o PowerShell remoto e instale a Eliminação de Duplicação de Dados usando o DISM:  
     
     ```PowerShell
@@ -95,7 +95,7 @@ Para determinar se uma carga de trabalho funciona bem com eliminação de duplic
     `Files excluded by policy: 20`  
     `Files excluded by error: 0`  
 
-2. **What os padrões de e/s da minha carga de trabalho com o conjunto de seus conjuntos de & pesquisa? Qual desempenho tenho para minha carga de trabalho?**  
+2. **Qual é a aparência dos padrões de e/s da minha carga de trabalho? Qual desempenho tenho para minha carga de trabalho?**  
      A Eliminação de Duplicação de Dados otimiza os arquivos como um trabalho periódico em vez de quando o arquivo é gravado em disco. Em decorrência disso, é importante examinar os padrões de leitura esperados da carga de trabalho para o volume com eliminação de duplicação. Como a Eliminação de Duplicação de Dados move o conteúdo do arquivo para o repositório de partes e tenta organizá-lo por arquivo o máximo possível, as operações de leitura apresentam o melhor desempenho quando são aplicadas em intervalos sequenciais de um arquivo.  
 
     As cargas de trabalho semelhantes a banco de dados normalmente têm padrões de leitura mais aleatórios do que padrões de leitura sequenciais, porque os bancos de dados geralmente não asseguram que o layout de banco de dados seja ideal para todas as consultas possíveis que podem ser executadas. Como as seções do repositório de partes podem existir em todo o volume, acessar os intervalos de dados no repositório de partes para as consultas de banco de dados pode introduzir latência adicional. As cargas de trabalho de alto desempenho são especialmente sensíveis à latência adicional, mas outras cargas de trabalho semelhantes a banco de dados podem não ser.
@@ -115,13 +115,13 @@ Antes de habilitar a Eliminação de Duplicação de Dados, você deverá escolh
 
 #### <a id="enable-dedup-via-server-manager"></a>Habilitar a eliminação de duplicação de dados usando Gerenciador do Servidor
 1. Selecione **Serviços de Arquivo e Armazenamento** no Gerenciador do Servidor.  
-Arquivos ![Click e serviços de armazenamento @ no__t-1
+![clique em serviços de arquivo e armazenamento](media/enable-dedup-via-server-manager-1.PNG)
 2. Selecione **Volumes** em **Serviços de Arquivo e Armazenamento**.  
-Volumes ![Click @ no__t-1
+![clique em volumes](media/enable-dedup-via-server-manager-2.png)
 3. Clique com o botão direito do mouse no volume desejado e selecione **Configurar Eliminação de Duplicação de Dados**.  
-![Click configurar a eliminação de duplicação de dados @ no__t-1
+![clique em configurar eliminação de duplicação de dados](media/enable-dedup-via-server-manager-3.png)
 4. Selecione o **Tipo de Uso** desejado na caixa suspensa e selecione **OK**.  
-![Select o tipo de uso desejado na lista suspensa @ no__t-1
+![selecione o tipo de uso desejado na lista suspensa](media/enable-dedup-via-server-manager-4.png)
 5. Se estiver executando uma carga de trabalho recomendada, você já terminou. Para outras cargas de trabalho, consulte [Outras considerações](#enable-dedup-sometimes-considerations).
 
 > [!Note]  
@@ -147,7 +147,7 @@ Volumes ![Click @ no__t-1
 * Se sua carga de trabalho não tiver requisitos altos de recursos, ou se for mais importante que os trabalhos de otimização sejam concluídos do que as solicitações de carga de trabalho sejam atendidas, [a memória, a CPU e a prioridade dos trabalhos de Eliminação de Duplicação de Dados poderão ser ajustadas](advanced-settings.md#modifying-job-schedules).
 
 ## <a id="faq"></a>Perguntas frequentes (FAQ)
-o **I deseja executar a eliminação de duplicação de dados no DataSet para a carga de trabalho X. Há suporte para isso?**  
+**Quero executar a eliminação de duplicação de dados no DataSet para a carga de trabalho X. Há suporte para isso?**  
 Além das cargas de trabalho [conhecidas por não terem interoperabilidade com a Eliminação de Duplicação de Dados](interop.md), damos suporte total para a integridade dos dados da Eliminação de Duplicação de Dados com qualquer carga de trabalho. Também há suporte da Microsoft para o desempenho das cargas de trabalho recomendadas. O desempenho de outras cargas de trabalho depende muito do que elas estão fazendo no seu servidor. Você deve determinar quais impactos no desempenho a Eliminação de Duplicação de Dados tem na sua carga de trabalho e se isso é aceitável para essa carga de trabalho.
 
 **Quais são os requisitos de dimensionamento de volume para volumes com eliminação de duplicação?**  

@@ -17,11 +17,11 @@ ms.locfileid: "71406894"
 ---
 # <a name="add-an-iframe-to-a-tool-extension"></a>Adicionar um iFrame para uma extensão de ferramenta
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 Neste artigo, adicionaremos um iFrame a uma nova extensão de ferramenta vazia que criamos com a CLI do centro de administração do Windows.
 
-## <a name="prepare-your-environment"></a>Prepare o ambiente ##
+## <a name="prepare-your-environment"></a>Preparar o ambiente ##
 
 Se você ainda não fez isso, siga as instruções em [desenvolver uma extensão de ferramenta](../develop-tool.md) para preparar seu ambiente e criar uma nova extensão de ferramenta vazia.
 
@@ -33,7 +33,7 @@ Adicione um novo [módulo vazio](add-module.md) ao seu projeto, ao qual adiciona
 
 Agora, adicionaremos um iFrame a esse novo módulo vazio que acabamos de criar.
 
-Em \src\app @ no__t-0, navegue até a pasta do módulo e, em seguida, abra o arquivo ```{!module-name}.component.html```, encontrado com a seguinte convenção de nomenclatura:
+No \src\app\, navegue até a pasta do módulo e, em seguida, abra o arquivo ```{!module-name}.component.html```, encontrado com a seguinte convenção de nomenclatura:
 
 | Valor | Explicação | Exemplo de nome de arquivo |
 | ----- | ----------- | ------- |

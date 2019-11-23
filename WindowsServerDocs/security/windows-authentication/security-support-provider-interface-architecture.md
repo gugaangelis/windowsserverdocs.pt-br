@@ -22,7 +22,7 @@ ms.locfileid: "71403304"
 ---
 # <a name="security-support-provider-interface-architecture"></a>Arquitetura de Interface SSPI
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico de referência para o profissional de ti descreve os protocolos de autenticação do Windows que são usados na arquitetura do SSPI (Security Support Provider interface).
 
@@ -89,9 +89,9 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Microsoft Kerberos (Windows)](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [ @ NO__T-1 MS-KILE @ NO__T-2: Extensões de protocolo Kerberos @ no__t-0
+-   [\[MS-KILE\]: extensões de protocolo Kerberos](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [ @ NO__T-1 MS-SFU @ NO__T-2: Extensões do protocolo Kerberos: Serviço para especificação de protocolo de delegação restrita e de usuário @ no__t-0
+-   [\[MS-SFU\]: extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [SSP/PA Kerberos (Windows)](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
@@ -114,13 +114,13 @@ Os sistemas operacionais Windows com suporte podem usar o SSP do NTLM para o seg
 
 -   Serviço de chamada de procedimento remoto seguro ou serviço DCOM
 
-Local:%windir%\Windows\System32\msv1_0.dll
+Local:%windir%\Windows\System32\ msv1_0. dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, além do windows Server 2003 e do Windows XP.
 
 **Recursos adicionais para o protocolo NTLM e o SSP do NTLM**
 
--   [Pacote de autenticação do MSV1_0 (Windows)](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
+-   [Pacote de autenticação MSV1_0 (Windows)](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
 
 -   [Alterações na autenticação NTLM](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) no Windows 7 
 
@@ -145,7 +145,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Autenticação de Microsoft Digest (Windows)](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [ @ NO__T-1 MS-DPSP @ NO__T-2: Extensões de protocolo Digest @ no__t-0
+-   [\[MS-DPSP\]: extensões de protocolo Digest](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="BKMK_SchannelSSP"></a>Provedor de suporte de segurança Schannel
 O canal seguro (Schannel) é usado para autenticação de servidor baseada na Web, como quando um usuário tenta acessar um servidor Web seguro.
@@ -183,7 +183,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Referência técnica de TLS/SSL](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [ @ NO__T-1 MS-TLSP @ NO__T-2: Perfil TLS (Transport Layer Security) @ no__t-0
+-   [\[MS-TLSP\]: perfil de TLS (segurança da camada de transporte)](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="BKMK_NegoSSP"></a>Negociar provedor de suporte de segurança
 O mecanismo de negociação de GSS-API simples e protegido (SPNEGO) constitui a base para o Negotiate SSP, whichcan ser usado para negociar um protocolo de autenticação específico. Quando um aplicativo chama o SSPI para fazer logon em uma rede, ele pode especificar um SSP para processar a solicitação. Se o aplicativo especificar o Negotiate SSP, ele analisará a solicitação e selecionará o provedor apropriado para lidar com a solicitação, com base nas políticas de segurança configuradas pelo cliente.
@@ -200,9 +200,9 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Microsoft Negotiate (Windows)](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [ @ NO__T-1 MS-SPNG @ NO__T-2: Extensões de mecanismo de negociação de GSS-API (SPNEGO) simples e protegidas @ no__t-0
+-   [\[MS-SPNG\]: extensões do mecanismo de negociação do GSS-API (SPNEGO) simples e protegidas](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [ @ NO__T-1 MS-N2HT @ NO__T-2: Especificação do protocolo de autenticação HTTP Negotiate e Nego2 @ no__t-0
+-   [\[MS-N2HT\]: especificação de protocolo de autenticação HTTP Negotiate e Nego2](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="BKMK_CredSSP"></a>Provedor de suporte à segurança de credenciais
 O Credential Security Service Provider (CredSSP) fornece uma experiência de usuário SSO (logon único) ao iniciar novos serviços de terminal e Serviços de Área de Trabalho Remota sessões. O CredSSP permite que os aplicativos deleguem as credenciais dos usuários do computador cliente (usando o SSP do lado do cliente) para o servidor de destino (por meio do SSP do lado do servidor), com base nas políticas do cliente. As políticas de CredSSP são configuradas usando Política de Grupo, e a delegação de credenciais é desativada por padrão.
@@ -213,7 +213,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 **Recursos adicionais para o SSP de credenciais**
 
--   [ @ NO__T-1 MS-CSSP @ NO__T-2: Especificação de protocolo do Credential Security Support Provider (CredSSP) @ no__t-0
+-   [\[MS-CSSP\]: especificação de protocolo CredSSP (provedor de suporte à segurança de credencial)](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [Provedor de serviços de segurança de credenciais e SSO para logon de serviços de terminal](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 

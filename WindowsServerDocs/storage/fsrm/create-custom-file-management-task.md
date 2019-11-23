@@ -17,7 +17,7 @@ ms.locfileid: "71403174"
 ---
 # <a name="create-a-custom-file-management-task"></a>Criar uma tarefa de gerenciamento de arquivo personalizada
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Expiração nem sempre é uma ação desejada para ser executada nos arquivos. As tarefas de gerenciamento de arquivo também permitem que você execute comandos personalizados.
 
@@ -34,7 +34,7 @@ Expiração nem sempre é uma ação desejada para ser executada nos arquivos. A
 
     -   **Tipo**. Selecione **Personalizar** no menu suspenso.
     -   **Executável**. Digite ou procure por um comando para executar quando a tarefa de gerenciamento de arquivo processa os arquivos. Esse executável deve ser definido para ser gravável apenas pelos Administradores e Sistema. Se nenhum outro usuário tiver acesso ao executável, ele não rodará corretamente.
-    -   **Configurações de comandos**. Para configurar os argumentos passados para o executável quando um trabalho de gerenciamento de arquivo processa arquivos, edite a caixa de texto identificada como **Argumentos**. Para inserir variáveis adicionais no texto, coloque o cursor no local na caixa de texto onde você deseja inserir a variável, selecione a variável que deseja inserir e clique em **Inserir variável**. O texto entre colchetes insere informações variáveis que o executável pode receber. Por exemplo, a variável de caminho de arquivo \[Source @ no__t-1 insere o nome do arquivo que deve ser processado pelo executável. Opcionalmente, clique no botão **Diretório de trabalho** para especificar o local do executável personalizado.
+    -   **Configurações de comandos**. Para configurar os argumentos passados para o executável quando um trabalho de gerenciamento de arquivo processa arquivos, edite a caixa de texto identificada como **Argumentos**. Para inserir variáveis adicionais no texto, coloque o cursor no local na caixa de texto onde você deseja inserir a variável, selecione a variável que deseja inserir e clique em **Inserir variável**. O texto entre colchetes insere informações variáveis que o executável pode receber. Por exemplo, o caminho do arquivo de origem \[\] variável insere o nome do arquivo que deve ser processado pelo executável. Opcionalmente, clique no botão **Diretório de trabalho** para especificar o local do executável personalizado.
     -   **Comando de segurança**. Configure as configurações de segurança deste executável. Por padrão, o comando é executado como Serviço Local, que é a conta mais restritiva disponível.
 
 4.  Clique em **OK**.

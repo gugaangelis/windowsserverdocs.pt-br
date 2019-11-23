@@ -26,9 +26,9 @@ A associação em **Administradores**, ou equivalente, no computador local é o 
   
 1.  Abra o Gerenciador do Servidor. Para abrir Gerenciador do Servidor, clique em **Gerenciador do servidor** na tela **Iniciar** ou **Gerenciador do servidor** na barra de tarefas na área de trabalho. Na guia **Início Rápido** do bloco de **Boas-vindas** da página **Painel**, clique em **Adicionar funções e recursos**. Como alternativa, é possível clicar em **Adicionar Funções e Recursos** no menu **Gerenciar**.  
   
-2.  Na página **Antes de começar** , clique em **Avançar**.  
+2.  Na página **Before you begin**, clique em **Next**.  
   
-3.  Na página **Selecionar tipo de instalação** , clique em **função @ no__t-2based ou recurso @ no__t-3based instalação**e clique em **Avançar**.  
+3.  Na página **Selecionar tipo de instalação** , clique em **função\-baseada em\-instalação baseada em recursos**e clique em **Avançar**.  
   
 4.  Na página **Selecionar servidor de destino**, clique em **Selecionar um servidor no pool de servidor**, verifique se o computador de destino está selecionado e clique em **Avançar**.  
   
@@ -36,7 +36,7 @@ A associação em **Administradores**, ou equivalente, no computador local é o 
   
 6.  Na página **Selecionar recursos**, clique em **Avançar**. Os pré-requisitos necessários são preselecionados para você. Você não precisa selecionar nenhum outro recurso.  
   
-7.  Na página **Active Directory Serviço de Federação \(AD FS @ no__t-2** , clique em **Avançar**.  
+7.  Na página **Active Directory Serviço de Federação \(AD FS\)** , clique em **Avançar**.  
   
 8.  Depois de verificar as informações na página **confirmar seleções de instalação** , clique em **instalar**.  
   

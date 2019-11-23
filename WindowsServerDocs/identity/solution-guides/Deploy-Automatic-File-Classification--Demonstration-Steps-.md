@@ -28,18 +28,18 @@ Este tópico explica como habilitar as propriedades do recurso no Active Directo
   
 **Neste documento**  
   
--   [Etapa 1: Criar definições de propriedade de recurso @ no__t-0  
+-   [Etapa 1: criar definições de propriedade de recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
--   [Etapa 2: Criar uma regra de classificação de conteúdo de cadeia de caracteres @ no__t-0  
+-   [Etapa 2: criar uma regra de classificação de conteúdo de cadeia de caracteres](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step2)  
   
--   [Etapa 3: Criar uma regra de classificação de conteúdo de expressão regular @ no__t-0  
+-   [Etapa 3: criar uma regra de classificação de conteúdo de expressão regular](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [Etapa 4: Verifique se os arquivos são classificados como @ no__t-0  
+-   [Etapa 4: verificar se os arquivos estão classificados](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
 > Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Step1"></a>Etapa 1: criar definições de propriedade do recurso  
+## <a name="BKMK_Step1"></a>Etapa 1: criar definições de propriedade de recurso  
 As propriedades dos recursos Impacto e Informações de Identificação Pessoal são habilitadas de maneira que a Infraestrutura de Classificação de Arquivos possa usar tais propriedades de recurso para marcar os arquivos que são analisados em uma pasta compartilhada da rede.  
   
 [Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
@@ -56,7 +56,7 @@ As propriedades dos recursos Impacto e Informações de Identificação Pessoal 
   
 5.  Clique com o botão direito do mouse em **Informações de Identificação Pessoal** e em **Habilitar**.  
   
-![solution guia](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![guias de solução](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -89,7 +89,7 @@ Uma regra de classificação de conteúdo de cadeia de caracteres analisa um arq
 8.  Na guia **Escopo** , clique em **Adicionar**e escolha as pastas que devem ser incluídas nessa regra, como D:\Finance Documents.  
   
     > [!NOTE]  
-    > É possível escolher um namespace dinâmico para o escopo. Para obter mais informações sobre espaços de nome dinâmico para regras de classificação, consulte [What ' s New in File Server Resource Manager in Windows server 2012 \[redirected @ no__t-2](assetId:///d53c603e-6217-4b98-8508-e8e492d16083).  
+    > É possível escolher um namespace dinâmico para o escopo. Para obter mais informações sobre espaços de nome dinâmico para regras de classificação, consulte [novidades no Gerenciador de recursos de servidor de arquivos no Windows server 2012 \[\]Redirecionado ](assetId:///d53c603e-6217-4b98-8508-e8e492d16083).  
   
 9. Na guia **Classificação**, configure o seguinte:  
   
@@ -107,7 +107,7 @@ Uma regra de classificação de conteúdo de cadeia de caracteres analisa um arq
   
 13. Na guia **Tipo de Avaliação**, marque a caixa de seleção **Reavaliar os valores de propriedade existentes**, clique em **Substituir o valor existente** e clique em **OK**.  
   
-![solution guia](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![guias de solução](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -149,13 +149,13 @@ Uma regra de expressão regular analisa um arquivo em busca de um padrão corres
   
 9. Na coluna **Tipo de Expressão** , selecione **Expressão regular**.  
   
-10. Na coluna **expressão** , digite **^ (?! 000) ([0-7] \d @ no__t-2 | 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d @ no__t-3 $**  
+10. Na coluna **expressão** , digite **^ (?! 000) ([0-7] \d{2}| 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d{4}$**  
   
 11. Na coluna **Ocorrências Mínimas** , digite **10**e clique em **OK**.  
   
 12. Na guia **Tipo de Avaliação**, marque a caixa de seleção **Reavaliar os valores de propriedade existentes**, clique em **Substituir o valor existente** e clique em **OK**.  
   
-![solution guia](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![guias de solução](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -176,7 +176,7 @@ Você pode verificar se os arquivos foram devidamente classificados ao ver as pr
   
     3.  Feche o Relatório de Classificação Automática.  
   
-    4.  Você pode fazer isso usando o Windows PowerShell com o seguinte comando: **Start-FSRMClassification ' "RunDuration 0 – Confirm: $false**  
+    4.  Você pode fazer isso usando o Windows PowerShell com o seguinte comando: **Start-FSRMClassification ' "RunDuration 0-Confirm: $false**  
   
 2.  Navegue para a pasta especificada nas regras de classificação, como D:\Documentos financeiros.  
   
@@ -186,7 +186,7 @@ Você pode verificar se os arquivos foram devidamente classificados ao ver as pr
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Cenário: aprofunde-se em seus dados por meio da classificação](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [Cenário: Obtenha informações sobre seus dados usando a classificação](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
 -   [Planejar a classificação automática de arquivos](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
 

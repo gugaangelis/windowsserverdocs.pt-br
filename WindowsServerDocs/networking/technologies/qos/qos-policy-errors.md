@@ -17,7 +17,7 @@ ms.locfileid: "71405324"
 ---
 # <a name="qos-policy-error-and-event-messages"></a>Mensagens de erro e evento da política de QoS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 A seguir estão as mensagens de erro e de evento associadas à política de QoS.  
   
@@ -139,7 +139,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_1|  
 |**Idioma**|Inglês|  
-|**Mensagem**|EQOS: * * * testando @ no__t-0 @ no__t-1 @ no__t-2 [, com uma cadeia de caracteres] "% 2".|  
+|**Mensagem**|EQOS: * * * testando\*\*\*[, com uma cadeia de caracteres] "%2".|  
   
 |||  
 |-|-|  
@@ -147,7 +147,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_2|  
 |**Idioma**|Inglês|  
-|**Mensagem**|EQOS: * * * testando @ no__t-0 @ no__t-1 @ no__t-2 [, com duas cadeias de caracteres, seqüência1 é] "% 2" [, string2 é] "% 3".|  
+|**Mensagem**|EQOS: * * * testando\*\*\*[, com duas cadeias de caracteres, seqüência1 é] "%2" [, string2 é] "%3".|  
   
 |||  
 |-|-|  
@@ -155,7 +155,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_VERSION|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS do computador "% 2" tem um número de versão inválido. Esta política não será aplicada.|  
+|**Mensagem**|A política de QoS do computador "%2" tem um número de versão inválido. Esta política não será aplicada.|  
   
 |||  
 |-|-|  
@@ -163,7 +163,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_VERSION|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS de usuário "% 2" tem um número de versão inválido. Esta política não será aplicada.|  
+|**Mensagem**|A política de QoS de usuário "%2" tem um número de versão inválido. Esta política não será aplicada.|  
   
 |||  
 |-|-|  
@@ -171,7 +171,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_PROFILE_NOT_SPECIFIED|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS do computador "% 2" não especifica um valor DSCP ou uma taxa de limitação. Esta política não será aplicada.|  
+|**Mensagem**|A política de QoS do computador "%2" não especifica um valor DSCP ou uma taxa de limitação. Esta política não será aplicada.|  
   
 |||  
 |-|-|  
@@ -179,7 +179,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_PROFILE_NOT_SPECIFIED|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS de usuário "% 2" não especifica um valor DSCP ou uma taxa de limitação. Esta política não será aplicada.|  
+|**Mensagem**|A política de QoS de usuário "%2" não especifica um valor DSCP ou uma taxa de limitação. Esta política não será aplicada.|  
   
 |||  
 |-|-|  
@@ -187,7 +187,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_QUOTA_EXCEEDED|  
 |**Idioma**|Inglês|  
-|**Mensagem**|O número máximo de políticas de QoS do computador foi excedido. A política de QoS "% 2" e as políticas de QoS de computador subsequentes não serão aplicadas.|  
+|**Mensagem**|O número máximo de políticas de QoS do computador foi excedido. A política de QoS "%2" e as políticas de QoS de computador subsequentes não serão aplicadas.|  
   
 |||  
 |-|-|  
@@ -195,7 +195,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_QUOTA_EXCEEDED|  
 |**Idioma**|Inglês|  
-|**Mensagem**|O número máximo de políticas de QoS de usuário foi excedido. A política de QoS "% 2" e as políticas de QoS de usuário subsequentes não serão aplicadas.|  
+|**Mensagem**|O número máximo de políticas de QoS de usuário foi excedido. A política de QoS "%2" e as políticas de QoS de usuário subsequentes não serão aplicadas.|  
   
 |||  
 |-|-|  
@@ -203,7 +203,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_CONFLICT|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS de computador "% 2" pode estar em conflito com outras políticas de QoS. Consulte a documentação para obter regras sobre qual política será aplicada.|  
+|**Mensagem**|A política de QoS de computador "%2" pode estar em conflito com outras políticas de QoS. Consulte a documentação para obter regras sobre qual política será aplicada.|  
   
 |||  
 |-|-|  
@@ -211,7 +211,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_CONFLICT|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS de usuário "% 2" pode estar em conflito com outras políticas de QoS. Consulte a documentação para obter regras sobre qual política será aplicada.|  
+|**Mensagem**|A política de QoS de usuário "%2" pode estar em conflito com outras políticas de QoS. Consulte a documentação para obter regras sobre qual política será aplicada.|  
   
 |||  
 |-|-|  
@@ -219,7 +219,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_NO_FULLPATH_APPNAME|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS do computador "% 2" foi ignorada porque o caminho do aplicativo não pode ser processado. O caminho do aplicativo pode ser inválido, conter uma letra de unidade inválida ou conter uma unidade de rede mapeada.|  
+|**Mensagem**|A política de QoS do computador "%2" foi ignorada porque o caminho do aplicativo não pode ser processado. O caminho do aplicativo pode ser inválido, conter uma letra de unidade inválida ou conter uma unidade de rede mapeada.|  
   
 |||  
 |-|-|  
@@ -227,7 +227,7 @@ A seguir está uma lista de mensagens de aviso da política de QoS.
 |**Severity**|Aviso|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_NO_FULLPATH_APPNAME|  
 |**Idioma**|Inglês|  
-|**Mensagem**|A política de QoS de usuário "% 2" foi ignorada porque o caminho do aplicativo não pode ser processado. O caminho do aplicativo pode ser inválido, conter uma letra de unidade inválida ou conter uma unidade de rede mapeada.|  
+|**Mensagem**|A política de QoS de usuário "%2" foi ignorada porque o caminho do aplicativo não pode ser processado. O caminho do aplicativo pode ser inválido, conter uma letra de unidade inválida ou conter uma unidade de rede mapeada.|  
   
 ## <a name="error-messages"></a>Mensagens de erro  
 
@@ -239,7 +239,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_REFERESH|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha ao atualizar as políticas de QoS do computador. Código de erro: "% 2".|  
+|**Mensagem**|Falha ao atualizar as políticas de QoS do computador. Código de erro: "%2".|  
   
 |||  
 |-|-|  
@@ -247,7 +247,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_REFERESH|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha ao atualizar as políticas de QoS de usuário. Código de erro: "% 2".|  
+|**Mensagem**|Falha ao atualizar as políticas de QoS de usuário. Código de erro: "%2".|  
   
 |||  
 |-|-|  
@@ -255,7 +255,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_ROOT_KEY|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha de QoS ao abrir a chave raiz no nível da máquina para políticas de QoS. Código de erro: "% 2".|  
+|**Mensagem**|Falha de QoS ao abrir a chave raiz no nível da máquina para políticas de QoS. Código de erro: "%2".|  
   
 |||  
 |-|-|  
@@ -263,7 +263,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_ROOT_KEY|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha do QoS ao abrir a chave raiz no nível do usuário para políticas de QoS. Código de erro: "% 2".|  
+|**Mensagem**|Falha do QoS ao abrir a chave raiz no nível do usuário para políticas de QoS. Código de erro: "%2".|  
   
 |||  
 |-|-|  
@@ -271,7 +271,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_TOO_LONG|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Uma política de QoS de computador excede o comprimento máximo de nome permitido. A política incorreta está listada na chave raiz da política de QoS no nível da máquina, com o índice "% 2".|  
+|**Mensagem**|Uma política de QoS de computador excede o comprimento máximo de nome permitido. A política incorreta está listada na chave raiz da política de QoS no nível da máquina, com o índice "%2".|  
   
 |||  
 |-|-|  
@@ -279,7 +279,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_TOO_LONG|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Uma política de QoS de usuário excede o comprimento máximo de nome permitido. A política incorreta está listada na chave raiz de política de QoS de nível de usuário, com o índice "% 2".|  
+|**Mensagem**|Uma política de QoS de usuário excede o comprimento máximo de nome permitido. A política incorreta está listada na chave raiz de política de QoS de nível de usuário, com o índice "%2".|  
   
 |||  
 |-|-|  
@@ -287,7 +287,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_SIZE_ZERO|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Uma política de QoS de computador tem um nome de comprimento zero. A política incorreta está listada na chave raiz da política de QoS no nível da máquina, com o índice "% 2".|  
+|**Mensagem**|Uma política de QoS de computador tem um nome de comprimento zero. A política incorreta está listada na chave raiz da política de QoS no nível da máquina, com o índice "%2".|  
   
 |||  
 |-|-|  
@@ -295,7 +295,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_SIZE_ZERO|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Uma política de QoS de usuário tem um nome de comprimento zero. A política incorreta está listada na chave raiz de política de QoS de nível de usuário, com o índice "% 2".|  
+|**Mensagem**|Uma política de QoS de usuário tem um nome de comprimento zero. A política incorreta está listada na chave raiz de política de QoS de nível de usuário, com o índice "%2".|  
   
 |||  
 |-|-|  
@@ -303,7 +303,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_SUBKEY|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha do QoS ao abrir a subchave do registro para uma política de QoS do computador. A política está listada na chave raiz da política de QoS no nível da máquina, com o índice "% 2".|  
+|**Mensagem**|Falha do QoS ao abrir a subchave do registro para uma política de QoS do computador. A política está listada na chave raiz da política de QoS no nível da máquina, com o índice "%2".|  
   
 |||  
 |-|-|  
@@ -311,7 +311,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_SUBKEY|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha de QoS ao abrir a subchave do registro para uma política de QoS de usuário. A política está listada na chave raiz de política de QoS de nível de usuário, com o índice "% 2".|  
+|**Mensagem**|Falha de QoS ao abrir a subchave do registro para uma política de QoS de usuário. A política está listada na chave raiz de política de QoS de nível de usuário, com o índice "%2".|  
   
 |||  
 |-|-|  
@@ -319,7 +319,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_MACHINE_POLICY_FIELD|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha de QoS ao ler ou validar o campo "% 2" para a política de QoS do computador "% 3".|  
+|**Mensagem**|Falha de QoS ao ler ou validar o campo "%2" para a política de QoS do computador "%3".|  
   
 |||  
 |-|-|  
@@ -327,7 +327,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_USER_POLICY_FIELD|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha de QoS ao ler ou validar o campo "% 2" para a política de QoS de usuário "% 3".|  
+|**Mensagem**|Falha de QoS ao ler ou validar o campo "%2" para a política de QoS de usuário "%3".|  
   
 |||  
 |-|-|  
@@ -335,7 +335,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_TCP_AUTOTUNING|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha de QoS ao ler ou definir o nível de taxa de transferência TCP de entrada, código de erro: "% 2".|  
+|**Mensagem**|Falha de QoS ao ler ou definir o nível de taxa de transferência TCP de entrada, código de erro: "%2".|  
   
 |||  
 |-|-|  
@@ -343,7 +343,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |**Severity**|Erro|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_APP_MARKING|  
 |**Idioma**|Inglês|  
-|**Mensagem**|Falha de QoS ao ler ou definir a configuração de substituição de marcação DSCP, código de erro: "% 2".|  
+|**Mensagem**|Falha de QoS ao ler ou definir a configuração de substituição de marcação DSCP, código de erro: "%2".|  
 
 Para o próximo tópico deste guia, consulte perguntas frequentes [sobre a política de QoS](qos-policy-faq.md).
 

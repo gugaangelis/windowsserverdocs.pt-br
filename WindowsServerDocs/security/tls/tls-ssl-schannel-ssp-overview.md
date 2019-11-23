@@ -22,7 +22,7 @@ ms.locfileid: "71403367"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>Visão geral de TLS/SSL (SSP do Schannel)
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
+>Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
 Este tópico para o profissional de ti apresenta as implementações de TLS e SSL no Windows usando o SSP (provedor de serviços de segurança do Schannel) descrevendo aplicativos práticos, alterações na implementação da Microsoft e requisitos de software, além de recursos adicionais para o Windows Server 2012 e o Windows 8.
 
@@ -31,7 +31,7 @@ Schannel é um SSP (Provedor de Suporte de Segurança) que implementa os protoco
 
 A Interface SSPI é uma API usada por sistemas Windows para executar funções relacionadas à segurança, incluindo autenticação. O SSPI funciona como uma interface comum para vários SSPs, incluindo o SSP do Schannel.
 
-As versões do TLS 1,0, 1,1 e 1,2, as versões do SSL 2,0 e 3,0, bem como a camada de transporte de datagrama de segurança \(DTLS @ no__t-1 versão do protocolo 1,0 e o protocolo de transporte de comunicação privada \(PCT @ no__t-3 são baseados na criptografia de chave pública. O pacote de protocolos de autenticação Schannel fornece esses protocolos. Todos os protocolos Schannel usam um modelo de cliente/servidor.
+As versões 1,0, 1,1 e 1,2 do TLS, as versões 2,0 e 3,0, bem como a segurança da camada de transporte de datagrama \(DTLS\) protocolo versão 1,0, e o transporte de comunicações privada \(protocolo PCT\) são baseados na criptografia de chave pública. O pacote de protocolos de autenticação Schannel fornece esses protocolos. Todos os protocolos Schannel usam um modelo de cliente/servidor.
 
 ## <a name="BKMK_APP"></a>Aplicativos
 Um problema quando você administra uma rede é proteger os dados que estão sendo enviados entre os aplicativos em uma rede não confiável. Você pode usar TLS e SSL para autenticar servidores e computadores cliente e, em seguida, usar o protocolo para criptografar mensagens entre as partes autenticadas.

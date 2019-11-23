@@ -29,16 +29,16 @@ Dependendo da configuração de declarações e dos requisitos colocados na rela
 Este tópico explica brevemente a sintaxe e a semântica da linguagem de regras de transformação de declarações no Active Directory e considerações a serem feitas durante a criação de políticas. Ele fornece vários conjuntos de regras de exemplo para você começar, bem como exemplos de sintaxe incorreta e as mensagens que elas geram, para ajudá-lo a decifrar mensagens de erro ao criar as regras.  
   
 ## <a name="tools-for-authoring-claims-transformation-policies"></a>Ferramentas para criação de políticas de transformação de declarações  
-**Cmdlets do Windows PowerShell para Active Directory**: Essa é a maneira preferida e recomendada para criar e definir políticas de transformação de declarações. Esses cmdlets fornecem opções para políticas simples e verificam regras que são definidas para políticas mais complexas.  
+**Cmdlets do Windows PowerShell para Active Directory**: essa é a maneira preferida e recomendada para criar e definir políticas de transformação de declarações. Esses cmdlets fornecem opções para políticas simples e verificam regras que são definidas para políticas mais complexas.  
   
-**LDAP**: As políticas de transformação de declarações podem ser editadas em Active Directory por meio de LDAP (Lightweight Directory Access Protocol). No entanto, isso não é recomendado porque as políticas têm vários componentes complexos, e as ferramentas usadas podem não validar a política antes de gravá-la no Active Directory. Isso pode exigir uma quantidade considerável de tempo para diagnosticar problemas.  
+**LDAP**: as políticas de transformação de declarações podem ser editadas em Active Directory por meio de LDAP (Lightweight Directory Access Protocol). No entanto, isso não é recomendado porque as políticas têm vários componentes complexos, e as ferramentas usadas podem não validar a política antes de gravá-la no Active Directory. Isso pode exigir uma quantidade considerável de tempo para diagnosticar problemas.  
   
 ## <a name="active-directory-claims-transformation-rules-language"></a>Linguagem de regras de transformação de declarações Active Directory  
   
 ### <a name="syntax-overview"></a>Visão geral da sintaxe  
 Aqui está uma breve visão geral da sintaxe e da semântica da linguagem:  
   
--   O conjunto de regras de transformação de declarações consiste em zero ou mais regras. Cada regra tem duas partes ativas: **Selecione a lista de condições** e a **ação da regra**. Se a **lista de condição de seleção** for avaliada como true, a ação de regra correspondente será executada.  
+-   O conjunto de regras de transformação de declarações consiste em zero ou mais regras. Cada regra tem duas partes ativas: **Selecione a lista de condições** e a ação de **regra**. Se a **lista de condição de seleção** for avaliada como true, a ação de regra correspondente será executada.  
   
 -   **Selecionar a lista de condições** tem zero ou mais **condições selecionadas**. Todas as **condições selecionadas** devem ser avaliadas como true para que a **lista de condição Select** seja avaliada como true.  
   
@@ -67,11 +67,11 @@ ISSUE (TYPE= "EmpType", VALUE = C1.VALUE, VALUETYPE = C1.VALUETYPE) == Rule Acti
 ### <a name="runtime-operation"></a>Operação de tempo de execução  
 É importante entender a operação de tempo de execução das transformações de declarações para criar as regras com eficiência. A operação de tempo de execução usa três conjuntos de declarações:  
   
-1.  **Conjunto de declarações de entrada**: O conjunto de entrada de declarações que são dadas à operação de transformação de declarações.  
+1.  **Conjunto de declarações de entrada**: o conjunto de entradas de declarações que são dadas à operação de transformação de declarações.  
   
-2.  **Conjunto de declarações de trabalho**: Declarações intermediárias que são lidas e gravadas durante a transformação de declarações.  
+2.  **Conjunto de declarações de trabalho**: declarações intermediárias que são lidas e gravadas durante a transformação de declarações.  
   
-3.  **Conjunto de declarações de saída**: Saída da operação de transformação de declarações.  
+3.  **Conjunto de declarações de saída**: saída da operação de transformação de declarações.  
   
 Aqui está uma breve visão geral da operação de transformação de declarações de tempo de execução:  
   
@@ -91,7 +91,7 @@ Aqui está uma breve visão geral da operação de transformação de declaraç�
   
 É possível escrever transformações de declarações complexas com base no comportamento de tempo de execução anterior.  
   
-**Exemplo Operação em tempo de execução @ no__t-0  
+**Exemplo: operação de tempo de execução**  
   
 Este exemplo mostra a operação de tempo de execução de uma transformação de declarações que usa duas regras.  
   
@@ -135,7 +135,7 @@ Veja a seguir uma sintaxe especial para regras:
   
 2.  Vazio Selecionar condição List = = cada declaração corresponde à lista de condições selecionadas  
   
-    **Exemplo Selecionar lista de condição selecionada @ no__t-0  
+    **Exemplo: selecionar lista de condição de seleção vazia**  
   
     A regra a seguir corresponde a cada declaração no conjunto de trabalho.  
   
@@ -145,7 +145,7 @@ Veja a seguir uma sintaxe especial para regras:
   
 3.  Vazio selecionar lista de correspondência = = cada declaração corresponde à lista de condições selecionadas  
   
-    **Exemplo Condições de correspondência vazias @ no__t-0  
+    **Exemplo: condições de correspondência vazias**  
   
     A regra a seguir corresponde a cada declaração no conjunto de trabalho. Essa é a regra básica "permitir todos" se for usada sozinha.  
   
@@ -153,7 +153,7 @@ Veja a seguir uma sintaxe especial para regras:
     C1:[] => Issule (claim = C1);  
     ```  
   
-## <a name="security-considerations"></a>Considerações sobre segurança  
+## <a name="security-considerations"></a>Considerações de segurança  
 **Declarações que entram em uma floresta**  
   
 As declarações apresentadas por entidades de entrada para uma floresta precisam ser cuidadosamente inspecionadas para garantir que permitimos ou emitimos apenas as declarações corretas. As declarações inadequadas podem comprometer a segurança da floresta, e essa deve ser uma das principais considerações ao criar políticas de transformação para declarações que entram em uma floresta.  
@@ -184,7 +184,7 @@ Active Directory não é capaz de determinar a intenção nesse caso e entra em 
   
 4.  Se uma ação de regra se referir a um identificador que não foi usado na parte da lista de condições Select da regra, será um uso inválido. Isso causaria um erro de sintaxe.  
   
-    **Exemplo Referência de identificador incorreta @ no__t-0  
+    **Exemplo: referência de identificador incorreta**  
     A regra a seguir ilustra um identificador incorreto usado na ação de regra.  
   
     ```  
@@ -233,9 +233,9 @@ Esta seção ilustra alguns exemplos de regras que são escritas com sintaxe inc
   
    Este exemplo tem um ponto e vírgula usado incorretamente no lugar de dois-pontos.   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados da política.*  
-   número de @no__t 0Line: 1, número da coluna: 2, token de erro:;. Linha: ' C1; [] = > problema (declaração = C1); '. *  
-   erro de @no__t 0Parser: 'POLICY0030: Erro de sintaxe, '; ' inesperado, esperando um dos seguintes: ': '. ' *  
+   *POLICY0002: não foi possível analisar os dados da política.*  
+   *Número da linha: 1, número da coluna: 2, token de erro:;. Linha: ' C1; [] = > problema (declaração = C1); '.*  
+   *Erro do analisador: ' POLICY0030: erro de sintaxe, '; ' inesperado, esperando um dos seguintes: ': '. '*  
   
 2. Exemplo:  
   
@@ -245,7 +245,7 @@ Esta seção ilustra alguns exemplos de regras que são escritas com sintaxe inc
   
    Neste exemplo, a marca de identificador na instrução de emissão de cópia é indefinida.   
    **Mensagem de erro**:   
-   *POLICY0011: Nenhuma condição na regra de declaração corresponde à marca de condição especificada em CopyIssuanceStatement: ' C2 '.*  
+   *POLICY0011: nenhuma condição na regra de declaração corresponde à marca de condição especificada em CopyIssuanceStatement: ' C2 '.*  
   
 3. Exemplo:  
   
@@ -255,9 +255,9 @@ Esta seção ilustra alguns exemplos de regras que são escritas com sintaxe inc
   
    "bool" não é um terminal no idioma e não é um ValueType válido. Os terminais válidos são listados na seguinte mensagem de erro.   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados da política.*  
+   *POLICY0002: não foi possível analisar os dados da política.*  
    Número da linha: 1, número da coluna: 39, token de erro: "bool". Linha: ' C1: [tipo = = "x1", valor = = "1", ValueType = = "bool"] = > problema (declaração = C1); '.   
-   erro de @no__t 0Parser: 'POLICY0030: Erro de sintaxe, ' STRING ' inesperado, esperando um dos seguintes: ' INT64_TYPE ' ' UINT64_TYPE ' ' STRING_TYPE ' ' BOOLEAN_TYPE ' ' IDENTIFIER ' *  
+   *Erro do analisador: ' POLICY0030: erro de sintaxe, ' STRING ' inesperado, esperando um dos seguintes: ' INT64_TYPE ' ' UINT64_TYPE ' ' STRING_TYPE ' ' BOOLEAN_TYPE ' ' IDENTIFIER '*  
   
 4. Exemplo:  
   
@@ -267,8 +267,8 @@ Esta seção ilustra alguns exemplos de regras que são escritas com sintaxe inc
   
    O número **1** neste exemplo não é um token válido no idioma e esse uso não é permitido em uma condição de correspondência. Ele precisa ser colocado entre aspas duplas para torná-la uma cadeia de caracteres.   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados da política.*  
-   número de @no__t 0Line: 1, número da coluna: 23, token de erro: 1. Linha: ' C1: [type = = "x1", valor = = 1, ValueType = = "bool"] = > problema (declaração = C1); '. erro de * @ no__t-1Parser: 'POLICY0029: Entrada inesperada. </em>  
+   *POLICY0002: não foi possível analisar os dados da política.*  
+   *Número da linha: 1, número da coluna: 23, token de erro: 1. linha: ' C1: [tipo = = "x1", valor = = 1, ValueType = = "bool"] = > problema (declaração = C1); '.* <em>Erro do analisador: ' POLICY0029: entrada inesperada.</em>  
   
 5. Exemplo:  
   
@@ -280,10 +280,10 @@ Esta seção ilustra alguns exemplos de regras que são escritas com sintaxe inc
   
    Este exemplo usou um sinal de igualdade duplo (= =) em vez de um único sinal de igual (=).   
    **Mensagem de erro:**  
-   *POLICY0002: Não foi possível analisar os dados da política.*  
-   número de @no__t 0Line: 1, número da coluna: 91, token de erro: = =. Linha: ' C1: [type = = "x1", valor = = "1", *  
+   *POLICY0002: não foi possível analisar os dados da política.*  
+   *Número da linha: 1, número da coluna: 91, token de erro: = =. Linha: ' C1: [type = = "x1", valor = = "1",*  
    *ValueType = = "booliano"] = > problema (tipo = C1. Type, valor = "0", ValueType = = "booliano"); ".*  
-   erro de @no__t 0Parser: 'POLICY0030: Erro de sintaxe, ' = = ' inesperado, esperando um dos seguintes: ' = ' *  
+   *Erro do analisador: ' POLICY0030: erro de sintaxe, ' = = ' inesperado, esperando um dos seguintes: ' = '*  
   
 6. Exemplo:  
   
@@ -301,7 +301,7 @@ A tabela a seguir lista o conjunto completo de cadeias de caracteres de terminal
 |String|Componentes|  
 |----------|------------|  
 |"= >"|DIZ|  
-|";"|PONTO E VÍRGULA|  
+|";"|PONTO E vírgula|  
 |":"|PONTOS|  
 |","|PONTOS|  
 |"."|FINAL|  
@@ -313,15 +313,15 @@ A tabela a seguir lista o conjunto completo de cadeias de caracteres de terminal
 |"!="|NEQ|  
 |"=~"|REGEXP_MATCH|  
 |"!~"|REGEXP_NOT_MATCH|  
-|"="|CANCELE|  
-|"& &"|AND|  
+|"="|Cancele|  
+|"& &"|E|  
 |lo|PROBLEMA|  
 |Escreva|TYPE|  
 |valor|VALOR|  
 |ValueType|VALUE_TYPE|  
 |enção|ENÇÃO|  
 |"[_A-Za-z] [_A-Za-z0-9] *"|ID|  
-|"\\" [^ \\ "\n] * \\" "|STRINGS|  
+|"\\" [^\\"\n] *\\" "|Strings|  
 |UInt64|UINT64_TYPE|  
 |Int64|INT64_TYPE|  
 |Strings|STRING_TYPE|  

@@ -266,7 +266,7 @@ Por exemplo, quero mover uma máquina virtual de conjunto de clusters de CLUSTER
 
         Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
 
-Observe que isso não move os arquivos de configuração ou de armazenamento da máquina virtual.  Isso não é necessário, pois o caminho para a máquina virtual permanece \\como SOFS-CLUSTER1\VOLUME1.  Depois que uma máquina virtual é registrada com conjuntos de clusters tem o caminho de compartilhamento do servidor de arquivos de infraestrutura, as unidades e a máquina virtual não precisam estar no mesmo computador que a máquina virtual.
+Observe que isso não move os arquivos de configuração ou de armazenamento da máquina virtual.  Isso não é necessário, pois o caminho para a máquina virtual permanece como \\SOFS-CLUSTER1\VOLUME1.  Depois que uma máquina virtual é registrada com conjuntos de clusters tem o caminho de compartilhamento do servidor de arquivos de infraestrutura, as unidades e a máquina virtual não precisam estar no mesmo computador que a máquina virtual.
 
 ## <a name="creating-availability-sets-fault-domains"></a>Criando domínios de falha de conjuntos de disponibilidade
 
@@ -325,55 +325,55 @@ Por exemplo, o comando para remover o cluster CLUSTER1 dos conjuntos de clusters
 
 ## <a name="frequently-asked-questions-faq"></a>Perguntas frequentes (FAQ)
 
-**Pergunta** No meu conjunto de clusters, estou limitado a usar apenas clusters hiperconvergentes? <br>
-**Atenda** Nº  Você pode misturar Espaços de Armazenamento Diretos com clusters tradicionais.
+**Pergunta:** No meu conjunto de clusters, estou limitado a usar apenas clusters hiperconvergentes? <br>
+**Resposta:** Não.  Você pode misturar Espaços de Armazenamento Diretos com clusters tradicionais.
 
-**Pergunta** Posso gerenciar meu conjunto de clusters por meio de System Center Virtual Machine Manager? <br>
-**Atenda** Atualmente, o System Center Virtual Machine Manager não dá suporte a conjuntos de cluster <br><br> **Pergunta** Os clusters do Windows Server 2012 R2 ou 2016 podem coexistir no mesmo conjunto de cluster? <br>
-**Pergunta** Posso migrar cargas de trabalho de clusters do Windows Server 2012 R2 ou 2016 simplesmente fazendo com que esses clusters ingressem no mesmo conjunto de cluster? <br>
-**Atenda** Os conjuntos de clusters são uma nova tecnologia introduzida no Windows Server 2019, portanto, não existe em versões anteriores. Clusters de nível inferior baseados em sistema operacional não podem ingressar em um conjunto de clusters. No entanto, a tecnologia de atualizações sem interrupção do sistema operacional do cluster deve fornecer a funcionalidade de migração que você está procurando atualizando esses clusters para o Windows Server 2019.
+**Pergunta:** Posso gerenciar meu conjunto de clusters por meio de System Center Virtual Machine Manager? <br>
+**Resposta:** Atualmente, o System Center Virtual Machine Manager não dá suporte a conjuntos de cluster <br><br> **Pergunta:** Os clusters do Windows Server 2012 R2 ou 2016 podem coexistir no mesmo conjunto de cluster? <br>
+**Pergunta:** Posso migrar cargas de trabalho de clusters do Windows Server 2012 R2 ou 2016 simplesmente fazendo com que esses clusters ingressem no mesmo conjunto de cluster? <br>
+**Resposta:** Os conjuntos de clusters são uma nova tecnologia introduzida no Windows Server 2019, portanto, não existe em versões anteriores. Clusters de nível inferior baseados em sistema operacional não podem ingressar em um conjunto de clusters. No entanto, a tecnologia de atualizações sem interrupção do sistema operacional do cluster deve fornecer a funcionalidade de migração que você está procurando atualizando esses clusters para o Windows Server 2019.
 
-**Pergunta** Os conjuntos de clusters podem permitir que eu dimensione o armazenamento ou a computação (sozinho)? <br>
-**Atenda** Sim, simplesmente adicionando um espaço de armazenamento direto ou um cluster do Hyper-V tradicional. Com conjuntos de clusters, é uma alteração simples da taxa de computação para armazenamento, mesmo em um conjunto de clusters hiperconvergente.
+**Pergunta:** Os conjuntos de clusters podem permitir que eu dimensione o armazenamento ou a computação (sozinho)? <br>
+**Resposta:** Sim, simplesmente adicionando um espaço de armazenamento direto ou um cluster do Hyper-V tradicional. Com conjuntos de clusters, é uma alteração simples da taxa de computação para armazenamento, mesmo em um conjunto de clusters hiperconvergente.
 
-**Pergunta** O que é a ferramenta de gerenciamento para conjuntos de clusters <br>
-**Atenda** PowerShell ou WMI nesta versão.
+**Pergunta:** O que é a ferramenta de gerenciamento para conjuntos de clusters <br>
+**Resposta:** PowerShell ou WMI nesta versão.
 
-**Pergunta** Como a migração dinâmica entre clusters funciona com processadores de diferentes gerações?  <br>
-**Atenda** Os conjuntos de clusters não solucionam as diferenças do processador e substituem o que o Hyper-V suporta atualmente.  Portanto, o modo de compatibilidade do processador deve ser usado com migrações rápidas.  A recomendação para conjuntos de clusters é usar o mesmo hardware de processador em cada cluster individual, bem como todo o conjunto de clusters para migrações ao vivo entre clusters.
+**Pergunta:** Como a migração dinâmica entre clusters funciona com processadores de diferentes gerações?  <br>
+**Resposta:** Os conjuntos de clusters não solucionam as diferenças do processador e substituem o que o Hyper-V suporta atualmente.  Portanto, o modo de compatibilidade do processador deve ser usado com migrações rápidas.  A recomendação para conjuntos de clusters é usar o mesmo hardware de processador em cada cluster individual, bem como todo o conjunto de clusters para migrações ao vivo entre clusters.
 
-**Pergunta** As máquinas virtuais de conjunto de cluster podem fazer failover automaticamente em uma falha de cluster?  <br>
-**Atenda** Nesta versão, as máquinas virtuais do conjunto de clusters só podem ser migradas ao vivo manualmente entre clusters; Mas não é possível fazer failover automaticamente. 
+**Pergunta:** As máquinas virtuais de conjunto de cluster podem fazer failover automaticamente em uma falha de cluster?  <br>
+**Resposta:** Nesta versão, as máquinas virtuais do conjunto de clusters só podem ser migradas ao vivo manualmente entre clusters; Mas não é possível fazer failover automaticamente. 
 
-**Pergunta** Como garantir que o armazenamento seja resiliente a falhas de cluster? <br>
-**Atenda** Use a solução de réplica de armazenamento de cluster cruzado (SR) em clusters de membros para obter resiliência de armazenamento para falhas de cluster.
+**Pergunta:** Como garantir que o armazenamento seja resiliente a falhas de cluster? <br>
+**Resposta:** Use a solução de réplica de armazenamento de cluster cruzado (SR) em clusters de membros para obter resiliência de armazenamento para falhas de cluster.
 
-**Pergunta** Uso a réplica de armazenamento (SR) para replicar entre clusters de membros. Os caminhos UNC de armazenamento do namespace do conjunto de clusters mudam no failover do SR para o destino da réplica Espaços de Armazenamento Diretos cluster? <br>
-**Atenda** Nesta versão, uma alteração de referência de namespace de conjunto de clusters não ocorre com o failover do SR. Deixe a Microsoft saber se esse cenário é essencial para você e como você planeja usá-lo.
+**Pergunta:** Uso a réplica de armazenamento (SR) para replicar entre clusters de membros. Os caminhos UNC de armazenamento do namespace do conjunto de clusters mudam no failover do SR para o destino da réplica Espaços de Armazenamento Diretos cluster? <br>
+**Resposta:** Nesta versão, uma alteração de referência de namespace de conjunto de clusters não ocorre com o failover do SR. Deixe a Microsoft saber se esse cenário é essencial para você e como você planeja usá-lo.
 
-**Pergunta** É possível fazer failover de máquinas virtuais entre domínios de falha em uma situação de recuperação de desastre (digamos que o domínio de falha inteiro foi desativado)? <br>
-**Atenda** Não, observe que o failover entre clusters em um domínio de falha lógico ainda não tem suporte. 
+**Pergunta:** É possível fazer failover de máquinas virtuais entre domínios de falha em uma situação de recuperação de desastre (digamos que o domínio de falha inteiro foi desativado)? <br>
+**Resposta:** Não, observe que o failover entre clusters em um domínio de falha lógico ainda não tem suporte. 
 
-**Pergunta** Meu conjunto de clusters pode abranger clusters em vários sites (ou domínios DNS)? <br> 
-**Atenda** Este é um cenário não testado e não está imediatamente planejado para o suporte de produção. Deixe a Microsoft saber se esse cenário é essencial para você e como você planeja usá-lo.
+**Pergunta:** Meu conjunto de clusters pode abranger clusters em vários sites (ou domínios DNS)? <br> 
+**resposta:** este é um cenário não testado e não está imediatamente planejado para o suporte de produção. Deixe a Microsoft saber se esse cenário é essencial para você e como você planeja usá-lo.
 
-**Pergunta** O conjunto de clusters funciona com IPv6? <br>
-**Atenda** Há suporte para IPv4 e IPv6 com conjuntos de cluster como com clusters de failover.
+**Pergunta:** O conjunto de clusters funciona com IPv6? <br>
+**Resposta:** Há suporte para IPv4 e IPv6 com conjuntos de cluster como com clusters de failover.
 
-**Pergunta** Quais são os requisitos de floresta Active Directory para conjuntos de clusters <br>
-**Atenda** Todos os clusters de membros devem estar na mesma floresta do AD.
+**Pergunta:** Quais são os requisitos de floresta Active Directory para conjuntos de clusters <br>
+**Resposta:** Todos os clusters de membros devem estar na mesma floresta do AD.
 
-**Pergunta** Quantos clusters ou nós podem fazer parte de um único conjunto de clusters? <br>
-**Atenda** No Windows Server 2019, os conjuntos de cluster foram testados e têm suporte até 64 nós de cluster total. No entanto, a arquitetura de conjuntos de clusters é dimensionada para limites muito maiores e não é algo embutido em código para um limite. Informe a Microsoft se a escala maior é essencial para você e como você planeja usá-la.
+**Pergunta:** Quantos clusters ou nós podem fazer parte de um único conjunto de clusters? <br>
+**Resposta:** No Windows Server 2019, os conjuntos de cluster foram testados e têm suporte até 64 nós de cluster total. No entanto, a arquitetura de conjuntos de clusters é dimensionada para limites muito maiores e não é algo embutido em código para um limite. Informe a Microsoft se a escala maior é essencial para você e como você planeja usá-la.
 
-**Pergunta** Todos os clusters de Espaços de Armazenamento Diretos em um conjunto de clusters formam um único pool de armazenamento? <br>
-**Atenda** Nº Espaços de Armazenamento Diretos tecnologia ainda opera em um único cluster e não em clusters de membros em um conjunto de clusters.
+**Pergunta:** Todos os clusters de Espaços de Armazenamento Diretos em um conjunto de clusters formam um único pool de armazenamento? <br>
+**Resposta:** Não. Espaços de Armazenamento Diretos tecnologia ainda opera em um único cluster e não em clusters de membros em um conjunto de clusters.
 
-**Pergunta** O namespace do conjunto de clusters está altamente disponível? <br>
-**Atenda** Sim, o namespace do conjunto de clusters é fornecido por meio de um servidor de namespace SOFS de referência (CA) continuamente disponível em execução no cluster de gerenciamento. A Microsoft recomenda ter um número suficiente de máquinas virtuais de clusters de membros para torná-la resiliente a falhas localizadas em todo o cluster. No entanto, para considerar falhas catastróficas inesperadas – por exemplo, todas as máquinas virtuais no cluster de gerenciamento ficam inativas ao mesmo tempo – as informações de referência são armazenadas em cache de forma persistente em cada nó de conjunto de cluster, mesmo entre reinicializações.
+**Pergunta:** O namespace do conjunto de clusters está altamente disponível? <br>
+**Resposta:** Sim, o namespace do conjunto de clusters é fornecido por meio de um servidor de namespace SOFS de referência (CA) continuamente disponível em execução no cluster de gerenciamento. A Microsoft recomenda ter um número suficiente de máquinas virtuais de clusters de membros para torná-la resiliente a falhas localizadas em todo o cluster. No entanto, para considerar falhas catastróficas inesperadas – por exemplo, todas as máquinas virtuais no cluster de gerenciamento ficam inativas ao mesmo tempo – as informações de referência são armazenadas em cache de forma persistente em cada nó de conjunto de cluster, mesmo entre reinicializações.
  
-**Pergunta** O cluster define o acesso de armazenamento baseado em namespace para reduzir o desempenho do armazenamento em um conjunto de clusters? <br>
-**Atenda** Nº O namespace do conjunto de clusters oferece um namespace de referência de sobreposição dentro de um conjunto de clusters – conceitualmente, como Sistema de Arquivos Distribuído namespaces (DFSN). E, ao contrário de DFSN, todos os metadados de referência de namespace de conjunto de clusters são preenchidos automaticamente e atualizados automaticamente em todos os nós sem nenhuma intervenção do administrador, portanto, quase não há sobrecarga de desempenho no caminho de acesso de armazenamento. 
+**Pergunta:** O cluster define o acesso de armazenamento baseado em namespace para reduzir o desempenho do armazenamento em um conjunto de clusters? <br>
+**Resposta:** Não. O namespace do conjunto de clusters oferece um namespace de referência de sobreposição dentro de um conjunto de clusters – conceitualmente, como Sistema de Arquivos Distribuído namespaces (DFSN). E, ao contrário de DFSN, todos os metadados de referência de namespace de conjunto de clusters são preenchidos automaticamente e atualizados automaticamente em todos os nós sem nenhuma intervenção do administrador, portanto, quase não há sobrecarga de desempenho no caminho de acesso de armazenamento. 
 
-**Pergunta** Como fazer backup de metadados do conjunto de clusters? <br>
-**Atenda** Essa diretriz é a mesma do cluster de failover. O backup do estado do sistema também fará o backup do estado do cluster.  Por meio do Backup do Windows Server, você pode fazer restaurações apenas do banco de dados de cluster de um nó (o que nunca deve ser necessário devido a uma série de lógica de auto-recuperação que temos) ou fazer uma restauração autoritativa para reverter todo o banco de dados de cluster em todos os nós. No caso de conjuntos de cluster, a Microsoft recomenda fazer uma restauração autoritativa primeiro no cluster de membros e, em seguida, no cluster de gerenciamento, se necessário.
+**Pergunta:** Como fazer backup de metadados do conjunto de clusters? <br>
+**Resposta:** Essa diretriz é a mesma do cluster de failover. O backup do estado do sistema também fará o backup do estado do cluster.  Por meio do Backup do Windows Server, você pode fazer restaurações apenas do banco de dados de cluster de um nó (o que nunca deve ser necessário devido a uma série de lógica de auto-recuperação que temos) ou fazer uma restauração autoritativa para reverter todo o banco de dados de cluster em todos os nós. No caso de conjuntos de cluster, a Microsoft recomenda fazer uma restauração autoritativa primeiro no cluster de membros e, em seguida, no cluster de gerenciamento, se necessário.

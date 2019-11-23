@@ -30,9 +30,9 @@ Quando o cliente de AD FS solicita primeiro um recurso, o servidor de Federaçã
 
 
 ## <a name="configure-identity-provider-to-use-certain-email-suffixes"></a>Configure o Provedor de identidade para usar determinados sufixos de email  
-Uma organização pode federar com vários provedores de declarações. O AD FS agora fornece a funcionalidade no @ no__t-0box para que os administradores listem os sufixos, por exemplo, @us.contoso.com, @eu.contoso.com, que é suportado por um provedor de declarações e habilitá-lo para a descoberta de sufixo @ no__t-3based. Com essa configuração, os usuários finais podem digitar sua conta institucional e AD FS seleciona automaticamente o provedor de declarações correspondente.  
+Uma organização pode federar com vários provedores de declarações. O AD FS agora fornece a funcionalidade de caixa de\-para que os administradores listem os sufixos, por exemplo, @us.contoso.com, @eu.contoso.com, com suporte de um provedor de declarações e habilitá-lo para a descoberta baseada em\-de sufixo. Com essa configuração, os usuários finais podem digitar sua conta institucional e AD FS seleciona automaticamente o provedor de declarações correspondente.  
   
-Para configurar um provedor de identidade \(IDP @ no__t-1, como `fabrikam`, para usar determinados sufixos de email, use o seguinte cmdlet e sintaxe do Windows PowerShell.  
+Para configurar um provedor de identidade \(\)IDP, como `fabrikam`, para usar determinados sufixos de email, use o seguinte cmdlet e sintaxe do Windows PowerShell.  
   
 
 `Set-AdfsClaimsProviderTrust -TargetName fabrikam -OrganizationalAccountSuffix @("fabrikam.com";"fabrikam2.com") ` 
@@ -45,7 +45,7 @@ Para configurar um provedor de identidade \(IDP @ no__t-1, como `fabrikam`, para
 ## <a name="configure-an-identity-provider-list-per-relying-party"></a>Configurar uma lista de provedores de identidade por terceira parte confiável.  
 Para alguns cenários, uma organização pode desejar que os usuários finais vejam somente os provedores de declarações específicos para um aplicativo, de forma que somente um subconjunto de provedores de declarações é exibido na página de descoberta de realm inicial.  
   
-Para configurar uma lista IDP por parte confiável \(RP @ no__t-1, use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
+Para configurar uma lista IDP por parte confiável \(RP\), use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
   
  
 `Set-AdfsRelyingPartyTrust -TargetName claimapp -ClaimsProviderName @("Fabrikam","Active Directory") ` 
@@ -61,7 +61,7 @@ Para ignorar o HRD para a intranet, use o seguinte cmdlet e sintaxe do Windows P
  
   
 > [!IMPORTANT]  
-> Observe que, se uma lista de provedores de identidade para uma terceira parte confiável tiver sido configurada, mesmo que a configuração anterior tenha sido habilitada e o usuário acesse a partir da intranet, AD FS ainda mostrará a página Home Realm Discovery \(HRD @ no__t-1. Para ignorar a HRD nesse caso, você precisa assegurar que o "Active Directory" também tenha sido adicionado à lista de IDP para essa terceira parte confiável.  
+> Observe que, se uma lista de provedores de identidade para uma terceira parte confiável tiver sido configurada, mesmo que a configuração anterior tenha sido habilitada e o usuário acesse a partir da intranet, AD FS ainda mostrará a página de\) do Home Realm Discovery \(HRD. Para ignorar a HRD nesse caso, você precisa assegurar que o "Active Directory" também tenha sido adicionado à lista de IDP para essa terceira parte confiável.  
 
 ## <a name="additional-references"></a>Referências adicionais 
 [AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  

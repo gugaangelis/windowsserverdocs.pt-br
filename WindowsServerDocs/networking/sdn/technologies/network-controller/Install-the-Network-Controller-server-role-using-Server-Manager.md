@@ -18,12 +18,12 @@ ms.locfileid: "71405838"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>Instalar a função de servidor do controlador de rede usando Gerenciador do Servidor
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico fornece instruções sobre como instalar a função de servidor do controlador de rede usando Gerenciador do Servidor.
 
 >[!IMPORTANT]
->Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma máquina virtual do Hyper-V \(VM @ no__t-1 que está instalado em um host do Hyper-V. Depois de ter instalado o controlador de rede em VMs em três hosts Hyper @ no__t-0V diferentes, você deve habilitar os hosts do Hyper @ no__t-1V para a rede definida pelo software \(SDN @ no__t-3 adicionando os hosts ao controlador de rede usando o Windows PowerShell comando **New-NetworkControllerServer**. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione. Para obter mais informações, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma máquina virtual do Hyper-V \(\) da VM que está instalada em um host do Hyper-V. Depois de instalar o controlador de rede em VMs em três hosts Hyper\-V diferentes, você deve habilitar os hosts do Hyper\-V para a rede definida pelo software \(SDN\) adicionando os hosts ao controlador de rede usando o comando **New-NetworkControllerServer**do Windows PowerShell. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione. Para obter mais informações, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
   
 Depois de instalar o controlador de rede, você deve usar comandos do Windows PowerShell para configuração adicional do controlador de rede. Para obter mais informações, consulte [implantar o controlador de rede usando o Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md).  
   

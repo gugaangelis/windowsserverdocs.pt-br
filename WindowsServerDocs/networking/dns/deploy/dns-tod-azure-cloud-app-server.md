@@ -17,7 +17,7 @@ ms.locfileid: "71406201"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Respostas de DNS com base na hora do dia com o Servidor de aplicativos da nuvem do Azure
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a distribuir o tráfego do aplicativo em diferentes instâncias distribuídas geograficamente de um aplicativo usando políticas de DNS com base na hora do dia. 
 
@@ -40,7 +40,7 @@ Com um surto recente nos negócios, o contosogiftservices.com tem um número mai
 
 Os serviços de presentes da Contoso executam uma análise de site e descobre que todas as noites entre as horas locais, há um surto no tráfego para o servidor Web de Seattle. O servidor Web não pode ser dimensionado para lidar com o aumento de tráfego nesses horários de pico, resultando em negação de serviço aos clientes. 
 
-Para garantir que os clientes do contosogiftservices.com tenham uma experiência responsiva do site, os serviços de presentes da Contoso decidem que, durante essas horas, ele alugará uma máquina virtual \(VM @ no__t-1 no Microsoft Azure para hospedar uma cópia de seu servidor Web.  
+Para garantir que os clientes do contosogiftservices.com tenham uma experiência responsiva do site, os serviços de presentes da Contoso decidem que, durante essas horas, ele alugará uma máquina virtual \(VM\) no Microsoft Azure para hospedar uma cópia de seu servidor Web.  
 
 Os serviços de presentes da Contoso recebem um endereço IP público do Azure para a VM (192.68.31.44) e desenvolve a automação para implantar o servidor Web todos os dias no Azure entre 5-10 PM, permitindo um período de contingência de uma hora.
 
@@ -100,7 +100,7 @@ A próxima etapa é adicionar os registros que representam o host do servidor We
 
 No AzureZoneScope, o registro www.contosogiftservices.com é adicionado com o endereço IP 192.68.31.44, que está localizado na nuvem pública do Azure. 
 
-Da mesma forma, no escopo de zona padrão @no__t -0contosogiftservices. com @ no__t-1, um registro @no__t -2www. contosogiftservices. com @ no__t-3 é adicionado com o endereço IP 192.68.30.2 do servidor Web em execução no datacenter local de Seattle.
+Da mesma forma, no escopo de zona padrão \(contosogiftservices.com\), um registro \(\) de www.contosogiftservices.com é adicionado com o endereço IP 192.68.30.2 do servidor Web em execução no datacenter local de Seattle.
 
 No segundo cmdlet abaixo, o parâmetro – ZoneScope não está incluído. Por isso, os registros são adicionados no ZoneScope padrão. 
 

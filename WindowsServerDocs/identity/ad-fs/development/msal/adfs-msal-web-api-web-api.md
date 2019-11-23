@@ -26,7 +26,7 @@ Antes de ler este artigo, você deve estar familiarizado com os [conceitos de AD
 
 
 - Um cliente (aplicativo Web)-não representado no diagrama abaixo – chama uma API Web protegida e fornece um token de portador JWT em seu cabeçalho http "Authorization". 
-- A API Web protegida valida o token e usa o  method MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) para solicitar (de AD FS) outro token para que ele possa, por sua vez, chamar uma segunda API da Web (chamada de API da Web downstream) em nome do usuário. 
+- A API da Web protegida valida o token e usa o método MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) para solicitar (de AD FS) outro token para que ele possa, por sua vez, chamar uma segunda API da Web (chamada de API da Web downstream) em nome do usuário. 
 - A API Web protegida usa esse token para chamar uma API downstream. Ele também pode chamar AcquireTokenSilentlater para solicitar tokens para outras APIs de downstream (mas ainda em nome do mesmo usuário). O AcquireTokenSilent atualiza o token quando necessário.  
  
      ![visão geral](media/adfs-msal-web-api-web-api/webapi1.png)
@@ -49,7 +49,7 @@ Esta seção mostra como registrar o aplicativo nativo como um cliente público 
 
       ![Registro do aplicativo](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. Copie o valor do **identificador de cliente** . Ele será usado posteriormente como o valor de **ClientID** no arquivo **app. config** do aplicativo. Insira o seguinte para **URI de redirecionamento:**  -  https://ToDoListClient. Clique em **Adicionar**. Clique em **Avançar**. 
+  3. Copie o valor do **identificador de cliente** . Ele será usado posteriormente como o valor de **ClientID** no arquivo **app. config** do aplicativo. Insira o seguinte para **URI de redirecionamento:**  - https://ToDoListClient. Clique em **Adicionar**. Clique em **Avançar**. 
   
       ![Registro do aplicativo](media/adfs-msal-web-api-web-api/webapi3.png)
   
@@ -142,12 +142,12 @@ Esta seção mostra como registrar o aplicativo nativo como um cliente público 
 
   29. Clique em OK em WebApiToWebApi – tela de propriedades da API Web
 
-  30. Na tela de propriedades do WebApiToWebApi, selecione Selecionar WebApiToWebApi – API Web 2 e clique em Editar...</br> 
-   ![App reg ](media/adfs-msal-web-api-web-api/webapi22.png)
+  30. Na tela de propriedades do WebApiToWebApi, selecione Selecionar WebApiToWebApi – API Web 2 e clique em Editar...</br>](media/adfs-msal-web-api-web-api/webapi22.png) de ![do aplicativo de  
+  
 
   31. Na tela WebApiToWebApi – Propriedades da API Web 2, selecione a guia regras de transformação de emissão e clique em Adicionar regra... 
 
-  32. Em Adicionar Assistente de regra de declaração de transformação, selecione enviar declarações usando uma regra personalizada de dopdown e clique em Avançar ![App reg ](media/adfs-msal-web-api-web-api/webapi23.png)
+  32. Em Adicionar Assistente de regra de declaração de transformação, selecione enviar declarações usando uma regra personalizada de dopdown e clique em Avançar ![aplicativo reg](media/adfs-msal-web-api-web-api/webapi23.png)
 
   33. Insira PassAllClaims no nome da regra de declaração: campo e **x: [] = > problema (declaração = x);** regra de declaração no campo **regra personalizada:** e clique em **concluir**.  
    

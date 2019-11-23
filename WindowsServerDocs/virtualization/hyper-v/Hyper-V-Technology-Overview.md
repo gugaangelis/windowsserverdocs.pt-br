@@ -68,7 +68,7 @@ Para obter um resumo dos recursos introduzidos nesta versão, consulte [What ' s
 
 O Hyper-V está disponível no Windows Server e no Windows, como uma função de servidor disponível para versões x64 do Windows Server. Para obter instruções sobre o servidor, consulte [instalar a função Hyper-V no Windows Server](get-started/Install-the-Hyper-V-role-on-Windows-Server.md). No Windows, ele está disponível como [recurso](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) em algumas versões de 64 bits do Windows. Ele também está disponível como um produto de servidor autônomo e baixável, [Microsoft Hyper-V Server](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019).
 
-## <a name="supported-operating-systems"></a>Sistemas operacionais com suporte
+## <a name="supported-operating-systems"></a>Sistemas operacionais compatíveis
 
 Muitos sistemas operacionais serão executados em máquinas virtuais. Em geral, um sistema operacional que usa uma arquitetura x86 será executado em uma máquina virtual do Hyper-V. No entanto, nem todos os sistemas operacionais que podem ser executados são testados e têm suporte da Microsoft. Para obter listas de o que tem suporte, consulte:
 
@@ -90,7 +90,7 @@ O Hyper-V também tem ferramentas para gerenciamento e conectividade. Você pode
 
 - Gerenciador Hyper-V
 - [Módulo do Hyper-V para Windows PowerShell](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [Conexão de máquina Virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(Sometimes chamada VMConnect @ no__t-2
+- A [conexão de máquina Virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(às vezes chamada de VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>Tecnologias relacionadas
@@ -98,7 +98,7 @@ O Hyper-V também tem ferramentas para gerenciamento e conectividade. Você pode
 Essas são algumas tecnologias da Microsoft que geralmente são usadas com o Hyper-V:
 
 - [Clustering de failover](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [Serviços de área de trabalho remota](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
+- [Serviços de Área de Trabalho Remota](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
 - [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
 
 Várias tecnologias de armazenamento: volumes compartilhados do cluster, SMB 3,0, espaços de armazenamento diretos

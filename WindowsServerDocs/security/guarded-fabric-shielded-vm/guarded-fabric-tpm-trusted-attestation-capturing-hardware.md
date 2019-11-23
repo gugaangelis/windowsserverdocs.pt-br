@@ -19,7 +19,7 @@ ms.locfileid: "71403520"
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
-O modo TPM usa um identificador TPM (também chamado de identificador de plataforma ou chave de endosso \[EKpub @ no__t-1) para começar a determinar se um host específico está autorizado como "protegido". Esse modo de atestado usa medidas de inicialização segura e integridade de código para garantir que um determinado host Hyper-V esteja em um estado íntegro e esteja executando apenas código confiável. Para que o atestado entenda o que é e não está íntegro, você deve capturar os seguintes artefatos:
+O modo TPM usa um identificador TPM (também chamado de identificador de plataforma ou chave de endosso \[EKpub\]) para começar a determinar se um host específico está autorizado como "protegido". Esse modo de atestado usa medidas de inicialização segura e integridade de código para garantir que um determinado host Hyper-V esteja em um estado íntegro e esteja executando apenas código confiável. Para que o atestado entenda o que é e não está íntegro, você deve capturar os seguintes artefatos:
 
 1.  Identificador TPM (EKpub)
 
@@ -74,8 +74,8 @@ Cada host protegido deve ter uma política de integridade de código aplicada pa
 
 A partir do Windows Server versão 1709, as políticas de integridade de código de exemplo estão incluídas no Windows em C:\Windows\schemas\CodeIntegrity\ExamplePolicies. Duas políticas são recomendadas para o Windows Server:
 
-- **AllowMicrosoft**: Permite todos os arquivos assinados pela Microsoft. Essa política é recomendada para aplicativos de servidor, como SQL ou Exchange, ou se o servidor for monitorado por agentes publicados pela Microsoft.
-- **DefaultWindows_Enforced**: Permite apenas os arquivos fornecidos no Windows e não permite que outros aplicativos sejam lançados pela Microsoft, como o Office. Essa política é recomendada para servidores que executam apenas funções de servidor e recursos internos, como o Hyper-V. 
+- **AllowMicrosoft**: permite todos os arquivos assinados pela Microsoft. Essa política é recomendada para aplicativos de servidor, como SQL ou Exchange, ou se o servidor for monitorado por agentes publicados pela Microsoft.
+- **DefaultWindows_Enforced**: permite apenas os arquivos fornecidos no Windows e não permite que outros aplicativos sejam lançados pela Microsoft, como o Office. Essa política é recomendada para servidores que executam apenas funções de servidor e recursos internos, como o Hyper-V. 
 
 É recomendável que você primeiro crie a política CI no modo de auditoria (log) para ver se está faltando alguma coisa e, em seguida, impor a política para cargas de trabalho de produção do host. 
 
@@ -128,7 +128,7 @@ Para obter mais informações sobre os níveis de regra de política de CI dispo
     >[!NOTE]
     >Tenha cuidado ao aplicar as políticas de CI aos hosts e ao atualizar qualquer software nesses computadores. Qualquer driver de modo kernel que não esteja em conformidade com a política de CI pode impedir que o computador seja inicializado. 
 
-6.  Forneça o arquivo binário (neste exemplo, HW1CodeIntegrity @ no__t-0enforced. p7b) ao administrador do HGS.
+6.  Forneça o arquivo binário (neste exemplo, HW1CodeIntegrity\_imforced. p7b) para o administrador do HGS.
 
 7.  No domínio HGS, copie a política de integridade de código para um servidor HGS e execute o comando a seguir.
 

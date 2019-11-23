@@ -16,11 +16,11 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408723"
 ---
-# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apêndice C: Contas e grupos protegidos no Active Directory
+# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apêndice C: Contas protegidas e grupos no Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apêndice C: Contas e grupos protegidos no Active Directory
+## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apêndice C: Contas protegidas e grupos no Active Directory
 
 No Active Directory, um conjunto padrão de contas e grupos altamente privilegiados é considerado contas e grupos protegidos. Com a maioria dos objetos no Active Directory, os administradores delegados (usuários que têm permissões delegadas para gerenciar objetos Active Directory) podem alterar permissões nos objetos, incluindo alterar permissões para permitir que eles alterem associações de os grupos, por exemplo.  
 
@@ -88,7 +88,7 @@ Você pode forçar o SDProp a ser executado usando Ldp. exe ou executando um scr
 
    ![contas e grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)  
 
-4. Verifique se você se conectou com êxito, conforme indicado por **Dn: (RootDSE)**  na captura de tela a seguir, clique em **conexão** e clique em **associar**.  
+4. Verifique se você se conectou com êxito, conforme indicado por **DN: (RootDSE)** na captura de tela a seguir, clique em **conexão** e clique em **associar**.  
 
    ![contas e grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)  
 
@@ -107,7 +107,7 @@ Você pode forçar o SDProp a ser executado usando Ldp. exe ou executando um scr
 8. Na caixa de diálogo Modificar, clique em executar e verifique se as alterações feitas no objeto AdminSDHolder foram exibidas nesse objeto.  
 
 > [!NOTE]  
-> Para obter informações sobre como modificar o AdminSDHolder para permitir contas sem privilégios designadas para modificar a associação de grupos protegidos, consulte [Appendix I: Criando contas de gerenciamento para contas e grupos protegidos no Active Directory @ no__t-0.  
+> Para obter informações sobre como modificar o AdminSDHolder para permitir contas sem privilégios designadas para modificar a associação de grupos protegidos, consulte o [Apêndice I: Criando contas de gerenciamento para contas e grupos protegidos no Active Directory](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md).  
 
 Se preferir executar o SDProp manualmente via LDIFDE ou um script, você poderá criar uma entrada de modificação, conforme mostrado aqui:  
 
@@ -127,7 +127,7 @@ Você também pode forçar o SDProp a ser executado usando o LDP. exe ou executa
 
    ![contas e grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)  
 
-4. Verifique se você se conectou com êxito, conforme indicado por **Dn: (RootDSE)**  na captura de tela a seguir, clique em **conexão** e clique em **associar**.  
+4. Verifique se você se conectou com êxito, conforme indicado por **DN: (RootDSE)** na captura de tela a seguir, clique em **conexão** e clique em **associar**.  
 
    ![contas e grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)  
 

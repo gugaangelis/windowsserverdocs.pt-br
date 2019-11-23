@@ -33,7 +33,7 @@ Implementação do SDDC da Microsoft consiste nas tecnologias do Windows Server 
 
 As tecnologias integradas ao Windows Server e ao System Center são os blocos de construção principais da experiência do Windows Server SDDC. Mas, mesmo que seja uma plataforma virtualizada, ela ainda requer o hardware adequado. Os parceiros da Microsoft que participam das **soluções WSSD (definidas pelo software do Windows Server)** e os programas de **soluções do HCI Azure Stack** podem ajudar sua empresa a adquirir o hardware certo e colocá-lo em funcionamento no dia zero.
 
-![](media/sddc/video.png) **[assistir a um vídeo para saber mais sobre o SDDC da Microsoft](https://mva.microsoft.com/en-US/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
+![](media/sddc/video.png) **[Assista a um vídeo para saber mais sobre o SDDC da Microsoft](https://mva.microsoft.com/en-US/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
 
 ![](media/sddc/poster-ico.png) **[baixar um arquivo. pdf de tamanho do pôster desta página](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/media/sddc/sddc_poster_0801417_ANSI-E.pdf)**
 
@@ -71,7 +71,7 @@ O Hyper-V é uma tecnologia de virtualização com base em hipervisor para o Win
 
 ![](media/sddc/spacer1.png)![](media/sddc/hypervisor.png)
 
-![](media/sddc/learn.png) **[saiba mais sobre o hipervisor do Hyper-V](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
+![](media/sddc/learn.png) **[saiba mais sobre o hipervisor Hyper-V](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>Clustering de convidado com VHDX compartilhado
 
@@ -82,9 +82,9 @@ Flexível e seguro, e não vinculado à topologia de armazenamento subjacente, o
 ![](media/sddc/spacer1.png)![](media/sddc/cluster.png)
 
 - O VHDX compartilhado pode residir em um Volume Compartilhado do Cluster (CSV) no armazenamento de bloco ou no armazenamento SMB com base em arquivos.
-- Protected O VHDX compartilhado dá suporte à réplica do Hyper-V e ao backup em nível de host.
+- Protegido: o VHDX compartilhado oferece suporte à réplica do Hyper-V e ao backup em nível de host.
 
-![](media/sddc/learn.png) **[saiba mais sobre clustering de convidado com VHDX compartilhado](https://technet.microsoft.com/library/dn281956(v=ws.11).aspx)**
+![](media/sddc/learn.png) **[saiba mais sobre o clustering de convidado com VHDX compartilhado](https://technet.microsoft.com/library/dn281956(v=ws.11).aspx)**
 
 ### <a name="hyper-v-replica"></a>Réplica do Hyper-V
 
@@ -134,7 +134,7 @@ SET é uma solução alternativa de agrupamento NIC que você pode usar em ambie
 
 ![](media/sddc/spacer1.png)![](media/sddc/teaming.png)
 
-![](media/sddc/learn.png) **[saiba mais sobre as opções de agrupamento inserido](https://docs.microsoft.com/windows-server/networking/sdn/technologies/set-for-sdn)**
+![](media/sddc/learn.png) **[saiba mais sobre o grupo de comutadores inseridos](https://docs.microsoft.com/windows-server/networking/sdn/technologies/set-for-sdn)**
 
 ### <a name="software-load-balancing"></a>Balanceamento de carga do software
 
@@ -155,12 +155,12 @@ O SLB permite que vários servidores hospedem a mesma carga de trabalho, fornece
 
 Usando os servidores padrão do setor com unidades conectadas localmente, os Espaços de armazenamento diretos fornecem armazenamento definido pelo software altamente disponível e escalonável com custo menor do que o de matrizes de SAN ou NAS tradicionais. Sua arquitetura simplifica radicalmente a aquisição e a implantação.
 
-o nó ![Each tem unidades conectadas localmente em pool no nível do cluster por Espaços de Armazenamento Diretos acessadas por VMs por meio de CSVs @ no__t-1
+![cada nó tem unidades conectadas localmente em pool no nível do cluster por Espaços de Armazenamento Diretos acessadas por VMs via CSVs](media/sddc/spacer1.png)![](media/sddc/ssd.png)
 
 Os Espaços de armazenamento diretos introduzem o novo Barramento de armazenamento de software e aproveitam muitos dos recursos que você conhece hoje no Windows Server, como Clustering de Failover, Volumes Compartilhados do Cluster (CSVs)), protocolo SMB 3 e os Espaços de armazenamento.
 
 ![](media/sddc/learn.png) **[saiba mais sobre espaços de armazenamento diretos](storage/storage-spaces/storage-spaces-direct-overview.md)**
-### <a name="storage-quality-of-service"></a>Qualidade de Serviço do Armazenamento ###
+### <a name="storage-quality-of-service"></a>Qualidade de serviço do armazenamento ###
 
 ![](media/sddc/storage-line.png)
 
@@ -190,7 +190,7 @@ Replicação síncrona
 4. Confirmação do local remoto
 5. Gravação de aplicativo confirmada
 
-t & T1: Dados liberados para o volume, logs sempre são gravados
+t & t1: dados liberados para o volume, logs sempre realizam gravação
 
 ![](media/sddc/learn.png) **[saiba mais sobre a réplica de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)**
 
@@ -200,7 +200,7 @@ t & T1: Dados liberados para o volume, logs sempre são gravados
 
 ![](media/sddc/security-line.png)
 
-Como um provedor de serviços em nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um Serviço de Guardião de Host (HGS), em geral, um cluster de três nós, além de um ou mais hosts protegidos e um conjunto de máquinas virtuais protegidas (VMs).
+Como um provedor de serviços de nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um Serviço de Guardião de Host (HGS), em geral, um cluster de três nós, além de um ou mais hosts protegidos e um conjunto de máquinas virtuais protegidas (VMs).
 
 ![](media/sddc/spacer1.png)![](media/sddc/guarded-fabric.png)
 
@@ -272,10 +272,10 @@ O Virtual Machine Manager é parte do pacote do System Center, usado para config
 
 ![](media/sddc/spacer1.png)![](media/sddc/vmm.png)
 
-- Datacenter Configure e gerencie componentes do datacenter como uma única malha no VMM. 
-- Hosts de virtualização: O VMM pode adicionar, provisionar e gerenciar hosts e clusters de virtualização do Hyper-V e do VMware.
-- Rede O VMM fornece virtualização de rede, incluindo suporte para criar e gerenciar redes virtuais e gateways de rede. 
-- Armazenamento: O VMM pode descobrir, classificar, provisionar, alocar e atribuir armazenamento local e remoto.
+- Datacenter: configure e gerencie os componentes de datacenter como uma única malha no VMM. 
+- Hosts de virtualização: o VMM pode adicionar, provisionar e gerenciar os hosts de virtualização do Hyper-V e VMware, além de clusters.
+- Rede: o VMM fornece virtualização de rede, incluindo suporte para criar e gerenciar redes virtuais e gateways de rede. 
+- Armazenamento: o VMM pode descobrir, classificar, provisionar, alocar e atribuir o armazenamento local e remoto.
 
 ![](media/sddc/learn.png) **[saiba mais sobre o VMM do System Center](https://docs.microsoft.com/system-center/vmm/)**
 

@@ -21,9 +21,9 @@ ms.locfileid: "71404551"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>Monitorar o status da operação do servidor de acesso Remoto e seus componentes
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-**Observação:** O Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
+**Observação:** o Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
   
 O console de gerenciamento no servidor de acesso remoto pode ser usado para monitorar seu status de operações.  
   
@@ -40,7 +40,7 @@ O console de gerenciamento no servidor de acesso remoto pode ser usado para moni
   
 4.  Clique em **Atualizar** em **tarefas** no painel direito para recarregar o status das operações. O status de operações é atualizado automaticamente a cada cinco minutos, que é o intervalo de atualização padrão. Para alterar o intervalo de atualização padrão, clique em **Configurar intervalo de atualização**.  
   
-0Windows-](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

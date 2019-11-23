@@ -21,7 +21,7 @@ ms.locfileid: "71404513"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>Planejar uma implantação de várias florestas
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve as etapas de planejamento necessárias à configuração do Acesso Remoto em uma implantação de várias florestas.  
   
@@ -42,8 +42,8 @@ Além disso, o administrador do Acesso Remoto precisa ser um administrador local
 Você precisa configurar pelo menos um grupo de segurança na nova floresta para computadores cliente do DirectAccess na nova floresta. A razão é que um único grupo de segurança não pode incluir contas de várias florestas.  
   
 > [!NOTE]  
-> -   O DirectAccess requer pelo menos um grupo de segurança do cliente Windows 10 @ no__t-0 ou Windows @ no__t-1 8 para cada floresta. No entanto, é recomendável ter um grupo de segurança de cliente do Windows 10 ou do Windows 8 para cada domínio que contenha clientes Windows 10 ou Windows 8.  
-> -   Quando o multissite está habilitado, o DirectAccess requer pelo menos um grupo de segurança do cliente do Windows 7 @ no__t-0 por floresta para cada ponto de entrada do DirectAccess no qual os computadores cliente do Windows 7 têm suporte. No entanto, é recomendável ter um grupo de segurança de cliente do Windows 7 separado para cada ponto de entrada para cada domínio que contenha clientes do Windows 7.  
+> -   O DirectAccess requer pelo menos um grupo de segurança de cliente do Windows 10&reg; ou do Windows&reg; 8 para cada floresta. No entanto, é recomendável ter um grupo de segurança de cliente do Windows 10 ou do Windows 8 para cada domínio que contenha clientes Windows 10 ou Windows 8.  
+> -   Quando o multissite está habilitado, o DirectAccess requer pelo menos um grupo de segurança de cliente do Windows 7&reg; por floresta para cada ponto de entrada do DirectAccess no qual os computadores cliente do Windows 7 têm suporte. No entanto, é recomendável ter um grupo de segurança de cliente do Windows 7 separado para cada ponto de entrada para cada domínio que contenha clientes do Windows 7.  
 >   
 > Para que o DirectAccess seja aplicado a computadores cliente em domínios adicionais, é preciso criar GPOs de cliente nesses domínios. A adição de grupos de segurança dispara a geração de novos GPOs de cliente para os novos domínios. Portanto, se você adicionar um novo grupo de segurança de um novo domínio à lista de grupos de segurança de cliente do DirectAccess, um GPO de cliente será criado automaticamente no novo domínio e os computadores cliente do novo domínio receberão as configurações do DirectAccess através do GPO de cliente.  
 >   

@@ -17,11 +17,11 @@ ms.locfileid: "71405481"
 ---
 # <a name="configure-connection-request-policies"></a>Configurar políticas de solicitação de conexão
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para criar e configurar políticas de solicitação de conexão que determinam se o NPS local processa solicitações de conexão ou as encaminha para o servidor RADIUS remoto para processamento.
 
-As políticas de solicitação de conexão são conjuntos de condições e configurações que permitem que os administradores de rede designem quais servidores de serviço RADIUS (RADIUS) executam a autenticação e a autorização de solicitações de conexão que o servidor que executa o servidor de diretivas de rede \(NPS @ no__t-1 recebe de clientes RADIUS.
+As políticas de solicitação de conexão são conjuntos de condições e configurações que permitem aos administradores de rede designar quais servidores de serviço RADIUS (RADIUS) executam a autenticação e a autorização de solicitações de conexão que o servidor que está executando o servidor de diretivas de rede \(NPS\) recebe de clientes RADIUS.
 
 A política de solicitação de conexão padrão usa o NPS como um servidor RADIUS e processa todas as solicitações de autenticação localmente.
 

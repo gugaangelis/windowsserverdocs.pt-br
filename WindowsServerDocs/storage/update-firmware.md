@@ -30,11 +30,11 @@ Para usar o Windows Server para atualizar o firmware da unidade, você deverá t
 Para obter informações sobre se o hardware oferece suporte a atualização do firmware da unidade do Windows, entre em contato com o fornecedor da solução.
 Aqui estão links para os diversos requisitos:
 
--   SATA [Device. Storage. HD. SATA](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) -na seção **[se implementado o download do firmware @ no__t-2 & Ativar**
+-   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - na seção **[If Implemented\] Firmware Download & Activate**
     
--   RÍGIDO [Device. Storage. HD. SAS](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) -na seção **[se implementado o download do firmware @ no__t-2 & Ativar**
+-   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - na seção **[If Implemented\] Firmware Download & Activate**
 
--   NVMe [Device. Storage. ControllerDrive. NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) – nas seções **5,7** e **5,8**.
+-   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - nas seções **5.7** e **5.8**.
 
 ## <a name="powershell-cmdlets"></a>Cmdlets do PowerShell
 
@@ -43,7 +43,7 @@ Os dois cmdlets adicionados ao Windows são:
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-O primeiro cmdlet fornece informações detalhadas sobre os recursos do dispositivo, as imagens de firmware e as revisões. Nesse caso, a máquina contém apenas um único SSD SATA com 1 slot de firmware. Veja um exemplo:
+O primeiro cmdlet fornece informações detalhadas sobre os recursos do dispositivo, as imagens de firmware e as revisões. Nesse caso, a máquina contém apenas um único SSD SATA com 1 slot de firmware. Aqui está um exemplo:
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -164,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-Se você quiser ver a Serviço de Integridade em ação e saber mais sobre seu mecanismo de distribuição, confira este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+Se você quiser ver a Serviço de Integridade em ação e saber mais sobre seu mecanismo de distribuição, veja este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
@@ -195,7 +195,7 @@ No Windows Server 2016, com o serviço de integridade implantados em Espaços de
 
 ### <a name="what-happens-if-the-update-fails"></a>O que acontece se a atualização falhar
 
-A atualização pode falhar por vários motivos, algumas delas: 1) a unidade não dá suporte aos comandos corretos para que o Windows atualize seu firmware. Nesse caso, a nova imagem de firmware nunca é ativada e a unidade continuará funcionando com a imagem antiga. 2) A imagem não pode baixar ou ser aplicada a essa unidade (incompatibilidade de versão, imagem corrompida, ...). Nesse caso, ocorre falha no comando de ativação da unidade. Novamente, a imagem antiga do firmware continuará funcionando.
+A atualização pode falhar por várias razões, algumas delas são: 1) a unidade não oferece suporte aos comandos corretos para o Windows atualizar seu firmware. Nesse caso, a nova imagem de firmware nunca é ativada e a unidade continuará funcionando com a imagem antiga. 2) A imagem não pode baixar ou ser aplicada a essa unidade (incompatibilidade de versão, imagem corrompida, ...). Nesse caso, ocorre falha no comando de ativação da unidade. Novamente, a imagem antiga do firmware continuará funcionando.
 
 Se a unidade não responder após uma atualização de firmware, você provavelmente estará atingindo um bug no próprio firmware da unidade. Teste todas as atualizações de firmware em um ambiente de laboratório antes de colocá-las em produção. A única correção poderá ser substituir a unidade.
 
@@ -208,6 +208,6 @@ Desabilite a distribuição no PowerShell por meio de:
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.Enabled" -Value false
 ```
 
-### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Vejo um acesso negado ou erro de caminho não encontrado durante a distribuição. Como posso corrigir isso
+### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Vejo um acesso negado ou erro de caminho não encontrado durante a distribuição. Como faço para corrigir isso
 
 Verifique se a imagem do firmware que você deseja usar para a atualização está acessível por todos os nós do cluster. A maneira mais fácil de garantir isso é colocá-lo em um volume compartilhado do cluster.

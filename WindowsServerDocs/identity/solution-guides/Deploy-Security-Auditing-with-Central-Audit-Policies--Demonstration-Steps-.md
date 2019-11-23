@@ -84,7 +84,7 @@ Depois que as configurações de Política de Grupo forem aplicadas, você poder
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>Para verificar se a política de acesso a objetos globais foi aplicada  
   
-1.  Entre no computador cliente, CLIENT1 como Contoso\MReid. Navegue até a pasta HYPERLINK "file:///\\ @ no__t-1 @ no__t-2\ID_AD_FILE1 @ no__t-3\Finance" \\ \ FILE1\Finance documentos e modifique o documento do Word 2.  
+1.  Entre no computador cliente, CLIENT1 como Contoso\MReid. Navegue até o hiperlink da pasta "file:///\\\\\\\ ID_AD_FILE1\\\Finance" \\\ FILE1\Finance documentos e modifique o documento 2 do Word.  
   
 2.  Entre no servidor de arquivos, FILE1, como contoso\administrator. Abra o Visualizador de Eventos, navegue até **Logs do Windows**, selecione **Segurança** e confirme se suas atividades resultaram nos eventos de auditoria **4656** e **4663** (embora você não tenha definido SACLs de auditoria explícitas nos arquivos ou pastas que criou, modificou e excluiu).  
   

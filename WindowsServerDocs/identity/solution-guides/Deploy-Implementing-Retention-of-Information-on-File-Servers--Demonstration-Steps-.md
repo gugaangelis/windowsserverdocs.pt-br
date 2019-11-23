@@ -26,13 +26,13 @@ Você pode definir períodos de retenção para pastas e colocar arquivos em ret
   
 -   [Pré-requisitos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [Etapa 1: Criar definições de propriedade de recurso @ no__t-0  
+-   [Etapa 1: criar definições de propriedade de recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
--   [Etapa 2: Configurar notificações @ no__t-0  
+-   [Etapa 2: configurar notificações](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
   
--   [Etapa 3: Criar uma tarefa de gerenciamento de arquivos @ no__t-0  
+-   [Etapa 3: criar uma tarefa de gerenciamento de arquivos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [Etapa 4: Classificar um arquivo manualmente @ no__t-0  
+-   [Etapa 4: classificar um arquivo manualmente](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
 > Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -40,7 +40,7 @@ Você pode definir períodos de retenção para pastas e colocar arquivos em ret
 ## <a name="prerequisites"></a>Pré-requisitos  
 As etapas neste tópico presumem que você tenha um servidor SMTP configurado para notificações de expiração de arquivo.  
   
-## <a name="BKMK_Step1"></a>Etapa 1: criar definições de propriedade do recurso  
+## <a name="BKMK_Step1"></a>Etapa 1: criar definições de propriedade de recurso  
 Nessa etapa, habilitamos as propriedades do recurso Período de Retenção e Descoberta de forma que a Infraestrutura de Classificação de Arquivos possa usar essas propriedades de recurso para marcar os arquivos examinados em uma pasta de rede compartilhada.  
   
 [Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
@@ -57,7 +57,7 @@ Nessa etapa, habilitamos as propriedades do recurso Período de Retenção e Des
   
 5.  Clique com o botão direito do mouse em **Descoberta**e em **Habilitar**.  
   
-![solution guia](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![guias de solução](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -91,7 +91,7 @@ Nessa etapa, usamos o console do Gerenciador de Recursos de Servidor de Arquivos
   
 6.  Clique em **OK**.  
   
-![solution guia](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![guias de solução](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -142,7 +142,7 @@ Nessa etapa, usamos o console do Gerenciador de Recursos de Servidor de Arquivos
   
 11. Clique em **OK**.  
   
-![solution guia](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![guias de solução](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

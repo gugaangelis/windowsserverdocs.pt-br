@@ -15,13 +15,13 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406370"
 ---
-# <a name="move-and-resize-the-hosted-cache-optional"></a>Mover e redimensionar o cache hospedado \(Optional @ no__t-1
+# <a name="move-and-resize-the-hosted-cache-optional"></a>Mover e redimensionar o cache hospedado \(\) opcional
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar este procedimento para mover o cache hospedado para a unidade e a pasta que preferir, e para especificar a quantidade de espaço em disco que o servidor de cache hospedado pode usar para o cache hospedado.
 
-Esse procedimento é opcional. Se o local do cache padrão \(% windir% \\ServiceProfiles @ no__t-2NetworkService @ no__t-3AppData @ no__t-4Local @ no__t-5PeerDistPub @ no__t-6 e tamanho – que é 5% do espaço total do disco rígido – são apropriados para sua implantação, você não precisa alterá-las.
+Esse procedimento é opcional. Se o local do cache padrão \(% windir%\\UserProfiles\\NetworkService\\AppData\\local\\PeerDistPub\) e Size – que é 5% do espaço total no disco rígido – são apropriados para sua implantação, você não precisa alterá-los.
 
 Você deve ser membro do grupo Administradores para executar esse procedimento.
 
@@ -38,10 +38,10 @@ Você deve ser membro do grupo Administradores para executar esse procedimento.
     Set-BCCache -Path C:\datacache –MoveTo D:\datacache
     ``` 
 
-3.  Digite o seguinte comando para redimensionar o cache hospedado – especificamente, o DataCache \- no computador local. Pressione ENTER.
+3.  Digite o seguinte comando para redimensionar o cache hospedado – especificamente, o \- DataCache no computador local. Pressione ENTER.
 
     > [!IMPORTANT]
-    > Antes de executar o comando a seguir, substitua os valores de parâmetro, como \-Percentage, por valores que são apropriados para sua implantação.  
+    > Antes de executar o comando a seguir, substitua os valores de parâmetro, como \-percentual, por valores que são apropriados para sua implantação.  
 
     ``` 
     Set-BCCache -Percentage 20
@@ -55,8 +55,8 @@ Você deve ser membro do grupo Administradores para executar esse procedimento.
 
     Os resultados do status de exibição do comando para todos os aspectos da instalação do BranchCache. A seguir estão algumas das configurações do BranchCache e o valor correto para cada item:
 
-    -   DataCache | CacheFileDirectoryPath: Exibe o local do disco rígido que corresponde ao valor fornecido com o parâmetro – MoveTo do comando SetBCCache. Por exemplo, se você forneceu o valor D: \\datacache, esse valor será exibido na saída do comando.
+    -   DataCache | CacheFileDirectoryPath: exibe o local do disco rígido que corresponde ao valor fornecido com o parâmetro – MoveTo do comando SetBCCache. Por exemplo, se você forneceu o valor D:\\DataCache, esse valor é exibido na saída do comando.
 
-    -   DataCache | MaxCacheSizeAsPercentageOfDiskVolume: Exibe o número que corresponde ao valor fornecido com o parâmetro – Percentage do comando SetBCCache. Por exemplo, se você forneceu o valor 20, esse valor é exibido na saída do comando.
+    -   DataCache | MaxCacheSizeAsPercentageOfDiskVolume: exibe o número que corresponde ao valor fornecido com o parâmetro – Percentage do comando SetBCCache. Por exemplo, se você forneceu o valor 20, esse valor é exibido na saída do comando.
 
 Para continuar com este guia, consulte [prehash e pré-carregar conteúdo no servidor &#40;de cache hospedado opcional&#41;](7-Bc-Prehash-Preload.md).

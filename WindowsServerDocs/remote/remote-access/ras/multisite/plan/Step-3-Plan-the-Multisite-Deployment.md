@@ -21,7 +21,7 @@ ms.locfileid: "71404458"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Etapa 3 planejar a implantação multissite
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois de planejar a infraestrutura multissite, planeje os requisitos de certificado adicionais, como os computadores cliente selecionam pontos de entrada e endereços IPv6 atribuídos em sua implantação.  
 
@@ -162,11 +162,11 @@ Em um roteamento simétrico de implantação multissite é imposta usando Teredo
   
    3. Prefixo Teredo (opcional). Esse prefixo só será relevante se o servidor de acesso remoto estiver configurado com dois endereços IPv4 públicos consecutivos no adaptador externo. O prefixo é baseado no primeiro endereço IPv4 público do par de endereços. Por exemplo, se os endereços externos forem:  
   
-      1. www\.xxx.yyy.zzz  
+      1. www\.xxx. yyy. zzz  
   
-      2. www\.xxx.yyy.zzz + 1  
+      2. www\.xxx. yyy. zzz + 1  
   
-      Em seguida, o prefixo Teredo a ser configurado é 2001:0: WWXX: YYZZ::/64, em que WWXX: YYZZ é a representação hexadecimal do endereço IPv4 www\.xxx.yyy.zzz.  
+      Em seguida, o prefixo Teredo a ser configurado é 2001:0: WWXX: YYZZ::/64, em que WWXX: YYZZ é a representação hexadecimal do endereço IPv4 www\.xxx. yyy. zzz.  
   
       Observe que você pode usar o script a seguir para calcular o prefixo Teredo:  
   
@@ -247,7 +247,7 @@ A transição de um somente IPv4 para uma rede corporativa somente IPv6 não pod
     > [!NOTE]  
     > Ao instalar uma implantação adicional do DirectAccess junto com uma atual, verifique se não há dois pontos de entrada que compartilham o mesmo prefixo de cliente.  
     >   
-    > Se você instalar o DirectAccess usando o assistente de Introdução ou com o cmdlet `Install-RemoteAccess`, o acesso remoto definirá automaticamente o prefixo do cliente do primeiro ponto de entrada na implantação para um valor padrão de < sub-rede IPv6 @ no__t-1prefix >: 1000::/64. Se necessário, você deve alterar o prefixo.  
+    > Se você instalar o DirectAccess usando o assistente de Introdução ou com o cmdlet `Install-RemoteAccess`, o acesso remoto definirá automaticamente o prefixo de cliente do primeiro ponto de entrada na implantação para um valor padrão de <\_prefixo de sub-rede IPv6 >: 1000::/64. Se necessário, você deve alterar o prefixo.  
   
 2.  Remova os grupos de segurança de cliente escolhidos da primeira implantação.  
   
@@ -270,7 +270,7 @@ Quando tiver concluído a transição, você poderá desinstalar a primeira impl
   
     -   Endereço IP::: 1  
   
-    -   Digite: REGISTROS  
+    -   Tipo: AAAA  
   
   
   

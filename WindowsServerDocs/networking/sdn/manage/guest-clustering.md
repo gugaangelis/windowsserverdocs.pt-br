@@ -22,14 +22,14 @@ ms.locfileid: "71406038"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>Clustering convidado em uma rede virtual
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 As máquinas virtuais conectadas a uma rede virtual só têm permissão para usar os endereços IP que o controlador de rede atribuiu para se comunicar na rede.  As tecnologias de clustering que exigem um endereço IP flutuante, como o clustering de failover da Microsoft, exigem algumas etapas adicionais para funcionar corretamente.
 
-O método para tornar o IP flutuante acessível é usar um software Load Balancer \(SLB @ no__t-1 virtual IP \(VIP @ no__t-3.  O balanceador de carga de software deve ser configurado com uma investigação de integridade em uma porta nesse IP para que o SLB direcione o tráfego para o computador que atualmente tem esse IP.
+O método para tornar o IP flutuante acessível é usar um software Load Balancer \(SLB\) IP virtual \(VIP\).  O balanceador de carga de software deve ser configurado com uma investigação de integridade em uma porta nesse IP para que o SLB direcione o tráfego para o computador que atualmente tem esse IP.
 
 
-## <a name="example-load-balancer-configuration"></a>Exemplo: Configuração do balanceador de carga
+## <a name="example-load-balancer-configuration"></a>Exemplo: configuração do balanceador de carga
 
 Este exemplo pressupõe que você já criou as VMs que se tornarão nós de cluster e as anexará a uma rede virtual.  Para obter diretrizes, consulte [criar uma VM e conectar-se a uma rede virtual de locatário ou VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).  
 
@@ -50,7 +50,7 @@ Neste exemplo, você criará um endereço IP virtual (192.168.2.100) para repres
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. Crie um endereço IP do front @ no__t-0end.
+3. Crie um endereço IP de front\-end.
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -63,7 +63,7 @@ Neste exemplo, você criará um endereço IP virtual (192.168.2.100) para repres
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. Crie um pool de back @ no__t-0end para conter os nós de cluster.
+4. Crie um pool de back\-end para conter os nós de cluster.
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool

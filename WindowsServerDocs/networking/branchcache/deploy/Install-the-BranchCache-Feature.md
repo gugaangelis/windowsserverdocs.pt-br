@@ -17,9 +17,9 @@ ms.locfileid: "71406440"
 ---
 # <a name="install-the-branchcache-feature"></a>Instalar o recurso BranchCache
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este procedimento para instalar o recurso do BranchCache e iniciar o serviço do BranchCache em um computador que executa o Windows Server @ no__t-0 2016, Windows Server 2012 R2 ou Windows Server 2012.  
+Você pode usar este procedimento para instalar o recurso do BranchCache e iniciar o serviço do BranchCache em um computador que executa o Windows Server&reg; 2016, Windows Server 2012 R2 ou Windows Server 2012.  
   
 A associação a **Administradores** ou equivalente é o requisito mínimo para a execução deste procedimento.  
   

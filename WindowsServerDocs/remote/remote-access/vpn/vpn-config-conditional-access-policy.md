@@ -26,18 +26,18 @@ ms.locfileid: "71404349"
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Etapa 7.2. Criar certificados raiz para autenticação de VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
-- [**Última** Etapa 7.4. Implantar certificados raiz de acesso condicional no AD local @ no__t-0
+- [**Anterior:** Etapa 7,2. Criar certificados raiz para autenticação de VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**Em seguida:** Etapa 7,4. Implantar certificados raiz de acesso condicional no AD local](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 
 Nesta etapa, você configura a política de acesso condicional para conectividade VPN. Quando o primeiro certificado raiz é criado na folha ' conectividade VPN ', ele cria automaticamente um aplicativo de nuvem ' servidor VPN ' no locatário.
 
 Crie uma política de acesso condicional atribuída ao grupo de usuários VPN e o escopo do **aplicativo de nuvem** para o **servidor VPN**:
 
-- **Usuários**: Usuários de VPN
-- **Aplicativo de nuvem**: Servidor VPN
-- **Grant (controle de acesso)** : ' Exigir autenticação multifator '. Outros controles podem ser usados se desejado.
+- **Usuários**: usuários VPN
+- **Aplicativo de nuvem**: servidor VPN
+- **Grant (controle de acesso)** : ' exigir autenticação multifator '. Outros controles podem ser usados se desejado.
 
-**Procedure** Esta etapa aborda a criação da política de acesso condicional mais básica.  Se desejar, podem ser usadas condições e controles adicionais.
+**Procedimento:** Esta etapa aborda a criação da política de acesso condicional mais básica.  Se desejar, podem ser usadas condições e controles adicionais.
 
 
 1. Na página **acesso condicional** , na barra de ferramentas na parte superior, selecione **Adicionar**.
@@ -94,4 +94,4 @@ Crie uma política de acesso condicional atribuída ao grupo de usuários VPN e 
 
 
 ## <a name="next-steps"></a>Próximas etapas
-[Etapa 7.4. Implantar certificados raiz de acesso condicional no AD local @ no__t-0: Nesta etapa, você implanta o certificado raiz de acesso condicional como certificado raiz confiável para autenticação de VPN para seu AD local.
+[Etapa 7,4. Implantar certificados raiz de acesso condicional para o AD local](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md): nesta etapa, você implanta o certificado raiz de acesso condicional como certificado raiz confiável para autenticação de VPN para seu ad local.

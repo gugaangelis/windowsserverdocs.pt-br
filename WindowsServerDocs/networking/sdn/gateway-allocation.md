@@ -22,7 +22,7 @@ ms.locfileid: "71406128"
 
 No Windows Server 2016, a largura de banda de túnel individual para IPsec, GRE e L3 era uma proporção da capacidade total do gateway. Portanto, os clientes forneceriam a capacidade do gateway com base na largura de banda TCP padrão, esperando isso fora da VM do gateway.
 
-Além disso, a largura de banda máxima do túnel IPsec no gateway era limitada a (3/20) capacidade de \*Gateway fornecida pelo cliente. Portanto, por exemplo, se você definir a capacidade do gateway como 100 Mbps, a capacidade do túnel IPsec será de 150 Mbps. As taxas equivalentes para túneis GRE e L3 são 1/5 e 1/2, respectivamente.
+Além disso, a largura de banda máxima do túnel IPsec no gateway era limitada a (3/20)\*capacidade de gateway fornecida pelo cliente. Portanto, por exemplo, se você definir a capacidade do gateway como 100 Mbps, a capacidade do túnel IPsec será de 150 Mbps. As taxas equivalentes para túneis GRE e L3 são 1/5 e 1/2, respectivamente.
 
 Embora isso tenha trabalhado para a maioria das implantações, o modelo de taxa fixa não era apropriado para ambientes de alta taxa de transferência. Mesmo quando as taxas de transferência de dados eram altas (digamos, mais de 40 Gbps), a taxa de transferência máxima de túneis de gateway de SDN é limitada devido a fatores internos.
 
@@ -60,15 +60,15 @@ Por exemplo, se você alocar 2 Gbps de taxa de transferência IPsec para um clie
 
 Capacidade disponível restante no gateway = total de capacidade do gateway – taxa de taxa de transferência IPsec * taxa de transferência IPsec alocada (capacidade usada)
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-525 – 5 * 2 = 15 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 – 5 * 2 = 15 Gbps
 
 Taxa de transferência IPsec restante que você pode alocar no gateway 
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-55-2 = 3 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-2 = 3 Gbps
 
 Taxa de transferência de GRE restante que você pode alocar no gateway = capacidade restante da taxa de taxa de transferência de gateway/GRE 
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-515 * 3/5 = 9 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 * 3/5 = 9 Gbps
 
 A taxa de taxa de transferência varia dependendo da capacidade total do gateway. Uma coisa a ser observada é que você deve definir a capacidade total para a largura de banda TCP disponível para a VM do gateway. Se você tiver várias VMs hospedadas no gateway, deverá ajustar a capacidade total do gateway adequadamente.
 
@@ -76,13 +76,13 @@ Além disso, se a capacidade do gateway for menor que a capacidade total dispon�
 
 ## <a name="windows-server-2016-behavior"></a>Comportamento do Windows Server 2016
 
-O algoritmo de cálculo da capacidade do gateway para o Windows Server 2016 permanece inalterado. No Windows Server 2016, a largura de banda máxima do túnel IPsec era limitada à capacidade de (3/20) \*gateway em um gateway. As taxas equivalentes para túneis GRE e L3 eram 1/5 e 1/2, respectivamente.
+O algoritmo de cálculo da capacidade do gateway para o Windows Server 2016 permanece inalterado. No Windows Server 2016, a largura de banda máxima do túnel IPsec era limitada a (3/20)\*capacidade de gateway em um gateway. As taxas equivalentes para túneis GRE e L3 eram 1/5 e 1/2, respectivamente.
 
 Se você estiver atualizando do Windows Server 2016 para o Windows Server 2019:
 
 1.  **Túneis GRE e L3:** A lógica de alocação do Windows Server 2019 entra em vigor quando os nós do controlador de rede são atualizados para o Windows Server 2019
 
-2.  **Túneis IPSec:** A lógica de alocação de gateway do Windows Server 2016 continua a funcionar até que todos os gateways no pool de gateway sejam atualizados para o Windows Server 2019. Para todos os gateways no pool de gateway, você deve definir o serviço de gateway do Azure como **automático**.
+2.  **Túneis IPsec:** A lógica de alocação de gateway do Windows Server 2016 continua a funcionar até que todos os gateways no pool de gateway sejam atualizados para o Windows Server 2019. Para todos os gateways no pool de gateway, você deve definir o serviço de gateway do Azure como **automático**.
 
 >[!NOTE]
 >É possível que, após a atualização para o Windows Server 2019, um gateway se torne excessivamente provisionado (uma vez que a lógica de alocação muda do Windows Server 2016 para o Windows Server 2019). Nesse caso, as conexões existentes no gateway continuam a existir. O recurso REST para o gateway gera um aviso de que o gateway está excessivamente provisionado. Nesse caso, você deve mover algumas conexões para outro gateway.

@@ -17,19 +17,19 @@ ms.locfileid: "71406306"
 ---
 # <a name="core-network-companion-guidance"></a>Diretrizes de complementar de rede principal
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Embora o [Guia de rede](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) do Windows Server 2016 Core forneça instruções sobre como implantar uma nova floresta Active Directory @ no__t-1 com um novo domínio raiz e a infraestrutura de rede de suporte, os guias complementares fornecem a você a capacidade de adicionar recursos para sua rede.
+Embora o [Guia de rede](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) do Windows Server 2016 Core forneça instruções sobre como implantar um novo Active Directory&reg; floresta com um novo domínio raiz e a infraestrutura de rede de suporte, os guias complementares fornecem a capacidade de adicionar recursos à sua rede.
 
 Cada guia complementar permite que você realize uma meta específica depois de implantar sua rede principal. Em alguns casos, existem vários guias complementarem que, quando implantados juntos e na ordem correta, permitem realizar objetivos muito complexos de forma medida, econômica e razoável.
 
 Se você implantou sua rede principal e seu domínio do Active Directory antes de encontrar o Guia da Rede Principal, ainda pode usar os Guias Complementares para adicionar recursos à sua rede. Simplesmente use o Guia da Rede Principal como uma lista de pré-requisitos e saiba que, para implantar recursos adicionais com os Guias Complementares, a rede deve atender aos pré-requisitos que são fornecidos pelo Guia da Rede Principal.
 
-## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Guia complementar da rede principal: Implantar certificados de servidor para implantações com e sem fio do 802.1X 
+## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Guia complementar de rede de núcleo: implantar certificados de servidor para implantações com e sem fio 802.1 X 
 
-Este guia complementar explica como criar a rede principal implantando certificados de servidor para computadores que estão executando o servidor de políticas de rede \(NPS @ no__t-1, serviço de acesso remoto \(RAS @ no__t-3 ou ambos.
+Este guia complementar explica como criar a rede principal implantando certificados de servidor para computadores que estão executando o servidor de diretivas de rede \(NPS\), serviço de acesso remoto \(\)RAS ou ambos.
 
-Certificados de servidor são necessários quando você implanta métodos de autenticação com base em certificado com o protocolo de autenticação extensível \(EAP @ no__t-1 e EAP protegido \(PEAP @ no__t-3 para autenticação de acesso à rede. A implantação de certificados de servidor com Active Directory serviços de certificados \(AD CS @ no__t-1 para EAP e métodos de autenticação com base em certificado PEAP oferece os seguintes benefícios:
+Os certificados de servidor são necessários quando você implanta métodos de autenticação com base em certificado com o protocolo EAP \(\) e EAP protegido \(PEAP\) para autenticação de acesso à rede. A implantação de certificados de servidor com Active Directory serviços de certificados \(AD CS\) para métodos de autenticação com base em certificado EAP e PEAP oferece os seguintes benefícios:
 
 - Associando a identidade do servidor NPS ou RAS a uma chave privada
 - Um método seguro e econômico para registrar automaticamente certificados em servidores de NPS e RAS do membro do domínio
@@ -38,22 +38,22 @@ Certificados de servidor são necessários quando você implanta métodos de aut
 - A capacidade de expandir o uso de certificados para outras finalidades
   
 Para obter instruções sobre como implantar certificados de servidor, consulte [implantar certificados de servidor para implantações com e sem fio 802.1 x](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md).  
-## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>Guia complementar da rede principal: Implantar acesso sem fio autenticado 802.1X baseado em senha
+## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>Guia complementar de rede de núcleo: implantar o acesso sem fio autenticado baseado em senha 802.1 X
 
-Este guia complementar explica como criar a rede principal fornecendo instruções sobre como implantar o Instituto de engenheiros elétricos e eletrônicos \(IEEE @ no__t-1 802.1 X @ no__t-2authenticated IEEE 802,11 acesso sem fio usando protegido Protocolo de autenticação extensível \ – protocolo de autenticação de handshake de desafio da Microsoft versão 2 \(PEAP @ no__t-4MS @ no__t-5CHAP v2 @ no__t-6.
+Este guia complementar explica como criar a rede principal fornecendo instruções sobre como implantar o Instituto de engenheiros elétricos e eletrônicos \(IEEE\) 802.1 X\-acesso sem fio autenticado IEEE 802,11 usando protocolo de autenticação extensível protegida \ – protocolo de autenticação handshake de desafio da Microsoft versão 2 \(PEAP\-MS\-CHAP v2\).
 
-O método de autenticação PEAP @ no__t-0MS @ no__t-1CHAP v2 requer que os servidores de autenticação que executam o servidor de diretivas de rede \(NPS @ no__t-3 apresentem clientes sem fio com um certificado de servidor para provar a identidade do NPS para o cliente, no entanto, usuário a autenticação não é executada usando um certificado-em vez disso, os usuários fornecem seu nome de usuário e senha de domínio.
+O método de autenticação PEAP\-MS\-CHAP v2 requer que os servidores de autenticação que executam o servidor de diretivas de rede \(o NPS\) apresentem clientes sem fio com um certificado de servidor para provar a identidade do NPS para o cliente, mas a autenticação do usuário não é executada usando um certificado-em vez disso, os usuários fornecem seu nome de usuário e senha de domínio.
 
-Como o PEAP @ no__t-0MS @ no__t-1CHAP v2 requer que os usuários forneçam credenciais baseadas em senha em vez de um certificado durante o processo de autenticação, normalmente é mais fácil e menos dispendioso implantar do que EAP @ no__t-2TLS ou PEAP @ no__t-3TLS.
+Como o PEAP\-MS\-CHAP v2 requer que os usuários forneçam credenciais baseadas em senha em vez de um certificado durante o processo de autenticação, normalmente é mais fácil e menos dispendioso implantar do que o EAP\-TLS ou PEAP\-TLS.
 
-Antes de usar este guia para implantar o acesso sem fio com o método de autenticação PEAP @ no__t-0MS @ no__t-1CHAP v2, você deve fazer o seguinte:
+Antes de usar este guia para implantar o acesso sem fio com o método de autenticação PEAP\-MS\-CHAP v2, você deve fazer o seguinte:
 
 1. Siga as instruções no guia de rede principal para implantar sua infraestrutura de rede principal ou já ter as tecnologias apresentadas nesse guia implantadas em sua rede.
 2. Siga as instruções no guia complementar de rede principal implantar certificados de servidor para implantações 802.1 X com e sem fio, ou já ter as tecnologias apresentadas nesse guia implantadas em sua rede.
 
-Para obter instruções sobre como implantar o acesso sem fio com o PEAP @ no__t-0MS @ no__t-1CHAP v2, consulte [implantar o acesso sem fio autenticado baseado em senha 802.1 x](wireless/a-deploy-8021X-wireless-access.md).
+Para obter instruções sobre como implantar o acesso sem fio com o PEAP\-MS\-CHAP v2, consulte [implantar o acesso sem fio autenticado com base em senha 802.1 x](wireless/a-deploy-8021X-wireless-access.md).
 
-## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>Guia complementar da rede principal: Implantar o modo Cache Hospedado do BranchCache
+## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>Guia complementar de rede de núcleo: implantar o modo de cache hospedado do BranchCache
 
 Este guia complementar explica como implantar o BranchCache no modo de cache hospedado em uma ou mais filiais.
 

@@ -22,7 +22,7 @@ ms.locfileid: "71402327"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>ARSO (Logon de Reinicialização Automática) de Winlogon
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 **Autor**: Justin Turner, engenheiro de escalonamento de suporte sênior com o grupo do Windows  
   
@@ -74,7 +74,7 @@ Na reinicialização, o usuário será automaticamente conectado por meio do mec
   
     -   Só poderá ser habilitado se o BitLocker estiver habilitado  
   
-## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>Política de Grupo: Conectar o último usuário interativo automaticamente após uma reinicialização iniciada pelo sistema  
+## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>Política de Grupo: conectar o último usuário interativo automaticamente após uma reinicialização iniciada pelo sistema  
 No Windows 8.1/Windows Server 2012 R2, o logon automático do usuário da tela de bloqueio após uma reinicialização Windows Update é opcional para SKUs de servidor e recusa-se a SKUs do cliente.  
   
 **Local da política:** Configurações do computador > políticas > Modelos Administrativos > componentes do Windows > opção de logon do Windows  
@@ -143,7 +143,7 @@ Uma sessão de usuário existente pode ser mantida mesmo se estiver desabilitada
 O horário de logon e os controles dos pais podem proibir a criação de uma nova sessão de usuário.  Se uma reinicialização fosse executada durante essa janela, o usuário não teria permissão para fazer logon.  Há uma política adicional que causa o bloqueio ou logout como uma ação de conformidade.  Isso pode ser problemático para muitos casos filho em que o bloqueio de conta pode ocorrer entre o tempo e a ativação, especialmente se a janela de manutenção for normalmente durante esse tempo.  
   
 ## <a name="additional-resources"></a>Recursos adicionais  
-Tabela SEQ **Table \\ @ no__t-2 árabe 3: Glossário de ARSO @ no__t-0  
+**Tabela SEQ tabela \\\* árabe 3: ARSO Glossário**  
   
 |Termo|Definição|  
 |----|-------|  

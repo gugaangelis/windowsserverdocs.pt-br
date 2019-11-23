@@ -22,7 +22,7 @@ ms.locfileid: "71403728"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>O&#39;que há de novo para contas de serviço gerenciado
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico para o profissional de ti descreve as alterações na funcionalidade de contas de serviço gerenciadas com a introdução da conta de serviço gerenciado de grupo (gMSA) no Windows Server 2012 e no Windows 8.
 
@@ -57,6 +57,6 @@ Para o Windows Server 2012, os cmdlets do Windows PowerShell assumem como padrã
 
 -   [Visão geral do Active Directory Domain Services](active-directory-domain-services-overview.md)
 
--   Contas de serviço [Managed: Noções básicas, implementação, práticas recomendadas e solução de problemas @ no__t-0
+-   [Contas de serviço gerenciado: Noções básicas, implementação, práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

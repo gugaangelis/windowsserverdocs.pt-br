@@ -16,19 +16,19 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408647"
 ---
-# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice G: Protegendo grupos de administradores no Active Directory
+# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice G: Proteger grupos de administradores no Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice G: Protegendo grupos de administradores no Active Directory  
-Como é o caso dos grupos Enterprise Admins (EA) e admins. do domínio (DA), a associação no grupo Administradores internos (BA) deve ser necessária apenas em cenários de compilação ou recuperação de desastres. Não deve haver contas de usuário do dia a dia no grupo Administradores, com exceção da conta interna de administrador para o domínio, se ele tiver sido protegido, conforme descrito em [Appendix D: Protegendo contas de administrador internas no Active Directory @ no__t-0.  
+## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apêndice G: Proteger grupos de administradores no Active Directory  
+Como é o caso dos grupos Enterprise Admins (EA) e admins. do domínio (DA), a associação no grupo Administradores internos (BA) deve ser necessária apenas em cenários de compilação ou recuperação de desastres. Não deve haver contas de usuário do dia a dia no grupo Administradores, com exceção da conta interna de administrador do domínio, se ele tiver sido protegido, conforme descrito no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
 Os administradores são, por padrão, os proprietários da maioria dos objetos AD DS em seus respectivos domínios. A associação a esse grupo pode ser necessária em cenários de compilação ou recuperação de desastres nos quais a propriedade ou a capacidade de apropriar-se de objetos é necessária. Além disso, o DAs e EAs herdam vários direitos e permissões em virtude de sua associação padrão no grupo Administradores. O aninhamento de grupo padrão para grupos com privilégios no Active Directory não deve ser modificado, e o grupo de administradores de cada domínio deve ser protegido conforme descrito nas instruções passo a passo a seguir.  
 
 Para o grupo Administradores em cada domínio na floresta:  
 
-1.  Remova todos os membros do grupo Administradores, com a possível exceção da conta de administrador interno para o domínio, desde que ele tenha sido protegido conforme descrito em [Appendix D: Protegendo contas de administrador internas no Active Directory @ no__t-0.  
+1.  Remova todos os membros do grupo Administradores, com a possível exceção da conta de administrador interno para o domínio, desde que ele tenha sido protegido, conforme descrito no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
 2.  Em GPOs vinculados a UOs que contêm servidores membros e estações de trabalho em cada domínio, o grupo BA deve ser adicionado aos seguintes direitos de usuário em Computer \ Diretivas \ \ **políticas \ Atribuição de direitos de usuário**:  
 
@@ -66,13 +66,13 @@ Para o grupo Administradores em cada domínio na floresta:
 
 1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda &lt;Forest @ no__t-1\Domains @ no__t-2 @ no__t-3Domain @ no__t-4 e, em seguida, **política de grupo objetos** (em que &lt;Forest @ no__t-7 é o nome da floresta e &lt;Domain @ no__t-9 é o nome do domínio no qual você deseja Defina o Política de Grupo).  
+2.  Na árvore de console, expanda &lt;floresta&gt;\Domains\\&lt;&gt;de domínio e, em seguida, **política de grupo objetos** (em que &lt;floresta&gt; é o nome da floresta e &lt;&gt; de domínio é o nome do domínio no qual você deseja definir o política de grupo).  
 
 3.  Na árvore de console, clique com o botão direito do mouse em **política de grupo objetos**e clique em **novo**.  
 
     ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)  
 
-4.  Na caixa de diálogo **novo GPO** , digite <GPO Name> e clique em **OK** (em que *nome do GPO* é o nome desse GPO).  
+4.  Na caixa de diálogo **novo GPO** , digite <GPO Name>e clique em **OK** (em que *nome do GPO* é o nome desse GPO).  
 
     ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)  
 
@@ -122,7 +122,7 @@ Para o grupo Administradores em cada domínio na floresta:
 
 11. No **Gerenciamento de política de grupo**, VINCULE o GPO ao servidor membro e às UOs de estação de trabalho fazendo o seguinte:  
 
-    1.  Navegue até o &lt;Forest @ no__t-1 > \Domains @ no__t-2 @ no__t-3Domain @ no__t-4 (em que &lt;Forest @ no__t-6 é o nome da floresta e &lt;Domain @ no__t-8 é o nome do domínio no qual você deseja definir o Política de Grupo).  
+    1.  Navegue até a floresta de &lt;&gt;> \Domains\\&lt;&gt; de domínio (em que &lt;floresta&gt; é o nome da floresta e &lt;domínio&gt; é o nome do domínio no qual você deseja definir o Política de Grupo).  
 
     2.  Clique com o botão direito do mouse na UO à qual o GPO será aplicado e clique em **vincular um GPO existente**.  
 
@@ -150,13 +150,13 @@ Para o grupo Administradores em cada domínio na floresta:
 
 1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
+2.  Na árvore de console, expanda <Forest>\Domains\\<Domain>e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
 
 3.  Na árvore de console, clique com o botão direito do mouse em **política de grupo objetos**e clique em **novo**.  
 
     ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)  
 
-4.  Na caixa de diálogo **novo GPO** , digite <GPO Name> e clique em **OK** (em que <GPO Name> é o nome desse GPO).  
+4.  Na caixa de diálogo **novo GPO** , digite <GPO Name>e clique em **OK** (em que <GPO Name> é o nome desse GPO).  
 
     ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)  
 
@@ -206,7 +206,7 @@ Para o grupo Administradores em cada domínio na floresta:
 
 11. No **Gerenciamento de política de grupo**, VINCULE o GPO à UO Controladores de domínio fazendo o seguinte:  
 
-    1.  Navegue até o <Forest> \ Domains @ no__t-1 @ no__t-2 (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
+    1.  Navegue até o <Forest>\Domains\\<Domain> (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
 
     2.  Clique com o botão direito do mouse na UO Controladores de domínio e clique em **vincular um GPO existente**.  
 
@@ -231,7 +231,7 @@ De qualquer servidor membro ou estação de trabalho que não seja afetada pelas
 
     ![proteger grupos de administradores](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)  
 
-5.  Na janela do **prompt de comando** , digite **net use \\ @ no__t-3 @ No__t-4Server Name @ no__t-5\c $** , em que \<Server Name @ no__t-7 é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
+5.  Na janela do **prompt de comando** , digite **net use \\\\nome do servidor \<\>\c $** , em que \<nome do servidor\> é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
 
 6.  A captura de tela a seguir mostra a mensagem de erro que deve aparecer.  
 
@@ -250,7 +250,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Clique em **arquivo**e em **salvar como**.  
 
-5.  No campo **nome do arquivo** , digite **@no__t -2. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
+5.  No campo **nome do arquivo** , digite **<Filename>. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
 
 ###### <a name="schedule-a-task"></a>Agendar uma tarefa  
 

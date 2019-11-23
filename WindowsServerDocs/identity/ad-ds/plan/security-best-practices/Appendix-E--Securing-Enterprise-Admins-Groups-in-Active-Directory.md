@@ -16,19 +16,19 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408718"
 ---
-# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Apêndice E: Protegendo grupos de administradores corporativos no Active Directory
+# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Apêndice E: Proteger grupos de administrador corporativo no Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Apêndice E: Protegendo grupos de administradores corporativos no Active Directory  
-O grupo de Enterprise Admins (EA), que está hospedado no domínio raiz da floresta, não deve conter nenhum usuário em uma base diária, com a possível exceção da conta de administrador do domínio raiz, desde que ele seja protegido conforme descrito em [Appendix D: Protegendo contas de administrador internas no Active Directory @ no__t-0.  
+## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Apêndice E: Proteger grupos de administrador corporativo no Active Directory  
+O grupo Enterprise Admins (EA), que está hospedado no domínio raiz da floresta, não deve conter nenhum usuário diariamente, com a possível exceção da conta de administrador do domínio raiz, desde que ele seja protegido, conforme descrito no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
 Os administradores corporativos são, por padrão, membros do grupo Administradores em cada domínio na floresta. Você não deve remover o grupo EA dos grupos de administradores em cada domínio porque, no caso de um cenário de recuperação de desastre de floresta, os direitos de EA provavelmente serão necessários. O grupo de administradores corporativos da floresta deve ser protegido conforme detalhado nas instruções passo a passo a seguir.  
 
 Para o grupo de administradores de empresa na floresta:  
 
-1.  Em GPOs vinculados a UOs que contêm servidores membros e estações de trabalho em cada domínio, o grupo Administradores de empresa deve ser adicionado aos seguintes direitos de usuário no computador \ \ \ \ \ \ \ \ \ Usuários  **Atribuições**:  
+1.  Em GPOs vinculados a UOs que contêm servidores membros e estações de trabalho em cada domínio, o grupo Administradores de empresa deve ser adicionado aos direitos de usuário a seguir no **computador \** \ \ \ \ \ \ \ \ \ \ Configurações de direitos:  
 
     -   Negar o acesso a este computador a partir da rede  
 
@@ -46,7 +46,7 @@ Para o grupo de administradores de empresa na floresta:
 
 1.  Em **Gerenciador do servidor**, clique em **ferramentas**e em **Active Directory usuários e computadores**.  
 
-2.  Se você não estiver gerenciando o domínio raiz da floresta, na árvore de console, clique com o botão direito do mouse em <Domain> e clique em **alterar domínio** (em que <Domain> é o nome do domínio que você está administrando no momento).  
+2.  Se você não estiver gerenciando o domínio raiz da floresta, na árvore de console, clique com o botão direito do mouse em <Domain>e clique em **alterar domínio** (em que <Domain> é o nome do domínio que você está administrando no momento).  
 
     ![proteger grupos de administradores corporativos](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)  
 
@@ -68,7 +68,7 @@ Para o grupo de administradores de empresa na floresta:
 
 1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
+2.  Na árvore de console, expanda <Forest>\Domains\\<Domain>e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
 
     > [!NOTE]  
     > Em uma floresta que contém vários domínios, um GPO semelhante deve ser criado em cada domínio que exige que o grupo Administradores de empresa seja protegido.  
@@ -77,11 +77,11 @@ Para o grupo de administradores de empresa na floresta:
 
     ![proteger grupos de administradores corporativos](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)  
 
-4.  Na caixa de diálogo **novo GPO** , digite <GPO Name> e clique em **OK** (em que <GPO Name> é o nome desse GPO).  
+4.  Na caixa de diálogo **novo GPO** , digite <GPO Name>e clique em **OK** (em que <GPO Name> é o nome desse GPO).  
 
     ![proteger grupos de administradores corporativos](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)  
 
-5.  No painel de detalhes, clique com o botão direito do mouse em <GPO Name> e clique em **Editar**.  
+5.  No painel de detalhes, clique com o botão direito do mouse em <GPO Name>e clique em **Editar**.  
 
 6.  Navegue até **computador \ \ Diretivas**\ \ políticas e clique em **atribuição de direitos de usuário**.  
 
@@ -163,7 +163,7 @@ Para o grupo de administradores de empresa na floresta:
 
 13. No **Gerenciamento de política de grupo**, VINCULE o GPO ao servidor membro e às UOs de estação de trabalho fazendo o seguinte:  
 
-    1.  Navegue até o <Forest> \ Domains @ no__t-1 @ no__t-2 (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
+    1.  Navegue até o <Forest>\Domains\\<Domain> (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
 
     2.  Clique com o botão direito do mouse na UO à qual o GPO será aplicado e clique em **vincular um GPO existente**.  
 
@@ -197,7 +197,7 @@ De qualquer servidor membro ou estação de trabalho que não seja afetada pelas
 
     ![proteger grupos de administradores corporativos](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)  
 
-5.  Na janela do **prompt de comando** , digite **net use \\ @ no__t-3 @ No__t-4Server Name @ no__t-5\c $** , em que \<Server Name @ no__t-7 é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
+5.  Na janela do **prompt de comando** , digite **net use \\\\nome do servidor \<\>\c $** , em que \<nome do servidor\> é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
 
 6.  A captura de tela a seguir mostra a mensagem de erro que deve aparecer.  
 
@@ -217,7 +217,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Clique em **arquivo**e em **salvar como**.  
 
-5.  Na caixa nome do **arquivo** , digite **@no__t -2. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
+5.  Na caixa nome do **arquivo** , digite **<Filename>. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
 
 ##### <a name="schedule-a-task"></a>Agendar uma tarefa  
 

@@ -21,7 +21,7 @@ ms.locfileid: "71404552"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>Etapa 2 configurar o servidor de acesso remoto
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como definir as configurações de cliente e servidor que são necessárias para o gerenciamento remoto de clientes DirectAccess. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas na [etapa 2 planejar a implantação de acesso remoto](../plan/Step-2-Plan-the-Remote-Access-Deployment.md).  
   
@@ -61,7 +61,7 @@ Você deve instalar a função de acesso remoto em um servidor em sua organizaç
   
 8.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
-0Windows-](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -83,7 +83,7 @@ Há três opções que você pode usar para implantar o acesso remoto no console
   
 #### <a name="to-configure-the-deployment-type"></a>Para configurar o tipo de implantação  
   
-1.  No servidor de Acesso Remoto, abra o console de Gerenciamento de Acesso Remoto: Na tela **Iniciar** , digite, digite **console de gerenciamento de acesso remoto**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+1.  No servidor de acesso remoto, abra o console de gerenciamento de acesso remoto: na tela **Iniciar** , digite, digite **console de gerenciamento de acesso remoto**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  No Console de Gerenciamento de Acesso Remoto, no painel do meio, clique em **Executar o assistente de configuração de acesso remoto**.  
   
@@ -115,7 +115,7 @@ Para que um computador cliente possa ser provisionado para usar o DirectAccess, 
         > [!NOTE]  
         > Quando a resolução de nomes locais está habilitada, os usuários que executam o NCA podem resolver nomes usando servidores DNS configurados no computador cliente do DirectAccess.  
   
-6.  Clique em **Finalizar**.  
+6.  Clique em **Concluir**.  
   
 ## <a name="BKMK_Server"></a>Configurar o servidor de acesso remoto  
 Para implantar o acesso remoto, você precisa configurar o servidor que atuará como o servidor de acesso remoto com o seguinte:  
@@ -152,7 +152,7 @@ Para implantar o acesso remoto, você precisa configurar o servidor que atuará 
   
     -   Para permitir que computadores cliente que executam o Windows 7 se conectem via DirectAccess, marque a caixa de seleção **habilitar computadores cliente do Windows 7 para se conectar via DirectAccess** . Você também deverá usar uma autenticação de certificado de computador para este tipo de implantação.  
   
-7.  Clique em **Finalizar**.  
+7.  Clique em **Concluir**.  
   
 ## <a name="BKMK_Infra"></a>Configurar os servidores de infraestrutura  
 Para configurar os servidores de infraestrutura em uma implantação de acesso remoto, você deve configurar o seguinte:  
@@ -179,7 +179,7 @@ Para configurar os servidores de infraestrutura em uma implantação de acesso r
   
 5.  Na página **Gerenciamento** , adicione servidores de gerenciamento que não são detectados automaticamente e clique em **Avançar**. O Acesso Remoto adiciona automaticamente os controladores de domínio e os servidores do System Center Configuration Manager.  
   
-6.  Clique em **Finalizar**.  
+6.  Clique em **Concluir**.  
   
 ## <a name="BKMK_App"></a>Configurar servidores de aplicativos  
 Em uma implantação de acesso remoto completa, a configuração de servidores de aplicativos é uma tarefa opcional. Nesse cenário para o gerenciamento remoto de clientes DirectAccess, os servidores de aplicativos não são utilizados e essa etapa fica esmaecida para indicar que ele não está ativo. Clique em **concluir** para aplicar a configuração.  
@@ -205,7 +205,7 @@ Uma vez concluída a configuração do Acesso Remoto, a **Revisão de Acesso Rem
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 3: Verificar a implantação](Step-3-Verify-the-Deployment_2.md)  
+-   [Etapa 3: verificar a implantação](Step-3-Verify-the-Deployment_2.md)  
   
   
 

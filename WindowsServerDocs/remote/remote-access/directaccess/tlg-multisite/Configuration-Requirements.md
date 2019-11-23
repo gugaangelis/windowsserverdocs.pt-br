@@ -21,7 +21,7 @@ ms.locfileid: "71404770"
 ---
 # <a name="configuration-requirements"></a>Requisitos de configuração
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Os seguintes componentes são necessários para configurar o acesso remoto no laboratório de teste:  
   
@@ -29,11 +29,11 @@ Os seguintes componentes são necessários para configurar o acesso remoto no la
   
 -   Nove computadores ou máquinas virtuais que atendam aos requisitos mínimos de hardware para o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012; três desses computadores têm dois adaptadores de rede instalados.  
   
--   O disco do produto ou os arquivos para Windows 10 @ no__t-0 ou Windows @ no__t-1 8.  
+-   O disco do produto ou os arquivos do Windows 10&reg; ou do Windows&reg; 8.  
   
 -   O disco do produto ou os arquivos do Windows 7 Ultimate.  
   
--   Três computadores ou máquinas virtuais que atendem aos requisitos mínimos de hardware para Windows 10 @ no__t-0, Windows 8 ou Windows 7; um desses computadores tem dois adaptadores de rede instalados.  
+-   Três computadores ou máquinas virtuais que atendem aos requisitos mínimos de hardware para Windows 10&reg;, Windows 8 ou Windows 7; um desses computadores tem dois adaptadores de rede instalados.  
   
 
 

@@ -17,9 +17,9 @@ ms.locfileid: "71405289"
 ---
 # <a name="getting-started-with-qos-policy"></a>Introdução com a política de QoS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar os tópicos a seguir para começar com a qualidade de serviço \(QoS @ no__t-1 política.
+Você pode usar os tópicos a seguir para começar com a qualidade de serviço \(a política de\) de QoS.
 
 - [Como funciona a política de QoS](qos-policy-works.md)
 - [Arquitetura de política de QoS](qos-policy-architecture.md)

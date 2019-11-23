@@ -22,9 +22,9 @@ ms.locfileid: "71408810"
 
 Você pode encontrar a seguinte documentação sobre Active Directory Domain Services (AD DS) na biblioteca técnica do Windows Server 2008:  
   
--   Para obter mais informações sobre como implantar um domínio raiz de floresta do Windows Server 2008, consulte [implantando um domínio raiz de floresta do Windows server 2008 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
+-   Para obter mais informações sobre como implantar um domínio raiz de floresta do Windows Server 2008, consulte [implantando um domínio raiz de floresta do Windows server 2008 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
   
--   Para obter mais informações sobre como atualizar um domínio Active Directory para o Windows Server 2008, consulte [atualizando domínios Active Directory para o Windows server 2008 AD DS domínios \[LH @ no__t-2](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61).  
+-   Para obter mais informações sobre como atualizar um domínio Active Directory para o Windows Server 2008, consulte [atualizando domínios Active Directory para o Windows server 2008 AD DS domínios \[LH\]](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61).  
   
 -   Para obter mais informações sobre como implantar AD DS, consulte o guia passo a passo do Windows Server 2008 Active Directory Domain Services instalação e remoção ([https://go.microsoft.com/fwlink/?LinkId=100492](https://go.microsoft.com/fwlink/?LinkId=100492)).  
   

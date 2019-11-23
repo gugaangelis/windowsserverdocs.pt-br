@@ -18,7 +18,7 @@ ms.locfileid: "71407736"
 ---
 # <a name="change-the-company-name-on-the-ad-fs-sign-in-page"></a>Alterar o nome da empresa na página de entrada AD FS
  
-Para alterar o nome da empresa que é exibida na página assinar @ no__t-0in, use o cmdlet e a sintaxe do Windows PowerShell a seguir. Esse valor é definido por padrão usando o valor do nome de exibição de Serviço de Federação que você digitou durante a configuração.  
+Para alterar o nome da empresa que é exibida na página\-de entrada, use o cmdlet e a sintaxe do Windows PowerShell a seguir. Esse valor é definido por padrão usando o valor do nome de exibição de Serviço de Federação que você digitou durante a configuração.  
 
 ![alterar nome](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
   
@@ -27,7 +27,7 @@ Para alterar o nome da empresa que é exibida na página assinar @ no__t-0in, us
  
   
 > [!NOTE]  
-> Você também pode usar o Ambiente de Script Integrado do Windows PowerShell \(ISE @ no__t-1 para alterar o nome da empresa. Usando o ISE do Windows PowerShell, você pode exibir o conteúdo em um ambiente Unicode @ no__t-0compliant. Para obter informações adicionais, consulte [Apresentando o Windows PowerShell ISE](https://technet.microsoft.com/library/dd315244.aspx).  
+> Você também pode usar o\) \(ISE Ambiente de Script Integrado do Windows PowerShell para alterar o nome da empresa. Usando o ISE do Windows PowerShell, você pode exibir o conteúdo em um ambiente em conformidade com\-Unicode. Para obter informações adicionais, consulte [Apresentando o Windows PowerShell ISE](https://technet.microsoft.com/library/dd315244.aspx).  
 
 ## <a name="additional-references"></a>Referências adicionais 
 [AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  

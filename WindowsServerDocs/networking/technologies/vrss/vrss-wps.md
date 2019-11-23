@@ -19,11 +19,11 @@ ms.locfileid: "71405278"
 ---
 # <a name="windows-powershell-commands-for-rss-and-vrss"></a>Comandos do Windows PowerShell para RSS e vRSS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Neste tópico, você aprenderá a localizar rapidamente as informações de referência técnica sobre os comandos do Windows PowerShell para receber o dimensionamento do lado \(RSS @ no__t-1 e o virtual RSS \(vRSS @ no__t-3.
+Neste tópico, você aprenderá a localizar rapidamente as informações de referência técnica sobre os comandos do Windows PowerShell para receber o dimensionamento \(RSS\) e o\)virtual RSS \(vRSS.
 
-Use os comandos RSS a seguir para configurar o RSS em um computador físico com vários processadores ou vários núcleos. Você pode usar os mesmos comandos para configurar o vRSS em uma máquina virtual \(VM @ no__t-1 que esteja executando um sistema operacional com suporte. Para obter mais informações, consulte [cmdlets do adaptador de rede no Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps).
+Use os comandos RSS a seguir para configurar o RSS em um computador físico com vários processadores ou vários núcleos. Você pode usar os mesmos comandos para configurar o vRSS em uma máquina virtual \(VM\) que esteja executando um sistema operacional com suporte. Para obter mais informações, consulte [cmdlets do adaptador de rede no Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps).
 
 ## <a name="configure-vmq"></a>Configurar a VMQ
 
@@ -36,7 +36,7 @@ o vRSS requer que a VMQ esteja habilitada e configurada. Você pode usar os segu
 
 ## <a name="enable-and-configure-rss-on-a-native-host"></a>Habilitar e configurar o RSS em um host nativo
 
-Use os comandos do PowerShell a seguir para configurar o RSS em um host nativo, bem como gerenciar o RSS em uma VM ou em uma NIC virtual do host (vNIC). Alguns dos parâmetros desses comandos também podem afetar Fila de Máquina Virtual \(VMQ @ no__t-1 no host Hyper-V.  
+Use os comandos do PowerShell a seguir para configurar o RSS em um host nativo, bem como gerenciar o RSS em uma VM ou em uma NIC virtual do host (vNIC). Alguns dos parâmetros desses comandos também podem afetar Fila de Máquina Virtual \(\) de VMQ no host Hyper-V.  
 
 >[!IMPORTANT]
 >Habilitar o RSS em uma VM ou em um host vNIC é um pré-requisito para habilitar e usar o vRSS.
@@ -46,9 +46,9 @@ Use os comandos do PowerShell a seguir para configurar o RSS em um host nativo, 
 - [Get-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
 - [Set-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
 
-## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>Habilitar o vRSS na porta do comutador virtual Hyper @ no__t-0V
+## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>Habilitar o vRSS na porta do comutador virtual Hyper\-V
 
-Além de habilitar o RSS na VM, o vRSS exige que você habilite o vRSS na porta do comutador virtual Hyper @ no__t-0V. 
+Além de habilitar o RSS na VM, o vRSS requer que você habilite o vRSS na porta do comutador virtual Hyper\-V. 
 
 Determine as configurações atuais para vRSS e habilite ou desabilite o recurso para uma VM.
 

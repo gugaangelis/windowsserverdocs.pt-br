@@ -21,9 +21,9 @@ ms.locfileid: "71404566"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>Identificar e resolver problemas de operações do servidor de acesso remoto
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-**Observação:** O Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
+**Observação:** o Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
   
 Você pode usar os procedimentos a seguir para identificar problemas de operações do servidor de acesso remoto, suas causas raiz e a resolução necessária para corrigir os problemas.  
   
@@ -91,7 +91,7 @@ Para restaurar o serviço auxiliar de IP em seu servidor de acesso remoto, você
   
 2.  Na lista de **Serviços**, role para baixo e clique com o botão direito do mouse em **IP Helper**e clique em **Iniciar**.  
   
-0Windows-](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

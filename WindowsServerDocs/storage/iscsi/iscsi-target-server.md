@@ -23,13 +23,13 @@ Este tópico fornece uma breve visão geral do servidor de destino iSCSI, um ser
 
 O servidor de destino iSCSI é ideal para o seguinte:
 
-* **Inicialização de rede e sem disco**   By usando adaptadores de rede compatíveis com a inicialização ou um carregador de software, você pode implantar centenas de servidores sem disco. Com o servidor de destino iSCSI, a implantação é rápida. Em testes internos da Microsoft, 256 computadores foram implantados em 34 minutos. Usando discos rígidos virtuais diferentes, você pode economizar até 90% do espaço de armazenamento usado para as imagens do sistema operacional. Isso é ideal para grandes implantações de imagens de sistemas operacionais idênticos, por exemplo, em máquinas virtuais que executam o Hyper-V ou em clusters de computação de alto desempenho (HPC).
+*    de **inicialização de rede e sem disco** usando adaptadores de rede compatíveis com a inicialização ou um carregador de software, você pode implantar centenas de servidores sem disco. Com o servidor de destino iSCSI, a implantação é rápida. Em testes internos da Microsoft, 256 computadores foram implantados em 34 minutos. Usando discos rígidos virtuais diferentes, você pode economizar até 90% do espaço de armazenamento usado para as imagens do sistema operacional. Isso é ideal para grandes implantações de imagens de sistemas operacionais idênticos, por exemplo, em máquinas virtuais que executam o Hyper-V ou em clusters de computação de alto desempenho (HPC).
 
-* Os aplicativos    Some de **armazenamento de aplicativos do servidor**exigem armazenamento em bloco. O Servidor de Destino iSCSI pode fornecer esses aplicativos com armazenamento em bloco continuamente disponível. Como o armazenamento é acessível remotamente, ele também pode consolidar o armazenamento em bloco para escritórios centrais ou filiais.
+* **Armazenamento de aplicativos de servidor**   alguns aplicativos exigem armazenamento em bloco. O Servidor de Destino iSCSI pode fornecer esses aplicativos com armazenamento em bloco continuamente disponível. Como o armazenamento é acessível remotamente, ele também pode consolidar o armazenamento em bloco para escritórios centrais ou filiais.
 
-* O servidor de destino    iSCSI de **armazenamento heterogêneo**dá suporte a iniciadores não Microsoft iSCSI, facilitando o compartilhamento de armazenamento em servidores em um ambiente de software misto.
+* O **armazenamento heterogêneo**   servidor de destino iSCSI dá suporte a iniciadores não Microsoft iSCSI, facilitando o compartilhamento de armazenamento em servidores em um ambiente de software misto.
 
-* **Ambientes de desenvolvimento, teste, demonstração e laboratório**@no__t-servidor de destino iSCSI do 1When está habilitado, um computador executando o sistema operacional Windows Server torna-se um dispositivo de armazenamento de blocos acessível pela rede. Isso é útil para testar aplicativos antes da implantação em uma SAN (Rede de Área de Armazenamento).
+* **Ambientes de desenvolvimento, teste, demonstração e laboratório**   quando o servidor de destino iSCSI está habilitado, um computador executando o sistema operacional Windows Server torna-se um dispositivo de armazenamento de blocos acessível pela rede. Isso é útil para testar aplicativos antes da implantação em uma SAN (Rede de Área de Armazenamento).
 
 ## <a name="block-storage-requirements"></a>Requisitos de armazenamento em bloco
 

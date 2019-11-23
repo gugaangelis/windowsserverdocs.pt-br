@@ -35,6 +35,7 @@ As mesmas ferramentas estão disponíveis como uma extensão de ferramenta ao ge
 
 A extensão de ferramenta para clusters de failover e clusters hiperconvergentes fornece um painel que exibe o status geral de integridade do hardware do cluster, alertas de status, status de consistência do firmware e relatório, consumo de energia e temperatura, e fonte de alimentação e ventilador status de integridade.
 
-Extensão ![Lenovo @ no__t-1 @ no__t-2Lenovo extensão @ no__t-3
+![extensão Lenovo](../../media/extend-case-study-lenovo/lenovo-4.png)
+![extensão Lenovo](../../media/extend-case-study-lenovo/lenovo-5.png)
 
 Saiba mais sobre as ofertas do integrador do Lenovo XClarity para o centro de administração do Windows no [site do Lenovo](https://support.lenovo.com/us/en/solutions/ht507549).

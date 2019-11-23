@@ -22,9 +22,9 @@ ms.locfileid: "71371532"
 ---
 # <a name="repair"></a>Corrige
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Repara o volume RAID @ no__t-05 com foco, substituindo a região do disco com falha pelo disco dinâmico especificado.  
+Repara o volume RAID\-5 com foco, substituindo a região do disco com falha pelo disco dinâmico especificado.  
   
   
   
@@ -38,15 +38,15 @@ repair disk=<n> [align=<n>] [noerr]
   
 | Parâmetro  |                                                                                             Descrição                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| disco @ no__t-0 @ no__t-1  |                                                                 Especifica o disco dinâmico que substituirá a região do disco com falha.                                                                 |
-| alinhar @ no__t-0 @ no__t-1 |          Alinha todas as extensões de volume ou partição ao limite de alinhamento mais próximo. *n* é o número de kilobytes \( KB @ no__t-2 desde o início do disco até o limite de alinhamento mais próximo.           |
-|   NOERR    | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
+| \=de disco <n>  |                                                                 Especifica o disco dinâmico que substituirá a região do disco com falha.                                                                 |
+| alinhar\=<n> |          Alinha todas as extensões de volume ou partição ao limite de alinhamento mais próximo. *n* é o número de kilobytes \(KB\) desde o início do disco até o limite de alinhamento mais próximo.           |
+|   NOERR    | somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
   
 ## <a name="remarks"></a>Comentários  
   
--   O disco dinâmico especificado deve ter espaço livre maior ou igual ao tamanho total da região do disco com falha no volume RAID @ no__t-05.  
+-   O disco dinâmico especificado deve ter espaço livre maior ou igual ao tamanho total da região do disco com falha no volume RAID\-5.  
   
--   Um volume em uma matriz RAID @ no__t-05 deve ser selecionado para que essa operação seja realizada com sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.  
+-   Um volume em uma matriz RAID\-5 deve ser selecionado para que essa operação seja realizada com sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.  
   
 ## <a name="BKMK_examples"></a>Disso  
 Para substituir o volume com foco, substituindo-o pelo disco dinâmico 4, digite:  
@@ -55,7 +55,7 @@ Para substituir o volume com foco, substituindo-o pelo disco dinâmico 4, digite
 repair disk=4  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

@@ -18,20 +18,20 @@ ms.locfileid: "71405752"
 ---
 # <a name="dhcp-subnet-selection-options"></a>Opções de seleção de sub-rede DHCP
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para obter informações sobre as novas opções de seleção de sub-rede do DHCP.
 
-O DHCP agora dá suporte à opção 82 \(sub-Option 5 @ no__t-1. Você pode usar essas opções para permitir que clientes proxy DHCP e agentes de retransmissão solicitem um endereço IP para uma sub-rede específica e de um intervalo de endereços IP e escopo específicos.  Para obter mais detalhes, consulte a **opção 82 sub opção 5**: [Sub-opção de seleção de link RFC 3527 para a opção de informações do agente de retransmissão para o DHCPv4](https://tools.ietf.org/html/rfc3527).
+O DHCP agora dá suporte à opção 82 \(a subopção 5\). Você pode usar essas opções para permitir que clientes proxy DHCP e agentes de retransmissão solicitem um endereço IP para uma sub-rede específica e de um intervalo de endereços IP e escopo específicos.  Para obter mais detalhes, confira a **opção 82 sub Option 5**: [RFC 3527 link Selection suboption para a opção de informações do agente de retransmissão para o DHCPv4](https://tools.ietf.org/html/rfc3527).
 
 Se você estiver usando um agente de retransmissão DHCP configurado com a opção de DHCP 82, a subopção 5, o agente de retransmissão poderá solicitar uma concessão de endereço IP para clientes DHCP de um intervalo de endereços IP específico.
 
 
-## <a name="option-82-sub-option-5-link-selection-sub-option"></a>Opção 82 sub opção 5: Opção de seleção de link
+## <a name="option-82-sub-option-5-link-selection-sub-option"></a>Opção 82 sub opção 5: opção de seleção de link
 
 A subopção seleção de link do agente de retransmissão permite que um agente de retransmissão DHCP especifique uma sub-rede IP da qual o servidor DHCP deve atribuir endereços IP e opções.
 
-Normalmente, os agentes de retransmissão DHCP dependem do campo \(GIADDR @ no__t-1 do endereço IP do gateway para se comunicar com os servidores DHCP. No entanto, o GIADDR é limitado por suas duas funções operacionais:
+Normalmente, os agentes de retransmissão DHCP dependem do endereço IP do gateway \(campo GIADDR\) para se comunicar com os servidores DHCP. No entanto, o GIADDR é limitado por suas duas funções operacionais:
 
 1. Para informar ao servidor DHCP sobre a sub-rede na qual o cliente DHCP que está solicitando a concessão de endereço IP reside.
 2. Para informar o servidor DHCP do endereço IP a ser usado para se comunicar com o agente de retransmissão.
@@ -49,6 +49,6 @@ A opção de seleção de link da opção 82 é útil nessa situação, permitin
 
 ### <a name="use-case-scenario"></a>Cenário de caso de uso
 
-Nesse cenário, uma rede de organização inclui um servidor DHCP e um ponto de acesso sem fio \(AP @ no__t-1 para os usuários convidados. Os endereços IP do cliente de convidados são atribuídos do servidor DHCP da organização-no entanto, devido a restrições de política de firewall, o servidor DHCP não pode acessar a rede sem fio convidada ou clientes sem fio com mensagens broadcase.
+Nesse cenário, uma rede da organização inclui um servidor DHCP e um ponto de acesso sem fio \(AP\) para os usuários convidados. Os endereços IP do cliente de convidados são atribuídos do servidor DHCP da organização-no entanto, devido a restrições de política de firewall, o servidor DHCP não pode acessar a rede sem fio convidada ou clientes sem fio com mensagens broadcase.
 
 Para resolver essa restrição, o AP é configurado com a subopção de seleção de link 5 para especificar a sub-rede da qual ele deseja o endereço IP alocado para clientes convidados, enquanto no GIADDR também especifica o endereço IP da interface interna que leva ao rede corporativa.

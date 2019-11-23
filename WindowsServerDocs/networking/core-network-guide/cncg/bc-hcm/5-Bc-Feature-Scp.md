@@ -17,9 +17,9 @@ ms.locfileid: "71356350"
 ---
 # <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>Instalar o recurso BranchCache e configurar o servidor de cache hospedado por ponto de conexão de serviço
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Você pode usar este procedimento para instalar o recurso do BranchCache em seu servidor de cache hospedado, HCS1, e para configurar o servidor para registrar um ponto de conexão de serviço \(SCP @ no__t-1 em Active Directory Domain Services \(AD DS @ no__t-3.
+Você pode usar este procedimento para instalar o recurso do BranchCache em seu servidor de cache hospedado, HCS1 e para configurar o servidor para registrar um ponto de conexão de serviço \(SCP\) em Active Directory Domain Services \(AD DS\).
 
 Quando você registra servidores de cache hospedados com um SCP no AD DS, o SCP permite que os computadores cliente configurados corretamente para descobrir automaticamente os servidores de cache hospedados consultando AD DS para o SCP. As instruções sobre como configurar computadores cliente para executar essa ação são fornecidas posteriormente neste guia.
 
@@ -50,11 +50,11 @@ Para executar esse procedimento, é necessário ser membro do grupo Administrado
   
     Os resultados do status de exibição do comando para todos os aspectos da instalação do BranchCache. A seguir estão algumas das configurações do BranchCache e o valor correto para cada item:  
   
-    -   BranchCacheIsEnabled: True
+    -   BranchCacheIsEnabled: true
 
-    -   HostedCacheServerIsEnabled: True
+    -   HostedCacheServerIsEnabled: true
 
-    -   HostedCacheScpRegistrationEnabled: True
+    -   HostedCacheScpRegistrationEnabled: true
 
 4. Para se preparar para a etapa de copiar seus pacotes de dados dos seus servidores de conteúdo para seus servidores de cache hospedados, identifique um compartilhamento existente no servidor de cache hospedado ou crie uma nova pasta e compartilhe a pasta para que ela possa ser acessada dos seus servidores de conteúdo. Depois de criar seus pacotes de dados em seus servidores de conteúdo, você copiará os pacotes de dados para essa pasta compartilhada no servidor de cache hospedado.
   

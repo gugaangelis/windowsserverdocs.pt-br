@@ -17,7 +17,7 @@ ms.locfileid: "71405179"
 ---
 # <a name="how-qos-policy-works"></a>Como funciona a política de QoS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Ao iniciar ou obter a configuração atualizada do usuário ou do computador Política de Grupo configurações de QoS, ocorre o seguinte processo.
 
@@ -29,7 +29,7 @@ Ao iniciar ou obter a configuração atualizada do usuário ou do computador Pol
 
 4. O módulo inspeção de QoS recupera as políticas de QoS de usuário ou computador e as armazena.
 
-Quando uma nova conexão de ponto de extremidade de camada de transporte \(TCP ou o tráfego UDP @ no__t-1 for criado, ocorrerá o processo a seguir.
+Quando um novo ponto de extremidade de camada de transporte \(conexão TCP ou o tráfego UDP\) é criado, ocorre o seguinte processo.
 
 1. O componente da camada de transporte da pilha TCP/IP informa o módulo inspeção de QoS.
 
@@ -59,7 +59,7 @@ Quando um pacote correspondente a um ponto de extremidade da camada de transport
 
 7. O Pacer. sys usa o número de fluxo do pacote para determinar se o pacote precisa ser limitado e, em caso afirmativo, agenda o pacote para envio.
 
-8. O Pacer. sys distribui o pacote imediatamente \(if não há limitação de tráfego @ no__t-1 ou conforme agendado \(if há uma limitação de tráfego @ no__t-3 para o NDIS 6. x para transmissão sobre o adaptador de rede apropriado.
+8. O Pacer. sys distribui o pacote imediatamente \(se não houver limitação de tráfego\) ou como \(agendado se houver uma limitação de tráfego\) para o NDIS 6. x para transmissão no adaptador de rede apropriado.
 
 Esses processos de QoS baseado em políticas oferecem as seguintes vantagens.
 

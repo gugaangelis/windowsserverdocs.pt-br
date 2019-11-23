@@ -76,31 +76,31 @@ Ao criar um arquivo Unattend. xml para VMs blindadas, tenha em mente as seguinte
 
     | Elemento substituível | Cadeia de caracteres de substituição |
     |-----------|-----------|
-    | ComputerName        | @ComputerName @      |
-    | Fuso horário            | @TimeZone @          |
-    | ProductKey          | @ProductKey @        |
-    | IPAddr4-1           | @IP4Addr-1 @         |
-    | IPAddr6-1           | @IP6Addr-1 @         |
-    | MACAddr-1           | @MACAddr-1 @         |
-    | Prefixo-1-1          | @Prefix-1-1 @        |
-    | NextHop-1-1         | @NextHop-1-1 @       |
-    | Prefixo-1-2          | @Prefix-1-2 @        |
-    | NextHop-1-2         | @NextHop-1-2 @       |
+    | ComputerName        | @ComputerName@      |
+    | Fuso horário            | @TimeZone@          |
+    | ProductKey          | @ProductKey@        |
+    | IPAddr4-1           | @IP4Addr-1@         |
+    | IPAddr6-1           | @IP6Addr-1@         |
+    | MACAddr-1           | @MACAddr-1@         |
+    | Prefixo-1-1          | @Prefix-1-1@        |
+    | NextHop-1-1         | @NextHop-1-1@       |
+    | Prefixo-1-2          | @Prefix-1-2@        |
+    | NextHop-1-2         | @NextHop-1-2@       |
 
     Se você tiver mais de uma NIC, poderá adicionar várias cadeias de caracteres de substituição para a configuração de IP incrementando o primeiro dígito. Por exemplo, para definir o endereço IPv4, a sub-rede e o gateway para 2 NICs, você usaria as seguintes cadeias de caracteres de substituição:
 
     | Cadeia de caracteres de substituição | Substituição de exemplo |
     |---------------------|----------------------|
-    | @IP4Addr-1 @         | 192.168.1.10         |
-    | @MACAddr-1 @         | Ethernet             |
-    | @Prefix-1-1 @        | 192.168.1.0/24       |
-    | @NextHop-1-1 @       | 192.168.1.254        |
-    | @IP4Addr-2 @         | 10.0.20.30           |
-    | @MACAddr-2 @         | Ethernet 2           |
-    | @Prefix-2-1 @        | 10.0.20.0/24         |
-    | @NextHop-2-1 @       | 10.0.20.1            |
+    | @IP4Addr-1@         | 192.168.1.10         |
+    | @MACAddr-1@         | Ethernet             |
+    | @Prefix-1-1@        | 192.168.1.0/24       |
+    | @NextHop-1-1@       | 192.168.1.254        |
+    | @IP4Addr-2@         | 10.0.20.30           |
+    | @MACAddr-2@         | Ethernet 2           |
+    | @Prefix-2-1@        | 10.0.20.0/24         |
+    | @NextHop-2-1@       | 10.0.20.1            |
 
-Ao usar cadeias de caracteres de substituição, é importante garantir que as cadeias de caracteres serão preenchidas durante o processo de provisionamento da VM. Se uma cadeia de caracteres como @ProductKey @ não for fornecida no momento da implantação, deixando o nó &lt;ProductKey @ no__t-2 no arquivo autônomo em branco, o processo de especialização falhará e você não poderá se conectar à sua VM.
+Ao usar cadeias de caracteres de substituição, é importante garantir que as cadeias de caracteres serão preenchidas durante o processo de provisionamento da VM. Se uma cadeia de caracteres como @ProductKey@ não for fornecida no momento da implantação, deixando o nó &lt;ProductKey&gt; no arquivo autônomo em branco, o processo de especialização falhará e você não poderá se conectar à sua VM.
 
 Além disso, observe que as cadeias de caracteres de substituição relacionadas à rede em direção ao final da tabela só serão usadas se você estiver aproveitando os pools de endereços IP estáticos do VMM. Seu provedor de serviços de hospedagem deve ser capaz de informá-lo se essas cadeias de substituição forem necessárias. Para obter mais informações sobre endereços IP estáticos em modelos do VMM, consulte o seguinte na documentação do VMM:
 
@@ -161,13 +161,13 @@ Obtenha os arquivos de metadados do guardião para cada malha protegida na qual 
 
 Execute o assistente de arquivo de dados de blindagem para criar um arquivo de dados de blindagem (PDK). Aqui, você adicionará o certificado RDP, o arquivo autônomo, os catálogos de assinatura de volume, o guardião de proprietário e os metadados do guardião baixados obtidos na etapa anterior.
 
-1. Instale **ferramentas de administração de servidor remoto ferramentas de administração de recurso &gt; &gt; ferramentas de VM blindadas** em seu computador usando Gerenciador do servidor ou o seguinte comando do Windows PowerShell:
+1. Instale **Ferramentas de Administração de Servidor Remoto &gt; ferramentas de administração de recursos &gt; ferramentas de VM blindadas** em seu computador usando Gerenciador do servidor ou o seguinte comando do Windows PowerShell:
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-2. Abra o assistente de arquivo de dados de blindagem na seção ferramentas do administrador no menu iniciar ou executando o seguinte executável **C: \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**.
+2. Abra o assistente de arquivo de dados de blindagem na seção ferramentas do administrador no menu iniciar ou executando o seguinte executável **C:\\Windows\\System32\\ShieldingDataFileWizard. exe**.
 
 3. Na primeira página, use a caixa de seleção de segundo arquivo para escolher um local e nome de arquivo para o arquivo de dados de blindagem. Normalmente, você deve nomear um arquivo de dados de blindagem após a entidade que possui qualquer VM criada com esses dados de blindagem (por exemplo, RH, ti, Finanças) e a função de carga de trabalho que está executando (por exemplo, servidor de arquivos, servidor Web ou qualquer outra pessoa configurada pelo arquivo autônomo). Deixe o botão de opção definido como **blindar dados para modelos blindados**.
 
@@ -200,7 +200,7 @@ Execute o assistente de arquivo de dados de blindagem para criar um arquivo de d
 
 6. Na página **valores de especialização** , clique em **procurar** para selecionar o arquivo Unattend. XML que será usado para especializar suas VMs.
 
-    Use o botão **Adicionar** na parte inferior para adicionar arquivos adicionais ao PDK que são necessários durante o processo de especialização. Por exemplo, se o arquivo autônomo estiver instalando um certificado RDP na VM (conforme descrito em [gerar um arquivo de resposta usando a função New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), você deverá adicionar o arquivo PFX do certificado RDP e o RDPCertificateConfig. ps1 script aqui. Observe que todos os arquivos que você especificar aqui serão automaticamente copiados para C: \\temp @ no__t-1 na VM que é criada. O arquivo autônomo deve esperar que os arquivos estejam nessa pasta ao fazer referência a eles por caminho.
+    Use o botão **Adicionar** na parte inferior para adicionar arquivos adicionais ao PDK que são necessários durante o processo de especialização. Por exemplo, se o arquivo autônomo estiver instalando um certificado RDP na VM (conforme descrito em [gerar um arquivo de resposta usando a função New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), você deverá adicionar o arquivo PFX do certificado RDP e o script RDPCertificateConfig. ps1 aqui. Observe que todos os arquivos que você especificar aqui serão automaticamente copiados para C:\\\\ Temp na VM que é criada. O arquivo autônomo deve esperar que os arquivos estejam nessa pasta ao fazer referência a eles por caminho.
 
 7. Examine suas seleções na próxima página e clique em **gerar**.
 
@@ -247,7 +247,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 > Se você estiver usando um certificado RDP personalizado, chaves SSH ou outros arquivos que precisam ser incluídos com o arquivo de dados de blindagem, use o parâmetro `-OtherFile` para incluí-los. Você pode fornecer uma lista separada por vírgulas de caminhos de arquivo, como `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 No comando acima, o guardião chamado "proprietário" (obtido de Get-HgsGuardian) poderá alterar a configuração de segurança da VM no futuro, enquanto "o datacenter do leste dos EUA" pode executar a VM, mas não alterar suas configurações.
-Se você tiver mais de um guardião, separe os nomes dos Guardiões com vírgulas como `'EAST-US Datacenter', 'EMEA Datacenter'`.
+Se você tiver mais de um guardião, separe os nomes dos Guardiões com vírgulas, como `'EAST-US Datacenter', 'EMEA Datacenter'`.
 O qualificador de ID de volume especifica se você confia apenas na versão exata (Equals) do disco de modelo ou nas versões futuras (GreaterThanOrEquals) também.
 O nome do disco e o certificado de autenticação devem corresponder exatamente à comparação de versão a ser considerada no momento da implantação.
 Você pode confiar em mais de um disco de modelo fornecendo uma lista separada por vírgulas de qualificadores de ID de volume para o parâmetro `-VolumeIDQualifier`.

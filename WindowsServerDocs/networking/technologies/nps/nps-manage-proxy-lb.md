@@ -19,13 +19,13 @@ ms.locfileid: "71405427"
 
 Aplica-se a: Windows Server 2016
 
-Os clientes RADIUS (Remote Authentication Dial-in User Service), que são servidores de acesso à rede, como servidores VPN (rede virtual privada) e pontos de acesso sem fio, criam solicitações de conexão e as enviam para servidores RADIUS, como o NPS. Em alguns casos, um NPS pode receber muitas solicitações de conexão ao mesmo tempo, resultando em um desempenho degradado ou em uma sobrecarga. Quando um NPS está sobrecarregado, é uma boa ideia adicionar mais NPSs à sua rede e configurar o balanceamento de carga. Quando você distribui uniformemente as solicitações de conexão de entrada entre vários NPSs para evitar o sobrecarregamento de um ou mais NPSs, ele é chamado de balanceamento de carga.
+Clientes do serviço RADIUS (RADIUS), que são servidores de acesso à rede, como servidores de rede virtual privada (VPN) e pontos de acesso sem fio, criam solicitações de conexão e as enviam para servidores RADIUS, como o NPS. Em alguns casos, um NPS pode receber muitas solicitações de conexão ao mesmo tempo, resultando em um desempenho degradado ou em uma sobrecarga. Quando um NPS está sobrecarregado, é uma boa ideia adicionar mais NPSs à sua rede e configurar o balanceamento de carga. Quando você distribui uniformemente as solicitações de conexão de entrada entre vários NPSs para evitar o sobrecarregamento de um ou mais NPSs, ele é chamado de balanceamento de carga.
 
 O balanceamento de carga é particularmente útil para:
 
-- Organizações que usam protocolo de autenticação extensível – segurança da camada de transporte \(EAP-TLS @ no__t-1 ou protocolo de autenticação extensível protegido \(PEAP @ no__t-3-TLS para autenticação. Como esses métodos de autenticação usam certificados para autenticação de servidor e para autenticação de computador cliente ou de usuário, a carga em proxies e servidores RADIUS é mais pesada do que quando métodos de autenticação baseados em senha são usados.
+- As organizações que usam o protocolo de autenticação extensível – segurança de camada de transporte \(EAP-TLS\) ou protocolo de autenticação extensível protegida \(PEAP\)-TLS para autenticação. Como esses métodos de autenticação usam certificados para autenticação de servidor e para autenticação de computador cliente ou de usuário, a carga em proxies e servidores RADIUS é mais pesada do que quando métodos de autenticação baseados em senha são usados.
 - Organizações que precisam manter a disponibilidade contínua do serviço.
-- Os provedores de serviços de Internet \(ISPs @ no__t-1 que terceirizam o acesso VPN para outras organizações. Os serviços de VPN terceirizados podem gerar um grande volume de tráfego de autenticação.
+- Provedores de serviços de Internet \(ISPs\) que terceirizam o acesso VPN para outras organizações. Os serviços de VPN terceirizados podem gerar um grande volume de tráfego de autenticação.
 
 Há dois métodos que você pode usar para balancear a carga de solicitações de conexão enviadas para seu NPSs:
 
@@ -53,7 +53,7 @@ Antes de configurar o balanceamento de carga, crie um plano de implantação que
 
 Para configurar o NPS para atuar como um servidor proxy e encaminhar solicitações de conexão de clientes RADIUS para servidores RADIUS remotos, você deve executar as seguintes ações:
 
-1. Implante seus clientes RADIUS \(VPN servidores, servidores dial-up, servidores de gateway de serviços de terminal, comutadores de autenticação 802.1 X e pontos de acesso sem fio 802.1 X @ no__t-1 e configure-os para enviar solicitações de conexão para seus servidores proxy NPS.
+1. Implante seus clientes RADIUS \(servidores VPN, servidores dial-up, servidores de gateway de serviços de terminal, comutadores de autenticação 802.1 X e pontos de acesso sem fio 802.1 X\) e configure-os para enviar solicitações de conexão para seus servidores proxy NPS.
 
 2. No proxy NPS, configure os servidores de acesso à rede como clientes RADIUS. Para obter mais informações, consulte [configurar clientes RADIUS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure).
 

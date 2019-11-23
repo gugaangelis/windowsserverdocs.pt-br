@@ -72,7 +72,7 @@ Set-ADFSProperties -EnableOAuthLogout $true
 ```
 
 >[!NOTE]
-> o parâmetro `EnableOAuthLogout` será marcado como obsoleto após a instalação de [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801). `EnableOAUthLogout` será sempre verdadeiro e não terá impacto sobre a funcionalidade de logout.
+> `EnableOAuthLogout` parâmetro será marcado como obsoleto após a instalação de [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801). `EnableOAUthLogout` será sempre verdadeiro e não terá impacto sobre a funcionalidade de logout.
 
 >[!NOTE]
 >**só** há suporte para frontchannel_logout após instalação VCRedist de [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)
@@ -95,19 +95,19 @@ O `LogoutUri` é a URL usada pelo AF FS para "fazer logoff" do usuário. Para im
 
 
 1.  **Token OAuth com ID de sessão**: AD FS inclui a ID de sessão no token OAuth no momento da emissão de token id_token. Isso será usado posteriormente por AD FS para identificar os cookies de SSO relevantes a serem limpos para o usuário.
-2.  O **usuário inicia o logout no App1**: O usuário pode iniciar um logoff de qualquer um dos aplicativos conectados. Neste cenário de exemplo, um usuário inicia um logout do App1.
-3.  O **aplicativo envia a solicitação de logout para AD FS**: Depois que o usuário inicia o logout, o aplicativo envia uma solicitação GET para end_session_endpoint de AD FS. O aplicativo pode, opcionalmente, incluir id_token_hint como um parâmetro para essa solicitação. Se id_token_hint estiver presente, AD FS o usará em conjunto com a ID de sessão para descobrir a qual URI o cliente deve ser redirecionado após logout (post_logout_redirect_uri).  O post_logout_redirect_uri deve ser um URI válido registrado com AD FS usando o parâmetro RedirectUris.
+2.  O **usuário inicia o logout no App1**: o usuário pode iniciar um logoff de qualquer um dos aplicativos conectados. Neste cenário de exemplo, um usuário inicia um logout do App1.
+3.  O **aplicativo envia a solicitação de logout para AD FS**: depois que o usuário inicia o logout, o aplicativo envia uma solicitação GET para end_session_endpoint de AD FS. O aplicativo pode, opcionalmente, incluir id_token_hint como um parâmetro para essa solicitação. Se id_token_hint estiver presente, AD FS o usará em conjunto com a ID de sessão para descobrir a qual URI o cliente deve ser redirecionado após o logout (post_logout_redirect_uri).  O post_logout_redirect_uri deve ser um URI válido registrado com AD FS usando o parâmetro RedirectUris.
 4.  **AD FS envia a saída para clientes conectados**: AD FS usa o valor do identificador de sessão para localizar os clientes relevantes aos quais o usuário está conectado. Os clientes identificados são solicitações enviadas no LogoutUri registrado com AD FS para iniciar um logoff no lado do cliente.
 
 ## <a name="faqs"></a>Perguntas frequentes
-**PERGUNTAS** Não vejo os parâmetros frontchannel_logout_supported e frontchannel_logout_session_supported no documento de descoberta.</br>
+**P:** Não vejo os parâmetros frontchannel_logout_supported e frontchannel_logout_session_supported no documento de descoberta.</br>
 **R:** Verifique se você tem o [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) instalado em todos os servidores de AD FS. Consulte o log único no servidor 2016 com [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801).
 
-**PERGUNTAS** Configurei o logoff único como direcionado, mas o usuário permanece conectado em outros clientes.</br>
-**R:** Verifique se `LogoutUri` está definido para todos os clientes em que o usuário está conectado. Além disso, AD FS faz uma tentativa mais recomendável de enviar a solicitação de saída no @no__t registrado-0. O cliente deve implementar a lógica para lidar com a solicitação e tomar medidas para desconectar o usuário do aplicativo.</br>
+**P:** Configurei o logoff único como direcionado, mas o usuário permanece conectado em outros clientes.</br>
+**R:** Verifique se `LogoutUri` está definido para todos os clientes em que o usuário está conectado. Além disso, AD FS faz uma tentativa melhor de enviar a solicitação de saída no `LogoutUri`registrado. O cliente deve implementar a lógica para lidar com a solicitação e tomar medidas para desconectar o usuário do aplicativo.</br>
 
-**PERGUNTAS** Se, após o logout, um dos clientes voltar para AD FS com um token de atualização válido, AD FS emitirá um token de acesso?</br>
-**R:** Sim. É responsabilidade do aplicativo cliente descartar todos os artefatos autenticados depois que uma solicitação de saída foi recebida no @no__t registrado-0.
+**P:** Se, após o logout, um dos clientes voltar para AD FS com um token de atualização válido, AD FS emitirá um token de acesso?</br>
+**R:** Sim. É responsabilidade do aplicativo cliente descartar todos os artefatos autenticados depois que uma solicitação de saída foi recebida no `LogoutUri`registrado.
 
 
 ## <a name="next-steps"></a>Próximas etapas

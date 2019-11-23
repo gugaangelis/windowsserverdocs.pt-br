@@ -18,7 +18,7 @@ ms.locfileid: "71356522"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>Usar Política de Grupo para configurar computadores cliente membro do domínio
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Nesta seção, você cria um objeto Política de Grupo para todos os computadores em sua organização, configura computadores cliente membro do domínio com o modo de cache distribuído ou o modo de cache hospedado e configura o Firewall do Windows com segurança avançada para permitir o BranchCache tráfico.  
   
@@ -39,13 +39,13 @@ Você deve ser membro de **Admins**. do domínio ou equivalente a executar esses
   
 1.  Em um computador no qual a função de servidor Active Directory Domain Services está instalada, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **Gerenciamento de política de grupo**. O console de gerenciamento do Política de Grupo é aberto.  
   
-2.  No Console de Gerenciamento de Diretiva de Grupo, expanda o seguinte caminho: **Floresta:** *example.com*, **Domains**, *example.com*, **política de grupo objetos**, em que *example.com* é o nome do domínio em que as contas de computador cliente do BranchCache que você deseja configurar estão localizadas.  
+2.  No console de gerenciamento do Política de Grupo, expanda o seguinte caminho: **floresta:** *example.com*, **domínios**, *example.com*, **política de grupo objetos**, em que *example.com* é o nome do domínio em que as contas de computador cliente do BranchCache que você deseja configurar estão localizadas.  
   
 3.  Clique com o botão direito do mouse em **Objetos de Diretiva de Grupo** e clique em **Novo**. A caixa de diálogo **Novo GPO** é aberta. Em **nome**, digite um nome para o novo objeto de política de grupo (GPO). Por exemplo, se desejar denominar o objeto como Computadores Cliente BranchCache, digite **Computadores Cliente BranchCache**. Clique em **OK**.  
   
 4.  No Console de Gerenciamento de Diretiva de Grupo, verifique se **Objetos de Diretiva de Grupo** está selecionado e, no painel de detalhes, clique com o botão direito do mouse no GPO que você acabou de criar. Por exemplo, se você denominou seu GPO como Computadores Cliente BranchCache, clique com o botão direito do mouse em **Computadores Cliente BranchCache**. Clique em **Editar**. O console do Editor de Gerenciamento de Política de Grupo é aberto.  
   
-5.  No console do Editor de Gerenciamento de Política de Grupo, expanda o seguinte caminho: **Configuração do computador**, **políticas**, modelos de **Administrative: Definições de política (arquivos ADMX) recuperadas do computador local @ no__t-0, **Network**, **BranchCache**.  
+5.  No console do Editor de Gerenciamento de Política de Grupo, expanda o seguinte caminho: **configuração do computador**, **políticas** **modelos administrativos: definições de política (arquivos ADMX) recuperadas do computador local**, **rede**, **BranchCache**.  
   
 6.  Clique em **BranchCache** e, no painel de detalhes, clique duas vezes em **Ativar o BranchCache**. A caixa de diálogo configuração de política é aberta.  
   
@@ -66,11 +66,11 @@ Você deve ser membro de **Admins**. do domínio ou equivalente a executar esses
   
 ## <a name="bkmk_inbound"></a>Para configurar o Firewall do Windows com regras de tráfego de entrada de segurança avançada  
   
-1.  No Console de Gerenciamento de Diretiva de Grupo, expanda o seguinte caminho: **Floresta:** *example.com*, **Domains**, *example.com*, **política de grupo objetos**, em que *example.com* é o nome do domínio em que as contas de computador cliente do BranchCache que você deseja configurar estão localizadas.  
+1.  No console de gerenciamento do Política de Grupo, expanda o seguinte caminho: **floresta:** *example.com*, **domínios**, *example.com*, **política de grupo objetos**, em que *example.com* é o nome do domínio em que as contas de computador cliente do BranchCache que você deseja configurar estão localizadas.  
   
 2.  No Console de Gerenciamento de Diretiva de Grupo, verifique se **Objetos de Diretiva de Grupo** está selecionado e, no painel de detalhes, clique no GPO dos computadores cliente BranchCache criados anteriormente. Por exemplo, se você denominou seu GPO como Computadores Cliente BranchCache, clique com o botão direito do mouse em **Computadores Cliente BranchCache**. Clique em **Editar**. O console do Editor de Gerenciamento de Política de Grupo é aberto.  
   
-3.  No console do Editor de Gerenciamento de Política de Grupo, expanda o seguinte caminho: **Configuração do computador**, **políticas**, **configurações do Windows**, **configurações de segurança**, firewall do **Windows com segurança avançada**, **Firewall do Windows com segurança avançada-LDAP**, regras de **entrada**.  
+3.  No console do Editor de Gerenciamento de Política de Grupo, expanda o seguinte caminho **: configuração do computador**, **políticas**, **configurações do Windows**, configurações de **segurança**, **Firewall do Windows com segurança avançada**, **Firewall do Windows com segurança avançada-LDAP**, **regras de entrada**.  
   
 4.  Clique com o botão direito do mouse em **Regras de Entrada** e clique em **Nova Regra**. O Assistente para Nova Regra de Entrada é aberto.  
   

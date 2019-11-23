@@ -36,7 +36,7 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 
 ![Diagrama mostrando dois nós em Redmond sendo replicados com dois nós do mesmo cluster no site Bellevue](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**FIGURE 1:  Replicação de armazenamento em um cluster de ampliação @ no__t-0  
+**Figura 1: replicação de armazenamento em um cluster de ampliação**  
 
 ## <a name="prerequisites"></a>Pré-requisitos  
 -   Floresta dos Active Directory Domain Services (não precisa ser executada no Windows Server 2016).  
@@ -220,7 +220,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 14. **(Opcional)** Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.
 
-    Para obter mais informações, consulte a sessão do Microsoft Ignite: Ampliando [clusters de failover e usando a réplica de armazenamento no Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e a postagem de blog [habilitar notificações de alteração entre sites – como e por quê?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx) .  
+    Para obter mais informações, examine a sessão do Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e o post do blog [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
 
 15. **(Opcional)** Configure a resiliência de VM para que os convidados não pausem por muitos períodos durante falhas do nó. Em vez disso, eles realizam failover para o novo armazenamento de origem de replicação em 10 segundos.  
 
@@ -287,7 +287,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 9. **(Opcional)** Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.  
 
-   Para obter mais informações, consulte a sessão do Microsoft Ignite: Ampliando [clusters de failover e usando a réplica de armazenamento no Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e [habilite as notificações de alteração entre sites – como e por quê](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
+   Para obter mais informações, examine a sessão do Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) e [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
 
 10. **(Opcional)** Configure a resiliência de VM para que os convidados não pausem por muitos períodos durante falhas do nó. Em vez disso, eles realizam failover para o novo armazenamento de origem de replicação em 10 segundos.  
 
@@ -340,11 +340,11 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 11. Selecione um disco para ser seu volume de dados e clique em **Avançar**.  
 
-12. Revise as configurações e clique em **Avançar**. Clique em **Finalizar**.  
+12. Revise as configurações e clique em **Avançar**. Clique em **Concluir**.  
 
 13. Clique com o botão direito do mouse na sua nova função de Servidor de Arquivos e clique em **Adicionar Compartilhamento de Arquivos**. Continue com o assistente para configurar compartilhamentos.  
 
-14. Opcional: Adicione outra função de servidor de arquivos que usa o outro armazenamento neste site.  
+14. Opcional: adicione outra função de Servidor de Arquivos que usa o outro armazenamento neste site.  
 
 15. Configure o reconhecimento de sites do cluster estendido para que os servidores SR-SRV01 e SR-SRV02 estejam no local Redmond, o SR-SRV03 e o SRV04 SR no local Bellevue e Redmond é preferencial para a propriedade do nó de armazenamento de origem e VMs:  
 
@@ -699,23 +699,23 @@ Agora você irá gerenciar e operar o cluster estendido. Você pode executar tod
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações da última gravação de log  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Liberação  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Méd  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Atual  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de Solicitações de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio de solicitações por gravação de log  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações por gravação de log Méd  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Gravação de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Leitura de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Leitura de Aplicativo  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO de Destino  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO Atual  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Log  
+    -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Méd  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Atual  
 
@@ -723,11 +723,11 @@ Agora você irá gerenciar e operar o cluster estendido. Você pode executar tod
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Total de Bytes Enviados  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Envio de Rede  
+    -   \Estatísticas de réplica de armazenamento (*)\Latência enviada de rede méd  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Estado da Replicação  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Viagem de Ida e Volta da Mensagem  
+    -   \Estatísticas de réplica de armazenamento(*)\Média de Viagem de Ida e Volta da Mensagem  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Tempo Decorrido da Última Recuperação  
 
@@ -796,7 +796,7 @@ Agora você irá gerenciar e operar o cluster estendido. Você pode executar tod
 - [Visão geral da réplica de armazenamento](storage-replica-overview.md)  
 - [Replicação de armazenamento de servidor para servidor](server-to-server-storage-replication.md)  
 - [Cluster para replicação de armazenamento de cluster](cluster-to-cluster-storage-replication.md)  
-- [Réplica de armazenamento: Problemas conhecidos](storage-replica-known-issues.md) 
+- [Réplica de armazenamento: problemas conhecidos](storage-replica-known-issues.md) 
 - [Réplica de armazenamento: perguntas frequentes](storage-replica-frequently-asked-questions.md)  
 
 ## <a name="see-also"></a>Consulte também  

@@ -21,7 +21,7 @@ ms.locfileid: "71404341"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>Etapa 3 configurar o servidor de acesso remoto para OTP
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois que o servidor RADIUS tiver sido configurado com tokens de distribuição de software, as portas de comunicação estiverem abertas, um segredo compartilhado foi criado, as contas de usuário correspondentes a Active Directory foram criadas no servidor RADIUS e o servidor de acesso remoto tem sido configurado como um agente de autenticação RADIUS, o servidor de acesso remoto precisa ser configurado para dar suporte à OTP.  
   
@@ -63,7 +63,7 @@ Para configurar o acesso remoto para usar a autenticação de dois fatores e a O
     > [!NOTE]  
     > Depois que a OTP tiver sido habilitada no servidor de acesso remoto, se você desabilitar a OTP desmarcando **usar OTP**, as extensões ISAPI e CGI serão desinstaladas no servidor.  
   
-4.  Se o suporte do Windows 7 for necessário, marque a caixa de seleção **habilitar computadores cliente do Windows 7 para se conectar via DirectAccess** . Observação: Conforme discutido na seção de planejamento, os clientes do Windows 7 devem ter o DCA 2,0 instalado para dar suporte ao DirectAccess com OTP.  
+4.  Se o suporte do Windows 7 for necessário, marque a caixa de seleção **habilitar computadores cliente do Windows 7 para se conectar via DirectAccess** . Observação: conforme discutido na seção de planejamento, os clientes do Windows 7 devem ter o DCA 2,0 instalado para dar suporte ao DirectAccess com OTP.  
   
 5.  Clique em **Avançar**.  
   
@@ -105,7 +105,7 @@ Para configurar o acesso remoto para usar a autenticação de dois fatores e a O
   
 Para configurar o acesso remoto para OTP usando comandos do PowerShell:  
   
-0Windows-](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell** do powershell do @no__t  
+![](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

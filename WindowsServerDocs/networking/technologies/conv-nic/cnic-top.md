@@ -16,22 +16,22 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71355439"
 ---
-# <a name="converged-network-interface-card-nic-configuration-guidance"></a>Diretrizes de configuração \(NIC @ no__t-1 da placa de interface de rede convergida
+# <a name="converged-network-interface-card-nic-configuration-guidance"></a>Placa de interface de rede convergida \(as diretrizes de configuração\) NIC
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Placa de interface de rede convergida \(NIC @ no__t-1 permite expor RDMA por meio de um host @ no__t-2partition NIC virtual \(vNIC @ no__t-4 para que os serviços de partição de host possam acessar o acesso remoto direto à memória \(RDMA @ no__t-6 nas mesmas NICs que os convidados do Hyper-V estão usando para tráfego TCP/IP.
+Placa de interface de rede convergida \(NIC\) permite expor RDMA por meio de um host\-partição virtual NIC \(vNIC\) para que os serviços de partição de host possam acessar o acesso remoto direto à memória \(RDMA\) nas mesmas NICs que os convidados do Hyper-V estão usando para tráfego TCP/IP.
 
-Antes do recurso NIC convergido, o Management \(host Partition @ no__t-1 Services que desejava usar o RDMA eram necessários para usar NICs RDMA @ no__t-2Capable dedicados, mesmo que a largura de banda estivesse disponível nas NICs que foram associadas ao comutador virtual Hyper-V.
+Antes do recurso NIC convergido, o gerenciamento \(partição de host\) serviços que desejavam usar o RDMA eram necessários para usar NICs compatíveis com RDMA\-, mesmo que a largura de banda estivesse disponível nas NICs que foram associadas ao comutador virtual Hyper-V.
 
-Com a NIC convergida, as duas cargas de trabalho @no__t usuários de 0management de RDMA e de tráfego de convidado @ no__t-1 podem compartilhar as mesmas NICs físicas, permitindo que você instale menos NICs em seus servidores.
+Com a NIC convergida, as duas cargas de trabalho \(usuários de gerenciamento de tráfego de RDMA e convidado\) podem compartilhar as mesmas NICs físicas, permitindo que você instale menos NICs em seus servidores.
 
-Quando você implanta a NIC convergida com hosts Hyper-v do Windows Server 2016 e comutadores virtuais do Hyper-V, o vNICs nos hosts Hyper-V expõe serviços RDMA para hospedar processos usando RDMA em qualquer tecnologia RDMA Ethernet @ no__t-0based.
+Quando você implanta a NIC convergida com hosts Hyper-v do Windows Server 2016 e comutadores virtuais do Hyper-V, o vNICs nos hosts do Hyper-V expõe serviços RDMA para hospedar processos usando RDMA por meio de qualquer tecnologia RDMA baseada em\-Ethernet.
 
 >[!NOTE]
 >Para usar a tecnologia NIC convergida, os adaptadores de rede certificados em seus servidores devem dar suporte a RDMA.
 
-Este guia fornece dois conjuntos de instruções, um para implantações em que os servidores têm um único adaptador de rede instalado, que é uma implantação básica da NIC convergida; e outro conjunto de instruções em que os servidores têm dois ou mais adaptadores de rede instalados, que é uma implantação de NIC convergida por meio de uma equipe integrada de switches \(SET @ no__t-1 de adaptadores de rede RDMA @ no__t-2Capable.
+Este guia fornece dois conjuntos de instruções, um para implantações em que os servidores têm um único adaptador de rede instalado, que é uma implantação básica da NIC convergida; e outro conjunto de instruções em que os servidores têm dois ou mais adaptadores de rede instalados, que é uma implantação de NIC convergida em um switch incorporado \(conjunto de\) equipe de adaptadores de rede com capacidade RDMA\-.
 
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -39,7 +39,7 @@ Este guia fornece dois conjuntos de instruções, um para implantações em que 
 Veja a seguir os pré-requisitos para as implantações básica e de datacenter da NIC convergida.
 
 >[!NOTE]
->Para os exemplos fornecidos, usamos um adaptador Ethernet Mellanox ConnectX-3 pro 40 Gbps, mas você pode usar qualquer um dos adaptadores de rede Windows Server Certified RDMA @ no__t-0capable que dão suporte a esse recurso. Para obter mais informações sobre adaptadores de rede compatíveis, consulte os [cartões de LAN](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)do tópico do catálogo do Windows Server.
+>Para os exemplos fornecidos, usamos um adaptador Ethernet Mellanox ConnectX-3 pro 40 Gbps, mas você pode usar qualquer um dos adaptadores de rede compatíveis com Windows Server Certified RDMA\-que dão suporte a esse recurso. Para obter mais informações sobre adaptadores de rede compatíveis, consulte os [cartões de LAN](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)do tópico do catálogo do Windows Server.
 
 ### <a name="basic-converged-nic-prerequisites"></a>Pré-requisitos básicos da NIC convergida
 
@@ -56,7 +56,7 @@ Para executar as etapas deste guia para a configuração de NIC convergida do da
 - Dois servidores que executam o Windows Server 2016 Datacenter Edition ou o Windows Server 2016 Standard Edition.
 - Dois adaptadores de rede com capacidade RDMA e certificados instalados em cada servidor.
 - Função de servidor Hyper-V instalada em cada servidor.
-- Você deve estar familiarizado com o switch Embedded Integration \(SET @ no__t-1, uma solução de agrupamento NIC alternativa usada em ambientes que incluem o Hyper-V e a pilha de SDN (rede definida pelo software) no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V. Para obter mais informações, consulte [acesso remoto direto à memória (RDMA) e Comutador incorporado (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
+- Você deve estar familiarizado com o switch Embedded Integration \(conjunto\), uma solução de agrupamento NIC alternativa usada em ambientes que incluem o Hyper-V e a pilha de SDN (rede definida pelo software) no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V. Para obter mais informações, consulte [acesso remoto direto à memória (RDMA) e Comutador incorporado (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
 
 ## <a name="related-topics"></a>Tópicos relacionados
 - [Configuração de NIC convergida com um único adaptador de rede](cnic-single.md)

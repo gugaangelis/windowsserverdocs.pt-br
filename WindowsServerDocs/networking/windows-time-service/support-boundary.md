@@ -62,7 +62,7 @@ Para obter a precisão de 1s para um computador de destino específico em compar
 
 ### <a name="target-accuracy-50-milliseconds"></a>Precisão de destino: 50 milissegundos
 
-Todos os requisitos descritos na seção @no__t-precisão 0Target: 1 segundo @ no__t-0 se aplica, exceto quando controles mais estritos são descritos nesta seção.
+Todos os requisitos descritos na seção precisão de **destino: 1 segundo** se aplica, exceto quando controles mais estritos são descritos nesta seção.
 
 Os requisitos adicionais para obter a precisão do 50 ms para um sistema de destino específico são:
 
@@ -81,7 +81,7 @@ Os requisitos adicionais para obter a precisão do 50 ms para um sistema de dest
 
 ### <a name="target-accuracy-1-millisecond"></a>Precisão de destino: 1 milissegundo
 
-Todos os requisitos descritos nas seções @no__t-precisão 0Target: 1 segundo @ no__t-0 e precisão de @no__t 1Target: 50 milissegundos @ no__t-0 se aplicam, exceto quando controles mais estritos são descritos nesta seção.
+Todos os requisitos descritos nas seções são de **precisão de destino: 1 segundo** e **precisão de destino: 50 milissegundos** se aplicam, exceto quando controles mais estritos são descritos nesta seção.
 
 Os requisitos adicionais para atingir uma precisão de 1 ms para um sistema de destino específico são:
 

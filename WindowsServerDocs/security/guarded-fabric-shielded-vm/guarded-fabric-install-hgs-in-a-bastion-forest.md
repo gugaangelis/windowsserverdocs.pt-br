@@ -130,19 +130,19 @@ Verifique os objetos do Política de Grupo para as seguintes configurações e s
 
 **Caminho da política:** Computador \ \ \ Configurações de direitos de \ \ \ \ tarefas
 
-**Nome da política:** Negar o acesso a este computador a partir da rede
+**Nome da política:** Negar acesso a este computador pela rede
 
 **Valor obrigatório:** Verifique se o valor não bloqueia os logons de rede para todas as contas locais. No entanto, é possível bloquear com segurança as contas de administrador local.
 
-**Falha** O clustering de failover depende de uma conta local que não seja de administrador chamada CLIUSR para gerenciar nós de cluster. Bloquear o logon de rede para este usuário impedirá que o cluster opere corretamente.
+**Motivo:** O clustering de failover depende de uma conta local que não seja de administrador chamada CLIUSR para gerenciar nós de cluster. Bloquear o logon de rede para este usuário impedirá que o cluster opere corretamente.
 
 ### <a name="kerberos-encryption"></a>Criptografia Kerberos
 
-**Caminho da política:** Configuração do Computador\Configurações do Windows\Configurações de Segurança\Políticas Locais\Opções de Segurança
+**Caminho da política:** Opções de \ \ Configurações do computador \ \ \ Configurações
 
-**Nome da política:** Segurança de rede: Configurar tipos de criptografia permitidos para Kerberos
+**Nome da política:** Segurança de rede: configurar tipos de criptografia permitidos para Kerberos
 
-**Ação**: Se essa política estiver configurada, você deverá atualizar a conta gMSA com [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar apenas os tipos de criptografia com suporte nesta política. Por exemplo, se sua política permitir apenas AES128 @ no__t-0HMAC @ no__t-1SHA1 e AES256 @ no__t-2HMAC @ no__t-3SHA1, você deverá executar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`.
+**Ação**: se essa política estiver configurada, você deverá atualizar a conta GMSA com [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar apenas os tipos de criptografia com suporte nesta política. Por exemplo, se sua política permitir apenas AES128\_HMAC\_SHA1 e AES256\_HMAC\_SHA1, você deverá executar o `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`.
 
 
 

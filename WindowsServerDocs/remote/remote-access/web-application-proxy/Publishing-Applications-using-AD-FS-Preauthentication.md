@@ -19,7 +19,7 @@ ms.locfileid: "71404270"
 
 >Aplica-se a: Windows Server 2016
 
-o conteúdo de @no__t 0This é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/). **  
+**Esse conteúdo é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
   
 Este tópico descreve como publicar aplicativos por meio do proxy de aplicativo Web usando a pré-autenticação de Serviços de Federação do Active Directory (AD FS) (AD FS).  
   
@@ -122,13 +122,13 @@ Este procedimento descreve como publicar um aplicativo baseado em declarações,
     -   Na caixa **URL do servidor de back-end**, digite a URL do servidor de back-end. Observe que esse valor é inserido automaticamente quando você insere a URL externa e você deve alterá-la somente se a URL do servidor de back-end for diferente; por exemplo, https://sp/app1/.  
   
         > [!NOTE]  
-        > O proxy de aplicativo Web pode converter nomes de host em URLs, mas não pode converter nomes de caminho. Portanto, você pode inserir nomes de host diferentes, mas deve inserir o mesmo nome de caminho. Por exemplo, você pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://app-server/app1/. No entanto, você não pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end de https://apps.contoso.com/internal-app1/.  
+        > O proxy de aplicativo Web pode converter nomes de host em URLs, mas não pode converter nomes de caminho. Portanto, você pode inserir nomes de host diferentes, mas deve inserir o mesmo nome de caminho. Por exemplo, você pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://app-server/app1/. No entanto, você não pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://apps.contoso.com/internal-app1/.  
   
 7.  Na página **Confirmação** , examine as configurações e clique em **Publicar**. É possível copiar o comando do PowerShell para configurar aplicativos publicados adicionais.  
   
 8.  Na página **Resultados**, verifique se o aplicativo foi publicado com êxito e clique em **Fechar**.  
   
-***<em>comandos equivalentes do Windows PowerShell</em> ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -202,7 +202,7 @@ Este procedimento descreve como publicar um aplicativo que usa a autenticação 
     -   Na caixa **URL do servidor de back-end**, digite a URL do servidor de back-end. Observe que esse valor é inserido automaticamente quando você insere a URL externa e você deve alterá-la somente se a URL do servidor de back-end for diferente; por exemplo, https://owa/.  
   
         > [!NOTE]  
-        > O proxy de aplicativo Web pode converter nomes de host em URLs, mas não pode converter nomes de caminho. Portanto, você pode inserir nomes de host diferentes, mas deve inserir o mesmo nome de caminho. Por exemplo, você pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://app-server/app1/. No entanto, você não pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end de https://apps.contoso.com/internal-app1/.  
+        > O proxy de aplicativo Web pode converter nomes de host em URLs, mas não pode converter nomes de caminho. Portanto, você pode inserir nomes de host diferentes, mas deve inserir o mesmo nome de caminho. Por exemplo, você pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://app-server/app1/. No entanto, você não pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://apps.contoso.com/internal-app1/.  
   
     -   Na caixa **SPN do servidor de back-end**, insira o nome da entidade de serviço para o servidor de back-end; por exemplo, HTTP/owa.contoso.com.  
   
@@ -210,7 +210,7 @@ Este procedimento descreve como publicar um aplicativo que usa a autenticação 
   
 8.  Na página **Resultados**, verifique se o aplicativo foi publicado com êxito e clique em **Fechar**.  
   
-***<em>comandos equivalentes do Windows PowerShell</em> ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -226,7 +226,7 @@ Add-WebApplicationProxyApplication
 ```  
   
 ## <a name="BKMK_1.3"></a>Publicar um aplicativo que usa MS-OFBA  
-O proxy de aplicativo Web dá suporte ao acesso de clientes Microsoft Office, como o Microsoft Word, que acessam documentos e dados em servidores de back-end. A única diferença entre esses aplicativos e um navegador padrão é que o redirecionamento para o STS não é feito por meio de redirecionamento de HTTP regular, mas com cabeçalhos especiais do MS-OFBA, conforme especificado em: [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx). O aplicativo de back-end pode ser declarações ou IWA.   
+O proxy de aplicativo Web dá suporte ao acesso de clientes Microsoft Office, como o Microsoft Word, que acessam documentos e dados em servidores de back-end. A única diferença entre esses aplicativos e um navegador padrão é que o redirecionamento para o STS não é feito por meio do redirecionamento de HTTP regular, mas com cabeçalhos especiais do MS-OFBA, conforme especificado em: [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx). O aplicativo de back-end pode ser declarações ou IWA.   
 Para publicar um aplicativo para clientes que usam o MS-OFBA, você deve adicionar um confiança de terceira parte confiável para o aplicativo ao Serviço de Federação. Dependendo do aplicativo, você pode usar autenticação baseada em declarações ou autenticação integrada do Windows. Portanto, você deve adicionar o objeto de confiança de terceira parte confiável relevante, dependendo do aplicativo.  
   
 Para permitir que o proxy de aplicativo Web execute SSO (logon único) e execute a delegação de credenciais usando a delegação restrita de Kerberos, o servidor proxy de aplicativo Web deve ser Unido a um domínio. Consulte [Active Directory de plano](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD).  
@@ -310,7 +310,7 @@ O procedimento a seguir explica como publicar aplicativos HTTP básicos.
   
 8.  Na página **Resultados**, verifique se o aplicativo foi publicado com êxito e clique em **Fechar**.  
   
-***<em>comandos equivalentes do Windows PowerShell</em> ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -412,7 +412,7 @@ Este procedimento descreve como publicar um aplicativo para OAuth2. Esse tipo de
     -   Na caixa **URL do servidor de back-end**, digite a URL do servidor de back-end. Observe que esse valor é inserido automaticamente quando você insere a URL externa e você deve alterá-la somente se a URL do servidor de back-end for diferente; por exemplo, https://sp/app1/.  
   
         > [!NOTE]  
-        > O proxy de aplicativo Web pode converter nomes de host em URLs, mas não pode converter nomes de caminho. Portanto, você pode inserir nomes de host diferentes, mas deve inserir o mesmo nome de caminho. Por exemplo, você pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://app-server/app1/. No entanto, você não pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end de https://apps.contoso.com/internal-app1/.  
+        > O proxy de aplicativo Web pode converter nomes de host em URLs, mas não pode converter nomes de caminho. Portanto, você pode inserir nomes de host diferentes, mas deve inserir o mesmo nome de caminho. Por exemplo, você pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://app-server/app1/. No entanto, você não pode inserir uma URL externa de https://apps.contoso.com/app1/ e uma URL de servidor de back-end do https://apps.contoso.com/internal-app1/.  
   
 7.  Na página **Confirmação** , examine as configurações e clique em **Publicar**. É possível copiar o comando do PowerShell para configurar aplicativos publicados adicionais.  
   

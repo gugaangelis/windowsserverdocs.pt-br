@@ -17,7 +17,7 @@ ms.locfileid: "71405576"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Sintaxe do comando netsh, contextos e formatação
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para saber como inserir contextos e subcontextos netsh, entender a sintaxe do netsh e a formatação de comandos e como executar comandos Netsh em computadores locais e remotos.
 
@@ -27,7 +27,7 @@ O Netsh também fornece um recurso de script com o qual você pode executar um g
 
 ## <a name="netsh-contexts"></a>Contextos netsh
 
-O netsh interage com outros componentes do sistema operacional usando a biblioteca dinâmica @ no__t-0link \(DLL @ no__t-2 arquivos. 
+O netsh interage com outros componentes do sistema operacional usando o Dynamic\-link library \(DLL\) arquivos. 
 
 Cada DLL auxiliar do netsh fornece um amplo conjunto de recursos chamado de *contexto*, que é um grupo de comandos específicos de uma função de servidor de rede ou recurso. Esses contextos estendem a funcionalidade do netsh fornecendo suporte de configuração e monitoramento para um ou mais serviços, utilitários ou protocolos. Por exemplo, Dhcpmon. dll fornece o netsh com o contexto e o conjunto de comandos necessários para configurar e gerenciar servidores DHCP.
 
@@ -94,7 +94,7 @@ Veja a seguir um exemplo de saída para esses comandos em um computador que exec
 
 Os contextos netsh podem conter comandos e contextos adicionais, chamados *subcontextos*. Por exemplo, dentro do contexto de roteamento, você pode alterar para os subcontextos IP e IPv6.
 
-Para exibir uma lista de comandos e subcontextos que você pode usar em um contexto, no prompt do netsh, digite o nome do contexto e digite **/?** ou **ajuda**. Por exemplo, para exibir uma lista de subcontextos e comandos que você pode usar no contexto de roteamento, no prompt do netsh \(that is, **netsh @ no__t-2**\), digite um dos seguintes:
+Para exibir uma lista de comandos e subcontextos que você pode usar em um contexto, no prompt do netsh, digite o nome do contexto e digite **/?** ou **ajuda**. Por exemplo, para exibir uma lista de subcontextos e comandos que podem ser usados no contexto de roteamento, no prompt netsh \(ou seja, o **netsh&gt;** \), digite um dos seguintes:
 
 **roteamento/?**
 
@@ -116,7 +116,7 @@ Você pode usar a legenda de formatação a seguir para interpretar e usar a sin
 
 - O texto em *itálico* é uma informação que você deve fornecer enquanto digita o comando. Por exemplo, se um comando tiver um parâmetro chamado-*username*, você deverá digitar o nome de usuário real.
 - O texto em **negrito** é a informação que você deve digitar exatamente conforme mostrado enquanto digita o comando.
-- O texto seguido por uma elipse \(... \) é um parâmetro que pode ser repetido várias vezes em uma linha de comando.
+- O texto seguido por uma elipse \(...\) é um parâmetro que pode ser repetido várias vezes em uma linha de comando.
 - O texto entre colchetes [&nbsp;] é um item opcional.
 - O texto entre chaves {&nbsp;} com opções separadas por um pipe fornece um conjunto de opções do qual você deve selecionar apenas uma, como `{enable|disable}`.
 - O texto formatado com a fonte Courier é a saída do código ou do programa.
@@ -127,11 +127,11 @@ Para iniciar o Shell de rede e inserir o netsh no prompt de comando ou no Window
 
 ### <a name="netsh"></a>netsh
 
-O netsh é um utilitário de script de linha de comando que permite que você, local ou remotamente, exiba ou modifique a configuração de rede de um computador atualmente em execução. Usado sem parâmetros, **netsh** abre o prompt de comando netsh. exe @no__t-qual é, **netsh @ no__t-3**\).
+O netsh é um utilitário de script de linha de comando que permite que você, local ou remotamente, exiba ou modifique a configuração de rede de um computador atualmente em execução. Usado sem parâmetros, o **netsh** abre o prompt de comando netsh. exe \(ou seja, o **netsh&gt;** \).
 
 #### <a name="syntax"></a>Sintaxe
 
-**netsh**\[ **-a**&nbsp;*aliasfile*\] \[ **-c**&nbsp;*contexto* 0 1 **-r**3*computador_remoto*5 6 **-u** 8  *Nome_do_domínio @ no__t-20* 1 nome de *usuário* 3 4 **-p**6*senha*8 @ no__t-29 @ No__t-30 1 {*NetshCommand*3 **-f**5*scriptfile*} 7
+**netsh**\[ **-a**&nbsp;*aliasfile*\] \[ **-c**&nbsp;*contexto* \] \[ **-r**&nbsp;*Computador_remoto*\] \[ **-u** \[ *domainname\\* \] *nome de usuário* \] \[ **-p**&nbsp;*senha* | \*\] \[{*NetshCommand* |  **-f**&nbsp; *Scriptfile*}\]
 
 #### <a name="parameters"></a>Parâmetros
 
@@ -168,7 +168,7 @@ Opcional. Especifica que você deseja executar o comando netsh em uma conta de u
 
 ***`DomainName\\`***
 
-Opcional. Especifica o domínio em que a conta de usuário está localizada. O padrão é o domínio local se *DomainName @ no__t-1* não for especificado.
+Opcional. Especifica o domínio em que a conta de usuário está localizada. O padrão é o domínio local se o *domainname\\* não for especificado.
 
 ***`UserName`***
 

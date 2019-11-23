@@ -18,7 +18,7 @@ ms.locfileid: "71408026"
 ---
 # <a name="planning-federation-server-placement"></a>Planejando o posicionamento do servidor de federação
 
-O componente mais crítico de uma implantação Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 é o servidor de Federação. Portanto, é importante planejar a estratégia de posicionamento do servidor de Federação com cuidado, incluindo quando e onde implantar servidores de Federação. As informações nos tópicos a seguir podem ajudá-lo a determinar quando e onde criar um servidor de Federação ou um farm de servidores de Federação e se deseja usar esse servidor de Federação na função de parceiro de conta, a função de parceiro de recurso ou ambos:  
+O componente mais crítico de um Serviços de Federação do Active Directory (AD FS) \(AD FS\) implantação é o servidor de Federação. Portanto, é importante planejar a estratégia de posicionamento do servidor de Federação com cuidado, incluindo quando e onde implantar servidores de Federação. As informações nos tópicos a seguir podem ajudá-lo a determinar quando e onde criar um servidor de Federação ou um farm de servidores de Federação e se deseja usar esse servidor de Federação na função de parceiro de conta, a função de parceiro de recurso ou ambos:  
   
 -   [Analisar a função do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   

@@ -21,7 +21,7 @@ ms.locfileid: "71355226"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>Gerenciar recursos em várias florestas do Active Directory
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a usar o IPAM para gerenciar controladores de domínio, servidores DHCP e servidores DNS em várias florestas de Active Directory.  
   
@@ -32,7 +32,7 @@ Para iniciar o processo de descoberta para diferentes Active Directory florestas
 ![Configurar descoberta de servidor](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
 
 >[!NOTE]
->Para Política de Grupo o provisionamento @ no__t-0based para um cenário de Active Directory entre florestas, certifique-se de executar o seguinte cmdlet do Windows PowerShell no servidor IPAM e não nos controladores de domínio confiantes. Por exemplo, se o servidor IPAM for ingressado na floresta corp.contoso.com e a floresta confiante for fabrikam.com, você poderá executar o seguinte cmdlet do Windows PowerShell no servidor IPAM no corp.contoso.com para o provisionamento do Política de Grupo @ no__t-0based no fabrikam.com floresta. Para executar esse cmdlet, você deve ser membro do grupo Admins. do domínio na floresta fabrikam.com.
+>Para o provisionamento baseado em Política de Grupo\-para um cenário de Active Directory entre florestas, certifique-se de executar o seguinte cmdlet do Windows PowerShell no servidor IPAM e não nos controladores de domínio confiantes. Por exemplo, se o servidor IPAM estiver ingressado na floresta corp.contoso.com e a floresta confiante for fabrikam.com, você poderá executar o seguinte cmdlet do Windows PowerShell no servidor IPAM no corp.contoso.com para o provisionamento baseado em Política de Grupo\-na floresta fabrikam.com. Para executar esse cmdlet, você deve ser membro do grupo Admins. do domínio na floresta fabrikam.com.
 
     
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM

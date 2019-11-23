@@ -17,7 +17,7 @@ ms.locfileid: "71406240"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>O que há de novo no servidor DNS no Windows Server
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve a funcionalidade de servidor DNS (sistema de nomes de domínio) que é nova ou alterada no Windows Server 2016.  
   
@@ -34,16 +34,16 @@ No Windows Server 2016, o servidor DNS oferece suporte aprimorado nas seguintes 
   
 ## <a name="dns-policies"></a>Políticas de DNS
 
-Você pode usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica, respostas de DNS inteligente com base na hora do dia, para gerenciar um único servidor DNS configurado para a implantação de Split @ no__t-0brain, aplicar filtros em consultas DNS e muito mais. Os itens a seguir fornecem mais detalhes sobre esses recursos.
+Você pode usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica, respostas de DNS inteligente com base na hora do dia, para gerenciar um único servidor DNS configurado para a implantação de divisão\-Brain, aplicando filtros em consultas DNS e muito mais. Os itens a seguir fornecem mais detalhes sobre esses recursos.
 
 -   **Balanceamento de carga do aplicativo.** Quando você implantou várias instâncias de um aplicativo em locais diferentes, você pode usar a política DNS para balancear a carga de tráfego entre as diferentes instâncias de aplicativo, alocando dinamicamente a carga de tráfego para o aplicativo.
 
--   **Gerenciamento de tráfego baseado em @ no__t-1Location geográfico.** Você pode usar a política DNS para permitir que servidores DNS primários e secundários respondam a consultas de cliente DNS com base na localização geográfica do cliente e do recurso ao qual o cliente está tentando se conectar, fornecendo ao cliente o endereço IP do mais próximo Kit. 
+-   **Gerenciamento de tráfego baseado na localização de\-geográfica.** Você pode usar a política DNS para permitir que servidores DNS primários e secundários respondam a consultas de cliente DNS com base na localização geográfica do cliente e do recurso ao qual o cliente está tentando se conectar, fornecendo ao cliente o endereço IP do mais próximo Kit. 
 
--   **DNS de divisão de cérebro.** Com o DNS de divisão @ no__t-0brain, os registros DNS são divididos em escopos de zona diferentes no mesmo servidor DNS, e os clientes DNS recebem uma resposta com base em se os clientes são clientes internos ou externos. Você pode configurar o DNS de divisão @ no__t-0brain para Active Directory zonas integradas ou para zonas em servidores DNS autônomos.
+-   **DNS de divisão de cérebro.** Com a divisão\-o DNS Brain, os registros DNS são divididos em escopos de zona diferentes no mesmo servidor DNS, e os clientes DNS recebem uma resposta com base no fato de os clientes serem clientes internos ou externos. Você pode configurar o DNS dividido\-cérebro para Active Directory zonas integradas ou para zonas em servidores DNS autônomos.
 
 -   **Aplica.** Você pode configurar a política DNS para criar filtros de consulta baseados em critérios fornecidos por você. Os filtros de consulta na política DNS permitem configurar o servidor DNS para responder de uma maneira personalizada com base na consulta DNS e no cliente DNS que envia a consulta DNS. 
--   **Análise forense.** Você pode usar a política DNS para redirecionar clientes DNS mal-intencionados para um endereço IP que não seja @ no__t-0existent em vez de direcioná-los para o computador que estão tentando acessar.
+-   **Análise forense.** Você pode usar a política DNS para redirecionar clientes DNS mal-intencionados para um endereço IP não\-existente em vez de direcioná-los para o computador que estão tentando acessar.
 
 -   **Hora do redirecionamento com base no dia.** Você pode usar a política DNS para distribuir o tráfego de aplicativos em diferentes instâncias distribuídas geograficamente de um aplicativo usando políticas de DNS com base na hora do dia. 
   
@@ -75,7 +75,7 @@ Você pode definir configurações de RRL para controlar como responder a solici
   
 ## <a name="dane-support"></a>Suporte ao SUNDANÊS
 
-Você pode usar o suporte a SUNDANÊS \(RFC 6394 e 6698 @ no__t-1 para especificar para seus clientes DNS qual AC eles devem esperar que os certificados sejam emitidos para os nomes de domínios hospedados no seu servidor DNS. Isso impede uma forma de ataque man-in-the-Middle, em que alguém é capaz de corromper um cache DNS e apontar um nome DNS para seu próprio endereço IP.  
+Você pode usar o suporte a SUNDANÊS \(RFC 6394 e 6698\) para especificar para seus clientes DNS qual AC eles devem esperar que os certificados sejam emitidos para os nomes de domínios hospedados no seu servidor DNS. Isso impede uma forma de ataque man-in-the-Middle, em que alguém é capaz de corromper um cache DNS e apontar um nome DNS para seu próprio endereço IP.  
   
 Por exemplo, imagine que você hospede um site seguro que usa SSL em www.contoso.com usando um certificado de uma autoridade bem conhecida chamada CA1. Alguém ainda poderá obter um certificado para www.contoso.com de uma autoridade de certificação diferente, e não tão conhecida, denominada CA2. Em seguida, a entidade que hospeda o site da www.contoso.com falsa pode ser capaz de corromper o cache DNS de um cliente ou servidor para apontar www.contoto.com para seu site falso. O usuário final receberá um certificado de CA2 e poderá simplesmente refirmá-lo e conectar-se ao site falso. Com o SUNDANÊS, o cliente fará uma solicitação ao servidor DNS para contoso.com solicitando o registro TLSA e aprenderia que o certificado para www.contoso.com foi emitido por CA1. Se for apresentado um certificado de outra CA, a conexão será anulada.  
   

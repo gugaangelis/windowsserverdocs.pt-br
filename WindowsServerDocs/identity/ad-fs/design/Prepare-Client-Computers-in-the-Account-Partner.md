@@ -18,15 +18,15 @@ ms.locfileid: "71407942"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>Preparar computadores cliente no parceiro de conta
 
-A maneira mais fácil de um administrador em uma organização de parceiro de conta preparar computadores cliente para acesso a aplicativos federados Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 é usar Política de Grupo. A Política de Grupo fornece uma maneira conveniente de você enviar por push configurações e certificados específicos necessários para a federação para todos os computadores cliente que serão usados para acessar os aplicativos federados.  
+A maneira mais fácil de um administrador em uma organização de parceiro de conta preparar os computadores cliente para acesso a Serviços de Federação do Active Directory (AD FS) \(AD FS\) aplicativos federados é usar Política de Grupo. A Política de Grupo fornece uma maneira conveniente de você enviar por push configurações e certificados específicos necessários para a federação para todos os computadores cliente que serão usados para acessar os aplicativos federados.  
   
 Para que os computadores cliente possam acessar diretamente aplicativos federados sem prompts de certificado ou prompts relacionados ao site confiável, recomendamos que você primeiro Prepare cada computador cliente antes de implantar AD FS amplamente em sua organização. Considere usar a Política de Grupo para automaticamente:  
   
 -   Configure o Internet Explorer em cada computador cliente para confiar no servidor de Federação da conta.  
   
-    Para obter mais informações, consulte [configurar computadores de cliente para confiar no servidor de federação de conta](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
+    Para obter mais informações, consulte [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
   
--   Instale o servidor de Federação de conta apropriado, o servidor de Federação de recursos e o servidor Web protocolo SSL \(SSL @ no__t-1 certificados \(or certificados equivalentes que se encadeadom a uma raiz confiável @ no__t-3 em cada computador cliente.  
+-   Instale o servidor de Federação de conta apropriado, o servidor de Federação de recursos e o servidor Web protocolo SSL \(SSL\) certificados \(ou certificados equivalentes que se encadeadom a um\) de raiz confiável em cada computador cliente.  
   
     Para obter mais informações, consulte [distribuir certificados para computadores cliente usando política de grupo](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md).  
   

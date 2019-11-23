@@ -143,7 +143,7 @@ Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
-Como alternativa, você pode executar manualmente a tarefa agendada abrindo **Agendador de tarefas** (Taskschd. msc), navegando para **Agendador de tarefas biblioteca > Microsoft > Windows > HGSServer** e executando a tarefa chamada  **AttestationSignerCertRenewalTask**.
+Como alternativa, você pode executar manualmente a tarefa agendada abrindo **Agendador de tarefas** (Taskschd. msc), navegando para **Agendador de tarefas biblioteca > Microsoft > Windows > HGSServer** e executando a tarefa chamada **AttestationSignerCertRenewalTask**.
 
 ## <a name="switching-attestation-modes"></a>Alternando modos de atestado
 
@@ -161,7 +161,7 @@ Você pode verificar o modo de atestado do seu servidor HGS executando [Get-HgsS
 
 ## <a name="memory-dump-encryption-policies"></a>Políticas de criptografia de despejo de memória
 
-Se você estiver tentando configurar as políticas de criptografia de despejo de memória e não vir as políticas de despejo do HGS padrão (HgS @ no__t-0NoDumps, HgS @ no__t-1DumpEncryption e HgS @ no__t-2DumpEncryptionKey) ou o cmdlet de política de despejo (Add-HgsAttestationDumpPolicy), ele será é provável que você não tenha a atualização cumulativa mais recente instalada.
+Se você estiver tentando configurar as políticas de criptografia de despejo de memória e não vir as políticas de despejo HGS padrão (HgS\_nodumps, HgS\_DumpEncryption e HgS\_DumpEncryptionKey) ou o cmdlet de política de despejo (Add-HgsAttestationDumpPolicy), é provável que você não tenha a atualização cumulativa mais recente instalada.
 Para corrigir isso, [atualize seu servidor HgS](guarded-fabric-manage-hgs.md#patching-hgs) para o Windows Update cumulativo mais recente e [ative as novas políticas de atestado](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation).
 Certifique-se de atualizar seus hosts Hyper-V para a mesma atualização cumulativa antes de ativar as novas políticas de atestado, já que os hosts que não têm os novos recursos de criptografia de despejo instalados provavelmente falharão com atestado quando a política HGS for ativada.
 
@@ -176,8 +176,8 @@ Você receberá um erro ao registrar um host TPM se uma das duas condições for
 2. O arquivo de identificador de plataforma contém um certificado de chave de endosso, mas esse certificado **não é confiável** no seu sistema
 
 Determinados fabricantes de TPM não incluem EKcerts em seu TPMs.
-Se você suspeitar de que esse é o caso do seu TPM, confirme com seu OEM que seu TPMs não deve ter um EKcert e use o sinalizador `-Force` para registrar manualmente o host com HGS.
+Se você suspeitar de que esse é o caso do seu TPM, confirme com seu OEM que seu TPMs não deve ter um EKcert e use o sinalizador `-Force` para registrar manualmente o host com o HGS.
 Se o TPM tiver um EKcert, mas um não foi encontrado no arquivo de identificador de plataforma, verifique se você está usando um console do PowerShell de administrador (elevado) ao executar [Get-PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier) no host.
 
-Se você recebeu o erro de que seu EKcert não é confiável, verifique se você [instalou o pacote de certificados raiz do TPM confiável](guarded-fabric-install-trusted-tpm-root-certificates.md) em cada servidor HgS e se o certificado raiz para o fornecedor do TPM está presente no **TrustedTPM @ no__ do computador local. armazenamento t-2RootCA** . Todos os certificados intermediários aplicáveis também precisam ser instalados no armazenamento **TrustedTPM @ no__t-1IntermediateCA** no computador local.
+Se você recebeu o erro de que seu EKcert não é confiável, verifique se você [instalou o pacote de certificados raiz do TPM confiável](guarded-fabric-install-trusted-tpm-root-certificates.md) em cada servidor HgS e se o certificado raiz do seu fornecedor de TPM está presente no TrustedTPM do computador local **\_RootCA** Store. Todos os certificados intermediários aplicáveis também precisam ser instalados no repositório **TrustedTPM\_IntermediateCA** no computador local.
 Depois de instalar os certificados raiz e intermediário, você poderá executar o `Add-HgsAttestationTpmHost` com êxito.

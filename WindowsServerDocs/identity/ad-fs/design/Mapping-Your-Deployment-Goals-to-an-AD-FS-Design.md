@@ -19,7 +19,7 @@ ms.locfileid: "71359093"
 # <a name="mapping-your-deployment-goals-to-an-ad-fs-design"></a>Mapeando suas metas de implantação para um design do AD FS
 
 
-Depois de concluir a revisão das metas de implantação do Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 existentes e determinar quais metas estão relacionadas à sua implantação, você pode mapear essas metas para um design de AD FS específico. Para obter mais informações sobre AD FS metas de implantação predefinidas, consulte [identificando suas metas de implantação de AD FS](Identifying-Your-AD-FS-Deployment-Goals.md).  
+Depois de concluir a revisão dos \(de Serviços de Federação do Active Directory (AD FS) existentes AD FS\) metas de implantação e determinar quais metas estão relacionadas à sua implantação, você pode mapear essas metas para um design de AD FS específico. Para obter mais informações sobre AD FS metas de implantação predefinidas, consulte [identificando suas metas de implantação de AD FS](Identifying-Your-AD-FS-Deployment-Goals.md).  
   
 Use a tabela a seguir para determinar qual AD FS design mapeia para a combinação apropriada de AD FS objetivos de implantação para sua organização. Esta tabela refere-se apenas aos dois designs de AD FS primários, conforme descrito neste guia. No entanto, você pode criar um design de AD FS híbrido ou personalizado usando qualquer combinação das metas de implantação AD FS para atender às necessidades da sua organização.  
   

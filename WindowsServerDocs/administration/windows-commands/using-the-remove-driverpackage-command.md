@@ -22,10 +22,10 @@ ms.locfileid: "71362813"
 ---
 # <a name="using-the-remove-driverpackage-command"></a>Usando o comando Remove-DriverPackage
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 > 
 > 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Remove um pacote de driver de um servidor.
 ## <a name="syntax"></a>Sintaxe
@@ -37,8 +37,8 @@ wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package N
 |        Parâmetro        |                                                                            Descrição                                                                             |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server:<Server name>] |              Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se um nome de servidor não for especificado, o servidor local será usado.              |
-| [/DriverPackage: <Name>] |                                                        Especifica o nome do pacote de driver a ser removido.                                                         |
-|    [/PackageId: <ID>]    | Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser removido. Você deve especificar a ID se o pacote de driver não puder ser identificado exclusivamente pelo nome. |
+| [/DriverPackage:<Name>] |                                                        Especifica o nome do pacote de driver a ser removido.                                                         |
+|    [/PackageId:<ID>]    | Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser removido. Você deve especificar a ID se o pacote de driver não puder ser identificado exclusivamente pelo nome. |
 
 ## <a name="BKMK_examples"></a>Disso
 Para exibir informações sobre as imagens, digite um dos seguintes:
@@ -48,6 +48,6 @@ wdsutil /remove-DriverPackage /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
 ```
 wdsutil /remove-DriverPackage /Server:MyWdsServer /DriverPackage:MyDriverPackage
 ```
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [usando o comando Remove-DriverPackages](using-the-remove-driverpackages-command.md)

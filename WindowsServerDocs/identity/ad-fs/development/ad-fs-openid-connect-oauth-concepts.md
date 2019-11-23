@@ -34,7 +34,7 @@ O diagrama a seguir fornece a relação mais básica entre os atores:
 ## <a name="application-types"></a>Tipos de aplicativos 
  
 
-|Tipo de Aplicativo|Descrição|Role|
+|Tipo de Aplicativo|Descrição|Função|
 |-----|-----|-----|
 |Aplicativo nativo|Às vezes chamado de **cliente público**, destina-se a ser um aplicativo cliente executado em um computador ou dispositivo e com o qual o usuário interage.|Solicita tokens do servidor de autorização (AD FS) para acesso de usuário aos recursos. Envia solicitações HTTP para recursos protegidos, usando os tokens como cabeçalhos HTTP.| 
 |Aplicativo de servidor (aplicativo Web)|Um aplicativo Web que é executado em um servidor e geralmente é acessível aos usuários por meio de um navegador. Como ele é capaz de manter seu próprio ' segredo ' ou credencial do cliente, às vezes é chamado de **cliente confidencial**. |Solicita tokens do servidor de autorização (AD FS) para acesso de usuário aos recursos. Antes de solicitar o token, o cliente (aplicativo Web) precisa se autenticar usando seu segredo. | 
@@ -47,15 +47,15 @@ Todo cliente OAuth (nativo ou aplicativo Web) ou recurso (API Web) configurado c
 ## <a name="security-tokens"></a>Tokens de segurança 
  
 A autenticação moderna usa os seguintes tipos de token: 
-- **id_token**: Um token JWT emitido pelo servidor de autorização (AD FS) e consumido pelo cliente. As declarações no token de ID conterão informações sobre o usuário para que o cliente possa usá-lo.  
-- **access_token**: Um token JWT emitido pelo servidor de autorização (AD FS) e destinado a ser consumido pelo recurso. O ' AUD ' ou a declaração de público desse token deve corresponder ao identificador do recurso ou API da Web.  
-- **refresh_token**: Esse token é emitido por AD FS para o cliente usar quando ele precisa atualizar o id_token e o access_token. O token é opaco para o cliente e só pode ser consumido por AD FS.  
+- **id_token**: um token JWT emitido pelo servidor de autorização (AD FS) e consumido pelo cliente. As declarações no token de ID conterão informações sobre o usuário para que o cliente possa usá-lo.  
+- **access_token**: um token JWT emitido pelo servidor de autorização (AD FS) e destinado a ser consumido pelo recurso. O ' AUD ' ou a declaração de público desse token deve corresponder ao identificador do recurso ou API da Web.  
+- **refresh_token**: esse token é emitido por AD FS para o cliente usar quando ele precisa atualizar o id_token e access_token. O token é opaco para o cliente e só pode ser consumido por AD FS.  
 
 ## <a name="scopes"></a>Escopos 
  
 Ao registrar um recurso no AD FS, os escopos podem ser configurados para permitir que AD FS executem ações específicas. Além de configurar o escopo, o valor do escopo também deve ser enviado na solicitação de AD FS para executar a ação. Por exemplo, o administrador precisa configurar o escopo como OpenID durante o registro de recursos e o aplicativo (cliente) precisa enviar o Scope = OpenID na solicitação de autenticação para AD FS para emitir o token de ID. Detalhes sobre os escopos disponíveis em AD FS são fornecidos abaixo 
  
-- Aza-se estiver usando [extensões de protocolo OAuth 2,0 para clientes do Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) and se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, bem como Configurando o refresh_ o campo token_expires_in para o tempo de vida do novo token de atualização primário se um for imposto. 
+- Aza-se estiver usando [extensões de protocolo OAuth 2,0 para clientes do Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, bem como Configurando o campo refresh_token_expires_in para o tempo de vida do novo token de atualização primário, se um for imposto. 
 - OpenID – permite que o aplicativo solicite o uso do protocolo de autorização OpenID Connect. 
 - logon_cert-o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon interativamente usuários autenticados. O servidor de AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em base64 ou uma resposta de PKI completa de CMC. Mais detalhes estão disponíveis [aqui](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
 - user_impersonation-o escopo de user_impersonation é necessário para solicitar com êxito um token de acesso em nome de AD FS. Para obter detalhes sobre como usar esse escopo, consulte [criar um aplicativo de várias camadas usando obo (em nome de) usando OAuth com AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 
@@ -106,9 +106,9 @@ Tokens de segurança (tokens de ID e acesso) emitidos por AD FS contêm declara�
 ## <a name="types-of-libraries"></a>Tipos de bibliotecas 
   
 Dois tipos de bibliotecas são usados com AD FS: 
-- **Bibliotecas de cliente**: Clientes nativos e aplicativos de servidor usam bibliotecas de cliente para adquirir tokens de acesso para chamar um recurso, como uma API da Web. A biblioteca de autenticação da Microsoft (MSAL) é a biblioteca de cliente mais recente e recomendada ao usar o AD FS 2019. O Biblioteca de Autenticação do Active Directory (ADAL) é recomendado para o AD FS 2016.  
+- **Bibliotecas de cliente**: os clientes nativos e os aplicativos de servidor usam bibliotecas de cliente para adquirir tokens de acesso para chamar um recurso, como uma API da Web. A biblioteca de autenticação da Microsoft (MSAL) é a biblioteca de cliente mais recente e recomendada ao usar o AD FS 2019. O Biblioteca de Autenticação do Active Directory (ADAL) é recomendado para o AD FS 2016.  
 
-- **Bibliotecas de middleware do servidor**: Os aplicativos Web usam bibliotecas de middleware de servidor para entrada do usuário. As APIs da Web usam bibliotecas de middleware de servidor para validar tokens que são enviados por clientes nativos ou por outros servidores. OWIN (Open Web interface para .NET) é a biblioteca de middleware recomendada. 
+- **Bibliotecas de middleware de servidor**: os aplicativos Web usam bibliotecas de middleware de servidor para entrada do usuário. As APIs da Web usam bibliotecas de middleware de servidor para validar tokens que são enviados por clientes nativos ou por outros servidores. OWIN (Open Web interface para .NET) é a biblioteca de middleware recomendada. 
 
 ## <a name="customize-id-token-additional-claims-in-id-token"></a>Personalizar token de ID (declarações adicionais no token de ID)
  
@@ -131,7 +131,7 @@ Em determinados cenários, é possível que o aplicativo Web (cliente) precise d
 
 ![Opção de token de AD FS personalizar 2](media/adfs-modern-auth-concepts/option2.png)
 
-Para entender melhor como configurar um aplicativo Web no ADFS para adquirir um token de ID personalizado, consulte [Personalizar declarações a serem emitidas no id_token ao usar o OpenID Connect ou o OAuth com AD FS 2016 ou posterior](Custom-Id-Tokens-in-AD-FS.md).
+Para entender melhor como configurar um aplicativo Web no ADFS para adquirir um token de ID personalizado, consulte [Personalizar declarações a serem emitidas no id_token ao usar o OpenID Connect ou o OAuth com o AD FS 2016 ou posterior](Custom-Id-Tokens-in-AD-FS.md).
 
 ## <a name="single-log-out"></a>Logoff único
 

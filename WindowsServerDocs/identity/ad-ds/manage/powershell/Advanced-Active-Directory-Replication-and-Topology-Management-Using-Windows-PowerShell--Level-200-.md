@@ -39,7 +39,7 @@ Este tópico explica a nova replicação do AD DS e os cmdlets de gerenciamento 
 8.  [Visualização](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Topo)  
   
 ## <a name="BKMK_Intro"></a>Apresentações  
-O Windows Server 2012 estende o módulo do Active Directory para o Windows PowerShell com vinte e cinco novos cmdlets para gerenciar replicação e topologia de floresta. Antes disso, você foi forçado a usar os substantivos genéricos de **\* ADObject** ou chamar funções .net.  
+O Windows Server 2012 estende o módulo do Active Directory para o Windows PowerShell com vinte e cinco novos cmdlets para gerenciar replicação e topologia de floresta. Antes disso, você foi forçado a usar os substantivos **\*-ADObject** genéricos ou chamar funções .net.  
   
 Como todos os cmdlets do Active Directory do Windows PowerShell, essa nova funcionalidade requer a instalação do [Serviço de gateway de gerenciamento do Active Directory](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852) em pelo menos um controlador de domínio (e preferencialmente, todos os controladores de domínio).  
   
@@ -228,7 +228,7 @@ Enquanto o Repadmin.exe é bom para retornar informações sobre topologia de re
   
 Por exemplo, depois de uma rápida expansão de novas filiais, em conjunto com a consolidação de outras, você pode ter uma centena de alterações de site por fazer com base em locais físicos, mudanças de rede e novos requisitos de capacidade. Em vez de usar Dssites.msc e Adsiedit.msc para fazer alterações, você pode automatizar. Isso é especialmente atraente quando você começa com uma planilha de dados fornecida pela rede e pelas equipes.  
   
-Os cmdlets **Get-Adreplication @ no__t-1*** retornam informações sobre a topologia de replicação e são úteis para o pipeline nos cmdlets **set-Adreplication @ no__t-3*** em massa. Os cmdlets **Get** não alteram dados, apenas mostram dados ou criam objetos de sessão do Windows PowerShell que podem ser canalizados para cmdlets **set-Adreplication @ no__t-2***. Os cmdlets **New** e **Remove** são úteis para criar ou remover objetos de topologia do Active Directory.  
+Os cmdlets **Get-Adreplication\\** * retornam informações sobre a topologia de replicação e são úteis para o pipeline nos cmdlets **Set-Adreplication\\** * em massa. Os cmdlets **Get** não alteram dados, apenas mostram dados ou criam objetos de sessão do Windows PowerShell que podem ser canalizados para cmdlets **Set-Adreplication\\** *. Os cmdlets **New** e **Remove** são úteis para criar ou remover objetos de topologia do Active Directory.  
   
 Por exemplo, você pode criar novos sites usando um arquivo CSV:  
   

@@ -19,7 +19,7 @@ ms.locfileid: "71402192"
 
 > Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Ao criar um namespace, você deve escolher um dos dois tipos de namespace: um namespace autônomo ou um namespace baseado em domínio. Além disso, se você escolher um namespace baseado em domínio, deverá escolher um modo de namespace: Modo de servidor do Windows 2000 ou o modo Windows Server 2008.
+Ao criar um namespace, você deve escolher um dos dois tipos de namespace: um namespace autônomo ou um namespace baseado em domínio. Além disso, se você escolher um namespace baseado em domínio, deverá escolher um modo de namespace: modo de servidor do Windows 2000 ou o modo Windows Server 2008.
 
 ## <a name="choosing-a-namespace-type"></a>Escolhendo um tipo de namespace
 
@@ -59,7 +59,7 @@ As características de cada tipo de namespace e o modo são descritos na tabela 
 
 |Característica|Namespace autônomo|Namespace baseado em domínio (modo Windows 2000 Server) |Namespace baseado em domínio (modo Windows 2008 Server) | 
 |---|---|---|---|
-|Caminho ao namespace|\\ @ no__t-1*ServerName\RootName* |\\ @ no__t-1*NetBIOSDomainName\RootName* <br />\\ @ no__t-1*DNSDomainName\RootName*|\\ @ no__t-1*NetBIOSDomainName\RootName* <br /> \\ @ no__t-1*DNSDomainName\RootName*|
+|Caminho ao namespace|\\\ *ServerName\RootName* |\\\ *NetBIOSDomainName\RootName* <br />\\\ *DNSDomainName\RootName*|\\\ *NetBIOSDomainName\RootName* <br /> \\\ *DNSDomainName\RootName*|
 |Local de armazenamento de informações de Namespace|No registro e em um cache de memória no servidor de namespace|No AD DS e em um cache de memória em cada servidor de namespace|No AD DS e em um cache de memória em cada servidor de namespace|
 |Recomendações de tamanho de Namespace|O namespace pode conter mais de 5.000 pastas com destinos; o limite recomendado é 50.000 pastas com destinos|O tamanho do objeto do namespace no AD DS deve ser menor que 5 megabytes (MB) para manter a compatibilidade com controladores de domínio que não estejam executando o Windows Server 2008. Isso significa não mais do que aproximadamente 5.000 pastas com destinos.|O namespace pode conter mais de 5.000 pastas com destinos; o limite recomendado é 50.000 pastas com destinos |
 |Nível funcional de floresta do AD DS mínimos|AD DS não é obrigatório|Windows 2000|Windows Server 2003|
@@ -67,7 +67,7 @@ As características de cada tipo de namespace e o modo são descritos na tabela 
 |Servidores de namespace com suporte mínimo|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
 |Suporte para enumeração baseada em acesso (se habilitado)|Sim, requer o servidor de namespace do Windows Server 2008|Não|Sim|
 |Métodos com suporte para garantir a disponibilidade de namespace|Crie um namespace autônomo em um cluster de failover.|Use vários servidores de namespace para hospedar o namespace. (Os servidores de namespace devem ser no mesmo domínio.)|Use vários servidores de namespace para hospedar o namespace. (Os servidores de namespace devem ser no mesmo domínio.)|
-|Suporte para usar replicação de DFS para replicar alvos de pasta|Suportado quando tiver ingressado em um domínio do AD DS|Suportado|Suportado|
+|Suporte para usar replicação de DFS para replicar alvos de pasta|Suportado quando tiver ingressado em um domínio do AD DS|Com suporte|Com suporte|
 
 ## <a name="see-also"></a>Consulte também
 

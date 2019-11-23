@@ -18,7 +18,7 @@ ms.locfileid: "71407636"
 ---
 # <a name="configure-claim-rules"></a>Configurar regras de declaração
 
-Em um modelo de identidade do Claims @ no__t-0based, a função de Serviços de Federação do Active Directory (AD FS) (AD FS) como serviços de Federação é emitir um token que contenha um conjunto de declarações. As regras de declarações regem as decisões relacionadas a declarações que AD FS problemas. As regras de declaração e todos os dados de configuração do servidor são armazenados no banco de dado de configuração do AD FS.  
+Em um modelo de identidade baseado em declarações\-, a função de Serviços de Federação do Active Directory (AD FS) (AD FS) como serviços de Federação é emitir um token que contenha um conjunto de declarações. As regras de declarações regem as decisões relacionadas a declarações que AD FS problemas. As regras de declaração e todos os dados de configuração do servidor são armazenados no banco de dado de configuração do AD FS.  
   
 AD FS toma decisões de emissão baseadas em informações de identidade fornecidas a ela na forma de declarações e outras informações contextuais. Em um alto nível, AD FS Opera como um processador de regras, adotando um conjunto de declarações como entrada, realiza um número de transformações e, em seguida, retorna um conjunto diferente de declarações como saída. 
 

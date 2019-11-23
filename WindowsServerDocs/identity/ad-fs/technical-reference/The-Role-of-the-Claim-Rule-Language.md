@@ -64,8 +64,8 @@ Condições de expressão única são descritas na tabela a seguir. Elas são co
 
 |                                                                                                                   Descrição da condição                                                                                                                    |                           Exemplo de sintaxe da condição                            |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-|               Essa regra tem uma condição para verificar uma declaração de entrada com um tipo de declaração especificado (<http://test/name>""). Se houver uma declaração correspondente nas declarações de entrada, a regra copia a(s) declaração(ões) correspondente no conjunto de declarações de saída.               |         ``` c: [type == "http://test/name"] => issue(claim = c );```          |
-| Essa regra tem uma condição para verificar uma declaração de entrada com um tipo de declaração especificado (<http://test/name>"") e um valor de declaração ("Terry"). Se houver uma declaração correspondente nas declarações de entrada, a regra copia a(s) declaração(ões) correspondente no conjunto de declarações de saída. | ``` c: [type == "http://test/name", value == "Terry"] => issue(claim = c);``` |
+|               Essa regra tem uma condição para verificar uma declaração de entrada com um tipo de declaração especificado ("<http://test/name>"). Se houver uma declaração correspondente nas declarações de entrada, a regra copia a(s) declaração(ões) correspondente no conjunto de declarações de saída.               |         ``` c: [type == "http://test/name"] => issue(claim = c );```          |
+| Essa regra tem uma condição para verificar uma declaração de entrada com um tipo de declaração especificado ("<http://test/name>") e o valor da declaração ("Terry"). Se houver uma declaração correspondente nas declarações de entrada, a regra copia a(s) declaração(ões) correspondente no conjunto de declarações de saída. | ``` c: [type == "http://test/name", value == "Terry"] => issue(claim = c);``` |
 
 Condições mais complexas são mostradas na próxima seção, incluindo condições para verificar várias declarações, condições para verificar o emissor de uma declaração e condições para verificar se há valores que correspondem a um padrão de expressão regular.  
 
@@ -94,11 +94,11 @@ Por exemplo, na ilustração a seguir, a declaração de entrada é adicionada a
 #### <a name="claim-issuance-actions"></a>Ações de emissão de declarações  
 O corpo da regra representa uma ação de emissão de declaração. Há duas ações de emissão de declaração que a linguagem reconhece:  
 
--   **Instrução de emissão:** A instrução de emissão cria uma declaração que vai para os conjuntos de declarações de entrada e de saída. Por exemplo, a instrução a seguir emite uma nova declaração com base em seu conjunto de declarações de entrada:  
+-   **Instrução de emissão:** a instrução de emissão cria uma declaração que vai para os conjuntos de declarações de entrada e saída. Por exemplo, a instrução a seguir emite uma nova declaração com base em seu conjunto de declarações de entrada:  
 
     ```c:[type == "Name"] => issue(type = "Greeting", value = "Hello " + c.value);```  
 
--   **Instrução de adição:** A instrução de adição cria uma nova declaração que é adicionada apenas à coleção do conjunto de declarações de entrada. Por exemplo, a instrução a seguir adiciona uma nova declaração ao conjunto de declarações de entrada:  
+-   **Instrução de adição:** a instrução de adição cria uma nova declaração que é adicionada apenas à coleção do conjunto de declarações de entrada. Por exemplo, a instrução a seguir adiciona uma nova declaração ao conjunto de declarações de entrada:  
 
     ```c:[type == "Name", value == "domain user"] => add(type = "Role", value = "Editor");``` 
 
@@ -106,11 +106,11 @@ A instrução de emissão de uma regra define quais declarações serão emitida
 
 -   **Normal** — as instruções de emissão normais podem emitir declarações usando valores literais na regra ou os valores de declarações que correspondem às condições. Uma instrução de emissão normal pode consistir em um ou ambos os seguintes formatos:  
 
-    -   *Cópia de declaração*: A cópia de declaração cria uma cópia da declaração existente no conjunto de declarações de saída. Essa forma de emissão só faz sentido quando é combinada com a instrução "emissão". Quando ela é combinada com a instrução “adição”, não tem nenhum efeito.  
+    -   *Cópia de declaração*: a cópia de declaração cria uma cópia da declaração existente no conjunto de declarações de saída. Essa forma de emissão só faz sentido quando é combinada com a instrução "emissão". Quando ela é combinada com a instrução “adição”, não tem nenhum efeito.  
 
-    -   *Nova declaração*: Esse formato cria uma nova declaração, dado os valores para várias propriedades de declaração. A propriedade Claim.Type deve ser especificada; todas as outras propriedades de declaração são opcionais. A ordem dos argumentos desse formato é ignorada.  
+    -   *Nova declaração*: esse formato cria uma nova declaração, dado os valores para várias propriedades de declaração. A propriedade Claim.Type deve ser especificada; todas as outras propriedades de declaração são opcionais. A ordem dos argumentos desse formato é ignorada.  
 
--   **Repositório de atributos**— este formato cria declarações com valores que são recuperados de um repositório de atributos. É possível criar vários tipos de declaração usando uma única instrução de emissão, que é importante para repositórios de atributos que fazem operações de e/s (entrada/saída) de rede ou disco durante a recuperação do atributo. Portanto, é recomendável limitar o número de viagens de ida e volta entre o mecanismo de políticas e o repositório de atributos. Também é permitido criar várias declarações para um determinado tipo de declaração. Quando o repositório de atributos retorna vários valores para um determinado tipo de declaração, a instrução de emissão cria automaticamente uma declaração para cada valor de declaração retornado. Uma implementação de repositório de atributos usa os argumentos de parâmetro para substituir os espaços reservados no argumento de consulta por valores que são fornecidas nos argumentos de parâmetro. Os espaços reservados usam a mesma sintaxe que a função String. Format () do .net (por exemplo {1} {2},, e assim por diante). A ordem dos argumentos para esse formato de emissão é importante e deve ser a ordem indicada na gramática a seguir.  
+-   **Repositório de atributos**— este formato cria declarações com valores que são recuperados de um repositório de atributos. É possível criar vários tipos de declaração usando uma única instrução de emissão, que é importante para repositórios de atributos que fazem operações de e/s (entrada/saída) de rede ou disco durante a recuperação do atributo. Portanto, é recomendável limitar o número de viagens de ida e volta entre o mecanismo de políticas e o repositório de atributos. Também é permitido criar várias declarações para um determinado tipo de declaração. Quando o repositório de atributos retorna vários valores para um determinado tipo de declaração, a instrução de emissão cria automaticamente uma declaração para cada valor de declaração retornado. Uma implementação de repositório de atributos usa os argumentos de parâmetro para substituir os espaços reservados no argumento de consulta por valores que são fornecidas nos argumentos de parâmetro. Os espaços reservados usam a mesma sintaxe que a função String. Format () do .NET (por exemplo, {1}, {2}e assim por diante). A ordem dos argumentos para esse formato de emissão é importante e deve ser a ordem indicada na gramática a seguir.  
 
 A tabela a seguir descreve algumas construções comuns de sintaxe para ambos os tipos de instruções de emissão em regras de declaração.  
 
@@ -124,13 +124,13 @@ A tabela a seguir descreve algumas construções comuns de sintaxe para ambos os
 #### <a name="expressions"></a>Expressões  
 As expressões são usadas no lado direito para as restrições do seletor de declarações e os parâmetros de instruções de emissão. Há vários tipos de expressões às quais a linguagem dá suporte. Todas as expressões da linguagem são baseadas em cadeias de caracteres, o que significa que elas usam as cadeias de caracteres como entrada e produzem cadeias de caracteres. Não há suporte para números ou outros tipos de dados, como data/hora, em expressões. A seguir, há os tipos de expressões às quais a linguagem dá suporte:  
 
--   Cadeia de caracteres literal: Valor da cadeia de caracteres, delimitado pelo caractere de aspas (") em ambos os lados.  
+-   Literal de cadeia de caracteres: valor de cadeia de caracteres, delimitado pelo caractere de aspas (") em ambos os lados.  
 
--   Concatenação de expressões da cadeia de caracteres: O resultado é uma cadeia de caracteres que é produzida pela concatenação dos valores à esquerda e à direita.  
+-   Concatenação de expressões da cadeia de caracteres: o resultado é uma cadeia de caracteres que é produzida pela concatenação dos valores à esquerda e à direita.  
 
--   Chamada de função: A função é identificada por um identificador e os parâmetros são passados como uma lista delimitada por vírgulas de expressões entre colchetes ("()").  
+-   Chamada de função: a função é identificada por um identificador e os parâmetros são passados como uma lista delimitada por vírgulas de expressões entre colchetes ("()").  
 
--   Acesso à propriedade da declaração no formato de nome da variável nome da propriedade ponto: O resultado do valor da propriedade da declaração identificada para uma determinada validação de variável. Primeiro, a variável deve ser associada a um seletor de declarações antes que possa ser usada dessa maneira. Não é possível usar a variável que está associada a um seletor de declarações dentro das restrições para esse mesmo seletor de declarações.  
+-   Acesso à propriedade da declaração na forma de um nome de variável nome da propriedade ponto: o resultado do valor da propriedade da declaração identificada para uma determinada avaliação de variável. Primeiro, a variável deve ser associada a um seletor de declarações antes que possa ser usada dessa maneira. Não é possível usar a variável que está associada a um seletor de declarações dentro das restrições para esse mesmo seletor de declarações.  
 
 As propriedades de declaração a seguir estão disponíveis para acesso:  
 
@@ -144,7 +144,7 @@ As propriedades de declaração a seguir estão disponíveis para acesso:
 
 -   Claim.ValueType  
 
--   Claim. Properties @ no__t-0property @ no__t-1Name @ no__t-2 (essa propriedade retornará uma cadeia de caracteres vazia se a propriedade _name não puder ser encontrada na coleção de propriedades da declaração. ) simples  
+-   Declaração. Properties\[Propriedade\_Name\] (essa propriedade retornará uma cadeia de caracteres vazia se a propriedade _name não puder ser encontrada na coleção de propriedades da declaração. )  
 
 Você pode usar a função RegexReplace para chamar dentro de uma expressão. Essa função usa uma expressão de entrada e faz a correspondência com o padrão fornecido. Se o padrão corresponder, a saída da correspondência é substituída pelo valor de substituição.  
 

@@ -17,11 +17,11 @@ ms.locfileid: "71405246"
 ---
 #  <a name="windows-internet-name-service-wins"></a>Serviço de Cadastramento na Internet do Windows (WINS)
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 O serviço WINS é um serviço herdado de registro e resolução de nomes de computadores que mapeia nomes NetBIOS de computadores para endereços IP.
 
-Se você ainda não tiver o WINS implantado em sua rede, não implante o WINS-em vez disso, implante o sistema de nome de domínio \(DNS @ no__t-1. O DNS também fornece serviços de registro e resolução de nome de computador e inclui muitos benefícios adicionais sobre o WINS, como a integração com o Active Directory Domain Services.
+Se você ainda não tiver o WINS implantado em sua rede, não implante o WINS-em vez disso, implante o sistema de nome de domínio \(\)DNS. O DNS também fornece serviços de registro e resolução de nome de computador e inclui muitos benefícios adicionais sobre o WINS, como a integração com o Active Directory Domain Services.
 
 Para obter mais informações, consulte [DNS (sistema de nomes de domínio)](https://docs.microsoft.com/windows-server/networking/dns/dns-top)
 

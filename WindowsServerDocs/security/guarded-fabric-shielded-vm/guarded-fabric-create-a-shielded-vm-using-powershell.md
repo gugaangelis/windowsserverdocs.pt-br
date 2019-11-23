@@ -42,7 +42,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 Para cada uma das malhas de virtualização em que você deseja executar sua VM blindada, você precisará obter os metadados do guardião para os clusters HGS das malhas.
 Seu provedor de hospedagem deve ser capaz de fornecer essas informações para você.
 
-Se você estiver em um ambiente corporativo e puder se comunicar com o servidor HGS, os metadados do guardião estarão disponíveis em *http://\<HGSCLUSTERNAME @ no__t-2/keyprotection/Service/Metadata/2014-07/Metadata. xml*
+Se você estiver em um ambiente corporativo e puder se comunicar com o servidor HGS, os metadados do guardião estarão disponíveis em *http://\<HGSCLUSTERNAME\>/KeyProtection/Service/Metadata/2014-07/Metadata.xml*
 
 ## <a name="create-shielding-data-pdk-file"></a>Criar arquivo de dados de blindagem (PDK)
 

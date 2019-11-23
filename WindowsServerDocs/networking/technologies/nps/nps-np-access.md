@@ -17,7 +17,7 @@ ms.locfileid: "71405379"
 ---
 # <a name="access-permission"></a>Permissões de acesso
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 A permissão de acesso é configurada na guia **visão geral** de cada diretiva de rede no servidor de diretivas de rede (NPS). 
 
@@ -31,7 +31,7 @@ As configurações de permissão de acesso têm o seguinte efeito:
 A permissão de acesso também é concedida ou negada com base na configuração das propriedades de discagem de cada conta de usuário.
 
 >[!NOTE]
->As contas de usuário e suas propriedades, como propriedades de discagem, são configuradas na Active Directory usuários e computadores ou nos usuários e grupos locais console de gerenciamento Microsoft \(MMC @ no__t-1 snap-in, dependendo se você estiver ativo Diretório @ no__t-2 Domain Services (AD DS) instalado.
+>As contas de usuário e suas propriedades, como propriedades de discagem, são configuradas no snap-in Active Directory usuários e computadores ou em usuários e grupos locais \(MMC\), dependendo de se você tem Active Directory&reg; (serviços de domínio) instalados.
 
 A **permissão de acesso à rede**da configuração de conta de usuário, que é configurada nas propriedades de discagem de contas de usuário, substitui a configuração de permissão de acesso à política de rede. Quando a permissão de acesso à rede em uma conta de usuário é definida como a opção **controlar o acesso por meio da política de rede do NPS** , a configuração de permissão de acesso de política de rede determina se o acesso ao usuário foi concedido ou negado.
 
@@ -61,11 +61,11 @@ As propriedades de discagem de contas de usuário contêm o seguinte:
 
 Para dar suporte a vários tipos de conexões para as quais o NPS fornece autenticação e autorização, pode ser necessário desabilitar o processamento de propriedades de discagem da conta de usuário. Isso pode ser feito para dar suporte a cenários em que Propriedades de discagem específicas não são necessárias.
 
-Por exemplo, as propriedades chamador-ID, retorno de chamada, endereço IP estático e rotas estáticas são projetadas para um cliente que está discando para um servidor de acesso à rede \(NAS @ no__t-1, não para clientes que estão se conectando a pontos de acesso sem fio. Um ponto de acesso sem fio que recebe essas configurações em uma mensagem RADIUS do NPS pode não ser capaz de processá-las, o que pode fazer com que o cliente sem fio seja desconectado.
+Por exemplo, as propriedades chamador-ID, retorno de chamada, endereço IP estático e rotas estáticas são projetadas para um cliente que está discando para um servidor de acesso à rede \(NAS\), não para clientes que estão se conectando a pontos de acesso sem fio. Um ponto de acesso sem fio que recebe essas configurações em uma mensagem RADIUS do NPS pode não ser capaz de processá-las, o que pode fazer com que o cliente sem fio seja desconectado.
 
-Quando o NPS fornece autenticação e autorização para usuários que estão discando e acessando a rede da sua organização por meio de pontos de acesso sem fio, você deve configurar as propriedades de discagem para dar suporte a conexões de discagem @no__t configuração-0by Propriedades de discagem @ no__t-1 ou conexões sem fio \(by não definir propriedades de discagem @ no__t-3.
+Quando o NPS fornece autenticação e autorização para usuários que estão discando e acessando a rede da sua organização por meio de pontos de acesso sem fio, você deve configurar as propriedades de discagem para dar suporte a conexões de discagem \(definindo propriedades de discagem\) ou conexões sem fio \(não definir propriedades de discagem\).
 
-Você pode usar o NPS para habilitar o processamento de propriedades de discagem para a conta de usuário em alguns cenários \(such como dial-in @ no__t-1 e para desabilitar o processamento de propriedades de discagem em outros cenários \(such como o 802.1 X sem fio e o comutador de autenticação @ no__t-3.
+Você pode usar o NPS para habilitar o processamento de propriedades de discagem para a conta de usuário em alguns cenários \(como\) de discagem e para desabilitar o processamento de propriedades de discagem em outros cenários \(como a opção de autenticação sem fio 802.1 X e autenticar\).
 
 Você também pode usar **ignorar Propriedades de discagem da conta de usuário** para gerenciar o controle de acesso à rede por meio de grupos e a configuração de permissão de acesso na política de rede. Quando você marca a caixa de seleção **ignorar Propriedades de discagem de conta de usuário** , a permissão de acesso à rede na conta de usuário é ignorada.
 

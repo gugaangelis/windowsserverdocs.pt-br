@@ -21,17 +21,17 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71403313"
 ---
 # <a name="user-account-control-overview"></a>Visão geral sobre o controle de conta de usuário
-O controle de conta de usuário \(UAC @ no__t-1 é um componente fundamental da visão geral de segurança da Microsoft.  O UAC ajuda a minimizar o impacto de um programa mal-intencionado.
+O controle de conta de usuário \(\) do UAC é um componente fundamental da visão geral da segurança da Microsoft.  O UAC ajuda a minimizar o impacto de um programa mal-intencionado.
 
 ## <a name="BKMK_OVER"></a>Descrição do recurso
-O UAC permite que todos os usuários façam logon em seus computadores usando uma conta de usuário padrão. Processos iniciados com um token de usuário padrão podem realizar tarefas com direitos de acesso concedidos a um usuário padrão. Por exemplo, o Windows Explorer herda automaticamente as permissões de nível de usuário padrão. Além disso, todos os programas que são executados usando o Windows Explorer \(for exemplo, por duplo @ no__t-1clicking um atalho de aplicativo @ no__t-2 também é executado com o conjunto padrão de permissões de usuário. Muitos aplicativos, incluindo aqueles incluídos no próprio sistema operacional, são projetados para funcionar corretamente dessa maneira.
+O UAC permite que todos os usuários façam logon em seus computadores usando uma conta de usuário padrão. Processos iniciados com um token de usuário padrão podem realizar tarefas com direitos de acesso concedidos a um usuário padrão. Por exemplo, o Windows Explorer herda automaticamente as permissões de nível de usuário padrão. Além disso, todos os programas executados usando o Windows Explorer \(por exemplo,\-clicando em um atalho de aplicativo\) também são executados com o conjunto padrão de permissões de usuário. Muitos aplicativos, incluindo aqueles incluídos no próprio sistema operacional, são projetados para funcionar corretamente dessa maneira.
 
 Outros aplicativos, especialmente aqueles que não foram projetados especificamente com as configurações de segurança em mente, geralmente exigem permissões adicionais para serem executados com êxito. Esses tipos de programas são chamados de aplicativos herdados. Além disso, ações como instalar novo software e fazer alterações de configuração em programas como o Firewall do Windows exigem mais permissões do que as disponíveis para uma conta de usuário padrão.
 
 Quando um aplicativo precisa ser executado com mais de direitos de usuário padrão, o UAC pode restaurar grupos de usuários adicionais para o token. Isso permite que o usuário tenha controle explícito de programas que estão fazendo alterações no nível do sistema em seu computador ou dispositivo.
 
 ## <a name="BKMK_APP"></a>Aplicativos práticos
-O modo de aprovação de administrador no UAC ajuda a impedir que programas mal-intencionados sejam instalados silenciosamente sem o conhecimento de um administrador. Ele também ajuda a proteger contra alterações inadvertidas do sistema @ no__t-0wide. Por fim, ele pode ser usado para impor um nível mais alto de conformidade, no qual os administradores devem consentir ativamente ou fornecer as credenciais de cada processo administrativo.
+O modo de aprovação de administrador no UAC ajuda a impedir que programas mal-intencionados sejam instalados silenciosamente sem o conhecimento de um administrador. Ele também ajuda a proteger contra alterações involuntárias de\-do sistema. Por fim, ele pode ser usado para impor um nível mais alto de conformidade, no qual os administradores devem consentir ativamente ou fornecer as credenciais de cada processo administrativo.
 
 
 

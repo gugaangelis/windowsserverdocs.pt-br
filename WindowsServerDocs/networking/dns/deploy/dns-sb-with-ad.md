@@ -17,21 +17,21 @@ ms.locfileid: "71356031"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Usar a política de DNS para DNS com partição de rede no Active Directory
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para aproveitar os recursos de gerenciamento de tráfego das políticas de DNS para implantações de Split @ no__t-0brain com Active Directory zonas DNS integradas no Windows Server 2016.
+Você pode usar este tópico para aproveitar os recursos de gerenciamento de tráfego das políticas de DNS para dividir implantações\-Brain com Active Directory zonas de DNS integradas no Windows Server 2016.
 
-No Windows Server 2016, o suporte às políticas de DNS é estendido para Active Directory zonas DNS integradas. A integração do Active Directory fornece recursos de alta disponibilidade no__t-0master para o servidor DNS. 
+No Windows Server 2016, o suporte às políticas de DNS é estendido para Active Directory zonas DNS integradas. A integração do Active Directory fornece recursos de alta disponibilidade com vários\-mestre para o servidor DNS. 
 
-Anteriormente, esse cenário exigia que os administradores de DNS mantenham dois servidores DNS diferentes, cada um fornecendo serviços a cada conjunto de usuários, interno e externo. Se apenas alguns registros dentro da zona fossem divididos @ no__t-0brained ou ambas as instâncias da zona (internas e externas) foram delegadas para o mesmo domínio pai, isso se tornou um enigma de gerenciamento.
+Anteriormente, esse cenário exigia que os administradores de DNS mantenham dois servidores DNS diferentes, cada um fornecendo serviços a cada conjunto de usuários, interno e externo. Se apenas alguns registros dentro da zona foram divididos\-brained ou ambas as instâncias da zona (internas e externas) foram delegadas para o mesmo domínio pai, isso se tornou um enigma de gerenciamento.
 
 > [!NOTE]
-> - As implantações de DNS são divididas @ no__t-0brain quando há duas versões de uma única zona, uma versão para usuários internos na intranet da organização e uma versão para usuários externos – que são, normalmente, usuários na Internet.
-> - O tópico [usar a política DNS para implantação de DNS de divisão-Brain](split-brain-DNS-deployment.md) explica como você pode usar políticas de DNS e escopos de zona para implantar um sistema DNS de divisão @ no__t-1brain em um único servidor DNS do Windows Server 2016.
+> - As implantações de DNS são divididas\-Brain quando há duas versões de uma única zona, uma versão para usuários internos na intranet da organização e uma versão para usuários externos – que são, normalmente, usuários na Internet.
+> - O tópico [usar a política DNS para implantação de DNS de divisão-Brain](split-brain-DNS-deployment.md) explica como você pode usar políticas de DNS e escopos de zona para implantar um sistema DNS\-cérebro em um único servidor DNS do Windows Server 2016.
 
 
 
-##  <a name="example-split-brain-dns-in-active-directory"></a>Exemplo de divisão @ no__t-0Brain DNS no Active Directory
+##  <a name="example-split-brain-dns-in-active-directory"></a>Exemplo de divisão de DNS\-Brain em Active Directory
 
 Este exemplo usa uma empresa fictícia, contoso, que mantém um site de carreira em www.career.contoso.com.
 
@@ -43,7 +43,7 @@ Na ausência da política DNS, o administrador precisa hospedar essas duas zonas
 
 Usando políticas DNS essas zonas agora podem ser hospedadas no mesmo servidor DNS.
 
-Se o servidor DNS para contoso.com estiver Active Directory integrado e estiver escutando em duas interfaces de rede, o administrador de DNS da Contoso poderá seguir as etapas neste tópico para obter uma implantação de no__t-0brain dividida.
+Se o servidor DNS para contoso.com estiver Active Directory integrado e estiver escutando em duas interfaces de rede, o administrador de DNS da Contoso poderá seguir as etapas neste tópico para obter uma implantação de divisão\-Brain.
 
 O administrador de DNS configura as interfaces do servidor DNS com os seguintes endereços IP.
 
@@ -54,7 +54,7 @@ A ilustração a seguir descreve esse cenário.
 
 ![Implantação de DNS integrado do AD de divisão-cérebro](../../media/DNS-SB-AD/DNS-SB-AD.jpg)
 
-## <a name="how-dns-policy-for-split-brain-dns-in-active-directory-works"></a>Como a política DNS para o DNS de divisão @ no__t-0Brain no Active Directory funciona
+## <a name="how-dns-policy-for-split-brain-dns-in-active-directory-works"></a>Como a política DNS para dividir o DNS\-cérebro no Active Directory funciona
 
 Quando o servidor DNS é configurado com as políticas de DNS necessárias, cada solicitação de resolução de nome é avaliada em relação às políticas no servidor DNS.
 
@@ -64,7 +64,7 @@ Se a interface do servidor na qual a consulta é recebida corresponde a qualquer
 
 Portanto, em nosso exemplo, as consultas DNS para www.career.contoso.com recebidas no IP privado (10.0.0.56) recebem uma resposta DNS que contém um endereço IP interno; e as consultas DNS que são recebidas na interface de rede pública recebem uma resposta DNS que contém o endereço IP público no escopo de zona padrão (isso é o mesmo que a resolução de consulta normal).  
 
-Há suporte para atualizações de @no__t de DNS dinâmicos-0DDNS @ no__t-1 e a eliminação somente no escopo de zona padrão. Como os clientes internos são atendidos pelo escopo de zona padrão, os administradores de DNS da Contoso podem continuar usando os mecanismos existentes (DNS dinâmico ou estático) para atualizar os registros em contoso.com. Para escopos de zona não no__t-0default \(such como o escopo externo neste exemplo @ no__t-2, o suporte a DDNS ou de eliminação não está disponível.
+O suporte para DNS dinâmico \(DDNS\) atualizações e a eliminação tem suporte apenas no escopo de zona padrão. Como os clientes internos são atendidos pelo escopo de zona padrão, os administradores de DNS da Contoso podem continuar usando os mecanismos existentes (DNS dinâmico ou estático) para atualizar os registros em contoso.com. Para escopos de zona padrão não\-\(como o escopo externo neste exemplo\), o suporte a DDNS ou de eliminação não está disponível.
 
 ### <a name="high-availability-of-policies"></a>Alta disponibilidade de políticas
 
@@ -82,7 +82,7 @@ Para obter mais informações, consulte os seguintes tópicos de referência do 
 - [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
 
 
-## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>Como configurar a política de DNS para o DNS de divisão @ no__t-0Brain no Active Directory
+## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>Como configurar a política DNS para dividir o DNS\-Brain no Active Directory
 
 Para configurar a implantação de divisão-Brain do DNS usando a política DNS, você deve usar as seções a seguir, que fornecem instruções de configuração detalhadas.
 
@@ -112,11 +112,11 @@ Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.mi
 
 ### <a name="add-records-to-the-zone-scopes"></a>Adicionar registros aos escopos de zona
 
-A próxima etapa é adicionar os registros que representam o host do servidor Web nos escopos de duas zonas – clientes internos de \(for externos e padrão @ no__t-1. 
+A próxima etapa é adicionar os registros que representam o host do servidor Web nos escopos de duas zonas-\(externos e padrão para clientes internos\). 
 
-No escopo de zona interna padrão, o registro www.career.contoso.com é adicionado com o endereço IP 10.0.0.39, que é um endereço IP privado; e no escopo da zona externa, o mesmo registro @no__t -0www. carreira. contoso. com @ no__t-1 é adicionado com o endereço IP público 65.55.39.10. 
+No escopo de zona interna padrão, o registro www.career.contoso.com é adicionado com o endereço IP 10.0.0.39, que é um endereço IP privado; e no escopo da zona externa, o mesmo registro \(www.career.contoso.com\) é adicionado com o endereço IP público 65.55.39.10. 
 
-Os registros \(both no escopo de zona interna padrão e o escopo de zona externa @ no__t-1 serão replicados automaticamente no domínio com seus respectivos escopos de zona.
+Os registros \(tanto no escopo de zona interna padrão quanto no escopo de zona externa\) serão replicados automaticamente pelo domínio com seus respectivos escopos de zona.
 
 Você pode usar o comando de exemplo a seguir para adicionar registros aos escopos de zona no servidor DNS.
 
@@ -134,7 +134,7 @@ Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://do
 Depois de identificar as interfaces de servidor para a rede externa e a rede interna e criar os escopos de zona, você deverá criar políticas de DNS que conectem os escopos de zona interna e externa.
 
 > [!NOTE]
-> Este exemplo usa o parâmetro Server interface \(the-ServerInterface no comando de exemplo abaixo de @ no__t-1 como os critérios para diferenciar entre os clientes internos e externos. Outro método para diferenciar entre clientes externos e internos é usar sub-redes de cliente como um critério. Se você puder identificar as sub-redes às quais os clientes internos pertencem, você pode configurar a política DNS para diferenciar com base na sub-rede do cliente. Para obter informações sobre como configurar o gerenciamento de tráfego usando critérios de sub-rede do cliente, consulte [usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](primary-geo-location.md).
+> Este exemplo usa a interface de servidor \(o parâmetro-ServerInterface no comando de exemplo abaixo\) como os critérios para diferenciar entre os clientes internos e externos. Outro método para diferenciar entre clientes externos e internos é usar sub-redes de cliente como um critério. Se você puder identificar as sub-redes às quais os clientes internos pertencem, você pode configurar a política DNS para diferenciar com base na sub-rede do cliente. Para obter informações sobre como configurar o gerenciamento de tráfego usando critérios de sub-rede do cliente, consulte [usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](primary-geo-location.md).
 
 Depois de configurar as políticas, quando uma consulta DNS é recebida na interface pública, a resposta é retornada do escopo externo da zona. 
 

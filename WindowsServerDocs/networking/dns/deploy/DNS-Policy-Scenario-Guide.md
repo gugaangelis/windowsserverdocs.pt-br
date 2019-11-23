@@ -17,11 +17,11 @@ ms.locfileid: "71406225"
 ---
 # <a name="dns-policy-scenario-guide"></a>Guia de cenários de política de DNS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este guia destina-se ao uso por administradores de DNS, rede e sistemas.  
   
-A política DNS é um novo recurso para DNS no Windows Server @ no__t-0 2016. Você pode usar este guia para aprender a usar a política DNS para controlar como um servidor DNS processa consultas de resolução de nomes com base em parâmetros diferentes que você define em políticas.   
+A política DNS é um novo recurso para DNS no Windows Server&reg; 2016. Você pode usar este guia para aprender a usar a política DNS para controlar como um servidor DNS processa consultas de resolução de nomes com base em parâmetros diferentes que você define em políticas.   
   
 Este guia contém informações de visão geral da política DNS, bem como cenários de política DNS específicos que fornecem instruções sobre como configurar o comportamento do servidor DNS para atingir suas metas, incluindo o gerenciamento de tráfego baseado na localização geográfica para primário e servidores DNS secundários, alta disponibilidade de aplicativo, DNS de divisão e muito mais.  
   

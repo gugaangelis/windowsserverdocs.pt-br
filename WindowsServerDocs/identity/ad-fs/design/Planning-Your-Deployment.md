@@ -18,12 +18,12 @@ ms.locfileid: "71407995"
 ---
 # <a name="planning-your-deployment"></a>Planejando sua implantação
 
-Ao planejar a colaboração entre @ no__t-0organizational \(federation @ no__t-2based @ no__t-3 usando Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-5, primeiro determine se a sua organização hospedará um recurso da Web a ser acessado por outros organizações na Internet ou se você fornecer acesso ao recurso da Web para funcionários em sua organização. Essa determinação afeta a maneira como você implanta AD FS e é fundamental no planejamento de sua infraestrutura de AD FS.  
+Ao planejar a \(\-de Federação de\-organizacional com base\) colaboração usando Serviços de Federação do Active Directory (AD FS) \(AD FS de\), primeiro determine se a sua organização hospedará um recurso da Web para ser acessado por outras organizações pela Internet ou se você fornecer acesso ao recurso da Web para funcionários em sua organização. Essa determinação afeta a maneira como você implanta AD FS e é fundamental no planejamento de sua infraestrutura de AD FS.  
   
 > [!NOTE]  
 > Certifique-se de que a função que a organização desempenha no contrato de federação é claramente compreendida por todas as partes.  
   
-Para o [design de SSO da Web federado](Federated-Web-SSO-Design.md), o AD FS usa termos como *parceiro de conta* \(also referido como *provedor de identidade* no snap-in de AD FS Management @ no__t-4in @ no__t-5 e parceiro de *recurso* \(also referido como  *terceira parte confiável* no snap do AD FS Management @ no__t-9in @ no__t-10 para ajudar a diferenciar a organização que hospeda as contas 1o parceiro de conta @ no__t-12 da organização que hospeda os recursos Web @ no__t-13based 4 recursos parceiro @ no__t-15.  
+Para o [design de SSO da Web federado](Federated-Web-SSO-Design.md), o AD FS usa termos como *parceiro de conta* \(também conhecido como *provedor de identidade* na\-snap de gerenciamento de AD FS em\) e parceiro de *recurso* \(também conhecida como *terceira parte confiável* no AD FS\-de gerenciamento de\) para ajudar a diferenciar a organização que hospeda as contas \(o parceiro de conta\) da organização que hospeda os recursos baseados na Web\-\(o parceiro de recurso\).  
   
 Em [Web SSO Design](Web-SSO-Design.md), a organização atua em ambas as funções de parceiro de conta e parceiro de recurso porque ela fornece aos usuários acesso aos seus aplicativos.  
   

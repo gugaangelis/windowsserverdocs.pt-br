@@ -17,9 +17,9 @@ ms.locfileid: "71356762"
 ---
 # <a name="configure-the-server-certificate-template"></a>Configurar o modelo de certificado do servidor
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este procedimento para configurar o modelo de certificado que Active Directory os serviços de certificados @ no__t-0 (AD CS) são usados como base para certificados de servidor registrados em servidores na sua rede.  
+Você pode usar este procedimento para configurar o modelo de certificado que Active Directory&reg; serviços de certificados (AD CS) usa como base para certificados de servidor registrados em servidores na sua rede.  
   
 Ao configurar esse modelo, você pode especificar os servidores por Active Directory grupo que deve receber automaticamente um certificado de servidor do AD CS.   
   

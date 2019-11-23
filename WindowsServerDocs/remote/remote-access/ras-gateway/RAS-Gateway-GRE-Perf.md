@@ -18,21 +18,21 @@ ms.locfileid: "71404686"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>Desempenho e produtividade de túnel GRE de Gateway RAS
 
->Aplica-se a: Windows Server \(Semi-canal anual @ no__t-1
+>Aplica-se a: canal semianual do Windows Server \(\)
 
-Você pode usar este tópico para saber mais sobre o servidor de acesso remoto \(RAS @ no__t-1 gateway Generic Routing Encapsulation \(GRE @ no__t-3 o desempenho do túnel no Windows Server, versão 1709, em uma rede não definida por software \(SDN @ no__t-5. teste com base ambiente.
+Você pode usar este tópico para saber mais sobre o servidor de acesso remoto \(o encapsulamento de roteamento genérico do gateway de\) do protocolo RAS \(o desempenho do túnel de\) do GRE no Windows Server, versão 1709, em uma rede não definida por software \(ambiente de teste baseado em SDN\).
 
 O gateway de RAS é um roteador de software e gateway que você pode usar no modo de locatário único ou em modo multilocatário. Este tópico discute um modo de locatário único, configuração de alta disponibilidade com clustering de failover. As estatísticas de desempenho do túnel GRE apresentadas neste tópico são válidas para o gateway RAS nos modos locatário Singele e multilocatário.
 
 >[!NOTE]
 >O clustering de failover é um recurso do Windows Server que permite agrupar vários servidores juntos em um cluster tolerante a falhas. Para obter mais informações, consulte [clustering de failover](../../../failover-clustering/failover-clustering-overview.md)
 
-O modo de locatário único permite que organizações de qualquer tamanho implantem o gateway como um exterior ou a rede virtual privada de Internet @ no__t-0facing Edge \(VPN @ no__t-2 Server. No modo de locatário único, você pode implantar o gateway RAS em um servidor físico ou máquina virtual \(VM @ no__t-1. Este tópico descreve a implantação de gateway de RAS em duas máquinas virtuais \(VMs @ no__t-1 que são configuradas em um cluster de failover.
+O modo de locatário único permite que organizações de qualquer tamanho implantem o gateway como um exterior ou Internet\-rede privada virtual de borda \(servidor VPN\). No modo de locatário único, você pode implantar o gateway RAS em um servidor físico ou máquina virtual \(\)da VM. Este tópico descreve a implantação de gateway de RAS em duas máquinas virtuais \(VMs\) configuradas em um cluster de failover.
 
 >[!IMPORTANT]
 >Como os túneis GRE fornecem encapsulamento, mas não criptografia, você não deve usar o gateway de RAS configurado com o GRE como um gateway de borda da Internet. Para saber mais sobre os melhores usos do gateway RAS com túneis GRE, consulte [túnel GRE no Windows Server](gre-tunneling-windows-server.md).
 
-O GRE é um protocolo de encapsulamento leve que pode encapsular uma ampla variedade de protocolos de camada de rede dentro do virtual Point @ no__t-0to @ no__t-1point links por meio de uma interconexão de Internet de protocolo IP. A implementação do Microsoft GRE encapsula tanto o IPv4 quanto o IPv6.
+O GRE é um protocolo de encapsulamento leve que pode encapsular uma ampla variedade de protocolos de camada de rede dentro de\-de ponto virtual a links de ponto de\-por meio de uma interconexão de Internet de protocolo de Internet. A implementação do Microsoft GRE encapsula tanto o IPv4 quanto o IPv6.
 
 Para obter mais informações, consulte a seção **cenários de implantação de gateway de Ras** no tópico gateway de [RAS](https://docs.microsoft.com/windows-server/remote/remote-access/ras-gateway/ras-gateway#bkmk_deploy). 
 
@@ -44,18 +44,18 @@ Neste cenário de teste, que é descrito na ilustração a seguir, o fluxo de tr
 
 Esta seção fornece informações sobre o ambiente de teste e a configuração de gateway de RAS.
 
-No ambiente de teste, as VMs de gateway de RAS são implantadas em hosts Hyper @ no__t-0V em um cluster de failover para alta disponibilidade.
+No ambiente de teste, as VMs de gateway de RAS são implantadas em hosts Hyper\-V em um cluster de failover para alta disponibilidade.
 
-### <a name="hyper-v-host-configuration"></a>Configuração de host do Hyper @ no__t-0V
+### <a name="hyper-v-host-configuration"></a>Configuração de host do Hyper\-V
 
-Dois hosts Hyper @ no__t-0V são configurados para dar suporte ao cenário de teste da seguinte maneira. 
+Dois hosts Hyper\-V são configurados para oferecer suporte ao cenário de teste da seguinte maneira. 
 
-- Dois computadores físicos duplos @ no__t-0homed são configurados com o Windows Server, versão 1709
+- Dois computadores físicos de\-duplos hospedados são configurados com o Windows Server, versão 1709
 - Os dois adaptadores de rede física em cada um dos dois servidores estão conectados a sub-redes diferentes – ambos representam sub-redes de uma intranet da organização. As redes e o hardware de suporte têm uma capacidade de 10 GBps.
 - O hyperthreading nos servidores físicos está desabilitado. Isso fornece a taxa de transferência máxima das NICs físicas.
-- A função de servidor Hyper @ no__t-0V é instalada em ambos os servidores e configurada com dois comutadores virtuais Hyper @ no__t-1V externos, um para cada adaptador de rede física.
+- A função de servidor Hyper\-V é instalada em ambos os servidores e configurada com dois comutadores virtuais Hyper\-V externos, um para cada adaptador de rede física.
 - Como ambos os servidores estão conectados à mesma intranet, os servidores podem se comunicar entre si.
-- Os hosts do Hyper @ no__t-0V são configurados em um cluster de failover pela rede da intranet. 
+- Os hosts do Hyper\-V são configurados em um cluster de failover pela rede da intranet. 
 
 >[!NOTE]
 >Para saber mais, consulte [Comutador Virtual do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch).
@@ -66,15 +66,15 @@ Duas VMs são configuradas para dar suporte ao cenário de teste da seguinte man
 
 - Em cada servidor, uma VM é instalada que está executando o Windows Server, versão 1709. Cada VM é configurada com 10 núcleos e 8 GB de RAM.
 - Cada VM também é configurada com dois adaptadores de rede virtual. Um adaptador de rede virtual está conectado ao comutador virtual da intranet 1 e o outro adaptador de rede virtual está conectado ao comutador virtual da intranet 2.
-- Cada VM tem um gateway de RAS instalado e configurado como um servidor de VPN GRE @ no__t-0based.
+- Cada VM tem um gateway de RAS instalado e configurado como um servidor VPN baseado em\-GRE.
 - As VMs de gateway são configuradas em um cluster de failover. Quando clusterizado, uma VM está ativa e a outra VM é passiva.
 
-### <a name="workload-hyper-v-hosts-and-vms"></a>Carga de trabalho hosts Hyper @ no__t-0V e VMs
+### <a name="workload-hyper-v-hosts-and-vms"></a>Hosts e VMs Hyper\-V de carga de trabalho
 
-Para este teste, dois hosts Hyper @ no__t-0V de carga de trabalho são instalados na intranet e cada host tem uma VM instalada. Se você estiver duplicando esse teste em seu próprio ambiente de teste, poderá instalar quantos servidores de carga de trabalho e VMs forem apropriados para suas finalidades.
+Para este teste, dois hosts Hyper\-V de carga de trabalho estão instalados na intranet e cada host tem uma VM instalada. Se você estiver duplicando esse teste em seu próprio ambiente de teste, poderá instalar quantos servidores de carga de trabalho e VMs forem apropriados para suas finalidades.
 
-- Os hosts Hyper @ no__t-0V de carga de trabalho têm um adaptador de rede física instalado que está conectado à intranet da organização.
-- No comutador virtual Hyper @ no__t-0V, um comutador virtual é criado em cada host. A opção é externa e está associada a um adaptador de rede conectado à intranet.
+- Os hosts Hyper\-V de carga de trabalho têm um adaptador de rede física instalado que está conectado à intranet da organização.
+- No comutador virtual Hyper\-V, um comutador virtual é criado em cada host. A opção é externa e está associada a um adaptador de rede conectado à intranet.
 - As VMs de carga de trabalho são configuradas com 2 GB de RAM e 2 núcleos.
 - As VMs de carga de trabalho têm um adaptador de rede virtual que está conectado ao comutador virtual de intranet.
 
@@ -86,7 +86,7 @@ A ferramenta de gerador de tráfego usada neste teste é a ferramenta ctsTraffic
 
 As ilustrações nesta seção descrevem as exibições do Gerenciador de tarefas da taxa de transferência do túnel GRE com várias conexões TCP.
 
-Você pode alcançar uma taxa de transferência de até 2,0 Gbps em VMs com várias @ no__t-0core configuradas como gateways de RAS do GRE.
+Você pode alcançar uma taxa de transferência de até 2,0 Gbps em VMs com vários\-núcleos configuradas como gateways de RAS do GRE.
 
 ### <a name="gre-tunnel-performance-with-multiple-tcp-sessions"></a>Desempenho do túnel GRE com várias sessões TCP
 

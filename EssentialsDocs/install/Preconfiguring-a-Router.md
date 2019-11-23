@@ -33,7 +33,7 @@ Em geral, uma nova instalação do sistema operacional requer um roteador habili
 |---------------------------|-------------|  
 |DHCP|Ativado|  
 |Encaminhamento de porta|Encaminhe as portas a seguir para o endereço do servidor:<br /><br /> -80 (para a configuração hospedada, use apenas 443)<br />-443|  
-|Suporte UPnP|Você deve habilitar o suporte a UPnP para fornecer a configuração de roteador mais fácil para o cliente e a melhor experiência do cliente durante a instalação.<br /><br /> **Aviso:** A arquitetura UPnP pode representar um risco à segurança se permanecer habilitada.|  
+|Suporte UPnP|Você deve habilitar o suporte a UPnP para fornecer a configuração de roteador mais fácil para o cliente e a melhor experiência do cliente durante a instalação.<br /><br /> **AVISO:** A arquitetura UPnP pode representar um risco de segurança se ela for deixada habilitada.|  
   
  Além das configurações básicas de pré-configuração do roteador, é possível realizar as seguintes tarefas para fornecer uma experiência do usuário mais integrada para gerenciar o roteador:  
   

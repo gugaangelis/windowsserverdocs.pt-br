@@ -33,7 +33,7 @@ Os trabalhos de Eliminação de Duplicação de Dados são programados pelo Agen
 
 O motivo mais comum para alterar quando executar trabalhos de Eliminação de Duplicação de Dados é garantir que os trabalhos sejam executados durante fora do horário comercial. O exemplo de passo a passo a seguir mostra como modificar o plano de Eliminação de Duplicação de Dados para um cenário em que *tudo corre bem*: um host hiperconvergido do Hyper-V que fica ocioso nos fins de semana e depois das 19h durante a semana. Para alterar a agenda, execute os cmdlets do PowerShell a seguir em um contexto de Administrador.
 
-1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization)agendados por hora.  
+1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization) agendados por hora.  
     ```PowerShell
     Set-DedupSchedule -Name BackgroundOptimization -Enabled $false
     Set-DedupSchedule -Name PriorityOptimization -Enabled $false
@@ -82,7 +82,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
                 <ul>
                     <li>Otimização</li>
                     <li>Coleta de Lixo</li>
-                    <li>Anulação</li>
+                    <li>Esfregar</li>
                 </ul>
             </td>
             <td>Esse valor é necessário porque é o tipo de trabalho que você deseja agendar. Esse valor não pode ser alterado depois que a tarefa é agendada.</td>
@@ -93,7 +93,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>
                 <ul>
                     <li>Alto</li>
-                    <li>Média</li>
+                    <li>Médio</li>
                     <li>Baixa</li>
                 </ul>
             </td>
@@ -126,7 +126,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Para evitar que um trabalho seja executado em&#39;horas não ociosas</td>
         </tr>
         <tr>
-            <td>Enabled</td>
+            <td>Habilitado</td>
             <td>Se o trabalho será executado ou não</td>
             <td>Verdadeiro/Falso</td>
             <td>Para desabilitar um trabalho sem removê-lo</td>
@@ -165,7 +165,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Início</td>
             <td>Especifica a hora em que um trabalho deve ser iniciado</td>
             <td><code>System.DateTime</code></td>
-            <td>A parte de <em>Data</em> do <code>System.Datetime</code> fornecido para <em>Iniciar</em> é irrelevante (desde que ela&#39;esteja no passado), mas a parte de <em>hora</em> especifica quando o trabalho deve ser iniciado.</td>
+            <td>A parte de <em>Data</em> da <code>System.Datetime</code> fornecida para <em>Iniciar</em> é irrelevante (desde que ela&#39;esteja no passado), mas a parte de <em>hora</em> especifica quando o trabalho deve ser iniciado.</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -208,7 +208,7 @@ As principais razões para modificar as configurações de volume do tipo de uso
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>O número de vezes que uma parte é referenciada antes de ser duplicada na seção do ponto de acesso do Repositório de partes. O valor da seção HotSpot é que, portanto, chamados de partes &quot;hot @ no__t-1 que são referenciadas com frequência têm vários caminhos de acesso para melhorar o tempo de acesso.</td>
+            <td>O número de vezes que uma parte é referenciada antes de ser duplicada na seção do ponto de acesso do Repositório de partes. O valor da seção HotSpot é que, portanto, chamado &quot;partes&quot; que são referenciadas com frequência têm vários caminhos de acesso para melhorar o tempo de acesso.</td>
             <td>Números inteiros positivos</td>
             <td>O principal motivo para alterar esse número é o aumento da taxa de economia de volumes com eliminação de duplicação alta. Em geral, o valor padrão (100) é a configuração recomendada, e você&#39;não precisa modificar isso.</td>
         </tr>
@@ -318,7 +318,7 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
 </table>
 
 ## <a id="faq"></a>Perguntas frequentes
-<a id="faq-use-responsibly"></a>**I alterou uma configuração de eliminação de duplicação de dados e agora os trabalhos estão lentos ou não foram concluídos ou o desempenho da carga de trabalho foi reduzido. Por quê?**  
+<a id="faq-use-responsibly"></a>**Alterei uma configuração de eliminação de duplicação de dados e agora os trabalhos estão lentos ou não foram concluídos ou o desempenho da carga de trabalho foi reduzido. Por?**  
 Essas configurações dão bastante poder de controle sobre a execução da Eliminação de Duplicação de Dados. Use-as com responsabilidade e [monitore o desempenho](run.md#monitoring-dedup).
 
 <a id="faq-running-dedup-jobs-manually"></a>**Quero executar um trabalho de eliminação de duplicação de dados no momento, mas não quero criar uma nova agenda – posso fazer isso?**  

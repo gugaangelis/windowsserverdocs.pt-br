@@ -17,18 +17,18 @@ ms.locfileid: "71405934"
 ---
 # <a name="network-controller-high-availability"></a>Alta disponibilidade do controlador de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para saber mais sobre a configuração de alta disponibilidade e escalabilidade do controlador de rede para rede definida pelo software \(SDN @ no__t-1.
+Você pode usar este tópico para saber mais sobre a configuração de alta disponibilidade e escalabilidade do controlador de rede para redes definidas pelo software \(SDN\).
 
-Ao implantar o SDN em seu datacenter, você pode usar o controlador de rede para implantar, monitorar e gerenciar centralmente vários elementos de rede, incluindo gateways RAS, balanceadores de carga de software, políticas de rede virtual para comunicação de locatário, firewall de datacenter políticas, qualidade de serviço \(QoS @ no__t-1 para políticas de SDN, políticas de rede híbrida e muito mais.
+Ao implantar o SDN em seu datacenter, você pode usar o controlador de rede para implantar, monitorar e gerenciar centralmente vários elementos de rede, incluindo gateways RAS, balanceadores de carga de software, políticas de rede virtual para comunicação de locatário, políticas de firewall de datacenter, qualidade de serviço \(\) de QoS para políticas de SDN, políticas de rede híbrida e muito mais.
 
 Como o controlador de rede é a base do gerenciamento de SDN, é essencial que as implantações de controlador de rede forneçam alta disponibilidade e a capacidade de você dimensionar ou reduzir facilmente os nós do controlador de rede com suas necessidades de datacenter.
 
 Embora seja possível implantar o controlador de rede como um cluster de computador único, para alta disponibilidade e failover, você deve implantar o controlador de rede em um cluster de vários computadores com um mínimo de três computadores.
 
 >[!NOTE]
->Você pode implantar o controlador de rede em computadores de servidor ou em máquinas virtuais \(VMs @ no__t-1 que estejam executando o Windows Server 2016 Datacenter Edition. Se você implantar o controlador de rede em VMs, as VMs deverão estar em execução em hosts Hyper-V que também estejam executando o Datacenter Edition. O controlador de rede não está disponível no Windows Server 2016 Standard Edition.
+>Você pode implantar o controlador de rede em computadores de servidor ou em máquinas virtuais \(VMs\) que estejam executando o Windows Server 2016 Datacenter Edition. Se você implantar o controlador de rede em VMs, as VMs deverão estar em execução em hosts Hyper-V que também estejam executando o Datacenter Edition. O controlador de rede não está disponível no Windows Server 2016 Standard Edition.
 
 ## <a name="network-controller-as-a-service-fabric-application"></a>Controlador de rede como um aplicativo Service Fabric
 
@@ -45,7 +45,7 @@ O aplicativo do controlador de rede é composto por vários serviços de Service
 
 Cada serviço de Service Fabric tem uma réplica primária e duas réplicas secundárias. A réplica de serviço primário processa solicitações, enquanto as duas réplicas de serviço secundárias fornecem alta disponibilidade em circunstâncias em que a réplica primária está desabilitada ou indisponível por algum motivo.
 
-A ilustração a seguir descreve um cluster de Service Fabric de controlador de rede com cinco computadores. Quatro serviços são distribuídos entre os cinco computadores: Serviço de firewall, serviço de gateway, balanceamento de carga de software \(SLB @ no__t-1 e rede virtual @no__t-serviço 2Vnet @ no__t-3.  Cada um dos quatro serviços inclui uma réplica de serviço primário e duas réplicas de serviço secundárias.
+A ilustração a seguir descreve um cluster de Service Fabric de controlador de rede com cinco computadores. Quatro serviços são distribuídos entre as cinco máquinas: serviço de firewall, serviço de gateway, balanceamento de carga de software \(serviço de\) SLB e rede virtual \(serviço de\) vnet.  Cada um dos quatro serviços inclui uma réplica de serviço primário e duas réplicas de serviço secundárias.
 
 ![Cluster de Service Fabric do controlador de rede](../../../media/Network-Controller-HA/Network-Controller-HA.jpg)
 
@@ -62,11 +62,11 @@ Como o controlador de rede é o núcleo de uma rede de datacenter, ele deve ser 
 
 ### <a name="persistent-storage"></a>Armazenamento persistente
 
-O aplicativo do controlador de rede tem grandes requisitos de armazenamento para sua configuração e estado. O aplicativo também deve ser utilizável entre interrupções planejadas e não planejadas. Para essa finalidade, Service Fabric fornece um repositório de chave-valor \(KVS @ no__t-1 que é um repositório replicado, transacional e persistente.
+O aplicativo do controlador de rede tem grandes requisitos de armazenamento para sua configuração e estado. O aplicativo também deve ser utilizável entre interrupções planejadas e não planejadas. Para essa finalidade, Service Fabric fornece um repositório de chave-valor \(KVS\) que é um repositório replicado, transacional e persistente.
 
 ### <a name="modularity"></a>Modularidade
 
-O controlador de rede é projetado com uma arquitetura modular, com cada um dos serviços de rede, como o serviço de redes virtuais e o serviço de firewall, criado o @ no__t-0in como serviços individuais. 
+O controlador de rede é projetado com uma arquitetura modular, com cada um dos serviços de rede, como o serviço de redes virtuais e o serviço de firewall, criado\-no como serviços individuais. 
 
 Essa arquitetura de aplicativo oferece os seguintes benefícios.
 
@@ -80,7 +80,7 @@ A modularidade de Service Fabric usa esquemas de modelo de serviço para maximiz
 
 ## <a name="network-controller-deployment-options"></a>Opções de implantação do controlador de rede
 
-Para implantar o controlador de rede usando System Center Virtual Machine Manager \(VMM @ no__t-1, consulte [configurar um controlador de rede Sdn na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
+Para implantar o controlador de rede usando System Center Virtual Machine Manager \(\)do VMM, consulte [configurar um controlador de rede Sdn na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
 
 Para implantar o controlador de rede usando scripts, consulte [implantar uma infraestrutura de rede definida pelo software usando scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 

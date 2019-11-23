@@ -22,7 +22,7 @@ ms.locfileid: "71363383"
 ---
 # <a name="using-the-get-alldrivergroups-command"></a>Usando o comando Get-AllDriverGroups
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre todos os grupos de drivers em um servidor.
 ## <a name="syntax"></a>Sintaxe
@@ -42,6 +42,6 @@ wdsutil /Get-AllDriverGroups /Server:MyWdsServer /Show:All
 ```
 wdsutil /Get-AllDriverGroups [/Show:PackageMetaData]
 ```
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [usando o comando Get-driver](using-the-get-drivergroup-command.md)

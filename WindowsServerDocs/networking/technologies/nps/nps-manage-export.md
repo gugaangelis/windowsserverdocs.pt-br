@@ -46,7 +46,7 @@ A tabela a seguir lista os parâmetros para o cmdlet **Export-NpsConfiguration**
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Path|Especifica o nome e o local do arquivo XML para o qual você deseja exportar a configuração do NPS.|
+|Caminho|Especifica o nome e o local do arquivo XML para o qual você deseja exportar a configuração do NPS.|
 
 **Credenciais administrativas**
 
@@ -76,7 +76,7 @@ Para obter mais informações, consulte [Import-NpsConfiguration](https://techne
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>Exportar e importar a configuração do NPS usando Netsh
 
-Você pode usar o Shell de rede \(Netsh @ no__t-1 para exportar a configuração do NPS usando o comando **netsh nps Export** .
+Você pode usar o Shell de rede \(netsh\) para exportar a configuração do NPS usando o comando **netsh nps Export** .
 
 Quando o comando **netsh nps Import** é executado, o NPS é atualizado automaticamente com as definições de configuração atualizadas. Você não precisa interromper o NPS no computador de destino para executar o comando **netsh nps Import** , no entanto, se o console do NPS ou o snap-in do MMC do NPS estiver aberto durante a importação da configuração, as alterações na configuração do servidor não estarão visíveis até que você atualize a exibição. 
 
@@ -95,7 +95,7 @@ Para concluir este procedimento, você deve ser um membro do grupo Administrador
 
 3. No prompt **netsh nps** , digite **Export filename =** "*path\file.xml*" **exportPSK = Yes**, em que *Path* é o local da pasta onde você deseja salvar o arquivo de configuração do NPS e *File* é o nome do arquivo XML que você deseja salvar. Pressione Enter. 
 
-Isso armazena definições de configuração \(including configurações do registro @ no__t-1 em um arquivo XML. O caminho pode ser relativo ou absoluto, ou pode ser uma Convenção de nomenclatura universal \(UNC @ no__t-1 caminho. Depois de pressionar Enter, será exibida uma mensagem indicando se a exportação para o arquivo foi bem-sucedida.
+Isso armazena definições de configuração \(incluindo configurações do registro\) em um arquivo XML. O caminho pode ser relativo ou absoluto, ou pode ser uma Convenção de nomenclatura universal \(caminho de\) UNC. Depois de pressionar Enter, será exibida uma mensagem indicando se a exportação para o arquivo foi bem-sucedida.
 
 4. Copie o arquivo que você criou para o NPS de destino.
 

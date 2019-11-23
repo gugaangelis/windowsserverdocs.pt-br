@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406940"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>Implantar o centro de administração do Windows com alta disponibilidade
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 Você pode implantar o centro de administração do Windows em um cluster de failover para fornecer alta disponibilidade para o serviço de gateway do centro de administração do Windows. A solução fornecida é uma solução ativa-passiva, em que apenas uma instância do centro de administração do Windows está ativa. Se um dos nós no cluster falhar, o centro de administração do Windows executará um failover normal para outro nó, permitindo que você continue gerenciando os servidores em seu ambiente sem problemas. 
 
@@ -32,18 +32,18 @@ Você pode implantar o centro de administração do Windows em um cluster de fai
 ## <a name="install-windows-admin-center-on-a-failover-cluster"></a>Instalar o centro de administração do Windows em um cluster de failover
 
 1. Copie o script ```Install-WindowsAdminCenterHA.ps1``` para um nó no cluster. Baixe ou copie o centro de administração do Windows. msi para o mesmo nó.
-2. Conecte-se ao nó via RDP e execute o script ```Install-WindowsAdminCenterHA.ps1``` desse nó com os seguintes parâmetros:
-    - `-clusterStorage`: o caminho local do Volume Compartilhado Clusterizado para armazenar os dados do centro de administração do Windows.
+2. Conecte-se ao nó via RDP e execute o script ```Install-WindowsAdminCenterHA.ps1``` a partir desse nó com os seguintes parâmetros:
+    - `-clusterStorage`: o caminho local do Volume Compartilhado Clusterizado para armazenar dados do centro de administração do Windows.
     - `-clientAccessPoint`: escolha um nome que será usado para acessar o centro de administração do Windows. Por exemplo, se você executar o script com o parâmetro `-clientAccessPoint contosoWindowsAdminCenter`, acessará o serviço centro de administração do Windows visitando `https://contosoWindowsAdminCenter.<domain>.com`
-    - `-staticAddress`: Opcional. Um ou mais endereços estáticos para o serviço genérico do cluster. 
-    - `-msiPath`: O caminho para o arquivo. msi do centro de administração do Windows.
-    - `-certPath`: Opcional. O caminho para um arquivo. pfx de certificado.
-    - `-certPassword`: Opcional. Uma senha de SecureString para o Certificate. pfx fornecido no `-certPath`
-    - `-generateSslCert`: Opcional. Se você não quiser fornecer um certificado assinado, inclua esse sinalizador de parâmetro para gerar um certificado autoassinado. Observe que o certificado autoassinado expirará em 60 dias.
-    - `-portNumber`: Opcional. Se você não especificar uma porta, o serviço de gateway será implantado na porta 443 (HTTPS). Para usar uma porta diferente, especifique nesse parâmetro. Observe que, se você usar uma porta personalizada (algo além de 443), acessará o centro de administração do Windows acessando https://\<clientAccessPoint @ no__t-1: \<port @ no__t-3.
+    - `-staticAddress`: opcional. Um ou mais endereços estáticos para o serviço genérico do cluster. 
+    - `-msiPath`: o caminho para o arquivo. msi do centro de administração do Windows.
+    - `-certPath`: opcional. O caminho para um arquivo. pfx de certificado.
+    - `-certPassword`: opcional. Uma senha de SecureString para o Certificate. pfx fornecido no `-certPath`
+    - `-generateSslCert`: opcional. Se você não quiser fornecer um certificado assinado, inclua esse sinalizador de parâmetro para gerar um certificado autoassinado. Observe que o certificado autoassinado expirará em 60 dias.
+    - `-portNumber`: opcional. Se você não especificar uma porta, o serviço de gateway será implantado na porta 443 (HTTPS). Para usar uma porta diferente, especifique nesse parâmetro. Observe que, se você usar uma porta personalizada (algo além de 443), acessará o centro de administração do Windows acessando https://\<clientAccessPoint\>:\<Port\>.
 
 > [!NOTE]
-> O script ```Install-WindowsAdminCenterHA.ps1``` dá suporte a parâmetros ```-WhatIf ``` e ```-Verbose```
+> O script de ```Install-WindowsAdminCenterHA.ps1``` dá suporte a parâmetros de ```-WhatIf ``` e ```-Verbose```
 
 ### <a name="examples"></a>Exemplos
 
@@ -62,11 +62,11 @@ $certPassword = Read-Host -AsSecureString
 
 ## <a name="update-an-existing-high-availability-installation"></a>Atualizar uma instalação de alta disponibilidade existente
 
-Use o mesmo script ```Install-WindowsAdminCenterHA.ps1``` para atualizar sua implantação de alta disponibilidade, sem perder os dados de conexão.
+Use o mesmo ```Install-WindowsAdminCenterHA.ps1``` script para atualizar sua implantação de alta disponibilidade, sem perder os dados de conexão.
 
 ### <a name="update-to-a-new-version-of-windows-admin-center"></a>Atualizar para uma nova versão do centro de administração do Windows
 
-Quando uma nova versão do centro de administração do Windows for lançada, basta executar o script ```Install-WindowsAdminCenterHA.ps1``` novamente com apenas o parâmetro ```msiPath```:
+Quando uma nova versão do centro de administração do Windows for lançada, basta executar o script de ```Install-WindowsAdminCenterHA.ps1``` novamente com apenas o parâmetro ```msiPath```:
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -msiPath '.\WindowsAdminCenter.msi' -Verbose

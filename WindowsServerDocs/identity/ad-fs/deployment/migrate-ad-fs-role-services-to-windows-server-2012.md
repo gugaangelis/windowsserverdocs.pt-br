@@ -34,7 +34,7 @@ O seguinte fornece instruções sobre como migrar os seguintes serviços de fun�
   
   Este guia não inclui instruções para migrar um servidor que está executando várias funções. Se o servidor executar várias funções, é recomendável criar um processo de migração personalizado específico para o ambiente do servidor, com base nas informações fornecidas em outros guias de migração de função. Guias de migração de funções adicionais estão disponíveis no [Portal de Migração do Windows Server](https://go.microsoft.com/fwlink/?LinkId=247608).  
   
-## <a name="supported-operating-systems"></a>Sistemas operacionais com suporte  
+## <a name="supported-operating-systems"></a>Sistemas operacionais compatíveis  
  **Sistema operacional do servidor de destino:**  
   
 
@@ -76,7 +76,7 @@ O seguinte fornece instruções sobre como migrar os seguintes serviços de fun�
 |AD FS o proxy do servidor de Federação 2,0 instalado no Windows Server 2008 ou no Windows Server 2008 R2|Há suporte para migração no mesmo servidor.  Para saber mais, confira:<br /><br /> [Preparar a migração do Proxy do Servidor de Federação do AD FS 2.0](prepare-to-migrate-ad-fs-fed-proxy.md)<br /><br /> [Migrar o Proxy do Servidor de Federação do AD FS 2.0](migrate-the-ad-fs-2-fed-server-proxy.md)|  
   
 ## <a name="see-also"></a>Consulte também  
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

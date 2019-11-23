@@ -54,12 +54,12 @@ Para o diagrama arquitetônico a seguir mostra a configuração que foi usada pa
 1.  Usando Gerenciador do Servidor instalar a função Serviços de Federação do Active Directory (AD FS) no Windows Server 2016  
 
 2.  Usando o assistente de configuração do AD FS, ingresse o novo servidor do Windows Server 2016 no farm de AD FS existente.  Na tela de **boas-vindas** , clique em **Avançar**.
- farm de ![Join @ no__t-1  
+ ![farm de junção](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
 3.  Na tela **conectar ao Active Directory Domain Services** , s**pecificar uma conta de administrador** com permissões para executar a configuração dos serviços de Federação e clique em **Avançar**.
 4.  Na tela **especificar farm** , insira o nome do SQL Server e da instância e clique em **Avançar**.
-farm de ![Join @ no__t-1
+![farm de junção](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
 5.  Na tela **especificar certificado SSL** , especifique o certificado e clique em **Avançar**.
-farm de ![Join @ no__t-1
+![farm de junção](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
 6.  Na tela **especificar conta de serviço** , especifique a conta de serviço e clique em **Avançar**.
 7.  Na tela **Opções de revisão** , examine as opções e clique em **Avançar**.
 8.  Na tela **verificações de pré-requisitos** , verifique se todas as verificações de pré-requisito foram aprovadas e clique em **Configurar**.
@@ -72,11 +72,11 @@ farm de ![Join @ no__t-1
 >Você não precisa definir o servidor de AD FS primário usando Set-AdfsSyncProperties-role ao usar o SQL como o banco de dados.  Isso ocorre porque todos os nós são considerados primários nessa configuração.
 
 1.  No Windows Server 2012 R2 AD FS Server em Gerenciador do Servidor use **remover funções e recursos** em **gerenciar**.
-servidor ![Remove @ no__t-1
+![remover](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png) do servidor
 2.  Na tela **Antes de começar**, clique em **Avançar**.
 3.  Na tela de **seleção de servidor** , clique em **Avançar**.
 4.  Na tela **funções de servidor** , remova a marca de seleção ao lado de **serviços de Federação do Active Directory (AD FS)** e clique em **Avançar**.
-servidor ![Remove @ no__t-1
+![remover](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png) do servidor
 5.  Na tela **recursos** , clique em **Avançar**.
 6.  Na tela de **confirmação** , clique em **remover**.
 7.  Quando isso for concluído, reinicie o servidor.
@@ -91,9 +91,9 @@ Antes desta etapa, você precisa garantir que forestprep e DomainPrep tenham sid
 2. Insira as credenciais que têm privilégios de administrador no SQL Server.
 3. Agora, no PowerShell, insira o seguinte: **Invoke-AdfsFarmBehaviorLevelRaise-Credential $cred**
 2. Quando solicitado, digite **Y**.  Isso começará a gerar o nível.  Quando isso for concluído, o FBL será gerado com êxito.  
-Atualização de @no__t 0Finish @ no__t-1
+![concluir a atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
 3. Agora, se você for para AD FS Management, verá os novos nós que foram adicionados para AD FS no Windows Server 2016  
-4. Da mesma forma, você pode usar o cmdlt do PowerShell:  Get-AdfsFarmInformation para mostrar a você o FBL atual.  
+4. Da mesma forma, você pode usar o cmdlt do PowerShell: Get-AdfsFarmInformation para mostrar o FBL atual.  
 ![Concluir atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
 
 #### <a name="upgrade-the-configuration-version-of-existing-wap-servers"></a>Atualizar a versão de configuração de servidores WAP existentes

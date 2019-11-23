@@ -28,13 +28,13 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 1.  Antes de iniciar o procedimento, verifique se você está em um host Hyper-V executando o Windows Server 2016 com as seguintes funções e recursos instalados:
 
-    - Role
+    - Função
 
         - Hyper-V
 
     - Recursos
 
-        - Ferramentas de Administração de Servidor Remoto @ no__t-0Feature ferramentas de administração @ no__t-1Shielded ferramentas de VM
+        - Ferramentas de administração de recursos do Ferramentas de Administração de Servidor Remoto\\\\ferramentas de VM blindadas
 
     > [!NOTE]
     > O host usado aqui *não* deve ser um host na malha protegida. Esse é um host separado em que as VMs são preparadas antes de serem movidas para a malha protegida.
@@ -51,9 +51,9 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 4.  Para importar a chave do guardião, que será necessária em um procedimento posterior, execute o comando a seguir.
 
-    Para &lt;Path @ no__t-1 @ no__t-2Filename @ no__t-3, substitua o caminho e o nome do arquivo XML que você salvou na etapa anterior, por exemplo: **C: @no__t -1temp\\GuardianKey.xml**
+    Para &lt;caminho&gt;&lt;nome do arquivo&gt;, substitua o caminho e o nome do arquivo XML que você salvou na etapa anterior, por exemplo: **C:\\temp\\GuardianKey. xml**
 
-    Para &lt;GuardianName @ no__t-1, especifique um nome para seu provedor de hospedagem ou Datacenter corporativo, por exemplo, **HostingProvider1**. Registre o nome para o próximo procedimento.
+    Para &lt;Guardianname&gt;, especifique um nome para seu provedor de hospedagem ou Datacenter corporativo, por exemplo, **HostingProvider1**. Registre o nome para o próximo procedimento.
 
     Include **-AllowUntrustedRoot** somente se o servidor HgS tiver sido configurado com certificados autoassinados. (Esses certificados fazem parte do serviço de proteção de chave no HGS.)
 
@@ -65,19 +65,19 @@ Neste procedimento, você criará uma máquina virtual no host Hyper-V e a prepa
 
 Como parte do procedimento, você criará um protetor de chave que contém dois elementos importantes:
 
--   **Proprietário**: No protetor de chave, você-ou mais provavelmente, o grupo no qual você trabalha, que compartilha elementos de segurança como certificados – são identificados como "proprietário" da VM. Sua identidade como proprietário é representada por um certificado que, se você executar os comandos, conforme mostrado, será gerado como um certificado autoassinado. Opcionalmente, você pode usar um certificado apoiado pela infraestrutura PKI e omitir o parâmetro **-AllowUntrustedRoot** nos comandos.
+-   **Proprietário**: no protetor de chave, você-ou mais provavelmente, o grupo no qual você trabalha, que compartilha elementos de segurança como certificados – são identificados como "proprietário" da VM. Sua identidade como proprietário é representada por um certificado que, se você executar os comandos, conforme mostrado, será gerado como um certificado autoassinado. Opcionalmente, você pode usar um certificado apoiado pela infraestrutura PKI e omitir o parâmetro **-AllowUntrustedRoot** nos comandos.
 
--   **Guardiões**: Também no protetor de chave, seu provedor de hospedagem ou Datacenter corporativo (que executa HGS e hosts protegidos) é identificado como "guardião". O Guardião é representado pela chave do Guardião que você importou no procedimento anterior, [importe a configuração do guardião no servidor do Hyper-V do locatário](#import-the-guardian-configuration-on-the-tenant-hyper-v-server).
+-   **Guardiões**: também no protetor de chave, seu provedor de hospedagem ou Datacenter corporativo (que executa HgS e hosts protegidos) é identificado como "guardião". O Guardião é representado pela chave do Guardião que você importou no procedimento anterior, [importe a configuração do guardião no servidor do Hyper-V do locatário](#import-the-guardian-configuration-on-the-tenant-hyper-v-server).
 
 Para uma ilustração que mostra o protetor de chave, que é um elemento em um arquivo de dados de blindagem, consulte [o que são os dados de blindagem e por que ele é necessário?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary).
 
 1. Em um host Hyper-V de locatário, para criar uma nova máquina virtual de geração 2, execute o comando a seguir.
 
-   Para &lt;ShieldedVMname @ no__t-1, especifique um nome para a VM, por exemplo: **ShieldVM1**
+   Para &lt;ShieldedVMname&gt;, especifique um nome para a VM, por exemplo: **ShieldVM1**
     
-   Para &lt;VHDPath @ no__t-1, especifique um local para armazenar o VHDX da VM, por exemplo: **C: \\VMs @ no__t-2ShieldVM1\\ShieldVM1.vhdx**
+   Para &lt;VHDPath&gt;, especifique um local para armazenar o VHDX da VM, por exemplo: **C:\\VMs\\ShieldVM1\\ShieldVM1. VHDX**
     
-   Para &lt;nnGB @ no__t-1, especifique um tamanho para o VHDX, por exemplo: **60 GB**
+   Para &lt;nnGB&gt;, especifique um tamanho para o VHDX, por exemplo: **60 GB**
 
        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
@@ -87,7 +87,7 @@ Para uma ilustração que mostra o protetor de chave, que é um elemento em um a
 
 4. Para criar um novo protetor de chave (descrito no início desta seção), execute o comando a seguir.
 
-   Para &lt;GuardianName @ no__t-1, use o nome especificado no procedimento anterior, por exemplo: **HostingProvider1**
+   Para &lt;Guardianname&gt;, use o nome especificado no procedimento anterior, por exemplo: **HostingProvider1**
 
    Include **-AllowUntrustedRoot** para permitir certificados autoassinados.
 
@@ -99,7 +99,7 @@ Para uma ilustração que mostra o protetor de chave, que é um elemento em um a
 
    Se desejar que mais de um datacenter seja capaz de executar sua VM blindada (por exemplo, um site de recuperação de desastre e um provedor de nuvem pública), você poderá fornecer uma lista de guardiões para o parâmetro **-guardião** . Para obter mais informações, consulte [New-HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps.
 
-5. Para habilitar o vTPM usando o protetor de chave, execute o comando a seguir. Para &lt;ShieldedVMname @ no__t-1, use o mesmo nome de VM usado nas etapas anteriores.
+5. Para habilitar o vTPM usando o protetor de chave, execute o comando a seguir. Para &lt;ShieldedVMname&gt;, use o mesmo nome de VM usado nas etapas anteriores.
 
        $VMName="<ShieldedVMname>"
 

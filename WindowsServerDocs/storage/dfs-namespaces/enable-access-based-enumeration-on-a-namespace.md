@@ -51,7 +51,7 @@ Você pode habilitar a enumeração baseada em acesso em um namespace usando a i
 
 1.  Abra uma janela de prompt de comando em um servidor que tem o **Distributed File System** serviço de função ou **ferramentas do sistema de arquivos distribuído** recurso instalado.
 
-2.  Digite o seguinte comando, em que *< namespace @ no__t-1root >* é a raiz do namespace:
+2.  Digite o seguinte comando, em que *< namespace\_raiz >* é a raiz do namespace:
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ Você pode controlar quais usuários e grupos podem exibir pastas DFS individuai
 
 1. Abra uma janela de prompt de comando em um servidor que tem o **Distributed File System** serviço de função ou **ferramentas do sistema de arquivos distribuído** recurso instalado.
 
-2. Digite o seguinte comando, em que *&lt;DFSPath @ no__t-2* é o caminho da pasta DFS (link), *< domínio @ no__t-4Account >* é o nome do grupo ou da conta de usuário e *(...)* é substituído por entradas de controle de acesso adicionais ( ACEs):
+2. Digite o seguinte comando, em que *&lt;DFSPath&gt;* é o caminho da pasta DFS (link), *< conta de\\de domínio >* é o nome do grupo ou da conta de usuário, e *(...)* é substituído por ACEs (entradas de controle de acesso) adicionais:
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   Por exemplo, para substituir as permissões existentes por permissões que permitem que os administradores de domínio e os grupos CONTOSO @ no__t-0Trainers leiam (R) o acesso à pasta \\contoso. office\public\training, digite o seguinte comando:
+   Por exemplo, para substituir as permissões existentes por permissões que permitem que os administradores de domínio e o CONTOSO\\os estagiários agrupem o acesso de leitura (R) para a pasta \\contoso. office\public\training, digite o seguinte comando:
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 

@@ -17,7 +17,7 @@ ms.locfileid: "71406378"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>Visão geral da implantação do modo de cache hospedado BranchCache
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar este guia para implantar um servidor de cache hospedado do BranchCache em uma filial em que os computadores são ingressados em um domínio. Você pode usar este tópico para obter uma visão geral do processo de implantação do modo de cache hospedado do BranchCache.
 
@@ -25,7 +25,7 @@ Esta visão geral inclui a infraestrutura do BranchCache de que você precisa, b
 
 ## <a name="bkmk_components"></a>Infraestrutura de implantação do servidor de cache hospedado
 
-Nessa implantação, o servidor de cache hospedado é implantado usando pontos de conexão de serviço no Active Directory Domain Services \(AD DS @ no__t-1, e você tem a opção com o BranchCache no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012, para prearmazenar o conteúdo compartilhado em servidores de conteúdo baseados na Web e em arquivos, pré-carregar o conteúdo em servidores de cache hospedados.
+Nessa implantação, o servidor de cache hospedado é implantado usando pontos de conexão de serviço no Active Directory Domain Services \(AD DS\), e você tem a opção com o BranchCache no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012, para fazer o prehash do conteúdo compartilhado em servidores de conteúdo baseados na Web e em arquivos, e então pré-carregar o conteúdo em servidores de cache hospedado.
 
 A ilustração a seguir mostra a infraestrutura necessária para implantar um servidor de cache hospedado do BranchCache.
 
@@ -40,11 +40,11 @@ Você deve configurar este computador como um servidor de cache hospedado. Se vo
 
 ### <a name="web1-in-the-cloud-data-center"></a>WEB1 na nuvem data center
 
-WEB1 é um servidor de conteúdo do BranchCache @ no__t-0enabled. Se você optar por prefazer o hash de dados do servidor de conteúdo para poder pré-carregar o conteúdo em seus servidores de cache hospedados, você poderá prearmazenar o conteúdo compartilhado em WEB1 e, em seguida, criar um pacote de dados que você copia para o HCS1.
+WEB1 é um servidor de conteúdo habilitado para\-do BranchCache. Se você optar por prefazer o hash de dados do servidor de conteúdo para poder pré-carregar o conteúdo em seus servidores de cache hospedados, você poderá prearmazenar o conteúdo compartilhado em WEB1 e, em seguida, criar um pacote de dados que você copia para o HCS1.
 
 ### <a name="file1-in-the-cloud-data-center"></a>FILE1 na nuvem data center
 
-ARQUIVO1 é um servidor de conteúdo BranchCache @ no__t-0enabled. Se você optar por prefazer o hash de dados do servidor de conteúdo para poder pré-carregar o conteúdo em seus servidores de cache hospedados, você poderá prefazer o hash do conteúdo compartilhado no ARQUIVO1 e, em seguida, criar um pacote de dados que você copia para HCS1.
+ARQUIVO1 é um servidor de conteúdo de\-habilitado para BranchCache. Se você optar por prefazer o hash de dados do servidor de conteúdo para poder pré-carregar o conteúdo em seus servidores de cache hospedados, você poderá prefazer o hash do conteúdo compartilhado no ARQUIVO1 e, em seguida, criar um pacote de dados que você copia para HCS1.
   
 ### <a name="dc1-in-the-main-office"></a>DC1 no escritório principal
 
@@ -68,12 +68,12 @@ O processo de implantação de um servidor de cache hospedado do BranchCache oco
 
 1. No HCS1, use os comandos do Windows PowerShell para configurar o computador como um servidor de cache hospedado e registrar um ponto de conexão de serviço no Active Directory.
 
-2. \(Optional @ no__t-1 no HCS1, se os valores padrão do BranchCache não corresponderem aos seus objetivos de implantação para o servidor e o cache hospedado, configure a quantidade de espaço em disco que você deseja alocar para o cache hospedado. Configure também o local do disco que você prefere para o cache hospedado.
+2. \(\) opcionais em HCS1, se os valores padrão do BranchCache não corresponderem às metas de implantação do servidor e do cache hospedado, configure a quantidade de espaço em disco que você deseja alocar para o cache hospedado. Configure também o local do disco que você prefere para o cache hospedado.
 
-3. \(Optional @ no__t-1 conteúdo de pré-hash em servidores de conteúdo, criar pacotes de dados e pré-carregar conteúdo no servidor de cache hospedado.
+3. \(conteúdo de pré-hash\) opcional em servidores de conteúdo, criar pacotes de dados e pré-carregar conteúdo no servidor de cache hospedado.
 
     > [!NOTE]
-    > O pré-hash e o pré-carregamento de conteúdo em seu servidor de cache hospedado são opcionais. no entanto, se você optar por prehash e Preload, deverá executar todas as etapas abaixo aplicáveis à sua implantação. \(For exemplo, se você não tiver servidores Web, não precisará executar nenhuma das etapas relacionadas ao prehash e ao pré-carregamento do conteúdo do servidor Web. \)
+    > O pré-hash e o pré-carregamento de conteúdo em seu servidor de cache hospedado são opcionais. no entanto, se você optar por prehash e Preload, deverá executar todas as etapas abaixo aplicáveis à sua implantação. \(por exemplo, se você não tiver servidores Web, não precisará executar qualquer uma das etapas relacionadas ao prehash e ao pré-carregamento do conteúdo do servidor Web.\)
 
     1. Em WEB1, o conteúdo do servidor Web de prehash e criar um pacote de dados.
 
