@@ -55,7 +55,7 @@ Para usar todos os recursos de nível de floresta e domínio no Windows Server 2
   
 -   Apresente controladores de domínio baseados no Windows Server 2008 ou Windows Server 2008 R2 instalados recentemente na floresta e, em seguida, desative todos os controladores de domínio que executam o Windows 2000.  
   
--   Execute uma atualização in-loco de todos os controladores de domínio existentes que executam o Windows 2000 na floresta para controladores de domínio que executam o Windows Server 2003. Em seguida, execute uma atualização in-loco desses controladores de domínio para o Windows Server 2008 ou o Windows Server 2008 R2. Para obter mais informações, consulte [atualizando domínios de Active Directory para domínios do Windows Server 2008 AD DS \[LH @ no__t-2](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61).  
+-   Execute uma atualização in-loco de todos os controladores de domínio existentes que executam o Windows 2000 na floresta para controladores de domínio que executam o Windows Server 2003. Em seguida, execute uma atualização in-loco desses controladores de domínio para o Windows Server 2008 ou o Windows Server 2008 R2. Para obter mais informações, consulte [atualizando domínios de Active Directory para domínios do Windows Server 2008 AD DS \[LH\]](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61).  
   
     > [!IMPORTANT]  
     >  O Windows Server 2008 R2 é um sistema operacional baseado em x64. Se o servidor estiver executando uma versão baseada em x64 do Windows Server 2003, você poderá executar com êxito uma atualização in-loco do sistema operacional deste computador para o Windows Server 2008 R2. Se o servidor estiver executando uma versão baseada em x86 do Windows Server 2003, você não poderá atualizar este computador para o Windows Server 2008 R2.  
@@ -67,7 +67,7 @@ Para usar os recursos de nível de domínio do Windows Server 2008 ou do Windows
   
 Depois de substituir todos os controladores de domínio baseados no Windows 2000 na floresta por controladores de domínio que executam o Windows Server 2008 ou o Windows Server 2008 R2, você pode aumentar o nível funcional da floresta para o Windows Server 2008 ou o Windows Server 2008 R2. Fazer isso gera automaticamente o nível funcional de todos os domínios na floresta que são definidos como Windows 2000 nativo ou superior para o Windows Server 2008 ou Windows Server 2008 R2.  
   
-Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
+Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
   
 ## <a name="upgrading-functional-levels-in-a-windows-server-2003-active-directory-forest"></a>Atualizando os níveis funcionais em uma floresta Active Directory do Windows Server 2003  
 Em um ambiente do Windows Server 2003 que consiste apenas em controladores de domínio baseados no Windows Server 2003, os níveis funcionais são definidos por padrão para os seguintes níveis e permanecem nesses níveis até que você os gere manualmente:  
@@ -80,7 +80,7 @@ Para usar todos os recursos de nível de floresta e domínio no Windows Server 2
   
 -   Introduza um controlador de domínio baseado no Windows Server 2008 ou Windows Server 2008 R2 instalado recentemente na floresta e, em seguida, desative todos os controladores de domínio que executam o Windows Server 2003 ou atualize-os para o Windows Server 2008 ou o Windows Server 2008 R2.  
   
--   Execute uma atualização in-loco de todos os controladores de domínio existentes que executam o Windows Server 2003 em controladores de domínio que executam o Windows Server 2008 ou o Windows Server 2008 R2. Para obter mais informações, consulte [atualizando domínios de Active Directory para domínios do Windows Server 2008 AD DS \[LH @ no__t-2](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61).  
+-   Execute uma atualização in-loco de todos os controladores de domínio existentes que executam o Windows Server 2003 em controladores de domínio que executam o Windows Server 2008 ou o Windows Server 2008 R2. Para obter mais informações, consulte [atualizando domínios de Active Directory para domínios do Windows Server 2008 AD DS \[LH\]](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61).  
   
 > [!IMPORTANT]  
 >  O Windows Server 2008 R2 é um sistema operacional baseado em x64. Se o servidor estiver executando uma versão baseada em x64 do Windows Server 2003, você poderá executar com êxito uma atualização in-loco do sistema operacional deste computador para o Windows Server 2008 R2. Se o servidor estiver executando uma versão baseada em x86 do Windows Server 2003, você não poderá atualizar este computador para executar o Windows Server 2008 R2.  
@@ -92,7 +92,7 @@ Para usar todos os recursos de nível de domínio do Windows Server 2008 ou do W
   
 Depois de atualizar todos os controladores de domínio baseados no Windows Server 2003 na floresta para o Windows Server 2008 ou o Windows Server 2008 R2, você pode aumentar o nível funcional da floresta para o Windows Server 2008 ou o Windows Server 2008 R2. Fazer isso gera automaticamente o nível funcional de todos os domínios na floresta que são definidos como Windows Server 2003 para Windows Server 2008 ou Windows Server 2008 R2.  
   
-Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
+Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
   
 ## <a name="upgrading-functional-levels-in-a-new-windows-server-2008-forest"></a>Atualizando os níveis funcionais em uma nova floresta do Windows Server 2008  
 Quando você instala o primeiro controlador de domínio em uma nova floresta do Windows Server 2008, os níveis funcionais são definidos por padrão nos seguintes níveis e permanecem nesses níveis até que você os gere manualmente:  
@@ -106,7 +106,7 @@ Os níveis funcionais são definidos nesses níveis padrão para oferecer a opç
 > [!IMPORTANT]  
 > Se a floresta operar no nível funcional do Windows Server 2008 e você tentar instalar o Active Directory em um servidor membro baseado no Windows Server 2003 ou em um servidor membro baseado no Windows 2000, a instalação falhará.  
   
-Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
+Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
   
 ## <a name="upgrading-functional-levels-in-a-new-windows-server-2008-r2-forest"></a>Atualizando os níveis funcionais em uma nova floresta do Windows Server 2008 R2  
 Quando você instala o primeiro controlador de domínio em uma nova floresta do Windows Server 2008 R2, os níveis funcionais são definidos por padrão para os seguintes níveis e permanecem nesses níveis até que você os gere manualmente:  
@@ -120,7 +120,7 @@ Os níveis funcionais são definidos nesses níveis padrão para oferecer a opç
 > [!IMPORTANT]  
 > Se a floresta operar no nível funcional do Windows Server 2008 R2 e você tentar instalar o Active Directory em um servidor membro baseado no Windows Server 2008 ou no Windows Server 2003, ou em um servidor membro baseado no Windows 2000, a instalação falhará.  
   
-Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
+Para obter mais informações sobre como aumentar os níveis funcionais de floresta e domínio e para procedimentos para executar essas tarefas, consulte [implantando um domínio raiz de floresta do Windows Server 2008 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1).  
   
 > [!NOTE]  
 > Embora o ADMT v 3.1 deva ser instalado no Windows Server 2008, você pode usar o ADMT v 3.1 para migrar objetos para um domínio hospedado por um ou mais controladores de domínio do Windows Server 2008 R2. Para obter mais informações, consulte o [artigo 976659](https://go.microsoft.com/fwlink/?LinkId=180398) na base de dados de conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=180398).  

@@ -22,7 +22,7 @@ ms.locfileid: "71381772"
 ---
 # <a name="bitsadmin-examples"></a>exemplos de Bitsadmin
 
-Os exemplos a seguir mostram como usar a ferramenta `bitsadmin` para executar as tarefas mais comuns.
+Os exemplos a seguir mostram como usar a ferramenta de `bitsadmin` para executar as tarefas mais comuns.
 
 ## <a name="transfer-a-file"></a>Transferir um arquivo
 
@@ -48,7 +48,7 @@ Em seguida, use a opção **/AddFile** para adicionar um ou mais arquivos ao tra
 
 Use a opção **/AddFile** para adicionar um arquivo ao trabalho. Repita essa chamada para cada arquivo que você deseja adicionar. Se vários trabalhos usarem myDownloadJob como seu nome, você deverá substituir myDownloadJob pelo GUID do trabalho para identificar exclusivamente o trabalho.
 
-**Bitsadmin/AddFile myDownloadJob https://downloadsrv/10mb.zip c: @no__t -210MB. zip**
+**Bitsadmin/AddFile myDownloadJob https://downloadsrv/10mb.zip c:\\10MB. zip**
 
 Para ativar o trabalho na fila de transferência, use a opção **/resume** .
 

@@ -17,7 +17,7 @@ ms.locfileid: "71356191"
 ---
 # <a name="refresh-group-policy"></a>Atualizar Diretiva de Grupo
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este procedimento para atualizar manualmente a Diretiva de Grupo no computador local. Quando a Diretiva de Grupo é atualizada, se o registro automático de certificados estiver configurado e funcionando corretamente, o computador local terá o registro automático de um certificado pela autoridade de certificação (CA).  
   
@@ -28,7 +28,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo ne
   
 ### <a name="to-refresh-group-policy-on-the-local-computer"></a>Para atualizar a Diretiva de Grupo no computador local  
   
-1.  No computador em que o NPS está instalado, abra o Windows PowerShell @ no__t-0 usando o ícone na barra de tarefas.  
+1.  No computador em que o NPS está instalado, abra o Windows PowerShell&reg; usando o ícone na barra de tarefas.  
   
 2.  No prompt do Windows PowerShell, digite **gpupdate**e pressione Enter.  
   

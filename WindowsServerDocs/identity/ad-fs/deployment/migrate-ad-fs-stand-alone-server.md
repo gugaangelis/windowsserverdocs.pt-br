@@ -38,7 +38,7 @@ Ao avançar no assistente, use as informações coletadas durante a preparação
  |**Opção de entrada do assistente de configuração do servidor de Federação**|**Use o seguinte valor**| 
 |-----|-----| 
 |**Certificado SSL** na página **Especifique o nome do serviço de federação**|Escolha o certificado SSL com o nome de assunto e miniatura definidos por você ao preparar a migração do servidor de federação do AD FS.|  
-|**Conta de serviço** e **Senha** na página **Especifique a conta de serviço**|Insira as informações da conta de serviço que você registrou ao se preparar para a migração do AD FS servidor de Federação. **Observação:**  Se você tiver escolhido o servidor de federação autônomo na segunda página do assistente, SERVIÇO DE REDE será usado automaticamente como conta de serviço.|  
+|**Conta de serviço** e **Senha** na página **Especifique a conta de serviço**|Insira as informações da conta de serviço que você registrou ao se preparar para a migração do AD FS servidor de Federação. **Observação:**  Se você selecionar servidor de Federação autônomo na segunda página do assistente, o serviço de rede será usado automaticamente como a conta de serviço.|  
   
 > [!IMPORTANT] 
 > Você pode usar este método somente se usar o WID (Banco de Dados Interno do Windows) para armazenar o banco de dados de configuração do AD FS para o servidor de federação autônomo ou farm de AD FS de nó único.  
@@ -57,7 +57,7 @@ Veja a seguir um exemplo de como usar o Windows PowerShell para criar a configur
 > [!NOTE]
 >  Esta etapa somente será pedida se você estiver migrando um servidor de federação autônomo ou um farm de WID de nó único.  Se o servidor de federação usar um banco de dados do SQL Server como armazenamento da configuração, as configurações do serviço e relações de confiança serão preservadas no banco de dados.  
   
-5. Atualizar suas páginas da web do AD FS. Esta é uma etapa manual. Se você tiver feito backup de suas páginas da Web AD FS personalizadas ao se preparar para a migração, use seus dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** como resultado da AD FS configuração no Windows Server 2012.  
+5. Atualizar suas páginas da web do AD FS. Esta é uma etapa manual. Se você tiver feito backup de suas páginas da Web AD FS personalizadas ao se preparar para a migração, use seus dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** como resultado da configuração de AD FS no Windows Server 2012.  
   
 6. Restaure as personalizações restantes do AD FS, tais como armazenamento de atributos personalizados.  
   
@@ -87,7 +87,7 @@ Para alterar os certificados de descriptografia de token e de autenticação de 
 -   No console de gerenciamento do AD FS, **escolha Objetos de confiança de terceira parte confiável**. Você deverá criar novamente a terceira parte confiável manualmente usando o **Assistente de adição de relação de confiança de terceira parte confiável**. Use a lista de terceira parte confiável exportada e registrada durante a preparação para a migração do AD FS. Para saber mais sobre a criação de objetos de confiança de terceira parte confiável, confira [Criar um objeto de confiança de terceira parte confiável usando metadados de federação](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata) ou [Criar manualmente um objeto de confiança de terceira parte confiável](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually). 
 
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

@@ -22,11 +22,11 @@ ms.locfileid: "71380100"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> **Aplica-se a**: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10
+> **Aplica-se a**: Windows Server (canal semestral), windows Server 2016, windows Server 2012 R2, windows Server 2012, Windows 10
 
 Bitsadmin é uma ferramenta de linha de comando que você pode usar para criar tarefas de download ou de upload e monitorar seu progresso. A ferramenta Bitsadmin usa opções para identificar o trabalho a ser executado.  Você pode chamar `bitsadmin /?` ou `bitsadmin /HELP` para obter uma lista de opções.
 
-A maioria das opções exige um parâmetro \<Job @ no__t-1 que você define para o nome de exibição do trabalho ou GUID. Observe que o nome de exibição de um trabalho pode não ser exclusivo. As opções **/Create** e **/list** retornam o GUID de um trabalho.
+A maioria das opções exige um parâmetro de \<de trabalho\> que você define para o nome de exibição do trabalho ou GUID. Observe que o nome de exibição de um trabalho pode não ser exclusivo. As opções **/Create** e **/list** retornam o GUID de um trabalho.
 
 Por padrão, você pode acessar informações sobre seus próprios trabalhos. Para acessar informações para os trabalhos de outro usuário, você deve ter privilégios de administrador. Se o trabalho tiver sido criado em um estado elevado, você deverá executar o Bitsadmin em uma janela com privilégios elevados; caso contrário, você terá acesso somente leitura ao trabalho.
 

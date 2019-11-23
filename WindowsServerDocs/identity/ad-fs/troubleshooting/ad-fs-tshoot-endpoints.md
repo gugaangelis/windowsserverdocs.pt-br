@@ -24,7 +24,7 @@ A Federação passiva refere-se a cenários em que seu navegador é redirecionad
 
 1.  Usando um navegador da Web, navegue até o ponto de extremidade de metadados de Federação do AD FS.  Por exemplo: https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
 2. O arquivo XML deve ser baixado localmente em seu computador.
-3. Abra-o e verifique se ele contém informações semelhantes à informações abaixo: ![Passive @ no__t-1
+3. Abra-o e verifique se ele contém informações semelhantes às informações abaixo: ![](media/ad-fs-tshoot-endpoints/meta2.png) passiva
 
 ## <a name="ws-mex-test-active-test"></a>Teste de WS-MEX (teste ativo)
 O WS-MetaDataExchange é um protocolo de serviços Web e faz parte do roteiro do WS-Federation.  Ele usa uma mensagem SOAP para solicitar metadados.  Testando o ponto de extremidade, podemos determinar se o servidor de AD FS está respondendo às solicitações da Web para WS-MetaDataExchange.  Use o procedimento a seguir para testar o ponto de extremidade.

@@ -19,11 +19,11 @@ ms.locfileid: "71355618"
 
 Ao instalar o controlador de rede, você pode escolher implantações Kerberos ou não Kerberos.
 
-Para implantações que não são do @ no__t-0Kerberos, você deve configurar certificados.
+Para implantações não\-Kerberos, você deve configurar certificados.
 
 ## <a name="configure-certificates-for-non-kerberos-deployments"></a>Configurar certificados para implantações não Kerberos
 
-Se os computadores ou máquinas virtuais \(VMs @ no__t-1 para o controlador de rede e o cliente de gerenciamento não forem o domínio @ no__t-2joined, você deverá configurar a autenticação do certificado @ no__t-3based concluindo as etapas a seguir.
+Se os computadores ou máquinas virtuais \(VMs\) para o controlador de rede e o cliente de gerenciamento não forem ingressados no domínio\-, você deverá configurar a autenticação baseada em\-de certificado ao concluir as etapas a seguir.
 
 - Crie um certificado no controlador de rede para autenticação do computador. O nome da entidade do certificado deve ser o mesmo que o nome DNS do computador do controlador de rede ou da VM.
 
@@ -31,7 +31,7 @@ Se os computadores ou máquinas virtuais \(VMs @ no__t-1 para o controlador de r
   
 - Registre um certificado no computador ou VM do controlador de rede. O certificado deve atender aos seguintes requisitos.
   
-    -  Tanto a finalidade de autenticação de servidor quanto a finalidade de autenticação de cliente devem ser configuradas no uso avançado de chave \(EKU @ no__t-1 ou extensões de políticas de aplicativo. O identificador de objeto para autenticação de servidor é 1.3.6.1.5.5.7.3.1. O identificador de objeto para autenticação de cliente é 1.3.6.1.5.5.7.3.2.
+    -  Tanto a finalidade de autenticação do servidor quanto a finalidade da autenticação do cliente devem ser configuradas no uso avançado de chave \(EKU\) ou extensões de políticas de aplicativo. O identificador de objeto para autenticação de servidor é 1.3.6.1.5.5.7.3.1. O identificador de objeto para autenticação de cliente é 1.3.6.1.5.5.7.3.2.
   
     - O nome da entidade do certificado deve ser resolvido para:
   

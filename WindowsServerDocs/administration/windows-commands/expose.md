@@ -24,7 +24,7 @@ ms.locfileid: "71377283"
 
 
 
-expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.
+Expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
@@ -39,9 +39,9 @@ expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 |Parâmetro|Descrição|
 |---------|-----------|
 |Shadowid|Especifica a ID de sombra da cópia de sombra que você deseja expor.|
-|\<Drive: >|Expõe a cópia de sombra especificada como uma letra da unidade (por exemplo, P:).|
-|\<Share >|Expõe a cópia de sombra especificada em um compartilhamento (por exemplo, \\ @ no__t-1*MachineName*\).|
-|\<MountPoint >|Expõe a cópia de sombra especificada para um ponto de montagem (por exemplo, C:\shadowcopy @ no__t-0.|
+|Unidade de \<: >|Expõe a cópia de sombra especificada como uma letra da unidade (por exemplo, P:).|
+|> de \<compartilhamento|Expõe a cópia de sombra especificada em um compartilhamento (por exemplo, \\\\*MachineName*\).|
+|> de \<MountPoint|Expõe a cópia de sombra especificada para um ponto de montagem (por exemplo, C:\shadowcopy\).|
 
 ## <a name="remarks"></a>Comentários
 

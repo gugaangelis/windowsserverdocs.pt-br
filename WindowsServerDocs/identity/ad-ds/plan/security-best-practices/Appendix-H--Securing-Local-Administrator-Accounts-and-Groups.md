@@ -16,12 +16,12 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408635"
 ---
-# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice H: Protegendo contas e grupos de administrador local
+# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice H: Proteger contas e grupos de administrador local
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice H: Protegendo contas e grupos de administrador local  
+## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice H: Proteger contas e grupos de administrador local  
 Em todas as versões do Windows atualmente no suporte base, a conta de administrador local é desabilitada por padrão, o que torna a conta inutilizável para os ataques Pass-the-hash e outros roubos de credenciais. No entanto, em ambientes que contêm sistemas operacionais herdados ou em que as contas de administrador local foram habilitadas, essas contas podem ser usadas conforme descrito anteriormente para propagar o comprometimento entre servidores membros e estações de trabalho. Cada conta de administrador local e grupo deve ser protegido conforme descrito nas instruções passo a passo a seguir.  
 
 Para obter informações detalhadas sobre as considerações sobre como proteger grupos de administradores internos (BA), consulte [implementando modelos administrativos de privilégios mínimos](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md).  
@@ -30,7 +30,7 @@ Para obter informações detalhadas sobre as considerações sobre como proteger
 Para a conta de administrador local em cada domínio em sua floresta, você deve definir as seguintes configurações:  
 
 -   Configurar GPOs para restringir o uso da conta de administrador do domínio em sistemas ingressados no domínio  
-    -   Em um ou mais GPOs que você cria e vincula a estações de trabalho e a UOs de servidor membro em cada domínio, adicione a conta de administrador aos seguintes direitos de usuário no computador \ \ \ \ \ \ todos os **direitos Atribuições**:  
+    -   Em um ou mais GPOs que você cria e vincula a estações de trabalho e a UOs de servidor membro em cada domínio, adicione a conta de administrador aos seguintes direitos de usuário em **computador \** \ \ \ \ \ Configurações de direitos:  
 
         -   Negar o acesso a este computador a partir da rede  
 
@@ -46,7 +46,7 @@ Para a conta de administrador local em cada domínio em sua floresta, você deve
 
 1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
+2.  Na árvore de console, expanda <Forest>\Domains\\<Domain>e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o política de grupo).  
 
 3.  Na árvore de console, clique com o botão direito do mouse em **política de grupo objetos**e clique em **novo**.  
 
@@ -118,7 +118,7 @@ Para a conta de administrador local em cada domínio em sua floresta, você deve
 
 12. No **Gerenciamento de política de grupo**, VINCULE o GPO ao servidor membro e às UOs de estação de trabalho fazendo o seguinte:  
 
-    1.  Navegue até o <Forest> \ Domains @ no__t-1 @ no__t-2 (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
+    1.  Navegue até o <Forest>\Domains\\<Domain> (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
 
     2.  Clique com o botão direito do mouse na UO à qual o GPO será aplicado e clique em **vincular um GPO existente**.  
 
@@ -148,7 +148,7 @@ De qualquer servidor membro ou estação de trabalho que não seja afetada pelas
 
     ![proteger contas e grupos do administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)  
 
-5.  Na janela do **prompt de comando** , digite **net use \\ @ no__t-3 @ no__t-4\c $/User: <Server Name> \ Administrator**, em que <Server Name> é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
+5.  Na janela do **prompt de comando** , digite **net use \\\\<Server Name>\c $/User:<Server Name>\Administrador**, em que <Server Name> é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
 
     > [!NOTE]  
     > As credenciais de administrador local devem ser do mesmo sistema que você está tentando acessar pela rede.  
@@ -170,7 +170,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Clique em **arquivo**e em **salvar como**.  
 
-5.  Na caixa **nome do arquivo** , digite **@no__t -2. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
+5.  Na caixa **nome do arquivo** , digite **<Filename>. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
 
 ###### <a name="schedule-a-task"></a>Agendar uma tarefa  
 

@@ -36,11 +36,11 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 |          Parâmetro           |                                                              Descrição                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|   InfFile: caminho de arquivo de \<Inf >   |                                           Especifica o caminho completo do arquivo. inf a ser adicionado.                                            |
-|    /Server: @no__t-nome do 0Server >    | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
+|   InfFile:\<caminho do arquivo inf >   |                                           Especifica o caminho completo do arquivo. inf a ser adicionado.                                            |
+|    /Server: nome do servidor de\<>    | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
 |      /Architecture: {x86      |                                                                 Win64                                                                  |
-| [/DriverGroup: nome do \<Group >] |                             Especifica o nome do grupo de drivers ao qual o pacote deve ser adicionado.                              |
-|   [/Name: \<Friendly nome >]   |                                           Declara o nome amigável para o pacote de driver.                                            |
+| [/DriverGroup: nome do grupo de\<>] |                             Especifica o nome do grupo de drivers ao qual o pacote deve ser adicionado.                              |
+|   [/Name:\<nome amigável >]   |                                           Declara o nome amigável para o pacote de driver.                                            |
 
 ## <a name="BKMK_examples"></a>Disso
 

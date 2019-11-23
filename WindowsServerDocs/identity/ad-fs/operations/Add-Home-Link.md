@@ -18,7 +18,7 @@ ms.locfileid: "71407776"
 ---
 # <a name="add-home-link"></a>Adicione o link da página inicial 
 
-Para adicionar o link inicial que é exibido na página assinar @ no__t-0in, use o seguinte cmdlet e sintaxe do Windows PowerShell. 
+Para adicionar o link inicial exibido na página\-de entrada, use o cmdlet e a sintaxe do Windows PowerShell a seguir. 
 
 
 ![Adicionar link inicial](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
@@ -28,7 +28,7 @@ Para adicionar o link inicial que é exibido na página assinar @ no__t-0in, use
  
   
 > [!IMPORTANT]  
-> O parâmetro `linkText` nesse cmdlet não é necessário, a menos que você use outro valor diferente do padrão, que é *Página Inicial*. A vantagem de usar o padrão é que ele é localizado para todas as localidades de cliente. Depois que a página Sign @ no__t-0in for personalizada, a personalização terá precedência; Portanto, você deve personalizar o para todos os idiomas aos quais deseja dar suporte.
+> O parâmetro `linkText` nesse cmdlet não é necessário, a menos que você use outro valor diferente do padrão, que é *Página Inicial*. A vantagem de usar o padrão é que ele é localizado para todas as localidades de cliente. Depois que o sinal\-na página é personalizado, a personalização tem precedência; Portanto, você deve personalizar o para todos os idiomas aos quais deseja dar suporte.
 
 ## <a name="additional-references"></a>Referências adicionais 
 [AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  

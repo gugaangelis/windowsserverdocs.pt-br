@@ -17,7 +17,7 @@ ms.locfileid: "71356734"
 ---
 # <a name="branchcache-deployment-guide"></a>Guia de Implantação do BranchCache
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este guia para aprender a implantar o BranchCache no Windows Server 2016.  
   
@@ -29,11 +29,11 @@ Além deste tópico, este guia contém as seções a seguir.
   
 ## <a name="branchcache-deployment-overview"></a>Visão geral da implantação do BranchCache
 
-O BranchCache é uma tecnologia de otimização de largura de banda de WAN (rede de longa distância) incluída em algumas edições do Windows Server 2016, Windows Server @ no__t-0 2012 R2, Windows Server @ no__t-1 2012, Windows Server @ no__t-2 2008 R2 e cliente Windows relacionado sistemas operacionais.  
+O BranchCache é uma tecnologia de otimização de largura de banda de WAN (rede de longa distância) incluída em algumas edições do Windows Server 2016, Windows Server&reg; 2012 R2, Windows Server&reg; 2012, Windows Server&reg; 2008 R2 e sistemas operacionais Windows Client relacionados.  
   
 Para otimizar a largura de banda da WAN, o BranchCache copia o conteúdo dos servidores de conteúdo da matriz e o armazena nas filiais, permitindo que os computadores cliente das filiais acessem o conteúdo localmente e não pela WAN.  
   
-Em filiais, o conteúdo é armazenado em cache em servidores que executam o recurso BranchCache do Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 ou Windows Server 2008 R2-ou, se não houver servidores disponíveis na filial, o conteúdo será o CAC Hed em computadores cliente que executam o Windows 10 @ no__t-0, Windows @ no__t-1 8,1, Windows 8 ou Windows 7 @ no__t-2.  
+Em filiais, o conteúdo é armazenado em cache em servidores que executam o recurso BranchCache do Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 ou Windows Server 2008 R2 ou, se não houver servidores disponíveis na filial, o conteúdo é armazenado em cache em computadores cliente que executam o Windows 10&reg;, o Windows&reg; 8,1, o Windows 8 ou o Windows 7&reg;.  
   
 Depois que um computador cliente solicita e recebe o conteúdo do escritório principal ou do datacenter de nuvem e o conteúdo é armazenado em cache na filial, outros computadores na mesma filial podem obter o conteúdo localmente em vez de entrar em contato com o servidor de conteúdo pela Link WAN.  
   
@@ -64,11 +64,11 @@ Para obter mais informações, consulte [versões do sistema operacional para Br
 
 A seguir estão os requisitos para implantar o BranchCache usando este guia.  
   
--   Os **servidores de conteúdo da Web e de arquivo** devem estar executando um dos seguintes sistemas operacionais para fornecer a funcionalidade do BranchCache: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 ou Windows Server 2008 R2. Os clientes do Windows 8 e posteriores continuam a ver os benefícios do BranchCache ao acessar servidores de conteúdo que executam o Windows Server 2008 R2, no entanto, eles não podem usar as novas tecnologias de agrupamento e de hash no Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012.  
+-   Os **servidores de conteúdo da Web e de arquivo** devem estar executando um dos seguintes sistemas operacionais para fornecer a funcionalidade do BranchCache: windows Server 2016, windows Server 2012 R2, windows Server 2012 ou windows Server 2008 R2. Os clientes do Windows 8 e posteriores continuam a ver os benefícios do BranchCache ao acessar servidores de conteúdo que executam o Windows Server 2008 R2, no entanto, eles não podem usar as novas tecnologias de agrupamento e de hash no Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012.  
   
 -   Os **computadores cliente** devem estar executando o Windows 10, Windows 8.1 ou o Windows 8 para usar o modelo de implantação mais recente e os aprimoramentos de agrupamento e de hash que foram introduzidos com o Windows Server 2012.  
   
--   Os **servidores de cache hospedados** devem estar executando o windows Server 2016, o windows Server 2012 R2 ou o windows Server 2012 para fazer uso dos recursos de escala e aprimoramentos de implantação descritos neste documento.  Um computador que esteja executando um desses sistemas operacionais configurado como um servidor de cache hospedado pode continuar a servir computadores cliente que executam o Windows 7, mas para fazer isso, ele deve estar equipado com um certificado adequado para segurança de camada de transporte (TLS). ), conforme descrito no [Guia de implantação](https://technet.microsoft.com/library/ee649232.aspx)do windows Server 2008 R2 e Windows 7 BranchCache.  
+-   Os **servidores de cache hospedados** devem estar executando o windows Server 2016, o windows Server 2012 R2 ou o windows Server 2012 para fazer uso dos recursos de escala e aprimoramentos de implantação descritos neste documento.  Um computador que esteja executando um desses sistemas operacionais configurado como um servidor de cache hospedado pode continuar a servir computadores cliente que executam o Windows 7, mas, para fazer isso, ele deve estar equipado com um certificado adequado para TLS (Transport Layer Security), conforme descrito no [Guia de implantação](https://technet.microsoft.com/library/ee649232.aspx)do windows Server 2008 R2 e Windows 7 BranchCache.  
   
 -   **Um domínio Active Directory** é necessário para aproveitar o política de grupo e a descoberta automática de cache hospedado, mas um domínio não é necessário para usar o BranchCache.  Você pode configurar computadores individuais usando o Windows PowerShell. Além disso, não é necessário que os controladores de domínio estejam executando o Windows Server 2012 ou posterior para utilizar novas configurações de Política de Grupo do BranchCache; Você pode importar os modelos administrativos do BranchCache para controladores de domínio que executam sistemas operacionais anteriores ou pode criar objetos de política de grupo remotamente em outros computadores que estejam executando o Windows 10, Windows Server 2016, Windows 8.1, Windows Server 2012 R2, Windows 8 ou Windows Server 2012.
 
@@ -76,7 +76,7 @@ A seguir estão os requisitos para implantar o BranchCache usando este guia.
 
 **Histórico e documentação do BranchCache**
 
-O BranchCache foi introduzido pela primeira vez no Windows 7 @ no__t-0 e no Windows Server @ no__t-1 2008 R2 e foi aprimorado no Windows Server 2012, Windows 8 e sistemas operacionais posteriores.
+O BranchCache foi introduzido pela primeira vez no Windows 7&reg; e no Windows Server&reg; 2008 R2 e foi aprimorado no Windows Server 2012, Windows 8 e sistemas operacionais posteriores.
 
 > [!NOTE]
 > Se você estiver implantando o BranchCache em sistemas operacionais diferentes do Windows Server 2016, os recursos de documentação a seguir estarão disponíveis.

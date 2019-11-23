@@ -22,7 +22,7 @@ ms.locfileid: "71372757"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 altera o número inicial de segundos para aguardar uma resposta a uma solicitação de pesquisa.
 ## <a name="syntax"></a>Sintaxe
@@ -43,6 +43,6 @@ set timeout=<Number>
   ```
   set timeout=2
   ```
-  ## <a name="additional-references"></a>Referências adicionais
+  ## <a name="additional-references"></a>referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
   [nslookup Set Retry](nslookup-set-retry.md)

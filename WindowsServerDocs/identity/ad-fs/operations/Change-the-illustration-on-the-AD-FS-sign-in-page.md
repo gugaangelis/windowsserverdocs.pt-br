@@ -21,7 +21,7 @@ ms.locfileid: "71358293"
 ## <a name="change-the-illustration"></a>Alterar a ilustração  
 
 
-Para alterar a ilustração, o gráfico à esquerda, que é exibido na página assinar @ no__t-0in, use o seguinte cmdlet e sintaxe do Windows PowerShell.  
+Para alterar a ilustração, o gráfico à esquerda, que é exibido na página\-de entrada, use o seguinte cmdlet e sintaxe do Windows PowerShell.  
 
 ![alterar ilustração](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

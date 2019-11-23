@@ -151,7 +151,7 @@ Durante a instalação do controlador de domínio, talvez seja necessário espec
 -   Se você deseja migrar um farm do AD FS do SQL Server, observe que o processo de migração envolve a criação de uma nova instância de banco de dados do SQL para a qual é preciso importar os dados de configuração originais.  
   
 ## <a name="next-steps"></a>Próximas etapas
- [Migrar Serviços de Federação do Active Directory (AD FS) serviços de função para o Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [Migrando o servidor de Federação de AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migrando o proxy do servidor de Federação AD FS](migrate-fed-server-proxy-r2.md)   
+ [Migrar serviços de Federação do Active Directory (AD FS) serviços de função para o Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Migrando o servidor de federação AD FS](migrate-ad-fs-fed-server-r2.md)   
+ [Migrando o proxy do servidor de federação AD FS](migrate-fed-server-proxy-r2.md)   
  [Verificando a migração de AD FS para o Windows Server 2012 R2](verify-ad-fs-migration.md)

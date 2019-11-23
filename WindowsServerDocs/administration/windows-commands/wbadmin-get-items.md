@@ -53,7 +53,7 @@ Para listar itens do backup que foi executado em 31 de março de 2013 às 9:00, 
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-Para listar itens do backup de Server01 que foi executado em 30 de abril de 2013 às 9:00. e armazenados em \\ @ no__t-1servername\share, digite:
+Para listar itens do backup de Server01 que foi executado em 30 de abril de 2013 às 9:00. e armazenados em \\\\servername\share, digite:
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

@@ -18,7 +18,7 @@ ms.locfileid: "71359572"
 ---
 # <a name="install-the-federation-service-proxy-role-service"></a>Instalar o serviço de função de proxy do Serviço de Federação
 
-Depois de configurar um computador com os aplicativos e certificados de pré-requisito, você estará pronto para instalar o serviço de função Proxy do Serviço de Federação do Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1. Você pode usar o procedimento a seguir para instalar o serviço de função Proxy do Serviço de Federação. Quando você instala o serviço de função Proxy do Serviço de Federação em um computador, esse computador torna-se um proxy de servidor de Federação.  
+Depois de configurar um computador com os aplicativos e certificados de pré-requisito, você estará pronto para instalar o serviço de função Proxy do Serviço de Federação do Serviços de Federação do Active Directory (AD FS) \(AD FS\). Você pode usar o procedimento a seguir para instalar o serviço de função Proxy do Serviço de Federação. Quando você instala o serviço de função Proxy do Serviço de Federação em um computador, esse computador torna-se um proxy de servidor de Federação.  
   
 A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
@@ -28,9 +28,9 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
   
 2.  Clique em **gerenciar**e em **adicionar funções e recursos** para iniciar o assistente para adicionar funções e recursos.  
   
-3.  Na página **Antes de começar** , clique em **Avançar**.  
+3.  Na página **Before you begin**, clique em **Next**.  
   
-4.  Na página **Selecionar tipo de instalação** , clique em **função @ no__t-2based ou recurso @ no__t-3based instalação**e clique em **Avançar**.  
+4.  Na página **Selecionar tipo de instalação** , clique em **função\-baseada em\-instalação baseada em recursos**e clique em **Avançar**.  
   
 5.  Na página **selecionar servidor de destino** , clique em **selecionar um servidor no pool de servidores**, verifique se o computador de destino está realçado e clique em **Avançar**.  
   
@@ -57,8 +57,8 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de verificação: Como configurar um proxy do servidor de federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de verificação: Configurando um proxy de servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

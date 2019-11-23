@@ -22,7 +22,7 @@ ms.locfileid: "71355669"
 ---
 # <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>O que há de novo na virtualização de rede Hyper-V no Windows Server 2016
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve a funcionalidade de HNV (virtualização de rede) do Hyper-V que é nova ou alterada no Windows Server 2016.  
   
@@ -41,7 +41,7 @@ O HNV é um bloco de construção fundamental da solução de SDN (rede definida
   
 O novo controlador de rede da Microsoft envia políticas de HNV para um agente de host em execução em cada host usando o protocolo OVSDB (Open vSwitch Database Management) como SBI (interface SouthBound). O agente de host armazena essa política usando uma personalização das regras de fluxo complexo de programas e [esquema VTEP](https://github.com/openvswitch/ovs/blob/master/vtep/vtep.ovsschema) em um mecanismo de fluxo de alto desempenho no comutador Hyper-V.  
   
-O mecanismo de fluxo dentro da opção Hyper-V é o mesmo mecanismo usado no Microsoft Azure @ no__t-0, que foi comprovado em hiperescala na nuvem pública Microsoft Azure. Além disso, toda a pilha do SDN através do controlador de rede e do provedor de recursos de rede (detalhes em breve) é consistente com Microsoft Azure, o que traz o poder da nuvem pública Microsoft Azure para nosso serviço corporativo e de hospedagem clientes do provedor.  
+O mecanismo de fluxo dentro da opção Hyper-V é o mesmo mecanismo usado no Microsoft Azure&trade;, que foi comprovado em hiperescala na nuvem pública Microsoft Azure. Além disso, toda a pilha do SDN através do controlador de rede e do provedor de recursos de rede (detalhes em breve) é consistente com Microsoft Azure, o que traz o poder da nuvem pública Microsoft Azure para nosso serviço corporativo e de hospedagem clientes do provedor.  
   
 > [!NOTE]  
 > Para obter mais informações sobre OVSDB, consulte [RFC 7047](https://www.rfc-editor.org/info/rfc7047).  

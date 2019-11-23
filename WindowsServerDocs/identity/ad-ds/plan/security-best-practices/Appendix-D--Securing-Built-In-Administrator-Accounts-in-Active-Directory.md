@@ -16,12 +16,12 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71367841"
 ---
-# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Apêndice D: Protegendo contas de administrador internas no Active Directory
+# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Apêndice D: Proteger contas de administrador internas no Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Apêndice D: Protegendo contas de administrador internas no Active Directory  
+## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Apêndice D: Proteger contas de administrador internas no Active Directory  
 Em cada domínio no Active Directory, uma conta de administrador é criada como parte da criação do domínio. Essa conta é, por padrão, um membro dos grupos Administradores de domínio e administradores no domínio, e se o domínio for o domínio raiz da floresta, a conta também será um membro do grupo Administradores de empresa.
 
 O uso da conta de administrador de um domínio deve ser reservado somente para atividades de compilação iniciais e, possivelmente, cenários de recuperação de desastres. Para garantir que uma conta de administrador possa ser usada para afetar os reparos no caso de que nenhuma outra conta possa ser usada, você não deve alterar a associação padrão da conta de administrador em nenhum domínio na floresta. Em vez disso, você deve proteger a conta de administrador em cada domínio na floresta, conforme descrito na seção a seguir e detalhado nas instruções passo a passo a seguir. 
@@ -39,7 +39,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 
 -   Configure GPOs para restringir o uso da conta de administrador em sistemas ingressados no domínio:  
 
-    -   Em um ou mais GPOs que você cria e vincula às UOs do servidor de estação de trabalho e membro em cada domínio, adicione a conta de administrador de cada domínio aos seguintes direitos de usuário em **computador \ \ Políticas \ Configurações \ política \ Atribuições de direitos de usuário**:  
+    -   Em um ou mais GPOs que você cria e vincula a estações de trabalho e UOs de servidor membro em cada domínio, adicione a conta de administrador de cada domínio aos seguintes direitos de usuário no **computador \** \ \ \ \ Configurações de direitos:  
 
         -   Negar o acesso a este computador a partir da rede  
 
@@ -58,7 +58,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)  
 
 -   Configurar GPOs para restringir contas de administrador em controladores de domínio  
-    -   Em cada domínio na floresta, o GPO controladores de domínio padrão ou uma política vinculada à UO Controladores de domínio deve ser modificada para adicionar a conta de administrador de cada domínio aos seguintes direitos de usuário no **computador \ Configurações de \ Configuração \ Segurança \ \ atribuições de direitos**:   
+    -   Em cada domínio na floresta, o GPO controladores de domínio padrão ou uma política vinculada à UO Controladores de domínio deve ser modificada para adicionar a conta de administrador de cada domínio aos seguintes direitos de usuário no **computador \** \ \ \ \ \ Configurações de direitos:   
         -   Negar o acesso a este computador a partir da rede  
 
         -   Negar o logon como um trabalho em lotes  
@@ -105,17 +105,17 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 
 1.  Em **Gerenciador do servidor**, clique em **ferramentas**e clique em **Gerenciamento de política de grupo**.  
 
-2.  Na árvore de console, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja criar o política de grupo).  
+2.  Na árvore de console, expanda <Forest>\Domains\\<Domain>e, em seguida, **política de grupo objetos** (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja criar o política de grupo).  
 
 3.  Na árvore de console, clique com o botão direito do mouse em **política de grupo objetos**e clique em **novo**.  
 
     ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)  
 
-4.  Na caixa de diálogo **novo GPO** , digite <GPO Name> e clique em **OK** (em que <GPO Name> é o nome desse GPO), conforme indicado na captura de tela a seguir.  
+4.  Na caixa de diálogo **novo GPO** , digite <GPO Name>e clique em **OK** (em que <GPO Name> é o nome desse GPO), conforme indicado na captura de tela a seguir.  
 
     ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)  
 
-5.  No painel de detalhes, clique com o botão direito do mouse em <GPO Name> e clique em **Editar**.  
+5.  No painel de detalhes, clique com o botão direito do mouse em <GPO Name>e clique em **Editar**.  
 
 6.  Navegue até **computador \ \ Diretivas**\ \ políticas e clique em **atribuição de direitos de usuário**.  
 
@@ -127,7 +127,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 
     2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName> \ username, conforme indicado na captura de tela a seguir.  
+    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName>\Username, conforme indicado na captura de tela a seguir.  
 
         ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)  
 
@@ -139,7 +139,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 
     2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName> \ username, conforme indicado na captura de tela a seguir.  
+    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName>\Username, conforme indicado na captura de tela a seguir.  
 
         ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)  
 
@@ -151,7 +151,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 
     2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName> \ username, conforme indicado na captura de tela a seguir.  
+    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName>\Username, conforme indicado na captura de tela a seguir.  
 
         ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)  
 
@@ -163,7 +163,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 
     2.  Clique em **Adicionar usuário ou grupo** e clique em **procurar**.  
 
-    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName> \ username, conforme indicado na captura de tela a seguir.  
+    3.  Digite **administrador**, clique em **verificar nomes**e clique em **OK**. Verifique se a conta é exibida no formato <DomainName>\Username, conforme indicado na captura de tela a seguir.  
 
         ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)  
 
@@ -173,7 +173,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 
 12. No **Gerenciamento de política de grupo**, VINCULE o GPO ao servidor membro e às UOs de estação de trabalho fazendo o seguinte:  
 
-    1.  Navegue até o <Forest> \ Domains @ no__t-1 @ no__t-2 (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
+    1.  Navegue até o <Forest>\Domains\\<Domain> (em que <Forest> é o nome da floresta e <Domain> é o nome do domínio no qual você deseja definir o Política de Grupo).  
 
     2.  Clique com o botão direito do mouse na UO à qual o GPO será aplicado e clique em **vincular um GPO existente**.  
 
@@ -218,7 +218,7 @@ De qualquer servidor membro ou estação de trabalho que não seja afetada pelas
 
     ![Protegendo contas de administrador internas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)  
 
-5.  Na janela do **prompt de comando** , digite **net use \\ @ no__t-3 @ No__t-4Server Name @ no__t-5\c $** , em que \<Server Name @ no__t-7 é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
+5.  Na janela do **prompt de comando** , digite **net use \\\\nome do servidor \<\>\c $** , em que \<nome do servidor\> é o nome do servidor membro ou da estação de trabalho que você está tentando acessar pela rede.  
 
 6.  A captura de tela a seguir mostra a mensagem de erro que deve aparecer.  
 
@@ -238,7 +238,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Clique em **arquivo** e em **salvar como**.  
 
-5.  No campo **nome de arquivo** , digite **@no__t -2. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
+5.  No campo **nome de arquivo** , digite **<Filename>. bat** (em que <Filename> é o nome do novo arquivo em lotes).  
 
 ###### <a name="schedule-a-task"></a>Agendar uma tarefa  
 

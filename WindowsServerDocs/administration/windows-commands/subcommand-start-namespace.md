@@ -22,7 +22,7 @@ ms.locfileid: "71370753"
 ---
 # <a name="subcommand-start-namespace"></a>Subcomando: Start-namespace
 
-> Aplica-se a: O Windows Server (canal semestral), o Windows Server 2016, o Windows Server 2012 R2, o Windows Server 2012 inicia um namespace de conversão agendada.
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, o Windows Server 2012 inicia um namespace de conversão agendada.
 > ## <a name="syntax"></a>Sintaxe
 > ```
 > wdsutil /start-Namespace /Namespace:<Namespace name> [/Server:<Server name>]
@@ -31,7 +31,7 @@ ms.locfileid: "71370753"
 > 
 > |          Parâmetro          |                                                                                                                                                                                             Descrição                                                                                                                                                                                             |
 > |-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | /Namespace: <Namespace name> | Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<br /><br />**servidor de implantação**-   : A sintaxe para o nome do namespace é/namspace: WDS: <Image group> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4. Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />**servidor de transporte**-   : Esse nome deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
+> | /Namespace:<Namespace name> | Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<br /><br />-   **servidor de implantação**: a sintaxe para o nome do namespace é/NAMSPACE: WDS:<Image group>/<Image name>/.<Index> Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />**servidor de transporte**de -   : esse nome deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
 > |   [/Server:<Server name>]   |                                                                                                           Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                           |
 > 
 > ## <a name="BKMK_examples"></a>Disso
@@ -40,8 +40,8 @@ ms.locfileid: "71370753"
 > wdsutil /start-Namespace /Namespace:"Custom Auto 1"
 > wdsutil /start-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1"
 > ```
-> #### <a name="additional-references"></a>Referências adicionais
-> [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+> #### <a name="additional-references"></a>referências adicionais
+> A [chave de sintaxe de linha de comando](command-line-syntax-key.md)
 > [usando o comando Get-mynamespaces](using-the-get-allnamespaces-command.md)
 > [usando o comando New-namespace](using-the-new-namespace-command.md)
 > [usando o comando Remove-namespace](using-the-remove-namespace-command.md)

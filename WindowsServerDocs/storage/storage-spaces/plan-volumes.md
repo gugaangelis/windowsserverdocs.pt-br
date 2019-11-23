@@ -22,7 +22,7 @@ ms.locfileid: "71366894"
 
 Este tópico fornece diretrizes de como planejar volumes em Espaços de Armazenamento Diretos para atender às necessidades de desempenho e capacidade de cargas de trabalho, incluindo escolher o sistema de arquivos, tipo de resiliência e tamanho.
 
-## <a name="review-what-are-volumes"></a>Revê O que são volumes
+## <a name="review-what-are-volumes"></a>Revisão: O que são volumes
 
 Os volumes são onde você coloca os arquivos de que suas cargas de trabalho precisam, como arquivos VHD ou VHDX para máquinas virtuais do Hyper-V. Os volumes combinam as unidades no pool de armazenamento para apresentar a tolerância, escalabilidade e benefícios de desempenho de Espaços de Armazenamento Diretos.
 
@@ -31,7 +31,7 @@ Os volumes são onde você coloca os arquivos de que suas cargas de trabalho pre
 
 ![o que são volumes](media/plan-volumes/what-are-volumes.png)
 
-Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criadas, elas aparecem em **C:\ClusterStorage @ no__t-1** em todos os servidores.
+Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criadas, elas aparecem em **C:\ClusterStorage\\** em todos os servidores.
 
 ![pasta de captura de tela csv](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -158,7 +158,7 @@ Por exemplo, se você tiver 2 servidores e estiver usando unidades de 1 TB de ca
    >[!NOTE]
    > Nos clusters com unidades de todos os três tipos (NVMe + SSD + HDD), é recomendável reservar o equivalente a uma SSD mais uma HDD por servidor, até 4 unidades de cada.
 
-## <a name="example-capacity-planning"></a>Exemplo: Planejamento de capacidade
+## <a name="example-capacity-planning"></a>Exemplo: planejamento da capacidade
 
 Considere um cluster de quatro servidores. Cada servidor tem algumas unidades de cache além de dezesseis unidades de 2 TB de capacidade.
 

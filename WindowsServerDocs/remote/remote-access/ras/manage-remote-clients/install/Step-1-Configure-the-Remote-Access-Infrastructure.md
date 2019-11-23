@@ -21,11 +21,11 @@ ms.locfileid: "71367317"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>Etapa 1 configurar a infraestrutura de acesso remoto
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-**Observação:** O Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
+**Observação:** o Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
   
-Este tópico descreve como configurar a infraestrutura necessária para uma implantação de acesso remoto avançada usando um único servidor de acesso remoto em um ambiente misto de IPv4 e IPv6. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [Step 1: Planeje a infraestrutura de acesso remoto @ no__t-0.  
+Este tópico descreve como configurar a infraestrutura necessária para uma implantação de acesso remoto avançada usando um único servidor de acesso remoto em um ambiente misto de IPv4 e IPv6. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas na [etapa 1: planejar a infraestrutura de acesso remoto](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md).  
   
 |Tarefa|Descrição|  
 |----|--------|  
@@ -118,7 +118,7 @@ Aplique as seguintes exceções de firewall voltadas para a Internet para tráfe
 ### <a name="remote-access-traffic"></a>Tráfego de acesso remoto  
 Aplique as seguintes exceções de firewall de rede interna para o tráfego de acesso remoto:  
   
--   ISATAP Protocolo 41 de entrada e de saída  
+-   ISATAP: protocolo 41 de entrada e saída  
   
 -   TCP/UDP para todo o tráfego IPv4 ou IPv6  
   
@@ -198,7 +198,7 @@ Verifique se o certificado do site usado para autenticação IP-HTTPS atende aos
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Para instalar o certificado IP-HTTPS de uma AC interna  
   
-1.  No servidor de Acesso Remoto: Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
+1.  No servidor de acesso remoto: na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
@@ -231,7 +231,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 ### <a name="NLS_DNS"></a>Para adicionar o servidor de local de rede e investigação da Web  
   
-1.  No servidor DNS da rede interna: Na tela **Iniciar** , digite**DNSMGMT. msc**e pressione Enter.  
+1.  No servidor DNS da rede interna: na tela **Iniciar** , digite**DNSMGMT. msc**e pressione Enter.  
   
 2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com o botão direito do mouse no domínio e clique em **novo host (A ou aaaa)** .  
   
@@ -243,7 +243,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 6.  Clique em **Concluído**.  
   
-0Windows-](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -315,7 +315,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 10. Clique em **Reiniciar Agora** quando solicitado.  
   
-0Windows-](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -370,7 +370,7 @@ As configurações do DirectAccess que estão contidas no computador cliente Pol
   
 7.  Na caixa de diálogo **Selecionar Usuários, Contatos, Computadores ou Contas de Serviço**, escolha os computadores cliente que desejar habilitar para o DirectAccess e clique em **OK**.  
   
-0Windows-](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell** do powershell do @no__t  
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -405,7 +405,7 @@ Se você usar um certificado privado ou um certificado autoassinado, ele exigir�
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Para instalar o certificado de servidor de local de rede de uma AC interna  
   
-1.  No servidor que hospedará o site do servidor de local de rede: Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
+1.  No servidor que hospedará o site do servidor de local de rede: na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
@@ -447,7 +447,7 @@ Se você usar um certificado privado ou um certificado autoassinado, ele exigir�
   
     -   Servidores Web que usam uma URL baseada em HTTP, como: https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   Servidores de arquivos que são acessados por meio de um caminho UNC (Convenção de nomenclatura universal), como \\ \ CRL. Corp. contoso. com\crld\corp-APP1-CA.crl  
+    -   Servidores de arquivos que são acessados por meio de um caminho UNC (Convenção de nomenclatura universal), como \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl  
   
     Se o ponto de distribuição interno da CRL for alcançável somente por IPv6, você deverá configurar uma regra de segurança de conexão do firewall do Windows com segurança avançada. Isso isenta a proteção IPsec do espaço de endereço IPv6 da sua intranet para os endereços IPv6 dos pontos de distribuição da CRL.  
   
@@ -455,5 +455,5 @@ Se você usar um certificado privado ou um certificado autoassinado, ele exigir�
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 2: Configurar o servidor de acesso remoto](Step-2-Configure-the-Remote-Access-Server.md)
+-   [Etapa 2: configurar o servidor de acesso remoto](Step-2-Configure-the-Remote-Access-Server.md)
 

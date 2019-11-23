@@ -18,7 +18,7 @@ ms.locfileid: "71355479"
 ---
 # <a name="physical-switch-configuration-for-converged-nic"></a>Configuração de comutador físico para NIC convergida
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, fornecemos diretrizes para configurar seus comutadores físicos. 
 
@@ -28,13 +28,13 @@ Esses são apenas comandos e seus usos; Você deve determinar as portas às quai
 >[!IMPORTANT]
 >Verifique se a VLAN e a política não-drop estão definidas para a prioridade sobre a qual o SMB está configurado.
 
-## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista switch \(dcs @ no__t-17050s @ no__t-264, EOS @ no__t-34.13.7 M @ no__t-4
+## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista switch \(DCS\-7050s\-64, EOS\-4.13.7 M\)
 
-1.  EN \(go no modo admin, geralmente solicita uma senha @ no__t-1
-2.  config \(to entrar no modo de configuração @ no__t-1
-3.  Mostrar execução \(shows configuração em execução atual @ no__t-1
+1.  EN \(ir para o modo admin, geralmente solicita uma senha\)
+2.  \(de configuração para entrar no modo de configuração\)
+3.  Mostrar execução \(mostra a configuração atual em execução\)
 4.  Descubra portas de comutador às quais suas NICs estão conectadas. Neste exemplo, eles são 14/1, 15/1, 16/1, 17/1.
-5.  int ETH 14/1, 15/1, 16/1, 17/1 \(enter no modo de configuração para essas portas @ no__t-1
+5.  int ETH 14/1, 15/1, 16/1, 17/1 \(entrar no modo de configuração para essas portas\)
 6.  modo dcbx IEEE
 7.  prioridade – modo de controle de fluxo ativado
 8.  VLAN nativa de switchport trunk 225
@@ -42,19 +42,19 @@ Esses são apenas comandos e seus usos; Você deve determinar as portas às quai
 10. tronco do modo switchport
 11. prioridade-controle de fluxo-prioridade 3 não-soltar
 12. QoS confiável cos
-13. Mostrar execução \(verify que a configuração está configurada corretamente nas portas @ no__t-1
-14. WR \(to faz com que as configurações persistam na reinicialização do comutador @ no__t-1
+13. Mostrar executar \(verificar se a configuração está configurada corretamente nas portas\)
+14. WR \(para fazer com que as configurações persistam na reinicialização do comutador\)
 
 ### <a name="tips"></a>Sobre
 1.  Nenhum #command # nega um comando
-2.  Como adicionar uma nova VLAN: int VLAN 100 @no__t-a rede de armazenamento 0If está na VLAN 100 @ no__t-1
+2.  Como adicionar uma nova VLAN: int VLAN 100 \(se a rede de armazenamento estiver em VLAN 100\)
 3.  Como verificar VLANs existentes: mostrar VLAN
-4.  Para obter mais informações sobre como configurar o comutador Arista, pesquise online para: Manual do Arista EOS
+4.  Para obter mais informações sobre como configurar o comutador Arista, pesquise online por: Arista EOS manual
 5.  Use este comando para verificar as configurações de PFC: mostrar detalhes de contadores de fluxo de controle de prioridade
 
 --- 
 
-## <a name="dell-switch-s4810-ftos-99-00"></a>Dell switch \(S4810, FTOS 9,9 \(0.0 @ no__t-2 @ no__t-3
+## <a name="dell-switch-s4810-ftos-99-00"></a>Dell switch \(S4810, FTOS 9,9 \(0,0\)\)
 
     
     !
@@ -74,7 +74,7 @@ Esses são apenas comandos e seus usos; Você deve determinar as portas às quai
     
 --- 
 
-## <a name="cisco-switch-nexus-3132-version-602u61"></a>Cisco Switch \(Nexus 3132, versão 6.0 @ no__t-12 @ no__t-2U6 @ no__t-31 @ no__t-4 @ no__t-5
+## <a name="cisco-switch-nexus-3132-version-602u61"></a>Switch Cisco \(Nexus 3132, versão 6,0\(2\)U6\(1\)\)
 
 ### <a name="global"></a>Global
     

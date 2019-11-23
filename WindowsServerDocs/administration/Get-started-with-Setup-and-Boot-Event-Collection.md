@@ -86,16 +86,16 @@ Em cada computador de destino, você primeiro habilita o transporte KDNET/EVENT-
   
 3.  No computador do coletor, execute um destes comandos:  
   
-    -   Em um prompt do Windows PowerShell: `Set-Item -Force WSMan:\localhost\Client\TrustedHosts "<target1>,<target2>,..."`, seguido por `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true`, em que \<target1 >, etc. são os nomes ou endereços IP dos computadores de destino.  
+    -   Em um prompt do Windows PowerShell: `Set-Item -Force WSMan:\localhost\Client\TrustedHosts "<target1>,<target2>,..."`, seguido por `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true` em que \<target1 >, etc. são os nomes ou endereços IP dos computadores de destino.  
   
-    -   Ou em um prompt de comando: **WinRM Set WinRM/config/Client @ {TrustedHosts = "\<target1 >, \<target2 >,..."; AllowUnencrypted = "true"}**  
+    -   Ou em um prompt de comando: **WinRM Set WinRM/config/Client @ {TrustedHosts = "\<target1 >,\<target2 >,..."; AllowUnencrypted = "true"}**  
   
         > [!IMPORTANT]  
         > Isto define uma comunicação não criptografada, portanto, não faça fora de um ambiente de laboratório.  
   
 4.  Teste a conexão remota indo para o computador do coletor e executando um destes comandos do Windows PowerShell:  
   
-    Se o computador de destino estiver no mesmo domínio que o computador coletor, execute `New-PSSession -Computer <target> | Remove-PSSession`  
+    Se o computador de destino estiver no mesmo domínio que o computador do coletor, execute `New-PSSession -Computer <target> | Remove-PSSession`  
   
     Se o computador de destino não estiver no mesmo domínio, execute `New-PSSession -Computer  <target>  -Credential Administrator | Remove-PSSession`, que solicitará as credenciais.  
   
@@ -105,7 +105,7 @@ Em cada computador de destino, você primeiro habilita o transporte KDNET/EVENT-
   
     `Enable-SbecBcd -ComputerName <target_name> -CollectorIP <ip> -CollectorPort <port> -Key <a.b.c.d>`  
   
-    Aqui < target_name > é o nome do computador de destino, \<ip > é o endereço IP do computador do coletor. \<port > é o número da porta em que o coletor será executado. A <a.b.c.d> é uma chave de criptografia necessária para a comunicação, que consiste em quatro cadeias de caracteres alfanuméricos separadas por pontos. Essa mesma chave é usada no computador coletor. Se você não inserir uma chave, o sistema gera uma chave aleatória; você precisará disso para o computador coletor, portanto, anote-a.  
+    Aqui < target_name > é o nome do computador de destino, \<> IP é o endereço IP do computador do coletor. \<porta > é o número da porta em que o coletor será executado. A <a.b.c.d> é uma chave de criptografia necessária para a comunicação, que consiste em quatro cadeias de caracteres alfanuméricos separadas por pontos. Essa mesma chave é usada no computador coletor. Se você não inserir uma chave, o sistema gera uma chave aleatória; você precisará disso para o computador coletor, portanto, anote-a.  
   
 6.  Se você já tiver um computador coletor configurado, atualize o arquivo de configuração no computador coletor com as informações para o novo computador de destino. Consulte a seção "Configurar o computador coletor" para obter mais detalhes.  
   
@@ -150,7 +150,7 @@ Se o computador de destino tiver mais de um adaptador de rede, o driver KDNET es
   
 1.  No computador de destino, abra o Gerenciador de dispositivos, expanda **Adaptadores de rede**, encontre o adaptador de rede que você deseja usar e clique nele com o botão direito do mouse.  
   
-2.  No menu que é aberto, clique em **Propriedades**e, em seguida, clique na guia **detalhes** . Expanda o menu no campo de **Propriedade** , role para localizar **informações de local** (a lista provavelmente não está em ordem alfabética) e, em seguida, clique nela. O valor será uma cadeia de caracteres da forma de **barramento PCI X, dispositivo Y, função Z**. Anote X. Y. Z; Esses são os parâmetros de barramento necessários para o comando a seguir.  
+2.  No menu que abre, clique em **Propriedades** e, em seguida, clique na guia **Detalhes**. Expanda o menu no campo **Propriedade** , role até encontrar as **Informações de local** (a lista provavelmente não está em ordem alfabética) e, em seguida, clique nelas. O valor será uma cadeia de caracteres do formulário **barramento PCI X, dispositivo Y, função Z**. Anote o X.Y.Z; estes são os parâmetros de barramento que você precisa para o comando a seguir.  
   
 3.  Execute um destes comandos:  
   
@@ -165,9 +165,9 @@ Para verificar as configurações no computador de destino, abra um prompt de co
   
 -   Debugtype = NET  
   
--   HostIP = endereço \<IP da > do coletor  
+-   HostIP = \<endereço IP do > do coletor  
   
--   Port = número \<port especificado para o coletor usar >  
+-   Port = número da porta \<que você especificou para o coletor usar >  
   
 -   DHCP = Sim  
   
@@ -251,17 +251,17 @@ Há vários detalhes para lembrar-se em relação ao arquivo de configuração:
     ```  
   
     > [!NOTE]  
-    > O nó raiz é \<collector >. Seus atributos especificam a versão da sintaxe do arquivo de configuração e o nome do arquivo de log de status.  
+    > O nó raiz é \<> do coletor. Seus atributos especificam a versão da sintaxe do arquivo de configuração e o nome do arquivo de log de status.  
     >   
-    > O elemento \<common > agrupa vários destinos especificando os elementos de configuração comuns para eles, muito parecido com um grupo de usuários pode ser usado para especificar as permissões comuns para vários usuários.  
+    > O \<> de elementos comuns agrupa vários destinos especificando os elementos de configuração comuns para eles, muito parecido com um grupo de usuários pode ser usado para especificar as permissões comuns para vários usuários.  
     >   
     > O elemento \<collectorport > define o número da porta UDP em que o coletor escutará os dados de entrada. Essa é a mesma porta especificada na etapa de configuração de destino para Bcdedit. O coletor oferece suporte a apenas uma porta e todos os destinos devem se conectar a mesma porta.  
     >   
-    > O elemento \<forwarder > especifica como os eventos ETW recebidos dos computadores de destino serão encaminhados. Há apenas um tipo de encaminhador, que os grava nos arquivos ETL. Os parâmetros especificam o padrão de nome de arquivo, o limite de tamanho de cada arquivo no anel e o tamanho do anel para cada computador. A configuração "toxml" especifica que os eventos ETW serão gravados no formato binário como foram recebidos, sem a conversão para XML. Consulte a seção "Conversão de evento XML" para obter informações sobre como decidir se deve conferir os eventos para XML ou não. O padrão de nome de arquivo contém essas substituições: {computer} para o nome do computador e {#3} para o índice do arquivo no anel.  
+    > O elemento > do encaminhador \<especifica como os eventos ETW recebidos dos computadores de destino serão encaminhados. Há apenas um tipo de encaminhador, que os grava nos arquivos ETL. Os parâmetros especificam o padrão de nome de arquivo, o limite de tamanho de cada arquivo no anel e o tamanho do anel para cada computador. A configuração "toxml" especifica que os eventos ETW serão gravados no formato binário como foram recebidos, sem a conversão para XML. Consulte a seção "Conversão de evento XML" para obter informações sobre como decidir se deve conferir os eventos para XML ou não. O padrão de nome de arquivo contém essas substituições: {computer} para o nome do computador e {#3} para o índice do arquivo no anel.  
     >   
-    > Neste arquivo de exemplo, dois computadores de destino são definidos com o elemento \<target >. Cada definição especifica o endereço IP com \<ipv4 >, mas você também pode usar o endereço MAC (por exemplo, < valor Mac = "11:22:33:44:55:66" \/ > ou < valor Mac = "11-22-33-44-55-66" \/ >) ou SMBIOS GUID (por exemplo, < GUID valor = "{269076F9-4B77-46E1-B03B-CA5003775B88}" \/ >) para identificar o computador de destino. Observe também a chave de criptografia (a mesma especificada ou gerada com Bcdedit no computador de destino) e o nome do computador.  
+    > Neste arquivo de exemplo, dois computadores de destino são definidos com o elemento de > de destino \<. Cada definição especifica o endereço IP com \<> IPv4, mas você também pode usar o endereço MAC (por exemplo, < Mac Value = "11:22:33:44:55:66"\/> ou < Mac Value = "11-22-33-44-55-66"\/>) ou SMBIOS GUID (por exemplo, < GUID Value = "{269076F9-4B77-46E1-B03B-CA5003775B88}"\/>) para identificar o computador de destino. Observe também a chave de criptografia (a mesma especificada ou gerada com Bcdedit no computador de destino) e o nome do computador.  
   
-4.  Insira os detalhes de cada computador de destino como um elemento separado \<target > no arquivo de configuração e, em seguida, salve newconfig. xml e feche o bloco de notas.  
+4.  Insira os detalhes de cada computador de destino como um elemento de destino de \<separado > no arquivo de configuração e, em seguida, salve newconfig. xml e feche o bloco de notas.  
   
 5.  Aplique a nova configuração com `$result = (Get-Content .\newconfig.xml | Set-SbecActiveConfig); $result`. A saída deve ser retornada com o campo Sucesso como "true". Se você receber outro resultado, consulte a seção de Solução de problemas deste tópico.  
   
@@ -312,7 +312,7 @@ O log para o serviço coletor propriamente dito (que é distinto dos dados de co
 ||Erro|Descrição do erro|Sintoma|Problema em potencial|  
 |-|---------|---------------------|-----------|---------------------|  
 |Dism.exe|87|A opção de nome do recurso não é reconhecida nesse contexto||-Isso pode acontecer ao escrever incorretamente o nome do recurso. Verifique se a ortografia está correta e tente novamente.<br />-Confirme se este recurso está disponível na versão do sistema operacional que você está usando. No Windows PowerShell, execute **dism /online /get-features &#124; ?{$_ -match "boot"}** . Se nenhuma correspondência for retornada, você provavelmente está executando uma versão que não oferece suporte a esse recurso.|  
-|Dism.exe|0x800f080c|O recurso \<name > é desconhecido.||Mesmo que acima|  
+|Dism.exe|0x800f080c|O nome do \<de recursos > é desconhecido.||Mesmo que acima|  
   
 ### <a name="troubleshooting-the-collector"></a>Solução de problemas do coletor  
   
@@ -325,13 +325,13 @@ Em um prompt do Windows PowerShell: `Get-WinEvent -LogName Microsoft-Windows-Boo
   
 Você pode ajustar o nível de detalhe nos logs de "erro", por meio de "aviso", "informações" (padrão), "detalhada" e "depuração". Níveis mais detalhados de "informações" são úteis para diagnosticar problemas de conexão com os computadores de destino, mas eles podem gerar uma grande quantidade de dados, portanto, use-os com cuidado.  
   
-Você define o nível de log mínimo no elemento \<collector > do arquivo de configuração. Por exemplo: < Collector configVersionMajor = "1" minlog @ no__t-0 "Verbose" >.  
+Defina o nível de log mínimo no elemento > do coletor de \<do arquivo de configuração. Por exemplo: < Collector configVersionMajor = "1" minlog\="Verbose" >.  
   
 O nível de detalhe faz um registro para cada pacote recebido à medida que é processado. O nível de depuração adiciona mais detalhes de processamento e esvazia o conteúdo de todos os pacotes ETW recebidos.  
   
-No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de tentar exibi-lo no sistema de registro em log comum. Para fazer isso, adicione um elemento adicional no elemento \<collector > do arquivo de configuração:  
+No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de tentar exibi-lo no sistema de registro em log comum. Para fazer isso, adicione um elemento adicional no elemento > do coletor de \<do arquivo de configuração:  
   
-< Collector configVersionMajor = "1" minlog = "debug" log @ no__t-0 "c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
+< coletor configVersionMajor = "1" minlog = "debug" log\="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
       
  **Uma abordagem sugerida para solucionar problemas do coletor:**  
    
@@ -341,11 +341,11 @@ No nível de depuração, talvez seja útil gravar o log em um arquivo em vez de
    ```  
    Se retorna que há uma conexão a partir deste destino, o problema pode ser nas configurações do agente de log automático. Se retorna nada, o problema é com a conexão KDNET. Para diagnosticar problemas de conexão KDNET, tente verificar a conexão de ambas as extremidades (ou seja, de um coletor e do destino).  
   
-2. Para ver o diagnóstico estendido do coletor, adicione-o ao elemento \<collector > do arquivo de configuração:  
-   \<collector... minlog = "Verbose" >  
+2. Para ver o diagnóstico estendido do coletor, adicione-o ao elemento > do coletor de \<do arquivo de configuração:  
+   \<coletor... minlog = "Verbose" >  
    Isso permitirá mensagens sobre cada pacote recebido.  
-3. Verifique se todos os pacotes são recebidos. Opcionalmente, você talvez queira gravar o log no modo detalhado diretamente em um arquivo e não por ETW. Para fazer isso, adicione isso ao elemento \<collector > do arquivo de configuração:  
-   \<collector... minlog = "log" detalhado = "c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
+3. Verifique se todos os pacotes são recebidos. Opcionalmente, você talvez queira gravar o log no modo detalhado diretamente em um arquivo e não por ETW. Para fazer isso, adicione isso ao elemento > do coletor de \<do arquivo de configuração:  
+   \<coletor... minlog = "log" detalhado = "c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
       
 4. Verifique os logs de evento para todas as mensagens sobre os pacotes recebidos. Verifique se todos os pacotes são recebidos. Se os pacotes são recebidos, mas de forma incorreta, verifique as mensagens de eventos para obter detalhes.  
 5. Do lado do destino, o KDNET grava algumas informações de diagnósticos no registro. Examinar   

@@ -39,13 +39,13 @@ Conclua as etapas de instalação e configuração abaixo.
 5. Na tela **funções do servidor** , selecione **servidor DNS**, se solicitado, clique em **Adicionar recursos** e clique em **Avançar**.
 6. Na tela **recursos** , clique em **Avançar**.
 7. Leia as informações na página do **servidor DNS** e clique em **Avançar**.
-   Servidor ![DNS @ no__t-1  
+   ![servidor DNS](media/AD-Forest-Recovery-Configure-DNS/dns1.png)  
 8. Na página **confirmação** , verifique se a função servidor DNS será instalada e clique em **instalar**. 
 
 ### <a name="to-configure-the-dns-server-service"></a>Para configurar o serviço do servidor DNS
 
 1. Abra Gerenciador do Servidor, clique em **ferramentas** e clique em **DNS**.
-   Servidor ![DNS @ no__t-1
+   ![servidor DNS](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
 2. Crie zonas DNS para os mesmos nomes de domínio DNS que foram hospedados nos servidores DNS antes do mau funcionamento crítico. Para obter mais informações, consulte Adicionar uma zona de pesquisa direta ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)).
 3. Configure os dados DNS como existiam antes do mau funcionamento crítico. Por exemplo:  
 

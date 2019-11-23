@@ -17,7 +17,7 @@ ms.locfileid: "71388845"
 ---
 # <a name="directaccess-unsupported-configurations"></a>Configurações sem suporte do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Examine a seguinte lista de configurações do DirectAccess sem suporte antes de iniciar a implantação para evitar ter que iniciar a implantação novamente.  
 
@@ -30,13 +30,13 @@ Se você implantar o DirectAccess com a replicação SYSVOL do FRS, você arrisc
   
 Se você estiver planejando implantar o DirectAccess, deverá usar controladores de domínio que executam sistemas operacionais posteriores ao Windows Server 2003 R2, e você deve usar o DFS-R.  
   
-Para obter informações sobre como migrar do FRS para o DFS-R, consulte o guia de migração de replicação do [SYSVOL: FRS para Replicação do DFS](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx).  
+Para obter informações sobre como migrar do FRS para o DFS-R, consulte o [Guia de migração de replicação do SYSVOL: FRS para replicação do DFS](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx).  
   
 ## <a name="bkmk_nap"></a>Proteção de acesso à rede para clientes do DirectAccess  
 A NAP (proteção de acesso à rede) é usada para determinar se os computadores cliente remotos atendem às políticas de ti antes de receberem acesso à rede corporativa. A NAP foi preterida no Windows Server 2012 R2 e não está incluída no Windows Server 2016. Por esse motivo, não é recomendável iniciar uma nova implantação do DirectAccess com a NAP. É recomendado um método diferente de controle de ponto de extremidade para a segurança de clientes do DirectAccess.  
   
 ## <a name="bkmk_multi"></a>Suporte multissite para clientes do Windows 7  
-Quando o DirectAccess é configurado em uma implantação multissite, os clientes Windows 10 @ no__t-0, Windows @ no__t-1 8,1 e Windows @ no__t-2 8 têm a capacidade de se conectar ao site mais próximo.  Os computadores cliente do Windows 7 @ no__t-0 não têm o mesmo recurso. A seleção de site para clientes do Windows 7 é definida para um site específico no momento da configuração da política, e esses clientes sempre se conectarão a esse site designado, independentemente de sua localização.  
+Quando o DirectAccess é configurado em uma implantação multissite, os clientes do Windows 10&reg;, do Windows&reg; 8,1 e do Windows&reg; 8 têm a capacidade de se conectar ao site mais próximo.  Os computadores cliente do Windows 7&reg; não têm o mesmo recurso. A seleção de site para clientes do Windows 7 é definida para um site específico no momento da configuração da política, e esses clientes sempre se conectarão a esse site designado, independentemente de sua localização.  
   
 ## <a name="bkmk_user"></a>Controle de acesso baseado no usuário  
 As políticas do DirectAccess são baseadas em computador, não baseadas em usuário. Não há suporte para a especificação de políticas de usuário do DirectAccess para controlar o acesso à rede corporativa.  
@@ -45,7 +45,7 @@ As políticas do DirectAccess são baseadas em computador, não baseadas em usu�
 O DirectAccess pode ser configurado usando o assistente de instalação do DirectAccess, o console de gerenciamento de acesso remoto ou os cmdlets do Windows PowerShell de acesso remoto. O uso de qualquer meio que não seja o assistente de instalação do DirectAccess para configurar o DirectAccess, como a modificação direta de objetos do DirectAccess Política de Grupo ou a modificação manual das configurações de política padrão no servidor ou cliente, não tem suporte. Essas modificações podem resultar em uma configuração inutilizável.  
   
 ## <a name="bkmk_kerb"></a>Autenticação KerbProxy  
-Quando você configura um servidor DirectAccess com o assistente de Introdução, o servidor DirectAccess é configurado automaticamente para usar a autenticação KerbProxy para autenticação de computador e de usuário. Por isso, você deve usar apenas o assistente de Introdução para implantações de site único em que somente clientes Windows 10 @ no__t-0, Windows 8.1 ou Windows 8 são implantados.  
+Quando você configura um servidor DirectAccess com o assistente de Introdução, o servidor DirectAccess é configurado automaticamente para usar a autenticação KerbProxy para autenticação de computador e de usuário. Por isso, você deve usar apenas o assistente de Introdução para implantações de site único em que somente clientes Windows 10&reg;, Windows 8.1 ou Windows 8 são implantados.  
   
 Além disso, os recursos a seguir não devem ser usados com a autenticação KerbProxy:  
   

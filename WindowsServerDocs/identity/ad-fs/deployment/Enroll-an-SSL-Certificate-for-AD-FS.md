@@ -18,14 +18,14 @@ ms.locfileid: "71408367"
 ---
 # <a name="enroll-an-ssl-certificate-for-ad-fs"></a>Registrar um certificado SSL do AD FS
 
-Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 requer um certificado para a autenticação de servidor do Secure Socket Layer \(SSL @ no__t-3 em cada servidor de Federação em seu farm de servidores de Federação. O mesmo certificado pode ser usado em cada servidor de Federação em um farm. Você deve ter o certificado e a respectiva chave privada disponíveis. Por exemplo, se você tem o certificado e a chave privada em um arquivo .pfx, pode importar o arquivo diretamente para o Assistente de Configuração de Serviços de Federação do Active Directory. O certificado SSL deve conter o seguinte:  
+Serviços de Federação do Active Directory (AD FS) \(AD FS\) requer um certificado para a autenticação do Secure Socket Layer \(SSL\) Server em cada servidor de Federação em seu farm de servidores de Federação. O mesmo certificado pode ser usado em cada servidor de Federação em um farm. Você deve ter o certificado e a respectiva chave privada disponíveis. Por exemplo, se você tem o certificado e a chave privada em um arquivo .pfx, pode importar o arquivo diretamente para o Assistente de Configuração de Serviços de Federação do Active Directory. O certificado SSL deve conter o seguinte:  
   
 1.  O nome da entidade e o nome alternativo da entidade devem conter o nome do serviço de Federação, como fs.contoso.com.  
   
-2.  O nome alternativo da entidade deve conter o valor **enterpriseregistration** que é seguido pelo nome principal do usuário \(UPN @ no__t-2 sufixo de sua organização, por exemplo, **enterpriseregistration.Corp.contoso.com**.  
+2.  O nome alternativo da entidade deve conter o valor **enterpriseregistration** seguido pelo nome principal do usuário \(sufixo de\) UPN da sua organização, por exemplo, **enterpriseregistration.Corp.contoso.com**.  
   
     > [!WARNING]  
-    > Especifique o nome alternativo da entidade se você planeja habilitar o serviço de registro de dispositivo \(DRS @ no__t-1 para Workplace Join.  
+    > Especifique o nome alternativo da entidade se você planeja habilitar o serviço de registro de dispositivo \(DRS\) para Workplace Join.  
   
 > [!IMPORTANT]  
 > Se sua organização usa vários sufixos UPN e você planeja habilitar o DRS, o certificado SSL deve conter uma entrada de nome alternativo da entidade para cada sufixo.  

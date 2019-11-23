@@ -17,7 +17,7 @@ ms.locfileid: "71356042"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>Usar a Política de DNS para balanceamento de carga de aplicativo
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a configurar a política DNS para executar o balanceamento de carga do aplicativo.
 
@@ -54,7 +54,7 @@ Portanto, para cada quatro consultas que o servidor DNS recebe, ele responde com
 
 Um possível problema com o balanceamento de carga com a política DNS é o cache de registros DNS pelo cliente DNS e o resolvedor/LDNS, que pode interferir no balanceamento de carga porque o cliente ou o resolvedor não envia uma consulta ao servidor DNS.
 
-Você pode mitigar o efeito desse comportamento usando um valor de tempo mínimo @ no__t-0to @ no__t-1Live \(TTL @ no__t-3 para os registros DNS que devem ter balanceamento de carga.
+Você pode mitigar o efeito desse comportamento usando um baixo tempo\-para\-valor de\) TTL \(tempo de vida para os registros DNS que devem ter balanceamento de carga.
 
 ### <a name="how-to-configure-application-load-balancing"></a>Como configurar o balanceamento de carga do aplicativo
 
@@ -85,9 +85,9 @@ Agora você deve adicionar os registros que representam o host do servidor Web n
 
 No **SeattleZoneScope**, você pode adicionar o registro www.contosogiftservices.com com o endereço IP 192.0.0.1, localizado no datacenter de Seattle.
 
-No **ChicagoZoneScope**, você pode adicionar o mesmo registro @no__t -1www. contosogiftservices. com @ no__t-2 com endereço IP 182.0.0.1 no datacenter de Chicago.
+No **ChicagoZoneScope**, você pode adicionar o mesmo registro \(www.contosogiftservices.com\) com o endereço IP 182.0.0.1 no datacenter de Chicago.
 
-Da mesma forma, em **DallasZoneScope**, você pode adicionar um registro @no__t -1www. contosogiftservices. com @ no__t-2 com endereço IP 162.0.0.1 no datacenter de Chicago.
+Da mesma forma, em **DallasZoneScope**, você pode adicionar um registro \(www.contosogiftservices.com\) com o endereço IP 162.0.0.1 no datacenter de Chicago.
 
 Você pode usar os seguintes comandos do Windows PowerShell para adicionar registros aos escopos de zona.
     
@@ -107,7 +107,7 @@ Depois de criar as partições (escopos de zona) e adicionar registros, você de
 Você pode usar os seguintes comandos do Windows PowerShell para criar uma política de DNS que equilibre o tráfego do aplicativo entre esses três data centers.
 
 >[!NOTE]
->No exemplo de comando abaixo, a expressão – ZoneScope "SeattleZoneScope, 2; ChicagoZoneScope, 1; DallasZoneScope, 1 "configura o servidor DNS com uma matriz que inclui a combinação de parâmetros \<ZoneScope @ no__t-1, \<weight @ no__t-3.
+>No exemplo de comando abaixo, a expressão – ZoneScope "SeattleZoneScope, 2; ChicagoZoneScope, 1; DallasZoneScope, 1 "configura o servidor DNS com uma matriz que inclui a combinação de parâmetros \<ZoneScope\>\<\>de peso.
     
     Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
     

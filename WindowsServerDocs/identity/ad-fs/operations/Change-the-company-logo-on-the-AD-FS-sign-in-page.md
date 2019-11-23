@@ -19,7 +19,7 @@ ms.locfileid: "71358299"
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>Alterando o logotipo da empresa na página de entrada AD FS
 
 #### <a name="change-company-logo"></a>Altere o logotipo da empresa  
-Para alterar o logotipo da empresa que é exibido na página assinar @ no__t-0in, use o seguinte cmdlet e sintaxe do PowerShell do Windows PowerShell.  
+Para alterar o logotipo da empresa exibido na página\-de entrada, use o cmdlet e a sintaxe do PowerShell do Windows PowerShell a seguir.  
 
 ![alterar logotipo](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

@@ -36,10 +36,10 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 |          Parâmetro           |                                                              Descrição                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|  /FolderPath: caminho de @no__t 0Folder >  |                      Especifica o caminho completo para a pasta que contém os arquivos. inf para os pacotes de driver.                      |
-|   [/Server: \<Server nome >]   | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
+|  /FolderPath: caminho da pasta de\<>  |                      Especifica o caminho completo para a pasta que contém os arquivos. inf para os pacotes de driver.                      |
+|   [/Server: nome do servidor\<>]   | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
 |     [/Architecture: {x86      |                                                                 Win64                                                                  |
-| [/DriverGroup: nome do \<Group >] |                             Especifica o nome do grupo de drivers ao qual os pacotes devem ser adicionados.                             |
+| [/DriverGroup: nome do grupo de\<>] |                             Especifica o nome do grupo de drivers ao qual os pacotes devem ser adicionados.                             |
 
 ## <a name="BKMK_examples"></a>Disso
 

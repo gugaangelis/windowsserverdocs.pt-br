@@ -208,7 +208,7 @@ Verifique se o certificado de site usado para a autenticação IP-HTTPS atenda a
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Para instalar o certificado IP-HTTPS de uma AC interna  
   
-1.  No servidor do DirectAccess: Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
+1.  No servidor DirectAccess: na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
@@ -243,7 +243,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 ### <a name="NLS_DNS"></a>Para criar o servidor de local de rede  
   
-1.  No servidor DNS da rede interna: Na tela **Iniciar** , digite**DNSMGMT. msc**e pressione Enter.  
+1.  No servidor DNS da rede interna: na tela **Iniciar** , digite**DNSMGMT. msc**e pressione Enter.  
   
 2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com o botão direito do mouse no domínio e clique em **Novo Host (A ou AAAA)** .  
   
@@ -263,7 +263,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 5.  Na caixa de diálogo **DNS**, clique em **OK** e **Concluído**.  
   
-0Windows-](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -335,7 +335,7 @@ O servidor e todos os computadores cliente do DirectAccess devem ser reunidos em
   
 10. Quando for solicitado a reiniciar o computador, clique em **Reiniciar Agora**.  
   
-0Windows-](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -424,11 +424,11 @@ Depois que o administrador do Acesso Remoto concluir todas as alterações na co
   
     10. Na página **Examinando Backup**, clique em **Avançar** e **Concluir**.  
   
-0Windows-](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
--   Para fazer backup do GPO de cliente de preparo "configurações de cliente do DirectAccess-preparo" no domínio "corp.contoso.com" para a pasta de backup "C:\Backups @ no__t-0:  
+-   Para fazer backup do GPO de cliente de preparo "configurações de cliente do DirectAccess-preparo" no domínio "corp.contoso.com" para a pasta de backup "C:\Backups\":  
   
     ```  
     $backup = Backup-GPO "Name 'DirectAccess Client Settings - Staging' "Domain 'corp.contoso.com' "Path 'C:\Backups\'  
@@ -469,7 +469,7 @@ As configurações do DirectAccess que estão contidas no computador cliente Pol
   
 6.  Na caixa de diálogo **Selecionar Usuários, Contatos, Computadores ou Contas de Serviço**, escolha os computadores cliente que desejar habilitar para o DirectAccess e clique em **OK**.  
   
-0Windows-](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell** do powershell do @no__t  
+![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -501,7 +501,7 @@ As condições a seguir são pedidas para os dois tipos de certificado, caso ain
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Para instalar o certificado de servidor de local de rede de uma AC interna  
   
-1.  No servidor que hospedará o site do servidor de local de rede: Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
+1.  No servidor que hospedará o site do servidor de local de rede: na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
@@ -547,7 +547,7 @@ As condições a seguir são pedidas para os dois tipos de certificado, caso ain
   
     -   Servidores Web usando uma URL baseada em HTTP, como: https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   Servidores de arquivos que são acessados por meio de um caminho UNC (Convenção de nomenclatura universal), como \\ \ CRL. Corp. contoso. com\crld\corp-APP1-CA.crl  
+    -   Servidores de arquivos que são acessados por meio de um caminho UNC (Convenção de nomenclatura universal), como \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl  
   
     Se o ponto interno de distribuição da CRL só estiver acessível por IPv6, você deverá configurar uma regra de segurança de conexão de Firewall do Windows com Segurança Avançada para isentar a proteção de IPsec do endereço IPv6 da sua intranet para os endereços IPv6 dos pontos de distribuição da CRL.  
   
@@ -555,7 +555,7 @@ As condições a seguir são pedidas para os dois tipos de certificado, caso ain
   
 ## <a name="BKMK_Links"></a>Próxima etapa  
   
--   [Etapa 2: Configurar os servidores do DirectAccess Avançado](da-adv-configure-s2-servers.md)  
+-   [Etapa 2: configurar servidores DirectAccess avançados](da-adv-configure-s2-servers.md)  
   
 
 

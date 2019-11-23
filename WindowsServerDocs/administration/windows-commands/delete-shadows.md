@@ -36,12 +36,12 @@ delete shadows [all | volume <Volume> | oldest <Volume> | set <SetID> | id <Shad
 
 |     Parâmetro     |                                                                             Descrição                                                                              |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        all        |                                                                      Exclui todas as cópias de sombra.                                                                      |
-| volume \<Volume >  |                                                            Exclui todas as cópias de sombra do volume especificado.                                                            |
-| > de @no__t 0Volume mais antigas  |                                                         Exclui a cópia de sombra mais antiga do volume especificado.                                                          |
-|   definir \<SetID >    | Exclui as cópias de sombra no conjunto de cópias de sombra da ID fornecida. Você pode especificar um alias usando o símbolo **%** se o alias existir no ambiente atual. |
-|  ID \<ShadowID >   |              Exclui uma cópia de sombra da ID fornecida. Você pode especificar um alias usando o símbolo **%** se o alias existir no ambiente atual.               |
-| exposto {\<Drive > |                                                                            <MountPoint>}                                                                             |
+|        tudo        |                                                                      Exclui todas as cópias de sombra.                                                                      |
+| volume \<volume >  |                                                            Exclui todas as cópias de sombra do volume especificado.                                                            |
+| Volume de \<mais antigo >  |                                                         Exclui a cópia de sombra mais antiga do volume especificado.                                                          |
+|   definir \<SetID >    | Exclui as cópias de sombra no conjunto de cópias de sombra da ID fornecida. Você pode especificar um alias usando o símbolo de **%** se o alias existir no ambiente atual. |
+|  ID \<Shadowid >   |              Exclui uma cópia de sombra da ID fornecida. Você pode especificar um alias usando o símbolo de **%** se o alias existir no ambiente atual.               |
+| exposição de {\<drive > |                                                                            <MountPoint>}                                                                             |
 
 #### <a name="additional-references"></a>Referências adicionais
 

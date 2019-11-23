@@ -19,11 +19,11 @@ ms.locfileid: "71358115"
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>Criar uma relação de confiança de terceira parte confiável sem reconhecimento de declaração
 
 
-Nas AD FS snap @ no__t-0in, não @ no__t-1claims @ no__t-2aware de terceira parte confiável são objetos que são criados para representar a relação de confiança entre o serviço de Federação e um único aplicativo Web @ no__t-3based que não é Claims @ no__t-4aware e que é acessado por meio do proxy de aplicativo Web.  
+No snap\-de gerenciamento de AD FS no, as declarações não\-\-confianças de terceira parte confiável são objetos que são criados para representar a relação de confiança entre o serviço de Federação e um único aplicativo baseado na Web\-que não é declarações\-ciente e que é acessado por meio do proxy de aplicativo Web.  
   
-Uma relação de confiança de terceira parte confiável não @ no__t-0claims @ no__t-1aware é uma terceira parte confiável que consiste em identificadores, nomes e regras para autenticação e autorização quando a confiança de terceira parte confiável é acessada por meio do proxy de aplicativo Web. Esses aplicativos Web @ no__t-0based que não dependem de declarações, em outras palavras, esses aplicativos integrados de autenticação do Windows @ no__t-1based podem ter regras de autorização que impõem o acesso baseado em declarações quando o acesso é externo ao rede corporativa por meio do proxy de aplicativo Web.  
+Uma declaração não\-\-confiança de terceira parte confiável é uma relação de confiança de terceira parte confiável que consiste em identificadores, nomes e regras para autenticação e autorização quando a confiança de terceira parte confiável é acessada por meio do proxy de aplicativo Web. Esses aplicativos baseados na Web\-que não dependem de declarações, ou seja, esses aplicativos integrados\-de autenticação do Windows, podem ter regras de autorização que impõem o acesso baseado em declarações quando o acesso é externo à rede corporativa por meio do proxy de aplicativo Web.  
   
-Para adicionar uma nova relação de confiança de terceira parte confiável não @ no__t-0claims @ no__t-1aware, usando o snap de gerenciamento de AD FS @ no__t-2in, execute o procedimento a seguir.  
+Para adicionar uma nova declaração não\-\-confiança de terceira parte confiável, usando o\-de snap AD FS de gerenciamento no, execute o procedimento a seguir.  
   
 A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
@@ -31,25 +31,25 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
   
 2.  Em **ações**, clique em **Adicionar confiança de terceira parte confiável**.  
-parte ![relying @ no__t-1   
+![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
 
 3.  Na página de **boas-vindas** , escolha **não reconhecimento de declarações** e clique em **Iniciar**.  
-parte ![relying @ no__t-1 
+![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG) 
   
 4.  Na página **especificar nome para exibição** , digite um nome em **nome para exibição**, em **observações** , digite uma descrição para a terceira parte confiável e clique em **Avançar**.  
-parte ![relying @ no__t-1
+![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
 
 5. Na página **Configurar Identificadores**, especifique um ou mais identificadores da terceira parte confiável, clique em **Adicionar** para adicioná-los à lista e clique em **Avançar**.  
-parte ![relying @ no__t-1
+![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
 
 6.  Em **escolher política de controle de acesso** , selecione uma política e clique em **Avançar**.  Para obter mais informações sobre políticas de controle de acesso, consulte [políticas de controle de acesso em AD FS](Access-Control-Policies-in-AD-FS.md). 
-parte ![relying @ no__t-1
+![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
 7. Na página **Pronto para adicionar confiança** , revise as configurações e clique em **Avançar** para salvar as informações do objeto de confiança de terceira parte confiável.  
-   parte ![relying @ no__t-1 
+   ![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
 
 8. Na página **Concluir**, clique em **Fechar**. Essa ação exibe automaticamente a caixa de diálogo **Editar Regras de Declaração**.  
-parte ![relying @ no__t-1  
+![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
   
 ## <a name="see-also"></a>Consulte também  
 [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md) 

@@ -22,7 +22,7 @@ ms.locfileid: "71374592"
 ---
 # <a name="logman-create-cfg"></a>logman Create cfg
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 criar um coletor de dados de configuração.  
 
@@ -62,13 +62,13 @@ logman create cfg <[-n] <name>> [options]
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
 ## <a name="BKMK_examples"></a>Disso  
-O comando a seguir cria um coletor de dados de configuração chamado cfg_log usando a chave do Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0.  
+O comando a seguir cria um coletor de dados de configuração chamado cfg_log usando a chave do registro HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\.  
 ```  
 logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
 ```  
-O comando a seguir cria um coletor de dados de configuração chamado cfg_log que registra todos os objetos WMI de root\WMI na coluna de banco de dado MSNdis_Vendordriverversion.  
+O comando a seguir cria um coletor de dados de configuração chamado cfg_log que registra todos os objetos WMI de root\WMI na coluna banco de dado MSNdis_Vendordriverversion.  
 ```  
 logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [logman](logman.md)  

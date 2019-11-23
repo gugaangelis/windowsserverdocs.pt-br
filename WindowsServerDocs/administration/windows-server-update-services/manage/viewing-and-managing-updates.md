@@ -21,7 +21,7 @@ ms.locfileid: "71361487"
 ---
 # <a name="viewing-and-managing-updates"></a>Exibir e gerenciar atualizações
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar o console do WSUS para exibir e gerenciar atualizações.
 
@@ -74,7 +74,7 @@ Na página **atualizações** , você pode fazer o seguinte:
 
 4.  Em **etapa 2: editar as propriedades**, clique nas palavras sublinhadas para escolher os valores desejados.
 
-5.  Em **Step 3: Especifique um nome @ no__t-0, dê um nome à sua nova exibição.
+5.  Em **etapa 3: especifique um nome**, dê um nome à sua nova exibição.
 
 6.  Clique em **OK**.
 
@@ -123,11 +123,11 @@ Observe que você pode executar esse procedimento em apenas uma atualização po
 ## <a name="managing-updates-with-wsus"></a>Gerenciando atualizações com o WSUS
 As atualizações são usadas para atualizar ou fornecer uma substituição completa de arquivos para o software instalado em um computador. Cada atualização que está disponível em Microsoft Update é composta de dois componentes:
 
--   Los Fornece informações sobre a atualização. Por exemplo, os metadados fornecem informações para as propriedades de uma atualização, permitindo que você descubra o que a atualização é útil. Os metadados também incluem termos de licença para software Microsoft. O pacote de metadados baixado para uma atualização normalmente é muito menor do que o pacote de arquivo de atualização real.
+-   Metadados: fornece informações sobre a atualização. Por exemplo, os metadados fornecem informações para as propriedades de uma atualização, permitindo que você descubra o que a atualização é útil. Os metadados também incluem termos de licença para software Microsoft. O pacote de metadados baixado para uma atualização normalmente é muito menor do que o pacote de arquivo de atualização real.
 
--   Arquivos de atualização: Os arquivos reais necessários para instalar uma atualização em um computador.
+-   Arquivos de atualização: os arquivos reais necessários para instalar uma atualização em um computador.
 
-Quando as atualizações são sincronizadas com o servidor do WSUS, os metadados e os arquivos de atualização são armazenados em dois locais separados. Os metadados são armazenados no banco de dados do WSUS. Os arquivos de atualização podem ser armazenados no servidor do WSUS ou em servidores Microsoft Update, dependendo de como você configurou suas opções de sincronização. Se você optar por armazenar arquivos de atualização em servidores Microsoft Update, somente os metadados serão baixados no momento da sincronização; Você aprova as atualizações por meio do console do WSUS e, em seguida, os computadores cliente obtêm os arquivos de atualização diretamente do Microsoft Update no momento da instalação. Para obter mais informações sobre as opções de armazenamento de atualizações, consulte a seção ,3. Escolha uma estratégia de armazenamento do WSUS @ no__t-0 da etapa 1: Prepare-se para a implantação do WSUS no guia de implantação do WSUS.
+Quando as atualizações são sincronizadas com o servidor do WSUS, os metadados e os arquivos de atualização são armazenados em dois locais separados. Os metadados são armazenados no banco de dados do WSUS. Os arquivos de atualização podem ser armazenados no servidor do WSUS ou em servidores Microsoft Update, dependendo de como você configurou suas opções de sincronização. Se você optar por armazenar arquivos de atualização em servidores Microsoft Update, somente os metadados serão baixados no momento da sincronização; Você aprova as atualizações por meio do console do WSUS e, em seguida, os computadores cliente obtêm os arquivos de atualização diretamente do Microsoft Update no momento da instalação. Para obter mais informações sobre as opções de armazenamento de atualizações, consulte a seção [1,3. Escolha uma estratégia de armazenamento do WSUS](../plan/plan-your-wsus-deployment.md#13-choose-a-wsus-storage-strategy) da etapa 1: preparar-se para a implantação do WSUS no guia de implantação do WSUS.
 
 Você irá configurar e executar sincronizações, adicionar computadores e grupos de computador e implantar atualizações regularmente. A lista a seguir fornece exemplos de tarefas gerais que podem ser responsabilizadas na atualização de computadores com o WSUS.
 

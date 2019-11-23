@@ -57,7 +57,7 @@ Para restaurar um catálogo de um backup armazenado em disco d:, digite:
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-Para restaurar um catálogo de um backup armazenado na pasta compartilhada \\ @ no__t-1servername\share de Server01, digite:
+Para restaurar um catálogo de um backup armazenado na pasta compartilhada \\\\servername\share de Server01, digite:
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```

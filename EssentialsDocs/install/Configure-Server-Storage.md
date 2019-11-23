@@ -32,7 +32,7 @@ ms.locfileid: "70865037"
 |Nível de servidor|Configuração de disco|  
 |------------------|------------------------|  
 |Entrada|-Dois discos físicos<br /><br /> -Configurado como um conjunto espelhado RAID 1 que contém o seguinte:<br /><br /> -C: volume? 60 GB<br /><br /> -D: volume? 1000 GB|  
-|Média|-Três discos físicos<br /><br /> -Configurado como um conjunto de RAID 5 que contém o seguinte:<br /><br /> -C: volume? 60 GB<br /><br /> -D: volume? 1500 GB|  
+|Médio|-Três discos físicos<br /><br /> -Configurado como um conjunto de RAID 5 que contém o seguinte:<br /><br /> -C: volume? 60 GB<br /><br /> -D: volume? 1500 GB|  
 |Alto|-Cinco ou mais discos físicos totais<br /><br /> -Dois discos em um conjunto espelhado RAID 1 que contém o volume C:? 100 GB<br /><br /> -Todos os discos restantes em um conjunto de RAID 5 que contém o seguinte:<br /><br /> -D: volume? 1500 GB<br /><br /> -E: volume? 1500 GB|  
   
  Essas recomendações consideram o tamanho do sistema operacional instalado, o tamanho médio do armazenamento de dados utilizado pelo servidor e o crescimento esperado de armazenamento de dados ao longo do tempo de vida útil do servidor. Os volumes podem ser partições em um disco físico único ou podem ser colocados em discos físicos separados. Como o servidor armazena dados importantes para seu cliente, é recomendável que você use vários discos físicos e ajude a proteger os dados do cliente usando o RAID de hardware ou os espaços de armazenamento.  

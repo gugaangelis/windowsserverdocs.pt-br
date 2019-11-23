@@ -15,15 +15,15 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356197"
 ---
-# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>Importar pacotes de dados no servidor de cache hospedado \(Optional @ no__t-1
+# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>Importar pacotes de dados no servidor de cache hospedado \(\) opcional
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar este procedimento para importar pacotes de dados e pré-carregar conteúdo em seus servidores de cache hospedados.
 
 Esse procedimento é opcional porque não é necessário prefazer hash e pré-carregar conteúdo em seus servidores de cache hospedados.
 
-Se você não tiver o conteúdo anterior a no__t-0load, os dados serão adicionados ao cache hospedado automaticamente à medida que os clientes o baixarem pela conexão WAN.
+Se você não\-carregar conteúdo, os dados serão adicionados automaticamente ao cache hospedado à medida que os clientes o baixarem pela conexão WAN.
 
 Você deve ser membro do grupo Administradores para executar esse procedimento.
 

@@ -26,7 +26,7 @@ A ilustração a seguir mostra as etapas para implantar o Windows Server 2008 AD
   
 ![Implantando em uma nova organização](media/Deploying-AD-DS-in-a-New-Organization/daa38971-86f2-4033-9442-0cdff9ecc48f.gif)  
   
-Para obter uma lista de tarefas detalhadas que você pode usar para planejar e implantar AD DS em uma nova organização, consulte [Checklist: Implantando AD DS em uma nova organização @ no__t-0.  
+Para obter uma lista de tarefas detalhadas que você pode usar para planejar e implantar AD DS em uma nova organização, consulte [lista de verificação: Implantando AD DS em uma nova organização](https://technet.microsoft.com/library/cc725897.aspx).  
   
 
 

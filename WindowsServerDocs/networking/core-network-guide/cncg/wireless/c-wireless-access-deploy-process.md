@@ -17,13 +17,13 @@ ms.locfileid: "71406254"
 ---
 # <a name="wireless-access-deployment-process"></a>Processo da implantação de acesso sem fio
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 O processo que você usa para implantar o acesso sem fio ocorre nestes estágios:
 
 ## <a name="stage-1--ap-deployment"></a>Estágio 1 – implantação de AP
 
-Planeje, implante e configure seus APs para conectividade de cliente sem fio e para uso com o NPS. Dependendo das dependências de sua preferência e de rede, você pode pre @ no__t-0configure em seus APs sem fio antes de instalá-los em sua rede, ou você pode configurá-los remotamente após a instalação.
+Planeje, implante e configure seus APs para conectividade de cliente sem fio e para uso com o NPS. Dependendo de suas dependências de preferência e de rede, você pode\-definir configurações em seus APs sem fio antes de instalá-los em sua rede, ou você pode configurá-los remotamente após a instalação.
 
 ## <a name="stage-2--adds-group-configuration"></a>Etapa 2 – configuração do grupo de AD DS
 
@@ -38,11 +38,11 @@ Por fim, adicione os usuários aos grupos de segurança apropriados de usuários
 
 ## <a name="stage-3--group-policy-configuration"></a>Etapa 3 – configuração do Política de Grupo
 
-Configure a extensão de políticas de rede sem fio \(IEEE 802.11 @ no__t-1 do Política de Grupo usando o Editor de Gerenciamento de Política de Grupo console de gerenciamento Microsoft \(MMC @ no__t-3.
+Configure a rede sem fio \(extensão de políticas de\) IEEE 802,11 do Política de Grupo usando o Editor de Gerenciamento de Política de Grupo console de gerenciamento Microsoft \(MMC\).
 
-Para configurar computadores do domínio @ no__t-0member usando as configurações nas diretivas de rede sem fio, você deve aplicar Política de Grupo. Quando um computador é ingressado no domínio pela primeira vez, Política de Grupo é aplicado automaticamente. Se forem feitas alterações a Política de Grupo, as novas configurações serão aplicadas automaticamente:
+Para configurar computadores membros de\-de domínio usando as configurações nas políticas de rede sem fio, você deve aplicar Política de Grupo. Quando um computador é ingressado no domínio pela primeira vez, Política de Grupo é aplicado automaticamente. Se forem feitas alterações a Política de Grupo, as novas configurações serão aplicadas automaticamente:
 
-- Por Política de Grupo em intervalos de pre @ no__t-0determined
+- Por Política de Grupo em intervalos determinados de\-
 
 - Se um usuário de domínio fizer logoff e, em seguida, voltar à rede
 
@@ -62,7 +62,7 @@ Use computadores cliente para se conectar à rede.
 
 Para computadores membros do domínio que podem fazer logon na LAN com fio, as definições de configuração sem fio necessárias são aplicadas automaticamente quando Política de Grupo é atualizada.
 
-Se você habilitou a configuração em políticas de rede sem fio \(IEEE 802.11 @ no__t-1 para se conectar automaticamente quando o computador estiver dentro do intervalo de difusão da rede sem fio, seus computadores sem fio, de domínio @ no__t-2joined serão automaticamente Tente se conectar à LAN sem fio.
+Se você habilitou a configuração em rede sem fio \(as políticas do IEEE 802,11\) para se conectar automaticamente quando o computador estiver dentro do intervalo de difusão da rede sem fio, seus computadores sem fio,\-de domínio, serão automaticamente tentados a se conectar à LAN sem fio.
 
 Para se conectar à rede sem fio, os usuários precisam apenas fornecer suas credenciais de nome de usuário e senha de domínio quando solicitado pelo Windows.
 

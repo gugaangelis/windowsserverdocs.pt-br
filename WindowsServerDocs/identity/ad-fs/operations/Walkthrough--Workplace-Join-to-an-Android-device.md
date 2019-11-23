@@ -16,7 +16,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71407479"
 ---
-# <a name="walkthrough-workplace-join-to-an-android-device"></a>Passo a passo: Workplace Join a um dispositivo Android
+# <a name="walkthrough-workplace-join-to-an-android-device"></a>Walkthrough: Workplace Join para um dispositivo Android
 
 
 
@@ -31,6 +31,6 @@ ms.locfileid: "71407479"
 
 ## <a name="see-also"></a>Consulte também
 [Ingresse no local de trabalho de qualquer dispositivo para SSO e autenticação de segundo fator direta entre aplicativos da empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-[Configurando o acesso condicional local usando o serviço registro de dispositivos do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
+[Configurar o acesso condicional local usando o serviço registro de dispositivos do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
 
 

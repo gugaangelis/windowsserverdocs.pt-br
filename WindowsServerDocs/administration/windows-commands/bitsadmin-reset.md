@@ -24,7 +24,7 @@ ms.locfileid: "71380815"
 
 Cancela todos os trabalhos na fila de transferência que o usuário atual possui.
 
-**BITSAdmin 1,5 e anterior**: Se você tiver privilégios de administrador, **redefina** cancels todos os trabalhos na fila. Não há suporte para a opção/AllUsers.
+**BITSAdmin 1,5 e anterior**: se você tiver privilégios de administrador, **redefina** cancelará todos os trabalhos na fila. Não há suporte para a opção/AllUsers.
 
 ## <a name="syntax"></a>Sintaxe
 

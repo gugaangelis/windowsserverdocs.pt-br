@@ -38,12 +38,12 @@ reg save <KeyName> <FileName> [/y]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName >|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
-|\<Nome de arquivo >|Especifica o nome e o caminho do arquivo que é criado. Se nenhum caminho for especificado, o caminho atual será usado.|
+|\<KeyName >|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\\\ComputerName\) como parte do *KeyName*. Omitir \\\\computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|\<nome de arquivo >|Especifica o nome e o caminho do arquivo que é criado. Se nenhum caminho for especificado, o caminho atual será usado.|
 |/y|Substitui um arquivo existente pelo *nome nome do arquivo sem solicitar* confirmação.|
 |/?|Exibe a ajuda para o **reg Save** no prompt de comando.|
 
-## <a name="remarks-optional-section"></a>Comentários da seção \<Optional >
+## <a name="remarks-optional-section"></a>Comentários \<seção opcional >
 
 -   A tabela a seguir lista os valores de retorno para a operação **reg Save** .
 

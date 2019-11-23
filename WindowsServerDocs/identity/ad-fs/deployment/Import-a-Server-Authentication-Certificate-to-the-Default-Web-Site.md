@@ -18,24 +18,24 @@ ms.locfileid: "71359556"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>Importar um Certificado de Autenticação de Servidor para o site padrão
 
-Depois de obter um certificado de autenticação de servidor de uma autoridade de certificação \(CA @ no__t-1, você deve instalar manualmente esse certificado no site da Web padrão para cada servidor de Federação ou proxy de servidor de Federação em um farm de servidores.  
+Depois de obter um certificado de autenticação de servidor de uma autoridade de certificação \(\)de AC, você deve instalar manualmente esse certificado no site padrão para cada servidor de Federação ou proxy de servidor de Federação em um farm de servidores.  
   
 Para servidores Web, instale manualmente o certificado de autenticação de servidor no site ou no diretório virtual apropriado em que reside seu aplicativo federado.  
   
 Se estiver configurando um farm, assegure-se de realizar esse procedimento de forma idêntica — usando exatamente as mesmas configurações — em cada um dos servidores em seu farm.  
   
 > [!NOTE]  
-> O snap do AD FS Management @ no__t-0in refere-se aos certificados de autenticação de servidor para servidores de Federação como certificados de comunicação de serviço.  
+> O\-snap de gerenciamento de AD FS no refere-se aos certificados de autenticação de servidor para servidores de Federação como certificados de comunicação de serviço.  
   
 A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-import-a-server-authentication-certificate-to-the-default-web-site"></a>Para importar um certificado de autenticação de servidor no Site Padrão  
   
-1.  Na tela **Iniciar** , digite**serviços de informações da Internet \(IIS @ No__t-3 Manager**e pressione Enter.  
+1.  Na tela **Iniciar** , digite**serviços de informações da Internet \(o Gerenciador de\) do IIS**e pressione Enter.  
   
 2.  Na árvore de console, clique em **ComputerName**.  
   
-3.  No painel central, clique duas vezes em @ no__t-0click **certificados de servidor**.  
+3.  No painel central, clique duas vezes\-em **certificados de servidor**.  
   
 4.  No painel **Ações**, clique em **Importar**.  
   
@@ -46,9 +46,9 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 7.  Digite uma senha para o certificado e clique em **OK**.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de verificação: Como configurar um proxy do servidor de federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de verificação: Configurando um proxy de servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 [Requisitos de certificado para servidores de federação](https://technet.microsoft.com/library/dd807040.aspx)  
   

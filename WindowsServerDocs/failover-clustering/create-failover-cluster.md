@@ -95,7 +95,7 @@ Antes que você crie o cluster de failover, é expressamente recomendável valid
     A página Validando exibe o status dos testes em execução.
 7. Na página **Resumo**, realize uma destas ações:
     
-      - Se os resultados indicarem que os testes foram concluídos com êxito e a configuração for adequada para clustering e você quiser criar o cluster imediatamente, verifique se a caixa de seleção **criar o cluster agora usando os nós validados** está marcada e, em seguida, Selecione **concluir**. Em seguida, continue na etapa 4 do procedimento [Criar o cluster de failover](#create-the-failover-cluster).
+      - Se os resultados indicarem que os testes foram concluídos com êxito e a configuração for adequada para clustering e você quiser criar o cluster imediatamente, verifique se a caixa de seleção **criar o cluster agora usando os nós validados** está marcada e, em seguida, selecione **concluir**. Em seguida, continue na etapa 4 do procedimento [Criar o cluster de failover](#create-the-failover-cluster).
       - Se os resultados indicarem que houve avisos ou falhas, selecione **Exibir relatório** para exibir os detalhes e determinar quais problemas devem ser corrigidos. Observe que uma advertência para um teste de validação específico indica que esse aspecto do cluster de failover pode ser aceito, mas pode não atender às melhores práticas recomendadas.
         
         > [!NOTE]
@@ -158,9 +158,9 @@ Veja como criar uma função clusterizada:
    | Servidor de namespace do DFS     |  Função Servidor DHCP       |
    | DTC (Coordenador de Transações Distribuídas):     | Nenhuma        |
    | Servidor de arquivos     |  Função Servidor de Arquivos       |
-   | Aplicativo genérico     |  Não aplicável       |
-   | Script genérico     |   Não aplicável      |
-   | Serviço genérico     |   Não aplicável      |
+   | Aplicativo genérico     |  Não Aplicável       |
+   | Script genérico     |   Não Aplicável      |
+   | Serviço genérico     |   Não Aplicável      |
    | Agente de Réplica do Hyper-V     |   Função Hyper-V      |
    | iSCSI Target Server     |    Servidor de Destino iSCSI (parte da função Servidor de Arquivos)     |
    | iSNS Server     |  Recurso Serviço do iSNS Server       |
@@ -193,7 +193,7 @@ Test-Cluster –Node Server1, Server2
 ```
 
 > [!NOTE]
-> O cmdlet **Test-cluster** gera os resultados em um arquivo de log no diretório de trabalho atual. Por exemplo: C:\Users @ no__t-0username > \AppData\Local\Temp.
+> O cmdlet **Test-cluster** gera os resultados em um arquivo de log no diretório de trabalho atual. Por exemplo: C:\Users\<username > \AppData\Local\Temp.
 
 O exemplo a seguir cria um cluster de failover denominado como *MyCluster* com os nós *Server1* e *Server2*, atribui o endereço IP estático *192.168.1.12* e adiciona todo o armazenamento qualificado ao cluster de failover.
 

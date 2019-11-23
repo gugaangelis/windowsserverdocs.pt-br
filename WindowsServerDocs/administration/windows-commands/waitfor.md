@@ -39,12 +39,12 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       Parâmetro       |                                                                                         Descrição                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<Computer >     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u [\<Domain > \] @ no__t-2 |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
-|   /p [\<Password >]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
+|    /s \<computador >     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| /u [\<\]de domínio > <User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
+|   /p [\<a senha >]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
 |          /si          |                                                                        Envia o sinal especificado pela rede.                                                                        |
-|     /t \<Timeout >     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
-|     \<SignalName >     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
+|     /t \<tempo limite >     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
+|     \<Signalname >     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
 |          /?           |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 
 ## <a name="remarks"></a>Comentários

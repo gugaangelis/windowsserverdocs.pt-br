@@ -23,11 +23,11 @@ As políticas de acesso para cliente no Serviços de Federação do Active Direc
 
 Para habilitar a política de acesso do cliente, siga as etapas abaixo.
 
-### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>Etapa 1: Instalar o pacote cumulativo de atualizações 2 para o AD FS Package 2,0 em seus servidores AD FS
+### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>Etapa 1: instalar o pacote cumulativo de atualizações 2 para AD FS pacotes 2,0 em seus servidores AD FS
 
 Baixe o pacote [cumulativo de atualizações 2 para serviços de Federação do Active Directory (AD FS) (AD FS) 2,0](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) e instale-o em todos os proxies do servidor de Federação e do servidor de Federação.
 
-### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>Etapa 2: Adicionar cinco regras de declaração à Active Directory confiança do provedor de declarações
+### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>Etapa 2: adicionar cinco regras de declaração à Active Directory confiança do provedor de declarações
 
 Após a instalação do pacote cumulativo de atualizações 2 em todos os servidores e proxies AD FS, use o procedimento a seguir para adicionar um conjunto de regras de declarações que torna os novos tipos de declaração disponíveis para o mecanismo de política.
 
@@ -44,7 +44,7 @@ Na Active Directory confiança do provedor de declarações, crie uma nova regra
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione passar ou filtrar uma declaração de entrada na lista e clique em Avançar.
 5. Na página Configurar regra, em nome da regra de declaração, digite o nome de exibição para esta regra; em tipo de declaração de entrada, digite a seguinte URL de tipo de declaração e, em seguida, selecione passar todos os valores de declaração.</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
-6. Para verificar a regra, selecione-a na lista e clique em Editar regra e, em seguida, clique em Exibir idioma da regra. O idioma da regra de declaração deve aparecer da seguinte maneira:`c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
+6. Para verificar a regra, selecione-a na lista e clique em Editar regra e, em seguida, clique em Exibir idioma da regra. O idioma da regra de declaração deve aparecer da seguinte maneira: `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
 7. Clique em concluir.
 8. Na caixa de diálogo Editar regras de declaração, clique em OK para salvar as regras.
 9. Repita as etapas de 2 a 6 para criar uma regra de declaração adicional para cada um dos quatro tipos de declaração restantes mostrados abaixo até que todas as cinco regras tenham sido criadas.
@@ -60,14 +60,14 @@ Na Active Directory confiança do provedor de declarações, crie uma nova regra
 `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 ~~~
 
-### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>Etapa 3: Atualizar a relação de confiança de terceira parte confiável da plataforma de identidade Microsoft Office 365
+### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>Etapa 3: atualizar a relação de confiança de terceira parte confiável da plataforma de identidade Microsoft Office 365
 
 Escolha um dos cenários de exemplo abaixo para configurar as regras de declaração na relação de confiança de terceira parte confiável da plataforma de identidade Microsoft Office 365 que melhor atende às necessidades da sua organização.
 
 ## <a name="client-access-policy-scenarios-for-ad-fs-20"></a>Cenários de política de acesso de cliente para AD FS 2,0
 As seções a seguir descrevem os cenários que existem para o AD FS 2,0
 
-### <a name="scenario-1-block-all-external-access-to-office-365"></a>Cenário 1: Bloquear todo o acesso externo ao Office 365
+### <a name="scenario-1-block-all-external-access-to-office-365"></a>Cenário 1: bloquear todo o acesso externo ao Office 365
 
 Esse cenário de política de acesso de cliente permite o acesso de todos os clientes internos e bloqueia todos os clientes externos com base no endereço IP do cliente externo. O conjunto de regras se baseia na regra de autorização de emissão padrão permitir acesso a todos os usuários. Você pode usar o procedimento a seguir para adicionar uma regra de autorização de emissão à relação de confiança de terceira parte confiável do Office 365.
 
@@ -79,7 +79,7 @@ Esse cenário de política de acesso de cliente permite o acesso de todos os cli
 2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
-5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
@@ -90,7 +90,7 @@ Esse cenário de política de acesso de cliente permite o acesso de todos os cli
 >Você precisará substituir o valor acima por "Regex de endereço IP público" por uma expressão de IP válida; consulte criando a expressão de intervalo de endereços IP para obter mais informações.
 
 
-### <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a>Cenário 2: Bloquear todo o acesso externo ao Office 365, exceto o Exchange ActiveSync
+### <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a>Cenário 2: bloquear todo o acesso externo ao Office 365, exceto o Exchange ActiveSync
 
 O exemplo a seguir permite o acesso a todos os aplicativos do Office 365, incluindo o Exchange Online, de clientes internos, incluindo o Outlook. Ele bloqueia o acesso de clientes que residem fora da rede corporativa, conforme indicado pelo endereço IP do cliente, exceto para clientes do Exchange ActiveSync, como Smart Phones. O conjunto de regras se baseia na regra de autorização de emissão padrão chamada permitir acesso a todos os usuários. Use as etapas a seguir para adicionar uma regra de autorização de emissão à relação de confiança de terceira parte confiável do Office 365 usando o assistente de regra de declaração:
 
@@ -102,7 +102,7 @@ O exemplo a seguir permite o acesso a todos os aplicativos do Office 365, inclui
 2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
-5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
     Value=="Microsoft.Exchange.Autodiscover"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
@@ -116,7 +116,7 @@ O exemplo a seguir permite o acesso a todos os aplicativos do Office 365, inclui
 >[!NOTE]
 >Você precisará substituir o valor acima por "Regex de endereço IP público" por uma expressão de IP válida; consulte criando a expressão de intervalo de endereços IP para obter mais informações.
 
-### <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a>Cenário 3: Bloquear todo o acesso externo ao Office 365, exceto aplicativos baseados em navegador
+### <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a>Cenário 3: bloquear todo o acesso externo ao Office 365, exceto aplicativos baseados em navegador
 
 O conjunto de regras se baseia na regra de autorização de emissão padrão chamada permitir acesso a todos os usuários. Use as etapas a seguir para adicionar uma regra de autorização de emissão à Microsoft Office terceira parte confiável da plataforma de identidade 365 usando o assistente de regra de declaração:
 
@@ -131,7 +131,7 @@ O conjunto de regras se baseia na regra de autorização de emissão padrão cha
 2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
-5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
@@ -139,7 +139,7 @@ O conjunto de regras se baseia na regra de autorização de emissão padrão cha
 6. Clique em concluir. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
 7. Para salvar a regra, na caixa de diálogo Editar regras de declaração, clique em OK.
 
-### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Cenário 4: Bloquear todo o acesso externo ao Office 365 para grupos de Active Directory designados
+### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Cenário 4: bloquear todo o acesso externo ao Office 365 para grupos de Active Directory designados
 
 O exemplo a seguir habilita o acesso de clientes internos com base no endereço IP. Ele bloqueia o acesso de clientes que residem fora da rede corporativa que têm um endereço IP de cliente externo, exceto aqueles indivíduos em um grupo de Active Directory especificado. o conjunto de regras se baseia na regra de autorização de emissão padrão chamada permitir acesso a Todos os usuários. Use as etapas a seguir para adicionar uma regra de autorização de emissão à Microsoft Office terceira parte confiável da plataforma de identidade 365 usando o assistente de regra de declaração:
 
@@ -151,7 +151,7 @@ O exemplo a seguir habilita o acesso de clientes internos com base no endereço 
 2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
-5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "Group SID value of allowed AD group"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
@@ -180,14 +180,14 @@ A declaração x-MS-encaminhar-Client-IP é populada a partir de um cabeçalho H
 >[!Note] 
 >Atualmente, o Exchange Online dá suporte apenas a endereços IPV4 e não IPV6.
 
-Um único endereço IP: O endereço IP do cliente que está conectado diretamente ao Exchange Online
+Um único endereço IP: o endereço IP do cliente que está conectado diretamente ao Exchange Online
 
 >[!Note] 
 >O endereço IP de um cliente na rede corporativa será exibido como o endereço IP da interface externa do proxy ou gateway de saída da organização.
 
 Os clientes que estão conectados à rede corporativa por uma VPN ou pelo Microsoft DirectAccess (DA) podem aparecer como clientes corporativos internos ou como clientes externos, dependendo da configuração da VPN ou DA.
 
-Um ou mais endereços IP: Quando o Exchange Online não puder determinar o endereço IP do cliente que está se conectando, ele definirá o valor com base no valor do cabeçalho x-Forwarded-for, um cabeçalho não padrão que pode ser incluído em solicitações baseadas em HTTP e é suportado por muitos clientes, balanceadores de carga, e proxies no mercado.
+Um ou mais endereços IP: quando o Exchange Online não pode determinar o endereço IP do cliente que está se conectando, ele definirá o valor com base no valor do cabeçalho x-Forwarded-for, um cabeçalho não padrão que pode ser incluído em solicitações baseadas em HTTP e é suportado por muitos clientes, balanceadores de carga e proxies no mercado.
 
 >[!Note]
 >Vários endereços IP, indicando o endereço IP do cliente e o endereço de cada proxy que passou na solicitação, serão separados por uma vírgula.
@@ -203,13 +203,13 @@ Quando você precisa corresponder a um intervalo de endereços IP, é necessári
 - 192.168.1.1 – 192.168.1.25
 - 10.0.0.1 – 10.0.0.14
 
-Primeiro, o padrão básico que corresponderá a um único endereço IP é o seguinte: \b #\.# #######\.\.# # # \b
+Primeiro, o padrão básico que corresponderá a um único endereço IP é o seguinte: \b # # #\.###\.###\.# # # \b
 
-Estendendo isso, podemos corresponder dois endereços IP diferentes com uma expressão or da seguinte maneira: \b #\.# #\. \.\. ######\.# # # \b | \b # # #### ######\b \.
+Estendendo isso, podemos corresponder dois endereços IP diferentes com uma expressão OR da seguinte maneira: \b # # #\.###\.###\.# # # \b | \b # # #\.###\.###\.# # # \b
 
 Portanto, um exemplo para corresponder apenas a dois endereços (como 192.168.1.1 ou 10.0.0.1) seria: \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 
-Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192 @ no__t-0168 @ no__t-11 @ no__t-2 ([1-9] | 1 [0-9] | 2 [0-5]) \b
+Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b
 
 >[!Note] 
 >O endereço IP é tratado como cadeia de caracteres e não como um número.
@@ -229,9 +229,9 @@ O seguinte corresponde aos intervalos necessários para a parte do endereço ap�
 >[!Note]
 >Os parênteses devem ser posicionados corretamente, para que você não comece a corresponder a outras partes de endereços IP.
 
-Com o bloco 192 correspondente, podemos gravar uma expressão semelhante para o 10 bloco: \b10 @ no__t-00 @ no__t-10 @ no__t-2 ([1-9] | 1 [0-4]) \b
+Com o bloco 192 correspondente, podemos gravar uma expressão semelhante para o 10 bloco: \b10\.0\.0\.([1-9] | 1 [0-4]) \b
 
-E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14": \b192 @ no__t-0168 @ no__t-11 @ no__t-2 ([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10 @ no__t-30 @ no__t-40 @ no__t-5 ([1-9] | 1 [0-4]) \b
+E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14": \b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10\.0\.0\.([1-9] | 1 [0-4]) \b
 
 #### <a name="testing-the-expression"></a>Testando a expressão
 
@@ -271,6 +271,6 @@ AD FS eventos de rastreamento são registrados no log de depuração do AD FS 2,
 
 Depois de habilitar o rastreamento, use a seguinte sintaxe de linha de comando para habilitar o nível de log detalhado: wevtutil. exe SL "AD FS 2,0 Tracing/debug"/l: 5  
 
-## <a name="related"></a>Relacionados
+## <a name="related"></a>Relacionado
 Para obter mais informações sobre os novos tipos de declaração, consulte [AD FS tipos de declarações](AD-FS-Claims-Types.md).
 

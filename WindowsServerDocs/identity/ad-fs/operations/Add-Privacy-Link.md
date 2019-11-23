@@ -19,7 +19,7 @@ ms.locfileid: "71358424"
 # <a name="add-privacy-link"></a>Adicione link de privacidade 
 
 
-Para adicionar o link de privacidade exibido na página assinar @ no__t-0in, use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
+Para adicionar o link de privacidade exibido na página\-de entrada, use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
 
 ![Adicionar link de privacidade](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
   
@@ -28,7 +28,7 @@ Para adicionar o link de privacidade exibido na página assinar @ no__t-0in, use
  
   
 > [!IMPORTANT]  
-> O parâmetro `linkText` nesse cmdlet não é necessário, a menos que você use outro valor diferente do padrão, que é *Privacidade*. A vantagem de usar o padrão é que as páginas são localizadas para todas as localidades de cliente. Depois que a página Sign @ no__t-0in for personalizada, a personalização terá precedência; Portanto, você deve personalizar o para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Ao configurar conteúdo localizado, você deve configurá-lo com uma localidade @ no__t-0less primeiro, por exemplo, "en", antes de configurar o país e a região @ no__t-1specific localidade, como "en @ no__t-2US".  
+> O parâmetro `linkText` nesse cmdlet não é necessário, a menos que você use outro valor diferente do padrão, que é *Privacidade*. A vantagem de usar o padrão é que as páginas são localizadas para todas as localidades de cliente. Depois que o sinal\-na página é personalizado, a personalização tem precedência; Portanto, você deve personalizar o para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Ao configurar conteúdo localizado, você deve configurá-lo com um país\-menos localidade, por exemplo, "en", antes de configurar país e região\-localidade específica, como "en\-US".  
 
 ## <a name="additional-references"></a>Referências adicionais 
 [AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  

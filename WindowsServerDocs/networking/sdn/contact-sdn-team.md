@@ -19,19 +19,19 @@ ms.locfileid: "71355991"
 
 > Aplica-se a: Windows Server 2016
 
-A **rede definida pelo software da Microsoft \(SDN @ no__t-2** e as soluções de **rede de contêiner** são criadas pelo datacenter e pela equipe de rede de nuvem. Use esta página para estar em contato com a equipe – para fazer perguntas, fornecer comentários, relatar bugs ou fazer solicitações de recursos.
+A **rede definida pelo software da Microsoft \(SDN\)** e soluções de **rede de contêineres** são criadas pelo datacenter e pela equipe de rede de nuvem. Use esta página para estar em contato com a equipe – para fazer perguntas, fornecer comentários, relatar bugs ou fazer solicitações de recursos.
 
 Há muitos caminhos para entrar em contato com as equipes da Microsoft e, embora possamos fazer o melhor na equipe de SDN para seguir todas as avenidas usadas pela nossa comunidade, aqui está uma lista de fóruns que tendem a ser os mais ativos. *Esses são os principais recursos para nossos usuários e, por isso, eles são os caminhos que vimos mais próximos.*
 
 ## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
 Recentemente, lançamos nossa presença no Twitter como [@Microsoft_SDN](https://twitter.com/Microsoft_SDN). Sinta-se à vontade para usar nosso identificador do Twitter para fazer perguntas, fornecer comentários ou fazer solicitações de recursos/documentação.
-> Além de um local onde você pode entrar em contato com perguntas/comentários/solicitações, considere o Twitter no lugar para colocar seu "feed" em tudo que o SDN e o sistema de rede de contêiner do Windows estão relacionados-o Twitter é o primeiro lugar em que publicaremos **notícias**, anunciaremos **novo recursos** e apontar a Comunidade para todos os nossos **Blogs e recursos mais recentes**.
+> Além de um local onde você pode entrar em contato com perguntas/comentários/solicitações, considere o Twitter no lugar para obter seu "feed" sobre tudo que o SDN e a rede de contêiner do Windows relacionados – Twitter é o primeiro lugar em que publicaremos **notícias**, anunciaremos **novos recursos** e destacaremos a Comunidade para todos os nossos **Blogs e recursos mais recentes**.
 
 ## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([repositório Microsoft/Sdn](https://github.com/Microsoft/SDN/issues))
 Acesse [aqui](https://github.com/Microsoft/SDN/issues) para enviar problemas para a equipe de Sdn por meio de nosso repositório github. Este é o melhor lugar para **obter ajuda para solucionar problemas** ou **Relatar bugs**.
 
-> O GitHub é o melhor lugar para entrar em contato conosco sobre tópicos que envolvem mais detalhes do que os tipos de coisas que você poderia facilmente ajustar a um tweet. *Need ajuda com sua implantação de SDN? Não tem certeza de como nossos recursos poderiam se adequar às necessidades exclusivas da sua organização? Sendo mantido por um bug potencial?* Todos os bons motivos para entrar em contato conosco enviando um problema do GitHub.
+> O GitHub é o melhor lugar para entrar em contato conosco sobre tópicos que envolvem mais detalhes do que os tipos de coisas que você poderia facilmente ajustar a um tweet. *Precisa de ajuda com sua implantação de SDN? Não tem certeza de como nossos recursos poderiam se adequar às necessidades exclusivas da sua organização? Sendo mantido por um bug em potencial?* Todos os bons motivos para entrar em contato conosco enviando um problema do GitHub.
 
 ## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
 Nossa [documentação de rede de contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) pode ser encontrada em [Microsoft docs (docs.Microsoft.com)](https://docs.microsoft.com/), que tem **funcionalidade de comentário interna**. Para deixar ou responder a um comentário em Microsoft Docs apenas entrar, role para baixo até a parte inferior da página Microsoft Docs que você deseja referenciar e, em seguida, faça e envie seu comentário.
@@ -46,4 +46,4 @@ Sinta-se à vontade para usar qualquer Avenida nessa página para fornecer comen
 - [GitHub (repositório de virtualização)](https://github.com/Microsoft/Virtualization-Documentation) -melhor para procurar erros de *relatório* e *ajuda de solução de problemas*
 
 ### <a name="not-seeing-the-forum-for-you"></a>Não está vendo o fórum para você? 
-Sempre que possível, incentivamos o uso de nossos fóruns públicos para que a comunidade mais ampla possa se beneficiar do acesso às perguntas e aos comentários que chegarem ao nosso caminho. No entanto, também reconhecemos que há situações em que o email é simplesmente a maneira preferida de entrar em contato conosco. Se você estiver em uma dessas situações, envie-nos um email para sdn_feedback@microsoft.com e ficaremos felizes em ouvir de você.
+Sempre que possível, incentivamos o uso de nossos fóruns públicos para que a comunidade mais ampla possa se beneficiar do acesso às perguntas e aos comentários que chegarem ao nosso caminho. No entanto, também reconhecemos que há situações em que o email é simplesmente a maneira preferida de entrar em contato conosco. Se você estiver em uma dessas situações, envie-nos um email em sdn_feedback@microsoft.com e ficaremos felizes em ouvir de você.

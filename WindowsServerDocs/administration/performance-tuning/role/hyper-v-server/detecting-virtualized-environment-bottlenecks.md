@@ -28,15 +28,15 @@ Aqui estão alguns cenários comuns que poderiam causar afunilamentos de process
 
 Você pode usar os seguintes contadores de desempenho do host:
 
--   Utilização do processador lógico-\\Hyper-V processador lógico do hipervisor (\*) \\% tempo de execução total
+-   Utilização do processador lógico-\\processador lógico do hipervisor Hyper-V (\*)\\% tempo de execução total
 
--   Utilização do processador virtual-@no__t-processador virtual do hipervisor 0Hyper-V (\*) \\% tempo de execução total
+-   Utilização do processador virtual-\\processador virtual do hipervisor Hyper-V (\*)\\% tempo de execução total
 
--   Utilização do processador virtual raiz-\\Hyper-V processador virtual raiz do hipervisor (\*) \\% tempo de execução total
+-   Utilização do processador virtual raiz-\\processador virtual do hipervisor Hyper-V (\*)\\% tempo de execução total
 
-Se o contador do **processador lógico do hipervisor do Hyper-V (\_Total) \\% total de tempo de execução** for maior que 90%, o host estará sobrecarregado. Você deve adicionar mais capacidade de processamento ou mover algumas máquinas virtuais para um host diferente.
+Se o **processador lógico do hipervisor Hyper-V (\_total)\\contador de tempo de execução% total** for superior a 90%, o host estará sobrecarregado. Você deve adicionar mais capacidade de processamento ou mover algumas máquinas virtuais para um host diferente.
 
-Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x) \\% total** do contador de tempo de execução for de mais de 90% para todos os processadores virtuais, você deverá fazer o seguinte:
+Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x)\\% total** do contador de tempo de execução for de mais de 90% para todos os processadores virtuais, você deverá fazer o seguinte:
 
 -   Verifique se o host não está sobrecarregado
 
@@ -44,7 +44,7 @@ Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x) \\% total** 
 
 -   Atribuir mais processadores virtuais à máquina virtual
 
-Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x) \\% total** do contador de tempo de execução for de mais de 90% para alguns, mas não para todos, dos processadores virtuais, você deverá fazer o seguinte:
+Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x)\\% total** do contador de tempo de execução for de mais de 90% para alguns, mas não para todos, dos processadores virtuais, você deverá fazer o seguinte:
 
 -   Se sua carga de trabalho receber uso intensivo de rede, você deverá considerar o uso de vRSS.
 
@@ -52,7 +52,7 @@ Se o **processador virtual do hipervisor Hyper-V (nome da VM: VP x) \\% total** 
 
 -   Se sua carga de trabalho for de uso intensivo de armazenamento, você deverá habilitar o NUMA virtual e adicionar mais discos virtuais.
 
-Se o **processador virtual da raiz do hipervisor do Hyper-V (VP raiz x) \\% total** do contador de tempo de execução for de mais de 90% para alguns, mas não para todos, processadores virtuais e o contador **processador (x) \\% de tempo de interrupção e processador (x) \\% tempo de DPC** aproximadamente adiciona o valor para o contador de **processador virtual raiz (VP de raiz x) \\% total de tempo de execução** , certifique-se de habilitar a VMQ nos adaptadores de rede.
+Se o **processador virtual raiz do hipervisor Hyper-V (VP raiz x)\\% total** do contador de tempo de execução for de mais de 90% para alguns, mas nem todos os processadores virtuais e o **processador (x)\\% tempo de interrupção e processador (x)\\%** do contador de tempo de DPC aproximadamente se somam ao valor do **processador virtual raiz (VP de raiz x)\\contador de tempo de execução total** , você deve garantir a habilitação da VMQ nos adaptadores de rede.
 
 ## <a name="memory-bottlenecks"></a>Afunilamentos de memória
 
@@ -66,17 +66,17 @@ Aqui estão alguns cenários comuns que podem causar gargalos de memória:
 
 Você pode usar os seguintes contadores de desempenho do host:
 
--   MB\\de memória disponível
+-   Memória\\MBytes disponíveis
 
--   Memória disponível do balanceador de memória dinâmica\*do\\Hyper-V ()
+-   O balanceador de Memória Dinâmica do Hyper-V (\*)\\memória disponível
 
 Você pode usar os seguintes contadores de desempenho da máquina virtual:
 
--   MB\\de memória disponível
+-   Memória\\MBytes disponíveis
 
-Se os contadores de memória **\\disponíveis de Mbytes** e de **memória dinâmica do\*Hyper\\-V () disponíveis** estiverem insuficientes no host, você deverá parar os serviços não essenciais e migrar um ou mais virtuais computadores para outro host.
+Se a **memória\\MBytes disponíveis** e o **balanceador de memória dinâmica do Hyper-V (\*)\\** os contadores de memória disponíveis estiverem insuficientes no host, você deverá parar os serviços não essenciais e migrar uma ou mais máquinas virtuais para outro host.
 
-Se o **contador\\memória disponível em Mbytes** estiver baixo na máquina virtual, você deverá atribuir mais memória à máquina virtual. Se você estiver usando Memória Dinâmica, deverá aumentar a configuração de memória máxima.
+Se o contador **memória\\MB disponíveis** estiver baixo na máquina virtual, você deverá atribuir mais memória à máquina virtual. Se você estiver usando Memória Dinâmica, deverá aumentar a configuração de memória máxima.
 
 ## <a name="network-bottlenecks"></a>Afunilamentos de rede
 
@@ -88,11 +88,11 @@ Aqui estão alguns cenários comuns que poderiam causar afunilamentos de rede:
 
 Você pode usar os seguintes contadores de desempenho do host:
 
--   Interface de rede (nome do adaptador\\de*rede*) bytes/s
+-   Interface de rede (*nome do adaptador de rede*)\\bytes/s
 
 Você pode usar os seguintes contadores de desempenho da máquina virtual:
 
--   Adaptador de rede virtual do Hyper-V (*GUID&lt;&gt;de nome de máquina virtual*)\\bytes/s
+-   Adaptador de rede virtual do Hyper-V (*nome do nome da máquina virtual&lt;&gt;do GUID* )\\bytes/s
 
 Se o contador **bytes de NIC física/s** for maior ou igual a 90% da capacidade, você deverá adicionar adaptadores de rede adicionais, migrar máquinas virtuais para outro host e configurar a QoS de rede.
 
@@ -110,13 +110,13 @@ Aqui estão alguns cenários comuns que poderiam causar gargalos de armazenament
 
 Você pode usar os seguintes contadores de desempenho do host:
 
--   Disco físico (*letra*do disco\\) média de disco s/leitura
+-   Disco físico (*letra do disco*)\\média de disco s/leitura
 
--   Disco físico (*letra*do disco\\) média de disco s/gravação
+-   Disco físico (*letra do disco*)\\média de disco s/gravação
 
--   Disco físico (*letra*do disco\\) comprimento médio da fila de leitura de disco
+-   Disco físico (*letra do disco*)\\tamanho médio da fila de leitura de disco
 
--   Disco físico (*letra*do disco\\) comprimento médio da fila de gravação de disco
+-   Disco físico (*letra do disco*)\\comprimento médio da fila de gravação de disco
 
 Se as latências forem consistentemente maiores que 50 ms, você deverá fazer o seguinte:
 

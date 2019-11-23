@@ -36,10 +36,10 @@ Um arquivo de Universal Data Link ou um arquivo UDL é basicamente um arquivo de
 1. Abra o bloco de notas e salve o arquivo como Test. udl.  Verifique se você tem **todos os arquivos** selecionados na lista suspensa para **salvar como tipo**.
 2. Clique duas vezes em Test. udl
 3. Preencha as seguintes informações: a. **Selecione ou insira um nome de servidor:**  Use a fonte de dados da cadeia de conexão acima de b. **Insira as informações para fazer logon no servidor:**  Use a conta de serviço do AD FS ou uma conta que tenha permissões para fazer logon remotamente.  Se a conta for uma conta do Windows, use a autenticação integrada, caso contrário, digite o nome de usuário e a senha.
-    c. **Selecione o banco de dados no servidor:** Use o catálogo inicial da cadeia de caracteres acima.  Exemplo:  AdfsConfigurationV3.
-   Conexão ![Test @ no__t-1
+    c. **Selecione o banco de dados no servidor:** Use o catálogo inicial da cadeia de caracteres acima.  Exemplo: AdfsConfigurationV3.
+   ![testar conexão](media/ad-fs-tshoot-sql/sql4.png)
 1. Clique em **testar conexão**.</br>
-![Success @ no__t-1
+![êxito](media/ad-fs-tshoot-sql/sql3.png)
 
 ## <a name="use-sql-server-management-studio-to-test-connectivity"></a>Usar SQL Server Management Studio para testar a conectividade
 Você também pode [baixar](https://go.microsoft.com/fwlink/?linkid=864329) e instalar o SSMS para testar a conectividade do banco de dados.
@@ -49,9 +49,9 @@ Você também pode [baixar](https://go.microsoft.com/fwlink/?linkid=864329) e in
 ![Instalar](media/ad-fs-tshoot-sql/sql5.png)
 1. Abra o SSMS, insira o nome do servidor.  A fonte de dados acima.
 2. Use a conta de serviço do AD FS ou uma conta que tenha permissões para fazer logon remotamente.  Se a conta for uma conta do Windows, use a autenticação integrada, caso contrário, digite o nome de usuário e a senha.
-![Connect @ no__t-1
+![conectar](media/ad-fs-tshoot-sql/sql6.png)
 1. Você deve ver o lado esquerdo preenchido.  Expanda bancos de dados e verifique se você vê os bancos de dados do AD FS.
-bancos de dados ![AD FS @ no__t-1
+![AD FS bancos de dados](media/ad-fs-tshoot-sql/sql7.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -20,7 +20,7 @@ ms.locfileid: "71358456"
 
 
 ## <a name="to-add-a-help-desk-link"></a>Para adicionar um link de suporte técnico  
-Para adicionar o link de suporte técnico que é exibido na página assinar @ no__t-0in, use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
+Para adicionar o link de suporte técnico exibido na página\-de entrada, use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
 
 ![Adicionar suporte técnico](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

@@ -33,7 +33,7 @@ ms.locfileid: "71359394"
   
   Este guia não inclui instruções para migrar um servidor que está executando várias funções. Se o servidor executar várias funções, é recomendável criar um processo de migração personalizado específico para o ambiente do servidor, com base nas informações fornecidas em outros guias de migração de função. Guias de migração de funções adicionais estão disponíveis no [Portal de Migração do Windows Server](https://go.microsoft.com/fwlink/?LinkId=247608).  
   
-### <a name="supported-operating-systems"></a>Sistemas operacionais com suporte  
+### <a name="supported-operating-systems"></a>Sistemas operacionais compatíveis  
  Sistema operacional do servidor de destino:  
   
  Windows Server 2012 R2 (Server Core e opções de instalação completa)  
@@ -63,7 +63,7 @@ ms.locfileid: "71359394"
 |AD FS servidor de Federação instalado no Windows Server 2012|Há suporte para migração no mesmo servidor.  Para saber mais, confira:<br /><br /> [Preparando para migrar o servidor de Federação AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migrando o servidor de Federação de AD FS](migrate-ad-fs-fed-server-r2.md)|  
   
 ## <a name="next-steps"></a>Próximas etapas
- [Preparando para migrar o servidor de Federação AD FS](prepare-migrate-ad-fs-server-r2.md)   
- [Migrando o servidor de Federação de AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migrando o proxy do servidor de Federação AD FS](migrate-fed-server-proxy-r2.md)   
+ [Preparando para migrar o servidor de federação AD FS](prepare-migrate-ad-fs-server-r2.md)   
+ [Migrando o servidor de federação AD FS](migrate-ad-fs-fed-server-r2.md)   
+ [Migrando o proxy do servidor de federação AD FS](migrate-fed-server-proxy-r2.md)   
  [Verificando a migração de AD FS para o Windows Server 2012 R2](verify-ad-fs-migration.md)

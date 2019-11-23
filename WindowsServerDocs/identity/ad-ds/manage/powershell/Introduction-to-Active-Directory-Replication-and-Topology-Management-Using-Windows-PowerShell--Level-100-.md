@@ -27,10 +27,10 @@ O Windows PowerShell para Active Directory inclui a capacidade de gerenciar repl
 > 
 > -    Controlador de domínio do Windows Server 2012
 > -    O Windows Server 2012 com o Ferramentas de Administração de Servidor Remoto para AD DS e AD LDS instalado.
-> -   Windows @ no__t-0 8 com o Ferramentas de Administração de Servidor Remoto para AD DS e AD LDS instalados.
+> -   Windows&reg; 8 com o Ferramentas de Administração de Servidor Remoto para AD DS e AD LDS instalados.
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>Instalando o módulo do Active Directory para Windows PowerShell
-O módulo Active Directory para Windows PowerShell é instalado por padrão quando a função de servidor AD DS é instalada em um servidor que executa o Windows Server 2012. Nenhuma etapa adicional é necessária além de adicionar a função de servidor. Você também pode instalar o módulo Active Directory em um servidor que executa o Windows Server 2012 instalando o Ferramentas de Administração de Servidor Remoto, e você pode instalar o módulo Active Directory em um computador que executa o Windows 8 baixando e instalando o [ Ferramentas administrativas de servidor remoto (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulte as [Instruções](https://www.microsoft.com/download/details.aspx?id=28972)para ver as etapas de instalação.
+O módulo Active Directory para Windows PowerShell é instalado por padrão quando a função de servidor AD DS é instalada em um servidor que executa o Windows Server 2012. Nenhuma etapa adicional é necessária além de adicionar a função de servidor. Você também pode instalar o módulo Active Directory em um servidor que executa o Windows Server 2012 instalando o Ferramentas de Administração de Servidor Remoto, e você pode instalar o módulo Active Directory em um computador que executa o Windows 8 baixando e instalando as [Ferramentas administrativas do servidor remoto (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulte as [Instruções](https://www.microsoft.com/download/details.aspx?id=28972)para ver as etapas de instalação.
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>Cenários para testar os cmdlets de gerenciamento de replicação e topologia do Windows PowerShell para Active Directory.
 Os seguintes cenários são concebidos para administradores com os novos cmdlets de gerenciamento:
@@ -43,7 +43,7 @@ Os seguintes cenários são concebidos para administradores com os novos cmdlets
 
 ## <a name="lab-requirements"></a>Requisitos do laboratório
 
--   Dois controladores de domínio do Windows Server 2012: **DC1** e **DC2**, que fazem parte do domínio contoso.com e residem no site CORPORATE dentro desse domínio.
+-   Dois controladores de domínio do Windows Server 2012: **DC1** e **DC2** que fazem parte do domínio contoso.com e residem no site corporativo dentro desse domínio.
 
 ## <a name="view-domain-controllers-and-their-sites"></a>Visualize os controladores de domínio e seus sites
 Nesta etapa, você usará o Módulo do Active Directory para Windows PowerShell visualizar os controladores de domínio atuais e a topologia de replicação  domínio.

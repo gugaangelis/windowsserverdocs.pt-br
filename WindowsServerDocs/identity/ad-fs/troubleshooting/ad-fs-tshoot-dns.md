@@ -29,7 +29,7 @@ Verifica a conectividade em nível de IP para outro computador TCP/IP enviando m
 
 ### <a name="to-use-a-ping-test"></a>Para usar um teste de PING
 1.  Abrir um prompt de comando
-2. Insira PING <name of adfs server> a. Exemplo:  Sts.contoso.com PING
+2. Insira PING <name of adfs server> a. Exemplo: PING sts.contoso.com
 3. Você deverá ver uma resposta do servidor
 
 ![Ping](media/ad-fs-tshoot-dns/dns1.png)
@@ -40,7 +40,7 @@ Exibe informações que você pode usar para diagnosticar a infraestrutura do DN
 ### <a name="to-use-a-nslookup"></a>Para usar um NSLookup
 1.  Abrir um prompt de comando
 2. Insira PING <name of adfs server> a. Exemplo: nslookup sts.contoso.com
-3. Você deve ver as informações de DNS para o servidor ![NSLookup @ no__t-1
+3. Você deve ver as informações de DNS para o servidor ![NSLookup](media/ad-fs-tshoot-dns/dns2.png)
 
 ## <a name="tracert"></a>Tracert
 Determina o caminho levado para um destino enviando uma solicitação de eco do protocolo ICMP ou mensagens ICMPv6 para o destino com valores de campo TTL (vida útil) incrementalmente crescentes.   Para obter mais informações, consulte [tracert](https://technet.microsoft.com/library/ff961507.aspx).
@@ -49,7 +49,7 @@ Determina o caminho levado para um destino enviando uma solicitação de eco do 
 ### <a name="to-use-tracert"></a>Para usar tracert
 1.  Abrir um prompt de comando
 2. Insira tracert <name of adfs server> a. Exemplo: tracert sts.contoso.com
-3. Você deve ver o caminho de destino usado para acessar o servidor ![Tracert @ no__t-1
+3. Você deve ver o caminho de destino usado para acessar o servidor ![tracert](media/ad-fs-tshoot-dns/dns3.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -33,7 +33,7 @@ A figura a seguir mostra o modelo de comunicação para NFS.
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>Parâmetros de ajuste para servidores de arquivos NFS
 
-As seguintes configurações do registro REG @ no__t-0DWORD podem afetar o desempenho dos servidores de arquivos NFS:
+As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho dos servidores de arquivos NFS:
 
 -   **OptimalReads**
 
@@ -41,7 +41,7 @@ As seguintes configurações do registro REG @ no__t-0DWORD podem afetar o desem
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    O padrão é 0. Esse parâmetro determina se os arquivos são abertos para o arquivo @ no__t-0RANDOM @ no__t-1ACCESS ou para o arquivo @ no__t-2SEQUENTIAL @ no__t-3ONLY, dependendo das características de e/s de carga de trabalho. Defina esse valor como 1 para forçar a abertura de arquivos para o arquivo @ no__t-0RANDOM @ no__t-1ACCESS. O arquivo @ no__t-0RANDOM @ no__t-1ACCESS impede que o sistema de arquivos e o Gerenciador de cache se probusquem.
+    O padrão é 0. Esse parâmetro determina se os arquivos são abertos para o arquivo\_acesso aleatório\_ou somente para\_de arquivo\_SEQUENCIAl, dependendo das características de e/s de carga de trabalho. Defina esse valor como 1 para forçar a abertura de arquivos para o arquivo\_acesso aleatório\_. O arquivo\_acesso\_aleatório impede que o sistema de arquivos e o Gerenciador de cache se probusquem.
 
     >[!NOTE]
     > Essa configuração deve ser avaliada com cuidado porque pode ter impacto potencial no aumento do cache de arquivos do sistema.
@@ -85,7 +85,7 @@ As seguintes configurações do registro REG @ no__t-0DWORD podem afetar o desem
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    O padrão é 4. Esse parâmetro especifica a memória máxima a ser consumida por entradas de cache de identificador de arquivo. O mínimo é 1 e o máximo é 1 @ no__t-01024 @ no__t-11024 @ no__t-21024 (1073741824).
+    O padrão é 4. Esse parâmetro especifica a memória máxima a ser consumida por entradas de cache de identificador de arquivo. O mínimo é 1 e o máximo é 1\*1024\*1024\*1024 (1073741824).
 
 -   **LockFileHandleCacheInMemory**
 

@@ -18,7 +18,7 @@ ms.locfileid: "71408013"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>Planejando o posicionamento do proxy do servidor de federação
 
-Depois de reunir todas as informações que você usará para projetar sua infraestrutura Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 e depois de planejar o servidor de Federação e a estratégia do servidor Web, você pode planejar quando e onde posicionar o servidor de Federação proxies em seu novo design. As informações nos tópicos a seguir podem ajudá-lo a determinar quando e onde posicionar um proxy de servidor de Federação e se deseja configurá-lo para a função de parceiro de conta ou a função de parceiro de recurso:  
+Depois de reunir todas as informações que você usará para criar seu Serviços de Federação do Active Directory (AD FS) \(AD FS infraestrutura de\) e depois de planejar o servidor de Federação e a estratégia do servidor Web, você pode planejar quando e onde posicionar os proxies do servidor de Federação em seu novo design. As informações nos tópicos a seguir podem ajudá-lo a determinar quando e onde posicionar um proxy de servidor de Federação e se deseja configurá-lo para a função de parceiro de conta ou a função de parceiro de recurso:  
   
 -   [Analisar a função do servidor de federação no parceiro de conta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   

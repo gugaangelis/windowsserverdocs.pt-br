@@ -15,9 +15,9 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365916"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: Visão geral
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: visão geral
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Os tópicos nesta seção fornecem instruções para implantar Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. As instruções são projetadas para ajudar você a criar uma configuração funcional completa de Pastas de Trabalho, com computadores cliente prontos para começar a usar Pastas de Trabalho localmente ou pela Internet.  
   
@@ -37,7 +37,7 @@ Para seguir os procedimentos e exemplos nestes tópicos, você precisa ter os se
   
 -   Uma floresta do Active Directory® Domain Services com extensões de esquema no Windows Server 2012 R2 para dar suporte à referência automática de computadores e dispositivos no servidor de arquivos correto ao usar vários servidores de arquivos. É preferível que o DNS seja habilitado na floresta, mas isso não é obrigatório.  
   
--   Um controlador de domínio: Um servidor que tem a função AD DS habilitada e é configurado com um domínio (para o exemplo de teste, contoso.com).  
+-   Um controlador de domínio: um servidor que tenha a função do AD DS habilitada e seja configurado com um domínio (no exemplo de teste, contoso.com).  
   
     Um controlador de domínio que esteja executando pelo menos o Windows Server 2012 R2 é necessário para dar suporte ao registro de dispositivo para Workplace Join. Se você não quiser usar o Workplace Join, poderá executar o Windows Server 2012 no controlador de domínio.  
   
@@ -51,14 +51,14 @@ Para seguir os procedimentos e exemplos nestes tópicos, você precisa ter os se
   
 Para o ambiente de teste que estamos abordando neste guia, você deve ter a topologia mostrada no diagrama a seguir. Os computadores podem ser computadores físicos ou VMs (máquinas virtuais). 
   
-![Diagrama mostrando a Internet, o DMZ e os segmentos de rede da Contoso. No segmento de Internet: Client2 na DMZ: um servidor WAP; no segmento contoso: Servidor de pastas de trabalho, um controlador de domínio, um servidor AD FS e CLIENT1](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
+![Diagrama mostrando a Internet, o DMZ e os segmentos de rede da Contoso. No segmento de Internet: Cliente2; no DMZ: um servidor WAP; no segmento da Contoso: o servidor de Pastas de Trabalho, um controlador de domínio, um servidor do AD FS e Cliente1](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
 
 ## <a name="deployment-overview"></a>Visão geral da implantação  
 Nesse grupo de tópicos, você verá um exemplo passo a passo de como configurar o AD FS, o Proxy de aplicativo Web e Pastas de Trabalho em um ambiente de teste. Os componentes serão configurados nesta ordem:  
   
 1.  AD FS  
   
-2.  Pastas de trabalho  
+2.  Pastas de Trabalho  
   
 3.  Proxy de aplicativo Web  
   
@@ -69,15 +69,15 @@ Você também usará um Script do Windows PowerShell para criar certificados aut
 ## <a name="deployment-steps"></a>Etapas de implantação  
 Para executar a implantação usando a interface de usuário do Windows Server, siga as etapas nestes tópicos:  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 1, configurar AD FS @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 2, AD FS trabalho de pós-configuração @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 3, configurar pastas de trabalho @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 3, configurar pastas de trabalho](deploy-work-folders-adfs-step3.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 4, configurar o proxy de aplicativo Web @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 4, configurar o proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
--   Pastas de trabalho [Deploy com AD FS e proxy de aplicativo Web: Etapa 5, configurar clientes @ no__t-0  
+-   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
 
 ## <a name="see-also"></a>Consulte também  
 [Visão geral das pastas de trabalho](Work-Folders-Overview.md)  

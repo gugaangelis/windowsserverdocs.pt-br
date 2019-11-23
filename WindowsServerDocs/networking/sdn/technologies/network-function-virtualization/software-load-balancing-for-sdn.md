@@ -19,9 +19,9 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71355569"
 ---
-# <a name="software-load-balancing-slb-for-sdn"></a>Balanceamento de carga de software \(SLB @ no__t-1 para SDN
+# <a name="software-load-balancing-slb-for-sdn"></a>Balanceamento de carga de software \(\) SLB para SDN
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre o balanceamento de carga de software para a rede definida pelo software no Windows Server 2016.  
 

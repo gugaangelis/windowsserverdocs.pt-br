@@ -17,7 +17,7 @@ ms.locfileid: "71394160"
 ---
 # <a name="create-a-quota-template"></a>Criar um modelo de cota
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Um *modelo de cota* define um limite de espaço, o tipo de cota (rígida ou flexível) e, opcionalmente, um conjunto de notificações que será gerado automaticamente quando o uso da cota atingir limites definidos.
 
@@ -67,7 +67,7 @@ Por exemplo, você pode configurar limites para enviar uma mensagem de email par
 
    - Para notificar os administradores quando um limite é alcançado, selecione a caixa de seleção **Enviar email para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão as notificações. Use o formato <em>account@domain</em> e use ponto e vírgula para separar várias contas.
    - Para enviar email para a pessoa que salvou o arquivo que atingido o limite de cota, selecione a caixa de seleção **envie um email para o usuário que excedeu o limite**.
-   - Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, a variável de **proprietário de Io \[Source @ no__t-2** insere o nome do usuário que salvou o arquivo que atingiu o limite de cota. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+   - Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, a variável **\[proprietário da e/s de origem\]** insere o nome do usuário que salvou o arquivo que atingiu o limite de cota. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
    - Para configurar cabeçalhos adicionais (inclusive de, Cc, Cco e para resposta), clique em **Cabeçalhos de email adicionais**.
 
 4. Para cadastrar um evento:

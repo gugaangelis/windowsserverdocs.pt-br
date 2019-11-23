@@ -78,7 +78,7 @@ wbadmin start systemstaterecovery
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- Para executar uma recuperação de estado do sistema do backup de 04/30/2013 às 9:00. que é armazenado no recurso compartilhado \\ @ no__t-1servername\share para Server01, digite:  
+- Para executar uma recuperação de estado do sistema do backup de 04/30/2013 às 9:00. que está armazenado no recurso compartilhado \\\\servername\share para Server01, digite:  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

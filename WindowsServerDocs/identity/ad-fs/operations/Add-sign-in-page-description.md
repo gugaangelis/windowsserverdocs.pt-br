@@ -1,6 +1,6 @@
 ---
 ms.assetid: 330c7b61-dde0-432f-9b74-d250ad9cc808
-title: Adicionar assinatura @ no__t-0in página descrição
+title: Adicionar\-de entrada na descrição da página
 description: ''
 author: billmath
 ms.author: billmath
@@ -16,11 +16,11 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71407748"
 ---
-# <a name="add-sign-in-page-description"></a>Adicionar assinatura @ no__t-0in página descrição
+# <a name="add-sign-in-page-description"></a>Adicionar\-de entrada na descrição da página
 
 
-## <a name="to-add-sign-in-page-description"></a>Para adicionar o sinal @ no__t-0in página descrição  
-Para adicionar uma descrição de página Sign @ no__t-0in à página Sign @ no__t-1in, use o seguinte cmdlet e sintaxe do Windows PowerShell.  
+## <a name="to-add-sign-in-page-description"></a>Para adicionar o\-de entrada na descrição da página  
+Para adicionar um\-de entrada na descrição da página à página de\-de entrada, use o cmdlet e a sintaxe do Windows PowerShell a seguir.  
 
 ![Adicionar Descrição de entrada](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
 
@@ -28,9 +28,9 @@ Para adicionar uma descrição de página Sign @ no__t-0in à página Sign @ no_
  
   
 > [!IMPORTANT]  
-> A cadeia de caracteres para o parâmetro `SignInPageDescriptionText` dá suporte a HTML puro com e sem tags. Portanto, você também pode executar o cmdlet a seguir sem usar a marca &lt;p @ no__t-1.  `Set-AdfsGlobalWebContent -SignInPageDescriptionText "Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information." ` 
+> A cadeia de caracteres para o parâmetro `SignInPageDescriptionText` dá suporte a HTML puro com e sem tags. Portanto, você também pode executar o cmdlet a seguir sem usar a marca &lt;p&gt;.  `Set-AdfsGlobalWebContent -SignInPageDescriptionText "Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information." ` 
 
-Depois que a página Sign @ no__t-0in for personalizada, a personalização terá precedência; Portanto, você deve personalizar o para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Quando você configura conteúdo localizado, ele deve ser configurado com uma localidade @ no__t-0less primeiro, por exemplo, "en", antes de configurar o país e a região @ no__t-1specific localidade, como "en @ no__t-2US".  
+Depois que o sinal\-na página é personalizado, a personalização tem precedência; Portanto, você deve personalizar o para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Quando você configura o conteúdo localizado, ele deve ser configurado com um país\-menos localidade, por exemplo, "en", antes de configurar o país e a região\-localidade específica, como "en\-US".  
 
 ## <a name="additional-references"></a>Referências adicionais 
 [AD FS a personalização de entrada do usuário](AD-FS-user-sign-in-customization.md)  

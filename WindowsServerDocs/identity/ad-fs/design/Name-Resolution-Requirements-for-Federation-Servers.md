@@ -18,12 +18,12 @@ ms.locfileid: "71408045"
 ---
 # <a name="name-resolution-requirements-for-federation-servers"></a>Requisitos de resolução de nome para servidores de federação
 
-Quando os computadores cliente na rede corporativa tentam acessar um aplicativo ou serviço Web protegido por Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1, eles devem primeiro se autenticar em um servidor de Federação. Uma maneira de se autenticar é fazer com que os clientes de rede corporativa acessem um servidor de federação local por meio da autenticação integrada do Windows.  
+Quando os computadores cliente na rede corporativa tentam acessar um aplicativo ou serviço Web protegido por Serviços de Federação do Active Directory (AD FS) \(AD FS\), eles devem primeiro se autenticar em um servidor de Federação. Uma maneira de se autenticar é fazer com que os clientes de rede corporativa acessem um servidor de federação local por meio da autenticação integrada do Windows.  
   
 ## <a name="configure-corporate-dns"></a>Configurar DNS corporativo  
-Para que a resolução de nomes bem-sucedida por meio da autenticação integrada do Windows em servidores de federação local possa ocorrer, o sistema de nomes de domínio \(DNS @ no__t-1 na rede corporativa do parceiro de conta deve ser configurado para um novo host \(A @ no__t-3 registro de recurso que resolverá o nome de domínio totalmente qualificado \(FQDN @ no__t-5 nome do host do servidor de Federação para o endereço IP do cluster do servidor de Federação.  
+Para que a resolução de nomes bem-sucedida por meio da autenticação integrada do Windows em servidores de federação local possa ocorrer, o sistema de nomes de domínio \(DNS\) na rede corporativa do parceiro de conta deve ser configurado para um novo host \(um registro de recurso de\) que resolverá o nome de domínio totalmente qualificado \(FQDN\) nome de host do servidor de Federação para o endereço IP do cluster do servidor de  
   
-Na ilustração a seguir, você pode ver como essa tarefa é realizada para determinado cenário. Nesse cenário, o balanceamento de carga de rede da Microsoft \(NLB @ no__t-1 fornece um único nome FQDN de cluster e um único endereço IP de cluster para um farm de servidores de Federação existente.  
+Na ilustração a seguir, você pode ver como essa tarefa é realizada para determinado cenário. Nesse cenário, o balanceamento de carga de rede da Microsoft \(o NLB\) fornece um único nome FQDN de cluster e um único endereço IP de cluster para um farm de servidores de Federação existente.  
   
 ![requisitos de nome](media/adfs2_deploy_single_fs.gif)  
   

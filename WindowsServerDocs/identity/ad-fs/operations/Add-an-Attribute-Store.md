@@ -19,7 +19,7 @@ ms.locfileid: "71358392"
 # <a name="add-an-attribute-store"></a>Adicionar um repositório de atributos
 
 
-Contas de usuário e contas de computador que exigem acesso a um recurso protegido por Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 são armazenadas em um repositório de atributos, como Active Directory Domain Services \(AD DS @ no__t-3. O mecanismo de emissão de declarações usa repositórios de atributos para coletar dados necessários para emitir declarações. Os dados dos repositórios de atributos são então projetados como declarações.  
+Contas de usuário e contas de computador que exigem acesso a um recurso protegido por Serviços de Federação do Active Directory (AD FS) \(AD FS\) são armazenadas em um repositório de atributos, como Active Directory Domain Services \(AD DS\). O mecanismo de emissão de declarações usa repositórios de atributos para coletar dados necessários para emitir declarações. Os dados dos repositórios de atributos são então projetados como declarações.  
   
 Você pode usar o procedimento a seguir para adicionar um repositório de atributos ao Serviço de Federação.  
   
@@ -39,7 +39,7 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
   
    -   Em **tipo de repositório de atributo**, selecione um tipo de repositório de atributo com suporte, **Active Directory**, **LDAP**ou **SQL**.  
   
-   -   Em **cadeia de conexão**, se você tiver selecionado um protocolo de acesso de diretório leve \(LDAP @ no__t-2 ou um repositório linguagem SQL \(SQL @ no__t-4, insira a cadeia de caracteres que você usou para estabelecer uma conexão com o atributo armazenadas. Para Active Directory repositórios de atributo, nenhuma cadeia de conexão é necessária; Portanto, esse campo é desabilitado.  
+   -   Em **cadeia de conexão**, se você tiver selecionado um protocolo de acesso de diretório simples \(armazenamento de\) LDAP ou um linguagem SQL \(armazenamento de\) SQL, insira a cadeia de caracteres usada para estabelecer uma conexão com o repositório de atributos. Para Active Directory repositórios de atributo, nenhuma cadeia de conexão é necessária; Portanto, esse campo é desabilitado.  
   
        > [!NOTE]  
        > O AD FS cria automaticamente um repositório de atributos de Active Directory, por padrão.  

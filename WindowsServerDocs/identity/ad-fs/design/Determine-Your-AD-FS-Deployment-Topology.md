@@ -18,17 +18,17 @@ ms.locfileid: "71408111"
 ---
 # <a name="determine-your-ad-fs-deployment-topology"></a>Determinar a topologia de implantação do AD FS
 
-A primeira etapa no planejamento de uma implantação do Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 é determinar a topologia de implantação correta para atender às necessidades de logon único @ no__t-2on \(SSO @ no__t-4 da sua organização. Os tópicos nesta seção descrevem as várias topologias de implantação que você pode usar com AD FS. Eles também descrevem os benefícios e as limitações associados a cada topologia de implantação para que você possa selecionar a topologia mais apropriada às necessidades específicas dos seus negócios.  
+A primeira etapa no planejamento de uma implantação do Serviços de Federação do Active Directory (AD FS) \(AD FS\) é determinar a topologia de implantação certa para atender ao\-de logon único em \(necessidades de\) de SSO de sua organização. Os tópicos nesta seção descrevem as várias topologias de implantação que você pode usar com AD FS. Eles também descrevem os benefícios e as limitações associados a cada topologia de implantação para que você possa selecionar a topologia mais apropriada às necessidades específicas dos seus negócios.  
   
 Antes de ler este tópico sobre topologia de implantação, é recomendável concluir primeiro as tarefas na ordem mostrada na tabela a seguir.  
   
 |Tarefa recomendada|Descrição|Referência|  
 |--------------------|---------------|-------------|  
-|Examine como AD FS dados são armazenados e replicados em outros servidores de Federação em um farm de servidores de Federação.|Entenda o objetivo e os métodos de replicação que podem ser usados para os dados subjacentes que estão armazenados no banco de dados de configuração do AD FS. Este tópico apresenta os conceitos do banco de dados de configuração e descreve os dois tipos de bancos de dados: Banco de dados interno do Windows \(WID @ no__t-1 e Microsoft SQL Server.|[A função do banco de dados de configuração do AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)|  
+|Examine como AD FS dados são armazenados e replicados em outros servidores de Federação em um farm de servidores de Federação.|Entenda o objetivo e os métodos de replicação que podem ser usados para os dados subjacentes que estão armazenados no banco de dados de configuração do AD FS. Este tópico apresenta os conceitos do banco de dados de configuração e descreve os dois tipos de banco de dados: banco de dados interno do Windows \(WID\) e Microsoft SQL Server.|[A função do banco de dados de configuração do AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)|  
 |Selecione o tipo de banco de dados de configuração do AD FS que você implantará na sua organização.|Revise os vários benefícios e limitações associados ao uso do WID ou SQL Server como o banco de dados de configuração do AD FS, junto com os vários cenários de aplicativos compatíveis.|[Considerações sobre a topologia de implantação do AD FS](AD-FS-Deployment-Topology-Considerations.md)|  
   
 > [!NOTE]  
-> Para implementar a redundância básica, o balanceamento de carga e a opção de dimensionar o Serviço de Federação \(if necessário @ no__t-1, recomendamos que você implante pelo menos dois servidores de Federação por farm de servidores de Federação para todos os ambientes de produção, independentemente do tipo de banco de dados que será usado.  
+> Para implementar a redundância básica, o balanceamento de carga e a opção de dimensionar o Serviço de Federação \(se necessário\), recomendamos que você implante pelo menos dois servidores de Federação por farm de servidores de Federação para todos os ambientes de produção, independentemente do tipo de banco de dados que será usado.  
   
 Depois de revisar o conteúdo da tabela anterior, prossiga para os seguintes tópicos desta seção:  
   

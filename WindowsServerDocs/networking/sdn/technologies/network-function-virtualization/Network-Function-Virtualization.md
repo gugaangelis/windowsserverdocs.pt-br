@@ -21,9 +21,9 @@ ms.locfileid: "71355656"
 ---
 # <a name="network-function-virtualization"></a>Virtualização de função de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para saber mais sobre a virtualização de função de rede, que permite implantar dispositivos de rede virtual, como o Firewall do datacenter, o gateway de RAS multilocatário e o balanceamento de carga de software \(SLB @ no__t-1 multiplexador \(MUX @ No_ _T-3.
+Você pode usar este tópico para saber mais sobre a virtualização de função de rede, que permite implantar dispositivos de rede virtual, como o Firewall do datacenter, o gateway de RAS multilocatário e o balanceamento de carga de software \(SLB\) multiplexador \(MUX\).
   
 >[!NOTE]  
 >Além deste tópico, a documentação de virtualização de função de rede a seguir está disponível.  
