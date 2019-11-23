@@ -21,7 +21,7 @@ ms.locfileid: "71394459"
 
 O Windows Server 2012 R2, o Windows Server 2012 e o Windows Server 2016 incluem um recurso chamado SMB Direct, que dá suporte ao uso de adaptadores de rede que têm o recurso RDMA (acesso remoto direto à memória). Os adaptadores de rede com RDMA podem funcionar a toda a velocidade com latência muito baixa, usando muito pouco da CPU. Para cargas de trabalho como o Hyper-V ou o Microsoft SQL Server, isso permite que um servidor de arquivos remoto se pareça com um armazenamento local. O SMB Direct inclui:
 
-- Maior taxa de transferência: Aproveita a taxa de transferência total de redes de alta velocidade em que os adaptadores de rede coordenam a transferência de grandes volumes de dados em velocidade da linha.
+- Maior taxa de transferência: otimiza a taxa de transferência total de redes de alta velocidade nas quais os adaptadores de rede coordenam a transferência de grandes quantidades de dados na velocidade da linha.
 - Baixa latência: Fornece respostas extremamente rápidas às solicitações de rede e, como resultado, faz com que o armazenamento de arquivos remoto pareça estar diretamente conectado ao armazenamento em bloco.
 - Baixa utilização da CPU: Usa menos ciclos da CPU ao transferir dados pela rede, o que disponibiliza mais energia para os aplicativos para servidor.
 
@@ -124,5 +124,5 @@ Veja como confirmar o recurso de failover do SMB Direct:
 ## <a name="more-information"></a>Mais informações
 
 - [Visão geral do bloco de mensagens do servidor](file-server-smb-overview.md)
-- Disponibilidade de servidor @no__t 0Increasing, armazenamento e rede: visão geral do cenário](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Aumento da disponibilidade de servidor, armazenamento e rede: visão geral do cenário](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [Implantar o Hyper-V em SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

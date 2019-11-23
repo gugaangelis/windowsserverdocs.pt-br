@@ -38,10 +38,10 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/d: \<PrinterName >|Especifica a impressora na qual você deseja imprimir o trabalho. Para imprimir em uma impressora conectada localmente, especifique a porta no computador em que a impressora está conectada.</br>-Os valores válidos para as portas paralelas são LPT1, LPT2 e LPT3.</br>-Os valores válidos para as portas seriais são COM1, COM2, COM3 e COM4.</br>Você também pode especificar uma impressora de rede usando seu nome de fila (\\ @ no__t-1*servername*\*PrinterName *). Se você não especificar uma impressora, o trabalho de impressão será enviado para LPT1 por padrão.|
-|> de @no__t 0Drive:|Especifica a unidade lógica ou física na qual o arquivo que você deseja imprimir está localizado. Esse parâmetro não será necessário se o arquivo que você deseja imprimir estiver localizado na unidade atual.|
-|\<Path >|Especifica o local do arquivo que você deseja imprimir. Esse parâmetro não será necessário se o arquivo que você deseja imprimir estiver localizado no diretório atual.|
-|\<FileName > [...]|Obrigatório. Especifica o arquivo que você deseja imprimir. Você pode incluir vários arquivos em um comando.|
+|/d:\<PrinterName >|Especifica a impressora na qual você deseja imprimir o trabalho. Para imprimir em uma impressora conectada localmente, especifique a porta no computador em que a impressora está conectada.</br>-Os valores válidos para as portas paralelas são LPT1, LPT2 e LPT3.</br>-Os valores válidos para as portas seriais são COM1, COM2, COM3 e COM4.</br>Você também pode especificar uma impressora de rede usando seu nome de fila (\\\\*servername*\*impressoraname *). Se você não especificar uma impressora, o trabalho de impressão será enviado para LPT1 por padrão.|
+|> da unidade de \<:|Especifica a unidade lógica ou física na qual o arquivo que você deseja imprimir está localizado. Esse parâmetro não será necessário se o arquivo que você deseja imprimir estiver localizado na unidade atual.|
+|\<caminho >|Especifica o local do arquivo que você deseja imprimir. Esse parâmetro não será necessário se o arquivo que você deseja imprimir estiver localizado no diretório atual.|
+|\<nome de arquivo > [...]|Necessário. Especifica o arquivo que você deseja imprimir. Você pode incluir vários arquivos em um comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -61,7 +61,7 @@ Para enviar o arquivo Report. txt no diretório atual para uma impressora conect
 ```
 print /d:lpt2 report.txt
 ```
-Para enviar o arquivo Report. txt no diretório c:\Accounting para a fila de impressão Printer1 no servidor \\ @ no__t-1CopyRoom, digite:
+Para enviar o arquivo Report. txt no diretório c:\Accounting para a fila de impressão Printer1 no servidor \\\\CopyRoom, digite:
 ```
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```

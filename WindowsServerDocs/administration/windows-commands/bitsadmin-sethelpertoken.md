@@ -23,7 +23,7 @@ ms.locfileid: "71380572"
 
 Define o token primário do prompt de comando atual (ou um token de conta de usuário local arbitrário, se especificado) como um [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)do trabalho de transferência de bits.
 
-**BITS 3,0 e anteriores**: Não compatível.
+**BITS 3,0 e anteriores**: sem suporte.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,7 +36,7 @@ bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
 |Parâmetro|Descrição|
 |---------|-----------|
 |Job|O nome de exibição ou o GUID do trabalho.|
-|\< @ no__t-1 @ no__t-2 \<password @ no__t-4|As credenciais opcionais @ no__t-0The de uma conta de usuário local cujo token deve ser usado.|
+|\<username@domain\> \<senha\>|Opcional&mdash;as credenciais de uma conta de usuário local cujo token deve ser usado.|
 
 #### <a name="additional-references"></a>Referências adicionais
 

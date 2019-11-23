@@ -17,13 +17,13 @@ ms.locfileid: "71394233"
 ---
 # <a name="create-a-file-expiration-task"></a>Criar uma tarefa de expiração de arquivos
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 O procedimento a seguir percorre com você o processo de criação de uma tarefa de gerenciamento de arquivos para arquivos expirados. As tarefas de expiração de arquivo são usadas para mover automaticamente todos os arquivos que correspondem a certos critérios para um diretório de expiração especificado, onde um administrador pode então recuperar essas arquivos e deletá-los.
 
 Quando uma tarefa de expiração de arquivo é executada, um novo diretório é criado no diretório de expiração, agrupados pelo nome do servidor no qual a tarefa foi executada.
 
-O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arquivos e na hora em que ela foi executada. Quando um arquivo expirado é encontrado, ele é movido para o novo diretório, preservando, ao mesmo tempo, sua estrutura original de diretório.
+O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arquivos e na hora em que ela foi executada. Quando um arquivo expirado é encontrado, ele é movido para o novo diretório, preservando sua estrutura de diretórios original.
 
 ## <a name="to-create-a-file-expiration-task"></a>Para criar uma tarefa de expiração de arquivo
 
@@ -61,7 +61,7 @@ O nome do novo diretório é baseado no nome da tarefa de gerenciamento de arqui
 
      - Para enviar email para a pessoa cujos arquivos estão prestes a expirar, selecione a caixa de seleção **Envie um email para o usuário cujos arquivos estão prestes a expirar**.
 
-     - Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, a variável do **proprietário do arquivo \[Source @ no__t-2** insere o nome do usuário cujo arquivo está prestes a expirar. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+     - Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de cota que causou a notificação. Por exemplo, o **proprietário do arquivo de origem\[\]** variável insere o nome do usuário cujo arquivo está prestes a expirar. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
 
      - Para anexar uma lista dos arquivos que estão prestes a expirar, clique em **Anexar ao email uma lista dos arquivos no qual ação será executada** e digite ou selecione um valor para **Número máximo de arquivos na lista**.
 

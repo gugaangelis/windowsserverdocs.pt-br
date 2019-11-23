@@ -22,7 +22,7 @@ ms.locfileid: "71379546"
 ---
 # <a name="change"></a>change
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 altera as configurações de servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD) para logons, mapeamentos de porta COM e modo de instalação.
 > [!NOTE]
@@ -41,6 +41,6 @@ altera as configurações de servidor Host da Sessão da Área de Trabalho Remot
 > |  [change port](change-port.md)  |                lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.                |
 > |  [change user](change-user.md)  |                            altera o modo de instalação do servidor de host da sessão da área de trabalho remota.                             |
 > 
-> #### <a name="additional-references"></a>Referências adicionais
+> #### <a name="additional-references"></a>referências adicionais
 > [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 > [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)

@@ -36,7 +36,7 @@ exec <ScriptFile.cmd>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|@no__t -0ScriptFile. cmd >|Especifica o arquivo de script a ser executado.|
+|\<scriptfile. cmd >|Especifica o arquivo de script a ser executado.|
 
 ## <a name="remarks"></a>Comentários
 

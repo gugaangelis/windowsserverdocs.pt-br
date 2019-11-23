@@ -38,8 +38,8 @@ sc [<ServerName>] delete [<ServiceName>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ServerName >|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo, \\ @ no__t-1myserver). Para executar o SC. exe localmente, omita esse parâmetro.|
-|\<ServiceName >|Especifica o nome do serviço retornado pela operação **GetKeyName** .|
+|\<ServerName >|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo, \\\\meuservidor). Para executar o SC. exe localmente, omita esse parâmetro.|
+|> do \<ServiceName|Especifica o nome do serviço retornado pela operação **GetKeyName** .|
 |?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

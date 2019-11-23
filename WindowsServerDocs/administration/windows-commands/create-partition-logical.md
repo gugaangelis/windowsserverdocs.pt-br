@@ -22,9 +22,9 @@ ms.locfileid: "71378895"
 ---
 # <a name="create-partition-logical"></a>criar partição lógica
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Cria uma partição lógica em uma partição estendida existente. Você só pode usar esse comando no registro mestre de inicialização \(MBR @ no__t-1 discos.  
+Cria uma partição lógica em uma partição estendida existente. Você só pode usar esse comando no registro mestre de inicialização \(discos\) MBR.  
   
   
   
@@ -38,10 +38,10 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 |  Parâmetro  |                                                                                                                                                                                                                       Descrição                                                                                                                                                                                                                        |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  tamanho @ no__t-0 @ no__t-1  |                                                                                                              Especifica o tamanho da partição lógica em megabytes \(MB @ no__t-1, que deve ser menor do que a partição estendida. Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na partição estendida.                                                                                                               |
-| deslocamento @ no__t-0 @ no__t-1 | Especifica o deslocamento em kilobytes \(KB @ no__t-1, no qual a partição é criada. O deslocamento é arredondado para preencher completamente qualquer tamanho de cilindro usado. Se nenhum deslocamento for fornecido, a partição será colocada na primeira extensão de disco grande o suficiente para contê-la. A partição é pelo menos tão longa em bytes quanto o número especificado pelo **tamanho @ no__t-1 @ no__t-2**. Se você especificar um tamanho para a partição lógica, ela deverá ser menor do que a partição estendida. |
-| alinhar @ no__t-0 @ no__t-1  |                                                                                     Alinha todas as extensões de volume ou partição ao limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(LUN @ no__t-1 matrizes para melhorar o desempenho.  <n> é o número de kilobytes \( KB @ no__t-2 desde o início do disco até o limite de alinhamento mais próximo.                                                                                      |
-|    NOERR    |                                                                                                                           Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                                                                                                           |
+|  tamanho\=<n>  |                                                                                                              Especifica o tamanho da partição lógica em megabytes \(MB\), que deve ser menor do que a partição estendida. Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na partição estendida.                                                                                                               |
+| \=de deslocamento <n> | Especifica o deslocamento em kilobytes \(KB\), no qual a partição é criada. O deslocamento é arredondado para preencher completamente qualquer tamanho de cilindro usado. Se nenhum deslocamento for fornecido, a partição será colocada na primeira extensão de disco grande o suficiente para contê-la. A partição é pelo menos tão longa em bytes quanto o número especificado pelo **tamanho\=<n>** . Se você especificar um tamanho para a partição lógica, ela deverá ser menor do que a partição estendida. |
+| alinhar\=<n>  |                                                                                     Alinha todas as extensões de volume ou partição ao limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(matrizes de\) LUN para melhorar o desempenho.  <n> é o número de kilobytes \(KB\) desde o início do disco até o limite de alinhamento mais próximo.                                                                                      |
+|    NOERR    |                                                                                                                           somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                                                                                                           |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -58,7 +58,7 @@ Para criar uma partição lógica de 1000 megabytes de tamanho, na partição es
 create partition logical size=1000  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

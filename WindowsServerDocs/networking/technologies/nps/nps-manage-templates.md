@@ -17,9 +17,9 @@ ms.locfileid: "71396158"
 ---
 # <a name="manage-nps-templates"></a>Gerenciar modelos do NPS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar os modelos do servidor de políticas de rede \(NPS @ no__t-1 para criar elementos de configuração, como serviço RADIUS clientes \(RADIUS @ no__t-3 ou segredos compartilhados, que você pode reutilizar no NPS local e exportar para uso em outros NPSs. 
+Você pode usar o servidor de políticas de rede \(modelos de\) do NPS para criar elementos de configuração, como serviço RADIUS \(clientes RADIUS\) ou segredos compartilhados, que você pode reutilizar no NPS local e exportar para uso em outros NPSs. 
 
 O gerenciamento de modelos fornece um nó no console do NPS, no qual você pode criar, modificar, excluir, duplicar e exibir o uso de modelos de NPS. Os modelos de NPS são projetados para reduzir a quantidade de tempo e o custo necessário para configurar o NPS em um ou mais servidores.
 
@@ -31,15 +31,15 @@ Os seguintes tipos de modelo de NPS estão disponíveis para configuração no g
 
 - **Servidores RADIUS remotos**. Esse modelo possibilita que você defina as configurações do servidor RADIUS remoto que você pode reutilizar selecionando o modelo no local apropriado no console do NPS. 
 
-- **Filtros de IP**. Esse modelo possibilita que você crie filtros IPv4 (protocolo IP versão 4) e IP versão 6 \(IPv6 @ no__t-1 que podem ser reutilizados \(by selecionando o modelo no local apropriado no console do NPS @ no__t-3 quando você configurar políticas de rede.
+- **Filtros de IP**. Esse modelo possibilita que você crie filtros de protocolo IP versão 4 (IPv4) e IP versão 6 \(IPv6\) que você pode reutilizar \(selecionando o modelo no local apropriado no console do NPS\) quando você configura as políticas de rede.
 
 ## <a name="create-an-nps-template"></a>Criar um modelo de NPS
 
 Configurar um modelo é diferente de configurar diretamente o NPS. A criação de um modelo não afeta a funcionalidade do NPS. Ele é apenas quando você seleciona o modelo no local apropriado no console do NPS e aplica o modelo que o modelo afeta a funcionalidade do NPS. 
 
-Por exemplo, se você configurar um cliente RADIUS no console do NPS em **clientes e servidores RADIUS**, altere a configuração do NPS e execute uma etapa para configurar o NPS para se comunicar com um dos seus servidores de acesso à rede. a próxima etapa do @no__t 0The é configurar o servidor de acesso à rede \(NAS @ no__t-2 para se comunicar com o NPS. \) 
+Por exemplo, se você configurar um cliente RADIUS no console do NPS em **clientes e servidores RADIUS**, altere a configuração do NPS e execute uma etapa para configurar o NPS para se comunicar com um dos seus servidores de acesso à rede. \(a próxima etapa é configurar o servidor de acesso à rede \(\) do NAS para se comunicar com o NPS.\) 
 
-No entanto, se você configurar um novo modelo de **clientes RADIUS** no console do NPS em **Gerenciamento de modelos** , em vez de criar um novo cliente RADIUS em **clientes e servidores RADIUS**, você criou um modelo, mas não alterou o Funcionalidade do NPS ainda. Para alterar a funcionalidade do NPS, você deve aplicar o modelo do local correto no console do NPS.
+No entanto, se você configurar um novo modelo de **clientes RADIUS** no console do NPS em **Gerenciamento de modelos** , em vez de criar um novo cliente RADIUS em **clientes e servidores RADIUS**, você criou um modelo, mas ainda não alterou a funcionalidade do NPS. Para alterar a funcionalidade do NPS, você deve aplicar o modelo do local correto no console do NPS.
 
 O procedimento a seguir fornece instruções sobre como criar um novo modelo.
 

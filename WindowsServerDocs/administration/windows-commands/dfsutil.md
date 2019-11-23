@@ -22,7 +22,7 @@ ms.locfileid: "71377983"
 ---
 # <a name="dfsutil"></a>DFSUtil
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 O comando Dfsutil gerencia namespaces, servidores e clientes do DFS. os comandos Dfsutil usam a terminologia original do Sistema de Arquivos Distribuído, com a terminologia atualizada de namespaces do DFS fornecida como explicação para a maioria dos comandos.
 
@@ -39,33 +39,33 @@ command </parameter> </param2>
 |Parâmetro|Descrição|
 |-------|--------|
 |[DFSUtil root](dfsutil-root.md)|Exibe, cria, remove, importa e exporta raízes de namespace.|
-|[DFSUtil link](dfsutil-link.md)|Exibe, cria, remove ou move pastas \(links @ no__t-1.|
+|[DFSUtil link](dfsutil-link.md)|Exibe, cria, remove ou move pastas \(links\).|
 |[Destino Dfsutil](dfsutil-target.md)|Exibe, cria, remove o destino da pasta ou o servidor de namespace.|
 |[Propriedade Dfsutil](dfsutil-property.md)|Exibe ou modifica um destino de pasta ou servidor de namespace.|
 |[Cliente Dfsutil](dfsutil-client.md)|Exibe ou modifica informações do cliente ou chaves do registro.|
 |[DFSUtil Server](dfsutil-server.md)|Exibe ou modifica a configuração do namespace.|
-|[DFSUtil diag](dfsutil-diag.md)|Execute Diagnostics ou exiba dfsdirs @ no__t-0dfspath.|
-|[DFSUtil Domain](dfsutil-domain.md)|Exibe todos os namespaces @ no__t-0based de domínio em um domínio.|
+|[DFSUtil diag](dfsutil-diag.md)|Executar diagnóstico ou exibir dfsdirs\/dfspath.|
+|[DFSUtil Domain](dfsutil-domain.md)|Exibe todos os namespaces baseados em\-de domínio em um domínio.|
 |[Cache Dfsutil](dfsutil-cache.md)|Exibe ou libera o cache do cliente.|
 |[DFSUtil oldcli](dfsutil-oldcli.md)|Use o comando Dfsutil \/oldcli para usar a sintaxe Dfsutil original.|
 
 ## <a name="remarks-optional-section"></a>Comentários <optional section>
-Se você especificar um objeto \(such como um servidor de namespace @ no__t-1 no final de um comando, a maioria dos comandos exibirá informações sobre o objeto sem exigir mais parâmetros ou comandos. Por exemplo, ao usar o comando Dfsutil root, você pode acrescentar uma raiz de namespace ao comando para exibir informações sobre a raiz.
+Se você especificar um objeto \(como um servidor de namespace\) no final de um comando, a maioria dos comandos exibirá informações sobre o objeto sem a necessidade de parâmetros ou comandos adicionais. Por exemplo, ao usar o comando Dfsutil root, você pode acrescentar uma raiz de namespace ao comando para exibir informações sobre a raiz.
 
 ## <a name="BKMK_Examples"></a>Disso
-&lt;Here é onde você coloca uma descrição detalhada do seu exemplo. &gt;
+&lt;aqui é onde você coloca uma descrição detalhada do seu exemplo.&gt;
 
 ```
 This /is /the /example /of /calling /command /with /parameters
 ```
 
-&lt;Here é onde você coloca uma descrição detalhada de outro exemplo. &gt;
+&lt;aqui é onde você coloca uma descrição detalhada de outro exemplo.&gt;
 
 ```
 This /is /a:different /example
 ```
 
-## <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>referências adicionais
 
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

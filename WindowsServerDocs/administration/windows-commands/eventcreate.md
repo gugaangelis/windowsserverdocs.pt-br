@@ -36,14 +36,14 @@ eventcreate [/s <Computer> [/u <Domain\User> [/p <Password>]] {[/l {APPLICATION|
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/s \<Computer >|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
-|/u \<Domain \ > de usuário|Executa o comando com as permissões de conta do usuário especificado por \<User > ou < domínio \ usuário >. O padrão é as permissões do usuário conectado no momento no computador que emite o comando.|
+|/s \<computador >|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
+|/u \<domínio \ usuário >|Executa o comando com as permissões de conta do usuário especificado por \<usuário > ou < domínio \ usuário >. O padrão é as permissões do usuário conectado no momento no computador que emite o comando.|
 |/p \<senha >|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
-|/l {aplicativo @ no__t-0SYSTEM}|Especifica o nome do log de eventos em que o evento será criado. Os nomes de log válidos são aplicativo e sistema.|
+|/l {sistema de\|de aplicativos}|Especifica o nome do log de eventos em que o evento será criado. Os nomes de log válidos são aplicativo e sistema.|
 |/so \<SrcName >|Especifica a origem a ser usada para o evento. Uma origem válida pode ser qualquer cadeia de caracteres e deve representar o aplicativo ou componente que está gerando o evento.|
-|/t {ERROR @ no__t-0WARNING @ no__t-1INFORMATION @ no__t-2</br>SUCCESSAUDIT @ NO__T-0FAILUREAUDIT}|Especifica o tipo de evento a ser criado. Os tipos válidos são erro, aviso, informações, SUCCESSAUDIT e FAILUREAUDIT.|
+|/t {erro\|aviso\|informações\|</br>SUCCESSAUDIT\|FAILUREAUDIT}|Especifica o tipo de evento a ser criado. Os tipos válidos são erro, aviso, informações, SUCCESSAUDIT e FAILUREAUDIT.|
 |/ID \<EventID >|Especifica a ID do evento para o evento. Uma ID válida é qualquer número de 1 a 1000.|
-|/d \<Description >|Especifica a descrição a ser usada para o evento recém-criado.|
+|/d \<Descrição >|Especifica a descrição a ser usada para o evento recém-criado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

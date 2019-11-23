@@ -21,7 +21,7 @@ ms.locfileid: "71388566"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Etapa 1 configurar a infraestrutura básica do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como configurar a infraestrutura necessária a uma implantação básica do DirectAccess que utiliza um servidor individual do DirectAccess em um ambiente misto de IPv4 e IPv6. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [planejar uma implantação básica do DirectAccess](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md).  
   
@@ -121,7 +121,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 5.  Clique em **Concluído**.  
   
-0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
 
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -134,7 +134,7 @@ Você também deve configurar entradas DNS para o seguinte:
   
 -   **O servidor IP-HTTPS** -os clientes DirectAccess devem ser capazes de resolver o nome DNS do servidor de acesso remoto da Internet.  
   
--   **Verificação de revogação de CRL** – o DirectAccess usa a verificação de revogação de certificado para a conexão IP-HTTPS entre clientes DirectAccess e o servidor de acesso remoto e para a conexão baseada em https entre o cliente DirectAccess e a rede servidor de localização. Em ambos os casos, os clientes do DirectAccess devem poder resolver e acessar o local do ponto de distribuição da CRL.  
+-   **Verificação de revogação de CRL** – o DirectAccess usa a verificação de revogação de certificado para a conexão IP-HTTPS entre clientes DirectAccess e o servidor de acesso remoto e para a conexão baseada em https entre o cliente DirectAccess e o servidor de local de rede. Em ambos os casos, os clientes do DirectAccess devem poder resolver e acessar o local do ponto de distribuição da CRL.  
   
 ## <a name="ConfigAD"></a>Configurar Active Directory  
 O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess devem ser ingressados em um domínio do Active Directory. Os computadores cliente do DirectAccess devem ser membros de um dos seguintes tipos de domínio:  
@@ -149,7 +149,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 1.  No Gerenciador do Servidor, clique em **Servidor Local**. No painel de detalhes, clique no link ao lado do **Nome do computador**.  
   
-2.  Na caixa de diálogo **Propriedades do Sistema** , clique na guia **Nome do Computador** . Na aba **Nome do Computador** , clique em **Alterar**.  
+2.  Na caixa de diálogo **Propriedades do sistema** , clique na guia **nome do computador** . Na guia **nome do computador** , clique em **alterar**.  
   
 3.  Em **Nome do Computador**, digite o nome do computador se você também estiver alterando o nome do computador ao ingressar o servidor no domínio. Em **Membro de**, clique em **Domínio** e digite o nome do domínio em que você deseja ingressar o servidor; por exemplo, corp.contoso.com, e clique em **OK**.  
   
@@ -183,7 +183,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 9. Na caixa de diálogo **Propriedades do Sistema**, clique em Fechar. Clique em **Reiniciar Agora** quando solicitado.  
   
-0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -227,7 +227,7 @@ As configurações do DirectAccess contidas nos objetos de política de grupo do
   
 6.  Na caixa de diálogo **Selecionar Usuários, Contatos, Computadores ou Contas de Serviço**, selecione os computadores cliente que você deseja habilitar para o DirectAccess e clique em **OK**.  
   
-0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell** do powershell do @no__t  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -238,7 +238,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>Próxima etapa  
   
--   [Etapa 2: Configurar o servidor do DirectAccess Básico](da-basic-configure-s2-server.md)  
+-   [Etapa 2: configurar o servidor DirectAccess básico](da-basic-configure-s2-server.md)  
   
 
 

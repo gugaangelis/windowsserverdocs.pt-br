@@ -17,7 +17,7 @@ ms.locfileid: "71395884"
 ---
 # <a name="manage-qos-policy"></a>Gerenciar política de QoS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre como usar o assistente de política de QoS para criar, editar ou excluir uma política de QoS.
 
@@ -80,7 +80,7 @@ Na primeira página do assistente de política de QoS, você pode especificar um
 
 2. Opcionalmente, use **especificar valor DSCP** para habilitar a marcação DSCP e, em seguida, configure um valor DSCP entre 0 e 63.
 
-3. Como opção, use **Especificar Taxa de Aceleração** para habilitar a aceleração de tráfego e configurar a taxa de aceleração. O valor da taxa de limitação deve ser maior que 1 e você pode especificar unidades de kilobytes \(por\) segundo, kbps ou megabytes\)por segundo \(Mbps.
+3. Como opção, use **Especificar Taxa de Aceleração** para habilitar a aceleração de tráfego e configurar a taxa de aceleração. O valor da taxa de limitação deve ser maior que 1 e você pode especificar unidades de kilobytes por segundo \(KBps\) ou megabytes por segundo \(MBps\).
 
 4. Clique em **Avançar**.
 
@@ -99,11 +99,11 @@ Como opção, você pode inserir o caminho do aplicativo. Para especial um camin
 >[!NOTE]
 >O caminho do aplicativo não pode incluir um caminho que resolva um link simbólico.
 
-A URL deve estar em conformidade com a [RFC 1738](https://tools.ietf.org/html/rfc1738), na `http[s]://<hostname\>:<port\>/<url-path>`forma de. Você pode usar um caractere curinga `‘*'`,, `<hostname>` para `https://training.\*/, https://\*.\*`e/ `<port>`ou, por exemplo,, mas o curinga não pode indicar uma `<hostname>` subcadeia de caracteres de ou `<port>`.
+A URL deve estar em conformidade com a [RFC 1738](https://tools.ietf.org/html/rfc1738), na forma de `http[s]://<hostname\>:<port\>/<url-path>`. Você pode usar um caractere curinga, `‘*'`, para `<hostname>` e/ou `<port>`, por exemplo, `https://training.\*/, https://\*.\*`, mas o curinga não pode indicar uma subcadeia de `<hostname>` ou `<port>`.
 
-Em outras palavras, nem `https://my\*site/` nem `https://\*training\*/` é válido. 
+Em outras palavras, nem `https://my\*site/` nem `https://\*training\*/` são válidos. 
 
-Opcionalmente, você pode selecionar **incluir subdiretórios e arquivos** para executar correspondência em todos os subdiretórios e arquivos após uma URL. Por exemplo, se essa opção estiver marcada e a URL for `https://training`, a política de QoS considerará` https://training/video` as solicitações para uma boa correspondência.
+Opcionalmente, você pode selecionar **incluir subdiretórios e arquivos** para executar correspondência em todos os subdiretórios e arquivos após uma URL. Por exemplo, se essa opção estiver marcada e a URL for `https://training`, a política de QoS considerará as solicitações de` https://training/video` uma boa correspondência.
 
 #### <a name="to-configure-the-application-name-page-of-the-qos-policy-wizard"></a>Para configurar a página nome do aplicativo do assistente de política de QoS
 
@@ -123,13 +123,13 @@ Na terceira página do assistente de política de QoS, você pode especificar as
 
 Se você selecionar **Somente para o seguinte endereço IP de origem** ou **Somente para o seguinte endereço IP de destino**, será necessário digitar uma das seguintes opções:
 
-- Um endereço IPv4, como`192.168.1.1`
+- Um endereço IPv4, como `192.168.1.1`
 
-- Um prefixo de endereço IPv4 usando a notação de comprimento de prefixo de rede, como`192.168.1.0/24`
+- Um prefixo de endereço IPv4 usando a notação de comprimento de prefixo de rede, como `192.168.1.0/24`
 
-- Um endereço IPv6, como`3ffe:ffff::1`
+- Um endereço IPv6, como `3ffe:ffff::1`
 
-- Um prefixo de endereço IPv6, como`3ffe:ffff::/48`
+- Um prefixo de endereço IPv6, como `3ffe:ffff::/48`
 
 Se você selecionar ambos **apenas para o endereço IP de origem a seguir** e **apenas para o endereço IP de destino a seguir**, os endereços ou prefixos de endereço deverão ser baseados em IPv4 ou IPv6.
 
@@ -240,7 +240,7 @@ As configurações de QoS avançadas fornecem controles adicionais para que os a
   
 2.  Clique com o botão direito do mouse em **política de QoS**e clique em **configurações de QoS avançadas**.
 
-     A figura a seguir mostra as duas guias configurações avançadas de QoS: **Tráfego TCP de entrada** e **substituição de marcação DSCP**.
+     A figura a seguir mostra as duas guias configurações avançadas de QoS: **tráfego TCP de entrada** e **substituição de marcação DSCP**.
   
 > [!NOTE]
 >  As configurações de QoS avançadas são configurações de Política de Grupo no nível do computador.
@@ -270,7 +270,7 @@ O tamanho real da janela pode ser um valor igual ou menor que o máximo, depende
 
 3.  Vincule o GPO à UO.
 
-#### <a name="advanced-qos-settings-dscp-marking-override"></a>Configurações de QoS avançadas: Substituição de marcação DSCP
+#### <a name="advanced-qos-settings-dscp-marking-override"></a>Configurações de QoS avançadas: substituição de marcação DSCP
 
 A substituição de marcação DSCP restringe a capacidade dos aplicativos de especificar — ou "marcar" — valores de DSCP diferentes daqueles especificados nas políticas de QoS. Ao especificar que os aplicativos têm permissão para definir valores DSCP, os aplicativos podem definir valores DSCP diferentes de zero. 
 
@@ -280,7 +280,7 @@ Por padrão, os computadores que executam o Windows Server 2016, Windows 10, Win
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>Valores de multimídia e de DSCP sem fio
 
-A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu uma certificação para multimídia sem fio \(WMM @ no__t-2 que define quatro categorias de acesso \(WMM_AC @ no__t-4 para priorizar o tráfego de rede transmitido em uma rede sem fio Wi @ No__t-5Fi. As categorias de acesso \(incluem para a prioridade\)mais alta para a mais baixa: voz, vídeo, melhor esforço e plano de fundo; respectivamente abreviados como vo, vi, ser e BK. A especificação WMM define quais valores de DSCP correspondem a cada uma das quatro categorias de acesso:
+A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu uma certificação para\) de multimídia sem fio \(WMM que define quatro categorias de acesso \(WMM_AC\) para priorizar o tráfego de rede transmitido em uma rede sem fio Wi\-Fi. As categorias de acesso incluem \(na ordem de prioridade mais alta para a mais baixa\): voz, vídeo, melhor esforço e plano de fundo; abreviado, respectivamente, como VO, VI, is e BK. A especificação WMM define quais valores de DSCP correspondem a cada uma das quatro categorias de acesso:
   
 |Valor de DSCP|Categoria de acesso do WMM|
 |----------|-------------------|
@@ -289,7 +289,7 @@ A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu u
 |24-31, 0-7|Melhor esforço (ser)|
 |8-23|Segundo plano (BK)|
 
-Você pode criar políticas de QoS que usam esses valores de DSCP para garantir que computadores portáteis\-com™ de Certificação Wi-Fi para adaptadores sem fio WMM recebam\-tratamento priorizado quando associados a Wi Fi CERTIFIED para pontos de acesso do WMM.
+Você pode criar políticas de QoS que usam esses valores DSCP para garantir que computadores portáteis com o Wi\-Fi CERTIFIED™ para adaptadores sem fio WMM recebam tratamento priorizado quando associados a Wi\-Fi certificados para pontos de acesso do WMM.
   
 ### <a name="BKMK_precedencerules"></a>Regras de precedência de política de QoS
 
@@ -297,7 +297,7 @@ Semelhante às prioridades do GPO, as políticas de QoS têm regras de precedên
 
 Em geral, a política de QoS com as condições mais correspondentes vence. Quando várias políticas de QoS se aplicam, as regras se enquadram em três categorias: nível de usuário versus nível de computador; aplicativo versus a rede quintuple; e entre a rede quintuple.
 
-Por *quintuple de rede*, queremos dizer o endereço IP de origem, o endereço IP de destino, a porta de origem \(, a porta\)de destino e o protocolo TCP/UDP.  
+Por *quintuple de rede*, queremos dizer o endereço IP de origem, o endereço IP de destino, a porta de origem, a porta de destino e o protocolo \(\)TCP/UDP.  
 
  **A política de QoS de nível de usuário tem precedência sobre a política de QoS no nível do computador**
 
@@ -312,13 +312,13 @@ Quando várias políticas de QoS correspondem ao tráfego específico, a políti
 
 Como alternativa, várias políticas de QoS podem se aplicar ao mesmo tráfego especificando condições não sobrepostas. Entre as condições de aplicativos e a rede quintuple, a política que especifica o aplicativo é considerada mais específica e é aplicada. 
 
-Por exemplo, policy_A especifica apenas um nome de aplicativo (App. exe) e policy_B especifica o endereço IP de destino 192.168.1.0/24. Quando essas políticas de QoS entram em conflito @no__t -0app. exe envia o tráfego para um endereço IP dentro do intervalo de 192.168.4.0/24 @ no__t-1, policy_A é aplicado.
+Por exemplo, policy_A especifica apenas um nome de aplicativo (App. exe) e policy_B especifica o endereço IP de destino 192.168.1.0/24. Quando essas políticas de QoS entram em conflito \(app. exe envia o tráfego para um endereço IP dentro do intervalo de 192.168.4.0/24\), policy_A é aplicado.
 
  **Mais especificidades têm precedência na rede quintuple**
 
-Para conflitos de política dentro da rede quintuple, a política com a maioria das condições de correspondência tem precedência. Por exemplo, suponha que policy_C especifique o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino "any" e o protocolo "TCP". 
+Para conflitos de política dentro da rede quintuple, a política com a maioria das condições de correspondência tem precedência. Por exemplo, suponha que policy_C especifica o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino "any" e o protocolo "TCP". 
 
-Em seguida, suponha que policy_D especifique o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino 80 e o protocolo "TCP". Em seguida, policy_C e policy_D correspondem a conexões com o destino 10.0.0.1:80. Como a política de QoS aplica a política com as condições de correspondência mais específicas, policy_D tem precedência neste exemplo.  
+Em seguida, suponha que policy_D especifica o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino 80 e o protocolo "TCP". Em seguida, policy_C e policy_D corresponder as conexões com o destino 10.0.0.1:80. Como a política de QoS aplica a política com as condições de correspondência mais específicas, policy_D tem precedência neste exemplo.  
   
 No entanto, as políticas de QoS podem ter um número igual de condições. Por exemplo, várias políticas podem especificar apenas uma (mas não a mesma) parte da rede quintuple. Entre a rede quintuple, a ordem a seguir é de maior ou menor precedência:
 

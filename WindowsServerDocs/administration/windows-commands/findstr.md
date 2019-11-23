@@ -49,13 +49,13 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/o|Imprime o deslocamento de caractere antes de cada linha correspondente.|
 |/p|Ignora arquivos com caracteres não imprimíveis.|
 |/off [linha]|Não ignora arquivos que têm o atributo offline definido.|
-|/f: \<File >|Obtém uma lista de arquivos do arquivo especificado.|
-|/c: \<String >|Usa o texto especificado como uma cadeia de caracteres de pesquisa literal.|
-|/g: \<File >|Obtém as cadeias de caracteres de pesquisa do arquivo especificado.|
-|/d: \<DirList >|Pesquisa a lista de diretórios especificada. Cada diretório deve ser separado com um ponto e vírgula (;), por exemplo `dir1;dir2;dir3`.|
-|/a: \<ColorAttribute >|Especifica os atributos de cor com dois dígitos hexadecimais. Digite `color /?` para obter informações adicionais.|
-|\<Strings >|Especifica o texto a ser pesquisado em *nome de arquivo*. Obrigatório.|
-|[\<Drive >:] [<Path>] <FileName> [...]|Especifica o local e arquivo ou arquivos a serem pesquisados. É necessário pelo menos um nome de arquivo.|
+|/f: arquivo de\<>|Obtém uma lista de arquivos do arquivo especificado.|
+|/c: cadeia de caracteres de\<>|Usa o texto especificado como uma cadeia de caracteres de pesquisa literal.|
+|/g: arquivo de\<>|Obtém as cadeias de caracteres de pesquisa do arquivo especificado.|
+|/d:\<DirList >|Pesquisa a lista de diretórios especificada. Cada diretório deve ser separado com um ponto e vírgula (;), por exemplo `dir1;dir2;dir3`.|
+|/a:\<Colorattribute >|Especifica os atributos de cor com dois dígitos hexadecimais. Digite `color /?` para obter informações adicionais.|
+|Cadeias de caracteres \<>|Especifica o texto a ser pesquisado em *nome de arquivo*. Necessário.|
+|[\<drive >:] [<Path>]<FileName>[...]|Especifica o local e arquivo ou arquivos a serem pesquisados. É necessário pelo menos um nome de arquivo.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -75,8 +75,8 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   |[^ classe]|Classe inversa: qualquer caractere que não esteja em um conjunto|
   |[x-y]|Intervalo: quaisquer caracteres dentro do intervalo especificado|
   |\X|Escape: uso literal de um metacaractere x|
-  |Cadeia de caracteres \\ <|Posição da palavra: início da palavra|
-  |Cadeia de caracteres @ no__t-0|Posição da palavra: fim da palavra|
+  |Cadeia de < \\|Posição da palavra: início da palavra|
+  |Cadeia de caracteres\>|Posição da palavra: fim da palavra|
 
   Os caracteres especiais na sintaxe de expressão regular têm o máximo de energia ao usá-los juntos. Por exemplo, use a seguinte combinação do caractere curinga (.) e REPEAT (*) caractere para corresponder a qualquer cadeia de caracteres:
 

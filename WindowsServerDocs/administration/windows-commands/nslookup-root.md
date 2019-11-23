@@ -22,7 +22,7 @@ ms.locfileid: "71373393"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 altera o servidor padrão para o servidor para a raiz do espaço de nome de domínio DNS (sistema de nomes de domínio).
 ## <a name="syntax"></a>Sintaxe
@@ -37,6 +37,6 @@ root
 
 ## <a name="remarks"></a>Comentários
 - Atualmente, o servidor de nome ns.nic.ddn.mil é usado. Esse comando é um sinônimo para o lserver ns.nic.ddn.mil. Você pode alterar o nome do servidor raiz com o comando **set root** .
-  ## <a name="additional-references"></a>Referências adicionais
+  ## <a name="additional-references"></a>referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
   [nslookup Set root](nslookup-set-root.md)

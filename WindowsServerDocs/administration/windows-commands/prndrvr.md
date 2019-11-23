@@ -22,7 +22,7 @@ ms.locfileid: "71372121"
 ---
 # <a name="prndrvr"></a>prndrvr
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Use o comando **prndrvr** para adicionar, excluir e listar drivers de impressora.
 
@@ -41,17 +41,17 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 |-d|exclui um driver.|
 |-l|lista todos os drivers de impressora instalados no servidor especificado pelo parâmetro **-s** . Se você não especificar um servidor, o Windows listará os drivers de impressora instalados no computador local.|
 |-x|exclui todos os drivers de impressora e drivers de impressora adicionais que não estão em uso por uma impressora lógica no servidor especificado pelo parâmetro **-s** . Se você não especificar um servidor a ser removido da lista, o Windows excluirá todos os drivers de impressora não utilizados no computador local.|
-|-m \<DrivermodelName @ no__t-1|Especifica (por nome) o driver que você deseja instalar. Os drivers geralmente são nomeados para o modelo de impressora para os quais dão suporte. Consulte a documentação da impressora para obter mais informações.|
+|-m \<DrivermodelName\>|Especifica (por nome) o driver que você deseja instalar. Os drivers geralmente são nomeados para o modelo de impressora para os quais dão suporte. Consulte a documentação da impressora para obter mais informações.|
 |-v {0 &#124; 1 &#124; 2 &#124; 3}|Especifica a versão do driver que você deseja instalar. Consulte a descrição do parâmetro **-e**para obter informações sobre quais versões estão disponíveis para qual ambiente. Se você não especificar uma versão, a versão do driver apropriada para a versão do Windows em execução no computador em que você está instalando o driver será instalada.<br /><br />-a versão **0** dá suporte ao Windows 95, Windows 98 e Windows Millennium Edition.<br />-a versão **1** dá suporte ao Windows NT 3,51.<br />-a versão **2** dá suporte ao Windows NT 4,0.<br />-a versão **3** dá suporte ao Windows Vista, ao Windows XP, ao Windows 2000 e aos sistemas operacionais windows Server 2003. Observe que essa é a única versão do driver de impressora à qual o Windows Vista dá suporte.|
-|-e \<Environment >|Especifica o ambiente do driver que você deseja instalar. Se você não especificar um ambiente, o ambiente do computador em que você está instalando o driver será usado. Os parâmetros de ambiente com suporte são:<br /><br />-    **"Windows NT x86"**<br />-    **"Windows x64"**<br />-    **"Windows IA64"**|
+|-e \<ambiente >|Especifica o ambiente do driver que você deseja instalar. Se você não especificar um ambiente, o ambiente do computador em que você está instalando o driver será usado. Os parâmetros de ambiente com suporte são:<br /><br />-    **"Windows NT x86"**<br />-    **"Windows x64"**<br />-    **"Windows IA64"**|
 |-s \<ServerName >|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|
-|-u \<UserName >-w \<Password >|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|
-|-h \<path >|Especifica o caminho para o arquivo de driver. Se você não especificar um caminho, será usado o caminho para o local onde o Windows foi instalado.|
+|-u \<nome de usuário >-w \<senha >|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|
+|-h \<caminho >|Especifica o caminho para o arquivo de driver. Se você não especificar um caminho, será usado o caminho para o local onde o Windows foi instalado.|
 |-i \<Filename.inf>|Especifica o caminho completo e o nome do arquivo para o driver que você deseja instalar. Se você não especificar um nome de arquivo, o script usará um dos arquivos. inf de impressora da caixa de entrada no subdiretório inf do diretório do Windows.<br /><br />Se o caminho do driver não for especificado, o script pesquisará os arquivos de driver no arquivo. cab do driver.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
-- O comando **prndrvr** é um script Visual Basic localizado no diretório%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prndrvr ou altere os diretórios para a pasta apropriada.
+- O comando **prndrvr** é um script de Visual Basic localizado no diretório <language> de\\do%windir%\system32\ printing_Admin_Scripts. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prndrvr ou altere os diretórios para a pasta apropriada.
 
   Por exemplo:
   ```
@@ -63,7 +63,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 
 ## <a name="BKMK_examples"></a>Disso
 
-Para listar todos os drivers no servidor \\ \ FileServer1, digite:
+Para listar todos os drivers no servidor do \\\printServer1, digite:
 ```
 cscript Prndrvr -l -s
 ```
@@ -78,6 +78,6 @@ Para excluir um driver de impressora do Windows NT x86 versão 3 para "modelo de
 cscript Prndrvr -a -m "Laser printer model 1" -v 3 -e "Windows NT x86" 
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [referência de comando de impressão](print-command-reference.md)

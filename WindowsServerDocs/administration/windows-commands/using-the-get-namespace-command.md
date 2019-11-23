@@ -22,7 +22,7 @@ ms.locfileid: "71363084"
 ---
 # <a name="using-the-get-namespace-command"></a>Usando o comando Get-namespace
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre um namespace personalizado.
 ## <a name="syntax"></a>Sintaxe
@@ -38,7 +38,7 @@ wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/det
 
 |               Parâmetro               |                                                                                                                                                                                         Descrição                                                                                                                                                                                          |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /Namespace: <Namespace name>      | Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<br /><br />-Servidor de implantação: A sintaxe para o nome do namespace é/namspace: WDS: <ImageGroup> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4. Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />-Servidor de transporte: Esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
+|      /Namespace:<Namespace name>      | Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<br /><br />-Servidor de implantação: a sintaxe para o nome do namespace é/namspace: WDS:<ImageGroup>/<ImageName>/<Index>. Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />-Servidor de transporte: esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
 |        [/Server:<Server name>]        |                                                                                                             Especifica o nome do servidor. Esse pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                              |
 | [/Show: clients] ou [/details: clients] |                                                                                                                                                  Exibe informações sobre os computadores cliente que estão conectados ao namespace especificado.                                                                                                                                                  |
 
@@ -50,8 +50,8 @@ wdsutil /Get-Namespace /Namespace:"Custom Auto 1"
 Para exibir informações sobre um namespace e os clientes que estão conectados, digite um dos seguintes:
 - Windows Server 2008: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /Show:Clients`
 - Windows Server 2008 R2: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /details:Clients`
-  #### <a name="additional-references"></a>Referências adicionais
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  #### <a name="additional-references"></a>referências adicionais
+  A [chave de sintaxe de linha de comando](command-line-syntax-key.md)
   [usando o comando Get-mynamespaces](using-the-get-allnamespaces-command.md)
   [usando o comando New-namespace](using-the-new-namespace-command.md)
   [usando o comando Remove-namespace](using-the-remove-namespace-command.md)

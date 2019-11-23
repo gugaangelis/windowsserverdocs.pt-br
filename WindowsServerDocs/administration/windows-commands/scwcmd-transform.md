@@ -43,8 +43,8 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/p: @no__t -0Policyfile. XML >|Especifica o caminho e o nome de arquivo do arquivo de política. XML que deve ser aplicado. Esse parâmetro deve ser especificado.|
-|/g: \<GPODisplayName >|Especifica o nome de exibição do GPO. Esse parâmetro deve ser especificado.|
+|/p:\<policyFile. XML >|Especifica o caminho e o nome de arquivo do arquivo de política. XML que deve ser aplicado. Esse parâmetro deve ser especificado.|
+|/g:\<GPODisplayName >|Especifica o nome de exibição do GPO. Esse parâmetro deve ser especificado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

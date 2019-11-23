@@ -36,13 +36,13 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/s \<Computer >|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
-|/u [\<Domain > \] @ no__t-2|Executa o script com as permissões da conta de usuário especificada. O valor padrão é permissões do sistema.|
-|/p [\<Password >]|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
-|/f nome de \<File >|Especifica o nome do arquivo ou padrão de nome de diretório. Você pode usar o caractere curinga * ao especificar o padrão. Você também pode usar a sintaxe *sharename*\*FileName *.|
+|/s \<computador >|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
+|/u [\<\]de domínio > <User name>|Executa o script com as permissões da conta de usuário especificada. O valor padrão é permissões do sistema.|
+|/p [\<a senha >]|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
+|/f \<nome do arquivo >|Especifica o nome do arquivo ou padrão de nome de diretório. Você pode usar o caractere curinga * ao especificar o padrão. Você também pode usar a sintaxe *sharename*\*filename *.|
 |SRDF|Concede a propriedade ao grupo de administradores em vez do usuário atual.|
 |/r|Executa uma operação recursiva em todos os arquivos no diretório e nos subdiretórios especificados.|
-|/d {Y \| N}|Suprime o prompt de confirmação exibido quando o usuário atual não tem a permissão "Listar pasta" em um diretório especificado e, em vez disso, usa o valor padrão especificado. Os valores válidos para a opção **/d** são os seguintes:</br>IAR Apropriar-se do diretório.</br>P Ignore o diretório.</br>Observe que você deve usar essa opção em conjunto com a opção **/r** .|
+|/d {Y \| N}|Suprime o prompt de confirmação exibido quando o usuário atual não tem a permissão "Listar pasta" em um diretório especificado e, em vez disso, usa o valor padrão especificado. Os valores válidos para a opção **/d** são os seguintes:</br>-Y: apropriar-se do diretório.</br>-N: ignorar o diretório.</br>Observe que você deve usar essa opção em conjunto com a opção **/r** .|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

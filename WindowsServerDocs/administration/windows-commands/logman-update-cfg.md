@@ -22,7 +22,7 @@ ms.locfileid: "71374363"
 ---
 # <a name="logman-update-cfg"></a>cfg de atualização de logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Atualize as propriedades de um coletor de dados de configuração existente.  
 
@@ -62,10 +62,10 @@ logman update cfg <[-n] <name>> [options]
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
 ## <a name="BKMK_examples"></a>Disso  
-O comando a seguir atualiza o cfg_log do coletor de dados de configuração existente para coletar a chave do Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0.  
+O comando a seguir atualiza o cfg_log do coletor de dados de configuração existente para coletar a chave do registro HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\.  
 ```  
 logman update cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\"  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [logman](logman.md)  
 [logman Create cfg](logman-create-cfg.md)  

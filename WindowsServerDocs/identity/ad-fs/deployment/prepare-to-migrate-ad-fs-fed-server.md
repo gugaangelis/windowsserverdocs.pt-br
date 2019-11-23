@@ -26,7 +26,7 @@ Este documento é o ponto de partida para se preparar para migrar seu servidor d
 -   [Preparar para migrar um farm de SQL Server](prepare-to-migrate-a-sql-server-farm.md)  
   
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

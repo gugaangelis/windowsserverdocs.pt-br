@@ -17,7 +17,7 @@ ms.locfileid: "71401883"
 ---
 # <a name="network-subsystem-performance-tuning"></a>Ajuste de desempenho do subsistema de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma visão geral do subsistema de rede e links para outros tópicos deste guia.
 
@@ -37,7 +37,7 @@ O ajuste de desempenho do subsistema de rede, especialmente para cargas de traba
   
 3. **Pilha de protocolos**. A pilha de protocolos implementa protocolos como TCP/IP e UDP/IP. Essas camadas expõem a interface da camada de transporte para as camadas acima delas.
   
-4. **Drivers do sistema**. Normalmente, esses são clientes que usam uma interface de TDX (transporte data Extension) ou WSK (kernel do Winsock) para expor interfaces para aplicativos de modo de usuário. A interface WSK foi introduzida no Windows Server 2008 e no Windows @ no__t-0 vista e é exposta por AFD. sys. A interface melhora o desempenho ao eliminar a alternância entre o modo de usuário e o modo kernel.
+4. **Drivers do sistema**. Normalmente, esses são clientes que usam uma interface de TDX (transporte data Extension) ou WSK (kernel do Winsock) para expor interfaces para aplicativos de modo de usuário. A interface WSK foi introduzida no Windows Server 2008 e no Windows&reg; vista, e é exposta por AFD. sys. A interface melhora o desempenho ao eliminar a alternância entre o modo de usuário e o modo kernel.
   
 5. **Aplicativos de modo de usuário**. Normalmente, são soluções da Microsoft ou aplicativos personalizados.
 

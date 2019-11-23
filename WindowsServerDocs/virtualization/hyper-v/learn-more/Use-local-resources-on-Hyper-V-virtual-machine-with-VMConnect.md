@@ -24,7 +24,7 @@ ms.locfileid: "71392892"
 
 A conexão de máquina virtual (VMConnect) permite que você use os recursos locais de um computador em uma máquina virtual, como uma unidade flash USB removível ou uma impressora. O modo de sessão avançado também permite redimensionar a janela VMConnect. Este artigo mostra como configurar o host e, em seguida, conceder à máquina virtual acesso a um recurso local.
 
-O modo de sessão avançado e o tipo texto da área de transferência estão disponíveis somente para máquinas virtuais que executam sistemas operacionais Windows recentes. [requisitos de @no__t 0See para usar recursos locais](#requirements-for-using-local-resources), abaixo. \) 
+O modo de sessão avançado e o tipo texto da área de transferência estão disponíveis somente para máquinas virtuais que executam sistemas operacionais Windows recentes. \(Confira [os requisitos para usar os recursos locais](#requirements-for-using-local-resources), abaixo.\) 
 
 Para máquinas virtuais que executam o Ubuntu, consulte [alterando a resolução da tela do Ubuntu em uma VM do Hyper-V](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/). 
   

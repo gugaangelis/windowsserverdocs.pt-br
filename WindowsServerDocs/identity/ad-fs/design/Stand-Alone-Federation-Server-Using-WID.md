@@ -18,9 +18,9 @@ ms.locfileid: "71358957"
 ---
 # <a name="stand-alone-federation-server-using-wid"></a>Servidor de federação autônomo usando WID
 
-Um servidor de Federação do stand @ no__t-0alone no Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-2 consiste em um único servidor que hospeda um Serviço de Federação configurado para usar o banco de dados interno do Windows \(WID @ no__t-4. Essa AD FS topologia é para os laboratórios de teste. Não é recomendável para ambientes de produção porque ele tem um limite de apenas um servidor de Federação e não pode ser usado para escalar verticalmente para mais servidores.  
+Um servidor de Federação autônomo\-no Serviços de Federação do Active Directory (AD FS) \(AD FS\) consiste em um único servidor que hospeda um Serviço de Federação configurado para usar o banco de dados interno do Windows \(WID\). Essa AD FS topologia é para os laboratórios de teste. Não é recomendável para ambientes de produção porque ele tem um limite de apenas um servidor de Federação e não pode ser usado para escalar verticalmente para mais servidores.  
   
-Se desejar adicionar servidores de Federação adicionais ao laboratório de teste, você deverá recriar o Serviço de Federação do zero implantando qualquer uma das outras topologias mencionadas mais adiante nesta seção. Portanto, recomendamos que você use essa topologia para um laboratório de teste ou um ambiente de prova de @ no__t-0of @ no__t-1concept em sua rede de teste privada, na qual um único servidor de Federação é adequado, conforme mostrado na ilustração a seguir.  
+Se desejar adicionar servidores de Federação adicionais ao laboratório de teste, você deverá recriar o Serviço de Federação do zero implantando qualquer uma das outras topologias mencionadas mais adiante nesta seção. Portanto, recomendamos que você use essa topologia para um laboratório de teste ou uma\-de prova de\-ambiente de conceito em sua rede de teste particular, na qual um único servidor de Federação é adequado, conforme mostrado na ilustração a seguir.  
   
 ![servidor usando WID](media/FedServerWID.gif)  
   
@@ -29,7 +29,7 @@ Esta seção descreve as várias considerações sobre o público-alvo, os benef
   
 ### <a name="who-should-use-this-topology"></a>Quem deve usar essa topologia?  
   
--   Tecnologia da informação \(IT @ no__t-1 profissionais ou arquitetos de ti que desejam avaliar ou desenvolver uma prova de conceito para essa tecnologia  
+-   A tecnologia da informação \(\) profissionais de ti ou arquitetos de ti que desejam avaliar ou desenvolver uma prova de conceito para essa tecnologia  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>Quais são os benefícios de usar essa topologia?  
   
@@ -37,9 +37,9 @@ Esta seção descreve as várias considerações sobre o público-alvo, os benef
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>Quais são as limitações do uso dessa topologia?  
   
--   Somente um servidor de Federação por Serviço de Federação recurso de \(no para escalar verticalmente para um farm @ no__t-1  
+-   Somente um servidor de Federação por Serviço de Federação não \(capacidade de escalar verticalmente para um farm\)  
   
--   Não redundante \(only uma única instância do banco de dados de configuração AD FS existe @ no__t-1  
+-   Não redundante \(apenas uma única instância do banco de dados de configuração AD FS existe\)  
   
 
 ## <a name="see-also"></a>Consulte também

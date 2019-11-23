@@ -21,7 +21,7 @@ ms.locfileid: "71388657"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Etapa 1 planejar a infraestrutura avançada do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 O primeiro passo do planejamento da implantação avançada do DirectAccess em um único servidor é planejar a infraestrutura necessária para a implantação. Este tópico descreve as etapas de planejamento da infraestrutura. Essas tarefas de planejamento não precisam ser concluídas em uma ordem específica.  
   
@@ -66,7 +66,7 @@ Esta seção explica como planejar sua rede, incluindo:
   
     ||Adaptador de rede externa|Adaptador de rede interna|Requisitos de roteamento|  
     |-|--------------|--------------|------------|  
-    |Internet IPv4 e intranet IPv4|Configure dois endereços IPv4 públicos, consecutivos e estáticos com as máscaras de sub-rede apropriadas (necessário somente para Teredo).<br/><br/>Configure também o endereço padrão IPv4 de gateway do firewall da Internet ou roteador do ISP (provedor de serviços de Internet) local. **Observação:** O servidor do DirectAccess precisa de dois endereços IPv4 públicos e consecutivos para que possa agir como um servidor Teredo e para que os clientes baseados no Windows possam usar o servidor do DirectAccess para detectar o tipo de dispositivo NAT atrás do qual eles se encontram.|Configure o seguinte:<br/><br/>-Um endereço de intranet IPv4 com a máscara de sub-rede apropriada.<br/>-O sufixo DNS específico da conexão do seu namespace da intranet. Um servidor DNS também deverá ser configurado na interface interna. **Cuidado:** Não configure um gateway padrão em nenhuma interface da intranet.|Para configurar o servidor do DirectAccess para acessar todas as sub-redes na rede IPv4 interna, execute este procedimento:<br/><br/>-Lista os espaços de endereço IPv4 para todos os locais na sua intranet.<br/>-Use a **rota Add-p** ou o comando**netsh interface ipv4 add route** para adicionar os espaços de endereço IPv4 como rotas estáticas na tabela de roteamento IPv4 do servidor DirectAccess.|  
+    |Internet IPv4 e intranet IPv4|Configure dois endereços IPv4 públicos, consecutivos e estáticos com as máscaras de sub-rede apropriadas (necessário somente para Teredo).<br/><br/>Configure também o endereço padrão IPv4 de gateway do firewall da Internet ou roteador do ISP (provedor de serviços de Internet) local. **Observação:** O servidor DirectAccess requer dois endereços IPv4 públicos consecutivos para que ele possa atuar como um servidor Teredo e clientes baseados em Windows podem usar o servidor DirectAccess para detectar o tipo de dispositivo NAT que está atrás.|Configure o seguinte:<br/><br/>-Um endereço de intranet IPv4 com a máscara de sub-rede apropriada.<br/>-O sufixo DNS específico da conexão do seu namespace da intranet. Um servidor DNS também deverá ser configurado na interface interna. **Cuidado:** Não configure um gateway padrão em nenhuma interface de intranet.|Para configurar o servidor do DirectAccess para acessar todas as sub-redes na rede IPv4 interna, execute este procedimento:<br/><br/>-Lista os espaços de endereço IPv4 para todos os locais na sua intranet.<br/>-Use a **rota Add-p** ou o comando**netsh interface ipv4 add route** para adicionar os espaços de endereço IPv4 como rotas estáticas na tabela de roteamento IPv4 do servidor DirectAccess.|  
     |Internet IPv6 e intranet IPv6|Configure o seguinte:<br/><br/>-Use a configuração de endereço fornecida pelo seu ISP.<br/>-Use o comando **Route Print** para garantir que uma rota IPv6 padrão exista e esteja apontando para o roteador do ISP na tabela de roteamento IPv6.<br/>-Determine se o ISP e os roteadores de intranet estão usando as preferências de roteador padrão descritas em RFC 4191 e usando uma preferência padrão mais alta do que os roteadores de intranet local.<br/>    Se as duas situações forem verdadeiras, nenhuma outra configuração para a rota padrão será necessária. A preferência mais alta para o roteador do ISP assegura que a rota IPv6 padrão ativa do servidor DirectAccess aponte para a Internet IPv6.<br/><br/>Como o servidor do DirectAccess é um roteador IPv6, caso você tenha uma infraestrutura IPv6 nativa, a interface de Internet também poderá acessar os controladores de domínio na intranet. Nesse caso, adicione filtros de pacote ao controlador de domínio na rede de perímetro para evitar a conectividade com o endereço IPv6 da interface voltada para Internet do servidor do DirectAccess.|Configure o seguinte:<br/><br/>-Se você não estiver usando os níveis de preferência padrão, poderá configurar suas interfaces de intranet usando o comando**netsh interface ipv6 set InterfaceIndex ignoredefaultroutes = Enabled**.<br/>    Esse comando garante que as rotas padrão adicionais que apontam para os roteadores da intranet não sejam acrescentadas à tabela de roteamento de IPv6. Você pode ver o índice de interface das interfaces da intranet usando o seguinte comando: **netsh interface ipv6 show interface**.|Se você possui uma intranet IPv6, execute o seguinte procedimento para configurar o servidor do DirectAccess para chegar a todos os locais IPv6:<br/><br/>-Lista os espaços de endereço IPv6 para todos os locais na sua intranet.<br/>-Use o comando **netsh interface IPv6 adicionar rota** para adicionar os espaços de endereço IPv6 como rotas estáticas na tabela de roteamento IPv6 do servidor DirectAccess.|  
     |Internet IPv4 e intranet IPv6|O servidor do DirectAccess encaminha o tráfego de rota padrão IPv6 para o adaptador Microsoft 6to4 para uma retransmissão 6to4 na Internet IPv4. Você pode configurar o servidor do DirectAccess para o endereço IPv4 do adaptador Microsoft 6to4 usando o seguinte comando: `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`.|||  
   
@@ -84,7 +84,7 @@ O IPv6 é necessário para gerenciar clientes remotos do DirectAccess. O IPv6 pe
 > - Não é necessário usar IPv6 na rede para dar suporte a conexões iniciadas pelos computadores cliente do DirectAccess para recursos IPv4 na rede da sua organização. NAT64/DNS64 é usado para esta finalidade.  
 > - Se você não estiver gerenciando clientes DirectAccess remotos, não precisará implantar IPv6.  
 > - O ISATAP (Intra-Site Automatic Tunnel Addressing Protocol) não tem suporte em implantações do DirectAccess.  
-> - Ao usar o IPv6, você pode habilitar as consultas de registro de recurso de host IPv6 (AAAA) para o DNS64 usando o seguinte comando do Windows PowerShell:   **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**.  
+> - Ao usar IPv6, você poderá habilitar consultas de registros do recurso de host IPv6 (AAAA) para o DNS64 usando o seguinte comando do Windows PowerShell: **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**.  
   
 ### <a name="113-plan-for-force-tunneling"></a>1.1.3 Planejar a criação de túneis à força
 
@@ -336,7 +336,7 @@ A detecção automática funciona da seguinte maneira:
   
     -   Uma regra de sufixo de DNS para o domínio da rede ou nome de domínio do servidor do DirectAccess e os endereços IPv6 que correspondem aos endereços DNS64. Em redes corporativas somente de IPv6, os servidores DNS da intranet são configurados no servidor do DirectAccess. Por exemplo, se o servidor do DirectAccess for membro do domínio corp.contoso.com, é criada uma regra para o sufixo de DNS corp.contoso.com.  
   
-    -   Uma regra de isenção para o FQDN do servidor de local de rede. Por exemplo, se a URL do servidor de local de rede for <https://nls.corp.contoso.com>, uma regra de isenção será criada para o FQDN nls.corp.contoso.com.  
+    -   Uma regra de isenção para o FQDN do servidor de local de rede. Por exemplo, se a URL do servidor do local de rede for <https://nls.corp.contoso.com>, uma regra de isenção será criada para o FQDN nls.corp.contoso.com.  
   
 -   **Servidor IP-HTTPS**  
   
@@ -375,7 +375,7 @@ A seguir estão os requisitos para o DNS na implantação do DirectAccess.
   
 -   Use um servidor DNS com suporte a atualizações dinâmicas. Você pode usar servidores DNS que não dão suporte a atualizações dinâmicas, porém será necessário atualizar manualmente as entradas nesses servidores.  
   
--   O FQDN para os pontos de distribuição de CRL acessível pela Internet deve ser resolvível usando os servidores DNS da Internet. Por exemplo, se a URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> estiver no campo **pontos de distribuição da CRL** do certificado IP-HTTPS do servidor DirectAccess, você deverá verificar se o FQDN crld.contoso.com pode ser resolvido usando servidores DNS da Internet.  
+-   O FQDN para os pontos de distribuição de CRL acessível pela Internet deve ser resolvível usando os servidores DNS da Internet. Por exemplo, se a URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> estiver no campo **pontos de distribuição da CRL** do certificado IP-HTTPS do servidor DirectAccess, você deverá garantir que o FQDN crld.contoso.com seja resolvido usando servidores DNS da Internet.  
   
 ### <a name="142-plan-for-local-name-resolution"></a>1.4.2 Planejar a resolução do nome local  
 Ao planejar a resolução de nome local, considere as questões a seguir:  
@@ -419,7 +419,7 @@ Em um ambiente de DNS sem partição de rede, o namespace da Internet é diferen
   
 **Comportamento da resolução de nomes locais para clientes DirectAccess**  
   
-Se um nome não puder ser resolvido com o DNS, para resolver o nome na sub-rede local, o serviço cliente DNS no Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 8 e Windows 7 poderá usar a resolução de nomes locais, com o nome de multicast de link local R eSolution (LLMNR) e NetBIOS sobre protocolos TCP/IP.  
+Se um nome não puder ser resolvido com o DNS, para resolver o nome na sub-rede local, o serviço cliente DNS no Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 8 e Windows 7 poderá usar a resolução de nomes locais, com o LLMNR (link-local multicast Name Resolution) e o NetBIOS sobre protocolos TCP/IP.  
   
 Em geral, a resolução de nomes locais é necessária para a conectividade ponto a ponto, quando o computador está localizado em redes privadas, como redes domésticas com uma única sub-rede. Quando o serviço Cliente DNS executa uma resolução de nomes locais para os nomes de servidor da intranet e o computador está conectado a uma sub-rede compartilhada na Internet, usuários mal-intencionados podem capturar LLMNR e NetBIOS nas mensagens TCP/IP para determinar os nomes de servidor da intranet. Na página de DNS do Assistente de Instalação do Servidor de Infraestrutura, configure o comportamento da resolução de nomes locais de acordo com os tipos de respostas recebidas dos servidores DNS da intranet. As seguintes opções estão disponíveis:  
   
@@ -585,10 +585,10 @@ Os GPOs podem ser configurados de duas maneiras:
 > [!NOTE]  
 > Depois de o DirectAccess ser configurado para usar GPOs específicos, não poderá ser configurado para usar GPOs diferentes.  
   
-Seja em GPOs configurados automática ou manualmente, será necessário adicionar uma política para detecção de links lentos se os clientes usarem redes 3G. O caminho para **Policy: Configure Política de Grupo detecção de link lento @ no__t-0 é: **Configuração do Computador / Políticas / Modelos Administrativos / Sistema / Política de Grupo**.  
+Seja em GPOs configurados automática ou manualmente, será necessário adicionar uma política para detecção de links lentos se os clientes usarem redes 3G. O caminho para **Política: configurar detecção de vínculo lento de Política de Grupo** é: **Configuração do computador/Políticas/Modelos administrativos/Sistema/Política de Grupo**.  
   
 > [!CAUTION]  
-> Use o procedimento a seguir para fazer o backup de todos os GPOs de Acesso Remoto antes de executar cmdlets do DirectAccess: [Fazer backup e restaurar a configuração de acesso remoto](https://go.microsoft.com/fwlink/?LinkID=257928).  
+> Use o procedimento a seguir para fazer backup de todos os GPOs de acesso remoto antes de executar os cmdlets do DirectAccess: [fazer backup e restaurar a configuração de acesso remoto](https://go.microsoft.com/fwlink/?LinkID=257928).  
   
 Se as permissões corretas (listadas nas seções a seguir) para vinculação de GPOs não existirem, um aviso é mostrado. A operação de Acesso Remoto continuará, porém não ocorrerá a vinculação. Se o aviso for emitido, não será possível criar links automaticamente, mesmo se as permissões forem adicionadas posteriormente. Em vez disso, o administrador precisará criar os links manualmente.  
   
@@ -675,7 +675,7 @@ O diagrama a seguir mostra esta configuração.
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 recuperar de um GPO excluído  
 Se um GPO de cliente, do servidor do DirectAccess ou do servidor de aplicativos for excluído acidentalmente e não houver backup disponível, será necessário remover as definições de configuração e reconfigurá-las. Se um backup estiver disponível, você poderá usá-lo para restaurar o GPO.  
   
-O console de Gerenciamento de Acesso Remoto exibirá a seguinte mensagem de erro: **Não é possível encontrar o GPO (nome do GPO)** . Para remover as definições de configuração, siga essas etapas:  
+O console de gerenciamento de acesso remoto exibirá a seguinte mensagem de erro: **não é possível encontrar o GPO (nome do GPO)** . Para remover as definições de configuração, siga essas etapas:  
   
 1.  Execute o cmdlet **Uninstall-remoteaccess** do Windows PowerShell.  
   
@@ -685,7 +685,7 @@ O console de Gerenciamento de Acesso Remoto exibirá a seguinte mensagem de erro
   
 ## <a name="next-steps"></a>Próximas etapas  
   
--   [Etapa 2: Planejar implantações do DirectAccess @ no__t-0  
+-   [Etapa 2: planejar implantações do DirectAccess](da-adv-plan-s2-deployments.md)  
   
 
 

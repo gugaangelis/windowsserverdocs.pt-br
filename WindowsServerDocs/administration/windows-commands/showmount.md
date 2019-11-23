@@ -22,7 +22,7 @@ ms.locfileid: "71383907"
 ---
 # <a name="showmount"></a>showmount
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar a **montagem** para exibir diretórios montados.  
   
@@ -32,13 +32,13 @@ showmount {-e|-a|-d} <Server>
 ```
 
 ## <a name="description"></a>Descrição  
-O utilitário **getmount** comando @ no__t-1line exibe informações sobre os sistemas de arquivos montados exportados pelo servidor para NFS no computador especificado pelo *servidor*. Se o *servidor* não for fornecido, a **montagem** exibirá informações sobre o computador no qual o comando de **conmontagem** é executado.  
+O comando de **desmontagem**\-utilitário de linha exibe informações sobre sistemas de arquivos montados exportados pelo servidor para NFS no computador especificado pelo *servidor*. Se o *servidor* não for fornecido, a **montagem** exibirá informações sobre o computador no qual o comando de **conmontagem** é executado.  
   
 Você deve fornecer uma das seguintes opções:  
   
 - **\-e** -exibe todos os sistemas de arquivos exportados no servidor.  
-- **\-a** -exibe todos os clientes do sistema de arquivos de rede \(NFS @ no__t-3 e os diretórios no servidor que cada um tiver montado.  
-- **\-D** -exibe todos os diretórios no servidor que estão montados atualmente por clientes NFS.  
+- **\-a** -exibe todos os clientes do sistema de arquivos de rede \(NFS\) e os diretórios no servidor que cada um tiver montado.  
+- **\-d** – exibe todos os diretórios no servidor que estão montados atualmente por clientes NFS.  
   
 ## <a name="see-also"></a>Consulte também  
 [Referência aos comandos dos Serviços para Network File System](services-for-network-file-system-command-reference.md)  

@@ -22,9 +22,9 @@ ms.locfileid: "71378424"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Verifica a configuração de um namespace Sistema de Arquivos Distribuído \(DFS @ no__t-1 executando as seguintes ações:  
+Verifica a configuração de um Sistema de Arquivos Distribuído \(namespace\) do DFS executando as seguintes ações:  
   
 -   verifica se o serviço de namespace do DFS está em execução e se seu tipo de inicialização está definido como automático em todos os servidores de namespace.  
   
@@ -50,7 +50,7 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 |       Parâmetro       |               Descrição               |
 |-----------------------|-----------------------------------------|
-| \/DFSRoot: <namespace> | O namespace \(DFS raiz @ no__t-1 para diagnosticar. |
+| \/DFSRoot:<namespace> | O namespace \(\) da raiz DFS para diagnosticar. |
   
 ## <a name="BKMK_Examples"></a>Disso  
 Para TBD, digite:  
@@ -59,7 +59,7 @@ Para TBD, digite:
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  
 ```  
   
-## <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>referências adicionais  
   
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

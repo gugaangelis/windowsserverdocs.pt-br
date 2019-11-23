@@ -55,9 +55,9 @@ wbadmin start sysrecovery
 |-backupTarget|Especifica o local de armazenamento que contém os backups ou backups que você deseja recuperar. Esse parâmetro é útil quando o local de armazenamento é diferente de onde os backups deste computador geralmente são armazenados.|
 |-computador|Especifica o nome do computador que você deseja recuperar. Esse parâmetro é útil quando é feito o backup de vários computadores no mesmo local. Deve ser usado quando o parâmetro **-backupTarget** é especificado.|
 |-restoreAllVolumes|Recupera todos os volumes do backup selecionado. Se esse parâmetro não for especificado, somente os volumes críticos (volumes que contêm o estado do sistema e os componentes do sistema operacional) serão recuperados. Esse parâmetro é útil quando você precisa recuperar volumes não críticos durante a recuperação do sistema.|
-|-recreateDisks|Recupera uma configuração de disco para o estado que existia quando o backup foi criado.</br>Aviso: Esse parâmetro exclui todos os dados em volumes que hospedam componentes do sistema operacional. Ele também pode excluir dados de volumes de dados.|
+|-recreateDisks|Recupera uma configuração de disco para o estado que existia quando o backup foi criado.</br>Aviso: esse parâmetro exclui todos os dados em volumes que hospedam componentes do sistema operacional. Ele também pode excluir dados de volumes de dados.|
 |-excludeDisks|Válido somente quando especificado com o parâmetro **-recreateDisks** e deve ser inserido como uma lista delimitada por vírgulas de identificadores de disco (conforme listado na saída de **Wbadmin obter discos**). Discos excluídos não são particionados ou formatados. Esse parâmetro ajuda a preservar dados em discos que você não deseja modificar durante a operação de recuperação.|
-|-skipBadClusterCheck|Ignora a verificação dos discos de recuperação em busca de informações de cluster inválidos. Se você estiver restaurando para um servidor ou hardware alternativo, recomendamos que você não use esse parâmetro. Você pode executar manualmente o **chkdsk/b** em seus discos de recuperação a qualquer momento para verificá-los quanto a clusters inválidos e, em seguida, atualizar as informações do sistema de arquivos de acordo.</br>Aviso: Até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
+|-skipBadClusterCheck|Ignora a verificação dos discos de recuperação em busca de informações de cluster inválidos. Se você estiver restaurando para um servidor ou hardware alternativo, recomendamos que você não use esse parâmetro. Você pode executar manualmente o **chkdsk/b** em seus discos de recuperação a qualquer momento para verificá-los quanto a clusters inválidos e, em seguida, atualizar as informações do sistema de arquivos de acordo.</br>Aviso: até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
 |-quiet|Executa o comando sem prompts para o usuário.|
 
 ## <a name="BKMK_examples"></a>Disso
@@ -66,7 +66,7 @@ Para iniciar a recuperação das informações do backup que foi executado em 31
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-Para começar a recuperar as informações do backup que foi executado em 30 de abril de 2013 às 9:00, localizadas na pasta compartilhada \\ @ no__t-1servername\shared: para Server01, digite:
+Para começar a recuperar as informações do backup que foi executado em 30 de abril de 2013 às 9:00, localizadas na pasta compartilhada \\\\servername\shared: para Server01, digite:
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

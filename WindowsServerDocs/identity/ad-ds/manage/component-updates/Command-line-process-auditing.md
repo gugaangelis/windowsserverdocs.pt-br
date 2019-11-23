@@ -39,7 +39,7 @@ ms.locfileid: "71368990"
   
 ![auditoria de linha de comando](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 árabe 16 evento 4688**  
+**Figura SEQ figura \\\* árabe 16 evento 4688**  
   
 Examine a ID de evento 4688 atualizada em REF _Ref366427278 \h Figura 16.  Antes dessa atualização, nenhuma das informações de **linha de comando do processo** é registrada.  Por causa desse log adicional, agora podemos ver que não só o processo WScript. exe foi iniciado, mas também foi usado para executar um script VB.  
   
@@ -51,7 +51,7 @@ Para habilitar a política de criação de processo de auditoria, edite a seguin
   
 **Local da política:** Configuração do computador > políticas > configurações do Windows > configurações de segurança > configuração de auditoria avançada > controle detalhado  
   
-**Nome da política:** Auditoria de Criação de Processo  
+**Nome da política:** Criação de processo de auditoria  
   
 **Com suporte em:** Windows 7 e posterior  
   
@@ -61,12 +61,12 @@ Essa configuração de política de segurança determina se o sistema operaciona
   
 Esses eventos de auditoria podem ajudá-lo a entender como um computador está sendo usado e controlar a atividade do usuário.  
   
-Volume de eventos: Baixo para médio, dependendo do uso do sistema  
+Volume de eventos: de baixo para médio, dependendo do uso do sistema  
   
-**Os** Não configurado  
+**Padrão:** Não configurado  
   
-### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>Para ver as adições à ID de evento 4688, você deve habilitar a nova configuração de política: Incluir linha de comando em eventos de criação de processo  
-**Tabela SEQ tabela \\ @ no__t-2 árabe 19 linha de comando Process line**  
+### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>Para ver as adições à ID de evento 4688, você deve habilitar a nova configuração de política: incluir linha de comando em eventos de criação de processo  
+**Tabela SEQ tabela \\\* configuração de política de processo de linha de comando árabe 19**  
   
 |Configuração de política|Detalhes|  
 |------------------------|-----------|  
@@ -74,7 +74,7 @@ Volume de eventos: Baixo para médio, dependendo do uso do sistema
 |**Configuração**|**Incluir linha de comando em eventos de criação de processo**|  
 |**Configuração padrão**|Não configurado (não habilitado)|  
 |**Com suporte em:**|?|  
-|**Descrição**|Essa configuração de política determina quais informações são registradas nos eventos de auditoria de segurança quando um novo processo é criado.<br /><br />Essa configuração se aplica somente quando a política de criação de processo de auditoria está habilitada. Se você habilitar essa configuração de política, as informações de linha de comando para cada processo serão registradas em texto sem formatação no log de eventos de segurança como parte do evento de criação de processo de auditoria 4688, "um novo processo foi criado" nas estações de trabalho e servidores nos quais essa política a configuração é aplicada.<br /><br />Se você desabilitar ou não definir essa configuração de política, as informações de linha de comando do processo não serão incluídas nos eventos de criação do processo de auditoria.<br /><br />Default: Não configurado<br /><br />Observação: Quando essa configuração de política está habilitada, qualquer usuário com acesso para ler os eventos de segurança poderá ler os argumentos de linha de comando para qualquer processo criado com êxito. Argumentos de linha de comando podem conter informações confidenciais ou privadas, como senhas ou dados de usuário.|  
+|**Descrição**|Essa configuração de política determina quais informações são registradas nos eventos de auditoria de segurança quando um novo processo é criado.<br /><br />Essa configuração se aplica somente quando a política de criação de processo de auditoria está habilitada. Se você habilitar essa configuração de política, as informações de linha de comando para cada processo serão registradas em texto sem formatação no log de eventos de segurança como parte do evento de criação de processo de auditoria 4688, "um novo processo foi criado" nas estações de trabalho e servidores nos quais essa política a configuração é aplicada.<br /><br />Se você desabilitar ou não definir essa configuração de política, as informações de linha de comando do processo não serão incluídas nos eventos de criação do processo de auditoria.<br /><br />Padrão: não configurado<br /><br />Observação: quando essa configuração de política estiver habilitada, qualquer usuário com acesso para ler os eventos de segurança poderá ler os argumentos de linha de comando para qualquer processo criado com êxito. Argumentos de linha de comando podem conter informações confidenciais ou privadas, como senhas ou dados de usuário.|  
   
 ![auditoria de linha de comando](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
   
@@ -95,7 +95,7 @@ O procedimento a seguir mostra como evitar conflitos, bloqueando a aplicação d
   
 4.  Clique duas vezes em configurações de segurança, clique duas vezes em políticas locais e em opções de segurança.  
   
-5.  Clique duas vezes em auditoria: Force as configurações de subcategoria da política de auditoria (Windows Vista ou posterior) para substituir as configurações de categoria da política de auditoria e clique em definir essa configuração de política.  
+5.  Clique duas vezes em auditoria: forçar as configurações de subcategoria da política de auditoria (Windows Vista ou posterior) para substituir as configurações de categoria da política de auditoria e clique em definir essa configuração de política.  
   
 6.  Clique em habilitado e em OK.  
   
@@ -106,7 +106,7 @@ O procedimento a seguir mostra como evitar conflitos, bloqueando a aplicação d
   
 [AppLocker: perguntas frequentes](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
   
-## <a name="try-this-explore-command-line-process-auditing"></a>Experimente isto: Explorar a auditoria do processo de linha de comando  
+## <a name="try-this-explore-command-line-process-auditing"></a>Experimente: explorar a auditoria do processo de linha de comando  
   
 1.  Habilitar eventos de **criação de processo de auditoria** e garantir que a configuração de política de auditoria antecipada não seja substituída  
   

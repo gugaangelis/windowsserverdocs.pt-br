@@ -38,12 +38,12 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Data1 >|Especifica o local e o nome do primeiro arquivo ou conjunto de arquivos que você deseja comparar. Você pode usar caracteres curinga ( **&#42;** e **?** ) para especificar vários arquivos.|
-|\<Data2 >|Especifica o local e o nome do segundo arquivo ou conjunto de arquivos que você deseja comparar. Você pode usar caracteres curinga ( **&#42;** e **?** ) para especificar vários arquivos.|
+|\<data1 >|Especifica o local e o nome do primeiro arquivo ou conjunto de arquivos que você deseja comparar. Você pode usar caracteres curinga ( **&#42;** e **?** ) para especificar vários arquivos.|
+|\<> data2|Especifica o local e o nome do segundo arquivo ou conjunto de arquivos que você deseja comparar. Você pode usar caracteres curinga ( **&#42;** e **?** ) para especificar vários arquivos.|
 |/d|Exibe as diferenças no formato decimal. (O formato padrão é hexadecimal.)|
 |SRDF|Exibe as diferenças como caracteres.|
 |/l|Exibe o número da linha em que ocorre uma diferença, em vez de exibir o deslocamento de byte.|
-|/n = \<Number >|Compara somente o número de linhas que são especificadas para cada arquivo, mesmo que os arquivos sejam tamanhos diferentes.|
+|/n = número de\<>|Compara somente o número de linhas que são especificadas para cada arquivo, mesmo que os arquivos sejam tamanhos diferentes.|
 |/c|Executa uma comparação que não diferencia maiúsculas de minúsculas.|
 |/off [linha]|Processa arquivos com o atributo offline definido.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -93,7 +93,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
 ## <a name="BKMK_examples"></a>Disso
 
-Para comparar o conteúdo do diretório C:\Reports com o diretório de backup \\ @ no__t-1Sales\Backup\April, digite:
+Para comparar o conteúdo do diretório C:\Reports com o diretório de backup \\\\Sales\Backup\April, digite:
 ```
 comp c:\reports \\sales\backup\april
 ```

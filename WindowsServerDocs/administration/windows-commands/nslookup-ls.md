@@ -22,7 +22,7 @@ ms.locfileid: "71373091"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Lista informações para um domínio DNS (sistema de nomes de domínio).
 ## <a name="syntax"></a>Sintaxe
@@ -40,6 +40,6 @@ ls [<Option>] <DNSDomain> [{[>] <FileName>|[>>] <FileName>}]
 
 ## <a name="remarks"></a>Comentários
 - A saída padrão contém nomes de computador e seus endereços IP. Quando a saída é direcionada para um arquivo, as marcas de hash são impressas para cada 50 registros recebidos do servidor
-  ## <a name="additional-references"></a>Referências adicionais
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)[nslookup Set QueryType](nslookup-set-querytype.md) 
-  
+  ## <a name="additional-references"></a>referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [nslookup Set QueryType](nslookup-set-querytype.md)

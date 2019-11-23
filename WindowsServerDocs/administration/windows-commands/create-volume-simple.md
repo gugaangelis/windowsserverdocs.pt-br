@@ -22,7 +22,7 @@ ms.locfileid: "71378884"
 ---
 # <a name="create-volume-simple"></a>criar volume simples
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Cria um volume simples no disco dinâmico especificado.  
   
@@ -41,10 +41,10 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
   
 | Parâmetro  |                                                                                                                            Descrição                                                                                                                            |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| tamanho @ no__t-0 @ no__t-1  |                                                                  O tamanho do volume em megabytes \(MB @ no__t-1. Se nenhum tamanho for fornecido, o novo volume ocupará o espaço livre restante no disco.                                                                   |
-| disco @ no__t-0 @ no__t-1  |                                                                                O disco dinâmico no qual o volume é criado. Se nenhum disco for especificado, o disco atual será usado.                                                                                |
-| alinhar @ no__t-0 @ no__t-1 | Alinha todas as extensões de volume ao limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(LUN @ no__t-1 matrizes para melhorar o desempenho. *n* é o número de kilobytes \( KB @ no__t-2 desde o início do disco até o limite de alinhamento mais próximo. |
-|   NOERR    |                               Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                |
+| tamanho\=<n>  |                                                                  O tamanho do volume em megabytes \(MB\). Se nenhum tamanho for fornecido, o novo volume ocupará o espaço livre restante no disco.                                                                   |
+| \=de disco <n>  |                                                                                O disco dinâmico no qual o volume é criado. Se nenhum disco for especificado, o disco atual será usado.                                                                                |
+| alinhar\=<n> | Alinha todas as extensões de volume ao limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(matrizes de\) LUN para melhorar o desempenho. *n* é o número de kilobytes \(KB\) desde o início do disco até o limite de alinhamento mais próximo. |
+|   NOERR    |                               somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -57,7 +57,7 @@ Para criar um volume de 1000 megabytes de tamanho, no disco 1, digite:
 create volume simple size=1000 disk=1  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

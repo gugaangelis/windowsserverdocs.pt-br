@@ -21,7 +21,7 @@ ms.locfileid: "71394507"
 ---
 # <a name="directaccess"></a>DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma breve visão geral do DirectAccess, incluindo os sistemas operacionais de servidor e cliente que dão suporte ao DirectAccess e links para a documentação adicional do DirectAccess para o Windows Server 2016.  
   
@@ -43,7 +43,7 @@ Você pode usar este tópico para obter uma breve visão geral do DirectAccess, 
 O DirectAccess permite a conectividade para usuários remotos para recursos de rede da organização sem a necessidade de conexões de VPN (rede virtual privada) tradicionais. Com as conexões do DirectAccess, os computadores cliente remotos são sempre conectados à sua organização – não há necessidade de que os usuários remotos iniciem e parem conexões, como é necessário com conexões VPN. Além disso, os administradores de ti podem gerenciar computadores cliente do DirectAccess sempre que estiverem em execução e conectados à Internet.
 
 >[!IMPORTANT]
->Não tente implantar o acesso remoto em uma máquina virtual \(VM @ no__t-1 em Microsoft Azure. Não há suporte para o uso do acesso remoto no Microsoft Azure. Você não pode usar o acesso remoto em uma VM do Azure para implantar VPN, DirectAccess ou qualquer outro recurso de acesso remoto no Windows Server 2016 ou versões anteriores do Windows Server. Para obter mais informações, consulte [suporte de software de servidor da Microsoft para máquinas virtuais Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).
+>Não tente implantar o acesso remoto em uma máquina virtual \(\) VM no Microsoft Azure. Não há suporte para o uso do acesso remoto no Microsoft Azure. Você não pode usar o acesso remoto em uma VM do Azure para implantar VPN, DirectAccess ou qualquer outro recurso de acesso remoto no Windows Server 2016 ou versões anteriores do Windows Server. Para obter mais informações, consulte [suporte de software de servidor da Microsoft para máquinas virtuais Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).
   
 O DirectAccess fornece suporte apenas para clientes ingressados no domínio que incluem suporte ao sistema operacional para o DirectAccess.  
   

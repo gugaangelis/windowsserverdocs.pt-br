@@ -38,21 +38,21 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName >|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
-|/v \<ValueName >|Especifica o nome do valor do registro que deve ser consultado. Se omitido, todos os nomes de valor para *KeyName* serão retornados. *ValueName* para esse parâmetro será opcional se a opção **/f** também for usada.|
+|\<KeyName >|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\\\ComputerName\) como parte do *KeyName*. Omitir \\\\computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|/v \<valueName >|Especifica o nome do valor do registro que deve ser consultado. Se omitido, todos os nomes de valor para *KeyName* serão retornados. *ValueName* para esse parâmetro será opcional se a opção **/f** também for usada.|
 |/ve|Executa uma consulta para nomes de valores vazios.|
 |/s|Especifica para consultar todas as subchaves e nomes de valor recursivamente.|
-|/se \<Separator >|Especifica o separador de valor único a ser pesquisado no nome do valor tipo REG_MULTI_SZ. Se o *separador* não for especificado, será usado **\ 0** .|
-|/f \<Data >|Especifica os dados ou o padrão a ser pesquisado. Use aspas duplas se uma cadeia de caracteres contiver espaços. Se não for especificado, um curinga **&#42;** () será usado como o padrão de pesquisa.|
+|separador de \</se >|Especifica o separador de valor único a ser procurado no tipo de nome de valor REG_MULTI_SZ. Se o *separador* não for especificado, será usado **\ 0** .|
+|/f \<de dados >|Especifica os dados ou o padrão a ser pesquisado. Use aspas duplas se uma cadeia de caracteres contiver espaços. Se não for especificado, um curinga **&#42;** () será usado como o padrão de pesquisa.|
 |/k|Especifica a pesquisa somente em nomes de chave.|
 |/d|Especifica a pesquisa somente em dados.|
 |/c|Especifica que a consulta diferencia maiúsculas de minúsculas. Por padrão, as consultas não diferenciam maiúsculas de minúsculas.|
 |/e|Especifica para retornar apenas correspondências exatas. Por padrão, todas as correspondências são retornadas.|
-|/t \<Type >|Especifica os tipos de registro a serem pesquisados. Os tipos válidos são: REG_SZ, REG_MULTI_SZ, REG_EXPAND_SZ, REG_DWORD, REG_BINARY, REG_NONE. Se não for especificado, todos os tipos serão pesquisados.|
+|/t \<tipo >|Especifica os tipos de registro a serem pesquisados. Os tipos válidos são: REG_SZ, REG_MULTI_SZ, REG_EXPAND_SZ, REG_DWORD, REG_BINARY, REG_NONE. Se não for especificado, todos os tipos serão pesquisados.|
 |/z|Especifica para incluir o equivalente numérico para o tipo de registro nos resultados da pesquisa.|
 |/?|Exibe a ajuda para a **consulta reg** no prompt de comando.|
 
-## <a name="remarks-optional-section"></a>Comentários da seção \<Optional >
+## <a name="remarks-optional-section"></a>Comentários \<seção opcional >
 
 A tabela a seguir lista os valores de retorno para a operação **reg query** .
 

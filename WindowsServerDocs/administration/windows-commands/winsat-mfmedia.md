@@ -38,17 +38,17 @@ winsat mfmedia <parameters>
 
 |Parâmetros|Descrição|
 |----------|-----------|
-|-nome do @no__t de entrada-0file >|Obrigatório: Especifique o arquivo que contém o clipe de vídeo a ser reproduzido ou codificado. O arquivo pode estar em qualquer formato que possa ser renderizado pelo Media Foundation.|
+|-nome do arquivo de \<de entrada >|Obrigatório: especifique o arquivo que contém o clipe de vídeo a ser reproduzido ou codificado. O arquivo pode estar em qualquer formato que possa ser renderizado pelo Media Foundation.|
 |-dumpgraph|Especifique que o grafo de filtro deve ser salvo em um arquivo compatível com GraphEdit antes do início da avaliação.|
 |-NS|Especifique que o grafo de filtro deve ser executado na velocidade de reprodução normal do arquivo de entrada. Por padrão, o grafo de filtro é executado o mais rápido possível, ignorando os tempos de apresentação.|
 |-reproduzir|Execute a avaliação no modo de decodificação e reproduza qualquer conteúdo de áudio fornecido no arquivo especificado na **entrada** usando o dispositivo DirectSound padrão. Por padrão, a reprodução de áudio é desabilitada.|
 |-nopmp|Não use o processo de Media Foundation MFPMP (pipeline de mídia protegido) durante a avaliação.|
-|-PMP|Sempre faça uso do processo MFPMP durante a avaliação.</br>Observação: Se **-PMP** ou **-nopmp** não for especificado, MFPMP será usado somente quando necessário.|
+|-PMP|Sempre faça uso do processo MFPMP durante a avaliação.</br>Observação: se **-PMP** ou **-nopmp** não for especificado, MFPMP será usado somente quando necessário.|
 |-v|Enviar saída detalhada para STDOUT, incluindo informações de status e progresso. Todos os erros também serão gravados na janela de comando.|
-|-nome \<do arquivo XML >|Salve a saída da avaliação como o arquivo XML especificado. Se o arquivo especificado existir, ele será substituído.|
-|-idiskinfo|Salve informações sobre volumes físicos e discos lógicos como parte da  **\<** seção de > de SystemConfig na saída XML.|
+|-XML \<nome do arquivo >|Salve a saída da avaliação como o arquivo XML especificado. Se o arquivo especificado existir, ele será substituído.|
+|-idiskinfo|Salve informações sobre volumes físicos e discos lógicos como parte da seção **\<SystemConfig >** na saída XML.|
 |-iguid|Crie um GUID (identificador global exclusivo) no arquivo de saída XML.|
-|-Nota "texto da nota"|Adicione o texto da nota à  **\<seção > de observação** no arquivo de saída XML.|
+|-Nota "texto da nota"|Adicione o texto de nota à seção **\<observação >** no arquivo de saída XML.|
 |-icn|Inclua o nome do computador local no arquivo de saída XML.|
 |-EEF|Enumere informações adicionais do sistema no arquivo de saída XML.|
 

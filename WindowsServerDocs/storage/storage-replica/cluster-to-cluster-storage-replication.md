@@ -39,7 +39,7 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 
 ![Diagrama que mostra um ambiente de exemplo com um cluster no site de Redmond replicando com um cluster no site Bellevue](./media/Cluster-to-Cluster-Storage-Replication/SR_ClustertoCluster.png)  
 
-**FIGURE 1: Cluster para replicação de cluster @ no__t-0  
+**Figura 1: cluster para replicação de cluster**  
 
 ## <a name="prerequisites"></a>Pré-requisitos  
 
@@ -109,7 +109,7 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
     > -   O volume de log deve ter pelo menos 8 GB por padrão e pode ser maior ou menor com base nos requisitos de log.
     > -   Ao usar Espaços de Armazenamento Diretos (Espaços de Armazenamento Diretos) com um cache NVME ou SSD, você verá um aumento maior que o esperado em latência ao configurar a replicação de réplica de armazenamento entre clusters de Espaços de Armazenamento Diretos. A alteração na latência é proporcionalmente muito maior do que você vê ao usar o NVME e SSD em uma configuração de desempenho + capacidade e nenhuma camada de HDD nem camada de capacidade.
 
-    Esse problema ocorre devido a limitações arquitetônicas no mecanismo de log do SR, combinadas com a latência extremamente baixa de NVME quando comparada à mídia mais lenta. Ao usar Espaços de Armazenamento Diretos cache Espaços de Armazenamento Diretos, todas as e/s de logs do SR, juntamente com todas as e/s de leitura/gravação recentes de aplicativos, ocorrerão no cache e nunca nas camadas de desempenho ou capacidade. Isso significa que toda a atividade do SR acontece na mesma mídia de velocidade – não há suporte para essa configuração não é recomendável (consulte https://aka.ms/srfaq para obter recomendações de log). 
+    Esse problema ocorre devido a limitações arquitetônicas no mecanismo de log do SR, combinadas com a latência extremamente baixa de NVME quando comparada à mídia mais lenta. Ao usar Espaços de Armazenamento Diretos cache Espaços de Armazenamento Diretos, todas as e/s de logs do SR, juntamente com todas as e/s de leitura/gravação recentes de aplicativos, ocorrerão no cache e nunca nas camadas de desempenho ou capacidade. Isso significa que todas as atividades do SR acontecem na mesma mídia de velocidade – não há suporte para essa configuração não é recomendável (consulte https://aka.ms/srfaq para obter recomendações de log). 
 
     Ao usar Espaços de Armazenamento Diretos com HDDs, você não pode desabilitar ou evitar o cache. Como alternativa, se estiver usando apenas SSD e NVME, você pode configurar apenas as camadas de desempenho e capacidade. Se estiver usando essa configuração e posicionar os logs do SR no nível de desempenho somente com os volumes de dados em que eles estão sendo atendidos apenas na camada de capacidade, você evitará o problema de alta latência descrito acima. O mesmo pode ser feito com uma combinação de SSDs mais rápidos e lentos e sem NVME.
 
@@ -209,7 +209,7 @@ Agora você criará dois clusters de failover normais. Após a configuração, a
 
 4.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](https://technet.microsoft.com/library/hh831718.aspx)  
 
-## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Etapa 3: Configurar cluster para replicação de cluster usando o Windows PowerShell  
+## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Etapa 3: Configurar a replicação de cluster para cluster usando o Windows PowerShell  
 Agora você configurará a replicação de cluster para cluster usando o Windows PowerShell. Você pode executar todas as etapas abaixo nos nós diretamente ou em um computador de gerenciamento remoto que contenha o Windows Server Ferramentas de Administração de Servidor Remoto  
 
 1. Conceda ao primeiro cluster acesso completo ao outro cluster executando o cmdlet **Grant-SRAccess** em qualquer nó no primeiro cluster ou remotamente.  Ferramentas de Administração de Servidor Remoto do Windows Server
@@ -310,23 +310,23 @@ Agora você irá gerenciar e operar a replicação de cluster para cluster. Voc�
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações da última gravação de log  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Liberação  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Méd  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Atual  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de Solicitações de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio de solicitações por gravação de log  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações por gravação de log Méd  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Gravação de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Leitura de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Leitura de Aplicativo  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO de Destino  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO Atual  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Log  
+    -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Méd  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Atual  
 
@@ -334,11 +334,11 @@ Agora você irá gerenciar e operar a replicação de cluster para cluster. Voc�
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Total de Bytes Enviados  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Envio de Rede  
+    -   \Estatísticas de réplica de armazenamento (*)\Latência enviada de rede méd  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Estado da Replicação  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Viagem de Ida e Volta da Mensagem  
+    -   \Estatísticas de réplica de armazenamento(*)\Média de Viagem de Ida e Volta da Mensagem  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Tempo Decorrido da Última Recuperação  
 
@@ -392,6 +392,6 @@ Agora você irá gerenciar e operar a replicação de cluster para cluster. Voc�
 -   [Visão geral da réplica de armazenamento](storage-replica-overview.md) 
 -   [Estender a replicação do cluster usando o armazenamento compartilhado](stretch-cluster-replication-using-shared-storage.md)  
 -   [Replicação de armazenamento de servidor para servidor](server-to-server-storage-replication.md)  
--   [Réplica de armazenamento: Problemas conhecidos](storage-replica-known-issues.md)  
+-   [Réplica de armazenamento: problemas conhecidos](storage-replica-known-issues.md)  
 -   [Réplica de armazenamento: perguntas frequentes](storage-replica-frequently-asked-questions.md)  
 -   [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  

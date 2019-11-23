@@ -37,11 +37,11 @@ fsutil fsinfo [volumeinfo] <RootPath>
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|Controla|Lista todas as unidades no computador.|
+|controla|Lista todas as unidades no computador.|
 |DriveType|Consulta uma unidade e lista seu tipo, por exemplo, unidade de CD-ROM.|
 |NTFSInfo|Lista informações de volume específicas do NTFS para o volume especificado, como o número de setores, total de clusters, clusters livres e o início e término da zona MFT.|
 |sectorinfo|Lista informações sobre o tamanho e o alinhamento do setor do hardware.|
-|Estatística|Lista as estatísticas do sistema de arquivos para o volume especificado, como metadados, arquivo de log e leituras e gravações de MFT.|
+|estatística|Lista as estatísticas do sistema de arquivos para o volume especificado, como metadados, arquivo de log e leituras e gravações de MFT.|
 |volumeinfo|Lista informações para o volume especificado, como o sistema de arquivos, e se o volume dá suporte a nomes de arquivos que diferenciam maiúsculas de minúsculas, Unicode em nomes de arquivo, cotas de disco ou é um volume do DirectAccess (DAX).|
 |< "VolumePath" >|Especifica a letra da unidade (seguida por dois-pontos).|
 |< "RootPathname" >|Especifica a letra da unidade (seguida por dois-pontos) da unidade raiz.|

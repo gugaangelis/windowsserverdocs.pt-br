@@ -21,7 +21,7 @@ ms.locfileid: "71388422"
 ---
 # <a name="directaccess-cluster-nlb-test-lab-configuration-requirements"></a>Requisitos de configuração do Test Lab DirectAccess Cluster-NLB
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Os seguintes componentes são necessários para configurar o DirectAccess no laboratório de teste:  
   
@@ -29,6 +29,6 @@ Os seguintes componentes são necessários para configurar o DirectAccess no lab
   
 -   Seis computadores ou máquinas virtuais que atendem aos requisitos mínimos de hardware para o Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012; dois desses computadores têm dois adaptadores de rede instalados.  
   
--   O disco do produto ou os arquivos para Windows 10 @ no__t-0 ou Windows @ no__t-1 8.  
+-   O disco do produto ou os arquivos do Windows 10&reg; ou do Windows&reg; 8.  
   
--   Dois computadores ou máquinas virtuais que atendem aos requisitos mínimos de hardware para Windows 10 @ no__t-0 ou Windows @ no__t-1 8; um desses computadores tem dois adaptadores de rede instalados.
+-   Dois computadores ou máquinas virtuais que atendem aos requisitos mínimos de hardware para Windows 10&reg; ou Windows&reg; 8; um desses computadores tem dois adaptadores de rede instalados.

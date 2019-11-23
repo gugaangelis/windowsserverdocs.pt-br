@@ -22,7 +22,7 @@ ms.locfileid: "71370839"
 ---
 # <a name="subcommand-set-drivergroup"></a>Subcomando: Set-grupo de driver
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Define as propriedades de um grupo de drivers existente em um servidor.
 ## <a name="syntax"></a>Sintaxe
@@ -32,9 +32,9 @@ wdsutil /Set-DriverGroup /DriverGroup:<Group Name> [/Server:<Server Name>] [/Nam
 ## <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-|/DriverGroup: <Group Name>|Especifica o nome do grupo de drivers.|
+|/DriverGroup:<Group Name>|Especifica o nome do grupo de drivers.|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se um nome de servidor não for especificado, o servidor local será usado.|
-|[/Name: <New Group Name>]|Especifica o novo nome para o grupo de drivers.|
+|[/Name:<New Group Name>]|Especifica o novo nome para o grupo de drivers.|
 |[/Enabled: {Sim &#124; não}|Habilita ou desabilita o grupo de drivers.|
 |[/Applicability: {MATCHED &#124; All}]|Especifica quais pacotes instalar se os critérios de filtro forem atendidos. **MATCHED** significa instalar apenas os pacotes de driver que correspondem a um hardware de cliente. **Tudo** significa instalar todos os pacotes para clientes, independentemente de seu hardware.|
 ## <a name="BKMK_examples"></a>Disso
@@ -45,6 +45,6 @@ wdsutil /Set-DriverGroup /DriverGroup:printerdrivers /Enabled:Yes
 ```
 wdsutil /Set-DriverGroup /DriverGroup:printerdrivers /Name:colorprinterdrivers /Applicability:All
 ```
-#### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[subcomando: Set-DriverGroupFilter](subcommand-set-drivergroupfilter.md)
+#### <a name="additional-references"></a>referências adicionais
+Subcomando
+[chave de sintaxe de linha de comando](command-line-syntax-key.md) [: Set-DriverGroupFilter](subcommand-set-drivergroupfilter.md)

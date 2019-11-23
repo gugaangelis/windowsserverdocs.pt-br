@@ -39,7 +39,7 @@ Você pode criar a configuração original do usando o **Assistente de configura
 >  
 > Quando você chegar a **especifique o nome do serviço de Federação** página, certifique-se de selecionar o mesmo certificado SSL que você registrou na "preparar para migrar um farm de WID" em [Preparar para migrar um farm WID do AD FS 2.0](prepare-to-migrate-a-wid-farm.md).  
   
-5. Atualize suas páginas da web do AD FS neste servidor. Se você tiver feito backup de suas páginas da Web AD FS personalizadas ao se preparar para a migração, será necessário usar seus dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** como resultado da AD FS configuração no Windows Server 2012.  
+5. Atualize suas páginas da web do AD FS neste servidor. Se você tiver feito backup de suas páginas da Web AD FS personalizadas ao se preparar para a migração, será necessário usar seus dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** como resultado da configuração de AD FS no Windows Server 2012.  
   
 6. Adicione o servidor que você acabou de atualizar para o Windows Server 2012 para o balanceador de carga.  
   
@@ -65,14 +65,14 @@ Você pode criar a configuração original do usando o **Assistente de configura
 >  
 > Quando você chegar a **especifique o nome do serviço de Federação** página, certifique-se de selecionar o mesmo certificado SSL que você registrou na [Preparar para migrar um farm WID do AD FS 2.0](prepare-to-migrate-a-wid-farm.md).  
   
-13. Atualize suas páginas da web do AD FS neste último servidor do seu farm do WID. Se você tiver feito backup de suas páginas da Web AD FS personalizadas ao se preparar para a migração, use seus dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** como resultado da AD FS configuração no Windows Server 2012.  
+13. Atualize suas páginas da web do AD FS neste último servidor do seu farm do WID. Se você tiver feito backup de suas páginas da Web AD FS personalizadas ao se preparar para a migração, use seus dados de backup para substituir as páginas da Web do AD FS padrão que foram criadas por padrão no diretório **%systemdrive%\inetpub\adfs\ls** como resultado da configuração de AD FS no Windows Server 2012.  
   
 14. Adicione esse último servidor do seu farm de WID que você acabou de atualizar para o Windows Server 2012 para o balanceador de carga.  
   
 15. Restaure as personalizações restantes do AD FS, tais como armazenamento de atributos personalizados.  
   
 ## <a name="next-steps"></a>Próximas etapas
- [Preparar para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
  [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   

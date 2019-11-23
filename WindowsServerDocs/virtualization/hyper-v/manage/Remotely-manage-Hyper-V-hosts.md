@@ -79,7 +79,7 @@ Enable-PSRemoting
 
 Para Windows 8.1 e anteriores, o gerenciamento remoto funciona somente quando o host está no mesmo domínio e sua conta de usuário local também está no host remoto.
 
-Para adicionar um host remoto do Hyper-V ao Gerenciador do Hyper-V, selecione **outro computador** na caixa de diálogo **Selecionar computador** e digite o nome de host do host remoto, o nome NetBIOS ou totalmente qualificado, \(FQDN @ no__t-3.
+Para adicionar um host remoto do Hyper-V ao Gerenciador do Hyper-V, selecione **outro computador** na caixa de diálogo **Selecionar computador** e digite o nome de host do host remoto, o nome NetBIOS ou o domínio totalmente qualificado \(FQDN\).
 
 O Gerenciador do Hyper-V no Windows Server 2016 e no Windows 10 oferece mais tipos de conexão remota do que as versões anteriores, descritas nas seções a seguir.  
 
@@ -138,7 +138,7 @@ Em seguida, configure o computador que você usará para gerenciar o host do Hyp
      Enable-WSManCredSSP -Role client -DelegateComputer "fqdn-of-hyper-v-host"
      ```
 1. Talvez você também precise configurar a seguinte política de Grupo: 
-    * **Configuração do computador** \> **Modelos Administrativos** o **sistema** \> @no__t **delegação de credenciais** \> **Permitir Delegação de novas credenciais com autenticação de servidor somente NTLM**
+    * **Configuração do computador** \> **Modelos Administrativos** \> **sistema** \> **delegação de credenciais** \> **permitir a delegação de novas credenciais com autenticação de servidor somente NTLM**
     * Clique em **habilitar** e adicionar *WSMan/FQDN-of-Hyper-v-host*.
 1. Abra o **Gerenciador do Hyper-V**.
 1. No painel esquerdo, clique com o botão direito do mouse em **Gerenciador do Hyper-V**.
@@ -153,7 +153,7 @@ Para obter detalhes do cmdlet, consulte [set-item](https://msdn.microsoft.com/po
 
 Para usar uma ferramenta de interface do usuário, escolha aquela apropriada para o sistema operacional no computador em que você executará o Gerenciador do Hyper-V:
 
-No Windows Server, abra Gerenciador do Servidor \> **gerenciar** \> **adicionar funções e recursos**. Vá para a página **recursos** e expanda **ferramentas de administração de servidor remoto** \> ferramentas de **Administração de função** \> ferramentas de **Gerenciamento do Hyper-V**. 
+No Windows Server, abra Gerenciador do Servidor \> **gerenciar** \> **adicionar funções e recursos**. Vá para a página **recursos** e expanda **ferramentas de administração de servidor remoto** \> ferramentas de **Administração de função** \> **ferramentas de gerenciamento do Hyper-V**. 
 
 No Windows, o Gerenciador do Hyper-V está disponível em [qualquer sistema operacional Windows que inclua o Hyper-v](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility).
 

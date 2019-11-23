@@ -22,7 +22,7 @@ ms.locfileid: "71380093"
 ---
 # <a name="bootcfg-dbg1394"></a>bootcfg dbg1394
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Configura a depuração de porta 1394 para uma entrada de sistema operacional especificada.
 
@@ -34,9 +34,9 @@ bootcfg /dbg1394 {ON | OFF}[/s <computer> [/u <Domain>\<User> /p <Password>]] [/
 
 |      Parâmetro       |                                                                                                                                           Descrição                                                                                                                                            |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   {ON &#124; OFF}    | Especifica o valor para a depuração de porta 1394.<br /><br />-   **on** – habilita o suporte à depuração remota adicionando a opção/dbg1394 ao <OSEntryLineNum> especificado.<br />-   **off** -desabilita o suporte à depuração remota removendo a opção/dbg1394 do <OSEntryLineNum> especificado. |
+|   {ON &#124; off}    | Especifica o valor para a depuração de porta 1394.<br /><br />-   **habilita o suporte à depuração** remota adicionando a opção/dbg1394 ao <OSEntryLineNum>especificado.<br />-   **desativado** -desabilita o suporte à depuração remota removendo a opção/dbg1394 da <OSEntryLineNum>especificada. |
 |    /s <computer>     |                                                                                        Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                        |
-| /u <Domain> @ no__t-1 @ no__t-2  |                                               Executa o comando com as permissões de conta do usuário especificado por <User> ou <Domain> @ no__t-2 @ no__t-3. O padrão é as permissões do usuário conectado no momento no computador que emite o comando.                                               |
+| /u <Domain>\\<User>  |                                               Executa o comando com as permissões de conta do usuário especificado por <User> ou <Domain>\\<User>. O padrão é as permissões do usuário conectado no momento no computador que emite o comando.                                               |
 |    /p <Password>     |                                                                                                      Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                       |
 |     /CH canal      |                                                           Especifica o canal a ser usado para depuração. Os valores válidos são inteiros entre 1 e 64. Não use o parâmetro **/ch** <Channel> se a depuração de porta 1394 estiver sendo desabilitada.                                                           |
 | /ID <OSEntryLineNum> |                                  Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini para o qual as opções de depuração de porta 1394 são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1.                                  |
@@ -50,5 +50,5 @@ bootcfg /dbg1394 on /ch 1 /id 3
 bootcfg /dbg1394 edit /ch 8 /id 2 
 bootcfg /s srvmain /u maindom\hiropln /p p@ssW23 /dbg1394 off /id 2
 ```
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

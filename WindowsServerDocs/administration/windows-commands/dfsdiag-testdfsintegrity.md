@@ -22,15 +22,15 @@ ms.locfileid: "71378433"
 ---
 # <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Verifica a integridade do namespace Sistema de Arquivos Distribuído \(DFS @ no__t-1 executando os seguintes testes:  
+Verifica a integridade da Sistema de Arquivos Distribuído \(namespace\) do DFS executando os seguintes testes:  
   
 -   Verifica se há danos ou inconsistências nos metadados do DFS entre os controladores de domínio.  
   
--   Valida a configuração de enumeração de acesso @ no__t-0based para garantir que ele seja consistente entre os metadados do DFS e o compartilhamento do servidor de namespace.  
+-   Valida a configuração de enumeração baseada em\-de acesso para garantir que seja consistente entre os metadados do DFS e o compartilhamento do servidor de namespace.  
   
--   Detecta pastas DFS sobrepostas \(links @ no__t-1, pastas duplicadas e pastas com destinos de pasta sobrepostos.  
+-   Detecta pastas DFS sobrepostas \(links\), pastas duplicadas e pastas com destinos de pasta sobrepostos.  
   
   
   
@@ -44,9 +44,9 @@ dfsdiag /TestDFSIntegrity /DFSRoot:<DFS root path> [/Recurse] [/Full]
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|\/DFSRoot: <DFS root path>|O namespace do DFS para diagnosticar.|  
-|\/Recurse|Executa os testes, incluindo os Interlinks de namespace.|  
-|\/Full|verifica a consistência do compartilhamento e das ACLs de NTFS e da configuração do lado do cliente em todos os destinos de pasta. Ele também verifica se a propriedade online está definida.|  
+|\/DFSRoot:<DFS root path>|O namespace do DFS para diagnosticar.|  
+|recurse \/|Executa os testes, incluindo os Interlinks de namespace.|  
+|\/completo|verifica a consistência do compartilhamento e das ACLs de NTFS e da configuração do lado do cliente em todos os destinos de pasta. Ele também verifica se a propriedade online está definida.|  
   
 ## <a name="BKMK_Examples"></a>Disso  
 Para TBD, digite:  
@@ -55,7 +55,7 @@ Para TBD, digite:
 dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full  
 ```  
   
-## <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>referências adicionais  
   
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

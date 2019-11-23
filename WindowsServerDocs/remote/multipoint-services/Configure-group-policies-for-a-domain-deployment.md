@@ -32,7 +32,7 @@ A conta de usuário do WMSshell é uma conta do sistema que o MultiPoint Service
 > [!NOTE]  
 > Para saber como atualizar as políticas de grupo, consulte [Editor de política de grupo local](https://technet.microsoft.com/library/dn265982.aspx).  
   
-**REGRAS** Configuração do usuário > modelos administrativos > painel de controle > **personalização**  
+**Política:** Configuração do usuário > modelos administrativos > painel de controle > **personalização**  
   
 Atribua os seguintes valores:  
   
@@ -42,14 +42,14 @@ Atribua os seguintes valores:
 |Tempo limite de Proteção de Tela|Desabilitado<br /><br />Segundos: xxx|  
 |Proteger com senha a proteção de tela|Desabilitado|  
   
-**REGRAS** Configuração do computador > configurações do Windows > configurações de segurança > políticas locais > atribuição de direitos de usuário > **Permitir logon local**  
+**Política:** Configuração do computador > configurações do Windows > configurações de segurança > políticas locais > atribuição de direitos de usuário > **Permitir logon local**  
   
 |Configuração|Valores|  
 |-----------|----------|  
 |Permitir logon localmente|Verifique se a lista de contas inclui a conta WMSshell.<br /><br />**Observação:** Por padrão, a conta WMSshell é um membro do grupo usuários. Se o grupo usuários estiver na lista e WMSshell for um membro do grupo usuários, você não precisará adicionar a conta WMSshell à lista.|  
   
 > [!IMPORTANT]  
-> Ao definir qualquer política de grupo, verifique se as políticas não interferem nas atualizações automáticas e no relatório de erros do Windows no MultiPoint Server. Elas são definidas pelas configurações **instalar atualizações automaticamente** e **automáticas do relatório de erros do Windows** que foram selecionadas durante a instalação do Windows MultiPoint Server, configuradas no MultiPoint Manager usando **Editar configurações do servidor**ou configurado em atualizações agendadas para proteção de disco.  
+> Ao definir qualquer política de grupo, verifique se as políticas não interferem nas atualizações automáticas e no relatório de erros do Windows no MultiPoint Server. Elas são definidas pelas configurações **instalar atualizações automaticamente** e **automáticas do relatório de erros do Windows** que foram selecionadas durante a instalação do Windows MultiPoint Server, configuradas no MultiPoint Manager usando **Editar configurações do servidor**ou configuradas em atualizações agendadas para proteção de disco.  
   
 ## <a name="update-the-registry"></a>Atualizar o registro  
 Para uma implantação de domínio dos serviços do MultiPoint, você deve atualizar as seguintes subchaves do registro.  
@@ -63,9 +63,9 @@ Para uma implantação de domínio dos serviços do MultiPoint, você deve atual
   
 2.  No painel esquerdo, localize e selecione a seguinte subchave do registro:  
   
-    HKEY_USERS @ no__t-0SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
+    HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
-    onde '<SIDofWMSshell>' é o identificador de segurança (SID) da conta WMSshell. Para descobrir como identificar o SID, consulte [como associar um nome de usuário a um SID (identificador de segurança)](https://support.microsoft.com/kb/154599).  
+    onde '<SIDofWMSshell>' é o identificador de segurança (SID) para a conta WMSshell. Para descobrir como identificar o SID, consulte [como associar um nome de usuário a um SID (identificador de segurança)](https://support.microsoft.com/kb/154599).  
   
 3.  Na lista à direita, atualize as seguintes subchaves.  
   

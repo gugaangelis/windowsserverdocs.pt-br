@@ -40,7 +40,7 @@ Nesta seção:
 
 * (*em branco*)-recurso não disponível
 
-* **UEK R @ no__t-1x t @ no__t-2y** -inquebrable Enterprise kernel (UEK) em que *x* é o número de versão e *y* é a atualização trimestral.
+* **UEK R\*x t\*y** -unbreakable Enterprise kernel (UEK), em que *x* é o número de versão e *y* é a atualização trimestral.
 
 ## <a name="BKMK_rhc"></a>Série kernel compatível com Red Hat
 

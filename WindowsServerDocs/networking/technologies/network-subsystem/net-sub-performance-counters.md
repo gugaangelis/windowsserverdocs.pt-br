@@ -17,7 +17,7 @@ ms.locfileid: "71401843"
 ---
 # <a name="network-related-performance-counters"></a>Contadores de desempenho relacionados à rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico lista os contadores que são relevantes para gerenciar o desempenho de rede e contém as seções a seguir.  
   
@@ -57,11 +57,11 @@ Os contadores de desempenho a seguir são relevantes para a utilização de recu
   
   - Comprimento da fila de saída  
   
-    Esse contador é o comprimento da fila de pacotes de saída \(in pacotes @ no__t-1. Se isso for maior do que 2, ocorrerão atrasos. Você deve encontrar o afunilamento e eliminá-lo se puder. Como o NDIS enfileira as solicitações, esse comprimento deve ser sempre 0.  
+    Este contador é o comprimento da fila de pacotes de saída \(em pacotes\). Se isso for maior do que 2, ocorrerão atrasos. Você deve encontrar o afunilamento e eliminá-lo se puder. Como o NDIS enfileira as solicitações, esse comprimento deve ser sempre 0.  
   
 - Informações do processador  
   
-  - % Tempo do Processador  
+  - % Tempo do processador  
   
   - Interrupções/s  
   

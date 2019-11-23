@@ -44,19 +44,19 @@ O **Cluster Estendido** permite a configuração de computadores e o armazenamen
 
 ![Diagrama que mostra dois nós de cluster em Nova York usando a Réplica de Armazenamento para replicar o armazenamento com dois nós em Nova Jersey](./media/Storage-Replica-Overview/Storage_SR_StretchCluster.png)  
 
-**FIGURE 1: Replicação de armazenamento em um cluster de ampliação usando a réplica de armazenamento @ no__t-0  
+**Figura 1: replicação de armazenamento em um cluster de ampliação usando a réplica de armazenamento**  
 
 **Cluster para Cluster** permite a replicação entre dois clusters separados, em que um cluster é replicado de forma síncrona ou assíncrona com outro cluster. Esse cenário pode utilizar Espaços de Armazenamento Diretos, Espaços de Armazenamento com armazenamento SAS compartilhado, LUNs conectadas a SAN e iSCSI. Ele é gerenciado com o centro de administração do Windows e o PowerShell e requer intervenção manual para failover. 
 
 ![Diagrama que mostra um cluster em Los Angeles usando a Réplica de Armazenamento para replicar o armazenamento com um cluster diferente em Las Vegas](./media/Storage-Replica-Overview/Storage_SR_ClustertoCluster.png)  
 
-**FIGURE 2: Replicação de armazenamento de cluster para cluster usando a réplica de armazenamento @ no__t-0  
+**Figura 2: replicação de armazenamento de cluster para cluster usando a réplica de armazenamento**  
 
 **Servidor para servidor** permite a replicação síncrona e assíncrona entre dois servidores autônomos, usando Espaços de Armazenamento com armazenamento SAS compartilhado, LUNs conectadas a SAN e iSCSI e unidades locais. Ele é gerenciado com o centro de administração do Windows e o PowerShell e requer intervenção manual para failover.  
 
 ![Diagrama que mostra um servidor no Prédio 5 replicando com um servidor no Prédio 9](./media/Storage-Replica-Overview/Storage_SR_ServertoServer.png)  
 
-**FIGURE 3: Replicação de armazenamento de servidor para servidor usando a réplica de armazenamento @ no__t-0  
+**Figura 3: replicação de armazenamento de servidor para servidor usando a réplica de armazenamento**  
 
 > [!NOTE]
 > Você também pode configurar a replicação de servidor para si mesmo usando quatro volumes separados em um computador. No entanto, este guia não abrange esse cenário.  
@@ -140,7 +140,7 @@ Quando gravações de aplicativo ocorrem na cópia de dados de origem, o armazen
 
 | Modo | Diagrama | Etapas |
 | -------- | ----------- | --------- |
-| **Replicação**<br /><br />Zero Perda de dados<br /><br />RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação síncrona](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  O aplicativo grava dados<br />2.  Dados de log são gravados e os dados são replicados para o local remoto<br />3.  Dados de log são gravados no local remoto<br />4.  Confirmação do local remoto<br />5.  Gravação de aplicativo confirmada<br /><br />t & T1: Dados liberados para o volume, logs sempre são gravados |
+| **Replicação**<br /><br />Zero Perda de dados<br /><br />RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação síncrona](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  O aplicativo grava dados<br />2.  Dados de log são gravados e os dados são replicados para o local remoto<br />3.  Dados de log são gravados no local remoto<br />4.  Confirmação do local remoto<br />5.  Gravação de aplicativo confirmada<br /><br />t & t1: dados liberados para o volume, logs sempre realizam gravação |
 
 ### <a name="asynchronous-replication"></a>Replicação assíncrona
 
@@ -152,7 +152,7 @@ Com seu RPO maior que zero, a replicação assíncrona é menos adequada para so
 
 | Modo | Diagrama | Etapas |
 | -------- | ----------- | --------- |
-| **Manipulador**<br /><br />Perda de dados quase zero<br /><br />(depende de vários fatores)<br /><br />RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação assíncrona](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  O aplicativo grava dados<br />2.  Dados de log gravados<br />3.  Gravação de aplicativo confirmada<br />4.  Dados replicados para o local remoto<br />5.  Dados de log gravados no local remoto<br />6.  Confirmação do local remoto<br /><br />t & T1: Dados liberados para o volume, logs sempre são gravados |
+| **Manipulador**<br /><br />Perda de dados quase zero<br /><br />(depende de vários fatores)<br /><br />RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação assíncrona](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  O aplicativo grava dados<br />2.  Dados de log gravados<br />3.  Gravação de aplicativo confirmada<br />4.  Dados replicados para o local remoto<br />5.  Dados de log gravados no local remoto<br />6.  Confirmação do local remoto<br /><br />t & t1: dados liberados para o volume, logs sempre realizam gravação |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>Principais pontos de avaliação e comportamentos  
 
@@ -193,7 +193,7 @@ Para obter uma lista dos novos recursos na réplica de armazenamento no Windows 
 - [Estender a replicação do cluster usando o armazenamento compartilhado](stretch-cluster-replication-using-shared-storage.md)  
 - [Replicação de armazenamento de servidor para servidor](server-to-server-storage-replication.md)  
 - [Cluster para replicação de armazenamento de cluster](cluster-to-cluster-storage-replication.md)  
-- [Réplica de armazenamento: Problemas conhecidos](storage-replica-known-issues.md)  
+- [Réplica de armazenamento: problemas conhecidos](storage-replica-known-issues.md)  
 - [Réplica de armazenamento: perguntas frequentes](storage-replica-frequently-asked-questions.md)  
 - [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)
 - [Suporte do Windows IT Pro](https://www.microsoft.com/itpro/windows/support)

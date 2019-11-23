@@ -45,8 +45,8 @@ chdir [..]
 |Parâmetro|Descrição|
 |---------|-----------|
 |/d|Altera a unidade atual, bem como o diretório atual de uma unidade.|
-|> de @no__t 0Drive:|Especifica a unidade a ser exibida ou alterada (se for diferente da unidade atual).|
-|\<Path >|Especifica o caminho para o diretório que você deseja exibir ou alterar.|
+|> da unidade de \<:|Especifica a unidade a ser exibida ou alterada (se for diferente da unidade atual).|
+|\<caminho >|Especifica o caminho para o diretório que você deseja exibir ou alterar.|
 |[..]|Especifica que você deseja alterar para a pasta pai.|
 |/?|Exibe a ajuda no prompt de comando.|
 

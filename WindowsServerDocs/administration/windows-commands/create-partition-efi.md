@@ -22,9 +22,9 @@ ms.locfileid: "71379012"
 ---
 # <a name="create-partition-efi"></a>criar partição EFI
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Em computadores com Itanium @ no__t-0based, cria uma interface de firmware extensível \(EFI @ no__t-2 partição do sistema em uma tabela de partição GUID \(gpt @ no__t-4 disco.  
+Em computadores baseados no Itanium\-, o cria uma interface de firmware extensível \(partição do sistema EFI\) em uma tabela de partição GUID \(disco\) GPT.  
   
   
   
@@ -38,9 +38,9 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
   
 |  Parâmetro  |                                                                                             Descrição                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  tamanho @ no__t-0 @ no__t-1  |                         O tamanho da partição em megabytes \(MB @ no__t-1. Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na região atual.                         |
-| deslocamento @ no__t-0 @ no__t-1 |             O deslocamento em kilobytes \(KB @ no__t-1, no qual a partição é criada. Se nenhum deslocamento for fornecido, a partição será colocada na primeira extensão de disco grande o suficiente para contê-la.              |
-|    NOERR    | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
+|  tamanho\=<n>  |                         O tamanho da partição em megabytes \(MB\). Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na região atual.                         |
+| \=de deslocamento <n> |             O deslocamento em kilobytes \(KB\), no qual a partição é criada. Se nenhum deslocamento for fornecido, a partição será colocada na primeira extensão de disco grande o suficiente para contê-la.              |
+|    NOERR    | somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -55,7 +55,7 @@ Para criar uma partição EFI de 1000 megabytes no disco selecionado, digite:
 create partition efi size=1000  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

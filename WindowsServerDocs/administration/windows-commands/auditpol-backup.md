@@ -22,7 +22,7 @@ ms.locfileid: "71382455"
 ---
 # <a name="auditpol-backup"></a>backup de Auditpol
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Faz backup das configurações da política de auditoria do sistema, das configurações de política de auditoria por usuário para todos os usuários e de todas as opções de auditoria para um arquivo de texto de valores separados por vírgulas (CSV).
 
@@ -46,6 +46,6 @@ auditpol /backup /file:C:\auditpolicy.csv
 ```
 > [!NOTE]
 > Se nenhuma unidade for especificada, o diretório atual será usado.
-> #### <a name="additional-references"></a>Referências adicionais
+> #### <a name="additional-references"></a>referências adicionais
 > [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 > [restauração de Auditpol](auditpol-restore.md)

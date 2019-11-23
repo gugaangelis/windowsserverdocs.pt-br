@@ -30,7 +30,7 @@ Você também pode adicionar hardware e gerenciar drivers localmente, desde que 
 
 Há algumas limitações e dicas importantes para ter em mente quando você trabalha com o Server Core:
 
-- Se você fechar todas as janelas de prompt de comando e quiser abrir uma nova janela de prompt de comando, poderá fazer isso no Gerenciador de tarefas. Pressione **Ctrl @ no__t-1ALT @ no__t-2DELETE**, clique em **iniciar Gerenciador de tarefas**, clique em **mais detalhes > Arquivo > executar**e digite **cmd. exe**. (Digite **PowerShell. exe** para abrir uma janela de comando do PowerShell.) Como alternativa, você pode sair e entrar novamente.
+- Se você fechar todas as janelas de prompt de comando e quiser abrir uma nova janela de prompt de comando, poderá fazer isso no Gerenciador de tarefas. Pressione **CTRL\+ALT\+excluir**, clique em **iniciar Gerenciador de tarefas**, clique em **mais detalhes > Arquivo > executar**e digite **cmd. exe**. (Digite **PowerShell. exe** para abrir uma janela de comando do PowerShell.) Como alternativa, você pode sair e entrar novamente.
 - Nenhum comando ou ferramenta que tente iniciar o Windows Explorer vai funcionar. Por exemplo, executar **Iniciar.** de um prompt de comando não funcionará.
 - Não há suporte para renderização HTML ou ajuda HTML no Server Core.
 - O Server Core dá suporte a Windows Installer no modo silencioso para que você possa instalar ferramentas e utilitários de Windows Installer arquivos. Ao instalar Windows Installer pacotes no Server Core, use a opção **/QB** para exibir a interface do usuário básica.
@@ -149,4 +149,4 @@ Para desabilitar um driver de dispositivo, execute o seguinte:
 sc delete <service_name>
 ```
 
-Em que *nome_do_serviço* é o nome do serviço que você obteve ao executar a **consulta SC Type = driver**.
+Em que *service_name* é o nome do serviço que você obteve quando executou a **consulta SC Type = driver**.

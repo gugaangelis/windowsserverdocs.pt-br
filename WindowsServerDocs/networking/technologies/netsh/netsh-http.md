@@ -23,7 +23,7 @@ Use **netsh http** para consultar e definir configurações e parâmetros de htt
 >[!TIP]
 >Se você estiver usando o Windows PowerShell em um computador que executa o Windows Server 2016 ou o Windows 10, digite **netsh** e pressione Enter. No prompt do netsh, digite **http** e pressione ENTER para obter o prompt http do netsh.
 >
->&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6netsh http @ no__t-7
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh http\>
 
 Os comandos netsh http disponíveis são:
 
@@ -98,7 +98,7 @@ add sslcert [ ipport= ] IPAddress:port [ certhash= ] CertHash [ appid= ] GUID [ 
 |         **revocationfreshnesstime**          | Especifica o intervalo de tempo, em segundos, para verificar se há uma CRL (lista de certificados revogados) atualizada. Se esse valor for zero, a nova CRL será atualizada somente se a anterior expirar. | Opcional |
 |           **urlretrievaltimeout**            |                            Especifica o intervalo de tempo limite (em milissegundos) após a tentativa de recuperar a lista de certificados revogados para a URL remota.                            | Opcional |
 |             **sslctlidentifier**             |                Especifica a lista dos emissores de certificado que podem ser confiáveis. Essa lista pode ser um subconjunto dos emissores de certificado que são confiáveis para o computador.                 | Opcional |
-|             **sslctlstorename**              |                                                Especifica o nome do repositório de certificados em LOCAL_MACHINE em que SslCtlIdentifier está armazenado.                                                | Opcional |
+|             **sslctlstorename**              |                                                Especifica o nome do repositório de certificados em LOCAL_MACHINE em que SslCtlIdentifier é armazenado.                                                | Opcional |
 |              **dsmapperusage**               |                                                        Especifica se os Mapeadores DS estão habilitados ou desabilitados. O padrão é desabilitado.                                                         | Opcional |
 |          **clientcertnegotiation**           |                                              Especifica se a negociação do certificado está habilitada ou desabilitada. O padrão é desabilitado.                                               | Opcional |
 
@@ -156,8 +156,8 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 |   **url**    |                                          Especifica o Uniform Resource Locator (URL) totalmente qualificado.                                           | Obrigatório |
 |   **user**   |                                                      Especifica o nome do usuário ou do grupo de usuários                                                       | Obrigatório |
-|  **ouvir**  | Especifica um dos seguintes valores: Sim: Permitir que o usuário registre URLs. Este é o valor padrão. Não: Negar que o usuário registre URLs. | Opcional |
-| **delegá** |  Especifica um dos seguintes valores: Sim: Permitir que o usuário delegue URLs não: Negar o usuário de delegar URLs. Este é o valor padrão.  | Opcional |
+|  **ouvir**  | Especifica um dos seguintes valores: Sim: permitir que o usuário registre URLs. Esse é o valor padrão. Não: negar que o usuário registre URLs. | Opcional |
+| **delegá** |  Especifica um dos seguintes valores: Sim: permitir que o usuário delegue URLs: negar o usuário de delegar URLs. Esse é o valor padrão.  | Opcional |
 |   **SDDL**   |                                                Especifica uma cadeia de caracteres SDDL que descreve a DACL.                                                 | Opcional |
 
 ---
@@ -166,10 +166,10 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 
 A seguir, há quatro exemplos do comando **Add urlacl** .
 
-- Adicionar URL urlacl = https://+:80/MyUri usuário = domínio @ no__t-1user
-- Adicionar URL urlacl = <https://www.contoso.com:80/MyUri> usuário = domínio @ no__t-1user Listen = Sim
-- Adicionar URL urlacl = <https://www.contoso.com:80/MyUri> usuário = domínio @ no__t-1user delegado = não
-- Adicionar URL urlacl = https://+:80/MyUri SDDL =...
+- Adicionar URL do urlacl =https://+:80/MyUri usuário = domínio\\usuário
+- Adicionar URL do urlacl =<https://www.contoso.com:80/MyUri> usuário = domínio\\usuário escutar = Sim
+- Adicionar URL do urlacl =<https://www.contoso.com:80/MyUri> usuário = domínio\\representante do usuário = não
+- Adicionar URL urlacl =https://+:80/MyUri SDDL =...
 
 ---
 
@@ -196,7 +196,7 @@ delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 
 A seguir, dois exemplos do comando **Excluir cache** .
 
-- excluir URL do cache = <https://www.contoso.com:80/myresource/> recursivo = Sim
+- excluir URL do cache =<https://www.contoso.com:80/myresource/> recursivo = Sim
 - Excluir cache
 
 ---
@@ -312,8 +312,8 @@ delete urlacl [ url= ] URL
 
 A seguir, dois exemplos do comando **delete urlacl** .
 
-- excluir URL urlacl = https://+:80/MyUri
-- excluir URL urlacl = <https://www.contoso.com:80/MyUri>
+- excluir URL do urlacl =https://+:80/MyUri
+- excluir URL do urlacl =<https://www.contoso.com:80/MyUri>
 
 ---
 
@@ -352,7 +352,7 @@ show cachestate [ [url= ] URL]
 
 A seguir, dois exemplos do comando **show CacheState** :
 
-- Mostrar URL do CacheState = <https://www.contoso.com:80/myresource>
+- Mostrar URL do CacheState =<https://www.contoso.com:80/myresource>
 - Mostrar CacheState
 
 ---
@@ -462,8 +462,8 @@ show urlacl [ [url= ] URL]
 
 Veja a seguir três exemplos do comando **show urlacl** .
 
-- Mostrar URL urlacl = https://+:80/MyUri
-- Mostrar URL urlacl = <https://www.contoso.com:80/MyUri>
+- Mostrar URL do urlacl =https://+:80/MyUri
+- Mostrar URL do urlacl =<https://www.contoso.com:80/MyUri>
 - Mostrar urlacl
 
 ---

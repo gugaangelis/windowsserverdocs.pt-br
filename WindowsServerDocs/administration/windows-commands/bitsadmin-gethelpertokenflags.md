@@ -21,9 +21,9 @@ ms.locfileid: "71381572"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
-Retorna os sinalizadores de uso para um [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)@no__t-qual está associado a um trabalho de transferência bits.
+Retorna os sinalizadores de uso para um [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs) associado a um trabalho de transferência bits.
 
-**BITS 3,0 e anteriores**: Não compatível.
+**BITS 3,0 e anteriores**: sem suporte.
 
 ## <a name="syntax"></a>Sintaxe
 

@@ -22,7 +22,7 @@ ms.locfileid: "71380016"
 ---
 # <a name="bootcfg-default"></a>bootcfg default
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Especifica a entrada do sistema operacional a ser designada como padrão.
 
@@ -35,7 +35,7 @@ bootcfg /default [/s <computer> [/u <Domain>\<User> /p <Password>]] [/id <OSEntr
 |      Parâmetro       |                                                                                             Descrição                                                                                              |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                          Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                          |
-| /u <Domain> @ no__t-1 @ no__t-2  | Executa o comando com as permissões de conta do usuário especificado por <User> ou <Domain> @ no__t-2 @ no__t-3. O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
+| /u <Domain>\\<User>  | Executa o comando com as permissões de conta do usuário especificado por <User> ou <Domain>\\<User>. O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
 |    /p <Password>     |                                                        Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                         |
 | /ID <OSEntryLineNum> | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini para designar como padrão. A primeira linha após o cabeçalho da seção [Operating Systems] é 1.  |
 |          /?          |                                                                                 Exibe a ajuda no prompt de comando.                                                                                 |
@@ -46,5 +46,5 @@ Os exemplos a seguir mostram como você pode usar o comando **Bootcfg/default**:
 bootcfg /default /id 2
 bootcfg /default /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -29,7 +29,7 @@ Ao criar um cluster de failover usando o Assistente de Criação de Cluster ou u
 
 Para criar o CNO automaticamente, o usuário que cria o cluster de failover deve ter permissão para **Criar objetos de computador** para a OU (Unidade Organizacional) ou o contêiner onde ficam os servidores que formarão o cluster. Para habilitar um usuário ou grupo para criar um cluster sem ter essa permissão, um usuário com as permissões adequadas em AD DS (normalmente, um administrador de domínio) poderá pré-configurar o CNO no AD DS. Isso também dá ao administrador do domínio maior controle sobre a convenção de nomenclatura que é utilizada para o cluster e controle sobre qual OU na qual os objetos de cluster são criados.
 
-## <a name="step-1-prestage-the-cno-in-ad-ds"></a>Etapa 1: Pré-configurar o CNO no AD DS
+## <a name="step-1-prestage-the-cno-in-ad-ds"></a>Etapa 1: pré-configurar o CNO em AD DS
 
 Antes de começar, certifique-se de que você tenha as seguintes informações:
 
@@ -59,9 +59,9 @@ Como melhor prática, recomendamos a criação de uma OU para os objetos de clus
 
 ![CNO desabilitado no exemplo da OU dos Clusters](media/prestage-cluster-adds/disabled-cno-in-the-example-clusters-ou.png)
 
-**Figure 1. O CNO foi desabilitado nos clusters de exemplo OU @ no__t-0
+**Figura 1. O CNO foi desabilitado na UO de clusters de exemplo**
 
-## <a name="step-2-grant-the-user-permissions-to-create-the-cluster"></a>Etapa 2: Conceder ao usuário permissões para criar o cluster
+## <a name="step-2-grant-the-user-permissions-to-create-the-cluster"></a>Etapa 2: conceder permissões para o usuário para criar o cluster
 
 Você deve configurar permissões para que a conta de usuário que será usada para criar o cluster de failover tenha permissões de Controle Total em relação ao CNO.
 
@@ -77,7 +77,7 @@ Veja como conceder as permissões de usuário para criar o cluster:
   
    ![Concedendo Controle Total ao usuário ou grupo que criará o cluster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
-   **Figure 2. Concedendo controle total ao usuário ou grupo que criará o cluster @ no__t-0
+   **Figura 2. Concedendo controle total ao usuário ou grupo que criará o cluster**
 6. Selecione **OK**.
 
 Após concluir essa etapa, o usuário para o qual você concedeu as permissões poderá criar o cluster de failover. No entanto, se o CNO estiver localizado em uma OU, o usuário não poderá criar funções clusterizadas que exijam um ponto de acesso de cliente até que você conclua a Etapa 3.
@@ -85,18 +85,18 @@ Após concluir essa etapa, o usuário para o qual você concedeu as permissões 
 >[!NOTE]
 >Se o CNO estiver no contêiner de Computadores padrão, um administrador de cluster poderá criar até 10 VCOs sem qualquer configuração adicional. Para adicionar mais de 10 VCOs, você terá que conceder permissão explícita para **Criar objetos de computador** ao CNO do contêiner de computadores.
 
-## <a name="step-3-grant-the-cno-permissions-to-the-ou-or-prestage-vcos-for-clustered-roles"></a>Etapa 3: Conceder as permissões do CNO para a UO ou pré-teste VCOs para funções clusterizadas
+## <a name="step-3-grant-the-cno-permissions-to-the-ou-or-prestage-vcos-for-clustered-roles"></a>Etapa 3: conceder as permissões de CNO para a OU ou pré-configurar VCOs das funções clusterizadas
 
 Ao criar uma função clusterizada com um ponto de acesso cliente, o cluster cria um VCO na mesma OU do CNO. Para que isso ocorra de forma automática, o CNO deve ter as permissões para criar objetos de computador na OU.
 
 Caso tenha pré-configurado o CNO em AD DS, será possível escolher uma das opções abaixo para criar os VCOs:
 
-- Opção 1: [Conceda as permissões do CNO à UO](#grant-the-cno-permissions-to-the-ou). Se usar essa opção, o cluster poderá criar os VCOs automaticamente em AD DS. Portanto, um administrador de cluster de failover poderá criar funções clusterizadas sem ter que solicitar que você pré-configure os VCOs em AD DS.
+- Opção 1: [Conceder as permissões do CNO à OU](#grant-the-cno-permissions-to-the-ou). Se usar essa opção, o cluster poderá criar os VCOs automaticamente em AD DS. Portanto, um administrador de cluster de failover poderá criar funções clusterizadas sem ter que solicitar que você pré-configure os VCOs em AD DS.
 
 >[!NOTE]
 >A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo necessário para concluir as etapas desta opção.
 
-- Opção 2: [Pré-testar um VCO para uma função clusterizada](#prestage-a-vco-for-a-clustered-role). Utilize essa opção se for necessário pré-configurar as contas das funções clusterizadas devido aos requisitos de sua organização. Por exemplo, talvez você queira controlar a convenção de nomenclatura ou controlar quais funções clusterizadas são criadas.
+- Opção 2: [pré-configurar um VCO para uma função clusterizada](#prestage-a-vco-for-a-clustered-role). Utilize essa opção se for necessário pré-configurar as contas das funções clusterizadas devido aos requisitos de sua organização. Por exemplo, talvez você queira controlar a convenção de nomenclatura ou controlar quais funções clusterizadas são criadas.
 
 >[!NOTE]
 >A associação ao grupo **Operadores da Conta** é o mínimo necessário para concluir as etapas desta opção.
@@ -104,7 +104,7 @@ Caso tenha pré-configurado o CNO em AD DS, será possível escolher uma das op�
 ### <a name="grant-the-cno-permissions-to-the-ou"></a>Conceder as permissões do CNO para a UO
 
 1. Em Usuários e Computadores do Active Directory, no menu **Exibir**, verifique se a opção **Recursos Avançados** está selecionada.
-2. Clique com o botão direito do mouse na UO em que você criou o CNO no [Step 1: Pré-teste o CNO em AD DS @ no__t-0 e selecione **Propriedades**.
+2. Clique com o botão direito do mouse na UO em que você criou o CNO na [etapa 1: pré-teste o CNO em AD DS](#step-1-prestage-the-cno-in-ad-ds)e, em seguida, selecione **Propriedades**.
 3. Na guia **segurança** , selecione **avançado**.
 4. Na caixa de diálogo **configurações de segurança avançadas** , selecione **Adicionar**.
 5. Ao lado de **principal**, selecione **selecionar uma entidade de segurança**.
@@ -115,7 +115,7 @@ Caso tenha pré-configurado o CNO em AD DS, será possível escolher uma das op�
 
    ![Concedendo a permissão para Criar objetos de computador ao CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
 
-   **Figure 3. Concedendo a permissão CREATE Computer Objects ao CNO @ no__t-0
+   **Figura 3. Concedendo a permissão CREATE Computer Objects ao CNO**
 10. Selecione **OK** até retornar ao snap-in Active Directory usuários e computadores.
 
 Um administrador no cluster de failover poderá agora criar funções clusterizadas com pontos de acesso de cliente e colocar os recursos online.

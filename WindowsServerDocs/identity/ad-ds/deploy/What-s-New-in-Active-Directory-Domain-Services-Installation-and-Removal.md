@@ -110,17 +110,17 @@ O assistente de instalação do AD DS verifica se os seguintes pré-requisitos f
   
 Por exemplo, os pré-requisitos relacionados ao Adprep incluem:  
 
-- Verificação de credencial do Adprep: Se for preciso executar o adprep, o assistente de instalação verificará se o usuário tem direitos suficientes para executar as operações do Adprep necessárias.  
-- Verificação de disponibilidade do mestre de esquema: Se o assistente de instalação determinar que o adprep /forestprep deve ser executado, o assistente verificará se o mestre de esquema está online; se não estiver, o processo falhará.  
-- Verificação de disponibilidade do mestre de infraestrutura: Se o assistente de instalação determinar que o adprep /forestprep deve ser executado, o assistente verificará se o mestre de infraestrutura está online; se não estiver, o processo falhará.
+- Verificação de credencial do Adprep: se for preciso executar o adprep, o assistente de instalação verificará se o usuário tem direitos suficientes para executar as operações do Adprep.  
+- Verificação de disponibilidade do mestre de esquema: se o assistente de instalação determinar que o adprep /forestprep deve ser executado, o assistente verificará se o mestre de esquema está online; se não estiver, o processo falhará.  
+- Verificação de disponibilidade do mestre de infraestrutura: se o assistente de instalação determinar que adprep/domainprep precisa ser executado, ele verificará se o mestre de infraestrutura está online e falhará caso contrário.
 
 Outras verificações de pré-requisitos que foram transferidas do Assistente de Instalação do Active Directory herdado (dcpromo.exe) incluem:  
 
-- Verificação de nome da floresta: Verifica se o nome da floresta é válido e não existe no momento.  
-- Verificação de nome NetBIOS: Verifica se o nome NetBIOS fornecido é válido e se não há conflitos com nomes existentes.  
-- Verificação de caminho de componente: Verifica se os caminhos para banco de dados Active Directory, logs e SYSVOL são válidos e se há espaço em disco suficiente a ser disponibilizado para eles.  
-- Verificação de nome de domínio filho: Verifica se os nomes de domínio pai e dos novos domínios filho são válidos e se não há conflitos com domínios existentes.  
-- Verificação de nome de domínio de árvore: Verifica se o nome da árvore especificado é válido e não existe no momento.  
+- Verificação de nome da floresta: verifica se o nome da floresta é válido e único.  
+- Verificação de nome NetBIOS: verifica se o nome NetBIOS fornecido é válido e se não há conflitos com nomes existentes.  
+- Verificação de caminho de componente: verifica se os caminhos para bancos de dados Active Directory, logs e SYSVOL são válidos e se há suficiente espaço livre em disco a ser disponibilizado para eles.  
+- Verificação de nome de domínio filho: verifica se os nomes de domínio pai e dos novos domínios filho são válidos e se não há conflitos com domínios existentes.  
+- Verificação de nome de domínio de árvore: verifica se o nome da árvore é válido e único.  
 
 ## <a name="BKMK_SystemReqs"></a>Requisitos do sistema
 
@@ -168,7 +168,7 @@ Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação
 
    A mensagem de erro apresentada nesse caso é a seguinte:  
 
-   Não é possível se conectar ao controlador de domínio de origem de replicação *nome do controlador de domínio de origem*. (Exceção: Longonfailure: nome de usuário desconhecido ou senha incorreta)  
+   Não é possível se conectar ao controlador de domínio de origem de replicação *nome do controlador de domínio de origem*. (Exceção: Longonfailure: nome se usuário desconhecido ou senha incorreta)  
 
    Se você ingressar o servidor de destino no domínio e depois executar a instalação usando um cartão inteligente, a instalação terá êxito.  
   
@@ -176,7 +176,7 @@ Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação
 
    Nesse caso, é preciso executar o cmdlet ADDSDeployment separadamente do cmdlet que não dá suporte a processos nativos de 64 bits.  
 
-- Há um novo sistema de arquivos no Windows Server 2012 chamado sistema de arquivos resiliente. Não armazene o banco de dados Active Directory, nem os arquivos de log ou o SYSVOL em um volume de dados formatado com ReFS (Sistema de Arquivos Resiliente). Para obter mais informações sobre ReFS, consulte [Building o sistema de arquivos da próxima geração para Windows: ReFS @ no__t-0.  
+- Há um novo sistema de arquivos no Windows Server 2012 chamado sistema de arquivos resiliente. Não armazene o banco de dados Active Directory, nem os arquivos de log ou o SYSVOL em um volume de dados formatado com ReFS (Sistema de Arquivos Resiliente). Para saber mais sobre ReFS, consulte [Criando a próxima geração de sistema de arquivos para Windows: ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx).  
 - No Gerenciador do Servidor, os servidores que executam AD DS ou outras funções de servidor em uma instalação Server Core e foram atualizados para o Windows Server 2012, a função de servidor pode aparecer com status vermelho, mesmo que os eventos e status sejam coletados conforme o esperado. Os servidores que executam uma instalação do Server Core de uma versão preliminar do Windows Server 2012 também podem ser afetados.  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>A instalação dos Serviços de Domínio Active Directory será interrompida se um erro impedir a replicação crítica

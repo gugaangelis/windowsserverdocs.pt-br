@@ -17,11 +17,11 @@ ms.locfileid: "71366875"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Configurar e exibir configurações de VLAN em Portas de comutador virtual do Hyper-V
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender as práticas recomendadas para configurar e exibir as configurações de rede local virtual (VLAN) em uma porta de comutador virtual do Hyper-V.
 
-Quando desejar definir as configurações de VLAN em portas do comutador virtual do Hyper-V, você poderá usar o Windows @ no__t-0 Server 2016 Hyper-V Manager ou o System Center Virtual Machine Manager (VMM).
+Quando desejar definir as configurações de VLAN em portas do comutador virtual Hyper-V, você poderá usar o Windows&reg; Server 2016 Hyper-V Manager ou o System Center Virtual Machine Manager (VMM).
 
 Se você estiver usando o VMM, o VMM usará o seguinte comando do Windows PowerShell para configurar a porta do comutador.
 
@@ -48,8 +48,8 @@ Para configurar e exibir as configurações de porta do comutador de VLAN, você
 
 Se você não seguir essas diretrizes, poderá encontrar os seguintes problemas.
 
-- Em circunstâncias em que você implantou o SDN e usa o VMM, o controlador de rede ou os cmdlets **VMNetworkAdapterIsolation** para definir as configurações de VLAN em uma porta do comutador virtual do Hyper-V: Se você usar o Gerenciador do Hyper-V ou **obter VMNetworkAdapterVlan** para exibir as definições de configuração, a saída do comando não exibirá as configurações de VLAN. Em vez disso, você deve usar o cmdlet **Get-VMNetworkIsolation** para exibir as configurações de VLAN.
-- Em circunstâncias em que você não implantou o SDN e, em vez disso, usa o Gerenciador do Hyper-V ou os cmdlets **VMNetworkAdapterVlan** para definir as configurações de VLAN em uma porta do comutador virtual do Hyper-v: Se você usar o cmdlet **Get-VMNetworkIsolation** para exibir as definições de configuração, a saída do comando não exibirá as configurações de VLAN. Em vez disso, você deve usar o cmdlet **Get VMNetworkAdapterVlan** para exibir as configurações de VLAN.
+- Em circunstâncias em que você implantou o SDN e usa o VMM, o controlador de rede ou os cmdlets **VMNetworkAdapterIsolation** para definir as configurações de VLAN em uma porta do comutador virtual do Hyper-v: se você usar o Gerenciador do Hyper-v ou **obter VMNetworkAdapterVlan** para exibir as definições de configuração, a saída do comando não exibirá as configurações de VLAN. Em vez disso, você deve usar o cmdlet **Get-VMNetworkIsolation** para exibir as configurações de VLAN.
+- Em circunstâncias em que você não implantou o SDN e, em vez disso, usa o Gerenciador do Hyper-V ou os cmdlets **VMNetworkAdapterVlan** para definir as configurações de VLAN em uma porta do comutador virtual do Hyper-v: se você usar o cmdlet **Get-VMNetworkIsolation** para exibir as definições de configuração, a saída do comando não exibirá as configurações de VLAN. Em vez disso, você deve usar o cmdlet **Get VMNetworkAdapterVlan** para exibir as configurações de VLAN.
 
 Também é importante não tentar definir as mesmas configurações de VLAN de porta de comutador usando ambos os métodos de configuração. Se você fizer isso, a porta do comutador será configurada incorretamente e o resultado poderá ser uma falha na comunicação de rede.
 

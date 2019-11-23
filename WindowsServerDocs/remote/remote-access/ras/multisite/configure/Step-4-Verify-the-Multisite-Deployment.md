@@ -21,7 +21,7 @@ ms.locfileid: "71367132"
 ---
 # <a name="step-4-verify-the-multisite-deployment"></a>Etapa 4 verificar a implantação multissite
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como verificar se você configurou corretamente sua implantação multissite de acesso remoto.  
   
@@ -37,7 +37,7 @@ Este tópico descreve como verificar se você configurou corretamente sua implan
   
     Você deve ser capaz de acessar todos os recursos corporativos por meio de cada servidor multissite.  
   
-4.  Conecte um computador cliente do Windows 7 @ no__t-0 à rede corporativa e obtenha a política de grupo.  
+4.  Conecte um computador cliente do Windows 7&reg; à rede corporativa e obtenha a política de grupo.  
   
 5.  Conecte o computador cliente do Windows 7 à rede externa e tente acessar os recursos internos.  
   

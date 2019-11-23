@@ -22,10 +22,10 @@ ms.locfileid: "71369871"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Desconecta uma sessão de um servidor de Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
-Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
 
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
@@ -41,7 +41,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 |-------|--------|
 |\<SessionId >|Especifica a ID da sessão a ser desconectada.|
 |\<SessionName >|Especifica o nome da sessão a ser desconectada.|
-|/Server: \<ServerName >|Especifica o servidor de terminal que contém a sessão que você deseja desconectar. Caso contrário, o servidor host da Sessão RD atual será usado.|
+|/Server:\<ServerName >|Especifica o servidor de terminal que contém a sessão que você deseja desconectar. Caso contrário, o servidor host da Sessão RD atual será usado.|
 |/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|
 

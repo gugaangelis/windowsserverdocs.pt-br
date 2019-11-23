@@ -38,7 +38,7 @@ reg unload <KeyName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName >|Especifica o caminho completo da subchave a ser descarregada. Para especificar computadores remotos, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. Chaves de raiz válidas para o computador local são HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão HKLM e HKU.|
+|\<KeyName >|Especifica o caminho completo da subchave a ser descarregada. Para especificar computadores remotos, inclua o nome do computador (no formato \\\\ComputerName\) como parte do *KeyName*. Omitir \\\\computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. Chaves de raiz válidas para o computador local são HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão HKLM e HKU.|
 |/?|Exibe a ajuda para o **reg Unload** no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

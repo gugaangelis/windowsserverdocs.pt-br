@@ -37,23 +37,23 @@ Dependendo do seu cenário, use um dos procedimentos a seguir para executar uma 
   
 1. Inicie Instalação do Windows, especifique o idioma, o formato de hora e de moeda e as opções de teclado e clique em **Avançar**. 
 2. Clique em **Reparar seu computador**.
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore1.png) de restauração do ![Server
 3. Clique em **Solucionar problemas**.</br>
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore2.png) de restauração do ![Server
 4. Clique em **recuperação de imagem do sistema**.</br>
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore3.png) de restauração do ![Server
 5. Clique em **Windows Server 2016**. 
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore4.png) de restauração do ![Server
 6. Se você estiver restaurando o backup local mais recente, clique em **usar a imagem de sistema mais recente disponível (recomendado)** e clique em **Avançar**.
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore5.png) de restauração do ![Server
 7. Agora você terá uma opção para:
    -  Formatar e reparticionar discos
    -  Instalar drivers
    -  Desmarcando os recursos **avançados** de reinicialização automática e verificação de erros de disco. Eles são habilitados por padrão.
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png) de restauração do ![Server
 8. Clique em **Avançar**.
-9. Clique em **Finalizar**. Você será solicitado a perguntar se tem certeza de que deseja continuar. Clique em **Sim**. 
-   Restauração de @no__t 0Server @ no__t-1 
+9. Clique em **Concluir**. Você será solicitado a perguntar se tem certeza de que deseja continuar. Clique em **Sim**. 
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) de restauração do ![Server 
 10. Quando isso for concluído, execute uma restauração autoritativa do SYSVOL, conforme descrito em [recuperação de floresta do AD, executando uma sincronização autoritativa de SYSVOL replicado pelo DFSR](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
 
 ## <a name="perform-a-full-server-restore-with-any-image-local-or-remote"></a>Executar uma restauração completa do servidor com qualquer imagem local ou remota
@@ -64,11 +64,11 @@ Dependendo do seu cenário, use um dos procedimentos a seguir para executar uma 
 4. Se você estiver restaurando o backup local mais recente, clique em **selecionar uma imagem do sistema** e clique em **Avançar**.
 5. Agora você pode selecionar o local do backup que deseja restaurar. Se a imagem for local, você poderá selecioná-la na lista. 
 6. Se a imagem estiver em um compartilhamento de rede, selecione **avançado**. Você também pode selecionar **avançado** se precisar instalar um driver.
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore7.png) de restauração do ![Server
 7. Se você estiver restaurando da rede depois de clicar em **avançado** , selecione **procurar uma imagem do sistema na rede**. Você pode ser solicitado a restaurar a conectividade de rede. Selecione OK. </br>
-   Restauração de @no__t 0Server @ no__t-1
-8. Digite o caminho UNC para o local do compartilhamento de backup (por exemplo, \\ \ server1\backups) e clique em **OK**. Você também pode digitar o endereço IP do servidor de destino, como \\ \ 192.168.1.3 \ backups. 
-   Restauração de @no__t 0Server @ no__t-1
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png) de restauração do ![Server
+8. Digite o caminho UNC para o local do compartilhamento de backup (por exemplo, \\\server1\backups) e clique em **OK**. Você também pode digitar o endereço IP do servidor de destino, como \\\192.168.1.3\backups. 
+   ](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png) de restauração do ![Server
 9. Digite as credenciais necessárias para acessar o compartilhamento e clique em OK. 
 10. Agora, **Selecione a data e a hora da imagem do sistema a ser restaurada** e clique em **Avançar**.
 11. Agora você terá uma opção para:
@@ -76,7 +76,7 @@ Dependendo do seu cenário, use um dos procedimentos a seguir para executar uma 
     - Instalar drivers
     - Desmarcando os recursos **avançados** de reinicialização automática e verificação de erros de disco. Eles são habilitados por padrão.
 12. Clique em **Avançar**.
-13. Clique em **Finalizar**. Você será solicitado a perguntar se tem certeza de que deseja continuar. Clique em **Sim**.  
+13. Clique em **Concluir**. Você será solicitado a perguntar se tem certeza de que deseja continuar. Clique em **Sim**.  
 14. Quando isso for concluído, execute uma restauração autoritativa do SYSVOL, conforme descrito em [recuperação de floresta do AD, executando uma sincronização autoritativa de SYSVOL replicado pelo DFSR](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>Habilitando o adaptador de rede para um backup de rede
@@ -84,7 +84,7 @@ Dependendo do seu cenário, use um dos procedimentos a seguir para executar uma 
 Se você precisar habilitar um adaptador de rede do prompt de comando para restaurar de um compartilhamento de rede, use as etapas a seguir.
 
 1. Inicie Instalação do Windows, especifique o idioma, o formato de hora e de moeda e as opções de teclado e clique em **Avançar**. 
-2. Clique em **Reparar seu computador**. ENCONTREI
+2. Clique em **Reparar seu computador**. Encontrei
 3. Clique em **solucionar problemas**, clique em **prompt de comando**. 
 4. Digite o seguinte comando e pressione ENTER:  
 

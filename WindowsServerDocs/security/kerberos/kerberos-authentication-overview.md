@@ -22,21 +22,21 @@ ms.locfileid: "71386311"
 ---
 # <a name="kerberos-authentication-overview"></a>Visão geral da autenticação Kerberos
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Kerberos é um protocolo de autenticação usado para verificar a identidade de um usuário ou host. Este tópico contém informações sobre a autenticação Kerberos no Windows Server 2012 e no Windows 8.
 
 ## <a name="BKMK_OVER"></a>Descrição do recurso
-Os sistemas operacionais Windows Server implementam o protocolo de autenticação Kerberos versão 5 e extensões para autenticação de chave pública, transporte de dados de autorização e delegação. O cliente de autenticação Kerberos é implementado como um provedor de suporte de segurança \(SSP @ no__t-1 e pode ser acessado por meio da interface do provedor de suporte de segurança \(SSPI @ no__t-3. A autenticação de usuário inicial é integrada com a arquitetura de logon único do Winlogon @ no__t-0on.
+Os sistemas operacionais Windows Server implementam o protocolo de autenticação Kerberos versão 5 e extensões para autenticação de chave pública, transporte de dados de autorização e delegação. O cliente de autenticação Kerberos é implementado como um provedor de suporte de segurança \(\)SSP e pode ser acessado por meio da interface do provedor de suporte de segurança \(SSPI\). A autenticação de usuário inicial é integrada com a arquitetura de\-de logon único do Winlogon.
 
-O Kerberos centro de distribuição de chaves \(KDC @ no__t-1 é integrado a outros serviços de segurança do Windows Server que são executados no controlador de domínio. O KDC usa o banco de dados de Active Directory Domain Services do domínio como seu banco de dados de conta de segurança. Os Serviços de Domínio do Active Directory são exigidos para implementações Kerberos padrão no domínio ou na floresta.
+O Kerberos centro de distribuição de chaves \(KDC\) é integrado a outros serviços de segurança do Windows Server que são executados no controlador de domínio. O KDC usa o banco de dados de Active Directory Domain Services do domínio como seu banco de dados de conta de segurança. Os Serviços de Domínio do Active Directory são exigidos para implementações Kerberos padrão no domínio ou na floresta.
 
 ## <a name="kerb_tr_Kerb_Benefits"></a>Aplicativos práticos
-Os benefícios obtidos com o uso do Kerberos para a autenticação do domínio @ no__t-0based são:
+Os benefícios obtidos com o uso do Kerberos para autenticação baseada em\-de domínio são:
 
 -   **Autenticação delegada.**
 
-    Os serviços que são executados em sistemas operacionais Windows podem representar um computador cliente ao acessar recursos em nome do cliente. Em muitos casos, um serviço pode concluir seu trabalho para o cliente ao acessar recursos no computador local. Quando um computador cliente é autenticado para o serviço, o protocolo Kerberos e NTLM fornecem as informações de autorização de que um serviço precisa para representar o computador cliente local. No entanto, alguns aplicativos distribuídos são projetados de forma que um serviço de @ no__t-0end frontal deve usar a identidade do computador cliente quando ele se conecta aos serviços do @ no__t-1Fim em outros computadores. A autenticação Kerberos dá suporte a um mecanismo de delegação que permite que um serviço aja em nome de seu cliente ao se conectar a outros serviços.
+    Os serviços que são executados em sistemas operacionais Windows podem representar um computador cliente ao acessar recursos em nome do cliente. Em muitos casos, um serviço pode concluir seu trabalho para o cliente ao acessar recursos no computador local. Quando um computador cliente é autenticado para o serviço, o protocolo Kerberos e NTLM fornecem as informações de autorização de que um serviço precisa para representar o computador cliente local. No entanto, alguns aplicativos distribuídos são projetados de forma que um serviço de front\-end deve usar a identidade do computador cliente ao se conectar a serviços de back\-end em outros computadores. A autenticação Kerberos dá suporte a um mecanismo de delegação que permite que um serviço aja em nome de seu cliente ao se conectar a outros serviços.
 
 -   **Logon único.**
 
@@ -44,11 +44,11 @@ Os benefícios obtidos com o uso do Kerberos para a autenticação do domínio @
 
 -   **Interoperabilidade.**
 
-    A implementação do protocolo Kerberos v5 pela Microsoft baseia-se nas especificações de padrões @ no__t-0track que são recomendadas para o Internet Engineering Task Force \(IETF @ no__t-2. Como resultado, em sistemas operacionais Windows, o protocolo Kerberos estabelece uma base para a interoperabilidade com outras redes em que o protocolo Kerberos é usado para autenticação. Além disso, a Microsoft publica documentação de protocolos do Windows para implementar o protocolo Kerberos. A documentação contém os requisitos técnicos, as limitações, as dependências e o comportamento do protocolo Windows @ no__t-0specific para a implementação do protocolo Kerberos da Microsoft.
+    A implementação do protocolo Kerberos v5 pela Microsoft baseia-se em padrões\-controlar as especificações que são recomendadas para a Internet Engineering Task Force \(IETF\). Como resultado, em sistemas operacionais Windows, o protocolo Kerberos estabelece uma base para a interoperabilidade com outras redes em que o protocolo Kerberos é usado para autenticação. Além disso, a Microsoft publica documentação de protocolos do Windows para implementar o protocolo Kerberos. A documentação contém os requisitos técnicos, as limitações, as dependências e o comportamento do protocolo específico do Windows\-para a implementação do protocolo Kerberos da Microsoft.
 
 -   **Autenticação mais eficiente para servidores.**
 
-    Antes do Kerberos, a autenticação NTLM podia ser usada, que exige que um servidor de aplicativos conecte-se a um controlador de domínio para autenticar cada computador cliente ou serviço. Com o protocolo Kerberos, os tíquetes de sessão renováveis substituem a autenticação Pass @ no__t-0through. Não é necessário que o servidor vá para um controlador de domínio \(unless ele precisa validar um certificado de atributo de privilégio \(PAC @ no__t-2 @ no__t-3. Em vez disso, o servidor pode autenticar o computador cliente examinando as credenciais apresentadas pelo cliente. Computadores cliente podem obter credenciais para um servidor específico uma vez e então reutilizá-las durante uma sessão de logon de rede.
+    Antes do Kerberos, a autenticação NTLM podia ser usada, que exige que um servidor de aplicativos conecte-se a um controlador de domínio para autenticar cada computador cliente ou serviço. Com o protocolo Kerberos, os tíquetes de sessão renováveis substituem a passagem\-por meio da autenticação. Não é necessário que o servidor vá para um controlador de domínio \(, a menos que precise validar um certificado de atributo de privilégio \(PAC\)\). Em vez disso, o servidor pode autenticar o computador cliente examinando as credenciais apresentadas pelo cliente. Computadores cliente podem obter credenciais para um servidor específico uma vez e então reutilizá-las durante uma sessão de logon de rede.
 
 -   **Autenticação mútua.**
 

@@ -22,7 +22,7 @@ ms.locfileid: "71379903"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 adiciona opções de carregamento do sistema operacional especificadas como uma cadeia de caracteres a uma entrada do sistema operacional na seção **[Operating Systems]** do arquivo boot. ini.
 
@@ -35,7 +35,7 @@ bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsSt
 |         Termo          |                                                                                                            Definição                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     |                                                        Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                         |
-| /u <Domain> \\ @ no__t-2  |               Executa o comando com as permissões de conta do usuário especificado por <User> ou <Domain> @ no__t-2 @ no__t-3. O padrão é as permissões do usuário conectado no momento no computador que emite o comando.                |
+| /u <Domain> \\<User>  |               Executa o comando com as permissões de conta do usuário especificado por <User> ou <Domain>\\<User>. O padrão é as permissões do usuário conectado no momento no computador que emite o comando.                |
 |     /p <Password>     |                                                                       Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                       |
 | <OSLoadOptionsString> | Especifica as opções de carregamento do sistema operacional a serem adicionadas à entrada do sistema operacional. Essas opções de carregamento substituirão todas as opções de carregamento existentes associadas à entrada do sistema operacional. Nenhuma validação de <OSLoadOptions> é feita. |
 | /ID <OSEntryLineNum>  |                       Especifica o número da linha da entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini a ser atualizado. A primeira linha após o cabeçalho da seção [Operating Systems] é 1.                       |
@@ -53,5 +53,5 @@ bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsSt
   bootcfg /raw "/debug /sos" /id 2
   bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 "/crashdebug " /id 2
   ```
-  #### <a name="additional-references"></a>Referências adicionais
+  #### <a name="additional-references"></a>referências adicionais
   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -36,8 +36,8 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Source >|Obrigatório. Especifica o local e os nomes dos arquivos que você deseja copiar. Esse parâmetro deve incluir uma unidade ou um caminho.|
-|[\<Destination >]|Especifica o destino dos arquivos que você deseja copiar. Esse parâmetro pode incluir uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
+|> de origem do \<|Necessário. Especifica o local e os nomes dos arquivos que você deseja copiar. Esse parâmetro deve incluir uma unidade ou um caminho.|
+|[\<de destino >]|Especifica o destino dos arquivos que você deseja copiar. Esse parâmetro pode incluir uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
 |/w|Exibe a mensagem a seguir e aguarda sua resposta antes de começar a copiar arquivos:</br>**Pressione qualquer tecla para começar a Copiar arquivo (s)**|
 |/p|Solicita que você confirme se deseja criar cada arquivo de destino.|
 |/c|Ignora erros.|
@@ -118,36 +118,36 @@ Pressione F se desejar que o arquivo ou os arquivos sejam copiados para um arqui
   |0|Os arquivos foram copiados sem erros.|
   |1|Nenhum arquivo foi encontrado para cópia.|
   |2|O usuário pressionou CTRL + C para encerrar o **xcopy**.|
-  |4|Ocorreu um erro de inicialização. Não há memória ou espaço em disco suficiente ou você inseriu um nome de unidade inválido ou uma sintaxe inválida na linha de comando.|
+  |추가를 클릭합니다.|Ocorreu um erro de inicialização. Não há memória ou espaço em disco suficiente ou você inseriu um nome de unidade inválido ou uma sintaxe inválida na linha de comando.|
   |5|Erro de gravação no disco.|
 
 ## <a name="examples"></a>Exemplos
 
-**1.** Para copiar todos os arquivos e subdiretórios (incluindo todos os subdiretórios vazios) da unidade A para a unidade B, digite:
+**1.** para copiar todos os arquivos e subdiretórios (incluindo todos os subdiretórios vazios) da unidade a para a unidade B, digite:
 
 ```
 xcopy a: b: /s /e 
 ```
 
-**2.** Para incluir qualquer sistema ou arquivos ocultos no exemplo anterior, adicione a opção de linha de comando<strong>/h</strong> da seguinte maneira:
+**2.** para incluir qualquer sistema ou arquivo oculto no exemplo anterior, adicione a opção de linha de comando<strong>/h</strong> da seguinte maneira:
 
 ```
 xcopy a: b: /s /e /h
 ```
 
-**Beta.** Para atualizar arquivos no diretório \Reports com os arquivos no diretório \Rawdata que foram alterados desde 29 de dezembro de 1993, digite:
+**3.** para atualizar os arquivos no diretório \Reports com os arquivos no diretório \Rawdata que foram alterados desde 29 de dezembro de 1993, digite:
 
 ```
 xcopy \rawdata \reports /d:12-29-1993
 ```
 
-**quatro.** Para atualizar todos os arquivos existentes no \Reports no exemplo anterior, independentemente da data, digite:
+**4.** para atualizar todos os arquivos existentes no \Reports no exemplo anterior, independentemente da data, digite:
 
 ```
 xcopy \rawdata \reports /u
 ```
 
-**05.** Para obter uma lista dos arquivos a serem copiados pelo comando anterior (ou seja, sem realmente copiar os arquivos), digite:
+**5.** para obter uma lista dos arquivos a serem copiados pelo comando anterior (ou seja, sem realmente copiar os arquivos), digite:
 
 ```
 xcopy \rawdata \reports /d:12-29-1993 /l > xcopy.out
@@ -155,19 +155,19 @@ xcopy \rawdata \reports /d:12-29-1993 /l > xcopy.out
 
 O arquivo Xcopy. out lista todos os arquivos que serão copiados.
 
-**152.** Para copiar o diretório \Customer e todos os subdiretórios para o diretório \\ @ no__t-1Public\Address na unidade de rede H:, manter o atributo somente leitura e receber uma solicitação quando um novo arquivo for criado em H:, digite:
+**6.** para copiar o diretório \Customer e todos os subdiretórios para o diretório \\\\Public\Address na unidade de rede H:, manter o atributo somente leitura e receber uma solicitação quando um novo arquivo for criado no H:, digite:
 
 ```
 xcopy \customer h:\public\address /s /e /k /p
 ```
 
-**7.** Para emitir o comando anterior, certifique-se de que **xcopy** cria o diretório \Address se ele não existir e suprimir a mensagem que aparece quando você cria um novo diretório, adicione a opção de linha de comando **/i** da seguinte maneira:
+**7.** para emitir o comando anterior, certifique-se de que **xcopy** cria o diretório \Address se ele não existir e suprimir a mensagem que aparece quando você cria um novo diretório, adicione a opção de linha de comando **/i** da seguinte maneira:
 
 ```
 xcopy \customer h:\public\address /s /e /k /p /i
 ```
 
-**8.** Você pode criar um programa em lotes para executar operações **xcopy** e usar o comando Batch **If** para processar o código de saída se ocorrer um erro. Por exemplo, o seguinte programa em lotes usa parâmetros substituíveis para os parâmetros de origem e destino do **xcopy** :
+**8.** você pode criar um programa em lotes para executar operações de **xcopy** e usar o comando Batch **If** para processar o código de saída se ocorrer um erro. Por exemplo, o seguinte programa em lotes usa parâmetros substituíveis para os parâmetros de origem e destino do **xcopy** :
 
 ```
 @echo off
@@ -194,9 +194,9 @@ Para usar o programa em lotes anterior para copiar todos os arquivos no diretór
 copyit c:\prgmcode b:
 ```
 
-O interpretador de comando substitui **C:\Prgmcode** para *% 1* e **B:** para *% 2*, usa **xcopy** com as opções de linha de comando **/e** e **/s** . Se **xcopy** encontrar um erro, o programa em lotes lerá o código de saída e vai para o rótulo indicado na instrução **If ERRORLEVEL** apropriada e, em seguida, exibirá a mensagem apropriada e sairá do programa em lotes.
+O interpretador de comando substitui **C:\Prgmcode** para *%1* e **B:** para *%2*, usa **xcopy** com as opções de linha de comando **/e** e **/s** . Se **xcopy** encontrar um erro, o programa em lotes lerá o código de saída e vai para o rótulo indicado na instrução **If ERRORLEVEL** apropriada e, em seguida, exibirá a mensagem apropriada e sairá do programa em lotes.
 
-**99.** Este exemplo todos os diretórios não vazios, além de arquivos cujo nome corresponde ao padrão fornecido com o símbolo de asterisco.
+**9.** este exemplo todos os diretórios não vazios, além de arquivos cujo nome corresponde ao padrão fornecido com o símbolo de asterisco.
 
 ```
 xcopy .\toc*.yml ..\..\Copy-To\ /S /Y
@@ -208,7 +208,7 @@ rem  .\d2\toc.yml
 rem  3 File(s) copied
 ```
 
-No exemplo anterior, esse valor de parâmetro de origem específico **. @no__t -1toc\*.yml** Copie os mesmos três arquivos mesmo que seus dois caracteres de caminho **. \\** tenham sido removidos. No entanto, nenhum arquivo seria copiado se o curinga de asterisco fosse removido do parâmetro de origem, tornando-o apenas **. @no__t -1toc. yml**.
+No exemplo anterior, esse valor de parâmetro de origem específico **.\\toc\*. yml** Copie os mesmos três arquivos mesmo se seus dois caracteres de caminho **.\\** foram removidos. No entanto, nenhum arquivo seria copiado se o curinga de asterisco fosse removido do parâmetro de origem, tornando-o apenas **.\\TOC. yml**.
 
 #### <a name="additional-references"></a>Referências adicionais
 

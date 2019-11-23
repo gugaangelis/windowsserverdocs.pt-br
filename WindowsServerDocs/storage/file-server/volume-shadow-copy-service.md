@@ -52,13 +52,13 @@ Os recursos e aplicativos do Windows que usam o VSS incluem o seguinte:
 
 Uma solução completa do VSS requer todas as seguintes partes básicas:
 
-   Parte do serviço VSS do sistema operacional Windows que garante que os outros componentes possam se comunicar entre si corretamente e trabalhar em conjunto.
+O **serviço VSS**   parte do sistema operacional Windows que garante que os outros componentes possam se comunicar entre si corretamente e trabalharem juntos.
 
-**Solicitante do VSS**   o software que solicita a criação real de cópias de sombra (ou outras operações de alto nível, como importar ou excluí-las). Normalmente, esse é o aplicativo de backup. O utilitário Backup do Windows Server e o aplicativo System Center Data Protection Manager são solicitantes VSS. Os solicitantes do VSS que não são da Microsoft® incluem quase todos os softwares de backup que são executados no Windows.
+O **solicitante do VSS**   o software que solicita a criação real de cópias de sombra (ou outras operações de alto nível, como importar ou excluí-las). Normalmente, esse é o aplicativo de backup. O utilitário Backup do Windows Server e o aplicativo System Center Data Protection Manager são solicitantes VSS. Os solicitantes do VSS que não são da Microsoft® incluem quase todos os softwares de backup que são executados no Windows.
 
-**Gravador VSS o**componente que garante que temos um conjunto de dados consistente para fazer backup.    Normalmente, isso é fornecido como parte de um aplicativo de linha de negócios, como SQL Server® ou Exchange Server. Os gravadores VSS para vários componentes do Windows, como o registro, estão incluídos no sistema operacional Windows. Os gravadores VSS não Microsoft são incluídos em muitos aplicativos para Windows que precisam garantir a consistência dos dados durante o backup.
+O **gravador VSS**   o componente que garante que temos um conjunto de dados consistente para fazer backup. Normalmente, isso é fornecido como parte de um aplicativo de linha de negócios, como SQL Server® ou Exchange Server. Os gravadores VSS para vários componentes do Windows, como o registro, estão incluídos no sistema operacional Windows. Os gravadores VSS não Microsoft são incluídos em muitos aplicativos para Windows que precisam garantir a consistência dos dados durante o backup.
 
-**Provedor VSS o**componentequecriaemantémascópiasdesombra   . Isso pode ocorrer no software ou no hardware. O sistema operacional Windows inclui um provedor VSS que usa cópia em gravação. Se você usar uma SAN (rede de área de armazenamento), é importante que você instale o provedor de hardware VSS para a SAN, se um for fornecido. Um provedor de hardware descarrega a tarefa de criar e manter uma cópia de sombra do sistema operacional do host.
+O **provedor VSS**   o componente que cria e mantém as cópias de sombra. Isso pode ocorrer no software ou no hardware. O sistema operacional Windows inclui um provedor VSS que usa cópia em gravação. Se você usar uma SAN (rede de área de armazenamento), é importante que você instale o provedor de hardware VSS para a SAN, se um for fornecido. Um provedor de hardware descarrega a tarefa de criar e manter uma cópia de sombra do sistema operacional do host.
 
 O diagrama a seguir ilustra como o serviço VSS coordena com solicitantes, gravadores e provedores para criar uma cópia de sombra de um volume.
 
@@ -106,11 +106,11 @@ Para criar uma cópia de sombra, o solicitante, o gravador e o provedor executam
 
 Um provedor de cópia de sombra de hardware ou software usa um dos seguintes métodos para criar uma cópia de sombra:
 
-**Cópia completa esse**método faz uma cópia completa (chamada de "cópia completa" ou "clone") do volume original em um determinado momento.    Esta cópia é somente leitura.
+**Concluir cópia**   esse método faz uma cópia completa (chamada de "cópia completa" ou "clone") do volume original em um determinado momento. Esta cópia é somente leitura.
 
 **Copiar em gravação**   esse método não copia o volume original. Em vez disso, ele faz uma cópia diferencial copiando todas as alterações (solicitações de e/s de gravação concluídas) que são feitas no volume após um determinado ponto no tempo.
 
-**Redirect-on-Write**   esse método não copia o volume original e não faz nenhuma alteração no volume original após um determinado ponto no tempo. Em vez disso, ele faz uma cópia diferencial redirecionando todas as alterações para um volume diferente.
+O **redirecionamento em gravação**   esse método não copia o volume original e não faz nenhuma alteração no volume original após um determinado ponto no tempo. Em vez disso, ele faz uma cópia diferencial redirecionando todas as alterações para um volume diferente.
 
 ## <a name="complete-copy"></a>Concluir cópia
 
@@ -136,7 +136,7 @@ No método Copy-on-Write, quando uma alteração no volume original ocorre (mas 
 </colgroup>
 <thead>
 <tr class="header">
-<th>Time</th>
+<th>Tempo</th>
 <th>Dados de origem (status e dados)</th>
 <th>Cópia de sombra (status e dados)</th>
 </tr>
@@ -160,7 +160,7 @@ No método Copy-on-Write, quando uma alteração no volume original ocorre (mas 
 </tbody>
 </table>
 
-**Tabela 1**   o método Copy-on-Write de criação de cópias de sombra
+A **tabela 1**   o método Copy-on-Write de criação de cópias de sombra
 
 O método Copy-on-Write é um método rápido para criar uma cópia de sombra, pois ela copia apenas os dados que são alterados. Os blocos copiados na área diff podem ser combinados com os dados alterados no volume original para restaurar o volume para seu estado antes que qualquer uma das alterações tenha sido feita. Se houver muitas alterações, o método Copy-on-Write poderá se tornar caro.
 
@@ -177,7 +177,7 @@ No método Redirect-on-Write, sempre que o volume original recebe uma alteraçã
 </colgroup>
 <thead>
 <tr class="header">
-<th>Time</th>
+<th>Tempo</th>
 <th>Dados de origem (status e dados)</th>
 <th>Cópia de sombra (status e dados)</th>
 </tr>
@@ -191,17 +191,17 @@ No método Redirect-on-Write, sempre que o volume original recebe uma alteraçã
 <tr class="even">
 <td><p>T1</p></td>
 <td><p>Dados alterados no cache: 3 a 3 '</p></td>
-<td><p>Cópia de sombra criada (somente diferenças): Beta</p></td>
+<td><p>Cópia de sombra criada (somente diferenças): 3 '</p></td>
 </tr>
 <tr class="odd">
 <td><p>T2</p></td>
 <td><p>Dados originais inalterados: 1 2 3 4 5</p></td>
-<td><p>Diferenças e índice armazenados na cópia de sombra: Beta</p></td>
+<td><p>Diferenças e índice armazenados na cópia de sombra: 3 '</p></td>
 </tr>
 </tbody>
 </table>
 
-**Tabela 2**   o método Redirect-on-Write de criação de cópias de sombra
+A **tabela 2**   o método Redirect-on-Write de criação de cópias de sombra
 
 Assim como o método Copy-on-Write, o método Redirect-on-Write é um método rápido para criar uma cópia de sombra, pois ela copia apenas as alterações nos dados. Os blocos copiados na área de comparação podem ser combinados com os dados inalterados no volume original para criar uma cópia completa e atualizada dos dados. Se houver muitas solicitações de e/s de leitura, o método Redirect-on-Write poderá se tornar caro.
 
@@ -450,15 +450,15 @@ O sistema operacional Windows fornece as seguintes ferramentas para trabalhar co
 
 O DiskShadow é um solicitante VSS que você pode usar para gerenciar todos os instantâneos de hardware e software que você pode ter em um sistema. O DiskShadow inclui comandos como os seguintes:
 
-  - **lista**: Lista gravadores VSS, provedores VSS e cópias de sombra  
+  - **lista**: lista gravadores VSS, provedores VSS e cópias de sombra  
       
-  - **criar**: Cria uma nova cópia de sombra  
+  - **criar**: cria uma nova cópia de sombra  
       
-  - **importar**: Importa uma cópia de sombra transportável  
+  - **importar**: importa uma cópia de sombra transportável  
       
-  - **expor**: Expõe uma cópia de sombra persistente (como uma letra da unidade, por exemplo)  
+  - **expor**: expõe uma cópia de sombra persistente (como uma letra da unidade, por exemplo)  
       
-  - **reverter**: Reverte um volume de volta para uma cópia de sombra especificada  
+  - **reverter**: reverte um volume de volta para uma cópia de sombra especificada  
       
 
 Essa ferramenta é destinada ao uso por profissionais de ti, mas os desenvolvedores também podem achar útil ao testar um VSS Writer ou um provedor VSS.
@@ -471,15 +471,15 @@ VssAdmin é usado para criar, excluir e listar informações sobre cópias de so
 
 VssAdmin inclui comandos como os seguintes:
 
-  - **criar sombra**: Cria uma nova cópia de sombra  
+  - **criar sombra**: cria uma nova cópia de sombra  
       
-  - **excluir sombras**: Exclui cópias de sombra  
+  - **excluir sombras**: exclui cópias de sombra  
       
-  - **listar provedores**: Lista todos os provedores VSS registrados  
+  - **listar provedores**: lista todos os provedores VSS registrados  
       
-  - **listar gravadores**: Lista todos os gravadores VSS assinados  
+  - **listar gravadores**: lista todos os gravadores VSS assinados  
       
-  - **redimensionar ShadowStorage**: Altera o tamanho máximo da área de armazenamento de cópia de sombra  
+  - **redimensionar ShadowStorage**: altera o tamanho máximo da área de armazenamento de cópia de sombra  
       
 
 VssAdmin só pode ser usado para administrar cópias de sombra criadas pelo provedor de software do sistema.
@@ -524,7 +524,7 @@ Para obter mais informações, consulte a seguinte entrada no site da MSDN:
 
 **MinDiffAreaFileSize** em [chaves do registro para backup e restauração](http://go.microsoft.com/fwlink/?linkid=180910) (http://go.microsoft.com/fwlink/?LinkId=180910)
 
-`##`# ' Versões de sistema operacional com suporte
+`##`# ' versões de sistema operacional com suporte
 
 A tabela a seguir lista as versões mínimas de sistema operacional com suporte para recursos do VSS.
 

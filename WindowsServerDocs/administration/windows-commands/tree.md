@@ -38,8 +38,8 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> de @no__t 0Drive:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
-|\<Path >|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
+|> da unidade de \<:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
+|\<caminho >|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
 |/f|Exibe os nomes dos arquivos em cada diretório.|
 |SRDF|Especifica que a **árvore** deve usar caracteres de texto em vez de caracteres gráficos para mostrar as linhas que vinculam subdiretórios.|
 |/?|Exibe a ajuda no prompt de comando.|

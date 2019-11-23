@@ -1,5 +1,5 @@
 ---
-title: query
+title: consulta
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,9 +20,9 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71371842"
 ---
-# <a name="query"></a>query
+# <a name="query"></a>consulta
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre os servidores de processos, sessões e Host da Sessão da Área de Trabalho Remota (Host da Sessão RD).
 
@@ -45,6 +45,6 @@ query user
 |[termserver de consulta](query-termserver.md)|Exibe uma lista de todos os servidores de host da sessão da área de trabalho remota na rede.|
 |[consultar usuário](query-user.md)|Exibe informações sobre sessões de usuário em um servidor de host de sessão de área de trabalho remota.|
 
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)

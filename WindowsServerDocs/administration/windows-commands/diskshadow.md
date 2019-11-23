@@ -22,9 +22,9 @@ ms.locfileid: "71377770"
 ---
 # <a name="diskshadow"></a>diskshadow
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-o DiskShadow. exe é uma ferramenta que expõe a funcionalidade oferecida pelo serviço de cópias de sombra de volume \(VSS @ no__t-1. Por padrão, o DiskShadow usa um interpretador de comando interativo semelhante ao do DiskRAID ou DiskPart. o DiskShadow também inclui um modo programável.  
+o DiskShadow. exe é uma ferramenta que expõe a funcionalidade oferecida pelo serviço de cópias de sombra de volume \(\)VSS. Por padrão, o DiskShadow usa um interpretador de comando interativo semelhante ao do DiskRAID ou DiskPart. o DiskShadow também inclui um modo programável.  
   
 > [!NOTE]  
 > A associação no grupo local de administradores, ou equivalente, é o requisito mínimo necessário para executar o DiskShadow.  
@@ -65,7 +65,7 @@ Você pode executar os seguintes comandos no interpretador de comandos do DiskSh
 |[excluir sombras](delete-shadows.md)|exclui cópias de sombra.|  
 |[importe](import.md)|importa uma cópia de sombra transportável de um arquivo de metadados carregado para o sistema.|  
 |[mascara](mask.md)|Remove cópias de sombra de hardware que foram importadas usando o comando de **importação** .|  
-|[Expo](expose.md)|expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.|  
+|[Expo](expose.md)|Expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.|  
 |[Cancele](unexpose.md)|Não expõe uma cópia de sombra que foi exposta usando o comando **Expo** .|  
 |[break_2](break_2.md)|Desassocia um volume de cópia de sombra do VSS.|  
 |[voltar](revert.md)|reverte um volume de volta para uma cópia de sombra especificada.|  
@@ -80,11 +80,11 @@ Esta é uma sequência de exemplo de comandos que criará uma cópia de sombra p
   
 Suponha o seguinte:  
   
--   Você tem um diretório existente chamado c: \\diskshadowdata.  
+-   Você tem um diretório existente chamado c:\\diskshadowdata.  
   
 -   O volume do sistema é C: e seu volume de dados é D:.  
   
--   Você tem um arquivo backupscript. cmd em c: \\diskshadowdata.  
+-   Você tem um arquivo backupscript. cmd em c:\\diskshadowdata.  
   
 -   O arquivo backupscript. cmd executará a cópia dos dados de sombra p: e q: em sua unidade de backup.  
   
@@ -108,7 +108,7 @@ end backup
 #End of script  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

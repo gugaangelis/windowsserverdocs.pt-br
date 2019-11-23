@@ -38,13 +38,13 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
 
 |           Parâmetro           |                                              Descrição                                               |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|
-|              /v               |                    Exibe todas as linhas que não contêm o > de @no__t 0String especificado.                     |
-|              /c               |              Conta as linhas que contêm o > \<String especificado e exibe o total.              |
+|              /v               |                    Exibe todas as linhas que não contêm a cadeia de caracteres de \<especificada >.                     |
+|              /c               |              Conta as linhas que contêm a cadeia de caracteres de \<especificada > e exibe o total.              |
 |              opção               |                            Precede cada linha com o número de linha do arquivo.                             |
 |              /i               |                            Especifica que a pesquisa não diferencia maiúsculas de minúsculas.                            |
 |         [/off [line]]          |                        Não ignora arquivos que têm o atributo offline definido.                        |
-|          "\<String >"          | Obrigatório. Especifica o grupo de caracteres (entre aspas) que você deseja pesquisar. |
-| [\<Drive >:] [<Path>] <FileName> |        Especifica o local e o nome do arquivo no qual Pesquisar a cadeia de caracteres especificada.        |
+|          "cadeia de caracteres\<>"          | Necessário. Especifica o grupo de caracteres (entre aspas) que você deseja pesquisar. |
+| [\<drive >:] [<Path>]<FileName> |        Especifica o local e o nome do arquivo no qual Pesquisar a cadeia de caracteres especificada.        |
 |              /?               |                                  Exibe a ajuda no prompt de comando.                                  |
 
 ## <a name="remarks"></a>Comentários

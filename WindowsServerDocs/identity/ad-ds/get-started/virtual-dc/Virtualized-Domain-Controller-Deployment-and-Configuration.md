@@ -91,7 +91,7 @@ Nenhuma dessas operações é coberta sob a semântica VM-GenerationID e, portan
 >   
 > Depois da restauração de um instantâneo, os deltas das alterações não replicadas anteriormente, originárias desse controlador de domínio depois do instantâneo, ficam perdidos de forma permanente. A restauração segura implementa a restauração não autoritativa automatizada para evitar *somente*a quarentena de controlador de domínio acidental.  
   
-Para obter mais informações sobre bolhas de USN e objetos remanescentes, consulte [Troubleshooting Active Directory operações que falham com o erro 8606: "Atributos insuficientes foram fornecidos para criar um objeto" ](https://support.microsoft.com/kb/2028495).  
+Para obter mais informações sobre bolhas USN e objetos remanescentes, consulte [Troubleshooting Active Directory operations that fail with error 8606: "Insufficient attributes were given to create an object" (Solução de problemas de operações do Active Directory que falham com o erro 8606: “Foram dados atributos insuficientes para criar um objeto”)](https://support.microsoft.com/kb/2028495).  
   
 ## <a name="BKMK_VDCCloning"></a>Clonagem do controlador de domínio virtualizado  
 Há diversos estágios e etapas para clonar um controlador de domínio virtualizado, independentemente do uso de ferramentas gráficas ou do Windows PowerShell. Em um nível alto, os três estágios são:  
@@ -100,7 +100,7 @@ Há diversos estágios e etapas para clonar um controlador de domínio virtualiz
   
 -   Etapa 1: Validar que o hipervisor dá suporte à ID de Geração de VM e portanto, à clonagem  
   
--   Etapa 2: Verifique se a função de emulador de PDC é hospedada por um controlador de domínio que executa o Windows Server 2012 e que está online e acessível pelo controlador de domínio clonado durante a clonagem.  
+-   Etapa 2: Verifique se a função de emulador de PDC é hospedada por um controlador de domínio que executa o Windows Server 2012 e que ele está online e acessível pelo controlador de domínio clonado durante a clonagem.  
   
 **Preparar o controlador de domínio de origem**  
   
@@ -110,13 +110,13 @@ Há diversos estágios e etapas para clonar um controlador de domínio virtualiz
   
 -   Etapa 5: Criar DCCloneConfig.xml  
   
--   Etapa 6: Manter o controlador de domínio de origem offline  
+-   Etapa 6: Tornar o controlador de domínio de origem offline  
   
 **Criar o controlador de domínio clonado**  
   
--   Etapa 7: Copiar ou exportar a VM de origem e adicionar o XML, se ainda não tiver sido copiado  
+-   Etapa7: Copiar ou exportar a VM de origem e adicionar o XML, se ainda não tiver sido copiado  
   
--   Etapa 8: Criar uma nova máquina virtual a partir da cópia  
+-   Etapa 8: Criar uma nova máquina virtual da cópia  
   
 -   Etapa 9: Iniciar a nova máquina virtual para dar início à clonagem  
   
@@ -427,7 +427,7 @@ Por exemplo, para exportar uma VM denominada DC2-SOURCECLONE para uma pasta deno
 > O Windows Server 2012 Hyper-V dá suporte a novas funcionalidades de exportação e importação que estão fora do escopo deste treinamento. Examine a TechNet para obter mais informações.  
   
 #### <a name="exporting-merged-disks-using-hyper-v"></a>Exportando discos mesclados usando Hyper-V  
-A opção final é usar a mesclagem de disco e as opções de conversão dentro do Hyper-V. Essas opções permitem que você faça uma cópia de uma estrutura de disco existente — mesmo ao incluir arquivos AVHD/AVHDX de instantâneos — em um único disco novo. Assim como o cenário de cópia manual de disco, isso destina-se principalmente a máquinas virtuais mais simples que usam apenas uma única unidade, como C: \\. Sua única vantagem é que, diferente da cópia manual, ela não requer que você primeiro exclua os instantâneos. Essa operação é necessariamente mais lenta do que simplesmente excluir os instantâneos e copiar os discos.  
+A opção final é usar a mesclagem de disco e as opções de conversão dentro do Hyper-V. Essas opções permitem que você faça uma cópia de uma estrutura de disco existente — mesmo ao incluir arquivos AVHD/AVHDX de instantâneos — em um único disco novo. Assim como o cenário de cópia manual de disco, isso destina-se principalmente a máquinas virtuais mais simples que usam apenas uma única unidade, como C:\\. Sua única vantagem é que, diferente da cópia manual, ela não requer que você primeiro exclua os instantâneos. Essa operação é necessariamente mais lenta do que simplesmente excluir os instantâneos e copiar os discos.  
   
 ##### <a name="hyper-v-manager-method"></a>Método do Gerenciador Hyper-V  
 Para criar um disco mesclado usando o Gerenciador Hyper-V:  

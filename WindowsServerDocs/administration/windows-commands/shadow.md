@@ -22,10 +22,10 @@ ms.locfileid: "71383965"
 ---
 # <a name="shadow"></a>shadow
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Permite controlar remotamente uma sessão ativa de outro usuário em um servidor Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
-Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -37,7 +37,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 |-------|--------|
 |\<SessionName >|Especifica o nome da sessão que você deseja controlar remotamente.|
 |\<SessionID >|Especifica a ID da sessão que você deseja controlar remotamente. Use o **usuário de consulta** para exibir a lista de sessões e suas IDs de sessão.|
-|/Server: \<ServerName >|Especifica o servidor de host da sessão da área de trabalho remota que contém a sessão que você deseja controlar remotamente. Por padrão, o servidor de Host4 da Sessão RD atual é usado.|
+|/Server:\<ServerName >|Especifica o servidor de host da sessão da área de trabalho remota que contém a sessão que você deseja controlar remotamente. Por padrão, o servidor de Host4 da Sessão RD atual é usado.|
 |/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -48,7 +48,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   Antes do início do monitoramento, o servidor avisa ao usuário que a sessão está prestes a ser controlada remotamente, a menos que este aviso seja desabilitado. Sua sessão pode parecer estar congelada por alguns segundos enquanto aguarda uma resposta do usuário. Para configurar o controle remoto para usuários e sessões, use a ferramenta de configuração Serviços de Área de Trabalho Remota ou as extensões de Serviços de Área de Trabalho Remota para usuários e grupos locais e usuários e computadores do Active Directory.
 -   Sua sessão deve ser capaz de dar suporte à resolução de vídeo usada na sessão que você está controlando remotamente ou a operação falha.
 -   A sessão de console não pode controlar remotamente outra sessão nem pode ser controlada remotamente por outra sessão.
--   Quando você quiser encerrar o controle remoto (sombreamento), pressione CTRL + \* (usando \* somente do teclado numérico).
+-   Quando você quiser encerrar o controle remoto (sombreamento), pressione CTRL +\* (usando \* somente do teclado numérico).
 
 ## <a name="BKMK_examples"></a>Disso
 -   Para a sessão de sombra 93, digite:
@@ -60,6 +60,6 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
     shadow ACCTG01
     ```
 
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)

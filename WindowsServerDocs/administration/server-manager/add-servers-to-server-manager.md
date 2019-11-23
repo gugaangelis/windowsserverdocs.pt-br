@@ -1,5 +1,5 @@
 ---
-title: Add Servers to Server Manager
+title: Adicionar servidores ao Gerenciador do Servidor
 description: Gerenciador do Servidor
 ms.custom: na
 ms.prod: windows-server
@@ -21,9 +21,9 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71383261"
 ---
-# <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
+# <a name="add-servers-to-server-manager"></a>Adicionar servidores ao Gerenciador do Servidor
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 No Windows Server, você pode gerenciar vários servidores remotos usando um único console do Gerenciador de servidores. Servidores que você deseja gerenciar usando o Gerenciador do servidor podem estar executando Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 ou Windows Server 2008. Observe que não é possível gerenciar uma versão mais recente do Windows Server com uma versão mais antiga do Gerenciador de servidores.
 
@@ -96,13 +96,13 @@ Você pode adicionar servidores ao Gerenciador do servidor para gerenciar usando
 ### <a name="add-and-manage-servers-in-workgroups"></a>Adicionar e gerenciar servidores em grupos de trabalho
 Embora a adição de servidores que estão em grupos de trabalho ao Gerenciador de servidores possa ser bem-sucedida, depois que eles são adicionados, a coluna de **Capacidade de gerenciamento** do bloco **Servidores** em uma página de função ou grupo que inclui um servidor de grupo de trabalho pode exibir erros de **Credenciais inválidas** que ocorrem ao tentar se conectar ao ou coletar dados do servidor remoto do grupo de trabalho.
 
-Esses erros ou erros semelhantes podem ocorrer nas condições a seguir.
+Erros desse tipo ou semelhantes podem ocorrer nestas condições.
 
 -   O servidor gerenciado está no mesmo grupo de trabalho do computador que está executando o Gerenciador do servidor.
 
 -   O servidor gerenciado está em outro grupo de trabalho do computador que está executando o Gerenciador do servidor.
 
--   Um dos computadores está um grupo de trabalho, enquanto o outro está em um domínio.
+-   Um dos computadores está em um grupo de trabalho, enquanto o outro está em um domínio.
 
 -   O computador que está executando o Gerenciador do servidor está em um grupo de trabalho e os servidores remotos gerenciados estão em uma sub-rede diferente.
 
@@ -114,7 +114,7 @@ Esses erros ou erros semelhantes podem ocorrer nas condições a seguir.
 
 ##### <a name="to-add-remote-workgroup-servers-to-server-manager"></a>Para adicionar servidores de grupo de trabalho remotos ao Gerenciador do Servidor
 
-1.  No computador que está executando o Gerenciador do servidor, adicione o nome do servidor de grupo de trabalho à lista **TrustedHosts**. Este é um requisito da autenticação NTLM. Por exemplo, para adicionar o nome do computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o comando a seguir.
+1.  No computador que está executando o Gerenciador do servidor, adicione o nome do servidor de grupo de trabalho à lista **TrustedHosts**. Este é um requisito da autenticação NTLM. Para adicionar um nome de computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o seguinte comando.
 
     ```
     Set-Item wsman:\localhost\Client\TrustedHosts Server01 -Concatenate -force
@@ -127,9 +127,9 @@ Esses erros ou erros semelhantes podem ocorrer nas condições a seguir.
     Se elas não estiverem na mesma sub-rede ou se o perfil de rede do servidor de grupo de trabalho não estiver definida como **particular**, no servidor de grupo de trabalho, alterar a configuração do **gerenciamento remoto do Windows (HTTP-entrada)** entrada em Firewall do Windows para permitir explicitamente conexões de computadores remotos adicionando os nomes de computador na guia **computadores** da caixa de diálogo **Propriedades** da configuração.
 
 3.  > [!IMPORTANT]
-    > A execução do cmdlet nesta etapa substitui as medidas de UAC (Controle de Conta do Usuário) que impedem processos elevados de executar em computadores do grupo de trabalho, a menos que o Administrador interno ou a conta do Sistema esteja executando os processos. O cmdlet permite que membros do grupo de Administradores gerenciem o servidor de grupo de trabalho sem fazer logon como o Administrador interno. Dar permissão para que usuários adicionais gerenciem o servidor de grupo de trabalho pode reduzir sua segurança; no entanto, isso é mais seguro do que fornecer credenciais da conta de Administrador interno, em que pode haver árias pessoas gerenciando o servidor de grupo de trabalho.
+    > A execução do cmdlet nesta etapa substitui as medidas de UAC (Controle de Conta do Usuário) que impedem processos elevados de executar em computadores do grupo de trabalho, a menos que o Administrador interno ou a conta do Sistema esteja executando os processos. O cmdlet permite que membros do grupo de Administradores gerenciem o servidor de grupo de trabalho sem fazer logon como o Administrador interno. A segurança é reduzida ao permitir que usuários adicionais gerenciem o servidor de grupo de trabalho; entretanto, isso é mais seguro do que a fornecer credenciais de conta de administrador interno para várias pessoas que gerenciam o servidor de grupo de trabalho.
 
-    Para substituir as restrições de UAC em processos executados com privilégios elevados nos computadores de grupo de trabalho, crie uma entrada de Registro chamada **LocalAccountTokenFilterPolicy** no servidor de grupo trabalho executando o cmdlet a seguir.
+    Para substituir as restrições de UAC em processos executados com privilégios elevados nos computadores de grupo de trabalho, crie uma entrada de registro chamada **LocalAccountTokenFilterPolicy** no servidor de grupo trabalho executando o cmdlet a seguir.
 
     ```
     New-ItemProperty -Name LocalAccountTokenFilterPolicy -path HKLM:\SOFTWARE\Microsoft\Windows\Currentversion\Policies\System -propertytype DWord -value 1
@@ -145,7 +145,7 @@ Esses erros ou erros semelhantes podem ocorrer nas condições a seguir.
 
 ##### <a name="to-add-remote-servers-when-server-manager-is-running-on-a-workgroup-computer"></a>Para adicionar servidores remotos quando o Gerenciador do Servidor está executando em um computador de grupo de trabalho
 
-1.  No computador que está executando o Gerenciador do Servidor, adicione servidores remotos à lista **TrustedHosts** do computador local em uma sessão do Windows PowerShell. Por exemplo, para adicionar o nome do computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o comando a seguir.
+1.  No computador que está executando o Gerenciador do Servidor, adicione servidores remotos à lista **TrustedHosts** do computador local em uma sessão do Windows PowerShell. Para adicionar um nome de computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o seguinte comando.
 
     ```
     Set-Item wsman:\localhost\Client\TrustedHosts Server01 -Concatenate -force

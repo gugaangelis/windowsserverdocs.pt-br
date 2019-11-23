@@ -18,11 +18,11 @@ ms.locfileid: "71395700"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Cenários de rede com suporte do Windows Server
 
->Aplica-se a: Windows Server \(Semi-canal anual @ no__t-1, Windows Server 2016
+>Aplica-se a: Windows Server \(canal semestral\), Windows Server 2016
 
 Este tópico fornece informações sobre os cenários com e sem suporte que você pode ou não executar com esta versão do Windows Server 2016.  
 >[!IMPORTANT]
->Para todos os cenários de produção, use os drivers de hardware mais recentes assinados de seu fabricante de equipamento original \(OEM @ no__t-1 ou fornecedor de hardware independente \(IHV @ no__t-3.
+>Para todos os cenários de produção, use os drivers de hardware mais recentes assinados de seu fabricante de equipamento original \(OEM\) ou fornecedor de hardware independente \(\)de IHV.
   
 ## <a name="bkmk_supp"></a>Cenários de rede com suporte
 
@@ -38,7 +38,7 @@ Esta seção inclui informações sobre os cenários de rede com suporte para o 
   
 -   [Cenários de agrupamento NIC](#bkmk_nicteam)
 
-- [Mudar os cenários de agrupamento incorporado \(SET @ no__t-2](#bkmk_set)
+- [Mudar a equipe inserida \(definir cenários de\)](#bkmk_set)
   
 ### <a name="bkmk_sdn"></a>Cenários de rede definida pelo software (SDN)
  
@@ -86,7 +86,7 @@ Para obter mais informações, consulte [virtualização de função de rede](sd
   
 ### <a name="bkmk_netp"></a>Cenários de plataforma de rede
 
-Para os cenários nesta seção, a equipe de rede do Windows Server dá suporte ao uso de qualquer driver certificado do Windows Server 2016. Consulte o fabricante da placa de interface de rede \(NIC @ no__t-1 para garantir que você tenha as atualizações de driver mais recentes.
+Para os cenários nesta seção, a equipe de rede do Windows Server dá suporte ao uso de qualquer driver certificado do Windows Server 2016. Verifique com sua placa de interface de rede \(o fabricante de\) NIC para garantir que você tenha as atualizações de driver mais recentes.
   
 Os cenários de plataforma de rede permitem que você:  
   
@@ -169,7 +169,7 @@ Os cenários de agrupamento NIC permitem:
 
 Para obter mais informações, consulte [agrupamento NIC](technologies/nic-teaming/NIC-Teaming.md). 
 
-### <a name="bkmk_set"></a>Mudar os cenários de agrupamento incorporado \(SET @ no__t-2
+### <a name="bkmk_set"></a>Mudar a equipe inserida \(definir cenários de\)
 
 O conjunto é uma solução de agrupamento NIC alternativa que você pode usar em ambientes que incluem o Hyper-V e a pilha de SDN (rede definida pelo software) no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V. 
 

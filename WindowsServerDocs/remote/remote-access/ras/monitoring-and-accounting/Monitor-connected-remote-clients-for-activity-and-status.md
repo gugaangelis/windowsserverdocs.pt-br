@@ -21,7 +21,7 @@ ms.locfileid: "71367264"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>Monitorar a atividade e o status de clientes remotos conectados
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 **Observação:** O Windows Server 2012 combina o DirectAccess e o serviço de acesso remoto (RAS) em uma única função de acesso remoto.  
   
@@ -40,7 +40,7 @@ Você pode usar o console de gerenciamento do no servidor de acesso remoto para 
   
 4.  Você verá a lista de usuários que estão conectados ao servidor de acesso remoto e estatísticas detalhadas sobre eles. Clique na primeira linha da lista que corresponde a um cliente. Quando você seleciona uma linha, a atividade de usuário remoto é mostrada no painel de visualização.  
   
-0Windows-](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -52,7 +52,7 @@ As estatísticas de usuário podem ser filtradas, com base nas seleções de cri
   
 |Nome do campo|Valor|  
 |-------|-----|  
-|Nome de usuário|O nome de usuário ou o alias do usuário remoto. Caracteres curinga podem ser usados para selecionar um grupo de usuários, como contoso @ no__t-0 * ou \* \ administrador.|  
+|Nome de usuário|O nome de usuário ou o alias do usuário remoto. Caracteres curinga podem ser usados para selecionar um grupo de usuários, como contoso\\* ou \*\Administrator.|  
 |nome_do_host|O nome da conta do computador do usuário remoto. Um endereço IPv4 ou IPv6 também pode ser especificado.|  
 |Tipo|DirectAccess ou VPN. Se o DirectAccess estiver selecionado, todos os usuários remotos conectados usando o DirectAccess serão listados. Se a VPN estiver selecionada, todos os usuários remotos conectados usando VPN serão listados.|  
 |endereço ISP|O endereço IPv4 ou IPv6 do usuário remoto.|  

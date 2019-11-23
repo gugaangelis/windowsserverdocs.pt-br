@@ -98,7 +98,7 @@ A Lixeira do Active Directory preserva todos os objetos excluídos na floresta. 
   
 O contêiner **Objetos Excluídos** mostra todos os objetos restauráveis ​​naquela partição de domínio. Objetos excluídos mais antigos que **msDS-deletedObjectLifetime** são conhecidos como objetos reciclados. O Centro Administrativo do Active Directory não mostra objetos reciclados e não é possível restaurar esses objetos usando o Centro Administrativo do Active Directory.  
   
-Para obter uma explicação mais detalhada da arquitetura da lixeira e das regras de processamento, consulte a lixeira do AD [The: Compreensão, implementação, práticas recomendadas e solução de problemas @ no__t-0.  
+Para uma explicação mais profunda sobre a arquitetura e as regras de processamento da lixeira, consulte [A lixeira do AD: Noções básicas, implementação, práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
   
 O Centro Administrativo do Active Directory limita artificialmente o número padrão de objetos retornados de um contêiner a 20.000 objetos. Você pode aumentar esse limite até 100.000 objetos, clicando no menu **Gerenciar** e depois em **Opções da Lista de Gerenciamento**.  
   
@@ -202,7 +202,7 @@ Filtre todos os usuários de Vendas. Mantenha pressionadas as teclas CTRL e A pa
   
 Se a UO de **Vendas** contivesse UOs filhas próprias, então, você restauraria a UO filha primeiro antes de restaurar seus filhos, e assim por diante.  
   
-Para restaurar todos os objetos excluídos aninhados especificando um contêiner pai excluído, consulte [Appendix B: Restaure vários objetos de Active Directory excluídos (script de exemplo) ](https://technet.microsoft.com/library/dd379504(WS.10).aspx).  
+Para restaurar todos os objetos excluídos aninhados especificando um contêiner pai excluído, consulte o [Apêndice B: Restaurar vários objetos excluídos do Active Directory (script de exemplo)](https://technet.microsoft.com/library/dd379504(WS.10).aspx).  
   
 O cmdlet do Windows PowerShell para Active Directory para a restauração de objetos excluídos é:  
 
@@ -450,7 +450,7 @@ Os erros mostrados quando nenhuma instância dos Serviços Web do Active Directo
 |Erro|Operação|
 | --- | --- |  
 |"Não é possível se conectar a nenhum domínio. Atualize ou tente novamente quando a conexão estiver disponível"|Mostrado no início do aplicativo do Centro Administrativo do Active Directory|
-|"Não é possível encontrar um servidor disponível no domínio *<NetBIOS domain name>* que esteja executando o serviço Web do Active Directory (ADWS)"|Mostrado ao tentar selecionar um nó do domínio no aplicativo do Centro Administrativo do Active Directory|
+|"Não é possível encontrar um servidor disponível no domínio *<NetBIOS domain name>* que está executando o serviço Web do Active Directory (ADWS)"|Mostrado ao tentar selecionar um nó do domínio no aplicativo do Centro Administrativo do Active Directory|
   
 Para solucionar esse problema, execute estas etapas:  
   

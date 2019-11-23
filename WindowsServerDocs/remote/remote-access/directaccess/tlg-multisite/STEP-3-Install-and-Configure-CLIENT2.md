@@ -21,11 +21,11 @@ ms.locfileid: "71388323"
 ---
 # <a name="step-3-install-and-configure-client2"></a>ETAPA 3 instalar e configurar o CLIENT2
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-CLIENT2 é um computador Windows 7 @ no__t-0 que é usado para demonstrar a compatibilidade com versões anteriores do acesso remoto em execução em servidores Windows Server 2016.  
+CLIENT2 é um computador&reg; do Windows 7 que é usado para demonstrar a compatibilidade com versões anteriores do acesso remoto em execução nos servidores do Windows Server 2016.  
   
-1. Para instalar o sistema operacional em CLIENT2. Instale o Windows @ no__t-0 7 Enterprise ou o Windows @ no__t-1 7 Ultimate em CLIENT2.  
+1. Para instalar o sistema operacional em CLIENT2. Instale o Windows&reg; 7 Enterprise ou o Windows&reg; 7 Ultimate em CLIENT2.  
   
 2. Para unir o CLIENT2 ao domínio CORP. Junte-se a CLIENT2 ao domínio corp.contoso.com.  
   

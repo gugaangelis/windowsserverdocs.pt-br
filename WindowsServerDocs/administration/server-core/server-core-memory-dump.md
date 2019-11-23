@@ -20,7 +20,7 @@ ms.locfileid: "71383393"
 
 Use as etapas a seguir para configurar um despejo de memória para a instalação do Server Core. 
 
-## <a name="step-1-disable-the-automatic-system-page-file-management"></a>Etapa 1: Desabilitar o gerenciamento de arquivos de página de sistema automático
+## <a name="step-1-disable-the-automatic-system-page-file-management"></a>Etapa 1: desabilitar o gerenciamento de arquivos de página de sistema automático
 
 A primeira etapa é configurar manualmente as opções de falha e recuperação do sistema. Isso é necessário para concluir as etapas restantes.
 
@@ -30,19 +30,19 @@ Execute o seguinte comando:
 wmic computersystem set AutomaticManagedPagefile=False
 ```
  
-## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>Etapa 2: Configurar o caminho de destino para um despejo de memória
+## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>Etapa 2: configurar o caminho de destino para um despejo de memória
 
 Você não precisa ter o arquivo de paginação na partição em que o sistema operacional está instalado. Para colocar o arquivo de paginação em outra partição, você deve criar uma nova entrada de registro chamada **DedicatedDumpFile**. Você pode definir o tamanho do arquivo de paginação usando a entrada do registro **DumpFileSize** . Para criar as entradas de registro DedicatedDumpFile e DumpFileSize, siga estas etapas: 
 
 1. No prompt de comando, execute o comando **regedit** para abrir o editor do registro.
-2. Localize e clique na seguinte subchave do Registro: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl
+2. Localize e clique na seguinte subchave do registro: HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\CrashControl
 3. Clique em **editar > novo > valor da cadeia de caracteres**.
 4. Nomeie o novo valor **DedicatedDumpFile**e pressione Enter.
 5. Clique com o botão direito do mouse em **DedicatedDumpFile**e clique em **Modificar**.
-6. Em tipo de **dados de valor** **\<Drive @ no__t-3: @no__t -4\<Dedicateddumpfile.sys @ no__t-6**e clique em **OK**.
+6. Em tipo de **dados de valor** **\<unidade\>:\\\<Dedicateddumpfile. sys\>** e clique em **OK**.
 
    >[!NOTE] 
-   > Substitua \<Drive @ no__t-1 por uma unidade que tenha espaço em disco suficiente para o arquivo de paginação e substitua @no__t -2Dedicateddumpfile. dmp @ no__t-3 pelo caminho completo do arquivo dedicado.
+   > Substitua \<unidade\> por uma unidade que tenha espaço em disco suficiente para o arquivo de paginação e substitua \<Dedicateddumpfile. dmp\> pelo caminho completo do arquivo dedicado.
  
 7. Clique em **editar > novo > valor DWORD**.
 8. Digite **DumpFileSize**e pressione Enter.
@@ -65,13 +65,13 @@ O destino padrão para **DebugFilePath** é%SystemRoot%\Memory.dmp. Para alterar
 wmic RECOVEROS set DebugFilePath = <FilePath>
 ```
 
-Defina \<FilePath @ no__t-1 para o caminho de destino. Por exemplo, o comando a seguir define o caminho de destino de despejo de memória para C:\WINDOWS\MEMORY. DMP 
+Defina \<FilePath\> para o caminho de destino. Por exemplo, o comando a seguir define o caminho de destino de despejo de memória para C:\WINDOWS\MEMORY. DMP 
 
 ```
 wmic RECOVEROS set DebugFilePath = C:\WINDOWS\MEMORY.DMP
 ```
  
-## <a name="step-3-set-the-type-of-memory-dump"></a>Etapa 3: Definir o tipo de despejo de memória
+## <a name="step-3-set-the-type-of-memory-dump"></a>Etapa 3: definir o tipo de despejo de memória
 
 Determine o tipo de despejo de memória a ser configurado para o servidor. Para exibir o tipo de despejo de memória atual, execute o seguinte comando:
 
@@ -85,14 +85,14 @@ Para alterar o tipo de despejo de memória atual, execute o seguinte comando:
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<Value @ no__t-1 pode ser 0, 1, 2 ou 3, conforme definido abaixo.
+\<valor\> pode ser 0, 1, 2 ou 3, conforme definido abaixo.
 
-- 0: Desabilite a remoção de um despejo de memória.
-- 1: Despejo de memória completo. Registra todo o conteúdo da memória do sistema quando o computador é interrompido inesperadamente. Um despejo de memória cheio pode conter dados de processos que estavam em execução quando o despejo de memória foi coletado.
-- 2: Despejo de memória do kernel (padrão). Registra somente a memória do kernel. Isso acelera o processo de gravação de informações em um arquivo de log quando o computador parar inesperadamente.
-- 3: Despejo de memória pequeno. Registra o menor conjunto de informações úteis que podem ajudar a identificar por que o computador parou inesperadamente.
+- 0: desabilitar a remoção de um despejo de memória.
+- 1: despejo de memória completo. Registra todo o conteúdo da memória do sistema quando o computador é interrompido inesperadamente. Um despejo de memória cheio pode conter dados de processos que estavam em execução quando o despejo de memória foi coletado.
+- 2: despejo de memória do kernel (padrão). Registra somente a memória do kernel. Isso acelera o processo de gravação de informações em um arquivo de log quando o computador parar inesperadamente.
+- 3: despejo de memória pequeno. Registra o menor conjunto de informações úteis que podem ajudar a identificar por que o computador parou inesperadamente.
 
-## <a name="step-4-configure-the-server-to-restart-automatically-after-generating-a-memory-dump"></a>Etapa 4: Configurar o servidor para reiniciar automaticamente após gerar um despejo de memória
+## <a name="step-4-configure-the-server-to-restart-automatically-after-generating-a-memory-dump"></a>Etapa 4: configurar o servidor para reiniciar automaticamente após gerar um despejo de memória
 
 Por padrão, o servidor é reiniciado automaticamente após gerar um despejo de memória. Para exibir a configuração atual, execute o seguinte comando:
 
@@ -108,7 +108,7 @@ Se o valor de **reinicialização** automática for false, o servidor não será
 wmic RECOVEROS set AutoReboot = true
 ```
  
-## <a name="step-5-configure-the-server-to-overwrite-the-existing-memory-dump-file"></a>Etapa 5: Configurar o servidor para substituir o arquivo de despejo de memória existente
+## <a name="step-5-configure-the-server-to-overwrite-the-existing-memory-dump-file"></a>Etapa 5: configurar o servidor para substituir o arquivo de despejo de memória existente
 
 Por padrão, o servidor substitui o arquivo de despejo de memória existente quando um novo é criado. Para determinar se os arquivos de despejo de memória já estão configurados para serem substituídos, execute o seguinte comando:
 
@@ -124,7 +124,7 @@ Se o valor for 0, o servidor não substituirá o arquivo de despejo de memória 
 wmic RECOVEROS set OverwriteExistingDebugFile = 1
 ```
  
-## <a name="step-6-set-an-administrative-alert"></a>Etapa 6: Definir um alerta administrativo
+## <a name="step-6-set-an-administrative-alert"></a>Etapa 6: definir um alerta administrativo
 
 Determine se um alerta administrativo é apropriado e defina **SendAdminAlert** de acordo. Para exibir o valor atual de SendAdminAlert, execute o seguinte comando:
 
@@ -138,7 +138,7 @@ Os valores possíveis para SendAdminAlert são TRUE ou FALSE. Para modificar o v
 wmic RECOVEROS set SendAdminAlert = true
 ```
  
-## <a name="step-7-set-the-memory-dumps-page-file-size"></a>Etapa 7: Definir o tamanho do arquivo de paginação do despejo de memória
+## <a name="step-7-set-the-memory-dumps-page-file-size"></a>Etapa 7: definir o tamanho do arquivo de paginação do despejo de memória
 
 Para verificar as configurações do arquivo de paginação atual, execute um dos seguintes comandos:
 
@@ -158,7 +158,7 @@ Por exemplo, execute o seguinte comando para configurar os tamanhos inicial e m�
 wmic pagefileset where name="c:\\pagefile.sys" set InitialSize=1000,MaximumSize=5000
 ```
 
-## <a name="step-8-configure-the-server-to-generate-a-manual-memory-dump"></a>Etapa 8: Configurar o servidor para gerar um despejo de memória manual
+## <a name="step-8-configure-the-server-to-generate-a-manual-memory-dump"></a>Etapa 8: configurar o servidor para gerar um despejo de memória manual
 
 Você pode gerar manualmente um despejo de memória usando um teclado PS/2. Esse recurso está desabilitado por padrão e não está disponível para teclados de barramento serial universal (USB).
 
@@ -182,7 +182,7 @@ Shutdown / r / t 0
 
 Você pode gerar despejos de memória manuais com um teclado PS/2 conectado ao servidor mantendo a tecla CTRL direita enquanto pressiona a tecla de bloqueio de ROLAgem duas vezes. Isso faz com que a verificação de bug do computador tenha o código de erro 0xE2. Depois de reiniciar o servidor, um novo arquivo de despejo é exibido no caminho de destino que você estabeleceu na etapa 2.
 
-## <a name="step-9-verify-that-memory-dump-files-are-being-created-correctly"></a>Etapa 9: Verificar se os arquivos de despejo de memória estão sendo criados corretamente
+## <a name="step-9-verify-that-memory-dump-files-are-being-created-correctly"></a>Etapa 9: verificar se os arquivos de despejo de memória estão sendo criados corretamente
 
 Você pode usar o utlity Dumpchk. exe para verificar se os arquivos de despejo de memória estão sendo criados corretamente. O utilitário Dumpchk. exe não está instalado com a opção de instalação Server Core, portanto, você precisará executá-lo em um servidor com a experiência desktop ou com o Windows 10. Além disso, as ferramentas de depuração para produtos Windows devem ser instaladas.  
 

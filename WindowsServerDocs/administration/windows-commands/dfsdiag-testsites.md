@@ -22,9 +22,9 @@ ms.locfileid: "71378383"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag TestSites
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Verifica a configuração dos sites do Active Directory Domain Services \(AD DS @ no__t-1, verificando se os servidores que atuam como servidores de namespace ou pastas \(Link @ no__t-3 têm as mesmas associações de site em todos os controladores de domínio.  
+Verifica a configuração dos serviços de domínio do Active Directory \(AD DS\) sites verificando se os servidores que atuam como servidores de namespace ou pasta \(link\) destinos têm as mesmas associações de site em todos os controladores de domínio.  
   
   
   
@@ -38,10 +38,10 @@ dfsdiag /TestSites </Machine:<server name>| /DFSpath:<namespace root or DFS fold
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|\/Machine: <server name>|O nome do servidor no qual verificar a associação do site.|  
-|\/DFSpath: <namespace root or DFS folder>|A raiz do namespace ou Sistema de Arquivos Distribuído \(DFS @ no__t-1 pasta \(Link @ no__t-3 com destinos para os quais verificar a associação do site.|  
-|\/Recurse|Enumera e verifica as associações de site para todos os destinos de pasta na raiz de namespace especificada.|  
-|\/Full|verifica se AD DS e o registro do servidor contêm as mesmas informações de associação do site.|  
+|Computador \/:<server name>|O nome do servidor no qual verificar a associação do site.|  
+|\/DFSpath:<namespace root or DFS folder>|A raiz do namespace ou Sistema de Arquivos Distribuído \(pasta\) do DFS \(link\) com destinos para os quais verificar a associação do site.|  
+|recurse \/|Enumera e verifica as associações de site para todos os destinos de pasta na raiz de namespace especificada.|  
+|\/completo|verifica se AD DS e o registro do servidor contêm as mesmas informações de associação do site.|  
   
 ## <a name="BKMK_Examples"></a>Disso  
 Para TBD, digite:  
@@ -62,7 +62,7 @@ Para TBD, digite:
 dfsdiag /TestSites /DFSpath:\\Contoso.com\Namespace2 /Recurse /Full  
 ```  
   
-## <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>referências adicionais  
   
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

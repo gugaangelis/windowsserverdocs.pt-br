@@ -17,12 +17,12 @@ ms.locfileid: "71395999"
 ---
 # <a name="radius-clients"></a>Clientes RADIUS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Um servidor de acesso à rede \(NAS @ no__t-1 é um dispositivo que fornece algum nível de acesso a uma rede maior. Um NAS que usa uma infraestrutura RADIUS também é um cliente RADIUS, enviando solicitações de conexão e mensagens de contabilização para um servidor RADIUS para autenticação, autorização e contabilidade.
+Um servidor de acesso à rede \(NAS\) é um dispositivo que fornece algum nível de acesso a uma rede maior. Um NAS que usa uma infraestrutura RADIUS também é um cliente RADIUS, enviando solicitações de conexão e mensagens de contabilização para um servidor RADIUS para autenticação, autorização e contabilidade.
 
 >[!NOTE]
->Computadores cliente, como computadores laptop e outros computadores que executam sistemas operacionais cliente, não são clientes RADIUS. Os clientes RADIUS são servidores de acesso à rede, como pontos de acesso sem fio, comutadores de autenticação 802.1 X, rede privada virtual \(VPN @ no__t-1 e servidores dial-up-porque usam o protocolo RADIUS para se comunicar com servidores RADIUS, como como servidor de diretivas de rede \(NPS @ no__t-3 servidores.
+>Computadores cliente, como computadores laptop e outros computadores que executam sistemas operacionais cliente, não são clientes RADIUS. Os clientes RADIUS são servidores de acesso à rede, como pontos de acesso sem fio, comutadores de autenticação 802.1 X, rede virtual privada \(servidores VPN\) e servidores dial-up, pois eles usam o protocolo RADIUS para se comunicar com servidores RADIUS, como servidor de diretivas de rede \(servidores\) NPS.
 
 Para implantar o NPS como um servidor RADIUS ou um proxy RADIUS, você deve configurar clientes RADIUS no NPS.
 
@@ -65,7 +65,7 @@ Ao configurar um cliente RADIUS no NPS, você pode designar as seguintes proprie
 
 ### <a name="ip-address"></a>Endereço IP
 
-O endereço IP versão 4 \(IPv4 @ no__t-1 ou o sistema de nomes de domínio \(DNS @ no__t-3 nome do cliente RADIUS.
+O protocolo IP versão 4 \(endereço de\) IPv4 ou o sistema de nomes de domínio \(DNS\) nome do cliente RADIUS.
 
 ### <a name="client-vendor"></a>Cliente-fornecedor
 
@@ -77,10 +77,10 @@ Uma cadeia de texto que é usada como uma senha entre clientes RADIUS, servidore
 
 ### <a name="message-authenticator-attribute"></a>Atributo de autenticador de mensagem
 
-Descrito na RFC 2869, "extensões RADIUS", um hash Message Digest 5 \(MD5 @ no__t-1 de toda a mensagem RADIUS. Se o atributo autenticador de mensagem RADIUS estiver presente, ele será verificado. Se a verificação falhar, a mensagem RADIUS será descartada. Se as configurações do cliente exigirem o atributo autenticador de mensagem e ele não estiver presente, a mensagem RADIUS será descartada. O uso do atributo de autenticador de mensagem é recomendado.
+Descrito na RFC 2869, "extensões RADIUS", uma mensagem Digest 5 \(MD5\) hash de toda a mensagem RADIUS. Se o atributo autenticador de mensagem RADIUS estiver presente, ele será verificado. Se a verificação falhar, a mensagem RADIUS será descartada. Se as configurações do cliente exigirem o atributo autenticador de mensagem e ele não estiver presente, a mensagem RADIUS será descartada. O uso do atributo de autenticador de mensagem é recomendado.
 
 >[!NOTE]
->O atributo de autenticador de mensagem é necessário e habilitado por padrão quando você usa a autenticação do protocolo de autenticação extensível \(EAP @ no__t-1. 
+>O atributo de autenticador de mensagem é necessário e habilitado por padrão quando você usa o protocolo de autenticação extensível \(autenticação de\) EAP. 
 
 Para obter mais informações sobre o NPS, consulte [servidor de diretivas de rede (NPS)](nps-top.md).
 

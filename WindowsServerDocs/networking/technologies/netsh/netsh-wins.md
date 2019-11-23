@@ -15,7 +15,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71401914"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>Arquivo em lotes de exemplo \(Netsh @ no__t-1 do Shell de rede
+# <a name="network-shell-netsh-example-batch-file"></a>Arquivo em lotes de exemplo do Shell de rede \(\)
 
 Aplica-se a: Windows Server 2016
 
@@ -23,17 +23,17 @@ Você pode usar este tópico para aprender a criar um arquivo em lotes que execu
 
 ## <a name="example-batch-file-overview"></a>Visão geral do arquivo em lotes de exemplo
 
-Você pode usar comandos netsh para o serviço de nome da Internet do Windows \(WINS @ no__t-1 em arquivos em lotes e outros scripts para automatizar tarefas. O exemplo de arquivo em lotes a seguir demonstra como usar comandos netsh para o WINS para executar uma variedade de tarefas relacionadas.
+Você pode usar comandos netsh para o serviço de cadastramento na Internet do Windows \(\) WINS em arquivos em lotes e outros scripts para automatizar tarefas. O exemplo de arquivo em lotes a seguir demonstra como usar comandos netsh para o WINS para executar uma variedade de tarefas relacionadas.
 
-Neste exemplo de arquivo em lotes, o WINS @ no__t-0A é um servidor WINS com o endereço IP 192.168.125.30 e o WINS @ no__t-1B é um servidor WINS com o endereço IP 192.168.0.189.
+Neste exemplo de arquivo em lotes, o WINS\-um é um servidor WINS com o endereço IP 192.168.125.30 e o WINS\-B é um servidor WINS com o endereço IP 192.168.0.189.
 
 O arquivo em lotes de exemplo realiza as seguintes tarefas.
 
-- Adiciona um registro de nome dinâmico com o endereço IP 192.168.0.205, meu @ no__t-0RECORD \[04h @ no__t-2, ao WINS @ no__t-3A
-- Define o WINS @ no__t-0B como um parceiro de replicação push/pull do WINS @ no__t-1A
-- Conecta-se ao WINS @ no__t-0B e, em seguida, define o WINS @ no__t-1A como um parceiro de replicação push/pull do WINS @ no__t-2B
-- Inicia uma replicação de envio por push do WINS @ no__t-0A para o WINS @ no__t-1B
-- Conecta-se ao WINS @ no__t-0B para verificar se o novo registro, meu @ no__t-1RECORD, foi replicado com êxito
+- Adiciona um registro de nome dinâmico com o endereço IP 192.168.0.205, meu registro de\_\[04h\], ao WINS\-um
+- Define o WINS\-B como um parceiro de replicação push/pull do WINS\-um
+- Conecta-se ao WINS\-B e, em seguida, define o WINS\-A como um parceiro de replicação push/pull do WINS\-B
+- Inicia uma replicação de envio por push do WINS\-a para o WINS\-B
+- Conecta-se ao WINS\-B para verificar se o novo registro, meu registro de\_, foi replicado com êxito
 
 ## <a name="netsh-example-batch-file"></a>Arquivo em lotes de exemplo netsh
 
@@ -73,7 +73,7 @@ No arquivo em lotes de exemplo a seguir, as linhas que contêm comentários são
 
 A seção a seguir lista os comandos **netsh WINS** que são usados neste procedimento de exemplo.
 
-- **servidor**. Altera o contexto do comando do WINS atual @ no__t-0line para o servidor especificado por seu nome ou endereço IP.
+- **servidor**. Desloca o comando atual do WINS\-contexto de linha para o servidor especificado pelo seu nome ou endereço IP.
 - **adicionar nome**. Registra um nome no servidor WINS.
 - **Adicionar parceiro**. Adiciona um parceiro de replicação no servidor WINS.
 - **init push**. Inicia e envia um gatilho de envio por push para um servidor WINS.

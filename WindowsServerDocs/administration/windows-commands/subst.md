@@ -39,8 +39,8 @@ subst <Drive1>: /d
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> de @no__t 0Drive1:|Especifica a unidade virtual à qual você deseja atribuir um caminho.|
-|[\<Drive2 >:] \<Path >|Especifica a unidade física e o caminho que você deseja atribuir a uma unidade virtual.|
+|> \<unidade1:|Especifica a unidade virtual à qual você deseja atribuir um caminho.|
+|[\<unidade2 >:]\<caminho >|Especifica a unidade física e o caminho que você deseja atribuir a uma unidade virtual.|
 |/d|Exclui uma unidade substituída (virtual).|
 |/?|Exibe a ajuda no prompt de comando.|
 

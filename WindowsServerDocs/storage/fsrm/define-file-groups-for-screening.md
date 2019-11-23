@@ -17,7 +17,7 @@ ms.locfileid: "71394393"
 ---
 # <a name="define-file-groups-for-screening"></a>Definir grupos de arquivos para triagem
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Um *grupo de arquivo* é usado para definir um namespace de uma triagem de arquivo, exceção de triagem de arquivo ou relatório de armazenamento de **Arquivos por grupo de arquivo**. Ele consiste em um conjunto de padrões de nome de arquivo, que são agrupados pelo seguinte:
 
@@ -41,7 +41,7 @@ Um *grupo de arquivo* é usado para definir um namespace de uma triagem de arqui
 
     -   Para cada conjunto de arquivos que você deseja incluir no grupo de arquivos, na caixa **Arquivos a serem incluídos**, insira um padrão de nome de arquivo e clique em **Adicionar**.
     -   Para cada conjunto de arquivos que você deseja excluir do grupo de arquivos, na caixa **Arquivos a serem excluídos**, insira um padrão de nome de arquivo e clique em **Adicionar**.
-        Observe que as regras de curinga padrão se aplicam, por exemplo, **@no__t o-1. exe** seleciona todos os arquivos executáveis.
+        Observe que as regras de curinga padrão se aplicam, por exemplo, **\*. exe** seleciona todos os arquivos executáveis.
 
 5.  Clique em **OK**.
 

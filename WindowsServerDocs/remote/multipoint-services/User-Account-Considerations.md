@@ -38,10 +38,10 @@ Usuários administrativos podem executar tarefas que afetam todos os outros usu�
 Uma consideração importante de contas de usuário é que cada conta de usuário é alocada a uma única biblioteca **Documentos** no Windows Explorer que inclui a pasta **Meus documentos**. Se os usuários padrão em seu sistema MultiPoint Services armazenarem documentos particulares em sua biblioteca **Documentos** no Windows Explorer, eles também deverão fazer logon no sistema MultiPoint Services usando um nome de usuário exclusivo e uma senha que só eles saibam. Para obter mais informações sobre como armazenar documentos no Windows Explorer, consulte o tópico [Gerenciar arquivos do usuário](Manage-User-Files.md).  
   
 > [!TIP]  
-> Para maior segurança do sistema, as senhas de todos os usuários devem ser senhas fortes. Uma senha forte é aquela que não pode ser facilmente adivinhada ou quebrada, tem pelo menos oito caracteres de comprimento, não contém todo ou parte do nome da conta do usuário e contém pelo menos três das quatro categorias de caracteres a seguir: caracteres maiúsculos, minúsculos caracteres, números e símbolos encontrados em um teclado (como!, @, #).  
+> Para maior segurança do sistema, as senhas de todos os usuários devem ser senhas fortes. Uma senha forte é aquela que não pode ser facilmente adivinhada ou quebrada, tem pelo menos oito caracteres de comprimento, não contém todo ou parte do nome da conta do usuário e contém pelo menos três das quatro categorias de caracteres a seguir: caracteres maiúsculos, caracteres minúsculos, números e símbolos encontrados em um teclado (como!, @, #).  
   
 ## <a name="see-also"></a>Consulte também  
 [Criar uma conta de usuário administrativo](Create-an-Administrative-User-Account.md)  
 [Criar uma conta de usuário padrão](Create-a-Standard-User-Account.md)  
-[Gerenciar arquivos](Manage-User-Files.md)
-de usuário[gerenciar contas de usuário](Manage-User-Accounts.md)
+[Gerenciar arquivos de usuário](Manage-User-Files.md)
+[gerenciar contas de usuário](Manage-User-Accounts.md)

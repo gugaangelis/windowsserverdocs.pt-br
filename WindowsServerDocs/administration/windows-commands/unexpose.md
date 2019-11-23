@@ -38,10 +38,10 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ShadowID >|Revela a cópia de sombra especificada pela ID de sombra fornecida.|
-|\<Drive: >|Não expõe a cópia de sombra associada à letra da unidade especificada (por exemplo, a unidade P).|
-|\<Share >|Não expõe a cópia de sombra associada ao compartilhamento especificado (por exemplo, \\ @ no__t-1*MachineName*\).|
-|\<MountPoint >|Não expõe a cópia de sombra associada ao ponto de montagem especificado (por exemplo, C:\shadowcopy @ no__t-0.|
+|\<Shadowid >|Revela a cópia de sombra especificada pela ID de sombra fornecida.|
+|Unidade de \<: >|Não expõe a cópia de sombra associada à letra da unidade especificada (por exemplo, a unidade P).|
+|> de \<compartilhamento|Revela a cópia de sombra associada ao compartilhamento especificado (por exemplo, \\\\*MachineName*\).|
+|> de \<MountPoint|Não expõe a cópia de sombra associada ao ponto de montagem especificado (por exemplo, C:\shadowcopy\).|
 
 ## <a name="remarks"></a>Comentários
 

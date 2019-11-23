@@ -22,9 +22,9 @@ ms.locfileid: "71378562"
 ---
 # <a name="detail-vdisk"></a>detalhes do VDISK
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe as propriedades do disco rígido virtual selecionado \(VHD @ no__t-1.  
+Exibe as propriedades do disco rígido virtual selecionado \(\)VHD.  
   
 ## <a name="syntax"></a>Sintaxe  
   
@@ -43,7 +43,7 @@ Para ver detalhes sobre o VHD selecionado, digite:
 detail vdisk  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
   
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

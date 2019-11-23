@@ -17,7 +17,7 @@ ms.locfileid: "71356222"
 ---
 # <a name="install-the-web-server-web1"></a>Instalar o servidor Web WEB1
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 A função do servidor Web (IIS) no Windows Server 2016 fornece uma plataforma segura, fácil de gerenciar, modular e extensível para hospedagem confiável de sites, serviços e aplicativos. Com o IIS, você pode compartilhar informações com usuários na Internet, em uma intranet ou em uma extranet. O IIS é uma plataforma Web unificada que integra IIS, ASP.NET, serviços FTP, PHP e Windows Communication Foundation (WCF).  
 

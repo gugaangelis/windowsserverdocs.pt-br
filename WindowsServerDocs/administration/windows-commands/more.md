@@ -40,14 +40,14 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 |           Parâmetro            |                               Descrição                               |
 |--------------------------------|-------------------------------------------------------------------------|
-|           \<Command >           |      Especifica um comando para o qual você deseja exibir a saída.      |
+|           > de comando \<           |      Especifica um comando para o qual você deseja exibir a saída.      |
 |               /c               |               Limpa a tela antes de exibir uma página.               |
 |               /p               |                      Expande os caracteres de feed de formulário.                      |
 |               /s               |          Exibe várias linhas em branco como uma única linha em branco.          |
-|             /t @ no__t-0N >             |         Exibe as guias como o número de espaços especificado por *N*.         |
-|             + @ NO__T-1N >              |     Exibe o primeiro arquivo que começa na linha especificada por *N*.     |
-| [\<Drive >:] [\<Path >] \<FileName > |          Especifica o local e o nome de um arquivo a ser exibido.          |
-|            \<Files >            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivos com um espaço. |
+|             /t\<N >             |         Exibe as guias como o número de espaços especificado por *N*.         |
+|             +\<N >              |     Exibe o primeiro arquivo que começa na linha especificada por *N*.     |
+| [\<drive >:] [\<caminho >]\<nome do arquivo > |          Especifica o local e o nome de um arquivo a ser exibido.          |
+|            Arquivos de \<>            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivos com um espaço. |
 |               /?               |                  Exibe a ajuda no prompt de comando.                   |
 
 ## <a name="remarks"></a>Comentários
@@ -99,7 +99,7 @@ Os exemplos a seguir podem ser usados no prompt **mais** (`-- More --`).
 - Para exibir o próximo arquivo listado na linha de comando, digite **f** no prompt **mais** .
 - Para mostrar os comandos disponíveis, digite **?** no prompt **mais** .
 - Para encerrar **mais**, digite **q** no prompt **mais** .
-- Para exibir o número da linha atual, digite **=** no prompt **mais** . O número da linha atual é adicionado ao prompt **mais** da seguinte maneira:  
+- Para exibir o número de linha atual, digite **=** no prompt **mais** . O número da linha atual é adicionado ao prompt **mais** da seguinte maneira:  
   ```
   -- More [Line: 24] --
   ```  

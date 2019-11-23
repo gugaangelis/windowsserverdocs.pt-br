@@ -22,7 +22,7 @@ ms.locfileid: "71372898"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Altera o tipo de registro de recurso para a consulta.
 ## <a name="syntax"></a>Sintaxe
@@ -30,7 +30,7 @@ Altera o tipo de registro de recurso para a consulta.
 set querytype=<ResourceRecordtype>
 ```
 ## <a name="parameters"></a>Parâmetros
-<ResourceRecordtype>Especifica um tipo de registro de recurso DNS. O tipo de registro de recurso padrão é um. A tabela a seguir lista os valores válidos para esse comando.
+<ResourceRecordtype> especifica um tipo de registro de recurso DNS. O tipo de registro de recurso padrão é um. A tabela a seguir lista os valores válidos para esse comando.
 
 | Valor |                                                   Descrição                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
@@ -57,6 +57,6 @@ Exibe um breve resumo dos subcomandos <strong>nslookup</strong>
 ## <a name="remarks"></a>Comentários
 - O comando <strong>set type</strong> executa a mesma função que o comando <strong>set QueryType</strong> .
 - Para obter mais informações sobre tipos de registro de recurso, consulte solicitação de comentário (RFC) 1035.
-  ## <a name="additional-references"></a>Referências adicionais
+  ## <a name="additional-references"></a>referências adicionais
   <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">Chave de sintaxe de linha de comando</a>
   <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">tipo de conjunto nslookup</a>

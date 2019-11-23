@@ -21,7 +21,7 @@ ms.locfileid: "71388743"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Etapa 2 configurar o servidor DirectAccess-VPN
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como configurar o cliente e as configurações de servidor necessárias para uma implantação básica do Acesso Remoto usando o Assistente para Habilitar o DirectAccess.
 
@@ -70,7 +70,7 @@ Para clientes DNS, você pode configurar uma lista de pesquisa de sufixo de dom�
 
 2. Digite um novo nome de sufixo em **novo sufixo** e clique em **Adicionar**. Além disso, você pode alterar a ordem de pesquisa e remover os sufixos dos **sufixos de domínio a serem usados**.
 
->ANOTAÇÕES Em um cenário de espaço de nome não contíguo \(where um ou mais computadores de domínio têm um sufixo DNS que não corresponde ao domínio de Active Directory ao qual os computadores pertencem a @ no__t-1, você deve garantir que a lista de pesquisa seja personalizada para incluir todos os requisitos sufixos. O Assistente de Acesso Remoto configurará o nome do DNS do Active Directory como o sufixo de DNS primário do cliente. O Administrador deverá adicionar o sufixo de DNS usado pelos clientes para resolução de nome.
+>ANOTAÇÕES Em um cenário de espaço de nome não contíguo \(em que um ou mais computadores de domínio têm um sufixo DNS que não corresponde ao domínio de Active Directory ao qual os computadores pertencem\), você deve garantir que a lista de pesquisa seja personalizada para incluir todos os sufixos necessários. O Assistente de Acesso Remoto configurará o nome do DNS do Active Directory como o sufixo de DNS primário do cliente. O Administrador deverá adicionar o sufixo de DNS usado pelos clientes para resolução de nome.
 
 Para computadores e servidores, o comportamento de pesquisa DNS padrão a seguir é predeterminado e usado ao concluir e resolver nomes curtos e não qualificados. Quando a lista de pesquisa de sufixo está vazia ou não é especificada, o sufixo DNS primário do computador é anexado a nomes curtos não qualificados e uma consulta DNS é usada para resolver o FQDN resultante. 
 

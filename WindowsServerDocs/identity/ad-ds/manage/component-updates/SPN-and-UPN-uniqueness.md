@@ -28,14 +28,14 @@ ms.locfileid: "71390032"
 ## <a name="overview"></a>Visão geral  
 Controladores de domínio que executam o Windows Server 2012 R2 bloqueiam a criação de SPN (nomes de entidade de serviço) duplicados e UPN (nomes de entidade de usuário). Isso inclui se a restauração ou reanimação de um objeto excluído ou a renomeação de um objeto resultaria em uma duplicata.  
   
-### <a name="background"></a>Informações preliminares  
+### <a name="background"></a>Histórico  
 Normalmente, os nomes de entidade de serviço (SPN) duplicados ocorrem e resultam em falhas de autenticação e podem levar à utilização excessiva da CPU do LSASs. Não há nenhum método na caixa para bloquear a adição de um SPN ou UPN duplicado. *  
   
 Valores UPN duplicados interrompem a sincronização entre o AD local e o Office 365.  
   
 \* SetSPN. exe é comumente usado para criar novos SPNs e funcionalmente incorporado à versão lançada com o Windows Server 2008 que adiciona uma verificação de duplicatas.  
   
-Tabela SEQ **Table \\ @ no__t-2 árabe 1: Exclusividade de UPN e SPN @ no__t-0  
+**Tabela SEQ \\\* árabe 1: exclusividade de UPN e SPN**  
   
 |Recurso|Comentário|  
 |-----------|-----------|  
@@ -49,7 +49,7 @@ Os códigos de erro 8467 ou 8468 ou seus equivalentes hexadecimais, simbólicos 
   
 -   A gravação é processada por um controlador de domínio do Windows Server 2012 R2  
   
-Tabela SEQ **Table \\ @ no__t-2 árabe 2: Códigos de erro de exclusividade de UPN e SPN @ no__t-0  
+**Tabela SEQ \\\* árabe 2: códigos de erro de exclusividade de UPN e SPN**  
   
 |Decimal|Hex|Simbólico|String|  
 |-----------|-------|------------|----------|  
@@ -74,18 +74,18 @@ Uma tentativa de criar um novo usuário no Centro Administrativo do Active Direc
   
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig03_DupUPNADAC.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 ARABIC 1 erro exibido no centro administrativo do AD quando uma nova criação de usuário falhar devido a um UPN duplicado**  
+**Figura SEQ figura \\\* erro árabe 1 exibido no centro administrativo do AD quando uma nova criação de usuário falhar devido a um UPN duplicado**  
   
 ### <a name="event-2974-source-activedirectory_domainservice"></a>Origem do evento 2974: ActiveDirectory_DomainService  
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig04_Event2974.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 ARABIC 2 evento ID 2974 com o erro 8648**  
+**Figura SEQ figura \\\* ID do evento 2974 árabe 2 com o erro 8648**  
   
 O evento 2974 lista o valor que foi bloqueado e uma lista de um ou mais objetos (até 10) que já contêm esse valor.  Na figura a seguir, você pode ver que o valor do atributo UPN **<em>dhunt@blue.contoso.com</em>** já existe em quatro outros objetos.  Como esse é um novo recurso do Windows Server 2012 R2, a criação acidental de UPN e SPNs duplicados em um ambiente misto ainda ocorrerá quando os DCs de nível inferior processarem a tentativa de gravação.  
   
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 ARABIC 3 evento 2974 mostrando todos os objetos que contêm o UPN duplicado**  
+**Figura SEQ figura \\\* evento árabe 3 2974 mostrando todos os objetos que contêm o UPN duplicado**  
   
 > [!TIP]  
 > Revise a ID do evento 2974s regularmente para:  
@@ -98,7 +98,7 @@ O evento 2974 lista o valor que foi bloqueado e uma lista de um ou mais objetos 
 ### <a name="setspn"></a>SetSPN  
 SetSPN. exe tinha uma detecção de SPN duplicada interna, desde a versão 2008 do Windows Server, ao usar a opção **"-S"** .  Você pode ignorar a detecção de SPN duplicado usando a opção **"-a"** no entanto.  A criação de um SPN duplicado é bloqueada ao direcionar um controlador de domínio do Windows Server 2012 R2 usando SetSPN com a opção-A.  A mensagem de erro exibida é a mesma exibida ao usar a opção-S: "SPN duplicado encontrado, anulando a operação!"  
   
-### <a name="adsiedit"></a>ADSIEDIT  
+### <a name="adsiedit"></a>ADSIEdit  
   
 ```  
 Operation failed. Error code: 0x21c8  
@@ -108,7 +108,7 @@ The operation failed because UPN value provided for addition/modification is not
   
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig06_ADSI21c8.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 ARABIC 4 mensagem de erro exibida no ADSIEdit quando a adição de UPN duplicado é bloqueada**  
+**Figura SEQ figura \\\* mensagem de erro árabe 4 exibida no ADSIEdit quando a adição de UPN duplicado é bloqueada**  
   
 ### <a name="windows-powershell"></a>Windows PowerShell  
 Windows Server 2012 R2:  
@@ -123,11 +123,11 @@ DSAC. exe em execução no Windows Server 2012 destinado a um controlador de dom
   
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig09_UserCreateError.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 árabe 5 DSAC erro de criação do usuário em não Windows Server 2012 R2 ao direcionar o Windows Server 2012 R2 DC**  
+**Figura SEQ figura \\\* erro de criação de usuário DSAC árabe 5 em não Windows Server 2012 R2 ao direcionar o Windows Server 2012 R2 DC**  
   
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig10_UserModError.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 árabe 6 DSAC erro de modificação do usuário em não Windows Server 2012 R2 ao direcionar o Windows Server 2012 R2 DC**  
+**Figura SEQ figura \\\* erro de modificação do usuário árabe 6 DSAC em não Windows Server 2012 R2 ao direcionar o Windows Server 2012 R2 DC**  
   
 ### <a name="restore-of-an-object-that-would-result-in-a-duplicate-upn-fails"></a>A restauração de um objeto que resultaria em falha em um UPN duplicado:  
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig11_RestoreDupUPN.gif)  
@@ -210,9 +210,9 @@ Para anular o atributo UserPrincipalName usando o Windows PowerShell:
 ### <a name="duplicate-spn"></a>SPN duplicado  
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig16_DupSPN.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 ARABIC 8 mensagem de erro exibida no ADSIEdit quando a adição de SPN duplicado é bloqueada**  
+**Figura SEQ figura \\\* mensagem de erro árabe 8 exibida no ADSIEdit quando a adição de SPN duplicado é bloqueada**  
   
-Conectado ao log de eventos de serviços de diretório é uma ID de evento **2974**do **ActiveDirectory_DomainService** .  
+Registrado no log de eventos de serviços de diretório é uma **ACTIVEDIRECTORY_DOMAINSERVICE** ID de evento **2974**.  
   
 ```  
 Operation failed. Error code: 0x21c7  
@@ -224,7 +224,7 @@ servicePrincipalName Value=<SPN>
   
 ![Exclusividade de SPN e UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig17_DupSPN2974.gif)  
   
-**Figura SEQ figura \\ @ no__t-2 árabe 9 erro registrado quando a criação de SPN duplicado está bloqueada**  
+**Figura SEQ figura \\\* erro árabe 9 registrado quando a criação de SPN duplicado é bloqueada**  
   
 ### <a name="workflow"></a>Fluxo de Trabalho  
   
@@ -320,9 +320,9 @@ Quando objetos excluídos são reanimados, os valores SPN ou UPN presentes são 
   
     -   ATT_USER_ACCOUNT_CONTROL  
   
-Se qualquer um dos novos valores de SPN for uma duplicata, a modificação falhará. Na lista acima, os atributos importantes são ATT_DNS_HOST_NAME (nome da máquina) e ATT_SAM_ACCOUNT_NAME (nome da conta SAM).  
+Se qualquer um dos novos valores de SPN for uma duplicata, a modificação falhará. Da lista acima, os atributos importantes são ATT_DNS_HOST_NAME (nome da máquina) e ATT_SAM_ACCOUNT_NAME (nome da conta SAM).  
   
-### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>Experimente isto: Explorando a exclusividade do SPN e do UPN  
+### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>Experimente: explorando a exclusividade do SPN e do UPN  
 Esta é a primeira de várias atividades "**Experimente isso**" no módulo.  Não há um guia de laboratório separado para este módulo.  As atividades de **teste** são essencialmente atividades de forma livre que permitem explorar o material da lição no ambiente de laboratório.  Você tem a opção de seguir o prompt ou sair do script e surgir com sua própria atividade.  
   
 > [!NOTE]  

@@ -22,7 +22,7 @@ ms.locfileid: "71392311"
 ---
 # <a name="tsprof"></a>tsprof
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Copia as informações de configuração de usuário Serviços de Área de Trabalho Remota de um usuário para outro.
 As informações de configuração de usuário Serviços de Área de Trabalho Remota são exibidas nas extensões de Serviços de Área de Trabalho Remota para usuários e grupos locais e usuários e computadores do Active Directory.
@@ -45,10 +45,10 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 |Parâmetro|Descrição|
 |-------|--------|
 |/Update|Atualiza informações de caminho de perfil para <*nome de usuário*> no*domínio < o*> do < do*ProfilePath*>.|
-|/domain: \<DomainName >|Especifica o nome do domínio no qual a operação é aplicada.|
+|/domain:\<nome_do_domínio >|Especifica o nome do domínio no qual a operação é aplicada.|
 |/local|Aplica a operação somente a contas de usuário locais.|
-|/Profile: \<path >|Especifica o caminho do perfil, conforme exibido nas extensões de Serviços de Área de Trabalho Remota em usuários e grupos locais e em usuários e computadores do Active Directory.|
-|\<UserName >|Especifica o nome do usuário para o qual você deseja atualizar ou consultar o caminho do perfil do servidor.|
+|/Profile: caminho de\<>|Especifica o caminho do perfil, conforme exibido nas extensões de Serviços de Área de Trabalho Remota em usuários e grupos locais e em usuários e computadores do Active Directory.|
+|\<nome de usuário >|Especifica o nome do usuário para o qual você deseja atualizar ou consultar o caminho do perfil do servidor.|
 |/Copy|Copia as informações de configuração do usuário de \<*SourceUser*> para \<*DestinationUser*> e atualiza as informações de caminho do perfil para \<*DestinationUser*> para \<*ProfilePath*>. Tanto \<*SourceUser*> quanto \<*DestinationUser*> devem ser locais ou devem estar no domínio \<*DomainName*>.|
 |\<Src_usr >|Especifica o nome do usuário do qual você deseja copiar as informações de configuração do usuário.|
 |\<Dest_usr >|Especifica o nome do usuário para o qual você deseja copiar as informações de configuração do usuário.|

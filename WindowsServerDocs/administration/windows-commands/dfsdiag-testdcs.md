@@ -22,13 +22,13 @@ ms.locfileid: "71378443"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Verifica a configuração de controladores de domínio executando os seguintes testes em cada controlador de domínio no domínio especificado:  
   
--   verifica se o serviço de namespace Sistema de Arquivos Distribuído \(DFS @ no__t-1 está em execução e se seu tipo de inicialização está definido como automático.  
+-   verifica se o serviço namespace\) \(Sistema de Arquivos Distribuído do DFS está em execução e se seu tipo de inicialização está definido como automático.  
   
--   Verifica o suporte de referências do site @ no__t-0costed para NETLOGON e SYSvol.  
+-   Verifica o suporte do site\-referências com custo para NETLOGON e SYSvol.  
   
 -   verifica a consistência da associação do site pelo nome do host e endereço IP.  
   
@@ -44,10 +44,10 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|\/Domain: <Domain name>|Domínio que você deseja verificar.|  
+|\/domínio:<Domain name>|Domínio que você deseja verificar.|  
   
 ## <a name="remarks"></a>Comentários  
-\/Domain é um parâmetro opcional. O valor padrão é o domínio local ao qual o host local está associado.  
+\/domínio é um parâmetro opcional. O valor padrão é o domínio local ao qual o host local está associado.  
   
 ## <a name="BKMK_Examples"></a>Disso  
 Para verificar a configuração dos controladores de domínio no domínio Contoso.com, digite:  
@@ -56,7 +56,7 @@ Para verificar a configuração dos controladores de domínio no domínio Contos
 dfsdiag /TestDCs /Domain:Contoso.com  
 ```  
   
-## <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>referências adicionais  
   
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

@@ -22,7 +22,7 @@ ms.locfileid: "71372075"
 ---
 # <a name="prnmngr"></a>prnmngr
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Adiciona, exclui e lista as impressoras ou conexões de impressora, além de definir e exibir a impressora padrão.
 
@@ -45,29 +45,29 @@ cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>]
 |              -l               |                                                                                                         lista todas as impressoras instaladas no servidor especificado pelo parâmetro **-s** . Se você não especificar um servidor, o Windows listará as impressoras instaladas no computador local.                                                                                                         |
 |               c               |                                                                                                                                      Especifica que o parâmetro se aplica a conexões de impressora. Pode ser usado com os parâmetros **-a** e **-x** .                                                                                                                                      |
 |        -s <ServerName>        |                                                                                                                  Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.                                                                                                                  |
-|       -p \<printerName >       |                                                                                                                                                                Especifica o nome da impressora que você deseja gerenciar.                                                                                                                                                                 |
+|       -p \<PrinterName >       |                                                                                                                                                                Especifica o nome da impressora que você deseja gerenciar.                                                                                                                                                                 |
 |     -m \<DrivermodelName >     |                                                                                                          Especifica (por nome) o driver que você deseja instalar. Os drivers geralmente são nomeados para o modelo de impressora para os quais dão suporte. Consulte a documentação da impressora para obter mais informações.                                                                                                           |
 |        -r \<PortName >         |                                                                         Especifica a porta onde a impressora está conectada. Se essa for uma porta paralela ou serial, use a ID da porta (por exemplo, LPT1: ou COM1:). Se esta for uma porta TCP/IP, use o nome da porta que foi especificado quando a porta foi adicionada.                                                                          |
-| -u \<UserName >-w \<Password > | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -u \<nome de usuário >-w \<senha > | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
 |              /?               |                                                                                                                                                                           Exibe a ajuda no prompt de comando.                                                                                                                                                                            |
 
 ## <a name="remarks"></a>Comentários
--   O comando **prndrvr** é um script Visual Basic localizado no diretório%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo **prnmngr** ou altere os diretórios para a pasta apropriada. Por exemplo:
+-   O comando **prndrvr** é um script de Visual Basic localizado no diretório <language> de\\do%windir%\system32\ printing_Admin_Scripts. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo **prnmngr** ou altere os diretórios para a pasta apropriada. Por exemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr
     ```
 -   Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, `"computer Name"`).
 
 ## <a name="BKMK_examples"></a>Disso
-Para adicionar uma impressora chamada Impressora_colorida_2 que está conectada a LPT1 no computador local e requer um driver de impressora chamado Color Printer Driver1, digite:
+Para adicionar uma impressora chamada colorprinter_2 que está conectada a LPT1 no computador local e requer um driver de impressora chamado Color Printer Driver1, digite:
 ```
 cscript prnmngr -a -p colorprinter_2 -m "color printer Driver1" -r lpt1:
 ```
-Para excluir a impressora chamada Impressora_colorida_2 do computador remoto chamado HRServer, digite:
+Para excluir a impressora denominada colorprinter_2 do computador remoto chamado HRServer, digite:
 ```
 cscript prnmngr -d -s HRServer -p colorprinter_2 
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [referência de comando de impressão](print-command-reference.md)

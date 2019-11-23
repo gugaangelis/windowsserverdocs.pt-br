@@ -36,7 +36,7 @@ ksetup /delrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<RealmName >|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM e é listado como o realm padrão quando **Ksetup** é executado.|
+|\<Realmsname >|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM e é listado como o realm padrão quando **Ksetup** é executado.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -52,7 +52,7 @@ Os sinalizadores de realm especificam recursos adicionais de um realm Kerberos q
 |0x08|NcSupported|Esse Realm dá suporte à canonização de nome, que permite padrões de nomenclatura de DNS e de realm.|
 |0x80|RC4|Esse Realm dá suporte à criptografia RC4 para habilitar a relação de confiança entre territórios, o que permite o uso de TLS.|
 
-Os sinalizadores de realm são armazenados no registro em **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>realmsname</em>. Essa entrada não existe no Registro por padrão. Você pode usar o comando [Ksetup: addrealmflags](ksetup-addrealmflags.md) para popular o registro.
+Os sinalizadores de realm são armazenados no registro em **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>territórioname</em>. Essa entrada não existe no Registro por padrão. Você pode usar o comando [Ksetup: addrealmflags](ksetup-addrealmflags.md) para popular o registro.
 
 Você pode ver quais sinalizadores de realm estão disponíveis e definidos exibindo a saída de **ksetup** ou **ksetup/dumpstate**.
 

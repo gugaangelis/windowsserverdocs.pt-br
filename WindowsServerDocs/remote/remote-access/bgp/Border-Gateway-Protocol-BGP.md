@@ -21,7 +21,7 @@ ms.locfileid: "71388985"
 ---
 # <a name="border-gateway-protocol-bgp"></a>BGP (Border Gateway Protocol)
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma compreensão do Border Gateway Protocol (BGP), incluindo topologias de implantação com suporte do BGP e recursos e capacidades do BGP.  
   
@@ -36,13 +36,13 @@ Este tópico contém as seguintes seções.
   
 -   [Recursos do BGP](#bkmk_features)  
   
-Quando configurado em um serviço de acesso remoto do Windows Server 2016 \(RAS @ no__t-1 Gateway no modo multilocatário, o Border Gateway Protocol (BGP) fornece a capacidade de gerenciar o roteamento de tráfego de rede entre as redes de VM de seus locatários e suas remotas sites. Você também pode usar o BGP para implantações de gateway de RAS de locatário único e ao implantar o acesso remoto como uma rede local \(LAN @ no__t-1 router.  
+Quando configurado em um serviço de acesso remoto do Windows Server 2016 \(o RAS\) gateway no modo multilocatário, o Border Gateway Protocol (BGP) fornece a capacidade de gerenciar o roteamento de tráfego de rede entre as redes de VM de seus locatários e seus sites remotos. Você também pode usar o BGP para implantações de gateway de RAS de locatário único e ao implantar o acesso remoto como uma rede local \(roteador\) LAN.  
   
 O BGP reduz a necessidade de configuração de roteamento manual em roteadores, porque ele é um protocolo de roteamento dinâmico e aprende rotas entre sites conectados usando conexões VPN site a site automaticamente.  
   
-Para usar o roteamento BGP, você deve instalar o **serviço de acesso remoto \(RAS @ no__t-2** e/ou o serviço de função de **Roteamento** da função de servidor acesso remoto em um computador ou máquina virtual \(VM @ no__t-5-o tipo de sistema usado depende Se você tem ou não uma implantação multilocatário:  
+Para usar o roteamento BGP, você deve instalar o **serviço de acesso remoto \(\)RAS** e/ou o serviço de função de **Roteamento** da função de servidor acesso remoto em um computador ou máquina virtual \(VM\)-o tipo de sistema que você usa depende se você tem ou não uma implantação multilocatário:  
   
--   Para uma implantação multilocatário, é recomendável que você instale o gateway RAS em uma ou mais VMs. O uso de várias VMs fornece alta disponibilidade. O gateway RAS é capaz de lidar com várias conexões de vários locatários e consiste em um host Hyper-V e uma VM que é realmente configurada como o gateway. Esse gateway é configurado com conexões VPN site a site como um roteador BGP multilocatário para trocar o locatário e o provedor de serviços de nuvem \(CSP @ no__t-1 rotas de sub-rede.  
+-   Para uma implantação multilocatário, é recomendável que você instale o gateway RAS em uma ou mais VMs. O uso de várias VMs fornece alta disponibilidade. O gateway RAS é capaz de lidar com várias conexões de vários locatários e consiste em um host Hyper-V e uma VM que é realmente configurada como o gateway. Esse gateway é configurado com conexões VPN site a site como um roteador BGP multilocatário para trocar locatário e provedor de serviços de nuvem \(CSP\) rotas de sub-rede.  
   
 -   Para uma implantação de gateway de borda de locatário único ou uma implantação de roteador de LAN, você pode instalar o gateway de RAS em um computador físico ou em uma VM.  
   

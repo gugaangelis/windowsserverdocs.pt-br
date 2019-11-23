@@ -21,9 +21,9 @@ ms.locfileid: "71367246"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>Gerar um relatório de uso para clientes remotos usando dados históricos
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-**Observação:** O Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
+**Observação:** o Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
   
 O console de gerenciamento do no servidor de acesso remoto pode ser usado para gerar um relatório de uso para os clientes remotos que estão acessando o servidor. Para gerar um relatório de uso para clientes remotos, primeiro habilite a contabilidade no servidor de acesso remoto. Depois de gerar o relatório, você pode usar o painel de monitoramento que está disponível no console de gerenciamento do no servidor de acesso remoto para exibir as estatísticas de carga no servidor.  
   
@@ -59,7 +59,7 @@ O console de gerenciamento do no servidor de acesso remoto pode ser usado para g
 >   
 > A contabilização de acesso remoto é baseada no conceito de **sessões**. Ao contrário de uma **conexão**, uma **sessão** é identificada exclusivamente por uma combinação de endereço IP do cliente remoto e nome de usuário. Por exemplo, se um túnel de máquina for formado a partir do cliente remoto, chamado CLIENT1, uma sessão será criada e armazenada no banco de dados de estatísticas. Quando um usuário chamado user1 se conecta desse cliente após algum tempo (mas o túnel de máquina ainda está ativo), a sessão é registrada como uma sessão separada. A distinção de sessões é manter a distinção entre o túnel do computador e o túnel do usuário.  
   
-0Windows-](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

@@ -34,8 +34,8 @@ Este tópico descreve as alterações que o Adprep. exe faz no Windows Server 20
 -   [Atualizações de esquema](../../../ad-ds/deploy/Schema-Updates.md)  
   
 ## <a name="see-also"></a>Consulte também  
-[Windows Server 2008 R2: Apêndice de alterações em Adprep. exe para dar suporte a AD DS @ no__t-0  
-[Windows Server 2008: Apêndice de alterações em Adprep. exe para dar suporte a AD DS @ no__t-0  
+[Windows Server 2008 R2: Apêndice de alterações em Adprep. exe para dar suporte a AD DS](https://technet.microsoft.com/library/dd378876(v=ws.10).aspx)  
+[Windows Server 2008: Apêndice de alterações em Adprep. exe para dar suporte ao AD DS](https://technet.microsoft.com/library/cc770703(v=ws.10).aspx)  
   
 
 

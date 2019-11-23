@@ -61,7 +61,7 @@ Para poupar tempo necessário para reinstalar o software, determine se os aplica
 3. Selecione o sistema operacional que você deseja iniciar no modo de restauração.  
 4. Faça logon como administrador (você só pode usar uma conta de computador local, nenhuma opção de logon de domínio está disponível).  
 5. Em um prompt de comando, digite **Ntbackup**e pressione Enter.  
-6. Na página de **boas-vindas** , clique em **modo avançado**e, em seguida, selecione a guia **restaurar e gerenciar mídia** . (Não selecione **Assistente de restauração**.)  
+6. Na página de **boas-vindas** , clique em **modo avançado**e selecione a guia **restaurar e gerenciar mídia** . (não selecione **Assistente de restauração**.)  
 7. Selecione o arquivo de backup apropriado para restaurar e verifique se as caixas de seleção **disco do sistema** e **estado do sistema** estão marcadas.  
 8. Clique em **Iniciar restauração**.  
 9. Quando a operação de restauração for concluída, reinicie o computador.  
@@ -77,7 +77,7 @@ Use o procedimento a seguir para executar uma restauração autoritativa (també
    > [!NOTE]
    > Marcar os dados restaurados como os dados primários no backup é equivalente a definir a entrada **BurFlags** como D4 na seguinte subchave do registro:  
    >   
-   > **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative réplica define o GUID @ no__t-1**  
+   > **HKEY_LOCAL_MACHINE conjuntos de réplicas do \system\currentcontrolset\services\ntfrs\parameters\cumulative\\** *GUID*  
 
 4. Quando a operação de restauração for concluída, reinicie o computador.  
   

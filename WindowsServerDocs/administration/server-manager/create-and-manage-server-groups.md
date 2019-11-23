@@ -22,7 +22,7 @@ ms.locfileid: "71383222"
 ---
 # <a name="create-and-manage-server-groups"></a>criar e gerenciar grupos de servidores
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico descreve como criar grupos de servidores personalizados e definidos pelo usuário no Gerenciador do Servidor no Windows Server.
 
@@ -72,7 +72,7 @@ Os servidores podem ser membros de mais de um grupo.
 3.  Após concluir as alterações no grupo, clique em **OK**.
 
 ## <a name="see-also"></a>Consulte também
-[adicionar servidores a Gerenciador do Servidor](add-servers-to-server-manager.md)
+[adicionar servidores ao Gerenciador do Servidor](add-servers-to-server-manager.md)
 [Gerenciador do servidor](server-manager.md)
 
 

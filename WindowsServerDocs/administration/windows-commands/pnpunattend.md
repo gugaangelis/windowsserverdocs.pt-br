@@ -47,8 +47,8 @@ A preparação preliminar é necessária. Antes de usar esse comando, você deve
 2. Baixe e extraia o pacote de driver para seu dispositivo. Copie o conteúdo da subpasta que contém o arquivo INF para sua versão do sistema operacional e quaisquer subpastas na pasta de vídeo que você criou. Por exemplo, copie os arquivos de driver de vídeo para C:\Drivers\Video.
 3. Adicione uma variável de caminho do ambiente do sistema à pasta que você criou na etapa 1. por exemplo, **C:\Drivers\Video**.
 4. Crie a seguinte chave do registro e, em seguida, para a chave **DriverPaths** que você criar, defina os **dados do valor** como **1**.
-5. Para o Windows® 7, navegue pelo caminho do registro: **HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**e, em seguida, crie as chaves: **UnattendSettings\PnPUnattend\DriverPaths @ no__t-1**
-6. Para o Windows Vista, navegue até o caminho do registro: **HK_LM\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**e, em seguida, crie as chaves = **\UnattendSettings\PnPUnattend\DriverPaths**.
+5. Para o Windows® 7, navegue pelo caminho do registro: **HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion\\** e, em seguida, crie as chaves: **UnattendSettings\PnPUnattend\DriverPaths\\**
+6. Para o Windows Vista, navegue até o caminho do registro: **HK_LM \Software\microsoft\windows NT\CurrentVersion\\** e, em seguida, crie as chaves = **\UnattendSettings\PnPUnattend\DriverPaths**.
 
 ## <a name="examples"></a>Exemplos
 

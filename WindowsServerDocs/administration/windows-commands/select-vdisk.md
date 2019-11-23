@@ -22,9 +22,9 @@ ms.locfileid: "71384195"
 ---
 # <a name="select-vdisk"></a>selecionar vdisk
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-seleciona o disco rígido virtual especificado \(VHD @ no__t-1 e desloca o foco para ele.  
+seleciona o disco rígido virtual especificado \(VHD\) e desloca o foco para ele.  
   
 > [!NOTE]  
 > Esse comando só é aplicável ao Windows 7 e ao Windows Server 2008 R2.  
@@ -39,7 +39,7 @@ select vdisk file=<full path> [noerr]
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|arquivo @ no__t-0 @ no__t-1|Especifica o caminho completo e o nome de arquivo de um arquivo VHD existente.|  
+|<full path> de\=de arquivo|Especifica o caminho completo e o nome de arquivo de um arquivo VHD existente.|  
 |NOERR|Usado somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|  
   
 ## <a name="BKMK_examples"></a>Disso  
@@ -49,7 +49,7 @@ Para deslocar o foco para o VHD chamado Test. VHD, digite:
 select vdisk file="c:\test\test.vhd"  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
   
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

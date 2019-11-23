@@ -22,9 +22,9 @@ ms.locfileid: "71372101"
 ---
 # <a name="prnjobs"></a>prnjobs
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-pausa, retoma, cancela e lista trabalhos de impressão.
+Pausa, retoma, cancela e lista trabalhos de impressão.
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -41,13 +41,13 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 |              -x              |                                                                                                                                                                Cancela o trabalho de impressão especificado com o parâmetro **-j** .                                                                                                                                                                 |
 |              -l              |                                                                                                                                                                        lista todos os trabalhos de impressão em uma fila de impressão.                                                                                                                                                                         |
 |       -s \<ServerName >       |                                                                                                                  Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.                                                                                                                  |
-|      -p \<printerName >       |                                                                                                                                                           Especifica o nome da impressora que você deseja gerenciar. Obrigatório.                                                                                                                                                            |
+|      -p \<PrinterName >       |                                                                                                                                                           Especifica o nome da impressora que você deseja gerenciar. Necessário.                                                                                                                                                            |
 |         -j \<JobID >          |                                                                                                                                                                Especifica (por número de ID) o trabalho de impressão que você deseja cancelar.                                                                                                                                                                 |
-| -u \<UserName >-w <Password> | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -u \<nome de usuário >-w <Password> | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
 |              /?              |                                                                                                                                                                           Exibe a ajuda no prompt de comando.                                                                                                                                                                            |
 
 ## <a name="remarks"></a>Comentários
--   O comando **prnjobs** é um script Visual Basic localizado no diretório%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prnjobs ou altere os diretórios para a pasta apropriada. Por exemplo:
+-   O comando **prnjobs** é um script Visual Basic localizado no diretório <language> do printing_Admin_Scripts\\do%windir%\system32\. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prnjobs ou altere os diretórios para a pasta apropriada. Por exemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs
     ```
@@ -58,7 +58,7 @@ Para pausar um trabalho de impressão com uma ID de trabalho de 27 enviada para 
 ```
 cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
 ```
-Para listar todos os trabalhos de impressão atuais na fila para a impressora local chamada Impressora_colorida_2, digite:
+Para listar todos os trabalhos de impressão atuais na fila para a impressora local denominada colorprinter_2, digite:
 ```
 cscript prnjobs.vbs -l -p colorprinter_2
 ```

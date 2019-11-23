@@ -28,7 +28,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -36,7 +36,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *Alguns comutadores virtuais estão associados a uma interface de equipe, mas a interface de equipe não passa o tráfego em todas as VLANs para os comutadores virtuais.*  
   
 ## <a name="impact"></a>**Causa**  
-*Os seguintes comutadores virtuais não podem ter acesso a todas as VLANs: \n @ no__t-1*  
+*Os seguintes comutadores virtuais não podem ter acesso a todas as VLANs: \n{0}*  
   
 ## <a name="resolution"></a>**Resolução**  
 *Use Gerenciador do Servidor ou o cmdlet do Windows PowerShell Set-NetLbfoTeamNic para redefinir a interface de equipe para o modo padrão.*  

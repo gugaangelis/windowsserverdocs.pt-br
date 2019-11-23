@@ -1,5 +1,5 @@
 ---
-title: onde
+title: where
 description: 'Tópico de comandos do Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71362163"
 ---
-# <a name="where"></a>onde
+# <a name="where"></a>where
 
 
 
@@ -38,11 +38,11 @@ where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/r \<Dir >|Indica uma pesquisa recursiva, começando com o diretório especificado.|
+|/r \<dir >|Indica uma pesquisa recursiva, começando com o diretório especificado.|
 |/q|Retorna um código de saída (**0** para êxito, **1** para falha) sem exibir a lista de arquivos correspondentes.|
 |/f|Exibe os resultados do comando **Where** entre aspas.|
 |/t|Exibe o tamanho do arquivo e a data e hora da última modificação de cada arquivo correspondente.|
-|[$ \<ENV >: \| @ no__t-2Path >:] \<Pattern > [...]|Especifica o padrão de pesquisa para os arquivos a serem correspondentes. Pelo menos um padrão é necessário e o padrão pode incluir caracteres curinga ( **&#42;** e **?** ). Por padrão, **onde** o pesquisa o diretório atual e os caminhos especificados na variável de ambiente Path. Você pode especificar um caminho diferente para pesquisar usando o formato $*env*:*Pattern* (em que *env* é uma variável de ambiente existente que contém um ou mais caminhos) ou usando o formato *caminho*:*padrão* (em que o *caminho* é o caminho do diretório que você deseja pesquisar). Esses formatos opcionais não devem ser usados com a opção de linha de comando **/r** .|
+|[$\<ENV >:\|\<caminho >:]\<padrão > [...]|Especifica o padrão de pesquisa para os arquivos a serem correspondentes. Pelo menos um padrão é necessário e o padrão pode incluir caracteres curinga ( **&#42;** e **?** ). Por padrão, **onde** o pesquisa o diretório atual e os caminhos especificados na variável de ambiente Path. Você pode especificar um caminho diferente para pesquisar usando o formato $*env*:*Pattern* (em que *env* é uma variável de ambiente existente que contém um ou mais caminhos) ou usando o formato *caminho*:*padrão* (em que *caminho* é o caminho do diretório que você deseja pesquisar). Esses formatos opcionais não devem ser usados com a opção de linha de comando **/r** .|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

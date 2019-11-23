@@ -37,24 +37,24 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Nome de arquivo >|Especifica o arquivo para o qual exibir as DACLs.|
-|\<Directory >|Especifica o diretório para o qual exibir as DACLs.|
+|\<nome de arquivo >|Especifica o arquivo para o qual exibir as DACLs.|
+|\<do diretório >|Especifica o diretório para o qual exibir as DACLs.|
 |/t|Executa a operação em todos os arquivos especificados no diretório atual e em seus subdiretórios.|
 |/c|Continua a operação, apesar de quaisquer erros de arquivo. As mensagens de erro ainda serão exibidas.|
 |/l|Executa a operação em um link simbólico versus seu destino.|
 |/q|Suprime as mensagens de êxito.|
 |[/Save \<ACLfile > [/t] [/c] [/l] [/q]]|Armazena as DACLs de todos os arquivos correspondentes no *ACLfile* para uso posterior com **/Restore**.|
-|[/SetOwner \<Username > [/t] [/c] [/l] [/q]]|Altera o proprietário de todos os arquivos correspondentes para o usuário especificado.|
+|[/SetOwner \<nome de usuário > [/t] [/c] [/l] [/q]]|Altera o proprietário de todos os arquivos correspondentes para o usuário especificado.|
 |[/findSID \<Sid > [/t] [/c] [/l] [/q]]|Localiza todos os arquivos correspondentes que contêm uma DACL mencionando explicitamente o SID (identificador de segurança) especificado.|
 |[/Verify [/t] [/c] [/l] [/q]]|Localiza todos os arquivos com ACLs que não são canônicas ou têm tamanhos inconsistentes com as contagens de ACE (entrada de controle de acesso).|
 |[/Reset reiniciar [/t] [/c] [/l] [/q]]|Substitui ACLs por ACLs herdadas padrão para todos os arquivos correspondentes.|
-|[/Grant [: r] \<Sid >: <Perm> [...]]|Concede direitos de acesso de usuário especificado. As permissões substituem as permissões explícitas concedidas anteriormente.</br>Sem **: r**, as permissões são adicionadas a quaisquer permissões explícitas concedidas anteriormente.|
-|[/Deny \<Sid >: <Perm> [...]]|Nega explicitamente os direitos de acesso de usuário especificados. Uma ACE de negação explícita é adicionada para as permissões declaradas e as mesmas permissões em qualquer concessão explícita são removidas.|
-|[/remove [: g @ no__t-0: d]] \<Sid > [...]] /t /c /l /q|Remove todas as ocorrências do SID especificado da DACL.</br>**: g** remove todas as ocorrências de direitos concedidos para o SID especificado.</br>**:d** remove todas as ocorrências de direitos negados para o SID especificado.|
-|[/setintegritylevel [(CI) (OI)] \<Level >: <Policy> [...]]|Adiciona explicitamente uma ACE de integridade a todos os arquivos correspondentes. O *nível* é especificado como:</br>-   **L**[OMO]</br>-   **M**[edium]</br>-   **H**[perior]</br>As opções de herança para a ACE de integridade podem preceder o nível e são aplicadas somente a diretórios.|
+|[/Grant [: r] \<Sid >:<Perm>[...]]|Concede direitos de acesso de usuário especificado. As permissões substituem as permissões explícitas concedidas anteriormente.</br>Sem **: r**, as permissões são adicionadas a quaisquer permissões explícitas concedidas anteriormente.|
+|[/Deny \<Sid >:<Perm>[...]]|Nega explicitamente os direitos de acesso de usuário especificados. Uma ACE de negação explícita é adicionada para as permissões declaradas e as mesmas permissões em qualquer concessão explícita são removidas.|
+|[/remove [: g\|:d]] \<Sid > [...]] /t /c /l /q|Remove todas as ocorrências do SID especificado da DACL.</br>**: g** remove todas as ocorrências de direitos concedidos para o SID especificado.</br>**:d** remove todas as ocorrências de direitos negados para o SID especificado.|
+|[/setintegritylevel [(CI) (OI)]\<nível >:<Policy>[...]]|Adiciona explicitamente uma ACE de integridade a todos os arquivos correspondentes. O *nível* é especificado como:</br>-   **L**[OMO]</br>-   **M**[edium]</br>-   **H**[perior]</br>As opções de herança para a ACE de integridade podem preceder o nível e são aplicadas somente a diretórios.|
 |[/substitute \<SidOld > <SidNew> [...]]|Substitui um SID existente (*SidOld*) por um novo SID (*SidNew*). Requer o parâmetro *Directory* .|
 |/Restore \<ACLfile > [/c] [/l] [/q]|Aplica as DACLs armazenadas de *ACLfile* a arquivos no diretório especificado. Requer o parâmetro *Directory* .|
-|/InheritanceLevel: [e @ no__t-0d @ no__t-1R]|Define o nível de herança: <br>  **e** -habilita enheritance <br>**d** -desabilita a herança e copia as ACEs <br>**r** -remove todas as ACEs herdadas
+|/InheritanceLevel: [e\|d\|r]|Define o nível de herança: <br>  **e** -habilita enheritance <br>**d** -desabilita a herança e copia as ACEs <br>**r** -remove todas as ACEs herdadas
 
 ## <a name="remarks"></a>Comentários
 

@@ -22,7 +22,7 @@ ms.locfileid: "71377030"
 ---
 # <a name="freedisk"></a>freedisk
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Verifica se a quantidade especificada de espaço em disco está disponível antes de continuar com um processo de instalação.
 
@@ -35,9 +35,9 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
 |       Parâmetro       |                                                                                         Descrição                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u [<Domain> @ no__t-1] <User> |                                            Executa o script com as permissões da conta de usuário especificada. O padrão é permissões do sistema.                                            |
+| /u [<Domain>\\]<User> |                                            Executa o script com as permissões da conta de usuário especificada. O padrão é permissões do sistema.                                            |
 |    /p [<Password>]    |                                                           Especifica a senha da conta de usuário que é especificada em **/u**.                                                            |
-|      /d <Drive>       |                              Especifica a unidade para a qual você deseja descobrir a disponibilidade de espaço livre. Você deve especificar <Drive>for um computador remoto.                               |
+|      /d <Drive>       |                              Especifica a unidade para a qual você deseja descobrir a disponibilidade de espaço livre. Você deve especificar <Drive>para um computador remoto.                               |
 |        <Value>        |                                     Verifica se há uma quantidade específica de espaço livre em disco. Você pode especificar <Value>em bytes, KB, MB, GB, TB, PB, EB, ZB ou YB.                                      |
 
 ## <a name="remarks"></a>Comentários
@@ -53,5 +53,5 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
   ```
   INFO: The specified 52,428,800 byte(s) of free space is available on current drive.
   ```
-  ## <a name="additional-references"></a>Referências adicionais
+  ## <a name="additional-references"></a>referências adicionais
   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

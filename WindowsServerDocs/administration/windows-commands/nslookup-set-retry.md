@@ -22,7 +22,7 @@ ms.locfileid: "71372862"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Define o número de repetições.
 ## <a name="syntax"></a>Sintaxe
@@ -38,6 +38,6 @@ set retry=<Number>
 
 ## <a name="remarks"></a>Comentários
 - Quando uma resposta a uma solicitação não é recebida dentro de um determinado período de tempo, o período de tempo limite é duplicado e a solicitação é reenviada. O valor de repetição controla quantas vezes uma solicitação é enviada novamente antes de desistir. Você pode alterar o período de tempo limite com o subcomando **set timeout** .
-  ## <a name="additional-references"></a>Referências adicionais
+  ## <a name="additional-references"></a>referências adicionais
   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
   [nslookup set timeout](nslookup-set-timeout.md)

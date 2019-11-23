@@ -17,15 +17,15 @@ ms.locfileid: "71396075"
 ---
 # <a name="configure-nps-on-a-multihomed-computer"></a>Configurar o NPS em um computador multihomed
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para configurar um NPS com vários adaptadores de rede.
 
 Ao usar vários adaptadores de rede em um servidor que executa o NPS (servidor de diretivas de rede), você pode configurar o seguinte:
 
-- Os adaptadores de rede que fazem e não enviam e recebem serviço RADIUS tráfego \(RADIUS @ no__t-1.
-- Em uma base de adaptador por rede, se o NPS monitora o tráfego RADIUS no protocolo IP versão 4 \(IPv4 @ no__t-1, IPv6 ou IPv4 e IPv6.
-- Os números de porta UDP sobre os quais o tráfego RADIUS é enviado e recebido em uma base por protocolo \(IPv4 ou IPv6 @ no__t-1, por adaptador de rede.
+- Os adaptadores de rede que fazem e não enviam e recebem serviço RADIUS \(tráfego de\) RADIUS.
+- Em uma base de adaptador por rede, se o NPS monitora o tráfego RADIUS no protocolo IP versão 4 \(IPv4\), IPv6 ou IPv4 e IPv6.
+- Os números de porta UDP sobre os quais o tráfego RADIUS é enviado e recebido por protocolo \(IPv4 ou IPv6\), por adaptador de rede.
 
 Por padrão, o NPS escuta o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 para IPv6 e IPv4 para todos os adaptadores de rede instalados. Como o NPS usa automaticamente todos os adaptadores de rede para o tráfego RADIUS, você só precisa especificar os adaptadores de rede que deseja que o NPS use para o tráfego RADIUS quando desejar impedir que o NPS utilize um adaptador de rede específico.
 
@@ -42,8 +42,8 @@ Em outro exemplo, se o NPS tiver três adaptadores de rede instalados, mas você
 
 Para configurar o NPS para escutar e enviar o tráfego RADIUS em um adaptador de rede, use a seguinte sintaxe na caixa de diálogo Propriedades do servidor de políticas de rede no console do NPS:
 
-- Sintaxe de tráfego IPv4: IPAddress: UDPport, em que IPAddress é o endereço IPv4 configurado no adaptador de rede sobre o qual você deseja enviar o tráfego RADIUS e UDPport é o número da porta RADIUS que você deseja usar para autenticação RADIUS ou tráfego de contabilização.
-- Sintaxe de tráfego IPv6: [IPv6Address]: UDPport, em que os colchetes em aproximadamente IPv6Address são necessários, IPv6Address é o endereço IPv6 configurado no adaptador de rede sobre o qual você deseja enviar o tráfego RADIUS e UDPport é o número da porta RADIUS que você deseja usar para a autenticação RADIUS ou tráfego de contabilização.
+- Sintaxe de tráfego IPv4: IPAddress: UDPport, em que IPAddress é o endereço IPv4 configurado no adaptador de rede sobre o qual você deseja enviar o tráfego RADIUS e UDPport é o número da porta RADIUS que você deseja usar para a autenticação ou contabilidade RADIUS tráfico.
+- Sintaxe de tráfego IPv6: [IPv6Address]: UDPport, em que os colchetes em aproximadamente IPv6Address são necessários, IPv6Address é o endereço IPv6 configurado no adaptador de rede sobre o qual você deseja enviar o tráfego RADIUS e UDPport é o número da porta RADIUS que você deseja para usar para autenticação RADIUS ou tráfego de contabilização.
 
 Os caracteres a seguir podem ser usados como delimitadores para configurar as informações de endereço IP e porta UDP:
 

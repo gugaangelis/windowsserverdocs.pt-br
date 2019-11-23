@@ -21,9 +21,9 @@ ms.locfileid: "71367223"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>Monitorar a carga existente no servidor de acesso remoto
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-**Observação:** O Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
+**Observação:** o Windows Server 2012 reúne o DirectAccess e o RRAS (Serviço de Roteamento e Acesso Remoto) em uma única função de Acesso Remoto.  
   
 O termo **carga** refere-se às estatísticas relacionadas ao número de conexões no servidor de acesso remoto. A seguir estão as etapas necessárias para acompanhar a carga no servidor de acesso remoto.  
   
@@ -58,7 +58,7 @@ Você pode usar o painel de monitoramento que está disponível no console de ge
   
 Agora, o **Monitor de desempenho** mostrará graficamente as estatísticas de carga do servidor selecionadas.  
   
-0Windows-](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   

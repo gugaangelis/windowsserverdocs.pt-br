@@ -42,8 +42,8 @@ mkdir [<Drive>:]<Path>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> de @no__t 0Drive:|Especifica a unidade na qual você deseja criar o novo diretório.|
-|\<Path >|Obrigatório. Especifica o nome e o local do novo diretório. O comprimento máximo de qualquer caminho único é determinado pelo sistema de arquivos.|
+|> da unidade de \<:|Especifica a unidade na qual você deseja criar o novo diretório.|
+|\<caminho >|Necessário. Especifica o nome e o local do novo diretório. O comprimento máximo de qualquer caminho único é determinado pelo sistema de arquivos.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

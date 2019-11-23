@@ -112,7 +112,7 @@ As seguintes etapas explicam o processo em mais detalhes:
   
 15. O convidado força a sincronização de tempo NT5DS (Windows NTP) com outro controlador de domínio (em uma hierarquia padrão do Serviço de Horário do Windows, isso significa usar o PDCE). O convidado contata o PDCE. Todos os tíquetes Kerberos existentes são liberados.  
   
-16. O convidado configura os serviços DFSR ou NTFRS para que sejam executados automaticamente. O convidado exclui todos os arquivos de banco de dados DFSR e NTFRS existentes (padrão: c:\windows\ntfrs e c:\System Volume Information\DFSR @ no__t-0 *< database_GUID >* ), a fim de forçar a sincronização não AUTORITATIVA do SYSVOL quando o serviço é próximo iniciais. O convidado não exclui o conteúdo de arquivo de SYSVOL para propagar previamente o SYSVOL quando a sincronização for iniciada depois.  
+16. O convidado configura os serviços DFSR ou NTFRS para que sejam executados automaticamente. O convidado exclui todos os arquivos de banco de dados DFSR e NTFRS existentes (padrão: c:\windows\ntfrs e c:\System Volume Information\DFSR\\ *< database_GUID >* ), a fim de forçar a sincronização não AUTORITATIVA de SYSVOL quando o serviço é iniciado pela próxima vez. O convidado não exclui o conteúdo de arquivo de SYSVOL para propagar previamente o SYSVOL quando a sincronização for iniciada depois.  
   
 17. O convidado é renomeado. O serviço Servidor de Função de SD no convidado inicia a configuração do AD DS (promoção) usando o arquivo de banco de dados NTDS.DIT existente como uma origem, em vez do banco de dados modelo incluído em c:\windows\system32, como uma promoção normalmente faz.  
   
@@ -192,7 +192,7 @@ Depois que o convidado emprega garantias de virtualização, o NTDS replica inte
   
 -   Se estiver usando FRS, o convidado interromperá o serviço NTFRS e definirá o valor de registro D2 BURFLAGS. Então, ele iniciará o serviço NTFRS, que é replicado internamente e de modo não autoritativo, reutilizando, onde possível, os dados de SYSVOL existentes e não alterados.  
   
--   Se você estiver usando o DFSR, o convidado interromperá o serviço DFSR e excluirá os arquivos de banco de dados DFSR (local padrão:%SystemRoot%\System Volume Information\DFSR @ no__t-0 *<database GUID>* ). Então, ele iniciará o serviço DFSR, que é replicado internamente e de modo não autoritativo, reutilizando, onde possível, os dados de SYSVOL existentes e não alterados.  
+-   Se estiver usando o DFSR, o convidado interromperá o serviço DFSR e excluirá os arquivos de banco de dados DFSR (local padrão:%SystemRoot%\System Volume Information\DFSR\\ *<database GUID>* ). Então, ele iniciará o serviço DFSR, que é replicado internamente e de modo não autoritativo, reutilizando, onde possível, os dados de SYSVOL existentes e não alterados.  
   
 > [!NOTE]  
 > -   Se o hipervisor não fornecer uma ID de geração de VM para comparação, o hipervisor não suportará as garantias de virtualização e o convidado funcionará como um controlador de domínio virtualizado que executa o Windows Server 2008 R2 ou anterior. O convidado implementa a proteção de quarentena da reversão de USN caso haja uma tentativa de iniciar a replicação com USNs que não ultrapassaram o último USN observado pelo controlador de domínio parceiro. Para obter mais informações sobre proteção de quarentena da reversão de USN, consulte [USN e reversão do USN](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx)  

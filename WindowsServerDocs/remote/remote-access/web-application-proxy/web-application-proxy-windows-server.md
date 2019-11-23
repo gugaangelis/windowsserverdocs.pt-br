@@ -19,7 +19,7 @@ ms.locfileid: "71387973"
 
 >Aplica-se a: Windows Server 2016
 
-o conteúdo de @no__t 0This é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/). **  
+**Esse conteúdo é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
   
 O conteúdo desta seção descreve as novidades e alterações no proxy de aplicativo Web para o Windows Server 2016. Os novos recursos e as alterações listados aqui são os mais prováveis de ter o maior impacto à medida que você trabalha com a versão prévia.  
   

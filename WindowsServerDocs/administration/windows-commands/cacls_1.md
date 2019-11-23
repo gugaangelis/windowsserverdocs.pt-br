@@ -22,7 +22,7 @@ ms.locfileid: "71379947"
 ---
 # <a name="cacls"></a>cacls
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe ou modifica as listas de controle de acesso discricional (DACL) nos arquivos especificados.  
 ## <a name="syntax"></a>Sintaxe  
@@ -33,16 +33,16 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 |        Parâmetro        |                                                                                            Descrição                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      \<filename\>       |                                                                            Obrigatório. Exibe ACLs de arquivos especificados.                                                                             |
+|      \<filename\>       |                                                                            Necessário. Exibe ACLs de arquivos especificados.                                                                             |
 |           /t            |                                                          altera as ACLs de arquivos especificados no diretório atual e em todos os subdiretórios.                                                          |
 |           /m            |                                                                          altera as ACLs de volumes montados em um diretório.                                                                           |
 |           /l            |                                                                        Trabalhe no próprio link simbólico em relação ao destino.                                                                         |
 |         /s: SDDL         |                                       Substitui as ACLs pelas especificadas na cadeia de caracteres SDDL (não é válida com **/e**, **/g**, **/r**, **/p**ou **/d**).                                        |
 |           /e            |                                                                                 Edite a ACL em vez de substituí-la.                                                                                  |
 |           /c            |                                                                                 Continuar nos erros de acesso negado.                                                                                  |
-|    /g usuário: \<perm @ no__t-1     |   Conceda direitos de acesso de usuário especificados.<br /><br />Valores válidos para a permissão:<br /><br />-n-nenhum<br />-r-leitura<br />-w-gravação<br />-c-alterar (gravação)<br />-f-controle total   |
+|    /g usuário:\<Perm\>     |   Conceda direitos de acesso de usuário especificados.<br /><br />Valores válidos para a permissão:<br /><br />-n-nenhum<br />-r-leitura<br />-w-gravação<br />-c-alterar (gravação)<br />-f-controle total   |
 |      /r usuário [...]      |                                                                  Revogar os direitos de acesso do usuário especificado (válido somente com **/e**).                                                                   |
-| [/p usuário: \<perm @ no__t-1 [...] | substituir os direitos de acesso do usuário especificado.<br /><br />Valores válidos para a permissão:<br /><br />-n-nenhum<br />-r-leitura<br />-w-gravação<br />-c-alterar (gravação)<br />-f-controle total |
+| [/p usuário:\<Perm\> [...] | substituir os direitos de acesso do usuário especificado.<br /><br />Valores válidos para a permissão:<br /><br />-n-nenhum<br />-r-leitura<br />-w-gravação<br />-c-alterar (gravação)<br />-f-controle total |
 |     [/d usuário [...]      |                                                                                    Negar acesso de usuário especificado.                                                                                     |
 |           /?            |                                                                                Exibe a ajuda no prompt de comando.                                                                                |
 
@@ -57,15 +57,15 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
   |        CI         |           Herança de contêiner. Esta pasta e subpastas.            |
   |        E/S         | Herdar somente. A ACE não se aplica ao arquivo/diretório atual. |
   | Nenhuma mensagem de saída |                          Somente esta pasta.                          |
-  |     OI CIS      |                 Esta pasta, subpastas e arquivos.                 |
-  |   OI CIS I    |                     Somente subpastas e arquivos.                      |
+  |     Oi CIS      |                 Esta pasta, subpastas e arquivos.                 |
+  |   Oi CIS I    |                     Somente subpastas e arquivos.                      |
   |     CIS I      |                          Somente subpastas.                           |
-  |     OI I      |                             Somente arquivos.                             |
+  |     Oi I      |                             Somente arquivos.                             |
 
 
-- Você pode usar curingas ( **?** e **\\ @ no__t-2**) para especificar vários arquivos.  
+- Você pode usar curingas ( **?** e **\\\*** ) para especificar vários arquivos.  
 - Você pode especificar mais de um usuário.  
 
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)   
 -   [icacls](icacls.md)  

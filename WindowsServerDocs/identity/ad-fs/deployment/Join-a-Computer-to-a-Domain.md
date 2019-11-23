@@ -18,9 +18,9 @@ ms.locfileid: "71408348"
 ---
 # <a name="join-a-computer-to-a-domain"></a>Adicionar um computador a um domínio
 
-Para Serviços de Federação do Active Directory (AD FS) \(AD FS @ no__t-1 para funcionar, cada computador que funciona como um servidor de Federação deve ser Unido a um domínio. os proxies do servidor de Federação podem ser associados a um domínio, mas isso não é um requisito.  
+Para Serviços de Federação do Active Directory (AD FS) \(AD FS\) funcionar, cada computador que funciona como um servidor de Federação deve ser Unido a um domínio. os proxies do servidor de Federação podem ser associados a um domínio, mas isso não é um requisito.  
   
-Você não precisa ingressar um servidor Web em um domínio se o servidor Web estiver hospedando declarações @ no__t-0aware somente aplicativos.  
+Você não precisa ingressar um servidor Web em um domínio se o servidor Web estiver hospedando declarações\-apenas aplicativos cientes.  
   
 A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
@@ -39,8 +39,8 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 6.  Clique em **OK** e reinicie o computador.  
   
 ## <a name="additional-references"></a>Referências adicionais  
-[Lista de verificação: Como configurar um servidor de federação](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de verificação: Como configurar um proxy do servidor de federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de verificação: Configurando um proxy de servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

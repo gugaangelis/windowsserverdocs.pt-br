@@ -25,27 +25,27 @@ O modo de namespaces baseado para domínio do Windows Server 2008 inclui suporte
 
 Para migrar um namespace baseado em domínio do modo Windows 2000 Server para o modo do Windows Server 2008, você deve exportar o namespace para um arquivo, excluir o namespace, recriá-la no modo do Windows Server 2008 e, em seguida, importe as configurações de namespace. Para fazer isso, use o procedimento a seguir:
 
-1.  Abra uma janela de prompt de comando e digite o seguinte comando para exportar o namespace para um arquivo, em que \\ @ no__t-1*domínio*\\*namespace* é o nome do domínio apropriado, e namespace e *caminho @ no__t-6filename* é o caminho e o nome de arquivo do arquivo para exportação:
+1.  Abra uma janela de prompt de comando e digite o seguinte comando para exportar o namespace para um arquivo, em que \\\\*domínio*\\*namespace* é o nome do domínio apropriado, e o namespace e o *caminho\\filename* é o caminho e o nome do arquivo para exportação:
      ```
      Dfsutil root export \\domain\namespace path\filename.xml 
      ```
-2.  Anote o caminho (\\ @ no__t-1*server* \\*share* ) para cada servidor de namespace. Você deve adicionar manualmente os servidores de namespace ao namespace recriado porque Dfsutil não pode importar servidores de namespace.
-3.  No Gerenciamento DFS, clique com botão direito do namespace e, em seguida, clique em **excluir**, ou digite o seguinte comando em um prompt de comando, <br /> em que \\ @ no__t-1*domain*\\*namespace* é o nome do domínio e do namespace apropriados:
+2.  Anote o caminho (\\\\\\*compartilhamento* de *servidor* ) para cada servidor de namespace. Você deve adicionar manualmente os servidores de namespace ao namespace recriado porque Dfsutil não pode importar servidores de namespace.
+3.  No Gerenciamento DFS, clique com botão direito do namespace e, em seguida, clique em **excluir**, ou digite o seguinte comando em um prompt de comando, <br /> em que \\*namespace* de\\de *domínio* \\é o nome do domínio e do namespace apropriados:
      ```
      Dfsutil root remove \\domain\namespace
      ```
-4.  Em Gerenciamento DFS, recrie o namespace com o mesmo nome, mas use o modo Windows Server 2008 ou digite o seguinte comando em um prompt de comando, onde <br /> \\ @ no__t-1*server*\\*namespace* é o nome do servidor e do compartilhamento apropriados para a raiz do namespace:
+4.  Em Gerenciamento DFS, recrie o namespace com o mesmo nome, mas use o modo Windows Server 2008 ou digite o seguinte comando em um prompt de comando, onde <br /> \\\\*server*\\*namespace* é o nome do servidor e do compartilhamento apropriados para a raiz do namespace:
      ```
      Dfsutil root adddom \\server\namespace v2
      ```
-5.  Para importar o namespace do arquivo de exportação, digite o seguinte comando em um prompt de comando, onde <br /> \\ @ no__t-1*domínio*\\*namespace* é o nome do domínio e namespace apropriados e o *caminho @ no__t-6filename* é o caminho e o nome do arquivo a ser importado:
+5.  Para importar o namespace do arquivo de exportação, digite o seguinte comando em um prompt de comando, onde <br /> \\*namespace* de\\de *domínio* \\é o nome do domínio e namespace e *caminho apropriados\\filename* é o caminho e o nome de arquivo do arquivo a ser importado:
      ```
      Dfsutil root import merge path\filename.xml \\domain\namespace
      ```
 
     > [!NOTE]
     > Para minimizar o tempo necessário para importar um namespace grande, execute o **Dfsutil** comando import localmente em um servidor de namespace de raiz.
-6.  Adicione qualquer servidor de namespace restante ao namespace recriado clicando namespace no Gerenciamento DFS e clique em **Adicionar servidor de Namespace**, ou digitando o seguinte comando em um prompt de comando, onde <br /> \\ @ no__t-1*server*\\*share* é o nome do servidor e do compartilhamento apropriados para a raiz do namespace:
+6.  Adicione qualquer servidor de namespace restante ao namespace recriado clicando namespace no Gerenciamento DFS e clique em **Adicionar servidor de Namespace**, ou digitando o seguinte comando em um prompt de comando, onde <br /> \\\\*server*\\*compartilhamento* é o nome do servidor e do compartilhamento apropriados para a raiz do namespace:
      ```
      Dfsutil target add \\server\share 
      ```

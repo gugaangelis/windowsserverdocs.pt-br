@@ -17,7 +17,7 @@ ms.locfileid: "71396370"
 ---
 # <a name="connection-request-policies"></a>Políticas de solicitação de conexão
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a usar as políticas de solicitação de conexão do NPS para configurar o NPS como um servidor RADIUS, um proxy RADIUS ou ambos.
 
@@ -134,7 +134,7 @@ As seções a seguir fornecem detalhes adicionais sobre essas configurações.
 Ao usar essa configuração, você pode substituir as configurações de autenticação definidas em todas as políticas de rede e pode designar os métodos e tipos de autenticação necessários para se conectar à sua rede.
 
 >[!IMPORTANT]
->Se você configurar um método de autenticação na diretiva de solicitação de conexão que seja menos segura do que o método de autenticação configurado na diretiva de rede, o método de autenticação mais seguro que você configurar na política de rede será substituído. Por exemplo, se você tiver uma política de rede que exija o uso do protocolo de autenticação extensível protegida – protocolo de autenticação de handshake de desafio da Microsoft versão 2 \(PEAP-MS-CHAP v2 @ no__t-1, que é uma autenticação baseada em senha método para sem fio seguro, e você também configura uma política de solicitação de conexão para permitir acesso não autenticado, o resultado é que nenhum cliente é solicitado a autenticar usando PEAP-MS-CHAP v2. Neste exemplo, todos os clientes que se conectam à sua rede recebem acesso não autenticado.
+>Se você configurar um método de autenticação na diretiva de solicitação de conexão que seja menos segura do que o método de autenticação configurado na diretiva de rede, o método de autenticação mais seguro que você configurar na política de rede será substituído. Por exemplo, se você tiver uma política de rede que exija o uso do protocolo de autenticação extensível protegida – protocolo de autenticação de handshake de desafio da Microsoft versão 2 \(PEAP-MS-CHAP v2\), que é um método de autenticação baseado em senha para sem fio seguro e você também configura uma política de solicitação de conexão para permitir o acesso não autenticado, o resultado é que nenhum cliente é solicitado a autenticar usando o PEAP-MS-CHAP v2. Neste exemplo, todos os clientes que se conectam à sua rede recebem acesso não autenticado.
 
 ### <a name="accounting"></a>Contabilização
 
@@ -158,7 +158,7 @@ Você pode configurar um conjunto de regras de localização e substituição qu
 O processamento da regra localizar e substituir ocorre para um dos atributos anteriores antes que a mensagem RADIUS esteja sujeita às configurações de estatísticas e autenticação. As regras de manipulação de atributos se aplicam apenas a um único atributo. Você não pode configurar regras de manipulação de atributo para cada atributo. Além disso, a lista de atributos que você pode manipular é uma lista estática; Não é possível adicionar à lista de atributos disponíveis para manipulação.
 
 >[!NOTE]
->Se você estiver usando o protocolo de autenticação MS-CHAP v2, não poderá manipular o atributo de nome de usuário se a política de solicitação de conexão for usada para encaminhar a mensagem RADIUS. A única exceção ocorre quando um caractere de barra invertida (\) é usado e a manipulação só afeta as informações à esquerda dela. Um caractere de barra invertida normalmente é usado para indicar um nome de domínio (as informações à esquerda do caractere de barra invertida) e um nome de conta de usuário dentro do domínio (as informações à direita do caractere de barra invertida). Nesse caso, somente as regras de manipulação de atributos que modificam ou substituem o nome de domínio são permitidas.
+>Se você estiver usando o protocolo de autenticação MS-CHAP v2, não poderá manipular o atributo de nome de usuário se a política de solicitação de conexão for usada para encaminhar a mensagem RADIUS. A única exceção ocorre quando uma barra invertida (\) caractere é usada e a manipulação só afeta as informações à esquerda dela. Um caractere de barra invertida normalmente é usado para indicar um nome de domínio (as informações à esquerda do caractere de barra invertida) e um nome de conta de usuário dentro do domínio (as informações à direita do caractere de barra invertida). Nesse caso, somente as regras de manipulação de atributos que modificam ou substituem o nome de domínio são permitidas.
 
 Para obter exemplos de como manipular o nome de realm no atributo de nome de usuário, consulte a seção "exemplos de manipulação do nome de realm no atributo de nome de usuário" no tópico [usar expressões regulares no NPS](nps-crp-reg-expressions.md).
 
@@ -175,7 +175,7 @@ Você pode definir as seguintes opções de solicitação de encaminhamento que 
 >[!NOTE]
 >Essa opção de autenticação não pode ser usada quando o protocolo de autenticação do cliente de acesso for MS-CHAP v2 ou EAP-TLS (protocolo de autenticação extensível), que fornece autenticação mútua. Na autenticação mútua, o cliente de acesso comprova que se trata de um cliente de acesso válido para o servidor de autenticação (o NPS), e o servidor de autenticação comprova que é um servidor de autenticação válido para o cliente de acesso. Quando essa opção de autenticação é usada, a mensagem de aceitação de acesso é retornada. No entanto, o servidor de autenticação não fornece validação para o cliente de acesso e a autenticação mútua falha.
 
-Para obter exemplos de como usar expressões regulares para criar regras de roteamento que encaminham mensagens RADIUS com um nome de realm especificado para um grupo de servidores RADIUS remotos, consulte a seção "exemplo de encaminhamento de mensagens RADIUS por um servidor proxy" no tópico [usar regular Expressões no NPS](nps-crp-reg-expressions.md).
+Para obter exemplos de como usar expressões regulares para criar regras de roteamento que encaminham mensagens RADIUS com um nome de realm especificado para um grupo de servidores RADIUS remotos, consulte a seção "exemplo de encaminhamento de mensagens RADIUS por um servidor proxy" no tópico [usar expressões regulares no NPS](nps-crp-reg-expressions.md).
 
 ### <a name="advanced"></a>Avançado
 

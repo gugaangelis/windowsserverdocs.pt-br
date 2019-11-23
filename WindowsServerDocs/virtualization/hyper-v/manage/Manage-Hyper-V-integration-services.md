@@ -190,21 +190,21 @@ Os serviços de integração do Linux geralmente são fornecidos por meio do ker
     ```
   
    Os daemons do serviço de integração que podem ser listados incluem o seguinte. Se algum estiver ausente, talvez ele não tenha suporte no seu sistema ou talvez não esteja instalado. Encontre detalhes, consulte [máquinas virtuais Linux e FreeBSD com suporte para o Hyper-V no Windows](https://technet.microsoft.com/library/dn531030.aspx).  
-   - **hv_vss_daemon**: Esse daemon é necessário para criar backups de máquina virtual Linux em tempo real.
-   - **hv_kvp_daemon**: Esse daemon permite configurar e consultar pares de valor de chave intrínsecos e extrínsecos.
-   - **hv_fcopy_daemon**: Esse daemon implementa um serviço de cópia de arquivos entre o host e o convidado.  
+   - **hv_vss_daemon**: esse daemon é necessário para criar backups de máquina virtual Linux em tempo real.
+   - **hv_kvp_daemon**: esse daemon permite configurar e consultar pares de valor de chave intrínsecos e extrínsecos.
+   - **hv_fcopy_daemon**: esse daemon implementa um serviço de cópia de arquivos entre o host e o convidado.  
 
 ### <a name="examples"></a>Exemplos
 
 Esses exemplos demonstram como parar e iniciar o daemon KVP, chamado `hv_kvp_daemon`.
 
-1. Use a ID do processo \(PID @ no__t-1 para interromper o processo do daemon. Para localizar o PID, examine a segunda coluna da saída ou use `pidof`. Os daemons do Hyper-V são executados como raiz, portanto, você precisará de permissões de raiz.
+1. Use a ID do processo \(\) PID para interromper o processo do daemon. Para localizar o PID, examine a segunda coluna da saída ou use `pidof`. Os daemons do Hyper-V são executados como raiz, portanto, você precisará de permissões de raiz.
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
     ```
 
-1. Para verificar se todos os processos de `hv_kvp_daemon` foram, execute:
+1. Para verificar se todos os processos de `hv_kvp_daemon` desapareceram, execute:
 
     ```
     ps -ef | hv
@@ -216,7 +216,7 @@ Esses exemplos demonstram como parar e iniciar o daemon KVP, chamado `hv_kvp_dae
     sudo hv_kvp_daemon
     ``` 
 
-1. Para verificar se o processo `hv_kvp_daemon` está listado com uma nova ID de processo, execute:
+1. Para verificar se o processo de `hv_kvp_daemon` está listado com uma nova ID de processo, execute:
 
     ```
     ps -ef | hv

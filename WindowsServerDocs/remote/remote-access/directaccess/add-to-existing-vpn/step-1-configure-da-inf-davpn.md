@@ -21,9 +21,9 @@ ms.locfileid: "71388775"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>Etapa 1 configurar a infraestrutura do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico descreve como configurar a infraestrutura requerida para habilitar o DirectAccess em uma implantação da VPN existente. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [Step 1: Planejar a infraestrutura do DirectAccess @ no__t-0.  
+Este tópico descreve como configurar a infraestrutura requerida para habilitar o DirectAccess em uma implantação da VPN existente. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas na [etapa 1: planejar a infraestrutura do DirectAccess](Step-1-Plan-DirectAccess-Infrastructure.md).  
   
 |Tarefa|Descrição|  
 |----|--------|  
@@ -144,7 +144,7 @@ Verifique se o certificado do site usado para autenticação IP-HTTPS atende aos
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Para instalar o certificado IP-HTTPS de uma AC interna  
   
-1.  No servidor de Acesso Remoto: Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
+1.  No servidor de acesso remoto: na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
@@ -179,7 +179,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 ### <a name="NLS_DNS"></a>Para criar o servidor de local de rede e os registros DNS de investigação da Web  
   
-1.  No servidor DNS da rede interna: Na tela **Iniciar** , digite * * DNSMGMT. msc * * e pressione Enter.  
+1.  No servidor DNS da rede interna: na tela **Iniciar** , digite * * DNSMGMT. msc * * e pressione Enter.  
   
 2.  No painel esquerdo do console **Gerenciador DNS**, expanda a zona de pesquisa direta para o seu domínio. Clique com o botão direito no domínio e clique em **Novo Host (A ou AAAA)** .  
   
@@ -189,7 +189,7 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 5.  Clique em **Concluído**.  
 
-0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -202,7 +202,7 @@ Você também deve configurar entradas DNS para o seguinte:
   
 -   **O servidor IP-HTTPS**-os clientes DirectAccess devem ser capazes de resolver o nome DNS do servidor de acesso remoto da Internet.  
   
--   **Verificação de revogação de CRL**– o DirectAccess usa a verificação de revogação de certificado para a conexão IP-HTTPS entre clientes DirectAccess e o servidor de acesso remoto e para a conexão baseada em https entre o cliente DirectAccess e a rede servidor de localização. Em ambos os casos, os clientes do DirectAccess devem poder resolver e acessar o local do ponto de distribuição da CRL.  
+-   **Verificação de revogação de CRL**– o DirectAccess usa a verificação de revogação de certificado para a conexão IP-HTTPS entre clientes DirectAccess e o servidor de acesso remoto e para a conexão baseada em https entre o cliente DirectAccess e o servidor de local de rede. Em ambos os casos, os clientes do DirectAccess devem poder resolver e acessar o local do ponto de distribuição da CRL.  
   
 ## <a name="ConfigAD"></a>Configurar Active Directory  
 O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess devem ser ingressados em um domínio do Active Directory. Os computadores cliente do DirectAccess devem ser membros de um dos seguintes tipos de domínio:  
@@ -233,7 +233,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 9. Na caixa de diálogo **Propriedades do Sistema**, clique em Fechar. Clique em **Reiniciar Agora** quando solicitado.  
   
-0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -277,7 +277,7 @@ As configurações do DirectAccess contidas no computador cliente Política de G
   
 6.  Na caixa de diálogo **Selecionar Usuários, Contatos, Computadores ou Contas de Serviço**, selecione os computadores cliente que você deseja habilitar para o DirectAccess e clique em **OK**.  
   
-0Windows-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell** do powershell do @no__t  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -307,7 +307,7 @@ O servidor de local de rede deve estar em um servidor com alta disponibilidade e
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Para instalar o certificado de servidor de local de rede de uma AC interna  
   
-1.  No servidor que hospedará o site do servidor de local de rede: Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
+1.  No servidor que hospedará o site do servidor de local de rede: na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
 2.  No console do MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   

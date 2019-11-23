@@ -48,8 +48,8 @@ A economia de espaço que pode ser obtida com a Eliminação de Duplicação de 
     <tbody>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-clustered-gpfs.png" alt="Illustration of file servers" /></td>
-            <td style="vertical-align:top">servidores de arquivos de finalidade 
-                <b>General @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>Servidores de arquivos de uso geral</b><br />
 Servidores de arquivo de finalidade geral são servidores de arquivos de uso geral que podem conter qualquer um dos seguintes tipos de compartilhamentos: <ul>
                     <li>Compartilhamentos de equipe</li>
                     <li>Pastas base de usuários</li>
@@ -61,26 +61,28 @@ Servidores de arquivos de finalidade geral são bons candidatos para Eliminaçã
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-vdi.png" alt="Illustration of VDI servers" /></td>
-            <td style="vertical-align:top">implantações de VDI (infraestrutura de desktop @no__t 0Virtualized) @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>Implantações de VDI (infraestrutura de área de trabalho virtualizada)</b><br />
 Servidores VDI, como <a href="https://technet.microsoft.com/library/cc725560.aspx">Serviços da Área de Trabalho Remota</a>, fornecem uma opção simples para que as organizações provisionem áreas de trabalho para os usuários. Há muitas razões para que uma organização recorra a essa tecnologia: <ul>
-                    <li><b>Implantação de aplicativo</b>: Você pode implantar aplicativos rapidamente em toda a empresa. Isso é particularmente útil quando você tem aplicativos que são atualizados com frequência, são usados raramente ou são difíceis de gerenciar.</li>
-                    <li><b>Consolidação de aplicativos</b>: Ao instalar e executar aplicativos de um conjunto de máquinas virtuais gerenciadas centralmente, você elimina a necessidade de atualizar aplicativos em computadores cliente. Essa opção também reduz a quantidade de largura de banda de rede necessária para acessar os aplicativos.</li>
-                    <li><b>Acesso remoto</b>: Os usuários podem acessar aplicativos corporativos de dispositivos como computadores domésticos, quiosques, hardware de baixa potência e sistemas operacionais diferentes do Windows.</li>
-                    <li><b>Acesso ao Branch Office</b>: As implantações de VDI podem fornecer melhor desempenho de aplicativo para os funcionários da filial que precisam acessar armazenamentos de dados centralizados. Às vezes, aplicativos que fazem uso intensivo de dados não têm protocolos de cliente/servidor que são otimizados para conexões de baixa velocidade.</li>
+                    <li><b>Implantação de aplicativos</b>: você pode implantar rapidamente aplicativos em sua empresa. Isso é particularmente útil quando você tem aplicativos que são atualizados com frequência, são usados raramente ou são difíceis de gerenciar.</li>
+                    <li><b>Consolidação de aplicativos</b>: quando você instala e executa aplicativos em um conjunto de máquinas virtuais gerenciadas centralmente, você acaba com a necessidade de atualizar aplicativos em computadores cliente. Essa opção também reduz a quantidade de largura de banda de rede necessária para acessar os aplicativos.</li>
+                    <li><b>Acesso remoto</b>: os usuários podem acessar aplicativos corporativos por meio de dispositivos, como computadores domésticos, quiosques, hardware que consomem pouca energia e sistemas operacionais diferentes do Windows.</li>
+                    <li><b>Acesso a filial</b>: implantações de VDI podem fornecer melhor desempenho de aplicativos para funcionários de filiais que precisam de acesso a repositórios de dados centralizados. Às vezes, aplicativos que fazem uso intensivo de dados não têm protocolos de cliente/servidor que são otimizados para conexões de baixa velocidade.</li>
                 </ul>
 As implantações de VDI são ótimas candidatas para Eliminação de Duplicação de Dados, porque os discos rígidos virtuais que controlam as áreas de trabalho remotas para os usuários são essencialmente idênticos. Além disso, a Eliminação de Duplicação de Dados pode ajudar com os <em>problemas de inicialização de VDI</em>, a queda no desempenho de armazenamento quando muitos usuários fazem logon simultaneamente em suas áreas de trabalho para começar o dia.
             </td>
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-backup.png" alt="Illustration of backup applications" /></td>
-            <td style="vertical-align:top">destinos de @no__t 0Backup, como aplicativos virtualizados de backup @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>Destinos de backup, como aplicativos de backup virtualizados</b><br />
 Aplicativos de backup, como o <a href="https://technet.microsoft.com/library/hh758173.aspx">Microsoft DPM (Data Protection Manager)</a>, são excelentes candidatos para a Eliminação de Duplicação de Dados devido à duplicação significativa entre os instantâneos de backup.
             </td>
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-other.png" alt="Illustration of other workloads" /></td>
-            <td style="vertical-align:top">cargas de trabalho 
-                <b>Other @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>Outras cargas de trabalho</b><br />
                 <a href="install-enable.md#enable-dedup-candidate-workloads" data-raw-source="[Other workloads may also be excellent candidates for Data Deduplication](install-enable.md#enable-dedup-candidate-workloads)">Outras cargas de trabalho também podem ser excelentes candidatos para a Eliminação de Duplicação de Dados</a>.
             </td>
         </tr>

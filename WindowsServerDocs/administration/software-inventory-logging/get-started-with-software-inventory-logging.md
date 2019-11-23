@@ -48,6 +48,6 @@ O Log de Inventário de Software pode ajudar os administradores de servidor a ex
 [Agregador de registro em log de inventário de software](https://technet.microsoft.com/library/mt572043.aspx)<br>
 [Gerenciar o Registro em log de inventário de software](manage-software-inventory-logging.md)<br>
 [Cmdlets de log de inventário de software no Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[Ferramenta de gerenciamento de ativação de volume](http://blogs.technet.com/b/volume-licensing/) 
-[do Microsoft Assessment and Planning Toolkit](https://www.microsoft.com/download/en/details.aspx?id=7826)
+[Ferramenta de gerenciamento de ativação de volume](https://www.microsoft.com/download/en/details.aspx?id=7826) 
+[do Microsoft Assessment and Planning Toolkit](http://blogs.technet.com/b/volume-licensing/)
 

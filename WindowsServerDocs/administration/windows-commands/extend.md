@@ -22,9 +22,9 @@ ms.locfileid: "71377313"
 ---
 # <a name="extend"></a>extend
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-estende o volume ou a partição com foco e seu sistema de arquivos para o espaço livre \(unallocated @ no__t-1 em um disco.  
+estende o volume ou a partição com foco e seu sistema de arquivos para livre \(espaço\) não alocado em um disco.  
   
   
   
@@ -39,16 +39,16 @@ extend filesystem [noerr]
   
 | Parâmetro  |                                                                                             Descrição                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| tamanho @ no__t-0 @ no__t-1  |      Especifica a quantidade de espaço em megabytes \(MB @ no__t-1 a ser adicionada ao volume ou à partição atual. Se nenhum tamanho for fornecido, todo o espaço livre contíguo disponível no disco será usado.       |
-| disco @ no__t-0 @ no__t-1  |                          Especifica o disco no qual o volume ou a partição é estendida. Se nenhum disco for especificado, o volume ou a partição será estendido no disco atual.                          |
+| tamanho\=<n>  |      Especifica a quantidade de espaço em megabytes \(MB\) a ser adicionada ao volume ou à partição atual. Se nenhum tamanho for fornecido, todo o espaço livre contíguo disponível no disco será usado.       |
+| \=de disco <n>  |                          Especifica o disco no qual o volume ou a partição é estendida. Se nenhum disco for especificado, o volume ou a partição será estendido no disco atual.                          |
 | WPD |                                   estende o sistema de arquivos do volume com foco. Para uso somente em discos em que o sistema de arquivos não foi estendido com o volume.                                    |
-|   NOERR    | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
+|   NOERR    | somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
   
 ## <a name="remarks"></a>Comentários  
   
--   Em discos básicos, o espaço livre deve estar no mesmo disco que o volume ou a partição com foco. Ele também deve seguir imediatamente o volume ou a partição com foco \(that é, ele deve iniciar no próximo deslocamento de setor @ no__t-1.  
+-   Em discos básicos, o espaço livre deve estar no mesmo disco que o volume ou a partição com foco. Ele também deve seguir imediatamente o volume ou a partição com foco \(ou seja, ele deve iniciar no próximo deslocamento de setor\).  
   
--   Em discos dinâmicos com volumes simples ou estendidos, um volume pode ser estendido para qualquer espaço livre em qualquer disco dinâmico. Usando esse comando, você pode converter um volume dinâmico simples em um volume dinâmico estendido. Espelhados, RAID @ no__t-05 e volumes distribuídos não podem ser estendidos.  
+-   Em discos dinâmicos com volumes simples ou estendidos, um volume pode ser estendido para qualquer espaço livre em qualquer disco dinâmico. Usando esse comando, você pode converter um volume dinâmico simples em um volume dinâmico estendido. Volumes espelhados, RAID\-5 e distribuídos não podem ser estendidos.  
   
 -   se a partição tiver sido formatada anteriormente com o sistema de arquivos NTFS, o sistema de arquivos será estendido automaticamente para preencher a partição maior e não ocorrerá nenhuma perda de dados.  
   
@@ -71,7 +71,7 @@ Para estender o sistema de arquivos de um volume depois que ele foi estendido, d
 extend filesystem  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

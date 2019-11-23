@@ -59,9 +59,9 @@ wbadmin start recovery
 |-computador|Especifica o nome do computador para o qual você deseja recuperar o backup. Esse parâmetro é útil quando é feito o backup de vários computadores no mesmo local. Ele deve ser usado quando o parâmetro **-backupTarget** é especificado.|
 |-recoveryTarget|Especifica o local para o qual restaurar. Esse parâmetro será útil se esse local for diferente do local em que o backup foi feito anteriormente. Ele também pode ser usado para restaurações de volumes, arquivos ou aplicativos. Se você estiver restaurando um volume, poderá especificar a letra da unidade de volume do volume alternativo. Se você estiver restaurando um arquivo ou aplicativo, poderá especificar um local de recuperação alternativo.|
 |-recursivo|Válido somente ao recuperar arquivos. Recupera os arquivos nas pastas e todos os arquivos subordinados às pastas especificadas. Por padrão, somente os arquivos que residem diretamente nas pastas especificadas são recuperados.|
-|-substituir|Válido somente ao recuperar arquivos. Especifica a ação a ser tomada quando um arquivo que está sendo recuperado já existir no mesmo local.</br>-   **Skip** faz backup do Windows Server ignorar o arquivo existente e continuar a recuperação do próximo arquivo.</br>-   **CreateCopy** faz backup do Windows Server criar uma cópia do arquivo existente para que o arquivo existente não seja modificado.</br>a**substituição** -    faz backup do Windows Server substituir o arquivo existente pelo arquivo do backup.|
+|-substituir|Válido somente ao recuperar arquivos. Especifica a ação a ser tomada quando um arquivo que está sendo recuperado já existir no mesmo local.</br>-   **ignorar** faz com que backup do Windows Server ignore o arquivo existente e continue com a recuperação do próximo arquivo.</br>-   **CreateCopy** faz com que backup do Windows Server crie uma cópia do arquivo existente para que o arquivo existente não seja modificado.</br>-   **substituir** faz backup do Windows Server substituir o arquivo existente pelo arquivo do backup.|
 |-notRestoreAcl|Válido somente ao recuperar arquivos. Especifica para não restaurar as listas de controle de acesso (ACLs) de segurança dos arquivos que estão sendo recuperados do backup. Por padrão, as ACLs de segurança são restauradas (o valor padrão é **true)** . Se esse parâmetro for usado, as ACLs para os arquivos restaurados serão herdadas do local para o qual os arquivos estão sendo restaurados.|
-|-skipBadClusterCheck|Válido somente ao recuperar volumes. Ignora a verificação dos discos que você está recuperando para informações de cluster inválidos. Se você estiver recuperando para um servidor ou hardware alternativo, recomendamos que você não use esse parâmetro. Você pode executar manualmente o comando **chkdsk/b** nesses discos a qualquer momento para verificá-los em busca de clusters inválidos e, em seguida, atualizar as informações do sistema de arquivos de acordo.</br>Importante: Até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
+|-skipBadClusterCheck|Válido somente ao recuperar volumes. Ignora a verificação dos discos que você está recuperando para informações de cluster inválidos. Se você estiver recuperando para um servidor ou hardware alternativo, recomendamos que você não use esse parâmetro. Você pode executar manualmente o comando **chkdsk/b** nesses discos a qualquer momento para verificá-los em busca de clusters inválidos e, em seguida, atualizar as informações do sistema de arquivos de acordo.</br>Importante: até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
 |-noRollForward|Válido somente ao recuperar aplicativos. Permite a recuperação pontual anterior de um aplicativo se a versão mais recente dos backups estiver selecionada. Para outras versões do aplicativo que não são as mais recentes, a recuperação pontual anterior é feita como o padrão.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
@@ -87,12 +87,12 @@ Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-Para executar uma recuperação do backup a partir de 31 de março de 2013, obtido às 9:00 A.M., do volume \\ @ no__t-1? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \, tipo:
+Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:00 A.M., do volume \\\\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\, tipo:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-Para executar uma recuperação do backup de 30 de abril de 2013, obtido às 9:00 A.M., da pasta compartilhada \\ @ no__t-1servername\share de Server01, digite:
+Para executar uma recuperação do backup de 30 de abril de 2013, obtido às 9:00 A.M., da pasta compartilhada \\\\servername\share de Server01, digite:
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

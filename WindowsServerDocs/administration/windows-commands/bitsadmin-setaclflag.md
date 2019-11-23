@@ -22,7 +22,7 @@ ms.locfileid: "71380760"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-Define os sinalizadores de propagações da ACL (lista de controle de acesso) para o trabalho. Os sinalizadores indicam que você deseja manter as informações de proprietário e ACL com o arquivo que está sendo baixado. Por exemplo, para manter o proprietário e o grupo com o arquivo, defina **sinalizadores** to `OG`.
+Define os sinalizadores de propagações da ACL (lista de controle de acesso) para o trabalho. Os sinalizadores indicam que você deseja manter as informações de proprietário e ACL com o arquivo que está sendo baixado. Por exemplo, para manter o proprietário e o grupo com o arquivo, defina **sinalizadores** como `OG`.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,7 +35,7 @@ bitsadmin /SetAclFlags <Job> <Flags>
 |Parâmetro|Descrição|
 |---------|-----------|
 |Job|O nome de exibição ou o GUID do trabalho|
-|Sinalizadores|Especifique um ou mais dos seguintes valores de sinalizador:</br>MINÚSCULA Copie as informações do proprietário com o arquivo.</br>M Copie as informações do grupo com o arquivo.</br>3D Copie informações de DACL com o arquivo.</br>-S: copiar informações de SACL com o arquivo.|
+|Sinalizadores|Especifique um ou mais dos seguintes valores de sinalizador:</br>-O: copiar informações do proprietário com o arquivo.</br>-G: copiar informações do grupo com o arquivo.</br>-D: copiar informações de DACL com o arquivo.</br>-S: copiar informações de SACL com o arquivo.|
 
 ## <a name="remarks"></a>Comentários
 

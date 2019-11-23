@@ -15,16 +15,16 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356021"
 ---
-# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar a política DNS para a implantação de DNS de divisão @ no__t-0Brain
+# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar a política DNS para dividir a implantação de DNS\-Brain
 
->Aplica-se a: Windows Server 2016
+>Aplica-se ao Windows Server 2016
 
-Você pode usar este tópico para aprender a configurar a política DNS no Windows Server @ no__t-0 2016 para implantações de DNS de divisão-Brain, em que há duas versões de uma única zona-uma para os usuários internos na intranet da sua organização e outra para os usuários externos, que são Normalmente os usuários na Internet.
+Você pode usar este tópico para aprender a configurar a política DNS no Windows Server&reg; 2016 para implantações de DNS de divisão-Brain, em que há duas versões de uma única zona-uma para os usuários internos na intranet da sua organização e outra para os usuários externos, que normalmente são usuários na Internet.
 
 >[!NOTE]
->Para obter informações sobre como usar a política DNS para a implantação de DNS do Split @ no__t-0brain com Active Directory Zonas DNS integrados, consulte [usar a política DNS para DNS de divisão-Brain no Active Directory](dns-sb-with-ad.md).
+>Para obter informações sobre como usar a política de DNS para dividir a implantação de DNS\-Brain com Active Directory Zonas DNS integrado, consulte [usar a política DNS para o DNS de divisão-Brain no Active Directory](dns-sb-with-ad.md).
 
-Anteriormente, esse cenário exigia que os administradores de DNS mantenham dois servidores DNS diferentes, cada um fornecendo serviços a cada conjunto de usuários, interno e externo. Se apenas alguns registros dentro da zona fossem divididos @ no__t-0brained ou ambas as instâncias da zona (internas e externas) foram delegadas para o mesmo domínio pai, isso se tornou um enigma de gerenciamento. 
+Anteriormente, esse cenário exigia que os administradores de DNS mantenham dois servidores DNS diferentes, cada um fornecendo serviços a cada conjunto de usuários, interno e externo. Se apenas alguns registros dentro da zona foram divididos\-brained ou ambas as instâncias da zona (internas e externas) foram delegadas para o mesmo domínio pai, isso se tornou um enigma de gerenciamento. 
 
 Outro cenário de configuração para implantação de divisão-Brain é o controle de recursão seletiva para a resolução de nomes DNS. Em algumas circunstâncias, espera-se que os servidores DNS corporativos executem a resolução recursiva pela Internet para os usuários internos, enquanto eles também devem atuar como servidores de nomes autoritativos para usuários externos e bloquear a recursão para eles. 
 
@@ -158,7 +158,7 @@ A ilustração a seguir descreve esse cenário.
 
 Se uma consulta para a qual o servidor DNS contoso é não autoritativo for recebida, como para www.microsoft.com, a solicitação de resolução de nome será avaliada em relação às políticas no servidor DNS. 
 
-Como essas consultas não se enquadram em nenhuma zona, as políticas no nível da zona \(AS definidas no exemplo de divisão-Brain @ no__t-1 não são avaliadas. 
+Como essas consultas não se enquadram em nenhuma zona, as políticas de nível de zona \(conforme definido no exemplo de divisão e\) não são avaliadas. 
 
 O servidor DNS avalia as políticas de recursão e as consultas que são recebidas na interface privada correspondem ao **SplitBrainRecursionPolicy**. Essa política aponta para um escopo de recursão em que a recursão está habilitada.
 
@@ -179,7 +179,7 @@ Para configurar o controle de recursão seletiva de DNS usando a política DNS, 
 
 Escopos de recursão são instâncias exclusivas de um grupo de configurações que controlam a recursão em um servidor DNS. Um escopo de recursão contém uma lista de encaminhadores e especifica se a recursão está habilitada. Um servidor DNS pode ter muitos escopos de recursão. 
 
-A configuração de recursão herdada e a lista de encaminhadores são referenciadas como o escopo de recursão padrão. Você não pode adicionar ou remover o escopo de recursão padrão, identificado pelo nome ponto \( "." \).
+A configuração de recursão herdada e a lista de encaminhadores são referenciadas como o escopo de recursão padrão. Você não pode adicionar ou remover o escopo de recursão padrão, identificado pelo ponto de nome \("."\).
 
 Neste exemplo, a configuração de recursão padrão é desabilitada, enquanto um novo escopo de recursão para clientes internos é criado onde a recursão está habilitada.
 

@@ -22,7 +22,7 @@ ms.locfileid: "71392308"
 ---
 # <a name="tzutil"></a>tzutil
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe o utilitário de fuso horário do Windows. 
 ## <a name="syntax"></a>Sintaxe
@@ -34,8 +34,8 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|Exibe a ajuda no prompt de comando.|
 |/g|Exibe a ID do fuso horário atual.|
-|/s \<timeZoneID > [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
-|/l|lista todas as IDs de fuso horário e nomes de exibição válidos. A saída será:<br /><br />-    @ no__t-1display nome ><br />-    @ no__t-1time ID da zona >|
+|/s \<TimeZoneID > [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
+|/l|lista todas as IDs de fuso horário e nomes de exibição válidos. A saída será:<br /><br />-   \<nome de exibição ><br />-   \<ID de fuso horário >|
 
 ## <a name="remarks"></a>Comentários
 Um código de saída **0** indica que o comando foi concluído com êxito.
@@ -53,6 +53,6 @@ Para definir o fuso horário atual como hora padrão do Pacífico e desabilitar 
 ```
 tzutil /s Pacific Standard time_dstoff
 ```
-## <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>referências adicionais
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

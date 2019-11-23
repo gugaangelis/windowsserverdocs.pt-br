@@ -16,7 +16,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369208"
 ---
-# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Apêndice I: Criando contas de gerenciamento para contas e grupos protegidos no Active Directory
+# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Apêndice I: Criar o gerenciamento de contas para contas e grupos protegidos no Active Directory
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -42,7 +42,7 @@ A criação de contas que podem ser usadas para gerenciar a associação de grup
 Você deve testar exaustivamente todos esses procedimentos e modificá-los conforme necessário para seu ambiente antes de implementá-los em um ambiente de produção. Você também deve verificar se todas as configurações funcionam conforme o esperado (alguns procedimentos de teste são fornecidos neste apêndice) e você deve testar um cenário de recuperação de desastre no qual as contas de gerenciamento não estão disponíveis para serem usadas para preencher os grupos protegidos para recuperação metas. Para obter mais informações sobre como fazer backup e restaurar Active Directory, consulte o guia passo a passo de [backup e recuperação do AD DS](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
   
 > [!NOTE]  
-> Ao implementar as etapas descritas neste apêndice, você criará contas que poderão gerenciar a associação de todos os grupos protegidos em cada domínio, não apenas os grupos Active Directory de maior privilégio, como EAs, DAs e BAs. Para obter mais informações sobre grupos protegidos no Active Directory, consulte [Appendix C: Contas e grupos protegidos no Active Directory @ no__t-0.  
+> Ao implementar as etapas descritas neste apêndice, você criará contas que poderão gerenciar a associação de todos os grupos protegidos em cada domínio, não apenas os grupos Active Directory de maior privilégio, como EAs, DAs e BAs. Para obter mais informações sobre grupos protegidos no Active Directory, consulte o [Apêndice C: contas e grupos protegidos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
   
 ### <a name="step-by-step-instructions-for-creating-management-accounts-for-protected-groups"></a>Instruções passo a passo para criar contas de gerenciamento para grupos protegidos  
   
@@ -60,7 +60,7 @@ Para criar um grupo para habilitar e desabilitar contas de gerenciamento, execut
   
     ![Criando contas de gerenciamento](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
-3.  Clique com o botão direito do mouse no grupo recém-criado, clique em **Propriedades** e na guia **Objeto**. Na caixa de diálogo **propriedade de objeto** do grupo, selecione **proteger objeto contra exclusão acidental**, o que não apenas impedirá que usuários autorizados de outra forma excluam o grupo, mas também de movê-lo para outra UO, a menos que o atributo seja primeiro desmarcada.  
+3.  Clique com o botão direito do mouse no grupo que você acabou de criar, clique em **Propriedades**e clique na guia **objeto** . Na caixa de diálogo **propriedade de objeto** do grupo, selecione **proteger objeto contra exclusão acidental**, o que não apenas impedirá que usuários autorizados de outra forma excluam o grupo, mas também de movê-lo para outra UO, a menos que o atributo seja primeiro desmarcado.  
   
     ![Criando contas de gerenciamento](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)  
   
@@ -71,7 +71,7 @@ Para criar um grupo para habilitar e desabilitar contas de gerenciamento, execut
   
     ![Criando contas de gerenciamento](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_118.png)  
   
-5.  Se você ainda não tiver feito isso, no console **Active Directory usuários e computadores** , clique em **Exibir** e selecione **recursos avançados**. Clique com o botão direito do mouse no grupo que você acabou de criar, clique em **Propriedades**e clique na guia **segurança** . Na guia **Segurança** , clique em **Avançado**.  
+5.  Se você ainda não tiver feito isso, no console **Active Directory usuários e computadores** , clique em **Exibir** e selecione **recursos avançados**. Clique com o botão direito do mouse no grupo que você acabou de criar, clique em **Propriedades**e clique na guia **segurança** . Na guia **segurança** , clique em **avançado**.  
   
     ![Criando contas de gerenciamento](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_119.png)  
   
@@ -81,7 +81,7 @@ Para criar um grupo para habilitar e desabilitar contas de gerenciamento, execut
   
 7.  Na guia **segurança** , remova os grupos que não devem ter permissão para acessar esse grupo. Por exemplo, se você não quiser que os usuários autenticados possam ler o nome do grupo e as propriedades gerais, poderá remover essa ACE. Você também pode remover ACEs, como aquelas para operadores de conta e acesso compatível com o servidor anterior ao Windows 2000. No entanto, você deve deixar um conjunto mínimo de permissões de objeto em vigor. Deixe as seguintes ACEs intactas:  
   
-    -   AUTO-RESTAURAÇÃO  
+    -   AUTO-restauração  
   
     -   SISTEMA  
   
@@ -135,12 +135,12 @@ Para criar as contas de gerenciamento, execute as seguintes etapas:
 
 8. Clique na guia **conta** .  
 
-9. No campo **Opções de conta** , selecione o **sinalizador conta é confidencial e não pode ser delegado** , selecione **esta conta dá suporte à criptografia Kerberos AES 128 bits** e/ou a conta que dá suporte ao sinalizador de **criptografia Kerberos AES 256** , e clique em **OK**.  
+9. No campo **Opções de conta** , selecione o sinalizador a **conta é confidencial e não pode ser delegado** , selecione **essa conta dá suporte à criptografia Kerberos AES 128 bits** e/ou a **seguinte conta dá suporte ao sinalizador de criptografia Kerberos AES 256** e clique em **OK**.  
 
    ![Criando contas de gerenciamento](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)  
 
    > [!NOTE]  
-   > Como essa conta, como outras contas, terá uma função limitada, mas poderosa, a conta só deve ser usada em hosts administrativos seguros. Para todos os hosts administrativos seguros em seu ambiente, você deve considerar a implementação da configuração de Política de Grupo de segurança **Network: Configure os tipos de criptografia permitidos para Kerberos @ no__t-0 para permitir apenas os tipos de criptografia mais seguros que você pode implementar para hosts seguros.  
+   > Como essa conta, como outras contas, terá uma função limitada, mas poderosa, a conta só deve ser usada em hosts administrativos seguros. Para todos os hosts administrativos seguros em seu ambiente, você deve considerar a implementação de Política de Grupo configuração de **segurança de rede: configurar tipos de criptografia permitidos para Kerberos** para permitir apenas os tipos de criptografia mais seguros que você pode implementar para hosts seguros.  
    >
    > Embora a implementação de tipos de criptografia mais seguras para os hosts não atenue ataques de roubo de credenciais, o uso apropriado e a configuração dos hosts seguros têm. A configuração de tipos de criptografia mais fortes para hosts que são usados apenas por contas com privilégios simplesmente reduz a superfície de ataque geral dos computadores.  
    >
@@ -182,7 +182,7 @@ Para criar as contas de gerenciamento, execute as seguintes etapas:
 
 17. Clique na guia **Membro de**.  
 
-18. Clique em **Adicionar** .  
+18. Clique em **Adicionar**.  
 
 19. Digite **grupo de replicação de senha do RODC negado** na caixa de diálogo **Selecionar usuários, contatos, computadores** e clique em **verificar nomes**. Quando o nome do grupo for sublinhado no seletor de objetos, clique em **OK** e verifique se a conta agora é membro dos dois grupos exibidos na captura de tela a seguir. Não adicione a conta a nenhum grupo protegido.  
 
@@ -233,7 +233,7 @@ Você pode criar contas de gerenciamento adicionais repetindo as etapas anterior
   
 Em vez disso, você pode criar um grupo ao qual você delega direitos para preencher e não preencher grupos protegidos, mas você precisará proteger o grupo e as contas que você coloca nele. Como deve haver muito poucas contas em seu diretório que recebam a capacidade de gerenciar a associação de grupos protegidos, a criação de contas individuais pode ser a abordagem mais simples.  
   
-Independentemente de como você opta por criar um grupo no qual você coloca as contas de gerenciamento, deve garantir que cada conta seja protegida conforme descrito anteriormente. Você também deve considerar a implementação de restrições de GPO semelhantes àquelas descritas em [Appendix D: Protegendo contas de administrador internas no Active Directory @ no__t-0.  
+Independentemente de como você opta por criar um grupo no qual você coloca as contas de gerenciamento, deve garantir que cada conta seja protegida conforme descrito anteriormente. Você também deve considerar a implementação de restrições de GPO semelhantes àquelas descritas no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
   
 ##### <a name="auditing-management-accounts"></a>Contas de gerenciamento de auditoria
 
@@ -247,7 +247,7 @@ Para obter mais informações sobre as definições de configuração de auditor
 
 Neste procedimento, você configurará permissões no objeto AdminSDHolder do domínio para permitir que as contas de gerenciamento recém-criadas modifiquem a associação de grupos protegidos no domínio. Este procedimento não pode ser executado por meio de uma GUI (interface gráfica do usuário).  
   
-Conforme discutido em [Appendix C: Contas e grupos protegidos no Active Directory @ no__t-0, a ACL no objeto AdminSDHolder de um domínio é efetivamente "copiada" para objetos protegidos quando a tarefa SDProp é executada. Grupos e contas protegidos não herdam suas permissões do objeto AdminSDHolder; suas permissões são definidas explicitamente para corresponder às do objeto AdminSDHolder. Portanto, quando você modifica permissões no objeto AdminSDHolder, você deve modificá-las para atributos que são apropriados para o tipo do objeto protegido que você está direcionando.  
+Conforme discutido no [Apêndice C: contas e grupos protegidos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md), a ACL no objeto AdminSDHolder de um domínio é efetivamente "copiada" para objetos protegidos quando a tarefa SDProp é executada. Grupos e contas protegidos não herdam suas permissões do objeto AdminSDHolder; suas permissões são definidas explicitamente para corresponder às do objeto AdminSDHolder. Portanto, quando você modifica permissões no objeto AdminSDHolder, você deve modificá-las para atributos que são apropriados para o tipo do objeto protegido que você está direcionando.  
   
 Nesse caso, você concederá as contas de gerenciamento recém-criadas para permitir que elas leiam e gravem o atributo Members em objetos de grupo. No entanto, o objeto AdminSDHolder não é um objeto de grupo e os atributos de grupo não são expostos no editor de ACL gráfica. Por esse motivo, você implementará as alterações de permissões por meio do utilitário de linha de comando Dsacls. Para conceder as permissões de contas de gerenciamento (desabilitadas) para modificar a associação de grupos protegidos, execute as seguintes etapas:  
   
@@ -278,7 +278,7 @@ Nesse caso, você concederá as contas de gerenciamento recém-criadas para perm
   
    - /G indica que uma ACE de concessão está sendo configurada  
   
-   - PIM001@tailspintoys.msft é o nome principal do usuário (UPN) da entidade de segurança à qual as ACEs serão concedidas  
+   - PIM001@tailspintoys.msft é o UPN (nome principal do usuário) da entidade de segurança à qual as ACEs serão concedidas  
   
    - RPWP concede as permissões Read Property e Write Property  
   
@@ -286,7 +286,7 @@ Nesse caso, você concederá as contas de gerenciamento recém-criadas para perm
   
    Para obter mais informações sobre o uso de **Dsacls**, digite Dsacls sem nenhum parâmetro em um prompt de comando.  
   
-   Se você tiver criado várias contas de gerenciamento para o domínio, deverá executar o comando Dsacls para cada conta. Depois de concluir a configuração de ACL no objeto AdminSDHolder, você deve forçar a execução de SDProp ou aguardar até que sua execução agendada seja concluída. Para obter informações sobre como forçar a execução de SDProp, consulte "executando SDProp manualmente" em [Appendix C: Contas e grupos protegidos no Active Directory @ no__t-0.  
+   Se você tiver criado várias contas de gerenciamento para o domínio, deverá executar o comando Dsacls para cada conta. Depois de concluir a configuração de ACL no objeto AdminSDHolder, você deve forçar a execução de SDProp ou aguardar até que sua execução agendada seja concluída. Para obter informações sobre como forçar a execução de SDProp, consulte "executando SDProp manualmente" no [Apêndice C: contas e grupos protegidos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
   
    Quando SDProp tiver sido executado, você poderá verificar se as alterações feitas no objeto AdminSDHolder foram aplicadas a grupos protegidos no domínio. Não é possível verificar isso exibindo a ACL no objeto AdminSDHolder pelos motivos descritos anteriormente, mas você pode verificar se as permissões foram aplicadas exibindo as ACLs em grupos protegidos.  
   
@@ -317,7 +317,7 @@ Agora que você criou e configurou contas de gerenciamento que podem modificar a
   
 ##### <a name="test-the-group-that-will-enable-and-disable-management-accounts"></a>Testar o grupo que habilitará e desabilitará as contas de gerenciamento
   
-1.  Para testar a habilitação de uma conta de gerenciamento e redefinir sua senha, faça logon em uma estação de trabalho administrativa segura com uma conta que seja membro do grupo que você criou em [Appendix I: Criando contas de gerenciamento para contas e grupos protegidos no Active Directory @ no__t-0.  
+1.  Para testar a habilitação de uma conta de gerenciamento e redefinir sua senha, faça logon em uma estação de trabalho administrativa segura com uma conta que seja membro do grupo que você criou no [Apêndice I: Criando contas de gerenciamento para contas e grupos protegidos no Active Directory](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md).  
   
     ![Criando contas de gerenciamento](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_142.gif)  
   

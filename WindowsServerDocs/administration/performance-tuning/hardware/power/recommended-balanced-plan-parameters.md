@@ -45,7 +45,7 @@ Essa alteração se baseia na análise do desempenho e da compensação de energ
 
 ## <a name="specpower--java-workload"></a>SPECpower – carga de trabalho JAVA
 
-[SPECpower @ no__t-1ssj2008](http://spec.org/power_ssj2008/), o benchmark de especificação padrão da indústria mais popular para as características de energia e desempenho do servidor, é usado para verificar o impacto de energia. Como ele usa apenas a **taxa de transferência** como métrica de desempenho, o plano de energia **equilibrado** padrão fornece a melhor eficiência de energia.
+[SPECpower\_ssj2008](http://spec.org/power_ssj2008/), o benchmark de especificação padrão da indústria mais popular para características de desempenho e potência do servidor, é usado para verificar o impacto de energia. Como ele usa apenas a **taxa de transferência** como métrica de desempenho, o plano de energia **equilibrado** padrão fornece a melhor eficiência de energia.
 
 A alteração de parâmetro proposta consome uma potência ligeiramente mais alta na luz (ou seja, < = 20%) níveis de carga. Mas com o nível de carga mais alto, a diferença aumenta e começa a consumir a mesma potência que o plano de energia de **alto desempenho** após o nível de carga de 60%. Para usar os parâmetros de alteração propostos, os usuários devem estar cientes do custo de energia em níveis de carga médio a alto durante o planejamento de capacidade de seu rack.
 

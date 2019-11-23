@@ -33,7 +33,7 @@ Use o procedimento a seguir para redefinir a senha krbtgt para o domínio. O pro
 2. Clique em **Exibir** e em **Recursos Avançados**.
 3. Na árvore de console, clique duas vezes no contêiner de domínio e, em seguida, clique em **usuários**.
 4. No painel de detalhes, clique com o botão direito do mouse na conta de usuário **krbtgt** e clique em **Redefinir senha**.
-   Senha de @no__t 0Reset @ no__t-1
+   ![redefinir a senha](media/AD-Forest-Recovery-Resetting-the-krbtgt-password/resetpass1.png)
 5. Em **nova senha**, digite uma nova senha, digite a senha novamente em **Confirmar senha**e clique em **OK**. A senha que você especificar não é significativa porque o sistema irá gerar uma senha forte automaticamente independente da senha que você especificar.
   
 > [!NOTE]

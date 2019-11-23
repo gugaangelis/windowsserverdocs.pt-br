@@ -38,8 +38,8 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName >|Especifica o caminho completo da subchave ou da entrada a ser excluída. Para especificar um computador remoto, inclua o nome do computador (no formato \\ @ no__t-1ComputerName @ no__t-2 como parte do *KeyName*. Omitir \\ @ no__t-1ComputerName \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
-|/v \<ValueName >|Exclui uma entrada específica sob a subchave. Se nenhuma entrada for especificada, todas as entradas e subchaves na subchave serão excluídas.|
+|\<KeyName >|Especifica o caminho completo da subchave ou da entrada a ser excluída. Para especificar um computador remoto, inclua o nome do computador (no formato \\\\ComputerName\) como parte do *KeyName*. Omitir \\\\computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|/v \<valueName >|Exclui uma entrada específica sob a subchave. Se nenhuma entrada for especificada, todas as entradas e subchaves na subchave serão excluídas.|
 |/ve|Especifica que somente as entradas que não têm nenhum valor serão excluídas.|
 |/va|Exclui todas as entradas na subchave especificada. As subchaves na subchave especificada não são excluídas.|
 |/f|Exclui a subchave ou entrada do registro existente sem solicitar confirmação.|

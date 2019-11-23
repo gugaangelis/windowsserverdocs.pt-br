@@ -19,7 +19,7 @@ ms.locfileid: "71402137"
 
 > Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Por padrão, as permissões utilizadas para uma pasta DFS são herdadas do sistema de arquivos local do servidor do namespace. As permissões são herdadas do diretório raiz da unidade do sistema e concedem ao domínio @ no__t-0Users permissões de leitura do grupo. Como resultado, mesmo após a habilitação da enumeração baseada em acesso, todas as pastas no namespace permanecem visíveis para todos os usuários de domínio.
+Por padrão, as permissões utilizadas para uma pasta DFS são herdadas do sistema de arquivos local do servidor do namespace. As permissões são herdadas do diretório raiz da unidade do sistema e concedem ao domínio\\permissões de leitura do grupo usuários. Como resultado, mesmo após a habilitação da enumeração baseada em acesso, todas as pastas no namespace permanecem visíveis para todos os usuários de domínio.
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>Vantagens e limitações das permissões herdadas
 

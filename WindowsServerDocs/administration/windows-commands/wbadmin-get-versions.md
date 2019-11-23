@@ -55,7 +55,7 @@ Para ver uma lista de backups disponíveis que são armazenados no volume h, dig
 ```
 wbadmin get versions -backupTarget:h:
 ```
-Para ver uma lista de backups disponíveis que são armazenados na pasta compartilhada remota \\ @ no__t-1servername\share para o computador Server01, digite:
+Para ver uma lista de backups disponíveis que são armazenados na pasta compartilhada remota \\\\servername\share para o computador Server01, digite:
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```

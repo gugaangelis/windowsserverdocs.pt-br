@@ -17,7 +17,7 @@ ms.locfileid: "71356405"
 ---
 # <a name="core-network-components"></a>Principais componentes de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este guia fornece instruções sobre como planejar e implantar os componentes principais necessários para uma rede totalmente funcional e um novo domínio de Active Directory em uma nova floresta.
 
@@ -224,7 +224,7 @@ Para obter mais informações, consulte [Planejando a implantação do DHCP1](#b
 Para cada servidor da rede principal, renomeie o computador e atribua e configure um endereço IPv4 estático e outras propriedades de TCP/IP para o computador.
 
 #### <a name="planning-naming-conventions-for-computers-and-devices"></a>Planejando convenções de nomenclatura para computadores e dispositivos
-Para manter a consistência em toda a rede, é uma boa ideia usar nomes consistentes para servidores, impressoras e outros dispositivos. Os nomes de computador podem ser usados para ajudar os usuários e administradores a identificar facilmente a finalidade e a localização do servidor, impressora ou outro dispositivo. Por exemplo, se você tiver três servidores DNS, um em São Francisco, um em Los Angeles e outro em Chicago, poderá usar a *função de servidor*Convenção de nomenclatura -*Location*-*número*:
+Para manter a consistência em toda a rede, é uma boa ideia usar nomes consistentes para servidores, impressoras e outros dispositivos. Os nomes de computador podem ser usados para ajudar os usuários e administradores a identificar facilmente a finalidade e a localização do servidor, impressora ou outro dispositivo. Por exemplo, se você tiver três servidores DNS, um em San Francisco, um em Los Angeles e outro em Chicago, poderá usar a *função de servidor* Convenção de nomenclatura-*local*-*número*:
 
 -   DNS-DEN-01. Este nome representa o servidor DNS em Denver, Colorado. Se os servidores DNS adicionais forem adicionados em Denver, o valor numérico no nome poderá ser incrementado, como no DNS-DEN-02 e no DNS-DEN-03.
 
@@ -285,10 +285,10 @@ Os itens de configuração de exemplo para AD DS são fornecidos na tabela a seg
 |------------------------|-------------------|
 |Nome DNS completo|Exemplos:<br /><br />-corp.contoso.com<br />-example.com|
 |Nível funcional de floresta|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
-|Local da pasta do Banco de Dados dos Serviços de Domínio Active Directory|E:\Configuration @ no__t-0<br /><br />Ou aceite o local padrão.|
-|Local da pasta dos arquivos de Log dos Serviços de Domínio Active Directory|E:\Configuration @ no__t-0<br /><br />Ou aceite o local padrão.|
-|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|E:\Configuration @ no__t-0<br /><br />Ou aceite o local padrão.|
-|Senha do Administrador do Modo de Restauração de Diretório|**J @ no__t-1p2leO4 $ F**|
+|Local da pasta do Banco de Dados dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.|
+|Local da pasta dos arquivos de Log dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.|
+|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.|
+|Senha do Administrador do Modo de Restauração de Diretório|**J\*p2leO4 $ F**|
 |Nome de arquivo de resposta (opcional)|**DS_AnswerFile do AD**|
 
 #### <a name="planning-dns-zones"></a>Planejando zonas DNS
@@ -401,7 +401,7 @@ Recomendamos que você configure o intervalo de exclusão com endereços extras 
 #### <a name="planning-tcpip-static-configuration"></a>Planejando a configuração estática de TCP/IP
 Certos dispositivos, como roteadores, servidores DHCP e servidores DNS, devem ser configurados com um endereço IP estático. Além disso, você pode ter dispositivos adicionais, como impressoras, onde deve garantir sempre o mesmo endereço IP. Liste os dispositivos que você deseja configurar estaticamente para cada sub-rede e planeje o intervalo de exclusão que deseja usar no servidor DHCP para garantir que o servidor DHCP não conceda o endereço IP de um dispositivo configurado estaticamente. Um intervalo de exclusão é uma sequência limitada de endereços IP dentro de um escopo, excluído das ofertas de serviço DHCP. Os intervalos de exclusão garantem que os endereços nesses intervalos não sejam oferecidos pelo servidor a clientes DHCP na sua rede.
 
-Por exemplo, se o intervalo de endereços IP para uma sub-rede for de 192.168.0.1 a 192.168.0.254 e você tiver dez dispositivos que deseja configurar com um endereço IP estático, você poderá criar um intervalo de exclusão para o 192.168.0. *x* escopo que inclui dez ou mais endereços IP: 192.168.0.1 a 192.168.0.15.
+Por exemplo, se o intervalo de endereços IP de uma sub-rede for 192.168.0.1 a 192.168.0.254 e você tiver dez dispositivos que deseja configurar com um endereço IP estático, poderá criar um intervalo de exclusão para o escopo 192.168.0.*x* que inclui dez ou mais endereços IP: 192.168.0.1 a 192.168.0.15.
 
 Neste exemplo, você usa dez dos endereços IP excluídos para configurar servidores e outros dispositivos com endereços IP estáticos e cinco endereços IP adicionais ficam disponíveis para uma configuração estática de novos dispositivos que você possa desejar adicionar no futuro. Com este intervalo de exclusão, o servidor DHCP fica com um pool de endereços de 192.168.0.16 até 192.168.0.254.
 
@@ -412,7 +412,7 @@ Itens de configuração de exemplo adicionais para AD DS e DNS são fornecidos n
 |Ligações de Conexão de Rede|Ethernet|
 |Configurações do servidor DNS|DC1.corp.contoso.com|
 |Endereço IP do servidor DNS preferencial|10.0.0.2|
-|Adicionar valores da caixa de diálogo Escopo<br /><br />1.  Nome do escopo<br />2.  Endereço IP inicial<br />3.  Endereço IP final<br />4.  Máscara de sub-rede<br />5.  Gateway padrão (opcional)<br />6.  Duração da concessão|1.  Sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
+|Adicionar valores da caixa de diálogo Escopo<br /><br />1. nome do escopo<br />2. endereço IP inicial<br />3. endereço IP final<br />4. máscara de sub-rede<br />5. gateway padrão (opcional)<br />6. duração da concessão|1. sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
 |Modo de Operação do Servidor DHCP IPv6|Não habilitado|
 
 ## <a name="BKMK_deployment"></a>Implantação de rede de núcleo
@@ -671,7 +671,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
     **Posição?**
 
-    -   Active Directory usuários e computadores/*nó de domínio*@no__t*pasta* -1
+    -   Active Directory usuários e computadores/*nó de domínio*/*pasta*
 
 3.  Aponte para **Novo** e clique em **Usuário**. A caixa de diálogo **novo objeto – usuário** é aberta.
 
@@ -1009,7 +1009,7 @@ As seções a seguir fornecem informações sobre como adicionar servidores NPS 
 #### <a name="BKMK_deployNPS1"></a>Implantando o NPS1
 O servidor NPS (Servidor de Políticas de Rede) é instalado como uma etapa preparatória para a implantação de outras tecnologias de acesso à rede, como servidores VPN (rede virtual privada), pontos de acesso sem fio e comutadores de autenticação 802.1X.
 
-O NPS (servidor de diretivas de rede) permite que você configure e gerencie centralmente as políticas de rede com os seguintes recursos: Servidor RADIUS (serviço RADIUS) e proxy RADIUS.
+O NPS (servidor de diretivas de rede) permite que você configure e gerencie centralmente as políticas de rede com os seguintes recursos: serviço RADIUS (RADIUS) servidor e proxy RADIUS.
 
 O NPS é um componente opcional de uma rede principal, mas você deve instalar o NPS quando qualquer uma das seguintes opções é verdadeira:
 
@@ -1050,7 +1050,7 @@ Estas são as principais etapas de planejamento antes de instalar o NPS.
 Você pode usar este procedimento para instalar o NPS (servidor de diretivas de rede) usando o assistente para adicionar funções e recursos. O NPS é um serviço de função da função de servidor Serviços de Acesso e Política de Rede.
 
 > [!NOTE]
-> Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Se o Firewall do Windows com segurança avançada estiver habilitado quando você instalar o NPS, as exceções de firewall para essas portas serão criadas automaticamente durante o processo de instalação para o protocolo IP versão 6 \(IPv6 @ no__t-1 e o tráfego IPv4. Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para Tráfego RADIUS.
+> Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Se o Firewall do Windows com segurança avançada estiver habilitado quando você instalar o NPS, as exceções de firewall para essas portas serão criadas automaticamente durante o processo de instalação para o protocolo IP versão 6 \(IPv6\) e o tráfego IPv4. Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para Tráfego RADIUS.
 
 **Credenciais administrativas**
 
@@ -1437,9 +1437,9 @@ Itens de configuração para o procedimento de implantação da Rede Principal d
 |-----------------------|------------------|----------|
 |Nome DNS completo|corp.contoso.com||
 |Nível funcional de floresta|Windows Server 2003||
-|Local da pasta do banco de dados dos Serviços de Domínio Active Directory|E:\Configuration @ no__t-0<br /><br />Ou aceite o local padrão.||
-|Local da pasta dos arquivos de log dos Serviços de Domínio Active Directory|E:\Configuration @ no__t-0<br /><br />Ou aceite o local padrão.||
-|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|E:\Configuration @ no__t-0<br /><br />Ou aceite o local padrão.||
+|Local da pasta do banco de dados dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.||
+|Local da pasta dos arquivos de log dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.||
+|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.||
 |Senha do Administrador do Modo de Restauração de Diretório|J*p2leO4$F||
 |Nome de arquivo de resposta (opcional)|DS_AnswerFile do AD||
 

@@ -1,6 +1,6 @@
 ---
 title: restauração de Auditpol
-description: O tópico de comandos do Windows para o **Auditpol Restore** -restaura as configurações da política de auditoria do sistema, as configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria de um arquivo que é sintaticamente consistente com o formato de arquivo CSV (valores separados por vírgula) usado pela opção/backup.
+description: Os comandos do Windows tópico para o **Auditpol Restore** – restaura as configurações da política de auditoria do sistema, as configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria de um arquivo que é sintaticamente consistente com o formato de arquivo CSV (valores separados por vírgula) usado pela opção/backup.
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -22,7 +22,7 @@ ms.locfileid: "71382414"
 ---
 # <a name="auditpol-restore"></a>restauração de Auditpol
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Restaura as configurações da política de auditoria do sistema, as configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria de um arquivo que é sintaticamente consistente com o formato de arquivo CSV (valores separados por vírgula) usado pela opção/backup.
 
@@ -42,6 +42,6 @@ Para restaurar as configurações de política de auditoria do sistema, as confi
 ```
 auditpol /restore /file:c:\auditpolicy.csv
 ```
-#### <a name="additional-references"></a>Referências adicionais
+#### <a name="additional-references"></a>referências adicionais
 [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [backup de Auditpol](auditpol-backup.md)

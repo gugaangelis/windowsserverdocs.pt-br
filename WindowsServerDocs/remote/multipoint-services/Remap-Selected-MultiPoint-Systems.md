@@ -24,7 +24,7 @@ ms.locfileid: "71389401"
 O remapeamento de estações no MultiPoint Dashboard permite que você associe teclados e mouses a monitores. As estações de usuário local são suspensas enquanto um sistema MultiPoint Services é remapeado.  
   
 > [!CAUTION]  
-> O remapeamento normalmente é usado para fins de solução de problemas. As configurações de estação, como nome e @ no__t-0logon de informações automáticas, são apagadas durante o processo de remapeamento.  
+> O remapeamento normalmente é usado para fins de solução de problemas. As configurações de estação, como nome e informações de logon\-automáticas, são apagadas durante o processo de remapeamento.  
   
 #### <a name="to-remap-a-multipoint-services-system"></a>Para remapear um sistema MultiPoint Services  
   

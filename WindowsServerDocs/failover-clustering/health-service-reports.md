@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>Conectar
 
-Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C @ no__t-0, a opção mais direta para essa camada de acesso a dados.
+Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão o C\#, a opção mais direta para essa camada de acesso a dados.
 
 ``` 
 ...
@@ -80,7 +80,7 @@ O nome de usuário fornecido deve ser um administrador local do computador de de
 
 Com o **CimSession** estabelecido, você pode consultar Instrumentação de gerenciamento do Windows (WMI) no cluster.
 
-Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT @ no__t-1StorageSubSystem** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter todos os **MSFT @ no__t-1StorageNode** no cluster e todos os **MSFT @ no__t-3Volume**, os volumes de dados. Por fim, você precisará do **MSFT @ no__t-1StorageHealth**, o serviço de integridade em si também.
+Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT\_StorageSubSystem** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter cada **msft\_StorageNode** no cluster e todos os\_de dados do **MSFT** Por fim, você precisará do **MSFT\_StorageHealth**, o serviço de integridade em si.
 
 ```
 CimInstance Cluster;
@@ -209,7 +209,7 @@ Não é necessário dizer que essas métricas podem ser visualizadas, armazenada
 
 Cada exemplo de métricas é um "relatório" que contém muitos "registros" correspondentes a métricas individuais.
 
-Para o esquema completo, inspecione as classes **MSFT @ no__t-1StorageHealthReport** e **MSFT @ no__t-3HealthRecord** em *storagewmi. mof*.
+Para o esquema completo, inspecione as classes **msft\_StorageHealthReport** e **MSFT\_HealthRecord** no *storagewmi. mof*.
 
 Cada métrica tem apenas três propriedades, por esta tabela.
 
@@ -229,7 +229,7 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 | **Name**                        | **Unit** |
 |---------------------------------|-----------|
-| Os                        | 4         |
+| Os                        | 추가를 클릭합니다.         |
 | CapacityPhysicalPooledAvailable | 0         |
 | CapacityPhysicalPooledTotal     | 0         |
 | CapacityPhysicalTotal           | 0         |
@@ -253,7 +253,7 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 | **Name**            | **Unit** |
 |---------------------|-----------|
-| Os            | 4         |
+| Os            | 추가를 클릭합니다.         |
 | IOLatencyAverage    | 3         |
 | IOLatencyRead       | 3         |
 | IOLatencyWrite      | 3         |

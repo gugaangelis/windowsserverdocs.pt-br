@@ -38,7 +38,7 @@ Quando a exportação for concluída, você poderá ver todos os arquivos export
 
 ### <a name="using-powershell"></a>Usando o PowerShell
 
-Abra uma sessão como administrador e execute um comando como o seguinte, depois de substituir o nome de @no__t 0vm @ no__t-1 e \<path @ no__t-3:
+Abra uma sessão como administrador e execute um comando como o seguinte, depois de substituir \<nome da VM\> e \<\>de caminho:
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
@@ -66,7 +66,7 @@ Para importar uma máquina virtual:
 
 5. Escolha o tipo de importação e clique em **Avançar**. (Para obter descrições, consulte [tipos de importação](#import-types), abaixo.)
 
-6. Clique em **Finalizar**.
+6. Clique em **Concluir**.
 
 ### <a name="import-using-powershell"></a>Importar usando o PowerShell
 

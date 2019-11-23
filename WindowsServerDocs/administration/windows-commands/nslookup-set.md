@@ -22,7 +22,7 @@ ms.locfileid: "71372735"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Altera as definições de configuração que afetam o funcionamento das pesquisas.
 ## <a name="syntax"></a>Sintaxe
@@ -39,6 +39,6 @@ set <KeyWord>[=<Value>]
 
 ## <a name="remarks"></a>Comentários
 Use **definir tudo** para ver uma lista das configurações atuais.
-## <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)[nslookup Set All](nslookup-set-all.md) 
-
+## <a name="additional-references"></a>referências adicionais
+[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[nslookup Set All](nslookup-set-all.md)

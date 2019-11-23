@@ -22,7 +22,7 @@ ms.locfileid: "71381857"
 ---
 # <a name="bitsadmin-cache"></a>cache Bitsadmin
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -43,18 +43,18 @@ bitsadmin /Cache /SetExpirationtime
 
 |Parâmetro|Descrição|
 |-------|--------|
-|[bitsadmin cache and help](bitsadmin-cache-and-help.md)|Exibe o comando @ no__t-0line uso para as opções \/Cache.|
+|[bitsadmin cache and help](bitsadmin-cache-and-help.md)|Exibe o comando\-uso de linha para as opções de cache \/.|
 |[bitsadmin cache and clear](bitsadmin-cache-clear.md)|Limpa o cache local.|
 |[bitsadmin cache and delete](bitsadmin-cache-and-delete.md)|exclui uma entrada de cache.|
-|[bitsadmin cache and deleteurl](bitsadmin-cache-and-deleteurl.md)|Exclui todas as entradas de cache para a URL fornecida.|
-|[bitsadmin cache and list](bitsadmin-cache-and-list.md)|Lista todas as entradas de cache.|
+|[bitsadmin cache and deleteurl](bitsadmin-cache-and-deleteurl.md)|exclui todas as entradas de cache para a URL fornecida.|
+|[bitsadmin cache and list](bitsadmin-cache-and-list.md)|lista todas as entradas de cache.|
 |[bitsadmin cache and info](bitsadmin-cache-and-info.md)|Despeja uma entrada de cache específica.|
 |[bitsadmin cache and getlimit](bitsadmin-cache-and-getlimit.md)|Recupera o limite de cache.|
 |[bitsadmin cache and setlimit](bitsadmin-cache-and-setlimit.md)|Define o limite de cache.|
 |[bitsadmin cache and getexpirationtime](bitsadmin-cache-and-getexpirationtime.md)|Recupera o tempo de expiração do cache.|
 |[bitsadmin cache and setexpirationtime](bitsadmin-cache-and-setexpirationtime.md)|Define o tempo de expiração do cache.|
 
-## <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>referências adicionais
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 

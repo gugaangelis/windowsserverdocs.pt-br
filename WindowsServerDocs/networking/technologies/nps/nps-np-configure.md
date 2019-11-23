@@ -17,13 +17,13 @@ ms.locfileid: "71396354"
 ---
 # <a name="configure-network-policies"></a>Configurar políticas de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para configurar políticas de rede no NPS.
 
 ## <a name="add-a-network-policy"></a>Adicionar uma política de rede
 
-O servidor de políticas de rede \(NPS @ no__t-1 usa políticas de rede e as propriedades de discagem de contas de usuário para determinar se uma solicitação de conexão está autorizada a se conectar à rede.
+O servidor de diretivas de rede \(\) NPS usa políticas de rede e as propriedades de discagem de contas de usuário para determinar se uma solicitação de conexão está autorizada a se conectar à rede.
 
 Você pode usar este procedimento para configurar uma nova política de rede no console do NPS ou no console de acesso remoto.
 
@@ -44,7 +44,7 @@ Quando você usa o assistente de nova política de rede para criar uma política
 
 Na página **permissão de acesso** , você deve selecionar **acesso concedido** se desejar que a política permita que os usuários se conectem à sua rede. Se você quiser que a política impeça que os usuários se conectem à sua rede, selecione **acesso negado**. 
 
-Se você quiser que a permissão de acesso seja determinada pelas propriedades de discagem da conta de usuário no Active Directory @ no__t-0 Domain Services \(AD DS @ no__t-2, você poderá marcar a caixa de seleção o **acesso é determinado pela propriedade de discagem do usuário** .
+Se você quiser que a permissão de acesso seja determinada pelas propriedades de discagem da conta de usuário no Active Directory&reg; serviços de domínio \(AD DS\), marque a caixa de seleção o **acesso é determinado por propriedades de discagem do usuário** .
 
 Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
 
@@ -58,10 +58,10 @@ Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necess
 
 ## <a name="create-network-policies-for-dial-up-or-vpn-with-a-wizard"></a>Criar políticas de rede para dial-up ou VPN com um assistente
 
-Você pode usar este procedimento para criar as políticas de solicitação de conexão e as políticas de rede necessárias para implantar servidores dial-up ou rede privada virtual \(VPN @ no__t-1 como serviço RADIUS \(RADIUS @ no__t-3 clientes para o servidor RADIUS NPS.
+Você pode usar este procedimento para criar as políticas de solicitação de conexão e as políticas de rede necessárias para implantar servidores dial-up ou rede virtual privada \(servidores VPN\) como serviço RADIUS \(RADIUS\) clientes para o servidor RADIUS NPS.
 
 >[!NOTE]
->Computadores cliente, como computadores laptop e outros computadores que executam sistemas operacionais cliente, não são clientes RADIUS. Os clientes RADIUS são servidores de acesso à rede — como pontos de acesso sem fio, comutadores de autenticação 802.1 X, rede privada virtual \(VPN @ no__t-1 e servidores dial-up — porque esses dispositivos usam o protocolo RADIUS para se comunicar com o RADIUS servidores como o NPSs.
+>Computadores cliente, como computadores laptop e outros computadores que executam sistemas operacionais cliente, não são clientes RADIUS. Os clientes RADIUS são servidores de acesso à rede — como pontos de acesso sem fio, comutadores de autenticação 802.1 X, rede virtual privada \(servidores VPN\) e servidores dial-up — porque esses dispositivos usam o protocolo RADIUS para se comunicar com servidores RADIUS, como NPSs.
 
 Este procedimento explica como abrir o novo assistente de conexões de rede virtual privada ou dial-up no NPS.
 
@@ -78,7 +78,7 @@ Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necess
 
 ### <a name="to-create-policies-for-dial-up-or-vpn-with-a-wizard"></a>Para criar políticas para dial-up ou VPN com um assistente
 
-1. Abra o console do NPS. Se ainda não estiver selecionado, clique em **NPS \(local\)** . Se você quiser criar políticas em um NPS remoto, selecione o servidor.
+1. Abra o console do NPS. Se ainda não estiver selecionado, clique em **NPS \(Local\)** . Se você quiser criar políticas em um NPS remoto, selecione o servidor.
 
 2. Em **introdução** e **configuração padrão**, selecione **servidor RADIUS para conexões dial-up ou VPN**. O texto e os links sob o texto são alterados para refletir sua seleção.
 
@@ -107,7 +107,7 @@ Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necess
 
 1. No NPS, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto. 
 
-2. Se ainda não estiver selecionado, clique em **NPS \(local\)** . Se você quiser criar políticas em um NPS remoto, selecione o servidor.
+2. Se ainda não estiver selecionado, clique em **NPS \(Local\)** . Se você quiser criar políticas em um NPS remoto, selecione o servidor.
 
 3. Em **introdução** e **configuração padrão**, selecione **servidor RADIUS para conexões 802.1 x sem fio ou com fio**. O texto e os links sob o texto são alterados para refletir sua seleção.
 
@@ -117,7 +117,7 @@ Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necess
 
 ## <a name="configure-nps-to-ignore-user-account-dial-in-properties"></a>Configurar o NPS para ignorar as propriedades de discagem da conta de usuário
 
-Use este procedimento para configurar uma política de rede NPS para ignorar as propriedades de discagem de contas de usuário no Active Directory durante o processo de autorização. As contas de usuário no Active Directory usuários e computadores têm propriedades de discagem que o NPS avalia durante o processo de autorização, a menos que a propriedade **permissão de acesso à rede** da conta de usuário esteja definida para controlar o **acesso por meio da política de rede do NPS** . 
+Use este procedimento para configurar uma política de rede NPS para ignorar as propriedades de discagem de contas de usuário no Active Directory durante o processo de autorização. As contas de usuário no Active Directory usuários e computadores têm propriedades de discagem que o NPS avalia durante o processo de autorização, a menos que a propriedade **permissão de acesso à rede** da conta de usuário esteja definida para controlar o **acesso por meio da política de rede do NPS**. 
 
 Há duas circunstâncias em que você pode desejar configurar o NPS para ignorar as propriedades de discagem de contas de usuário no Active Directory:
 
@@ -171,7 +171,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo ne
 
 6. Em **Adicionar atributo RADIUS padrão**, em atributos, role para baixo e adicione os seguintes atributos:
 
-    - **Tunnel-Medium-Type**. Selecione um valor apropriado para as seleções anteriores que você fez para a política. Por exemplo, se a política de rede que você está configurando for uma política sem fio, selecione **Value: 802 (inclui todas as mídias 802, mais o formato canônico Ethernet)** .
+    - **Tunnel-Medium-Type**. Selecione um valor apropriado para as seleções anteriores que você fez para a política. Por exemplo, se a política de rede que você está configurando for uma política sem fio, selecione **valor: 802 (inclui todas as mídias 802 e formato canônico Ethernet)** .
 
     - **Tunnel-Pvt-Group-ID**. Insira o inteiro que representa o número de VLAN ao qual os membros do grupo serão atribuídos. 
 
@@ -194,7 +194,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo ne
 
 Em alguns casos, roteadores ou firewalls descartam pacotes porque eles são configurados para descartar pacotes que exigem fragmentação.
 
-Quando você implanta o NPS com políticas de rede que usam o protocolo de autenticação extensível \(EAP @ no__t-1 com segurança de camada de transporte \(TLS @ no__t-3, ou EAP-TLS, como um método de autenticação, a unidade máxima de transmissão padrão \(MTU @ No_ _T-5 que o NPS usa para cargas de EAP é de 1500 bytes. 
+Quando você implanta o NPS com políticas de rede que usam o protocolo de autenticação extensível \(EAP\) com segurança de camada de transporte \(TLS\)ou EAP-TLS, como um método de autenticação, a unidade de transmissão máxima padrão \(MTU\) que o NPS usa para cargas de EAP é de 1500 bytes. 
 
 Esse tamanho máximo para a carga EAP pode criar mensagens RADIUS que exigem fragmentação por um roteador ou firewall entre o NPS e um cliente RADIUS. Se esse for o caso, um roteador ou firewall posicionado entre o cliente RADIUS e o NPS pode descartar silenciosamente alguns fragmentos, resultando em falha de autenticação e a incapacidade do cliente de acesso para se conectar à rede.
 

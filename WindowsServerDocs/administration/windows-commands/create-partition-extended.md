@@ -22,9 +22,9 @@ ms.locfileid: "71378907"
 ---
 # <a name="create-partition-extended"></a>criar partição estendida
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Cria uma partição estendida no disco com foco. Você pode usar este comando somente no registro mestre de inicialização \(MBR @ no__t-1 discos.  
+Cria uma partição estendida no disco com foco. Você pode usar esse comando somente no registro mestre de inicialização \(discos\) MBR.  
   
   
   
@@ -38,10 +38,10 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 |  Parâmetro  |                                                                                                                             Descrição                                                                                                                              |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  tamanho @ no__t-0 @ no__t-1  |                                                  Especifica o tamanho da partição em megabytes \(MB @ no__t-1. Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na partição estendida.                                                  |
-| deslocamento @ no__t-0 @ no__t-1 |                     Especifica o deslocamento em kilobytes \(KB @ no__t-1, no qual a partição é criada. Se nenhum deslocamento for fornecido, a partição será iniciada no início do espaço livre no disco que é grande o suficiente para manter a nova partição.                      |
-| alinhar @ no__t-0 @ no__t-1  | Alinha todas as extensões de partição com o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(LUN @ no__t-1 matrizes para melhorar o desempenho. <n> é o número de kilobytes \( KB @ no__t-2 desde o início do disco até o limite de alinhamento mais próximo. |
-|    NOERR    |                                 Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                 |
+|  tamanho\=<n>  |                                                  Especifica o tamanho da partição em megabytes \(MB\). Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na partição estendida.                                                  |
+| \=de deslocamento <n> |                     Especifica o deslocamento em kilobytes \(KB\), no qual a partição é criada. Se nenhum deslocamento for fornecido, a partição será iniciada no início do espaço livre no disco que é grande o suficiente para manter a nova partição.                      |
+| alinhar\=<n>  | Alinha todas as extensões de partição com o limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(matrizes de\) LUN para melhorar o desempenho. <n> é o número de kilobytes \(KB\) desde o início do disco até o limite de alinhamento mais próximo. |
+|    NOERR    |                                 somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                 |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -62,7 +62,7 @@ Para criar uma partição estendida de 1000 megabytes de tamanho, digite:
 create partition extended size=1000  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

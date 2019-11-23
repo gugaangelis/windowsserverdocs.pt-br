@@ -22,7 +22,7 @@ ms.locfileid: "71379138"
 ---
 # <a name="create-volume-stripe"></a>criar faixa de volume
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Cria um volume distribuído usando dois ou mais discos dinâmicos especificados.  
   
@@ -41,10 +41,10 @@ create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 |         Parâmetro         |                                                                                                                            Descrição                                                                                                                            |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         tamanho @ no__t-0 @ no__t-1         |             A quantidade de espaço em disco, em megabytes \(MB @ no__t-1, que o volume ocupará em cada disco. Se nenhum tamanho for fornecido, o novo volume ocupará o espaço livre restante no menor disco e uma quantidade igual de espaço em cada disco subsequente.             |
-| disco @ no__t-0 @ no__t-1, <n> @ no__t-3, <n>,... \] |                                  Os discos dinâmicos nos quais o volume distribuído é criado. Você precisa de pelo menos dois discos dinâmicos para criar um volume distribuído. Uma quantidade de espaço igual ao **tamanho @ no__t-1 @ no__t-2** é alocada em cada disco.                                   |
-|        alinhar @ no__t-0 @ no__t-1         | Alinha todas as extensões de volume ao limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(LUN @ no__t-1 matrizes para melhorar o desempenho. *n* é o número de kilobytes \( KB @ no__t-2 desde o início do disco até o limite de alinhamento mais próximo. |
-|           NOERR           |                               Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                |
+|         tamanho\=<n>         |             A quantidade de espaço em disco, em megabytes \(MB\), que o volume ocupará em cada disco. Se nenhum tamanho for fornecido, o novo volume ocupará o espaço livre restante no menor disco e uma quantidade igual de espaço em cada disco subsequente.             |
+| \=de disco <n>,<n>\[,<n>,...\] |                                  Os discos dinâmicos nos quais o volume distribuído é criado. Você precisa de pelo menos dois discos dinâmicos para criar um volume distribuído. Uma quantidade de espaço igual ao **tamanho\=<n>** é alocada em cada disco.                                   |
+|        alinhar\=<n>         | Alinha todas as extensões de volume ao limite de alinhamento mais próximo. Normalmente usado com o número de unidade lógica RAID de hardware \(matrizes de\) LUN para melhorar o desempenho. *n* é o número de kilobytes \(KB\) desde o início do disco até o limite de alinhamento mais próximo. |
+|           NOERR           |                               somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.                                |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -57,7 +57,7 @@ Para criar um volume distribuído de 1000 megabytes de tamanho, nos discos 1 e 2
 create volume stripe size=1000 disk=1,2  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

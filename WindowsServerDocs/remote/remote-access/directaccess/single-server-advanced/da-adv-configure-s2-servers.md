@@ -21,7 +21,7 @@ ms.locfileid: "71388627"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>Etapa 2 configurar servidores DirectAccess avançados
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como configurar as definições do cliente e do servidor requeridas para uma implantação de Acesso Remoto avançado usando um único servidor de Acesso Remoto em um ambiente misto de IPv4 e IPv6. Antes de começar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [planejar uma implantação avançada do DirectAccess](Plan-an-Advanced-DirectAccess-Deployment.md).  
   
@@ -56,7 +56,7 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 6.  Na página **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
-0Installation-](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> com êxito no progresso do @no__t***  
+![de sucesso do progresso da instalação,](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -77,7 +77,7 @@ Este guia usa uma implantação somente DirectAccess nos procedimentos de exempl
   
 #### <a name="to-configure-the-deployment-type"></a>Para configurar o tipo de implantação  
   
-1.  No servidor de Acesso Remoto, abra o console de Gerenciamento de Acesso Remoto: Na tela **Iniciar** , digite**RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+1.  No servidor de acesso remoto, abra o console de gerenciamento de acesso remoto: na tela **Iniciar** , digite**RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  No Console de Gerenciamento de Acesso Remoto, no painel do meio, clique em **Executar o assistente de configuração de acesso remoto**.  
   
@@ -121,7 +121,7 @@ Para que um computador cliente possa ser provisionado para usar o DirectAccess, 
         > [!NOTE]  
         > Quando a resolução de nome local é habilitada, os usuários que executarem o Assistente de conectividade de rede podem escolher resolver nomes usando servidores DNS configurados no computador cliente do DirectAccess.  
   
-9. Clique em **Finalizar**.  
+9. Clique em **Concluir**.  
   
 ## <a name="BKMK_Server"></a>2,4. Configurar o servidor de Acesso Remoto  
 Para implantar o Acesso Remoto, será necessário configurar o servidor de Acesso Remoto com os adaptadores de rede corretos, uma URL pública para o servidor de Acesso Remoto, à qual os computadores cliente poderão se conectar (o endereço ConnectTo) e um certificado IP-HTTPS com o assunto correspondente ao endereço ConnectTo, configurações IPv6 e autenticação no computador cliente.  
@@ -150,7 +150,7 @@ Para implantar o Acesso Remoto, será necessário configurar o servidor de Acess
         > [!NOTE]  
         > Você também deverá usar uma autenticação de certificado de computador para este tipo de implantação.  
   
-6.  Clique em **Finalizar**.  
+6.  Clique em **Concluir**.  
   
 ## <a name="BKMK_Infra"></a>2,5. Configurar os servidores de infraestrutura  
 Para configurar os servidores de infraestrutura em uma implantação de Acesso Remoto, você deverá configurar o servidor de local de rede, as configurações de DNS (incluindo a lista de pesquisa do sufixo de DNS) e servidores de gerenciamento que não são detectados automaticamente pelo Acesso Remoto.  
@@ -170,7 +170,7 @@ Para configurar os servidores de infraestrutura em uma implantação de Acesso R
     > [!NOTE]  
     > Embora os servidores sejam adicionados automaticamente, eles não aparecem na lista. Depois de aplicar as configurações pela primeira vez, os servidores do System Center Configuration Manager aparecerão na lista.  
   
-6.  Clique em **Finalizar**.  
+6.  Clique em **Concluir**.  
   
 ## <a name="BKMK_App"></a>2,6. Configurar os servidores de aplicativos  
 Em uma implantação de Acesso Remoto, configurar os servidores de aplicativos é uma tarefa opcional. O Acesso Remoto permite exigir autenticação para os servidores de aplicativos selecionados, o que é determinado por sua inclusão em um grupo de segurança de servidores de aplicativos. Por padrão, o tráfego para os servidores de aplicativos também é criptografado, porém você pode escolher não criptografar o tráfego para os servidores de aplicativos e usar somente autenticação.  
@@ -186,29 +186,29 @@ Em uma implantação de Acesso Remoto, configurar os servidores de aplicativos �
   
 3.  Para limitar o acesso a somente os servidores do grupo de segurança de servidores de aplicativos, marque a caixa de seleção **Permitir acesso somente aos servidores incluídos nos grupos de segurança**.  
   
-4.  Para usar a autenticação sem criptografia, selecione o **Do não criptografar o tráfego. Use a caixa de seleção somente autenticação @ no__t-0.  
+4.  Para usar a autenticação sem criptografia, selecione **não criptografar tráfego. Use** a caixa de seleção somente autenticação.  
   
-5.  Clique em **Finalizar**.  
+5.  Clique em **Concluir**.  
   
 ## <a name="BKMK_GPO"></a>2,7. Resumo de configuração e GPOs alternativos  
 Uma vez concluída a configuração do Acesso Remoto, a **Revisão de Acesso Remoto** será exibida. Aqui, você pode revisar todas as configurações previamente selecionadas, incluindo:  
   
-1.  **Configurações de GPO**: O nome do GPO do servidor e do cliente do DirectAccess estão listados. Além disso, você pode clicar no link **Alterar** ao lado do cabeçalho **Configurações de GPO** para modificar as configurações de GPO.  
+1.  **Configurações de GPO**: o nome do GPO do servidor DirectAccess e o nome de GPO do cliente estão listados. Além disso, você pode clicar no link **Alterar** ao lado do cabeçalho **Configurações de GPO** para modificar as configurações de GPO.  
   
-2.  **Clientes remotos**: A configuração de cliente do DirectAccess é exibida, incluindo o grupo de segurança, o status de criação de túneis à força, verificadores de conectividade e o nome da conexão do DirectAccess.  
+2.  **Clientes Remotos**: a configuração do cliente do DirectAccess é exibida, incluindo o grupo de segurança, o status de criação de túneis à força, os verificadores de conectividade e o nome da conexão do DirectAccess.  
   
-3.  **Servidor de Acesso Remoto**: A configuração do DirectAccess é exibida, incluindo o nome e endereço públicos, a configuração do adaptador de rede, as informações de certificado e as informações de OTP, se configuradas.  
+3.  **Servidor de Acesso Remoto**: a configuração do DirectAccess é exibida, incluindo endereço/nome público, configuração do adaptador de rede, as informações do certificado e informações de OTP, se configurado.  
   
-4.  **Servidores de infraestrutura**: Esta lista inclui a URL do servidor de local de rede, os sufixos de DNS usados pelos clientes do DirectAccess e as informações do servidor de gerenciamento.  
+4.  **Servidores de Infraestrutura**: esta lista inclui a URL do servidor de local de rede, os sufixos de DNS usados pelos clientes do DirectAccess e as informações do servidor de gerenciamento.  
   
-5.  **Servidores de aplicativos**: É exibido o status de gerenciamento remoto do DirectAccess, além do status da autenticação de ponta a ponta para servidores de aplicativos específicos.  
+5.  **Servidores de Aplicativo**: é exibido o status de gerenciamento remoto do DirectAccess, além do status da autenticação completa de servidores de aplicativos específicos.  
   
 ## <a name="BKMK_PS"></a>2,8. Como configurar o servidor de Acesso Remoto usando o Windows PowerShell  
-0Windows-](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**comandos equivalentes do Windows PowerShell** do powershell do @no__t  
+![](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
-Para realizar uma instalação completa em uma topologia de borda do Acesso Remoto somente para DirectAccess em um domínio com a raiz **corp.contoso.com** e usando os seguintes parâmetros: GPO do servidor: **DirectAccess Server Settings**, GPO do cliente: Configurações de cliente do DirectAccess, adaptador de rede interna: **Corpnet**, adaptador de rede externa: **Internet**, endereço ConnectTto: **EDGE1.contoso.com**e servidor de local de rede: **NLS.Corp.contoso.com**:  
+Para executar uma instalação completa em uma topologia de borda de acesso remoto para o DirectAccess somente em um domínio com o **Corp.contoso.com** raiz e usando os seguintes parâmetros: GPO do servidor: **configurações do servidor DirectAccess**, GPO do cliente: configurações do cliente DirectAccess, adaptador de rede interno: **corpnet**, adaptador de rede externo: **Internet**, ConnectTto endereço: **EDGE1.contoso.com**e servidor de local de rede: **NLS.Corp.contoso.com**:  
   
 ```  
 Install-RemoteAccess -Force -PassThru -ServerGpoName 'corp.contoso.com\DirectAccess Server Settings' -ClientGpoName 'corp.contoso.com\DirectAccess Client Settings' -DAInstallType 'FullInstall' -InternetInterface 'Internet' -InternalInterface 'Corpnet' -ConnectToAddress 'edge1.contoso.com' -NlsUrl 'https://nls.corp.contoso.com/'  
@@ -243,11 +243,11 @@ Set-DAClientExperienceConfiguration -FriendlyName 'Contoso DirectAccess Connecti
   
 ## <a name="BKMK_Links"></a>Etapa anterior  
   
--   [Etapa 1: Configurar a infraestrutura do DirectAccess Avançado](da-adv-configure-s1-infrastructure.md)  
+-   [Etapa 1: configurar a infraestrutura avançada do DirectAccess](da-adv-configure-s1-infrastructure.md)  
   
 ## <a name="next-step"></a>Próximas etapas  
   
--   [Etapa 3: Verificar a implantação](Step-3-Verify-the-Deployment.md)  
+-   [Etapa 3: verificar a implantação](Step-3-Verify-the-Deployment.md)  
   
 
 

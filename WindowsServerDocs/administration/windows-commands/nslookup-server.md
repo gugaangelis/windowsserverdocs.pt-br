@@ -22,7 +22,7 @@ ms.locfileid: "71373061"
 ---
 # <a name="nslookup-server"></a>nslookup server
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Altera o servidor padrão para o domínio DNS (sistema de nomes de domínio) especificado.
 ## <a name="syntax"></a>Sintaxe
@@ -33,11 +33,11 @@ server <DNSDomain>
 
 |    Parâmetro    |                          Descrição                           |
 |-----------------|----------------------------------------------------------------|
-|   <DNSDomain>   | Obrigatório. Especifica o novo domínio DNS para o servidor padrão. |
+|   <DNSDomain>   | Necessário. Especifica o novo domínio DNS para o servidor padrão. |
 | {ajuda &#124; ?} |     Exibe um breve resumo dos subcomandos **nslookup** .      |
 
 ## <a name="remarks"></a>Comentários
 - O comando de **servidor** usa o servidor padrão atual para pesquisar as informações sobre o domínio DNS especificado. Isso é diferente do comando **lserver** , que usa o servidor inicial.
-  ## <a name="additional-references"></a>Referências adicionais
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)[nslookup lserver](nslookup-lserver.md) 
-  
+  ## <a name="additional-references"></a>referências adicionais
+  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [nslookup lserver](nslookup-lserver.md)

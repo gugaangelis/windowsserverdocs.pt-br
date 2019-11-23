@@ -22,9 +22,9 @@ ms.locfileid: "71378691"
 ---
 # <a name="detach-vdisk"></a>Desanexar vdisk
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Interrompe o disco rígido virtual selecionado \(VHD @ no__t-1 de aparecer como uma unidade de disco rígido local no computador host. Quando um VHD é desanexado, você pode copiá-lo a outros locais.  
+Interrompe o disco rígido virtual selecionado \(o\) VHD seja exibido como uma unidade de disco rígido local no computador host. Quando um VHD é desanexado, você pode copiá-lo a outros locais.  
   
 > [!NOTE]  
 > Esse comando só é aplicável ao Windows 7 e ao Windows Server 2008 R2.  
@@ -52,7 +52,7 @@ Para desanexar o VHD selecionado, digite:
 detach vdisk  
 ```  
   
-## <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>referências adicionais  
   
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   

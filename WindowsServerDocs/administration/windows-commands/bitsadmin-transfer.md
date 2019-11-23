@@ -22,7 +22,7 @@ ms.locfileid: "71380346"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin Transfer
 
-Transfere um ou mais arquivos. Para transferir mais de um arquivo, especifique vários pares \<RemoteFileName @ no__t-1 @ no__t-2 @ no__t-3LocalFileName @ no__t-4. Os pares são delimitados por espaço.
+Transfere um ou mais arquivos. Para transferir mais de um arquivo, especifique vários \<RemoteFileName\>-\<pares LocalFileName\>. Os pares são delimitados por espaço.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,10 +35,10 @@ bitsadmin /Transfer <Name> [<Type>] [/Priority <Job_Priority>] [/ACLFlags <Flags
 |Parâmetro|Descrição|
 |---------|-----------|
 |Nome|O nome do trabalho. Ao contrário da maioria dos comandos, o **nome** pode ser apenas um nome e não um GUID.|
-|type|Opcional — especifique o tipo de trabalho. Use **/Download** (o padrão) para um trabalho de download ou **/upload** para um trabalho de upload.|
-|Priority|Opcional — defina o job_priority para um dos seguintes valores:</br>-PRIMEIRO PLANO</br>-ALTA</br>-NORMAL</br>-BAIXO|
-|ACLFlags|Opcional — indica que você deseja manter as informações de proprietário e ACL com o arquivo que está sendo baixado. Por exemplo, para manter o proprietário e o grupo com o arquivo, defina sinalizadores como `OG`. Especifique um ou mais dos seguintes sinalizadores:</br>MINÚSCULA Copie as informações do proprietário com o arquivo.</br>M Copie as informações do grupo com o arquivo.</br>3D Copie informações de DACL com o arquivo.</br>& Copie as informações da SACL com o arquivo.|
-|\/DYNAMIC|Configura o trabalho com [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/desktop/api/bits5_0/ne-bits5_0-bits_job_property_id), que libera os requisitos do lado do servidor.|
+|Tipo|Opcional — especifique o tipo de trabalho. Use **/Download** (o padrão) para um trabalho de download ou **/upload** para um trabalho de upload.|
+|Priority|Opcional — defina o job_priority como um dos seguintes valores:</br>-PRIMEIRO plano</br>-ALTA</br>-NORMAL</br>-BAIXO|
+|ACLFlags|Opcional — indica que você deseja manter as informações de proprietário e ACL com o arquivo que está sendo baixado. Por exemplo, para manter o proprietário e o grupo com o arquivo, defina sinalizadores como `OG`. Especifique um ou mais dos seguintes sinalizadores:</br>-O: copiar informações do proprietário com o arquivo.</br>-G: copiar informações do grupo com o arquivo.</br>-D: copiar informações de DACL com o arquivo.</br>-S: copiar informações de SACL com o arquivo.|
+|\/dinâmico|Configura o trabalho com [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/desktop/api/bits5_0/ne-bits5_0-bits_job_property_id), o que ameniza os requisitos do lado do servidor.|
 |RemoteFileName|O nome do arquivo quando transferido para o servidor.|
 |LocalFileName|O nome do arquivo que reside localmente.|
 

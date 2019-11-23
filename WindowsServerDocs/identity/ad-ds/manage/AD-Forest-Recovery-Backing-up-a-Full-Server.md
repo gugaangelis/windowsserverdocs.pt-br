@@ -39,7 +39,7 @@ Para obter as etapas para instalá-lo no Windows Server 2008 e no Windows Server
 4. Na tela de **seleção de servidor** , clique em **Avançar**.
 5. Na tela **funções de servidor** , clique em **Avançar**.
 6. Na tela **recursos** , selecione **backup do Windows Server** e clique em **Avançar**
-    @ no__t-4Install backup @ no__t-5
+   ![instalar o backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
 7. Clique em **Instalar**.
 8. Quando a instalação for concluída, clique em **fechar**.
 

@@ -19,7 +19,7 @@ ms.locfileid: "71388016"
 
 >Aplica-se a: Windows Server 2016
 
-o conteúdo de @no__t 0This é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/). **  
+**Esse conteúdo é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
   
 Esta seção fornece procedimentos de solução de problemas para o proxy de aplicativo Web, incluindo explicações e soluções de eventos. Há três locais em que os erros são exibidos:  
   
@@ -47,7 +47,7 @@ Esta seção fornece procedimentos de solução de problemas para o proxy de apl
   
 |Evento ou sintoma|Causa possível|Resolução|  
 |--------------------|------------------|--------------|  
-|O certificado de confiança ("ADFS ProxyTrust-<WAP machine name>") não é válido|Isso pode ser provocado por qualquer um dos seguintes:<br /><br />-O computador do proxy de aplicativo estava inoperante por muito tempo.<br />-Desconexões entre o proxy de aplicativo Web e AD FS<br />-Problemas de infraestrutura de certificado<br />-As alterações na máquina AD FS ou o processo de renovação entre o proxy de aplicativo Web e o AD FS não foram executados conforme planejado a cada 8 horas e, em seguida, eles precisam renovar a confiança<br />-O relógio do computador proxy de aplicativo Web e os AD FS não estão sincronizados.|Verifique se os relógios estão sincronizados. Execute o cmdlet Install-WebApplicationProxy.|  
+|O certificado de confiança ("ProxyTrust do ADFS-<WAP machine name>") não é válido|Isso pode ser provocado por qualquer um dos seguintes:<br /><br />-O computador do proxy de aplicativo estava inoperante por muito tempo.<br />-Desconexões entre o proxy de aplicativo Web e AD FS<br />-Problemas de infraestrutura de certificado<br />-As alterações na máquina AD FS ou o processo de renovação entre o proxy de aplicativo Web e o AD FS não foram executados conforme planejado a cada 8 horas e, em seguida, eles precisam renovar a confiança<br />-O relógio do computador proxy de aplicativo Web e os AD FS não estão sincronizados.|Verifique se os relógios estão sincronizados. Execute o cmdlet Install-WebApplicationProxy.|  
 |Os dados de configuração não foram encontrados no AD FS|Isso pode ocorrer porque o proxy de aplicativo Web ainda não foi totalmente instalado ou devido a alterações no banco de dados AD FS ou corrupção do banco de dados.|Executar o cmdlet Install-WebApplicationProxy|  
 |Ocorreu um erro quando o proxy de aplicativo Web tentou ler a configuração de AD FS.|Isso pode indicar que AD FS não está acessível ou que AD FS encontrou um problema interno ao tentar ler a configuração do banco de dados AD FS.|Verifique se AD FS está acessível e funcionando corretamente.|  
 |Os dados de configuração armazenados no AD FS estão corrompidos ou o proxy de aplicativo Web não pôde analisá-lo.<br /><br />OU<br /><br />O aplicativo Web Proxywas não pode recuperar a lista de terceiras partes confiáveis de AD FS.|Isso pode ocorrer se os dados de configuração foram modificados em AD FS.|Reinicie o aplicativo Web Proxyservice. Se o problema persistir, execute o cmdlet Install-WebApplicationProxy.|  

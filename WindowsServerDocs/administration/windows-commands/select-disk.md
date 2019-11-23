@@ -22,7 +22,7 @@ ms.locfileid: "71371080"
 ---
 # <a name="select-disk"></a>select disk
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 seleciona o disco especificado e desloca o foco para ele.  
   
@@ -41,9 +41,9 @@ select disk={ <n> | <disk path> | system | next }
   
 |  Parâmetro  |                                                                                                                                                                                                            Descrição                                                                                                                                                                                                            |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <n>     | Especifica o número do disco para receber o foco. Você pode exibir os números de todos os discos no computador usando o comando **listar disco** no DiskPart. **Observação:** Ao configurar sistemas com vários discos, não use **selecionar disco @ no__t-10** para especificar o disco do sistema. O computador pode reatribuir números de disco quando você reinicializa, e computadores diferentes com a mesma configuração de disco podem ter diferentes números de disco. |
-| <disk path> |                                                                                                                 Especifica o local do disco para receber o foco, por exemplo, **PCIROOT @ no__t-10 @ no__t-2 @ no__t-3PCI @ no__t-40F02 @ no__t-5 @ no__t-6atA @ no__t-7C00T00L00 @ no__t-8**. Para exibir o caminho do local de um disco, selecione-o e digite **disco de detalhes**.                                                                                                                  |
-|   sistema    |                                 Em computadores BIOS, especifica que o disco 0 recebe foco. Em computadores EFI, o disco que contém a partição do sistema EFI \(ESP @ no__t-1 que é usado para a inicialização atual recebe o foco. Em computadores EFI, o comando falhará se não houver nenhum ESP, se houver mais de um ESP ou se o computador for inicializado a partir de Ambiente de Pré-Instalação do Windows @no__t PE @ no__t-1.                                  |
+|     <n>     | Especifica o número do disco para receber o foco. Você pode exibir os números de todos os discos no computador usando o comando **listar disco** no DiskPart. **Observação:** Ao configurar sistemas com vários discos, não use **selecionar disco\=0** para especificar o disco do sistema. O computador pode reatribuir números de disco quando você reinicializa, e computadores diferentes com a mesma configuração de disco podem ter diferentes números de disco. |
+| <disk path> |                                                                                                                 Especifica o local do disco para receber o foco, por exemplo, **PCIROOT\(0\)\#PCI\(0F02\)\#atA\(C00T00L00\)** . Para exibir o caminho do local de um disco, selecione-o e digite **disco de detalhes**.                                                                                                                  |
+|   sistema    |                                 Em computadores BIOS, especifica que o disco 0 recebe foco. Em computadores EFI, o disco que contém a partição do sistema EFI \(\) do ESP usado para a inicialização atual recebe o foco. Em computadores EFI, o comando falhará se não houver nenhum ESP, se houver mais de um ESP ou se o computador for inicializado a partir de Ambiente de Pré-Instalação do Windows \(\)do Windows PE.                                  |
 |    próximo     |                                                                                                                                     Depois que um disco é selecionado, esse comando faz a iteração em todos os discos na lista de discos. Quando você executar esse comando, o foco do próximo disco na lista será exibido.                                                                                                                                      |
   
 ## <a name="BKMK_examples"></a>Disso  
@@ -71,7 +71,7 @@ Para deslocar o foco para o próximo disco no computador, digite:
 select disk=next  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

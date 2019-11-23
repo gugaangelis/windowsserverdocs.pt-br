@@ -22,10 +22,10 @@ ms.locfileid: "71392338"
 ---
 # <a name="tskill"></a>tskill
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Finaliza um processo em execução em uma sessão em um servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD).
-Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
 
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
@@ -41,8 +41,8 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |-------|--------|
 |\<ProcessID >|Especifica a ID do processo que você deseja encerrar.|
 |\<ProcessName >|Especifica o nome do processo que você deseja encerrar. Esse parâmetro pode incluir caracteres curinga.|
-|/Server: \<ServerName >|Especifica o servidor de terminal que contém o processo que você deseja encerrar. Se **/Server** não for especificado, o servidor de host da Sessão RD atual será usado.|
-|/ID: \<SessionID >|Encerra o processo que está sendo executado na sessão especificada.|
+|/Server:\<ServerName >|Especifica o servidor de terminal que contém o processo que você deseja encerrar. Se **/Server** não for especificado, o servidor de host da Sessão RD atual será usado.|
+|/ID:\<SessionID >|Encerra o processo que está sendo executado na sessão especificada.|
 |SRDF|Encerra o processo que está sendo executado em todas as sessões.|
 |/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|

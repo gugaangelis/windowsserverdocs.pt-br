@@ -45,4 +45,4 @@ diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 |-N|Desabilite todos os contadores de desempenho de disco quando o computador for reiniciado.|
 |-ND|Desabilite os contadores de desempenho de disco para unidades físicas quando o computador for reiniciado.|
 |-NV|Desabilite os contadores de desempenho de disco para unidades lógicas ou volumes de armazenamento quando o computador for reiniciado.|
-|\\ @ no__t-1 *\<computername >*|Especifique o nome do computador no qual você deseja habilitar ou desabilitar os contadores de desempenho de disco.|
+|\\\\ *\<computername >*|Especifique o nome do computador no qual você deseja habilitar ou desabilitar os contadores de desempenho de disco.|

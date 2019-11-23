@@ -33,9 +33,9 @@ O módulo ADCSAdministration do Windows PowerShell foi introduzido no servidor d
 -   Restore-CARoleService  
   
 ## <a name="backup-caroleservice"></a>Backup-CARoleService  
-Tabela SEQ **Table \\ @ no__t-2 árabe 17: Fazer backup e restaurar cmdlets do Windows PowerShell @ no__t-0  
+**Tabela SEQ \\\* árabe 17: backup e restauração de cmdlets do Windows PowerShell**  
   
-Cmdlet **ADCSAdministration: Backup-CARoleService @ no__t-0  
+**Cmdlet ADCSAdministration: backup-CARoleService**  
   
 |Argumentos-argumentos em **negrito** são necessários|Descrição|  
 |------------------------------------------------|---------------|  
@@ -43,9 +43,9 @@ Cmdlet **ADCSAdministration: Backup-CARoleService @ no__t-0
 |-Somente|-Fazer backup do certificado de autoridade de certificação sem o banco de dados<br /><br />**Exemplo:**<br /><br />Backup-CARoleService c:\adcsbackup3-keyonly|  
 |-Password|-Especifica a senha para proteger os certificados de autoridade de certificação e as chaves privadas<br />-Deve ser uma cadeia de caracteres segura<br />-Não é válido com o parâmetro-DatabaseOnly<br /><br />Exemplo:<br /><br />Backup-CARoleService c:\adcsbackup4-senha (leitura-host-prompt "senha:"-assegurastring)<br /><br />Backup-CARoleService c:\adcsbackup5-senha (ConvertTo-SecureString "Pa55w0rd!" -Astexto não criptografado-forçar)|  
 |-DatabaseOnly|-Fazer backup do banco de dados sem o certificado de autoridade de certificação<br /><br />Backup-CARoleService c:\adcsbackup6-DatabaseOnly|  
-|-Force|1.  Permite que você substitua o backup que existe no local especificado no parâmetro-Path<br /><br />Backup-CARoleService c:\adcsbackup1-Force|  
+|-Force|1. permite que você substitua o backup que existe no local especificado no parâmetro-Path<br /><br />Backup-CARoleService c:\adcsbackup1-Force|  
 |-Incremental|-Executar um backup incremental<br /><br />Backup-CARoleService c:\adcsbackup7-incremental|  
-|-KeepLog|1.  Instrui o comando a manter os arquivos de log. Se a opção não for especificada, os arquivos de log serão truncados por padrão, exceto no cenário incremental<br /><br />Backup-CARoleService c:\adcsbackup7-KeepLog|  
+|-KeepLog|1. instrui o comando para manter os arquivos de log. Se a opção não for especificada, os arquivos de log serão truncados por padrão, exceto no cenário incremental<br /><br />Backup-CARoleService c:\adcsbackup7-KeepLog|  
   
 ### <a name="-password-secure-string"></a>-Password <Secure String>  
 Se o parâmetro-password for usado, a senha fornecida deverá ser uma cadeia de caracteres segura.  Use o cmdlet **Read-Host** para iniciar um prompt interativo para a entrada de senha segura ou use o cmdlet **ConvertTo-SecureString** para especificar a senha em linha.  
@@ -65,7 +65,7 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 ```  
   
 ## <a name="restore-caroleservice"></a>Restore-CARoleService  
-Cmdlet **ADCSAdministration: Restore-CARoleService @ no__t-0  
+**Cmdlet ADCSAdministration: Restore-CARoleService**  
   
 |Argumentos-argumentos em **negrito** são necessários|Descrição|  
 |------------------------------------------------|---------------|  
@@ -80,15 +80,15 @@ Um backup não protegido por senha será obtido se a função ConvertTo-SecureSt
   
 ![Backup e restauração de CA](media/CA-Backup-and-Restore-Windows-PowerShell-cmdlets/GTR_ADDS_BackupCARole.gif)  
   
-Tabela SEQ **Table \\ @ no__t-2 árabe 18: Erros comuns @ no__t-0  
+**Tabela SEQ tabela \\\* árabe 18: erros comuns**  
   
 |Ação|Erro|Comentário|  
 |----------|---------|-----------|  
-|**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: O processo não pode acessar o arquivo porque ele está sendo usado por outro processo. (Exceção de HRESULT:<br /><br />0x80070020|Pare o serviço de serviços de certificados Active Directory antes de executar o cmdlet Restore-CARoleService|  
-|**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: O diretório não está vazio. (Exceção de HRESULT: 0x80070091)|Usar o parâmetro-Force para substituir chaves preexistentes|  
-|**Backup-CARoleService C:\ADCSBackup-senha (leitura-host-prompt "senha:"-assegurastring)-DatabaseOnly**|Backup-CARoleService: O conjunto de parâmetros não pode ser resolvido usando os parâmetros nomeados especificados.|O parâmetro-password é usado somente para proteger chaves privadas com senha e, portanto, é inválido quando você não está fazendo backup delas|  
-|**Restore-CARoleService C:\ADCSBack15-Password (Read-Host-prompt "senha:"-assegurastring)-DatabaseOnly**|Restore-CARoleService: O conjunto de parâmetros não pode ser resolvido usando os parâmetros nomeados especificados.|O parâmetro-password é usado somente para proteger chaves privadas com senha e, portanto, é inválido quando você não as restaura|  
-|**Restore-CARoleService C:\ADCSBack14-Password (leitura-host-prompt "senha:"-assegurastring)**|Restore-CARoleService: O sistema não pode localizar o arquivo especificado. (Exceção de HRESULT: 0x80070002|O caminho especificado não contém um backup de banco de dados válido.  Talvez o caminho seja inválido ou o backup tenha sido feito com a opção-KeysOnly?|  
+|**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: o processo não pode acessar o arquivo porque ele está sendo usado por outro processo. (Exceção de HRESULT:<br /><br />0x80070020|Pare o serviço de serviços de certificados Active Directory antes de executar o cmdlet Restore-CARoleService|  
+|**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: o diretório não está vazio. (Exceção de HRESULT: 0x80070091)|Usar o parâmetro-Force para substituir chaves preexistentes|  
+|**Backup-CARoleService C:\ADCSBackup-senha (leitura-host-prompt "senha:"-assegurastring)-DatabaseOnly**|Backup-CARoleService: o conjunto de parâmetros não pode ser resolvido usando os parâmetros nomeados especificados.|O parâmetro-password é usado somente para proteger chaves privadas com senha e, portanto, é inválido quando você não está fazendo backup delas|  
+|**Restore-CARoleService C:\ADCSBack15-Password (Read-Host-prompt "senha:"-assegurastring)-DatabaseOnly**|Restore-CARoleService: não é possível resolver o conjunto de parâmetros usando os parâmetros nomeados especificados.|O parâmetro-password é usado somente para proteger chaves privadas com senha e, portanto, é inválido quando você não as restaura|  
+|**Restore-CARoleService C:\ADCSBack14-Password (leitura-host-prompt "senha:"-assegurastring)**|Restore-CARoleService: o sistema não pode localizar o arquivo especificado. (Exceção de HRESULT: 0x80070002)|O caminho especificado não contém um backup de banco de dados válido.  Talvez o caminho seja inválido ou o backup tenha sido feito com a opção-KeysOnly?|  
   
 ## <a name="additional-resources"></a>Recursos adicionais  
 [Guia de Migração de Serviços de Certificados do Active Directory](https://technet.microsoft.com/library/ee126170(v=ws.10).aspx)  
@@ -97,7 +97,7 @@ Tabela SEQ **Table \\ @ no__t-2 árabe 18: Erros comuns @ no__t-0
   
 [Restaurando o banco de dados e a configuração da autoridade de certificação no servidor de destino](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_RestoreCA)  
   
-## <a name="try-this-backup-the-ca-in-your-lab-using-windows-powershell"></a>Experimente isto: Fazer backup da AC em seu laboratório usando o Windows PowerShell  
+## <a name="try-this-backup-the-ca-in-your-lab-using-windows-powershell"></a>Experimente: faça backup da autoridade de certificação em seu laboratório usando o Windows PowerShell  
   
 1.  Use os comandos nesta lição para fazer backup do banco de dados de CA e da chave privada protegidas por uma senha.  
   

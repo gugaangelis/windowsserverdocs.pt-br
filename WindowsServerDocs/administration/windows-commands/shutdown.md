@@ -46,11 +46,11 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/p|Desliga o computador local somente (não um computador remoto), sem nenhum período de tempo limite ou aviso. Você pode usar **/p** somente com **/d** ou **/f**. Se o seu computador não oferecer suporte à funcionalidade de desligamento, ele será desligado quando você usar **/p**, mas a potência para o computador permanecerá ativada.|
 |/h|Coloca o computador local em hibernação, se a hibernação estiver habilitada. Você pode usar **/h** apenas com **/f**.|
 |/e|Permite documentar o motivo do desligamento inesperado no computador de destino.|
-|/f|Força o fechamento de aplicativos em execução sem avisar os usuários.</br>Cuidado: Usar a opção **/f** pode resultar em perda de dados não salvos.|
-|/m \\ @ no__t-1 @ no__t-2ComputerName >|Especifica o computador de destino. Não pode ser usado com a opção **/l** .|
+|/f|Força o fechamento de aplicativos em execução sem avisar os usuários.</br>Cuidado: usar a opção **/f** pode resultar em perda de dados não salvos.|
+|/m \\\\\<ComputerName >|Especifica o computador de destino. Não pode ser usado com a opção **/l** .|
 |/t \<XXX >|Define o período de tempo limite ou o atraso para *xxx* segundos antes de uma reinicialização ou desligamento. Isso faz com que um aviso seja exibido no console local. Você pode especificar 0-600 segundos. Se você não usar **/t**, o período de tempo limite será de 30 segundos por padrão.|
-|/d [p @ no__t-0u:] \<XX >: \<YY >|Lista o motivo da reinicialização ou desligamento do sistema. Estes são os valores de parâmetro:</br>**p** indica que a reinicialização ou o desligamento está planejado.</br>**u** indica que o motivo é definido pelo usuário.</br>Observação: Se **p** ou **u** não forem especificados, a reinicialização ou o desligamento não será planejado.</br>*XX* especifica o número do motivo principal (inteiro positivo menor que 256).</br>*AA* Especifica o número do motivo secundário (inteiro positivo menor que 65536).|
-|/c "\<Comment >"|Permite que você explique detalhadamente a razão do desligamento. Você deve primeiro fornecer um motivo usando a opção **/d** . Você deve incluir comentários entre aspas. É possível usar até 511 caracteres.|
+|/d [p\|u:]\<XX >:\<YY >|Lista o motivo da reinicialização ou desligamento do sistema. Estes são os valores de parâmetro:</br>**p** indica que a reinicialização ou o desligamento está planejado.</br>**u** indica que o motivo é definido pelo usuário.</br>Observação: se **p** ou **u** não forem especificados, a reinicialização ou o desligamento não será planejado.</br>*XX* especifica o número do motivo principal (inteiro positivo menor que 256).</br>*AA* Especifica o número do motivo secundário (inteiro positivo menor que 65536).|
+|/c "\<de comentário >"|Permite que você explique detalhadamente a razão do desligamento. Você deve primeiro fornecer um motivo usando a opção **/d** . Você deve incluir comentários entre aspas. É possível usar até 511 caracteres.|
 |/?|Exibe a ajuda no prompt de comando, incluindo uma lista dos motivos principais e secundários definidos no computador local.|
 
 ## <a name="remarks"></a>Comentários
@@ -65,11 +65,11 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="BKMK_examples"></a>Disso
 
-Para forçar que os aplicativos fechem e reiniciem o computador local após um atraso de um minuto com o motivo "aplicativo: Manutenção (planejada) "e o comentário" Reconfigurando myapp. exe "tipo:
+Para forçar os aplicativos a fecharem e reiniciar o computador local após um atraso de um minuto com o motivo "aplicativo: manutenção (planejada)" e o comentário "Reconfigurando myapp. exe", digite:
 ```
 shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
-Para reiniciar o computador remoto \\ @ no__t-1ServerName com os mesmos parâmetros, digite:
+Para reiniciar o computador remoto \\\\ServerName com os mesmos parâmetros, digite:
 ```
 shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```

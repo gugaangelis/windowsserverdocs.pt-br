@@ -17,11 +17,11 @@ ms.locfileid: "71396431"
 ---
 # <a name="increase-concurrent-authentications-processed-by-nps"></a>Aumentar autenticações simultâneas processadas pelo NPS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para obter instruções sobre como configurar as autenticações simultâneas do servidor de políticas de rede.
 
-Se você instalou o servidor de políticas de rede \(NPS @ no__t-1 em um computador diferente de um controlador de domínio e o NPS estiver recebendo um grande número de solicitações de autenticação por segundo, você poderá melhorar o desempenho do NPS aumentando o número de autenticações permitidas entre o NPS e o controlador de domínio.
+Se você instalou o servidor de políticas de rede \(\) NPS em um computador que não seja um controlador de domínio e o NPS estiver recebendo um grande número de solicitações de autenticação por segundo, você poderá melhorar o desempenho do NPS aumentando o número de autenticações simultâneas permitidas entre o NPS e o controlador de domínio.
 
 Para fazer isso, você deve editar a seguinte chave do registro: 
 

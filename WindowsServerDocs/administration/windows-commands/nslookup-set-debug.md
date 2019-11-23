@@ -38,7 +38,7 @@ set [no]debug
 |-------------|--------------------------------------------------------------|
 | **NODEBUG** | Desativa o modo de depuração. A sintaxe padrão é **NODEBUG**. |
 |  **verificação**  |                   Ativa o modo de depuração.                   |
-|  \* @ no__t-1 {ajuda  |                            ?} \* @ no__t-1                            |
+|  \*\*{ajuda  |                            ?}\*\*                            |
 
 ## <a name="remarks"></a>Comentários
 

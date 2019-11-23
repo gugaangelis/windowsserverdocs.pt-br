@@ -40,12 +40,12 @@ set /a <Variable>=<Expression>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Variable >|Especifica a variável de ambiente a ser definida ou modificada.|
-|\<String >|Especifica a cadeia de caracteres a ser associada à variável de ambiente especificada.|
+|Variável de \<>|Especifica a variável de ambiente a ser definida ou modificada.|
+|Cadeia de caracteres \<>|Especifica a cadeia de caracteres a ser associada à variável de ambiente especificada.|
 |/p|Define o valor da *variável* para uma linha de entrada inserida pelo usuário.|
-|\<PromptString >|Opcional. Especifica uma mensagem para solicitar a entrada do usuário. Esse parâmetro é usado com a opção de linha de comando **/p** .|
+|\<Promptstring >|Opcional. Especifica uma mensagem para solicitar a entrada do usuário. Esse parâmetro é usado com a opção de linha de comando **/p** .|
 |SRDF|Define a *cadeia de caracteres* para uma expressão numérica que é avaliada.|
-|\<Expression >|Especifica uma expressão numérica. Consulte comentários para operadores válidos que podem ser usados na *expressão*.|
+|Expressão de \<>|Especifica uma expressão numérica. Consulte comentários para operadores válidos que podem ser usados na *expressão*.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -55,7 +55,7 @@ set /a <Variable>=<Expression>
   Quando as extensões de comando são habilitadas (o padrão) e você executa **definir** com um valor, ele exibe todas as variáveis que começam com esse valor.
 - Usando caracteres especiais
 
-  Os caracteres **<** , **>** , **|** , **&** , **^** são caracteres especiais do Shell de comando e devem ser precedidos pelo caractere de escape (**1**) ou colocados entre aspas Quando usado na *cadeia de caracteres* (por exemplo, **"StringContaining & símbolo"** ). Se você usar aspas para colocar uma cadeia de caracteres que contenha um dos personagens especiais, as aspas serão definidas como parte do valor da variável de ambiente.
+  Os caracteres **<** , **>** , **|** , **&** , **^** são caracteres especiais do Shell de comando e devem ser precedidos pelo caractere de escape ( **^** ) ou colocados entre aspas quando usados na *cadeia de caracteres* (por exemplo, **"StringContaining & Symbol"** ). Se você usar aspas para colocar uma cadeia de caracteres que contenha um dos personagens especiais, as aspas serão definidas como parte do valor da variável de ambiente.
 - Usando variáveis de ambiente
 
   Use variáveis de ambiente para controlar o comportamento de alguns arquivos e programas em lotes e para controlar a maneira como o Windows e o subsistema MS-DOS são exibidos e funcionam. O comando **set** é geralmente usado no arquivo autoexec. NT para definir variáveis de ambiente.
@@ -71,7 +71,7 @@ set /a <Variable>=<Expression>
 
   A tabela a seguir lista os operadores com suporte para **/a** em ordem decrescente de precedência.  
 
-  |        Operator         | Operação executada  |
+  |        Operador         | Operação executada  |
   |-------------------------|----------------------|
   |           ( )           |       Agrupamento       |
   |          ! ~ -          |        Unários         |
@@ -81,7 +81,7 @@ set /a <Variable>=<Expression>
   |            &            |     E      |
   |            ^            | Or exclusivo de or |
   |                         |                      |
-  | =  @ no__t-1 =/=% = + =-= & = ^ = |      = < < = > > =       |
+  | = \*=/=% = + =-= & = ^ = |      = < < = > > =       |
   |            ,            | Separador de expressão |
 
   Se você usar operadores lógicos ( **&&** ou **||** ) ou de módulo ( **%** ), coloque a cadeia de caracteres de expressão entre aspas. Todas as cadeias de caracteres não numéricas na expressão são consideradas nomes de variáveis de ambiente e seus valores são convertidos em números antes de serem processados. Se você especificar um nome de variável de ambiente que não esteja definido no ambiente atual, um valor de zero será alocado, o que permitirá que você execute aritmética com valores de variáveis de ambiente sem usar% para recuperar um valor.
@@ -97,7 +97,7 @@ set /a <Variable>=<Expression>
   Quando as extensões de comando são habilitadas (o padrão) e você executa somente **definido** , ele exibe todas as variáveis de ambiente atuais. Se você executar **set** com um valor, ele exibirá as variáveis que correspondem a esse valor.
 - Usando **set** em arquivos em lotes
 
-  Ao criar arquivos em lotes, você pode usar **set** para criar variáveis e, em seguida, usá-las da mesma maneira que usaria as variáveis numeradas **% 0** a **% 9**. Você também pode usar as variáveis **% 0** a **% 9** como entrada para o **conjunto**.
+  Ao criar arquivos em lotes, você pode usar **set** para criar variáveis e, em seguida, usá-las da mesma maneira que usaria as variáveis numeradas **%0** a **%9**. Você também pode usar as variáveis **%0** a **%9** como entrada para o **conjunto**.
 - Chamando uma variável **set** de um arquivo em lotes
 
   Ao chamar um valor de variável de um arquivo em lotes, coloque o valor com sinais de porcentagem ( **%** ). Por exemplo, se o programa do lote criar uma variável de ambiente chamada BAUD, você poderá usar a cadeia de caracteres associada à BAUD como um parâmetro substituível digitando **% baud%** no prompt de comando.

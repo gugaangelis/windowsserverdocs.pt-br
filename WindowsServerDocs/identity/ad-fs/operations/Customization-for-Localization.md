@@ -21,7 +21,7 @@ ms.locfileid: "71357984"
 
 É possível localizar conteúdo da Web em idiomas diferentes do inglês. Lembre-se das seguintes considerações quando localizar.  
   
-Depois de personalizar o conteúdo, a personalização terá prioridade; portanto, você deve personalizar para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Ao configurar conteúdo localizado, configure-o com uma localidade @ no__t-0less primeiro, por exemplo, "en", antes de configurar uma localidade de país e região @ no__t-1specific, como "en @ no__t-2US".  
+Depois de personalizar o conteúdo, a personalização terá prioridade; portanto, você deve personalizar para todos os idiomas aos quais deseja dar suporte. Todo conteúdo personalizado possui um parâmetro de localidade. Ao configurar conteúdo localizado, configure-o com um país\-menos localidade, por exemplo, "en", antes de configurar um país e uma região\-localidade específica, como "en\-US".  
   
 Seguem alguns exemplos de código adicional.  
   

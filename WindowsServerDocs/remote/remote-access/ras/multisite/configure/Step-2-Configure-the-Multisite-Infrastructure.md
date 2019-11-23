@@ -60,7 +60,7 @@ Para obter mais informações, consulte [adicionando um site à floresta](https:
   
 8.  Feche Active Directory sites e serviços.  
   
-0Windows-](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -161,7 +161,7 @@ Uma implantação multissite requer um grupo de segurança adicional para comput
   
 4.  Em **escopo do grupo**, clique em **Universal**, em **tipo de grupo**, clique em **segurança**e em **OK**.  
   
-5.  Para adicionar computadores ao novo grupo de segurança, clique duas vezes no grupo de segurança e, na caixa de diálogo **< Group_Name > Propriedades** , clique na guia **Membros** .  
+5.  Para adicionar computadores ao novo grupo de segurança, clique duas vezes no grupo de segurança e, na caixa de diálogo **Propriedades do < Group_Name >** , clique na guia **Membros** .  
   
 6.  Na guia **Membros** , clique em **Adicionar**.  
   
@@ -169,7 +169,7 @@ Uma implantação multissite requer um grupo de segurança adicional para comput
   
 8.  Repita este procedimento para criar um grupo de segurança para cada ponto de entrada, conforme necessário.  
   
-0Windows-](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em> do PowerShell do @no__t***  
+![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
 O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
@@ -289,7 +289,7 @@ As informações de associação do controlador de domínio são armazenadas no 
   
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc3.png)  
   
-3.  Para sincronizar a associação do controlador de domínio para o GPO do servidor "ponto de entrada 2" no GPO do servidor "ponto de entrada 1", execute o comando para substituir "DC2" por "DC3" e especifique o servidor de acesso remoto cujo GPO do servidor não está sincronizado, neste caso, "DA1", para o  *Parâmetro ComputerName* .  
+3.  Para sincronizar a associação do controlador de domínio para o GPO do servidor "ponto de entrada 2" no GPO do servidor "ponto de entrada 1", execute o comando para substituir "DC2" por "DC3" e especifique o servidor de acesso remoto cujo GPO do servidor não está sincronizado, neste caso, "DA1", para o parâmetro *ComputerName* .  
   
     ```  
     Set-DAEntryPointDC "ExistingDC 'DC2' "NewDC 'DC3' "ComputerName 'DA1' "ErrorAction Continue  
@@ -300,7 +300,7 @@ As informações de associação do controlador de domínio são armazenadas no 
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>Otimização da distribuição de configuração  
-Ao fazer alterações de configuração, as alterações são aplicadas somente depois que os GPOs do servidor se propagam para os servidores de acesso remoto. Para reduzir o tempo de distribuição da configuração, o acesso remoto seleciona automaticamente um controlador de domínio gravável, que é o hiperlink "<https://technet.microsoft.com/library/cc978016.aspx>" mais próximo ao servidor de acesso remoto ao criar seu GPO de servidor.  
+Ao fazer alterações de configuração, as alterações são aplicadas somente depois que os GPOs do servidor se propagam para os servidores de acesso remoto. Para reduzir o tempo de distribuição da configuração, o acesso remoto seleciona automaticamente um controlador de domínio gravável, que é o hiperlink "<https://technet.microsoft.com/library/cc978016.aspx>" mais próximo do servidor de acesso remoto ao criar seu GPO de servidor.  
   
 Em alguns cenários, pode ser necessário modificar manualmente o controlador de domínio que gerencia um GPO do servidor para otimizar o tempo de distribuição da configuração:  
   
@@ -334,6 +334,6 @@ Para otimizar o tempo de distribuição da configuração, siga um destes proced
   
 ## <a name="BKMK_Links"></a>Consulte também  
   
--   [Etapa 3: Configurar a implantação multissite @ no__t-0  
--   [Etapa 1: Implementar uma implantação de acesso remoto de servidor único @ no__t-0  
+-   [Etapa 3: configurar a implantação multissite](Step-3-Configure-the-Multisite-Deployment.md)  
+-   [Etapa 1: implementar uma implantação de acesso remoto de servidor único](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
 

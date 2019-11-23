@@ -20,7 +20,7 @@ ms.locfileid: "71396184"
 Você pode usar este tópico para instalar o servidor de diretivas de rede (NPS) usando o Windows PowerShell ou o assistente para adicionar funções e recursos. O NPS é um serviço de função da função de servidor Serviços de Acesso e Política de Rede.
 
 > [!NOTE]
-> Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Se o Firewall do Windows com segurança avançada estiver habilitado quando você instalar o NPS, as exceções de firewall para essas portas serão criadas automaticamente durante o processo de instalação para o protocolo IP versão 6 \(IPv6 @ no__t-1 e o tráfego IPv4. Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para Tráfego RADIUS.
+> Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Se o Firewall do Windows com segurança avançada estiver habilitado quando você instalar o NPS, as exceções de firewall para essas portas serão criadas automaticamente durante o processo de instalação para o protocolo IP versão 6 \(IPv6\) e o tráfego IPv4. Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para Tráfego RADIUS.
 
 **Credenciais administrativas**
 

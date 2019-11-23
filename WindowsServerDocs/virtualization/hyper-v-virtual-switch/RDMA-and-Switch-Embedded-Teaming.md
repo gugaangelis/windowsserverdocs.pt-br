@@ -15,11 +15,11 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365694"
 ---
-# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acesso remoto direto à memória \(RDMA @ no__t-1 e troca de equipe inserida \(SET @ no__t-3
+# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acesso remoto direto à memória \(RDMA\) e Comutador incorporado \(definir\)
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico fornece informações sobre como configurar o acesso remoto direto à memória \(RDMA @ no__t-1 interfaces com o Hyper-V no Windows Server 2016, além de informações sobre o switch incorporado em equipe \(SET @ no__t-3.  
+Este tópico fornece informações sobre como configurar o acesso remoto direto à memória \(interfaces de\) RDMA com o Hyper-V no Windows Server 2016, além de informações sobre o switch incorporado \(conjunto de\).  
 
 > [!NOTE]
 > Além deste tópico, o conteúdo de agrupamento inserido do comutador a seguir está disponível. 
@@ -38,11 +38,11 @@ A imagem abaixo ilustra as alterações de arquitetura de software entre o Windo
 
 ![Alterações de arquitetura](../media/RDMA-and-SET/rdma_over.jpg)
 
-As seções a seguir fornecem instruções sobre como usar comandos do Windows PowerShell para habilitar a ponte do Data Center (DCB), criar um comutador virtual do Hyper-V com uma NIC virtual RDMA \(vNIC @ no__t-1 e criar um comutador virtual Hyper-V com SET e RDMA vNICs.
+As seções a seguir fornecem instruções sobre como usar comandos do Windows PowerShell para habilitar a ponte do Data Center (DCB), criar um comutador virtual do Hyper-V com uma NIC virtual RDMA \(vNIC\)e criar um comutador virtual Hyper-V com SET e RDMA vNICs.
 
-### <a name="enable-data-center-bridging-dcb"></a>Habilitar ponte do Data Center \(DCB @ no__t-1
+### <a name="enable-data-center-bridging-dcb"></a>Habilitar a ponte do Data Center \(DCB\)
 
-Antes de usar qualquer RDMA sobre a versão de \(RoCE\) Ethernet convergida de RDMA, você deve habilitar o DCB.  Embora não seja necessário para redes de protocolo RDMA \(iWARP @ no__t-1 de Internet de longa distância, o teste determinou que todas as tecnologias RDMA baseadas em Ethernet funcionam melhor com o DCB. Por isso, você deve considerar o uso de DCB até mesmo para implantações iWARP RDMA.
+Antes de usar qualquer RDMA via Ethernet convergida \(RoCE\) versão do RDMA, você deve habilitar o DCB.  Embora não seja necessário para o protocolo RDMA da Internet \(iWARP\) redes, o teste determinou que todas as tecnologias RDMA baseadas em Ethernet funcionam melhor com o DCB. Por isso, você deve considerar o uso de DCB até mesmo para implantações iWARP RDMA.
 
 Os seguintes comandos de exemplo do Windows PowerShell demonstram como habilitar e configurar o DCB para SMB Direct.
 
@@ -96,7 +96,7 @@ Verifique os recursos RDMA:
 
 ###  <a name="bkmk_set-rdma"></a>Criar um comutador virtual do Hyper-V com SET e RDMA vNICs
 
-Para usar o RDMA capabilies em adaptadores de rede virtual do host Hyper-V \(vNICs @ no__t-1 em um comutador virtual Hyper-V que dá suporte ao agrupamento RDMA, você pode usar estes comandos de exemplo do Windows PowerShell.
+Para usar o RDMA capabilies em adaptadores de rede virtual do host Hyper-V \(vNICs\) em um comutador virtual Hyper-V que dá suporte ao agrupamento RDMA, você pode usar estes comandos de exemplo do Windows PowerShell.
 
     New-VMSwitch -Name SETswitch -NetAdapterName "SLOT 2","SLOT 3" -EnableEmbeddedTeaming $true
 
@@ -105,7 +105,7 @@ Adicionar vNICs do host:
     Add-VMNetworkAdapter -SwitchName SETswitch -Name SMB_1 -managementOS
     Add-VMNetworkAdapter -SwitchName SETswitch -Name SMB_2 -managementOS
 
-Muitas opções não passam informações de classe de tráfego no tráfego de VLAN não marcado, portanto, certifique-se de que os adaptadores de host para RDMA estejam em VLANs. Este exemplo atribui os dois adaptadores virtuais do host SMB_ * para a VLAN 42.
+Muitas opções não passam informações de classe de tráfego no tráfego de VLAN não marcado, portanto, certifique-se de que os adaptadores de host para RDMA estejam em VLANs. Este exemplo atribui os dois adaptadores virtuais de host SMB_ * para a VLAN 42.
     
     Set-VMNetworkAdapterIsolation -ManagementOS -VMNetworkAdapterName SMB_1  -IsolationMode VLAN -DefaultIsolationID 42
     Set-VMNetworkAdapterIsolation -ManagementOS -VMNetworkAdapterName SMB_2  -IsolationMode VLAN -DefaultIsolationID 42
@@ -146,7 +146,7 @@ Esta seção fornece uma visão geral do switch Embedded Integration (SET) no Wi
 
 ## <a name="bkmk_over"></a>DEFINIR visão geral
 
-O conjunto é uma solução de agrupamento NIC alternativa que você pode usar em ambientes que incluem o Hyper-V e a rede definida pelo software \(SDN @ no__t-1 Stack no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V.
+O conjunto é uma solução de agrupamento NIC alternativa que você pode usar em ambientes que incluem o Hyper-V e a rede definida pelo software \(SDN\) Stack no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V.
 
 SET permite que você agrupe entre um e oito adaptadores de rede Ethernet física em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
 
@@ -173,42 +173,42 @@ O conjunto está disponível em todas as versões do Windows Server 2016 que inc
 
 ## <a name="bkmk_nics"></a>NICs com suporte para SET
 
-Você pode usar qualquer NIC Ethernet que tenha passado o teste de qualificação de hardware e logotipo do Windows \(WHQL @ no__t-1 em uma equipe definida no Windows Server 2016. SET exige que todos os adaptadores de rede que são membros de uma equipe definida devem ser idênticos \(i. e., mesmo fabricante, mesmo modelo, mesmo firmware e driver @ no__t-1. O conjunto oferece suporte entre um e oito adaptadores de rede em uma equipe.
+Você pode usar qualquer NIC Ethernet que tenha passado o logotipo e a qualificação de hardware do Windows \(o WHQL\) teste em uma equipe definida no Windows Server 2016. SET exige que todos os adaptadores de rede que são membros de uma equipe definida devem ser idênticos \(ou seja, mesmo fabricante, mesmo modelo, mesmo firmware e driver\). O conjunto oferece suporte entre um e oito adaptadores de rede em uma equipe.
   
 ## <a name="bkmk_compat"></a>DEFINIR a compatibilidade com as tecnologias de rede do Windows Server
 
 O conjunto é compatível com as seguintes tecnologias de rede no Windows Server 2016.
 
-- Ponte de datacenter \(DCB @ no__t-1
+- Ponte de datacenter \(DCB\)
   
 - Virtualização de rede Hyper-V-NV-GRE e VxLAN têm suporte no Windows Server 2016.  
-- Descarregamentos do checksum no lado do recebimento \(IPv4, IPv6, TCP @ no__t-1-eles têm suporte se qualquer um dos membros da equipe do conjunto oferecer suporte a eles.
+- Descarregamentos do checksum no lado do recebimento \(IPv4, IPv6, TCP\)-eles têm suporte se qualquer um dos membros da equipe do conjunto oferecer suporte a eles.
 
-- Acesso remoto direto à memória \(RDMA @ no__t-1
+- Acesso remoto direto à memória \(RDMA\)
 
-- Virtualização de e/s de raiz única \(SR-IOV @ no__t-1
+- Virtualização de e/s de raiz única \(SR-IOV\)
 
-- Descarregamentos de soma de verificação do lado de transmissão \(IPv4, IPv6, TCP @ no__t-1-eles têm suporte se todos os membros da equipe do conjunto dão suporte a eles.
+- Descarregamentos de soma de verificação do lado de transmissão \(IPv4, IPv6, TCP\)-eles têm suporte se todos os membros da equipe do conjunto dão suporte a eles.
 
-- Filas da máquina virtual \(VMQ @ no__t-1
+- Filas de máquinas virtuais \(\) de VMQ
 
-- @No__t de dimensionamento do lado virtual-0RSS @ no__t-1
+- \(RSS\) em escala lateral de recebimento virtual
 
 SET não é compatível com as seguintes tecnologias de rede no Windows Server 2016.
 
-- autenticação 802.1 x. os pacotes do protocolo de autenticação extensível 802.1 x \(EAP @ no__t-1 são descartados automaticamente pelo comutador virtual Hyper @ no__t-2V em cenários de conjunto.
+- autenticação 802.1 x. o protocolo de autenticação extensível 802.1 x \(pacotes de\) EAP são automaticamente descartados pelo comutador virtual Hyper\-V em cenários de conjunto.
  
-- Descarregamento de tarefa IPsec \(IPsecTO @ no__t-1. Essa é uma tecnologia herdada que não é suportada pela maioria dos adaptadores de rede e onde ela existe, está desabilitada por padrão.
+- Descarregamento de tarefa IPsec \(\)IPsecto. Essa é uma tecnologia herdada que não é suportada pela maioria dos adaptadores de rede e onde ela existe, está desabilitada por padrão.
 
-- Usando QoS @no__t -0pacer. exe @ no__t-1 no host ou em sistemas operacionais nativos. Esses cenários de QoS não são cenários Hyper @ no__t-0V, portanto, as tecnologias não se cruzam. Além disso, a QoS está disponível, mas não está habilitada por padrão – você deve habilitar intencionalmente a QoS.
+- Usando QoS \(o Pacer. exe\) no host ou em sistemas operacionais nativos. Esses cenários de QoS não são cenários Hyper\-V, portanto, as tecnologias não se cruzam. Além disso, a QoS está disponível, mas não está habilitada por padrão – você deve habilitar intencionalmente a QoS.
 
-- @No__t de União do lado de recebimento-0RSC @ no__t-1. O RSC é desabilitado automaticamente pelo comutador virtual Hyper @ no__t-0V.
+- A União lateral de recebimento \(\)RSC. O RSC é desabilitado automaticamente pelo comutador virtual Hyper\-V.
 
-- Receber dimensionamento lateral \(RSS @ no__t-1. Como o Hyper-V usa as filas para VMQ e VMMQ, o RSS é sempre desabilitado quando você cria um comutador virtual.
+- Receber o dimensionamento lateral \(\)RSS. Como o Hyper-V usa as filas para VMQ e VMMQ, o RSS é sempre desabilitado quando você cria um comutador virtual.
 
 - Descarregamento de Chimney TCP. Essa tecnologia é desabilitada por padrão.
 
-- QoS de máquina virtual \(VM-QoS @ no__t-1. A QoS de VM está disponível, mas desabilitada por padrão. Se você configurar a QoS de VM em um ambiente definido, as configurações de QoS causarão resultados imprevisíveis.
+- QoS de máquina virtual \(VM-\)de QoS. A QoS de VM está disponível, mas desabilitada por padrão. Se você configurar a QoS de VM em um ambiente definido, as configurações de QoS causarão resultados imprevisíveis.
 
 ## <a name="bkmk_modes"></a>Definir modos e configurações
 
@@ -260,20 +260,20 @@ A VMQ e a SET funcionam bem em conjunto, e você deve habilitar a VMQ sempre que
 > [!NOTE]
 > SET sempre apresenta o número total de filas que estão disponíveis em todos os membros da equipe do conjunto. No agrupamento NIC, isso é chamado de modo de soma de filas.
 
-A maioria dos adaptadores de rede tem filas que podem ser usadas para receber o dimensionamento lateral \(RSS @ no__t-1 ou VMQ, mas não ambos ao mesmo tempo.
+A maioria dos adaptadores de rede tem filas que podem ser usadas para receber o dimensionamento do lado \(RSS\) ou VMQ, mas não ambos ao mesmo tempo.
   
 Algumas configurações de VMQ parecem ser configurações para filas RSS, mas são realmente configurações nas filas genéricas que o RSS e a VMQ usam, dependendo de qual recurso está atualmente em uso. Cada NIC tem, em suas propriedades avançadas, valores para `*RssBaseProcNumber` e `*MaxRssProcessors`.
 
 A seguir estão algumas configurações de VMQ que fornecem melhor desempenho do sistema.
 
-- Idealmente, cada NIC deve ter o `*RssBaseProcNumber` definido como um número par maior ou igual a dois (2). Isso ocorre porque o primeiro processador físico, os processadores Core 0 \(logical 0 e 1 @ no__t-1, normalmente faz a maior parte do processamento do sistema, de modo que o processamento de rede deve ser direcionado para fora desse processador físico. 
+- Idealmente, cada NIC deve ter o `*RssBaseProcNumber` definido como um número par maior ou igual a dois (2). Isso ocorre porque o primeiro processador físico, o núcleo 0 \(processadores lógicos 0 e 1\), normalmente faz a maior parte do processamento do sistema, de modo que o processamento de rede deve ser direcionado para fora desse processador físico. 
 
 >[!NOTE]
 >Algumas arquiteturas de computador não têm dois processadores lógicos por processador físico, portanto, para essas máquinas, o processador base deve ser maior ou igual a 1. Em caso de dúvida, suponha que o host esteja usando um processador lógico 2 por arquitetura de processador físico.
 
-- Os processadores da equipe devem estar, na medida em que é prático, sem sobreposição. Por exemplo, em um host de quatro núcleos \(8 processadores lógicos @ no__t-1 com uma equipe de 2 NICs 10 Gbps, você pode definir o primeiro para usar o processador base 2 e usar 4 núcleos; o segundo seria definido para usar o processador base 6 e usar dois núcleos.
+- Os processadores da equipe devem estar, na medida em que é prático, sem sobreposição. Por exemplo, em um host de 4 núcleos \(8 processadores lógicos\) com uma equipe de 2 NICs 10 Gbps, você pode definir o primeiro para usar o processador base 2 e usar 4 núcleos; o segundo seria definido para usar o processador base 6 e usar dois núcleos.
 
-## <a name="bkmk_hnv"></a>DEFINIR e virtualização de rede Hyper-V \(HNV @ no__t-2
+## <a name="bkmk_hnv"></a>DEFINIR e virtualização de rede Hyper-V \(HNV\)
 
 O conjunto é totalmente compatível com a virtualização de rede Hyper-V no Windows Server 2016. O sistema de gerenciamento HNV fornece informações para o driver de conjunto que permite que o configure o distribua a carga de tráfego de rede de uma maneira que é otimizada para o tráfego HNV.
   
@@ -283,11 +283,11 @@ O Migração ao Vivo tem suporte no Windows Server 2016.
 
 ## <a name="bkmk_mac"></a>Uso de endereço MAC em pacotes transmitidos
 
-Quando você configura uma equipe de conjunto com a distribuição de carga dinâmica, os pacotes de uma única fonte \(such como uma única VM @ no__t-1 são distribuídos simultaneamente entre vários membros da equipe. 
+Quando você configura uma equipe de conjunto com a distribuição de carga dinâmica, os pacotes de uma única fonte \(como uma única VM\) são distribuídos simultaneamente entre vários membros da equipe. 
 
 Para evitar que os interruptores fiquem confusos e evitar alarmes de oscilação de MAC, SET substitui o endereço MAC de origem por um endereço MAC diferente nos quadros que são transmitidos em membros da equipe que não sejam o membro da equipe do relacionados. Por isso, cada membro da equipe usa um endereço MAC diferente e os conflitos de endereço MAC são evitados, a menos que e até que ocorra uma falha.
 
-Quando uma falha é detectada na NIC primária, o software de agrupamento de conjunto é iniciado usando o endereço MAC da VM no membro da equipe que é escolhido para servir como o membro da equipe do relacionados temporário \(i. e., aquele que aparecerá agora para a opção como a interface da VM @ No_ _T-1.
+Quando uma falha é detectada na NIC primária, o software de agrupamento de conjunto é iniciado usando o endereço MAC da VM no membro da equipe que é escolhido para servir como o membro da equipe do relacionados temporário \(ou seja, aquele que agora será exibido para a opção, como a interface da VM\).
 
 Essa alteração se aplica somente ao tráfego que será enviado no membro da equipe relacionados da VM com o endereço MAC próprio da VM como seu endereço MAC de origem. Outro tráfego continua a ser enviado com qualquer endereço MAC de origem que ele teria usado antes da falha.
 
@@ -313,7 +313,7 @@ Veja a seguir as listas que descrevem o comportamento de substituição do ender
   
 ## <a name="bkmk_manage"></a>Gerenciando uma equipe de conjunto
 
-É recomendável que você use System Center Virtual Machine Manager \(VMM @ no__t-1 para gerenciar equipes de conjunto, no entanto, você também pode usar o Windows PowerShell para gerenciar o conjunto. As seções a seguir fornecem os comandos do Windows PowerShell que você pode usar para gerenciar o conjunto.
+É recomendável que você use System Center Virtual Machine Manager \(\) do VMM para gerenciar equipes de conjunto, no entanto, você também pode usar o Windows PowerShell para gerenciar o conjunto. As seções a seguir fornecem os comandos do Windows PowerShell que você pode usar para gerenciar o conjunto.
 
 Para obter informações sobre como criar uma equipe de conjunto usando o VMM, consulte a seção "configurar um comutador lógico" no tópico da biblioteca do System Center VMM [criar comutadores lógicos](https://docs.microsoft.com/system-center/vmm/network-switch).
   
@@ -365,9 +365,9 @@ Set-VMSwitchTeam -Name TeamedvSwitch -LoadBalancingAlgorithm Dynamic
 ```  
 ### <a name="affinitizing-virtual-interfaces-to-physical-team-members"></a>Ajustando interfaces virtuais a membros físicos da equipe
 
-SET permite que você crie uma afinidade entre uma interface virtual \(i. e., o comutador virtual do Hyper-V porta @ no__t-1 e uma das NICs físicas na equipe. 
+SET permite que você crie uma afinidade entre uma interface virtual \(ou seja, a porta do comutador virtual Hyper-V\) e uma das NICs físicas na equipe. 
 
-Por exemplo, se você criar dois vNICs de host para SMB @ no__t-0Direct, como na seção [criar um comutador virtual Hyper-V com set e RDMA vNICs](#bkmk_set-rdma), você poderá garantir que os dois vNICs usem membros da equipe diferentes. 
+Por exemplo, se você criar dois vNICs de host para SMB\-Direct, como na seção [criar um comutador virtual Hyper-V com set e RDMA vNICs](#bkmk_set-rdma), você poderá garantir que os dois vNICs usem diferentes membros da equipe. 
 
 Adicionando ao script nessa seção, você pode usar os seguintes comandos do Windows PowerShell.
 

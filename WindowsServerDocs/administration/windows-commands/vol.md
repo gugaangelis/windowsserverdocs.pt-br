@@ -36,7 +36,7 @@ vol [<Drive>:]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> de @no__t 0Drive:|Especifica a unidade que contém o disco para o qual você deseja exibir o rótulo de volume e o número de série.|
+|> da unidade de \<:|Especifica a unidade que contém o disco para o qual você deseja exibir o rótulo de volume e o número de série.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 #### <a name="additional-references"></a>Referências adicionais

@@ -48,7 +48,7 @@ Para poder fazer isso, você precisará de:
 
 ## <a name="use-windows-powershell-to-move-a-running-virtual-machine"></a>Usar o Windows PowerShell para mover uma máquina virtual em execução
   
-O exemplo a seguir usa o cmdlet Move-VM para mover uma máquina virtual chamada *LMTest* para um servidor de destino chamado *TestServer02* e move os discos rígidos virtuais e outros arquivos, tais pontos de verificação e arquivos de paginação inteligente, para o *D:\LMTest* diretório no servidor de destino.  
+O exemplo a seguir usa o cmdlet Move-VM para mover uma máquina virtual chamada *LMTest* para um servidor de destino chamado *TestServer02* e move os discos rígidos virtuais e outros arquivos, tais pontos de verificação e arquivos de paginação inteligente, para o diretório *D:\LMTest* no servidor de destino.  
   
 ```  
 PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\LMTest  
@@ -61,7 +61,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 Se você ainda não configurou a delegação restrita, deverá entrar no servidor de origem antes de poder mover uma máquina virtual. Se você não fizer isso, a tentativa de autenticação falhará, ocorrerá um erro e essa mensagem será exibida:  
   
 "Falha na operação de migração da máquina virtual na origem da migração.  
-Falha ao estabelecer uma conexão com o *nome do computador*host: Não há credenciais disponíveis no pacote de segurança 0x8009030E. "
+Falha ao estabelecer uma conexão com o *nome do computador*host: nenhuma credencial está disponível no pacote de segurança 0x8009030E. "
   
  Para corrigir esse problema, entre no servidor de origem e tente mover novamente. Para evitar ter que entrar em um servidor de origem antes de fazer uma migração ao vivo, configure a delegação restrita. Você precisará de credenciais de administrador de domínio para configurar a delegação restrita. Para obter instruções, consulte [Configurar hosts para migração dinâmica](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md). 
  
@@ -69,7 +69,7 @@ Falha ao estabelecer uma conexão com o *nome do computador*host: Não há crede
  
  Se uma máquina virtual não tiver a compatibilidade do processador ativada e tiver um ou mais instantâneos, a movimentação falhará se os hosts tiverem versões de processador diferentes. Ocorre um erro e essa mensagem é exibida:
  
-a máquina virtual @no__t 0The não pode ser movida para o computador de destino. O hardware no computador de destino não é compatível com os requisitos de hardware desta máquina virtual. **
+**A máquina virtual não pode ser movida para o computador de destino. O hardware no computador de destino não é compatível com os requisitos de hardware desta máquina virtual.**
  
  Para corrigir esse problema, desligue a máquina virtual e ative a configuração de compatibilidade do processador.
  

@@ -22,7 +22,7 @@ ms.locfileid: "71371075"
 ---
 # <a name="select-partition"></a>selecionar partição
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 seleciona a partição especificada e desloca o foco para ela. Esse comando também pode ser usado para exibir a partição que atualmente tem o foco no disco selecionado.  
   
@@ -38,7 +38,7 @@ select partition=<n>
   
 |   Parâmetro    |                                                                                    Descrição                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| partição @ no__t-0 @ no__t-1 | O número da partição que receberá o foco. Você pode exibir os números de todas as partições no disco selecionado no momento usando o comando **listar partição** no DiskPart. |
+| \=de partição <n> | O número da partição que receberá o foco. Você pode exibir os números de todas as partições no disco selecionado no momento usando o comando **listar partição** no DiskPart. |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -46,9 +46,9 @@ select partition=<n>
   
 -   Se nenhum número de partição for especificado, esse comando exibirá a partição que atualmente tem o foco no disco selecionado.  
   
--   Se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.  
+-   se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.  
   
--   Se uma partição for selecionada com um volume correspondente, o volume será selecionado automaticamente.  
+-   se uma partição for selecionada com um volume correspondente, o volume será selecionado automaticamente.  
   
 ## <a name="BKMK_examples"></a>Disso  
 Para deslocar o foco para a partição 3, digite:  
@@ -63,7 +63,7 @@ Para exibir a partição que atualmente tem o foco no disco selecionado, digite:
 select partition  
 ```  
   
-#### <a name="additional-references"></a>Referências adicionais  
+#### <a name="additional-references"></a>referências adicionais  
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 

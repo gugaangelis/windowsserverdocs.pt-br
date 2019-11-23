@@ -36,8 +36,8 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/x: @no__t -0Xmlfile. XML >|Especifica o arquivo. XML a ser exibido. Esse parâmetro deve ser especificado.|
-|/s: @no__t -0Xslfile. xsl >|Especifica a transformação. xsl a ser aplicada ao arquivo. xml como parte do processo de renderização. Esse parâmetro é opcional para arquivos ACS. xml. Quando o comando **View** é usado para renderizar um arquivo SCW. xml, ele tenta automaticamente carregar a transformação padrão correta para o arquivo. XML especificado. Se uma transformação. xsl for especificada, a transformação deverá ser escrita sob a suposição de que o arquivo. xml esteja no mesmo diretório que a transformação. Xsl.|
+|/x:\<xmlfile. XML >|Especifica o arquivo. XML a ser exibido. Esse parâmetro deve ser especificado.|
+|/s:\<xslfile. xsl >|Especifica a transformação. xsl a ser aplicada ao arquivo. xml como parte do processo de renderização. Esse parâmetro é opcional para arquivos ACS. xml. Quando o comando **View** é usado para renderizar um arquivo SCW. xml, ele tenta automaticamente carregar a transformação padrão correta para o arquivo. XML especificado. Se uma transformação. xsl for especificada, a transformação deverá ser escrita sob a suposição de que o arquivo. xml esteja no mesmo diretório que a transformação. Xsl.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

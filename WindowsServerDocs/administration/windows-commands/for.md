@@ -38,9 +38,9 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|{%% \|%} \<Variable >|Obrigatório. Representa um parâmetro substituível. Use um único sinal de porcentagem ( **%** ) para executar o comando **for** no prompt de comando. Use sinais de porcentagem duplas ( **%%** ) para executar o comando **for** em um arquivo em lotes. As variáveis diferenciam maiúsculas de minúsculas e devem ser representadas com um valor alfabético, como **% A**, **% B**ou **% C**.|
-|(\<Set >)|Obrigatório. Especifica um ou mais arquivos, diretórios ou cadeias de caracteres de texto ou um intervalo de valores nos quais o comando deve ser executado. Os parênteses são necessários.|
-|\<Command >|Obrigatório. Especifica o comando que você deseja executar em cada arquivo, diretório ou cadeia de caracteres de texto ou no intervalo de valores incluídos no *conjunto*.|
+|{%%\|%}\<variável >|Necessário. Representa um parâmetro substituível. Use um único sinal de porcentagem ( **%** ) para executar o comando **for** no prompt de comando. Use sinais de porcentagem duplas ( **%%** ) para executar o comando **for** em um arquivo em lotes. As variáveis diferenciam maiúsculas de minúsculas e devem ser representadas com um valor alfabético, como **% A**, **% B**ou **% C**.|
+|(conjunto de\<>)|Necessário. Especifica um ou mais arquivos, diretórios ou cadeias de caracteres de texto ou um intervalo de valores nos quais o comando deve ser executado. Os parênteses são necessários.|
+|> de comando \<|Necessário. Especifica o comando que você deseja executar em cada arquivo, diretório ou cadeia de caracteres de texto ou no intervalo de valores incluídos no *conjunto*.|
 |\<CommandLineOptions >|Especifica as opções de linha de comando que você deseja usar com o comando especificado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -52,9 +52,9 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 - Usando parâmetros de lote
 
   Os seguintes atributos se aplicam ao comando **for** :  
-  - O comando **for** substitui a variável **%** <em>ou</em> a<em>variável</em> **%%** por cada cadeia de texto no conjunto especificado até que o comando especificado processe todos os arquivos.
+  - O comando **for** substitui **%** <em>variável</em> ou **%%** <em>variável</em> com cada cadeia de texto no conjunto especificado até que o comando especificado processe todos os arquivos.
   - Os nomes de variáveis diferenciam maiúsculas de minúsculas, globais e não mais do que 52 podem estar ativos por vez.
-  - Para evitar confusão com os parâmetros de lote **% 0** a **% 9**, você pode usar qualquer caractere para a *variável* , exceto os numerais de 0 a 9. Para arquivos em lotes simples, um único caractere como **%% f** funcionará.
+  - Para evitar confusão com os parâmetros de lote **%0** a **%9**, você pode usar qualquer caractere para a *variável* , exceto os numerais de 0 a 9. Para arquivos em lotes simples, um único caractere como **%% f** funcionará.
   - Você pode usar vários valores para a *variável* em arquivos de lote complexos para distinguir variáveis substituíveis diferentes.
 - Especificando um grupo de arquivos
 
@@ -65,7 +65,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
   (jan*.doc jan*.rpt feb*.doc feb*.rpt)
   (ar??1991.* ap??1991.*)
   ```  
-  Quando você usa o comando **for** , o primeiro valor no *conjunto* substitui a variável **%** <em>ou</em> a<em>variável</em> **%%** e, em seguida, o comando especificado processa esse valor. Isso continuará até que todos os arquivos (ou grupos de arquivos) que correspondam ao valor *definido* sejam processados.
+  Quando você usa o comando **for** , o primeiro valor em *conjunto* substitui **%** <em>variável</em> ou **%%** <em>variável</em>e, em seguida, o comando especificado processa esse valor. Isso continuará até que todos os arquivos (ou grupos de arquivos) que correspondam ao valor *definido* sejam processados.
 - Usando as palavras-chave **in** e **do**
 
   **No** e **não** são parâmetros, mas você deve usá-los com o **para**. Se você omitir qualquer uma dessas palavras-chave, uma mensagem de erro será exibida.
@@ -120,11 +120,11 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     |      Palavra-chave      |                                                                                                                                                                                                          Descrição                                                                                                                                                                                                          |
     |-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    |     EOL = \<c >      |                                                                                                                                                                                   Especifica um caractere de fim de linha (apenas um caractere).                                                                                                                                                                                    |
-    |     Skip = \<N >     |                                                                                                                                                                              Especifica o número de linhas a serem ignoradas no início do arquivo.                                                                                                                                                                              |
-    |   delims = \<xXX >   |                                                                                                                                                                     Especifica um conjunto de delimitadores. Isso substitui o conjunto de delimitadores padrão de espaço e tabulação.                                                                                                                                                                      |
-    | tokens = \<X, Y, M – N > | Especifica quais tokens de cada linha devem ser passados para o loop **for** para cada iteração. Como resultado, são alocados nomes de variáveis adicionais. *M*–*n* especifica um intervalo, do *m*ésimo até os *N*ésimo tokens. Se o último caractere em **tokens =** String for um asterisco ( **&#42;** ), uma variável adicional será alocada e receberá o texto restante na linha após o último token analisado. |
-    |     usebackq      |                                                                                             Especifica para: executar uma cadeia de caracteres entre aspas traseiras como um comando, usar uma cadeia de caracteres entre aspas simples como uma cadeia de caracteres literal ou, para nomes de arquivo longos que contenham espaços, permitir nomes de arquivo em *\<set @ no__t-2*, para cada um deles entre aspas duplas.                                                                                              |
+    |     EOL =\<c >      |                                                                                                                                                                                   Especifica um caractere de fim de linha (apenas um caractere).                                                                                                                                                                                    |
+    |     Skip =\<N >     |                                                                                                                                                                              Especifica o número de linhas a serem ignoradas no início do arquivo.                                                                                                                                                                              |
+    |   delims =\<xxx >   |                                                                                                                                                                     Especifica um conjunto de delimitadores. Isso substitui o conjunto de delimitadores padrão de espaço e tabulação.                                                                                                                                                                      |
+    | tokens =\<X, Y, M – N > | Especifica quais tokens de cada linha devem ser passados para o loop **for** para cada iteração. Como resultado, são alocados nomes de variáveis adicionais. *M*–*n* especifica um intervalo, do *m*ésimo até os *N*ésimo tokens. Se o último caractere em **tokens =** String for um asterisco ( **&#42;** ), uma variável adicional será alocada e receberá o texto restante na linha após o último token analisado. |
+    |     usebackq      |                                                                                             Especifica para: executar uma cadeia de caracteres entre aspas invertidas como um comando, usar uma cadeia de caracteres entre aspas simples como uma cadeia de caracteres literal ou, para nomes de arquivo longos que contenham espaços, permitir nomes de arquivos no *conjunto de\<\>* , a cada um será colocado entre aspas duplas.                                                                                              |
 
 
   - Substituição de variável
@@ -155,15 +155,15 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     |% ~ DP $ caminho: I|Pesquisa os diretórios listados na variável de ambiente PATH para **% I** e expande para a letra da unidade e o caminho do primeiro encontrado.|
     |% ~ ftzaI|Expande **% I** para uma linha de saída que é como **dir**.|
 
-    Nos exemplos acima, você pode substituir **% I** e Path por outros valores válidos. Um válido **para nome de** variável encerra a sintaxe **%~** .
+    Nos exemplos acima, você pode substituir **% I** e Path por outros valores válidos. Um válido **para nome de** variável encerra a sintaxe de **%~** .
 
     Usando nomes de variáveis em letras maiúsculas, como **% I**, você pode tornar seu código mais legível e evitar confusão com os modificadores, que não diferenciam maiúsculas de minúsculas.
 - Analisando uma cadeia de caracteres
 
-  Você pode usar a lógica **de análise for/f** em uma cadeia de caracteres imediata encapsulando *\<LiteralString @ no__t-3* em: aspas duplas (*sem* "usebackq") ou entre aspas simples (*com* "usebackq")--por exemplo, ("MyString") ou (" MyString '). *\<LiteralString @ no__t-2* é tratado como uma única linha de entrada de um arquivo. Ao analisar *\<LiteralString @ no__t-2* em aspas duplas, os símbolos de comando (como **\\ \& \| \> \< \^** ) são tratados como caracteres comuns.
+  Você pode usar a lógica **de análise for/f** em uma cadeia de caracteres imediata encapsulando *\<literastring\>* em: aspas duplas (*sem* "usebackq") ou entre aspas simples (*com* "usebackq")--por exemplo, ("MyString") ou ("MyString"). *\<literalstring\>* é tratado como uma única linha de entrada de um arquivo. Ao analisar *\<literastring\>* em aspas duplas, símbolos de comando (como **\\ \& \|** \> \< \^) são tratados como caracteres comuns.
 - Saída de análise
 
-  Você pode usar o comando **for/f** para analisar a saída de um comando, colocando um *\<command @ no__t-3* entre parênteses. Ele é tratado como uma linha de comando, que é passada para um cmd. exe filho. A saída é capturada na memória e analisada como se fosse um arquivo.
+  Você pode usar o comando **for/f** para analisar a saída de um comando colocando um *comando de\<* entre aspas invertidas\>entre os parênteses. Ele é tratado como uma linha de comando, que é passada para um cmd. exe filho. A saída é capturada na memória e analisada como se fosse um arquivo.
 
 ## <a name="BKMK_examples"></a>Disso
 

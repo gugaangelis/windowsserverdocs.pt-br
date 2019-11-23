@@ -34,7 +34,7 @@ bitsadmin /RawReturn
 
 Remove os caracteres de nova linha e a formatação da saída.
 
-Normalmente, você usa esse comando em conjunto com as opções **criar** e **obter @ no__t-2*** para receber apenas o valor. Você deve especificar essa opção antes de outras opções.
+Normalmente, você usa esse comando em conjunto com as opções **criar** e **obter\\** * para receber apenas o valor. Você deve especificar essa opção antes de outras opções.
 
 ## <a name="BKMK_examples"></a>Disso
 

@@ -76,18 +76,18 @@ O modelo é aberto em uma janela separada e são fornecidas instruções adicion
     > [!NOTE]  
     > Se o sistema MultiPoint Services não estiver em execução no modo de estação, reinicie-o antes de concluir este procedimento.  
   
-2.  Selecione o modelo de área de trabalho virtual no painel da esquerda @ no__t-0hand. Ele é chamado <prefix –t >.  
+2.  Selecione o modelo de área de trabalho virtual no painel do lado esquerdo\-. Ele é chamado <prefix –t >.  
   
 3.  Nas tarefas do modelo, clique em **Create virtual desktop stations (Criar estações de área de trabalho virtual)** e clique em **OK**.  
   
     O processo de criação da estação de área de trabalho virtual leva vários minutos.  
   
     > [!NOTE]  
-    > Se qualquer uma das estações locais estiver atualmente conectada a uma sessão @ no__t-0based área de trabalho virtual, você deverá fazer logoff dessas estações para que elas se conectem a uma das estações de área de trabalho virtuais recém-criadas.  
+    > Se qualquer uma das estações locais estiver conectada a uma sessão\-com base na área de trabalho virtual, você deverá fazer logoff dessas estações para que elas se conectem a uma das estações de área de trabalho virtuais recém-criadas.  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>Validar as áreas de trabalho da estação virtual personalizada recém-criadas  
   
-Você pode validar suas áreas de trabalho de estação virtual personalizadas fazendo logon em uma ou mais das estações de área de trabalho virtual usando uma conta de administrador local ou uma conta de domínio e, em seguida, verificar se as novas áreas de trabalho virtuais VM @ no__t-0based estão funcionando corretamente.  
+Você pode validar suas áreas de trabalho de estação virtual personalizadas fazendo logon em uma ou mais das estações de área de trabalho virtual usando uma conta de administrador local ou uma conta de domínio e, em seguida, verificar se as novas áreas de trabalho virtuais baseadas na VM\-estão funcionando corretamente.  
   
 ## <a name="disable-virtual-desktops"></a>Desabilitar áreas de trabalho virtuais  
   
