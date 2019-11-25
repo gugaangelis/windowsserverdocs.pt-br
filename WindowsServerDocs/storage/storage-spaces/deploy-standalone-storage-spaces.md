@@ -34,7 +34,7 @@ A figura a seguir ilustra o fluxo de trabalho dos Espaços de Armazenamento.
 
 ![Fluxo de trabalho de Espaços de Armazenamento](media/deploy-standalone-storage-spaces/storage-spaces-workflow.png)
 
-**Figura 1: Fluxo de trabalho de espaços de armazenamento @ no__t-0
+**Figura 1: fluxo de trabalho de espaços de armazenamento**
 
 >[!NOTE]
 >Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6).
@@ -61,7 +61,7 @@ Para planejar o número de discos físicos e o tipo de resiliência desejado par
 |**Espelho**<br><br>-Armazena duas ou três cópias dos dados no conjunto de discos físicos<br>-Aumenta a confiabilidade, mas reduz a capacidade. A duplicação ocorre a cada gravação. Um espaço espelhado também distribui os dados entre diversas unidades físicas.<br>-Maior taxa de transferência de dados e menor latência de acesso que a paridade<br>– Usa o controle de região sujo (DRT) para controlar as modificações nos discos no pool. Quando o sistema volta de um desligamento inesperado e os espaços ficam novamente online, o DRT torna os discos do pool consistentes entre si.|Ele requer ao menos dois discos para oferecer proteção contra falha de disco único.<br><br>Ele requer ao menos cinco discos para oferecer proteção contra duas falhas de disco simultâneas.|Use para a maioria das implantações. Por exemplo, espaços de espelho são indicados para o compartilhamento de arquivos geral ou para uma biblioteca de VHD (disco rígido virtual).|
 |**Paridade**<br><br>-Distribui dados e informações de paridade em discos físicos<br>-Aumenta a confiabilidade quando comparada a um espaço simples, mas, de certa forma, reduz a capacidade<br>-Aumenta a resiliência por meio do registro em diário. Isso ajuda a prevenir dados corrompidos em caso de desligamento inesperado.|Ele requer ao menos três discos para oferecer proteção contra falha de disco único.|Use para cargas de trabalho que são altamente sequenciais, como arquivos ou backups.|
 
-## <a name="step-1-create-a-storage-pool"></a>Etapa 1: Criar um pool de armazenamento
+## <a name="step-1-create-a-storage-pool"></a>Etapa 1: criar um pool de armazenamento
 
 Primeiramente, você deve agrupar os discos físicos disponíveis em um ou mais pools de armazenamento.
 
@@ -124,7 +124,7 @@ $PDToAdd = Get-PhysicalDisk –FriendlyName PhysicalDisk5
 Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToAdd –Usage HotSpare
 ```
 
-## <a name="step-2-create-a-virtual-disk"></a>Etapa 2: Criar um disco virtual
+## <a name="step-2-create-a-virtual-disk"></a>Etapa 2: criar um disco virtual
 
 Em seguida, você deverá criar um ou mais discos virtuais no pool de armazenamento. Ao criar um disco virtual, você pode selecionar como os dados são distribuídos entre os discos físicos. Isso afeta a confiabilidade e o desempenho. Você também pode selecionar se deseja criar discos provisionados dinâmicos ou fixos.
 
@@ -215,7 +215,7 @@ O exemplo a seguir cria um disco virtual chamado *VirtualDisk1* em um pool de ar
 New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1 -ResiliencySettingName Mirror -NumberOfDataCopies 3 -Size 20GB -ProvisioningType Fixed
 ```
 
-## <a name="step-3-create-a-volume"></a>Etapa 3: Criar um volume
+## <a name="step-3-create-a-volume"></a>Etapa 3: criar um volume
 
 Em seguida, você deve criar um volume para o disco virtual. Você pode atribuir uma letra de unidade ou pasta opcional e formatar o volume com um sistema de arquivos.
 

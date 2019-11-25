@@ -171,7 +171,7 @@ Cada um desses tipos de sincronização é discutido na seção a seguir.
 A sincronização baseada em uma hierarquia de domínio usa a hierarquia de domínio AD DS para encontrar uma fonte confiável com a qual sincronizar a hora. Com base na hierarquia de domínio, o serviço de tempo do Windows determina a precisão de cada servidor de horário. Em uma floresta do Windows Server 2003, o computador que contém a função de mestre de operações do emulador de controlador de domínio primário (PDC), localizada no domínio raiz da floresta, mantém a posição da melhor fonte de tempo, a menos que outra fonte de tempo confiável tenha sido configurada. A figura a seguir ilustra um caminho de sincronização de tempo entre computadores em uma hierarquia de domínio.  
   
 **Sincronização de tempo em uma hierarquia de AD DS**  
-Tempo de ![Windows @ no__t-1
+![de tempo do Windows](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_ntw_adhc.gif)
   
 #### <a name="reliable-time-source-configuration"></a>Configuração de fonte de tempo confiável  
 Um computador configurado para ser uma fonte de tempo confiável é identificado como a raiz do serviço de tempo. A raiz do serviço de tempo é o servidor autoritativo para o domínio e normalmente é configurada para recuperar o tempo de um servidor NTP externo ou dispositivo de hardware. Um servidor de horário pode ser configurado como uma fonte de tempo confiável para otimizar como o tempo é transferido em toda a hierarquia de domínio. Se um controlador de domínio estiver configurado para ser uma fonte de tempo confiável, o serviço de logon de rede anunciará esse controlador de domínio como uma fonte de tempo confiável quando ele fizer logon na rede. Quando outros controladores de domínio procuram uma fonte de tempo para sincronizar com o, eles escolhem uma fonte confiável primeiro, se houver uma disponível.  
@@ -208,7 +208,7 @@ A tabela a seguir lista as consultas que um controlador de domínio faz para loc
 |1|Controlador de domínio pai|No local|Prefere uma fonte de tempo confiável, mas pode sincronizar com uma fonte de tempo não confiável se isso for tudo disponível.|  
 |2|Controlador de domínio local|No local|Só sincroniza com uma fonte de tempo confiável.|  
 |3|Emulador de PDC local|No local|Não se aplica.<br /><br />Um controlador de domínio não tenta sincronizar com ele mesmo.|  
-|4|Controlador de domínio pai|Fora do site|Prefere uma fonte de tempo confiável, mas pode sincronizar com uma fonte de tempo não confiável se isso for tudo disponível.|  
+|추가를 클릭합니다.|Controlador de domínio pai|Fora do site|Prefere uma fonte de tempo confiável, mas pode sincronizar com uma fonte de tempo não confiável se isso for tudo disponível.|  
 |5|Controlador de domínio local|Fora do site|Só sincroniza com uma fonte de tempo confiável.|  
 |6|Emulador de PDC local|Fora do site|Não se aplica.<br /><br />Um controlador de domínio não tenta sincronizar com ele mesmo.| 
   
@@ -223,7 +223,7 @@ Cada consulta retorna uma lista de controladores de domínio que podem ser usado
 |Status do controlador de domínio|Pontuação|  
 |----------------------------|---------|  
 |Controlador de domínio localizado no mesmo site|8|  
-|Controlador de domínio marcado como uma fonte de tempo confiável|4|  
+|Controlador de domínio marcado como uma fonte de tempo confiável|추가를 클릭합니다.|  
 |Controlador de domínio localizado no domínio pai|2|  
 |Controlador de domínio que é um emulador de PDC|1|  
   
@@ -264,5 +264,5 @@ O serviço de tempo do Windows se comunica em uma rede para identificar fontes d
   
 ## <a name="see-also"></a>Consulte também  
 [Referência técnica do serviço de tempo do windows](windows-time-service-tech-ref.md)
-[ferramentas e configurações de serviço de tempo do Windows](Windows-Time-Service-Tools-and-Settings.md)
-[artigo da base de dados de conhecimento Microsoft 902229](https://go.microsoft.com/fwlink/?LinkId=186066)
+[ferramentas e configurações do serviço de tempo do windows](Windows-Time-Service-Tools-and-Settings.md)
+[artigo 902229 da base de dados de conhecimento Microsoft](https://go.microsoft.com/fwlink/?LinkId=186066)

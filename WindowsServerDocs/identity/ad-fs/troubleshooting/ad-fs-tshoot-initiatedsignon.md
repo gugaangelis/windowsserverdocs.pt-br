@@ -23,17 +23,17 @@ Por padrão, AD FS no Windows 2016 não tem a página de logon habilitada.  Para
 
 1.  Abrir o Windows PowerShell
 2.  Insira: `Get-AdfsProperties` e pressione Enter
-3.  Verifique se **EnableIdpInitiatedSignonPage** está definido como false ![False @ no__t-2
+3.  Verifique se **EnableIdpInitiatedSignonPage** está definido como false ![false](media/ad-fs-tshoot-initiatedsignon/idp2.png)
 4.  No PowerShell, digite: `Set-AdfsProperties -EnableIdpInitiatedSignonPage $true`
 5.  Você não verá uma confirmação, portanto, digite Get-Adfsproperties novamente e verifique se **EnableIdpInitatedSignonPage** está definido como true.
-![True @ no__t-1
+![verdadeiro](media/ad-fs-tshoot-initiatedsignon/idp4.png)
 
 ## <a name="test-authentication"></a>Testar autenticação
 Use o procedimento a seguir para testar AD FS autenticação com a página de logon iniciada pelo IDP.
 
-1.  Abra um navegador da Web e navegue até a página de logon do IDP.  Exemplo https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
+1.  Abra um navegador da Web e navegue até a página de logon do IDP.  Exemplo: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 2.  Você deve ser solicitado a entrar.  Insira suas credenciais.
-![Sign-on @ no__t-1
+![logon](media/ad-fs-tshoot-initiatedsignon/idp5.png)
 3.  Se isso tiver sido bem-sucedido, você deverá estar conectado.
 
 
@@ -42,14 +42,14 @@ Você pode testar a experiência de logon contínuo, certificando-se de que a UR
 
 1.  Em um cliente do Windows 10, clique em Iniciar e digite opções da Internet e selecione opções da Internet.
 2.   Clique na guia Segurança, clique em intranet local e clique no botão sites.
-![Seamless @ no__t-1
+![](media/ad-fs-tshoot-initiatedsignon/idp8.png) contínuo
 1.  Clique em Avançado.
 2.  Insira sua URL e clique em Adicionar.  Clique em fechar.
-URL de @no__t 0Add @ no__t-1
+![Adicionar URL](media/ad-fs-tshoot-initiatedsignon/idp9.png)
 1.  Clique em OK.  Clique em OK.  Isso deve fechar as opções da Internet.
-2.  Abra um navegador da Web e navegue até a página de logon do IDP.  Exemplo https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
+2.  Abra um navegador da Web e navegue até a página de logon do IDP.  Exemplo: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 3.  Clique no botão entrar.  Você deve entrar automaticamente e não será solicitado a fornecer as credenciais.
-![Seamless @ no__t-1
+![](media/ad-fs-tshoot-initiatedsignon/idp6.png) contínuo
 
 ## <a name="next-steps"></a>Próximas etapas
 

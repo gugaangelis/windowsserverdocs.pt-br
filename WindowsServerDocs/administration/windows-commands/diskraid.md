@@ -26,7 +26,7 @@ ms.locfileid: "71377803"
 
 O DiskRAID é uma ferramenta de linha de comando que permite configurar e gerenciar a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
 
-O RAID é um método usado para padronizar e categorizar sistemas de disco tolerantes a falhas. Os níveis de RAID fornecem várias combinações de desempenho, confiabilidade e custo. O RAID é geralmente usado em servidores. Alguns servidores fornecem três dos níveis de RAID: Nível 0 (distribuição), nível 1 (espelhamento) e nível 5 (distribuição com paridade).
+O RAID é um método usado para padronizar e categorizar sistemas de disco tolerantes a falhas. Os níveis de RAID fornecem várias combinações de desempenho, confiabilidade e custo. O RAID é geralmente usado em servidores. Alguns servidores fornecem três dos níveis de RAID: nível 0 (distribuição), nível 1 (espelhamento) e nível 5 (distribuição com paridade).
 
 Um subsistema RAID de hardware distingue unidades de armazenamento endereçáveis fisicamente umas das outras usando um LUN (número de unidade lógica). Um objeto LUN deve ter pelo menos um plex e pode ter qualquer número de plexes adicionais. Cada plex contém uma cópia dos dados no objeto LUN. Os plexes podem ser adicionados e removidos de um objeto LUN.
 
@@ -88,7 +88,7 @@ add tpgroup tportal=n [noerr]
 
 #### <a name="parameters"></a>Parâmetros
 
-**LUN de plex n**=
+**LUN de plex**=*n*
 
 Especifica o número de LUN a ser adicionado como um plex para o LUN selecionado no momento.
 
@@ -183,11 +183,11 @@ Limpa os sinalizadores especificados. A palavra-chave **All** apaga todos os sin
 
 Aplica os sinalizadores atuais ao LUN selecionado.
 
-\<sinalizador >
+sinalizador de \<>
 
 Os sinalizadores são identificados por acrônimos de três letras.
 
-|Sinalizador|Descrição|
+|Flag|Descrição|
 |----|-----------|
 |FCR|Recuperação rápida de falhas necessária|
 |FTL|Tolerante a falhas|
@@ -319,7 +319,7 @@ Cria um LUN espelhado.
 
 Cria um LUN usando as dicas *automagic* atualmente em vigor. Consulte o subcomando **automagic** para obter mais informações.
 
-**tamanho**=
+= de **tamanho**
 
 Especifica o tamanho total do LUN em megabytes. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas.
 
@@ -333,7 +333,7 @@ Para especificar o tamanho usando outras unidades, use um dos seguintes sufixos 
 -   **TB** para terabyte.
 -   **PB** para petabyte.
 
-**controla**=
+**unidades**=
 
 Especifica o *drive_number* para as unidades a serem usadas para criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Se o parâmetro **size =** for especificado, os provedores selecionarão unidades da lista de unidades especificadas para criar o LUN. Os provedores tentarão usar as unidades na ordem especificada, quando possível.
 
@@ -561,7 +561,7 @@ Para especificar o tamanho usando outras unidades, use um dos seguintes sufixos 
 
 **unidades =**
 
-Especifica o > de @no__t 0drive_number para as unidades a serem usadas ao criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Os provedores usam as unidades na ordem especificada quando possível.
+Especifica o > de drive_number \<para as unidades a serem usadas ao criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Os provedores usam as unidades na ordem especificada quando possível.
 
 **NOERR**
 
@@ -569,7 +569,7 @@ Especifica que qualquer falha que ocorra durante a execução desta operação d
 
 #### <a name="remarks"></a>Comentários
 
-O *tamanho* ou a \<unidade > parâmetro deve ser especificado. Eles também podem ser usados juntos.
+O *tamanho* ou o parâmetro da unidade de \<> deve ser especificado. Eles também podem ser usados juntos.
 
 ### <a name="BKMK_12"></a>flushcache
 
@@ -644,23 +644,23 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 Especifica a política de balanceamento de carga. Se o tipo não for especificado, o parâmetro **path** deverá ser especificado. O tipo pode ser um dos seguintes:
 
-**FAILOVER**: Usa um caminho principal com outros caminhos sendo caminhos de backup.
+**Failover**: usa um caminho primário com outros caminhos sendo caminhos de backup.
 
-**ROUNDROBIN**: Usa todos os caminhos no modo Round Robin, que tenta cada caminho sequencialmente.
+**RoundRobin**: usa todos os caminhos no modo Round Robin, que tenta cada caminho sequencialmente.
 
-**SUBSETROUNDROBIN**: Usa todos os caminhos primários no modo Round Robin; os caminhos de backup serão usados somente se todos os caminhos primários falharem.
+**SUBSETROUNDROBIN**: usa todos os caminhos primários no modo Round Robin; os caminhos de backup serão usados somente se todos os caminhos primários falharem.
 
-**DYNLQD**: Usa o caminho com o número mínimo de solicitações ativas.
+**DYNLQD**: usa o caminho com o número mínimo de solicitações ativas.
 
-**PONDERADO**: Usa o caminho com o mínimo peso (cada caminho deve ser atribuído a um peso).
+**Ponderado**: usa o caminho com o mínimo de peso (cada caminho deve ser atribuído a um peso).
 
-**LEASTBLOCKS**: Usa o caminho com os blocos mínimos.
+**LEASTBLOCKS**: usa o caminho com os blocos mínimos.
 
-**VENDORSPECIFIC**: Usa uma política específica do fornecedor.
+**VENDORSPECIFIC**: usa uma política específica do fornecedor.
 
 **estruturas**
 
-Especifica se um caminho é **primário** ou tem um determinado \<peso >. Todos os caminhos não especificados são definidos implicitamente como backup. Todos os caminhos listados devem ser um dos caminhos de LUN atualmente selecionados.
+Especifica se um caminho é **primário** ou tem um determinado peso de \<>. Todos os caminhos não especificados são definidos implicitamente como backup. Todos os caminhos listados devem ser um dos caminhos de LUN atualmente selecionados.
 
 ### <a name="BKMK_19"></a>lista
 
@@ -756,17 +756,17 @@ Especifica um portal de destino opcional no subsistema selecionado no momento pa
 
 Especifica um portal do iniciador opcional no adaptador do iniciador especificado a ser usado para o logon.
 
-\<sinalizador >
+sinalizador de \<>
 
 Identificado por três acrônimos de letra:
 
-**IPS**: Exigir IPsec
+**IPS**: exigir IPSec
 
-**EMP**: Habilitar vários caminhos
+**EMP**: habilitar vários caminhos
 
-**EHD**: Habilitar Resumo de cabeçalho
+**EHD**: habilitar Resumo de cabeçalho
 
-**EDD**: Habilitar Resumo de dados
+**EDD**: habilitar o resumo de dados
 
 ### <a name="BKMK_21"></a>logout
 
@@ -796,11 +796,11 @@ maintenance <object operation> [count=<iteration>]
 
 #### <a name="parameters"></a>Parâmetros
 
-\<> de objeto
+objeto \<>
 
 Especifica o tipo de objeto no qual executar a operação. O tipo de *objeto* pode ser um **subsistema**, **controlador**, **porta, unidade** ou **LUN**.
 
-\<> de operação
+\<operação >
 
 Especifica a operação de manutenção a ser executada. O tipo de *operação* pode ser **SPINUP**, **spindown**, **piscar**, **emitir aviso sonoro** ou **ping**. Uma *operação* deve ser especificada.
 
@@ -836,9 +836,9 @@ offline <object>
 
 #### <a name="parameter"></a>Parâmetro
 
-\<> de objeto
+objeto \<>
 
-Especifica o tipo de objeto no qual executar esta operação. O \<objeto >
+Especifica o tipo de objeto no qual executar esta operação. O objeto \<>
 
 o tipo pode ser **subsistema**, **controlador**, **unidade**, **LUN**ou **tportal**.
 
@@ -854,9 +854,9 @@ online <object>
 
 #### <a name="parameter"></a>Parâmetro
 
-\<> de objeto
+objeto \<>
 
-Especifica o tipo de objeto no qual executar esta operação. O \<objeto >
+Especifica o tipo de objeto no qual executar esta operação. O objeto \<>
 
 o tipo pode ser **hbaport**, **Subsystem**, **Controller**, **drive**, **LUN**ou **tportal**.
 
@@ -944,7 +944,7 @@ replace drive=<drive_number>
 
 **unidade =**
 
-Especifica o > de @no__t 0drive_number para a unidade a ser substituída.
+Especifica o > de drive_number \<para a unidade a ser substituída.
 
 #### <a name="remarks"></a>Comentários
 
@@ -984,59 +984,59 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 **objeto**
 
-Especifica o tipo de objeto a ser selecionado. O \<tipo de > de objeto pode ser **Provider**, **Subsystem**, **Controller**, **drive**ou **LUN**.
+Especifica o tipo de objeto a ser selecionado. O tipo de objeto de \<> pode ser **provedor**, **subsistema**, **controlador**, **unidade**ou **LUN**.
 
-**hbaport** [\<N >]
+**hbaport** [\<n >]
 
 Define o foco para a porta HBA local especificada. Se nenhuma porta HBA for especificada, o comando exibirá a porta HBA selecionada no momento (se houver). A especificação de um índice de porta HBA inválido resulta em nenhuma porta HBA em foco. A seleção de uma porta HBA anula a seleção de todos os adaptadores iniciadores e portais iniciadores selecionados.
 
-**IADAPTER** [\<N >]
+**IADAPTER** [\<n >]
 
 Define o foco para o adaptador do iniciador iSCSI local especificado. Se nenhum adaptador do iniciador for especificado, o comando exibirá o adaptador do iniciador selecionado no momento (se houver). A especificação de um índice de adaptador iniciador inválido resulta em nenhum adaptador de iniciador em foco. A seleção de um adaptador de iniciador anula a seleção de portas HBA selecionadas e portais do iniciador.
 
-**IPORTAL** [\<N >]
+**IPORTAL** [\<n >]
 
 Define o foco para o portal do iniciador iSCSI local especificado no adaptador do iniciador iSCSI selecionado. Se nenhum portal do iniciador for especificado, o comando exibirá o portal do iniciador selecionado no momento (se houver). A especificação de um índice inválido do portal do iniciador resulta em nenhum portal do iniciador selecionado.
 
-**provedor** [\<N >]
+**provedor** [\<n >]
 
 Define o foco para o provedor especificado. Se nenhum provedor for especificado, o comando exibirá o provedor selecionado no momento (se houver). A especificação de um índice de provedor inválido resulta em nenhum provedor em foco.
 
-**subsistema** [\<N >]
+**subsistema** [\<n >]
 
 Define o foco para o subsistema especificado. Se nenhum subsistema for especificado, o comando exibirá o subsistema com foco (se houver). A especificação de um índice de subsistema inválido resulta em nenhum subsistema em foco. A seleção de um subsistema seleciona implicitamente seu provedor associado.
 
-**controlador** [\<N >]
+**controlador** [\<n >]
 
 Define o foco para o controlador especificado no subsistema selecionado no momento. Se nenhum controlador for especificado, o comando exibirá o controlador selecionado no momento (se houver). A especificação de um índice de controlador inválido resulta em nenhum controlador em foco. A seleção de um controlador anula a seleção de quaisquer portas de controlador, unidades, LUNs, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**porta** [\<N >]
+**porta** [\<n >]
 
 Define o foco para a porta do controlador especificado no controlador selecionado no momento. Se nenhuma porta for especificada, o comando exibirá a porta selecionada no momento (se houver). A especificação de um índice de porta inválido resulta em nenhuma porta selecionada.
 
-**unidade** [\<N >]
+**unidade** [\<n >]
 
 Define o foco para a unidade especificada ou o eixo físico no subsistema selecionado no momento. Se nenhuma unidade for especificada, o comando exibirá a unidade selecionada no momento (se houver). A especificação de um índice de unidade inválido resulta em nenhuma unidade em foco. A seleção de uma unidade anula a seleção de todos os controladores, portas do controlador, LUNs, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**LUN** [\<N >]
+**LUN** [\<n >]
 
 Define o foco para o LUN especificado no subsistema selecionado no momento. Se nenhum LUN for especificado, o comando exibirá o LUN selecionado no momento (se houver). A especificação de um índice LUN inválido resulta em nenhum LUN selecionado. A seleção de um LUN anula a seleção de todos os controladores, portas do controlador, unidades, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**tportal** [\<N >]
+**tportal** [\<n >]
 
 Define o foco para o portal de destino iSCSI especificado no subsistema selecionado no momento. Se nenhum portal de destino for especificado, o comando exibirá o portal de destino selecionado no momento (se houver). A especificação de um índice do portal de destino inválido resulta em nenhum portal de destino selecionado. A seleção de um portal de destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, destinos e grupos do portal de destino.
 
-**target** [\<N >]
+**destino** [\<n >]
 
 Define o foco para o destino iSCSI especificado no subsistema selecionado no momento. Se nenhum destino for especificado, o comando exibirá o destino selecionado no momento (se houver). A especificação de um índice de destino inválido resulta em nenhum destino selecionado. A seleção de um destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, portais de destino e grupos do portal de destino.
 
-**TPGROUP** [\<N >]
+**TPGROUP** [\<n >]
 
 Define o foco para o grupo do portal de destino iSCSI especificado no destino iSCSI selecionado no momento. Se nenhum grupo do portal de destino for especificado, o comando exibirá o grupo do portal de destino selecionado no momento (se houver). A especificação de um índice de grupo do portal de destino inválido resulta em nenhum grupo de portal de destino em foco.
 
-[\<N >]
+[\<n >]
 
-Especifica o \<número do objeto > a ser selecionado. Se o <object number> especificado não for válido, todas as seleções existentes para objetos do tipo especificado serão limpas. Se não <object number> for especificado, o objeto atual será exibido.
+Especifica o número do objeto de \<> a ser selecionado. Se o <object number> especificado não for válido, todas as seleções existentes para objetos do tipo especificado serão limpas. Se nenhum <object number> for especificado, o objeto atual será exibido.
 
 ### <a name="BKMK_34"></a>SetFlag
 
@@ -1156,10 +1156,10 @@ Por padrão, o DiskRAID para o processamento de comandos e retorna um código de
 |1|Ocorreu uma exceção fatal.|
 |2|Os argumentos especificados em uma linha de comando do DiskRAID estavam incorretos.|
 |3|O DiskRAID não pôde abrir o script ou o arquivo de saída especificado.|
-|4|Um dos serviços que o DiskRAID usa retornou uma falha.|
+|추가를 클릭합니다.|Um dos serviços que o DiskRAID usa retornou uma falha.|
 |5|Ocorreu um erro de sintaxe de comando. O script falhou porque um objeto foi selecionado incorretamente ou era inválido para uso com esse comando.|
 
-## <a name="example-interactively-view-status-of-subsystem"></a>Exemplo: Exibir o status de subsistema de forma interativa
+## <a name="example-interactively-view-status-of-subsystem"></a>Exemplo: exibir o status de subsistema de forma interativa
 
 Se você quiser exibir o status do subsistema 0 em seu computador, digite o seguinte na linha de comando:
 ```
