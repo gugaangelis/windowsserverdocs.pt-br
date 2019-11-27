@@ -1,6 +1,6 @@
 ---
 title: Segurança para SDN
-description: Você pode usar os tópicos desta seção para saber mais sobre segurança em rede definida por software \(SDN @ no__t-1 no Windows Server 2016 datacenter.
+description: Você pode usar os tópicos desta seção para saber mais sobre segurança em rede definida pelo software \(SDN\) no Windows Server 2016 datacenter.
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-sdn
@@ -17,9 +17,9 @@ ms.locfileid: "71355724"
 ---
 # <a name="security-for-sdn"></a>Segurança para SDN
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar os tópicos desta seção para saber mais sobre segurança em rede definida pelo software \(SDN @ no__t-1.
+Você pode usar os tópicos desta seção para saber mais sobre segurança em rede definida pelo software \(SDN\).
 
 >[!Note]
 >Para obter uma documentação adicional de rede definida pelo software, você pode usar as seções de biblioteca a seguir.

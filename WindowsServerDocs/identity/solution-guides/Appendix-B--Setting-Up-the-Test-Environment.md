@@ -89,7 +89,7 @@ Agora você criará uma rede virtual interna chamada ID_AD_Network.
 
 3.  Em **Criar rede virtual**, selecione **Interna**.  
 
-4.  Clique em **Adicionar** . A página **Nova Rede Virtual** é exibida.  
+4.  Clique em **Adicionar**. A página **Nova Rede Virtual** é exibida.  
 
 5.  Digite **ID_AD_Network** para o nome da nova rede. Analise as outras propriedades e modifique-as se necessário.  
 
@@ -100,11 +100,11 @@ Crie uma máquina virtual para ser usada como o controlador de domínio (DC1). I
 
 ##### <a name="to-install-active-directory-domain-services"></a>Para instalar os Serviços de Domínio Active Directory  
 
-1. Conecte a máquina virtual à ID_AD_Network. Entre no DC1 como administrador com a senha <strong>pass@word1</strong>.  
+1. Conecte a máquina virtual à ID_AD_Network. Entre no DC1 como administrador com a <strong>pass@word1</strong>de senha.  
 
 2. No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**.  
 
-3. Na página **Antes de começar** , clique em **Avançar**.  
+3. Na página **Before you begin**, clique em **Next**.  
 
 4. Na página **Selecionar tipo de instalação** , clique em **Instalação baseada em função ou recurso**e depois em **Avançar**.  
 
@@ -164,13 +164,13 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
 4. Crie os usuários a seguir com os atributos indicados:  
 
 
-   |       User       |  Nome de usuário  |     Endereço de email      | Departamento |      Grupo       | País/região |
+   |       Usuário       |  Nome de usuário  |     Endereço de email      | Departamento |      Grupo       | País/região |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finanças   |                  |       US       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finanças   |   FinanceAdmin   |       US       |
-   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operações | FinanceException |       US       |
-   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     RH     |                  |       US       |
-   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     RH     |                  |       US       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finanças   |                  |       EUA       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finanças   |   FinanceAdmin   |       EUA       |
+   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operações | FinanceException |       EUA       |
+   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     RH     |                  |       EUA       |
+   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     RH     |                  |       EUA       |
    |    Servidor RMS    |    rms     |    rms@contoso.com     |            |                  |                |
 
    Para obter mais informações sobre como criar grupos de segurança, consulte [Criar um novo grupo](https://technet.microsoft.com/library/dd861305.aspx) no site do Windows Server.  
@@ -205,7 +205,7 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
 
 2. Conecte a máquina virtual à ID_AD_Network.  
 
-3. Ingresse a máquina virtual no domínio contoso.com e, em seguida, entre no ARQUIVO1 como CONTOSO\Administrator usando a senha <strong>pass@word1</strong>.  
+3. Ingresse a máquina virtual no domínio contoso.com e, em seguida, entre em ARQUIVO1 como CONTOSO\Administrator usando a senha <strong>pass@word1</strong>.  
 
 #### <a name="install-file-services-resource-manager"></a>Instalar o Gerenciador de Recursos de Serviços de Arquivos  
 
@@ -213,7 +213,7 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
 
 1.  No Gerenciador do Servidor, clique em **Adicionar Funções e Recursos**.  
 
-2.  Na página **Antes de começar** , clique em **Avançar**.  
+2.  Na página **Before you begin**, clique em **Next**.  
 
 3.  Na página **Selecionar tipo de instalação** , clique em **Avançar**.  
 
@@ -245,7 +245,7 @@ Ao criar cotas e telas de arquivo, você tem a opção de enviar notificações 
 
 3. Na guia **Notificações por Email** , no nome do servidor SMTP ou endereço IP, digite o nome do host ou o endereço IP do servidor SMTP para encaminhar as notificações por email.  
 
-4. Se você quiser notificar rotineiramente determinados administradores de eventos de cota ou de triagem de arquivos, em **destinatários do administrador padrão**, digite cada endereço de email, como fileadmin@contoso.com. Use o formato account@domain e use ponto e vírgula para separar várias contas.  
+4. Se você quiser notificar rotineiramente determinados administradores de eventos de cota ou de triagem de arquivos, em **destinatários do administrador padrão**, digite cada endereço de email, como fileadmin@contoso.com. Use o formato account@domaine use ponto e vírgula para separar várias contas.  
 
 #### <a name="create-groups-on-file1"></a>Criar grupos no FILE1  
 
@@ -275,7 +275,7 @@ Ao criar cotas e telas de arquivo, você tem a opção de enviar notificações 
     -   **Workbook2. xlsx**  
 
     -   Crie uma pasta na área de trabalho chamada Expressões Regulares. Crie um documento de texto na pasta chamado **RegEx-SSN**. Digite o conteúdo abaixo no arquivo, depois salve e feche:   
-        ^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
+        ^(?!000)([0-7]\d{4}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
 
 3.  Compartilhe a pasta D:\Documentos Financeiros como Documentos Financeiros e permita que todos tenham acesso de Leitura e Gravação para compartilhar.  
 
@@ -369,7 +369,7 @@ Adicione o AD RMS e todos os recursos necessários pelo Gerenciador do Servidor.
 
 33. Passe pelas guias seguintes sem fazer alterações e clique em **Concluir**. Faça login como CONTOSO\Administrator.  
 
-34. Navegue até a pasta, C:\inetpub\wwwroot @ no__t-0_wmcs\certification, selecione o arquivo ServerCertification. asmx e adicione usuários autenticados para ter permissões de leitura e gravação para o arquivo.  
+34. Navegue até a pasta, C:\inetpub\wwwroot\\_wmcs \certification, selecione o arquivo ServerCertification. asmx e adicione usuários autenticados para ter permissões de leitura e gravação para o arquivo.  
 
 35. Abra o Windows PowerShell e execute `Get-FsrmRmsTemplate`. Verifique se você consegue ver o modelo RMS criado nas etapas anteriores neste procedimento com este comando.  
 
@@ -530,7 +530,7 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
    - Servidor de email de saída: O endereço IP estático do SRV1  
 
-   - Nome de usuário:fileadmin@contoso.com  
+   - Nome de usuário: fileadmin@contoso.com  
 
    - Lembrar a senha: Selecionar  
 
@@ -540,7 +540,7 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
 6. Exclua as eventuais mensagens de teste geradas.  
 
-7. Crie um novo corte rápido na área de trabalho para todos os usuários na máquina virtual do cliente que aponta para os documentos \\ \ FILE1\Finance.  
+7. Crie um novo corte rápido na área de trabalho para todos os usuários na máquina virtual do cliente que aponta para \\documentos \FILE1\Finance.  
 
 8. Reinicie se necessário.  
 
@@ -571,11 +571,11 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
 ##### <a name="to-install-active-directory-domain-services"></a>Para instalar os Serviços de Domínio Active Directory  
 
-1. Conecte a máquina virtual à ID_AD_Network. Entre no DC2 como administrador com a senha <strong>Pass@word1</strong>.  
+1. Conecte a máquina virtual à ID_AD_Network. Entre no DC2 como administrador com a <strong>Pass@word1</strong>de senha.  
 
 2. No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**.  
 
-3. Na página **Antes de começar** , clique em **Avançar**.  
+3. Na página **Before you begin**, clique em **Next**.  
 
 4. Na página **Selecionar Tipo de Instalação** , clique em **Instalação baseada em função ou recurso**e depois em **Avançar**.  
 
@@ -642,7 +642,7 @@ Nesta etapa, você criará a relação de confiança entre os sites da Adatum Co
 8.  Continue a seguir as instruções do assistente.  
 
 ### <a name="BKMK_2.4"></a>Criar usuários adicionais na floresta adatum  
-Crie o usuário Jeff Low com a senha <strong>pass@word1</strong>e atribua o atributo Company com o valor **adatum**.  
+Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o atributo Company com o valor **adatum**.  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>Para criar um usuário com o atributo Empresa  
 
@@ -693,7 +693,7 @@ Crie o usuário Jeff Low com a senha <strong>pass@word1</strong>e atribua o atri
 
 3.  No painel esquerdo do Centro Administrativo do Active Directory, clique em **Modo de Exibição de Árvore**. No painel esquerdo, clique em **Controle de Acesso Dinâmico** e clique duas vezes em **Propriedades do Recurso**.  
 
-4.  Selecione **Empresa** na lista de **Propriedades do Recurso** , clique com o botão direito do mouse e selecione **Propriedades**. Na seção **Valores Sugeridos**, clique em **Adicionar** para adicionar os valores sugeridos: Contoso e Adatum, depois clique duas vezes em **OK**.  
+4.  Selecione **Empresa** na lista de **Propriedades do Recurso** , clique com o botão direito do mouse e selecione **Propriedades**. Na seção **Valores Sugeridos** , clique em **Adicionar** para adicionar os valores sugeridos: Contoso e Adatum, depois clique duas vezes em **OK** .  
 
 5.  Selecione **Empresa** na lista **Propriedades do Recurso**, clique com o botão direito do mouse e selecione **Habilitar**.  
 
@@ -752,7 +752,7 @@ Crie o usuário Jeff Low com a senha <strong>pass@word1</strong>e atribua o atri
 
 7. Clique em **OK** três vezes para concluir e voltar ao Centro Administrativo do Active Directory.  
 
-   ![solution guia](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+   ![guias de solução](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
    O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
 
@@ -829,11 +829,11 @@ Crie um novo volume NTFS no FILE1 e crie a seguinte pasta: D:\Ganhos.
 
 4. Abra o Windows Explorer e navegue para D:\GANHOS. Clique com o botão direito do mouse na pasta **Ganhos** e clique em **Propriedades**.  
 
-5. Clique na guia **Classificação**. Selecione Empresae **Adatum** no campo **Valor** .  
+5. Clique na guia **classificação** . Selecione **empresa**e, em seguida, selecione **adatum** no campo **valor** .  
 
 6. Clique em **Alterar**, selecione **Política de Acesso Somente para Adatum** no menu suspenso e clique em **Aplicar**.  
 
-7. Clique na guia **Segurança**, em **Avançado** e por fim na guia **Política Central**. **AdatumEmployeeAccessRule** deverá estar listado. Você pode expandir o item para ver todas as permissões definidas ao criar a regra no Active Directory.  
+7. Clique na guia **segurança** , clique em **avançado**e, em seguida, clique na guia **política central** . Você deve ver o **AdatumEmployeeAccessRule** listado. Você pode expandir o item para ver todas as permissões definidas ao criar a regra no Active Directory.  
 
 8. Clique em **OK** para retornar ao Windows Explorer.  
 
