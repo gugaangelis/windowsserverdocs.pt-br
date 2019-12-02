@@ -1,6 +1,6 @@
 ---
 title: Material de referência de proteção de acesso privilegiado
-description: Controles de segurança operacionais para domínios de Active Directory do Windows Server
+description: Controles de segurança operacional para domínios de Active Directory do Windows Server
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 22ee9a77-4872-4c54-82d9-98fc73a378c0
@@ -11,7 +11,7 @@ manager: daveba
 ms.reviewer: mas
 ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71407220"
@@ -111,7 +111,7 @@ A origem do software deve ser validada usando um dos seguintes meios:
 - O software é obtido da Internet e validado com hashes de arquivo fornecidos pelo fornecedor.
 - O software é obtido da Internet e validado baixando e comparando duas cópias independentes:
    - Baixe em dois hosts sem relação de segurança (não no mesmo domínio e não gerenciados pelas mesmas ferramentas), preferencialmente de conexões de Internet separadas.
-   - Compare os arquivos baixados usando um utilitário como o Certutil: `certutil -hashfile <filename>`
+   - Compare os arquivos baixados usando um utilitário como o certutil: `certutil -hashfile <filename>`
 
 Quando possível, todos os softwares de aplicativo, como instaladores de aplicativos e ferramentas devem ser assinados digitalmente e verificados usando o Authenticode do Windows com a ferramenta [Windows Sysinternal](https://www.microsoft.com/sysinternals), *sigcheck.exe*, verificação de revogação. Nos casos em que o fornecedor não fornece esse tipo de assinatura digital, talvez alguns softwares sejam exigidos.
 
@@ -189,12 +189,12 @@ Cada padrão neste documento é dividido de acordo com o nível de importância 
 
 ![Diagrama que mostra o padrão para os níveis de camada fornecidos](../media/securing-privileged-access-reference-material/PAW_RM_Fig12.JPG)
 
-Todas as exceções para itens obrigatórios (marcados com vermelho octógono ou um triângulo laranja neste documento) são consideradas temporárias e precisam ser aprovadas pelo CAB. As diretrizes incluem:
+Todas as exceções para os itens Obrigatórios (marcados com octógono vermelho ou com um triângulo laranja neste documento) são consideradas temporárias e precisam ser aprovadas pelo CAB. As diretrizes incluem:
 
 - A solicitação inicial exige a aceitação do risco e a justificativa assinadas pelo supervisor imediato da equipe, e expira após seis meses.
 - Renovações exigem justificativa e aceitação de risco assinadas por um diretor da unidade de negócios, e expiram depois de seis meses.
 
-Todas as exceções para itens recomendados (marcados com um círculo amarelo neste documento) são consideradas temporárias e precisam ser aprovadas pelo CAB. As diretrizes incluem:
+Todas as exceções para os itens Recomendados (marcados com um círculo amarelo neste documento) são consideradas temporárias e precisam ser aprovadas pelo CAB. As diretrizes incluem:
 
 - A solicitação inicial exige a aceitação do risco e a justificativa assinadas pelo supervisor imediato da equipe, e expira após 12 meses.
 - Renovações exigem justificativa e aceitação de risco assinadas por um diretor da unidade de negócios, e expiram depois de 12 meses.
@@ -347,7 +347,7 @@ Certifique-se de que as práticas a seguir sejam aplicadas neste cenário:
 
 - **Suporte de servidor remoto**: ao acessar remotamente um servidor, os administradores de Camada 1 devem seguir estas diretrizes:
    - **Primário (ferramenta)** ferramentas remotas que usam logons de rede (tipo 3). Para saber mais, consulte [Minimizar a Passagem o Hash e outros roubos de credenciais](https://www.microsoft.com/pth) v1 (páginas 47 a 42).
-   - **Primário (interativo)** -use o RDP RestrictedAdmin de uma estação de trabalho de administrador com uma conta de domínio que usa permissões obtidas just-in-time de uma solução de gerenciamento de acesso privilegiado.
+   - **Principal (interativo)** : use RDP RestrictedAdmin de uma estação de trabalho administrativa com uma conta de domínio que usa permissões just-in-time obtidas de uma solução de gerenciamento de acesso privilegiado.
    - **Secundário**: faça logon no servidor usando uma senha de conta local definida por LAPS em uma estação de trabalho de administrador.
    - **Proibido**: não use RDP padrão com uma conta de domínio.
    - **Proibido**: o uso de credenciais de conta de domínio durante a sessão (por exemplo, usando *RunAs* ou autenticando em um compartilhamento). Isso expõe as credenciais de logon ao risco de roubo.
@@ -362,7 +362,7 @@ O suporte técnico e organizações de suporte ao usuário executam suporte para
 
 **Suporte ao usuário**: entre as tarefas estão o auxílio a usuários na execução de tarefas que não exigem modificação na estação de trabalho, mostrando frequentemente como usar um recurso de aplicativo ou recurso do sistema operacional.
 
-- **Suporte ao usuário no escritório**: a equipe de suporte de Camada 2 está fisicamente presente no espaço de trabalho do usuário.
+- **Suporte ao usuário no escritório**: a equipe de suporte de Camada 2 está fisicamente presente no workspace do usuário.
    - **Primário**: suporte "Over the shoulder" (por cima do ombro) pode ser fornecido sem qualquer ferramenta.
    - **Proibido**: o logon com credenciais administrativas de uma conta de domínio não é permitido neste cenário. Alterne para o suporte de estação de trabalho no escritório se houver a necessidade de privilégios administrativos.
 - **Suporte remoto ao usuário**: a equipe de suporte de Camada 2 é fisicamente remota com relação ao usuário.
@@ -442,7 +442,7 @@ Para qualquer utilização das contas de acesso de emergência:
     - Tarefas em toda a floresta que exigem privilégios administrativos corporativos
 
       > [!NOTE]
-      > O gerenciamento de topologia, incluindo Active Directory gerenciamento de site e sub-rede, é delegado para limitar o uso desses privilégios.
+      > O gerenciamento de topologia, incluindo o gerenciamento de site e sub-rede do Active Directory, é delegado a fim de limitar o uso desses privilégios.
 
 - Qualquer utilização de uma dessas contas deve ter autorização por escrito do líder do grupo de segurança
 - O procedimento na folha de controle para cada conta de acesso de emergência exige que a senha seja alterada em cada uso. Um membro da equipe de segurança deve validar se isso aconteceu corretamente.
@@ -472,7 +472,7 @@ Uma floresta administrativa dedicada é uma floresta do Active Directory de dom�
 
 Um design de floresta administrativa deve incluir as seguintes considerações:
 
-- **Escopo limitado** -o valor principal de uma floresta de administrador é o alto nível de garantia de segurança e a superfície de ataque reduzida, resultando em risco residual mais baixo. A floresta pode ser usada para hospedar aplicativos e funções de gerenciamento adicionais, mas cada aumento no escopo aumenta a superfície de ataque da floresta e de seus recursos. O objetivo é limitar as funções da floresta e dos usuários administradores internos para manter a superfície de ataque mínima, para que cada aumento de escopo seja considerado com cautela.
+- **Escopo limitado** – O valor primário de uma floresta de administrador é o alto nível de garantia de segurança e a redução da superfície de ataque, resultando em menor risco residual. A floresta pode ser usada para hospedar aplicativos e funções de gerenciamento adicionais, mas cada aumento no escopo aumenta a superfície de ataque da floresta e de seus recursos. O objetivo é limitar as funções da floresta e dos usuários administradores internos para manter a superfície de ataque mínima, para que cada aumento de escopo seja considerado com cautela.
 - **Configurações de relação de confiança** – Configure a relação de confiança da(s) floresta(s) ou do(s) domínio(s) gerenciado(s) para a floresta administrativa
    - Uma relação de confiança unidirecional é exigida pelo ambiente de produção para a floresta administrativa. Isso pode ser uma relação de confiança de domínio ou uma relação de confiança de floresta. O domínio/floresta de administrador não precisa confiar nos domínios/florestas gerenciadas para gerenciar o Active Directory, embora outros aplicativos possam exigir uma relação de confiança bidirecional, validação de segurança e testes.
    - A autenticação seletiva deve ser usada para restringir contas na floresta de administrador para fazer logon apenas nos hosts de produção apropriados. Para manter os controladores de domínio e direitos de delegação no Active Directory, isso geralmente exige a concessão do direito “Autorizado a fazer logon” de controladores de domínio a contas de administrador da Camada 0 designadas na floresta de administrador. Consulte Definir as configurações de autenticação seletiva para saber mais.
@@ -481,7 +481,7 @@ Um design de floresta administrativa deve incluir as seguintes considerações:
    - Uma limitação ao uso desse grupo para concessão de direitos é que eles não têm acesso administrativo a novos objetos de política de grupo por padrão. Isso pode ser alterado seguindo o procedimento [neste artigo da base de dados de conhecimento](https://support.microsoft.com/kb/321476) para alteração das permissões do esquema padrão.
    - Contas da floresta de administrador que são usadas para administrar o ambiente de produção não devem receber privilégios administrativos para a floresta de administração nem para domínios ou estações de trabalho nela.
    - Privilégios administrativos sobre a floresta de administrador devem ser controlados rigorosamente por um processo offline, a fim de reduzir a oportunidade de um invasor ou funcionário mal-intencionado em posse de informações privilegiadas apagar os logs de auditoria. Isso também ajuda a garantir que a equipe em posse das contas de administrador de produção não reduza as restrições sobre suas contas e aumente o risco para a organização.
-   - A floresta administrativa deve seguir as configurações de SCB (linha de base de conformidade de segurança da Microsoft) para o domínio, incluindo configurações fortes para protocolos de autenticação.
+   - A floresta administrativa deve seguir as configurações da SCB (Microsoft Security Compliance Baseline) para o domínio, inclusive configurações fortes para protocolos de autenticação.
    - Todos os hosts da floresta de administrador devem ser atualizados automaticamente com atualizações de segurança. Embora isso possa criar um risco de interromper as operações de manutenção do controlador de domínio, isso fornece uma redução significativa dos riscos de segurança de vulnerabilidades sem patch.
 
       > [!NOTE]
@@ -539,7 +539,7 @@ Para saber mais sobre os serviços da Microsoft para criar e implantar um ESAE e
 
 ## <a name="tier-0-equivalency"></a>Equivalência de camada 0
 
-A maioria das organizações controla a associação a grupos poderosos do Active Directory de Camada 0 como Administradores, Administradores de Domínio e Administradores de Empresa.  Muitas organizações ignoram o risco de outros grupos efetivamente equivalentes em privilégio em um ambiente comum do Active Directory. Esses grupos oferecem um caminho de escalonamento relativamente fácil para um invasor para os mesmos privilégios explícitos de camada 0 usando vários métodos de ataque diferentes.
+A maioria das organizações controla a associação a grupos poderosos do Active Directory de Camada 0 como Administradores, Administradores de Domínio e Administradores de Empresa.  Muitas organizações ignoram o risco de outros grupos efetivamente equivalentes em privilégio em um ambiente comum do Active Directory. Esses grupos oferecem um caminho de escalonamento relativamente fácil para um invasor aos mesmos privilégios explícitos de Camada 0 usando vários métodos diferentes de ataque.
 
 Por exemplo, um operador de servidor pode obter acesso a uma mídia de backup de um controlador de domínio e extrair todas as credenciais dos arquivos nessa mídia, e usá-los para escalonar privilégios.
 
@@ -558,7 +558,7 @@ As organizações devem controlar e monitorar a associação em todos os grupos 
 - Proprietários criadores de política de grupo
 - Operadores criptográficos
 - Usuários COM Distribuídos
-- Outros grupos delegados – grupos personalizados que podem ser criados pela sua organização para gerenciar operações de diretório que também podem ter acesso efetivo à camada 0.
+- Outros grupos delegados – grupos personalizados que podem ser criados por sua organização para gerenciar operações de diretório que também podem ter acesso efetivo de Camada 0.
 
 ## <a name="administrative-tools-and-logon-types"></a>Ferramentas administrativas e tipos de logon
 
@@ -577,15 +577,15 @@ Esta tabela inclui orientações para as ferramentas administrativas e métodos 
 |Área de Trabalho Remota (falha: tipo de logon negado)|RemoteInteractive|-|Por padrão, se o logon do RDP falhar, as credenciais serão armazenadas apenas rapidamente. Esse pode não ser o caso se o computador estiver comprometido.|
 |Uso da rede * \\\SERVER|Rede|-||
 |Uso da rede * \\\SERVER /u:user|Rede|-||
-|Snap-ins do MMC para um computador remoto|Rede|-|Exemplo: Gerenciamento do computador, Visualizador de Eventos, Device Manager, serviços|
-|PowerShell WinRM|Rede|-|Exemplo: Inserir servidor de PSSession|
+|Snap-ins do MMC para um computador remoto|Rede|-|Exemplo: Gerenciamento de Computador, Visualizador de Eventos, Gerenciador de Dispositivos, Serviços|
+|PowerShell WinRM|Rede|-|Exemplo: Enter-PSSession server|
 |PowerShell WinRM com CredSSP|NetworkClearText|v|New-PSSession server<br />-Credssp de autenticação<br />-Credencial cred|
-|PsExec sem credenciais explícitas|Rede|-|Exemplo: PsExec \\ \ servidor cmd|
+|PsExec sem credenciais explícitas|Rede|-|Exemplo: PsExec \\\server cmd|
 |PsExec com credenciais explícitas|Rede + interativo|v|PsExec \\\server -u user -p pwd cmd<br />Cria várias sessões de logon.|
 |Registro Remoto|Rede|-||
 |Gateway de Área de Trabalho Remota|Rede|-|Autenticação em Gateway de Área de Trabalho Remota.|
 |Tarefa agendada|Batch|v|A senha também será salva como um segredo LSA em disco.|
-|Executar ferramentas como um serviço|Serviço|v|A senha também será salva como um segredo LSA em disco.|
+|Executar ferramentas como um serviço|Fornecer manutenção|v|A senha também será salva como um segredo LSA em disco.|
 |Scanners de vulnerabilidade|Rede|-|A maioria dos scanners assumem o uso padrão de logons de rede, embora alguns fornecedores possam implementar logons de fora da rede e apresentar mais risco de roubo de credenciais.|
 
 Para autenticação na Web, use a referência da tabela abaixo:
@@ -617,7 +617,7 @@ Em computadores baseados em Windows, todas as autenticações são processadas c
 |Interativo (também conhecida como Logon local)|2|Senha, Cartão inteligente,<br />outros|Sim|Logon no console;<br />RUNAS;<br />Soluções de controle remoto de hardware (como KVM de rede ou Acesso remoto/Cartão lights-out no servidor)<br />Autenticação básica do IIS (antes do IIS 6.0)|
 |Rede|3|Senha,<br />Hash de NT,<br />Tíquete Kerberos|Não (exceto se a delegação estiver habilitada, nesse caso, os tíquetes do Kerberos estarão presentes)|NET USE;<br />Chamadas RPC;<br />Registro Remoto;<br />Autenticação Windows integrada ao IIS;<br />Autenticação Windows do SQL;|
 |Batch|4|Senha (normalmente armazenada como segredo de LSA)|Sim|Tarefas Agendadas|
-|Serviço|5|Senha (normalmente armazenada como segredo de LSA)|Sim|Serviços Windows|
+|Fornecer manutenção|5|Senha (normalmente armazenada como segredo de LSA)|Sim|Serviços Windows|
 |NetworkCleartext|8|Senha|Sim|Autenticação básica do IIS (IIS 6.0 e mais recente);<br />Windows PowerShell com CredSSP|
 |NewCredentials|9|Senha|Sim|RUNAS /NETWORK|
 |RemoteInteractive|10|Senha, Cartão inteligente,<br />outros|Sim|Área de Trabalho Remota (anteriormente conhecida como "Serviços de Terminal")|
@@ -625,7 +625,7 @@ Em computadores baseados em Windows, todas as autenticações são processadas c
 Definições de coluna:
 
 - **Tipo de logon** é o tipo de logon solicitado.
-- **#** é o identificador numérico para o tipo de logon que é relatado em eventos de auditoria no log de eventos de segurança.
+- **#** é o identificador numérico para o tipo de logon informado em eventos de auditoria no log de eventos de Segurança.
 - **Autenticadores aceitos** indica quais tipos de autenticadores são capazes de iniciar um logon desse tipo.
 - **Credenciais reutilizáveis** na sessão LSA indica se o tipo de logon resulta no armazenamento de credenciais pela sessão LSA, como senhas de texto sem formatação, hashes de NT ou tíquetes Kerberos que podem ser usados para autenticar em outros recursos de rede.
 - **Exemplos** lista cenários comuns nos quais o tipo de logon é usado.

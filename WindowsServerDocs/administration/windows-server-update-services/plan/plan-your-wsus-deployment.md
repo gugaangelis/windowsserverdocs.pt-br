@@ -1,6 +1,6 @@
 ---
-title: Planejar a implantação do WSUS
-description: Tópico Windows Server Update Service (WSUS)-uma visão geral do processo de planejamento da implantação com links para os tópicos relacionados
+title: Planejar sua implantação do WSUS
+description: O tópico WUS (Windows Server Update Service) – uma visão geral do processo de planejamento da implantação com links para os tópicos relacionados
 ms.prod: windows-server
 ms.reviewer: na
 ms.technology: manage-wsus
@@ -12,46 +12,46 @@ manager: dongill
 ms.date: 05/24/2018
 ms.openlocfilehash: 37e3a7788ccd409f4002f5fe2d7ea087e89b3419
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369842"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planejar sua implantação do WSUS
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-A primeira etapa na implantação do WSUS (Windows Server Update Services) é tomar decisões importantes, por exemplo decidir o cenário de implantação do WSUS, escolher uma topologia de rede e entender os requisitos do sistema. A lista de verificação a seguir resume as etapas envolvidas na preparação para sua implantação.
+A primeira etapa na implantação do WSUS (Windows Server Update Services) é tomar decisões importantes, por exemplo decidir o cenário de implantação do WSUS, escolher uma topologia de rede e entender os requisitos do sistema. A lista de verificação a seguir resume as etapas envolvidas nos preparativos para sua implantação.
 
 |Tarefa|Descrição|
 |----|--------|
-|,1. Examine as considerações e os requisitos do sistema @ no__t-0|Examine a lista de considerações e requisitos do sistema para garantir que você tenha todos os componentes de hardware e software necessários para implantar o WSUS.|
-|[1,2. Escolha um cenário de implantação do WSUS @ no__t-0|Decida qual cenário de implantação do WSUS será usado.|
-|[1,3. Escolha uma estratégia de armazenamento do WSUS @ no__t-0|Decida qual estratégia de armazenamento do WSUS é mais adequada à sua implantação.|
-|,4. Escolha os idiomas de atualização do WSUS @ no__t-0|Decida quais idiomas de atualização do WSUS serão instalados.|
-|,5. Planejar grupos de computadores do WSUS @ no__t-0|Planeje a abordagem de grupo de computadores do WSUS que será usada para sua implantação.|
-|,6. Planejar considerações de desempenho do WSUS: Serviço de Transferência Inteligente em Segundo Plano @ no__t-0|Planeje um design do WSUS para garantir desempenho otimizado.|
-|,7. Planejar configurações de Atualizações Automáticas @ no__t-0|Planeje como você configurará as definições de atualizações automáticas para o seu cenário.|
+|[1.1. Examinar as considerações e os requisitos do sistema](#11-review-considerations-and-system-requirements)|Examine a lista de considerações e requisitos do sistema para garantir que você tenha todos os componentes de hardware e software necessários para implantar o WSUS.|
+|[1.2. Escolher o cenário de implantação do WSUS](#12-choose-a-wsus-deployment-scenario)|Decida qual cenário de implantação do WSUS será usado.|
+|[1.3. Escolher uma estratégia de armazenamento do WSUS](#13-choose-a-wsus-storage-strategy)|Decida qual estratégia de armazenamento do WSUS é mais adequada à sua implantação.|
+|[1.4. Escolher os idiomas de atualização do WSUS](#14-choose-wsus-update-languages)|Decida quais idiomas de atualização do WSUS serão instalados.|
+|[1.5. Planejar grupos de computadores do WSUS](#15-plan-wsus-computer-groups)|Planeje a abordagem de grupo de computadores do WSUS que será usada para sua implantação.|
+|[1.6. Planejar considerações de desempenho do WSUS: Serviço de Transferência Inteligente em Segundo Plano](#16-plan-wsus-performance-considerations)|Planeje um design do WSUS para garantir desempenho otimizado.|
+|[1.7. Planejar definições das atualizações automáticas](#17-plan-automatic-updates-settings)|Planeje como você configurará as definições de atualizações automáticas para o seu cenário.|
 
 ## <a name="11-review-considerations-and-system-requirements"></a>1,1. Examinar as considerações iniciais e os requisitos do sistema
 
-### <a name="system-requirements"></a>Requisitos de sistema
+### <a name="system-requirements"></a>Requisitos do sistema
 
 Para habilitar a função de servidor do WSUS, confirme se o servidor atende aos requisitos do sistema e se você tem as permissões necessárias para concluir a instalação seguindo estas diretrizes:
 
 -   Os requisitos de hardware do servidor para habilitar a função do WSUS são associados aos requisitos de hardware. Os requisitos mínimos de hardware do WSUS são:
 
-    -   **661** processador x64 de 1,4 gigahertz (GHz) (é recomendado 2 GHz ou mais rápido)
+    -   **Processador:** processador x64 de 1,4 gigahertz (GHz) (o recomendado é 2 GHz ou mais)
 
-    -   **Memória** O WSUS requer 2 GB adicionais de RAM mais do que o necessário para o servidor e todos os outros serviços ou software.
+    -   **Memória:** o WSUS requer um adicional de 2 GB de RAM do que é exigido pelo servidor e todos os outros serviços ou software.
 
-    -   **Espaço em disco disponível:** é recomendado 10 GB (40 GB ou mais)
+    -   **Espaço em disco disponível:** 10 GB (é recomendável 40 GB ou mais)
 
-    -   **Adaptador de rede:** 100 megabits por segundo (Mbps) ou superior
+    -   **Adaptador de rede:** 100 megabits por segundo (Mbps) ou mais
 
 -   Requisitos de software:
 
-    -   Para exibir relatórios, o WSUS requer o [Microsoft Report Viewer Redistributable 2008](https://www.microsoft.com/download/details.aspx?id=6576). No Windows Server 2016, o WSUS requer o [tempo de execução de Microsoft Report Viewer 2012](https://www.microsoft.com/download/details.aspx?id=35747)
+    -   Para exibir relatórios, o WSUS requer o [Microsoft Report Viewer Redistributable 2008](https://www.microsoft.com/download/details.aspx?id=6576). No Windows Server 2016, o WSUS requer [Microsoft Report Viewer Runtime 2012](https://www.microsoft.com/download/details.aspx?id=35747)
 
 -   Se você instalar funções ou atualizações de software que exigem a reinicialização do servidor quando a instalação for concluída, reinicie o servidor antes de habilitar a função de servidor do WSUS.
 
@@ -94,19 +94,19 @@ Durante o processo de instalação, o WSUS instalará estes componentes:
 
 Esteja ciente de que configurar computadores cliente (incluindo servidores) para atualizar usando o WSUS resultará nas seguintes limitações:
 
-1. Funções de servidor que tiveram suas cargas removidas usando os Recursos sob Demanda não podem ser instaladas sob demanda pelo Microsoft Update. Você deve fornecer uma origem de instalação no momento em que tenta instalar essas funções de servidor ou configurar uma fonte para recursos sob demanda no Política de Grupo.
+1. Funções de servidor que tiveram suas cargas removidas usando os Recursos sob Demanda não podem ser instaladas sob demanda pelo Microsoft Update. Você deve fornecer uma origem de instalação no momento em que tentar instalar tais funções de servidor ou configurar uma origem para os Recursos sob Demanda na Política de Grupo.
 
 2. As edições do cliente Windows não poderão instalar o .NET 3.5 sob demanda por meio da Web. Aplicam-se ao .NET 3.5 as mesmas considerações que para as funções de servidor.
 
    > [!NOTE]
-   > A configuração de uma fonte de instalação de recursos sob demanda não envolve o WSUS. Para obter informações sobre como configurar os Recursos, consulte [Configurar Recursos sob Demanda no Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
+   > Configurar uma origem de instalação dos Recursos sob Demanda não envolve WSUS. Para obter informações sobre como configurar os Recursos, consulte [Configurar Recursos sob Demanda no Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
 
-3. Os dispositivos empresariais que executam o Windows 10, versão 1709 ou 1803, não podem instalar nenhum recurso sob demanda diretamente do WSUS. Para instalar recursos sob demanda, [crie um arquivo de recurso (repositório lado a lado)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) ou obtenha o recurso de pacote sob demanda de uma das seguintes fontes:
-   - VLSC ( [centro de serviços de licenciamento por volume](https://www.microsoft.com/licensing/servicecenter) )-o acesso de VL é necessário
-   - Portal OEM-o acesso OEM é necessário
-   - Download do MSDN-a assinatura do MSDN é necessária
+3. Os dispositivos corporativos que executam o Windows 10, versão 1709 ou 1803, não podem instalar nenhum Recurso sob Demanda diretamente do WSUS. Para instalar Recursos sob Demanda, [crie um arquivo de recurso (repositório lado a lado)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) ou obtenha o pacote do Recurso sob Demanda de uma das seguintes fontes:
+   - [VLSC](https://www.microsoft.com/licensing/servicecenter) (Centro de Atendimento de Licenciamento por Volume) – o acesso de VL é necessário
+   - Portal OEM – o acesso OEM é necessário
+   - Download do MSDN – assinatura do MSDN é obrigatória
 
-     Os pacotes de recursos sob demanda individualmente obtidos podem ser instalados usando [as opções de linha de comando do DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
+     Os pacotes de Recurso sob Demanda obtidos individualmente podem ser instalados usando [opções de linha de comando do DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
 
 ### <a name="wsus-database-requirements"></a>Requisitos de banco de dados do WSUS
 O WSUS requer um dos seguintes bancos de dados:
@@ -132,31 +132,31 @@ As edições a seguir do SQL Server têm suporte pelo WSUS:
 -   Express
 
 > [!NOTE]
-> O SQL Server Express 2008 R2 tem uma limitação de tamanho máximo do banco de dados de 10 GB. Esse tamanho de banco de dados provavelmente é suficiente para o WSUS, apesar de não haver nenhum benefício apreciável em usá-lo no lugar do WID. O banco de dados WID tem um requisito mínimo de memória RAM de 2 GB além dos requisitos de sistema padrão do Windows Server.
+> O SQL Server Express 2008 R2 tem uma limitação de tamanho máximo do banco de dados de 10 GB. Esse tamanho de banco de dados provavelmente é suficiente para o WSUS, apesar de não haver nenhum benefício apreciável em usá-lo no lugar do WID. O banco de dados WID tem um requisito de memória RAM mínimo de 2 GB, além dos requisitos de sistema padrão do Windows Server.
 
-Você pode instalar a função do WSUS em um computador separado do computador do servidor de banco de dados. Nesse caso, os seguintes critérios adicionais se aplicam:
+Você pode instalar a função do WSUS em um computador separado do computador servidor de banco de dados. Nesse caso, os seguintes critérios adicionais se aplicam:
 
 1.  O servidor de banco de dados não pode ser configurado como controlador de domínio.
 
 2.  O servidor do WSUS não pode executar os Serviços de Área de Trabalho Remota.
 
-3.  O servidor de banco de dados deve estar no mesmo domínio do Active Directory que o servidor do WSUS ou deve ter uma relação de confiança com o domínio do Active Directory do servidor do WSUS.
+3.  O servidor de banco de dados precisa estar no mesmo domínio do diretório ativo do servidor do WSUS ou então ter uma relação de confiança com o domínio do diretório ativo do servidor do WSUS.
 
-4.  O servidor do WSUS e o servidor de banco de dados devem estar no mesmo fuso horário ou ser sincronizados com a mesma fonte de tempo universal coordenado (Greenwich Mean Time).
+4.  O servidor do WSUS e o servidor de banco de dados precisam estar no mesmo fuso horário ou sincronizados com a mesma fonte de Tempo Universal Coordenado (Hora de Greenwich).
 
 ## <a name="12-choose-a-wsus-deployment-scenario"></a>1.2. Escolher o cenário de implantação do WSUS
 Esta seção descreve os recursos básicos de todas as implantações do WSUS. Use esta seção para se familiarizar com uma implantação simples com um único servidor do WSUS, além de cenários mais complexos, como uma hierarquia de servidores do WSUS ou um servidor do WSUS em um segmento de rede isolado.
 
 ### <a name="simple-wsus-deployment"></a>Implantação simples do WSUS
-A implantação mais básica do WSUS consiste em um servidor dentro do firewall corporativo que atende a computadores cliente em uma intranet privada. O servidor do WSUS se conecta ao Microsoft Update para baixar atualizações. Isso é conhecido como *sincronização*. Durante a sincronização, o WSUS determina se alguma atualização nova foi disponibilizada desde a última sincronização. Se for a sua primeira sincronização do WSUS, todas as atualizações serão disponibilizadas para download.
+A implantação mais básica do WSUS consiste em um servidor dentro do firewall corporativo que serve computadores cliente em uma intranet privada. O servidor do WSUS se conecta ao Microsoft Update para baixar atualizações. Isso é conhecido como *sincronização*. Durante a sincronização, o WSUS determina se alguma atualização nova foi disponibilizada desde a última sincronização. Se for a sua primeira sincronização do WSUS, todas as atualizações serão disponibilizadas para download.
 
 > [!NOTE]
 > A sincronização inicial pode levar uma hora. Todas as sincronizações posteriores devem ser significativamente mais rápidas.
 
-Por padrão, o servidor do WSUS usa a porta 80 para o protocolo HTTP e a porta 443 para o protocolo HTTPS para obter atualizações da Microsoft. Se houver um firewall corporativo entre a rede e a Internet, você precisará abrir essas portas no servidor que se comunica diretamente com o Microsoft Update. Se você estiver planejando usar portas personalizadas para essa comunicação, deverá abrir essas portas em vez disso. É possível configurar vários servidores do WSUS para que sejam sincronizados com um servidor pai do WSUS. Por padrão, o servidor do WSUS usa a porta 8530 para o protocolo HTTP e a porta 8531 para o protocolo HTTPS para fornecer atualizações para as estações de trabalho cliente.
+Por padrão, o servidor do WSUS usa a porta 80 para o protocolo HTTP e a porta 443 para o protocolo HTTPS para obter atualizações da Microsoft. Se houver um firewall corporativo entre a rede e a Internet, você precisará abrir essas portas no servidor que se comunica diretamente com o Microsoft Update. Entretanto, se você pretende usar portas personalizadas para essa comunicação, você deverá abrir estas últimas. É possível configurar vários servidores do WSUS para que sejam sincronizados com um servidor pai do WSUS. Por padrão, o servidor do WSUS usa a porta 8530 para o protocolo HTTP e a porta 8531 para o protocolo HTTPS para fornecer atualizações para as estações de trabalho cliente.
 
 ### <a name="multiple-wsus-servers"></a>Vários servidores do WSUS
-Os administradores podem implantar vários servidores que executam o WSUS que sincronizam todo o conteúdo na intranet da organização. Você pode expor apenas um servidor à Internet, que seria o único servidor que baixa as atualizações de Microsoft Update. Esse servidor é configurado como o servidor upstream a origem na qual os servidores downstream são sincronizados. Quando aplicável, os servidores podem estar localizados em uma rede geograficamente dispersa para oferecer a melhor conectividade a todos os computadores clientes.
+Os administradores podem implantar vários servidores que executam WSUS e sincronizam todo o conteúdo na intranet de sua organização. Você pode expor apenas um servidor à Internet, que seria o único servidor que baixa as atualizações do Microsoft Update. Esse servidor está configurado como servidor upstream: a fonte com a qual os servidores downstream são sincronizados. Quando aplicável, os servidores podem estar localizados em uma rede geograficamente dispersa para oferecer a melhor conectividade a todos os computadores clientes.
 
 ### <a name="disconnected-wsus-server"></a>Servidor WSUS desconectado
 Se a política corporativa ou outras condições limitarem o acesso dos computadores à Internet, os administradores poderão configurar um servidor interno para executar o WSUS. Um exemplo disso é um servidor conectado à intranet porém isolado da Internet. Depois de baixar, testar e aprovar as atualizações nesse servidor, um administrador exportaria os metadados e o conteúdo das atualizações para um DVD. Os metadados e o conteúdo das atualizações são importados do DVD para os servidores que executam o WSUS na intranet.
@@ -173,9 +173,9 @@ Você pode criar complexas hierarquias dos servidores do WSUS. Como é possível
 -   Dimensionar o WSUS para uma organização de grande porte que tem mais computadores clientes do que um único servidor do WSUS pode gerenciar com eficácia.
 
 > [!NOTE] 
-> É recomendável não criar uma hierarquia de servidores do WSUS com mais de três níveis de profundidade. Cada nível aumenta o tempo para propagar as atualizações nos servidores conectados. Embora não haja nenhum limite teórico para uma hierarquia, somente as implantações que têm uma hierarquia de cinco níveis de profundidade foram testadas pela Microsoft.
+> É recomendável não criar uma hierarquia de servidores do WSUS com mais de três níveis de profundidade. Cada nível aumenta o tempo para propagar as atualizações nos servidores conectados. Apesar de não haver um limite teórico para uma hierarquia, somente implantações que têm uma hierarquia de cinco níveis de profundidade foram testadas pela Microsoft.
 >
-> Além disso, os servidores downstream devem estar na mesma versão ou em uma versão anterior do WSUS como a origem de sincronização do servidor upstream.
+> Além disso, os servidores downstream devem estar na mesma versão ou em uma versão anterior do WSUS em relação à origem de sincronização do servidor upstream.
 
 Você pode conectar servidores do WSUS em modo Autônomo (para permitir administração distribuída) ou em modo de Réplica (para permitir administração centralizada). Não é necessário implantar uma hierarquia de servidores que usa um único modo: você pode implantar uma solução do WSUS que use tanto servidores do WSUS autônomos quanto servidores de réplica.
 
@@ -196,9 +196,9 @@ Você pode aproveitar o recurso Filial no Windows para otimizar a implantação 
 2.  Em filiais que têm conexões de baixa largura de banda com a matriz porém conexões de alta largura de banda com a Internet, o recurso Branch Office também pode ser usado. Nesse caso, convém configurar os servidores downstream do WSUS para obter informações sobre quais atualizações serão instaladas com o servidor do WSUS central, porém baixar as atualizações com o Microsoft Update.
 
 ### <a name="network-load-balancing"></a>Balanceamento de Carga de Rede
-O NLB (Balanceamento de Carga de Rede) aumenta a confiabilidade e o desempenho da rede do WSUS. Você pode configurar vários servidores WSUS que compartilham um único cluster de failover executando SQL Server como o SQL Server 2008 R2 SP1. Nessa configuração, é necessário usar uma instalação completa do SQL Server, e não a instalação do Banco de Dados Interno do Windows fornecida pelo WSUS, e a função de banco de dados precisa estar instalada em todos os servidores front-end do WSUS. Você também pode fazer com que todos os servidores do WSUS usem um DFS (sistema de arquivos distribuídos) para armazenar seu conteúdo.
+O NLB (Balanceamento de Carga de Rede) aumenta a confiabilidade e o desempenho da rede do WSUS. Você pode configurar vários servidores do WSUS que compartilham um único cluster de failover que executa o SQL Server, como o SQL Server 2008 R2 SP1. Nessa configuração, é necessário usar uma instalação completa do SQL Server, e não a instalação do Banco de Dados Interno do Windows fornecida pelo WSUS, e a função de banco de dados precisa estar instalada em todos os servidores front-end do WSUS. Você também pode fazer com que todos os servidores do WSUS usem um DFS (sistema de arquivos distribuídos) para armazenar seu conteúdo.
 
-**Configuração do WSUS para NLB:** em comparação com a instalação do WSUS 3,2 para NLB, uma chamada de configuração especial e parâmetros não são mais necessários para configurar o WSUS para NLB. Você só precisa configurar cada servidor do WSUS, mantendo as considerações a seguir em mente.
+**Instalação do WSUS para NLB:** em comparação com a instalação do WSUS 3.2 para NLB, não são mais necessários parâmetros e uma chamada de instalação especial para configurar o WSUS para NLB. Você precisa apenas configurar cada servidor do WSUS, mantendo as seguintes considerações em mente.
 
 -   O WSUS deve ser configurado usando a opção de banco de dados SQL em vez de WID.
 
@@ -207,7 +207,7 @@ O NLB (Balanceamento de Carga de Rede) aumenta a confiabilidade e o desempenho d
 -   A instalação do WSUS deve ser feita em série. As tarefas pós-instalação não podem ser executadas em mais de um servidor ao mesmo tempo quando o mesmo banco de dados SQL é compartilhado.
 
 ### <a name="wsus-deployment-with-roaming-client-computers"></a>A implantação do WSUS com computadores clientes móveis
-Se a rede incluir usuários móveis que fazem logon na rede de locais diferentes, você poderá configurar o WSUS para permitir que os usuários móveis atualizem seus computadores clientes do servidor do WSUS mais próximo a eles em termos geográficos. Por exemplo, você pode implantar um servidor do WSUS em cada região e usar uma sub-rede DNS diferente para cada região. Todos os computadores cliente podem ser direcionados para o mesmo servidor WSUS, que resolve em cada sub-rede para o servidor do WSUS físico mais próximo.
+Se a rede incluir usuários móveis que fazem logon na rede de locais diferentes, você poderá configurar o WSUS para permitir que os usuários móveis atualizem seus computadores clientes do servidor do WSUS mais próximo a eles em termos geográficos. Por exemplo, você pode implantar um servidor do WSUS em cada região e usar uma sub-rede DNS diferente para cada região. Todos os computadores cliente podem ser direcionados ao mesmo servidor do WSUS, que resolve em cada sub-rede com o servidor do WSUS físico mais próximo.
 
 ## <a name="13-choose-a-wsus-storage-strategy"></a>1.3. Escolher a estratégia de armazenamento do WSUS
 O WSUS (Windows Server Update Services) usa dois tipos de sistemas de armazenamento: um banco de dados para armazenar a configuração do WSUS e metadados de atualização, e um sistema de arquivos local opcional para armazenar os arquivos de atualização. Para instalar o WSUS, você deve decidir como quer implementar o armazenamento.
@@ -215,7 +215,7 @@ O WSUS (Windows Server Update Services) usa dois tipos de sistemas de armazename
 As atualizações consistem em duas partes: os metadados que descrevem a atualização; e os arquivos necessários para instalar a atualização. Os metadados de atualização normalmente são bem menores do que a atualização real e são armazenados no banco de dados do WSUS. Os arquivos de atualização são armazenados em um servidor do WSUS local ou em um servidor Web do Microsoft Update.
 
 ### <a name="wsus-database"></a>Banco de dados do WSUS
-O WSUS requer um banco de dados para cada servidor do WSUS. O WSUS dá suporte ao uso de um banco de dados que reside em um computador diferente do servidor do WSUS, com algumas restrições. Para obter uma lista de bancos de dados com suporte e limitações de banco de dados remoto, consulte a seção "1,1 revisar considerações iniciais e requisitos do sistema", neste guia.
+O WSUS requer um banco de dados para cada servidor do WSUS. O WSUS dá suporte ao uso de um banco de dados que reside em um computador diferente do servidor do WSUS, com algumas restrições. Para obter uma lista contendo os bancos de dados compatíveis e as limitações de bancos de dados remotos, consulte a seção "1.1 Examinar considerações iniciais e requisitos do sistema" neste guia.
 
 O banco de dados do WSUS armazena as seguintes informações:
 
@@ -230,13 +230,13 @@ Se você instalar vários servidores do WSUS, precisará manter um banco de dado
 O SQL Server, o SQL Server Express e o Banco de Dados Interno do Windows fornecem as mesmas características de desempenho para uma configuração de um único servidor, em que o banco de dados e o serviço do WSUS estão localizados no mesmo computador. Uma configuração de um único servidor pode dar suporte a vários milhares de computadores clientes do WSUS.
 
 > [!NOTE]
-> Não tente gerenciar o WSUS acessando o banco de dados diretamente. a manipulação direta do banco de dados pode causar corrupção do banco de dados. A corrupção pode não ser imediatamente óbvia, mas pode impedir atualizações para a próxima versão do produto. Você pode gerenciar o WSUS usando o console do WSUS ou APIs (interfaces de programação de aplicativos) do WSUS.
+> Não tente gerenciar o WSUS acessando o banco de dados diretamente. A manipulação direta do banco de dados pode fazer com que ele fique corrompido. A corrupção pode não ser imediatamente óbvia, mas pode impedir atualizações para a próxima versão do produto. Você pode gerenciar o WSUS usando o console do WSUS ou APIs (interfaces de programação de aplicativos) do WSUS.
 
 #### <a name="wsus-with-windows-internal-database"></a>WSUS com Banco de Dados Interno do Windows
 Por padrão, o assistente de instalação cria e usa um Banco de Dados Interno do Windows chamado SUSDB.mdf. Esse banco de dados está localizado na pasta %windir%\wid\data\, onde %windir% é a unidade local em que o software servidor do WSUS está instalado.
 
 > [!NOTE]
-> O banco de dados interno do Windows (WID) foi introduzido no Windows Server 2008.
+> OWID (Banco de Dados Interno do Windows) foi introduzido no Windows Server 2008.
 
 O WSUS dá suporte à autenticação do Windows somente para o banco de dados. Você não pode usar a autenticação do SQL Server com o WSUS. Se você usar o Banco de Dados Interno do Windows para o banco de dados do WSUS, a Instalação do WSUS criará uma instância do SQL Server chamada server\Microsoft##WID, onde server é o nome do computador. Com qualquer uma das opções de banco de dados, a Instalação do WSUS criará um banco de dados chamado SUSDB. O nome desse banco de dados não é configurável.
 
@@ -250,7 +250,7 @@ O WSUS dá suporte à autenticação do Windows somente para o banco de dados. V
 
 O Banco de Dados Interno do Windows não fornece uma interface do usuário nem ferramentas de gerenciamento de banco de dados. Se você selecionar esse banco de dados para o WSUS, use ferramentas externas para gerenciar o banco de dados. Para obter mais informações, consulte:
 
--   [Fazer backup e restaurar dados do WSUS e fazer backup de seu servidor](https://technet.microsoft.com/library/dd939904(WS.10).aspx)
+-   [Executar backup e restauração dos dados do WSUS e Executando backup do servidor](https://technet.microsoft.com/library/dd939904(WS.10).aspx)
 
 -   [Reindexar o banco de dados do WSUS](https://technet.microsoft.com/library/dd939795(WS.10).aspx)
 
@@ -271,7 +271,7 @@ Você pode escolher uma solução diferente de armazenamento de atualizações p
 #### <a name="local-wsus-server-storage"></a>Armazenamento local no servidor do WSUS
 O armazenamento local dos arquivos de atualizações é a opção padrão ao instalar e configurar o WSUS. Essa opção pode economizar largura de banda na conexão corporativa com a Internet porque os computadores clientes baixam as atualizações diretamente do servidor do WSUS local.
 
-Essa opção exige que o servidor tenha espaço em disco suficiente para armazenar todas atualizações necessárias. no mínimo, o WSUS requer 20 GB para armazenar atualizações localmente; no entanto, recomendamos 30 GB com base em variáveis testadas.
+Essa opção exige que o servidor tenha espaço em disco suficiente para armazenar todas atualizações necessárias. O WSUS exige pelo menos 20 GB para armazenar atualizações localmente; entretanto, é recomendável 30 GB com base em variáveis testadas.
 
 #### <a name="remote-storage-on-microsoft-update-servers"></a>Armazenamento remoto nos servidores do Microsoft Update
 Você pode armazenar atualizações remotamente nos servidores do Microsoft Update. Essa opção é útil se a maioria dos computadores clientes se conecta ao servidor do WSUS por uma conexão WAN lenta porém se conecta à Internet por uma conexão de alta largura de banda.
@@ -283,9 +283,9 @@ Ao implantar uma hierarquia de servidores do WSUS, você deve determinar quais a
 
 Por exemplo, a matriz pode exigir atualizações nos idiomas inglês e francês, mas uma filial pode exigir atualizações nos idiomas alemão, francês e inglês, e outra filial pode exigir atualizações nos idiomas espanhol e inglês. Nessa situação, você configuraria o servidor do WSUS raiz para baixar atualizações em alemão, espanhol, francês e inglês. Depois configuraria o servidor do WSUS da primeira filial para baixar atualizações somente em alemão, francês e inglês; e a segunda filial para baixar atualizações somente em espanhol e inglês.
 
-A página **Escolher Idiomas** do Assistente de Configuração do WSUS permite obter atualizações de todos os idiomas ou de um subconjunto de idiomas. a seleção de um subconjunto de idiomas economiza espaço em disco, mas é importante escolher todos os idiomas necessários para todos os servidores downstream e computadores cliente de um servidor do WSUS.
+A página **Escolher Idiomas** do Assistente de Configuração do WSUS permite obter atualizações de todos os idiomas ou de um subconjunto de idiomas. A seleção de um subconjunto de idiomas fará economizar espaço em disco, mas é IMPORTANTE escolher todos os idiomas necessários a todos os servidores downstream e computadores cliente de um servidor do WSUS.
 
-A seguir estão algumas observações importantes sobre o idioma de atualização que você deve ter em mente antes de configurar esta opção:
+A seguir estão algumas observações IMPORTANTES sobre o idioma de atualização que você deve lembrar antes de configurar essa opção:
 
 -   Sempre inclua inglês além de quaisquer outros idiomas necessários em toda a organização. Todas as atualizações se baseiam nos pacotes de idiomas em inglês.
 
@@ -300,7 +300,7 @@ Se você estiver armazenando atualizações localmente e tiver configurado um se
 > [!NOTE]
 > Configure servidores upstream para sincronizar atualizações em todos os idiomas necessários para os servidores de réplica de downstream. Você não será notificado de atualizações necessárias nos idiomas não sincronizados.
 
-As atualizações serão exibidas como **Não Aplicável** em computadores cliente que exigem o idioma. Para evitar isso, certifique-se de que todos os idiomas do sistema operacional estejam incluídos nas opções de sincronização do servidor do WSUS. Você pode ver todos os idiomas do sistema operacional acessando a exibição **computadores** do console de administração do WSUS e classificando os computadores por idioma do sistema operacional. No entanto, talvez você queira incluir mais idiomas se houver aplicativos da Microsoft em mais de um idioma (por exemplo, se a versão em francês do Microsoft Word estiver instalada em alguns computadores que usam a versão em inglês do Windows 8.
+As atualizações serão exibidas como **Não Aplicável** em computadores cliente que exigem o idioma. Para evitar isso, certifique-se de que todos os idiomas do sistema operacional estejam incluídos nas opções de sincronização do servidor do WSUS. Você pode ver todos os idiomas do sistema operacional acessando a exibição **computadores** do Console de Administração do WSUS e classificar os computadores por idioma do sistema operacional. No entanto, você poderá incluir mais idiomas se houver aplicativos da Microsoft em mais de um idioma (por exemplo, se a versão francesa do Microsoft Word está instalada em alguns computadores que usam a versão em inglês do Windows 8).
 
 A escolha de idiomas para um servidor upstream não é igual à escolha de idiomas para um servidor downstream. Os procedimentos a seguir explicam as diferenças.
 
@@ -330,13 +330,13 @@ A escolha de idiomas para um servidor upstream não é igual à escolha de idiom
 O WSUS permite direcionar atualizações a grupos de computadores clientes, assim é possível garantir que computadores específicos sempre obterão as atualizações certas na hora certa. Por exemplo, se todos os computadores de um departamento (por exemplo, a equipe de Contabilidade) tiver uma configuração específica, você poderá configurar um grupo para essa equipe, decidir quais atualizações são necessárias aos computadores e em qual horário deverão ser instaladas, e usar os relatórios do WSUS para avaliar as atualizações para a equipe.
 
 > [!NOTE]
-> Se um servidor do WSUS estiver em execução em modo de réplica, não será possível criar grupos de computadores nesse servidor. Todos os grupos de computadores necessários para computadores clientes do servidor de réplica precisam ser criados no servidor do WSUS que é a raiz da hierarquia de servidores do WSUS. Para obter mais informações sobre o modo de réplica, consulte Gerenciar servidores de réplica do WSUS [gerenciar servidores de réplica do WSUS](https://technet.microsoft.com/library/dd939893(WS.10).aspx) no guia de operações do WSUS 3,0 SP2.
+> Se um servidor do WSUS estiver em execução em modo de réplica, não será possível criar grupos de computadores nesse servidor. Todos os grupos de computadores necessários para computadores clientes do servidor de réplica precisam ser criados no servidor do WSUS que é a raiz da hierarquia de servidores do WSUS. Para obter mais informações sobre o modo de réplica, consulte Gerenciar servidores de réplica do WSUS [Gerenciar servidores de réplica do WSUS](https://technet.microsoft.com/library/dd939893(WS.10).aspx) no Guia de Operações do WSUS 3.0 SP2.
 
-Os computadores sempre são atribuídos ao grupo **todos os computadores** e permanecem atribuídos ao grupo **computadores não atribuídos** até que você os atribua a outro grupo. Os computadores podem pertencer a mais de um grupo.
+Os computadores sempre são atribuídos ao grupo **Todos os computadores** e permanecem atribuídos ao grupo **Computadores não atribuídos** até você atribuí-los a outro grupo. Os computadores podem pertencer a mais de um grupo.
 
 Os grupos de computadores podem ser configurados em hierarquias (por exemplo, o grupo Folha de Pagamento e o grupo Contas a Pagar no grupo Contabilidade). Atualizações aprovadas para um grupo superior serão implantadas automaticamente nos grupos inferiores, além do grupo superior. Neste exemplo, se você aprovar Update1 para o grupo Contabilidade, a atualização será implantada em todos os computadores do grupo Contabilidade, todos os computadores do grupo Folha de Pagamento e todos os computadores do grupo Contas a Pagar.
 
-Como os computadores podem ser atribuídos a vários grupos, é possível que uma única atualização seja aprovada mais de uma vez para o mesmo computador. Entretanto, a atualização será implantada somente uma vez, e quaisquer conflitos serão resolvidos pelo servidor do WSUS. Para continuar com o exemplo anterior, se o computadora for atribuído ao grupo de folha de pagamento e ao grupo contas a pagar e Atualização1 for aprovado para ambos os grupos, ele será implantado apenas uma vez.
+Como os computadores podem ser atribuídos a vários grupos, é possível que uma única atualização seja aprovada mais de uma vez para o mesmo computador. Entretanto, a atualização será implantada somente uma vez, e quaisquer conflitos serão resolvidos pelo servidor do WSUS. Para continuar com o exemplo anterior, se o computadorA for atribuído ao grupo Folha de Pagamento e ao grupo Contas a Pagar, e Update1 for aprovada para ambos os grupos, ela será implantada somente uma vez.
 
 É possível atribuir computadores a grupos de computadores usando um destes dois métodos: direcionamento do lado do servidor ou direcionamento do lado do cliente. A seguir estão as definições de cada método:
 
@@ -356,15 +356,15 @@ O servidor aplica as seguintes regras para resolver conflitos e determinar a aç
 #### <a name="priority"></a>Priority
 As ações associadas ao grupo de maior prioridade substituem as ações dos outros grupos. Quanto maior a profundidade de um grupo na hierarquia de grupos, maior é a sua prioridade. A prioridade é atribuída com base apenas na profundidade; todas as ramificações têm a mesma prioridade. Por exemplo, um grupo dois níveis abaixo da ramificação Desktops tem prioridade maior que o grupo um nível abaixo da ramificação Servidor.
 
-No exemplo de texto a seguir do painel hierarquia do console dos serviços de atualização, para um servidor do WSUS chamado WSUS-01, os grupos de computadores chamados desktop e o servidor foram adicionados ao grupo padrão **todos os computadores** . Os computadores desktop e os grupos de servidores estão no mesmo nível hierárquico.
+No exemplo de texto a seguir do painel de hierarquias do console do Update Services, para um servidor do WSUS nomeado WSUS-01, os grupos de computadores nomeados Computadores desktop e Servidor foram adicionados ao grupo padrão **Todos os computadores**. Os dois grupos, Computadores desktop e Servidor, estão no mesmo nível hierárquico.
 
--   **Serviços de atualização**
+-   **Update Services**
 
     -   **WSUS-01**
 
-        -   **Actualiza**
+        -   **Atualizações**
 
-        -   **nos**
+        -   **computadores**
 
             -   **Todos os computadores**
 
@@ -372,7 +372,7 @@ No exemplo de texto a seguir do painel hierarquia do console dos serviços de at
 
                 -   **Computadores desktop**
 
-                    -   **Áreas de trabalho-L1**
+                    -   **Desktops-L1**
 
                         -   **Desktops-L2**
 
@@ -380,7 +380,7 @@ No exemplo de texto a seguir do painel hierarquia do console dos serviços de at
 
                     -   **Servidores-L1**
 
-        -   **Servidores downstream**
+        -   **Servidores Downstream**
 
         -   **Sincronizações**
 
@@ -388,7 +388,7 @@ No exemplo de texto a seguir do painel hierarquia do console dos serviços de at
 
         -   **Opções**
 
-Neste exemplo, o grupo dois níveis abaixo da ramificação computadores desktop (L2 de desktops) tem uma prioridade mais alta do que o grupo um nível abaixo da ramificação do servidor (servidores L1). Da mesma forma, para um computador que tenha associação nos computadores desktop-L2 e nos servidores-L1, todas as ações para o grupo de desktops-L2 têm prioridade sobre as ações especificadas para o grupo servidores-L1.
+Neste exemplo, o grupo dois níveis abaixo da ramificação Computadores desktop (Desktops L2) tem maior prioridade do que o grupo um nível abaixo da ramificação Servidor (Servidores L1). Dessa forma, para um computador associado aos dois grupos, Desktops-L2 e Servidores-L1, todas as ações referentes ao grupo Desktops-L2 têm prioridade sobre as ações especificadas para o grupo Servidores-L1.
 
 #### <a name="priority-of-install-and-uninstall"></a>Prioridade de instalação e desinstalação
 As ações de instalação substituem as ações de desinstalação. As instalações necessárias substituem as instalações opcionais (as instalações opcionais só estão disponíveis via API e, se uma aprovação de atualização for alterada via Console de Administração do WSUS, todas as aprovações opcionais serão limpas.)
@@ -397,7 +397,7 @@ As ações de instalação substituem as ações de desinstalação. As instala�
 As ações que têm uma data limite substituem aquelas que não têm.  As ações com data limite anterior substituem aquelas com datas limite posteriores.
 
 ## <a name="16-plan-wsus-performance-considerations"></a>1.6. Planejar considerações de desempenho do WSUS
-Há algumas áreas que você deve planejar cuidadosamente antes de implantar o WSUS para que possa ter um desempenho otimizado. As áreas cruciais são:
+Há algumas áreas que você deve planejar cuidadosamente antes de implantar o WSUS para ter um desempenho otimizado. As áreas cruciais são:
 
 -   Configuração da rede
 
@@ -423,7 +423,7 @@ Você pode aprovar atualizações e baixar os metadados de atualização antes d
 
 Em uma hierarquia de servidores do WSUS, o WSUS define automaticamente todos os servidores downstream que usarão a configuração de download adiado do servidor do WSUS raiz. Você pode alterar essa configuração padrão. Por exemplo, é possível configurar um servidor upstream para que execute sincronizações imediatas completas e configurar um servidor downstream para adiar os downloads.
 
-Se você implantar uma hierarquia de servidores do WSUS conectados, nossa recomendação é não aninhar profundamente os servidores. Se você habilitar downloads adiados e um servidor downstream solicitar uma atualização que não esteja aprovada no servidor upstream, a solicitação do servidor downstream forçará um download no servidor upstream. O servidor downstream baixa a atualização em uma sincronização subsequente. Em uma hierarquia profunda de servidores do WSUS, atrasos podem ocorrer à medida que as atualizações são solicitadas, baixadas e passadas pela hierarquia de servidores. Por padrão, os downloads adiados são habilitados quando você armazena as atualizações localmente. É possível alterar essa opção manualmente.
+Se você implantar uma hierarquia de servidores do WSUS conectados, nossa recomendação é não aninhar profundamente os servidores. Se você habilitar downloads adiados e um servidor downstream solicitar uma atualização que não está aprovada no servidor upstream, a solicitação do servidor downstream forçará um download no servidor upstream. O servidor downstream baixa a atualização em uma sincronização subsequente. Em uma hierarquia profunda de servidores do WSUS, atrasos podem ocorrer à medida que as atualizações são solicitadas, baixadas e passadas pela hierarquia de servidores. Por padrão, os downloads adiados são habilitados quando você armazena as atualizações localmente. É possível alterar essa opção manualmente.
 
 ### <a name="filters"></a>Filtros
 O WSUS permite filtrar sincronizações de atualização por idioma, produto e classificação. Em uma hierarquia de servidores do WSUS, o WSUS define automaticamente todos os servidores downstream que usarão as opções de filtragem de atualizações escolhidas no servidor do WSUS raiz. Você pode reconfigurar os servidores de download para que recebam somente um subconjunto dos idiomas.
@@ -431,9 +431,9 @@ O WSUS permite filtrar sincronizações de atualização por idioma, produto e c
 Por padrão, os produtos que serão atualizados são o Windows e o Office, e as classificações padrão são as atualizações Críticas, de Segurança e de Definição. Para conservar a largura de banda e o espaço em disco, é recomendável limitar os idiomas aos que você realmente usa.
 
 ### <a name="installation"></a>Instalação
-As atualizações normalmente consistem em novas versões de arquivos que já existem no computador que está sendo atualizado. Em um nível binário, esses arquivos existentes podem não diferir muito de versões atualizadas. O recurso de arquivos de instalação expressa identifica os bytes exatos entre as versões, cria e distribui atualizações somente dessas diferenças e mescla o arquivo existente juntamente com os bytes atualizados.
+As atualizações normalmente consistem em novas versões de arquivos que já existem no computador que está sendo atualizado. Em um nível binário, esses arquivos existentes podem não ser muito diferentes das versões atualizadas. O recurso de arquivos de instalação expressa identifica os bytes exatos entre as versões, cria e distribui atualizações somente dessas diferenças e mescla o arquivo existente juntamente com os bytes atualizados.
 
-Às vezes, esse recurso é chamado de "entrega Delta" porque baixa apenas o Delta (diferença) entre duas versões de um arquivo. Os arquivos de instalação expressa são maiores do que as atualizações distribuídas aos computadores clientes porque o arquivo de instalação expressa contém todas as versões possíveis de cada arquivo que será atualizado.
+Esse recurso às vezes é chamado de "entrega delta" porque ele baixa somente a diferença (delta) entre duas versões de um arquivo. Os arquivos de instalação expressa são maiores do que as atualizações distribuídas aos computadores clientes porque o arquivo de instalação expressa contém todas as versões possíveis de cada arquivo que será atualizado.
 
 Você pode usar arquivos de instalação expressa para limitar a largura de banda consumida na rede local, porque o WSUS transmite apenas o delta aplicável a uma versão específica de um componente atualizado. No entanto, isso ocorre à custa de largura de banda adicional entre o servidor do WSUS, quaisquer servidores do WSUS upstream e Microsoft Update e requer espaço adicional no disco local. Por padrão, o WSUS não usa arquivos de instalação expressa.
 
@@ -442,14 +442,14 @@ Nem todas as atualizações são ótimas candidatas para distribuição usando o
 ### <a name="large-update-deployment"></a>Implantações de grandes atualizações
 Ao implantar grandes atualizações (como os service packs), é possível evitar a saturação da rede seguindo estas práticas:
 
-1.  Usar a otimização do BITS. As limitações de largura de banda do BITS podem ser controladas por horário no dia, mas elas se aplicam a todos os aplicativos que estão usando o BITS. Para saber como controlar a limitação de BITS, consulte [políticas de grupo](https://msdn.microsoft.com/library/windows/desktop/aa362844(v=vs.85).aspx).
+1.  Usar a otimização do BITS. As limitações de largura de banda do BITS podem ser controladas por horário no dia, mas elas se aplicam a todos os aplicativos que estão usando o BITS. Para saber como controlar a limitação do BITS, consulte [Políticas de Grupo](https://msdn.microsoft.com/library/windows/desktop/aa362844(v=vs.85).aspx).
 
 2.  Usar a otimização do IIS (Serviços de Informações da Internet) para limitar a otimização a um ou mais serviços Web.
 
 3.  Usar grupos de computadores para controlar a distribuição. Um computador cliente se identifica como membro de um determinado grupo de computadores quando envia informações ao servidor do WSUS. O servidor do WSUS usa essas informações para determinar quais atualizações devem ser implantadas nesse computador. Você pode configurar vários grupos de computadores e aprovar em sequência grandes downloads de service packs para um subconjunto desses grupos.
 
 ### <a name="background-intelligent-transfer-service"></a>BITS
-O WSUS usa o protocolo BITS para todas as tarefas de transferência de arquivos. Isso inclui downloads para computadores clientes e sincronizações de servidores. O BITS permite que os programas baixem arquivos usando a largura de banda sobressalente. O BITS mantém transferências de arquivos através de desconexões da rede e reinicializações do computador. Para obter mais informações, consulte: [Serviço de transferência inteligente em segundo plano](https://msdn.microsoft.com/library/bb968799.aspx).
+O WSUS usa o protocolo BITS para todas as tarefas de transferência de arquivos. Isso inclui downloads para computadores clientes e sincronizações de servidores. O BITS permite que os programas baixem arquivos usando a largura de banda sobressalente. O BITS mantém transferências de arquivos através de desconexões da rede e reinicializações do computador. Para obter mais informações, consulte: [Serviço de Transferência Inteligente em Segundo Plano](https://msdn.microsoft.com/library/bb968799.aspx).
 
 ## <a name="17-plan-automatic-updates-settings"></a>1.7. Planejar definições das atualizações automáticas
 Você pode especificar um prazo limite para aprovar atualizações no servidor do WSUS. O prazo limite faz com que os computadores clientes instalem a atualização em um horário específico, mas há inúmeras situações diferentes, dependendo de se o prazo limite expirou, se há outras atualizações na fila para o computador instalar e se a atualização (ou outra atualização na fila) exige uma reinicialização.

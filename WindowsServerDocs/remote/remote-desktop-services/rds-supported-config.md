@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7d4641e2bb40a9a70264c68d0268208a30f36a69
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
+ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812305"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74187878"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>Configurações compatíveis para os Serviços de Área de Trabalho Remota
 
@@ -55,9 +55,9 @@ O Windows Server 2016 remove a restrição para o número de Agentes de Conexão
 
 ## <a name="support-for-graphics-processing-unit-gpu-acceleration"></a>Suporte à aceleração de GPU (unidade de processamento gráfico)
 
-Sistemas de suporte dos Serviços de Área de Trabalho Remota equipados com GPUs. Aplicativos que exigem GPU podem ser usados pela conexão remota. Além disso, a renderização e a codificação com aceleração de GPU podem ser habilitadas para melhorar o desempenho e a escalabilidade do aplicativo.
+Sistemas de suporte dos Serviços de Área de Trabalho Remota equipados com GPUs. Aplicativos que exigem uma GPU podem ser usados pela conexão remota. Além disso, a renderização e a codificação com aceleração de GPU podem ser habilitadas para melhorar o desempenho e a escalabilidade do aplicativo.
 
-Os Hosts de Sessão dos Serviços de Área de Trabalho Remota e sistemas operacionais de cliente de sessão única têm uma vantagem de GPUs físicas ou virtuais apresentadas ao sistema operacional de várias formas, incluindo os [tamanhos de máquinas virtuais otimizadas da GPU do Azure](/en-us/azure/virtual-machines/windows/sizes-gpu), as GPUs disponíveis para o servidor físico do RDSH, vGPUs do RemoteFX (somente no Windows Server 2016) e GPUs apresentadas às VMs por hipervisores com suporte.
+Os Hosts de Sessão dos Serviços de Área de Trabalho Remota e sistemas operacionais de cliente de sessão única podem tirar vantagem das GPUs físicas ou virtuais apresentadas ao sistema operacional de várias formas, incluindo os [tamanhos de máquinas virtuais otimizadas da GPU do Azure](/en-us/azure/virtual-machines/windows/sizes-gpu), as GPUs disponíveis para o servidor físico do RDSH, vGPUs do RemoteFX (somente no Windows Server 2016) e GPUs apresentadas às VMs por hipervisores com suporte.
 
 Veja [Qual tecnologia de virtualização de gráficos é ideal para você?](rds-graphics-virtualization.md) a fim de obter ajuda para descobrir o que você precisa. Para obter informações específicas sobre DDA, confira [Planejar a implantação de Atribuição de Dispositivo Discreto](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md).
 

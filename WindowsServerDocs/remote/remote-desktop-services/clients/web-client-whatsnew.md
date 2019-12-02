@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/18/2019
+ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bcbd3292bcd4653a4568492a996d53c17f465aa8
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 41f5bd7be03e61471683d5fc04df9ee10bc09e58
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591048"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189484"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novidades do cliente Web
 
@@ -26,6 +26,14 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 
 > [!NOTE]
 > Alteramos o sistema de controle de versão para o cliente da Web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da Web irão conter números (no formato "W.X.Y.Z"). Os números de versão para o cliente Web de Área de Trabalho Remota sempre terminarão com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente Web de Área de Trabalho Remota Virtual do Windows alterará o último dígito até a próxima versão do cliente Web da Área de Trabalho Remota (por exemplo, 1.0.18.1).
+
+## <a name="updates-for-version-10210"></a>Atualizações da versão 1.0.21.0
+*Data da publicação: 15/11/2019*
+
+- Adicionado suporte para usar um IME (Editor de Método de Entrada) na sessão remota para inserir caracteres complexos.
+- Corrigida uma regressão em que os usuários não podiam copiar e colar na sessão remota em dispositivos macOS.
+- Correção de uma regressão em que a Chave do Windows local era enviada para a sessão remota no Firefox.
+- Adicionado um link para a alteração de senha do RDWeb quando habilitada pelo administrador.
 
 ## <a name="updates-for-version-10200"></a>Atualizações para a versão 1.0.20.0
 *Data da publicação: 18/10/2019*

@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
+ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019590"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74265923"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -31,11 +31,22 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 |Grupo de usuários |Versão  |
 |-----------|---------|
 |Public     |1.2.431  |
-|Participante do Programa Windows Insider    |1.2.431  |
+|Participante do Programa Windows Insider    |1.2.524  |
+
+## <a name="updates-for-version-12524"></a>Atualizações da versão 1.2.524
+
+*Data da publicação: 20/11/2019*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+
+- Agora, você pode acessar informações sobre atualizações diretamente do botão mais opções na barra de comandos na parte superior do cliente.
+- Agora, você pode fornecer comentários na barra de comandos do cliente.
 
 ## <a name="updates-for-version-12431"></a>Atualizações da versão 1.2.431
 
 *Data da publicação: 12/11/2019*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - As versões de 32 bits e ARM64 do cliente já estão disponíveis!
 - Agora o cliente salva todas as alterações feitas na barra de conexão (como a posição, o tamanho e o estado de fixação) e aplica essas alterações em todas as sessões iniciadas.
@@ -55,15 +66,12 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 *Data da publicação: 17/09/2019*
 
-- Correção de uma falha que ocorreu ao autenticar durante uma conexão.
-- Correção de uma falha que ocorreu ao fechar o cliente.
-
-## <a name="updates-for-version-12246"></a>Atualizações da versão 1.2.246
-
-*Data da publicação: 28/08/2019*
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - Melhoria nos idiomas de fallback para a versão localizada. (Por exemplo, FR-CA será exibido corretamente em francês, em vez de inglês.)
 - Ao remover uma assinatura, agora o cliente remove de maneira adequada as credenciais salvas do Gerenciador de Credenciais.
 - O processo de atualização do cliente agora é autônomo depois de iniciado e o cliente será reiniciado após a conclusão.
 - Agora o cliente pode ser usado no Windows 10 no modo S.
 - Correção de um problema que fez o processo de atualização falhar para usuários com um espaço no nome de usuário.
+- Correção de uma falha que ocorreu ao autenticar durante uma conexão.
+- Correção de uma falha que ocorreu ao fechar o cliente.

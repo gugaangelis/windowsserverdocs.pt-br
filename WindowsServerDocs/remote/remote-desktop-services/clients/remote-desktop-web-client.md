@@ -8,12 +8,12 @@ ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 69beba2c59617da5b501dc55e2509e41ce4ee3fd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404117"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189467"
 ---
 # <a name="get-started-with-the-web-client"></a>Introdução ao cliente Web
 
@@ -58,6 +58,10 @@ Siga estas etapas para imprimir a partir do cliente Web:
 ## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>Copiar e colar a partir do cliente Web da Área de Trabalho Remota
 
 O cliente Web atualmente oferece suporte para copiar e colar somente texto. Arquivos não podem ser copiados ou colados de e para o cliente Web. Além disso, somente é possível usar **Ctrl+C** e **Ctrl+V** para copiar e colar o texto.
+
+## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>Usar um IME (Editor de Método de Entrada) na sessão remota
+
+Para usar um Editor de Método de Entrada para inserir caracteres complexos na sessão remota, selecione o ícone de engrenagem na barra de navegação para abrir o painel lateral **Configurações** e defina o controle **Habilitar Editor de Método de Entrada** como **Ativado**. Você precisa ter um Editor de Método de Entrada instalado e habilitado na sessão remota. 
 
 ## <a name="get-help-with-the-web-client"></a>Obter ajuda com o cliente Web
 
