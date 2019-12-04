@@ -8,6 +8,8 @@
 ## [Planejar e projetar](rds-plan-and-design.md)
 ### [Build em qualquer lugar](rds-plan-build-anywhere.md)
 ### [Atender a diferentes tipos de usuários](rds-plan-cater-to-users.md)
+### [Cargas de trabalho de Área de Trabalho Remota](remote-desktop-workloads.md)
+### [Dimensionamento de máquina virtual](virtual-machine-recs.md)
 ### [Acesso de qualquer lugar](rds-plan-access-from-anywhere.md)
 ### [Alta disponibilidade](rds-plan-high-availability.md)
 ### [Autenticação multifator](rds-plan-mfa.md)
