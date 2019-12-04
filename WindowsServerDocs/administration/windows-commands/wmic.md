@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9840bc20ddf6193241fe36055698e2bd3222496
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361881"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781323"
 ---
 # <a name="wmic"></a>wmic
 
@@ -31,7 +31,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 ## <a name="syntax"></a>Sintaxe
 
 ```
-command </parameter>
+wmic </parameter>
 ```
 
 ## <a name="sub-commands"></a>Subcomandos
@@ -44,14 +44,6 @@ Os seguintes subcomandos estão disponíveis o tempo todo:
 |path|Sai do modo de alias padrão do WMIC para acessar instâncias diretamente no esquema do WMI.|
 |noticioso|Exibe os valores atuais de todas as opções globais.|
 |[sair \| sair]|Sai do Shell de comando do WMIC.|
-
-## <a name="parameters"></a>Parâmetros
-
-|Parâmetro|Descrição|
-|---------|-----------|
-|</parameter>|\<Descrição concisa, começa com um verbo. >|
-|</param2>|\<outra descrição concisa, começa com um verbo. >|
-
 
 ## <a name="BKMK_examples"></a>Disso
 

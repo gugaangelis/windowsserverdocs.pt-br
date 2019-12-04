@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 84ce4986d27884f817eb5e632ac8dc1c5a22b922
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d5630ece940e5bd7895510c245d14b67c847a70
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390485"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791126"
 ---
 # <a name="active-directory-domain-services-overview"></a>Visão geral do Active Directory Domain Services
 
@@ -23,7 +23,7 @@ ms.locfileid: "71390485"
 
 Um diretório é uma estrutura hierárquica que armazena informações sobre objetos na rede. Um serviço de diretório, como o Active Directory Domain Services (AD DS), fornece os métodos para armazenar dados de diretório e disponibilizar esses dados para usuários e administradores de rede. Por exemplo, AD DS armazena informações sobre contas de usuário, como nomes, senhas, números de telefone e assim por diante, e permite que outros usuários autorizados na mesma rede acessem essas informações.
 
-Active Directory armazena informações sobre objetos na rede e torna essas informações fáceis para que os administradores e usuários encontrem e usem. O Active Directory usa um armazenamento de dados estruturado como base para uma organização lógica e hierárquica de informações de diretório.
+O Active Directory armazena informações sobre objetos na rede e torna essas informações fáceis de serem encontradas e usadas por administradores e usuários. O Active Directory usa um armazenamento de dados estruturado como base para uma organização lógica e hierárquica de informações de diretório.
 
 Esse armazenamento de dados, também conhecido como o diretório, contém informações sobre objetos Active Directory. Esses objetos normalmente incluem recursos compartilhados, como servidores, volumes, impressoras e contas de usuário e computador de rede. Para obter mais informações sobre o armazenamento de dados de Active Directory, consulte [Directory Data Store](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx).
 
@@ -45,7 +45,7 @@ O Active Directory também inclui:
  Esta seção fornece links para os principais conceitos de Active Directory:
  
 * [Active Directory a estrutura e as tecnologias de armazenamento](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
-* [Funções do controlador de domínios](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
+* [Funções do controlador de domínio](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
 * [Esquema de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
 * [Noções básicas sobre confianças](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
 * [Tecnologias de replicação Active Directory](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 

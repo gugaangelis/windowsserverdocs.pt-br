@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fb0875c972f8259b47f48ef84ed486fc678d8b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370892"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781303"
 ---
 # <a name="start"></a>start
 
@@ -31,24 +31,25 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 ## <a name="syntax"></a>Sintaxe
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
 ```
 
 ## <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|"\<Title >"|Especifica o título a ser exibido na barra de título da janela do prompt de comando.|
-|/d \<Path >|Especifica o diretório de inicialização.|
+|"\<título >"|Especifica o título a ser exibido na barra de título da janela do prompt de comando.|
+|/d \<caminho >|Especifica o diretório de inicialização.|
 |/i|Passa o ambiente de inicialização cmd. exe para a nova janela de prompt de comando. Se **/i** não for especificado, o ambiente atual será usado.|
 |/min \|/Max|Especifica para minimizar ( **/min**) ou maximizar ( **/Max**) a nova janela do prompt de comando.|
 |/Separate \|/Shared|Inicia programas de 16 bits em um espaço de memória separado ( **/separate**) ou espaço de memória compartilhada ( **/Shared**). Essas opções não têm suporte em plataformas de 64 bits.|
 |/Low \|/normal \|/High \|/Realtime \|/AboveNormal \|/BelowNormal|Inicia um aplicativo na classe de prioridade especificada. Os valores de classe de prioridade válidos são **/Low**, **/normal**, **/High**, **/Realtime**, **/AboveNormal**e **/BelowNormal**.|
 |/Affinity \<HexAffinity >|Aplica a máscara de afinidade de processador especificada (expressa como um número hexadecimal) ao novo aplicativo.|
 |/Wait|Inicia um aplicativo e aguarda sua finalização.|
+|/elevate|Executa o aplicativo como administrador.|
 |/b.|Inicia um aplicativo sem abrir uma nova janela de prompt de comando. A manipulação CTRL + C é ignorada, a menos que o aplicativo permita o processamento de CTRL + C. Use CTRL + BREAK para interromper o aplicativo.|
-|/b \<Command > \| \<Program >|Especifica o comando ou programa a ser iniciado.|
-|\<Parameters >|Especifica os parâmetros a serem passados para o comando ou programa.|
+|/b \<comando > \| programa de \<|Especifica o comando ou programa a ser iniciado.|
+|\<parâmetros >|Especifica os parâmetros a serem passados para o comando ou programa.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

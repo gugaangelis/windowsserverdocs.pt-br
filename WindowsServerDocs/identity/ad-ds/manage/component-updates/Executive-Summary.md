@@ -9,12 +9,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a24c88f5469890f12f821b9f729c7d283b687f43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53f51d3a7a777ae378ce733ea9e66de66da5351a
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389898"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781333"
 ---
 # <a name="executive-summary"></a>Síntese
 
@@ -56,10 +56,10 @@ Estão incluídos os seguintes assuntos:
   
     -   Falta de práticas seguras de desenvolvimento de aplicativos  
   
--   **Contas atraentes para roubo de credenciais** – ataques de roubo de credenciais são aqueles em que um invasor recebe inicialmente acesso privilegiado a um computador em uma rede e, em seguida, usa ferramentas disponíveis gratuitamente para extrair credenciais das sessões de outros contas conectadas.   
+-   **Contas atraentes para roubo de credenciais** – ataques de roubo de credenciais são aqueles em que um invasor recebe inicialmente acesso privilegiado a um computador em uma rede e, em seguida, usa ferramentas gratuitas disponíveis para extrair credenciais das sessões de outras contas conectadas.   
     As seguintes opções estão incluídas nesta seção:  
   
-    -   **Atividades que aumentam a probabilidade de comprometimento** – como o destino do roubo de credenciais é geralmente contas de domínio altamente privilegiadas e contas de "pessoa muito importante" (VIP), é importante que os administradores estejam preocupados com as atividades Isso aumenta a probabilidade de sucesso de um ataque de roubo de credencial. Essas atividades são:  
+    -   **Atividades que aumentam a probabilidade de comprometimento** -como o alvo do roubo de credenciais geralmente são contas de domínio altamente privilegiadas e contas de "pessoa muito importante" (VIP), é importante que os administradores estejam preocupados com as atividades que aumentam a probabilidade de um ataque de roubo de credencial. Essas atividades são:  
   
         -   Fazendo logon em computadores não seguros com contas com privilégios  
   
@@ -114,7 +114,7 @@ As seguintes opções estão incluídas nesta seção:
   
     -   Não se esqueça da segurança física ao projetar e implementar hosts administrativos seguros.  
   
--   **Protegendo controladores de domínio contra ataques** – se um usuário mal-intencionado obtiver acesso privilegiado a um controlador de domínio, esse usuário poderá modificar, corromper e destruir o banco de dados Active Directory e, por extensão, todos os sistemas e contas que são gerenciados por Active Directory.  
+-   **Protegendo os controladores de domínio contra ataques** – se um usuário mal-intencionado obtiver acesso privilegiado a um controlador de domínio, esse usuário poderá modificar, corromper e destruir o banco de dados Active Directory e, por extensão, todos os sistemas e contas que são gerenciados pelo Active Directory.  
   
 As seguintes entidades estão incluídas nesta seção:  
   
@@ -131,7 +131,7 @@ As seguintes entidades estão incluídas nesta seção:
   
 -   **Política de auditoria do Windows** – os logs de eventos de segurança do Windows têm categorias e subcategorias que determinam quais eventos de segurança são rastreados e registrados.  
   
--   **Recomendações de política de auditoria** – esta seção descreve as configurações da política de auditoria padrão do Windows, as configurações de política de auditoria recomendadas pela Microsoft e recomendações mais agressivas para que as organizações usem para auditar servidores críticos e estações.  
+-   **Recomendações de política de auditoria** – esta seção descreve as configurações da política de auditoria padrão do Windows, as configurações de política de auditoria recomendadas pela Microsoft e recomendações mais agressivas para que as organizações usem para auditar servidores e estações de trabalho críticos.  
   
 ## <a name="planning-for-compromise"></a>Planejar para comprometimento  
 Esta seção contém recomendações que ajudarão as organizações a se preparar para um comprometimento antes de acontecerem, implementar controles que possam detectar um evento de comprometimento antes que ocorra uma violação completa e fornecer diretrizes de resposta e recuperação para casos em que um comprometimento completo do diretório é obtido por invasores. As seguintes entidades estão incluídas nesta seção:  
@@ -160,7 +160,7 @@ Esta seção contém recomendações que ajudarão as organizações a se prepar
   
         -   **Classificar todos os Active Directory dados-os** proprietários de negócios devem fornecer classificação de dados em Active Directory. Dentro do modelo de classificação de dados, a classificação para os seguintes dados de Active Directory deve ser incluída:  
   
-            -   **Sistemas** -classificar populações de servidor, seu sistema operacional sua função, os aplicativos em execução e os proprietários de ti e de negócios do registro.  
+            -   **Sistemas** -classificar populações de servidor, seu sistema operacional, sua função, os aplicativos em execução e os proprietários de ti e de negócios do registro.  
   
             -   **Aplicativos** – classifique aplicativos por funcionalidade, base de usuários e seu sistema operacional.  
   
@@ -174,26 +174,26 @@ As práticas são listadas em ordem aproximada de prioridade, ou seja, números 
   
 ||**Prática recomendada**|**Tático ou estratégico**|**Preventiva ou de detecção**|  
 |-|-|-|-|  
-|1|Aplicativos de patch.|Táticas|Preventivo|  
-|2|Sistemas operacionais de patch.|Táticas|Preventivo|  
+|1|Aplicativos de patch.|Táticas|Preventiva|  
+|2|Sistemas operacionais de patch.|Táticas|Preventiva|  
 |3|Implante e atualize imediatamente software antivírus e antimalware em todos os sistemas e monitore as tentativas de removê-lo ou desabilitá-lo.|Táticas|Ambos|  
-|4|Monitore objetos Active Directory confidenciais para tentativas de modificação e para eventos do Windows que podem indicar a tentativa de comprometimento.|Táticas|Detetive|  
+|추가를 클릭합니다.|Monitore objetos Active Directory confidenciais para tentativas de modificação e para eventos do Windows que podem indicar a tentativa de comprometimento.|Táticas|Detetive|  
 |5|Proteger e monitorar contas para usuários que têm acesso a dados confidenciais|Táticas|Ambos|  
-|6|Impedir que contas poderosas sejam usadas em sistemas não autorizados.|Táticas|Preventivo|  
-|7|Elimine a associação permanente em grupos altamente privilegiados.|Táticas|Preventivo|  
-|8|Implemente controles para conceder a Associação temporária em grupos privilegiados quando necessário.|Táticas|Preventivo|  
-|9|Implementar hosts administrativos seguros.|Táticas|Preventivo|  
-|10|Use a lista de permissões de aplicativos em controladores de domínio, hosts administrativos e outros sistemas confidenciais.|Táticas|Preventivo|  
+|6|Impedir que contas poderosas sejam usadas em sistemas não autorizados.|Táticas|Preventiva|  
+|7|Elimine a associação permanente em grupos altamente privilegiados.|Táticas|Preventiva|  
+|8|Implemente controles para conceder a Associação temporária em grupos privilegiados quando necessário.|Táticas|Preventiva|  
+|9|Implementar hosts administrativos seguros.|Táticas|Preventiva|  
+|10|Use a lista de permissões de aplicativos em controladores de domínio, hosts administrativos e outros sistemas confidenciais.|Táticas|Preventiva|  
 |11|Identificar ativos críticos e priorizar a segurança e o monitoramento.|Táticas|Ambos|  
-|12|Implemente controles de acesso com privilégios mínimos e baseados em função para administração do diretório, sua infraestrutura de suporte e sistemas ingressados no domínio.|Estratégicas|Preventivo|  
-|13|Isole os sistemas e aplicativos herdados.|Táticas|Preventivo|  
-|14|Descomissionar sistemas e aplicativos herdados.|Estratégicas|Preventivo|  
-|15|Implemente programas de ciclo de vida de desenvolvimento seguro para aplicativos personalizados.|Estratégicas|Preventivo|  
-|16|Implemente o gerenciamento de configuração, examine a conformidade regularmente e avalie as configurações com cada nova versão de hardware ou software.|Estratégicas|Preventivo|  
+|12|Implemente controles de acesso com privilégios mínimos e baseados em função para administração do diretório, sua infraestrutura de suporte e sistemas ingressados no domínio.|Estratégicas|Preventiva|  
+|13|Isole os sistemas e aplicativos herdados.|Táticas|Preventiva|  
+|14|Descomissionar sistemas e aplicativos herdados.|Estratégicas|Preventiva|  
+|15|Implemente programas de ciclo de vida de desenvolvimento seguro para aplicativos personalizados.|Estratégicas|Preventiva|  
+|16|Implemente o gerenciamento de configuração, examine a conformidade regularmente e avalie as configurações com cada nova versão de hardware ou software.|Estratégicas|Preventiva|  
 |17|Migre ativos críticos para florestas original com requisitos rigorosos de segurança e monitoramento.|Estratégicas|Ambos|  
-|18|Simplifique a segurança para os usuários finais.|Estratégicas|Preventivo|  
-|19|Use firewalls baseados em host para controlar e proteger as comunicações.|Táticas|Preventivo|  
-|20|Dispositivos de patch.|Táticas|Preventivo|  
+|18|Simplifique a segurança para os usuários finais.|Estratégicas|Preventiva|  
+|19|Use firewalls baseados em host para controlar e proteger as comunicações.|Táticas|Preventiva|  
+|20|Dispositivos de patch.|Táticas|Preventiva|  
 |21|Implemente o gerenciamento de ciclo de vida centrado nos negócios para ativos de ti.|Estratégicas|N/D|  
 |22|Criar ou atualizar planos de recuperação de incidentes.|Estratégicas|N/D|  
   

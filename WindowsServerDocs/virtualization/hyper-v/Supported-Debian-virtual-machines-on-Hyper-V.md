@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 71b1985da522ef9ee2d7745bd19d2548e0241a2f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366771"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791768"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuais Debian com suporte no Hyper-V
 
@@ -68,7 +68,7 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
 | Passagem de PCI/DDA                                                                                                                          | 2019, 2016                                  | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
 | **[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
 | Inicializar usando UEFI                                                                                                                              | 2019, 2016, 2012 R2                         | &#10004;Observação 7       | &#10004;Observação 7       | &#10004;Observação 7       |                       |
-| Inicialização segura                                                                                                                                  | 2019, 2016                                  |                       |                       |                       |                       |
+| Inicialização segura                                                                                                                                  | 2019, 2016                                  | &#10004;              |                       |                       |                       |
 
 
 ## <a name="BKMK_notes"></a>Registra
@@ -83,7 +83,7 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
 
 5. O backup de máquina virtual ao vivo não funcionará com sistemas de arquivos ext2. O layout padrão criado pelo instalador Debian inclui sistemas de arquivos de ext2, você deve personalizar o layout para não criar esse tipo de FileSystem.
 
-6. Enquanto o Debian 7. x está sem suporte e usa um kernel mais antigo, o kernel incluído no [Debian backports](https://wiki.debian.org/Backports) para Debian 7. x aprimorou os recursos do Hyper-V.
+6. Enquanto o Debian 7. x está sem suporte e usa um kernel mais antigo, o kernel incluído no Debian [backports](https://wiki.debian.org/Backports) para Debian 7. x aprimorou os recursos do Hyper-V.
 
 7. Em máquinas virtuais do Windows Server 2012 R2 geração 2 têm inicialização segura habilitada por padrão e algumas máquinas virtuais do Linux não serão inicializadas a menos que a opção de inicialização segura esteja desabilitada. Você pode desabilitar a inicialização segura na seção **firmware** das configurações da máquina virtual no Gerenciador do **Hyper-V** ou pode desabilitá-la usando o PowerShell:
 
