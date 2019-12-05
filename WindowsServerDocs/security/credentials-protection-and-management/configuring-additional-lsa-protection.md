@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: eaebac19119525b659c09b5506c497afdbd9a263
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386995"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829625"
 ---
 # <a name="configuring-additional-lsa-protection"></a>Configurando a proteção LSA adicional
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico para o profissional de TI explica como configurar proteção adicional para o processo de LSA (Autoridade de Segurança Local), a fim de impedir a injeção de código que poderá comprometer credenciais.
 
@@ -71,7 +71,7 @@ Você pode usar o modo de auditoria para identificar plug-ins e drivers de LSA q
 
 ##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>Para habilitar o modo de auditoria para Lsass.exe em um único computador editando o Registro
 
-1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave do Registro localizada em: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
+1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave de Registro que está localizada em: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
 
 2.  Defina o valor da chave de Registro como **AuditLevel=dword:00000008**.
 
@@ -79,18 +79,18 @@ Você pode usar o modo de auditoria para identificar plug-ins e drivers de LSA q
 
 Analise os resultados dos eventos 3065 e 3066.
 
-Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Microsoft-Windows-CodeIntegrity/operacional:
+Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Microsoft-Windows-CodeIntegrity/Operational:
 
--   **Evento 3065**: Este evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver específico que não atendeu aos requisitos de segurança para Seções Compartilhadas. No entanto, devido à política de sistema definida, foi permitido o carregamento da imagem.
+-   **Evento 3065**: esse evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver específico que não atendeu aos requisitos de segurança para Seções Compartilhadas. No entanto, devido à política de sistema definida, foi permitido o carregamento da imagem.
 
--   **Evento 3066**: Este evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver específico que não atendeu aos requisitos de nível de assinatura da Microsoft. No entanto, devido à política de sistema definida, foi permitido o carregamento da imagem.
+-   **Evento 3066**: esse evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver específico que não atendeu aos requisitos de nível de assinatura da Microsoft. No entanto, devido à política de sistema definida, foi permitido o carregamento da imagem.
 
 > [!IMPORTANT]
 > Esses eventos operacionais não são gerados quando um depurador de kernel está conectado e habilitado em um sistema.
 > 
 > Se um plug-in ou driver contiver Seções Compartilhadas, o Evento 3066 será registrado com o Evento 3065. A remoção das Seções Compartilhadas deve impedir que os dois eventos ocorram, a menos que o plug-in não atenda aos requisitos de nível de assinatura da Microsoft.
 
-Para habilitar o modo de auditoria para vários computadores em um domínio, é possível usar a Extensão do Lado do Cliente do Registro para Política de Grupo para implantar o valor do Registro de nível de auditoria Lsass.exe. Você precisa modificar a chave do Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
+Para habilitar o modo de auditoria para vários computadores em um domínio, é possível usar a Extensão do Lado do Cliente do Registro para Política de Grupo para implantar o valor do Registro de nível de auditoria Lsass.exe. Você precisa modificar a chave de Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
 
 ##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>Para criar a configuração do valor AuditLevel em um GPO
 
@@ -126,11 +126,11 @@ Você pode usar o registro de eventos para identificar plug-ins e drivers de LSA
 
 Analise os resultados dos Eventos 3033 e 3063.
 
-Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Microsoft-Windows-CodeIntegrity/operacional:
+Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Microsoft-Windows-CodeIntegrity/Operational:
 
--   **Evento 3033**: Este evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver que não atendeu aos requisitos de nível de assinatura da Microsoft.
+-   **Evento 3033**: esse evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver que não atendeu aos requisitos de nível de assinatura da Microsoft.
 
--   **Evento 3063**: Este evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver que não atendeu aos requisitos de segurança para Seções Compartilhadas.
+-   **Evento 3063**: esse evento registra que uma verificação de integridade de código determinou que um processo (geralmente, lsass.exe) tentou carregar um driver que não atendeu aos requisitos de segurança para Seções Compartilhadas.
 
 As Seções Compartilhadas geralmente são o resultado de técnicas de programação que permitem que os dados da instância interajam com outros processos que usam o mesmo contexto de segurança. Isso pode criar vulnerabilidades de segurança.
 
@@ -138,7 +138,7 @@ As Seções Compartilhadas geralmente são o resultado de técnicas de programa�
 Em dispositivos que executam o Windows 8.1 (com ou sem inicialização segura ou UEFI), a configuração é possível executando os procedimentos descritos nesta seção. Para dispositivos que executam o Windows RT 8,1, a proteção LSASS. exe está sempre habilitada e não pode ser desativada.
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>Nos dispositivos baseados em x86 ou x64 que usam Inicialização Segura e UEFI ou não
-Nos dispositivos baseados em x86 ou x64 que usam a Inicialização Segura e UEFI, uma variável de UEFI é definida no firmware da UEFI quando a proteção de LSA é habilitada usando a chave de Registro. Quando a configuração está armazenada no firmware, a variável de UEFI não pode ser excluída ou alterada na chave de Registro. A variável de UEFI deve ser redefinida.
+Em dispositivos baseados em x86 ou x64 que usam a inicialização segura ou a UEFI, uma variável UEFI é definida no firmware UEFI quando a proteção do LSA é habilitada usando a chave do registro. Quando a configuração está armazenada no firmware, a variável de UEFI não pode ser excluída ou alterada na chave de Registro. A variável de UEFI deve ser redefinida.
 
 Os dispositivos baseados em x86 ou x64 que não têm suporte para UEFI ou Inicialização Segura estão desabilitados, não podem armazenar a configuração para a proteção de LSA no firmware e contam exclusivamente com a presença da chave de Registro. Neste cenário, é possível desabilitar a proteção de LSA usando o acesso remoto ao dispositivo.
 
@@ -146,7 +146,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 ##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>Para habilitar a proteção de LSA em um único computador
 
-1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave do Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave de Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
 2.  Defina o valor da chave do Registro como: "RunAsPPL"=dword:00000001.
 
@@ -178,7 +178,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 ##### <a name="to-disable-lsa-protection"></a>Para desabilitar a proteção de LSA
 
-1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave do Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave de Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
 2.  Exclua o seguinte valor da chave do Registro: "RunAsPPL"=dword:00000001.
 

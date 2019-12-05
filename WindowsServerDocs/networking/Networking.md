@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6d9abf96348a596fbd2f886cb67b5d97f686e2
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
+ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700149"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823849"
 ---
 # <a name="networking"></a>Rede do
 
@@ -252,7 +252,7 @@ Essa consistência significa que seus aplicativos agora são mais fáceis de ser
             </div>
         </div>
     </li>
-    <hr />
+   <hr />
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -263,7 +263,7 @@ Essa consistência significa que seus aplicativos agora são mais fáceis de ser
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="dns/dns-top.md">O DNS (sistema de nomes de domínio)&quot;&gt;</a></h3>
+                        <h3><a href="dns/dns-top.md">Sistema de nome de domínio (DNS)</a></h3>
                         <hr />
                         <p>O DNS (sistema de nomes de domínio) é um dos pacotes padrão do setor de protocolos que compõem TCP/IP e, juntos, o cliente DNS e o servidor DNS fornecem serviços de resolução de nomes de nome de computador para os computadores e usuários.</p>
                     </div>
@@ -382,8 +382,8 @@ Essa consistência significa que seus aplicativos agora são mais fáceis de ser
                         <p>O descarregamento e a otimização de tecnologias de rede no Windows Server 2016 incluem recursos e tecnologias Somente Software (SO), recursos e tecnologias integrados de Software e Hardware (SH) e recursos e tecnologias Somente Hardware (HO).</p>
                         <p>A seguinte documentação de tecnologia de descarregamento e otimização também está disponível:<p>
                         <hr />
-                         
-                        <a href="technologies/conv-nic/cnic-top.md">de rede de alto desempenho</a><hr />
+                        <a href="technologies/conv-nic/cnic-top.md">NIC (placa de interface de rede) convergida</a>
+                        <hr />
                          
                         <a href="technologies/dcb/dcb-top.md">de ponte do Data Center (DCB)</a><hr />
                      
