@@ -5,25 +5,25 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 03/07/2019
+ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406787"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903715"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 > [!Tip]
 > Novo no Windows Admin Center?
 > [Saiba mais sobre o Windows Admin Center](../understand/windows-admin-center.md) ou [Baixe agora](https://aka.ms/windowsadmincenter).
 
-## <a name="managing-windows-server-machines"></a>Gerenciando computadores Windows Server
+## <a name="managing-windows-server-machines"></a>Como gerenciar máquinas do Windows Server
 
 Você pode adicionar servidores individuais que executam o Windows Server 2012 ou posterior ao centro de administração do Windows para gerenciar o servidor com um conjunto abrangente de ferramentas, incluindo certificados, dispositivos, eventos, processos, funções e recursos, atualizações, máquinas virtuais e muito mais.
 
@@ -53,7 +53,7 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | [Active Directory](#active-directory-preview) | Gerenciar Active Directory |
 | [Backup](#backup) | Exibir e configurar o backup do Azure |  
 | [Certificados](#certificates) | Exibir e modificar certificados |
-| [Recipientes](#containers) | Exibir contêineres |
+| [Contêineres](#containers) | Exibir contêineres |
 | [Dispositivos](#devices) | Exibir e modificar dispositivos |
 | [DHCP](#dhcp) | Exibir e gerenciar a configuração do servidor DHCP |
 | [DNS](#dns) | Exibir e gerenciar a configuração do servidor DNS |
@@ -63,8 +63,10 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | [Aplicativos instalados](#installed-apps) | Exibir e remover aplicativos instalados |
 | [Usuários e grupos locais](#local-users-and-groups) | Exibir e modificar usuários e grupos locais |
 | [Network](#network) | Exibir e modificar dispositivos de rede |
+| [Monitoramento de pacotes](https://aka.ms/wac1908) | Monitorar pacotes de rede |
+| [Monitor de desempenho](https://aka.ms/perfmon-blog) | Exibir contadores de desempenho e relatórios |
 | [PowerShell](#powershell) | Interagir com o servidor por meio do PowerShell |
-| [Processar](#processes) | Exibir e modificar processos em execução |
+| [Processos](#processes) | Exibir e modificar processos em execução |
 | [Registry](#registry) | Exibir e modificar entradas do registro |
 | [Área de Trabalho Remota](#remote-desktop) | Interagir com o servidor via Área de Trabalho Remota |
 | [Funções e recursos](#roles-and-features) | Exibir e modificar funções e recursos |
@@ -75,7 +77,7 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | [Serviço de migração de armazenamento](#storage-migration-service) | Migrar servidores e compartilhamentos de arquivos para o Azure ou o Windows Server 2019 |
 | [Réplica de armazenamento](#storage-replica) | Usar a réplica de armazenamento para gerenciar a replicação de armazenamento de servidor para servidor |
 | [Insights do sistema](#system-insights) | O System insights oferece maior insight sobre o funcionamento do seu servidor. |
-| [Actualiza](#updates) | Exibir instalado e verificar se há novas atualizações |
+| [Updates](#updates) | Exibir instalado e verificar se há novas atualizações |
 | [Máquinas Virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
 | [Comutadores virtuais](#virtual-switches) | Exibir e gerenciar comutadores virtuais |
 
@@ -135,7 +137,7 @@ Os recursos a seguir têm suporte no backup:
 - Iniciar ou parar um trabalho de backup
 - Exibir o histórico e o status do trabalho de backup
 - Exibir pontos de recuperação e recuperar dados
-- excluir dados de backup
+- Excluir dados de backup
 
 ## <a name="certificates"></a>Certificados
 
@@ -202,7 +204,7 @@ O **DNS** permite que você gerencie dispositivos conectados em um computador ou
 
 [**Exibir comentários e recursos propostos para DHCP**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D).
 
-## <a name="events"></a>Events
+## <a name="events"></a>Eventos
 
 Os **eventos** permitem que você gerencie logs de eventos em um computador ou servidor.
 
@@ -320,7 +322,7 @@ Os recursos a seguir têm suporte em processos:
 
 - Procurar e Pesquisar processos em execução
 - Exibir detalhes do processo
-- Iniciar um processo
+- Inicie um processo
 - Encerrar um processo
 - Criar um despejo de processo
 - Localizar identificadores de processo
@@ -438,7 +440,7 @@ Os recursos a seguir têm suporte no armazenamento:
 
 [**Exibir comentários e recursos propostos para armazenamento**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
-## <a name="storage-migration-service"></a>Serviço de Migração do Armazenamento
+## <a name="storage-migration-service"></a>Serviço de Migração de Armazenamento
 
 O **serviço de migração de armazenamento** permite migrar servidores e compartilhamentos de arquivos para o Azure ou o Windows Server 2019, sem exigir que aplicativos ou usuários alterem nada.
 [Obtenha uma visão geral do serviço de migração de armazenamento](https://go.microsoft.com/fwlink/?linkid=2016155)
@@ -446,7 +448,7 @@ O **serviço de migração de armazenamento** permite migrar servidores e compar
 >[!NOTE]
 >O serviço de migração de armazenamento requer o Windows Server 2019.
 
-## <a name="storage-replica"></a>Réplica de Armazenamento
+## <a name="storage-replica"></a>Réplica de armazenamento
 
 Use a **réplica de armazenamento** para gerenciar a replicação de armazenamento de servidor para servidor.
 [Saiba mais sobre a réplica de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
@@ -454,7 +456,7 @@ Use a **réplica de armazenamento** para gerenciar a replicação de armazenamen
 ## <a name="system-insights"></a>Insights do Sistema
 
 O **System insights** apresenta a análise preditiva nativamente no Windows Server para ajudar a fornecer uma visão mais detalhada do funcionamento do servidor.
-[Obtenha uma visão geral do System insights](http://aka.ms/systeminsights)
+[Obtenha uma visão geral do System insights](https://aka.ms/systeminsights)
 
 >[!NOTE]
 >O System insights requer o Windows Server 2019.
@@ -479,7 +481,7 @@ Os recursos a seguir têm suporte em atualizações:
 
 Consulte [Gerenciando máquinas virtuais com o centro de administração do Windows](manage-virtual-machines.md)
 
-## <a name="virtual-switches"></a>Comutadores Virtuais
+## <a name="virtual-switches"></a>Switches virtuais
 
 Os **comutadores virtuais** permitem que você gerencie comutadores virtuais do Hyper-V em um computador ou servidor.
 
