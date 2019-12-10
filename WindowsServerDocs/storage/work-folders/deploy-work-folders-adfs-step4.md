@@ -6,14 +6,14 @@ ms.topic: article
 manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
-ms.date: 6/242017
+ms.date: 6/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: ff0c6d4a6e457947c063a7ea5c3ce6463e9c17bb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17adf89d3a26767bbc736a31da7b7b2b204570a2
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365755"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945238"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web
 
@@ -47,7 +47,7 @@ Para instalar os certificados, siga estas etapas:
   
 2.  Digite **MMC**.  
   
-3.  No menu **Arquivo** , clique em **Adicionar/Remover Snap-in**.  
+3.  No menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
   
 4.  Na lista **Snap-ins disponíveis**, selecione **Certificados** e clique em **Adicionar**. O Assistente de Snap-in de Certificados é iniciado.  
   
@@ -88,9 +88,9 @@ Para instalar o Proxy de aplicativo Web, siga estas etapas:
   
 6.  Na página **Serviços de Função**, selecione **Proxy de aplicativo Web**, clique em **Adicionar Recursos** e clique em **Avançar**.
 
-7.  Na página **Confirmar seleções de instalação** , clique em **Instalar**.  
+7.  Na página **Confirm installation selections**, clique em **Install**.  
   
-## <a name="configure-web-application-proxy"></a>Configurar o proxy de aplicativo Web  
+## <a name="configure-web-application-proxy"></a>Configurar o Proxy de aplicativo Web  
 Para configurar o Proxy de aplicativo Web, siga estas etapas:  
   
 1.  Clique no sinalizador de aviso na parte superior do Gerenciador do Servidor Proxy Configuration Wizard Application Web e, em seguida, Configuração do Proxy de Aplicativo Web.  
