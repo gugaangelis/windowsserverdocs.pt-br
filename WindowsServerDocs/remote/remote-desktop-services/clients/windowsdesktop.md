@@ -11,18 +11,18 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: e71aa2b1cccda85e0bf6f8a80ad68013346b30d4
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019597"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829615"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
->Aplica-se a: Windows 10 e Windows 7
+>Aplica-se a: Windows 10, Windows 10 IoT Enterprise e Windows 7
 
 É possível usar o cliente da Área de Trabalho Remota para que a Área de Trabalho do Windows acesse áreas de trabalho e aplicativos do Windows usando outro dispositivo Windows.
 
@@ -33,7 +33,7 @@ ms.locfileid: "74019597"
 
 ## <a name="install-the-client"></a>Instalar o cliente
 
-Escolha o cliente que corresponda à sua versão do Windows:
+Escolha o cliente que corresponde à versão do Windows. O novo cliente de Área de Trabalho Remota (MSRDC) dá suporte a dispositivos Windows 10, Windows 10 IoT Enterprise e Windows 7. 
 
 - [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
 - [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2098960)

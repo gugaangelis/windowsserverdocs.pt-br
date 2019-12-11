@@ -1,6 +1,6 @@
 ---
-title: Configurando o controle de acesso do usuário e as permissões
-description: Saiba como configurar o controle de acesso do usuário e as permissões usando o Active Directory ou o Azure AD (projeto Honolulu)
+title: Como configurar o controle de acesso do usuário e as permissões
+description: Saiba como configurar o controle de acesso do usuário e as permissões usando o Active Directory ou o Azure AD (Projeto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
@@ -8,100 +8,100 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 20b311e9330880c2b26e2494aabe27bb04891868
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.openlocfilehash: 96e47a94cb0139e42960baac6d07dbcb61750555
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407037"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903908"
 ---
-# <a name="configure-user-access-control-and-permissions"></a>Configurar controle de acesso do usuário e permissões
+# <a name="configure-user-access-control-and-permissions"></a>Configurar o controle de acesso do usuário e as permissões
 
 > Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-Se você ainda não fez isso, familiarize-se com as [Opções de controle de acesso do usuário no centro de administração do Windows](../plan/user-access-options.md)
+Se você ainda não fez isso, familiarize-se com as [opções de controle de acesso do usuário no Windows Admin Center](../plan/user-access-options.md)
 
 > [!NOTE]
-> O acesso baseado em grupo no centro de administração do Windows não tem suporte em ambientes de grupo de trabalho ou em domínios não confiáveis.
+> O acesso baseado em grupo no Windows Admin Center não tem suporte em ambientes de grupo de trabalho ou em domínios não confiáveis.
 
 ## <a name="gateway-access-role-definitions"></a>Definições de função de acesso do gateway
 
-Há duas funções para acesso ao serviço de gateway do centro de administração do Windows:
+Há duas funções para acesso ao serviço de gateway do Windows Admin Center:
 
-**Os usuários do gateway** podem se conectar ao serviço de gateway do centro de administração do Windows para gerenciar servidores por meio desse gateway, mas não podem alterar as permissões de acesso nem o mecanismo de autenticação usado para autenticar no gateway.
+Os **usuários de gateway** podem se conectar ao serviço de gateway do Windows Admin Center para gerenciar servidores por meio desse gateway, mas não podem alterar permissões de acesso nem o mecanismo de autenticação usado para autenticação no gateway.
 
-**Os administradores de gateway** podem configurar quem obtém acesso e como os usuários se autenticam no gateway. Somente administradores de gateway podem exibir e definir as configurações de acesso no centro de administração do Windows. Os administradores locais no computador do gateway são sempre administradores do serviço de gateway do centro de administração do Windows.
+Os **administradores de gateway** podem configurar quem obtém acesso e como os usuários se autenticam no gateway. Somente administradores de gateway podem exibir e definir as configurações de Acesso no Windows Admin Center. Os administradores locais no computador do gateway são sempre administradores do serviço de gateway do Windows Admin Center.
 
 > [!NOTE]
-> O acesso ao gateway não implica o acesso a servidores gerenciados visíveis pelo Gateway. Para gerenciar um servidor de destino, o usuário que está se conectando deve usar credenciais (por meio de suas credenciais do Windows passadas ou por meio de credenciais fornecidas na sessão do centro de administração do Windows usando a ação **gerenciar como** ) que tem acesso administrativo para esse servidor de destino.
+> O acesso ao gateway não implica o acesso a servidores gerenciados visíveis pelo gateway. Para gerenciar um servidor de destino, o usuário que está se conectando deve usar credenciais (por meio de suas credenciais do Windows passadas ou por meio de credenciais fornecidas na sessão do Windows Admin Center usando a ação **Gerenciar como**) que têm acesso administrativo a esse servidor de destino.
 
-## <a name="active-directory-or-local-machine-groups"></a>Grupos de computadores Active Directory ou locais
+## <a name="active-directory-or-local-machine-groups"></a>Grupos de computadores locais ou Active Directory
 
-Por padrão, Active Directory ou grupos de computadores locais são usados para controlar o acesso do gateway. Se você tiver um domínio Active Directory, poderá gerenciar o acesso de usuário e administrador de gateway de dentro da interface do centro de administração do Windows.
+Por padrão, o Active Directory ou grupos de computadores locais são usados para controlar o acesso do gateway. Se você tiver um domínio do Active Directory, poderá gerenciar o acesso de usuário e administrador de gateway de dentro da interface do Windows Admin Center.
 
-Na guia **usuários** , você pode controlar quem pode acessar o centro de administração do Windows como um usuário de gateway. Por padrão, e se você não especificar um grupo de segurança, qualquer usuário que acessar a URL do gateway terá acesso. Depois de adicionar um ou mais grupos de segurança à lista de usuários, o acesso é restrito aos membros desses grupos.
+Na guia **Usuários**, você pode controlar quem pode acessar o Windows Admin Center como um usuário de gateway. Por padrão, se você não especificar um grupo de segurança, qualquer usuário que acessar a URL do gateway terá acesso. Depois de adicionar um ou mais grupos de segurança à lista de usuários, o acesso será restrito aos membros desses grupos.
 
-Se você não usar um domínio Active Directory em seu ambiente, o acesso será controlado pelos grupos locais `Users` e `Administrators` no computador do gateway do centro de administração do Windows.
+Se você não usar um domínio Active Directory em seu ambiente, o acesso será controlado pelos grupos locais `Users` e `Administrators` no computador do gateway do Windows Admin Center.
 
 ### <a name="smartcard-authentication"></a>Autenticação de cartão inteligente
 
-Você pode impor a **autenticação de cartão inteligente** especificando um grupo adicional _necessário_ para grupos de segurança baseados em cartão inteligente. Depois de adicionar um grupo de segurança baseado em cartão inteligente, um usuário só poderá acessar o serviço centro de administração do Windows se eles forem membros de qualquer grupo de segurança e um grupo de cartões inteligentes incluídos na lista de usuários.
+Você pode impor a **autenticação de cartão inteligente** especificando um grupo _obrigatório_ adicional para grupos de segurança baseados em cartão inteligente. Depois de adicionar um grupo de segurança baseado em cartão inteligente, um usuário só poderá acessar o serviço do Windows Admin Center se for membro de qualquer grupo de segurança E houver um grupo de cartões inteligentes incluídos na lista de usuários.
 
-Na guia **Administradores** , você pode controlar quem pode acessar o centro de administração do Windows como um administrador de gateway. O grupo local de administradores no computador sempre terá acesso de administrador completo e não poderá ser removido da lista. Ao adicionar grupos de segurança, você concede aos membros desses grupos privilégios para alterar as configurações do gateway do centro de administração do Windows. A lista de administradores dá suporte à autenticação de cartão inteligente da mesma maneira que a lista de usuários: com a condição e para um grupo de segurança e um grupo de cartões inteligentes.
+Na guia **Administradores**, você pode controlar quem pode acessar o Windows Admin Center como um administrador de gateway. O grupo local de administradores no computador sempre terá acesso de administrador completo e não poderá ser removido da lista. Ao adicionar grupos de segurança, você concede aos membros desses grupos privilégios para alterar as configurações do gateway do Windows Admin Center. A lista de administradores dá suporte à autenticação de cartão inteligente da mesma maneira que a lista de usuários: com a condição E para um grupo de segurança e um grupo de cartões inteligentes.
 
-## <a name="azure-active-directory"></a>Active Directory do Azure
+## <a name="azure-active-directory"></a>Azure Active Directory
 
-Se sua organização usa o Azure Active Directory (AD do Azure), você pode optar por adicionar uma camada **adicional** de segurança ao centro de administração do Windows exigindo a autenticação do Azure ad para acessar o gateway. Para acessar o centro de administração do Windows, a **conta do Windows** do usuário também deve ter acesso ao servidor de gateway (mesmo que a autenticação do Azure ad seja usada). Ao usar o Azure AD, você gerenciará permissões de acesso de usuário e administrador do centro de administração do Windows no portal do Azure, em vez de dentro da interface do usuário do centro de administração do Windows.
+Se sua organização usa o Azure AD (Azure Active Directory), você pode optar por adicionar uma camada de segurança **adicional** ao Windows Admin Center exigindo a autenticação do Azure AD para acessar o gateway. Para acessar o Windows Admin Center, a **conta do Windows** do usuário também deve ter acesso ao servidor de gateway (mesmo que a autenticação do Azure AD seja usada). Ao usar o Azure AD, você gerenciará permissões de acesso de usuário e administrador do Windows Admin Center no portal do Azure, em vez de gerenciá-las de dentro da interface do usuário do Windows Admin Center.
 
-### <a name="accessing-windows-admin-center-when-azure-ad-authentication-is-enabled"></a>Acessando o centro de administração do Windows quando a autenticação do Azure AD está habilitada
+### <a name="accessing-windows-admin-center-when-azure-ad-authentication-is-enabled"></a>Como acessar o Windows Admin Center quando a autenticação do Azure AD está habilitada
 
-Dependendo do navegador usado, alguns usuários que acessam o centro de administração do Windows com a autenticação do Azure AD configurada receberão um prompt adicional **do navegador** onde precisam fornecer suas credenciais de conta do Windows para o computador no qual O centro de administração do Windows está instalado. Depois de inserir essas informações, os usuários receberão o prompt de autenticação Azure Active Directory adicional, que exige as credenciais de uma conta do Azure que tenha recebido acesso no aplicativo Azure AD no Azure.
+Dependendo do navegador usado, alguns usuários que acessam o Windows Admin Center com a autenticação do Azure AD configurada receberão um aviso adicional **do navegador** em que eles precisam fornecer suas credenciais de conta do Windows para o computador no qual o Windows Admin Center está instalado. Depois de inserir essas informações, os usuários receberão o prompt de autenticação adicional do Azure Active Directory, que exige as credenciais de uma conta do Azure que tenha recebido acesso no aplicativo Azure AD no Azure.
 
 > [!NOTE]
-> Os usuários que são conta do Windows têm **direitos de administrador** no computador do gateway não serão solicitados para a autenticação do Azure AD.
+> Os usuários cuja conta do Windows têm **direitos de administrador** no computador do gateway não serão solicitados a informarem a autenticação do Azure AD.
 
-### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Configurando a autenticação Azure Active Directory para a visualização do centro de administração do Windows
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Como configurar a autenticação do Azure Active Directory para a Versão Prévia do Windows Admin Center
 
-Vá para **configurações**do centro de administração do Windows  > **acessar** e use o comutador de alternância para ativar "usar Azure Active Directory para adicionar uma camada de segurança ao gateway". Se você não registrou o gateway no Azure, você será guiado para fazer isso no momento.
+Acesse **Configurações** > **Acesso** do Windows Admin Center e use a opção de alternância para ativar a opção "Usar Azure Active Directory para adicionar uma camada de segurança ao gateway". Se você não tiver registrado o gateway no Azure, será guiado para fazer isso no momento.
 
-Por padrão, todos os membros do locatário do Azure AD têm acesso de usuário ao serviço de gateway do centro de administração do Windows. Somente os administradores locais no computador do gateway têm acesso de administrador ao gateway do centro de administração do Windows. Observe que os direitos dos administradores locais no computador do gateway não podem ser restritos. os administradores locais podem fazer qualquer coisa, independentemente de o Azure AD ser usado para autenticação.
+Por padrão, todos os membros do locatário do Azure AD têm acesso de usuário ao serviço de gateway do Windows Admin Center. Somente os administradores locais no computador do gateway têm acesso de administrador ao gateway do Windows Admin Center. Observe que os direitos dos administradores locais no computador do gateway não podem ser restritos. Os administradores locais podem fazer qualquer coisa, independentemente de o Azure AD ser usado para autenticação.
 
-Se você quiser conceder acesso ao serviço do centro de administração do Windows a usuários ou grupos específicos do Azure AD ou administrador de gateway, você deve fazer o seguinte:
+Se você quiser conceder a usuários ou grupos específicos do Azure AD acesso de administrador de gateway ou usuário de gateway ao serviço do Windows Admin Center, deverá fazer o seguinte:
 
-1.  Vá para o aplicativo do Azure AD do centro de administração do Windows no portal do Azure usando o hiperlink fornecido nas configurações de acesso. Observe que esse hiperlink só está disponível quando a autenticação Azure Active Directory está habilitada. 
-    -   Você também pode encontrar seu aplicativo na portal do Azure acessando **Azure Active Directory** > **aplicativos empresariais** > **todos os aplicativos** e pesquisando **WindowsAdminCenter** (o aplicativo Azure ad será nomeado WindowsAdminCenter-<gateway name>). Se você não obtiver nenhum resultado da pesquisa, certifique-se de que **Mostrar** está definido como **todos os aplicativos**, o **status do aplicativo** está definido como **qualquer** e clique em aplicar e tente a pesquisa. Depois de encontrar o aplicativo, vá para **usuários e grupos**
-2.  Na guia Propriedades, defina **atribuição de usuário necessária** como Sim.
-    Depois de fazer isso, somente os membros listados na guia **usuários e grupos** poderão acessar o gateway do centro de administração do Windows.
-3.  Na guia usuários e grupos, selecione **Adicionar usuário**. Você deve atribuir um usuário de gateway ou uma função de administrador de gateway para cada usuário/grupo adicionado.
+1.  Acesse o aplicativo Azure AD do Windows Admin Center no portal do Azure usando o hiperlink fornecido em Configurações de Acesso. Observe que esse hiperlink só está disponível quando a autenticação Azure Active Directory está habilitada. 
+    -   Você também pode encontrar seu aplicativo no portal do Azure acessando **Azure Active Directory** > **Aplicativos empresariais** > **Todos os aplicativos** e pesquisando **WindowsAdminCenter** (o aplicativo Azure AD terá o nome WindowsAdminCenter-<gateway name>). Se você não obtiver nenhum resultado da pesquisa, verifique se **Mostrar** está definido como **Todos os aplicativos**, **Status do aplicativo** está definido como **Qualquer**, então clique em Aplicar e tente a pesquisa. Depois de encontrar o aplicativo, acesse **Usuários e grupos**
+2.  Na guia Propriedades, defina **Atribuição de usuário necessária** como Sim.
+    Depois de fazer isso, somente os membros listados na guia **Usuários e grupos** poderão acessar o gateway do Windows Admin Center.
+3.  Na guia Usuários e grupos, selecione **Adicionar usuário**. Você deve atribuir uma função de usuário de gateway ou administrador de gateway a cada usuário/grupo adicionado.
 
-Depois de ativar a autenticação do Azure AD, o serviço de gateway é reiniciado e você deve atualizar o navegador. Você pode atualizar o acesso do usuário para o aplicativo de SME Azure AD no portal do Azure a qualquer momento.
+Depois de ativar a autenticação do Azure AD, o serviço de gateway é reiniciado e você deve atualizar o navegador. Você pode atualizar o acesso do usuário para o aplicativo do Azure AD do SEM no portal do Azure a qualquer momento.
 
-Os usuários serão solicitados a entrar usando sua identidade de Azure Active Directory quando tentarem acessar a URL do gateway do centro de administração do Windows. Lembre-se de que os usuários também devem ser membros dos usuários locais no servidor de gateway para acessar o centro de administração do Windows.
+Os usuários serão solicitados a entrar usando a identidade do Azure Active Directory quando tentarem acessar a URL do gateway do Windows Admin Center. Lembre-se de que os usuários também devem ser membros dos usuários locais no servidor de gateway para acessarem o Windows Admin Center.
 
-Os usuários e administradores podem exibir sua conta conectada no momento e, além disso, sair dessa conta do Azure AD na guia **conta** das configurações do centro de administração do Windows.
+Os usuários e administradores podem exibir a conta conectada no momento e, além disso, sair dessa conta do Azure AD na guia **Conta** das Configurações do Windows Admin Center.
 
-### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>Configurando a autenticação Azure Active Directory para o centro de administração do Windows
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>Como configurar a autenticação do Azure Active Directory para o Windows Admin Center
 
-[Para configurar a autenticação do Azure AD, primeiro você deve registrar seu gateway com o Azure](azure-integration.md) (você só precisa fazer isso uma vez para o gateway do centro de administração do Windows). Esta etapa cria um aplicativo do Azure AD do qual você pode gerenciar o acesso de administrador de gateway e usuário de gateway.
+[Para configurar a autenticação do Azure AD, primeiro você deve registrar seu gateway com o Azure](azure-integration.md) (você só precisa fazer isso uma vez para o gateway do Windows Admin Center). Esta etapa cria um aplicativo do Azure AD do qual você pode gerenciar o acesso de administrador do gateway e usuário do gateway.
 
-Se você quiser conceder acesso ao serviço do centro de administração do Windows a usuários ou grupos específicos do Azure AD ou administrador de gateway, você deve fazer o seguinte:
+Se você quiser conceder a usuários ou grupos específicos do Azure AD acesso de administrador de gateway ou usuário de gateway ao serviço do Windows Admin Center, deverá fazer o seguinte:
 
-1.  Vá para seu aplicativo de SME Azure AD no portal do Azure. 
-    -   Ao clicar em **alterar controle de acesso** e, em seguida, selecionar **Azure Active Directory** nas configurações de acesso do centro de administração do Windows, você pode usar o hiperlink fornecido na interface do usuário para acessar seu aplicativo do Azure AD no portal do Azure. Esse hiperlink também está disponível nas configurações de acesso depois que você clica em salvar e selecionou o Azure AD como seu provedor de identidade de controle de acesso.
-    -   Você também pode encontrar seu aplicativo na portal do Azure acessando **Azure Active Directory** > **aplicativos empresariais** > **todos os aplicativos** e pesquisando o **SME** (o aplicativo Azure ad será nomeado SME-<gateway>). Se você não obtiver nenhum resultado da pesquisa, certifique-se de que **Mostrar** está definido como **todos os aplicativos**, o **status do aplicativo** está definido como **qualquer** e clique em aplicar e tente a pesquisa. Depois de encontrar o aplicativo, vá para **usuários e grupos**
-2.  Na guia Propriedades, defina **atribuição de usuário necessária** como Sim.
-    Depois de fazer isso, somente os membros listados na guia **usuários e grupos** poderão acessar o gateway do centro de administração do Windows.
-3.  Na guia usuários e grupos, selecione **Adicionar usuário**. Você deve atribuir um usuário de gateway ou uma função de administrador de gateway para cada usuário/grupo adicionado.
+1.  Vá para seu aplicativo de SME do Azure AD no portal do Azure. 
+    -   Ao clicar em **Alterar controle de acesso** e, em seguida, selecionar **Azure Active Directory** nas configurações de Acesso do Windows Admin Center, você pode usar o hiperlink fornecido na interface do usuário para acessar seu aplicativo do Azure AD no portal do Azure. Esse hiperlink também está disponível nas configurações de acesso depois que você clica em Salvar e seleciona o Azure AD como provedor de identidade de controle de acesso.
+    -   Você também pode encontrar seu aplicativo no portal do Azure acessando **Azure Active Directory** > **Aplicativos empresariais** > **Todos os aplicativos** e pesquisando **SME** (o aplicativo Azure AD terá o nome SME-<gateway>). Se você não obtiver nenhum resultado da pesquisa, verifique se **Mostrar** está definido como **Todos os aplicativos**, **Status do aplicativo** está definido como **Qualquer**, então clique em Aplicar e tente a pesquisa. Depois de encontrar o aplicativo, acesse **Usuários e grupos**
+2.  Na guia Propriedades, defina **Atribuição de usuário necessária** como Sim.
+    Depois de fazer isso, somente os membros listados na guia **Usuários e grupos** poderão acessar o gateway do Windows Admin Center.
+3.  Na guia Usuários e grupos, selecione **Adicionar usuário**. Você deve atribuir uma função de usuário de gateway ou administrador de gateway a cada usuário/grupo adicionado.
 
-Depois de salvar o controle de acesso do AD do Azure no painel de **controle alterar acesso** , o serviço de gateway é reiniciado e você deve atualizar o navegador. Você pode atualizar o acesso do usuário para o aplicativo do Azure AD do centro de administração do Windows no portal do Azure a qualquer momento. 
+Depois de salvar o serviço de controle de acesso do Azure AD no painel **Alterar controle de acesso**, o serviço de gateway será reiniciado e você deverá atualizar o navegador. Você pode atualizar o acesso do usuário para o aplicativo do Azure AD do Windows Admin Center no portal do Azure a qualquer momento. 
 
-Os usuários serão solicitados a entrar usando sua identidade de Azure Active Directory quando tentarem acessar a URL do gateway do centro de administração do Windows. Lembre-se de que os usuários também devem ser membros dos usuários locais no servidor de gateway para acessar o centro de administração do Windows. 
+Os usuários serão solicitados a entrar usando a identidade do Azure Active Directory quando tentarem acessar a URL do gateway do Windows Admin Center. Lembre-se de que os usuários também devem ser membros dos usuários locais no servidor de gateway para acessarem o Windows Admin Center. 
 
-Usando a guia **Azure** das configurações gerais do centro de administração do Windows, os usuários e os administradores podem exibir sua conta conectada no momento e, além disso, sair dessa conta do Azure AD.
+Usando a guia **Azure** das configurações gerais do Windows Admin Center, os usuários e os administradores podem exibir a conta conectada no momento, bem como sair dessa conta do Azure AD.
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>Acesso condicional e autenticação multifator
 
-Um dos benefícios de usar o Azure AD como uma camada adicional de segurança para controlar o acesso ao gateway do centro de administração do Windows é que você pode aproveitar os poderosos recursos de segurança do Azure AD, como o acesso condicional e a autenticação multifator. 
+Um dos benefícios de usar o Azure AD como uma camada adicional de segurança para controlar o acesso ao gateway do Windows Admin Center é que você pode aproveitar os eficientes recursos de segurança do Azure AD, como acesso condicional e autenticação multifator. 
 
 [Saiba mais sobre como configurar o acesso condicional com o Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
@@ -109,82 +109,76 @@ Um dos benefícios de usar o Azure AD como uma camada adicional de segurança pa
 
 **Logon único quando implantado como um serviço no Windows Server**
 
-Quando você instala o centro de administração do Windows no Windows 10, ele está pronto para usar o logon único. No entanto, se você pretende usar o centro de administração do Windows no Windows Server, precisará configurar alguma forma de delegação de Kerberos em seu ambiente para poder usar o logon único. A delegação configura o computador do gateway como confiável para delegar ao nó de destino. 
+Quando você instala o Windows Admin Center no Windows 10, ele está pronto para usar o logon único. No entanto, se você pretende usar o Windows Admin Center no Windows Server, precisará configurar alguma forma de delegação do Kerberos em seu ambiente para poder usar o logon único. A delegação configura o computador do gateway como confiável para delegar ao nó de destino. 
 
-Para configurar a [delegação restrita baseada em recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) em seu ambiente, execute os seguintes cmdlets do PowerShell. (Lembre-se de que isso requer um controlador de domínio executando o Windows Server 2012 ou posterior).
+Para configurar [Delegação restrita baseada em recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) em seu ambiente, use o seguinte exemplo do PowerShell. Este exemplo mostra como você deve configurar um Windows Server [node01.contoso.com] para aceitar a delegação do gateway do Windows Admin Center [wac.contoso.com] no domínio contoso.com.
 
 ```powershell
-     $gateway = "WindowsAdminCenterGW" # Machine where Windows Admin Center is installed
-     $node = "ManagedNode" # Machine that you want to manage
-     $gatewayObject = Get-ADComputer -Identity $gateway
-     $nodeObject = Get-ADComputer -Identity $node
-     Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $gatewayObject
+Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)
 ```
-
-Neste exemplo, o gateway do centro de administração do Windows está instalado no servidor **WindowsAdminCenterGW**e o nome do nó de destino é **ManagedNode**.
 
 Para remover essa relação, execute o seguinte cmdlet:
 
 ```powershell
-Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
+Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount $null
 ```
 
 ## <a name="role-based-access-control"></a>Controle de acesso baseado em função
 
-O controle de acesso baseado em função permite que você forneça acesso limitado ao computador aos usuários em vez de torná-los administradores locais completos.
+O controle de acesso baseado em função permite que você forneça aos usuários acesso limitado ao computador, em vez de torná-los administradores locais completos.
 [Leia mais sobre o controle de acesso baseado em função e as funções disponíveis.](../plan/user-access-options.md#role-based-access-control)
 
-A configuração do RBAC consiste em duas etapas: Habilitando o suporte no (s) computador (es) de destino e atribuindo usuários às funções relevantes.
+A configuração do RBAC consiste em duas etapas: habilitar o suporte nos computadores de destino e atribuir usuários às funções relevantes.
 
 > [!TIP]
-> Verifique se você tem privilégios de administrador local nos computadores em que você está configurando o suporte para o controle de acesso baseado em função.
+> Verifique se você tem privilégios de administrador local nos computadores em que está configurando o suporte para o controle de acesso baseado em função.
 
 ### <a name="apply-role-based-access-control-to-a-single-machine"></a>Aplicar o controle de acesso baseado em função a um único computador
 
-O modelo de implantação de máquina única é ideal para ambientes simples com apenas alguns computadores a serem gerenciados.
-Configurar um computador com suporte para o controle de acesso baseado em função resultará nas seguintes alterações:
+O modelo de implantação de computador único é ideal para ambientes simples com apenas alguns computadores a serem gerenciados.
+Configurar um computador com suporte para controle de acesso baseado em função resultará nas seguintes alterações:
 
--   Os módulos do PowerShell com funções exigidas pelo centro de administração do Windows serão instalados na unidade do sistema, em `C:\Program Files\WindowsPowerShell\Modules`. Todos os módulos serão iniciados com **o Microsoft. SME**
--   A configuração de estado desejado executará uma configuração única para configurar um ponto de extremidade de administração apenas suficiente no computador, chamado **Microsoft. SME. PowerShell**. Esse ponto de extremidade define as 3 funções usadas pelo centro de administração do Windows e será executado como um administrador local temporário quando um usuário se conectar a ele.
--   3 novos grupos locais serão criados para controlar quais usuários recebem acesso a quais funções:
-    -   Administradores do centro de administração do Windows
-    -   Administradores do Hyper-V do centro de administração do Windows
-    -   Leitores do centro de administração do Windows
+-   Os módulos do PowerShell com funções exigidas pelo Windows Admin Center serão instalados na unidade do sistema, em `C:\Program Files\WindowsPowerShell\Modules`. Todos os módulos começarão com **Microsoft.Sme**
+-   A Desired State Configuration executará uma configuração única para configurar um ponto de extremidade de Administração Just Enough no computador chamado **Microsoft.SME.PowerShell**. Esse ponto de extremidade define as três funções usadas pelo Windows Admin Center e será executado como um administrador local temporário quando um usuário se conectar a ele.
+-   Três novos grupos locais serão criados para controlar quais usuários recebem acesso a quais funções:
+    -   Administradores do Windows Admin Center
+    -   Administradores do Hyper-V do Windows Admin Center
+    -   Leitores do Windows Admin Center
 
 Para habilitar o suporte para o controle de acesso baseado em função em um único computador, siga estas etapas:
 
-1.  Abra o centro de administração do Windows e conecte-se ao computador que você deseja configurar com o controle de acesso baseado em função usando uma conta com privilégios de administrador local no computador de destino.
-2.  Na ferramenta **visão geral** , clique em **configurações** > **controle de acesso baseado em função**.
-3.  Clique em **aplicar** na parte inferior da página para habilitar o suporte ao controle de acesso baseado em função no computador de destino. O processo do aplicativo envolve a cópia de scripts do PowerShell e a invocação de uma configuração (usando a configuração de estado desejado do PowerShell) no computador de destino. Pode levar até 10 minutos para ser concluído e resultará na reinicialização do WinRM. Isso desconectará temporariamente os usuários do centro de administração do Windows, do PowerShell e do WMI.
-4.  Atualize a página para verificar o status do controle de acesso baseado em função. Quando estiver pronto para uso, o status será alterado para **aplicado**.
+1.  Abra o Windows Admin Center e conecte-se ao computador que você deseja configurar com o controle de acesso baseado em função usando uma conta com privilégios de administrador local no computador de destino.
+2.  Na ferramenta **Visão Geral**, clique em **Configurações** > **Controle de acesso baseado em função**.
+3.  Clique em **Aplicar** na parte inferior da página para habilitar o suporte ao controle de acesso baseado em função no computador de destino. O processo de aplicativo envolve copiar scripts do PowerShell e invocar uma configuração (usando a Desired State Configuration do PowerShell) no computador de destino. O processo pode levar até 10 minutos para ser concluído e resultará na reinicialização do WinRM. Isso desconectará temporariamente os usuários do Windows Admin Center, do PowerShell e do WMI.
+4.  Atualize a página para verificar o status do controle de acesso baseado em função. Quando estiver pronto para uso, o status será alterado para **Aplicado**.
 
 Depois que a configuração for aplicada, você poderá atribuir usuários às funções:
 
-1.  Abra a ferramenta **usuários e grupos locais** e navegue até a guia **grupos** .
-2.  Selecione o grupo de **leitores do centro de administração do Windows** .
-3.  No painel de *detalhes* na parte inferior, clique em **Adicionar usuário** e insira o nome de um usuário ou grupo de segurança que deve ter acesso somente leitura ao servidor por meio do centro de administração do Windows. Os usuários e grupos podem vir do computador local ou do seu Active Directory domínio.
-4.  Repita as etapas 2-3 para os grupos de administradores do **Hyper-V do Windows Admin Center** e do **centro de administração do Windows** .
+1.  Abra a ferramenta **Usuários e Grupos Locais** e navegue até a guia **Grupos**.
+2.  Selecione o grupo **Leitores do Windows Admin Center**.
+3.  No painel *Detalhes* na parte inferior, clique em **Adicionar Usuário** e insira o nome de um usuário ou grupo de segurança que deve ter acesso somente leitura ao servidor por meio do Windows Admin Center. Os usuários e grupos podem vir do computador local ou do seu domínio do Active Directory.
+4.  Repita as etapas 2-3 para os grupos de **Administradores do Hyper-V do Windows Admin Center** e **Administradores do Windows Admin Center**.
 
-Você também pode preencher esses grupos de forma consistente em seu domínio, configurando um objeto de Política de Grupo com a [configuração de política de grupos restritos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
+Você também pode preencher esses grupos de forma consistente em seu domínio configurando um objeto de Política de Grupo com a [Configuração de Política de Grupos Restritos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
 
 ### <a name="apply-role-based-access-control-to-multiple-machines"></a>Aplicar o controle de acesso baseado em função a vários computadores
 
-Em uma grande implantação corporativa, você pode usar suas ferramentas de automação existentes para enviar por push o recurso de controle de acesso baseado em função para seus computadores baixando o pacote de configuração do gateway do centro de administração do Windows.
-O pacote de configuração foi projetado para ser usado com a configuração de estado desejado do PowerShell, mas você pode adaptá-lo para trabalhar com sua solução de automação preferida.
+Em uma grande implantação corporativa, você pode usar suas ferramentas de automação existentes para enviar por push o recurso de controle de acesso baseado em função para seus computadores baixando o pacote de configuração do gateway do Windows Admin Center.
+O pacote de configuração é feito para ser usado com a Desired State Configuration do PowerShell, mas você pode adaptá-lo para funcionar com sua solução de automação preferida.
 
 #### <a name="download-the-role-based-access-control-configuration"></a>Baixar a configuração do controle de acesso baseado em função
 
-Para baixar o pacote de configuração de controle de acesso baseado em função, você precisará ter acesso ao centro de administração do Windows e a um prompt do PowerShell.
+Para baixar o pacote de configuração de controle de acesso baseado em função, você precisará ter acesso ao Windows Admin Center e ao prompt do PowerShell.
 
-Se você estiver executando o gateway do centro de administração do Windows no modo de serviço no Windows Server, use o comando a seguir para baixar o pacote de configuração.
-Certifique-se de atualizar o endereço do gateway com o correto para o seu ambiente.
+Se você estiver executando o gateway do Windows Admin Center no modo de serviço no Windows Server, use o comando a seguir para baixar o pacote de configuração.
+Atualize o endereço do gateway com o correto para seu ambiente.
 
 ```powershell
 $WindowsAdminCenterGateway = 'https://windowsadmincenter.contoso.com'
 Invoke-RestMethod -Uri "$WindowsAdminCenterGateway/api/nodes/all/features/jea/endpoint/export" -Method POST -UseDefaultCredentials -OutFile "~\Desktop\WindowsAdminCenter_RBAC.zip"
 ```
 
-Se você estiver executando o gateway do centro de administração do Windows em seu computador com Windows 10, execute o seguinte comando em vez disso:
+Se você estiver executando o gateway do Windows Admin Center em seu computador com Windows 10, execute o seguinte comando:
 
 ```powershell
 $cert = Get-ChildItem Cert:\CurrentUser\My | Where-Object Subject -eq 'CN=Windows Admin Center Client' | Select-Object -First 1
@@ -193,47 +187,47 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 
 Ao expandir o arquivo zip, você verá a seguinte estrutura de pastas:
 
-- InstallJeaFeatures. ps1
+- InstallJeaFeatures.ps1
 - JustEnoughAdministration (diretório)
 - Módulos (diretório)
-    - Microsoft. SME. \* (diretórios)
-    - WindowsAdminCenter. Jea (diretório)
+    - Microsoft.SME.\* (diretórios)
+    - WindowsAdminCenter.Jea (diretório)
 
 Para configurar o suporte para o controle de acesso baseado em função em um nó, você precisa executar as seguintes ações:
 
-1.  Copie os módulos JustEnoughAdministration, Microsoft. SME. \* e WindowsAdminCenter. Jea para o diretório de módulo do PowerShell no computador de destino. Normalmente, isso está localizado em `C:\Program Files\WindowsPowerShell\Modules`.
-2.  Atualize o arquivo **InstallJeaFeature. ps1** para corresponder à configuração desejada para o ponto de extremidade do RBAC.
-3.  Execute InstallJeaFeature. ps1 para compilar o recurso de DSC.
+1.  Copie os módulos JustEnoughAdministration, Microsoft.SME.\* e WindowsAdminCenter.Jea para o diretório de módulo do PowerShell no computador de destino. Normalmente, está localizado em `C:\Program Files\WindowsPowerShell\Modules`.
+2.  Atualize o arquivo **InstallJeaFeature.ps1** para corresponder à configuração desejada para o ponto de extremidade do RBAC.
+3.  Execute InstallJeaFeature.ps1 para compilar o recurso de DSC.
 4.  Implante sua configuração DSC em todos os seus computadores para aplicar a configuração.
 
 A seção a seguir explica como fazer isso usando a comunicação remota do PowerShell.
 
 #### <a name="deploy-on-multiple-machines"></a>Implantar em vários computadores
 
-Para implantar a configuração que você baixou em vários computadores, você precisará atualizar o script **InstallJeaFeatures. ps1** para incluir os grupos de segurança apropriados para o seu ambiente, copiar os arquivos para cada um dos seus computadores e invocar o scripts de configuração.
+Para implantar a configuração baixada para vários computadores, você precisará atualizar o script **InstallJeaFeatures.ps1** para incluir os grupos de segurança apropriados para seu ambiente, copiar os arquivos para cada um dos computadores e invocar os scripts de configuração.
 Você pode usar suas ferramentas de automação preferenciais para fazer isso, no entanto, este artigo se concentrará em uma abordagem pura baseada no PowerShell.
 
 Por padrão, o script de configuração criará grupos de segurança locais no computador para controlar o acesso a cada uma das funções.
 Isso é adequado para computadores ingressados no domínio e no grupo de trabalho, mas se você estiver implantando em um ambiente somente de domínio, talvez queira associar diretamente um grupo de segurança de domínio a cada função.
-Para atualizar a configuração para usar grupos de segurança de domínio, abra **InstallJeaFeatures. ps1** e faça as seguintes alterações:
+Para atualizar a configuração para usar grupos de segurança de domínio, abra **InstallJeaFeatures.ps1** e faça as seguintes alterações:
 
-1.  Remova os 3 recursos do **grupo** do arquivo:
-    1.  "Grupo MS-Readers-Group"
-    2.  "Grupo MS-Hyper-V-Administrators-Group"
-    3.  "Grupo MS-Administrators-Group"
-2.  Remover os 3 recursos de grupo da propriedade **dependy** de JeaEndpoint
-    1.  "[Grupo] MS-Readers-Group"
-    2.  "[Grupo] MS-Hyper-V-Administrators-Group"
-    3.  "[Grupo] MS-Administrators-Group"
-3.  Altere os nomes de grupo na propriedade JeaEndpoint **RoleDefinitions** para os grupos de segurança desejados. Por exemplo, se você tiver um grupo de segurança *CONTOSO\MyTrustedAdmins* que deve receber acesso à função Administradores do centro de administração do Windows, altere `'$env:COMPUTERNAME\Windows Admin Center Administrators'` para `'CONTOSO\MyTrustedAdmins'`. As três cadeias de caracteres que você precisa atualizar são:
-    1.  ' $env: administradores do centro de administração do COMPUTERNAME\Windows '
-    2.  ' $env: COMPUTERNAME\Windows Admin Center Hyper-V Administrators '
-    3.  ' $env: leitores do centro de administração do COMPUTERNAME\Windows '
+1.  Remova os três recursos de **Grupo** do arquivo:
+    1.  "Group MS-Readers-Group"
+    2.  "Group MS-Hyper-V-Administrators-Group"
+    3.  "Group MS-Administrators-Group"
+2.  Remova os três recursos de Grupo da propriedade **DependsOn** do JeaEndpoint
+    1.  "[Group]MS-Readers-Group"
+    2.  "[Group]MS-Hyper-V-Administrators-Group"
+    3.  "[Group]MS-Administrators-Group"
+3.  Altere os nomes de grupo na propriedade **RoleDefinitions** do JeaEndpoint para os grupos de segurança desejados. Por exemplo, se você tiver um grupo de segurança *CONTOSO\MyTrustedAdmins* que deve receber acesso à função Administradores do Windows Admin Center, altere `'$env:COMPUTERNAME\Windows Admin Center Administrators'` para `'CONTOSO\MyTrustedAdmins'`. As três cadeias de caracteres que você precisa atualizar são:
+    1.  '$env:COMPUTERNAME\Windows Admin Center Administrators'
+    2.  '$env:COMPUTERNAME\Windows Admin Center Hyper-V Administrators'
+    3.  '$env:COMPUTERNAME\Windows Admin Center Readers'
 
 > [!NOTE]
-> Certifique-se de usar grupos de segurança exclusivos para cada função. A configuração falhará se o mesmo grupo de segurança for atribuído a várias funções.
+> Use grupos de segurança exclusivos para cada função. A configuração falhará se o mesmo grupo de segurança for atribuído a várias funções.
 
-Em seguida, no final do arquivo **InstallJeaFeatures. ps1** , adicione as seguintes linhas do PowerShell à parte inferior do script:
+Em seguida, no final do arquivo **InstallJeaFeatures.ps1**, adicione as seguintes linhas do PowerShell à parte inferior do script:
 
 ```powershell
 Copy-Item "$PSScriptRoot\JustEnoughAdministration" "$env:ProgramFiles\WindowsPowerShell\Modules" -Recurse -Force
@@ -248,8 +242,8 @@ InstallJeaFeature -ConfigurationData $ConfigData | Out-Null
 Start-DscConfiguration -Path "$PSScriptRoot\InstallJeaFeature" -JobName "Installing JEA for Windows Admin Center" -Force
 ```
 
-Por fim, você pode copiar a pasta que contém os módulos, o recurso DSC e a configuração para cada nó de destino e executar o script **InstallJeaFeature. ps1** .
-Para fazer isso remotamente a partir de sua estação de trabalho de administração, você pode executar os seguintes comandos:
+Por fim, você pode copiar a pasta que contém os módulos, o recurso DSC e a configuração para cada nó de destino e executar o script **InstallJeaFeature.ps1**.
+Para fazer isso remotamente de sua estação de trabalho de administração, você pode executar os seguintes comandos:
 
 ```powershell
 $ComputersToConfigure = 'MyServer01', 'MyServer02'

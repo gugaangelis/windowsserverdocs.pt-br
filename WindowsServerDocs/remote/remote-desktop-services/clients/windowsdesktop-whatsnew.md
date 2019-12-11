@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/20/2019
+ms.date: 12/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
-ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
+ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74265923"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829604"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -30,17 +30,21 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Public     |1.2.431  |
-|Participante do Programa Windows Insider    |1.2.524  |
+|Public     |1.2.535  |
+|Participante do Programa Windows Insider    |1.2.535  |
 
-## <a name="updates-for-version-12524"></a>Atualizações da versão 1.2.524
+## <a name="updates-for-version-12535"></a>Atualizações para a versão 1.2.535
 
-*Data da publicação: 20/11/2019*
+*Data da publicação: 04/12/2019*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
 
 - Agora, você pode acessar informações sobre atualizações diretamente do botão mais opções na barra de comandos na parte superior do cliente.
 - Agora, você pode fornecer comentários na barra de comandos do cliente.
+- A opção de comentários agora será mostrada apenas se o Hub de Comentários estiver disponível.
+- Garantiu que a notificação de atualização não é mostrada quando as notificações estão desabilitadas por meio da política.
+- Corrigido um problema que impedia a inicialização de alguns arquivos RDP.
+- Corrigida uma falha na inicialização do cliente causada pela corrupção de algumas configurações persistentes.
 
 ## <a name="updates-for-version-12431"></a>Atualizações da versão 1.2.431
 
