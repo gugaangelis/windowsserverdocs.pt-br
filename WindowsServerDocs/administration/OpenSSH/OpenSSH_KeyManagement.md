@@ -22,7 +22,7 @@ Por comparação, os ambientes do Linux geralmente usam pares chave pública/cha
 O OpenSSH inclui ferramentas para ajudar a dar suporte a isso, especificamente:
 
 * __ssh-keygen__ para gerar chaves seguras
-* __ssh-agent__ e __SSH-adicionar__ para armazenar chaves privadas com segurança
+* __ssh-agent__ e __SSH-add__ para armazenar chaves privadas com segurança
 * __scp__ e __sftp__ para copiar arquivos de chave pública com segurança durante o uso inicial de um servidor
 
 Este documento apresenta uma visão geral de como usar essas ferramentas no Windows para começar a usar a autenticação de chave com o SSH. Se você não estiver familiarizado com o gerenciamento de chaves SSH, é altamente recomendável examinar o [documento do NIST IR 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf) intitulado "Security of Interactive and Automated Access Management Using Secure Shell (SSH)" (Segurança de gerenciamento de acesso interativo e automatizado usando SSH (Secure Shell)).
