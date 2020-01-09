@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c54fee98247b1ce0aa3ef3a2502cf18f314e763
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: edf714bc0d6b39dbe7c5e800e953d7820fe9abc5
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394370"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352605"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>Habilitar movimentações otimizadas de pastas redirecionadas
 
@@ -30,7 +30,7 @@ A movimentação otimizada tem os seguintes requisitos:
 - O redirecionamento de pasta deve ser configurado. Para obter mais informações, consulte [implantar redirecionamento de pasta com arquivos offline](deploy-folder-redirection.md).
 - Os computadores cliente devem executar o Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 ou Windows Server (canal semestral).
 
-## <a name="step-1-enable-optimized-move-in-group-policy"></a>Etapa 1: Habilitar movimentação otimizada no Política de Grupo
+## <a name="step-1-enable-optimized-move-in-group-policy"></a>Etapa 1: habilitar movimentação otimizada no Política de Grupo
 
 Para otimizar a realocação de dados de redirecionamento de pasta, use Política de Grupo para habilitar a opção **habilitar movimentação otimizada de conteúdo no cache arquivos offline no caminho do servidor de redirecionamento de pasta alterar** política para o objeto de política de grupo apropriado (GPO). Definir essa configuração de política como **desabilitada** ou **não definida** faz com que o cliente Copie todo o conteúdo de redirecionamento de pasta para o novo local e, em seguida, exclua o conteúdo do local antigo se o caminho do servidor for alterado.
 
@@ -41,9 +41,9 @@ Veja como habilitar a movimentação otimizada de pastas redirecionadas:
 3. Clique com o botão direito do mouse em **habilitar movimentação otimizada de conteúdo em arquivos offline cache no caminho do servidor de redirecionamento de pasta alterar**e selecione **Editar**.
 4. Selecione **habilitado**e, em seguida, selecione **OK**.
 
-## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>Etapa 2: Realocar o compartilhamento de arquivos para pastas redirecionadas
+## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>Etapa 2: realocar o compartilhamento de arquivos para pastas redirecionadas
 
-Ao mover o compartilhamento de arquivos que contém pastas redirecionadas dos usuários, ele é importado para tomar precauções para garantir que as pastas sejam realocadas corretamente.
+Ao mover o compartilhamento de arquivos que contém pastas redirecionadas dos usuários, é importante tomar precauções para garantir que as pastas sejam realocadas corretamente.
 
 >[!IMPORTANT]
 >Se os arquivos dos usuários estiverem em uso ou se o estado completo do arquivo não for preservado na movimentação, os usuários poderão experimentar um desempenho ruim à medida que os arquivos forem copiados pela rede, os conflitos de sincronização gerados por Arquivos Offline ou até mesmo perda de dados.
@@ -59,7 +59,7 @@ Ao mover o compartilhamento de arquivos que contém pastas redirecionadas dos us
 
     Os usuários trabalharão offline usando Arquivos Offline até que a movimentação seja concluída e recebam as configurações de redirecionamento de pasta atualizadas de Política de Grupo.
 
-3. Usando uma conta com privilégios de backup, mova o conteúdo do compartilhamento de arquivos para o novo local usando um método que preserva os carimbos de data/hora do arquivo, como um utilitário de backup e restauração. Para usar o comando **Robocopy** , abra um prompt de comando com privilégios elevados e digite o seguinte comando, ```<Source>``` em que é o local atual do compartilhamento de arquivos ```<Destination>``` e é o novo local:
+3. Usando uma conta com privilégios de backup, mova o conteúdo do compartilhamento de arquivos para o novo local usando um método que preserva os carimbos de data/hora do arquivo, como um utilitário de backup e restauração. Para usar o comando **Robocopy** , abra um prompt de comando com privilégios elevados e digite o seguinte comando, em que ```<Source>``` é o local atual do compartilhamento de arquivos e ```<Destination>``` é o novo local:
 
     ```PowerShell
     Robocopy /B <Source> <Destination> /Copyall /MIR /EFSRAW

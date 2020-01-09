@@ -8,12 +8,12 @@ ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5963035846814f2ec3fd3417e629f71b146cc73e
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 968122612845a9be105ca7d3231edc0faa039e76
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310378"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352683"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -66,7 +66,7 @@ Para usar o serviço de migração de armazenamento, você precisa do seguinte:
 - Os computadores de origem e de destino devem ter as seguintes regras de firewall habilitadas para *entrada* (embora você já possa tê-las habilitadas):
   - Compartilhamento de arquivos e de impressora (SMB-Entrada)
   - Serviço Netlogon (NP-in)
-  - Instrumentação de Gerenciamento do Windows (DCOM-in)
+  - DCOM-In (Instrumentação de Gerenciamento do Windows)
   - Instrumentação de Gerenciamento do Windows (WMI-In)
   
   > [!TIP]
@@ -82,7 +82,7 @@ O servidor de origem deve executar um dos seguintes sistemas operacionais:
 - Windows Server, Canal Semestral
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
+- R2 do Windows Server 2012
 - Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
@@ -105,7 +105,7 @@ Observação: o Windows Small Business Server e o Windows Server Essentials são
 
 Você pode migrar os seguintes tipos de fonte adicionais se o Orchestrator estiver executando o Windows Server, versão 1903 ou posterior, ou se o orquestrador estiver executando uma versão anterior do Windows Server com o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
-- Clusters de failover
+- Clusters de failover que executam o Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Server 2019
 - Servidores Linux que usam o samba. Testamos o seguinte:
     - CentOS 7
     - Debian GNU/Linux 8
@@ -121,7 +121,7 @@ O servidor de destino deve executar um dos seguintes sistemas operacionais:
 - Windows Server, Canal Semestral
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
+- R2 do Windows Server 2012
 
 > [!TIP]
 > Os servidores de destino que executam o Windows Server 2019 ou o Windows Server, canal semestral ou posterior têm o dobro do desempenho de transferência de versões anteriores do Windows Server. Esse aumento de desempenho ocorre devido à inclusão de um serviço de proxy de serviço de migração de armazenamento interno, que também abre as portas de firewall necessárias, se ainda não estiverem abertas.
@@ -136,7 +136,7 @@ Os novos recursos a seguir estão disponíveis ao executar o Storage Migration S
 - Sincronização mais fácil de compartilhamentos integrados no Azure usando a Sincronização de Arquivos do Azure
 - Migrar para novas redes, como o Azure
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Migrar um servidor de arquivos usando o serviço de migração de armazenamento](migrate-data.md)
 - [Perguntas frequentes sobre serviços de migração de armazenamento](faq.md)
