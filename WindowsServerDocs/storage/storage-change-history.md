@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 08/19/2019
+ms.date: 12/20/2019
 description: Tópicos novos e atualizados na documentação de armazenamento local do Windows Server para profissionais de ti.
-ms.openlocfilehash: ce937dfb5c6c0b46c8085cbb202590567ea829d3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d50d4ca5b49b7f895fad3d3866226f95c55ae485
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393931"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352782"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 
@@ -23,6 +23,15 @@ ms.locfileid: "71393931"
 Este tópico lista os tópicos novos e atualizados na documentação de [armazenamento](storage.md) do Windows Server.
 
 > Se você estiver procurando o histórico de atualização para o Windows Server, consulte histórico de atualização do Windows [10 e Windows server 2019](https://support.microsoft.com/help/4464619) ou [histórico de atualização do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
+
+## <a name="december-2019"></a>Dezembro de 2019
+
+| Tópico novo ou alterado                                        | Descrição |
+| ---                                                         | ---           |
+| [Solução de problemas do gerenciamento de disco](disk-management/troubleshooting-disk-management.md)| Editado para refinar ainda mais as diretrizes, com base nas solicitações do cliente.|
+| [Estender um volume no gerenciamento de disco](disk-management/extend-a-basic-volume.md) | Diretrizes adicionadas em resposta aos comentários dos clientes. |
+| [Converter um disco dinâmico em disco básico](disk-management/change-a-dynamic-disk-back-to-a-basic-disk.md) | Correção de um erro na linha de comando e adição de algumas informações com base nos comentários do cliente. |
+
 
 ## <a name="august-2019"></a>Agosto de 2019
 
@@ -54,7 +63,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 | [Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Novo        |
 | [Replicação do DFS](dfs-replication/dfsr-overview.md)        | Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))|
 
-## <a name="february-2019"></a>fevereiro de 2019
+## <a name="february-2019"></a>Fevereiro de 2019
 
 |Tópico novo ou alterado                                        |Descrição|
 |---                                                         |---           |
@@ -83,7 +92,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |[Problemas conhecidos do serviço de migração de armazenamento](storage-migration-service/known-issues.md)   | Novo tópico    |
 |[Replicação do DFS: perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)|
 |[Migrar a replicação do SYSVOL para a replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
-|[SMB: portas de compartilhamento de arquivo e impressora devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
+|[SMB: as portas de compartilhamento de arquivo e impressora devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
 |[Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
 
 ## <a name="october-2018"></a>Outubro de 2018
@@ -164,7 +173,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |Tópico novo ou alterado|Descrição|
 |---|---|
 |[Alterar a letra da unidade](disk-management/change-a-drive-letter.md)|Novo tópico.|
-|[Solução de problemas do Gerenciamento de disco](disk-management/troubleshooting-disk-management.md)|Reescreveu o [status de um disco não foi inicializado ou a seção o disco está faltando inteiramente](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing) para adicionar etapas de solução de problemas extensivas, com base nas solicitações do cliente.|
+|[Solução de problemas do gerenciamento de disco](disk-management/troubleshooting-disk-management.md)|Reescreveu o [status de um disco não foi inicializado ou a seção o disco está faltando inteiramente](disk-management/troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps) para adicionar etapas de solução de problemas extensivas, com base nas solicitações do cliente.|
 |[Inicializar novos discos](disk-management/initialize-new-disks.md)|Reescreveu para tentar facilitar a compreensão e o endereçamento de perguntas do cliente.|
 |[Planejando volumes no Espaços de Armazenamento Diretos](storage-spaces/plan-volumes.md)|Adicionada uma tabela que resume os tipos de resiliência disponíveis em clusters de quatro nós e maiores.|
 |[Visão geral do ReFS](refs/refs-overview.md)|Cargas de trabalho recomendadas para paridade aceleradas por espelhamento e correção dos tamanhos de arquivo e volume com suporte para ReFS e NTFS.|
