@@ -8,6 +8,7 @@
 ## [Comparação dos canais de manutenção](..\get-started-19\servicing-channels-19.md)
 ## [Instalação e upgrade de versões do Windows Server](Installation-and-Upgrade.md)
 ## [Fazer upgrade do Windows Server 2008 e do Windows Server 2008 R2](modernize-windows-server-2008.md)
+### [Atualizações de segurança estendidas do Windows Server 2008/2008 R2](extended-security-updates.md)
 ### [Carregar uma imagem especializada do Windows Server 2008/2008 R2 no Azure](uploading-specialized-WS08-image-to-azure.md)
 ## [Migração de funções e recursos do Windows Server](Migrate-Roles-and-Features.md)
 ## [Requisitos de sistema do Windows Server 2016](System-Requirements.md)
@@ -30,7 +31,7 @@
 ### Soluções para problemas comuns de ativação
 #### [Resolver códigos de erro de ativação do Windows](activation-error-codes.md)
 #### [Ativação do KMS: problemas conhecidos](activation-troubleshoot-KMS-issues.md)
-#### [Ativação do MAK: problemas conhecidos](activation-troubleshoot-MAK-issues.md)
+#### [Ativação da MAK: problemas conhecidos](activation-troubleshoot-MAK-issues.md)
 #### [Diretrizes para solução de problemas de ativação relacionados ao DNS](common-troubleshooting-procedures-kms-dns.md)
 #### [Recompilar o arquivo Tokens.dat](activation-rebuild-tokens-dat-file.md)
 ### [Exemplo: Solução de problemas de clientes ADBA que não são ativados](activation-troubleshoot-adba-clients.md)

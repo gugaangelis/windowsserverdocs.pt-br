@@ -41,6 +41,17 @@
 ### [Visão geral do NTFS](file-server/ntfs-overview.md)
 ### [Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)
 ### [Usando a limpeza de disco](file-server/disk-cleanup.md)
+### [SMB de solução de problemas avançada](file-server/Troubleshoot/troubleshooting-smb.md)
+#### [Detectar, habilitar e desabilitar SMBv1, SMBv2 e SMBv3](file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md)
+#### [SMBv1 não está instalado por padrão](file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md)
+### [Problemas conhecidos do SMB](file-server/Troubleshoot/smb-known-issues.md)
+#### [Falha de handshake de três vias por TCP](file-server/Troubleshoot/tcp-three-way-handshake-fails.md)
+#### [Falhas de negociação, de configuração de sessão e de conexão de árvore](file-server/Troubleshoot/negotiate-session-setup-tree-connect-fails.md)
+#### [A conexão TCP foi anulada durante a validação de negociação](file-server/Troubleshoot/abort-during-validate-negotiate.md)
+#### [Velocidade de transferência de arquivos SMB lenta](file-server/Troubleshoot/slow-file-transfer.md)
+#### [Alto uso da CPU](file-server/Troubleshoot/high-cpu-usage-issue-on-smb-server.md)
+#### [Solução de problemas da ID de evento 50](file-server/Troubleshoot/troubleshoot-event-id-50-error.md)
+#### [Solucionar problemas do SMB Multichannel](file-server/Troubleshoot/smb-multichannel-troubleshooting.md)
 ## [Gerenciador de Recursos de Servidor de Arquivos](fsrm/fsrm-overview.md)
 ### [Lista de verificação: aplicar uma cota a um volume ou uma pasta](fsrm/checklist-apply-quota-to-volume-or-folder.md)
 ### [Lista de verificação: aplicar uma triagem de arquivo a um volume ou uma pasta](fsrm/checklist-apply-file-screen-to-volume-or-folder.md)
@@ -117,7 +128,7 @@
 #### [Entender e monitorar a ressincronização de armazenamento](storage-spaces/understand-storage-resync.md)
 #### [Quorum de cluster e pool](storage-spaces/understand-quorum.md)
 #### [Conjuntos de cluster](storage-spaces/cluster-sets.md)
-### Planeje
+### Planejar
 #### [Requisitos de hardware](storage-spaces/storage-spaces-direct-hardware-requirements.md)
 #### [Usar o cache de leitura na memória de CSV](storage-spaces/csv-cache.md)
 #### [Escolher unidades](storage-spaces/choosing-drives.md)
@@ -132,7 +143,7 @@
 #### [Atualizar um cluster de Espaços de Armazenamento Diretos](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)
 #### [Compreender e implantar memória persistente](storage-spaces/deploy-pmem.md)
 
-### Gerenciar
+### assinaturas
 #### [Gerenciar com o Centro de Administração do Windows](../manage/windows-admin-center/use/manage-hyper-converged.md)
 #### [Adicionar servidores ou unidades](storage-spaces/add-nodes.md)
 #### [Colocar um servidor offline para manutenção](storage-spaces/maintain-servers.md)
@@ -152,7 +163,7 @@
 #### [Delimitar a alocação de volumes](storage-spaces/delimit-volume-allocation.md)
 #### [Monitorar com o Azure Monitor](storage-spaces/configure-azure-monitor.md)
 
-### Solução de problemas
+### Solucionar problemas
 #### [Cenários de solução de problemas](storage-spaces/troubleshooting-storage-spaces.md)
 #### [Integridade e estados operacionais](storage-spaces/storage-spaces-states.md)
 #### [Coletar dados](storage-spaces/data-collection.md)

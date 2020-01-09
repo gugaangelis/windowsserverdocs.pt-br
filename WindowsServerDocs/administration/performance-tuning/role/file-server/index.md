@@ -5,14 +5,19 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse
-ms.date: 4/14/2017
-ms.openlocfilehash: 5f772d2333acb2d48bf27168aca42754013dd8be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: NedPyle; Danlo; DKruse; v-tea
+ms.date: 12/12/2019
+ms.custom:
+- CI ID 111495
+- CSSTroubleshoot
+manager: dcscontentpm
+audience: Admin
+ms.openlocfilehash: 2e37282abd246c8f2da387deda5e8bf4b400a3d8
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370216"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351635"
 ---
 # <a name="performance-tuning-for-file-servers"></a>Ajuste de desempenho para servidores de arquivos
 
@@ -93,10 +98,24 @@ As seguintes configurações do Registro REG\_DWORD podem afetar o desempenho do
 
     O padrão é 10 segundos. Esse é o tempo limite do cache do diretório.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Esse parâmetro controla o cache de metadados de diretório na ausência de concessões de diretório.
      
-
+     > [!NOTE]  
+     > Um problema conhecido no Windows 10 versão 1803 afeta a capacidade do Windows 10 de armazenar em cache grandes diretórios. Depois de fazer o upgrade de um computador para o Windows 10 versão 1803, você acessa um compartilhamento de rede que contém milhares de arquivos e pastas e abre um documento que está localizado nesse compartilhamento. Durante ambas as operações, você enfrenta atrasos significativos.
+     >  
+     > Para resolver esse problema, instale o Windows 10 versão 1809 ou uma versão posterior.
+     >  
+     > Para contornar esse problema, defina **DirectoryCacheLifetime** como **0**.
+     >  
+     > Esse problema afeta as seguintes edições do Windows 10:  
+     > - Windows 10 Enterprise, versão 1803
+     > - Windows 10 Pro for Workstations, versão 1803
+     > - Windows 10 Pro Education, versão 1803
+     > - Windows 10 Professional, versão 1803
+     > - Windows 10 Education, versão 1803
+     > - Windows 10 Home, versão 1803
+   
 -   **DirectoryCacheEntrySizeMax**
 
     ```

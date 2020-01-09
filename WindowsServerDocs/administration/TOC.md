@@ -2,8 +2,7 @@
 ## [Usar o Windows Admin Center para gerenciar seu ambiente (novo!)](../manage/windows-admin-center/overview.md)
 ## Gerenciar sistemas e ambientes do Windows Server
 ### [Gerenciar o Windows Server Hybrid Cloud Print](hybrid-cloud-print/hybrid-cloud-print-overview.md)
-#### [Implantar o Windows Server Hybrid Cloud Print com pré-autenticação](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
-#### [Implantar o Windows Server Hybrid Cloud Print com autenticação de passagem](hybrid-cloud-print/hybrid-cloud-print-deploy-passthrough.md)
+#### [Implantar o Windows Server Hybrid Cloud Print](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
 ### [O que é a opção de instalação Server Core?](server-core/what-is-server-core.md)
 #### [O que está incluído na opção de instalação Server Core?](server-core/server-core-roles-and-services.md)
 #### [Tarefas básicas de administração no Server Core](server-core/server-core-administer.md)
@@ -54,7 +53,7 @@
 #### [Adicionar e desenvolver recursos](..\manage\system-insights\adding-and-developing-capabilities.md)
 ##### [Adicionar, remover e atualizar recursos](..\manage\system-insights\add-remove-update-capabilities.md)
 ##### [Escolher as fontes de dados de recursos](..\manage\system-insights\data-sources.md)
-#### [Perguntas Frequentes](..\manage\system-insights\faq.md)
+#### [Perguntas frequentes](..\manage\system-insights\faq.md)
 ### [Coletar eventos com a coleta de eventos de instalação e inicialização](Get-started-with-Setup-and-Boot-Event-Collection.md)
 ### [Coletar informações sobre o software de SIL (Registro em log de inventário de software)](software-inventory-logging/get-started-with-software-inventory-logging.md)
 #### [Gerenciar o Registro em log de inventário de software](software-inventory-logging/manage-software-inventory-logging.md)
