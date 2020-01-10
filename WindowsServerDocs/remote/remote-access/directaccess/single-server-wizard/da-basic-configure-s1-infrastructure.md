@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2cd84949dddf75730aca6302f1244f784b5933d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6b8ebfe0a6b42fe174d4b376b981641f043cf58
+ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388566"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827673"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Etapa 1 configurar a infraestrutura básica do DirectAccess
 
@@ -151,7 +151,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 2.  Na caixa de diálogo **Propriedades do sistema** , clique na guia **nome do computador** . Na guia **nome do computador** , clique em **alterar**.  
   
-3.  Em **Nome do Computador**, digite o nome do computador se você também estiver alterando o nome do computador ao ingressar o servidor no domínio. Em **Membro de**, clique em **Domínio** e digite o nome do domínio em que você deseja ingressar o servidor; por exemplo, corp.contoso.com, e clique em **OK**.  
+3.  Em **Nome do Computador**, digite o nome do computador se você também estiver alterando o nome do computador ao ingressar o servidor no domínio. Em **Membro de**, clique em **Domínio**e digite o nome do domínio em que você deseja ingressar o servidor; por exemplo, corp.contoso.com, e clique em **OK**.  
   
 4.  Quando você for solicitado a informar um nome de usuário e uma senha, digite o nome de usuário e a senha de um usuário com direitos de ingressar computadores no domínio e clique em **OK**.  
   
@@ -173,7 +173,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 4.  Na caixa de diálogo **Propriedades do Sistema**, na guia **Nome do Computador**, clique em **Alterar**.  
   
-5.  Em **Nome do computador**, digite o nome do computador se você também estiver alterando o nome do computador ao ingressar o servidor no domínio. Em **Membro de**, clique em **Domínio** e digite o nome do domínio em que você deseja ingressar o servidor; por exemplo, corp.contoso.com, e clique em **OK**.  
+5.  Em **Nome do computador**, digite o nome do computador se você também estiver alterando o nome do computador ao ingressar o servidor no domínio. Em **Membro de**, clique em **Domínio**e digite o nome do domínio em que você deseja ingressar o servidor; por exemplo, corp.contoso.com, e clique em **OK**.  
   
 6.  Quando você for solicitado a informar um nome de usuário e uma senha, digite o nome de usuário e a senha de um usuário com direitos de ingressar computadores no domínio e clique em **OK**.  
   
@@ -208,7 +208,10 @@ Para criar um objeto de política de grupo, consulte [criar e editar um objeto d
 > 4.  Se a vinculação à OU não foi feita antes de executar o Assistente do DirectAccess, depois de concluir a configuração, o administrador poderá vincular os Objetos de Política de Grupo do DirectAccess às Unidades Organizacionais requeridas. O link para o domínio pode ser removido. As etapas para vincular um objeto de política de grupo a uma unidade organizacional podem ser encontradas [aqui](https://technet.microsoft.com/library/cc732979.aspx)  
   
 > [!NOTE]  
-> Se um objeto de política de grupo tiver sido criado manualmente, será possível durante a configuração do DirectAccess que o objeto de política de grupo não estará disponível. O objeto de política de grupo pode não ter sido replicado para o controlador de domínio mais próximo para o computador de gerenciamento. Neste caso, o administrador pode aguardar a replicação ser concluída, ou forçá-la.  
+> Se um objeto de política de grupo tiver sido criado manualmente, será possível durante a configuração do DirectAccess que o objeto de política de grupo não estará disponível. O objeto de política de grupo pode não ter sido replicado para o controlador de domínio mais próximo para o computador de gerenciamento. Neste caso, o administrador pode aguardar a replicação ser concluída, ou forçá-la.
+
+> [!Warning]
+> O uso de qualquer meio que não seja o assistente de instalação do DirectAccess para configurar o DirectAccess, como a modificação direta de objetos do DirectAccess Política de Grupo ou a modificação manual das configurações de política padrão no servidor ou cliente, não tem suporte.
   
 ## <a name="ConfigSGs"></a>Configurar grupos de segurança  
 As configurações do DirectAccess contidas nos objetos de política de grupo do computador cliente são aplicadas somente a computadores que são membros dos grupos de segurança que você especifica ao configurar o acesso remoto.  
