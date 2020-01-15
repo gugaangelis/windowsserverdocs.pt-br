@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/18/2019
+ms.date: 01/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e71aa2b1cccda85e0bf6f8a80ad68013346b30d4
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 09010878e2381e8f1f00d6883a6871fcd69a48be
+ms.sourcegitcommit: 28b71d779386cd31e1511217aa1a6f3ab186bf9b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829615"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75682437"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -33,7 +33,7 @@ ms.locfileid: "74829615"
 
 ## <a name="install-the-client"></a>Instalar o cliente
 
-Escolha o cliente que corresponde à versão do Windows. O novo cliente de Área de Trabalho Remota (MSRDC) dá suporte a dispositivos Windows 10, Windows 10 IoT Enterprise e Windows 7. 
+Escolha o cliente que corresponde à versão do Windows. O novo cliente de Área de Trabalho Remota (MSRDC) dá suporte a dispositivos Windows 10, Windows 10 IoT Enterprise e Windows 7.
 
 - [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
 - [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2098960)
@@ -118,9 +118,24 @@ O cliente usará as configurações definidas pelo administrador, a menos que vo
 - **Alterar o tamanho do texto e dos aplicativos** especifica o tamanho do conteúdo da sessão. Essa configuração se aplica somente ao se conectar ao Windows 8.1 e posterior ou ao Windows Server 2012 R2 e posterior. Essa configuração será desabilitada automaticamente caso a resolução seja definida como atualizar ao redimensionar.
 - **Ajustar a sessão à janela** determina como a sessão é exibida quando a resolução da área de trabalho remota difere do tamanho da janela local. Quando habilitado, o conteúdo da sessão será redimensionado para se ajustar dentro da janela enquanto preserva a taxa de proporção da sessão. Quando desabilitadas, as barras de rolagem ou as áreas pretas serão mostradas quando a resolução e o tamanho da janela não corresponderem.
 
-## <a name="provide-feedback"></a>Fornecer comentários
+## <a name="provide-feedback"></a>Envie comentários
 
 Tem uma sugestão de recursos ou deseja relatar um problema? Conte-nos usando o [Hub de Comentários](feedback-hub://?tabid=2&contextid=883). Você também pode acessar o Hub de Feedback por meio do cliente:
 
-1. Na Central de Conexão, toque no menu de estouro ( **...** ) na barra de comandos na parte superior do cliente.
-2. Selecione **Comentários** no menu suspenso para abrir o Hub de Comentários.
+1. Na Central de Conexões, toque na opção **Enviar comentários** na barra de comandos na parte superior do cliente para abrir o aplicativo Hub de Feedback.
+2. Insira as informações necessárias nos campos **Resumo** e **Detalhes**. Quando terminar, toque em **Avançar**.
+3. Selecione a opção **Problema** ou **Sugestão**.
+4. Verifique se a categoria está em **Aplicativos** > **Área de Trabalho Remota**. Em caso afirmativo, toque em **Avançar**.
+5. Examine os tópicos de comentários existentes para ver se outra pessoa relatou o mesmo problema. Caso contrário, selecione **Criar um bug** e, em seguida, toque em **Avançar**.
+6. Na próxima página, você poderá nos fornecer mais informações para ajudarmos a resolver seu problema. Você pode escrever informações mais detalhadas, enviar capturas de tela e até mesmo criar uma gravação do problema para nos mostrar o que aconteceu. Para fazer uma gravação, selecione **Iniciar a gravação** e, em seguida, repita o que você fez até o ponto em que o problema ocorreu. Quando terminar, retorne ao Hub de Feedback e selecione **Parar a gravação**.
+7. Quando estiver satisfeito com as informações, toque em **Enviar**.
+8. Na página “Agradecemos seus comentários!”, toque em **Compartilhar meus comentários** para gerar um link para seus comentários, que poderá ser compartilhado com outras pessoas, conforme necessário.
+
+### <a name="access-client-logs"></a>Acessar logs do cliente
+
+Talvez você precise dos logs do cliente ao investigar um problema.
+
+Para recuperar os logs do cliente:
+
+1. Abra o **Explorador de Arquivos**.
+2. Navegue até a pasta **%temp%\DiagOutputDir\RdClientAutoTrace**.

@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a38c984b2d81fc4db980a969ef0312109950b867
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: add11bf51570e3cafa2bd03ee3585de89f3eecab
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383002"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946962"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>Introdução ao log de inventário de software
 
@@ -44,10 +44,10 @@ O Log de Inventário de Software pode ajudar os administradores de servidor a ex
 
 -   Agregar informações de inventário de software e de servidor para uma ampla variedade de cenários de gerenciamento de ativos de software, habilitando o recurso de log de inventário de software de cada servidor e escolhendo um URI de destino do servidor Web e a impressão digital do certificado para autenticação.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 [Agregador de registro em log de inventário de software](https://technet.microsoft.com/library/mt572043.aspx)<br>
 [Gerenciar o Registro em log de inventário de software](manage-software-inventory-logging.md)<br>
 [Cmdlets de log de inventário de software no Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[Ferramenta de gerenciamento de ativação de volume](https://www.microsoft.com/download/en/details.aspx?id=7826) 
-[do Microsoft Assessment and Planning Toolkit](http://blogs.technet.com/b/volume-licensing/)
+[Ferramenta de gerenciamento de ativação de volume](https://blogs.technet.com/b/volume-licensing/) 
+[do Microsoft Assessment and Planning Toolkit](https://www.microsoft.com/download/en/details.aspx?id=7826)
 

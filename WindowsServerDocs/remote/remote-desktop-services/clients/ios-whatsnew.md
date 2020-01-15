@@ -11,31 +11,38 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 12/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a13c7ccb7e1c72534ef63ba6d09f3055af174cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1edc7c78e2abe5fe4e2bf9cd2c48a6a19d89dbdd
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387772"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351826"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novidades do cliente para iOS
 
-Atualizamos regularmente o [cliente da Área de Trabalho Remota para iOS](remote-desktop-ios.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
+Atualizamos regularmente o [cliente da Área de Trabalho Remota para iOS](remote-desktop-ios.md), adicionando novos recursos e corrigindo problemas. Você encontrará as atualizações mais recentes nesta página.
 
-## <a name="remote-desktop-ios-beta-client"></a>Cliente Beta do iOS da Área de Trabalho Remota
+## <a name="updates-for-version-1000"></a>Atualizações para a versão 10.0.0
 
-*Data da publicação: 20/02/2019*
+*Data da publicação: 13/12/2019*
 
-O [cliente iOS Beta da Área de Trabalho Remota](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client-from-apple-testflight) agora está disponível no TestFlight. Ao testar o cliente iOS Beta, tenha em mente que esta é uma versão de pré-lançamento do novo cliente iOS e não há garantia de que seja tão estável quanto as versões de produção. Continuaremos a atualizar esse cliente regularmente com correções e novos recursos. Vários recursos do cliente iOS Beta estão destacados abaixo:
+Já faz mais de um ano desde a última atualização do Cliente de Área de Trabalho Remota para iOS. No entanto, estamos de volta com uma nova e empolgante atualização e haverá muito mais atualizações a serem feitas regularmente daqui em diante. Confira as novidades da versão 10.0.0:
 
-- Experiência aprimorada em dispositivos iOS mais recentes.
-- Suporte para o mouse físico ProPoint e Swiftpoint GT. Consulte a [lista de dispositivos de entrada com suporte](remote-desktop-ios.md#supported-input-devices) para o cliente iOS Beta.
-- Suporte para a [Área de Trabalho Virtual do Windows](https://aka.ms/wvd).
-- Redirecionamento de armazenamento do iPhone e microfone.
-- Suporte para AVC420 e AVC444.
-- Suporte para aceleração de hardware metal.
+- Suporte para o serviço de Área de Trabalho Virtual do Windows.
+- Uma nova interface do usuário do centro de conexão.
+- Uma nova interface do usuário na sessão que pode alternar entre computadores e aplicativos conectados.
+- Novo layout para o teclado virtual auxiliar.
+- Suporte ao teclado externo aprimorado.
+- Suporte ao mouse Bluetooth SwiftPoint.
+- Suporte ao redirecionamento de microfone.
+- Suporte ao redirecionamento de armazenamento local.
+- Suporte ao redirecionamento de câmera (disponível somente para Windows 10, versão 1809 ou posterior).
+- Suporte para novos dispositivos iPhone e iPad.
+- Suporte a temas claros e escuros.
+- Controle se o seu telefone pode ser bloqueado quando conectado a um PC ou aplicativo remoto.
+- Agora você pode recolher a barra de conexão em sessão pressionando e segurando o botão do logotipo da Área de Trabalho Remota.
 
 ## <a name="updates-for-version-8142"></a>Atualizações para a versão 8.1.42
 
@@ -48,3 +55,7 @@ O [cliente iOS Beta da Área de Trabalho Remota](remote-desktop-ios.md#download-
 *Data da publicação: 28/03/2018*
 
 - Atualizações para solucionar a correção de criptografia Oracle CredSSP descrita em CVE-2018-0886.
+
+## <a name="how-to-report-issues"></a>Como relatar problemas
+
+Temos o compromisso de tornar este aplicativo o melhor possível e valorizamos seus comentários. Você pode relatar problemas navegando em **Configurações** > **Relatar um Problema** no cliente.

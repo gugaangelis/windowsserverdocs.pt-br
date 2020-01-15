@@ -11,20 +11,53 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/18/2019
+ms.date: 01/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f7c14dce8a8c319f9240c24ebcd8e2d4f7202
-ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
+ms.openlocfilehash: 614962cacbc29a26b0db246812ad17e24fc9859e
+ms.sourcegitcommit: fdb3412a6139ca62913606fa18036a91c093cd51
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166169"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75688111"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novidades do cliente para macOS
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para macOS](remote-desktop-mac.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
-Caso tenha problemas, você sempre pode entrar em contato por meio de **Ajuda** > **Relatar um problema**.
+Caso tenha problemas, entre em contato conosco a qualquer momento navegando em **Ajuda** > **Relatar um Problema**.
+
+## <a name="updates-for-version-1037"></a>Atualizações para a versão 10.3.7
+
+*Data da publicação: 06/01/20*
+
+Em nossa atualização final do ano, ajustamos alguns códigos e corrigimos os seguintes comportamentos:
+
+- A cópia desses itens da sessão remota para um compartilhamento de rede ou uma unidade USB não cria mais arquivos vazios.
+- A especificação de uma senha vazia em uma conta de usuário não gera mais um aviso de certificado duplo.
+
+## <a name="updates-for-version-1036"></a>Atualizações para a versão 10.3.6
+
+*Data da publicação: 06/01/20*
+
+Nesta versão, abordamos um problema que criava arquivos de comprimento zero sempre que você copiava uma pasta da sessão remota para o computador local usando a opção Copiar e colar arquivo.
+
+## <a name="updates-for-version-1035"></a>Atualizações para a versão 10.3.5
+
+*Data da publicação: 06/01/20*
+
+Fizemos esta atualização com a ajuda de todos que relataram problemas. Nesta versão, fizemos as seguintes alterações:
+
+- As pastas redirecionadas agora podem ser marcadas como somente leitura para impedir que seu conteúdo seja alterado na sessão remota.
+- Abordamos um erro do tipo 0x607 que apareceu durante a conexão usando cenários de Gateway de Área de Trabalho Remota sobre HTTPS.
+- Os casos em que os usuários eram solicitados a fornecer credenciais duas vezes foram corrigidos.
+- Os casos em que os usuários recebiam o prompt de aviso do certificado duas vezes foram corrigidos.
+- Foi realizada a adição de heurística para melhorar a rolagem baseada em trackpad.
+- O cliente não mostrará mais o grupo “Áreas de trabalho salvas” se não houver grupos criados pelo usuário.
+- A interface do usuário foi atualizada para os blocos na exibição do PC.
+- Foram feitas correções para tratar de falhas enviadas a nós por meio da telemetria do aplicativo.
+
+> [!NOTE]
+> Agora aceitamos comentários nesta versão para o cliente Mac somente por meio do [UserVoice](https://remotedesktop.uservoice.com/forums/287834-remote-desktop-for-mac).
 
 ## <a name="updates-for-version-1034"></a>Atualizações para a versão 10.3.4
 

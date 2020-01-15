@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: Instruções detalhadas para implantar o armazenamento definido pelo software com o Espaços de Armazenamento Diretos no Windows Server como uma infraestrutura hiperconvergente ou uma infraestrutura convergida (também conhecida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402817"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950027"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implantar espaços de armazenamento diretos
 
@@ -102,7 +102,7 @@ No sistema de gerenciamento, abra um console do PowerShell com privilégios de a
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
 ```
 
-Se sua conta de administrador de armazenamento não for um membro do grupo Admins. do domínio, adicione sua conta de administrador de armazenamento ao grupo local de administradores em cada nó, ou melhor ainda, adicione o grupo que você usa para administradores de armazenamento. Você pode usar o comando a seguir (ou gravar uma função do Windows PowerShell para fazer isso-consulte [usar o PowerShell para adicionar usuários de domínio a um grupo local](http://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx) para obter mais informações):
+Se sua conta de administrador de armazenamento não for um membro do grupo Admins. do domínio, adicione sua conta de administrador de armazenamento ao grupo local de administradores em cada nó, ou melhor ainda, adicione o grupo que você usa para administradores de armazenamento. Você pode usar o comando a seguir (ou gravar uma função do Windows PowerShell para fazer isso-consulte [usar o PowerShell para adicionar usuários de domínio a um grupo local](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx) para obter mais informações):
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -112,7 +112,7 @@ Net localgroup Administrators <Domain\Account> /add
 
 A próxima etapa é instalar funções de servidor em cada servidor. Você pode fazer isso usando o [centro de administração do Windows](../../manage/windows-admin-center/use/manage-servers.md), [Gerenciador do servidor](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)) ou o PowerShell. Aqui estão as funções a serem instaladas:
 
-- Clustering de failover
+- Clustering de Failover
 - Hyper-V
 - Servidor de arquivos (se você quiser hospedar qualquer compartilhamento de arquivos, como para uma implantação convergida)
 - Ponte de Data Center (se você estiver usando os adaptadores de rede de RoCEv2 em vez de iWARP)
@@ -307,7 +307,7 @@ A próxima etapa na configuração dos serviços de cluster para o servidor de a
 4. Na página **ponto de acesso para cliente** , digite um nome para o servidor de arquivos de escalabilidade horizontal.
 5. Verifique se a função foi configurada com êxito acessando **funções** e confirmando se a coluna **status** mostra a **execução** ao lado da função de servidor de arquivos clusterizado que você criou, como mostra a Figura 1.
 
-   ![Captura de tela de Gerenciador de cluster de failover mostrando o Servidor de Arquivos de Escalabilidade Horizontal](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Gerenciador de Cluster de Failover mostrando o servidor de arquivos de escalabilidade horizontal")
+   ![Captura de tela de Gerenciador de Cluster de Failover mostrando a Servidor de Arquivos de Escalabilidade Horizontal](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Gerenciador de Cluster de Failover mostrando o Servidor de Arquivos de Escalabilidade Horizontal")
 
     **Figura 1** Gerenciador de Cluster de Failover mostrando o Servidor de Arquivos de Escalabilidade Horizontal com o status em execução
 
@@ -329,14 +329,14 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 Depois de criar os discos virtuais e adicioná-los ao CSVs, é hora de criar compartilhamentos de arquivos neles – um compartilhamento de arquivos por CSV por disco virtual. O System Center Virtual Machine Manager (VMM) é provavelmente a maneira handiest de fazer isso porque ele lida com permissões para você, mas se você não o tiver em seu ambiente, poderá usar o Windows PowerShell para automatizar parcialmente a implantação.
 
-Use os scripts incluídos na [configuração de compartilhamento SMB para o script de cargas de trabalho do Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) , que automatiza parcialmente o processo de criação de grupos e compartilhamentos. Ele é escrito para cargas de trabalho do Hyper-V, portanto, se você estiver implantando outras cargas de trabalho, talvez seja necessário modificar as configurações ou executar etapas adicionais depois de criar os compartilhamentos. Por exemplo, se você estiver usando Microsoft SQL Server, a conta de serviço de SQL Server deverá receber controle total sobre o compartilhamento e o sistema de arquivos.
+Use os scripts incluídos na [configuração de compartilhamento SMB para o script de cargas de trabalho do Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) , que automatiza parcialmente o processo de criação de grupos e compartilhamentos. Ele é escrito para cargas de trabalho do Hyper-V, portanto, se você estiver implantando outras cargas de trabalho, talvez seja necessário modificar as configurações ou executar etapas adicionais depois de criar os compartilhamentos. Por exemplo, se você estiver usando Microsoft SQL Server, a conta de serviço de SQL Server deverá receber controle total sobre o compartilhamento e o sistema de arquivos.
 
 > [!NOTE]
 >  Você precisará atualizar a associação de grupo ao adicionar nós de cluster, a menos que use System Center Virtual Machine Manager para criar seus compartilhamentos.
 
 Para criar compartilhamentos de arquivos usando scripts do PowerShell, faça o seguinte:
 
-1. Baixe os scripts incluídos na [configuração de compartilhamento SMB para cargas de trabalho do Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) em um dos nós do cluster do servidor de arquivos.
+1. Baixe os scripts incluídos na [configuração de compartilhamento SMB para cargas de trabalho do Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) em um dos nós do cluster do servidor de arquivos.
 2. Abra uma sessão do Windows PowerShell com credenciais de administrador de domínio no sistema de gerenciamento e use o script a seguir para criar um grupo de Active Directory para os objetos de computador do Hyper-V, alterando os valores das variáveis conforme apropriado para seu ambiente
 
     ```PowerShell
@@ -371,7 +371,7 @@ Para criar compartilhamentos de arquivos usando scripts do PowerShell, faça o s
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>Etapa 4,3 habilitar a delegação restrita de Kerberos
 
-Para configurar a delegação restrita de Kerberos para o gerenciamento de cenário remoto e aumentar a segurança de Migração ao Vivo, de um dos nós de cluster de armazenamento, use o script KCDSetup. ps1 incluído na [configuração de compartilhamento SMB para cargas de trabalho do Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Aqui está um pequeno wrapper para o script:
+Para configurar a delegação restrita de Kerberos para o gerenciamento de cenário remoto e aumentar a segurança de Migração ao Vivo, de um dos nós de cluster de armazenamento, use o script KCDSetup. ps1 incluído na [configuração de compartilhamento SMB para cargas de trabalho do Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Aqui está um pequeno wrapper para o script:
 
 ```PowerShell
 $HyperVClusterName = "Compute01"
@@ -386,7 +386,7 @@ CD $ScriptFolder
 
 Depois de implantar o servidor de arquivos clusterizado, é recomendável testar o desempenho da sua solução usando cargas de trabalho sintéticas antes de trazer qualquer carga de trabalho real. Isso permite confirmar se a solução está sendo executada corretamente e solucionar quaisquer problemas remanescentes antes de adicionar a complexidade das cargas de trabalho. Para obter mais informações, consulte [testar o desempenho de espaços de armazenamento usando cargas de trabalho sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 -   [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
 -   [Entender o cache em Espaços de Armazenamento Diretos](understand-the-cache.md)

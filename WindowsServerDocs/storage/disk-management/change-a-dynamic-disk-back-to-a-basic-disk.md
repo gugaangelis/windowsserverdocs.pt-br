@@ -1,19 +1,19 @@
 ---
 title: Reverter um disco dinâmico em um disco básico
 description: Descreve como converter um disco dinâmico de volta em um disco básico.
-ms.date: 06/07/2019
+ms.date: 12/18/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c24935e1e1921c2a041ef307ebeb71d10e2a4fe2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ad14225592d627b6ff88b9e2286b686aa549392
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386014"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351949"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>Reverter um disco dinâmico em um disco básico
 
@@ -24,23 +24,19 @@ Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, con
 > [!WARNING]
 > Para converter um disco dinâmico de volta em um disco básico, é necessário excluir todos os volumes do disco, além de apagar permanentemente todos os dados contidos nele. Faça o backup de todos os dados que você deseja manter antes de prosseguir.
 
-## <a name="changing-a-dynamic-disk-back-to-a-basic-disk"></a>Reverter um disco dinâmico em um disco básico
-
--   [Usando a interface do Windows](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface)
--   [Usando uma linha de comando](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line)
-
-> [!NOTE]
-> Para concluir estas etapas, no mínimo, você deve ser um membro do grupo **Operadores de backup** ou **Administradores**.
-
-#### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface"></a>Para reverter um disco dinâmico em um disco básico usando a interface do Windows
+## <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-by-using-disk-management"></a>Para converter um disco dinâmico em disco básico usando o Gerenciamento de Disco
 
 1.  Faça o backup de todos os volumes do disco que você quer converter de dinâmico para básico.
 
-2.  No Gerenciamento de Disco, clique com botão direito do mouse em cada volume no disco dinâmico que você quer converter em disco básico e, em seguida, clique em **Excluir Volume** para cada volume no disco.
+2. Abra o Gerenciamento de Disco com permissões de administrador.
+
+   Para fazer isso facilmente, digite **Gerenciamento do Computador** na caixa de pesquisa na barra de tarefas, selecione e mantenha o cursor (ou clique com o botão direito do mouse) em **Gerenciamento do Computador** e, em seguida, selecione **Executar como administrador** > **Sim**. Depois que o Gerenciamento do Computador for aberto, acesse **Armazenamento** > **Gerenciamento de Disco**.
+
+2.  No Gerenciamento de Disco, selecione e mantenha o cursor (ou clique com o botão direito do mouse) em cada volume no disco dinâmico que você quer converter em disco básico e, em seguida, clique em **Excluir Volume**.
 
 3.  Quando todos os volumes no disco forem excluídos, clique com botão direito do mouse no disco e, em seguida, clique em **Converter em disco básico**.
 
-#### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line"></a>Para reverter um disco dinâmico em um disco básico usando uma linha de comando
+## <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-by-using-a-command-line"></a>Para reverter um disco dinâmico em um disco básico usando uma linha de comando
 
 1.  Faça o backup de todos os volumes do disco que você quer converter de dinâmico para básico.
 
@@ -50,14 +46,13 @@ Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, con
 
 4.  No prompt **DISKPART**, digite `select disk <disknumber>`.
 
-5.  No prompt **DISKPART**, digite `detail disk <disknumber>`.
+5.  No prompt **DISKPART**, digite `detail disk`.
 
 6.  Para cada volume no disco, no prompt **DISKPART**, digite `select volume= <volumenumber>` e, em seguida, digite `delete volume`.
 
 7.  No prompt **DISKPART**, digite `select disk <disknumber>`, especificando o número do disco que você quer converter em disco básico.
 
 8.  No prompt **DISKPART**, digite `convert basic`.
-
 
 | Valor  | Descrição |
 | --- | --- |
@@ -73,6 +68,6 @@ Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, con
 -   O disco não deve conter quaisquer volumes ou dados antes de você poder revertê-lo para um disco básico. Se quiser manter seus dados, faça o backup ou transfira-os para outro volume antes de converter o disco em um disco básico.
 -   Ao alterar um disco dinâmico para um disco básico, será possível criar somente partições e unidades lógicas existentes nele.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 -   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)

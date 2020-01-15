@@ -11,18 +11,27 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 01/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d57f2feb5b21385cf247856be05f752ddee0cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b97b7a22d59727bedd6bdbd67a19087612ebfa0
+ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404090"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653041"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novidades do cliente para Microsoft Store
 
 Atualizamos regularmente o [cliente da Windows Store](windows.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
+
+## <a name="updates-for-version-1011107"></a>Atualizações para a versão 10.1.1107
+
+*Data da publicação: 04/09/2019*
+
+- Agora você pode copiar arquivos entre PCs locais e remotos.
+- Agora você pode usar seu endereço de email para acessar recursos remotos (se esta opção tiver sido habilitada pelo seu administrador).
+- Agora você pode alterar as atribuições de conta de usuário para feeds de recursos remotos.
+- Agora o aplicativo mostra o ícone apropriado para arquivos .rdp atribuídos a esse aplicativo no explorador de arquivos em vez de um ícone padrão em branco.
 
 ## <a name="updates-for-version-1011098"></a>Atualizações para a versão 10.1.1098
 

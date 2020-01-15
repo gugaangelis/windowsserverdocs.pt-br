@@ -1,14 +1,12 @@
 # [Windows Admin Center](overview.md)
 
 ## Noções básicas
-### [Olá, Windows Admin Center!](understand/windows-admin-center.md)
 ### [O que é o Windows Admin Center?](understand/what-is.md)
-### [Perguntas Frequentes](understand/faq.md)
+### [Perguntas frequentes](understand/faq.md)
 ### [Estudos de caso](understand/case-studies.md)
 ### [Produtos de gerenciamento relacionados](understand/related-management.md)
-### [Vídeos](understand/videos.md)
 
-## Planeje
+## Planejar
 ### [Que tipo de instalação é ideal para você?](plan/installation-options.md)
 ### [Opções de acesso de usuário](plan/user-access-options.md)
 
@@ -34,7 +32,6 @@
 ### [Gerenciar máquinas virtuais Hyper-V](use/manage-virtual-machines.md)
 ### [Registro em log](use/logging.md)
 
-
 ## Conecte-se ao Azure
 ### [Serviços híbridos do Azure](azure/index.md)
 #### [Backup do Azure](azure/azure-backup.md)
@@ -47,12 +44,13 @@
 ### [Gerenciar VMs do Azure com o Windows Admin Center](azure/manage-azure-vms.md)
 
 ## Suporte
+### [Histórico de versões](support/release-history.md)
 ### [Política de suporte](support/index.md)
 ### [Etapas de solução de problemas comuns](support/troubleshooting.md)
 ### [Problemas conhecidos](support/known-issues.md)
 ### [Termos de licença do Windows Admin Center](../../windows-server-licensing/windows-admin-center-licensing.md)
 
-## Extend
+## Estender
 ### [Visão geral das extensões](extend/extensibility-overview.md)
 ### [Noções básicas de extensões](extend/understand-extensions.md)
 ### [Desenvolver uma extensão](extend/developing-extensions.md)

@@ -1,59 +1,65 @@
 ---
 title: Estender um volume básico
-description: Este artigo descreve como adicionar espaço a unidades primárias e lógicas para estender um volume básico
-ms.date: 06/07/2019
+description: Você pode adicionar espaço a um volume existente no Windows, estendê-lo para um espaço vazio na unidade, mas apenas se o espaço vazio não tiver um volume nele (não alocado) e chegar imediatamente após o volume que você deseja estender, sem outros volumes intermediários. Este artigo descreve como fazer isso.
+ms.date: 12/19/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a98bd3553c3223716d70ed4329bd7e265e697b73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c72b242437c4c308da77a25e06f3d76e4c65f480
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402093"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351898"
 ---
 # <a name="extend-a-basic-volume"></a>Estender um volume básico
 
-> **Aplicável a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-É possível adicionar mais espaço às partições primárias e unidades lógicas existentes estendendo-as para um espaço não alocado adjacente no mesmo disco. Para estender um volume básico, ele deve ser bruto (não formatado com um sistema de arquivos) ou formatado com o sistema de arquivos NTFS. É possível estender uma unidade lógica no espaço livre contíguo na partição estendida que contém essa unidade. Se você estender uma unidade lógica além do espaço livre disponível na partição estendida, a partição aumenta para conter a unidade lógica.
+Você pode usar o Gerenciamento de Disco para adicionar espaço a um volume existente, estendê-lo para um espaço vazio na unidade, mas apenas se o espaço vazio não tiver um volume nele (não alocado) e chegar imediatamente após o volume que você deseja estender, sem outros volumes intermediários, conforme mostrado na imagem a seguir. O volume a ser estendido também deve ser formatado com os sistemas de arquivos NTFS ou ReFS.
 
-Para unidades lógicas e volumes de sistema ou de inicialização, é possível estender o volume apenas no espaço contíguo e somente se for possível fazer upgrade no disco para um disco dinâmico. Para outros volumes, é possível estender o volume no espaço não contíguo, mas será solicitado a você converter o disco para dinâmico.
+:::image type="content" source="media/extend-volume-space-highlighted.png" alt-text="Gerenciamento de Disco mostrando o espaço livre em que um volume pode se estender.":::
 
-## <a name="extending-a-basic-volume"></a>Estender um volume básico
+## <a name="to-extend-a-volume-by-using-disk-management"></a>Para estender um volume usando o Gerenciamento de Disco
 
-#### <a name="to-extend-a-basic-volume-using-the-windows-interface"></a>Para estender um volume básico com a interface do Windows
+Veja como estender um volume para o espaço vazio imediatamente após o volume na unidade:
 
-1. No Gerenciador do Disco, clique com o botão direito do mouse no volume básico que você quer estender.
+1. Abra o Gerenciamento de Disco com permissões de administrador.
 
-2. Clique em **Estender volume**.
+   Para fazer isso facilmente, digite **Gerenciamento do Computador** na caixa de pesquisa na barra de tarefas, selecione e mantenha o cursor (ou clique com o botão direito do mouse) em **Gerenciamento do Computador** e, em seguida, selecione **Executar como administrador** > **Sim**. Depois que o Gerenciamento do Computador for aberto, acesse **Armazenamento** > **Gerenciamento de Disco**.
+2. Selecione e mantenha o cursor (ou clique com o botão direito do mouse) no volume que você deseja estender e, em seguida, selecione **Estender Volume**.
 
-3. Siga as instruções na tela.
+   Se a opção **Estender Volume** estiver esmaecida, verifique o seguinte:
+    - O Gerenciamento de Disco ou o Gerenciamento do Computador foi aberto com permissões de administrador
+    - Há espaço não alocado diretamente após (à direita) do volume, conforme mostrado no gráfico acima. Se houver outro volume entre o espaço não alocado e o volume que você deseja estender, você poderá excluir o volume e todos os arquivos nele (faça backup ou mova todos os arquivos importantes primeiro), usar um aplicativo de particionamento de disco que não seja da Microsoft que pode mover volumes sem destruir dados ou ignorar a extensão do volume e criar um volume separado no espaço não alocado.
+    - O volume é formatado com o sistema de arquivos NTFS ou ReFS. Outros sistemas de arquivos não podem ser estendidos. Portanto, você precisaria mover ou fazer backup dos arquivos no volume e, em seguida, formatar o volume com o sistema de arquivos NTFS ou ReFS.
+    - Se o disco for maior do que 2 TB, verifique se ele está usando o esquema de particionamento GPT. Para usar mais de 2 TB em um disco, ele deve ser inicializado usando o esquema de particionamento GPT. Para converter em GPT, consulte [Reverter um disco MBR em um disco GPT](change-an-mbr-disk-into-a-gpt-disk.md).
+    - Se você ainda não conseguir estender o volume, tente pesquisar no site [Microsoft Community – Arquivos, pastas e armazenamento](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639) e, se não encontrar uma resposta, publique uma pergunta lá e a Microsoft ou outros membros da comunidade tentarão ajudar ou [entre em contato com o Suporte da Microsoft](https://support.microsoft.com/contactus/).
 
-#### <a name="to-extend-a-basic-volume-using-a-command-line"></a>Para estender um volume básico usando uma linha de comando
+3. Selecione **Avançar** e, em seguida, na página **Selecionar Discos** do assistente (mostrado aqui), especifique o quanto deseja estender o volume. Normalmente, você usará o valor padrão, que utiliza todo o espaço livre disponível, mas poderá usar um valor menor se desejar criar volumes adicionais no espaço livre.
 
-1. Abra um prompt de comando e digite `diskpart`.
+   :::image type="content" source="media/extend-volume-wizard.png" alt-text="O assistente Estender Volume mostrando um volume que está sendo estendido para ocupar todo o espaço disponível":::
 
-2. No prompt **DISKPART**, digite `list volume`. Anote o volume básico que você quer estender.
+4. Selecione **Avançar** e **Concluir** para estender o volume.
 
-3. No prompt **DISKPART**, digite `select volume <volumenumber>`. Isso seleciona o volume básico *volumenumber* que você quer estender no espaço contíguo vazio no mesmo disco.
+## <a name="to-extend-a-volume-by-using-powershell"></a>Para estender um volume usando o PowerShell
 
-4. No prompt **DISKPART**, digite `extend [size=<size>]`. Isso estende o volume selecionado por *tamanho* em MB (megabytes).
+1. Selecione e mantenha o cursor (ou clique com o botão direito do mouse) no botão Iniciar e selecione Windows PowerShell (administrador).
+2. Digite o seguinte comando para redimensionar o volume para o tamanho máximo, especificando a letra da unidade do volume que você deseja estender na variável *$drive _letter*:
 
-| Valor | Descrição |
-| --- | --- |
-| **list volume** | Exibe uma lista dos volumes básicos e dinâmicos em todos os discos. |
-| **select volume** | Seleciona o volume especificado, onde <em>volumenumber</em> é o número do volume e concede foco a ele. Se nenhum volume for especificado, o comando **select** lista o volume atual com foco. É possível especificar o volume por número, letra da unidade ou caminho do ponto de montagem. Em um disco básico, a seleção de um volume também oferece o foco de partição correspondente. |
-| **extend** | <ul><li>Estende o volume com foco para o próximo espaço não alocado contíguo. Para volumes básicos, o espaço não alocado deve estar no mesmo disco e deve seguir (ter um deslocamento de setor maior do que) a partição com foco. Um volume dinâmico simples ou estendido pode ser estendido para qualquer espaço vazio em qualquer disco dinâmico. Ao usar esse comando, é possível estender um volume existente no espaço recém-criado.</li ><li>Se a partição foi previamente formatada com o sistema de arquivos NTFS, o sistema de arquivos é estendido automaticamente para ocupar a partição maior. Não há perda de dados. Se a partição foi previamente formatada com qualquer formato de sistema de arquivos diferente de NTFS, ocorre falha de comando sem alteração na partição.</li></ul> |
-| **size=** <em>size</em> | A quantidade de espaço, em MB (megabytes), para adicionar à partição atual. Se você não especificar um tamanho, o disco é estendido para ocupar o espaço não alocado contíguo. |
+   ```PowerShell
+   # Variable specifying the drive you want to extend
+   $drive_letter = "C"
 
-## <a name="additional-considerations"></a>Considerações adicionais
+   # Script to get the partition sizes and then resize the volume
+   $size = (Get-PartitionSupportedSize -DriveLetter $drive_letter)
+   Resize-Partition -DriveLetter $drive_letter -Size $size.SizeMax
+   ```
 
--   Se o disco não tiver partições de inicialização ou de sistema, é possível estender o volume para outros discos sem inicialização ou sem sistema, mas ele será convertido em um disco dinâmico (se puder ser atualizado).
+## <a name="see-slso"></a>Consulte também
 
-## <a name="see-also"></a>Consulte também
-
--   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+- [Resize-Partition](https://docs.microsoft.com/powershell/module/storage/resize-partition)
+- [Diskpart extend](https://docs.microsoft.com/windows-server/administration/windows-commands/extend)

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 26eba76c836d1157f4d4c10d7a989a3a7dcc1538
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 806857d5de067c0f4640344ed80338b474dd758e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393832"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950068"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Réplica de armazenamento de cluster para Cluster cruzar região no Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "71393832"
 Você pode configurar cluster para réplicas de armazenamento de cluster para aplicativos entre regiões no Azure. Nos exemplos a seguir, usamos um cluster de dois nós, mas cluster para réplica de armazenamento de cluster não é restrito a um cluster de dois nós. A ilustração a seguir é um cluster direto de espaço de armazenamento de dois nós que pode se comunicar entre si, está no mesmo domínio e é entre regiões.
 
 Assista ao vídeo abaixo para obter um passo a passo completo do processo.
-> [!video https://www.microsoft.com/en-us/videoplayer/embed/RE26xeW]
+> [!video https://www.microsoft.com/videoplayer/embed/RE26xeW]
 
 ![O diagrama de arquitetura que apresenta o C2C SR no Azure com a mesma região.](media/Cluster-to-cluster-azure-cross-region/architecture.png)
 > [!IMPORTANT]
@@ -59,7 +59,7 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
       - Adicionar pelo menos dois discos gerenciados a cada computador
       - Instalar o clustering de failover e o recurso de réplica de armazenamento
 
-   Crie duas máquinas virtuais (**azcross1**, **azcross2**) no grupo de recursos (**Sr-AZCROSS**) usando a rede virtual (**AZCROSS-VNET**) e o grupo de segurança de rede (**AZCROSS-NSG**) no conjunto de disponibilidade (**AZCROSS-as**) . Atribuir o endereço IP público padrão a cada máquina virtual durante a própria criação
+   Crie duas máquinas virtuais (**azcross1**, **azcross2**) no grupo de recursos (**Sr-AZCROSS**) usando a rede virtual (**AZCROSS-VNET**) e o grupo de segurança de rede (**AZCROSS-NSG**) no conjunto de disponibilidade (**AZCROSS-as**). Atribuir o endereço IP público padrão a cada máquina virtual durante a própria criação
       - Adicionar pelo menos dois discos gerenciados a cada computador
       - Instalar o clustering de failover e o recurso de réplica de armazenamento
 
@@ -93,16 +93,16 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
 8. Crie um [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) de SKU padrão interno para cada cluster (**azlbr1**, **azlbazcross**).
 
    Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga.
-      - azlbr1 = > IP de front-end: 10.3.0.100 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az**))
+      - azlbr1 = > IP de front-end: 10.3.0.100 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az-vnet**))
       - Crie um pool de back-end para cada balanceador de carga. Adicione os nós de cluster associados.
       - Criar investigação de integridade: porta 59999
-      - Criar regra de balanceamento de carga: Permitir portas de alta disponibilidade, com IP flutuante habilitado.
+      - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado.
 
    Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga. 
-      - azlbazcross = > IP de front-end: 10.0.0.10 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**azcross**))
+      - azlbazcross = > IP de front-end: 10.0.0.10 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**azcross-VNET**))
       - Crie um pool de back-end para cada balanceador de carga. Adicione os nós de cluster associados.
       - Criar investigação de integridade: porta 59999
-      - Criar regra de balanceamento de carga: Permitir portas de alta disponibilidade, com IP flutuante habilitado. 
+      - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado. 
 
 9. Crie um [Gateway de rede virtual](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM) para conectividade vnet a vnet.
 

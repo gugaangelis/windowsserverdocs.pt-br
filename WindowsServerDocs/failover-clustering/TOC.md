@@ -9,7 +9,7 @@
 ### [Aprofundamento do balanceamento de carga de VM](vm-load-balancing-deep-dive.md)
 ### [Conjuntos de cluster](../storage/storage-spaces/cluster-sets.md)
 ### [Afinidade de cluster](cluster-affinity.md)
-## Planeje
+## Planejar
 ### [Requisitos de hardware](clustering-requirements.md)
 ### [Usar CSVs (Volumes Compartilhados do Cluster)](failover-cluster-csvs.md)
 ### [Usar clusters de VM convidada](../storage/storage-spaces/storage-spaces-direct-in-vm.md)
@@ -23,11 +23,11 @@
 ### [Implantar testemunha de compartilhamento de arquivos](file-share-witness.md)
 ### [Atualizações sem interrupção do sistema operacional do cluster](cluster-operating-system-rolling-upgrade.md)
 ### [Atualizar um cluster de failover no mesmo hardware](upgrade-option-same-hardware.md)
-## Gerenciar
+## assinaturas
 ### [Atualização com suporte a cluster](cluster-aware-updating.md)
 #### [Requisitos e práticas recomendadas](cluster-aware-updating-requirements.md)
 #### [Opções avançadas](cluster-aware-updating-options.md)
-#### [Perguntas Frequentes](cluster-aware-updating-faq.md)
+#### [Perguntas frequentes](cluster-aware-updating-faq.md)
 #### [Plug-ins](cluster-aware-updating-plug-ins.md)
 ### [Serviço de integridade](health-service-overview.md)
 #### [Relatórios](health-service-reports.md)
@@ -36,4 +36,5 @@
 #### [Configurações](health-service-settings.md)
 ### [Migração de domínio do cluster](cluster-domain-migration.md)
 ### [Solução de problemas usando o Relatório de Erros do Windows](troubleshooting-using-WER-reports.md)
+### [Eventos de log do sistema de cluster](system-events.md)
 ## [Histórico de alterações dos tópicos do clustering de failover](clustering-change-history.md)

@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7d8158c-aee1-4c60-8a46-40ce5595b8e8
 author: HeidiLohr
-manager: dougkim
+manager: daveba
 ms.author: helohr
-ms.date: 05/07/2018
+ms.date: 01/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b96ec92fea067d6482baeb54f19a1ec07e2229a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b0b44eac6d76fb6d49c00dae0c0abe9450861026
+ms.sourcegitcommit: 28b71d779386cd31e1511217aa1a6f3ab186bf9b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404161"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75682427"
 ---
 # <a name="remote-desktop-clients"></a>Clientes de área de trabalho remota
 
@@ -31,12 +31,13 @@ Antes de começar, confira o artigo sobre a [configuração compatível](remote-
 
 Os seguintes aplicativos de cliente estão disponíveis:
 
-| Dispositivo   | Baixar o aplicativo                                                                                                     | Instruções de configuração                                                                |
-|----------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Windows  | [Cliente Windows 10 na Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=616709)                      | [Introdução ao cliente de Área de Trabalho Remota no Windows](windows.md)                |
-| Android  | [Cliente Android no Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)        | [Introdução ao cliente de Área de Trabalho Remota no Android](remote-desktop-android.md) |
-| iOS      | [Cliente iOS na iTunes Store](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)     | [Introdução ao cliente de Área de Trabalho Remota no iOS](remote-desktop-ios.md)         |
-| macOS    | [Cliente macOS na iTunes Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [Introdução ao cliente de Área de Trabalho Remota no Mac](remote-desktop-mac.md)         |
+| Dispositivo          | Obtenha o aplicativo                                                                                                  | Instruções de configuração                                                                |
+|-----------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| Windows Desktop | [Cliente de Área de Trabalho do Windows](windowsdesktop.md#install-the-client)                                               | [Introdução ao cliente de Área de Trabalho do Windows](windowsdesktop.md) |
+| Windows Store   | [Cliente Windows 10 na Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=616709)                   | [Introdução ao cliente para Microsoft Store](windows.md)          |
+| Android         | [Cliente Android no Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)     | [Introdução ao cliente para Android](remote-desktop-android.md) |
+| iOS             | [Cliente iOS na iTunes Store](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)     | [Introdução ao cliente para iOS](remote-desktop-ios.md)         |
+| macOS           | [Cliente macOS na iTunes Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [Introdução ao cliente para macOS](remote-desktop-mac.md)       |
 
 ## <a name="configuring-the-remote-pc"></a>Configuração do computador remoto
 
