@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: d692251e1ba0fef43e4eeee6f259f26f4347f3c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356879"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949939"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>O que é a infraestrutura hiperconvergente
 
@@ -27,11 +27,11 @@ A infraestrutura hiperconvergente consolida a computação, o armazenamento e a 
 > Procurando adquirir a infraestrutura hiperconvergente? A Microsoft recomenda essas soluções [definidas por software do Windows Server](https://microsoft.com/wssd) de nossos parceiros. Eles são projetados, montados e validados em nossa arquitetura de referência para garantir a compatibilidade e a confiabilidade, para que você comece a trabalhar rapidamente.
 
 > [!IMPORTANT]
-> Alguns dos recursos descritos neste artigo estão disponíveis apenas na versão prévia do centro de administração do Windows. [Como fazer obter esta versão?](http://aka.ms/windowsadmincenter)
+> Alguns dos recursos descritos neste artigo estão disponíveis apenas na versão prévia do centro de administração do Windows. [Como fazer obter esta versão?](https://aka.ms/windowsadmincenter)
 
 ## <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center
 
-O [centro de administração do Windows](../understand/windows-admin-center.md) é a ferramenta de gerenciamento de última geração para o Windows Server, o sucessor das ferramentas tradicionais "prontas", como Gerenciador do servidor. Ele é gratuito e pode ser instalado e usado sem uma conexão com a Internet. Você pode usar o centro de administração do Windows para gerenciar e monitorar a infraestrutura hiperconvergente que executa o Windows Server 2016 ou o Windows Server 2019.
+O [centro de administração do Windows](../overview.md) é a ferramenta de gerenciamento de última geração para o Windows Server, o sucessor das ferramentas tradicionais "prontas", como Gerenciador do servidor. Ele é gratuito e pode ser instalado e usado sem uma conexão com a Internet. Você pode usar o centro de administração do Windows para gerenciar e monitorar a infraestrutura hiperconvergente que executa o Windows Server 2016 ou o Windows Server 2019.
 
 ![Painel de cluster hiperconvergente](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
@@ -57,7 +57,7 @@ Para gerenciar o cluster como uma infraestrutura hiperconvergente no centro de a
 
 O centro de administração do Windows para infraestrutura hiperconvergente depende das APIs de gerenciamento adicionadas após o lançamento do Windows Server 2016. Para poder gerenciar o cluster do Windows Server 2016 com o centro de administração do Windows, você precisará executar estas duas etapas:
 
-1. Verifique se todos os servidores no cluster instalaram a [atualização cumulativa 2018-05 para o Windows server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723) ou posterior. Para baixar e instalar essa atualização, vá para **configurações** > **Atualizar & segurança** > **Windows Update** e selecione **verificar online se há atualizações de Microsoft Update**.
+1. Verifique se todos os servidores no cluster instalaram a [atualização cumulativa 2018-05 para o Windows server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723) ou posterior. Para baixar e instalar essa atualização, vá para **configurações** > **atualização & segurança** > **Windows Update** e selecione **verificar online se há atualizações do Microsoft Update**.
 2. Execute o seguinte cmdlet do PowerShell como administrador no cluster:
 
 ```powershell
@@ -153,7 +153,7 @@ Em geral, o termo "hiperconvergente" refere-se à execução do Hyper-V e Espaç
 
 O centro de administração do Windows para infraestrutura hiperconvergente depende das APIs de gerenciamento desenvolvidas desde que o Windows Server 2016 foi lançado. Essas APIs são adicionadas na [atualização cumulativa 2018-05 para o Windows Server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723), disponível a partir de 8 de maio de 2018.
 
-### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Quanto custa para usar o Windows Admin Center?
+### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Quanto custa usar o Windows Admin Center?
 
 O Windows Admin Center não tem custo adicional além do Windows.
 
@@ -161,15 +161,15 @@ O Windows Admin Center não tem custo adicional além do Windows.
 
 ### <a name="does-windows-admin-center-require-system-center"></a>O Windows Admin Center requer o System Center?
 
-Nº
+Não.
 
 ### <a name="does-it-require-an-internet-connection"></a>Ele requer uma conexão com a Internet?
 
-Nº
+Não.
 
 Embora o centro de administração do Windows ofereça uma integração poderosa e conveniente com o Microsoft Azure Cloud, a experiência básica de gerenciamento e monitoramento para a infraestrutura hiperconvergente é completamente local. Ele pode ser instalado e usado sem uma conexão com a Internet.
 
-## <a name="things-to-try"></a>Coisas para experimentar
+## <a name="things-to-try"></a>Ações recomendadas
 
 Se você estiver apenas começando, aqui estão alguns tutoriais rápidos para ajudá-lo a aprender como o centro de administração do Windows para a infraestrutura hiperconvergente é organizado e funciona. Faça um bom Judgement e tenha cuidado com ambientes de produção. Esses vídeos foram registrados com a versão 1804 do centro de administração do Windows e uma compilação do insider preview do Windows Server 2019.
 
@@ -187,12 +187,12 @@ Se você estiver apenas começando, aqui estão alguns tutoriais rápidos para a
 <table>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>Criar um volume, espelho de três vias</strong>
-            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>Criar um volume,
+             de espelho de três vias</strong><iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>Criar volume, paridade acelerada por espelhamento</strong>
-            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>Criar um volume,
+             de paridade aceleradas por espelhamento</strong><iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
@@ -211,8 +211,8 @@ Se você estiver apenas começando, aqui estão alguns tutoriais rápidos para a
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/hqyBzipBoTI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>Excluir volume</strong>
-            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>Excluir</strong>
+             de volume<iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
 </table>
@@ -223,11 +223,11 @@ Se você estiver apenas começando, aqui estão alguns tutoriais rápidos para a
 2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** e clique em **novo** para criar uma nova máquina virtual.
 3. Insira o nome da máquina virtual e escolha entre as máquinas virtuais de geração 1 e 2.
 4. Você pode escolher em qual host a máquina virtual será criada inicialmente ou usar o host recomendado.
-5. Escolha um caminho para os arquivos de máquina virtual. Escolha um volume na lista suspensa ou clique em **procurar** para escolher uma pasta usando o seletor de pasta. Os arquivos de configuração de máquina virtual e o arquivo de disco rígido virtual serão salvos em uma única `\Hyper-V\[virtual machine name]` pasta sob o caminho do volume ou caminho selecionado.
+5. Escolha um caminho para os arquivos de máquina virtual. Escolha um volume na lista suspensa ou clique em **procurar** para escolher uma pasta usando o seletor de pasta. Os arquivos de configuração de máquina virtual e o arquivo de disco rígido virtual serão salvos em uma única pasta sob o caminho de `\Hyper-V\[virtual machine name]` do volume ou caminho selecionado.
 6. Escolha o número de processadores virtuais, se você deseja habilitar a virtualização aninhada, definir configurações de memória, adaptadores de rede, discos rígidos virtuais e escolher se deseja instalar um sistema operacional de um arquivo de imagem. ISO ou da rede.
 7. Clique em **criar** para criar a máquina virtual.
 8. Depois que a máquina virtual é criada e exibida na lista de máquinas virtuais, você pode iniciar a máquina virtual.
-9. Depois que a máquina virtual for iniciada, você poderá se conectar ao console da máquina virtual por meio do VMConnect para instalar o sistema operacional. Selecione a máquina virtual na lista, clique em **mais** > **conexão** para baixar o arquivo. rdp. Abra o arquivo. rdp no aplicativo Conexão de Área de Trabalho Remota. Como isso está se conectando ao console da máquina virtual, será necessário inserir as credenciais de administrador do host Hyper-V.
+9. Depois que a máquina virtual for iniciada, você poderá se conectar ao console da máquina virtual por meio do VMConnect para instalar o sistema operacional. Selecione a máquina virtual na lista, clique em **mais** > **conectar** para baixar o arquivo. rdp. Abra o arquivo. rdp no aplicativo Conexão de Área de Trabalho Remota. Como isso está se conectando ao console da máquina virtual, será necessário inserir as credenciais de administrador do host Hyper-V.
 
 [Saiba mais sobre o gerenciamento de máquinas virtuais com o centro de administração do Windows](manage-virtual-machines.md).
 
@@ -278,17 +278,17 @@ Você também pode configurar a rede virtual ao criar uma máquina virtual.
 
 ![Monitorar a infraestrutura de SDN](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>Privacidade Jurídica
+## <a name="feedback"></a>Feedback
 
 Isso é tudo sobre seus comentários! O benefício mais importante das atualizações frequentes é ouvir o que está funcionando e o que precisa ser melhorado. Aqui estão algumas maneiras de nos informar o que você está pensando:
 
 - [Enviar e votar em solicitações de recursos no UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Participe do fórum do centro de administração do Windows na Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- Tweet para`@servermgmt`
+- Tweet para `@servermgmt`
 
-### <a name="see-also"></a>Consulte também
+### <a name="see-also"></a>Veja também
 
-- [Windows Admin Center](../understand/windows-admin-center.md)
+- [Windows Admin Center](../overview.md)
 - [Espaços de Armazenamento Diretos](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
 - [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
 - [Rede definida pelo software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)

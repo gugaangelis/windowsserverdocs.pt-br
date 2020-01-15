@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: d92ed347288bc9a0dd3893148a31152ae8b8a313
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b5303a474b498bd82a133427243ced86980c6d7d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393986"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949659"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Limites de escalabilidade do servidor de destino iSCSI
 
@@ -49,7 +49,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td><p>unidades lógicas (Lu) iSCSI ou discos virtuais por servidor de destino iSCSI</p></td>
 <td><p>512</p></td>
 <td><p>Não</p></td>
-<td><p>Configurações de teste incluídas: 8 Lu por instância de destino com uma média de mais de 64 destinos e instâncias de destino 256 com uma LU por destino.</p></td>
+<td><p>Configurações de teste incluídas: 8 Lu por instância de destino com uma média de mais de 64 destinos e 256 instâncias de destino com uma LU por destino.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Lu iSCSI ou discos virtuais por instância de destino iSCSI</p></td>
@@ -104,7 +104,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>Vários nós de cluster ativos</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td> 
 <p>N/D</p></td>
 <td><p>Cada nó ativo no cluster de failover possui uma instância de cluster de servidor de destino iSCSI diferente com outros nós que atuam como possíveis nós de proprietário.</p></td>
@@ -129,13 +129,13 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>Entrada/saída de vários caminhos (MPIO)</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Caminhos de MPIO</p></td>
-<td><p>4</p></td>
+<td><p>추가를 클릭합니다.</p></td>
 <td><p>Não</p></td>
 <td></td>
 </tr>
@@ -185,20 +185,20 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td></td>
 </tr>
 <tr class="even">
-<td><p>IPv6</p></td>
-<td><p>Suportado</p></td>
+<td><p>IPv4</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPv6</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarregamento de TCP</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td><p>Aproveitar envio grande (segmentação), soma de verificação, moderação de interrupção e descarregamento de RSS</p></td>
 </tr>
@@ -210,19 +210,19 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>Quadros jumbo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPSec</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarregamento de CRC</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
@@ -262,41 +262,41 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="odd">
 <td><p>Tamanho mínimo do formato do VHD</p></td>
-<td><p>vhdx 3 MB</p>
-<p>VHD 8 MB</p></td>
+<td><p>. vhdx: 3 MB</p>
+<p>. vhd: 8 MB</p></td>
 <td><p>Sim</p></td>
 <td><p>Aplica-se a todos os tipos de VHD com suporte: pai, diferencial e fixo.</p></td>
 </tr>
 <tr class="even">
 <td><p>Tamanho máximo do VHD pai</p></td>
-<td><p>vhdx 64 TB</p>
-<p>VHD 2 TB</p></td>
+<td><p>. vhdx: 64 TB</p>
+<p>. vhd: 2 TB</p></td>
 <td><p>Sim</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Tamanho máximo de VHD fixo</p></td>
-<td><p>vhdx 64 TB</p>
-<p>VHD 16 TB</p></td>
+<td><p>. vhdx: 64 TB</p>
+<p>. vhd: 16 TB</p></td>
 <td><p>Sim</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Tamanho máximo de VHD diferencial</p></td>
-<td><p>vhdx 64 TB</p>
-<p>VHD 2 TB</p></td>
+<td><p>. vhdx: 64 TB</p>
+<p>. vhd: 2 TB</p></td>
 <td><p>Sim</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Formato de VHD fixo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>Não</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Formato diferencial do VHD</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>Não</p></td>
 <td><p>Os instantâneos não podem ser obtidos de discos virtuais iSCSI baseados em VHD diferenciais.</p></td>
 </tr>
@@ -308,8 +308,8 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>Formato dinâmico do VHD</p></td>
-<td><p>vhdx Sim</p>
-<p>VHD Sim (não no Windows Server 2012)</p></td>
+<td><p>. vhdx: Sim</p>
+<p>. vhd: Sim (não no Windows Server 2012)</p></td>
 <td><p>Sim</p></td>
 <td><p>&#39;Não há suporte para desmapeamento.</p></td>
 </tr>
@@ -327,13 +327,13 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="odd">
 <td><p>ReFS</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>NTFS</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
@@ -382,12 +382,12 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tbody>
 <tr class="odd">
 <td><p>Criação de instantâneo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Restauração de instantâneo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -422,7 +422,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="odd">
 <td><p>Montagem local</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>Discos virtuais iSCSI montados localmente são preteridos-para obter mais informações, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">recursos removidos ou preteridos no Windows Server 2012 R2</a>. Instantâneos de disco dinâmico não podem ser montados localmente.</p></td>
 </tr>
 </tbody>
@@ -432,7 +432,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 
 Se você quiser criar cópias de sombra de volume (instantâneos de arquivo aberto do VSS) de dados em discos virtuais iSCSI de um servidor de aplicativos, ou se desejar gerenciar discos virtuais iSCSI com um aplicativo mais antigo (como o comando DiskRAID) que requer um hardware VDS (serviço de disco virtual) , instale o provedor de armazenamento de destino iSCSI no servidor do qual você deseja tirar um instantâneo ou usar um aplicativo de gerenciamento VDS.
 
-O provedor de armazenamento de destino iSCSI é um serviço de função no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012; Você também pode baixar e instalar [provedores de armazenamento de destino iSCSI (VDS/VSS) para servidores de aplicativos de nível inferior](http://www.microsoft.com/download/details.aspx?id=34759) nos seguintes sistemas operacionais, contanto que o servidor de destino iSCSI esteja em execução no Windows Server 2012:
+O provedor de armazenamento de destino iSCSI é um serviço de função no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012; Você também pode baixar e instalar [provedores de armazenamento de destino iSCSI (VDS/VSS) para servidores de aplicativos de nível inferior](https://www.microsoft.com/download/details.aspx?id=34759) nos seguintes sistemas operacionais, contanto que o servidor de destino iSCSI esteja em execução no Windows Server 2012:
 
   - Windows Storage Server 2008 R2
 
@@ -444,7 +444,7 @@ O provedor de armazenamento de destino iSCSI é um serviço de função no Windo
 
 Observe que, se o servidor de destino iSCSI for hospedado por um servidor que executa o Windows Server 2012 R2 ou mais recente e você quiser usar o VSS ou VDS de um servidor remoto, o servidor remoto também deverá executar a mesma versão do Windows Server e ter a função de provedor de armazenamento de destino iSCSI Servy e instalado. Observe também que, em todas as versões do Windows, você deve instalar apenas uma versão do serviço de função do provedor de armazenamento de destino iSCSI.
 
-Para obter mais informações sobre o provedor de armazenamento de destino iSCSI, consulte [provedor de armazenamento de destino iSCSI (VDS/VSS)](http://blogs.technet.com/b/filecab/archive/2012/10/08/iscsi-target-storage-vds-vss-provider.aspx).
+Para obter mais informações sobre o provedor de armazenamento de destino iSCSI, consulte [provedor de armazenamento de destino iSCSI (VDS/VSS)](https://blogs.technet.com/b/filecab/archive/2012/10/08/iscsi-target-storage-vds-vss-provider.aspx).
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>Compatibilidade testada com iniciadores iSCSI
 
@@ -459,68 +459,68 @@ Testamos o software do servidor de destino iSCSI com os seguintes iniciadores iS
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Configure</p></td>
-<td><p>Windows Server 2012 R2</p></td>
+<td><p>Iniciador</p></td>
+<td><p>R2 do Windows Server 2012</p></td>
 <td><p>Windows Server 2012</p></td>
 <td><p>Comentários</p></td>
 </tr>
 <tr class="even">
-<td><p>Windows Server 2012 R2</p></td>
-<td><p>Valid</p></td>
+<td><p>R2 do Windows Server 2012</p></td>
+<td><p>validadas</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows Server 2003</p></td>
-<td><p>Valid</p></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
+<td><p>validadas</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>VMWare vSphere 5</p></td>
 <td></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>VMWare ESXi 5,0</p></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>VMWare ESX 4,1</p></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>CentOS 6. x</p></td>
-<td><p>Valid</p></td>
+<td><p>CentOS 6.x</p></td>
+<td><p>validadas</p></td>
 <td></td>
 <td><p>É necessário fazer logoff de uma sessão e fazer logon novamente para detectar um disco virtual redimensionado.</p></td>
 </tr>
 <tr class="even">
 <td><p>Red Hat Enterprise Linux 6</p></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>RedHat Enterprise Linux 5 e 5</p></td>
-<td><p>Valid</p></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
+<td><p>validadas</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>SUSE Linux Enterprise Server 10</p></td>
 <td></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Oracle Solaris 11. x</p></td>
-<td><p>Valid</p></td>
+<td><p>validadas</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -529,7 +529,7 @@ Testamos o software do servidor de destino iSCSI com os seguintes iniciadores iS
 
 Também testamos os seguintes iniciadores iSCSI executando uma inicialização sem disco de discos virtuais hospedados pelo servidor de destino iSCSI:
 
-  - Windows Server 2012 R2
+  - R2 do Windows Server 2012
 
   - Windows Server 2012
 
@@ -537,7 +537,7 @@ Também testamos os seguintes iniciadores iSCSI executando uma inicialização s
 
   - CD ou disco USB com iPXE
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 A lista a seguir fornece recursos adicionais sobre o Servidor de Destino iSCSI e as tecnologias relacionadas.
 

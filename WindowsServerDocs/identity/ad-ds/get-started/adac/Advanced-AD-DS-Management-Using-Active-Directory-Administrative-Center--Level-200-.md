@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00e307da35911189114257eea88ccaf90ceab1ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390722"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949331"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
@@ -46,7 +46,7 @@ O Windows PowerShell e camada de operações subjacentes para a nova funcionalid
   
 ## <a name="BKMK_EnableRecycleBin"></a>Habilitando e gerenciando a lixeira de Active Directory usando Centro Administrativo do Active Directory  
   
-### <a name="capabilities"></a>Funcionalidades  
+### <a name="capabilities"></a>Capacidades  
   
 - O Windows Server 2012 ou mais recente Centro Administrativo do Active Directory permite que você configure e gerencie o Active Directory Lixeira para qualquer partição de domínio em uma floresta. Não há mais um requisito para usar o Windows PowerShell ou Ldp.exe para habilitar a Lixeira do Active Directory ou restaurar objetos em partições de domínio.
 - O Centro Administrativo do Active Directory tem critérios de filtragem avançados, facilitando a restauração de destino em grandes ambientes, com muitos objetos excluídos intencionalmente.
@@ -64,7 +64,7 @@ O Active Directory Lixeira requer um nível funcional de floresta do Windows Ser
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Habilitando a Lixeira do Active Directory usando o Centro Administrativo do Active Directory
 
-Para habilitar a Lixeira do Active Directory, abra o **Centro Administrativo do Active Directory** e clique no nome da floresta no painel de navegação. No painel **Tarefas**, clique em **Habilitar Lixeira**.  
+Para habilitar a Lixeira do Active Directory, abra o **Centro Administrativo do Active Directory** e clique no nome da floresta no painel de navegação. No painel **Tarefas** , clique em **Habilitar Lixeira**.  
   
 ![Gerenciamento de AD DS avançado](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
@@ -98,7 +98,7 @@ A Lixeira do Active Directory preserva todos os objetos excluídos na floresta. 
   
 O contêiner **Objetos Excluídos** mostra todos os objetos restauráveis ​​naquela partição de domínio. Objetos excluídos mais antigos que **msDS-deletedObjectLifetime** são conhecidos como objetos reciclados. O Centro Administrativo do Active Directory não mostra objetos reciclados e não é possível restaurar esses objetos usando o Centro Administrativo do Active Directory.  
   
-Para uma explicação mais profunda sobre a arquitetura e as regras de processamento da lixeira, consulte [A lixeira do AD: Noções básicas, implementação, práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
+Para uma explicação mais profunda sobre a arquitetura e as regras de processamento da lixeira, consulte [A lixeira do AD: Noções básicas, implementação, práticas recomendadas e solução de problemas](https://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
   
 O Centro Administrativo do Active Directory limita artificialmente o número padrão de objetos retornados de um contêiner a 20.000 objetos. Você pode aumentar esse limite até 100.000 objetos, clicando no menu **Gerenciar** e depois em **Opções da Lista de Gerenciamento**.  
   
@@ -122,7 +122,7 @@ A operação de restauração dá suporte a todas as opções de critérios de f
 - Nome  
 - Quando excluído  
 - Último pai conhecido  
-- Tipo  
+- Digite  
 - Descrição  
 - Cidade  
 - País/região  
@@ -217,7 +217,7 @@ A funcionalidade do cmdlet **Restore-ADObject** não foi alterada entre o Window
 É possível que, com o tempo, o contêiner Objetos Excluídos acumule mais de 20.000 (ou até mesmo 100.000) objetos em médias e grandes empresas e tenha dificuldades em mostrar todos os objetos. Como o mecanismo de filtro no Centro Administrativo do Active Directory baseia-se na filtragem de cliente, ele não pode mostrar estes objetos adicionais. Para contornar essa limitação, use as seguintes etapas para realizar uma busca no servidor:  
   
 1. Clique com o botão direito do mouse no contêiner **Objetos Excluídos** e depois em **Pesquisar neste nó**.  
-2. Clique na divisa para expor o menu **+Adicionar critérios**, selecione e adicione **Última modificação entre determinadas datas**. A hora da última modificação (o atributo **whenChanged**) é uma aproximação da hora de exclusão; na maioria dos ambientes, elas são idênticas. Esta consulta realiza uma pesquisa de servidor.  
+2. Clique na divisa para expor o menu **+Adicionar critérios** , selecione e adicione **Última modificação entre determinadas datas**. A hora da última modificação (o atributo **whenChanged** ) é uma aproximação da hora de exclusão; na maioria dos ambientes, elas são idênticas. Esta consulta realiza uma pesquisa de servidor.  
 3. Localize os objetos excluídos para restaurar usando outra filtragem de exibição, classificação e assim por diante nos resultados e, em seguida, restaure-os normalmente.  
   
 ## <a name="BKMK_FGPP"></a>Configurando e gerenciando políticas de senha refinadas usando o Centro Administrativo do Active Directory  
@@ -234,7 +234,7 @@ No painel de navegação, clique no modo de exibição de árvore, depois no dom
   
 ### <a name="managing-fine-grained-password-policies"></a>Gerenciando políticas de senha refinada
 
-A criação de uma nova FGPP ou edição de uma existente traz o editor de **Configurações de Senha**. A partir daqui, você pode configurar todas as políticas de senha desejadas, como no Windows Server 2008 ou Windows Server 2008 R2, só que agora com um editor construído para esse fim.  
+A criação de uma nova FGPP ou edição de uma existente traz o editor de **Configurações de Senha** . A partir daqui, você pode configurar todas as políticas de senha desejadas, como no Windows Server 2008 ou Windows Server 2008 R2, só que agora com um editor construído para esse fim.  
   
 ![Gerenciamento de AD DS avançado](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
@@ -348,7 +348,7 @@ Crie o seguinte conteúdo:
 </system.diagnostics>
 ```
 
-Os níveis de detalhamento para **DsacLogLevel** são **Nenhum**, **Erro**, **Aviso**, **Informações** e **Detalhado**. O nome do arquivo de saída é configurável e grava na mesma pasta que dsac.exe. A saída pode dizer mais sobre como o ADAC está funcionando, quais controladores de domínio são contatados, quais comandos do Windows PowerShell foram executados, quais foram as respostas e outros detalhes.  
+Os níveis de detalhamento para **DsacLogLevel** são **Nenhum**, **Erro**, **Aviso**, **Informações**e **Detalhado**. O nome do arquivo de saída é configurável e grava na mesma pasta que dsac.exe. A saída pode dizer mais sobre como o ADAC está funcionando, quais controladores de domínio são contatados, quais comandos do Windows PowerShell foram executados, quais foram as respostas e outros detalhes.  
 
 Por exemplo, ao usar o nível INFORMAÇÕES, que retorna todos os resultados, exceto o detalhamento do rastreamento:  
   
@@ -447,7 +447,7 @@ A definição do nível de detalhe também mostra as pilhas .NET de cada funçã
 
 Os erros mostrados quando nenhuma instância dos Serviços Web do Active Directory está disponível são:  
   
-|Erro|Operação|
+|Erro do|Operação|
 | --- | --- |  
 |"Não é possível se conectar a nenhum domínio. Atualize ou tente novamente quando a conexão estiver disponível"|Mostrado no início do aplicativo do Centro Administrativo do Active Directory|
 |"Não é possível encontrar um servidor disponível no domínio *<NetBIOS domain name>* que está executando o serviço Web do Active Directory (ADWS)"|Mostrado ao tentar selecionar um nó do domínio no aplicativo do Centro Administrativo do Active Directory|
@@ -484,6 +484,6 @@ Para solucionar esse problema, execute estas etapas:
   
 4. Instale o NetMon ou outro utilitário de captura de rede no computador que executa o Centro Administrativo do Active Directory e no controlador de domínio retornado por NLTEST. Reúna capturas de rede simultâneas de ambos os computadores onde você inicia o Centro Administrativo do Active Directory e veja o erro antes de parar as capturas. Verifique se o cliente é capaz de enviar e receber do controlador de domínio na porta TCP 9389. Se os pacotes são enviados, mas nunca chegam, ou chegam e o controlador de domínio responde, mas nunca chegam ao cliente, é provável que haja um firewall entre os computadores da rede deixando pacotes nessa porta. Esse firewall pode ser um software ou hardware, e pode ser parte de software (antivírus) de proteção de terminal de terceiros.  
   
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 [Lixeira do AD, Política de Senha refinada e Histórico do PowerShell](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

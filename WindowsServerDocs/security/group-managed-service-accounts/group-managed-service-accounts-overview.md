@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e7f46739dd8def6ffc34c6cc50210c0e6999c79
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 924fcd8e0c981c9164c3026a58cbb41ef8c0085a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403751"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950356"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -37,7 +37,7 @@ O serviço de distribuição de chaves da Microsoft \(kdssvc. dll\) fornece o me
 ## <a name="BKMK_APP"></a>Aplicativos práticos
 o gMSAs fornece uma solução de identidade única para serviços em execução em um farm de servidores ou em sistemas por trás de Load Balancer de rede. Ao fornecer uma solução gMSA, os serviços podem ser configurados para a nova entidade gMSA e o gerenciamento de senhas é tratado pelo Windows.
 
-Usando um gMSA, os serviços ou administradores de serviço não precisam gerenciar a sincronização de senha entre instâncias de serviço. O gMSA dá suporte a hosts que são mantidos offline por um período de tempo estendido e o gerenciamento de hosts membro para todas as instâncias de um serviço. Isso significa que você pode implantar um farm de servidores que fornece suporte para uma única identidade na qual os computadores clientes atuais podem se autenticar sem saberem a qual instância do serviço eles estão se conectando.
+Usando um gMSA, os serviços ou os administradores de serviços não precisam gerenciar a sincronização de senha entre instâncias de serviços. O gMSA dá suporte a hosts que são mantidos offline por um período de tempo estendido e o gerenciamento de hosts membro para todas as instâncias de um serviço. Isso significa que você pode implantar um farm de servidores que fornece suporte para uma única identidade na qual os computadores clientes atuais podem se autenticar sem saberem a qual instância do serviço eles estão se conectando.
 
 Os clusters de failover não dão suporte a gMSAs. No entanto, os serviços que são executados sobre o Serviço de cluster poderão usar uma gMSA ou uma sMSA, se forem um serviço Windows, um pool de aplicativos, uma tarefa agendada ou oferecerem suporte nativo a gMSA ou sMSA.
 
@@ -65,9 +65,9 @@ A tabela a seguir fornece links para recursos adicionais relacionados às Contas
 |**Implantação**|Não disponível ainda|
 |**Operações**|[Contas de serviço gerenciado no Active Directory](https://technet.microsoft.com/library/dd378925(v=ws.10).aspx)|
 |**Solução de problemas**|Não disponível ainda|
-|**Período**|[Introdução a contas de serviços gerenciados em grupo](getting-started-with-group-managed-service-accounts.md)|
+|**Avaliação**|[Introdução a contas de serviços gerenciados em grupo](getting-started-with-group-managed-service-accounts.md)|
 |**Ferramentas e configurações**|[Contas de serviço gerenciado no Active Directory Domain Services](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
-|**Recursos da comunidade**|[Contas de serviço gerenciado: Noções básicas, implementação, práticas recomendadas e solução de problemas](http://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
+|**Recursos da comunidade**|[Contas de serviço gerenciado: Noções básicas, implementação, práticas recomendadas e solução de problemas](https://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
 |**Tecnologias relacionadas**|[Visão geral do Active Directory Domain Services](active-directory-domain-services-overview.md)|
 
 

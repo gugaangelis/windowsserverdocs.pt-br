@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f6670c8cfd718360518869f0551461c45e5aed27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e407f9f32339e3f9c75e3722ad218228b608b9d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370276"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947108"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Considerações sobre LDAP no adiciona ajuste de desempenho
 
@@ -60,7 +60,7 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 -   [Acompanhamento de pesquisas caras e ineficientes](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   Active Directory conjunto de coletores de dados de diagnóstico no monitor de desempenho ([filho de Spa: conjuntos de coletores de dados do AD em Win2008 e além](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
+-   Active Directory conjunto de coletores de dados de diagnóstico no monitor de desempenho ([filho de Spa: conjuntos de coletores de dados do AD em Win2008 e além](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
 
 -   [Supervisor de desempenho de servidor da Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Pacote Advisor Active Directory
 
@@ -98,7 +98,7 @@ Para obter mais informações, consulte o seguinte:
 
 -   [Atributos indexados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Ajuste de desempenho Active Directory servidores](index.md)
 - [Considerações sobre hardware](hardware-considerations.md)

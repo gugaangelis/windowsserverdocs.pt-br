@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 0977aa1fd9a6848bd7b85bb592b6a82556277e72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 594c20cbfea521006de6d1ec69763669298376e6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361579"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948528"
 ---
 >Aplica-se a: Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
 
@@ -124,9 +124,9 @@ A conta **NT Authority\Network Service** deve ser listada. Se não for, você pr
 4. Na página **mapeamento de usuário** :
     - Em **Usuários mapeados para este logon**: selecione **SUSDB**
     - Em **Associação de função de banco de dados para: SUSDB**, verifique se o seguinte está marcado:
-        - **publicada**
+        - **public**
         - **webService** ![image9](images/image9.png)
-5. Clique em **OK**
+5. Clique em **OK**.
 
 Agora você deve ver **NT Authority\Network Service** em logons.
 ![image10](images/image10.png)
@@ -158,7 +158,7 @@ A conta **NT Authority\Network Service** deve ser listada.
 ### <a name="edit-the-registry-to-point-wsus-to-the-sql-server-instance"></a>Editar o registro para apontar o WSUS para a instância de SQL Server
 
 > [!IMPORTANT]
-> Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/en-us/help/322756) em caso de problemas.
+> Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/help/322756) em caso de problemas.
 
 1. Clique em **Iniciar**, **Executar**, digite **regedit** e clique em **OK**.
 2. Localize a seguinte chave: **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**

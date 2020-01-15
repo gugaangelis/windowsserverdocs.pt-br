@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973860"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953028"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento
 
@@ -42,7 +42,7 @@ O serviço de migração de armazenamento dá suporte à migração de usuários
 
 ## <a name="is-domain-controller-migration-supported"></a>Há suporte para a migração do controlador de domínio?
 
-Atualmente, o serviço de migração de armazenamento não migra controladores de domínio no Windows Server 2019. Como alternativa, contanto que você tenha mais de um controlador de domínio no domínio Active Directory, rebaixe o controlador de domínio antes de migrá-lo e, em seguida, promova o destino após a conclusão da redução.
+Atualmente, o serviço de migração de armazenamento não migra controladores de domínio no Windows Server 2019. Como alternativa, contanto que você tenha mais de um controlador de domínio no domínio Active Directory, rebaixe o controlador de domínio antes de migrá-lo e, em seguida, promova o destino após a conclusão da redução. Se você optar por migrar uma origem ou destino do controlador de domínio, não será possível recortar. Você nunca deve migrar usuários e grupos ao migrar do ou para um controlador de domínio.
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>Quais atributos são migrados pelo serviço de migração de armazenamento?
 
@@ -59,17 +59,17 @@ O serviço de migração de armazenamento migra todos os sinalizadores, configur
     - Limite de usuários simultâneos
     - Continuamente disponível
     - Descrição           
-    - Criptografar dados
+    - Criptografar Dados
     - Comunicação remota de identidade
     - Infraestrutura
     - Nome
-    - Path
+    - Caminho
     - Com escopo
     - Nome do escopo
     - Descritor de Segurança
-    - Cópia de sombra
+    - Cópia de Sombra
     - Especial
-    - Temporary
+    - Armazenamento
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>Posso consolidar vários servidores em um servidor?
 
@@ -89,9 +89,9 @@ O serviço de migração de armazenamento contém um mecanismo de leitura e cóp
 
 - **Use o Windows Server 2019 para o sistema operacional de destino.** O Windows Server 2019 contém o serviço de proxy de serviço de migração de armazenamento. Quando você instala esse recurso e migra para destinos do Windows Server 2019, todas as transferências funcionam como uma linha de visão direta entre a origem e o destino. Esse serviço é executado no Orchestrator durante a transferência se os computadores de destino forem Windows Server 2012 R2 ou Windows Server 2016, o que significa que o salto duplo de transferências e será muito mais lento. Se houver vários trabalhos em execução com destinos do Windows Server 2012 R2 ou do Windows Server 2016, o orquestrador se tornará um afunilamento. 
 
-- **Altere os threads de transferência padrão.** O serviço de proxy de serviço de migração de armazenamento copia 8 arquivos simultaneamente em um determinado trabalho. Você pode aumentar o número de threads de cópia simultâneas ajustando o seguinte nome de valor REG_DWORD do registro em decimal em cada nó que executa o proxy do serviço de migração de armazenamento:
+- **Altere os threads de transferência padrão.** O serviço de proxy de serviço de migração de armazenamento copia 8 arquivos simultaneamente em um determinado trabalho. Você pode aumentar o número de threads de cópia simultâneas ajustando o seguinte registro REG_DWORD nome do valor em decimal em cada nó que executa o proxy do serviço de migração de armazenamento:
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    HKEY_Local_Machine \Software\Microsoft\SMSProxy
     
     FileTransferThreadCount
 
@@ -110,7 +110,7 @@ O serviço de migração de armazenamento contém um mecanismo de leitura e cóp
    - Um ou mais adaptadores de rede configurados usando o agrupamento NIC
    - Um ou mais adaptadores de rede com suporte a RDMA
 
-- **Atualize os drivers.** Conforme apropriado, instale o armazenamento do fornecedor mais recente e o firmware e drivers de compartimento, drivers de HBA mais recentes, firmware de BIOS/UEFI mais recente, drivers de rede de fornecedor mais recentes e drivers de chipset de motherboard mais recentes na origem, no destino e no Orchestrator servidores. Reinicie os nós conforme necessário. confira a documentação do fornecedor de hardware para configurar o armazenamento compartilhado e o hardware de rede.
+- **Atualize os drivers.** Conforme apropriado, instale o armazenamento do fornecedor mais recente e o firmware e drivers de compartimento, drivers de HBA mais recentes, firmware de BIOS/UEFI mais recente, drivers de rede de fornecedor mais recentes e drivers de chipset de motherboard mais recentes nos servidores de origem, destino e Orchestrator. Reinicie os nós conforme necessário. confira a documentação do fornecedor de hardware para configurar o armazenamento compartilhado e o hardware de rede.
 
 - **Habilite o processamento de alto desempenho.** Verifique se as configurações de BIOS/UEFI para servidores permitem o alto desempenho, como desabilitar C-State, definir a velocidade de QPI, habilitar NUMA e definir a frequência de memória mais alta. Verifique se o gerenciamento de energia no Windows Server está definido como alto desempenho. Reinicie conforme necessário. Não se esqueça de retorná-los para os Estados apropriados depois de concluir a migração. 
 
@@ -132,9 +132,9 @@ O serviço de migração de armazenamento usa um banco de dados ESE (mecanismo d
 2. Apropriar-se da pasta `%programdata%/Microsoft/StorageMigrationService`
 3. Adicione sua conta de usuário para ter controle total sobre esse compartilhamento e todos os seus arquivos e subpastas.
 4. Mova a pasta para outra unidade no computador do Orchestrator.
-5. Defina o seguinte valor REG_SZ do registro:
+5. Defina o seguinte valor de REG_SZ do registro:
 
-    HKEY_Local_Machine\Software\Microsoft\SMS DatabasePath = *caminho para a nova pasta de banco de dados em um volume diferente* . 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath = *caminho para a nova pasta de banco de dados em um volume diferente* . 
 6. Verifique se o sistema tem controle total para todos os arquivos e subpastas dessa pasta
 7. Remova suas próprias permissões de conta.
 8. Inicie o serviço "serviço de migração de armazenamento".
@@ -145,7 +145,7 @@ Para fornecer comentários sobre o serviço de migração de armazenamento:
 
 - Use a ferramenta de Hub de comentários incluída no Windows 10, clicando em "sugerir um recurso" e especificando a categoria do "Windows Server" e a subcategoria de "migração de armazenamento"
 - Usar o site [UserVoice do Windows Server](https://windowsserver.uservoice.com)
-- @No__t de email-0
+- Email smsfeed@microsoft.com
 
 Para arquivar bugs:
 
@@ -158,6 +158,6 @@ Para obter suporte:
  - Poste no [Fórum do TechNet do Windows Server 2019](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc) 
  - Abrir um caso de suporte por meio de [suporte da Microsoft](https://support.microsoft.com)
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)

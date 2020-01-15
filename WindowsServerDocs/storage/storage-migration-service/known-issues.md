@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945235"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949641"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -320,7 +320,36 @@ Depois de concluir uma transferência e, em seguida, executar uma retransferênc
 
 Esse é o comportamento esperado ao transferir um número muito grande de arquivos e pastas aninhadas. O tamanho dos dados não é relevante. Primeiro, fizemos melhorias nesse comportamento no [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) e continuamos a otimizar o desempenho da transferência. Para ajustar ainda mais o desempenho, examine [otimizando o desempenho de inventário e transferência](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance).
 
+## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>Os dados não são transferidos, o usuário renomeou ao migrar de ou para um controlador de domínio
 
-## <a name="see-also"></a>Consulte também
+Depois de iniciar a transferência de ou para um controlador de domínio:
+
+ 1. Nenhum dado é migrado e nenhum compartilhamento é criado no destino.
+ 2. Há um símbolo de erro vermelho mostrado no centro de administração do Windows sem mensagem de erro
+ 3. Um ou mais usuários do AD e grupos locais de domínio têm seu nome e/ou atributo de logon anterior ao Windows 2000 alterado
+ 4. Você verá o evento 3509 no Orchestrator do SMS:
+ 
+ Nome do log: Microsoft-Windows-StorageMigrationService/admin Source: Microsoft-Windows-StorageMigrationService Data: 1/10/2020 2:53:48 PM ID do evento: 3509 categoria da tarefa: nível de nenhum: palavras-chave de erro:      
+ Usuário: computador de serviço de rede: orc2019-rtm.corp.contoso.com descrição: não foi possível transferir o armazenamento de um computador.
+
+ Trabalho: dctest3 computador: dc02-2019.corp.contoso.com computador de destino: dc03-2019.corp.contoso.com estado: falha de erro: 53251 mensagem de erro: falha na migração de contas locais com o sistema de erro. exceção:-2147467259 em Microsoft. StorageMigration. Service. DeviceHelper. MigrateSecurity (IDeviceRecord sourceDeviceRecord, IDeviceRecord destinationDeviceRecord, TransferConfiguration config, GUID PROXYID, CancellationToken cancelToken)
+
+Esse é o comportamento esperado se você tentou migrar do ou para um controlador de domínio com o serviço de migração de armazenamento e usou a opção "migrar usuários e grupos" para renomear ou reutilizar contas. em vez de selecionar "não transferir usuários e grupos". [Não há suporte para a migração de DC com o serviço de migração de armazenamento](faq.md). Como um controlador de domínio não tem usuários e grupos locais verdadeiros, o serviço de migração de armazenamento trata essas entidades de segurança como faria ao migrar entre dois servidores membros e tenta ajustar as ACLs conforme instruído, levando a erros e contas descontadas ou copiadas. 
+
+Se você já executou a transferência uma ou mais vezes:
+
+ 1. Use o seguinte comando do PowerShell do AD em um DC para localizar usuários ou grupos modificados (alterando SearchBase para corresponder ao nome do dinstringuished do domínio): 
+
+    ```PowerShell
+    Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
+    ```
+   
+ 2. Para todos os usuários retornados com seu nome original, edite seu "nome de logon do usuário (anterior ao Windows 2000)" para remover o sufixo de caractere aleatório adicionado pelo serviço de migração de armazenamento, para que esse perdedor possa fazer logon.
+ 3. Para todos os grupos retornados com seu nome original, edite seu "nome de grupo (anterior ao Windows 2000)" para remover o sufixo de caractere aleatório adicionado pelo serviço de migração de armazenamento.
+ 4. Para todos os usuários ou grupos desabilitados com nomes que agora contêm um sufixo adicionado pelo serviço de migração de armazenamento, você pode excluir essas contas. Você pode confirmar que as contas de usuário foram adicionadas posteriormente, pois elas só conterão o grupo de usuários de domínio e terão uma data/hora de criação que corresponda à hora de início da transferência do serviço de migração de armazenamento.
+ 
+ Se você quiser usar o serviço de migração de armazenamento com controladores de domínio para fins de transferência, certifique-se de sempre selecionar "não transferir usuários e grupos" na página Configurações de transferência no centro de administração do Windows.
+
+## <a name="see-also"></a>Veja também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)

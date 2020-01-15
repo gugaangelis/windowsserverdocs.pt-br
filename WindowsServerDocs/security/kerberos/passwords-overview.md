@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 27d456dd274b917233f0484f055b679dc8c73214
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cce76e006272104033e1437e0ccf6cad5bc47f3f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403508"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950299"
 ---
 # <a name="passwords-overview"></a>Visão geral de senhas
 
@@ -50,11 +50,11 @@ Esta tabela lista recursos adicionais para recursos de senha, tecnologia e geren
 
 |Tipo de conteúdo|Referências|
 |--------|-------|
-|**Documentação do cenário**|[Protegendo sua identidade digital](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
+|**Documentação do cenário**|[Protegendo sua identidade digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**Operações**|[Active Directory usuários e computadores](https://technet.microsoft.com/library/cc754217.aspx)|
-|**Solução de problemas**|[Descubra quando sua senha expira \- Active Directory Blog do PowerShell](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
+|**Solução de problemas**|[Descubra quando sua senha expira \- Active Directory Blog do PowerShell](https://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
 |**Segurança**| [Guia de ameaças e contramedidas](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx) do windows Server 2008 R2 e do Windows 7: políticas de conta<br /><br />Diretrizes para [alterar e criar senhas fortes](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
 |**Ferramentas e configurações**|[Referência de configurações de Política de Grupo para Windows e Windows Server no centro de download da Microsoft](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**Recursos da comunidade**|[Protegendo sua identidade digital](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Entrar no Windows 8 com um Windows Live ID](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[Entrando com uma senha de imagem](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[Otimizando a segurança de senha de imagem](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
+|**Recursos da comunidade**|[Protegendo sua identidade digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Entrar no Windows 8 com um Windows Live ID](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[Entrando com uma senha de imagem](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[Otimizando a segurança de senha de imagem](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 
 

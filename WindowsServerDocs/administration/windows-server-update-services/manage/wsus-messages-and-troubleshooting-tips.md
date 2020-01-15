@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e432a962662995cf570b28d0b9496594f3e10e6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369863"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948481"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Mensagens do WSUS e dicas de solução de problemas
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico contém informações sobre as seguintes mensagens do WSUS:
 
@@ -29,7 +29,7 @@ Este tópico contém informações sobre as seguintes mensagens do WSUS:
 
 -   "ID da mensagem 6703-falha na sincronização do WSUS"
 
--   "Erro 0x80070643: Erro fatal durante a instalação "
+-   "Erro 0x80070643: erro fatal durante a instalação"
 
 -   "Alguns serviços não estão em execução. Verifique os seguintes serviços [...] "
 
@@ -47,17 +47,17 @@ Os motivos mais comuns são:
 -   O computador está desligado. (Ele foi desligado ou está no modo de suspensão ou hibernação.)
 
 ## <a name="message-id-6703---wsus-synchronization-failed"></a>ID da mensagem 6703-falha na sincronização do WSUS
-> Mensagem: A solicitação falhou com o status HTTP 503: Serviço indisponível.
+> Mensagem: a solicitação falhou com o status HTTP 503: serviço não disponível.
 > 
-> Fonte: Microsoft. updateservices. Administration. AdminProxy. createUpdateServer.
+> Origem: Microsoft. updateservices. Administration. AdminProxy. createUpdateServer.
 
 Ao tentar abrir os serviços de atualização no servidor do WSUS, você recebe o seguinte erro:
 
-> Erro: Erro de conexão
+> Erro: erro de conexão
 > 
 > Ocorreu um erro ao tentar se conectar ao servidor do WSUS. Esse erro pode ocorrer por vários motivos. Entre em contato com seu administrador de rede se o problema persistir. Clique no nó redefinir servidor para se conectar ao servidor novamente.
 
-Além do que está acima, as tentativas de acessar a URL para o site de administração do WSUS (ou seja, `http://CM12CAS:8530`) falham com o erro:
+Além do que está acima, as tentativas de acessar a URL para o site de administração do WSUS (por exemplo, `http://CM12CAS:8530`) falham com o erro:
 
 > Erro de HTTP 503. O serviço está indisponível
 
@@ -65,16 +65,16 @@ Nessa situação, a causa mais provável é que o pool de aplicativos WsusPool n
 
 Além disso, o limite de memória privada (KB) para o pool de aplicativos é provavelmente definido como o valor padrão de 1843200 KB. Se você encontrar esse problema, aumente o limite de memória privada para 4 GB (4 milhões KB) e reinicie o pool de aplicativos. Para aumentar o limite de memória privada, selecione o pool de aplicativos WsusPool e clique em configurações avançadas em Editar pool de aplicativos. Em seguida, defina o limite de memória privada para 4GB (4 milhões KB). Depois que o pool de aplicativos for reiniciado, monitore o status do componente SMS_WSUS_SYNC_MANAGER, WCM. log e wsyncmgr. log para obter falhas. Observe que pode ser necessário aumentar o limite de memória privada para 8 GB (8 milhões KB) ou superior, dependendo do ambiente.
 
-Para obter detalhes adicionais, consulte: [A sincronização do WSUS no ConfigMgr 2012 falha com erros HTTP 503](http://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx)
+Para obter detalhes adicionais, consulte: [a sincronização do WSUS no ConfigMgr 2012 falha com erros HTTP 503](https://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx)
 
-## <a name="error-0x80070643-fatal-error-during-installation"></a>Erro 0x80070643: Erro fatal durante a instalação
+## <a name="error-0x80070643-fatal-error-during-installation"></a>Erro 0x80070643: erro fatal durante a instalação
 A instalação do WSUS usa Microsoft SQL Server para executar a instalação. Esse problema ocorre porque o usuário que está executando a instalação do WSUS não tem permissões de administrador do sistema no SQL Server.
 
 Para resolver esse problema, conceda permissões de administrador do sistema a uma conta de usuário ou a uma conta de grupo no SQL Server e execute a instalação do WSUS novamente.
 
 ## <a name="some-services-are-not-running-check-the-following-services"></a>Alguns serviços não estão em execução. Verifique os seguintes serviços:
 
-- **Selfupdate** Consulte [atualizações automáticas deve ser atualizado](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obter informações sobre como solucionar problemas do serviço selfupdate.
+- **Selfupdate:** Consulte [atualizações automáticas deve ser atualizado](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obter informações sobre como solucionar problemas do serviço selfupdate.
 
 - **WSSUService. exe:** Esse serviço facilita a sincronização. Se você tiver problemas com a sincronização, acesse WSUSService. exe clicando em **Iniciar**, apontando para **Ferramentas administrativas**, clicando em **Serviços**e localizando **serviço de atualização do Windows Server** na lista de serviços. Faça o seguinte:
     

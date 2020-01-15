@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 1399ed6a50085baa37f06c09b8c3e18ca8bca98b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e8e9e86f81596c85219c37c07d8fd2e95cc3a49
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395709"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953075"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Tempo preciso para o Windows Server 2016
 
@@ -22,11 +22,11 @@ ms.locfileid: "71395709"
 O serviço de tempo do Windows é um componente que usa um modelo de plug-in para provedores de sincronização de cliente e servidor.  Há dois provedores de cliente internos no Windows e há plug-ins de terceiros disponíveis. Um provedor usa [NTP (RFC 1305)](https://tools.ietf.org/html/rfc1305) ou [MS-NTP](https://msdn.microsoft.com/library/cc246877.aspx) para sincronizar a hora do sistema local com um servidor de referência compatível com NTP e/ou MS-NTP. O outro provedor é para Hyper-V e sincroniza máquinas virtuais (VM) para o host do Hyper-V.  Quando houver vários provedores, o Windows escolherá o melhor provedor usando o nível de estrato primeiro, seguido por atraso raiz, dispersão de raiz e, por fim, o deslocamento de tempo.
 
 > [!NOTE]
-> Para obter uma visão geral rápida do serviço de tempo do Windows, veja este [vídeo de visão geral de alto nível](https://aka.ms/WS2016TimeVideo).
+> Para uma rápida visão geral do Serviço de Tempo do Windows, dê uma olhada neste [vídeo de visão geral de alto nível](https://aka.ms/WS2016TimeVideo).
 
 Neste tópico, discutiremos... Estes tópicos estão relacionados para habilitar o tempo preciso: 
 
-- Na
+- e gerenciamento
 - Medidas
 - Práticas recomendadas
 
@@ -39,7 +39,7 @@ Neste tópico, discutiremos... Estes tópicos estão relacionados para habilitar
 ## <a name="domain-hierarchy"></a>Hierarquia de domínio
 Configurações autônomas e de domínio funcionam de maneira diferente.
 
-- Os membros do domínio usam um protocolo NTP seguro, que usa a autenticação para garantir a segurança e a autenticidade da referência de tempo.  Os membros do domínio sincronizam com um relógio mestre determinado pela hierarquia de domínio e um sistema de pontuação.  Em um domínio, há uma camada hierárquica de imposições de tempo, na qual cada DC aponta para um controlador de domínio pai com um estrato de tempo mais preciso.  A hierarquia é resolvida para o PDC ou um DC na floresta raiz ou um DC com o sinalizador de domínio GTIMESERV, que denota um bom servidor de horário para o domínio.  Consulte a seção [especificar um serviço de horário confiável local usando o GTIMESERV](#GTIMESERV) abaixo.
+- Os membros do domínio usam um protocolo NTP seguro, que usa a autenticação para garantir a segurança e a autenticidade da referência de tempo.  Os membros do domínio sincronizam com um relógio mestre determinado pela hierarquia de domínio e um sistema de pontuação.  Em um domínio, há uma camada hierárquica de imposições de tempo, na qual cada DC aponta para um controlador de domínio pai com um estrato de tempo mais preciso.  A hierarquia é resolvida para o PDC ou um DC na floresta raiz ou um DC com o sinalizador de domínio GTIMESERV, que denota um bom servidor de horário para o domínio.  Consulte a seção [especificar um serviço de horário confiável local usando o GTIMESERV abaixo.
 
 - Os computadores autônomos são configurados para usar o time.windows.com por padrão.  Esse nome é resolvido pelo servidor DNS, que deve apontar para um recurso de propriedade da Microsoft.  Como todas as referências de horário localizadas remotamente, as interrupções de rede podem impedir a sincronização.  Cargas de tráfego de rede e caminhos de rede assimétrica podem reduzir a precisão da sincronização de tempo.  Para uma precisão de 1 ms, você não pode depender de fontes de tempo remotas.
 

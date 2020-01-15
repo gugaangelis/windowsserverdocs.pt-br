@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382966"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946992"
 ---
 # <a name="manage-software-inventory-logging"></a>Gerenciar o Log de Inventário de Software
 
@@ -31,20 +31,20 @@ O recurso de log de inventário de software também pode ser adicionado a duas v
 - **Windows Server 2012 (Standard ou Datacenter Edition)** 
 
 > [!NOTE] 
-> Verifique se você tem o [WMF 4,0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) instalado antes de aplicar o pacote de atualização abaixo.
+> Verifique se você tem o [WMF 4,0](https://www.microsoft.com/download/details.aspx?id=40855) instalado antes de aplicar o pacote de atualização abaixo.
 
--  Pacote de atualização do WMF 4.0 para o Windows Server 2012: [KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
+-  Pacote de atualização do WMF 4.0 para o Windows Server 2012: [KB 3119938](https://support.microsoft.com/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
 > [!NOTE] 
-> Verifique se você tem o [WMF 4,0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) instalado antes de aplicar o pacote de atualização abaixo.
+> Verifique se você tem o [WMF 4,0](https://www.microsoft.com/download/details.aspx?id=40855) instalado antes de aplicar o pacote de atualização abaixo.
 
 
-- Requer o [.NET Framework 4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
+- Requer o [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)
 
 
-- Pacote de atualização do WMF 4.0 para o Windows Server 2008 R2: [KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
+- Pacote de atualização do WMF 4.0 para o Windows Server 2008 R2: [KB 3109118](https://support.microsoft.com/kb/3109118)
 
 
 Há dois métodos principais realizar o inventário usando esse recurso:  
@@ -90,7 +90,7 @@ As opções de configuração abordadas neste documento incluem:
 -   [Usando o log de inventário de software em um ambiente Windows Server 2012 R2 Hyper-V sem KB 3000850](manage-software-inventory-logging.md#BKMK_Step12)  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte usando cmdlets.
+> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte Usando cmdlets.
 
   
 ## <a name="BKMK_Step1"></a>Iniciando e parando o log de inventário de software  
@@ -199,7 +199,7 @@ SystemManufacturer        : Microsoft Corporation
 > [!NOTE]  
 > A saída desse cmdlet é igual à de todos os outros cmdlets **Get-Sil** para esse recurso combinados, mas é fornecida para o console de maneira assíncrona, portanto a ordem dos objetos pode nem sempre ser a mesma.  
 >   
-> Não é necessário ter o Log de Inventário de Software iniciado para usar os cmdlets **Get-Sil**.  
+> Não é necessário ter o Log de Inventário de Software iniciado para usar os cmdlets **Get-Sil** .  
   
 ## <a name="BKMK_Step4"></a>Excluindo dados registrados no log de inventário de software  
 O Log de Inventário de Software não tem a finalidade de ser um componente crítico. Seu design destina-se a afetar as operações do sistema local o mínimo possível, mantendo um alto nível de confiabilidade. Isso também permite que o administrador exclua manualmente o banco de dados de log de inventário de software e os arquivos de suporte (todos os arquivos no diretório \Windows\System32\LogFiles\SIL) para atender às necessidades operacionais.  
@@ -248,7 +248,7 @@ Para dar suporte a esses usos, o Log de Inventário de Software tem entradas de 
   
 |||||  
 |-|-|-|-|  
-|**Funcionamento**|**Nome do valor**|**Dado**|**Cmdlet correspondente (disponível somente no sistema operacional em execução)**|  
+|**Função**|**Nome do valor**|**Dados**|**Cmdlet correspondente (disponível somente no sistema operacional em execução)**|  
 |Iniciar/parar o recurso|CollectionState|1 ou 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx), [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
 |Especifica o ponto de agregação de destino na rede|TargetUri|sequência|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
 |Especifica a impressão digital do certificado ou Hash do certificado usado para a autenticação SSL para o servidor Web de destino|CertificateThumbprint|sequência|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
@@ -295,7 +295,7 @@ Veja a seguir dois exemplos de como a saída no console do PowerShell ficaria (m
   
 ![](../media/software-inventory-logging/SILHyper-VExample2.png)  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 [Introdução ao log de inventário de software](get-started-with-software-inventory-logging.md)  
 [Agregador de registro em log de inventário de software](software-inventory-logging-aggregator.md)  
 [Cmdlets de log de inventário de software no Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)  

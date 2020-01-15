@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb93ec15fd138ee65797c9d27413552c3a1759a6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402121"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949678"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Usando a limpeza de disco no Windows Server
 
@@ -29,9 +29,9 @@ Você também pode executar a limpeza de disco usando o [comando cleanmgr do Win
 
 Siga estas etapas para usar o assistente para adicionar funções e recursos para instalar a experiência desktop em um servidor que executa o Windows Server 2012 R2 ou anterior, que também instala a limpeza de disco.
 
-1. Se o Gerenciador do Servidor já estiver aberto, vá para a etapa seguinte. Se o Gerenciador do Servidor ainda não estiver aberto, abra-o de uma das maneiras a seguir.
+1. Se o Gerenciador de servidores já estiver aberto, vá para a próxima etapa. Se o Gerenciador de servidores já não estiver aberto, abra-o seguindo um destes procedimentos.
 
-   - Na área de trabalho do Windows, inicie o Gerenciador do Servidor clicando em **Gerenciador do Servidor** na barra de tarefas do Windows.
+   - Na área de trabalho do Windows, inicie o Gerenciador do servidor clicando em **Gerenciador do servidor** na barra de tarefas do Windows.
 
    - Vá para **Iniciar** e selecione o bloco Gerenciador do servidor.
 
@@ -41,7 +41,7 @@ Siga estas etapas para usar o assistente para adicionar funções e recursos par
 
 1. Na página **Selecionar tipo de instalação** , selecione **instalação baseada em função ou recurso** para instalar todos os recursos de peças em um único servidor. Selecione **Avançar**.
 
-1. Na página **Selecionar servidor de destino**, escolha um servidor no pool de servidores ou um VHD offline. Selecione **Avançar**.
+1. Na página **Selecionar servidor de destino** , escolha um servidor no pool de servidores ou um VHD offline. Selecione **Avançar**.
 
 1. Na página **selecionar funções de servidor** , selecione **Avançar**.
 
@@ -61,10 +61,10 @@ A ferramenta de limpeza de disco (cleanmgr. exe) não está presente no Windows 
 
 Para usar o cleanmgr. exe, instale a experiência desktop conforme descrito anteriormente ou copie dois arquivos que já estão presentes no servidor, cleanmgr. exe e cleanmgr. exe. mui. Use a tabela a seguir para localizar os arquivos do seu sistema operacional.
 
-| Sistema operacional  | Arquitetura  | Localização do arquivo  |
+| Sistema operacional  | Arquitetura  | Local do Arquivo  |
 | ----------------- | -------------- | --------------- |
-| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
-| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
+| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\ amd64_microsoft-Windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da \cleanmgr.exe 
+| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\ amd64_microsoft-Windows-cleanmgr. resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63 \cleanmgr.exe.mui |
 
 Localize cleanmgr. exe e mova o arquivo para **%systemroot%\system32**.
 
@@ -76,6 +76,6 @@ Para que o botão limpeza de disco apareça na caixa de diálogo de propriedades
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Liberar espaço em disco no Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[Liberar espaço em disco no Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
 
 [cleanmgr](../../administration/windows-commands/cleanmgr.md)

@@ -1,5 +1,5 @@
 ---
-title: Usar a política de DNS para a implantação de DNS com partição de rede
+title: Usar a política DNS para a implantação de DNS com partição de rede
 description: Este tópico faz parte do guia de cenário de política DNS do Windows Server 2016
 manager: brianlic
 ms.prod: windows-server
@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5449c9e96a5a9ecd08ca35e703a76927f4e27158
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356021"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950470"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar a política DNS para dividir a implantação de DNS\-Brain
 
@@ -156,13 +156,13 @@ A ilustração a seguir descreve esse cenário.
 
 ### <a name="bkmk_recursionhow"></a>Como funciona o controle de recursão seletiva de DNS
 
-Se uma consulta para a qual o servidor DNS contoso é não autoritativo for recebida, como para www.microsoft.com, a solicitação de resolução de nome será avaliada em relação às políticas no servidor DNS. 
+Se uma consulta para a qual o servidor DNS contoso é não autoritativo for recebida, como por https://www.microsoft.com, a solicitação de resolução de nome será avaliada em relação às políticas no servidor DNS. 
 
 Como essas consultas não se enquadram em nenhuma zona, as políticas de nível de zona \(conforme definido no exemplo de divisão e\) não são avaliadas. 
 
 O servidor DNS avalia as políticas de recursão e as consultas que são recebidas na interface privada correspondem ao **SplitBrainRecursionPolicy**. Essa política aponta para um escopo de recursão em que a recursão está habilitada.
 
-Em seguida, o servidor DNS executa a recursão para obter a resposta do www.microsoft.com da Internet e armazena a resposta em cache localmente. 
+Em seguida, o servidor DNS executa a recursão para obter a resposta para https://www.microsoft.com da Internet e armazena a resposta em cache localmente. 
 
 Se a consulta for recebida na interface externa, nenhuma política de DNS será correspondente e a configuração de recursão padrão, que nesse caso está **desabilitada** , será aplicada.
 

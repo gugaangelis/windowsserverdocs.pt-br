@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 130204ef7e4b36beb1e1f06dccdc1e1df8058129
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 52b88dde5a273d64ad2428965754f714fe2392d0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403741"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950402"
 ---
 # <a name="deploying-the-host-guardian-service"></a>Implantando o serviço guardião de host 
 
@@ -23,7 +23,7 @@ Uma das metas mais importantes de fornecer um ambiente hospedado é garantir a s
 
 ## <a name="video-deploying-a-guarded-fabric"></a>Vídeo: Implantando uma malha protegida 
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/dcd8e99f-36f1-4bc8-b3d2-9576da38d9f1?autoplay=false]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/dcd8e99f-36f1-4bc8-b3d2-9576da38d9f1?autoplay=false]
 
 ## <a name="deployment-tasks-for-guarded-fabrics-and-shielded-vms"></a>Tarefas de implantação para malhas protegidas e VMs blindadas
 
@@ -47,6 +47,6 @@ A tabela a seguir divide as tarefas para implantar uma malha protegida e criar V
 | &nbsp; | &nbsp; |<img src="../media/Guarded-Fabric-Shielded-VM/151515.png" alt="Step 15" hspace="8" align="left" /> [Criar VMs blindadas usando Pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 15" hspace="8" align="right" /><br>[Criar VMs blindadas usando o VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 15" hspace="8" align="right" />|
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

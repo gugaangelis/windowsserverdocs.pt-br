@@ -8,19 +8,19 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 7984d1c965c15f7d8c3f3abfdc99f01e3adc215f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ab9d4afb6e4219c6e6aae23d2d58052f20d3998
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403423"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950321"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>VMs blindadas-preparando um VHD auxiliar de blindagem de VM
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
 > [!IMPORTANT]
-> Antes de iniciar esses procedimentos, verifique se você instalou a atualização cumulativa mais recente do Windows Server 2016 ou está usando o Windows 10 [ferramentas de administração de servidor remoto](https://www.microsoft.com/en-us/download/details.aspx?id=45520)mais recente. Caso contrário, os procedimentos não funcionarão. 
+> Antes de iniciar esses procedimentos, verifique se você instalou a atualização cumulativa mais recente do Windows Server 2016 ou está usando o Windows 10 [ferramentas de administração de servidor remoto](https://www.microsoft.com/download/details.aspx?id=45520)mais recente. Caso contrário, os procedimentos não funcionarão. 
 
 Esta seção descreve as etapas executadas por um provedor de serviços de hospedagem para habilitar o suporte para a conversão de VMs existentes em VMs blindadas.
 
@@ -59,7 +59,7 @@ No console do VMM, abra o painel configurações e, em seguida, **hospede as con
 
 ![VMM-configurações do serviço guardião de host](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

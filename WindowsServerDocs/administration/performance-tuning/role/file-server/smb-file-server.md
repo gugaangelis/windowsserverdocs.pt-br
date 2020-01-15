@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 5383d16ac4c98651aa6afe996dbad88a6d60ee7a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 918d21139a068da1a46fbda1fa5034e14c8379c0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370230"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947059"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Ajuste de desempenho para servidores de arquivos SMB
 
@@ -54,7 +54,7 @@ Para obter mais informações sobre o SMB multicanal, consulte [implantar o SMB 
 
 A expansão do SMB permite que o SMB 3,0 em uma configuração de cluster mostre um compartilhamento em todos os nós de um cluster. Essa configuração ativa/ativa torna possível dimensionar os clusters de servidor de arquivos ainda mais, sem uma configuração complexa com vários volumes, compartilhamentos e recursos de cluster. A largura de banda máxima de compartilhamento é a largura de banda total de todos os nós de cluster de servidor de arquivos. A largura de banda total não é mais limitada pela largura de banda de um único nó de cluster, mas depende da capacidade do sistema de armazenamento de backup. Você pode aumentar a largura de banda total adicionando nós.
 
-Para obter mais informações sobre a expansão do SMB, consulte a [visão geral de servidor de arquivos de escalabilidade horizontal para dados de aplicativos](https://technet.microsoft.com/library/hh831349.aspx) e a postagem do blog [para escalar horizontalmente ou não para escalar horizontalmente, essa é a questão](http://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx).
+Para obter mais informações sobre a expansão do SMB, consulte a [visão geral de servidor de arquivos de escalabilidade horizontal para dados de aplicativos](https://technet.microsoft.com/library/hh831349.aspx) e a postagem do blog [para escalar horizontalmente ou não para escalar horizontalmente, essa é a questão](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx).
 
 ### <a name="performance-counters-for-smb-30"></a>Contadores de desempenho para SMB 3,0
 
@@ -64,7 +64,7 @@ Os contadores de desempenho SMB a seguir foram introduzidos no Windows Server 20
 
     Esses contadores exibem informações sobre compartilhamentos de arquivos no servidor que estão sendo acessados por um cliente que está usando o SMB 2,0 ou versões posteriores.
 
-    Se você estiver familiarizado com os contadores de disco comuns no Windows, poderá observar uma certa semelhança. Isso não é por acidente. Os contadores de desempenho do SMB Client compartilhamentos foram projetados para corresponder exatamente aos contadores de disco. Dessa forma, você pode facilmente reutilizar qualquer orientação sobre o ajuste de desempenho de disco de aplicativo que você tem atualmente. Para obter mais informações sobre mapeamento de contador, consulte [blog de contadores de desempenho de cliente por compartilhamento](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
+    Se você estiver familiarizado com os contadores de disco comuns no Windows, poderá observar uma certa semelhança. Isso não é por acidente. Os contadores de desempenho do SMB Client compartilhamentos foram projetados para corresponder exatamente aos contadores de disco. Dessa forma, você pode facilmente reutilizar qualquer orientação sobre o ajuste de desempenho de disco de aplicativo que você tem atualmente. Para obter mais informações sobre mapeamento de contador, consulte [blog de contadores de desempenho de cliente por compartilhamento](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
 
 -   **Compartilhamentos de servidor SMB**
 
@@ -86,7 +86,7 @@ Os contadores de desempenho SMB a seguir foram introduzidos no Windows Server 20
 
 -   **Relações de contadores de desempenho de disco físico, SMB e CSV FS**
 
-    Para obter mais informações sobre como os contadores disco físico, SMB e CSV FS (sistema de arquivos) estão relacionados, consulte a seguinte postagem no blog: [volume compartilhado clusterizado contadores de desempenho](http://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx).
+    Para obter mais informações sobre como os contadores disco físico, SMB e CSV FS (sistema de arquivos) estão relacionados, consulte a seguinte postagem no blog: [volume compartilhado clusterizado contadores de desempenho](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx).
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>Parâmetros de ajuste para servidores de arquivos SMB
 
@@ -156,4 +156,4 @@ As configurações a seguir podem otimizar um computador para o desempenho do se
 
 ### <a name="smb-client-performance-monitor-counters"></a>Contadores do monitor de desempenho de cliente SMB
 
-Para obter mais informações sobre contadores de cliente SMB, consulte [dica do servidor de arquivos do Windows Server 2012: novos contadores de desempenho de cliente SMB por compartilhamento fornecem ótima percepção](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
+Para obter mais informações sobre contadores de cliente SMB, consulte [dica do servidor de arquivos do Windows Server 2012: novos contadores de desempenho de cliente SMB por compartilhamento fornecem ótima percepção](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).

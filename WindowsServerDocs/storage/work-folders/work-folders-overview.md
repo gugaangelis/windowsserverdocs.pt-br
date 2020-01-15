@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/07/2019
 description: Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos.
-ms.openlocfilehash: 69c7319bf1bf777c2a06d4c3a0025220aa4b819d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ca76412a6e623b42718fc4f7589f7053073e0f64
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365684"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950190"
 ---
 # <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
 
@@ -76,19 +76,19 @@ A tabela a seguir descreve algumas das principais mudanças em Pastas de Trabalh
   
 ## <a name="software-requirements"></a>Requisitos de software
 
-As Pastas de Trabalho têm os seguintes requisitos de software para os servidores de arquivos e sua infraestrutura de rede:  
+O serviço Pastas de Trabalho tem os seguintes requisitos de software para os servidores de arquivos e sua infraestrutura de rede:  
   
 -   Um servidor que executa o Windows Server 2019, o Windows Server 2016 ou o Windows Server 2012 R2 para hospedar compartilhamentos de sincronização com arquivos de usuário  
   
 -   Um volume formatado com o sistema de arquivos NTFS para armazenar arquivos de usuário  
   
--   Para forçar políticas de senha nos computadores Windows 7, você deve usar políticas de senha de Política de Grupo. Também é necessário excluir os PCs Windows 7 de políticas de senha de Pastas de Trabalho (caso use-as).
+-   Para forçar políticas de senha nos computadores Windows 7, você deve usar políticas de senha de Política de Grupo. Também é necessário excluir os computadores Windows 7 das políticas de senha de Pastas de Trabalho (caso você as utilize).
 
 -   Um certificado de servidor para cada servidor de arquivo que hospedará Pastas de Trabalho. Esses certificados devem ser de uma autoridade de certificação (CA) confiável por seus usuários; o ideal é uma CA pública.
 
 -   Adicional Uma floresta Active Directory Domain Services com as extensões de esquema no Windows Server 2012 R2 para dar suporte a computadores e dispositivos com referência automática ao servidor de arquivos correto ao usar vários servidores de arquivos.  
   
-Para habilitar usuários a sincronizar na Internet, existem requisitos adicionais:  
+Para habilitar os usuários a realizar a sincronização na Internet, existem requisitos adicionais:  
   
 -   A capacidade de tornar um servidor acessível pela Internet, criando regras de publicação no proxy reverso ou gateway de rede de sua organização  
   
@@ -96,7 +96,7 @@ Para habilitar usuários a sincronizar na Internet, existem requisitos adicionai
   
 -   (Opcional) Infraestrutura AD FS (Serviços de Federação do Active Directory) ao usar a autenticação AD FS  
   
-As Pastas de Trabalho têm os seguintes requisitos de software para computadores clientes:  
+O serviço Pastas de Trabalho tem os seguintes requisitos de software para computadores clientes:  
   
 -   Os computadores e dispositivos devem estar executando um dos seguintes sistemas operacionais:  
   
@@ -112,7 +112,7 @@ As Pastas de Trabalho têm os seguintes requisitos de software para computadores
   
     -   iOS 10.2 e posterior  
   
--   Os PCs Windows 7 devem estar executando uma das seguintes edições do Windows:  
+-   Os computadores Windows 7 devem estar executando uma das seguintes edições do Windows:  
   
     -   Windows 7 Professional  
   
@@ -126,9 +126,9 @@ As Pastas de Trabalho têm os seguintes requisitos de software para computadores
   
      No entanto, os usuários podem alterar o local durante a configuração (cartões microSD e unidades USB formatadas com o sistema de arquivos NTFS são locais com suporte, mas a sincronização será interrompida se as unidades forem removidas).  
   
-     O tamanho máximo para arquivos individuais é 10 GB, por padrão. Não há limite de armazenamento por usuário, embora os administradores possam usar a funcionalidade de cotas do Gerenciador de Recursos do Servidor de Arquivos para implementar cotas.  
+     O tamanho máximo para arquivos individuais é 10 GB, por padrão. Não há limite de armazenamento por usuário, embora os administradores possam usar a funcionalidade de cotas do Gerenciador de Recursos de Servidor de Arquivos para implementar cotas.  
   
--   O serviço Pastas de Trabalho não oferece suporte à reversão do estado das máquinas virtuais clientes. Em vez disso, execute operações de backup e restauração de dentro da máquina virtual cliente usando o Backup de Imagem do Sistema ou outro aplicativo de backup.  
+-   O serviço Pastas de Trabalho não oferece suporte à reversão do estado das máquinas virtuais clientes. Em vez disso, execute operações de backup e restauração de dentro da máquina virtual cliente usando o Backup de Imagem de Sistema ou outro aplicativo de backup.  
   
 ## <a name="work-folders-compared-to-other-sync-technologies"></a>Comparação de Pastas de Trabalho com outras tecnologias  
 
@@ -138,8 +138,8 @@ A tabela a seguir aborda como diversas tecnologias de sincronização da Microso
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **Resumo de tecnologia** | Sincroniza arquivos armazenados em um servidor de arquivos com computadores e dispositivos | Sincroniza arquivos armazenados em um servidor de arquivos com computadores que têm acesso à rede corporativa (pode ser substituído por Pastas de Trabalho) | Sincroniza arquivos armazenados no Office 365 ou no SharePoint com computadores e dispositivos dentro ou fora de uma rede corporativa e fornece funcionalidade de colaboração de documentos | Sincroniza arquivos pessoais armazenados no OneDrive com PCs, computadores Mac e dispositivos |
 | **Destinado a fornecer acesso de usuário a arquivos de trabalho** | Sim | Sim | Sim | Não |
-| **Serviço de nuvem** | Nenhuma | Nenhuma | Office 365 | Microsoft OneDrive |
-| **Servidores de rede internos** | Servidores de arquivos que executam o Windows Server 2012 R2 ou o Windows Server 2016 | Servidores de arquivos | SharePoint Server (opcional) | Nenhuma |
+| **Serviço de nuvem** | Não | Não | Office 365 | Microsoft OneDrive |
+| **Servidores de rede internos** | Servidores de arquivos que executam o Windows Server 2012 R2 ou o Windows Server 2016 | Servidores de arquivos | SharePoint Server (opcional) | Não |
 | **Clientes com suporte** | PCs, iOS, Android | PCs em uma rede corporativa ou conectado por meio do DirectAccess, VPNs ou outras tecnologias de acesso remoto | PCs, iOS, Android, Windows Phone | PCs, computadores Mac, Windows Phone, iOS, Android |
   
 > [!NOTE]
@@ -161,15 +161,15 @@ O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armaz
   
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
- Para obter informações adicionais relacionadas, consulte os seguintes recursos.  
+ Para obter informações adicionais relacionadas, consulte os recursos a seguir.  
   
 | Tipo de conteúdo | Referências |
 | ------------------ | ---------------- |
-| **Avaliação do produto** | -   [pastas de trabalho para Android – lançadas](https://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released) (postagem de blog)<br />-   [pastas de trabalho para IOS – lançamento do aplicativo para iPad](https://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx) (postagem de blog)<br />-   [apresentando as pastas de trabalho no Windows Server 2012 R2](http://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx) (postagem de blog)<br />-   [introdução às pastas de trabalho](http://channel9.msdn.com/posts/Introduction-to-Work-Folders) (vídeo do Channel 9)<br />-   [implantação de laboratório de teste de pastas de trabalho](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)<br />-   [pastas de trabalho para o Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (postagem de blog) |
+| **Avaliação do produto** | -   [pastas de trabalho para Android – lançadas](https://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released) (postagem de blog)<br />-   [pastas de trabalho para IOS – lançamento do aplicativo para iPad](https://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx) (postagem de blog)<br />-   [apresentando as pastas de trabalho no Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx) (postagem de blog)<br />-   [introdução às pastas de trabalho](https://channel9.msdn.com/posts/Introduction-to-Work-Folders) (vídeo do Channel 9)<br />-   [implantação de laboratório de teste de pastas de trabalho](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)<br />-   [pastas de trabalho para o Windows 7](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (postagem de blog) |
 | **Implantação** | -   [criar uma implementação de pastas de trabalho](plan-work-folders.md)<br />im-   [Implantando Pastas de trabalho](deploy-work-folders.md)<br />-   [Implantando Pastas de trabalho com o AD FS e o proxy de aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />-   [Implantando Pastas de trabalho com o Azure proxy de aplicativo do AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />[Guia de migração do - arquivos offline (CSC) para pastas de trabalho](https://blogs.technet.microsoft.com/filecab/2016/08/12/offline-files-csc-to-work-folders-migration-guide/)<br />[considerações de desempenho de -   para implantações de pastas de trabalho](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [pastas de trabalho para o Windows 7 (download de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [pastas de trabalho para o Windows 7 (download de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559) |
-| **Operações** | -   [aplicativo do iPad para pastas de trabalho: perguntas frequentes](https://windows.microsoft.com/windows/work-folders-ipad-faq) (para usuários)<br />[Gerenciamento de certificados de pastas de trabalho](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx) -   (postagem de blog)<br />-   [monitoramento de implantações de pastas de trabalho do Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx) (postagem de blog)<br />-   os [cmdlets do SyncShare (pastas de trabalho) no Windows PowerShell](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [armazenamento e serviços de arquivo cmdlets do PowerShell cartão de referência rápida para Windows Server 2012 R2 Preview Edition](http://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
+| **Operações** | -   [aplicativo do iPad para pastas de trabalho: perguntas frequentes](https://windows.microsoft.com/windows/work-folders-ipad-faq) (para usuários)<br />[Gerenciamento de certificados de pastas de trabalho](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx) -   (postagem de blog)<br />-   [monitoramento de implantações de pastas de trabalho do Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx) (postagem de blog)<br />-   os [cmdlets do SyncShare (pastas de trabalho) no Windows PowerShell](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [armazenamento e serviços de arquivo cmdlets do PowerShell cartão de referência rápida para Windows Server 2012 R2 Preview Edition](https://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
 | **Solução de problemas** | -   o [Windows Server 2012 R2 – resolvendo o conflito de porta com sites e pastas de trabalho do IIS](https://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx) (postagem de blog)<br />-   [erros comuns em pastas de trabalho](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
-| **Recursos da comunidade** | -   [Fórum de armazenamento e serviços de arquivo](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [a equipe de armazenamento no blog da Microsoft-arquivo de gabinete](http://blogs.technet.com/b/filecab/)<br />-   [pergunte ao blog da equipe de serviços de diretório](http://blogs.technet.com/b/askds/) |  
+| **Recursos da comunidade** | -   [Fórum de armazenamento e serviços de arquivo](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [a equipe de armazenamento no blog da Microsoft-arquivo de gabinete](https://blogs.technet.com/b/filecab/)<br />-   [pergunte ao blog da equipe de serviços de diretório](https://blogs.technet.com/b/askds/) |  
 | **Tecnologias relacionadas** | [armazenamento -   no Windows Server 2016](../storage.md)<br>-   [serviços de arquivo e armazenamento](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />[Gerenciador de recursos de servidor de arquivos](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx) -   <br />-   [redirecionamento de pasta, arquivos offline e perfis de usuário de roaming](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [namespaces do DFS e replicação do DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |

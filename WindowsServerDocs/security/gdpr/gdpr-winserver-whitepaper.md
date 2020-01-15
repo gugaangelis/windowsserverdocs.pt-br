@@ -6,16 +6,16 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 506cd5cb44d93c9d7d221917505f76a2c5625baa
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 51768dc65128f27dcbf78cbfc776500ac3832615
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870552"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949830"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Iniciando sua jornada de Regulamento Geral sobre a Proteção de Dados (GDPR) para o Windows Server 
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este artigo fornece informações sobre o GDPR, incluindo o que é, e os produtos que a Microsoft fornece para ajudar você a entrar em conformidade.
 
@@ -28,7 +28,7 @@ A Microsoft e nossos clientes agora estão em uma viagem para alcançar as metas
 
 Nós destacamos nosso comprometimento ao GDPR e como estamos oferecendo suporte aos nossos clientes dentro de nossa postagem no blog [Ficar em conformidade com GDPR com Microsoft Cloud](https://blogs.microsoft.com/on-the-issues/2017/02/15/get-gdpr-compliant-with-the-microsoft-cloud/#hv52B68OZTwhUj2c.99) escrita por nosso Chefe de privacidade de escritório [Brendon Lynch](https://blogs.microsoft.com/on-the-issues/author/brendonlynch/) e a postagem de blog [Ganhando sua confiança com comprometimentos contratuais com o Regulamento de Proteção de Dados Geral](https://blogs.microsoft.com/on-the-issues/2017/04/17/earning-trust-contractual-commitments-general-data-protection-regulation/#6QbqoGWXCLavGM63.99)” escrita por [Rich Sauer](https://blogs.microsoft.com/on-the-issues/author/rsauer/) - Vice-Presidente da Microsoft Corporate e Conselheiro Geral do Deputado.
 
-Embora sua jornada em direção à conformidade com GDPR possa parecer um desafio, estamos aqui para ajudá-lo. Para obter informações específicas sobre o GDPR, nossos compromissos e como começar sua jornada, visite a [seção GDPR do Microsoft Trust Center](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr).
+Embora sua jornada em direção à conformidade com GDPR possa parecer um desafio, estamos aqui para ajudá-lo. Para obter informações específicas sobre o GDPR, nossos compromissos e como começar sua jornada, visite a [seção GDPR do Microsoft Trust Center](https://www.microsoft.com/trustcenter/privacy/gdpr).
 
 ## <a name="gdpr-and-its-implications"></a>GDPR e suas implicações
 O GDPR é um estatuto complexo que pode exigir alterações significativas na forma como você coleta, usa e gerencia dados pessoais. A Microsoft tem um longo histórico de ajudar nossos clientes a cumprirem as normas complexas e quando se trata de se preparar para o GDPR, somos seu parceiro nesta jornada.
@@ -80,7 +80,7 @@ Dada a quantidade é complicado para se tornar GDPR compatível, é altamente re
 
     ![Diagrama sobre como as 4 etapas principais do GDPR funcionam juntas](../media/GDPR-Windows-Server-Overview/gdpr-steps-diagram.png)
 
-Para cada uma das etapas, criamos recursos em várias soluções da Microsoft, que podem ser usados para ajudá-lo a atender os requisitos dessa etapa, recursos e ferramentas de exemplo. Embora este artigo não seja um guia abrangente de "instruções", incluímos links para você encontrar mais detalhes e mais informações estão disponíveis na [seção GDPR da central de confiabilidade da Microsoft](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr).
+Para cada uma das etapas, criamos recursos em várias soluções da Microsoft, que podem ser usados para ajudá-lo a atender os requisitos dessa etapa, recursos e ferramentas de exemplo. Embora este artigo não seja um guia abrangente de "instruções", incluímos links para você encontrar mais detalhes e mais informações estão disponíveis na [seção GDPR da central de confiabilidade da Microsoft](https://www.microsoft.com/trustcenter/privacy/gdpr).
 
 ## <a name="windows-server-security-and-privacy"></a>Segurança e privacidade do Windows Server
 O GDPR exige que você implemente medidas de segurança técnicas e organizacionais apropriadas para proteger sistemas de processamento e dados pessoais. No contexto do GDPR, seus ambientes de servidor físico e virtual estão potencialmente processando dados pessoais e confidenciais. O processamento pode significar qualquer operação ou conjunto de operações, como a coleta de dados, o armazenamento e a recuperação.
@@ -145,7 +145,7 @@ O chip inclui vários mecanismos de segurança física para torná-lo resistente
 
 Proteção avançada de dispositivo adicional relevante para sua operação sem violações de dados incluem a inicialização confiável do Windows para ajudar a manter a integridade do sistema, garantindo que o malware não possa iniciar antes das defesas do sistema.
 
-## <a name="windows-server-supporting-your-gdpr-compliance-journey"></a>Windows Server: Dando suporte à sua jornada de conformidade do GDPR
+## <a name="windows-server-supporting-your-gdpr-compliance-journey"></a>Windows Server: dando suporte à sua jornada de conformidade do GDPR
 Os principais recursos do Windows Server podem ajudá-lo a implementar com eficiência e eficiência os mecanismos de segurança e privacidade que o GDPR exige para fins de conformidade. Embora o uso desses recursos não garanta sua conformidade, eles oferecerão suporte aos seus esforços para fazer isso.
 
 O sistema operacional do servidor reside em uma camada estratégica na infraestrutura de uma organização, oferecendo novas oportunidades para criar camadas de proteção contra ataques que podem roubar dados e interromper seus negócios. Os principais aspectos do GDPR, como privacidade por design, proteção de dados e controle de acesso, precisam ser abordados em sua infraestrutura de ti no nível do servidor.
@@ -185,17 +185,17 @@ Se o administrador de DNS precisar fazer uma atualização para um de seus servi
 
 Imagine este cenário se as credenciais do administrador do DNS fossem roubadas. Primeiro, como as credenciais não têm privilégios de administrador anexados a elas, o invasor não poderá obter acesso ao servidor DNS – ou a outros sistemas – para fazer alterações. Se o invasor tentar solicitar privilégios para o servidor DNS, a autenticação de dois fatores solicitará que ele confirme sua identidade. Como não é provável que o invasor tenha o telefone celular do administrador do DNS, a autenticação falharia. Isso bloquearia o invasor do sistema e alertaria a organização de ti de que as credenciais podem ser comprometidas.
 
-Além disso, muitas organizações usam a [solução de senha de administrador local gratuita (LAPs)](http://aka.ms/laps) como um mecanismo de administração JIT simples, mas poderoso, para seus sistemas cliente e servidor. O recurso de LAPSos fornece gerenciamento de senhas de contas locais de computadores ingressados no domínio. As senhas são armazenadas em Active Directory (AD) e protegidas pelo e pela ACL (lista de controle de acesso) para que somente usuários qualificados possam lê-lo ou solicitar sua redefinição.
+Além disso, muitas organizações usam a [solução de senha de administrador local gratuita (LAPs)](https://aka.ms/laps) como um mecanismo de administração JIT simples, mas poderoso, para seus sistemas cliente e servidor. O recurso de LAPSos fornece gerenciamento de senhas de contas locais de computadores ingressados no domínio. As senhas são armazenadas em Active Directory (AD) e protegidas pelo e pela ACL (lista de controle de acesso) para que somente usuários qualificados possam lê-lo ou solicitar sua redefinição.
 
-Conforme observado no [Guia de mitigação de roubo de credenciais do Windows](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095), 
+Conforme observado no [Guia de mitigação de roubo de credenciais do Windows](https://www.microsoft.com/download/confirmation.aspx?id=54095), 
 
-> "_as ferramentas e as técnicas que os criminosos usam para realizar o roubo de credenciais e reutilizar ataques aprimorados, invasores mal-intencionados estão encontrando mais fácil atingir suas metas. O roubo de credenciais geralmente se baseia em práticas operacionais ou exposição de credenciais de usuário, portanto, as atenuações efetivas exigem uma abordagem holística que atenda às pessoas, aos processos e à tecnologia. Além disso, esses ataques dependem do invasor roubar credenciais depois de comprometer um sistema para expandir ou manter o acesso, para que as organizações devam conter falhas rapidamente implementando estratégias que impedem que os invasores se movimentem livremente e não sejam detectados em um rede comprometida._ "
+> "_as ferramentas e as técnicas que os criminosos usam para realizar o roubo de credenciais e reutilizar ataques aprimorados, invasores mal-intencionados estão encontrando mais fácil atingir suas metas. O roubo de credenciais geralmente se baseia em práticas operacionais ou exposição de credenciais de usuário, portanto, as atenuações efetivas exigem uma abordagem holística que atenda às pessoas, aos processos e à tecnologia. Além disso, esses ataques dependem do invasor roubar credenciais depois de comprometer um sistema para expandir ou manter o acesso, de modo que as organizações devem conter falhas rapidamente implementando estratégias que impedem que os invasores se movimentem livremente e não sejam detectados em uma rede comprometida._ "
 
 Uma consideração importante de design para o Windows Server foi a mitigação do roubo de credenciais — em particular, as credenciais derivadas. A Credential Guard fornece segurança significativamente aprimorada contra roubo e reutilização de credenciais derivadas implementando uma alteração arquitetônica significativa no Windows, projetada para ajudar a eliminar ataques de isolamento baseados em hardware, em vez de simplesmente tentar Proteja-se contra eles.
 
 Embora o uso da proteção de credenciais do Windows Defender, NTLM e credenciais derivadas de Kerberos sejam protegidos usando a segurança baseada em virtualização, as técnicas de ataque de roubo de credenciais e as ferramentas usadas em muitos ataques direcionados são bloqueadas. O malware com privilégios administrativos em execução no sistema operacional não pode extrair segredos protegidos pela segurança baseada em virtualização. Embora o Windows Defender Credential Guard seja uma poderosa mitigação, os ataques de ameaças persistentes provavelmente mudarão para novas técnicas de ataque, e você também deverá incorporar o Device Guard, conforme descrito abaixo, juntamente com outras estratégias de segurança e arquiteturas.
 
-#### <a name="windows-defender-credential-guard"></a>Proteção de credenciais do Windows Defender
+#### <a name="windows-defender-credential-guard"></a>Windows Defender Credential Guard
 O Windows Defender Credential Guard usa segurança baseada em virtualização para isolar informações de credenciais, impedindo que hashes de senha ou tíquetes Kerberos sejam interceptados. Ele usa um processo de autoridade de segurança local isolada (LSA) totalmente novo, que não pode ser acessado pelo restante do sistema operacional. Todos os binários usados pelo LSAs isolado são assinados com certificados que são validados antes de serem iniciados no ambiente protegido, tornando os ataques de tipo Pass-the-hash completamente ineficazes.
 
 O Windows Defender Credential Guard usa:
@@ -302,9 +302,9 @@ Você pode proteger o TPM virtual (vTPM) usando as chaves de criptografia locais
 Uma maneira de melhorar a proteção em ambientes virtualizados é segmentar a rede de forma que permita que as VMs se comuniquem apenas com os sistemas específicos necessários para funcionar. Por exemplo, se seu aplicativo não precisar se conectar à Internet, você poderá particioná-lo, eliminando esses sistemas como destinos de invasores externos. A SDN (rede definida pelo software) no Windows Server 2016 inclui um firewall de rede distribuído que permite que você crie dinamicamente as políticas de segurança que podem proteger seus aplicativos contra ataques provenientes de dentro ou fora de uma rede. Esse firewall de rede distribuída adiciona camadas à sua segurança, permitindo que você Isole seus aplicativos na rede. As políticas podem ser aplicadas em qualquer lugar em sua infraestrutura de rede virtual, isolando o tráfego de VM para VM, tráfego de VM para host ou tráfego de VM para Internet, quando necessário – para sistemas individuais que podem ter sido comprometidos ou programaticamente em várias sub-redes. Os recursos de rede definidos pelo software do Windows Server 2016 também permitem rotear ou espelhar o tráfego de entrada para dispositivos virtuais que não são da Microsoft. Por exemplo, você pode optar por enviar todo o tráfego de email por meio de um dispositivo virtual Barracuda para proteção adicional de filtragem de spam. Isso permite que você facilmente camadas de segurança adicional no local ou na nuvem.
 
 ### <a name="other-gdpr-considerations-for-servers"></a>Outras considerações de GDPR para servidores
-O GDPR inclui requisitos explícitos de notificação de violação, onde uma violação de dados pessoais significa "_uma violação de segurança que leva à destruição acidental ou ilegal, perda, alteração, divulgação não autorizada ou acesso a dados pessoais transmitido, armazenado ou processado de outra forma._ "  Obviamente, você não pode começar a avançar para atender aos rigorosos requisitos de notificação de GDPR em 72 horas se não for possível detectar a violação em primeiro lugar.
+O GDPR inclui requisitos explícitos de notificação de violação, onde uma violação de dados pessoais significa "_uma violação de segurança que leva à destruição acidental ou ilegal, perda, alteração, divulgação não autorizada ou acesso a dados pessoais transmitidos, armazenados ou processados de outra forma._ "  Obviamente, você não pode começar a avançar para atender aos rigorosos requisitos de notificação de GDPR em 72 horas se não for possível detectar a violação em primeiro lugar.
 
-Conforme observado no White paper da central de segurança do [Windows, pós-violação: Lidando com ameaças avançadas](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
+Conforme observado na central de segurança do Windows white paper, [pós-violação: lidando com ameaças avançadas](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
 > "_Ao contrário da pré-associação, a pós-violação pressupõe que já ocorreu uma violação – agindo como um Flight Recorder e o CSI (investigadores de cena de crime). A pós-violação fornece às equipes de segurança as informações e o conjunto de ferramentas necessários para identificar, investigar e responder a ataques que, caso contrário, permanecerão não detectados e abaixo do radar._ "
 
@@ -317,7 +317,7 @@ Aplicando uma combinação de processos automatizados e manuais, aprendizado de 
 
 ![Grafo de segurança do Microsoft Intelligence](../media/GDPR-Windows-Server-Overview/gdpr-intelligent-security-graph.png)
 
-O escopo da inteligência contra ameaças da Microsoft abrange, literalmente, bilhões de pontos de dados: 35.000.000.000 mensagens verificadas mensalmente, 1.000.000.000 clientes em segmentos corporativos e de consumidor acessando mais de 200 serviços de nuvem e as autenticações 14.000.000.000 executadas diariamente. Todos esses dados são reunidos em seu nome pela Microsoft para criar o Gráfico de Segurança Inteligente que pode ajudá-lo a proteger sua porta frontal de maneira dinâmica de ficar seguro, permanecer produtivo e atender aos requisitos do GDPR.
+O escopo da inteligência contra ameaças da Microsoft abrange, literalmente, bilhões de pontos de dados: 35.000.000.000 mensagens verificadas mensalmente, 1.000.000.000 clientes em segmentos corporativos e de consumidores acessando mais de 200 serviços de nuvem e autenticações 14.000.000.000 executadas diário. Todos esses dados são reunidos em seu nome pela Microsoft para criar o Gráfico de Segurança Inteligente que pode ajudá-lo a proteger sua porta frontal de maneira dinâmica de ficar seguro, permanecer produtivo e atender aos requisitos do GDPR.
 
 #### <a name="detecting-attacks-and-forensic-investigation"></a>Detectar ataques e investigação forense
 Até mesmo as melhores defesas de ponto de extremidade podem ser violadas eventualmente, conforme cyberattacks se tornam mais sofisticados e direcionados. Dois recursos podem ser usados para ajudar com a detecção de possíveis violações – a ATP (proteção avançada contra ameaças) do Windows Defender e o Microsoft Advanced Threat Analytics (ATA).
@@ -341,8 +341,8 @@ O ATA é um produto local que ajuda a detectar o comprometimento de identidade e
 
 |Tipo de ataque |Descrição |
 |---------|---------|
-|Ataques mal-intencionados |Esses ataques são detectados procurando ataques de uma lista conhecida de tipos de ataque, incluindo:<ul><li>Passagem de tíquete (PtT)</li><li>Pass-the-hash (PtH)</li><li>Sobrepass-The-hash</li><li>PAC forjado (MS14-068)</li><li>Bilhete dourado</li><li>Replicações mal-intencionadas</li><li>Reconhecimento</li><li>Força bruta</li><li>Execução remota</li></ul>Para obter uma lista completa de ataques mal-intencionados que podem ser detectados e sua descrição, consulte [quais atividades suspeitas podem ser detectadas pelo ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
-|Comportamento anormal |Esses ataques são detectados usando a análise comportamental e usam o Machine Learning para identificar atividades questionáveis, incluindo:<ul><li>Logons anormais</li><li>Ameaças desconhecidas</li><li>Compartilhamento de senha</li><li>Movimento lateral</li></ul>|
+|Ataques mal-intencionados |Esses ataques são detectados procurando ataques de uma lista conhecida de tipos de ataque, incluindo:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC Forjado (MS14-068)</li><li>Golden Ticket</li><li>Replicações mal-intencionadas</li><li>Reconhecimento</li><li>Força bruta</li><li>Execução remota</li></ul>Para obter uma lista completa de ataques mal-intencionados que podem ser detectados e sua descrição, consulte [quais atividades suspeitas podem ser detectadas pelo ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
+|Comportamento anômalo |Esses ataques são detectados usando a análise comportamental e usam o Machine Learning para identificar atividades questionáveis, incluindo:<ul><li>Logons anormais</li><li>Ameaças desconhecidas</li><li>Compartilhamento de senha</li><li>Movimentação lateral</li></ul>|
 |Problemas de segurança e riscos |Esses ataques são detectados examinando a configuração atual da rede e do sistema, incluindo:<ul><li>Confiança quebrada</li><li>Protocolos fracos</li><li>Vulnerabilidades de protocolo conhecidas</li></ul>|
 
 Você pode usar o ATA para ajudar a detectar invasores tentando comprometer identidades privilegiadas. Para obter mais informações sobre como implantar o ATA, consulte os tópicos planejar, projetar e implantar na [documentação do Advanced Threat Analytics](https://docs.microsoft.com/advanced-threat-analytics/).
@@ -355,13 +355,13 @@ Você pode usar o ATA para ajudar a detectar invasores tentando comprometer iden
 
 - **Proteção de dispositivo do Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI e https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
 
-- **Proteção de credenciais do Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI e https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
+- **Windows Defender Credential Guard:** https://www.youtube.com/watch?v=F-pTkesjkhI e https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
 
 - **Proteção de fluxo de controle:** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
 - **Segurança e garantia:** https://docs.microsoft.com/windows-server/security/security-and-assurance
 
-## <a name="disclaimer"></a>Aviso de isenção de responsabilidade
+## <a name="disclaimer"></a>Aviso de isenção
 Este artigo é um comentário em GDPR, como Microsoft interpreta, a partir da data de publicação. Passamos muito tempo com GDPR e gostam de pensar que temos sido considerados uma consideração sobre sua intenção e significado. Mas a aplicação de GDPR é altamente específica de fato, e nem todos os aspectos e interpretações de GDPR são bem liquidadas.
 
 Como resultado, este artigo é fornecido apenas para fins informativos e não ser considerado como advogado ou para determinar como GDPR podem se aplicar a você e sua organização. Encorajamos você a trabalhar com um profissional legalmente qualificados para discutir GDPR, como ele se aplica especificamente para sua organização e como melhor garantir a conformidade.

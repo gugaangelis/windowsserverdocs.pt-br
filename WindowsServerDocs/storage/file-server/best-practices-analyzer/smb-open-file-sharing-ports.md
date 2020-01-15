@@ -7,12 +7,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 22cd926fdb873538631a6f6850157dceb5a020d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80cc75f983d4593e4ee98309d1fa39c024b7b379
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385835"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950292"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: portas de compartilhamento de arquivo e impressora devem ser abertas
 
@@ -21,7 +21,7 @@ Atualizado: 2 de fevereiro de 2011
 
 Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012, Windows Server 2008 R2
 
-*Este tópico destina-se a resolver um problema específico identificado por uma verificação de analisador de práticas recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram os serviços de arquivo Analisador de Práticas Recomendadas executados neles e estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações, consulte* [analisador de práticas recomendadas](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
+*Este tópico destina-se a resolver um problema específico identificado por uma verificação de analisador de práticas recomendadas. Você deve aplicar as informações neste tópico somente a computadores que tiveram os serviços de arquivo Analisador de Práticas Recomendadas executados neles e estão enfrentando o problema resolvido por este tópico. Para obter mais informações sobre práticas recomendadas e verificações, consulte* [analisador de práticas recomendadas](https://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
 
 
 <table>
@@ -31,7 +31,7 @@ Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>Sistema Operacional</strong></p></td>
+<td><p><strong>Sistema operacional</strong></p></td>
 <td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
@@ -39,8 +39,8 @@ Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e 
 <td><p>Serviços de arquivo</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Severity</strong></p></td>
-<td><p>Erro</p></td>
+<td><p><strong>Gravidade</strong></p></td>
+<td><p>Erro do</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Categoria</strong></p></td>
@@ -71,7 +71,7 @@ A associação ao grupo **Administradores** , ou equivalente, é o mínimo neces
 
 3.  Em **regras de entrada**, localize o arquivo de regras **e compartilhamento de impressora (NB-sessão-in)** e **compartilhamento de arquivos e impressoras (SMB-in)** .
 
-4.  Para cada regra, clique com o botão direito do mouse na regra e clique em **Habilitar Regra**.
+4.  Para cada regra, clique com botão direito na regra e, em seguida, clique em **Habilitar regra**.
 
 ## <a name="additional-references"></a>Referências adicionais
 

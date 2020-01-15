@@ -12,23 +12,23 @@ ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: e3af163855e2550383b119d504449b2b43208a78
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 064ccf80faf77bbf128351a78ea437730983bf06
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391105"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948195"
 ---
 # <a name="what39s-new-in-active-directory-domain-services"></a>O&#39;que há de novo no Active Directory Domain Services 
 
 >Aplica-se a: Windows Server 2016
 
-Os novos recursos a seguir no Active Directory Domain Services (AD DS) melhoram a capacidade das organizações de protegerem os ambientes Active Directory e os ajudam a migrar para implantações e implantações híbridas somente na nuvem, em que alguns aplicativos e serviços são hospedado na nuvem e outros são hospedados localmente. Os aprimoramentos incluem:  
+Os novos recursos a seguir no Active Directory Domain Services (AD DS) melhoram a capacidade das organizações de protegerem os ambientes Active Directory e os ajudam a migrar para implantações e implantações híbridas somente na nuvem, em que alguns aplicativos e serviços são hospedado na nuvem e outros são hospedados localmente. As melhorias incluem:  
   
 -   [Privileged Access Management](https://technet.microsoft.com/library/mt150258.aspx   
 )  
   
-- [Estendendo recursos de nuvem para dispositivos Windows 10 por meio do Azure Active Directory Join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
+- [Estendendo os recursos de nuvem para dispositivos Windows 10 por meio da Junção do Active Directory do Azure](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
   
 - [Conectando dispositivos ingressados no domínio ao Azure AD para experiências com o Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
   
@@ -55,7 +55,7 @@ O PAM (Privileged Access Management) ajuda a reduzir as preocupações de segura
   
 -   Novos recursos de monitoramento para ajudá-lo a identificar facilmente quem solicitou acesso, qual acesso foi concedido e quais atividades foram executadas.  
   
-**Requirement**  
+**Requirements**  
   
 -   Microsoft Identity Manager  
   
@@ -80,7 +80,7 @@ Benefícios:
   
 -   **Logon único no** Office 365 e em outros aplicativos, sites e recursos organizacionais.  
   
--   **Em dispositivos BYOD**, adicione uma conta de trabalho (de um domínio local ou do Azure AD) a um dispositivo de propriedade pessoal e aproveite o SSO para trabalhar com recursos, por meio de aplicativos e na Web, de forma a garantir a conformidade com novos recursos, como controle de conta condicional e Integridade do Dispositivo atestado.  
+-   **Em dispositivos BYOD**, adicione uma conta de trabalho (de um domínio local ou do Azure AD) a um dispositivo de propriedade pessoal e aproveite o SSO para trabalhar com recursos, por meio de aplicativos e na Web, de uma forma que ajude a garantir a conformidade com novos recursos, como controle de conta condicional e atestado de integridade do dispositivo.  
   
 -   A **integração de MDM** permite que você registre automaticamente os dispositivos no MDM (Intune ou de terceiros)  
   
@@ -90,7 +90,7 @@ Benefícios:
   
 -   A opção de **geração de imagens** permite escolher entre imagens e permitir que os usuários configurem dispositivos corporativos diretamente durante a experiência de primeira execução.  
   
-Para obter mais informações, [consulte Windows 10 para a empresa: Maneiras de usar dispositivos para o](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)trabalho.  
+Para obter mais informações, consulte [Windows 10 para a empresa: maneiras de usar dispositivos para o trabalho](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1).  
   
 ## <a name="BKMK_IDLocker"></a>Microsoft Passport  
 Microsoft Passport é uma nova abordagem de autenticação baseada em chave que as organizações e os consumidores, que vão além das senhas. Essa forma de autenticação depende de violações, roubos e credenciais resistentes a Phish.  
@@ -100,9 +100,9 @@ O usuário faz logon no dispositivo com um registro biométrico ou PIN em inform
 Para obter mais informações, consulte [Autenticando identidades sem senhas por meio de Microsoft Passport](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport/)  
   
 ## <a name="BKMK_FRSDeprecation"></a>Substituição do FRS (serviço de replicação de arquivo) e dos níveis funcionais do Windows Server 2003  
-Embora o FRS (serviço de replicação de arquivo) e os níveis funcionais do Windows Server 2003 tenham sido preteridos em versões anteriores do Windows Server, ele deixa repetindo que o sistema operacional Windows Server 2003 não é mais suportado. Como resultado, qualquer controlador de domínio que executa o Windows Server 2003 deve ser removido do domínio. O nível funcional de domínio e floresta deve ser elevado ao mínimo do Windows Server 2008 para impedir que um controlador de domínio que executa uma versão anterior do Windows Server seja adicionado ao ambiente.  
+Embora o FRS (serviço de replicação de arquivo) e os níveis funcionais do Windows Server 2003 tenham sido preteridos em versões anteriores do Windows Server, ele deixa repetindo que o sistema operacional Windows Server 2003 não é mais suportado. Como resultado, qualquer controlador de domínio que execute o Windows Server 2003 deve ser removido do domínio. O nível funcional de domínio e floresta deve ser elevado ao mínimo do Windows Server 2008 para impedir que um controlador de domínio que executa uma versão anterior do Windows Server seja adicionado ao ambiente.  
   
-Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do serviço de arquivos distribuído (DFS) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, Replicação do DFS será usado automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do usando o FRS para a Replicação DFS para SYSVOL. Para obter as etapas de migração, você pode seguir os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou pode consultar o [conjunto simplificado de etapas no blog do gabinete de arquivo da equipe de armazenamento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).  
+Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, siga os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou consulte o [conjunto de etapas otimizadas no blog do Gabinete de arquivos da equipe de armazenamento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).  
   
 Os níveis funcionais de domínio e floresta do Windows Server 2003 continuam com suporte, mas as organizações devem aumentar o nível funcional para o Windows Server 2008 (ou superior, se possível) para garantir a compatibilidade e o suporte à replicação do SYSVOL no futuro. Além disso, há muitos outros benefícios e recursos disponíveis nos níveis funcionais mais altos. Confira os recursos a seguir para saber mais:  
   

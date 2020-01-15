@@ -9,37 +9,37 @@ ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 1ef9d511f8946452c5f9f05628c67c5908c53a55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61c10f25ac97934f73c4f393e2c91c9b36fc59fd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402766"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950172"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Principais soluções de suporte do Windows Server 2016
 
-A Microsoft lança regularmente atualizações e soluções para o Windows Server. Para garantir que os servidores podem receber atualizações futuras, incluindo atualizações de segurança, é importante mantê-los atualizados. Confira [Histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history) para obter uma lista completa das atualizações lançadas.
+A Microsoft lança regularmente atualizações e soluções para o Windows Server. Para garantir que os servidores podem receber atualizações futuras, incluindo atualizações de segurança, é importante mantê-los atualizados. Confira [Histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history) para obter uma lista completa das atualizações lançadas.
 
 Essas são as principais soluções do Suporte da Microsoft para a maioria dos problemas comuns enfrentados ao usar o Windows Server 2016. Os links a seguir incluem links para artigos da KB, atualizações e artigos de biblioteca.
 
 >[!TIP]
-> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
+> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
 
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>Soluções para instalar ou atualizar o Windows Server
 
-- [Resolver erros de atualização do Windows 10: Informações técnicas para profissionais de ti](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
-- [Atualização da pilha de manutenção para Windows 10 versão 1607 e Windows Server 2016: 8 de agosto de 2017](https://support.microsoft.com/en-US/help/4035631)
-- [Atualização de compatibilidade para atualização para o Windows 10 versão 1607 e Windows Server 2016: 3 de agosto de 2017](https://support.microsoft.com/en-US/help/4033524)
-- [Não há suporte para a atualização do sistema in-loco em VMs do Azure baseadas no Windows](https://support.microsoft.com/en-US/help/4014997)
+- [Resolver erros de atualização do Windows 10: informações técnicas para profissionais de ti](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
+- [Atualização da pilha de manutenção para Windows 10 versão 1607 e Windows Server 2016:8 de agosto de 2017](https://support.microsoft.com/help/4035631)
+- [Atualização de compatibilidade para atualização para o Windows 10 versão 1607 e Windows Server 2016:3 de agosto de 2017](https://support.microsoft.com/help/4033524)
+- [Não há suporte para a atualização do sistema in-loco em VMs do Azure baseadas no Windows](https://support.microsoft.com/help/4014997)
 - [Opções de atualização e conversão para o Windows Server 2016](../get-started/supported-upgrade-paths.md)
 - [Matriz de atualização e migração de função de servidor para o Windows Server 2016](../get-started/server-role-upgradeability-table.md)
 - [Instalação e atualização do Windows Server](../get-started/installation-and-upgrade.md)
-- [Notas de versão: Problemas importantes no Windows Server 2016](../get-started/windows-server-2016-ga-release-notes.md)
+- [Notas de versão: problemas importantes no Windows Server 2016](../get-started/windows-server-2016-ga-release-notes.md)
 - [Recomendações para mudar para o Windows Server 2016](../get-started/recommendations-moving-to-server2016.md)
 
 ## <a name="solutions-for-volume-activation"></a>Soluções de ativação de volume
 - [Ativação do Windows Server 2016](../get-started/server-2016-activation.md)
-- [Examinar e selecionar métodos de ativação](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
+- [Revisar e Selecionar Métodos de Ativação](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
 - [Códigos de erro de ativação para ativação de volume](https://technet.microsoft.com/library/dn502528.aspx)
 - [Como solucionar problemas do serviço de gerenciamento de chaves (KMS)](https://technet.microsoft.com/library/ee939272.aspx)
 - [Solução de problemas de ativação de volume](https://technet.microsoft.com/library/ff793439.aspx)
@@ -52,7 +52,7 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
 - [Suporte do Exchange Server para Windows Server 2016](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
 - [Usando o Ntdsutil. exe para transferir ou capturar funções FSMO para um controlador de domínio](https://support.microsoft.com/kb/255504)
 - [Solução de problemas de implantação de controlador de domínio](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Solucionando problemas do assistente de instalação Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
+- [Solução de problemas do Assistente de instalação do Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
 - [Problemas conhecidos para instalar e remover AD DS](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Soluções para Serviços de Federação do Active Directory (AD FS)
@@ -70,9 +70,9 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
 
 - [Como solucionar problemas de replicação do Active Directory](../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md)
 - [Baixar a ferramenta Status de Replicação do Active Directory do centro de download da Microsoft](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
-- [E2E Como solucionar erros comuns de replicação de Active Directory](https://support.microsoft.com/kb/3108513)
-- [Solução de problemas do erro de replicação do AD 8606: Atributos insuficientes foram fornecidos para criar um objeto](https://support.microsoft.com/kb/2028495)
+- [E2E: como solucionar erros comuns de replicação de Active Directory](https://support.microsoft.com/kb/3108513)
+- [Solução de problemas do erro de replicação do AD 8606: atributos insuficientes foram fornecidos para criar um objeto](https://support.microsoft.com/kb/2028495)
 - [A ID de evento 2108 e a ID de evento 1084 ocorrem durante a replicação de entrada de Active Directory no Windows 2000 Server e no Windows Server 2003](https://support.microsoft.com/kb/837932)
-- [Solução de problemas do erro de replicação do AD 8451: A operação de replicação encontrou um erro de banco de dados](https://support.microsoft.com/kb/2645996)
-- [Solução de problemas do erro de replicação do AD 1127: Ao acessar o disco rígido, uma operação de disco falhou mesmo após novas tentativas](https://support.microsoft.com/kb/2025726)
+- [Solução de problemas do erro de replicação do AD 8451: a operação de replicação encontrou um erro de banco de dados](https://support.microsoft.com/kb/2645996)
+- [Solução de problemas do erro de replicação do AD 1127: ao acessar o disco rígido, uma operação de disco falhou mesmo após novas tentativas](https://support.microsoft.com/kb/2025726)
 - [Limpar metadados do servidor](https://technet.microsoft.com/library/cc816907.aspx)

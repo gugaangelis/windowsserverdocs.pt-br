@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: fb549d84f565feeea348d2f50a9188218e7638d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d761ba61ae5680373c334889799e82e5d092a0d4
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357082"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950104"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>Habilitando a faixa de descoberta de extensão
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 Um novo recurso disponível na visualização do centro de administração do Windows 1903 é a faixa de descoberta de extensão. Esse recurso permite que uma extensão declare o fabricante de hardware do servidor e os modelos aos quais ele dá suporte e quando um usuário se conecta a um servidor ou cluster para o qual uma extensão está disponível, uma faixa de notificação será exibida para instalar facilmente a extensão. Os desenvolvedores de extensão poderão obter mais visibilidade para suas extensões e os usuários poderão descobrir facilmente mais recursos de gerenciamento para seus servidores.
 
@@ -29,7 +29,7 @@ Quando o centro de administração do Windows for iniciado, ele se conectará ao
 
 ## <a name="how-to-implement-the-extension-discovery-banner"></a>Como implementar a faixa de descoberta de extensão
 
-Os metadados de "marcas" no arquivo. nuspec são usados para declarar a qual fabricante de hardware e/ou modelos sua extensão dá suporte. As marcas são delimitadas por espaços e você pode adicionar um fabricante ou uma marca de modelo, ou ambos, para declarar o fabricante e/ou modelos com suporte. O formato de marca é ``"[value type]_[value condition]"``, em que [tipo de valor] é "fabricante" ou "modelo" (diferencia maiúsculas de minúsculas) e [valor condição] é uma [expressão regular JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) que define o fabricante ou a cadeia de caracteres de modelo e [tipo de valor] e [condição de valor] são separados por um sublinhado. Em seguida, essa cadeia de caracteres é codificada usando a codificação de URI e adicionada à cadeia de caracteres de metadados. nuspec "tags".
+Os metadados de "marcas" no arquivo. nuspec são usados para declarar a qual fabricante de hardware e/ou modelos sua extensão dá suporte. As marcas são delimitadas por espaços e você pode adicionar um fabricante ou uma marca de modelo, ou ambos, para declarar o fabricante e/ou modelos com suporte. O formato de marca é ``"[value type]_[value condition]"`` em que [tipo de valor] é "fabricante" ou "modelo" (diferencia maiúsculas de minúsculas) e [valor condição] é uma [expressão regular JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions) que define o fabricante ou a cadeia de caracteres de modelo e [tipo de valor] e [condição de valor] são separados por um sublinhado. Em seguida, essa cadeia de caracteres é codificada usando a codificação de URI e adicionada à cadeia de caracteres de metadados. nuspec "tags".
 
 ### <a name="example"></a>Exemplo
 
@@ -67,4 +67,4 @@ Digamos que desenvolvi uma extensão que dá suporte a servidores de uma empresa
    ```
 
 > [!Tip]
-> Entendemos que um fabricante de hardware pode ter uma grande variedade de nomes de modelo dos quais alguns deles podem ter suporte, enquanto outros não. Tenha em mente que esse recurso destina-se a ajudar na **descoberta** de sua extensão, mas não precisa ser um inventário perfeitamente atualizado de todos os seus modelos. Você pode definir sua expressão regular para ser uma expressão mais simples que corresponda a um subconjunto de seus modelos. Um usuário poderá não ver a faixa de descoberta se se conectar pela primeira vez a um modelo de servidor que não corresponda à condição, mas, mais cedo ou tarde, eles se conectarão a outro servidor que faz e irão descobrir e instalar a extensão. Você também pode considerar a definição de uma expressão regular simples que corresponda apenas ao nome do fabricante. Em alguns casos, sua extensão pode, na verdade, não dar suporte a um modelo específico, mas você pode usar o [recurso de exibição da ferramenta dinâmica](./dynamic-tool-display.md) para definir um script do PowerShell personalizado para verificar o suporte ao modelo e mostrar apenas sua extensão quando aplicável ou fornecer limitações funcionalidade em sua extensão para modelos que não dão suporte a todos os recursos.
+> Entendemos que um fabricante de hardware pode ter uma grande variedade de nomes de modelo dos quais alguns deles podem ter suporte, enquanto outros não. Tenha em mente que esse recurso destina-se a ajudar na **descoberta** de sua extensão, mas não precisa ser um inventário perfeitamente atualizado de todos os seus modelos. Você pode definir sua expressão regular para ser uma expressão mais simples que corresponda a um subconjunto de seus modelos. Um usuário poderá não ver a faixa de descoberta se se conectar pela primeira vez a um modelo de servidor que não corresponda à condição, mas, mais cedo ou tarde, eles se conectarão a outro servidor que faz e irão descobrir e instalar a extensão. Você também pode considerar a definição de uma expressão regular simples que corresponda apenas ao nome do fabricante. Em alguns casos, sua extensão pode, na verdade, não dar suporte a um modelo específico, mas você pode usar o [recurso de exibição de ferramenta dinâmica](./dynamic-tool-display.md) para definir um script do PowerShell personalizado para verificar o suporte de modelo e mostrar apenas sua extensão quando aplicável, ou fornecer funcionalidade limitada em sua extensão para modelos que não dão suporte a todos os recursos.

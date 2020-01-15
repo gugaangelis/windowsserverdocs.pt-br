@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: e76d1205c22d6ce484abc86ed5e3c74ac1010f29
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: b82d2eaa9283d99993102f1656262e2eda86cfff
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945283"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950121"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Como conectar o Windows Server aos serviços híbridos do Azure
 
@@ -31,7 +31,7 @@ Embora seja possível configurar a maioria dos serviços híbridos do Azure baix
 
 ## <a name="discover-integrated-services-in-the-azure-hybrid-services-tool"></a>Descobrir serviços integrados na ferramenta de serviços híbridos do Azure
 
-A ferramenta de serviços híbridos do Azure no [Windows Admin Center](../understand/windows-admin-center.md) consolida todos os serviços do Azure integrados em um hub centralizado em que você pode descobrir com facilidade todos os serviços do Azure disponíveis que agregam valor ao seu ambiente local ou híbrido.  
+A ferramenta de serviços híbridos do Azure no [Windows Admin Center](../overview.md) consolida todos os serviços do Azure integrados em um hub centralizado em que você pode descobrir com facilidade todos os serviços do Azure disponíveis que agregam valor ao seu ambiente local ou híbrido.  
 
 ![Captura de tela do Windows Admin Center mostrando a ferramenta de Serviços Híbridos do Azure](../media/azure-services/ahs-discover.png)
 
@@ -155,7 +155,7 @@ Aproveite o Azure Cloud Shell para obter uma experiência do Bash ou do PowerShe
 Para obter mais informações, consulte [Visão geral do Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Conectar o Windows Admin Center ao Azure](azure-integration.md)
 - [Implantar o Windows Admin Center no Azure](deploy-wac-in-azure.md)

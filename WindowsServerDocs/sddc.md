@@ -12,12 +12,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a565eb9e26e03c1aad221059b327943485c81c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6490bd9a6cb7b305ba9746a357a8c909c7b84555
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403901"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950462"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Datacenter definido por software do Windows Server
 
@@ -33,13 +33,13 @@ Implementação do SDDC da Microsoft consiste nas tecnologias do Windows Server 
 
 As tecnologias integradas ao Windows Server e ao System Center são os blocos de construção principais da experiência do Windows Server SDDC. Mas, mesmo que seja uma plataforma virtualizada, ela ainda requer o hardware adequado. Os parceiros da Microsoft que participam das **soluções WSSD (definidas pelo software do Windows Server)** e os programas de **soluções do HCI Azure Stack** podem ajudar sua empresa a adquirir o hardware certo e colocá-lo em funcionamento no dia zero.
 
-![](media/sddc/video.png) **[Assista a um vídeo para saber mais sobre o SDDC da Microsoft](https://mva.microsoft.com/en-US/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
+![](media/sddc/video.png) **[Assista a um vídeo para saber mais sobre o SDDC da Microsoft](https://mva.microsoft.com/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
 
 ![](media/sddc/poster-ico.png) **[baixar um arquivo. pdf de tamanho do pôster desta página](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/media/sddc/sddc_poster_0801417_ANSI-E.pdf)**
 
 ![](media/sddc/spacer1.png)<a href="https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs//media/sddc/sddc_poster_0801417_ANSI-E.pdf"><img src="media/sddc/poster.png"></a>
 
-## <a name="azure-stack-hci-solutions"></a>Azure Stack soluções de HCI
+## <a name="azure-stack-hci-solutions"></a>Soluções do Azure Stack HCI
 
 A criação do datacenter definido pelo software do Windows Server na infra-estrutura de hardware correta é uma primeira etapa crucial para o sucesso. É por isso que fizemos uma parceria com 15 parceiros para criar designs de SDDC e práticas recomendadas validadas pela Microsoft para implantação.
 
@@ -47,7 +47,7 @@ Os parceiros da Microsoft oferecem uma matriz de soluções que funcionam com o 
 
 ![](media/sddc/learn.png) **[saiba mais sobre as soluções de HCI Azure Stack](https://azure.microsoft.com/overview/azure-stack/hci)**
 
-![](media/sddc/learn.png) **[saiba mais sobre as soluções WSSD](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)**
+![](media/sddc/learn.png) **[saiba mais sobre as soluções WSSD](https://www.microsoft.com/cloud-platform/software-defined-datacenter)**
 
 ## <a name="windows-server-virtualized-technologies"></a>Tecnologias virtualizadas do Windows Server ##
 
@@ -71,7 +71,7 @@ O Hyper-V é uma tecnologia de virtualização com base em hipervisor para o Win
 
 ![](media/sddc/spacer1.png)![](media/sddc/hypervisor.png)
 
-![](media/sddc/learn.png) **[saiba mais sobre o hipervisor Hyper-V](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
+![](media/sddc/learn.png) **[saiba mais sobre o hipervisor Hyper-V](https://www.microsoft.com/cloud-platform/server-virtualization)**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>Clustering de convidado com VHDX compartilhado
 
@@ -149,7 +149,7 @@ O SLB permite que vários servidores hospedem a mesma carga de trabalho, fornece
 
 ![](media/sddc/storage.png)
 
-### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Diretos
+### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Direto
 
 ![](media/sddc/storage-line.png)
 
@@ -172,7 +172,7 @@ A Qualidade de serviço do armazenamento é integrada na solução de armazename
 
 ![](media/sddc/learn.png) **[saiba mais sobre a QoS de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-qos/storage-qos-overview)**
 
-### <a name="storage-replica"></a>Réplica de Armazenamento
+### <a name="storage-replica"></a>Réplica de armazenamento
 
 
 ![](media/sddc/storage-line.png)
@@ -230,7 +230,7 @@ O Serviço Guardião de Host detém as chaves para malhas legítimas, bem como m
 
 ![](media/sddc/learn.png) **[saiba mais sobre o serviço guardião de host](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs)**
 
-### <a name="device-health-attestation"></a>Atestado de integridade de dispositivo
+### <a name="device-health-attestation"></a>Atestado de Integridade do Dispositivo
 
 ![](media/sddc/security-line.png)
 
@@ -247,7 +247,7 @@ O modo confiável de hardware mostrado acima fornece o nível mais alto de garan
 
 ![](media/sddc/management.png)
 
-### <a name="powershell-desired-state-configuration"></a>Configuração de estado desejado do PowerShell
+### <a name="powershell-desired-state-configuration"></a>Desired State Configuration do PowerShell
 
 ![](media/sddc/management-line.png)
 

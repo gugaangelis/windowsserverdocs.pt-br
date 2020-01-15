@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 20bc60abc747e6bab0ef59f38d0a392f18d75abe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379379"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947582"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -33,7 +33,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 |      Parâmetro      |    Descrição     |
 | ------------------- | ------------------ |
-|  /d \<driveletter >          | Especifica a unidade que você deseja que a limpeza de disco limpe.<br>**Observação:** A opção/d não é utilizada com/sagerun: n. |
+|  /d \<letra_da_unidade >          | Especifica a unidade que você deseja que a limpeza de disco limpe.<br>**Observação:** A opção/d não é utilizada com/sagerun: n. |
 | /sageset: n | Exibe a caixa de diálogo Configurações de limpeza de disco e também cria uma chave do registro para armazenar as configurações selecionadas. O valor `n`, que é armazenado no registro, permite que você especifique tarefas para que a limpeza de disco seja executada. O valor de `n` pode ser qualquer valor inteiro de 0 a 65535. Para ter todas as opções disponíveis ao usar a opção/sageset, especifique a unidade em que o Windows está instalado.  |
 |  /sagerun: n  |  Executa as tarefas especificadas que são atribuídas ao valor n se você usar a opção \sageset. Todas as unidades no computador são enumeradas e o perfil selecionado é executado em cada unidade.           |
 | /TUNEUP: n    | Execute/sageset e/sagerun para o mesmo `n`. |
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Liberar espaço em disco no Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[Liberar espaço em disco no Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

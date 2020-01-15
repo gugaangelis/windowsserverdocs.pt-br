@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402420"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949800"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Início rápido para implantação de malha protegida
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402420"
 
 Este tópico explica o que é uma malha protegida, seus requisitos e um resumo do processo de implantação. Para obter etapas de implantação detalhadas, consulte [implantando o serviço guardião de host para hosts protegidos e VMs blindadas](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview).
 
-Prefere vídeo? Confira o curso Microsoft Virtual Academy [implantando VMs blindadas e uma malha protegida com o Windows Server 2016](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474).
+Prefere vídeo? Confira o curso Microsoft Virtual Academy [implantando VMs blindadas e uma malha protegida com o Windows Server 2016](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474).
 
 ## <a name="what-is-a-guarded-fabric"></a>O que é uma malha protegida
 

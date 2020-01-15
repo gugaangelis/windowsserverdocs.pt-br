@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 55d9c600c86b6b64efdb5c7d4437697539f887ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e620b5597a2d25a7bb02daf80c5812d25f6a987
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402951"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950032"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Cluster para réplica de armazenamento de cluster na mesma região no Azure
 
@@ -25,10 +25,10 @@ Você pode configurar o cluster para replicação de armazenamento de cluster na
 Assista aos vídeos abaixo para ver um passo a passo completo do processo.
 
 Parte um
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE26f2Y]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE26f2Y]
 
 Parte dois
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE269Pq]
 
 ![O diagrama de arquitetura que está mostrando a réplica de armazenamento de cluster para cluster no Azure na mesma região.](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
@@ -76,16 +76,16 @@ Parte dois
 11. Crie um [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) de SKU padrão interno para cada cluster (**azlbr1**,**azlbr2**). 
    
     Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga.
-    - azlbr1 = > IP de front-end: 10.3.0.100 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az**))
+    - azlbr1 = > IP de front-end: 10.3.0.100 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az-vnet**))
     - Crie um pool de back-end para cada balanceador de carga. Adicione os nós de cluster associados.
     - Criar investigação de integridade: porta 59999
-    - Criar regra de balanceamento de carga: Permitir portas de alta disponibilidade, com IP flutuante habilitado. 
+    - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado. 
    
     Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga.
-    - azlbr2 = > IP de front-end: 10.3.0.101 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az**))
+    - azlbr2 = > IP de front-end: 10.3.0.101 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az-vnet**))
     - Crie um pool de back-end para cada balanceador de carga. Adicione os nós de cluster associados.
     - Criar investigação de integridade: porta 59999
-    - Criar regra de balanceamento de carga: Permitir portas de alta disponibilidade, com IP flutuante habilitado. 
+    - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado. 
    
 12. Em cada nó de cluster, abra a porta 59999 (investigação de integridade). 
    

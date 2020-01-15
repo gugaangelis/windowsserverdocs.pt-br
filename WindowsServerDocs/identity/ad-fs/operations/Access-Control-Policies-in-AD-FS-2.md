@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358447"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948604"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Políticas de controle de acesso de cliente no AD FS 2,0
 As políticas de acesso para cliente no Serviços de Federação do Active Directory (AD FS) 2,0 permitem que você restrinja ou conceda acesso a recursos aos usuários.  Este documento descreve como habilitar as políticas de acesso do cliente no AD FS 2,0 e como configurar os cenários mais comuns.
@@ -25,7 +25,7 @@ Para habilitar a política de acesso do cliente, siga as etapas abaixo.
 
 ### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>Etapa 1: instalar o pacote cumulativo de atualizações 2 para AD FS pacotes 2,0 em seus servidores AD FS
 
-Baixe o pacote [cumulativo de atualizações 2 para serviços de Federação do Active Directory (AD FS) (AD FS) 2,0](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) e instale-o em todos os proxies do servidor de Federação e do servidor de Federação.
+Baixe o pacote [cumulativo de atualizações 2 para serviços de Federação do Active Directory (AD FS) (AD FS) 2,0](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) e instale-o em todos os proxies do servidor de Federação e do servidor de Federação.
 
 ### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>Etapa 2: adicionar cinco regras de declaração à Active Directory confiança do provedor de declarações
 
@@ -45,7 +45,7 @@ Na Active Directory confiança do provedor de declarações, crie uma nova regra
 5. Na página Configurar regra, em nome da regra de declaração, digite o nome de exibição para esta regra; em tipo de declaração de entrada, digite a seguinte URL de tipo de declaração e, em seguida, selecione passar todos os valores de declaração.</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
 6. Para verificar a regra, selecione-a na lista e clique em Editar regra e, em seguida, clique em Exibir idioma da regra. O idioma da regra de declaração deve aparecer da seguinte maneira: `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
-7. Clique em concluir.
+7. Clique em Finalizar.
 8. Na caixa de diálogo Editar regras de declaração, clique em OK para salvar as regras.
 9. Repita as etapas de 2 a 6 para criar uma regra de declaração adicional para cada um dos quatro tipos de declaração restantes mostrados abaixo até que todas as cinco regras tenham sido criadas.
 
@@ -83,7 +83,7 @@ Esse cenário de política de acesso de cliente permite o acesso de todos os cli
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
-6. Clique em concluir. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
+6. Clique em Finalizar. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
 7. Para salvar a regra, na caixa de diálogo Editar regras de declaração, clique em OK.
 
 >[!NOTE]
@@ -110,7 +110,7 @@ O exemplo a seguir permite o acesso a todos os aplicativos do Office 365, inclui
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Clique em concluir. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
+6. Clique em Finalizar. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
 7. Para salvar a regra, na caixa de diálogo Editar regras de declaração, clique em OK.
 
 >[!NOTE]
@@ -136,7 +136,7 @@ O conjunto de regras se baseia na regra de autorização de emissão padrão cha
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Clique em concluir. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
+6. Clique em Finalizar. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
 7. Para salvar a regra, na caixa de diálogo Editar regras de declaração, clique em OK.
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Cenário 4: bloquear todo o acesso externo ao Office 365 para grupos de Active Directory designados
@@ -156,7 +156,7 @@ O exemplo a seguir habilita o acesso de clientes internos com base no endereço 
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Clique em concluir. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
+6. Clique em Finalizar. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
 7. Para salvar a regra, na caixa de diálogo Editar regras de declaração, clique em OK.
 
 
@@ -195,7 +195,7 @@ Um ou mais endereços IP: quando o Exchange Online não pode determinar o endere
 Os endereços IP relacionados à infraestrutura do Exchange Online não serão exibidos na lista.
 
 
-#### <a name="regular-expressions"></a>Expressões regulares
+#### <a name="regular-expressions"></a>Expressões Regulares
 
 Quando você precisa corresponder a um intervalo de endereços IP, é necessário construir uma expressão regular para executar a comparação. Na próxima série de etapas, forneceremos exemplos de como construir essa expressão para corresponder aos intervalos de endereços a seguir (Observe que você precisará alterar esses exemplos para corresponder ao seu intervalo de IP público):
 
@@ -261,7 +261,7 @@ Para verificar se as novas declarações de contexto de solicitação estão sen
 
 Para habilitar o log de eventos de auditoria para o log de segurança em um AD FS Server, siga as etapas em configurar a auditoria para AD FS 2,0.
 
-### <a name="event-logging"></a>Log de eventos
+### <a name="event-logging"></a>Registro de eventos em log
 
 Por padrão, as solicitações com falha são registradas no log de eventos do aplicativo localizado em logs de aplicativos e serviços \ AD FS 2,0 \ admin. para obter mais informações sobre o log de eventos para AD FS, consulte [configurar AD FS log de eventos 2,0](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx).
 

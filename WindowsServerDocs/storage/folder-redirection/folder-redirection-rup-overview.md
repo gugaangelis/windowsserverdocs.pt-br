@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b23244f141cd0806ee14d3c40117ba72aeebb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402057"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950252"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Visão geral de Redirecionamento de pasta, Arquivos offline e Perfis de usuário móvel
 
@@ -108,11 +108,11 @@ Há quatro principais benefícios em designar computadores primários para usuá
 Para limitar o download de dados particulares do usuário para os computadores principais, as tecnologias de Redirecionamento de Pastas e Perfis de Usuário Móvel executam as seguintes verificações de lógica quando um usuário faz logon em um computador:
 
 1. O sistema operacional Windows verifica as novas configurações de Política de Grupo (**baixar perfis móveis somente em computadores primários** e **redirecionar pastas somente em computadores primários**) para determinar se o atributo **msDS-Primary-Computer** no Active Directory Domain Services (AD DS) deve influenciar a decisão de mover o perfil do usuário ou aplicar o redirecionamento de pasta.
-2. Se a configuração da política habilitar o suporte a computadores primários, o Windows verificará se o esquema AD DS dá suporte ao atributo **msDS-Primary-Computer**. Em caso afirmativo, o Windows determinará se o computador ao qual o usuário está conectado está designado como um computador primário para o usuário da seguinte maneira:
+2. Se a configuração da política habilitar o suporte a computadores primários, o Windows verificará se o esquema AD DS dá suporte ao atributo **msDS-Primary-Computer** . Em caso afirmativo, o Windows determinará se o computador ao qual o usuário está conectado está designado como um computador primário para o usuário da seguinte maneira:
     1. Se o computador for um dos computadores primários do usuário, o Windows aplicará os perfis de usuário de roaming e as configurações de redirecionamento de pasta.
     2. Se o computador não for um dos computadores primários do usuário, o Windows carregará o perfil local em cache do usuário, se estiver presente, ou criará um novo perfil local. O Windows também remove todas pastas redirecionadas existentes de acordo com a ação de remoção que foi especificada pela configuração da Política de Grupo aplicada anteriormente, que é retida na configuração do Redirecionamento de Pastas local.
 
-Para obter mais informações, consulte [implantar computadores primários para redirecionamento de pasta e perfis de usuário móvel](deploy-primary-computers.md)
+Para obter mais informações, consulte [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md).
 
 ## <a name="hardware-requirements"></a>Requisitos de hardware
 
@@ -127,12 +127,12 @@ Para designar computadores primários, seu ambiente deve satisfazer aos seguinte
 
 ## <a name="more-information"></a>Mais informações
 
-Para obter informações adicionais relacionadas, consulte os seguintes recursos.
+Para obter informações adicionais relacionadas, consulte os recursos a seguir.
 
 | Tipo de conteúdo | Referências |
 | --- | --- |
 | Avaliação do produto | [Suporte a operadores de informações com armazenamento e serviços de arquivos confiáveis](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[O que há de novo no arquivos offline](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 e windows Server 2008 R2)<br>[O que há de novo no Arquivos Offline para Windows Vista](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Alterações no arquivos offline no Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine) |
-| Implantação | [Implantar perfis de usuário de redirecionamento de pasta, Arquivos Offline e roaming](deploy-folder-redirection.md)<br>[Implementando uma solução de centralização de dados do usuário final: redirecionamento de pasta e implantação e validação de tecnologia Arquivos Offline](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Gerenciando guia de implantação de dados de usuário de roaming](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guia Passo a Passo de Configuração de Novos Recursos de Arquivos Offline para Computadores com o Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Usando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
+| Implantação | [Implantar perfis de usuário de redirecionamento de pasta, Arquivos Offline e roaming](deploy-folder-redirection.md)<br>[Implementando uma solução de centralização de dados do usuário final: redirecionamento de pasta e implantação e validação de tecnologia Arquivos Offline](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Gerenciando guia de implantação de dados de usuário de roaming](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guia Passo a Passo de Configuração de Novos Recursos de Arquivos Offline para Computadores com o Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Usando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementando o redirecionamento de pasta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | Ferramentas e configurações | [Arquivos offline no MSDN](https://msdn.microsoft.com/library/cc296092.aspx)<br>[Referência de política de grupo de arquivos offline](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
 | Recursos da comunidade | [Fórum de armazenamento e serviços de arquivo](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Ei, equipe de scripts! Como posso trabalhar com o recurso Arquivos Offline no Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Ei, equipe de scripts! Como habilitar e desabilitar Arquivos Offline?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | Tecnologias relacionadas|[Identidade e acesso no Windows Server](../../identity/identity-and-access.md)<br>[Armazenamento no Windows Server](../storage.md)<br>[Gerenciamento de servidor e acesso remoto](../../remote/index.md) |

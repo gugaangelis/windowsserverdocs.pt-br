@@ -6,17 +6,17 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 56877bc5ddb3ea5f24f4057051775094654d8bbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8d9d47ff8f14ce316d2352729247ab2dcf4acbc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386038"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949699"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>Migrar a replicação do SYSVOL para a replicação do DFS
 
 
-Atualizado: 25 de agosto de 2010
+Atualizado em: 25 de agosto de 2010
 
 Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2008
 
@@ -24,11 +24,11 @@ Os controladores de domínio usam uma pasta compartilhada especial chamada SYSVO
 
 Para usar Replicação do DFS para replicar a pasta SYSVOL, você pode criar um novo domínio que usa o nível funcional de domínio do Windows Server 2008 ou pode usar o procedimento que é discutido neste documento para atualizar um domínio existente e migrar a replicação para o Replicação do DFS.
 
-Este documento pressupõe que você tenha um conhecimento básico de Active Directory Domain Services (AD DS), FRS e replicação de Sistema de Arquivos Distribuído (Replicação do DFS). Para obter mais informações, consulte [visão geral do Active Directory Domain Services](http://go.microsoft.com/fwlink/?linkid=147787), [visão geral do FRS](http://go.microsoft.com/fwlink/?linkid=121763)ou [visão geral do replicação do DFS](http://go.microsoft.com/fwlink/?linkid=121762)
+Este documento pressupõe que você tenha um conhecimento básico de Active Directory Domain Services (AD DS), FRS e replicação de Sistema de Arquivos Distribuído (Replicação do DFS). Para obter mais informações, consulte [visão geral do Active Directory Domain Services](https://go.microsoft.com/fwlink/?linkid=147787), [visão geral do FRS](https://go.microsoft.com/fwlink/?linkid=121763)ou [visão geral do replicação do DFS](https://go.microsoft.com/fwlink/?linkid=121762)
 
 
 > [!NOTE]
-> Para baixar uma versão imprimível deste guia, vá para <a href="http://go.microsoft.com/fwlink/?linkid=150375">o guia de migração de replicação do SYSVOL: FRS para Replicação do DFS</a> (http://go.microsoft.com/fwlink/?LinkId=150375)
+> Para baixar uma versão imprimível deste guia, vá para o <a href="https://go.microsoft.com/fwlink/?linkid=150375">Guia de migração de replicação do SYSVOL: FRS para replicação do DFS</a> (https://go.microsoft.com/fwlink/?LinkId=150375)
 <br>
 
 
@@ -70,17 +70,17 @@ Este documento pressupõe que você tenha um conhecimento básico de Active Dire
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Série de migração do SYSVOL: Parte 1 – Introdução ao processo de migração do SYSVOL](http://go.microsoft.com/fwlink/?linkid=121756)
+[Série de migração de SYSVOL: parte 1 — Introdução ao processo de migração do SYSVOL](https://go.microsoft.com/fwlink/?linkid=121756)
 
-[Série de migração do SYSVOL: Parte 2 – Dfsrmig. exe: A ferramenta de migração do SYSVOL](http://go.microsoft.com/fwlink/?linkid=121757)
+[Série de migração do SYSVOL: parte 2 – Dfsrmig. exe: a ferramenta de migração do SYSVOL](https://go.microsoft.com/fwlink/?linkid=121757)
 
-[Série de migração do SYSVOL: Parte 3 – migrando para o estado ' preparado '](http://go.microsoft.com/fwlink/?linkid=121758)
+[Série de migração de SYSVOL: parte 3 — migrando para o estado "preparado"](https://go.microsoft.com/fwlink/?linkid=121758)
 
-[Série de migração do SYSVOL: Parte 4 – migrando para o estado "Redirecionado"](http://go.microsoft.com/fwlink/?linkid=121759)
+[Série de migração de SYSVOL: parte 4 – migrando para o estado "Redirecionado"](https://go.microsoft.com/fwlink/?linkid=121759)
 
-[Série de migração do SYSVOL: Parte 5 – migrando para o estado "ELIMINAdo"](http://go.microsoft.com/fwlink/?linkid=121760)
+[Série de migração de SYSVOL: parte 5 — migrando para o estado "ELIMINAdo"](https://go.microsoft.com/fwlink/?linkid=121760)
 
-[Guia passo a passo para sistemas de arquivos distribuídos no Windows Server 2008](http://go.microsoft.com/fwlink/?linkid=85231)
+[Guia passo a passo para sistemas de arquivos distribuídos no Windows Server 2008](https://go.microsoft.com/fwlink/?linkid=85231)
 
-[Referência técnica do FRS](http://go.microsoft.com/fwlink/?linkid=121764)
+[Referência técnica do FRS](https://go.microsoft.com/fwlink/?linkid=121764)
 

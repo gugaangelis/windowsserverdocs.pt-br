@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0e680e07ce1ee27a73791e310a71b85ad76d6318
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 26c1635d4218c7d33377b6b8a90bc96ea4ad37b3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358765"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948779"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS conceitos do OpenID Connect/OAuth
 Aplica-se ao AD FS 2016 e posterior
@@ -31,10 +31,10 @@ O diagrama a seguir fornece a relação mais básica entre os atores:
 
 ![Atores de autenticação moderna](media/adfs-modern-auth-concepts/concept1.png)
 
-## <a name="application-types"></a>Tipos de aplicativos 
+## <a name="application-types"></a>Tipos de aplicativo 
  
 
-|Tipo de Aplicativo|Descrição|Função|
+|Tipo de Aplicativo|Descrição|Role|
 |-----|-----|-----|
 |Aplicativo nativo|Às vezes chamado de **cliente público**, destina-se a ser um aplicativo cliente executado em um computador ou dispositivo e com o qual o usuário interage.|Solicita tokens do servidor de autorização (AD FS) para acesso de usuário aos recursos. Envia solicitações HTTP para recursos protegidos, usando os tokens como cabeçalhos HTTP.| 
 |Aplicativo de servidor (aplicativo Web)|Um aplicativo Web que é executado em um servidor e geralmente é acessível aos usuários por meio de um navegador. Como ele é capaz de manter seu próprio ' segredo ' ou credencial do cliente, às vezes é chamado de **cliente confidencial**. |Solicita tokens do servidor de autorização (AD FS) para acesso de usuário aos recursos. Antes de solicitar o token, o cliente (aplicativo Web) precisa se autenticar usando seu segredo. | 
@@ -57,7 +57,7 @@ Ao registrar um recurso no AD FS, os escopos podem ser configurados para permiti
  
 - Aza-se estiver usando [extensões de protocolo OAuth 2,0 para clientes do Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, bem como Configurando o campo refresh_token_expires_in para o tempo de vida do novo token de atualização primário, se um for imposto. 
 - OpenID – permite que o aplicativo solicite o uso do protocolo de autorização OpenID Connect. 
-- logon_cert-o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon interativamente usuários autenticados. O servidor de AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em base64 ou uma resposta de PKI completa de CMC. Mais detalhes estão disponíveis [aqui](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
+- logon_cert-o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon interativamente usuários autenticados. O servidor de AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em base64 ou uma resposta de PKI completa de CMC. Mais detalhes estão disponíveis [aqui](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
 - user_impersonation-o escopo de user_impersonation é necessário para solicitar com êxito um token de acesso em nome de AD FS. Para obter detalhes sobre como usar esse escopo, consulte [criar um aplicativo de várias camadas usando obo (em nome de) usando OAuth com AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 
 - allatclaims – o escopo allatclaims permite que o aplicativo solicite declarações no token de acesso a serem adicionadas também ao token de ID.   
 - vpn_cert-o escopo vpn_cert permite que um aplicativo solicite certificados VPN, que podem ser usados para estabelecer conexões VPN usando a autenticação EAP-TLS. Não há mais suporte para isso. 
@@ -66,9 +66,9 @@ Ao registrar um recurso no AD FS, os escopos podem ser configurados para permiti
 
 ## <a name="claims"></a>Declarações 
  
-Tokens de segurança (tokens de ID e acesso) emitidos por AD FS contêm declarações ou asserções de informações sobre o assunto que foi autenticado. Os aplicativos podem usar declarações para várias tarefas, incluindo: 
+Tokens de segurança (tokens de ID e acesso) emitidos por AD FS contêm declarações ou asserções de informações sobre o assunto que foi autenticado. Os aplicativos podem usar declarações para diversas tarefas, incluindo: 
 - Validar o token 
-- Identificar o locatário do diretório da entidade 
+- Identificar o locatário de diretório da entidade 
 - Exibir informações do usuário 
 - Determine a autorização da entidade que as declarações presentes em qualquer token de segurança específico dependem do tipo de token, do tipo de credencial usado para autenticar o usuário e da configuração do aplicativo.  
  
@@ -108,7 +108,7 @@ Tokens de segurança (tokens de ID e acesso) emitidos por AD FS contêm declara�
 Dois tipos de bibliotecas são usados com AD FS: 
 - **Bibliotecas de cliente**: os clientes nativos e os aplicativos de servidor usam bibliotecas de cliente para adquirir tokens de acesso para chamar um recurso, como uma API da Web. A biblioteca de autenticação da Microsoft (MSAL) é a biblioteca de cliente mais recente e recomendada ao usar o AD FS 2019. O Biblioteca de Autenticação do Active Directory (ADAL) é recomendado para o AD FS 2016.  
 
-- **Bibliotecas de middleware de servidor**: os aplicativos Web usam bibliotecas de middleware de servidor para entrada do usuário. As APIs da Web usam bibliotecas de middleware de servidor para validar tokens que são enviados por clientes nativos ou por outros servidores. OWIN (Open Web interface para .NET) é a biblioteca de middleware recomendada. 
+- **Bibliotecas de middleware de servidor**: os aplicativos Web usam bibliotecas de middleware de servidor para entrada do usuário. As APIs da Web usam bibliotecas de middleware de servidor para validar tokens enviados por clientes nativos ou por outros servidores. OWIN (Open Web interface para .NET) é a biblioteca de middleware recomendada. 
 
 ## <a name="customize-id-token-additional-claims-in-id-token"></a>Personalizar token de ID (declarações adicionais no token de ID)
  

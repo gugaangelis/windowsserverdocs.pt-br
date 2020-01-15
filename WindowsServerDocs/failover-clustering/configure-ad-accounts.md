@@ -6,12 +6,12 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8a540361cdd07f6adfc1c929d77c510ef8433d6d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47f3a515379eb79f628a0ee97ef2c7965c4d8d50
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369887"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948151"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuração de contas de cluster no Active Directory
 
@@ -81,7 +81,7 @@ O diagrama a seguir ilustra o uso e a criação de contas de computador (objetos
 
 ![](media/configure-ad-accounts/Cc731002.e8a7686c-9ba8-4ddf-87b1-175b7b51f65d(WS.10).gif)
 
-Observe que o diagrama acima mostra um único administrador executando ambos os assistentes - Criação de Clusters e Alta Disponibilidade. No entanto, isso poderia ser feito por dois administradores usando duas contas de usuário diferentes, se ambas as contas tivessem permissões suficientes. As permissões são descritas mais detalhadamente em requisitos relacionados a clusters de failover, Active Directory domínios e contas, mais adiante neste guia.
+Observe que o diagrama acima mostra um único administrador executando ambos os assistentes - Criação de Clusters e Alta Disponibilidade. No entanto, isso poderia ser feito por dois administradores usando duas contas de usuário diferentes, se ambas as contas tivessem permissões suficientes. As permissões são descritas mais detalhadamente em Requisitos relacionados a clusters de failover, domínios do Active Directory e contas, mais adiante neste guia.
 
 ### <a name="how-problems-can-result-if-accounts-needed-by-the-cluster-are-changed"></a>Como os problemas podem surgir se as contas das quais o cluster precisa forem alteradas
 
@@ -89,7 +89,7 @@ O diagrama a seguir ilustra como os problemas podem surgir se a conta de nome do
 
 ![](media/configure-ad-accounts/Cc731002.beecc4f7-049c-4945-8fad-2cceafd6a4a5(WS.10).gif)
 
-Se ocorrer o tipo de problema mostrado no diagrama, um determinado evento (1193, 1194, 1206 ou 1207) será registrado em log no Visualizador de Eventos. Para obter mais informações sobre esses eventos, [http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271)consulte.
+Se ocorrer o tipo de problema mostrado no diagrama, um determinado evento (1193, 1194, 1206 ou 1207) será registrado em log no Visualizador de Eventos. Para obter mais informações sobre esses eventos, consulte [https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271).
 
 Observe que poderá ocorrer um problema semelhante com a criação de uma conta para um aplicativo ou serviço clusterizado se a cota de todo o domínio para criação de objetos de computador (por padrão, 10) for atingida. Nesse caso, pode ser adequado consultar o administrador de domínio para aumentar a cota, embora essa seja uma configuração de todo o domínio e deva ser alterada somente depois de uma análise detalhada, e somente depois de confirmar que o diagrama anterior não descreve sua situação. Para obter mais informações, consulte [Etapas para solucionar problemas causados por alterações em contas do Active Directory relacionadas a cluster](#steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts), mais adiante neste guia.
 
@@ -97,9 +97,9 @@ Observe que poderá ocorrer um problema semelhante com a criação de uma conta 
 
 Conforme descrito nas três seções anteriores, determinados requisitos devem ser atendidos para que aplicativos e serviços clusterizados possam ser configurados com êxito em um cluster de failover. Os requisitos mais básicos referem-se ao local dos nós do cluster (em um único domínio) e ao nível de permissões da conta da pessoa que instala o cluster. Se esses requisitos forem atendidos, as outras contas exigidas pelo cluster poderão ser criadas automaticamente pelos assistentes de cluster de failover. A lista a seguir fornece detalhes sobre esses requisitos básicos.
 
-  - **Nós** todos os nós devem estar no mesmo domínio do Active Directory. (O domínio não pode se basear no Windows NT 4.0, que não inclui o Active Directory.)  
+  - **Nós:** Todos os nós devem estar no mesmo domínio Active Directory. (O domínio não pode se basear no Windows NT 4.0, que não inclui o Active Directory.)  
       
-  - **Conta da pessoa que instala o cluster:** a pessoa que instala o cluster deve usar uma conta com as seguintes características:  
+  - **Conta da pessoa que instala o cluster:** A pessoa que instala o cluster deve usar uma conta com as seguintes características:  
       
       - A conta deve ser uma conta de domínio. Ela não precisa ser uma conta de administrador de domínio. Ela poderá ser uma conta de usuário de domínio se atender a outros requisitos desta lista.  
           
@@ -118,15 +118,15 @@ Conforme descrito nas três seções anteriores, determinados requisitos devem s
 
 A conta da pessoa que instala o cluster é importante porque fornece a base na qual uma conta de computador é criada para o cluster em si.
 
-A associação de grupo mínima exigida para concluir o procedimento a seguir depende se você está criando a conta de domínio e cedendo a ela as permissões exigidas no domínio ou se você está apenas colocando a conta (criada por outra pessoa) no grupo local **Administradores** nos servidores que serão nós do cluster de failover. Se o primeiro, a associação em **operadores de conta** ou equivalente, é o mínimo necessário para concluir este procedimento. Se for a segunda o opção, é preciso apenas a associação ao grupo local **Administradores** nos servidores que serão nós no cluster de failover, ou equivalente. Examine os detalhes sobre como usar as contas e associações de [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)grupo apropriadas em.
+A associação de grupo mínima exigida para concluir o procedimento a seguir depende se você está criando a conta de domínio e cedendo a ela as permissões exigidas no domínio ou se você está apenas colocando a conta (criada por outra pessoa) no grupo local **Administradores** nos servidores que serão nós do cluster de failover. Se o primeiro, a associação em **operadores de conta** ou equivalente, é o mínimo necessário para concluir este procedimento. Se for a segunda o opção, é preciso apenas a associação ao grupo local **Administradores** nos servidores que serão nós no cluster de failover, ou equivalente. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-configure-the-account-for-the-person-who-installs-the-cluster"></a>Para configurar a conta para a pessoa que instala o cluster
 
 1.  Crie ou obtenha uma conta de domínio para a pessoa que instala o cluster. Essa conta pode ser uma conta de usuário de domínio ou uma conta de **operadores de conta** . Se você usar uma conta de usuário padrão, terá que lhe dar algumas permissões adicionais posteriormente neste procedimento.
 
-2.  Se a conta que foi criada ou obtida na etapa 1 não for incluída automaticamente no grupo de **Administradores** locais em computadores no domínio, adicione a conta ao grupo de **Administradores** locais nos servidores que serão nós no failover em
+2.  Se a conta que foi criada ou obtida na etapa 1 não for incluída automaticamente no grupo de **Administradores** locais em computadores no domínio, adicione a conta ao grupo de **Administradores** locais nos servidores que serão nós no cluster de failover:
     
-    1.  Clique em **Iniciar**, clique em **Ferramentas Administrativas** e clique em **Gerenciador do Servidores**.  
+    1.  Clique em **Iniciar**, clique em **Ferramentas Administrativas**e clique em **Gerenciador do Servidores**.  
           
     2.  Na árvore de console, expanda **Configuração**, expanda **Usuários e Grupos Locais** e, por fim, expanda **Grupos**.  
           
@@ -163,7 +163,7 @@ A associação de grupo mínima exigida para concluir o procedimento a seguir de
 
 Normalmente, o processo se torna mais simples se você não pré-preparar a conta de nome do cluster, mas em vez disso, permitir que a conta seja criada e configurada automaticamente quando você executa o assistente para Criação de Clusters. No entanto, se for necessário pré-preparar a conta de nome do cluster devido aos requisitos em sua organização, use o procedimento a seguir.
 
-A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo necessário para concluir este procedimento. Examine os detalhes sobre como usar as contas e associações de [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)grupo apropriadas em. Observe que é possível usar a mesma conta para este procedimento que você usará ao criar o cluster.
+A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo necessário para concluir este procedimento. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477). Observe que é possível usar a mesma conta para este procedimento que você usará ao criar o cluster.
 
 #### <a name="to-prestage-a-cluster-name-account"></a>Para pré-preparar uma conta de nome do cluster
 
@@ -215,7 +215,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 Normalmente, o processo se torna mais simples se você não pré-preparar a conta de computador para um aplicativo ou serviço clusterizado, mas em vez disso, permitir que a conta seja criada e configurada automaticamente quando você executa o assistente para Alta Disponibilidade. No entanto, se for necessário pré-preparar as contas devido aos requisitos em sua organização, use o procedimento a seguir.
 
-A associação ao grupo **Operadores de Conta**, ou equivalente, é o mínimo necessário para concluir este procedimento. Examine os detalhes sobre como usar as contas e associações de [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)grupo apropriadas em.
+A associação ao grupo **Operadores de Conta**, ou equivalente, é o mínimo necessário para concluir este procedimento. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-prestage-an-account-for-a-clustered-service-or-application"></a>Para pré-preparar uma conta para um aplicativo ou serviço clusterizado
 
@@ -260,9 +260,9 @@ Use este procedimento se houver uma mensagem de evento sobre objetos de computad
 
 As mensagens de evento que se enquadram na descrição acima indicam que a senha para a conta de nome do cluster e a senha correspondente armazenada pelo software de clustering não correspondem.
 
-Para obter informações sobre como garantir que os administradores de cluster tenham as permissões corretas para executar o procedimento a seguir conforme necessário, consulte Planejamento antecipado para redefinições de senha e outra manutenção de conta, anteriormente neste guia.
+Para obter informações sobre como garantir que os administradores de cluster tenham as permissões corretas para executar o procedimento a seguir, conforme a necessidade, consulte Planejando redefinições de senha e outra manutenção de conta com antecipação, mais acima neste guia.
 
-A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento. Além disso, sua conta deve receber a permissão **Redefinir senha** para a conta de nome do cluster (a menos que conta seja uma conta de **Admins. de Domínio** ou seja o Proprietário Criador da conta de nome do cluster). A conta que foi usada pela pessoa que instalou o cluster pode ser usada para este procedimento. Examine os detalhes sobre como usar as contas e associações de [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)grupo apropriadas em.
+A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento. Além disso, sua conta deve receber a permissão **Redefinir senha** para a conta de nome do cluster (a menos que conta seja uma conta de **Admins. de Domínio** ou seja o Proprietário Criador da conta de nome do cluster). A conta que foi usada pela pessoa que instalou o cluster pode ser usada para este procedimento. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-troubleshoot-password-problems-with-the-cluster-name-account"></a>Para solucionar problemas de senha com a conta de nome do cluster
 
@@ -276,9 +276,9 @@ A associação no grupo local **Administradores**, ou equivalente, é o mínimo 
 
 ### <a name="steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>Etapas para solucionar problemas causados por alterações nas contas do Active Directory relacionadas ao cluster
 
-Se a conta de nome do cluster for excluída ou se suas permissões forem removidas, os problemas ocorrerão quando você tentar configurar um novo aplicativo ou serviço clusterizado. Para solucionar um problema cuja causa seja essa, use o snap-in Usuários e Computadores do Active Directory para exibir ou alterar a conta de nome do cluster e outras contas relacionadas. Para obter informações sobre os eventos que são registrados quando esse tipo de problema ocorre (evento 1193, 1194, 1206 ou 1207), consulte [http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271).
+Se a conta de nome do cluster for excluída ou se suas permissões forem removidas, os problemas ocorrerão quando você tentar configurar um novo aplicativo ou serviço clusterizado. Para solucionar um problema cuja causa seja essa, use o snap-in Usuários e Computadores do Active Directory para exibir ou alterar a conta de nome do cluster e outras contas relacionadas. Para obter informações sobre os eventos que são registrados quando esse tipo de problema ocorre (evento 1193, 1194, 1206 ou 1207), consulte [https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271).
 
-A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo necessário para concluir este procedimento. Examine os detalhes sobre como usar as contas e associações de [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)grupo apropriadas em.
+A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo necessário para concluir este procedimento. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-troubleshoot-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>Para solucionar problemas causados por alterações nas contas do Active Directory relacionadas ao cluster
 

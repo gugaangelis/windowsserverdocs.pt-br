@@ -7,12 +7,12 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 88f707cc02514dc13c212c6462c47e4d3a94b5f5
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 433221f9846e9e071557b5537974b5739131742b
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654577"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949692"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>Solução de problemas avançada do protocolo SMB
 
@@ -158,7 +158,7 @@ Tanto o cliente SMB quanto o servidor SMB têm uma estrutura detalhada do log de
 
 ## <a name="smb-related-system-files"></a>Arquivos do sistema relacionados ao SMB
 
-Esta seção lista os arquivos do sistema relacionados ao SMB. Para manter os arquivos do sistema atualizados, verifique se o [pacote cumulativo de atualizações](https://support.microsoft.com/en-us/help/4498140/windows-10-update-history) mais recente está instalado.
+Esta seção lista os arquivos do sistema relacionados ao SMB. Para manter os arquivos do sistema atualizados, verifique se o [pacote cumulativo de atualizações](https://support.microsoft.com/help/4498140/windows-10-update-history) mais recente está instalado.
 
 Os binários de cliente SMB listados em **% windir%\\system32\\drivers**:
 

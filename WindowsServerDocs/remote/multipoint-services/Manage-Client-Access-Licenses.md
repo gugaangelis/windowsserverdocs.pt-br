@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 0ca951c5e4c4fcdba06d0b475a7d7536a9c7f91f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4d809ab1bf2a18dff537bf63620623d576c0b25d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395459"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949880"
 ---
 # <a name="manage-client-access-licenses"></a>Gerenciar licenças de acesso para cliente
 Cada estação que se conecta a um sistema de serviços do MultiPoint, incluindo o computador que executa os serviços do MultiPoint que é usado como uma estação, deve ter uma *Cal (licença de acesso para cliente)* válida por usuário área de trabalho remota.
@@ -31,7 +31,7 @@ Se você estiver usando áreas de trabalho virtuais de estação em vez de esta�
   
 3.  Clique na guia **início** e, em seguida, clique em **adicionar licenças de acesso para cliente**.  Isso abrirá a ferramenta de gerenciamento para licenciamento CAL.
 
-# <a name="set-the-licensing-mode-manually"></a>Definir o modo de licenciamento manualmente
+## <a name="set-the-licensing-mode-manually"></a>Definir o modo de licenciamento manualmente
 Se não estiver configurado corretamente, a configuração dos serviços do MultiPoint solicitará uma notificação sobre o período de carência expirado. Siga estas etapas para definir o modo de licenciamento:
 
 1. Inicie o **Editor de política de grupo local** (gpedit. msc).
@@ -49,5 +49,5 @@ Se não estiver configurado corretamente, a configuração dos serviços do Mult
    - Selecione **OK** 
 
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 [Gerenciar tarefas de sistema usando o MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)

@@ -9,19 +9,19 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935040"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949211"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019 
  
-Para proteger contra vulnerabilidades comuns de segurança e fornecer aos administradores a capacidade de aproveitar os avanços mais recentes em mecanismos de proteção baseados em navegador, AD FS 2019 adicionou a funcionalidade para personalizar os cabeçalhos de resposta de segurança HTTP enviado por AD FS. Isso é realizado por meio da introdução de dois novos cmdlets `Get-AdfsResponseHeaders` : `Set-AdfsResponseHeaders`e.  
+Para proteger contra vulnerabilidades comuns de segurança e fornecer aos administradores a capacidade de aproveitar os avanços mais recentes em mecanismos de proteção baseados em navegador, AD FS 2019 adicionou a funcionalidade para personalizar os cabeçalhos de resposta de segurança HTTP enviado por AD FS. Isso é realizado por meio da introdução de dois novos cmdlets: `Get-AdfsResponseHeaders` e `Set-AdfsResponseHeaders`.  
 
 >[!NOTE]
->A funcionalidade para personalizar os cabeçalhos de resposta de segurança http (exceto cabeçalhos CORS) usando cmdlets `Set-AdfsResponseHeaders` : `Get-AdfsResponseHeaders` e foi reportado para AD FS 2016. Você pode adicionar a funcionalidade ao seu AD FS 2016 instalando [KB4493473](https://support.microsoft.com/en-us/help/4493473/windows-10-update-kb4493473) e [KB4507459](https://support.microsoft.com/en-us/help/4507459/windows-10-update-kb4507459). 
+>A funcionalidade para personalizar os cabeçalhos de resposta de segurança HTTP (exceto cabeçalhos CORS) usando cmdlets: `Get-AdfsResponseHeaders` e `Set-AdfsResponseHeaders` foram reportadas para AD FS 2016. Você pode adicionar a funcionalidade ao seu AD FS 2016 instalando [KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473) e [KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459). 
 
 Neste documento, abordaremos os cabeçalhos de resposta de segurança usados com frequência para demonstrar como personalizar os cabeçalhos enviados pelo AD FS 2019.   
  
@@ -40,11 +40,11 @@ Antes de discutirmos os cabeçalhos, vamos examinar alguns cenários que criam a
 
  
 ## <a name="http-security-response-headers"></a>Cabeçalhos de resposta de segurança HTTP 
-Os cabeçalhos de resposta são incluídos na resposta HTTP de saída enviada pelo AD FS para um navegador da Web. Os cabeçalhos podem ser listados usando o `Get-AdfsResponseHeaders` cmdlet, conforme mostrado abaixo.  
+Os cabeçalhos de resposta são incluídos na resposta HTTP de saída enviada pelo AD FS para um navegador da Web. Os cabeçalhos podem ser listados usando o cmdlet `Get-AdfsResponseHeaders`, conforme mostrado abaixo.  
 
 ![Resposta de cabeçalho](media/customize-http-security-headers-ad-fs/header1.png)
 
-O `ResponseHeaders` atributo na captura de tela acima identifica os cabeçalhos de segurança que serão incluídos por AD FS em cada resposta http. Os cabeçalhos de resposta serão enviados somente se `ResponseHeadersEnabled` for definido como `True` (valor padrão). O valor pode ser definido como `False` para evitar AD FS incluindo qualquer um dos cabeçalhos de segurança na resposta http. No entanto, isso não é recomendado.  Para fazer isso, use o seguinte:
+O atributo `ResponseHeaders` na captura de tela acima identifica os cabeçalhos de segurança que serão incluídos pelo AD FS em cada resposta HTTP. Os cabeçalhos de resposta serão enviados somente se `ResponseHeadersEnabled` estiver definido como `True` (valor padrão). O valor pode ser definido como `False` para evitar AD FS incluindo qualquer um dos cabeçalhos de segurança na resposta HTTP. No entanto, isso não é recomendado.  Para fazer isso, use o seguinte:
 
 ```PowerShell
 Set-AdfsResponseHeaders -EnableResponseHeaders $false
@@ -55,11 +55,11 @@ HSTS é um mecanismo de diretiva de segurança da Web que ajuda a mitigar ataque
  
 Todos os pontos de extremidade AD FS para o tráfego de autenticação na Web são abertos exclusivamente por HTTPS. Como resultado, AD FS atenua efetivamente as ameaças que o mecanismo de política de segurança de transporte estrito de HTTP fornece (por padrão, não há nenhum downgrade para HTTP, pois não há ouvintes em HTTP). O cabeçalho pode ser personalizado definindo os seguintes parâmetros:
  
-- **Max-age =&lt;tempo&gt; de expiração** – o tempo de expiração (em segundos) especifica por quanto tempo o site só deve ser acessado usando HTTPS. O valor padrão e recomendado é 31536000 segundos (1 ano).  
+- **Max-age =&lt;tempo de expiração&gt;** – o tempo de expiração (em segundos) especifica por quanto tempo o site só deve ser acessado usando HTTPS. O valor padrão e recomendado é 31536000 segundos (1 ano).  
 - **includeSubDomains** – é um parâmetro opcional. Se especificado, a regra HSTS também se aplicará a todos os subdomínios.  
  
 #### <a name="hsts-customization"></a>Personalização de HSTS 
-Por padrão, o cabeçalho é habilitado e `max-age` definido como 1 ano; no entanto, os administradores `max-age` podem modificar o (o valor máximo de idade máxima não é recomendado) ou habilitar HSTS para subdomínios por meio do `Set-AdfsResponseHeaders` cmdlet.  
+Por padrão, o cabeçalho está habilitado e `max-age` definido como 1 ano; no entanto, os administradores podem modificar o `max-age` (o valor máximo de idade máxima não é recomendado) ou habilitar HSTS para subdomínios por meio do cmdlet `Set-AdfsResponseHeaders`.  
  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=<seconds>; includeSubDomains" 
@@ -71,7 +71,7 @@ Exemplo:
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=31536000; includeSubDomains" 
  ```
 
-Por padrão, o cabeçalho é incluído no `ResponseHeaders` atributo; no entanto, os administradores podem remover o cabeçalho por meio do `Set-AdfsResponseHeaders` cmdlet.  
+Por padrão, o cabeçalho é incluído no atributo `ResponseHeaders`; no entanto, os administradores podem remover o cabeçalho por meio do cmdlet `Set-AdfsResponseHeaders`.  
  
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "Strict-Transport-Security" 
@@ -82,14 +82,14 @@ AD FS por padrão não permite que aplicativos externos usem iFrames ao executar
  
 No entanto, em determinados casos raros, você pode confiar em um aplicativo específico que requer a página de logon de AD FS interativa compatível com iFrame. O cabeçalho ' X-Frame-Options ' é usado para essa finalidade.  
  
-Esse cabeçalho de resposta de segurança http é usado para se comunicar com o navegador se ele pode renderizar &lt;uma&gt;página&gt;em um iframe de quadro/&lt;. O cabeçalho pode ser definido como um dos seguintes valores: 
+Esse cabeçalho de resposta de segurança HTTP é usado para se comunicar com o navegador se ele pode renderizar uma página em um quadro de &lt;&gt;/&lt;iframe&gt;. O cabeçalho pode ser definido como um dos seguintes valores: 
  
 - **negar** – a página em um quadro não será exibida. Essa é a configuração padrão e recomendada.  
 - **SameOrigin** – a página só será exibida no quadro se a origem for igual à origem da página da Web. A opção não é muito útil, a menos que todos os ancestrais também estejam na mesma origem.  
-- **permitir-from <specified origin>**  -a página só será exibida no quadro se a origem (por exemplo, https://www... com) corresponde à origem específica no cabeçalho. 
+- **permitir-de <specified origin>** -a página só será exibida no quadro se a origem (por exemplo, https://www. ". com) corresponde à origem específica no cabeçalho. 
 
 #### <a name="x-frame-options-customization"></a>Personalização de opções de X-frame  
-Por padrão, o cabeçalho será definido como Deny; no entanto, os administradores podem modificar o `Set-AdfsResponseHeaders` valor por meio do cmdlet.  
+Por padrão, o cabeçalho será definido como Deny; no entanto, os administradores podem modificar o valor por meio do cmdlet `Set-AdfsResponseHeaders`.  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/sameorigin/allow-from<specified origin>>" 
  ```
@@ -100,7 +100,7 @@ Exemplo:
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "allow-from https://www.example.com" 
  ```
 
-Por padrão, o cabeçalho é incluído no `ResponseHeaders` atributo; no entanto, os administradores podem remover o cabeçalho por meio do `Set-AdfsResponseHeaders` cmdlet.  
+Por padrão, o cabeçalho é incluído no atributo `ResponseHeaders`; no entanto, os administradores podem remover o cabeçalho por meio do cmdlet `Set-AdfsResponseHeaders`.  
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options" 
@@ -114,7 +114,7 @@ Esse cabeçalho de resposta de segurança HTTP é usado para interromper o carre
 - **1; Mode = Block** – habilita a filtragem XSS. Se um ataque XSS for detectado, o navegador impedirá a renderização da página. Essa é a configuração padrão e recomendada.  
 
 #### <a name="x-xss-protection-customization"></a>Personalização X-XSS-Protection 
-Por padrão, o cabeçalho será definido como 1; Mode = bloquear; no entanto, os administradores podem modificar o `Set-AdfsResponseHeaders` valor por meio do cmdlet.  
+Por padrão, o cabeçalho será definido como 1; Mode = bloquear; no entanto, os administradores podem modificar o valor por meio do cmdlet `Set-AdfsResponseHeaders`.  
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/1; mode=block/1; report=<reporting-uri>>" 
@@ -126,14 +126,14 @@ Exemplo:
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "1" 
  ```
 
-Por padrão, o cabeçalho é incluído no `ResponseHeaders` atributo; no entanto, os administradores podem remover o cabeçalho por meio do `Set-AdfsResponseHeaders` cmdlet. 
+Por padrão, o cabeçalho é incluído no atributo `ResponseHeaders`; no entanto, os administradores podem remover o cabeçalho por meio do cmdlet `Set-AdfsResponseHeaders`. 
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection" 
 ```
 
 ### <a name="cross-origin-resource-sharing-cors-headers"></a>Cabeçalhos CORS (compartilhamento de recursos entre origens) 
-A segurança do navegador da Web impede que uma página da Web faça solicitações entre origens iniciadas de dentro dos scripts. No entanto, às vezes, talvez você queira acessar recursos em outras origens (domínios). O CORS é um padrão W3C que permite que um servidor Relaxe a política de mesma origem. Usando o CORS, um servidor pode permitir explicitamente algumas solicitações entre origens e, ao mesmo tempo, rejeitar outras.  
+A segurança do navegador da Web impede que uma página da Web faça solicitações entre origens iniciadas de dentro dos scripts. No entanto, às vezes, talvez você queira acessar recursos em outras origens (domínios). O CORS é um padrão W3C que permite que um servidor Relaxe a política de mesma origem. Usando o CORS, um servidor pode explicitamente permitir algumas solicitações entre origens e rejeitar outras.  
  
 Para entender melhor a solicitação de CORS, vamos analisar um cenário em que um aplicativo de página única (SPA) precisa chamar uma API da Web com um domínio diferente. Além disso, vamos considerar que o SPA e a API estão configurados no ADFS 2019 e AD FS tem CORS habilitado, ou seja, AD FS pode identificar cabeçalhos CORS na solicitação HTTP, validar valores de cabeçalho e incluir cabeçalhos CORS apropriados na resposta (detalhes sobre como habilitar e Configure o CORS na seção AD FS 2019 na personalização CORS abaixo). Fluxo de exemplo: 
 
@@ -205,7 +205,7 @@ As seguintes fontes podem ser definidas para a política default-src:
 - ' não seguro-embutido ' – especificar isso na política permite o uso de JavaScript embutido e CSS 
 - ' unsafe-eval ' – especificar isso na política permite o uso de texto para mecanismos JavaScript como eval 
 - ' none ' – especificar isso restringe o conteúdo de qualquer origem a ser carregada 
-- dados:-especificando dados: Os URIs permitem que os criadores de conteúdo insiram arquivos pequenos embutidos em documentos. Uso não recomendado.  
+- dados:-especificando dados: URIs permite que os criadores de conteúdo insiram pequenos arquivos embutidos em documentos. Uso não recomendado.  
  
 >[!NOTE]
 >O AD FS usa JavaScript no processo de autenticação e, portanto, habilita o JavaScript, incluindo fontes ' não seguras ' e ' não seguras ' na política padrão.  
@@ -213,7 +213,7 @@ As seguintes fontes podem ser definidas para a política default-src:
 ### <a name="custom-headers"></a>Cabeçalhos personalizados 
 Além dos cabeçalhos de resposta de segurança listados acima (HSTS, CSP, X-Frame-Options, X-XSS-Protection e CORS), AD FS 2019 fornece a capacidade de definir novos cabeçalhos.  
  
-Exemplo: Para definir um novo cabeçalho "TestHeader" com o valor como "TestHeaderValue" 
+Exemplo: para definir um novo cabeçalho "TestHeader" com o valor como "TestHeaderValue" 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderValue" 
@@ -230,11 +230,11 @@ Use a tabela a seguir e os links para determinar quais navegadores da Web são c
 |-----|-----|
 |HTTP Strict-Transport-Security (HSTS)|[Compatibilidade do navegador HSTS](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#Browser_compatibility)|
 |Opções de X-frame|[Compatibilidade do navegador de opções X-frame](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility)| 
-|X-XSS-Protection|[Compatibilidade entre navegadores X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
+|X-XSS-Protection|[Compatibilidade entre navegadores X-XSS-Protection](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
 |CORS (compartilhamento de recursos entre origens)|[Compatibilidade de navegador CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |CSP (política de segurança de conteúdo)|[Compatibilidade do navegador CSP](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 
-## <a name="next"></a>Próximo
+## <a name="next"></a>Avançar
 
 - [Usar AD FS guias de solução de problemas de ajuda](https://aka.ms/adfshelp/troubleshooting )
 - [Solução de problemas do AD FS](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

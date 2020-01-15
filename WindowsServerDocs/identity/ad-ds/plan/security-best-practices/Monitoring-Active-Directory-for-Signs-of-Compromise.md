@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ba67a5fcc127bbe6ffce9454ff98fd3bc3725e55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367713"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949630"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Monitorar o Active Directory em busca de sinais de comprometimento
 
@@ -32,10 +32,10 @@ Essa falta de monitoramento de logs de eventos ativos continua sendo um ponto fr
 
 Veja a seguir links para o blog de suporte do Microsoft Official Enterprise. O conteúdo desses Blogs fornece conselhos, orientações e recomendações sobre auditoria que ajudarão você a aprimorar a segurança de sua infraestrutura de Active Directory e é um recurso valioso ao criar uma diretiva de auditoria.  
   
-* A [auditoria de acesso a objetos globais é mágica](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) -descreve um mecanismo de controle chamado configuração de política de auditoria avançada que foi adicionada ao Windows 7 e ao windows Server 2008 R2 que permite definir quais tipos de dados você deseja auditar facilmente e não para manipular scripts e Auditpol. exe.  
-* [Apresentando alterações de auditoria no windows 2008](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) -apresenta as alterações de auditoria feitas no windows Server 2008.  
-* [Truques de auditoria interessantes no Vista e 2008](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) -explica os recursos de auditoria interessantes do Windows Vista e do windows Server 2008 que podem ser usados para solucionar problemas ou ver o que está acontecendo em seu ambiente.  
-* A [loja única para auditoria no Windows server 2008 e no Windows Vista](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) -contém uma compilação de recursos de auditoria e informações contidas no windows Server 2008 e no Windows Vista.  
+* A [auditoria de acesso a objetos globais é mágica](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) -descreve um mecanismo de controle chamado configuração de política de auditoria avançada que foi adicionada ao Windows 7 e ao windows Server 2008 R2 que permite definir quais tipos de dados você deseja auditar facilmente e não para manipular scripts e Auditpol. exe.  
+* [Apresentando alterações de auditoria no windows 2008](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) -apresenta as alterações de auditoria feitas no windows Server 2008.  
+* [Truques de auditoria interessantes no Vista e 2008](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) -explica os recursos de auditoria interessantes do Windows Vista e do windows Server 2008 que podem ser usados para solucionar problemas ou ver o que está acontecendo em seu ambiente.  
+* A [loja única para auditoria no Windows server 2008 e no Windows Vista](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) -contém uma compilação de recursos de auditoria e informações contidas no windows Server 2008 e no Windows Vista.  
   
 Os links a seguir fornecem informações sobre melhorias na auditoria do Windows no Windows 8 e no Windows Server 2012, além de informações sobre AD DS auditoria no Windows Server 2008.  
   
@@ -69,7 +69,7 @@ Essa categoria gera muitos "ruídos" porque o Windows está constantemente tendo
 ##### <a name="audit-account-management"></a>Gerenciamento de conta de auditoria  
 Essa configuração de auditoria determina se o gerenciamento de usuários e grupos deve ser acompanhado. Por exemplo, os usuários e grupos devem ser controlados quando uma conta de usuário ou computador, um grupo de segurança ou um grupo de distribuição é criado, alterado ou excluído; Quando uma conta de usuário ou computador é renomeada, desabilitada ou habilitada; ou quando uma senha de usuário ou computador é alterada. Um evento pode ser gerado para usuários ou grupos que são adicionados ou removidos de outros grupos.  
   
-##### <a name="audit-directory-service-access"></a>Auditoria do acesso ao serviço de diretório  
+##### <a name="audit-directory-service-access"></a>Auditoria de acesso do serviço de diretório  
 
 Essa configuração de política determina se deve-se auditar o acesso de entidade de segurança a um objeto Active Directory que tenha sua própria SACL (lista de controle de acesso) do sistema especificada. Em geral, essa categoria só deve ser habilitada em controladores de domínio. Quando habilitada, essa configuração gera muitos "ruídos".  
   
@@ -114,7 +114,7 @@ A captura de tela a seguir mostra um exemplo de Auditpol. exe que lista a polít
 ![monitorando o AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> O Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto o Auditpol. exe faz isso. Consulte [obtendo a política de auditoria efetiva no Windows 7 e 2008 R2](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obter mais detalhes.  
+> O Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto o Auditpol. exe faz isso. Consulte [obtendo a política de auditoria efetiva no Windows 7 e 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obter mais detalhes.  
   
 Cada categoria principal tem várias subcategorias. Abaixo está uma lista de categorias, suas subcategorias e uma descrição de suas funções.  
   
@@ -190,7 +190,7 @@ Essa subcategoria relata quando um objeto de AD DS é acessado. Somente objetos 
 ##### <a name="directory-service-changes"></a>Alterações no serviço de diretório  
 Essa subcategoria relata alterações em objetos no AD DS. Os tipos de alterações relatadas são as operações criar, modificar, mover e restaurar que são executadas em um objeto. Auditoria de alteração do serviço de diretório, quando apropriado, indica os valores novos e antigos das propriedades alteradas dos objetos que foram alterados. Somente objetos com SACLs causam a geração de eventos de auditoria e somente quando eles são acessados de uma maneira que corresponde às suas entradas de SACL. Alguns objetos e propriedades não fazem eventos de auditoria serem gerados por causa de configurações na classe de objeto no esquema. Essa subcategoria se aplica somente aos controladores de domínio.  
   
-##### <a name="directory-service-replication"></a>Replicação do serviço de diretório  
+##### <a name="directory-service-replication"></a>Replicação do Serviço de Diretório  
 Essa subcategoria relata quando a replicação entre dois controladores de domínio começa e termina.  
   
 ##### <a name="detailed-directory-service-replication"></a>Replicação detalhada do serviço de diretório  
@@ -258,7 +258,7 @@ Essa configuração de política de segurança não está sendo usada no momento
   
 #### <a name="object-access"></a>Acesso a objeto  
   
-##### <a name="file-system"></a>Sistema de Arquivos  
+##### <a name="file-system"></a>Sistema de arquivos  
 Essa subcategoria relata quando os objetos do sistema de arquivos são acessados. Somente objetos do sistema de arquivos com SACLs causam a geração de eventos de auditoria e somente quando eles são acessados de maneira correspondente às entradas da SACL. Por si só, essa configuração de política não causará a auditoria de nenhum evento. Ele determina se é necessário auditar o evento de um usuário que acessa um objeto do sistema de arquivos que tem uma SACL (lista de controle de acesso) do sistema especificada, permitindo que a auditoria ocorra com eficiência.  
   
 Se a configuração de acesso ao objeto de auditoria estiver configurada como **êxito**, uma entrada de auditoria será gerada cada vez que um usuário acessar com êxito um objeto com uma SACL especificada. Se essa configuração de política estiver configurada como **falha**, uma entrada de auditoria será gerada cada vez que um usuário falhar em uma tentativa de acessar um objeto com uma SACL especificada.  
@@ -281,7 +281,7 @@ Essa subcategoria relata quando os aplicativos tentam gerar eventos de auditoria
 ##### <a name="handle-manipulation"></a>Manipulação de identificador  
 Essa subcategoria relata quando um identificador para um objeto é aberto ou fechado. Somente objetos com SACLs fazem com que esses eventos sejam gerados e somente se a operação de identificador tentada corresponder às entradas da SACL. Os eventos de manipulação de identificadores são gerados somente para tipos de objeto em que a subcategoria de acesso a objeto correspondente está habilitada (por exemplo, sistema de arquivos ou registro).  
   
-##### <a name="file-share"></a>Compartilhamento de arquivos  
+##### <a name="file-share"></a>Comp. de Arquivos  
 Essa subcategoria relata quando um compartilhamento de arquivos é acessado. Por si só, essa configuração de política não causará a auditoria de nenhum evento. Ele determina se deve-se auditar o evento de um usuário que acessa um objeto de compartilhamento de arquivo que tem uma SACL (lista de controle de acesso) do sistema especificada, permitindo que a auditoria ocorra com eficiência.  
   
 ##### <a name="filtering-platform-packet-drop"></a>Remoção de pacote de plataforma de filtragem  
@@ -293,7 +293,7 @@ Essa subcategoria relata quando as conexões são permitidas ou bloqueadas pela 
 ##### <a name="other-object-access-events"></a>Outros eventos de acesso de objeto  
 Essa subcategoria relata outros eventos relacionados ao acesso a objetos, como Agendador de Tarefas trabalhos e objetos COM+.  
   
-#### <a name="system"></a>System  
+#### <a name="system"></a>Sistema  
   
 ##### <a name="security-state-change"></a>Alteração do estado de segurança  
 Essa subcategoria relata as alterações no estado de segurança do sistema, como quando o subsistema de segurança é iniciado e interrompido.  
@@ -336,7 +336,7 @@ A política de auditoria avançada pode ser definida usando Active Directory ou 
 
 O Auditpol. exe (para configurar a política de auditoria do Windows) foi introduzido no Windows Server 2008 e no Windows Vista. Inicialmente, somente o Auditpol. exe poderia ser usado para definir a diretiva de auditoria avançada, mas Política de Grupo pode ser usado no Windows Server 2012, no Windows Server 2008 R2 ou no Windows Server 2008, Windows 8 e Windows 7.  
   
-Auditpol. exe é um utilitário de linha de comando. A sintaxe é a seguinte:  
+Auditpol. exe é um utilitário de linha de comando. A sintaxe é assim:  
   
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
   
@@ -355,7 +355,7 @@ Exemplos de sintaxe Auditpol. exe:
 
 A Microsoft fornece um [script de exemplo](https://support.microsoft.com/kb/921469) para os administradores que desejam definir a diretiva de auditoria avançada usando um script em vez de digitar manualmente cada comando Auditpol. exe.  
   
-**Observação** O Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto o Auditpol. exe faz isso. Consulte [obtendo a política de auditoria efetiva no Windows 7 e no windows 2008 R2](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obter mais detalhes.  
+**Observação** O Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto o Auditpol. exe faz isso. Consulte [obtendo a política de auditoria efetiva no Windows 7 e no windows 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obter mais detalhes.  
   
 #### <a name="other-auditpol-commands"></a>Outros comandos Auditpol
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efc296d43ff6cbe0c409f244160a9c14786d3be0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c8a357082ba902cddf97b7619228f859259b961
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378986"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947558"
 ---
 # <a name="cprofile"></a>cprofile
 
@@ -26,8 +26,4 @@ ms.locfileid: "71378986"
 
 O cprofile-cprofile foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
 
-Cprofile. exe: Limpar perfil. Essa ferramenta está incluída em todos os sistemas operacionais Windows Server 2003, exceto no Windows Server 2003, Web Edition. Para obter mais informações [, consulte ferramentas e configurações dos serviços de terminal](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).
-
-# #
-
-## #
+Cprofile. exe: limpar perfil. Essa ferramenta está incluída em todos os sistemas operacionais Windows Server 2003, exceto no Windows Server 2003, Web Edition. Para obter mais informações [, consulte ferramentas e configurações dos serviços de terminal](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).

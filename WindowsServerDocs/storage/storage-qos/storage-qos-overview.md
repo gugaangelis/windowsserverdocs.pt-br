@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 0e848260dd4ba3b37d1351fba7c24dd3cd283e69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393938"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950092"
 ---
 # <a name="storage-quality-of-service"></a>Qualidade de serviço do armazenamento
 
@@ -31,7 +31,7 @@ Você pode usar a QoS de armazenamento no Windows Server 2016 para realizar o se
 
 Este documento descreve como sua empresa pode se beneficiar da nova funcionalidade de QoS de armazenamento. Ele supõe que você tenha um conhecimento prático anterior sobre o Windows Server, Clustering de failover do Windows Server, Servidor de Arquivos de Escalabilidade Horizontal, Hyper-V e Windows PowerShell.
 
-## <a name="BKMK_Overview"></a>Sobre  
+## <a name="BKMK_Overview"></a>Visão geral  
 Esta seção descreve os requisitos para usar a QoS de armazenamento, uma visão geral de uma solução definida pelo software usando a QoS de armazenamento, e uma lista de terminologias relacionadas a QoS de armazenamento.  
 
 ### <a name="BKMK_Requirements"></a>Requisitos de QoS de armazenamento  
@@ -45,7 +45,7 @@ A QoS de armazenamento oferece suporte a dois cenários de implantação:
 
     Para a QoS de armazenamento, o Cluster de failover é necessário nos servidores de armazenamento, mas os servidores de computação não precisam estar em um cluster de failover. Todos os servidores (usados para computação e armazenamento) devem estar executando o Windows Server 2016.  
 
-    Se você não tiver um cluster de Servidor de Arquivos de Escalabilidade Horizontal implantado para fins de avaliação, para obter instruções passo a passo para criar um usando servidores existentes ou máquinas virtuais, consulte [Armazenamento do Windows Server 2012 R2: passo a passo com espaços de armazenamento, escalabilidade para SMB e VHDX compartilhado (físico)](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx).  
+    Se você não tiver um cluster de Servidor de Arquivos de Escalabilidade Horizontal implantado para fins de avaliação, para obter instruções passo a passo para criar um usando servidores existentes ou máquinas virtuais, consulte [Armazenamento do Windows Server 2012 R2: passo a passo com espaços de armazenamento, escalabilidade para SMB e VHDX compartilhado (físico)](https://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx).  
 
 -   **Hyper-V usando volumes compartilhados do cluster.** Esse cenário requer os seguintes itens:  
 
@@ -75,7 +75,7 @@ Quando há mudanças nas políticas de QoS de armazenamento ou nas demandas de d
 |InitiatorName|Nome da máquina virtual que é relatada para o Servidor de Arquivos de Escalabilidade Horizontal para cada fluxo.|  
 |InitiatorID|Um identificador correspondente à ID da máquina virtual.  Isso sempre pode ser usado para identificar exclusivamente as máquinas virtuais de fluxos individuais, mesmo se as máquinas virtuais tiverem o mesmo InitiatorName.|  
 |Política|As políticas de QoS de armazenamento são armazenadas no banco de dados do cluster e têm as seguintes propriedades: PolicyId, MinimumIOPS, MaximumIOPS, ParentPolicy e PolicyType.|  
-|`PolicyId`|Identificador exclusivo para uma política.  Ele é gerado por padrão, mas pode ser especificado, se isso for desejado.|  
+|PolicyId|Identificador exclusivo para uma política.  Ele é gerado por padrão, mas pode ser especificado, se isso for desejado.|  
 |MinimumIOPS|IOPs normalizados mínimos que serão fornecidos por uma política.  Também conhecidos como "Reserva".|  
 |MaximumIOPS|IOPs normalizados máximos que serão limitados por uma política.  Também conhecidos como "Limite".|  
 |Agregados |Um tipo de política onde o MinimumIOPS, o MaximumIOPS e a largura de banda especificados são compartilhados entre todos os fluxos atribuídos à política. Todos os VHDs atribuídos à política nesse sistema de armazenamento tem uma única alocação de largura de banda de E/S para eles para compartilhamento de todos.|  
@@ -122,7 +122,7 @@ O recurso opcional **RSAT-Hyper-V-Tools** inclui o módulo do Windows PowerShell
 -   Windows PowerShell: Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>Implantar máquinas virtuais para executar cargas de trabalho de teste  
-Você precisará de algumas máquinas virtuais armazenadas no Servidor de Arquivos de Escalabilidade Horizontal com cargas de trabalho relevantes.  Para obter algumas dicas sobre como simular a carga e fazer alguns testes de estresse, consulte a página a seguir para obter uma ferramenta recomendada (DiskSpd) e um exemplo de uso: [DiskSpd, PowerShell e desempenho do armazenamento: medir IOPs, taxa de transferência e latência para discos locais e compartilhamentos de arquivos de SMB.](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
+Você precisará de algumas máquinas virtuais armazenadas no Servidor de Arquivos de Escalabilidade Horizontal com cargas de trabalho relevantes.  Para obter algumas dicas sobre como simular a carga e fazer alguns testes de estresse, consulte a página a seguir para obter uma ferramenta recomendada (DiskSpd) e um exemplo de uso: [DiskSpd, PowerShell e desempenho do armazenamento: medir IOPs, taxa de transferência e latência para discos locais e compartilhamentos de arquivos de SMB.](https://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
 
 Os cenários de exemplo mostrados neste guia incluem cinco máquinas virtuais. BuildVM1, BuildVM2, BuildVM3 e BuildVM4 estão executando uma carga de trabalho da área de trabalho com demandas de armazenamento baixas a moderadas. TestVm1 está executando um parâmetro de comparação de processamento de transações online com demanda de armazenamento alta.  
 
@@ -812,7 +812,7 @@ while ($true)
 }  
 ```  
 
-## <a name="frequently-asked-questions"></a>Perguntas frequentes  
+## <a name="frequently-asked-questions"></a>perguntas frequentes  
 
 ### <a name="how-do-i-retain-a-storage-qos-policy-being-enforced-for-my-virtual-machine-if-i-move-its-vhdvhdx-files-to-another-storage-cluster"></a>Como posso manter uma política de QoS de armazenamento que está sendo imposta para minha máquina virtual se mover meus arquivos VHD/VHDx para outro cluster de armazenamento  
 
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Réplica de armazenamento no Windows Server 2016](../storage-replica/storage-replica-overview.md)  
 - [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  

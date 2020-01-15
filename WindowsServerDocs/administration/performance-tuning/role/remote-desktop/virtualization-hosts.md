@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: dbdf211138ddcd553171f3c8ce9c2e915ccf0057
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812275"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947124"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 
@@ -81,7 +81,7 @@ Essa configuração de implantação garante um desempenho econômico em que o d
 
 ### <a name="csv-cache"></a>Cache CSV
 
-O clustering de failover no Windows Server 2012 e superior fornece cache em CSV (volumes compartilhados do cluster). Isso é extremamente benéfico para coleções de área de trabalho virtual em pool em que a maioria das e/SS de leitura são provenientes do sistema operacional de gerenciamento. O cache CSV fornece um desempenho mais alto por várias ordens de magnitude, pois ele armazena em cache os blocos que são lidos mais de uma vez e os entrega da memória do sistema, o que reduz a e/s. Para obter mais informações sobre o cache CSV, consulte [como habilitar o cache CSV](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
+O clustering de failover no Windows Server 2012 e superior fornece cache em CSV (volumes compartilhados do cluster). Isso é extremamente benéfico para coleções de área de trabalho virtual em pool em que a maioria das e/SS de leitura são provenientes do sistema operacional de gerenciamento. O cache CSV fornece um desempenho mais alto por várias ordens de magnitude, pois ele armazena em cache os blocos que são lidos mais de uma vez e os entrega da memória do sistema, o que reduz a e/s. Para obter mais informações sobre o cache CSV, consulte [como habilitar o cache CSV](https://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
 
 ### <a name="pooled-virtual-desktops"></a>Áreas de trabalho virtuais em pool
 
@@ -106,7 +106,7 @@ Cada serviço específico deve ser avaliado adequadamente antes de qualquer impl
 | Compartilhamento de conexão com a Internet                  | Serviço centrado no consumidor                                                                                                                                                                                  |
 | Serviços estendidos do Media Center               | Serviço centrado no consumidor                                                                                                                                                                                  |
 > [!NOTE]
-> Esta lista não deve ser uma lista completa, pois as alterações afetarão as metas e os cenários pretendidos. Para obter mais informações, consulte [Hot off the Presss, obter agora, o script de otimização do VDI do Windows 8, cortesia de PFE!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
+> Esta lista não deve ser uma lista completa, pois as alterações afetarão as metas e os cenários pretendidos. Para obter mais informações, consulte [Hot off the Presss, obter agora, o script de otimização do VDI do Windows 8, cortesia de PFE!](https://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
 
 
 > [!NOTE]

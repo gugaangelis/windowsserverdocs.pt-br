@@ -10,14 +10,14 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/04/2018
-ms.openlocfilehash: 850aa376e8cd0060992573561a0c32af563b88ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bbb70657cb009ce760ccfe273b24c6df17d3ca7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405155"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949907"
 ---
-## <a name="resolve-vrss-issues"></a>Resolver problemas de vRSS
+# <a name="resolve-vrss-issues"></a>Resolver problemas de vRSS
 
 Se você tiver concluído todas as etapas de preparação e ainda não vir o tráfego de balanceamento de carga vRSS para a VM LPs, haverá possíveis problemas diferentes.
 
@@ -34,7 +34,7 @@ Se você tiver concluído todas as etapas de preparação e ainda não vir o tr�
 
    **Exibir as configurações atuais:** 
 
-   Execute o seguinte cmdlet do PowerShell na VM\(para vrss em uma VM\) ou no host \(para o vrss\)vNIC do host.
+   Execute o seguinte cmdlet do PowerShell na VM\(para vRSS em uma VM\) ou no host \(para o\)de vRSS do host vNIC.
 
    ```PowerShell
    Get-NetAdapterRss
@@ -48,7 +48,7 @@ Se você tiver concluído todas as etapas de preparação e ainda não vir o tr�
    Enable-NetAdapterRss *
    ```
    
-   Outra maneira em todo o sistema de configurar o RSS é usar o netsh. Uso 
+   Outra maneira em todo o sistema de configurar o RSS é usar o netsh. Use o modo 
    
     ```cmd
    netsh int tcp show global

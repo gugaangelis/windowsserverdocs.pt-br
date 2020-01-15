@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee1416a00fc0d347b7e05cb12c83f3d3532d693f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3d08e954b7a2a9ce58eb61dec54f2848ab68c12
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360144"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949160"
 ---
 # <a name="planning-for-compromise"></a>Planejar para comprometimento
 
@@ -108,7 +108,7 @@ Em uma migração Active Directory tradicional de uma floresta para outra, o atr
   
 A manutenção do histórico SID, no entanto, tem um problema comprovado em alguns ambientes porque popular os tokens de acesso dos usuários com os SIDs atuais e históricos pode resultar em inchar de token. O excesso de tokens é um problema no qual o número de SIDs que devem ser armazenados no token de acesso de um usuário usa ou excede a quantidade de espaço disponível no token.  
   
-Embora os tamanhos de token possam ser aumentados para uma extensão limitada, a solução definitiva para o excesso de tokens é reduzir o número de SIDs associados a contas de usuário, independentemente de racionalizar as associações de grupo, eliminar o histórico de SID ou uma combinação de ambos. Para obter mais informações sobre o inchar de token, consulte [MaxTokenSize e o token de Kerberos inflado](http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx).  
+Embora os tamanhos de token possam ser aumentados para uma extensão limitada, a solução definitiva para o excesso de tokens é reduzir o número de SIDs associados a contas de usuário, independentemente de racionalizar as associações de grupo, eliminar o histórico de SID ou uma combinação de ambos. Para obter mais informações sobre o inchar de token, consulte [MaxTokenSize e o token de Kerberos inflado](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx).  
   
 Em vez de migrar usuários de um ambiente herdado (especialmente um em que as associações de grupo e os históricos de SID podem ser comprometidos) usando o histórico de SID, considere aproveitar os aplicativos de metadiretório para "migrar" usuários, sem carregar históricos de SID na nova floresta. Quando as contas de usuário são criadas na nova floresta, você pode usar um aplicativo de metadiretório para mapear as contas para suas contas correspondentes na floresta herdada.  
   
@@ -119,7 +119,7 @@ Para fornecer as novas contas de usuário acesso aos recursos na floresta herdad
 ### <a name="servers-and-workstations"></a>Servidores e estações de trabalho  
 Em uma migração tradicional de uma floresta Active Directory para outra, a migração de computadores geralmente é relativamente simples em comparação com a migração de usuários, grupos e aplicativos. Dependendo da função do computador, a migração para uma nova floresta pode ser tão simples quanto a separação de um domínio antigo e a junção de um novo. No entanto, migrar as contas de computador intactas em uma floresta original derrota a finalidade de criar um ambiente novo. Em vez de migrar contas de computador (potencialmente comprometidas, configuradas incorretamente ou desatualizadas) para uma nova floresta, você deve instalar com atualização servidores e estações de trabalho no novo ambiente. Você pode migrar dados de sistemas na floresta herdada para sistemas na floresta original, mas não os sistemas que hospedam os dados.  
   
-### <a name="applications"></a>Aplicativos  
+### <a name="applications"></a>Aplicativo  
 
 Os aplicativos podem apresentar o desafio mais significativo em qualquer migração de uma floresta para outra, mas no caso de uma migração "nonmigratory", um dos princípios mais básicos que você deve aplicar é que os aplicativos na floresta original devem ser atuais, com suporte e instalado recentemente. Os dados podem ser migrados de instâncias do aplicativo na floresta antiga sempre que possível. Em situações em que um aplicativo não pode ser "recriado" na floresta original, você deve considerar abordagens como destruição criativa ou isolamento de aplicativos herdados, conforme descrito na seção a seguir.  
   
@@ -144,7 +144,7 @@ Na maioria das organizações, os usuários que têm acesso às informações ma
   
 Por exemplo, você pode definir uma política na qual executivos e outros VIPs são necessários para usar estações de trabalho seguras para acessar dados e sistemas confidenciais, permitindo que eles usem seus outros dispositivos para acessar dados menos confidenciais. Esse é um princípio simples para os usuários se lembrarem, mas você pode implementar vários controles de back-end para ajudar a impor a abordagem.  
 
-Você pode usar a [garantia de mecanismo de autenticação](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx) para permitir que os usuários acessem dados confidenciais somente se tiverem feito logon em seus sistemas seguros usando seus cartões inteligentes e puderem usar restrições de direitos de usuário e IPsec para controlar os sistemas dos quais eles podem se conectar a repositórios de dados confidenciais. Você pode usar o [Microsoft Data Classification Toolkit](https://www.microsoft.com/download/details.aspx?id=27123) para criar uma infraestrutura de classificação de arquivos robusta e pode implementar o [controle de acesso dinâmico](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx) para restringir o acesso a dados com base nas características de uma tentativa de acesso, traduzindo as regras de negócio para controles técnicos.  
+Você pode usar a [garantia de mecanismo de autenticação](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx) para permitir que os usuários acessem dados confidenciais somente se tiverem feito logon em seus sistemas seguros usando seus cartões inteligentes e puderem usar restrições de direitos de usuário e IPsec para controlar os sistemas dos quais eles podem se conectar a repositórios de dados confidenciais. Você pode usar o [Microsoft Data Classification Toolkit](https://www.microsoft.com/download/details.aspx?id=27123) para criar uma infraestrutura de classificação de arquivos robusta e pode implementar o [controle de acesso dinâmico](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx) para restringir o acesso a dados com base nas características de uma tentativa de acesso, traduzindo as regras de negócio para controles técnicos.  
   
 Da perspectiva do usuário, acesso a dados confidenciais de um sistema protegido "apenas funciona" e tentando fazer isso por meio de um sistema desprotegido "simplesmente não". No entanto, da perspectiva de monitoramento e gerenciamento de seu ambiente, você está ajudando a criar padrões identificáveis em como os usuários acessam dados e sistemas confidenciais, facilitando a detecção de tentativas de acesso anômalas.  
   

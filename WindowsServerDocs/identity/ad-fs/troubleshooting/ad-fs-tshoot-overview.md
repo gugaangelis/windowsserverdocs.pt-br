@@ -8,18 +8,18 @@ ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 416d9a68326927fcdf5884ef794a74e24a25bb8b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5fc5c2384a6d8d13f807a1ce99c5db78bee5b108
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366096"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950138"
 ---
 # <a name="troubleshooting-ad-fs"></a>Solução de problemas do AD FS
 AD FS tem muitas partes móveis, apresenta muitas coisas diferentes e tem várias dependências diferentes.  Naturalmente, isso pode dar ao aumento de vários problemas.  Este documento foi projetado para ajudá-lo a começar a solucionar esses problemas.  Este documento apresentará a você as áreas típicas nas quais você deve se concentrar, como habilitar recursos para informações adicionais e várias ferramentas que podem ser usadas para rastrear problemas.  
 
 >[!NOTE]
->Para obter informações adicionais, consulte [ajuda do ADFS](http://adfshelp.microsoft.com) que fornece ferramentas efetivas em um único lugar que facilita para os usuários e administradores resolver problemas de autenticação em um ritmo mais rápido. 
+>Para obter informações adicionais, consulte [ajuda do ADFS](https://adfshelp.microsoft.com) que fornece ferramentas efetivas em um único lugar que facilita para os usuários e administradores resolver problemas de autenticação em um ritmo mais rápido. 
 
 
 ## <a name="what-to-check-first"></a>O que verificar primeiro
@@ -39,6 +39,6 @@ Antes de se aprofundar na solução de problemas aprofundada, há algumas coisas
 |[Fiddler](ad-fs-tshoot-fiddler.md)|Informações sobre como instalar e usar o Fiddler|
 |[WS-Federation com Fiddler](ad-fs-tshoot-fiddler-ws-fed.md)|Rastreamento de Fiddler detalhado de uma interação do WS-Federation|
 |[Regras de declaração](ad-fs-tshoot-claims-rules.md)|Informações sobre como solucionar problemas de regras de declaração e sua sintaxe|
-|[Autenticação integrada do Windows](ad-fs-tshoot-iwa.md)|Informações sobre como solucionar problemas de autenticação integrada.|
+|[Autenticação Integrada do Windows](ad-fs-tshoot-iwa.md)|Informações sobre como solucionar problemas de autenticação integrada.|
 |[Azure AD](ad-fs-tshoot-azure.md)|Informações sobre como solucionar problemas de AD FS interação com o Azure AD.|
 |[Analisador de diagnóstico de AD FS](ad-fs-diagnostics-analyzer.md)|AD FS o help Diagnostics Analyzer pode ajudar a executar verificações básicas de AD FS usando o módulo diagnóstico do PowerShell. 

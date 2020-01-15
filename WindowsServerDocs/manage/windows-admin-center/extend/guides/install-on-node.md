@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c5c87be882a32958946198eb6ff1b9d7000577e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a93a1105862ffbf4fcbd1d23b15d9bcaa6010dc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385293"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950507"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>Instalar a carga de extensão em um nó gerenciado
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 ## <a name="setup"></a>Configuração
 > [!NOTE]
@@ -30,9 +30,9 @@ Se você ainda não fez isso, crie uma [extensão de ferramenta](../develop-tool
 | ```{!Company Name}``` | O nome da sua empresa (com espaços) | ```Contoso``` |
 | ```{!Tool Name}``` | O nome da ferramenta (com espaços) | ```InstallOnNode``` |
 
-Dentro de sua pasta de extensão de ferramenta, crie uma pasta ```Node``` (```{!Tool Name}\Node```). Qualquer coisa colocada nesta pasta será copiada para o nó gerenciado ao usar essa API. Adicione todos os arquivos necessários para seu caso de uso. 
+Dentro de sua pasta de extensão de ferramenta, crie uma pasta de ```Node``` (```{!Tool Name}\Node```). Qualquer coisa colocada nesta pasta será copiada para o nó gerenciado ao usar essa API. Adicione todos os arquivos necessários para seu caso de uso. 
 
-Crie também um script ```{!Tool Name}\Node\installNode.ps1```. Esse script será executado no nó gerenciado depois que todos os arquivos forem copiados da pasta ```{!Tool Name}\Node``` para o nó gerenciado. Adicione qualquer lógica adicional para seu caso de uso. Um arquivo de exemplo ```{!Tool Name}\Node\installNode.ps1```:
+Crie também um script de ```{!Tool Name}\Node\installNode.ps1```. Esse script será executado no nó gerenciado depois que todos os arquivos forem copiados da pasta ```{!Tool Name}\Node``` para o nó gerenciado. Adicione qualquer lógica adicional para seu caso de uso. Um arquivo de ```{!Tool Name}\Node\installNode.ps1``` de exemplo:
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -111,7 +111,7 @@ Também atualizar ```\src\app\default.component.html``` para:
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
 <p *ngIf="response">{{response}}</p>
 ```
-E, por último ```\src\app\default.module.ts```:
+E ```\src\app\default.module.ts```por último:
 ``` ts
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -138,13 +138,13 @@ A última etapa é criar um pacote NuGet com os arquivos que adicionamos e, em s
 
 Siga o guia de [extensões de publicação](../publish-extensions.md) se você não tiver criado um pacote de extensão antes. 
 > [!IMPORTANT]
-> No seu arquivo. nuspec para essa extensão, é importante que o valor ```<id>``` corresponda ao nome no ```manifest.json``` do seu projeto e o ```<version>``` corresponde ao que foi adicionado ao ```\src\app\default.component.ts```. Adicione também uma entrada em ```<files>```: 
+> No seu arquivo. nuspec para essa extensão, é importante que o valor de ```<id>``` corresponda ao nome na ```manifest.json``` do seu projeto e o ```<version>``` corresponda ao que foi adicionado ao ```\src\app\default.component.ts```. Adicione também uma entrada em ```<files>```: 
 > 
 > ```<file src="Node\**\*.*" target="Node" />```.
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>contoso.install-on-node</id>
     <version>1.0.0</version>

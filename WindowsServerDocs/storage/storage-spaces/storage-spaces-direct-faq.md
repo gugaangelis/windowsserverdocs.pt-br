@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df9dac8c761a83a13fb937a99cba3697dce95201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402793"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950236"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>Espaços de Armazenamento Diretos-perguntas frequentes (FAQ)
 
@@ -42,9 +42,9 @@ Por padrão, quando você configura Espaços de Armazenamento Diretos usando o c
  
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>É possível adicionar um disco de rotação (HDD) ao pool de Espaços de Armazenamento Diretos depois de você ter criado Espaços de Armazenamento Diretos com dispositivos SSD?
 
-Nº Por padrão, se você usar o tipo de dispositivo único para criar o pool, ele não configurará discos de cache e todos os discos seriam usados para a capacidade. Você pode adicionar discos de NVME à configuração, e discos de NVME seriam configurados para cache.
+Não. Por padrão, se você usar o tipo de dispositivo único para criar o pool, ele não configurará discos de cache e todos os discos seriam usados para a capacidade. Você pode adicionar discos de NVME à configuração, e discos de NVME seriam configurados para cache.
  
-## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>Configurei um domínio de falha de 2 racks: O RACK 1 tem 2 domínios de falha, o RACK 2 tem um domínio de falha. Cada servidor tem 4 dispositivos de 100 GB de capacidade. Posso usar todos os 1.200 GB de espaço do pool?
+## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>Configurei um domínio de falha de 2 rack: o RACK 1 tem 2 domínios de falha, o RACK 2 tem um domínio de falha. Cada servidor tem 4 dispositivos de 100 GB de capacidade. Posso usar todos os 1.200 GB de espaço do pool?
 
 Não, você pode usar apenas 800 GB. Em um domínio de falha de rack, você deve verificar se tem uma configuração de espelho de duas vias para que cada Chuck e seu terreno duplicado em um rack diferente.
  
@@ -58,7 +58,7 @@ Use o utilitário interno PerfMon para inspecionar os erros de cache. Examine as
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>Há uma calculadora que mostra o tamanho exato dos discos que estão sendo separados para o cache, a capacidade e a resiliência que me permitirão planejar melhor?
 
-Você pode usar a calculadora de espaços de armazenamento para ajudar com seu planejamento. Ele está disponível em http://aka.ms/s2dcalc.
+Você pode usar a calculadora de espaços de armazenamento para ajudar com seu planejamento. Ele está disponível em https://aka.ms/s2dcalc.
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>Qual é a melhor configuração que você recomendaria ao configurar 6 servidores e três racks?
 
@@ -76,7 +76,7 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 
 Recomendamos que você entre em contato com seu fornecedor de hardware para verificar o suporte. Os fornecedores de hardware testam a solução em seu hardware e comentam se há suporte ou não. Por exemplo, no momento da redação deste artigo, servidores como R730/R730xd/R630 com mais de 8 slots de unidade podem dar suporte a SES e são compatíveis com Espaços de Armazenamento Diretos. A Dell dá suporte apenas ao HBA330 com Espaços de Armazenamento Diretos. R620 não dá suporte a SES e não é compatível com Espaços de Armazenamento Diretos.
 
-Para obter mais informações de suporte de hardware, acesse o seguinte site: Catálogo do Windows Server
+Para obter mais informações de suporte de hardware, acesse o seguinte site: catálogo do Windows Server
  
 ## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>Como Espaços de Armazenamento Diretos fazer uso do SES?
 

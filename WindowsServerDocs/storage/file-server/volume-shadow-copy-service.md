@@ -1,19 +1,19 @@
 ---
-title: Serviço de Cópias de Sombra de Volume
+title: Serviço de cópia de sombra de volume
 ms.date: 01/30/2019
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 19e07504dad49c5e23cc49630015529e2a746aa7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2e8d3bfb5ef907ffb522b5b7be31d1def3001c8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394451"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949686"
 ---
-# <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume
+# <a name="volume-shadow-copy-service"></a>Serviço de cópia de sombra de volume
 
 Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 e Windows Server 2008 R2, Windows Server 2008, Windows 10, Windows 8.1, Windows 8, Windows 7
 
@@ -39,13 +39,13 @@ O VSS coordena as ações que são necessárias para criar uma cópia de sombra 
 
 Os recursos e aplicativos do Windows que usam o VSS incluem o seguinte:
 
-  - [Backup do Windows Server](http://go.microsoft.com/fwlink/?linkid=180891) (http://go.microsoft.com/fwlink/?LinkId=180891)  
+  - [Backup do Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)  
       
-  - [Cópias de sombra de pastas compartilhadas](http://go.microsoft.com/fwlink/?linkid=142874) (http://go.microsoft.com/fwlink/?LinkId=142874)  
+  - [Cópias de sombra de pastas compartilhadas](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)  
       
-  - [Data Protection Manager do System Center](http://go.microsoft.com/fwlink/?linkid=180892) (http://go.microsoft.com/fwlink/?LinkId=180892)  
+  - [Data Protection Manager do System Center](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)  
       
-  - [Restauração do sistema](http://go.microsoft.com/fwlink/?linkid=180893) (http://go.microsoft.com/fwlink/?LinkId=180893)  
+  - [Restauração do sistema](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)  
       
 
 ## <a name="how-volume-shadow-copy-service-works"></a>Como Serviço de Cópias de Sombra de Volume funciona
@@ -227,7 +227,7 @@ Um provedor de cópia de sombra baseado em software deve manter uma exibição "
 
 Um provedor de software é aplicável a uma variedade maior de plataformas de armazenamento do que um provedor baseado em hardware, e ele deve funcionar com discos básicos ou volumes lógicos igualmente bem. (Um volume lógico é um volume que é criado pela combinação de espaço livre de dois ou mais discos.) Em contraste com as cópias de sombra de hardware, os provedores de software consomem recursos do sistema operacional para manter a cópia de sombra.
 
-Para obter mais informações sobre discos básicos, consulte [o que são discos e volumes básicos?](http://go.microsoft.com/fwlink/?linkid=180894) (http://go.microsoft.com/fwlink/?LinkId=180894) no TechNet.
+Para obter mais informações sobre discos básicos, consulte [o que são discos e volumes básicos?](https://go.microsoft.com/fwlink/?linkid=180894) (https://go.microsoft.com/fwlink/?LinkId=180894) no TechNet.
 
 ### <a name="system-provider"></a>Provedor do sistema
 
@@ -247,11 +247,11 @@ O sistema operacional Windows inclui um conjunto de gravadores VSS que são resp
 
 Para obter mais informações sobre esses gravadores, consulte os seguintes sites da Microsoft:
 
-  - [Gravadores VSS in-box](http://go.microsoft.com/fwlink/?linkid=180895) (http://go.microsoft.com/fwlink/?LinkId=180895)  
+  - [Gravadores VSS in-box](https://go.microsoft.com/fwlink/?linkid=180895) (https://go.microsoft.com/fwlink/?LinkId=180895)  
       
-  - [Novos gravadores do VSS in-box para Windows Server 2008 e Windows Vista SP1](http://go.microsoft.com/fwlink/?linkid=180896) (http://go.microsoft.com/fwlink/?LinkId=180896)  
+  - [Novos gravadores do VSS in-box para Windows Server 2008 e Windows Vista SP1](https://go.microsoft.com/fwlink/?linkid=180896) (https://go.microsoft.com/fwlink/?LinkId=180896)  
       
-  - [Novos gravadores do VSS in-box para Windows Server 2008 R2 e Windows 7](http://go.microsoft.com/fwlink/?linkid=180897) (http://go.microsoft.com/fwlink/?LinkId=180897)  
+  - [Novos gravadores do VSS in-box para Windows Server 2008 R2 e Windows 7](https://go.microsoft.com/fwlink/?linkid=180897) (https://go.microsoft.com/fwlink/?LinkId=180897)  
       
 
 ## <a name="how-shadow-copies-are-used"></a>Como as cópias de sombra são usadas
@@ -298,7 +298,7 @@ A ressincronização de LUN é diferente da troca de LUN. Uma permuta de LUN é 
 
 Cópias de Sombra para Pastas Compartilhadas usa o Serviço de Cópias de Sombra de Volume para fornecer cópias point-in-time de arquivos localizados em um recurso de rede compartilhado, como um servidor de arquivos. Com o Cópias de Sombra para Pastas Compartilhadas, os usuários podem recuperar rapidamente os arquivos excluídos ou alterados que estão armazenados na rede. Como eles podem fazer isso sem a assistência do administrador, Cópias de Sombra para Pastas Compartilhadas pode aumentar a produtividade e reduzir os custos administrativos.
 
-Para obter mais informações sobre cópias de sombra para pastas compartilhadas, consulte [cópias de sombra para pastas compartilhadas](http://go.microsoft.com/fwlink/?linkid=180898) (http://go.microsoft.com/fwlink/?LinkId=180898) no TechNet.
+Para obter mais informações sobre cópias de sombra para pastas compartilhadas, consulte [cópias de sombra para pastas compartilhadas](https://go.microsoft.com/fwlink/?linkid=180898) (https://go.microsoft.com/fwlink/?LinkId=180898) no TechNet.
 
 ### <a name="data-mining-by-using-transportable-shadow-copies"></a>Mineração de dados usando cópias de sombra transportáveis
 
@@ -328,9 +328,9 @@ As cópias de sombra são somente leitura. Se você quiser converter uma cópia 
 
 Serviço de Cópias de Sombra de Volume transporte é uma solução avançada em computadores que executam o Windows Server 2003 Enterprise Edition, o Windows Server 2003 Datacenter Edition, o Windows Server 2008 ou o Windows Server 2008 R2. Ele só funcionará se houver um provedor de hardware na matriz de armazenamento. O transporte de cópia de sombra pode ser usado para várias finalidades, incluindo backups em fita, Data Mining e teste.
 
-## <a name="frequently-asked-questions"></a>Perguntas frequentes
+## <a name="frequently-asked-questions"></a>perguntas frequentes
 
-Este FAQ responde perguntas sobre o Serviço de Cópias de Sombra de Volume (VSS) para administradores do sistema. Para obter informações sobre interfaces de programação de aplicativo VSS, consulte [serviço de cópias de sombra de volume](http://go.microsoft.com/fwlink/?linkid=180899) (http://go.microsoft.com/fwlink/?LinkId=180899) na biblioteca do Windows Developer Center.
+Este FAQ responde perguntas sobre o Serviço de Cópias de Sombra de Volume (VSS) para administradores do sistema. Para obter informações sobre interfaces de programação de aplicativo VSS, consulte [serviço de cópias de sombra de volume](https://go.microsoft.com/fwlink/?linkid=180899) (https://go.microsoft.com/fwlink/?LinkId=180899) na biblioteca do Windows Developer Center.
 
 ### <a name="when-was-volume-shadow-copy-service-introduced-on-which-windows-operating-system-versions-is-it-available"></a>Quando a Serviço de Cópias de Sombra de Volume foi introduzida? Em quais versões do sistema operacional Windows ele está disponível?
 
@@ -362,9 +362,9 @@ Depende do software de backup usado. Se você criar uma cópia de sombra no Wind
 
 Para obter mais informações, consulte os seguintes sites da Web do Microsoft TechNet:
 
-  - [Restauração do sistema](http://go.microsoft.com/fwlink/?linkid=157113) (http://go.microsoft.com/fwlink/?LinkID=157113)  
+  - [Restauração do sistema](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)  
       
-  - [Backup do Windows Server](http://go.microsoft.com/fwlink/?linkid=180891) (http://go.microsoft.com/fwlink/?LinkID=180891)  
+  - [Backup do Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)  
       
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>Posso excluir arquivos de uma cópia de sombra para economizar espaço?
@@ -384,7 +384,7 @@ Para excluir arquivos específicos de cópias de sombra, use a seguinte chave do
 > <LI>Os arquivos são excluídos de uma cópia de sombra em uma base de melhor esforço. Isso significa que não há garantia de que eles sejam excluídos.<BR><BR></LI></UL>
 
 
-Para obter mais informações, consulte [excluindo arquivos de cópias de sombra](http://go.microsoft.com/fwlink/?linkid=180904) (http://go.microsoft.com/fwlink/?LinkId=180904) no msdn.
+Para obter mais informações, consulte [excluindo arquivos de cópias de sombra](https://go.microsoft.com/fwlink/?linkid=180904) (https://go.microsoft.com/fwlink/?LinkId=180904) no msdn.
 
 ### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Meu programa de backup que não é da Microsoft falhou com um erro de VSS. O que posso fazer?
 
@@ -392,7 +392,7 @@ Verifique a seção de suporte ao produto do site da empresa que criou o program
 
 Os administradores do sistema podem usar as informações de solução de problemas do VSS no seguinte site da Microsoft TechNet Library para coletar informações de diagnóstico sobre problemas relacionados ao VSS.
 
-Para obter mais informações, consulte [serviço de cópias de sombra de volume](http://go.microsoft.com/fwlink/?linkid=180905) (http://go.microsoft.com/fwlink/?LinkId=180905) no TechNet.
+Para obter mais informações, consulte [serviço de cópias de sombra de volume](https://go.microsoft.com/fwlink/?linkid=180905) (https://go.microsoft.com/fwlink/?LinkId=180905) no TechNet.
 
 ### <a name="what-is-the-diff-area"></a>O que é a "área de comparação"?
 
@@ -431,7 +431,7 @@ O número máximo de cópias de sombra de software para cada volume é 512. No e
 
 Digite o comando **vssadmin Resize ShadowStorage** .
 
-Para obter mais informações, consulte [vssadmin Resize ShadowStorage](http://go.microsoft.com/fwlink/?linkid=180906) (http://go.microsoft.com/fwlink/?LinkId=180906) no TechNet.
+Para obter mais informações, consulte [vssadmin Resize ShadowStorage](https://go.microsoft.com/fwlink/?linkid=180906) (https://go.microsoft.com/fwlink/?LinkId=180906) no TechNet.
 
 ### <a name="what-happens-when-i-run-out-of-space"></a>O que acontecerá quando eu ficar sem espaço?
 
@@ -441,9 +441,9 @@ As cópias de sombra do volume são excluídas, começando com a cópia de sombr
 
 O sistema operacional Windows fornece as seguintes ferramentas para trabalhar com o VSS:
 
-  - [DiskShadow](http://go.microsoft.com/fwlink/?linkid=180907) (http://go.microsoft.com/fwlink/?LinkId=180907)  
+  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)  
       
-  - [VssAdmin](http://go.microsoft.com/fwlink/?linkid=84008) (http://go.microsoft.com/fwlink/?LinkId=84008)  
+  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)  
       
 
 ### <a name="diskshadow"></a>DiskShadow
@@ -503,9 +503,9 @@ Essa chave é usada para especificar quais usuários têm acesso a cópias de so
 
 Para obter mais informações, consulte as seguintes entradas no site do MSDN:
 
-  - [Considerações de segurança para gravadores](http://go.microsoft.com/fwlink/?linkid=157739) (http://go.microsoft.com/fwlink/?LinkId=157739)  
+  - [Considerações de segurança para gravadores](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)  
       
-  - [Considerações de segurança para solicitantes](http://go.microsoft.com/fwlink/?linkid=180908) (http://go.microsoft.com/fwlink/?LinkId=180908)  
+  - [Considerações de segurança para solicitantes](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)  
       
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
@@ -514,7 +514,7 @@ Essa chave especifica o número máximo de cópias de sombra acessíveis pelo cl
 
 Para obter mais informações, consulte a seguinte entrada no site da MSDN:
 
-**MaxShadowCopies** em [chaves do registro para backup e restauração](http://go.microsoft.com/fwlink/?linkid=180909) (http://go.microsoft.com/fwlink/?LinkId=180909)
+**MaxShadowCopies** em [chaves do registro para backup e restauração](https://go.microsoft.com/fwlink/?linkid=180909) (https://go.microsoft.com/fwlink/?LinkId=180909)
 
 ### <a name="mindiffareafilesize"></a>MinDiffAreaFileSize
 
@@ -522,7 +522,7 @@ Essa chave especifica o tamanho inicial mínimo, em MB, da área de armazenament
 
 Para obter mais informações, consulte a seguinte entrada no site da MSDN:
 
-**MinDiffAreaFileSize** em [chaves do registro para backup e restauração](http://go.microsoft.com/fwlink/?linkid=180910) (http://go.microsoft.com/fwlink/?LinkId=180910)
+**MinDiffAreaFileSize** em [chaves do registro para backup e restauração](https://go.microsoft.com/fwlink/?linkid=180910) (https://go.microsoft.com/fwlink/?LinkId=180910)
 
 `##`# ' versões de sistema operacional com suporte
 
@@ -561,12 +561,12 @@ A tabela a seguir lista as versões mínimas de sistema operacional com suporte 
 <tr class="even">
 <td><p>Cópias de sombra de hardware</p></td>
 <td><p>Nenhum com suporte</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>Versões anteriores do Windows Server</p></td>
 <td><p>Windows Vista</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="even">
 <td><p>Recuperação rápida usando permuta de LUN</p></td>
@@ -582,7 +582,7 @@ A tabela a seguir lista as versões mínimas de sistema operacional com suporte 
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />Observação</th>
+<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />Observação</th>
 </tr>
 </thead>
 <tbody>
@@ -600,7 +600,7 @@ A tabela a seguir lista as versões mínimas de sistema operacional com suporte 
 <tr class="even">
 <td><p>Cópias de Sombra para Pastas Compartilhadas</p></td>
 <td><p>Nenhum com suporte</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>Cópias de sombra recuperadas automaticamente transportáveis</p></td>
@@ -609,8 +609,8 @@ A tabela a seguir lista as versões mínimas de sistema operacional com suporte 
 </tr>
 <tr class="even">
 <td><p>Sessões de backup simultâneas (até 64)</p></td>
-<td><p>Windows XP</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows XP</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>Sessão de restauração única simultânea com backups</p></td>
@@ -619,12 +619,12 @@ A tabela a seguir lista as versões mínimas de sistema operacional com suporte 
 </tr>
 <tr class="even">
 <td><p>Até 8 sessões de restauração simultâneas com backups</p></td>
-<td><p>Windows 7</p></td>
-<td><p>Windows Server 2003 R2</p></td>
+<td><p>Windows 7</p></td>
+<td><p>Windows Server 2003 R2</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 [Serviço de Cópias de Sombra de Volume no Windows Developer Center](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

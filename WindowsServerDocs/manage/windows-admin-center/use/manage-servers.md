@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903715"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950488"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903715"
 
 > [!Tip]
 > Novo no Windows Admin Center?
-> [Saiba mais sobre o Windows Admin Center](../understand/windows-admin-center.md) ou [Baixe agora](https://aka.ms/windowsadmincenter).
+> [Baixe ou saiba mais sobre o centro de administração do Windows](../overview.md).
 
 ## <a name="managing-windows-server-machines"></a>Como gerenciar máquinas do Windows Server
 
@@ -77,7 +77,7 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | [Serviço de migração de armazenamento](#storage-migration-service) | Migrar servidores e compartilhamentos de arquivos para o Azure ou o Windows Server 2019 |
 | [Réplica de armazenamento](#storage-replica) | Usar a réplica de armazenamento para gerenciar a replicação de armazenamento de servidor para servidor |
 | [Insights do sistema](#system-insights) | O System insights oferece maior insight sobre o funcionamento do seu servidor. |
-| [Updates](#updates) | Exibir instalado e verificar se há novas atualizações |
+| [Atualizações](#updates) | Exibir instalado e verificar se há novas atualizações |
 | [Máquinas Virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
 | [Comutadores virtuais](#virtual-switches) | Exibir e gerenciar comutadores virtuais |
 
@@ -322,7 +322,7 @@ Os recursos a seguir têm suporte em processos:
 
 - Procurar e Pesquisar processos em execução
 - Exibir detalhes do processo
-- Inicie um processo
+- Iniciar um processo
 - Encerrar um processo
 - Criar um despejo de processo
 - Localizar identificadores de processo
@@ -372,7 +372,7 @@ Os recursos a seguir têm suporte em funções e recursos:
 
 [**Exibir comentários e recursos propostos para funções e recursos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BRoles%20and%20Features%5D).
 
-## <a name="scheduled-tasks"></a>TAREFAS AGENDADAS
+## <a name="scheduled-tasks"></a>Tarefas Agendadas
 
 **As tarefas agendadas** permitem que você gerencie tarefas agendadas em um computador ou servidor.
 

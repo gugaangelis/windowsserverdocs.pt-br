@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7221d3ea94ff9f2d7fca8e95cee66597e2dc6270
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402067"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950268"
 ---
 # <a name="smb-security-enhancements"></a>Melhorias de segurança do SMB
 
@@ -21,7 +21,7 @@ ms.locfileid: "71402067"
 
 Este tópico explica os aprimoramentos de segurança SMB no Windows Server 2012 R2, no Windows Server 2012 e no Windows Server 2016.
 
-## <a name="smb-encryption"></a>Criptografia SMB
+## <a name="smb-encryption"></a>Criptografia do SMB
 
 A criptografia SMB fornece criptografia de ponta a ponta de dados SMB e protege dados contra ocorrências de espionagem em redes não confiáveis. Você pode implantar a criptografia SMB com esforço mínimo, mas pode exigir pequenos custos adicionais para hardware ou software especializado. Ele não tem requisitos de IPsec (Internet Protocol Security) ou de WAN Accelerators. A criptografia SMB pode ser configurada por compartilhamento ou para todo o servidor de arquivos, e pode ser habilitada para uma variedade de cenários em que os dados atravessam redes não confiáveis.
 
@@ -86,11 +86,11 @@ O recurso de negociação de dialeto seguro descrito na próxima seção impede 
 
 O SMB 3,0 é capaz de detectar ataques man-in-the-Middle que tentam fazer o downgrade do protocolo SMB 2,0 ou SMB 3,0 ou os recursos que o cliente e o servidor negociam. Quando esse ataque é detectado pelo cliente ou pelo servidor, a conexão é desconectada e a ID de evento 1005 é registrada no log de eventos Microsoft-Windows-SmbServer/Operational. A negociação de dialeto seguro não pode detectar ou impedir Downgrades de SMB 2,0 ou 3,0 para SMB 1,0. Por isso, e para aproveitar os recursos completos da criptografia SMB, é altamente recomendável que você desabilite o servidor SMB 1,0. Para obter mais informações, consulte [desabilitando o SMB 1,0](#disabling-smb-10).
 
-O recurso de negociação de dialeto seguro descrito na próxima seção impede um ataque man-in-the-Middle de fazer downgrade de uma conexão do SMB 3 para o SMB 2 (que usaria acesso não criptografado); no entanto, ele não impede o downgrade para o SMB 1, o que também resultaria em acesso não criptografado. Para obter mais informações sobre possíveis problemas com implementações anteriores do SMB que não são do Windows, consulte a [base de dados de conhecimento Microsoft](http://support.microsoft.com/kb/2686098).
+O recurso de negociação de dialeto seguro descrito na próxima seção impede um ataque man-in-the-Middle de fazer downgrade de uma conexão do SMB 3 para o SMB 2 (que usaria acesso não criptografado); no entanto, ele não impede o downgrade para o SMB 1, o que também resultaria em acesso não criptografado. Para obter mais informações sobre possíveis problemas com implementações anteriores do SMB que não são do Windows, consulte a [base de dados de conhecimento Microsoft](https://support.microsoft.com/kb/2686098).
 
 ## <a name="new-signing-algorithm"></a>Novo algoritmo de assinatura
 
-O SMB 3,0 usa um algoritmo de criptografia mais recente para assinatura: Criptografia AES (AES)-código de autenticação de mensagem com base em codificação (CMAC). O SMB 2,0 usou o algoritmo de criptografia HMAC-SHA256 mais antigo. AES-CMAC e AES-CCM podem acelerar significativamente a criptografia de dados na maioria das CPUs modernas com suporte de instruções AES. Para obter mais informações, consulte [noções básicas de assinatura SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+O SMB 3,0 usa um algoritmo de criptografia mais recente para assinar: criptografia AES (AES) – código de autenticação de mensagem com base em codificação (CMAC). O SMB 2,0 usou o algoritmo de criptografia HMAC-SHA256 mais antigo. AES-CMAC e AES-CCM podem acelerar significativamente a criptografia de dados na maioria das CPUs modernas com suporte de instruções AES. Para obter mais informações, consulte [noções básicas de assinatura SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
 
 ## <a name="disabling-smb-10"></a>Desabilitando o SMB 1,0
 

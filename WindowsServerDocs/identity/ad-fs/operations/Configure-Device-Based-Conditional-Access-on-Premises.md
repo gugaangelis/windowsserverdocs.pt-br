@@ -9,12 +9,12 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a7646144b591fd7327f881cb54489201140e9287
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0eb0271dd27791e6f59e896e43bf79b15b89e730
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358152"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949451"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>Configurar o acesso condicional local usando dispositivos registrados
 
@@ -30,7 +30,7 @@ Os seguintes pré-requisitos são necessários para que você possa começar com
 |-----|-----
 |Uma assinatura do Azure AD com o Azure AD Premium | Para habilitar o Write-back do dispositivo para acesso condicional local- [uma avaliação gratuita está boa](https://azure.microsoft.com/trial/get-started-active-directory/)  
 |Assinatura do Intune|necessário apenas para a integração do MDM para cenários de conformidade do dispositivo-[uma avaliação gratuita está correta](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
-|Azure AD Connect|2015 QFE de novembro ou posterior.  Obtenha a versão mais recente [aqui](https://www.microsoft.com/en-us/download/details.aspx?id=47594).  
+|Azure AD Connect|2015 QFE de novembro ou posterior.  Obtenha a versão mais recente [aqui](https://www.microsoft.com/download/details.aspx?id=47594).  
 |Windows Server 2016|Build 10586 ou mais recente para AD FS  
 |Esquema de Active Directory do Windows Server 2016|O nível de esquema 85 ou superior é necessário.
 |Controlador de domínio do Windows Server 2016|Isso só é necessário para implantações de confiança de chave de Hello para empresas.  Informações adicionais podem ser encontradas [aqui](https://aka.ms/whfbdocs).  
@@ -210,7 +210,7 @@ Para obter informações sobre como habilitar o Windows 10 com o Microsoft Passp
 ### <a name="automatic-mdm-enrollment"></a>Registro automático do MDM   
 Para habilitar o registro automático de MDM de dispositivos registrados para que você possa usar a declaração IsCompliant em sua política de controle de acesso, siga as etapas [aqui.](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
 
-## <a name="troubleshooting"></a>Solução de problemas  
+## <a name="troubleshooting"></a>Painel de controle da  
 1.  Se você receber um erro em `Initialize-ADDeviceRegistration` que reclama sobre um objeto já existente no estado incorreto, como "o objeto do serviço DRS foi encontrado sem todos os atributos necessários", você pode ter executado Azure AD Connect comandos do PowerShell anteriormente e ter uma configuração parcial no AD DS.  Tente excluir manualmente os objetos em **CN = Configuração de registro de dispositivo, CN = Services, CN = Configuration, DC =&lt;domínio&gt;** e tente novamente.  
 2.  Para clientes ingressados no domínio do Windows 10  
     1. Para verificar se a autenticação do dispositivo está funcionando, entre no cliente ingressado no domínio como uma conta de usuário de teste. Para disparar o provisionamento rapidamente, bloqueie e desbloqueie a área de trabalho pelo menos uma vez.   
@@ -222,7 +222,7 @@ Para habilitar o registro automático de MDM de dispositivos registrados para qu
     4. Experimente o registro ou registro do dispositivo novamente  
 
 ### <a name="related-articles"></a>Artigos relacionados  
-* [Protegendo o acesso ao Office 365 e a outros aplicativos conectados ao Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
+* [Proteger o acesso ao Office 365 e a outros aplicativos conectados ao Active Directory do Azure](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
 * [Políticas de dispositivo de acesso condicional para serviços do Office 365](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-device-policies/)  
-* [Configurando o acesso condicional local usando Registro de Dispositivos do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
-* [Conectar dispositivos ingressados no domínio ao Azure AD para experiências do Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  
+* [Configurando o acesso condicional no local usando o registro do dispositivo do Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
+* [Conectar dispositivos ingressados no domínio ao AD do Azure para experiências com o Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  

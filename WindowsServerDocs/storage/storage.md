@@ -11,19 +11,19 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: eadac31cb623a15dd308f7e33f984fe1fb46ffe5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365933"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950222"
 ---
 # <a name="storage"></a>Armazenamento
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
 >[!TIP]
-> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
+> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
 
 <hr />
 O armazenamento no Windows Server oferece recursos novos e aprimorados para clientes SDDC (datacenter definido pelo software) que privilegiam cargas de trabalho virtualizadas. O Windows Server também fornece suporte extensivo para clientes corporativos usando servidores de arquivos com cargas de trabalho existentes.
@@ -41,7 +41,7 @@ O armazenamento no Windows Server oferece recursos novos e aprimorados para clie
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>Novidades?</h2>
+                                            <h2>Quais são as novidades?</h2>
                                             <p>Descubra as novidades no armazenamento do Windows Server</p>
                                         </div>
                                     </div>
@@ -146,4 +146,4 @@ O armazenamento no Windows Server oferece recursos novos e aprimorados para clie
 ## <a name="in-azure"></a>No Azure
 
 * [Armazenamento do Azure](https://azure.microsoft.com/documentation/services/storage/)
-* [Azure StorSimple](https://www.microsoft.com/en-us/cloud-platform/azure-storsimple)
+* [Azure StorSimple](https://www.microsoft.com/cloud-platform/azure-storsimple)

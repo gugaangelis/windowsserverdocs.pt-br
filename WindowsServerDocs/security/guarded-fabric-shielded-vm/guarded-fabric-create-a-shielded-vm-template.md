@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 70014c04bbb4425fe3c3fd0379f10cf00abe00ee
-ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
+ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72986440"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949782"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada do Windows
 
@@ -59,7 +59,7 @@ Execute as etapas a seguir em um computador que esteja executando o Windows Serv
 
         Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
         
-    Você também pode administrar o servidor de um computador cliente no qual você instalou o [Windows 10 ferramentas de administração de servidor remoto](https://www.microsoft.com/en-us/download/details.aspx?id=45520).
+    Você também pode administrar o servidor de um computador cliente no qual você instalou o [Windows 10 ferramentas de administração de servidor remoto](https://www.microsoft.com/download/details.aspx?id=45520).
 
 3. Obtenha ou crie um certificado para assinar o VSC para o VHDX que se tornará o disco de modelo para novas VMs blindadas. Os detalhes sobre esse certificado serão mostrados aos locatários quando criarem seus arquivos de dados de blindagem e estiverem autorizando discos em que confiam. Portanto, é importante obter esse certificado de uma autoridade de certificação mutuamente confiável por você e seus locatários. Em cenários empresariais em que você é o hoster e o locatário, você pode considerar a emissão desse certificado de sua PKI.
 
@@ -167,7 +167,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [Criar um arquivo de dados de blindagem](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

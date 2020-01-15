@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c825ae9c9b52068b58b99bc6ff597304c9643d17
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ca63fa9504765b0376eb671b4decd67de7768f15
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390084"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948897"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>Como são tratados os Cookies de servidor LDAP
 
@@ -126,7 +126,7 @@ Os eventos 2898 e 2899 são a única maneira de saber que o servidor LDAP atingi
   
 Se você estiver vendo o evento 2898 no servidor DC/LDAP, é recomendável definir MaxResultSetsPerConn para 25. Mais de 25 pesquisas pagináveis paralelas em uma única conexão LDAP não é algo comum. Se você continuar vendo eventos 2898, investigue o aplicativo de cliente LDAP que encontra o erro. A suspeita seria que ele de alguma forma travou ao recuperar resultados paginados adicionais, deixando o cookie pendente e reiniciando uma nova consulta. Para ver se o aplicativo em algum momento teria cookies suficientes para suas finalidades, você também pode aumentar o valor de MaxResultSetsPerConn para acima de 25. Ao ver eventos 2899 registrados nos controladores de domínio, o plano deve ser diferente. Se o servidor LDAP/DC é executado em um computador com memória suficiente (vários GBs de memória livre), recomendamos que você defina o MaxResultsetSize no servidor LDAP para > = 250 MB. Esse limite é grande o suficiente para acomodar grandes volumes de pesquisas de página LDAP mesmo em diretórios muito grandes.  
   
-Se você ainda estiver vendo eventos 2899 com um pool de 250 MB ou mais, é provável que muitos clientes tenham um número muito alto de objetos retornados, consultados com muita frequência. Os dados que você pode obter com o [Conjunto de coletores de dados de diretório ativo](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) podem ajudar a localizar consultas paginadas repetitivas que mantêm seus servidores LDAP ocupados. Essas consultas serão mostradas com um número de "entradas retornadas" que correspondem ao tamanho da página usada.  
+Se você ainda estiver vendo eventos 2899 com um pool de 250 MB ou mais, é provável que muitos clientes tenham um número muito alto de objetos retornados, consultados com muita frequência. Os dados que você pode obter com o [Conjunto de coletores de dados de diretório ativo](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) podem ajudar a localizar consultas paginadas repetitivas que mantêm seus servidores LDAP ocupados. Essas consultas serão mostradas com um número de "entradas retornadas" que correspondem ao tamanho da página usada.  
   
 Se possível, você deve examinar o design do aplicativo e implementar uma abordagem diferente com uma frequência menor, um volume de dados e/ou menos instâncias de cliente consultando esses dados. No caso dos aplicativos para os quais você tem acesso ao código-fonte, este guia para [criar aplicativos habilitados para AD eficientes](https://msdn.microsoft.com/library/ms808539.aspx) pode ajudá-lo a entender a maneira ideal para os aplicativos acessarem o AD.  
   

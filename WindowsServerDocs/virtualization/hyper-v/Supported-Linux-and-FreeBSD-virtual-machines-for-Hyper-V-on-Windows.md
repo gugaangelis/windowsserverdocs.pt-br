@@ -11,12 +11,12 @@ ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: a3b0df5065427b48bbc9c32d3e8502bfe234fe7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8be9f8ab768478417fdd6edce5b881ce3610bc1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366744"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947982"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Máquinas virtuais Linux e FreeBSD com suporte para Hyper-V no Windows
 
@@ -31,7 +31,7 @@ Para outras distribuições de distribuição do Linux, as alterações do LIS s
 Para versões mais antigas do FreeBSD (antes de 10,0), a Microsoft fornece portas que contêm os drivers BIS instaláveis e os daemons correspondentes para máquinas virtuais FreeBSD. Para versões mais recentes do FreeBSD, o BIS é integrado ao sistema operacional FreeBSD, e nenhum download ou instalação separado é necessário, exceto para download de portas KVP que é necessário para o FreeBSD 10,0.
 
 > [!TIP]
-> - Baixe o [Windows Server 2019](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019) no centro de avaliação.
+> - Baixe o [Windows Server 2019](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) no centro de avaliação.
 
 O objetivo desse conteúdo é fornecer informações que ajudem a facilitar sua implantação do Linux ou FreeBSD no Hyper-V. Os detalhes específicos incluem:
 

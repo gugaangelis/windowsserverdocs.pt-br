@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8880f26acd8b32a4ab8a32ede067d158f2d6aed1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369208"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949132"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Apêndice I: Criar o gerenciamento de contas para contas e grupos protegidos no Active Directory
 
@@ -81,7 +81,7 @@ Para criar um grupo para habilitar e desabilitar contas de gerenciamento, execut
   
 7.  Na guia **segurança** , remova os grupos que não devem ter permissão para acessar esse grupo. Por exemplo, se você não quiser que os usuários autenticados possam ler o nome do grupo e as propriedades gerais, poderá remover essa ACE. Você também pode remover ACEs, como aquelas para operadores de conta e acesso compatível com o servidor anterior ao Windows 2000. No entanto, você deve deixar um conjunto mínimo de permissões de objeto em vigor. Deixe as seguintes ACEs intactas:  
   
-    -   AUTO-restauração  
+    -   SELF  
   
     -   SISTEMA  
   
@@ -133,7 +133,7 @@ Para criar as contas de gerenciamento, execute as seguintes etapas:
 
 7. Clique com o botão direito do mouse no objeto de usuário que você acabou de criar e clique em **Propriedades**.  
 
-8. Clique na guia **conta** .  
+8. Clique na guia **Conta**.  
 
 9. No campo **Opções de conta** , selecione o sinalizador a **conta é confidencial e não pode ser delegado** , selecione **essa conta dá suporte à criptografia Kerberos AES 128 bits** e/ou a **seguinte conta dá suporte ao sinalizador de criptografia Kerberos AES 256** e clique em **OK**.  
 
@@ -144,7 +144,7 @@ Para criar as contas de gerenciamento, execute as seguintes etapas:
    >
    > Embora a implementação de tipos de criptografia mais seguras para os hosts não atenue ataques de roubo de credenciais, o uso apropriado e a configuração dos hosts seguros têm. A configuração de tipos de criptografia mais fortes para hosts que são usados apenas por contas com privilégios simplesmente reduz a superfície de ataque geral dos computadores.  
    >
-   > Para obter mais informações sobre como configurar tipos de criptografia em sistemas e contas, consulte [configurações do Windows para tipo de criptografia com suporte para Kerberos](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx).  
+   > Para obter mais informações sobre como configurar tipos de criptografia em sistemas e contas, consulte [configurações do Windows para tipo de criptografia com suporte para Kerberos](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx).  
    >
    > Essas configurações têm suporte apenas em computadores que executam o Windows Server 2012, Windows Server 2008 R2, Windows 8 ou Windows 7.  
   

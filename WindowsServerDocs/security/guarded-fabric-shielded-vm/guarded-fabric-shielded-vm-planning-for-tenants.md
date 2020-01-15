@@ -7,12 +7,12 @@ ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c439a53abea07041e69e50d5d5148dae95243265
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386435"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949778"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>Malha protegida e guia de planejamento de VM blindada para locatários
 
@@ -74,7 +74,7 @@ Ao criar uma VM blindada ou com suporte de criptografia ou converter uma VM exis
 
 **De quantos arquivos de dados de blindagem eu preciso?** Um único arquivo de dados de blindagem pode ser usado para criar cada VM blindada. Se, no entanto, uma determinada VM blindada exigir que qualquer um dos quatro itens seja diferente, um arquivo de dados de blindagem adicional será necessário. Por exemplo, você pode ter um arquivo de dados de blindagem para seu departamento de ti e um arquivo de dados de blindagem diferente para o departamento de RH porque sua senha de administrador inicial e certificados RDP diferem.
 
-Embora seja possível usar arquivos de dados de blindagem separados para cada VM blindada, ela não é necessariamente a opção ideal e deve ser feita por motivos certos. Por exemplo, se cada VM blindada precisar ter uma senha de administrador diferente, considere usar um serviço de gerenciamento de senha ou uma ferramenta como a [solução de senha de administrador local da Microsoft (LAPs)](https://www.microsoft.com/en-us/download/details.aspx?id=46899).
+Embora seja possível usar arquivos de dados de blindagem separados para cada VM blindada, ela não é necessariamente a opção ideal e deve ser feita por motivos certos. Por exemplo, se cada VM blindada precisar ter uma senha de administrador diferente, considere usar um serviço de gerenciamento de senha ou uma ferramenta como a [solução de senha de administrador local da Microsoft (LAPs)](https://www.microsoft.com/download/details.aspx?id=46899).
 
 ## <a name="creating-a-shielded-vm-on-a-virtualization-fabric"></a>Criando uma VM blindada em uma malha de virtualização
 

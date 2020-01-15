@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: bd7787b853395bf461165802251de8b2be5d5a39
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: ded26080ce59b48d7bbc3404684b3dbf926eceaa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980265"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947460"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Gerenciar o Office 365 no Windows Server Essentials
 
@@ -82,16 +82,16 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
   
  Você fará as seguintes tarefas:  
   
--   [Etapa 1: Verificar os requisitos de integração do Office 365](#BKMK_StepOne_VERIFY)  
+-   [Etapa 1: verificar os requisitos de integração do Office 365](#BKMK_StepOne_VERIFY)  
   
--   [Etapa 2: Integrar o servidor com o Microsoft Office 365](#BKMK_StepTwo)  
+-   [Etapa 2: integrar o servidor com o Microsoft Office 365](#BKMK_StepTwo)  
   
--   [Etapa 3: Vincular o nome de domínio da Internet da sua organização ao Office 365 (opcional)](#BKMK_StepThree)  
+-   [Etapa 3: vincular o nome de domínio da Internet da sua organização ao Office 365 (opcional)](#BKMK_StepThree)  
   
-###  <a name="BKMK_StepOne_VERIFY"></a>Etapa 1: Verificar os requisitos de integração do Office 365  
+###  <a name="BKMK_StepOne_VERIFY"></a>Etapa 1: verificar os requisitos de integração do Office 365  
  Antes de começar, verifique se que o servidor atende aos seguintes requisitos:  
   
--   O servidor pode ter um dos seguintes sistemas operacionais:  Windows Server Essentials, Windows Server Essentials ou o sistema operacional Windows Server 2012 R2 Standard ou Windows Server 2012 R2 Datacenter com a função de experiência do Windows Server Essentials instalada.  
+-   O servidor pode ter qualquer um destes sistemas operacionais: Windows Server Essentials, Windows Server Essentials ou o sistema operacional Windows Server 2012 R2 Standard ou Windows Server 2012 R2 Datacenter com a função de experiência do Windows Server Essentials instalada.  
   
 -   O ambiente pode ter apenas um controlador de domínio e você deve executar a integração do Office 365 no controlador de domínio.  
   
@@ -104,7 +104,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 > [!NOTE]
 >  Você não precisa assinar o Office 365 com antecedência. Você poderá comprar uma assinatura ou inscrever-se para uma avaliação gratuita durante a integração do Office 365. Se você quiser dar uma olhada em planos e preços para o Office 365, [Compare os planos do office 365 para empresas](https://office.microsoft.com/compare-office-365-for-business-plans-FX102918419.aspx?CR_CC=200061904&WT.srch=1&WT.mc_ID=PS_bing_O365Comm_subscribe-to-office-365_Text).  
   
-###  <a name="BKMK_StepTwo"></a>Etapa 2: Integrar o servidor com o Microsoft Office 365  
+###  <a name="BKMK_StepTwo"></a>Etapa 2: integrar o servidor com o Microsoft Office 365  
  Execute o procedimento a seguir no controlador de domínio para integrar o servidor do Windows Server Essentials com o Office 365.  
   
 > [!NOTE]
@@ -118,7 +118,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
   
     O Assistente de Integração com o Microsoft Office 365 é exibido.  
   
-3. Na página **Começar**, execute uma das seguintes ações:  
+3. Na página **Começar** , execute uma das seguintes ações:  
   
    -   Se você não tiver uma assinatura do Office 365, clique em **Avançar**e siga as instruções para assinar o Office 365 ou inscrever-se para uma assinatura de avaliação.  
   
@@ -136,7 +136,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
   
 -   A página **armazenamento** em um servidor do Windows Server Essentials tem uma guia **bibliotecas do SharePoint** para gerenciar bibliotecas do SharePoint Online e alterar permissões para seus sites de equipe. Cada plano comercial do Office 365 inclui esses recursos básicos do SharePoint Online.  
   
-###  <a name="BKMK_StepThree"></a>Etapa 3: Vincular o nome de domínio da Internet da sua organização ao Office 365 (opcional)  
+###  <a name="BKMK_StepThree"></a>Etapa 3: vincular o nome de domínio da Internet da sua organização ao Office 365 (opcional)  
  Se você quiser usar seu próprio domínio de Internet em email endereçado à sua organização e às URLs para seus recursos do SharePoint Online, você poderá vincular um domínio personalizado à sua assinatura do Office 365. Se você integrar seu servidor do Windows Server Essentials com o Office 365, poderá fazer isso no painel.  
   
  É mais fácil fazer isso antes de criar contas online para seus usuários para que você possa usar o domínio ao criar contas online em massa.  
@@ -179,7 +179,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
      Há um pouco de espera após a conclusão do assistente, enquanto o registrador de nome de domínio verifica os registros DNS. Isso ocorre automaticamente; Você não precisa fazer nada. Mas geralmente leva cerca de uma hora? e, às vezes, um pouco mais. Quando a verificação de domínio for concluída, a página do **Office 365** listará o domínio da sua organização.  
   
 ####  <a name="BKMK_ManuallyConfigureDNS"></a>Como configurar manualmente os registros DNS para a integração do Office 365  
- Se o Assistente de Link do Domínio ao Office 365 detectar que o nome do domínio não é gerenciado pelo servidor, para concluir a configuração, você deverá configurar manualmente os registros de servidores de nomes de domínio necessários. Nesse caso, você encontrará uma lista de registros DNS que deve configurar em **%username%\NewDNSRecords_ (n). txt**, em que *(n)* é um número aleatório.  
+ Se o Assistente de Link do Domínio ao Office 365 detectar que o nome do domínio não é gerenciado pelo servidor, para concluir a configuração, você deverá configurar manualmente os registros de servidores de nomes de domínio necessários. Nesse caso, você encontrará uma lista de registros DNS que deve configurar em **% username% \ NewDNSRecords_ (n). txt**, em que *(n)* é um número aleatório.  
   
  A tabela a seguir descreve os registros DNS que você deve adicionar. Os métodos de entrada podem variar de acordo com registradores de nome de domínio diferentes. Se tiver alguma dúvida, peça ajuda ao registrador de nome de domínio.  
   
@@ -188,8 +188,8 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 |Serviço|Registros DNS necessários|Finalidade|  
 |-------------|--------------------------|-------------|  
 |(Vários serviços)|MX| O Office 365 usa esse registro para verificar se você possui um nome de domínio específico. Esse registro MX não interfere com o roteamento de mensagens de email.|  
-|Exchange Online|MX|Oferece roteamento de mensagens de email. **Importante:**  Se estiver migrando emails, não atribua uma preferência de zero (**0**) ao novo registro MX. Verifique se que o valor do registro é maior que o valor que é atribuído ao registro MX atual. Quando a migração de email for concluída e você estiver pronto para alterar o servidor de email para o Office 365, faça com que seu registrador de nome de domínio redefina o valor de preferência do novo registro MX.|  
-|Exchange Online|Alias (CNAME)|O registro de descoberta automática é usado para ajudar os usuários a estabelecer facilmente uma conexão entre o Exchange Online e seus clientes de área de trabalho do Outlook ou um cliente de email móvel. **Observação:**  Se você preferir acessar o Outlook acesso via Web usando o próprio nome de domínio da sua organização (por exemplo http://mail.contoso.com) , em vez da URL padrão https://outlook.com/owa/office365.com) (, você pode configurar o registro de alias (CNAME) da seguinte maneira: **Type = CNAME, TTL = 01:00:00, nome_do_host = mail, address = mail. office365. com**|  
+|Exchange Online|MX|Oferece roteamento de mensagens de email. **Importante:**  Se você estiver migrando o email, não atribua uma preferência de zero (**0**) ao novo registro MX. Verifique se que o valor do registro é maior que o valor que é atribuído ao registro MX atual. Quando a migração de email for concluída e você estiver pronto para alterar o servidor de email para o Office 365, faça com que seu registrador de nome de domínio redefina o valor de preferência do novo registro MX.|  
+|Exchange Online|Alias (CNAME)|O registro de descoberta automática é usado para ajudar os usuários a estabelecer facilmente uma conexão entre o Exchange Online e seus clientes de área de trabalho do Outlook ou um cliente de email móvel. **Observação:**  Se você preferir acessar o Acesso via Web do Outlook usando o nome de domínio próprio da sua organização (por exemplo, http://mail.contoso.com) em vez da URL padrão (https://outlook.com/owa/office365.com), você pode configurar o registro do alias (CName) da seguinte maneira: **tipo = CNAME, TTL = 01:00:00, hostname = email, endereço = mail. office365. com**|  
 |Exchange Online|TXT|Especifica que outlook.com, o domínio usado pelos servidores de email do Office 365, está autorizado a enviar email em nome do seu domínio. Crie este registro para ajudar a impedir que o email de saída seja marcado como spam.|  
 |Lync Online|SRV|Ajuda a habilitar a federação com outros serviços de mensagens instantâneas como Windows Live ou Yahoo!.|  
 |Lync Online|SRV|Descobre automaticamente o registro que é usado para ajudar os usuários a configurarem facilmente uma conexão entre o cliente de área de trabalho do Lync e o Microsoft Lync Online.|  
@@ -197,7 +197,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 > [!IMPORTANT]
 >  Após a conclusão da verificação de domínio, não tente adicionar ou fazer nenhuma alteração adicional nos registros DNS do portal do Office 365.  
   
-###  <a name="BKMK_StepFour_ACCOUNTS"></a>Próxima etapa  
+###  <a name="BKMK_StepFour_ACCOUNTS"></a> Próxima etapa  
   
 -   Criar contas de serviços Online da Microsoft para os usuários.  
   
@@ -211,7 +211,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
   
 -   [Gerenciar sua assinatura do Office 365](#BKMK_ManageO365) ? Altere a conta de administrador que você usa para gerenciar a assinatura. Abra o painel de administração do Office 365 para gerenciar sua assinatura.  
   
--   [Vincular o domínio de Internet da sua organização ao Office 365](#BKMK_StepThree) ? Se você quiser ser capaz de enviar e receber emails endereçados ao seu próprio domínio, você pode vincular o domínio ao Office 365. (Discutido anteriormente, na [etapa 3: Vincule o domínio da sua organização ao Office](#BKMK_StepThree)365.)  
+-   [Vincular o domínio de Internet da sua organização ao Office 365](#BKMK_StepThree) ? Se você quiser ser capaz de enviar e receber emails endereçados ao seu próprio domínio, você pode vincular o domínio ao Office 365. (Discutido anteriormente, na [etapa 3: vincular o domínio da sua organização ao Office 365](#BKMK_StepThree).)  
   
 -   [Desabilitar a integração do Office 365](#BKMK_Disable) ? Se você não quiser gerenciar seus serviços do Office 365, sua assinatura e contas online no painel, você pode desabilitar a integração do Office 365. Os serviços ainda estão disponíveis no portal do Office 365.  
   
@@ -254,7 +254,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 3.  Siga as instruções para concluir o assistente.  
   
 > [!NOTE]
->  Para habilitar a integração do Office 365 novamente, use a tarefa **integrar com o office 365** na guia **serviço** da página **inicial** do painel. Para obter instruções, [consulte a etapa 2: Integre seu servidor do Windows Server Essentials com o](#BKMK_StepTwo)Microsoft Office 365, anteriormente neste tópico.  
+>  Para habilitar a integração do Office 365 novamente, use a tarefa **integrar com o office 365** na guia **serviço** da página **inicial** do painel. Para obter instruções, consulte [Etapa 2: Integrar o servidor do Windows Server Essentials com o Microsoft Office 365](#BKMK_StepTwo), anteriormente neste tópico.  
   
 ##  <a name="BKMK_Troubleshoot"></a>Solucionar problemas de integração do Office 365  
  Esta seção fornece informações para ajudá-lo a solucionar problemas comuns que você pode encontrar ao usar os recursos de integração do Office 365 no Windows Server Essentials.  
@@ -283,11 +283,11 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
   
 2.  Se o erro ocorrer novamente, reinicie o servidor e tente novamente.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
--   [Visão geral da integração de serviços para o Windows Server Essentials-parte 1](http://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)  
+-   [Visão geral da integração de serviços para o Windows Server Essentials-parte 1](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)  
   
--   [Visão geral da integração de serviços para o Windows Server Essentials-parte 2](http://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)  
+-   [Visão geral da integração de serviços para o Windows Server Essentials-parte 2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)  
   
 -   [Guia de Início Rápido usar Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)  
   

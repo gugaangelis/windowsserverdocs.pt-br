@@ -9,12 +9,12 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 442aef6daccda2ab3e95690a82f43f642e5a3f73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96659164a9eea1784cb529c47dd58be70d546f80
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358753"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948730"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Criar um aplicativo cliente nativo usando clientes OAuth públicos com o AD FS 2016 ou posterior
 
@@ -33,7 +33,7 @@ Veja a seguir uma lista de pré-requisitos que são necessários antes de conclu
 
 * Ferramentas de cliente do GitHub
 * AD FS no Windows Server 2016 ou posterior
-* Visual Studio 2013 ou posterior
+* Visual Studio 2013 ou posterior.
 
 ## <a name="creating-the-sample-walkthrough"></a>Criando o exemplo de explicação
 
@@ -44,7 +44,7 @@ Veja a seguir uma lista de pré-requisitos que são necessários antes de conclu
 2. No assistente de grupo de aplicativos, para o nome, insira qualquer nome que você preferir, por exemplo, NativeToDoListAppGroup. Selecione o **aplicativo nativo acessando um modelo de API Web** . Clique em **Avançar**.
  ![Adicionar grupo de aplicativos](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
-3. Na página **aplicativo nativo** , observe o identificador gerado pelo AD FS. Essa é a ID com a qual AD FS reconhecerá o aplicativo cliente público. Copie o valor do **identificador de cliente** . Ele será usado posteriormente como o valor de **ida: ClientID** no código do aplicativo. Se desejar, você pode fornecer qualquer identificador personalizado aqui. O URI de redirecionamento é qualquer valor arbitrário, https://ToDoListClient exemplo, colocar ![ aplicativo nativo](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
+3. Na página **aplicativo nativo** , observe o identificador gerado pelo AD FS. Essa é a ID com a qual AD FS reconhecerá o aplicativo cliente público. Copie o valor do **identificador de cliente** . Ele será usado posteriormente como o valor de **ida: ClientID** no código do aplicativo. Se desejar, você pode fornecer qualquer identificador personalizado aqui. O URI de redirecionamento é qualquer valor arbitrário, exemplo, put https://ToDoListClient ![ aplicativo nativo](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
 
 4. Na página **Configurar API Web** , defina o valor do identificador para a API Web. Para este exemplo, esse deve ser o valor da **URL SSL** em que o aplicativo Web deve estar em execução. Você pode obter esse valor clicando nas propriedades do projeto TooListServer na solução. Isso será usado posteriormente como o valor **todo: TodoListResourceId** no arquivo **app. config** do aplicativo cliente nativo e também como **todo: TodoListBaseAddress**.
 ![API Web](media/native-client-with-ad-fs-2016/addapplicationgroup3.png)
@@ -59,7 +59,7 @@ O aplicativo de demonstração usa o valor na declaração NameIdentifier em vá
 Para configurar a regra de declaração, abra o grupo de aplicativos recém-criado e clique duas vezes na API Web. Selecione a guia regras de transformação de emissão e clique no botão Adicionar regra. No tipo de regra de declaração, escolha regra de declaração personalizada e, em seguida, adicione a regra de declaração, conforme mostrado abaixo.
 
 ```  
-c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
+c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
  => issue(store = "Active Directory", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"), query = ";givenName;{0}", param = c.Value);
 ```
 
@@ -156,7 +156,7 @@ Basicamente, estamos Configurando a autenticação para usar AD FS e fornecer ma
 Executando o aplicativo
 
 1. Na solução NativeClient-DotNet, clique com o botão direito e vá para propriedades. Altere o projeto de inicialização conforme mostrado abaixo para vários projetos de inicialização e defina TodoListClient e TodoListService como Start.
-![Propriedades da solução](media/native-client-with-ad-fs-2016/solutionproperties.png)
+Propriedades da solução de ![](media/native-client-with-ad-fs-2016/solutionproperties.png)
 
 2.  Pressione o botão F5 ou selecione Depurar > continuar na barra de menus. Isso abrirá o aplicativo nativo e o WebAPI. Clique no botão entrar no aplicativo nativo e ele exibirá um logon interativo do AD AL e redirecionará para o serviço de AD FS. Insira as credenciais de um usuário válido.
 ![Entrar](media/native-client-with-ad-fs-2016/sign-in.png)

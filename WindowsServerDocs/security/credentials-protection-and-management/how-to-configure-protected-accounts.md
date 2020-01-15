@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e728265f42289aeceb22c78053f0d84f9bdb9941
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4dbcc3165a6226c60a3c6a5acf500c643c8ef4d9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387394"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949910"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Como configurar contas protegidas
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Com ataques PtH (passagem de hash), um invasor pode autenticar em um servidor ou serviço remoto usando um hash de NTLM subjacente da senha de um usuário (ou outros derivados de credenciais). A Microsoft publicou anteriormente as [diretrizes](https://www.microsoft.com/download/details.aspx?id=36036) para atenuar os ataques de passagem de hash.  O Windows Server 2012 R2 inclui novos recursos para ajudar a mitigar esses ataques. Para obter mais informações sobre outros recursos de segurança que ajudam a proteger contra roubo de credenciais, consulte [proteção e gerenciamento de credenciais](https://technet.microsoft.com/library/dn408190.aspx). Este tópico explica como configurar os seguintes recursos novos:  
   
@@ -33,7 +33,7 @@ Com ataques PtH (passagem de hash), um invasor pode autenticar em um servidor ou
   
 Existem medidas para ajudar a evitar o roubo de credenciais adicionais integradas ao Windows 8.1 e Windows Server 2012 R2, abordadas nos seguintes tópicos:  
   
--   [Modo de administrador restrito para Área de Trabalho Remota](http://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
+-   [Modo de administrador restrito para Área de Trabalho Remota](https://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
   
 -   [Proteção do LSA](https://technet.microsoft.com/library/dn408187)  
   
@@ -62,12 +62,12 @@ Se o nível funcional do domínio for Windows Server 2012 R2, os membros do grup
   
 -   Renovar tíquetes de usuário (TGTs) além do tempo de vida inicial de quatro horas  
   
-Para adicionar usuários ao grupo, você pode usar [ferramentas de interface do usuário](https://technet.microsoft.com/library/cc753515.aspx) , como centro administrativo do Active Directory (ADAC) ou Active Directory usuários e computadores, ou uma ferramenta de linha de comando, como o [Dsmod Group](https://technet.microsoft.com/library/cc732423.aspx), ou o[Add-ADGroupMember](https://technet.microsoft.com/library/ee617210.aspx) do Windows PowerShell cmdlet. As contas para serviços e computadores *não devem* ser membros do grupo usuários protegidos. A associação a essas contas não oferece proteções locais, pois a senha ou certificado sempre está disponível no host.  
+Para adicionar usuários ao grupo, você pode usar [ferramentas de interface do usuário](https://technet.microsoft.com/library/cc753515.aspx) , como centro administrativo do Active Directory (ADAC) ou Active Directory usuários e computadores, ou uma ferramenta de linha de comando, como o [grupo dsmod](https://technet.microsoft.com/library/cc732423.aspx), ou o cmdlet[Add-ADGroupMember](https://technet.microsoft.com/library/ee617210.aspx) do Windows PowerShell. As contas para serviços e computadores *não devem* ser membros do grupo usuários protegidos. A associação a essas contas não oferece proteções locais, pois a senha ou certificado sempre está disponível no host.  
   
 > [!WARNING]  
-> As restrições de autenticação não possuem solução alternativa, o que significa que membros de grupos altamente privilegiados como os grupos Administradores de Empresa e Admins. do Domínio estão sujeitos às mesmas restrições que outros membros do grupo Usuários protegidos. Se todos os membros desses grupos forem adicionados ao grupo de Usuários protegidos, é possível que todas essas quatro contas sejam bloqueadas. Você nunca deve adicionar contas com altos privilégios ao grupo Usuários protegidos antes de testar minuciosamente os potenciais impactos.  
+> As restrições de autenticação não possuem solução alternativa, o que significa que membros de grupos altamente privilegiados como os grupos Administradores de Empresa e Admins. do Domínio estão sujeitos às mesmas restrições que outros membros do grupo Usuários protegidos. Se todos os membros desses grupos forem adicionados ao grupo de usuários protegidos, será possível que todas essas contas sejam bloqueadas. Você nunca deve adicionar todas as contas altamente privilegiadas ao grupo de usuários protegidos até que tenha testado completamente o impacto potencial.  
   
-Os membros do grupo Usuários Protegidos devem poder se autenticar usando Kerberos com AES. Este método pede chaves AES para a conta do Active Directory. O administrador interno não tem uma chave AES, a menos que a senha tenha sido alterada em um controlador de domínio que execute o Windows Server 2008 ou posterior. Além disso, qualquer conta que possua uma senha que foi alterada em um controlador de domínio que executa uma versão anterior do Windows Server será bloqueada. Por isso, siga essas práticas recomendadas:  
+Os membros do grupo Usuários Protegidos devem poder se autenticar usando Kerberos com AES. Este método pede chaves AES para a conta do Active Directory. O administrador interno não tem uma chave AES, a menos que a senha tenha sido alterada em um controlador de domínio que execute o Windows Server 2008 ou posterior. Além disso, qualquer conta, que tenha uma senha que tenha sido alterada em um controlador de domínio que executa uma versão anterior do Windows Server, é bloqueada. Portanto, siga estas práticas recomendadas:  
   
 -   Não teste em domínios, a menos que **todos os controladores de domínio executem o Windows Server 2008 ou posterior**.  
   
@@ -86,7 +86,7 @@ Contas protegidas possuem os seguintes requisitos para implantação:
 Esta seção aborda os novos logs para ajudar solucionar problemas de eventos relacionados aos Usuários protegidos e demonstra como os Usuários protegidos podem representar mudanças nas soluções de problemas de expiração de TGT e de delegação.  
   
 #### <a name="new-logs-for-protected-users"></a>Novos logs para Usuários protegidos  
-Dois novos logs administrativos operacionais estão disponíveis para ajudar a solucionar problemas de eventos relacionados aos Usuários protegidos: Usuário protegido – log do cliente e falhas do usuário protegido-log do controlador de domínio. Esses novos logs encontram-se no Visualizador de Eventos e estão desabilitados por padrão. Para habilitar um log, clique em **Logs de aplicativos e serviços**, depois em **Microsoft**, **Windows**, **Autenticação**, clique no nome do log e em **Ação** (ou então, clique com o botão direito no log) e clique em **Habilitar log**.  
+Dois novos logs administrativos operacionais estão disponíveis para ajudar a solucionar problemas de eventos relacionados a usuários protegidos: log do cliente protegido e falhas do usuário protegido-log do controlador de domínio. Esses novos logs encontram-se no Visualizador de Eventos e estão desabilitados por padrão. Para habilitar um log, clique em **Logs de aplicativos e serviços**, depois em **Microsoft**, **Windows**, **Autenticação**, clique no nome do log e em **Ação** (ou então, clique com o botão direito no log) e clique em **Habilitar log**.  
   
 Para obter mais informações sobre eventos nesses logs, consulte [políticas de autenticação e silos de política de autenticação](https://technet.microsoft.com/library/dn486813.aspx).  
   
@@ -97,9 +97,9 @@ Normalmente, o controlador de domínio define o tempo de vida de TGT e sua renov
   
 Para **Usuários protegidos**, as configurações a seguir são embutidas em código:  
   
--   Tempo de vida máximo por tíquete de usuário: 240 minutos  
+-   Tempo de vida máximo para tíquete de usuário: 240 minutos  
   
--   Renovação do tempo de vida máximo por tíquete de usuário: 240 minutos  
+-   Tempo de vida máximo para renovação de tíquete de usuário: 240 minutos  
   
 #### <a name="troubleshoot-delegation-issues"></a>Solução de problemas de delegação  
 Anteriormente, se uma tecnologia que usa delegação de Kerberos falhasse, a conta cliente era verificada para ver se **Conta sensível à segurança, não pode ser delegada** estava definido. Contudo, se a conta for um membro de **Usuários protegidos**, ela pode não ter esta definição configurada no ADAC (Centro Administrativo do Active Directory). Por isso, verifique as definições de associações de grupo ao solucionar problemas de delegação.  
@@ -112,18 +112,18 @@ Para auditar tentativas explicitamente para os membros do grupo **Usuários prot
 ### <a name="provide-dc-side-protections-for-services-and-computers"></a>Fornecer proteções do lado do controlador de domínio a serviços e computadores  
 Contas de serviços e computadores não podem ser membros do **Usuários protegidos**. Esta seção explica quais proteções baseadas no controlador de domínio podem ser oferecidas a tais contas:  
   
--   Rejeitar autenticação NTLM: Somente configurável por meio de [políticas de bloqueio NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx).  
+-   Rejeitar autenticação NTLM: somente por meio de [políticas de bloqueio NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx).  
   
--   Rejeitar DES (Padrão de Criptografia de Dados) na pré-autenticação do Kerberos:  Os controladores de domínio do Windows Server 2012 R2 não aceitam DES para contas de computador, a menos que estejam configurados para DES somente porque todas as versões do Windows lançadas com o Kerberos também dão suporte a RC4.  
+-   Rejeitar o padrão de criptografia de dados (DES) na pré-autenticação de Kerberos: os controladores de domínio do Windows Server 2012 R2 não aceitam DES para contas de computador, a menos que estejam configurados para DES somente porque todas as versões do Windows lançadas com o Kerberos também dão suporte a RC4.  
   
 -   Rejeitar RC4 na pré-autenticação do Kerberos: não configurável.  
   
     > [!NOTE]  
-    > Embora seja possível [alterar a configuração de tipos de criptografia com suporte](http://blogs.msdn.com/b/openspecification/archive/20../windows-configurations-for-kerberos-supported-encryption-type.aspx), não é recomendável alterar essas configurações para contas de computador sem teste no ambiente de destino.  
+    > Embora seja possível [alterar a configuração de tipos de criptografia com suporte](https://blogs.msdn.com/b/openspecification/archive/20../windows-configurations-for-kerberos-supported-encryption-type.aspx), não é recomendável alterar essas configurações para contas de computador sem teste no ambiente de destino.  
   
--   Restringir tíquetes de usuário (TGTs) a um tempo de vida inicial de quatro horas: Use políticas de autenticação.  
+-   Restringir tíquetes de usuário (TGTs) a um tempo de vida inicial de 4 horas: usar políticas de autenticação.  
   
--   Negar delegação restrita ou irrestrita: Para restringir uma conta, abra o ADAC (Centro Administrativo do Active Directory) e marque a caixa de seleção **Conta sensível à segurança, não pode ser delegada**.  
+-   Negar delegação com delegação irrestrita ou restrita: para restringir uma conta, abra Centro Administrativo do Active Directory (ADAC) e marque a caixa de seleção a **conta é confidencial e não pode ser delegada** .  
   
     ![contas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
@@ -132,13 +132,13 @@ Políticas de autenticação é um novo contêiner no AD DS que contém objetos 
   
 No Windows Server 2012, o controle de acesso dinâmico introduziu uma classe de objeto de escopo de floresta Active Directory chamada de política de acesso central para fornecer uma maneira fácil de configurar servidores de arquivos em toda a organização. No Windows Server 2012 R2, uma nova classe de objeto chamada diretiva de autenticação (objectClass msDS-AuthNPolicies) pode ser usada para aplicar a configuração de autenticação a classes de conta em domínios do Windows Server 2012 R2. As classes da conta do Active Directory são:  
   
--   User  
+-   Usuário  
   
--   Computer  
+-   Computador  
   
 -   Conta de serviço gerenciado e Conta de serviço gerenciado de grupo (GMSA)  
   
-### <a name="quick-kerberos-refresher"></a>Atualizador de Kerberos rápido  
+### <a name="quick-kerberos-refresher"></a>Atualizador rápido do Kerberos  
 O protocolo de autenticação Kerberos consiste em três tipos de trocas, também conhecidas como subprotocolos:  
   
 ![contas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_KerbRefresher.gif)  
@@ -179,7 +179,7 @@ Você pode restringir as solicitações de tíquete de serviço por meio da troc
 |Fornecer tempos de vida de TGT personalizados| Domínios de conta de nível funcional de domínio do Windows Server 2012 R2|  
 |Entrada de usuário restrita|-Domínios de conta de nível funcional de domínio do Windows Server 2012 R2 com suporte ao controle de acesso dinâmico<br />-Dispositivos Windows 8, Windows 8.1, Windows Server 2012 ou Windows Server 2012 R2 com suporte ao controle de acesso dinâmico|  
 |Restringir a emissão de tíquetes de serviço com base na conta de usuário e grupos de segurança| Domínios de recurso de nível funcional de domínio do Windows Server 2012 R2|  
-|Restringir a emissão de tíquetes de serviço com base em declarações de usuário ou conta de dispositivo, grupos de segurança ou declarações| Domínios de recurso de nível funcional de domínio do Windows Server 2012 R2 com suporte a controle de acesso dinâmico|  
+|Restringir a emissão de tíquetes de serviço com base nas declarações de usuário ou conta de dispositivo, grupos de segurança ou declarações| Domínios de recurso de nível funcional de domínio do Windows Server 2012 R2 com suporte a controle de acesso dinâmico|  
   
 ### <a name="restrict-a-user-account-to-specific-devices-and-hosts"></a>Restringir uma conta de usuário a dispositivos e hosts específicos  
 Uma conta de alto valor com privilégio administrativo deve ser membro do grupo **Usuários Protegidos**. Por padrão, nenhuma conta é membro do grupo **Usuários protegidos**. Antes de adicionar contas ao grupo, configure o suporte ao controlador de domínio e crie uma política de auditoria para garantir que não haja problemas de bloqueio.  
@@ -196,7 +196,7 @@ O domínio da conta do usuário deve estar no nível funcional do domínio do Wi
 2.  Em **Opções**, na caixa de listagem suspensa, escolha **Sempre fornecer declarações**.  
   
     > [!NOTE]  
-    > **Com suporte** também pode ser configurado, mas como o domínio está no Windows Server 2012 R2 DFL, ter os DCS sempre fornecem declarações permitirá que as verificações de acesso baseadas em declarações do usuário ocorram ao usar dispositivos e hosts sem reconhecimento de declaração para se conectarem ao reconhecimento de declarações serviços.  
+    > **Com suporte** também pode ser configurado, mas como o domínio está no Windows Server 2012 R2 DFL, ter os DCS sempre fornecem declarações permitirá que as verificações de acesso baseadas em declarações do usuário ocorram ao usar dispositivos e hosts sem reconhecimento de declaração para se conectar a serviços com reconhecimento de declaração.  
   
     ![contas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)  
   
@@ -224,9 +224,9 @@ O domínio da conta do usuário deve estar no nível funcional do domínio do Wi
   
     As políticas de autenticação são aplicadas com base no tipo de conta do Active Directory. Uma única política pode ser aplicada a todos os três tipos de conta ao configurar as definições de cada tipo. Os tipos de conta são:  
   
-    -   User  
+    -   Usuário  
   
-    -   Computer  
+    -   Computador  
   
     -   Conta de serviço gerenciado e conta de serviço gerenciado de grupo  
   
@@ -337,7 +337,7 @@ A seção de contas na Política de autenticação mostra que as contas que poss
 ![contas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AccountsAssigned.gif)  
   
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Usar as falhas da política de autenticação-log administrativo do controlador de domínio  
-Uma nova **falha de política de autenticação –** log administrativo do controlador de domínio em **logs de aplicativos e serviços** > **Microsoft** > **Windows** >  a**autenticação** foi criada para facilitar para descobrir falhas devido a políticas de autenticação. Este log fica desabilitado por padrão. Para habilitá-lo, clique com o botão direito no nome do log e clique em **Habilitar log**. Os novos eventos são muito semelhantes com relação ao conteúdo aos eventos de TGT de Kerberos e auditoria de tíquete de serviço. Para obter mais informações sobre esses eventos, consulte [políticas de autenticação e silos de política de autenticação](https://technet.microsoft.com/library/dn486813.aspx).  
+Uma nova **falha de política de autenticação – log administrativo do controlador de domínio** em **logs de aplicativos e serviços** > **Microsoft** > **Windows** > **autenticação** foi criada para facilitar a descoberta de falhas devido a políticas de autenticação. Este log fica desabilitado por padrão. Para habilitá-lo, clique com o botão direito no nome do log e clique em **Habilitar log**. Os novos eventos são muito semelhantes com relação ao conteúdo aos eventos de TGT de Kerberos e auditoria de tíquete de serviço. Para obter mais informações sobre esses eventos, consulte [políticas de autenticação e silos de política de autenticação](https://technet.microsoft.com/library/dn486813.aspx).  
   
 ### <a name="manage-authentication-policies-by-using-windows-powershell"></a>Gerenciar as políticas de autenticação usando o Windows PowerShell  
 Este comando cria uma política de autenticação chamada **TestAuthenticationPolicy**. O parâmetro **UserAllowedToAuthenticateFrom** especifica os dispositivos aos quais o usuário pode autenticar-se com uma cadeia SDDL no arquivo chamado someFile.txt.  

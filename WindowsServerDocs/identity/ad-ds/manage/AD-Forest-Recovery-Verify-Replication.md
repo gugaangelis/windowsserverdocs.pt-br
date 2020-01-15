@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 302e522a-fb40-43bc-bc63-83dcc87ebde5
 ms.technology: identity-adds
-ms.openlocfilehash: f65508bf8973721a09c779a52f708d6a258e2cb5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f6bee5164849d6643c1744ce121b9ce91b5e7f7f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390232"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949046"
 ---
 # <a name="resources-to-verify-replication-is-working"></a>Recursos para verificar se a replicação está funcionando 
 
@@ -29,10 +29,10 @@ Verifique o log de Replicação do DFS em Visualizador de Eventos para a ID de e
 
 Se o primeiro log de controladores de domínio recuperado a ID de evento 4614 ("o controlador de domínios está aguardando para executar a replicação inicial. A pasta replicada permanecerá no estado de sincronização inicial até que seja replicada com seu parceiro ") no log de Replicação do DFS, a ID de evento 4602 não será exibida e você precisará executar as seguintes etapas manuais para recuperar o SYSVOL se ele for replicado pelo SYSVOL  
 
-1. Quando o evento 4612 do DFSR aparece no primeiro DC restaurado, execute uma restauração manual autoritativa, conforme descrito em [2218556: Como forçar uma sincronização autoritativa e não autoritativa para o SYSVOL replicado pelo DFSR (como "D4/D2" para o FRS) ](https://support.microsoft.com/kb/2218556) (https://support.microsoft.com/kb/2218556).  
+1. Quando o evento 4612 do DFSR aparece no primeiro DC restaurado, execute uma restauração manual autoritativa, conforme descrito em [2218556: como forçar uma sincronização autoritativa e não autoritativa para o SYSVOL replicado pelo DFSR (como "D4/D2" para o FRS)](https://support.microsoft.com/kb/2218556) (https://support.microsoft.com/kb/2218556).  
 2. Defina o **sinalizador SysvolReady** como 1 manualmente, conforme descrito em [947022 o compartilhamento Netlogon não está presente após a instalação do Active Directory Domain Services em um novo controlador de domínio baseado em Windows Server 2008 completo ou somente leitura](https://support.microsoft.com/kb/947022).  
 
-Você também pode criar um relatório de diagnóstico Replicação do DFS. Para obter mais informações, consulte [criar um relatório de diagnóstico para replicação do DFS](https://technet.microsoft.com/library/cc754227.aspx) e [guia passo a passo do DFS para o Windows Server 2008](https://technet.microsoft.com/library/cc732863\(WS.10\).aspx). Se o servidor estiver executando o Windows Server 2008 R2, você poderá usar a [opção de linha de comando Dfsrdiag. exe replicationstate](http://blogs.technet.com/b/filecab/archive/2009/05/28/dfsrdiag-exe-replicationstate-what-s-dfsr-up-to.aspx).  
+Você também pode criar um relatório de diagnóstico Replicação do DFS. Para obter mais informações, consulte [criar um relatório de diagnóstico para replicação do DFS](https://technet.microsoft.com/library/cc754227.aspx) e [guia passo a passo do DFS para o Windows Server 2008](https://technet.microsoft.com/library/cc732863\(WS.10\).aspx). Se o servidor estiver executando o Windows Server 2008 R2, você poderá usar a [opção de linha de comando Dfsrdiag. exe replicationstate](https://blogs.technet.com/b/filecab/archive/2009/05/28/dfsrdiag-exe-replicationstate-what-s-dfsr-up-to.aspx).  
 
 Você também pode executar o teste de replicações usando Dcdiag. exe para verificar se há erros de replicação. Para obter mais informações, consulte o [artigo 249256](https://support.microsoft.com/kb/249256)da base de dados de conhecimento.
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 826769c1405648f37c86f97b4b9134871f4d30ed
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 227d66dafffd67b0b2e4f67158498cf43c7b59f8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791188"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950363"
 ---
 # <a name="protected-users-security-group"></a>Grupo de segurança de usuários protegidos
 
@@ -26,7 +26,7 @@ ms.locfileid: "74791188"
 
 Este tópico destinado a profissionais de TI descreve o grupo de segurança do Active Directory chamado Usuários Protegidos e explica como ele funciona. Esse grupo foi introduzido nos controladores de domínio do Windows Server 2012 R2.
 
-## <a name="BKMK_ProtectedUsers"></a>Sobre
+## <a name="BKMK_ProtectedUsers"></a>Visão geral
 
 Esse grupo de segurança é projetado como parte de uma estratégia para gerenciar a exposição de credenciais dentro da empresa. Os membros deste grupo possuem proteções não configuráveis automaticamente aplicadas às suas contas. A associação ao grupo Usuários protegidos visa restringir e proteger proativamente por padrão. O único método de modificar tais proteções de uma conta é removê-la do grupo de segurança.
 
@@ -66,9 +66,9 @@ A tabela a seguir especifica as propriedades do grupo Usuários protegidos.
 |-------|-----|
 |SID/RID conhecido|S-1-5-21-<domain>-525|
 |Digite|Domínio global|
-|Contêiner padrão|CN = Users, DC =<domain>, DC =|
-|Membros padrão|Nenhuma|
-|Membro padrão de|Nenhuma|
+|Contêiner padrão|CN=Usuários, DC=<domain>, DC=|
+|Membros padrão|Não|
+|Membro padrão de|Não|
 |Protegido por ADMINSDHOLDER?|Não|
 |É seguro movê-lo para fora do contêiner padrão?|Sim|
 |É seguro delegar o gerenciamento deste grupo a administradores que não são de serviço?|Não|
@@ -89,7 +89,7 @@ Quando o usuário conectado for membro do grupo de usuários protegidos, as segu
 - A partir do Windows 8.1 e do Windows Server 2012 R2, o Windows Digest não armazenará em cache as credenciais de texto sem formatação do usuário mesmo quando o Windows Digest estiver habilitado.
 
 > [!Note]
-> Depois de instalar o [Microsoft Security Advisory 2871997](https://technet.microsoft.com/library/security/2871997) , o resumo do Windows continuará a armazenar as credenciais em cache até a chave do registro ser configurada. Consulte [consultoria de segurança da Microsoft: atualizar para melhorar a proteção e o gerenciamento de credenciais: 13 de maio de 2014](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obter instruções.
+> Depois de instalar o [Microsoft Security Advisory 2871997](https://technet.microsoft.com/library/security/2871997) , o resumo do Windows continuará a armazenar as credenciais em cache até a chave do registro ser configurada. Consulte [consultoria de segurança da Microsoft: atualizar para melhorar a proteção e o gerenciamento de credenciais: 13 de maio de 2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obter instruções.
 
 - O NTLM não armazenará em cache as credenciais de texto sem formatação do usuário ou a função unidirecional do NT (NTOWF).
 
@@ -112,7 +112,7 @@ As contas que são membros do grupo de usuários protegidos que se autenticam em
 
 As definições não configuráveis para a expiração de TGTs são estabelecidas para cada conta do grupo de Usuários protegidos. Normalmente, o controlador de domínio define o tempo de vida e renovação do TGT com base nas políticas do domínio **Tempo de vida máximo para o tíquete do usuário** e **Tempo de vida máximo para renovação de tíquete do usuário**. Para o grupo de Usuários protegidos, foram definidos 600 minutos para essas políticas de domínio.
 
-Para mais informações, consulte [Como configurar contas protegidas](how-to-configure-protected-accounts.md).
+Para obter mais informações, consulte [How to Configure Protected Accounts](how-to-configure-protected-accounts.md).
 
 ## <a name="troubleshooting"></a>Painel de controle da
 Dois logs administrativos operacionais estão disponíveis para ajudar a solucionar problemas de eventos relacionados aos Usuários protegidos. Esses novos logs estão no Visualizador de eventos e são desabilitad por padrão, localizados em **Applications and Services Logs\Microsoft\Windows\Microsoft\Authentication**.

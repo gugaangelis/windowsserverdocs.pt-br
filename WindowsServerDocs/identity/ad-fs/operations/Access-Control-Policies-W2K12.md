@@ -9,12 +9,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 517582661374c388d44362538da6933a916b0039
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7ae66fd47953017652ed1e753279e344e0a6c478
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407750"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949418"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Políticas de controle de acesso no Windows Server 2012 R2 e no Windows Server 2012 AD FS
 
@@ -41,11 +41,11 @@ Para resolver, atualize todas as políticas que negam com base na declaração d
 
 Por exemplo, a regra abaixo:
 
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 
 seria atualizado para:
 
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "(/adfs/ls/)|(/adfs/services/trust/2005/windowstransport)|(/adfs/services/trust/13/windowstransport)|(/adfs/services/trust/2005/usernamemixed)|(/adfs/services/trust/13/usernamemixed)|(/adfs/services/trust/2005/certificatemixed)|(/adfs/services/trust/13/certificatemixed)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "(/adfs/ls/)|(/adfs/services/trust/2005/windowstransport)|(/adfs/services/trust/13/windowstransport)|(/adfs/services/trust/2005/usernamemixed)|(/adfs/services/trust/13/usernamemixed)|(/adfs/services/trust/2005/certificatemixed)|(/adfs/services/trust/13/certificatemixed)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`
 
 
 
@@ -80,10 +80,10 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 4.  Na página **selecionar modelo de regra** , em **modelo de regra de declaração**, selecione **enviar declarações usando uma regra personalizada**e clique em **Avançar**.  
 
 5.  Na página **Configurar regra** , em **nome da regra de declaração**, digite o nome de exibição para essa regra, por exemplo, "se houver alguma declaração de IP fora do intervalo desejado, negar". Em **regra personalizada**, digite ou cole a seguinte sintaxe de linguagem de regra de declaração (substitua o valor acima por "x-MS-Forwarded-Client-IP" por uma expressão de IP válida):  
-`c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  Clique em **Concluir**. Verifique se a nova regra aparece na lista regras de autorização de emissão antes da regra padrão **permitir acesso a todos os usuários** (a regra de negação terá precedência, mesmo que apareça anteriormente na lista).  Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:  </br>
+`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
+6.  Clique em **concluir**. Verifique se a nova regra aparece na lista regras de autorização de emissão antes da regra padrão **permitir acesso a todos os usuários** (a regra de negação terá precedência, mesmo que apareça anteriormente na lista).  Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:  </br>
 
-    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
+    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
 7.  Para salvar as novas regras, na caixa de diálogo **Editar regras de declaração** , clique em **OK**. A lista resultante deve ser parecida com a seguinte.  
 
@@ -104,9 +104,9 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 5.  Na página **Configurar regra** , em **nome da regra de declaração**, digite o nome de exibição para essa regra, por exemplo, "se houver alguma declaração de IP fora do intervalo desejado, emita a declaração ipoutsiderange". Em **regra personalizada**, digite ou cole a seguinte sintaxe de linguagem de regra de declaração (substitua o valor acima por "x-MS-Forwarded-Client-IP" por uma expressão de IP válida):  
 
-    `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
+    `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  Clique em **Concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
+6.  Clique em **concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
 
 7.  Em seguida, na caixa de diálogo **Editar regras de declaração** , na guia **regras de autorização de emissão** , clique em **Adicionar regra** para iniciar o assistente de regra de declaração novamente.  
 
@@ -116,10 +116,10 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 
 ~~~
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 ~~~
 
-10. Clique em **Concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
+10. Clique em **concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
 
 11. Em seguida, na caixa de diálogo **Editar regras de declaração** , na guia **regras de autorização de emissão** , clique em **Adicionar regra** para iniciar o assistente de regra de declaração novamente.  
 
@@ -128,10 +128,10 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 13. Na página **Configurar regra** , em **nome da regra de declaração**, digite o nome de exibição para essa regra, por exemplo, "verificar se a declaração do aplicativo existe". Em **regra personalizada**, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:  
 
    ```  
-   NOT EXISTS([Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
+   NOT EXISTS([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
    ```  
 
-14. Clique em **Concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
+14. Clique em **concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
 
 15. Em seguida, na caixa de diálogo **Editar regras de declaração** , na guia **regras de autorização de emissão** , clique em **Adicionar regra** para iniciar o assistente de regra de declaração novamente.  
 
@@ -139,8 +139,8 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 17. Na página **Configurar regra** , em **nome da regra de declaração**, digite o nome de exibição para essa regra, por exemplo "negar usuários com ipoutsiderange verdadeiro e falha do aplicativo". Em **regra personalizada**, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:  
 
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. Clique em **Concluir**. Verifique se a nova regra aparece imediatamente abaixo da regra anterior e antes da regra padrão permitir acesso a todos os usuários na lista regras de autorização de emissão (a regra de negação terá precedência, embora apareça anteriormente na lista).  </br>Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
+18. Clique em **concluir**. Verifique se a nova regra aparece imediatamente abaixo da regra anterior e antes da regra padrão permitir acesso a todos os usuários na lista regras de autorização de emissão (a regra de negação terá precedência, embora apareça anteriormente na lista).  </br>Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. Para salvar as novas regras, na caixa de diálogo **Editar regras de declaração** , clique em OK. A lista resultante deve ser parecida com a seguinte.  
 
     ![Regras de Autorização de Emissão](media/Access-Control-Policies-W2K12/clientaccess2.png )  
@@ -158,8 +158,8 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 4.  Na página **selecionar modelo de regra** , em **modelo de regra de declaração**, selecione **enviar declarações usando uma regra personalizada**e clique em **Avançar**.  
 
 5.  Na página **Configurar regra** , em **nome da regra de declaração**, digite o nome de exibição para essa regra, por exemplo, "se houver alguma declaração de IP fora do intervalo desejado, emita a declaração ipoutsiderange". Em **regra personalizada**, digite ou cole a seguinte sintaxe de linguagem de regra de declaração (substitua o valor acima por "x-MS-Forwarded-Client-IP" por uma expressão de IP válida):  </br>
-`c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  Clique em **Concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
+`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
+6.  Clique em **concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
 
 7.  Em seguida, na caixa de diálogo **Editar regras de declaração** , na guia **regras de autorização de emissão** , clique em **Adicionar regra** para iniciar o assistente de regra de declaração novamente.  
 
@@ -169,12 +169,12 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 
 ~~~
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 ~~~
 
-10. Clique em **Concluir**. Verifique se a nova regra aparece na lista regras de autorização de emissão antes da regra padrão **permitir acesso a todos os usuários** (a regra de negação terá precedência, mesmo que apareça anteriormente na lista).  </br></br> Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:  
+10. Clique em **concluir**. Verifique se a nova regra aparece na lista regras de autorização de emissão antes da regra padrão **permitir acesso a todos os usuários** (a regra de negação terá precedência, mesmo que apareça anteriormente na lista).  </br></br> Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:  
 
-   `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
+   `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
 11. Para salvar as novas regras, na caixa de diálogo **Editar regras de declaração** , clique em **OK**. A lista resultante deve ser parecida com a seguinte.  
 
@@ -197,10 +197,10 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 
 ~~~
-`c1:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
+`c1:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 ~~~
 
-6. Clique em **Concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
+6. Clique em **concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
 
 7. Em seguida, na caixa de diálogo **Editar regras de declaração** , na guia **regras de autorização de emissão** , clique em **Adicionar regra** para iniciar o assistente de regra de declaração novamente.  
 
@@ -208,9 +208,9 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 9. Na página **Configurar regra** , em **nome da regra de declaração**, digite o nome para exibição dessa regra, por exemplo, "verificar SID do grupo". Em **regra personalizada**, digite ou cole a seguinte sintaxe de linguagem de regra de declaração (substitua "GroupId" pelo Sid real do grupo do AD que você está usando):  
 
-    `NOT EXISTS([Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
+    `NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. Clique em **Concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
+10. Clique em **concluir**. Verifique se a nova regra aparece na lista **regras de autorização de emissão** .  
 
 11. Em seguida, na caixa de diálogo **Editar regras de declaração** , na guia **regras de autorização de emissão** , clique em **Adicionar regra** para iniciar o assistente de regra de declaração novamente.  
 
@@ -218,11 +218,11 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 13. Na página **Configurar regra** , em **nome da regra de declaração**, digite o nome para exibição dessa regra, por exemplo "negar usuários com ipoutsiderange true e GroupId falha". Em **regra personalizada**, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:  
 
-   `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
+   `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. Clique em **Concluir**. Verifique se a nova regra aparece imediatamente abaixo da regra anterior e antes da regra padrão permitir acesso a todos os usuários na lista regras de autorização de emissão (a regra de negação terá precedência, embora apareça anteriormente na lista).  </br></br>Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:  
+14. Clique em **concluir**. Verifique se a nova regra aparece imediatamente abaixo da regra anterior e antes da regra padrão permitir acesso a todos os usuários na lista regras de autorização de emissão (a regra de negação terá precedência, embora apareça anteriormente na lista).  </br></br>Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:  
 
-   `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
+   `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
 15. Para salvar as novas regras, na caixa de diálogo **Editar regras de declaração** , clique em OK. A lista resultante deve ser parecida com a seguinte.  
 
@@ -246,7 +246,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 > 1. Vários endereços IP, indicando o endereço IP do cliente e o endereço de cada proxy que passou na solicitação, serão separados por uma vírgula.  
 >    2. Os endereços IP relacionados à infraestrutura do Exchange Online não serão na lista.  
 
-### <a name="regular-expressions"></a>Expressões regulares  
+### <a name="regular-expressions"></a>Expressões Regulares  
  Quando você precisa corresponder a um intervalo de endereços IP, é necessário construir uma expressão regular para executar a comparação. Na próxima série de etapas, forneceremos exemplos de como construir essa expressão para corresponder aos intervalos de endereços a seguir (Observe que você precisará alterar esses exemplos para corresponder ao seu intervalo de IP público):  
 
 - 192.168.1.1 – 192.168.1.25  
@@ -296,7 +296,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
  AD FS no Windows Server 2012 R2 fornece informações de contexto de solicitação usando os seguintes tipos de declaração:  
 
 ### <a name="x-ms-forwarded-client-ip"></a>X-MS-encaminhar-Client-IP  
- Tipo de declaração: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
+ Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
 
  Essa declaração de AD FS representa uma "melhor tentativa" ao garantir o endereço IP do usuário (por exemplo, o cliente Outlook) fazendo a solicitação. Essa declaração pode conter vários endereços IP, incluindo o endereço de cada proxy que encaminhou a solicitação.  Essa declaração é preenchida a partir de um HTTP. O valor da declaração pode ser um dos seguintes:  
 
@@ -318,7 +318,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 >  Atualmente, o Exchange Online dá suporte apenas a endereços IPV4; Ele não dá suporte a endereços IPV6.  
 
 ### <a name="x-ms-client-application"></a>X-MS-cliente-aplicativo  
- Tipo de declaração: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
+ Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
 
  Essa declaração de AD FS representa o protocolo usado pelo cliente final, que corresponde livremente ao aplicativo que está sendo usado.  Essa declaração é populada a partir de um cabeçalho HTTP que atualmente só é definido pelo Exchange Online, que popula o cabeçalho ao passar a solicitação de autenticação para AD FS. Dependendo do aplicativo, o valor dessa declaração será um dos seguintes:  
 
@@ -345,7 +345,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
     -   Microsoft. Exchange. IMAP  
 
 ### <a name="x-ms-client-user-agent"></a>X-MS-Client-User-Agent  
- Tipo de declaração: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
+ Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
 
  Essa declaração de AD FS fornece uma cadeia de caracteres para representar o tipo de dispositivo que o cliente está usando para acessar o serviço. Isso pode ser usado quando os clientes desejarem impedir o acesso a determinados dispositivos (como tipos específicos de Smart Phone).  Os valores de exemplo para essa declaração incluem (mas não estão limitados a) os valores abaixo.  
 
@@ -368,23 +368,23 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
   Também é possível que esse valor esteja vazio.  
 
 ### <a name="x-ms-proxy"></a>X-MS-proxy  
- Tipo de declaração: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
+ Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
 
  Essa declaração de AD FS indica que a solicitação passou pelo proxy de aplicativo Web.  Essa declaração é preenchida pelo proxy de aplicativo Web, que popula o cabeçalho ao passar a solicitação de autenticação para o back-end Serviço de Federação. AD FS, em seguida, converte-o em uma declaração.  
 
  O valor da declaração é o nome DNS do proxy de aplicativo Web que passou na solicitação.  
 
 ### <a name="insidecorporatenetwork"></a>InsideCorporateNetwork  
- Tipo de declaração: `http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
+ Tipo de declaração: `https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
 
  Semelhante ao tipo de declaração x-MS-proxy acima, esse tipo de declaração indica se a solicitação passou pelo proxy de aplicativo Web. Ao contrário de x-MS-proxy, insidecorporatenetwork é um valor booliano com true indicando uma solicitação diretamente para o serviço de Federação de dentro da rede corporativa.  
 
 ### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-Endpoint-Absolute-Path (ativo vs passivo)  
- Tipo de declaração: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
+ Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
 
  Esse tipo de declaração pode ser usado para determinar solicitações originadas de clientes "ativos" (ricos) versus clientes "passivos" (baseados em navegador da Web). Isso permite que solicitações externas de aplicativos baseados em navegador, como o Outlook Acesso via Web, o SharePoint Online ou o portal do Office 365, sejam permitidas enquanto as solicitações originadas de clientes avançados, como o Microsoft Outlook, são bloqueadas.  
 
  O valor da declaração é o nome do serviço de AD FS que recebeu a solicitação.  
 
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
  [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)

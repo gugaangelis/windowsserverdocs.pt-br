@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: df455dfb0d2936192a3c2d7825e2d6d031cfe892
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361071"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948477"
 ---
 # <a name="health-service-in-windows-server"></a>Serviço de Integridade no Windows Server
 
@@ -33,7 +33,7 @@ Consulte [serviço de integridade relatórios](health-service-reports.md).
 
 Consulte [serviço de integridade falhas](health-service-faults.md).
 
-## <a name="actions"></a>Ações
+## <a name="actions"></a>Actions
 
 Consulte [serviço de integridade ações](health-service-actions.md).
 
@@ -92,15 +92,15 @@ O Serviço de Integridade fornece um mecanismo de imposição para restringir os
 
 ### <a name="usage"></a>Uso  
 
-O documento de componentes com suporte usa uma sintaxe inspirada em XML. É recomendável usar seu editor de texto favorito, como o [Visual Studio Code](http://code.visualstudio.com/) gratuito ou o bloco de notas, para criar um documento XML que você pode salvar e reutilizar.
+O documento de componentes com suporte usa uma sintaxe inspirada em XML. É recomendável usar seu editor de texto favorito, como o [Visual Studio Code](https://code.visualstudio.com/) gratuito ou o bloco de notas, para criar um documento XML que você pode salvar e reutilizar.
 
-#### <a name="sections"></a>As
+#### <a name="sections"></a>Seções
 
 O documento tem duas seções independentes: `Disks` e `Cache`.
 
 Se a seção `Disks` for fornecida, somente as unidades listadas (como `Disk`) terão permissão para unir os pools. Todas as unidades não listadas são impedidas de unir pools, o que efetivamente impede seu uso na produção. Se esta seção for deixada vazia, qualquer unidade terá permissão para ingressar em pools.
 
-Se a seção `Cache` for fornecida, somente as unidades listadas (como `CacheDisk`) serão usadas para cache. Se esta seção for deixada vazia, Espaços de Armazenamento Diretos tentará [adivinhar com base no tipo de mídia e no tipo de barramento](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). As unidades listadas aqui também devem ser listadas em `Disks`.
+Se a seção `Cache` for fornecida, somente as unidades listadas (como `CacheDisk`) serão usadas para armazenar em cache. Se esta seção for deixada vazia, Espaços de Armazenamento Diretos tentará [adivinhar com base no tipo de mídia e no tipo de barramento](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). As unidades listadas aqui também devem ser listadas em `Disks`.
 
 >[!IMPORTANT]
 > O documento de componentes com suporte não se aplica retroativamente às unidades já agrupadas e em uso.  
@@ -141,7 +141,7 @@ Se a seção `Cache` for fornecida, somente as unidades listadas (como `CacheDis
 
 ```
 
-Para listar várias unidades, basta adicionar mais marcas `<Disk>` ou `<CacheDisk>`.
+Para listar várias unidades, basta adicionar marcas de `<Disk>` ou `<CacheDisk>` adicionais.
 
 Para injetar esse XML ao implantar Espaços de Armazenamento Diretos, use o parâmetro `-XML`:
 
@@ -170,7 +170,7 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 Consulte [configurações de serviço de integridade](health-service-settings.md).
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Relatórios de Serviço de Integridade](health-service-reports.md)
 - [Falhas de Serviço de Integridade](health-service-faults.md)

@@ -9,22 +9,22 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: pashort
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 22dcfb318a0e60bd1694496288f3e63b2780d643
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355495"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949921"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solucionar problemas de pilha de rede definida do Windows Server Software
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este guia examina os erros comuns de SDN (rede definida pelo software) e os cenários de falha e descreve um fluxo de trabalho de solução de problemas que aproveita as ferramentas de diagnóstico disponíveis.  
 
 Para obter mais informações sobre a rede definida pelo software da Microsoft, consulte [rede definida pelo software](../../sdn/Software-Defined-Networking--SDN-.md).  
 
-## <a name="error-types"></a>Tipos de erro  
+## <a name="error-types"></a>Tipos de erros  
 A lista a seguir representa a classe de problemas que mais frequentemente vimos com a HNVv1 (virtualização de rede do Hyper-V) no Windows Server 2012 R2 de implantações de produção no mercado e coincide de várias maneiras com os mesmos tipos de problemas vistos no Windows Server 2016 HNVv2 com a nova pilha de SDN (rede definida pelo software).  
 
 A maioria dos erros pode ser classificada em um pequeno conjunto de classes:   
@@ -67,7 +67,7 @@ Esses cmdlets estão documentados no TechNet no [tópico do cmdlet de diagnósti
 ### <a name="hyper-v-host-diagnostics"></a>Diagnóstico de host do Hyper-V  
 Esses cmdlets estão documentados no TechNet no [tópico do cmdlet de diagnóstico de HNV (virtualização de rede) do Hyper-V](https://docs.microsoft.com/powershell/module/hnvdiagnostics/). Eles ajudam a identificar problemas no caminho de dados entre as máquinas virtuais de locatário (leste/oeste) e o tráfego de entrada por meio de um VIP SLB (Norte/Sul). 
 
-O _debug-VirtualMachineQueueOperation_, o _Get-CustomerRoute_, o _Get-PACAMapping_, o _Get-ProviderAddress_, o _Get-VMNetworkAdapterPortId_, o _Get-VMSwitchExternalPortId_e _o Test-EncapOverheadSettings_ são todos os testes locais que podem ser executados em qualquer host Hyper-V. Os outros cmdlets invocam testes de caminho de dados por meio do controlador de rede e, portanto, precisam de acesso ao controlador de rede como Descried acima.
+O _debug-VirtualMachineQueueOperation_, o _Get-CustomerRoute_, o _Get-PACAMapping_, o _Get-ProviderAddress_, o _Get-VMNetworkAdapterPortId_, o _Get-VMSwitchExternalPortId_e o _Test-EncapOverheadSettings_ são todos os testes locais que podem ser executados em qualquer host Hyper-V. Os outros cmdlets invocam testes de caminho de dados por meio do controlador de rede e, portanto, precisam de acesso ao controlador de rede como Descried acima.
 
 ### <a name="github"></a>GitHub
 O [repositório GitHub Microsoft/Sdn](https://github.com/microsoft/sdn) tem vários scripts de exemplo e fluxos de trabalho que se baseiam nesses cmdlets na caixa. Em particular, os scripts de diagnóstico podem ser encontrados na pasta de [diagnóstico](https://github.com/Microsoft/sdn/diagnostics) . Ajude-nos a contribuir com esses scripts enviando solicitações pull.
@@ -121,9 +121,9 @@ Message:          Host is not Connected.
 A tabela a seguir mostra a lista de códigos de erro, mensagens e ações de acompanhamento a serem executadas com base no estado de configuração observado.
 
 
-| **Auto-completar**| **Mensagem**| **Ação**|  
+| **Código**| **Message**| **Ação**|  
 |--------|-----------|----------|  
-| Desconhecido| Erro desconhecido| |  
+| Unknown| Erro desconhecido| |  
 | HostUnreachable                       | O computador host não está acessível | Verificar a conectividade de rede de gerenciamento entre o controlador de rede e o host |  
 | PAIpAddressExhausted                  | Os endereços IP PA foram exauridos | Aumentar o tamanho do pool de IPS da sub-rede lógica do provedor HNV |  
 | PAMacAddressExhausted                 | Os endereços MAC do PA esgotados | Aumentar o intervalo do pool de Mac |  
@@ -168,7 +168,7 @@ netstat -anp tcp |findstr 6640
   TCP    10.127.132.153:50023   10.127.132.211:6640    ESTABLISHED
 ```
 #### <a name="check-host-agent-services"></a>Verificar serviços do Host Agent
-O controlador de rede se comunica com dois serviços de agente de host nos hosts Hyper-V: Agente de host SLB e agente de host NC. É possível que um ou ambos os serviços não estejam em execução. Verifique seu estado e reinicie se eles não estiverem em execução.
+O controlador de rede se comunica com dois serviços de agente de host nos hosts Hyper-V: agente de host SLB e agente de host NC. É possível que um ou ambos os serviços não estejam em execução. Verifique seu estado e reinicie se eles não estiverem em execução.
 
 ```none
 Get-Service SlbHostAgent
@@ -237,7 +237,7 @@ Properties       : Microsoft.Windows.NetworkController.ServerProperties
 *Correção* Se estiver usando scripts SDNExpress ou implantação manual, atualize a chave de hostid no registro para corresponder à ID de instância do recurso de servidor. Reinicie o agente de host do controlador de rede no host do Hyper-V (servidor físico) se estiver usando o VMM, exclua o servidor Hyper-V do VMM e remova a chave do registro hostid. Em seguida, adicione novamente o servidor por meio do VMM.
 
 
-Verifique se as impressões digitais dos certificados X. 509 usados pelo host do Hyper-V (o nome do host será a entidade) para a comunicação (SouthBound) entre o host Hyper-V (serviço do agente de host do NC) e os nós do controlador de rede são os mesmos. Verifique também se o certificado REST do controlador de rede tem o nome de assunto *CN = <FQDN or IP>* .
+Verifique se as impressões digitais dos certificados X. 509 usados pelo host do Hyper-V (o nome do host será a entidade) para a comunicação (SouthBound) entre o host Hyper-V (serviço do agente de host do NC) e os nós do controlador de rede são os mesmos. Verifique também se o certificado REST do controlador de rede tem o nome de assunto *CN =<FQDN or IP>* .
 
 ```  
 # On Hyper-V Host
@@ -527,7 +527,7 @@ Cannot send jumbo packets to the destination. Physical switch ports may not be c
 # TODO: Success Results aftering updating MTU on physical switch ports
 ```
 
-*Corre*
+*Remediação*
 * Ajuste o tamanho de MTU nas portas do comutador físico para que seja pelo menos 1674B (incluindo o cabeçalho e o trailer de Ethernet 14B)
 * Se a placa NIC não oferecer suporte à palavra-chave EncapOverhead, ajuste a palavra-chave JumboPacket para ter pelo menos 1674B
 
@@ -606,7 +606,7 @@ Consulte a API REST do controlador de rede encontrada no ambiente de demonstraç
     $uri = "https://sa18n30nc.sa18.nttest.microsoft.com"
     Get-NetworkControllerAccessControlList -ConnectionUri $uri 
 
-# <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>Examine a configuração de IP e as sub-redes virtuais que fazem referência a essa ACL
+## <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>Examine a configuração de IP e as sub-redes virtuais que fazem referência a essa ACL
 
 1. Hoster Execute ``Get-ProviderAddress`` em ambos os hosts Hyper-V que hospedam as duas máquinas virtuais de locatário em questão e, em seguida, execute ``Test-LogicalNetworkConnection`` ou ``ping -c <compartment>`` do host Hyper-V para validar a conectividade na rede lógica do provedor de HNV
 2.  Hoster Verifique se as configurações de MTU estão corretas nos hosts Hyper-V e em qualquer dispositivo de comutação de camada 2 entre os hosts Hyper-V. Execute ``Test-EncapOverheadValue`` em todos os hosts Hyper-V em questão. Verifique também se todos os comutadores de camada 2 no entre têm MTU definido como menos 1674 bytes para considerar a sobrecarga máxima de 160 bytes.  
@@ -641,7 +641,7 @@ Você pode alterar as configurações de log a qualquer momento usando o cmdlet 
 
 - **Local de log centralizado**.  Você pode alterar o local para armazenar todos os logs, com o parâmetro ``DiagnosticLogLocation``.  
 - **Credenciais para acessar o local do log**.  Você pode alterar as credenciais para acessar o local do log, com o parâmetro ``LogLocationCredential``.  
-- **Mover para o log local**.  Se você tiver fornecido um local centralizado para armazenar logs, poderá voltar para o log localmente nos nós do controlador de rede com o parâmetro ``UseLocalLogLocation`` (não recomendado devido a requisitos de espaço em disco grande).  
+- **Mover para o log local**.  Se você tiver fornecido local centralizado para armazenar logs, poderá voltar para o log localmente nos nós do controlador de rede com o parâmetro ``UseLocalLogLocation`` (não recomendado devido a grandes requisitos de espaço em disco).  
 - **Escopo de log**.  Por padrão, todos os logs são coletados. Você pode alterar o escopo para coletar somente os logs de cluster do controlador de rede.  
 - **Nível de log**.  O nível de log padrão é informativo. Você pode alterá-lo para erro, aviso ou detalhado.  
 - **Tempo de envelhecimento do log**.  Os logs são armazenados de maneira circular. Você terá 3 dias de dados de registro em log por padrão, independentemente de usar o log local ou o registro em log centralizado. Você pode alterar esse limite de tempo com o parâmetro **LogTimeLimitInDays** .  
@@ -673,7 +673,7 @@ Se um usuário tiver executado o cmdlet _debug-NetworkController_ , logs adicion
     1.  O mecanismo de Load Balancer (LB) está conectado ao SLBM? (*Total de configurações de LBEngine do SLBM* > 0)  
     2.  O SLBM não conhece pelo menos seus pontos de extremidade? (*Total de pontos de extremidade VIP* > = 2)  
     3.  Os hosts do Hyper-V (DIP) estão conectados ao SLBM? (*Clientes HP conectados* = = número de servidores)   
-    4.  O SLBM está conectado ao Muxes? (*Muxes conectado* == *MUXES íntegro em SLBM* == *Muxes Reporting Healthy* = # SLB Muxes VMS).  
+    4.  O SLBM está conectado ao Muxes? (*Muxes conectado* == *MUXES íntegro no SLBM* == *Muxes Reporting íntegro* = # SLB Muxes VMS).  
 3.  Verifique se o roteador BGP configurado está emparelhando com êxito com o SLB MUX  
     1.  Se estiver usando o RRAS com acesso remoto (ou seja, máquina virtual BGP):  
         1.  Get-BgpPeer deve mostrar conectado  
@@ -682,13 +682,13 @@ Se um usuário tiver executado o cmdlet _debug-NetworkController_ , logs adicion
         1.  Por exemplo: # show BGP Instance  
 4.  Validar os contadores *SlbMuxPerfCounters* e *SLBMUX* no perfmon na VM SLB MUX
 5.  Verificar o estado de configuração e os intervalos VIP no recurso do Gerenciador de Load Balancer de software  
-    1.  Get-NetworkControllerLoadBalancerConfiguration-Conexãouri < https://<FQDN or IP> | ConvertTo-JSON-Depth 8 (verifique os intervalos VIP em pools de IPS e garanta o*LoadBalanacerManagerIPAddress*(autovip) de SLBM e quaisquer VIPs voltados para o locatário estão dentro desses intervalos)  
+    1.  Get-NetworkControllerLoadBalancerConfiguration-Conexãouri < https://<FQDN or IP>| ConvertTo-JSON-Depth 8 (verifique os intervalos VIP em pools de IPS e garanta o*LoadBalanacerManagerIPAddress*(autovip) de SLBM e quaisquer VIPs voltados para o locatário estão dentro desses intervalos)  
         1. Get-NetworkControllerIpPool-networkid "< ID de recurso de rede lógica VIP pública/privada >"-Subnetid "< ID de recurso de sub-rede lógica VIP/privada >"-ResourceId "<IP Pool Resource Id>"-Conexãouri $uri | ConvertTo-JSON-Depth 8 
     2.  Debug-NetworkControllerConfigurationState-  
 
 Se qualquer uma das verificações acima falhar, o estado SLB do locatário também estará em um modo de falha.  
 
-@No__t de **correção**-1  
+  de **correção**  
 Com base nas seguintes informações de diagnóstico apresentadas, corrija o seguinte:  
 * Garantir que os multiplexadores SLB estejam conectados  
   * Corrigir problemas de certificado  
@@ -707,7 +707,7 @@ Com base nas seguintes informações de diagnóstico apresentadas, corrija o seg
 3.  Hoster Se os pontos de extremidade DIP não forem descobertos ou conectados:   
     1.  Verificar *debug-NetworkControllerConfigurationState*  
         1.  Valide se o NC e o agente de host SLB estão conectados com êxito ao coordenador de eventos do controlador de rede usando ``netstat -anp tcp |findstr 6640)``  
-    2.  Verifique o *hostid* no serviço *nchostagent* RegKey (o código de erro *HostNotConnected* de referência no apêndice) corresponde à ID de instância do recurso de servidor correspondente (``Get-NCServer |convertto-json -depth 8``)  
+    2.  Verifique o *hostid* na RegKey do serviço *nchostagent* (o código de erro *HostNotConnected* de referência no apêndice) corresponde à ID de instância do recurso de servidor correspondente (``Get-NCServer |convertto-json -depth 8``)  
     3.  Verificar a ID do perfil da porta para a porta da máquina virtual corresponde à ID da instância do recurso NIC da máquina virtual correspondente   
 4.  [Provedor de hospedagem] Coletar logs   
 

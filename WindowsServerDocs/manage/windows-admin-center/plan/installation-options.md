@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: d4046cc10a5e0fdc12cfb9587eef10d4263c2ddd
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904015"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950511"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>Que tipo de instalação é ideal para você?
 
@@ -61,7 +61,7 @@ Você pode **gerenciar** os seguintes sistemas operacionais Windows usando o cen
 | Windows Server 2019 | Sim | Sim |
 | Windows Server 2016 | Sim | Sim, com a [atualização cumulativa mais recente](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
 | Microsoft Hyper-V Server 2016 | Sim | Sim |
-| Windows Server 2012 R2 | Sim | Sim |
+| R2 do Windows Server 2012 | Sim | Sim |
 | Microsoft Hyper-V Server 2012 R2 | Sim | Sim |
 | Windows Server 2012 | Sim | Sim |
 | Windows Server 2008 R2 | Sim, funcionalidade limitada | N/D |
@@ -71,7 +71,7 @@ Você pode **gerenciar** os seguintes sistemas operacionais Windows usando o cen
 > 
 > Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e se a versão é 5.1 ou superior. 
 > 
-> Se o WMF não estiver instalado, você poderá [baixar o wmf 5,1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+> Se o WMF não estiver instalado, você poderá [baixar o wmf 5,1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 ## <a name="high-availability"></a>Alta disponibilidade
 

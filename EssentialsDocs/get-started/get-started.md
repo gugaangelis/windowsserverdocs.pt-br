@@ -11,18 +11,18 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: c505ddab123d3735d7f6a109fde073b344f090c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 807ea32a466b6717f61423e58d621a0050047586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833117"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946856"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Introdução ao Windows Server Essentials 
 
 >Aplica-se a: Windows Server 2016 Essentials; Windows Server 2019 Essentials
 
-**Windows Server Essentials** edition é um servidor primeiro conectados à nuvem projetado para pequenas empresas com até 25 usuários e 50 dispositivos. No entanto, se você estiver considerando a instalação de qualquer versão do Windows Server Essentials, recomendamos que você considerar **Microsoft 365**. Para obter mais informações sobre como mover além do Windows Server Essentials para o Microsoft 365, consulte [What's New in Windows Server Essentials de 2019](what-s-new-19.md).
+O **Windows Server Essentials** Edition é um primeiro servidor conectado à nuvem criado para pequenas empresas com até 25 usuários e 50 dispositivos. No entanto, se você estiver pensando em instalar qualquer versão do Windows Server Essentials, recomendamos que você considere **Microsoft 365**. Para obter mais informações sobre como ir além do Windows Server Essentials para Microsoft 365, consulte [novidades do Windows server 2019 Essentials](what-s-new-19.md).
   
 ## <a name="in-this-library"></a>Nesta biblioteca  
  Para informações sobre a instalação, configuração, gerenciamento, uso e solução de problemas , veja a documentação a seguir:  
@@ -34,7 +34,7 @@ ms.locfileid: "59833117"
   
 -   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   
--   [Usar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
+-   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)  
   
 -   [Suporte ao Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)  
   
@@ -51,16 +51,16 @@ ms.locfileid: "59833117"
   
 ## <a name="end-to-end-solution-guides"></a>Guias de solução avançada  
   
--    Para aprender a centralizar o armazenamento de dados, restringir permissões de acesso de dados e fazer backup de seus dados locais e na nuvem, consulte [fornecer proteção de dados em pequenas e médias empresas](https://technet.microsoft.com/library/dn582043.aspx).  
+-    Para saber como centralizar o armazenamento de dados, restringir as permissões de acesso a dados e fazer backup dos dados locais e na nuvem, consulte [fornecer proteção de dados em pequenas e médias empresas](https://technet.microsoft.com/library/dn582043.aspx).  
   
--    Para saber como acessar com segurança dados corporativos em qualquer dispositivo conectado à Internet de qualquer local, consulte [proteger o acesso remoto em pequenas e médias empresas](https://technet.microsoft.com/library/dn629457.aspx).  
+-    Para saber como acessar com segurança dados corporativos em qualquer dispositivo conectado à Internet de qualquer local, consulte [acesso remoto seguro em pequenas e médias empresas](https://technet.microsoft.com/library/dn629457.aspx).  
   
--    Para saber como colaborar com segurança com parceiros e fornecedores, consulte [melhorar a colaboração nas pequenas e médias empresas](https://technet.microsoft.com/library/dn747893.aspx).  
+-    Para saber como colaborar de forma segura com parceiros e fornecedores, consulte [melhorar a colaboração em empresas de pequeno e médio porte](https://technet.microsoft.com/library/dn747893.aspx).  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
--   [Biblioteca TechNet do Windows Server](https://technet.microsoft.com/library/bb625087.aspx)  
+-   [Biblioteca do Windows Server TechNet](https://technet.microsoft.com/library/bb625087.aspx)  
   
--   [O Windows Server Essentials e o Blog do Windows Small Business Server](http://blogs.technet.com/b/sbs/)  
+-   [Blog do Windows Server Essentials e do Windows Small Business Server](https://blogs.technet.com/b/sbs/)  
   
 -   [Biblioteca TechNet do Windows Server Essentials (Small Business Server)](https://technet.microsoft.com/library/cc514417.aspx)

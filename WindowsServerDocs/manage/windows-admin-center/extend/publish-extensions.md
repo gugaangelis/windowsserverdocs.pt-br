@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 24beb287aa35757e1f8057920e8fd95828baf83b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0182c4097ec3bc4432e2ba408d701a72d82a7c8d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385196"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950080"
 ---
 # <a name="publishing-extensions"></a>Publicando extensões
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 Depois de desenvolver sua extensão, você desejará publicá-la e disponibilizá-la para outras pessoas para teste ou uso. Dependendo do público e da finalidade da publicação, há algumas opções que apresentaremos abaixo, juntamente com as etapas e os requisitos de publicação.
 
@@ -58,7 +58,7 @@ Se você estiver lançando uma versão prévia da sua extensão para fins de ava
 
 O centro de administração do Windows utiliza pacotes e feeds do NuGet para distribuir e baixar extensões.  Para que o pacote seja enviado, você precisará gerar um pacote NuGet contendo seus plug-ins e extensões.  Um único pacote pode conter uma extensão de interface do usuário, bem como um plug-in de gateway, e a seção a seguir explicará o processo.
 
-### <a name="1-build-your-extension"></a>1. Compilar sua extensão
+### <a name="1-build-your-extension"></a>1. Crie sua extensão
 
 Assim que estiver pronto para começar a empacotar sua extensão, crie um novo diretório no sistema de arquivos, abra um console do e o CD nele.  Esse será o diretório raiz que usaremos para conter todos os diretórios nuspec e Content que criarão o nosso pacote.  Iremos fazer referência a essa pasta como "pacote NuGet" durante este documento.
 
@@ -70,18 +70,18 @@ Para iniciar o processo de coleta de todo o conteúdo necessário para uma exten
 
 Usando sua infraestrutura de compilação (isso pode ser tão simples quanto abrir o Visual Studio e clicar no botão Compilar), compilar e compilar seu plug-in.  Abra o diretório de saída da compilação e copie as DLLs que representam o plug-in e coloque-as em uma nova pasta dentro do diretório "pacote NuGet" chamado "pacote".  Você não precisa copiar a dll FeatureInterface, apenas as DLLs que representam seu código.
 
-### <a name="2-create-the-nuspec-file"></a>2. Criar o arquivo. nuspec
+### <a name="2-create-the-nuspec-file"></a>2. criar o arquivo. nuspec
 
 Para criar o pacote NuGet, você precisa primeiro criar um arquivo. nuspec. Um arquivo. nuspec é um manifesto XML que contém metadados do pacote NuGet. Esse manifesto é usado para compilar o pacote e fornecer informações aos consumidores.  Coloque esse arquivo na raiz da pasta "pacote NuGet".
 
 Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias ou recomendadas. Para o esquema completo, consulte a [referência. nuspec](https://docs.microsoft.com/nuget/reference/nuspec). Salve o arquivo. nuspec na pasta raiz do projeto com um nome de arquivo de sua escolha.
 
 > [!IMPORTANT]
-> O ```<id>``` valor no arquivo. nuspec precisa ```"name"``` corresponder ao valor no arquivo do ```manifest.json``` projeto ou, caso contrário, a extensão publicada não será carregada com êxito no centro de administração do Windows.
+> O valor de ```<id>``` no arquivo. nuspec precisa corresponder ao valor de ```"name"``` no arquivo de ```manifest.json``` do projeto ou, caso contrário, a extensão publicada não será carregada com êxito no centro de administração do Windows.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <packageTypes>
       <packageType name="WindowsAdminCenterExtension" />
@@ -108,33 +108,33 @@ Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias
 
 #### <a name="required-or-recommended-properties"></a>Propriedades obrigatórias ou recomendadas
 
-| Nome da Propriedade | Obrigatório/recomendado | Descrição |
+| Nome da propriedade | Obrigatório/recomendado | Descrição |
 | ---- | ---- | ---- |
-| PackageType | Obrigatório | Use "WindowsAdminCenterExtension", que é o tipo de pacote NuGet definido para extensões do centro de administração do Windows. |
-| id | Obrigatório | Identificador de pacote exclusivo no feed. Esse valor precisa corresponder ao valor de "nome" no arquivo manifest. JSON do seu projeto.  Consulte [escolhendo um identificador de pacote exclusivo](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para obter diretrizes. |
+| packageType | Necessária | Use "WindowsAdminCenterExtension", que é o tipo de pacote NuGet definido para extensões do centro de administração do Windows. |
+| id | Necessária | Identificador de pacote exclusivo no feed. Esse valor precisa corresponder ao valor de "nome" no arquivo manifest. JSON do seu projeto.  Consulte [Escolhendo um identificador de pacote exclusivo](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para ver diretrizes. |
 | title | Necessário para publicar no feed do centro de administração do Windows | Nome amigável para o pacote que é exibido no Gerenciador de extensões do centro de administração do Windows. |
-| version | Obrigatório | Versão da extensão. O uso [de controle de versão semântico (Convenção de SemVer)](http://semver.org/spec/v1.0.0.html) é recomendado, mas não obrigatório. |
-| Author | Obrigatório | Se estiver publicando em nome da sua empresa, use o nome da empresa. |
-| description | Obrigatório | Forneça uma descrição da funcionalidade da extensão. |
-| IconUrl | Recomendado ao publicar no feed do centro de administração do Windows | URL para o ícone a ser exibido no Gerenciador de extensões. |
-| ProjectUrl | Necessário para publicar no feed do centro de administração do Windows | URL para o site da sua extensão. Se você não tiver um site separado, use a URL para a página da Web do pacote no feed do NuGet. |
-| LicenseUrl | Necessário para publicar no feed do centro de administração do Windows | URL para o contrato de licença de usuário final da extensão. |
-| files | Obrigatório | Essas duas configurações configuram a estrutura de pastas esperada pelo centro de administração do Windows para extensões de interface do usuário e plug-ins de gateway. |
+| Versão do | Necessária | Versão da extensão. O uso [de controle de versão semântico (Convenção de SemVer)](http://semver.org/spec/v1.0.0.html) é recomendado, mas não obrigatório. |
+| authors | Necessária | Se estiver publicando em nome da sua empresa, use o nome da empresa. |
+| description | Necessária | Forneça uma descrição da funcionalidade da extensão. |
+| iconUrl | Recomendado ao publicar no feed do centro de administração do Windows | URL para o ícone a ser exibido no Gerenciador de extensões. |
+| projectUrl | Necessário para publicar no feed do centro de administração do Windows | URL para o site da sua extensão. Se você não tiver um site separado, use a URL para a página da Web do pacote no feed do NuGet. |
+| licenseUrl | Necessário para publicar no feed do centro de administração do Windows | URL para o contrato de licença de usuário final da extensão. |
+| arquivos | Necessária | Essas duas configurações configuram a estrutura de pastas esperada pelo centro de administração do Windows para extensões de interface do usuário e plug-ins de gateway. |
 
-### <a name="3-build-the-extension-nuget-package"></a>3. Compilar o pacote NuGet de extensão
+### <a name="3-build-the-extension-nuget-package"></a>3. compilar o pacote NuGet de extensão
 
 Usando o arquivo. nuspec criado acima, você criará agora o arquivo. nupkg do pacote NuGet que você pode carregar e publicar no feed do NuGet.
 
 1. Baixe a ferramenta da CLI do NuGet. exe no [site de ferramentas de cliente do NuGet](https://docs.microsoft.com/nuget/install-nuget-client-tools).
 2. Execute "NuGet. exe Pack [. nuspec nome do arquivo]" para criar o arquivo. nupkg.
 
-### <a name="4-signing-your-extension-nuget-package"></a>4. Assinando seu pacote NuGet de extensão
+### <a name="4-signing-your-extension-nuget-package"></a>4. assinando seu pacote NuGet de extensão
 
 Qualquer arquivo. dll incluído em sua extensão deve ser assinado com um certificado de uma autoridade de certificação (CA) confiável. Por padrão, os arquivos. dll não assinados serão impedidos de serem executados quando o centro de administração do Windows estiver sendo executado no modo de produção.
 
 Também é altamente recomendável que você assine o pacote NuGet da extensão para garantir a integridade do pacote, mas essa não é uma etapa necessária.
 
-### <a name="5-test-your-extension-nuget-package"></a>5. Testar seu pacote NuGet de extensão
+### <a name="5-test-your-extension-nuget-package"></a>5. testar seu pacote NuGet de extensão
 
 Seu pacote de extensão agora está pronto para teste! Carregue o arquivo. nupkg em um feed do NuGet ou copie-o para um compartilhamento de arquivos. Para exibir e baixar pacotes de um compartilhamento de arquivos ou feed diferente, você precisará [alterar a configuração do feed](../configure/using-extensions.md#installing-extensions-from-a-different-feed) para apontar para o compartilhamento de arquivos ou feed do NuGet. Ao testar, verifique se as propriedades são exibidas corretamente no Gerenciador de extensões e se você pode instalar e desinstalar com êxito sua extensão.
 
@@ -148,7 +148,7 @@ Posteriormente, se você quiser liberar uma atualização para sua extensão, se
 
 ### <a name="submit-an-extension-review-request-to-microsoft"></a>Enviar uma solicitação de revisão de extensão para a Microsoft
 
-Para enviar uma solicitação de revisão de extensão, insira as informações a seguir e envie como [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)um email para. Responderemos ao seu email dentro de uma semana.
+Para enviar uma solicitação de revisão de extensão, insira as informações a seguir e envie como um email para [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request). Responderemos ao seu email dentro de uma semana.
 
 ```
 Windows Admin Center Extension Review Request

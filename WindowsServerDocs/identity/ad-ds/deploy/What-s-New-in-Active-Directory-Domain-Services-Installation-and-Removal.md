@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 286d3ee6e9c2b9959a4cc60a710b1cb078612201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369556"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947899"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Novidades na instalação e na remoção dos Serviços de Domínio Active Directory
 
@@ -53,7 +53,7 @@ Embora as operações de adprep sejam executadas automaticamente, é possível e
   
 O Adprep. exe está localizado na pasta \support\adprep do disco de instalação do Windows Server 2012. A versão 2012 do Windows Server do adprep é capaz de executar remotamente.  
   
-A versão 2012 do Windows Server do adprep. exe pode ser executada em qualquer servidor que executa uma versão de 64 bits do Windows Server 2008 ou posterior. O servidor precisa de conectividade de rede para o mestre de esquema da floresta e para o mestre de infraestrutura do domínio em que o controlador de domínio será adicionado. Se uma dessas funções estiver hospedada em um servidor que executa o Windows Server 2003, a Adprep deverá ser executada remotamente. O servidor em que o adprep é executado não precisa ser um controlador de domínio. Ele pode ser um domínio associado ou estar em um grupo de trabalho.  
+A versão 2012 do Windows Server do adprep. exe pode ser executada em qualquer servidor que executa uma versão de 64 bits do Windows Server 2008 ou posterior. O servidor precisa de conectividade de rede para o mestre de esquema da floresta e para o mestre de infraestrutura do domínio em que o controlador de domínio será adicionado. Se uma dessas funções estiver hospedada em um servidor com o Windows Server 2003 em execução, então o adprep deverá ser executado remotamente. O servidor em que o adprep é executado não precisa ser um controlador de domínio. Ele pode ser um domínio associado ou estar em um grupo de trabalho.  
 
 > [!NOTE]  
 > Se você tentar executar a versão 2012 do Windows Server do adprep. exe em um servidor que executa o Windows Server 2003, o seguinte erro será exibido:  
@@ -70,7 +70,7 @@ Para cada comando (/forestprep, /domainprep ou /rodcprep), o Adprep executa uma 
   
 O/User e/UserDomain são novos parâmetros para adprep. exe no Windows Server 2012. Esses parâmetros especificam o nome da conta de usuário e o domínio do usuário, respectivamente, do usuário que executa o comando adprep. O utilitário de linha de comando Adprep.exe bloqueia a especificação de /userdomain e /user, porém omitindo um deles.  
   
-Contudo, as operações Adprep também podem ser executadas como parte da instalação do AD DS via Windows PowerShell ou Gerenciador do Servidor. Essas experiências compartilham a mesma implementação subjacente (Adprep. dll) como adprep. exe. As experiências do Windows PowerShell e do Gerenciador do Servidor têm entradas separadas de credenciais, o que não impõe os mesmos requisitos do adprep.exe. Com o Windows PowerShell ou com o Gerenciador do Servidor, é possível passar um valor para /user, mas não para /userdomain no adprep.dll. Se/user for especificado, mas/UserDomain não for especificado, o domínio do computador local será usado para executar a verificação. Se o computador não for um domínio associado, a associação a grupos não poderá ser verificada.  
+Contudo, as operações Adprep também podem ser executadas como parte da instalação do AD DS via Windows PowerShell ou Gerenciador do Servidor. Essas experiências compartilham a mesma implementação subjacente (adprep.dll) como adprep.exe. As experiências do Windows PowerShell e do Gerenciador do Servidor têm entradas separadas de credenciais, o que não impõe os mesmos requisitos do adprep.exe. Com o Windows PowerShell ou com o Gerenciador do Servidor, é possível passar um valor para /user, mas não para /userdomain no adprep.dll. Se/user for especificado, mas/UserDomain não for especificado, o domínio do computador local será usado para executar a verificação. Se o computador não for um domínio associado, a associação a grupos não poderá ser verificada.  
   
 Quando não é possível verificar a associação a grupos, o Adprep mostra uma mensagem de aviso nos arquivos de log do adprep e continua:  
 
@@ -80,7 +80,7 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 Se o Adprep.exe for executado sem a especificação dos parâmetros /user e /userdomain e o mestre de operações executar o Windows Server 2003, o Adprep.exe contatará um controlador de domínio no domínio do atual usuário de logon. Se o usuário de logon atual não for uma conta de domínio, o Adprep.exe não poderá executar a verificação de associação a grupos. O Adprep.exe também não poderá executar a verificação de associação a grupos se forem usadas as credenciais de cartão inteligente, mesmo que você tenha especificado /user e /userdomain.  
   
-Quando o Adprep é concluído com êxito, nenhuma outra ação é necessária. Se o Adprep falhar durante a execução e apresentar erros de acesso, forneça uma conta com a associação correta. Para obter mais informações, consulte [Requisitos de credenciais para executar o Adprep.exe e instalar os Serviços de Domínio Active Directory](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
+Quando o Adprep é concluído com êxito, nenhuma outra ação é necessária. Se o Adprep falhar durante a execução e apresentar erros de acesso, forneça uma conta com a associação correta. Para obter mais informações, consulte [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
   
 ### <a name="syntax-for-adprep-in-windows-server-2012"></a>Sintaxe do Adprep no Windows Server 2012
 
@@ -112,7 +112,7 @@ Por exemplo, os pré-requisitos relacionados ao Adprep incluem:
 
 - Verificação de credencial do Adprep: se for preciso executar o adprep, o assistente de instalação verificará se o usuário tem direitos suficientes para executar as operações do Adprep.  
 - Verificação de disponibilidade do mestre de esquema: se o assistente de instalação determinar que o adprep /forestprep deve ser executado, o assistente verificará se o mestre de esquema está online; se não estiver, o processo falhará.  
-- Verificação de disponibilidade do mestre de infraestrutura: se o assistente de instalação determinar que adprep/domainprep precisa ser executado, ele verificará se o mestre de infraestrutura está online e falhará caso contrário.
+- Verificação de disponibilidade do mestre de infraestrutura: se o assistente de instalação determinar que o adprep /domainprep deve ser executado, o assistente verificará se o mestre de infraestrutura está online; se não estiver, o processo falhará.
 
 Outras verificações de pré-requisitos que foram transferidas do Assistente de Instalação do Active Directory herdado (dcpromo.exe) incluem:  
 
@@ -130,7 +130,7 @@ Alguns recursos podem ter requisitos adicionais. Por exemplo, o recurso de clona
 
 ## <a name="BKMK_KnownIssues"></a>Problemas conhecidos
 
-Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação no Windows Server 2012. Para ver mais problemas conhecidos, consulte [Solucionando problemas na implantação do controlador de domínio](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md).  
+Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação no Windows Server 2012. Para mais problemas conhecidos, consulte [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md).  
 
 - Se o acesso WMI ao mestre de esquema for bloqueado pelo Firewall do Windows durante a execução remota de adprep /forestprep, o erro a seguir será registrado no log de adprep, em %systemroot%\system32\debug\adprep:  
 
@@ -176,7 +176,7 @@ Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação
 
    Nesse caso, é preciso executar o cmdlet ADDSDeployment separadamente do cmdlet que não dá suporte a processos nativos de 64 bits.  
 
-- Há um novo sistema de arquivos no Windows Server 2012 chamado sistema de arquivos resiliente. Não armazene o banco de dados Active Directory, nem os arquivos de log ou o SYSVOL em um volume de dados formatado com ReFS (Sistema de Arquivos Resiliente). Para saber mais sobre ReFS, consulte [Criando a próxima geração de sistema de arquivos para Windows: ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx).  
+- Há um novo sistema de arquivos no Windows Server 2012 chamado sistema de arquivos resiliente. Não armazene o banco de dados Active Directory, nem os arquivos de log ou o SYSVOL em um volume de dados formatado com ReFS (Sistema de Arquivos Resiliente). Para saber mais sobre ReFS, consulte [Criando a próxima geração de sistema de arquivos para Windows: ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx).  
 - No Gerenciador do Servidor, os servidores que executam AD DS ou outras funções de servidor em uma instalação Server Core e foram atualizados para o Windows Server 2012, a função de servidor pode aparecer com status vermelho, mesmo que os eventos e status sejam coletados conforme o esperado. Os servidores que executam uma instalação do Server Core de uma versão preliminar do Windows Server 2012 também podem ser afetados.  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>A instalação dos Serviços de Domínio Active Directory será interrompida se um erro impedir a replicação crítica

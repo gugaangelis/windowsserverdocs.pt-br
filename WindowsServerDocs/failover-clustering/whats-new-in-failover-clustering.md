@@ -8,12 +8,12 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 26417f0fdbe2c4c8c374b3a1b8955c6297865397
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40342f43f7afbf020ba20f27586650767218fe83
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360827"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948037"
 ---
 # <a name="whats-new-in-failover-clustering"></a>Novidades no Clustering de Failover
 
@@ -53,7 +53,7 @@ Este tópico explica as funcionalidades novas e alteradas no clustering de failo
   - Acesso à Internet ausente ou extremamente fraco devido a um local remoto, impedindo o uso de uma testemunha de nuvem. 
   - Falta de unidades compartilhadas para uma testemunha de disco. Isso pode ser uma Espaços de Armazenamento Diretos configuração de hiperconvergente, uma SQL Server Always On AG (grupos de disponibilidade) ou um * DAG (grupo de disponibilidade de banco de dados do Exchange), nenhum deles usa discos compartilhados. 
   - Falta de uma conexão de controlador de domínio devido ao cluster estar atrás de uma DMZ. 
-  - Um grupo de trabalho ou cluster de domínio cruzado para o qual não há Active Directory CNO (objeto de nome de cluster). Saiba mais sobre esses aprimoramentos na postagem a seguir nos Blogs de gerenciamento de & de servidor: Testemunha de compartilhamento de arquivos de cluster de failover e DFS.
+  - Um grupo de trabalho ou cluster de domínio cruzado para o qual não há Active Directory CNO (objeto de nome de cluster). Saiba mais sobre esses aprimoramentos na postagem a seguir nos Blogs de gerenciamento de & de servidor: testemunha de compartilhamento de arquivos de cluster de failover e DFS.
     
     Agora, também bloqueamos explicitamente o uso de um compartilhamento de namespaces DFS como um local. A adição de uma testemunha de compartilhamento de arquivos a um compartilhamento DFS pode causar problemas de estabilidade para o cluster, e essa configuração nunca foi suportada. Adicionamos lógica para detectar se um compartilhamento usa namespaces DFS e se os namespaces do DFS são detectados, Gerenciador de Cluster de Failover bloqueia a criação da testemunha e exibe uma mensagem de erro sobre não ter suporte.
 - **Proteção de cluster**
@@ -64,7 +64,7 @@ Este tópico explica as funcionalidades novas e alteradas no clustering de failo
     Os clusters de failover não usam mais a autenticação NTLM. Em vez disso, o Kerberos e a autenticação baseada em certificado são usados exclusivamente. Não há nenhuma alteração exigida pelo usuário ou por ferramentas de implantação para aproveitar esse aprimoramento de segurança. Ele também permite que os clusters de failover sejam implantados em ambientes em que o NTLM foi desabilitado. 
 
 
-## <a name="whats-new-in-windows-server-2016"></a>O que há de novo no Windows Server 2016
+## <a name="whats-new-in-windows-server-2016"></a>Novidades do Windows Server 2016
 
 ### <a name="BKMK_RollingUpgrade"></a>Atualização sem interrupção do sistema operacional do cluster
 
@@ -72,11 +72,11 @@ A atualização sem interrupção do sistema operacional do cluster permite que 
 
 **Qual é o valor agregado desta alteração?**  
 
-A atualização de um cluster Hyper-V ou Servidor de Arquivos de Escalabilidade Horizontal do Windows Server 2012 R2 para o Windows Server 2016 não requer mais tempo de inatividade. O cluster continuará a funcionar em um nível do Windows Server 2012 R2 até que todos os nós no cluster estejam executando o Windows Server 2016. O nível funcional do cluster é atualizado para o Windows Server 2016 usando o cmdlt do Windows PowerShell `Update-ClusterFunctionalLevel`. 
+A atualização de um cluster Hyper-V ou Servidor de Arquivos de Escalabilidade Horizontal do Windows Server 2012 R2 para o Windows Server 2016 não requer mais tempo de inatividade. O cluster continuará a funcionar em um nível do Windows Server 2012 R2 até que todos os nós no cluster estejam executando o Windows Server 2016. O nível funcional do cluster é atualizado para o Windows Server 2016 usando o `Update-ClusterFunctionalLevel`do Windows PowerShell cmdlt. 
 
 > [!WARNING]  
 > -   Depois de atualizar o nível funcional do cluster, você não pode voltar para um nível funcional de cluster do Windows Server 2012 R2. 
-> -   Até que o cmdlet `Update-ClusterFunctionalLevel` seja executado, o processo é reversível e os nós do Windows Server 2012 R2 podem ser adicionados e os nós do Windows Server 2016 podem ser removidos. 
+> -   Até que o cmdlet de `Update-ClusterFunctionalLevel` seja executado, o processo é reversível e os nós do Windows Server 2012 R2 podem ser adicionados e os nós do Windows Server 2016 podem ser removidos. 
 
 **O que passou a funcionar de maneira diferente?**  
 
@@ -90,7 +90,7 @@ Os sistemas operacionais de cluster para a atualização em fases são os seguin
 -   Neste ponto, o cluster deve estar sendo executado no modo misto, pois os nós de cluster estão executando o Windows Server 2012 R2 ou o Windows Server 2016. 
 -   O nível funcional do cluster permanece no Windows Server 2012 R2. Nesse nível funcional, os novos recursos do Windows Server 2016 que afetam a compatibilidade com as versões anteriores do sistema operacional ficarão indisponíveis. 
 -   Eventualmente, todos os nós são atualizados para o Windows Server 2016. 
--   O nível funcional do cluster é então alterado para Windows Server 2016 usando o cmdlet do Windows PowerShell `Update-ClusterFunctionalLevel`. Neste ponto, você pode aproveitar os recursos do Windows Server 2016. 
+-   O nível funcional do cluster é então alterado para o Windows Server 2016 usando o cmdlet do Windows PowerShell `Update-ClusterFunctionalLevel`. Neste ponto, você pode aproveitar os recursos do Windows Server 2016. 
 
 Para obter mais informações, consulte [atualização sem interrupção do sistema operacional do cluster](cluster-operating-system-rolling-upgrade.md). 
 
@@ -158,7 +158,7 @@ Esse recurso é novo no Windows Server 2016.
 
 -   **Quarentena de nós não íntegros:** Os nós não íntegros são colocados em quarentena e não têm mais permissão para ingressar no cluster. Isso impede que nós oscilantes afetem negativamente outros nós e o cluster geral. 
 
-Para obter mais informações sobre o fluxo de trabalho de resiliência de computação de máquina virtual e configurações de quarentena de nó que controlam como o nó é colocado em isolamento ou quarentena, consulte [resiliência de computação de máquina virtual no Windows Server 2016](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx). 
+Para obter mais informações sobre o fluxo de trabalho de resiliência de computação de máquina virtual e configurações de quarentena de nó que controlam como o nó é colocado em isolamento ou quarentena, consulte [resiliência de computação de máquina virtual no Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx). 
 
 **Resiliência de armazenamento** No Windows Server 2016, as máquinas virtuais são mais resilientes a falhas de armazenamento transitórias. A resiliência de máquina virtual aprimorada ajuda a preservar os Estados de sessão de máquina virtual de locatário no caso de uma interrupção de armazenamento. Isso é obtido por uma resposta inteligente e rápida de máquina virtual para problemas de infraestrutura de armazenamento. 
 
@@ -169,12 +169,12 @@ No Windows Server 2016, a resiliência de armazenamento de máquina virtual tamb
 ### <a name="BKMK_Diagnostics"></a>Aprimoramentos de diagnóstico no clustering de failover  
 Para ajudar a diagnosticar problemas com clusters de failover, o Windows Server 2016 inclui o seguinte:  
 
--   Vários aprimoramentos nos arquivos de log de cluster (como informações de fuso horário e log DiagnosticVerbose) facilitam a solução de problemas de clustering de failover. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-log de cluster](http://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx). 
+-   Vários aprimoramentos nos arquivos de log de cluster (como informações de fuso horário e log DiagnosticVerbose) facilitam a solução de problemas de clustering de failover. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-log de cluster](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx). 
 
--   Um novo tipo de despejo de **despejo de memória ativo**, que filtra a maioria das páginas de memória alocadas para máquinas virtuais e, portanto, torna o Memory. dmp muito menor e mais fácil de salvar ou copiar. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-despejo ativo](http://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx). 
+-   Um novo tipo de despejo de **despejo de memória ativo**, que filtra a maioria das páginas de memória alocadas para máquinas virtuais e, portanto, torna o Memory. dmp muito menor e mais fácil de salvar ou copiar. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-despejo ativo](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx). 
 
 ### <a name="BKMK_SiteAware"></a>Clusters de failover com reconhecimento de site  
-O Windows Server 2016 inclui clusters de failover com reconhecimento de site que habilitam nós de grupo em clusters ampliados com base em seu local físico (site). O reconhecimento de site de cluster aprimora as principais operações durante o ciclo de vida do cluster, como comportamento de failover, políticas de posicionamento, pulsação entre os nós e o comportamento de quorum. Para obter mais informações, consulte [clusters de failover com reconhecimento de site no Windows Server 2016](http://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx). 
+O Windows Server 2016 inclui clusters de failover com reconhecimento de site que habilitam nós de grupo em clusters ampliados com base em seu local físico (site). O reconhecimento de site de cluster aprimora as principais operações durante o ciclo de vida do cluster, como comportamento de failover, políticas de posicionamento, pulsação entre os nós e o comportamento de quorum. Para obter mais informações, consulte [clusters de failover com reconhecimento de site no Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx). 
 
 ### <a name="BKMK_multidomainclusters"></a>Clusters de grupo de trabalho e vários domínios  
 No Windows Server 2012 R2 e versões anteriores, um cluster só pode ser criado entre nós membro ingressados no mesmo domínio. O Windows Server 2016 quebra essas barreiras e apresenta a capacidade de criar um Cluster de failover sem dependências do Active Directory. Agora você pode criar clusters de failover nas seguintes configurações:  
@@ -185,7 +185,7 @@ No Windows Server 2012 R2 e versões anteriores, um cluster só pode ser criado 
 
 -   **Clusters de grupo de trabalho.** Clusters com nós que são servidores membros/grupo de trabalho (não ingressados no domínio). 
 
-Para obter mais informações, consulte [clusters de vários domínios e grupos de trabalho no Windows Server 2016](http://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
+Para obter mais informações, consulte [clusters de vários domínios e grupos de trabalho no Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
 ### <a name="BKMK_VMLoadBalancing"></a>Balanceamento de carga de máquina virtual  
 O balanceamento de carga de máquina virtual é um novo recurso no clustering de failover que facilita o balanceamento de carga contínuo de máquinas virtuais entre os nós em um cluster. Nós de excesso de confirmações são identificados com base na memória da máquina virtual e na utilização da CPU no nó. As máquinas virtuais são então movidas (migradas ao vivo) de um nó com excesso de confirmações para nós com largura de banda disponível (se aplicável). A agressividade do balanceamento pode ser ajustada para garantir o desempenho e a utilização ideais do cluster. O balanceamento de carga é habilitado por padrão no Windows Server 2016 Technical Preview. No entanto, o balanceamento de carga é desabilitado quando a otimização dinâmica do SCVMM está habilitada. 
 
@@ -197,6 +197,6 @@ As redes de cluster de failover não são mais limitadas a uma única NIC por su
 
 Para obter mais informações, consulte [redes de cluster de vários canais e multiplataforma SMB simplificadas](smb-multichannel.md).
 
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 * [Armazenamento](../storage/storage.md)  
 * [O que há de novo no armazenamento no Windows Server 2016](../storage/whats-new-in-storage.md)  

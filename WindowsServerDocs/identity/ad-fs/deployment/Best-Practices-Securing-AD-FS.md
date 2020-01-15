@@ -9,15 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 15b0c721b620e2891f4452fd54501f4970b7c177
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: abbc9cf76056af4ac421d9a38381bd8d8f666e4c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360003"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949531"
 ---
-## <a name="best-practices-for-securing-active-directory-federation-services"></a>Práticas recomendadas para proteger Serviços de Federação do Active Directory (AD FS)
-
+# <a name="best-practices-for-securing-active-directory-federation-services"></a>Práticas recomendadas para proteger Serviços de Federação do Active Directory (AD FS)
 
 Este documento fornece as práticas recomendadas para o planejamento e a implantação seguros do Serviços de Federação do Active Directory (AD FS) (AD FS) e do proxy de aplicativo Web.  Ele contém informações sobre os comportamentos padrão desses componentes e recomendações para configurações de segurança adicionais para uma organização com casos de uso e requisitos de segurança específicos.
 
@@ -39,32 +38,32 @@ O diagrama abaixo ilustra as portas de firewall que devem ser habilitadas entre 
 > A porta 808 (Windows Server 2012R2) ou a porta 1501 (Windows Server 2016 +) é a porta Net. TCP que o AD FS usa para o ponto de extremidade do WCF local para transferir dados de configuração para o processo de serviço e o PowerShell. Essa porta pode ser vista executando Get-Adfsproperties | Selecione NetTcpPort. Essa é uma porta local que não precisará ser aberta no firewall, mas será exibida em uma verificação de porta. 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect e servidores de Federação/WAP
-Esta tabela descreve as portas e os protocolos necessários para a comunicação entre o servidor de Azure AD Connect e os servidores de Federação/WAP.  
+Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre o servidor do Azure AD Connect e servidores de Federação/WAP.  
 
-Protocol |Portas |Descrição
+Protocolo |Portas |Descrição
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|Usado para baixar CRLs (listas de certificados revogados) para verificar certificados SSL.
-HTTPS|443 (TCP/UDP)|Usado para sincronizar com o Azure AD.
+HTTP|80 (TCP/UDP)|Usada para baixar as CRLs (Listas de Certificados Revogados) para verificar os certificados SSL.
+HTTPS|443(TCP/UDP)|Usado para sincronizar com o Azure AD.
 WinRM|5985| Ouvinte do WinRM
 
 ### <a name="wap-and-federation-servers"></a>Servidores de Federação e WAP
-Esta tabela descreve as portas e os protocolos necessários para a comunicação entre os servidores de Federação e os servidores WAP.
+Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre os servidores de Federação e servidores WAP.
 
-Protocol |Portas |Descrição
+Protocolo |Portas |Descrição
 --------- | --------- |---------
-HTTPS|443 (TCP/UDP)|Usado para autenticação.
+HTTPS|443(TCP/UDP)|Usado para autenticação.
 
 ### <a name="wap-and-users"></a>WAP e usuários
-Esta tabela descreve as portas e os protocolos necessários para a comunicação entre os usuários e os servidores WAP.
+Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre os usuários e os servidores WAP.
 
-Protocol |Portas |Descrição
+Protocolo |Portas |Descrição
 --------- | --------- |--------- |
-HTTPS|443 (TCP/UDP)|Usado para autenticação de dispositivo.
+HTTPS|443(TCP/UDP)|Usado para autenticação de dispositivo.
 TCP|49443 (TCP)|Usado para autenticação de certificado.
 
 Para obter informações adicionais sobre portas e protocolos necessários necessários para implantações híbridas, consulte o documento [aqui](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/).
 
-Para obter informações detalhadas sobre portas e protocolos necessários para uma implantação do Azure AD e do Office 365, consulte o documento [aqui](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US).
+Para obter informações detalhadas sobre portas e protocolos necessários para uma implantação do Azure AD e do Office 365, consulte o documento [aqui](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US).
 
 ### <a name="endpoints-enabled"></a>Pontos de extremidade habilitados
 
@@ -93,7 +92,7 @@ Por exemplo:
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     
 
-### <a name="extended-protection-for-authentication"></a>Proteção estendida para autenticação
+### <a name="extended-protection-for-authentication"></a>Proteção Estendida para Autenticação
 A proteção estendida para autenticação é um recurso que mitiga contra ataques de interceptação (MITM) e é habilitado por padrão com AD FS.
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>Para verificar as configurações, você pode fazer o seguinte:
@@ -107,9 +106,9 @@ A propriedade é `ExtendedProtectionTokenCheck`.  A configuração padrão é pe
 O proxy do serviço de Federação (parte do WAP) fornece controle de congestionamento para proteger o serviço de AD FS de uma inundação de solicitações.  O proxy de aplicativo Web rejeitará solicitações de autenticação de cliente externo se o servidor de Federação estiver sobrecarregado conforme detectado pela latência entre o proxy de aplicativo Web e o servidor de Federação.  Esse recurso é configurado por padrão com um nível de limite de latência recomendado.
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>Para verificar as configurações, você pode fazer o seguinte:
-1.  No computador proxy de aplicativo Web, inicie uma janela de comando com privilégios elevados.
+1.  Em seu computador Proxy do Aplicativo Web, abra uma janela de comando privilegiado.
 2.  Navegue até o diretório do ADFS, em%WINDIR%\adfs\config.
-3.  Altere as configurações de controle de congestionamento de seus valores padrão<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />para ' '.
+3.  Altere as configurações de controle de congestionamento de seus valores padrão para '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'.
 4.  Salve e feche o arquivo.
 5.  Reinicie o serviço AD FS executando ' net stop adfssrv ' e, em seguida, ' net start adfssrv '.
 Para sua referência, a orientação sobre esse recurso pode ser encontrada [aqui](https://msdn.microsoft.com/library/azure/dn528859.aspx ).
@@ -163,9 +162,9 @@ Em sua configuração padrão, as chaves que o AD FS usa para assinar tokens nun
 onde:
 
 
-- `CertificateThumbprint`é seu certificado SSL
-- `SigningCertificateThumbprint`é seu certificado de autenticação (com chave protegida por HSM)
-- `DecryptionCertificateThumbprint`é seu certificado de criptografia (com chave protegida por HSM)
+- `CertificateThumbprint` é seu certificado SSL
+- `SigningCertificateThumbprint` é seu certificado de autenticação (com chave protegida por HSM)
+- `DecryptionCertificateThumbprint` é seu certificado de criptografia (com chave protegida por HSM)
 
 
 

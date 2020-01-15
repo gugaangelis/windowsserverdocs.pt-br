@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 311789fdec160faeeeba0ecf26491d1e0cd6105d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407391"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949196"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS configurações de logon único
 
@@ -46,7 +46,7 @@ Se o dispositivo não estiver registrado, mas um usuário selecionar a opção "
   
  Conforme mencionado acima, os usuários em dispositivos registrados sempre receberão um SSO persistente, a menos que o SSO persistente esteja desabilitado. Para dispositivos não registrados, o SSO persistente pode ser obtido habilitando o recurso "Mantenha-me conectado" (KMSI). 
  
- Para o Windows Server 2012 R2, para habilitar o PSSO para o cenário "Mantenha-me conectado", você precisa instalar esse [hotfix](https://support.microsoft.com/en-us/kb/2958298/) que também faz parte do [pacote cumulativo de atualizações de agosto de 2014 para Windows RT 8,1, Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).   
+ Para o Windows Server 2012 R2, para habilitar o PSSO para o cenário "Mantenha-me conectado", você precisa instalar esse [hotfix](https://support.microsoft.com/kb/2958298/) que também faz parte do [pacote cumulativo de atualizações de agosto de 2014 para Windows RT 8,1, Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/kb/2975719).   
 
 Tarefa | PowerShell | Descrição
 ------------ | ------------- | -------------
@@ -103,7 +103,7 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ## <a name="psso-revocation"></a>Revogação de PSSO  
  Para proteger a segurança, AD FS rejeitará qualquer cookie de SSO persistente emitido anteriormente quando as condições a seguir forem atendidas. Isso exigirá que o usuário forneça suas credenciais para se autenticar com o AD FS novamente. 
   
-- Usuário altera a senha  
+- O usuário altera a senha  
   
 - A configuração de SSO persistente está desabilitada no AD FS  
   
@@ -127,18 +127,18 @@ Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
 ## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>Habilitar PSSO para que os usuários do Office 365 acessem o SharePoint Online  
- Depois que o PSSO estiver habilitado e configurado no AD FS, AD FS gravará um cookie persistente depois que um usuário for autenticado. Na próxima vez que o usuário chegar, se um cookie persistente ainda for válido, um usuário não precisará fornecer credenciais para autenticar novamente. Você também pode evitar o prompt de autenticação adicional para os usuários do Office 365 e do SharePoint Online configurando as duas regras de declarações a seguir em AD FS para disparar a persistência em Microsoft Azure AD e SharePoint Online.  Para permitir que o PSSO para usuários do Office 365 acesse o SharePoint Online, você precisa instalar esse [hotfix](https://support.microsoft.com/en-us/kb/2958298/) , que também faz parte do [pacote cumulativo de atualizações de agosto de 2014 para Windows RT 8,1, Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).  
+ Depois que o PSSO estiver habilitado e configurado no AD FS, AD FS gravará um cookie persistente depois que um usuário for autenticado. Na próxima vez que o usuário chegar, se um cookie persistente ainda for válido, um usuário não precisará fornecer credenciais para autenticar novamente. Você também pode evitar o prompt de autenticação adicional para os usuários do Office 365 e do SharePoint Online configurando as duas regras de declarações a seguir em AD FS para disparar a persistência em Microsoft Azure AD e SharePoint Online.  Para permitir que o PSSO para usuários do Office 365 acesse o SharePoint Online, você precisa instalar esse [hotfix](https://support.microsoft.com/kb/2958298/) , que também faz parte do [pacote cumulativo de atualizações de agosto de 2014 para Windows RT 8,1, Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/kb/2975719).  
   
  Uma regra de transformação de emissão para passar pela declaração InsideCorporateNetwork  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
 @RuleName = "Pass through claim - InsideCorporateNetwork"  
-c:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
+c:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
 => issue(claim = c);   
 A custom Issuance Transform rule to pass through the persistent SSO claim  
 @RuleName = "Pass Through Claim - Psso"  
-c:[Type == "http://schemas.microsoft.com/2014/03/psso"]  
+c:[Type == "https://schemas.microsoft.com/2014/03/psso"]  
 => issue(claim = c);  
   
 ```

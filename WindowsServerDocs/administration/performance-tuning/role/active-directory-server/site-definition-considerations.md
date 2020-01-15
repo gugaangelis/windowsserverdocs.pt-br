@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3c9e8792b425fd24d01ab997a5f7c2ac573814
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 66c6f94f1f3fee924ba0d9a3bfa0c712d62bb095
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370255"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947117"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado de controladores de domínio e considerações de site
 
@@ -34,7 +34,7 @@ As referências são como as consultas LDAP são redirecionadas quando o control
 
 ## <a name="optimization-considerations-for-trusts"></a>Considerações sobre otimização para relações de confiança
 
-Em um cenário dentro da floresta, as relações de confiança são processadas de acordo com a seguinte hierarquia de domínio: Domínio-filho de domínio-&gt; filho-&gt; domínio raiz da floresta-&gt; domínio filho-&gt; domínio principal-filho. Isso significa que os canais seguros na raiz da floresta e cada um deles podem ficar sobrecarregados devido à agregação de solicitações de autenticação que entram em trânsito os DCs na hierarquia de confiança. Isso também pode gerar atrasos em diretórios ativos de grande dispersão geográfica quando a autenticação também tiver que transmitir links altamente latentes para afetar o fluxo acima. Sobrecargas podem ocorrer em cenários de confiança entre florestas e de nível inferior. As seguintes recomendações se aplicam a todos os cenários:
+Em um cenário de floresta, as relações de confiança são processadas de acordo com a seguinte hierarquia de domínio: global-filho de domínio-&gt; domínio filho-&gt; domínio raiz da floresta-&gt; domínio filho-&gt; domínio filho principal. Isso significa que os canais seguros na raiz da floresta e cada um deles podem ficar sobrecarregados devido à agregação de solicitações de autenticação que entram em trânsito os DCs na hierarquia de confiança. Isso também pode gerar atrasos em diretórios ativos de grande dispersão geográfica quando a autenticação também tiver que transmitir links altamente latentes para afetar o fluxo acima. Sobrecargas podem ocorrer em cenários de confiança entre florestas e de nível inferior. As seguintes recomendações se aplicam a todos os cenários:
 
 -   Ajuste corretamente o MaxConcurrentAPI para dar suporte à carga em todo o canal seguro. Para obter mais informações, consulte [como fazer o ajuste de desempenho para autenticação NTLM usando a configuração MaxConcurrentApi](https://support.microsoft.com/kb/2688798/EN-US).
 
@@ -58,7 +58,7 @@ Os cenários de confiança entre domínios são uma área que tem sido consisten
 
     -   Para obter mais informações sobre como o DCLocator funciona, consulte [localizando um controlador de domínio no site mais próximo](https://technet.microsoft.com/library/cc978016.aspx).
 
-    -   Convergir nomes de site entre os domínios confiáveis e confiantes para refletir o controlador de domínio no mesmo local. Verifique se os mapeamentos de sub-rede e endereço IP estão vinculados corretamente a sites em ambas as florestas. Para obter mais informações, consulte [localizador de domínio em uma relação de confiança de floresta](http://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx).
+    -   Convergir nomes de site entre os domínios confiáveis e confiantes para refletir o controlador de domínio no mesmo local. Verifique se os mapeamentos de sub-rede e endereço IP estão vinculados corretamente a sites em ambas as florestas. Para obter mais informações, consulte [localizador de domínio em uma relação de confiança de floresta](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx).
 
     -   Verifique se as portas estão abertas, de acordo com as necessidades do DCLocator, para o local do controlador de domínio. Se existirem firewalls entre os domínios, verifique se os firewalls estão configurados corretamente para todas as relações de confiança. Se os firewalls não estiverem abertos, o controlador de domínio confiante ainda tentará acessar o domínio confiável. Se a comunicação falhar por algum motivo, o controlador de domínio confiante eventualmente atingirá o tempo limite da solicitação para o controlador de domínio confiável. No entanto, esses tempos limite podem levar vários segundos por solicitação e podem esgotar portas de rede no controlador de domínio confiável se o volume de solicitações de entrada for alto. O cliente pode experimentar as esperas para o tempo limite no controlador de domínio como threads suspensos, que podem ser convertidos em aplicativos suspensos (se o aplicativo executar a solicitação no thread em primeiro plano). Para obter mais informações, consulte [como configurar um firewall para domínios e relações de confiança](https://support.microsoft.com/kb/179442).
 
@@ -76,7 +76,7 @@ Para todos os cenários de confiança, as credenciais são roteadas de acordo co
 
 -   Desabilitar a passagem de solicitações de autenticação com um domínio nulo especificado em todas as relações de confiança disponíveis. [O processo Lsass. exe pode parar de responder se você tiver muitas relações de confiança externas em um controlador de domínio Active Directory](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 - [Ajuste de desempenho Active Directory servidores](index.md)
 - [Considerações sobre hardware](hardware-considerations.md)
 - [Considerações sobre LDAP](ldap-considerations.md)

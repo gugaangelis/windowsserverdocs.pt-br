@@ -1,5 +1,5 @@
 ---
-title: Atualização sem interrupção do sistema operacional do cluster
+title: Upgrade sem interrupção do sistema operacional do cluster
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: get-started-article
@@ -7,12 +7,12 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: f7d20a099f287d2ee05ae6e908c173e1eb3cfc66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361837"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948534"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>Atualização sem interrupção do sistema operacional do cluster
 
@@ -52,7 +52,7 @@ Conclua os seguintes requisitos antes de iniciar o processo de atualização sem
 - Não há suporte para a atualização de um cluster Espaços de Armazenamento Diretos para o Windows Server, versão 1709.
 - Se a carga de trabalho do cluster for de VMs do Hyper-V ou Servidor de Arquivos de Escalabilidade Horizontal, você poderá esperar uma atualização sem tempo de inatividade.
 - Verifique se os nós do Hyper-V têm CPUs que dão suporte a SLAT (tabela de endereçamento de segundo nível) usando um dos seguintes métodos;  
-        -Examine se [você é compatível com slat? Artigo da dica do SDK do WP8 01](http://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx) que descreve dois métodos para verificar se uma CPU dá suporte a slats  
+        -Examine se [você é compatível com slat? Artigo da dica do SDK do WP8 01](https://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx) que descreve dois métodos para verificar se uma CPU dá suporte a slats  
         -Baixe a ferramenta [Coreinfo v 3.31](https://technet.microsoft.com/sysinternals/cc835722) para determinar se uma CPU oferece suporte a slat.
 
 ## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>Estados de transição de cluster durante a atualização sem interrupção do sistema operacional do cluster
@@ -277,7 +277,7 @@ Embora tenhamos como alvo cenários de nuvem privada, especificamente o Hyper-V 
 **Posso usar o SCVMM (System Center 2016 Virtual Machine Manager) para automatizar o processo de atualização sem interrupção do sistema operacional do cluster?**  
     Sim, você pode automatizar o processo de atualização sem interrupção do sistema operacional do cluster usando o VMM no System Center 2016.  
 
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 -   [Notas de versão: problemas importantes no Windows Server 2016](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
 -   [Novidades no Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [O que há de novo no clustering de failover no Windows Server](whats-new-in-failover-clustering.md)  

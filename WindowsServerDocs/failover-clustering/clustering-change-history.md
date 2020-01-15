@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: daveba
 ms.author: jgerend
-ms.date: 03/08/2019
+ms.date: 01/07/2020
 description: Tópicos novos e atualizados na documentação de clustering de failover do Windows Server 2016
-ms.openlocfilehash: 501ad8f63eafdeadffcf5d67646c9e85005cf329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b29a1dd979dc5ab14684a83e549ce3e6b3c273f1
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361214"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953037"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>Histórico de alterações dos tópicos do Clustering de Failover
 
@@ -24,13 +24,19 @@ Este tópico lista os tópicos novos e atualizados na documentação de [cluster
 
 > Se você estiver procurando o histórico de atualizações do Windows Server 2016, consulte [Histórico de atualizações do Windows 10 e do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
+## <a name="january-2020"></a>Janeiro de 2020
+
+|Tópico novo ou alterado                                    |Descrição |
+|--------------------------------------------------------|------------|
+|[Eventos de cluster](system-events.md)| Novo     |
+
 ## <a name="march-2019"></a>Março de 2019
 
 |Tópico novo ou alterado                                    |Descrição |
 |--------------------------------------------------------|------------|
 |[Afinidade de cluster](cluster-affinity.md)| Novo     |
 
-## <a name="february-2019"></a>fevereiro de 2019
+## <a name="february-2019"></a>Fevereiro de 2019
 
 |Tópico novo ou alterado                                    |Descrição |
 |--------------------------------------------------------|------------|

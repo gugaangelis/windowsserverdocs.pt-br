@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9563a3f3628851a0cf7b3cb79990db8c2141faa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b86bf779a4ea9d67f959dacf125a98a8e26a729
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384950"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947133"
 ---
 # <a name="tuning-iis-100"></a>Ajustando o IIS 10,0
 
@@ -144,8 +144,8 @@ Esta seção descreve as configurações que afetam o comportamento de cache no 
 
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
-|Habilitado|Desabilita o cache do IIS no modo de usuário quando definido como **false**. Quando a taxa de acesso ao cache é muito pequena, você pode desabilitar o cache completamente para evitar a sobrecarga associada ao caminho do código de cache. Desabilitar o cache de modo de usuário não desabilita o cache do modo kernel.|True|
-|enableKernelCache|Desabilita o cache do modo kernel quando definido como **false**.|True|
+|Habilitada|Desabilita o cache do IIS no modo de usuário quando definido como **false**. Quando a taxa de acesso ao cache é muito pequena, você pode desabilitar o cache completamente para evitar a sobrecarga associada ao caminho do código de cache. Desabilitar o cache de modo de usuário não desabilita o cache do modo kernel.|verdadeiro|
+|enableKernelCache|Desabilita o cache do modo kernel quando definido como **false**.|verdadeiro|
 |maxCacheSize|Limita o tamanho do cache do modo de usuário do IIS ao tamanho especificado em megabytes. O IIS ajusta o padrão dependendo da memória disponível. Escolha o valor com cuidado com base no tamanho do conjunto de arquivos acessados com frequência em comparação com a quantidade de RAM ou o espaço de endereço de processo do IIS.|0|
 |maxResponseSize|Armazena em cache os arquivos até o tamanho especificado. O valor real depende do número e do tamanho dos maiores arquivos no conjunto de dados em comparação à RAM disponível. O cache de arquivos grandes e solicitados com frequência pode reduzir o uso da CPU, o acesso ao disco e as latências associadas.|262144|
 
@@ -160,16 +160,16 @@ Para desabilitar completamente a compactação, remova StaticCompressionModule e
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
 |staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage|Habilita ou desabilita a compactação se o uso percentual atual da CPU estiver acima ou abaixo dos limites especificados.<br><br>A partir do IIS 7,0, a compactação será desabilitada automaticamente se a CPU de estado estacionário aumentar acima do limite de desabilitação. A compactação será habilitada se a CPU cair abaixo do limite de habilitação.|50, 100, 50 e 90, respectivamente|
-|active|Especifica o diretório no qual as versões compactadas de arquivos estáticos são armazenadas temporariamente e armazenadas em cache. Considere mover esse diretório da unidade do sistema se ele for acessado com frequência.|Arquivos compactados temporários do%SystemDrive%\inetpub\temp\IIS|
-|doDiskSpaceLimiting|Especifica se existe um limite para a quantidade de espaço em disco que todos os arquivos compactados podem ocupar. Os arquivos compactados são armazenados no diretório de compactação especificado pelo atributo **Directory** .|True|
+|diretório|Especifica o diretório no qual as versões compactadas de arquivos estáticos são armazenadas temporariamente e armazenadas em cache. Considere mover esse diretório da unidade do sistema se ele for acessado com frequência.|Arquivos compactados temporários do%SystemDrive%\inetpub\temp\IIS|
+|doDiskSpaceLimiting|Especifica se existe um limite para a quantidade de espaço em disco que todos os arquivos compactados podem ocupar. Os arquivos compactados são armazenados no diretório de compactação especificado pelo atributo **Directory** .|verdadeiro|
 |maxDiskSpaceUsage|Especifica o número de bytes de espaço em disco que os arquivos compactados podem ocupar no diretório de compactação.<br><br>Essa configuração pode precisar ser aumentada se o tamanho total de todo o conteúdo compactado for muito grande.|100 MB|
 
 **System. WebServer/urlCompression**
 
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
-|doStaticCompression|Especifica se o conteúdo estático é compactado.|True|
-|doDynamicCompression|Especifica se o conteúdo dinâmico é compactado.|True|
+|doStaticCompression|Especifica se o conteúdo estático é compactado.|verdadeiro|
+|doDynamicCompression|Especifica se o conteúdo dinâmico é compactado.|verdadeiro|
 
 **Observação** Para servidores que executam o IIS 10,0 com baixo uso médio de CPU, considere habilitar a compactação para conteúdo dinâmico, especialmente se as respostas forem grandes. Isso deve ser feito primeiro em um ambiente de teste para avaliar o efeito sobre o uso da CPU da linha de base.
 
@@ -188,7 +188,7 @@ Para desabilitar completamente os documentos padrão, remova DefaultDocumentModu
 
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
-|habilitado|Especifica que os documentos padrão estão habilitados.|True|
+|habilitado|Especifica que os documentos padrão estão habilitados.|verdadeiro|
 |elemento&gt; de &lt;de arquivos|Especifica os nomes de arquivo que são configurados como documentos padrão.|A lista padrão é default. htm, Default. asp, index. htm, index. html, iisstart. htm e default. aspx.|
 
 ## <a name="central-binary-logging"></a>Log binário central
@@ -208,7 +208,7 @@ Você pode habilitar o log binário central definindo o atributo centralLogFileM
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
 |habilitado|Especifica se o log binário central está habilitado.|False|
-|active|Especifica o diretório onde as entradas de log são gravadas.|%SystemDrive%\inetpub\logs\LogFiles|
+|diretório|Especifica o diretório onde as entradas de log são gravadas.|%SystemDrive%\inetpub\logs\LogFiles|
 
 
 ## <a name="application-and-site-tunings"></a>Ajustes do aplicativo e do site
@@ -226,7 +226,7 @@ As configurações a seguir estão relacionadas ao pool de aplicativos e aos aju
 
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
-|allowSubDirConfig|Especifica se o IIS procura arquivos Web. config em diretórios de conteúdo inferiores ao nível atual (true) ou não procura arquivos Web. config em diretórios de conteúdo inferiores ao nível atual (false). Ao impor uma limitação simples, que permite a configuração somente em diretórios virtuais, o IISÂ 10,0 pode saber que, a menos que **/nome de &lt;&gt;. htm** seja um diretório virtual, ele não deve procurar um arquivo de configuração. Ignorar as operações de arquivo adicionais pode melhorar significativamente o desempenho de sites que têm um conjunto muito grande de conteúdo estático acessado aleatoriamente.|True|
+|allowSubDirConfig|Especifica se o IIS procura arquivos Web. config em diretórios de conteúdo inferiores ao nível atual (true) ou não procura arquivos Web. config em diretórios de conteúdo inferiores ao nível atual (false). Ao impor uma limitação simples, que permite a configuração somente em diretórios virtuais, o IISÂ 10,0 pode saber que, a menos que **/nome de &lt;&gt;. htm** seja um diretório virtual, ele não deve procurar um arquivo de configuração. Ignorar as operações de arquivo adicionais pode melhorar significativamente o desempenho de sites que têm um conjunto muito grande de conteúdo estático acessado aleatoriamente.|verdadeiro|
 
 ## <a name="managing-iis-100-modules"></a>Gerenciando módulos do IIS 10,0
 
@@ -266,7 +266,7 @@ As configurações a seguir são usadas para configurar o cache de modelo ASP cl
 
 ## <a name="aspnet-concurrency-setting"></a>Configuração de simultaneidade ASP.NET
 
-### <a name="aspnet-35"></a>ASP.NET 3,5
+### <a name="aspnet-35"></a>ASP.NET 3.5
 Por padrão, ASP.NET limita a simultaneidade de solicitação para reduzir o consumo de memória de estado estacionário no servidor. Aplicativos de simultaneidade alta podem precisar ajustar algumas configurações para melhorar o desempenho geral. Você pode alterar essa configuração no arquivo Aspnet. config:
 
 ``` syntax
@@ -402,6 +402,6 @@ Os seguintes problemas podem afetar o desempenho do IIS:
 
     Por motivos de desempenho, o uso de aplicativos CGI para atender a solicitações não é recomendado com o IIS. Frequentemente, criar e excluir processos CGI envolve uma sobrecarga significativa. As alternativas melhores incluem o uso de FastCGI, scripts de aplicativo ISAPI e scripts ASP ou ASP.NET. O isolamento está disponível para cada uma dessas opções.
 
-# <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 - [Ajuste de desempenho do servidor Web](index.md) 
 - [Ajuste do HTTP 1.1/2](http-performance.md)
