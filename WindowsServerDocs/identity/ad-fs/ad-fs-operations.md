@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408555"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162477"
 ---
 # <a name="ad-fs-operations"></a>Operações do AD FS
 
@@ -29,7 +29,8 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Adicionar um repositório de atributos](../ad-fs/operations/Add-an-Attribute-Store.md)
 - [Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [Delegar acesso do Powershell Commandlet do AD FS para usuários não administradores](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
-- [Ajuste fino do SQL e da latência de endereço](../ad-fs/operations/adfs-sql-latency.md) 
+- [Ajuste fino do SQL e da latência de endereço](../ad-fs/operations/adfs-sql-latency.md)
+- [Grupos de Disponibilidade AlwaysOn](../ad-fs/operations/ad-fs-always-on.md) 
 
 
 ## <a name="authentication-configuration"></a>Configuração de autenticação
@@ -77,15 +78,15 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Configurar o AD FS para enviar declarações de expiração de senha](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [Configurar a autenticação baseada em formulários de intranet para dispositivos que não são compatíveis com a WIA](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>Outros
+## <a name="other"></a>Outro
 - [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Gerenciar riscos com Autenticação Multifator adicional para aplicativos confidenciais](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [Gerenciar risco com o Controle de Acesso Condicional](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [Configurar um ambiente de laboratório do AD FS](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
-- [Guia passo a passo: Gerencie riscos com autenticação multifator adicional para aplicativos confidenciais](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-- [Guia passo a passo: Gerenciar risco com o Controle de Acesso Condicional](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [Passo a passo: Ingressar no local de trabalho com um dispositivo do Windows](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [Passo a passo: Ingressar no Local de Trabalho com um dispositivo iOS](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [Guia de instruções: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+- [Guia de instruções: gerenciar riscos com o controle de acesso condicional](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+- [Walkthrough: Workplace Join com um dispositivo Windows](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [Walkthrough: Workplace Join com um dispositivo iOS](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
 

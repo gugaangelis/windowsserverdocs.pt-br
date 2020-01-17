@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953028"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124894"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento
 
@@ -138,6 +138,10 @@ O serviço de migração de armazenamento usa um banco de dados ESE (mecanismo d
 6. Verifique se o sistema tem controle total para todos os arquivos e subpastas dessa pasta
 7. Remova suas próprias permissões de conta.
 8. Inicie o serviço "serviço de migração de armazenamento".
+
+## <a name="does-the-storage-migration-service-migrate-locally-installed-applications-from-the-source-computer"></a>O serviço de migração de armazenamento migra os aplicativos instalados localmente do computador de origem?
+
+Não, o serviço de migração de armazenamento não migra os aplicativos instalados localmente. Depois de concluir a migração, reinstale todos os aplicativos no computador de destino que estavam em execução no computador de origem. Não é necessário reconfigurar nenhum usuário ou seus aplicativos; o serviço de migração de armazenamento foi projetado para tornar a mudança de servidor invisível para os clientes. 
 
 ## <a name="give-feedback"></a>Quais são minhas opções para fornecer comentários, arquivos de erros ou obter suporte?
 

@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949641"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145932"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -25,7 +25,7 @@ Por exemplo, o Windows Server, versão 1903 inclui novos recursos e correções 
 
 ## <a name="collecting-logs"></a>Como coletar arquivos de log ao trabalhar com Suporte da Microsoft
 
-O serviço de migração de armazenamento contém logs de eventos para o serviço Orchestrator e o serviço de proxy. O servidor urchestrator sempre contém ambos os logs de eventos, e os servidores de destino com o serviço de proxy instalado contêm os logs de proxy. Esses logs estão localizados em:
+O serviço de migração de armazenamento contém logs de eventos para o serviço Orchestrator e o serviço de proxy. O servidor Orchestrator sempre contém ambos os logs de eventos, e os servidores de destino com o serviço de proxy instalado contêm os logs de proxy. Esses logs estão localizados em:
 
 - Logs de aplicativos e serviços \ Microsoft \ Windows \ StorageMigrationService
 - Logs de aplicativos e serviços \ Microsoft \ Windows \ StorageMigrationService-proxy

@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b5f2202313c225d57b29997753b090e10b9c2e6c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949290"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145922"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configurando AD FS para autenticação de certificado de usuário
 
@@ -54,7 +54,7 @@ Para obter mais informações sobre como configurar isso para o Chrome, consulte
 Este documento se concentra em problemas comuns de solução de problema quando AD FS está configurado para autenticação de certificado para usuários. 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>Verificar se os emissores confiáveis do certificado estão configurados corretamente em todos os servidores AD FS/WAP
-*Sintoma comum: HTTP 204 "nenhum conteúdo do HTTPS\://certuath.adfs.contoso.com"*
+*Sintoma comum: HTTP 204 "nenhum conteúdo do HTTPS\://certauth.adfs.contoso.com"*
 
 AD FS usa o sistema operacional Windows subjacente para provar a posse do certificado de usuário e garantir que ele corresponda a um emissor confiável fazendo a validação da cadeia de certificados confiáveis. Para corresponder ao emissor confiável, você precisará garantir que todas as autoridades raiz e intermediárias sejam configuradas como emissores confiáveis no repositório de autoridades de certificação do computador local. Para validar isso automaticamente, use a [ferramenta AD FS Diagnostic Analyzer](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze). A ferramenta consulta todos os servidores e garante que os certificados corretos sejam provisionados corretamente. 
 1)  Baixe e execute a ferramenta de acordo com as instruções fornecidas no link acima
