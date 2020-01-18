@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: abbc9cf76056af4ac421d9a38381bd8d8f666e4c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949531"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265808"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Práticas recomendadas para proteger Serviços de Federação do Active Directory (AD FS)
 
@@ -26,6 +26,9 @@ Este documento se aplica a AD FS e WAP no Windows Server 2012 R2 e no Windows Se
 Para implantação em ambientes locais, recomendamos uma topologia de implantação padrão que consiste em um ou mais servidores de AD FS na rede corporativa interna, com um ou mais servidores de proxy de aplicativo Web (WAP) em uma rede DMZ ou Extranet.  Em cada camada, AD FS e WAP, um balanceador de carga de hardware ou software é colocado na frente do farm de servidores e lida com o roteamento de tráfego.  Os firewalls são colocados conforme necessário na frente do endereço IP externo do balanceador de carga na frente de cada farm (FS e proxy).
 
 ![AD FS topologia padrão](media/Best-Practices-Securing-AD-FS/adfssec1.png)
+
+>[!NOTE]
+> AD FS requer um controlador de domínio gravável completo para funcionar em oposição a um controlador de domínio somente leitura. Se uma topologia planejada incluir um controlador de domínio somente leitura, o controlador de domínio somente leitura poderá ser usado para autenticação, mas o processamento de declarações LDAP exigirá uma conexão com o controlador de domínio gravável.
 
 ## <a name="ports-required"></a>Portas necessárias
 O diagrama abaixo ilustra as portas de firewall que devem ser habilitadas entre e entre os componentes da implantação de AD FS e WAP.  Se a implantação não incluir o Azure AD/Office 365, os requisitos de sincronização poderão ser desconsiderados.

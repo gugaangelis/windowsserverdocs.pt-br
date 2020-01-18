@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 16d711a288843163b134b0226ed4b8513d7070eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407220"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950049"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de camadas administrativas do Active Directory
 
@@ -139,7 +139,7 @@ Devido a grande quantidade de ativos que dependem de sistemas de identidade como
 
 ![Diagrama que mostra que você deve reduzir a quantidade de sistemas de que o Active Directory e os controladores de domínio dependem](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-Para saber mais sobre como se proteger dos principais riscos do Active Directory, consulte [esta página](http://aka.ms/hardenAD).
+Para saber mais sobre como se proteger dos principais riscos do Active Directory, consulte [esta página](https://aka.ms/hardenAD).
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>Padrões operacionais com base no princípio de origem limpa
 
@@ -168,12 +168,12 @@ Os padrões nesta seção pressupõem que a organização tem os seguintes atrib
 - Todas as estações de trabalho a serem gerenciadas estão executando o Windows 7 ou posterior e têm o modelo RDP RestrictedAdmin habilitado.
 
    > [!NOTE]
-   > Para habilitar o modo RDP RestrictedAdmin, consulte [esta página](http://aka.ms/RDPRA).
+   > Para habilitar o modo RDP RestrictedAdmin, consulte [esta página](https://aka.ms/RDPRA).
 
 - Os cartões inteligentes estão disponíveis e são emitidos para todas as contas administrativas.
 - O *Builtin\Administrador* para cada domínio foi designado como uma conta de acesso de emergência
 - Uma solução de gerenciamento de identidade corporativa é implantada.
-- [LAPS](http://aka.ms/laps) foi implantado em servidores e estações de trabalho para gerenciar a senha da conta de administrador local
+- [LAPS](https://aka.ms/laps) foi implantado em servidores e estações de trabalho para gerenciar a senha da conta de administrador local
 - Há uma solução de gerenciamento de acesso privilegiado, como o Microsoft Identity Manager, implementada, ou há um plano para adotar uma.
 - A equipe é designada para monitorar alertas de segurança e responder a eles.
 - O recurso técnico para aplicar rapidamente as atualizações de segurança da Microsoft está disponível.
@@ -314,7 +314,7 @@ Os administradores só podem entrar nas estações de trabalho de administrador 
 > [!NOTE]
 > Isso é necessário porque fazer logon interativamente em um host concede controle das credenciais nesse host.
 >
-> Consulte [Ferramentas administrativas e tipos de logon](http://aka.ms/admintoolsecurity) para obter detalhes sobre os tipos de logon, ferramentas de gerenciamento comuns e exposição de credencial.
+> Consulte [Ferramentas administrativas e tipos de logon](https://aka.ms/admintoolsecurity) para obter detalhes sobre os tipos de logon, ferramentas de gerenciamento comuns e exposição de credencial.
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>Uso da tecnologia e métodos de suporte aprovados
 
@@ -330,7 +330,7 @@ Os administradores que oferecem suporte a usuários e sistemas remotos devem seg
 Certifique-se de que as práticas a seguir sejam aplicadas neste cenário:
 
 - **Suporte de servidor remoto**: ao acessar remotamente um servidor, os administradores de Camada 0 devem seguir estas diretrizes:
-  - **Primário (ferramenta)** ferramentas remotas que usam logons de rede (tipo 3). Para saber mais, consulte [Ferramentas administrativas e tipos de logon](http://aka.ms/admintoolsecurity).
+  - **Primário (ferramenta)** ferramentas remotas que usam logons de rede (tipo 3). Para saber mais, consulte [Ferramentas administrativas e tipos de logon](https://aka.ms/admintoolsecurity).
   - **Primário (interativo)** use RDP RestrictedAdmin ou uma sessão RDP padrão de uma estação de trabalho do administrador com uma conta de domínio
 
     > [!NOTE]
@@ -366,7 +366,7 @@ O suporte técnico e organizações de suporte ao usuário executam suporte para
    - **Primário**: suporte "Over the shoulder" (por cima do ombro) pode ser fornecido sem qualquer ferramenta.
    - **Proibido**: o logon com credenciais administrativas de uma conta de domínio não é permitido neste cenário. Alterne para o suporte de estação de trabalho no escritório se houver a necessidade de privilégios administrativos.
 - **Suporte remoto ao usuário**: a equipe de suporte de Camada 2 é fisicamente remota com relação ao usuário.
-   - **Primário**: é possível usar Assistência Remota, Skype for Business ou um compartilhamento de tela do usuário semelhante. Para saber mais, consulte [O que é a Assistência Remota do Windows?](https://windows.microsoft.com/en-us/windows/what-is-windows-remote-assistance)
+   - **Primário**: é possível usar Assistência Remota, Skype for Business ou um compartilhamento de tela do usuário semelhante. Para saber mais, consulte [O que é a Assistência Remota do Windows?](https://windows.microsoft.com/windows/what-is-windows-remote-assistance)
    - **Proibido**: o logon com credenciais administrativas de uma conta de domínio não é permitido neste cenário. Alterne para o suporte de estação de trabalho se houver a necessidade de privilégios administrativos.
 - **Suporte de estação de trabalho**: entre as tarefas estão a manutenção ou solução de problemas da estação de trabalho, que exigem acesso a um sistema para exibição de logs, instalação de software, atualização de drivers e assim por diante.
    - **Suporte à estação de trabalho no escritório**: a equipe de suporte de Camada 2 está fisicamente presente na estação de trabalho do usuário.
@@ -489,7 +489,7 @@ Um design de floresta administrativa deve incluir as seguintes considerações:
 
 - **Proteção da estação de trabalho**: compile as estações de trabalho administrativas usando as [Estações de trabalho com acesso privilegiado](../securing-privileged-access/privileged-access-workstations.md) (por meio da Fase 3), mas altere a associação de domínio na floresta administrativa em vez do ambiente de produção.
 - **Proteção do servidor e do DC**: para todos os controladores de domínio e servidores na floresta administrativa:
-   - Certifique-se de que todas as mídias sejam validadas usando as diretrizes em [Origem limpa para a mídia de instalação](http://aka.ms/cleansource)
+   - Certifique-se de que todas as mídias sejam validadas usando as diretrizes em [Origem limpa para a mídia de instalação](https://aka.ms/cleansource)
    - Certifique-se de que os servidores de floresta administrativa tenham os sistemas operacionais mais recentes instalados, mesmo que isso não seja viável em produção.
    - Os hosts da floresta de administrador devem ser atualizados automaticamente com atualizações de segurança.
 
@@ -523,7 +523,7 @@ Um design de floresta administrativa deve incluir as seguintes considerações:
    - Análise da superfície de ataque para evitar a introdução de novos vetores de ataque no Windows durante a instalação de novo software.
 
       > [!NOTE]
-      > O uso de ferramentas como o [ASA (Attack Surface Analyzer)](https://www.microsoft.com/en-us/download/details.aspx?id=24487) ajudará a avaliar as definições de configuração em um host e a identificar os vetores de ataque introduzidos por software ou alterações na configuração.
+      > O uso de ferramentas como o [ASA (Attack Surface Analyzer)](https://www.microsoft.com/download/details.aspx?id=24487) ajudará a avaliar as definições de configuração em um host e a identificar os vetores de ataque introduzidos por software ou alterações na configuração.
 
 - Proteção de conta
    - A Autenticação multifator deve ser configurada para todas as contas na floresta administrativa, exceto uma conta. Pelo menos uma conta administrativa deve ter base em senha para garantir que o acesso funcionará no caso de quebra de processos da autenticação multifator. Essa conta deve ser protegida por um processo rigoroso de controle físico.
@@ -585,7 +585,7 @@ Esta tabela inclui orientações para as ferramentas administrativas e métodos 
 |Registro Remoto|Rede|-||
 |Gateway de Área de Trabalho Remota|Rede|-|Autenticação em Gateway de Área de Trabalho Remota.|
 |Tarefa agendada|Batch|v|A senha também será salva como um segredo LSA em disco.|
-|Executar ferramentas como um serviço|Fornecer manutenção|v|A senha também será salva como um segredo LSA em disco.|
+|Executar ferramentas como um serviço|Serviço|v|A senha também será salva como um segredo LSA em disco.|
 |Scanners de vulnerabilidade|Rede|-|A maioria dos scanners assumem o uso padrão de logons de rede, embora alguns fornecedores possam implementar logons de fora da rede e apresentar mais risco de roubo de credenciais.|
 
 Para autenticação na Web, use a referência da tabela abaixo:
@@ -617,7 +617,7 @@ Em computadores baseados em Windows, todas as autenticações são processadas c
 |Interativo (também conhecida como Logon local)|2|Senha, Cartão inteligente,<br />outros|Sim|Logon no console;<br />RUNAS;<br />Soluções de controle remoto de hardware (como KVM de rede ou Acesso remoto/Cartão lights-out no servidor)<br />Autenticação básica do IIS (antes do IIS 6.0)|
 |Rede|3|Senha,<br />Hash de NT,<br />Tíquete Kerberos|Não (exceto se a delegação estiver habilitada, nesse caso, os tíquetes do Kerberos estarão presentes)|NET USE;<br />Chamadas RPC;<br />Registro Remoto;<br />Autenticação Windows integrada ao IIS;<br />Autenticação Windows do SQL;|
 |Batch|4|Senha (normalmente armazenada como segredo de LSA)|Sim|Tarefas Agendadas|
-|Fornecer manutenção|5|Senha (normalmente armazenada como segredo de LSA)|Sim|Serviços Windows|
+|Serviço|5|Senha (normalmente armazenada como segredo de LSA)|Sim|Serviços Windows|
 |NetworkCleartext|8|Senha|Sim|Autenticação básica do IIS (IIS 6.0 e mais recente);<br />Windows PowerShell com CredSSP|
 |NewCredentials|9|Senha|Sim|RUNAS /NETWORK|
 |RemoteInteractive|10|Senha, Cartão inteligente,<br />outros|Sim|Área de Trabalho Remota (anteriormente conhecida como "Serviços de Terminal")|

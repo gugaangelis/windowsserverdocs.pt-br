@@ -1,19 +1,19 @@
 ---
 title: Solucionando problemas de clientes DNS
 description: Este artigo apresenta como solucionar problemas do problema de DNS do lado do cliente.
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 1f18159d6232bd9e7864b13419b3648c12b9f44f
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: dd34fae73cdcb20a896750e20d4a28f8777a378a
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917813"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265768"
 ---
 # <a name="troubleshooting-dns-clients"></a>Solucionando problemas de clientes DNS
 
@@ -37,7 +37,7 @@ Este artigo discute como solucionar problemas de clientes DNS.
 
 Se o cliente não tiver uma configuração de TCP/IP válida, use um dos seguintes métodos:
 
-* Para clientes configurados dinamicamente, `ipconfig /renew` use o comando para forçar manualmente o cliente a renovar sua configuração de endereço IP com o servidor DHCP.
+* Para clientes configurados dinamicamente, use o comando `ipconfig /renew` para forçar manualmente o cliente a renovar sua configuração de endereço IP com o servidor DHCP.
 
 * Para clientes configurados estaticamente, modifique as propriedades de TCP/IP do cliente para usar definições de configuração válidas ou conclua sua configuração de DNS para a rede.
 
@@ -57,7 +57,7 @@ Se nenhum servidor DNS configurado responder a um ping direto de seu endereço I
 
 ### <a name="dns-query-tests"></a>Testes de consulta DNS
 
-Se o cliente DNS puder executar ping no computador do servidor DNS, tente usar os `nslookup` comandos a seguir para testar se o servidor pode responder a clientes DNS. Como o nslookup não usa o cache DNS do cliente, a resolução de nomes usará o servidor DNS configurado do cliente.
+Se o cliente DNS puder executar ping no computador do servidor DNS, tente usar os seguintes comandos de `nslookup` para testar se o servidor pode responder a clientes DNS. Como o nslookup não usa o cache DNS do cliente, a resolução de nomes usará o servidor DNS configurado do cliente.
 
 #### <a name="test-a-client"></a>Testar um cliente
 
@@ -124,7 +124,7 @@ Por exemplo:
 nslookup bing.com
 ```
 
-Se todos os quatro testes tiverem sido bem-sucedidos, execute `ipconfig /displaydns` e verifique a saída do nome que falhou. Se você vir "o nome não existe" sob o nome com falha, uma resposta negativa foi retornada de um servidor DNS e armazenada em cache no cliente. 
+Se todos esses quatro testes tiverem sido bem-sucedidos, execute `ipconfig /displaydns` e verifique a saída do nome que falhou. Se você vir "o nome não existe" sob o nome com falha, uma resposta negativa foi retornada de um servidor DNS e armazenada em cache no cliente. 
 
 Para resolver o problema, limpe o cache executando `ipconfig /flushdns`.
 

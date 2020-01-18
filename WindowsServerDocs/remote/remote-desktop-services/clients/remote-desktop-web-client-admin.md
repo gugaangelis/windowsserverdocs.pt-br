@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f54548e8e68a0ee693c5d8ec80e67057b3d5b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387663"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950417"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar o cliente Web da Área de Trabalho Remota para seus usuários
 
@@ -28,7 +28,7 @@ Antes de começar, tenha o seguinte em mente:
 
 * Certifique-se de sua [Implantação de Área de Trabalho Remota](../rds-deploy-infrastructure.md) tenha um Gateway de Área de Trabalho Remota, um Agente de Conexão de Área de Trabalho Remota e acesso à Área de Trabalho Remota pela Web em execução no Windows Server 2016 ou 2019.
 * Verifique se sua implantação está configurada para [licenças de acesso para cliente por usuário](../rds-client-access-license.md) (CALs) em vez de por dispositivo, caso contrário, todas as licenças serão consumidas.
-* Instale a [Atualização do Windows 10 KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) no Gateway de Área de Trabalho Remota. Atualizações cumulativas posteriores já podem conter esta KB.
+* Instale a [Atualização do Windows 10 KB4025334](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334) no Gateway de Área de Trabalho Remota. Atualizações cumulativas posteriores já podem conter esta KB.
 * Certifique-se de que certificados confiáveis públicos estejam configurados para as funções de Gateway de Área de Trabalho Remota e Acesso pela Web à Área de Trabalho Remota.
 * Verifique se todos os computadores usados por seus usuários para se conectar estão executando uma das seguintes versões de sistema operacional:
   * Windows 10
@@ -300,7 +300,7 @@ Se isso não funcionar, o nome do servidor na URL do cliente da Web pode não co
 Se o usuário relata que não consegue se conectar ao cliente da Web, mesmo que consiga ver os recursos listados, verifique os seguintes itens:
 
 * A função do Gateway de Área de Trabalho Remota está configurada corretamente para usar um certificado público confiável?
-* O servidor de Gateway de Área de Trabalho Remota tem as atualizações necessárias instaladas? Certifique-se de que o servidor tem [a atualização KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) instalada.
+* O servidor de Gateway de Área de Trabalho Remota tem as atualizações necessárias instaladas? Certifique-se de que o servidor tem [a atualização KB4025334](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334) instalada.
 
 Se o usuário receber um erro "certificado de autenticação de servidor inesperado recebido" ao tentar se conectar, a mensagem mostrará a impressão digital do certificado. Pesquise o gerenciador de certificados do servidor do agente de Área de Trabalho Remota usando essa impressão digital para localizar o certificado correto. Verifique se o certificado está configurado para ser usado para a função de Agente de Área de Trabalho Remota na página de propriedades da implantação de Área de Trabalho Remota. Depois de verificar se o certificado não expirou, copie o certificado no formato de arquivo .cer para o servidor de Acesso via Web à Área de Trabalho Remota e execute o seguinte comando no servidor de Acesso via Web RD à Área de Trabalho Remota com o valor entre colchetes substituído pelo caminho do arquivo do certificado:
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
-ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 946c1266f1c2cdc78cedac6794abb9f8d26696cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868515"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947704"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Benefício Híbrido do Azure para Windows Server
 
@@ -84,7 +84,7 @@ Em seguida, você pode preencher os resultados na **Ferramenta do SA de Contagem
 
 Execute um inventário em cada assinatura que você tem para gerar uma visão abrangente da sua posição de licenciamento.
 
-[Ferramenta do SA de Contagem de Benefício Híbrido do Azure para o WS](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Ferramenta do SA de Contagem de Benefício Híbrido do Azure para o WS](https://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
 Se tiver realizado o que foi realizado acima e confirmado que você está totalmente licenciado para o número de instâncias do Benefício Híbrido do Azure que você está executando, não haverá necessidade de outras ações. Se você tiver descoberto que pode cobrir VMs incrementais com o benefício, convém otimizar seus custos ainda mais alternando para instâncias em execução com o benefício versus custo total.
 

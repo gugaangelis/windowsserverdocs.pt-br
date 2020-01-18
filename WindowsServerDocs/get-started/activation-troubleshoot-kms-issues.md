@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dab8294837a5f9116328e59364de9beb139a4b77
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 110e3a685293c447d03158eac57d38fedd28b0cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71963002"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948312"
 ---
 # <a name="kms-activation-known-issues"></a>Ativação do KMS: problemas conhecidos
 
@@ -35,7 +35,7 @@ No computador cliente KMS, abra painel de controle do **Sistema** e procure a me
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>O computador cliente KMS não é ativado
 
-Verifique se o limite de ativação do KMS foi atingido. No computador host KMS, execute Slmgr.vbs e use a opção de linha de comando **/dli** para determinar a contagem atual do host. Até que o host KMS tenha uma contagem de 25, os computadores cliente com Windows 7 não poderão ser ativados. Os clientes KMS do Windows Server 2008 R2 exigem uma contagem do KMS de 5 para ativação. Para obter mais informações sobre os requisitos do KMS, confira o [Guia de planejamento de ativação de volume](http://go.microsoft.com/fwlink/?linkid=155926). 
+Verifique se o limite de ativação do KMS foi atingido. No computador host KMS, execute Slmgr.vbs e use a opção de linha de comando **/dli** para determinar a contagem atual do host. Até que o host KMS tenha uma contagem de 25, os computadores cliente com Windows 7 não poderão ser ativados. Os clientes KMS do Windows Server 2008 R2 exigem uma contagem do KMS de 5 para ativação. Para obter mais informações sobre os requisitos do KMS, confira o [Guia de planejamento de ativação de volume](https://go.microsoft.com/fwlink/?linkid=155926). 
 
 Abra o computador cliente KMS e examine se o Log de eventos do aplicativo tem a ID de evento 12289. Confira esse evento para obter as seguintes informações:
 
@@ -86,4 +86,4 @@ As chaves KMS devem ser instaladas somente em hosts KMS, não em clientes KMS. E
 
 Se um host KMS falhar, você deverá instalar uma chave de host KMS em um novo host e ativá-lo. Verifique se o novo host KMS tem um SRV RR no banco de dados DNS. Se você instalar o host KMS usando o mesmo nome do computador e endereço IP como o host KMS com falha, o novo host KMS poderá usar o registro SRV do DNS do host com falha. Se o novo host tiver um nome do computador diferente, você poderá remover manualmente o SRV RR do DNS do host com falha ou (se a limpeza estiver habilitada no DNS) deixar o DNS removê-lo automaticamente. Se a rede estiver usando o DDNS, o novo host KMS criará automaticamente um novo SRV RR no servidor DNS. O novo host KMS inicia a coleta de solicitações de renovação do cliente e começará a ativar os clientes assim que o limite de ativação do KMS for atingido.
 
-Se os clientes KMS usarem a descoberta automática, eles selecionarão automaticamente outro host KMS se o host KMS original não responder às solicitações de renovação. Se os clientes não usarem a descoberta automática, você deverá atualizar manualmente os computadores cliente KMS que foram atribuídos ao host KMS com falha executando **slmgr.vbs /skms**. Para evitar esse cenário, configure os clientes KMS para usar a descoberta automática. Para obter mais informações, confira o [Guia de implantação de ativação de volume](http://go.microsoft.com/fwlink/?linkid=150083).
+Se os clientes KMS usarem a descoberta automática, eles selecionarão automaticamente outro host KMS se o host KMS original não responder às solicitações de renovação. Se os clientes não usarem a descoberta automática, você deverá atualizar manualmente os computadores cliente KMS que foram atribuídos ao host KMS com falha executando **slmgr.vbs /skms**. Para evitar esse cenário, configure os clientes KMS para usar a descoberta automática. Para obter mais informações, confira o [Guia de implantação de ativação de volume](https://go.microsoft.com/fwlink/?linkid=150083).

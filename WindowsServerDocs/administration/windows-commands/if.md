@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd7857251b0b6a943f2eea33f56732ec57e7e8d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8518fffc4f271369b13899e149ebd30145726b8
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375483"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259029"
 ---
 # <a name="if"></a>if
 
@@ -47,15 +47,15 @@ if defined <Variable> <Command> [else <Expression>]
 |        Parâmetro        |                                                                                                                                                                                                                Descrição                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           not           |                                                                                                                                                                              Especifica que o comando deve ser executado somente se a condição for falsa.                                                                                                                                                                              |
-|  ERRORLEVEL \<Number >   |                                                                                                                                                      Especifica uma condição verdadeira somente se o programa anterior for executado pelo cmd. exe retornou um código de saída igual ou maior que o *número*.                                                                                                                                                       |
-|       \<Command >        |                                                                                                                                                                            Especifica o comando que deve ser executado se a condição anterior for atendida.                                                                                                                                                                             |
-|  \<String1 > = = <String2>  |                                                                                                             Especifica uma condição verdadeira somente se *seqüência1* e *seqüência2* forem iguais. Esses valores podem ser cadeias de caracteres literais ou variáveis de lote (por exemplo,% 1). Você não precisa colocar cadeias de caracteres literais entre aspas.                                                                                                              |
-|    existe \<FileName >    |                                                                                                                                                                                       Especifica uma condição verdadeira se o nome de arquivo especificado existir.                                                                                                                                                                                        |
+|  ERRORLEVEL \<número >   |                                                                                                                                                      Especifica uma condição verdadeira somente se o programa anterior for executado pelo cmd. exe retornou um código de saída igual ou maior que o *número*.                                                                                                                                                       |
+|       > de comando \<        |                                                                                                                                                                            Especifica o comando que deve ser executado se a condição anterior for atendida.                                                                                                                                                                             |
+|  \<seqüência1 > = =<String2>  |                                                                                                             Especifica uma condição verdadeira somente se *seqüência1* e *seqüência2* forem iguais. Esses valores podem ser cadeias de caracteres literais ou variáveis de lote (por exemplo, %1). Você não precisa colocar cadeias de caracteres literais entre aspas.                                                                                                              |
+|    existe \<nome de arquivo >    |                                                                                                                                                                                       Especifica uma condição verdadeira se o nome de arquivo especificado existir.                                                                                                                                                                                        |
 |      \<CompareOp >       |                                                                               Especifica um operador de comparação de três letras. A lista a seguir representa valores válidos para *CompareOp*:</br>**Equ** Igual a</br>**NEQ** Diferente de</br>**LSS** Menor que</br>**Leq** Menor ou igual a</br>**GTR** Maior que</br>**GEQ** Maior ou igual a                                                                                |
-|           /i            |                                                            Força comparações de cadeia de caracteres a ignorar maiúsculas e minúsculas  Você pode usar **/i** na forma <em>seqüência1</em> **==** <em>seqüência2</em> de **If**. Essas comparações são genéricas, pois se *seqüência1* e *seqüência2* forem compostas apenas de dígitos numéricos, as cadeias de caracteres serão convertidas em números e uma comparação numérica será executada.                                                            |
-| CMDEXTVERSION \<Number > | Especifica uma condição verdadeira somente se o número de versão interno associado ao recurso de extensões de comando do cmd. exe for igual ou maior que o número especificado. A primeira versão é 1. Ele aumenta em incrementos de um quando aprimoramentos significativos são adicionados às extensões de comando. A **CMDEXTVERSION** condicional nunca é verdadeira quando as extensões de comando estão desabilitadas (por padrão, as extensões de comando estão habilitadas). |
-|   definido \<Variable >   |                                                                                                                                                                                            Especifica uma condição verdadeira se a *variável* for definida.                                                                                                                                                                                            |
-|      \<Expression >      |                                                                                                                                                                   Especifica um comando de linha de comando e quaisquer parâmetros a serem passados para o comando em uma cláusula **else** .                                                                                                                                                                   |
+|           /i            |                                                            Força comparações de cadeia de caracteres a ignorar maiúsculas e minúsculas  Você pode usar **/i** no formulário <em>seqüência1</em> **==** <em>seqüência2</em> de **If**. Essas comparações são genéricas, pois se *seqüência1* e *seqüência2* forem compostas apenas de dígitos numéricos, as cadeias de caracteres serão convertidas em números e uma comparação numérica será executada.                                                            |
+| Número de \<CMDEXTVERSION > | Especifica uma condição verdadeira somente se o número de versão interno associado ao recurso de extensões de comando do cmd. exe for igual ou maior que o número especificado. A primeira versão é 1. Ele aumenta em incrementos de um quando aprimoramentos significativos são adicionados às extensões de comando. A **CMDEXTVERSION** condicional nunca é verdadeira quando as extensões de comando estão desabilitadas (por padrão, as extensões de comando estão habilitadas). |
+|   Variável de \<definida >   |                                                                                                                                                                                            Especifica uma condição verdadeira se a *variável* for definida.                                                                                                                                                                                            |
+|      Expressão de \<      |                                                                                                                                                                   Especifica um comando de linha de comando e quaisquer parâmetros a serem passados para o comando em uma cláusula **else** .                                                                                                                                                                   |
 |           /?            |                                                                                                                                                                                                    Exibe a ajuda no prompt de comando.                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentários
@@ -68,7 +68,7 @@ if defined <Variable> <Command> [else <Expression>]
     -   **% CMDEXTVERSION%** se expande para a representação de cadeia de caracteres do valor atual de **CMDEXTVERSION**. Isso pressupõe que não há uma variável de ambiente existente com o nome CMDEXTVERSION — se houver, você obterá o valor de CMDEXTVERSION em vez disso.
 -   Você deve usar a cláusula **else** na mesma linha que o comando depois de **If**.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="BKMK_examples"></a>Exemplos
 
 Para exibir a mensagem "não é possível localizar o arquivo de dados" se o arquivo Product. dat não puder ser encontrado, digite:
 ```
@@ -102,9 +102,10 @@ echo The Product.dat file is missing.
 > ```
 > goto answer%errorlevel%
 > :answer1
-> echo Program had return code 1
+> echo The program returned error level 1
+> goto end
 > :answer0
-> echo Program had return code 0
+> echo The program returned error level 0
 > goto end
 > :end
 > echo Done! 
@@ -118,6 +119,6 @@ echo The Product.dat file is missing.
 
 [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-[Que](if.md)
+[Se](if.md)
 
 [Fim](goto.md)

@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 8ab42d7781c547d516a51c89e9c8ecba0ff72ad6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935032"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950437"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Perguntas frequentes sobre os clientes de área de trabalho remota
 
@@ -67,7 +67,7 @@ Anote o nome deste computador em **Como se conectar a este computador**. Você p
 Você pode conceder permissão de acesso a este computador para usuários específicos. Para fazer isso, clique em **Selecionar os usuários que podem acessar este computador remotamente**.
 Os membros do grupo Administradores têm acesso automático.
 
-No Windows 8.1, siga as instruções para permitir conexões remotas em [Conectar-se a outra área de trabalho usando Conexão de Área de Trabalho Remota](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8).
+No Windows 8.1, siga as instruções para permitir conexões remotas em [Conectar-se a outra área de trabalho usando Conexão de Área de Trabalho Remota](https://support.microsoft.com/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8).
 
 
 

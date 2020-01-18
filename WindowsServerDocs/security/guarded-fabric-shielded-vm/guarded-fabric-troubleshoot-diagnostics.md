@@ -5,14 +5,15 @@ ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
-author: huu
+author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 6db9ce1db139558bd1a7aa731cb12c1b227ead03
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.date: 01/14/2020
+ms.openlocfilehash: c69fc70282ff61ecce25f6413244d7ba3a5ba3bc
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949768"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265818"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>Solução de problemas usando a ferramenta de diagnóstico de malha protegida
 
@@ -20,21 +21,24 @@ ms.locfileid: "75949768"
 
 Este tópico descreve o uso da ferramenta de diagnóstico de malha protegida para identificar e corrigir falhas comuns na implantação, configuração e operação contínua da infraestrutura de malha protegida. Isso inclui o serviço de guardião de host (HGS), todos os hosts protegidos e serviços de suporte, como DNS e Active Directory. A ferramenta de diagnóstico pode ser usada para executar uma primeira passagem na triagem de uma malha protegida com falha, fornecendo aos administradores um ponto de partida para resolver interrupções e identificar ativos configurados incorretamente. A ferramenta não é uma substituição por um sólido entendimento da operação de uma malha protegida e serve apenas para verificar rapidamente os problemas mais comuns encontrados durante as operações cotidianas.
 
-A documentação dos cmdlets usados neste tópico pode ser encontrada no [TechNet](https://technet.microsoft.com/library/mt718834.aspx).
+A documentação completa dos cmdlets usados neste artigo pode ser encontrada na referência do [módulo HgsDiagnostics](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps).
 
-[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
+[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
 ## <a name="quick-start"></a>Início Rápido
 
 Você pode diagnosticar um host protegido ou um nó HGS chamando o seguinte de uma sessão do Windows PowerShell com privilégios de administrador local:
+
 ```PowerShell
 Get-HgsTrace -RunDiagnostics -Detailed
 ```
+
 Isso detectará automaticamente a função do host atual e diagnosticará quaisquer problemas relevantes que possam ser detectados automaticamente.  Todos os resultados gerados durante esse processo são exibidos devido à presença da opção de `-Detailed`.
 
 O restante deste tópico fornecerá uma explicação detalhada sobre o uso avançado de `Get-HgsTrace` para fazer coisas como diagnosticar vários hosts de uma vez e detectar uma configuração complexa de nó cruzado.
 
 ## <a name="diagnostics-overview"></a>Visão geral do diagnóstico
+
 O diagnóstico de malha protegida está disponível em qualquer host com ferramentas e recursos relacionados à máquina virtual blindada instalados, incluindo hosts que executam o Server Core.  Atualmente, os diagnósticos estão incluídos nos seguintes recursos/pacotes:
 
 1. Função de serviço guardião de host
@@ -49,6 +53,7 @@ Cada host direcionado pelo diagnóstico é chamado de "destino de rastreamento".
 Os administradores podem iniciar qualquer tarefa de diagnóstico executando `Get-HgsTrace`.  Esse comando executa duas funções distintas com base nas opções fornecidas em tempo de execução: coleta de rastreamento e diagnóstico.  Essas duas combinadas compõem todo o que é a ferramenta de diagnóstico de malha protegida.  Embora não seja explicitamente necessário, os diagnósticos mais úteis exigem rastreamentos que só podem ser coletados com credenciais de administrador no destino de rastreamento.  Se privilégios insuficientes forem mantidos pelo usuário executando a coleta de rastreamento, os rastreamentos que exigem elevação falharão enquanto todos os outros passarão.  Isso permite o diagnóstico parcial no evento que um operador sob privilégios está executando a triagem. 
 
 ### <a name="trace-collection"></a>Coleta de rastreamento
+
 Por padrão, `Get-HgsTrace` só coletará rastreamentos e os salvará em uma pasta temporária.  Os rastreamentos assumem a forma de uma pasta, nomeada após o host de destino, preenchido com arquivos especialmente formatados que descrevem como o host é configurado.  Os rastreamentos também contêm metadados que descrevem como os diagnósticos foram invocados para coletar os rastreamentos.  Esses dados são usados pelo diagnóstico para reidratar informações sobre o host ao executar o diagnóstico manual.
 
 Se necessário, os rastreamentos podem ser revisados manualmente.  Todos os formatos são legíveis ao homem (XML) ou podem ser prontamente inspecionados usando ferramentas padrão (por exemplo, certificados X509 e extensões do Windows crypto Shell).  No entanto, observe que os rastreamentos não são projetados para diagnóstico manual e é sempre mais eficaz processar os rastreamentos com os recursos de diagnóstico do `Get-HgsTrace`.
@@ -58,6 +63,7 @@ Os resultados da execução da coleta de rastreamento não fazem nenhuma indica�
 Usando o parâmetro `-Diagnostic`, você pode restringir a coleta de rastreamento somente aos rastreamentos necessários para operar o diagnóstico especificado.  Isso reduz a quantidade de dados coletados, bem como as permissões necessárias para invocar o diagnóstico.
 
 ### <a name="diagnosis"></a>Diagnóstico
+
 Os rastreamentos coletados podem ser diagnosticados, desde que `Get-HgsTrace` o local dos rastreamentos por meio do parâmetro `-Path` e a especificação do comutador `-RunDiagnostics`.  Além disso, `Get-HgsTrace` pode executar a coleta e o diagnóstico em uma única passagem, fornecendo a opção `-RunDiagnostics` e uma lista de destinos de rastreamento.  Se não forem fornecidos destinos de rastreamento, o computador atual será usado como um destino implícito, com sua função inferida inspecionando os módulos instalados do Windows PowerShell.
 
 O diagnóstico fornecerá resultados em um formato hierárquico que mostra quais destinos de rastreamento, conjuntos de diagnóstico e diagnósticos individuais são responsáveis por uma falha específica.  As falhas incluem recomendações de resolução e correção se uma determinação puder ser feita em qual ação deve ser executada em seguida.  Por padrão, os resultados de passagem e irrelevantes ficam ocultos.  Para ver tudo testado pelo diagnóstico, especifique a opção `-Detailed`.  Isso fará com que todos os resultados sejam exibidos independentemente do seu status.
@@ -78,13 +84,17 @@ Por padrão, `Get-HgsTrace` se destinará ao localhost (ou seja, onde o cmdlet e
 O destino local implícito usa a inferência de função para determinar qual função o host atual desempenha na malha protegida.  Isso se baseia nos módulos do Windows PowerShell instalados que correspondem aproximadamente aos recursos que foram instalados no sistema.  A presença do módulo `HgsServer` fará com que o destino de rastreamento assuma a função `HostGuardianService` e a presença do módulo `HgsClient` fará com que o destino de rastreamento assuma a função `GuardedHost`.  É possível que um determinado host tenha ambos os módulos presentes nesse caso, ele será tratado como um `HostGuardianService` e um `GuardedHost`.
 
 Portanto, a invocação padrão de diagnóstico para coletar rastreamentos localmente:
+
 ```PowerShell
 Get-HgsTrace
 ```
+
 ... é equivalente ao seguinte:
+
 ```PowerShell
 New-HgsTraceTarget -Local | Get-HgsTrace
 ```
+
 > [!TIP]
 > `Get-HgsTrace` pode aceitar destinos por meio do pipeline ou diretamente por meio do parâmetro `-Target`.  Não há nenhuma diferença entre as duas operações.
 
@@ -159,6 +169,7 @@ As etapas para executar um diagnóstico manual são as seguintes:
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
    ```
+
 2. Solicite que cada administrador do host Empacote a pasta de rastreamentos resultante e envie-a para você.  Esse processo pode ser controlado por email, por meio de compartilhamentos de arquivos ou qualquer outro mecanismo baseado nas políticas operacionais e nos procedimentos estabelecidos pela sua organização.
 
 3. Mesclar todos os rastreamentos recebidos em uma única pasta, sem nenhum outro conteúdo ou pasta.
@@ -197,3 +208,15 @@ Get-HgsTrace -RunDiagnostics -Target $hgs03 -Path .\FabricTraces
 ``` 
 
 O cmdlet de diagnóstico identificará todos os hosts previamente coletados e um host adicional que ainda precisa ser rastreado e executará o rastreamento necessário.  A soma de todos os rastreamentos previamente coletados e coletados recentemente será diagnosticada.  A pasta de rastreamento resultante conterá os rastreamentos novo e antigo.
+
+## <a name="known-issues"></a>Problemas conhecidos
+
+O módulo de diagnóstico de malha protegida tem limitações conhecidas quando executado no Windows Server 2019 ou no Windows 10, versão 1809 e versões de sistema operacional mais recentes.
+O uso dos seguintes recursos pode causar resultados errados:
+
+* Atestado de chave de host
+* Configuração de HGS somente para atestado (para cenários de Always Encrypted SQL Server)
+* Uso de artefatos de política v1 em um servidor HGS onde o padrão de política de atestado é v2
+
+Uma falha no `Get-HgsTrace` ao usar esses recursos não indica necessariamente que o servidor HGS ou o host protegido está configurado incorretamente.
+Use outras ferramentas de diagnóstico como `Get-HgsClientConfiguration` em um host protegido para testar se um host passou por atestado.

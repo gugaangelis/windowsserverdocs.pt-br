@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getstate
-description: 'Tópico de comandos do Windows para * * * *- '
+description: Tópico de comandos do Windows para Bitsadmin GetState
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -13,15 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55be37a6b1b44b81ed9002e5e3b9eb1fd46bd0dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2cff790c8787b1514e8523a4583184d6f6a59efc
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381227"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259101"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
-
 
 
 Recupera o estado do trabalho especificado.
@@ -34,19 +33,30 @@ bitsadmin /GetState <Job>
 
 ## <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Job|O nome de exibição ou o GUID do trabalho|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+|    Job    | O nome de exibição ou o GUID do trabalho |
 
 ## <a name="remarks"></a>Comentários
 
-Os possíveis Estados são:
+Os possíveis estados são:
 
-|-----|-----| | NA fila | O trabalho está aguardando para ser executado. | | CONECTAndo | O BITS está entrando em contato com o servidor. | | Transferindo | O BITS está transferindo dados. | | SUSPENSO | O trabalho está em pausa. | | ERRO | Ocorreu um erro não recuperável; a transferência não será repetida. | | TRANSIENT_ERROR | Ocorreu um erro recuperável; a transferência é repetida quando o atraso mínimo de repetição expira. | | CONFIRMADO | O trabalho foi concluído. | | Cancelado | O trabalho foi cancelado. |
+|      Estado      | Descrição |
+| --------------- | ----------- |
+| EM fila          | O trabalho está aguardando para ser executado. |
+| CONECTANDO      | O BITS está entrando em contato com o servidor. |
+| TRANSFERIR    | O BITS está transferindo dados. |
+| TRANSFERIDOS     | O BITS transferiu com êxito todos os arquivos no trabalho. |
+| SUSPENSO       | O trabalho está em pausa. |
+| ERRO           | Ocorreu um erro não recuperável; a transferência não será repetida. |
+| TRANSIENT_ERROR | Ocorreu um erro recuperável; a transferência é repetida quando o atraso mínimo de repetição expira. |
+| CONFIRMADO    | O trabalho foi concluído. |
+| Cancel        | O trabalho foi cancelado. |
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="BKMK_examples"></a>Exemplos
 
 O exemplo a seguir recupera o estado do trabalho chamado *myDownloadJob*.
+
 ```
 C:\>bitsadmin /GetState myDownloadJob
 ```

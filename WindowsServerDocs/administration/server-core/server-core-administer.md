@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: bcc4bf7b3fbdbff1aed2c8dd07b90346fe9eebab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 577014f6fd7e3a3eb58567b1a644d44360f9e498
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383426"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259052"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar um servidor Server Core
 
@@ -124,7 +124,7 @@ Use as informações de referência a seguir para executar tarefas administrativ
 |         Alterar o nome de um computador em um grupo de trabalho         |                                                                                                                                                                **Netdom RENAMECOMPUTER \<currentcomputername\>/NewName:\<newcomputername\>** <br>Reinicie o computador.                                                                                                                                                                 |
 |                Desabilitar o gerenciamento de arquivos de paginação                 |                                                                                                                                                                        **WMIC ComputerSystem, em que Name = "\<ComputerName\>" Set AutomaticManagedPagefile = false**                                                                                                                                                                         |
 |                   Configurar o arquivo de paginação                   |                                                            **WMIC filepageset em que Name = "\<Path/filename\>" Set InitialSize =\<initialSize\>, MaximumSize =\<MaxSize\>** <br>Em que *Path/filename* é o caminho para e o nome do arquivo de paginação, *initialSize* é o tamanho inicial do arquivo de paginação, em bytes, e *MaxSize* é o tamanho máximo do arquivo da página, em bytes.                                                             |
-|                 Alterar para um endereço IP estático                 | **ipconfig/all** <br>Registre as informações relevantes ou Redirecione-as para um arquivo de texto (**ipconfig/all > ipconfig. txt**).<br>**netsh interface IPv4 mostrar interfaces**<br>Verifique se há uma lista de interfaces.<br>**netsh interface ipv4 set endereço nome \<ID da interface lista\> origem = endereço estático =\<endereço IP preferencial\> gateway =\<endereço de gateway\>**<br>Execute **ipconfig/all** para verificar se o DHCP habilitado está definido como **não**. |
+|                 Alterar para um endereço IP estático                 | **ipconfig/all** <br>Registre as informações relevantes ou Redirecione-as para um arquivo de texto (**ipconfig/all > ipconfig. txt**).<br>**netsh interface IPv4 mostrar interfaces**<br>Verifique se há uma lista de interfaces.<br>**netsh interface ipv4 set endereço \<ID do nome da lista de interfaces\> origem = endereço estático =\<endereço IP preferencial\> gateway =\<endereço do gateway\>**<br>Execute **ipconfig/all** para verificar se o DHCP habilitado está definido como **não**. |
 |                   Defina um endereço DNS estático.                   |   <strong>interface netsh IPv4 Add dnsserver Name =\<nome ou ID da placa de interface de rede\> address =\<endereço IP do servidor DNS primário\> index = 1 <br></strong>netsh interface ipv4 add dnsserver Name =\<nome do servidor DNS secundário\> endereço =\<endereço IP do servidor DNS secundário\> index = 2\*\* <br> Repita conforme apropriado para adicionar mais servidores.<br>Execute **ipconfig/all** para verificar se os endereços estão corretos.   |
 | Alterar para um endereço IP fornecido pelo DHCP de um endereço IP estático |                                                                                                                                      **netsh interface ipv4 set address name =\<endereço IP do sistema local\> origem = DHCP** <br>Execute **ipconfig/all** para verificar se o DHCP habilitado está definido como **Sim**.                                                                                                                                      |
 |                      Inserir uma chave do produto                      |                                                                                                                                                                                                   **slmgr. vbs – ipk \<chave do produto\>**                                                                                                                                                                                                    |
@@ -140,7 +140,7 @@ Use as informações de referência a seguir para executar tarefas administrativ
 |Exibir ou modificar a configuração de IPSEC|**netsh ipsec**| 
 |Exibir ou modificar a configuração de NAP|**netsh nap**| 
 |Exibir ou modificar o IP para conversão de endereço físico|**arp**| 
-|Exibir ou configurar a tabela de roteamento local|**rota**| 
+|Exibir ou configurar a tabela de roteamento local|**route**| 
 |Exibir ou definir as configurações do servidor DNS|**nslookup**| 
 |Exibir estatísticas de protocolo e conexões de rede TCP/IP atuais|**netstat**| 
 |Exibir estatísticas de protocolo e conexões TCP/IP atuais usando NetBIOS sobre TCP/IP (NBT)|**nbtstat**| 

@@ -1,5 +1,5 @@
 ---
-title: Requisitos do sistema
+title: Requisitos do Sistema
 description: Quais são os requisitos mínimos de armazenamento, CPU, rede, memória e RAM em uma instalação limpa para cada opção de instalação.
 ms.custom: na
 ms.prod: windows-server
@@ -14,14 +14,14 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 155e828c77670c7c489b334ec3e7c49aa0809d4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e8b0c04137ff3b11cdaa7aba3c7899ca6300848
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391620"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947748"
 ---
-# <a name="system-requirements"></a>Requisitos do sistema
+# <a name="system-requirements"></a>Requisitos do Sistema
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016 
 
@@ -128,4 +128,4 @@ Para etapas detalhadas para instalar o Windows Server 2016 como um Nano Server, 
 - [Requisitos de processador do Windows](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Comparação das edições Standard e Datacenter do Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
 - [Requisitos do sistema Windows 10](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
-- [Baixar a folha de dados de licenciamento do Windows Server 2016](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
+- [Baixar a folha de dados de licenciamento do Windows Server 2016](https://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

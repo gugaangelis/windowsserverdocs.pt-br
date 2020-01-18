@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163095"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265738"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o AD FS (FAQ)
 
@@ -48,7 +48,7 @@ O suporte a HTTP/2 foi adicionado no Windows Server 2016, mas HTTP/2 não pode s
 Sim, essa configuração tem suporte, no entanto, não há suporte para novos recursos do AD FS 2016 nessa configuração.  Essa configuração deve ser temporária durante a fase de migração do AD FS 2012 R2 para AD FS 2016 e não deve ser implantada por longos períodos de tempo.
 
 ### <a name="is-it-possible-to-deploy-ad-fs-for-office-365-without-publishing-a-proxy-to-office-365"></a>É possível implantar AD FS para o Office 365 sem publicar um proxy no Office 365?
-Sim, há suporte para isso. No entanto, como um efeito colateral
+Sim, isso é suportado. No entanto, como um efeito colateral
 
 1. Você precisará gerenciar manualmente os certificados de assinatura de token de atualização porque o Azure AD não poderá acessar os metadados de Federação. Para obter mais informações sobre como atualizar manualmente o certificado de assinatura de token, leia [renovar certificados de Federação para o Office 365 e Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. Você não poderá aproveitar os fluxos de autenticação herdados (por exemplo, o fluxo de autenticação de proxy ExO)
@@ -126,7 +126,7 @@ Declaração emitida no token de acesso:
     "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
 
 ### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>Posso passar o valor do recurso como parte do valor do escopo como como as solicitações são feitas no Azure AD?
-Com AD FS no servidor 2019, agora você pode passar o valor do recurso inserido no parâmetro de escopo. O parâmetro de escopo agora pode ser organizado como uma lista separada por espaços, em que cada entrada é estruturada como recurso/escopo. Por exemplo  
+Com AD FS no servidor 2019, agora você pode passar o valor do recurso inserido no parâmetro de escopo. O parâmetro de escopo agora pode ser organizado como uma lista separada por espaços, em que cada entrada é estruturada como recurso/escopo. Por exemplo,  
 **< criar uma solicitação de amostra válida >**
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>AD FS oferece suporte à extensão PKCE?
@@ -307,4 +307,7 @@ No AD FS 2016, a associação de token é habilitada automaticamente e causa vá
 `Set-AdfsProperties -IgnoreTokenBinding $true`
 
 ### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>Atualizei meu farm de AD FS no Windows Server 2016 para AD FS no Windows Server 2019. O nível de comportamento do farm para o farm de AD FS foi gerado com êxito para 2019, mas a configuração do proxy de aplicativo Web ainda é exibida como Windows Server 2016?
-Após uma atualização para o Windows Server 2019, a versão de configuração do proxy de aplicativo Web continuará a ser exibida como Windows Server 2016. O proxy de aplicativo Web não tem novos recursos específicos de versão para o Windows Server 2019 e, se o nível de comportamento do farm tiver sido gerado com êxito no AD FS, o proxy de aplicativo Web continuará a ser exibido como Windows Server 2016 por design. 
+Após uma atualização para o Windows Server 2019, a versão de configuração do proxy de aplicativo Web continuará a ser exibida como Windows Server 2016. O proxy de aplicativo Web não tem novos recursos específicos de versão para o Windows Server 2019 e, se o nível de comportamento do farm tiver sido gerado com êxito no AD FS, o proxy de aplicativo Web continuará a ser exibido como Windows Server 2016 por design.
+
+### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>Posso estimar o tamanho do ADFSArtifactStore antes de habilitar o ESL?
+Com o ESL habilitado, AD FS rastreia a atividade da conta e os locais conhecidos para os usuários no banco de dados ADFSArtifactStore. Esse banco de dados é dimensionado em tamanho em relação ao número de usuários e locais conhecidos acompanhados. Ao planejar habilitar o ESL, você pode estimar o tamanho do banco de dados ADFSArtifactStore para aumentar a uma taxa de até 1GB por 100.000 usuários. Se o farm de AD FS estiver usando o banco de dados interno do Windows (WID), o local padrão para os arquivos de banco de dados será C:\Windows\WID\Data. Para evitar o preenchimento desta unidade, verifique se você tem um mínimo de 5 GB de armazenamento livre antes de habilitar o ESL. Além do armazenamento em disco, planeje a memória total do processo para aumentar depois de habilitar o ESL por até um 1 GB de RAM adicional para populações do usuário de 500.000 ou menos.

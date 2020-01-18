@@ -1,25 +1,25 @@
 ---
 title: Solucionando problemas de DNS (sistema de nomes de domínio)
 description: Este artigo apresenta como coletar dados quando ocorrem problemas de DNS.
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: a86b1f34c3b21f5bcde710e2a98323492ea51b62
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 11c52b3beca3afcc0a6bfc8cecee2143dce0f023
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917773"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265828"
 ---
 # <a name="troubleshooting-domain-name-system-dns-issues"></a>Solucionando problemas de DNS (sistema de nomes de domínio)
  
 Problemas de resolução de nomes de domínio podem ser divididos em problemas do lado do cliente e do servidor. Em geral, você deve começar com a solução de problemas do lado do cliente, a menos que determine durante a fase de escopo que o problema está definitivamente ocorrendo no lado do servidor.
 
-- [Solucionando problemas de clientes DNS](troubleshoot-dns-client.md)
+- [Solução de problemas de clientes DNS](troubleshoot-dns-client.md)
 
 - [Solucionando problemas de servidores DNS](troubleshoot-dns-server.md)
  

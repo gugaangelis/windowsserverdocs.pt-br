@@ -12,12 +12,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d6cdd3056d9c7e0a0815ce5856f961d79fcc34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391782"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948450"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desenvolvimento de cmdlets do PowerShell para Nano Server
 
@@ -138,7 +138,7 @@ Em geral, esses cmdlets devem funcionar no Nano Server sem a necessidade de qual
 ### <a name="building-c-for-nano-server"></a>Compilação em C++ para Nano Server  
 Para fazer as DLLs de C++ funcionarem no Nano Server, compile-as para Nano Server em vez de para uma edição específica.  
   
-Para conferir os pré-requisitos e uma explicação passo a passo sobre o desenvolvimento em C++ no Nano Server, confira [Developing Native Apps on Nano Server (Desenvolver aplicativos nativos no Nano Server)](http://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx).  
+Para conferir os pré-requisitos e uma explicação passo a passo sobre o desenvolvimento em C++ no Nano Server, confira [Developing Native Apps on Nano Server (Desenvolver aplicativos nativos no Nano Server)](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx).  
   
   
 ## <a name="porting-net-cmdlets"></a>Portabilidade de cmdlets do .NET  
@@ -151,7 +151,7 @@ O módulo "Microsoft.PowerShell.NanoServer.SDK" está disponível na [Galeria do
   
 O módulo do SDK do PowerShell Core expõe cmdlets para configurar os assemblies de referência corretos do CoreCLR e do PowerShell Core, crie um projeto em C# no Visual Studio 2015 abrangendo os assemblies de referência, e configure o depurador remoto em uma máquina do Nano Server para que os desenvolvedores possam depurar seus cmdlets .NET em execução remota no Nano Server no Visual Studio 2015.  
   
-O módulo do SDK do PowerShell Core exige a Atualização 2 do Visual Studio 2015. Se você não tiver instalado o Visual Studio 2015, instale o [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx).  
+O módulo do SDK do PowerShell Core exige a Atualização 2 do Visual Studio 2015. Se você não tiver instalado o Visual Studio 2015, instale o [Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs.aspx).  
   
 O módulo do SDK também depende do seguinte recurso que deve estar instalado no Visual Studio 2015:  
   
@@ -176,7 +176,7 @@ Para obter informações detalhadas sobre como usar esses cmdlets, execute Get-H
 Você pode pesquisar no catálogo de APIs por .NET Core ou desmontar assemblies de referência de Core CLR. Para saber mais sobre portabilidade de plataforma de APIs do .NET, confira [Portabilidade de plataforma](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/PlatformPortability.md)  
   
 ### <a name="pinvoke"></a>PInvoke  
-No Core CLR usado pelo Nano Server, algumas DLLs fundamentais, como Kernel32.dll e Advapi32.dll, foram divididas em vários conjuntos de API, portanto, você precisará garantir que seu PInvokes faça referência à API correta. Qualquer incompatibilidade será manifestada como um erro de tempo de execução.  
+No Core CLR usado pelo Nano Server, algumas DLLs fundamentais, como Kernel32.dll e Advapi32.dll, foram divididas em vários conjuntos de API, portanto, você precisará garantir que seu PInvokes faça referência à API correta. Qualquer incompatibilidade será manifestada como um erro de runtime.  
   
 Para obter uma lista de APIs nativas com suporte no Nano Server, confira [APIs do Nano Server](https://msdn.microsoft.com/library/mt588480(v=vs.85).aspx).  
   
@@ -191,7 +191,7 @@ Não há suporte para C++ gerenciado para CoreCLR. Ao portar para CoreCLR, reesc
   
 O PowerShell Core tem paridade completa de linguagem do PowerShell com outras edições do PowerShell, incluindo a edição em execução no Windows Server 2016 e no Windows 10. No entanto, ao portar cmdlets de script do PowerShell para o Nano Server, lembre-se destes fatores:  
 * Há dependências de outros cmdlets? Se houver, esses cmdlets estarão disponíveis no Nano Server? Veja [PowerShell no Nano Server](PowerShell-on-Nano-Server.md) para saber mais sobre o que não está disponível.  
-* Se houver dependências de assemblies carregados em tempo de execução, eles ainda funcionarão?   
+* Se houver dependências de assemblies carregados em runtime, eles ainda funcionarão?   
 * Como você pode depurar o script remotamente?   
 * Como você pode migrar do .Net do WMI para .Net de MI?  
   

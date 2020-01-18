@@ -1,19 +1,19 @@
 ---
 title: Desabilitar o cache do lado do cliente DNS em clientes DNS
 description: Este artigo apresenta como desabilitar o cache do lado do cliente DNS em clientes DNS.
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 3aeb7cb06f82b6f2220e42866682ce918389bf1d
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: 51a9dbfd05402a9d018aec3bfea8a5c89e9e5d5e
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023893"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265838"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>Desabilitar o cache do lado do cliente DNS em clientes DNS
 
@@ -32,7 +32,7 @@ sc servername stop dnscache
 ```
 
 
-Para desabilitar o cache DNS permanentemente no Windows, use a ferramenta do controlador de serviço ou a ferramenta serviços para definir o tipo de inicialização doserviço cliente DNS como desabilitado. Observe que o nome do serviço cliente DNS do Windows também pode aparecer como "dnscache". 
+Para desabilitar o cache DNS permanentemente no Windows, use a ferramenta do controlador de serviço ou a ferramenta serviços para definir o tipo de inicialização do serviço cliente DNS como **desabilitado**. Observe que o nome do serviço cliente DNS do Windows também pode aparecer como "dnscache". 
 
 > [!NOTE]
 > Se o cache do resolvedor de DNS for desativado, o desempenho geral do computador cliente diminuirá e o tráfego de rede para consultas DNS aumentará. 
@@ -47,16 +47,16 @@ Você pode usar a ferramenta ipconfig para exibir e liberar o cache do resolvedo
 ipconfig /displaydns 
 ```
 
-Esse comando exibe o conteúdo do cache do resolvedor de DNS, incluindo os registros de recursos de DNS pré-carregados do arquivo de hosts e quaisquer nomes consultados recentemente que foram resolvidos pelo sistema. Depois de algum tempo, o resolvedor descarta o registro do cache. O período de tempo é especificado pelo valor **TTL (vida útil)** associado ao registro de recurso DNS. Você também pode liberar o cache manualmente. Depois de liberar o cache, o computador deve consultar os servidores DNS novamente para todos os registros de recursos DNS que foram resolvidos anteriormente pelo computador. Para excluir as entradas no cache do resolvedor de DNS `ipconfig /flushdns` , execute em um prompt de comando.
+Esse comando exibe o conteúdo do cache do resolvedor de DNS, incluindo os registros de recursos de DNS pré-carregados do arquivo de hosts e quaisquer nomes consultados recentemente que foram resolvidos pelo sistema. Depois de algum tempo, o resolvedor descarta o registro do cache. O período de tempo é especificado pelo valor **TTL (vida útil)** associado ao registro de recurso DNS. Você também pode liberar o cache manualmente. Depois de liberar o cache, o computador deve consultar os servidores DNS novamente para todos os registros de recursos DNS que foram resolvidos anteriormente pelo computador. Para excluir as entradas no cache do resolvedor de DNS, execute `ipconfig /flushdns` em um prompt de comando.
 
 ## <a name="using-the-registry-to-control-the-caching-time"></a>Usando o registro para controlar o tempo de cache
 
 > [!IMPORTANT]  
-> Siga atentamente as etapas nesta seção. Problemas sérios podem ocorrer se você modificar o registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/help/322756) em caso de problemas.
+> Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/help/322756) em caso de problemas.
 
 O período de tempo para o qual uma resposta positiva ou negativa é armazenada em cache depende dos valores das entradas na seguinte chave do registro:
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
 
 O TTL para respostas positivas é o menor dos seguintes valores: 
 
@@ -76,7 +76,7 @@ Para definir o tempo de cache em um computador cliente:
 
 2. Localize e clique na seguinte chave no registro:
 
-   **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
+   **HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
 
 3. No menu Editar, aponte para novo, clique em valor DWORD e adicione os seguintes valores de registro:
 
@@ -84,7 +84,7 @@ Para definir o tempo de cache em um computador cliente:
 
      Tipo de dados: REG_DWORD
 
-     방법 2 Valor padrão de 86400 segundos. 
+     Dados do valor: valor padrão de 86400 segundos. 
      
      Se você reduzir o valor máximo de TTL no cache DNS do cliente para 1 segundo, isso dará a aparência de que o cache DNS do lado do cliente foi desabilitado.    
 
@@ -92,7 +92,7 @@ Para definir o tempo de cache em um computador cliente:
 
      Tipo de dados: REG_DWORD
 
-     방법 2 Valor padrão de 900 segundos. 
+     Dados do valor: valor padrão de 900 segundos. 
      
      Defina o valor como 0 se você não quiser que respostas negativas sejam armazenadas em cache.
 

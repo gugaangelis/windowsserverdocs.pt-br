@@ -11,12 +11,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: 4b09b8e760ce716da7f5aa6abecbead52293e77b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e932a379a46675c7ae0bf34cf27d9e0eb3d40beb
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365487"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259121"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Máquinas virtuais Oracle Linux com suporte no Hyper-V
 
@@ -26,9 +26,9 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
 
 Nesta seção:
 
-* [Série kernel compatível com Red Hat](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_rhc)
+* [Recursos de versões de Oracle Linux com kernel compatível com Red Hat](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_rhc)
 
-* [Série de kernels empresariais não quebrável](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_uek)
+* [Versões de Oracle Linux com o UEK (inquebrable Enterprise kernel)](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_uek)
 
 * [Observações](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md#BKMK_notes)
 
@@ -40,9 +40,9 @@ Nesta seção:
 
 * (*em branco*)-recurso não disponível
 
-* **UEK R\*x t\*y** -unbreakable Enterprise kernel (UEK), em que *x* é o número de versão e *y* é a atualização trimestral.
+* **UEK RxUy** -inquebrable Enterprise kernel (UEK), em que x é o número de versão e y é a atualização trimestral.
 
-## <a name="BKMK_rhc"></a>Série kernel compatível com Red Hat
+## <a name="BKMK_rhc"></a>Recursos de versões de Oracle Linux com kernel compatível com Red Hat
 
 O kernel de 32 bits para a série 6. x é habilitado para PAE. Não há suporte interno de LIS para Oracle Linux RHCK 6.0-6.3. Oracle Linux Kernels 7. x são apenas de 64 bits.
 
@@ -59,7 +59,7 @@ O kernel de 32 bits para a série 6. x é habilitado para PAE. Não há suporte 
 | vRSS                                                                                                                                         | 2019, 2016, 2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 |                           |                           |
 | Segmentação de TCP e descarregamentos de soma de verificação                                                                                                       | 2019, 2016, 2012 R2, 2012, 2008 R2 | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 |                           |                           |
 | SR-IOV                                                                                                                                       | 2019, 2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
-| **[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
+| **[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 | Redimensionamento de VHDX                                                                                                                                  | 2019, 2016, 2012 R2                | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 | &#10004;                  |                           |
 | Fibre Channel Virtual                                                                                                                        | 2019, 2016, 2012 R2                | &#10004;Observação 2    | &#10004;Observação 2     | &#10004;Observação 2                                                     | &#10004;Observação 2                                                     | &#10004;Observação 2          | &#10004;Observação 2          | &#10004;Observação 2          | &#10004;Observação 2           |                           |
 | Backup de máquina virtual ao vivo                                                                                                                  | 2019, 2016, 2012 R2                | &#10004;Observação 11, 3 | &#10004;Observação 11, 3 | &#10004;Nota 3, 4                                                  | &#10004;Nota 3, 4                                                  | &#10004;Nota 3, 4, 11   | &#10004;Nota 3, 4, 11   | &#10004;Nota 3, 4, 11   | &#10004;Observação 3, 4, 5, 11 | &#10004;Observação 3, 4, 5, 11 |
@@ -71,7 +71,7 @@ O kernel de 32 bits para a série 6. x é habilitado para PAE. Não há suporte 
 | Memória Dinâmica-adição a quente                                                                                                                     | 2019, 2016, 2012 R2, 2012          | &#10004;Nota 8, 9 | &#10004;Nota 8, 9  | &#10004;Observação 7, 8, 9, 10 (Nota 6 para 6.4-6.7)                      | &#10004;Observação 7, 8, 9, 10 (Nota 6 para 6.4-6.7)                      | &#10004;Observação 6, 7, 8, 9 | &#10004;Observação 6, 7, 8, 9 | &#10004;Observação 6, 7, 8, 9 | &#10004;Observação 6, 7, 8, 9  |                           |
 | Memória Dinâmica-balões                                                                                                                  | 2019, 2016, 2012 R2, 2012          | &#10004;Nota 8, 9 | &#10004;Nota 8, 9  | &#10004;Observação 7, 9, 10 (Nota 6 para 6.4-6.7)                         | &#10004;Observação 7, 9, 10 (Nota 6 para 6.4-6.7)                         | &#10004;Nota 6, 8, 9    | &#10004;Nota 6, 8, 9    | &#10004;Nota 6, 8, 9    | &#10004;Nota 6, 8, 9     | &#10004;Observação 6, 8, 9, 10 |
 | Redimensionamento de memória de Runtime                                                                                                                        | 2019, 2016                         |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
-| **[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
+| **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 | Dispositivo de vídeo específico do Hyper-V                                                                                                                | 2019, 2016, 2012 R2, 2012, 2008 R2  | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;                 | &#10004;                 | &#10004;                 | &#10004;                  |                           |
 | **[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                    |                    |                     |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 | Par chave-valor                                                                                                                               | 2019, 2016, 2012 R2, 2012, 2008 R2 | &#10004;           | &#10004;            | &#10004;                                                            | &#10004;                                                            | &#10004;Nota 12         | &#10004;Nota 12         | &#10004;Nota 12         | &#10004;Nota 12          | &#10004;Nota 12          |
@@ -85,11 +85,11 @@ O kernel de 32 bits para a série 6. x é habilitado para PAE. Não há suporte 
 | Inicialização segura                                                                                                                                  | 2019, 2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 
 
-## <a name="BKMK_uek"></a>Série de kernels empresariais não quebrável
+## <a name="BKMK_uek"></a>Versões de Oracle Linux com o UEK (inquebrable Enterprise kernel)
 
-O Oracle Linux UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem suporte interno a LIS.
+Oracle Linux com o UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem suporte interno a LIS. 
 
-| **Recurso**                                                                                                                                  | **Versão do Windows Server**         | **UEK R5**                | **UEK R4**                | **UEK R3 QU3**            | **UEK R3 QU2**            | **UEK R3 QU1**       |
+| **Recurso**                                                                                                                                  | **Versão do Windows Server**         | **R5**                | **R4**                | **R3 QU3**            | **R3 QU2**            | **R3 QU1**       |
 |----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|---------------------------|---------------------------|---------------------------|---------------------------|----------------------|
 | **Disponibilidade**                                                                                                                             |                                    | Interno                  | Interno                  | Interno                  | Interno                  | Interno             |
 | **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019, 2016, 2012 R2, 2012, 2008 R2 | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;             |
@@ -102,7 +102,7 @@ O Oracle Linux UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem su
 | vRSS                                                                                                                                         | 2019, 2016, 2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | Segmentação de TCP e descarregamentos de soma de verificação                                                                                                       | 2019, 2016, 2012 R2, 2012, 2008 R2 | &#10004;                  | &#10004;                  |                           |                           |                      |
 | SR-IOV                                                                                                                                       | 2019, 2016                         |                           |                           |                           |                           |                      |
-| **[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                           |                           |                           |                           |                      |
+| **[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                    |                           |                           |                           |                           |                      |
 | Redimensionamento de VHDX                                                                                                                                  | 2019, 2016, 2012 R2                | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  |                      |
 | Fibre Channel Virtual                                                                                                                        | 2019, 2016, 2012 R2                | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  |                      |
 | Backup de máquina virtual ao vivo                                                                                                                  | 2019, 2016, 2012 R2                | &#10004;Observação 3, 4, 5, 11 | &#10004;Observação 3, 4, 5, 11 | &#10004;Observação 3, 4, 5, 11 | &#10004;Observação 3, 4, 5, 11 |                      |
@@ -114,7 +114,7 @@ O Oracle Linux UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem su
 | Memória Dinâmica-adição a quente                                                                                                                     | 2019, 2016, 2012 R2, 2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
 | Memória Dinâmica-balões                                                                                                                  | 2019, 2016, 2012 R2, 2012          | &#10004;                  | &#10004;                  |                           |                           |                      |
 | Redimensionamento de memória de Runtime                                                                                                                        | 2019, 2016                         |                           |                           |                           |                           |                      |
-| **[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                           |                           |                           |                           |                      |
+| **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                    |                           |                           |                           |                           |                      |
 | Dispositivo de vídeo específico do Hyper-V                                                                                                                | 2019, 2016, 2012 R2, 2012, 2008 R2 | &#10004;                  | &#10004;                  | &#10004;                  | &#10004;                  |                      |
 | **[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                    |                           |                           |                           |                           |                      |
 | Par chave-valor                                                                                                                               | 2019, 2016, 2012 R2, 2012, 2008 R2 | &#10004;Observação 11, 12      | &#10004;Observação 11, 12      | &#10004;Observação 11, 12      | &#10004;Observação 11, 12      | &#10004;Observação 11, 12 |
@@ -127,7 +127,7 @@ O Oracle Linux UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem su
 | Inicializar usando UEFI                                                                                                                              | 2019, 2016, 2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | Inicialização segura                                                                                                                                  | 2019, 2016                         | &#10004;                  | &#10004;                  |                           |                           |                      |
 
-## <a name="BKMK_notes"></a>Registra
+## <a name="BKMK_notes"></a>Observações
 
 1. Para essa versão de Oracle Linux, a marcação de VLAN funciona, mas o entroncamento de VLAN não.
 
@@ -137,7 +137,7 @@ O Oracle Linux UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem su
 
 4. As operações de backup dinâmico podem falhar silenciosamente se a máquina virtual tiver um dispositivo iSCSI conectado ou um armazenamento de conexão direta (também conhecido como um disco de passagem).
 
-5. O suporte ao Live backup para Oracle Linux 6.4/6.5/UEKR3 QU2 e QU3 está disponível por meio [do Essentials de backup do Hyper-V para Linux](https://github.com/LIS/backupessentials/tree/1.0).
+5. O suporte ao Live backup para Oracle Linux 6 atualização 4 e Oracle Linux 6 atualização 5 com UEK R3Q2 e UEK R3Q3 está disponível por meio [do Essentials de backup do Hyper-V para Linux](https://github.com/LIS/backupessentials/tree/1.0).
 
 6. O suporte à memória dinâmica só está disponível em máquinas virtuais de 64 bits.
 
@@ -176,7 +176,7 @@ O Oracle Linux UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem su
 14. A injeção de IP estático poderá não funcionar se o Gerenciador de rede tiver sido configurado para um determinado adaptador de rede sintético na máquina virtual. Para um funcionamento suave da injeção de IP estático, verifique se o Gerenciador de rede está desligado completamente ou se foi desligado para um adaptador de rede específico por meio de seu arquivo ifcfg-ethX.
 
 
-Consulte também
+Veja também
 
 * [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
 

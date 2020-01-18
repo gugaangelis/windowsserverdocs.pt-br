@@ -8,12 +8,12 @@ ms.date: 06/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 785ecd4de86c06dd12eb57e41efaa1103f2afdc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5e90119066285ae8e04b392a13ab1a38488f5ee
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357806"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265748"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>Ajuste fino do SQL e solução de problemas de latência com AD FS
 Em uma atualização para [AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294) , apresentamos os seguintes aprimoramentos para reduzir a latência entre bancos de dados. Uma atualização futura para o AD FS 2019 incluirá esses aprimoramentos.
@@ -23,10 +23,12 @@ Em implantações AoA (disponibilidade Always on) anteriores, a latência existi
 
 Na atualização mais recente para AD FS, uma redução na latência é direcionada pela adição de um thread em segundo plano para atualizar o cache de configuração AD FS e uma configuração para definir o período de atualização. O tempo gasto para uma pesquisa de banco de dados é significativamente reduzido no thread de solicitação, pois as atualizações do cache de banco de dados são movidas para o thread em segundo plano.  
 
-Quando o `backgroundCacheRefreshEnabled` for definido como true, AD FS permitirá que o thread em segundo plano execute atualizações de cache. A frequência de busca de dados do cache pode ser personalizada para um valor de tempo por meio `cacheRefreshIntervalSecs`da configuração. O valor padrão é definido como 300 segundos quando `backgroundCacheRefreshEnabled` é definido como true. Após a duração do valor definido, AD FS começar a atualizar o cache e, enquanto a atualização estiver em andamento, os dados de cache antigos continuarão a ser usados.  
+Quando a `backgroundCacheRefreshEnabled` for definida como true, AD FS permitirá que o thread em segundo plano execute atualizações de cache. A frequência de busca de dados do cache pode ser personalizada para um valor de tempo, definindo `cacheRefreshIntervalSecs`. O valor padrão é definido como 300 segundos quando `backgroundCacheRefreshEnabled` é definido como true. Após a duração do valor definido, AD FS começar a atualizar o cache e, enquanto a atualização estiver em andamento, os dados de cache antigos continuarão a ser usados.  
+
+Quando AD FS recebe uma solicitação de um aplicativo, AD FS recupera o aplicativo do SQL e o adiciona ao cache. No valor `cacheRefreshIntervalSecs`, o aplicativo no cache é atualizado usando o thread em segundo plano. Enquanto houver uma entrada no cache, as solicitações de entrada usarão o cache enquanto a atualização em segundo plano estiver em andamento. Se uma entrada não for acessada para 5 * `cacheRefreshIntervalSecs`, ela será descartada do cache. A entrada mais antiga também pode ser descartada do cache depois que o valor de `maxRelyingPartyEntries` configurável for atingido.
 
 >[!NOTE]
-> Os dados do cache serão atualizados fora do `cacheRefreshIntervalSecs` valor se o ADFS receber uma notificação do SQL, indicando que ocorreu uma alteração no banco de dados. Essa notificação irá disparar o cache a ser atualizado. 
+> Os dados do cache serão atualizados fora do valor de `cacheRefreshIntervalSecs` se o ADFS receber uma notificação do SQL, indicando que ocorreu uma alteração no banco de dados. Essa notificação irá disparar o cache a ser atualizado. 
 
 ### <a name="recommendations-for-setting-the-cache-refresh"></a>Recomendações para definir a atualização do cache 
 O valor padrão para a atualização do cache é de **cinco minutos**. É recomendável defini-lo para uma **hora** a fim de reduzir uma atualização de dados desnecessária por AD FS, pois os dados de cache serão atualizados se ocorrerem alterações de SQL.  
@@ -42,8 +44,8 @@ O exemplo a seguir habilita a atualização do cache em segundo plano e define o
 
   1. Navegue até o arquivo de configuração AD FS e, na seção "Microsoft. IdentityServer. Service", adicione a entrada abaixo:  
   
-  - `backgroundCacheRefreshEnabled`-Especifica se o recurso de cache em segundo plano está habilitado. valores "true/false".
-  - `cacheRefreshIntervalSecs`-Valor em segundos no qual o ADFS atualizará o cache. AD FS atualizará o cache se houver qualquer alteração no SQL. AD FS receberá uma notificação SQL e atualizará o cache.  
+  - `backgroundCacheRefreshEnabled`-especifica se o recurso de cache em segundo plano está habilitado. valores "true/false".
+  - `cacheRefreshIntervalSecs`-valor em segundos no qual o ADFS atualizará o cache. AD FS atualizará o cache se houver qualquer alteração no SQL. AD FS receberá uma notificação SQL e atualizará o cache.  
  
  >[!NOTE]
  > Todas as entradas no arquivo de configuração diferenciam maiúsculas de minúsculas.  
@@ -65,9 +67,9 @@ Ambientes híbridos também têm suporte com essa configuração.
 
 ### <a name="requirements"></a>Requisitos: 
 Antes de configurar o suporte a vários bancos de dados de artefatos, execute uma atualização em todos os nós e atualize os binários, já que as chamadas de vários nós ocorrem por meio desse recurso. 
-  1. Gerar script de implantação para criar o artefato DB: Para implantar várias instâncias de BD de artefato, um administrador precisará gerar o script de implantação do SQL para o artefato DB. Como parte dessa atualização, o cmdlet existente `Export-AdfsDeploymentSQLScript`foi atualizado para, opcionalmente, executar um parâmetro especificando para qual AD FS banco de dados gerar um script de implantação do SQL. 
+  1. Gerar script de implantação para criar o artefato DB: para implantar várias instâncias de BD de artefato, um administrador precisará gerar o script de implantação do SQL para o artefato DB. Como parte dessa atualização, o cmdlet `Export-AdfsDeploymentSQLScript`existente foi atualizado para, opcionalmente, executar um parâmetro especificando para qual banco de dados AD FS gerar um script de implantação do SQL. 
  
- Por exemplo, para gerar o script de implantação apenas para o artefato DB, especifique `-DatabaseType` o parâmetro e passe o valor "artefato". O parâmetro `-DatabaseType` opcional especifica o tipo de banco de dados AD FS e pode ser definido como: Todos (padrão), artefato ou configuração. Se nenhum `-DatabaseType` parâmetro for especificado, o script configurará o artefato e os scripts de configuração.  
+ Por exemplo, para gerar o script de implantação apenas para o artefato DB, especifique o parâmetro `-DatabaseType` e passe o valor "artefato". O parâmetro opcional `-DatabaseType` especifica o tipo de banco de dados AD FS e pode ser definido como: todos (padrão), artefato ou configuração. Se nenhum parâmetro `-DatabaseType` for especificado, o script configurará o artefato e os scripts de configuração.  
 
    ```PowerShell
    PS C:\> Export-AdfsDeploymentSQLScript -DestinationFolder <script folder where scripts will be created> -ServiceAccountName <domain\serviceaccount> -DatabaseType "Artifact" 

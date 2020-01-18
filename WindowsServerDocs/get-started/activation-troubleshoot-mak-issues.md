@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fa6d32571597136580afe062aa8d9c7e2d82b7
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 5ed934e52b11db5b83948ba995eaf31e9ff2cce3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962982"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947620"
 ---
 # <a name="mak-activation-known-issues"></a>Ativação da MAK: problemas conhecidos
 
@@ -26,7 +26,7 @@ No computador, abra o controle do **Sistema** e procure **O Windows está ativad
 
 ## <a name="the-computer-does-not-activate-over-the-internet"></a>O computador não é ativado pela Internet
 
-Verifique se as portas necessárias estão abertas no firewall. Para obter uma lista de portas, confira o [Guia de implantação de ativação de volume](http://go.microsoft.com/fwlink/?linkid=150083).
+Verifique se as portas necessárias estão abertas no firewall. Para obter uma lista de portas, confira o [Guia de implantação de ativação de volume](https://go.microsoft.com/fwlink/?linkid=150083).
 
 ## <a name="internet-and-telephone-activation-fail"></a>Falha na ativação pela Internet e por telefone
 

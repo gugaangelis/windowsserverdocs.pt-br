@@ -7,16 +7,16 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b86bf779a4ea9d67f959dacf125a98a8e26a729
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5658a101371cf3b865dec04ac76716b536792602
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947133"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265698"
 ---
 # <a name="tuning-iis-100"></a>Ajustando o IIS 10,0
 
-O Serviços de Informações da Internet (IIS) 10,0 está incluído no Windows ServerÂ 2016. Ele usa um modelo de processo semelhante ao do IIS 8,5 e IIS 7,0. Um driver da Web de modo kernel (http. sys) recebe e roteia solicitações HTTP e satisfaz solicitações de seu cache de resposta. Os processos de trabalho se registram para subespaços de URL e o http. sys roteia a solicitação para o processo apropriado (ou o conjunto de processos para pools de aplicativos).
+O Serviços de Informações da Internet (IIS) 10,0 está incluído no Windows Server 2016. Ele usa um modelo de processo semelhante ao do IIS 8,5 e IIS 7,0. Um driver da Web de modo kernel (http. sys) recebe e roteia solicitações HTTP e satisfaz solicitações de seu cache de resposta. Os processos de trabalho se registram para subespaços de URL e o http. sys roteia a solicitação para o processo apropriado (ou o conjunto de processos para pools de aplicativos).
 
 O HTTP. sys é responsável pelo gerenciamento de conexão e pela manipulação de solicitações. A solicitação pode ser servida do cache HTTP. sys ou transmitida para um processo de trabalho para manipulação adicional. Vários processos de trabalho podem ser configurados, o que fornece isolamento a um custo reduzido. Para obter mais informações sobre como funciona a manipulação de solicitações, consulte a seguinte figura:
 

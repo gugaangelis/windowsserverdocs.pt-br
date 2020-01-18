@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8433aa50d585300df03222b78cf0823985237aa5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4d9a6d4885566204bf9fc29cd9513d25d1b39deb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403964"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949854"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>Parceiros de hospedagem de Serviços de Área de Trabalho Remota e avaliação
 
@@ -29,7 +29,7 @@ Se você for um parceiro da Microsoft e quiser ser incluído na lista de parceir
 1. Torne-se um [Parceiro da Microsoft](https://partner.microsoft.com/), se você não ainda for.
 2. Assista à sessão de treinamento [Hospedagem da área de trabalho e aplicativos do Windows usando os Serviços de Área de Trabalho Remota no Azure](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=2915&rowId=3603).
 3. Faça a [avaliação técnica](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871).
-4. Verifique se você atende aos [requisitos de competência da Plataforma de Nuvem](https://partner.microsoft.com/en-us/membership/cloud-platform-competency).
+4. Verifique se você atende aos [requisitos de competência da Plataforma de Nuvem](https://partner.microsoft.com/membership/cloud-platform-competency).
 
 Já é um Parceiro da Microsoft e tem dúvidas? Contate a equipe de área de trabalho remota em <rdhostingpartners@microsoft.com>.  
 

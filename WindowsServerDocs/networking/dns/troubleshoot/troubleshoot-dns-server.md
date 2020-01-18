@@ -1,19 +1,19 @@
 ---
 title: Solucionando problemas de servidores DNS
 description: Este artigo apresenta como solucionar problemas do problema de DNS do lado do servidor.
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: b0547436cfa0f07ba9cbc4e3dd1825f8d33bc093
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 23e51adafa5ab6da0a9317a1b0fad88bd3901073
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917763"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265798"
 ---
 # <a name="troubleshooting-dns-servers"></a>Solucionando problemas de servidores DNS
 
@@ -23,7 +23,7 @@ Este artigo discute como solucionar problemas em servidores DNS.
 
 1. Execute `ipconfig /all` em um prompt de comando e verifique o endereço IP, a máscara de sub-rede e o gateway padrão.
 
-2. Verifique se o servidor DNS é autoritativo para o nome que está sendo pesquisado. Nesse caso, consulte [verificando problemas com dados](#checking-for-problems-with-authoritative-data)autoritativos.
+2. Verifique se o servidor DNS é autoritativo para o nome que está sendo pesquisado. Nesse caso, consulte [verificando problemas com dados autoritativos](#checking-for-problems-with-authoritative-data).
 
 3. Execute o seguinte comando:
 
@@ -107,7 +107,7 @@ O problema pode ser causado por um erro do usuário quando os usuários inserem 
    dnscmd /zonerefresh <zone name>
    ```
   
-   Por exemplo, se a zona for corp.contoso.com, digite: `dnscmd /zonerefresh corp.contoso.com`.
+   Por exemplo, se a zona for corp.contoso.com, insira: `dnscmd /zonerefresh corp.contoso.com`.
   
 4. Examine o servidor secundário novamente para ver se a zona foi transferida corretamente. Caso contrário, você provavelmente terá um problema de transferência de zona. Para obter mais informações, consulte [problemas de transferência de zona](#zone-transfer-problems).
 
@@ -123,13 +123,13 @@ Para que a recursão funcione com êxito, todos os servidores DNS que são usado
 
 - Um servidor usado durante a consulta fornece dados incorretos.
 
-Inicie a solução de problemas no servidor que foi usado em sua consulta original. Verifique se esse servidor encaminha as consultas para outro servidor examinando a guia encaminhadores nas propriedades do servidor no console DNS. Se a caixa de seleção **habilitar encaminhadores** estiver marcada e um ou mais servidores estiverem listados, esse servidor encaminhará as consultas.
+Inicie a solução de problemas no servidor que foi usado em sua consulta original. Verifique se esse servidor encaminha as consultas para outro servidor examinando a guia **encaminhadores** nas propriedades do servidor no console DNS. Se a caixa de seleção **habilitar encaminhadores** estiver marcada e um ou mais servidores estiverem listados, esse servidor encaminhará as consultas.
 
 Se esse servidor encaminhar consultas para outro servidor, verifique se há problemas que afetam o servidor ao qual esse servidor encaminha as consultas. Para verificar se há problemas, consulte [verificar problemas do servidor DNS](#check-dns-server-problems). Quando essa seção instrui você a executar uma tarefa no cliente, em vez disso, execute-a no servidor.
 
 Se o servidor estiver íntegro e puder encaminhar consultas, repita essa etapa e examine o servidor ao qual esse servidor encaminha as consultas.
 
-Se este servidor não encaminhar consultas para outro servidor, teste se este servidor pode consultar um servidor raiz. Para fazer isso, execute o comando:
+Se este servidor não encaminhar consultas para outro servidor, teste se este servidor pode consultar um servidor raiz. Para fazer isso, execute o comando a seguir:
 
 ```cmd
 nslookup

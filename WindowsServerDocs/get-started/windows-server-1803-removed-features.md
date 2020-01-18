@@ -8,12 +8,12 @@ ms.sitesec: library
 author: jasongerend
 ms.author: jgerend
 ms.date: 10/22/2019
-ms.openlocfilehash: 68edc1f0aaa857d0342f963e19964f5c9e389ed0
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: c3c948e447d060d1ce733778c3362d83ad116708
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812322"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948207"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Recursos removidos ou com substituição planejada do Windows Server versão 1803 em diante
 
@@ -33,7 +33,7 @@ Removemos os seguintes recursos e funcionalidades da imagem do produto instalado
 
 | Recurso    | Em vez disso, você pode usar... |
 | ----------- | -------------------- |
-| [Serviço de Replicação de Arquivos](https://support.microsoft.com/en-us/help/4025991/windows-server-version-1709-no-longer-supports-frs)|Os Serviços de Replicação de Arquivos, introduzidos no Windows Server 2003 R2, foram substituídos pela Replicação do DFS. Será preciso [migrar controladores de domínio que usam FRS para Replicação do DFS com SYSVOL](https://blogs.technet.microsoft.com/filecab/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol/). |
+| [Serviço de Replicação de Arquivos](https://support.microsoft.com/help/4025991/windows-server-version-1709-no-longer-supports-frs)|Os Serviços de Replicação de Arquivos, introduzidos no Windows Server 2003 R2, foram substituídos pela Replicação do DFS. Será preciso [migrar controladores de domínio que usam FRS para Replicação do DFS com SYSVOL](https://blogs.technet.microsoft.com/filecab/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol/). |
 | HNV (Virtualização de Rede Hyper-V)|A [Virtualização de rede](../networking/sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md) agora está incluída no Windows Server como parte da solução de SDN [(Rede definida pelo software)](../networking/sdn/software-defined-networking.md), que também inclui o controlador de rede, balanceamento de carga de software, roteamento definido pelo usuário e listas de controle de acesso. |
 
 ## <a name="features-were-no-longer-developing"></a>Recursos que não desenvolvemos mais
