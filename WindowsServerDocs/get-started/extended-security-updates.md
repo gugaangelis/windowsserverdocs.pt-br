@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 12/16/2019
-ms.openlocfilehash: a5af1ad5a730f1dc90111734a9b8b1aacc91201b
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75466339"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162497"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Como usar as ESUs (Atualizações de Segurança Estendidas) do Windows Server 2008 e 2008 R2
 
@@ -49,6 +49,17 @@ Para usar as atualizações de segurança estendidas, crie um MAK (chave de ativ
 
 > [!NOTE]
 > Caso execute as VMs do Windows Server 2008/2008 R2 no Azure, não será necessário executar as etapas a seguir. As VMs do Azure são habilitadas automaticamente para as atualizações de segurança estendidas. Não é preciso criar um recurso e uma chave de atualização de segurança estendida e não há nenhum custo adicional pelo uso de atualizações de segurança estendidas com as VMs do Azure.
+
+> [!NOTE]
+> Antes de seguir as etapas abaixo, envie um email para [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) com estas informações para aprovação na lista de permissões:
+> * Nome do cliente:
+> * Assinatura do Azure:
+> * Número do Contrato Enterprise (para ESU):
+> * Número de servidores ESU:
+> 
+> A equipe examinará as informações fornecidas e adicionará o usuário e a assinatura à lista de permissões.
+> 
+> Se o solicitante não estiver na lista de permissões, o seguinte erro poderá ocorrer: [Não foi possível encontrar o tipo de recurso no namespace 'Microsoft.WindowsESU'](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
 
 Para registrar VMs não Azure para obter as atualizações de segurança estendidas e criar uma chave, conclua as seguintes etapas no portal do Azure:
 
