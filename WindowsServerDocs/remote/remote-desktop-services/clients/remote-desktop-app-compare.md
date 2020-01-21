@@ -39,7 +39,7 @@ Se você acessar sua área de trabalho pessoal remotamente, haverá vários redi
 |-------------|-------------------------------|-----------|---------|-----|-------|-------------------------------|
 |  Teclado   |               X               |     X     |    X    |  X  |   X   |               X               |
 |    Mouse    |               X               |     X     |    X    | X\* |   X   |               X               |
-|    Touch    |               X               |     X     |    X    |  X  |       | X (Edge e IE não compatíveis) |
+|    Touch    |               X               |     X     |    X    |  X  |       | X (Microsoft Edge e IE não compatíveis) |
 |    Outro    |              Caneta              |           |         |     |       |                               |
 
 *Exiba a [lista de dispositivos de entrada compatíveis para a versão Beta do cliente iOS da Área de Trabalho Remota](remote-desktop-ios.md#supported-input-devices).

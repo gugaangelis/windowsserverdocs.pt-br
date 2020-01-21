@@ -25,7 +25,7 @@ O cliente Web da Área de Trabalho Remota permite usar um navegador da Web compa
 ## <a name="what-youll-need-to-use-the-web-client"></a>O que você precisará para usar o cliente Web
 
 * Para o cliente Web, será necessário um PC executando o Windows, macOS, ChromeOS ou Linux. Não há suporte para dispositivos móveis no momento.
-* Um navegador moderno, como o Edge, Internet Explorer 11, Google Chrome, Safari ou Mozilla Firefox (v55.0 e posterior).
+* Um navegador moderno, como o Microsoft Edge, Internet Explorer 11, Google Chrome, Safari ou Mozilla Firefox (v55.0 e posterior).
 * A URL que seu administrador enviou a você.
 
 >[!NOTE]

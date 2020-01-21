@@ -44,11 +44,11 @@ Para garantir que os clientes remotos possam se conectar ao seu servidor VPN, vo
 7. Se você criou uma zona de pesquisa inversa para um intervalo de endereços IP, incluindo o endereço IP que você inseriu, marque a caixa de seleção **criar registro de ponteiro associado (PTR)** .  A seleção dessa opção cria um registro de recurso de ponteiro (PTR) adicional em uma zona inversa para esse host, com base nas informações inseridas em **nome** e **endereço IP**.
 8. Selecione **Adicionar host**.
 
-## <a name="configure-the-edge-firewall"></a>Configurar o Firewall do Edge
+## <a name="configure-the-edge-firewall"></a>Configurar o Firewall do Microsoft Edge
 
-O Firewall do Edge separa a rede de perímetro externa da Internet pública. Para uma representação visual dessa separação, consulte a ilustração no tópico [Always on visão geral da tecnologia VPN](../always-on-vpn-technology-overview.md).
+O Firewall do Microsoft Edge separa a rede de perímetro externa da Internet pública. Para uma representação visual dessa separação, consulte a ilustração no tópico [Always on visão geral da tecnologia VPN](../always-on-vpn-technology-overview.md).
 
-O Firewall do Edge deve permitir e encaminhar portas específicas para o servidor VPN. Se você usar a NAT (conversão de endereços de rede) no firewall do Edge, talvez seja necessário habilitar o encaminhamento de porta para as portas 500 e 4500 do protocolo UDP. Encaminhe essas portas para o endereço IP atribuído à interface externa do servidor VPN.
+O Firewall do Microsoft Edge deve permitir e encaminhar portas específicas para o servidor VPN. Se você usar a NAT (conversão de endereços de rede) no firewall do Microsoft Edge, talvez seja necessário habilitar o encaminhamento de porta para as portas 500 e 4500 do protocolo UDP. Encaminhe essas portas para o endereço IP atribuído à interface externa do servidor VPN.
 
 Se você estiver roteando o tráfego de entrada e executando o NAT no servidor VPN ou atrás dele, deverá abrir suas regras de firewall para permitir as portas UDP 500 e 4500 de entrada para o endereço IP externo aplicado à interface pública no servidor VPN.
 

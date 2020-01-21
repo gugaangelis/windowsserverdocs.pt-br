@@ -189,9 +189,9 @@ netsh http delete sslcert ipport=0.0.0.0:443
 netsh http delete urlacl url=https://+:443/
 ```
 
-## <a name="azure-features-dont-work-properly-in-edge"></a>Os recursos do Azure não funcionam corretamente no Edge
+## <a name="azure-features-dont-work-properly-in-edge"></a>Os recursos do Azure não funcionam corretamente no Microsoft Edge
 
-O Edge tem [problemas conhecidos](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) relacionados a zonas de segurança que afetam o logon do Azure no centro de administração do Windows. Se você estiver tendo problemas ao usar os recursos do Azure ao usar o Edge, tente adicionar https://login.microsoftonline.com, https://login.live.com e a URL do seu gateway como sites confiáveis e para sites permitidos para configurações do bloqueador de pop-ups no navegador do lado do cliente. 
+O Microsoft Edge tem [problemas conhecidos](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) relacionados a zonas de segurança que afetam o logon do Azure no centro de administração do Windows. Se você estiver tendo problemas ao usar os recursos do Azure ao usar o Microsoft Edge, tente adicionar https://login.microsoftonline.com, https://login.live.com e a URL do seu gateway como sites confiáveis e para sites permitidos para configurações do bloqueador de pop-ups no navegador do lado do cliente. 
 
 Para fazer isso:
 1. Pesquisar **Opções da Internet** no menu Iniciar do Windows

@@ -36,7 +36,7 @@ Os metadados de "marcas" no arquivo. nuspec são usados para declarar a qual fab
 Digamos que desenvolvi uma extensão que dá suporte a servidores de uma empresa chamada Contoso Inc., com o nome do modelo R3xx e R4xx.
 
 1. A marca para o fabricante seria ``"Manufacturer_/Contoso Inc./"``. A marca para os modelos pode ser ``"Model_/^R[34][0-9]{2}$/"``. Dependendo de quão estritamente você deseja definir a condição de correspondência, haverá maneiras diferentes de definir sua expressão regular. Você também pode separar as marcas de fabricante ou modelo em várias marcas, por exemplo, a marca de modelo também pode ser ``"Model_/R3../ Model_/R4../"``.
-2. Você pode testar a expressão regular com o console do DevTools do seu navegador da Web. No Edge ou no Chrome, pressione F12 para abrir a janela DevTools e, na guia Console, digite o seguinte e pressione ENTER:
+2. Você pode testar a expressão regular com o console do DevTools do seu navegador da Web. No Microsoft Edge ou no Chrome, pressione F12 para abrir a janela DevTools e, na guia Console, digite o seguinte e pressione ENTER:
 
    ```javascript
    var regex = /^R[34][0-9]{2}$/

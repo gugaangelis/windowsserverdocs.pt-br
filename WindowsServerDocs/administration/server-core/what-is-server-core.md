@@ -71,7 +71,7 @@ A tabela a seguir mostra quais aplicativos estão disponíveis *localmente* no S
 | Barra de tarefas                            | não disponível   | disponível                      |
 | Notificações da barra de tarefas              | não disponível   | disponível                      |
 | Taskmgr                            | disponível       | disponível                      |
-| Internet Explorer ou Edge          | não disponível   | disponível                      |
+| Internet Explorer ou Microsoft Edge          | não disponível   | disponível                      |
 | Sistema de ajuda integrado               | não disponível   | disponível                      |
 | Shell do Windows 10                   | não disponível   | disponível                      |
 | Windows Media Player               | não disponível   | disponível                      |

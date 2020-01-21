@@ -157,7 +157,7 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 ## <a name="deploy-manually-on-an-existing-azure-virtual-machine"></a>Implantar manualmente em uma máquina virtual do Azure existente
 
-Antes de instalar o centro de administração do Windows em sua VM de gateway desejada, instale um certificado SSL a ser usado para comunicação HTTPS ou você pode optar por usar um certificado autoassinado gerado pelo centro de administração do Windows. No entanto, você receberá um aviso ao tentar se conectar a partir de um navegador se escolher a última opção. Você pode ignorar esse aviso no Edge clicando em **detalhes > ir para a página da Web** ou, no Chrome, selecionando **> avançado vá para [página da Web]** . Recomendamos que você use somente certificados autoassinados para ambientes de teste.
+Antes de instalar o centro de administração do Windows em sua VM de gateway desejada, instale um certificado SSL a ser usado para comunicação HTTPS ou você pode optar por usar um certificado autoassinado gerado pelo centro de administração do Windows. No entanto, você receberá um aviso ao tentar se conectar a partir de um navegador se escolher a última opção. Você pode ignorar esse aviso no Microsoft Edge clicando em **detalhes > ir para a página da Web** ou, no Chrome, selecionando **> avançado vá para [página da Web]** . Recomendamos que você use somente certificados autoassinados para ambientes de teste.
 
 > [!NOTE]
 > Essas instruções são para instalação no Windows Server com experiência desktop, não em uma instalação Server Core. 
@@ -187,7 +187,7 @@ Antes de instalar o centro de administração do Windows em sua VM de gateway de
 
 ### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>Acessando um gateway do centro de administração do Windows instalado em uma VM do Azure
 
-Neste ponto, você deve ser capaz de acessar o centro de administração do Windows de um navegador moderno (Edge ou Chrome) em seu computador local, navegando até o nome DNS da sua VM de gateway. 
+Neste ponto, você deve ser capaz de acessar o centro de administração do Windows de um navegador moderno (Microsoft Edge ou Chrome) em seu computador local, navegando até o nome DNS da sua VM de gateway. 
 
 > [!NOTE]
 > Se você selecionou uma porta diferente de 443, poderá acessar o centro de administração do Windows navegando até https://\<nome DNS de sua VM\>:\<porta personalizada\>

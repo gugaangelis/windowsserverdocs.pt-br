@@ -32,7 +32,7 @@ Neste exemplo, os serviços de presentes da Contoso estão expandindo com êxito
 
 Semelhante à América do Norte, a empresa agora tem servidores Web hospedados em data centers europeus.
 
-Os administradores de DNS dos serviços de presentes da Contoso desejam configurar o balanceamento de carga de aplicativos para data centers europeus de maneira semelhante à implementação da política DNS na Estados Unidos, com o tráfego de aplicativos distribuído entre os servidores Web que estão localizados no Dublin, Irlanda, Amsterdã, Holanda e em outro lugar.
+Os administradores de DNS dos serviços de presentes da Contoso desejam configurar o balanceamento de carga de aplicativos para data centers europeus de maneira semelhante à implementação da política DNS na Estados Unidos, com o tráfego de aplicativos distribuído entre os servidores Web que estão localizados no Dublin, Irlanda, Amsterdã, Países Baixos e em outro lugar.
 
 Os administradores de DNS também desejam que todas as consultas de outros locais no mundo sejam distribuídas igualmente entre todos os seus data centers.
 
