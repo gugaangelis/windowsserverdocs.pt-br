@@ -22,7 +22,7 @@ ms.locfileid: "75949811"
 Para o modo TPM, o administrador de malha captura três tipos de informações de host, cada um deles precisa ser adicionado à configuração do HGS:
 
 - Um identificador TPM (EKpub) para cada host Hyper-V
-- Políticas de integridade de código, uma lista branca de binários permitidos para os hosts do Hyper-V
+- Políticas de integridade de código, uma lista de permissões de binários permitidos para os hosts do Hyper-V
 - Uma linha de base do TPM (medidas de inicialização) que representa um conjunto de hosts Hyper-V que são executados na mesma classe de hardware
 
 Depois que o administrador da malha capturar as informações, adicione-as à configuração do HGS, conforme descrito no procedimento a seguir.
