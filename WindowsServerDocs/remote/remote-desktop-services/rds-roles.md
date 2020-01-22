@@ -7,13 +7,13 @@ ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: f26f75b8ce3f5438362c15b84aeca9339b95ebbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387198"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949821"
 ---
 # <a name="remote-desktop-services-roles"></a>Funções de Serviços de Área de Trabalho Remota
 
@@ -35,7 +35,7 @@ Na maioria dos casos, vários usuários compartilham o mesmo servidor Host da Se
 
 É possível personalizar áreas de trabalho ainda mais criando e carregando um disco rígido virtual com o SO Windows Server que você pode usar como modelo para a criação de novas máquinas virtuais de Host da Sessão RD.
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 * [Serviços de Área de Trabalho Remota - Armazenamento de dados seguro](rds-plan-secure-data-storage.md)
 * [Carregar um VHD generalizado e usá-lo para criar novas VMs no Azure](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json)
@@ -51,7 +51,7 @@ Será necessário instalar certificados digitais correspondentes no servidor do 
 
 Antes de criar um cluster do Agente de Conexão RD, é necessário implantar um Banco de Dados SQL do Azure no ambiente do locatário ou criar um Grupo de Disponibilidade AlwaysOn do SQL Server.
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 * [Adicionar o servidor do Agente de Conexão de Área de Trabalho Remota à implantação e configurar a alta disponibilidade](rds-connection-broker-cluster.md)
 * [Banco de Dados SQL](desktop-hosting-service.md#sql-database) no serviço de hospedagem da área de trabalho.
@@ -66,7 +66,7 @@ Os certificados digitais instalados no servidor e no cliente precisam ser corres
 
 Para locatários com o menor número de usuários, as funções de Acesso via Web da Área de Trabalho Remota e Gateway de Área de Trabalho Remota podem ser combinadas em uma única máquina virtual para reduzir os custos. Também é possível adicionar mais máquinas virtuais de Gateway de Área de Trabalho Remota a um farm de servidores de Gateway de Área de Trabalho Remota para aumentar a disponibilidade do serviço e escalar horizontalmente para mais usuários. Máquinas virtuais em farms de servidores de Gateway de Área de Trabalho Remota maiores devem ser configuradas em um conjunto com balanceamento de carga. Afinidade de IP não é necessária ao usar o Gateway de Área de Trabalho Remota em uma máquina virtual do Windows Server 2016, mas sim quando você estiver executando-o em uma máquina virtual do Windows Server 2012 R2.
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 * [Adicionar alta disponibilidade ao front Gateway Web e Web da Área de Trabalho Remota](rds-rdweb-gateway-ha.md)
 * [Serviços da Área de Trabalho Remota – Acesso de qualquer lugar](rds-plan-access-from-anywhere.md)
@@ -96,9 +96,9 @@ O provedor de serviços necessita de SALs (Licenças de Acesso ao Assinante) de 
 
 Locatários pequenos podem reduzir os custos ao combinar o servidor de arquivos e componentes de Licenciamento de Área de Trabalho Remota em uma única máquina virtual. Para fornecer maior disponibilidade do serviço, os locatários podem implantar duas máquinas virtuais do servidor de Licenças RD no mesmo conjunto de disponibilidade. Todos os servidores de área de trabalho remota no ambiente do locatário são associados com ambos os servidores de Licenças RD para manter os usuários capazes de conectar a novas sessões, mesmo se um dos servidores ficar inativo.
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 * [Licença da implantação do RDS com CALs (Licenças de acesso para cliente)](rds-client-access-license.md)
 * [Ativar o servidor de licenças de Serviços de Área de Trabalho Remota](rds-activate-license-server.md)
 * [Controlar suas RDS CALs (CALs para Serviços de Área de Trabalho Remota)](rds-track-cals.md)
-* [Licenciamento por Volume da Microsoft: opções de licenciamento para provedores de serviços](https://www.microsoft.com/en-us/Licensing/licensing-programs/spla-program.aspx)
+* [Licenciamento por Volume da Microsoft: opções de licenciamento para provedores de serviços](https://www.microsoft.com/Licensing/licensing-programs/spla-program.aspx)

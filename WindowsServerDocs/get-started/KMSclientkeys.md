@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: e2879c56b1dd41b8d357959cca473dd69da77d10
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: f2320b80fb372a227098f952dc8e7f0758420f34
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956077"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947825"
 ---
 # <a name="kms-client-setup-keys"></a>Chaves de instalação de cliente KMS
 
@@ -32,9 +32,9 @@ Caso esteja convertendo um computador a partir de um host KMS, MAK ou edição c
 | Se você quiser...    | … usar esses recursos   |
 |--------------------|------------------------|
 | Ativar o Windows fora de um cenário de ativação de volume (isto é, você está tentando ativar uma versão comercial do Windows), **essas chaves não funcionarão**. | Use esses links para versões de varejo do Windows: |
-| Corrigir esse erro obtido na tentativa de ativar um sistema Windows 8.1, Windows Server 2012 R2 ou mais recente: “Erro: 0xC004F050 o Serviço de licenciamento de software relatou que a chave do produto é inválida”… | [Instale essa atualização](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) no host KMS se ele estiver executando o Windows 8.1, o Windows Server 2012 R2, o Windows 8 ou o Windows Server 2012. |
+| Corrigir esse erro obtido na tentativa de ativar um sistema Windows 8.1, Windows Server 2012 R2 ou mais recente: “Erro: 0xC004F050: o serviço de licenciamento de software relatou que a chave do produto (Product Key) é inválida”… | [Instale essa atualização](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) no host KMS se ele estiver executando o Windows 8.1, o Windows Server 2012 R2, o Windows 8 ou o Windows Server 2012. |
 
--   [Obter o Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
+-   [Obter o Windows 10](https://www.microsoft.com/windows/get-windows-10)
 
 -   [Obter uma nova chave do produto (Product Key) do Windows](https://support.microsoft.com/help/10749/windows-product-key)
 
@@ -71,7 +71,7 @@ Caso esteja convertendo um computador a partir de um host KMS, MAK ou edição c
 
 ## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10, todas as versões Canal Semestral compatíveis
 
-Consulte a [Ficha informativa de ciclo de vida do Windows](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet) para obter informações sobre versões com suporte e término das datas de serviço.
+Consulte a [Ficha informativa de ciclo de vida do Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) para obter informações sobre versões com suporte e término das datas de serviço.
 
 | Edição do sistema operacional          | Chave de instalação de cliente KMS          |
 |-----------------------------------|-------------------------------|
@@ -191,7 +191,7 @@ Consulte a [Ficha informativa de ciclo de vida do Windows](https://support.micro
 |-----------------------------------------|-------------------------------|
 | Windows 8 Pro                  | NG4HW-VH26C-733KW-K6F98-J8CK4 |
 | Windows 8 Pro N                | XCVCF-2NXM9-723PB-MHCB7-2RYQQ |
-| Windows 8 Enterprise                    | 32JNW-9KQ84-P47T8-D8GGY-CWCK7 |
+| O Windows 8 Enterprise                    | 32JNW-9KQ84-P47T8-D8GGY-CWCK7 |
 | Windows 8 Enterprise N                  | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
 
 
@@ -207,7 +207,7 @@ Consulte a [Ficha informativa de ciclo de vida do Windows](https://support.micro
 | Windows 7 Enterprise E                           | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
 
 
-Consulte também
+Veja também
 
 • [Planejamento para ativação de volume](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
 

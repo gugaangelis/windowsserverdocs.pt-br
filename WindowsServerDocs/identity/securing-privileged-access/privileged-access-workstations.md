@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 2625097c56e6b2121cbdac45e1cc5f86972e4898
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: 03f62fd8d9a95c4f0b83e64d672a3c1134833cae
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823851"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950551"
 ---
 # <a name="privileged-access-workstations"></a>Estações de trabalho com acesso privilegiado
 
@@ -34,7 +34,7 @@ Para fornecer a maior segurança possível, as PAWs sempre devem executar o sist
 > [!NOTE]
 > As organizações sem acesso ao Windows 10 Enterprise podem usar o Windows 10 Pro, que inclui várias tecnologias de base essenciais para as PAWs, incluindo a Inicialização Confiável, o BitLocker e a Área de Trabalho Remota.  Clientes da área de educação podem usar o Windows 10 Education.  O Windows 10 Home não deve ser usado para uma PAW.
 >
-> Para uma comparação entre as diferentes edições do Windows 10, leia [este artigo](https://www.microsoft.com/en-us/WindowsForBusiness/Compare).
+> Para uma comparação entre as diferentes edições do Windows 10, leia [este artigo](https://www.microsoft.com/WindowsForBusiness/Compare).
 
 Os controles de segurança da PAW concentram-se em reduzir o alto impacto e os riscos da alta probabilidade de comprometimento. Isso inclui a redução de ataques no ambiente e de riscos que podem reduzir a eficácia dos controles da PAW ao longo do tempo:
 
@@ -50,7 +50,7 @@ Os controles de segurança da PAW concentram-se em reduzir o alto impacto e os r
 >
 > Para saber mais sobre diretrizes de resposta e recuperação, consulte as seções "Responder a atividades suspeitas" e "Recuperar-se de uma violação" em [Atenuar a Passagem de Hash e outros roubos de credenciais](https://aka.ms/pth), versão 2.
 >
-> Visite os [serviços de Recuperação e Resposta a incidentes da Microsoft](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx) para saber mais.
+> Visite os [serviços de Recuperação e Resposta a incidentes da Microsoft](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx) para saber mais.
 
 ### <a name="paw-hardware-profiles"></a>Perfis de hardware da PAW
 
@@ -96,7 +96,7 @@ Nessa configuração, o trabalho diário que não exige privilégios administrat
 
 Para configurar isso, siga as instruções neste guia para o host da PAW, adicione recursos do Hyper-V do cliente, crie uma VM de usuário e instale uma imagem corporativa do Windows 10 na VM do usuário.
 
-Leia o artigo [Cliente Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) para saber mais sobre esse recurso. Observe que o sistema operacional em máquinas virtuais de convidado precisará ser licenciado por [Licenciamento de produtos da Microsoft](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx), também descrito [aqui](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf).
+Leia o artigo [Cliente Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) para saber mais sobre esse recurso. Observe que o sistema operacional em máquinas virtuais de convidado precisará ser licenciado por [Licenciamento de produtos da Microsoft](https://www.microsoft.com/Licensing/product-licensing/products.aspx), também descrito [aqui](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf).
 
 #### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>Uso simultâneo: adicionar RemoteApp, RDP ou uma VDI
 
@@ -269,12 +269,12 @@ Consulte a [página de Modelo de camadas](https://aka.ms/tiermodel) para saber m
 |Administradores do Active Directory: Camada 0|Sim|Uma PAW criada com orientação de Fase 1 é suficiente para esta função.<br /><br />-   É possível adicionar uma floresta administrativa para fornecer a proteção mais forte para este cenário. Para saber mais sobre a floresta administrativa de ESAE, consulte [Abordagem de design de floresta administrativa de ESAE](../securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)<br />- Uma PAW pode ser usada para administrar vários domínios ou florestas.<br />-  Se os Controladores de domínio estiverem hospedados em uma IaaS (Infraestrutura como serviço) ou em uma solução de virtualização local, você deverá priorizar a implementação das PAWs para os administradores dessas soluções.|
 |Serviços de administração de IaaS e PaaS do Azure: Camada 1 ou Camada 0 (consulte Considerações de escopo e design)|Sim|Uma PAW criada usando as diretrizes fornecidas na Fase 2 é suficiente para essa função.<br /><br />-   As PAWs devem ser usadas pelo menos para o Administrador global e o Administrador de cobrança da assinatura. Você também deve usar PAWs para administradores delegados de servidores críticos ou confidenciais.<br />-   As PAWs devem ser usadas para gerenciar o sistema operacional e aplicativos que fornecem Sincronização de Diretório e Federação de Identidade para serviços de nuvem, como [Azure AD Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect/) e Serviços de Federação do Active Directory (AD FS).<br />-   As restrições para a rede de saída devem permitir a conectividade apenas a serviços de nuvem autorizados usando as diretrizes da Fase 2. Não deve haver acesso à Internet aberta a partir das PAWs.<br />- O Windows Defender Exploit Guard deve ser configurado na estação de trabalho **Observação:**     uma assinatura será considerada de Camada 0 para uma Floresta se os Controladores de domínio ou outros hosts de Camada 0 estiverem na assinatura. Uma assinatura será de Camada 1 se não houver servidores de Camada 0 hospedados no Azure.|
 |Administrador do locatário do Office 365 <br />- Camada 1|Sim|Uma PAW criada usando as diretrizes fornecidas na Fase 2 é suficiente para essa função.<br /><br />-   As PAWs devem ser usadas pelo menos para o Administrador de cobrança da assinatura, o Administrador global, o Administrador do Exchange, o Administrador do SharePoint e funções de Administrador de gerenciamento de usuário. Considere também o uso de PAWs para os administradores delegados de dados altamente críticos ou confidenciais.<br />- O Windows Defender Exploit Guard deve ser configurado na estação de trabalho.<br />-   As restrições para a rede de saída devem permitir a conectividade apenas a serviços da Microsoft usando as diretrizes da Fase 2. Não deve haver acesso à Internet aberta a partir das PAWs.|
-|Outros administradores de serviço de nuvem IaaS ou PaaS<br />- Camada 0 ou Camada1 (consulte Considerações de escopo e design)|Sim|Uma PAW criada usando as diretrizes fornecidas na Fase 2 é suficiente para essa função.<br /><br />-   As PAWs devem ser usadas para qualquer função que tenha direitos administrativos sobre VMs hospedadas na nuvem, incluindo a capacidade para instalar agentes, exportar arquivos de disco rígido ou acessar o armazenamento no qual os discos rígidos com sistemas operacionais, dados confidenciais ou dados comerciais críticos são armazenados.<br />-   As restrições para a rede de saída devem permitir a conectividade apenas a serviços da Microsoft usando as diretrizes da Fase 2. Não deve haver acesso à Internet aberta a partir das PAWs.<br />- O Windows Defender Exploit Guard deve ser configurado na estação de trabalho. **Observação:** uma assinatura será de Camada 0 para uma Floresta se os Controladores de domínio ou outros hosts de Camada 0 estiverem na assinatura. Uma assinatura será de Camada 1 se não houver servidores de Camada 0 hospedados no Azure.|
-|Administradores de virtualização<br />- Camada 0 ou Camada1 (consulte Considerações de escopo e design)|Sim|Uma PAW criada usando as diretrizes fornecidas na Fase 2 é suficiente para essa função.<br /><br />-   As PAWs devem ser usadas para qualquer função que tenha direitos administrativos sobre VMs, incluindo a capacidade para instalar agentes, exportar arquivos de disco rígido virtual ou acessar o armazenamento no qual os discos rígidos com informações de sistemas operacionais convidados, dados confidenciais ou dados comerciais críticos são armazenados. **Observação:** um sistema de virtualização (e seus administradores) são considerados de Camada 0 para uma Floresta se os Controladores de domínio ou outros hosts de Camada 0 estiverem na assinatura. Uma assinatura será de Camada 1 se não houver servidores de Camada 0 hospedados no sistema de virtualização.|
+|Outros administradores de serviço de nuvem IaaS ou PaaS<br />- Camada 0 ou Camada1 (consulte Considerações de escopo e design)|Sim|Uma PAW criada usando as diretrizes fornecidas na Fase 2 é suficiente para essa função.<br /><br />-   As PAWs devem ser usadas para qualquer função que tenha direitos administrativos sobre VMs hospedadas na nuvem, incluindo a capacidade para instalar agentes, exportar arquivos de disco rígido ou acessar o armazenamento no qual os discos rígidos com sistemas operacionais, dados confidenciais ou dados comerciais críticos são armazenados.<br />-   As restrições para a rede de saída devem permitir a conectividade apenas a serviços da Microsoft usando as diretrizes da Fase 2. Não deve haver acesso à Internet aberta a partir das PAWs.<br />- O Windows Defender Exploit Guard deve ser configurado na estação de trabalho. **Observação**: uma assinatura será de Camada 0 para uma Floresta se os Controladores de domínio ou outros hosts de Camada 0 estiverem na assinatura. Uma assinatura será de Camada 1 se não houver servidores de Camada 0 hospedados no Azure.|
+|Administradores de virtualização<br />- Camada 0 ou Camada1 (consulte Considerações de escopo e design)|Sim|Uma PAW criada usando as diretrizes fornecidas na Fase 2 é suficiente para essa função.<br /><br />-   As PAWs devem ser usadas para qualquer função que tenha direitos administrativos sobre VMs, incluindo a capacidade para instalar agentes, exportar arquivos de disco rígido virtual ou acessar o armazenamento no qual os discos rígidos com informações de sistemas operacionais convidados, dados confidenciais ou dados comerciais críticos são armazenados. **Observação**: um sistema de virtualização (e seus administradores) são considerados de Camada 0 para uma Floresta se os Controladores de domínio ou outros hosts de Camada 0 estiverem na assinatura. Uma assinatura será de Camada 1 se não houver servidores de Camada 0 hospedados no sistema de virtualização.|
 |Administradores de manutenção do servidor<br />- Camada 1|Sim|Uma PAW criada usando as diretrizes fornecidas na Fase 2 é suficiente para essa função.<br /><br />-   Uma PAW deverá ser usada para os administradores que atualizam, aplicam patches e solucionam problemas de aplicativos e servidores corporativos executando o servidor Windows, Linux e outros sistemas operacionais.<br />-   Talvez seja necessário adicionar ferramentas de gerenciamento dedicadas às PAWs a fim de lidar com a escala maior desses administradores.|
 |Administradores de estação de trabalho do usuário <br />- Camada 2|Sim|Uma PAW criada usando as orientações fornecidas na Fase 2 é suficiente para as funções que têm direitos administrativos em dispositivos de usuário final (como funções de suporte técnico e deskside).<br /><br />-   Talvez seja necessário instalar aplicativos adicionais em PAWs a fim de habilitar o gerenciamento de tíquetes e outras funções de suporte.<br />- O Windows Defender Exploit Guard deve ser configurado na estação de trabalho.<br />    Talvez seja necessário adicionar ferramentas de gerenciamento dedicadas às PAWs a fim de lidar com a escala maior desses administradores.|
 |Administradores de SQL, SharePoint ou LOB (linha de negócios)<br />- Camada 1|Sim|Uma PAW criada com as orientações da Fase 2 é suficiente para esta função.<br /><br />-   Talvez seja necessário instalar ferramentas de gerenciamento adicionais nas PAWs a fim de permitir que os administradores gerenciem aplicativos sem precisarem se conectar a servidores usando a Área de Trabalho Remota.|
-|Usuários que gerenciam presença em redes sociais|Parcialmente|Uma PAW criada usando as diretrizes fornecidas na Fase 2 pode ser usada como ponto de partida para fornecer segurança a essas funções.<br /><br />-   Proteger e gerenciar contas de redes sociais usando o Azure Active Directory (AAD) para compartilhamento, proteção e controle de acesso a contas de redes sociais.<br />    Para saber mais sobre esse recurso, leia [esta postagem de blog](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx).<br />-   As restrições para a rede de saída devem permitir a conectividade com esses serviços. Isso pode ser feito permitindo que conexões com a Internet aberta (risco de segurança muito maior que elimina muitas garantias da PAW) ou permitindo somente endereços DNS necessários para o serviço (pode ser difícil de obter).|
+|Usuários que gerenciam presença em redes sociais|Parcialmente|Uma PAW criada usando as diretrizes fornecidas na Fase 2 pode ser usada como ponto de partida para fornecer segurança a essas funções.<br /><br />-   Proteger e gerenciar contas de redes sociais usando o Azure Active Directory (AAD) para compartilhamento, proteção e controle de acesso a contas de redes sociais.<br />    Para saber mais sobre esse recurso, leia [esta postagem de blog](https://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx).<br />-   As restrições para a rede de saída devem permitir a conectividade com esses serviços. Isso pode ser feito permitindo que conexões com a Internet aberta (risco de segurança muito maior que elimina muitas garantias da PAW) ou permitindo somente endereços DNS necessários para o serviço (pode ser difícil de obter).|
 |Usuários padrão|Não|Embora muitas etapas de proteção possam ser usadas para usuários padrão, a PAW foi criada para isolar contas do acesso à Internet aberta que a maioria dos usuários precisa para funções de trabalho.|
 |VDI/Quiosque de convidado|Não|Embora muitas etapas de proteção possam ser usadas para um sistema de quiosque para convidados, a arquitetura de PAW foi projetada para fornecer maior segurança para contas de alta confidencialidade, e não uma segurança maior para contas de confidencialidade inferior.|
 |Usuário VIP (executivos, pesquisadores, etc.)|Parcialmente|Uma PAW criada usando as diretrizes fornecidas na Fase 2 pode ser usada como ponto de partida para fornecer segurança a essas funções.<br /><br />-   Esse cenário é semelhante a uma área de trabalho de usuário padrão, mas normalmente tem um perfil de aplicativo menor, mais simples e bem conhecido. Normalmente, esse cenário exige o descobrimento e a proteção de dados, serviços e aplicativos confidenciais (que podem ou não ser instalados em desktops).<br />-   Essas funções geralmente exigem um alto grau de segurança e um grau muito alto de facilidade de uso, o que exige alterações de design a fim de atender às preferências do usuário.|
@@ -290,7 +290,7 @@ Consulte a [página de Modelo de camadas](https://aka.ms/tiermodel) para saber m
 
 Este guia contém instruções detalhadas para a configuração da PAW para os cenários indicados acima. Se houver requisitos para os outros cenários, você poderá adaptar por conta própria as instruções com base neste guia ou contratar uma organização de serviços profissionais, como a Microsoft, para auxiliar nessa tarefa.
 
-Para saber mais sobre como usar os serviços da Microsoft para projetar uma PAW personalizada para o seu ambiente, entre em contato com seu representante da Microsoft ou visite [esta página](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx).
+Para saber mais sobre como usar os serviços da Microsoft para projetar uma PAW personalizada para o seu ambiente, entre em contato com seu representante da Microsoft ou visite [esta página](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx).
 
 ## <a name="paw-phased-implementation"></a>Implementação da PAW em fases
 
@@ -345,7 +345,7 @@ A Fase 1 inclui as seguintes etapas:
 4. **Obtenha e valide o Windows 10 Enterprise Edition e o software de aplicativo exigidos**. Obtenha o software necessário para a PAW e valide-o usando a orientação em [Origem limpa para mídia de instalação](https://aka.ms/cleansource).
 
    * Windows 10 Enterprise Edition
-   * [Ferramentas de Administração de Servidor Remoto](https://www.microsoft.com/en-us/download/details.aspx?id=45520) para Windows 10
+   * [Ferramentas de Administração de Servidor Remoto](https://www.microsoft.com/download/details.aspx?id=45520) para Windows 10
    * [Linhas de base de segurança do Windows 10](https://aka.ms/win10baselines)
 
       > [!NOTE]
@@ -660,7 +660,7 @@ Nesta seção, configuraremos as políticas de grupo para impedir que contas com
 2. Defina uma senha complexa e exclusiva para a conta de administrador local.  Não use uma senha que foi usada para qualquer outra conta no ambiente.
 
    > [!NOTE]
-   > A Microsoft recomenda usar a [LAPS (Solução de Senha de Administrador Local)](https://www.microsoft.com/en-us/download/details.aspx?id=46899) para gerenciar a senha de administrador local para todas as estações de trabalho, incluindo as PAWs.  Se você usar a LAPS, conceda somente ao grupo Manutenção da PAW o direito de ler senhas gerenciadas pela LAPS para as PAWs.
+   > A Microsoft recomenda usar a [LAPS (Solução de Senha de Administrador Local)](https://www.microsoft.com/download/details.aspx?id=46899) para gerenciar a senha de administrador local para todas as estações de trabalho, incluindo as PAWs.  Se você usar a LAPS, conceda somente ao grupo Manutenção da PAW o direito de ler senhas gerenciadas pela LAPS para as PAWs.
 
 3. Instale as Ferramentas de Administração de Servidor Remoto para Windows 10 usando a mídia de instalação de origem limpa.
 4. Configurar o Windows Defender Exploit Guard
@@ -705,7 +705,7 @@ Nesta seção, configuraremos as políticas de grupo para impedir que contas com
 
        2. Além disso, usando **Editar Usuários e Grupos Locais**, verifique se os seguintes grupos têm algum membro: Operadores de Backup, Operadores de Criptografia, Administradores do Hyper-V, Operadores de Configuração de Rede, Usuários Avançados, Usuários da Área de Trabalho Remota, Replicadores
 
-12. (Opcional) Se sua organização usa uma solução SIEM (Gerenciamento de informações e eventos de segurança), a PAW deverá estar [configurada para encaminhar eventos para o sistema usando o WEF (Windows Event Forwarding)](http://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx) ou registrada com a solução para que a SIEM receba ativamente eventos e informações da PAW.  Os detalhes dessa operação poderão variar com base em sua solução SIEM.
+12. (Opcional) Se sua organização usa uma solução SIEM (Gerenciamento de informações e eventos de segurança), a PAW deverá estar [configurada para encaminhar eventos para o sistema usando o WEF (Windows Event Forwarding)](https://blogs.technet.com/b/jepayne/archive/2015/11/24/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem.aspx) ou registrada com a solução para que a SIEM receba ativamente eventos e informações da PAW.  Os detalhes dessa operação poderão variar com base em sua solução SIEM.
 
     > [!NOTE]
     > Se a SIEM exigir um agente executado como uma conta de sistema ou de administração local nas PAWs, certifique-se de que as SIEMs sejam gerenciadas com o mesmo nível de confiança que os controladores de domínio e sistemas de identidade.
@@ -778,7 +778,7 @@ Habilite esse recurso nos servidores e estações de trabalho existentes e, em s
 
          > [!NOTE]
          > Será necessário atualizar o arquivo *proxy.pac* após o download, para garantir que ele esteja atualizado e completo.  
-         > A Microsoft publica todas as URLs atuais do Office 365 e do Azure [Centro de Suporte do Office](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US). Essas instruções pressupõem que você usará o Internet Explorer (ou Microsoft Edge) para a administração do Office 365, Azure e outros serviços de nuvem. A Microsoft recomenda a configuração de restrições semelhantes para qualquer navegador de terceiros que você precise usar para a administração. Só use navegadores da Web nas PAWs para a administração de serviços de nuvem, nunca para navegação geral.
+         > A Microsoft publica todas as URLs atuais do Office 365 e do Azure [Centro de Suporte do Office](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US). Essas instruções pressupõem que você usará o Internet Explorer (ou Microsoft Edge) para a administração do Office 365, Azure e outros serviços de nuvem. A Microsoft recomenda a configuração de restrições semelhantes para qualquer navegador de terceiros que você precise usar para a administração. Só use navegadores da Web nas PAWs para a administração de serviços de nuvem, nunca para navegação geral.
          >
          > Talvez seja necessário adicionar outros destinos da Internet válidos para aumentar essa lista para outro provedor de IaaS, mas não adicione sites de produtividade, entretenimento, notícias ou pesquisa a esta lista.
          >
@@ -800,7 +800,7 @@ Habilite esse recurso nos servidores e estações de trabalho existentes e, em s
             6. Dados do valor: insira a URL completa para o arquivo *proxy.pac*, incluindo http:// e o nome do arquivo – por exemplo, http://proxy.fabrikam.com/proxy.pac.  A URL também pode ser uma URL de rótulo único, por exemplo, http://proxy/proxy.pac
 
                > [!NOTE]
-               > O arquivo PAC também pode estar hospedado em um compartilhamento de arquivos, com a sintaxe file://server.fabrikan.com/share/proxy.pac, mas isso exige a permissão do protocolo file://. Confira a seção "OBSERVAÇÃO: scripts de proxy com base em File:// estão obsoletos desta postagem de blog [Noções básicas sobre configuração de proxy da Web](http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx) para saber mais sobre como configurar o valor de Registro necessário.
+               > O arquivo PAC também pode estar hospedado em um compartilhamento de arquivos, com a sintaxe file://server.fabrikan.com/share/proxy.pac, mas isso exige a permissão do protocolo file://. Confira a seção "OBSERVAÇÃO: scripts de proxy com base em File:// estão obsoletos desta postagem de blog [Noções básicas sobre configuração de proxy da Web](https://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx) para saber mais sobre como configurar o valor de Registro necessário.
 
             7. Clique na guia **Comum** e selecione **Remover este item quando ele não for mais aplicado**.
             8. Na guia **Comum** selecione **Direcionamento de nível de item** e clique em **Direcionamento**.
@@ -1070,7 +1070,7 @@ Depois que o disco de modelo e o arquivo de dados de blindagem estiverem prontos
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-[Usar serviços de segurança cibernética da Microsoft](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx)
+[Usar serviços de segurança cibernética da Microsoft](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)
 
 [Taste of Premier: como reduzir a Pass-the-Hash e outras formas de roubo de credenciais](https://channel9.msdn.com/Blogs/Taste-of-Premier/Taste-of-Premier-How-to-Mitigate-Pass-the-Hash-and-Other-Forms-of-Credential-Theft)
 
@@ -1084,13 +1084,13 @@ Depois que o disco de modelo e o arquivo de dados de blindagem estiverem prontos
 
 [Modo de Usuário Isolado no Windows 10 com Dave Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 
-[Processos e recursos do Modo de Usuário Isolado no Windows 10 com Logan Gabriel (Channel 9)](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
+[Processos e recursos do Modo de Usuário Isolado no Windows 10 com Logan Gabriel (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
 
 [Mais sobre processos e recursos no Modo de Usuário Isolado do Windows 10 com Dave Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
 
 [Minimizando o roubo de credenciais usando o Modo de Usuário Isolado do Windows 10 (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
 
-[Habilitando a validação KDC rigorosa no Windows Kerberos](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
+[Habilitando a validação KDC rigorosa no Windows Kerberos](https://www.microsoft.com/download/details.aspx?id=6382)
 
 [Novidades na autenticação Kerberos para Windows Server 2012](https://technet.microsoft.com/library/hh831747.aspx)
 

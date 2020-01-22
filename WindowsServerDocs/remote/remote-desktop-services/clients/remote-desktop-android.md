@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 12/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a1349f1181cdf2ead51a263a3ba62c1789c76b3b
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700159"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919834"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -219,13 +219,13 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 > [!NOTE]
 > Há suporte para gestos de toque nativos no modo Toque Direto no Windows 8 ou posterior.
 
-| Modo de mouse    | Ação do mouse         | Gesto                                                                 |
+| Modo do mouse    | Ação do mouse         | Gesto                                                                 |
 |---------------|----------------------|-------------------------------------------------------------------------|
 | Toque direto  | Clique com o botão esquerdo do mouse           | Toque com um dedo                                                     |
-| Toque direto  | Clique com o botão direito do mouse          | Tocar com um dedo e segurar e soltar                              |
+| Toque direto  | Clique com o botão direito em          | Tocar com um dedo e segurar e soltar                              |
 | Ponteiro do mouse | Zoom                 | Usar dois dedos e pinçar para reduzir o zoom ou aumentar o espaço entre os dedos para ampliar. |
 | Ponteiro do mouse | Clique com o botão esquerdo do mouse           | Toque com um dedo                                                     |
 | Ponteiro do mouse | Clique com o botão esquerdo do mouse e arraste  | Tocar duas vezes e segurar com um dedo e arrastar                          |
-| Ponteiro do mouse | Clique com o botão direito do mouse          | Tocar com dois dedos                                                    |
+| Ponteiro do mouse | Clique com o botão direito em          | Tocar com dois dedos                                                    |
 | Ponteiro do mouse | Clicar com o botão direito do mouse e arrastar | Tocar duas vezes e segurar com dois dedos e arrastar                         |
 | Ponteiro do mouse | Botão de rolagem do mouse          | Fechar e abrir dedos indicador e polegar e manter com dois dedos e arrastar para cima ou para baixo                     |

@@ -11,13 +11,13 @@ ms.date: 07/06/2018
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: 7ff88368c937890d3d5c4f650f6c4c08d404069f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: cf189b15ca15fb556424b5e4931f19d4be356d4d
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387864"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919953"
 ---
 # <a name="desktop-hosting-service"></a>Serviço de hospedagem da área de trabalho
 
@@ -43,7 +43,7 @@ Há várias maneiras de implantar o AD DS:
 2. Configurar um servidor AD DS autônomo no ambiente de rede virtual do locatário. Isso fornece todo o controle completo da instância AD DS em execução nas máquinas virtuais.
 3. Criar uma conexão de VPN site a site com um servidor AD DS localizado no local do locatário. Isso permite ao locatário conectar à instância AD DS existente e reduzir a duplicação de usuários, grupos, unidades organizacionais e assim por diante.
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 * [Documentação do Azure Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/)
 * [Guia de Arquitetura de Referência de Hospedagem da Área de Trabalho para Windows Server 2012 R2](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
@@ -72,7 +72,7 @@ A máquina virtual usada para implantar o servidor de arquivos deve ter um disco
 
 Locatários pequenos podem reduzir os custos ao combinar o servidor de arquivos e a [função de Licenciamento de Área de Trabalho Remota](rds-roles.md#remote-desktop-licensing) em uma única máquina virtual no ambiente do locatário.
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 * [Armazenamento no Windows Server](../../storage/storage.md)
 * [Como anexar um disco de dados gerenciado a uma VM do Windows no portal do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)

@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
-ms.date: 12/04/2019
+ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829604"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953069"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -30,8 +30,21 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Public     |1.2.535  |
-|Participante do Programa Windows Insider    |1.2.535  |
+|Público     |1.2.535  |
+|Participante do Programa Windows Insider    |1.2.594  |
+
+## <a name="updates-for-version-12594"></a>Atualizações para a versão 1.2.594
+
+*Data da publicação: 14/01/2020*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+
+- Agora você pode selecionar quais exibições usará para as conexões de área de trabalho. Para alterar essa configuração, clique com o botão direito do mouse no ícone da conexão de área de trabalho e selecione **Configurações**.
+- Correção de um problema em que as configurações de conexão não exibiam os fatores de escala disponíveis corretos.
+- Correção de um problema em que o Narrador não podia ler a caixa de diálogo mostrada enquanto a conexão era iniciada.
+- Correção de um problema em que o nome de usuário incorreto exibido quando os nomes Azure Active Directory e Active Directory não eram correspondentes.
+- Correção de um problema que fazia o cliente parar de responder ao iniciar uma conexão sem estar conectado a uma rede.
+- Correção de um problema que fazia com que o cliente parasse de responder ao anexar um headset.
 
 ## <a name="updates-for-version-12535"></a>Atualizações para a versão 1.2.535
 

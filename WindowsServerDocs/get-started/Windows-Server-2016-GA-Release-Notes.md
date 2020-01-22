@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 4e2f7cbaed42dd1c1b1884438467cf59f1529f0c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391543"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948348"
 ---
-# <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas de versão: Problemas importantes no Windows Server 2016
+# <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas sobre a versão: Problemas importantes no Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
@@ -42,7 +42,7 @@ Para evitar isso, após a primeira inicialização, desabilite o spooler de impr
 ## <a name="containers"></a>Contêineres
 
 [comment]: # (ID: 371; Remetente: taylorb; estado: aprovado)
-- Antes de usar contêineres, instale a [Atualização da pilha de manutenção para o Windows 10 versão 1607: 23 de agosto de 2016](https://support.microsoft.com/en-us/kb/3176936) ou as atualizações mais recentes que estiverem disponíveis. Caso contrário, vários problemas poderão ocorrer, incluindo falhas na criação, na inicialização ou na execução de contêineres, bem como erros semelhantes a "Falha de CreateProcess no Win32: O servidor RPC não está disponível."
+- Antes de usar contêineres, instale a [Atualização da pilha de manutenção para o Windows 10 versão 1607: 23 de agosto de 2016](https://support.microsoft.com/kb/3176936) ou as atualizações mais recentes que estiverem disponíveis. Caso contrário, vários problemas poderão ocorrer, incluindo falhas na criação, na inicialização ou na execução de contêineres, bem como erros semelhantes a "Falha de CreateProcess no Win32: O servidor RPC não está disponível."
 
 [comment]: # (ID: 373; Remetente: plang; estado: aprovado)
 - O provedor NanoServerPackage OneGet não funciona em contêineres do Windows. Para solucionar esse problema, use Find-NanoServerPackage e Save-NanoServerPackage em um computador diferente (não um contêiner) para baixar o pacote necessário. Em seguida, copie os pacotes no contêiner e instale-os.
@@ -50,12 +50,12 @@ Para evitar isso, após a primeira inicialização, desabilite o spooler de impr
 ## <a name="device-guard"></a>Device Guard
 
 [comment]: # (ID: 369; Remetente: nirb; estado: aprovado)
-Se você usar a proteção baseada em virtualização de integridade de código ou máquinas virtuais blindadas (que usam a proteção baseada em virtualização de integridade de código), fique ciente de que essas tecnologias podem ser incompatíveis com alguns dispositivos e aplicativos. Você deve testar essas configurações no laboratório antes de habilitar os recursos em sistemas de produção. Deixar de fazer isso pode resultar em erros de perda ou parar de dados inesperados.
+Se você usar a proteção baseada em virtualização de integridade de código ou máquinas virtuais blindadas (que usam a proteção baseada em virtualização de integridade de código), fique ciente de que essas tecnologias podem ser incompatíveis com alguns dispositivos e aplicativos. Você deve testar essas configurações no laboratório antes de habilitar os recursos em sistemas de produção. Deixar de fazer isso pode resultar em erros inesperados de perda ou interrupção de dados.
 
 ## <a name="microsoft-exchange"></a>Microsoft Exchange
 
 [comment]: # (ID: 375; Remetente: wgries; estado: aprovado)
-Se você tentar executar o Microsoft Exchange 2016 CU3 no Windows Server 2016, terá erros no processo de host do IIS W3WP.exe. No momento, não há uma solução alternativa para esse problema. Você deve adiar a implantação do Exchange 2016 CU3 no Windows Server 2016 até que uma correção com suporte esteja disponível.
+Se você tentar executar o Microsoft Exchange 2016 CU3 no Windows Server 2016, verá erros no processo de host do IIS W3WP.exe. No momento, não há uma solução alternativa para esse problema. Você deve adiar a implantação do Exchange 2016 CU3 no Windows Server 2016 até que uma correção compatível esteja disponível.
 
 ## <a name="remote-server-administration-tools-rsat"></a>Ferramentas de Administração de Servidor Remoto (RSAT)
 
@@ -67,9 +67,9 @@ Para evitar isso, atualize o computador cliente para a Atualização de Anivers�
 ## <a name="shielded-virtual-machines"></a>Máquinas virtuais blindadas
 
 [comment]: # (ID: 369; Remetente: nirb; estado: aprovado)  
-- Certifique-se de que você instalou todas as atualizações disponíveis antes de implantar máquinas de virtuais blindadas em produção.
+- Verifique se você instalou todas as atualizações disponíveis antes de implantar máquinas virtuais blindadas em produção.
 
-- Se você usar a proteção baseada em virtualização de integridade de código ou máquinas virtuais blindadas (que usam a proteção baseada em virtualização de integridade de código), fique ciente de que essas tecnologias podem ser incompatíveis com alguns dispositivos e aplicativos. Você deve testar essas configurações no laboratório antes de habilitar os recursos em sistemas de produção. Deixar de fazer isso pode resultar em erros de perda ou parar de dados inesperados.
+- Se você usar a proteção baseada em virtualização de integridade de código ou máquinas virtuais blindadas (que usam a proteção baseada em virtualização de integridade de código), fique ciente de que essas tecnologias podem ser incompatíveis com alguns dispositivos e aplicativos. Você deve testar essas configurações no laboratório antes de habilitar os recursos em sistemas de produção. Deixar de fazer isso pode resultar em erros inesperados de perda ou interrupção de dados.
 
 ## <a name="start-menu"></a>Menu Iniciar
 
@@ -84,7 +84,7 @@ Volte para a página principal do [Windows Server 2016](Windows-Server-2016.md).
 
 Alguns sistemas podem apresentar um desempenho de armazenamento reduzido ao executar uma nova instalação do Windows Server 2016 em comparação com o Windows Server 2012 R2.  Foram feitas várias alterações durante o desenvolvimento do Windows Server 2016 para melhorar a segurança e a confiabilidade da plataforma. Algumas dessas alterações, como a habilitação do Windows Defender por padrão, resultam em caminhos mais longos de E/S que podem reduzir o desempenho de E/S em determinadas cargas de trabalho e padrões. A Microsoft não recomenda que o Windows Defender seja desabilitado porque ele é uma camada importante de proteção para os sistemas.  
 
-## <a name="copyright"></a>Copyright
+## <a name="copyright"></a>Direitos autorais
 
 Este documento é fornecido "na condição em que se encontra". As informações e visualizações apresentadas neste documento, incluindo URL e outras referências a sites, estão sujeitas a alterações sem prévio aviso.  
 

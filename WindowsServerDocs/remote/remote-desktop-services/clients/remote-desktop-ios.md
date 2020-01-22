@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 700d419d06c0b007ed05be4f82137828f52143e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404150"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949872"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 
@@ -200,9 +200,9 @@ A barra de comandos substituiu a barra de Utilitário da versão 8.0.1 em diante
 O cliente usa gestos de toque padrão. Você também pode usar gestos de toque para replicar as ações do mouse na área de trabalho remota. Os modos de mouse disponíveis são definidos na tabela a seguir.
 
 > [!NOTE]
-> Ao interagir com o Windows 8 ou mais recente, gestos de toque nativos são compatíveis no modo de toque direto. Para obter mais informações sobre gestos no Windows 8, confira [Toque: deslizar o dedo, tocar e muito mais](https://windows.microsoft.com/en-US/windows-8/touch-swipe-tap-beyond).
+> Ao interagir com o Windows 8 ou mais recente, gestos de toque nativos são compatíveis no modo de toque direto. Para obter mais informações sobre gestos no Windows 8, confira [Toque: deslizar o dedo, tocar e muito mais](https://windows.microsoft.com/windows-8/touch-swipe-tap-beyond).
 
-| Modo de mouse    | Operação do mouse      | Gesto                                                    |
+| Modo do mouse    | Operação do mouse      | Gesto                                                    |
 |---------------|----------------------|------------------------------------------------------------|
 | Toque direto  | Clicar com o botão esquerdo do mouse           | Tocar com um dedo                                               |
 | Toque direto  | Clicar com o botão direito do mouse          | Tocar e segurar com um dedo                                      |

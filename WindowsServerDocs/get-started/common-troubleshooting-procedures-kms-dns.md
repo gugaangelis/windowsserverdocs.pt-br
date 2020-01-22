@@ -8,12 +8,12 @@ ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: 17d4dc0ce531327db21d660481386fcc56498ae3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588035"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948281"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Diretrizes para solucionar problemas de ativação relacionados ao DNS
 
@@ -52,7 +52,7 @@ Caso não possa instalar um host KMS nem, por algum outro motivo, usar a ativaç
 
 Para alterar a chave do produto (Product Key) de um MAK, siga estas etapas:
 
-1. Abra uma janela elevada de prompt de comando. Para fazer isso, pressione a tecla do logotipo do Windows+X, clique com o botão direito do mouse em **Prompt de Comando** e selecione **Executar como administrador**. Caso precise inserir uma senha de administrador ou para confirmação, digite a senha ou forneça a confirmação.
+1. Abra uma janela do prompt de comando elevado. Para fazer isso, pressione a tecla do logotipo do Windows+X, clique com o botão direito do mouse em **Prompt de Comando** e selecione **Executar como administrador**. Caso precise inserir uma senha de administrador ou para confirmação, digite a senha ou forneça a confirmação.
 2. No prompt de comando, execute o seguinte comando:
    ```cmd
     slmgr -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
@@ -74,7 +74,7 @@ Para obter informações sobre o processo de configuração do host KMS, confira
 
 Verifique a conectividade básica de IP com o servidor DNS usando o comando ping. Para fazer isso, siga estas etapas no cliente KMS que está apresentando o erro e no computador host KMS:
 
-1. Abra uma janela elevada de prompt de comando.
+1. Abra uma janela do prompt de comando elevado.
 1. No prompt de comando, execute o seguinte comando:
    ```cmd
    ping <DNS_Server_IP_address>
@@ -88,7 +88,7 @@ Verifique a conectividade básica de IP com o servidor DNS usando o comando ping
 
 Verifique o Registro do servidor host KMS para determinar se ele está se registrando no DNS. Por padrão, um servidor host KMS registra dinamicamente um registro SRV do DNS uma vez a cada 24 horas. 
 > [!IMPORTANT]
-> Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/en-us/help/322756) em caso de problemas.  
+> Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/help/322756) em caso de problemas.  
 
 Para verificar essa configuração, siga estas etapas:
 1. Abra o Editor do Registro. Para fazer isso, clique com o botão direito do mouse em **Iniciar**, selecione **Executar**, digite **regedit** e, em seguida, pressione Enter.
@@ -144,7 +144,7 @@ Use os comandos a seguir para determinar se esse é um problema de resolução d
    - O endereço IP do gateway padrão usado pelo computador cliente do KMS
    - A lista de pesquisa de sufixo DNS usada pelo computador cliente do KMS
 1. Verifique se os registros SRV do host KMS estão registrados no DNS. Para fazer isso, execute estas etapas:  
-   1. Abra uma janela elevada de prompt de comando.
+   1. Abra uma janela do prompt de comando elevado.
    1. No prompt de comando, execute o seguinte comando:
       ```cmd
       nslookup -type=all _vlmcs._tcp>kms.txt

@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Configuração do servidor OpenSSH para Windows
-ms.openlocfilehash: ed424c33c4cd2c19a9b5e985ab6083bcbcb9fbdc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546267"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259045"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuração do servidor OpenSSH para Windows 10 1809 e Server 2019
 
@@ -84,7 +84,7 @@ Essa diretiva só tem suporte com sessões sftp. Uma sessão remota em cmd.exe n
 
 ### <a name="hostkey"></a>HostKey
 
-Os padrões são %programdata%/ssh/ssh_host_ecdsa_key, %programdata%/ssh/ssh_host_ed25519_key e %programdata%/ssh/ssh_host_rsa_key. Se os padrões não estiverem presentes, o sshd os gerará automaticamente no início do serviço.
+Os padrões são %programdata%/ssh/ssh_host_ecdsa_key, %programdata%/ssh/ssh_host_ed25519_key, %programdata%/ssh/ssh_host_dsa_key e %programdata%/ssh/ssh_host_rsa_key. Se os padrões não estiverem presentes, o sshd os gerará automaticamente no início do serviço.
 
 ### <a name="match"></a>Correspondência
 

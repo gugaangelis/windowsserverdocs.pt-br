@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: b59d93d576967ee83b3efecc2630034eab919bf2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403911"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950423"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Use contadores de desempenho para diagnosticar os problemas de desempenho do aplicativo nos Hosts da Sessão da Área de Trabalho Remota
 
@@ -90,7 +90,7 @@ Esta tabela mostra um exemplo visual dessas instâncias. (Você pode obter as me
 |Atraso de entrada do usuário por sessão|1|    200|
 |Atraso de entrada do usuário por sessão|2|    16|
 |Atraso de entrada do usuário por sessão|Média|  108|
-|Atraso de entrada do usuário por sessão|Máx|  200|
+|Atraso de entrada do usuário por sessão|Máx.|  200|
 
 ## <a name="counters-used-in-an-overloaded-system"></a>Contadores usados em um sistema sobrecarregado
 
@@ -140,7 +140,7 @@ Ferramentas de monitoramento podem consumir esse contador usando a [API do Perfm
 
 ## <a name="download-windows-server-insider-software"></a>Baixar o software do Windows Server Insider
 
-Insiders registrados podem navegar diretamente para a [página de download do Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) para obter os downloads de software mais recentes do Insider.  Para saber como se registrar como um Insider, confira [Introdução ao servidor](https://insider.windows.com/en-us/for-business-getting-started-server/).
+Insiders registrados podem navegar diretamente para a [página de download do Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) para obter os downloads de software mais recentes do Insider.  Para saber como se registrar como um Insider, confira [Introdução ao servidor](https://insider.windows.com/en-us/for-business-getting-started-server/).
 
 ## <a name="share-your-feedback"></a>Compartilhe seus comentários
 

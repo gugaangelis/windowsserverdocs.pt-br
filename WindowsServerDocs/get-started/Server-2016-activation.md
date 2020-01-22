@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd12a7858a24457251d8354a2df49632b5960c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1354d89ba2c9169b302dca10ae52bad34ef80b43
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391613"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947759"
 ---
 # <a name="windows-server-2016-activation"></a>Ativação do Windows Server 2016
 
@@ -33,11 +33,11 @@ Um host KMS em execução no Windows 10 ou no Windows 8.1 pode ativar apenas co
 A tabela a seguir resume os requisitos do cliente e host KMS para redes que incluam clientes Windows Server 2016 e Windows 10.
 
 > [!NOTE]
-> **Observação:**  Podem ser necessárias atualizações no servidor KMS para dar suporte à ativação de qualquer um desses clientes mais recentes. Se você receber erros de ativação, verifique se tem as atualizações adequadas listadas abaixo desta tabela.
+> Podem ser necessárias atualizações no servidor KMS para dar suporte à ativação de qualquer um desses clientes mais recentes. Se você receber erros de ativação, verifique se tem as atualizações adequadas listadas abaixo desta tabela.
 
 |Grupo da chave do produto (Product Key)|O KMS pode ser hospedado em|Edições do Windows ativadas por este host KMS|  
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|  
-|Licença de volume para Windows Server 2016|Windows Server 2012<br /><br />Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />|Canal semestral do Windows Server <br><br>Windows Server 2016 (todas as edições)<br /><br />Windows 10 LTSB (2015 e 2016)<br /><br />Windows 10 Professional<br /><br />Windows 10 Enterprise<br /><br />Windows 10 Pro for Workstations<br><br>Windows 10 Education<br><br>Windows Server 2012 R2 (todas as edições)<br /><br />Windows 8.1 Professional<br /><br />Windows 8.1 Enterprise<br /><br />Windows Server 2012 (todas as edições)<br /><br />Windows Server 2008 R2 (todas as edições)<br /><br />Windows Server 2008 (todas as edições)<br /><br />Windows 7 Professional<br /><br />Windows 7 Enterprise| 
+|Licença de volume para Windows Server 2016|Windows Server 2012<br /><br />Windows Server 2012 R2<br /><br />Windows Server 2016<br /><br />|Windows Server Canal Semestral <br><br>Windows Server 2016 (todas as edições)<br /><br />Windows 10 LTSB (2015 e 2016)<br /><br />Windows 10 Professional<br /><br />Windows 10 Enterprise<br /><br />Windows 10 Pro for Workstations<br><br>Windows 10 Education<br><br>Windows Server 2012 R2 (todas as edições)<br /><br />Windows 8.1 Professional<br /><br />Windows 8.1 Enterprise<br /><br />Windows Server 2012 (todas as edições)<br /><br />Windows Server 2008 R2 (todas as edições)<br /><br />Windows Server 2008 (todas as edições)<br /><br />Windows 7 Professional<br /><br />Windows 7 Enterprise| 
 |Licença de volume para Windows 10|Windows 7<br /><br />Windows 8.1<br /><br /> Windows 10|Windows 10 Professional<br /><br /> Windows 10 Professional N<br /><br /> Windows 10 Enterprise<br /><br /> Windows 10 Enterprise N<br /><br /> Windows 10 Education<br /><br /> Windows 10 Education N<br /><br /> Windows 10 Enterprise LTSB (2015)<br /><br /> Windows 10 Enterprise LTSB N (2015)<br /><br /> Windows 10 Pro for Workstations<br><br>Windows 8.1 Professional<br /><br /> Windows 8.1 Enterprise<br /><br /> Windows 7 Professional<br /><br /> Windows 7 Enterprise<br /><br />|  
 |Licença de volume para “Windows Server 2012 R2 para Windows 10”|Windows Server 2008 R2<br /><br /> Windows Server 2012 Standard<br /><br /> Windows Server 2012 Datacenter<br /><br /> Windows Server 2012 R2 Standard<br /><br />Windows Server 2012 R2 Datacenter|Windows 10 Professional<br /><br /> Windows 10 Enterprise<br /><br />Windows 10 Enterprise LTSB (2015)<br><br>Windows 10 Pro for Workstations<br><br>Windows 10 Education<br><br> Windows Server 2012 R2 (todas as edições)<br /><br /> Windows 8.1 Professional<br /><br /> Windows 8.1 Enterprise<br /><br /> Windows Server 2012 (todas as edições)<br /><br /> Windows Server 2008 R2 (todas as edições)<br /><br />Windows Server 2008 (todas as edições)<br /><br /> Windows 7 Professional<br /><br /> Windows 7 Enterprise|
 
@@ -50,14 +50,14 @@ A tabela a seguir resume os requisitos do cliente e host KMS para redes que incl
 
 Um único host KMS pode dar suporte a um número ilimitado de clientes KMS. Se você tiver mais de 50 clientes, recomendamos que tenha pelo menos dois hosts KMS para o caso de um deles ficar indisponível. A maioria das organizações pode operar com um mínimo de dois hosts KMS para toda a infraestrutura.
 
-# <a name="addressing-kms-operational-requirements"></a>Lidando com os requisitos operacionais do KMS
+## <a name="addressing-kms-operational-requirements"></a>Lidando com os requisitos operacionais do KMS
 O KMS pode ativar computadores físicos e virtuais, mas, para se qualificar para uma ativação KMS, a rede deve ter um número mínimo de computadores físicos (o que chamamos de limite de ativação). Clientes KMS só são ativados depois que esse limite é atingido. Para garantir o cumprimento do limite de ativação, um host KMS conta o número de computadores que estão solicitando ativação na rede.
 
 Os hosts KMS contam as conexões mais recentes. Quando um cliente ou servidor contata o host KMS, o host adiciona a ID do computador à sua contagem e, em seguida, retorna o valor atual da contagem em sua resposta. O cliente ou servidor será ativado se a contagem for alta o suficiente. Os clientes serão ativados se a contagem for 25 ou maior. Os servidores e as edições de volume dos produtos do Microsoft Office serão ativado se a contagem for cinco ou maior. O KMS conta apenas conexões únicas dos últimos 30 dias e armazena apenas os 50 contatos mais recentes.
 
 As ativações KMS são válidas por 180 dias, um período conhecido como o intervalo de validade de ativação. Clientes KMS devem renovar suas ativações e, para isso, devem se conectar ao host KMS pelo menos uma vez a cada 180 dias para preservar a ativação. Por padrão, os computadores clientes KMS tentam renovar suas ativações a cada sete dias. Depois que a ativação de um cliente for renovada, o intervalo de validade da ativação será reiniciado.
 
-# <a name="addressing-kms-functional-requirements"></a>Lidando com os requisitos funcionais do KMS
+## <a name="addressing-kms-functional-requirements"></a>Lidando com os requisitos funcionais do KMS
 
 A ativação de KMS exige conectividade TCP/IP. Hosts e clientes KMS são configurados, por padrão, para usar DNS (Sistema de Nomes de Domínio). Por padrão, os hosts KMS usam a atualização dinâmica de DNS para publicar automaticamente as informações que os clientes KMS precisam localizar e conectar a eles. Você pode aceitar essas configurações padrão ou, caso tenha requisitos especiais de configuração de rede e segurança, pode configurar manualmente os hosts e clientes KMS.
 
@@ -70,4 +70,4 @@ Se a organização precisar de mais de seis hosts KMS, você deverá solicitar a
 
 Computadores que executam edições de licenciamento por volume do Windows 10, Windows Server 2016, Windows 8.1, Windows Server 2012 R2, Windows Server 2012, Windows 7, Windows Server 2008 R2 são, por padrão, clientes KMS sem necessidade de configuração adicional.
 
-Caso esteja convertendo um computador por meio de um host KMS, MAK ou edição comercial do Windows em um cliente KMS, instale a Chave de Instalação de Cliente KMS. Para obter mais informações, consulte  [Chaves de instalação do cliente KMS](KMSclientkeys.md). 
+Caso esteja convertendo um computador por meio de um host KMS, MAK ou edição comercial do Windows em um cliente KMS, instale a Chave de Instalação de Cliente KMS. Para obter mais informações, consulte  [Chaves de instalação do cliente KMS](KMSclientkeys.md).

@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d60ba6ffd661aeb284a2ade775e14b9108cbb6c9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357698"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950530"
 ---
 # <a name="securing-privileged-access"></a>Proteger o acesso privilegiado
 
@@ -90,7 +90,7 @@ Siga as orientações no artigo [Gerenciar contas de acesso de emergência no Az
 
 ### <a name="2-just-in-time-local-admin-passwords"></a>2. Senhas de administrador local just-in-time
 
-Para reduzir o risco de um adversário roubar um hash de senha de conta de administrador local do banco de dados SAM local e usá-lo indevidamente para atacar outros computadores, as organizações devem garantir que cada computador tenha uma senha de administrador local exclusiva. A ferramenta LAPS (Solução de Senha de Administrador Local) pode configurar senhas aleatórias exclusivas em cada estação de trabalho e servidor e armazená-las no AD (Active Directory) protegidas por uma ACL. Somente usuários autorizados qualificados podem ler ou solicitar a redefinição dessas senhas de conta de administrador local. Você pode obter a LAPS para uso em estações de trabalho e servidores do [Centro de Download da Microsoft](http://Aka.ms/LAPS).
+Para reduzir o risco de um adversário roubar um hash de senha de conta de administrador local do banco de dados SAM local e usá-lo indevidamente para atacar outros computadores, as organizações devem garantir que cada computador tenha uma senha de administrador local exclusiva. A ferramenta LAPS (Solução de Senha de Administrador Local) pode configurar senhas aleatórias exclusivas em cada estação de trabalho e servidor e armazená-las no AD (Active Directory) protegidas por uma ACL. Somente usuários autorizados qualificados podem ler ou solicitar a redefinição dessas senhas de conta de administrador local. Você pode obter a LAPS para uso em estações de trabalho e servidores do [Centro de Download da Microsoft](https://aka.ms/LAPS).
 
 Diretrizes adicionais para operar um ambiente com LAPS e PAWs podem ser encontradas na seção [Padrões operacionais com base no princípio de código-fonte limpo](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle).
 

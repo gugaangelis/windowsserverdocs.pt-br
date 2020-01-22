@@ -14,22 +14,22 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5f899964414c10350cc22a594a959c940a1514
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd50b287ad0f3dd49a0df3c1fe531379bd4078e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391523"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948233"
 ---
-# <a name="release-notes-important-issues-in-windows-server-version-1709"></a>Notas de versão: Problemas importantes no Windows Server, versão 1709
+# <a name="release-notes-important-issues-in-windows-server-version-1709"></a>Notas sobre a versão: Problemas importantes no Windows Server, versão 1709
 
->Aplica-se a: Canal semestral do Windows Server
+>Aplica-se a: Windows Server Canal Semestral
 
 Essas notas sobre a versão resumem os problemas mais importantes no sistema operacional do Windows Server&reg;, inclusive formas de evitar ou solucionar problemas, se forem conhecidos. Para saber mais sobre alterações planejadas, novos recursos e correções desta versão, confira [Novidades no Windows Server versão 1709](whats-new-in-windows-server-1709.md) e os comunicados das equipes de recursos específicos. Salvo indicação em contrário, cada problema reportado aplica-se a todas as edições e opções de instalação do Windows Server 2016.  
 
 Este documento é atualizado continuamente. À medida que são descobertas questões críticas que exijam uma solução alternativa, elas são adicionadas, assim como novas soluções e correções assim que estiverem disponíveis.  
   
-## <a name="storage-spaces-direct"></a>Espaços de Armazenamento Diretos
+## <a name="storage-spaces-direct"></a>Espaços de Armazenamento Direct
 [comment]: # (ID: desconhecido; remetente: stevenek; estado: aprovado)  
 Os Espaços de Armazenamento Diretos não estão incluídos no Windows Server, versão 1709. Se você chamar *Enable-ClusterStorageSpacesDirect* ou o alias *Enable-ClusterS2D*, em um servidor executando o Windows Server, versão 1709, você receberá um erro com a mensagem "Não há suporte para a operação solicitada".
 
@@ -41,4 +41,4 @@ O Canal Semestral do Windows Server se concentra em contêineres e cenários de 
 
 Os Espaços de Armazenamento Diretos foram introduzidos no Windows Server 2016 e são a base para nossa plataforma com hiperconvergência. Estamos felizes pela adoção positiva da plataforma com hiperconvergência da Microsoft e estamos comprometidos com nossos clientes.
 
-Escutamos os seus comentários e estamos trabalhando para fornecer o [próximo conjunto de inovações](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) para nossa plataforma com hiperconvergência. Esses recursos estão disponíveis atualmente nos builds para [Participantes do Programa Windows Insider](https://insider.windows.com/for-business/) e gostaríamos muito que você experimente-os e compartilhe comentários. Para clientes que buscam uma solução com hiperconvergência validada, recomendamos o programa [definido pelo software do Windows Server](http://microsoft.com/wssd).
+Escutamos os seus comentários e estamos trabalhando para fornecer o [próximo conjunto de inovações](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) para nossa plataforma com hiperconvergência. Esses recursos estão disponíveis atualmente nos builds para [Participantes do Programa Windows Insider](https://insider.windows.com/for-business/) e gostaríamos muito que você experimente-os e compartilhe comentários. Para clientes que buscam uma solução com hiperconvergência validada, recomendamos o programa [definido pelo software do Windows Server](https://microsoft.com/wssd).

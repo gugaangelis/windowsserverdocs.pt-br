@@ -11,12 +11,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 7f16d58eb6c5074c75f49ba7936c4d312a3dbda4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53793fc62b1bc1444c567f92c9f18642245fded9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390983"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948182"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Níveis funcionais de floresta e domínio
 
@@ -28,7 +28,7 @@ Ao implantar o AD DS, defina os níveis funcionais de domínio e floresta com o 
 
 Com o fim da vida útil do Windows 2003, os DCs (controladores de domínio) do Windows 2003 precisam ser atualizados para o Windows Server 2008, 2008 R2, 2012, 2012 R2, 2016 ou 2019. Como resultado, qualquer controlador de domínio que execute o Windows Server 2003 deve ser removido do domínio.
 
-Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, siga os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou consulte o [conjunto de etapas otimizadas no blog do Gabinete de arquivos da equipe de armazenamento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
+Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, siga os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou consulte o [conjunto de etapas otimizadas no blog do Gabinete de arquivos da equipe de armazenamento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -113,7 +113,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
 ### <a name="windows-server-2008r2-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2008R2
 
 * Todos os recursos disponíveis no nível funcional de floresta do Windows Server 2003, além dos seguintes recursos.
-   * Lixeira do Active Directory, que fornece a capacidade de restaurar totalmente os objetos excluídos durante a execução do AD DS.
+   * Lixeira do Active Directory, que fornece a capacidade de restaurar totalmente os objetos excluídos durante a execução do AD DS.
 
 ### <a name="windows-server-2008r2-domain-functional-level-features"></a>Recursos de nível funcional de domínio do Windows Server 2008R2
 
@@ -193,7 +193,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
 * Todos os recursos padrão do AD DS, todos os recursos disponíveis no nível funcional de domínio nativo do Windows 2000 e os seguintes recursos estão disponíveis:
    * A ferramenta de gerenciamento de domínio, Netdom.exe, que possibilita renomear controladores de domínio
    * Atualizações de carimbo de data/hora de logon
-      * O atributo **lastLogonTimestamp** é atualizado com o último horário de logon do usuário ou computador. Este atributo é replicado no domínio.
+      * O atributo **lastLogonTimestamp** é atualizado com a última hora de logon do usuário ou do computador. Este atributo é replicado no domínio.
    * A capacidade de definir o atributo **userPassword** como a senha efetiva em **inetOrgPerson** e nos objetos de usuário
    * A capacidade de redirecionar contêineres de Usuários e Computadores
       * Por padrão, dois contêineres conhecidos são fornecidos para hospedar contas de computador e usuário, a saber: cn=Computers,<domain root> e cn=Users,<domain root>. Esse recurso permite a definição de um novo local conhecido para essas contas.

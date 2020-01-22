@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cfd0f0cca18fb072883a9e14fae420516bd329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391365"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948260"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Novidades no Windows Server 2016
 
@@ -68,7 +68,7 @@ O AD CS (Serviços de Certificados do Active Directory) no Windows Server 2016 a
 ### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
 Os Active Directory Domain Services incluem aprimoramentos para ajudar as organizações a proteger ambientes do Active Directory e fornecer experiências de gerenciamento de identidade melhores para dispositivos corporativos e pessoais. Para saber mais, confira [Novidades no AD DS (Active Directory Domain Services) no Windows Server 2016](../identity/whats-new-active-directory-domain-services.md).   
 
-### <a name="active-directory-federation-services"></a>Serviços de Federação do Active Directory (AD FS)  
+### <a name="active-directory-federation-services"></a>Serviços de Federação do Active Directory  
 Novidades nos Serviços de Federação do Active Directory. O AD FS (Serviços de Federação do Active Directory) no Windows Server 2016 inclui novos recursos que permitem que você configure o AD FS para autenticar usuários armazenados em diretórios LDAP (Lightweight Directory Access Protocol). Para obter mais informações, confira [Novidades no AD FS do Windows Server 2016](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md).  
 
 ### <a name="web-application-proxy"></a>Proxy de aplicativo Web  
@@ -136,7 +136,7 @@ O CFG (Proteção de Fluxo de Controle) é um recurso de segurança de plataform
 
 O armazenamento no Windows Server 2016 inclui novos recursos e aprimoramentos de armazenamento definidos pelo software, bem como para servidores de arquivos tradicionais. Veja abaixo alguns dos recursos novos. Para conferir outros aprimoramentos e detalhes, confira [Novidades no Armazenamento no Windows Server 2016](../storage/whats-new-in-storage.md).
 
-### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Diretos
+### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Direct
 
 Os Espaços de Armazenamento Direto habilitam a criação de armazenamento altamente disponível e escalonável usando servidores com armazenamento local. Ele simplifica a implantação e o gerenciamento de sistemas de armazenamento definidos por software e desbloqueia o uso de novas classes de dispositivos de disco, como dispositivos de disco SATA SSD e NVMe, que anteriormente não eram possíveis com Espaços de Armazenamento clusterizados com discos compartilhados.
 
@@ -195,10 +195,10 @@ Três novos recursos são adicionados no Microsoft Windows 10 e Windows Server 2
 
 - O limite de nome DSN é ampliado de 256 bytes para 3072 bytes. Confira [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx), [IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx) ou [IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx) para obter detalhes.
 
-- Rastreamento aprimorado permitindo que você defina uma chave do Registro para incluir um caminho de arquivo de imagem no nome do arquivo de log de rastreamento para poder determinar qual o arquivo de log de rastreamento verificar. Confira [Como habilitar o rastreamento de diagnóstico para MS DTC em um computador baseado no Windows](https://support.microsoft.com/en-us/kb/926099) para obter detalhes sobre como configurar o rastreamento para MSDTC.
+- Rastreamento aprimorado permitindo que você defina uma chave do Registro para incluir um caminho de arquivo de imagem no nome do arquivo de log de rastreamento para poder determinar qual o arquivo de log de rastreamento verificar. Confira [Como habilitar o rastreamento de diagnóstico para MS DTC em um computador baseado no Windows](https://support.microsoft.com/kb/926099) para obter detalhes sobre como configurar o rastreamento para MSDTC.
 
 
 
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
 -   [Notas de versão: Problemas importantes no Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)  
 

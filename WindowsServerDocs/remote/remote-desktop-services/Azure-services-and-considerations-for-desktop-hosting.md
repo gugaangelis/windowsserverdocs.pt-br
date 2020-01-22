@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: 5c3b1ef044be70002918b7ef1379513bdbfb930c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 111f96e2ed0ffb20dcd3103d1c939bc678aecd27
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387963"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919964"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>Serviços do Azure e considerações para a hospedagem de área de trabalho
 
@@ -47,13 +47,13 @@ Este Guia de Arquitetura de Referência de Hospedagem de Área de Trabalho do Az
 - A URL do site de Acesso via Web à Área de Trabalho Remota, nome e certificados devem ser exclusivos e reconhecíveis para cada locatário de modo a prevenir ataques de falsificação.  
 - Durante a operação normal do serviço de hospedagem da área de trabalho, todos os endereços IP públicos devem ser excluídos de todas as máquinas virtuais, exceto a máquina virtual da Web da Área de Trabalho Remota e do Gateway de Área de Trabalho Remota, as quais permitem aos usuários conectar com segurança ao serviço de nuvem de hospedagem de área de trabalho do locatário. Endereços IP públicos podem ser adicionados temporariamente quando necessário para tarefas de gerenciamento, mas sempre devem ser excluídos posteriormente.  
   
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 - [Segurança e proteção](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831778(v=ws.11))  
 - [Práticas recomendadas de segurança para IIS 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11))  
 - [Proteger o Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831360(v=ws.11))  
   
-## <a name="design-considerations"></a>Considerações de design
+## <a name="design-considerations"></a>Consideração sobre design
 
 É importante levar em consideração as restrições dos Serviços de Infraestrutura do Microsoft Azure durante a criação de um serviço de hospedagem de área de trabalho de multilocatário. A lista a seguir descreve algumas considerações que o provedor deve levar em conta para obter uma solução de hospedagem de área de trabalho funcional e econômica com base nessa arquitetura de referência.  
   
@@ -63,7 +63,7 @@ Para obter mais informações, consulte os seguintes artigos:
 - Os recursos de computadores físicos no data center do Azure são virtualizados usando o Hyper-V. Os hosts Hyper-V não são configurados em clusters de hosts, portanto, a disponibilidade das máquinas virtuais é dependente da disponibilidade dos servidores individuais usados na infraestrutura do Azure. Para fornecer maior disponibilidade, várias instâncias de cada máquina virtual do serviço de função podem ser criadas em um conjunto de disponibilidade e, em seguida, o clustering de convidado pode ser implementado dentro das máquinas virtuais.  
 - Em uma configuração de armazenamento típica, um provedor de serviços terá uma única conta de armazenamento com vários contêineres (por exemplo, um para cada locatário) e vários discos dentro de cada contêiner. No entanto, há um limite para o armazenamento total e o desempenho que pode ser alcançado para uma única conta de armazenamento. Para provedores de serviços que dão suporte a grandes números de locatários ou locatários com requisitos de alta capacidade de armazenamento ou alto desempenho, o provedor de serviços talvez precise criar várias contas de armazenamento.  
   
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 - [Tamanhos para Serviços de Nuvem](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs)  
 - [Detalhes de preços de máquinas de virtuais do Microsoft Azure](https://azure.microsoft.com/pricing/details/virtual-machines/)  

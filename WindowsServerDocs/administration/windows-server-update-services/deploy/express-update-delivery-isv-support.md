@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: a4880a1a66d9c722cfda9e194c4eff38c5058674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13568bb320a3d70bfd6a70d2b9731b460be6f346
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361716"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948498"
 ---
 # <a name="express-update-delivery-isv-support"></a>Suporte a ISV para entrega de atualização Express
 
@@ -53,7 +53,7 @@ Os ISVs podem usar o WSUS e o cliente WU para dar suporte à entrega de atualiza
 3.  [**Configurar um agente cliente ISV para direcionar as operações do cliente WU**](#BKMK_3)
 
 >[!NOTE]
->Requer que a atualização cumulativa para a versão 1607 do Windows 10 em janeiro de 2017 (ou depois) [KB3213986 (Build do SO 14393.693)](https://support.microsoft.com/en-us/help/4009938/january-10-2017-kb3213986-os-build-14393-693) seja instalada.
+>Requer que a atualização cumulativa para a versão 1607 do Windows 10 em janeiro de 2017 (ou depois) [KB3213986 (Build do SO 14393.693)](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693) seja instalada.
     
    - O agente cliente ISV determina quais atualizações aprovar e quando baixar e instalar atualizações
    - O cliente WU determina os intervalos de bytes para baixar e inicia a solicitação de download

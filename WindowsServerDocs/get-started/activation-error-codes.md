@@ -8,12 +8,12 @@ ms.assetid: ''
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: d4d9a8917bf455d8ed84207e2f9ecc6d13d01c3d
-ms.sourcegitcommit: b18ee742662b24b25d29ef1079b1c49f220f1d57
+ms.openlocfilehash: 4e977dbf71eb4afd004a773d06933fd8646ce8eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74691870"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947677"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de erro de ativação do Windows
 
@@ -26,7 +26,7 @@ Para obter mais informações sobre a ativação de volume, confira [Planejar a 
 
 Para obter mais informações sobre a ativação de volume para versões atuais e recentes do Windows, confira [Ativação de volume [cliente]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10).
 
-Para obter mais informações sobre a ativação de volume para versões mais antigas do Windows, confira a KB 929712, [Informações sobre a Ativação de Volume para Windows Vista, Windows Server 2008, Windows Server 2008 R2 e Windows 7](https://support.microsoft.com/en-us/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi).
+Para obter mais informações sobre a ativação de volume para versões mais antigas do Windows, confira a KB 929712, [Informações sobre a Ativação de Volume para Windows Vista, Windows Server 2008, Windows Server 2008 R2 e Windows 7](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi).
 
 ## <a name="diagnostic-tool"></a>Ferramenta de diagnóstico
 
@@ -38,7 +38,7 @@ Há suporte para os seguintes códigos de erro: 0xC004F038, 0xC004F039, 0xC004F0
 
 ## <a name="summary-of-error-codes"></a>Resumo dos códigos de erro
 
-|Código de erro |Mensagem de erro |Tipo de&nbsp;ativação|
+|Código do erro |Mensagem de erro |Tipo de&nbsp;ativação|
 |-----------|--------------|----------------|
 |[0x8004FE21](#0x8004fe21-this-computer-is-not-running-genuine-windows) |Este computador não está executando o Windows original.  |MAK<br />Cliente KMS |
 |[0x80070005](#0x80070005-access-denied) |Acesso negado A ação solicitada necessita de privilégios elevados. |MAK<br />Cliente KMS<br />Host KMS |
@@ -193,7 +193,7 @@ Não há suporte para o MAK.
 
 #### <a name="resolution"></a>Resolução
 
-Para solucionar esse problema, verifique se o MAK que está sendo usado é o MAK fornecido pela Microsoft. Para verificar se o MAK é válido, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
+Para solucionar esse problema, verifique se o MAK que está sendo usado é o MAK fornecido pela Microsoft. Para verificar se o MAK é válido, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid"></a>0xC004C001 O servidor de ativação determinou que a chave do produto (Product Key) especificada é inválida
 
@@ -203,7 +203,7 @@ O MAK inserido não é válido.
 
 #### <a name="resolution"></a>Resolução
 
-Verifique se a chave é o MAK que foi fornecido pela Microsoft. Para obter assistência adicional, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
+Verifique se a chave é o MAK que foi fornecido pela Microsoft. Para obter assistência adicional, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004c003-the-activation-server-determined-the-specified-product-key-is-blocked"></a>0xC004C003 O servidor de ativação determinou que a chave do produto (Product Key) especificada está bloqueada
 
@@ -213,7 +213,7 @@ A MAK encontra-se bloqueada no servidor de ativação.
 
 #### <a name="resolution"></a>Resolução
 
-Para obter um novo MAK, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers). Depois de obter o novo MAK, tente instalar e ativar o Windows novamente.  
+Para obter um novo MAK, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers). Depois de obter o novo MAK, tente instalar e ativar o Windows novamente.  
 
 ### <a name="0xc004c008-the-activation-server-determined-that-the-specified-product-key-could-not-be-used"></a>0xC004C008 O servidor de ativação determinou que a chave do produto (Product Key) especificada não pode ser usada
 
@@ -223,7 +223,7 @@ A chave KMS excedeu o limite de ativação. Uma chave do host KMS pode ser ativa
 
 #### <a name="resolution"></a>Resolução
 
-Caso precise de ativações adicionais, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).  
+Caso precise de ativações adicionais, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers).  
 
 ### <a name="0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit"></a>0xC004C020 O servidor de ativação relatou que a chave de ativação múltipla excedeu o limite
 
@@ -233,7 +233,7 @@ O MAK excedeu o limite de ativação. Por design, os MAKs podem ser ativados um 
 
 #### <a name="resolution"></a>Resolução
 
-Caso precise de ativações adicionais, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
+Caso precise de ativações adicionais, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004c021-the-activation-server-reported-that-the-multiple-activation-key-extension-limit-has-been-exceeded"></a>0xC004C021 O servidor de ativação relatou que o limite de extensão da chave de ativação múltipla foi excedido
 
@@ -243,7 +243,7 @@ O MAK excedeu o limite de ativação. Por design, os MAKs são ativados um núme
 
 #### <a name="resolution"></a>Resolução
 
-Caso precise de ativações adicionais, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
+Caso precise de ativações adicionais, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004f009-the-software-protection-service-reported-that-the-grace-period-expired"></a>0xC004F009 O Serviço de Proteção de Software relatou que o período de cortesia expirou
 
@@ -253,7 +253,7 @@ O período de cortesia expirou antes do sistema ser ativado. Agora, o sistema es
 
 #### <a name="resolution"></a>Resolução
 
-Para obter assistência, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
+Para obter assistência, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance"></a>0xC004F00F O Servidor de Licenciamento de Software relatou que a ID de hardware associada está além do nível de tolerância
 
@@ -310,7 +310,7 @@ Para ativar, é necessário fazer o seguinte:
   > Se você receber o erro 0x80072ee2 quando tentar ativar, use o método de ativação por telefone a seguir.
 - Ative por telefone seguindo estas etapas:
    1. Execute **slmgr /dti** e registre o valor da ID da Instalação. </li>
-   1. Entre em contato com os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers) e forneça a ID de Instalação para receber uma ID de Confirmação.</li>
+   1. Entre em contato com os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers) e forneça a ID de Instalação para receber uma ID de Confirmação.</li>
    1. Para ativar usando a ID de Confirmação, execute **slmgr /atp &lt;ID de Confirmação&gt;** .
 
 ### <a name="0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient"></a>0xC004F038 A contagem relatada pelo KMS (Serviço de Gerenciamento de Chaves) é insuficiente
@@ -392,7 +392,7 @@ O WAT (Windows Activation Tools) determinou que o sistema não é original.
 
 #### <a name="resolution"></a>Resolução
 
-Para obter assistência, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
+Para obter assistência, contate os [Centros de Ativação de Licenciamento da Microsoft](https://www.microsoft.com/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period"></a>0xC004F065 O Serviço de Proteção de Software relatou que o aplicativo está em execução dentro do período não original válido
 

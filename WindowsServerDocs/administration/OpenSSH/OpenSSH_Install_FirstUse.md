@@ -5,12 +5,12 @@ keywords: OpenSSH, SSH, SSHD, instalar, instalação
 contributor: maertendMSFT
 author: maertendMSFT
 title: Instalação do OpenSSH para Windows
-ms.openlocfilehash: 3c742e20432d20ea3c402af66f19a803ea1f3a56
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 9cf87229f5ebde6f0ff52a4e9b1b11b6e3ed4f0a
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71934937"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145912"
 ---
 # <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>Instalação do OpenSSH para Windows Server 2019 e Windows 10 #
 
@@ -18,7 +18,7 @@ O Cliente OpenSSH e o Servidor OpenSSH são componentes instaláveis separadamen
 Os usuários com essas versões do Windows devem usar as instruções a seguir para instalar e configurar o OpenSSH. 
 
 > [!NOTE] 
-> Os usuários que adquiriram o OpenSSH do repositório do GitHub do PowerShell (https://github.com/PowerShell/OpenSSH-Portable) deve usar as instruções de lá e __não devem__ usar estas instruções). 
+> Os usuários que adquiriram o OpenSSH no repositório GitHub do PowerShell (https://github.com/PowerShell/OpenSSH-Portable) devem usar as instruções contidas nele e __não devem__ usar estas instruções). 
 
 
 ## <a name="installing-openssh-from-the-settings-ui-on-windows-server-2019-or-windows-10-1809"></a>Instalar o OpenSSH da interface do usuário de Configurações no Windows Server 2019 ou Windows 10 1809

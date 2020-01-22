@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a875f8bddd934ac9fb70ca9c0b86772d9fa63b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de08101ed1d4d4527242778d657778f1a16b3dad
+ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404179"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76248398"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>Área de Trabalho Remota – permitir o acesso ao seu computador
 
@@ -28,7 +28,7 @@ ms.locfileid: "71404179"
 Você pode usar a Área de Trabalho Remota para conectar e controlar seu computador de um dispositivo remoto usando um [Cliente de Área de Trabalho Remota da Microsoft](remote-desktop-clients.md) (disponível para Windows, iOS, macOS e Android). Ao permitir conexões remotas ao seu computador, você pode usar outro dispositivo para se conectar ao seu computador e ter acesso a todos os seus aplicativos, arquivos e recursos de rede, como se estivesse sentado em sua mesa.  
 
 > [!NOTE]
-> Você pode usar a Área de Trabalho Remota para se conectar ao Windows 10 Pro e Enteprise, Windows 8.1 e 8 Enterprise e Pro, Windows 7 Professional, Enterprise e Ultimate e Windows Server em versões mais recentes que o Windows Server 2008. Você não pode se conectar a computadores que executam a edição Home (como o Windows 10 Home). 
+> Use a Área de Trabalho Remota para se conectar ao Windows 10 Pro e Enterprise, ao Windows 8.1 e 8 Enterprise e Pro, ao Windows 7 Professional, Enterprise e Ultimate e ao Windows Server em versões mais recentes que o Windows Server 2008. Não é possível se conectar a computadores que executam a Home Edition (como o Windows 10 Home). 
 
 Para se conectar a um computador remoto, o computador deve estar ligado, deve ter uma conexão de rede, a Área de Trabalho Remota deve estar habilitada, você deve ter acesso à rede do computador remoto (isso pode ser por meio da Internet) e você deve ter permissão para se conectar. Para obter permissão para se conectar, você deve estar na lista de usuários. Antes de iniciar uma conexão, é uma boa ideia pesquisar o nome do computador que você está se conectando para verificar se as conexões de Área de Trabalho Remota são permitidas no seu firewall.
 
@@ -39,7 +39,7 @@ A maneira mais simples de permitir o acesso ao seu computador a partir de um dis
 ### <a name="windows-10-fall-creator-update-1709-or-later"></a>Windows 10 Fall Creator Update (1709) ou posterior
 
 Você pode configurar seu computador para acesso remoto com algumas etapas simples.
-1. No dispositivo que você deseja se conectar, selecione **Iniciar** e clique no ícone **Configurações** à esquerda.
+1. No dispositivo que você deseja se conectar, selecione **Iniciar** e, em seguida, clique no ícone **Configurações** à esquerda.
 2. Selecione o grupo **Sistema**, seguido do item [**Área de Trabalho Remota**](ms-settings:remotedesktop).
 3. Use o controle deslizante para habilitar a Área de Trabalho Remota.
 4. Recomendamos manter o computador ativo e detectável para facilitar as conexões. Clique em **Mostrar configurações** para habilitar.
@@ -57,7 +57,7 @@ Para habilitar a Área de Trabalho Remota usando as propriedades do sistema herd
 
 ## <a name="should-i-enable-remote-desktop"></a>Devo habilitar a Área de Trabalho Remota?
 
-Se você quiser acessar o seu computador quando estiver fisicamente na frente dele, não é necessário habilitar a Área de Trabalho Remota. Habilitar a Área de Trabalho Remota abre em seu computador uma porta visível na sua rede local. Você só deve habilitar a Área de Trabalho Remota em redes confiáveis, como sua casa. Também não é recomendado habilitar a Área de Trabalho Remota em qualquer computador onde o acesso é rigidamente controlado.
+Caso deseje acessar o computador quando estiver fisicamente usando-o, você não precisará habilitar a Área de Trabalho Remota. Habilitar a Área de Trabalho Remota abre em seu computador uma porta visível na sua rede local. Você só deve habilitar a Área de Trabalho Remota em redes confiáveis, como sua casa. Também não é recomendado habilitar a Área de Trabalho Remota em qualquer computador onde o acesso é rigidamente controlado.
 
 Lembre-se de que quando você habilita o acesso à Área de Trabalho Remota, você está concedendo a qualquer pessoa no grupo de administradores, bem como aos usuários selecionados, a capacidade de acessar remotamente suas contas no computador.
 
