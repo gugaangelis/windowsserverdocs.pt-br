@@ -5,19 +5,19 @@ ms.technology: manage
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
-ms.date: 10/17/2018
+ms.date: 01/17/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 159202fcb8c6125134154094e67e862ce8eb12ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba3cdb8dbd81ee85b0679905444f35174b8138e0
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357033"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519458"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guia de estilo de texto e o design de IU de Windows Admin Center
 
->Aplica-se a: Windows Admin Center
+>Aplica-se a: centro de administração do Windows
 
 Este tópico descreve a abordagem geral para escrita de texto (UI) da interface de usuário para o Windows Admin Center, bem como alguns convenções específicas e abordagens que estamos aproveitando.
 
@@ -73,24 +73,24 @@ Na primeira vez que um usuário visita uma página, você tem uma oportunidade p
 
 Aqui estão algumas dicas de nosso guia de estilo do Windows:
 
-### <a name="1-be-helpful"></a>1. Ofereça ajuda
+### <a name="1-be-helpful"></a>1. Seja solicito
 
 - Evite uma linguagem e estilo de marketing.
 - Ao demonstrar ou sugerir algo, verifique se o resultado final está claro; mostrar ao cliente como fazer algo não será eficaz se não souber por que eles estão fazendo isso.
 - Não apresente dicas se o cliente não precisar delas.
 
-### <a name="2-show-dont-tell"></a>2. Mostrar, não diga
+### <a name="2-show-dont-tell"></a>2. Mostre, não fale
 
 Mantenha o texto simples possível (pense em animações pequenas ou vídeos).
 
-### <a name="3-dont-overwhelm"></a>3. Não sobrecarregar
+### <a name="3-dont-overwhelm"></a>3. Não sobrecarregue
 
 - Limitar pop-ups e dicas para 4 por sessão de uso combinados — incluindo notificações do sistema e notificações do shell.
 - Verifique se que o tempo de pop-ups é útil.
 - Não impeça que o cliente faça algo.
 - Certifique-se de que os pop-ups pode ser descartados facilmente.
 
-### <a name="4-keep-it-contextual"></a>4. Mantenha-o contextual
+### <a name="4-keep-it-contextual"></a>4. Mantenha tudo contextual
 
 - Momentos de ensino são mais eficazes quando apresentados no momento certo.
 - Se você criar tutoriais ou apresentações de slides, mantenha as informações concretas.
@@ -98,7 +98,7 @@ Mantenha o texto simples possível (pense em animações pequenas ou vídeos).
 - Forneça uma maneira para que os clientes retornem ao tutorial mais tarde, se relevante (as pessoas geralmente não retêm informações na primeira vez, mas as instruções de instalação podem ser relevantes apenas uma vez).
 - Mensagens vazias são um lugar natural para aprendizado e/ou felicidade: mantenha tudo simples e informativo.
 
-### <a name="5-minimize-painful-setup"></a>5. Minimizar a configuração de difícil
+### <a name="5-minimize-painful-setup"></a>5. Minimizar instalações desagradáveis
 
 Quando você precisar que o cliente execute outra ação para experimentar o valor completo (entrar em um serviço online etc.), torne o processo o mais simples possível.
 
@@ -135,8 +135,8 @@ Os desenvolvedores da Microsoft devem usar um FWLink, exceto quando é um link d
 - Use frases completas.
 - Não inclua Pontuação final, exceto pontos de interrogação. 
 - Você não precisa usar o mesmo texto que o título da tarefa; Use o texto que faz sentido no contexto da interface do usuário, mas verifique se há uma conexão lógica entre os dois. Por exemplo: 
-- Link de ajuda: Quais são os riscos de permitir exceções? 
-- Título do tópico da ajuda: "Permitindo que um programa se comunique por meio do firewall do Windows"
+- Link de ajuda: quais são os riscos de permitir exceções? 
+- Título do tópico da ajuda: "permitindo que um programa se comunique por meio do firewall do Windows"
 - Seja o mais específico possível sobre o conteúdo do tópico da ajuda. 
     - Nosso estilo
         - Como o Firewall do Windows ajuda a proteger meu computador?
@@ -144,7 +144,7 @@ Os desenvolvedores da Microsoft devem usar um FWLink, exceto quando é um link d
     - Não é nosso estilo
         - Mais informações sobre o Firewall do Windows
         - Saiba mais sobre o gerenciamento de cores
-        - Saiba mais
+        - Mais informações
 - Use a frase inteira para o texto do link, não apenas as palavras-chave. 
     - Nosso estilo 
         - [Quais são os riscos de permitir exceções?]()
@@ -161,7 +161,7 @@ Escrever uma mensagem boa é um equilíbrio entre fornecer uma explicação sufi
 
 Use uma mensagem por caso de erro.
 
-#### <a name="headings"></a>Títulos
+#### <a name="headings"></a>Cabeçalho
 
 - Mantenha-o curto e explique concisamente qual é o problema ou **o que fazer**. <br>Algumas superfícies da interface do usuário podem ter títulos que se truncam em vez de serem encapsulados quando forem muito longos, portanto, fique atento para eles.
 - Use a solução no título se for uma etapa simples.
@@ -224,20 +224,20 @@ O estado nulo ocorre quando os dados ou o conteúdo do cliente estão ausentes d
 
 Mensagens de status consistem em notificações e mensagens de janela pop-up (proposta).
 
-|Tipo de cadeia de caracteres         | Observações                               |
+|Tipo de cadeia de caracteres         | Anotações                               |
 |------------        |-------------------------------------|
 |Notificação do sistema               |Frases com a mensagem de pontuação - idealmente com uma variável de objeto para que os usuários podem entender qual o objeto de final se aplica ao caso eles tenham navegado para longe do objeto|
-|Título de notificação|Frases w/out pontuação final (Este é um título) - idealmente com uma variável de objeto|
+|Título de notificação (título) |Caso de sentença sem pontuação final (é um título)-idealmente com uma variável de objeto|
 |Detalhes da notificação|Sentenças completos, idealmente com um link para a interface do usuário que exibe o objeto|
 
 Aqui estão algumas recomendações detalhadas para mensagens de notificação:
 
-|Tipo de cadeia de caracteres         | Observações                               |
+|Tipo de cadeia de caracteres         | Anotações                               |
 |------------        |-------------------------------------|
 |Iniciado             |Omita quando possível: geralmente pule apenas a mensagem em andamento para minimizar o número de distrações.|
-|Em andamento         |Comece com o verbo da ação que você estiver realizando e terminarem com reticências para indicar uma operação em andamento. Veja um exemplo:<br> *Criando o volume "dados do cliente"...*|
-|Êxito             |Comece com "Com êxito" e termine com o software que acabamos de fazer. Veja um exemplo:<br> *O volume "dados do cliente" foi criado com êxito.*|
-|Falha             |Comece com "Não pôde" e termine com o que o software não conseguiu realizar. Veja um exemplo:<br> *Não foi possível criar o volume "dados do cliente".*|
+|Em andamento         |Comece com o verbo da ação que você estiver realizando e terminarem com reticências para indicar uma operação em andamento. Aqui está um exemplo:<br> *Criando o volume ' dados do cliente '...* <br><br>Quando houver várias variáveis, use esse padrão: <br>*Excluindo a seguinte máquina virtual: {0}; Host: {1}* |
+|Êxito             |Comece com "Com êxito" e termine com o software que acabamos de fazer. Aqui está um exemplo:<br> *O volume ' dados do cliente ' foi criado com êxito.*|
+|Falha             |Comece com "Não pôde" e termine com o que o software não conseguiu realizar. Aqui está um exemplo:<br> *Não foi possível criar o volume ' dados do cliente '.*|
 
 ## <a name="tooltips"></a>Dicas de ferramenta
 
@@ -249,5 +249,5 @@ As dicas de ferramenta devem ser usadas com moderação ou não. Eles podem ser 
 |    -----------------------                 |    -------------------------    |
 |Quando um controle ou elemento de interface do usuário não está rotulado...|Use uma frase de substantivo simples e descritiva. Por exemplo:<br> Realçando a caneta |
 |Quando um elemento de interface do usuário é rotulado, mas sua finalidade precisa de esclarecimento...|<ul><li>Descreva brevemente o que você pode fazer com esse elemento de interface do usuário. </li><li>Use o formulário verbo imperativo. Por exemplo, "localizar texto neste arquivo" (não "localiza texto neste arquivo").</li><li>Não inclua Pontuação final, a menos que haja várias frases completas.</li> </ul>|
-|Quando um rótulo de texto é truncado ou provavelmente truncado em alguns idiomas...|<ul><li>Forneça o rótulo não truncado na dica de ferramenta.</li><li>Opcional: Em outra linha, forneça uma descrição de esclarecimento, mas somente se necessário.</li><li>Não forneça uma dica de ferramenta se as informações não truncadas forem fornecidas em outro lugar na página ou no fluxo.</li></ul>|
-|Se um atalho de teclado estiver disponível...|<ul><li>Opcional: Forneça o atalho de teclado entre parênteses após o rótulo ou frase descritiva, por exemplo, "Imprimir (Ctrl + P)" ou "localizar texto neste arquivo (Ctrl + F)"</li><li>Não há problema em Adicionar um atalho de teclado útil a uma dica de ferramenta de esclarecimento, mas evite adicionar uma dica de ferramenta somente para mostrar um atalho de teclado. </li></ul>|
+|Quando um rótulo de texto é truncado ou provavelmente truncado em alguns idiomas...|<ul><li>Forneça o rótulo não truncado na dica de ferramenta.</li><li>Opcional: em outra linha, forneça uma descrição de esclarecimento, mas somente se necessário.</li><li>Não forneça uma dica de ferramenta se as informações não truncadas forem fornecidas em outro lugar na página ou no fluxo.</li></ul>|
+|Se um atalho de teclado estiver disponível...|<ul><li>Opcional: forneça o atalho de teclado entre parênteses após o rótulo ou frase descritiva, por exemplo, "imprimir (Ctrl + P)" ou "localizar texto neste arquivo (Ctrl + F)"</li><li>Não há problema em Adicionar um atalho de teclado útil a uma dica de ferramenta de esclarecimento, mas evite adicionar uma dica de ferramenta somente para mostrar um atalho de teclado. </li></ul>|

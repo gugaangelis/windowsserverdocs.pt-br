@@ -5,16 +5,16 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 04/23/2019
+ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385553"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519478"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novidades nos Serviços de Federação do Active Directory (AD FS)
 
@@ -87,9 +87,8 @@ Anteriormente, AD FS exigia que o recurso e o escopo desejados estejam em um par
  
 Com AD FS no servidor 2019, agora você pode passar o valor do recurso inserido no parâmetro de escopo. Isso é consistente com a maneira como uma pode fazer a autenticação no Azure AD também. 
 
-O parâmetro de escopo agora pode ser organizado como uma lista separada por espaços, em que cada entrada é estruturada como recurso/escopo. Por exemplo  
+O parâmetro de escopo agora pode ser organizado como uma lista separada por espaços, em que cada entrada é estruturada como recurso/escopo. 
 
-**< criar uma solicitação de amostra válida >**
 > [!NOTE]
 > Somente um recurso pode ser especificado na solicitação de autenticação. Se mais de um recurso for incluído na solicitação, AD FS retornará um erro e a autenticação não terá sucesso. 
 
@@ -109,12 +108,12 @@ C. Em seguida, o cliente envia o código de autorização na solicitação de to
 D. O AD FS transforma "code_verifier" e compara-o com "t (code_verifier)" de (B).  O acesso será negado se eles não forem iguais. 
 
 #### <a name="faq"></a>Perguntas frequentes 
-**Perguntas.** Posso passar o valor do recurso como parte do valor do escopo como como as solicitações são feitas no Azure AD? 
-</br>**Um.** Com AD FS no servidor 2019, agora você pode passar o valor do recurso inserido no parâmetro de escopo. O parâmetro de escopo agora pode ser organizado como uma lista separada por espaços, em que cada entrada é estruturada como recurso/escopo. Por exemplo  
+**P.** Posso passar o valor do recurso como parte do valor do escopo como como as solicitações são feitas no Azure AD? 
+</br>**A.** Com AD FS no servidor 2019, agora você pode passar o valor do recurso inserido no parâmetro de escopo. O parâmetro de escopo agora pode ser organizado como uma lista separada por espaços, em que cada entrada é estruturada como recurso/escopo. Por exemplo,  
 **< criar uma solicitação de amostra válida >**
 
-**Perguntas.** AD FS oferece suporte à extensão PKCE?
-</br>**Um.** O AD FS no servidor 2019 dá suporte à chave de prova de PKCE (troca de código para fluxo de concessão de código de autorização OAuth 
+**P.** AD FS oferece suporte à extensão PKCE?
+</br>**A.** O AD FS no servidor 2019 dá suporte à chave de prova de PKCE (troca de código para fluxo de concessão de código de autorização OAuth 
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>Novidades nos Serviços de Federação do Active Directory (AD FS) para Windows Server 2016   
 Se você estiver procurando informações sobre versões anteriores do AD FS, consulte os seguintes artigos:  
@@ -154,13 +153,17 @@ AD FS fornece o componente local das políticas de acesso condicional em um cen�
 ![novidades](media/whats-new-in-active-directory-federation-services-for-windows-server-2016/ADFS_ITPRO4.png)  
 
  Para obter mais informações sobre como usar o acesso condicional baseado em dispositivo na nuvem   
- *  [Azure Active Directory o acesso condicional](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)
+ *  [Acesso condicional ao Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)
 
 Para obter mais informações sobre como usar o acesso condicional baseado em dispositivo com o AD FS
 *  [Planejando o acesso condicional baseado em dispositivo com o AD FS](../../ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)  
 * [Políticas de controle de acesso no AD FS](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)  
 
-### <a name="sign-in-with-windows-hello-for-business"></a>Entre com o Windows Hello para empresas   
+### <a name="sign-in-with-windows-hello-for-business"></a>Entre com o Windows Hello para empresas  
+
+> [!NOTE]
+> Atualmente, o Google Chrome e o [novo Microsoft Edge criados em](https://www.microsoft.com/edge?form=MB110A&OCID=MB110A) navegadores de projeto de código-fonte aberto Chromium não têm suporte para logon único baseado em navegador (SSO) com o Microsoft Windows Hello para empresas. Use o Internet Explorer ou uma versão mais antiga do Microsoft Edge.  
+
 Dispositivos Windows 10 introduzem o Windows Hello e o Windows Hello para empresas, substituindo senhas de usuário com credenciais de usuário vinculadas a dispositivos fortes protegidas pelo gesto de um usuário (um PIN, um gesto biométrico como impressão digital ou reconhecimento facial). O AD FS 2016 dá suporte a esses novos recursos do Windows 10 para que os usuários possam entrar no AD FS aplicativos da intranet ou da extranet sem a necessidade de fornecer uma senha.
 
 Para obter mais informações sobre como usar o Microsoft Windows Hello para empresas em sua organização

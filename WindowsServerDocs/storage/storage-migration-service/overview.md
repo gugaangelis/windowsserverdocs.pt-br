@@ -4,16 +4,16 @@ description: O serviço de migração de armazenamento facilita a migração do 
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 10/25/2019
+ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 968122612845a9be105ca7d3231edc0faa039e76
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352683"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519468"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -46,6 +46,10 @@ A migração é um processo de três etapas:
 
 ![captura de tela mostrando um servidor pronto para ser examinado](media/migrate/inventory.png)
 **Figura 2: servidores de inventário do serviço de migração de armazenamento**
+
+Veja um vídeo mostrando como usar o serviço de migração de armazenamento para pegar um servidor, como um servidor Windows Server 2008 R2 que agora não tem suporte e mover o armazenamento para um servidor mais recente.
+
+> [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
 ## <a name="requirements"></a>Requisitos
 
