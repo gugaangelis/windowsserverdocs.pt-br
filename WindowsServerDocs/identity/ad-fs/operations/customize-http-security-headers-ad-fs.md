@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b81d498c6e601fcce0a0760cb4877fcc98c8beb9
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949211"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725791"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019 
  
@@ -32,11 +32,11 @@ Neste documento, abordaremos os cabeçalhos de resposta de segurança usados com
 Antes de discutirmos os cabeçalhos, vamos examinar alguns cenários que criam a necessidade de administradores personalizar cabeçalhos de segurança 
  
 ## <a name="scenarios"></a>Cenários 
-1. O administrador habilitou o [**http Strict-Transport-Security (HSTS)** ](#http-strict-transport-security-hsts) (força todas as conexões via criptografia HTTPS) para proteger os usuários que podem acessar o aplicativo Web usando http de um ponto de acesso do WiFi público que pode ser invadido. Ela gostaria de reforçar ainda mais a segurança, habilitando HSTS para subdomínios.  
-2. O administrador configurou o cabeçalho de resposta [**X-Frame-Options**](#x-frame-options) (impede a renderização de qualquer página da Web em um iframe) para proteger as páginas da Web de serem clickjacked. No entanto, ela precisa personalizar o valor do cabeçalho devido a um novo requisito de negócios para exibir dados (em iFrame) de um aplicativo com uma origem diferente (domínio).
-3. O administrador habilitou a [**proteção X-XSS-Protection**](#x-xss-protection) (impede que ataques de script cruzado) limpem e bloqueiem a página se o navegador detectar ataques de script cruzado. No entanto, ela precisa personalizar o cabeçalho para permitir que a página seja carregada após a limpeza.  
+1. O administrador habilitou o [**http Strict-Transport-Security (HSTS)** ](#http-strict-transport-security-hsts) (força todas as conexões via criptografia HTTPS) para proteger os usuários que podem acessar o aplicativo Web usando http de um ponto de acesso do WiFi público que pode ser invadido. Eles gostariam de reforçar ainda mais a segurança habilitando HSTS para subdomínios.  
+2. O administrador configurou o cabeçalho de resposta [**X-Frame-Options**](#x-frame-options) (impede a renderização de qualquer página da Web em um iframe) para proteger as páginas da Web de serem clickjacked. No entanto, eles precisam personalizar o valor do cabeçalho devido a um novo requisito de negócios para exibir dados (em iFrame) de um aplicativo com uma origem diferente (domínio).
+3. O administrador habilitou a [**proteção X-XSS-Protection**](#x-xss-protection) (impede que ataques de script cruzado) limpem e bloqueiem a página se o navegador detectar ataques de script cruzado. No entanto, eles precisam personalizar o cabeçalho para permitir que a página seja carregada após a limpeza.  
 4. O administrador precisa habilitar o [**CORS (compartilhamento de recursos entre origens)** ](#cross-origin-resource-sharing-cors-headers) e definir a origem (domínio) em AD FS para permitir que um aplicativo de página única acesse uma API da Web com outro domínio.  
-5. O administrador habilitou o cabeçalho [**CSP (política de segurança de conteúdo)** ](#content-security-policy-csp) para evitar ataques de script entre sites e de injeção de dados, desautorizando as solicitações entre domínios. No entanto, devido a um novo requisito de negócios, ela precisa personalizar o cabeçalho para permitir que a página da Web carregue imagens de qualquer origem e restrinja a mídia a provedores confiáveis.  
+5. O administrador habilitou o cabeçalho [**CSP (política de segurança de conteúdo)** ](#content-security-policy-csp) para evitar ataques de script entre sites e de injeção de dados, desautorizando as solicitações entre domínios. No entanto, devido a um novo requisito de negócios, eles precisam personalizar o cabeçalho para permitir que a página da Web carregue imagens de qualquer origem e restrinja a mídia a provedores confiáveis.  
 
  
 ## <a name="http-security-response-headers"></a>Cabeçalhos de resposta de segurança HTTP 
@@ -133,7 +133,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection"
 ```
 
 ### <a name="cross-origin-resource-sharing-cors-headers"></a>Cabeçalhos CORS (compartilhamento de recursos entre origens) 
-A segurança do navegador da Web impede que uma página da Web faça solicitações entre origens iniciadas de dentro dos scripts. No entanto, às vezes, talvez você queira acessar recursos em outras origens (domínios). O CORS é um padrão W3C que permite que um servidor Relaxe a política de mesma origem. Usando o CORS, um servidor pode explicitamente permitir algumas solicitações entre origens e rejeitar outras.  
+A segurança do navegador da Web impede que uma página da Web faça solicitações entre origens iniciadas de dentro dos scripts. No entanto, às vezes, talvez você queira acessar recursos em outras origens (domínios). O CORS é um padrão W3C que permite que um servidor Relaxe a política de mesma origem. Usando o CORS, um servidor pode permitir explicitamente algumas solicitações entre origens e, ao mesmo tempo, rejeitar outras.  
  
 Para entender melhor a solicitação de CORS, vamos analisar um cenário em que um aplicativo de página única (SPA) precisa chamar uma API da Web com um domínio diferente. Além disso, vamos considerar que o SPA e a API estão configurados no ADFS 2019 e AD FS tem CORS habilitado, ou seja, AD FS pode identificar cabeçalhos CORS na solicitação HTTP, validar valores de cabeçalho e incluir cabeçalhos CORS apropriados na resposta (detalhes sobre como habilitar e Configure o CORS na seção AD FS 2019 na personalização CORS abaixo). Fluxo de exemplo: 
 
