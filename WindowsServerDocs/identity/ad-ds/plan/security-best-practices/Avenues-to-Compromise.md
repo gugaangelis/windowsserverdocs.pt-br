@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 65275f4fc2717fdf9bf85ad2aa31eb12d318cc9f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2233a638aa0a422d5792f8c949c46ac8de099ba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367696"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822039"
 ---
 # <a name="avenues-to-compromise"></a>Alternativas ao comprometimento
 
@@ -60,7 +60,7 @@ No entanto, as populações do servidor tendem a ser protegidas com menos consis
 ### <a name="incomplete-patching"></a>Aplicação de patch incompleta  
 *Número da lei três: se você não acompanhar as correções de segurança, sua rede não será a sua por tempo.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
   
-A Microsoft lança boletins de segurança na segunda terça-feira de cada mês, embora em raras ocasiões as atualizações de segurança sejam lançadas entre as atualizações de segurança mensais (elas também são conhecidas como atualizações "fora de banda") quando a vulnerabilidade é determinada para representar um risco urgente para os sistemas de clientes. Se uma pequena empresa configura seus computadores Windows para usar o Windows Update para gerenciar a aplicação de patches do sistema e de aplicativos ou uma grande organização usa software de gerenciamento como o System Center Configuration Manager (SCCM) para implantar patches de acordo com as informações detalhadas, planos hierárquicos, muitos clientes correm suas infraestruturas do Windows de maneira relativamente oportuna.  
+A Microsoft lança boletins de segurança na segunda terça-feira de cada mês, embora em raras ocasiões as atualizações de segurança sejam lançadas entre as atualizações de segurança mensais (elas também são conhecidas como atualizações "fora de banda") quando a vulnerabilidade é determinada para representar um risco urgente para os sistemas de clientes. Se uma pequena empresa configura seus computadores Windows para usar o Windows Update para gerenciar a aplicação de patches do sistema e de aplicativos ou uma grande organização usa software de gerenciamento como o Microsoft Endpoint Configuration Manager para implantar patches de acordo com as informações detalhadas, planos hierárquicos, muitos clientes correm suas infraestruturas do Windows de maneira relativamente oportuna.  
   
 No entanto, algumas infra-estruturas incluem apenas computadores Windows e aplicativos da Microsoft, e em ambientes comprometidos, é comum descobrir que a estratégia de gerenciamento de patches da organização contém lacunas. Os sistemas Windows nesses ambientes são corrigidos de forma inconsistente. Os sistemas operacionais que não são do Windows são corrigidos esporadicamente, se houver. Os aplicativos COTS (comerciais prontos para prateleira) contêm vulnerabilidades para as quais os patches existem, mas não foram aplicados. Os dispositivos de rede geralmente são configurados com credenciais padrão de fábrica e não há atualizações de firmware em anos após a instalação. Os aplicativos e sistemas operacionais que não têm mais suporte de seus fornecedores geralmente são mantidos em execução, apesar do fato de que eles não podem mais ser corrigidos contra vulnerabilidades. Cada um desses sistemas sem patch representa outro ponto de entrada potencial para invasores.  
   
@@ -132,7 +132,7 @@ Desde que outro computador tenha uma conta local com o mesmo nome de usuário e 
   
 Se uma organização implanta configurações de linha de base consistentes entre servidores, a instalação de aplicativos que não fazem parte da função definida de um servidor não deve ser permitida. Ao permitir que o software seja instalado que não faz parte da funcionalidade designada de um servidor, os servidores são expostos a uma instalação inadvertida ou mal-intencionada de software que aumenta a superfície de ataque do servidor, apresenta vulnerabilidades de aplicativos ou causas instabilidade do sistema.  
   
-#### <a name="applications"></a>Aplicativos  
+#### <a name="applications"></a>Aplicativo  
 Conforme descrito anteriormente, os aplicativos são frequentemente instalados e configurados para usar contas que recebem mais privilégios do que o aplicativo realmente exige. Em alguns casos, a documentação do aplicativo especifica que as contas de serviço devem ser membros do grupo de administradores locais de um servidor ou devem ser configurados para serem executados no contexto do LocalSystem. Isso geralmente não ocorre porque o aplicativo requer esses direitos, mas como determinar quais direitos e permissões as contas de serviço de um aplicativo precisam exigir investimento em tempo e esforço adicionais. Se um aplicativo não for instalado com os privilégios mínimos necessários para o aplicativo e seus recursos configurados para funcionar, o sistema será exposto a ataques que aproveitam os privilégios do aplicativo sem qualquer ataque contra o próprio sistema operacional.  
   
 ### <a name="lack-of-secure-application-development-practices"></a>Falta de práticas seguras de desenvolvimento de aplicativos  

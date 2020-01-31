@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8ad9b00070d5daef2e5aee43cfdee2d192bddae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61bc1ccb7d9b09a17713946b5b8c2cc352f43ac
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367735"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822089"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementar modelos administrativos com menos privilégios
 
@@ -253,7 +253,7 @@ Em outros casos, talvez seja necessário criar grupos de segurança e delegar di
 3. Quais usuários devem receber a associação em uma função.  
 4. Como o gerenciamento de associações de função será executado.  
 
-Em muitos ambientes, a criação manual de controles de acesso baseado em função para a administração de um ambiente de Active Directory pode ser desafiadora para implementar e manter. Se você tiver funções e responsabilidades claramente definidas para a administração da sua infraestrutura de ti, talvez queira aproveitar ferramentas adicionais para ajudá-lo a criar uma implantação RBAC nativa gerenciável. Por exemplo, se o FIM (Forefront Identity Manager) estiver em uso no seu ambiente, você poderá usar o FIM para automatizar a criação e a população de funções administrativas, o que pode facilitar a administração contínua. Se você usar System Center Configuration Manager (SCCM) e System Center Operations Manager (SCOM), poderá usar funções específicas do aplicativo para delegar funções de gerenciamento e monitoramento e também impor configuração e auditoria consistentes entre sistemas no o domínio. Se você tiver implementado uma PKI (infraestrutura de chave pública), poderá emitir e exigir cartões inteligentes para a equipe de ti responsável pela administração do ambiente. Com o fim CM (gerenciamento de credenciais do FIM), você pode até mesmo combinar o gerenciamento de funções e credenciais para sua equipe administrativa.  
+Em muitos ambientes, a criação manual de controles de acesso baseado em função para a administração de um ambiente de Active Directory pode ser desafiadora para implementar e manter. Se você tiver funções e responsabilidades claramente definidas para a administração da sua infraestrutura de ti, talvez queira aproveitar ferramentas adicionais para ajudá-lo a criar uma implantação RBAC nativa gerenciável. Por exemplo, se o FIM (Forefront Identity Manager) estiver em uso no seu ambiente, você poderá usar o FIM para automatizar a criação e a população de funções administrativas, o que pode facilitar a administração contínua. Se você usar o Microsoft Endpoint Configuration Manager e o System Center Operations Manager (SCOM), poderá usar funções específicas do aplicativo para delegar funções de gerenciamento e monitoramento e também impor configuração e auditoria consistentes entre sistemas no o domínio. Se você tiver implementado uma PKI (infraestrutura de chave pública), poderá emitir e exigir cartões inteligentes para a equipe de ti responsável pela administração do ambiente. Com o fim CM (gerenciamento de credenciais do FIM), você pode até mesmo combinar o gerenciamento de funções e credenciais para sua equipe administrativa.  
 
 Em outros casos, pode ser preferível para uma organização considerar a implantação de software RBAC de terceiros que fornece funcionalidade "pronta". As soluções comerciais, COTS (contínuas) para RBAC para diretórios Active Directory, Windows e não Windows e sistemas operacionais são oferecidas por vários fornecedores. Ao escolher entre soluções nativas e produtos de terceiros, você deve considerar os seguintes fatores:  
 

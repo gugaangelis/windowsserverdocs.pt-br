@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ccfde5d13b9b2b722498e824d497a9b790875e14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ae66c125548e31603318a7e600c36c00df9d005
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404509"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822549"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>Etapa 3 configurar a implantação multissite
 
@@ -38,7 +38,7 @@ Depois de configurar a infraestrutura multissite, siga estas etapas para configu
 > [!NOTE]  
 > Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigServer"></a>3,1. Configurar servidores de acesso remoto  
+## <a name="BKMK_ConfigServer"></a>3.1. Configurar servidores de acesso remoto  
 
   
 ### <a name="to-install-the-remote-access-role"></a>Para instalar a função Acesso Remoto.  
@@ -63,7 +63,7 @@ Depois de configurar a infraestrutura multissite, siga estas etapas para configu
   
 10. Clique em **Avançar**e, em seguida, clique em **Instalar**.  
   
-11.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
+11.  Na caixa de diálogo **Progresso da instalação** , verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
   
 ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
@@ -77,7 +77,7 @@ O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Admin"></a>3,2. Conceder acesso de administrador  
+## <a name="BKMK_Admin"></a>3.2. Conceder acesso de administrador  
   
 #### <a name="to-grant-administrator-permissions"></a>Para conceder permissões de administrador  
   
@@ -99,7 +99,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 9. Repita esse procedimento em todos os servidores de acesso remoto que serão parte da implantação multissite.  
   
-## <a name="BKMK_IPHTTPS"></a>3,3. Configurar IP-HTTPS para uma implantação multissite  
+## <a name="BKMK_IPHTTPS"></a>3.3. Configurar IP-HTTPS para uma implantação multissite  
 Em cada servidor de acesso remoto que será adicionado à implantação multissite, um certificado SSL será necessário para verificar a conexão HTTPS com o servidor Web IP-HTTPS. A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento.  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>Para obter um certificado IP-HTTPS  
@@ -338,7 +338,7 @@ Depois de habilitar o multissite em sua implantação, você pode adicionar outr
 15. Na caixa de diálogo **Adicionar ponto de entrada** , clique em **fechar** e, em seguida, no assistente Adicionar um ponto de entrada, clique em **Fechar**.  
   
     > [!NOTE]  
-    > Se o ponto de entrada adicionado estiver em uma floresta diferente dos pontos de entrada ou computadores cliente existentes, será necessário clicar em **Atualizar servidores de gerenciamento** no painel **tarefas** para descobrir os controladores de domínio e System Center Configuration Manager na nova floresta.  
+    > Se o ponto de entrada adicionado estiver em uma floresta diferente dos pontos de entrada ou computadores cliente existentes, será necessário clicar em **Atualizar servidores de gerenciamento** no painel **tarefas** para descobrir os controladores de domínio e Configuration Manager na nova floresta.  
   
 16. Repita esse procedimento da etapa 2 para cada ponto de entrada que você deseja adicionar à implantação multissite.  
   

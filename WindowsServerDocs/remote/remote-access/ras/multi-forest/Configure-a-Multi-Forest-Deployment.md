@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 41c4de30482ff09cb0db8a113fa324b7299af43d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404538"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822679"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -175,7 +175,7 @@ A lista de pesquisa de sufixos DNS permite que os clientes usem nomes de rótulo
   
 1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 3: Servidores de Infraestrutura** , clique em **Editar**.  
   
-2.  Na página **Servidor de Local de Rede**, clique em **Avançar**.  
+2.  Na página **Servidor de Local de Rede** , clique em **Avançar**.  
   
 3.  Na página **DNS** , especifique na tabela os sufixos de nome adicionais que fazem parte da rede corporativa na Forest2. Em **Endereço do Servidor DNS**, especifique o endereço do servidor DNS manualmente ou clicando em **Detectar**. Se você não inserir o endereço, as novas entradas serão aplicadas como isenções NRPT. Em seguida, clique em **Avançar**.  
   
@@ -202,7 +202,7 @@ O Acesso Remoto gerencia uma lista de prefixos IPv6 para recursos corporativos. 
   
 2.  No Assistente para Configuração do Servidor de Acesso Remoto, clique em **Configuração de Prefixo**.  
   
-3.  Na página **Configuração de Prefixo**, em **Prefixos IPv6 da rede interna**, adicione outros prefixos IPv6 separados por ponto e vírgula; por exemplo, 2001:db8:1::/64;2001:db8:2::/64. Em seguida, clique em **Avançar**.  
+3.  Na página **Configuração de Prefixo** , em **Prefixos IPv6 da rede interna**, adicione outros prefixos IPv6 separados por ponto e vírgula; por exemplo, 2001:db8:1::/64;2001:db8:2::/64. Em seguida, clique em **Avançar**.  
   
 4.  Na página **Autenticação** , clique em **Concluir**.  
   
@@ -219,11 +219,11 @@ Para permitir que computadores cliente com Windows 8 do Forest2 acessem recursos
   
 1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 1: Clientes Remotos** , clique em **Editar**.  
   
-2.  No Assistente de Instalação do Cliente do DirectAccess, clique em **Selecionar Grupos** e depois, na página **Selecionar Grupos**, clique em **Adicionar**.  
+2.  No Assistente de Instalação do Cliente do DirectAccess, clique em **Selecionar Grupos**e depois, na página **Selecionar Grupos** , clique em **Adicionar**.  
   
-3.  Na caixa de diálogo **Selecionar Grupos**, selecione os grupos de segurança que contêm computadores cliente do DirectAccess. Em seguida, clique em **Avançar**.  
+3.  Na caixa de diálogo **Selecionar Grupos** , selecione os grupos de segurança que contêm computadores cliente do DirectAccess. Em seguida, clique em **Avançar**.  
   
-4.  Na página **Assistente de Conectividade de Rede**, clique em **Concluir**.  
+4.  Na página **Assistente de Conectividade de Rede** , clique em **Concluir**.  
   
 5.  No painel central do Console de Gerenciamento de Acesso Remoto, clique em **Concluir**.  
   
@@ -236,13 +236,13 @@ Para permitir que computadores cliente do Windows 7 do Forest2 acessem recursos 
 ### <a name="RefreshMgmtServers"></a>Atualizar a lista de servidores de gerenciamento  
 O Acesso Remoto descobre automaticamente, em todas as florestas, os servidores de infraestrutura que contêm GPOs de configuração do DirectAccess. Caso o DirectAccess tenha sido implantado em um servidor da Forest1, o GPO de servidor será criado no respectivo domínio na Forest1. Se você tiver habilitado o acesso ao DirectAccess para clientes da Forest2, o GPO de cliente será criado em um domínio da Forest2.  
   
-O processo de descoberta automática de servidores de infraestrutura é necessário para permitir o acesso através do DirectAccess aos controladores de domínio e ao System Center Configuration Manager. Você precisa iniciar o processo manualmente.  
+O processo de descoberta automática de servidores de infraestrutura é necessário para permitir o acesso por meio do DirectAccess aos controladores de domínio e ao Microsoft Endpoint Configuration Manager. Você precisa iniciar o processo manualmente.  
   
 ##### <a name="to-refresh-the-management-servers-list"></a>Para atualizar a lista de servidores de gerenciamento  
   
 1.  No Console de Gerenciamento de Acesso Remoto, clique em **Configuração**e depois, no painel **Tarefas** , clique em **Atualizar Servidores de Gerenciamento**.  
   
-2.  Na caixa de diálogo **Atualizando Servidores de Gerenciamento**, clique em **Fechar**.  
+2.  Na caixa de diálogo **Atualizando Servidores de Gerenciamento** , clique em **Fechar**.  
   
 
 

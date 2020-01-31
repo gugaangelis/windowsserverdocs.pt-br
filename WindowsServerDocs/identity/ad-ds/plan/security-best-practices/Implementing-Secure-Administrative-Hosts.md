@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 56986f2ea9f49bdfc1194ae5342798793524e86c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 241418b87fd0f1e6fa64c4b1267e6d9fcde6b0d3
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408616"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822759"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>Implementar hosts administrativos seguros
 
@@ -84,7 +84,7 @@ Embora a configuração específica varie de acordo com a arquitetura dos seus s
 Você deve permitir logons interativos por usuários autorizados e deve remover ou até mesmo bloquear outros tipos de logon que não são necessários para o acesso ao servidor.  
   
 ### <a name="patch-and-configuration-management"></a>Gerenciamento de patch e configuração  
-Organizações menores podem contar com ofertas como Windows Update ou [Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) para gerenciar a implantação de atualizações em sistemas Windows, enquanto as organizações maiores podem implementar softwares de gerenciamento de patches e configurações, como System Center Configuration Manager. Independentemente dos mecanismos que você usa para implantar atualizações em seu servidor geral e na população da estação de trabalho, você deve considerar implantações separadas para sistemas altamente seguros, como controladores de domínio, autoridades de certificação e hosts administrativos. Ao separar esses sistemas da infraestrutura de gerenciamento geral, se o software de gerenciamento ou as contas de serviço estiverem comprometidos, o comprometimento não poderá ser facilmente estendido para os sistemas mais seguros em sua infraestrutura.  
+Organizações menores podem contar com ofertas como Windows Update ou [Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) para gerenciar a implantação de atualizações em sistemas Windows, enquanto as organizações maiores podem implementar software de gerenciamento de patches e configurações, como o Microsoft Endpoint Configuration Manager. Independentemente dos mecanismos que você usa para implantar atualizações em seu servidor geral e na população da estação de trabalho, você deve considerar implantações separadas para sistemas altamente seguros, como controladores de domínio, autoridades de certificação e hosts administrativos. Ao separar esses sistemas da infraestrutura de gerenciamento geral, se o software de gerenciamento ou as contas de serviço estiverem comprometidos, o comprometimento não poderá ser facilmente estendido para os sistemas mais seguros em sua infraestrutura.  
   
 Embora você não deva implementar processos de atualização manual para sistemas seguros, configure uma infraestrutura separada para a atualização de sistemas seguros. Mesmo em organizações muito grandes, essa infraestrutura normalmente pode ser implementada por meio de servidores WSUS e GPOs dedicados para sistemas protegidos.  
   

@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 12/20/2019
+ms.date: 1/16/2019
 description: Tópicos novos e atualizados na documentação de armazenamento local do Windows Server para profissionais de ti.
-ms.openlocfilehash: d50d4ca5b49b7f895fad3d3866226f95c55ae485
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: eb0e4f5cd357718be298290930bdf6fb9f7f041f
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352782"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822599"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 
@@ -24,11 +24,17 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 
 > Se você estiver procurando o histórico de atualização para o Windows Server, consulte histórico de atualização do Windows [10 e Windows server 2019](https://support.microsoft.com/help/4464619) ou [histórico de atualização do Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
+## <a name="january-2020"></a>Janeiro de 2020
+
+| Tópico novo ou alterado | Descrição |
+| --- | --- |
+|[Compreender e implantar memória persistente](storage-spaces/deploy-pmem.md) | Foi adicionado um problema de hardware conhecido. |
+
 ## <a name="december-2019"></a>Dezembro de 2019
 
 | Tópico novo ou alterado                                        | Descrição |
 | ---                                                         | ---           |
-| [Solução de problemas do gerenciamento de disco](disk-management/troubleshooting-disk-management.md)| Editado para refinar ainda mais as diretrizes, com base nas solicitações do cliente.|
+| [Solução de problemas do Gerenciamento de disco](disk-management/troubleshooting-disk-management.md)| Editado para refinar ainda mais as diretrizes, com base nas solicitações do cliente.|
 | [Estender um volume no gerenciamento de disco](disk-management/extend-a-basic-volume.md) | Diretrizes adicionadas em resposta aos comentários dos clientes. |
 | [Converter um disco dinâmico em disco básico](disk-management/change-a-dynamic-disk-back-to-a-basic-disk.md) | Correção de um erro na linha de comando e adição de algumas informações com base nos comentários do cliente. |
 
@@ -173,7 +179,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |Tópico novo ou alterado|Descrição|
 |---|---|
 |[Alterar a letra da unidade](disk-management/change-a-drive-letter.md)|Novo tópico.|
-|[Solução de problemas do gerenciamento de disco](disk-management/troubleshooting-disk-management.md)|Reescreveu o [status de um disco não foi inicializado ou a seção o disco está faltando inteiramente](disk-management/troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps) para adicionar etapas de solução de problemas extensivas, com base nas solicitações do cliente.|
+|[Solução de problemas do Gerenciamento de disco](disk-management/troubleshooting-disk-management.md)|Reescreveu o [status de um disco não foi inicializado ou a seção o disco está faltando inteiramente](disk-management/troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps) para adicionar etapas de solução de problemas extensivas, com base nas solicitações do cliente.|
 |[Inicializar novos discos](disk-management/initialize-new-disks.md)|Reescreveu para tentar facilitar a compreensão e o endereçamento de perguntas do cliente.|
 |[Planejando volumes no Espaços de Armazenamento Diretos](storage-spaces/plan-volumes.md)|Adicionada uma tabela que resume os tipos de resiliência disponíveis em clusters de quatro nós e maiores.|
 |[Visão geral do ReFS](refs/refs-overview.md)|Cargas de trabalho recomendadas para paridade aceleradas por espelhamento e correção dos tamanhos de arquivo e volume com suporte para ReFS e NTFS.|

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79dfc7fbf9e2dcc753829cc53d914f374010f925
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 00a7edf9529e1f116d951fd69d3bfa381d6d413a
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408335"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822749"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planejar acesso condicional com base em dispositivo no local
 
@@ -25,7 +25,7 @@ Este documento descreve as políticas de acesso condicional com base em disposit
 
 AD FS fornece o componente local das políticas de acesso condicional em um cenário híbrido.  Quando você registra dispositivos com o Azure AD para acesso condicional a recursos de nuvem, a Azure AD Connect capacidade de write-back do dispositivo disponibiliza as informações de registro do dispositivo localmente para que AD FS políticas consumam e imponham.  Dessa forma, você tem uma abordagem consistente para acessar políticas de controle para recursos locais e na nuvem.  
 
-![Acesso condicional](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![acesso condicional](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados  
 Há três tipos de dispositivos registrados, todos os quais são representados como objetos de dispositivo no Azure AD e podem ser usados para acesso condicional com AD FS local também.  
@@ -34,7 +34,7 @@ Há três tipos de dispositivos registrados, todos os quais são representados c
 | --- | --- |--- | --- |
 |Descrição    |  Os usuários adicionam sua conta corporativa ou de estudante ao seu dispositivo BYOD interativamente.  **Observação:** Adicionar conta corporativa ou de estudante é a substituição para Workplace Join no Windows 8/8.1       | Os usuários ingressam no dispositivo de trabalho do Windows 10 no Azure AD.|Os dispositivos ingressados no domínio do Windows 10 se registram automaticamente no Azure AD.|           
 |Como os usuários fazem logon no dispositivo     |  Não há logon no Windows como a conta corporativa ou de estudante.  Faça logon usando um conta Microsoft.       |   Faça logon no Windows como a conta (corporativa ou de estudante) que registrou o dispositivo.      |     Faça logon usando a conta do AD.|      
-|Como os dispositivos são gerenciados    |      Políticas de MDM (com registro adicional do Intune)   | Políticas de MDM (com registro adicional do Intune)        |   Política de Grupo, System Center Configuration Manager (SCCM) |
+|Como os dispositivos são gerenciados    |      Políticas de MDM (com registro adicional do Intune)   | Políticas de MDM (com registro adicional do Intune)        |   Política de Grupo, Configuration Manager |
 |Tipo de confiança do Azure AD|Ingressado no local de trabalho|Ingressado no Azure AD|Ingressado no domínio  |     
 |Local das configurações do W10    | Configurações > contas > sua conta > Adicionar uma conta corporativa ou de estudante        | Configurações > > do sistema sobre > ingressar no Azure AD       |   Configurações > > do sistema sobre > ingressar em um domínio |       
 |Também disponível para dispositivos iOS e Android?   |    Sim     |       Não  |   Não   |   

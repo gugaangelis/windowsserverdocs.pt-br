@@ -9,12 +9,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: be50c8eaf789b6f0737cbe07cf10d041d25e74f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b813e3f978ad1e61e6770edcf26b1c716efcbbe4
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388204"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822479"
 ---
 # <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>Etapa 7. Adicional Acesso condicional para conectividade VPN usando o Azure AD
 
@@ -79,7 +79,7 @@ Para implantar o certificado raiz confiável, você precisa:
 
 ## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devicesvpn-create-oma-dm-based-vpnv2-profilesmd"></a>[Etapa 7,5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
-Nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune para implantar uma política de configuração de dispositivo VPN. Se você quiser usar o script do SCCM ou do PowerShell para criar perfis do VPNv2, consulte [configurações do CSP do VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes.
+Nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune para implantar uma política de configuração de dispositivo VPN. Se você quiser usar o Configuration Manager ou o script do PowerShell para criar perfis do VPNv2, consulte [configurações do CSP do VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes.
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -89,7 +89,7 @@ Nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune
 
 - [Configurar perfis de VPNv2](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): o cliente VPN agora é capaz de se integrar à plataforma de acesso condicional baseada em nuvem para fornecer uma opção de conformidade de dispositivo para clientes remotos. Nesta etapa, você configura os perfis VPNv2 com **\<DeviceCompliance > \<habilitado > true\</Enabled >** .
 
-- [Aprimorando o acesso remoto no Windows 10 com um perfil VPN automático](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile): saiba como a Microsoft implementa o acesso condicional para conectividade VPN. Os perfis de VPN contêm todas as informações que um dispositivo requer para se conectar à rede corporativa, incluindo os métodos de autenticação que têm suporte e o servidor VPN ao qual o dispositivo deve se conectar. Alterações na atualização de aniversário do Windows 10, incluindo acesso condicional e logon único, possibilitamos a criação de nosso perfil de conexão VPN AlwaysOn. Criamos o perfil de conexão para dispositivos gerenciados pelo domínio e Microsoft Intune – usando System Center Configuration Manager Console.
+- [Aprimorando o acesso remoto no Windows 10 com um perfil VPN automático](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile): saiba como a Microsoft implementa o acesso condicional para conectividade VPN. Os perfis de VPN contêm todas as informações que um dispositivo requer para se conectar à rede corporativa, incluindo os métodos de autenticação que têm suporte e o servidor VPN ao qual o dispositivo deve se conectar. Alterações na atualização de aniversário do Windows 10, incluindo acesso condicional e logon único, possibilitamos a criação de nosso perfil de conexão VPN AlwaysOn.
 
 - [Acesso condicional no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal): a segurança é uma das principais preocupações para as organizações que usam a nuvem. Um aspecto fundamental da segurança na nuvem é a identidade e o acesso quando se trata de gerenciar seus recursos de nuvem. Em um mundo em primeiro lugar e em nuvem, os usuários podem acessar os recursos da sua organização usando uma variedade de dispositivos e aplicativos de qualquer lugar. Como resultado disso, apenas se concentrando em quem pode acessar um recurso não é mais suficiente. Para dominar o equilíbrio entre segurança e produtividade, os profissionais de ti também precisam fatorar como um recurso está sendo acessado em uma decisão de controle de acesso.
 

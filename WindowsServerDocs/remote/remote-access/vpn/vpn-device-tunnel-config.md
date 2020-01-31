@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b5be8827cee22b35fb31bf08d1c960b150dcad84
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388030"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822649"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configurar túneis de dispositivo VPN no Windows 10
 
@@ -46,9 +46,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>Configuração de túnel do dispositivo VPN
 
-O XML do perfil de exemplo abaixo fornece uma boa orientação para cenários em que somente os pull iniciados pelo cliente são necessários no túnel do dispositivo.  Os filtros de tráfego são utilizados para restringir o túnel de dispositivo somente ao tráfego de gerenciamento.  Essa configuração funciona bem para cenários de atualização Windows Update, típica Política de Grupo (GP) e System Center Configuration Manager (SCCM), bem como conectividade VPN para o primeiro logon sem credenciais em cache ou cenários de redefinição de senha. 
+O XML do perfil de exemplo abaixo fornece uma boa orientação para cenários em que somente os pull iniciados pelo cliente são necessários no túnel do dispositivo.  Os filtros de tráfego são utilizados para restringir o túnel de dispositivo somente ao tráfego de gerenciamento.  Essa configuração funciona bem para cenários de Windows Update, GP (Política de Grupo típica) e Microsoft Endpoint Configuration Manager Update, bem como conectividade VPN para o primeiro logon sem credenciais em cache ou cenários de redefinição de senha. 
 
-Para casos de push iniciados pelo servidor, como Gerenciamento Remoto do Windows (WinRM), GPUpdate remotos e cenários remotos de atualização do SCCM – você deve permitir o tráfego de entrada no túnel do dispositivo, portanto, os filtros de tráfego não podem ser usados.  Se no perfil de túnel de dispositivo você ativar os filtros de tráfego, o túnel de dispositivo negará o tráfego de entrada.  Essa limitação será removida em versões futuras.
+Para casos de push iniciados pelo servidor, como Gerenciamento Remoto do Windows (WinRM), GPUpdate remotos e cenários de atualização de Configuration Manager remoto – você deve permitir o tráfego de entrada no túnel do dispositivo, portanto, os filtros de tráfego não podem ser usados.  Se no perfil de túnel de dispositivo você ativar os filtros de tráfego, o túnel de dispositivo negará o tráfego de entrada.  Essa limitação será removida em versões futuras.
 
 
 ### <a name="sample-vpn-profilexml"></a>Exemplo de profileXML de VPN
@@ -173,7 +173,7 @@ Veja a seguir os recursos adicionais para ajudá-lo em sua implantação de VPN.
 
 A seguir estão os recursos de configuração de cliente VPN.
 
-- [Como criar perfis VPN no System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [Como criar perfis VPN no Configuration Manager](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
 - [Configurar conexões VPN Always On cliente do Windows 10](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [Opções de perfil de VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 

@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: e5832843dce05832a231ed3a4d7e20cf90f1d183
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145932"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822589"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -64,11 +64,11 @@ Corrigimos esse problema em uma versão posterior do Windows Server.
 
 Ao usar o centro de administração do Windows ou o PowerShell para baixar o log CSV somente erros detalhados de operações de transferência, você recebe o erro:
 
- >   Log de transferência-Verifique se o compartilhamento de arquivos é permitido em seu firewall. : Esta operação de solicitação enviada para net. TCP://localhost: 28940/SMS/Service/1/Transfer não recebeu uma resposta dentro do tempo limite configurado (00:01:00). O tempo determinado para essa operação pode ter sido uma parte de um tempo limite maior. Isso pode ocorrer porque o serviço ainda está processando a operação ou porque o serviço não pôde enviar uma mensagem de resposta. Considere aumentar o tempo limite da operação (convertendo o canal/proxy para IContextChannel e definindo a propriedade OperationTimeout) e verifique se o serviço é capaz de se conectar ao cliente.
+ >   Log de transferência-Verifique se o compartilhamento de arquivos é permitido em seu firewall. : Esta operação de solicitação enviada para net. TCP://localhost: 28940/SMS/Service/1/Transfer não recebeu uma resposta dentro do tempo limite configurado (00:01:00). O tempo alocado para esta operação pode ter sido uma parte de um tempo limite maior. Isso pode ocorrer porque o serviço ainda está processando a operação ou porque o serviço não pôde enviar uma mensagem de resposta. Considere aumentar o tempo limite da operação (convertendo o canal/proxy para IContextChannel e definindo a propriedade OperationTimeout) e verifique se o serviço é capaz de se conectar ao cliente.
 
 Esse problema é causado por um número muito grande de arquivos transferidos que não podem ser filtrados no tempo limite de um minuto padrão permitido pelo serviço de migração de armazenamento. 
 
-Para contornar este problema:
+Para contornar esse problema:
 
 1. No computador do Orchestrator, edite o arquivo *%systemroot%\SMS\Microsoft.StorageMigration.Service.exe.config* usando o notepad. exe para alterar o "SendTimeout" de seu padrão de 1 minuto para 10 minutos
 
@@ -90,7 +90,7 @@ Para contornar este problema:
 7. Clique com o botão direito do mouse em "WcfOperationTimeoutInMinutes" e clique em Modificar. 
 8. Na caixa dados base, clique em "decimal"
 9. Na caixa dados do valor, digite "10" e clique em OK.
-10. Saia do Editor do Registro.
+10. Saia do editor do registro.
 11. Tente baixar o arquivo CSV somente erros novamente. 
 
 Pretendemos alterar esse comportamento em uma versão posterior do Windows Server 2019.  
@@ -220,7 +220,7 @@ Como alternativa alternativa:
    ```
 ## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>Erro "dll não encontrado" ao executar o inventário de um nó de cluster
 
-Ao tentar executar o inventário com o serviço de migração de armazenamento Orchestrator instalado em um nó de cluster de failover do Windows Server 2019 e direcionar a origem do servidor de arquivos de uso geral do cluster de failover do Windows Server, você receberá o seguinte erro:
+Ao tentar executar o inventário com o serviço de migração de armazenamento e direcionar para uma fonte de servidor de arquivos de uso geral do cluster de failover do Windows Server, você receberá os seguintes erros:
 
     DLL not found
     [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   

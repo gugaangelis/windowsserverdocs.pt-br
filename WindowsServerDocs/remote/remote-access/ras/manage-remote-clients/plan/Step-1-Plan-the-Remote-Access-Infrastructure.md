@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c8db30d3c5512fc72648c7894d66b715850fb619
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71a6d38b9c77b3b8c24b28f78114daa63f5bd527
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367310"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822529"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>Etapa 1 planejar a infraestrutura de acesso remoto
 
@@ -323,9 +323,9 @@ Os clientes do DirectAccess iniciam a comunicação com servidores de gerenciame
   
 -   Controladores de domínio: a descoberta automática de controladores de domínio é executada para os domínios que contêm computadores cliente e para todos os domínios na mesma floresta que o servidor de acesso remoto.  
   
--   Servidores System Center Configuration Manager  
+-   Microsoft Endpoint Configuration Manager Servers  
   
-Os controladores de domínio e os servidores de System Center Configuration Manager são detectados automaticamente na primeira vez que o DirectAccess é configurado. Os controladores de domínio detectados não são exibidos no console do, mas as configurações podem ser recuperadas usando cmdlets do Windows PowerShell. Se os servidores do controlador de domínio ou do System Center Configuration Manager forem modificados, clicar em **Gerenciamento de atualizações servidores** no console do atualizará a lista de servidores de gerenciamento.  
+Os controladores de domínio e os servidores de Configuration Manager são detectados automaticamente na primeira vez que o DirectAccess é configurado. Os controladores de domínio detectados não são exibidos no console do, mas as configurações podem ser recuperadas usando cmdlets do Windows PowerShell. Se os servidores do controlador de domínio ou do Configuration Manager forem modificados, clicar em **Gerenciamento de atualizações servidores** no console do atualizará a lista de servidores de gerenciamento.  
   
 **Requisitos do servidor de gerenciamento**  
   

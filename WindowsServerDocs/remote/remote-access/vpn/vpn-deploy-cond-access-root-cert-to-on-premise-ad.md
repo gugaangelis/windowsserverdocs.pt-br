@@ -11,12 +11,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 67d361db7a2dd3f2879e8beb924075dae68d52a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60be590d0d133f00817018018af42cfc23f1bee5
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404321"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822389"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>Etapa 7.4. Implantar certificados raiz de acesso condicional no AD local
 
@@ -35,28 +35,28 @@ Nesta etapa, você implanta o certificado raiz de acesso condicional como certif
 2. Faça logon em um computador ingressado em domínio com direitos de administrador corporativo e execute estes comandos em um prompt de comando de administrador para adicionar os certificados raiz da nuvem ao repositório *NTauth corporativo* :
 
    >[!NOTE]
-   >Para ambientes em que o servidor VPN não está ingressado no domínio de Active Directory, os certificados raiz de nuvem devem ser adicionados ao repositório de _autoridades de certificação raiz confiáveis_ manualmente.
+   >For environments where the VPN server is not joined to the Active Directory domain, the cloud root certificates must be added to the _Trusted Root Certification Authorities_ store manually.
 
    | Comando | Descrição |
    | --- | --- |
-   | `certutil -dspublish -f VpnCert.cer RootCA` | Cria dois contêineres **Gen 1 da AC raiz de VPN da Microsoft** nos contêineres **CN = AIA** e **CN = autoridades de certificação** e publica cada certificado raiz como um valor no atributo _CACertificate_ dos contêineres **Gen 1 do Microsoft VPN root CA** . |
-   | `certutil -dspublish -f VpnCert.cer NTAuthCA` | Cria um contêiner **CN = NTAuthCertificates** nos contêineres **CN = AIA** e **CN = autoridades de certificação** e publica cada certificado raiz como um valor no atributo _cACertificate_ do contêiner **CN = NTAuthCertificates** . |
-   | `gpupdate /force` | Agiliza a adição dos certificados raiz aos computadores cliente e Windows Server. |
+   | `certutil -dspublish -f VpnCert.cer RootCA` | Creates two **Microsoft VPN root CA gen 1** containers under the **CN=AIA** and **CN=Certification Authorities** containers, and publishes each root certificate as a value on the _cACertificate_ attribute of both **Microsoft VPN root CA gen 1** containers. |
+   | `certutil -dspublish -f VpnCert.cer NTAuthCA` | Creates one **CN=NTAuthCertificates** container under the **CN=AIA** and **CN=Certification Authorities** containers, and publishes each root certificate as a value on the _cACertificate_ attribute of the **CN=NTAuthCertificates** container. |
+   | `gpupdate /force` | Expedites adding the root certificates to the Windows server and client computers. |
 
-3. Verifique se os certificados raiz estão presentes no repositório NTauth corporativo e mostram como confiáveis:
-   1. Faça logon em um servidor com direitos de administrador corporativo com as **ferramentas de gerenciamento de autoridade de certificação** instaladas.
+3. Verify that the root certificates are present in the Enterprise NTauth store and show as trusted:
+   1. Log on to a server with Enterprise Admin rights that has the **Certificate Authority Management Tools** installed.
 
    >[!NOTE]
-   >Por padrão, as **ferramentas de gerenciamento de autoridade de certificação** são servidores de autoridade de certificação instalados. Eles podem ser instalados em outros servidores de membros como parte das **ferramentas de administração de função** no Gerenciador do servidor.
+   >By default the **Certificate Authority Management Tools** are installed Certificate Authority servers. They can be installed on other members servers as part of the **Role Administration Tools** in Server Manager.
 
-   1. No servidor VPN, no menu Iniciar, digite **PKIView. msc** para abrir a caixa de diálogo PKI corporativa.
-   1. No menu Iniciar, digite **PKIView. msc** para abrir a caixa de diálogo PKI corporativa.
-   1. Clique com o botão direito do mouse em **Enterprise PKI** e selecione **gerenciar contêineres do AD**.
-   1. Verifique se cada certificado do Microsoft VPN root CA Gen 1 está presente em:
+   1. On the VPN server, in the Start menu, enter **pkiview.msc** to open the Enterprise PKI dialog.
+   1. From the Start menu, enter **pkiview.msc** to open the Enterprise PKI dialog.
+   1. Right-click **Enterprise PKI** and select **Manage AD Containers**.
+   1. Verify that each Microsoft VPN root CA gen 1 certificate is present under:
       - NTAuthCertificates
-      - Contêiner de AIA
-      - Contêiner de autoridades de certificação
+      - AIA Container
+      - Certificate Authorities Container
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Etapa 7,5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md): nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune para implantar uma política de configuração de dispositivo VPN. Se você quiser que o script do SCCM ou do PowerShell crie perfis do VPNv2, consulte [configurações do CSP do VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes.
+[Step 7.5. Create OMA-DM based VPNv2 Profiles to Windows 10 devices](vpn-create-oma-dm-based-vpnv2-profiles.md): In this step, you can create OMA-DM based VPNv2 profiles using Intune to deploy a VPN Device Configuration policy. If you want to use Microsoft Endpoint Configuration Manager or PowerShell Script to create VPNv2 profiles, see [VPNv2 CSP settings](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) for more details.

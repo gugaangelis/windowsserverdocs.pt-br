@@ -9,12 +9,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0850145c9281c769c5a2b6532ccb56615abd11b3
-ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
+ms.openlocfilehash: b50b1b7b43002c91ee849f352e255f520f6d96f0
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725781"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822729"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Atualizações necessárias para Serviços de Federação do Active Directory (AD FS) (AD FS) e proxy de aplicativo Web (WAP)
 
@@ -28,6 +28,7 @@ As atualizações do Windows Server 2016 são entregues mensalmente por meio de 
 
 |QUILOBYTE # |Descrição|Data de lançamento
 |----- | ----- |-----
+|[4534271](https://support.microsoft.com/help/4534271/windows-10-update-kb4534271) | Trata de uma possível falha de AD FS Chrome devido ao suporte de novas políticas de cookie [SameSite](https://www.chromestatus.com/feature/5088147346030592) por padrão para a versão 80 do Google Chrome. Para obter mais informações, consulte [aqui](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications). |Janeiro de 2020|
 |[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | Essa atualização de segurança aborda uma vulnerabilidade no Serviços de Federação do Active Directory (AD FS) (AD FS) que pode permitir que um invasor ignore a política de bloqueio da extranet. |Julho de 2019|
 |[4489889 (Build do so 14393,2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | Resolve um problema no Serviços de Federação do Active Directory (AD FS) (AD FS) que faz com que uma terceira parte confiável duplicada apareça no console de gerenciamento do AD FS. Isso ocorre quando você cria ou exibe as relações de confiança de terceira parte confiável usando o console de gerenciamento do AD FS.</br></br> Trata de um problema de latência de WAP (proxy de aplicativo Web) de Serviços de Federação do Active Directory (AD FS) alta (MS) que ocorre enquanto o bloqueio inteligente de extranet (ESL) está habilitado no AD FS 2016. Essa atualização de segurança aborda a vulnerabilidade descrita em [CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794). |Março de 2019|
 |[4487006 (Build do so 14393,2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | Resolve um problema que faz com que as atualizações de um confiança de terceira parte confiável falhem ao usar o PowerShell ou o console de gerenciamento do Serviços de Federação do Active Directory (AD FS) (AD FS). Esse problema ocorre se você configurar uma relação de confiança de terceira parte confiável para usar uma URL de metadados online que publica mais de um PassiveRequestorEndpoint. O erro é, "MSIS7615: os pontos de extremidade confiáveis especificados em uma relação de confiança de terceira parte confiável devem ser exclusivos para a confiança da terceira parte confiável."  </br></br>Resolve um problema que exibe uma mensagem de erro específica para alterações de senha de complexidade externa devido às políticas de proteção de senha do Azure. |Fevereiro de 2019|
@@ -50,6 +51,7 @@ Abaixo está a lista de hotfixes e pacotes cumulativos de atualizações que for
 
 |QUILOBYTE # |Descrição|Data de lançamento
 |----- | ----- |-----
+|[4534309](https://support.microsoft.com/help/4534309/windows-8-1-kb4534309)| Trata de uma possível falha de AD FS Chrome devido ao suporte de novas políticas de cookie [SameSite](https://www.chromestatus.com/feature/5088147346030592) por padrão para a versão 80 do Google Chrome. Para obter mais informações, consulte [aqui](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications). |Janeiro de 2020
 |[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| Essa atualização de segurança aborda uma vulnerabilidade no Serviços de Federação do Active Directory (AD FS) (AD FS) que pode permitir que um invasor ignore a política de bloqueio da extranet. |Julho de 2019
 |[4041685](https://support.microsoft.com/kb/4041685)|Foi resolvido um problema AD FS em que os cookies MSISConext nos cabeçalhos de solicitação podem, eventualmente, exceder o limite de tamanho dos cabeçalhos e causar falha na autenticação com código de status HTTP 400 "cabeçalho de solicitação inadequado muito longo".</br></br>Corrigido um problema em que o ADFS não pode mais ignorar "prompt = logon" durante a autenticação. Uma opção "Disabled" foi adicionada para os cenários de restauração em que a autenticação de não-senha é usada.|Versão prévia de outubro de 2017 do pacote cumulativo de atualizações
 |[4019217](https://support.microsoft.com/kb/4019217)|Os clientes de pastas de trabalho usando o agente de token não funcionam ao usar um servidor de AD FS R2 Server 2012|Pacote cumulativo de atualizações de visualização de maio de 2017

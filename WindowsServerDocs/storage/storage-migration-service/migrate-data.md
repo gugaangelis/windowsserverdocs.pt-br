@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 4da69087ab1df6200394b36c938cb05ec5185045
-ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
+ms.openlocfilehash: 20aa5fbc40efc5a3a439361dadfac0f47f4b41d8
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124884"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822619"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar o serviço de migração de armazenamento para migrar um servidor
 
@@ -25,24 +25,25 @@ Antes de começar, instale o serviço de migração de armazenamento e verifique
 
 1. Verifique os [requisitos do serviço de migração de armazenamento](overview.md#requirements) e instale o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) no computador ou em um servidor de gerenciamento, se ainda não tiver feito isso. Se estiver migrando computadores de origem ingressados no domínio, você deverá instalar e executar o serviço de migração de armazenamento em um servidor ingressado no mesmo domínio ou floresta que os computadores de origem.
 2. No centro de administração do Windows, conecte-se ao servidor do Orchestrator que executa o Windows Server 2019. <br>Este é o servidor no qual você instalará o serviço de migração de armazenamento e usará o para gerenciar a migração. Se você estiver migrando apenas um servidor, poderá usar o servidor de destino contanto que ele esteja executando o Windows Server 2019. Recomendamos que você use um servidor de orquestração separado para qualquer migração de vários servidores.
-1. Vá para **Gerenciador do servidor** (no centro de administração do Windows) > **serviço de migração de armazenamento** e selecione **instalar** para instalar o serviço de migração de armazenamento e seus componentes necessários (mostrados na Figura 1).
+3. Vá para **Gerenciador do servidor** (no centro de administração do Windows) > **serviço de migração de armazenamento** e selecione **instalar** para instalar o serviço de migração de armazenamento e seus componentes necessários (mostrados na Figura 1).
     ![captura de tela da página do serviço de migração de armazenamento mostrando o botão instalar](media/migrate/install.png) **Figura 1: Instalando o serviço de migração de armazenamento**
-1. Instale o proxy do serviço de migração de armazenamento em todos os servidores de destino que executam o Windows Server 2019. Isso duplica a velocidade de transferência quando instalado nos servidores de destino. <br>Para fazer isso, conecte-se ao servidor de destino no centro de administração do Windows e vá para **Gerenciador do servidor** (no centro de administração do windows) > **funções e recursos**, selecione **proxy de serviço de migração de armazenamento**e, em seguida, selecione **instalar**.
-1. Em todos os servidores de origem e em todos os servidores de destino que executam o Windows Server 2012 R2 ou o Windows Server 2016, no centro de administração do Windows, conecte-se a cada servidor, vá para **Gerenciador do servidor** (no centro de administração do windows) > **Firewall** > **regras de entrada**e verifique se as regras a seguir estão habilitadas:
+4. Instale o proxy do serviço de migração de armazenamento em todos os servidores de destino que executam o Windows Server 2019. Isso duplica a velocidade de transferência quando instalado nos servidores de destino. <br>Para fazer isso, conecte-se ao servidor de destino no centro de administração do Windows e vá para **Gerenciador do servidor** (no centro de administração do windows) > **funções e recursos**, > **recursos**, selecione proxy de serviço de **migração de armazenamento**e, em seguida, selecione **instalar**. 
+5. Se você pretende migrar de ou para clusters do Windows failover, instale as ferramentas de clustering de failover no servidor do Orchestrator. <br>Para fazer isso, conecte-se ao servidor do Orchestrator no centro de administração do Windows e vá para **Gerenciador do servidor** (no centro de administração do windows) > **funções e recursos**, > **recursos**, > **ferramentas de administração de servidor remoto**, > ferramentas de **Administração de recursos**, selecione **ferramentas de clustering de failover**e, em seguida, selecione **instalar**. 
+6. Em todos os servidores de origem e em todos os servidores de destino que executam o Windows Server 2012 R2 ou o Windows Server 2016, no centro de administração do Windows, conecte-se a cada servidor, vá para **Gerenciador do servidor** (no centro de administração do windows) > **Firewall** > **regras de entrada**e verifique se as regras a seguir estão habilitadas:
     - Compartilhamento de arquivos e de impressora (SMB-Entrada)
     - Serviço Netlogon (NP-in)
-    - DCOM-In (Instrumentação de Gerenciamento do Windows)
+    - Instrumentação de Gerenciamento do Windows (DCOM-in)
     - Instrumentação de Gerenciamento do Windows (WMI-In)
 
    Se você estiver usando firewalls de terceiros, os intervalos de portas de entrada a serem abertos serão TCP/445 (SMB), TCP/135 (mapeador de ponto de extremidade RPC/DCOM) e TCP 1025-65535 (portas efêmeras RPC/DCOM). As portas do serviço de migração de armazenamento são TCP/28940 (Orchestrator) e TCP/28941 (proxy).
 
-1. Se você estiver usando um servidor Orchestrator para gerenciar a migração e desejar baixar eventos ou um log de quais dados você transfere, verifique se a regra de firewall de compartilhamento de arquivos e impressoras (SMB-in) está habilitada nesse servidor também.
+7. Se você estiver usando um servidor Orchestrator para gerenciar a migração e desejar baixar eventos ou um log de quais dados você transfere, verifique se a regra de firewall de compartilhamento de arquivos e impressoras (SMB-in) está habilitada nesse servidor também.
 
 ## <a name="step-1-create-a-job-and-inventory-your-servers-to-figure-out-what-to-migrate"></a>Etapa 1: criar um trabalho e inventariar seus servidores para descobrir o que migrar
 
 Nesta etapa, você especifica quais servidores migrar e, em seguida, os verifica para coletar informações sobre seus arquivos e configurações.
 
-1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione se deseja migrar servidores Windows e clusters ou servidores Linux que usam o samba. Selecione **OK**.
+1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione se deseja migrar servidores Windows e clusters ou servidores Linux que usam o samba. Em seguida, selecione **OK**.
 2. Na página **Inserir credenciais** , digite as credenciais de administrador que funcionam nos servidores dos quais você deseja migrar e, em seguida, selecione **Avançar**. <br>Se você estiver migrando de servidores Linux, insira as credenciais nas páginas **credenciais do samba** e credenciais do **Linux** , incluindo uma senha ssh ou uma chave privada. 
 
 3. Selecione **Adicionar um dispositivo**, digite um nome do servidor de origem ou o nome de um servidor de arquivos clusterizado e, em seguida, selecione **OK**. <br>Repita esse procedimento para todos os outros servidores que você deseja inventariar.
@@ -114,4 +115,4 @@ Nesta etapa, você reduz os servidores de origem para os servidores de destino, 
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)
 - [Perguntas frequentes sobre serviços de migração de armazenamento](faq.md)
-- [Planejando uma implantação da Sincronização de Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)
+- [Planejando uma implantação de Sincronização de Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)

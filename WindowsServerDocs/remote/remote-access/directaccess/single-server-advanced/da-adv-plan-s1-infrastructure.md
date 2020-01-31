@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9fa6fe4de0c8723c17f6a61717281d0a38d1b579
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb8bb6dda6eab27413b462a4c7f17176fbed85a1
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388657"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822769"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Etapa 1 planejar a infraestrutura avançada do DirectAccess
 
@@ -465,9 +465,9 @@ Os clientes DirectAccess iniciam comunicações com os servidores de gerenciamen
   
 -   Controladores de domínio-a descoberta automática de controladores de domínio é executada para todos os domínios na mesma floresta que o servidor DirectAccess e os computadores cliente.  
   
--   Servidores de System Center Configuration Manager-a descoberta automática de servidores System Center Configuration Manager é executada para todos os domínios na mesma floresta que o servidor DirectAccess e os computadores cliente.  
+-   Microsoft Endpoint Configuration Manager Servers – a descoberta automática de servidores de Configuration Manager é executada para todos os domínios na mesma floresta que o servidor DirectAccess e os computadores cliente.  
   
-Os controladores de domínio e os servidores do System Center Configuration Manager são automaticamente detectados na primeira fez que o DirectAccess é configurado. Os controladores de domínio detectados não são exibidos no console do, mas as configurações podem ser recuperadas usando o cmdlet do Windows PowerShell **Get-DAMgmtServer-tipo All**. Se os servidores do controlador de domínio ou do System Center Configuration Manager forem modificados, clicar em **Atualizar Servidores de Gerenciamento** no console de Gerenciamento de Acesso Remoto atualizará a lista de servidores de gerenciamento.  
+Os controladores de domínio e os servidores de Configuration Manager são detectados automaticamente na primeira vez que o DirectAccess é configurado. Os controladores de domínio detectados não são exibidos no console do, mas as configurações podem ser recuperadas usando o cmdlet do Windows PowerShell **Get-DAMgmtServer-tipo All**. Se os servidores do controlador de domínio ou do Configuration Manager forem modificados, clicar em **Atualizar servidores de gerenciamento** no console de gerenciamento de acesso remoto atualizará a lista de servidores de gerenciamento.  
   
 **Requisitos do servidor de gerenciamento**  
   
@@ -672,7 +672,7 @@ O diagrama a seguir mostra esta configuração.
   
 ![Gerenciar GPOs de acesso remoto](../../../media/Step-1-Plan-the-DirectAccess-Infrastructure/DA_Plan_Advanced_Step1_GPOS.png)  
   
-### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 recuperar de um GPO excluído  
+### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 Recuperação de um GPO excluído  
 Se um GPO de cliente, do servidor do DirectAccess ou do servidor de aplicativos for excluído acidentalmente e não houver backup disponível, será necessário remover as definições de configuração e reconfigurá-las. Se um backup estiver disponível, você poderá usá-lo para restaurar o GPO.  
   
 O console de gerenciamento de acesso remoto exibirá a seguinte mensagem de erro: **não é possível encontrar o GPO (nome do GPO)** . Para remover as definições de configuração, siga essas etapas:  

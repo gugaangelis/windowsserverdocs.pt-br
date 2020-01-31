@@ -9,19 +9,19 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 06/11/2018
-ms.openlocfilehash: 326f1e8d52dc34ad433e8cc3bd4c4e84508026b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aa7658587b8434bfbaa6874498215a6b2c9213be
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388082"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822659"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>Etapa 5. Definir configurações de DNS e firewall
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Etapa 4. Instalar e configurar o servidor NPS](vpn-deploy-nps.md)
-- [**Última** Etapa 6. Configurar as conexões da VPN Always On do cliente Windows 10](vpn-deploy-client-vpn-connections.md)
+- [**Anterior:** Etapa 4. Instalar e configurar o servidor NPS](vpn-deploy-nps.md)
+- [**Em seguida:** Etapa 6. Configurar conexões VPN Always On cliente do Windows 10](vpn-deploy-client-vpn-connections.md)
 
 Nesta etapa, você define as configurações de DNS e de firewall para conectividade VPN.
 
@@ -44,11 +44,11 @@ Para garantir que os clientes remotos possam se conectar ao seu servidor VPN, vo
 7. Se você criou uma zona de pesquisa inversa para um intervalo de endereços IP, incluindo o endereço IP que você inseriu, marque a caixa de seleção **criar registro de ponteiro associado (PTR)** .  A seleção dessa opção cria um registro de recurso de ponteiro (PTR) adicional em uma zona inversa para esse host, com base nas informações inseridas em **nome** e **endereço IP**.
 8. Selecione **Adicionar host**.
 
-## <a name="configure-the-edge-firewall"></a>Configurar o Firewall do Microsoft Edge
+## <a name="configure-the-edge-firewall"></a>Configurar o Firewall do Edge
 
-O Firewall do Microsoft Edge separa a rede de perímetro externa da Internet pública. Para uma representação visual dessa separação, consulte a ilustração no tópico [Always on visão geral da tecnologia VPN](../always-on-vpn-technology-overview.md).
+O Firewall do Edge separa a rede de perímetro externa da Internet pública. Para uma representação visual dessa separação, consulte a ilustração no tópico [Always on visão geral da tecnologia VPN](../always-on-vpn-technology-overview.md).
 
-O Firewall do Microsoft Edge deve permitir e encaminhar portas específicas para o servidor VPN. Se você usar a NAT (conversão de endereços de rede) no firewall do Microsoft Edge, talvez seja necessário habilitar o encaminhamento de porta para as portas 500 e 4500 do protocolo UDP. Encaminhe essas portas para o endereço IP atribuído à interface externa do servidor VPN.
+O Firewall do Edge deve permitir e encaminhar portas específicas para o servidor VPN. Se você usar a NAT (conversão de endereços de rede) no firewall do Edge, talvez seja necessário habilitar o encaminhamento de porta para as portas 500 e 4500 do protocolo UDP. Encaminhe essas portas para o endereço IP atribuído à interface externa do servidor VPN.
 
 Se você estiver roteando o tráfego de entrada e executando o NAT no servidor VPN ou atrás dele, deverá abrir suas regras de firewall para permitir as portas UDP 500 e 4500 de entrada para o endereço IP externo aplicado à interface pública no servidor VPN.
 
@@ -84,4 +84,4 @@ Se você não estiver usando as portas RADIUS padrão em sua implantação do NP
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Etapa 6. Configurar conexões](vpn-deploy-client-vpn-connections.md)de VPN Always on cliente do Windows 10: Nesta etapa, você configura os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN. Você pode usar várias tecnologias para configurar clientes de VPN do Windows 10, incluindo o Windows PowerShell, o System Center Configuration Manager e o Intune. Todos os três exigem um perfil de VPN XML para definir as configurações de VPN apropriadas.
+[Etapa 6. Configurar conexões de VPN Always On cliente do Windows 10](vpn-deploy-client-vpn-connections.md): nesta etapa, você configura os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN. Você pode usar várias tecnologias para configurar clientes de VPN do Windows 10, incluindo o Windows PowerShell, o Microsoft Endpoint Configuration Manager e o Intune. Todos os três exigem um perfil de VPN XML para definir as configurações de VPN apropriadas.

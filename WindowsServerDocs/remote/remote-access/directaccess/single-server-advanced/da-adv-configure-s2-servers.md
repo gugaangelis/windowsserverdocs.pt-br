@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0ba2154338871827aae03936e5e39a356a43d675
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c5fec6d9dafa350f46dfb5b2f213d628391b87f
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388627"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822779"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>Etapa 2 configurar servidores DirectAccess avançados
 
@@ -52,7 +52,7 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 4.  Clique em **Avançar** cinco vezes.  
   
-5.  Na página **Confirmar seleções de instalação** , clique em **Instalar**.  
+5.  Na página **Confirm installation selections**, clique em **Install**.  
   
 6.  Na página **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
@@ -92,12 +92,12 @@ Para que um computador cliente possa ser provisionado para usar o DirectAccess, 
   
 2.  No Assistente de configuração de cliente do DirectAccess, na página **Cenário de implantação**, clique no cenário de implantação que você deseja usar na sua organização (**DirectAccess completo** ou **Somente gerenciamento remoto**) e clique em **Avançar**.  
   
-3.  Na página **Selecionar Grupos**, clique em **Adicionar**.  
+3.  Na página **Selecionar Grupos** , clique em **Adicionar**.  
   
 4.  Na caixa de diálogo **Selecionar Grupos**, selecione os grupos de segurança que contêm computadores cliente do DirectAccess.  
   
     > [!NOTE]  
-    > Se o grupo de segurança estiver em uma floresta diferente que o servidor de Acesso Remoto, depois de concluir o Assistente de configuração de Acesso Remoto, clique em **Atualizar servidores de gerenciamento** no painel **Tarefas** para descobrir os controladores de domínio e servidores do System Center Configuration Manager na nova floresta.  
+    > Se o grupo de segurança estiver localizado em uma floresta diferente do servidor de acesso remoto, depois de concluir o assistente de instalação de acesso remoto, clique em **Atualizar servidores de gerenciamento** no painel **tarefas** para descobrir os controladores de domínio e os servidores Configuration Manager na nova floresta.  
   
 5.  Marque a caixa de seleção **Habilitar o DirectAccess apenas para computadores móveis** para permitir que somente computadores móveis acessem a rede interna, se necessário.  
   
@@ -121,7 +121,7 @@ Para que um computador cliente possa ser provisionado para usar o DirectAccess, 
         > [!NOTE]  
         > Quando a resolução de nome local é habilitada, os usuários que executarem o Assistente de conectividade de rede podem escolher resolver nomes usando servidores DNS configurados no computador cliente do DirectAccess.  
   
-9. Clique em **Concluir**.  
+9. Clique em **concluir**.  
   
 ## <a name="BKMK_Server"></a>2,4. Configurar o servidor de Acesso Remoto  
 Para implantar o Acesso Remoto, será necessário configurar o servidor de Acesso Remoto com os adaptadores de rede corretos, uma URL pública para o servidor de Acesso Remoto, à qual os computadores cliente poderão se conectar (o endereço ConnectTo) e um certificado IP-HTTPS com o assunto correspondente ao endereço ConnectTo, configurações IPv6 e autenticação no computador cliente.  
@@ -150,7 +150,7 @@ Para implantar o Acesso Remoto, será necessário configurar o servidor de Acess
         > [!NOTE]  
         > Você também deverá usar uma autenticação de certificado de computador para este tipo de implantação.  
   
-6.  Clique em **Concluir**.  
+6.  Clique em **concluir**.  
   
 ## <a name="BKMK_Infra"></a>2,5. Configurar os servidores de infraestrutura  
 Para configurar os servidores de infraestrutura em uma implantação de Acesso Remoto, você deverá configurar o servidor de local de rede, as configurações de DNS (incluindo a lista de pesquisa do sufixo de DNS) e servidores de gerenciamento que não são detectados automaticamente pelo Acesso Remoto.  
@@ -165,12 +165,12 @@ Para configurar os servidores de infraestrutura em uma implantação de Acesso R
   
 4.  Na página **Lista de pesquisa de sufixo de DNS**, o servidor de Acesso Remoto detectará automaticamente qualquer sufixo de domínio na implantação. Use os botões **Adicionar** e **Remover** para adicionar e remover os sufixos de domínio da lista de sufixos de domínio a serem usados. Para adicionar um novo sufixo de domínio, em **Novo sufixo**, digite o sufixo e clique em **Adicionar**. Clique em **Avançar**.  
   
-5.  Na página **Gerenciamento**, adicione quaisquer servidores de gerenciamento não detectados automaticamente e clique em **Avançar**. O Acesso Remoto adiciona automaticamente os controladores de domínio e os servidores do System Center Configuration Manager.  
+5.  Na página **Gerenciamento**, adicione quaisquer servidores de gerenciamento não detectados automaticamente e clique em **Avançar**. O acesso remoto adiciona automaticamente os controladores de domínio e os servidores de Configuration Manager.  
   
     > [!NOTE]  
-    > Embora os servidores sejam adicionados automaticamente, eles não aparecem na lista. Depois de aplicar as configurações pela primeira vez, os servidores do System Center Configuration Manager aparecerão na lista.  
+    > Embora os servidores sejam adicionados automaticamente, eles não aparecem na lista. Depois de aplicar a configuração pela primeira vez, os servidores de Configuration Manager aparecem na lista.  
   
-6.  Clique em **Concluir**.  
+6.  Clique em **concluir**.  
   
 ## <a name="BKMK_App"></a>2,6. Configurar os servidores de aplicativos  
 Em uma implantação de Acesso Remoto, configurar os servidores de aplicativos é uma tarefa opcional. O Acesso Remoto permite exigir autenticação para os servidores de aplicativos selecionados, o que é determinado por sua inclusão em um grupo de segurança de servidores de aplicativos. Por padrão, o tráfego para os servidores de aplicativos também é criptografado, porém você pode escolher não criptografar o tráfego para os servidores de aplicativos e usar somente autenticação.  
@@ -188,7 +188,7 @@ Em uma implantação de Acesso Remoto, configurar os servidores de aplicativos �
   
 4.  Para usar a autenticação sem criptografia, selecione **não criptografar tráfego. Use** a caixa de seleção somente autenticação.  
   
-5.  Clique em **Concluir**.  
+5.  Clique em **concluir**.  
   
 ## <a name="BKMK_GPO"></a>2,7. Resumo de configuração e GPOs alternativos  
 Uma vez concluída a configuração do Acesso Remoto, a **Revisão de Acesso Remoto** será exibida. Aqui, você pode revisar todas as configurações previamente selecionadas, incluindo:  

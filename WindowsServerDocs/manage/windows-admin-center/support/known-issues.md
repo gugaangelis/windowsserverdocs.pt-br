@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 59c659041c7553d8e97a3bfbefbc3bde24098ef2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949932"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822699"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
@@ -44,7 +44,7 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 
 - Pode haver uma pequena variação entre os números de versão do OSS em execução nos módulos do centro de administração do Windows e o que está listado no aviso de software de terceiros.
 
-### <a name="extension-manager"></a>Gerenciador de Extensões
+### <a name="extension-manager"></a>Gerenciador de extensões
 
 - Ao atualizar o centro de administração do Windows, você deve reinstalar suas extensões.
 - Se você adicionar um feed de extensão que está inacessível, não haverá nenhum aviso. [14412861]
@@ -82,7 +82,7 @@ Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e
 
 Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.microsoft.com/download/details.aspx?id=54616).
 
-## <a name="role-based-access-control-rbac"></a>RBAC (Controle de Acesso Baseado em Função)
+## <a name="role-based-access-control-rbac"></a>RBAC (controle de acesso baseado em função)
 
 - A implantação de RBAC não terá êxito em computadores que estão configurados para usar o Controle de aplicativos do Windows Defender (WDAC, anteriormente conhecido como Integridade de código.) [16568455]
 
@@ -201,7 +201,7 @@ A solução de gerenciamento do computador contém um subconjunto das ferramenta
 
 - Ao gerenciar um cluster, (com hiperconvergência ou traditional) você pode encontrar um erro de **shell não encontrado** . Se isso acontecer, recarregar o navegador ou saia para outra ferramenta e retorne. [13882442]
 
-- Um problema pode ocorrer ao gerenciar um cluster de baixo nível (Windows Server 2012 ou 2012 R2) que ainda não foi configurado completamente. A correção desse problema garante que o recurso do Windows **RSAT-Clustering-PowerShell** foi instalado e habilitado em **cada nó membro** do cluster. Para fazer isso com o PowerShell, digite o comando `Install-WindowsFeature -Name RSAT-Windows-PowerShell` em todos os nós do cluster. [12524664]
+- Um problema pode ocorrer ao gerenciar um cluster de baixo nível (Windows Server 2012 ou 2012 R2) que ainda não foi configurado completamente. A correção desse problema garante que o recurso do Windows **RSAT-Clustering-PowerShell** foi instalado e habilitado em **cada nó membro** do cluster. Para fazer isso com o PowerShell, digite o comando `Install-WindowsFeature -Name RSAT-Clustering-PowerShell` em todos os nós do cluster. [12524664]
 
 - Talvez seja necessário adicionar o Cluster com todo o FQDN para ser descoberto corretamente.
 

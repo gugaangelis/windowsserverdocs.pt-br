@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7fe8d948a5f43fdab394490f543f3583167bdfe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15d57d12679d7441da080ad671264ca1e5e1f42c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406764"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822799"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -33,7 +33,7 @@ Este tópico, que é direcionado a profissionais de TI (tecnologia da informaç�
 
 **Quem estará interessado no BranchCache?**
 
-Se você for um administrador de sistema, arquiteto de solução de rede ou armazenamento ou outro profissional de ti, o BranchCache poderá lhe interessar nas seguintes circunstâncias:
+Se você for administrador do sistema, arquiteto de soluções de rede ou armazenamento ou outro profissional de TI, o BranchCache poderá ser útil nas seguintes ocasiões:
 
 - Durante o design ou suporte de uma infraestrutura de TI para uma organização com dois ou mais locais físicos e uma conexão por WAN (rede de longa distância) das filiais para a matriz.
 
@@ -45,7 +45,7 @@ Se você for um administrador de sistema, arquiteto de solução de rede ou arma
 
 - Os computadores cliente em suas filiais estão executando o Windows 10, Windows 8.1, Windows 8 ou Windows 7.
 
-Este tópico inclui as seções a seguir:
+Este tópico inclui as seguintes seções:
 
 -   [O que é BranchCache?](#bkmk_what)
 
@@ -136,7 +136,7 @@ Esses servidores de arquivos usam o protocolo SMB (Server Message Block) para tr
 
 Os servidores de aplicativos com suporte incluem computadores que executam o Windows Server 2016, o Windows Server 2012 R2, o Windows Server 2012 ou o Windows Server 2008 R2 com o Serviço de Transferência Inteligente em Segundo Plano (BITS) instalado e habilitado. 
 
-Além disso, o servidor de aplicativos deve ter o recurso BranchCache instalado. Como exemplos de servidores de aplicativos, você pode implantar os servidores de ponto de distribuição do Microsoft Windows Server Update Services (WSUS) e do Microsoft System Center Configuration Manager Branch como servidores de conteúdo do BranchCache.
+Além disso, o servidor de aplicativos deve ter o recurso BranchCache instalado. Como exemplos de servidores de aplicativos, você pode implantar servidores de ponto de distribuição de ramificação do Microsoft Windows Server Update Services (WSUS) e Microsoft Endpoint Configuration Manager como servidores de conteúdo do BranchCache.
 
 ## <a name="BKMK_3a"></a>BranchCache e nuvem
 
@@ -218,7 +218,7 @@ Os sistemas operacionais a seguir fornecem o BranchCache com suporte para Servi�
 
 - Windows 8.1 Enterprise
 
-- Windows 8 Enterprise
+- O Windows 8 Enterprise
 
 - Windows 7 Enterprise
 

@@ -8,12 +8,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Respostas para perguntas frequentes sobre a atualização com suporte a cluster no Windows Server.
-ms.openlocfilehash: a08366c7e64d9612d63e348d4cecdb4b2389737a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 736b49222ae4c9e2a27229341f0d886bd3e0343c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361353"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822129"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>Atualização com suporte a cluster: perguntas frequentes
 
@@ -40,7 +40,7 @@ Sim. Por padrão, a CAU é configurada com um plug\-no que usa o agente Windows 
 Sim. Por padrão, a CAU é configurada com um plug\-no que usa o agente Windows Update \(o WUA\) APIs do utilitário nos nós do cluster. A infraestrutura do WUA pode ser configurada para apontar para Microsoft Update e Windows Update ou para um Windows Server Update Services local \(servidor do WSUS\) como sua fonte de atualizações.  
   
 ## <a name="can-cau-apply-limited-distribution-release-updates"></a>A CAU pode aplicar as atualizações de versão de distribuição limitada?  
-Sim. A versão de distribuição limitada \(LDR\) atualizações, também chamadas de hotfixes, não são publicadas por meio de Microsoft Update ou Windows Update, portanto, elas não podem ser baixadas pelo agente de Windows Update \(o\) do do WUA em que a CAU usa por padrão.\-  
+Sim. A versão de distribuição limitada \(LDR\) atualizações, também chamadas de hotfixes, não são publicadas por meio de Microsoft Update ou Windows Update, portanto, elas não podem ser baixadas pelo agente de Windows Update \(o\) do do WUA em que a CAU usa por padrão.  
   
 No entanto, a CAU inclui um segundo plug\-em que você pode selecionar para aplicar atualizações de hotfix. Este hotfix plug\-in também pode ser personalizado para aplicar atualizações de BIOS, firmware e driver não\-Microsoft.  
   
@@ -57,7 +57,7 @@ Sim. A CAU oferece suporte aos seguintes modos de atualização, que permitem qu
 ## <a name="can-i-schedule-updates-to-apply-during-a-backup"></a>Posso agendar atualizações a serem aplicadas durante um backup?  
 Sim. A CAU não impõe nenhuma restrição nesse sentido. No entanto, a execução de atualizações de software em um servidor \(com as possíveis reinicializações associadas\) enquanto um backup de servidor está em andamento não é uma prática recomendada de ti. Esteja ciente de que a CAU depende apenas de APIs de clustering para determinar failovers e failbacks de recursos. Portanto, a CAU não tem conhecimento do status de backup do servidor.  
   
-## <a name="can-cau-work-with-system-center-configuration-manager"></a>A CAU pode trabalhar com System Center Configuration Manager?  
+## <a name="can-cau-work-with-configuration-manager"></a>A CAU pode trabalhar com Configuration Manager?  
 A CAU é uma ferramenta que coordena atualizações de software em um nó de cluster e Configuration Manager também executa atualizações de software de servidor. É importante configurar essas ferramentas para que elas não tenham cobertura sobreposta dos mesmos servidores em qualquer implantação de datacenter, incluindo o uso de diferentes servidores de Windows Server Update Services. Isso garante que o objetivo por trás do uso da CAU não seja inadvertidamente derrotado, porque Configuration Manager\-atualização controlada não incorpora o reconhecimento do cluster.  
   
 ## <a name="do-i-need-administrative-credentials-to-run-cau"></a>Preciso de credenciais administrativas para executar a CAU?  
@@ -118,9 +118,9 @@ A CAU oferece opções de exportação por meio do comando\-interface de linha e
   
 **Opções da interface do usuário:**  
   
--   Copie os resultados de relatório da tela **Visualizar atualizações**. Saída: CSV  
+-   Copie os resultados de relatório da tela **Visualizar atualizações** . Saída: CSV  
   
--   Copie os resultados de relatório da tela **Gerar relatório**. Saída: CSV  
+-   Copie os resultados de relatório da tela **Gerar relatório** . Saída: CSV  
   
 -   Exporte os resultados de relatório da tela **Gerar relatório** . Saída: HTML  
   
@@ -158,7 +158,7 @@ Sim. A CAU oferece suporte a várias opções de Execução de Atualização que
   
 -   [\-plug-in de atualização com reconhecimento de cluster em exemplo](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
--   [Visão geral da atualização com suporte do cluster\-](cluster-aware-updating.md)  
+-   [Visão geral da Atualização com Suporte a Cluster](cluster-aware-updating.md)  
   
