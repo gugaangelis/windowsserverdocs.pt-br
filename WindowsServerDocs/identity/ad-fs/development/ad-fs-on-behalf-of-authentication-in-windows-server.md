@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ce000ec618d0c06ca938b21e9bc363250e1aa38f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b3a30c081731de97e1bdf9abe711a5ef6460be0f
+ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949612"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76918304"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Crie um aplicativo de várias camadas usando OBO (em nome de) usando o OAuth com o AD FS 2016 ou posterior
 
@@ -77,7 +77,7 @@ O exemplo é baseado no exemplo de OBO existente no Azure criado pelo Vittorio B
 
 ## <a name="clone-or-download-this-repository"></a>Clonar ou baixar este repositório
 
-No shell ou na linha de comando:
+No Shell ou na linha de comando:
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
@@ -129,7 +129,7 @@ Para habilitar a autenticação em nome de, precisamos garantir que AD FS retorn
     => issue(claim = c);
 
     @RuleName = "Issue user_impersonation scope"
-    => issue(Type = "https://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
+    => issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
@@ -278,10 +278,10 @@ Continue com o restante do assistente, como quando configuramos o ToDoListServic
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ida: público             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI ToDoListService, por exemplo, https://localhost:44321/                                                                                         |
 | Ida: ClientID             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI ToDoListService, por exemplo, <https://localhost:44321/> </br>**É muito importante que o ida: Audience e Ida: ClientID correspondam um ao outro** |
-| ida:ClientSecret         | Esse é o segredo que AD FS gerado quando você estava Configurando o cliente ToDoListService no AD FS                                                                                                                   |
+| Ida: ClientSecret         | Esse é o segredo que AD FS gerado quando você estava Configurando o cliente ToDoListService no AD FS                                                                                                                   |
 | Ida: AdfsMetadataEndpoint | Essa é a URL para seus metadados de AD FS, por exemplo, https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
 | Ida: OBOWebAPIBase        | Esse é o endereço base que usaremos para chamar a API de back-end, por exemplo, https://localhost:44300                                                                                                                     |
-| ida:Authority            | Esta é a URL para seu serviço de AD FS, exemplo https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| Ida: Authority            | Esta é a URL para seu serviço de AD FS, exemplo https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 Todas as outras chaves ida: XXXXXXX no nó **appSettings** podem ser comentadas ou excluídas
 

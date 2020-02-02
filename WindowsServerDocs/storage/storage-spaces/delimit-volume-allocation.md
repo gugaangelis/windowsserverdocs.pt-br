@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: faf9547833764e9075e86515d1f486a5a3f61ff8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
+ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872083"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76918298"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimitar a alocação de volumes no Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019
@@ -53,17 +53,12 @@ O volume fica offline e se torna inacessível até que os servidores sejam recup
 
 ### <a name="new-delimited-allocation"></a>Novo: alocação delimitada
 
-Com a alocação delimitada, você especifica um subconjunto de servidores a serem usados (mínimo três para espelhamento triplo). O volume é dividido em Slabs que são copiados três vezes, como antes, mas em vez de alocar em cada servidor, **os Slabs são alocados somente para o subconjunto de servidores que você especificar**.
+Com a alocação delimitada, você especifica um subconjunto de servidores a serem usados (mínimo de quatro). O volume é dividido em Slabs que são copiados três vezes, como antes, mas em vez de alocar em cada servidor, **os Slabs são alocados somente para o subconjunto de servidores que você especificar**.
 
-![Diagrama que mostra o volume que está sendo dividido em três pilhas de Slabs e é distribuído somente para três de seis servidores.](media/delimit-volume-allocation/delimited-allocation.png)
-
+Por exemplo, se você tiver um cluster de 8 nós (nós de 1 a 8), poderá especificar um volume a ser localizado somente em discos nos nós 1, 2, 3, 4.
 #### <a name="advantages"></a>Vantagens
 
-Com essa alocação, o volume provavelmente sobreviver a três falhas simultâneas: na verdade, sua probabilidade de sobrevivência aumenta de 0% (com alocação regular) para 95% (com alocação delimitada) nesse caso! Intuitivamente, isso ocorre porque ele não depende dos servidores 4, 5 ou 6, portanto, ele não é afetado por suas falhas.
-
-No exemplo acima, os servidores 1, 3 e 5 falham ao mesmo tempo. Como a alocação delimitada garantiu que o servidor 2 contém uma cópia de cada laje, cada laje tem uma cópia sobrevivente e o volume permanece online e acessível:
-
-![Diagrama mostrando três de seis servidores realçados em vermelho, mas o volume geral está verde.](media/delimit-volume-allocation/delimited-does-survive.png)
+Com a alocação de exemplo, é provável que o volume sobreviver a três falhas simultâneas. Se os nós 1, 2 e 6 ficarem inativos, somente dois dos nós que mantiverem as 3 cópias dos dados para o volume ficarão inativos e o volume permanecerá online.
 
 A probabilidade de sobrevivência depende do número de servidores e outros fatores – consulte [análise](#analysis) para obter detalhes.
 
@@ -79,7 +74,7 @@ A alocação delimitada impõe algumas considerações e complexidade de gerenci
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Você pode usar o `New-Volume` cmdlet para criar volumes em espaços de armazenamento diretos.
+Você pode usar o cmdlet `New-Volume` para criar volumes em Espaços de Armazenamento Diretos.
 
 Por exemplo, para criar um volume de espelhamento de três vias regular:
 
@@ -91,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 Para criar um volume de espelho de três vias e delimitar sua alocação:
 
-1. Primeiro, atribua os servidores no cluster à variável `$Servers`:
+1. Primeiro, atribua os servidores em seu cluster à variável `$Servers`:
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -100,36 +95,36 @@ Para criar um volume de espelho de três vias e delimitar sua alocação:
    > [!TIP]
    > No Espaços de Armazenamento Diretos, o termo "unidade de escala de armazenamento" refere-se a todo o armazenamento bruto conectado a um servidor, incluindo unidades conectadas diretamente e compartimentos externos conectados diretamente a unidades. Nesse contexto, ele é o mesmo que ' Server '.
 
-2. Especifique quais servidores usar com o novo `-StorageFaultDomainsToUse` parâmetro e indexação em. `$Servers` Por exemplo, para delimitar a alocação para o primeiro, o segundo e o terceiro servidores (índices 0, 1 e 2):
+2. Especifique quais servidores usar com o novo parâmetro `-StorageFaultDomainsToUse` e indexação em `$Servers`. Por exemplo, para delimitar a alocação para o primeiro, o segundo, o terceiro e o quarto servidores (índices 0, 1, 2 e 3):
 
     ```PowerShell
-    New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2]
+    New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
     ```
 
 ### <a name="see-a-delimited-allocation"></a>Ver uma alocação delimitada
 
-Para ver como *myvolume* é alocado, use o `Get-VirtualDiskFootprintBySSU.ps1` script no [Apêndice](#appendix):
+Para ver como o *myvolume* é alocado, use o script `Get-VirtualDiskFootprintBySSU.ps1` no [Apêndice](#appendix):
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  0       0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
 ```
 
-Observe que somente Server1, server2 e Server3 contêm Slabs de *myvolume*.
+Observe que somente Server1, server2, Server3 e Server4 contêm Slabs de *myvolume*.
 
 ### <a name="change-a-delimited-allocation"></a>Alterar uma alocação delimitada
 
-Use os novos `Add-StorageFaultDomain` cmdlets e `Remove-StorageFaultDomain` para alterar como a alocação é delimitada.
+Use os novos cmdlets `Add-StorageFaultDomain` e `Remove-StorageFaultDomain` para alterar como a alocação é delimitada.
 
 Por exemplo, para mover *myvolume* por um servidor:
 
-1. Especifique que o quarto servidor **pode** armazenar Slabs de *myvolume*:
+1. Especifique que o quinto servidor **pode** armazenar Slabs de *myvolume*:
 
     ```PowerShell
-    Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[3]
+    Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[4]
     ```
 
 2. Especifique que o primeiro servidor **não pode** armazenar Slabs de *myvolume*:
@@ -144,9 +139,7 @@ Por exemplo, para mover *myvolume* por um servidor:
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-![Diagrama que mostra a Slabs migrar en-Mass dos servidores 1, 2 e 3 para os servidores 2, 3 e 4.](media/delimit-volume-allocation/move.gif)
-
-Você pode monitorar o progresso do rebalanceamento com `Get-StorageJob`.
+Você pode monitorar o progresso do reequilíbrio com `Get-StorageJob`.
 
 Após a conclusão, verifique se *myvolume* foi movido executando `Get-VirtualDiskFootprintBySSU.ps1` novamente.
 
@@ -155,55 +148,39 @@ PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
 ```
 
-Observe que Server1 não contém mais Slabs de *myvolume* – em vez disso, Server04.
+Observe que Server1 não contém mais Slabs de *myvolume* – em vez disso, Server5.
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
 Aqui estão as práticas recomendadas a serem seguidas ao usar a alocação de volume delimitada:
 
-### <a name="choose-three-servers"></a>Escolher três servidores
+### <a name="choose-four-servers"></a>Escolher quatro servidores
 
-Delimite cada volume de espelho de três vias a três servidores, e não mais.
+Delimite cada volume de espelho de três vias para quatro servidores, e não mais.
 
 ### <a name="balance-storage"></a>Balancear o armazenamento
 
 Equilibre a quantidade de armazenamento alocada para cada servidor, a contabilização do tamanho do volume.
 
-### <a name="every-delimited-allocation-unique"></a>Cada alocação delimitada exclusiva
+### <a name="stagger-delimited-allocation-volumes"></a>Volumes de alocação delimitados escalonados
 
-Para maximizar a tolerância a falhas, torne a alocação de cada volume exclusiva, o que significa que ele não compartilha *todos os* seus servidores com outro volume (alguma sobreposição está ok). Com N servidores, há "N escolher 3" combinações exclusivas – aqui está o que significa para alguns tamanhos de cluster comuns:
+Para maximizar a tolerância a falhas, torne a alocação de cada volume exclusiva, o que significa que ele não compartilha *todos os* seus servidores com outro volume (alguma sobreposição está ok). 
 
-| Número de servidores (N) | Número de alocações delimitadas exclusivas (N escolha 3) |
-|-----------------------|-----------------------------------------------------|
-| 6                     | 20                                                  |
-| 8                     | 56                                                  |
-| 12                    | 220                                                 |
-| 16                    | 560                                                 |
-
-   > [!TIP]
-   > Considere essa revisão útil do [combinatorics e escolha a notação](https://betterexplained.com/articles/easy-permutations-and-combinations/).
-
-Veja um exemplo que maximiza a tolerância a falhas – cada volume tem uma alocação delimitada exclusiva:
-
-![alocação exclusiva](media/delimit-volume-allocation/unique-allocation.png)
-
-Por outro lado, no próximo exemplo, os três primeiros volumes usam a mesma alocação delimitada (para os servidores 1, 2 e 3) e os últimos três volumes usam a mesma alocação delimitada (para os servidores 4, 5 e 6). Isso não maximiza a tolerância a falhas: se três servidores falharem, vários volumes poderão ficar offline e ficar inacessíveis ao mesmo tempo.
-
-![alocação não exclusiva](media/delimit-volume-allocation/non-unique-allocation.png)
+Por exemplo, em um sistema de oito nós: volume 1: servidores 1, 2, 3, 4 volume 2: servidores 5, 6, 7, 8 volume 3: servidores 3, 4, 5, 6 volume 4: servidores 1, 2, 7, 8
 
 ## <a name="analysis"></a>Analisa
 
 Esta seção deriva a probabilidade matemática de que um volume permaneça online e acessível (ou, de forma equivalente, a fração esperada do armazenamento geral que permanece online e acessível) como uma função do número de falhas e do tamanho do cluster.
 
    > [!NOTE]
-   > Esta seção é leitura opcional. Se você estiver pronto para ver a matemática, continue lendo! Mas se não, não se preocupe: O [uso no PowerShell e nas](#usage-in-powershell) [práticas recomendadas](#best-practices) é tudo o que você precisa para implementar a alocação delimitada com êxito.
+   > Esta seção é leitura opcional. Se você estiver pronto para ver a matemática, continue lendo! Mas, caso contrário, não se preocupe: o [uso no PowerShell](#usage-in-powershell) e nas [práticas recomendadas](#best-practices) é tudo o que você precisa para implementar a alocação delimitada com êxito.
 
 ### <a name="up-to-two-failures-is-always-okay"></a>Até duas falhas é sempre Ok
 
-Cada volume de espelho de três vias pode sobreviver a duas falhas ao mesmo tempo, como [esses exemplos](storage-spaces-fault-tolerance.md#examples) ilustram, independentemente de sua alocação. Se duas unidades falharem, ou se dois servidores falharem, ou um de cada, cada volume de espelho de três vias permanecerá online e acessível, mesmo com a alocação regular.
+Cada volume de espelho de três vias pode sobreviver a duas falhas ao mesmo tempo, independentemente de sua alocação. Se duas unidades falharem, ou se dois servidores falharem, ou um de cada, cada volume de espelho de três vias permanecerá online e acessível, mesmo com a alocação regular.
 
 ### <a name="more-than-half-the-cluster-failing-is-never-okay"></a>Mais da metade o cluster está falhando nunca muito bem
 
@@ -211,53 +188,7 @@ Por outro lado, no caso extremo de que mais da metade de servidores ou unidades 
 
 ### <a name="what-about-in-between"></a>E o que há entre?
 
-Se três ou mais falhas ocorrerem ao mesmo tempo, mas pelo menos metade de servidores e unidades ainda estiverem ativos, os volumes com alocação delimitada poderão permanecer online e acessíveis, dependendo de quais servidores têm falhas. Vamos executar os números para determinar as chances exatas.
-
-Para simplificar, suponha que os volumes sejam independentes e distribuídos de forma idêntica (IID) de acordo com as práticas recomendadas acima, e que as combinações exclusivas suficientes estejam disponíveis para que cada alocação de volume seja exclusiva. A probabilidade de que qualquer volume determinado sobreviver também é a fração esperada do armazenamento geral que sobrevive pela linearidade da expectativa. 
-
-Considerando os **N** servidores dos quais o **F** tem falhas, um volume alocado para **três** deles ficará offline se-e-somente-se todos os **3** estiverem entre o **F** com falhas. Há **(N escolha F)** maneiras de ocorrerem falhas de **f** , das quais **(F escolha 3)** resultam no volume ficar offline e ficando inacessível. A probabilidade pode ser expressa como:
-
-![P_offline = Fc3/NcF](media/delimit-volume-allocation/probability-volume-offline.png)
-
-Em todos os outros casos, o volume permanece online e acessível:
-
-![P_online = 1 – (Fc3/NcF)](media/delimit-volume-allocation/probability-volume-online.png)
-
-As tabelas a seguir avaliam a probabilidade de alguns tamanhos de cluster comuns e até 5 falhas, revelando que a alocação delimitada aumenta a tolerância a falhas em comparação com a alocação regular em todos os casos considerados.
-
-### <a name="with-6-servers"></a>Com 6 servidores
-
-| Alocação                           | Probabilidade de sobrevivente 1 falha | Probabilidade de sobreviventes 2 falhas | Probabilidade de sobreviventes 3 falhas | Probabilidade de sobreviver 4 falhas | Probabilidade de sobreviventes 5 falhas |
-|--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, espalhada entre todos os 6 servidores | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| Delimitado a 3 servidores somente          | 100%                               | 100%                                | 95,0%                               | 0                                  | 0                                  |
-
-   > [!NOTE]
-   > Após mais de três falhas de 6 servidores no total, o cluster perde quorum.
-
-### <a name="with-8-servers"></a>Com 8 servidores
-
-| Alocação                           | Probabilidade de sobrevivente 1 falha | Probabilidade de sobreviventes 2 falhas | Probabilidade de sobreviventes 3 falhas | Probabilidade de sobreviver 4 falhas | Probabilidade de sobreviventes 5 falhas |
-|--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, espalhada entre todos os 8 servidores | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| Delimitado a 3 servidores somente          | 100%                               | 100%                                | 98,2%                               | 94,3%                               | 0                                  |
-
-   > [!NOTE]
-   > Após mais de 4 falhas de 8 servidores no total, o cluster perde quorum.
-
-### <a name="with-12-servers"></a>Com 12 servidores
-
-| Alocação                            | Probabilidade de sobrevivente 1 falha | Probabilidade de sobreviventes 2 falhas | Probabilidade de sobreviventes 3 falhas | Probabilidade de sobreviver 4 falhas | Probabilidade de sobreviventes 5 falhas |
-|---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, espalhada entre todos os 12 servidores | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| Delimitado a 3 servidores somente           | 100%                               | 100%                                | 99,5%                               | 99,2%                               | 98,7%                               |
-
-### <a name="with-16-servers"></a>Com 16 servidores
-
-| Alocação                            | Probabilidade de sobrevivente 1 falha | Probabilidade de sobreviventes 2 falhas | Probabilidade de sobreviventes 3 falhas | Probabilidade de sobreviver 4 falhas | Probabilidade de sobreviventes 5 falhas |
-|---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, espalhada por todos os 16 servidores | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| Delimitado a 3 servidores somente           | 100%                               | 100%                                | 99,8%                               | 99,8%                               | 99,8%                               |
+Se três ou mais falhas ocorrerem ao mesmo tempo, mas pelo menos metade dos servidores e das unidades ainda estiverem ativas, os volumes com alocação delimitada poderão permanecer online e acessíveis, dependendo de quais servidores tiverem falhas.
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
@@ -269,16 +200,16 @@ Sim. Você pode escolher por volume se deseja ou não delimitar a alocação.
 
 Não, é o mesmo que com a alocação regular.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
 - [Tolerância a falhas no Espaços de Armazenamento Diretos](storage-spaces-fault-tolerance.md)
 
-## <a name="appendix"></a>Anexo
+## <a name="appendix"></a>Apêndice
 
 Esse script ajuda a ver como os volumes são alocados.
 
-Para usá-lo conforme descrito acima, copie/cole e salve `Get-VirtualDiskFootprintBySSU.ps1`como.
+Para usá-lo conforme descrito acima, copie/cole e salve como `Get-VirtualDiskFootprintBySSU.ps1`.
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {
