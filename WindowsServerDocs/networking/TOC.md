@@ -253,7 +253,7 @@
 ### [Planejar SDN](sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)
 #### [Requisitos para instalação e preparação para implantação do controlador de rede](sdn/plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)
 
-### [Implantar a SDN](sdn/deploy/Deploy-Software-Defined-Networking.md)
+### Implantar SDN
 #### [Implantar uma infraestrutura SDN](sdn/deploy/Deploy-a-Software-Defined-Network-Infrastructure.md)
 ##### [Implantar uma infraestrutura SDN usando scripts](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
 #### [Implantar tecnologias SDN usando o Windows PowerShell](sdn/deploy/Deploy-Software-Defined-Network-Technologies-using-Windows-powershell.md)
