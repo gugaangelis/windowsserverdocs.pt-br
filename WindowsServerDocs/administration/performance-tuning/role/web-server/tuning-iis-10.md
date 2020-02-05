@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5658a101371cf3b865dec04ac76716b536792602
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 2f4d309de073e84aa0a1c568c7cfc5f31ee88d83
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265698"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001871"
 ---
 # <a name="tuning-iis-100"></a>Ajustando o IIS 10,0
 
@@ -121,7 +121,7 @@ As configurações nesta seção afetam o comportamento do processo de trabalho 
 
 % SystemRoot%\\system32\\inetsrv\\config\\applicationHost. config
 
-Use Appcmd. exe, o console de gerenciamento do IIS 10,0, os cmdlets do PowerShell WebAdministration ou IISAdministration para alterá-los. A maioria das configurações é detectada automaticamente e não requer uma reinicialização dos processos de trabalho do IIS 10,0 ou do servidor de aplicativos Web. Para obter mais informações sobre o arquivo applicationHost. config, consulte [Introduction to ApplicationHost. config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig).
+Use Appcmd. exe, o console de gerenciamento do IIS 10,0, os cmdlets do PowerShell WebAdministration ou IISAdministration para alterá-los. A maioria das configurações é detectada automaticamente e não requer uma reinicialização dos processos de trabalho do IIS 10,0 ou do servidor de aplicativos Web. Para obter mais informações sobre o arquivo applicationHost. config, consulte [Introduction to ApplicationHost. config](https://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig).
 
 
 ## <a name="ideal-cpu-setting-for-numa-hardware"></a>Configuração ideal de CPU para hardware NUMA
@@ -160,7 +160,7 @@ Para desabilitar completamente a compactação, remova StaticCompressionModule e
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
 |staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage|Habilita ou desabilita a compactação se o uso percentual atual da CPU estiver acima ou abaixo dos limites especificados.<br><br>A partir do IIS 7,0, a compactação será desabilitada automaticamente se a CPU de estado estacionário aumentar acima do limite de desabilitação. A compactação será habilitada se a CPU cair abaixo do limite de habilitação.|50, 100, 50 e 90, respectivamente|
-|diretório|Especifica o diretório no qual as versões compactadas de arquivos estáticos são armazenadas temporariamente e armazenadas em cache. Considere mover esse diretório da unidade do sistema se ele for acessado com frequência.|Arquivos compactados temporários do%SystemDrive%\inetpub\temp\IIS|
+|Active|Especifica o diretório no qual as versões compactadas de arquivos estáticos são armazenadas temporariamente e armazenadas em cache. Considere mover esse diretório da unidade do sistema se ele for acessado com frequência.|Arquivos compactados temporários do%SystemDrive%\inetpub\temp\IIS|
 |doDiskSpaceLimiting|Especifica se existe um limite para a quantidade de espaço em disco que todos os arquivos compactados podem ocupar. Os arquivos compactados são armazenados no diretório de compactação especificado pelo atributo **Directory** .|verdadeiro|
 |maxDiskSpaceUsage|Especifica o número de bytes de espaço em disco que os arquivos compactados podem ocupar no diretório de compactação.<br><br>Essa configuração pode precisar ser aumentada se o tamanho total de todo o conteúdo compactado for muito grande.|100 MB|
 
@@ -208,7 +208,7 @@ Você pode habilitar o log binário central definindo o atributo centralLogFileM
 |Atributo|Descrição|Padrão|
 |--- |--- |--- |
 |habilitado|Especifica se o log binário central está habilitado.|False|
-|diretório|Especifica o diretório onde as entradas de log são gravadas.|%SystemDrive%\inetpub\logs\LogFiles|
+|Active|Especifica o diretório onde as entradas de log são gravadas.|%SystemDrive%\inetpub\logs\LogFiles|
 
 
 ## <a name="application-and-site-tunings"></a>Ajustes do aplicativo e do site
@@ -266,7 +266,7 @@ As configurações a seguir são usadas para configurar o cache de modelo ASP cl
 
 ## <a name="aspnet-concurrency-setting"></a>Configuração de simultaneidade ASP.NET
 
-### <a name="aspnet-35"></a>ASP.NET 3.5
+### <a name="aspnet-35"></a>ASP.NET 3,5
 Por padrão, ASP.NET limita a simultaneidade de solicitação para reduzir o consumo de memória de estado estacionário no servidor. Aplicativos de simultaneidade alta podem precisar ajustar algumas configurações para melhorar o desempenho geral. Você pode alterar essa configuração no arquivo Aspnet. config:
 
 ``` syntax

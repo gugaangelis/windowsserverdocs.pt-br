@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e5832843dce05832a231ed3a4d7e20cf90f1d183
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: a98c560306debc0e10c2c0ac44b41e12141b6e9f
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822589"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001881"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -123,7 +123,7 @@ Para resolver esse problema, instale [Windows Update 2 de abril de 2019 — KB44
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Hashes DFSR incompatíveis ao usar o serviço de migração de armazenamento para propagar dados
 
-Ao usar o serviço de migração de armazenamento para transferir arquivos para um novo destino e, em seguida, configurar o Replicação do DFS (DFSR) para replicar esses dados com um servidor DFSR existente por meio de replicação pré-propagada ou clonagem de banco de dado DFSR, todos os arquivos experiemce um hash incompatibilidade e rereplicado. Os fluxos de dados, os fluxos de segurança, os tamanhos e os atributos parecem ser perfeitamente correspondidos depois de usar o SMS para transferi-los. Examinar os arquivos com ICACLS ou o log de depuração de clonagem de banco de dados DFSR revela:
+Ao usar o serviço de migração de armazenamento para transferir arquivos para um novo destino, em seguida, configurar o Replicação do DFS (DFSR) para replicar esses dados com um servidor DFSR existente por meio de replicação pré-propagada ou clonagem de banco de dados DFSR, todos os arquivos terão um hash incompatibilidade e rereplicado. Os fluxos de dados, os fluxos de segurança, os tamanhos e os atributos parecem ser perfeitamente correspondidos depois de usar o SMS para transferi-los. Examinar os arquivos com ICACLS ou o log de depuração de clonagem de banco de dados DFSR revela:
 
 Arquivo de origem:
 

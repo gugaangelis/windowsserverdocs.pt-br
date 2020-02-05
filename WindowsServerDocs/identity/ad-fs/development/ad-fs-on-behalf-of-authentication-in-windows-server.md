@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b3a30c081731de97e1bdf9abe711a5ef6460be0f
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 70281f581974493d3182fb6fdd8f35cb37bed4bf
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918304"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001901"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Crie um aplicativo de várias camadas usando OBO (em nome de) usando o OAuth com o AD FS 2016 ou posterior
 
@@ -222,14 +222,13 @@ Para concluir o fluxo em nome de, você precisa criar um recurso de back-end que
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
 
-* Fornecer o nome do controlador apropriado
+* Dê ao controlador um nome apropriado.
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
 
-* Adicione o seguinte código ao controlador
+* Adicione o seguinte código ao controlador:
 
-
-~~~
+```cs
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -238,15 +237,16 @@ Para concluir o fluxo em nome de, você precisa criar um recurso de back-end que
     using System.Web.Http;
     namespace WebAPIOBO.Controllers
     {
+        [Authorize]
         public class WebAPIOBOController : ApiController
         {
             public IHttpActionResult Get()
             {
-                return Ok("WebAPI via OBO");
+                return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
             }
         }
     }
-~~~
+```
 
 Esse código simplesmente retornará a cadeia de caracteres quando alguém colocar uma solicitação get para o WebAPI WebAPIOBO
 

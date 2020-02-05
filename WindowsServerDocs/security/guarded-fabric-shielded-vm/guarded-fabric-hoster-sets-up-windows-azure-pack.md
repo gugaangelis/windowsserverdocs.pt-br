@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: d388da2b7416543c307bd931636902b4a7543e1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7336637bd3186f885db6d94eeffd0d2311edf3ac
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403655"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001835"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>VMs blindadas – provedor de serviços de hospedagem configura o Pacote do Microsoft Azure
 
@@ -48,7 +48,7 @@ Instale e configure o Pacote do Microsoft Azure (WAP) no computador em que você
 
 1.  Revisão [dos requisitos do sistema WAP](https://technet.microsoft.com/library/dn296442.aspx) e instalação do [software de pré-requisito](https://technet.microsoft.com/library/dn469335.aspx).
 
-2.  Baixe e instale o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx). Se o computador não estiver conectado à Internet, siga as [instruções de instalação offline](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
+2.  Baixe e instale o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx). Se o computador não estiver conectado à Internet, siga as [instruções de instalação offline](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
 3.  Abra o Web Platform Installer e localize **pacote do Microsoft Azure: portal e API Express** na guia **produtos** . clique em **Adicionar**e **Instale** na parte inferior da janela.
 
@@ -113,7 +113,7 @@ Para permitir que os locatários criem VMs em WAP, você deve primeiro criar um 
 
     Neste ponto, Pacote do Microsoft Azure está configurado e os locatários poderão assinar o plano que você acabou de criar e implantar VMs blindadas. Para obter etapas adicionais que os locatários precisam concluir, consulte [VMs blindadas para locatários-implantando uma VM blindada usando pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md).
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

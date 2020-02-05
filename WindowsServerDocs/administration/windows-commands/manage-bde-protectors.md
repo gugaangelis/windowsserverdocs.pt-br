@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 7b25f6fe3c8a067d843fc12e9c1d1955a9606c09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e170e199c7286d883f1248610c6f195add5b01
+ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373945"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013031"
 ---
 # <a name="manage-bde-protectors"></a>Manage-bde: protetores
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Gerencia os métodos de proteção usados para a chave de criptografia do BitLocker. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
 ## <a name="syntax"></a>Sintaxe
@@ -48,7 +48,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 
 ### <a name="BKMK_addprotectors"></a>-Adicionar sintaxe e parâmetros
 ```
-manage-bde  protectors  add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
+manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
 [-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin] 
 [-tpmandstartupkey <pathToExternalKeydirectory>] [-tpmandpinandstartupkey <pathToExternalKeydirectory>] [-password][-adaccountorgroup <securityidentifier> [-computername <Name>] 
 [{-?|/?}] [{-help|-h}]
@@ -72,13 +72,13 @@ manage-bde  protectors  add [<Drive>] [-forceupgrade] [-recoverypassword <Numeri
 |      -tpmandstartupkey       |                                                                                                                    Adiciona um protetor de chave de inicialização e TPM para a unidade do sistema operacional. Você também pode usar **-tsk** como uma versão abreviada deste comando.                                                                                                                    |
 |   -tpmandpinandstartupkey    |                                                                                                                Adiciona um protetor de TPM, PIN e chave de inicialização para a unidade do sistema operacional. Você também pode usar **-tpsk** como uma versão abreviada deste comando.                                                                                                                 |
 |          -senha           |                                                                                                                              Adiciona um protetor de chave de senha para a unidade de dados. Você também pode usar **-PW** como uma versão abreviada desse comando.                                                                                                                              |
-|      -adaccountorgroup       | Adiciona um protetor de identidade baseado em SID (identificador de segurança) para o volume.  Você também pode usar **-Sid** como uma versão abreviada deste comando. **FUNDAMENTAL** Por padrão, você não pode adicionar um protetor ADAccountOrGroup remotamente usando o WMI ou o Manage-bde.  Se sua implantação exigir a capacidade de adicionar esse protetor remotamente, você deverá habilitar a delegação restrita. |
+|      -adaccountorgroup       | Adiciona um protetor de identidade baseado em SID (identificador de segurança) para o volume.  Você também pode usar **-Sid** como uma versão abreviada deste comando. **Importante:** Por padrão, você não pode adicionar um protetor ADAccountOrGroup remotamente usando o WMI ou o Manage-bde.  Se sua implantação exigir a capacidade de adicionar esse protetor remotamente, você deverá habilitar a delegação restrita. |
 |        -ComputerName         |                                                                                                       Especifica que o Manage-bde está sendo usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando.                                                                                                       |
 |            <Name>            |                                                                                                         Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.                                                                                                         |
 
 ### <a name="BKMK_deleteprotectors"></a>-excluir sintaxe e parâmetros
 ```
-manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
+manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
 [-id <KeyProtectorID>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
@@ -93,8 +93,8 @@ manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|cert
 |    tpmandstartupkey    |                                Especifica que qualquer TPM e protetores de chave baseados em chave de inicialização associados à unidade devem ser excluídos.                                |
 |       tpmandpin        |                                    Especifica que qualquer protetor de chave com base em TPM e PIN associado à unidade deve ser excluído.                                    |
 | tpmandpinandstartupkey |                             Especifica que qualquer TPM, PIN e chave de inicialização com base em protetores de chave associados à unidade devem ser excluídos.                             |
-|        password        |                                        Especifica que qualquer protetor de chave de senha associado à unidade deve ser excluído.                                         |
-|        identity        |                                        Especifica que qualquer protetor de chave de identidade associado à unidade deve ser excluído.                                         |
+|        senha        |                                        Especifica que qualquer protetor de chave de senha associado à unidade deve ser excluído.                                         |
+|        de autenticação        |                                        Especifica que qualquer protetor de chave de identidade associado à unidade deve ser excluído.                                         |
 |          -ID           |                Identifica o protetor de chave a ser excluído usando o identificador de chave. Esse parâmetro é uma opção alternativa para o parâmetro **-Type** .                 |
 |    <KeyProtectorID>    |        Identifica um protetor de chave individual na unidade a ser excluída. As IDs de protetor de chave podem ser exibidas usando o comando **Manage-bde-protectors-get** .         |
 |     -ComputerName      | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
@@ -104,7 +104,7 @@ manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|cert
 
 ### <a name="BKMK_disableprot"></a>-desabilitar sintaxe e parâmetros
 ```
-manage-bde  protectors  disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
 |   Parâmetro   |                                                                                                                                                                                                                   Descrição                                                                                                                                                                                                                    |
@@ -119,24 +119,24 @@ manage-bde  protectors  disable <Drive> [-RebootCount <integer 0 - 15>] [-comput
 ## <a name="BKMK_Examples"></a>Disso
 O exemplo a seguir ilustra o uso do comando **-protectors** para adicionar um protetor de chave de certificado identificado por um arquivo de certificado para a unidade E.
 ```
-manage-bde  protectors  add E: -certificate  cf "c:\File Folder\Filename.cer"
+manage-bde  -protectors  -add E: -certificate  -cf "c:\File Folder\Filename.cer"
 ```
 O exemplo a seguir ilustra o uso do comando **-protectors** para adicionar um protetor de chave **adaccountorgroup** identificado pelo domínio e pelo nome de usuário para a unidade E.
 ```
-manage-bde  protectors  add E: -sid DOMAIN\user
+manage-bde  -protectors  -add E: -sid DOMAIN\user
 ```
 O exemplo a seguir ilustra o uso do comando **protectors** para desabilitar a proteção até que o computador tenha sido reinicializado 3 vezes.
 ```
-manage-bde  protectors  disable C: -rc 3
+manage-bde  -protectors  -disable C: -rc 3
 ```
 O exemplo a seguir ilustra o uso do comando **-protectors** para excluir todos os protetores de chave com base em TPM e chave de inicialização na unidade C.
 ```
-manage-bde  protectors  delete C: -type tpmandstartupkey
+manage-bde  -protectors -delete C: -type tpmandstartupkey
 ```
 O exemplo a seguir ilustra o uso do comando **-protectors** para fazer backup de todas as informações de recuperação da unidade C para AD DS.
 ```
-manage-bde  protectors  adbackup C:
+manage-bde  -protectors  -adbackup C:
 ```
-## <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>referências adicionais
 -   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [manage-bde](manage-bde.md)

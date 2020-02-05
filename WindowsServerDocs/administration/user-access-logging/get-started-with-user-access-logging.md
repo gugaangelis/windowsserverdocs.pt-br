@@ -13,16 +13,16 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15906e8cc1e5e85a471f1b8725435eb60852f6f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382870"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001781"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introdução ao log de acesso do usuário
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 O registro de acesso do usuário (UAL) é um recurso no Windows Server que agrega dados de uso do cliente por função e produtos em um servidor local. Ele ajuda os administradores do Windows Server a quantificar as solicitações de computadores cliente para funções e serviços em um servidor local.  
   
@@ -54,12 +54,12 @@ As seguintes funções de servidor e serviços podem ter suporte no UAL:
   
 -   BranchCache  
   
--   Sistema de nome de domínio (DNS)  
+-   Domain Name System (DNS)  
   
     > [!NOTE]  
     > O UAL coleta dados do DNS a cada 24 horas e existe um cmdlet do UAL separado para este cenário.  
   
--   Protocolo DHCP  
+-   Dynamic Host Configuration Protocol (DHCP)  
   
 -   Servidor de Fax  
   
@@ -75,13 +75,13 @@ As seguintes funções de servidor e serviços podem ter suporte no UAL:
 -   Servidor Web (IIS)  
   
     > [!WARNING]  
-    > Para usar o UAL com o IIS, você deve usar o iisual.exe. Para obter mais informações, consulte [Analisando dados de uso de cliente com o registro de acesso de usuário do IIS](http://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging).  
+    > Para usar o UAL com o IIS, você deve usar o iisual.exe. Para obter mais informações, consulte [Analisando dados de uso de cliente com o registro de acesso de usuário do IIS](https://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging).  
   
 -   Serviços de fila de mensagens da Microsoft (MSMQ)  
   
 -   Network Policy and Access Services  
   
--   Serviços de impressão e documentos  
+-   Print and Document Services  
   
 -   Serviço de Roteamento e Acesso Remoto (RRAS)  
   
@@ -115,7 +115,7 @@ Os seguintes dados relacionados ao usuário são registrados no UAL.
 |**RoleName**|O nome da função, do componente ou do subproduto que está fornecendo os dados do UAL. Também é associado a um ProductName e a um RoleGUID.|  
 |**TenantIdentifier**|Um GUID exclusivo de um cliente locatário de uma função instalada ou de um produto que acompanha os dados do UAL, se aplicável.|  
   
-Os seguintes dados relacionados ao dispositivo são registrados com UAL.  
+Os seguintes dados relacionados ao dispositivo são registrados no UAL.  
   
 |Dados|Descrição|  
 |--------|---------------|  
@@ -131,7 +131,7 @@ Os seguintes dados relacionados ao dispositivo são registrados com UAL.
 ## <a name="BKMK_SOFT"></a>Requisitos de software  
 O UAL pode ser usado em qualquer computador que esteja executando versões do Windows Server após o Windows Server 2012.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 [Usuário acessar o registro em log](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) no MSDN.  
 [Gerenciar o registro em log de acesso do usuário](Manage-User-Access-Logging.md)  
   

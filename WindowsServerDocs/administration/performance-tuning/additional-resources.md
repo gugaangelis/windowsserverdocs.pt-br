@@ -7,19 +7,19 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ee14a2bd9290dbaa5653640a80528d163635142d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947210"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001861"
 ---
 # <a name="additional-performance-tuning-resources"></a>Recursos adicionais de ajuste de desempenho
 
 Use os links neste tópico para saber mais sobre os conceitos que foram discutidos neste guia de ajuste.
 
 ## <a name="microsoft-windows-server-websites"></a>Sites do Microsoft Windows Server
--   [Catálogo do Windows Server](http://www.windowsservercatalog.com/)
+-   [Catálogo do Windows Server](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 
