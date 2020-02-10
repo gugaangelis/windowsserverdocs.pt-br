@@ -12,12 +12,12 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c2d7eab2f149505758ab21f08cd6b8bdb74b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96a5e5f23ad3cdfc829fd141c3c90f6c200f06c9
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360296"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001801"
 ---
 # <a name="iis-on-nano-server"></a>IIS do Nano Server
 
@@ -65,7 +65,7 @@ Nesta versão do Nano Server, os seguintes recursos do IIS estão disponíveis:
 |**Ferramentas de gerenciamento**||  
 |Módulo de administração de IIS para Windows PowerShell|x|  
 
-Uma série de artigos sobre outras configurações do IIS (por exemplo, como usar ASP.NET, PHP e Java), bem como outros conteúdos relacionados, estão publicados em [http://iis.net/learn](http://iis.net/learn).  
+Uma série de artigos sobre outras configurações do IIS (por exemplo, como usar ASP.NET, PHP e Java), bem como outros conteúdos relacionados, estão publicados em [http://iis.net/learn](https://iis.net/learn).  
 
 ## <a name="installing-iis-on-nano-server"></a>Instalar o IIS no Nano Server  
 Você pode instalar essa função de servidor offline (com o Nano Server desativado) ou online (com o Nano Server em execução); a instalação offline é a opção recomendada.  
@@ -242,7 +242,7 @@ Use o utilitário Certoc.exe para importar certificados, como neste exemplo, que
     $sm.CommitChanges()  
     ```  
 
-    Também é possível usar a SNI (Indicação de Nome de Servidor) com um nome de host específico com esta sintaxe: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    Também é possível usar a SNI (Indicação de Nome de Servidor) com um nome de host específico com esta sintaxe: `$sm.Sites["Default Web Site"].Bindings.Add("*:443: www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>Apêndice 1: Lista de sub-recursos do IIS
 
