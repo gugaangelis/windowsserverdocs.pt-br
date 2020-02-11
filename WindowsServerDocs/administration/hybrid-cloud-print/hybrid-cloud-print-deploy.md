@@ -12,12 +12,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: c756aaeb293f9e6822e979e0f305f0c4f98adf72
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 77462ab74ee63677362b779615376e831c71de00
+ms.sourcegitcommit: eca5bb75d1db20ac07232cea759b6b542626c02f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352090"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114525"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Implantar impressão em nuvem híbrida do Windows Server
 
@@ -178,7 +178,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 1. Verifique se o Servidor de Impressão tem todas as Windows Update disponíveis instaladas. Observação: o servidor 2019 deve ser corrigido para a compilação 17763,165 ou posterior.
     - Instale as seguintes funções de servidor:
         - Servidor de Impressão função
-        - IIS (Serviços de Informações da Internet)
+        - Serviço de informações da Internet (IIS)
     - Consulte [instalar funções, serviços de função e recursos usando o assistente para adicionar funções e recursos](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw) para obter detalhes sobre como instalar funções de servidor.
 
     ![Servidor de Impressão funções](../media/hybrid-cloud-print/PrintServer-Roles.png)
@@ -199,7 +199,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 
         `"C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0"`
 
-    - Execute
+    - Executar
 
         `.\CloudPrintDeploy.ps1 -AzureTenant <Azure Active Directory domain name> -AzureTenantGuid <Azure Active Directory ID>`
 
@@ -215,9 +215,9 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 
     ![Implantação de impressão em nuvem Servidor de Impressão](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - Verifique o arquivo de log para ver se há algum erro: `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0>notepad CloudPrintDeploy.log`
+    - Verifique o arquivo de log para ver se há algum erro: `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
-4. Abra RegitEdit em um prompt de comandos com privilégios elevados. Vá para o computador \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService.
+4. Execute **RegitEdit** em um prompt de comandos com privilégios elevados. Vá para o computador \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService.
     - Certifique-se de que AzureAudience está definido como o URI de ID de aplicativo do aplicativo de impressão de nuvem empresarial.
     - Verifique se AzureTenant está definido como o nome de domínio do Azure AD.
 
@@ -238,7 +238,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
     - Se você registrar seu domínio com um provedor de terceiros, será necessário configurar os pontos de extremidade do IIS com o certificado SSL. Consulte este [guia](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/) para obter detalhes.
 
 8. Instale o pacote SQLite.
-   - Abra um prompt elevado do PowerShell.
+   - Abra um prompt de comando do PowerShell com privilégios elevados.
    - Execute o comando a seguir para baixar os pacotes NuGet System. Data. SQLite.
 
         `Register-PackageSource -Name nuget.org -ProviderName NuGet -Location https://www.nuget.org/api/v2/ -Trusted -Force`
@@ -332,7 +332,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
     - Em portal do Azure, acesse **Azure Active Directory** > **aplicativos empresariais** > **todos os aplicativos**.
     - Selecione aplicativo MopriaDiscoveryService.
     - Vá para **proxy de aplicativo**. Altere o método de pré-autenticação para **Azure Active Directory**.
-    - Acesse **Logon único**. Selecione "autenticação integrada do Windows" como o método de logon único.
+    - Vá para **logon único**. Selecione "autenticação integrada do Windows" como o método de logon único.
     - Defina o **SPN do aplicativo interno** para o SPN do computador servidor de impressão.
     - Defina a **identidade de logon delegada** como "nome principal do usuário".
     - Repita para o aplicativo EntperiseCloudPrint.
@@ -384,7 +384,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 4. Salve as alterações e feche a janela Propriedades da impressora.
 5. Prepare uma atualização do criador de outono do Windows 10 ou uma máquina posterior. Ingresse o computador no Azure AD e faça logon como um usuário que está sincronizado com o Active Directory local e tenha recebido a permissão adequada para o arquivo MopriaDeviceDb. DB.
 6. No computador com Windows 10, abra um prompt de comando elevado do Windows PowerShell.
-    - Execute os seguintes comandos.
+    - Execute os comandos a seguir.
         - `find-module -Name "PublishCloudPrinter"` confirmar se o computador pode alcançar o Galeria do PowerShell (PSGallery)
         - `install-module -Name "PublishCloudPrinter"`
 
@@ -443,19 +443,21 @@ Em um dispositivo ingressado no Azure AD que tem as políticas de MDM configurad
 
 > Observação: se estiver usando a impressora "EcpPrintTest", você poderá encontrar o arquivo de saída no computador Servidor de Impressão no local "C:\\ECPTestOutput\\EcpTestPrint. XPS".
 
-## <a name="troubleshooting"></a>Painel de controle da
+## <a name="troubleshooting"></a>Solução de problemas
 
-Há vários logs que podem ajudar a solucionar falhas.
-- No cliente do Windows 10.
-    - Use o Hub de comentários para adicionar um novo comentário.
-        - Clique em **Iniciar** e digite "Hub de comentários".
-        - Em categoria, selecione **problema**, **dispositivos e drivers**, **Imprimir**.
-        - Na seção para adicionar mais detalhes, clique no botão **Iniciar gravação** .
-        - Repita o trabalho de impressão que falhou.
-        - Volte para o Hub de comentários e clique no botão **parar gravação** .
-        - Clique em **Enviar** para enviar seus comentários.
-    - Use Visualizador de Eventos para ver o log das operações do Azure AD. Clique em **Iniciar** e digite "Visualizador de eventos". Navegue até logs de aplicativos e serviços > Microsoft > Windows > a operação > AAD.
-- No servidor do conector.
-    - Use Visualizador de Eventos para ver o log do proxy de aplicativo. Clique em **Iniciar** e digite "Visualizador de eventos". Navegue até aplicativos e serviços logs > Microsoft > AadApplicationProxy > Connector > admin.
-- Em Servidor de Impressão.
-    - Os logs do aplicativo do serviço de descoberta do Mopria e do aplicativo de impressão em nuvem empresarial podem ser encontrados em C:\inetpub\logs\LogFiles\W3SVC1.
+Veja abaixo problemas comuns durante a implantação HCP
+
+|Error |Etapas recomendadas |
+|------|------|
+|Falha no script do PowerShell do CloudPrintDeploy | <ul><li>Verifique se o Windows Server tem a atualização mais recente.</li><li>Se Windows Server Update Services (WSUS) for usado, consulte [como disponibilizar recursos sob demanda e pacotes de idiomas quando você estiver usando o WSUS/SCCM](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs).</li></ul> |
+|Falha na instalação do SQLite com a mensagem: loop de dependência detectado para o pacote ' System. Data. SQLite ' | Install-Package System. Data. sqlite. Core-ProviderName NuGet-SkipDependencies<br>Install-Package System. Data. sqlite. EF6-ProviderName NuGet-SkipDependencies<br>Install-Package System. Data. sqlite. Linq-ProviderName NuGet-SkipDependencies<br><br>Depois que os pacotes tiverem sido baixados com êxito, verifique se eles são da mesma versão. Caso contrário, adicione o parâmetro-requiredversion aos comandos acima e defina-os para que sejam da mesma versão. |
+|Falha ao publicar impressora | <ul><li>Para pré-autenticação de passagem, verifique se o usuário que está publicando a impressora recebeu a permissão adequada para o banco de dados de publicação.</li><li>Para a pré-autenticação do Azure AD, verifique se a autenticação do Windows está habilitada no IIS. Consulte a etapa 5,3. Além disso, tente a pré-autenticação de passagem primeiro. Se a pré-autenticação de passagem funcionar, o problema provavelmente está relacionado ao proxy de aplicativo. Consulte [solucionar problemas de proxy de aplicativo e mensagens de erro](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot). Observe que mudar para passagem redefine a configuração de logon único; Reveja a etapa 5 para configurar a pré-autenticação do Azure AD novamente.</li></ul> |
+|Os trabalhos de impressão permanecem no estado "enviado para a impressora" | <ul><li>Verifique se o TLS 1,2 está habilitado no servidor do conector. Consulte o artigo vinculado na etapa 2,1.</li><li>Verifique se o HTTP2 está desabilitado no servidor do conector. Consulte o artigo vinculado na etapa 2,1.</li></ul> |
+
+Abaixo estão locais de logs que podem ajudar a solucionar problemas
+
+|Componente |Local do log |
+|------|------|
+|Cliente do Windows 10 | <ul><li>Use Visualizador de Eventos para ver o log das operações do Azure AD. Clique em **Iniciar** e digite "Visualizador de eventos". Navegue até logs de aplicativos e serviços > Microsoft > Windows > a operação > AAD.</li><li>Use o Hub de comentários para coletar logs. Consulte [enviar comentários para a Microsoft com o aplicativo de Hub de comentários](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
+|Servidor do conector | Use Visualizador de Eventos para ver o log do proxy de aplicativo. Clique em **Iniciar** e digite "Visualizador de eventos". Navegue até aplicativos e serviços logs > Microsoft > AadApplicationProxy > Connector > admin. |
+|Servidor de Impressão | Os logs do aplicativo do serviço de descoberta do Mopria e do aplicativo de impressão em nuvem empresarial podem ser encontrados em C:\inetpub\logs\LogFiles\W3SVC1. |
