@@ -4,16 +4,16 @@ description: Problemas conhecidos e suporte de solução de problemas para o ser
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 10/09/2019
+ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a98c560306debc0e10c2c0ac44b41e12141b6e9f
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 77a23e5787283aa93d6f2f303cf45b461ccf52dd
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001881"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125107"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -68,7 +68,7 @@ Ao usar o centro de administração do Windows ou o PowerShell para baixar o log
 
 Esse problema é causado por um número muito grande de arquivos transferidos que não podem ser filtrados no tempo limite de um minuto padrão permitido pelo serviço de migração de armazenamento. 
 
-Para contornar esse problema:
+Para contornar este problema:
 
 1. No computador do Orchestrator, edite o arquivo *%systemroot%\SMS\Microsoft.StorageMigration.Service.exe.config* usando o notepad. exe para alterar o "SendTimeout" de seu padrão de 1 minuto para 10 minutos
 
@@ -349,7 +349,66 @@ Se você já executou a transferência uma ou mais vezes:
  4. Para todos os usuários ou grupos desabilitados com nomes que agora contêm um sufixo adicionado pelo serviço de migração de armazenamento, você pode excluir essas contas. Você pode confirmar que as contas de usuário foram adicionadas posteriormente, pois elas só conterão o grupo de usuários de domínio e terão uma data/hora de criação que corresponda à hora de início da transferência do serviço de migração de armazenamento.
  
  Se você quiser usar o serviço de migração de armazenamento com controladores de domínio para fins de transferência, certifique-se de sempre selecionar "não transferir usuários e grupos" na página Configurações de transferência no centro de administração do Windows.
+ 
+ ## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>Erro 53, "falha ao inventariar todos os dispositivos especificados" ao executar o inventário, 
 
-## <a name="see-also"></a>Veja também
+Ao tentar executar o inventário, você recebe:
+
+    Failed to inventory all specified devices 
+    
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          1/16/2020 8:31:17 AM
+    Event ID:      2516
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      ned.corp.contoso.com
+    Description:
+    Couldn't inventory files on the specified endpoint.
+    Job: ned1
+    Computer: ned.corp.contoso.com
+    Endpoint: hithere
+    State: Failed
+    File Count: 0
+    File Size in KB: 0
+    Error: 53
+    Error Message: Endpoint scan failed
+    Guidance: Check the detailed error and make sure the inventory requirements are met. This could be because of missing permissions on the source computer.
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/16/2020 8:31:17 AM
+    Event ID:      10004
+    Task Category: None
+    Level:         Critical
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      ned.corp.contoso.com
+    Description:
+    01/16/2020-08:31:17.031 [Crit] Consumer Task failed with error:The network path was not found.
+    . StackTrace=   at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
+       at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
+       at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetEnvironmentPathFolders(String ServerName, Boolean IsServerLocal)
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.ScanUtils.<ScanSMBEndpoint>d__3.MoveNext()
+       at Microsoft.StorageMigration.Proxy.EndpointScanOperation.Run()
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(EndpointScanRequest scanRequest, Guid operationId)
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(Object request)
+       at Microsoft.StorageMigration.Proxy.Common.ProducerConsumerManager`3.Consume(CancellationToken token)    
+       
+    01/16/2020-08:31:10.015 [Erro] Endpoint Scan failed. Error: (53) The network path was not found.
+    Stack trace:
+       at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
+       at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
+
+Neste estágio, o orquestrador do serviço de migração de armazenamento está tentando ler o registro remoto para determinar a configuração do computador de origem, mas está sendo rejeitado pelo servidor de origem informando que o caminho do registro não existe. Isso pode ser causado por:
+
+ - O serviço de registro remoto não está em execução no computador de origem.
+ - o firewall não permite conexões de registro remoto para o servidor de origem do Orchestrator.
+ - A conta de migração de origem não tem permissões de registro remoto para se conectar ao computador de origem.
+ - A conta de migração de origem não tem permissões de leitura no registro do computador de origem, em "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" ou em "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ LanManServer
+
+## <a name="see-also"></a>Consulte também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)

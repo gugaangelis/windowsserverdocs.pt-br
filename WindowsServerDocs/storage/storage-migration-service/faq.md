@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
-ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
+ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124894"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125137"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento
 
@@ -27,6 +27,10 @@ O serviço de migração de armazenamento não transferirá arquivos ou pastas q
 - $Recycle. bin, recycleer, reciclado, informações de volume do sistema, $UpgDrv $, $SysReset, $Windows. ~ BT, $Windows. ~ LS, Windows. old, inicialização, recuperação, documentos e configurações
 - pagefile. sys, hiberfil. sys, arquivo de permuta. sys, winpepge. sys, config. sys, Bootsect. bak, bootmgr, bootnxt
 - Quaisquer arquivos ou pastas no servidor de origem que estejam em conflito com as pastas excluídas no destino. <br>Por exemplo, se há uma pasta N:\Windows na origem e ela é mapeada para C:\ volume no destino, ele não será transferido, independentemente do que ele contém, pois ele interferiria com a pasta C:\Windows System no destino.
+
+## <a name="are-locked-files-migrated"></a>Os arquivos bloqueados são migrados?
+
+O serviço de migração de armazenamento não migra arquivos que os aplicativos bloqueiam exclusivamente. O serviço automaticamente tenta novamente três vezes com um atraso de 60 segundos entre as tentativas, e você pode controlar o número de tentativas e o atraso. Você também pode executar novamente as transferências para copiar apenas os arquivos que foram ignorados anteriormente devido a violações de compartilhamento.
 
 ## <a name="are-domain-migrations-supported"></a>Há suporte para migrações de domínio?
 
@@ -59,17 +63,17 @@ O serviço de migração de armazenamento migra todos os sinalizadores, configur
     - Limite de usuários simultâneos
     - Continuamente disponível
     - Descrição           
-    - Criptografar Dados
+    - Criptografar dados
     - Comunicação remota de identidade
     - Infraestrutura
-    - Nome
+    - {1&gt;Nome&lt;1}
     - Caminho
     - Com escopo
     - Nome do escopo
     - Descritor de Segurança
-    - Cópia de Sombra
+    - Cópia de sombra
     - Especial
-    - Armazenamento
+    - Temporary
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>Posso consolidar vários servidores em um servidor?
 
@@ -143,13 +147,21 @@ O serviço de migração de armazenamento usa um banco de dados ESE (mecanismo d
 
 Não, o serviço de migração de armazenamento não migra os aplicativos instalados localmente. Depois de concluir a migração, reinstale todos os aplicativos no computador de destino que estavam em execução no computador de origem. Não é necessário reconfigurar nenhum usuário ou seus aplicativos; o serviço de migração de armazenamento foi projetado para tornar a mudança de servidor invisível para os clientes. 
 
+## <a name="what-happens-with-existing-files-on-the-destination-server"></a>O que acontece com os arquivos existentes no servidor de destino?
+
+Ao executar uma transferência, o serviço de migração de armazenamento procura espelhar dados do servidor de origem. O servidor de destino não deve conter dados de produção ou usuários conectados, pois esses dados podem ser substituídos. Por padrão, a primeira transferência faz uma cópia de backup de todos os dados no servidor de destino como uma proteção. Em todas as transferências subsequentes, por padrão, o serviço de migração de armazenamento espelhará os dados no destino; Isso significa não apenas adicionar novos arquivos, mas também substituir arbitrariamente todos os arquivos existentes e excluir os arquivos que não estão presentes na origem. Esse comportamento é intencional e fornece fidelidade perfeita com o computador de origem. 
+
+## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>O que significam os números de erro no CSV de transferência?
+
+A maioria dos erros encontrados no arquivo CSV de transferência são os códigos de erro do sistema Windows. Você pode descobrir o que cada erro significa examinando a [documentação de códigos de erro do Win32](https://docs.microsoft.com/windows/win32/debug/system-error-codes). 
+
 ## <a name="give-feedback"></a>Quais são minhas opções para fornecer comentários, arquivos de erros ou obter suporte?
 
 Para fornecer comentários sobre o serviço de migração de armazenamento:
 
 - Use a ferramenta de Hub de comentários incluída no Windows 10, clicando em "sugerir um recurso" e especificando a categoria do "Windows Server" e a subcategoria de "migração de armazenamento"
 - Usar o site [UserVoice do Windows Server](https://windowsserver.uservoice.com)
-- Email smsfeed@microsoft.com
+- smsfeed@microsoft.com de email
 
 Para arquivar bugs:
 
@@ -162,6 +174,6 @@ Para obter suporte:
  - Poste no [Fórum do TechNet do Windows Server 2019](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc) 
  - Abrir um caso de suporte por meio de [suporte da Microsoft](https://support.microsoft.com)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)

@@ -14,12 +14,12 @@ ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 593fc4abbdce3ed53fa8d7ef73d529558b100bcc
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001791"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125127"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionando problemas de componentes do Windows Server
 
@@ -46,17 +46,17 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 
 ## <a name="troubleshoot-startup-and-restart"></a>Solucionar problemas de inicialização e reinicialização
 
-- [Solução de problemas avançada para inicialização do Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup.md)
-- [Como determinar o tamanho do arquivo de paginação apropriado para versões de 64 bits do Windows](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size.md)
-- [Gerar um kernel ou um despejo de memória completo](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump.md)
-- [Introdução ao arquivo de paginação](https://docs.microsoft.com/windows/client-management/introduction-page-file.md)
-- [Configurar opções de falha e recuperação do sistema no Windows](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options.md)
-- [Solução de problemas avançada para problemas de inicialização do Windows](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems.md)
-- [Solução de problemas avançada para congelamento de computadores baseados no Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze.md)
-- [Solução de problemas avançada para parar erro ou erro de tela azul](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors.md)
-- [Solução de problemas avançada para parar o erro 7B ou Inaccessible_Boot_Device](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device.md)
-- [Solução de problemas avançada para a ID de evento 41 "o sistema foi reinicializado sem desligar o primeiro"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart.md)
-- [O erro de parada ocorre quando você atualiza o driver de adaptador de rede Broadcom in-box](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update.md)
+- [Solução de problemas avançada para inicialização do Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [Como determinar o tamanho do arquivo de paginação apropriado para versões de 64 bits do Windows](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [Gerar um kernel ou um despejo de memória completo](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
+- [Introdução ao arquivo de paginação](https://docs.microsoft.com/windows/client-management/introduction-page-file)
+- [Configurar opções de falha e recuperação do sistema no Windows](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
+- [Solução de problemas avançada para problemas de inicialização do Windows](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Solução de problemas avançada para congelamento de computadores baseados no Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [Solução de problemas avançada para parar erro ou erro de tela azul](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [Solução de problemas avançada para parar o erro 7B ou Inaccessible_Boot_Device](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [Solução de problemas avançada para a ID de evento 41 "o sistema foi reinicializado sem desligar o primeiro"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
+- [O erro de parada ocorre quando você atualiza o driver de adaptador de rede Broadcom in-box](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
 ## <a name="troubleshoot-ad-forest-recovery"></a>Solucionar problemas de recuperação de floresta do AD
 
@@ -103,7 +103,7 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 
 ## <a name="troubleshoot-disk-management"></a>Solucionar problemas do gerenciamento de disco
 
-- [Solução de problemas do Gerenciamento de disco](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
+- [Solução de problemas do gerenciamento de disco](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
 
 ## <a name="troubleshoot-dns"></a>Solucionar problemas de DNS
 
