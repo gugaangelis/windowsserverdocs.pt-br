@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c3a7e7c420ef63adc906e6558ed7aff6819e983c
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
+ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013051"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145489"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>Configurar o Azure MFA como provedor de autenticação com AD FS
 
@@ -135,7 +135,7 @@ O Windows Server sem o service pack mais recente não oferece suporte ao parâme
 1. Abra o **Editor do registro** no servidor de AD FS.
 1. Navegue até `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ADFS`. Crie os seguintes valores de chave do registro:
 
-    | Chave do Registro       | Valor |
+    | Chave do Registro       | {1&gt;Valor&lt;1} |
     |--------------------|-----------------------------------|
     | SasUrl             | https://adnotifications.windowsazure.us/StrongAuthenticationService.svc/Connector |
     | StsUrl             | https://login.microsoftonline.us |
@@ -160,11 +160,14 @@ Em cada servidor de AD FS, no computador local meu repositório, haverá um cert
 
 Se o período de validade de seus certificados estiver se aproximando do seu fim, inicie o processo de renovação gerando um novo certificado de MFA do Azure em cada servidor de AD FS. Em uma janela de comando do PowerShell, gere um novo certificado em cada servidor de AD FS usando o seguinte cmdlet:
 
+> [!CAUTION]
+> Se o certificado já tiver expirado, não adicione o parâmetro `-Renew $true` ao comando a seguir. Nesse cenário, o certificado expirado existente é substituído por um novo em vez de ser deixado no local e um certificado adicional criado.
+
 ```
 PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such as contoso.onmicrosoft.com> -Renew $true
 ```
 
-Como resultado desse cmdlet, um novo certificado válido de 2 dias no futuro para 2 dias + 2 anos será gerado.  As operações AD FS e MFA do Azure não serão afetadas por este cmdlet ou o novo certificado. (Observação: o atraso de 2 dias é intencional e fornece tempo para executar as etapas abaixo para configurar o novo certificado no locatário antes que AD FS comece a usá-lo para o Azure MFA.)
+Se o certificado ainda não tiver expirado, será gerado um novo certificado válido de 2 dias no futuro para 2 dias + 2 anos. As operações AD FS e MFA do Azure não são afetadas por este cmdlet ou o novo certificado. (Observação: o atraso de 2 dias é intencional e fornece tempo para executar as etapas abaixo para configurar o novo certificado no locatário antes que AD FS comece a usá-lo para o Azure MFA.)
 
 ### <a name="configure-each-new-ad-fs-azure-mfa-certificate-in-the-azure-ad-tenant"></a>Configurar cada novo AD FS certificado do Azure MFA no locatário do Azure AD
 
@@ -174,7 +177,7 @@ Usando o módulo do PowerShell do Azure AD, para cada novo certificado (em cada 
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$newcert` é o novo certificado. O certificado codificado em base64 pode ser obtido exportando o certificado (sem a chave privada) como um arquivo codificado em DER e abrindo em notepad. exe, em seguida, copiar/colar para a sessão do PowerShell e atribuir à variável `$newcert`.
+Se o certificado anterior já tiver expirado, reinicie o serviço de AD FS para selecionar o novo certificado. Você não precisa reiniciar o serviço de AD FS se você renovou um certificado antes que ele tenha expirado.
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>Verifique se os novos certificados serão usados para o Azure MFA
 
@@ -303,6 +306,6 @@ Aqui está um exemplo simples, talvez você queira estender:
     Set-AdfsWebConfig -ActiveThemeName "ProofUp"
     ```
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 [Gerenciar protocolos TLS/SSL e conjuntos de codificação usados pelo AD FS e pelo Azure MFA](manage-ssl-protocols-in-ad-fs.md)
