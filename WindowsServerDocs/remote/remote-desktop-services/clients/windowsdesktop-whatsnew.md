@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/14/2020
+ms.date: 01/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
+ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953069"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889440"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -30,14 +30,14 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Público     |1.2.535  |
-|Participante do Programa Windows Insider    |1.2.594  |
+|Público     |1.2.605  |
+|Participante do Programa Windows Insider    |1.2.605  |
 
-## <a name="updates-for-version-12594"></a>Atualizações para a versão 1.2.594
+## <a name="updates-for-version-12605"></a>Atualizações para a versão 1.2.605
 
-*Data da publicação: 14/01/2020*
+*Data da publicação: 29/01/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - Agora você pode selecionar quais exibições usará para as conexões de área de trabalho. Para alterar essa configuração, clique com o botão direito do mouse no ícone da conexão de área de trabalho e selecione **Configurações**.
 - Correção de um problema em que as configurações de conexão não exibiam os fatores de escala disponíveis corretos.

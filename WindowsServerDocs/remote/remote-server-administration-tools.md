@@ -1,6 +1,6 @@
 ---
 title: Ferramentas de Administração de Servidor Remoto
-description: Tópico de nível superior para Ferramentas de Administração de Servidor Remoto
+description: Tópico de nível superior das Ferramentas de Administração de Servidor Remoto
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -12,80 +12,80 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: e8e8206531e0939a1b6d6dfd17f5c5dd59947c81
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
-ms.translationtype: MT
+ms.openlocfilehash: 4e6452947af236f3021d493a42f536fed0cd110a
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259131"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822329"
 ---
 # <a name="remote-server-administration-tools"></a>Ferramentas de Administração de Servidor Remoto
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico oferece suporte a Ferramentas de Administração de Servidor Remoto para Windows 10.
+Este tópico dá suporte às Ferramentas de Administração de Servidor Remoto para Windows 10.
 
 > [!IMPORTANT]
-> A partir da atualização do Windows 10 de outubro de 2018, o RSAT é incluído como um conjunto de **recursos sob demanda** no próprio Windows 10. Confira **quando usar qual versão do RSAT** abaixo para obter instruções de instalação.
+> Começando na atualização do Windows 10 de outubro de 2018, as Ferramentas de Administração de Servidor Remoto estão incluídas como um conjunto de **Recursos Sob Demanda** no próprio Windows 10. Confira **Quando usar qual versão das Ferramentas de Administração de Servidor Remoto** abaixo para obter instruções de instalação.
 
-O RSAT permite que os administradores de ti gerenciem funções e recursos do Windows Server de um PC com Windows 10.
+A Ferramentas de Administração de Servidor Remoto permite que os administradores de TI gerenciem funções e recursos do Windows Server de um PC com Windows 10.
 
-O Ferramentas de Administração de Servidor Remoto inclui Gerenciador do Servidor, snap-ins do MMC (console de gerenciamento Microsoft), consoles do, cmdlets e provedores do Windows PowerShell e algumas ferramentas de linha de comando para gerenciar funções e recursos que são executados no Windows Server.
+As Ferramentas de Administração de Servidor Remoto incluem o Gerenciador do Servidor, snap-ins do MMC (Console de Gerenciamento Microsoft), consoles, os cmdlets do Windows PowerShell e provedores e algumas ferramentas de linha de comando para gerenciamento de funções e recursos executados no Windows Server.
 
-Ferramentas de Administração de Servidor Remoto inclui módulos de cmdlet do Windows PowerShell que podem ser usados para gerenciar funções e recursos que estão sendo executados em servidores remotos. Embora o gerenciamento remoto do Windows PowerShell esteja habilitado por padrão no Windows Server 2016, ele não é habilitado por padrão no Windows 10. Para executar os cmdlets que fazem parte do Ferramentas de Administração de Servidor Remoto em um servidor remoto, execute `Enable-PSremoting` em uma sessão do Windows PowerShell que tenha sido aberta com direitos de usuário elevados (ou seja, executar como administrador) no computador cliente Windows depois de instalar o Ferramentas de Administração de Servidor Remoto.
+As Ferramentas de Administração de Servidor Remoto incluem módulos de cmdlet do Windows PowerShell que podem ser usados para gerenciar funções e recursos que estejam em execução em servidores remotos. Embora o gerenciamento remoto do Windows PowerShell seja habilitado por padrão no Windows Server 2016, ele não é habilitado por padrão no Windows 10. Para executar os cmdlets que fazem parte das Ferramentas de Administração de Servidor Remoto em um servidor remoto, execute `Enable-PSremoting` em uma sessão do Windows PowerShell aberta com direitos elevados de usuário (ou seja, executar como administrador) no computador cliente Windows depois de instalar as Ferramentas de Administração de Servidor Remoto.
 
 ## <a name="BKMK_Thresh"></a>Ferramentas de Administração de Servidor Remoto para Windows 10
-Use Ferramentas de Administração de Servidor Remoto para o Windows 10 para gerenciar tecnologias específicas em computadores que executam o Windows Server 2019, o Windows Server 2016, o Windows Server 2012 R2 e, em casos limitados, Windows Server 2012 ou Windows Server 2008 R2.
+Use as Ferramentas de Administração de Servidor Remoto para Windows 10 para gerenciar tecnologias específicas em computadores que usam o Windows Server 2019, o Windows Server 2016, o Windows Server 2012 R2 e, em casos limitados, Windows Server 2012 ou Windows Server 2008 R2.
 
-O Ferramentas de Administração de Servidor Remoto para Windows 10 inclui suporte para o gerenciamento remoto de computadores que executam a opção de instalação Server Core ou a configuração mínima da interface do servidor do Windows Server 2016, do Windows Server 2012 R2 e em limitada casos, as opções de instalação Server Core do Windows Server 2012. No entanto, Ferramentas de Administração de Servidor Remoto para Windows 10 não podem ser instaladas em nenhuma versão do sistema operacional Windows Server.
+As Ferramentas de Administração de Servidor Remoto para Windows 10 incluem a compatibilidade com o gerenciamento remoto de computadores que estão executando a opção de instalação Server Core ou a configuração de Interface de Servidor Mínima do Windows Server 2016, do Windows Server 2012 R2 e, em casos limitados, as opções de instalação Server Core do Windows Server 2012. Entretanto, as Ferramentas de Administração de Servidor Remoto para Windows 10 não podem ser instaladas em nenhuma versão do sistema operacional Windows Server.
 
 ### <a name="tools-available-in-this-release"></a>Ferramentas disponíveis nesta versão
-Para obter uma lista das ferramentas disponíveis no Ferramentas de Administração de Servidor Remoto para Windows 10, consulte a tabela em [ferramentas de administração de servidor remoto (RSAT) para sistemas operacionais Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems).
+Para obter uma lista das ferramentas disponíveis nas Ferramentas de Administração de Servidor Remoto para Windows 10, confira a tabela em [RSAT (Ferramentas de Administração de Servidor Remoto) para sistemas operacionais Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems).
 
 ### <a name="system-requirements"></a>Requisitos de sistema
-Ferramentas de Administração de Servidor Remoto para Windows 10 pode ser instalado somente em computadores que executam o Windows 10. O Ferramentas de Administração de Servidor Remoto não pode ser instalado em computadores que executam o Windows RT 8,1 ou outros dispositivos do sistema em chip.
+As Ferramentas de Administração de Servidor Remoto para Windows 10 só podem ser instaladas em computadores que estejam usando o Windows 10. As Ferramentas de Administração de Servidor Remoto não podem ser instaladas em computadores que estão usando o Windows RT 8.1 ou em outros dispositivos de sistema-em-um-chip.
 
-O Ferramentas de Administração de Servidor Remoto para Windows 10 é executado nas edições baseadas em x86 e x64 do Windows 10.
+As Ferramentas de Administração de Servidor Remoto para Windows 10 são podem ser usadas em edições baseadas em x86 e x64 do Windows 10.
 
 > [!IMPORTANT]
-> O Ferramentas de Administração de Servidor Remoto para Windows 10 não deve ser instalado em um computador que esteja executando pacotes de ferramentas de administração para Windows 8.1, Windows 8, Windows Server 2008 R2, Windows Server 2008, Windows Server 2003 ou Windows 2000 Server. Remova todas as versões mais antigas do pacote de ferramentas de administração ou Ferramentas de Administração de Servidor Remoto, incluindo versões anteriores de pré-lançamento e versões das ferramentas para diferentes idiomas ou localidades do computador antes de instalar a administração do servidor remoto Ferramentas para Windows 10.
+> As Ferramentas de Administração de Servidor Remoto para Windows 10 não devem ser instaladas em um computador que execute pacotes de ferramentas de administração para Windows 8.1, Windows 8, Windows Server 2008 R2, Windows Server 2008, Windows Server 2003 ou Windows 2000 Server. Remova todas as versões anteriores do Pacote de Ferramentas de Administração ou das Ferramentas de Administração de Servidor Remoto do computador, inclusive as versões de pré-lançamento anteriores e as versões das ferramentas para diferentes idiomas ou localidades antes de instalar as Ferramentas de Administração de Servidor Remoto para Windows 10.
 
-Para usar esta versão do Gerenciador do Servidor para acessar e gerenciar servidores remotos que executam o Windows Server 2012 R2, o Windows Server 2012 ou o Windows Server 2008 R2, você deve instalar várias atualizações para tornar os sistemas operacionais Windows Server mais antigos gerenciáveis usando o se Gerenciador de servido. Para obter informações detalhadas sobre como preparar o Windows Server 2012 R2, o Windows Server 2012 e o Windows Server 2008 R2 para gerenciamento usando Gerenciador do Servidor no Ferramentas de Administração de Servidor Remoto para Windows 10, consulte [gerenciar vários servidores remotos com o Gerenciador do servidor](https://technet.microsoft.com/library/hh831456.aspx).
+Para usar essa versão do Gerenciador do Servidor para acessar e gerenciar servidores remotos que estão usando o Windows Server 2012 R2, o Windows Server 2012 ou o Windows Server 2008 R2, você deve instalar várias atualizações para tornar os antigos sistemas operacionais Windows Server gerenciáveis usando o Gerenciador do Servidor. Para obter informações detalhadas sobre como preparar o Windows Server 2012 R2, o Windows Server 2012 e o Windows Server 2008 R2 para gerenciamento usando o Gerenciador do Servidor nas Ferramentas de Administração de Servidor Remoto para Windows 10, confira [Gerenciar vários servidores remotos com o Gerenciador do Servidor](https://technet.microsoft.com/library/hh831456.aspx).
 
-O Windows PowerShell e o gerenciamento remoto do Gerenciador do Servidor devem ser habilitados em servidores remotos para gerenciá-los usando ferramentas que fazem parte do Ferramentas de Administração de Servidor Remoto para Windows 10. O gerenciamento remoto é habilitado por padrão em servidores que executam o Windows Server 2016, o Windows Server 2012 R2 e o Windows Server 2012. Para obter mais informações sobre como habilitar o gerenciamento remoto se ele tiver sido desabilitado, consulte [Gerenciar vários servidores remotos com o Gerenciador do Servidor](https://go.microsoft.com/fwlink/p/?LinkId=241358).
+O gerenciamento remoto do Windows PowerShell e do Gerenciador do Servidor deve ser habilitado em servidores remotos para gerenciá-los usando as ferramentas que fazem parte das Ferramentas de Administração de Servidor Remoto para Windows 10. O gerenciamento remoto é habilitado por padrão em servidores que usam o Windows Server 2016, o Windows Server 2012 R2 e o Windows Server 2012. Para obter mais informações sobre como habilitar o gerenciamento remoto se ele tiver sido desabilitado, consulte [Gerenciar vários servidores remotos com o Gerenciador do Servidor](https://go.microsoft.com/fwlink/p/?LinkId=241358).
 
-## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>Instalar, desinstalar e desativar/em ferramentas do RSAT
+## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>Instalar, desinstalar e desligar/ligar Ferramentas de Administração de Servidor Remoto
 
-### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>Usar os recursos sob demanda (FoD) para instalar ferramentas do RSAT específicas no Windows 10 de outubro de 2018 atualização ou posterior
+### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>Usar o FoD (Recursos Sob Demanda) para instalar ferramentas específicas das Ferramentas de Administração de Servidor Remoto na Atualização de outubro de 2018 para o Windows 10 ou posterior
 
-A partir da atualização do Windows 10 de outubro de 2018, o RSAT está incluído como um conjunto de **recursos sob demanda** diretamente do Windows 10. Agora, em vez de baixar um pacote do RSAT, você pode ir apenas para **gerenciar recursos opcionais** em **configurações** e clicar em **Adicionar um recurso** para ver a lista de ferramentas do RSAT disponíveis. Selecione e instale as ferramentas do RSAT específicas de que você precisa. Para ver o progresso da instalação, clique no botão **voltar** para exibir o status na página **gerenciar recursos opcionais** .
+Começando na atualização do Windows 10 de outubro de 2018, a Ferramentas de Administração de Servidor Remoto está incluída como um conjunto de **Recursos Sob Demanda** diretamente do Windows 10. Agora, em vez de baixar um pacote das Ferramentas de Administração de Servidor Remoto, você pode apenas ir para **Gerenciar recursos opcionais** em **Configurações** e clicar em **Adicionar um recurso** para ver a lista de Ferramentas de Administração de Servidor Remoto disponíveis. Selecione e instale as Ferramentas de Administração de Servidor Remoto específicas de que você precisa. Para ver o progresso da instalação, clique no botão **Voltar** para exibir o status na página **Gerenciar recursos opcionais**.
 
-Consulte a [lista de ferramentas do RSAT disponíveis por meio **de recursos sob demanda**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Além de instalar o por meio do aplicativo de **configurações** gráficas, você também pode instalar ferramentas do RSAT específicas por meio de linha de comando ou automação usando o [**DISM/Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
+Confira a [lista de Ferramentas de Administração de Servidor Remoto disponíveis por meio do **Recursos Sob Demanda**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Além de instalar por meio do aplicativo gráfico de **Configurações**, você também pode instalar Ferramentas de Administração de Servidor Remoto específicas por meio de linha de comando ou automação usando [**DISM/Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
 
-Um benefício dos recursos sob demanda é que os recursos instalados persistem entre atualizações de versão do Windows 10.
+Um benefício dos Recursos Sob Demanda é que os recursos instalados persistem entre atualizações de versão do Windows 10.
 
-#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>Para desinstalar as ferramentas do RSAT específicas no Windows 10 de outubro de 2018 atualização ou posterior (após a instalação com FoD)
+#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>Para desinstalar ferramentas específicas das Ferramentas de Administração de Servidor Remoto na Atualização de outubro de 2018 para o Windows 10 ou posterior (após a instalação com o FoD)
 
-No Windows 10, abra o aplicativo **configurações** , vá para **gerenciar recursos opcionais**, selecione e desinstale as ferramentas do RSAT específicas que você deseja remover. Observe que, em alguns casos, será necessário desinstalar manualmente as dependências. Especificamente, se a ferramenta RSAT A for necessária pela ferramenta RSAT B, a escolha de desinstalar a ferramenta RSAT A falhará se a ferramenta do RSAT B ainda estiver instalada. Nesse caso, desinstale A ferramenta B do RSAT primeiro e, em seguida, desinstale A ferramenta do RSAT A. Observe também que, em alguns casos, a desinstalação de uma ferramenta RSAT pode parecer ter sucesso, embora a ferramenta ainda esteja instalada. Nesse caso, reiniciar o PC concluirá a remoção da ferramenta.
+No Windows 10, abra o aplicativo de **Configurações**, vá para **Gerenciar recursos opcionais**, selecione e desinstale as Ferramentas de Administração de Servidor Remoto específicas que você deseja remover. Observe que, em alguns casos, será necessário desinstalar manualmente as dependências. Especificamente, se a ferramenta A das Ferramentas de Administração de Servidor Remoto for exigida pela ferramenta B das Ferramentas de Administração de Servidor Remoto, a escolha de desinstalar a ferramenta A das Ferramentas de Administração de Servidor Remoto falhará se a ferramenta B das Ferramentas de Administração de Servidor Remoto ainda estiver instalada. Nesse caso, desinstale a ferramenta B de Ferramentas de Administração de Servidor Remoto primeiro e, em seguida, desinstale a ferramenta A de Ferramentas de Administração de Servidor Remoto. Observe também que, em alguns casos, a desinstalação de uma ferramenta de Ferramentas de Administração de Servidor Remoto pode parecer ter sucesso, embora a ferramenta ainda esteja instalada. Nesse caso, reiniciar o PC concluirá a remoção da ferramenta.
 
-Consulte a [lista de ferramentas do RSAT, incluindo dependências](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Além de desinstalar o por meio do aplicativo de configurações gráficas, você também pode desinstalar ferramentas do RSAT específicas por meio de linha de comando ou automação usando o [**DISM/Remove-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
+Confira a [lista de Ferramentas de Administração de Servidor Remoto, incluindo dependências](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Além de desinstalar por meio do aplicativo gráfico de Configurações, você também pode desinstalar Ferramentas de Administração de Servidor Remoto específicas por meio da linha de comando ou automação usando [**DISM/Remove-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
 
-### <a name="when-to-use-which-rsat-version"></a>Quando usar qual versão do RSAT
+### <a name="when-to-use-which-rsat-version"></a>Quando usar qual versão das Ferramentas de Administração de Servidor Remoto
 
-Se você tiver uma versão do Windows 10 anterior à atualização de outubro de 2018 (1809), não poderá usar **recursos sob demanda**. Será necessário baixar e instalar o pacote do RSAT.
+Se você tiver uma versão do Windows 10 anterior à atualização de outubro de 2018 (1809), não poderá usar os **Recursos Sob Demanda**. Você precisará baixar e instalar o pacote das Ferramentas de Administração de Servidor Remoto.
 
-- **Instale o RSAT FODs diretamente do Windows 10, conforme descrito acima**: ao instalar no Windows 10 de outubro de 2018 atualização (1809) ou posterior, para gerenciar o windows Server 2019 ou versões anteriores.
+- **Instale os FODs das Ferramentas de Administração de Servidor Remoto diretamente do Windows 10, conforme descrito acima**: Ao instalar na Atualização de outubro de 2018 para o Windows 10 (1809) ou posterior, para gerenciar o Windows Server 2019 ou versões anteriores.
 
-- **Baixe e instale o pacote WS_1803 RSAT, conforme descrito abaixo**: ao instalar o Windows 10 abril de 2018 atualização (1803) ou anterior, para gerenciar o Windows Server, versão 1803 ou Windows Server, versão 1709.
+- **Baixe e instale o pacote das Ferramentas de Administração de Servidor Remoto WS_1803 conforme descrito abaixo**: Ao instalar na Atualização de abril de 2018 para o Windows 10 (1803) ou anterior, para gerenciar o Windows Server, versão 1803 ou Windows Server, versão 1709.
 
-- **Baixe e instale o pacote do WS2016 RSAT, conforme descrito abaixo**: ao instalar na atualização do Windows 10 de abril de 2018 (1803) ou anterior, para gerenciar o windows Server 2016 ou versões anteriores.
+- **Baixe e instale o pacote WS2016 das Ferramentas de Administração de Servidor Remoto, conforme descrito abaixo**: Ao instalar na Atualização de abril de 2018 para o Windows 10 (1803) ou anterior, para gerenciar o Windows Server 2016 ou versões anteriores.
 
-#### <a name="BKMK_installthresh"></a>Baixe o pacote do RSAT para instalar o Ferramentas de Administração de Servidor Remoto para Windows 10
+#### <a name="BKMK_installthresh"></a>Baixar o pacote das Ferramentas de Administração de Servidor Remoto para instalar as Ferramentas de Administração de Servidor Remoto para Windows 10
 
-1.  Baixe o pacote Ferramentas de Administração de Servidor Remoto para Windows 10 do [centro de download da Microsoft](https://go.microsoft.com/fwlink/?LinkID=404281). Você também pode executar o instalador do site do Centro de Download ou salvar o pacote de download em um computador ou compartilhamento local.
+1.  Baixe o pacote de Ferramentas de Administração de Servidor Remoto para Windows 10 do [Centro de Download da Microsoft](https://go.microsoft.com/fwlink/?LinkID=404281). Você também pode executar o instalador do site do Centro de Download ou salvar o pacote de download em um computador ou compartilhamento local.
 
     > [!IMPORTANT]
-    > Você só pode instalar Ferramentas de Administração de Servidor Remoto para Windows 10 em computadores que executam o Windows 10. O Ferramentas de Administração de Servidor Remoto não pode ser instalado em computadores que executam o Windows RT 8,1 ou outros dispositivos do sistema em chip.
+    > Você pode instalar as Ferramentas de Administração de Servidor Remoto para Windows 10 apenas em computadores que estejam usando o Windows 10. As Ferramentas de Administração de Servidor Remoto não podem ser instaladas em computadores que estão usando o Windows RT 8.1 ou em outros dispositivos de sistema-em-um-chip.
 
 2.  Se você salvar o pacote de download em um computador ou compartilhamento local, clique duas vezes no programa instalador, **WindowsTH-KB2693643-x64.msu** ou **WindowsTH-KB2693643-x86.msu**, dependendo da arquitetura do computador no qual você deseja instalar as ferramentas.
 
@@ -95,7 +95,7 @@ Se você tiver uma versão do Windows 10 anterior à atualização de outubro de
 
 5.  A instalação requer alguns minutos para ser concluída.
 
-##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Para desinstalar o Ferramentas de Administração de Servidor Remoto para Windows 10 (após a instalação do pacote do RSAT)
+##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Para desinstalar as Ferramentas de Administração de Servidor Remoto para Windows 10 (após a instalação do pacote das Ferramentas de Administração de Servidor Remoto)
 
 1. Na área de trabalho, clique em **Iniciar**, clique em **Todos os Aplicativos**, clique em **Sistema Windows**e, em seguida, clique em **Painel de Controle**.
 
@@ -107,7 +107,7 @@ Se você tiver uma versão do Windows 10 anterior à atualização de outubro de
 
 5. Ao ser perguntado se tem certeza de que deseja desinstalar a atualização, clique em **Sim**.
    S
-   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desativar ferramentas específicas (após a instalação do pacote do RSAT)
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desligar ferramentas específicas (após a instalação do pacote das Ferramentas de Administração de Servidor Remoto)
 
 6. Na área de trabalho, clique em **Iniciar**, clique em **Todos os Aplicativos**, clique em **Sistema Windows**e, em seguida, clique em **Painel de Controle**.
 
@@ -118,22 +118,22 @@ Se você tiver uma versão do Windows 10 anterior à atualização de outubro de
 9. Limpe as caixas de seleção para qualquer ferramenta que você deseja desativar.
 
    > [!NOTE]
-   > Se você desativar Gerenciador do Servidor, o computador deverá ser reiniciado e as ferramentas que estavam acessíveis no menu **ferramentas** do Gerenciador do servidor deverão ser abertas na pasta **Ferramentas administrativas** .
+   > Se você desligar o Gerenciador do Servidor, o computador deverá ser reiniciado e as ferramentas que estavam acessíveis pelo menu **Ferramentas** do Gerenciador do Servidor deverão ser abertas pela pasta **Ferramentas Administrativas**.
 
 10. Quando terminar de desabilitar as ferramentas que não deseje mais usar, clique em **OK**.
 
 ### <a name="run-remote-server-administration-tools"></a>Executar Ferramentas de Administração de Servidor Remoto
 
 > [!NOTE]
-> Depois de instalar o Ferramentas de Administração de Servidor Remoto para Windows 10, a pasta **Ferramentas administrativas** é exibida no menu **Iniciar** . Você pode acessar as ferramentas nos seguintes locais.
+> Depois de instalar as Ferramentas de Administração de Servidor Remoto para Windows 10, a pasta **Ferramentas Administrativas** é exibida no menu **Iniciar**. Você pode acessar as ferramentas nos seguintes locais.
 >
-> -   O menu **ferramentas** no console do Gerenciador do servidor.
+> -   O menu **Ferramentas** no console do Gerenciador do Servidor.
 > -   **Painel de Controle\Sistema e Segurança\Ferramentas Administrativas**.
 > -   Um atalho salvo na área de trabalho da pasta **Ferramentas Administrativas** (para fazer isso, clique com o botão direito do mouse no link **Painel de Controle\Sistema e Segurança\Ferramentas Administrativas** e clique em **Criar Atalho**).
 
-As ferramentas instaladas como parte do Ferramentas de Administração de Servidor Remoto para Windows 10 não podem ser usadas para gerenciar o computador cliente local. Independentemente da ferramenta executada, você deve especificar um servidor remoto ou vários servidores remotos, nos quais executar a ferramenta. Como a maioria das ferramentas está integrada com o Gerenciador do Servidor, você adiciona servidores remotos que deseja gerenciar ao pool de servidores do Gerenciador do Servidor antes de gerenciar o servidor usando as ferramentas no menu **ferramentas** . Para obter mais informações sobre como adicionar servidores ao pool de servidores e criar grupos personalizados de servidores, consulte [Adicionar servidores ao Gerenciador do Servidor](https://go.microsoft.com/fwlink/p/?LinkId=241353) e [Criar e gerenciar grupos de servidores](https://go.microsoft.com/fwlink/?LinkId=247328).
+As ferramentas instaladas como parte das Ferramentas de Administração de Servidor Remoto para Windows 10 não podem ser usadas para gerenciar o computador cliente local. Independentemente da ferramenta que você execute, é necessário especificar um ou vários servidores remotos nos quais executar a ferramenta. Como a maioria das ferramentas são integradas ao Gerenciador do Servidor, adicione os servidores remotos que você deseja gerenciar ao pool de servidores do Gerenciador do Servidor antes de gerenciar o servidor usando as ferramentas no menu **Ferramentas**. Para obter mais informações sobre como adicionar servidores ao pool de servidores e criar grupos personalizados de servidores, consulte [Adicionar servidores ao Gerenciador do Servidor](https://go.microsoft.com/fwlink/p/?LinkId=241353) e [Criar e gerenciar grupos de servidores](https://go.microsoft.com/fwlink/?LinkId=247328).
 
-No Ferramentas de Administração de Servidor Remoto para Windows 10, todas as ferramentas de gerenciamento de servidor baseadas em GUI, como snap-ins do MMC e caixas de diálogo, são acessadas no menu **ferramentas** do console do Gerenciador do servidor. Embora o computador que executa o Ferramentas de Administração de Servidor Remoto para Windows 10 execute um sistema operacional baseado em cliente, depois de instalar as ferramentas, Gerenciador do Servidor, incluído com o Ferramentas de Administração de Servidor Remoto para Windows 10, é aberto automaticamente por padrão no computador cliente. Observe que não há nenhuma página de **servidor local** no console do Gerenciador do servidor que é executado em um computador cliente.
+Em Ferramentas de Administração de Servidor Remoto para Windows 10, todas as ferramentas de gerenciamento do servidor baseadas em GUI, como snap-ins do MMC e caixas de diálogo, são acessadas no menu **Ferramentas** do console do Gerenciador do Servidor. Embora o computador que executa as Ferramentas de Administração de Servidor Remoto para Windows 10 execute um sistema operacional baseado no cliente, depois de instalar as ferramentas, o Gerenciador do Servidor, incluído nas Ferramentas de Administração de Servidor Remoto para Windows 10, é aberto automaticamente por padrão no computador cliente. Observe que não há nenhuma página **Servidor Local** no console do Gerenciador do Servidor executado em um computador cliente.
 
 ##### <a name="to-start-server-manager-on-a-client-computer"></a>Para iniciar o Gerenciador do Servidor em um computador cliente
 
@@ -141,58 +141,58 @@ No Ferramentas de Administração de Servidor Remoto para Windows 10, todas as f
 
 2.  Na pasta **Ferramentas Administrativas** , clique em **Gerenciador do Servidor**.
 
-Embora eles não estejam listados no menu **ferramentas** do console Gerenciador do servidor, os cmdlets do Windows PowerShell e as ferramentas de gerenciamento de prompt de comando também são instalados para funções e recursos como parte do ferramentas de administração de servidor remoto. Por exemplo, se você abrir uma sessão do Windows PowerShell com direitos de usuário elevados (executar como administrador) e executar o cmdlet `Get-Command -Module RDManagement`, os resultados incluirão uma lista de cmdlets de serviços de área de trabalho remota que agora estão disponíveis para execução no computador local após a instalação do Ferramentas de Administração de Servidor Remoto, desde que os cmdlets sejam direcionados a um servidor remoto que esteja executando toda ou parte da função de serviços
+Embora eles não estejam listados no menu **Ferramentas** do console do Gerenciador do Servidor, as ferramentas de gerenciamento do prompt de comando e os cmdlets do Windows PowerShell também são instalados para funções e recursos como parte das Ferramentas de Administração de Servidor Remoto. Por exemplo, se você abrir uma sessão do Windows PowerShell com direitos do usuário elevados (Executar como Administrador) e executar o cmdlet `Get-Command -Module RDManagement`, os resultados incluirão uma lista de cmdlets de Serviços de Área de Trabalho Remota que agora estão disponíveis para execução no computador local após a instalação das Ferramentas de Administração de Servidor Remoto, desde que os cmdlets sejam direcionados a um servidor remoto que esteja executando toda ou parte da função Serviços de Área de Trabalho Remota.
 
 ##### <a name="to-start-windows-powershell-with-elevated-user-rights-run-as-administrator"></a>Para iniciar o Windows PowerShell com direitos de usuário elevados (Executar como administrador)
 
 1.  No menu **Iniciar** , clique em **Todos os Aplicativos**, clique em **Sistema Windows**e, em seguida, clique em **Windows PowerShell**.
 
-2.  Para executar o Windows PowerShell como administrador na área de trabalho, clique com o botão direito do mouse no atalho do **Windows PowerShell** e clique em **Executar como administrador**.
+2.  Para executar o Windows PowerShell como administrador na área de trabalho, clique com o botão direito do mouse no atalho **Windows PowerShell** e clique em **Executar como Administrador**.
 
 > [!NOTE]
-> Você também pode iniciar uma sessão do Windows PowerShell que é destinada a um servidor específico clicando com o botão direito do mouse em um servidor gerenciado em uma página de função ou grupo no Gerenciador do Servidor e, em seguida, clicando em **Windows PowerShell**.
+> Você também pode iniciar uma sessão do Windows PowerShell direcionada a um servidor específico clicando com o botão direito do mouse em um servidor gerenciado em uma página de função ou grupo no Gerenciador do Servidor e em **Windows PowerShell**.
 
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**Problema**: a instalação do RSAT fod falha com o código de erro 0x800f0954
+### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**Problema**: A instalação do FOD das Ferramentas de Administração de Servidor Remoto falha com o código de erro 0x800f0954
 
-> **Impacto**: RSAT FODs no Windows 10 1809 (atualização de outubro de 2018) em ambientes WSUS/SCCM
+> **Impacto**: Os FODs das Ferramentas de Administração de Servidor Remoto no Windows 10 1809 (atualização de outubro de 2018) em ambientes WSUS/Configuration Manager
 > 
-> **Resolução**: para instalar o FODs em um computador ingressado em domínio que recebe atualizações por meio do WSUS ou SCCM, você precisará alterar uma configuração de política de grupo para habilitar o download do FODs diretamente do Windows Update ou de um compartilhamento local. Para obter mais detalhes e instruções sobre como alterar essa configuração, consulte [como tornar recursos sob demanda e pacotes de idiomas disponíveis quando você estiver usando o WSUS/SCCM](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs).
+> **Resolução**: Para instalar os FODs em um computador ingressado no domínio que recebe atualizações por meio do WSUS ou do Configuration Manager, você precisará alterar uma configuração da Política de Grupo para habilitar o download dos FODs diretamente do Windows Update ou de um compartilhamento local. Para obter mais detalhes e instruções sobre como alterar essa configuração, confira [Como disponibilizar os Recursos Sob Demanda e os pacotes de idiomas quando você estiver usando o WSUS/SCCM](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs).
 
 ---
 
-### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**Problema**: a instalação do RSAT fod por meio de configurações do aplicativo não mostra o status/progresso
+### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**Problema**: Instalação do FOD das Ferramentas de Administração de Servidor Remoto por meio do aplicativo Configurações não exibe o status/progresso
 
-> **Impacto**: RSAT FODs no Windows 10 1809 (atualização de outubro de 2018)
+> **Impacto**: FODs das Ferramentas de Administração de Servidor Remoto no Windows 10 1809 (atualização de outubro de 2018)
 > 
-> **Resolução**: para ver o progresso da instalação, clique no botão **voltar** para exibir o status na página **gerenciar recursos opcionais** .
+> **Resolução**: Para ver o progresso da instalação, clique no botão **Voltar** para exibir o status na página **Gerenciar recursos opcionais**.
 
 ---
 
-### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**Problema**: a desinstalação do RSAT fod por meio de configurações do aplicativo pode falhar
+### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**Problema**: A desinstalação do FOD das Ferramentas de Administração de Servidor Remoto por meio do aplicativo Configurações pode falhar
 
-> **Impacto**: RSAT FODs no Windows 10 1809 (atualização de outubro de 2018)
+> **Impacto**: FODs das Ferramentas de Administração de Servidor Remoto no Windows 10 1809 (atualização de outubro de 2018)
 > 
-> **Resolução**: em alguns casos, as falhas de desinstalação são devido à necessidade de desinstalar manualmente as dependências. Especificamente, se a ferramenta RSAT A for necessária pela ferramenta RSAT B, a escolha de desinstalar a ferramenta RSAT A falhará se a ferramenta do RSAT B ainda estiver instalada. Nesse caso, desinstale A ferramenta B do RSAT primeiro e, em seguida, desinstale A ferramenta do RSAT A. Consulte a lista de FODs do RSAT, incluindo dependências.
+> **Resolução**: Em alguns casos, as falhas de desinstalação são devido à necessidade de desinstalar manualmente as dependências. Especificamente, se a ferramenta A das Ferramentas de Administração de Servidor Remoto for exigida pela ferramenta B das Ferramentas de Administração de Servidor Remoto, a escolha de desinstalar a ferramenta A das Ferramentas de Administração de Servidor Remoto falhará se a ferramenta B das Ferramentas de Administração de Servidor Remoto ainda estiver instalada. Nesse caso, desinstale a ferramenta B de Ferramentas de Administração de Servidor Remoto primeiro e, depois, desinstale a ferramenta A de Ferramentas de Administração de Servidor Remoto. Confira a lista de FODs das Ferramentas de Administração de Servidor Remoto que incluem dependências.
 
 ---
 
-### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**Problema**: a desinstalação do RSAT fod parece ter sucesso, mas a ferramenta ainda está instalada
+### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**Problema**: A desinstalação do FOD das Ferramentas de Administração de Servidor Remoto parece ter tido êxito, mas a ferramenta ainda está instalada
 
-> **Impacto**: RSAT FODs no Windows 10 1809 (atualização de outubro de 2018)
+> **Impacto**: FODs das Ferramentas de Administração de Servidor Remoto no Windows 10 1809 (atualização de outubro de 2018)
 > 
-> **Resolução**: reiniciar o PC concluirá a remoção da ferramenta.
+> **Resolução**: Reiniciar o PC concluirá a remoção da ferramenta.
 
 ---
 
-### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**Problema**: RSAT ausente após a atualização do Windows 10
+### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**Problema**: Ferramentas de Administração de Servidor Remoto ausentes após a atualização do Windows 10
 
-> **Impacto**: qualquer RSAT. Instalação do pacote MSU (antes do RSAT FODs) não reinstalado automaticamente
+> **Impacto**: Algum pacote de instalação .MSU das Ferramentas de Administração de Servidor Remoto (antes dos FODs das Ferramentas de Administração de Servidor Remoto) não é reinstalado automaticamente
 > 
-> **Resolução**: uma instalação do RSAT não pode ser persistida nas atualizações do sistema operacional devido ao RSAT. MSU sendo entregue como um pacote de Windows Update. Instale o RSAT novamente após a atualização do Windows 10. Observe que essa limitação é um dos motivos pelos quais mudamos para FODs a partir do Windows 10 1809. O RSAT FODs, que estão instalados, persistirá em atualizações futuras de versão do Windows 10.
+> **Resolução**: Uma instalação das Ferramentas de Administração de Servidor Remoto não pode ser persistida nas atualizações do sistema operacional devido ao .MSU das Ferramentas de Administração de Servidor Remoto ser entregue como um pacote do Windows Update. Instale as Ferramentas de Administração de Servidor Remoto novamente após a atualização do Windows 10. Observe que essa limitação é um dos motivos pelos quais mudamos para os FODs do Windows 10 1809 em diante. Os FODs das Ferramentas de Administração de Servidor Remoto que estão instalados persistirão em atualizações de versão futuras do Windows 10.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte Também
 >- [Ferramentas de Administração de Servidor Remoto para Windows 10](https://go.microsoft.com/fwlink/?LinkID=404281)
->- [Ferramentas de Administração de Servidor Remoto (RSAT) para Windows Vista, Windows 7, Windows 8, Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 e Windows Server 2012 R2](https://go.microsoft.com/fwlink/p/?LinkID=221055)
+>- [R SAT (Ferramentas de Administração de Servidor Remoto) para Windows Vista, Windows 7, Windows 8, Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 e Windows Server 2012 R2](https://go.microsoft.com/fwlink/p/?LinkID=221055)

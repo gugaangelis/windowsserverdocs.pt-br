@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/04/2019
+ms.date: 01/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ff5e2252a71f11f2488c6bdd872fe4e2de35519c
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: 1753780474332a6d5786a5804fc1b4fe5e3d8883
+ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919693"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889430"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -103,17 +103,14 @@ Os workspaces podem conter vários recursos gerenciados, incluindo áreas de tra
 
 ### <a name="desktop-settings"></a>Configurações da área de trabalho
 
-É possível definir algumas das configurações para recursos da área de trabalho a fim de garantir que a experiência atenda às suas necessidades. Para acessar a lista de configurações disponíveis:
-
-1. Na Central de Conexões, clique com o botão direito do mouse em um recurso da área de trabalho.
-2. Selecione **Configurações** no menu suspenso.
-3. O painel Configurações será exibido no lado direito do cliente que exibe o nome da área de trabalho.
+É possível definir algumas das configurações para recursos da área de trabalho a fim de garantir que a experiência atenda às suas necessidades. Para acessar a lista de configurações disponíveis, clique com o botão direito do mouse no recurso da área de trabalho e selecione **Configurações**.
 
 O cliente usará as configurações definidas pelo administrador, a menos que você desative a opção **Usar configurações padrão**. Isso permite que você configure as seguintes opções:
 
-- **Usar todos os monitores** alterna a sessão da área de trabalho entre o uso de todos os monitores locais disponíveis e apenas um monitor.
-- **Iniciar em tela inteira** determina se a sessão será iniciada no modo de tela inteira ou de janela. Essa configuração é habilitada automaticamente ao usar todos os monitores.
-- **Atualizar a resolução ao redimensionar** altera o comportamento quando você redimensiona a sessão no modo de janela. Se habilitada, a resolução da área de trabalho remota será atualizada para corresponder ao tamanho da janela local. Se desabilitada, a sessão reterá a resolução especificada em **Resolução** por toda a duração. Essa configuração é habilitada automaticamente ao usar todos os monitores.
+- **Usar várias exibições** alterna a sessão da área de trabalho entre o uso de uma ou de várias exibições.
+- **Selecionar as exibições a serem usadas para a sessão** especifica quais exibições locais usar para a sessão. Todas as exibições selecionadas devem ser adjacentes umas às outras. Essa configuração é desabilitada automaticamente quando você usa uma só exibição.
+- **Iniciar em tela inteira** determina se a sessão será iniciada no modo de tela inteira ou de janela. Essa configuração é habilitada automaticamente ao usar várias exibições.
+- **Atualizar a resolução ao redimensionar** faz com que a resolução de Área de Trabalho Remota seja atualizada automaticamente quando você redimensiona a sessão no modo de janela. Quando desabilitada, a sessão sempre permanece na resolução especificada em **Resolução**. Essa configuração é habilitada automaticamente ao usar várias exibições.
 - A **Resolução** permite que você especifique a resolução da área de trabalho remota. A sessão reterá essa resolução por toda a duração. Essa configuração será desabilitada automaticamente caso a resolução seja definida como atualizar ao redimensionar.
 - **Alterar o tamanho do texto e dos aplicativos** especifica o tamanho do conteúdo da sessão. Essa configuração se aplica somente ao se conectar ao Windows 8.1 e posterior ou ao Windows Server 2012 R2 e posterior. Essa configuração será desabilitada automaticamente caso a resolução seja definida como atualizar ao redimensionar.
 - **Ajustar a sessão à janela** determina como a sessão é exibida quando a resolução da área de trabalho remota difere do tamanho da janela local. Quando habilitado, o conteúdo da sessão será redimensionado para se ajustar dentro da janela enquanto preserva a taxa de proporção da sessão. Quando desabilitadas, as barras de rolagem ou as áreas pretas serão mostradas quando a resolução e o tamanho da janela não corresponderem.

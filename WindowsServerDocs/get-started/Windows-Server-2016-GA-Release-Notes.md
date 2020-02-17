@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948348"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822159"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas sobre a versão: Problemas importantes no Windows Server 2016
 
@@ -29,7 +29,7 @@ Este documento é atualizado continuamente. À medida que são descobertas quest
 
 ## <a name="express-updates-available-starting-in-november-2018-new"></a>Atualizações Expressas disponíveis a partir de novembro de 2018 (NOVO)
 
-Na "atualização das terças-feiras" de novembro de 2018 em diante, o Windows publicará as [Atualizações expressas](express-updates.md) novamente para o Windows Server 2016. Se estiver usando o WSUS e o SCCM (System Center Configuration Manager), você verá mais uma vez dois pacotes para a atualização do Windows Server 2016: uma atualização Completa e uma atualização Expressa. Caso deseje usar a Expressa nos ambientes de servidor, você precisará confirmar que o servidor fez uma atualização completa desde novembro de 2017 (KB nº 4048953) para garantir que a atualização Expressa seja instalada corretamente. Se você tentar fazer uma atualização Expressa em um servidor que ainda não foi atualizado desde a atualização 11B de 2017 (KB nº 4048953), verá falhas repetidas que consomem a largura de banda e os recursos da CPU em um loop infinito. Caso você experimente esse cenário, pare de enviar a atualização Expressa por push e, em vez disso, envie uma atualização Completa recente por push para interromper o loop de falha.
+Na "atualização das terças-feiras" de novembro de 2018 em diante, o Windows publicará as [Atualizações expressas](express-updates.md) novamente para o Windows Server 2016. Se estiver usando o WSUS e o Configuration Manager, você verá mais uma vez dois pacotes para a atualização do Windows Server 2016: uma atualização completa e uma atualização expressa. Caso deseje usar a Expressa nos ambientes de servidor, você precisará confirmar que o servidor fez uma atualização completa desde novembro de 2017 (KB nº 4048953) para garantir que a atualização Expressa seja instalada corretamente. Se você tentar fazer uma atualização Expressa em um servidor que ainda não foi atualizado desde a atualização 11B de 2017 (KB nº 4048953), verá falhas repetidas que consomem a largura de banda e os recursos da CPU em um loop infinito. Caso você experimente esse cenário, pare de enviar a atualização Expressa por push e, em vez disso, envie uma atualização Completa recente por push para interromper o loop de falha.
 
 ## <a name="server-core-installation-option"></a>Opção de instalação do Server Core
 

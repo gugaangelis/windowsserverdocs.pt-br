@@ -13,12 +13,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2195c3bafaa01a1b1c16c17889d5e04d7213a5b6
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c0a9f11aea9e24cc1a2bab275aae8dc0a81e9cba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919702"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822357"
 ---
 # <a name="windows-desktop-client-for-admins"></a>Cliente de Área de Trabalho do Windows para administradores
 
@@ -28,7 +28,7 @@ Este tópico tem informações adicionais sobre o cliente da Área de Trabalho d
 
 ## <a name="installation-options"></a>Opções de instalação
 
-Embora os usuários possam instalar o cliente diretamente depois de baixá-lo, se você estiver implantando em vários dispositivos, talvez também queira implantar o cliente neles por outros meios. A implantação usando políticas de grupo ou o System Center Configuration Manager permite que você execute o instalador silenciosamente usando uma linha de comando. Execute os seguintes comandos para implantar o cliente por dispositivo ou por usuário.
+Embora os usuários possam instalar o cliente diretamente depois de baixá-lo, se você estiver implantando em vários dispositivos, talvez também queira implantar o cliente neles por outros meios. A implantação usando políticas de grupo ou o Microsoft Endpoint Configuration Manager permite que você execute o instalador silenciosamente usando uma linha de comando. Execute os seguintes comandos para implantar o cliente por dispositivo ou por usuário.
 
 ### <a name="per-device-installation"></a>Instalação por dispositivo
 

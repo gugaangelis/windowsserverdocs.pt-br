@@ -12,12 +12,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f94e2c083f0bc05231543c15120818481afbabb0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 09f031c19c8f6d1105d47b9f22d52db30e9c57ef
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947855"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822149"
 ---
 # <a name="install-nano-server"></a>Instalar o Nano Server
 
@@ -50,7 +50,7 @@ Como o Nano Server é otimizado como um sistema operacional leve para execução
 - Não há suporte para a Política de Grupo. No entanto, você pode usar a [Configuração de Estado Desejado](https://msdn.microsoft.com/powershell/dsc/nanoDsc) para aplicar as configurações em escala.
 - O Nano Server não pode ser configurado para usar um servidor proxy para acessar a Internet.
 - Não há suporte para o Agrupamento NIC (especificamente, balanceamento de carga e failover ou LBFO). Em vez disso, há suporte para o SET (agrupamento incorporado do comutador).
-- Não há suporte para o System Center Configuration Manager e o System Center Data Protection Manager.
+- Não há suporte para o Microsoft Endpoint Configuration Manager e o System Center Data Protection Manager.
 - Não há suporte para cmdlets do BPA (Analisador de Práticas Recomendadas) nem para a integração do BPA ao Gerenciador do Servidor.
 - O Nano Server não dá suporte a HBAs (adaptadores de barramento do host) virtuais.
 - O Nano Server não precisa ser ativado com uma chave do produto (Product Key). Ao funcionar como um host do Hyper-V, o Nano Server não é compatível com a AVMA [(ativação automática de máquina virtual)](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx). Máquinas virtuais em execução em um host do Nano Server podem ser ativadas usando o KMS [(Serviço de Gerenciamento de Chaves)](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) com uma chave de licença de volume genérico ou usando a [ativação baseada no Active Directory](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx).

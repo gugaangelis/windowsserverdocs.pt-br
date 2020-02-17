@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: cec3b81beaee7dab7259345c56e79c05739b5dad
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e41d8fefa662120170b5e76e4f27d8f64fa538d7
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948412"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822169"
 ---
 # <a name="windows-server-2016-and-microsoft-server-application-compatibility"></a>Windows Server 2016 e a compatibilidade de aplicativos para Servidores da Microsoft
 
@@ -37,7 +37,7 @@ Para clientes e parceiros fornecedores de software que procuram mais informaçõ
 |Microsoft System Center Virtual Machine Manager 2016|  Sim|    [Novidades no System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
 |Microsoft System Center Operations Manager 2016|   Sim|    [Novidades no System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
 |Microsoft System Center Data Protection Manager 2016|  Sim|    [Novidades no System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
-|Microsoft System Center Configuration Manager (versão 1606)|  Sim|    [Novidades da versão 1606 do System Center Configuration Manager](https://technet.microsoft.com/library/mt752488.aspx)|  
+|Configuration Manager (versão 1606)|  Sim|    [Novidades na versão 1606 do Configuration Manager](https://technet.microsoft.com/library/mt752488.aspx)|  
 |SharePoint Server 2016|    Sim|    [Requisitos de hardware e software do SharePoint Server 2016](https://technet.microsoft.com/library/cc262485(v=office.16).aspx)|
 |Project Server 2016|   Sim|    [Requisitos de software do Project Server 2016](https://technet.microsoft.com/library/ee683978(v=office.16).aspx)|
 |Exchange Server 2016|  Sim|    [Atualizações para o Exchange 2016](https://technet.microsoft.com/library/jj907309(v=exchg.160).aspx)| 

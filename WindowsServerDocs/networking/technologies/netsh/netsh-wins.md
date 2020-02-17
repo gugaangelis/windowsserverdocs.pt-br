@@ -1,6 +1,6 @@
 ---
-title: Exemplo de Shell (Netsh) de rede em arquivo de lote
-description: Você pode usar este tópico para aprender a criar um arquivo em lotes que executa várias tarefas usando o netsh no Windows Server 2016.
+title: Arquivo em lotes de exemplo do Netsh (shell de rede)
+description: Você pode usar este tópico para aprender a criar um arquivo em lotes que executa várias tarefas usando o Netsh no Windows Server 2016.
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
@@ -10,34 +10,34 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 86fbe66978f7c09a332bba16a27a13fa029cb5a6
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71401914"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>Arquivo em lotes de exemplo do Shell de rede \(\)
+# <a name="network-shell-netsh-example-batch-file"></a>Arquivo em lotes de exemplo do \(Netsh\) (shell de rede)
 
 Aplica-se a: Windows Server 2016
 
-Você pode usar este tópico para aprender a criar um arquivo em lotes que executa várias tarefas usando netsh no Windows Server 2016. Neste exemplo de arquivo em lotes, o contexto **netsh WINS** é usado.
+Você pode usar este tópico para aprender a criar um arquivo em lotes que executa várias tarefas usando o Netsh no Windows Server 2016. Este exemplo de arquivo em lotes usa o contexto **netsh wins**.
 
-## <a name="example-batch-file-overview"></a>Visão geral do arquivo em lotes de exemplo
+## <a name="example-batch-file-overview"></a>Visão geral do arquivo em lote de exemplo
 
-Você pode usar comandos netsh para o serviço de cadastramento na Internet do Windows \(\) WINS em arquivos em lotes e outros scripts para automatizar tarefas. O exemplo de arquivo em lotes a seguir demonstra como usar comandos netsh para o WINS para executar uma variedade de tarefas relacionadas.
+Você pode usar comandos Netsh para o \(WINS\) (Serviço de Nome da Internet do Windows) em arquivos de lotes e outros scripts para automatizar tarefas. O exemplo de arquivo em lotes a seguir demonstra como usar comandos Netsh para o WINS para executar uma variedade de tarefas relacionadas.
 
-Neste exemplo de arquivo em lotes, o WINS\-um é um servidor WINS com o endereço IP 192.168.125.30 e o WINS\-B é um servidor WINS com o endereço IP 192.168.0.189.
+Neste exemplo de arquivo em lotes, WINS\-A é um servidor WINS com o endereço IP 192.168.125.30 e WINS\-B é um servidor WINS com o endereço IP 192.168.0.189.
 
-O arquivo em lotes de exemplo realiza as seguintes tarefas.
+O arquivo em lotes de exemplo realiza as tarefas a seguir.
 
-- Adiciona um registro de nome dinâmico com o endereço IP 192.168.0.205, meu registro de\_\[04h\], ao WINS\-um
-- Define o WINS\-B como um parceiro de replicação push/pull do WINS\-um
+- Adiciona um registro de nome dinâmico com o endereço IP 192.168.0.205, MY\_RECORD \[04h\] a WINS\-A
+- Define o WINS\-B como um parceiro de replicação push/pull do WINS\-A
 - Conecta-se ao WINS\-B e, em seguida, define o WINS\-A como um parceiro de replicação push/pull do WINS\-B
-- Inicia uma replicação de envio por push do WINS\-a para o WINS\-B
-- Conecta-se ao WINS\-B para verificar se o novo registro, meu registro de\_, foi replicado com êxito
+- Inicia uma replicação push do WINS\-A para o WINS\-B
+- Conecta-se ao WINS\-B para verificar se o novo registro, MEU\_REGISTRO, foi replicado com êxito
 
-## <a name="netsh-example-batch-file"></a>Arquivo em lotes de exemplo netsh
+## <a name="netsh-example-batch-file"></a>Arquivo em lotes de exemplo Netsh
 
-No arquivo em lotes de exemplo a seguir, as linhas que contêm comentários são precedidas por "REM", para o comentário. O netsh ignora os comentários.
+No exemplo de arquivo em lotes a seguir, as linhas que contêm comentários são precedidas por "rem", de remark (comentário, em inglês). O Netsh ignora os comentários.
 
     rem: Begin example batch file.
     
@@ -69,14 +69,14 @@ No arquivo em lotes de exemplo a seguir, as linhas que contêm comentários são
     
     rem 6. End example batch file.
 
-## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>Comandos netsh WINS usados no exemplo de arquivo em lotes
+## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>Comandos WINS do Netsh usados no exemplo de arquivo em lotes
 
-A seção a seguir lista os comandos **netsh WINS** que são usados neste procedimento de exemplo.
+A seção a seguir lista os comandos **netsh wins** usados neste procedimento de exemplo.
 
-- **servidor**. Desloca o comando atual do WINS\-contexto de linha para o servidor especificado pelo seu nome ou endereço IP.
-- **adicionar nome**. Registra um nome no servidor WINS.
-- **Adicionar parceiro**. Adiciona um parceiro de replicação no servidor WINS.
-- **init push**. Inicia e envia um gatilho de envio por push para um servidor WINS.
-- **Mostrar nome**. Exibe informações detalhadas de um registro específico no banco de dados do servidor WINS.  
+- **server**. Desloca o contexto atual da linha de\-comando do WINS para o servidor especificado pelo seu nome ou endereço IP.
+- **add name**. Registra um nome no servidor WINS.
+- **add partner**. Adiciona um parceiro de replicação no servidor WINS.
+- **init push**. Inicia e envia um gatilho de envio para um servidor WINS.
+- **show name**. Exibe informações detalhadas de um registro específico no banco de dados do servidor WINS.  
 
-Para obter mais informações, consulte [Network Shell (netsh)](netsh.md).
+Para obter mais informações, confira [Netsh (shell de rede)](netsh.md).
