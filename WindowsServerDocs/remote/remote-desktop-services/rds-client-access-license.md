@@ -11,14 +11,14 @@ ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
-ms.date: 09/20/2018
+ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: 252ee776946ba0c387d7a6cdf3dc97ffdc55a591
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 391f9e7569abd3c3496bfcc9b52d3ddf8abdebbb
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387581"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77173425"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licenciar a implantação do RDS com CALs (Licenças de Acesso para Cliente)
 
@@ -33,12 +33,12 @@ Embora exista um período de cortesia do licenciamento, durante o qual não é n
 Use as informações a seguir para saber mais sobre como funciona o licenciamento de acesso para cliente nos Serviços de Área de Trabalho Remota e como implantar e gerenciar suas licenças:
 
 - [Licenciar a implantação do RDS com CALs (Licenças de Acesso para Cliente)](#license-your-rds-deployment-with-client-access-licenses-cals)
-  - [Noções básicas sobre o modelo de CALs](#understanding-the-cals-model)
-  - [Nota sobre as versões de CAL](#note-about-cal-versions)
+  - [Noções básicas sobre o modelo de CAL para Serviços de Área de Trabalho Remota](#understanding-the-rds-cal-model)
+  - [Compatibilidade entre versões da CAL para Serviços de Área de Trabalho Remota](#rds-cal-version-compatibility)
 
-## <a name="understanding-the-cals-model"></a>Noções básicas sobre o modelo de CALs
+## <a name="understanding-the-rds-cal-model"></a>Noções básicas sobre o modelo de CAL para Serviços de Área de Trabalho Remota
 
-Existem dois tipos de CALs:
+Há dois tipos de CALs para Serviços de Área de Trabalho Remota:
 
 - CALs de RDS por dispositivo
 - CALs de RDS por usuário
@@ -47,33 +47,43 @@ A tabela a seguir descreve as diferenças entre os dois tipos de CALs:
 
 | Por Dispositivo                                                     | Por Usuário                                                                         |
 |----------------------------------------------------------------|----------------------------------------------------------------------------------|
-| CALs são fisicamente atribuídas a cada dispositivo.                   | CALs são atribuídas a um usuário no Active Directory.                                 |
-| CALs são rastreadas pelo servidor de licença.                        | CALs são rastreadas pelo servidor de licença.                                          |
-| CALs podem ser rastreadas, independentemente da associação no Active Directory. | Não é possível rastrear CALs dentro de um grupo de trabalho.                                       |
-| É possível revogar até 20% das CALs.                              | Não é possível revogar CALs.                                                      |
-| CALs temporárias são válidas por 52 a 89 dias.                       | CALs temporárias não estão disponíveis.                                                |
-| CALs não podem ser superalocadas.                                  | CALs podem ser superalocadas (violando o contrato de licenciamento da Área de Trabalho Remota). |
+| As CALs para Serviços de Área de Trabalho Remota são fisicamente atribuídas a cada dispositivo.                   | As CALs para Serviços de Área de Trabalho Remota são atribuídas a um usuário no Active Directory.                                 |
+| As CALs para Serviços de Área de Trabalho Remota são rastreadas pelo servidor de licença.                        | As CALs para Serviços de Área de Trabalho Remota são rastreadas pelo servidor de licença.                                          |
+| As CALs para Serviços de Área de Trabalho Remota podem ser rastreadas, independentemente da associação no Active Directory. | Não é possível rastrear CALs para Serviços de Área de Trabalho Remota dentro de um grupo de trabalho.                                       |
+| É possível revogar até 20% das CALs para Serviços de Área de Trabalho Remota.                              | Não é possível revogar nenhuma CAL para Serviços de Área de Trabalho Remota.                                                      |
+| As CALs para Serviços de Área de Trabalho Remota temporárias são válidas durante 52 a 89 dias.                       | As CALs para Serviços de Área de Trabalho Remota temporárias não estão disponíveis.                                                |
+| Não é possível superalocar CALs para Serviços de Área de Trabalho Remota.                                  | As CALs para Serviços de Área de Trabalho Remota podem ser superalocadas (violando o contrato de licenciamento de Área de Trabalho Remota). |
 
-Quando você usa o modelo por dispositivo, uma licença temporária é emitida na primeira vez que um dispositivo conecta ao Host da Sessão RD. Na segunda vez que o dispositivo se conecta, contanto que o servidor de licença esteja ativado e existam CALs disponíveis, o servidor de licença emite uma CAL de RDS por dispositivo permanente.
+Quando você usa o modelo por dispositivo, uma licença temporária é emitida na primeira vez que um dispositivo conecta ao Host da Sessão RD. Na segunda vez que o dispositivo se conecta, contanto que o servidor de licença esteja ativado e existam CALs para Serviços de Área de Trabalho Remota disponíveis, o servidor de licença emite uma CAL por Dispositivo aos Serviços de Área de Trabalho Remota permanente.
 
-Quando você usa o modelo por usuário, licenciamento não é imposto e cada usuário recebe uma licença para conectar a um Host da Sessão RD em qualquer número de dispositivos. O servidor de licença emite licenças de pool de CAL disponível ou do pool de CAL Superutilizada. É sua responsabilidade verificar se todos os seus usuários têm uma licença válida e nenhuma CAL Superutilizada; caso contrário, você estará violando os termos de licença dos Serviços de Área de Trabalho Remota.
+Quando você usa o modelo por usuário, licenciamento não é imposto e cada usuário recebe uma licença para conectar a um Host da Sessão RD em qualquer número de dispositivos. O servidor de licença emite licenças do pool da CAL para Serviços de Área de Trabalho Remota disponível ou para o pool da CAL para Serviços de Área de Trabalho Remota superutilizada. É sua responsabilidade verificar se todos os seus usuários têm uma licença válida e nenhuma CAL Superutilizada; caso contrário, você estará violando os termos de licença dos Serviços de Área de Trabalho Remota.
 
-Para garantir a conformidade com os termos de licença dos Serviços de Área de Trabalho Remota, rastreie o número de CALs de RDS por usuário usadas na sua organização e certifique-se de ter CALs por usuário suficientes instaladas no servidor de licença para todos os usuários.
+Para verificar se você está em conformidade com os termos de licença dos Serviços de Área de Trabalho Remota, rastreie o número de CALs por Usuário aos Serviços de Área de Trabalho Remota usadas na sua organização e verifique se você tem CALs por Usuário aos Serviços de Área de Trabalho Remota instaladas no servidor de licença de todos os seus usuários.
 
 Você pode usar o Gerenciador de Licenciamento de Área de Trabalho Remota para rastrear e gerar relatórios sobre CALs de RDS por usuário.
 
-## <a name="note-about-cal-versions"></a>Nota sobre as versões de CAL
+## <a name="rds-cal-version-compatibility"></a>Compatibilidade entre versões da CAL para Serviços de Área de Trabalho Remota
 
-A CAL usada por usuários ou dispositivos deve corresponder à versão do Windows Server ao qual o usuário ou dispositivo está conectando. Não é possível usar CALs mais antigas para acessar as versões mais recentes do Windows Server, mas é possível usar CALs mais recentes para acessar versões anteriores do Windows Server.
+A CAL para Serviços de Área de Trabalho Remota dos seus usuários ou dispositivos deve ser compatível com a versão do Windows Server à qual o usuário ou o dispositivo está se conectando. Você não pode usar CALs para Serviços de Área de Trabalho Remota para versões anteriores a fim de acessar versões posteriores do Windows Server, mas pode usar versões posteriores de CALs para Serviços de Área de Trabalho Remota a fim de acessar versões anteriores do Windows Server. Por exemplo, uma CAL para Serviços de Área de Trabalho Remota 2016 ou posterior é necessária para se conectar a um Host da Sessão RD do Windows Server 2016, enquanto uma CAL para Serviços de Área de Trabalho Remota 2012 ou posterior é necessária para se conectar a um Host da Sessão RD do Windows Server 2012 R2.
 
-A tabela a seguir mostra as CALs que são compatíveis em Hosts da Sessão RD e Hosts de Virtualização de Área de Trabalho Remota.
+A tabela a seguir mostra quais versões da CAL para Serviços de Área de Trabalho Remota e do Host da Sessão RD são compatíveis entre si.
 
-|                  |CAL 2008 R2 e anterior|CAL 2012|CAL 2016|CAL 2019|
+|                  | CAL para Serviços de Área Trabalho Remota 2008 R2 e versões anteriores | CAL para Serviços de Área de Trabalho Remota 2012 | CAL para Serviços de Área de Trabalho Remota 2016 | CAL para Serviços de Área de Trabalho Remota 2019 |
 |---------------------------------|--------|--------|--------|--------|
-| **Servidor de licença 2008, 2008 R2**| Sim    | Não     | Não     | Não     |
-| **Servidor de licença 2012**         | Sim    | Sim    | Não     | Não     |
-| **Servidor de licença 2012 R2**      | Sim    | Sim    | Não     | Não     |
-| **Servidor de licença 2016**         | Sim    | Sim    | Sim    | Não     |
-| **Servidor de licença 2019**         | Sim    | Sim    | Sim    | Sim    |
+| **Host da sessão 2008, 2008 R2** | Sim    | Sim    | Sim    | Sim     |
+| **Host da sessão 2012**         | Não     | Sim    | Sim    | Sim    |
+| **Host da sessão 2012 R2**      | Não     | Sim    | Sim    | Sim    |
+| **Host da sessão 2016**         | Não     | Não     | Sim    | Sim    |
+| **Host da sessão 2019**         | Não     | Não     | Não     | Sim    |
 
-Qualquer servidor de licenças de RDS pode hospedar licenças de todas as versões anteriores dos serviços dos Serviços de Área de Trabalho Remota e a versão atual dos Serviços de Área de Trabalho Remota. Por exemplo, um servidor de licenças de RDS do Windows Server 2016 pode hospedar licenças de todas as versões anteriores do RDS, enquanto um servidor de licenças de RDS do Windows Server 2012 R2 só pode hospedar licenças até o Windows Server 2012 R2.
+Você deve instalar a CAL para Serviços de Área de Trabalho Remota em um servidor de licença de RD compatível. Qualquer servidor de licenças de RDS pode hospedar licenças de todas as versões anteriores dos serviços dos Serviços de Área de Trabalho Remota e a versão atual dos Serviços de Área de Trabalho Remota. Por exemplo, um servidor de licenças de RDS do Windows Server 2016 pode hospedar licenças de todas as versões anteriores do RDS, enquanto um servidor de licenças de RDS do Windows Server 2012 R2 só pode hospedar licenças até o Windows Server 2012 R2.
+
+A tabela a seguir mostra quais versões da CAL para Serviços de Área de Trabalho Remota e do servidor de licença são compatíveis entre si.
+
+|                  | CAL para Serviços de Área Trabalho Remota 2008 R2 e versões anteriores | CAL para Serviços de Área de Trabalho Remota 2012 | CAL para Serviços de Área de Trabalho Remota 2016 | CAL para Serviços de Área de Trabalho Remota 2019 |
+|---------------------------------|--------|--------|--------|--------|
+| **Servidor de licença 2008, 2008 R2** | Sim    | Não   | Não   | Não    |
+| **Servidor de licença 2012**         | Sim     | Sim    | Não   | Não    |
+| **Servidor de licença 2012 R2**      | Sim     | Sim    | Não   | Não    |
+| **Servidor de licença 2016**         | Sim     | Sim    | Sim   | Não    |
+| **Servidor de licença 2019**         | Sim     | Sim    | Sim  | Sim   |

@@ -9,17 +9,17 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
-author: lizap
-manager: dongill
-ms.author: elizapo
-date: 08/27/2019
+author: Heidilohr
+manager: lizross
+ms.author: helohr
+date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949872"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77179350"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 
@@ -33,60 +33,13 @@ Use as informações a seguir para começar. Não se esqueça de conferir as [Pe
 > - Curioso sobre as novas versões para o cliente iOS? Confira as [Novidades da Área de Trabalho Remota no iOS.](ios-whatsnew.md)
 > - O cliente iOS dá suporte a dispositivos que executam o iOS 6.x e versões posteriores.
 
-## <a name="get-the-remote-desktop-beta-client-and-start-using-it"></a>Obter o cliente da Área de Trabalho Remota Beta e começar a usá-lo
-O cliente iOS Beta disponível hoje por meio do Apple TestFlight dá suporte a conexões com recursos de Área de Trabalho Virtual do Windows.
-
-### <a name="download-the-remote-desktop-ios-beta-client-from-apple-testflight"></a>Baixar o cliente Beta do iOS da Área de Trabalho Remota do Apple TestFlight
-Veja como configurar o cliente da Área de Trabalho Remota Beta no dispositivo iOS:
-
-1. Instale o aplicativo [Apple TestFlight](https://apps.apple.com/us/app/testflight/id899247664) no dispositivo iOS.
-2. No dispositivo iOS, abra um navegador e navegue até [aka.ms/rdiosbeta](https://aka.ms/rdiosbeta).
-3. No rótulo **Step 2 Join the Beta** (Etapa 2, Ingressar no Beta), selecione **Start Testing** (Iniciar Teste).
-4. Quando você for redirecionado para o aplicativo TestFlight, selecione **Accept** (Aceitar) e, em seguida, **Install** (Instalar) para instalar o cliente.
-
-### <a name="add-a-connection-to-a-pc"></a>Adicionar uma conexão a um PC
-Para criar uma conexão remota a um PC:
-
-1. Na Central de Conexão, toque em **+** e, em seguida, toque em **Adicionar PC**.
-2. Insira o nome do computador remoto em **Nome do Computador**. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode acrescentar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
-3. Selecione a **Conta de Usuário** que você usará para acessar o computador remoto.
-   - Selecione **Perguntar Toda Vez** para que o cliente solicite suas credenciais sempre que você se conectar ao computador remoto.
-   - Selecione **Adicionar Conta de Usuário** para salvar uma conta que você usa com frequência para que você não precise inserir as credenciais sempre que entrar. Siga [estas instruções](#manage-your-user-accounts) para gerenciar suas contas de usuário.
-4. Você também pode definir os parâmetros opcionais a seguir:
-   - Em **Nome Amigável**, você pode inserir um nome mais fácil de lembrar para o computador ao qual você está se conectando.
-   - **Modo Admin** permite que você se conecte a uma sessão de administrador no computador remoto.
-   - **Trocar os Botões do Mouse** alterna os comandos enviados pelos gestos direito e esquerdo do mouse. Ideal para usuários canhotos.
-   - **Gateway** é o gateway de Área de Trabalho Remota que você usará para se conectar a um computador por meio de uma rede externa. Para obter mais informações, entre em contato com o administrador do sistema.
-   - **Som** seleciona o dispositivo que sua sessão remota usa para áudio. Você pode optar por reproduzir som no dispositivo local, no dispositivo remoto ou por não reproduzir som.
-   - **Microfone** habilita o redirecionamento de microfone. Por padrão, essa configuração é desabilitada.
-   - **Câmera** habilita o redirecionamento de câmera. Por padrão, essa configuração é desabilitada.
-   - **Área de Transferência** habilita o redirecionamento da área de transferência. Essa configuração é habilitada por padrão.
-   - **Armazenamento** permite o redirecionamento de armazenamento local. Por padrão, essa configuração é desabilitada.
-5. Selecione **Salvar** para adicionar a conexão de computador remoto.
-
-### <a name="add-remote-resources"></a>Adicionar recursos remotos
-Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas por seu administrador. O cliente iOS dá suporte a recursos publicados de implantações de **Serviços de Área de Trabalho Remota** e **Área de Trabalho Virtual do Windows**. Para adicionar recursos remotos:
-
-1. Na Central de Conexão, toque em **+** e, em seguida, toque em **Adicionar Workspace**.
-2. Insira a **URL do Feed**. Ela pode ser uma URL ou endereço de email:
-   - A **URL** é a URL do servidor de acesso via Web da Área de Trabalho Remota, fornecida por seu administrador. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, você poderá usar `https://rdweb.wvd.microsoft.com`.
-   - Se você planeja usar **Email**, insira seu endereço de email nesse campo. Isso instrui o cliente a procurar um servidor de Acesso via Web da Área de Trabalho Remota associado ao endereço de email se ele foi configurado pelo administrador.
-3. Toque em **Avançar**.
-4. Forneça suas informações de entrada quando solicitado. Isso pode variar com base na implantação e pode incluir:
-   - **Nome de usuário**, o nome de usuário que tem permissão para acessar os recursos.
-   - **Senha**, a senha associada ao nome de usuário.
-   - **Fator adicional**, que poderá ser solicitado se a autenticação tiver sido configurada dessa forma pelo administrador.
-5. Toque em **Salvar**.
-
-Os recursos remotos serão exibidos na Central de Conexão.
-
 ## <a name="get-the-remote-desktop-client-and-start-using-it"></a>Obter o cliente da Área de Trabalho Remota e começar a usá-lo
 
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>Baixar o cliente da Área de Trabalho Remota da loja do iOS
 
 Siga estas etapas para começar a usar a Área de Trabalho Remota em seu dispositivo iOS:
 
-1. Baixar o cliente da Área de Trabalho Remota da Microsoft do [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
+1. Baixar o cliente da Área de Trabalho Remota da Microsoft da [App Store do iOS](https://aka.ms/rdios) ou do [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
 2. [Configure seu computador para aceitar conexões remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
 3. Adicione uma [conexão de Área de Trabalho Remota](#add-a-remote-desktop-connection) ou um [recurso remoto](#add-a-remote-resource). Você usa uma conexão para se conectar diretamente a um computador Windows e um recurso remoto para usar um programa RemoteApp, uma área de trabalho baseada em sessão ou uma área de trabalho virtual publicada localmente usando conexões de RemoteApp e área de trabalho. Normalmente, esse recurso está disponível em ambientes corporativos.
 
@@ -143,7 +96,7 @@ Para excluir uma conta de usuário:
 
 1. Na Central de Conexão, toque em **Configurações** e, em seguida, toque em **Contas de Usuário**.
 2. Selecione a conta que você deseja excluir.
-3. Toque em **Excluir**.   
+3. Toque em **Excluir**.
 
 ## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conectar-se a um Gateway de Área de Trabalho Remota para acessar os ativos internos
 
@@ -158,6 +111,7 @@ Para configurar um novo gateway:
    - **Nome de usuário** – o nome de usuário e a senha a serem usados para o Gateway de Área de Trabalho Remota ao qual você está se conectando. Você também pode selecionar **Usar credenciais de conexão** para usar o mesmo nome de usuário e senha usados para a conexão à área de trabalho remota.
 
 ## <a name="navigate-the-remote-desktop-session"></a>Navegar pela sessão de Área de Trabalho Remota
+
 Quando você inicia uma sessão de Área de Trabalho Remota, existem ferramentas disponíveis que você pode usar para navegar pela sessão.
 
 ### <a name="start-a-remote-desktop-connection"></a>Iniciar uma Conexão de Área de Trabalho Remota
@@ -178,6 +132,7 @@ A barra de conexão lhe dá acesso a controles de navegação adicionais.
 - **Mover a barra de conexão**: toque na barra de conexão e segure e, em seguida, arraste e solte em uma nova localização na parte superior da tela.
 
 ### <a name="session-selection"></a>Seleção de sessão
+
 Você pode ter várias conexões abertas em computadores diferentes ao mesmo tempo. Toque na barra de conexão para exibir a barra de seleção de sessão no lado esquerdo da tela. A barra de seleção de sessão permite exibir suas conexões abertas e alternar entre elas.
 
 - Alternar entre aplicativos em uma sessão aberta do recurso remoto.
@@ -215,9 +170,7 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 
 ## <a name="supported-input-devices"></a>Dispositivos de entrada com suporte
 
-O [cliente beta do iOS da Área de Trabalho Remota](https://aka.ms/rdiosbeta) dá suporte aos mouses físicos Swiftpoint GT e ProPoint. A Swiftpoint está oferecendo um [desconto exclusivo](https://www.swiftpoint.com/microsoft/) do GT para usuários do cliente beta do iOS.
-
-Atualmente, o cliente de iOS dá suporte apenas a mouses Swiftpoint. Consulte a página [Novidades no cliente do iOS](ios-whatsnew.md) e a [iOS App Store](https://aka.ms/rdios) para ver notícias sobre o suporte para outros dispositivos no futuro.
+No momento, o cliente iOS só dá suporte a mouses Swiftpoint GT e ProPoint. Para obter mais informações sobre o suporte a dispositivos, confira [Novidades do cliente iOS](ios-whatsnew.md) e a [App Store do iOS](https://aka.ms/rdios).
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>Usar um teclado em uma sessão remota
 

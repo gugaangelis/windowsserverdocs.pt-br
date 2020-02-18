@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950417"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125147"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar o cliente Web da Área de Trabalho Remota para seus usuários
 
@@ -170,10 +170,12 @@ Siga estas etapas para implantar o cliente da Web em um servidor de Acesso pela 
 
 Siga as instruções em [Como publicar o cliente da Web de Área de Trabalho Remota](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client), substituindo as etapas 4 e 5 pelo seguinte.
 
-4. Importe o módulo do PowerShell do gerenciamento de cliente da Web de Área de Trabalho Remota da pasta local:
-    ```PowerShell
-    Import-Module -Name "C:\WebClient\"
-    ```
+4. Você tem duas opções para recuperar o módulo do PowerShell de gerenciamento de cliente Web mais recente:
+    - Importe o módulo do PowerShell de gerenciamento de cliente Web de Área de Trabalho Remota:
+      ```PowerShell
+      Import-Module -Name RDWebClientManagement
+      ```
+    - Copie a pasta RDWebClientManagement baixada para uma das pastas locais do módulo do PowerShell em **$env:psmodulePath** ou adicione o caminho para a pasta com os arquivos baixados para o **$env:psmodulePath**.
 
 5. Implante a versão mais recente do cliente da Web da Área de Trabalho Remota pela pasta local (substituir pelo arquivo zip apropriado):
     ```PowerShell

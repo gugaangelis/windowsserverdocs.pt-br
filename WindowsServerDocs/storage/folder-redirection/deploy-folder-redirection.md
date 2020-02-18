@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21172d9d3e6d91af691986bfd84b0e32049f3b88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d8f6bf0df67b76028945403352bd135e6641a5a
+ms.sourcegitcommit: ab3967d71dcbb962079af194875de58e7c32c4e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401965"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967414"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implantar Redirecionamento de Pastas com Arquivos Offline
 
@@ -142,7 +142,7 @@ Veja como configurar o Redirecionamento de Pastas na Política de Grupo:
     > Para aplicar o Redirecionamento de Pastas a computadores cliente que executam o Windows XP ou o Windows Server 2003, selecione a guia **Configurações** e marque a caixa de seleção **Também aplicar a política de redirecionamento aos sistemas operacionais Windows 2000, Windows 2000 Server, Windows XP e Windows Server 2003**.
 
 5. Na seção **Localização da pasta de destino**, selecione **Criar uma pasta para cada usuário no caminho raiz** e, na caixa **Caminho Raiz**, digite o caminho para o compartilhamento de arquivo que armazena pastas redirecionadas, por exemplo: **\\\\fs1.corp.contoso.com\\users$**
-6. Selecione a guia **Configurações** e, na seção **Remoção de Política**, opcionalmente selecione **Redirecionar a pasta de volta para a localização de userprofile local quando a política for removida** (essa configuração pode ajudar a tornar o Redirecionamento de Pastas se comportando mais previsível para administradores e usuários).
+6. Selecione a guia **Configurações** e, na seção **Remoção de política**, opcionalmente selecione **Redirecionar a pasta de volta para a localização de userprofile local quando a política for removida** (essa configuração pode ajudar a fazer o redirecionamento de pastas se comportar de maneira mais previsível para administradores e usuários).
 7. Selecione **OK** e, em seguida, selecione **Sim** na caixa de diálogo de Aviso.
 
 ## <a name="step-5-enable-the-folder-redirection-gpo"></a>Etapa 5: Habilitar o GPO de Redirecionamento de Pastas

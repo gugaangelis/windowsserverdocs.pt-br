@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889440"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155380"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -31,7 +31,20 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 |Grupo de usuários |Versão  |
 |-----------|---------|
 |Público     |1.2.605  |
-|Participante do Programa Windows Insider    |1.2.605  |
+|Participante do Programa Windows Insider    |1.2.673  |
+
+## <a name="updates-for-version-12673"></a>Atualizações para a versão 1.2.673
+
+*Data da publicação: 11/02/2020*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+
+- Agora as conexões com a Área de Trabalho Virtual do Windows serão bloqueadas se o arquivo RDP não tiver a assinatura ou se uma das propriedades signscope tiver sido modificada.
+- Quando um workspace está vazio ou foi removido, o Centro de Conexão não parece mais estar vazio.
+- Adição da ID da atividade e do código de erro em mensagens de desconexão para aprimorar a solução de problemas. Você pode copiar a mensagem da caixa de diálogo com **CTRL+C**.
+- Correção de um problema que fazia as configurações de conexão da área de trabalho não detectarem exibições.
+- As atualizações do cliente pararam de reiniciar automaticamente o PC.
+- Ícones sem janela não devem mais aparecer na barra de tarefas.
 
 ## <a name="updates-for-version-12605"></a>Atualizações para a versão 1.2.605
 

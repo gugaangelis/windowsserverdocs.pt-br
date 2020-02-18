@@ -13,12 +13,12 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cffc007970245ab9bd96c7cae9bb5137a8030b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a596bcd29fdb80f8b2b0fa86ee808755dd09f43
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387803"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125088"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configurações do arquivo RDP com suporte da Área de Trabalho Remota
 
@@ -40,6 +40,7 @@ Confira [esta documentação](https://go.microsoft.com/fwlink/?linkid=2098243&cl
 | desktop size id:i:value | Especifica as dimensões da área de trabalho da sessão remota de um conjunto de opções predefinidas. Essa configuração será anulada se desktopheight ou desktopwidth for especificado.| -0: 640×480<br>- 1: 800×600<br>- 2: 1024×768<br>- 3: 1280×1024<br>- 4: 1600×1200 | 0 | x | x | x |
 | desktopheight:i:value | Determina a altura de resolução (em pixels) no computador remoto quando você se conecta usando a Conexão de Área de Trabalho Remota. Essa configuração corresponde à seleção no controle deslizante Configuração de exibição na guia Exibir em Opções na RDC. | Valor numérico entre 200 e 2048 | O valor padrão é definido para a resolução no computador local | x | x | x |
 | desktopwidth:i:value | Determina a largura de resolução (em pixels) no computador remoto quando você se conecta usando a Conexão de Área de Trabalho Remota. Essa configuração corresponde à seleção no controle deslizante Configuração de exibição na guia Exibir em Opções na RDC. | Valor numérico entre 200 e 4096 | O valor padrão é definido para a resolução no computador local | x | x | x |
+| devicestoredirect:s:value | Determina quais dispositivos no computador cliente serão redirecionados e estarão disponíveis na sessão remota. | – *: Redirecionar todos os dispositivos com suporte, incluindo aqueles conectados posteriormente<br> – ID de hardware válida para um ou mais dispositivos | | x | x | x |
 | disableconnectionsharing:i:value | Determina se o cliente de área de trabalho remota reconecta a quaisquer conexões abertas existentes ou inicia uma nova conexão ao iniciar um RemoteApp ou área de trabalho | - 0: Reconectar a qualquer sessão existente<br>- 1: Iniciar nova conexão | 0 | x | x | x |
 | domain:s:value | Especifica o nome do domínio no qual a conta de usuário que será usada para fazer logon no computador remoto está localizada. | Um nome de domínio válido, como "CONTOSO" | Nenhum valor padrão | x | x | x |
 | drivestoredirect:s:value | Determina quais unidades de disco locais no computador cliente serão redirecionadas e estarão disponíveis na sessão remota. | – Nenhum valor especificado: não redirecionar unidades<br>- *: Redirecionar todas as unidades de disco, incluindo unidades conectadas mais tarde<br>– DynamicDrives: redirecionar todas as unidades que estão conectadas mais tarde<br>– A unidade e os rótulos para uma ou mais unidades, tais como "drivestoredirect:s:C:;E:;": redirecionar as unidades especificadas| Nenhum valor especificado: não redirecionar unidades | x | x    | |
