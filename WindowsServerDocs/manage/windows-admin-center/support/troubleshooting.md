@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 5df216d8c7b829a6c60db4e5d771824a7bacdb47
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567094"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465320"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solução de problemas do Windows Admin Center
 
@@ -165,8 +165,10 @@ Ao instalar o Windows Admin Center, você terá a opção de permitir que o Wind
 
    > [!TIP]
    > Para uma maneira fácil de definir todas as TrustedHosts ao mesmo tempo, você pode usar um curinga.
-   > 
-   >     Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   >
+   > ```powershell
+   > Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   > ```
 
 4. Quando terminar o teste, você pode emitir o seguinte comando a partir de uma sessão do PowerShell com privilégios elevados para limpar sua configuração de TrustedHosts:
 
@@ -189,9 +191,9 @@ netsh http delete sslcert ipport=0.0.0.0:443
 netsh http delete urlacl url=https://+:443/
 ```
 
-## <a name="azure-features-dont-work-properly-in-edge"></a>Os recursos do Azure não funcionam corretamente no Microsoft Edge
+## <a name="azure-features-dont-work-properly-in-edge"></a>Os recursos do Azure não funcionam corretamente no Edge
 
-O Microsoft Edge tem [problemas conhecidos](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) relacionados a zonas de segurança que afetam o logon do Azure no centro de administração do Windows. Se você estiver tendo problemas ao usar os recursos do Azure ao usar o Microsoft Edge, tente adicionar https://login.microsoftonline.com, https://login.live.com e a URL do seu gateway como sites confiáveis e para sites permitidos para configurações do bloqueador de pop-ups no navegador do lado do cliente. 
+O Edge tem [problemas conhecidos](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) relacionados a zonas de segurança que afetam o logon do Azure no centro de administração do Windows. Se você estiver tendo problemas ao usar os recursos do Azure ao usar o Edge, tente adicionar https://login.microsoftonline.com, https://login.live.com e a URL do seu gateway como sites confiáveis e para sites permitidos para configurações do bloqueador de pop-ups no navegador do lado do cliente. 
 
 Para fazer isso:
 1. Pesquisar **Opções da Internet** no menu Iniciar do Windows

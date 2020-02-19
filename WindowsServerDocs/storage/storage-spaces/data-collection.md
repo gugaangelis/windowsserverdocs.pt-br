@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 67f35e3afa8e9eafabe7b22eb60cc85c7be6cb23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d64e6188b24b5a1ec45242c3d99366fdde5a623
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402880"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465210"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>Coletar dados de diagnóstico com Espaços de Armazenamento Diretos
 
@@ -23,11 +23,11 @@ ms.locfileid: "71402880"
 
 Há várias ferramentas de diagnóstico que podem ser usadas para coletar os dados necessários para solucionar problemas de Espaços de Armazenamento Diretos e cluster de failover. Neste artigo, vamos nos concentrar no **Get-SDDCDiagnosticInfo** -uma ferramenta de toque que reunirá todas as informações relevantes para ajudá-lo a diagnosticar seu cluster.
 
-Considerando que os logs e outras informações que **Get-SDDCDiagnosticInfo** são densas, as informações sobre solução de problemas apresentadas abaixo serão úteis para solucionar problemas avançados que foram escalonados e que podem exigir que os dados sejam enviados para Microsoft para triagem.
+Considerando que os logs e outras informações que **Get-SDDCDiagnosticInfo** são densas, as informações sobre solução de problemas apresentadas abaixo serão úteis para solucionar problemas avançados que foram escalonados e que podem exigir que os dados sejam enviados à Microsoft para fins de preparo.
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>Instalando o Get-SDDCDiagnosticInfo
 
-O cmdlet **Get-SDDCDiagnosticInfo** do PowerShell (também conhecido como **Get-PCStorageDiagnosticInfo**, anteriormente conhecido como **Test-StorageHealth**), pode ser usado para reunir logs e realizar verificações de integridade para clustering de failover (cluster, recursos, redes, nós), espaços de armazenamento (discos físicos, compartimentos, Discos virtuais), volumes compartilhados do cluster, compartilhamentos de arquivos SMB e eliminação de duplicação. 
+O cmdlet **Get-SDDCDiagnosticInfo** do PowerShell (também conhecido como **Get-PCStorageDiagnosticInfo**, anteriormente conhecido como **Test-StorageHealth**), pode ser usado para reunir logs e realizar verificações de integridade para clustering de failover (cluster, recursos, redes, nós), espaços de armazenamento (discos físicos, compartimentos, discos virtuais), volumes compartilhados de cluster, compartilhamentos de arquivos SMB e eliminação de duplicação. 
 
 Há dois métodos de instalação do script, os quais são contornos abaixo.
 
@@ -35,12 +35,15 @@ Há dois métodos de instalação do script, os quais são contornos abaixo.
 
 O [Galeria do PowerShell](https://www.powershellgallery.com/packages/PrivateCloud.DiagnosticInfo) é um instantâneo do repositório github. Observe que a instalação de itens da Galeria do PowerShell requer a versão mais recente do módulo PowerShellGet, que está disponível no Windows 10, no WMF (Windows Management Framework) 5,0 ou no instalador baseado em MSI (para o PowerShell 3 e 4).
 
+Instalamos a versão mais recente das [ferramentas de diagnóstico de rede da Microsoft](https://www.powershellgallery.com/packages/MSFT.Network.Diag) durante esse processo, pois o Get-SDDCDiagnosticInfo depende disso. Este módulo de manifesto contém a ferramenta de diagnóstico e solução de problemas de rede, que é mantida pelo grupo de produtos Microsoft Core Networking na Microsoft.
+
 Você pode instalar o módulo executando o seguinte comando no PowerShell com privilégios de administrador:
 
 ``` PowerShell
 Install-PackageProvider NuGet -Force
 Install-Module PrivateCloud.DiagnosticInfo -Force
 Import-Module PrivateCloud.DiagnosticInfo -Force
+Install-Module -Name MSFT.Network.Diag
 ```
 
 Para atualizar o módulo, execute o seguinte comando no PowerShell:

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407534"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465271"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Gerenciando protocolos SSL/TLS e conjuntos de codificação para AD FS
 A documentação a seguir fornece informações sobre como desabilitar e habilitar determinados protocolos TLS/SSL e conjuntos de codificação que são usados pelo AD FS
@@ -34,13 +34,13 @@ AD FS usa Schannel. dll para executar suas interações de comunicações segura
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>Gerenciando os protocolos TLS/SSL e conjuntos de codificação
 > [!IMPORTANT]
-> Esta seção contém etapas que explicam como modificar o registro. No entanto, problemas sérios podem ocorrer se você modificar o registro incorretamente. Portanto, certifique-se de seguir estas etapas com cuidado. 
+> Esta seção contém etapas que explicam como modificar o registro. No entanto, graves problemas poderão ocorrer se você modificar o Registro incorretamente. Portanto, não deixe de seguir estas etapas com cuidado. 
 > 
 > Lembre-se de que a alteração das configurações de segurança padrão para SCHANNEL pode interromper ou impedir a comunicação entre determinados clientes e servidores.  Isso ocorrerá se a comunicação segura for necessária e não tiver um protocolo para negociar comunicações com o.
 > 
 > Se você estiver aplicando essas alterações, elas deverão ser aplicadas a todos os seus servidores de AD FS em seu farm.  Depois de aplicar essas alterações, uma reinicialização é necessária.
 
-No dia atual e na idade, a proteção dos servidores e a remoção de pacotes de criptografia antigos ou fracos estão se tornando uma prioridade importante para muitas organizações.  Os pacotes de software estão disponíveis para testar seus servidores e fornecer informações detalhadas sobre esses protocolos e conjuntos de pacotes.  Para permanecer em conformidade ou obter classificações seguras, remover ou desabilitar protocolos mais fracos ou pacotes de codificação se tornou um necessário.  O restante deste documento fornecerá orientações sobre como habilitar ou desabilitar determinados protocolos e conjuntos de codificação.
+No dia e na idade de hoje, a proteção dos servidores e a remoção de pacotes de criptografia antigos ou fracos estão se tornando uma prioridade importante para muitas organizações.  Os pacotes de software estão disponíveis para testar seus servidores e fornecer informações detalhadas sobre esses protocolos e conjuntos de pacotes.  Para permanecer em conformidade ou obter classificações seguras, remover ou desabilitar protocolos mais fracos ou pacotes de codificação se tornou um necessário.  O restante deste documento fornecerá orientações sobre como habilitar ou desabilitar determinados protocolos e conjuntos de codificação.
 
 As chaves do registro abaixo estão localizadas no mesmo local: HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols.  Use o regedit ou o PowerShell para habilitar ou desabilitar esses protocolos e conjuntos de codificação.
 

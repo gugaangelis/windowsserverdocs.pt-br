@@ -9,12 +9,12 @@ ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: manage
-ms.openlocfilehash: 6a6ccedeeb007b9d3ab32c308fae991deb526442
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b29a7e10cc6a862873516b9adc16182d64dd926
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383094"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465460"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Guia do usuário das Supervisor de desempenho do servidor
 
@@ -28,7 +28,7 @@ SPA pode ajudá-lo com as seguintes ações:
 
 * Forneça relatórios de dados e recomendações sobre problemas comuns de configuração e desempenho.
 
-* Forneça melhores recomendações de pratice com base nos dados coletados.
+* Fornecer recomendações de práticas recomendadas com base nos dados coletados.
 
 > [!NOTE]
 > O Console do SPA não faz quaisquer alterações aos servidores.
@@ -510,7 +510,7 @@ Todas as alterações feitas aos limites só são aplicadas a relatórios gerado
 
 Se você gerenciar seus servidores em situações semelhantes, poderá optar por usar o mesmo conjunto de limites. Você pode exportar e importar os limites de um pacote específico advisor usando o **configuração** menu. Selecione o pacote de Supervisor específico e, em seguida, clique em **Configurar**. O arquivo exportado de limite está em um formato XML.
 
-Ao importar um limite, o SPA valida o formato de arquivo XML e verifica se o arquivo corresponde o pacote selecionado advisor. Se isso for bem-sucedido, o SPA importará todos os valores do arquivo de limite para o banco de dados do projeto atual. Semelhante ao cenário de limites de alteração anterior, todas as alterações de valor de limite só têm efeito em relatórios gerados no futuro. Os relatórios existentes não são afetados.
+Ao importar um limite, o SPA valida o formato de arquivo XML e verifica se o arquivo corresponde o pacote selecionado advisor. Se for bem-sucedida, SPA importa todos os valores do arquivo de limite para o banco de dados do projeto atual. Semelhante ao cenário de limites de alteração anterior, todas as alterações de valor de limite só têm efeito em relatórios gerados no futuro. Os relatórios existentes não são afetados.
 
 ### <a name="enable-or-disable-rules"></a>Habilitar ou desabilitar regras
 
@@ -705,7 +705,7 @@ Pacotes do SPA advisor contém scripts SQL para examinar e analisar logs de dese
 
 ### <a name="spaconsoleexe-does-not-start-or-write-log-file"></a>SPAConsole.exe não iniciar ou gravar o arquivo de log
 
-Quando você tentar executar o SPAConsole. exe pela primeira vez, se o .NET Framework não estiver instalado, o aplicativo não iniciará ou gravará um arquivo de log. Verifique se uma estrutura compatible.NET está instalada e funcionando corretamente antes de iniciar o SPA.
+Quando você tentar executar o SPAConsole. exe pela primeira vez, se o .NET Framework não estiver instalado, o aplicativo não iniciará ou gravará um arquivo de log. Certifique-se de que uma compatible.NET que Framework está instalado e funcionando corretamente antes de iniciar o SPA.
 
 ### <a name="locating-log-information"></a>Localizando informações de log
 

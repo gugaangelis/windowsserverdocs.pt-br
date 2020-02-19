@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f61bc1ccb7d9b09a17713946b5b8c2cc352f43ac
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: a2b4bd25c50eb8e76627bb6532345f3c187e4f0e
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822089"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465530"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementar modelos administrativos com menos privilégios
 

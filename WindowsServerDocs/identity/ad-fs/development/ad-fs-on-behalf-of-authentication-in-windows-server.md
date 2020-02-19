@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 70281f581974493d3182fb6fdd8f35cb37bed4bf
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 028396bffff6449a296e2922846fe2fc379fe624
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001901"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465610"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Crie um aplicativo de várias camadas usando OBO (em nome de) usando o OAuth com o AD FS 2016 ou posterior
 
@@ -494,7 +494,7 @@ Na operação bem-sucedida, você verá que o item foi adicionado à lista com a
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 Você também pode ver os rastreamentos detalhados sobre o Fiddler. Inicie o Fiddler e habilite a descriptografia de HTTPS. Você pode ver que fazemos duas solicitações para o ponto de extremidade/ADFS/oautincludes.
-Na primeira interação, apresentamos o código de acesso ao ponto de extremidade do token e obtemos um token de acesso para https://localhost:44321/ ![ AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+Na primeira interação, apresentamos o código de acesso ao ponto de extremidade do token e obtemos um token de acesso para https://localhost:44321/ ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 Na segunda interação com o ponto de extremidade do token, você pode ver que temos **requested_token_use** definido como **on_behalf_of** e estamos usando o token de acesso obtido para o serviço Web de camada intermediária, ou seja, https://localhost:44321/ como a declaração para obter o token em nome de.
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)

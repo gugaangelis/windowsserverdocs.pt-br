@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 0479309efe629d204bdc98fe11a7ccb4447a7369
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: ec885670ca6808e89c63848781c4ff3dc27799b8
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940724"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465600"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>Solucionando problemas de hosts protegidos
 
@@ -51,7 +51,7 @@ AttestationStatus         | Explicação
 Expirado                   | O host passou pelo atestado anteriormente, mas o certificado de integridade que ele foi emitido expirou. Verifique se o host e a hora do HGS estão em sincronia.
 InsecureHostConfiguration | O host não passou no atestado porque ele não estava em conformidade com as políticas de atestado configuradas no HGS. Consulte a tabela AttestationSubStatus para obter mais informações.
 NotConfigured             | O host não está configurado para usar um HGS para atestado e proteção de chave. Ele é configurado para o modo local, em vez disso. Se esse host estiver em uma malha protegida, use [set-HgsClientConfiguration](https://technet.microsoft.com/library/dn914494.aspx) para fornecê-lo com as URLs para seu servidor HgS.
-Passagem                    | O host passou por atestado.
+Aprovado                    | O host passou por atestado.
 TransientError            | A última tentativa de atestado falhou devido a uma rede, serviço ou outro erro temporário. Repita a última operação.
 TpmError                  | O host não pôde concluir sua última tentativa de atestado devido a um erro com o TPM. Consulte os logs do TPM para obter mais informações.
 UnauthorizedHost          | O host não passou no atestado porque não foi autorizado a executar VMs blindadas. Verifique se o host pertence a um grupo de segurança confiável pelo HGS para executar VMs blindadas.

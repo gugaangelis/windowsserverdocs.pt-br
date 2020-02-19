@@ -9,12 +9,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b47cdc4770b1ed6478d1502ed5264164e99352b
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013041"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465260"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Ferramenta de restauração rápida do AD FS
 
@@ -29,6 +29,9 @@ A ferramenta de restauração rápida AD FS pode ser usada nos seguintes cenári
     - Use a ferramenta para criar uma instalação em espera passiva de AD FS que possa ser implantada rapidamente no lugar do servidor de AD FS online
 2. Implantar ambientes de teste e produção idênticos
     - Use a ferramenta para criar rapidamente uma cópia precisa do AD FS de produção em um ambiente de teste ou para implantar rapidamente uma configuração de teste validada para a produção
+3. Migrar de uma configuração baseada em SQL para o WID e vice-versa
+    - Use a ferramenta para mover de uma configuração de farm baseada em SQL para o WID ou vice-versa. 
+
 
 >[!NOTE] 
 >Se você estiver usando a replicação de mesclagem do SQL ou grupos de disponibilidade AlwaysOn, a ferramenta de restauração rápida não terá suporte. É recomendável usar backups baseados em SQL e um backup do certificado SSL como uma alternativa.
@@ -207,7 +210,7 @@ Cada documento criado como parte do backup é criptografado usando o AES-256. A 
 
 RngCryptoServiceProvider é usado para gerar o Salt usado pelo AES e a classe Rfc2898DeriveBytes. 
 
-## <a name="log-files"></a>Arquivos de Log
+## <a name="log-files"></a>Arquivos de log
 Toda vez que um backup ou restauração é executado, um arquivo de log é criado. Eles podem ser encontrados no seguinte local:
 
 - **%localappdata%\ADFSRapidRecreationTool**

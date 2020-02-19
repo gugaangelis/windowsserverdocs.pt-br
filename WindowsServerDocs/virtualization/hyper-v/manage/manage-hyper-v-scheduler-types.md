@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: c7c2de8354d067faf0dcf1787c3e178421e2ac03
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872032"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465570"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Gerenciando tipos de Agendador de hipervisor do Hyper-V
 
@@ -25,7 +25,7 @@ Este artigo descreve os novos modos de lógica de agendamento do processador vir
 >[!NOTE]
 >São necessárias atualizações para usar os recursos do Agendador de hipervisor descritos neste documento. Para obter detalhes, consulte [atualizações necessárias](#required-updates).
 
-## <a name="background"></a>Informações preliminares
+## <a name="background"></a>Histórico
 
 Antes de discutir a lógica e os controles por trás do agendamento do processador virtual do Hyper-V, é útil examinar os conceitos básicos abordados neste artigo.
 
@@ -66,7 +66,7 @@ A partir do Windows Server 2016, o hipervisor do Hyper-V dá suporte a vários m
 
 O Agendador clássico tem sido o padrão para todas as versões do hipervisor do Windows Hyper-V desde seu início, incluindo o Windows Server 2016 Hyper-V. O Agendador clássico fornece um modelo de agendamento Fair share, Preemptive Round Robin para processadores virtuais convidados.
 
-O tipo de Agendador clássico é o mais apropriado para a grande maioria dos usos do Hyper-V tradicionais – para nuvens privadas, provedores de hospedagem e assim por diante. As características de desempenho são bem compreendidas e são melhor otimizadas para dar suporte a uma ampla variedade de cenários de virtualização, como excesso de assinaturas de VPSs para LPs, execução de muitas VMs e cargas de trabalho heterogêneas simultaneamente, executando uma escala maior alta VMs de desempenho, dando suporte ao conjunto completo de recursos do Hyper-V sem restrições e muito mais.
+O tipo de Agendador clássico é o mais apropriado para a grande maioria dos usos do Hyper-V tradicionais – para nuvens privadas, provedores de hospedagem e assim por diante. As características de desempenho são bem compreendidas e são melhor otimizadas para dar suporte a uma ampla variedade de cenários de virtualização, como excesso de assinaturas de VPSs para LPs, execução simultânea de várias VMs e cargas de trabalho heterogêneas, executando uma escala maior alta VMs de desempenho, dando suporte ao conjunto completo de recursos do Hyper-V sem restrições e muito mais.
 
 ### <a name="the-core-scheduler"></a>O Agendador principal
 
@@ -122,7 +122,7 @@ Para habilitar o SMT em uma máquina virtual convidada, abra uma janela do Power
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-Em <n> que é o número de threads SMT por núcleo que a VM convidada verá.  
+Em que <n> é o número de threads SMT por núcleo, a VM convidada verá.  
 Observe que <n> = 0 definirá o valor de HwThreadCountPerCore para corresponder à contagem de threads de SMT do host por valor principal.
 
 >[!NOTE] 
@@ -153,7 +153,7 @@ Para ajudar a garantir que os hosts do Hyper-V sejam implantados na configuraç�
 |Windows Server 2016 | 1607 | 2018, 7 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018, 7 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018, 7 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server 2019 | 1804 | Nenhum | Nenhum |
+|Windows Server 2019 | 1804 | Nenhuma | Nenhuma |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>Selecionando o tipo de Agendador de hipervisor no Windows Server
 

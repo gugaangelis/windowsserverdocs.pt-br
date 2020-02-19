@@ -13,12 +13,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 90622fba1fc33966bd064c19056204013ff0c33b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 131fbacaab97c1c2c42920a518ce96ba1b8f5d2b
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869161"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465560"
 ---
 # <a name="understanding-capabilities"></a>Recursos de compreensão
 
@@ -55,7 +55,7 @@ No Windows Server 2019, o System insights apresenta quatro recursos padrão com 
 - **Previsão de consumo de armazenamento total** – prevê o consumo de armazenamento total em todas as unidades locais. 
 - **Previsão de consumo de volume** – prevê o consumo de armazenamento para cada volume.
 
-Cada funcionalidade analisa os dados históricos anteriores para prever o uso futuro, e **todos os recursos de previsão foram projetados para prever tendências de longo prazo em vez do comportamento de curto prazo**, ajudando os administradores a provisionar corretamente o hardware e o ajuste suas cargas de trabalho para evitar a contenção de recursos futura. Como esses recursos se concentram no uso de longo prazo, esses recursos analisam dados diários. 
+Cada funcionalidade analisa os dados históricos anteriores para prever o uso futuro, e **todos os recursos de previsão foram projetados para prever tendências de longo prazo em vez do comportamento de curto prazo**, ajudando os administradores a provisionar corretamente o hardware e ajustar suas cargas de trabalho para evitar a contenção de recursos futuramente. Como esses recursos se concentram no uso de longo prazo, esses recursos analisam dados diários. 
 
 ### <a name="forecasting-model"></a>Modelo de previsão
 Os recursos padrão usam um modelo de previsão para prever o uso futuro e, para cada previsão, o modelo é treinado localmente nos dados do seu computador. Esse modelo foi projetado para ajudar a detectar tendências de prazo mais longo, e o novo treinamento em cada instância do Windows Server permite que a capacidade se adapte ao comportamento específico e às nuances do uso de cada computador.
@@ -80,7 +80,7 @@ Cada funcionalidade analisa os dados diários para prever o uso futuro. A CPU, a
 | --------------- | -------------- | ---------------- |
  Previsão de consumo de volume          | Tamanho do volume                    | Uso diário máximo              
  Previsão de consumo de armazenamento total   | Soma dos tamanhos de volume, soma dos tamanhos de disco              | Uso diário máximo             
- Previsão de capacidade de CPU                | % Tempo do Processador  | Média máxima de 2 horas por dia   
+ Previsão de capacidade de CPU                | % Tempo do processador  | Média máxima de 2 horas por dia   
  Previsão de capacidade de rede         | Total de bytes/s         | Média máxima de 2 horas por dia  
 
 Ao avaliar a lógica de filtragem acima, é importante observar que cada recurso procura informar os administradores quando o uso futuro excederá significativamente a capacidade disponível – mesmo que a CPU pressione momentaneamente 100% de utilização, o uso da CPU pode não ter causou degradação de desempenho significativa ou contenção de recursos. Para CPU e rede, deve haver um alto uso sustentado em vez de picos momentâneos. A média do uso da CPU e da rede em todo o dia, no entanto, perderia informações de uso importantes, pois algumas horas de alto uso da CPU ou da rede poderiam impactar significativamente o desempenho de suas cargas de trabalho críticas. A média máxima de 2 horas durante cada dia evita esses extremos e ainda produz dados significativos para cada recurso a ser analisado.
@@ -89,11 +89,11 @@ No entanto, para o uso de volume e armazenamento total, a utilização de armaze
 
 ### <a name="forecasting-statuses"></a>Status de previsão
 Todos os recursos de informações do sistema devem gerar um status associado a cada previsão. Cada funcionalidade padrão usa a seguinte lógica para definir cada status de previsão:
-- **OK**: A previsão não excede a capacidade disponível.
-- **Aviso**: A previsão excede a capacidade disponível nos próximos 30 dias. 
-- **Crítico**: A previsão excede a capacidade disponível nos próximos 7 dias. 
-- **Erro**: A funcionalidade encontrou um erro inesperado. 
-- **Nenhum**: Não há dados suficientes para fazer uma previsão. Isso pode ser devido à falta de dados ou porque nenhum dado foi relatado recentemente.
+- **OK**: a previsão não excede a capacidade disponível.
+- **Aviso**: a previsão excede a capacidade disponível nos próximos 30 dias. 
+- **Crítico**: a previsão excede a capacidade disponível nos próximos 7 dias. 
+- **Erro**: a funcionalidade encontrou um erro inesperado. 
+- **Nenhum**: não há dados suficientes para fazer uma previsão. Isso pode ser devido à falta de dados ou porque nenhum dado foi relatado recentemente.
 
 >[!NOTE]
 >Se um recurso for previsões em várias instâncias, como vários volumes ou adaptadores de rede, o status refletirá o status mais grave em todas as instâncias. Os status individuais de cada volume ou adaptador de rede são visíveis no centro de administração do Windows ou dentro dos dados contidos na saída de cada recurso. Para obter instruções sobre como analisar a saída JSON dos recursos padrão, visite [este blog](https://aka.ms/systeminsights-mitigationscripts). 

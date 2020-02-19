@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: d54c33e092204f208590bd15db0d3c7fe7f852f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4973da0d9e0c347cff8fc910f96277055b66dec
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407890"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465540"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Crie um aplicativo Web de página única usando OAuth e ADAL. JS com AD FS 2016 ou posterior
 
@@ -43,9 +43,9 @@ O passo a passo usa o Visual Studio 2015. O projeto usa a biblioteca do ADAL JS.
 ## <a name="setting-up-the-environment"></a>Configurando o ambiente
 Neste tutorial, usaremos uma configuração básica de:
 
-1.  ORIGEM Controlador de domínio para o domínio no qual AD FS será hospedado
-2.  Servidor de AD FS: O servidor de AD FS para o domínio
-3.  Máquina de desenvolvimento: Computador onde o Visual Studio foi instalado e desenvolverei nosso exemplo
+1.  DC: controlador de domínio para o domínio no qual AD FS será hospedado
+2.  Servidor de AD FS: o servidor de AD FS para o domínio
+3.  Máquina de desenvolvimento: computador onde o Visual Studio foi instalado e desenvolverei nosso exemplo
 
 Você pode, se desejar, usar apenas duas máquinas. Um para DC/AD FS e o outro para desenvolver o exemplo.
 
@@ -72,7 +72,7 @@ Os arquivos de chave que contêm a lógica de autenticação são os seguintes:
 
 **HomeController. js**-mostra como aproveitar os métodos de logon () e logOut () no Adal.
 
-**UserDataController. js** -mostra como extrair informações do usuário do id_token armazenado em cache.
+**UserDataController. js** -mostra como extrair informações do usuário do id_token em cache.
 
 **Startup.auth.cs** -contém a configuração para o WebAPI usar Active Directory serviço de Federação para autenticação de portador.
 
@@ -114,7 +114,7 @@ Abra o arquivo **app. js** e altere a definição **adalProvider. init** para:
 |--------|--------|
 |cópia|A URL do STS, por exemplo, https://fs.contoso.com/|
 |tenant|Mantenha-o como ' ADFS '|
-|ClientID|Essa é a ID do cliente que você especificou ao configurar o cliente público para seu aplicativo de página única|
+|clientID|Essa é a ID do cliente que você especificou ao configurar o cliente público para seu aplicativo de página única|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>Configurar o WebAPI para usar AD FS
 Abra o arquivo **Startup.auth.cs** no exemplo e adicione o seguinte no início:
@@ -168,7 +168,7 @@ O navegador (use o navegador Chrome) carregará o SPA e você verá a seguinte t
 
 Clique em logon.  A lista de tarefas disparará o fluxo de autenticação e a ADAL JS direcionará a autenticação para AD FS
 
-![Entrar](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
 No Fiddler, você pode ver o token que está sendo retornado como parte da URL no fragmento #.
 
