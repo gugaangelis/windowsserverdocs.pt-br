@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: grcusanz; AnPaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8227c94e6785f4acf9135aac12406b6ac98a0910
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ef8a991b8ababa13c0a7a7be605c6dbe2af17a2
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383525"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465450"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>Ajuste de desempenho de redes definidas pelo software
 
@@ -73,4 +73,4 @@ Se você está usando adaptadores de rede de 40 Gbit, é recomendável habilitar
 
 ## <a name="software-load-balancer-slb"></a>SLB (Balanceador de Carga de Software)
 
-Os gateways SLB só podem ser usados com o controlador de rede e com a SDN.  É possível encontrar mais informações sobre o ajuste da SDN para uso com gateways SLB na seção [Gateways do Balanceador de Carga de Software](slb-gateway-performance.md).
+Os gateways SLB só podem ser usados com o controlador de rede e com a SDN.  É possível encontrar mais informações sobre como ajustar a SDN para uso com gateways SLB na seção [Gateways do Balanceador de Carga de Software](slb-gateway-performance.md).
