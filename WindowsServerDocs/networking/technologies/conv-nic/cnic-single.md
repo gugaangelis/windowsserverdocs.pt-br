@@ -40,9 +40,9 @@ Verifique se a NIC física pode se conectar ao host de destino. Este teste demon
    _**Da**_  
 
 
-   | Nome |    InterfaceDescription     | ifIndex | Status |    MacAddress     | LinkSpeed |
+   | {1&gt;Nome&lt;1} |    InterfaceDescription     | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------|-----------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox ConnectX-3 Pro... |    추가를 클릭합니다.    |   Para cima   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox ConnectX-3 Pro... |    4    |   Para Cima   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
@@ -114,11 +114,11 @@ Nesta etapa, usamos o comando **Test-NetConnect** do Windows PowerShell, mas se 
    _**Da**_
 
 
-   |        Parâmetro         |    Valor    |
+   |        Parâmetro         |    {1&gt;Valor&lt;1}    |
    |--------------------------|-------------|
    |       ComputerName       | 192.168.1.5 |
    |      RemoteAddress       | 192.168.1.5 |
-   |      Aliasdeinterface      |     M1      |
+   |      AliasdeInterface      |     M1      |
    |      SourceAddress       | 192.168.1.3 |
    |      PingSucceeded       |    True     |
    | PingReplyDetails \(RTT\) |    0 ms     |
@@ -142,11 +142,11 @@ Nesta etapa, usamos o comando **Test-NetConnect** do Windows PowerShell, mas se 
    _**Da**_
 
 
-   |        Parâmetro         |    Valor    |
+   |        Parâmetro         |    {1&gt;Valor&lt;1}    |
    |--------------------------|-------------|
    |       ComputerName       | 192.168.1.5 |
    |      RemoteAddress       | 192.168.1.5 |
-   |      Aliasdeinterface      | Test-40G-1  |
+   |      AliasdeInterface      | Test-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
    |      PingSucceeded       |    False    |
    | PingReplyDetails \(RTT\) |    0 ms     |
@@ -188,7 +188,7 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**Da**_
 
 
-   | Nome | DisplayName | TipoDeExibição | RegistryKeyword | Registrovalue |
+   | {1&gt;Nome&lt;1} | DisplayName | TipoDeExibição | RegistryKeyword | Registrovalue |
    |------|-------------|--------------|-----------------|---------------|
    |  M1  |   ID DA VLAN   |     101      |     VlanID      |     {101}     |
 
@@ -209,9 +209,9 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**Da**_
 
 
-   | Nome |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
+   | {1&gt;Nome&lt;1} |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------|-----------------------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox ConnectX-3 pro Ethernet Ada... |    추가를 클릭합니다.    |   Para cima   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox ConnectX-3 pro Ethernet Ada... |    4    |   Para Cima   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
@@ -252,11 +252,11 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**Da**_
 
 
-   |   Parâmetro    |          Valor           |
+   |   Parâmetro    |          {1&gt;Valor&lt;1}           |
    |----------------|--------------------------|
-   |      Nome      |           SMB            |
+   |      {1&gt;Nome&lt;1}      |           SMB            |
    |     Proprietário      | Computador \(Política de Grupo\) |
-   | NetworkProfile |           Todas            |
+   | NetworkProfile |           Tudo            |
    |   Precedência   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
@@ -274,13 +274,13 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**Da**_
 
 
-   | Priority | Habilitado | Política de | ifIndex | IfAlias |
+   | Prioridade | Habilitado | Política de | ifIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    2     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    3     |  True   |  Global   | &nbsp;  | &nbsp;  |
-   |    추가를 클릭합니다.     |  False  |  Global   | &nbsp;  | &nbsp;  |
+   |    4     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    5     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    6     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    7     |  False  |  Global   | &nbsp;  | &nbsp;  |
@@ -305,10 +305,10 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**Técnicas**_   
 
 
-   |      Parâmetro      |   Hardware   |   Atual    |
+   |      Parâmetro      |   Hardware   |   Current    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | Sem suporte | Sem suporte |
-   |     DcbxSupport     |     Nenhuma     |     Nenhuma     |
+   |     DcbxSupport     |     Nenhum     |     Nenhum     |
    | NumTCs (Max/ETS/PFC) |    8/8/8     |    8/8/8     |
 
    ---
@@ -330,7 +330,7 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**OperationalClassifications:**_  
 
 
-   | Protocolo  | Porta/tipo | Priority |
+   | Protocolo  | Porta/tipo | Prioridade |
    |-----------|-----------|----------|
    |  Padrão  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
@@ -348,7 +348,7 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**Da**_
 
 
-   | Nome | Algoritmo | Largura de banda (%) | Priority | Política de | ifIndex | IfAlias |
+   | {1&gt;Nome&lt;1} | Algoritmo | Largura de banda (%) | Prioridade | Política de | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      30      |    3     |  Global   | &nbsp;  | &nbsp;  |
 
@@ -363,7 +363,7 @@ A imagem a seguir mostra dois hosts Hyper-V, cada um com um adaptador de rede f�
    _**Da**_
 
 
-   |   Nome    | Algoritmo | Largura de banda (%) | Priority | Política de | ifIndex | IfAlias |
+   |   {1&gt;Nome&lt;1}    | Algoritmo | Largura de banda (%) | Prioridade | Política de | ifIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | Os |    ETS    |      70      | 0-2, 4-7  |  Global   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      30      |    3     |  Global   | &nbsp;  | &nbsp;  |
@@ -394,7 +394,7 @@ A imagem a seguir mostra o estado atual dos hosts Hyper-V.
    _**Da**_
 
 
-   | Nome |           InterfaceDescription           | Habilitado |
+   | {1&gt;Nome&lt;1} |           InterfaceDescription           | Habilitado |
    |------|------------------------------------------|---------|
    |  M1  | Adaptador Mellanox ConnectX-3 pro Ethernet |  True   |
 
@@ -409,7 +409,7 @@ A imagem a seguir mostra o estado atual dos hosts Hyper-V.
    _**Da**_ 
 
 
-   | Aliasdeinterface | InterfaceIndex |  IPv4Address  |
+   | AliasdeInterface | InterfaceIndex |  IPv4Address  |
    |----------------|----------------|---------------|
    |       M2       |       14       | {192.168.1.5} |
 
@@ -478,7 +478,7 @@ A imagem a seguir ilustra o host do Hyper-V 1 com um vSwitch.
    _**Da**_
 
 
-   |  Nome   | SwitchType |      NetAdapterInterfaceDescription      |
+   |  {1&gt;Nome&lt;1}   | SwitchType |      NetAdapterInterfaceDescription      |
    |---------|------------|------------------------------------------|
    | VMSTEST |  Externo  | Adaptador Mellanox ConnectX-3 pro Ethernet |
 
@@ -493,9 +493,9 @@ A imagem a seguir ilustra o host do Hyper-V 1 com um vSwitch.
    _**Da**_
 
 
-   |         Nome          |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |         {1&gt;Nome&lt;1}          |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
    |-----------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet \(VMSTEST\) | #2 de adaptador Ethernet virtual do Hyper-V |   27    |   Para cima   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | vEthernet \(VMSTEST\) | #2 de adaptador Ethernet virtual do Hyper-V |   27    |   Para Cima   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
@@ -511,7 +511,7 @@ A imagem a seguir ilustra o host do Hyper-V 1 com um vSwitch.
    _**Da**_
 
 
-   |         Nome         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | Status | IPAddresses |
+   |         {1&gt;Nome&lt;1}         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | Status | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
    | CORP-external-switch |      True      | CORP-external-switch | 001B785768AA |    Problemas    | &nbsp; |             |
    |       VMSTEST        |      True      |       VMSTEST        | E41D2D074071 |    Problemas    | &nbsp; |             |
@@ -596,7 +596,7 @@ A imagem a seguir ilustra o estado atual dos hosts do Hyper-V, incluindo o vSwit
    _**Da**_
 
 
-   |         Nome          |        InterfaceDescription         | Habilitado |
+   |         {1&gt;Nome&lt;1}          |        InterfaceDescription         | Habilitado |
    |-----------------------|-------------------------------------|---------|
    | vEthernet \(VMSTEST\) | #2 de adaptador Ethernet virtual do Hyper-V |  False  |
 
@@ -615,9 +615,9 @@ A imagem a seguir ilustra o estado atual dos hosts do Hyper-V, incluindo o vSwit
    _**Da**_   
 
 
-   |        Nome         |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |        {1&gt;Nome&lt;1}         |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet (VMSTEST) | #2 de adaptador Ethernet virtual do Hyper-V |   27    |   Para cima   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | vEthernet (VMSTEST) | #2 de adaptador Ethernet virtual do Hyper-V |   27    |   Para Cima   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
@@ -632,7 +632,7 @@ A imagem a seguir ilustra o estado atual dos hosts do Hyper-V, incluindo o vSwit
    _**Da**_
 
 
-   |         Nome          |        InterfaceDescription         | Habilitado |
+   |         {1&gt;Nome&lt;1}          |        InterfaceDescription         | Habilitado |
    |-----------------------|-------------------------------------|---------|
    | vEthernet \(VMSTEST\) | #2 de adaptador Ethernet virtual do Hyper-V |  True   |
 

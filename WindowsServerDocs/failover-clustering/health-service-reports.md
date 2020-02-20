@@ -215,9 +215,9 @@ Cada métrica tem apenas três propriedades, por esta tabela.
 
 | **Propriedade** | **Exemplo**       |
 | -------------|-------------------|
-| Nome         | IOLatencyAverage  |
-| Valor        | 0, 21           |
-| Unit        | 3                 |
+| {1&gt;Nome&lt;1}         | IOLatencyAverage  |
+| {1&gt;Valor&lt;1}        | 0, 21           |
+| Unidades        | 3                 |
 
 Units = {0, 1, 2, 3, 4}, em que 0 = "bytes", 1 = "BytesPerSecond", 2 = "CountPerSecond", 3 = "Seconds" ou 4 = "Percentage".
 
@@ -227,9 +227,9 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **Name**                        | **Unit** |
+| **Nome**                        | **Unit** |
 |---------------------------------|-----------|
-| Os                        | 추가를 클릭합니다.         |
+| Os                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
 | CapacityPhysicalPooledTotal     | 0         |
 | CapacityPhysicalTotal           | 0         |
@@ -251,9 +251,9 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **Name**            | **Unit** |
+| **Nome**            | **Unit** |
 |---------------------|-----------|
-| Os            | 추가를 클릭합니다.         |
+| Os            | 4         |
 | IOLatencyAverage    | 3         |
 | IOLatencyRead       | 3         |
 | IOLatencyWrite      | 3         |
@@ -268,7 +268,7 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **Name**            | **Unit** |
+| **Nome**            | **Unit** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |

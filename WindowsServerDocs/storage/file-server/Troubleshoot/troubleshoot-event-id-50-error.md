@@ -48,7 +48,7 @@ Essas mensagens de ID de evento significam exatamente a mesma coisa e são gerad
 > [!NOTE] 
 > O dispositivo e o caminho na descrição e os dados hexadecimais específicos irão variar. 
 
-##  <a name="more-information"></a>Mais Informações
+##  <a name="more-information"></a>Mais informações
 
 Uma mensagem de ID de evento 50 será registrada se ocorrer um erro genérico quando o Windows estiver tentando gravar informações no disco. Esse erro ocorre quando o Windows está tentando confirmar dados do Gerenciador de cache do sistema de arquivos (não o cache de nível de hardware) para o disco físico. Esse comportamento faz parte do gerenciamento de memória do Windows. Por exemplo, se um programa envia uma solicitação de gravação, a solicitação de gravação é armazenada em cache pelo Gerenciador de cache e o programa é informado de que a gravação foi concluída com êxito. Em um momento posterior, o Gerenciador de cache tenta gravar os dados em tempo lento no disco físico. Quando o Gerenciador de cache tenta confirmar os dados no disco, ocorre um erro ao gravar os dados, e os dados são liberados do cache e descartados. O cache write-back melhora o desempenho do sistema, mas a perda de dados e a perda de integridade do volume podem ocorrer como resultado de falhas de gravação atrasadas perdidas.
 
@@ -73,11 +73,11 @@ A tabela a seguir descreve o que cada deslocamento dessa mensagem representa:
 |0x04|2|Número de cadeias de caracteres = 0x0002|
 |0x06|2|Deslocamento para as cadeias de caracteres|
 |0x08|2|Categoria do Evento|
-|0x0c|추가를 클릭합니다.|Código de erro NTSTATUS = 0x80040032 = IO_LOST_DELAYED_WRITE|
+|0x0c|4|Código de erro NTSTATUS = 0x80040032 = IO_LOST_DELAYED_WRITE|
 |0x10|8|Não usado|
 |0x18|8|Não usado|
 |0x20|8|Não usado|
-|0x28|추가를 클릭합니다.|Código de erro de status do NT|
+|0x28|4|Código de erro de status do NT|
 
 #### <a name="key-sections-to-decode"></a>Principais seções a serem decodificadas
 

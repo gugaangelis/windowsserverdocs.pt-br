@@ -30,7 +30,7 @@ Alguns sistemas operacionais têm o Integration Services integrado. Outros exige
 
 A seguir estão as versões do Windows Server com suporte como sistemas operacionais convidados para o Hyper-V no Windows Server 2016 e no Windows Server 2019. 
   
-|Sistema operacional convidado (servidor)|Número máximo de processadores virtuais|Serviços de Integração|Observações|  
+|Sistema operacional convidado (servidor)|Número máximo de processadores virtuais|Integration Services|{1&gt;Observações&lt;1}|  
 |-------------------------------------|----------------------------------------|------------------------|---------| 
 |Windows Server, versão 1909 |240 para geração 2;<br>64 para geração 1|Internos|Maior que 240 o suporte ao processador virtual requer o Windows Server, versão 1903 ou sistemas operacionais convidados posteriores.| 
 |Windows Server, versão 1903 |240 para geração 2;<br>64 para geração 1|Internos||
@@ -47,11 +47,11 @@ A seguir estão as versões do Windows Server com suporte como sistemas operacio
 
 A seguir estão as versões do cliente Windows com suporte como sistemas operacionais convidados para o Hyper-V no Windows Server 2016 e no Windows Server 2019.
   
-|Sistema operacional convidado (cliente)|Número máximo de processadores virtuais|Serviços de Integração|Observações|  
+|Sistema operacional convidado (cliente)|Número máximo de processadores virtuais|Integration Services|{1&gt;Observações&lt;1}|  
 |-------------------------------------|----------------------------------------|------------------------|---------|  
 |Windows 10|32|Internos||  
 |Windows 8.1|32|Internos||  
-|Windows 7 com Service Pack 1 (SP1)|추가를 클릭합니다.|Atualize os serviços de integração depois de configurar o sistema operacional convidado.|Edições Ultimate, Enterprise e Professional (32 bits e 64 bits).|  
+|Windows 7 com Service Pack 1 (SP1)|4|Atualize os serviços de integração depois de configurar o sistema operacional convidado.|Edições Ultimate, Enterprise e Professional (32 bits e 64 bits).|  
   
 ## <a name="guest-operating-system-support-on-other-versions-of-windows"></a>Suporte do sistema operacional convidado em outras versões do Windows  
 

@@ -38,13 +38,13 @@ A maioria dos comandos do DiskRAID opera em uma porta específica de HBA (adapta
 ## <a name="diskraid-commands"></a>Comandos do DiskRAID
 
 Para exibir a sintaxe do comando, clique em um comando:
--   [add](#BKMK_1)
+-   [agrega](#BKMK_1)
 -   [sócio](#BKMK_2)
 -   [automagic](#BKMK_3)
 -   [break](#BKMK_4)
 -   [via](#BKMK_5)
--   [create](#BKMK_6)
--   [delete](#BKMK_7)
+-   [criada](#BKMK_6)
+-   [apagar](#BKMK_7)
 -   [detalhes](#BKMK_8)
 -   [desassociar](#BKMK_9)
 -   [exit](#BKMK_10)
@@ -56,7 +56,7 @@ Para exibir a sintaxe do comando, clique em um comando:
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
 -   [lista](#BKMK_19)
--   [login](#BKMK_20)
+-   [entrar](#BKMK_20)
 -   [logout](#BKMK_21)
 -   [manter](#BKMK_22)
 -   [name](#BKMK_23)
@@ -64,7 +64,7 @@ Para exibir a sintaxe do comando, clique em um comando:
 -   [conectar](#BKMK_25)
 -   [recover](#BKMK_26)
 -   [reenumerar](#BKMK_27)
--   [refresh](#BKMK_28)
+-   [Nova](#BKMK_28)
 -   [rem](#BKMK_29)
 -   [exclu](#BKMK_30)
 -   [replace](#BKMK_31)
@@ -129,7 +129,7 @@ Para uso somente com provedores VDS 1,1. Adiciona ou substitui a lista de portas
 
 Para uso somente com provedores VDS 1,1. Adiciona ou substitui a lista de destinos iSCSI associados ao LUN selecionado no momento.
 
-**add**
+**agrega**
 
 Para provedores VDS 1,0, o adiciona os controladores especificados à lista existente de controladores associados ao LUN. Se esse parâmetro não for especificado, a lista de controladores substituirá a lista existente de controladores associados a esse LUN.
 
@@ -143,7 +143,7 @@ Para uso com o parâmetro **controladores** ou **destinos** . Especifica os núm
 ```
 Para uso com o parâmetro **ports** . Especifica as portas do controlador para definir o ativo usando um par de número de controlador (*n*) e número de porta (*m*).
 
-#### <a name="example"></a>Exemplo
+#### <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 O exemplo a seguir mostra como associar e adicionar portas a um LUN que usa um provedor VDS 1,1:
 ```
@@ -311,7 +311,7 @@ Cria um LUN distribuído.
 
 Cria um LUN distribuído com paridade.
 
-**mirror**
+**espelho**
 
 Cria um LUN espelhado.
 
@@ -436,7 +436,7 @@ Lista informações detalhadas sobre o portal do iniciador iSCSI selecionado no 
 
 Lista informações detalhadas sobre o provedor selecionado no momento.
 
-**subsystem**
+**subsistema**
 
 Lista informações detalhadas sobre o subsistema selecionado no momento.
 
@@ -448,7 +448,7 @@ Lista informações detalhadas sobre o controlador selecionado no momento.
 
 Lista informações detalhadas sobre a porta do controlador selecionada no momento.
 
-**drive**
+**Dirigir**
 
 Lista informações detalhadas sobre a unidade selecionada no momento, incluindo os LUNs que ocupam.
 
@@ -506,7 +506,7 @@ Para uso com o parâmetro **controladores** ou **destinos** . Especifica os núm
 ```
 Para uso com o parâmetro **ports** . Especifica as portas do controlador a serem definidas como inativas usando um par de número de controlador (*n*) e número de porta (*m*).
 
-#### <a name="example"></a>Exemplo
+#### <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 ```
 DISKRAID> SEL LUN 5
@@ -820,7 +820,7 @@ name {subsystem | lun | target} [<name>]
 
 #### <a name="parameter"></a>Parâmetro
 
-\<name>
+nome do \<>
 
 Especifica um nome para o subsistema, LUN ou destino. O nome deve ter menos de 64 caracteres de comprimento. Se nenhum nome for fornecido, o nome existente, se houver, será excluído.
 
@@ -1124,7 +1124,7 @@ Especifica que o LUN não deve ser acessível a nenhum host.
 > [!IMPORTANT]
 > Você deve fazer logoff do destino antes de executar o comando unmask LUN NONE.
 
-**add**
+**agrega**
 
 Especifica que os hosts especificados devem ser adicionados à lista existente de hosts do qual esse LUN está acessível. Se esse parâmetro não for especificado, a lista de hosts fornecida substituirá a lista existente de hosts dos quais esse LUN pode ser acessado.
 
@@ -1150,13 +1150,13 @@ Por padrão, o DiskRAID para o processamento de comandos e retorna um código de
 
 ### <a name="diskraid-error-codes"></a>Códigos de erro do DiskRAID
 
-|Código de erro|Descrição do erro|
+|Código de erro|Descrição do Erro|
 |----------|-----------------|
 |0|Não ocorreu nenhum erro. Todo o script foi executado sem falha.|
 |1|Ocorreu uma exceção fatal.|
 |2|Os argumentos especificados em uma linha de comando do DiskRAID estavam incorretos.|
 |3|O DiskRAID não pôde abrir o script ou o arquivo de saída especificado.|
-|추가를 클릭합니다.|Um dos serviços que o DiskRAID usa retornou uma falha.|
+|4|Um dos serviços que o DiskRAID usa retornou uma falha.|
 |5|Ocorreu um erro de sintaxe de comando. O script falhou porque um objeto foi selecionado incorretamente ou era inválido para uso com esse comando.|
 
 ## <a name="example-interactively-view-status-of-subsystem"></a>Exemplo: exibir o status de subsistema de forma interativa

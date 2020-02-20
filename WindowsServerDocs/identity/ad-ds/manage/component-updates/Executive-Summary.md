@@ -174,28 +174,28 @@ As práticas são listadas em ordem aproximada de prioridade, ou seja, números 
   
 ||**Prática recomendada**|**Tático ou estratégico**|**Preventiva ou de detecção**|  
 |-|-|-|-|  
-|1|Aplicativos de patch.|Táticas|Preventiva|  
-|2|Sistemas operacionais de patch.|Táticas|Preventiva|  
+|1|Aplicativos de patch.|Táticas|Preventivo|  
+|2|Sistemas operacionais de patch.|Táticas|Preventivo|  
 |3|Implante e atualize imediatamente software antivírus e antimalware em todos os sistemas e monitore as tentativas de removê-lo ou desabilitá-lo.|Táticas|Ambos|  
-|추가를 클릭합니다.|Monitore objetos Active Directory confidenciais para tentativas de modificação e para eventos do Windows que podem indicar a tentativa de comprometimento.|Táticas|Detetive|  
+|4|Monitore objetos Active Directory confidenciais para tentativas de modificação e para eventos do Windows que podem indicar a tentativa de comprometimento.|Táticas|Detetive|  
 |5|Proteger e monitorar contas para usuários que têm acesso a dados confidenciais|Táticas|Ambos|  
-|6|Impedir que contas poderosas sejam usadas em sistemas não autorizados.|Táticas|Preventiva|  
-|7|Elimine a associação permanente em grupos altamente privilegiados.|Táticas|Preventiva|  
-|8|Implemente controles para conceder a Associação temporária em grupos privilegiados quando necessário.|Táticas|Preventiva|  
-|9|Implementar hosts administrativos seguros.|Táticas|Preventiva|  
-|10|Use a lista de permissões de aplicativos em controladores de domínio, hosts administrativos e outros sistemas confidenciais.|Táticas|Preventiva|  
+|6|Impedir que contas poderosas sejam usadas em sistemas não autorizados.|Táticas|Preventivo|  
+|7|Elimine a associação permanente em grupos altamente privilegiados.|Táticas|Preventivo|  
+|8|Implemente controles para conceder a Associação temporária em grupos privilegiados quando necessário.|Táticas|Preventivo|  
+|9|Implementar hosts administrativos seguros.|Táticas|Preventivo|  
+|10|Use a lista de permissões de aplicativos em controladores de domínio, hosts administrativos e outros sistemas confidenciais.|Táticas|Preventivo|  
 |11|Identificar ativos críticos e priorizar a segurança e o monitoramento.|Táticas|Ambos|  
-|12|Implemente controles de acesso com privilégios mínimos e baseados em função para administração do diretório, sua infraestrutura de suporte e sistemas ingressados no domínio.|Estratégicas|Preventiva|  
-|13|Isole os sistemas e aplicativos herdados.|Táticas|Preventiva|  
-|14|Descomissionar sistemas e aplicativos herdados.|Estratégicas|Preventiva|  
-|15|Implemente programas de ciclo de vida de desenvolvimento seguro para aplicativos personalizados.|Estratégicas|Preventiva|  
-|16|Implemente o gerenciamento de configuração, examine a conformidade regularmente e avalie as configurações com cada nova versão de hardware ou software.|Estratégicas|Preventiva|  
+|12|Implemente controles de acesso com privilégios mínimos e baseados em função para administração do diretório, sua infraestrutura de suporte e sistemas ingressados no domínio.|Estratégicas|Preventivo|  
+|13|Isole os sistemas e aplicativos herdados.|Táticas|Preventivo|  
+|14|Descomissionar sistemas e aplicativos herdados.|Estratégicas|Preventivo|  
+|15|Implemente programas de ciclo de vida de desenvolvimento seguro para aplicativos personalizados.|Estratégicas|Preventivo|  
+|16|Implemente o gerenciamento de configuração, examine a conformidade regularmente e avalie as configurações com cada nova versão de hardware ou software.|Estratégicas|Preventivo|  
 |17|Migre ativos críticos para florestas original com requisitos rigorosos de segurança e monitoramento.|Estratégicas|Ambos|  
-|18|Simplifique a segurança para os usuários finais.|Estratégicas|Preventiva|  
-|19|Use firewalls baseados em host para controlar e proteger as comunicações.|Táticas|Preventiva|  
-|20|Dispositivos de patch.|Táticas|Preventiva|  
-|21|Implemente o gerenciamento de ciclo de vida centrado nos negócios para ativos de ti.|Estratégicas|N/D|  
-|22|Criar ou atualizar planos de recuperação de incidentes.|Estratégicas|N/D|  
+|18|Simplifique a segurança para os usuários finais.|Estratégicas|Preventivo|  
+|19|Use firewalls baseados em host para controlar e proteger as comunicações.|Táticas|Preventivo|  
+|20|Dispositivos de patch.|Táticas|Preventivo|  
+|21|Implemente o gerenciamento de ciclo de vida centrado nos negócios para ativos de ti.|Estratégicas|{1&gt;N/A&lt;1}|  
+|22|Criar ou atualizar planos de recuperação de incidentes.|Estratégicas|{1&gt;N/A&lt;1}|  
   
 
 

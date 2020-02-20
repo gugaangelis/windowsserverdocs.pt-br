@@ -259,13 +259,13 @@ Exemplo 2: retorna todos os pares de chave-valor neste caminho:
 
 Todos os dados coletados serão importados para uma tabela temporária chamada **\#RegistryKeys** antes que um script de relatório SQL seja executado. A tabela a seguir mostra os resultados, por exemplo 2:
 
-KeyName | Keytypeid | Valor
+KeyName | Keytypeid | {1&gt;Valor&lt;1}
 ------ | ----- | -------
 HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 \db310065-829b-4671-9647-2261c00e86ef\Description | 2 | |
 \db310065-829b-4671-9647-2261c00e86ef\FriendlyName | 2 | Fonte de energia otimizada
-...\6738e2c4-e8a5-4a42-b16a-e040e769756e\ACSettingIndex | 추가를 클릭합니다. | 180
-...\6738e2c4-e8a5-4a42-b16a-e040e769756e\DCSettingIndex | 추가를 클릭합니다. | 30
+...\6738e2c4-e8a5-4a42-b16a-e040e769756e\ACSettingIndex | 4 | 180
+...\6738e2c4-e8a5-4a42-b16a-e040e769756e\DCSettingIndex | 4 | 30
 
 O esquema para a tabela de **#registryKeys** é o seguinte:
 
@@ -273,18 +273,18 @@ Nome da coluna | Tipo de dados SQL | Descrição
 -------- | -------- | --------
 KeyName | Nvarchar (300) NOT NULL | Nome do caminho completo da chave do registro
 Keytypeid | Smallint não nulo | ID de tipo interno
-Valor | Nvarchar (4000) não nulo | Todos os valores
+{1&gt;Valor&lt;1} | Nvarchar (4000) não nulo | Todos os valores
 
 A coluna **keytypeid** pode ter um dos seguintes tipos:
 
-ID | Digite
+ID | Tipo
 --- | ---
-1 | Cadeia de caracteres
+1 | String
 2 | ExpandString
 3 | Binário
-추가를 클릭합니다. | DWord
+4 | DWord
 5 | DWordBigEndian
-6 | Vincular
+6 | Link
 7 | MultipleString
 8 | ResourceList
 9 | FullResourceDescriptor
@@ -301,7 +301,7 @@ Você pode adicionar qualquer consulta WMI. Para obter mais informações sobre 
 
 A consulta no exemplo acima retorna um registro:
 
-Caption | Nome | PeakUsage
+Legenda | {1&gt;Nome&lt;1} | PeakUsage
 ----- | ----- | -----
 C:\pagefile.sys | C:\pagefile.sys | 215
 
@@ -309,19 +309,19 @@ Como o WMI retorna uma tabela com colunas diferentes, quando os dados coletados 
 
 **tabela \#WMIObjects**
 
-SequenceID | Namespace | ClassName | RelativePath | WmiqueryID
+SequenceID | {1&gt;Namespace&lt;1} | ClassName | RelativePath | WmiqueryID
 ----- | ----- | ----- | ----- | -----
 10 | Root\Cimv2 | Win32_PageFileUsage | Win32_PageFileUsage. Name =<br>C:\\pagefile. sys | 1
 
 **\#tabela WmiObjectsProperties**
 
-ID | consulta
+ID | query
 --- | ---
 1 | Root\Cimv2: selecione * de Win32_PageFileUsage
 
 **\#tabela WmiQueries**
 
-ID | consulta
+ID | query
 --- | ---
 1 | Root\Cimv2: selecione * de Win32_PageFileUsage
 
@@ -330,7 +330,7 @@ ID | consulta
 Nome da coluna | Tipo de dados SQL | Descrição
 --- | --- | ---
 SequenceId | Int não nulo | Correlacione a linha e suas propriedades
-Namespace | Nvarchar (200) não nulo | Namespace WMI
+{1&gt;Namespace&lt;1} | Nvarchar (200) não nulo | Namespace WMI
 ClassName | Nvarchar (200) não nulo | Nome da classe WMI
 RelativePath | Nvarchar (500) não nulo | Caminho relativo do WMI
 WmiqueryId | Int não nulo | Correlacione a chave de #WmiQueries
@@ -340,15 +340,15 @@ WmiqueryId | Int não nulo | Correlacione a chave de #WmiQueries
 Nome da coluna | Tipo de dados SQL | Descrição
 --- | --- | ---
 SequenceId | Int não nulo | Correlacione a linha e suas propriedades
-Nome | Nvarchar (1000) não nulo | Nome da propriedade
-Valor | Nvarchar (4000) NULL | O valor da propriedade atual
+{1&gt;Nome&lt;1} | Nvarchar (1000) não nulo | Nome da propriedade
+{1&gt;Valor&lt;1} | Nvarchar (4000) NULL | O valor da propriedade atual
 
 **\#o esquema de tabela WmiQueries**
 
 Nome da coluna | Tipo de dados SQL | Descrição
 --- | --- | ---
 Id | Int não nulo | > ID de consulta exclusiva
-consulta | Nvarchar (4000) não nulo | Cadeia de caracteres de consulta original nos metadados de provisionamento
+query | Nvarchar (4000) não nulo | Cadeia de caracteres de consulta original nos metadados de provisionamento
 
 ### <a name="collect-performance-counters"></a>Coletar contadores de desempenho
 
@@ -366,25 +366,25 @@ No exemplo anterior, contador \\PhysicalDisk (\*)\\média de disco s/transferên
 
 Pode haver duas instâncias: **\_total** e **0 C: D:** , e a saída pode ser a seguinte:
 
-carimbo de data/hora | CategoryName | CounterName | Valor da instância de _Total | Valor da instância de 0 C: D:
+timestamp | CategoryName | CounterName | Valor da instância de _Total | Valor da instância de 0 C: D:
 ---- | ---- | ---- | ---- | ----
-13:45:52.630 | PhysicalDisk | Média de disco s/transferência | 0.00100008362473995 |0.00100008362473995
-13:45:53.629 | PhysicalDisk | Média de disco s/transferência | 0.00280023414927187 | 0.00280023414927187
-13:45:54.627 | PhysicalDisk | Média de disco s/transferência | 0.00385999853230048 | 0.00385999853230048
-13:45:55.626 | PhysicalDisk | Média de disco s/transferência | 0.000933297607934224 | 0.000933297607934224
+13:45:52.630 | Disco Físico | Média de disco s/transferência | 0.00100008362473995 |0.00100008362473995
+13:45:53.629 | Disco Físico | Média de disco s/transferência | 0.00280023414927187 | 0.00280023414927187
+13:45:54.627 | Disco Físico | Média de disco s/transferência | 0.00385999853230048 | 0.00385999853230048
+13:45:55.626 | Disco Físico | Média de disco s/transferência | 0.000933297607934224 | 0.000933297607934224
 
 Para importar os dados para o banco de dado, os dados serão normalizados em uma tabela chamada **\#PerformanceCounters**.
 
-CategoryDisplayName | InstanceName | MyDisplayName | Valor
+CategoryDisplayName | InstanceName | MyDisplayName | {1&gt;Valor&lt;1}
 ---- | ---- | ---- | ----
-PhysicalDisk | _Total | Média de disco s/transferência | 0.00100008362473995
-PhysicalDisk | 0 C: D: | Média de disco s/transferência | 0.00100008362473995
-PhysicalDisk | _Total | Média de disco s/transferência | 0.00280023414927187
-PhysicalDisk | 0 C: D: | Média de disco s/transferência | 0.00280023414927187
-PhysicalDisk | _Total | Média de disco s/transferência | 0.00385999853230048
-PhysicalDisk | 0 C: D: | Média de disco s/transferência | 0.00385999853230048
-PhysicalDisk | _Total | Média de disco s/transferência | 0.000933297607934224
-PhysicalDisk | 0 C: D: | Média de disco s/transferência | 0.000933297607934224
+Disco Físico | _Total | Média de disco s/transferência | 0.00100008362473995
+Disco Físico | 0 C: D: | Média de disco s/transferência | 0.00100008362473995
+Disco Físico | _Total | Média de disco s/transferência | 0.00280023414927187
+Disco Físico | 0 C: D: | Média de disco s/transferência | 0.00280023414927187
+Disco Físico | _Total | Média de disco s/transferência | 0.00385999853230048
+Disco Físico | 0 C: D: | Média de disco s/transferência | 0.00385999853230048
+Disco Físico | _Total | Média de disco s/transferência | 0.000933297607934224
+Disco Físico | 0 C: D: | Média de disco s/transferência | 0.000933297607934224
 
 **Observação** Os nomes localizados, como **CategoryDisplayName** e **MyDisplayName**, variam de acordo com o idioma de exibição usado no servidor de destino. Evite usar esses campos se desejar criar um pacote Advisor neutro por idioma.
 
@@ -392,13 +392,13 @@ esquema de tabela do **\#PerformanceCounters**
 
 Nome da coluna | Tipo de dados SQL | Descrição
 ---- | ---- | ---- | ----
-carimbo de data/hora | datetime2 (3) não nulo | A data e a hora coletadas no UNC
+timestamp | datetime2 (3) não nulo | A data e a hora coletadas no UNC
 CategoryName | Nvarchar (200) não nulo | Nome da categoria
 CategoryDisplayName | Nvarchar (200) não nulo | Nome da categoria localizada
 InstanceName | Nvarchar (200) NULL | Nome da instância
 CounterName | Nvarchar (200) não nulo | Nome do contador
 MyDisplayName | Nvarchar (200) não nulo | Nome do contador localizado
-Valor | Float NOT NULL | O valor coletado
+{1&gt;Valor&lt;1} | Float NOT NULL | O valor coletado
 
 ### <a name="collect-files"></a>Coletar arquivos
 
@@ -414,7 +414,7 @@ Aqui está um exemplo que consulta o arquivo **ApplicationHost. config** :
 
 Os resultados podem ser encontrados em uma tabela chamada **\#arquivos**, por exemplo:
 
-querypath | FullPath | Parentpath | nome_de_arquivo | Conteúdo
+querypath | FullPath | Parentpath | FileName | Conteúdo
 ----- | ----- | ----- | ----- | -----
 % WINDIR%\... \applicationHost.config |C:\Windows<br>\... \applicationHost.config | C:\Windows<br>\... \CONFIG | applicationHost. confi | 0x3C3F78
 
@@ -425,7 +425,7 @@ Nome da coluna | Tipo de dados SQL | Descrição
 querypath | Nvarchar (300) NOT NULL | Instrução de consulta original
 FullPath | Nvarchar (300) NOT NULL | Caminho de arquivo absoluto e nome de arquivo
 Parentpath | Nvarchar (300) NOT NULL | Caminho do arquivo
-nome_de_arquivo | Nvarchar (300) NOT NULL | Nome do Arquivo
+FileName | Nvarchar (300) NOT NULL | Nome do arquivo
 Conteúdo | Varbinary (MAX) NULL | Conteúdo do arquivo em binário
 
 ### <a name="defining-rules"></a>Definindo regras
@@ -516,7 +516,7 @@ Depois que as regras são definidas, os administradores do sistema podem ver o r
 
 Continuando com o exemplo anterior, o usuário sabe se há espaço livre em disco suficiente na unidade do sistema. Os usuários também podem estar interessados no tamanho real do espaço livre. Um único grupo de valor é usado para armazenar e exibir esses resultados. Vários valores únicos podem ser agrupados e mostrados em uma tabela no console do SPA. A tabela tem apenas duas colunas, nome e valor, conforme mostrado aqui.
 
-Nome | Valor
+{1&gt;Nome&lt;1} | {1&gt;Valor&lt;1}
 ---- | ----
 Tamanho do disco livre na unidade do sistema (GB) | 100
 Tamanho total do disco instalado (GB) | 500 
@@ -532,7 +532,7 @@ Em um pacote do Advisor, pode haver muitas tabelas (grupos de valor único e tab
 
 Em resumo, há três tipos de elementos de interface do usuário:
 
-* [Seções](#bkmk-ui-section)
+* [As](#bkmk-ui-section)
 
 * [Grupos de valor único](#bkmk-ui-svg)
 
@@ -619,11 +619,11 @@ Um nome de tipo de dados pode ser qualquer cadeia de caracteres válida. Aqui es
 
 * decimal
 
-* flutuante
+* float
 
 * int
 
-* dinheiro
+* money
 
 * nchar
 
@@ -639,7 +639,7 @@ Um nome de tipo de dados pode ser qualquer cadeia de caracteres válida. Aqui es
 
 * smallmoney
 
-* tempo
+* time
 
 * tinyint
 
@@ -673,10 +673,10 @@ Você pode definir um tipo de dados para cada valor único. A entrada permitida 
 
 **Ocorrência**
 
-Nome | Valor
+{1&gt;Nome&lt;1} | {1&gt;Valor&lt;1}
 --- | ---
 Sistema operacional | &lt;_um valor será definido pelo script de relatório_&gt;
-Versão do sistema operacional | &lt;_um valor será definido pelo script de relatório_&gt;
+Versão do SO | &lt;_um valor será definido pelo script de relatório_&gt;
 Local do sistema operacional | &lt;_um valor será definido pelo script de relatório_&gt;
 
 O atributo **Caption** de **&lt;valor/&gt;** é apresentado na primeira coluna. Os valores na coluna valor são definidos no futuro pelo relatório de script por meio de \[dbo\].\[Set\]. O atributo de **Descrição** de **&lt;valor/&gt;** é mostrado em uma dica de ferramenta. Normalmente, a dica de ferramenta mostra aos usuários a origem dos dados. Para obter mais informações sobre dicas de ferramenta, consulte [tooltips](#bkmk-tooltips).
@@ -703,7 +703,7 @@ A interface do usuário fictícia do relatório final poderia ter a seguinte apa
 
 **Informações do adaptador de rede física**
 
-ID | Nome | Digite | Velocidade (Mbps) | Endereço MAC
+ID | {1&gt;Nome&lt;1} | Tipo | Velocidade (Mbps) | Endereço MAC
 --- | --- | --- | --- | ---
  | <br> | | |
  | | | |
@@ -767,7 +767,7 @@ Ao mesmo tempo, duas chaves de estatísticas são geradas pela estrutura SPA. Um
 
 Como o exemplo a seguir indica que há suporte para várias colunas de **valor** com várias colunas de **chave** .
 
-CounterName | InstanceName | Médio | Sum
+CounterName | InstanceName | Média | Sum
 --- | :---: | :---: | :---:
 % Tempo do processador | _Total | 10 | 20
 % Tempo do processador | CPU0 | 20 | 30 
@@ -1110,9 +1110,9 @@ Executando o \[dbo\].\[DebugReportScript\] retorna vários conjuntos de resultad
 
 ### <a name="naming-convention-and-styles"></a>Convenção de nomenclatura e estilos
 
-|                                                                 Compartimento de Pascal                                                                 |                       Concatenação com maiúsculas e minúsculas                        |             Maiúsculas             |
+|                                                                 Compartimento de Pascal                                                                 |                       Letras maiúsculas e minúsculas                        |             Maiúsculas             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
-| <ul><li>Nomes em ProvisionMetadata. xml</li><li>Procedimentos armazenados</li><li>Funções</li><li>Exibir nomes</li><li>Nomes de tabela temporária</li></ul> | <ul><li>Nomes do parâmetro</li><li>Variáveis locais</li></ul> | Usar para todas as palavras-chave reservadas do SQL |
+| <ul><li>Nomes em ProvisionMetadata. xml</li><li>Procedimentos armazenados</li><li>{1&gt;Funções&lt;1}</li><li>Exibir nomes</li><li>Nomes de tabela temporária</li></ul> | <ul><li>Nomes de parâmetro</li><li>Variáveis locais</li></ul> | Usar para todas as palavras-chave reservadas do SQL |
 
 ### <a name="other-recommendations"></a>Outras recomendações
 
@@ -1150,7 +1150,7 @@ O conjunto de coletores de dados de fusão é apenas para coletar as fontes de d
 
    1. Tome o menor intervalo como o novo intervalo.
 
-   2. Pegue o super conjunto dos contadores de desempenho. Por exemplo, com **processo (\*)\\% tempo de processador** e **processo (\*)\\\*,\\Process (\*)\\** * retorna mais dados, de modo que **Process (\\)\*% tempo de processador** e **Process (\\)\*\\** * é removido do conjunto de coletores de dados mesclados.
+   2. Pegue o super conjunto dos contadores de desempenho. Por exemplo, com **processo (\*)\\% tempo de processador** e **processo (\*)\\\*,\\Process (\*)\\** * retorna mais dados, de modo que **Process (\\)\*% tempo de processador** e **Process (\\)\*\\** * é removido do conjunto de coletores de dados mesclados.\\
 
 ### <a name="collect-dynamic-data"></a>Coletar dados dinâmicos
 
@@ -1193,7 +1193,7 @@ Neste exemplo, você primeiro adiciona uma consulta WMI em managementpaths e def
 
 A tabela a seguir define se um coletor de dados no SPA dá suporte a dados dinâmicos e se ele pode ser referenciado por outros coletores de dados:
 
-Tipo de dado | Suporte a dados dinâmicos | Pode ser referenciado
+Tipo de dados | Suporte a dados dinâmicos | Pode ser referenciado
 --- | :---: | :---:
 chave do registro | Sim | Sim
 WMI | Sim | Sim
@@ -1273,7 +1273,7 @@ O atributo **descriptionColumn** refere-se ao nome da coluna. Neste exemplo, a c
 
 Recomendamos que a dica de ferramenta mostre a fonte de dados para o usuário. Estes são os formatos para mostrar as fontes de dados:
 
-Fonte de dados | Formato | Exemplo
+Fonte de dados | Formato | {1&gt;Exemplo&lt;1}
 --- | --- | ---
 WMI | WMI: &lt;WMIClass&gt;/&lt;campo&gt; | WMI: Win32_OperatingSystem/Caption
 Contador de desempenho | PerfCounter: &lt;CategoryName&gt;/&lt;InstanceName&gt; | PerfCounter: processo/% tempo do processador
@@ -1312,10 +1312,10 @@ Aqui, como definir o ETW em um arquivo ProvisionMetadata. xml:
 
 Os seguintes atributos de provedor estão disponíveis para uso no ETW de coleta:
 
-Atributo | Digite | Descrição
+Atributo | Tipo | Descrição
 --- | --- | ---
 guid | GUID | GUID do provedor
-sessão | sequência | Nome da sessão ETW (opcional, necessário apenas para eventos de kernel)
+privado | string | Nome da sessão ETW (opcional, necessário apenas para eventos de kernel)
 keywordsany | Hex | Qualquer palavra-chave (opcional, sem prefixo 0x)
 keywordsAll | Hex | Todas as palavras-chave (opcional)
 propriedades | Hex | Propriedades (opcional)
@@ -1333,9 +1333,9 @@ Nome da coluna | Tipo de dados SQL | Descrição
 --- | --- | ---
 SequenceID | Int não nulo | ID da sequência de correlação
 EventTypeId | Int não nulo | ID do tipo de evento (consulte [dbo]. [ EventTypes])
-ProcessId | BigInt não nulo | ID do Processo
+ProcessId | BigInt não nulo | ID do processo
 ThreadId | BigInt não nulo | Identificação do Thread
-carimbo de data/hora | datetime2 não nulo | carimbo de data/hora
+timestamp | datetime2 não nulo | timestamp
 Kerneltime | BigInt não nulo | Tempo do kernel
 Usertime | BigInt não nulo | Hora do usuário
 
@@ -1344,8 +1344,8 @@ Usertime | BigInt não nulo | Hora do usuário
 Nome da coluna | Tipo de dados SQL | Descrição
 --- | --- | ---
 SequenceID | Int não nulo | ID da sequência de correlação
-Nome | Nvarchar(100) | Nome da propriedade
-Valor | Nvarchar(4000) | Valor
+{1&gt;Nome&lt;1} | Nvarchar(100) | Nome da propriedade
+{1&gt;Valor&lt;1} | Nvarchar (4000) | {1&gt;Valor&lt;1}
 
 ### <a name="etw-schema"></a>Esquema ETW
 
@@ -1398,7 +1398,7 @@ Instrumentação de Gerenciamento do Windows (WMI) é a infraestrutura para dado
 
 **Contadores de desempenho**
 
-Contadores de desempenho são usados para fornecer informações sobre como o sistema operacional ou um aplicativo, um serviço ou um driver está sendo executado. Os dados do contador de desempenho podem ajudar a determinar gargalos do sistema e ajustar o desempenho do sistema e do aplicativo. O sistema operacional, rede e dispositivos fornecem dados de contador que um aplicativo pode utilizar para fornecer aos usuários uma exibição gráfica de como o sistema está sendo executado. SPA usa informações do contador de desempenho e pontos de dados como fontes para gerar relatórios de desempenho.
+Os contadores de desempenho são usados para fornecer informações sobre o desempenho do sistema operacional ou de um aplicativo, serviço ou driver. Os dados do contador de desempenho podem ajudar a determinar gargalos do sistema e ajustar o desempenho do sistema e do aplicativo. O sistema operacional, rede e dispositivos fornecem dados de contador que um aplicativo pode utilizar para fornecer aos usuários uma exibição gráfica de como o sistema está sendo executado. SPA usa informações do contador de desempenho e pontos de dados como fontes para gerar relatórios de desempenho.
 
 **Logs e Alertas de Desempenho**
 

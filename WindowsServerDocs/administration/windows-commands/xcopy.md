@@ -36,7 +36,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> de origem do \<|Necessário. Especifica o local e os nomes dos arquivos que você deseja copiar. Esse parâmetro deve incluir uma unidade ou um caminho.|
+|> de origem do \<|Obrigatório. Especifica o local e os nomes dos arquivos que você deseja copiar. Esse parâmetro deve incluir uma unidade ou um caminho.|
 |[\<de destino >]|Especifica o destino dos arquivos que você deseja copiar. Esse parâmetro pode incluir uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
 |/w|Exibe a mensagem a seguir e aguarda sua resposta antes de começar a copiar arquivos:</br>**Pressione qualquer tecla para começar a Copiar arquivo (s)**|
 |/p|Solicita que você confirme se deseja criar cada arquivo de destino.|
@@ -55,9 +55,9 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/k|Copia arquivos e retém o atributo somente leitura nos arquivos de *destino* , se estiverem presentes nos arquivos de *origem* . Por padrão, o **xcopy** remove o atributo somente leitura.|
 |/r|Copia arquivos somente leitura.|
 |/h|Copia arquivos com atributos de arquivo ocultos e de sistema. Por padrão, o **xcopy** não copia arquivos ocultos ou do sistema|
-|SRDF|Copia somente os arquivos de *origem* que têm seus atributos de arquivo morto definidos. **/a** não modifica o atributo de arquivo morto do arquivo de origem. Para obter informações sobre como definir o atributo arquivo morto usando **attrib**, consulte [referências adicionais](#additional-references).|
+|/a|Copia somente os arquivos de *origem* que têm seus atributos de arquivo morto definidos. **/a** não modifica o atributo de arquivo morto do arquivo de origem. Para obter informações sobre como definir o atributo arquivo morto usando **attrib**, consulte [referências adicionais](#additional-references).|
 |/m|Copia os arquivos de *origem* que têm seus atributos de arquivo morto definidos. Ao contrário de **/a**, **/m** desativa os atributos do arquivo morto nos arquivos especificados na origem. Para obter informações sobre como definir o atributo arquivo morto usando **attrib**, consulte [referências adicionais](#additional-references).|
-|opção|Cria cópias usando o arquivo curto NTFS ou nomes de diretório. **/n** é necessário quando você copia arquivos ou diretórios de um volume NTFS para um volume FAT ou quando a Convenção de nomenclatura do sistema de arquivos FAT (ou seja, 8,3 caracteres) é necessária no sistema de arquivos de *destino* . O sistema de arquivos de *destino* pode ser FAT ou NTFS.|
+|/n|Cria cópias usando o arquivo curto NTFS ou nomes de diretório. **/n** é necessário quando você copia arquivos ou diretórios de um volume NTFS para um volume FAT ou quando a Convenção de nomenclatura do sistema de arquivos FAT (ou seja, 8,3 caracteres) é necessária no sistema de arquivos de *destino* . O sistema de arquivos de *destino* pode ser FAT ou NTFS.|
 |/o|Copia a propriedade do arquivo e as informações de DACL (lista de controle de acesso discricionário).|
 |/x|Copia as configurações de auditoria de arquivo e as informações de SACL (lista de controle de acesso do sistema) (implicam **/o**).|
 |/exclude: arquivo1 [+ [Nome_de_arquivo2] [+ [FileName3] (\)]|Especifica uma lista de arquivos. Pelo menos um arquivo deve ser especificado. Cada arquivo conterá cadeias de pesquisa com cada cadeia de caracteres em uma linha separada no arquivo.</br>Quando qualquer uma das cadeias de caracteres corresponder a qualquer parte do caminho absoluto do arquivo a ser copiado, esse arquivo será excluído da cópia. Por exemplo, especificar a cadeia de caracteres **obj** excluirá todos os arquivos abaixo do diretório **obj** ou todos os arquivos com a extensão **. obj** .|
@@ -118,7 +118,7 @@ Pressione F se desejar que o arquivo ou os arquivos sejam copiados para um arqui
   |0|Os arquivos foram copiados sem erros.|
   |1|Nenhum arquivo foi encontrado para cópia.|
   |2|O usuário pressionou CTRL + C para encerrar o **xcopy**.|
-  |추가를 클릭합니다.|Ocorreu um erro de inicialização. Não há memória ou espaço em disco suficiente ou você inseriu um nome de unidade inválido ou uma sintaxe inválida na linha de comando.|
+  |4|Ocorreu um erro de inicialização. Não há memória ou espaço em disco suficiente ou você inseriu um nome de unidade inválido ou uma sintaxe inválida na linha de comando.|
   |5|Erro de gravação no disco.|
 
 ## <a name="examples"></a>Exemplos

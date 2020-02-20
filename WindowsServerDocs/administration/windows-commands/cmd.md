@@ -39,7 +39,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |/s|Modifica o tratamento da *cadeia de caracteres* após **/c** ou **/k**.|
 |/q|Desativa o eco.|
 |/d|Desabilita a execução de comandos de AutoRun.|
-|SRDF|Formata a saída de comando interno para um pipe ou um arquivo como American National Standards Institute (ANSI).|
+|/a|Formata a saída de comando interno para um pipe ou um arquivo como American National Standards Institute (ANSI).|
 |/u|Formata a saída de comando interno para um pipe ou um arquivo como Unicode.|
 |/t: {\<B\>\<F\>\|\<F\>}|Define as cores de plano de fundo (*B*) e de primeiro plano (*F*).|
 |/e: on|Habilita extensões de comando.|
@@ -53,23 +53,23 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores para \<B\> e \<F\>
 
-|Valor|Cor|
+|{1&gt;Valor&lt;1}|Cor|
 |-----|-----|
 |0|Preto|
 |1|Azul|
 |2|Verde|
 |3|Aqua|
-|추가를 클릭합니다.|Vermelho|
+|4|Vermelho|
 |5|Roxo|
 |6|Amarelo|
 |7|Branco|
 |8|Cinza|
 |9|Azul-claro|
-|$nbsp;|Verde-claro|
+|a|Verde-claro|
 |b|Azul-claro|
 |c|Vermelho-claro|
 |d|Roxo-claro|
-|Oriental|Amarelo-claro|
+|e|Amarelo-claro|
 |f|Branco brilhante|
 
 ## <a name="remarks"></a>Comentários
@@ -103,7 +103,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
     Se uma ou ambas as subchaves do registro estiverem presentes, elas serão executadas antes de todas as outras variáveis.
 
 > [!CAUTION]
-> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
+> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.
 
 -   Habilitando e desabilitando extensões de comando
 
@@ -116,7 +116,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
     Defina o valor de **REG_DWORD** como **0 × 1** (habilitado) ou **0 × 0** (desabilitado) no registro usando Regedit. exe. As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
 > [!CAUTION]
-> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
+> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.
 
     When you enable command extensions, the following commands are affected:  
     -  **assoc**
@@ -156,7 +156,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
     Para definir o valor de **REG_DWORD** , execute regedit. exe e use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 × 9** é Tab e **0 × 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
 > [!CAUTION]
-> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
+> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.
 
 Se você habilitar a conclusão de nome de arquivo e diretório usando **/f: on**, use Ctrl + D para a conclusão de nome de diretório e Ctrl + f para a conclusão do nome de arquivo. Para desabilitar um caractere de conclusão específico no registro, use o valor para espaço em branco [**0 × 20**] porque ele não é um caractere de controle válido.
 

@@ -34,7 +34,7 @@ A tabela a seguir lista os valores de FBL por versão do Windows Server:
 | ------------- | ------------- | ------------- |
 | 2012 R2  | 1  | AdfsConfiguration |
 | 2016  | 3  | AdfsConfigurationV3 |
-| 2019  | 추가를 클릭합니다.  | AdfsConfigurationV4 |
+| 2019  | 4  | AdfsConfigurationV4 |
 
 > [!NOTE]
 > A atualização do FBL cria um novo banco de dados de configuração de AD FS.  Consulte a tabela acima para obter os nomes do banco de dados de configuração para cada versão AD FS do Windows Server e o valor FBL
@@ -63,11 +63,11 @@ O restante do documento is fornece as etapas para adicionar um servidor de Feder
 
 2. Usando o assistente de configuração do AD FS, ingresse o novo servidor do Windows Server 2019 no farm de AD FS existente.
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
 
 3. No servidor de Federação do Windows Server 2019, abra o gerenciamento de AD FS. Observe que os recursos de gerenciamento não estão disponíveis porque esse servidor de Federação não é o servidor primário.
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
 
 4. No servidor do Windows Server 2019, abra uma janela de comando do PowerShell com privilégios elevados e execute o seguinte cmdlet:
 
@@ -75,7 +75,7 @@ O restante do documento is fornece as etapas para adicionar um servidor de Feder
 Set-AdfsSyncProperties -Role PrimaryComputer
 ```
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
 
 5. No servidor AD FS configurado anteriormente como primário, abra uma janela de comando do PowerShell com privilégios elevados e execute o seguinte cmdlet:
 
@@ -83,22 +83,22 @@ Set-AdfsSyncProperties -Role PrimaryComputer
 Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 ```
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
 
 6. Agora, no servidor de Federação do Windows Server 2016, abra AD FS Management. Observe que agora todos os recursos de administração são exibidos porque a função primária foi transferida para esse servidor.
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
 
 7. Se você estiver atualizando um farm AD FS 2012 R2 para 2016 ou 2019, a atualização do farm exigirá que o esquema do AD esteja pelo menos no nível 85.  Para atualizar o esquema, com a mídia de instalação do Windows Server 2016, abra um prompt de comando e navegue até o diretório support\adprep. Execute o seguinte: `adprep /forestprep`
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
 
 Assim que concluir a execução `adprep/domainprep`
 
 > [!NOTE]
 > Antes de executar a próxima etapa, verifique se o Windows Server está atualizado executando Windows Update de configurações. Continue esse processo até que não existam mais atualizações.
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
 
 8. Agora, no servidor do Windows Server 2016, abra o PowerShell e execute o seguinte cmdlet:
 
@@ -110,19 +110,19 @@ Assim que concluir a execução `adprep/domainprep`
 Invoke-AdfsFarmBehaviorLevelRaise
 ```
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
 
 9. Quando solicitado, digite Y. Isso começará a gerar o nível. Quando isso for concluído, o FBL será gerado com êxito.
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
 
 10. Agora, se você for para AD FS Management, verá que os novos recursos foram adicionados para a versão mais recente do AD FS
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
 11. Da mesma forma, você pode usar o cmdlet do PowerShell: `Get-AdfsFarmInformation` para mostrar a você o FBL atual.
 
-![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
 12. Para atualizar os servidores WAP para o nível mais recente, em cada proxy de aplicativo Web, reconfigure o WAP executando o seguinte cmdlet do PowerShell em uma janela com privilégios elevados:
 

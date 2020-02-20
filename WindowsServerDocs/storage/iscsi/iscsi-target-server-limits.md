@@ -106,7 +106,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td><p>Vários nós de cluster ativos</p></td>
 <td><p>Com suporte</p></td>
 <td> 
-<p>N/D</p></td>
+<p>{1&gt;N/A&lt;1}</p></td>
 <td><p>Cada nó ativo no cluster de failover possui uma instância de cluster de servidor de destino iSCSI diferente com outros nós que atuam como possíveis nós de proprietário.</p></td>
 </tr>
 <tr class="odd">
@@ -130,12 +130,12 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="even">
 <td><p>Entrada/saída de vários caminhos (MPIO)</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Caminhos de MPIO</p></td>
-<td><p>추가를 클릭합니다.</p></td>
+<td><p>4</p></td>
 <td><p>Não</p></td>
 <td></td>
 </tr>
@@ -185,45 +185,45 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td></td>
 </tr>
 <tr class="even">
-<td><p>IPv4</p></td>
+<td><p>IPv6</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPv6</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarregamento de TCP</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td><p>Aproveitar envio grande (segmentação), soma de verificação, moderação de interrupção e descarregamento de RSS</p></td>
 </tr>
 <tr class="odd">
 <td><p>descarregamento de iSCSI</p></td>
 <td><p>Sem suporte</p></td>
-<td><br/><p>N/D</p></td>
+<td><br/><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Quadros jumbo</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPSec</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarregamento de CRC</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 </tbody>
@@ -328,13 +328,13 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="odd">
 <td><p>ReFS</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>NTFS</p></td>
 <td><p>Com suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -346,19 +346,19 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="even">
 <td><p>Provisionamento dinâmico</p></td>
 <td><p>Não</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td><p>VHDs dinâmicos têm suporte, mas não&#39;têm suporte para desmapeador.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Redução de unidade lógica</p></td>
 <td><p>Sim (somente Windows Server 2012 R2 e mais recente)</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td><p>Use <a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">redimension-iSCSIVirtualDisk</a> para reduzir um LUN.</p></td>
 </tr>
 <tr class="even">
 <td><p>Clonagem de unidade lógica</p></td>
 <td><p>Sem suporte</p></td>
-<td><p>N/D</p></td>
+<td><p>{1&gt;N/A&lt;1}</p></td>
 <td><p>Você pode clonar rapidamente os dados do disco usando VHDs diferenciais.</p></td>
 </tr>
 </tbody>
@@ -459,68 +459,68 @@ Testamos o software do servidor de destino iSCSI com os seguintes iniciadores iS
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Iniciador</p></td>
-<td><p>R2 do Windows Server 2012</p></td>
+<td><p>Configure</p></td>
+<td><p>Windows Server 2012 R2</p></td>
 <td><p>Windows Server 2012</p></td>
-<td><p>Comentários</p></td>
+<td><p>Comments</p></td>
 </tr>
 <tr class="even">
-<td><p>R2 do Windows Server 2012</p></td>
-<td><p>validadas</p></td>
+<td><p>Windows Server 2012 R2</p></td>
+<td><p>Valid</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows Server 2003</p></td>
-<td><p>validadas</p></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
+<td><p>Valid</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>VMWare vSphere 5</p></td>
 <td></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>VMWare ESXi 5,0</p></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>VMWare ESX 4,1</p></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>CentOS 6.x</p></td>
-<td><p>validadas</p></td>
+<td><p>CentOS 6. x</p></td>
+<td><p>Valid</p></td>
 <td></td>
 <td><p>É necessário fazer logoff de uma sessão e fazer logon novamente para detectar um disco virtual redimensionado.</p></td>
 </tr>
 <tr class="even">
 <td><p>Red Hat Enterprise Linux 6</p></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>RedHat Enterprise Linux 5 e 5</p></td>
-<td><p>validadas</p></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
+<td><p>Valid</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>SUSE Linux Enterprise Server 10</p></td>
 <td></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Oracle Solaris 11. x</p></td>
-<td><p>validadas</p></td>
+<td><p>Valid</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -529,7 +529,7 @@ Testamos o software do servidor de destino iSCSI com os seguintes iniciadores iS
 
 Também testamos os seguintes iniciadores iSCSI executando uma inicialização sem disco de discos virtuais hospedados pelo servidor de destino iSCSI:
 
-  - R2 do Windows Server 2012
+  - Windows Server 2012 R2
 
   - Windows Server 2012
 
@@ -537,7 +537,7 @@ Também testamos os seguintes iniciadores iSCSI executando uma inicialização s
 
   - CD ou disco USB com iPXE
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 A lista a seguir fornece recursos adicionais sobre o Servidor de Destino iSCSI e as tecnologias relacionadas.
 
