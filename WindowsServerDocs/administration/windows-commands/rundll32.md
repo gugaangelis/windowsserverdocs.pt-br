@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29a87f9f07c25a0c671e47550e0a054d8308f747
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7345c1ad59a4209e607245db1b2a79055ffcb5fe
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384422"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517282"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -34,7 +34,7 @@ Você deve executar o comando **rundll32** em um prompt de comandos com privilé
 Rundll32 <DLLname>
 ```
 
-## <a name="commands"></a>Comandos
+## <a name="commands"></a>Commands
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -42,7 +42,7 @@ Rundll32 <DLLname>
 
 ## <a name="remarks"></a>Comentários
 
-Rundll32 só pode chamar funções de uma DLL que são explicitamente gravadas para serem chamadas por rundll32. Para obter mais informações sobre os requisitos de rundll32, consulte o [artigo 164787](https://go.microsoft.com/fwlink/?LinkID=165773) na base de dados de conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkID=165773).
+Rundll32 só pode chamar funções de uma DLL escrita explicitamente para ser chamada por rundll32.
 
 #### <a name="additional-references"></a>Referências adicionais
 

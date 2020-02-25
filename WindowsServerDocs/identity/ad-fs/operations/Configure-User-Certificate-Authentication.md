@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145922"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517511"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configurando AD FS para autenticação de certificado de usuário
 
@@ -23,7 +23,7 @@ A autenticação de certificado de usuário é usada principalmente em dois caso
 * Os usuários estão usando certificados provisionados para dispositivos móveis
 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 1) Determine o modo de autenticação de certificado de usuário AD FS que você deseja habilitar usando um dos modos descritos neste [artigo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 2) Verifique se a cadeia confiável de certificado de usuário está instalada & confiável por todos os AD FS e servidores WAP, incluindo quaisquer autoridades de certificação intermediárias. Geralmente isso é feito por meio de GPO em servidores AD FS/WAP
 3)  Verifique se o certificado raiz da cadeia de confiança para os certificados de usuário está no repositório NTAuth no Active Directory
@@ -41,6 +41,8 @@ Se estiver configurando AD FS para autenticação de certificado do Azure AD, ve
 Além disso, há alguns aspectos opcionais.
 - Se você quiser usar declarações baseadas em campos de certificado e extensões, além do EKU (tipo de declaração https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku), configure as regras adicionais de passagem de declaração na relação de confiança do provedor de declarações Active Directory.  Veja abaixo uma lista completa de declarações de certificado disponíveis.  
 - Se você precisar restringir o acesso com base no tipo de certificado, poderá usar as propriedades adicionais no certificado em AD FS regras de autorização de emissão para o aplicativo. Os cenários comuns são "permitir somente certificados provisionados por um provedor de MDM" ou "permitir somente certificados de cartão inteligente"
+>[!IMPORTANT]
+> Os clientes que usam o fluxo de código de dispositivo para autenticação e execução de autenticação de dispositivo usando um IDP diferente do Azure AD (por exemplo, AD FS) não poderão impor o acesso baseado em dispositivo (por exemplo, permitir somente dispositivos gerenciados usando um serviço MDM de terceiros) para recursos do Azure AD. Para proteger o acesso aos recursos corporativos no Azure AD e evitar qualquer vazamento de dados, os clientes devem configurar o acesso condicional baseado no dispositivo do Azure AD (ou seja, "exigir que o dispositivo seja marcado como reclamação" no acesso condicional do Azure AD).
 - Configure as autoridades de certificação de emissão permitidas para certificados de cliente usando as diretrizes em "gerenciamento de emissores confiáveis para autenticação de cliente" neste [artigo](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx).
 - Convém considerar a modificação das páginas de entrada para atender às necessidades de seus usuários finais ao fazer a autenticação do certificado. Os casos comuns são para (a) alterar "entrar com seu certificado X509" para algo mais amigável para o usuário final
 
@@ -106,7 +108,7 @@ Muitos aplicativos do Office 365 enviam prompt = logon ao Azure AD. O AD do Azur
 
 Para obter mais informações, consulte [este link](ad-fs-prompt-login.md). 
 
-### <a name="additional-troubleshooting"></a>Solução de problemas adicionais
+### <a name="additional-troubleshooting"></a>Solução de problemas adicional
 Essas ocorrências são raras
 1)  Se suas listas de CRL forem muito longas, ela poderá atingir o tempo limite ao tentar fazer o download. Nesse caso, você precisa atualizar o ' MaxFieldLength ' e o ' MaxRequestByte ' de acordo com https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
 
@@ -115,7 +117,7 @@ Essas ocorrências são raras
 
 ## <a name="reference-complete-list-of-user-certificate-claim-types-and-example-values"></a>Referência: lista completa de tipos de declaração de certificado de usuário e valores de exemplo
 
-|                                         Tipo de declaração                                         |                              Exemplo de valor                               |
+|                                         Tipo de declaração                                         |                              Valor de exemplo                               |
 |--------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
 |         https://schemas.microsoft.com/2012/12/certificatecontext/field/x509version         |                                    3                                     |
 |     https://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm      |                                sha256RSA                                 |
@@ -134,6 +136,6 @@ Essas ocorrências são raras
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/san           | Outro nome: nome da entidade =user@contoso.com, nome do RFC822 =user@contoso.com |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku           |                          1.3.6.1.4.1.311.10.3.4                          |
 
-## <a name="related-links"></a>Links relacionados
+## <a name="related-links"></a>Links Relacionados
 * [Configurar a associação de nome de host alternativo para autenticação de certificado AD FS](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 * [Configurar autoridades de certificação no Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)

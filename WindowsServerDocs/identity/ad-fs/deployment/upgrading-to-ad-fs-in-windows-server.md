@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ebcc679b2bc5ab3c6d7c70c9e84ba45697c80165
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265588"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517571"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Atualizando para o AD FS no Windows Server 2016 por meio de um banco de dados WID
 
@@ -149,3 +149,16 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 ```
 
 Isso concluirá a atualização dos servidores WAP.
+
+
+> [!NOTE] 
+> Existe um problema de PRT conhecido no AD FS 2019 se o Windows Hello para empresas com uma confiança de certificado híbrido for executado. Você pode encontrar esse erro nos logs de eventos de administrador do ADFS: solicitação OAuth inválida recebida. O ' nome ' do cliente é proibido de acessar o recurso com o escopo ' UGS '. Para corrigir esse erro: 
+> 1. Inicie o console de gerenciamento do AD FS. Brose "descrições de escopo de > de serviços"
+> 2. Clique com o botão direito do mouse em "descrições de escopo" e selecione "Adicionar Descrição do escopo"
+> 3. Em nome, digite "UGS" e clique em aplicar > OK
+> 4. Iniciar o PowerShell como administrador
+> 5. Execute o comando "Get-AdfsApplicationPermission". Procure osnames de Scopes: {OpenID, Aza} que tem o ClientRoleIdentifier. Anote o objectidentifier.
+> 6. Execute o comando "Set-AdfsApplicationPermission-TargetIdentifier < objectidentifier da etapa 5 >-addscope ' UGS '
+> 7. Reinicie o serviço ADFS.
+> 8. No cliente: reinicie o cliente. O usuário deve ser solicitado a provisionar WHFB.
+> 9. Se a janela de provisionamento não aparecer, será necessário coletar logs de rastreamento do NGC e solucionar problemas adicionais.

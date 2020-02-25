@@ -60,6 +60,7 @@
 ## [Executar e ajustar](rds-run-and-tune.md)
 ### [Gerenciar coleções de sessão de área de trabalho pessoal](rds-manage-personal-collection.md)
 ### [Configuração recomendada para desktops VDI](rds-vdi-recommendations.md)
+### [Como otimizar o Windows 10, versão 1909, para uma função de VDI (Virtual Desktop Infrastructure)](rds_vdi-recommendations-1909.md)
 ### [Como otimizar o Windows 10, versão 1803, para uma função de VDI (Infraestrutura de Área de Trabalho Virtual)](rds-vdi-recommendations-1803.md)
 ### [Gerenciar usuários na coleção de RDS](rds-user-management.md)
 ### [Personalizar o título "recursos de trabalho" do RDS usando o PowerShell no Windows Server](rds-work-resources.md)
