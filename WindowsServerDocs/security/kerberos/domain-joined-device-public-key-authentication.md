@@ -8,12 +8,12 @@ manager: alanth
 author: michikos
 ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 616ebf1a8e01f84618d22d535609a0dc8414d718
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9c4342281ee2036e152c8034fa72e421487a45b
+ms.sourcegitcommit: 9bc7a0478d72944f714f8041fa4506e0d1ed0366
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403494"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607079"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>Autenticação de chave pública de dispositivo ingressado no domínio
 
@@ -25,12 +25,12 @@ O Kerberos adicionou suporte para dispositivos ingressados no domínio para entr
 
 A partir do Windows 10 versão 1507 e do Windows Server 2016, os dispositivos ingressados no domínio provisionam automaticamente uma chave pública associada a um controlador de domínio do Windows Server 2016 (DC). Depois que uma chave é provisionada, o Windows pode usar a autenticação de chave pública para o domínio.
 
-### <a name="public-key-generation"></a>Geração de chave pública
-Se o dispositivo estiver executando o Credential Guard, uma chave pública será criada protegida pelo Credential Guard. 
+### <a name="key-generation"></a>Geração de chave
+Se o dispositivo estiver executando o Credential Guard, um par de chaves pública/privada será criado protegido pelo Credential Guard. 
 
-Se o Credential Guard não estiver disponível e um TPM for, uma chave pública será criada protegida pelo TPM. 
+Se o Credential Guard não estiver disponível e um TPM for, um par de chaves pública/privada será criado protegido pelo TPM. 
 
-Se nenhum estiver disponível, uma chave não será gerada e o dispositivo só poderá ser autenticado usando a senha.
+Se nenhum estiver disponível, um par de chaves não será gerado e o dispositivo só poderá ser autenticado usando a senha.
 
 ### <a name="provisioning-computer-account-public-key"></a>Provisionando chave pública de conta de computador
 Quando o Windows é iniciado, ele verifica se uma chave pública é provisionada para sua conta de computador. Caso contrário, ele gera uma chave pública vinculada e a configura para sua conta no AD usando um controlador de domínio do Windows Server 2016 ou superior. Se todos os DCs estiverem no nível inferior, nenhuma chave será provisionada.

@@ -7,19 +7,19 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 06/06/2019
-ms.openlocfilehash: 8c17671f2f15d1373973dcf2fbafc753f0a163a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 02/25/2020
+ms.openlocfilehash: fb53ae74e471d590f83e1017662f33bb5a4b7c1d
+ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402886"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77608805"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Criando volumes em Espaços de Armazenamento Diretos
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico descreve como criar volumes em um cluster Espaços de Armazenamento Diretos usando o centro de administração do Windows, o PowerShell ou o Gerenciador de Cluster de Failover.
+Este tópico descreve como criar volumes em um cluster Espaços de Armazenamento Diretos usando o centro de administração do Windows e o PowerShell.
 
 > [!TIP]
 > Se você ainda não fez isto, consulte primeiro [Planejando volumes em Espaços de Armazenamento Diretos](plan-volumes.md).
@@ -100,15 +100,15 @@ Recomendamos usar o cmdlet **New-Volume** para criar volumes para Espaços de Ar
 
 O cmdlet **New-Volume** tem quatro parâmetros que você sempre precisará fornecer:
 
-- **FriendlyName** Qualquer cadeia de caracteres que você desejar, por exemplo, *"Volume1"*
-- **WPD** **CSVFS_ReFS** (recomendado) ou **CSVFS_NTFS**
-- **StoragePoolFriendlyName:** O nome do seu pool de armazenamento, por exemplo, *"S2D em ClusterName"*
-- **Tamanho:** O tamanho do volume, por exemplo, *"10 TB"*
+- **FriendlyName:** qualquer cadeia de caracteres que deseje, por exemplo *"Volume1"*
+- **FileSystem:** ou **CSVFS_ReFS** (recomendado) ou **CSVFS_NTFS**
+- **StoragePoolFriendlyName:** o nome do seu pool de armazenamento, por exemplo *"S2D em ClusterName"*
+- **Tamanho:** o tamanho do volume, por exemplo *"10TB"*
 
    > [!NOTE]
    > O Windows, inclusive o PowerShell, conta usando números binários (base-2), embora as unidades geralmente sejam rotuladas usando números decimais de (base-10). Isso explica por que uma unidade de "um terabyte", definida como 1.000.000.000.000 bytes, aparece no Windows como de "909 GB". Isso é esperado. Ao criar volumes usando **New-Volume**, você deve especificar o parâmetro **Tamanho** em números binários (base-2). Por exemplo, especificar "909GB" ou "0,909495 TB" criará um volume de aproximadamente 1.000.000.000.000 bytes.
 
-### <a name="example-with-2-or-3-servers"></a>Exemplo: Com 2 ou três servidores
+### <a name="example-with-2-or-3-servers"></a>Exemplo: com 2 ou 3 servidores
 
 Para facilitar as coisas, se sua implantação tem apenas dois servidores, Espaços de Armazenamento Diretos usará automaticamente o espelhamento de duas vias para resiliência. Se sua implantação tiver apenas três servidores, o espelhamento de três vias será usado automaticamente.
 
@@ -116,11 +116,11 @@ Para facilitar as coisas, se sua implantação tem apenas dois servidores, Espa�
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>Exemplo: Com mais de 4 servidores
+### <a name="example-with-4-servers"></a>Exemplo: com 4 ou mais servidores
 
 Se tiver quatro ou mais servidores, você pode usar o parâmetro opcional **ResiliencySettingName** para escolher o tipo de resiliência.
 
--   **ResiliencySettingName** **Espelho** ou **paridade**.
+-   **ResiliencySettingName:** ou **Espelho** ou **Paridade**.
 
 No exemplo a seguir, o *"Volume2"* usa espelhamento de três vias e o *"Volume3"* usa paridade dupla (geralmente chamada de "codificação de eliminação").
 
@@ -129,7 +129,7 @@ New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
 
-### <a name="example-using-storage-tiers"></a>Exemplo: Usando camadas de armazenamento
+### <a name="example-using-storage-tiers"></a>Exemplo: usando camadas de armazenamento
 
 Em implantações com três tipos de unidades, um volume pode abranger as camadas SSD e HDD para residir parcialmente em cada uma delas. Da mesma forma, em implantações com quatro ou mais servidores, um volume pode misturar espelhamento e paridade dual para residir parcialmente em cada um.
 
@@ -148,40 +148,6 @@ Para criar volumes em camadas, referencie esses modelos de camadas usando os par
 ```PowerShell
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
-
-## <a name="create-volumes-using-failover-cluster-manager"></a>Criar volumes usando o Gerenciador de Cluster de Failover
-
-Você também pode criar volumes usando o *Assistente de Novo Disco Virtual (Espaços de Armazenamento Diretos)* , seguido pelo *Assistente de Novo Volume* do Gerenciador de Cluster de Failover, embora esse fluxo de trabalho tenha muitas etapas manuais e não seja recomendado.
-
-Há três etapas principais:
-
-### <a name="step-1-create-virtual-disk"></a>Etapa 1: Criar disco virtual
-
-![Novo disco virtual](media/creating-volumes/GUI-Step-1.png)
-
-1. No Gerenciador de Cluster de Failover, navegue até **Armazenamento** -> **Pools**.
-2. Selecione **Novo Disco Virtual** no painel Ações à direita, ou clique com o botão direito no pool e selecione **Novo Disco Virtual**.
-3. Selecione o pool de armazenamento clique em **OK**. O *Assistente de Novo disco Virtual (Espaços de Armazenamento Diretos)* será aberto.
-4. Use o Assistente para nomear o disco virtual e especificar seu tamanho.
-5. Revise suas seleções e clique em **Criar**.
-6. Não se esqueça de marcar a caixa de seleção **Criar um volume quando este assistente se fechar** antes de fechar.
-
-### <a name="step-2-create-volume"></a>Etapa 2: Criar volume
-
-O *Assistente de Novo Volume* é aberto.
-
-7. Selecione o disco virtual recém-criado e clique em **Próximo**.
-8. Especifique o tamanho do volume (padrão: do mesmo tamanho que o disco virtual) e clique em **Próximo**. 
-9. Atribua o volume a uma letra de unidade ou escolha **Não atribuir uma letra de unidade** e clique em **Próximo**.
-10. Especifique o filesystem a ser usado, deixe o tamanho da unidade de alocação como *Padrão*, nomeie o volume e clique em **Próximo**.
-11. Revise suas seleções e clique em **Criar** e, em seguida, em **Fechar**.
-
-### <a name="step-3-add-to-cluster-shared-volumes"></a>Etapa 3: Adicionar a volumes compartilhados do cluster
-
-![Adicionar a Volumes Compartilhados Clusterizados](media/creating-volumes/GUI-Step-2.png)
-
-12. No Gerenciador de Cluster de Failover, navegue até **Armazenamento** -> **Discos**.
-13. Selecione o disco virtual que você acabou de criar e selecione **Adicionar a Volumes Compartilhados do Cluster** no painel Ações à direita, ou clique com o botão direito do mouse no disco virtual e selecione **Adicionar a Volumes Compartilhados do Cluster**.
 
 Concluído! Repita conforme necessário para criar mais de um volume.
 
