@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 34ea5ca29672cb7bc0080a1c27b1910d5cf6b92e
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517521"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169596"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos do AD FS
 
@@ -202,7 +202,7 @@ O firewall localizado entre o Proxy de Aplicativo Web e o farm de servidores de 
 Além disso, se a autenticação de certificado de usuário do cliente \(autenticação clientTLS usando certificados de usuário X509\) for necessária, AD FS no Windows Server 2012 R2 exigirá que a porta TCP 49443 seja habilitada para entrada no firewall entre os clientes e o proxy de aplicativo Web. Isso não é necessário no firewall entre o Proxy de Aplicativo Web e os servidores de federação\).  
 
 > [!NOTE]
-> também garantir que a porta 49443 não seja usada por nenhum outro serviço no servidor proxy de aplicativo Web.
+> também garantir que a porta 49443 não seja usada por nenhum outro serviço no AD FS e no servidor de proxy de aplicativo Web.
 
 **Configuração do DNS**  
   
@@ -353,6 +353,6 @@ A tabela a seguir fornece informações adicionais de suporte de criptografia so
 ## <a name="BKMK_13"></a>Requisitos de permissões  
 O administrador que executa a instalação e a configuração inicial de AD FS deve ter permissões de administrador de domínio no domínio local \(em outras palavras, o domínio ao qual o servidor de Federação está ingressado.\)  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 [Guia de design do AD FS no Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
