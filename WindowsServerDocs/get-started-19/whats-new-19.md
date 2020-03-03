@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 13eed225dfc144d5e7e59be13dbed14d4de8bb01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360779"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465490"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novidades no Windows Server 2019
 
@@ -25,7 +25,7 @@ Para conhecer as novidades nos lançamentos do Canal Semestral do Windows Server
 
 ## <a name="general"></a>Geral
 
-### <a name="windows-admin-center"></a>Windows Admin Center
+### <a name="windows-admin-center"></a>Windows Admin Center
 
 O Windows Admin Center é um aplicativo baseado em navegador e implantado localmente destinado a gerenciar servidores, clusters, infraestrutura hiperconvergente e computadores Windows 10. Ele é fornecido sem custo adicional além do Windows e vem pronto para uso no ambiente de produção.
 
@@ -115,7 +115,7 @@ Eis algumas das alterações que fizemos no armazenamento do Windows Server 2019
 
 O Serviço de Migração de Armazenamento é uma nova tecnologia que facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário dos dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que os aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte [Serviço de Migração de Armazenamento](../storage/storage-migration-service/overview.md).
 
-### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Diretos
+### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Direct
 
 Eis uma lista das novidades nos Espaços de Armazenamento Diretos. Para obter detalhes, consulte [Novidades nos Espaços de Armazenamento Diretos](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulte também o [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para obter informações sobre a aquisição de sistemas validados de Espaços de Armazenamento Diretos.
 
@@ -157,7 +157,7 @@ Eis a lista de Novidades no Clustering de Failover. Para obter detalhes, consult
 
 ### <a name="linux-containers-on-windows"></a>Contêineres do Linux no Windows
 
-Agora é possível executar contêineres baseados no Windows e no Linux no mesmo host de contêineres, usando o mesmo daemon do docker. Isso permite que você tenha um ambiente heterogêneo de host de contêineres e, ao mesmo tempo, forneça flexibilidade aos desenvolvedores de aplicativos.
+Agora é possível executar contêineres baseados no Windows e no Linux no mesmo host de contêineres, usando o mesmo daemon do docker. Isso permite que você tenha um ambiente heterogêneo de host de contêineres, fornecendo flexibilidade aos desenvolvedores de aplicativos.
 
 ### <a name="built-in-support-for-kubernetes"></a>Suporte interno para Kubernetes
 

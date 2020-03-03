@@ -8,30 +8,30 @@ author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.date: 01/23/2020
-ms.openlocfilehash: 0f3ea0dacc200adaaec5064d19754ad6de0042a6
-ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
+ms.date: 02/21/2020
+ms.openlocfilehash: 6c9d732b6ec3d8ceb65c691ab143f09dd8f10f23
+ms.sourcegitcommit: 47d2e744a28a3f19347ec4773b7df5f1961ea192
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725771"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77552527"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Como usar as ESUs (Atualizações de Segurança Estendidas) do Windows Server 2008 e 2008 R2
 
->Aplica-se a: Windows Server 2008/2008 R2
+>Aplica-se a: Windows Server 2008 e Windows Server 2008 R2
 
-O Windows Server 2008 e o Windows Server 2008 R2 chegarão ao fim do ciclo de vida do suporte em 14 de janeiro de 2020. O LTSC (Canal de Manutenção em Longo Prazo) do Windows Server tem no mínimo dez anos de suporte, cinco anos para suporte base e cinco anos para suporte estendido. Esse suporte inclui as atualizações de segurança regulares.
+O Windows Server 2008 e o Windows Server 2008 R2 chegaram ao fim do ciclo de vida do suporte em 14 de janeiro de 2020. O LTSC (Canal de Manutenção em Longo Prazo) do Windows Server tem um mínimo de dez anos de suporte: cinco anos para suporte base e cinco anos para suporte estendido. Esse suporte inclui as atualizações de segurança regulares.
 
 O fim do suporte também significa o fim das atualizações de segurança. Esse cenário pode causar problemas de segurança ou de conformidade e colocar os aplicativos de negócios em risco. A Microsoft recomenda que você [atualize para a versão atual do Windows Server](modernize-windows-server-2008.md) com o objetivo de obter a segurança, o desempenho e a inovação mais avançados.
 
-Caso não possa atualizar todos os servidores até o prazo final do ciclo de vida do suporte, as opções a seguir ajudarão a proteger os aplicativos e os dados durante a transição de atualização:
+Caso você ainda não tenha atualizado seus servidores, as seguintes opções ajudam a proteger aplicativos e dados durante a transição:
 
 * Migre as cargas de trabalho existentes do Windows Server 2008 e 2008 R2 no estado em que se encontram para as VMs (Máquinas Virtuais) do Azure.
-    * Essa migração para o Azure fornecerá automaticamente três anos adicionais de ESUs (Atualizações de Segurança Estendidas). Não há nenhum custo adicional para as atualizações de segurança estendidas além do custo da VM do Azure e não há nenhuma configuração adicional necessária.
+  * Essa migração para o Azure fornecerá automaticamente três anos adicionais de ESUs (Atualizações de Segurança Estendidas). Não há nenhum custo adicional para as atualizações de segurança estendidas além do custo da VM do Azure e não há nenhuma configuração adicional necessária.
 * Adquira uma assinatura de atualização de segurança estendida para seus servidores e mantenha a proteção até que esteja pronto para atualizar para uma versão mais recente do Windows Server.
-    * Essas atualizações são fornecidas por até três anos após a data de término do ciclo de vida do suporte.
+  * Essas atualizações são fornecidas por até três anos após a data de término do ciclo de vida do suporte.
 
-Após o período de três anos de atualizações estendidas, não haverá nenhuma opção para que os computadores recebam atualizações adicionais.
+Após o período de três anos de atualizações estendidas, interromperemos a atualização do Windows Server 2008 e 2008 R2. Recomendamos atualizar sua versão do Windows Server para uma versão mais recente assim que possível.
 
 ## <a name="what-are-extended-security-updates-for-windows-server"></a>Quais são as atualizações de segurança estendidas para o Windows Server?
 
@@ -43,60 +43,67 @@ As ESUs (Atualizações de Segurança Estendidas) para o Windows Server incluem 
 
 Para obter mais informações, consulte as [Perguntas frequentes sobre atualizações de segurança estendidas](https://www.microsoft.com/cloud-platform/extended-security-updates).
 
-## <a name="how-to-use-extended-security-updates"></a>Como usar as atualizações de segurança estendidas
+## <a name="how-to-use-extended-security-updates"></a>Como usar as Atualizações de Segurança Estendidas
 
-As VMs do Windows Server 2008/2008 R2 executadas no Azure são habilitadas automaticamente para as atualizações de segurança estendidas. Você não precisa configurar nada e não há nenhum custo adicional pelo uso das atualizações de segurança estendidas nas VMs do Azure. As atualizações de segurança estendidas são entregues automaticamente às VMs do Azure quando elas estão configuradas para receber atualizações.
+Se você executar VMs do Windows Server 2008 ou 2008 R2 no Azure, elas serão habilitadas automaticamente para as Atualizações de Segurança Estendidas. Você não precisa configurar nada, e não há nenhum encargo adicional pelo uso das Atualizações de Segurança Estendidas nas VMs do Azure. As Atualizações de Segurança Estendidas são entregues automaticamente às VMs do Azure quando elas estão configuradas para receber atualizações.
 
-Para outros ambientes, como VMs locais ou servidores físicos, você precisa solicitar e configurar manualmente as atualizações de segurança estendidas. Se você já comprou as atualizações de segurança estendidas, que estão disponíveis por meio de programas de licenciamento por volume, como o EA (Contrato Enterprise), o EAS (Contrato Enterprise Subscription), o EES (Registro para Soluções Educacionais) ou o SCE (Registro de Servidor e de Nuvem), siga uma das seguintes etapas para obter uma chave de ativação:
+Para outros ambientes, como VMs locais ou servidores físicos, você precisará solicitar e configurar manualmente as Atualizações de Segurança Estendidas. Compre as Atualizações de Segurança Estendidas por meio de Programas de Licenciamento por Volume, como o EA (Contrato Enterprise), o EAS (Contrato Enterprise Subscription), o EES (Registro para Soluções Educacionais) ou o SCE (Registro de Servidor e de Nuvem).
 
-* Entre no [Centro de serviços de licenciamento por volume da Microsoft](https://www.microsoft.com/Licensing/servicecenter/default.aspx) para ver e obter as chaves de ativação.
-* Registre-se nas atualizações de segurança estendidas no portal do Azure para obter as chaves de ativação do Windows Server 2008/R2.
-    * Confira as próximas etapas neste artigo para saber como concluir esse processo.
+Quando você comprar as Atualizações de Segurança Estendidas, use um dos seguintes métodos para obter suas chaves:
 
-## <a name="register-for-extended-security-updates"></a>Registrar-se para obter as atualizações de segurança estendidas
+* Caso deseje obter chaves da Atualização de Segurança Estendida no portal do Azure, [registre-se para obter as Atualizações de Segurança Estendidas no portal do Azure](#register-for-extended-security-updates-on-azure-portal).
+* Além disso, [entre no Centro de Serviços de Licenciamento por Volume da Microsoft](#sign-in-to-the-microsoft-volume-licensing-service-center) para obter suas chaves sem usar o portal do Azure.
 
-Para usar as atualizações de segurança estendidas, crie um MAK (chave de ativação múltipla) e aplique-o aos computadores com Windows Server 2008 e 2008 R2. Essa chave permite que os servidores do Windows Update saibam que você pode continuar recebendo atualizações de segurança. Registre-se para obter as atualizações de segurança estendidas e gerencie essas chaves usando o portal do Azure, mesmo que você use apenas computadores locais.
+### <a name="register-for-extended-security-updates-on-azure-portal"></a>Registre-se para obter as Atualizações de Segurança Estendidas no portal do Azure
+
+Para usar as Atualizações de Segurança Estendidas em VMs que não são do Azure, crie uma MAK (chave de ativação múltipla) e aplique-a aos computadores Windows Server 2008 e 2008 R2. A chave MAK permite que os servidores do Windows Update saibam que você pode continuar recebendo atualizações de segurança. Registre-se para obter as Atualizações de Segurança Estendidas e gerencie essas chaves usando o portal do Azure, mesmo que você use apenas computadores locais.
 
 > [!NOTE]
->
-> Se você está executando o Windows Server 2008 e 2008 R2 em VMs do Azure, não é necessário se registrar nas atualizações de segurança estendidas. Para outros ambientes, como VMs locais ou servidores físicos, [compre as atualizações de segurança estendidas](https://www.microsoft.com/licensing/how-to-buy/how-to-buy) antes de tentar registrá-las e usá-las.
+> Você não precisará se registrar para obter as Atualizações de Segurança Estendidas se estiver executando o Windows Server 2008 e 2008 R2 em VMs do Azure. Para outros ambientes, como VMs locais ou servidores físicos, [compre as Atualizações de Segurança Estendidas](https://www.microsoft.com/licensing/how-to-buy/how-to-buy) antes de tentar registrá-las e usá-las.
 
-> [!IMPORTANT]
->
-> Verifique se você seguiu as etapas anteriores para comprar as atualizações de segurança estendidas por meio do seu Programa de licenciamento por volume. Antes de seguir as etapas abaixo, envie um email para [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) com as seguintes informações para obter aprovação para usar o recurso:
->
-> * Nome do cliente:
-> * Assinatura do Azure:
-> * Número do Contrato Enterprise (para ESU):
-> * Número de servidores ESU:
->
-> A equipe examinará as informações fornecidas e adicionará o usuário ou a assinatura à lista aprovada.
->
-> Se o solicitante não for aprovado, o seguinte erro poderá ocorrer:
->
-> [Não foi possível encontrar o tipo de recurso no namespace 'Microsoft.WindowsESU'](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
-
-Para registrar VMs não Azure para obter as atualizações de segurança estendidas e criar uma chave, conclua as seguintes etapas no portal do Azure:
+Para registrar sua VM a fim de obter as Atualizações de Segurança Estendidas e criar uma chave, abra o portal do Azure e siga estas instruções:
 
 1. Entre no [portal do Azure](https://portal.azure.com/).
-1. Na caixa de pesquisa na parte superior do portal do Azure, procure e selecione **Atualizações de Segurança Estendidas**.
+2. Na caixa de pesquisa na parte superior do portal do Azure, procure e selecione **Atualizações de Segurança Estendidas**.
 
-    ![Pesquise por atualizações de segurança estendidas no portal do Azure](media/extended-security-updates/esu-portal-search.png)
+    ![Procure as Atualizações de Segurança Estendidas no portal do Azure](media/extended-security-updates/esu-portal-search.png)
 
-    Caso ainda não tenha usado as atualizações de segurança estendidas, primeiro escolha **+ Criar** um recurso de atualizações de segurança estendidas. Caso contrário, selecione o recurso na lista.
+    Caso ainda não tenha usado as Atualizações de Segurança Estendidas, selecione **+ Criar** para primeiro criar um recurso das Atualizações de Segurança Estendidas. Caso contrário, selecione o recurso na lista.
 
-1. Em **Registrar-se para obter as Atualizações de Serviço Estendidas**, selecione **Introdução**.
+3. Em **Registrar-se para obter as Atualizações de Serviço Estendidas**, selecione **Introdução**.
 
     ![Introdução às Atualizações de Segurança Estendidas no portal do Azure](media/extended-security-updates/get-started-with-esu.png)
 
-1. Para criar sua primeira chave, selecione **Obter chave**.
+4. Para criar sua primeira chave, selecione **Obter chave**.
 
-    ![Escolha criar uma chave no portal do Azure](media/extended-security-updates/get-key.png)
+    ![Optar por criar uma chave no portal do Azure](media/extended-security-updates/get-key.png)
 
-    > [!NOTE]
-    > Será necessário ter uma assinatura do Azure associada à sua conta para criar o recurso e a chave de atualização de segurança estendida. Caso não tenha uma assinatura do Azure associada à sua conta, entre com uma conta de usuário diferente ou crie uma assinatura do Azure usando as etapas guiadas mostradas no portal.
+    Você precisará ter uma assinatura do Azure associada à sua conta para criar o recurso e a chave da Atualização de Segurança Estendida. Caso não tenha uma assinatura do Azure associada à sua conta, entre com outra conta de usuário ou crie uma assinatura do Azure no portal do Azure.
 
-1. Em **Detalhes do Azure**, selecione sua assinatura do Azure, um grupo de recursos e um local para sua chave.
+    A função Colaborador também precisará ser atribuída à sua assinatura do Azure para que a atualização de segurança funcione. Para verificar sua função, insira "Assinaturas" na caixa de pesquisa. Você verá uma tabela que mostrará sua função ao lado da ID e do nome da assinatura.
+
+    Se você não for um Colaborador, solicite ao proprietário da assinatura que altere sua função. Para descobrir quem é o proprietário da sua assinatura, acesse a tabela de funções descrita no parágrafo anterior e selecione o nome da assinatura. Em seguida, acesse o menu no lado esquerdo da página e selecione **Controle de acesso (IAM)**  > **Atribuições de função** e procure a seção "Proprietários" na tabela.
+
+5. Caso você veja uma página indicando "Registre-se para obter uma chave de ativação múltipla", isso significa que é necessário solicitar o acesso à versão prévia privada para usar as Atualizações de Segurança Estendidas. Caso não veja essa página, pule para a etapa 6.
+
+   Para solicitar o acesso, selecione **Ingressar na versão prévia privada**. Uma janela de mensagem de email será aberta. Esse email é a sua solicitação de acesso à equipe do produto.
+  
+    Inclua as seguintes informações na solicitação:
+
+    * Nome do cliente
+    * ID da assinatura do Azure
+    * Número do contrato (para ESU)
+    * Número de servidores ESU
+
+    Quando terminar, envie o email.
+
+    A equipe examinará as informações fornecidas no seu email de solicitação. Se tudo estiver correto, ela adicionará você à lista aprovada.
+
+    Se a equipe não aprovar a sua solicitação, você verá o seguinte erro:
+
+    [Não foi possível encontrar o tipo de recurso no namespace 'Microsoft.WindowsESU'](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
+
+6. Em **Detalhes do Azure**, selecione sua assinatura do Azure, um grupo de recursos e um local para sua chave.
 
     Em **Detalhes do registro**, insira as seguintes informações:
 
@@ -109,7 +116,12 @@ Para registrar VMs não Azure para obter as atualizações de segurança estendi
 
     Quando estiver pronto, selecione **Revisar + registrar**.
 
-1. Após a validação bem-sucedida, um resumo de suas opções para o novo recurso de registro será mostrado. Se necessário, corrija os erros de validação ou atualize sua opção de configuração. Os [Termos de uso](https://azure.microsoft.com/support/legal/) e a [Política de privacidade](https://privacy.microsoft.com/privacystatement) do Azure estarão disponíveis.
+    >[!NOTE]
+    >Verifique se você selecionou a assinatura do Azure com a qual ingressou na versão prévia privada no filtro global. Selecione o botão **Filtrar** na faixa de opções do portal do Azure para verificar o filtro de assinatura global.
+    >
+    > ![Uma imagem da faixa de opções do portal do Azure com o botão Filtrar selecionado](media/azure-ribbon-filter.png)
+
+7. Após a validação bem-sucedida, um resumo de suas opções para o novo recurso de registro será mostrado. Se necessário, corrija os erros de validação ou atualize sua opção de configuração. Os [Termos de uso](https://azure.microsoft.com/support/legal/) e a [Política de privacidade](https://privacy.microsoft.com/privacystatement) do Azure estarão disponíveis.
 
     Marque a caixa para confirmar que tem computadores qualificados e que a chave será usada somente em sua organização:
 
@@ -117,12 +129,24 @@ Para registrar VMs não Azure para obter as atualizações de segurança estendi
 
     Quando estiver pronto, selecione **Criar** para gerar o MAK.
 
-O registro das atualizações de segurança estendidas agora estará disponível para uso em seus computadores. A chave criada deve ser aplicada aos computadores com Windows Server 2008 e 2008 R2 que desejar manter qualificados para atualizações de segurança.
+O registro das Atualizações de Segurança Estendidas agora está disponível para uso nos computadores. A chave criada deve ser aplicada aos computadores com Windows Server 2008 e 2008 R2 que desejar manter qualificados para atualizações de segurança.
 
-## <a name="download-and-apply-extended-security-updates"></a>Baixar e aplicar as atualizações de segurança estendidas
+### <a name="sign-in-to-the-microsoft-volume-licensing-service-center"></a>Entrar no Centro de Serviços de Licenciamento por Volume da Microsoft
 
-A entrega, o download e a aplicação das atualizações de segurança estendidas para o Windows Server não são diferentes dos processos de implantação existentes. As atualizações fornecidas por meio de atualizações de segurança estendidas são apenas para *Segurança* e são lançadas a cada Patch às terças-feiras.
+Caso não tenha acesso ao portal do Azure, use o Centro de Serviços de Licenciamento por Volume para ver e baixar suas chaves de ativação.
+
+Para obter suas chaves no Centro de Serviços de Licenciamento por Volume:
+
+1. Acesse a [página do Centro de Serviços de Licenciamento por Volume](https://www.microsoft.com/vlsc) e entre com as suas credenciais do Azure.
+
+2. Selecione **Licenças** > **Resumo de Relações** > **ID de Licenciamento** > **Chaves do Produto (Product Keys)** .
+
+Para saber mais sobre como obter as Atualizações de Segurança Estendidas para dispositivos Windows qualificados, confira a [nossa postagem na Tech Community](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/obtaining-extended-security-updates-for-eligible-windows-devices/ba-p/1167091#).
+
+## <a name="download-and-apply-extended-security-updates"></a>Baixar e aplicar as Atualizações de Segurança Estendidas
+
+A entrega, o download e a aplicação das Atualizações de Segurança Estendidas para o Windows Server não são diferentes dos processos de implantação existentes. As atualizações fornecidas por meio das Atualizações de Segurança Estendidas destinam-se apenas à *Segurança* e são lançadas em cada Patch Tuesday.
 
 É possível instalar as atualizações usando quaisquer ferramentas e processos que já estejam em vigor. A única diferença é que o sistema deve ser registrado usando a chave gerada na seção anterior para que as atualizações sejam baixadas e instaladas.
 
-Para as VMs do Azure, o processo de habilitar o computador para as atualizações de segurança estendidas será automaticamente concluído para você. As atualizações devem ser baixadas e instaladas sem configurações adicionais.
+Para as VMs do Azure, o processo de habilitar o computador para as Atualizações de Segurança Estendidas é automaticamente concluído para você. As atualizações devem ser baixadas e instaladas sem configurações adicionais.
