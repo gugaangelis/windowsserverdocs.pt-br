@@ -14,12 +14,12 @@ manager: lizross
 ms.author: helohr
 date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
-ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
+ms.openlocfilehash: ef13227a9f7b83f01786bbb11498da912c86581b
+ms.sourcegitcommit: 32211610ad9a24d282b35ed8c0aaa179497c63bf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77179350"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77780815"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 
@@ -170,7 +170,12 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 
 ## <a name="supported-input-devices"></a>Dispositivos de entrada com suporte
 
-No momento, o cliente iOS só dá suporte a mouses Swiftpoint GT e ProPoint. Para obter mais informações sobre o suporte a dispositivos, confira [Novidades do cliente iOS](ios-whatsnew.md) e a [App Store do iOS](https://aka.ms/rdios).
+O [suporte básico ao mouse Bluetooth](https://support.apple.com/HT210546) está disponível no iOS 13 e no iPadOS como um recurso de acessibilidade. A integração mais profunda de mouse no Cliente de Área de Trabalho Remota está disponível nos modelos de mouse Swiftpoint GT e ProPoint. Além disso, também há suporte para os teclados externos que são compatíveis com o iOS e o iPadOS.
+
+Para obter mais informações sobre o suporte a dispositivos, confira [Novidades do cliente iOS](ios-whatsnew.md) e a [App Store do iOS](https://aka.ms/rdios).
+
+> [!TIP]
+> A Swiftpoint está oferecendo um [desconto exclusivo no mouse ProPoint](https://www.swiftpoint.com/microsoft) para os usuários do cliente do iOS.
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>Usar um teclado em uma sessão remota
 
@@ -180,20 +185,7 @@ Para teclados virtuais, use o botão na extremidade direita da barra acima do te
 
 Se o Bluetooth estiver habilitado para seu dispositivo iOS, o cliente detectará automaticamente o teclado Bluetooth.
 
-Observe que, devido a limitações do sistema operacional, teclas especiais, como Ctrl, Option e Function não funcionarão da forma esperada com um teclado Bluetooth. As teclas a seguir funcionam:
+Embora algumas combinações de teclas possam não funcionar como esperado em uma sessão remota, muitas das combinações comuns de teclas Windows, como CTRL + C, CTRL + V e ALT + TAB, funcionarão.
 
-- Teclas alfanuméricas
-- Teclas de cursor
-- Tab: Tab funciona, mas Shift + Tab não funciona
-- Home/Pos1: Alt + Esquerda = Início
-- End: Alt + Seta para a direita = End
-- Page Up: Alt + Seta para cima = Page Up
-- Page Down: Alt + Seta para baixo = Page Down
-- Selecionar Tudo: Command + A = Ctrl + A (Selecionar tudo na maioria dos programas)
-- Recortar: Command + X = Ctrl + X (Cortar na maioria dos programas)
-- Copiar: Command + C = Ctrl + C (Copiar na maioria dos programas)
-- Colar: Command + V = Ctrl + V (Colar na maioria dos programas)
-- Símbolos: Alt + Teclas alfanuméricas produzirá símbolos diferentes dependendo do idioma configurado
-
-> [!TIP]
+> [!IMPORTANT]
 > Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

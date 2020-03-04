@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: f2e8d3bfb5ef907ffb522b5b7be31d1def3001c8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1ab941e25da7171349bb24762940af3bf886c165
+ms.sourcegitcommit: a4b489d0597b6a73c905d3448d5bc332efd6191b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949686"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77675357"
 ---
 # <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume
 
@@ -19,34 +19,34 @@ Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, W
 
 O backup e a restauração de dados comercialmente críticos podem ser muito complexos devido aos seguintes problemas:
 
-  - Os dados geralmente precisam de backup, enquanto os aplicativos que produzem os dados ainda estão em execução. Isso significa que alguns dos arquivos de dados podem estar abertos ou podem estar em um estado inconsistente.  
-      
-  - Se o conjunto de dados for grande, poderá ser difícil fazer backup de todos eles ao mesmo tempo.  
-      
+  - Os dados geralmente precisam de backup, enquanto os aplicativos que produzem os dados ainda estão em execução. Isso significa que alguns dos arquivos de dados podem estar abertos ou podem estar em um estado inconsistente.
+
+  - Se o conjunto de dados for grande, poderá ser difícil fazer backup de todos eles ao mesmo tempo.
+
 
 A execução correta de operações de backup e restauração exige uma forte coordenação entre os aplicativos de backup, os aplicativos de linha de negócios que estão sendo submetidos a backup e o hardware e o software de gerenciamento de armazenamento. O Serviço de Cópias de Sombra de Volume (VSS), que foi introduzido no Windows Server® 2003 facilita a conversa entre esses componentes para permitir que eles funcionem melhor juntos. Quando todos os componentes são compatíveis com o VSS, você pode usá-los para fazer backup dos dados do aplicativo sem colocar os aplicativos offline.
 
 O VSS coordena as ações necessárias para criar uma cópia de sombra consistente (também conhecida como um instantâneo ou uma cópia pontual) dos dados cujo backup será feito. A cópia de sombra pode ser usada no estado em que se encontra ou em cenários como o seguinte:
 
-  - Você deseja fazer backup de dados do aplicativo e de informações de estado do sistema, incluindo o arquivamento de dados em outra unidade de disco rígido, em fita ou em outra mídia removível.  
-      
-  - Você está realizando a mineração de dados.  
-      
-  - Você está executando backups de disco para disco.  
-      
-  - Você precisa de uma recuperação rápida da perda de dados restaurando os dados para o LUN original ou para um LUN totalmente novo que substitua um LUN original que falhou.  
-      
+  - Você deseja fazer backup de dados do aplicativo e de informações de estado do sistema, incluindo o arquivamento de dados em outra unidade de disco rígido, em fita ou em outra mídia removível.
+
+  - Você está realizando a mineração de dados.
+
+  - Você está executando backups de disco para disco.
+
+  - Você precisa de uma recuperação rápida da perda de dados restaurando os dados para o LUN original ou para um LUN totalmente novo que substitua um LUN original que falhou.
+
 
 Os recursos e aplicativos do Windows que usam o VSS incluem o seguinte:
 
-  - [Backup do Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)  
-      
-  - [Cópias de sombra de pastas compartilhadas](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)  
-      
-  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)  
-      
-  - [Restauração do Sistema](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)  
-      
+  - [Backup do Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)
+
+  - [Cópias de sombra de pastas compartilhadas](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)
+
+  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)
+
+  - [Restauração do Sistema](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)
+
 
 ## <a name="how-volume-shadow-copy-service-works"></a>Como o Serviço de Cópias de Sombra de Volume funciona
 
@@ -76,31 +76,31 @@ Esta seção coloca as várias funções do solicitante, do gravador e do proved
 
 Para criar uma cópia de sombra, o solicitante, o gravador e o provedor executam as seguintes ações:
 
-1.  O solicitante solicita que o Serviço de Cópias de Sombra de Volume enumere os gravadores, reúna os metadados do gravador e prepare-se para a criação da cópia de sombra.  
-      
-2.  Cada gravador cria uma descrição XML dos componentes e armazenamentos de dados que precisam de backup e os fornece ao Serviço de Cópias de Sombra de Volume. O gravador também define um método de restauração, que é usado para todos os componentes. O Serviço de Cópias de Sombra de Volume fornece a descrição do gravador para o solicitante, que seleciona os componentes que serão submetidos a backup.  
-      
-3.  O Serviço de Cópias de Sombra de Volume notifica todos os gravadores para preparar seus dados para fazer uma cópia de sombra.  
-      
-4.  Cada gravador prepara os dados conforme apropriado, como a conclusão de todas as transações abertas, os logs de transações sem interrupção e a liberação de caches. Quando os dados estiverem prontos para serem copiados em sombra, o gravador notificará a Serviço de Cópias de Sombra de Volume.  
-      
-5.  O Serviço de Cópias de Sombra de Volume informa os gravadores para congelar temporariamente as solicitações de E/S de gravação de aplicativos (as solicitações de E/S de leitura ainda são possíveis) pelos poucos segundos necessários para criar a cópia de sombra dos volumes. O congelamento do aplicativo não tem permissão para demorar mais de 60 segundos. O Serviço de Cópias de Sombra de Volume libera os buffers do sistema de arquivos e, em seguida, congela o sistema de arquivos, o que garante o registro correto dos metadados do sistema de arquivos e a gravação em uma ordem consistente dos dados a serem copiados por sombra.  
-      
-6.  O Serviço de Cópias de Sombra de Volume informa ao provedor para criar a cópia de sombra. O período de criação da cópia de sombra não dura mais de 10 segundos e, nesse período, todas as solicitações de E/S de gravação para o sistema de arquivos permanecem congeladas.  
-      
-7.  O Serviço de Cópias de Sombra de Volume libera solicitações de E/S de gravação do sistema de arquivos.  
-      
-8.  O VSS informa os gravadores para descongelar as solicitações de E/S de gravação do aplicativo. Neste ponto, os aplicativos são livres para retomar a gravação de dados no disco que está sendo copiado por sombra.  
-      
+1.  O solicitante solicita que o Serviço de Cópias de Sombra de Volume enumere os gravadores, reúna os metadados do gravador e prepare-se para a criação da cópia de sombra.
+
+2.  Cada gravador cria uma descrição XML dos componentes e armazenamentos de dados que precisam de backup e os fornece ao Serviço de Cópias de Sombra de Volume. O gravador também define um método de restauração, que é usado para todos os componentes. O Serviço de Cópias de Sombra de Volume fornece a descrição do gravador para o solicitante, que seleciona os componentes que serão submetidos a backup.
+
+3.  O Serviço de Cópias de Sombra de Volume notifica todos os gravadores para preparar seus dados para fazer uma cópia de sombra.
+
+4.  Cada gravador prepara os dados conforme apropriado, como a conclusão de todas as transações abertas, os logs de transações sem interrupção e a liberação de caches. Quando os dados estiverem prontos para serem copiados em sombra, o gravador notificará a Serviço de Cópias de Sombra de Volume.
+
+5.  O Serviço de Cópias de Sombra de Volume informa os gravadores para congelar temporariamente as solicitações de E/S de gravação de aplicativos (as solicitações de E/S de leitura ainda são possíveis) pelos poucos segundos necessários para criar a cópia de sombra dos volumes. O congelamento do aplicativo não tem permissão para demorar mais de 60 segundos. O Serviço de Cópias de Sombra de Volume libera os buffers do sistema de arquivos e, em seguida, congela o sistema de arquivos, o que garante o registro correto dos metadados do sistema de arquivos e a gravação em uma ordem consistente dos dados a serem copiados por sombra.
+
+6.  O Serviço de Cópias de Sombra de Volume informa ao provedor para criar a cópia de sombra. O período de criação da cópia de sombra não dura mais de 10 segundos e, nesse período, todas as solicitações de E/S de gravação para o sistema de arquivos permanecem congeladas.
+
+7.  O Serviço de Cópias de Sombra de Volume libera solicitações de E/S de gravação do sistema de arquivos.
+
+8.  O VSS informa os gravadores para descongelar as solicitações de E/S de gravação do aplicativo. Neste ponto, os aplicativos são livres para retomar a gravação de dados no disco que está sendo copiado por sombra.
+
 
 > [!NOTE]
-> A criação da cópia de sombra poderá ser anulada se os gravadores forem mantidos no estado de congelamento por mais de 60 segundos ou se os provedores demorarem mais de 10 segundos para confirmar a cópia de sombra. 
+> A criação da cópia de sombra poderá ser anulada se os gravadores forem mantidos no estado de congelamento por mais de 60 segundos ou se os provedores demorarem mais de 10 segundos para confirmar a cópia de sombra.
 <br>
 
-9. O solicitante pode repetir o processo (volte para a etapa 1) ou notificar o administrador para tentar novamente mais tarde.  
-      
-10. Se a cópia de sombra for criada com êxito, o Serviço de Cópias de Sombra de Volume retornará as informações de localização para a cópia de sombra para o solicitante. Em alguns casos, a cópia de sombra pode ser temporariamente disponibilizada como um volume de leitura/gravação para que o VSS e um ou mais aplicativos possam alterar o conteúdo da cópia de sombra antes da conclusão da cópia de sombra. Depois que o VSS e os aplicativos fizerem suas alterações, a cópia de sombra passará a ser somente leitura. Essa fase é chamada de recuperação automática e é usada para desfazer qualquer transação dedo aplicativo ou sistema de arquivos no volume de cópia de sombra que não tenha sido concluída antes da criação da cópia de sombra.  
-      
+9. O solicitante pode repetir o processo (volte para a etapa 1) ou notificar o administrador para tentar novamente mais tarde.
+
+10. Se a cópia de sombra for criada com êxito, o Serviço de Cópias de Sombra de Volume retornará as informações de localização para a cópia de sombra para o solicitante. Em alguns casos, a cópia de sombra pode ser temporariamente disponibilizada como um volume de leitura/gravação para que o VSS e um ou mais aplicativos possam alterar o conteúdo da cópia de sombra antes da conclusão da cópia de sombra. Depois que o VSS e os aplicativos fizerem suas alterações, a cópia de sombra passará a ser somente leitura. Essa fase é chamada de recuperação automática e é usada para desfazer qualquer transação dedo aplicativo ou sistema de arquivos no volume de cópia de sombra que não tenha sido concluída antes da criação da cópia de sombra.
+
 
 ### <a name="how-the-provider-creates-a-shadow-copy"></a>Como o provedor cria uma cópia de sombra
 
@@ -116,10 +116,10 @@ Um provedor de cópia de sombra de hardware ou software usa um dos seguintes mé
 
 Uma cópia completa geralmente é criada fazendo um "espelho dividido" da seguinte maneira:
 
-1.  O volume original e o volume da cópia de sombra são um conjunto de volumes espelhados.  
-      
-2.  O volume da cópia de sombra é separado do volume original. Isso interrompe a conexão espelho.  
-      
+1. O volume original e o volume da cópia de sombra são um conjunto de volumes espelhados.
+
+2. O volume da cópia de sombra é separado do volume original. Isso interrompe a conexão espelho.
+
 
 Após a interrupção da conexão espelho, o volume original e o volume da cópia de sombra são independentes. O volume original continua aceitando todas as alterações (solicitações de E/S de gravação), enquanto o volume da cópia de sombra continua sendo uma cópia exata somente leitura dos dados originais no momento da interrupção.
 
@@ -245,25 +245,21 @@ Os arquivos de componente que compõem o provedor de sistema são swprv.dll e vo
 
 O sistema operacional Windows inclui um conjunto de gravadores do VSS responsáveis por enumerar os dados exigidos por vários recursos do Windows.
 
-Para obter mais informações sobre esses gravadores, confira os seguintes sites da Microsoft:
+Para obter mais informações sobre esses gravadores, confira a seguinte página da Web do Microsoft Docs:
 
-  - [Gravadores do VSS In-Box](https://go.microsoft.com/fwlink/?linkid=180895) (https://go.microsoft.com/fwlink/?LinkId=180895)  
-      
-  - [Novos gravadores do VSS In-Box para Windows Server 2008 e Windows Vista SP1](https://go.microsoft.com/fwlink/?linkid=180896) (https://go.microsoft.com/fwlink/?LinkId=180896)  
-      
-  - [Novos gravadores do VSS In-Box para Windows Server 2008 R2 e Windows 7](https://go.microsoft.com/fwlink/?linkid=180897) (https://go.microsoft.com/fwlink/?LinkId=180897)  
-      
+- [Gravadores do VSS In-Box](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+
 
 ## <a name="how-shadow-copies-are-used"></a>Como as cópias de sombra são usadas
 
 Além de fazer backup de dados de aplicativos e informações de estado do sistema, as cópias de sombra podem ser usadas para várias finalidades, incluindo:
 
-  - Como restaurar LUNs (ressincronização de LUN e troca de LUN)  
-      
-  - Como restaurar arquivos individuais (Cópias de Sombra para Pastas Compartilhadas)  
-      
-  - Mineração de dados usando cópias de sombra transportáveis  
-      
+  - Como restaurar LUNs (ressincronização de LUN e troca de LUN)
+
+  - Como restaurar arquivos individuais (Cópias de Sombra para Pastas Compartilhadas)
+
+  - Mineração de dados usando cópias de sombra transportáveis
+
 
 ### <a name="restoring-luns-lun-resynchronization-and-lun-swapping"></a>Como restaurar LUNs (ressincronização de LUN e troca de LUN)
 
@@ -273,7 +269,7 @@ A cópia de sombra pode ser um clone completo ou uma cópia de sombra diferencia
 
 
 > [!NOTE]
-> A cópia de sombra deve ser uma cópia de sombra de hardware transportável. 
+> A cópia de sombra deve ser uma cópia de sombra de hardware transportável.
 <br>
 
 
@@ -281,16 +277,15 @@ A maioria das matrizes permite que as operações de E/S de produção sejam ret
 
 A ressincronização de LUN é diferente da troca de LUN. Uma troca de LUN é um cenário de recuperação rápida compatível do VSS desde o Windows Server 2003 SP1. Em uma troca de LUN, a cópia de sombra é importada e, em seguida, convertida em um volume de leitura/gravação. A conversão é uma operação irreversível e o volume e o LUN subjacentes não podem ser controlados com as APIs do VSS depois disso. A seguinte lista descreve como a ressincronização de LUN se compara com a troca de LUN:
 
-  - Na ressincronização de LUN, a cópia de sombra não é alterada, portanto, pode ser usada várias vezes. Na troca de LUN, a cópia de sombra pode ser usada apenas uma vez para uma recuperação. Para os administradores mais preocupados com segurança, isso é importante. Quando a ressincronização de LUN é usada, o solicitante pode repetir toda a operação de restauração se algo dá errado na primeira vez.  
-      
-  - No final de uma troca de LUN, o LUN da cópia de sombra é usado para solicitações de E/S de produção. Por esse motivo, o LUN de cópia de sombra deve usar a mesma qualidade de armazenamento que o LUN de produção original para garantir que o desempenho não seja afetado após a operação de recuperação. Se a ressincronização de LUN for usada em vez disso, o provedor de hardware poderá manter a cópia de sombra no armazenamento que tem menor custo do que o armazenamento de qualidade de produção.  
-      
-  - Se o LUN de destino não puder ser usado e precisar ser recriado, a troca de LUN poderá ser mais econômica porque não requer um LUN de destino.  
-      
+  - Na ressincronização de LUN, a cópia de sombra não é alterada, portanto, pode ser usada várias vezes. Na troca de LUN, a cópia de sombra pode ser usada apenas uma vez para uma recuperação. Para os administradores mais preocupados com segurança, isso é importante. Quando a ressincronização de LUN é usada, o solicitante pode repetir toda a operação de restauração se algo dá errado na primeira vez.
+
+  - No final de uma troca de LUN, o LUN da cópia de sombra é usado para solicitações de E/S de produção. Por esse motivo, o LUN de cópia de sombra deve usar a mesma qualidade de armazenamento que o LUN de produção original para garantir que o desempenho não seja afetado após a operação de recuperação. Se a ressincronização de LUN for usada em vez disso, o provedor de hardware poderá manter a cópia de sombra no armazenamento que tem menor custo do que o armazenamento de qualidade de produção.
+
+  - Se o LUN de destino não puder ser usado e precisar ser recriado, a troca de LUN poderá ser mais econômica porque não requer um LUN de destino.
 
 
 > [!WARNING]
-> Todas as operações listadas são no nível de LUN. Se você tentar recuperar um volume específico usando a ressincronização de LUN, reverterá inadvertidamente todos os outros volumes que estão compartilhando o LUN. 
+> Todas as operações listadas são no nível de LUN. Se você tentar recuperar um volume específico usando a ressincronização de LUN, reverterá inadvertidamente todos os outros volumes que estão compartilhando o LUN.
 <br>
 
 
@@ -320,7 +315,7 @@ Com o Serviço de Cópias de Sombra de Volume e uma matriz de armazenamento com 
 
 
 > [!NOTE]
-> Uma cópia de sombra transportável criada no Windows Server 2003 não pode ser importada para um servidor que está executando o Windows Server 2008 ou o Windows Server 2008 R2. Uma cópia de sombra transportável criada no Windows Server 2008 ou no Windows Server 2008 R2 não pode ser importada para um servidor que está executando o Windows Server 2003. No entanto, uma cópia de sombra criada no Windows Server 2008 pode ser importada para um servidor que está executando o Windows Server 2008 R2 e vice-versa. 
+> Uma cópia de sombra transportável criada no Windows Server 2003 não pode ser importada para um servidor que está executando o Windows Server 2008 ou o Windows Server 2008 R2. Uma cópia de sombra transportável criada no Windows Server 2008 ou no Windows Server 2008 R2 não pode ser importada para um servidor que está executando o Windows Server 2003. No entanto, uma cópia de sombra criada no Windows Server 2008 pode ser importada para um servidor que está executando o Windows Server 2008 R2 e vice-versa.
 <br>
 
 
@@ -362,10 +357,10 @@ Depende do software de backup que você usou. Se você criar uma cópia de sombr
 
 Para obter mais informações, confira os seguintes sites do Microsoft TechNet:
 
-  - [Restauração do Sistema](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)  
-      
-  - [Backup do Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)  
-      
+- [Restauração do Sistema](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)
+
+- [Backup do Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)
+
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>Posso excluir arquivos de uma cópia de sombra para economizar espaço?
 
@@ -406,14 +401,14 @@ A área de comparação pode estar em qualquer volume local. No entanto, ela dev
 
 Os seguintes critérios são avaliados, nesta ordem, para determinar a localização da área de comparação:
 
-  - Se um volume já tiver uma cópia de sombra existente, essa localização será usada.  
-      
-  - Se houver uma associação manual pré-configurada entre o volume original e a localização do volume de cópia de sombra, esse localização será usada.  
-      
-  - Se os dois critérios anteriores não fornecerem uma localização, o serviço de cópia de sombra escolherá uma localização com base no espaço livre disponível. Se mais de um volume estiver sendo copiado em sombra, o serviço de cópias de sombra criará uma lista de possíveis locais de instantâneo com base no tamanho do espaço livre, em ordem decrescente. O número de locais fornecidos é igual ao número de volumes que estão sendo copiados em sombra.  
-      
-  - Se o volume que está sendo copiado em sombra for um dos locais possíveis, uma associação local será criada. Caso contrário, uma associação com o volume com o espaço mais disponível será criada.  
-      
+  - Se um volume já tiver uma cópia de sombra existente, essa localização será usada.
+
+  - Se houver uma associação manual pré-configurada entre o volume original e a localização do volume de cópia de sombra, esse localização será usada.
+
+  - Se os dois critérios anteriores não fornecerem uma localização, o serviço de cópia de sombra escolherá uma localização com base no espaço livre disponível. Se mais de um volume estiver sendo copiado em sombra, o serviço de cópias de sombra criará uma lista de possíveis locais de instantâneo com base no tamanho do espaço livre, em ordem decrescente. O número de locais fornecidos é igual ao número de volumes que estão sendo copiados em sombra.
+
+  - Se o volume que está sendo copiado em sombra for um dos locais possíveis, uma associação local será criada. Caso contrário, uma associação com o volume com o espaço mais disponível será criada.
+
 
 ### <a name="can-vss-create-shadow-copies-of-non-ntfs-volumes"></a>O VSS pode criar cópias de sombra de volumes não NTFS?
 
@@ -441,25 +436,25 @@ As cópias de sombra do volume serão excluídas, começando com a cópia de som
 
 O sistema operacional Windows fornece as seguintes ferramentas para trabalhar com o VSS:
 
-  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)  
-      
-  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)  
-      
+  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)
+
+  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)
+
 
 ### <a name="diskshadow"></a>DiskShadow
 
 O DiskShadow é um solicitante VSS que você pode usar para gerenciar todos os instantâneos de hardware e software que você pode ter em um sistema. O DiskShadow inclui comandos como os seguintes:
 
-  - **list**: lista gravadores do VSS, provedores do VSS e cópias de sombra  
-      
-  - **create**: cria uma cópia de sombra  
-      
-  - **import**: importa uma cópia de sombra transportável  
-      
-  - **expose**: expõe uma cópia de sombra persistente (como uma letra da unidade)  
-      
-  - **revert**: reverte um volume de volta para uma cópia de sombra especificada  
-      
+  - **list**: lista gravadores do VSS, provedores do VSS e cópias de sombra
+
+  - **create**: cria uma cópia de sombra
+
+  - **import**: importa uma cópia de sombra transportável
+
+  - **expose**: expõe uma cópia de sombra persistente (como uma letra da unidade)
+
+  - **revert**: reverte um volume de volta para uma cópia de sombra especificada
+
 
 Essa ferramenta é destinada ao uso por profissionais de TI, mas também pode ser útil para desenvolvedores no teste de um VSS Writer ou de um provedor VSS.
 
@@ -471,16 +466,16 @@ O VssAdmin é usado para criar, excluir e listar informações sobre cópias de 
 
 O VssAdmin inclui comandos como os seguintes:
 
-  - **create shadow**: cria uma cópia de sombra  
-      
-  - **delete shadows**: exclui cópias de sombra  
-      
-  - **list providers**: lista todos os provedores do VSS registrados  
-      
-  - **list writers**: lista todos os gravadores do VSS inscritos  
-      
-  - **resize shadowstorage**: altera o tamanho máximo da área de armazenamento de cópia de sombra  
-      
+  - **create shadow**: cria uma cópia de sombra
+
+  - **delete shadows**: exclui cópias de sombra
+
+  - **list providers**: lista todos os provedores do VSS registrados
+
+  - **list writers**: lista todos os gravadores do VSS inscritos
+
+  - **resize shadowstorage**: altera o tamanho máximo da área de armazenamento de cópia de sombra
+
 
 O VssAdmin só pode ser usado para administrar cópias de sombra criadas pelo provedor de software do sistema.
 
@@ -490,12 +485,12 @@ O VssAdmin está disponível nas versões do sistema operacional Windows Client 
 
 As seguintes chaves do Registro estão disponíveis para uso com o VSS:
 
-  - **VssAccessControl**  
-      
-  - **MaxShadowCopies**  
-      
-  - **MinDiffAreaFileSize**  
-      
+  - **VssAccessControl**
+
+  - **MaxShadowCopies**
+
+  - **MinDiffAreaFileSize**
+
 
 ### <a name="vssaccesscontrol"></a>VssAccessControl
 
@@ -503,10 +498,10 @@ Essa chave é usada para especificar quais usuários têm acesso a cópias de so
 
 Para obter mais informações, confira as seguintes entradas no site da MSDN:
 
-  - [Considerações de segurança para gravadores](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)  
-      
-  - [Considerações de segurança para solicitantes](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)  
-      
+  - [Considerações de segurança para gravadores](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)
+
+  - [Considerações de segurança para solicitantes](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)
+
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
 
@@ -524,7 +519,7 @@ Para obter mais informações, confira a seguinte entrada no site do MSDN:
 
 **MinDiffAreaFileSize** em [Chaves do Registro para Backup e Restauração](https://go.microsoft.com/fwlink/?linkid=180910) (https://go.microsoft.com/fwlink/?LinkId=180910)
 
-Versões do sistema operacionais compatíveis do `##`#
+### <a name="supported-operating-system-versions"></a>Versões do sistema operacional compatíveis
 
 A tabela a seguir lista as versões mínimas do sistema operacional compatíveis para recursos do VSS.
 

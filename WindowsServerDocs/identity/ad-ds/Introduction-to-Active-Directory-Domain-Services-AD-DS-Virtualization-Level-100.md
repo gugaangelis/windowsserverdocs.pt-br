@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 67e35a47467b1f5f66bfd073c6f9db06094ea3f9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391033"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465500"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>Virtualização com segurança do AD DS (Active Directory Domain Services)
 
@@ -67,7 +67,7 @@ Em um controlador de domínio, as mensagens de evento semelhantes às seguintes 
 
 Esses eventos podem ser capturados no log de eventos do Serviço de Diretório. No entanto, eles podem ser substituídos antes de serem observados por um administrador.
 
-Se você suspeitar que uma reversão de USN ocorreu, mas não ver um evento correspondente nos logs de eventos, verifique a entrada DSA Not Writable no registro. Essa entrada fornece evidências forenses de que uma reversão de USN ocorreu.
+Caso você suspeite de que uma reversão de USN ocorreu, mas não veja um evento correspondente nos logs de eventos, verifique a entrada DSA Not Writable no Registro. Essa entrada fornece evidências forenses de que uma reversão de USN ocorreu.
 
 ```
 HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\NTDS\Parameters
@@ -131,5 +131,5 @@ Você também pode usar o instantâneo como uma origem de um backup. Ou pode def
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Para obter mais informações sobre solução de problemas dos controladores de domínio virtualizados, consulte [Solução de problemas do controlador de domínio virtualizado](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md).
+* Para obter informações de solução de problemas sobre controladores de domínio virtualizados, consulte [Virtualized Domain Controller Troubleshooting](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md).
 * [Informações detalhadas sobre o Serviço de Tempo do Windows (W32Time)](../../networking/windows-time-service/windows-time-service-top.md)

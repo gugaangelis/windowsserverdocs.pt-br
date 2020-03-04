@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a01d8881e8f0f7ca6feff691938f926a12460db0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8ebe1f82cd6f616d42521729c5efc14821c20fa
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361656"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169576"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Etapa 4: Definir as configurações da Política de Grupo para atualizações automáticas
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Em um ambiente do Active Directory, você pode usar Política de Grupo para definir como computadores e usuários (mencionados neste documento como clientes do WSUS) podem interagir com o Windows Update para obter atualizações automáticas do WSUS (Windows Server Update Services).
 
@@ -94,7 +94,7 @@ Especifica se o recurso Atualizações Automáticas instalará automaticamente a
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Se a configuração de política "Configurar Atualizações Automáticas" estiver **Desabilitada**, essa política não terá efeito.
@@ -126,7 +126,7 @@ Especifica se usuários não administrativos receberão notificações de atuali
 |**Estado de configuração de política**|**Comportamento**|
 |**Não Configurado**|Especifica que os usuários sempre verão uma janela de Controle de Conta e exigem permissões elevadas para realizar essas tarefas. Um administrador local pode alterar essa configuração usando o editor de Política de Grupo Local.|
 |**Habilitada**|Especifica que a Atualização Automática do Windows e o Microsoft Update incluirão não administradores ao determinar qual usuário conectado receberá notificações de atualização. Usuários não administrativos poderão instalar todo o conteúdo de atualização opcional, recomendado e IMPORTANTE para o qual receberam uma notificação. Os usuários não verão uma janela de Controle de Conta de Usuário e não precisarão de permissões elevadas para instalar essas atualizações, exceto no caso de atualizações que contêm alterações de configuração de Interface do Usuário, Contrato de Licença de Usuário Final ou do Windows Update.<br /><br />Há duas situações em que o efeito dessa configuração depende do computador operacional:<br /><br />1.  **Ocultar** ou **Restaurar** atualizações<br />2.  **Cancelar** uma instalação de atualização<br /><br />No Windows Vista ou no Windows XP, se essa configuração de política estiver habilitada, os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações.<br /><br />No Windows Vista, se essa configuração de política estiver habilitada, os usuários não verão uma janela de controle de conta de usuário e não precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações. Se essa configuração de política não estiver habilitada, os usuários sempre verão uma janela de controle de conta e precisarão de permissões elevadas para ocultar, restaurar ou cancelar atualizações.<br /><br />No Windows 7, essa configuração de política não tem nenhum efeito. Os usuários sempre verão uma janela de Controle de Conta e precisarão de permissões elevadas para realizar essas tarefas.<br /><br />No Windows 8 e no Windows RT, essa configuração de política não tem nenhum efeito.|
-|**Desabilitada**|Especifica que somente administradores conectados recebem notificações de atualização. **Observação:** No Windows 8 e no Windows RT, essa configuração de política é habilitada por padrão. Em todas as versões anteriores do Windows, está desabilitado por padrão.|
+|**Desabilitada**|Especifica que somente administradores conectados recebem notificações de atualização. **Observação**: No Windows 8 e no Windows RT, essa configuração de política é habilitada por padrão. Em todas as versões anteriores do Windows, está desabilitado por padrão.|
 
 **Opções:** Não há opções para essa configuração.
 
@@ -159,7 +159,7 @@ Especifica se um temporizador de reinicialização sempre será iniciado imediat
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Se a configuração de política "Não há reinicializações automáticas para usuários conectados, referentes às instalações de atualizações automáticas agendadas" estiver habilitada, esta política não terá efeito.
@@ -220,7 +220,7 @@ Especifica a quantidade de tempo que as Atualizações Automáticas esperarão a
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Esta política se aplica somente quando a opção Atualizações Automáticas está configurada para executar instalações agendadas de atualizações. Se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
@@ -239,7 +239,7 @@ Essa configuração de política permite que você especifique se a opção **In
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Essa configuração de política não será afetará se a configuração de política *PolicyName* > **Configuração do Computador** > **Políticas** > **Modelos Administrativos** > **Componentes do Windows** > **Windows Update** > **Não exibir a opção "Instalar Atualizações e Desligar" na caixa de diálogo Desligar o Windows** estiver habilitada.
@@ -260,7 +260,7 @@ Habilitar essa política desabilitará a funcionalidade para recuperar periodica
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Começando com o Windows Server 2012 R2, Windows 8.1 ou Windows RT 8.1, os sistemas operacionais Windows que ainda estiverem no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Começando com o Windows Server 2012 R2, Windows 8.1 ou Windows RT 8.1, os sistemas operacionais Windows que ainda estiverem no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Essa política só se aplica quando o computador está configurado para se conectar a um serviço de atualização da intranet usando a configuração de política "Especificar o local do serviço Microsoft Update na intranet".
@@ -279,7 +279,7 @@ Especifica se a opção **Instalar Atualizações e Desligar** é exibida na cai
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 |||
 |-|-|
@@ -321,7 +321,7 @@ O computador não será ativado, a menos que haja atualizações a serem instala
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Começando com o Windows Vista e o Windows Server 2008 (Windows 7), os sistemas operacionais Windows que ainda estiverem no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Começando com o Windows Vista e o Windows Server 2008 (Windows 7), os sistemas operacionais Windows que ainda estiverem no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 |||
 |-|-|
@@ -337,7 +337,7 @@ Especifica que, para concluir uma instalação agendada, as Atualizações Autom
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Esta política se aplica somente quando a opção Atualizações Automáticas está configurada para executar instalações agendadas de atualizações. Se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
@@ -380,7 +380,7 @@ Se o status for definido como **Não Configurado**, uma instalação agendada ig
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Esta política se aplica somente quando a opção Atualizações Automáticas está configurada para executar instalações agendadas de atualizações. Se a configuração de política "Configurar Atualizações Automáticas" estiver desabilitada, essa política não terá efeito.
@@ -431,7 +431,7 @@ Especifica se Atualizações Automáticas fornecerão atualizações IMPORTANTES
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Começando com o Windows Vista, os sistemas operacionais Windows que ainda estão no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Começando com o Windows Vista, os sistemas operacionais Windows que ainda estão no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 |||
 |-|-|
@@ -451,7 +451,7 @@ Se a configuração de política "Configurar Atualizações Automáticas" estive
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Do Windows Server 2008 (Windows Vista) e Windows 7, os sistemas operacionais Windows que ainda estiverem no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Do Windows Server 2008 (Windows Vista) e Windows 7, os sistemas operacionais Windows que ainda estiverem no [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Por padrão, essa configuração de política está desabilitada.
@@ -481,7 +481,7 @@ O limite de ativação de manutenção é o horário agendado diário no qual a 
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Essa configuração está relacionada à opção 4 em **Configurar Atualizações Automáticas**. Se você não selecionou a opção 4 em **Configurar Atualizações Automáticas**, não será necessário definir essa configuração.
@@ -500,7 +500,7 @@ O atraso aleatório de manutenção é o tempo pelo qual a Manutenção Automát
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Essa configuração está relacionada à opção 4 em **Configurar Atualizações Automáticas**. Se você não selecionou a opção 4 em **Configurar Atualizações Automáticas**, não será necessário definir essa configuração.
@@ -521,7 +521,7 @@ A política de ativação de manutenção especifica se a Manutenção Automáti
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Se a política de ativação de energia do computador operacional estiver explicitamente desabilitada, essa configuração não terá efeito.
@@ -558,7 +558,7 @@ Especifica se a opção **Instalar Atualizações e Desligar** é exibida na cai
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 |||
 |-|-|
@@ -574,7 +574,7 @@ Especifica se a opção **Instalar Atualizações e Desligar** é permitida como
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
 > Essa configuração de política não será afetará se *PolicyName* > **Configuração do Usuário** > **Políticas** > **Modelos Administrativos** > **Componentes do Windows** > **Windows Update** > **Não exibir a opção "Instalar Atualizações e Desligar" na caixa de diálogo Desligar o Windows** estiver habilitada.
@@ -593,13 +593,13 @@ Essa configuração permite remover o acesso de cliente do WSUS ao Windows Updat
 
 |Compatível com:|Excluindo:|
 |---------|-------|
-|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|null|
+|Os sistemas operacionais Windows que ainda estão dentro de seu [Ciclo de Vida de Suporte de Produtos da Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 |||
 |-|-|
 |**Estado de configuração de política**|**Comportamento**|
 |**Não Configurado**|Os usuários podem se conectar ao site Windows Update.|
-|**Habilitada**|**IMPORTANTE:** se essa opção estiver habilitada, todos os recursos de Windows Update serão removidos. Isso inclui bloquear o acesso ao site Windows Update em https://windowsupdate.microsoft.com, do hiperlink do Windows Update no menu Iniciar ou tela inicial e também no menu **Ferramentas** no Internet Explorer. A atualização automática do Windows também está desabilitada; o usuário não será notificado nem receberá atualizações críticas do Windows Update. Essa configuração também impede que o Gerenciador de Dispositivos instale automaticamente atualizações de driver do site Windows Update.<br /><br />Quando habilitada, você pode configurar uma das seguintes opções de notificação:<br /><br />-   **0 – Não mostrar notificações**<br />    Essa configuração removerá todo o acesso a recursos do Windows Update e nenhuma notificação será mostrada.<br />-   **1 – Mostrar notificações necessárias de reinicialização**<br />    Essa configuração mostrará notificações sobre reinicializações necessárias para concluir uma instalação. **Observação:** Em computadores que executam o Windows 8 e o Windows RT, se essa política estiver habilitada, somente as notificações relacionadas à reinicializações e à incapacidade de detectar atualizações serão mostradas. Não há suporte para as opções de notificação. As notificações na tela de entrada sempre são exibidas.|
+|**Habilitada**|**IMPORTANTE:** se essa opção estiver habilitada, todos os recursos de Windows Update serão removidos. Isso inclui bloquear o acesso ao site Windows Update em https://windowsupdate.microsoft.com, do hiperlink do Windows Update no menu Iniciar ou tela inicial e também no menu **Ferramentas** no Internet Explorer. A atualização automática do Windows também está desabilitada; o usuário não será notificado nem receberá atualizações críticas do Windows Update. Essa configuração também impede que o Gerenciador de Dispositivos instale automaticamente atualizações de driver do site Windows Update.<br /><br />Quando habilitada, você pode configurar uma das seguintes opções de notificação:<br /><br />-   **0 – Não mostrar notificações**<br />    Essa configuração removerá todo o acesso a recursos do Windows Update e nenhuma notificação será mostrada.<br />-   **1 – Mostrar notificações necessárias de reinicialização**<br />    Essa configuração mostrará notificações sobre reinicializações necessárias para concluir uma instalação. **Observação**: Em computadores que executam o Windows 8 e o Windows RT, se essa política estiver habilitada, somente as notificações relacionadas à reinicializações e à incapacidade de detectar atualizações serão mostradas. Não há suporte para as opções de notificação. As notificações na tela de entrada sempre são exibidas.|
 |**Desabilitada**|Os usuários podem se conectar ao site Windows Update.|
 
 **Opções:** Confira **Habilitado** na tabela para essa configuração.
@@ -621,7 +621,7 @@ O procedimento a seguir descreve como abrir o GPMC em seu controlador de domíni
 
 3.  No painel esquerdo, clique duas vezes em **Domínios** e, em seguida, clique duas vezes no domínio para o qual você deseja gerenciar um objeto de Política de Grupo. Por exemplo, clique duas vezes em **example.com**.
 
-4.  Siga um destes procedimentos:
+4.  Realize um dos seguintes procedimentos:
 
     -  **Para abrir um GPO em nível de domínio existente para edição**, clique duas vezes no domínio que contém o objeto de Política de Grupo que você deseja gerenciar, clique com o botão direito do mouse na política de domínio que você deseja gerenciar e clique em **Editar**. O GPME (Editor de Gerenciamento de Política de Grupo) é aberto.
 
@@ -661,7 +661,7 @@ Para obter mais informações sobre a Política de Grupo, confira [Visão geral 
 
 3.  Em **Opções**, se houver opções listadas, mantenha os valores padrão ou modifique-os conforme necessário.
 
-4.  Siga um destes procedimentos:
+4.  Realize um dos seguintes procedimentos:
 
     -   Para salvar as alterações e prosseguir para a próxima configuração, clique em **Aplicar** e, em seguida, clique em **Próxima configuração**.
 

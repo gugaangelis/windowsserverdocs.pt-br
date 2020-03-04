@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 02/11/2020
+ms.date: 02/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
-ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
+ms.openlocfilehash: f435892f0a200056c08094cac1831c710a47a6be
+ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77155380"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77608791"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -30,14 +30,14 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Público     |1.2.605  |
-|Participante do Programa Windows Insider    |1.2.673  |
+|Público     |1.2.675  |
+|Participante do Programa Windows Insider    |1.2.675  |
 
-## <a name="updates-for-version-12673"></a>Atualizações para a versão 1.2.673
+## <a name="updates-for-version-12675"></a>Atualizações para a versão 1.2.675
 
-*Data da publicação: 11/02/2020*
+*Data da publicação: 25/02/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
 
 - Agora as conexões com a Área de Trabalho Virtual do Windows serão bloqueadas se o arquivo RDP não tiver a assinatura ou se uma das propriedades signscope tiver sido modificada.
 - Quando um workspace está vazio ou foi removido, o Centro de Conexão não parece mais estar vazio.

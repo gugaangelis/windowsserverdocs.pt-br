@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e73511709bfbee69a6dcbaaff4341c8b067079f3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949862"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465470"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -40,7 +40,7 @@ Siga estas etapas para começar a usar a Área de Trabalho Remota em seu disposi
 3. Adicione uma conexão de Área de Trabalho Remota ou um recurso remoto. Você usa uma conexão para se conectar diretamente a um computador Windows e um recurso remoto para usar um programa RemoteApp, uma área de trabalho baseada em sessão ou uma área de trabalho virtual publicada localmente usando conexões de RemoteApp e área de trabalho. Normalmente, esse recurso está disponível em ambientes corporativos.
 
 ## <a name="what-about-the-mac-beta-client"></a>E quanto ao cliente beta do Mac?
-Vamos testar novos recursos no nosso canal de teste no HockeyApp. Quer conhecer? Acesse [Área de Trabalho Remota da Microsoft para Mac](https://go.microsoft.com/fwlink/?LinkID=619698) e clique em **Baixar**. Você não precisa criar uma conta ou entrar no HockeyApp para baixar o cliente beta.
+Vamos testar novos recursos em nosso canal de visualização no App Center. Quer conhecer? Acesse [Área de Trabalho Remota da Microsoft para Mac](https://aka.ms/rdmacbeta) e clique em **Baixar**. Você não precisa criar uma conta nem entrar no App Center para baixar o cliente beta.
 
 Se você já tiver o cliente, poderá verificar as atualizações para garantir que tenha a versão mais recente. No cliente beta, clique em **Área de Trabalho Remota Beta da Microsoft** na parte superior e depois clique em **Verificar atualizações**. 
 

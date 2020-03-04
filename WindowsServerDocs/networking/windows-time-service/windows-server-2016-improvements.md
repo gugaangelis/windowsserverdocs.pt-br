@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 37e37e33b5d8dd571f8519aaa48251856503578d
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953084"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77520638"
 ---
 # <a name="windows-server-2016-improvements"></a>Aprimoramentos do Windows Server 2016
 
@@ -39,7 +39,7 @@ Contadores do monitor de desempenho foram adicionados. Eles permitem que você d
 |----- | ----- |
 |Diferença de Horário Calculado| A diferença de horário absoluto entre o relógio do sistema e a fonte de horário escolhida, conforme calculado pelo Serviço W32Time em microssegundos. Quando uma nova amostra válida fica disponível, o horário calculado é atualizado com a diferença de horário indicada pela amostra. Essa é a diferença de horário real do relógio local. O W32Time inicia a correção do relógio usando essa diferença e atualiza o horário calculado entre as amostras com a diferença de horário restante que precisa ser aplicada ao relógio local. A precisão do relógio pode ser acompanhada por meio desse contador de desempenho com um intervalo de sondagem baixo (por exemplo, 256 segundos ou menos) e buscando o valor do contador como menor do que o limite desejado de precisão do relógio.|
 |Ajuste de Frequência do Relógio| O ajuste de frequência do relógio absoluto feito no relógio do sistema local pelo W32Time em partes por bilhão. Esse contador ajuda a visualizar as ações que estão sendo executadas pelo W32Time.|
-|Atraso de Ida e Volta NTP| O atraso de ida e volta mais recente enfrentado pelo cliente NTP no recebimento de uma resposta do servidor em microssegundos. Esse é o tempo decorrido no cliente NTP entre a transmissão de uma solicitação para o |servidor NTP e o recebimento de uma resposta válida do servidor. Esse contador ajuda a caracterizar os atrasos experimentados pelo cliente NTP. Viagens de ida e volta maiores ou variáveis podem adicionar ruído aos cálculos de tempo do NTP, o que, por sua vez, pode afetar a precisão da sincronização de horário por meio do NTP.|
+|Atraso de Ida e Volta NTP| O atraso de ida e volta mais recente enfrentado pelo cliente NTP no recebimento de uma resposta do servidor em microssegundos. Esse é o tempo decorrido no cliente NTP entre a transmissão de uma solicitação para o servidor NTP e o recebimento de uma resposta válida do servidor. Esse contador ajuda a caracterizar os atrasos experimentados pelo cliente NTP. Viagens de ida e volta maiores ou variáveis podem adicionar ruído aos cálculos de tempo do NTP, o que, por sua vez, pode afetar a precisão da sincronização de horário por meio do NTP.|
 |Contagem de Fontes do Cliente NTP| Número ativo de fontes de horário do NTP usadas pelo cliente NTP. Essa é uma contagem dos endereços IP ativos e distintos de servidores de horário que respondem às solicitações desse cliente. Esse número pode ser maior ou menor do que os pares configurados, dependendo da resolução DNS de nomes de pares e da capacidade de alcance atual.|
 |Solicitações de Entrada do Servidor NTP| Número de solicitações recebidas pelo servidor NTP (solicitações/s).|
 |Respostas de Saída do Servidor NTP| Número de solicitações respondidas pelo servidor NTP (respostas/s).|

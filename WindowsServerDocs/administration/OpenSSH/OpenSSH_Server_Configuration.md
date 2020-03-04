@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Configuração do servidor OpenSSH para Windows
-ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 61e6e24e6682802fd07e70dcb49aa0f382e1638e
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259045"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169586"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuração do servidor OpenSSH para Windows 10 1809 e Server 2019
 
@@ -76,7 +76,7 @@ Para o Windows OpenSSH, os únicos métodos de autenticação disponíveis são 
 
 ### <a name="authorizedkeysfile"></a>AuthorizedKeysFile 
 
-O padrão é ".ssh/authorized_keys. ssh/authorized_keys2". Se o caminho não for absoluto, ele será considerado em relação ao diretório base do usuário (ou o caminho da imagem do perfil). Ex. c:\users\user.
+O padrão é ".ssh/authorized_keys. ssh/authorized_keys2". Se o caminho não for absoluto, ele será considerado em relação ao diretório base do usuário (ou o caminho da imagem do perfil). Ex. c:\users\user. Observe que, se o usuário pertencer ao grupo de administradores, %programdata%/ssh/administrators_authorized_keys será usado.
 
 ### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory (suporte adicionado na v7.7.0.0)
 

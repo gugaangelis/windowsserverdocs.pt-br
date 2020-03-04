@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 03f62fd8d9a95c4f0b83e64d672a3c1134833cae
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 86d7b2ff99debbecec930693fb93dc965fefc59e
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950551"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517591"
 ---
 # <a name="privileged-access-workstations"></a>Estações de trabalho com acesso privilegiado
 
@@ -40,7 +40,7 @@ Os controles de segurança da PAW concentram-se em reduzir o alto impacto e os r
 
 * **Ataques da Internet**: a maioria dos ataques são provenientes direta ou indiretamente de fontes na Internet e usa a Internet para transferência de dados e comando e controle (C2). Isolar a PAW da Internet aberta é essencial para garantir que não seja comprometida.
 * **Risco de uso**: se for muito difícil usar uma PAW para tarefas diárias, os administradores serão motivados a criar soluções para facilitar seu trabalho. Frequentemente, essas soluções alternativas deixam as contas e a estação de trabalho administrativas vulneráveis a riscos consideráveis de segurança, portanto é fundamental envolver e capacitar os usuários da PAW para atenuar esses problemas de uso com segurança. Isso pode ser feito escutando os comentários, instalando as ferramentas e os scripts necessários para realizar seus trabalhos e garantindo que todo o pessoal administrativo esteja ciente do motivo de precisarem usar uma PAW, do que é uma PAW e de como usá-la corretamente e com sucesso.
-* **Riscos de ambiente**: como muitos computadores e contas do ambiente estão expostos ao risco da Internet, direta ou indiretamente, uma PAW deve ser protegida contra ataques de ativos comprometidos no ambiente de produção. Isso exige minimizar o uso de ferramentas de gerenciamento e contas que têm acesso às PAWs a fim de proteger e monitorar essas estações de trabalho especializadas.
+* **Riscos de ambiente**: como muitos outros computadores e outras contas do ambiente estão expostos ao risco da Internet, direta ou indiretamente, uma PAW precisa ser protegida contra os ataques de ativos comprometidos no ambiente de produção. Isso exige minimizar o uso de ferramentas de gerenciamento e contas que têm acesso às PAWs a fim de proteger e monitorar essas estações de trabalho especializadas.
 * **Adulteração da cadeia de suprimentos**: embora seja impossível remover todos os riscos possíveis de adulteração da cadeia de suprimentos de hardware e software, algumas ações importantes podem mitigar os vetores de ataque críticos que estão prontamente disponíveis para os invasores. Isso inclui a validação da integridade de todas as mídias de instalação ([princípio da origem limpa](https://aka.ms/cleansource)) e o uso de um fornecedor confiável e respeitável de hardware e software.
 * **Ataques físicos**: como as PAWs podem ser fisicamente móveis e podem ser usadas fora das instalações físicas seguras, devem ser protegidas contra ataques que utilizam o acesso físico não autorizado ao computador.
 

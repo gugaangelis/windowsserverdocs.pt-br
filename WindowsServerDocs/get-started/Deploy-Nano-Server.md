@@ -12,12 +12,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 92c27884475beb83000fb7aac15339135e3f2109
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 8b0276b70f3899fe1f3e56aebd87ea087ea91fee
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948461"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465480"
 ---
 # <a name="deploy-nano-server"></a>Implantar o Nano Server
 
@@ -492,7 +492,7 @@ Em seguida, o consumidor do pacote deverá executar estas etapas:
 2. Instale o aplicativo no Nano Server executando o cmdlet do PowerShell [**Add-AppxPackage**](https://technet.microsoft.com/library/mt575516(v=wps.620).aspx) para instalar um pacote WSA no Nano Server. Por exemplo: `Add-AppxPackage wsaSample.appx`
 
 #### <a name="additional-resources-for-creating-apps"></a>Recursos adicionais para criação de aplicativos
-O WSA é a extensão de servidor da tecnologia de pacote de aplicativos do Windows (embora não esteja hospedado na Microsoft Store). Se você quiser publicar aplicativos com WSA, estes tópicos ajudarão você a se familiarizar com o pipeline de pacote de aplicativo:
+O WSA é a extensão de servidor da tecnologia de pacote de aplicativos do Windows (embora não esteja hospedado na Microsoft Store). Se você desejar publicar aplicativos com o WSA, estes tópicos ajudarão você a se familiarizar com o pipeline do pacote do aplicativo:
 
 - [Como criar um manifesto de pacote básico](https://msdn.microsoft.com/library/windows/desktop/br211475.aspx)
 - [Empacotador de aplicativo (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)

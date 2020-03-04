@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519478"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517551"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novidades nos Serviços de Federação do Active Directory (AD FS)
 
@@ -108,6 +108,18 @@ C. Em seguida, o cliente envia o código de autorização na solicitação de to
 D. O AD FS transforma o "code_verifier" e compara-o com "t (code_verifier)" de (B).  O acesso será negado se eles não forem iguais. 
 
 #### <a name="faq"></a>Perguntas frequentes 
+> [!NOTE] 
+> Você poderá receber esse erro nos logs de eventos de administrador do ADFS: Solicitação OAuth inválida recebida. O 'NAME' do cliente é proibido de acessar o recurso com o escopo 'ugs'. Para corrigir esse erro: 
+> 1. Inicie o console de gerenciamento do AD FS. Procure "Serviços > Descrições de Escopo"
+> 2. Clique com o botão direito do mouse em "Descrições de Escopo" e selecione "Adicionar Descrição de Escopo"
+> 3. No nome, digite "ugs" e clique em Aplicar > OK
+> 4. Inicie o PowerShell como Administrador
+> 5. Execute o comando "Get-AdfsApplicationPermission". Procure os ScopeNames: {openid, aza} que tenham o ClientRoleIdentifier. Anote o ObjectIdentifier.
+> 6. Execute o comando "Set-AdfsApplicationPermission -TargetIdentifier <ObjectIdentifier da etapa 5> -AddScope 'ugs'
+> 7. Reinicie o serviço ADFS.
+> 8. No cliente: Reinicie o cliente. O usuário deverá ser solicitado a provisionar o WHFB.
+> 9. Se a janela de provisionamento não for exibida, será necessário coletar logs de rastreamento do NGC e solucionar problemas adicionais.
+
 **P.:** Posso transmitir o valor do recurso como parte do valor do escopo assim como as solicitações são feitas no Azure AD? 
 </br>**R.:** Com o AD FS no Server 2019, agora você pode transmitir o valor do recurso inserido no parâmetro de escopo. O parâmetro de escopo agora pode ser organizado como uma lista separada por espaço, em que cada entrada é estruturada como recurso/escopo. Por exemplo  
 **< criar uma solicitação de exemplo válida>**

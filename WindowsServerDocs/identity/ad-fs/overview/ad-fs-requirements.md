@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c8ab160699bc6a961f4fbed6c58cf072a395a313
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407420"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517531"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos do AD FS
 
@@ -206,7 +206,7 @@ Quando a autenticação do AD FS é executada por meio de um navegador ou contro
   
 O firewall localizado entre o Proxy de Aplicativo Web e o farm de servidores de federação e o firewall entre os clientes e o Proxy de Aplicativo Web deve ter a porta TCP 443 habilitada para entrada.  
   
-Além disso, se a autenticação de certificado de usuário cliente \(autenticação clientTLS que usa certificados de usuário X509\) for necessária e o ponto de extremidade certauth na porta 443 não estiver habilitado, o AD FS 2016 exigirá que a porta TCP 49443 seja habilitada para entrada no firewall entre os clientes e o Proxy de Aplicativo Web. Isso não é necessário no firewall entre o Proxy de Aplicativo Web e os servidores de federação\). 
+Além disso, se a autenticação de certificado de usuário cliente \(autenticação clientTLS que usa certificados de usuário X509\) for necessária e o ponto de extremidade certauth na porta 443 não estiver habilitado, o AD FS 2016 exigirá que a porta TCP 49443 seja habilitada para entrada no firewall entre os clientes e o Proxy de Aplicativo Web. Isso não é necessário no firewall entre o Proxy de aplicativo Web e os servidores de federação. 
 
 Para obter mais informações sobre os requisitos de porta híbrida, confira [Portas de Identidade Híbrida e Protocolos](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports). 
 

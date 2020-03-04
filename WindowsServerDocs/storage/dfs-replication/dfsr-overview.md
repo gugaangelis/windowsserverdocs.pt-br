@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 22f9e25763217cbbfdfd8a4ab099344f23138344
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c17fd78a2cf726ab156d3eda09b9c0e2d4ed6a75
+ms.sourcegitcommit: aaae95cb05c44232099ec46b04a127c77a3f486e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949710"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77520352"
 ---
 # <a name="dfs-replication-overview"></a>Visão geral sobre a Replicação do DFS
 
@@ -51,9 +51,9 @@ Antes de implantar a Replicação do DFS, você deve configurar os servidores da
 O uso de Replicação do DFS em uma máquina virtual no Azure foi testado com o Windows Server; no entanto, há algumas limitações e requisitos que devem ser seguidos.
 
 - O uso de instantâneos ou estados salvos para restaurar um servidor que executa a Replicação do DFS para replicar qualquer outro item diferente da pasta SYSVOL provoca falha na Replicação do DFS, o que exige etapas especiais para a recuperação do banco de dados. Da mesma forma, não exporte, clone ou copie as máquinas virtuais. Para obter mais informações, consulte o artigo [2517913](https://support.microsoft.com/kb/2517913) da Base de Dados de Conhecimento Microsoft, bem como o artigo [Virtualização segura da DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
-- Ao fazer backup de dados em uma pasta replicada hospedada em uma máquina virtual, você deve usar o software de backup de dentro da máquina virtual convidada.
+- Ao fazer backup de dados em uma pasta replicada hospedada em uma máquina virtual, use o software de backup na máquina virtual convidada.
 - A Replicação do DFS requer acesso aos controladores de domínio virtualizado ou físico – ela não pode se comunicar diretamente com o Azure AD.
-- A Replicação do DFS requer uma conexão VPN entre os membros do grupo de replicação local em e quaisquer membros hospedados em máquinas virtuais do Azure. Você também precisa configurar o roteador local (por exemplo, o Forefront Threat Management Gateway) para permitir que o mapeador de ponto de extremidade RPC (porta 135) e uma porta atribuída aleatoriamente entre 49152 e 65535 passem pela conexão VPN. Você pode usar o cmdlet Set-DfsrMachineConfiguration ou a ferramenta de linha de comando Dfsrdiag para especificar uma porta estática em vez da porta aleatória. Para obter mais informações sobre como especificar uma porta estática para a Replicação do DFS, consulte [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration). Para obter informações sobre portas relacionadas a serem abertas para gerenciamento do Windows Server, consulte o artigo [832017](https://support.microsoft.com/kb/832017) na Base de Dados de Conhecimento da Microsoft.
+- A Replicação do DFS exige uma conexão VPN entre os membros do grupo de replicação local e os membros hospedados em VMs do Azure. Você também precisa configurar o roteador local (por exemplo, o Forefront Threat Management Gateway) para permitir que o mapeador de pontos de extremidade RPC (porta 135) e uma porta atribuída aleatoriamente entre 49152 e 65535 passem pela conexão VPN. Você pode usar o cmdlet Set-DfsrMachineConfiguration ou a ferramenta de linha de comando Dfsrdiag para especificar uma porta estática em vez da porta aleatória. Para obter mais informações sobre como especificar uma porta estática para a Replicação do DFS, consulte [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration). Para obter informações sobre portas relacionadas a serem abertas para gerenciamento do Windows Server, consulte o artigo [832017](https://support.microsoft.com/kb/832017) na Base de Dados de Conhecimento da Microsoft.
 
 Para saber mais sobre como começar a usar máquinas virtuais do Azure, visite o [site do Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/).
 

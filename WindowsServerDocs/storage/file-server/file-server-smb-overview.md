@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 416145a8c4ec20eaf46cf4b5ac88a0cdf38bdf33
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: aafcfcd4d0f2f14836c5b7dee2bdbccbf99fa887
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919881"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169616"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Visão geral do compartilhamento de arquivos usando o protocolo SMB 3 no Windows Server
 
@@ -41,7 +41,7 @@ As seções a seguir descrevem a funcionalidade que foi adicionada no SMB 3 e at
 
 | Recurso/funcionalidade  | Novo ou atualizado  | Resumo  |
 | --------- | --------- | --------- |
-| Capacidade de exigir write-through em disco em compartilhamentos de arquivos que não estão continuamente disponíveis | Novo | Para fornecer uma garantia adicional que as gravações em um compartilhamento de arquivo percorram toda a pilha de software e hardware até o disco físico antes da operação de gravação retornar como concluída, você pode habilitar o write-through no compartilhamento de arquivo usando o comando `NET USE /WRITETHROUGH`, ou seja, o cmdlet `New-SMBMapping -UseWriteThrough` do PowerShell. Há algum impacto no desempenho em usar write-through. Confira a postagem no blog [Como controlar os comportamentos de write-through no SMB](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-write-through-behaviors-in-smb/bc-p/1083417#M677) para uma discussão adicional. |
+| Capacidade de exigir write-through em disco em compartilhamentos de arquivos que não estão continuamente disponíveis | Novo | Para fornecer uma garantia adicional de que as gravações em um compartilhamento de arquivo percorram toda a pilha de software e hardware até o disco físico antes da operação de gravação retornar como concluída, habilite o write-through no compartilhamento de arquivo usando o comando `NET USE /WRITETHROUGH` ou o cmdlet `New-SMBMapping -UseWriteThrough` do PowerShell. Há algum impacto no desempenho em usar write-through. Confira a postagem no blog [Como controlar os comportamentos de write-through no SMB](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-write-through-behaviors-in-smb/bc-p/1083417#M677) para uma discussão adicional. |
 
 ## <a name="features-added-in-windows-server-version-1709-and-windows-10-version-1709"></a>Recursos adicionados no Windows Server, versão 1709 e Windows 10, versão 1709
 

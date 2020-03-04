@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 96e47a94cb0139e42960baac6d07dbcb61750555
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
+ms.sourcegitcommit: da6c4fa55a6a72924ac363753d04c5b682cee55b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903908"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77624890"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configurar o controle de acesso do usuário e as permissões
 
@@ -49,7 +49,7 @@ Você pode impor a **autenticação de cartão inteligente** especificando um gr
 
 Na guia **Administradores**, você pode controlar quem pode acessar o Windows Admin Center como um administrador de gateway. O grupo local de administradores no computador sempre terá acesso de administrador completo e não poderá ser removido da lista. Ao adicionar grupos de segurança, você concede aos membros desses grupos privilégios para alterar as configurações do gateway do Windows Admin Center. A lista de administradores dá suporte à autenticação de cartão inteligente da mesma maneira que a lista de usuários: com a condição E para um grupo de segurança e um grupo de cartões inteligentes.
 
-## <a name="azure-active-directory"></a>Azure Active Directory
+## <a name="azure-active-directory"></a>Active Directory do Azure
 
 Se sua organização usa o Azure AD (Azure Active Directory), você pode optar por adicionar uma camada de segurança **adicional** ao Windows Admin Center exigindo a autenticação do Azure AD para acessar o gateway. Para acessar o Windows Admin Center, a **conta do Windows** do usuário também deve ter acesso ao servidor de gateway (mesmo que a autenticação do Azure AD seja usada). Ao usar o Azure AD, você gerenciará permissões de acesso de usuário e administrador do Windows Admin Center no portal do Azure, em vez de gerenciá-las de dentro da interface do usuário do Windows Admin Center.
 
