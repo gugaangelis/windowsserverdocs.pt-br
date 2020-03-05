@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 0e5f9f2b0102c12ee0925bb434fdeddde85e34cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
+ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379724"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280187"
 ---
 # <a name="call"></a>chamada
 
@@ -78,7 +78,7 @@ A tabela a seguir mostra como você pode combinar modificadores com os parâmetr
 |% ~ DP $ caminho: 1|Pesquisa os diretórios listados na variável de ambiente PATH para **%1**e, em seguida, expande para a letra da unidade e o caminho do primeiro diretório encontrado.|
 |% ~ ftza1|Expande **%1** para exibir uma saída semelhante ao comando **dir** .|
 
-Nos exemplos acima, **%1** e o caminho podem ser substituídos por outros valores válidos. A sintaxe de <strong>%~</strong> é encerrada por um número de argumento válido. Os modificadores de <strong>%~</strong> não podem ser usados com **%\\\*** .
+Nos exemplos acima, **%1** e o caminho podem ser substituídos por outros valores válidos. A sintaxe de <strong>%~</strong> é encerrada por um número de argumento válido. Os modificadores de <strong>%~</strong> não podem ser usados com **%\*** .
 
 ## <a name="remarks"></a>Comentários
 
@@ -98,7 +98,7 @@ Nos exemplos acima, **%1** e o caminho podem ser substituídos por outros valore
 
     Se as extensões de comando estiverem habilitadas, **chame** aceitar *rótulo* como o destino da chamada. A sintaxe correta é a seguinte:
 
-    `call :\<Label> <Arguments>`
+    `call :<Label> <Arguments>`
 
 ## <a name="BKMK_examples"></a>Disso
 

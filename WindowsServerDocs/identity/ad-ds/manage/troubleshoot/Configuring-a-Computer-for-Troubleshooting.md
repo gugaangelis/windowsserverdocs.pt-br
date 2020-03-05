@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8e11883de9f89d0b95ed0fc35b4f5f3941ef82a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368899"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278551"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>Configurar um computador para solução de problemas
 
@@ -42,14 +42,14 @@ O monitor de confiabilidade e desempenho também inclui o monitor de confiabilid
 
 ### <a name="set-logging-levels"></a>Definir níveis de log
 
-Se as informações recebidas no log do serviço de diretório Visualizador de Eventos não forem suficientes para solução de problemas, aumente os níveis de log usando a entrada de registro apropriada no **HKEY_LOCAL_ MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics**.
+Se as informações recebidas no log do serviço de diretório Visualizador de Eventos não forem suficientes para solução de problemas, aumente os níveis de log usando a entrada de registro apropriada no **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**.
 
 Por padrão, os níveis de log para todas as entradas são definidos como **0**, que fornece a quantidade mínima de informações. O nível de log mais alto é **5**. O aumento do nível de uma entrada faz com que eventos adicionais sejam registrados no log de eventos do serviço de diretório.
 
-Use o procedimento a seguir para alterar o nível de log para uma entrada de diagnóstico. Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+Use o procedimento a seguir para alterar o nível de log para uma entrada de diagnóstico. A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo exigido para concluir este procedimento.
 
 > [!WARNING]
-> É recomendável não editar diretamente o Registro, a menos que não haja outra alternativa. As modificações no registro não são validadas pelo editor do registro ou pelo Windows antes de serem aplicadas e, como resultado, os valores incorretos podem ser armazenados. Isso pode resultar em erros irrecuperáveis no sistema. Quando possível, use Política de Grupo ou outras ferramentas do Windows, como snap-ins do MMC, para realizar tarefas, em vez de editar o registro diretamente. Se você deve editar o Registro, tenha muito cuidado.
+> É recomendável não editar diretamente o Registro, a menos que não haja outra alternativa. As modificações no Registro não são validadas pelo editor do Registro nem pelo Windows antes de serem aplicadas e, como resultado, valores incorretos podem ser armazenados. Isso pode resultar em erros irrecuperáveis no sistema. Quando possível, use Política de Grupo ou outras ferramentas do Windows, como snap-ins do MMC, para realizar tarefas, em vez de editar o registro diretamente. Se você deve editar o Registro, tenha muito cuidado.
 >
 
 Para alterar o nível de log para uma entrada de diagnóstico

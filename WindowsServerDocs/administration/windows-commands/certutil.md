@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71525e4051a079eb9a3d0c8c197c8157b53e5e67
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379654"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278541"
 ---
 # <a name="certutil"></a>certutil
 
 O Certutil. exe é um programa de linha de comando instalado como parte dos serviços de certificados. Você pode usar o Certutil. exe para despejar e exibir as informações de configuração da AC (autoridade de certificação), configurar os serviços de certificados, fazer backup e restaurar os componentes da AC e verificar certificados, pares de chaves e cadeias de certificados.
 
-Quando o Certutil é executado em uma autoridade de certificação sem parâmetros adicionais, ele exibe a configuração da autoridade de certificação atual. Quando cerutil é executado em uma autoridade que não é de certificação, o padrão do comando é executar o verbo certutil [-dump](#-dump) .
+Quando o Certutil é executado em uma autoridade de certificação sem parâmetros adicionais, ele exibe a configuração da autoridade de certificação atual. Quando o Certutil é executado em uma autoridade que não é de certificação, o padrão do comando é executar o verbo certutil [-dump](#-dump) .
 
 > [!WARNING]
 > As versões anteriores do certutil podem não fornecer todas as opções descritas neste documento. Você pode ver todas as opções que uma versão específica do certutil fornece executando os comandos mostrados na seção de [notações de sintaxe](#syntax-notations) .
@@ -1695,15 +1695,15 @@ A senha especificada na linha de comando é uma lista de senhas separadas por v�
 
 Retornar ao [menu](#menu)
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
 Esta seção define as opções que você pode especificar com o comando.
 
-|Opções|Descrição|
+|{1&gt;Opções&lt;1}|Descrição|
 |-------|-----------|
 |-nullsign|Usar hash de dados como assinatura|
 |-f|Forçar substituição|
-|-Enterprise|Usar o repositório de certificados do registro empresarial do computador local|
+|-enterprise|Usar o repositório de certificados do registro empresarial do computador local|
 |-usuário|Usar chaves de HKEY_CURRENT_USER ou repositório de certificados|
 |-GroupPolicy|Usar Política de Grupo repositório de certificados|
 |-UT|Exibir modelos do usuário|
@@ -1724,7 +1724,7 @@ Esta seção define as opções que você pode especificar com o comando.
 |-Kerberos|Usar credenciais SSL Kerberos|
 |-ClientCertificate ClientCertId|Use as credenciais SSL do certificado X. 509. Para a seleção U/I, use-clientCertificate.|
 |-Nome de usuário UserName|Use a conta nomeada para credenciais SSL. Para a seleção U/I, use-UserName.|
-|-Certid do certificado|Certificado de autenticação|
+|-Certid do certificado|Certificado de assinatura|
 |-DC DCName|Direcionar um controlador de domínio específico|
 |-restringir restrição|Lista de restrições separadas por vírgula. Cada restrição consiste em um nome de coluna, um operador relacional e um inteiro constante, uma cadeia de caracteres ou uma data. Um nome de coluna pode ser precedido por um sinal de mais ou menos para indicar a ordem de classificação. Exemplos:</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > domínio, disposição = 21"|
 |-saída da coluna|Lista de colunas separadas por vírgula|
