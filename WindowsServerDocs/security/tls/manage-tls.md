@@ -13,11 +13,11 @@ ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
 ms.openlocfilehash: a4ac1ea5b0648dbb80f103c146ad3df23fc04ab7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402342"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371384"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Gerenciar segurança de camada de transporte (TLS)
 
@@ -43,7 +43,7 @@ Você pode usar a ordem do conjunto de codificação SSL Política de Grupo conf
 2. Clique duas vezes em **ordem do pacote de criptografia SSL**e, em seguida, clique na opção **habilitado** .
 3. Clique com o botão direito do mouse na caixa **conjuntos de criptografia SSL** e selecione **selecionar tudo** no menu pop-up.
 
-   ![Configuração da Política de Grupo](../media/Transport-Layer-Security-protocol/ssl-cipher-suite-order-gp-setting.png)
+   ![Definição de Política de Grupo](../media/Transport-Layer-Security-protocol/ssl-cipher-suite-order-gp-setting.png)
 
 4. Clique com o botão direito do mouse no texto selecionado e selecione **copiar** no menu pop-up.
 5. Cole o texto em um editor de texto como Notepad. exe e Update com a nova lista de pedidos do pacote de codificação.

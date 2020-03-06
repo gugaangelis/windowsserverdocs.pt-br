@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369646"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371544"
 ---
 # <a name="simplified-administration-appendix"></a>Apêndice de administração simplificada
 
@@ -81,7 +81,7 @@ Get-Module -ListAvailable
   
 ```  
   
-O caso principal para usar o comando **Import-Module** é quando você precisa acessar o "ad:" A unidade virtual do Windows PowerShell e nada mais já carregou o módulo. Por exemplo, usando os seguintes comandos:  
+O caso principal para usar o comando **Import-Module** é quando você precisa acessar o "ad:" unidade virtual do Windows PowerShell e nada mais já carregou o módulo. Por exemplo, usando os seguintes comandos:  
   
 ```  
 import-module activedirectory  
