@@ -12,11 +12,11 @@ author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
 ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465550"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370620"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>Devo criar uma máquina virtual de geração 1 ou 2 no Hyper-V?
 
@@ -189,16 +189,16 @@ A tabela a seguir compara os dispositivos disponíveis entre as máquinas virtua
 |CD-ROM IDE|CD-ROM virtual SCSI|Suporte para até 64 dispositivos de DVD SCSI por controlador SCSI.|  
 |BIOS herdado|Firmware UEFI|Inicialização Segura|  
 |Adaptador de rede herdado|Adaptador de rede sintético|Inicialização de rede com IPv4 e IPv6|  
-|Controlador DMA (acesso direto à memória) e de disquete|Sem suporte a controlador de disquete|N/D|  
+|Controlador DMA (acesso direto à memória) e de disquete|Sem suporte a controlador de disquete|{1&gt;N/A&lt;1}|  
 |UART (universal asynchronous receiver-transmitter) para portas COM (Component Object Model)|UART opcional para depuração|Mais rápido e mais confiável|  
 |Controlador de teclado i8042|Entrada baseada em software|Usa menos recursos por não possuir emulação. Também reduz a superfície de ataque do sistema operacional convidado.|  
 |Teclado PS/2|Teclado baseado em software|Usa menos recursos por não possuir emulação. Também reduz a superfície de ataque do sistema operacional convidado.|  
 |Mouse PS/2|Mouse baseado em software|Usa menos recursos por não possuir emulação. Também reduz a superfície de ataque do sistema operacional convidado.|  
 |Vídeo S3|Vídeo baseado em software|Usa menos recursos por não possuir emulação. Também reduz a superfície de ataque do sistema operacional convidado.|  
-|Barramento PCI|Não é mais necessário|N/D|  
-|PIC (controlador de interrupção programável)|Não é mais necessário|N/D|  
-|PIT (temporizador de intervalo programável)|Não é mais necessário|N/D|  
-|Superdispositivo de E/S|Não é mais necessário|N/D|  
+|Barramento PCI|Não é mais necessário|{1&gt;N/A&lt;1}|  
+|PIC (controlador de interrupção programável)|Não é mais necessário|{1&gt;N/A&lt;1}|  
+|PIT (temporizador de intervalo programável)|Não é mais necessário|{1&gt;N/A&lt;1}|  
+|Superdispositivo de E/S|Não é mais necessário|{1&gt;N/A&lt;1}|  
 
 ## <a name="more-about-generation-2-virtual-machines"></a>Mais sobre máquinas virtuais de geração 2
 
@@ -253,6 +253,6 @@ Para adicionar uma porta COM:
 
 ## <a name="see-also"></a>Consulte também  
 
-- [Máquinas virtuais Linux e FreeBSD no Hyper-V](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [Máquinas Virtuais do Linux e FreeBSD no Hyper-V](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [Usar recursos locais na máquina virtual do Hyper-V com VMConnect](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
 - [Planejar a escalabilidade do Hyper-V no Windows Server 2016](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)
