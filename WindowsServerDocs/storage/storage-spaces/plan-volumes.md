@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 52c600068d5dd447ff9faa7c40788664e222a83a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366894"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370731"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planejamento de volumes nos Espaços de Armazenamento Diretos
 
@@ -151,7 +151,7 @@ Deixar alguma capacidade não alocada no pool de armazenamento oferece espaço a
 
 É recomendável reservar o equivalente a uma unidade de capacidade por servidor, até 4 unidades. Você pode reservar mais a seu critério, mas essa recomendação mínima garante que um reparo imediato, in-loco e paralelo pode ter sucesso após a falha de qualquer unidade.
 
-![reserva](media/plan-volumes/reserve.png)
+![reserve](media/plan-volumes/reserve.png)
 
 Por exemplo, se você tiver 2 servidores e estiver usando unidades de 1 TB de capacidade, separe 2 x 1 = 2 TB do pool como reserva. Se você tiver 3 servidores e unidades de 1 TB de capacidade, separe 3 x 1 = 3 TB como reserva. Se você tiver 4 ou mais servidores e unidades de 1 TB de capacidade, separe 4 x 1 = 4 TB como reserva.
 
