@@ -9,11 +9,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
 ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
-ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548182"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370750"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>VMs blindadas para locatários – criando dados de blindagem para definir uma VM blindada
 
@@ -255,7 +255,7 @@ Por fim, se você tiver outros arquivos que precisam acompanhar o arquivo de res
 
 Consulte a documentação do cmdlet para [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) e [New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para saber mais sobre maneiras adicionais de configurar o arquivo de dados de blindagem.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Implantar VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)
