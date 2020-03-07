@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389600"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371864"
 ---
 # <a name="multipoint-services-site-planning"></a>Planejamento do site do MultiPoint Services
 Você deve considerar o local em que um ou mais computadores que executam os serviços do MultiPoint e suas estações associadas serão implantados.  
@@ -126,9 +126,9 @@ O número de estações que serão necessárias dependerá do número de pessoas
 ## <a name="power-considerations"></a>Considerações de energia  
 Os seguintes componentes exigem acesso a uma faixa de energia ou tomada:  
   
--   Servidor  
+-   Server  
 -   Monitores
--   Hubs \(intermediários, se usados\) 
+-   Hubs intermediários \(se usados\) 
 -   Alguns clientes USB zero  
 -   Dispositivos USB com alimentação, como alguns dispositivos de armazenamento externo e unidades de DVD  
   
@@ -154,6 +154,6 @@ Dependendo dos móveis disponíveis, do tamanho da sala, do número de computado
   
 ![Centro de atividades dos serviços do MultiPoint](./media/WMSActivityCenter.gif)  
   
-**Escritório de pequena empresa** Nessa configuração, o computador que está executando os serviços do MultiPoint é colocado em um local central e os usuários em todo o escritório se conectam a ele usando \(uma\)LAN de rede de área local.  
+**Escritório de pequena empresa** Nessa configuração, o computador que está executando os serviços do MultiPoint é colocado em um local central e os usuários em todo o escritório se conectam a ele usando uma rede local \(\)LAN.  
   
 ![Estação conectada com zero cliente USB](./media/Diagram1.gif)

@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: c75c7813041870f79ed95250857a5c7d1576c7dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407185"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371719"
 ---
 # <a name="administer-software-restriction-policies"></a>Administrar políticas de restrição de software
 
@@ -128,7 +128,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
     **Posição?**
 
-    -   Active Directory sites e serviços [*Domain_Controller_Name. nome_do_domínio*]/sites/site
+    -   Active Directory sites e serviços [*Domain_Controller_Name. domain_name*]/sites/site
 
 3.  Clique em uma entrada em **política de grupo links de objeto** para selecionar um objeto de política de grupo (GPO) existente e clique em **Editar**. Você também pode clicar em **Novo** para criar um novo GPO e clique em **Editar**.
 
@@ -141,7 +141,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
         Configuração do usuário/configurações do Windows/configurações de segurança/políticas de restrição de software
 
 > [!NOTE]
-> -   Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local ou deve ter recebido a autoridade apropriada. Se o computador fizer parte de um domínio, é possível que os membros do grupo Administradores de domínio possam executar esse procedimento.
+> -   Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local ou deve ter recebido a autoridade apropriada. Se o computador estiver em um domínio, é possível que os membros do grupo Admins. do Domínio possam executar esse procedimento.
 > -   Para definir as configurações de política que serão aplicadas aos computadores, independentemente dos usuários que fizerem logon nelas, clique em **configuração do computador**.
 > -   Para definir as configurações de política que serão aplicadas aos usuários, independentemente de em qual computador eles fazem logon, clique em **configuração do usuário**.
 
@@ -154,7 +154,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 > [!WARNING]
 > -   São necessárias diferentes credenciais administrativas para executar esse procedimento, dependendo do seu ambiente:
 > 
->     -   Se você criar novas políticas de restrição de software para o computador local: A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento.
+>     -   Se você criar novas diretivas de restrição de software para seu computador local: a associação no grupo local de **Administradores** , ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 >     -   Se você criar novas políticas de restrição de software para um computador que ingressou em um domínio, os membros do grupo Administradores de Domínio poderão executar esse procedimento.
 > -   Se as políticas de restrição de software já tiverem sido criadas para um GPO (Objeto de Política de Grupo), o comando **Novas Políticas de Restrição de Software** não será exibido no menu **Ação**. Para excluir as políticas de restrição de software aplicadas a um GPO, na árvore de console, clique com o botão direito do mouse em **Políticas de Restrição de Software** e clique em **Excluir Políticas de Restrição de Software**. Ao excluir as políticas de restrição de software para um GPO, você também exclui todas as regras de diretivas de restrição de software desse GPO. Depois de criar as políticas de restrição de software, você pode criar novas políticas de restrição de software para esse GPO.
 
@@ -173,7 +173,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 > [!NOTE]
 > -   São necessárias diferentes credenciais administrativas para executar esse procedimento, dependendo do ambiente em que você adiciona ou exclui um tipo de arquivo designado:
 > 
->     -   Se você adicionar ou excluir um tipo de arquivo designado para o computador local: A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento.
+>     -   Se você adicionar ou excluir um tipo de arquivo designado para seu computador local: a associação no grupo **Administradores** local ou equivalente é o mínimo necessário para concluir este procedimento.
 >     -   Se você criar novas políticas de restrição de software para um computador que ingressou em um domínio, os membros do grupo Administradores de Domínio poderão executar esse procedimento.
 > -   Talvez seja necessário criar uma nova configuração de política de restrição de software para o GPO (Objeto de Política de Grupo), se você ainda não tiver feito isso.
 > -   A lista de tipos de arquivo designados é compartilhada por todas as regras da configuração do computador e da configuração do usuário para um GPO.
@@ -187,7 +187,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 3.  Em **Aplicar políticas de restrição de software aos seguintes usuários**, clique em **Todos os usuários, exceto administradores locais**.
 
 > [!WARNING]
-> -   A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento.
+> -   A associação no grupo **Administradores** local, ou equivalente, é o mínimo necessário para concluir este procedimento.
 > -   Talvez seja necessário criar uma nova configuração de política de restrição de software para o GPO (Objeto de Política de Grupo), se você ainda não tiver feito isso.
 > -   Se for comum que os usuários sejam membros do grupo local de administradores nos computadores de sua organização, convém não habilitar essa opção.
 > -   Se você estiver definindo uma configuração de política de restrição de software para o computador local, use esse procedimento para impedir que administradores locais tenham as políticas de restrição de software aplicadas a eles. Se você estiver definindo uma configuração de diretiva de restrição de software para sua rede, filtre as configurações de política de usuário com base na associação em grupos de segurança por meio de Política de Grupo.
@@ -219,7 +219,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 3.  Em **Aplicar políticas de restrição de software a**, clique em **Todos os arquivos de software**.
 
 > [!NOTE]
-> -   Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local ou deve ter recebido a autoridade apropriada. Se o computador fizer parte de um domínio, é possível que os membros do grupo Administradores de domínio possam executar esse procedimento.
+> -   Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local ou deve ter recebido a autoridade apropriada. Se o computador estiver em um domínio, é possível que os membros do grupo Admins. do Domínio possam executar esse procedimento.
 > -   Por padrão, as políticas de restrição de software não verificam DLLs (bibliotecas de links dinâmicos). A verificação de DLLs pode diminuir o desempenho do sistema, porque as políticas de restrição de software devem ser avaliadas sempre que uma DLL é carregada. Entretanto, você poderá optar por verificar as DLLs se estiver preocupado que receberá um vírus direcionado a DLLs. Se o nível de segurança padrão estiver definido como não **permitido**e você habilitar a verificação de dll, você deverá criar regras de diretivas de restrição de software que permitam a execução de cada DLL.
 
 
