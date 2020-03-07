@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407647"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371484"
 ---
 # <a name="create-a-relying-party-trust"></a>Criar um objeto de confiança de terceira parte confiável
 
@@ -25,7 +25,7 @@ O documento a seguir fornece informações sobre como criar uma relação de con
 
 Para adicionar uma nova relação de confiança de terceira parte confiável usando o snap\-de gerenciamento de AD FS no e configurar manualmente as configurações, execute o procedimento a seguir em um servidor de Federação.  
 
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).
   
 1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
   
@@ -35,7 +35,7 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 3.  Na página de **boas-vindas** , escolha **reconhecimento de declarações** e clique em **Iniciar**.  
 ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  Na página **Selecionar Fonte de Dados** , clique em **Inserir manualmente dados sobre a terceira parte confiável**e clique em **Avançar**.  
+4.  Na página **Selecionar Fonte de Dados**, clique em **Inserir manualmente dados sobre a terceira parte confiável** e clique em **Avançar**.  
 ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust3.PNG) 
   
 5.  Na página **especificar nome para exibição** , digite um nome em **nome para exibição**, em **observações** , digite uma descrição para a terceira parte confiável e clique em **Avançar**.  
@@ -57,7 +57,7 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 9.  Em **escolher política de controle de acesso** , selecione uma política e clique em **Avançar**.  Para obter mais informações sobre políticas de controle de acesso, consulte [políticas de controle de acesso em AD FS](Access-Control-Policies-in-AD-FS.md). 
 ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust9.PNG)
 
-10. Na página **Pronto para adicionar confiança** , revise as configurações e clique em **Avançar** para salvar as informações do objeto de confiança de terceira parte confiável.  
+10. Na página **Pronto para adicionar confiança**, revise as configurações e clique em **Avançar** para salvar as informações do objeto de confiança de terceira parte confiável.  
    ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust10.PNG) 
 11. Na página **Concluir**, clique em **Fechar**. Essa ação exibe automaticamente a caixa de diálogo **Editar Regras de Declaração**.  
 ![terceira parte confiável](media/Create-a-Relying-Party-Trust/addtrust11.PNG) 
@@ -69,7 +69,7 @@ Para adicionar uma nova relação de confiança de terceira parte confiável, us
 >[!NOTE]
 >Embora tenha sido uma prática comum usar certificados com nomes de host não qualificados, como https://myserver, esses certificados não têm nenhum valor de segurança e podem permitir que um invasor represente um Serviço de Federação que esteja publicando metadados de Federação. Portanto, ao consultar metadados de Federação, você deve usar apenas um nome de domínio totalmente qualificado, como https://myserver.contoso.com.
 
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).
 
 
 1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
@@ -89,7 +89,7 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 
 7. Na página pronto para adicionar confiança, examine as configurações e clique em **Avançar** para salvar as informações de confiança de terceira parte confiável.
 
-8. Na página concluir, clique em **fechar**. Essa ação exibe automaticamente a caixa de diálogo Editar regras de declaração. Para obter mais informações sobre como proceder ao adicionar regras de declaração a esse objeto de confiança de terceira parte confiável, consulte as Referências adicionais.
+8. Na página concluir, clique em **fechar**. Essa ação exibe automaticamente a caixa de diálogo Editar Regras de Declaração. Para obter mais informações sobre como proceder ao adicionar regras de declaração a esse objeto de confiança de terceira parte confiável, consulte as Referências adicionais.
 
 
 

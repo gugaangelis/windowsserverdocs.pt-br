@@ -11,11 +11,11 @@ description: Como remover servidores de um cluster de Espaços de Armazenamento 
 ms.date: 2/5/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402806"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370730"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>Removendo servidores em Espaços de Armazenamento Diretos
 
@@ -52,7 +52,7 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 Este cmdlet pode levar muito tempo (às vezes, muitas horas) para ser executado porque o Windows deve mover todos os dados armazenados no servidor para outros servidores no cluster. Quando isso for concluído, as unidades são permanentemente removidas do pool de armazenamento, retornando os volumes afetados para um estado íntegro.
 
-### <a name="requirements"></a>Requisitos
+### <a name="requirements"></a>{1&gt;{2&gt;Requisitos&lt;2}&lt;1}
 
 Para um redimensionamento permanente (remover um servidor *e* suas unidades), o cluster deve atender aos dois requisitos seguintes. Caso contrário, o cmdlet **Remove-ClusterNode -CleanUpDisks** retornará um erro imediatamente, antes de começar qualquer movimento de dados, para minimizar a interrupção.
 
@@ -72,8 +72,8 @@ Esta tabela mostra o número mínimo de domínios de falha necessários para cad
 
 |    Resiliência          |    Mínimo necessário de domínios de falha   |
 |------------------------|-------------------------------------|
-|    Espelho duplo      |    2                                |
-|    Espelhamento triplo    |    3                                |
+|    Espelho de duas vias      |    2                                |
+|    Espelho de três vias    |    3                                |
 |    Paridade dupla         |    4                                |
 
    >[!NOTE]
