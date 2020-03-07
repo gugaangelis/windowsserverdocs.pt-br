@@ -9,11 +9,11 @@ ms.assetid: fe77655a-e2be-4949-92e1-aaaa215d86ea
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: a2bde42ba9b9489ddcd8fb3673ec5ddf1fd4d970
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396354"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371883"
 ---
 # <a name="configure-network-policies"></a>Configurar políticas de rede
 
@@ -46,13 +46,13 @@ Na página **permissão de acesso** , você deve selecionar **acesso concedido**
 
 Se você quiser que a permissão de acesso seja determinada pelas propriedades de discagem da conta de usuário no Active Directory&reg; serviços de domínio \(AD DS\), marque a caixa de seleção o **acesso é determinado por propriedades de discagem do usuário** .
 
-Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo exigido para concluir este procedimento.
 
 ### <a name="to-add-a-network-policy"></a>Para adicionar uma política de rede 
 
 1. Abra o console do NPS e clique duas vezes em **políticas**.
 
-2. Na árvore de console, clique com o botão direito do mouse em **políticas de rede**e clique em **novo**. O assistente de nova política de rede é aberto.
+2. Na árvore de console, clique com o botão direito do mouse em **políticas de rede**e clique em **novo**. O assistente Nova Diretiva de Rede é exibido.
 
 3. Use o assistente de nova política de rede para criar uma política.
 
@@ -74,7 +74,7 @@ Você pode executar o novo assistente de conexões de rede virtual privada ou di
 
 A execução do novo assistente de conexões de rede virtual privada ou dial-up não é a única etapa necessária para implantar servidores VPN ou discadas como clientes RADIUS para o NPS. Os dois métodos de acesso à rede exigem que você implante componentes de hardware e software adicionais.
 
-Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo exigido para concluir este procedimento.
 
 ### <a name="to-create-policies-for-dial-up-or-vpn-with-a-wizard"></a>Para criar políticas para dial-up ou VPN com um assistente
 
@@ -101,7 +101,7 @@ Você pode executar o novo assistente de conexões com fio e sem fio IEEE 802.1 
 
 A execução do novo assistente de conexões com e sem fio IEEE 802.1 X seguro não é a única etapa necessária para implantar comutadores de autenticação 802.1 X e pontos de acesso sem fio como clientes RADIUS para o NPS. Os dois métodos de acesso à rede exigem que você implante componentes de hardware e software adicionais.
 
-Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo exigido para concluir este procedimento.
 
 ### <a name="to-create-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Para criar políticas para 802.1 X com ou sem fio com um assistente
 
