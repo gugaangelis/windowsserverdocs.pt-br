@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 3eace9281d9fcdea5262274ac7fb20ec30d30fb4
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590578"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371187"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Gerenciar o acesso remoto via Web no Windows Server Essentials
 
@@ -70,13 +70,13 @@ ms.locfileid: "68590578"
   
 ##### <a name="to-turn-on-remote-web-access"></a>Para ativar o Acesso via Web Remoto  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
 2.  Clique em **Configurações** e clique na guia **Acesso em Qualquer Local**.  
   
 3.  Clique em **Configurar**. O assistente de configuração do Acesso em Qualquer Local é exibido.  
   
-4.  Na página **Escolher os recursos de Acesso em Qualquer Local para habilitar** , selecione a caixa de seleção **Acesso via Web remoto** .  
+4.  Na página **Escolher os recursos de Acesso em Qualquer Local para habilitar**, selecione a caixa de seleção **Acesso via Web remoto**.  
   
 5.  Siga as instruções para concluir o assistente.  
   
@@ -89,7 +89,7 @@ ms.locfileid: "68590578"
   
 2.  Clique em **Configurações**.  
   
-3.  Na guia **Geral** , clique na lista suspensa na seção **Local do país/região do servidor** .  
+3.  Na guia **Geral**, clique na lista suspensa na seção **Local do país/região do servidor**.  
   
 4.  Na lista suspensa, selecione a nova região e clique em **Aplicar** para aceitar a nova configuração de região.  
   
@@ -102,9 +102,9 @@ ms.locfileid: "68590578"
   
 2. Clique na conta de usuário que você deseja gerenciar e em seguida, clique em **Exibir as propriedades de conta** no painel **Tarefas**.  
   
-3. Na caixa de diálogo **Propriedades** , clique na guia **Acesso em Qualquer Local** .  
+3. Na caixa de diálogo **Propriedades**, clique na guia **Acesso em Qualquer Local**.  
   
-4. Na guia **Acesso em Qualquer Local** , marque a caixa de seleção **Permitir o Acesso via Web remoto e o acesso a aplicativos de serviços Web** para permitir que um usuário se conecte ao servidor usando o Acesso via Web remoto.  
+4. Na guia **Acesso em Qualquer Local**, marque a caixa de seleção **Permitir o Acesso via Web remoto e o acesso a aplicativos de serviços Web** para permitir que um usuário se conecte ao servidor usando o Acesso via Web remoto.  
   
 5. Clique em **Aplicar**e clique em **OK**.  
   
@@ -121,15 +121,15 @@ ms.locfileid: "68590578"
   
 ##### <a name="to-set-vpn-and-remote-web-access-permissions-for-network-users"></a>Para definir permissões de VPN e Acesso via Web remoto para os usuários da rede  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
 2.  Na barra de navegação, clique em **USUÁRIOS**.  
   
 3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja conceder permissões para acessar a área de trabalho remotamente.  
   
-4.  No painel **tarefas da conta\> de usuário <** , clique em **Propriedades**.  
+4.  No painel **< contas de usuário\> tarefas** , clique em **Propriedades**.  
   
-5.  Em **< Propriedades da\> conta de usuário**, clique na guia **acesso em qualquer lugar** .  
+5.  Em **< conta de usuário\> Propriedades**, clique na guia **acesso em qualquer lugar** .  
   
 6.  Na guia **Acesso em qualquer lugar**, faça o seguinte:  
   
@@ -140,7 +140,7 @@ ms.locfileid: "68590578"
 7.  Clique em **Aplicar**e clique em **OK**.  
   
 ##  <a name="BKMK_2"></a>Configurar o roteador  
- Quando você configura o servidor para o Acesso via Web remoto, o assistente de configuração de acesso em qualquer local tenta configurar o roteador. Caso troque de roteador ou altere suas configurações, você deverá retornar ao assistente de configuração do roteador. Para mais informações, consulte os seguintes tópicos:  
+ Quando você configura seu servidor para Acesso via Web Remoto, o assistente de configuração do Acesso em Qualquer Local tenta configurar o roteador. Caso troque de roteador ou altere suas configurações, você deverá retornar ao assistente de configuração do roteador. Para obter mais informações, consulte estes tópicos:  
   
 -   [Configurar o roteador](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SetUpRouter)  
   
@@ -172,7 +172,7 @@ ms.locfileid: "68590578"
 ###  <a name="BKMK_NetworkLocation"></a>Local de rede definido  
  Um local de rede é um conjunto de configurações de rede que o Windows aplica quando você se conectar a uma rede. As configurações variam e podem ser personalizadas com base no tipo de rede que você usa. As configurações para um local de rede determinam se certos recursos (como compartilhamento de arquivos e impressora, descoberta de rede e o compartilhamento de pasta pública) são ativados ou desativados. Locais de rede são úteis quando você precisa se conectar a redes diferentes.  
   
- Por exemplo, você pode ter um laptop que você usa em casa e no trabalho. Quando estiver no escritório, você se conecta à rede do escritório. No entanto, quando você chegar em casa, você usa seu laptop para acessar e reproduzir vídeos e música armazenados no servidor doméstico. Quando você se conectar a uma nova rede e especificar o tipo de local, o Windows atribui um perfil de rede predefinido para esse tipo de local. Na próxima vez que você se conectar àquela rede, o Windows reconhece a rede e atribui automaticamente as configurações corretas. Isso adiciona uma camada de segurança para ajudar a proteger as informações em seu computador, e somente os recursos de rede necessários para esse local são ativados.  
+ Por exemplo, você pode ter um laptop que você usa em casa e no trabalho. Quando estiver no escritório, você se conecta à rede do escritório. No entanto, quando você chegar em casa, você usa seu laptop para acessar e reproduzir vídeos e música armazenados no servidor doméstico. Quando você se conectar a uma nova rede e especificar o tipo de local, o Windows atribui um perfil de rede predefinido para esse tipo de local. Na próxima vez que você se conectar àquela rede, o Windows reconhece a rede e atribui automaticamente as configurações corretas. Isso adiciona uma camada de segurança para ajudar a proteger as informações no seu computador e somente os recursos de rede que você precisa para esse local são ativados.  
   
  Há quatro tipos de locais de rede:  
   
@@ -189,11 +189,11 @@ ms.locfileid: "68590578"
   
 ##### <a name="to-enable-remote-desktop-services-activex-controls"></a>Para habilitar os controles ActiveX de serviços de área de trabalho remota  
   
-1.  No Internet Explorer, clique em **Ferramentas**e clique em **Opções da Internet**.  
+1.  No Internet Explorer, clique em **Ferramentas** e clique em **Opções da Internet**.  
   
-2.  Na guia **Segurança** , clique em **Nível personalizado**.  
+2.  Na guia **Segurança**, clique em **Nível personalizado**.  
   
-3.  Na seção **Controles ActiveX e plug-ins** , faça o seguinte:  
+3.  Na seção **Controles ActiveX e plug-ins**, faça o seguinte:  
   
     1.  Em **Baixar Controles ActiveX assinados**, clique em **Prompt**.  
   
@@ -202,7 +202,7 @@ ms.locfileid: "68590578"
 4.  Clique em **OK** duas vezes para aceitar as alterações e fechar a caixa de diálogo.  
   
 ##  <a name="BKMK_3"></a>Configurar seu nome de domínio  
- Depois que o Acesso via Web Remoto é ativado, você pode configurar um nome de domínio para o servidor que executa o Windows Server Essentials. Essa é uma etapa necessária para usar o Acesso via Web Remoto a partir de um computador remoto. Para mais informações, consulte os seguintes tópicos:  
+ Depois que o Acesso via Web Remoto é ativado, você pode configurar um nome de domínio para o servidor que executa o Windows Server Essentials. Essa é uma etapa necessária para usar o Acesso via Web Remoto a partir de um computador remoto. Para obter mais informações, consulte estes tópicos:  
   
 -   [Visão geral de nomes de domínio](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_DNOverview)  
   
@@ -248,7 +248,7 @@ ms.locfileid: "68590578"
 >  O Windows Live permite caracteres especiais em sua senha da conta da Microsoft que não têm suporte no servidor. Se você usar um domínio personalizado da Microsoft, certifique-se de que sua senha da conta da Microsoft contenha apenas caracteres com suporte no servidor. O servidor não tem suporte ao uso dos caracteres $, /, ‘ e %.  
   
 ###  <a name="BKMK_UseNewName"></a>Usar um nome de domínio novo ou existente  
- Para configurar automaticamente seu nome de domínio em um servidor que executa o Windows Server Essentials, você deve usar um provedor de serviços de nome de domínio listado no Assistente de configuração de seu nome de domínio. Você pode optar por obter um novo nome de domínio ou usar um nome de domínio existente. Realize um dos seguintes procedimentos:  
+ Para configurar automaticamente seu nome de domínio em um servidor que executa o Windows Server Essentials, você deve usar um provedor de serviços de nome de domínio listado no Assistente de configuração de seu nome de domínio. Você pode optar por obter um novo nome de domínio ou usar um nome de domínio existente. Siga um destes procedimentos:  
   
 -   Se você deseja obter um novo nome de domínio dos provedores de serviço de nome de domínio listados no assistente, clique em **Desejo configurar um novo nome de domínio**.  
   
@@ -261,7 +261,7 @@ ms.locfileid: "68590578"
   
 ##### <a name="to-set-up-or-manage-an-internet-domain-name"></a>Para configurar ou gerenciar um nome de domínio da Internet  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
 2.  Clique em **Configurações do servidor** e clique na guia **Acesso em Qualquer Local**.  
   
@@ -384,7 +384,7 @@ ms.locfileid: "68590578"
 5. Nos resultados da pesquisa, o nome do seu provedor de serviços de nome de domínio está listado sob **Registrar**.  
   
 ##  <a name="BKMK_4"></a>Personalizar Acesso via Web remotos  
- Você pode personalizar o site de Acesso via Web Remoto adicionando um logotipo pessoal ou uma imagem de fundo. Você também pode adicionar links na Home page, de modo que essas informações fiquem disponíveis para todos os usuários. Para mais informações, consulte os seguintes tópicos:  
+ Você pode personalizar o site de Acesso via Web Remoto adicionando um logotipo pessoal ou uma imagem de fundo. Você também pode adicionar links na Home page, de modo que essas informações fiquem disponíveis para todos os usuários. Para obter mais informações, consulte estes tópicos:  
   
 -   [Personalizar Acesso via Web remotos](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_CustomizeRWA)  
   
@@ -397,7 +397,7 @@ ms.locfileid: "68590578"
   
 ##### <a name="to-customize-remote-web-access"></a>Personalizaro  Acesso via Web Remoto  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
 2.  Clique em **Configurações** e clique na guia **Acesso em Qualquer Local**.  
   
