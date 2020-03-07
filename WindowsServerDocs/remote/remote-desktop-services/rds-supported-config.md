@@ -14,11 +14,11 @@ ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
 ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187878"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370661"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>Configurações compatíveis para os Serviços de Área de Trabalho Remota
 
@@ -49,8 +49,8 @@ O Windows Server 2016 remove a restrição para o número de Agentes de Conexão
 
 |Três ou mais Agentes de Conexão em HA|RDSH ou RDVH 2019|RDSH ou RDVH 2016|RDSH ou RDVH 2012 R2|
 |---|---|---|---|
- |Agente de Conexão do Windows Server 2019|Com suporte|Com suporte|Com suporte|
- |Agente de Conexão do Windows Server 2016|N/D|Com suporte|Com suporte|
+ |Agente de Conexão do Windows Server 2019|Suportado|Suportado|Suportado|
+ |Agente de Conexão do Windows Server 2016|N/D|Suportado|Suportado|
  |Agente de Conexão do Windows Server 2012 R2|N/D|N/D|Sem suporte|
 
 ## <a name="support-for-graphics-processing-unit-gpu-acceleration"></a>Suporte à aceleração de GPU (unidade de processamento gráfico)
