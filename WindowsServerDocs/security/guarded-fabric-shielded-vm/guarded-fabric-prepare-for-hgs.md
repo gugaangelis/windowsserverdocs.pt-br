@@ -9,11 +9,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 9024557dd42ede27144bf10aa5873b6bb12d585c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403486"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371433"
 ---
 # <a name="review-prerequisites-for-the-host-guardian-service"></a>Examinar os pré-requisitos para o serviço guardião de host
 
@@ -22,17 +22,17 @@ ms.locfileid: "71403486"
 
 Este tópico aborda os pré-requisitos do HGS e as etapas iniciais para se preparar para a implantação do HGS.
 
-## <a name="prerequisites"></a>Pré-requisitos 
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1} 
 
--   **Hardware**: O HGS pode ser executado em máquinas físicas ou virtuais, mas as máquinas físicas são recomendadas.
+-   **Hardware**: o HgS pode ser executado em máquinas físicas ou virtuais, mas as máquinas físicas são recomendadas.
 
     Se você quiser executar o HGS como um cluster físico de três nós (para disponibilidade), deverá ter três servidores físicos. (Como prática recomendada para clustering, os três servidores devem ter hardware muito semelhante.)
   
--   **Sistema operacional**: O atestado de chave de host requer o Windows Server 2019 Standard ou Datacenter Edition operando com o [atestado v2](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies). Para atestado baseado em TPM, o HGS pode executar o Windows Server 2019 ou o Windows Server 2016, Standard ou Datacenter Edition.
+-   **Sistema operacional**: o atestado de chave de host requer o Windows Server 2019 Standard ou Datacenter Edition operando com o [atestado v2](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies). Para atestado baseado em TPM, o HGS pode executar o Windows Server 2019 ou o Windows Server 2016, Standard ou Datacenter Edition.
 
--   **Funções de servidor**: Serviço guardião de host e funções de servidor de suporte.
+-   **Funções de servidor**: serviço guardião de host e funções de servidor de suporte.
 
--   **Permissões/privilégios de configuração para o domínio de malha (host)** : Você precisará configurar o encaminhamento de DNS entre o domínio de malha (host) e o domínio HGS. 
+-   **Permissões/privilégios de configuração para o domínio de malha (host)** : você precisará configurar o encaminhamento de DNS entre o domínio de malha (host) e o domínio HgS. 
     
 ## <a name="upgrading-hgs"></a>Atualizando HGS
 

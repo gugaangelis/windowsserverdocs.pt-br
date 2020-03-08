@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865160"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371189"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Gerenciar Dispositivos no Windows Server Essentials
 
@@ -100,7 +100,7 @@ ms.locfileid: "70865160"
   
 3.  Na lista de contas de usuário, selecione a conta de usuário que você deseja alterar.  
   
-4.  No painel **tarefas da conta\> de usuário do <** , clique em **exibir as propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
+4.  No painel **<\> tarefas da conta de usuário** , clique em **exibir as propriedades da conta**. A página **Propriedades** da conta de usuário é exibida.  
   
 5.  Na guia **Acesso ao computador**, selecione o computador que o usuário pode acessar remotamente e clique em **OK**.  
   
@@ -114,7 +114,7 @@ ms.locfileid: "70865160"
   
 1.  Abra o Painel do Windows Server Essentials.  
   
-2.  Na barra de navegação, clique na guia **Dispositivos** .  
+2.  Na barra de navegação, clique na guia **Dispositivos**.  
   
 3.  Na lista de computadores, clique com o botão direito do mouse no computador que você deseja remover da rede e, em seguida, clique em **Remover o computador**.  
   
@@ -127,9 +127,9 @@ ms.locfileid: "70865160"
   
 2.  Na barra de navegação, clique em **DISPOSITIVOS**.  
   
-3.  Para o Windows Server Essentials: No painel global **Tarefas de Usuários**, clique em **Implementar Política de Grupo**.  
+3.  Para o Windows Server Essentials: no painel **tarefas de usuários** globais, clique em **implementar política de grupo**.  
   
-     Para o Windows Server Essentials: No painel global **Tarefas de Dispositivos**, clique em **Implementar Política de Grupo**.  
+     Para o Windows Server Essentials: no painel **tarefas de dispositivos** globais, clique em **implementar política de grupo**.  
   
 4.  O Assistente de Implementação de Política de Grupo é aberto.  
   
@@ -175,7 +175,7 @@ ms.locfileid: "70865160"
   
 1.  Na lista de computadores, selecione a conta na qual você deseja exibir ou alterar as propriedades.  
   
-2.  No painel **\> tarefas do < ComputerName** , clique em **exibir as propriedades do computador**. A página **Propriedades** aparecerá para os computadores.  
+2.  No painel **< computername\> Tasks** , clique em **exibir as propriedades do computador**. A página **Propriedades** aparecerá para os computadores.  
   
 3.  Clique na guia para exibir as propriedades para esse computador.  
   

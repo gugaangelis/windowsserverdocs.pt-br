@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 293239c9f746f939b06d45d6e8c1a50b59e2bc43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407138"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371720"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>Visão geral técnica das políticas de restrição de software
 
@@ -75,7 +75,7 @@ Especificamente, os administradores podem usar as políticas de restrição de s
 ## <a name="BKMK_Diffs_Changes"></a>Diferenças e alterações na funcionalidade
 Não há nenhuma alteração na funcionalidade do SRP para Windows Server 2012 e Windows 8.
 
-**Versões com suporte**
+**Versões compatíveis**
 
 As diretivas de restrição de software só podem ser configuradas e aplicadas a computadores que executam, no mínimo, o Windows Server 2003, incluindo o Windows Server 2012 e, no mínimo, o Windows XP, incluindo o Windows 8.
 
@@ -97,7 +97,7 @@ A tabela a seguir compara os recursos e as funções do AppLocker e SRP (Políti
 |Tipos de arquivo designados|A SRP dá suporte a uma lista extensa de tipos de arquivos que são considerados executáveis. Os administradores podem adicionar extensões de arquivos que devem ser considerados executáveis.|O AppLocker não dá suporte a isso. O AppLocker atualmente aceita as seguintes extensões de arquivo:<br /><br />-Executáveis (. exe,. com)<br />-DLLs (. ocx,. dll)<br />-Scripts (. vbs,. js,. ps1,. cmd,. bat)<br />-Instaladores do Windows (. msi,. MST,. msp)<br />-Instaladores de aplicativo empacotados (. AppX)|
 |Tipos de regra|A SRP aceita quatro tipos de regras:<br /><br />-Hash<br />-Caminho<br />-Assinatura<br />-Zona da Internet|O AppLocker aceita três tipos de regras:<br /><br />-Hash<br />-Caminho<br />-Publicador|
 |Editando o valor de hash|O SRP permite que os administradores forneçam valores de hash personalizados.|O AppLocker calcula o valor de hash em si. Internamente, ele usa o hash de Authenticode SHA1 para executáveis portáteis (exe e dll) e instaladores do Windows e um hash de arquivo simples SHA1 para o restante.|
-|Suporte para diferentes níveis de segurança|Com os administradores do SRP, é possível especificar as permissões com as quais um aplicativo pode ser executado. Portanto, um administrador pode configurar uma regra de modo que o bloco de notas sempre seja executado com permissões restritas e nunca com privilégios administrativos.<br /><br />A SRP no Windows Vista e em versões anteriores dava suporte a vários níveis de segurança. No Windows 7, essa lista foi restrita a apenas dois níveis: Não permitido e irrestrito (o usuário básico se traduz para não permitido).|O AppLocker não dá suporte a níveis de segurança.|
+|Suporte para diferentes níveis de segurança|Com os administradores do SRP, é possível especificar as permissões com as quais um aplicativo pode ser executado. Portanto, um administrador pode configurar uma regra de modo que o bloco de notas sempre seja executado com permissões restritas e nunca com privilégios administrativos.<br /><br />A SRP no Windows Vista e em versões anteriores dava suporte a vários níveis de segurança. No Windows 7, essa lista foi restrita a apenas dois níveis: não permitido e irrestrito (o usuário básico se traduz para não permitido).|O AppLocker não dá suporte a níveis de segurança.|
 |Gerenciar aplicativos empacotados e instaladores de aplicativo empacotados|Não é possível|.appx é um tipo de arquivo válido que o AppLocker pode gerenciar.|
 |Direcionando uma regra para um usuário ou um grupo de usuários|As regras SRP se aplicam a todos os usuários em um computador específico.|As regras do AppLocker podem ser direcionadas para um usuário ou um grupo de usuários específico.|
 |Suporte às exceções de regra|A SRP não dá suporte às exceções de regra|As regras do AppLocker podem ter exceções que permitem que os administradores criem regras como "permitir tudo do Windows, exceto o regedit. exe".|

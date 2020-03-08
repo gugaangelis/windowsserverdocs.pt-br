@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947899"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371554"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Novidades na instalação e na remoção dos Serviços de Domínio Active Directory
 
@@ -34,7 +34,7 @@ A instalação do AD DS inclui os seguintes recursos:
 - **A nova instalação do AD DS inclui validação de pré-requisitos.** Todos os possíveis erros são identificados antes do início da instalação. Você pode corrigir antecipadamente as condições de erro, sem a preocupação resultante de uma atualização parcialmente concluída. Por exemplo, se for preciso executar adprep /domainprep, o assistente de instalação verificará se o usuário tem direitos suficientes para executar a operação.  
 - **As páginas de configuração são agrupadas em uma sequência que espelha os requisitos das opções de promoção mais comuns com as opções relacionadas agrupadas em menos páginas de assistente.** Isso fornece um melhor contexto para fazer escolhas de instalação.  
 - **Você pode exportar um script do Windows PowerShell contendo todas as opções que foram especificadas durante a instalação gráfica.** No final de uma instalação ou remoção, você pode exportar as configurações para um script do Windows PowerShell para uso com a automação da mesma operação.  
-- **Somente a replicação essencial ocorre antes da reinicialização.** Nova opção para permitir a replicação de dados não críticos antes da reinicialização. Para obter mais informações, consulte [ADDSDeployment cmdlet arguments](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params).  
+- **Somente a replicação essencial ocorre antes da reinicialização.** Nova opção para permitir a replicação de dados não críticos antes da reinicialização. Para obter mais informações, consulte [Argumentos do cmdlet ADDSDeployment](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params).  
 
 ## <a name="BKMK_ADConfigurationWizard"></a>O assistente de configuração do Active Directory Domain Services
 
@@ -62,7 +62,7 @@ A versão 2012 do Windows Server do adprep. exe pode ser executada em qualquer s
 
 ![Novidades](media/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal/AdprepNotValid.gif)  
 
-Para saber mais sobre como resolver outros erros retornados pelo Adprep.exe, consulte [Known issues](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues).  
+Para saber mais sobre como resolver outros erros retornados pelo Adprep.exe, consulte [Problemas conhecidos](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_KnownIssues).  
 
 ### <a name="group-membership-check-against-windows-server-2003-operations-master-roles"></a>Verificação de associação a grupos com base nas funções de mestre de operações do Windows Server 2003
 
@@ -80,7 +80,7 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 Se o Adprep.exe for executado sem a especificação dos parâmetros /user e /userdomain e o mestre de operações executar o Windows Server 2003, o Adprep.exe contatará um controlador de domínio no domínio do atual usuário de logon. Se o usuário de logon atual não for uma conta de domínio, o Adprep.exe não poderá executar a verificação de associação a grupos. O Adprep.exe também não poderá executar a verificação de associação a grupos se forem usadas as credenciais de cartão inteligente, mesmo que você tenha especificado /user e /userdomain.  
   
-Quando o Adprep é concluído com êxito, nenhuma outra ação é necessária. Se o Adprep falhar durante a execução e apresentar erros de acesso, forneça uma conta com a associação correta. Para obter mais informações, consulte [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
+Quando o Adprep é concluído com êxito, nenhuma outra ação é necessária. Se o Adprep falhar durante a execução e apresentar erros de acesso, forneça uma conta com a associação correta. Para saber mais, consulte [Requisitos de credenciais para executar o Adprep.exe e instalar os Serviços de Domínio do Active Directory](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
   
 ### <a name="syntax-for-adprep-in-windows-server-2012"></a>Sintaxe do Adprep no Windows Server 2012
 
@@ -130,7 +130,7 @@ Alguns recursos podem ter requisitos adicionais. Por exemplo, o recurso de clona
 
 ## <a name="BKMK_KnownIssues"></a>Problemas conhecidos
 
-Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação no Windows Server 2012. Para mais problemas conhecidos, consulte [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md).  
+Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação no Windows Server 2012. Para ver mais problemas conhecidos, consulte [Solucionando problemas na implantação do controlador de domínio](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md).  
 
 - Se o acesso WMI ao mestre de esquema for bloqueado pelo Firewall do Windows durante a execução remota de adprep /forestprep, o erro a seguir será registrado no log de adprep, em %systemroot%\system32\debug\adprep:  
 

@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369453"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371514"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administração simplificada do AD DS
 
@@ -22,7 +22,7 @@ ms.locfileid: "71369453"
 
 Este tópico explica os recursos e os benefícios da implantação e da administração do controlador de domínio do Windows Server 2012 e as diferenças entre a implantação do DC do sistema operacional anterior e a nova implementação do Windows Server 2012.  
   
-O Windows Server 2012 introduziu a próxima geração de Active Directory Domain Services a administração simplificada e foi o reprovisionamento de domínio mais radical desde o Windows 2000 Server. AD DS administração simplificada aproveita as lições aprendidas de doze anos de Active Directory e torna uma experiência administrativa mais fácil de oferecer suporte, mais flexível e intuitiva para arquitetos e administradores. Isso significa criar novas versões de tecnologias existentes, bem como estender as funcionalidades dos componentes liberados no Windows Server 2008 R2.  
+O Windows Server 2012 introduziu a próxima geração de Active Directory Domain Services a administração simplificada e foi o reprovisionamento de domínio mais radical desde o Windows 2000 Server. A Administração Simplificada do AD DS traz lições aprendidas de 12 anos de Active Directory e torna a experiência administrativa mais flexível, mais intuitiva e com maior capacidade de suporte para arquitetos e administradores. Isso significa criar novas versões de tecnologias existentes, bem como estender as funcionalidades dos componentes liberados no Windows Server 2008 R2.  
   
 A Administração Simplificada do AD DS é uma reformulação da imagem de implantação do domínio.  
   
@@ -39,7 +39,7 @@ Além disso, há ainda muitas melhorias de manutenção e administrativas:
 
 - O Centro Administrativo do Active Directory inclui uma lixeira gráfica do Active Directory, o gerenciamento de política de senha refinada e o visualizador de histórico do Windows PowerShell
 - O novo Gerenciador de Servidor possui interfaces específicas do AD DS no monitoramento de desempenho, análises de melhores recomendadas, serviços críticos e os logs de evento  
-- Contas de serviço gerenciado de grupo dão suporte a vários computadores usando as mesmas entidades de segurança  
+- As contas de serviço gerenciado de grupo ofereceem suporte a vários computadores usando as mesmas entidades de segurança  
 - Melhorias na emissão do identificador relativo (RID) e monitoramento para melhor capacidade de gerenciamento em domínios maduros do Active Directory  
 
 AD DS lucros de outros novos recursos incluídos no Windows Server 2012, como:  
@@ -114,7 +114,7 @@ Para obter mais informações sobre a topologia e replicação do site AD DS, co
 
 O Windows 2000 Active Directory introduziu o Mestre RID, que emite pools de identificadores relativos para os controladores de domínio, a fim de criar identificadores de segurança (SIDs) de entidades confiáveis, como usuários, grupos e computadores.  Por padrão, esse espaço RID global é limitado a um total de 2<sup>30</sup> (ou 1.073.741.823) SIDs criados em um domínio. Os SIDs não podem retornar para o pool ou serem reemitidos. Com o tempo, um domínio grande pode começar a ficar escasso nos RIDs, ou os acidentes podem levar ao esgotamento de RID desnecessário e a uma eventual exaustão.  
   
-O Windows Server 2012 atende a um grande número de problemas de emissão RID e gerenciamento não cobertos por clientes e pelo suporte ao cliente da Microsoft, na medida em que o AD DS amadurece, e isso desde a criação dos primeiros domínios do Active Directory, em 1999. Elas incluem:  
+O Windows Server 2012 atende a um grande número de problemas de emissão RID e gerenciamento não cobertos por clientes e pelo suporte ao cliente da Microsoft, na medida em que o AD DS amadurece, e isso desde a criação dos primeiros domínios do Active Directory, em 1999. Como por exemplo:  
 
 - Avisos de consumo RID periódicos são gravados no log de eventos  
 - Os eventos são registrados quando um administrador invalida um pool RID  
@@ -153,7 +153,7 @@ Esse serviço deve estar presente e em execução para promover, rebaixar ou clo
 O Adprep não requer mais a execução no mestre de esquema. Ele pode ser executado remotamente em um computador que executa o Windows Server 2008 x64 ou mais recente.  
   
 > [!NOTE]  
-> O Adprep usa LDAP para importar arquivos Schxx.ldf e não se reconecta automaticamente se a conexão ao mestre de esquema for perdida durante a importação. Como parte do processo de importação, o mestre de esquema é definido em um modo específico e a reconexão automática é desabilitada porque se o LDAP se reconectar após a perda da conexão, a conexão restabelecida não estaria no modo específico. Nesse caso, o esquema não seria atualizado corretamente.  
+> O Adprep usa LDAP para importar arquivos Schxx.ldf e não se reconecta automaticamente se a conexão ao mestre de esquema for perdida durante a importação. Como parte do processo de importação, o mestre de esquema é definido em um modo específico e a reconexão automática fica desabilitada, porque se o LDAP se reconectasse após a conexão ser perdida, a conexão restabelecida não seria no modo especifico. Nesse caso, o esquema não seria atualizado corretamente.  
   
 A verificação de pré-requisitos assegura que certas condições sejam verdadeiras. Essas condições são necessárias para uma instalação bem-sucedida do AD DS. Se algumas condições necessárias não forem verdadeiras, elas poderão ser resolvidas antes que a instalação continue. Ela também detecta se uma floresta ou um domínio ainda não está preparado, de forma que o código de implantação Adprep seja executado automaticamente.  
 
@@ -195,11 +195,11 @@ Normalmente, não há necessidade de executar esses cmdlets; eles já são execu
 
 ||||  
 |-|-|-|  
-|Nome do teste|Protocolos<br /><br />usados|Explicação e notas|  
+|Nome do teste|Protocolos<br /><br />used|Explicação e notas|  
 |VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|Valida se você tem o privilégio de "Habilitar contas de computador e usuário para serem confiáveis para delegação" (SeEnableDelegationPrivilege) no controlador de domínio parceiro existente. Isso requer acesso ao seu atributo tokenGroups construído.<br /><br />Não usado quando em contato com controladores de domínio do Windows Server 2003. Você deve confirmar manualmente esse privilégio antes da promoção|  
 |VerifyADPrep<br /><br />Pré-requisitos (floresta)|LDAP|Descobre e contata o Mestre de Esquema usando o atributo rootDSE namingContexts e o atributo fsmoRoleOwner de contexto de nomenclatura do Esquema. Determina quais operações preparatórias (forestprep, domainprep ou rodcprep) são necessárias para a instalação do AD DS. Verifica se objectVersion do esquema é esperado e se ele requer extensão adicional.|  
 |VerifyADPrep<br /><br />Pré-requisitos (domínio e RODC)|LDAP|Descobre e contata o Mestre da Infraestrutura usando o atributo rootDSE namingContexts e o atributo fsmoRoleOwner do contêiner de Infraestrutura. No caso de uma instalação RODC, esse teste descobre o mestre de nomenclatura do domínio e assegura que ele esteja online.|  
-|CheckGroup<br /><br />Membership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Admins. do Domínio ou Admistradores de Empresa, dependendo da operação (DA para adicionar ou rebaixar um controlador de domínio, EA para adicionar ou remover um domínio)|  
+|CheckGroup<br /><br />Associação|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Admins. do Domínio ou Admistradores de Empresa, dependendo da operação (DA para adicionar ou rebaixar um controlador de domínio, EA para adicionar ou remover um domínio)|  
 |CheckForestPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro dos grupos Administradores de Esquema e Administradores de Empresa e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
 |CheckDomainPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Admins. do Domínio e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
 |CheckRODCPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Administradores de Empresa e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  

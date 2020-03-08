@@ -11,11 +11,11 @@ ms.date: 06/07/2019
 description: Instruções detalhadas para implantar o armazenamento definido pelo software com o Espaços de Armazenamento Diretos no Windows Server como uma infraestrutura hiperconvergente ou uma infraestrutura convergida (também conhecida como desagregada).
 ms.localizationpriority: medium
 ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950027"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371768"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implantar espaços de armazenamento diretos
 
@@ -112,7 +112,7 @@ Net localgroup Administrators <Domain\Account> /add
 
 A próxima etapa é instalar funções de servidor em cada servidor. Você pode fazer isso usando o [centro de administração do Windows](../../manage/windows-admin-center/use/manage-servers.md), [Gerenciador do servidor](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)) ou o PowerShell. Aqui estão as funções a serem instaladas:
 
-- Clustering de Failover
+- Clustering de failover
 - Hyper-V
 - Servidor de arquivos (se você quiser hospedar qualquer compartilhamento de arquivos, como para uma implantação convergida)
 - Ponte de Data Center (se você estiver usando os adaptadores de rede de RoCEv2 em vez de iWARP)
@@ -216,7 +216,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 Nesta etapa, você criará um cluster com os nós que você validou para a criação do cluster na etapa anterior usando o seguinte cmdlet do PowerShell.
 
-Ao criar o cluster, você receberá um aviso informando: "houve problemas ao criar a função clusterizada que pode impedi-lo de iniciar. Para saber mais, consulte o arquivo de relatório abaixo." Ignore esse erro. Ele ocorre devido a indisponibilidade dos discos para o quórum do cluster. Recomendamos a configuração de uma testemunha de compartilhamento de arquivo ou de uma testemunha de nuvem após a criação do cluster.
+Ao criar o cluster, você receberá um aviso informando: "houve problemas ao criar a função clusterizada que pode impedi-lo de iniciar. Para saber mais, consulte o arquivo de relatório abaixo." Você pode ignorar com segurança este aviso. Ele ocorre devido a indisponibilidade dos discos para o quórum do cluster. Recomendamos a configuração de uma testemunha de compartilhamento de arquivo ou de uma testemunha de nuvem após a criação do cluster.
 
 > [!Note]
 > Se os servidores estiverem usando endereços IP estáticos, modifique o comando a seguir para refletir o endereço IP estático, adicionando o seguinte parâmetro e especificando o endereço IP:-StaticAddress &lt;X.X.X.X&gt;.
@@ -382,11 +382,11 @@ CD $ScriptFolder
 .\KCDSetup.ps1 -HyperVClusterName $HyperVClusterName -ScaleOutFSName $ScaleOutFSName -EnableLM
 ```
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 Depois de implantar o servidor de arquivos clusterizado, é recomendável testar o desempenho da sua solução usando cargas de trabalho sintéticas antes de trazer qualquer carga de trabalho real. Isso permite confirmar se a solução está sendo executada corretamente e solucionar quaisquer problemas remanescentes antes de adicionar a complexidade das cargas de trabalho. Para obter mais informações, consulte [testar o desempenho de espaços de armazenamento usando cargas de trabalho sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 -   [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
 -   [Entender o cache em Espaços de Armazenamento Diretos](understand-the-cache.md)

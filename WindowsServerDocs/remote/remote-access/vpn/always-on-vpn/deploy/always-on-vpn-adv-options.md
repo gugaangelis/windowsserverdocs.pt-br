@@ -11,11 +11,11 @@ author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
 ms.openlocfilehash: 73d64cd143b7bbd13e0eb9bb5fadfbb1e7c65416
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950442"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371828"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Recursos avançados do Always On VPN
 
@@ -30,29 +30,29 @@ Além dos cenários de implantação que são fornecidos, você pode adicionar o
 
 A seguir estão as opções adicionais para alta disponibilidade.
 
-|Opção  |Descrição  |
+|{1&gt;Opção&lt;1}  |Descrição  |
 |---------|---------|
 |Resiliência do servidor e balanceamento de carga     |Em ambientes que exigem alta disponibilidade ou que dão suporte a um grande número de solicitações, você pode aumentar o desempenho e a resiliência do acesso remoto usando o balanceamento de carga entre vários servidores que estão executando o NPS (servidor de diretivas de rede) e habilitando Clustering de servidores de acesso remoto.<p>Documentos relacionados:<ul><li>[Balanceamento de carga do servidor proxy NPS](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[Implantar o acesso remoto em um cluster](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
-|Resiliência do site geográfico     |Para localização geográfica baseada em IP, você pode usar o Gerenciador de tráfego global com DNS no Windows Server 2016. Para um balanceamento de carga geográfico mais robusto, você pode usar soluções de balanceamento de carga de servidor global, como Gerenciador de Tráfego do Microsoft Azure.<p>Documentos relacionados:<ul><li>[Visão geral do Gerenciador de Tráfego](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Gerenciador de Tráfego do Microsoft Azure](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
+|Resiliência do site geográfico     |Para localização geográfica baseada em IP, você pode usar o Gerenciador de tráfego global com DNS no Windows Server 2016. Para um balanceamento de carga geográfico mais robusto, você pode usar soluções de balanceamento de carga de servidor global, como Gerenciador de Tráfego do Microsoft Azure.<p>Documentos relacionados:<ul><li>[Visão geral do Gerenciador de tráfego](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Gerenciador de Tráfego do Microsoft Azure](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
 
 ## <a name="advanced-authentication"></a>Autenticação avançada
 
 A seguir estão as opções adicionais para autenticação.
 
-|Opção  |Descrição  |
+|{1&gt;Opção&lt;1}  |Descrição  |
 |---------|---------|
-|Windows Hello para Empresas     |No Windows 10, o Windows Hello para empresas substitui senhas ao fornecer autenticação forte de dois fatores em PCs e dispositivos móveis. Essa autenticação consiste em um novo tipo de credencial de usuário que está vinculado a um dispositivo e usa um PIN (número de identificação pessoal) ou biométrico.<p>O cliente de VPN do Windows 10 é compatível com o Windows Hello para empresas. Depois que o usuário fizer logon usando um gesto, a conexão VPN usará o certificado do Windows Hello para empresas para autenticação baseada em certificado.<p>Documentos relacionados:<ul><li>[Windows Hello para Empresas](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>Estudo de caso técnico: [habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](https://msdn.microsoft.com/library/mt728163.aspx)</li></ul>         |
+|Windows Hello para Empresas     |No Windows 10, o Windows Hello para empresas substitui senhas ao fornecer autenticação forte de dois fatores em PCs e dispositivos móveis. Essa autenticação consiste em um novo tipo de credencial de usuário que está vinculado a um dispositivo e usa um PIN (número de identificação pessoal) ou biométrico.<p>O cliente de VPN do Windows 10 é compatível com o Windows Hello para empresas. Depois que o usuário fizer logon usando um gesto, a conexão VPN usará o certificado do Windows Hello para empresas para autenticação baseada em certificado.<p>Documentos relacionados:<ul><li>[Windows Hello para empresas](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>Estudo de caso técnico: [habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](https://msdn.microsoft.com/library/mt728163.aspx)</li></ul>         |
 |MFA (autenticação multifator do Azure)     |O Azure MFA tem versões de nuvem e locais que você pode integrar com o mecanismo de autenticação de VPN do Windows.<p>Para obter mais informações sobre como esse mecanismo funciona, consulte [integrar a autenticação RADIUS com o Azure servidor de autenticação multifator](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius).         |
 
 ## <a name="advanced-vpn-features"></a>Recursos avançados de VPN
 
 A seguir estão as opções adicionais para recursos avançados.
 
-|Opção  |Descrição  |
+|{1&gt;Opção&lt;1}  |Descrição  |
 |---------|---------|
 |Filtragem de tráfego     |Se você precisar impor a opção de quais aplicativos os clientes VPN podem acessar, você pode Habilitar filtros de tráfego de VPN.<p>Para obter mais informações, consulte [recursos de segurança de VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-security-features).         |
 |VPN disparada por aplicativo     |Você pode configurar perfis VPN para se conectar automaticamente quando determinados aplicativos ou tipos de aplicativos forem iniciados.<p>Para obter mais informações sobre essa e outras opções de disparo, consulte [Opções de perfil de VPN disparadas automaticamente](https://docs.microsoft.com/windows/access-protection/vpn/vpn-auto-trigger-profile).         |
-|Acesso condicional VPN   |O acesso condicional e a conformidade do dispositivo podem exigir que os dispositivos gerenciados atendam aos padrões antes que possam se conectar à VPN. Um dos recursos avançados para acesso condicional VPN permite restringir as conexões VPN somente àquelas nas quais o certificado de autenticação de cliente contém o OID "AAD Conditional Access" de **1.3.6.1.4.1.311.87**.<p>Para restringir as conexões VPN, você precisa fazer o seguinte:<ol><li>No servidor NPS, abra o snap-in **servidor de políticas de rede** .</li><li>Expanda **políticas** > **políticas de rede**.</li><li>Clique com o botão direito do mouse na política de rede **conexões de VPN (rede virtual privada)** e selecione **Propriedades**.</li><li>Selecione a guia **Settings** (Configurações).</li><li>Selecione **específico do fornecedor**e, em seguida, selecione **Adicionar**.</li><li>Selecione a opção **Allowed-Certificate-OID** e, em seguida, selecione **Adicionar**.</li><li>Cole o OID de acesso condicional do AAD de **1.3.6.1.4.1.311.87** como o valor do atributo e, em seguida, selecione **OK** duas vezes.</li><li>Selecione **fechar**e, em seguida, selecione **aplicar**.<p>Depois de seguir essas etapas, quando os clientes VPN tentarem se conectar usando qualquer certificado que não seja o certificado de nuvem de curta duração, a conexão falhará.</li></ol>Para obter mais informações sobre o acesso condicional, consulte [VPN e acesso condicional](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access).   |
+|Acesso condicional VPN   |O acesso condicional e a conformidade do dispositivo podem exigir que os dispositivos gerenciados atendam aos padrões antes que possam se conectar à VPN. Um dos recursos avançados para acesso condicional VPN permite restringir as conexões VPN somente àquelas nas quais o certificado de autenticação de cliente contém o OID "AAD Conditional Access" de **1.3.6.1.4.1.311.87**.<p>Para restringir as conexões VPN, você precisa fazer o seguinte:<ol><li>No servidor NPS, abra o snap-in **servidor de políticas de rede** .</li><li>Expanda **políticas** > **políticas de rede**.</li><li>Clique com o botão direito do mouse na política de rede **conexões de VPN (rede virtual privada)** e selecione **Propriedades**.</li><li>Selecione a guia **configurações** .</li><li>Selecione **específico do fornecedor**e, em seguida, selecione **Adicionar**.</li><li>Selecione a opção **Allowed-Certificate-OID** e, em seguida, selecione **Adicionar**.</li><li>Cole o OID de acesso condicional do AAD de **1.3.6.1.4.1.311.87** como o valor do atributo e, em seguida, selecione **OK** duas vezes.</li><li>Selecione **fechar**e, em seguida, selecione **aplicar**.<p>Depois de seguir essas etapas, quando os clientes VPN tentarem se conectar usando qualquer certificado que não seja o certificado de nuvem de curta duração, a conexão falhará.</li></ol>Para obter mais informações sobre o acesso condicional, consulte [VPN e acesso condicional](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access).   |
 
 
 ---
@@ -64,7 +64,7 @@ Depois de instalar as atualizações, o servidor RRAS pode impor a revogação d
 
 A tabela a seguir lista as versões que contêm as correções para cada versão do Windows.
 
-|Versão do sistema operacional |Liberação  |
+|Versão do sistema operacional |Versão  |
 |---------|---------|
 |Windows Server, versão 1903  |[KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) |
 |Windows Server 2019<br />Windows Server, versão 1809  |[KB4505658](https://support.microsoft.com/help/4505658/windows-10-update-kb4505658)  |
@@ -149,11 +149,11 @@ Para obter mais informações sobre o atestado de chave do TPM no Windows 10, co
 ## <a name="related-topics"></a>Tópicos relacionados
 - [Balanceamento de carga do servidor proxy NPS](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md): clientes do serviço RADIUS (RADIUS), que são servidores de acesso à rede, como servidores VPN (rede virtual privada) e pontos de acesso sem fio, criam solicitações de conexão e as enviam para servidores RADIUS, como o NPS. Em alguns casos, um servidor NPS pode receber muitas solicitações de conexão ao mesmo tempo, resultando em um desempenho degradado ou em uma sobrecarga.
 
-- [Visão geral do Gerenciador de tráfego](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview): Este tópico fornece uma visão geral do Gerenciador de tráfego do Azure, que permite controlar a distribuição do tráfego do usuário para pontos de extremidade de serviço. O Gerenciador de Tráfego usa o DNS (Sistema de Nomes de Domínio) para direcionar solicitações de cliente ao ponto de extremidade mais apropriado com base em um método de roteamento de tráfego e na integridade dos pontos de extremidade. 
+- [Visão geral do Gerenciador de tráfego](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview): Este tópico fornece uma visão geral do Gerenciador de tráfego do Azure, que permite controlar a distribuição do tráfego do usuário para pontos de extremidade de serviço. O Gerenciador de tráfego usa o DNS (sistema de nomes de domínio) para direcionar solicitações de cliente para o ponto de extremidade mais apropriado com base em um método de roteamento de tráfego e a integridade dos pontos. 
 
 - [Windows Hello para empresas](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification): Este tópico fornece os pré-requisitos, como implantações e implantações híbridas somente na nuvem.  Este tópico também lista as perguntas frequentes sobre o Windows Hello para empresas.
 
-- [Estudo de caso técnico: Habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](https://msdn.microsoft.com/library/mt728163.aspx): neste estudo de caso técnico, você aprende como a Microsoft implementa o acesso remoto com o Windows Hello para empresas.  O Windows Hello for Business é uma abordagem de autenticação com chave privada/pública ou baseada em certificados para empresas e consumidores que vai além de senhas. Essa forma de autenticação depende de credenciais de par de chaves que podem substituir senhas e são resistentes a violações, roubos e phishing. 
+- [Estudo de caso técnico: Habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](https://msdn.microsoft.com/library/mt728163.aspx): neste estudo de caso técnico, você aprende como a Microsoft implementa o acesso remoto com o Windows Hello para empresas.  O Windows Hello for Business é uma abordagem de autenticação baseada em certificado ou chave privada para organizações e consumidores que vai além de senhas. Essa forma de autenticação depende de credenciais de pares de chaves que podem substituir senhas e são resistentes a violações, roubos e phishing. 
 
 - [Integrar a autenticação RADIUS com o azure servidor de autenticação multifator](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius): Este tópico orienta você pela adição e configuração de uma autenticação de cliente RADIUS com o Azure servidor de autenticação multifator. RADIUS é um protocolo padrão para aceitar solicitações de autenticação e processar essas solicitações. O Servidor de Autenticação Multifator do Azure pode atuar como um servidor RADIUS. 
 
