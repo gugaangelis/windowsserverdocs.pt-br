@@ -3,17 +3,17 @@ title: Problemas conhecidos do serviço de migração de armazenamento
 description: Problemas conhecidos e suporte de solução de problemas para o serviço de migração de armazenamento, por exemplo, como coletar logs para Suporte da Microsoft.
 author: nedpyle
 ms.author: nedpyle
-manager: siroy
+manager: tiaascs
 ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 92742929e3826fca3cf87cb84341d3aecec0d55d
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517491"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856340"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -295,13 +295,15 @@ Para solucionar esse problema, instale o "ferramentas de gerenciamento de cluste
 
 ## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Erro "não há mais pontos de extremidade disponíveis no mapeador de ponto de extremidades" ao executar o inventário em um computador de origem do Windows Server 2003
 
-Ao tentar executar o inventário com o servidor do Orchestrator do serviço de migração de armazenamento corrigido com a atualização cumulativa do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ou posterior, você receberá o seguinte erro:
+Ao tentar executar o inventário com o Orchestrator do serviço de migração de armazenamento em um computador de origem do Windows Server 2003, você receberá o seguinte erro:
 
     There are no more endpoints available from the endpoint mapper  
 
-Para solucionar esse problema, desinstale temporariamente a atualização cumulativa KB4512534 (e qualquer uma que o tenha substituído) do computador Orchestrator do serviço de migração de armazenamento. Quando a migração for concluída, reinstale a atualização cumulativa mais recente.  
+Esse problema é resolvido pela atualização do [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
 
-Observe que, em algumas circunstâncias, a desinstalação de KB4512534 ou de suas atualizações substitutas pode fazer com que o serviço de migração de armazenamento não seja mais iniciado. Para resolver esse problema, você pode fazer backup e excluir o banco de dados do serviço de migração de armazenamento:
+## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>A desinstalação de uma atualização do cumulutative impede que o serviço de migração de armazenamento seja iniciado
+
+A desinstalação de atualizações cumulativas do Windows Server pode impedir que o serviço de migração de armazenamento seja iniciado. Para resolver esse problema, você pode fazer backup e excluir o banco de dados do serviço de migração de armazenamento:
 
 1.  Abra um prompt cmd elevado, no qual você é membro de administradores no servidor Orchestrator do serviço de migração de armazenamento e execute:
 
@@ -343,7 +345,7 @@ Ao tentar executar o corte de uma origem de cluster do Windows Server 2008 R2, a
 
 Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso de servidor de arquivos de origem do cluster e o endereço IP e, em seguida, alterando o IP e o cluster de destino de NetName Endereço para corresponder à fonte original. 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar o DHCP 
 
 Ao tentar executar o recorte de um computador de origem, ter definido o computador de origem para usar um novo endereço IP estático (não DHCP) em uma ou mais interfaces de rede, o corte é paralisado na fase "38% mapeando interfaces de rede no comnputer de origem..." e você receberá o seguinte erro no log de eventos do SMS:
 
@@ -372,13 +374,7 @@ Examinar o computador de origem mostra que o endereço IP original não é alter
 
 Esse problema não ocorrerá se você selecionou "usar DHCP" na tela do centro de administração do Windows "configurar a transferência", somente se você especificar um novo endereço IP estático, sub-rede e gateway. 
 
-Esse problema é causado por uma regressão na atualização do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) . Atualmente, há duas soluções alternativas para esse problema:
-
-  - Antes de recortar: em vez de definir um novo endereço IP estático na transferência, selecione "usar DHCP" e certifique-se de que um escopo DHCP cubra essa sub-rede. O SMS configurará o computador de origem para usar o DHCP em interfaces do computador de origem e substituirá normalmente. 
-  
-  - Se a recorte já estiver paralisada: faça logon no computador de origem e habilite o DHCP em suas interfaces de rede, depois de garantir que um escopo DHCP cubra essa sub-rede. Quando o computador de origem adquire um endereço IP fornecido pelo DHCP, o SMS continuará com a recortar normalmente.
-  
-Em ambas as soluções alternativas, após a conclusão da recorte, você pode definir um endereço IP estático no computador de origem antigo, como você verá ajustar e parar de usar o DHCP.   
+Esse problema é resolvido pela atualização do [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>Mais lento do que o esperado desempenho de retransferência
 
@@ -489,6 +485,48 @@ Neste estágio, o orquestrador do serviço de migração de armazenamento está 
  - o firewall não permite conexões de registro remoto para o servidor de origem do Orchestrator.
  - A conta de migração de origem não tem permissões de registro remoto para se conectar ao computador de origem.
  - A conta de migração de origem não tem permissões de leitura no registro do computador de origem, em "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" ou em "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ LanManServer
+ 
+ ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." 
+
+Ao tentar executar o corte em um computador de origem, o sobreCorte fica preso na fase "38% mapeando interfaces de rede no comnputer de origem..." e você receberá o seguinte erro no log de eventos do SMS:
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/11/2020 8:51:14 AM
+    Event ID:      20505
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      nedwardo.contosocom
+    Description:
+    Couldn't establish a CIM session with the computer.
+
+    Computer: 172.16.10.37
+    User Name: nedwardo\MsftSmsStorMigratSvc
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+Esse problema é causado por Política de Grupo que define o seguinte valor do registro no computador de origem:
+
+ "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System LocalAccountTokenFilterPolicy = 0"
+ 
+Essa configuração não faz parte do Política de Grupo padrão, é um complemento configurado usando o [Microsoft Security Compliance Toolkit](https://www.microsoft.com/download/details.aspx?id=55319):
+ 
+ - Windows Server 2012 R2: "computador \ Configuração do Computador\modelos Templates\SCM: passar as restrições de Mitigations\Apply de hash do UAC para contas locais em logons de rede"
+ - Servidor do viúvas 2016: "computador \ Configuração do Computador\modelos Templates\MS segurança Guide\Apply restrições de UAC para contas locais em logons de rede"
+ 
+Ele também pode ser definido usando preferências de Política de Grupo com uma configuração de registro Personalizada. Você pode usar a ferramenta GPRESULT para determinar qual política está aplicando essa configuração ao computador de origem.
+
+O serviço de migração de armazenamento habilita temporariamente o [LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows) como parte do processo de sobreCorte e, em seguida, remove-o quando terminar. Quando Política de Grupo aplica um objeto de Política de Grupo conflitante (GPO), ele substitui o serviço de migração de armazenamento e impede a transferência.
+
+Para solucionar esse problema, use uma das seguintes opções:
+
+1. Mova temporariamente o computador de origem do Active Directory OU que aplica esse GPO conflitante. 
+2. Desabilite temporariamente o GPO que aplica essa política conflitante.
+3. Crie temporariamente um novo GPO que defina essa configuração como desabilitada e se aplique a uma UO específica de servidores de origem, com precedência mais alta do que quaisquer outros GPOs.
 
 ## <a name="see-also"></a>Consulte também
 

@@ -9,11 +9,11 @@ ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948477"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865395"
 ---
 # <a name="health-service-in-windows-server"></a>Serviço de Integridade no Windows Server
 
@@ -21,7 +21,7 @@ ms.locfileid: "75948477"
 
 O Serviço de Integridade é um novo recurso do Windows Server 2016 que melhora o monitoramento diário e a experiência operacional para clusters que executam o Espaços de Armazenamento Diretos.
 
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 
 O Serviço de Integridade é habilitado por padrão com Espaços de Armazenamento Direto. Nenhuma ação adicional é necessária para configurá-lo ou iniciá-lo. Para saber mais sobre Espaços de Armazenamento Diretos, consulte [espaços de armazenamento diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md).  
 
@@ -29,11 +29,11 @@ O Serviço de Integridade é habilitado por padrão com Espaços de Armazenament
 
 Consulte [serviço de integridade relatórios](health-service-reports.md).
 
-## <a name="faults"></a>Falhas
+## <a name="faults"></a>Defeitos
 
 Consulte [serviço de integridade falhas](health-service-faults.md).
 
-## <a name="actions"></a>Actions
+## <a name="actions"></a>Ações
 
 Consulte [serviço de integridade ações](health-service-actions.md).
 
@@ -82,7 +82,7 @@ Você deve substituir o disco físico obsoleto quando possível. Geralmente, iss
 
 Quando o disco de substituição for inserido, ele será verificado em relação ao documento de componentes com suporte (consulte a próxima seção).
 
-#### <a name="pooling"></a>Pool  
+#### <a name="pooling"></a>Pools  
 
 Se permitido, o disco de substituição é substituído automaticamente no pool do predecessor para que o uso seja iniciado. Nesse ponto, o sistema retorna ao estado inicial de integridade perfeita e, em seguida, a falha desaparece.  
 
@@ -94,7 +94,7 @@ O Serviço de Integridade fornece um mecanismo de imposição para restringir os
 
 O documento de componentes com suporte usa uma sintaxe inspirada em XML. É recomendável usar seu editor de texto favorito, como o [Visual Studio Code](https://code.visualstudio.com/) gratuito ou o bloco de notas, para criar um documento XML que você pode salvar e reutilizar.
 
-#### <a name="sections"></a>Seções
+#### <a name="sections"></a>As
 
 O documento tem duas seções independentes: `Disks` e `Cache`.
 
@@ -105,7 +105,7 @@ Se a seção `Cache` for fornecida, somente as unidades listadas (como `CacheDis
 >[!IMPORTANT]
 > O documento de componentes com suporte não se aplica retroativamente às unidades já agrupadas e em uso.  
 
-#### <a name="example"></a>Exemplo
+#### <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 ```XML
 <Components>
@@ -170,7 +170,7 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 Consulte [configurações de serviço de integridade](health-service-settings.md).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Relatórios de Serviço de Integridade](health-service-reports.md)
 - [Falhas de Serviço de Integridade](health-service-faults.md)
