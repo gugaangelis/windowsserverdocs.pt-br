@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914680"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371165"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Utilizar o acesso remoto via Web no Windows Server Essentials
 
@@ -60,7 +60,7 @@ ms.locfileid: "68914680"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>Para fazer logon no Acesso via Web Remoto de um computador da rede  
   
-1.  Abra um navegador da Web, digite **https://** _<\>nomedoservidor_ **/Remote** na barra de endereços e pressione Enter.  
+1.  Abra um navegador da Web, digite **https://** _< nomedoservidor\>_ **/Remote** na barra de endereços e pressione Enter.  
   
     > [!NOTE]
     >  Certifique-se de incluir os s em https.  
@@ -69,7 +69,7 @@ ms.locfileid: "68914680"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>Para fazer logon no Acesso via Web Remoto de um computador remoto  
   
-1.  Abra um navegador da Web, digite **https://** _<\>YourDomainName_ **/Remote** na barra de endereços e pressione Enter.  
+1.  Abra um navegador da Web, digite **https://** _< YourDomainName\>_ **/Remote** na barra de endereços e pressione Enter.  
   
     > [!NOTE]
     >  Você pode obter as informações de nome de domínio do administrador da rede. Certifique-se de incluir os s em https.  
@@ -100,7 +100,7 @@ ms.locfileid: "68914680"
      A conexão de computador está bloqueada por um firewall ou a área de trabalho remota está desabilitada no computador ou pela política de grupo. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
 #### <a name="to-connect-to-a-computer-on-your-network"></a>Para se conectar a um computador na sua rede  
- Sobre a guia **dispositivos** , clique no nome do computador. Você pode selecionar somente os computadores com o status **disponível** .  
+ Sobre a guia **dispositivos**, clique no nome do computador. Você pode selecionar somente os computadores com o status **disponível** .  
   
 #### <a name="to-connect-to-the-server-dashboard"></a>Para se conectar ao painel do servidor  
  Sobre a guia **dispositivos**, clique no nome do seu servidor. Você pode selecionar somente os computadores com o status **disponível** . Você deve ser capaz de fornecer uma conta de usuário administrador e senha em seu servidor para usar o Painel.  
@@ -123,7 +123,7 @@ ms.locfileid: "68914680"
 -   Carrega arquivos (envio) do seu computador para o Windows Server Essentials.  
   
     > [!NOTE]
-    >  Você pode carregar somente arquivos, e não pastas, para o Acesso Remoto via Web. Se você deseja ter a mesma hierarquia de arquivo e pasta no **pastas compartilhadas** no servidor em seu computador, você deve criar as pastas no servidor de acesso remoto via Web e carregar os arquivos para a pasta que você criou. Para obter informações sobre a criação de pastas de servidor, consulte [Add or move a server folder](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
+    >  Você pode carregar somente arquivos, e não pastas, para o Acesso Remoto via Web. Se você deseja ter a mesma hierarquia de arquivo e pasta no **pastas compartilhadas** no servidor em seu computador, você deve criar as pastas no servidor de acesso remoto via Web e carregar os arquivos para a pasta que você criou. Para obter informações sobre a criação de pastas do servidor, veja [adicionar ou mover uma pasta no servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
   
 -   Baixar (receber) arquivos e pastas do Windows Server Essentials para o computador.  
   
@@ -137,7 +137,7 @@ ms.locfileid: "68914680"
   
 #### <a name="upload-files"></a>Carregar arquivos  
   
-###### <a name="to-upload-files"></a>Carregar arquivos  
+###### <a name="to-upload-files"></a>Para carregar arquivos  
   
 1. No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.  
   
@@ -186,7 +186,7 @@ ms.locfileid: "68914680"
   
 4. Na caixa de diálogo **Download de arquivo** , clique em **salvar** para salvar o arquivo em seu computador.  
   
-5. Na caixa de diálogo **Salvar como** , selecione o local para salvar o arquivo e clique em **salvar**. Nenhum arquivo não é compactado antes até o serem baixados.  
+5. Na caixa de diálogo **Salvar como**, selecione o local para salvar o arquivo e clique em **salvar**. Nenhum arquivo não é compactado antes até o serem baixados.  
   
    Há duas opções para o download de vários arquivos ou pastas. Escolha a opção que atenda às suas necessidades:  
   
@@ -205,7 +205,7 @@ ms.locfileid: "68914680"
   
 - **Pasta compactada do Windows (. zip)**  
   
-   O compactar um arquivo cria uma versão compactada do arquivo que é menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto, .txt, .doc, .xls e arquivos de elementos gráficos que usam tipos de arquivo não compactado, como .bmp. Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
+   Ao compactar um arquivo é criada uma versão compactada do arquivo que for menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto, .txt, .doc, .xls e arquivos de elementos gráficos que usam tipos de arquivo não compactado, como .bmp. Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
   
   > [!NOTE]
   >  Essa opção fornece suporte limitado para nomes de arquivo internacionais no Windows Server Essentials.  
@@ -224,7 +224,7 @@ ms.locfileid: "68914680"
   
 5.  Na caixa de diálogo **Download de Arquivo** , clique em **Salvar** para salvar o arquivo em seu computador.  
   
-6.  Na caixa de diálogo **Salvar como** , selecione o local para salvar o arquivo e clique em **salvar**.  
+6.  Na caixa de diálogo **Salvar como**, selecione o local para salvar o arquivo e clique em **salvar**.  
   
 #### <a name="retrieve-compressed-files-downloaded-to-your-computer"></a>Recuperar arquivos compactados baixados para o computador  
   
@@ -252,7 +252,7 @@ ms.locfileid: "68914680"
  Você pode usar o acesso remoto via Web para criar novas pastas em uma pasta compartilhada existente para renomear os arquivos e pastas, mover e copiar arquivos e pastas e excluir arquivos e pastas no servidor.  
   
 > [!NOTE]
->  Para adicionar novas pastas compartilhadas em um servidor que esteja executando o Windows Server Essentials, você deve usar o Painel geral. Para se conectar ao console do servidor de acesso remoto via Web, em **computadores**, clique no nome do servidor, clique em **conectar**e, em seguida, siga as instruções para fazer logon no servidor. Para obter informações sobre como criar pastas compartilhadas, consulte [Add or move a server folder](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
+>  Para adicionar novas pastas compartilhadas em um servidor que esteja executando o Windows Server Essentials, você deve usar o Painel geral. Para se conectar ao console do servidor de acesso remoto via Web, em **computadores**, clique no nome do servidor, clique em **conectar**e, em seguida, siga as instruções para fazer logon no servidor. Para obter informações sobre como criar pastas compartilhadas, veja [adicionar ou mover uma pasta no servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
   
 ##### <a name="to-create-a-new-folder"></a>Para criar uma nova pasta  
   
@@ -314,21 +314,21 @@ ms.locfileid: "68914680"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para fazer logon no Acesso via Web Remoto de um dispositivo móvel  
   
-1.  Abra um navegador da Web e digite **https://** _<\>YourDomainName_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
+1.  Abra um navegador da Web e digite **https://** _< YourDomainName\>_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
   
 2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso Remoto via Web .  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Alternar para a versão da área de trabalho do acesso via Web Remoto  
   
-1.  Abra um navegador da Web e digite **https://** _<\>YourDomainName_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
+1.  Abra um navegador da Web e digite **https://** _< YourDomainName\>_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
   
 2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto, clique em **Exibir versão da área de trabalho**e clique na seta. Você está conectado à versão da área de trabalho do acesso remoto via Web .  
   
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para voltar para a versão móvel do acesso via Web Remoto  
   
-1. Faça logoff.  
+1. Dê logoff.  
   
-2. Abra um navegador da Web e digite **https://** _<\>YourDomainName_ **/Remote/m** na barra de endereços. Certifique-se de incluir os s em https.  
+2. Abra um navegador da Web e digite **https://** _< YourDomainName\>_ **/Remote/m** na barra de endereços. Certifique-se de incluir os s em https.  
   
 3. A versão móvel do Acesso via Web remoto é exibida. Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso via Web remoto.  
   

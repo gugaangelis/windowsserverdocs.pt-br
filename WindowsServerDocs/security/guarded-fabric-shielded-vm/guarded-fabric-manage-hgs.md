@@ -8,11 +8,11 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.openlocfilehash: 41912c90beacbb0c0c285ea4da8305c1afdf2a51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386536"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370640"
 ---
 # <a name="managing-the-host-guardian-service"></a>Gerenciando o serviço guardião de host
 
@@ -341,7 +341,7 @@ Para atestado confiável de TPM, há várias políticas internas configuradas no
 Algumas dessas políticas são "bloqueadas", o que significa que elas não podem ser desabilitadas por motivos de segurança.
 A tabela a seguir explica a finalidade de cada política padrão.
 
-Nome da política                    | Finalidade
+Nome da Política                    | Finalidade
 -------------------------------|-----------------------------------------------------
 Hgs_SecureBootEnabled          | Requer que os hosts tenham a inicialização segura habilitada. Isso é necessário para medir os binários de inicialização e outras configurações bloqueadas por UEFI.
 Hgs_UefiDebugDisabled          | Garante que os hosts não tenham um depurador de kernel habilitado. Os depuradores de modo de usuário são bloqueados com políticas de integridade de código.

@@ -7,11 +7,11 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403572"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371354"
 ---
 # <a name="branch-office-considerations"></a>Considerações das filiais
 
@@ -24,7 +24,7 @@ Este artigo descreve as práticas recomendadas para executar máquinas virtuais 
 A partir do Windows Server versão 1709, você pode configurar um conjunto adicional de URLs de serviço guardião de host em hosts Hyper-V para uso quando o HGS primário não responde.
 Isso permite que você execute um cluster HGS local que é usado como um servidor primário para melhorar o desempenho com a capacidade de voltar para o HGS do datacenter corporativo se os servidores locais estiverem inativos.
 
-Para usar a opção de fallback, você precisará configurar dois servidores HGS. Eles podem executar o Windows Server 2019 ou o Windows Server 2016 e fazer parte dos mesmos ou de clusters diferentes. Se forem clusters diferentes, você desejará estabelecer práticas operacionais para garantir que as políticas de atestado estejam em sincronia entre os dois servidores. Ambas precisam ser capazes de autorizar corretamente o host Hyper-V a executar VMs blindadas e ter o material de chave necessário para iniciar as VMs blindadas. Você pode optar por ter um par de certificados de criptografia compartilhada e de autenticação entre os dois clusters ou usar certificados separados e configurar a VM blindada de HGS para autorizar os guardiões (pares de certificado de criptografia/autenticação) nos dados de blindagem Grupo.
+Para usar a opção de fallback, você precisará configurar dois servidores HGS. Eles podem executar o Windows Server 2019 ou o Windows Server 2016 e fazer parte dos mesmos ou de clusters diferentes. Se forem clusters diferentes, você desejará estabelecer práticas operacionais para garantir que as políticas de atestado estejam em sincronia entre os dois servidores. Ambas precisam ser capazes de autorizar corretamente o host Hyper-V a executar VMs blindadas e ter o material de chave necessário para iniciar as VMs blindadas. Você pode optar por ter um par de certificados de criptografia compartilhada e de autenticação entre os dois clusters ou usar certificados separados e configurar a VM blindada de HGS para autorizar os guardiões (pares de certificado de criptografia/autenticação) no arquivo de dados de blindagem.
 
 Em seguida, atualize seus hosts Hyper-V para o Windows Server versão 1709 ou o Windows Server 2019 e execute o seguinte comando:
 ```powershell

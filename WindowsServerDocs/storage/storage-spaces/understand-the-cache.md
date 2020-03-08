@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f2c2e0435d06c18dbacab4e85db770ba86e654b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365997"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865415"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>Noções básicas sobre o cache nos Espaços de Armazenamento Diretos
 
@@ -109,7 +109,7 @@ Isso resulta nas características de gravação, como latência de gravação, s
 
 ### <a name="readwrite-caching-for-hybrid-deployments"></a>Armazenamento em cache de leitura/gravação para implantações híbridas
 
-Durante o armazenamento em cache para unidades de disco rígido (HDDs), leituras *e* gravações são armazenadas em cache, para oferecer latência semelhante a flash (normalmente, cerca de 10 vezes melhor) para ambas. O cache de leitura armazena dados de leitura recentes e frequentes para acesso rápido e minimização de tráfego aleatório para as HDDs. (Devido a atrasos de busca e rotação, a latência e o tempo perdido incorrido pelo acesso aleatório a um HDD são significativos.) As gravações são armazenadas em cache para absorver intermitências e, como antes, para fazer a União gravar e reescrever e minimizar o tráfego cumulativo para as unidades de capacidade.
+Durante o armazenamento em cache para unidades de disco rígido (HDDs), leituras *e* gravações são armazenadas em cache, para oferecer latência semelhante a flash (normalmente, cerca de 10 vezes melhor) para ambas. O cache de leitura armazena dados de leitura recentes e frequentes para acesso rápido e minimização de tráfego aleatório para as HDDs. (Por causa de atrasos rotacionais e de busca, a latência e o tempo perdido incorridos pelo acesso aleatório a uma HDD são significativos.) As gravações são armazenadas em cache para absorver intermitências e, como antes, unir gravações e regravações, além de minimizar o tráfego cumulativo para as unidades de capacidade.
 
 Espaços de Armazenamento Diretos implementam um algoritmo que cancela a reprodução aleatória de gravações antes da preparação delas a fim de emular um padrão de E/S para disco aparentemente sequencial, mesmo quando a E/S real proveniente da carga de trabalho (como máquinas virtuais) é aleatória. Isso maximiza o IOPS e a taxa de transferência para as HDDs.
 
@@ -188,7 +188,7 @@ Para usar unidades de mais resistência no armazenamento em cache para unidades 
    >[!TIP]
    > Certifique-se de comparar a cadeia de caracteres do modelo exatamente como ela é exibida na saída de **Get-PhysicalDisk**.
 
-####  <a name="example"></a>Exemplo
+####  <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 Primeiro, obtenha uma lista de discos físicos:
 
@@ -227,7 +227,7 @@ Para substituir o comportamento, use o cmdlet **set-ClusterStorageSpacesDirect**
 
 Você pode usar **Get-ClusterStorageSpacesDirect** para verificar se o comportamento está definido.
 
-#### <a name="example"></a>Exemplo
+#### <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 Primeiro, obtenha as configurações de Espaços de Armazenamento Diretos:
 

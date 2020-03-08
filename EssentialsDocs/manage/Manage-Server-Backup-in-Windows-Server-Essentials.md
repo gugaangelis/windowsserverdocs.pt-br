@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 7e40a4675cf77d55a3047b41e0ab852fd7cd9de9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433217"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371184"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>Gerenciar o backup do servidor no Windows Server Essentials
 
@@ -29,19 +29,19 @@ ms.locfileid: "66433217"
   
 -   [Configurar ou personalizar o backup do servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Interromper backup de servidor em andamento](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Parar backup do servidor em andamento](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [Gerenciar backups remotamente](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [Gerenciar seus backups remotamente](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [Desabilitar o backup do servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [Desabilitar backup do servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_4)  
   
 -   [Saiba mais sobre como configurar o backup do servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_5)  
   
--   [Reparticionar um disco rígido no servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_6)  
+-   [Reparticionar uma unidade de disco rígido no servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_6)  
   
 -   [Restaurar arquivos e pastas de um backup do servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_7)  
   
-##  <a name="BKMK_WhichBackup"></a> Qual backup devo escolher?  
+##  <a name="BKMK_WhichBackup"></a>Qual backup devo escolher?  
  A escolha de um backup pode ser simples se você tiver realizado um backup bem-sucedido recente e souber que ele contém todos os seus dados essenciais. Se você estiver tentando restaurar o servidor ou um computador de um backup mais antigo, escolher um bom backup para restaurar pode exigir alguma pesquisa e, possivelmente, algum comprometimento.  
   
 #### <a name="to-choose-a-backup"></a>Para escolher um backup  
@@ -54,23 +54,23 @@ ms.locfileid: "66433217"
   
 4.  Como prática recomendada, você pode restaurar arquivos e pastas para um local alternativo e, em seguida, permitir que o proprietário dos arquivos e pastas mova aquelas de que ele precisa para o local original. Quando ele terminar, os arquivos e pastas que permanecerem no local alternativo poderão ser excluídas.  
   
-##  <a name="BKMK_1"></a> Configurar ou personalizar o backup do servidor  
+##  <a name="BKMK_1"></a>Configurar ou personalizar o backup do servidor  
  O backup do servidor não é configurado automaticamente durante a instalação. Você deve proteger seu servidor e seus dados automaticamente com o agendamento de backups diários. É recomendável que você mantenha um plano de backup diário, porque a maioria das organizações não pode perder dados criados ao longo de vários dias. Para obter mais informações, consulte [Configurar ou personalizar o backup do servidor](Set-up-or-customize-server-backup.md).  
   
-##  <a name="BKMK_2"></a> Interromper backup de servidor em andamento  
+##  <a name="BKMK_2"></a>Parar backup do servidor em andamento  
  Se um backup do servidor for iniciado em um horário agendado regularmente ou se você iniciar um backup do servidor manualmente, é possível interromper o backup em andamento.  
   
 #### <a name="to-stop-a-backup-in-progress"></a>Para interromper um backup em andamento  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
 2.  Na barra de navegação, clique em **Dispositivos**.  
   
-3.  Na lista de computadores, clique no servidor e, em seguida, clique em **Parar backup para o servidor** , no painel **Tarefas** .  
+3.  Na lista de computadores, clique no servidor e, em seguida, clique em **Parar backup para o servidor**, no painel **Tarefas**.  
   
 4.  Clique em **Sim** para confirmar a ação.  
   
-##  <a name="BKMK_3"></a> Gerenciar backups remotamente  
+##  <a name="BKMK_3"></a>Gerenciar seus backups remotamente  
  Quando estiver fora do escritório, você pode usar o Acesso via Web Remoto do Windows Server Essentials para acessar o painel do Windows Server Essentials e gerenciar o servidor.  
   
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>Para usar o Acesso via Web Remoto para gerenciar o servidor  
@@ -81,13 +81,13 @@ ms.locfileid: "66433217"
   
 3. Quando solicitado, digite o nome de usuário e senha.  
   
-4. Quando você clicar no nome do servidor no acesso via Web remoto, a página de logon para o painel é exibida.  
+4. Quando você clica no nome do servidor no Acesso via Web remoto, a página de logon do painel é exibida.  
   
 5. Faça logon no Painel como administrador e, em seguida, clique em **Dispositivos**.  
   
-   Para obter mais informações sobre o acesso via Web remoto, consulte [visão geral do acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
+   Para obter mais informações sobre Acesso via Web remotos, consulte [visão geral de acesso via Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
   
-##  <a name="BKMK_4"></a> Desabilitar o backup do servidor  
+##  <a name="BKMK_4"></a>Desabilitar backup do servidor  
  Você deve proteger seu servidor e seus dados automaticamente com o agendamento de backups diários. É recomendável que você mantenha um plano de backup diário, porque a maioria das organizações não pode perder dados criados ao longo de vários dias.  
   
  Se já tiver configurado o servidor de backup e mais tarde desejar usar um aplicativo de terceiros para fazer backup do servidor, você pode desabilitar o backup do Windows Server Essentials.  
@@ -107,13 +107,13 @@ ms.locfileid: "66433217"
   
 5.  Na página **Opções de Configuração**, clique em **Desabilitar o Backup do Servidor**. Siga as instruções no assistente.  
   
-##  <a name="BKMK_5"></a> Saiba mais sobre como configurar o backup do servidor  
+##  <a name="BKMK_5"></a>Saiba mais sobre como configurar o backup do servidor  
  O backup do servidor não é habilitado durante a instalação do servidor.  
   
 > [!NOTE]
 >  Quando configurar o backup do servidor, você deverá conectar pelo menos um disco rígido externo ao servidor para usar como o disco rígido de destino do backup.  
   
-###  <a name="BKMK_Target"></a> Unidade de destino de backup  
+###  <a name="BKMK_Target"></a>Unidade de destino de backup  
  Você pode usar várias unidades de armazenamento externo para backups, e pode alternar as unidades entre locais de armazenamento externo e no local. Isso pode melhorar o planejamento de preparação para desastres, ajudando a recuperar seus dados caso haja danos físicos ao hardware no local.  
   
  Ao escolher uma unidade de armazenamento para o backup do servidor, considere o seguinte:  
@@ -143,7 +143,7 @@ ms.locfileid: "66433217"
 >    2. Na caixa de texto Pesquisar, digite **Defragment**.  
 >    3. Na seção de resultados, clique em **Desfragmentar e Otimizar Unidades**.  
 >    4. Na página **Otimizar Unidades**, selecione uma unidade e, em seguida, clique em **Alterar configurações**.  
->    5. Na janela **Agendamento de otimização** , desmarque a caixa de seleção **Executar seguindo um agendamento (recomendado)** e clique em **OK** para salvar a alteração.  
+>    5. Na janela **Agendamento de otimização**, desmarque a caixa de seleção **Executar seguindo um agendamento (recomendado)** e clique em **OK** para salvar a alteração.  
   
 ### <a name="items-to-be-backed-up"></a>Itens para backup  
  Por padrão, todos os arquivos do sistema operacional e pastas estão selecionados para backup. Você pode optar por fazer backup de todos os discos rígidos, arquivos e pastas no servidor ou selecionar apenas discos rígidos, arquivos ou pastas individuais para backup. Para adicionar ou remover itens para backup, siga um destes procedimentos:  
@@ -159,7 +159,7 @@ ms.locfileid: "66433217"
   
  Por exemplo, você pode ter uma pasta que contém programas de TV gravados que usam muito espaço em disco rígido. Você pode optar por não fazer backup desses arquivos porque normalmente eles são excluídos após serem assistidos. Como alternativa, você pode ter uma pasta com os arquivos temporários que não deseja manter.  
   
-##  <a name="BKMK_6"></a> Reparticionar um disco rígido no servidor  
+##  <a name="BKMK_6"></a>Reparticionar uma unidade de disco rígido no servidor  
  Quando uma unidade de disco rígido interna não formatada é detectada no servidor do Windows Server Essentials, é gerado um alerta de integridade que contém um link para adicionar um novo Assistente de unidade de disco rígido. O Assistente de Adição de Novo Disco Rígido descreve as várias opções para formatar o disco rígido. Quando o assistente for concluído, um ou mais discos rígidos lógicos formatados, dependendo do tamanho da unidade de disco, serão criados no disco rígido e formatados como NTFS.  
   
  Se for necessário reparticionar uma unidade de disco rígido, siga estas instruções:  
@@ -182,7 +182,7 @@ ms.locfileid: "66433217"
     > [!NOTE]
     >  Repita essa etapa até que todo o espaço não alocado na unidade de disco rígido seja usado.  
   
-##  <a name="BKMK_7"></a> Restaurar arquivos e pastas de um backup do servidor  
+##  <a name="BKMK_7"></a>Restaurar arquivos e pastas de um backup do servidor  
  Você pode procurar e restaurar arquivos e pastas individuais de um backup do servidor.  
   
 #### <a name="to-restore-files-and-folders-from-a-server-backup"></a>Para restaurar arquivos e pastas de um backup do servidor  
@@ -195,7 +195,7 @@ ms.locfileid: "66433217"
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Gerenciar o Backup e restauração](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
+-   [Gerenciar backup e restauração](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)  
   

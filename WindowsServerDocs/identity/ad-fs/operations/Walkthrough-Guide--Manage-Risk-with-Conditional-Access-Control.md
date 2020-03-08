@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407464"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371658"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>Guia Passo a passo: gerenciar riscos com controle de acesso condicional
 
@@ -55,7 +55,7 @@ Para obter instruções sobre como configurar esse ambiente, consulte [Configura
 ## <a name="BKMK_2"></a>Etapa 2: verificar o mecanismo de controle de acesso de AD FS padrão
 Nesta etapa, você verificará o mecanismo de controle de acesso do AD FS padrão, no qual o usuário é redirecionado para a página de entrada do AD FS, fornece credenciais válidas e recebe o acesso ao aplicativo. Você pode usar a conta do AD de **Robert Hatley** e o aplicativo de exemplo **ClaimApp** que você configurou em [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
-#### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>Para verificar o mecanismo de controle de acesso de AD FS padrão
+#### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>Para verificar o mecanismo de controle de acesso do AD FS padrão
 
 1.  No computador cliente, abra uma janela do navegador e navegue até o aplicativo de exemplo: **https://webserv1.contoso.com/claimapp** .
 
@@ -72,25 +72,25 @@ Nesta etapa, você configurará uma política de controle de acesso com base nos
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-the-ad-fs-management-console"></a>Para configurar a política de controle de acesso condicional com base nos dados do usuário por meio do Console de Gerenciamento do AD FS
 
-1.  No Console de Gerenciamento do AD FS, navegue até **Relações de Confiança**e depois **Objetos de Confiança da Terceira Parte Confiável**.
+1.  No Console de Gerenciamento do AD FS, navegue até **Relações de Confiança** e depois **Objetos de Confiança da Terceira Parte Confiável**.
 
 2.  Selecione o objeto de confiança de terceira parte confiável que representa o aplicativo de exemplo (**claimapp**) e, no painel **Ações** ou clicando com o botão direito do mouse nesse objeto de confiança de terceira parte confiável, selecione **Editar Regras de Declaração**.
 
-3.  Na janela **Editar Regras de Declaração para claimapp** , selecione a guia **Regra de Autorização de Emissão** e clique em **Adicionar Regra**.
+3.  Na janela **Editar Regras de Declaração para claimapp**, selecione a guia **Regra de Autorização de Emissão** e clique em **Adicionar Regra**.
 
 4.  No **Assistente de Adição de Regra de Declarações de Autorização de Emissão**, na **página Selecionar Modelo de Regra**, selecione o modelo de regra de declaração **Permitir ou Negar Usuários Com Base em uma Declaração de Entrada** e clique em **Avançar**.
 
-5.  Na página **Configurar Regra** , execute todos os itens a seguir e clique em **Concluir**:
+5.  Na página **Configurar Regra**, execute todos os itens a seguir e clique em **Concluir**:
 
     1.  Digite um nome para a regra de declaração, por exemplo, **TestRule**.
 
     2.  Selecione **SID de Grupo** como **Tipo de declaração de entrada**.
 
-    3.  Clique em **Procurar**, digite **Finanças** para o nome do seu grupo de teste do AD e resolva-o para o campo **Valor de declaração de entrada** .
+    3.  Clique em **Procurar**, digite **Finanças** para o nome do seu grupo de teste do AD e resolva-o para o campo **Valor de declaração de entrada**.
 
-    4.  Selecione a opção **Negar o acesso a usuários com esta declaração de entrada** .
+    4.  Selecione a opção **Negar o acesso a usuários com esta declaração de entrada**.
 
-6.  Na janela **Editar Regras de Declaração para claimapp** , exclua a regra **Permitir o Acesso a Todos os Usuários** , que foi criada por padrão quando você criou esse objeto de confiança da terceira parte confiável.
+6.  Na janela **Editar Regras de Declaração para claimapp**, exclua a regra **Permitir o Acesso a Todos os Usuários**, que foi criada por padrão quando você criou esse objeto de confiança da terceira parte confiável.
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-windows-powershell"></a>Para configurar a política de controle de acesso condicional com base nos dados do usuário por meio do Windows PowerShell
 
@@ -114,7 +114,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 > Não se esqueça de substituir <SID_do_grupo> pelo valor da SID do seu grupo **Finanças** do AD.
 
 ## <a name="BKMK_4"></a>Etapa 4: verificar o mecanismo de controle de acesso condicional
-Nesta etapa, você verificará a política de controle de acesso condicional configurada na etapa anterior. É possível usar o procedimento a seguir para verificar se o usuário do AD **Eduardo Gomes** pode acessar o aplicativo de exemplo, uma vez que ele pertence ao grupo **Finanças** , bem como se os usuários do AD que não pertencem ao grupo **Finanças** não podem acessar o aplicativo de exemplo.
+Nesta etapa, você verificará a política de controle de acesso condicional configurada na etapa anterior. É possível usar o procedimento a seguir para verificar se o usuário do AD **Eduardo Gomes** pode acessar o aplicativo de exemplo, uma vez que ele pertence ao grupo **Finanças**, bem como se os usuários do AD que não pertencem ao grupo **Finanças** não podem acessar o aplicativo de exemplo.
 
 1.  No computador cliente, abra uma janela do navegador e navegue até o aplicativo de exemplo: **https://webserv1.contoso.com/claimapp**
 
@@ -128,7 +128,7 @@ Nesta etapa, você verificará a política de controle de acesso condicional con
 
     Neste ponto, devido à política de controle de acesso que você configurou na etapa anterior, uma mensagem de ' acesso negado ' é exibida para esse usuário do AD que não pertence ao grupo de **Finanças** . O texto da mensagem padrão **não está autorizado a acessar este site. Clique aqui para sair e entrar novamente ou contate o administrador para obter permissões.** No entanto, esse texto é totalmente personalizável. Para obter mais informações sobre como personalizar a experiência de entrada, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 [Gerenciar o risco com o controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

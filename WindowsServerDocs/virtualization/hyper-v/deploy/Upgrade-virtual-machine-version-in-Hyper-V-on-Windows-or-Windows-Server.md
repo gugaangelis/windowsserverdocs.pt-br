@@ -12,11 +12,11 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
 ms.openlocfilehash: 96678dfab2a3d5b6f503d8ce9d00850a3c437b35
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392937"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370600"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server
 
@@ -30,7 +30,7 @@ Disponibilize os recursos mais recentes do Hyper-V em suas máquinas virtuais at
 
 Para obter mais informações, consulte [atualização sem interrupção do sistema operacional do cluster](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md) e [executar uma atualização sem interrupção de um cluster de host do Hyper-V no VMM](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade).
 
-## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>Etapa 1: Verificar as versões de configuração da máquina virtual
+## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>Etapa 1: verificar as versões de configuração da máquina virtual
 
 1. Na área de trabalho do Windows, clique no botão Iniciar e digite qualquer parte do nome **Windows PowerShell**.
 2. Clique com o botão direito do mouse em Windows PowerShell e selecione **Executar como administrador**.
@@ -42,7 +42,7 @@ Get-VM * | Format-Table Name, Version
 
 Você também pode ver a versão de configuração no Gerenciador do Hyper-V selecionando a máquina virtual e examinando a guia **Resumo** .
 
-## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>Etapa 2: Atualizar a versão de configuração da máquina virtual
+## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>Etapa 2: atualizar a versão de configuração da máquina virtual
 
 1. Desligue a máquina virtual no Gerenciador do Hyper-V.
 2. Selecione a ação > atualizar a versão de configuração. Se essa opção não estiver disponível para a máquina virtual, ela já estará na versão de configuração mais alta com suporte do host do Hyper-V.
@@ -110,11 +110,11 @@ A tabela a seguir lista as descrições, extensões de nome de arquivo e locais 
 
  |Tipos de arquivo de máquina virtual | Descrição|
  |---|---|
-|Configuração |Informações de configuração de máquina virtual que são armazenadas em formato de arquivo binário. <br /> Extensão de nome de arquivo:. vmcx <br /> Local padrão: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
- |Estado do tempo de execução|Informações de estado do tempo de execução da máquina virtual armazenadas em formato de arquivo binário. <br />Extensão de nome de arquivo:. VMRS e. vmgs <br />Local padrão: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
-|Disco rígido virtual|Armazena discos rígidos virtuais para a máquina virtual. <br /> Extensão de nome de arquivo:. VHD ou. vhdx <br />Local padrão: Discos rígidos C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual|
- |Disco rígido virtual automático |Arquivos de disco diferencial usados para pontos de verificação de máquina virtual. <br /> Extensão de nome de arquivo:. avhdx <br /> Local padrão: Discos rígidos C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual|
- |Checkpoint|Os pontos de verificação são armazenados em vários arquivos de ponto de verificação. Cada ponto de verificação cria um arquivo de configuração e o arquivo de estado de tempo de execução. <br /> Extensões de nome de arquivo:. VMRS e. vmcx <br />Local padrão: C:\ProgramData\Microsoft\Windows\Snapshots|
+|Configuração |Informações de configuração de máquina virtual que são armazenadas em formato de arquivo binário. <br /> Extensão de nome de arquivo:. vmcx <br /> Local padrão: computadores C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual|
+ |Estado do tempo de execução|Informações de estado do tempo de execução da máquina virtual armazenadas em formato de arquivo binário. <br />Extensão de nome de arquivo:. VMRS e. vmgs <br />Local padrão: computadores C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual|
+|Disco rígido virtual|Armazena discos rígidos virtuais para a máquina virtual. <br /> Extensão de nome de arquivo:. VHD ou. vhdx <br />Local padrão: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual discos rígidos|
+ |Disco rígido virtual automático |Arquivos de disco diferencial usados para pontos de verificação de máquina virtual. <br /> Extensão de nome de arquivo:. avhdx <br /> Local padrão: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual discos rígidos|
+ |Ponto de verificação|Pontos de verificação são armazenados em vários arquivos de ponto de verificação. Cada ponto de verificação cria um arquivo de configuração e o arquivo de estado de runtime. <br /> Extensões de nome de arquivo:. VMRS e. vmcx <br />Local padrão: C:\ProgramData\Microsoft\Windows\Snapshots|
 
 ## <a name="what-happens-if-i-dont-upgrade-the-virtual-machine-configuration-version"></a>O que acontecerá se eu não atualizar a versão de configuração da máquina virtual?
 
