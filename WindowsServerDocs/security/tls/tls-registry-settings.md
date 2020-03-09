@@ -13,15 +13,15 @@ ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
 ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403403"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371385"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configurações de registro de TLS (segurança de camada de transporte)
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows 10
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10
 
 Este tópico de referência para o profissional de ti contém informações de configuração de registro com suporte para a implementação do Windows do protocolo TLS e o protocolo protocolo SSL (SSL) por meio do suporte de segurança Schannel Provedor (SSP). As subchaves do registro e as entradas abordadas neste tópico ajudam você a administrar e solucionar problemas do SSP do Schannel, especificamente os protocolos TLS e SSL. 
 
@@ -51,7 +51,7 @@ Por padrão, o provedor Schannel usará os seguintes quatro métodos de mapeamen
 3. Mapeamento um a um (também conhecido como mapeamento de assunto/emissor)
 4. Mapeamento muitos-para-um
 
-Versões aplicáveis: Conforme indicado na lista **Aplica-se a** no começo deste tópico.
+Versões aplicáveis: conforme indicado na lista **aplica-se a** no início deste tópico.
 
 Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -90,11 +90,11 @@ Por padrão, o suporte a OCSP está habilitado para sites do IIS que têm uma as
 - Exigir Indicação de Nome de Servidor
 - Usar repositório de certificados centralizados
 
-Nesse caso, a resposta de saudação do servidor durante o handshake TLS não incluirá um status grampeado do OCSP por padrão. Esse comportamento melhora o desempenho: A implementação de grampeamento do Windows OCSP é dimensionada para centenas de certificados de servidor. Como o SNI e o CCS permitem que o IIS seja dimensionado para milhares de sites que potencialmente têm milhares de certificados de servidor, a definição desse comportamento como habilitado por padrão pode causar problemas de desempenho.
+Nesse caso, a resposta de saudação do servidor durante o handshake TLS não incluirá um status grampeado do OCSP por padrão. Esse comportamento melhora o desempenho: a implementação de grampeamento do Windows OCSP é dimensionada para centenas de certificados de servidor. Como o SNI e o CCS permitem que o IIS seja dimensionado para milhares de sites que potencialmente têm milhares de certificados de servidor, a definição desse comportamento como habilitado por padrão pode causar problemas de desempenho.
 
-Versões aplicáveis: Todas as versões que começam com o Windows Server 2012 e o Windows 8. 
+Versões aplicáveis: todas as versões que começam com o Windows Server 2012 e o Windows 8. 
 
-Caminho do registro: [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+Caminho do registro: [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
 
 Adicione a seguinte chave:
 
@@ -111,11 +111,11 @@ Para desabilitar, defina o valor DWORD como 0:
 
 Esta entrada controla a conformidade do padrão FIPS. O padrão é 0.
 
-Versões aplicáveis: Todas as versões que começam com o Windows Server 2012 e o Windows 8. 
+Versões aplicáveis: todas as versões que começam com o Windows Server 2012 e o Windows 8. 
 
 Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\LSA
 
-Conjuntos de codificação FIPS do Windows Server: Consulte [pacotes de criptografia e protocolos com suporte no SSP do Schannel](https://technet.microsoft.com/library/dn786419.aspx).
+Pacotes de codificação FIPS do Windows Server: consulte [pacotes de criptografia e protocolos com suporte no SSP do Schannel](https://technet.microsoft.com/library/dn786419.aspx).
 
 ## <a name="hashes"></a>Hashes
 
@@ -127,7 +127,7 @@ Essa entrada controla o tamanho do cache emissor e é usada com o mapeamento do 
 
 Para evitar isso, o servidor tem um cache negativo, portanto, se um nome de emissor não é mapeado para uma conta, ele é adicionado ao cache e o SSP Schannel não tentará mapear o nome do emissor novamente, até que a entrada de cache expira. Essa entrada de Registro especifica o tamanho do cache. Essa entrada não existe no Registro por padrão. O valor padrão é 100. 
 
-Versões aplicáveis: Todas as versões que começam com o Windows Server 2008 e o Windows Vista.
+Versões aplicáveis: todas as versões que começam com o Windows Server 2008 e o Windows Vista.
 
 Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -137,7 +137,7 @@ Essa entrada controla a duração do intervalo de tempo limite do cache em milis
 
 Para evitar isso, o servidor tem um cache negativo, portanto, se um nome de emissor não é mapeado para uma conta, ele é adicionado ao cache e o SSP Schannel não tentará mapear o nome do emissor novamente, até que a entrada de cache expira. Esse cache é mantido por motivos de desempenho, para que o sistema não continue tentando mapear os mesmos emissores. Essa entrada não existe no Registro por padrão. O valor padrão é 10 minutos.
 
-Versões aplicáveis: Todas as versões que começam com o Windows Server 2008 e o Windows Vista.
+Versões aplicáveis: todas as versões que começam com o Windows Server 2008 e o Windows Vista.
 
 Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -175,7 +175,7 @@ Para especificar o comprimento de bit de chave Diffie-Helman para o padrão do s
 
 Essa entrada controla o número máximo de elementos de cache. A configuração de MaximumCacheSize como 0 desabilita o cache de sessão do servidor e impede a reconexão. O aumento de MaximumCacheSize acima dos valores padrão faz com que o Lsass.exe consuma memória adicional. Cada elemento de cache de sessão geralmente requer de 2 a 4 KB de memória. Essa entrada não existe no Registro por padrão. O valor padrão é 20.000 elementos. 
 
-Versões aplicáveis: Todas as versões que começam com o Windows Server 2008 e o Windows Vista.
+Versões aplicáveis: todas as versões que começam com o Windows Server 2008 e o Windows Vista.
 
 Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -211,12 +211,12 @@ Essa entrada não existe no Registro por padrão.
 
 Comportamento padrão de enviar lista de emissores confiáveis
 
-| Versão do Windows | Time |
+| Versão do Windows | Hora |
 |-----------------|------|
 | Windows Server 2012 e Windows 8 e posterior | FALSE |
 | Windows Server 2008 R2 e Windows 7 e anterior | TRUE |
 
-Versões aplicáveis: Todas as versões que começam com o Windows Server 2008 e o Windows Vista.
+Versões aplicáveis: todas as versões que começam com o Windows Server 2008 e o Windows Vista.
 
 Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -224,7 +224,7 @@ Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCH
 
 Essa entrada controla a quantidade de tempo que o sistema operacional leva em milissegundos para finalizar entradas de cache do lado do servidor. Um valor de 0 desabilita o cache de sessão do lado do servidor e impede a reconexão. O aumento de ServerCacheTime acima dos valores padrão faz com que o Lsass.exe consuma memória adicional. Cada elemento de cache de sessão geralmente requer de 2 a 4 KB de memória. Essa entrada não existe no Registro por padrão. 
 
-Versões aplicáveis: Todas as versões que começam com o Windows Server 2008 e o Windows Vista.
+Versões aplicáveis: todas as versões que começam com o Windows Server 2008 e o Windows Vista.
 
 Caminho do registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 

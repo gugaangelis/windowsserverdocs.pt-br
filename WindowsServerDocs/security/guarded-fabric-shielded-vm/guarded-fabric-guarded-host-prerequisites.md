@@ -8,11 +8,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 8a9273eef906130b11b98148cf1e84f7e18812b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402377"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371435"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>Pré-requisitos para hosts protegidos
 
@@ -24,7 +24,7 @@ Examine os pré-requisitos do host para o modo de atestado escolhido e clique na
 
 Os hosts protegidos que usam o modo TPM devem atender aos seguintes pré-requisitos:
 
--   **Hardware**: Um host é necessário para a implantação inicial. Para testar a migração dinâmica do Hyper-V para VMs blindadas, você deve ter pelo menos dois hosts.
+-   **Hardware**: um host é necessário para a implantação inicial. Para testar a migração dinâmica do Hyper-V para VMs blindadas, você deve ter pelo menos dois hosts.
 
     Os hosts devem ter:
     
@@ -39,7 +39,7 @@ Os hosts protegidos que usam o modo TPM devem atender aos seguintes pré-requisi
     > [!IMPORTANT]
     > Certifique-se de instalar a [atualização cumulativa mais recente](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).  
 
--   **Função e recursos**: Função do Hyper-V e o recurso de suporte do Hyper-V do guardião de host. O recurso de suporte do Hyper-V do guardião de host está disponível somente nas edições do datacenter do Windows Server. 
+-   **Função e recursos**: função Hyper-v e o recurso de suporte do Hyper-v do guardião de host. O recurso de suporte do Hyper-V do guardião de host está disponível somente nas edições do datacenter do Windows Server. 
 
 > [!WARNING]
 > O recurso de suporte do Hyper-V do guardião de host permite a proteção baseada em virtualização de integridade de código que pode ser incompatível com alguns dispositivos. É altamente recomendável testar essa configuração em seu laboratório antes de habilitar esse recurso. Deixar de fazer isso pode resultar em falhas inesperadas, inclusive perda de dados ou um erro de tela azul (também chamado de erro de parada). Para obter mais informações, consulte [hardware compatível com a proteção baseada em virtualização do Windows Server de integridade de código](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md).
@@ -52,9 +52,9 @@ Os hosts protegidos que usam o modo TPM devem atender aos seguintes pré-requisi
 
 Os hosts protegidos que usam o atestado de chave de host devem atender aos seguintes pré-requisitos:
 
-- **Hardware**: Qualquer servidor capaz de executar o Hyper-V a partir do Windows Server 2019
+- **Hardware**: qualquer servidor capaz de executar o Hyper-V começando com o Windows Server 2019
 - **Sistema operacional**: Windows Server 2019 Datacenter Edition
-- **Função e recursos**: Função do Hyper-V e o recurso de suporte do Hyper-V do guardião de host 
+- **Função e recursos**: função Hyper-v e o recurso de suporte do Hyper-v do guardião de host 
 
 O host pode ser Unido a um domínio ou a um grupo de trabalho. 
 
@@ -71,14 +71,14 @@ Para o atestado de chave de host, o HGS deve estar executando o Windows Server 2
 
 Os hosts do Hyper-V devem atender aos seguintes pré-requisitos para o modo AD:
 
--   **Hardware**: Qualquer servidor capaz de executar o Hyper-V a partir do Windows Server 2016. Um host é necessário para a implantação inicial. Para testar a migração dinâmica do Hyper-V para VMs blindadas, você precisa de pelo menos dois hosts.
+-   **Hardware**: qualquer servidor capaz de executar o Hyper-V começando com o Windows Server 2016. Um host é necessário para a implantação inicial. Para testar a migração dinâmica do Hyper-V para VMs blindadas, você precisa de pelo menos dois hosts.
 
 -   **Sistema operacional**: Windows Server 2016 Datacenter Edition
 
     > [!IMPORTANT]
     > Instale a [atualização cumulativa mais recente](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
--   **Função e recursos**: A função Hyper-V e o recurso de suporte Hyper-V do guardião de host, que está disponível somente no Windows Server 2016 Datacenter Edition. 
+-   **Função e recursos**: função Hyper-v e o recurso de suporte do Hyper-v do guardião de host, que está disponível somente no Windows Server 2016 Datacenter Edition. 
 
 > [!WARNING]
 > O recurso de suporte do Hyper-V do guardião de host permite a proteção baseada em virtualização de integridade de código que pode ser incompatível com alguns dispositivos. É altamente recomendável testar essa configuração em seu laboratório antes de habilitar esse recurso. Deixar de fazer isso pode resultar em falhas inesperadas, inclusive perda de dados ou um erro de tela azul (também chamado de erro de parada). Para obter mais informações, consulte [hardware compatível com a proteção baseada em virtualização do Windows Server 2016 de integridade de código](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md).
