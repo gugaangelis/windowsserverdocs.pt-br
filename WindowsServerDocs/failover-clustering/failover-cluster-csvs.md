@@ -9,11 +9,11 @@ ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: da0f541c34c7f8687822bec365364fdd406fa3c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369740"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370701"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volumes compartilhados de cluster em um cluster de failover
 
@@ -29,12 +29,12 @@ O CSV fornece um sistema de arquivos clusterizado de uso geral, que é colocado 
 > [!NOTE]
 > CSVs não dão suporte à carga de trabalho clusterizada Microsoft SQL Server no SQL Server 2012 e versões anteriores do SQL Server.
 
-No Windows Server 2012, a funcionalidade CSV foi significativamente aprimorada. Por exemplo, foram removidas as dependências nos Serviços de Domínio Active Directory. Foi adicionado suporte às melhorias funcionais do **chkdsk**para interoperabilidade com aplicativos antivírus e de backup, além de integração com recursos de armazenamento gerais, como volumes criptografados com o BitLocker e Espaços de Armazenamento. Para obter uma visão geral da funcionalidade CSV introduzida no Windows Server 2012, consulte [novidades no clustering de failover no Windows server 2012 \[\]Redirecionado ](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
+No Windows Server 2012, a funcionalidade CSV foi significativamente aprimorada. Por exemplo, foram removidas as dependências nos Serviços de Domínio Active Directory. Foi adicionado suporte às melhorias funcionais do **chkdsk** para interoperabilidade com aplicativos antivírus e de backup, além de integração com recursos de armazenamento gerais, como volumes criptografados com o BitLocker e Espaços de Armazenamento. Para obter uma visão geral da funcionalidade CSV introduzida no Windows Server 2012, consulte [novidades no clustering de failover no Windows server 2012 \[\]Redirecionado ](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
 O Windows Server 2012 R2 apresenta funcionalidade adicional, como a propriedade de CSV distribuída, maior resiliência por meio da disponibilidade do serviço de servidor, maior flexibilidade na quantidade de memória física que você pode alocar para o cache CSV, melhor diagnosibility e a interoperabilidade aprimorada que inclui suporte para ReFS e eliminação de duplicação. Para obter mais informações, consulte [novidades no clustering de failover](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
 > [!NOTE]
-> Para obter informações sobre como usar a eliminação de duplicação de dados em CSV para cenários de VDI (Virtual Desktop Infrastructure), consulte as postagens de blog [implantando a eliminação de duplicação de dados para o armazenamento de VDI no Windows server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) e [estendendo a eliminação de duplicação de dados para novas cargas de trabalho no Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx).
+> Para obter informações sobre o uso de eliminação de duplicação de dados em CSV para cenários de Virtual Desktop Infrastructure (VDI), consulte as postagens de blog [Implantação de eliminação de duplicação de dados para o armazenamento VDI no Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) e [Estendendo a duplicação de dados para novas cargas de trabalho no Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx).
 
 ## <a name="review-requirements-and-considerations-for-using-csv-in-a-failover-cluster"></a>Revisar requisitos e considerações para usar o CSV em um cluster de failover
 
@@ -61,11 +61,11 @@ Considere o seguinte ao configurar redes que deem suporte o CSV.
 - **QoS (Qualidade de Serviço) baseado em políticas**. Recomendamos configurar uma política de prioridade de QoS e uma política de largura de banda mínima para o tráfego de rede em cada nó ao usar o CSV. Para obter mais informações, consulte [Quality of Service (QoS)](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>).
 - **Rede de armazenamento**. Para recomendações de rede de armazenamento, analise as diretrizes fornecidas pelo seu fornecedor de armazenamento. Para obter considerações adicionais sobre o armazenamento para CSV, consulte [requisitos de configuração de armazenamento e disco](#storage-and-disk-configuration-requirements) mais adiante neste tópico.
 
-Para obter uma visão geral de hardware, rede e requisitos de armazenamento para clusters de failover, consulte [Failover Clustering Hardware Requirements and Storage Options](clustering-requirements.md).
+Para uma visão geral dos requisitos de hardware, rede e armazenamento para os clusters de failover, confira [Requisitos de hardware de clustering de failover e opções de armazenamento](clustering-requirements.md).
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>Sobre a sincronização de E/S e redirecionamento de E/S na comunicação do CSV
 
-- **Sincronização de e/s**: o CSV permite que vários nós tenham acesso de leitura/gravação simultâneo ao mesmo armazenamento compartilhado. Quando um nó realizar uma entrada/saída (E/S) de disco em um volume CSV, o nó se comunicará diretamente com o armazenamento, por meio se uma SAN (rede de área de armazenamento), por exemplo. Contudo, a todo momento, um único nó (chamado nó coordenador) é “dono” do recurso Disco Físico associado ao LUN. O nó coordenador de um volume CSV é exibido no Gerenciador de Cluster de Failover como **Nó do Proprietário** , em **Discos**. Ele também aparece na saída do cmdlet [Get-ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) do Windows PowerShell.
+- **Sincronização de e/s**: o CSV permite que vários nós tenham acesso de leitura/gravação simultâneo ao mesmo armazenamento compartilhado. Quando um nó realizar uma entrada/saída (E/S) de disco em um volume CSV, o nó se comunicará diretamente com o armazenamento, por meio se uma SAN (rede de área de armazenamento), por exemplo. Contudo, a todo momento, um único nó (chamado nó coordenador) é “dono” do recurso Disco Físico associado ao LUN. O nó coordenador de um volume CSV é exibido no Gerenciador de Cluster de Failover como **Nó do Proprietário**, em **Discos**. Ele também aparece na saída do cmdlet [Get-ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) do Windows PowerShell.
 
   >[!NOTE]
   >No Windows Server 2012 R2, a propriedade CSV é distribuída uniformemente entre os nós de cluster de failover com base no número de volumes CSV que cada nó possui. Além disso, a propriedade é rebalanceada automaticamente em caso de condições, como failover de CSV, um nó reingressar no cluster, adição de um novo nó ao cluster, reinicialização de um nó de cluster ou inicialização do cluster de failover após um desligamento.
@@ -79,7 +79,7 @@ O servidor usa um dos seguintes modos de redirecionamento de E/S, dependendo da 
 - **Redirecionamento do sistema de arquivos** O redirecionamento ocorre por volume. Por exemplo, quando os instantâneos de CSV são obtidos por um aplicativo de backup com a colocação manual de um volume CSV no modo de E/S redirecionada.
 - **Redirecionamento de bloco** O redirecionamento ocorre no nível do bloco de arquivos. Por exemplo, quando a conectividade de um volume com o armazenamento é perdida. O redirecionamento de bloco é significativamente mais rápido do que o redirecionamento do sistema de arquivos.
 
-No Windows Server 2012 R2, você pode exibir o estado de um volume CSV em uma base por nó. Você pode, por exemplo, ver se a E/S é direta ou redirecionada, ou se o volume CSV está indisponível. Se um volume CSV estiver no modo de E/S redirecionada, você também poderá exibir o motivo. Use o cmdlet do Windows PowerShell **Get-ClusterSharedVolumeState** para exibir essas informações.
+No Windows Server 2012 R2, você pode exibir o estado de um volume CSV em uma base por nó. Você pode, por exemplo, ver se a E/S é direta ou redirecionada, ou se o volume CSV está indisponível. Se um volume CSV estiver no modo de E/S redirecionada, você também poderá exibir o motivo. Use o cmdlet **Get-ClusterSharedVolumeState** do Windows PowerShell para ver essas informações.
 
 > [!NOTE]
 > * No Windows Server 2012, devido a melhorias no design de CSV, o CSV executa mais operações no modo de e/s direto do que ocorreu no Windows Server 2008 R2.
@@ -110,7 +110,7 @@ Para ver os requisitos de armazenamento do CSV, analise as diretrizes fornecidas
 Para usar o CSV, seus nós precisam cumprir os seguintes requisitos:
 
 - **Letra da unidade de disco do sistema**. Em todos os nós, a letra da unidade do disco do sistema deve ser a mesma.
-- **Protocolo de autenticação**. O protocolo NTLM deve estar habilitado em todos os nós. Isso é habilitado por padrão.
+- **Protocolo de autenticação**. O protocolo NTLM deve estar habilitado em todos os nós. Isso está habilitado por padrão.
 
 ## <a name="plan-to-use-csv-in-a-failover-cluster"></a>Planejar o uso do CSV em um cluster de failover
 
@@ -163,7 +163,7 @@ O recurso CSV é habilitado por padrão no Clustering de Failover. Para adiciona
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-available-storage"></a>Comandos equivalentes do Windows PowerShell (adicionar um disco ao armazenamento disponível)
 
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.
 
 O exemplo a seguir identifica os discos já adicionados ao cluster e adiciona-os ao grupo **Armazenamento Disponível**.
 
@@ -183,7 +183,7 @@ Get-ClusterAvailableDisk | Add-ClusterDisk
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-csv"></a>Comandos equivalentes do Windows PowerShell (adicionar um disco ao CSV)
 
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.
 
 O exemplo a seguir adiciona o *disco de cluster 1*, no **Armazenamento Disponível**, ao CSV no cluster local.
 
