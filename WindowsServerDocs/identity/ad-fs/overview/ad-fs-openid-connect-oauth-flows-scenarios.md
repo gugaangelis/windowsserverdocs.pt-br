@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 875edcf191596d181ec0d70a83f9f3c20f5d5f4a
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385596"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261935"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>Fluxos e cenários de aplicativo do AD FS OpenID Connect/OAuth
 Aplica-se ao AD FS 2016 e posterior
@@ -292,7 +292,7 @@ As etapas a seguir constituem o fluxo OBO e são explicadas com a ajuda do diagr
 
   1. O aplicativo cliente faz uma solicitação para a API A com o token A.  
   Observação: Ao configurar o fluxo OBO no AD FS, `user_impersonation` deve estar selecionado e o cliente deve solicitar o escopo `user_impersonation` na solicitação. 
-  2. A API A é autenticada no ponto de extremidade de emissão de token do AD FS e solicita um token para acessar a API B. Observação: Ao configurar esse fluxo no AD FS, verifique se a API A também está registrada como um aplicativo para servidores com clientID com o mesmo valor que a ID de recurso na API A. Para obter mais detalhes, confira a amostra de On-Behalf-Of aqui Adicionar link.  
+  2. A API A é autenticada no ponto de extremidade de emissão de token do AD FS e solicita um token para acessar a API B. Observação: Ao configurar esse fluxo no AD FS, verifique se a API A também está registrada como um aplicativo para servidores com clientID com o mesmo valor que a ID de recurso na API A.
   3. O ponto de extremidade de emissão de token AD FS valida as credenciais da API A com o token A e emite o token de acesso para a API B (token B). 
   4. O token B é definido no cabeçalho de autorização da solicitação para a API B. 
   5. Os dados do recurso protegido são retornados pela API B. 
