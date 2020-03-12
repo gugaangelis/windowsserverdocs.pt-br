@@ -7,18 +7,21 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 05/07/2019
-ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 03/10/2020
+ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
+ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366087"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089355"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Estendendo volumes em Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Este tópico fornece instruções para redimensionar volumes em um cluster [espaços de armazenamento diretos](storage-spaces-direct-overview.md) usando o centro de administração do Windows.
+
+> [!WARNING]
+> **Sem suporte: redimensionando o armazenamento subjacente usado pelo Espaços de Armazenamento Diretos.** Se você estiver executando Espaços de Armazenamento Diretos em um ambiente de armazenamento virtualizado, incluindo no Azure, o redimensionamento ou a alteração das características dos dispositivos de armazenamento usados pelas máquinas virtuais não terá suporte e fará com que os dados se tornem inacessíveis. Em vez disso, siga as instruções na seção [adicionar servidores ou unidades](add-nodes.md) para adicionar capacidade adicional antes de estender volumes.
 
 Assista a um vídeo rápido sobre como redimensionar um volume.
 
