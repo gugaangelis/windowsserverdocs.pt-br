@@ -9,11 +9,11 @@ ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
 ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365842"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322328"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>O que há de novo no armazenamento no Windows Server
 
@@ -63,7 +63,7 @@ Para ser justo, o centro de administração do Windows é um download separado q
 
 ### <a name="storage-migration-service"></a>Serviço de Migração do Armazenamento
 
-O Serviço de Migração de Armazenamento é uma nova tecnologia que facilita a migração dos servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário dos dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que os aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte o [Serviço de Migração do Armazenamento](storage-migration-service/overview.md).
+O Serviço de Migração do Armazenamento é uma nova tecnologia que facilita migrar servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte o [Serviço de Migração do Armazenamento](storage-migration-service/overview.md).
 
 ### <a id="storage-spaces-direct"></a>Espaços de Armazenamento Diretos (somente Windows Server 2019)
 
@@ -143,14 +143,14 @@ A réplica de armazenamento também contém os seguintes aprimoramentos:
 
 ### <a name="smb"></a>SMB
 
-- **SMB1 e remoção de autenticação de convidado**: O Windows Server não instala mais o cliente e o servidor do SMB1 por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, confira [o SMBv1 não é instalado por padrão no Windows 10 versão 1709 e no Windows Server versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **Remoção de autenticação de convidado e SMB1**: o Windows Server não instala mais o cliente e o servidor do SMB1 por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, consulte [o SMBv1 não é instalado por padrão no Windows 10, versão 1709, e no Windows Server, versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidade e segurança de SMB2/SMB3**: foram adicionadas mais opções de compatibilidade e segurança do aplicativo, incluindo a capacidade de desabilitar os bloqueios em SMB2+ para aplicativos herdados, bem como exigir assinatura ou criptografia de um cliente para cada conexão. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
+- **Segurança e compatibilidade de SMB2/SMB3**: foram adicionadas mais opções de compatibilidade e segurança de aplicativo, incluindo a capacidade de desabilitar os bloqueios em SMB2+ para aplicativos herdados, bem como exigir assinatura ou criptografia com base em conexão de um cliente. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
 
 ### <a name="data-deduplication"></a>Eliminação de Duplicação de Dados
 
-- **A eliminação de duplicação de dados agora dá suporte a ReFS**: você não precisa mais escolher entre as vantagens de um sistema de arquivos moderno com o ReFS e a eliminação de duplicação de dados: agora, você pode habilitar a eliminação de duplicação de dados, na qual você pode habilitar o ReFS. Aumente a eficiência do armazenamento em mais de 95% com o ReFS.
-- **API de DataPort para entrada/saída otimizada para volumes com eliminação de duplicação**: os desenvolvedores agora podem aproveitar o conhecimento que a eliminação de duplicação de dados tem sobre como armazenar dados de modo eficaz para mover os dados entre volumes, servidores e clusters de forma eficiente.
+- **Eliminação da duplicação de dados agora oferece suporte a ReFS**: você não deve escolher entre as vantagens de um sistema de arquivos moderno com ReFS e a eliminação da duplicação de dados: agora, você pode habilitar a eliminação da duplicação de dados, na qual você pode habilitar ReFS. Aumente a eficiência do armazenamento em mais de 95% com ReFS.
+- **API de DataPort para entrada/saída otimizada para volumes com eliminação de duplicação**: os desenvolvedores agora podem aproveitar o conhecimento que a Eliminação da duplicação de dados tem sobre como armazenar dados de modo eficaz para mover os dados entre volumes, servidores e clusters de forma eficiente.
 
 ### <a name="file-server-resource-manager"></a>Gerenciador de Recursos de Servidor de Arquivos
 
@@ -173,7 +173,7 @@ Para obter mais informações, consulte a [Visão geral do canal semestral do Wi
 A proteção de recuperação de desastre adicionada pela réplica de armazenamento agora está expandida para incluir:
 
 - **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
-- **Suporte do centro de administração do Windows**: O suporte para o gerenciamento gráfico da replicação agora está disponível no centro de administração do Windows por meio da ferramenta de Gerenciador do Servidor. Isso inclui a replicação de servidor para servidor, cluster para cluster, bem como a replicação de cluster de ampliação.
+- **Suporte do centro de administração do Windows**: o suporte ao gerenciamento gráfico da replicação agora está disponível no centro de administração do Windows por meio da ferramenta de Gerenciador do servidor. Isso inclui a replicação de servidor para servidor, cluster para cluster, bem como a replicação de cluster de ampliação.
 
 A réplica de armazenamento também contém os seguintes aprimoramentos:
 
@@ -182,14 +182,14 @@ A réplica de armazenamento também contém os seguintes aprimoramentos:
 
 ### <a name="smb"></a>SMB
 
-- **SMB1 e remoção de autenticação de convidado**: o Windows Server versão 1709 não instala mais o cliente SMB1 e o servidor por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, confira [o SMBv1 não é instalado por padrão no Windows 10 versão 1709 e no Windows Server versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **SMB1 e remoção de autenticação de convidado**: o Windows Server, versão 1709, não instala mais o cliente SMB1 e o servidor por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, consulte [o SMBv1 não é instalado por padrão no Windows 10, versão 1709, e no Windows Server, versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidade e segurança de SMB2/SMB3**: foram adicionadas mais opções de compatibilidade e segurança do aplicativo, incluindo a capacidade de desabilitar os bloqueios em SMB2+ para aplicativos herdados, bem como exigir assinatura ou criptografia de um cliente para cada conexão. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
+- **Segurança e compatibilidade de SMB2/SMB3**: foram adicionadas mais opções de compatibilidade e segurança de aplicativo, incluindo a capacidade de desabilitar os bloqueios em SMB2+ para aplicativos herdados, bem como exigir assinatura ou criptografia com base em conexão de um cliente. Para obter mais informações, consulte a ajuda do módulo SMBShare PowerShell.
 
 ### <a name="data-deduplication"></a>Eliminação de Duplicação de Dados
 
-- **A eliminação de duplicação de dados agora dá suporte a ReFS**: você não precisa mais escolher entre as vantagens de um sistema de arquivos moderno com o ReFS e a eliminação de duplicação de dados: agora, você pode habilitar a eliminação de duplicação de dados, na qual você pode habilitar o ReFS. Aumente a eficiência do armazenamento em mais de 95% com o ReFS.
-- **API de DataPort para entrada/saída otimizada para volumes com eliminação de duplicação**: os desenvolvedores agora podem aproveitar o conhecimento que a eliminação de duplicação de dados tem sobre como armazenar dados de modo eficaz para mover os dados entre volumes, servidores e clusters de forma eficiente.
+- **Eliminação da duplicação de dados agora oferece suporte a ReFS**: você não deve escolher entre as vantagens de um sistema de arquivos moderno com ReFS e a eliminação da duplicação de dados: agora, você pode habilitar a eliminação da duplicação de dados, na qual você pode habilitar ReFS. Aumente a eficiência do armazenamento em mais de 95% com ReFS.
+- **API de DataPort para entrada/saída otimizada para volumes com eliminação de duplicação**: os desenvolvedores agora podem aproveitar o conhecimento que a Eliminação da duplicação de dados tem sobre como armazenar dados de modo eficaz para mover os dados entre volumes, servidores e clusters de forma eficiente.
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Novidades no armazenamento no Windows Server 2016
 
@@ -269,7 +269,7 @@ Se a assinatura SMB e a autenticação mútua não estiverem disponíveis, um co
 > [!NOTE]  
 > Os valores do Registro para essas configurações não estão presentes por padrão, mas as regras de proteção ainda se aplicam até serem substituídas pela Política de Grupo ou outros valores do Registro.  
 
-Para obter mais informações sobre esses aprimoramentos de segurança – também conhecidos como proteção UNC, consulte o artigo [3000483](https://support.microsoft.com/kb/3000483) da base [de dados de conhecimento Microsoft e MS15-011 & MS15-014: Protegendo Política de Grupo](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy).  
+Para saber mais sobre esses aprimoramentos de segurança (também conhecidos como Proteção UNC), consulte o artigo da Base de Dados de Conhecimento [3000483](https://support.microsoft.com/kb/3000483) e [MS15-011 & MS15-014: Política de Grupo de Proteção](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy).  
 
 ### <a name="work-folders"></a>Pastas de trabalho
 Notificação de alteração aprimorada quando o servidor de pastas de trabalho está executando o Windows Server 2016 e o cliente de pastas de trabalho é o Windows 10.

@@ -8,15 +8,15 @@ ms.author: harowl
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371678"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323528"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center e soluções de gerenciamento relacionadas da Microsoft
 
->Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Windows Admin Center Preview
 
 O [Windows Admin Center](windows-admin-center.md) é a evolução das tradicionais ferramentas de gerenciamento de servidor prontas para uso para situações nas quais você pode ter usado a Área de Trabalho Remota (RDP) para se conectar a um servidor para solução de problemas ou configuração. Ele não deve substituir outras soluções de gerenciamento existentes da Microsoft. Em vez disso, ele complementa essas soluções, conforme descrito abaixo.
 
@@ -36,7 +36,7 @@ O [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) é uma plataf
 
 O [System Center](https://www.microsoft.com/cloud-platform/system-center) é uma solução de gerenciamento de data center no local para implantação, configuração, gerenciamento, monitoramento de seu data center inteiro. O System Center permite visualizar o status de todos os sistemas em seu ambiente, enquanto o Windows Admin Center permite fazer uma busca detalhada em um servidor específico para gerenciar ou solucionar problemas com as ferramentas mais granulares.
 
-| Windows Admin Center                 | System Center                      |
+| Windows Admin Center                 | System Center                      |
 |--------------------------------------|------------------------------------|
 | **Ferramentas e plataforma “prontas” reimaginadas** | **Monitoramento e gerenciamento do data center** |
 | Incluído com a licença do Windows Server – **sem nenhum custo adicional**, assim como o MMC e outras ferramentas prontas tradicionais | **Abrangente** pacote de soluções de valor adicional em seu ambiente e plataformas |
@@ -45,6 +45,6 @@ O [System Center](https://www.microsoft.com/cloud-platform/system-center) é uma
 |Gerenciamento otimizado **individual** de clusters **HCI** de 2 a 4 nós, integrando Hyper-V, Espaços de Armazenamento Diretos e SDN|Implantar e gerenciar o Hyper-V, clusters do Windows Server em **escala do data center** de **bare-metal** com o SCVMM|
 |Somente **Monitoramento em HCI**; serviço de integridade do cluster armazena o histórico. Plataforma extensível para **extensões de ferramentas de administração** próprias e de terceiros|Plataforma de monitoramento escalonável **Extensível** &  **no SCOM**, com alertas, notificações, monitoramento de carga de trabalho de terceiros; SQL para o histórico|
 |Ponte mais fácil para o **híbrido**; integrar e usar uma variedade de serviços do Azure para proteção de dados, replicação, atualizações e muito mais|Proteção, replicação, atualizações **internas** de dados (VMM/DPM/SCCM). Integração híbrida com Análise de Log e Mapa do Serviço|
-|**Ilumina os recursos de plataforma** do Windows Server: serviço de migração de armazenamento, réplica de armazenamento, insights do sistema, etc.|**Plataformas adicionais**: automação no Orchestrator/sma. Integrações com o SCSM & outras ferramentas de gerenciamento de serviços|
+|**Amplia recursos da plataforma** do Windows Server: Storage Migration Service, Storage Replica, System Insights etc.|**Outras plataformas**: Automação no Orchestrator/SMA. Integrações com SCSM e outras ferramentas de gerenciamento de serviço|
 
 #### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>Cada uma delas fornece o valor de destino de forma independente; **melhores juntos** com recursos complementares.

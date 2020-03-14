@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 284131028b308ee86389f25102d934390ba2f16d
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371863"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322078"
 ---
 # <a name="hardware-requirements-and-performance-recommendations"></a>Requisitos de hardware e recomendações de desempenho
 Este tópico descreve o hardware necessário para executar um sistema de serviços do MultiPoint e dar suporte a cenários de aplicativos de usuário. O cenário do usuário afeta diretamente os requisitos de CPU, RAM e largura de banda de rede.  

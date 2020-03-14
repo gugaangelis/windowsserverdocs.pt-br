@@ -13,11 +13,11 @@ ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
 ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371385"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322398"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configurações de registro de TLS (segurança de camada de transporte)
 
@@ -211,7 +211,7 @@ Essa entrada não existe no Registro por padrão.
 
 Comportamento padrão de enviar lista de emissores confiáveis
 
-| Versão do Windows | Hora |
+| Versão do Windows | Tempo |
 |-----------------|------|
 | Windows Server 2012 e Windows 8 e posterior | FALSE |
 | Windows Server 2008 R2 e Windows 7 e anterior | TRUE |
@@ -245,8 +245,8 @@ Tabela de subchaves SSL 2,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Remota | Controla o uso do SSL 2,0 no cliente SSL. |
-| Servidor | Controla o uso do SSL 2,0 no servidor SSL. |
+| Cliente | Controla o uso do SSL 2,0 no cliente SSL. |
+| Server | Controla o uso do SSL 2,0 no servidor SSL. |
 
 Para desabilitar o SSL 2,0 para cliente ou servidor, altere o valor de DWORD para 0. Se um aplicativo SSPI solicitar o uso do SSL 2,0, ele será negado. 
 
@@ -272,8 +272,8 @@ Tabela de subchaves SSL 3,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Remota | Controla o uso do SSL 3,0 no cliente SSL. |
-| Servidor | Controla o uso do SSL 3,0 no servidor SSL. |
+| Cliente | Controla o uso do SSL 3,0 no cliente SSL. |
+| Server | Controla o uso do SSL 3,0 no servidor SSL. |
 
 Para desabilitar o SSL 3,0 para cliente ou servidor, altere o valor de DWORD para 0.
 Se um aplicativo SSPI solicitar o uso do SSL 3,0, ele será negado. 
@@ -298,8 +298,8 @@ Tabela de subchaves TLS 1,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Remota | Controla o uso do TLS 1,0 no cliente TLS. |
-| Servidor | Controla o uso do TLS 1,0 no servidor TLS. |
+| Cliente | Controla o uso do TLS 1,0 no cliente TLS. |
+| Server | Controla o uso do TLS 1,0 no servidor TLS. |
 
 Para desabilitar o TLS 1,0 para cliente ou servidor, altere o valor de DWORD para 0.
 Se um aplicativo SSPI solicitar o uso do TLS 1,0, ele será negado. 
@@ -324,8 +324,8 @@ Tabela de subchaves TLS 1,1
 
 | Subchave | Descrição |
 |--------|-------------|
-| Remota | Controla o uso do TLS 1,1 no cliente TLS. |
-| Servidor | Controla o uso do TLS 1,1 no servidor TLS. |
+| Cliente | Controla o uso do TLS 1,1 no cliente TLS. |
+| Server | Controla o uso do TLS 1,1 no servidor TLS. |
 
 Para desabilitar o TLS 1,1 para cliente ou servidor, altere o valor de DWORD para 0.
 Se um aplicativo SSPI solicitar o uso do TLS 1,1, ele será negado. 
@@ -350,8 +350,8 @@ Tabela de subchaves TLS 1,2
 
 | Subchave | Descrição |
 |--------|-------------|
-| Remota | Controla o uso do TLS 1,2 no cliente TLS. |
-| Servidor | Controla o uso do TLS 1,2 no servidor TLS. |
+| Cliente | Controla o uso do TLS 1,2 no cliente TLS. |
+| Server | Controla o uso do TLS 1,2 no servidor TLS. |
 
 Para desabilitar o TLS 1,2 para cliente ou servidor, altere o valor de DWORD para 0.
 Se um aplicativo SSPI solicitar o uso do TLS 1,2, ele será negado. 
@@ -376,8 +376,8 @@ Tabela de subchaves do DTLS 1,0
 
 | Subchave | Descrição |
 |--------|-------------|
-| Remota | Controla o uso do DTLS 1,0 no cliente do DTLS. |
-| Servidor | Controla o uso do DTLS 1,0 no servidor DTLS. |
+| Cliente | Controla o uso do DTLS 1,0 no cliente do DTLS. |
+| Server | Controla o uso do DTLS 1,0 no servidor DTLS. |
 
 Para desabilitar o DTLS 1,0 para cliente ou servidor, altere o valor de DWORD para 0.
 Se um aplicativo SSPI solicitar o uso do DTLS 1,0, ele será negado. 
@@ -402,8 +402,8 @@ Tabela de subchaves do DTLS 1,2
 
 | Subchave | Descrição |
 |--------|-------------|
-| Remota | Controla o uso do DTLS 1,2 no cliente do DTLS. |
-| Servidor | Controla o uso do DTLS 1,2 no servidor DTLS. |
+| Cliente | Controla o uso do DTLS 1,2 no cliente do DTLS. |
+| Server | Controla o uso do DTLS 1,2 no servidor DTLS. |
 
 
 Para desabilitar o DTLS 1,2 para cliente ou servidor, altere o valor de DWORD para 0.

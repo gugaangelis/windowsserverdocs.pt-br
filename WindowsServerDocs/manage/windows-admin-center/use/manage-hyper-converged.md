@@ -9,11 +9,11 @@ ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949939"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322858"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 
@@ -153,7 +153,7 @@ Em geral, o termo "hiperconvergente" refere-se à execução do Hyper-V e Espaç
 
 O centro de administração do Windows para infraestrutura hiperconvergente depende das APIs de gerenciamento desenvolvidas desde que o Windows Server 2016 foi lançado. Essas APIs são adicionadas na [atualização cumulativa 2018-05 para o Windows Server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723), disponível a partir de 8 de maio de 2018.
 
-### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Quanto custa usar o Windows Admin Center?
+### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Quanto custa para usar o Windows Admin Center?
 
 O Windows Admin Center não tem custo adicional além do Windows.
 
@@ -169,7 +169,7 @@ Não.
 
 Embora o centro de administração do Windows ofereça uma integração poderosa e conveniente com o Microsoft Azure Cloud, a experiência básica de gerenciamento e monitoramento para a infraestrutura hiperconvergente é completamente local. Ele pode ser instalado e usado sem uma conexão com a Internet.
 
-## <a name="things-to-try"></a>Ações recomendadas
+## <a name="things-to-try"></a>Coisas para experimentar
 
 Se você estiver apenas começando, aqui estão alguns tutoriais rápidos para ajudá-lo a aprender como o centro de administração do Windows para a infraestrutura hiperconvergente é organizado e funciona. Faça um bom Judgement e tenha cuidado com ambientes de produção. Esses vídeos foram registrados com a versão 1804 do centro de administração do Windows e uma compilação do insider preview do Windows Server 2019.
 
@@ -278,7 +278,7 @@ Você também pode configurar a rede virtual ao criar uma máquina virtual.
 
 ![Monitorar a infraestrutura de SDN](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>Feedback
+## <a name="feedback"></a>Privacidade Jurídica
 
 Isso é tudo sobre seus comentários! O benefício mais importante das atualizações frequentes é ouvir o que está funcionando e o que precisa ser melhorado. Aqui estão algumas maneiras de nos informar o que você está pensando:
 
@@ -286,7 +286,7 @@ Isso é tudo sobre seus comentários! O benefício mais importante das atualiza�
 - [Participe do fórum do centro de administração do Windows na Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - Tweet para `@servermgmt`
 
-### <a name="see-also"></a>Veja também
+### <a name="see-also"></a>Consulte também
 
 - [Windows Admin Center](../overview.md)
 - [Espaços de Armazenamento Diretos](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

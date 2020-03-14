@@ -10,11 +10,11 @@ ms.author: wgries
 ms.date: 05/09/2017
 description: Como instalar a eliminação de duplicação de dados no Windows Server, determinar se uma carga de trabalho é forte candidata à eliminação de duplicação e habilitar a eliminação de duplicação em volumes.
 ms.openlocfilehash: 36c9894fd8916643340134698f36af3bd50c34d8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402316"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322418"
 ---
 # <a name="install-and-enable-data-deduplication"></a>Instalar e habilitar a Eliminação de Duplicação de Dados
 > Aplicável a: Windows Server (canal semestral), Windows Server 2016

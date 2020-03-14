@@ -14,11 +14,11 @@ ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
 ms.openlocfilehash: 7cd46cadf5ed5424e50556ee0c91a80804108113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404212"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323668"
 ---
 # <a name="remote-desktop-services-architecture"></a>Arquitetura de Serviços de Área de Trabalho Remota
 

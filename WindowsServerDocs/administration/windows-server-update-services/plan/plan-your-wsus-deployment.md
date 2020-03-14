@@ -11,11 +11,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
 ms.openlocfilehash: 37e3a7788ccd409f4002f5fe2d7ea087e89b3419
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369842"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323518"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planejar sua implantação do WSUS
 
@@ -35,7 +35,7 @@ A primeira etapa na implantação do WSUS (Windows Server Update Services) é to
 
 ## <a name="11-review-considerations-and-system-requirements"></a>1,1. Examinar as considerações iniciais e os requisitos do sistema
 
-### <a name="system-requirements"></a>Requisitos do sistema
+### <a name="system-requirements"></a>Requisitos do Sistema
 
 Para habilitar a função de servidor do WSUS, confirme se o servidor atende aos requisitos do sistema e se você tem as permissões necessárias para concluir a instalação seguindo estas diretrizes:
 
@@ -195,7 +195,7 @@ Você pode aproveitar o recurso Filial no Windows para otimizar a implantação 
 
 2.  Em filiais que têm conexões de baixa largura de banda com a matriz porém conexões de alta largura de banda com a Internet, o recurso Branch Office também pode ser usado. Nesse caso, convém configurar os servidores downstream do WSUS para obter informações sobre quais atualizações serão instaladas com o servidor do WSUS central, porém baixar as atualizações com o Microsoft Update.
 
-### <a name="network-load-balancing"></a>Balanceamento de Carga de Rede
+### <a name="network-load-balancing"></a>Network Load Balancing
 O NLB (Balanceamento de Carga de Rede) aumenta a confiabilidade e o desempenho da rede do WSUS. Você pode configurar vários servidores do WSUS que compartilham um único cluster de failover que executa o SQL Server, como o SQL Server 2008 R2 SP1. Nessa configuração, é necessário usar uma instalação completa do SQL Server, e não a instalação do Banco de Dados Interno do Windows fornecida pelo WSUS, e a função de banco de dados precisa estar instalada em todos os servidores front-end do WSUS. Você também pode fazer com que todos os servidores do WSUS usem um DFS (sistema de arquivos distribuídos) para armazenar seu conteúdo.
 
 **Instalação do WSUS para NLB:** em comparação com a instalação do WSUS 3.2 para NLB, não são mais necessários parâmetros e uma chamada de instalação especial para configurar o WSUS para NLB. Você precisa apenas configurar cada servidor do WSUS, mantendo as seguintes considerações em mente.
@@ -347,13 +347,13 @@ Como os computadores podem ser atribuídos a vários grupos, é possível que um
 ### <a name="conflict-resolution"></a>Resolução de conflitos
 O servidor aplica as seguintes regras para resolver conflitos e determinar a ação resultante nos clientes:
 
-1.  Priority
+1.  Prioridade
 
 2.  Instalar/Desinstalar
 
 3.  Data limite
 
-#### <a name="priority"></a>Priority
+#### <a name="priority"></a>Prioridade
 As ações associadas ao grupo de maior prioridade substituem as ações dos outros grupos. Quanto maior a profundidade de um grupo na hierarquia de grupos, maior é a sua prioridade. A prioridade é atribuída com base apenas na profundidade; todas as ramificações têm a mesma prioridade. Por exemplo, um grupo dois níveis abaixo da ramificação Desktops tem prioridade maior que o grupo um nível abaixo da ramificação Servidor.
 
 No exemplo de texto a seguir do painel de hierarquias do console do Update Services, para um servidor do WSUS nomeado WSUS-01, os grupos de computadores nomeados Computadores desktop e Servidor foram adicionados ao grupo padrão **Todos os computadores**. Os dois grupos, Computadores desktop e Servidor, estão no mesmo nível hierárquico.
@@ -409,7 +409,7 @@ Há algumas áreas que você deve planejar cuidadosamente antes de implantar o W
 
 -   Implantações de grandes atualizações
 
--   Serviço de Transferência Inteligente em Segundo Plano (BITS)
+-   BITS
 
 ### <a name="network-setup"></a>Configuração da rede
 Para otimizar o desempenho em redes do WSUS, avalie as seguintes sugestões:

@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407156"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322948"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabalhar com regras de políticas de restrição de software
 
@@ -180,7 +180,7 @@ As configurações de políticas na guia **Fornecedores Confiáveis** da políti
 
 ##### <a name="to-configure-the-trusted-publishers-policy-settings-for-a-domain"></a>Para definir as configurações da política de fornecedores confiáveis para um domínio
 
-1.  Abra o **Gerenciamento de política de grupo**.
+1.  Abra **Gerenciamento de Política de Grupo**.
 
 2.  Na árvore de console, clique duas vezes em **política de grupo objetos** na floresta e no domínio que contém o GPO (objeto de política de grupo) **padrão de diretiva de domínio** que você deseja editar.
 
@@ -206,7 +206,7 @@ As configurações de políticas na guia **Fornecedores Confiáveis** da políti
 
 ##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>Para permitir que somente administradores gerenciem certificados usados na assinatura de códigos de um domínio
 
-1.  Abra o **Gerenciamento de política de grupo**.
+1.  Abra **Gerenciamento de Política de Grupo**.
 
 2.  Na árvore de console, clique duas vezes em **política de grupo objetos** na floresta e no domínio que contém o GPO de **política de domínio padrão** que você deseja editar.
 

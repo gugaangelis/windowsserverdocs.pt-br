@@ -11,25 +11,25 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: d1a78d2006a45bb2af8f87a91d7bb888964ddbcb
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371628"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323498"
 ---
 # <a name="step-2-configure-wsus"></a>Etapa 2: Configurar o WSUS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Depois de instalar a função de servidor do WSUS no servidor, você precisará configurá-lo adequadamente. A lista de verificação a seguir resume as etapas envolvidas ao executar a configuração inicial do servidor do WSUS.
 
-|{1&gt;Tarefa&lt;1}|Descrição|
+|Tarefa|Descrição|
 |----|--------|
-|[2,1. configurar conexões de rede](#21-configure-network-connections)|Configure a rede de cluster usando o Assistente de Configuração de Rede.|
-|[2,2. configurar o WSUS usando o assistente de configuração do WSUS](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|Use o assistente de configuração do WSUS para executar a configuração básica do WSUS.|
-|[2,3. configurar grupos de computadores do WSUS](#23-configure-wsus-computer-groups)|Crie grupos de computadores no console de administração do WSUS para gerenciar atualizações na sua organização.|
-|[2,4. configurar atualizações do cliente](#24-configure-client-updates)|Especifique como e quando as atualizações automáticas são aplicadas aos computadores cliente.|
-|[2,5. proteger o WSUS com o protocolo protocolo SSL](#25-secure-wsus-with-the-secure-sockets-layer-protocol)|Configure o protocolo SSL para ajudar a proteger o WSUS (Windows Server Update Services).|
+|[2.1. Configurar as conexões de rede](#21-configure-network-connections)|Configure a rede de cluster usando o Assistente de Configuração de Rede.|
+|[2.2. Configurar o WSUS usando o Assistente de Configuração do WSUS](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|Use o assistente de configuração do WSUS para executar a configuração básica do WSUS.|
+|[2.3. Configurar grupos de computadores do WSUS](#23-configure-wsus-computer-groups)|Crie grupos de computadores no console de administração do WSUS para gerenciar atualizações na sua organização.|
+|[2.4. Configurar atualizações do cliente](#24-configure-client-updates)|Especifique como e quando as atualizações automáticas são aplicadas aos computadores cliente.|
+|[2.5. Proteger o WSUS com o protocolo SSL](#25-secure-wsus-with-the-secure-sockets-layer-protocol)|Configure o protocolo SSL para ajudar a proteger o WSUS (Windows Server Update Services).|
 
 ## <a name="21-configure-network-connections"></a>2.1. Configurar as conexões de rede
 Para começar o processo de configuração, verifique se sabe as respostas às seguintes perguntas:
@@ -99,7 +99,7 @@ Os servidores do WSUS upstream e downstream sincronizarão na porta configurada 
 O firewall no servidor do WSUS deve ser configurado para permitir tráfego de entrada nessas portas.
 
 ### <a name="213-connection-between-clients-windows-update-agent-and-wsus-servers"></a>2.1.3. Conexão entre clientes (Windows Update Agent) e servidores do WSUS
-As portas e interfaces de escuta são configuradas em sites do IIS para o WSUS e em quaisquer configurações de Política de Grupo usadas para configurar PCs cliente. As portas padrão são as mesmas especificadas na seção anterior **Conexão entre servidores do WSUS** e o firewall no servidor do WSUS também deve ser configurado para permitir o tráfego de entrada nessas portas.
+As portas e interfaces de escuta são configuradas em sites do IIS para o WSUS e em quaisquer configurações de Política de Grupo usadas para configurar PCs cliente. As portas padrão são as mesmas especificadas na seção anterior **Conexão entre servidores do WSUS**e o firewall no servidor do WSUS também deve ser configurado para permitir o tráfego de entrada nessas portas.
 
 ## <a name="configure-the-proxy-server"></a>Configurar o servidor proxy
 Se a rede corporativa usar servidores proxy, eles devem dar suporte aos protocolos HTTP e SSL e usar a autenticação básica ou a autenticação do Windows. Esses requisitos podem ser atendidos usando uma das seguintes configurações:
@@ -119,7 +119,7 @@ Para configurar dois servidores proxy, cada um dos quais lidará com um protocol
 
 2.  Instale a função de servidor do WSUS Durante o Assistente de Configuração do WSUS (discutido na próxima seção) não especifique um servidor proxy.
 
-3.  Abra um prompt de comando (Cmd.exe) como administrador. Para abrir um prompt de comando como administrador, acesse **Iniciar**. Em **Iniciar pesquisa**, digite **Prompt de comando**. Na parte superior do menu Iniciar, clique com o botão direito do mouse no **Prompt de comando** e, em seguida, clique em **Executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, insira as credenciais adequadas (se solicitado), confirme se a ação exibida é o que você deseja e, em seguida, clique em **Continuar**.
+3.  Abra um prompt de comando (Cmd.exe) como um administrador. Para abrir um prompt de comando como administrador, acesse **Iniciar**. Em **Iniciar pesquisa**, digite **Prompt de comando**. Na parte superior do menu Iniciar, clique com o botão direito do mouse no **Prompt de comando** e, em seguida, clique em **Executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** for exibida, insira as credenciais adequadas (se solicitado), confirme se a ação exibida é o que você deseja e, em seguida, clique em **Continuar**.
 
 4.  Na janela do Prompt de comando, vá para a pasta C:\Arquivos de Programas\Update Services\Tools. Digite o seguinte comando:
 
@@ -139,7 +139,7 @@ Para adicionar o servidor proxy que usa o protocolo HTTP à configuração do WS
 
 2.  No painel esquerdo, expanda o nome do servidor e, em seguida, clique em **Opções**.
 
-3.  No painel **Opções**, clique em **Origem da Atualização e Servidor de Atualização** e clique na guia **Servidor Proxy**.
+3.  No painel **Opções** , clique em **Origem da Atualização e Servidor de Atualização**e clique na guia **Servidor Proxy** .
 
 4.  Use as opções a seguir para modificar a configuração do servidor proxy existente:
 
@@ -147,9 +147,9 @@ Para adicionar o servidor proxy que usa o protocolo HTTP à configuração do WS
 
     1.  Marque a caixa de seleção de **Utilizar um servidor proxy ao sincronizar**.
 
-    2.  Na caixa de texto **Nome do Servidor Proxy**, digite o nome do servidor proxy.
+    2.  Na caixa de texto **Nome do Servidor Proxy** , digite o nome do servidor proxy.
 
-    3.  Na caixa de texto **Número da Porta Proxy**, digite o número da porta do servidor proxy O número da porta padrão é 80.
+    3.  Na caixa de texto **Número da Porta Proxy** , digite o número da porta do servidor proxy O número da porta padrão é 80.
 
     4.  Se o servidor proxy exigir que você use uma conta de usuário específica, selecione a caixa de seleção **Usar credenciais de usuário para se conectar ao servidor proxy**. Digite o nome de usuário, o domínio e a senha necessários nas caixas de texto correspondentes.
 
@@ -164,20 +164,20 @@ Para adicionar o servidor proxy que usa o protocolo HTTP à configuração do WS
     2.  Clique em **OK**.
 
 ## <a name="22-configure-wsus-by-using-the-wsus-configuration-wizard"></a>2.2. Configurar o WSUS usando o Assistente de Configuração do WSUS
-Este procedimento pressupõe que você esteja usando o Assistente de Configuração do WSUS, que aparece na primeira vez em que você inicia o Console de Gerenciamento do WSUS. Mais adiante neste tópico, você saberá como executar essas configurações usando a página **Opções**:
+Este procedimento pressupõe que você esteja usando o Assistente de Configuração do WSUS, que aparece na primeira vez em que você inicia o Console de Gerenciamento do WSUS. Mais adiante neste tópico, você saberá como executar essas configurações usando a página **Opções** :
 
 #### <a name="to-configure-wsus"></a>Para configurar o WSUS
 
-1.  No painel de navegação do Gerenciador do Servidor, clique em **Painel**, clique em **Ferramentas** e clique em **Windows Server Update Services**.
+1.  No painel de navegação do Gerenciador do Servidor, clique em **Painel**, clique em **Ferramentas**e clique em **Windows Server Update Services**.
 
     > [!NOTE]
     > Se a caixa de diálogo **Concluir a instalação do WSUS** aparecer, clique em **Executar**. Na caixa de diálogo **Concluir a instalação do WSUS**, clique em **Fechar** quando a instalação for concluída com êxito.
 
-2.  O Assistente do Windows Server Update Services é aberto. Na página **Antes de Começar**, analise a informação e clique em **Avançar**.
+2.  O Assistente do Windows Server Update Services é aberto. Na página **Antes de Começar** , analise a informação e clique em **Avançar**.
 
 3.  Leia as instruções na página **Ingressar no Programa de Aperfeiçoamento do Microsoft Update** e avalie se quer participar. Se você deseja participar do programa. Mantenha a seleção padrão ou desmarque a caixa de seleção e, em seguida, clique em **Avançar**.
 
-4.  Na página **Escolher Servidor Upstream**, há duas opções:
+4.  Na página **Escolher Servidor Upstream** , há duas opções:
 
     1.  Sincronizar as atualizações com o Microsoft Update
 
@@ -185,13 +185,13 @@ Este procedimento pressupõe que você esteja usando o Assistente de Configuraç
 
         -   Se você optar por sincronizar de outro servidor do WSUS, especifique o nome do servidor e a porta em que ele se comunicará com o servidor upstream.
 
-        -   Para usar SSL, marque a caixa de seleção **Usar SSL ao sincronizar informações de atualização**. Os servidores usarão a porta 443 para sincronização. (Verifique se esse servidor e o servidor upstream dão suporte a SSL).
+        -   Para usar SSL, marque a caixa de seleção **Usar SSL ao sincronizar informações de atualização** . Os servidores usarão a porta 443 para sincronização. (Verifique se esse servidor e o servidor upstream dão suporte a SSL).
 
         -   Se esse for um servidor de réplica, marque a caixa de seleção **Esta é uma réplica do servidor upstream**.
 
 5.  Depois de selecionar as opções adequadas para sua implantação, clique em **Avançar** para continuar.
 
-6.  Na página **Especificar Servidor Proxy**, marque a caixa de seleção **Utilizar um servidor proxy ao sincronizar** e digite o nome do servidor proxy e o número da porta (porta 80, por padrão) nas caixas correspondentes.
+6.  Na página **Especificar Servidor Proxy** , marque a caixa de seleção **Utilizar um servidor proxy ao sincronizar** e digite o nome do servidor proxy e o número da porta (porta 80, por padrão) nas caixas correspondentes.
 
     > [!IMPORTANT]
     > Você precisa concluir essa etapa se identificou que o WSUS precisa de um servidor proxy para ter acesso à Internet.
@@ -205,7 +205,7 @@ Este procedimento pressupõe que você esteja usando o Assistente de Configuraç
 10. Na página **Escolher Idiomas**, você tem a opção de escolher os idiomas em que o WSUS receberá atualizações — todos os idiomas ou um subconjunto de idiomas. A seleção de um subconjunto de idiomas fará economizar espaço em disco, mas é IMPORTANTE escolher todos os idiomas necessários a todos os clientes desse servidor do WSUS. Se você optar por obter atualizações somente para idiomas específicos, escolha **Baixar atualizações somente nestes idiomas** e escolha os idiomas para os quais deseja atualizações; caso contrário, deixe a seleção padrão.
 
     > [!WARNING]
-    > Se você escolher a opção **Baixar atualizações somente nestes idiomas** e este servidor tiver um servidor downstream do WSUS conectado a ele, essa opção forçará o servidor downstream a também usar somente os idiomas escolhidos.
+    > Se você escolher a opção **Baixar atualizações somente nestes idiomas**e este servidor tiver um servidor downstream do WSUS conectado a ele, essa opção forçará o servidor downstream a também usar somente os idiomas escolhidos.
 
 11. Depois de selecionar as opções de idioma adequadas para sua implantação, clique em **Avançar** para continuar.
 
@@ -213,7 +213,7 @@ Este procedimento pressupõe que você esteja usando o Assistente de Configuraç
 
 13. Selecione as opções de produto adequadas para sua implantação e clique em **Avançar**.
 
-14. Na página **Escolher Classificações**, escolha as classificações de atualização que deseja obter. Escolha todas as classificações ou um subconjunto delas e clique em **Avançar**.
+14. Na página **Escolher Classificações** , escolha as classificações de atualização que deseja obter. Escolha todas as classificações ou um subconjunto delas e clique em **Avançar**.
 
 15. A página **Definir Agenda de Sincronização** permite que você selecione se executará a sincronização em modo manual ou automático.
 
@@ -221,18 +221,18 @@ Este procedimento pressupõe que você esteja usando o Assistente de Configuraç
 
     -   Se você escolher **Sincronizar automaticamente**, o servidor do WSUS será sincronizado em intervalos definidos.
 
-    Defina o tempo para a **Primeira sincronização** e especifique o número de **Sincronizações por dia** que deseja que este servidor execute. Por exemplo, se você especificar que deve haver quatro sincronizações por dia, começando às 3h00, as sincronizações ocorrerão às 3h00, 9h00, 15h00 e 21h00.
+    Defina o tempo para a **Primeira sincronização**e especifique o número de **Sincronizações por dia** que deseja que este servidor execute. Por exemplo, se você especificar que deve haver quatro sincronizações por dia, começando às 3h00, as sincronizações ocorrerão às 3h00, 9h00, 15h00 e 21h00.
 
 16. Depois de selecionar as opções de sincronização adequadas para sua implantação, clique em **Avançar** para continuar.
 
-17. Na página **Concluído**, você tem a opção de começar a sincronização imediatamente marcando a caixa de seleção **Começar a sincronização inicial**. Se você não escolher essa opção, será necessário usar o Console de Gerenciamento do WSUS para executar a sincronização inicial. Clique em **Avançar** se quiser ler mais sobre configurações adicionais ou clique em **Concluir** para concluir este assistente e a configuração inicial do WSUS.
+17. Na página **Concluído** , você tem a opção de começar a sincronização imediatamente marcando a caixa de seleção **Começar a sincronização inicial** . Se você não escolher essa opção, será necessário usar o Console de Gerenciamento do WSUS para executar a sincronização inicial. Clique em **Avançar** se quiser ler mais sobre configurações adicionais ou clique em **Concluir** para concluir este assistente e a configuração inicial do WSUS.
 
 18. Depois de clicar em **Concluir**, será exibido o Console de Gerenciamento do WSUS.
 
 Agora que você executou a configuração básica do WSUS, leia as próximas seções para saber mais detalhes sobre como alterar as configurações usando o Console de Gerenciamento do WSUS.
 
 ## <a name="23-configure-wsus-computer-groups"></a>2.3. Configurar grupos de computadores do WSUS
-Os grupos de computadores são uma parte IMPORTANTE das implantações do WSUS (Windows Server Update Services). Os grupos de computadores permitem testar e direcionar atualizações para computadores específicos. Há dois grupos de computadores padrão: todos os computadores e computadores não atribuídos. Por padrão, quando cada computador cliente contata pela primeira vez o servidor do WSUS, o servidor adiciona esse computador cliente a ambos os grupos.
+Os grupos de computadores são uma parte IMPORTANTE das implantações do WSUS (Windows Server Update Services). Os grupos de computadores permitem testar e direcionar atualizações para computadores específicos. Há dois grupos de computadores padrão: Todos os computadores e Computadores não atribuídos. Por padrão, quando cada computador cliente contata pela primeira vez o servidor do WSUS, o servidor adiciona esse computador cliente a ambos os grupos.
 
 Você pode criar quantos grupos de computadores personalizados precisar para gerenciar atualizações em sua organização. Como prática recomendada, crie pelo menos um grupo de computadores para testar as atualizações antes de implantá-las em outros computadores de sua organização.
 
@@ -262,9 +262,9 @@ A Instalação do WSUS configura automaticamente o IIS para que distribua a vers
 
 Use os procedimentos a seguir para configurar as Atualizações Automáticas para computadores clientes:
 
--   [Etapa 4: definir configurações de Política de Grupo para Atualizações Automáticas](4-configure-group-policy-settings-for-automatic-updates.md)
+-   [Etapa 4: Definir as configurações da Política de Grupo para atualizações automáticas](4-configure-group-policy-settings-for-automatic-updates.md)
 
--   [2,3. configurar grupos de computadores](#23-configure-wsus-computer-groups) neste tópico
+-   [2.3. Configurar grupos de computadores](#23-configure-wsus-computer-groups) neste tópico
 
 ### <a name="configure-automatic-updates-in-group-policy"></a>Configurar Atualizações Automáticas na Política de Grupo
 
@@ -280,7 +280,7 @@ Vincule esse GPO do WSUS a um contêiner do Active Directory que seja apropriado
 
 3.  No painel de detalhes, clique duas vezes em **Configurar Atualizações Automáticas**. A política **Configurar Atualizações Automáticas** é aberta.
 
-4.  Clique em **Habilitado** e selecione uma das opções a seguir na definição **Configurar atualização automática**:
+4.  Clique em **Habilitado**e selecione uma das opções a seguir na definição **Configurar atualização automática** :
 
     -   **Avisar antes de baixar e de instalar qualquer atualização**. Esta opção notifica um usuário administrativo conectado antes de baixar e instalar as atualizações.
 
@@ -299,9 +299,9 @@ Vincule esse GPO do WSUS a um contêiner do Active Directory que seja apropriado
 
 7.  Clique em **OK** para fechar a política **Configurar Atualizações Automáticas** e retornar ao painel de detalhes do Windows Update.
 
-8.  No painel de detalhes do **Windows Update**, clique duas vezes em **Especificar o local do serviço de atualização na intranet da Microsoft**.
+8.  No painel de detalhes do **Windows Update** , clique duas vezes em **Especificar o local do serviço de atualização na intranet da Microsoft**.
 
-9. Clique em **Habilitado** e, em seguida, no servidor nas caixas de texto **Definir o serviço intranet de atualização para detectar atualizações** e **Definir o servidor de estatísticas da intranet** Por exemplo, digite *http://servername* em ambas as caixas (em que *servername* é o nome do servidor do WSUS).
+9. Clique em **Habilitado**e, em seguida, no servidor nas caixas de texto **Definir o serviço intranet de atualização para detectar atualizações** e **Definir o servidor de estatísticas da intranet** Por exemplo, digite *http://servername* em ambas as caixas (em que *servername* é o nome do servidor do WSUS).
 
     > [!WARNING]
     > Ao digitar o endereço da intranet do servidor do WSUS, verifique se especificou qual porta será usada. Por padrão, o WSUS usará a porta 8530 para HTTP, e 8531 para HTTPS. Por exemplo, se você estiver usando HTTP, deverá digitar **http://servername:8530** .
@@ -375,7 +375,7 @@ O WSUS requer duas portas para o SSL: uma porta que usa HTTPS para enviar metada
 
 -   Você deve importar o certificado para todos os computadores que se comunicarão com o servidor do WSUS. Isso inclui todos os computadores cliente, servidores downstream e computadores que executam o Console de Administração do WSUS. O certificado deve ser importado para o repositório de AC raiz confiável do computador local ou para o repositório de AC raiz confiável do Windows Server Update Service.
 
--   Você pode usar qualquer porta para o SSL. No entanto, a porta que você configurar para o SSL também determina a porta que o WSUS usa para enviar o tráfego HTTP não criptografado. Considere os exemplos a seguir:
+-   Você pode usar qualquer porta para o SSL. No entanto, a porta que você configurar para o SSL também determina a porta que o WSUS usa para enviar o tráfego HTTP não criptografado. Considere os seguintes exemplos:
 
     -   Se você usar a porta padrão do setor 443 para o tráfego HTTPS, o WSUS usará a porta padrão do setor 80 para o tráfego HTTP não criptografado.
 
@@ -419,9 +419,9 @@ As instruções a seguir configuram um servidor downstream para sincronizar com 
 
 3.  No painel direito, expanda o nome do servidor.
 
-4.  Clique em **Opções** e em **Origem da Atualização e Servidor Proxy**.
+4.  Clique em **Opções**e em **Origem da Atualização e Servidor Proxy**.
 
-5.  Na página **Origem da Atualização**, selecione **Sincronizar de outro servidor do Windows Server Update Services**.
+5.  Na página **Origem da Atualização** , selecione **Sincronizar de outro servidor do Windows Server Update Services**.
 
 6.  Digite o nome do servidor upstream na caixa de texto **Nome do servidor**. Digite o número da porta usada pelo servidor para conexões SSL na caixa de texto **Número da porta**.
 

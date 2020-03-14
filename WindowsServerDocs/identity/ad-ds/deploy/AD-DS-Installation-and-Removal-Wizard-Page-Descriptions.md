@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391203"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323248"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>Descrições das páginas do assistente de instalação e remoção do AD DS
 
@@ -61,7 +61,7 @@ As opções a seguir são exibidas quando uma nova floresta é criada.
   
 -   Ao criar uma nova floresta, especifique um nome para o domínio raiz da floresta. O nome de domínio raiz da floresta não pode ter um rótulo único (por exemplo, deve ser "contoso.com" em vez de "contoso"). E deve usar as convenções de nomenclatura permitidas para domínios DNS. É possível especificar um IDN (Nome de Domínio Internacionalizado). Para obter mais informações sobre as convenções de nomenclatura de domínio DNS, consulte [KB 909264](https://support.microsoft.com/kb/909264).  
   
--   Não crie novas florestas do Active Directory usando um nome igual ao nome DNS externo. Por exemplo, se sua URL de DNS de Internet for http: \//contoso. com, você deverá escolher um nome diferente para a floresta interna para evitar problemas de compatibilidade futuros. Esse nome deve ser exclusivo e de uso improvável no tráfego da Web; por exemplo, corp.contoso.com.  
+-   Não crie novas florestas do Active Directory usando um nome igual ao nome DNS externo. Por exemplo, se a URL de DNS da Internet for http:\//contoso.com, você deverá escolher um nome diferente para a floresta interna para evitar futuros problemas de compatibilidade. Esse nome deve ser exclusivo e de uso improvável no tráfego da Web; por exemplo, corp.contoso.com.  
   
 -   Você precisa ser membro do grupo Administradores no servidor em que será criada uma nova floresta.  
   
@@ -110,7 +110,7 @@ Ao criar uma nova floresta, este será o conteúdo da página Opções do Contro
   
 -   O servidor DNS é selecionado por padrão quando você cria uma nova floresta. O primeiro controlador de domínio na floresta deve ser um servidor GC (de catálogo global) e não pode ser um RODC (controlador de domínio somente leitura).  
   
--   A senha do Modo de Restauração dos Serviços de Diretório (DSRM) é necessária para fazer logon em um controlador de domínio em que AD DS não está em execução. A senha especificada deve cumprir a política de senha aplicada ao servidor, a qual, por padrão, não exige uma senha forte, somente uma senha que não esteja em branco. Escolha sempre uma senha forte e complexa. Para obter informações sobre como sincronizar a senha do DSRM com a senha de uma conta de usuário de domínio, consulte [KB 961320](https://support.microsoft.com/kb/961320).  
+-   A senha DSRM ( Modo de Restauração dos Serviços de Diretório) é necessária para fazer logon em um controlador de domínio em que o AD DS esteja em execução. A senha especificada deve cumprir a política de senha aplicada ao servidor, a qual, por padrão, não exige uma senha forte, somente uma senha que não esteja em branco. Escolha sempre uma senha forte e complexa. Para obter informações sobre como sincronizar a senha do DSRM com a senha de uma conta de usuário de domínio, consulte [KB 961320](https://support.microsoft.com/kb/961320).  
   
 Para obter mais informações sobre como criar uma floresta, consulte [instalar um novo Windows Server 2012 Active Directory nível &#40;de floresta&#41;200](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md).  
   
@@ -160,7 +160,7 @@ O processo de instalação tenta criar a delegação para assegurar que os compu
   
 Delegações entre o domínio pai e o subdomínio que está sendo promovido podem ser criadas e validadas antes ou depois da instalação. Não há motivo para atrasar a instalação de um novo controlador de domínio porque você não pode criar ou atualizar a delegação DNS.  
   
-Para obter mais informações sobre delegação, consulte [noções básicas](https://go.microsoft.com/fwlink/?LinkId=164773) sobre a delegação de zona (https://go.microsoft.com/fwlink/?LinkId=164773). Se a delegação de zona não for possível na sua situação, talvez você possa considerar outros métodos para fornecer resolução de nome de outros domínios para os hosts do seu domínio. Por exemplo, o administrador DNS de outro domínio poderia configurar o encaminhamento condicional, zonas de stub ou zonas secundárias para resolver nomes no seu domínio. Para mais informações, consulte os seguintes tópicos:  
+Para obter mais informações sobre delegação, consulte [noções básicas](https://go.microsoft.com/fwlink/?LinkId=164773) sobre a delegação de zona (https://go.microsoft.com/fwlink/?LinkId=164773). Se a delegação de zona não for possível na sua situação, talvez você possa considerar outros métodos para fornecer resolução de nome de outros domínios para os hosts do seu domínio. Por exemplo, o administrador DNS de outro domínio poderia configurar o encaminhamento condicional, zonas de stub ou zonas secundárias para resolver nomes no seu domínio. Para obter mais informações, consulte estes tópicos:  
   
 -   [Noções básicas sobre tipos de zona](https://go.microsoft.com/fwlink/?LinkID=157399) (https://go.microsoft.com/fwlink/?LinkID=157399)  
   
@@ -173,7 +173,7 @@ As opções a seguir são exibidas quando um RODC (controlador de domínio somen
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_RODCOptions.gif)  
   
--   As contas de administrador delegadas obtêm permissões administrativas locais para o RODC. Esses usuários podem operar com privilégios equivalentes ao grupo Administradores do computador local. Eles não são membros dos grupos admins. do domínio ou administradores internos do domínio. Essa opção é útil para a administração de filiais de delegação, mas sem emitir permissões administrativas de domínio. Não é preciso configurar a delegação de administração. Para obter mais informações, consulte [separação de funções de administrador](https://technet.microsoft.com/library/cc753170(v=WS.10).aspx).  
+-   As contas de administrador delegadas obtêm permissões administrativas locais para o RODC. Esses usuários podem operar com privilégios equivalentes ao grupo Administradores do computador local. Eles não são membros do grupo Admins. do Domínio ou dos grupos Administradores embutidos no domínio. Essa opção é útil para a administração de filiais de delegação, mas sem emitir permissões administrativas de domínio. Não é preciso configurar a delegação de administração. Para obter mais informações, consulte [separação de funções de administrador](https://technet.microsoft.com/library/cc753170(v=WS.10).aspx).  
   
 -   A Política de Replicação de Senha age como uma ACL (lista de controle de acesso). Ela determina se um RODC deve ter permissão para armazenar uma senha no cache. Depois que o RODC recebe um logon de usuário ou computador autenticado, ele consulta a Política de Replicação de Senha para determinar se a senha da conta deve ser armazenada em cache. A mesma conta poderá, então, executar logons subsequentes com mais eficiência.  
   
@@ -274,9 +274,9 @@ Clique em **Continuar remoção** para reconhecer que as funções adicionais s�
   
 Se você forçar a remoção de um controlador de domínio, todas as alterações de objeto Active Directory que não foram replicadas para outros controladores de domínio no domínio serão perdidas. Além disso, se o controlador de domínio hospedar funções de mestres de operações, o catálogo global ou a função de servidor DNS, as operações essenciais no domínio e na floresta poderão ser impactadas da seguinte forma. Antes de remover um controlador de domínio que hospeda qualquer função de mestre de operações, tente transferir a função para outro controlador de domínio. Se não for possível transferir a função, primeiro remova os Serviços de Domínio Active Directory desse computador e então use Ntdsutil.exe para executar a função. Use Ntdsutil no controlador de domínio que contém a função a ser executada; se possível, use um parceiro de replicação recente do mesmo site como esse controlador de domínio. Para obter mais informações sobre como transferir e capturar funções de mestre de operações, consulte o [artigo 255504](https://go.microsoft.com/fwlink/?LinkId=80395) na base de dados de conhecimento Microsoft. Caso o assistente não possa determinar se o controlador de domínio hospeda uma função de mestre de operações, execute o comando netdom.exe para determinar se esse controlador de domínio executa alguma função de mestre de operações.  
   
--   Catálogo global: Os usuários podem ter problemas para fazer logon em domínios na floresta. Antes de remover um servidor de catálogo global, verifique se há servidores de catálogo global suficientes na floresta e no site para atender aos logons de usuários. Se necessário, designe outro servidor de catálogo global e atualize clientes e aplicativos com as novas informações.  
+-   Catálogo global: os usuários talvez tenham problemas ao fazer logon nos domínios da floresta. Antes de remover um servidor de catálogo global, verifique se há servidores de catálogo global suficientes na floresta e no site para atender aos logons de usuários. Se necessário, designe outro servidor de catálogo global e atualize clientes e aplicativos com as novas informações.  
   
--   Servidor DNS: Todos os dados DNS armazenados em zonas integradas Active Directory serão perdidos. Após a remoção do AD DS, esse servidor DNS não poderá mais executar resolução de nomes para as zonas DNS que foram integradas ao Active Directory. Portanto, recomendamos que você atualize a configuração DNS de todos os computadores que, no momento, fazem referência ao endereço IP desse servidor DNS para resolução de nomes, usando o endereço IP de um novo servidor DNS.  
+-   Servidor DNS: todos os dados DNS armazenados nas zonas integradas ao Active Directory serão perdidos. Após a remoção do AD DS, esse servidor DNS não poderá mais executar resolução de nomes para as zonas DNS que foram integradas ao Active Directory. Portanto, recomendamos que você atualize a configuração DNS de todos os computadores que, no momento, fazem referência ao endereço IP desse servidor DNS para resolução de nomes, usando o endereço IP de um novo servidor DNS.  
   
 -   Mestre de infraestrutura: clientes do domínio podem ter dificuldade para localizar objetos em outros domínios. Antes de continuar, transfira a função de mestre de infraestrutura para um controlador de domínio que não seja um servidor de catálogo global.  
   

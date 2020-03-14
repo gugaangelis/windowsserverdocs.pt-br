@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371864"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322788"
 ---
 # <a name="multipoint-services-site-planning"></a>Planejamento do site do MultiPoint Services
 Você deve considerar o local em que um ou mais computadores que executam os serviços do MultiPoint e suas estações associadas serão implantados.  

@@ -13,12 +13,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 2d82379dfbc03d28ec174e66862f130f2a3c50a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e320f0eb04e81d80f7288d4d7b20b5369e209932
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387126"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79319980"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Implantar um servidor de arquivos de escalabilidade horizontal de dois nós para armazenamento UPD no Azure
 
@@ -131,8 +131,8 @@ Use as etapas a seguir para criar um controlador de domínio (chamamos o nosso d
     7. Crie um novo compartilhamento de arquivos SMB no cluster SOFS.
 
        ```powershell
-       New-Item -Path C:\ClusterStorage\Volume1\Data -ItemType Directory
-       New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\Volume1\Data
+       New-Item -Path C:\ClusterStorage\VDisk01\Data -ItemType Directory
+       New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\VDisk01\Data
        ```
 
 Agora você tem um compartilhamento em `\\my-sofs1\UpdStorage`, que pode ser usado para armazenamento UPD quando você [habilitar UPD](https://social.technet.microsoft.com/wiki/contents/articles/15304.installing-and-configuring-user-profile-disks-upd-in-windows-server-2012.aspx) para seus usuários. 

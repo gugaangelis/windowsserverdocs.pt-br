@@ -9,15 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: e26d285f1802e78b2cbf84e38407ff134e7b7035
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403227"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322388"
 ---
 # <a name="understanding-data-deduplication"></a>Noções básicas da eliminação de duplicação de dados
 
-> Aplica-se a:  Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
 Este documento descreve como funciona a [Eliminação de Duplicação de Dados](overview.md).
 
@@ -63,7 +63,7 @@ Os tipos de uso a seguir fornecem uma configuração razoável de Eliminação d
 ## <a id="job-info"></a>Sejam
 A Eliminação de Duplicação de Dados usa uma estratégia de pós-processamento para otimizar e manter a eficiência do espaço de um volume.
 
-| Nome do Trabalho | Descrições do trabalho | Agendamento padrão |
+| Nome do trabalho | Descrições do trabalho | Agendamento padrão |
 |----------|------------------|------------------|
 | <a id="job-info-optimization"></a>Otimização | O trabalho **Otimização** elimina a duplicação de dados fragmentando dados em um volume de acordo com as configurações de política de volume, compactando (opcionalmente) essas partes e as armazenando de forma exclusiva no repositório de partes. O processo de otimização usado pela Eliminação de Duplicação de Dados está descrito detalhadamente em [Como funciona a Eliminação de Duplicação de Dados?](understand.md#how-does-dedup-work). | Uma vez a cada hora |
 | <a id="job-info-gc"></a>Coleta de lixo | O trabalho **Coleta de lixo** recupera o espaço em disco removendo partes desnecessárias que não estão mais sendo referenciadas por arquivos modificados ou excluídos recentemente. | Todo sábado às 2h35 |

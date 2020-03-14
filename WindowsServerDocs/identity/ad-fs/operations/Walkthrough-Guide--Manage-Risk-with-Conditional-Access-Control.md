@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371658"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323038"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>Guia Passo a passo: gerenciar riscos com controle de acesso condicional
 
@@ -128,7 +128,7 @@ Nesta etapa, você verificará a política de controle de acesso condicional con
 
     Neste ponto, devido à política de controle de acesso que você configurou na etapa anterior, uma mensagem de ' acesso negado ' é exibida para esse usuário do AD que não pertence ao grupo de **Finanças** . O texto da mensagem padrão **não está autorizado a acessar este site. Clique aqui para sair e entrar novamente ou contate o administrador para obter permissões.** No entanto, esse texto é totalmente personalizável. Para obter mais informações sobre como personalizar a experiência de entrada, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 [Gerenciar o risco com o controle de acesso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 [Configurar o ambiente de laboratório para AD FS no Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

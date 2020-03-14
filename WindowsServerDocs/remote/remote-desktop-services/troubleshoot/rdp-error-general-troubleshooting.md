@@ -14,11 +14,11 @@ ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: b934a585b3058cc2eec642cdb1234c8c9a015544
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370760"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323338"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>Solução de problemas gerais de conexão de Área de Trabalho Remota
 

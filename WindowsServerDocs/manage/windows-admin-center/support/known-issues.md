@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
 ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822699"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322918"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
@@ -53,7 +53,7 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- Se você tiver o centro de administração do Windows implantado como um serviço e estiver usando o Microsoft Edge como seu navegador, conectar seu gateway ao Azure poderá falhar após a geração de uma nova janela do navegador. Tente solucionar esse problema adicionando https://login.microsoftonline.com , https://login.live.com e a URL do seu gateway como sites confiáveis e sites permitidos para configurações do bloqueador de pop-ups no navegador do lado do cliente. Para obter mais diretrizes sobre como corrigir isso no [Guia de solução de problemas](troubleshooting.md#azure-features-dont-work-properly-in-edge). [17990376]
+- Se você tiver o centro de administração do Windows implantado como um serviço e estiver usando o Microsoft Edge como seu navegador, conectar seu gateway ao Azure poderá falhar após a geração de uma nova janela do navegador. Tente solucionar esse problema adicionando https://login.microsoftonline.com, https://login.live.come a URL do seu gateway como sites confiáveis e sites permitidos para configurações do bloqueador de pop-ups no navegador do lado do cliente. Para obter mais diretrizes sobre como corrigir isso no [Guia de solução de problemas](troubleshooting.md#azure-features-dont-work-properly-in-edge). [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -104,7 +104,7 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
 
   - Para resolver isso, use o seguinte comando em um prompt de comando com privilégios elevados no computador do gateway: ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>Arquivos
+### <a name="files"></a>Files
 
 - Carregar ou baixar arquivos grandes que ainda não são suportados. (limite de 100 MB de\~) [12524234]
 
@@ -118,7 +118,7 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
 
 - Ao diminuir a janela do Windows Admin Center, o conteúdo do terminal reflui, mas quando você aumenta novamente, o conteúdo pode não retornar ao estado anterior. Em caso de problemas, tente usar Clear-Host ou desconectar e reconectar usando o botão acima do terminal.
 
-### <a name="registry-editor"></a>Editor do registro
+### <a name="registry-editor"></a>Editor do Registro
 
 - A funcionalidade de pesquisa não foi implementada. [13820009]
 
@@ -171,7 +171,7 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
     4. Reinicie o serviço ' serviços de criptografia '.
     5. Repetir a configuração do Gerenciamento de Atualizações com o centro de administração do Windows
 
-### <a name="virtual-machines"></a>Máquinas virtuais
+### <a name="virtual-machines"></a>Máquinas Virtuais
 
 - Ao gerenciar as máquinas virtuais em um host do Windows Server 2012, a ferramenta de conexão de VM no navegador não conseguirá se conectar à VM. O download do arquivo. rdp para se conectar à VM ainda deve funcionar. [20258278]
 
@@ -179,7 +179,7 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
 
 - Os recursos avançados disponíveis no Gerenciador do Hyper-V, como o Gerenciador de SAN Virtual, Mover VM, Exportar VM, Replicação de VM atualmente não são suportados.
 
-### <a name="virtual-switches"></a>Switches virtuais
+### <a name="virtual-switches"></a>Comutadores virtuais
 
 - Switch Embedded Teaming (definido): ao adicionar NICs a uma equipe, eles devem estar na mesma sub-rede.
 

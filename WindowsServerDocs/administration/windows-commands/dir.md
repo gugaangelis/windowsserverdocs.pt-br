@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b073b0557cd011f6742a8a8e532165f53b0a6974
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8aeb2b3b7d62ae62ba9b8fa70988cf64060673ca
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377881"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320010"
 ---
 # <a name="dir"></a>dir
 
@@ -48,9 +48,9 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 |/o [[:]\<SortOrder >]|Classifica a saída de acordo com a *SortOrder*, que pode ser qualquer combinação dos seguintes valores:</br>**n** por nome (em ordem alfabética)</br>**e** por extensão (alfabética)</br>**g** agrupar diretórios primeiro</br>**s** por tamanho (menor primeiro)</br>**d** por data/hora (mais antigo primeiro)</br>**-** Prefixo para ordem inversa</br>Observação: o uso de dois pontos é opcional. Vários valores são processados na ordem em que são listados. Não Separe vários valores com espaços.</br>Se *SortOrder* não for especificada, **dir/o** listará os diretórios em ordem alfabética, seguidos pelos arquivos, que também são classificados em ordem alfabética.|
 |/t [[:]\<Timefield >]|Especifica qual campo de hora exibir ou usar para classificação. A lista a seguir descreve cada um dos valores que você pode usar para o *timefield*:</br>criação de **c**</br>**um** último acesso</br>**w** gravado pela última vez|
 |/s|Lista todas as ocorrências do nome de arquivo especificado no diretório especificado e em todos os subdiretórios.|
-|/b.|Exibe uma lista simples de diretórios e arquivos, sem informações adicionais. **/b** substitui **/w**.|
+|/b|Exibe uma lista simples de diretórios e arquivos, sem informações adicionais. **/b** substitui **/w**.|
 |/l|Exibe nomes de diretório e nomes de arquivos não classificados em minúsculas.|
-|opção|Exibe um formato de lista longa com nomes de arquivo na extrema direita da tela.|
+|/n|Exibe um formato de lista longa com nomes de arquivo na extrema direita da tela.|
 |/x|Exibe os nomes curtos gerados para nomes de arquivo não 8dot3. A exibição é igual à exibição de **/n**, mas o nome curto é inserido antes do nome longo.|
 |/c|Exibe o separador de milhar em tamanhos de arquivo. Esse é o comportamento padrão. Use **/-c** para ocultar separadores.|
 |/4|Exibe anos no formato de quatro dígitos.|
@@ -64,7 +64,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
   **Asterisco (\*):** Use o asterisco como um substituto para qualquer cadeia de caracteres, por exemplo:  
   - **dir \*. txt** lista todos os arquivos no diretório atual com extensões que começam com. txt, como. txt,. txt1,. txt_old.
   - **dir read\*. txt** lista todos os arquivos no diretório atual que começam com "Read" e com extensões que começam com. txt, como. txt,. txt1 ou. txt_old.
-  - **dir read\*.\\** * lista todos os arquivos no diretório atual que começam com "Read" com qualquer extensão.
+  - **dir read\*.\*** lista todos os arquivos no diretório atual que começam com "Read" com qualquer extensão.
 
   O curinga asterisco sempre usa mapeamento de nome de arquivo curto, portanto, você pode obter resultados inesperados. Por exemplo, o diretório a seguir contém dois arquivos (t. txt2 e T97. txt): 
  

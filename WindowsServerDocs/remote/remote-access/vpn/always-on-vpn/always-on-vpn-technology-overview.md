@@ -9,18 +9,18 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.openlocfilehash: 31d0d5c12760fc627ce93972f4a70e85f61dd178
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404368"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322548"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Visão geral da tecnologia de VPN Always On
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Saiba mais sobre os aprimoramentos de VPN Always On](always-on-vpn-enhancements.md)
-- [**Última** Saiba mais sobre os recursos avançados do Always On VPN](deploy/always-on-vpn-adv-options.md)
+- [**Anterior:** Saiba mais sobre os aprimoramentos de VPN Always On](always-on-vpn-enhancements.md)
+- [**Em seguida:** Saiba mais sobre os recursos avançados do Always On VPN](deploy/always-on-vpn-adv-options.md)
 
 Para essa implantação, você deve instalar um novo servidor de acesso remoto que esteja executando o Windows Server 2016, bem como modificar parte de sua infraestrutura existente para a implantação.
 
@@ -80,7 +80,7 @@ Você também configura as políticas de rede que o NPS usa para autorizar solic
 
 Para obter mais informações, consulte [servidor de diretivas de rede (NPS)](../../../../networking/technologies/nps/nps-top.md).
 
-## <a name="active-directory-certificate-services"></a>Serviços de Certificados do Active Directory
+## <a name="active-directory-certificate-services"></a>Serviços de Certificado do Active Directory
 
 O servidor de autoridade de certificação (CA) é uma autoridade de certificação que está executando Active Directory serviços de certificados. A configuração de VPN requer uma PKI (infraestrutura de chave pública) baseada em Active Directory.
 
@@ -122,7 +122,7 @@ Quando você usa certificados de servidor digital para autenticação entre comp
 
 3. Autenticação associando chaves de certificado a um computador, usuário ou contas de dispositivo em uma rede de computador.
 
-Para obter mais informações, [consulte Guia passo a passo do AD CS: Implantação](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)de hierarquia de PKI de duas camadas.
+Para obter mais informações, consulte [guia passo a passo do AD CS: implantação de hierarquia de duas camadas PKI](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx).
 
 ## <a name="active-directory-domain-services-ad-ds"></a>Serviços de Domínio do Active Directory (AD DS)
 
@@ -140,15 +140,15 @@ Durante a conclusão das etapas nesta implantação, você configurará os itens
 
 - Criar o grupo de servidores NPS
 
-### <a name="active-directory-users-and-computers"></a>Usuários e computadores do Active Directory
+### <a name="active-directory-users-and-computers"></a>Usuários e Computadores do Active Directory
 
 Active Directory usuários e computadores é um componente do AD DS que contém contas que representam entidades físicas, como um computador, uma pessoa ou um grupo de segurança. Um grupo de segurança é uma coleção de contas de usuário ou computador que os administradores podem gerenciar como uma única unidade. As contas de usuário e computador que pertencem a um grupo específico são chamadas de membros do grupo.
 
-As contas de usuário no Active Directory usuários e computadores têm propriedades de discagem que o NPS avalia durante o processo de autorização-a menos que a propriedade de **permissão de acesso à rede** da conta de usuário esteja definida para controlar o **acesso por meio da política de rede do NPS** . Essa é a configuração padrão para todas as contas de usuário. Em alguns casos, no entanto, essa configuração pode ter uma configuração diferente que impede que o usuário se conecte usando VPN. Para se proteger contra essa possibilidade, você pode configurar o servidor NPS para ignorar as propriedades de discagem da conta de usuário.
+As contas de usuário no Active Directory usuários e computadores têm propriedades de discagem que o NPS avalia durante o processo de autorização, a menos que a propriedade de **permissão de acesso à rede** da conta de usuário esteja definida para controlar o **acesso por meio da política de rede do NPS**. Essa é a configuração padrão para todas as contas de usuário. Em alguns casos, no entanto, essa configuração pode ter uma configuração diferente que impede que o usuário se conecte usando VPN. Para se proteger contra essa possibilidade, você pode configurar o servidor NPS para ignorar as propriedades de discagem da conta de usuário.
 
 Para obter mais informações, consulte [Configurar o NPS para ignorar as propriedades de discagem da conta de usuário](../../../../networking/technologies/nps/nps-np-configure.md#configure-nps-to-ignore-user-account-dial-in-properties).
 
-### <a name="group-policy-management"></a>Gerenciamento de Política de Grupo
+### <a name="group-policy-management"></a>Gerenciamento de políticas de grupo
 
 O gerenciamento de Política de Grupo permite a alteração baseada em diretório e o gerenciamento de configurações de usuário e computador, incluindo informações de segurança e de usuário. Você usa Política de Grupo para definir configurações para grupos de usuários e computadores.
 
@@ -184,7 +184,7 @@ No entanto, você não pode configurar alguns nós do CSP diretamente por meio d
 
 O Windows 10 oferece muitos CSPs, mas essa implantação se concentra no uso do CSP VPNv2 para configurar o cliente VPN. O CSP VPNv2 permite a configuração de cada configuração de perfil de VPN no Windows 10 por meio de um nó CSP exclusivo. Também contida no CSP VPNv2 é um nó chamado *ProfileXML*, que permite que você defina todas as configurações em um nó em vez de individualmente. Para obter mais informações sobre o ProfileXML, consulte a seção "visão geral do ProfileXML" mais adiante nesta implantação. Para obter detalhes sobre cada nó do CSP do VPNv2, consulte o [CSP do VPNv2](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp).
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Saiba mais sobre alguns dos recursos avançados de VPN Always On](deploy/always-on-vpn-adv-options.md)
 
@@ -192,20 +192,20 @@ O Windows 10 oferece muitos CSPs, mas essa implantação se concentra no uso do 
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-- [Suporte de software de servidor da Microsoft para máquinas virtuais Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines): Este artigo aborda a política de suporte para executar o software de servidor da Microsoft no ambiente de máquina virtual Microsoft Azure (infraestrutura como serviço).
+- [Suporte de software de servidor da Microsoft para máquinas virtuais Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines): Este artigo aborda a política de suporte para executar o software de servidor da Microsoft no ambiente de Microsoft Azure máquina virtual (infraestrutura como serviço).
 
 - [Acesso remoto](../../Remote-Access.md): Este tópico fornece uma visão geral da função de servidor de acesso remoto no Windows Server 2016.
 
-- [Guia técnico de VPN do Windows 10](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide): Este guia orienta você pelas decisões que você fará para clientes do Windows 10 em sua solução de VPN corporativa e como configurar sua implantação. Este guia faz referência ao CSP (provedor de serviços de configuração) do VPNv2 e fornece instruções de configuração de MDM (gerenciamento de dispositivo móvel) usando Microsoft Intune e o modelo de perfil VPN para Windows 10.
+- [Guia técnico de VPN do Windows 10](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide): este guia orienta você pelas decisões que você fará para clientes do Windows 10 em sua solução de VPN corporativa e como configurar sua implantação. Este guia faz referência ao CSP (provedor de serviços de configuração) do VPNv2 e fornece instruções de configuração de MDM (gerenciamento de dispositivo móvel) usando Microsoft Intune e o modelo de perfil VPN para Windows 10.
 
-- [Guia de rede principal](../../../../networking/core-network-guide/Core-Network-Guide.md): Este guia fornece instruções sobre como planejar e implantar os componentes principais necessários para uma rede totalmente funcional e um novo domínio de Active Directory em uma nova floresta.
+- [Guia de rede principal](../../../../networking/core-network-guide/Core-Network-Guide.md): este guia fornece instruções sobre como planejar e implantar os componentes principais necessários para uma rede totalmente funcional e um novo domínio de Active Directory em uma nova floresta.
 
-- [DNS (sistema de nomes de domínio)](../../../../networking/dns/dns-top.md): Este tópico fornece uma visão geral dos sistemas de nome de domínio (DNS). No Windows Server 2016, o DNS é uma função de servidor que você pode instalar usando Gerenciador do Servidor ou comandos do Windows PowerShell. Se você estiver instalando um novo Active Directory floresta e domínio, o DNS será instalado automaticamente com Active Directory como o servidor de catálogo global para a floresta e o domínio.
+- [DNS (sistema de nomes de domínio)](../../../../networking/dns/dns-top.md): Este tópico fornece uma visão geral dos sistemas de nomes de domínio (DNS). No Windows Server 2016, o DNS é uma função de servidor que você pode instalar usando Gerenciador do Servidor ou comandos do Windows PowerShell. Se você estiver instalando um novo Active Directory floresta e domínio, o DNS será instalado automaticamente com Active Directory como o servidor de catálogo global para a floresta e o domínio.
 
-- [Visão geral dos serviços de certificados Active Directory](https://technet.microsoft.com/library/hh831740.aspx): Este documento fornece uma visão geral de Active Directory serviços de certificados (AD CS) no Windows Server® 2012. O AD CS é a Função de Servidor que permite construir uma infraestrutura de chave pública (PKI) e fornecer recursos de criptografia de chave pública, certificados digitais e assinaturas digitais para a sua organização.
+- [Visão geral dos serviços de certificados Active Directory](https://technet.microsoft.com/library/hh831740.aspx): Este documento fornece uma visão geral dos serviços de certificados Active Directory (AD CS) no Windows Server® 2012. O AD CS é a Função de Servidor que permite construir uma infraestrutura de chave pública (PKI) e fornecer recursos de criptografia de chave pública, certificados digitais e assinaturas digitais para a sua organização.
 
-- [Diretrizes de design de infraestrutura de chave pública](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx):  Este wiki fornece orientação sobre a criação de infraestruturas de chave pública (PKIs). Antes de configurar uma hierarquia de PKI e autoridade de certificação (CA), você deve estar ciente da política de segurança da sua organização e do CPS (declaração de prática de certificado).
+- [Diretrizes de design de infraestrutura de chave pública](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx): este wiki fornece orientação sobre como criar infraestruturas de chave pública (PKIs). Antes de configurar uma hierarquia de PKI e autoridade de certificação (CA), você deve estar ciente da política de segurança da sua organização e do CPS (declaração de prática de certificado).
 
-- [Guia passo a passo do AD CS: Implantação](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)de hierarquia de PKI de duas camadas: Este guia passo a passo descreve as etapas necessárias para definir uma configuração básica de Active Directory® serviços de certificados (AD CS) em um ambiente de laboratório. O AD CS no Windows Server® 2008 R2 fornece serviços personalizáveis para criar e gerenciar certificados de chave pública usados em sistemas de segurança de software que empregam tecnologias de chave pública.
+- [Guia passo a passo do AD CS: implantação de hierarquia de PKI de duas camadas](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): este guia passo a passo descreve as etapas necessárias para definir uma configuração básica de Active Directory® serviços de certificados (AD CS) em um ambiente de laboratório. O AD CS no Windows Server® 2008 R2 fornece serviços personalizáveis para criar e gerenciar certificados de chave pública usados em sistemas de segurança de software que empregam tecnologias de chave pública.
 
 - [Servidor de políticas de rede (NPS)](../../../../networking/technologies/nps/nps-top.md): Este tópico fornece uma visão geral do servidor de políticas de rede no Windows Server 2016. O Servidor de Políticas de Rede (NPS) permite que você crie e aplique políticas de acesso de rede em toda a organização para autenticação e autorização de solicitações de conexão.

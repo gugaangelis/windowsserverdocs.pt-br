@@ -9,15 +9,15 @@ ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371708"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323588"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configurar o controle de acesso do usuário e as permissões
 
-> Aplica-se a: centro de administração do Windows, versão prévia do centro de administração do Windows
+> Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 Se você ainda não fez isso, familiarize-se com as [opções de controle de acesso do usuário no Windows Admin Center](../plan/user-access-options.md)
 
@@ -111,7 +111,7 @@ Um dos benefícios de usar o Azure AD como uma camada adicional de segurança pa
 
 Quando você instala o Windows Admin Center no Windows 10, ele está pronto para usar o logon único. No entanto, se você pretende usar o Windows Admin Center no Windows Server, precisará configurar alguma forma de delegação do Kerberos em seu ambiente para poder usar o logon único. A delegação configura o computador do gateway como confiável para delegar ao nó de destino. 
 
-Para configurar [Delegação restrita baseada em recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) em seu ambiente, use o seguinte exemplo do PowerShell. Este exemplo mostra como você deve configurar um Windows Server [node01.contoso.com] para aceitar a delegação de seu gateway do centro de administração do Windows [wac.contoso.com] no domínio contoso.com.
+Para configurar [Delegação restrita baseada em recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) em seu ambiente, use o seguinte exemplo do PowerShell. Este exemplo mostra como você deve configurar um Windows Server [node01.contoso.com] para aceitar a delegação do gateway do Windows Admin Center [wac.contoso.com] no domínio contoso.com.
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)
