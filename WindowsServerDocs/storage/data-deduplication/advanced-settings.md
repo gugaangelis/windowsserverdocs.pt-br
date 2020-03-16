@@ -9,11 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403215"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322638"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configurações avançadas de Eliminação de Duplicação de Dados
 
@@ -26,14 +26,14 @@ Os [planos de trabalho de Eliminação de Duplicação de Dados padrão](underst
 
 ### <a id="modifying-job-schedules-change-schedule"></a>Alterando um agendamento de eliminação de duplicação de dados
 Os trabalhos de Eliminação de Duplicação de Dados são programados pelo Agendador de Tarefas do Windows e podem ser exibidos e editados lá no caminho Microsoft\Windows\Deduplication. A Eliminação de Duplicação de Dados inclui vários cmdlets que facilitam o agendamento.
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) mostra os trabalhos agendados atuais.
-* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) cria um novo trabalho agendado.
+* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) mostra os trabalhos agendados atualmente.
+* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx)ria um novo trabalho agendado.
 * [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) modifica um trabalho agendado existente.
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) remove um trabalho agendado.
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)remove um trabalho agendado.
 
 O motivo mais comum para alterar quando executar trabalhos de Eliminação de Duplicação de Dados é garantir que os trabalhos sejam executados durante fora do horário comercial. O exemplo de passo a passo a seguir mostra como modificar o plano de Eliminação de Duplicação de Dados para um cenário em que *tudo corre bem*: um host hiperconvergido do Hyper-V que fica ocioso nos fins de semana e depois das 19h durante a semana. Para alterar a agenda, execute os cmdlets do PowerShell a seguir em um contexto de Administrador.
 
-1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization) agendados por hora.  
+1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization)agendados por hora.  
     ```PowerShell
     Set-DedupSchedule -Name BackgroundOptimization -Enabled $false
     Set-DedupSchedule -Name PriorityOptimization -Enabled $false
@@ -82,19 +82,19 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
                 <ul>
                     <li>Otimização</li>
                     <li>Coleta de Lixo</li>
-                    <li>Esfregar</li>
+                    <li>Anulação</li>
                 </ul>
             </td>
             <td>Esse valor é necessário porque é o tipo de trabalho que você deseja agendar. Esse valor não pode ser alterado depois que a tarefa é agendada.</td>
         </tr>
         <tr>
-            <td>Priority</td>
+            <td>Prioridade</td>
             <td>A prioridade do sistema do trabalho agendado</td>
             <td>
                 <ul>
-                    <li>Alto</li>
-                    <li>Médio</li>
-                    <li>Baixa</li>
+                    <li>Alta</li>
+                    <li>Média</li>
+                    <li>Baixo</li>
                 </ul>
             </td>
             <td>Esse valor ajuda o sistema a determinar como alocar tempo da CPU. <em>Alta</em> usará mais tempo de CPU; <em>Baixa</em> usará menos.</td>
@@ -150,7 +150,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Para controlar o nível de impacto que o trabalho terá sobre os recursos de memória do sistema</td>
         </tr>
         <tr>
-            <td>Nome</td>
+            <td>{1&gt;Nome&lt;1}</td>
             <td>O nome do trabalho agendado</td>
             <td>String</td>
             <td>Um trabalho deve ter um nome de identificação exclusivo.</td>
@@ -162,7 +162,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Você deseja restaurar manualmente os arquivos que ficam em seções inválidas do disco.</td>
         </tr>
         <tr>
-            <td>Início</td>
+            <td>Iniciar</td>
             <td>Especifica a hora em que um trabalho deve ser iniciado</td>
             <td><code>System.DateTime</code></td>
             <td>A parte de <em>Data</em> da <code>System.Datetime</code> fornecida para <em>Iniciar</em> é irrelevante (desde que ela&#39;esteja no passado), mas a parte de <em>hora</em> especifica quando o trabalho deve ser iniciado.</td>
