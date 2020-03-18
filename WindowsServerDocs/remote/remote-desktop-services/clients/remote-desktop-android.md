@@ -12,14 +12,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370663"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323418"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -103,7 +103,7 @@ O cliente da Área de Trabalho Remota dá suporte à fixação de conexões em s
 
 1. Toque em **Aplicativos** para iniciar o menu de aplicativos.
 2. Toque em **Widgets**.
-3. Passe o dedo pelos widgets e procure o ícone de Área de Trabalho Remota com a descrição: "Fixar Área de trabalho Remota".
+3. Passe o dedo pelos widgets e procure o ícone de Área de Trabalho Remota com a descrição: "Fixar Área de Trabalho Remota".
 4. Toque nesse widget de Área de Trabalho Remota e segure, movendo-o em seguida para a tela inicial.
 5. Quando soltar o ícone, você verá as áreas de trabalho remotas salvas. Escolha a conexão que você deseja salvar em sua tela inicial.
 
@@ -185,7 +185,7 @@ Aqui está uma breve introdução a como abrir e navegar na sessão de Área de 
 ### <a name="start-a-remote-desktop-connection"></a>Iniciar uma conexão de Área de Trabalho Remota
 
 1. Toque **no nome da conexão de Área de Trabalho Remota** para iniciar a sessão.
-2. Se for solicitado que você verifique o certificado da área de trabalho remota, toque em **Conectar**. Também é possível selecionar **Não me pergunte novamente para conexões com este computador** para aceitar o certificado sempre por padrão.
+2. Se for solicitado que você verifique o certificado da área de trabalho remota, toque em **Conectar**. Também é possível selecionar **Não me pergunte novamente para conexões com este computador** para sempre aceitar o certificado por padrão.
 
 ### <a name="connection-bar"></a>Barra de conexão
 
@@ -229,3 +229,11 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 | Ponteiro do mouse | Clique com o botão direito em          | Tocar com dois dedos                                                    |
 | Ponteiro do mouse | Clicar com o botão direito do mouse e arrastar | Tocar duas vezes e segurar com dois dedos e arrastar                         |
 | Ponteiro do mouse | Botão de rolagem do mouse          | Fechar e abrir dedos indicador e polegar e manter com dois dedos e arrastar para cima ou para baixo                     |
+
+## <a name="join-the-beta-channel"></a>Ingressar no canal Beta
+
+Se você quer acessar os recursos mais recentes antes de qualquer outra pessoa ou quer ajudar a identificar problemas antes da liberação de novas versões, o canal Beta é feito para você! O canal Beta também é uma ótima maneira de os administradores corporativos validarem novas versões do cliente Android para os ambientes deles.
+
+Para participar da versão Beta, basta fornecer consentimento para acessar versões prévias e baixar o cliente. Você receberá versões prévias diretamente por meio da Google Play Store.
+
+[Participe da versão Beta](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)

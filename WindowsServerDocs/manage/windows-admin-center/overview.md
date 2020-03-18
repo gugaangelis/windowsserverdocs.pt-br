@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 7b3a75258086a73fbd618c2e8221454d7e616556
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bb2f6d7fcbf18ef9bc67534982d1a98fdc5172a1
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949998"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320030"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -37,7 +37,7 @@ Aqui estão algumas funções do Windows Admin Center:
 
 |     |     |
 | --- | --- |
-| ![](media/simple-icon.png)| **Simplificar o gerenciamento de servidores** <br/> Gerencie seus servidores e clusters com versões modernizadas de ferramentas familiares, como o Gerenciador do Servidor. Instale-o em menos de cinco minutos e gerencie os servidores no ambiente imediatamente, sem precisar de uma configuração de destino. Para obter detalhes, confira [O que é o Windows Admin Center?](understand/what-is.md). |
+| ![](media/simple-icon.png)| **Simplificar o gerenciamento de servidores** <br/> Gerencie seus servidores e clusters com versões modernizadas de ferramentas familiares, como o Gerenciador do Servidor. Instale-o em menos de cinco minutos e gerencie os servidores no ambiente imediatamente, sem precisar de configuração adicional. Para obter detalhes, confira [O que é o Windows Admin Center?](understand/what-is.md). |
 | ![](media/future-icon.png)| **Trabalhar com soluções híbridas** <br/> A integração com o Azure ajuda a conectar opcionalmente seus servidores locais aos serviços de nuvem relevantes. Para obter detalhes, confira [Serviços híbridos do Azure](azure/index.md) |
 | ![](media/secure-icon.png)| **Simplificar o gerenciamento de hiperconvergentes** <br/> Simplifique o gerenciamento dos clusters hiperconvergentes do Azure Stack HCI ou do Windows Server. Use cargas de trabalho simplificadas para criar e gerenciar VMs, volumes de Espaços de Armazenamento Diretos, redes definidas por software e muito mais. Para obter detalhes, confira [Gerenciar a infraestrutura hiperconvergente com o Windows Admin Center](use/manage-hyper-converged.md)|
 

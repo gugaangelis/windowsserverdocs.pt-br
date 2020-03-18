@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 02/25/2020
+ms.date: 03/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f435892f0a200056c08094cac1831c710a47a6be
-ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
+ms.openlocfilehash: 981a9071b3f5daf1ca97dcde8a8b32b2a2588d99
+ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77608791"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038059"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -31,7 +31,21 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 |Grupo de usuários |Versão  |
 |-----------|---------|
 |Público     |1.2.675  |
-|Participante do Programa Windows Insider    |1.2.675  |
+|Participante do Programa Windows Insider    |1.2.787  |
+
+## <a name="updates-for-version-12787"></a>Atualizações para a versão 1.2.787
+
+*Data da publicação: 10/03/2020*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qZVh), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qXhC), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qRVA)
+
+- A ação "Renovar" para workspaces foi renomeada para "Atualizar" para fins de consistência com outros clientes da Área de Trabalho Remota.
+- Agora você pode atualizar um workspace diretamente do respectivo menu de contexto.
+- A atualização manual de um workspace agora verifica se todo o conteúdo local foi atualizado.
+- Agora você pode redefinir os dados do usuário do cliente da página Sobre sem precisar desinstalar o aplicativo.
+- Você também pode redefinir os dados de usuário do cliente usando msrdcw.exe /reset com um parâmetro opcional /f para ignorar o prompt.
+- Agora, procuramos automaticamente uma atualização do cliente ao navegar até a página Sobre.
+- A cor dos botões foi atualizada para fins de consistência.
 
 ## <a name="updates-for-version-12675"></a>Atualizações para a versão 1.2.675
 

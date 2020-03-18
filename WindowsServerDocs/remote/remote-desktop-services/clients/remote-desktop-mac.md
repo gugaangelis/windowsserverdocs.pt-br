@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 1b2ea23e95796f6cce90a1dc90de896c2242084a
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465470"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79319990"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -164,7 +164,7 @@ Por padrão, a sessão remota usará a mesma localidade do teclado do sistema op
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>Suporte para autorização e autenticação conectável do gateway de Área de Trabalho Remota
 
-O Windows Server 2012 R2 apresentou o suporte para um novo método de autenticação, a autenticação conectável do Gateway de Área de Trabalho Remota e autorização, que oferece mais flexibilidade para rotinas de autenticação personalizada. Agora, você pode usar esse modelo de autenticação com o cliente Mac. 
+O Windows Server 2012 R2 apresentou o suporte para um novo método de autenticação, a autenticação conectável do Gateway de Área de Trabalho Remota e autorização, que oferece mais flexibilidade para rotinas de autenticação personalizada. Agora, você pode experimentar esse modelo de autenticação com o cliente Mac. 
 
 > [!IMPORTANT]
 > Os modelos personalizados de autenticação e autorização antes do Windows 8.1 não têm suporte, embora o artigo acima fale sobre eles.
@@ -174,4 +174,3 @@ Para saber mais sobre esse recurso, confira [https://aka.ms/paa-sample](https://
 
 > [!TIP]
 > Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
-
