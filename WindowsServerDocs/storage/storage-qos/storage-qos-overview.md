@@ -1,5 +1,5 @@
 ---
-title: Qualidade de serviço do armazenamento
+title: Qualidade de Serviço do Armazenamento
 ms.prod: windows-server
 manager: dongill
 ms.author: JGerend
@@ -8,16 +8,16 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ed7d7ca4f41784f2ae12220eb2e30077e2467175
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950092"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518741"
 ---
-# <a name="storage-quality-of-service"></a>Qualidade de serviço do armazenamento
+# <a name="storage-quality-of-service"></a>Qualidade de Serviço do Armazenamento
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
 A Qualidade de serviço de armazenamento (QoS de armazenamento) no Windows Server 2016 fornece uma maneira de monitorar e gerenciar centralmente o desempenho de armazenamento de máquinas virtuais usando o Hyper-V e as funções de Servidor de Arquivos de Escalabilidade Horizontal. O recurso aprimora automaticamente a igualdade de recursos de armazenamento entre várias máquinas virtuais usando o mesmo cluster de servidor de arquivos e permite que as metas de desempenho mínimo e máximo baseadas em políticas sejam configuradas em unidades de IOPs normalizados.  
 
@@ -31,7 +31,7 @@ Você pode usar a QoS de armazenamento no Windows Server 2016 para realizar o se
 
 Este documento descreve como sua empresa pode se beneficiar da nova funcionalidade de QoS de armazenamento. Ele supõe que você tenha um conhecimento prático anterior sobre o Windows Server, Clustering de failover do Windows Server, Servidor de Arquivos de Escalabilidade Horizontal, Hyper-V e Windows PowerShell.
 
-## <a name="BKMK_Overview"></a>Visão geral  
+## <a name="BKMK_Overview"></a>Sobre  
 Esta seção descreve os requisitos para usar a QoS de armazenamento, uma visão geral de uma solução definida pelo software usando a QoS de armazenamento, e uma lista de terminologias relacionadas a QoS de armazenamento.  
 
 ### <a name="BKMK_Requirements"></a>Requisitos de QoS de armazenamento  
@@ -79,7 +79,7 @@ Quando há mudanças nas políticas de QoS de armazenamento ou nas demandas de d
 |MinimumIOPS|IOPs normalizados mínimos que serão fornecidos por uma política.  Também conhecidos como "Reserva".|  
 |MaximumIOPS|IOPs normalizados máximos que serão limitados por uma política.  Também conhecidos como "Limite".|  
 |Agregados |Um tipo de política onde o MinimumIOPS, o MaximumIOPS e a largura de banda especificados são compartilhados entre todos os fluxos atribuídos à política. Todos os VHDs atribuídos à política nesse sistema de armazenamento tem uma única alocação de largura de banda de E/S para eles para compartilhamento de todos.|  
-|Dedicada|Um tipo de política onde os IOPs mínimo e máximo, e a largura de banda são gerenciados para VHD/VHDx individuais.|  
+|Dedicado|Um tipo de política onde os IOPs mínimo e máximo, e a largura de banda são gerenciados para VHD/VHDx individuais.|  
 
 ## <a name="BKMK_SetUpQoS"></a>Como configurar a QoS de armazenamento e monitorar o desempenho básico  
 Esta seção descreve como habilitar o novo recurso de QoS de armazenamento e como monitorar o desempenho de armazenamento sem a aplicação de políticas personalizadas.  
@@ -812,7 +812,7 @@ while ($true)
 }  
 ```  
 
-## <a name="frequently-asked-questions"></a>perguntas frequentes  
+## <a name="frequently-asked-questions"></a>Perguntas frequentes  
 
 ### <a name="how-do-i-retain-a-storage-qos-policy-being-enforced-for-my-virtual-machine-if-i-move-its-vhdvhdx-files-to-another-storage-cluster"></a>Como posso manter uma política de QoS de armazenamento que está sendo imposta para minha máquina virtual se mover meus arquivos VHD/VHDx para outro cluster de armazenamento  
 
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte também  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Réplica de armazenamento no Windows Server 2016](../storage-replica/storage-replica-overview.md)  
 - [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  
