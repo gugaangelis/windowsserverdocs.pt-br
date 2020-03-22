@@ -9,12 +9,12 @@ manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 1a31fac97a6697909774a084045ad5746b7241f3
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 08135ed3454bb22db1c2b0fa3a14a8342fbc2dab
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918267"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110659"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>Implantar máquinas virtuais do Azure de dentro do centro de administração do Windows
 
@@ -32,7 +32,7 @@ O centro de administração do Windows versão 1910 implantação de VM do Azure
 - [Réplica de armazenamento](../../../storage/storage-replica/storage-replica-overview.md)
 - [Novo servidor autônomo (sem funções)](index.md#extend-on-premises-capacity-with-azure)
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements"></a>{1&gt;{2&gt;Requisitos&lt;2}&lt;1}
 
 A criação de uma nova VM do Azure de dentro do centro de administração do Windows exige que você tenha:
 
@@ -60,7 +60,15 @@ Isso inicia uma ferramenta de criação passo a passo que seleciona um Windows S
 Isso inicia um processo que seleciona automaticamente uma VM do Azure do Windows Server 2016 ou Windows Server 2019 como um destino para a origem de migração. O serviço de migração de armazenamento recomenda tamanhos de VM para corresponder à sua fonte, mas você pode substituir isso selecionando **Ver todos os tamanhos**. Os dados de inventário são usados para configurar automaticamente seus discos gerenciados e seus sistemas de arquivos, bem como ingressar sua nova VM do Azure em seu domínio de Active Directory. 
 3. Depois que o centro de administração do Windows criar a VM do Azure, forneça um nome de grupo de replicação e, em seguida, selecione **criar**. O centro de administração do Windows começa o processo de sincronização inicial da réplica de armazenamento normal para começar a proteger seus dados.
 
+Aqui está um vídeo mostrando como usar a réplica de armazenamento para migrar para VMs do Azure.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
+
 ### <a name="deploying-a-new-standalone-azure-vm"></a>Implantando uma nova VM autônoma do Azure
 
 1. Na página *todas as conexões* no centro de administração do Windows, selecione **Adicionar**.
 2. Na seção *VM do Azure* , selecione **criar novo**.<br><br> Isso inicia uma ferramenta de criação passo a passo que permitirá que você selecione uma VM do Windows Server 2012 R2, Windows Server 2016 ou Windows Server 2019, escolha um tamanho, adicione discos gerenciados e, opcionalmente, ingresse em seu domínio de Active Directory.
+
+Aqui está um vídeo mostrando como usar o centro de administração do Windows para criar VMs do Azure.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/__A8J9aC_Jk] 

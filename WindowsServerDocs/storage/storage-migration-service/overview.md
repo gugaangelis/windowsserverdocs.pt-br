@@ -8,12 +8,12 @@ ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519468"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110669"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -51,7 +51,7 @@ Veja um vídeo mostrando como usar o serviço de migração de armazenamento par
 
 > [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements"></a>{1&gt;{2&gt;Requisitos&lt;2}&lt;1}
 
 Para usar o serviço de migração de armazenamento, você precisa do seguinte:
 
@@ -86,7 +86,7 @@ O servidor de origem deve executar um dos seguintes sistemas operacionais:
 - Windows Server, Canal Semestral
 - Windows Server 2019
 - Windows Server 2016
-- R2 do Windows Server 2012
+- Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
@@ -125,10 +125,14 @@ O servidor de destino deve executar um dos seguintes sistemas operacionais:
 - Windows Server, Canal Semestral
 - Windows Server 2019
 - Windows Server 2016
-- R2 do Windows Server 2012
+- Windows Server 2012 R2
 
 > [!TIP]
 > Os servidores de destino que executam o Windows Server 2019 ou o Windows Server, canal semestral ou posterior têm o dobro do desempenho de transferência de versões anteriores do Windows Server. Esse aumento de desempenho ocorre devido à inclusão de um serviço de proxy de serviço de migração de armazenamento interno, que também abre as portas de firewall necessárias, se ainda não estiverem abertas.
+
+## <a name="azure-vm-migration"></a>Migração de VM do Azure
+
+O centro de administração do Windows versão 1910 permite implantar máquinas virtuais do Azure. Isso integra a implantação da VM ao serviço de migração de armazenamento. Em vez de criar novos servidores e VMs no portal do Azure manualmente antes de implantar sua carga de trabalho, e possivelmente faltam as etapas necessárias e a configuração-o centro de administração do Windows pode implantar a VM do Azure, configurar seu armazenamento, associá-la ao seu domínio, instalar funções e em seguida, configure seu sistema distribuído. 
 
 ## <a name="whats-new-in-storage-migration-service"></a>O que há de novo no serviço de migração de armazenamento
 
@@ -140,7 +144,7 @@ Os novos recursos a seguir estão disponíveis ao executar o Storage Migration S
 - Sincronização mais fácil de compartilhamentos integrados no Azure usando a Sincronização de Arquivos do Azure
 - Migrar para novas redes, como o Azure
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Migrar um servidor de arquivos usando o serviço de migração de armazenamento](migrate-data.md)
 - [Perguntas frequentes sobre serviços de migração de armazenamento](faq.md)
