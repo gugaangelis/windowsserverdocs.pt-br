@@ -7,12 +7,12 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9a6e9778e0ce1e50a70e68832390321fb2d9f971
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 27869820e49257d059d124bac3f515ac91fef7b0
+ms.sourcegitcommit: 30afd51d74cb6472720fb13ec47d80cf42b20c27
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654357"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80272312"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>O SMBv1 não é instalado por padrão no Windows 10 versão 1709, Windows Server versão 1709 e versões posteriores
 
@@ -114,7 +114,7 @@ Esses dispositivos provavelmente não estão executando o Windows. É mais prov
 > [!NOTE]
 > O Windows 10, versão 1709, também é conhecido como "atualização de criadores de Outono".   
 
-## <a name="more-information"></a>Mais Informações
+## <a name="more-information"></a>Mais informações
 
 Para contornar esse problema, entre em contato com o fabricante do produto que dá suporte apenas a SMBv1 e solicite uma atualização de software ou firmware que ofereça suporte a SMBv 2.02 ou uma versão posterior. Para obter uma lista atual de fornecedores conhecidos e seus requisitos de SMBv1, consulte o seguinte blog da equipe de engenharia de armazenamento do Windows e do Windows Server: 
 
@@ -146,7 +146,21 @@ Todos os dispositivos Windows dentro dessa sub-rede que têm essas configuraçõ
 Se você não puder usar nenhuma dessas soluções alternativas ou se o fabricante do aplicativo não puder fornecer versões com suporte do SMB, você poderá reabilitar o SMBv1 manualmente seguindo as etapas em [como detectar, habilitar e desabilitar o SMBv1, o SMBv2 e o SMBv3 no Windows](detect-enable-and-disable-smbv1-v2-v3.md).
 
 > [!IMPORTANT]
-> É altamente recomendável que você não reinstale o SMBv1. Isso ocorre porque esse protocolo mais antigo tem problemas de segurança conhecidos relacionados a ransomware e a outros malwares.   
+> É altamente recomendável que você não reinstale o SMBv1. Isso ocorre porque esse protocolo mais antigo tem problemas de segurança conhecidos relacionados a ransomware e a outros malwares.  
+
+#### <a name="windows-server-best-practices-analyzer-messaging"></a>Mensagens do analisador de práticas recomendadas do Windows Server
+
+Os sistemas de operação de servidor do Windows Server 2012 e posterior contêm um analisador de práticas recomendadas (BPA) para servidores de arquivos. Se você seguiu as diretrizes online corretas para desinstalar o SMB1, a execução deste BPA retornará uma mensagem de aviso contraditória:
+
+    Title: The SMB 1.0 file sharing protocol should be enabled
+    Severity: Warning
+    Date: 3/25/2020 12:38:47 PM
+    Category: Configuration
+    Problem: The Server Message Block 1.0 (SMB 1.0) file sharing protocol is disabled on this file server.
+    Impact: SMB not in a default configuration, which could lead to less than optimal behavior.
+    Resolution: Use Registry Editor to enable the SMB 1.0 protocol.
+
+Você deve ignorar as diretrizes específicas da regra de BPA, mas ela foi preterida. Repetimos: não habilite o SMB 1,0.
 
 ## <a name="references"></a>Referências
 

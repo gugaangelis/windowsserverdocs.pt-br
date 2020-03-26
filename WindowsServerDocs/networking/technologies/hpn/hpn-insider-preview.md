@@ -9,14 +9,14 @@ ms.date: 09/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7098e81f486a5b0b4974c19b47e2d48c6f98832b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bca603344047ea5cc890bf9976ca5a6c79514136
+ms.sourcegitcommit: 9feb093a0acb8834c9ef3c066667c7062d85e6e1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355369"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80289791"
 ---
-# <a name="insider-preview"></a>Insider Preview
+# <a name="new-hpn-features-in-windows-server-2019"></a>Novos recursos do HPN no Windows Server 2019
 
 
 ## <a name="dynamic-vrss-and-vmmq"></a>VRSS e VMMQ dinâmicos
