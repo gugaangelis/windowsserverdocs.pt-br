@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4b8f10ab7b3da05fbefabb735ee2b8bb4ef1cb8a
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 36c30372b6cac40b603658eca9636a265801fb1a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781343"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315440"
 ---
 # <a name="manage-qos-policy"></a>Gerenciar política de QoS
 
@@ -32,7 +32,7 @@ Em sistemas operacionais Windows, a política de QoS combina a funcionalidade de
 
 -  [Exibir, editar ou excluir uma política de QoS](#bkmk_editpolicy)
 
-##  <a name="bkmk_createpolicy"></a>Criar uma política de QoS
+##  <a name="create-a-qos-policy"></a><a name="bkmk_createpolicy"></a>Criar uma política de QoS
 
 Antes de criar uma política de QoS, é importante entender os dois principais controles de QoS usados para gerenciar o tráfego de rede:
 
@@ -176,7 +176,7 @@ Para concluir a criação da nova política de QoS, clique em **concluir** na p�
   
 Para aplicar as configurações de política de QoS a usuários ou computadores, vincule o GPO no qual as políticas de QoS estão localizadas em um contêiner Active Directory Domain Services, como um domínio, um site ou uma UO (unidade organizacional).  
   
-##  <a name="bkmk_editpolicy"></a>Exibir, editar ou excluir uma política de QoS
+##  <a name="view-edit-or-delete-a-qos-policy"></a><a name="bkmk_editpolicy"></a>Exibir, editar ou excluir uma política de QoS
 
 As páginas do assistente de política de QoS descritas anteriormente correspondem às páginas de propriedades que são exibidas quando você exibe ou edita as propriedades de uma política.  
   
@@ -188,7 +188,7 @@ As páginas do assistente de política de QoS descritas anteriormente correspond
   
     -   Perfil da Política  
   
-    -   Nome do aplicativo  
+    -   Nome do Aplicativo  
   
     -   Endereços IP  
   
@@ -291,7 +291,7 @@ A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu u
 
 Você pode criar políticas de QoS que usam esses valores DSCP para garantir que computadores portáteis com o Wi\-Fi CERTIFIED™ para adaptadores sem fio WMM recebam tratamento priorizado quando associados a Wi\-Fi certificados para pontos de acesso do WMM.
   
-### <a name="BKMK_precedencerules"></a>Regras de precedência de política de QoS
+### <a name="qos-policy-precedence-rules"></a><a name="BKMK_precedencerules"></a>Regras de precedência de política de QoS
 
 Semelhante às prioridades do GPO, as políticas de QoS têm regras de precedência para resolver conflitos quando várias políticas de QoS se aplicam a um conjunto específico de tráfego. Para o tráfego TCP ou UDP de saída, somente uma política de QoS pode ser aplicada por vez, o que significa que as políticas de QoS não têm um efeito cumulativo, como o local em que as taxas de limitação seriam somadas.
 

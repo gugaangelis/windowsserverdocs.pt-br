@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0dce886555167ad651704045120fb92eff0dcea1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0636fc321b4e94351628fd577526a8e81b4fc4cf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356180"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318317"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Implantar certificados de servidor para implantações com e sem fio do 802.1X
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este guia para implantar certificados de servidor em seus servidores de infraestrutura de acesso remoto e servidor de políticas de rede (NPS).   
 
@@ -61,7 +61,7 @@ O registro automático de certificados de servidor, também chamado de inscriç�
 - Simplicidade. Você especifica os servidores que registram certificados de servidor usando Active Directory contas de grupo e a associação de grupo.   
 - Quando você implanta certificados de servidor, os certificados são baseados em um modelo que você configura com as instruções neste guia. Isso significa que você pode personalizar modelos de certificado diferentes para tipos de servidor específicos ou pode usar o mesmo modelo para todos os certificados de servidor que você deseja emitir.  
 
-## <a name="bkmk_pre"></a>Pré-requisitos para usar este guia  
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>Pré-requisitos para usar este guia  
 
 Este guia fornece instruções sobre como implantar certificados de servidor usando o AD CS e a função de servidor do servidor Web (IIS) no Windows Server 2016. Veja a seguir os pré-requisitos para executar os procedimentos deste guia.  
 
@@ -71,18 +71,18 @@ Este guia fornece instruções sobre como implantar certificados de servidor usa
 
 - Você deve ler a seção de planejamento deste guia para garantir que você está preparado para essa implantação antes de executar a implantação.  
 - Você deve executar as etapas neste guia na ordem em que elas são apresentadas. Não vá em frente e implante sua autoridade de certificação sem executar as etapas que levam à implantação do servidor ou a sua implantação falhará.  
-- Você deve estar preparado para implantar dois novos servidores em sua rede – um servidor no qual você instalará o AD CS como uma AC raiz corporativa e um servidor no qual você instalará o servidor Web (IIS) para que sua autoridade de certificação possa publicar a CRL (lista de certificados revogados) no Web se servido.   
+- Você deve estar preparado para implantar dois novos servidores em sua rede – um servidor no qual você instalará o AD CS como uma AC raiz corporativa e um servidor no qual você instalará o servidor Web (IIS) para que sua autoridade de certificação possa publicar a CRL (lista de certificados revogados) na Web servidor.   
 
 >[!NOTE]  
 >Você está preparado para atribuir um endereço IP estático aos servidores Web e do AD CS que você implanta com este guia, bem como para nomear os computadores de acordo com as convenções de nomenclatura da organização. Além disso, você deve unir os computadores ao seu domínio.  
 
-## <a name="bkmk_not"></a>O que este guia não fornece  
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>O que este guia não fornece  
 Este guia não fornece instruções abrangentes para projetar e implantar uma PKI (infraestrutura de chave pública) usando o AD CS. É recomendável que você examine a documentação do AD CS e a documentação de design PKI antes de implantar as tecnologias neste guia.   
 
-## <a name="bkmk_tech"></a>Visões gerais de tecnologia  
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>Visões gerais de tecnologia  
 A seguir estão as visões gerais de tecnologia para o AD CS e o servidor Web (IIS).  
 
-### <a name="active-directory-certificate-services"></a>Serviços de Certificados do Active Directory  
+### <a name="active-directory-certificate-services"></a>Serviços de Certificado do Active Directory  
 O AD CS no Windows Server 2016 fornece serviços personalizáveis para criar e gerenciar os certificados X. 509 que são usados em sistemas de segurança de software que empregam tecnologias de chave pública. As organizações podem usar o AD CS para aumentar a segurança ligando a identidade de uma pessoa, dispositivo ou serviço a uma chave pública correspondente. O AD CS também inclui recursos que permitem que você gerencie o registro e a revogação de certificados em uma variedade de ambientes escalonáveis.  
 
 Para obter mais informações, consulte [visão geral dos serviços de certificados Active Directory](https://technet.microsoft.com/library/hh831740.aspx) e [diretrizes de design de infraestrutura de chave pública](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx).  

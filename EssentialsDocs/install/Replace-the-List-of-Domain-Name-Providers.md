@@ -3,7 +3,7 @@ title: Substituir a Lista de Provedores de Nomes de Domínio
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c087cdad4d2c047db40b370673fb04b232036b61
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: adbadcd08bb6867cbc7f1da8b08e01250f5186a6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433494"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311533"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>Substituir a Lista de Provedores de Nomes de Domínio
 
@@ -26,16 +26,16 @@ ms.locfileid: "66433494"
 É possível substituir a lista de provedores de nomes de domínio exibida no Assistente de Configuração de Nomes de Domínio executando as seguintes tarefas:  
 
 
--   [Criar arquivos de serviço de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [Criar os arquivos do serviço de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
 -   [Adicionar uma entrada ao registro no computador de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
--   [Criar arquivos de serviço de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [Criar os arquivos do serviço de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
 -   [Adicionar uma entrada ao registro no computador de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
 
-###  <a name="BKMK_ReferralFiles"></a> Criar arquivos de serviço de referência  
+###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>Criar os arquivos do serviço de referência  
  A Ferramenta de Administração de Serviços de Referência cria um conjunto de arquivos usados para definir a lista de provedores de nomes de domínio exibidos no Assistente de Configuração de Nomes de Domínio. Um arquivo XML formatado é criado para cada região do mundo e contém informações sobre os provedores de nomes de domínio que você especificou na ferramenta. Os arquivos criados pela ferramenta devem estar localizados em uma pasta que possa ser acessada por meio de um link seguro (HTTPS) que você gerencia pela Internet.  
 
 ##### <a name="to-create-the-referral-files"></a>Para criar os arquivos de referência  
@@ -58,16 +58,16 @@ ms.locfileid: "66433494"
 
 9. Repita as etapas 2 a 8 para cada provedor de nomes de domínio que desejar listar no assistente.  
 
-10. Depois de adicionar todos os provedores de nome de domínio, escolha a pasta onde os arquivos de referência estará localizados. Ao escolher uma pasta, lembre-se de que os arquivos de referência devem ser acessados por meio de um link HTTPS.  
+10. Depois que tiver adicionado todos os provedores de nomes de domínio, escolha a pasta em que os arquivos de referência ficarão localizados. Ao escolher uma pasta, lembre-se de que os arquivos de referência devem ser acessados por meio de um link HTTPS.  
 
 11. Clique em **Gerar Arquivos para o Sistema de Arquivos**.  
 
-###  <a name="BKMK_AddRegistry"></a> Adicionar uma entrada ao registro no computador de referência  
+###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a>Adicionar uma entrada ao registro no computador de referência  
  Uma entrada de Registro deve ser adicionada para que se especifique onde o sistema operacional pode achar os arquivos de serviços de referência.  
 
 ##### <a name="to-add-a-key-to-the-registry"></a>Para adicionar uma chave ao Registro  
 
-1.  No computador de referência, clique em **Iniciar**, insira **regedit**e pressione **Enter**.  
+1.  No computador de referência, clique em **Iniciar**, insira **regedit** e pressione **Enter**.  
 
 2.  No painel esquerdo, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**, expanda **Gerenciadores de Domínio** e, finalmente, expanda **Provedores**.  
 
@@ -78,9 +78,9 @@ ms.locfileid: "66433494"
 5.  Clique com o botão direito na nova cadeia de caracteres **ReferralServerHttpsUri** no painel à direita e, em seguida, clique em **Modificar**.  
 
 
-6.  Digite a URL HTTPS usada para acessar os arquivos de referência criados em [Create the referral service files](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles), e clique em **OK**.  
+6.  Digite a URL HTTPS usada para acessar os arquivos de referência criados em [Criar arquivos de serviços de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles) e clique em **OK**.  
 
-6.  Digite a URL HTTPS usada para acessar os arquivos de referência criados em [Create the referral service files](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles), e clique em **OK**.  
+6.  Digite a URL HTTPS usada para acessar os arquivos de referência criados em [Criar arquivos de serviços de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles) e clique em **OK**.  
 
 
 ~~~
@@ -88,12 +88,12 @@ ms.locfileid: "66433494"
 >  A slash (/) is required at the end of the URL.  
 ~~~
 
-###  <a name="BKMK_ReplaceDomainNameProviders"></a> Problemas de status do nome de domínio  
- Se um parceiro adiciona provedores de nome de domínio e usa uma interface de programação de aplicativo (API) no SDK do Windows Server Essentials para definir os status desconhecido, falha e CertificateRequestNotSubmitted para o certificado, o cliente recebe um incorreto resultado da mensagem e a configuração. Isso ocorre porque os casos são tratados por exceções, em vez de retornarem um status.  
+###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>Problemas de status do nome de domínio  
+ Se um parceiro adicionar provedores de nome de domínio e usar uma API (interface de programação de aplicativo) no SDK do Windows Server Essentials para definir os status desconhecido, falha e CertificateRequestNotSubmitted para o certificado, o cliente receberá um incorreto resultado da mensagem e da configuração. Isso ocorre porque os casos são tratados por exceções, em vez de retornarem um status.  
 
  Os seguintes status de domínio são falhas e devem ser relatados como erro:  
 
-- Failed (Falha)  
+- Falha  
 
 - PendingCustomerInterventionRequired (Intervenção de cliente pendente requerida)  
 
@@ -109,7 +109,7 @@ ms.locfileid: "66433494"
 
 - Pronto  
 
-- Pending (Pendente)  
+- Pendente  
 
 - InRenewal (Em renovação)  
 

@@ -6,23 +6,23 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: c04074338cf4ba0189eb1e9bc45a80b948fdbfbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d3afb21c466ef1010a20ec811df45b9dcb2b711
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388037"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312252"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Etapa 3. Configurar o servidor de acesso remoto para VPN Always On
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Etapa 2. Configurar a infraestrutura do servidor](vpn-deploy-server-infrastructure.md)
-- [**Anterior** Etapa 4. Instalar e configurar o servidor de políticas de rede (NPS)](vpn-deploy-nps.md)
+- [**Anterior:** Etapa 2. Configurar a infraestrutura do servidor](vpn-deploy-server-infrastructure.md)
+- [**Anterior:** Etapa 4. Instalar e configurar o servidor de políticas de rede (NPS)](vpn-deploy-nps.md)
 
 O RRAS foi projetado para funcionar bem como um roteador e um servidor de acesso remoto, pois ele dá suporte a uma ampla gama de recursos. Para os fins desta implantação, você precisa apenas de um pequeno subconjunto desses recursos: suporte para conexões VPN IKEv2 e roteamento de LAN.
 
@@ -173,7 +173,7 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
 14. Examine a configuração do **provedor de contabilidade**:
 
-    |                    Se você quiser...                     |                                                     Então…                                                      |
+    |                    Se você quiser...                     |                                                     Então...                                                      |
     |-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
     | Atividade de acesso remoto registrada no servidor de acesso remoto |                               Verifique se a **contabilidade do Windows** está selecionada.                               |
     |        NPS para executar serviços de contabilidade para VPN         | Altere o **provedor de contabilização** para **contabilização RADIUS** e configure o NPS como o provedor de contabilidade. |
@@ -198,7 +198,7 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
     a. Direita – as **conexões com a política de rede do servidor de roteamento e acesso remoto da Microsoft** e selecione **Propriedades**.
 
-    b. **Selecione conceder acesso. Conceder acesso se a solicitação de conexão corresponder a** essa opção de política.
+    b. Selecione **conceder acesso. Conceder acesso se a solicitação de conexão corresponder a essa** opção de política.
 
     c. Em tipo de servidor de acesso à rede, selecione **servidor de acesso remoto (VPN-Dial up)** na lista suspensa.
 
@@ -234,4 +234,4 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
 ## <a name="next-step"></a>Próximas etapas
 
-[Etapa 4. Instalar e configurar o servidor de políticas de rede (](vpn-deploy-nps.md)NPS): Nesta etapa, você instala o NPS (servidor de políticas de rede) usando o Windows PowerShell ou o assistente Gerenciador do Servidor adicionar funções e recursos. Você também configura o NPS para lidar com todas as tarefas de autenticação, autorização e contabilidade das solicitações de conexão que ele recebe do servidor VPN.
+[Etapa 4. Instalar e configurar o servidor de políticas de rede (NPS)](vpn-deploy-nps.md): nesta etapa, você instala o servidor de políticas de rede (NPS) usando o Windows PowerShell ou o assistente Gerenciador do servidor adicionar funções e recursos. Você também configura o NPS para lidar com todas as tarefas de autenticação, autorização e contabilidade das solicitações de conexão que ele recebe do servidor VPN.

@@ -3,7 +3,7 @@ title: Integração de Serviços do Azure Site Recovery
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/01/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,60 +12,60 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e9dabc1b986fd86b5ee3efc6022023b331046250
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c04f27d4bf6ff6e615cf06da73247bf79dea1008
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433955"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310412"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Integração de Serviços do Azure Site Recovery
 
 >Aplica-se a: Windows Server 2016 Essentials
 
-[Serviços de recuperação de Site do Azure](https://docs.microsoft.com/azure/site-recovery/) é um serviço oferecido pelo Microsoft Azure, habilitando a replicação em tempo real de máquinas virtuais (VM) em um cofre de backup no Azure. Que seu servidor ou site está inativo devido a uma falha de hardware ou outra, você pode fazer o failover para o Azure em que a imagem VM armazenada no seu Cofre de backup será provisionada como uma VM em execução no Azure. Combinado com uma rede Virtual do Azure, no caso de um failover para o Azure, PCs conectado anteriormente ao servidor local do cliente será conectar de forma transparente para o servidor em execução no Azure.
+Os [serviços de Azure site Recovery](https://docs.microsoft.com/azure/site-recovery/) são um serviço oferecido pelo Microsoft Azure habilitando a replicação em tempo real de suas máquinas virtuais (VM) para um cofre de backup no Azure. Caso seu servidor ou site esteja inoperante devido a um hardware ou outra falha, você pode fazer failover para o Azure, onde a imagem de VM armazenada no cofre de backup será provisionada como uma VM em execução no Azure. Combinado com uma rede virtual do Azure, no caso de um failover para o Azure, os PCs cliente conectados anteriormente ao servidor local se conectarão de forma transparente ao servidor em execução no Azure.
 
-A integração de serviços de recuperação de Site do Azure com o Windows Server Essentials começa da mesma maneira como configurando [rede Virtual do Azure](azure-virtual-network-integration.md). Dos **integração de serviços de nuvem do Microsoft** no painel, clique em **integrar com serviços do Azure Site Recovery** à direita do painel:
+A integração dos serviços de Azure Site Recovery com o Windows Server Essentials é iniciada da mesma maneira que a configuração da [rede virtual do Azure](azure-virtual-network-integration.md). Na página de **integração dos serviços de Microsoft Cloud** no painel, clique em **integrar com os serviços de Azure site Recovery** à direita do painel:
 
-![Uma captura de tela mostrando a guia de Introdução na Home page do painel do Windows Server Essentials. Na guia de Introdução, a seção de serviços foi selecionada e indica o painel na integração de serviços de nuvem do Microsoft Azure Recovery está desabilitado no momento.](media/azure-site-recovery-1.PNG)
+![Uma captura de tela mostrando a guia introdução na home page do painel do Windows Server Essentials. Na guia introdução, a seção serviços foi selecionada e o painel indica em integração de serviços de Microsoft Cloud que a recuperação do Azure está atualmente desabilitada.](media/azure-site-recovery-1.PNG)
 
-Assim como acontece com a integração de rede Virtual do Azure e integração de Backup do Azure, você deve fazer logon no Azure com a conta do Azure existente ou crie uma nova conta:
+Assim como ocorre com a integração de rede virtual do Azure e a integração de backup do Azure, você deve fazer logon no Azure com sua conta existente do Azure ou criar uma nova conta:
 
-![Uma captura de tela mostrando a página do Assistente para habilitar a replicação do Azure para entrar no Microsoft Azure. O botão de entrada é exibido porque o usuário ainda não tiver entrado no Microsoft Azure.](media/azure-site-recovery-2.PNG)
+![Uma captura de tela mostrando a página entrar no Microsoft Azure do assistente para habilitar a replicação para o Azure. O botão entrar é exibido porque o usuário ainda não entrou no Microsoft Azure.](media/azure-site-recovery-2.PNG)
 
-Depois de fazer logon com êxito para o Azure, você verá uma tela que solicitará a assinatura que você deseja associar com o serviço de recuperação de Site do Azure, bem como a região do Azure em que a VM será armazenada e hospedada:
+Depois de fazer logon com êxito no Azure, você verá uma tela que perguntará qual assinatura você deseja associar ao serviço de Azure Site Recovery, bem como a região do Azure onde sua VM será armazenada e hospedada:
 
-![Uma captura de tela mostrando a página do Assistente para habilitar a replicação do Azure para entrar no Microsoft Azure. Porque o usuário tiver entrado no Microsoft Azure, esta página fornece opções para selecionar uma assinatura, a conta de armazenamento e a região.](media/azure-site-recovery-3.PNG)
+![Uma captura de tela mostrando a página entrar no Microsoft Azure do assistente para habilitar a replicação para o Azure. Como o usuário entrou no Microsoft Azure, esta página fornece opções para selecionar uma assinatura, uma conta de armazenamento e uma região.](media/azure-site-recovery-3.PNG)
 
-Após a assinatura e a seleção de região, uma nova guia aparecerá na **painel do Windows Server Essentials** chamado **Azure Recovery**. Verificação de rede é feito para identificar e enumerar os servidores de host com suporte (executando o Windows Server Hyper-V 2012 R2 e acima), bem como as máquinas virtuais (convidados) em hosts individuais:
+Após a seleção da assinatura e da região, uma nova guia será exibida no **painel do Windows Server Essentials** chamado **recuperação do Azure**. A verificação de rede é feita para identificar e enumerar os servidores de host com suporte (executando o Windows Server Hyper-V 2012 R2 e posterior), bem como as máquinas virtuais (convidados) nos hosts individuais:
 
-![Uma captura de tela mostrando a página de recuperação do Azure do painel do Windows Server Essentials. Dois hosts Hyper-V são exibidos, juntamente com as máquinas virtuais em execução nesses hosts. Uma máquina virtual denominada ramh157v01 no host RAM-H1-7 está selecionada e a replicação para o Azure está desabilitada no momento para esta máquina virtual.](media/azure-site-recovery-4.PNG)
+![Uma captura de tela mostrando a página recuperação do Azure do painel do Windows Server Essentials. Dois hosts Hyper-V são exibidos junto com as máquinas virtuais em execução nesses hosts. Uma máquina virtual chamada ramh157v01 no host RAM-H1-7 está selecionada e a replicação para o Azure está atualmente desabilitada para esta máquina virtual.](media/azure-site-recovery-4.PNG)
 
-### <a name="enabling-guest-virtual-machines-for-protection"></a>Habilitar máquinas virtuais de convidado para a proteção
+### <a name="enabling-guest-virtual-machines-for-protection"></a>Habilitando máquinas virtuais convidadas para proteção
 
-Após a seleção de uma máquina virtual presente na janela de recuperação do Azure, você pode clicar em **habilitar a replicação para o Azure** no lado direito do painel para preparar e copiar a máquina virtual™ s imagem no Azure:
+Após a seleção de uma máquina virtual presente na janela de recuperação do Azure, você pode clicar em **habilitar replicação no Azure** no lado direito do painel para preparar e copiar a imagem da máquina virtual™ s para o Azure:
 
-![Uma captura de tela mostrando a caixa de diálogo habilitar replicação para o Azure. Uma barra de progresso é exibida como um host que está sendo adicionado.](media/azure-site-recovery-5.PNG)
+![Uma captura de tela mostrando a caixa de diálogo Habilitar replicação para o Azure. Uma barra de progresso é exibida à medida que um host está sendo adicionado.](media/azure-site-recovery-5.PNG)
 
-Durante esse processo, o agente de serviço do Azure Site Recovery é instalado no servidor de host, um cofre de backup em que a imagem do convidado que VM será armazenada é criada e começa a replicação da imagem para o Azure. Dependendo do tamanho da VM que está sendo replicado, a conclusão do processo de replicação pode levar horas ou dias. Até que a imagem VM inteira e mais recente deltas sejam replicadas para o Azure, tarefas de failover não estão disponíveis e a VM não está protegida. Depois que a replicação for concluída, a coluna de Status de proteção na janela de recuperação do Azure será alterado de **replicando** à **habilitado**:
+Durante esse processo, o agente de serviço Azure Site Recovery é instalado no servidor host, um cofre de backup no qual a imagem da VM convidada será armazenada e a replicação da imagem para o Azure começa. Dependendo do tamanho da VM que está sendo replicada, a conclusão do processo de replicação pode levar horas ou dias. Até que toda a imagem da VM e os deltas mais recentes sejam replicados para o Azure, as tarefas de failover não estarão disponíveis e a VM não será protegida. Depois que a replicação for concluída, a coluna status da proteção na janela recuperação do Azure será alterada de **replicando** para **habilitado**:
 
-![Uma captura de tela mostrando a página de recuperação do Azure do painel do Windows Server Essentials. Dois hosts Hyper-V são exibidos, juntamente com as máquinas virtuais em execução nesses hosts. Uma máquina virtual denominada ramh12v02 no host RAM-H1-2 é selecionado e a replicação para o Azure está habilitada para esta máquina virtual.](media/azure-site-recovery-6.PNG)
+![Uma captura de tela mostrando a página recuperação do Azure do painel do Windows Server Essentials. Dois hosts Hyper-V são exibidos junto com as máquinas virtuais em execução nesses hosts. Uma máquina virtual chamada ramh12v02 no host RAM-H1-2 está selecionada e a replicação para o Azure está habilitada para esta máquina virtual no momento.](media/azure-site-recovery-6.PNG)
 
-### <a name="failover-of-a-guest-vm-to-azure"></a>Failover de um convidado VM para o Azure
+### <a name="failover-of-a-guest-vm-to-azure"></a>Failover de uma VM convidada para o Azure
 
-![Captura de tela mostrando o Failover de VM para a página do Azure.](media/azure-site-recovery-7.PNG)
+![Captura de tela mostrando VM de failover para a página do Azure.](media/azure-site-recovery-7.PNG)
 
-Quando uma máquina virtual que é protegido falhar ou o servidor de host que as execuções de máquina virtual protegida no falhar, o failover para o Azure podem ser feitas para manter a continuidade de negócios até que o virtual machine ou host de servidor local é reparado e está disponível. Como a figura acima mostra, há três tipos de failover que são compatíveis com os serviços do Azure Site Recovery:
+Quando uma máquina virtual que está protegida falhar ou o servidor host no qual a máquina virtual protegida for executada falhar, o failover para o Azure poderá ser feito para manter a continuidade dos negócios até que a máquina virtual local ou o servidor host seja reparado e disponível. Como mostra a figura acima, há três tipos de failover que têm suporte com os serviços de Azure Site Recovery:
 
--   **Failover de teste** plano de recuperação de desastres boa ƒA incorpora a capacidade de simular um desastre para garantir que o tempo de inatividade mínimo em caso de desastre real. Um Failover de teste usa a imagem VM que tenha sido replicada para o Cofre de recuperação, provisiona a ele como uma máquina virtual em execução no Azure e permite que você se conecte ao servidor para testar os cenários que se aplicam aos negócios. Durante um failover de teste, a máquina virtual local continua a executar com sem interrupções para não afetem negócios durante o teste de recuperação de desastres. Quando o Failover de teste for concluído, você irá parar o teste por meio do Portal do Azure, que desprovisiona a máquina virtual e exclui o VHD. Durante o failover de teste inteira, a imagem de VM em seu Cofre de recuperação continuará para serem replicados da VM no local, como se nada nunca aconteceu.
+-   **Failover de teste** ƒA bom plano de recuperação de desastre incorpora a capacidade de simular um desastre para garantir o tempo de inatividade mínimo no caso de um desastre real. Um failover de teste usa a imagem de VM que foi replicada em seu cofre de recuperação, a provisiona como uma máquina virtual em execução no Azure e permite que você se conecte ao servidor para testar cenários que se aplicam aos negócios. Durante um failover de teste, a máquina virtual local continua a ser executada sem interrupções para não interromper os negócios durante o teste de recuperação de desastre. Depois que o failover de teste for concluído, você interromperá o teste por meio do portal do Azure, que desprovisionará a máquina virtual e excluirá o VHD. Durante todo o failover de teste, a imagem de VM em seu cofre de recuperação continua a ser replicada da VM local como se nada já aconteceu.
 
--   **Failover não planejado** ƒAn failover não planejado ocorre quando há uma falha real com o servidor de host protegido ou a VM em execução no servidor host. O failover é disparado manualmente de um painel de controle do Windows Server Essentials, ou se o próprio servidor com falha é o servidor que Windows Server Essentials está em execução, pode ser disparado no Portal do Azure diretamente. Nesse caso, o Failover não planejado leva a imagem da VM que tenha sido replicada para o Cofre de recuperação, provisiona a ele como uma máquina virtual em execução no Azure e permite que você se conecte ao servidor para testar os cenários que se aplicam aos negócios. Quando o servidor é restaurado no local, um failback manual pode ser disparado do Portal do Azure que, em seguida, copiará a imagem da VM volta para o servidor local.
+-   **Failover não planejado** ƒAn failover não planejado ocorre quando há uma falha real com o servidor host protegido ou a VM em execução no servidor host. O failover é acionado manualmente do painel do Windows Server Essentials ou, se o próprio servidor com falha for o servidor no qual o Windows Server Essentials está sendo executado, poderá ser disparado diretamente no portal do Azure. Nesse caso, o failover não planejado usa a imagem de VM que foi replicada em seu cofre de recuperação, a provisiona como uma máquina virtual em execução no Azure e permite que você se conecte ao servidor para testar cenários que se aplicam aos negócios. Quando o servidor é restaurado localmente, um failback manual pode ser disparado no portal do Azure que, em seguida, copiará a imagem da VM de volta para o servidor local.
 
--   **Failover planejado** ƒA planejado failover é uma ação que pode ser executada no caso de atividades planejadas, como manutenção de hardware, devem ser realizadas que levaria o servidor para baixo. No caso de um failover planejado, o mesmo processo ocorre em relação ao provisionamento de sua imagem VM replicada no Azure. No entanto, antes de fazer isso, o servidor local é desligado de forma ordenada para garantir que todas as alterações são replicadas para o Azure antes do desligamento. Depois que a manutenção planejada for concluída, você pode acionar manualmente um failback do painel do Windows Server Essentials ou o portal do Azure, o que seria colocar para cima no servidor local e, em seguida, desprovisionar a VM no Azure e excluir o. Arquivo VHD. A replicação da VM local para o Azure, em seguida, continuará a ocorrer novamente como normal.
+-   O **failover planejado ƒA failover** planejado é uma ação que pode ser executada no caso de atividades planejadas, como a manutenção de HW, devem ocorrer, o que levaria o servidor para baixo. No caso de um failover planejado, o mesmo processo ocorre com relação ao provisionamento de sua imagem de VM replicada no Azure. No entanto, antes de fazer isso, o servidor local é desligado de maneira ordenada para garantir que todas as alterações sejam replicadas no Azure antes do desligamento. Depois que a manutenção planejada for concluída, você poderá disparar um failback manualmente no painel do Windows Server Essentials ou na portal do Azure, o que trará o servidor local e, em seguida, desprovisionará a VM no Azure e excluirá o. Arquivo VHD. A replicação da VM local para o Azure continuaria a ocorrer novamente normalmente.
 
-Em qualquer um dos três casos acima, quando uma VM é failover no Azure, o painel do Windows Server Essentials mostrará a nova VM no Azure em execução como na figura abaixo.
+Em qualquer um dos três casos acima, quando uma VM passar por failover para o Azure, o painel do Windows Server Essentials mostrará a nova VM no Azure em execução como na figura abaixo.
 
-![Uma captura de tela mostrando a página de recuperação do Azure do painel do Windows Server Essentials. A replicação para o Azure foi habilitada para um host chamado Essentials e uma máquina virtual nomeada teste Essentials em execução no Azure indica que o host tem failover no Azure.](media/azure-site-recovery-8.PNG)
+![Uma captura de tela mostrando a página recuperação do Azure do painel do Windows Server Essentials. A replicação para o Azure foi habilitada para um host chamado Essentials e uma máquina virtual chamada Essentials-Test em execução no Azure indica que o host passou por failover no Azure.](media/azure-site-recovery-8.PNG)
 
 <a name="see-also"></a>Consulte também
 --------

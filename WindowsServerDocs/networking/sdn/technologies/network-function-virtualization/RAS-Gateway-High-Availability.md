@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7d9c37629c0e0d9964554ba90887aa45f74a330a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5fca4fc6a636bcde155e60b6da3c827bc9313606
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355613"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313041"
 ---
 # <a name="ras-gateway-high-availability"></a>Alta disponibilidade do Gateway de RAS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre as configurações de alta disponibilidade para o gateway de multilocatário do RAS para SDN (rede definida pelo software).  
   
@@ -35,7 +35,7 @@ Este tópico contém as seguintes seções.
   
 -   [Integração do gateway de RAS com o controlador de rede](#bkmk_integration)  
   
-## <a name="bkmk_overview"></a>Visão geral do gateway de RAS  
+## <a name="ras-gateway-overview"></a><a name="bkmk_overview"></a>Visão geral do gateway de RAS  
 Se sua organização for um CSP (provedor de serviços de nuvem) ou uma empresa com vários locatários, você poderá implantar o gateway de RAS no modo multilocatário para fornecer roteamento de tráfego de rede de e para redes físicas e virtuais, incluindo a Internet.  
   
 Você pode implantar o gateway RAS no modo multilocatário como um gateway de borda para rotear o tráfego de rede do cliente de locatário para redes virtuais de locatário e recursos.  
@@ -46,7 +46,7 @@ Esse problema é resolvido no Windows Server 2016, que fornece vários pools de 
   
 Para obter mais informações gerais sobre o gateway RAS, consulte [Gateway de Ras](../../../../remote/remote-access/ras-gateway/RAS-Gateway.md).  
   
-## <a name="bkmk_pools"></a>Visão geral de pools de gateway  
+## <a name="gateway-pools-overview"></a><a name="bkmk_pools"></a>Visão geral de pools de gateway  
 No Windows Server 2016, você pode implantar gateways em um ou mais pools.  
   
 A ilustração a seguir mostra diferentes tipos de pools de gateway que fornecem roteamento de tráfego entre redes virtuais.  
@@ -73,7 +73,7 @@ Os pools de gateway também fornecem a flexibilidade para habilitar cenários ad
   
 -   Vários pools podem fornecer a mesma função de gateway, mas diferentes capacidades. Por exemplo, você pode criar um pool de gateway que dá suporte a altas taxas de transferência e conexões S2S de baixa taxa de transferência.  
   
-## <a name="bkmk_deployment"></a>Visão geral da implantação do gateway de RAS  
+## <a name="ras-gateway-deployment-overview"></a><a name="bkmk_deployment"></a>Visão geral da implantação do gateway de RAS  
 A ilustração a seguir demonstra uma implantação típica do CSP (provedor de serviços de nuvem) do gateway de RAS.  
   
 ![Visão geral da implantação do gateway de RAS](../../../media/RAS-Gateway-High-Availability/ras_csp_deploy.png)  
@@ -84,7 +84,7 @@ Na ilustração, o dispositivo BGP do MT é um gateway de multilocatário do RAS
   
 O roteador BGP é separado no diagrama para representar esse conceito de roteamento centralizado. A implementação BGP de gateway também fornece roteamento de trânsito, que permite que a nuvem atue como um ponto de trânsito para roteamento entre dois sites de locatário. Esses recursos de BGP são aplicáveis a todas as funções de gateway.  
   
-## <a name="bkmk_integration"></a>Integração do gateway de RAS com o controlador de rede  
+## <a name="ras-gateway-integration-with-network-controller"></a><a name="bkmk_integration"></a>Integração do gateway de RAS com o controlador de rede  
 O gateway de RAS é totalmente integrado ao controlador de rede no Windows Server 2016. Quando o gateway RAS e o controlador de rede são implantados, o controlador de rede executa as seguintes funções.  
   
 -   Implantação dos pools de gateway  
@@ -103,7 +103,7 @@ As seções a seguir fornecem informações detalhadas sobre o gateway RAS e o c
   
 -   [Alta disponibilidade para gateways de encaminhamento L3](#bkmk_l3)  
   
-### <a name="bkmk_provisioning"></a>Provisionamento e balanceamento de carga de conexões de gateway (IKEv2, L3 e GRE)  
+### <a name="provisioning-and-load-balancing-of-gateway-connections-ikev2-l3-and-gre"></a><a name="bkmk_provisioning"></a>Provisionamento e balanceamento de carga de conexões de gateway (IKEv2, L3 e GRE)  
 Quando um locatário solicita uma conexão de gateway, a solicitação é enviada ao controlador de rede. O controlador de rede é configurado com informações sobre todos os pools de gateway, incluindo a capacidade de cada pool e todos os gateways em cada pool. Controlador de rede seleciona o pool e o gateway corretos para a conexão. Essa seleção se baseia no requisito de largura de banda para a conexão. O controlador de rede usa um algoritmo "melhor ajuste" para escolher conexões com eficiência em um pool. O ponto de emparelhamento via protocolo BGP para a conexão também é designado neste momento se esta for a primeira conexão do locatário.  
   
 Depois que o controlador de rede selecionar um gateway RAS para a conexão, o controlador de rede provisionará a configuração necessária para a conexão no gateway. Se a conexão for uma conexão S2S IKEv2, o controlador de rede também provisionará uma regra NAT (conversão de endereços de rede) no pool SLB; Essa regra NAT no pool SLB direciona as solicitações de conexão do locatário para o gateway designado. Os locatários são diferenciados pelo IP de origem, que deve ser exclusivo.  
@@ -113,7 +113,7 @@ Depois que o controlador de rede selecionar um gateway RAS para a conexão, o co
   
 Se o roteamento BGP estiver habilitado para a conexão, o emparelhamento via protocolo BGP será iniciado pelo gateway de RAS e as rotas serão trocadas entre os gateways locais e de nuvem. As rotas aprendidas pelo BGP (ou que são rotas configuradas estaticamente se o BGP não é usado) são enviadas ao controlador de rede. O controlador de rede, em seguida, direciona as rotas para os hosts do Hyper-V nos quais as VMs de locatário estão instaladas. Neste ponto, o tráfego do locatário pode ser roteado para o site local correto. O controlador de rede também cria políticas de virtualização de rede Hyper-V associadas que especificam locais de gateway e as direciona para os hosts Hyper-V.  
   
-### <a name="bkmk_ike"></a>Alta disponibilidade para S2S IKEv2  
+### <a name="high-availability-for-ikev2-s2s"></a><a name="bkmk_ike"></a>Alta disponibilidade para S2S IKEv2  
 Um gateway de RAS em um pool consiste em conexões e no emparelhamento via protocolo BGP de locatários diferentes. Todos os pools têm ' gateways ativos e ' n' gateways em espera.  
   
 O controlador de rede manipula a falha dos gateways da seguinte maneira.  
@@ -140,8 +140,8 @@ O controlador de rede manipula a falha dos gateways da seguinte maneira.
   
 -   Simultaneamente, à medida que a configuração é exibida no novo gateway ativo, as conexões S2S IKEv2 e o emparelhamento via protocolo BGP são restabelecidas. As conexões e o emparelhamento via protocolo BGP podem ser iniciados pelo gateway de nuvem ou pelo gateway local. Os gateways atualizam suas rotas e as enviam para o controlador de rede. Depois que o controlador de rede aprende as novas rotas descobertas pelos gateways, o controlador de rede envia as rotas e as políticas de virtualização de rede do Hyper-V associadas aos hosts do Hyper-V onde residem as VMs dos locatários afetados pela falha. Essa atividade do controlador de rede é semelhante à circunstância de uma nova configuração de conexão, mas só ocorre em uma escala maior.  
   
-### <a name="bkmk_gre"></a>Alta disponibilidade para GRE  
-O processo de resposta de failover do gateway de RAS por controlador de rede-incluindo detecção de falha, copiando a configuração de roteamento e conexão para o gateway em espera, failover do roteamento de BGP/estático das conexões afetadas (incluindo a retirada e a recriação de rotas em hosts de computação e o reemparelhamento de BGP) e a reconfiguração de políticas de virtualização de rede do Hyper-V em hosts de computação-são as mesmas para gateways e conexões GRE. No entanto, a redefinição de conexões GRE acontece de modo diferente, e a solução de alta disponibilidade para o GRE tem alguns requisitos adicionais.  
+### <a name="high-availability-for-gre"></a><a name="bkmk_gre"></a>Alta disponibilidade para GRE  
+O processo de resposta de failover do gateway de RAS por controlador de rede-incluindo detecção de falha, copiar a configuração de conexão e roteamento para o gateway em espera, o failover do roteamento de BGP/estático das conexões afetadas (incluindo a retirada e o redirecionamento de rotas em hosts de computação e reemparelhamento de BGP) e a reconfiguração de políticas de virtualização de rede do Hyper-V em hosts de computação-é a mesma para gateways e conexões GRE. No entanto, a redefinição de conexões GRE acontece de modo diferente, e a solução de alta disponibilidade para o GRE tem alguns requisitos adicionais.  
   
 ![Alta disponibilidade para GRE](../../../media/RAS-Gateway-High-Availability/ras_ha.png)  
   
@@ -151,23 +151,23 @@ No momento do provisionamento de conexão GRE, o controlador de rede seleciona u
   
 Quando um gateway falha, o controlador de rede copia o endereço VIP do gateway com falha e outros dados de configuração para o gateway em espera. Quando o gateway em espera se torna ativo, ele anuncia o VIP para seu comutador TOR e ainda mais na rede física. Roteadores remotos continuam conectando túneis GRE ao mesmo VIP e a infraestrutura de roteamento garante que os pacotes sejam roteados para o novo gateway ativo.  
   
-### <a name="bkmk_l3"></a>Alta disponibilidade para gateways de encaminhamento L3  
+### <a name="high-availability-for-l3-forwarding-gateways"></a><a name="bkmk_l3"></a>Alta disponibilidade para gateways de encaminhamento L3  
 Um gateway de encaminhamento L3 de virtualização de rede Hyper-V é uma ponte entre a infraestrutura física no datacenter e a infraestrutura virtualizada na nuvem de virtualização de rede Hyper-V. Em um gateway de encaminhamento L3 multilocatário, cada locatário usa sua própria rede lógica marcada por VLAN para conectividade com a rede física do locatário.  
   
 Quando um novo locatário cria um novo gateway L3, o gateway do controlador de rede Service Manager seleciona uma VM de gateway disponível e configura uma nova interface de locatário com um endereço IP de espaço de AC (endereço de cliente) altamente disponível (da rede lógica marcada pela VLAN do locatário ). O endereço IP é usado como o endereço IP do par no gateway remoto (rede física) e é o próximo salto para alcançar a rede de virtualização de rede do Hyper-V do locatário.  
   
 Ao contrário das conexões de rede IPsec ou GRE, a opção TOR não aprenderá dinamicamente a rede marcada de VLAN do locatário. O roteamento para a rede marcada por VLAN do locatário precisa ser configurado no comutador TOR e todos os comutadores intermediários e roteadores entre a infraestrutura física e o gateway para garantir a conectividade de ponta a ponta.  A seguir está um exemplo de configuração de rede virtual do CSP, conforme ilustrado na ilustração a seguir.  
   
-|Rede|Subnet|ID DA VLAN|Gateway Padrão|  
+|Rede|Sub-rede|ID DA VLAN|Gateway Padrão|  
 |-----------|----------|-----------|-------------------|  
 |Rede lógica contoso L3|10.127.134.0/24|1001|10.127.134.1|  
 |Rede lógica do Woodgrove L3|10.127.134.0/24|1002|10.127.134.1|  
   
 Veja a seguir exemplos de configurações de gateway de locatário, conforme ilustrado na ilustração a seguir.  
   
-|Nome do locatário|Endereço IP do gateway L3|ID DA VLAN|Endereço IP do par|  
+|Nome do inquilino|Endereço IP do gateway L3|ID DA VLAN|Endereço IP do par|  
 |---------------|-------------------------|-----------|-------------------|  
-|Funcionam|10.127.134.50|1001|10.127.134.55|  
+|Contoso|10.127.134.50|1001|10.127.134.55|  
 |Woodgrove|10.127.134.60|1002|10.127.134.65|  
   
 A seguir está a ilustração dessas configurações em um datacenter CSP.  

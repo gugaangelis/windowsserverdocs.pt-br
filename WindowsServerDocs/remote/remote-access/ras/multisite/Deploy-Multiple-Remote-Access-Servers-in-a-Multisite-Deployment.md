@@ -10,22 +10,22 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da23f3082e1d97f1bcfbee7365b863d29ba2d020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b9da54822c1b7610bbd7a095beeb305eb243bb1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404494"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314029"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>Implantar vários servidores de acesso remoto em uma implantação multissite
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
  O Windows Server 2016 e o Windows Server 2012 combinam o DirectAccess e o serviço de acesso remoto (RAS) VPN em uma única função de acesso remoto. O Acesso Remoto pode ser implantado em diversos cenários corporativos. Esta visão geral fornece uma introdução ao cenário empresarial para a implantação de servidores de acesso remoto em uma configuração multissite.  
   
-## <a name="BKMK_OVER"></a>Descrição do cenário  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descrição do cenário  
 Em uma implantação multissite, dois ou mais servidores de acesso remoto ou clusters de servidores são implantados e configurados como pontos de entrada diferentes em um único local ou em locais geográficos dispersos. A implantação de vários pontos de entrada em um único local permite a redundância do servidor ou o alinhamento dos servidores de acesso remoto com a arquitetura de rede existente. A implantação por localização geográfica garante o uso eficiente de recursos, pois os computadores cliente remotos podem se conectar a recursos de rede internos usando um ponto de entrada mais próximo a eles. O tráfego em uma implantação multissite pode ser distribuído e equilibrado com um balanceador de carga global externo.  
   
 Uma implantação multissite dá suporte A computadores cliente que executam o Windows 10, Windows 8 ou Windows 7. Os computadores cliente que executam o Windows 10 ou o Windows 8 identificam automaticamente um ponto de entrada ou o usuário pode selecionar manualmente um ponto de entrada. A atribuição automática ocorre na seguinte ordem de prioridade:  
@@ -38,7 +38,7 @@ Uma implantação multissite dá suporte A computadores cliente que executam o W
   
 O suporte para clientes que executam o Windows 7 deve ser habilitado manualmente em cada ponto de entrada e não há suporte para a seleção de um ponto de entrada por esses clientes.  
   
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 Antes de começar a implantar este cenário, examine esta lista de requisitos importantes:  
   
 -   [Implantar um único servidor DirectAccess com configurações avançadas](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md) deve ser implantado antes de uma implantação multissite.  
@@ -49,7 +49,7 @@ Antes de começar a implantar este cenário, examine esta lista de requisitos im
   
 -   Uma infraestrutura de chave pública deve ser implantada.  
   
-    Para saber mais, confira: Mini-módulo do guia do laboratório de [Test: PKI básica para Windows Server 2012. ](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
+    Para saber mais, veja os tópicos sobre: [Minimódulo de guia do laboratório de teste: PKI Básico para Windows Server 2012.](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
   
 -   A rede corporativa deve estar habilitada para IPv6. Se você estiver usando ISATAP, remova-o e use o IPv6 nativo.  
   
@@ -64,14 +64,14 @@ O cenário de implantação multissite inclui várias etapas:
   
 4. [Solucionar problemas de implantação multissite](troubleshoot/Troubleshoot-a-Multisite-Deployment.md). Esta seção de solução de problemas descreve uma série de erros mais comuns que podem ocorrer ao implantar o acesso remoto em uma implantação multissite.
   
-## <a name="BKMK_APP"></a>Aplicativos práticos  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicativos práticos  
 Uma implantação multissite fornece o seguinte:  
   
 -   Desempenho aprimorado-uma implantação multissite permite que computadores cliente acessem recursos internos usando o acesso remoto para se conectar usando o ponto de entrada mais próximo e adequado. O cliente acessa recursos internos com eficiência e a velocidade das solicitações de Internet do cliente roteadas por meio do DirectAccess é aprimorada. O tráfego entre pontos de entrada pode ser balanceado usando um balanceador de carga global externo.  
   
 -   A facilidade de gerenciamento – multissite permite que os administradores alinhem a implantação de acesso remoto a uma implantação de Active Directory sites, fornecendo uma arquitetura simplificada. As configurações compartilhadas podem ser facilmente definidas em clusters ou servidores de ponto de entrada. As configurações de acesso remoto podem ser gerenciadas de qualquer um dos servidores na implantação ou remotamente usando Ferramentas de Administração de Servidor Remoto (RSAT). Além disso, toda a implantação multissite pode ser monitorada em um único console de gerenciamento de acesso remoto.  
   
-## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista as funções e os recursos usados neste cenário.  
   
 |Função/recurso|Como este cenário tem suporte|  
@@ -79,7 +79,7 @@ A tabela a seguir lista as funções e os recursos usados neste cenário.
 |Função Acesso Remoto|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto (RRAS) que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<br /><br />-DirectAccess e roteamento e serviços de acesso remoto (RRAS) VPN-e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />-Os recursos de roteamento RRAS de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<br /><br />As dependências são as seguintes:<br /><br />-Serviços de Informações da Internet (IIS) servidor Web-esse recurso é necessário para configurar o servidor de local de rede e a investigação da Web padrão.<br />-Banco de dados interno do Windows-usado para contabilização local no servidor de acesso remoto.|  
 |Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />-GUI de acesso remoto e ferramentas de linha de comando<br />-Módulo de acesso remoto para Windows PowerShell<br /><br />As dependências incluem:<br /><br />-Console de Gerenciamento de Política de Grupo<br />-Kit de administração do Gerenciador de conexões RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
   
-## <a name="BKMK_HARD"></a>Requisitos de hardware  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Os requisitos de hardware para este cenário incluem o seguinte:  
   
 -   Pelo menos dois computadores de acesso remoto a serem coletados em uma implantação multissite.   
@@ -88,7 +88,7 @@ Os requisitos de hardware para este cenário incluem o seguinte:
   
 -   Para balancear a carga do tráfego entre servidores de ponto de entrada, é necessário um balanceador de carga global externo de terceiros.  
   
-## <a name="BKMK_SOFT"></a>Requisitos de software  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software  
 Os requisitos de software para este cenário incluem:  
   
 -   Requisitos de software para implantação de servidor único.  
@@ -117,7 +117,7 @@ Os requisitos de software para este cenário incluem:
   
         -   Um GPO de cliente do Windows 7 exclusivo é necessário para cada ponto de entrada habilitado para o suporte ao cliente do Windows 7, para cada domínio.  
   
-## <a name="KnownIssues"></a>Problemas conhecidos  
+## <a name="known-issues"></a><a name="KnownIssues"></a>Problemas conhecidos  
 Veja a seguir os problemas conhecidos ao configurar um cenário multissite:  
   
 -   **Vários pontos de entrada na mesma sub-rede IPv4**. A adição de vários pontos de entrada na mesma sub-rede IPv4 resultará em uma mensagem de conflito de endereço IP e o endereço DNS64 para o ponto de entrada não será configurado conforme o esperado. Esse problema ocorre quando o IPv6 não foi implantado nas interfaces internas dos servidores na rede corporativa. Para evitar esse problema, execute o seguinte comando do Windows PowerShell em todos os servidores de acesso remoto atuais e futuros:  
@@ -159,7 +159,7 @@ Veja a seguir os problemas conhecidos ao configurar um cenário multissite:
   
 -   Se o DirectAccess foi implantado quando uma infraestrutura ISATAP existente estava presente, ao remover um ponto de entrada que era um host ISATAP, o endereço IPv6 do serviço DNS64 será removido dos endereços de servidor DNS de todos os sufixos DNS na NRPT.  
   
-    Para resolver esse problema, no assistente de **instalação do servidor de infraestrutura** , na página **DNS** , remova os sufixos DNS que foram modificados e adicione-os novamente com os endereços corretos do servidor DNS clicando em **detectar** nos **endereços do servidor DNS** caixa de diálogo.  
+    Para resolver esse problema, no assistente de **instalação do servidor de infraestrutura** , na página **DNS** , remova os sufixos DNS que foram modificados e adicione-os novamente com os endereços corretos do servidor DNS, clicando em **detectar** na caixa de diálogo **endereços do servidor DNS** .  
   
 
 

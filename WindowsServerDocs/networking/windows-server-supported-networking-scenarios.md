@@ -7,14 +7,14 @@ ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f338ddf0a7d3a4fe41277ddbf49b0c3db34ae11b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e2e59b70b102e7ca942e2aafb8b216fecd62fc32
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395700"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315153"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Cenários de rede com suporte do Windows Server
 
@@ -24,7 +24,7 @@ Este tópico fornece informações sobre os cenários com e sem suporte que voc�
 >[!IMPORTANT]
 >Para todos os cenários de produção, use os drivers de hardware mais recentes assinados de seu fabricante de equipamento original \(OEM\) ou fornecedor de hardware independente \(\)de IHV.
   
-## <a name="bkmk_supp"></a>Cenários de rede com suporte
+## <a name="supported-networking-scenarios"></a><a name="bkmk_supp"></a>Cenários de rede com suporte
 
 Esta seção inclui informações sobre os cenários de rede com suporte para o Windows Server 2016 e inclui as categorias de cenário a seguir.  
   
@@ -40,7 +40,7 @@ Esta seção inclui informações sobre os cenários de rede com suporte para o 
 
 - [Mudar a equipe inserida \(definir cenários de\)](#bkmk_set)
   
-### <a name="bkmk_sdn"></a>Cenários de rede definida pelo software (SDN)
+### <a name="software-defined-networking-sdn-scenarios"></a><a name="bkmk_sdn"></a>Cenários de rede definida pelo software (SDN)
  
 Você pode usar a documentação a seguir para implantar cenários de SDN com o Windows Server 2016.  
   
@@ -49,7 +49,7 @@ Você pode usar a documentação a seguir para implantar cenários de SDN com o 
   
 Para obter mais informações, consulte [rede &#40;definida pelo&#41;software Sdn](sdn/software-defined-networking.md).  
   
-#### <a name="bkmk_netc"></a>Cenários do controlador de rede
+#### <a name="network-controller-scenarios"></a><a name="bkmk_netc"></a>Cenários do controlador de rede
 
 Os cenários do controlador de rede permitem que você:  
   
@@ -61,7 +61,7 @@ Os cenários do controlador de rede permitem que você:
   
 Para obter mais informações, consulte [Controlador de Rede](sdn/technologies/network-controller/Network-Controller.md).  
   
-#### <a name="bkmk_netf"></a>Cenários de NFV (virtualização de função de rede)  
+#### <a name="network-function-virtualization-nfv-scenarios"></a><a name="bkmk_netf"></a>Cenários de NFV (virtualização de função de rede)  
 Os cenários de NFV permitem que você:  
   
 -   Implante e use um balanceador de carga de software para distribuir o tráfego Northbound e Southbound.  
@@ -84,7 +84,7 @@ Os cenários de NFV permitem que você:
   
 Para obter mais informações, consulte [virtualização de função de rede](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md).  
   
-### <a name="bkmk_netp"></a>Cenários de plataforma de rede
+### <a name="network-platform-scenarios"></a><a name="bkmk_netp"></a>Cenários de plataforma de rede
 
 Para os cenários nesta seção, a equipe de rede do Windows Server dá suporte ao uso de qualquer driver certificado do Windows Server 2016. Verifique com sua placa de interface de rede \(o fabricante de\) NIC para garantir que você tenha as atualizações de driver mais recentes.
   
@@ -96,9 +96,9 @@ Os cenários de plataforma de rede permitem que você:
   
 -   Configure SET para distribuir SMB direto e o tráfego RDMA flui entre até dois adaptadores de rede.  
   
-Para obter mais informações, [cAcesso remoto direto à memória RDMA -e troca de equipe inserida SET](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
+Para obter mais informações, [consulte Remote Direct Memory &#40;Access&#41; RDMA e switch Embedded &#40;Integration&#41;Set](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
   
-#### <a name="bkmk_switch"></a>Cenários de comutador virtual do Hyper-V
+#### <a name="hyper-v-virtual-switch-scenarios"></a><a name="bkmk_switch"></a>Cenários de comutador virtual do Hyper-V
 
 Os cenários do comutador virtual do Hyper-V permitem:  
   
@@ -112,7 +112,7 @@ Os cenários do comutador virtual do Hyper-V permitem:
   
 Para obter mais informações, [consulte Remote Direct Memory &#40;Access&#41; RDMA e switch Embedded Integration &#40;Set&#41; ](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
   
-### <a name="bkmk_dns"></a>Cenários de servidor DNS
+### <a name="dns-server-scenarios"></a><a name="bkmk_dns"></a>Cenários de servidor DNS
 
 Os cenários de servidor DNS permitem que você:  
   
@@ -138,7 +138,7 @@ Os cenários de servidor DNS permitem que você:
   
 Para obter mais informações, consulte os tópicos [o que há de novo no cliente DNS no Windows server 2016](dns/What-s-New-in-DNS-Client.md) e [o que há de novo no servidor DNS no Windows Server 2016](dns/What-s-New-in-DNS-Server.md).  
   
-### <a name="bkmk_ipam"></a>Cenários do IPAM com DHCP e DNS
+### <a name="ipam-scenarios-with-dhcp-and-dns"></a><a name="bkmk_ipam"></a>Cenários do IPAM com DHCP e DNS
 
 Os cenários do IPAM permitem que você:  
   
@@ -152,7 +152,7 @@ Os cenários do IPAM permitem que você:
   
     Para obter mais informações, consulte [Manage IPAM](technologies/ipam/Manage-IPAM.md).  
   
-### <a name="bkmk_nicteam"></a>Cenários de agrupamento NIC
+### <a name="nic-teaming-scenarios"></a><a name="bkmk_nicteam"></a>Cenários de agrupamento NIC
 
 Os cenários de agrupamento NIC permitem:  
   
@@ -169,7 +169,7 @@ Os cenários de agrupamento NIC permitem:
 
 Para obter mais informações, consulte [agrupamento NIC](technologies/nic-teaming/NIC-Teaming.md). 
 
-### <a name="bkmk_set"></a>Mudar a equipe inserida \(definir cenários de\)
+### <a name="switch-embedded-teaming-set-scenarios"></a><a name="bkmk_set"></a>Mudar a equipe inserida \(definir cenários de\)
 
 O conjunto é uma solução de agrupamento NIC alternativa que você pode usar em ambientes que incluem o Hyper-V e a pilha de SDN (rede definida pelo software) no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V. 
 
@@ -177,7 +177,7 @@ Para obter mais informações, consulte [RDMA (acesso remoto direto à memória)
   
  
   
-## <a name="bkmk_unsupp"></a>Cenários de rede sem suporte  
+## <a name="unsupported-networking-scenarios"></a><a name="bkmk_unsupp"></a>Cenários de rede sem suporte  
 Os cenários de rede a seguir não têm suporte no Windows Server 2016.  
   
 -   Redes virtuais de locatário baseadas em VLAN.  

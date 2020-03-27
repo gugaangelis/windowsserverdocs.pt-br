@@ -3,7 +3,7 @@ title: Instalar o coletor de log do Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a1b1a5492a6e5dbc48899b3918314676884e0454
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 75faeb3fe1c9ced32a37f2ac96ffedbadb2db76f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322088"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318681"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Instalar o coletor de log do Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "79322088"
 
 O assistente de instalação do coletor de logs do Windows Server Essentials instala o coletor de logs como um suplemento de Launchpad. Você pode instalar e usar o Coletor de Log em computadores da rede ou servidor, ou ambos. Após a instalação, o coletor de log será exibido no painel.  
   
-###  <a name="BKMK_ToInstall"></a>Para instalar o coletor de logs  
+###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a>Para instalar o coletor de logs  
   
 1.  Baixe o pacote de instalação do coletor de log para qualquer servidor ou computador na rede.  
   
@@ -42,7 +42,7 @@ O assistente de instalação do coletor de logs do Windows Server Essentials ins
   
 6.  Clique em **Instalar o suplemento**.  
   
-###  <a name="BKMK_Reinstall"></a>Reinstalando o coletor de logs  
+###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a>Reinstalando o coletor de logs  
  Se for necessário reinstalar o coletor de log, desinstale e reinstale o coletor de log no servidor e os computadores de rede na rede. Ao desinstalar o coletor de log no servidor do painel, todos os computadores de rede irão automaticamente desinstalar o coletor de log.  
   
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Para desinstalar e reinstalar o coletor de log  

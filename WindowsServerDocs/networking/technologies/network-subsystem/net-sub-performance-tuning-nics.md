@@ -1,5 +1,5 @@
 ---
-title: Adaptadores de rede para ajuste do desempenho
+title: Ajuste de desempenho de adaptadores de rede
 description: Este tópico faz parte do guia de ajuste de desempenho do subsistema de rede para o Windows Server 2016.
 audience: Admin
 ms.custom:
@@ -10,17 +10,17 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
-ms.author: pashort
+ms.author: lizross
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: 3feec719934fb16ca34cebe1e653768da5fb9eb7
-ms.sourcegitcommit: 33c89b76ac902927490b9727f3cf92b374754699
+ms.openlocfilehash: f802804d64b3047a2612b7f346de03aff61c30cd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728427"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316540"
 ---
-# <a name="performance-tuning-network-adapters"></a>Adaptadores de rede para ajuste do desempenho
+# <a name="performance-tuning-network-adapters"></a>Ajuste de desempenho de adaptadores de rede
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
@@ -35,7 +35,7 @@ As configurações de ajuste corretas para seus adaptadores de rede dependem das
 
 As seções a seguir descrevem algumas de suas opções de ajuste de desempenho.  
 
-##  <a name="bkmk_offload"></a>Habilitando recursos de descarregamento
+##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>Habilitando recursos de descarregamento
 
 O ajuste nos recursos de descarregamento do adaptador de rede normalmente é benéfico. No entanto, o adaptador de rede pode não ser eficiente o suficiente para lidar com os recursos de descarregamento com alta taxa de transferência.
 
@@ -48,7 +48,7 @@ Nesse caso, habilitar os recursos de descarregamento de segmentação pode reduz
 > [!NOTE]  
 > Alguns adaptadores de rede exigem que você habilite recursos de descarregamento independentemente para os caminhos de envio e recebimento.
 
-##  <a name="bkmk_rss_web"></a>Habilitando o RSS (recebimento em escala) para servidores Web
+##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>Habilitando o RSS (recebimento em escala) para servidores Web
 
 O RSS pode melhorar a escalabilidade e o desempenho da Web quando há menos adaptadores de rede do que processadores lógicos no servidor. Quando todo o tráfego da Web está passando por adaptadores de rede compatíveis com RSS, o servidor pode processar solicitações da Web de entrada de diferentes conexões simultaneamente em diferentes CPUs.
 
@@ -63,7 +63,7 @@ O perfil RSS predefinido padrão é **NUMAStatic**, que difere do padrão que as
 
 Por exemplo, se você abrir o Gerenciador de tarefas e examinar os processadores lógicos em seu servidor e eles parecerem estar subutilizados para receber tráfego, você poderá tentar aumentar o número de filas RSS do padrão de dois para o máximo ao qual o adaptador de rede dá suporte. Seu adaptador de rede pode ter opções para alterar o número de filas RSS como parte do driver.
 
-##  <a name="bkmk_resources"></a>Aumentando os recursos do adaptador de rede
+##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>Aumentando os recursos do adaptador de rede
 
 Para adaptadores de rede que permitem configurar manualmente recursos, como buffers de recebimento e envio, você deve aumentar os recursos alocados.  
 
@@ -78,7 +78,7 @@ Para controlar a moderação da interrupção, alguns adaptadores de rede expõe
 
 Você deve considerar a moderação da interrupção para cargas de trabalho vinculadas à CPU. Ao usar a moderação de interrupção, considere a compensação entre as economias e a latência da CPU do host versus a economia de CPU do host maior devido a mais interrupções e menos latência. Se o adaptador de rede não executar a moderação de interrupção, mas expor a União de buffer, você poderá melhorar o desempenho aumentando o número de buffers agrupados para permitir mais buffers por envio ou recebimento.
 
-##  <a name="bkmk_low"></a>Ajuste de desempenho para processamento de pacotes de baixa latência
+##  <a name="performance-tuning-for-low-latency-packet-processing"></a><a name="bkmk_low"></a>Ajuste de desempenho para processamento de pacotes de baixa latência
 
 Muitos adaptadores de rede fornecem opções para otimizar a latência induzida pelo sistema operacional. A latência é o tempo decorrido entre o momento em que o driver de rede processa um pacote recebido e o driver de rede envia o pacote de volta. Esse tempo geralmente é medido em microssegundos. Para comparar, o tempo de transmissão nas transmissões de pacote em longas distâncias geralmente é medido em milissegundos (uma ordem de magnitude maior). Esse ajuste não reduzirá o tempo que um pacote gasta em trânsito.
 
@@ -98,7 +98,7 @@ A seguir estão algumas sugestões de ajuste no desempenho para redes sensíveis
 
 - Manipule as interrupções do adaptador de rede e DPCs em um processador de núcleo que compartilha cache de CPU com o núcleo que está sendo usado pelo programa (thread de usuário) que está lidando com o pacote. O ajuste na afinidade da CPU pode ser usado para direcionar um processo para determinados processadores lógicos em conjunto com a configuração de RSS com essa finalidade. O uso do mesmo núcleo para interrupção, DPC e thread de modo de usuário revela piora no desempenho na medida em que a carga aumenta, porque o ISR, DPC e thread disputam o uso do núcleo.
 
-##  <a name="bkmk_smi"></a>Interrupções de gerenciamento do sistema
+##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>Interrupções de gerenciamento do sistema
 
 Muitos sistemas de hardware usam o SMI (System Management interrupções) para uma variedade de funções de manutenção, como erros de memória ECC (código de correção de erro), mantendo a compatibilidade com USB herdada, controlando o ventilador e gerenciando a energia controlada pelo BIOS Configurações.
 
@@ -111,11 +111,11 @@ Se for necessário obter a menor latência, você deve solicitar uma versão do 
 > [!NOTE]  
 > O sistema operacional não pode controlar SMIs porque o processador lógico está sendo executado em um modo de manutenção especial, o que impede a intervenção do sistema operacional.
 
-##  <a name="bkmk_tcp"></a>Ajuste de desempenho TCP
+##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>Ajuste de desempenho TCP
 
  Você pode usar os seguintes itens para ajustar o desempenho de TCP.
 
-###  <a name="bkmk_tcp_params"></a>Ajuste automática da janela de recepção TCP
+###  <a name="tcp-receive-window-autotuning"></a><a name="bkmk_tcp_params"></a>Ajuste automática da janela de recepção TCP
 
 No Windows Vista, no Windows Server 2008 e em versões posteriores do Windows, a pilha de rede do Windows usa um recurso chamado *nível de ajuste da janela de recepção TCP* para negociar o tamanho da janela de recepção TCP. Esse recurso pode negociar um tamanho de janela de recebimento definido para cada comunicação TCP durante o handshake TCP.
 
@@ -231,13 +231,13 @@ Para obter mais informações sobre esses cmdlets, consulte os seguintes artigos
 
 Você pode definir o ajuste automática da janela de recebimento para qualquer um dos cinco níveis. O nível padrão é **normal**. A tabela a seguir descreve os níveis.
 
-|Nível |Valor hexadecimal |Comentários |
+|Nível |Valor hexadecimal |Comments |
 | --- | --- | --- |
 |Normal (padrão) |0x8 (fator de escala de 8) |Defina a janela de recepção TCP para aumentar para acomodar quase todos os cenários. |
-|Desabilitada |Nenhum fator de escala disponível |Defina a janela de recepção TCP com seu valor padrão. |
+|Desabilitado |Nenhum fator de escala disponível |Defina a janela de recepção TCP com seu valor padrão. |
 |Restricted (Restrito) |0x4 (fator de escala de 4) |Defina a janela de recepção TCP para aumentar além do valor padrão, mas limite esse crescimento em alguns cenários. |
 |Altamente restrito |0x2 (fator de escala de 2) |Defina a janela de recepção TCP para aumentar além do valor padrão, mas faça isso de forma muito conservadora. |
-|Experimental |0xE (fator de escala de 14) |Defina a janela de recepção TCP para aumentar para acomodar cenários extremos. |
+|experimental |0xE (fator de escala de 14) |Defina a janela de recepção TCP para aumentar para acomodar cenários extremos. |
 
 Se você usar um aplicativo para capturar pacotes de rede, o aplicativo deverá relatar dados semelhantes aos seguintes para configurações de nível de ajuste automática de janela diferentes.
 
@@ -376,7 +376,7 @@ Todas essas configurações foram localizadas na seguinte subchave do registro:
 
 > **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
 
-###  <a name="bkmk_wfp"></a>Plataforma de filtragem do Windows
+###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Plataforma de filtragem do Windows
 
 O Windows Vista e o Windows Server 2008 introduziram a WFP (Windows Filtering Platform). A WFP fornece APIs para fornecedores de software independentes (ISVs) que não são da Microsoft para criar filtros de processamento de pacotes. Exemplos incluem software de firewall e antivírus.
 

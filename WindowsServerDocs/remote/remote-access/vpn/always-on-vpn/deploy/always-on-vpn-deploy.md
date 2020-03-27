@@ -7,14 +7,14 @@ ms.topic: article
 ms.assetid: 5ae1a40b-4f10-4ace-8aaf-13f7ab581f4f
 ms.localizationpriority: medium
 ms.date: 12/20/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5eba89cf61354627b63bcdf2420c25e7a44e3d9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ca064f887a524c5f41b29837e8f8fec586a8d928
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388145"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313261"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Implantação de VPN Always On para Windows Server e Windows 10
 
@@ -25,7 +25,7 @@ ms.locfileid: "71388145"
 
 Always On VPN fornece uma solução única e coesa para acesso remoto e oferece suporte a dispositivos ingressados no domínio, não ingressados no domínio (grupo de trabalho) ou no Azure AD, mesmo em dispositivos de propriedade pessoal. Com a VPN Always On, o tipo de conexão não precisa ser exclusivamente de usuário ou dispositivo, podendo ser uma combinação de ambos. Por exemplo, você pode habilitar a autenticação de dispositivo para o gerenciamento de dispositivo remoto e, em seguida, habilitar a autenticação de usuário para conectividade com serviços e sites internos da empresa.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Provavelmente, você tem as tecnologias implantadas que podem ser usadas para implantar Always On VPN. Além dos servidores DC/DNS, a implantação de VPN Always On requer um servidor NPS (RADIUS), um servidor de autoridade de certificação (CA) e um servidor de acesso remoto (roteamento/VPN). Depois que a infraestrutura estiver configurada, você deverá registrar clientes e conectar os clientes ao seu local com segurança por meio de várias alterações na rede.
 
@@ -67,7 +67,7 @@ Esta implantação não fornece instruções para:
 - Recursos de rede adicionais, como servidores de aplicativos e de arquivos, que os usuários remotos podem acessar por meio de uma conexão VPN Always On.
 - Conectividade com a Internet ou acesso condicional para conectividade com a Internet usando o Azure AD. Para obter detalhes, consulte [acesso condicional em Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Saiba mais sobre os recursos e a funcionalidade de VPN Always On](../../vpn-map-da.md)
 

@@ -3,7 +3,7 @@ title: Mover as configurações e dados do Windows SBS 2011 Standard para o serv
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 16b24026-2fe3-4bd0-b82f-900e1564be99
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef8e717fe235b8d85f4d53442610818b31ad7d1d
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: d7b1edf2ffd602cd844fa399ac9368a2f4e08643
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590422"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318853"
 ---
 # <a name="move-windows-sbs-2011-standard-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover as configurações e dados do Windows SBS 2011 Standard para o servidor de destino para migração para o Windows Server Essentials
 
@@ -54,11 +54,11 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
 
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
  
- Sendo que:
+ Onde:
  - \<SourceServerName\> é o nome do servidor de origem
  - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem
  - \<DestinationServerName\> é o nome do servidor de destino,
- - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados. 
+ - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para a qual os dados serão copiados. 
 
 3. Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem. 
 
@@ -76,7 +76,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  `Import-WssUser SamAccountName [AD username]` 
  
 ## <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a>Transfira a função de servidor DHCP do servidor de origem para o roteador
- Se o servidor de origem estiver executando a função DHCP, execute as etapas a seguir para mover a função DHCP para o roteador. 
+ Se o servidor de origem estiver executando a função DHCP, execute as seguintes etapas para mover a função do DHCP para o roteador. 
  
 #### <a name="to-move-the-dhcp-role-from-the-source-server-to-the-router"></a>Para mover a função DHCP do servidor de origem para o roteador 
  
@@ -112,9 +112,9 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
  Se o roteador não oferecer suporte para a estrutura UPnP, ou se a estrutura UPnP estiver desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que sejam direcionadas para o endereço IP do servidor de destino: 
  
-- Porta 80: Tráfego da Web HTTP 
+- Porta 80: tráfego HTTP da Web 
  
-- Porta 443: Tráfego da Web HTTPS 
+- Porta 443: tráfego HTTPS da Web 
  
 > [!NOTE]
 > Se você tiver configurado um servidor do Exchange local em um segundo servidor, deve garantir que a porta 25 (SMTP) também esteja aberta e que seja redirecionada para o endereço IP do servidor do Exchange local. 
@@ -133,7 +133,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
 3. No painel de navegação, clique em **gerenciamento avançado**, clique em **Gerenciamento de política de grupo**e, em seguida, clique em **floresta:** _< YourDomainName\>_ . 
  
-4. Clique em **domínios**, clique em *<\>YourDomainName*e, em seguida, clique em **objetos política de grupo**. 
+4. Clique em **domínios**, clique em *< YourDomainName\>* e, em seguida, clique em **política de grupo objetos**. 
  
 5. Clique com o botão direito do mouse em **Política de auditoria do Small Business Server**, clique em **Excluir** e, em seguida, clique em **OK**. 
  
@@ -163,7 +163,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
 3. No painel de navegação, clique em **recursos**, clique em **Gerenciamento de política de grupo**e, em seguida, clique em **floresta:** _< YourNetworkDomainName\>_ 
  
-4. Clique em **domínios**, clique em *<\>YourNetworkDomainName*e, em seguida, clique em **filtros WMI**. 
+4. Clique em **domínios**, clique em *< YourNetworkDomainName\>* e, em seguida, clique em **filtros WMI**. 
  
 5. Clique com botão direito **Windows SBS Client**, clique em **Excluir**e clique em **Sim**. 
  
@@ -186,7 +186,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
 4. Clique na guia **Acesso em Qualquer Local** e, em seguida, clique em **Permitir Acesso via Web Remoto e acesso a aplicativos de serviços Web**. 
  
-5. Selecione **Pastas Compartilhadas**, selecione **Computadores**, selecione **Links da Home Page**e, em seguida, clique em **Aplicar**. 
+5. Selecione **Pastas Compartilhadas**, selecione **Computadores**, selecione **Links da Home Page** e, em seguida, clique em **Aplicar**. 
  
 6. Clique na guia **Acesso ao Computador** e, em seguida, clique no nome do computador ao qual deseja permitir o acesso. 
  

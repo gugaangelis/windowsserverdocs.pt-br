@@ -10,19 +10,19 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 2f21301e0669fb593acda47787fed5f396618daf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 75b6ae2f2c7d6b4ab28aaedcc7309ccba3dcbd02
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405555"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316377"
 ---
 # <a name="troubleshooting-nic-teaming"></a>Solucionar problemas de agrupamento NIC
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, discutiremos maneiras de solucionar problemas de agrupamento NIC, como valores de hardware e comutador físico.  Quando as implementações de hardware de protocolos padrão não estão em conformidade com as especificações, o desempenho de agrupamento NIC pode ser afetado. Além disso, dependendo da configuração, o agrupamento NIC pode enviar pacotes do mesmo endereço IP com vários endereços MAC, liberando os recursos de segurança no comutador físico.
 
@@ -43,7 +43,7 @@ Dependendo da configuração, o agrupamento NIC pode enviar pacotes do mesmo end
 
 Um motivo comum para uma equipe NIC falhar é que a interface da equipe está desabilitada e, em muitos casos, por acidente ao executar uma sequência de comandos.  Essa sequência específica de comandos não habilita todos os adaptadores de netdesabilitados porque desabilitar todos os membros físicos subjacentes de NICs remove a interface de equipe da NIC. 
 
-Nesse caso, a interface de equipe NIC não é mais mostrada no Get-netadapter e, por isso, o **Enable-netadapter \\** * não habilita a equipe NIC. O comando **Enable-netadapter \\** * faz, no entanto, habilitar as NICs do membro, que depois (após um curto período) recria a interface da equipe. A interface de equipe permanece no estado "desabilitado" até que seja habilitada novamente, permitindo que o tráfego de rede comece a fluir. 
+Nesse caso, a interface de equipe NIC não é mais mostrada no Get-netadapter e, por isso, **Enable-netadapter \\** * não habilita a equipe NIC. O comando **Enable-netadapter \\** * faz, no entanto, habilitar as NICs do membro, que depois (após um curto período) recria a interface da equipe. A interface de equipe permanece no estado "desabilitado" até que seja habilitada novamente, permitindo que o tráfego de rede comece a fluir. 
 
 A seguinte sequência de comandos do Windows PowerShell pode desabilitar a interface de equipe por acidente:  
   
@@ -55,11 +55,11 @@ Enable-NetAdapter *
 
   
 ## <a name="related-topics"></a>Tópicos relacionados  
-- [Agrupamento NIC](NIC-Teaming.md): Neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.   
+- [Agrupamento NIC](NIC-Teaming.md): neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.   
 
-- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Quando você configura uma equipe NIC com o modo independente de comutador e endereço hash ou distribuição dinâmica de carga, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário no tráfego de saída. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
+- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): quando você configura uma equipe NIC com o modo independente de comutador e o hash ou a distribuição de carga dinâmica, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário no tráfego de saída. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
 
-- [Configurações de agrupamento NIC](nic-teaming-settings.md): Neste tópico, fornecemos uma visão geral das propriedades da equipe da NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
+- [Configurações de agrupamento NIC](nic-teaming-settings.md): neste tópico, fornecemos uma visão geral das propriedades da equipe NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
   
 
 

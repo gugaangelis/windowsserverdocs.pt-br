@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ebff972d670f3fd0b8d12959d161bce03ac487e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e62b92fbb78dc267dbd9cd09927bf54c62d8245f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401843"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316610"
 ---
 # <a name="network-related-performance-counters"></a>Contadores de desempenho relacionados à rede
 
@@ -27,7 +27,7 @@ Este tópico lista os contadores que são relevantes para gerenciar o desempenho
   
 -   [Desempenho de União lateral de recebimento (RSC)](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a>Utilização de recursos  
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>Utilização de recursos  
 
 Os contadores de desempenho a seguir são relevantes para a utilização de recursos de rede.  
   
@@ -61,7 +61,7 @@ Os contadores de desempenho a seguir são relevantes para a utilização de recu
   
 - Informações do processador  
   
-  - % Tempo do processador  
+  - % do tempo do processador  
   
   - Interrupções/s  
   
@@ -69,7 +69,7 @@ Os contadores de desempenho a seguir são relevantes para a utilização de recu
   
     Esse contador é uma taxa média na qual as DPCs foram adicionadas à fila de DPC do processador lógico. Cada processador lógico tem sua própria fila de DPC. Esse contador mede a taxa na qual as DPCs são adicionadas à fila, não o número de DPCs na fila. Ele exibe a diferença entre os valores que foram observados nos dois últimos exemplos, divididos pela duração do intervalo de amostragem.  
   
-##  <a name="bkmk_np"></a>Possíveis problemas de rede  
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>Possíveis problemas de rede  
 
 Os contadores de desempenho a seguir são relevantes para possíveis problemas de rede.  
   
@@ -119,7 +119,7 @@ Os contadores de desempenho a seguir são relevantes para possíveis problemas d
   
     -   Conexões rejeitadas/s  
   
-##  <a name="bkmk_rsc"></a>Desempenho de União lateral de recebimento (RSC)  
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>Desempenho de União lateral de recebimento (RSC)  
 
 Os contadores de desempenho a seguir são relevantes para o desempenho do RSC.  
   

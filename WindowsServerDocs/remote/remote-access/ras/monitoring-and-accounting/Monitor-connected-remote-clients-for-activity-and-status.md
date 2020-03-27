@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 03d87fb086a9f2797af8399be3d833b11bed79a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b2377816255189efbaa6d5c39cd4e91b923a039
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367264"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314227"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>Monitorar a atividade e o status de clientes remotos conectados
 
@@ -42,7 +42,7 @@ Você pode usar o console de gerenciamento do no servidor de acesso remoto para 
   
 ![](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 PS> Get-RemoteAccessConnectionStatistics  
@@ -50,17 +50,17 @@ PS> Get-RemoteAccessConnectionStatistics
   
 As estatísticas de usuário podem ser filtradas, com base nas seleções de critérios, usando os campos na tabela a seguir.  
   
-|Nome do campo|Valor|  
+|Nome do campo|{1&gt;Valor&lt;1}|  
 |-------|-----|  
-|Nome de usuário|O nome de usuário ou o alias do usuário remoto. Caracteres curinga podem ser usados para selecionar um grupo de usuários, como contoso\\* ou \*\Administrator.|  
-|nome_do_host|O nome da conta do computador do usuário remoto. Um endereço IPv4 ou IPv6 também pode ser especificado.|  
+|Nome de Usuário|O nome de usuário ou o alias do usuário remoto. Caracteres curinga podem ser usados para selecionar um grupo de usuários, como contoso\\* ou \*\Administrator.|  
+|Nome do host|O nome da conta do computador do usuário remoto. Um endereço IPv4 ou IPv6 também pode ser especificado.|  
 |Tipo|DirectAccess ou VPN. Se o DirectAccess estiver selecionado, todos os usuários remotos conectados usando o DirectAccess serão listados. Se a VPN estiver selecionada, todos os usuários remotos conectados usando VPN serão listados.|  
 |endereço ISP|O endereço IPv4 ou IPv6 do usuário remoto.|  
 |Endereço IPv4|O endereço IPv4 interno do túnel que conecta o usuário remoto à rede corporativa.|  
 |Endereço IPv6|O endereço IPv6 interno do túnel que conecta o usuário remoto à rede corporativa.|  
 |Protocolo/Túnel|A tecnologia de transição usada pelo cliente remoto. Isso é Teredo, 6to4 ou IP-HTTPS para usuários do DirectAccess e é PPTP, L2TP, SSTP ou IKEv2 para usuários de VPN.|  
 |Recurso Acessado|Todos os usuários que estão acessando determinado recurso corporativo ou um ponto de extremidade. O valor que corresponde a esse campo é o nome de host/endereço IP do servidor.|  
-|Servidor|O servidor de Acesso Remoto ao qual os clientes estão conectados. Isso é relevante apenas para implantações de cluster e multissite.|  
+|Server|O servidor de Acesso Remoto ao qual os clientes estão conectados. Isso é relevante apenas para implantações de cluster e multissite.|  
   
   
   

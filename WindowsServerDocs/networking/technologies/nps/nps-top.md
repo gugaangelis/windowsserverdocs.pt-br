@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 9c7a67e0-0953-479c-8736-ccb356230bde
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/20/2018
-ms.openlocfilehash: 5685d4dae742245c131ff2fee3114e905e94e9bc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b509bb14757fab6ebd32490d0146b2801bc8e9f1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396011"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315622"
 ---
 # <a name="network-policy-server-nps"></a>NPS (Servidor de Políticas de Rede)
 

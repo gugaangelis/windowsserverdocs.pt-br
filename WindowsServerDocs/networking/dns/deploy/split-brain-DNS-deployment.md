@@ -1,19 +1,19 @@
 ---
-title: Usar a política DNS para a implantação de DNS com partição de rede
+title: Usar a política de DNS para a implantação de DNS com partição de rede
 description: Este tópico faz parte do guia de cenário de política DNS do Windows Server 2016
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 75da22fa4b1e59a7a666ee1a2c8f4e88cf7beeef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950470"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317737"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar a política DNS para dividir a implantação de DNS\-Brain
 
@@ -33,10 +33,10 @@ Este tópico contém as seguintes seções.
 - [Exemplo de implantação de divisão-Brain do DNS](#bkmk_sbexample)
 - [Exemplo de controle de recursão seletiva de DNS](#bkmk_recursion)
 
-## <a name="bkmk_sbexample"></a>Exemplo de implantação de divisão-Brain do DNS
+## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>Exemplo de implantação de divisão-Brain do DNS
 Veja a seguir um exemplo de como você pode usar a política de DNS para realizar o cenário descrito anteriormente de DNS de divisão-cérebro.
 
-Esta seção contém os seguintes tópicos.
+Esta seção contém os seguintes tópicos:
 
 - [Como funciona a implantação de divisão-Brain do DNS](#bkmk_sbhow)
 - [Como configurar a implantação de divisão-Brain do DNS](#bkmk_sbconfigure)
@@ -57,7 +57,7 @@ A ilustração a seguir descreve esse cenário.
 ![Implantação de DNS de divisão-Brain](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-## <a name="bkmk_sbhow"></a>Como funciona a implantação de divisão-Brain do DNS
+## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>Como funciona a implantação de divisão-Brain do DNS
 
 Quando o servidor DNS é configurado com as políticas de DNS necessárias, cada solicitação de resolução de nome é avaliada em relação às políticas no servidor DNS.
 
@@ -67,7 +67,7 @@ Se a interface do servidor na qual a consulta é recebida corresponde a qualquer
 
 Portanto, em nosso exemplo, as consultas DNS para www.career.contoso.com recebidas no IP privado (10.0.0.56) recebem uma resposta DNS que contém um endereço IP interno; e as consultas DNS que são recebidas na interface de rede pública recebem uma resposta DNS que contém o endereço IP público no escopo de zona padrão (isso é o mesmo que a resolução de consulta normal).  
 
-## <a name="bkmk_sbconfigure"></a>Como configurar a implantação de divisão-Brain do DNS
+## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>Como configurar a implantação de divisão-Brain do DNS
 Para configurar a implantação de divisão-Brain do DNS usando a política DNS, você deve usar as etapas a seguir.
 
 - [Criar os escopos de zona](#bkmk_zscopes)  
@@ -79,7 +79,7 @@ As seções a seguir fornecem instruções de configuração detalhadas.
 >[!IMPORTANT]
 >As seções a seguir incluem exemplos de comandos do Windows PowerShell que contêm valores de exemplo para muitos parâmetros. Certifique-se de substituir os valores de exemplo nesses comandos por valores apropriados para sua implantação antes de executar esses comandos. 
 
-### <a name="bkmk_zscopes"></a>Criar os escopos de zona
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>Criar os escopos de zona
 
 Um escopo de zona é uma instância exclusiva da zona. Uma zona DNS pode ter vários escopos de zona, com cada escopo de zona contendo seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com endereços IP diferentes ou os mesmos endereços IP. 
 
@@ -92,7 +92,7 @@ Você pode usar o seguinte comando de exemplo para particionar o escopo de zona 
 
 Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records"></a>Adicionar registros aos escopos de zona
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona
 
 A próxima etapa é adicionar os registros que representam o host do servidor Web nos escopos de duas zonas-interno e padrão (para clientes externos). 
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-### <a name="bkmk_policies"></a>Criar as políticas de DNS
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Criar as políticas de DNS
 
 Depois de identificar as interfaces de servidor para a rede externa e a rede interna e criar os escopos de zona, você deverá criar políticas de DNS que conectem os escopos de zona interna e externa.
 
@@ -128,11 +128,11 @@ No comando de exemplo a seguir, 10.0.0.56 é o endereço IP na interface de rede
 Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).  
 
 
-## <a name="bkmk_recursion"></a>Exemplo de controle de recursão seletiva de DNS
+## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>Exemplo de controle de recursão seletiva de DNS
 
 Veja a seguir um exemplo de como você pode usar a política DNS para realizar o cenário descrito anteriormente do controle de recursão seletiva de DNS.
 
-Esta seção contém os seguintes tópicos.
+Esta seção contém os seguintes tópicos:
 
 - [Como funciona o controle de recursão seletiva de DNS](#bkmk_recursionhow)
 - [Como configurar o controle de recursão seletiva de DNS](#bkmk_recursionconfigure)
@@ -154,7 +154,7 @@ A ilustração a seguir descreve esse cenário.
 ![Controle de recursão seletiva](../../media/DNS-Split-Brain/Dns-Split-Brain-02.jpg) 
 
 
-### <a name="bkmk_recursionhow"></a>Como funciona o controle de recursão seletiva de DNS
+### <a name="how-dns-selective-recursion-control-works"></a><a name="bkmk_recursionhow"></a>Como funciona o controle de recursão seletiva de DNS
 
 Se uma consulta para a qual o servidor DNS contoso é não autoritativo for recebida, como por https://www.microsoft.com, a solicitação de resolução de nome será avaliada em relação às políticas no servidor DNS. 
 
@@ -168,14 +168,14 @@ Se a consulta for recebida na interface externa, nenhuma política de DNS será 
 
 Isso impede que o servidor atue como um resolvedor aberto para clientes externos, enquanto está atuando como um resolvedor de cache para clientes internos. 
 
-### <a name="bkmk_recursionconfigure"></a>Como configurar o controle de recursão seletiva de DNS
+### <a name="how-to-configure-dns-selective-recursion-control"></a><a name="bkmk_recursionconfigure"></a>Como configurar o controle de recursão seletiva de DNS
 
 Para configurar o controle de recursão seletiva de DNS usando a política DNS, você deve usar as etapas a seguir.
 
 - [Criar escopos de recursão DNS](#bkmk_recscopes)
 - [Criar políticas de recursão de DNS](#bkmk_recpolicy)
 
-#### <a name="bkmk_recscopes"></a>Criar escopos de recursão DNS
+#### <a name="create-dns-recursion-scopes"></a><a name="bkmk_recscopes"></a>Criar escopos de recursão DNS
 
 Escopos de recursão são instâncias exclusivas de um grupo de configurações que controlam a recursão em um servidor DNS. Um escopo de recursão contém uma lista de encaminhadores e especifica se a recursão está habilitada. Um servidor DNS pode ter muitos escopos de recursão. 
 
@@ -190,7 +190,7 @@ Neste exemplo, a configuração de recursão padrão é desabilitada, enquanto u
 
 Para obter mais informações, consulte [Add-DnsServerRecursionScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
-#### <a name="bkmk_recpolicy"></a>Criar políticas de recursão de DNS
+#### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>Criar políticas de recursão de DNS
 
 Você pode criar políticas de recursão do servidor DNS para escolher um escopo de recursão para um conjunto de consultas que correspondem a critérios específicos. 
 
