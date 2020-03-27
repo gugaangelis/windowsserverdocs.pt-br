@@ -3,7 +3,7 @@ title: Configurar Armazenamento de Servidor
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 718080c050dadc20837ab6b11a677029227e1709
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3d7c2b49afc9d740e6a4b3fa7ed659e8358c8dc6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865037"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312144"
 ---
 # <a name="configure-server-storage"></a>Configurar Armazenamento de Servidor
 
@@ -32,8 +32,8 @@ ms.locfileid: "70865037"
 |Nível de servidor|Configuração de disco|  
 |------------------|------------------------|  
 |Entrada|-Dois discos físicos<br /><br /> -Configurado como um conjunto espelhado RAID 1 que contém o seguinte:<br /><br /> -C: volume? 60 GB<br /><br /> -D: volume? 1000 GB|  
-|Médio|-Três discos físicos<br /><br /> -Configurado como um conjunto de RAID 5 que contém o seguinte:<br /><br /> -C: volume? 60 GB<br /><br /> -D: volume? 1500 GB|  
-|Alto|-Cinco ou mais discos físicos totais<br /><br /> -Dois discos em um conjunto espelhado RAID 1 que contém o volume C:? 100 GB<br /><br /> -Todos os discos restantes em um conjunto de RAID 5 que contém o seguinte:<br /><br /> -D: volume? 1500 GB<br /><br /> -E: volume? 1500 GB|  
+|Média|-Três discos físicos<br /><br /> -Configurado como um conjunto de RAID 5 que contém o seguinte:<br /><br /> -C: volume? 60 GB<br /><br /> -D: volume? 1500 GB|  
+|Alta|-Cinco ou mais discos físicos totais<br /><br /> -Dois discos em um conjunto espelhado RAID 1 que contém o volume C:? 100 GB<br /><br /> -Todos os discos restantes em um conjunto de RAID 5 que contém o seguinte:<br /><br /> -D: volume? 1500 GB<br /><br /> -E: volume? 1500 GB|  
   
  Essas recomendações consideram o tamanho do sistema operacional instalado, o tamanho médio do armazenamento de dados utilizado pelo servidor e o crescimento esperado de armazenamento de dados ao longo do tempo de vida útil do servidor. Os volumes podem ser partições em um disco físico único ou podem ser colocados em discos físicos separados. Como o servidor armazena dados importantes para seu cliente, é recomendável que você use vários discos físicos e ajude a proteger os dados do cliente usando o RAID de hardware ou os espaços de armazenamento.  
   

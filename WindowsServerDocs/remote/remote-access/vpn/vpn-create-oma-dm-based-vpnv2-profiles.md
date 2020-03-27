@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 804b7314054691fa0abc19f1cc4e4bffbd6457cf
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 1f004ec59c8d2eac2a944a69bbbfc9af76b39826
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822439"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307728"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>Etapa 7.5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10
 
@@ -63,7 +63,7 @@ O computador cliente do Windows 10 já foi configurado com uma conexão VPN usan
 
     ![Acesso condicional para Always On VPN-Properties](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
-5. Clique em **OK**.
+5. Selecione **OK**.
 
 6. Selecione **atribuições**, em incluir, selecione **grupos a serem incluídos**.
 
@@ -86,7 +86,7 @@ Se o perfil VPN não aparecer no dispositivo cliente, em configurações\\rede &
 5. Selecione **sincronizar** e verifique se o perfil VPN aparece em configurações\\rede & Internet\\VPN.
 
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 Você concluiu a configuração do perfil VPN para usar o acesso condicional do Azure AD. 
 

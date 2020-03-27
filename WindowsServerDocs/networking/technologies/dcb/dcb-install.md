@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: b89213d8-143a-45f3-a609-bc6a7027204c
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5ecb6ef072dd2328a0a45d57d181dca9c2928a30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: edca8269178d9e1de9f8d57abac04400da0ac5c1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405782"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312800"
 ---
 # <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>Instalar a ponte do Data Center \(DCB\) no Windows Server 2016 ou no Windows 10
 
@@ -29,7 +29,7 @@ A seguir, os pré-requisitos para configurar e gerenciar o DCB.
 
 Você pode usar os comandos DCB deste guia nos sistemas operacionais a seguir.
 
-- Windows Server (Canal semestral)
+- Windows Server (canal semestral)
 - Windows Server 2016
 - Windows 10 \(todas as versões\)
 
@@ -77,7 +77,7 @@ Você pode usar o procedimento a seguir para instalar o DCB usando Gerenciador d
 3. Em **Selecionar Tipo de Instalação**, verifique se **Instalação baseada em função ou recurso** está marcada e clique em **Avançar**.
 4. Em **Selecionar servidor de destino**, verifique se **Selecionar um servidor no pool de servidores** está marcada. Em **Pool de Servidores**, verifique se o computador local está selecionado. Clique em **Avançar**.
 5. Em **Selecionar funções de servidor**, clique em **Avançar**.
-6. Em **selecionar recursos**, em **recursos**, clique em **ponte de data center**. Uma caixa de diálogo é aberta para perguntar se você deseja adicionar os recursos necessários do DCB. Clique em **Adicionar recursos**.
+6. Em **selecionar recursos**, em **recursos**, clique em **ponte de data center**. Uma caixa de diálogo é aberta para perguntar se você deseja adicionar os recursos necessários do DCB. Clique em **Adicionar Recursos**.
 7. Em **selecionar recursos**, clique em **Avançar**. 
 8. 7.In **confirmar seleções de instalação**, clique em **instalar**. A página **progresso da instalação** exibe o status durante o processo de instalação. Depois que a mensagem for exibida informando que a instalação foi bem-sucedida, clique em **fechar**.
 
@@ -100,7 +100,7 @@ Para executar esse procedimento, você deve ser membro de **Administradores**.
 1. Clique em **Iniciar**, role para baixo e clique em **sistema Windows**.
 2. Clique em **Painel de Controle**. A caixa de diálogo **painel de controle** é aberta.
 3. No **painel de controle**, clique em **Exibir por**e, em seguida, clique em **ícones grandes** ou **ícones pequenos**.
-4. Clique em **programas e recursos**. A caixa de diálogo programas e recursos é aberta.
+4. Clique em **Programas e Recursos**. A caixa de diálogo programas e recursos é aberta.
 5. Em **programas e recursos**, no painel esquerdo, clique em **Ativar ou desativar recursos do Windows**. A caixa de diálogo **recursos do Windows** é aberta.
 6. Em **recursos do Windows**, clique em **ponte do Data Center**e, em seguida, clique em **OK**.
 

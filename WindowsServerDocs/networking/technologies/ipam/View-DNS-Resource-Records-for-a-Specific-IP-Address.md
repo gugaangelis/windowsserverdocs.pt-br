@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f590fb86-4195-4f90-98cb-e90459d4c1e3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 63fc52644b4f08d745891763265cc8f929e89910
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 170be9d3d47374188640ef4b132adce9043e4e29
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355087"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309469"
 ---
 # <a name="view-dns-resource-records-for-a-specific-ip-address"></a>Exibir registros de recurso de DNS para um endereço IP específico
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para exibir os registros de recursos de DNS que estão associados ao endereço IP que você escolher.  
   

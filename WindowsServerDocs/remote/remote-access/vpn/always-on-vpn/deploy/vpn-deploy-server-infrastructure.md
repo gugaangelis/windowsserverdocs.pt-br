@@ -6,23 +6,23 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: c7e2c4172621416048fa9e82bbd12f5b1717d490
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a7d1c451989d69f45f02571de4854b0f0f4e12f5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404294"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307823"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>Etapa 2. Configurar a infraestrutura do servidor
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Etapa 1. Planejar a implantação da VPN Always On](always-on-vpn-deploy-planning.md)
-- [**Última** Etapa 3. Configurar o servidor de acesso remoto da VPN Always On](vpn-deploy-ras.md)
+- [**Anterior:** Etapa 1. Planejar a implantação de VPN Always On](always-on-vpn-deploy-planning.md)
+- [**Em seguida:** Etapa 3. Configurar o servidor de acesso remoto para VPN Always On](vpn-deploy-ras.md)
 
 Nesta etapa, você instalará e configurará os componentes do lado do servidor necessários para dar suporte à VPN. Os componentes do lado do servidor incluem a configuração de PKI para distribuir os certificados usados pelos usuários, o servidor VPN e o servidor NPS.  Você também configura o RRAS para dar suporte a conexões IKEv2 e ao servidor NPS para executar a autorização para as conexões VPN.
 
@@ -44,7 +44,7 @@ Você registra certificados manualmente em servidores VPN.
 
 5. No Editor de Gerenciamento de Política de Grupo, conclua as seguintes etapas para configurar o registro automático do certificado do computador:
 
-    1. No painel de navegação, vá para **configuração** > do computador >  > **políticas configurações**do**Windows**configurações de**segurança**políticasdechave > pública.
+    1. No painel de navegação, vá para **configuração do computador** > **políticas** > **configurações do Windows** > **configurações de segurança** > **políticas de chave pública**.
 
     2. No painel de detalhes, clique com o botão direito do mouse em **cliente de serviços de certificados – registro automático**e selecione **Propriedades**.
 
@@ -56,7 +56,7 @@ Você registra certificados manualmente em servidores VPN.
 
 6. No Editor de Gerenciamento de Política de Grupo, conclua as seguintes etapas para configurar o registro automático de certificado de usuário:
 
-    1. No painel de navegação, vá para >  >  > **políticas de**configuração do usuário**configurações do Windows**configurações de**segurança**políticasdechave > pública.
+    1. No painel de navegação, vá para **configuração do usuário** > **políticas** > **configurações do Windows** > **configurações de segurança** > **políticas de chave pública**.
 
     2. No painel de detalhes, clique com o botão direito do mouse em **Registro automático de cliente nos serviços de certificado** e selecione **Propriedades**.
 
@@ -118,12 +118,12 @@ Como o servidor RRAS não está ingressado no domínio, o registro automático n
 
     - **Modelo de certificado:** [_cliente_] servidor VPN
 
-#### <a name="example-vpngatewayinf-script"></a>Exemplo: Script VPNGateway. inf
+#### <a name="example-vpngatewayinf-script"></a>Exemplo: VPNGateway. inf script
 
 Aqui você pode ver um script de exemplo de uma política de solicitação de certificado usada para solicitar um certificado de gateway de VPN usando um processo fora de banda.
 
 >[!TIP]
->Você pode encontrar uma cópia do script VPNGateway. inf no kit de IP da oferta de VPN na pasta políticas de solicitação de certificado. Atualize apenas ' Subject ' e '\_continue\_' com valores específicos do cliente.
+>Você pode encontrar uma cópia do script VPNGateway. inf no kit de IP da oferta de VPN na pasta políticas de solicitação de certificado. Somente atualize os ' Subject ' e '\_continuar\_' com valores específicos do cliente.
 
 ```
 [Version] 
@@ -205,7 +205,7 @@ Você também adiciona um grupo que contém servidores VPN e outro grupo que con
 Neste procedimento, você configura um modelo de autenticação cliente-servidor personalizado. Esse modelo é necessário porque você deseja melhorar a segurança geral do certificado selecionando os níveis de compatibilidade atualizados e escolhendo o provedor Microsoft Platform crypto. Essa última alteração permite que você use o TPM nos computadores cliente para proteger o certificado. Para obter uma visão geral do TPM, consulte [visão geral da tecnologia de Trusted Platform Module](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview).
 
 >[!IMPORTANT] 
->Provedor de criptografia de plataforma da Microsoft "requer um chip TPM, caso você esteja executando uma VM e receba o seguinte erro: "Não é possível encontrar um CSP válido no computador local" ao tentar registrar manualmente o certificado, você precisa verificar "provedor de armazenamento de chaves de software da Microsoft" e tê-lo em segundo lugar depois de "provedor de criptografia de plataforma da Microsoft" na guia criptografia no certificado Properties.
+>Provedor de criptografia de plataforma da Microsoft "requer um chip TPM, caso você esteja executando uma VM e receba o seguinte erro:" não é possível encontrar um CSP válido no computador local "ao tentar registrar manualmente o certificado, você precisa verificar" armazenamento de chaves de software da Microsoft Provedor "e o têm em segundo lugar depois de" provedor Microsoft Platform crypto "na guia criptografia nas propriedades do certificado.
 
 **Procedure**
 
@@ -300,7 +300,7 @@ Servidores VPN ingressados no domínio
 
     3. Na caixa de diálogo **Adicionar política de aplicativo** , selecione **segurança IP Ike intermediária**e, em seguida, selecione **OK**.
    
-        A adição de segurança IP IKE intermediária ao EKU ajuda em cenários em que existe mais de um certificado de autenticação de servidor no servidor VPN. Quando a segurança IP IKE intermediária estiver presente, o IPSec usará apenas o certificado com ambas as opções EKU. Sem isso, a autenticação IKEv2 poderia falhar com o erro 13801: As credenciais de autenticação IKE são inaceitáveis.
+        A adição de segurança IP IKE intermediária ao EKU ajuda em cenários em que existe mais de um certificado de autenticação de servidor no servidor VPN. Quando a segurança IP IKE intermediária estiver presente, o IPSec usará apenas o certificado com ambas as opções EKU. Sem isso, a autenticação IKEv2 pode falhar com o erro 13801: as credenciais de autenticação IKE são inaceitáveis.
 
     4. Selecione **OK** para retornar à caixa **de diálogo Propriedades do novo modelo** .
 
@@ -438,7 +438,7 @@ Ao contrário do certificado de usuário, você deve registrar manualmente o cer
 
 7. Selecione **registrar**.
 
-8. Selecione **concluir**.
+8. Selecione **Concluir**.
 
 9. No snap-in certificados, em **pessoal**, selecione **certificados**.
     
@@ -452,7 +452,7 @@ Ao contrário do certificado de usuário, você deve registrar manualmente o cer
 
 13. Selecione **OK** para fechar o certificado.
 
-14. Feche o snap-in de certificados.
+14. Abra o snap-in Certificados.
 
 ### <a name="validate-the-nps-server-certificate"></a>Validar o certificado do servidor NPS
 
@@ -470,8 +470,8 @@ Ao contrário do certificado de usuário, você deve registrar manualmente o cer
 
 6. Selecione **OK** para fechar o certificado.
 
-7. Feche o snap-in de certificados.
+7. Abra o snap-in Certificados.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
-[Etapa 3. Configure o servidor de acesso remoto para Always On](vpn-deploy-ras.md)VPN: Nesta etapa, você configura a VPN de acesso remoto para permitir conexões VPN IKEv2, negar conexões de outros protocolos VPN e atribuir um pool de endereços IP estáticos para emissão de endereços IP para conectar clientes VPN autorizados.
+[Etapa 3. Configurar o servidor de acesso remoto para Always On VPN](vpn-deploy-ras.md): nesta etapa, você configura a VPN de acesso remoto para permitir conexões VPN IKEv2, negar conexões de outros protocolos VPN e atribuir um pool de endereços IP estáticos para emissão de endereços IP para conectar clientes VPN autorizados.

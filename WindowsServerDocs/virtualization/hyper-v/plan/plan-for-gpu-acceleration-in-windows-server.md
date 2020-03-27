@@ -1,19 +1,19 @@
 ---
 title: Planejar a aceleração de GPU no Windows Server
 description: Saiba mais sobre as diferentes tecnologias Hyper-V para aceleração de GPU, incluindo DDA e vGPU RemoteFX
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 08/21/2019
-ms.openlocfilehash: f62357de1ab167d0a6be4eb63b9d6d23bfac7371
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923898"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307852"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Planejar a aceleração de GPU no Windows Server
 
@@ -26,7 +26,7 @@ Este artigo apresenta os recursos de virtualização de gráficos disponíveis n
 Dependendo de sua carga de trabalho, talvez você queira considerar a aceleração da GPU. Veja o que você deve considerar antes de escolher a aceleração de GPU:
 
 - **Cargas de trabalho de aplicativos e de comunicação remota (VDI/DaaS)** : se você estiver criando um aplicativo ou um serviço de comunicação remota de área de trabalho com o Windows Server, considere o catálogo de aplicativos que você espera que os usuários executem. Alguns tipos de aplicativos, como aplicativos CAD/CAM, aplicativos de simulação, jogos e aplicativos de renderização/visualização, dependem muito da renderização 3D para fornecer interatividade contínua e responsiva. A maioria dos clientes considera as GPUs uma necessidade por uma experiência de usuário razoável com esses tipos de aplicativos.
-- **Cargas de trabalho de renderização, codificação e visualização remotas**: essas cargas de trabalho orientadas por gráficos tendem a depender muito dos recursos especializados de uma GPU, como a renderização 3D eficiente e a codificação/decodificação de quadros, a fim de alcançar metas de produtividade e custo-benefício. Para esse tipo de carga de trabalho, uma única VM habilitada para GPU pode ser capaz de corresponder à taxa de transferência de várias VMs somente de CPU.
+- **Cargas de trabalho de renderização, codificação e visualização remotas**: essas cargas de trabalho orientadas por gráficos tendem a depender muito dos recursos especializados de uma GPU, como a renderização 3D eficiente e a codificação/decodificação de quadros, a fim de obter metas de produtividade e economia. Para esse tipo de carga de trabalho, uma única VM habilitada para GPU pode ser capaz de corresponder à taxa de transferência de várias VMs somente de CPU.
 - **Cargas de trabalho do HPC e do ml**: para cargas de trabalho computacionais de alto desempenho, como treinamento ou inferência de modelo de computação e aprendizado de máquina, as GPUs podem reduzir drasticamente o tempo para resultar, o tempo de inferência e o tempo de treinamento. Como alternativa, eles podem oferecer melhor relação custo-benefício do que uma arquitetura somente de CPU em um nível de desempenho comparável. Muitas estruturas do HPC e do Machine Learning têm uma opção para habilitar a aceleração de GPU; Considere se isso pode beneficiar sua carga de trabalho específica.
 
 ## <a name="gpu-virtualization-in-windows-server"></a>Virtualização de GPU no Windows Server
@@ -60,7 +60,7 @@ O RemoteFX vGPU é uma tecnologia de virtualização de gráficos que permite qu
 
 Para saber mais, consulte estes tópicos:
 
-- [Implantar dispositivos gráficos usando vGPU RemoteFX](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
+- [Implantar dispositivos gráficos usando um vGPU do RemoteFX](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
 - [Suporte a vGPU (adaptador de vídeo 3D) do RemoteFX](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
 
 ## <a name="comparing-dda-and-remotefx-vgpu"></a>Comparando DDA e vGPU RemoteFX

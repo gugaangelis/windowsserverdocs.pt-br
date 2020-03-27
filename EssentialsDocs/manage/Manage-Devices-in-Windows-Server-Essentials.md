@@ -3,7 +3,7 @@ title: Gerenciar Dispositivos no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: cd43826579bff16e4bdf50bba956f19a39fec5e6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322318"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311310"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Gerenciar Dispositivos no Windows Server Essentials
 
@@ -37,7 +37,7 @@ ms.locfileid: "79322318"
   
 -   [Exibir Propriedades do computador](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
-##  <a name="BKMK_1"></a>Gerenciar dispositivos usando o painel  
+##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a>Gerenciar dispositivos usando o painel  
  O Windows Server Essentials torna possível executar tarefas administrativas comuns usando o Painel do Windows Server Essentials. A página **Dispositivos** do Painel fornece o seguinte:  
   
 -   Uma lista de computadores da rede, que exibe:  
@@ -89,7 +89,7 @@ ms.locfileid: "79322318"
 |Como conecto computadores ao servidor?|Abre um tópico da Ajuda que descreve as etapas para executar o ingresso de um computador à rede.|  
 |Implementar Política de Grupo|Aplica as configurações de política para os computadores Windows 8 e Windows 7 que ingressaram no domínio.|  
   
-##  <a name="BKMK_2"></a>Permissão atribuir contas de usuário para fazer logon em computadores de rede específicos  
+##  <a name="assign-user-accounts-permission-to-log-on-to-specific-network-computers"></a><a name="BKMK_2"></a>Permissão atribuir contas de usuário para fazer logon em computadores de rede específicos  
  Você pode atribuir permissões a contas de usuário para que os usuários possam fazer logon somente em determinados computadores da rede ao acessar a rede do Windows Server Essentials em um local remoto.  
   
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>Para alterar o acesso do computador para uma conta de usuário  
@@ -104,7 +104,7 @@ ms.locfileid: "79322318"
   
 5.  Na guia **Acesso ao computador**, selecione o computador que o usuário pode acessar remotamente e clique em **OK**.  
   
-##  <a name="BKMK_3"></a>Remover um computador do servidor  
+##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a>Remover um computador do servidor  
  Quando você remove um computador de um servidor que esteja executando o Windows Server Essentials usando o Painel, ele não é gerenciado pelo servidor. Como resultado, o servidor irá parar de criar backups de computador ou monitorar sua integridade após sua remoção da rede.  
   
 > [!NOTE]
@@ -118,7 +118,7 @@ ms.locfileid: "79322318"
   
 3.  Na lista de computadores, clique com o botão direito do mouse no computador que você deseja remover da rede e, em seguida, clique em **Remover o computador**.  
   
-##  <a name="BKMK_5"></a>Definir configurações de Política de Grupo para redirecionamento de pasta e segurança  
+##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a>Definir configurações de Política de Grupo para redirecionamento de pasta e segurança  
  Você pode configurar a política de grupo e implantá-la em computadores na rede do Windows Server Essentials usando o Painel do Windows Server Essentials. A política de grupo no Windows Server Essentials inclui configurações de redirecionamento de pasta e segurança que influenciam o Windows Update, o Windows Defender e o firewall de rede.  
   
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>Para configurar a política de grupo no Windows Server Essentials  
@@ -139,7 +139,7 @@ ms.locfileid: "79322318"
   
 7.  Clique em **Concluir** para implementar as configurações de política de grupo.  
   
-##  <a name="BKMK_7"></a>Conectar-se a um computador de rede usando uma sessão de Área de Trabalho Remota  
+##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a>Conectar-se a um computador de rede usando uma sessão de Área de Trabalho Remota  
  Para acessar remotamente seu computador de rede do Windows Server Essentials quando você estiver fora do seu escritório, use o navegador da Web para fazer logon no site de Acesso via Web remoto da sua organização e, na guia **computadores** , clique no nome do computador.  
   
  A coluna **Status** mostra se você pode se conectar a um computador na sua rede e se pode incluir os seguintes valores:  
@@ -160,7 +160,7 @@ ms.locfileid: "79322318"
   
      A conexão de computador está bloqueada por um firewall ou a área de trabalho remota está desabilitada no computador ou pela política de grupo. Pode levar até 6 horas para esse status ser atualizado no servidor, se houver uma alteração.  
   
-##  <a name="BKMK_8"></a>Exibir Propriedades do computador  
+##  <a name="view-computer-properties"></a><a name="BKMK_8"></a>Exibir Propriedades do computador  
  A seção **Dispositivos** do Painel do Windows Server Essentials exibe uma lista de computadores da rede. A lista também fornece informações adicionais sobre cada computador.  
   
 #### <a name="to-view-a-list-of-computers"></a>Para exibir uma lista de computadores  

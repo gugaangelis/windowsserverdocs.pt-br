@@ -6,18 +6,18 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9ac5ab31db1b8c184fd179ecb3e6b87f7fffd2ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 927232a3b191be86ae91b1dd0d6af767d4f024ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405234"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315423"
 ---
 # <a name="qos-policy-scenarios"></a>Cenários de política de QoS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para examinar os cenários hipotéticos que demonstram como, quando e por que usar a política de QoS.
 
@@ -29,15 +29,15 @@ Os dois cenários neste tópico são:
 >[!NOTE]
 >Algumas seções deste tópico contêm etapas gerais que você pode seguir para executar as ações descritas. Para obter instruções mais detalhadas sobre como gerenciar a política de QoS, consulte [gerenciar política de QoS](qos-policy-manage.md).
 
-## <a name="scenario-1-prioritize-network-traffic-for-a-line-of-business-application"></a>Cenário 1: Priorize o tráfego de rede para um aplicativo de linha de negócios
+## <a name="scenario-1-prioritize-network-traffic-for-a-line-of-business-application"></a>Cenário 1: priorizar o tráfego de rede para um aplicativo de linha de negócios
 
 Nesse cenário, um departamento de ti tem várias metas que podem realizar usando a política de QoS:
 
-- Fornecer melhor desempenho de rede para\-aplicativos de missão crítica.
+- Fornecer melhor desempenho de rede para aplicativos críticos para a missão\-.
 - Fornecer melhor desempenho de rede para um conjunto de chaves de usuários enquanto eles estão usando um aplicativo específico.
-- Verifique se o aplicativo\-de backup de dados de toda a empresa não impede o desempenho da rede usando muita largura de banda ao mesmo tempo.
+- Verifique se a empresa\-aplicativo de backup de dados largos não impede o desempenho da rede usando muita largura de banda ao mesmo tempo.
 
-O departamento de ti decide configurar a política de QoS para priorizar aplicativos específicos usando valores DSCP \(\) de ponto de código de serviço de diferenciação para classificar o tráfego de rede e configurar seus roteadores para fornecer uma referência preferencial tratamento para tráfego de prioridade mais alta. 
+O departamento de ti decide configurar a política de QoS para priorizar aplicativos específicos usando o ponto de código de serviço de diferenciação \(valores de\) DSCP para classificar o tráfego de rede e configurar seus roteadores para fornecer tratamento preferencial para tráfego de prioridade mais alta. 
 
 >[!NOTE]
 >Para obter mais informações sobre o DSCP, consulte a seção **definir a prioridade de QoS por meio de um ponto de serviços diferenciados de código** no tópico [política de QoS (qualidade de serviço)](qos-policy-top.md).
@@ -50,11 +50,11 @@ Com três metas separadas a serem realizadas, o administrador de ti decide criar
 
 #### <a name="qos-policy-for-lob-app-servers"></a>Política de QoS para servidores de aplicativos LOB
 
-O primeiro\-aplicativo essencial para o qual o departamento de ti cria uma política de QoS é\-um aplicativo ERP\) de \(planejamento de recursos empresariais em toda a empresa. O aplicativo ERP é hospedado em vários computadores que estão executando o Windows Server 2016. Em Active Directory Domain Services, esses computadores são \(membros de uma UO\) de unidade organizacional que foi criada para servidores de aplicativos LOB \(\) de linha de negócios. O componente\-do lado do cliente para o aplicativo ERP é instalado em computadores que executam o Windows 10 e o Windows 8.1.
+A primeira missão\-aplicativo crítico para o qual o departamento de ti cria uma política de QoS é uma empresa\-planejamento de recursos empresariais \(aplicativo ERP\). O aplicativo ERP é hospedado em vários computadores que estão executando o Windows Server 2016. Em Active Directory Domain Services, esses computadores são membros de uma unidade organizacional \(UO\) que foi criada para os servidores de aplicativos \(LOB\) de linha de negócios. O componente do lado do cliente\-para o aplicativo ERP é instalado em computadores que executam o Windows 10 e o Windows 8.1.
 
-No política de grupo, um administrador de ti seleciona o GPO \(\) do objeto política de grupo no qual a política de QoS será aplicada. Usando o assistente de política de QoS, o administrador de ti cria uma política de QoS chamada "política de LOB de servidor\-" que especifica um valor DSCP de alta prioridade de 44 para todos os aplicativos, qualquer endereço IP, TCP e UDP e número de porta.
+No Política de Grupo, um administrador de ti seleciona o objeto Política de Grupo \(GPO\) no qual a política de QoS será aplicada. Usando o assistente de política de QoS, o administrador de ti cria uma política de QoS chamada "política de LOB de servidor" que especifica um valor de DSCP de alta\-prioridade de 44 para todos os aplicativos, qualquer endereço IP, TCP e UDP e número de porta.
 
-A política de QoS é aplicada somente aos servidores LOB vinculando o GPO à UO que contém apenas esses servidores, por meio da ferramenta \(GPMC\) console de gerenciamento de política de grupo. Essa política de LOB de servidor inicial aplica\-o valor de DSCP de alta prioridade sempre que o computador envia o tráfego de rede. Essa política de QoS pode ser editada \(posteriormente na ferramenta\) de editor de objeto de política de grupo para incluir os números de porta do aplicativo ERP, o que limita a política a ser aplicada somente quando o número da porta especificada é usado.
+A política de QoS é aplicada somente aos servidores LOB vinculando o GPO à UO que contém apenas esses servidores, por meio da ferramenta de\) \(GPMC Console de Gerenciamento de Política de Grupo. Essa política de LOB de servidor inicial aplica o valor de DSCP de alta\-prioridade sempre que o computador envia o tráfego de rede. Essa política de QoS pode ser editada posteriormente \(na ferramenta de Editor de Objeto de Política de Grupo\) para incluir os números de porta do aplicativo ERP, o que limita a política a ser aplicada somente quando o número da porta especificada é usado.
 
 #### <a name="qos-policy-for-the-finance-group"></a>Política de QoS para o grupo financeiro
 
@@ -79,10 +79,10 @@ A tabela a seguir resume as políticas de QoS para esse cenário.
   
 |Nome da política|Valor de DSCP|Taxa de limitação|Aplicado a unidades organizacionais|Descrição|  
 |-----------------|----------------|-------------------|-----------------------------------|-----------------|
-|[Nenhuma política]|0|Nenhuma|[Sem implantação]|Tratamento de melhor esforço (padrão) para tráfego não classificado.|  
-|Dados de backup|1|Nenhuma|Todos os clientes|Aplica um valor DSCP de baixa prioridade para esses dados em massa.|  
-|LOB do servidor|44|Nenhuma|UO do computador para servidores ERP|Aplica DSCP de alta prioridade para o tráfego do servidor ERP|  
-|LOB do cliente|60|Nenhuma|Grupo de usuários de finanças|Aplica DSCP de alta prioridade para o tráfego do cliente ERP|  
+|[Nenhuma política]|0|Nenhum|[Sem implantação]|Tratamento de melhor esforço (padrão) para tráfego não classificado.|  
+|Dados de backup|1|Nenhum|Todos os clientes|Aplica um valor DSCP de baixa prioridade para esses dados em massa.|  
+|LOB do servidor|44|Nenhum|UO do computador para servidores ERP|Aplica DSCP de alta prioridade para o tráfego do servidor ERP|  
+|LOB do cliente|60|Nenhum|Grupo de usuários de finanças|Aplica DSCP de alta prioridade para o tráfego do cliente ERP|  
 
 >[!NOTE]
 >Os valores de DSCP são representados em formato decimal.
@@ -95,11 +95,11 @@ Quando o tráfego chega ao roteador com valores de DSCP de "política de LOB do 
 
 Para concluir essa tarefa, verifique se você atende aos seguintes requisitos:
 
-- Os computadores envolvidos estão executando sistemas\-operacionais compatíveis com QoS.
+- Os computadores envolvidos estão executando o QoS\-sistemas operacionais compatíveis.
 
-- Os computadores envolvidos são membros de um Active Directory Domain Services \(AD DS\) domínio para que possam ser configurados usando política de grupo.
+- Os computadores envolvidos são membros de um Active Directory Domain Services \(AD DS domínio\) para que possam ser configurados usando Política de Grupo.
 
-- As redes TCP/IP são configuradas com roteadores configurados\)para DSCP \(RFC 2474. Para obter mais informações, consulte [RFC 2474](https://www.ietf.org/rfc/rfc2474.txt).
+- As redes TCP/IP são configuradas com roteadores configurados para DSCP \(RFC 2474\). Para obter mais informações, consulte [RFC 2474](https://www.ietf.org/rfc/rfc2474.txt).
 
 - Os requisitos de credenciais administrativas são atendidos.
 
@@ -122,19 +122,19 @@ Para configurar o ambiente de teste, conclua as tarefas a seguir.
 
 Para priorizar um aplicativo de linha de negócios, conclua as seguintes tarefas:
 
-1. Crie e vincule um GPO \(\) de objeto de política de grupo com uma política de QoS.
+1. Crie e vincule um objeto de Política de Grupo \(GPO\) com uma política de QoS.
 
 2. Configure os roteadores para tratar diferencialmente de um aplicativo de linha de negócios (usando o enfileiramento) com base nos valores DSCP selecionados. Os procedimentos dessa tarefa irão variar dependendo do tipo de roteadores que você tem.
 
-## <a name="scenario-2-prioritize-network-traffic-for-an-http-server-application"></a>Cenário 2: Priorizar o tráfego de rede para um aplicativo de servidor HTTP
+## <a name="scenario-2-prioritize-network-traffic-for-an-http-server-application"></a>Cenário 2: priorizar o tráfego de rede para um aplicativo de servidor HTTP
 
 No Windows Server 2016, a QoS baseada em políticas inclui as políticas baseadas em URL do recurso. As políticas de URL permitem que você gerencie a largura de banda para servidores HTTP.
 
-Muitos aplicativos empresariais são desenvolvidos para o e hospedados \(em\) serviços de informações da Internet servidores Web do IIS, e os aplicativos Web são acessados de navegadores em computadores cliente.
+Muitos aplicativos empresariais são desenvolvidos para o e hospedados em Serviços de Informações da Internet \(servidores Web do IIS\), e os aplicativos Web são acessados de navegadores em computadores cliente.
 
 Nesse cenário, suponha que você gerencie um conjunto de servidores IIS que hospeda vídeos de treinamento para todos os funcionários da sua organização. Seu objetivo é garantir que o tráfego desses servidores de vídeo não sobrecarregue sua rede e garanta que o tráfego de vídeo seja diferenciado da voz e do tráfego de dados na rede. 
 
-A tarefa é semelhante à tarefa no cenário 1. Você criará e configurará as configurações de gerenciamento de tráfego, como o valor de DSCP para o tráfego de vídeo, e a taxa de limitação da mesma forma que faria para os aplicativos de linha de negócios. Mas ao especificar o tráfego, em vez de fornecer o nome do aplicativo, você só insere a URL para a qual seu aplicativo de servidor HTTP responderá https://hrweb/training: por exemplo,.
+A tarefa é semelhante à tarefa no cenário 1. Você criará e configurará as configurações de gerenciamento de tráfego, como o valor de DSCP para o tráfego de vídeo, e a taxa de limitação da mesma forma que faria para os aplicativos de linha de negócios. Mas ao especificar o tráfego, em vez de fornecer o nome do aplicativo, você só insere a URL para a qual seu aplicativo de servidor HTTP responderá: por exemplo, https://hrweb/training.
   
 > [!NOTE]
 >Você não pode usar políticas de QoS baseadas em URL para priorizar o tráfego de rede para computadores que executam sistemas operacionais Windows que foram lançados antes do Windows 7 e do Windows Server 2008 R2.
@@ -153,25 +153,25 @@ Todas as URLs a seguir são válidas e podem ser especificadas na política de Q
 
 Mas qual deles receberá precedência? As regras são simples. As políticas baseadas em URL são priorizadas em uma ordem de leitura da esquerda para a direita. Portanto, da prioridade mais alta para a prioridade mais baixa, os campos de URL são:
   
-[1. Esquema de URL](#bkmk_QoS_UrlScheme)
+[1. esquema de URL](#bkmk_QoS_UrlScheme)
 
-[2. Host de URL](#bkmk_QoS_UrlHost)
+[2. URL de host](#bkmk_QoS_UrlHost)
 
-[3. Porta da URL](#bkmk_QoS_UrlPort)
+[3. porta de URL](#bkmk_QoS_UrlPort)
 
-[4. Caminho da URL](#bkmk_QoS_UrlPath)
+[4. caminho da URL](#bkmk_QoS_UrlPath)
 
 Os detalhes são os seguintes:
 
-####  <a name="bkmk_QoS_UrlScheme"></a>uma. Esquema de URL
+####  <a name="1-url-scheme"></a><a name="bkmk_QoS_UrlScheme"></a>1. esquema de URL
 
- `https://`tem uma prioridade mais alta `https://`do que.
+ `https://` tem uma prioridade mais alta do que `https://`.
 
-####  <a name="bkmk_QoS_UrlHost"></a>2. Host de URL
+####  <a name="2-url-host"></a><a name="bkmk_QoS_UrlHost"></a>2. URL de host
 
  Da prioridade mais alta para a mais baixa, elas são:
 
-1. nome_do_host
+1. Nome do host
 
 2. Endereço IPv6
 
@@ -191,11 +191,11 @@ No caso do nome do host, um nome de host com mais elementos pontilhados (mais pr
   
   **video.Internal.Training.hr.mycompany.com** tem a prioridade mais alta e **selfguide.Training.mycompany.com** tem a próxima prioridade mais alta. O **treinamento** e a **biblioteca** compartilham a mesma prioridade mais baixa.  
   
-####  <a name="bkmk_QoS_UrlPort"></a>Beta. Porta da URL
+####  <a name="3-url-port"></a><a name="bkmk_QoS_UrlPort"></a>3. porta de URL
 
 Um número de porta específico ou implícito tem uma prioridade mais alta do que uma porta curinga.
 
-####  <a name="bkmk_QoS_UrlPath"></a>quatro. Caminho da URL
+####  <a name="4-url-path"></a><a name="bkmk_QoS_UrlPath"></a>4. caminho da URL
 
 Como um nome de host, um caminho de URL pode consistir em vários elementos. A única com mais elementos sempre tem uma prioridade mais alta do que aquela com menos. Por exemplo, os seguintes caminhos são listados por prioridade:  
 

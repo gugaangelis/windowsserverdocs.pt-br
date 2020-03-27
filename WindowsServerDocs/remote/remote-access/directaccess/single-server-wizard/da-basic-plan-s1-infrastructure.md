@@ -10,19 +10,19 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6f4c727dc8f7905502d47119bd0e911537e827aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9c71ef26f9e4ba5d20705827109d9ad22fe5c7ab
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404880"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308889"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Etapa 1 planejar a infraestrutura básica do DirectAccess
 A primeira etapa para uma implantação básica do DirectAccess em um único servidor é executar o planejamento para a infraestrutura necessária para a implantação. Este tópico descreve as etapas de planejamento de infraestrutura:  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |Planejar topologia e configurações de rede|Decida onde posicionar o servidor DirectAccess \(na borda ou por trás de uma conversão de endereços de rede \(NAT\) dispositivo ou firewall\)e planeje o endereçamento e roteamento de IP.|  
 |Planejar requisitos de firewall|Planejar como permitir o DirectAccess por meio de firewalls de borda.|  
@@ -33,7 +33,7 @@ A primeira etapa para uma implantação básica do DirectAccess em um único ser
   
 As tarefas de planejamento não precisam ser feitas em uma ordem específica.  
   
-## <a name="bkmk_1_1_Network_svr_top_settings"></a>Planejar configurações e topologia de rede  
+## <a name="plan-network-topology-and-settings"></a><a name="bkmk_1_1_Network_svr_top_settings"></a>Planejar configurações e topologia de rede  
   
 ### <a name="plan-network-adapters-and-ip-addressing"></a>Planejar adaptadores de rede e endereçamento IP  
   
@@ -65,7 +65,7 @@ As tarefas de planejamento não precisam ser feitas em uma ordem específica.
     > 1.  Se um endereço IPv4 público tiver sido atribuído a um cliente do DirectAccess, ele usará tecnologia de transição 6to4 para se conectar à intranet. Se o cliente DirectAccess não puder se conectar ao servidor DirectAccess com o 6to4, ele usará IP\-HTTPS.  
     > 2.  Os computadores cliente IPv6 nativos podem se conectar ao servidor do DirectAccess pelo IPv6 nativo, sem a necessidade de tecnologia de transição.  
   
-### <a name="ConfigFirewalls"></a>Planejar requisitos de firewall  
+### <a name="plan-firewall-requirements"></a><a name="ConfigFirewalls"></a>Planejar requisitos de firewall  
 Se o servidor DirectAccess estiver atrás de um firewall de borda, as seguintes exceções serão necessárias para o tráfego DirectAccess quando o servidor DirectAccess estiver na Internet IPv4:  
   
 -   tráfego 6to4-protocolo IP 41 de entrada e saída.  
@@ -89,7 +89,7 @@ Ao usar firewalls adicionais, aplique as seguintes exceções do firewall de red
   
 -   TCP\/UDP para todo o tráfego IPv4\/IPv6  
   
-### <a name="bkmk_1_2_CAs_and_certs"></a>Planejar requisitos de certificado  
+### <a name="plan-certificate-requirements"></a><a name="bkmk_1_2_CAs_and_certs"></a>Planejar requisitos de certificado  
 Os requisitos de certificado para o IPsec incluem um certificado de computador usado pelos computadores cliente do DirectAccess ao estabelecerem a conexão IPsec entre o cliente e o servidor do DirectAccess e um certificado de computador usado pelos servidores do DirectAccess para estabelecer conexões IPsec com clientes do DirectAccess. Para o DirectAccess no Windows Server 2012 R2 e no Windows Server 2012, o uso desses certificados IPsec não é obrigatório. O Assistente de Introdução configura o servidor do DirectAccess para agir como um proxy Kerberos para realizar a autenticação IPsec sem a necessidade de certificados.
   
 1.  **Servidor IP\-https**. Quando você configura o DirectAccess, o servidor DirectAccess é configurado automaticamente para atuar como o ouvinte da Web IP\-HTTPS. O site IP\-HTTPS requer um certificado de site e os computadores cliente devem ser capazes de contatar a lista de certificados revogados \(site CRL\) para o certificado. O assistente para Habilitar DirectAccess tenta usar o certificado SSTP VPN. Se o SSTP não estiver configurado, ele verificará se um certificado para IP\-HTTPS está presente no repositório pessoal do computador. Se nenhum estiver disponível, ele criará automaticamente um certificado auto\-assinado.
@@ -104,7 +104,7 @@ Os requisitos de certificação para cada um deles estão resumidos na tabela a 
 ||CA interna-você pode usar uma AC interna para emitir o certificado IP\-HTTPS; no entanto, você deve verificar se o ponto de distribuição da CRL está disponível externamente.|Certificado auto\-assinado-você pode usar um certificado auto\-assinado para o site do servidor do local de rede; no entanto, você não pode usar um certificado auto\-assinado em implantações multissite.|  
 ||Certificado auto\-assinado-você pode usar um certificado auto\-assinado para o servidor IP\-HTTPS; no entanto, você deve verificar se o ponto de distribuição da CRL está disponível externamente. Um certificado auto\-assinado não pode ser usado em uma implantação multissite.||  
   
-#### <a name="bkmk_website_cert_IPHTTPS"></a>Planejar certificados para IP\-HTTPS e servidor de local de rede  
+#### <a name="plan-certificates-for-ip-https-and-network-location-server"></a><a name="bkmk_website_cert_IPHTTPS"></a>Planejar certificados para IP\-HTTPS e servidor de local de rede  
 Se desejar provisionar um certificado para esses fins, consulte [Implantar um único servidor DirectAccess com configurações avançadas](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md). Se nenhum certificado estiver disponível, o assistente de Introdução criará automaticamente\-certificados assinados para essas finalidades.
   
 > [!NOTE]
@@ -146,14 +146,14 @@ Em uma implantação do DirectAccess, é necessário DNS para o seguinte:
 > [!NOTE]  
 > Não é recomendável que você use servidores DNS que estejam executando o Windows Server 2003, quando estiver implantando o DirectAccess. Embora os servidores DNS do Windows Server 2003 ofereçam suporte a registros IPv6, o Windows Server 2003 não tem mais o suporte da Microsoft. Além disso, você não deve implantar o DirectAccess se os controladores de domínio estiverem executando o Windows Server 2003 devido a um problema com o Serviço de replicação de arquivos. Para obter mais informações, consulte [configurações sem suporte do DirectAccess](../DirectAccess-Unsupported-Configurations.md).  
   
-### <a name="bkmk_1_4_NLS"></a>Planejar o servidor do local de rede  
+### <a name="plan-the-network-location-server"></a><a name="bkmk_1_4_NLS"></a>Planejar o servidor do local de rede  
 O servidor de local da rede é um site da Web usado para detectar se os clientes DirectAccess se encontram na rede corporativa. Os clientes na rede corporativa não usam o DirectAccess para acessar recursos internos, mas, em vez disso, se conectam diretamente.  
   
 O Assistente de Introdução define automaticamente o servidor de local de rede no servidor DirectAccess e o site da Web é criado automaticamente quando você implanta o DirectAccess. Isso permite uma instalação simples sem o uso de uma infraestrutura de certificado.
   
 Se você quiser implantar um servidor de local de rede e não usar\-certificados assinados automaticamente, consulte [implantar um único servidor DirectAccess com configurações avançadas](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md).
   
-### <a name="bkmk_1_6_AD"></a>Active Directory de plano  
+### <a name="plan-active-directory"></a><a name="bkmk_1_6_AD"></a>Active Directory de plano  
 O DirectAccess usa Active Directory e Active Directory objetos de política de grupo da seguinte maneira:
   
 -   **Autenticação**. O Active Directory é usado para autenticação. O túnel do DirectAccess usa autenticação Kerberos para o usuário acessar recursos internos.
@@ -184,7 +184,7 @@ Ao planejar o Active Directory para uma implantação do DirectAccess, os proced
 > - O servidor DirectAccess não pode ser um controlador de domínio.  
 > - O controlador de domínio Active Directory usado para o DirectAccess não deve estar acessível a partir do adaptador de Internet externo do servidor DirectAccess \(o adaptador não deve estar no perfil de domínio do\)de firewall do Windows.  
   
-### <a name="bkmk_1_7_GPOs"></a>Planejar Política de Grupo objetos  
+### <a name="plan-group-policy-objects"></a><a name="bkmk_1_7_GPOs"></a>Planejar Política de Grupo objetos  
 As configurações do DirectAccess definidas quando você configura o DirectAccess são coletadas em objetos de diretiva de grupo \(\)de GPO. Dois GPOs diferentes são preenchidos com definições do DirectAccess e distribuídos como segue:  
   
 -   **GPO de cliente do DirectAccess**. Este GPO contém configurações do cliente, inclusive configurações da tecnologia de transição IPv6, entradas da NRPT e regras de segurança de conexão do Firewall do Windows com Segurança Avançada. O GPO é aplicado a grupos de segurança especificados para os computadores cliente.  
@@ -250,7 +250,7 @@ O **Gerenciamento do DirectAccess** exibirá a seguinte mensagem de erro: **não
   
 3.  Você verá uma mensagem de erro indicando que o GPO não foi encontrado. Clique em **Remover definições de configuração**. Após a conclusão, o servidor será restaurado para um estado de\-configurado.  
   
-### <a name="BKMK_Links"></a>Próxima etapa  
+### <a name="next-step"></a><a name="BKMK_Links"></a>Próxima etapa  
   
 -   [Etapa 2: planejar a implantação básica do DirectAccess](da-basic-plan-s2-deployment.md)  
   

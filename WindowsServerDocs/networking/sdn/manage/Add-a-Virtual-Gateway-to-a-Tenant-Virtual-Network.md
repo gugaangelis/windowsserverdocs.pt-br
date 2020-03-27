@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: deeb226d81c48e0e389ea4d2619c43aca01e25c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: feee6f7bfaa34983290bfe173c7729666581e3f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355891"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309928"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>Adicionar um gateway virtual a uma rede virtual de locatário 
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016 
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016 
 
 Saiba como usar os cmdlets e scripts do Windows PowerShell para fornecer conectividade site a site para as redes virtuais do seu locatário. Neste tópico, você adiciona gateways virtuais de locatário a instâncias do gateway de RAS que são membros de pools de gateways, usando o controlador de rede. O gateway RAS dá suporte a até 100 locatários, dependendo da largura de banda usada por cada locatário. O controlador de rede determina automaticamente o melhor gateway de RAS a ser usado quando você implanta um novo gateway virtual para seus locatários.  
 

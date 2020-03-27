@@ -3,7 +3,7 @@ title: Gerenciar a integridade do sistema no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d9002a1530e114f490ddf1cfb0e5706ddec52431
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: bbe05c0564e706ef0227e723a52bd10b2f774756
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322128"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311074"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Gerenciar a integridade do sistema no Windows Server Essentials
 
@@ -44,7 +44,7 @@ ms.locfileid: "79322128"
   
 -   [Possíveis alertas do computador](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Potential)  
   
-##  <a name="BKMK_AddIn"></a>Sobre o suplemento de relatório de integridade  
+##  <a name="about-the-health-report-add-in"></a><a name="BKMK_AddIn"></a>Sobre o suplemento de relatório de integridade  
  O Suplemento de Relatório de integridade para o Windows Server Essentials fornece informações consolidadas sobre a rede do Windows Server Essentials e permite que você distribua essas informações para outras pessoas. Essas informações podem ser exibidas de **relatórios** guia do Painel. Com o **relatórios** guia, você pode fazer o seguinte:  
   
 -   [Gerar um relatório sob demanda ou no agendamento](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Generate)  
@@ -58,14 +58,14 @@ ms.locfileid: "79322128"
 >   
 >  **Windows Server Essentials:** Por padrão, o suplemento de relatório de integridade é integrado ao Windows Server Essentials ou ao Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada e os relatórios de integridade são exibidos na guia **relatórios de integridade** da página **inicial** do painel.  
   
-###  <a name="BKMK_Generate"></a>Gerar um relatório sob demanda ou no agendamento  
+###  <a name="generate-a-report-on-demand-or-on-schedule"></a><a name="BKMK_Generate"></a>Gerar um relatório sob demanda ou no agendamento  
  Depois de instalar o suplemento de relatório de integridade e reiniciar o Painel, uma nova guia **Relatórios** é adicionada ao Painel geral. Você pode gerar um relatório de integridade sob demanda a qualquer momento clicando na tarefa **Gerar um relatório de integridade** na guia **relatórios**.  
   
  Depois que um relatório de integridade é gerado, um novo item é criado no Painel de lista, identificado por data e hora de geração do relatório. Para abrir um item, você pode clicar duas vezes no painel de lista, ou você pode selecioná-lo e, em seguida, clicar em **abrir o relatório de integridade** no painel de tarefas. O relatório é exibido em uma nova janela no formato HTML.  
   
  Além de gerar um relatório manualmente, você pode gerar o relatório automaticamente sob agendamento por dia ou por hora. Para fazer isso, no painel de tarefas, clique em **Personalizar configurações do relatório de integridade**e, em seguida, clique na guia **agenda e email** . O recurso de **agendamento** está desativado por padrão e você pode ativá-lo selecionando a caixa de seleção **gerar um relatório de integridade em seu horário agendado** .  
   
-###  <a name="BKMK_Customize"></a>Personalizar o conteúdo do relatório  
+###  <a name="customize-the-content-of-the-report"></a><a name="BKMK_Customize"></a>Personalizar o conteúdo do relatório  
  O relatório de integridade contém o seguinte:  
   
 - **Alertas críticose avisos** Essa opção é consistente com os alertas essenciais e avisos que você vê no Visualizador de alertas no Painel geral. Alertas de informações não são incluídas no relatório de integridade.  
@@ -84,14 +84,14 @@ ms.locfileid: "79322128"
   
   Se você não estiver interessado em alguns dos pontos de dados incluídos no relatório por padrão, poderá personalizar o conteúdo do relatório clicando em **Personalizar configurações do relatório de integridade** no painel de tarefas e, em seguida, clicando na guia **conteúdo** . desmarque as caixas de seleção do conteúdo que você não deseja ver no relatório. Por exemplo, se você tiver seu próprio plano de backup de servidor e não quiser ver os avisos sobre backups de servidor, poderá excluir backups de servidor do relatório desmarcando a caixa de seleção de **backup do servidor** .  
   
-###  <a name="BKMK_emailreport"></a>Enviar o relatório por email  
+###  <a name="email-the-report"></a><a name="BKMK_emailreport"></a>Enviar o relatório por email  
  Fazer logon no painel para ler relatórios é ainda inconveniente para alguns administradores, especialmente se eles têm mais de um servidor para gerenciar. Com o recurso de email ativado, depois que um relatório é gerado, um email será enviado para uma lista de endereços de email especificado com o conteúdo do relatório. O administrador pode facilmente exibir o relatório de qualquer dispositivo ou qualquer aplicativo cliente e certifique-se de que o servidor está sendo executado no melhor estado de funcionamento.  
   
  Na caixa de diálogo **Personalizar as configurações do Relatório de Integridade** após habilitar emails, altere as configurações de SMTP e especifique uma lista de email destinatários, você observará que uma nova tarefa será exibida no painel de tarefas: **Enviar o relatório de integridade por email**. Para obter mais informações sobre configurações de SMTP, Veja [Configurar notificações de alertas por email](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email).  
   
  Você pode selecionar um relatório existente e, em seguida, clique em **Enviar o relatório de integridade por email**. Você também pode gerar um novo relatório e enviá-lo automaticamente para sua caixa de entrada. Se você configurou uma agenda para o relatório, ele será gerado automaticamente e será entregue automaticamente na caixa de entrada após ser gerado diariamente (ou a cada hora), conforme agenda.  
   
-##  <a name="BKMK_View"></a>Exibir alertas usando o Visualizador de alertas  
+##  <a name="view-alerts-by-using-the-alert-viewer"></a><a name="BKMK_View"></a>Exibir alertas usando o Visualizador de alertas  
  Esta seção discute como usar o Painel geral ou Barra Inicial para abrir o Visualizador de alertas para exibir o status de integridade de todos os computadores da rede do servidor.  
   
 #### <a name="to-open-the-alert-viewer-by-using-the-dashboard"></a>Para abrir o Visualizador de alertas usando o Painel  
@@ -106,7 +106,7 @@ ms.locfileid: "79322128"
   
 2.  Clicar em qualquer ícone de alerta exibido (críticos, de aviso e informativos) na parte inferior da barra inicial para abrir o Visualizador de alerta e siga as instruções no painel de detalhes de alerta do Visualizador de eventos para solucionar o alerta.  
   
-##  <a name="BKMK_Organize"></a>Organizar alertas no Visualizador de alertas  
+##  <a name="organize-alerts-in-the-alert-viewer"></a><a name="BKMK_Organize"></a>Organizar alertas no Visualizador de alertas  
  Você pode organizar os alertas no Visualizador de alertas e exibi-los com base na gravidade (crítico, aviso ou informacional) ou com base no nome do computador.  
   
 #### <a name="to-organize-alerts-in-the-alert-viewer"></a>Para organizar os alertas no Visualizador de alertas  
@@ -121,7 +121,7 @@ ms.locfileid: "79322128"
   
     2.  Selecione **Filtrar por tipo de alerta**e clique no tipo alerta (crítico, aviso ou informacional) para o qual você deseja exibir os alertas. Isso exibe apenas o tipo de alerta selecionado no Visualizador de alerta.  
   
-##  <a name="BKMK_Respond"></a>Responder a alertas  
+##  <a name="respond-to-alerts"></a><a name="BKMK_Respond"></a>Responder a alertas  
  Quando você encontrar um alerta, você poderá optar por fazer o seguinte:  
   
 -   [Resolver um alerta](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Resolve)  
@@ -132,10 +132,10 @@ ms.locfileid: "79322128"
   
 -   [Excluir um alerta](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_4)  
   
-###  <a name="BKMK_Resolve"></a>Resolver um alerta  
+###  <a name="resolve-an-alert"></a><a name="BKMK_Resolve"></a>Resolver um alerta  
  Siga as instruções de resolução no Visualizador de alerta para resolver o alerta. Depois que um alerta for resolvido, ele ainda será exibido no Visualizador de alerta até que seja atualizada.  
   
-###  <a name="BKMK_3"></a>Ignorar um alerta  
+###  <a name="ignore-an-alert"></a><a name="BKMK_3"></a>Ignorar um alerta  
  Você pode optar por ignorar um alerta se você preferir responder a ele mais tarde. Quando você ignorar um alerta, ele continua listado no Visualizador de alerta, mas é desabilitado ou esmaecido. Um alerta ignorado não está incluído na avaliação de integridade geral do computador. Para resolver um alerta ignorado, primeiro você precisa habilitar o alerta.  
   
 ##### <a name="to-ignore-an-alert"></a>Para ignorar um alerta  
@@ -148,7 +148,7 @@ ms.locfileid: "79322128"
   
    Para responder a um alerta desabilitado, você precisará primeiro habilitar o alerta.  
   
-###  <a name="BKMK_5"></a>Habilitar um alerta  
+###  <a name="enable-an-alert"></a><a name="BKMK_5"></a>Habilitar um alerta  
  Você pode habilitar um alerta havia ignorado anteriormente. Depois que o alerta estiver habilitado, você pode resolvê-lo ou excluí-la conforme necessário. Um alerta é exibido como desabilitado quando marcado para ser ignorado. Quando você habilita um alerta desabilitado anteriormente, ele se torna ativo e novamente está incluído na avaliação de integridade geral dos computadores.  
   
 ##### <a name="to-enable-an-alert"></a>Para habilitar um alerta  
@@ -159,7 +159,7 @@ ms.locfileid: "79322128"
   
 3.  No Visualizador de Alertas, clique com o botão direito do mouse no alerta que você deseja habilitar e, em seguida, clique em **Habilitar o alerta**.  
   
-###  <a name="BKMK_4"></a>Excluir um alerta  
+###  <a name="delete-an-alert"></a><a name="BKMK_4"></a>Excluir um alerta  
  Você pode excluir um alerta se você não deseja resolver ou ignorá-lo. Você pode usar o Visualizador de alertas na barra inicial para excluir alertas gerados para o seu computador. Se você excluir um alerta e o servidor detecta o problema novamente no próximo ciclo de avaliação de integridade de rede, ele gera um novo alerta.  
   
 ##### <a name="to-delete-an-alert"></a>Para excluir um alerta  
@@ -170,14 +170,14 @@ ms.locfileid: "79322128"
   
 3.  No Visualizador de alerta, clique no alerta que você deseja excluir e, em seguida, clique em **excluir o alerta**.  
   
-##  <a name="BKMK_Email"></a>Configurar notificações por email para alertas  
+##  <a name="set-up-email-notifications-for-alerts"></a><a name="BKMK_Email"></a>Configurar notificações por email para alertas  
  Você pode configurar seu servidor para receber notificações por email sobre a ocorrência de alertas. As notificações de email para esses alertas contêm informações sobre os problemas de rede e suas etapas de resolução, que é idêntico às informações exibidas no Visualizador de alertas. Algumas das avaliações de integridade de rede são feitas por meio de programação.  
   
  Quando você configura o servidor para enviar notificações de alerta por email, uma notificação de email é enviada para alertas encontradas durante a avaliação de integridade da rede. No entanto, nem todos os alertas relatados no Visualizador de alertas são relatados via email.  
   
  A cada 30 minutos, a Tarefa de Avaliação de email de Alerta é executado no servidor, que avalia a rede para alertas. Uma notificação por email é enviada se qualquer alerta, que é definido notificação por email, ocorrer. Um segundo email não é enviado se o alerta ainda estiver ativo no próximo ciclo de avaliação para evitar a saturação da sua caixa de correio. No entanto, se for detectado um novo alerta dentro de um ciclo de avaliação de alerta futuras, uma notificação de email é enviada, e  inclui os alertas novos e anteriores.  
   
-###  <a name="BKMK_list"></a>Alertas que resultam em notificações por email  
+###  <a name="alerts-that-result-in-email-notifications"></a><a name="BKMK_list"></a>Alertas que resultam em notificações por email  
  Os seguintes alertas no Visualizador de alertas resultam em notificações por email quando você configurar seu servidor para enviar notificações por email para alertas:  
   
 -   Existem erros em um backup do computador cliente.  
@@ -260,7 +260,7 @@ ms.locfileid: "79322128"
   
 -   Uma ou mais unidades não estão funcionando e estão offline.  
   
-###  <a name="BKMK_SMTP"></a>Configurando o SMTP no servidor para enviar notificações de alerta por email no Windows Server Essentials  
+###  <a name="configuring-smtp-on-your-server-to-send-alert-notifications-by-email-in-windows-server-essentials"></a><a name="BKMK_SMTP"></a>Configurando o SMTP no servidor para enviar notificações de alerta por email no Windows Server Essentials  
  Esta seção discute como configurar seu servidor para enviar notificações por email para alertas.  
   
 > [!NOTE]
@@ -352,7 +352,7 @@ ms.locfileid: "79322128"
   
 7.  Para verificar se você configurou suas configurações do servidor SMTP corretamente para enviar relatórios de integridade através de email, a partir da guia Relatório de integridade no Painel, selecione um relatório, e clique em **Enviar o relatório de integridade por Email** no painel de tarefas.  
   
-##  <a name="BKMK_Potential"></a>Possíveis alertas do computador  
+##  <a name="potential-computer-alerts"></a><a name="BKMK_Potential"></a>Possíveis alertas do computador  
  Esta seção discute entender e gerenciar os alertas que são específicos para o computador que esteja conectado ao servidor e que aparecem na barra inicial do computador.  
   
  A tabela a seguir lista alguns dos alertas ao computador que podem ser gerados e exibidos no Visualizador de alertas se elas forem aplicáveis ao seu computador.  
@@ -371,7 +371,7 @@ ms.locfileid: "79322128"
 |Altere sua senha do Windows.||  
 |A senha do Microsoft Office 365 não é a mesma que a senha do Windows.||  
   
-###  <a name="BKMK_Protect"></a>Para proteger seu computador  
+###  <a name="to-protect-your-computer"></a><a name="BKMK_Protect"></a>Para proteger seu computador  
   
 1.  Abrir a Central de segurança.  
   

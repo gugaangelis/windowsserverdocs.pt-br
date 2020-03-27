@@ -3,7 +3,7 @@ title: Requisitos do Sistema para o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/31/2013
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 265f57745f909e0899e5e3f207aaeec2d96f6429
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 1b1c34646050c3459c88b10f608d8e003e72fdef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001771"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310433"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Requisitos do Sistema para o Windows Server Essentials
 
@@ -32,7 +32,7 @@ ms.locfileid: "77001771"
 |---------------|-------------|-------------------|-------------|  
 |Soquete da CPU|1,4 GHz (processador de 64 bits) ou mais rápido para núcleo único<br /><br /> 1,3 GHz (processador de 64 bits) ou mais rápido para núcleo múltiplo|3,1 GHz (processador de 64 bits) ou mais rápido para núcleo múltiplo|2 soquetes|  
 |Memória (RAM)|2 GB<br /><br /> 4 GB se você implantar o Windows Server Essentials como uma máquina virtual|16 GB|64 GB|  
-|Discos rígidos e espaço de armazenamento disponível|Disco rígido de 160 GB com uma partição de sistema de 60 GB||Sem limite|  
+|Discos rígidos e espaço de armazenamento disponível|Disco rígido de 160 GB com uma partição de sistema de 60 GB||Não há limite|  
   
  *Os requisitos de hardware recomendados têm suporte a limites máximos de usuários e dispositivos.  
   
@@ -40,7 +40,7 @@ ms.locfileid: "77001771"
   
 |Componente|Descrição|  
 |---------------|-----------------|  
-|Adaptador de rede|Adaptador Gigabit Ethernet (10/100/1000baseT PHY/MAC)|  
+|Adaptador de Rede|Adaptador Gigabit Ethernet (10/100/1000baseT PHY/MAC)|  
 |Internet|Alguma funcionalidade pode requerer acesso à Internet (tarifas podem ser aplicadas) ou uma conta da Microsoft|  
 |Sistemas operacionais cliente suportados|Windows 8.1, Windows 8, Windows 7, versões Macintosh OS X 10.5 a 10.8.<br /><br /> **Observação:** Alguns recursos exigem edições Professional ou superior.<br /><br /> 1 GB de espaço disponível no disco rígido (uma parte desse disco será liberada depois da instalação)|  
 |Roteador|Um roteador ou firewall com suporte para IPv4 NAT ou Ipv6|  
@@ -50,12 +50,12 @@ ms.locfileid: "77001771"
   
  Para obter mais informações sobre os requisitos de hardware, consulte o [Windows Server Catalog](https://www.windowsservercatalog.com/).  
   
- Todo o hardware do servidor deve atender aos requisitos estabelecidos para o programa de logotipo do Windows Server 2012 R2 para sistemas. Para obter mais informações, consulte o [Programa de Logotipo do Windows](https://msdn.microsoft.com/windows/hardware/gg487403.aspx).  
+ Todo o hardware do servidor deve atender aos requisitos estabelecidos para o programa de logotipo do Windows Server 2012 R2 para sistemas. Para obter mais informações, consulte o [Programa de logotipo do Windows](https://msdn.microsoft.com/windows/hardware/gg487403.aspx).  
 
 > [!IMPORTANT]
 > Não há suporte para discos dinâmicos no Windows Server Essentials.
 
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte também  
  
 -   [Instalar o Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)  
   

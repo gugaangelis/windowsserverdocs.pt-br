@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/24/2018
-ms.openlocfilehash: 779c7bc4f6c4ff1e66fca68ced8b0eeb4d54abc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f85f593ec3dca33c5b35fb065c7d84ed12ea9af2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406066"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309822"
 ---
 # <a name="create-delete-or-update-tenant-virtual-networks"></a>Criar, excluir ou atualizar redes virtuais do locatário
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, você aprenderá a criar, excluir e atualizar redes virtuais de virtualização de rede Hyper-V depois de implantar o SDN (rede definida pelo software). A virtualização de rede Hyper-V ajuda você a isolar redes de locatários para que cada rede de locatários seja uma entidade separada. Cada entidade não tem nenhuma possibilidade de conexão cruzada, a menos que você configure cargas de trabalho de acesso público.   
   
@@ -39,13 +39,13 @@ As etapas para criar uma nova rede virtual são:
 A tabela a seguir inclui exemplos de IDs de sub-rede e prefixos para dois locatários fictícios. A Fabrikam do locatário tem duas sub-redes virtuais, enquanto o locatário da Contoso tem três sub-redes virtuais.  
  
   
-Nome do locatário  |ID de Sub-rede Virtual  |Prefixo de sub-rede virtual    
+Nome do inquilino  |ID de Sub-rede Virtual  |Prefixo de sub-rede virtual    
 ---------|---------|---------  
 Fabrikam    |5001         |24.30.1.0/24           
 Fabrikam     |5002         | 24.30.2.0/20          
-Funcionam    |6001         |  24.30.1.0/24         
-Funcionam    | 6002        |  24.30.2.0/24         
-Funcionam     | 6003        | 24.30.3.0/24          
+Contoso    |6001         |  24.30.1.0/24         
+Contoso    | 6002        |  24.30.2.0/24         
+Contoso     | 6003        | 24.30.3.0/24          
   
 O script de exemplo a seguir usa comandos do Windows PowerShell exportados do módulo **NetworkController** para criar a rede virtual da Contoso e uma sub-rede:   
   

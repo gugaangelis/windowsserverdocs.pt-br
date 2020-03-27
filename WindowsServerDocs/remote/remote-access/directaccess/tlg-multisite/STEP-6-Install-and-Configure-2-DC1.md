@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4c7a8243922f58f9705a85cd30b2a68cf4d876c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 558c99c187ab01f3084621410964f3a01c0dace8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404774"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308660"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>ETAPA 6: instalar e configurar o 2-DC1
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 o 2-DC1 fornece os seguintes serviços:  
   
@@ -50,7 +50,7 @@ Primeiro, instale o Windows Server 2016, o Windows Server 2012 R2 ou o Windows S
   
 1.  Inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.  
   
-2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta local de administrador.  
+2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta do Administrador local.  
   
 3.  Conecte-se a 2-DC1 a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e desconecte-se da Internet.  
   
@@ -83,7 +83,7 @@ Configure o protocolo TCP/IP com endereços IP estáticos.
   
 11. Na caixa de diálogo **Propriedades da conexão Ethernet com fio** , clique em **fechar**.  
   
-12. Feche a janela **Conexões de Rede** .  
+12. Feche a janela **Conexões de Rede**.  
   
 13. No console do Gerenciador do Servidor, no **servidor local**, na área **Propriedades** , ao lado de **nome do computador**, clique no link.  
   
@@ -187,7 +187,7 @@ Os computadores no domínio CORP2 devem obter certificados de computador da auto
   
 9. Feche o Console de Modelos de Certificado.  
   
-## <a name="replication"></a>Forçar a replicação entre DC1 e 2-DC1  
+## <a name="force-replication-between-dc1-and-2-dc1"></a><a name="replication"></a>Forçar a replicação entre DC1 e 2-DC1  
 Antes de poder se registrar para certificados em 2-EDGE1, você deve forçar a replicação de configurações de DC1 para 2-DC1. Esta operação deve ser feita no DC1.  
   
 ### <a name="to-force-replication"></a>Para forçar a replicação  

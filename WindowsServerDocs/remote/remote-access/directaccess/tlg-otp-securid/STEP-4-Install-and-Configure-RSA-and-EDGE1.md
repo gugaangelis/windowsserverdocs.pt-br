@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d46ede6f-1a21-414d-b8c3-6b5c87344b9d
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3519e9d6e89b26a733b6b0178334f86e284bddfb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1a2244422c8b625f5641fb775a2e503b096b07b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404754"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308612"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>ETAPA 4 instalar e configurar o RSA e o EDGE1
 
@@ -49,17 +49,17 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
 11. Configure o EDGE1 para dar suporte à autenticação OTP. Configure a OTP para o DirectAccess e verifique a configuração.  
   
-## <a name="InstallOS"></a>Instalar o sistema operacional no servidor RSA  
+## <a name="install-the-operating-system-on-the-rsa-server"></a><a name="InstallOS"></a>Instalar o sistema operacional no servidor RSA  
   
 1.  No RSA, inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.  
   
-2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta local de administrador.  
+2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta do Administrador local.  
   
 3.  Conecte o RSA a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, do Windows Server 2012 R2 ou do Windows Server 2012 e desconecte-se da Internet.  
   
 4.  Conecte o RSA à sub-rede corpnet.  
   
-## <a name="TCP"></a>Configurar TCP/IP no RSA  
+## <a name="configure-tcpip-on-rsa"></a><a name="TCP"></a>Configurar TCP/IP no RSA  
   
 1.  Em Tarefa de Configuração Inicial, clique em **Configurar rede**.  
   
@@ -75,9 +75,9 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
 7.  Na caixa de diálogo **Propriedades da conexão de área local** , clique em **fechar**.  
   
-8.  Feche a janela **Conexões de Rede** .  
+8.  Feche a janela **Conexões de Rede**.  
   
-## <a name="copyinstfiles"></a>Copiar arquivos de instalação do Gerenciador de autenticação para o servidor RSA  
+## <a name="copy-authentication-manager-installation-files-to-the-rsa-server"></a><a name="copyinstfiles"></a>Copiar arquivos de instalação do Gerenciador de autenticação para o servidor RSA  
   
 1.  No servidor RSA, crie a pasta C:\RSA instalação.  
   
@@ -87,7 +87,7 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
 4.  Copie os arquivos de licença RSA para C:\RSA Installation\License e token.  
   
-## <a name="JoinDomain"></a>Ingressar o servidor RSA no domínio CORP  
+## <a name="join-the-rsa-server-to-the-corp-domain"></a><a name="JoinDomain"></a>Ingressar o servidor RSA no domínio CORP  
   
 1.  Clique com o botão direito do mouse em **meu computador**e clique em **Propriedades**.  
   
@@ -107,7 +107,7 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
 9. Depois que o computador for reiniciado, digite **Usuário1** e a senha, selecione Corp na lista suspensa **fazer logon em:** e clique em **OK**.  
   
-## <a name="BKMK_Firewall"></a>Desabilitar o Firewall do Windows no RSA  
+## <a name="disable-windows-firewall-on-rsa"></a><a name="BKMK_Firewall"></a>Desabilitar o Firewall do Windows no RSA  
   
 1.  Clique em **Iniciar**, em **painel de controle**, em **sistema e segurança**e em **Firewall do Windows**.  
   
@@ -117,7 +117,7 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
 4.  Clique em **OK** e feche o Firewall do Windows.  
   
-## <a name="install"></a>Instalar o Gerenciador de autenticação RSA no servidor RSA  
+## <a name="install-rsa-authentication-manager-on-the-rsa-server"></a><a name="install"></a>Instalar o Gerenciador de autenticação RSA no servidor RSA  
   
 1.  Se a mensagem de aviso de segurança aparecer a qualquer momento durante esse processo, clique em **executar** para continuar.  
   
@@ -145,7 +145,7 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
 13. Após a conclusão da instalação, clique em **concluir**.  
   
-## <a name="confiauthmgr"></a>Configurar o Gerenciador de autenticação RSA  
+## <a name="configure-rsa-authentication-manager"></a><a name="confiauthmgr"></a>Configurar o Gerenciador de autenticação RSA  
   
 1.  Se o console de segurança RSA não abrir automaticamente, no computador da RSA, clique duas vezes em "RSA Security console".  
   
@@ -257,13 +257,13 @@ Você executará as seguintes etapas para configurar a implantação RSA:
   
     7.  Na cópia de mídia do Gerenciador de autenticação RSA \ auth_mgr \Windows-x86_64 \am\rsa-ace_nsload \win32-5.0-x86\ agent_nsload. exe para a instalação do C:\RSA.  
   
-## <a name="BKMK_DAProbeUser"></a>Criar DAProbeUser  
+## <a name="create-daprobeuser"></a><a name="BKMK_DAProbeUser"></a>Criar DAProbeUser  
   
 1.  No **console de segurança do RSA** , clique na guia **identidade** , clique em **usuários**e clique em **Adicionar novo**.  
   
 2.  Na seção **nome do sobrenome:** , digite **investigação**e, na seção **ID do usuário:** , digite **DAProbeUser**. Nas seções **senha:** e **Confirmar senha:** , digite uma senha forte. Desmarque a caixa de seleção **' exigir que o usuário altere a senha no próximo logon '** e clique em **salvar**.  
   
-## <a name="InstToken"></a>Instalar o token de software RSA SecurID em CLIENT1  
+## <a name="install-rsa-securid-software-token-on-client1"></a><a name="InstToken"></a>Instalar o token de software RSA SecurID em CLIENT1  
 Use este procedimento para instalar o token de software SecurID em CLIENT1.  
   
 #### <a name="install-securid-software-token"></a>Instalar o token de software SecurID  
@@ -278,7 +278,7 @@ Use este procedimento para instalar o token de software SecurID em CLIENT1.
   
 5.  Na caixa de diálogo **tipo de instalação** , selecione **típica**, clique em **Avançar**e clique em **instalar**.  
   
-6.  Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+6.  Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
   
 7.  Marque a caixa de seleção **Iniciar token de software RSA SecurID** e clique em **concluir**.  
   
@@ -288,7 +288,7 @@ Use este procedimento para instalar o token de software SecurID em CLIENT1.
   
 10. Clique em **OK** duas vezes.  
   
-## <a name="configAuthAgt"></a>Configurar o EDGE1 como um agente de autenticação RSA  
+## <a name="configure-edge1-as-an-rsa-authentication-agent"></a><a name="configAuthAgt"></a>Configurar o EDGE1 como um agente de autenticação RSA  
 Use este procedimento para configurar o EDGE1 para executar a autenticação RSA.  
   
 #### <a name="configure-the-rsa-authentication-agent"></a>Configurar o agente de autenticação RSA  
@@ -311,7 +311,7 @@ Use este procedimento para configurar o EDGE1 para executar a autenticação RSA
   
 7. Copiar C:\Windows\SysWOW64\securid para C:\Windows\System32.  
   
-## <a name="configOTP"></a>Configurar o EDGE1 para dar suporte à autenticação OTP  
+## <a name="configure-edge1-to-support-otp-authentication"></a><a name="configOTP"></a>Configurar o EDGE1 para dar suporte à autenticação OTP  
 Use este procedimento para configurar a OTP para o DirectAccess e verificar a configuração.  
   
 #### <a name="configure-otp-for-directaccess"></a>Configurar a OTP para o DirectAccess  
@@ -335,13 +335,13 @@ Use este procedimento para configurar a OTP para o DirectAccess e verificar a co
   
 8.  Na seção **servidores de AC de OTP** , selecione App1.Corp.contoso.com e clique em **Adicionar**. Clique em **Avançar**.  
   
-9. Na página **modelos de certificado de OTP** , clique em **procurar** para selecionar um modelo de certificado usado para o registro de certificados emitidos para autenticação OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPLogon**. Clique em **OK**. Clique em **procurar** para selecionar um modelo de certificado usado para registrar o certificado usado pelo servidor de acesso remoto para assinar solicitações de registro de certificado OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPRA**. Clique em **Ok**. Clique em **Avançar**.  
+9. Na página **modelos de certificado de OTP** , clique em **procurar** para selecionar um modelo de certificado usado para o registro de certificados emitidos para autenticação OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPLogon**. Clique em **OK**. Clique em **procurar** para selecionar um modelo de certificado usado para registrar o certificado usado pelo servidor de acesso remoto para assinar solicitações de registro de certificado OTP e, na caixa de diálogo **modelos de certificado** , selecione **DAOTPRA**. Clique em **OK**. Clique em **Avançar**.  
   
 10. Na página **instalação do servidor de acesso remoto** , clique em **concluir**e clique em **concluir** no **Assistente de especialista do DirectAccess**.  
   
 11. Na caixa de diálogo **revisão de acesso remoto** , clique em **aplicar**, aguarde a atualização da política do DirectAccess e clique em **Fechar**.  
   
-12. Na tela **Iniciar** , digite**PowerShell. exe**, clique com o botão direito do mouse em **PowerShell**, clique em **avançado**e clique em **Executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+12. Na tela **Iniciar** , digite**PowerShell. exe**, clique com o botão direito do mouse em **PowerShell**, clique em **avançado**e clique em **Executar como administrador**. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
   
 13. Na janela do Windows PowerShell, digite **gpupdate/force** e pressione Enter.  
   

@@ -3,7 +3,7 @@ title: Gerenciar o armazenamento de servidor no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1637dc6844a0152249fc406a66ef583b9e3a5242
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: c865f2b4ba21079d1b679f94e84a50665410cb2b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914657"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311104"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Gerenciar o armazenamento de servidor no Windows Server Essentials
 
@@ -41,7 +41,7 @@ ms.locfileid: "68914657"
   
 -   [Criar um espaço de armazenamento](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_6)  
   
-##  <a name="BKMK_1"></a>Gerenciar discos rígidos usando o painel  
+##  <a name="manage-hard-drives-using-the-dashboard"></a><a name="BKMK_1"></a>Gerenciar discos rígidos usando o painel  
  O Windows Server Essentials permite que você gerencie todos os discos rígidos que estão conectados ao servidor por meio do Painel. Na guia **Armazenamento** do painel, **Discos Rígidos** exibe todos os discos rígidos que estão disponíveis no servidor para armazenar os backups de dados e do servidor. O servidor monitora o espaço disponível em cada disco rígido e exibe um alerta se o espaço em disco rígido se tornar baixo. A guia **Discos Rígidos** exibe as seguintes informações:  
   
 - O nome de cada disco rígido  
@@ -62,56 +62,56 @@ ms.locfileid: "68914657"
   
 |Nome da tarefa|Descrição|  
 |---------------|-----------------|  
-|**Exibir as propriedades do disco rígido**|Abre a página de**Propriedades** do _disco rígido_ . Essa tarefa é exibida quando o disco rígido é selecionado. A guia **Geral** da página Propriedades do *HardDriveName* inclui as seguintes tarefas adicionais:<br /><br /> -   **Limpeza da unidade**:  Permite que você limpe arquivos não utilizados no disco rígido (essa tarefa só está disponível no Windows Server Essentials).<br />-   **Verificar e reparar**:  Verifica o disco rígido quanto a erros de sistema de arquivos e tenta reparar automaticamente os erros detectados.<br /><br /> A guia **Cópias de Sombra** da página Propriedades do _HardDriveName_ **HardDriveName** permite habilitar cópias de sombra. Essa guia também exibe a próxima vez que as cópias de sombra estão agendadas para serem executadas.|  
+|**Exibir as propriedades do disco rígido**|Abre a página de**Propriedades** do _disco rígido_. Essa tarefa é exibida quando o disco rígido é selecionado. A guia **Geral** da página Propriedades do *HardDriveName* inclui as seguintes tarefas adicionais:<br /><br /> **limpeza da unidade**de -   : permite que você limpe arquivos não utilizados no disco rígido (essa tarefa só está disponível no Windows Server Essentials).<br />-   **verificar e reparar**: verifica se há erros do sistema de arquivos no disco rígido e tenta reparar erros detectados automaticamente.<br /><br /> A guia **Cópias de Sombra** da página Propriedades do _HardDriveName_**HardDriveName** permite habilitar cópias de sombra. Essa guia também exibe a próxima vez que as cópias de sombra estão agendadas para serem executadas.|  
 |**Gerenciar espaços de armazenamento**|**Observação:** Para o Windows Server Essentials, essa tarefa só é exibida quando há um espaço de armazenamento existente.<br /><br /> Abre o painel de controle **Espaços de Armazenamento**, do qual você pode criar e gerenciar pools de armazenamento e espaços de armazenamento.|  
 |**Criar um espaço de armazenamento**|Abre o assistente Criar um Espaço de Armazenamento, que permite que você use um ou mais discos rígidos para aumentar a capacidade de um pool de armazenamento.|  
-|**Aumentar a capacidade do pool de armazenamento**|**Observação:** Essa tarefa é visível apenas se o disco rígido selecionado estiver localizado em um espaço de armazenamento.<br /><br /> Abre o assistente Aumentar a Capacidade de um Pool de Armazenamento, que permite que você use um ou mais discos rígidos para aumentar a capacidade de um pool de armazenamento.|  
+|**Aumentar a capacidade do pool de armazenamento**|**Observação:** Essa tarefa só ficará visível se o disco rígido selecionado estiver localizado em um espaço de armazenamento.<br /><br /> Abre o assistente Aumentar a Capacidade de um Pool de Armazenamento, que permite que você use um ou mais discos rígidos para aumentar a capacidade de um pool de armazenamento.|  
   
-##  <a name="BKMK_2"></a>Aumentar o armazenamento no servidor  
+##  <a name="increase-storage-on-the-server"></a><a name="BKMK_2"></a>Aumentar o armazenamento no servidor  
  Para aumentar o armazenamento no servidor, você pode adicionar um disco rígido interno adicional no servidor. Para adicionar o disco rígido interno adicional, você deve desligar o servidor, adicionar o disco rígido interno e reiniciar o servidor. Você não precisa desligar o servidor se o disco rígido estiver conectado ao controlador SCSI. Nesse caso, o disco rígido pode ser conectado enquanto o servidor está em execução.  
   
  Dependendo se o disco rígido a ser adicionado está formatado, siga um destes procedimentos:  
   
--   **Formatado** Se o disco rígido interno estiver formatado com NTFS ou ReFS, o servidor atribui uma letra da unidade a ele e o disco rígido aparece na guia **Discos Rígidos** . Agora você pode criar ou mover pastas do servidor para o novo disco rígido.  
+-   **Formatado** Se o disco rígido interno for formatado com NTFS ou ReFS, o servidor atribuirá a ela uma letra da unidade e o disco rígido aparecerá na guia **discos rígidos** . Agora você pode criar ou mover pastas de servidor para o novo disco rígido.  
   
--   **Não formatado** Se o disco rígido interno não estiver formatado, o seguinte alerta será exibido: Um ou mais discos rígidos não formatados estão conectados ao servidor. Use o procedimento a seguir para formatar o disco rígido.  
+-   **Não formatado** Se o disco rígido interno não estiver formatado, o seguinte alerta é exibido: Um ou mais discos rígidos não formatados estão conectados ao servidor. Use o procedimento a seguir para formatar o disco rígido.  
   
 #### <a name="to-format-the-hard-disk"></a>Para formatar o disco rígido  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
 2.  No painel de navegação, clique no ícone de alerta para iniciar o **Visualizador de alertas** no Windows Server Essentials ou na guia monitoramento de **integridade** no Windows Server Essentials.  
   
-3.  No **Visualizador de Alerta** ou na guia **Monitoramento de Integridade** , clique no alerta e, no painel de tarefas, clique em **Solucionar este problema**.  
+3.  No **Visualizador de Alerta** ou na guia **Monitoramento de Integridade**, clique no alerta e, no painel de tarefas, clique em **Solucionar este problema**.  
   
 4.  Siga as instruções para concluir o assistente Adicionar um Novo Disco Rígido.  
   
-###  <a name="BKMK_Clean"></a>Para limpar o disco rígido  
+###  <a name="to-clean-up-the-hard-drive"></a><a name="BKMK_Clean"></a>Para limpar o disco rígido  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
-2.  No painel de navegação, clique em **Armazenamento**e em **Discos Rígidos**.  
+2.  No painel de navegação, clique em **Armazenamento** e em **Discos Rígidos**.  
   
 3.  Na seção **Discos rígidos**, selecione a letra da unidade que foi atribuída ao disco rígido recém-adicionado e, no painel de tarefas, clique em **Exibir as propriedades do disco rígido**.  
   
-4.  Em **Propriedades de\> < DriveLetter**, na guia **geral** , clique em **limpeza da unidade**.  
+4.  Em **Propriedades do < Driveletter\>** , na guia **geral** , clique em **limpeza da unidade**.  
   
-##  <a name="BKMK_Check"></a>Executar verificações e reparos em discos rígidos  
+##  <a name="perform-checks-and-repairs-on-hard-drives"></a><a name="BKMK_Check"></a>Executar verificações e reparos em discos rígidos  
  O processo de verificação e reparo do disco rígido verifica a integridade do sistema de arquivos armazenado no discos rígidos. Ele executa um processo **chkdsk** no volume em que os arquivos de backup estão armazenados. O alerta de problema a seguir pode ser resolvido executando uma verificação e reparo nos discos rígidos:  
   
 -   Um ou mais discos rígidos no backup do servidor devem ser verificados.  
   
 #### <a name="to-check-and-repair-hard-drives"></a>Para verificar e reparar discos rígidos  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
-2.  Clique em **Pastas do Servidor e Discos Rígidos**e em **Discos Rígidos**.  
+2.  Clique em **Pastas do Servidor e Discos Rígidos** e em **Discos Rígidos**.  
   
 3.  Selecione o disco rígido que está exibindo o erro e selecione **Exibir as propriedades do disco rígido**.  
   
 4.  Na guia **Verificar e Reparar**, clique em **Verificar e Reparar**.  
   
-##  <a name="BKMK_3"></a>Formatar discos rígidos  
+##  <a name="format-hard-drives"></a><a name="BKMK_3"></a>Formatar discos rígidos  
  Quando um disco rígido interno não formatado é detectado no servidor, um alerta de integridade orienta o usuário pelo processo de formatação. O assistente Adicionar um Novo Disco Rígido lhe orienta pela formatação do disco rígido e permite que você o configure de uma das seguintes maneiras:  
   
 1.  Formatar o disco rígido e criar automaticamente uma unidade nele. Se você escolher essa opção, quando o assistente for concluído, será criada uma unidade lógica de disco rígido formatada com o sistema de arquivos NTFS.  
@@ -122,7 +122,7 @@ ms.locfileid: "68914657"
   
 4.  Se já existir um espaço de armazenamento, use o novo disco rígido para aumentar a capacidade de um pool de armazenamento. Esta opção é exibida apenas se houver um espaço de armazenamento existente criado no servidor. Se você escolher essa opção, o assistente adicionará esse disco rígido ao pool de armazenamento.  
   
-##  <a name="BKMK_4"></a>Adicionar um novo disco rígido  
+##  <a name="add-a-new-hard-drive"></a><a name="BKMK_4"></a>Adicionar um novo disco rígido  
  Quando você conectar uma nova unidade de disco rígido em um servidor que executa o Windows Server Essentials, você pode:  
   
 -   [Usar o novo disco rígido para armazenar pastas do servidor](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4a)  
@@ -131,34 +131,34 @@ ms.locfileid: "68914657"
   
 -   [Usar o novo disco rígido para aumentar a capacidade do pool de armazenamento](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)  
   
-###  <a name="BKMK_4a"></a>Usar o novo disco rígido para armazenar pastas do servidor  
+###  <a name="use-the-new-hard-drive-to-store-server-folders"></a><a name="BKMK_4a"></a>Usar o novo disco rígido para armazenar pastas do servidor  
  Para usar o novo disco rígido para armazenar pastas do servidor, você pode adicionar uma nova pasta do servidor no disco rígido ou mover uma pasta do servidor existente para o disco rígido.  
   
 ##### <a name="to-store-server-folders"></a>Para armazenar pastas do servidor  
   
-1. Abra o Painel.  
+1. Abra o Dashboard.  
   
 2. Clique na guia **ARMAZENAMENTO** e clique em **Pastas do Servidor**.  
   
-3. No painel **Tarefas de Pastas do Servidor** , siga um destes procedimentos:  
+3. No painel **Tarefas de Pastas do Servidor**, siga um destes procedimentos:  
   
    1.  Para adicionar uma pasta do servidor, clique em **Adicionar uma pasta**.  
   
    2.  Para mover uma pasta do servidor, selecione a pasta que você deseja mover para o novo disco rígido e clique em **Mover uma pasta**.  
   
    > [!NOTE]
-   >  Se você navegar até o disco rígido e selecioná-lo como o local da pasta do servidor sem criar uma pasta, a seguinte mensagem de erro é exibida: **Um diretório raiz (como C:\\, D:\\) não pode ser adicionado como uma pasta de servidor. Crie uma nova pasta ou selecione uma existente no diretório raiz e tente novamente**. Para resolver esse erro, crie uma nova pasta na unidade de disco rígida recém-adicionada e selecione a nova pasta como o local para armazenar pastas do servidor.  
+   >  Se você navegar até o disco rígido e selecioná-lo como o local da pasta do servidor sem criar uma pasta, a seguinte mensagem de erro será exibida: **um diretório raiz (como C:\\, D:\\) não pode ser adicionado como uma pasta do servidor. Crie uma nova pasta ou selecione uma existente no diretório raiz e tente novamente**. Para resolver esse erro, crie uma nova pasta na unidade de disco rígida recém-adicionada e selecione a nova pasta como o local para armazenar pastas do servidor.  
   
 4. Siga as instruções para concluir o assistente.  
   
    Para obter mais informações sobre como mover pastas do servidor, consulte [Add or move a server folder](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
   
-###  <a name="BKMK_4b"></a>Usar o novo disco rígido para armazenar backups do servidor  
+###  <a name="use-the-new-hard-drive-to-store-server-backups"></a><a name="BKMK_4b"></a>Usar o novo disco rígido para armazenar backups do servidor  
  Você pode usar o disco rígido recém-adicionado para armazenar backups de servidor.  
   
 ##### <a name="to-store-server-backups"></a>Para armazenar backups do servidor  
   
-1. Abra o Painel.  
+1. Abra o Dashboard.  
   
 2. Clique na guia **Dispositivos**, selecione o servidor no painel de lista e, no painel de tarefas, siga um destes procedimentos:  
   
@@ -168,11 +168,11 @@ ms.locfileid: "68914657"
   
       O assistente Configurar Backup do Servidor é exibido.  
   
-3. Na página **Selecionar o Destino do Backup** , selecione o novo disco rígido como o destino do backup.  
+3. Na página **Selecionar o Destino do Backup**, selecione o novo disco rígido como o destino do backup.  
   
 4. Siga as instruções para concluir o assistente.  
   
-###  <a name="BKMK_4c"></a>Usar o novo disco rígido para aumentar a capacidade do pool de armazenamento  
+###  <a name="use-the-new-hard-drive-to-increase-storage-pool-capacity"></a><a name="BKMK_4c"></a>Usar o novo disco rígido para aumentar a capacidade do pool de armazenamento  
  Quando a capacidade do pool de armazenamento for baixa, você receberá um alerta informando que é possível aumentar a capacidade do pool de armazenamento adicionando um novo disco rígido ao pool de armazenamento usando o assistente Aumentar a Capacidade de um Pool de Armazenamento.  
   
 > [!NOTE]
@@ -180,7 +180,7 @@ ms.locfileid: "68914657"
   
 ##### <a name="to-increase-storage-pool-capacity"></a>Para aumentar a capacidade do pool de armazenamento  
   
-1.  Abra o Painel.  
+1.  Abra o Dashboard.  
   
 2.  Clique na guia **Armazenamento** e clique em **Discos Rígidos**.  
   
@@ -190,7 +190,7 @@ ms.locfileid: "68914657"
   
 5.  Siga as instruções para concluir o assistente.  
   
-##  <a name="BKMK_5"></a>Visão geral dos espaços de armazenamento  
+##  <a name="storage-spaces-overview"></a><a name="BKMK_5"></a>Visão geral dos espaços de armazenamento  
  Os espaços de armazenamento permitem que você agrupe discos em um pool de armazenamento. Em seguida, você pode usar a capacidade do pool para criar espaços de armazenamento. Os espaços de armazenamento são unidades virtuais que aparecem na guia **Discos Rígidos** do Painel. Você pode usar espaços de armazenamento como qualquer outra unidade, portanto, é fácil trabalhar com arquivos neles. Quando a capacidade do pool se torna baixa, você pode criar espaços de armazenamento de grandes e adicionar mais unidades ao pool de armazenamento. Se você tiver dois ou mais discos dentro do pool de armazenamento, poderá criar espaços de armazenamento com um espelho bidirecional que não será afetado por uma falha de unidade? ou até mesmo a falha de duas unidades? se você criar um espaço de armazenamento de espelho triplo.  
   
  Para criar um espaço de armazenamento, tudo o que você precisa é uma ou mais unidades adicionais além na unidade em que o Windows está instalado. Essas unidades podem ser discos rígidos internos ou externos ou unidades de estado sólido. Você pode usar uma variedade de tipos de unidades com espaços de armazenamento, inclusive unidades USB, SATA e SAS.  
@@ -200,7 +200,7 @@ ms.locfileid: "68914657"
   
  Para obter mais informações sobre Espaços de Armazenamento, consulte as [Perguntas Frequentes de Espaços de Armazenamento](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx).  
   
-##  <a name="BKMK_6"></a>Criar um espaço de armazenamento  
+##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>Criar um espaço de armazenamento  
  Para começar a trabalhar com espaços de armazenamento no servidor, os requisitos mínimos a seguintes devem ser atendidos:  
   
 -   O servidor que executa o Windows Server Essentials deve ser conectado a unidades físicas adicionais (não apenas à unidade de inicialização), as unidades não devem hospedar nenhum volume e devem ter a capacidade mínima de 10 GB. É necessária uma unidade física para criar um pool de armazenamento. É necessário um mínimo de duas unidades físicas para criar um espaço de armazenamento de espelho resiliente.  
@@ -214,7 +214,7 @@ ms.locfileid: "68914657"
   
 1. Adicione ou conecte todas as unidades que você deseja agrupar com espaços de armazenamento no servidor que executa o Windows Server Essentials.  
   
-2. No painel, clique em **avançado: Gerenciar espaços**de armazenamento.  
+2. No Painel, clique em **Avançado: Gerenciar Espaços de Armazenamento**.  
   
 3. Clique em **Criar um novo pool e espaço de armazenamento**.  
   
@@ -234,7 +234,7 @@ ms.locfileid: "68914657"
   
 3. Siga as instruções para concluir o assistente.  
   
-   Para obter informações sobre como aumentar a capacidade do pool de armazenamento, consulte [usar o novo disco rígido para aumentar a capacidade do pool de armazenamento](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c).  
+   Para obter informações sobre como aumentar a capacidade do pool de armazenamento, consulte [Use the new hard drive to increase storage pool capacity](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c).  
   
 ## <a name="see-also"></a>Consulte também  
   

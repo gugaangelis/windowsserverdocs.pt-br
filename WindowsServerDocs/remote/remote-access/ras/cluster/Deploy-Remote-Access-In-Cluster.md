@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5e4108eee0c62ae4d4db31560b31a6f90751c6b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a025c82b5bece3a4719905c4e28333c42aac35c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404644"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308382"
 ---
 # <a name="deploy-remote-access-in-a-cluster"></a>Implantar o acesso remoto em um cluster
 
@@ -25,10 +25,10 @@ ms.locfileid: "71404644"
 
 O Windows Server 2016 e o Windows Server 2012 combinam o DirectAccess e o serviço de acesso remoto \(RAS\) VPN em uma única função de acesso remoto. Você pode implantar o acesso remoto em vários cenários empresariais. Esta visão geral fornece uma introdução ao cenário empresarial para a implantação de vários servidores de acesso remoto em uma carga de cluster balanceada com o balanceamento de carga de rede do Windows \(NLB\) ou com um balanceador de carga externo \(ELB\), como F5 Big\-IP.  
 
-## <a name="BKMK_OVER"></a>Descrição do cenário  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descrição do cenário  
 Uma implantação de cluster reúne vários servidores de acesso remoto em uma única unidade, que atua como um único ponto de contato para computadores cliente remotos que se conectam via DirectAccess ou VPN à rede corporativa interna usando o endereço IP virtual externo \(VIP\) endereços do cluster de acesso remoto.  O tráfego para o cluster tem balanceamento de carga usando o NLB do Windows ou com um balanceador de carga externo \(como F5 Big\-IP\).  
 
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 Antes de começar a implantar este cenário, examine esta lista de requisitos importantes:  
 
 -   Balanceamento de carga padrão por meio do Windows NLB.  
@@ -58,7 +58,7 @@ O cenário de implantação de cluster inclui diversas etapas:
 
 3.  [Configure um cluster de acesso remoto](configure/Configure-a-Remote-Access-Cluster.md). Isso consiste em várias etapas de configuração, incluindo a preparação do servidor único para o NLB do Windows ou o balanceador externo de carga, a preparação de servidores adicionais para ingressar no cluster e a habilitação do balanceamento de carga.  
 
-## <a name="BKMK_APP"></a>Aplicativos práticos  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicativos práticos  
 Reunir diversos servidores em um cluster de servidor fornece:  
 
 -   Escalabilidade. Um único servidor de acesso remoto fornece um nível limitado de confiabilidade do servidor e desempenho escalonável. Ao agrupar os recursos de dois ou mais servidores em um único cluster, você aumenta a capacidade para número de usuários e taxa de transferência.  
@@ -67,16 +67,16 @@ Reunir diversos servidores em um cluster de servidor fornece:
 
 -   Facilite\-de gerenciamento de\-. Um cluster permite o gerenciamento de vários servidores como uma única entidade. As configurações compartilhadas podem ser facilmente definidas no servidor de cluster. As configurações de acesso remoto podem ser gerenciadas de qualquer um dos servidores no cluster ou remotamente usando o Ferramentas de Administração de Servidor Remoto \(RSAT\). Além disso, todo o cluster pode ser monitorado a partir de um único console de Gerenciamento de Acesso Remoto.  
 
-## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista funções e recursos necessários para o cenário:  
 
 |Recurso de\/de função|Como este cenário tem suporte|  
 |---------|-----------------|  
 |Função Acesso Remoto|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Ele abrange o DirectAccess, que anteriormente era um recurso no Windows Server 2008 R2, e serviços de roteamento e acesso remoto \(\)RRAS, que era anteriormente um serviço de função na diretiva de rede e serviços de acesso \(função de servidor NPAS\). A função Acesso Remoto consiste em dois componentes:<br /><br />-Always On VPN e serviços de roteamento e acesso remoto \(RRAS\) VPN-DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />-Os recursos de roteamento RRAS de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<br /><br />As dependências são as seguintes:<br /><br />-Serviços de Informações da Internet \(IIS\) servidor Web-esse recurso é necessário para configurar o servidor de local de rede e a investigação da Web padrão.<br />-Banco de dados interno do Windows-usado para contabilização local no servidor de acesso remoto.|  
 |Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />-GUI de acesso remoto e ferramentas de linha de comando<br />-Módulo de acesso remoto para Windows PowerShell<br /><br />As dependências incluem:<br /><br />-Console de Gerenciamento de Política de Grupo<br />-Kit de administração do Gerenciador de conexões RAS \(CMAK\)<br />-Windows PowerShell 3,0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
-|Balanceamento de Carga de Rede|Este recurso fornece o balanceamento de carga em um cluster utilizando o NLB do Windows.|  
+|Balanceamento de carga de rede|Este recurso fornece o balanceamento de carga em um cluster utilizando o NLB do Windows.|  
 
-## <a name="BKMK_HARD"></a>Requisitos de hardware  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Os requisitos de hardware para este cenário incluem o seguinte:  
 
 -   Pelo menos dois computadores que atendem aos requisitos de hardware do Windows Server 2012.  
@@ -85,7 +85,7 @@ Os requisitos de hardware para este cenário incluem o seguinte:
 
 -   Para testar o cenário, você deve ter pelo menos um computador executando o Windows 10 configurado como um cliente VPN Always On.   
 
-## <a name="BKMK_SOFT"></a>Requisitos de software  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software  
 Há diversos requisitos para este cenário:  
 
 -   Requisitos de software para implantação de servidor único. Para obter mais informações, consulte [implantar um único servidor DirectAccess com configurações avançadas](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md). Um único acesso remoto).  
@@ -100,7 +100,7 @@ Há diversos requisitos para este cenário:
 
     -   O prefixo de IPv6 atribuído a computadores cliente do DirectAccess em clusters de servidores deve ser de 59 bits. Se a VPN estiver habilitada, o prefixo da VPN também deve ser de 59 bits.  
 
-## <a name="KnownIssues"></a>Problemas conhecidos  
+## <a name="known-issues"></a><a name="KnownIssues"></a>Problemas conhecidos  
 Os problemas a seguir são conhecidos quando se configura um cenário de cluster:  
 
 -   Depois de configurar o DirectAccess em um IPv4\-apenas implantação com um único adaptador de rede e, depois do DNS64 padrão \(o endereço IPv6 que contém ": 3333::"\) é automaticamente configurado no adaptador de rede, a tentativa de habilitar o balanceamento de carga\-por meio do console de gerenciamento de acesso remoto faz com que o usuário forneça um DIP IPv6. Se for fornecido um DIP IPv6, ocorrerá falha na configuração depois de clicar em **Confirmar** com o erro: O parâmetro está incorreto.  

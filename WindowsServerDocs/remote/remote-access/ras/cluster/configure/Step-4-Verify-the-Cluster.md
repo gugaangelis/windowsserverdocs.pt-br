@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f22dcf10-b453-4664-a9ef-e40e95c72f63
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 738b7d6aad1c9684ac1e12981213caaf3f745c2c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 16a31e5435bcb3f0fa3a332bba0e767beb913c08
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367402"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308201"
 ---
 # <a name="step-4-verify-the-cluster"></a>Etapa 4 verificar o cluster
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como verificar se você configurou corretamente sua implantação de cluster do DirectAccess.  
   

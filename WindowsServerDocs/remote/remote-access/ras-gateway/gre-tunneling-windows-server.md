@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: df2023bf-ba64-481e-b222-6f709edaa5c1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: be57bc0ce1b509c49f269618765c79f380fd3b12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d246f0e56681f75e4336ed225d1557a0e05c581b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404677"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308552"
 ---
 # <a name="gre-tunneling-in-windows-server-2016"></a>Túnel de GRE no Windows Server 2016
 
@@ -64,19 +64,19 @@ Veja a seguir alguns cenários de exemplo:
 
 A seguir estão os principais cenários aos quais o recurso de túnel GRE resolve.  
   
-### <a name="BKMK_Access"></a>Acesso de redes virtuais de locatário para redes físicas de locatário
+### <a name="access-from-tenant-virtual-networks-to-tenant-physical-networks"></a><a name="BKMK_Access"></a>Acesso de redes virtuais de locatário para redes físicas de locatário
 
 Esse cenário permite uma maneira escalonável de fornecer acesso de redes virtuais de locatário para redes físicas de locatários localizadas no local do provedor de serviços de hospedagem. Um ponto de extremidade de túnel GRE é estabelecido no gateway multilocatário, o outro ponto de extremidade de túnel GRE é estabelecido em um dispositivo de terceiros na rede física. O tráfego de camada 3 é roteado entre as máquinas virtuais na rede virtual e o dispositivo de terceiros na rede física.  
   
 ![Túnel GRE conectando rede física do hoster e rede virtual de locatário](../../media/gre-tunneling-in-windows-server/GRE_.png)  
   
-### <a name="BKMK_Speed"></a>Conectividade de alta velocidade
+### <a name="high-speed-connectivity"></a><a name="BKMK_Speed"></a>Conectividade de alta velocidade
 
 Esse cenário permite uma maneira escalonável de fornecer conectividade de alta velocidade da rede local do locatário para sua rede virtual localizada na rede do provedor de serviços de hospedagem. Um locatário se conecta à rede do provedor de serviços por meio da comutação de rótulo multiprotocolo (MPLS), em que um túnel GRE é estabelecido entre o roteador de borda do provedor de serviços de hospedagem e o gateway multilocatário para a rede virtual do locatário.  
   
 ![Túnel GRE conectando rede de locatário corporativo e rede virtual de locatário](../../media/gre-tunneling-in-windows-server/GRE-.png)  
   
-### <a name="BKMK_Integration"></a>Integração com isolamento baseado em VLAN
+### <a name="integration-with-vlan-based-isolation"></a><a name="BKMK_Integration"></a>Integração com isolamento baseado em VLAN
 
 Esse cenário permite que você integre o isolamento baseado em VLAN com a virtualização de rede Hyper-V. Uma rede física na rede do provedor de hospedagem contém um balanceador de carga usando isolamento baseado em VLAN. Um gateway multilocatário estabelece túneis GRE entre o balanceador de carga na rede física e o gateway multilocatário na rede virtual.  
   
@@ -84,7 +84,7 @@ Vários túneis podem ser estabelecidos entre a origem e o destino, e a chave GR
   
 ![Vários túneis GRE conectando redes virtuais de locatário](../../media/gre-tunneling-in-windows-server/GRE-VLANIsolation.png)  
   
-### <a name="BKMK_Shared"></a>Acessar recursos compartilhados
+### <a name="access-shared-resources"></a><a name="BKMK_Shared"></a>Acessar recursos compartilhados
 
 Esse cenário permite que você acesse recursos compartilhados em uma rede física localizada na rede do provedor de hospedagem.  
   
@@ -96,7 +96,7 @@ Nesse cenário, o gateway de locatário único pode ser substituído por disposi
   
 ![Um gateway de locatário único usando vários túneis para conectar várias redes virtuais](../../media/gre-tunneling-in-windows-server/GRE-SharedResource.png)  
   
-### <a name="BKMK_thirdparty"></a>Serviços de dispositivos de terceiros para locatários
+### <a name="services-of-third-party-devices-to-tenants"></a><a name="BKMK_thirdparty"></a>Serviços de dispositivos de terceiros para locatários
 
 Esse cenário pode ser usado para integrar dispositivos de terceiros (como balanceadores de carga de hardware) no fluxo de tráfego de rede virtual do locatário. Por exemplo, o tráfego originado de um site corporativo passa por um túnel S2S para o gateway multilocatário. O tráfego é roteado para o balanceador de carga em um túnel GRE. O balanceador de carga roteia o tráfego para várias máquinas virtuais na rede virtual da empresa. A mesma coisa acontece para outro locatário com endereços IP potencialmente sobrepostos nas redes virtuais. O tráfego de rede é isolado no balanceador de carga usando VLANs e é aplicável a todos os dispositivos de camada 3 que dão suporte a VLANs.  
   

@@ -3,7 +3,7 @@ title: Antes de instalar o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: 8d0893bd-e2b7-4494-9537-02b1cbbcd57a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4629c0ba04cc7ee617a2fc6b6a73a19b9e45ada8
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 7268ebbfffd034780635e693cd6aa6380f30dd91
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829555"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310103"
 ---
 # <a name="before-you-install-windows-server-essentials"></a>Antes de instalar o Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_BeforeYouBegin"></a>Antes de começar a instalação do Windows Server Essentials, execute as seguintes tarefas:  
+##  <a name="before-you-begin-your-installation-of--windows-server-essentials-perform-the-following-tasks"></a><a name="BKMK_BeforeYouBegin"></a>Antes de começar a instalação do Windows Server Essentials, execute as seguintes tarefas:  
 
 -   **Garanta que seu computador cumpra os requisitos mínimos de hardware**. Isso inclui determinar se você precisa de hardware adicional e verificar se os drivers para seu hardware têm suporte do Windows Server Essentials. Para obter mais informações, consulte [requisitos do sistema para o Windows Server Essentials](../get-started/system-requirements.md).   
 

@@ -10,30 +10,30 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 17aadbb789052be7f33822ce49f3b797f2211d55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 608bc4b2805639e2638ac12f74b712c812ce165f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367382"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308244"
 ---
 # <a name="step-2-plan-cluster-servers"></a>Etapa 2 planejar servidores de cluster
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois de implantar um único servidor de acesso remoto, planeje adicionar servidores adicionais ao cluster.  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |[2,1 Instalando funções e recursos](#BKMK_Install).|Para cada servidor que será adicionado ao cluster, planeje a instalação da função de acesso remoto e o recurso NLB do Windows (se necessário), planeje a topologia, o endereçamento IP, o roteamento e o encaminhamento.|  
 |[2,2 definir configurações do servidor](#BKMK_Config)|Defina as configurações para cada servidor que será adicionado ao cluster. Observe que você pode configurar um cluster com balanceamento de carga de servidores usando máquinas virtuais. Para que o roteamento e a conectividade funcionem corretamente, você deve configurar as máquinas virtuais para usar a falsificação de endereço MAC.|  
   
-## <a name="BKMK_Install"></a>2,1 Instalando funções e recursos  
+## <a name="21-installing-roles-and-features"></a><a name="BKMK_Install"></a>2,1 Instalando funções e recursos  
 Para cada servidor que você deseja ingressar no cluster, planeje a instalação da função de acesso remoto. Além disso, planeje instalar o recurso NLB (balanceamento de carga de rede) se desejar balancear a carga do tráfego para o cluster usando o NLB do Windows. Para obter mais informações, consulte [balanceamento de carga de rede](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing).  
   
-## <a name="BKMK_Config"></a>2,2 definir configurações do servidor  
+## <a name="22-configure-server-settings"></a><a name="BKMK_Config"></a>2,2 definir configurações do servidor  
 Para cada servidor que será adicionado ao cluster, planeje o endereço IP e as configurações de domínio. Observe o seguinte:  
   
 1.  Todos os servidores no cluster devem pertencer ao mesmo domínio.  

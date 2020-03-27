@@ -7,14 +7,14 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 04/26/2019
+ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: a21000e857d702846703deb4f55380e1a998f6d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9873378d62ccc7b53dcc6fc629651df2aa1c6708
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402959"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308113"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>Replicação de armazenamento de servidor para servidor com réplica de armazenamento
 
@@ -28,7 +28,7 @@ Veja um vídeo de visão geral de como usar a réplica de armazenamento no centr
 > [!video https://www.microsoft.com/videoplayer/embed/3aa09fd4-867b-45e9-953e-064008468c4b?autoplay=false]
 
 
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 
 * Active Directory Domain Services floresta (não precisa executar o Windows Server 2016).  
 * Dois servidores que executam o Windows Server 2019 ou o Windows Server 2016, Datacenter Edition. Se estiver executando o Windows Server 2019, você poderá usar a Standard Edition se estiver OK replicando apenas um único volume de até 2 TB de tamanho.  
@@ -50,7 +50,7 @@ Muitos desses requisitos podem ser determinados usando `Test-SRTopology cmdlet`.
 
 Para usar a réplica de armazenamento e o centro de administração do Windows juntos, você precisará do seguinte:
 
-| Sistema                        | Sistema operacional                                            | Necessário para     |
+| {1&gt;Sistema&lt;1}                        | Sistema operacional                                            | Necessário para     |
 |-------------------------------|-------------------------------------------------------------|------------------|
 | Dois servidores <br>(qualquer combinação de hardware local, VMs e VMs de nuvem, incluindo VMs do Azure)| Windows Server 2019, Windows Server 2016 ou Windows Server (canal semestral) | Réplica de Armazenamento  |
 | Um PC                     | Windows 10                                                  | Windows Admin Center |
@@ -67,14 +67,14 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 
 ![Diagrama que mostra um servidor no Prédio 5 replicando com um servidor no Prédio 9](media/Server-to-Server-Storage-Replication/Storage_SR_ServertoServer.png)  
 
-**Figura 1: Replicação de servidor para servidor**  
+**Figura 1: replicação de servidor para servidor**  
 
-## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>Etapa 1: Instalar e configurar o centro de administração do Windows em seu computador
+## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>Etapa 1: instalar e configurar o centro de administração do Windows em seu computador
 
 Se você estiver usando o centro de administração do Windows para gerenciar a réplica de armazenamento, use as etapas a seguir para preparar seu computador para gerenciar a réplica de armazenamento.
 1. Baixe e instale o [centro de administração do Windows](../../manage/windows-admin-center/overview.md).
 2. Baixe e instale o [ferramentas de administração de servidor remoto](https://www.microsoft.com/download/details.aspx?id=45520).
-    - Se você estiver usando o Windows 10, versão 1809 ou posterior, instale o "RSAT: Módulo de réplica de armazenamento para Windows PowerShell "de recursos sob demanda.
+    - Se você estiver usando o Windows 10, versão 1809 ou posterior, instale o "RSAT: módulo de réplica de armazenamento para Windows PowerShell" dos recursos sob demanda.
 3. Abra uma sessão do PowerShell como administrador selecionando o botão **Iniciar** , digitando **PowerShell**, clicando com o botão direito do mouse em **Windows PowerShell** e selecionando **Executar como administrador**.
 4. Digite o comando a seguir para habilitar o protocolo WS-Management no computador local e configurar a configuração padrão para o gerenciamento remoto no cliente.
 
@@ -84,11 +84,14 @@ Se você estiver usando o centro de administração do Windows para gerenciar a 
 
 5. Digite **Y** para habilitar os serviços WinRM e habilitar exceção de firewall do WinRM.
 
-## <a name="provision-os"></a>Etapa 2: Provisionar o sistema operacional, os recursos, as funções, o armazenamento e a rede
+## <a name="step-2-provision-operating-system-features-roles-storage-and-network"></a><a name="provision-os"></a>Etapa 2: provisionar sistema operacional, recursos, funções, armazenamento e rede
 
 1.  Instale o Windows Server em ambos os nós de servidor com um tipo de instalação do Windows Server **(experiência desktop)** . 
  
     Para usar uma VM do Azure conectada à sua rede por meio de um ExpressRoute, consulte [adicionando uma VM do Azure conectada à sua rede por meio do expressroute](#add-azure-vm-expressroute).
+    
+    > [!NOTE]
+    > A partir do centro de administração do Windows versão 1910, você pode configurar um servidor de destino automaticamente no Azure. Se você escolher essa opção, instale o Windows Server no servidor de origem e vá para a [etapa 3: configurar a replicação de servidor para servidor](#step-3-set-up-server-to-server-replication). 
 
 3.  Adicione informações de rede, ingresse os servidores no mesmo domínio que o seu PC de gerenciamento do Windows 10 (se você estiver usando um) e, em seguida, reinicie os servidores.  
 
@@ -188,9 +191,9 @@ Se você estiver usando o centro de administração do Windows para gerenciar a 
 
     ![Tela que mostra o relatório de topologia](media/Server-to-Server-Storage-Replication/SRTestSRTopologyReport.png)
 
-    **Figura 2: Relatório de topologia de replicação de armazenamento**
+    **Figura 2: relatório de topologia de replicação de armazenamento**
 
-## <a name="step-3-set-up-server-to-server-replication"></a>Etapa 3: Configurar a replicação de servidor para servidor
+## <a name="step-3-set-up-server-to-server-replication"></a>Etapa 3: configurar a replicação de servidor para servidor
 ### <a name="using-windows-admin-center"></a>Usando o centro de administração do Windows
 
 1. Adicione o servidor de origem.
@@ -199,11 +202,20 @@ Se você estiver usando o centro de administração do Windows para gerenciar a 
     3. Digite o nome do servidor e, em seguida, selecione **Enviar**.
 2. Na página **todas as conexões** , selecione o servidor de origem.
 3. Selecione **réplica de armazenamento** no painel Ferramentas.
-4. Selecione **novo** para criar uma nova parceria.
-5. Forneça os detalhes da parceria e, em seguida, selecione **criar**. <br>
-   ![A tela nova parceria mostrando os detalhes da parceria, como um tamanho de log de 8 GB.](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+4. Selecione **novo** para criar uma nova parceria. Para criar uma nova VM do Azure a ser usada como o destino para a parceria:
+   
+    1. Em **replicar com outro servidor** , selecione **usar uma nova VM do Azure** e, em seguida, selecione **Avançar**. Se você não vir essa opção, certifique-se de que você está usando o centro de administração do Windows versão 1910 ou uma versão posterior.
+    2. Especifique as informações do servidor de origem e o nome do grupo de replicação e, em seguida, selecione **Avançar**.<br><br>Isso inicia um processo que seleciona automaticamente uma VM do Azure do Windows Server 2019 ou Windows Server 2016 como um destino para a origem de migração. O serviço de migração de armazenamento recomenda tamanhos de VM para corresponder à sua fonte, mas você pode substituir isso selecionando **Ver todos os tamanhos**. Os dados de inventário são usados para configurar automaticamente seus discos gerenciados e seus sistemas de arquivos, bem como ingressar sua nova VM do Azure em seu domínio de Active Directory.
+    3. Depois que o centro de administração do Windows criar a VM do Azure, forneça um nome de grupo de replicação e, em seguida, selecione **criar**. O centro de administração do Windows começa o processo de sincronização inicial da réplica de armazenamento normal para começar a proteger seus dados.
+    
+    Aqui está um vídeo mostrando como usar a réplica de armazenamento para migrar para VMs do Azure.
 
-    **Figura 3: Criando uma nova parceria**
+    > [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
+
+5. Forneça os detalhes da parceria e, em seguida, selecione **criar** (conforme mostrado na Figura 3). <br>
+   ![a nova tela de parceria mostrando os detalhes da parceria, como um tamanho de log de 8 GB.](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+
+    **Figura 3: criando uma nova parceria**
 
 > [!NOTE]
 > A remoção da parceria da réplica de armazenamento no centro de administração do Windows não remove o nome do grupo de replicação.
@@ -287,7 +299,7 @@ Agora você configurará a replicação de servidor para servidor usando o Windo
         ```  
 
         > [!NOTE]
-        > A Réplica de Armazenamento desmonta os volumes de destino e suas letras de unidade ou pontos de montagem. Isso ocorre por design.  
+        > A Réplica de Armazenamento desmonta os volumes de destino e suas letras de unidade ou pontos de montagem. Esse comportamento é esperado.  
 
     3.  Como alternativa, o grupo de servidores de destino para a réplica informa o número de bytes restantes para copiar todo o tempo e pode ser consultado por meio do PowerShell. Por exemplo:  
 
@@ -326,23 +338,23 @@ Agora você gerenciará e operará sua infra-estrutura replicada de servidor par
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações da última gravação de log  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Liberação  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Méd  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho da Fila de Liberação Atual  
 
     -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de Solicitações de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Médio de solicitações por gravação de log  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Número de solicitações por gravação de log Méd  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Gravação de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Gravação de Aplicativo  
 
-    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Tamanho Média de Leitura de Aplicativo  
+    -   \Estatísticas de E/S da Partição de Réplica de Armazenamento(*)\Média de Leitura de Aplicativo  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO de Destino  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\RPO Atual  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Médio da Fila de Log  
+    -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Méd  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Comprimento da Fila de Log Atual  
 
@@ -350,11 +362,11 @@ Agora você gerenciará e operará sua infra-estrutura replicada de servidor par
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Total de Bytes Enviados  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Envio de Rede  
+    -   \Estatísticas de réplica de armazenamento (*)\Latência enviada de rede méd  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Estado da Replicação  
 
-    -   \Estatísticas de Réplica de Armazenamento(*)\Tamanho Média de Viagem de Ida e Volta da Mensagem  
+    -   \Estatísticas de réplica de armazenamento(*)\Média de Viagem de Ida e Volta da Mensagem  
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Tempo Decorrido da Última Recuperação  
 
@@ -416,7 +428,7 @@ O processo é, em um alto nível:
 3. Compartilhe os dados no servidor de origem e torne-os acessíveis por meio de um namespace do DFS. Isso é importante para garantir que os usuários possam ainda acessá-lo se o nome do servidor for alterado em um local de desastre.  
    a.  Você pode criar compartilhamentos correspondentes no servidor de destino, que estará indisponível durante as operações normais,   
    b.  Não adicione o servidor de destino ao namespace do DFS Namespaces ou, se você fizer isso, certifique-se de que todos os seus destinos de pasta estejam desabilitados.  
-4. Habilite a replicação de Réplica de Armazenamento e a sincronização inicial completa. A replicação pode ser síncrona ou assíncrona.   
+4. Habilite a replicação de Réplica de armazenamento e sincronização inicial completa. A replicação pode ser síncrona ou assíncrona.   
    a.  No entanto, síncrona é recomendada para garantir a consistência de dados de E/S no servidor de destino.   
    b.  É altamente recomendável habilitar Cópias de Sombra de Volume e periodicamente fazer instantâneos com VSSADMIN ou outras ferramentas de escolha. Isso garantirá que os aplicativos liberem os seus arquivos de dados em disco de forma consistente. Em caso de desastre, você poderá recuperar arquivos de instantâneos no servidor de destino que pode ter sido parcialmente replicado de forma assíncrona. Os instantâneos são replicados junto com os arquivos.  
 5. Opere normalmente até que haja um desastre.  
@@ -428,28 +440,28 @@ O processo é, em um alto nível:
    > [!NOTE]
    > O planejamento de Recuperação de Desastres é um assunto complexo e requer grande atenção aos detalhes. A criação de runbooks e o desempenho de rotinas anuais de failover dinâmico é altamente recomendável. Quando ocorre um desastre real, o caos reina e os funcionários experientes podem ficar permanentemente indisponíveis.  
 
-## <a name="add-azure-vm-expressroute"></a>Adicionando uma VM do Azure conectada à sua rede via ExpressRoute
+## <a name="adding-an-azure-vm-connected-to-your-network-via-expressroute"></a><a name="add-azure-vm-expressroute"></a>Adicionando uma VM do Azure conectada à sua rede via ExpressRoute
 
 1. [Crie um ExpressRoute no portal do Azure](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager).<br>Depois que o ExpressRoute for aprovado, um grupo de recursos será adicionado à assinatura – navegue até **grupos de recursos** para exibir esse novo grupo. Anote o nome da rede virtual.
 ![portal do Azure mostrando o grupo de recursos adicionado com o ExpressRoute](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
     
-    **Figura 4: Os recursos associados a um ExpressRoute-anote o nome da rede virtual**
+    **Figura 4: os recursos associados a um ExpressRoute-anote o nome da rede virtual**
 1. [Crie um novo grupo de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).
 1. [Adicione um grupo de segurança de rede](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal). Ao criá-lo, selecione a ID da assinatura associada ao ExpressRoute que você criou e selecione o grupo de recursos que você acabou de criar também.
 <br><br>Adicione as regras de segurança de entrada e saída necessárias ao grupo de segurança de rede. Por exemplo, talvez você queira permitir Área de Trabalho Remota acesso à VM.
 1. [Crie uma VM do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) com as seguintes configurações (mostradas na Figura 5):
-    - **Endereço IP público**: Nenhuma
-    - **Rede virtual**: Selecione a rede virtual que você fez a observação do grupo de recursos adicionado com o ExpressRoute.
-    - **Grupo de segurança de rede (firewall)** : Selecione o grupo de segurança de rede que você criou anteriormente.
-    ![Crie uma máquina virtual mostrando as configurações](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-    **de rede do ExpressRoute Figura 5: Criando uma VM ao selecionar as configurações de rede do ExpressRoute**
-1. Depois que a VM for criada, [consulte a etapa 2: Provisione o sistema operacional, os recursos, as funções](#provision-os), o armazenamento e a rede.
+    - **Endereço IP público**: nenhum
+    - **Rede virtual**: selecione a rede virtual que você fez a observação do grupo de recursos adicionado com o ExpressRoute.
+    - **Grupo de segurança de rede (firewall)** : selecione o grupo de segurança de rede que você criou anteriormente.
+    ![criar uma máquina virtual mostrando as configurações de rede do ExpressRoute](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
+    **Figura 5: criando uma VM ao selecionar as configurações de rede do expressroute**
+1. Depois que a VM for criada, consulte [etapa 2: provisionar sistema operacional, recursos, funções, armazenamento e rede](#provision-os).
 
 
 ## <a name="related-topics"></a>Tópicos relacionados  
 - [Visão geral da réplica de armazenamento](storage-replica-overview.md)  
 - [Estender a replicação do cluster usando o armazenamento compartilhado](stretch-cluster-replication-using-shared-storage.md)  
 - [Cluster para replicação de armazenamento de cluster](cluster-to-cluster-storage-replication.md)
-- [Réplica de armazenamento: Problemas conhecidos](storage-replica-known-issues.md)  
+- [Réplica de armazenamento: problemas conhecidos](storage-replica-known-issues.md)  
 - [Réplica de armazenamento: perguntas frequentes](storage-replica-frequently-asked-questions.md)
 - [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  

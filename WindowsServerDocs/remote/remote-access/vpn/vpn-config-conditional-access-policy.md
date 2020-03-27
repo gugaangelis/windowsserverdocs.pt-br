@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 22983c085f2b9d9e7e16810e25c6fa50111f9fa6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 479c9fe4895f4181f8a776f024a7ff3c047fbc0e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404349"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307813"
 ---
-# <a name="step-73-configure-the-conditional-access-policy"></a>Etapa 7.3. Configurar a política de acesso condicional
+# <a name="step-73-configure-the-conditional-access-policy"></a>Etapa 7.3. Configure a política de acesso condicional
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
@@ -93,5 +93,5 @@ Crie uma política de acesso condicional atribuída ao grupo de usuários VPN e 
 9.  Na página **novo** , selecione **criar**.
 
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 [Etapa 7,4. Implantar certificados raiz de acesso condicional para o AD local](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md): nesta etapa, você implanta o certificado raiz de acesso condicional como certificado raiz confiável para autenticação de VPN para seu ad local.

@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509eaa08-c49d-448d-a71e-c1c45519ccd5
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f888ebadfaa91b35f0924b23e9818da1c32f26e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c2f855512b978462f89b8f32b1f7edf59180f563
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388484"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310773"
 ---
 # <a name="step-4-create-the-network-load-balanced-remote-access-cluster"></a>ETAPA 4 criar o cluster de acesso remoto com balanceamento de carga de rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
  O Windows Server 2016, o Windows Server 2012 R2 e o Windows Server 2012 permitem criar clusters de servidores de acesso remoto. Um cluster atua como um único servidor lógico e fornece configuração e gerenciamento centralizados para os servidores no cluster. Ao usar o NLB (balanceamento de carga de rede), há suporte para até 8 membros de acesso remoto em um único cluster. Os clusters de acesso remoto fornecem alta disponibilidade e balanceamento de carga de conexões de clientes DirectAccess para a rede interna.  
   
@@ -33,7 +33,7 @@ Os procedimentos a seguir permitem criar e testar um cluster de acesso remoto:
   
 3. Adicione EDGE2 ao cluster de balanceamento de carga. Depois de habilitar o balanceamento de carga, agora você pode adicionar EDGE2 ao cluster para fornecer balanceamento de carga e alta disponibilidade para conexões de cliente do DirectAccess.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Se você estiver criando este laboratório de teste em máquinas virtuais, deverá habilitar a falsificação de endereço MAC em EDGE1 e EDGE2.  
   
@@ -62,7 +62,7 @@ Para configurar o EDGE1 e o EDGE2 em um cluster, você deve instalar o recurso d
   
 3.  Na caixa de diálogo **selecionar recursos** , selecione **balanceamento de carga de rede**, clique em **Adicionar recursos**, clique em **Avançar**e em **instalar**.  
   
-4.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
+4.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem sucedida e, em seguida, clique em **Fechar**.  
   
 5.  Repita esse procedimento em EDGE2.  
   
@@ -71,7 +71,7 @@ Use este procedimento para habilitar o balanceamento de carga e configurar o nov
   
 ### <a name="enable-load-balancing"></a>Habilitar balanceamento de carga  
   
-1.  Em EDGE1, clique em **Iniciar**, digite **RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+1.  Em EDGE1, clique em **Iniciar**, digite **RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
   
 2.  No console de gerenciamento de acesso remoto, no painel esquerdo, clique em **configuração**e, no painel **tarefas** , clique em **habilitar balanceamento de carga**.  
   
@@ -117,7 +117,7 @@ Use este procedimento para adicionar EDGE2 ao cluster NLB.
   
 8.  Na caixa de diálogo **adicionando e removendo servidores** , clique em **fechar**.  
   
-9. Na tela **Iniciar** , digite**Nlbmgr. exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+9. Na tela **Iniciar** , digite**Nlbmgr. exe**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
   
 10. No **Gerenciador de balanceamento de carga de rede**, clique em cluster do **da interno**. No painel de detalhes, certifique-se de que **EDGE1 (corpnet)** e **EDGE2 (corpnet)** tenham o status **convergido**.  
   

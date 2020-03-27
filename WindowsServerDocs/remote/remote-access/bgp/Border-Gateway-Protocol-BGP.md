@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ae6fddce1564e44ad72a5630c6abb16cdb6735d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3e04c732cbacb182731717215a4cf99cf3cc1f76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388985"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309296"
 ---
 # <a name="border-gateway-protocol-bgp"></a>BGP (Border Gateway Protocol)
 
@@ -61,7 +61,7 @@ Enable-RemoteAccessRoutingDomain -Name $Contoso_RoutingDomain -Type All -PassThr
 Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassThru  
 ```  
   
-## <a name="bkmk_top"></a>Topologias de implantação com suporte por BGP  
+## <a name="bgp-supported-deployment-topologies"></a><a name="bkmk_top"></a>Topologias de implantação com suporte por BGP  
 As topologias de implantação com suporte em que sites corporativos são conectados a um datacenter do provedor de serviços de nuvem (CSP) estão listadas abaixo.  
   
 Em todos os cenários, o gateway do CSP é um gateway de RAS do Windows Server 2016 na borda. O gateway de RAS, que é capaz de lidar com várias conexões de vários locatários, consiste em um host Hyper-V e uma VM que é realmente configurada como o gateway. Esse gateway de extremidade é configurado com conexões VPN site a site como um roteador BGP multilocatário para troca de rotas de sub-rede corporativa e de CSP.  
@@ -80,7 +80,7 @@ Há suporte para as seguintes topologias de implantação.
   
 As seções a seguir contêm informações adicionais sobre cada topologia BGP com suporte.  
   
-### <a name="bkmk_top1"></a>Gateway de site a site de VPN RAS com BGP no Enterprise site Edge  
+### <a name="ras-vpn-site-to-site-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top1"></a>Gateway de site a site de VPN RAS com BGP no Enterprise site Edge  
 Esta topologia ilustra um site corporativo conectado a um CSP. A topologia de roteamento corporativo inclui um roteador interno, um gateway de RAS do Windows Server 2016 configurado para conexões VPN site a site com o CSP e um dispositivo de firewall de borda. O gateway RAS encerra as conexões VPN e BGP S2S.  
   
 ![Gateway de site a site VPN RAS](../../media/Border-Gateway-Protocol-BGP/bgp_01.jpg)  
@@ -97,7 +97,7 @@ Nesse cenário, o BGP funciona da seguinte maneira.
   
     -   O dispositivo de borda extremidade ser configurado com rotas estáticas ou interfaces para selecionar as rotas para anúncio usando o BGP. O dispositivo de extremidade também distribui as rotas externas para outros roteadores locais usando um IGP.  
   
-### <a name="bkmk_top2"></a>Gateway de terceiros com BGP no Enterprise site Edge  
+### <a name="third-party-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top2"></a>Gateway de terceiros com BGP no Enterprise site Edge  
 Essa topologia ilustra um site corporativo usando um roteador de extremidade de terceiros para se conectar a um CSP. O roteador de extremidade também serve como um gateway VPN site a site.  
   
 ![Gateway de terceiros com BGP na extremidade do site corporativo](../../media/Border-Gateway-Protocol-BGP/bgp_02.jpg)  
@@ -108,7 +108,7 @@ O roteador de extremidade corporativo aprende rotas internas locais por meio de 
   
 -   O dispositivo de extremidade implementa um Interior Gateway Protocol (IGP) e participa diretamente do roteamento interno.  
   
-### <a name="bkmk_top3"></a>Vários sites corporativos que se conectam ao datacenter de nuvem do CSP  
+### <a name="multiple-enterprise-sites-connecting-to-csp-cloud-datacenter"></a><a name="bkmk_top3"></a>Vários sites corporativos que se conectam ao datacenter de nuvem do CSP  
 Esta topologia ilustra vários sites corporativos que usam gateways de terceiros para se conectar a um CSP. Os dispositivos de extremidade de terceiros servem como gateways de VPN site a site e roteadores BGP.  
   
 ![Vários sites corporativos que se conectam ao datacenter de nuvem do CSP](../../media/Border-Gateway-Protocol-BGP/bgp_03.jpg)  
@@ -125,7 +125,7 @@ Cada site corporativo descobre as rotas de rede hospedada diretamente e usando o
   
 Se o roteador BGP no site da empresa 1 não puder se conectar ao roteador de BGP do site 2, pois a conectividade falhou, o roteador BGP do site 1 começa a aprender as rotas para a rede do site da empresa 2 a partir do roteador BGP do CSP e o tráfego está diretamente Redirecionado do site 1 para o site 2 por meio do roteador BGP do Windows Server no CSP.  
   
-### <a name="bkmk_top4"></a>Pontos de encerramento separados para BGP e VPN  
+### <a name="separate-termination-points-for-bgp-and-vpn"></a><a name="bkmk_top4"></a>Pontos de encerramento separados para BGP e VPN  
 Esta topologia ilustra uma empresa que usa dois roteadores diferentes, como o BGP e pontos de extremidade VPN site a site. A VPN site a site é encerrada no gateway RAS do Windows Server 2016, enquanto o BGP é encerrado em um roteador interno. No lado do CSP das conexões, o CSP encerra as conexões VPN e BGP com o gateway RAS. Com essa configuração, o hardware do roteador de terceiros interno deve oferecer suporte à redistribuição de rotas IGP para BGP, bem como redistribuir as rotas BGP para IGP.  
   
 ![Pontos de encerramento separados para BGP e VPN](../../media/Border-Gateway-Protocol-BGP/bgp_04.jpg)  
@@ -144,7 +144,7 @@ Com essa implantação, o gateway de RAS corporativo tem uma conexão VPN site a
   
 Deste ponto em diante, o roteador interno da empresa e as informações de roteamento do gateway de RAS do CSP do Exchange. E o roteador de BGP do RAS corporativo aprende as rotas do CSP e as rotas da empresa para rotear fisicamente os pacotes entre as redes.  
   
-## <a name="bkmk_features"></a>Recursos do BGP  
+## <a name="bgp-features"></a><a name="bkmk_features"></a>Recursos do BGP  
 A seguir estão os recursos do roteador BGP de gateway de RAS.  
   
 **Roteamento BGP como um serviço de função de acesso remoto**. Agora você pode instalar o serviço de função de **Roteamento** da função de servidor de acesso remoto sem instalar o serviço de função **RAS (serviço de acesso remoto)** quando quiser usar o acesso remoto como um roteador LAN BGP.  Isso reduz a superfície de memória do roteador BGP e instala apenas os componentes necessários para o roteamento de BGP dinâmico. O serviço de função de roteamento é útil quando apenas uma VM do roteador BGP é necessária e você não precisa usar o DirectAccess ou a VPN. Além disso, o uso do acesso remoto como um roteador de LAN com BGP fornece as vantagens de roteamento dinâmico do BGP em sua rede interna.  

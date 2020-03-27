@@ -1,21 +1,21 @@
 ---
-title: Comutador virtual do Hyper-V
+title: Comutador Virtual Hyper-V
 description: Este tópico fornece uma visão geral do comutador virtual do Hyper-V no Windows Server 2016.
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c508005af67e9dd5b0c9a22693aca25eb19e8e48
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fb2ebf485b5004e457558fc16d8535662c0c5ff2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366835"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307987"
 ---
-# <a name="hyper-v-virtual-switch"></a>Comutador virtual do Hyper-V
+# <a name="hyper-v-virtual-switch"></a>Comutador Virtual Hyper-V
 
 >Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
@@ -57,7 +57,7 @@ Os recursos do comutador virtual do Hyper-V fornecem mais opções para impor o 
 >[!NOTE]
 > No Windows Server 2016, uma VM com uma NIC virtual exibe com precisão a taxa de transferência máxima para a NIC virtual. Para exibir a velocidade da NIC virtual em **conexões de rede**, clique com o botão direito do mouse no ícone NIC virtual desejado e clique em **status**. A caixa de diálogo **status** da NIC virtual é aberta. Em **conexão**, o valor de **velocidade** corresponde à velocidade da NIC física instalada no servidor.
   
-## <a name="bkmk_apps"></a>Usos para o comutador virtual do Hyper-V
+## <a name="uses-for-hyper-v-virtual-switch"></a><a name="bkmk_apps"></a>Usos para o comutador virtual do Hyper-V
 
 A seguir estão alguns cenários de caso de uso para o comutador virtual do Hyper-V.
 
@@ -69,7 +69,7 @@ A seguir estão alguns cenários de caso de uso para o comutador virtual do Hype
   
 A **extensão de encaminhamento gerencia a ID de VLAN**: uma grande empresa de comutador está criando uma extensão de encaminhamento que aplica todas as políticas de rede. Um elemento que é gerenciado são as IDs de VLAN (rede local virtual). O comutador virtual cede o controle da VLAN para uma extensão de encaminhamento. A instalação do switch Company chama programaticamente uma API (interface de programação de aplicativo) Instrumentação de Gerenciamento do Windows (WMI) que ativa a transparência, informando ao comutador virtual Hyper-V que deve passar e não executar nenhuma ação nas marcas de VLAN.  
   
-## <a name="bkmk_func"></a>Funcionalidade do comutador virtual do Hyper-V
+## <a name="hyper-v-virtual-switch-functionality"></a><a name="bkmk_func"></a>Funcionalidade do comutador virtual do Hyper-V
  
 Estes são alguns dos principais recursos incluídos no Comutador Virtual Hyper-V:  
   

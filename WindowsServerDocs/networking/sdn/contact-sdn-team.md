@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
-ms.author: pashort
+ms.author: lizross
 author: kallie-b
-ms.openlocfilehash: a62a661fc9bb665f71f0e16cb3298ff52f3137db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 84c0847313542953543316ceb6c3d9cffb99c2dc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355991"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309974"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Entrar em contato com a equipe de rede na nuvem e Datacenter
 
@@ -23,17 +23,17 @@ A **rede definida pelo software da Microsoft \(SDN\)** e soluções de **rede de
 
 Há muitos caminhos para entrar em contato com as equipes da Microsoft e, embora possamos fazer o melhor na equipe de SDN para seguir todas as avenidas usadas pela nossa comunidade, aqui está uma lista de fóruns que tendem a ser os mais ativos. *Esses são os principais recursos para nossos usuários e, por isso, eles são os caminhos que vimos mais próximos.*
 
-## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
+## <a name="twitter"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
 Recentemente, lançamos nossa presença no Twitter como [@Microsoft_SDN](https://twitter.com/Microsoft_SDN). Sinta-se à vontade para usar nosso identificador do Twitter para fazer perguntas, fornecer comentários ou fazer solicitações de recursos/documentação.
 > Além de um local onde você pode entrar em contato com perguntas/comentários/solicitações, considere o Twitter no lugar para obter seu "feed" sobre tudo que o SDN e a rede de contêiner do Windows relacionados – Twitter é o primeiro lugar em que publicaremos **notícias**, anunciaremos **novos recursos** e destacaremos a Comunidade para todos os nossos **Blogs e recursos mais recentes**.
 
-## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([repositório Microsoft/Sdn](https://github.com/Microsoft/SDN/issues))
+## <a name="github-microsoftsdn-repo"></a>GitHub ([repositório Microsoft/Sdn](https://github.com/Microsoft/SDN/issues))
 Acesse [aqui](https://github.com/Microsoft/SDN/issues) para enviar problemas para a equipe de Sdn por meio de nosso repositório github. Este é o melhor lugar para **obter ajuda para solucionar problemas** ou **Relatar bugs**.
 
 > O GitHub é o melhor lugar para entrar em contato conosco sobre tópicos que envolvem mais detalhes do que os tipos de coisas que você poderia facilmente ajustar a um tweet. *Precisa de ajuda com sua implantação de SDN? Não tem certeza de como nossos recursos poderiam se adequar às necessidades exclusivas da sua organização? Sendo mantido por um bug em potencial?* Todos os bons motivos para entrar em contato conosco enviando um problema do GitHub.
 
-## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
+## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
 Nossa [documentação de rede de contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) pode ser encontrada em [Microsoft docs (docs.Microsoft.com)](https://docs.microsoft.com/), que tem **funcionalidade de comentário interna**. Para deixar ou responder a um comentário em Microsoft Docs apenas entrar, role para baixo até a parte inferior da página Microsoft Docs que você deseja referenciar e, em seguida, faça e envie seu comentário.
 
 > [Microsoft docs](https://docs.microsoft.com/) é o novo site de documentação unificado da Microsoft. Embora a maior parte da [documentação de Sdn](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking) da nossa equipe permaneça no TechNet, nossa documentação de [rede de contêineres](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) está agora em Microsoft docs.

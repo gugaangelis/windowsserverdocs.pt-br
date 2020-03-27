@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b39cac842f115a1828c666eec52f17f80971510c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cfa8076b84a2fc62cec2a709fc15d3dc5be8eb77
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322708"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307991"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acesso remoto direto à memória \(RDMA\) e Comutador incorporado \(definir\)
 
@@ -25,7 +25,7 @@ Este tópico fornece informações sobre como configurar o acesso remoto direto 
 > Além deste tópico, o conteúdo de agrupamento inserido do comutador a seguir está disponível. 
 > - Download da galeria do TechNet: [Guia do usuário da NIC do Windows Server 2016 e do Comutador incorporado](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
 
-## <a name="bkmk_rdma"></a>Configurando interfaces RDMA com o Hyper-V  
+## <a name="configuring-rdma-interfaces-with-hyper-v"></a><a name="bkmk_rdma"></a>Configurando interfaces RDMA com o Hyper-V  
 
 No Windows Server 2012 R2, o uso do RDMA e do Hyper-V no mesmo computador que os adaptadores de rede que fornecem serviços RDMA não podem ser associados a um comutador virtual do Hyper-V. Isso aumenta o número de adaptadores de rede física que precisam ser instalados no host do Hyper-V.
 
@@ -94,7 +94,7 @@ Verifique os recursos RDMA:
 
     Get-NetAdapterRdma
 
-###  <a name="bkmk_set-rdma"></a>Criar um comutador virtual do Hyper-V com SET e RDMA vNICs
+###  <a name="create-a-hyper-v-virtual-switch-with-set-and-rdma-vnics"></a><a name="bkmk_set-rdma"></a>Criar um comutador virtual do Hyper-V com SET e RDMA vNICs
 
 Para usar o RDMA capabilies em adaptadores de rede virtual do host Hyper-V \(vNICs\) em um comutador virtual Hyper-V que dá suporte ao agrupamento RDMA, você pode usar estes comandos de exemplo do Windows PowerShell.
 
@@ -144,7 +144,7 @@ Esta seção fornece uma visão geral do switch Embedded Integration (SET) no Wi
 
 - [Gerenciando uma equipe de conjunto](#bkmk_manage)
 
-## <a name="bkmk_over"></a>DEFINIR visão geral
+## <a name="set-overview"></a><a name="bkmk_over"></a>DEFINIR visão geral
 
 O conjunto é uma solução de agrupamento NIC alternativa que você pode usar em ambientes que incluem o Hyper-V e a rede definida pelo software \(SDN\) Stack no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V.
 
@@ -167,15 +167,15 @@ Para obter mais informações, consulte [agrupamento NIC em VMS (máquinas virtu
 
 Além disso, a arquitetura SET não expõe as interfaces da equipe. Em vez disso, você deve configurar portas do comutador virtual do Hyper-V.
 
-## <a name="bkmk_avail"></a>DEFINIR disponibilidade
+## <a name="set-availability"></a><a name="bkmk_avail"></a>DEFINIR disponibilidade
 
 O conjunto está disponível em todas as versões do Windows Server 2016 que incluem o Hyper-V e a pilha SDN. Além disso, você pode usar comandos do Windows PowerShell e conexões Área de Trabalho Remota para gerenciar o conjunto de computadores remotos que estão executando um sistema operacional cliente no qual as ferramentas têm suporte.
 
-## <a name="bkmk_nics"></a>NICs com suporte para SET
+## <a name="supported-nics-for-set"></a><a name="bkmk_nics"></a>NICs com suporte para SET
 
 Você pode usar qualquer NIC Ethernet que tenha passado o logotipo e a qualificação de hardware do Windows \(o WHQL\) teste em uma equipe definida no Windows Server 2016. SET exige que todos os adaptadores de rede que são membros de uma equipe definida devem ser idênticos \(ou seja, mesmo fabricante, mesmo modelo, mesmo firmware e driver\). O conjunto oferece suporte entre um e oito adaptadores de rede em uma equipe.
   
-## <a name="bkmk_compat"></a>DEFINIR a compatibilidade com as tecnologias de rede do Windows Server
+## <a name="set-compatibility-with-windows-server-networking-technologies"></a><a name="bkmk_compat"></a>DEFINIR a compatibilidade com as tecnologias de rede do Windows Server
 
 O conjunto é compatível com as seguintes tecnologias de rede no Windows Server 2016.
 
@@ -210,7 +210,7 @@ SET não é compatível com as seguintes tecnologias de rede no Windows Server 2
 
 - QoS de máquina virtual \(VM-\)de QoS. A QoS de VM está disponível, mas desabilitada por padrão. Se você configurar a QoS de VM em um ambiente definido, as configurações de QoS causarão resultados imprevisíveis.
 
-## <a name="bkmk_modes"></a>Definir modos e configurações
+## <a name="set-modes-and-settings"></a><a name="bkmk_modes"></a>Definir modos e configurações
 
 Ao contrário do agrupamento NIC, quando você cria uma equipe de conjunto, não é possível configurar um nome de equipe. Além disso, o uso de um adaptador em espera é suportado no agrupamento NIC, mas não tem suporte no conjunto. Quando você implanta SET, todos os adaptadores de rede estão ativos e nenhum está no modo de espera.
 
@@ -253,7 +253,7 @@ As cargas de saída nesse modo são balanceadas dinamicamente com base no concei
 
 Quando o algoritmo de modo dinâmico detecta que um limite de flowlet foi encontrado-por exemplo, quando ocorreu uma interrupção de comprimento suficiente no fluxo de TCP, o algoritmo reequilibra automaticamente o fluxo para outro membro da equipe, se apropriado.  Em algumas circunstâncias incomuns, o algoritmo também pode reequilibrar periodicamente os fluxos que não contêm nenhum flowlets. Por isso, a afinidade entre o fluxo TCP e o membro da equipe pode mudar a qualquer momento, pois o algoritmo de balanceamento dinâmico funciona para balancear a carga de trabalho dos membros da equipe.
 
-## <a name="bkmk_vmq"></a>DEFINIR e filas de máquina virtual (VMQs)
+## <a name="set-and-virtual-machine-queues-vmqs"></a><a name="bkmk_vmq"></a>DEFINIR e filas de máquina virtual (VMQs)
 
 A VMQ e a SET funcionam bem em conjunto, e você deve habilitar a VMQ sempre que estiver usando o Hyper-V e o SET.
 
@@ -273,15 +273,15 @@ A seguir estão algumas configurações de VMQ que fornecem melhor desempenho do
 
 - Os processadores da equipe devem estar, na medida em que é prático, sem sobreposição. Por exemplo, em um host de 4 núcleos \(8 processadores lógicos\) com uma equipe de 2 NICs 10 Gbps, você pode definir o primeiro para usar o processador base 2 e usar 4 núcleos; o segundo seria definido para usar o processador base 6 e usar dois núcleos.
 
-## <a name="bkmk_hnv"></a>DEFINIR e virtualização de rede Hyper-V \(HNV\)
+## <a name="set-and-hyper-v-network-virtualization-hnv"></a><a name="bkmk_hnv"></a>DEFINIR e virtualização de rede Hyper-V \(HNV\)
 
 O conjunto é totalmente compatível com a virtualização de rede Hyper-V no Windows Server 2016. O sistema de gerenciamento HNV fornece informações para o driver de conjunto que permite que o configure o distribua a carga de tráfego de rede de uma maneira que é otimizada para o tráfego HNV.
   
-## <a name="bkmk_live"></a>DEFINIR e Migração ao Vivo
+## <a name="set-and-live-migration"></a><a name="bkmk_live"></a>DEFINIR e Migração ao Vivo
 
 O Migração ao Vivo tem suporte no Windows Server 2016.
 
-## <a name="bkmk_mac"></a>Uso de endereço MAC em pacotes transmitidos
+## <a name="mac-address-use-on-transmitted-packets"></a><a name="bkmk_mac"></a>Uso de endereço MAC em pacotes transmitidos
 
 Quando você configura uma equipe de conjunto com a distribuição de carga dinâmica, os pacotes de uma única fonte \(como uma única VM\) são distribuídos simultaneamente entre vários membros da equipe. 
 
@@ -311,7 +311,7 @@ Veja a seguir as listas que descrevem o comportamento de substituição do ender
   
     - Os pacotes enviados em um membro da equipe que não seja o membro da equipe do relacionados terão a substituição do endereço MAC de origem concluída  
   
-## <a name="bkmk_manage"></a>Gerenciando uma equipe de conjunto
+## <a name="managing-a-set-team"></a><a name="bkmk_manage"></a>Gerenciando uma equipe de conjunto
 
 É recomendável que você use System Center Virtual Machine Manager \(\) do VMM para gerenciar equipes de conjunto, no entanto, você também pode usar o Windows PowerShell para gerenciar o conjunto. As seções a seguir fornecem os comandos do Windows PowerShell que você pode usar para gerenciar o conjunto.
 

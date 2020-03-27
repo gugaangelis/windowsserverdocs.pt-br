@@ -3,7 +3,7 @@ title: Adicionar o Windows Server Essentials como um servidor membro
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 09943f9708af3839ff21717316853fab9ba0283b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4b87c066885ed2bf0ac6dfa29496317310b062d9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865052"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310174"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>Adicionar o Windows Server Essentials como um servidor membro
 
@@ -76,7 +76,7 @@ Este tópico aplica-se a um servidor que executa o Windows Server 2012 R2 Standa
   
 2.  Autentique-se no servidor usando sua conta de administrador de domínio.  
   
-3.  Abra o Gerenciador do Servidor.  
+3.  Abra o Server Manager.  
   
 4.  Na área de notificação do sinalizador no **Gerenciador do Servidor**, clique no sinalizador e, em seguida, clique em **Configurar o Windows Server Essentials**.  
   
@@ -84,7 +84,7 @@ Este tópico aplica-se a um servidor que executa o Windows Server 2012 R2 Standa
   
 6.  Clique em **Configurar** para começar a configuração. O processo de configuração leva aproximadamente 10 minutos para ser concluído.  
   
-7.  Na área de trabalho, clique no ícone do Painel para iniciar o Painel do servidor. Na Página inicial, conclua as tarefas **Introdução** listadas na guia **Configuração** .  
+7.  Na área de trabalho, clique no ícone do Painel para iniciar o Painel do servidor. Na Página inicial, conclua as tarefas **Introdução** listadas na guia **Configuração**.  
   
 ## <a name="see-also"></a>Consulte também  
   

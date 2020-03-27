@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: d7642338-9b33-4dce-8100-8b2c38d7127a
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: d791e0d51278d1f83f344250d38b1c7005c1a14a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8824a6c6189a447f97f285052af8e5c13a66e766
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355439"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312813"
 ---
 # <a name="converged-network-interface-card-nic-configuration-guidance"></a>Placa de interface de rede convergida \(as diretrizes de configuração\) NIC
 
@@ -34,7 +34,7 @@ Quando você implanta a NIC convergida com hosts Hyper-v do Windows Server 2016 
 Este guia fornece dois conjuntos de instruções, um para implantações em que os servidores têm um único adaptador de rede instalado, que é uma implantação básica da NIC convergida; e outro conjunto de instruções em que os servidores têm dois ou mais adaptadores de rede instalados, que é uma implantação de NIC convergida em um switch incorporado \(conjunto de\) equipe de adaptadores de rede com capacidade RDMA\-.
 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Veja a seguir os pré-requisitos para as implantações básica e de datacenter da NIC convergida.
 

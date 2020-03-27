@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/24/2018
-ms.openlocfilehash: 3e0678fb204e0895bf4429e8bb877a3f1c0e7a97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ef588cfc93216f13490ef3196ec0990b9e7f48d3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355861"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309790"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>Criar uma máquina virtual e se conectar a uma rede virtual de locatário ou VLAN
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, você cria uma VM de locatário e a conecta a uma rede virtual que você criou com a virtualização de rede Hyper-V ou a uma rede de área local virtual (VLAN). Você pode usar os cmdlets do controlador de rede do Windows PowerShell para se conectar a uma rede virtual ou NetworkControllerRESTWrappers para se conectar a uma VLAN.
 
@@ -31,7 +31,7 @@ Use os processos descritos neste tópico para implantar dispositivos virtuais. C
 As seções neste tópico incluem exemplos de comandos do Windows PowerShell que contêm valores de exemplo para muitos parâmetros. Certifique-se de substituir os valores de exemplo nesses comandos por valores apropriados para sua implantação antes de executar esses comandos. 
 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 1. Adaptadores de rede VM criados com endereços MAC estáticos para o tempo de vida da VM.<p>Se o endereço MAC for alterado durante o tempo de vida da VM, o controlador de rede não poderá configurar a política necessária para o adaptador de rede. Não configurar a política para a rede impede que o adaptador de rede processe o tráfego de rede e toda a comunicação com a rede falhe.  
 

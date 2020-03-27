@@ -3,7 +3,7 @@ title: Gerenciar Pastas do Servidor no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0c46d19f4f172786e0ffe7f3b9dd7ac1d8f4fcf0
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ba5dd5e5978687c9d80a6d34e5e622aaa37c4b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322228"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311119"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Gerenciar Pastas do Servidor no Windows Server Essentials
 
@@ -39,7 +39,7 @@ ms.locfileid: "79322228"
   
 -   [Entender as cópias de sombra](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_Shadow)  
   
-##  <a name="BKMK_2"></a>Gerenciar pastas do servidor usando o painel  
+##  <a name="manage-server-folders-using-the-dashboard"></a><a name="BKMK_2"></a>Gerenciar pastas do servidor usando o painel  
  O Windows Server Essentials possibilita realizar tarefas administrativas comuns usando o Painel. A página **Pastas do Servidor** do Painel oferece o seguinte:  
   
 - Uma lista de pastas do servidor, que exibe:  
@@ -72,7 +72,7 @@ ms.locfileid: "79322228"
 |Adicionar uma pasta|Ajuda a criar uma nova pasta no servidor e a atribuir o nível de acesso permitido para cada conta de usuário.|  
 |Noções básicas sobre pastas do servidor|Abre um tópico da Ajuda na Internet que descreve o uso e a funcionalidade de pastas do servidor.|  
   
-##  <a name="BKMK_1"></a>Gerenciar o acesso às pastas do servidor  
+##  <a name="manage-access-to-server-folders"></a><a name="BKMK_1"></a>Gerenciar o acesso às pastas do servidor  
  Windows Server Essentials permite que você armazene arquivos que estão localizados nos computadores cliente para um local central usando pastas do servidor. Armazenar os arquivos em pastas do servidor garante que os arquivos estejam em um local que seja sempre acessível de uma maneira segura a partir de cada cliente.  
   
  Usar pastas do servidor para armazenar os arquivos permite que você:  
@@ -105,7 +105,7 @@ ms.locfileid: "79322228"
   
 -   [Exibir ou modificar propriedades da pasta do servidor](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_10)  
   
-###  <a name="BKMK_Hide"></a>Ocultar pastas do servidor  
+###  <a name="hide-server-folders"></a><a name="BKMK_Hide"></a>Ocultar pastas do servidor  
  Como administrador de rede, você pode optar por ocultar qualquer uma dessas pastas de servidor e impedir que elas sejam exibidas no site de Acesso Remoto via Web ou nos aplicativos de serviços Web (como o My Server).  
   
 > [!NOTE]
@@ -123,7 +123,7 @@ ms.locfileid: "79322228"
   
 5.  Em **< nome_da_pasta\> Propriedades**, clique em **compartilhamento**, selecione **ocultar esta pasta de acesso via Web remoto e aplicativos de serviço Web**e, em seguida, clique em **aplicar**.  
   
-###  <a name="BKMK_Perms"></a>Definir permissões para pastas do servidor  
+###  <a name="set-permissions-to-server-folders"></a><a name="BKMK_Perms"></a>Definir permissões para pastas do servidor  
  Para quaisquer pastas de servidor adicionais que adicionar ao servidor usando o Painel, você pode escolher três configurações diferentes de acesso:  
   
 -   **Leitura/gravação**  
@@ -162,7 +162,7 @@ ms.locfileid: "79322228"
 > [!NOTE]
 >  Não é possível modificar as permissões de compartilhamento das pastas **Backups do histórico de arquivos**, **Redirecionamento de pasta** e **Usuários** do servidor. Assim, as propriedades dessas pastas de servidor não incluem uma guia **Compartilhamento**.  
   
-###  <a name="BKMK_10"></a>Exibir ou modificar propriedades da pasta do servidor  
+###  <a name="view-or-modify-server-folder-properties"></a><a name="BKMK_10"></a>Exibir ou modificar propriedades da pasta do servidor  
  Você pode modificar o nome da pasta do servidor, sua descrição e definir quais contas de usuário têm acesso a uma pasta no servidor por meio da tarefa **Exibir as propriedades da pasta** na guia **Pastas do servidor** do Painel.  
   
 > [!NOTE]
@@ -183,7 +183,7 @@ ms.locfileid: "79322228"
     > [!NOTE]
     >  No Windows Server Essentials e no Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada, você também pode modificar a cota da pasta que fornece uma mensagem de aviso quando uma pasta do servidor atinge seu tamanho especificado.  
   
-##  <a name="BKMK_5"></a>Adicionar ou mover uma pasta do servidor  
+##  <a name="add-or-move-a-server-folder"></a><a name="BKMK_5"></a>Adicionar ou mover uma pasta do servidor  
  Você pode **Adicionar mais pastas do servidor** para armazenar os arquivos no servidor, além de pastas do servidor padrão que são criadas durante a instalação. Você pode adicionar pastas do servidor no servidor primário ou em um servidor membro que executa o Windows Server Essentials.  
   
  Você pode **Mover uma pasta de servidor** que está localizada no servidor primário que executa o Windows Server Essentials e é exibida na guia **Pastas do servidor** do Painel para outra unidade de disco rígido, quando necessário, usando o Assistente de Adição de Pasta. Você pode mover uma pasta de servidor para outro endereço local de unidade de disco rígido se:  
@@ -226,7 +226,7 @@ ms.locfileid: "79322228"
   
 - Cotas  
   
-###  <a name="BKMK_6"></a>Onde adicionar ou mover uma pasta de servidor  
+###  <a name="where-to-add-or-move-a-server-folder"></a><a name="BKMK_6"></a>Onde adicionar ou mover uma pasta de servidor  
  Normalmente, você deve adicionar ou mover as pastas de servidor para unidades de disco rígido com a quantidade máxima de espaço livre. Se possível, evite adicionar ou mover uma pasta compartilhada para a unidade do sistema (por exemplo, c:), pois isso pode ocupar imediatamente o espaço em disco necessário para o sistema operacional e suas atualizações. Além disso, evite adicionar ou mover pastas do servidor para um disco rígido externo, porque eles podem ser facilmente desconectados e, como resultado, você não poderá acessar seus arquivos. Em vez disso, é recomendável que você crie a pasta em uma unidade interna.  
   
  Uma pasta no servidor não pode ser adicionada ou movida para os seguintes locais, e ocorrerá em um erro se algum desses locais estiver marcado para acréscimos ou movimentações:  
@@ -278,7 +278,7 @@ ms.locfileid: "79322228"
   
 5.  Siga as instruções para concluir o assistente.  
   
-##  <a name="BKMK_9"></a>Adicionar uma pasta de servidor ausente  
+##  <a name="add-a-missing-server-folder"></a><a name="BKMK_9"></a>Adicionar uma pasta de servidor ausente  
  Quando o servidor detecta que uma pasta de servidor predefinida? Empresa, usuários, backups de computadores cliente, backup de histórico de arquivos ou redirecionamento de pasta? não é mais compartilhado (por algum motivo ou outro), um alerta é gerado para orientar o usuário a resolver esse problema. É recomendável que você tente restaurar a pasta do backup do servidor. No entanto, se o backup do servidor não tiver sido feito, selecione a pasta ausente e, em seguida, clique em **Recriar a pasta ausente** para reconfigurar o local da pasta do servidor.  
   
 > [!NOTE]
@@ -288,10 +288,10 @@ ms.locfileid: "79322228"
   
  Para obter informações sobre como restaurar arquivos de backups de servidor, consulte a seção saiba mais sobre como restaurar arquivos e pastas no tópico [gerenciar backup e restauração](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md).  
   
-##  <a name="BKMK_11"></a>Entender pastas compartilhadas  
+##  <a name="understand-shared-folders"></a><a name="BKMK_11"></a>Entender pastas compartilhadas  
  Há várias maneiras diferentes de acessar as pastas compartilhadas no Windows Server Essentials a partir de um dispositivo conectado ao servidor. Para obter mais informações, consulte o tópico [usar pastas compartilhadas](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md).  
   
-##  <a name="BKMK_Shadow"></a>Entender as cópias de sombra  
+##  <a name="understand-shadow-copies"></a><a name="BKMK_Shadow"></a>Entender as cópias de sombra  
  Com cópias de sombra do servidor, os usuários podem exibir arquivos e pastas compartilhadas como eram no passado. Acessar versões anteriores de arquivos ou cópias de sombra é útil porque os usuários podem:  
   
 1. **Recuperar arquivos que foram excluídos acidentalmente**. Se excluir um arquivo acidentalmente, você pode abrir uma versão anterior e copiá-lo para um local seguro.  

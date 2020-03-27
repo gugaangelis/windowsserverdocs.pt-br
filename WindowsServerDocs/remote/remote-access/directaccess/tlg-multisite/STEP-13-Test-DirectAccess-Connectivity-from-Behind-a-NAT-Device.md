@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 41701592c0d9b143c84ad3fbad3fd77491eff5a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a4c944a61c44b9b67831bfd4e2852941e577e6b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404714"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308788"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>ETAPA 13 testar a conectividade do DirectAccess por trás de um dispositivo NAT
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Quando o cliente de DirectAccess é conectado à Internet por trás de um dispositivo NAT ou um servidor de proxy da web, o cliente do DirectAccess usa o Teredo ou o IP-HTTPS para se conectar ao servidor de Acesso Remoto. Se o dispositivo NAT permitir a porta UDP de saída 3544 para o endereço IP público do servidor de acesso remoto, o Teredo será usado. Se o acesso pelo Teredo não estiver disponível, o cliente do DirectAccess retornará para o IP-HTTPS pela porta TCP 443 de saída, que permite o acesso através de firewalls e servidores de proxy da web pela porta SSL tradicional. Se o proxy da web pedir autenticação, a conexão do IP-HTTPS falhará automaticamente. As conexões do IP-HTTPS também falharão se o proxy da web realizar uma inspeção SSL de saída, devido ao fato de a sessão HTTPS ser encerrada pelo proxy da web em vez do servidor de Acesso Remoto.  
   
@@ -31,12 +31,12 @@ Os procedimentos a seguir são executados em ambos os computadores cliente:
   
 2. Testar a conectividade IP-HTTPS. O segundo conjunto de testes é executado quando o cliente do DirectAccess é configurado para usar IP-HTTPS. Para demonstrar a conectividade IP-HTTPS, o Teredo é desabilitada nos computadores cliente. Primeiro, execute os testes em CLIENT1 e, em seguida, execute os testes em CLIENT2.  
   
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 Inicie o EDGE1 e 2-EDGE1 se eles ainda não estiverem em execução e verifique se eles estão conectados à sub-rede da Internet.  
   
 Antes de executar esses testes, desconecte CLIENT1 e CLIENT2 do comutador da Internet e conecte-os à opção HomeNet Se for solicitado que tipo de rede você deseja definir a rede atual, selecione **rede doméstica**.  
   
-## <a name="TeredoCLIENT1"></a>Testar a conectividade de Teredo  
+## <a name="test-teredo-connectivity"></a><a name="TeredoCLIENT1"></a>Testar a conectividade de Teredo  
   
 1. Em CLIENT1, abra uma janela elevada do Windows PowerShell.  
   
@@ -62,11 +62,11 @@ Antes de executar esses testes, desconecte CLIENT1 e CLIENT2 do comutador da Int
   
 10. Na barra de endereços do Internet Explorer, digite **https://app2/** e pressione Enter. Você verá o site padrão no APP2.  
   
-11. Na tela **Iniciar** , digite<strong>\\ \ APP2\FILES</strong>e pressione Enter. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.  
+11. Na tela **Iniciar** , digite<strong>\\\APP2\FILES</strong>e pressione Enter. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.  
   
 12. Repita este procedimento em CLIENT2.  
   
-## <a name="IPHTTPS_CLIENT1"></a>Testar conectividade IP-HTTPS  
+## <a name="test-ip-https-connectivity"></a><a name="IPHTTPS_CLIENT1"></a>Testar conectividade IP-HTTPS  
   
 1. Em CLIENT1, abra uma janela do Windows PowerShell com privilégios elevados e digite **netsh interface teredo definir estado desabilitado** e pressione Enter. Isso desativa o Teredo no computador cliente e permite que o computador cliente configure a si mesmo para usar IP-HTTPS. Uma resposta **Ok** aparecerá quando o comando for concluído.  
   
@@ -86,7 +86,7 @@ Antes de executar esses testes, desconecte CLIENT1 e CLIENT2 do comutador da Int
   
 9. Na barra de endereços do Internet Explorer, digite **https://app2/** e pressione Enter. Você verá o site padrão no APP2.  
   
-10. Na tela **Iniciar** , digite<strong>\\ \ APP2\FILES</strong>e pressione Enter. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.  
+10. Na tela **Iniciar** , digite<strong>\\\APP2\FILES</strong>e pressione Enter. Clique duas vezes no arquivo Novo Documento de Texto. Isso demonstra que você conseguiu se conectar a um servidor somente IPv4 usando SMB para obter um recurso em um host somente IPv4.  
   
 11. Repita este procedimento em CLIENT2.  
   

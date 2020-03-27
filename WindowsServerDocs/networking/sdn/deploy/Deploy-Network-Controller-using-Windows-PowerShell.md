@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 294466ef70a9ffc230953b48bb292938be519eac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee3aa93c02419667b05a987f548ef4d14285231d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406117"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313078"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implantar controlador de rede usando o Windows PowerShell
 
@@ -88,8 +88,8 @@ A tabela a seguir fornece descrições para cada parâmetro do comando **New-Net
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|Nome|O parâmetro **Name** especifica o nome amigável do servidor que você deseja adicionar ao cluster|
-|Servidor|O parâmetro **Server** especifica o nome do host, o FQDN (nome de domínio totalmente qualificado) ou o endereço IP do servidor que você deseja adicionar ao cluster. Para computadores ingressados no domínio, o FQDN é necessário.|
+|{1&gt;Nome&lt;1}|O parâmetro **Name** especifica o nome amigável do servidor que você deseja adicionar ao cluster|
+|Server|O parâmetro **Server** especifica o nome do host, o FQDN (nome de domínio totalmente qualificado) ou o endereço IP do servidor que você deseja adicionar ao cluster. Para computadores ingressados no domínio, o FQDN é necessário.|
 |FaultDomain|O parâmetro **FaultDomain** especifica o domínio de falha do servidor que você está adicionando ao cluster. Esse parâmetro define os servidores que podem apresentar falha ao mesmo tempo que o servidor que você está adicionando ao cluster. Essa falha pode ser causada por dependências físicas compartilhadas, como fontes de energia e rede. Os domínios de falha normalmente representam hierarquias relacionadas a essas dependências compartilhadas, com mais servidores que provavelmente falham juntos em um ponto mais alto na árvore de domínio de falha. Durante o tempo de execução, o controlador de rede considera os domínios de falha no cluster e tenta distribuir os serviços do controlador de rede para que eles estejam em domínios de falha separados. Esse processo ajuda a garantir, em caso de falha de qualquer domínio de falha, que a disponibilidade desse serviço e seu estado não sejam comprometidos. Os domínios de falha são especificados em um formato hierárquico. Por exemplo: "FD:/DC1/Rack1/Host1", em que DC1 é o nome do datacenter, Rack1 é o nome do rack e Host1 é o nome do host onde o nó é colocado.|
 |RestInterface|O parâmetro **RestInterface** especifica o nome da interface no nó em que a comunicação de transferência de estado de reapresentação (REST) é encerrada. Essa interface de controlador de rede recebe solicitações de API Northbound da camada de gerenciamento da rede.|
 |NodeCertificate|O parâmetro **NodeCertificate** especifica o certificado que o controlador de rede usa para autenticação do computador. O certificado será necessário se você usar a autenticação baseada em certificado para comunicação dentro do cluster; o certificado também é usado para criptografia de tráfego entre os serviços do controlador de rede. O nome da entidade do certificado deve ser o mesmo que o nome DNS do nó.|
@@ -112,7 +112,7 @@ A tabela a seguir fornece descrições para cada parâmetro do comando **install
 |DiagnosticLogLocation|O parâmetro **DiagnosticLogLocation** especifica o local de compartilhamento onde os logs de diagnóstico são carregados periodicamente. Se você não especificar um valor para esse parâmetro, os logs serão armazenados localmente em cada nó. Os logs são armazenados localmente na pasta%systemdrive%\Windows\tracing\SDNDiagnostics. Os logs de cluster são armazenados localmente na pasta%systemdrive%\ProgramData\Microsoft\Service Fabric\log\Traces.|
 |LogLocationCredential|O parâmetro **LogLocationCredential** especifica as credenciais que são necessárias para acessar o local de compartilhamento onde os logs são armazenados.|
 |CredentialEncryptionCertificate|O parâmetro **CredentialEncryptionCertificate** especifica o certificado que o controlador de rede usa para criptografar as credenciais que são usadas para acessar os binários do controlador de rede e o **LogLocationCredential**, se especificado. O certificado deve ser provisionado em todos os nós do controlador de rede antes de executar esse comando, e o mesmo certificado deve ser registrado em todos os nós do cluster. O uso desse parâmetro para proteger binários e logs do controlador de rede é recomendado em ambientes de produção. Sem esse parâmetro, as credenciais são armazenadas em texto não criptografado e podem ser usadas inalteradas por qualquer usuário não autorizado.|
-|Credential|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **Credential** especifica uma conta de usuário que tem permissão para executar esse comando no computador de destino.|
+|Credencial|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **Credential** especifica uma conta de usuário que tem permissão para executar esse comando no computador de destino.|
 |CertificateThumbprint|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **CertificateThumbprint** especifica o certificado de chave pública digital (X509) de uma conta de usuário que tem permissão para executar esse comando no computador de destino.|
 |UseSSL|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **UseSSL** especifica o protocolo de protocolo SSL (SSL) que é usado para estabelecer uma conexão com o computador remoto. Por padrão, SSL não é usado.|
 |ComputerName|O parâmetro **ComputerName** especifica o nó do controlador de rede no qual esse comando é executado. Se você não especificar um valor para esse parâmetro, o computador local será usado por padrão.|
@@ -137,7 +137,7 @@ A tabela a seguir fornece descrições para cada parâmetro do comando **install
 |RESTIPAddress|Você não precisa especificar um valor para **RESTIPAddress** com uma implantação de nó único do controlador de rede. Para implantações de vários nós, o parâmetro **RESTIPAddress** especifica o endereço IP do ponto de extremidade REST na notação CIDR. Por exemplo, 192.168.1.10/24. O valor do nome da entidade de **serverCertificate** deve ser resolvido para o valor do parâmetro **RESTIPAddress** . Esse parâmetro deve ser especificado para todas as implantações do controlador de rede de vários nós quando todos os nós estiverem na mesma sub-rede. Se os nós estiverem em sub-redes diferentes, você deverá usar o parâmetro **REST** , em vez de usar **RESTIPAddress**.|
 |RestName|Você não precisa especificar um valor para **restname** com uma implantação de nó único do controlador de rede. A única vez que você deve especificar um valor para **restname** é quando implantações de vários nós têm nós que estão em sub-redes diferentes. Para implantações de vários nós, o parâmetro **restname** especifica o FQDN para o cluster do controlador de rede.|
 |ClientSecurityGroup|O parâmetro **ClientSecurityGroup** especifica o nome do grupo de segurança Active Directory cujos membros são clientes do controlador de rede. Esse parâmetro será necessário apenas se você usar a autenticação Kerberos para **clientauthentication válido**. O grupo de segurança deve conter as contas das quais as APIs REST são acessadas e você deve criar o grupo de segurança e adicionar membros antes de executar esse comando.|
-|Credential|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **Credential** especifica uma conta de usuário que tem permissão para executar esse comando no computador de destino.|
+|Credencial|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **Credential** especifica uma conta de usuário que tem permissão para executar esse comando no computador de destino.|
 |CertificateThumbprint|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **CertificateThumbprint** especifica o certificado de chave pública digital (X509) de uma conta de usuário que tem permissão para executar esse comando no computador de destino.|
 |UseSSL|Esse parâmetro será necessário somente se você estiver executando esse comando de um computador remoto. O parâmetro **UseSSL** especifica o protocolo de protocolo SSL (SSL) que é usado para estabelecer uma conexão com o computador remoto. Por padrão, SSL não é usado.|
 
@@ -198,7 +198,7 @@ Depois de implantar o controlador de rede, você pode usar comandos do Windows P
 
 A tabela a seguir fornece a sintaxe para comandos do Windows PowerShell que você pode usar para realizar essas tarefas.
 
-|Tarefa|Comando|Sintaxe|
+|{1&gt;Tarefa&lt;1}|{1&gt;Comando&lt;1}|Sintaxe|
 |--------|-------|----------|
 |Modificar configurações de cluster do controlador de rede|Set-NetworkControllerCluster|`Set-NetworkControllerCluster [-ManagementSecurityGroup <string>][-Credential <PSCredential>] [-computerName <string>][-CertificateThumbprint <String> ] [-UseSSL]`
 |Modificar configurações do aplicativo do controlador de rede|Set-NetworkController|`Set-NetworkController [-ClientAuthentication <ClientAuthentication>] [-Credential <PSCredential>] [-ClientCertificateThumbprint <string[]>] [-ClientSecurityGroup <string>] [-ServerCertificate <X509Certificate2>] [-RestIPAddress <String>] [-ComputerName <String>][-CertificateThumbprint <String> ] [-UseSSL]`

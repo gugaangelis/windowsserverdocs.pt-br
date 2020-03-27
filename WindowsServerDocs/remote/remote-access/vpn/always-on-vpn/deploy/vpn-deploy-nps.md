@@ -6,22 +6,22 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 5cb0d342afec9c28259efb7a2e15666358f3cb5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18fa85189b082a4a88a8a0bc0d6df11e21e7c97d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404255"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307694"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>Etapa 4. Instalar e configurar o servidor de políticas de rede (NPS)
 
 > Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Última** Etapa 3. Configurar o servidor de acesso remoto da VPN Always On](vpn-deploy-ras.md)
-- [**Última** Etapa 5. Definir as configurações de DNS e de firewall](vpn-deploy-dns-firewall.md)
+- [**Em seguida:** Etapa 3. Configurar o servidor de acesso remoto para VPN Always On](vpn-deploy-ras.md)
+- [**Em seguida:** Etapa 5. Definir configurações de DNS e firewall](vpn-deploy-dns-firewall.md)
 
 Nesta etapa, você instalará o NPS (servidor de políticas de rede) para o processamento de solicitações de conexão enviadas pelo servidor VPN:
 
@@ -104,7 +104,7 @@ Neste procedimento, você registra o servidor no Active Directory para que ele t
 
 2.  No console do NPS, clique com o botão direito do mouse em **NPS (local)** e selecione **registrar servidor em Active Directory**.
    
-     A caixa de diálogo servidor de diretivas de rede é aberta.
+     A caixa de diálogo Servidor de Políticas de Rede é aberta.
 
 3.  Na caixa de diálogo servidor de diretivas de rede, selecione **OK** duas vezes.
 
@@ -179,7 +179,7 @@ Neste procedimento, você configura o NPS como um servidor RADIUS na rede da sua
 
     2. Marque a caixa de seleção **protocolo de autenticação extensível** para selecioná-la.
 
-    3. Em tipo (com base no método de acesso e configuração de rede), **selecione Microsoft: EAP protegido (PEAP)** e, em seguida, selecione **Configurar**.
+    3. Em tipo (com base no método de acesso e configuração de rede), selecione **Microsoft: EAP protegido (PEAP)** e, em seguida, selecione **Configurar**.
       
         A caixa de diálogo Editar propriedades EAP protegidas é aberta.
 
@@ -195,7 +195,7 @@ Neste procedimento, você configura o NPS como um servidor RADIUS na rede da sua
 
 8. Em especificar grupos de usuários, conclua as seguintes etapas:
 
-    1. Selecione **Adicionar**. A caixa de diálogo Selecionar usuários, computadores, contas de serviço ou grupos é aberta.
+    1. Selecione **Adicionar**. A caixa de diálogo Selecionar Usuários, Computadores, Contas de Serviço ou Grupos é aberta.
 
     2. Insira **usuários VPN**e, em seguida, selecione **OK**.
 
@@ -226,6 +226,6 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo ne
 
 2. No prompt do Windows PowerShell, digite **gpupdate**e pressione Enter.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
-[Etapa 5. Defina as configurações de DNS e firewall para](vpn-deploy-dns-firewall.md)Always on VPN: Nesta etapa, você instala o NPS (servidor de políticas de rede) usando o Windows PowerShell ou o assistente Gerenciador do Servidor adicionar funções e recursos. Você também configura o NPS para lidar com todas as tarefas de autenticação, autorização e contabilidade das solicitações de conexão que ele recebe do servidor VPN.
+[Etapa 5. Definir configurações de DNS e firewall para Always On VPN](vpn-deploy-dns-firewall.md): nesta etapa, você instala o servidor de diretivas de rede (NPS) usando o Windows PowerShell ou o assistente de adição de funções e recursos do Gerenciador do servidor. Você também configura o NPS para lidar com todas as tarefas de autenticação, autorização e contabilidade das solicitações de conexão que ele recebe do servidor VPN.

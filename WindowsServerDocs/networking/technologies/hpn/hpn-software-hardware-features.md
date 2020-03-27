@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: f032717b9f4dca65454d8251083b73ff2d57dba7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 93913acbe598c4fd1b8ee5556dbf70013f3d714a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355315"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316944"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>Software e hardware (SH) integrado recursos e tecnologias
 
@@ -70,7 +70,7 @@ O descarregamento de tarefa IPsec é um recurso NIC que permite que o sistema op
 
 PVLANs permitir a comunicação somente entre máquinas virtuais no mesmo servidor de virtualização. Uma rede virtual privada não está associada a um adaptador de rede física. Uma rede virtual privada é isolada de todo o tráfego de rede externo no servidor de virtualização, bem como qualquer tráfego de rede entre o sistema operacional de gerenciamento e a rede externa. Esse tipo de rede é útil quando você precisa criar um ambiente isolado de rede, como um domínio de teste isolada. As pilhas do Hyper-V e do SDN dão suporte apenas ao modo de porta isolada PVLAN.
 
-Para obter detalhes sobre o isolamento de [PVLAN, consulte System Center: Blog](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)de engenharia de Virtual Machine Manager.
+Para obter detalhes sobre o isolamento de PVLAN, consulte [System Center: blog de engenharia de Virtual Machine Manager](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/).
 
 ## <a name="remote-direct-memory-access-rdma"></a>Acesso Remoto Direto à Memória (RDMA) 
 
@@ -90,7 +90,7 @@ O SR-IOV permite que o tráfego da VM seja movido diretamente da NIC para a VM s
 
 O tráfego que usa o SR-IOV ignora o comutador do Hyper-V, o que significa que qualquer política, por exemplo, ACLs ou gerenciamento de largura de banda não será aplicada. O tráfego de SR-IOV também não pode ser transmitido por meio de qualquer recurso de virtualização de rede; portanto, o encapsulamento VxLAN, GRE ou não pode ser aplicado. Use somente SR-IOV para cargas de trabalho bem confiáveis em situações específicas. Além disso, você não pode usar as políticas de host, gerenciamento de largura de banda e tecnologias de virtualização.
 
-No futuro, duas tecnologias permitiriam SR-IOV: GFT (tabelas de fluxo genérico) e descarregamento de QoS de hardware (gerenciamento de largura de banda na NIC) – uma vez que as NICs em nosso ecossistema dão suporte a elas. A combinação dessas duas tecnologias tornaria o SR-IOV útil para todas as VMs, permitiria que políticas, virtualização e regras de gerenciamento de largura de banda fossem aplicadas e poderia resultar em grandes saltos no aplicativo geral de SR-IOV.
+No futuro, duas tecnologias permitiriam SR-IOV: GFT (tabelas de fluxo genérico) e descarga de QoS de hardware (gerenciamento de largura de banda na NIC) – uma vez que as NICs em nosso ecossistema dão suporte a elas. A combinação dessas duas tecnologias tornaria o SR-IOV útil para todas as VMs, permitiria que políticas, virtualização e regras de gerenciamento de largura de banda fossem aplicadas e poderia resultar em grandes saltos no aplicativo geral de SR-IOV.
 
 Para obter mais detalhes, consulte [visão geral de Sr-IOV (virtualização de e/s de raiz única)](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-).
 

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 110696d9f1ff082cfae315632c78fddc14359d52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 549150b10dede7dca9786fe38da40e9b7dea706f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367317"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308150"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>Etapa 1 configurar a infraestrutura de acesso remoto
 
@@ -27,7 +27,7 @@ ms.locfileid: "71367317"
   
 Este tópico descreve como configurar a infraestrutura necessária para uma implantação de acesso remoto avançada usando um único servidor de acesso remoto em um ambiente misto de IPv4 e IPv6. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas na [etapa 1: planejar a infraestrutura de acesso remoto](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md).  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |Definir configurações de rede do servidor|Definir as configurações de rede do servidor no servidor de Acesso Remoto.|  
 |Configurar o roteamento da rede corporativa|Configurar o roteamento da rede corporativa para verificar se o tráfego está devidamente roteado.|  
@@ -40,9 +40,9 @@ Este tópico descreve como configurar a infraestrutura necessária para uma impl
 |Configurar o servidor de local de rede|Configurar o servidor de local de rede, inclusive instalar o certificado do site desse servidor.|  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigNetworkSettings"></a>Definir configurações de rede do servidor  
+## <a name="configure-server-network-settings"></a><a name="BKMK_ConfigNetworkSettings"></a>Definir configurações de rede do servidor  
 Dependendo de se você decidir posicionar o servidor de acesso remoto na borda ou atrás de um dispositivo NAT (conversão de endereços de rede), as seguintes configurações de endereço de interface de rede são necessárias para uma implantação de servidor único em um ambiente com IPv4 e IPv6. Todos os endereços IP são configurados usando **Alterar configurações do adaptador** na **Central de Rede e Compartilhamento do Windows**.  
   
 **Topologia de borda**:  
@@ -78,14 +78,14 @@ Se o servidor de acesso remoto tiver dois adaptadores de rede (um para o perfil 
   
     Os nomes das diretivas IPsec a serem usadas neste comando são **DirectAccess-DaServerToInfra** e **DirectAccess-DaServerToCorp**.  
   
-## <a name="BKMK_ConfigRouting"></a>Configurar o roteamento na rede corporativa  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="BKMK_ConfigRouting"></a>Configurar o roteamento na rede corporativa  
 Configure o roteamento na rede corporativa da seguinte forma:  
   
 -   Quando o IPv6 nativo for implantado na organização, adicione uma rota para que os roteadores no tráfego IPv6 da rota de rede interna retorne pelo servidor de Acesso Remoto.  
   
 -   Configure manualmente as rotas IPv4 e IPv6 da organização nos servidores de Acesso Remoto. Adicione uma rota publicada para que todo o tráfego com um prefixo (/48) IPv6 seja encaminhado para a rede interna. Além disso, para tráfego IPv4, adicione rotas explícitas para que o tráfego IPv4 seja encaminhado para a rede interna.  
   
-## <a name="BKMK_ConfigFirewalls"></a>Configurar firewalls  
+## <a name="configure-firewalls"></a><a name="BKMK_ConfigFirewalls"></a>Configurar firewalls  
 Dependendo das configurações de rede escolhidas, quando você usar firewalls adicionais em sua implantação, aplique as seguintes exceções de firewall para o tráfego de acesso remoto:  
   
 ### <a name="remote-access-server-on-ipv4-internet"></a>Servidor de acesso remoto na Internet IPv4  
@@ -124,12 +124,12 @@ Aplique as seguintes exceções de firewall de rede interna para o tráfego de a
   
 -   ICMP para todo o tráfego IPv4 ou IPv6  
   
-## <a name="BKMK_ConfigCAs"></a>Configurar CAs e certificados  
+## <a name="configure-cas-and-certificates"></a><a name="BKMK_ConfigCAs"></a>Configurar CAs e certificados  
 Com o acesso remoto no Windows Server 2012, você deve escolher entre usar certificados para autenticação do computador ou usar uma autenticação Kerberos interna que usa nomes de usuário e senhas. Você também deve configurar um certificado IP-HTTPS no servidor de acesso remoto. Esta seção explica como configurar esses certificados.  
   
 Para obter informações sobre como configurar uma PKI (infraestrutura de chave pública), consulte [Active Directory serviços de certificados](https://technet.microsoft.com/library/cc770357.aspx).  
   
-### <a name="BKMK_ConfigIPsec"></a>Configurar a autenticação IPsec  
+### <a name="configure-ipsec-authentication"></a><a name="BKMK_ConfigIPsec"></a>Configurar a autenticação IPsec  
 Um certificado é necessário no servidor de acesso remoto e em todos os clientes DirectAccess para que eles possam usar a autenticação IPsec. O certificado deve ser emitido por uma autoridade de certificação interna (CA). Os servidores de acesso remoto e os clientes do DirectAccess devem confiar na AC que emite os certificados raiz e intermediário.  
   
 ##### <a name="to-configure-ipsec-authentication"></a>Para configurar a autenticação IPsec  
@@ -145,7 +145,7 @@ Um certificado é necessário no servidor de acesso remoto e em todos os cliente
   
 4.  Configure o registro automático de certificado, se necessário. Para obter mais informações, consulte [Configurar o registro automático de certificado](https://technet.microsoft.com/library/cc731522.aspx).  
   
-### <a name="BKMK_ConfigCertTemp"></a>Configurar modelos de certificado  
+### <a name="configure-certificate-templates"></a><a name="BKMK_ConfigCertTemp"></a>Configurar modelos de certificado  
 Ao usar uma autoridade de certificação interna para emitir certificados, você deve configurar modelos de certificado para o certificado IP-HTTPS e o certificado de site do servidor de local de rede.  
   
 ##### <a name="to-configure-a-certificate-template"></a>Para configurar um modelo de certificado  
@@ -160,7 +160,7 @@ Depois de preparar seus modelos, você pode usá-los para configurar os certific
   
 -   [Configurar o servidor de local de rede](#BKMK_ConfigNLS)  
   
-### <a name="BKMK_IPHTTPS"></a>Configurar o certificado IP-HTTPS  
+### <a name="configure-the-ip-https-certificate"></a><a name="BKMK_IPHTTPS"></a>Configurar o certificado IP-HTTPS  
 O Acesso Remoto requer um certificado IP-HTTPS para autenticar conexões IP-HTTPS para o servidor de Acesso Remoto. Existem três opções de certificado para o certificado IP-HTTPS:  
   
 -   **Publicada**  
@@ -226,10 +226,10 @@ Verifique se o certificado do site usado para autenticação IP-HTTPS atende aos
   
 14. No painel de detalhes do snap-in certificados, verifique se o novo certificado foi registrado com a finalidade pretendida da autenticação do servidor.  
   
-## <a name="BKMK_ConfigDNS"></a>Configurar o servidor DNS  
+## <a name="configure-the-dns-server"></a><a name="BKMK_ConfigDNS"></a>Configurar o servidor DNS  
 Você deve configurar manualmente uma entrada DNS para o site do servidor de local da rede interna da sua implantação.  
   
-### <a name="NLS_DNS"></a>Para adicionar o servidor de local de rede e investigação da Web  
+### <a name="to-add-the-network-location-server-and-web-probe"></a><a name="NLS_DNS"></a>Para adicionar o servidor de local de rede e investigação da Web  
   
 1.  No servidor DNS da rede interna: na tela **Iniciar** , digite**DNSMGMT. msc**e pressione Enter.  
   
@@ -239,13 +239,13 @@ Você deve configurar manualmente uma entrada DNS para o site do servidor de loc
   
 4.  Na caixa de diálogo **novo host** , na caixa **nome (usa o nome de domínio pai se estiver em branco)** , insira o nome DNS para a investigação da Web (o nome da investigação da Web padrão é DirectAccess-webprobehost). Na caixa **Endereço IP**, digite o endereço IPv4 da sonda da web e clique em **Adicionar Host**.  
   
-5.  Repita esse processo para o directaccess-corpconnectivityhost e quaisquer verificadores de conectividade criados manualmente. Na caixa de diálogo **DNS** , clique em **OK**.  
+5.  Repita esse processo para directaccess-corpconnectivityhost e para todos os verificadores de conectividade criados manualmente. Na caixa de diálogo **DNS** , clique em **OK**.  
   
 6.  Clique em **Concluído**.  
   
 ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -266,7 +266,7 @@ Você também deve configurar entradas DNS para o seguinte:
   
     O protocolo ISATAP usa túneis para permitir que clientes DirectAccess se conectem ao servidor de acesso remoto pela Internet IPv4, encapsulando pacotes IPv6 dentro de um cabeçalho IPv4. Ele é usado pelo Acesso Remoto para fornecer conectividade IPv6 aos hosts ISATAP na intranet. Em um ambiente de rede IPv6 não nativo, o servidor de acesso remoto se configura automaticamente como um roteador ISATAP. É necessário suporte à resolução para o nome ISTAPA.  
   
-## <a name="BKMK_ConfigAD"></a>Configurar Active Directory  
+## <a name="configure-active-directory"></a><a name="BKMK_ConfigAD"></a>Configurar Active Directory  
 O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess devem ser ingressados em um domínio do Active Directory. Os computadores cliente do DirectAccess devem ser membros de um dos seguintes tipos de domínio:  
   
 -   Domínios pertencentes à mesma floresta que o servidor de Acesso Remoto.  
@@ -289,7 +289,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 6.  Quando você for solicitado a reiniciar o computador, clique em **OK**.  
   
-7.  Na caixa de diálogo **Propriedades do Sistema** , clique em **Fechar**.  
+7.  Na caixa de diálogo **Propriedades do Sistema**, clique em **Fechar**.  
   
 8.  Quando for solicitado a reiniciar o computador, clique em **Reiniciar Agora**.  
   
@@ -317,7 +317,7 @@ O servidor de Acesso Remoto e todos os computadores cliente do DirectAccess deve
   
 ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 > [!NOTE]  
 > Você deve fornecer credenciais de domínio depois de inserir o comando a seguir.  
@@ -327,7 +327,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="BKMK_ConfigGPOs"></a>Configurar GPOs  
+## <a name="configure-gpos"></a><a name="BKMK_ConfigGPOs"></a>Configurar GPOs  
 Para implantar o acesso remoto, você precisa de um mínimo de dois objetos Política de Grupo. Um objeto Política de Grupo contém configurações para o servidor de acesso remoto e um contém configurações para computadores cliente do DirectAccess. Quando você configura o acesso remoto, o assistente cria automaticamente os objetos de Política de Grupo necessários. No entanto, se sua organização aplicar uma Convenção de nomenclatura ou se você não tiver as permissões necessárias para criar ou editar objetos Política de Grupo, eles deverão ser criados antes de configurar o acesso remoto.  
   
 Para criar Política de Grupo objetos, consulte [criar e editar um objeto política de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
@@ -351,10 +351,10 @@ Um administrador pode vincular manualmente os objetos de Política de Grupo do D
 > [!NOTE]  
 > Se um objeto Política de Grupo foi criado manualmente, é possível que o objeto Política de Grupo não esteja disponível durante a configuração do DirectAccess. O objeto Política de Grupo pode não ter sido replicado para o controlador de domínio mais próximo do computador de gerenciamento. O administrador pode aguardar a replicação concluir ou forçar a replicação.  
   
-## <a name="BKMK_ConfigSGs"></a>Configurar grupos de segurança  
+## <a name="configure-security-groups"></a><a name="BKMK_ConfigSGs"></a>Configurar grupos de segurança  
 As configurações do DirectAccess que estão contidas no computador cliente Política de Grupo objeto são aplicadas somente a computadores que são membros dos grupos de segurança que você especificar ao configurar o acesso remoto.  
   
-### <a name="Sec_Group"></a>Para criar um grupo de segurança para clientes do DirectAccess  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>Para criar um grupo de segurança para clientes do DirectAccess  
   
 1.  Na tela **Iniciar** , digite**DSA. msc**e pressione Enter.  
   
@@ -366,20 +366,20 @@ As configurações do DirectAccess que estão contidas no computador cliente Pol
   
 5.  Clique duas vezes no grupo de segurança computadores cliente DirectAccess e, na caixa de diálogo **Propriedades** , clique na guia **Membros** .  
   
-6.  Na guia **Membros** , clique em **Adicionar**.  
+6.  Na guia **Membros**, clique em **Adicionar**.  
   
 7.  Na caixa de diálogo **Selecionar Usuários, Contatos, Computadores ou Contas de Serviço**, escolha os computadores cliente que desejar habilitar para o DirectAccess e clique em **OK**.  
   
 ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_ConfigNLS"></a>Configurar o servidor de local de rede  
+## <a name="configure-the-network-location-server"></a><a name="BKMK_ConfigNLS"></a>Configurar o servidor de local de rede  
 O servidor de local de rede deve estar em um servidor com alta disponibilidade e precisa de um certificado de protocolo SSL (SSL) válido que seja confiável para os clientes do DirectAccess.  
   
 > [!NOTE]  
@@ -453,7 +453,7 @@ Se você usar um certificado privado ou um certificado autoassinado, ele exigir�
   
 4.  Verifique se os clientes DirectAccess na rede interna podem resolver o nome do servidor de local de rede e se os clientes DirectAccess na Internet não podem resolver o nome.  
   
-## <a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
   
 -   [Etapa 2: configurar o servidor de acesso remoto](Step-2-Configure-the-Remote-Access-Server.md)
 

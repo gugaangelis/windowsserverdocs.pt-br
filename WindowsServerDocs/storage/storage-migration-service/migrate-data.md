@@ -4,16 +4,16 @@ description: Breve descrição do tópico para resultados do mecanismo de pesqui
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 02/13/2019
+ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 20aa5fbc40efc5a3a439361dadfac0f47f4b41d8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: cb1ac2fc1c7d4ed0a7f57bbe95cb9989bc85e99e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822619"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310557"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar o serviço de migração de armazenamento para migrar um servidor
 
@@ -32,7 +32,7 @@ Antes de começar, instale o serviço de migração de armazenamento e verifique
 6. Em todos os servidores de origem e em todos os servidores de destino que executam o Windows Server 2012 R2 ou o Windows Server 2016, no centro de administração do Windows, conecte-se a cada servidor, vá para **Gerenciador do servidor** (no centro de administração do windows) > **Firewall** > **regras de entrada**e verifique se as regras a seguir estão habilitadas:
     - Compartilhamento de arquivos e de impressora (SMB-Entrada)
     - Serviço Netlogon (NP-in)
-    - Instrumentação de Gerenciamento do Windows (DCOM-in)
+    - DCOM-In (Instrumentação de Gerenciamento do Windows)
     - Instrumentação de Gerenciamento do Windows (WMI-In)
 
    Se você estiver usando firewalls de terceiros, os intervalos de portas de entrada a serem abertos serão TCP/445 (SMB), TCP/135 (mapeador de ponto de extremidade RPC/DCOM) e TCP 1025-65535 (portas efêmeras RPC/DCOM). As portas do serviço de migração de armazenamento são TCP/28940 (Orchestrator) e TCP/28941 (proxy).
@@ -60,12 +60,15 @@ Nesta etapa, você transfere dados depois de especificar onde colocá-los nos se
 1. Na página **transferir dados** > **Insira as credenciais** , digite as credenciais de administrador que funcionam nos servidores de destino para os quais você deseja migrar e, em seguida, selecione **Avançar**.
 2. Na página **Adicionar um dispositivo de destino e mapeamentos** , o primeiro servidor de origem é listado. Digite o nome do servidor ou servidor de arquivos clusterizado para o qual você deseja migrar e, em seguida, selecione **verificar dispositivo**. Se estiver migrando de um computador de origem ingressado no domínio, o servidor de destino deverá ingressar no mesmo domínio. Você também pode clicar em "criar uma nova VM do Azure" e usar o assistente para implantar um novo servidor de destino no Azure. Isso dimensionará automaticamente a VM, provisionará o armazenamento, formatará os discos, ingressará no domínio e adicionará o proxy do serviço de migração de armazenamento a um destino do Windows Server 2019. Você pode escolher entre as VMs do Windows Server 2019 (recomendado), do Windows Server 2016 e do Windows Server 2012 R2 de qualquer tamanho e usar discos gerenciados.   
 
- > [!NOTE]
-   > Usar "criar uma nova VM do Azure" requer que você tenha:
-   > - Uma assinatura válida do Azure.
-   > - Um grupo de recursos de computação do Azure existente no qual você tem direitos de criação.
-   > - Uma rede virtual do Azure e uma sub-rede existentes. 
-   > - Uma solução de VPN ou de rota expressa do Azure vinculada à rede virtual e à sub-rede que permite a conectividade dessa VM IaaS do Azure para seus clientes locais, controladores de domínio, o computador Orchestrator do serviço de migração de armazenamento, o computador do centro de administração do Windows, e o computador de origem a ser migrado.
+    > [!NOTE]
+    > Usar "criar uma nova VM do Azure" requer que você tenha:
+    > - Uma assinatura válida do Azure.
+    > - Um grupo de recursos de computação do Azure existente no qual você tem direitos de criação.
+    > - Uma rede virtual do Azure e uma sub-rede existentes. 
+    > - Uma solução de VPN ou de rota expressa do Azure vinculada à rede virtual e à sub-rede que permite a conectividade dessa VM IaaS do Azure para seus clientes locais, controladores de domínio, o computador Orchestrator do serviço de migração de armazenamento, o computador do centro de administração do Windows, e o computador de origem a ser migrado.
+   
+    Aqui está um vídeo mostrando como usar o serviço de migração de armazenamento para migrar para VMs do Azure.
+    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
 
 3. Mapeie os volumes de origem para volumes de destino, desmarque a caixa de seleção **incluir** para todos os compartilhamentos que você não deseja transferir (incluindo quaisquer compartilhamentos administrativos localizados na pasta de sistema do Windows) e, em seguida, selecione **Avançar**.
    ![captura de tela mostrando um servidor de origem e seus volumes e compartilhamentos e para onde eles serão transferidos no destino](media/migrate/transfer.png) **Figura 3: um servidor de origem e onde seu armazenamento será transferido para**
@@ -111,7 +114,7 @@ Nesta etapa, você reduz os servidores de origem para os servidores de destino, 
 7. Selecione **validar** na página **validar dispositivo de origem e de destino** e, em seguida, selecione **Avançar**.
 8. Quando estiver pronto para realizar a transferência, selecione **Iniciar transferência**. <br>Os usuários e aplicativos podem experimentar uma interrupção enquanto o endereço e os nomes são movidos e os servidores são reiniciados várias vezes cada, mas não serão afetados pela migração. Por quanto tempo a transferência demora depende da rapidez com que os servidores são reiniciados, bem como Active Directory e tempos de replicação de DNS.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)
 - [Perguntas frequentes sobre serviços de migração de armazenamento](faq.md)

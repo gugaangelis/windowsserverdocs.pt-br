@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0240a3-b927-4a1e-b241-5f8f29a9552f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2da5bc3008b9b686ddb2bce460ced39f98183f28
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 22f4475df00e975ffc5cd0956a0126673a67f907
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394622"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309272"
 ---
 # <a name="bgp-windows-powershell-command-reference"></a>Referência de comando do Windows PowerShell do BGP
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico como uma referência, ao gravar scripts do Windows PowerShell, para adicionar, configurar e remover recursos de BGP do gateway RAS e roteadores de rede local (LAN) de acesso remoto.  
   
@@ -32,7 +32,7 @@ Para obter mais informações sobre todos os comandos de acesso remoto, consulte
 ## <a name="bgp-command-reference"></a>Referência de comando BGP  
 As seções a seguir fornecem o nome, a finalidade e a sintaxe do comando para cada comando BGP, bem como um link para o comando na referência de acesso remoto, que contém informações mais detalhadas sobre cada comando.  
   
-Essa referência contém as seções a seguir.  
+Esta referência contém as seções a seguir.  
   
 -   [Adicionar comandos](#bkmk_add)  
   
@@ -52,7 +52,7 @@ Essa referência contém as seções a seguir.
   
 -   [Comandos de desinstalação](#bkmk_uninstall)  
   
-### <a name="bkmk_add"></a>Adicionar comandos  
+### <a name="add-commands"></a><a name="bkmk_add"></a>Adicionar comandos  
 A seguir estão os comandos BGP Add.  
   
 [Add-BgpCustomRoute](https://technet.microsoft.com/library/dn262684.aspx)  
@@ -103,7 +103,7 @@ Adiciona políticas de roteamento BGP a pares de BGP.
 Add-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -PolicyName <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_clear"></a>Limpar comandos  
+### <a name="clear-commands"></a><a name="bkmk_clear"></a>Limpar comandos  
 A seguir estão os comandos Clear para BGP  
   
 [Clear-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463114.aspx)  
@@ -114,7 +114,7 @@ Limpa as informações de extinção de oscilação de rota para o conjunto espe
 Clear-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Prefix <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_disable"></a>Desabilitar e habilitar comandos  
+### <a name="disable-and-enable-commands"></a><a name="bkmk_disable"></a>Desabilitar e habilitar comandos  
 A seguir estão os comandos Disable e Enable para BGP  
   
 [Desabilitar-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463100.aspx)  
@@ -133,7 +133,7 @@ Habilita o retardamento de rota para as rotas BGP de oscilação.
 Enable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-PassThru] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_get"></a>Obter comandos  
+### <a name="get-commands"></a><a name="bkmk_get"></a>Obter comandos  
 A seguir estão os comandos Get para BGP.  
   
 [Get-BgpCustomRoute](https://technet.microsoft.com/library/dn262664.aspx)  
@@ -200,7 +200,7 @@ Recupera a mensagem relacionada ao emparelhamento via protocolo BGP e estatísti
 Get-BgpStatistics [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_install"></a>Instalar comandos  
+### <a name="install-commands"></a><a name="bkmk_install"></a>Instalar comandos  
 A seguir estão os comandos de instalação para o gateway RAS e BGP.  
   
 [Instalar-RemoteAccess](https://technet.microsoft.com/library/hh918408.aspx)  
@@ -234,7 +234,7 @@ Se você estiver usando o acesso remoto como um roteador de LAN em vez de como u
 Install-RemoteAccess -VpnType RoutingOnly  
 ```  
   
-### <a name="bkmk_remove"></a>Remover comandos  
+### <a name="remove-commands"></a><a name="bkmk_remove"></a>Remover comandos  
 A seguir estão os comandos de remoção para BGP.  
   
 [Remove-BgpCustomRoute](https://technet.microsoft.com/library/dn262669.aspx)  
@@ -286,7 +286,7 @@ Parameter Set: Remove1
 Remove-BgpRoutingPolicyForPeer [-CimSession <CimSession[]> ] [-Direction <PolicyDirection> {Ingress | Egress} ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-PolicyName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_set"></a>Definir comandos  
+### <a name="set-commands"></a><a name="bkmk_set"></a>Definir comandos  
 A seguir estão os comandos set para BGP.  
   
 [Set-BgpPeer](https://technet.microsoft.com/library/dn262673.aspx)  
@@ -337,7 +337,7 @@ Modifica as políticas de roteamento de BGP para pares de BGP.
 Set-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -PolicyName <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_start"></a>Comandos Iniciar e parar  
+### <a name="start-and-stop-commands"></a><a name="bkmk_start"></a>Comandos Iniciar e parar  
 A seguir estão os comandos start e Stop para BGP.  
   
 [Start-BgpPeer](https://technet.microsoft.com/library/dn262683.aspx)  
@@ -356,7 +356,7 @@ Interrompe as sessões de roteamento para pares de BGP.
 Stop-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_uninstall"></a>Comandos de desinstalação  
+### <a name="uninstall-commands"></a><a name="bkmk_uninstall"></a>Comandos de desinstalação  
 A seguir estão os comandos de desinstalação para o gateway RAS e BGP.  
   
 [Desinstalar-RemoteAccess](https://technet.microsoft.com/library/hh918390.aspx)  

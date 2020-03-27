@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88ffd598-2fde-402c-bd12-be790f84dc96
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 764fd6d272a498898bbdb1f1da68e0d41c39cf84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 943ec8d386d5fe9910b4415a2ab2525d23efc32e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404614"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308259"
 ---
 # <a name="plan-a-remote-access-cluster-deployment"></a>Planejar uma implantação de cluster de acesso remoto
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
  O Windows Server 2016 e o Windows Server 2012 combinam o DirectAccess e o serviço de acesso remoto (RAS) VPN em uma única função de acesso remoto. Esta visão geral fornece uma introdução às etapas de planejamento necessárias para implantar um cluster de servidores de acesso remoto do Windows Server 2016 ou do Windows Server 2012.
   

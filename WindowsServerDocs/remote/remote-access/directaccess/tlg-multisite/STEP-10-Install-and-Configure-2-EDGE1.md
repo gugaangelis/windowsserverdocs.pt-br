@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7044a0d219decceb7669e92e884c78bcd9e3a61c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7d21d80f4970a501e31a053483c37268bdddb811
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388394"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314610"
 ---
 # <a name="step-10-install-and-configure-2-edge1"></a>ETAPA 10 instalar e configurar o 2-EDGE1
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 a configuração 2-EDGE1 consiste no seguinte:  
   
@@ -41,17 +41,17 @@ a configuração 2-EDGE1 consiste no seguinte:
   
 2-EDGE1 deve ter dois adaptadores de rede instalados.  
   
-## <a name="installOS"></a>Instalar o sistema operacional em 2-EDGE1  
+## <a name="install-the-operating-system-on-2-edge1"></a><a name="installOS"></a>Instalar o sistema operacional em 2-EDGE1  
   
 1.  Inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.  
   
-2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta local de administrador.  
+2.  Siga as instruções para concluir a instalação, especificando o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (instalação completa) e uma senha forte para a conta de administrador local. Faça logon usando a conta do Administrador local.  
   
 3.  Conecte-se a 2-EDGE1 a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 e desconecte-se da Internet.  
   
 4.  Conecte um adaptador de rede à sub-rede 2-corpnet e a outra à Internet simulada.  
   
-## <a name="tcpip"></a>Configurar as propriedades de TCP/IP  
+## <a name="configure-tcpip-properties"></a><a name="tcpip"></a>Configurar as propriedades de TCP/IP  
   
 1.  No console do Gerenciador do Servidor, clique em **servidor local**e, na área **Propriedades** , ao lado de **conexão Ethernet com fio**, clique no link.  
   
@@ -93,9 +93,9 @@ a configuração 2-EDGE1 consiste no seguinte:
   
 20. Em **sufixo DNS para esta conexão**, digite **ISP.example.com**, clique em **OK** duas vezes e, em seguida, clique em **fechar**.  
   
-21. Feche a janela **Conexões de Rede** .  
+21. Feche a janela **Conexões de Rede**.  
   
-## <a name="routing"></a>Configurar o roteamento entre sub-redes  
+## <a name="configure-routing-between-subnets"></a><a name="routing"></a>Configurar o roteamento entre sub-redes  
   
 1.  Na tela **Iniciar** , digite**cmd. exe**e pressione Enter.  
   
@@ -112,7 +112,7 @@ a configuração 2-EDGE1 consiste no seguinte:
   
 5.  Feche a janela do Prompt de Comando.  
   
-## <a name="Join"></a>Junção 2-EDGE1 ao domínio CORP2  
+## <a name="join-2-edge1-to-the-corp2-domain"></a><a name="Join"></a>Junção 2-EDGE1 ao domínio CORP2  
   
 1.  No console do Gerenciador do Servidor, no **servidor local**, na área **Propriedades** , ao lado de **nome do computador**, clique no link.  
   
@@ -132,7 +132,7 @@ a configuração 2-EDGE1 consiste no seguinte:
   
 9. Depois que o computador for reiniciado, clique em **Alternar usuário**e, em seguida, clique em **outro usuário** e faça logon no domínio CORP2 com a conta de administrador.  
   
-## <a name="certs"></a>Obter certificados em 2-EDGE1  
+## <a name="obtain-certificates-on-2-edge1"></a><a name="certs"></a>Obter certificados em 2-EDGE1  
   
 1.  Na tela **Iniciar** , digite**MMC. exe**e pressione Enter.  
   
@@ -164,7 +164,7 @@ a configuração 2-EDGE1 consiste no seguinte:
   
 15. Feche a janela do console. Se for solicitado que você salve as configurações, clique em **não**.  
   
-## <a name="Access"></a>Fornecer acesso ao CORP\User1  
+## <a name="provide-access-to-corpuser1"></a><a name="Access"></a>Fornecer acesso ao CORP\User1  
   
 1.  Na tela **Iniciar** , digite**compmgmt. msc**e pressione Enter.  
   
@@ -180,9 +180,9 @@ a configuração 2-EDGE1 consiste no seguinte:
   
 7.  Na caixa de diálogo **Propriedades de administradores** , clique em **OK**.  
   
-8.  Feche a janela Gerenciamento do computador.  
+8.  Feche a janela Gerenciamento do Computador.  
   
-## <a name="InstallDA"></a>Instalar a função de acesso remoto em 2-EDGE1  
+## <a name="install-the-remote-access-role-on-2-edge1"></a><a name="InstallDA"></a>Instalar a função de acesso remoto em 2-EDGE1  
   
 1.  No console do Gerenciador do Servidor, no **painel**, clique em **adicionar funções e recursos**.  
   
@@ -194,7 +194,7 @@ a configuração 2-EDGE1 consiste no seguinte:
   
 5.  Na caixa de diálogo **Confirmar seleções de instalação**, clique em **Instalar**.  
   
-6.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
+6.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem sucedida e, em seguida, clique em **Fechar**.  
   
 
 

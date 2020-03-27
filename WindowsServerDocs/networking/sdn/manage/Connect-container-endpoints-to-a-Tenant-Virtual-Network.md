@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
-ms.author: pashort
+ms.author: lizross
 author: jmesser81
 ms.date: 08/24/2018
-ms.openlocfilehash: 83996f7ffb82d01c9f36945efa022f0dd0b9825b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5673cb6f808f37fb7737e22cf93c3984073e4f48
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355822"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309832"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conectar pontos de extremidade do contêiner a uma rede virtual do locatário
 
@@ -45,7 +45,7 @@ A diferença entre os drivers *l2bridge* e *l2tunnel* é:
 >Esses modos de rede não funcionam para conectar pontos de extremidade de contêiner do Windows a uma rede virtual de locatário na nuvem pública do Azure.
 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 -  Uma infraestrutura de SDN implantada com o controlador de rede.
 -  Uma rede virtual de locatário foi criada.
 -  Uma máquina virtual de locatário implantada com o recurso de contêiner do Windows habilitado, Docker instalado e recurso do Hyper-V habilitado. O recurso Hyper-V é necessário para instalar vários binários para redes l2bridge e l2tunnel.

@@ -7,19 +7,19 @@ ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 29013827d0cde0447c48afa7a42551760ab9e940
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a17d5f5fec0a05b4258b295eb37b6dc80cdaee1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356000"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313053"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implantar uma infraestrutura de rede definida pelo software usando scripts
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, você implanta uma infraestrutura de SDN (rede definida pelo software) da Microsoft usando scripts. A infraestrutura inclui um controlador de rede altamente disponível (HA), um Load Balancer de software de alta disponibilidade (SLB)/MUX, redes virtuais e ACLs (listas de controle de acesso) associadas. Além disso, outro script implanta uma carga de trabalho de locatário para validar sua infraestrutura de SDN.  
 
@@ -31,7 +31,7 @@ Você também pode implantar uma infraestrutura SDN usando o Virtual Machine Man
 ## <a name="pre-deployment"></a>Pré-implantação  
 
 > [!IMPORTANT]  
-> Antes de começar a implantação, você deve planejar e configurar seus hosts e a infraestrutura de rede física. Para obter mais informações, consulte [Planejar a infraestrutura de rede definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
+> Antes de começar a implantação, você deve planejar e configurar seus hosts e a infraestrutura de rede física. Para obter mais informações, confira [Planejar a infraestrutura de rede definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
 
 Todos os hosts Hyper-V devem ter o Windows Server 2016 instalado.  
 
@@ -127,7 +127,7 @@ Se você usar o nano como seus hosts do Hyper-V (servidores físicos) para a imp
 1. Todos os nós do nano precisam ter o pacote DSC instalado com o pacote de idiomas:  
 
    - Microsoft-NanoServer-DSC-Package. cab  
-   - Microsoft-NanoServer-DSC-Package_en-us. cab
+   - Microsoft-coserver-DSC-Package_en-US. cab
 
      ``dism /online /add-package /packagepath:<Path> /loglevel:4``  
 
@@ -149,7 +149,7 @@ Se você usar o nano como seus hosts do Hyper-V (servidores físicos) para a imp
 
 4. Compartilhe a pasta `C:\SDNExpress` como "**SDNExpress**" com permissão para **todos** para **leitura/gravação**.  
 
-5. Navegue até a `C:\SDNExpress` pasta.<p>Você verá as seguintes pastas:  
+5. Navegue até a pasta `C:\SDNExpress`.<p>Você verá as seguintes pastas:  
 
 
    | Nome da pasta |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -165,7 +165,7 @@ Se você usar o nano como seus hosts do Hyper-V (servidores físicos) para a imp
 
 6. Verifique se o arquivo VHDX do Windows Server 2016 está na pasta **imagens** .  
 
-7. Personalize o arquivo SDNExpress\scripts\FabricConfig.psd1 alterando o **< < substituir >** marcas de > com valores específicos para se adequar à infraestrutura de laboratório, incluindo nomes de host, nomes de domínio, nomes de dados e senhas e informações de rede para o redes listadas no tópico Planejamento de rede.  
+7. Personalize o arquivo SDNExpress\scripts\FabricConfig.psd1 alterando a **< < substituir >** marcas de > com valores específicos para se ajustar à sua infraestrutura de laboratório, incluindo nomes de host, nomes de domínio, nomes de dados e senhas e informações de rede para as redes listadas no tópico Planejamento de rede.  
 
 8. Crie um registro de host A no DNS para o NetworkControllerRestName (FQDN) e NetworkControllerRestIP.  
 
@@ -190,7 +190,7 @@ Use [ferramentas de diagnóstico](https://docs.microsoft.com/windows-server/netw
 
 Agora que os recursos de malha foram implantados, você pode validar sua implantação de SDN de ponta a ponta implantando uma carga de trabalho de locatário de exemplo. Essa carga de trabalho de locatário consiste em duas sub-redes virtuais (camada da Web e camada de banco de dados) protegidas por meio de regras de ACL (lista de controle de acesso) usando o firewall distribuído do SDN. A sub-rede virtual da camada da Web pode ser acessada por meio do SLB/MUX usando um endereço IP virtual (VIP). O script implanta automaticamente duas máquinas virtuais de camada da Web e uma máquina virtual de camada de banco de dados e as conecta às sub-redes virtuais.  
 
-1.  Personalize o arquivo SDNExpress\scripts\TenantConfig.psd1 alterando o **< < substituir >** marcas de > com valores específicos (por exemplo: Nome da imagem do VHD, nome do REST do controlador de rede, nome do vSwitch, etc. conforme definido anteriormente no arquivo FabricConfig. psd1)  
+1.  Personalize o arquivo SDNExpress\scripts\TenantConfig.psd1 alterando o **< < substituir >** marcas de > com valores específicos (por exemplo: nome da imagem do VHD, nome de REST do controlador de rede, nome do vSwitch, etc. conforme definido anteriormente no arquivo FabricConfig. psd1)  
 
 2.  Execute o script. Por exemplo:  
 
@@ -219,6 +219,6 @@ Para validar se a implantação do locatário foi bem-sucedida, faça o seguinte
    >[!TIP]
    >Procure a variável `VIPIP` em TenantConfig. psd1.
 
-   Execute este vários vezes para ver a alternância do balanceador de carga entre os DIPs disponíveis. Você também pode observar esse comportamento usando um navegador da Web. Navegue para `<VIP IP address>/unique.htm`. Feche o brower e abra uma nova instância e navegue novamente. Você verá a página azul e a página verde alternativa, exceto quando o navegador armazenar a página em cache antes do tempo limite do cache.
+   Execute este vários vezes para ver a alternância do balanceador de carga entre os DIPs disponíveis. Você também pode observar esse comportamento usando um navegador da Web. Navegue até `<VIP IP address>/unique.htm`. Feche o brower e abra uma nova instância e navegue novamente. Você verá a página azul e a página verde alternativa, exceto quando o navegador armazenar a página em cache antes do tempo limite do cache.
 
 ---

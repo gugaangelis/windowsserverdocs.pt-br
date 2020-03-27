@@ -3,7 +3,7 @@ title: Gerenciar aplicativos no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,24 +12,24 @@ ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1a60a9e7fd958d447b4770431a69546f0ad6f229
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7701cbc11ec691b4d4aadd5668dce6438eb9a076
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433354"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311412"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Gerenciar aplicativos no Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
  
- O painel do servidor no Windows Server Essentials e Windows Server 2012 R2 com a função experiência Windows Server Essentials instalada torna possível realizar tarefas administrativas comuns. Para realizar essas tarefas, veja o seguinte:  
+ O painel do servidor no Windows Server Essentials e no Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada torna possível executar tarefas administrativas comuns. Para realizar essas tarefas, veja o seguinte:  
   
--   [Tarefas de gerenciamento de aplicativo no painel](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Tarefas de gerenciamento de aplicativos no painel](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_1)  
   
 -   [Instalar ou remover suplementos usando o painel](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)  
   
-##  <a name="BKMK_1"></a> Tarefas de gerenciamento de aplicativo no painel  
+##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a>Tarefas de gerenciamento de aplicativos no painel  
  A página de Gerenciamento de **Aplicativos** do Painel fornece:  
   
 - Uma lista de suplementos instalados, que exibe:  
@@ -58,14 +58,14 @@ ms.locfileid: "66433354"
 |Ler a política de privacidade do suplemento|Abre seu navegador da Internet em um site que possa exibir a política de privacidade.|  
 |Como fazer para instalar ou remover suplementos?|Abre seu navegador da Internet em uma página da Web que exibe o tópico de Ajuda do assunto.|  
   
-##  <a name="BKMK_2"></a> Instalar ou remover suplementos usando o painel  
+##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a>Instalar ou remover suplementos usando o painel  
  Um suplemento é um aplicativo de software que fornece recursos e funcionalidades adicionais para seu servidor. Um número crescente de suplementos está disponível da Microsoft e de outros ISVs (fornecedores de software independentes).  
   
  Antes de você poder aproveitar a funcionalidade estendida que um suplemento fornece, você deve primeiro instalar o suplemento no servidor.  
   
 #### <a name="to-install-an-add-in-from-microsoft-pinpoint"></a>Para instalar um suplemento do Microsoft Pinpoint  
   
-1.  No Painel do servidor, clique em **Aplicativos**e clique na guia **Microsoft Pinpoint** .  Uma lista de suplementos disponíveis aparece.  
+1.  No painel do servidor, clique em **aplicativos**e, em seguida, clique na guia **Microsoft Pinpoint** .  Uma lista de suplementos disponíveis é exibida.  
   
 2.  Clique no suplemento que você deseja instalar. A página de informações do suplemento será exibida.  
   
@@ -91,7 +91,7 @@ ms.locfileid: "66433354"
   
 2.  Clique na guia **Aplicativos**.  
   
-3.  Na guia **Suplementos** , selecione o suplemento que você deseja remover e em seguida, clique em **Remover o suplemento**.  
+3.  Na guia **Suplementos**, selecione o suplemento que você deseja remover e em seguida, clique em **Remover o suplemento**.  
   
 4.  Na janela **Remover o suplemento**, clique em **Remover**.  
   
@@ -100,6 +100,6 @@ ms.locfileid: "66433354"
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Visão geral do Dashboard](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
+-   [Visão geral do painel](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](Manage-Windows-Server-Essentials.md)

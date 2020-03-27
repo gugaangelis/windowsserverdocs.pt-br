@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2175cf9c740d7b727ba017922a77c94d4379c891
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b2fa8ff6742dc393a5a2cc962c7f849049b5ef31
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355280"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312426"
 ---
 # <a name="edit-a-dns-zone"></a>Editar uma zona DNS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para editar uma zona DNS no console do cliente IPAM.  
   
@@ -49,7 +49,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo pa
   
     ![Editar zona DNS](../../media/Edit-a-DNS-Zone/ipam_EditZone_02.jpg)  
   
-6.  A caixa de diálogo **Editar zona DNS** é aberta com a página **geral** selecionada. Se necessário, edite as propriedades gerais da zona: **Servidor DNS**, **categoria de zona**e **tipo de zona**e, em seguida, clique em **aplicar** ou, se as edições estiverem concluídas, **OK**.  
+6.  A caixa de diálogo **Editar zona DNS** é aberta com a página **geral** selecionada. Se necessário, edite as propriedades de zona geral: **servidor DNS**, **categoria de zona**e **tipo de zona**e, em seguida, clique em **aplicar** ou, se as edições estiverem concluídas, **OK**.  
   
     ![Editar propriedades da zona e salvar](../../media/Edit-a-DNS-Zone/ipam_EditZone_03a.jpg)  
   

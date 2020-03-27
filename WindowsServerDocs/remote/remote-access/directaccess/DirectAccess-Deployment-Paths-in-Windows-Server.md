@@ -10,20 +10,20 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 22ccd5c3-0a26-484c-88c8-54119d1228cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: edbc9a3e44f3f2aa2586f7c82462255beec3733b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f2874f5ab75723f6a0fec137dd1f1cd7d6a2efbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405000"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310960"
 ---
 # <a name="directaccess-deployment-paths-in-windows-server"></a>Caminhos de implantação do DirectAccess no Windows Server
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
-Este tópico fornece uma lista da documentação para os dois caminhos principais de implantação de acesso remoto: **Básico** e **avançado**.  
+Este tópico fornece uma lista da documentação para os dois caminhos principais de implantação de acesso remoto: **básico** e **avançado**.  
   
 Você pode usar a seção abaixo para entender as diferenças entre os caminhos de implantação do DirectAccess básico e avançados e pode usar os links de documentação para localizar o guia de implantação mais adequado para suas metas.  
   

@@ -10,27 +10,27 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ddcb162-dd92-406c-acab-d3de7239c644
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3009b6002d9d4cd116795c46305ff02fda02ef63
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2d9480b3f021fcf1086ca8001997a1c7c1b56456
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388486"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308910"
 ---
 # <a name="step-2-plan-the-basic-directaccess-deployment"></a>Etapa 2 planejar a implantação básica do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Depois de planejar a infraestrutura do DirectAccess, a próxima etapa na implantação do DirectAccess em um único servidor com as configurações básicas é planejar as configurações para o assistente de Introdução.  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |Planejando a implantação do cliente|Por padrão, o assistente de Introdução implanta o DirectAccess em todos os laptops e computadores notebook no domínio aplicando um filtro WMI ao GPO configurações do cliente|  
 |Planejando a implantação do servidor DirectAccess|Planeje como implantar o servidor do DirectAccess.|  
   
-## <a name="bkmk_2_1_client"></a>Planejando a implantação do cliente  
+## <a name="planning-for-client-deployment"></a><a name="bkmk_2_1_client"></a>Planejando a implantação do cliente  
 Há duas decisões a serem tomadas ao planejar a implantação do cliente:  
   
 1.  O DirectAccess estará disponível somente para computadores móveis, ou para qualquer computador?  
@@ -41,7 +41,7 @@ Há duas decisões a serem tomadas ao planejar a implantação do cliente:
   
     As configurações do DirectAccess estão contidas no GPO do cliente do DirectAccess. O GPO é aplicado a computadores que fazem parte dos grupos de segurança que você especifica no assistente de Introdução. Você pode especificar grupos de segurança contidos em qualquer domínio com suporte. Antes de configurar o DirectAccess, os grupos de segurança devem ser criados. Você pode adicionar computadores ao grupo de segurança depois de concluir a implantação do DirectAccess, mas observe que, se você adicionar computadores cliente que residem em um domínio diferente ao grupo de segurança, o GPO do cliente não será aplicado a esses clientes. Por exemplo, se você criou SG1 no domínio A para clientes do DirectAccess, e posteriormente adicionou clientes do domínio B a esse grupo, o GPO do cliente não será aplicado a clientes no domínio B. Para evitar esse problema, crie um novo grupo de segurança de cliente para cada domínio que contém computadores cliente. Também, se você não deseja criar um novo grupo de segurança, execute o cmdlet Add-DAClient com o nome do novo GPO do novo domínio.  
   
-## <a name="bkmk_2_2_server"></a>Planejando a implantação do servidor DirectAccess  
+## <a name="planning-for-directaccess-server-deployment"></a><a name="bkmk_2_2_server"></a>Planejando a implantação do servidor DirectAccess  
 Há várias decisões a serem tomadas ao planejar a implantação do servidor DirectAccess:  
   
 -   **Topologia de rede** – há duas topologias disponíveis ao implantar um servidor DirectAccess:  
@@ -52,7 +52,7 @@ Há várias decisões a serem tomadas ao planejar a implantação do servidor Di
   
 -   **Adaptadores de rede** : o assistente do DirectAccess detecta automaticamente os adaptadores de rede configurados no servidor DirectAccess. Você pode garantir que os adaptadores corretos sejam selecionados na página **revisão** .  
   
--   **Certificado IP-HTTPS** -como não há nenhuma PKI necessária nessa implantação, o assistente provisiona automaticamente certificados autoassinados para IP-HTTPS e o servidor de local de rede (se nenhum certificado estiver presente) e habilita automaticamente o Kerberos acionista. O assistente também habilita o NAT64 e o DNS64 para conversão de protocolo no ambiente somente IPv4. Depois que o assistente for concluído com êxito aplicando a configuração, clique em **fechar**.  
+-   **Certificado IP-HTTPS** -como não há nenhuma PKI necessária nessa implantação, o assistente provisiona automaticamente certificados autoassinados para IP-HTTPS e o servidor de local de rede (se nenhum certificado estiver presente) e habilita automaticamente o proxy Kerberos. O assistente também habilita o NAT64 e o DNS64 para conversão de protocolo no ambiente somente IPv4. Depois que o assistente concluir a aplicação da configuração com êxito, clique em **Fechar**.  
   
 -   **Clientes do Windows 7** – não é possível habilitar o suporte para clientes do Windows 7 por meio do assistente de introdução. Isso pode ser habilitado no assistente de configuração avançada. Para obter mais detalhes, consulte [implantar um único servidor DirectAccess com configurações avançadas](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md).  
   
@@ -60,9 +60,9 @@ Há várias decisões a serem tomadas ao planejar a implantação do servidor Di
   
 -   **Túnel forçado** – se você planeja usar o túnel forçado ou pode adicioná-lo no futuro, use [implantar um único servidor DirectAccess com configurações avançadas](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md) para implantar uma configuração de dois túneis. Devido a considerações de segurança, não há suporte para o túnel forçado em uma única configuração de túnel.  
   
-## <a name="BKMK_Links"></a>Etapa anterior  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>Etapa anterior  
   
--   [Etapa 1: Planejar a infraestrutura do DirectAccess Básico](da-basic-plan-s1-infrastructure.md)  
+-   [Etapa 1: planejar a infraestrutura básica do DirectAccess](da-basic-plan-s1-infrastructure.md)  
   
 
 

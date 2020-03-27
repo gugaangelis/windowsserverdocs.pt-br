@@ -1,18 +1,18 @@
 ---
 title: Eventos de log do sistema do clustering de failover
 description: Uma lista de eventos de clustering de failover no log do sistema do Windows Server. Esses eventos podem ser usados para solucionar problemas de um cluster.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5c2606b96b42d08cc66da2e19596240c21bf4b88
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 0346b56ad2fe8a60ab84b7e6ab43e0558ed1c85b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956448"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310058"
 ---
 # <a name="failover-clustering-system-log-events"></a>Eventos de log do sistema do clustering de failover
 
@@ -133,7 +133,7 @@ O serviço de cluster encontrou um problema inesperado e será desligado. O cód
 
 Serviço de cluster falhou ao iniciar porque este nó detectou que ele não tem a cópia mais recente dos dados de configuração do cluster. As alterações no cluster ocorreram enquanto este nó não estava em associação e, como resultado, não foi possível receber atualizações de dados de configuração.
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Tente iniciar o serviço de cluster em todos os nós no cluster para que os nós com a cópia mais recente dos dados de configuração do cluster possam primeiro formar o cluster. Esse nó então será capaz de ingressar no cluster e obterá automaticamente os dados de configuração do cluster atualizados. Se não houver nós disponíveis com a cópia mais recente dos dados de configuração do cluster, execute o cmdlet ' Start-ClusterNode-FQ ' do Windows PowerShell. O uso do parâmetro ForceQuorum (FQ) iniciará o serviço de cluster e marcará a cópia dos dados de configuração do cluster para ser autoritativa. Forçar o quorum em um nó com uma cópia desatualizada do banco de dados do cluster pode resultar em alterações de configuração do cluster que ocorreram enquanto o nó não estava participando do cluster para ser perdido.
 
@@ -497,7 +497,7 @@ O recurso de cluster ' %1 ' na função clusterizada ' %2 ' recebeu uma notifica
 
 O recurso de nome de rede de cluster falhou no registro de um ou mais nomes DNS associados porque a zona DNS correspondente não aceita atualizações dinâmicas.<br><br>Nome da rede do cluster: ' %1 '<br>Zona DNS: ' %2 '
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Verifique se o DNS está configurado como uma zona DNS dinâmica. Se o servidor DNS não aceitar atualizações dinâmicas, desmarque a lista ' registrar os endereços desta conexão no DNS ' nas propriedades do adaptador de rede.
 
@@ -517,7 +517,7 @@ O recurso de nome de rede do cluster falhou no registro de um ou mais nomes DNS 
 
 Falha do recurso de nome de rede de cluster ao modificar o registro de DNS.<br><br>Nome da rede do cluster: ' %1 '<br>Código de erro: ' %2 '
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Verifique se os adaptadores de rede associados aos recursos de endereço IP dependentes estão configurados com acesso a pelo menos um servidor DNS.
 
@@ -525,7 +525,7 @@ Verifique se os adaptadores de rede associados aos recursos de endereço IP depe
 
 Falha do recurso de nome de rede de cluster ao modificar o registro de DNS.<br><br>Nome da rede do cluster: ' %1 '<br>Motivo: ' %2 '
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Verifique se os adaptadores de rede associados aos recursos de endereço IP dependentes estão configurados com acesso a pelo menos um servidor DNS.
 
@@ -533,7 +533,7 @@ Verifique se os adaptadores de rede associados aos recursos de endereço IP depe
 
 Falha do recurso de nome de rede do cluster ao publicar o registro PTR na zona de pesquisa inversa do DNS.<br><br>Nome da rede do cluster: ' %1 '<br>Código de erro: ' %2 '
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Verifique se os adaptadores de rede associados aos recursos de endereço IP dependentes estão configurados com acesso a pelo menos um servidor DNS e se a zona de pesquisa inversa de DNS existe.
 
@@ -541,7 +541,7 @@ Verifique se os adaptadores de rede associados aos recursos de endereço IP depe
 
 Falha do recurso de nome de rede do cluster ao publicar o registro PTR na zona de pesquisa inversa do DNS.<br><br>Nome da rede do cluster: ' %1 '<br>Motivo: ' %2 '
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Verifique se os adaptadores de rede associados aos recursos de endereço IP dependentes estão configurados com acesso a pelo menos um servidor DNS e se a zona de pesquisa inversa de DNS existe.
 
@@ -609,7 +609,7 @@ A verificação de integridade para a interface IP ' %1 ' (endereço ' %2 ') fal
 
 O recurso de testemunha em nuvem não pôde alcançar serviços de armazenamento Microsoft Azure.<br><br>Recurso de cluster: %1 <br>Nó do cluster: %2 
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Isso pode ser devido à comunicação de rede entre o nó de cluster e o serviço de Microsoft Azure que está sendo bloqueado. Verifique a conectividade com a Internet do nó para Microsoft Azure. Conecte-se ao portal do Microsoft Azure e verifique se a conta de armazenamento existe.
 
@@ -621,7 +621,7 @@ A rede ' %1 ' que foi desabilitada para uso de cluster de failover foi considera
 
 Falha do recurso de testemunha na nuvem ao autenticar com serviços de armazenamento Microsoft Azure. Um erro de acesso negado foi retornado ao tentar entrar em contato com a conta de armazenamento de Microsoft Azure. <br><br>Recurso de cluster: %1 
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 A chave de acesso da conta de armazenamento pode não ser mais válida. Use o assistente para configurar quorum de cluster no Gerenciador de Cluster de Failover ou no cmdlet Set-ClusterQuorum do Windows PowerShell, para configurar o recurso de testemunha na nuvem com a chave de acesso da conta de armazenamento atualizada.
 
@@ -726,7 +726,7 @@ Falha no descarregamento do nó no nó de cluster %1. <br><br>Referencie os logs
 
 O serviço de cluster não pôde acessar nenhum controlador de domínio disponível no domínio. Isso pode afetar a funcionalidade que depende da autenticação de nome de rede do cluster.<br><br>Servidor DC: %1 
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Verifique se os controladores de domínio estão acessíveis na rede para os nós de cluster.
 
@@ -734,14 +734,14 @@ Verifique se os controladores de domínio estão acessíveis na rede para os nó
 
 O recurso de nome de rede do cluster não pôde localizar o objeto de computador associado no Active Directory. Isso pode afetar a funcionalidade que depende da autenticação de nome de rede do cluster.<br><br>Nome da rede: %1<br>Unidade organizacional: %2
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Restaure o objeto de computador para o nome da rede na lixeira Active Directory. Como alternativa, offline o recurso de nome de rede de cluster e execute a ação de reparo para recriar o objeto de computador no Active Directory.
 
 ### <a name="event-1685-res_netname_computer_object_cno_not_found"></a>Evento 1685: RES_NETNAME_COMPUTER_OBJECT_CNO_NOT_FOUND
 
 O recurso de nome de rede do cluster não pôde localizar o objeto de computador associado no Active Directory. Isso pode afetar a funcionalidade que depende da autenticação de nome de rede do cluster.<br><br>Nome da rede: %1<br>Unidade organizacional: %2
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Restaure o objeto de computador para o nome da rede na lixeira Active Directory.
 
@@ -749,7 +749,7 @@ Restaure o objeto de computador para o nome da rede na lixeira Active Directory.
 
 O recurso de nome de rede de cluster encontrou o objeto de computador associado no Active Directory a ser desabilitado. Isso pode afetar a funcionalidade que depende da autenticação de nome de rede do cluster.<br><br>Nome da rede: %1<br>Unidade organizacional: %2
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Habilite o objeto de computador para o nome de rede em Active Directory.
 
@@ -757,7 +757,7 @@ Habilite o objeto de computador para o nome de rede em Active Directory.
 
 O recurso de nome de rede de cluster encontrou o objeto de computador associado no Active Directory a ser desabilitado. Isso pode afetar a funcionalidade que depende da autenticação de nome de rede do cluster.<br><br>Nome da rede: %1<br>Unidade organizacional: %2
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Habilite o objeto de computador para o nome de rede em Active Directory. Como alternativa, offline o recurso de nome de rede de cluster e execute a ação de reparo para habilitar o objeto de computador em Active Directory.
 
@@ -765,7 +765,7 @@ Habilite o objeto de computador para o nome de rede em Active Directory. Como al
 
 O recurso de nome de rede de cluster detectou que o objeto de computador associado no Active Directory foi desabilitado e falhou em sua tentativa de habilitá-lo. Isso pode afetar a funcionalidade que depende da autenticação de nome de rede do cluster.<br><br>Nome da rede: %1<br>Unidade organizacional: %2
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Habilite o objeto de computador para o nome de rede em Active Directory.
 
@@ -926,7 +926,7 @@ O recurso de cluster ' %1 ' não pôde criar ou modificar a conta de usuário lo
 
 Falha ao iniciar o cluster. A cópia mais recente dos dados de configuração do cluster não estava disponível no conjunto de nós tentando iniciar o cluster. As alterações no cluster ocorreram enquanto o conjunto de nós não estava em associação e, como resultado, não era possível receber atualizações de dados de configuração. .<br><br>Votos necessários para iniciar o cluster: %1<br>Votos disponíveis: %2<br>Nós com votos: %3
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Tente iniciar o serviço de cluster em todos os nós no cluster para que os nós com a cópia mais recente dos dados de configuração do cluster possam primeiro formar o cluster. O cluster será capaz de iniciar e os nós obterão automaticamente os dados de configuração de cluster atualizados. Se não houver nós disponíveis com a cópia mais recente dos dados de configuração do cluster, execute o cmdlet ' Start-ClusterNode-FQ ' do Windows PowerShell. O uso do parâmetro ForceQuorum (FQ) iniciará o serviço de cluster e marcará a cópia dos dados de configuração do cluster para ser autoritativa. Forçar o quorum em um nó com uma cópia desatualizada do banco de dados do cluster pode resultar em alterações de configuração do cluster que ocorreram enquanto o nó não estava participando do cluster para ser perdido.
 
@@ -1113,7 +1113,7 @@ Verifique o log de eventos do aplicativo para obter informações adicionais do 
 
 O recurso de disco físico do cluster não pode ser colocado online.<br><br>Nome do recurso do disco físico: %1<br>Código de erro: %2<br>Tempo decorrido (segundos): %3
 
-#### <a name="guidance"></a>Diretrizes
+#### <a name="guidance"></a>{1&gt;Orientação&lt;1}
 
 Execute o assistente para validar uma configuração para verificar sua configuração de armazenamento. Se o código de erro foi ERROR_CLUSTER_SHUTDOWN, o estado online pendente foi cancelado por um administrador. Se esse for um volume replicado, isso pode ser o resultado de uma falha ao definir os atributos do disco. Examine os eventos de replicação de armazenamento para obter informações adicionais.
 
@@ -1250,6 +1250,6 @@ Volume Compartilhado Clusterizado ' %1 ' (' %2 ') não está mais acessível dir
 O recurso de disco físico do cluster ' %1 ' excluiu um instantâneo de software. O instantâneo de software na Volume Compartilhado Clusterizado ' %2 ' foi excluído porque era anterior a ' %3 ' dia (s). A ID do instantâneo foi ' %4 ' e foi criada a partir do nó ' %5 ' em ' %6 '.
 Espera-se que os instantâneos sejam excluídos por um aplicativo de backup após a conclusão de um trabalho de backup. Esse instantâneo excedeu o tempo esperado para que um instantâneo exista. Verifique com o aplicativo de backup se os trabalhos de backup estão sendo concluídos com êxito.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 -   [Informações detalhadas sobre o evento para componentes de clustering de failover no Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

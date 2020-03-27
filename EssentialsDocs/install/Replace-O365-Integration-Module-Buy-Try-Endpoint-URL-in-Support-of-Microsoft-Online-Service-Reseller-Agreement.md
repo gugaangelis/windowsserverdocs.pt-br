@@ -3,7 +3,7 @@ title: Substituir a URL de ponto de extremidade de compra/teste do módulo de in
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b690cedd2f692cc6d11af6e05dd0cd4b4ea5a1d6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11e18d7d61edb0a618fb71791f77c4df84c9d708
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833097"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311539"
 ---
 # <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Substituir a URL de ponto de extremidade de compra/teste do módulo de integração O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_O365"></a>   
- Se você for um parceiro do Microsoft Online Service Reseller Agreement MOSRA (), para garantir que as transações de inscrição de cliente sejam processadas por meio de seu portal, você precisará substituir os URLs de ponto de extremidade usados pelo módulo de integração do Office 365 do Windows Server Essentials.  
+ Se você for um parceiro do Microsoft Online Service Reseller Agreement (MOSRA), para garantir que as transações de inscrição do cliente sejam processadas por meio do portal, será necessário substituir as URLs do ponto de extremidade usadas pelo módulo de integração do Office 365 do Windows Server Essentials.  
   
  O módulo de integração usa os quatro seguintes URLs de ponto final:  
   
@@ -48,7 +48,7 @@ ms.locfileid: "59833097"
   
     -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor = http://syndicatepartner.office365.com/enterprisetry.html  
   
-3.  Um ponto de extremidade de compra assinatura do Office 365 Small Business Premium.  
+3.  Um ponto de extremidade de compra de assinatura do Office 365 Small Business Premium.  
   
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
   
@@ -58,7 +58,7 @@ ms.locfileid: "59833097"
   
     -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor = http://syndicatepartner.office365.com/smallbizbuy.html  
   
-4.  Um endpoint de avaliação do assinatura do Office 365 Small Business Premium.  
+4.  Um ponto de extremidade de avaliação de assinatura do Office 365 Small Business Premium.  
   
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
   
@@ -97,8 +97,8 @@ ms.locfileid: "59833097"
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md) [criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
+ [Testando a experiência do cliente](Testing-the-Customer-Experience.md) ao [criar e personalizar a imagem](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](../install/Additional-Customizations.md)   
  [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](../install/Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)
 

@@ -6,15 +6,15 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: d8cf3bae-45bf-4ffa-9205-290d555c59da
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/11/2018
-ms.openlocfilehash: aa7658587b8434bfbaa6874498215a6b2c9213be
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 394e589028d9d3d22851ea970346b0f150fee393
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822659"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309401"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>Etapa 5. Definir configurações de DNS e firewall
 
@@ -82,6 +82,6 @@ Se você usar a configuração de porta RADIUS padrão no servidor VPN e no serv
 
 Se você não estiver usando as portas RADIUS padrão em sua implantação do NPS, deverá configurar o firewall para permitir o tráfego RADIUS nas portas que você está usando. Para obter mais informações, consulte [Configurar firewalls para tráfego RADIUS](../../../../../networking/technologies/nps/nps-firewalls-configure.md).
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 [Etapa 6. Configurar conexões de VPN Always On cliente do Windows 10](vpn-deploy-client-vpn-connections.md): nesta etapa, você configura os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN. Você pode usar várias tecnologias para configurar clientes de VPN do Windows 10, incluindo o Windows PowerShell, o Microsoft Endpoint Configuration Manager e o Intune. Todos os três exigem um perfil de VPN XML para definir as configurações de VPN apropriadas.

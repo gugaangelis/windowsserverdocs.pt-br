@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b093c4cbf5ceb06e84d5e07c8735106797932bc1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8269fee952e60aa53facec95ab3070b906383ad2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404928"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309056"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>Etapa 2 planejar implantações avançadas do DirectAccess
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404928"
 
 Depois de planejar a infraestrutura do DirectAccess, a próxima etapa para implantar o DirectAccess avançado em um único servidor com IPv4 e IPv6 é planejar as configurações do Assistente de configuração de acesso remoto.  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |[plano 2,1 para implantação de cliente](#21-plan-for-client-deployment)|Planeje como permitir que computadores cliente se conectem usando o DirectAccess. Decida quais computadores gerenciados serão configurados como clientes DirectAccess e planeje a implantação do Assistente de Conectividade de Rede ou do Assistente de Conectividade do DirectAccess em computadores cliente.|  
 |[plano 2,2 para a implantação do servidor DirectAccess](#22-plan-for-directaccess-server-deployment)|Planeje como implantar o servidor do DirectAccess.|  

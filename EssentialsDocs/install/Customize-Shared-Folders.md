@@ -3,7 +3,7 @@ title: Personalizar pastas compartilhadas
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d8f52cbe76204bb00cb15c3093f69daf3d8abb6e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433528"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311912"
 ---
 # <a name="customize-shared-folders"></a>Personalizar pastas compartilhadas
 
@@ -35,25 +35,25 @@ Por padrão, as pastas do servidor são criadas na maior partição de dados no 
   
    3.  No painel de navegação, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE** e **Microsoft**.  
   
-   4.  Clique com o botão direito do mouse em **Windows Server**, clique em **Novo**e em **Chave**.  
+   4.  Clique com o botão direito do mouse em **Windows Server**, clique em **Novo** e em **Chave**.  
   
    5.  Dê à chave o nome **Armazenamento**.  
   
    6.  No painel de navegação, clique com o botão direito do mouse na chave do Registro de armazenamento, clique em **Novo** e no **Valor DWORD (32 bits)** .  
   
-   7.  Atribua o nome **CreateFoldersOnSystem**à cadeia de caracteres.  
+   7.  Atribua o nome **CreateFoldersOnSystem** à cadeia de caracteres.  
   
-   8.  Clique com o botão direito do mouse em **CreateFoldersOnSystem**e clique em **Modificar**. A caixa de diálogo **Editar Cadeia de Caracteres** é exibida.  
+   8.  Clique com o botão direito do mouse em **CreateFoldersOnSystem** e clique em **Modificar**. A caixa de diálogo **Editar Cadeia de Caracteres** é exibida.  
   
-   9. Defina o valor desta chave nova como **1**e clique em **OK**.  
+   9. Defina o valor desta chave nova como **1** e clique em **OK**.  
   
-2. Use o script PostIC.cmd para mover as pastas para um local diferente ou para criar pastas adicionais. Veja o exemplo a seguir: [Exemplo 1: Crie uma pasta personalizada e mover as pastas padrão para um novo local de postic. cmd usando o Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1).  
+2. Use o script PostIC.cmd para mover as pastas para um local diferente ou para criar pastas adicionais. Consulte o seguinte exemplo: [Exemplo 1: Criar uma pasta personalizada e mover as pastas padrão para um novo local de PostIC.cmd usando o Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1).  
   
-3. Use o SDK do Windows Server Solutions para mover as pastas para um local diferente ou para criar pastas adicionais. Veja o exemplo a seguir: [Exemplo 2: Criar uma pasta personalizada e mover uma pasta existente usando o SDK do Windows Server Solutions](Customize-Shared-Folders.md#BKMK_Example2).  
+3. Use o SDK do Windows Server Solutions para mover as pastas para um local diferente ou para criar pastas adicionais. Consulte o seguinte exemplo: [Exemplo 2: Criar uma pasta padrão e mover uma pasta existente usando o SDK do Windows Server Solutions](Customize-Shared-Folders.md#BKMK_Example2).  
   
    Opcionalmente, os parceiros podem deixar as pastas de dados na unidade C. Isso permite ao usuário final ou revendedor determinar o layout das pastas de dados nas unidades de dados.  
   
-###  <a name="BKMK_Example1"></a> Exemplo 1: Crie uma pasta personalizada e mova as pastas padrão para um novo local de PostIC.cmd usando o Windows PowerShell.  
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>Exemplo 1: criar uma pasta personalizada e mover as pastas padrão para um novo local do postal. cmd usando o Windows PowerShell  
   
 1.  crie um arquivo PostIC.cmd para executar tarefas após a configuração inicial, como detalhado na seção [Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md).  
   
@@ -99,7 +99,7 @@ Por padrão, as pastas do servidor são criadas na maior partição de dados no 
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a> Exemplo 2: Crie uma pasta padrão e mova uma pasta existente usando o SDK do Windows Server Solutions.  
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>Exemplo 2: criar uma pasta personalizada e mover uma pasta existente usando o SDK de soluções do Windows Server  
  O código criado pode ser compilado como um executável e chamado pelo arquivo PostIC.cmd ou diretamente de um suplemento instalado.  
   
 ```  

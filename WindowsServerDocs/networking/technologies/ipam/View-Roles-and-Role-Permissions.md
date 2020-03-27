@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da8dce90-b54c-4ded-a48a-0cda5ccf1d8a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f35f4a79bcdfebaedb2e5be5c34725d13a04fe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 748b4a2547285edf6b04fc124d75facd245c38c9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401864"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309461"
 ---
 # <a name="view-roles-and-role-permissions"></a>Exibir funções e permissões de função
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para exibir as funções de usuário do controle de acesso no console do cliente IPAM.  
   

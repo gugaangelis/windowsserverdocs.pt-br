@@ -10,18 +10,18 @@ ms.technology: networking-hv-switch
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a92e61c3-f7d4-4e42-8575-79d75d05a218
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f76a3146c1cb38dab26019be655fadbd15d924c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2beb4ec1d78200b5c62d18ffb3f935843bd12ae0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365596"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308026"
 ---
 # <a name="create-security-policies-with-extended-port-access-control-lists"></a>Criar Políticas de Segurança com Listas de Controle de Acesso de Porta Estendida
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico fornece informações sobre ACLs (listas de controle de acesso) de porta estendidas no Windows Server 2016. É possível configurar ACLs estendidas no comutador virtual do Hyper-V para permitir e bloquear o tráfego da rede de/para as VMs (Máquinas Virtuais) conectadas ao comutador através de adaptadores de rede virtuais.  
   
@@ -31,7 +31,7 @@ Este tópico contém as seguintes seções.
   
 -   [Regras de ACL com estado](#bkmk_stateful)  
   
-## <a name="bkmk_detailed"></a>Regras de ACL detalhadas  
+## <a name="detailed-acl-rules"></a><a name="bkmk_detailed"></a>Regras de ACL detalhadas  
 ACLs estendidas do comutador virtual do Hyper-V permitem criar regras detalhadas que você pode aplicar a adaptadores de rede VM individuais que estão conectados ao comutador virtual Hyper-V. A capacidade de criar regras detalhadas permite que empresas e CSPs (provedores de serviços de nuvem) resolvam ameaças de segurança baseadas em rede em um ambiente de servidor compartilhado multilocatário.  
   
 Com as ACLs estendidas, em vez de ter que criar regras abrangentes que bloqueiem ou permitam todo o tráfego de todos os protocolos de ou para uma máquina virtual, é possível bloquear ou permitir o tráfego de rede de protocolos individuais que estão sendo executando nas VMs. Você pode criar regras de ACL estendidas no Windows Server 2016 que incluem o seguinte conjunto de parâmetros de 5 tuplas: endereço IP de origem, endereço IP de destino, protocolo, porta de origem e porta de destino. Além disso, cada regra pode especificar a direção específica do tráfego da rede (entrada ou saída), bem como a ação que a regra apoia (bloquear ou permitir tráfego).  
@@ -101,14 +101,14 @@ A seguir, apresentamos alguns exemplos de como usar o comando **Add-VMNetworkAda
 > [!NOTE]  
 > Os valores para o parâmetro da regra de **Direção** nas tabelas abaixo baseiam-se no fluxo do tráfego de ou para a VM para a qual a regra está sendo criada. Se a VM estiver recebendo tráfego, o tráfego é de entrada; se a VM estiver enviando tráfego, o tráfego é de saída. Por exemplo, se você aplicar uma regra a uma VM que bloqueia o tráfego de entrada, a direção do tráfego de entrada será dos recursos externos para a VM. Se você aplicar uma regra que bloqueia o tráfego de saída, a direção do tráfego de saída será da VM local para recursos externos.  
   
-### <a name="bkmk_enforce"></a>Impor segurança em nível de aplicativo  
+### <a name="enforce-application-level-security"></a><a name="bkmk_enforce"></a>Impor segurança em nível de aplicativo  
 Tendo em vista que muitos servidores de aplicativos utilizam portas TCP/UDP padronizadas para comunicação com computadores clientes, é fácil criar regras que bloqueiem ou permitam o acesso a um servidor de aplicativos, filtrando-se o tráfego que vai ou vem da porta designada para o aplicativo.  
   
 Por exemplo, se você quisesse permitir a um usuário fazer login em um servidor de aplicativos no datacenter usando a RDP (Conexão com Área de Trabalho Remota). Uma vez que a RDP usa a porta TCP 3389, é possível configurar rapidamente a regra a seguir:  
   
-|IP de Origem|IP de destino|Protocol|Porta de Origem|Porta de destino|Direction|Ação|  
+|IP de Origem|IP de destino|Protocolo|Porta de Origem|Porta de destino|Direção|Ação|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
-|*|*|TCP|*|3389|Dentro|Allow|  
+|*|*|TCP|*|3389|Em|Permitir|  
   
 Apresentamos a seguir dois exemplos de como criar regras com os comandos do Windows PowerShell. A primeira regra de exemplo bloqueia todo o tráfego para a VM chamada "ApplicationServer". A segunda regra de exemplo, que é aplicada ao adaptador de rede da VM denominada "ApplicationServer", permite apenas o tráfego RDP de entrada para a VM.  
   
@@ -120,16 +120,16 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ApplicationServer" -Action "Deny" -Dire
 Add-VMNetworkAdapterExtendedAcl -VMName "ApplicationServer" -Action "Allow" -Direction "Inbound" -LocalPort 3389 -Protocol "TCP" -Weight 10  
 ```  
   
-### <a name="bkmk_both"></a>Impor a segurança em nível de usuário e de aplicativo  
+### <a name="enforce-both-user-level-and-application-level-security"></a><a name="bkmk_both"></a>Impor a segurança em nível de usuário e de aplicativo  
 Uma vez que a regra pode corresponder a um pacote IP com 5 tuplas (IP de Origem, IP de Destino, Protocolo, Porta de Origem e Porta de Destino), a regra pode impor uma política de segurança mais detalhada do que uma ACL de porta.  
   
 Por exemplo, se você quiser fornecer um serviço DHCP para um número limitado de computadores cliente usando um conjunto específico de servidores DHCP, poderá configurar as seguintes regras no computador com Windows Server 2016 que está executando o Hyper-V, onde as VMs do usuário estão hospedadas:  
   
-|IP de Origem|IP de destino|Protocol|Porta de Origem|Porta de destino|Direction|Ação|  
+|IP de Origem|IP de destino|Protocolo|Porta de Origem|Porta de destino|Direção|Ação|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
-|*|255.255.255.255|UDP|*|67|Fora|Allow|  
-|*|10.175.124.0/25|UDP|*|67|Fora|Allow|  
-|10.175.124.0/25|*|UDP|*|68|Dentro|Allow|  
+|*|255.255.255.255|UDP|*|67|Fora|Permitir|  
+|*|10.175.124.0/25|UDP|*|67|Fora|Permitir|  
+|10.175.124.0/25|*|UDP|*|68|Em|Permitir|  
   
 Apresentamos a seguir dois exemplos de como criar regras com os comandos do Windows PowerShell.  
   
@@ -140,16 +140,16 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction "Inbound" -RemoteIPAddress 10.175.124.0/25 -RemotePort 68 -Protocol "UDP"-Weight 20  
 ```  
   
-### <a name="bkmk_tcp"></a>Fornecer suporte de segurança para um aplicativo não TCP/UDP  
+### <a name="provide-security-support-to-a-non-tcpudp-application"></a><a name="bkmk_tcp"></a>Fornecer suporte de segurança para um aplicativo não TCP/UDP  
 Enquanto a maior parte do tráfego da rede em um datacenter é TCP e UDP, ainda existe tráfego que utiliza outros protocolos. Por exemplo, se desejar permitir que um grupo de servidores execute um aplicativo com multicast do IP que depende do protocolo IGMP, é possível criar a regra a seguir.  
   
 > [!NOTE]  
 > O IGMP tem um número de protocolo IP designado de 0x02.  
   
-|IP de Origem|IP de destino|Protocol|Porta de Origem|Porta de destino|Direction|Ação|  
+|IP de Origem|IP de destino|Protocolo|Porta de Origem|Porta de destino|Direção|Ação|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
-|*|*|0x02|*|*|Dentro|Allow|  
-|*|*|0x02|*|*|Fora|Allow|  
+|*|*|0x02|*|*|Em|Permitir|  
+|*|*|0x02|*|*|Fora|Permitir|  
   
 Apresentamos a seguir um exemplo de como criar essas regras com os comandos do Windows PowerShell.  
   
@@ -158,7 +158,7 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction "Outbound" -Protocol 2 -Weight 20  
 ```  
   
-## <a name="bkmk_stateful"></a>Regras de ACL com estado  
+## <a name="stateful-acl-rules"></a><a name="bkmk_stateful"></a>Regras de ACL com estado  
 Outro recurso novo das ACLs estendidas permite a configuração de regras de monitoração de estado. Uma regra com estado filtra pacotes com base em cinco atributos em um IP de origem de pacote, IP de destino, protocolo, porta de origem e porta de destino.  
   
 As regras de monitoração de estado têm os seguintes recursos:  
@@ -187,13 +187,13 @@ Para configurar essa regra, será possível utilizar as definições da tabela a
 |-------------|----------|----------|----------|  
 |IP de Origem|*|*|*|  
 |IP de destino|*|*|*|  
-|Protocol|*|*|TCP|  
+|Protocolo|*|*|TCP|  
 |Porta de Origem|*|*|*|  
 |Porta de destino|*|*|80|  
-|Direction|Dentro|Fora|Fora|  
-|Ação|Negar|Negar|Allow|  
+|Direção|Em|Fora|Fora|  
+|Ação|Negar|Negar|Permitir|  
 |Com monitoração de estado|Não|Não|Sim|  
-|Tempo limite (em segundos)|N/D|N/D|3\.600|  
+|Tempo limite (em segundos)|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|3600|  
   
 A regra de monitoração de estado permite que o servidor de aplicativos da VM conecte-se a um servidor remoto da Web. Quando o primeiro pacote é enviado, o comutador virtual do Hyper-V cria dinamicamente dois estados de fluxo, a fim de permitir que todos os pacotes sejam enviados para e todos os pacotes de retorno sejam enviados do servidor remoto da Web. Quando o fluxo de pacotes entre os servidores para, o fluxo estabelece o tempo limite no valor de tempo limite de 3.600 segundos ou uma hora.  
   

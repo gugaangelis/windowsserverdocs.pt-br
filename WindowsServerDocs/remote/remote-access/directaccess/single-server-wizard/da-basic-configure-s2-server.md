@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a21e5799824c968b29c719585ca16b6b45a9ef37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6faa40428df424f60637fb206641d8bae2774c79
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404917"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308929"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>Etapa 2 configurar o servidor DirectAccess básico
 
@@ -25,16 +25,16 @@ ms.locfileid: "71404917"
 
 Este tópico descreve como definir as configurações de cliente e servidor necessárias para uma implantação básica do DirectAccess. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [planejar uma implantação básica do DirectAccess](Plan-a-Basic-DirectAccess-Deployment.md).  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
-|Instalar a função Acesso Remoto|Instalar a função Acesso Remoto.|  
+|Instalar a função de Acesso Remoto|Instalar a função Acesso Remoto.|  
 |Configurar o DirectAccess usando o Assistente do Guia de Introdução|O novo Assistente do Guia de Introdução apresenta uma experiência de configuração incrivelmente simplificada. O assistente mascara a complexidade do DirectAccess e permite a configuração automatizada em apenas algumas etapas simples. O assistente proporciona uma experiência ininterrupta para o administrador por meio da configuração automática do proxy Kerberos para eliminar a necessidade de implantação de PKI interna.|  
 |Atualizar clientes com configuração do DirectAccess|Para receber as configurações do DirectAccess, os clientes devem atualizar a política de grupo enquanto estão conectados à Intranet.|  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Role"></a>Instalar a função de acesso remoto  
+## <a name="install-the-remote-access-role"></a><a name="BKMK_Role"></a>Instalar a função de acesso remoto  
 Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto em um servidor na sua organização que agirá como servidor de Acesso Remoto.  
   
 #### <a name="to-install-the-remote-access-role"></a>Para instalar a função Acesso Remoto.  
@@ -43,7 +43,7 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 2.  Clique em **Avançar** três vezes para exibir a tela de seleção de função de servidor.  
   
-3.  Na caixa de diálogo **Selecionar funções de servidor** , selecione **Acesso Remoto**e clique em **Avançar**.  
+3.  Na caixa de diálogo **Selecionar funções de servidor**, selecione **Acesso Remoto** e clique em **Avançar**.  
   
 4.  Na caixa de diálogo **Selecionar recursos**, clique em **Avançar**.  
   
@@ -51,7 +51,7 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 6.  Clique em **Adicionar recursos**, clique em **Avançar**e em **instalar**.  
   
-7.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
+7.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem sucedida e, em seguida, clique em **Fechar**.  
   
 ![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
@@ -97,7 +97,7 @@ Os seguintes cmdlets ou cmdlets do Windows PowerShell instalam a função de ace
   
 5.  Clique em **Concluir**.  
   
-6.  Como não há nenhuma KPI usada nessa implantação de testes, se não forem encontrados certificados, o assistente provisionará certificados autoassinados automaticamente para IP-HTTPS e o Servidor de Local de Rede e habilitará o proxy Kerberos automaticamente. O assistente também habilitará NAT64 e DNS64 para conversão de protocolos no ambiente somente IPv4. Depois que o assistente for concluído com êxito aplicando a configuração, clique em **fechar**.  
+6.  Como não há nenhuma KPI usada nessa implantação de testes, se não forem encontrados certificados, o assistente provisionará certificados autoassinados automaticamente para IP-HTTPS e o Servidor de Local de Rede e habilitará o proxy Kerberos automaticamente. O assistente também habilitará NAT64 e DNS64 para conversão de protocolos no ambiente somente IPv4. Depois que o assistente concluir a aplicação da configuração com êxito, clique em **Fechar**.  
   
 7.  Na árvore do console de Gerenciamento de Acesso remoto, selecione **Status das Operações**. Aguarde até que o status de todos os monitores seja exibido como "Processando". No painel Tatera, em Monitoramento, clique em **Atualizar** constantemente para atualizar a exibição.  
   
@@ -119,7 +119,7 @@ Os seguintes cmdlets ou cmdlets do Windows PowerShell instalam a função de ace
   
 6.  Digite **Get-DAConnectionStatus** e pressione **ENTER**. Como o cliente pode alcançar o URL do servidor de local de rede, o status será exibido como **ConnectedLocally**.  
   
-## <a name="BKMK_Links"></a>Etapa anterior  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>Etapa anterior  
   
 -   [Etapa 1: configurar a infraestrutura do DirectAccess](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   

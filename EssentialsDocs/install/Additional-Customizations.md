@@ -3,7 +3,7 @@ title: Personalizações Adicionais
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 65a195d5-0098-4c3c-b4ba-07f7319c8f1e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 347da7117835dde94c72168f77ff15a9cf5275c4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ccfd3d2a6518b11aa8243b608c044061e437c556
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887697"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310136"
 ---
 # <a name="additional-customizations"></a>Personalizações Adicionais
 
@@ -26,15 +26,15 @@ ms.locfileid: "59887697"
 Você pode fazer as seguintes personalizações adicionais para criar e personalizar uma imagem do Windows Server Essentials:  
   
 
--   [Adicionar identidade visual para o painel, o acesso via Web remoto e a barra inicial](Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
+-   [Adicionar identidade visual ao Dashboard, ao Acesso Remoto da Web e à Barra Inicial](Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
   
--   [Adicionar uma guia a configurações](Add-a-Tab-to-Settings.md)  
+-   [Adicionar uma guia a Configurações](Add-a-Tab-to-Settings.md)  
   
--   [Adicionar categorias de nível superior para a barra inicial (sistema de operacional Macintosh)](Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
+-   [Adicionar categorias de nível superior à Barra Inicial (sistema operacional Macintosh)](Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
   
--   [Alterar configurações de Streaming de mídia](Change-Media-Streaming-Settings.md)  
+-   [Alterar configurações de streaming de mídia](Change-Media-Streaming-Settings.md)  
   
--   [Alterar o esquema de cores do Dashboard e da barra inicial](Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
+-   [Alterar o esquema de cores do Dashboard e da Barra Inicial](Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
   
 -   [Alterar a ordem e o agrupamento de guias](Change-the-Order-and-Grouping-of-Tabs.md)  
   
@@ -42,31 +42,31 @@ Você pode fazer as seguintes personalizações adicionais para criar e personal
   
 -   [Gerenciar nomes de domínio e provedores de nomes de domínio](Manage-Domain-Names-and-Domain-Name-Providers.md)  
   
--   [Personalizar inscrição para tarefa de serviço de Backup Online da Microsoft](Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
+-   [Personalizar inscrição para a tarefa do serviços Microsoft Online Backup](Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
   
 -   [Personalizar espaços de armazenamento](Customize-Storage-Spaces.md)  
   
--   [Criar mídia de restauração do cliente de vários idiomas](Build-Multi-Language-Client-Restore-Media.md)  
+-   [Criar a mídia de restauração do cliente de vários idiomas](Build-Multi-Language-Client-Restore-Media.md)  
   
--   [Automatizar a instalação de suplementos durante a instalação](Automate-Installation-of-Add-Ins-During-Setup.md)  
+-   [Automatizar a instalação de suplementos durante a configuração](Automate-Installation-of-Add-Ins-During-Setup.md)  
   
--   [Adicionar informações de parceiro de registro do contrato de parceiro do Microsoft Online Service](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
+-   [Adicionar informações de parceiro de registro do Contrato de Parceiro de Serviço Online da Microsoft](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
   
--   [Substituir o URL de ponto de extremidade de compra de teste de módulo da integração do O365 para dar suporte ao Microsoft Online Service Reseller Agreement](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
+-   [Substituir o URL de ponto de extremidade de compra/teste do módulo de integração do O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
   
--   [Criar um DVD de recuperação do servidor para servidores administrados remotamente](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
+-   [Criar um DVD de recuperação de servidor para servidores administrados remotamente](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
   
--   [Criar um DVD de recuperação do servidor para suporte a vários idiomas](Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)
+-   [Criar um DVD de recuperação de servidor para suporte a vários idiomas](Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)
 
--   [Adicionar identidade visual para o painel, o acesso via Web remoto e a barra inicial](../install/Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
+-   [Adicionar identidade visual ao Dashboard, ao Acesso Remoto da Web e à Barra Inicial](../install/Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
   
--   [Adicionar uma guia a configurações](../install/Add-a-Tab-to-Settings.md)  
+-   [Adicionar uma guia a Configurações](../install/Add-a-Tab-to-Settings.md)  
   
--   [Adicionar categorias de nível superior para a barra inicial (sistema de operacional Macintosh)](../install/Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
+-   [Adicionar categorias de nível superior à Barra Inicial (sistema operacional Macintosh)](../install/Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
   
--   [Alterar configurações de Streaming de mídia](../install/Change-Media-Streaming-Settings.md)  
+-   [Alterar configurações de streaming de mídia](../install/Change-Media-Streaming-Settings.md)  
   
--   [Alterar o esquema de cores do Dashboard e da barra inicial](../install/Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
+-   [Alterar o esquema de cores do Dashboard e da Barra Inicial](../install/Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
   
 -   [Alterar a ordem e o agrupamento de guias](../install/Change-the-Order-and-Grouping-of-Tabs.md)  
   
@@ -74,19 +74,19 @@ Você pode fazer as seguintes personalizações adicionais para criar e personal
   
 -   [Gerenciar nomes de domínio e provedores de nomes de domínio](../install/Manage-Domain-Names-and-Domain-Name-Providers.md)  
   
--   [Personalizar inscrição para tarefa de serviço de Backup Online da Microsoft](../install/Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
+-   [Personalizar inscrição para a tarefa do serviços Microsoft Online Backup](../install/Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
   
 -   [Personalizar espaços de armazenamento](../install/Customize-Storage-Spaces.md)  
   
--   [Criar mídia de restauração do cliente de vários idiomas](../install/Build-Multi-Language-Client-Restore-Media.md)  
+-   [Criar a mídia de restauração do cliente de vários idiomas](../install/Build-Multi-Language-Client-Restore-Media.md)  
   
--   [Automatizar a instalação de suplementos durante a instalação](../install/Automate-Installation-of-Add-Ins-During-Setup.md)  
+-   [Automatizar a instalação de suplementos durante a configuração](../install/Automate-Installation-of-Add-Ins-During-Setup.md)  
   
--   [Adicionar informações de parceiro de registro do contrato de parceiro do Microsoft Online Service](../install/Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
+-   [Adicionar informações de parceiro de registro do Contrato de Parceiro de Serviço Online da Microsoft](../install/Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
   
--   [Substituir o URL de ponto de extremidade de compra de teste de módulo da integração do O365 para dar suporte ao Microsoft Online Service Reseller Agreement](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
+-   [Substituir o URL de ponto de extremidade de compra/teste do módulo de integração do O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
   
--   [Criar um DVD de recuperação do servidor para servidores administrados remotamente](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
+-   [Criar um DVD de recuperação de servidor para servidores administrados remotamente](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
   
--   [Criar um DVD de recuperação do servidor para suporte a vários idiomas](../install/Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)
+-   [Criar um DVD de recuperação de servidor para suporte a vários idiomas](../install/Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)
 

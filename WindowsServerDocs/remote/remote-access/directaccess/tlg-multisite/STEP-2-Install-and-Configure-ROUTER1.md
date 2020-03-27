@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0c6bff2acc15b7ff90731e0113ae0d5a429c635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3cd73f1a5e2612f4551be1f16e49e9645c5e12c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404794"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308738"
 ---
 # <a name="step-2-install-and-configure-router1"></a>ETAPA 2 instalar e configurar o ROUTER1
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Neste guia de laboratório de teste multissite, o computador roteador fornece uma ponte IPv4 e IPv6 entre as sub-redes corpnet e 2-corpnet e atua como um roteador para o tráfego IP-HTTPS e Teredo.  
   
@@ -40,7 +40,7 @@ Primeiro, instale o Windows Server 2016, o Windows Server 2012 R2 ou o Windows S
   
 1.  Inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 (instalação completa).  
   
-2.  Siga as instruções para concluir a instalação, especificando uma senha forte para a conta local de administrador. Faça logon usando a conta local de administrador.  
+2.  Siga as instruções para concluir a instalação, especificando uma senha forte para a conta local de administrador. Faça logon usando a conta do Administrador local.  
   
 3.  Conecte o ROUTER1 a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, do Windows Server 2012 R2 ou do Windows Server 2012 e desconecte-se da Internet.  
   
@@ -81,7 +81,7 @@ Defina as configurações de TCP/IP no roteador e renomeie o computador para ROU
   
 15. Na caixa de diálogo **Propriedades de 2-corpnet,** clique em **fechar**.  
   
-16. Feche a janela **Conexões de Rede** .  
+16. Feche a janela **Conexões de Rede**.  
   
 17. No console do Gerenciador do Servidor, no **servidor local**, na área **Propriedades** , ao lado de **nome do computador**, clique no link.  
   
@@ -112,7 +112,7 @@ Este computador está configurado apenas para fornecer roteamento entre as sub-r
   
 5.  Na caixa de diálogo **Firewall do Windows com segurança avançada** , na **guia perfil público** , em **estado do firewall**, clique em **desativado**e em **OK**.  
   
-6.  Feche o Firewall do Windows com segurança avançada.  
+6.  Feche Firewall do Windows com Segurança Avançada.  
   
 ## <a name="configure-routing-and-forwarding"></a>Configurar roteamento e encaminhamento  
 Para fornecer serviços de roteamento e encaminhamento entre as sub-redes corpnet e 2-corpnet, você deve habilitar o encaminhamento nas interfaces de rede e configurar rotas estáticas entre as sub-redes.  

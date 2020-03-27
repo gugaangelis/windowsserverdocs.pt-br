@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e8406286599e5b03173ce1b5d6c34c35245a9094
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d34630b4faa8012eee73967a99bc0541f1305a09
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366951"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313528"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>Etapa 3 planejar a implantação do certificado OTP
 
@@ -35,16 +35,16 @@ Depois de planejar o servidor RADIUS, você deve planejar os requisitos de AC (a
   
 5.  A autoridade de certificação verifica as credenciais e a solicitação.  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |[3,1 planejar a AC de OTP](#bkmk_3_1_CA)|Planeje a AC (autoridade de certificação) a ser usada para emitir certificados para clientes DirectAccess para autenticação OTP.|  
 |[3,2 planejar o modelo de certificado de OTP](#bkmk_3_2_OTP_Cert)|Planeje o modelo de certificado de OTP.|
 |[3,3 planejar o certificado de autoridade de registro](#bkmk_33RACert)|Planeje o certificado de autoridade de registro para assinar todas as solicitações de certificado de autenticação OTP.|
 
-## <a name="bkmk_3_1_CA"></a>3,1 planejar a AC de OTP  
+## <a name="31-plan-the-otp-ca"></a><a name="bkmk_3_1_CA"></a>3,1 planejar a AC de OTP  
 Para implantar o DirectAccess usando a OTP (autenticação de senha única), você precisa de uma CA interna para emitir os certificados de autenticação de OTP para os computadores cliente do DirectAccess. Para essa finalidade, você pode usar a mesma AC interna que você usa para emitir os certificados que são usados para autenticação regular do computador IPsec.  
   
-## <a name="bkmk_3_2_OTP_Cert"></a>3,2 planejar o modelo de certificado de OTP  
+## <a name="32-plan-the-otp-certificate-template"></a><a name="bkmk_3_2_OTP_Cert"></a>3,2 planejar o modelo de certificado de OTP  
 Cada cliente do DirectAccess requer um certificado de autenticação de OTP para obter acesso à rede interna. Você deve configurar um modelo em sua autoridade de certificação interna para o certificado de OTP. Observe o seguinte ao configurar o modelo de certificado de OTP:  
   
 -   Todos os usuários que precisam executar a autenticação OTP devem ter permissões de leitura e registro para este modelo.  
@@ -70,10 +70,10 @@ Cada cliente do DirectAccess requer um certificado de autenticação de OTP para
   
     -   Para o modelo de certificado de autenticação OTP, use a chave key 1.3.6.1.4.1.311.20.2.2.  
   
-## <a name="bkmk_33RACert"></a>3,3 planejar o certificado de autoridade de registro  
+## <a name="33-plan-the-registration-authority-certificate"></a><a name="bkmk_33RACert"></a>3,3 planejar o certificado de autoridade de registro  
 Quando os clientes do DirectAccess solicitam um certificado de OTP, o servidor de acesso remoto recebe a solicitação do cliente. O servidor de acesso remoto assina todas as solicitações de certificado OTP de clientes usando o certificado de autoridade de registro. A AC emitirá certificados somente se a solicitação for assinada pelo certificado de autoridade de registro no servidor de acesso remoto. O certificado deve ser emitido por uma AC interna, o certificado não pode ser autoassinado. Ele não precisa ser emitido pela autoridade de certificação que emitiu os certificados OTP, mas a autoridade de certificação que emite os certificados OTP deve confiar na autoridade de certificação que emite o certificado de autenticação da autoridade de registro.  
   
-## <a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
   
 -   [Etapa 4: planejar a OTP para o servidor de acesso remoto](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   

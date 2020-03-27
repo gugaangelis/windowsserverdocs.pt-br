@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9b77cfd-8dd4-476b-a118-f3d6bf59e7b1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9cce81998c6041aea223da29979a53d6069f599c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c9bc2b54927905346c980ef2b14d65310ca930b8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404747"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308583"
 ---
 # <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>ETAPA 6 teste a conectividade do DirectAccess da sub-rede HomeNet
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 A implantação de OTP (senha de uso único) do DirectAccess agora está concluída e você pode começar a testar a conectividade da sub-rede HomeNet.  
   
@@ -29,7 +29,7 @@ A implantação de OTP (senha de uso único) do DirectAccess agora está conclu�
   
 1. Em CLIENT1, certifique-se de que você está conectado como **Usuário1**.  
   
-2. Na tela **Iniciar** , digite**PowerShell. exe**, clique com o botão direito do mouse em **PowerShell**, clique em **avançado**e, em seguida, clique em **Executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+2. Na tela **Iniciar** , digite**PowerShell. exe**, clique com o botão direito do mouse em **PowerShell**, clique em **avançado**e, em seguida, clique em **Executar como administrador**. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
   
 3. Na janela do Windows PowerShell, digite **gpupdate/force**e pressione Enter.  
   
@@ -55,11 +55,11 @@ A implantação de OTP (senha de uso único) do DirectAccess agora está conclu�
   
 13. Na barra de endereços do Internet Explorer, digite **https://app2.corp.contoso.com/** e pressione Enter. Pressione F5. Você verá o site do IIS padrão em APP2.  
   
-14. Na tela **Iniciar** , digite<strong>\\ \ APP1\FILES</strong>e pressione Enter.  
+14. Na tela **Iniciar** , digite<strong>\\\APP1\FILES</strong>e pressione Enter.  
   
 15. Na janela pasta compartilhada **arquivos** , clique duas vezes no arquivo **example. txt** . Você verá o conteúdo do arquivo example. txt.  
   
-16. Na tela **Iniciar** , digite<strong>\\ \ APP2\FILES</strong>e pressione Enter.  
+16. Na tela **Iniciar** , digite<strong>\\\APP2\FILES</strong>e pressione Enter.  
   
 17. Na janela pasta compartilhada **arquivos** , clique duas vezes no **novo arquivo Text. txt** . Você verá o conteúdo do novo arquivo text document. txt.  
   

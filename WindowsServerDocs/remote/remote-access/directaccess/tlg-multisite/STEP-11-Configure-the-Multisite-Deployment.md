@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3a80697665eeb67c2dda0d4d25201c7d02ed0c7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d90b20716c49b2ea0b1cd002a1c1933fbd6e26e5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404811"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314570"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>ETAPA 11 configurar a implantação multissite
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Para configurar uma implantação multissite, faça alterações no assistente de configuração de acesso remoto atual no EDGE1, habilite o recurso multissite e, em seguida, adicione 2-EDGE1 como um segundo ponto de entrada.  
   
@@ -31,9 +31,9 @@ Para configurar uma implantação multissite, faça alterações no assistente d
   
 - Adicionar 2-EDGE1 como um segundo ponto de entrada  
   
-## <a name="configDA"></a>Configurar o acesso remoto no EDGE1  
+## <a name="configure-remote-access-on-edge1"></a><a name="configDA"></a>Configurar o acesso remoto no EDGE1  
   
-1.  Na tela **Iniciar** , digite**RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+1.  Na tela **Iniciar** , digite**RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
   
 2.  No Console de gerenciamento de acesso remoto, clique em **Configuração**.  
   
@@ -43,15 +43,15 @@ Para configurar uma implantação multissite, faça alterações no assistente d
   
 5.  No painel central do console do, na área **servidores de infraestrutura da etapa 3** , clique em **Editar**.  
   
-6.  Clique em **lista de pesquisa de sufixo DNS**. Na página **lista de pesquisa de sufixo DNS** , verifique se a caixa de seleção **configurar clientes DirectAccess com o sufixo de cliente DNS** está marcada e se os sufixos de domínio **Corp.contoso.com** e **corp2.Corp.contoso.com** aparece na lista **sufixos de domínio a serem usados** , clique em **Avançar**e em concluir.  
+6.  Clique em **lista de pesquisa de sufixo DNS**. Na página **lista de pesquisa de sufixo DNS** , verifique se a caixa de seleção **configurar clientes DirectAccess com o sufixo de cliente DNS** está marcada e se os sufixos de domínio **Corp.contoso.com** e **corp2.Corp.contoso.com** aparecem na lista **sufixos de domínio a serem usados** , clique em **Avançar**e em concluir.  
   
 7.  No painel central do console do, clique em **concluir**.  
   
-8.  Na caixa de diálogo **revisão de acesso remoto** , examine as definições de configuração e clique em **aplicar**. Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto** , clique em **Fechar**.  
+8.  Na caixa de diálogo **revisão de acesso remoto** , examine as definições de configuração e clique em **aplicar**. Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto**, clique em **Fechar**.  
   
 9. No painel **tarefas** , clique em **Atualizar servidores de gerenciamento**e clique em **Fechar** quando terminar.  
   
-## <a name="EnabledMultisite"></a>Habilitar a configuração multissite no EDGE1  
+## <a name="enable-multisite-configuration-on-edge1"></a><a name="EnabledMultisite"></a>Habilitar a configuração multissite no EDGE1  
   
 1.  No console de gerenciamento de acesso remoto, no painel **tarefas** , clique em **habilitar multissite**.  
   
@@ -73,7 +73,7 @@ Para configurar uma implantação multissite, faça alterações no assistente d
   
 10. Na caixa de diálogo **habilitando a implantação** multissite, clique em **fechar** e, em seguida, no assistente habilitar implantação multissite, clique em **Fechar**.  
   
-## <a name="AddEP"></a>Adicionar 2-EDGE1 como um segundo ponto de entrada  
+## <a name="add-2-edge1-as-a-second-entry-point"></a><a name="AddEP"></a>Adicionar 2-EDGE1 como um segundo ponto de entrada  
   
 1.  No console de gerenciamento de acesso remoto, no painel **tarefas** , clique em **Adicionar um ponto de entrada**.  
   

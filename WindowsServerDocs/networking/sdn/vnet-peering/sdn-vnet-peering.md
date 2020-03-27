@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: ccdcbb953939345ef5e9a45dff87fc7af62eb7bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01c768aefa685b688c2ed3f777c44a4665b5e4a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355488"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309680"
 ---
 # <a name="virtual-network-peering"></a>Emparelhamento de rede virtual
 
@@ -77,20 +77,20 @@ O emparelhamento de rede virtual permite que o próximo salto em uma rota defini
 
 Cada rede virtual, independentemente de estar emparelhada com outra rede virtual, ainda pode ter seu próprio gateway para se conectar a uma rede local. Ao emparelhar redes virtuais, você também pode configurar o gateway na rede virtual emparelhada como um ponto de trânsito para uma rede local. Nesse caso, a rede virtual que usa um gateway remoto não pode ter seu próprio gateway. Uma rede virtual pode ter apenas um gateway que pode ser um gateway local ou remoto (na rede virtual emparelhada).
 
-## <a name="monitor"></a>Monitor
+## <a name="monitor"></a>Monitorar
 
 Ao emparelhar duas redes virtuais, você deve configurar um emparelhamento para cada rede virtual no emparelhamento.
 
 Você pode monitorar o status da conexão de emparelhamento, que pode estar em um dos seguintes Estados:
 
--   **Iniciada** Mostrado quando você cria o emparelhamento da primeira rede virtual para a segunda rede virtual.
+-   **Iniciado em:** Mostrado quando você cria o emparelhamento da primeira rede virtual para a segunda rede virtual.
 
--   **Connected** Mostrado depois de criar o emparelhamento da segunda rede virtual para a primeira rede virtual. O estado de emparelhamento da primeira rede virtual é alterado de iniciado para conectado. Ambos os pares de rede virtual devem ter o estado conectado antes de estabelecer um emparelhamento de rede virtual com êxito.
+-   **Conectado:** Mostrado depois de criar o emparelhamento da segunda rede virtual para a primeira rede virtual. O estado de emparelhamento da primeira rede virtual é alterado de iniciado para conectado. Ambos os pares de rede virtual devem ter o estado conectado antes de estabelecer um emparelhamento de rede virtual com êxito.
 
--   **Desconecta** Mostrado se uma rede virtual se desconectar de outra rede virtual.
+-   **Desconectado:** Mostrado se uma rede virtual se desconectar de outra rede virtual.
 
 [infográfico dos Estados]
 
-## <a name="next-steps"></a>Próximas etapas
-[Configure o emparelhamento de rede virtual](sdn-configure-vnet-peering.md): Neste procedimento, você usa o Windows PowerShell para localizar a rede lógica do provedor de HNV para criar duas redes virtuais, cada uma com uma sub-rede. Você também configura o emparelhamento entre as duas redes virtuais.
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+[Configurar o emparelhamento de rede virtual](sdn-configure-vnet-peering.md): neste procedimento, você usa o Windows PowerShell para localizar a rede lógica do provedor de HNV para criar duas redes virtuais, cada uma com uma sub-rede. Você também configura o emparelhamento entre as duas redes virtuais.
 

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 87983076ee8a7d5546a5ac491ed4ca88153798f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74aac416a5aa69a0cd935d58e3ecb931e4b5fd02
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367412"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308332"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>Etapa 2 preparar servidores de cluster
 
@@ -25,13 +25,13 @@ ms.locfileid: "71367412"
 
 Antes de configurar uma implantação de cluster, você prepara servidores adicionais para adicionar ao cluster.  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |[2,1 configurar a infraestrutura de acesso remoto](#BKMK_config)|Em cada servidor que você deseja adicionar ao cluster, configure a topologia do servidor, o endereçamento IP, o roteamento e o encaminhamento. Se você configurar um cluster com balanceamento de carga de máquinas virtuais, deverá configurar as máquinas virtuais para usar a falsificação de endereço MAC.<br /><br />Além disso, ingresse cada servidor no mesmo domínio e conecte todos os servidores à mesma sub-rede.|  
 |[2,2 instalar a função de acesso remoto](#BKMK_Install)|Em cada servidor adicional que você deseja adicionar ao cluster, instale a função de acesso remoto|  
 |[2,3 instalar o NLB](#BKMK_NLB)|No servidor de acesso remoto implantado e em cada servidor adicional que você deseja adicionar ao cluster, instale o recurso NLB. Observe que essa etapa não é necessária ao usar um Load Balancer externo.|  
   
-## <a name="BKMK_config"></a>2,1 configurar a infraestrutura de acesso remoto  
+## <a name="21-configure-the-remote-access-infrastructure"></a><a name="BKMK_config"></a>2,1 configurar a infraestrutura de acesso remoto  
 Para configurar um cluster de acesso remoto, você deve configurar a topologia do servidor, o endereçamento IP, o roteamento e o encaminhamento em todos os servidores que irão formar parte do cluster.  
   
 ### <a name="to-configure-the-remote-access-infrastructure"></a>Para configurar a infraestrutura de acesso remoto  
@@ -42,7 +42,7 @@ Para configurar um cluster de acesso remoto, você deve configurar a topologia d
   
 3.  Ingresse cada um dos servidores que estarão no cluster para o mesmo domínio que o primeiro servidor de acesso remoto.  
   
-## <a name="BKMK_Install"></a>2,2 instalar a função de acesso remoto  
+## <a name="22-install-the-remote-access-role"></a><a name="BKMK_Install"></a>2,2 instalar a função de acesso remoto  
 Para configurar um cluster de acesso remoto, você deve instalar a função de acesso remoto em cada servidor que formará uma parte do cluster.  
   
 ### <a name="to-install-the-remote-access-role-on-always-on-vpn-servers"></a>Para instalar a função de acesso remoto em servidores VPN Always On  
@@ -59,13 +59,13 @@ Para configurar um cluster de acesso remoto, você deve instalar a função de a
   
 6.  Selecione **Roteamento**, selecione **proxy de aplicativo Web**, clique em **Adicionar recursos**e, em seguida, clique em **Avançar**.  
   
-7. Clique em **Avançar**e, em seguida, clique em **Instalar**.  
+7. Clique em **Avançar** e, em seguida, clique em **Instalar**.  
   
-8.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
+8.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem sucedida e, em seguida, clique em **Fechar**.  
   
 9.  Repita esse procedimento em todos os servidores que você deseja que sejam membros do cluster.  
   
-## <a name="BKMK_NLB"></a>2,3 instalar o NLB  
+## <a name="23-install-nlb"></a><a name="BKMK_NLB"></a>2,3 instalar o NLB  
 Para configurar um cluster de acesso remoto, você deve instalar o recurso de balanceamento de carga de rede em cada servidor que formará uma parte do cluster.  
   
 > [!NOTE]  
@@ -79,11 +79,11 @@ Para configurar um cluster de acesso remoto, você deve instalar o recurso de ba
   
 3.  Na caixa de diálogo **selecionar recursos** , selecione **balanceamento de carga de rede**, clique em **Adicionar recursos**, clique em **Avançar**e em **instalar**.  
   
-4.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
+4.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem sucedida e, em seguida, clique em **Fechar**.  
   
 5.  Repita esse procedimento em todos os servidores que você deseja que sejam membros do cluster.  
   
-## <a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
   
 -   [Etapa 3: configurar um cluster com balanceamento de carga](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   

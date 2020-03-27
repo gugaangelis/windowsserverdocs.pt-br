@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e0c82f9f56ea680c11cd612e17326fe7cf96aeca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 563ccf1cf68fc6ffd67a29533b3fb3b579a55ee6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388432"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308843"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guia de Teste de Laboratório: demonstrar o DirectAccess em um cluster com Windows NLB
 
@@ -31,7 +31,7 @@ Este guia contém instruções para a configuração e demonstração do Acesso 
 > [!IMPORTANT]  
 > Este laboratório é uma verificação de conceito usando o número mínimo de computadores. A configuração detalhada neste guia é apenas para fins de teste de laboratório, e não deve ser usada em um ambiente de produção.  
   
-## <a name="KnownIssues"></a>Problemas conhecidos  
+## <a name="known-issues"></a><a name="KnownIssues"></a>Problemas conhecidos  
 Os problemas a seguir são conhecidos quando se configura um cenário de cluster:  
   
 -   Depois de configurar o DirectAccess em uma implantação somente IPv4 com um único adaptador de rede e depois que o DNS64 padrão (o endereço IPv6 que contém ":3333::") for configurado automaticamente no adaptador de rede, a tentativa de habilitar o balanceamento de carga por meio do console de Gerenciamento de Acesso Remoto faz com que um prompt para o usuário forneça um DIP IPv6. Se for fornecido um DIP IPv6, ocorrerá falha na configuração depois de clicar em **Confirmar** com o erro: O parâmetro está incorreto.  

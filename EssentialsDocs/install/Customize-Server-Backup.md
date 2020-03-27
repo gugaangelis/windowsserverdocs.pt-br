@@ -3,7 +3,7 @@ title: Personalizar o Backup do Servidor
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 19b2559c-6090-45af-9a08-2eefc28473c8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d18dca276bccdf672664a5a3c2bd28e0221fff94
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7224ba49ecbf880dad8d88a2b197cc279e20d27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838537"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311921"
 ---
 # <a name="customize-server-backup"></a>Personalizar o Backup do Servidor
 
@@ -28,7 +28,7 @@ ms.locfileid: "59838537"
   
  Quando essa chave é definida, a interface do Usuário de Backup do Servidor não será exposta através do Dashboard ou Barra Inicial. Isso permite utilizar aplicativos de terceiros para Backup do Servidor.  
   
-#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>Para adicionar ServerBackup\ProviderDisabled? chave do registro e defina o valor para 1  
+#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>Para adicionar ServerBackup\ProviderDisabled? chave do registro e defina o valor como 1  
   
 1.  No servidor, clique em **Iniciar** e em **Executar**, digite **regedit** na caixa de texto **Abrir** e clique em **OK**.  
   
@@ -53,7 +53,7 @@ ms.locfileid: "59838537"
   
 3.  No painel de navegação, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server** e então expanda **ServerBackup**.  
   
-4.  Clique com o botão direito em **ProviderDisabled**e clique em **Excluir**.  
+4.  Clique com o botão direito em **ProviderDisabled** e clique em **Excluir**.  
   
 #### <a name="change-the-start-type-of-windows-server-server-backup-service"></a>Altere o tipo de início do Serviço de Backup de Servidores do Windows Server  
   
@@ -63,7 +63,7 @@ ms.locfileid: "59838537"
   
 3.  No painel de serviços, clique com o botão direito do mouse em **Serviço de Backup de Servidores do Windows Server** e clique em **Propriedades**.  
   
-4.  Na guia **Geral** , selecione **Automático** para o **tipo de Inicialização**.  
+4.  Na guia **Geral**, selecione **Automático** para o **tipo de Inicialização**.  
   
 5.  Clique em **OK** para fechar o diálogo.  
   

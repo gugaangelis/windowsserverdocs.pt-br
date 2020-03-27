@@ -6,18 +6,18 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 74c97a14-b957-4568-b48e-8963a674fdb3
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1bde6c859284fbd1756517d7b08ec96816bb2bb5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a2b0990bd1416032cd519c60878c389f391e053d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395962"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315531"
 ---
 # <a name="qos-policy-frequently-asked-questions"></a>Perguntas frequentes sobre a política de QoS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 A seguir, são perguntas frequentes – e respostas para essas perguntas – para a política de QoS.
   

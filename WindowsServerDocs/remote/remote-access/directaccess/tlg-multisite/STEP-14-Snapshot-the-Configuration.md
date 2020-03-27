@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e17d886-f216-400e-bd31-808aceb88033
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c1d8ddf2949c2b859ac0d734149eddd88874998a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2b6a279ea114262dd3a9f97ac2ce808bfd0e184a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388330"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308711"
 ---
 # <a name="step-14-snapshot-the-configuration"></a>ETAPA 14 instantâneo da configuração
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Isso conclui o laboratório de teste multissite do DirectAccess. Para salvar essa configuração para que você possa retornar rapidamente a uma configuração de multisite do DirectAccess em funcionamento, da qual você pode testar outros guias de laboratório de teste modular do DirectAccess, extensões de guia de laboratório de teste ou para sua própria experimentação e aprendizado, faça o seguinte :  
   

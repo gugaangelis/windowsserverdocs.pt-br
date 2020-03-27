@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1ab337da85387be8c7d960315bb28644fa3a8a93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: aebdbd02ebe256872b52e794c755e0d590b175a5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367504"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308473"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>Implantar o Acesso Remoto em uma Empresa
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico fornece uma introdução ao cenário do DirectAccess para a Empresa.  
   
@@ -37,7 +37,7 @@ Este tópico fornece uma introdução ao cenário do DirectAccess para a Empresa
   
 -   [Pré-requisitos para a implantação de pré-requisitos do DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
   
-## <a name="BKMK_OVER"></a>Descrição do cenário  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descrição do cenário  
 O acesso remoto inclui uma série de recursos corporativos, incluindo diversos servidores de acesso remoto em uma carga de cluster balanceada com o NLB (Balanceamento de Carga da Rede) do Windows ou com um balanceador externo de carga, além de instalação de uma implantação multissite com servidores de acesso remoto situados em locais geograficamente dispersos e implantação do DirectAccess com autenticação de cliente de dois fatores usando OTP (senha de uso único).  
   
 ## <a name="in-this-scenario"></a>Neste cenário  
@@ -51,7 +51,7 @@ Cada cenário corporativo é descrito em um documento que inclui instruções de
   
 -   [Implantar o acesso remoto em um ambiente de várias florestas](multi-forest/Deploy-Remote-Access-in-a-Multi-Forest-Environment.md)  
   
-## <a name="BKMK_APP"></a>Aplicativos práticos  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicativos práticos  
 Os cenários corporativos do acesso remoto fornecem:  
   
 -   **Maior disponibilidade**. Implantar vários servidores de acesso remoto em um cluster fornece escalabilidade e aumenta a capacidade de taxa de transferência e número de usuários. O balanceamento de carga do cluster fornece alta disponibilidade. Se um servidor no cluster falhar, os usuários remotos podem continuar acessando a rede corporativa interna por meio de um servidor diferente no cluster. O failover é transparente quando os clientes se conectam ao cluster utilizando um endereço IP virtual (VIP).  
@@ -62,13 +62,13 @@ Os cenários corporativos do acesso remoto fornecem:
   
 -   **Segurança**. A implantação de uma autenticação de cliente forte com uma OTP (senha de uso único) em vez da senha de Active Directory padrão aumenta a segurança.  
   
-## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista funções e recursos utilizados no cenário corporativo:  
   
 |Função/recurso|Como este cenário tem suporte|  
 |---------|-----------------|  
-|Função servidor de Acesso Remoto:|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<br /><br />1.  O DirectAccess e o serviço de roteamento e acesso remoto (RRAS) VPN-DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2.  Roteamento RRAS-os recursos de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<br /><br />A Função Servidor de Acesso Remoto depende dos seguintes recursos de servidor:<br /><br />-Serviços de Informações da Internet (IIS)-esse recurso é necessário para configurar o servidor de local de rede e a investigação da Web padrão.<br />-O recurso de Console de Gerenciamento de Política de Grupo-recurso é exigido pelo DirectAccess para criar e gerenciar os objetos de Política de Grupo (GPOs) no Active Directory e deve ser instalado como um recurso necessário para a função de servidor.|  
-|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />1.  GUI de Acesso Remoto e Ferramentas de Linha de Comando<br />2.  Módulo de Acesso Remoto para o Windows PowerShell<br /><br />As dependências incluem:<br /><br />1.  Console de gerenciamento de política de grupo<br />2.  Kit de Administração do Gerenciador de Conexões RAS (CMAK)<br />3.  Windows PowerShell 3.0<br />4.  Ferramentas e Infraestrutura de Gerenciamento Gráfico|  
+|Função servidor de Acesso Remoto:|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<br /><br />1. DirectAccess e roteamento e serviços de acesso remoto (RRAS) VPN-DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2. roteamento RRAS-os recursos de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<br /><br />A Função Servidor de Acesso Remoto depende dos seguintes recursos de servidor:<br /><br />-Serviços de Informações da Internet (IIS)-esse recurso é necessário para configurar o servidor de local de rede e a investigação da Web padrão.<br />-O recurso de Console de Gerenciamento de Política de Grupo-recurso é exigido pelo DirectAccess para criar e gerenciar os objetos de Política de Grupo (GPOs) no Active Directory e deve ser instalado como um recurso necessário para a função de servidor.|  
+|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />1. GUI de acesso remoto e ferramentas de linha de comando<br />2. módulo de acesso remoto para Windows PowerShell<br /><br />As dependências incluem:<br /><br />1. Console de Gerenciamento de Política de Grupo<br />2. kit de administração do Gerenciador de conexões RAS (CMAK)<br />3. Windows PowerShell 3,0<br />4. ferramentas e infraestrutura de gerenciamento gráfico|  
 |NLB do Windows|Este recurso permite o balanceamento de carga de diversos servidores de Acesso Remoto.|  
   
 

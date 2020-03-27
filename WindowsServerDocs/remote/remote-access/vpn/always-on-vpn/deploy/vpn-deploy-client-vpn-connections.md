@@ -7,15 +7,15 @@ ms.topic: article
 ms.date: 05/29/2018
 ms.assetid: d165822d-b65c-40a2-b440-af495ad22f42
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.reviewer: deverette
-ms.openlocfilehash: c35cc44e0a52596fd9fa2ba5b2c01727c11b834c
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 11906c737dd1604bf064e25a01289fe2ee5a23ad
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822400"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310490"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>Etapa 6. Configurar conexões VPN Always On cliente do Windows 10
 
@@ -199,7 +199,7 @@ No entanto, se você não tiver reiniciado o computador desde a configuração d
 
 14. Clique em **OK** para fechar a caixa de diálogo Propriedades do modelo.
 
-15. Feche a janela conexões de rede.
+15. Feche a janela Conexões de Rede.
 
 16. Em configurações, teste a VPN clicando em **modelo**e, em seguida, clicando em **conectar**.
 
@@ -716,7 +716,7 @@ Para usar Configuration Manager para implantar um perfil VPN de Always On de ace
 
     a.  Em **regras de associação**, clique em **Adicionar regra**e clique em **regra direta**. Neste exemplo, você está adicionando usuários individuais à coleção de usuários. No entanto, você pode usar uma regra de consulta para adicionar usuários a essa coleção dinamicamente para uma implantação de maior escala.
 
-    b.  Na página **Bem-vindo**, clique em **Avançar**.
+    b.  Na página **Boas-vindas**, clique em **Avançar**.
 
     c.  Na página pesquisar recursos, em **valor**, digite o nome do usuário que você deseja adicionar. O nome do recurso inclui o domínio do usuário. Para incluir resultados com base em uma correspondência parcial, insira o caractere **%** em qualquer uma das extremidades do critério de pesquisa. Por exemplo, para localizar todos os usuários que contêm a cadeia de caracteres "Lori", digite **% Lori%** . Clique em **Avançar**.
 
@@ -930,7 +930,7 @@ Para testar a política de configuração, entre em um computador cliente com Wi
 
 5.  Feche as configurações. Após a sincronização, você verá o perfil VPN disponível no computador.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 Você concluiu a implantação de Always On VPN.  Para outros recursos que você pode configurar, consulte a tabela abaixo:
 

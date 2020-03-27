@@ -10,27 +10,27 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72b5b2af-6925-41e0-a3f9-b8809ed711d1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cd42d00d8bddc786ea8a13faf10703361bf8da7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 865f9ffd3eed3ce145364c227845af097194416e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404964"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309242"
 ---
 # <a name="step-2-plan-the-directaccess-deployment"></a>Etapa 2 planejar a implantação do DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Após planejar a infraestrutura de Acesso Remoto, a próxima etapa para habilitar o DirectAccess é planejar as configurações do Assistente para Habilitar DirectAccess.  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |Planejando a implantação do cliente|Planeje como permitir que computadores cliente sejam conectados usando DirectAccess. Decida quais computadores gerenciados serão configurados como clientes do DirectAccess.|  
 |Planejando a implantação do servidor de Acesso Remoto|Planeje como implantar o servidor de Acesso Remoto.|  
   
-## <a name="bkmk_2_1_client"></a>Planejando a implantação do cliente  
+## <a name="planning-for-client-deployment"></a><a name="bkmk_2_1_client"></a>Planejando a implantação do cliente  
 Há duas decisões a serem tomadas ao planejar a implantação do cliente:  
   
 -   O DirectAccess estará disponível somente para computadores móveis, ou para qualquer computador?  
@@ -41,7 +41,7 @@ Há duas decisões a serem tomadas ao planejar a implantação do cliente:
   
     As configurações do DirectAccess estão contidas no GPO do cliente do DirectAccess. O GPO é aplicado a computadores que fazem parte dos grupos de segurança especificados no assistente para Habilitar DirectAccess. Você pode especificar grupos de segurança contidos em qualquer domínio com suporte. Antes de configurar o Acesso Remoto, os grupos de segurança devem ser criados. Você pode adicionar computadores ao grupo de segurança depois de concluir a implantação do Acesso Remoto, mas observe que, se adicionar computadores cliente que residem em um domínio diferente ao grupo de segurança, o GPO do cliente não será aplicado a esses clientes. Por exemplo, se você criou SG1 no domínio A para clientes do DirectAccess, e posteriormente adicionou clientes do domínio B a esse grupo, o GPO do cliente não será aplicado a clientes no domínio B. Para evitar esse problema, crie um novo grupo de segurança de cliente para cada domínio que contém computadores cliente. Também, se você não deseja criar um novo grupo de segurança, execute o cmdlet Add-DAClient com o nome do novo GPO do novo domínio.  
   
-## <a name="bkmk_2_2_server"></a>Planejando a implantação do servidor de acesso remoto  
+## <a name="planning-for-remote-access-server-deployment"></a><a name="bkmk_2_2_server"></a>Planejando a implantação do servidor de acesso remoto  
 Há diversas decisões a serem tomadas ao se planejar a implantação de seu servidor de Acesso Remoto:  
   
 -   **Topologia de rede**– há duas topologias disponíveis ao implantar um servidor de acesso remoto:  
@@ -56,7 +56,7 @@ Há diversas decisões a serem tomadas ao se planejar a implantação de seu ser
   
 -   **Certificado IP-HTTPS**-se a VPN SSTP estiver configurada, o assistente habilitar DirectAccess selecionará o certificado usado pelo SSTP para IP-HTTPS. Se o SSTP VPN não estiver configurado, o assistente tentará ver se um certificado para IP-HTTPS foi configurado. Caso não tenha sido, ele provisionará automaticamente certificados autoassinados para IP-HTTPS. O assistente habilita automaticamente autenticação Kerberos. O assistente também habilitará NAT64 e DNS64 para conversão de protocolos no ambiente somente IPv4.  
   
--   **Prefixos IPv6**– se o assistente detectar que o IPv6 foi implantado nos adaptadores de rede, ele criará automaticamente prefixos IPv6 para a rede interna, um prefixo IPv6 para atribuir a computadores cliente DirectAccess e um prefixo IPv6 para atribuir ao cliente VPN nos. Se os prefixos gerados automaticamente não estiverem corretos para sua infraestrutura IPv6 ou ISATAP nativa, altere-os manualmente. Consulte a rede de planejamento do 1,1 e as configurações e a topologia do servidor.  
+-   **Prefixos IPv6**– se o assistente detectar que o IPv6 foi implantado nos adaptadores de rede, ele criará automaticamente prefixos IPv6 para a rede interna, um prefixo IPv6 para atribuir a computadores cliente DirectAccess e um prefixo IPv6 para atribuir a computadores cliente VPN. Se os prefixos gerados automaticamente não estiverem corretos para sua infraestrutura IPv6 ou ISATAP nativa, altere-os manualmente. Consulte 1.1 Planejando topologia e configurações de rede e servidor.  
   
 -   **Clientes do Windows 7**-por padrão, os computadores cliente do Windows 7 não podem se conectar a uma implantação de acesso remoto do windows Server 2012. Se você tiver computadores cliente do Windows 7 em sua organização que exigem acesso remoto a recursos internos, você poderá permitir que eles se conectem. Qualquer computador cliente ao qual você deseja permitir acesso a recursos internos deve ser membro de um grupo de segurança especificado no assistente para Habilitar DirectAccess.  
   
