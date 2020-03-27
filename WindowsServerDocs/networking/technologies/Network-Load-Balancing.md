@@ -1,22 +1,22 @@
 ---
-title: Balanceamento de Carga de Rede
+title: Balanceamento de carga de rede
 description: Neste tópico, fornecemos uma visão geral do balanceamento de carga de rede \(recurso NLB\) no Windows Server 2016. Você pode usar o NLB para gerenciar dois ou mais servidores como um único cluster virtual. O NLB aprimora a disponibilidade e a escalabilidade de aplicativos de servidor de Internet, como aqueles usados em Web, FTP, firewall, proxy, rede privada virtual \(VPN\)e outros servidores críticos de\-.
 manager: dougkim
 ms.prod: windows-server
 ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 4d79b6f29fbe64633bf04604ad586aff3dd86edf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80dae16442041e3b46babaca6d163095c1c5e475
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405845"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309692"
 ---
-# <a name="network-load-balancing"></a>Balanceamento de Carga de Rede
+# <a name="network-load-balancing"></a>Balanceamento de carga de rede
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
@@ -96,7 +96,7 @@ A seguir estão os principais recursos do NLB.
   
 - Permite que o NLB seja vinculado a vários adaptadores de rede, o que permite configurar vários clusters independentes em cada host. O suporte a vários adaptadores de rede difere dos clusters virtuais, pois os clusters virtuais permitem configurar vários clusters em um único adaptador de rede.  
   
-- Não requer modificações em aplicativos de servidor para que eles possam ser executados em um cluster NLB.  
+- Não requer modificações de aplicativos de servidor para que eles possam ser executados em um cluster NLB.  
   
 - Pode ser configurado para adicionar automaticamente um host ao cluster se esse host de cluster falhar e voltar ao modo online posteriormente. O host adicionado pode começar a manipular os pedidos de novos servidores clientes.  
   

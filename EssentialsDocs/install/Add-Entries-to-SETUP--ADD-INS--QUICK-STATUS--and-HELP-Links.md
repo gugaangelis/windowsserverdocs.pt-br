@@ -3,7 +3,7 @@ title: Adicione entradas para os links SETUP, ADD-INS, QUICK STATUS e HELP
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f0a66d0d36a3012369a9bc26c513dad069235ad8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 074e4e638a1fe96bedf2c8340ec71848a8fa4ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433789"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310277"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>Adicione entradas para os links SETUP, ADD-INS, QUICK STATUS e HELP
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-É possível adicionar tarefas às listas de tarefas **SETUP**, **ADD-INS**, **QUICK STATUS** , e adicionar links à seção Community Links na home page do Dashboard. Tarefas e links são adicionados a essas listas e seção com a colocação de um arquivo XML nomeado OEMHomePageContent.home ou de um arquivo de recurso inserido nomeado OEMHomePageContent.dll em %ProgramFiles%\Windows Server\Bin\Addins\Home. O arquivo de recurso embutido pode ser usado para localizar o texto nas tarefas e links que você adicionar. O arquivo .home contém as definições de XML das tarefas e links.  
+É possível adicionar tarefas às listas de tarefas **SETUP**, **ADD-INS**, **QUICK STATUS**, e adicionar links à seção Community Links na home page do Dashboard. Tarefas e links são adicionados a essas listas e seção com a colocação de um arquivo XML nomeado OEMHomePageContent.home ou de um arquivo de recurso inserido nomeado OEMHomePageContent.dll em %ProgramFiles%\Windows Server\Bin\Addins\Home. O arquivo de recurso embutido pode ser usado para localizar o texto nas tarefas e links que você adicionar. O arquivo .home contém as definições de XML das tarefas e links.  
   
 ## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>Adicionando tarefas às listas de tarefas SETUP, ADD-INS, QUICK STATUS e adicionando links à tarefa HELP  
  É possível adicionar tarefas às listas de tarefas **SETUP**, **ADD-INS**, **QUICK STATUS** e links à tarefa **HELP** definindo as tarefas e links usando XML, opcionalmente criando o arquivo de recurso integrado e instalando o arquivo no servidor. Se o arquivo XML estiver sendo instalado no servidor sem um arquivo de recurso, ele deve ser chamado OEMHomePageContent.home. Se um conjunto estiver sendo usado para instalar o arquivo XML e um arquivo de recurso, ele deve primeiro receber o nome de OEMHomePageContent.dll e ser assinado por Authenticode.  
@@ -35,13 +35,13 @@ ms.locfileid: "66433789"
   
 1. Abra o Visual Studio 2010 ou superior como administrador clicando com o botão direito do mouse no programa no menu Iniciar e selecione **Executar como administrador**.  
   
-2. Clique em **Arquivo**, em **Novo**e em **Projeto**.  
+2. Clique em **Arquivo**, em **Novo** e em **Projeto**.  
   
-3. No painel **Modelos** , clique em **Biblioteca de Classes**, digite **OEMHomePageContent** na caixa **Nome** e clique em **OK**.  
+3. No painel **Modelos**, clique em **Biblioteca de Classes**, digite **OEMHomePageContent** na caixa **Nome** e clique em **OK**.  
   
 4. Exclua o arquivo Class1.cs.  
   
-5. Clique com o botão direito do mouse no novo projeto, clique em **Adicionar**e em **Novo Item**.  
+5. Clique com o botão direito do mouse no novo projeto, clique em **Adicionar** e em **Novo Item**.  
   
 6. No painel **Modelos**, clique em **Arquivo XML**, digite **OEMHomePageContent.home** na caixa de texto **Nome** e, em seguida, clique em **Adicionar**.  
   
@@ -103,14 +103,14 @@ ms.locfileid: "66433789"
    |---------------|-----------------|  
    |Name (Task)|O nome que é exibido para a tarefa na lista. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
    |description (Task)|A descrição da tarefa. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
-   |id (Task)|O identificador da tarefa. Esse identificador deve ser um GUID. Você cria um novo GUID para uma tarefa **exe**, mas para uma tarefa **global**, você usa o GUID criado quando você definiu a tarefa para o painel de tarefas da subguia. Para obter mais informações sobre como criar uma GUID, consulte [Criar Guid (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098).|  
+   |id (Task)|O identificador da tarefa. Esse identificador deve ser um GUID. Você cria um novo GUID para uma tarefa **exe** , mas, para uma tarefa **global** , usa o GUID que você criou quando definiu a tarefa para o painel de tarefas da subguia. Para obter mais informações sobre como criar um GUID, consulte [Create GUID (Guidgen. exe)](https://go.microsoft.com/fwlink/?LinkId=116098).|  
    |image|Esse campo será ignorado.|  
    |Name (Action)|Exibe o nome da tarefa.|  
-   |Tipo (Ação)|Descreve o tipo de tarefa. A tarefa pode ser uma das seguintes:- tarefa **global**, **exe** ou url. Uma tarefa **global** é a mesma tarefa global que você criou ao definir as tarefas para o painel de tarefas na subguia. Para obter mais informações sobre como criar uma tarefa global que pode ser usada no painel de tarefas da subguia e as listas Getting Started Tasks ou Common Tasks da home page, consulte œCreating as classes de suporte? em como: Criar uma subguia? dos [Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648). Uma tarefa **exe** pode ser usada para executar aplicativos a partir das listas Tarefas Iniciais ou Tarefas Comuns.|  
-   |exelocation|O caminho para o aplicativo associado à tarefa. Esse atributo é usado apenas para tarefas **exe** .|  
+   |Tipo (Ação)|Descreve o tipo de tarefa. A tarefa pode ser uma das seguintes:- tarefa **global**, **exe** ou url. Uma tarefa **global** é a mesma tarefa global que você criou ao definir as tarefas para o painel de tarefas na subguia. Para obter mais informações sobre como criar uma tarefa global que pode ser usada no painel Tarefas da subguia e nas listas tarefas Introdução ou tarefas comuns do home page, consulte œCreatingndo as classes de suporte? em como para: criar uma subguia? do [SDK das soluções do Windows Server](https://go.microsoft.com/fwlink/?LinkID=248648). Uma tarefa **exe** pode ser usada para executar aplicativos a partir das listas Tarefas Iniciais ou Tarefas Comuns.|  
+   |exelocation|O caminho para o aplicativo associado à tarefa. Esse atributo é usado apenas para tarefas **exe**.|  
    |replaceid|O identificador da tarefa que será substituído por esta tarefa.|  
-   |assembly|O AssemblyName do assembly que fornece a classe para implementar a consulta de status rápido. O assembly precisa estar localizado no programa de programas \ windows server\bin\\.|  
-   |class|O nome da classe implementa uma consulta de status rápido. A classe precisa implementar a interface **ITaskStatusQuery**.|  
+   |assembly|O AssemblyName do assembly que fornece a classe para implementar a consulta de status rápido. O assembly precisa estar localizado em arquivos de programas \ Windows Server\Bin\\.|  
+   |{1&gt;classe&lt;1}|O nome da classe implementa uma consulta de status rápido. A classe precisa implementar a interface **ITaskStatusQuery**.|  
    |Title (link)|O texto que é exibido para o link. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
    |Description (link)|A descrição do destino do link. Se você criar um arquivo de recurso inserido, o valor deste atributo será o recurso da cadeia de caracteres.|  
    |ShellExecPath|O caminho para o aplicativo ou para a URL.<br /><br /> **Observação:** As variáveis de ambiente têm suporte no atributo ShellExecPath.|  
@@ -147,11 +147,11 @@ ms.locfileid: "66433789"
 ##### <a name="replace-tasks"></a>Substituir tarefas  
  Você pode substituir as tarefas predefinidas nas listas Tarefas Iniciais ou Tarefas Comuns adicionando o GUID para a tarefa ao atributo replaceid da definição da tarefa. A seguinte tabela lista as tarefas e os identificadores correspondentes que podem ser substituídos no Dashboard:  
   
-|Nome da tarefa|Identificador|  
+|Nome da tarefa|Identifier|  
 |---------------|----------------|  
 |Obter atualizações para outros produtos da Microsoft|8412D35A-13EE-4112-AE0B-F7DBC83EA83D|  
 |Configurar Backup do Servidor|F68B3F3F-19DE-499D-9ACB-4BB41B8FF420|  
-|Configurar Acesso em Qualquer Local|8991302D-676A-4A7C-B244-D1E08AE0EFEA|  
+|Configurar o Acesso em Qualquer Local|8991302D-676A-4A7C-B244-D1E08AE0EFEA|  
 |Configurar notificação de alerta por email|DE6F2B36-F19C-4FAF-998B-9772300E3530|  
 |Adicionar contas de usuário|6D5B5D5F-2EC7-4B1F-9580-4DB084B278B1|  
 |Adicionar pastas de servidor|03F1F438-D94E-439B-A9F7-0C817C37D625|  
@@ -167,7 +167,7 @@ ms.locfileid: "66433789"
   
 ###### <a name="to-create-the-resource-file"></a>Para criar o arquivo de recurso  
   
-1.  Clique com o botão direito do mouse no projeto criado para suas tarefas, clique em **Adicionar**e em **Novo Item**.  
+1.  Clique com o botão direito do mouse no projeto criado para suas tarefas, clique em **Adicionar** e em **Novo Item**.  
   
 2.  No painel **Modelos**, clique em **Arquivo de Recurso**, digite **OEMHomePageContent.home.resx** na caixa de texto **Nome** e clique em **Adicionar**.  
   
@@ -201,7 +201,7 @@ ms.locfileid: "66433789"
   
 5.  Salve o arquivo OEMHomePageContent.home.resx e, em seguida, crie a solução.  
   
-#####  <a name="BKMK_SignAssembly"></a> Assinar o assembly com uma assinatura Authenticode  
+#####  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Assinar o assembly com uma assinatura Authenticode  
  Você deve assinar com a Authenticode o assembly para que seja usado no sistema operacional. Para obter mais informações sobre a assinatura do assembly, consulte [Assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
   
 ##### <a name="install-the-task-files"></a>Instalar os arquivos de tarefa  
