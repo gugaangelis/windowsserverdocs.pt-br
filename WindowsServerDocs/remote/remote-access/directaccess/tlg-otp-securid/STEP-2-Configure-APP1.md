@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea96a30caeedc188a5a41c097a5c8a90e2b5dbc7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dbeba9f1646cfb13d709cb4f7987802f69708adb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388208"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314419"
 ---
 # <a name="step-2-configure-app1"></a>ETAPA 2 configurar o APP1
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Use as etapas a seguir para preparar o APP1 para o suporte a OTP:  
   
@@ -32,7 +32,7 @@ Use as etapas a seguir para preparar o APP1 para o suporte a OTP:
 > [!WARNING]  
 > O design deste guia de laboratório de teste inclui servidores de infraestrutura, como um controlador de domínio e uma CA (autoridade de certificação) que executam o Windows Server 2012 R2 ou o Windows Server 2012. O uso deste guia de laboratório de teste para configurar servidores de infraestrutura que executam outros sistemas operacionais não foi testado e as instruções para configurar outros sistemas operacionais não estão incluídas neste guia.  
   
-## <a name="DAOTPRA"></a>Para criar e implantar um modelo de certificado usado para assinar solicitações de certificado OTP  
+## <a name="to-create-and-deploy-a-certificate-template-used-to-sign-otp-certificate-requests"></a><a name="DAOTPRA"></a>Para criar e implantar um modelo de certificado usado para assinar solicitações de certificado OTP  
   
 1.  Execute **certtmpl. msc**e pressione Enter.  
   
@@ -52,7 +52,7 @@ Use as etapas a seguir para preparar o APP1 para o suporte a OTP:
   
 9. Clique na guia **extensões** , selecione **políticas de aplicativo** e clique em **Editar**. Remova todas as políticas de aplicativo existentes. Clique **em Adicionar**e, na caixa de diálogo **Adicionar política de aplicativo** , clique em **novo**, insira **ra da OTP do da** no campo **nome:** e **1.3.6.1.4.1.311.81.1.1** no campo **identificador do objeto:** e clique em **OK**. Na caixa de diálogo **Adicionar política de aplicativo** , clique em **OK**. Na **extensão editar políticas de aplicativo**, clique em **OK**. Na caixa **de diálogo Propriedades do novo modelo** , clique em **OK**.  
   
-## <a name="DAOTPLogon"></a>Para criar e implantar um modelo de certificado para certificados OTP emitidos pela AC corporativa  
+## <a name="to-create-and-deploy-a-certificate-template-for-otp-certificates-issued-by-the-corporate-ca"></a><a name="DAOTPLogon"></a>Para criar e implantar um modelo de certificado para certificados OTP emitidos pela AC corporativa  
   
 1.  No console modelos de certificado, no painel de detalhes, clique com o botão direito do mouse no modelo de **logon de cartão inteligente** e clique em **duplicar modelo**.  
   
@@ -65,13 +65,13 @@ Use as etapas a seguir para preparar o APP1 para o suporte a OTP:
     > [!IMPORTANT]  
     > **AC do Windows Server 2003**. Em situações em que a autoridade de certificação (CA) está em um computador que está executando o Windows Server 2003, o modelo de certificado deve ser configurado em um computador diferente. Isso é necessário porque a definição do **período de validade** em horas não é possível ao executar versões do Windows antes do windows Server 2008 e do Windows Vista. Se o computador que você usa para configurar o modelo não tiver a função de servidor de serviços de certificados Active Directory instalada, ou se for um computador cliente, talvez seja necessário instalar o snap-in de modelos de certificado. Para obter mais informações, consulte [instalar o snap-in de modelos de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
     >   
-    > **AC do Windows Server 2008 R2**. Se você já tiver implantado uma autoridade de certificação (CA) que executa o Windows Server 2008 R2, deverá configurar o **período de renovação** do modelo de certificado para 1 ou 2 horas, e o **período de validade** será maior do que o **período de renovação**, Mas não mais de 4 horas. Se você configurar um período de **validade** de um modelo de certificado de mais de 4 horas com uma AC que esteja executando o Windows Server 2008 R2, o assistente de instalação do DirectAccess não poderá detectar o modelo de certificado e a instalação do DirectAccess falhará.  
+    > **AC do Windows Server 2008 R2**. Se você já tiver implantado uma autoridade de certificação (CA) que executa o Windows Server 2008 R2, deverá configurar o **período de renovação** do modelo de certificado para 1 ou 2 horas, e o **período de validade** será maior do que o **período de renovação**, mas não mais de 4 horas. Se você configurar um período de **validade** de um modelo de certificado de mais de 4 horas com uma AC que esteja executando o Windows Server 2008 R2, o assistente de instalação do DirectAccess não poderá detectar o modelo de certificado e a instalação do DirectAccess falhará.  
   
 5.  Clique na guia **segurança** , selecione **usuários autenticados**, na coluna **permitir** , e marque as caixas de seleção **ler** e **registrar** . Clique em **OK**. Clique em **Admins** . do domínio e **Administração de empresa**e clique em **controle total** na coluna **permitir** para ambos. Clique em **Aplicar**.  
   
 6.  Clique na guia **nome da entidade** e, em seguida, clique em **criar com base nessa Active Directory informações**. No **formato nome da entidade:** selecione o **nome totalmente diferenciado**, verifique se a caixa **nome principal do usuário (UPN)** está marcada e clique em **aplicar**.  
   
-7.  Clique na guia **servidor** , marque a caixa de seleção não **armazenar certificados e solicitações no banco de dados de autoridade de certificação** , desmarque a caixa de seleção não **incluir informações de revogação em certificados emitidos** e, em seguida, nas **Propriedades do novo modelo** , clique em **aplicar**.  
+7.  Clique na guia **servidor** , marque a caixa de seleção não **armazenar certificados e solicitações no banco de dados de autoridade de certificação** , desmarque a caixa de seleção não **incluir informações de revogação em certificados emitidos** e, em seguida, na caixa **de diálogo Propriedades do novo modelo** , clique em **aplicar**.  
   
 8.  Clique na guia **requisitos de emissão** , marque a caixa de seleção **este número de assinaturas autorizadas:** e defina o valor como 1. No **tipo de política necessário em assinatura:** lista Selecione **política de aplicativo**e, na lista política de **aplicativo** , selecione **da OTP ra**. Na caixa **de diálogo Propriedades do novo modelo** , clique em **OK**.  
   
@@ -85,13 +85,13 @@ Use as etapas a seguir para preparar o APP1 para o suporte a OTP:
   
 13. Na lista de modelos de certificado, clique em **DAOTPRA** e **DAOTPLogon**e clique em **OK**.  
   
-14. No painel de detalhes do console, você deve ver o modelo de certificado **DAOTPRA** com uma **finalidade pretendida** de **ra da OTP da** e o modelo de certificado **DAOTPLogon** com uma **finalidade pretendida** de **logon de cartão inteligente** .  
+14. No painel de detalhes do console, você deve ver o modelo de certificado **DAOTPRA** com uma **finalidade pretendida** de **ra da OTP da** e o modelo de certificado **DAOTPLogon** com uma **finalidade pretendida** de **logon de cartão inteligente**.  
   
 15. Reinicie os serviços.  
   
 16. Feche a console da Autoridade de Certificação.  
   
-17. Abra um prompt de comando com privilégios elevados. Digite **certutil. exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**e pressione Enter.  
+17. Abra um prompt de comandos com privilégios elevados. Digite **certutil. exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**e pressione Enter.  
   
 18. Deixe a janela de prompt de comando aberta para a próxima etapa.  
   

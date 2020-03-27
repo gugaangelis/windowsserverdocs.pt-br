@@ -10,19 +10,19 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 158183bab74e6e45c36c579f3259fc2095a939b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db634af114610cce0bdbcacd58986ceb5f00dd99
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406050"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317581"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Usar dispositivos virtuais de rede em uma rede virtual
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, você aprenderá a implantar dispositivos de rede virtual em redes virtuais de locatário. Você pode adicionar soluções de virtualização de rede a redes que executam funções de espelhamento de porta e roteamento definidas pelo usuário.
 
@@ -44,7 +44,7 @@ Alguns dispositivos exigem vários adaptadores de rede virtual. Normalmente, um 
 Depois de implantar a solução de virtualização de rede, você pode usar o dispositivo para roteamento definido, portamento de espelhamento ou ambos. 
 
 
-## <a name="example-user-defined-routing"></a>Exemplo: Roteamento definido pelo usuário
+## <a name="example-user-defined-routing"></a>Exemplo: roteamento definido pelo usuário
 
 Para a maioria dos ambientes, você só precisa das rotas do sistema já definidas pelo roteador distribuído da rede virtual. No entanto, talvez seja necessário criar uma tabela de roteamento e adicionar uma ou mais rotas em casos específicos, como:
 
@@ -83,7 +83,7 @@ As sub-redes dependem de rotas do sistema até que uma tabela de roteamento seja
     $routetable = New-NetworkControllerRouteTable -ConnectionUri $uri -ResourceId "Route1" -Properties $routetableproperties
    ```
 
-4. Aplique a tabela de roteamento à sub-rede virtual.<p>Quando você aplica a tabela de rotas à sub-rede virtual, a primeira sub-rede virtual na rede Tenant1_Vnet1 usa a tabela de rotas. Você pode atribuir a tabela de rotas para o máximo de sub-redes na rede virtual que desejar.
+4. Aplique a tabela de roteamento à sub-rede virtual.<p>Quando você aplica a tabela de rotas à sub-rede virtual, a primeira sub-rede virtual na Tenant1_Vnet1 rede usa a tabela de rotas. Você pode atribuir a tabela de rotas para o máximo de sub-redes na rede virtual que desejar.
 
    ```PowerShell
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "Tenant1_VNet1"
@@ -93,9 +93,9 @@ As sub-redes dependem de rotas do sistema até que uma tabela de roteamento seja
 
 Assim que você aplicar a tabela de roteamento à rede virtual, o tráfego será encaminhado para o dispositivo virtual. Você deve configurar a tabela de roteamento no dispositivo virtual para encaminhar o tráfego de uma maneira apropriada para o seu ambiente.
 
-## <a name="example-port-mirroring"></a>Exemplo: Espelhamento de porta
+## <a name="example-port-mirroring"></a>Exemplo: espelhamento de porta
 
-Neste exemplo, você configura o tráfego para MyVM_Ethernet1 para espelhar Appliance_Ethernet1.  Presumimos que você tenha implantado duas VMs, uma como o dispositivo e a outra como a VM a ser monitorada com o espelhamento. 
+Neste exemplo, você configura o tráfego para MyVM_Ethernet1 espelhar Appliance_Ethernet1.  Presumimos que você tenha implantado duas VMs, uma como o dispositivo e a outra como a VM a ser monitorada com o espelhamento. 
 
 O dispositivo deve ter uma segunda interface de rede para gerenciamento. Depois de habilitar o espelhamento como um destino no Appliciance_Ethernet1, ele não recebe mais o tráfego destinado à interface IP configurada lá.
 
@@ -168,6 +168,6 @@ O dispositivo deve ter uma segunda interface de rede para gerenciamento. Depois 
    $srcNic = New-NetworkControllerNetworkInterface -ConnectionUri $uri  -Properties $srcNic.Properties -ResourceId $srcNic.ResourceId
    ```
 
-Depois de concluir essas etapas, a interface Appliance_Ethernet1 espelha o tráfego da interface MyVM_Ethernet1.
+Depois de concluir essas etapas, a interface de Appliance_Ethernet1 espelha o tráfego da interface MyVM_Ethernet1.
  
 ---

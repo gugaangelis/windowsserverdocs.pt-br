@@ -6,20 +6,20 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9c313b88e2502a99baf5962a1f2eb224d67a38dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5c74ca9fe60374d1bc1396d95c2e34cc5cd1fdd6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406174"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317763"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com servidores primários
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
-Você pode usar este tópico para saber como configurar a política DNS para permitir que servidores DNS primários respondam a consultas de cliente DNS com base na localização geográfica do cliente e do recurso ao qual o cliente está tentando se conectar, fornecendo ao cliente o AD IP a cômoda do recurso mais próximo.  
+Você pode usar este tópico para saber como configurar a política DNS para permitir que servidores DNS primários respondam a consultas de cliente DNS com base na localização geográfica do cliente e do recurso ao qual o cliente está tentando se conectar, fornecendo ao cliente o IP Endereço do recurso mais próximo.  
   
 >[!IMPORTANT]  
 >Este cenário ilustra como implantar a política DNS para o gerenciamento de tráfego baseado na localização geográfica quando você estiver usando somente servidores DNS primários. Você também pode realizar o gerenciamento de tráfego baseado na localização geográfica quando tiver servidores DNS primários e secundários. Se você tiver uma implantação primária-secundária, primeiro conclua as etapas neste tópico e, em seguida, conclua as etapas fornecidas no tópico [usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica com as implantações primárias secundárias](primary-secondary-geo-location.md).
@@ -42,7 +42,7 @@ Você pode combinar os critérios a seguir com um operador lógico (e/ou) para f
 - **Negar**. O servidor DNS responde a consulta com uma resposta de falha.          
 - **Permitir**. O servidor DNS responde de volta com a resposta gerenciada de tráfego.          
   
-##  <a name="bkmk_example"></a>Exemplo de gerenciamento de tráfego baseado na localização geográfica
+##  <a name="geo-location-based-traffic-management-example"></a><a name="bkmk_example"></a>Exemplo de gerenciamento de tráfego baseado na localização geográfica
 
 Veja a seguir um exemplo de como você pode usar a política DNS para obter o redirecionamento de tráfego com base no local físico do cliente que executa uma consulta DNS.   
   
@@ -56,7 +56,7 @@ A ilustração a seguir descreve esse cenário.
   
 ![Exemplo de gerenciamento de tráfego baseado na localização geográfica](../../media/DNS-Policy-Geo1/dns_policy_geo1.png)  
   
-##  <a name="bkmk_works"></a>Como funciona o processo de resolução de nomes DNS  
+##  <a name="how-the-dns-name-resolution-process-works"></a><a name="bkmk_works"></a>Como funciona o processo de resolução de nomes DNS  
   
 Durante o processo de resolução de nomes, o usuário tenta se conectar ao www.woodgrove.com. Isso resulta em uma solicitação de resolução de nomes DNS que é enviada para o servidor DNS que é configurado nas propriedades de conexão de rede no computador do usuário. Normalmente, esse é o servidor DNS fornecido pelo ISP local atuando como um resolvedor de cache e é chamado de LDNS.   
   
@@ -69,7 +69,7 @@ Nesse cenário, o servidor DNS autoritativo geralmente vê a solicitação de re
 >[!NOTE]  
 >As políticas de DNS utilizam o IP do remetente no pacote UDP/TCP que contém a consulta DNS. Se a consulta atingir o servidor primário por meio de vários saltos resolvedor/LDNS, a política considerará apenas o IP do último resolvedor do qual o servidor DNS recebe a consulta.  
   
-##  <a name="bkmk_config"></a>Como configurar a política DNS para respostas de consulta com base na localização geográfica  
+##  <a name="how-to-configure-dns-policy-for-geo-location-based-query-responses"></a><a name="bkmk_config"></a>Como configurar a política DNS para respostas de consulta com base na localização geográfica  
 Para configurar a política DNS para respostas de consulta baseadas em localização geográfica, você deve executar as etapas a seguir.  
   
 1. [Criar as sub-redes do cliente DNS](#bkmk_subnets)  
@@ -85,7 +85,7 @@ As seções a seguir fornecem instruções de configuração detalhadas.
 >[!IMPORTANT]  
 >As seções a seguir incluem exemplos de comandos do Windows PowerShell que contêm valores de exemplo para muitos parâmetros. Certifique-se de substituir os valores de exemplo nesses comandos por valores apropriados para sua implantação antes de executar esses comandos.  
   
-### <a name="bkmk_subnets"></a>Criar as sub-redes do cliente DNS  
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>Criar as sub-redes do cliente DNS  
   
 A primeira etapa é identificar as sub-redes ou o espaço de endereço IP das regiões para as quais você deseja redirecionar o tráfego. Por exemplo, se você quiser redirecionar o tráfego para os EUA e Europa, precisará identificar as sub-redes ou os espaços de endereço IP dessas regiões.  
   
@@ -101,7 +101,7 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar sub-redes
   
 Para obter mais informações, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).  
   
-### <a name="bkmk_scopes"></a>Criar escopos de zona  
+### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>Criar escopos de zona  
 Depois que as sub-redes de cliente são configuradas, você deve particionar a zona cujo tráfego você deseja redirecionar em dois escopos de zona diferentes, um escopo para cada uma das sub-redes de cliente DNS que você configurou.   
   
 Por exemplo, se você quiser redirecionar o tráfego para o nome DNS www.woodgrove.com, deverá criar dois escopos de zona diferentes na zona woodgrove.com, um para os EUA e outro para a Europa.  
@@ -120,7 +120,7 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar escopos d
 
 Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).  
   
-### <a name="bkmk_records"></a>Adicionar registros aos escopos de zona  
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona  
 Agora você deve adicionar os registros que representam o host do servidor Web nos escopos de duas zonas.   
   
 Por exemplo, **USZoneScope** e **EuropeZoneScope**. No USZoneScope, você pode adicionar o registro www.woodgrove.com com o endereço IP 192.0.0.1, que está localizado em um datacenter dos EUA; e, no EuropeZoneScope, você pode adicionar o mesmo registro (www.woodgrove.com) com o endereço IP 141.1.0.1 no datacenter Europeu.   
@@ -145,7 +145,7 @@ O parâmetro **ZoneScope** não é incluído quando você adiciona um registro n
   
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).  
   
-### <a name="bkmk_policies"></a>Criar as políticas  
+### <a name="create-the-policies"></a><a name="bkmk_policies"></a>Criar as políticas  
 Depois de criar as sub-redes, as partições (escopos de zona) e adicionar registros, você deve criar políticas que conectam as sub-redes e as partições, de modo que quando uma consulta vier de uma origem em uma das sub-redes de cliente DNS, a resposta de consulta será retornada de o escopo correto da zona. Nenhuma política é necessária para mapear o escopo de zona padrão.   
   
 Você pode usar os seguintes comandos do Windows PowerShell para criar uma política DNS que vincula as sub-redes do cliente DNS e os escopos de zona.   

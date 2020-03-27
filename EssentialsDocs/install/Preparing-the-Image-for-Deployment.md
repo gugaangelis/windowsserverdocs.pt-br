@@ -3,7 +3,7 @@ title: Preparando a Imagem para Implantação
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 16411ab073e9417c52592aa9a6b13707dd461537
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: aac776253c094c4a77269720bcc5762d6c41d720
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838527"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311557"
 ---
 # <a name="preparing-the-image-for-deployment"></a>Preparando a Imagem para Implantação
 
@@ -123,7 +123,7 @@ Uma ferramenta típica para preparar uma imagem é sysprep.exe. Executar essa fe
     ```  
   
     > [!IMPORTANT]
-    >  Você também pode adicionar unattend.xml sob %systemdrive%, em vez de como um parâmetro de sysprep. Se o arquivo está localizado sob c:\ ele será coberto pelas configurações de usuário s, mas se usado como um parâmetro de sysprep, ele não será coberto pelas configurações de usuário s. O unattend.xml sob %systemdrive% será excluído sempre que o servidor reiniciar. Assim, garanta que depois de criar unattend.xml sob %systemdrive%, o servidor não seja reiniciado.  
+    >  Você também pode adicionar unattend.xml sob %systemdrive%, em vez de como um parâmetro de sysprep. Se o arquivo estiver localizado em c:\ Ele será abordado pelas configurações do usuário, mas se for usado como parâmetro do Sysprep, ele não será coberto pelas configurações do usuário. O unattend.xml sob %systemdrive% será excluído sempre que o servidor reiniciar. Assim, garanta que depois de criar unattend.xml sob %systemdrive%, o servidor não seja reiniciado.  
   
 10. Execute o seguinte comando para adicionar a chave de registro para ignorar a página de chave do OOBE do Windows.  
   

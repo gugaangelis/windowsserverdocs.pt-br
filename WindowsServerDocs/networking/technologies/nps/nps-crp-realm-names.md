@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7f9c611b793df36c2e588b2fa099df4e5382194c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dba00395b32980d3139cf88e25571c8001cac24e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405468"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316240"
 ---
 # <a name="realm-names"></a>Nomes de realm
 
@@ -79,6 +79,6 @@ Quando o nome de usuário não contiver um nome de domínio, o NPS fornecerá um
     
 
 >[!CAUTION]
->A edição incorreta do registro pode danificar gravemente o sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
+>A edição incorreta do Registro pode danificar seriamente o sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.
 
 Alguns servidores de acesso à rede que não são da Microsoft excluem ou modificam o nome de domínio conforme especificado pelo usuário. Como resultado, a solicitação de acesso à rede é autenticada no domínio padrão, que pode não ser o domínio da conta do usuário. Para resolver esse problema, configure os servidores RADIUS para alterar o nome de usuário para o formato correto com o nome de domínio preciso.

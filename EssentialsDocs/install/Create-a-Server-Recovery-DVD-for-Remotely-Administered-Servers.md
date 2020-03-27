@@ -3,7 +3,7 @@ title: Criar um DVD de recuperação de servidor para servidores administrados r
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 999887f09c27c1df481cb5e46579942424a2847b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a9b571c2d3e5d531d8c923741500c72675022adc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433627"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312198"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>Criar um DVD de recuperação de servidor para servidores administrados remotamente
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_HeadlessRecovery"></a> Criar um DVD de recuperação de servidor para servidores administrados remotamente  
+##  <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a><a name="BKMK_HeadlessRecovery"></a>Criar um DVD de recuperação de servidor para servidores administrados remotamente  
  Há dois modelos para redefinição dos padrões de fábrica e recuperação do servidor, e eles diferem com base no hardware que o cliente recebeu.  
   
  **Servidor administrado remotamente**  
@@ -41,7 +41,7 @@ ms.locfileid: "66433627"
   
  **Redefinição de fábrica**  
   
- Essa recuperação retorna o servidor ao estado original que existia quando o servidor foi enviado da fábrica. Após uma redefinição para os padrões de fábrica, você é solicitado a realizar a configuração inicial do servidor assim como na primeira vez em que o ativou, e todas as configurações e personalizações são perdidas. Isso é também conhecido como dia 0.? Como a redefinição de fábrica exige que um imagem específica da hardware seja enviada com o servidor, o parceiro deve criar o DVD de recuperação do servidor.  
+ Essa recuperação retorna o servidor ao estado original que existia quando o servidor foi enviado da fábrica. Após uma redefinição para os padrões de fábrica, você é solicitado a realizar a configuração inicial do servidor assim como na primeira vez em que o ativou, e todas as configurações e personalizações são perdidas. Isso também é conhecido como dia 0.? Como a redefinição de fábrica exige que um imagem específica da hardware seja enviada com o servidor, o parceiro deve criar o DVD de recuperação do servidor.  
   
  **Restauração bare-metal**  
   
@@ -52,7 +52,7 @@ ms.locfileid: "66433627"
 ### <a name="remotely-administered-server-recovery"></a>Recuperação de servidor administrado remotamente  
  Esta seção descreve as personalizações necessárias que o parceiro deve executar e a mídia final que deve ser enviada com cada servidor. Antes de entrar nos detalhes, vamos dar uma olhada na experiência do cliente.  
   
- Nesse cenário, o cliente "s servidor de relatório não está mais funcionando. Isso pode ser causado por um vírus, falha no disco rígido ou alguma outra causa. O cliente insere o DVD de recuperação do servidor em um computador cliente localizado na mesma rede do servidor. O aplicativo de recuperação do servidor guia o cliente por três etapas de recuperação do servidor:  
+ Nesse cenário, o servidor "¢ s" não está mais funcionando. Isso pode ser causado por um vírus, falha no disco rígido ou alguma outra causa. O cliente insere o DVD de recuperação do servidor em um computador cliente localizado na mesma rede do servidor. O aplicativo de recuperação do servidor guia o cliente por três etapas de recuperação do servidor:  
   
 1.  Criar uma unidade flash USB inicializável que é usada para reiniciar o servidor no modo de recuperação. A unidade flash USB deve ter 8 GB ou mais.  
   
@@ -63,24 +63,24 @@ ms.locfileid: "66433627"
 ### <a name="steps-for-creating-a-server-recovery-dvd-for-multiple-language-support"></a>Etapas para a criação de um DVD de recuperação de servidor para vários suporte a vários idiomas  
  Há seis etapas principais para criar um DVD de recuperação do servidor  
   
-1.  [(Opcional) Atualizar WinPE](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Updating)  
+1.  [Adicional Atualizar WinPE](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Updating)  
   
-2.  [Coletar as imagens de redefinição de fábrica e arquivos XML](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Collecting)  
+2.  [Coletar imagens de redefinição de fábrica e arquivos XML](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Collecting)  
   
-3.  [Criar o DVD de recuperação](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Creating)  
+3.  [Criar o DVD de recuperação do servidor](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Creating)  
   
-4.  [Personalizar o Assistente](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Customizing)  
+4.  [Personalizar o assistente](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Customizing)  
   
 5.  [Criar o arquivo ISO](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_CreatingISO)  
   
 6.  [Testar o DVD de recuperação](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Testing)  
   
-####  <a name="BKMK_Updating"></a> Etapa 1: (Opcional) Atualizar WinPE  
+####  <a name="step-1-optional-update-winpe"></a><a name="BKMK_Updating"></a>Etapa 1: (opcional) atualizar o WinPE  
  O ADK inclui uma cópia do Windows PE personalizada. Quando essa imagem é inicializada, ela automaticamente inicia o beacon usado pelo aplicativo de recuperação de cliente para se conectar a um servidor no modo de recuperação.  
   
  O Windows PE precisa ser mais personalizado adicionando qualquer driver específico do hardware, como drivers de rede ou de controlador de disco. Depois de inicializar a partir do WinPE, os discos rígidos no sistema precisam ser reconhecíveis e o sistema de rede precisa estar funcionando.  
   
-####  <a name="BKMK_Collecting"></a> Etapa 2: Coletar as imagens de redefinição aos padrões de fábrica e arquivos XML  
+####  <a name="step-2-collect-the-factory-reset-images-and-xml-files"></a><a name="BKMK_Collecting"></a>Etapa 2: coletar as imagens de redefinição de fábrica e os arquivos XML  
  Para redefinir um servidor para os padrões de fábrica, as duas imagens a seguir precisam ser capturadas:  
   
 - A imagem da unidade do sistema  
@@ -96,7 +96,7 @@ ms.locfileid: "66433627"
     > [!NOTE]
     >  O arquivo .wim do sistema será dividido para cumprir a exigência FAT32 de não haver nenhum arquivo maior que 4 GB. Durante o processo, a capacidade exigida do destino usado para capturar os arquivos .wim precisa ser maior que 8 GB para acomodar o processo de divisão.  
   
-####  <a name="BKMK_Creating"></a> Etapa 3: Crie o DVD de recuperação do sistema  
+####  <a name="step-3-create-the-server-recovery-dvd"></a><a name="BKMK_Creating"></a>Etapa 3: criar o DVD de recuperação do servidor  
  Cada servidor enviado da fábrica deve estar acompanhado por um DVD de Recuperação do Servidor. O seu DVD de ferramentas do ADK inclui os arquivos necessários para a criação do DVD.  
   
 ###### <a name="to-create-the-server-recovery-dvd"></a>Para criar o DVD de recuperação do sistema  
@@ -111,7 +111,7 @@ ms.locfileid: "66433627"
   
 5.  Remova GenDiskXML.exe da pasta. Ele é usado apenas para fins de chão de fábrica e não deve ser incluído no DVD enviado ao cliente.  
   
-####  <a name="BKMK_Customizing"></a> Etapa 4: Personalizar o assistente  
+####  <a name="step-4-customize-the-wizard"></a><a name="BKMK_Customizing"></a>Etapa 4: personalizar o assistente  
  O aplicativo de recuperação do servidor deve ser personalizado com uma imagem do dispositivo e um texto que descreva como inicializar o dispositivo específico no modo de recuperação. Devido a essa página do assistente de restauração de arquivos e pastas ser específica do hardware, as etapas para inicializar o servidor no modo de recuperação irão variar.  
   
 > [!NOTE]
@@ -119,15 +119,15 @@ ms.locfileid: "66433627"
   
 1. A página do assistente tem um link para ajuda adicional. Se esse arquivo .chm existir, ele substituirá o FWLink para a Ajuda na Web. O arquivo de Ajuda está localizado em:  
   
-    < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\RestartHelp.chm  
+    <\>raiz do DVD \\$OEM $ \Customization\\< nome da cultura\>\RestartHelp.chm  
   
 2. O arquivo contém o texto que o cliente vê na página do assistente. O texto deve explicar como inicializar o servidor no modo de recuperação. O controle é rolável, o que impõe um limite prático à quantidade de texto que pode ser adicionada.  
   
     O seguinte arquivo é usado para substituir a imagem de amostra no assistente e é principalmente sobre a identidade visual. Deve ser um arquivo .png. O tamanho do arquivo precisa ser de 256 pixels x 256 pixels ou será cortado quando for exibido no assistente.  
   
-    < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\RestartInstructions.rtf  
+    <\>raiz do DVD \\$OEM $ \Customization\\< nome da cultura\>\RestartInstructions.rtf  
   
-3. < raiz do DVD\>\\$OEM$ \Customization\\< nome da cultura\>\ServerImage.png  
+3. <\>raiz do DVD \\$OEM $ \Customization\\< nome da cultura\>\ServerImage.png  
   
    Quando você estiver convertendo seu DVD de recuperação do servidor para suporte a vários idiomas, certifique-se de fazer o seguinte:  
   
@@ -135,19 +135,19 @@ ms.locfileid: "66433627"
   
 5. Em cada pasta de cultura que você criar, adicione os três arquivos de personalização (.png, .chm e .rtf).  
   
-6. Copie as duas pastas de cultura de Language Packs\\< CultureName\>\Server Recovery para a raiz do DVD de recuperação do servidor. Por exemplo: As pastas ES e ES-ES serão copiadas para a raiz do DVD para oferecer suporte ao espanhol.  
+6. Copie ambas as pastas de cultura dos pacotes de idiomas\\< CultureName\>recuperação \Server para a raiz do DVD de recuperação do servidor. Por exemplo: As pastas ES e ES-ES serão copiadas da raiz do DVD para dar suporte a espanhol.  
   
 7. Finalize o arquivo ISO.  
   
    Nomes de cultura compatíveis incluem:  
 
 |-|-|  
-|- cs-CZ<br /><br /> -de-DE<br /><br /> -en-US<br /><br /> -es-ES<br /><br /> - fr-FR<br /><br /> - hu-HU<br /><br /> -it-IT<br /><br /> - ja-JP<br /><br /> -ko-KR<br /><br /> - nl-NL|- pl-PL<br /><br /> - pt-BR<br /><br /> - pt-PT<br /><br /> -ru-RU<br /><br /> - sv-SE<br /><br /> -tr-TR<br /><br /> - zh-CN<br /><br /> - zh-HK<br /><br /> - zh-TW
+|-CS-CZ<br /><br /> -de-DE<br /><br /> -en-US<br /><br /> -es-ES<br /><br /> -fr-FR<br /><br /> -hu-HU<br /><br /> -it-IT<br /><br /> -ja-JP<br /><br /> -ko-KR<br /><br /> -NL-NL |-PL-PL<br /><br /> -pt-BR<br /><br /> -pt-PT<br /><br /> -RU-RU<br /><br /> -VA-SE<br /><br /> -TR-TR<br /><br /> -ZH-CN<br /><br /> -ZH-HK<br /><br /> -zh-TW
   
-####  <a name="BKMK_CreatingISO"></a> Etapa 5: Criar o arquivo ISO  
+####  <a name="step-5-create-the-iso-file"></a><a name="BKMK_CreatingISO"></a>Etapa 5: criar o arquivo ISO  
  A pasta que foi criada e todos o seu conteúdo podem ser gravados em um DVD. Esse é o DVD que será fornecido aos clientes com o novo servidor.  
   
-####  <a name="BKMK_Testing"></a> Etapa 6: Testar o DVD de recuperação  
+####  <a name="step-6-test-the-recovery-dvd"></a><a name="BKMK_Testing"></a>Etapa 6: testar o DVD de recuperação  
  Após concluir a instalação do servidor, configure o backup do servidor, execute um backup do servidor e então teste do DVD de recuperação.  
   
 ###### <a name="to-configure-and-run-a-server-backup"></a>Para configurar e executar um backup do servidor  

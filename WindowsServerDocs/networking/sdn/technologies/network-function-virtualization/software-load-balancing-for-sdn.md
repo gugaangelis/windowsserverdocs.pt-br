@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35743d9e1a25c71a35eed018a4a3882a3d094d76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1e7870e045f9af79ed46ec1ad998dbc1f1474afd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355569"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312907"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>Balanceamento de carga de software \(\) SLB para SDN
 
@@ -114,7 +114,7 @@ O SLB inclui investigações de integridade para validar a integridade da infrae
   
 Ao contrário de um dispositivo de balanceador de carga tradicional em que a investigação se origina no dispositivo e viaja pela conexão com o DIP, a investigação de SLB se origina no host onde o DIP está localizado e vai diretamente do agente de host SLB para o DIP, distribuindo ainda mais o trabalhe nos hosts.  
   
-## <a name="bkmk_infrastructure"></a>Infraestrutura de balanceamento de carga de software  
+## <a name="software-load-balancing-infrastructure"></a><a name="bkmk_infrastructure"></a>Infraestrutura de balanceamento de carga de software  
 Para implantar o SLB do Windows Server, você deve primeiro implantar o controlador de rede no Windows Server 2016 e em uma ou mais VMs do SLB MUX.  
   
 Além disso, você deve configurar hosts Hyper-V com o comutador virtual Hyper-V habilitado para SDN e verificar se o agente de host SLB está em execução.  Os roteadores que atendem aos hosts devem oferecer suporte ao roteamento e Border Gateway Protocol (ECMP) de vários caminhos de custo igual e devem ser configurados para aceitar solicitações de emparelhamento BGP do SLB MUXes.  
@@ -179,7 +179,7 @@ O roteador BGP executa as seguintes ações para SLB.
   
 -   Remove o SLB MUXes da rotação SLB se Keep Alive falhar.  
   
-## <a name="bkmk_features"></a>Recursos de balanceamento de carga de software  
+## <a name="software-load-balancing-features"></a><a name="bkmk_features"></a>Recursos de balanceamento de carga de software  
 A seguir estão alguns dos recursos e funcionalidades do SLB.  
   
 **Funcionalidade básica**  

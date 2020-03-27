@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 68eed3866dc6c6fb02d54bda41c453a9c64c7578
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822679"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314072"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -25,7 +25,7 @@ ms.locfileid: "76822679"
 
 Este tópico descreve como configurar uma implantação de várias florestas do Acesso Remoto em vários cenários possíveis. Todos os cenários pressupõem que o DirectAccess esteja implantado em uma única floresta chamada Forest1 e que você o esteja configurando para operar com uma nova floresta chamada Forest2.  
   
-## <a name="AccessForest2"></a>Acessar recursos do Forest2  
+## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>Acessar recursos do Forest2  
 Neste cenário, o DirectAccess já está implantado na Forest1 e está configurado para permitir que os clientes da Forest1 acessem a rede corporativa. Por padrão, os clientes conectados via DirectAccess só podem acessar os recursos da Forest1 e não podem acessar nenhum servidor da Forest2.  
   
 #### <a name="to-enable-directaccess-clients-to-access-resources-from-forest2"></a>Para habilitar os clientes do DirectAccess a acessar os recursos da Forest2  
@@ -34,20 +34,20 @@ Neste cenário, o DirectAccess já está implantado na Forest1 e está configura
   
 2.  Adicione os prefixos IPv6 internos relevantes na Forest2 se o IPv6 estiver implantado na rede interna.  
   
-## <a name="EnableForest2DA"></a>Permitir que clientes do Forest2 se conectem via DirectAccess  
+## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>Permitir que clientes do Forest2 se conectem via DirectAccess  
 Neste cenário, você configura a implantação do Acesso Remoto para permitir que os clientes da Forest2 acessem a rede corporativa. Pressupõe-se que você tenha criado os grupos de segurança necessários para os computadores cliente na Forest2.   
   
 #### <a name="to-allow-clients-from-forest2-to-access-the-corporate-network"></a>Para permitir que os clientes da Forest2 acessem a rede corporativa  
   
 1.  Adicione o grupo de segurança dos clientes da Forest2.  
   
-2.  Se o sufixo DNS de Forest2 não fizer parte do sufixo DNS de Forest1, adicione regras NRPT com os sufixos do domínio dos clientes no Forest2 para habilitar o acesso aos controladores de domínio para autenticação e, opcionalmente, adicione os sufixos dos domínios no Forest2 ao DNS suf corrigir lista de pesquisa. 
+2.  Se o sufixo DNS de Forest2 não fizer parte do sufixo DNS de Forest1, adicione regras NRPT com os sufixos do domínio dos clientes no Forest2 para habilitar o acesso aos controladores de domínio para autenticação e, opcionalmente, adicione os sufixos dos domínios em Forest2 ao DNS lista de pesquisa de sufixo. 
   
 3.  Adicione os prefixos IPv6 internos na Forest2 para habilitar o DirectAccess a criar o túnel IPsec para os controladores de domínio para fins de autenticação.  
   
 4.  Atualize a lista de servidores de gerenciamento.  
   
-## <a name="AddEPForest2"></a>Adicionar pontos de entrada do Forest2  
+## <a name="add-entry-points-from-forest2"></a><a name="AddEPForest2"></a>Adicionar pontos de entrada do Forest2  
 Neste cenário, o DirectAccess está implantado em uma configuração multissite na Forest1, e você quer adicionar um servidor de acesso remoto, chamado DA2, da Forest2 como um ponto de entrada para a implantação multissite existente do DirectAccess.  
   
 #### <a name="to-add-a-remote-access-server-from-forest2-as-an-entry-point"></a>Para adicionar um servidor de acesso remoto da Forest2 como um ponto de entrada  
@@ -62,7 +62,7 @@ Neste cenário, o DirectAccess está implantado em uma configuração multissite
   
 5.  Atualize a lista de servidores de gerenciamento.  
   
-## <a name="OTPMultiForest"></a>Configurar a OTP em uma implantação de várias florestas  
+## <a name="configure-otp-in-a-multi-forest-deployment"></a><a name="OTPMultiForest"></a>Configurar a OTP em uma implantação de várias florestas  
 Observe os seguintes termos ao configurar a OTP em uma implantação de várias florestas:  
   
 -   CA raiz-a autoridade de certificação da árvore principal PKI de floresta (s).  
@@ -76,9 +76,9 @@ Observe os seguintes termos ao configurar a OTP em uma implantação de várias 
 O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Consulte [AD CS: PKISync.ps1 Script for Cross-forest Certificate Enrollment (AD CS: script PKISync.ps1 para registro de certificado entre florestas)](https://technet.microsoft.com/library/ff961506.aspx).  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-### <a name="BKMK_CertPub"></a>Configurar CAs como Publicadores de certificado  
+### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>Configurar CAs como Publicadores de certificado  
   
 1.  Habilite o suporte à referência de LDAP em todas as ACs corporativas de todas as florestas executando o seguinte comando em um prompt de comando com privilégios elevados:  
   
@@ -127,7 +127,7 @@ O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Cons
   
     5.  Da lista de modelos de certificado emitidos, remova os modelos de certificado de OTP da floresta de contas.  
   
-### <a name="BKMK_DelImp"></a>Excluir e importar modelos de certificado OTP  
+### <a name="delete-and-import-otp-certificate-templates"></a><a name="BKMK_DelImp"></a>Excluir e importar modelos de certificado OTP  
   
 1.  Exclua da floresta de contas, ou seja, da Forest2, os modelos de certificado de OTP.  
   
@@ -139,11 +139,11 @@ O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Cons
     .\PKISync.ps1 -sourceforest <resource forest DNS> -targetforest <account forest DNS> -type Oid -f  
     ```  
   
-### <a name="BKMK_Publish"></a>Publicar modelos de certificado OTP  
+### <a name="publish-otp-certificate-templates"></a><a name="BKMK_Publish"></a>Publicar modelos de certificado OTP  
   
 -   Emita os modelos de certificado que você acabou de importar em todas as ACs de florestas de contas.  
   
-### <a name="BKMK_Extract"></a>Extrair e sincronizar a AC  
+### <a name="extract-and-synchronize-the-ca"></a><a name="BKMK_Extract"></a>Extrair e sincronizar a AC  
   
 1.  Extraia todos os certificados de AC corporativa das florestas de contas executando os seguintes comandos em um prompt de comando com privilégios elevados:  
   
@@ -166,30 +166,30 @@ O script do PowerShell, PKISync.ps1, é necessário para este procedimento. Cons
 ## <a name="configuration-procedures"></a>Procedimentos de configuração  
 As seções a seguir contêm os procedimentos de configuração referentes às implantações dos cenários acima. Depois de concluir um procedimento, retorne ao cenário para continuar.  
   
-### <a name="NRPT_DNSSearchSuffix"></a>Adicionar regras NRPT e sufixos DNS  
+### <a name="add-nrpt-rules-and-dns-suffixes"></a><a name="NRPT_DNSSearchSuffix"></a>Adicionar regras NRPT e sufixos DNS  
 Os clientes que se conectam via DirectAccess à rede corporativa usam a NRPT (Tabela de Políticas de Resolução de Nomes) para determinar qual servidor DNS deve ser usado para resolver o endereço dos diversos recursos. Isso permite que o cliente resolva endereços de recursos corporativos e o ajuda a manter uma classificação adequada 'dentro da rede corporativa/fora da rede corporativa', necessária para manter o funcionamento do DirectAccess. As ferramentas de configuração do DirectAccess detectam automaticamente o sufixo DNS raiz da Forest1 e o adicionam à tabela NRPT. Porém, os sufixos FQDN da Forest2 não são adicionados automaticamente à tabela NRPT e precisam ser adicionados manualmente pelo administrador do Acesso Remoto.  
   
 A lista de pesquisa de sufixos DNS permite que os clientes usem nomes de rótulos curtos em vez de FQDNs. As ferramentas de configuração do Acesso Remoto adicionam automaticamente todos os domínios da Forest1 à lista de pesquisa de sufixos DNS. Para habilitar os clientes a usar nomes de rótulos curtos para os recursos da Forest2, é preciso adicioná-los manualmente.  
   
 ##### <a name="to-add-a-dns-suffix-to-the-nrpt-table-and-domain-suffixes-to-the-dns-suffix-search-list"></a>Para adicionar um sufixo DNS à tabela NRPT e sufixos de domínio à lista de pesquisa de sufixos DNS  
   
-1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 3: Servidores de Infraestrutura** , clique em **Editar**.  
+1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 3: Servidores de Infraestrutura**, clique em **Editar**.  
   
-2.  Na página **Servidor de Local de Rede** , clique em **Avançar**.  
+2.  Na página **Servidor de Local de Rede**, clique em **Avançar**.  
   
-3.  Na página **DNS** , especifique na tabela os sufixos de nome adicionais que fazem parte da rede corporativa na Forest2. Em **Endereço do Servidor DNS**, especifique o endereço do servidor DNS manualmente ou clicando em **Detectar**. Se você não inserir o endereço, as novas entradas serão aplicadas como isenções NRPT. Em seguida, clique em **Avançar**.  
+3.  Na página **DNS**, especifique na tabela os sufixos de nome adicionais que fazem parte da rede corporativa na Forest2. Em **Endereço do Servidor DNS**, especifique o endereço do servidor DNS manualmente ou clicando em **Detectar**. Se você não inserir o endereço, as novas entradas serão aplicadas como isenções NRPT. Em seguida, clique em **Avançar**.  
   
 4.  Opcional: na página **Lista de Pesquisa de Sufixos DNS** , adicione qualquer sufixo DNS ao inseri-lo na caixa **Novo Sufixo** e clicar em **Adicionar**. Em seguida, clique em **Avançar**.  
   
-5.  Na página **Gerenciamento** , clique em **Concluir**.  
+5.  Na página **Gerenciamento**, clique em **Concluir**.  
   
 6.  No painel central do Console de Gerenciamento de Acesso Remoto, clique em **Concluir**.  
   
-7.  Na caixa de diálogo **Avaliação do Acesso Remoto** , clique em **Aplicar**.  
+7.  Na caixa de diálogo **Avaliação do Acesso Remoto**, clique em **Aplicar**.  
   
-8.  Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto** , clique em **Fechar**.  
+8.  Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto**, clique em **Fechar**.  
   
-### <a name="IPv6Prefix"></a>Adicionar prefixo IPv6 interno  
+### <a name="add-internal-ipv6-prefix"></a><a name="IPv6Prefix"></a>Adicionar prefixo IPv6 interno  
   
 > [!NOTE]  
 > A adição de um prefixo IPv6 interno só é relevante quando o IPv6 está implantado na rede interna.  
@@ -198,51 +198,51 @@ O Acesso Remoto gerencia uma lista de prefixos IPv6 para recursos corporativos. 
   
 ##### <a name="to-add-an-ipv6-prefix"></a>Para adicionar um prefixo IPv6  
   
-1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 2: Servidor de Acesso Remoto** , clique em **Editar**.  
+1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 2: Servidor de Acesso Remoto**, clique em **Editar**.  
   
 2.  No Assistente para Configuração do Servidor de Acesso Remoto, clique em **Configuração de Prefixo**.  
   
-3.  Na página **Configuração de Prefixo** , em **Prefixos IPv6 da rede interna**, adicione outros prefixos IPv6 separados por ponto e vírgula; por exemplo, 2001:db8:1::/64;2001:db8:2::/64. Em seguida, clique em **Avançar**.  
+3.  Na página **Configuração de Prefixo**, em **Prefixos IPv6 da rede interna**, adicione outros prefixos IPv6 separados por ponto e vírgula; por exemplo, 2001:db8:1::/64;2001:db8:2::/64. Em seguida, clique em **Avançar**.  
   
-4.  Na página **Autenticação** , clique em **Concluir**.  
+4.  Na página **Autenticação**, clique em **Concluir**.  
   
 5.  No painel central do Console de Gerenciamento de Acesso Remoto, clique em **Concluir**.  
   
-6.  Na caixa de diálogo **Avaliação do Acesso Remoto** , clique em **Aplicar**.  
+6.  Na caixa de diálogo **Avaliação do Acesso Remoto**, clique em **Aplicar**.  
   
-7.  Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto** , clique em **Fechar**.  
+7.  Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto**, clique em **Fechar**.  
   
-### <a name="SGs"></a>Adicionar grupos de segurança do cliente  
+### <a name="add-client-security-groups"></a><a name="SGs"></a>Adicionar grupos de segurança do cliente  
 Para permitir que computadores cliente com Windows 8 do Forest2 acessem recursos por meio do DirectAccess, você deve adicionar o grupo de segurança do Forest2 à implantação de acesso remoto.  
   
 ##### <a name="to-add-windows-8-client-security-groups"></a>Para adicionar grupos de segurança de cliente do Windows 8  
   
-1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 1: Clientes Remotos** , clique em **Editar**.  
+1.  No painel central do Console de Gerenciamento de Acesso Remoto, na área **Etapa 1: Clientes Remotos**, clique em **Editar**.  
   
-2.  No Assistente de Instalação do Cliente do DirectAccess, clique em **Selecionar Grupos**e depois, na página **Selecionar Grupos** , clique em **Adicionar**.  
+2.  No Assistente de Instalação do Cliente do DirectAccess, clique em **Selecionar Grupos** e depois, na página **Selecionar Grupos**, clique em **Adicionar**.  
   
-3.  Na caixa de diálogo **Selecionar Grupos** , selecione os grupos de segurança que contêm computadores cliente do DirectAccess. Em seguida, clique em **Avançar**.  
+3.  Na caixa de diálogo **Selecionar Grupos**, selecione os grupos de segurança que contêm computadores cliente do DirectAccess. Em seguida, clique em **Avançar**.  
   
-4.  Na página **Assistente de Conectividade de Rede** , clique em **Concluir**.  
+4.  Na página **Assistente de Conectividade de Rede**, clique em **Concluir**.  
   
 5.  No painel central do Console de Gerenciamento de Acesso Remoto, clique em **Concluir**.  
   
-6.  Na caixa de diálogo **Avaliação do Acesso Remoto** , clique em **Aplicar**.  
+6.  Na caixa de diálogo **Avaliação do Acesso Remoto**, clique em **Aplicar**.  
   
-7.  Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto** , clique em **Fechar**.  
+7.  Na caixa de diálogo **Aplicando Configurações do Assistente de Configuração de Acesso Remoto**, clique em **Fechar**.  
   
 Para permitir que computadores cliente do Windows 7 do Forest2 acessem recursos por meio do DirectAccess quando o multissite estiver habilitado, você deverá adicionar o grupo de segurança do Forest2 à implantação de acesso remoto para cada ponto de entrada. Para obter informações sobre como adicionar grupos de segurança do Windows 7, consulte a descrição da página de **suporte do cliente** em 3,6. Habilite a implantação multissite.  
   
-### <a name="RefreshMgmtServers"></a>Atualizar a lista de servidores de gerenciamento  
+### <a name="refresh-the-management-servers-list"></a><a name="RefreshMgmtServers"></a>Atualizar a lista de servidores de gerenciamento  
 O Acesso Remoto descobre automaticamente, em todas as florestas, os servidores de infraestrutura que contêm GPOs de configuração do DirectAccess. Caso o DirectAccess tenha sido implantado em um servidor da Forest1, o GPO de servidor será criado no respectivo domínio na Forest1. Se você tiver habilitado o acesso ao DirectAccess para clientes da Forest2, o GPO de cliente será criado em um domínio da Forest2.  
   
 O processo de descoberta automática de servidores de infraestrutura é necessário para permitir o acesso por meio do DirectAccess aos controladores de domínio e ao Microsoft Endpoint Configuration Manager. Você precisa iniciar o processo manualmente.  
   
 ##### <a name="to-refresh-the-management-servers-list"></a>Para atualizar a lista de servidores de gerenciamento  
   
-1.  No Console de Gerenciamento de Acesso Remoto, clique em **Configuração**e depois, no painel **Tarefas** , clique em **Atualizar Servidores de Gerenciamento**.  
+1.  No Console de Gerenciamento de Acesso Remoto, clique em **Configuração** e depois, no painel **Tarefas**, clique em **Atualizar Servidores de Gerenciamento**.  
   
-2.  Na caixa de diálogo **Atualizando Servidores de Gerenciamento** , clique em **Fechar**.  
+2.  Na caixa de diálogo **Atualizando Servidores de Gerenciamento**, clique em **Fechar**.  
   
 
 

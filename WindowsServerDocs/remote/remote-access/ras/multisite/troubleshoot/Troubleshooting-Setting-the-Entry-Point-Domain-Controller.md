@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 10a0f7952fc27d0185d4383da21f0614885ddac3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fbbba17567109363a9b9fd0963258744f8853f5f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367054"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313783"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>Solução de problemas na configuração do controlador de domínio de ponto de entrada
 
@@ -25,10 +25,10 @@ ms.locfileid: "71367054"
 
 Este tópico contém informações sobre como solucionar problemas relacionados ao comando `Set-DAEntryPointDC`. Para confirmar que o erro recebido está relacionado à configuração do controlador de domínio de ponto de entrada, procure a ID de evento 10065 no Log de Eventos do Windows.  
   
-## <a name="SaveGPOSettings"></a>Salvando configurações de GPO do servidor  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Salvando configurações de GPO do servidor  
 **Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO < GPO_name >.  
   
-Para solucionar esse erro, consulte Salvando configurações de GPO do servidor.  
+Para solucionar esse erro, consulte Salvando configurações de GPO de servidor.  
   
 ## <a name="remote-access-is-not-configured"></a>O Acesso Remoto não está configurado  
 **Erro recebido**. O acesso remoto não está configurado em < server_name >. Especifique o nome de um servidor que pertença a uma implantação multissite.  
@@ -252,7 +252,7 @@ O ponto de entrada especificado na mensagem de erro está associado a um control
   
 **Causa**  
   
-Ao chamar o cmdlet `Set-DaEntryPointDC` com o parâmetro *ExistingDC*, o DirectAccess verifica todos os pontos de entrada e atualiza aqueles que estão associados ao controlador de domínio especificado. No entanto, nenhum ponto de entrada usa o *ExistingDC*especificado.  
+Ao chamar o cmdlet `Set-DaEntryPointDC` com o parâmetro *ExistingDC*, o DirectAccess verifica todos os pontos de entrada e atualiza aqueles que estão associados ao controlador de domínio especificado. No entanto, nenhum ponto de entrada usa o *ExistingDC* especificado.  
   
 **Solução**  
   

@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5d53cbba37699346db110f0748a9c3e0c834c18e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3319715e70c1e68739a10a4c67a9fa404d5ad80e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356289"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318413"
 ---
 # <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>Configurar o WEB1 para distribuir listas de certificados revogados (CRLs)
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este procedimento para configurar o servidor Web WEB1 para distribuir CRLs.  
   
@@ -30,7 +30,7 @@ Para executar esse procedimento, você deve ser membro de **Admins**. do domíni
   
 #### <a name="to-configure-web1-to-distribute-certificates-and-crls"></a>Para configurar o WEB1 para distribuir certificados e CRLs  
   
-1.  No WEB1, execute o Windows PowerShell como administrador, digite `explorer c:\` e pressione ENTER. O Windows Explorer é aberto para a unidade C.   
+1.  No WEB1, execute o Windows PowerShell como administrador, digite `explorer c:\`e pressione ENTER. O Windows Explorer é aberto para a unidade C.   
   
 2.  Crie uma nova pasta chamada PKI na unidade C:. Para fazer isso, clique em **início**e, em seguida, clique em **nova pasta**. Uma nova pasta é criada com o nome temporário realçado. Digite **PKI** e pressione Enter.  
   
@@ -40,11 +40,11 @@ Para executar esse procedimento, você deve ser membro de **Admins**. do domíni
   
 5.  Feche o Windows Explorer.  
   
-6.  Abra o console do IIS. No Gerenciador do Servidor, clique em **Ferramentas** e depois em **Gerenciador dos Serviços de Informações da Internet (IIS)** .  
+6.  Abra o console do IIS. No Gerenciador do Servidor, clique em **Ferramentas** e depois em **Gerenciador de Serviços de Informações da Internet (IIS)** .  
   
 7.  Na árvore de console do Gerenciador do Serviços de Informações da Internet (IIS), expanda **WEB1**. Se for convidado a começar a usar o Microsoft Web Platform, clique em **Cancelar**.  
   
-8.  Expanda **Sites**, clique com o botão direito do mouse no **Site Padrão** e clique em **Adicionar Diretório Virtual**.  
+8.  Expanda **Sites**, clique com o botão direito do mouse no **Default Web Site** e clique em **Adicionar Diretório Virtual**.  
   
 9. Em **alias**, digite **PKI**. Em **caminho físico** , digite **C:\pki**e clique em **OK**.  
   
@@ -58,7 +58,7 @@ Para executar esse procedimento, você deve ser membro de **Admins**. do domíni
   
     4.  Na guia **Segurança**, clique em **Editar**.  
   
-    5.  Na caixa de diálogo **Permissões para pki** , clique em **Adicionar**.  
+    5.  Na caixa de diálogo **Permissões para pki**, clique em **Adicionar**.  
   
     6.  Em **Selecionar usuários, computadores, contas de serviço ou grupos**, digite **logon anônimo; Todos** e, em seguida, clique em **verificar nomes**. Clique em **OK**.  
   
@@ -68,7 +68,7 @@ Para executar esse procedimento, você deve ser membro de **Admins**. do domíni
   
 11. Clique em **OK** na caixa de diálogo **Propriedades PKI** .  
   
-12. No painel **Página Inicial da pki** , clique duas vezes em **Filtragem de Solicitações**.  
+12. No painel **Página Inicial da pki**, clique duas vezes em **Filtragem de Solicitações**.  
   
 13. A guia **Extensões de Nome de Arquivo** é selecionada por padrão no painel **Filtragem de Solicitações**. No painel **Ações** , clique em **Editar Configurações de Recurso**.  
   

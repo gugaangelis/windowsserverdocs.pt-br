@@ -3,7 +3,7 @@ title: Windows Server Essentials hospedado
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 84464c69d4b8576906e5fb0d0a7de7e382a59537
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 76319f87a246c6fabbe0befaf7dc4c74d1416ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947503"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311754"
 ---
 # <a name="hosted-windows-server-essentials"></a>Windows Server Essentials hospedado
 
@@ -57,7 +57,7 @@ Este documento inclui informações específicas para os hosters que pretendem i
   
    Se estiver usando o Virtual Machine Manager, pode criar um modelo usando a instância em execução. Criar um modelo irá realizar a preparação do sistema da instância e desligará o servidor. Depois de armazená-la na sua biblioteca, é possível abrir a instância caso a caso.  
   
-##  <a name="BKMK_automatedeployment"></a>Como fazer automatizar a implantação?  
+##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a>Como fazer automatizar a implantação?  
  Depois de obter uma imagem personalizada, é possível realizar a implantação com a sua própria imagem. Para realizar a instalação parcialmente não monitorada, é preciso fornecer/implantar o unattend.xml para a instalação do WinPE. Para fazer uma instalação totalmente autônoma, você também precisa fornecer o arquivo cfg. ini para a configuração inicial do Windows Server Essentials.  
   
 1. Realizar somente instalação não monitorada do WinPE. Isso automatizará somente a instalação do WinPE, e permitirá que a instalação pare antes da Configuração inicial de modo que os usuários finais possam fornecer informações de Corporação, Domínio e Administrador por si mesmos após o RDP na sessão no servidor. Para fazer isso:  
@@ -211,7 +211,7 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
   
  Esse comando permitirá Acesso Remoto da Web com o roteador configurado automaticamente, e trocará as permissões de acesso padrão para todos os usuários existentes.  
   
- **Adicionar Usuário**  
+ **Adicionar usuário**  
   
 ```  
 Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]  
@@ -281,7 +281,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 ### <a name="management-pack"></a>Pacote de gerenciamento  
  O pacote de gerenciamento do Windows Server Essentials fornece a função de monitoramento do sistema de alerta de integridade no Windows Server Essentials para ajudar os hosters a gerenciarem grandes números de servidores do Windows Server Essentials dedicados a diferentes empresas de pequeno porte. O monitoramento nessa versão inclui somente alertas críticos no sistema.  
   
-#### <a name="management-pack-scope"></a>Escopo do pacote de gerenciamento  
+#### <a name="management-pack-scope"></a>Escopo do Pacote de gerenciamento  
  Este pacote de gerenciamento ajuda você a monitorar recursos específicos do Windows Server Essentials. Ele não monitora recursos genéricos no sistema operacional Windows Server 2012 Standard. Para monitorar o Windows Server Essentials, você deve usar o pacote de gerenciamento do Windows Server Essentials e o pacote de gerenciamento para o Windows Server 2012 Standard.  
   
 #### <a name="mandatory-configuration"></a>Configuração obrigatória  
@@ -310,7 +310,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
 - Se você tiver outro mecanismo para fazer backup da VM do Windows Server Essentials e não quiser que o usuário veja o recurso de backup do servidor nativo do Windows Server Essentials, você pode desativá-lo e remover toda a interface do usuário relacionada do Windows Server Essentials Painéis. Para obter mais informações, consulte a seção Personalizar o backup do servidor do [documento do ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124).  
   
-  O**Backup externo** permite periodicamente realizar backup de dados do servidor em um serviço de nuvem. Você pode baixar e instalar o módulo de integração do Backup do Microsoft Azure para Windows Server Essentials para aproveitar o backup do Azure fornecido pela Microsoft.  
+  O **Backup externo** permite periodicamente realizar backup de dados do servidor em um serviço de nuvem. Você pode baixar e instalar o módulo de integração do Backup do Microsoft Azure para Windows Server Essentials para aproveitar o backup do Azure fornecido pela Microsoft.  
   
   Se você ou seus usuários preferirem outro serviço na nuvem, você deve:  
   
@@ -358,7 +358,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
 - Atualize do Windows Server Essentials para o Windows Server 2012.  
   
-  **Configuração do Servidor**  
+  **Configuração do servidor**  
   
 - Configurar o acesso em qualquer local (VPN, Acesso Remoto via Web, DirectAccess).  
   

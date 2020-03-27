@@ -1,14 +1,14 @@
 ---
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.date: 10/02/2018
 ms.prod: windows-server
 ms:topic: include
-ms.openlocfilehash: ef22deaf9ae8631e16565a4b339f2a2f92b3e23a
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 2e625ec8b0ad4c8959a97ccba9cc95e7781d1370
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935086"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316517"
 ---
 Com o modo independente de comutador, o comutador ou as opções às quais os membros da equipe NIC estão conectados não sabem a presença da equipe NIC e não determinam como distribuir o tráfego de rede para membros da equipe NIC – em vez disso, a equipe NIC distribui a rede de entrada tráfego entre os membros da equipe da NIC. 

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 41cc5cc2df5ac9709818536df8fff098d2a0c297
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d588d9b8675dad8bffc9e020032bc66bebf503b0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404341"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313672"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>Etapa 3 configurar o servidor de acesso remoto para OTP
 
@@ -25,16 +25,16 @@ ms.locfileid: "71404341"
 
 Depois que o servidor RADIUS tiver sido configurado com tokens de distribuição de software, as portas de comunicação estiverem abertas, um segredo compartilhado foi criado, as contas de usuário correspondentes a Active Directory foram criadas no servidor RADIUS e o servidor de acesso remoto tem sido configurado como um agente de autenticação RADIUS, o servidor de acesso remoto precisa ser configurado para dar suporte à OTP.  
   
-|Tarefa|Descrição|  
+|{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
 |[3,1 usuários isentos da autenticação OTP (opcional)](#BKMK_Exempt)|Se usuários específicos forem isentos do DirectAccess com autenticação OTP, siga estas etapas preliminares.|  
 |[3,2 configurar o servidor de acesso remoto para dar suporte à OTP](#BKMK_Config)|No servidor de acesso remoto, atualize a configuração de acesso remoto para dar suporte à autenticação de dois fatores de OTP.|  
 |[cartões inteligentes 3,3 para autorização adicional](#BKMK_Smartcard)|Informações adicionais sobre o uso de cartões inteligentes.|  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Exempt"></a>3,1 usuários isentos da autenticação OTP (opcional)  
+## <a name="31-exempt-users-from-otp-authentication-optional"></a><a name="BKMK_Exempt"></a>3,1 usuários isentos da autenticação OTP (opcional)  
 Se usuários específicos forem isentos da autenticação OTP, essas etapas deverão ser executadas antes da configuração de acesso remoto:  
   
 > [!NOTE]  
@@ -49,7 +49,7 @@ Se usuários específicos forem isentos da autenticação OTP, essas etapas deve
     > [!NOTE]  
     > Certifique-se de incluir apenas contas de usuário, e não contas de computador, no grupo de segurança de isenção de OTP.  
   
-## <a name="BKMK_Config"></a>3,2 configurar o servidor de acesso remoto para dar suporte à OTP  
+## <a name="32-configure-the-remote-access-server-to-support-otp"></a><a name="BKMK_Config"></a>3,2 configurar o servidor de acesso remoto para dar suporte à OTP  
 Para configurar o acesso remoto para usar a autenticação de dois fatores e a OTP com o servidor RADIUS e a implantação de certificado das seções anteriores, use as seguintes etapas:  
   
 #### <a name="configure-remote-access-for-otp"></a>Configurar o acesso remoto para OTP  
@@ -99,7 +99,7 @@ Para configurar o acesso remoto para usar a autenticação de dois fatores e a O
   
 17. Na caixa de diálogo **revisão de acesso remoto** , clique em **aplicar**, aguarde a atualização da política do DirectAccess e clique em **Fechar**.  
   
-18. Na tela **Iniciar** , digite**PowerShell. exe**, clique com o botão direito do mouse em **PowerShell**, clique em **avançado**e clique em **Executar como administrador**. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
+18. Na tela **Iniciar** , digite**PowerShell. exe**, clique com o botão direito do mouse em **PowerShell**, clique em **avançado**e clique em **Executar como administrador**. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
   
 19. Na janela do Windows PowerShell, digite **gpupdate/force** e pressione Enter.  
   
@@ -107,7 +107,7 @@ Para configurar o acesso remoto para OTP usando comandos do PowerShell:
   
 ![](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 Para configurar o acesso remoto para usar a autenticação de dois fatores em uma implantação que atualmente usa a autenticação de certificado do computador:  
   
@@ -134,7 +134,7 @@ Depois de executar os comandos do PowerShell, conclua as etapas 12-19 do procedi
 > [!NOTE]  
 > Certifique-se de verificar se você aplicou as configurações de OTP no servidor de acesso remoto antes de adicionar um ponto de entrada.  
   
-## <a name="BKMK_Smartcard"></a>cartões inteligentes 3,3 para autorização adicional  
+## <a name="33-smart-cards-for-additional-authorization"></a><a name="BKMK_Smartcard"></a>cartões inteligentes 3,3 para autorização adicional  
 Na página autenticação da etapa 2 no assistente de instalação de acesso remoto, você pode exigir o uso de cartões inteligentes para acesso à rede interna. Quando essa opção é selecionada, o assistente de instalação de acesso remoto configura a regra de segurança de conexão IPsec para o túnel de intranet no servidor DirectAccess para exigir a autorização do modo de túnel com cartões inteligentes. A autorização do modo de túnel permite que você especifique que somente computadores ou usuários autorizados podem estabelecer um túnel de entrada.  
   
 Para usar cartões inteligentes com a autorização do modo de túnel IPsec para o túnel de intranet, é necessário implantar uma PKI (Infraestrutura de Chave Pública) com a infraestrutura de cartões inteligentes.  
@@ -155,7 +155,7 @@ A autorização de cartão inteligente funciona por meio da habilitação da aut
   
 Quando você habilita a autorização de cartão inteligente na etapa 2 do assistente de instalação do DirectAccess, o assistente de instalação do DirectAccess configura a configuração de autorização do modo de túnel IPsec global com esse SID para o objeto de Política de Grupo do servidor DirectAccess. Para exibir essa configuração no snap-in Firewall do Windows com segurança avançada para o servidor DirectAccess Política de Grupo, faça o seguinte:  
   
-1.  Clique com o botão direito do mouse em Firewall do Windows com segurança avançada e clique em Propriedades.  
+1.  Clique com o botão direito do mouse em Firewall do Windows com Segurança Avançada e clique em Propriedades.  
   
 2.  Na guia Configurações de IPsec, em autorização de túnel IPsec, clique em Personalizar.  
   

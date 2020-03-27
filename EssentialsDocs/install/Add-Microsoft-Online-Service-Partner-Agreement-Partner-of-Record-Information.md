@@ -3,7 +3,7 @@ title: Adicionar informações de parceiro de registro do Contrato de Parceiro d
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 39ce43228cd7392bcc86de4a410c52676ce15047
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ec8387c59ebf42eb4287807e5959a50cea4215c4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833037"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310240"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>Adicionar informações de parceiro de registro do Contrato de Parceiro de Serviço Online da Microsoft
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>   
- Se você for um parceiro da Microsoft Online Service Agreement MOSPA (parceiro) para o Office 365, para garantir que tenha compensado corretamente quando uma solicitação de assinatura originada no Windows Server Essentials por meio do módulo de integração do Office 365, você precisará criar um chave do registro que contém seu parceiro de registro POR ID (identificação). As informações a seguir são lidas e enviadas ao provedor de serviços através dos URLs de sign-up do Office 365.  
+ Se você for um parceiro do Microsoft Online Service Partner Agreement (MOSPA) para Office 365, para garantir que você seja compensado corretamente quando uma solicitação de assinatura for originada do Windows Server Essentials por meio do módulo de integração do Office 365, você precisará criar um chave do registro que contém sua identificação de parceiro de registro (POR ID). As informações a seguir são lidas e enviadas ao provedor de serviços através dos URLs de sign-up do Office 365.  
   
 -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO  
   
@@ -57,10 +57,10 @@ ms.locfileid: "59833037"
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)
 
  [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](../install/Additional-Customizations.md)   
  [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](../install/Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)
 

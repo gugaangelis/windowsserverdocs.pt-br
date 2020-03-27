@@ -3,7 +3,7 @@ title: Automatizar a instalação de suplementos durante a configuração
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 579ed4e6e780c261ca582e943cebf2fc18b5ef62
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433646"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310109"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar a instalação de suplementos durante a configuração
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a> Automatizar instalados suplementos durante a instalação  
- Para instalar suplemento durante a instalação, use o método PostIC.cmd descrito na seção [Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) deste documento.  
+##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a>Automatizar a instalação de suplementos durante a instalação  
+ Para instalar suplementos durante a instalação, use o método PostIC.cmd descrito na seção [Criar o arquivo PostIC.cmd para executar tarefas de configuração pós-início](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) deste documento.  
   
  Adicione a seguinte entrada ao PostIC.cmd:  
   
@@ -65,7 +65,7 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 <¦>  
 ```  
   
- Em que **exefile** é o arquivo executável no pacote de suplemento para realizar a etapa de pré-instalação e deve ser especificado. **NormalArgs** especifica argumentos a serem enviados ao exefile na linha de comando quando o modo interativo é usado. Nesse modo, o exefile pode abrir alguns diálogos em pop-up para interação com o usuário. **SilentArgs** especifica argumentos a serem enviados ao exefile na linha de comando quando o modo silencioso é usado (-q é especificado ao chamar installaddin.exe). O exefile não deve abrir nenhuma janela em pop-up nesse modo. Se **IgnoreExitCode** for especificado como verdadeiro, a etapa de pré-instalação é sempre considerada bem-sucedida, caso contrário, o código de saída 0 indica sucesso, 1 indica cancelamento e outros valores indicam falha. As marcas **NormalArgs**, **SilentArgs**e **IgnoreExitCode** são todas opcionais.  
+ Em que **exefile** é o arquivo executável no pacote de suplemento para realizar a etapa de pré-instalação e deve ser especificado. **NormalArgs** especifica argumentos a serem enviados ao exefile na linha de comando quando o modo interativo é usado. Nesse modo, o exefile pode abrir alguns diálogos em pop-up para interação com o usuário. **SilentArgs** especifica argumentos a serem enviados ao exefile na linha de comando quando o modo silencioso é usado (-q é especificado ao chamar installaddin.exe). O exefile não deve abrir nenhuma janela em pop-up nesse modo. Se **IgnoreExitCode** for especificado como verdadeiro, a etapa de pré-instalação é sempre considerada bem-sucedida, caso contrário, o código de saída 0 indica sucesso, 1 indica cancelamento e outros valores indicam falha. As marcas **NormalArgs**, **SilentArgs** e **IgnoreExitCode** são todas opcionais.  
   
  Uma etapa de desinstalação personalizada pode ser usada para qualquer um dos seguintes:  
   

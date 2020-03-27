@@ -1,5 +1,5 @@
 ---
-title: Rede do
+title: Rede
 description: Este tópico fornece uma visão geral das tecnologias Rede definida pelo software e Plataforma de Rede, disponíveis no Windows Server 2016.
 ms.prod: windows-server
 layout: LandingPage
@@ -7,17 +7,17 @@ ms.technology: networking
 ms.topic: landing-page
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: e625bb537ef514ff68241669c3e75f482a61f068
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823849"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318573"
 ---
-# <a name="networking"></a>Rede do
+# <a name="networking"></a>Rede
 
 >[!TIP]
 > Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
@@ -193,7 +193,7 @@ Essa consistência significa que seus aplicativos agora são mais fáceis de ser
 
 <hr />
 
-## <a name="bkmk_networking"></a>Tecnologias de rede
+## <a name="networking-technologies"></a><a name="bkmk_networking"></a>Tecnologias de rede
 
 <ul class="cardsF panelContent">
     <li>
@@ -537,7 +537,7 @@ Essa consistência significa que seus aplicativos agora são mais fáceis de ser
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Sistema de rede de contêiner do Windows</a></h3>
+                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Rede de contêineres do Windows</a></h3>
                         <hr />
                         <p>A Rede de Contêineres do Windows permite que você crie e gerencie redes para a conexão de pontos de extremidade de contêiner em hosts do Windows 10 e do Windows Server usando fluxos de trabalho e ferramentas padrão do setor. As redes de contêineres do Windows dão suporte a várias topologias, incluindo privada, L2 plana e L3 roteada.</p>
                         <p>Também há suporte para sobreposições que você pode criar localmente no host usando o Docker, o kubernetes ou o Windows PowerShell por meio de plug-ins que se comunicam com o serviço de rede de host do Windows (HNS). Você pode criar e gerenciar redes de cluster de vários nós por meio de sistemas de orquestração de nível superior comunicando-se por meio de um agente local para o HNS de cada nó.</p>

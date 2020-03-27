@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1fd3a20cb6429d60f450478f5e817a7506b28346
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791165"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314243"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>Identificar e resolver problemas de operações do servidor de acesso remoto
 
@@ -38,7 +38,7 @@ Este tópico inclui informações sobre como executar as seguintes tarefas:
   
 - Restaurar o serviço auxiliar de IP  
   
-### <a name="BKMK_Simulate"></a>Simular um problema de operações  
+### <a name="simulate-an-operations-issue"></a><a name="BKMK_Simulate"></a>Simular um problema de operações  
   
 > [!CAUTION]  
 > Como o servidor de acesso remoto provavelmente está configurado corretamente e não está tendo problemas, você pode usar o procedimento a seguir para simular um problema de operações. Se o servidor estiver atendendo atualmente a clientes em um ambiente de produção, talvez você não queira executar essas ações no momento. Em vez disso, você pode ler as etapas para entender como resolver problemas que podem surgir no seu servidor de acesso remoto no futuro.  
@@ -51,7 +51,7 @@ O serviço auxiliar de IP (IPHlpSvc) hospeda tecnologias de transição IPv6 (co
   
 2.  Na lista de **Serviços**, role para baixo e clique com o botão direito do mouse em **IP Helper**e clique em **parar**.  
   
-### <a name="BKMK_Identify"></a>Identificar o problema de operações e tomar uma ação corretiva  
+### <a name="identify-the-operations-issue-and-take-corrective-action"></a><a name="BKMK_Identify"></a>Identificar o problema de operações e tomar uma ação corretiva  
 A desativação do serviço auxiliar de IP causará um erro grave no servidor de acesso remoto. O painel Monitoramento mostrará o status de operações do servidor e os detalhes do problema.  
   
 ##### <a name="to-identify-the-details-and-take-corrective-action"></a>Para identificar os detalhes e tomar uma ação corretiva  
@@ -82,7 +82,7 @@ A desativação do serviço auxiliar de IP causará um erro grave no servidor de
   
     3.  Para reiniciar o serviço, digite **Restart-Service iphlpsvc** em um prompt elevado do Windows PowerShell.  
   
-### <a name="BKMK_Restart"></a>Restaurar o serviço auxiliar de IP  
+### <a name="restore-the-ip-helper-service"></a><a name="BKMK_Restart"></a>Restaurar o serviço auxiliar de IP  
 Para restaurar o serviço auxiliar de IP em seu servidor de acesso remoto, você pode seguir as etapas de resolução acima para iniciar ou reiniciar o serviço ou pode usar o procedimento a seguir para reverter o procedimento que você usou para simular a falha do serviço auxiliar de IP.  
   
 ##### <a name="to-restart-the-ip-helper-service-on-the-remote-access-server"></a>Para reiniciar o serviço auxiliar de IP no servidor de acesso remoto  
@@ -93,7 +93,7 @@ Para restaurar o serviço auxiliar de IP em seu servidor de acesso remoto, você
   
 ![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 ```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  

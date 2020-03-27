@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 29976baf-b0e2-4c01-ab4d-f2940e2bc327
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cd4349499313d093c153b50fdb4c2118c38dd42d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7902af2d63e8ebe94914f3b604e9bae3c1778aa9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396233"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316081"
 ---
 # <a name="getting-started-with-network-policy-server"></a>Introdução ao Servidor de Políticas de Rede
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar os tópicos desta seção para saber mais sobre recursos e funcionalidades do servidor de diretivas de rede.  
   
@@ -28,7 +28,7 @@ Você pode usar os tópicos desta seção para saber mais sobre recursos e funci
 >- [Gerenciar servidor de políticas de rede](nps-manage-top.md)
   
   
-Esta seção contém os seguintes tópicos.
+Esta seção contém os seguintes tópicos:
   
 - [Processamento de solicitação de conexão](nps-crp-top.md)
 - [Políticas de rede](nps-np-overview.md)

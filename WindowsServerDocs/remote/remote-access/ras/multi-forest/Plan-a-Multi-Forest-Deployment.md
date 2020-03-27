@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8e483f5986a5a23123495e3a13440ddc57a6c521
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404513"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314046"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>Planejar uma implantação de várias florestas
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404513"
 
 Este tópico descreve as etapas de planejamento necessárias à configuração do Acesso Remoto em uma implantação de várias florestas.  
   
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 Antes de começar a implantar este cenário, examine esta lista de requisitos importantes:  
   
 -   É necessária uma relação de confiança bidirecional.  
@@ -38,7 +38,7 @@ Quando você configura o Acesso Remoto, ele atualiza e às vezes cria GPOs em ca
   
 Além disso, o administrador do Acesso Remoto precisa ser um administrador local em todos os servidores de acesso remoto, inclusive aqueles da nova floresta que são adicionados como pontos de entrada à implantação do Acesso Remoto original.  
   
-## <a name="ClientSG"></a>Planejar grupos de segurança do cliente  
+## <a name="plan-client-security-groups"></a><a name="ClientSG"></a>Planejar grupos de segurança do cliente  
 Você precisa configurar pelo menos um grupo de segurança na nova floresta para computadores cliente do DirectAccess na nova floresta. A razão é que um único grupo de segurança não pode incluir contas de várias florestas.  
   
 > [!NOTE]  

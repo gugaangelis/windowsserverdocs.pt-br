@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
-ms.author: pashort
+ms.author: lizross
 author: jmesser81
 ms.date: 09/04/2018
-ms.openlocfilehash: 352b4303b7cf08a0c53712e46a309b8365c10d08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8ec74ff0ebf0f0cb87db4d79ed5d37583f9beb9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355680"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317264"
 ---
 # <a name="container-networking-overview"></a>Visão geral de rede de contêineres
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, fornecemos uma visão geral da pilha de rede para contêineres do Windows e incluímos links para orientações adicionais sobre como criar, configurar e gerenciar redes de contêineres.
 
@@ -39,6 +39,6 @@ Para impor o isolamento entre contêineres no mesmo host, você cria um comparti
 
 ## <a name="related-topics"></a>Tópicos relacionados 
 
-- [Rede de contêiner do Windows](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture): Saiba como criar e gerenciar redes de contêiner para implantações não sobrepostas/SDN.
+- [Rede de contêiner do Windows](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture): saiba como criar e gerenciar redes de contêiner para implantações não sobrepostas/Sdn.
 
-- [Conectar pontos de extremidade do contêiner a uma rede virtual de locatário](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md): Saiba como criar e gerenciar redes de contêiner para sobreposição de redes virtuais com SDN. 
+- [Conectar pontos de extremidade do contêiner a uma rede virtual de locatário](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md): saiba como criar e gerenciar redes de contêiner para sobreposição de redes virtuais com Sdn. 

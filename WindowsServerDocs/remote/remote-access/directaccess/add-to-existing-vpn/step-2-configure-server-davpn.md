@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ee691a02df385e29bdac9656d50bc2c6d3af087
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c26f1fbcfa2d94c001579aabd6794c6537bd06f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388743"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314740"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Etapa 2 configurar o servidor DirectAccess-VPN
 
@@ -27,7 +27,7 @@ Este tópico descreve como configurar o cliente e as configurações de servidor
 
 A tabela a seguir fornece uma visão geral das etapas que você pode concluir usando este tópico.
 
-|Tarefa       |Descrição|
+|{1&gt;Tarefa&lt;1}       |Descrição|
 |-----------|-----------|
 |Configurar os clientes de DirectAccess|Configurar o servidor de Acesso Remoto com os grupos de segurança contendo os clientes do DirectAccess.|
 |Configurar a Topologia de Rede|Definir as configurações do servidor de Acesso Remoto.|

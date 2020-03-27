@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 356c61c2cc5b60f43a69f17966c97f3c69d05cda
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 86ce83142cafe8ebe61aff2fb193e9b646172651
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356042"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317882"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>Usar a Política de DNS para balanceamento de carga de aplicativo
 
@@ -79,7 +79,7 @@ Você pode usar os seguintes comandos do Windows PowerShell para criar escopos d
 
 Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-#### <a name="bkmk_records"></a>Adicionar registros aos escopos de zona
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona
 
 Agora você deve adicionar os registros que representam o host do servidor Web nos escopos de zona.
 
@@ -100,7 +100,7 @@ Você pode usar os seguintes comandos do Windows PowerShell para adicionar regis
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-#### <a name="bkmk_policies"></a>Criar as políticas de DNS
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Criar as políticas de DNS
 
 Depois de criar as partições (escopos de zona) e adicionar registros, você deve criar políticas DNS que distribuem as consultas de entrada entre esses escopos para que 50% das consultas para contosogiftservices.com sejam respondidas com o endereço IP para a Web o servidor no datacenter de Seattle e o restante são igualmente distribuídos entre os data centers de Chicago e Dallas.
 

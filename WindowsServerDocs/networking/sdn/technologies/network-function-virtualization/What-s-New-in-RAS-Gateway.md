@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 709cb192-313a-47b5-954e-eb5f6fee51a7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 85595c47c599a72039e93e67ea2f33f92af7200c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b65f4aa2d10b1bdf6c0d212a111a169bad23591a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405903"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312882"
 ---
 # <a name="whats-new-in-ras-gateway"></a>Novidades no Gateway de RAS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre os novos recursos do gateway de RAS, que é um roteador compatível com BGP (baseado em software, multilocatário Border Gateway Protocol) no Windows Server 2016. O roteador BGP multilocatário do gateway de RAS foi projetado para CSPs (provedores de serviços de nuvem) e empresas que hospedam várias redes virtuais de locatário usando a virtualização de rede Hyper-V.  
   
@@ -40,19 +40,19 @@ Este tópico contém as seguintes seções.
   
 -   [Refletor de rota](#bkmk_rr)  
   
-## <a name="bkmk_s2s"></a>Opções de conectividade site a site  
-O gateway de RAS agora dá suporte a três tipos de conexões VPN site a site:  Protocolo IKE versão 2 (IKEv2) site a site de VPN (rede virtual privada), VPN de camada 3 (L3) e túneis de encapsulamento de roteamento genérico (GRE).  
+## <a name="site-to-site-connectivity-options"></a><a name="bkmk_s2s"></a>Opções de conectividade site a site  
+O gateway RAS agora dá suporte a três tipos de conexões VPN site a site: protocolo IKE versão 2 (IKEv2) site a site (VPN), VPN de camada 3 (L3) e túneis de encapsulamento de roteamento genérico (GRE).  
   
 Para obter mais informações sobre o GRE, consulte [túnel GRE no Windows Server 2016](../../../../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md).  
   
-## <a name="bkmk_pools"></a>Pools de gateway  
+## <a name="gateway-pools"></a><a name="bkmk_pools"></a>Pools de gateway  
 No Windows Server 2016, você pode criar pools de gateway de tipos diferentes. Pools de gateway contêm muitas instâncias do gateway de RAS e roteiam o tráfego de rede entre redes físicas e virtuais. Os pools de gateway podem executar qualquer uma das funções de gateway individuais – protocolo IKE versão 2 (IKEv2) site a site (VPN), VPN de camada 3 (L3) e túneis de encapsulamento de roteamento genérico (GRE) – ou o pool pode executar todos esses funções e atuam como um pool misto.  
   
 Você pode criar pools de gateway usando qualquer lógica preferida com base em seus requisitos de infraestrutura. Por exemplo, você pode criar pools de gateway com base em qualquer uma das características a seguir.  
   
 -   Tipos de túnel (VPN IKEv2, VPN L3, VPN GRE)  
   
--   Capacity  
+-   Capacidade  
   
 -   Nível de redundância (confiabilidade baseada em seu plano de cobrança para locatários)  
   
@@ -60,17 +60,17 @@ Você pode criar pools de gateway usando qualquer lógica preferida com base em 
   
 Para obter mais informações, consulte [alta disponibilidade do gateway de Ras](RAS-Gateway-High-Availability.md).  
   
-## <a name="bkmk_gps"></a>Escalabilidade do pool de gateway  
+## <a name="gateway-pool-scalability"></a><a name="bkmk_gps"></a>Escalabilidade do pool de gateway  
 Você pode facilmente dimensionar um pool de gateway para cima ou para baixo adicionando ou removendo VMs de gateway no pool. A remoção ou a adição de gateways não interrompe os serviços fornecidos por um pool. Você também pode adicionar e remover pools inteiros de gateways.  
   
 Para obter mais informações, consulte [alta disponibilidade do gateway de Ras](RAS-Gateway-High-Availability.md).  
   
-## <a name="bkmk_m"></a>M + N redundância de pool de gateway  
+## <a name="mn-gateway-pool-redundancy"></a><a name="bkmk_m"></a>M + N redundância de pool de gateway  
 Cada pool de gateway é M + N redundante. Isso significa que um ' M' número de VMs (máquinas virtuais) de gateway ativo é submetido a backup por um número ' N ' de VMs de gateway em espera. A redundância M + N fornece mais flexibilidade para determinar o nível de confiabilidade que você precisa ao implantar o gateway RAS. Em vez de usar apenas um gateway de RAS em espera por VM de gateway de RAS ativo – que é a única opção de configuração com o Windows Server 2012 R2, agora você pode configurar quantas VMs em espera você precisar. O recurso de Service Manager do gateway do controlador de rede usa com eficiência a capacidade da VM do gateway RAS em espera para fornecer um failover confiável se uma VM de gateway de RAS ativa falhar ou perder a conectividade.  
   
 Para obter mais informações, consulte [alta disponibilidade do gateway de Ras](RAS-Gateway-High-Availability.md).  
   
-## <a name="bkmk_rr"></a>Refletor de rota  
+## <a name="route-reflector"></a><a name="bkmk_rr"></a>Refletor de rota  
 O refletor de rota de Border Gateway Protocol (BGP) agora está incluído no gateway de RAS e fornece uma alternativa à topologia de malha completa do BGP que é necessária para a sincronização de rota entre roteadores. Com a sincronização de malha completa, todos os Roteadores BGP devem se conectar com todos os outros roteadores na topologia de roteamento. No entanto, quando você usa o refletor de rota, o refletor de rota é o único roteador que se conecta com todos os outros roteadores, chamados de clientes BGP, simplificando assim a sincronização de rota e reduzindo o tráfego de rede. O refletor de rota aprende todas as rotas, calcula as melhores rotas e redistribui as melhores rotas para seus clientes BGP.  
   
 Com o Windows Server 2016, você pode configurar os túneis de acesso remoto de um locatário para terminar em mais de uma VM de gateway de RAS. Isso fornece maior flexibilidade para provedores de serviço de nuvem quando você enfrenta circunstâncias em que uma VM de gateway RAS não pode atender a todos os requisitos de largura de banda das conexões de locatário.  
@@ -93,6 +93,6 @@ Um refletor de rota BGP no plano de controle resolve esses problemas e torna a i
   
 -   Se os clientes corporativos usam roteamento BGP no espaço de endereço do cliente, o refletor de rota do gateway RAS é o único vizinho BGP (eBGP) externo para todos os sites do locatário correspondente. Isso é verdadeiro independentemente dos pontos de encerramento de túnel do locatário da empresa. Em outras palavras, não importa qual VM de gateway de RAS no datacenter do CSP encerra o túnel VPN site a site para um site de locatário, o par eBGP para todos os sites de locatário é o refletor de rota.  
   
-Para obter mais informações, consulte [arquitetura de implantação do gateway de Ras](RAS-Gateway-Deployment-Architecture.md) e o tópico solicitação da IETF (Internet Engineering Task Force) para comentários [RFC 4456-reflexo de rota BGP: Uma alternativa ao BGP interno de malha completa (IBGP) ](https://tools.ietf.org/html/rfc4456).  
+Para obter mais informações, consulte [arquitetura de implantação do gateway de Ras](RAS-Gateway-Deployment-Architecture.md) e o tópico solicitação da IETF (Internet Engineering Task Force) para comentários [RFC 4456 BGP Route Reflection: uma alternativa para BGP (full mesh interno de malha)](https://tools.ietf.org/html/rfc4456).  
   
 

@@ -6,14 +6,14 @@ ms.technology: networking
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d57af0bd-9301-4f62-9888-f528cd10451d
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c0895cfd62d462ef6d158dc39ef59a9ee10a7c98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5f3ae4f9c22e61a8428a257d9324fe164eeaa04b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406306"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319102"
 ---
 # <a name="core-network-companion-guidance"></a>Diretrizes de complementar de rede principal
 
@@ -21,7 +21,7 @@ ms.locfileid: "71406306"
 
 Embora o [Guia de rede](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) do Windows Server 2016 Core forneça instruções sobre como implantar um novo Active Directory&reg; floresta com um novo domínio raiz e a infraestrutura de rede de suporte, os guias complementares fornecem a capacidade de adicionar recursos à sua rede.
 
-Cada guia complementar permite que você realize uma meta específica depois de implantar sua rede principal. Em alguns casos, existem vários guias complementarem que, quando implantados juntos e na ordem correta, permitem realizar objetivos muito complexos de forma medida, econômica e razoável.
+Cada guia complementar permite cumprir uma meta específica, após a implantação de sua rede principal. Em alguns casos, existem vários guias complementarem que, quando implantados juntos e na ordem correta, permitem realizar objetivos muito complexos de forma medida, econômica e razoável.
 
 Se você implantou sua rede principal e seu domínio do Active Directory antes de encontrar o Guia da Rede Principal, ainda pode usar os Guias Complementares para adicionar recursos à sua rede. Simplesmente use o Guia da Rede Principal como uma lista de pré-requisitos e saiba que, para implantar recursos adicionais com os Guias Complementares, a rede deve atender aos pré-requisitos que são fornecidos pelo Guia da Rede Principal.
 

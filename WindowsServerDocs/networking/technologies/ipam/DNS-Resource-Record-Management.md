@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8fe318a8ac17c650d8dbf2339e72b561de529c4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3aa20913a01a23291879b98d6f53fe60a7138670
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405675"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312458"
 ---
 # <a name="dns-resource-record-management"></a>Gerenciamento de registro de recursos de DNS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico fornece informações sobre como gerenciar registros de recursos de DNS usando o IPAM.  
   
@@ -79,7 +79,7 @@ A seguir está uma lista de tipos de registro de recurso de DNS que são coletad
   
 -   SRV  
   
--   Text  
+-   Texto  
   
 -   Serviços bem conhecidos  
   

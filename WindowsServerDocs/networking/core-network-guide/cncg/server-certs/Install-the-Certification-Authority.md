@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 4acdc3ad-078e-45cc-b54c-e9456e0c90f5
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 024fc73c4ed089d81808cf44d7cfe8b01bfffaa0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fffb03a707c48c8dd485c68b5c6bf10783b0e6cf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406327"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318363"
 ---
 # <a name="install-the-certification-authority"></a>Instalar a autoridade de certificação
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este procedimento para instalar Active Directory serviços de certificados (AD CS) para que você possa registrar um certificado do servidor em servidores que estejam executando o servidor de diretivas de rede (NPS), o serviço de roteamento e acesso remoto (RRAS) ou ambos.  
   

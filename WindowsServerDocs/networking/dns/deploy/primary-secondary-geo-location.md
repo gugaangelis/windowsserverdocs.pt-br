@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6a7836160fc7363ec3d7b2fb11e194db82970f9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f9bc1a35016ca5946eddeada2088a83f1fa8ca05
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406160"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317756"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com implantações primárias e secundárias
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a criar uma política DNS para o gerenciamento de tráfego baseado na localização geográfica quando a implantação do DNS inclui servidores DNS primários e secundários.  
 
@@ -80,7 +80,7 @@ Para qualquer atualização adicional em um escopo de zona, uma notificação IX
   
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>Como configurar a política de DNS para o gerenciamento de tráfego baseado em localização geográfica secundária principal
 
-Antes de começar, verifique se você concluiu todas as etapas no tópico usar a [política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), e seu servidor DNS primário está configurado com zonas, escopos de zona, sub-redes de cliente DNS e DNS regras.  
+Antes de começar, verifique se você concluiu todas as etapas no tópico usar a [política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), e seu servidor DNS primário está configurado com zonas, escopos de zona, sub-redes de cliente DNS e política DNS.  
   
 > [!NOTE]
 > As instruções neste tópico para copiar sub-redes de cliente DNS, escopos de zona e políticas de DNS de servidores DNS primários para servidores DNS secundários são para a sua configuração e validação de DNS inicial. No futuro, você pode querer alterar as configurações de sub-rede do cliente DNS, escopos de zona e políticas no servidor primário. Nessa circunstância, você pode criar scripts de automação para manter os servidores secundários sincronizados com o servidor primário.  

@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b9569b8-a366-43ad-a52a-b35d88a08d41
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 72109621d67a4c38760668b1eabfbe0119ec315c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6f3cabd460a13112cce0eb93dc9ce6ec0506c10c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366977"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313462"
 ---
 # <a name="troubleshoot-an-otp-deployment"></a>Solucionar problemas de uma implantação OTP
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico descreve como solucionar os erros mais comuns que podem ocorrer ao configurar uma implantação de acesso remoto usando a autenticação OTP.  
 

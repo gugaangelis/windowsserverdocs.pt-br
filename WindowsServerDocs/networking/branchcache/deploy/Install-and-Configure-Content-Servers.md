@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: e753c56b-8902-4610-9c53-381e77bf29ab
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c254a6f19d07f1c6b3197b46e208b7c837c8236c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b41cc5151d24574bba254c01e26fb153a3dc3f9c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356549"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319220"
 ---
 # <a name="install-and-configure-content-servers"></a>Instalar e configurar servidores de conteúdo
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Ao implantar o BranchCache no modo de cache distribuído ou no modo de cache hospedado, você deve implantar um ou mais servidores de conteúdo em seu escritório principal ou na nuvem. Os servidores de conteúdo que são servidores Web ou servidores de aplicativos usam o recurso BranchCache. Os servidores de conteúdo que são servidores de arquivos usam o BranchCache para o serviço de função de arquivos de rede da função de servidor de serviços de arquivo no Windows Server 2016.  
   

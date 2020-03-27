@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fc42040d68b8a22dcfc46aa30db3a2a3c3bc060a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 59db462e3772b551f0d80819e7cd79519e95fb14
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367064"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313822"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>Solução de problemas da habilitação de multissite
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico contém informações sobre como solucionar problemas relacionados ao comando `Enable-DAMultisite`. Para confirmar que o erro recebido está relacionado à habilitação de multissite, procure a ID de evento 10051 no Log de Eventos do Windows.  
   
@@ -128,8 +128,8 @@ O DirectAccess não pôde determinar o site do Active Directory. No console Serv
   
 Confirme se é esse mesmo o problema executando o comando `nltest /dsgetsite` no servidor de acesso remoto. Se for, o comando retornará ERROR_NO_SITENAME. Para resolver o problema, no controlador de domínio, assegure-se de que exista uma sub-rede que contenha o endereço IP do servidor interno e de que ela esteja definida com um site do Active Directory.  
   
-## <a name="SaveGPOSettings"></a>Salvando configurações de GPO do servidor  
-**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto para o GPO < GPO_name >.  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Salvando configurações de GPO do servidor  
+**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO < GPO_name >.  
   
 **Causa**  
   
@@ -139,7 +139,7 @@ As alterações no GPO do servidor não puderam ser salvas devido a problemas de
   
 Assegure-se de que exista conectividade entre o servidor de acesso remoto e o controlador de domínio. Se houver conectividade, verifique no controlador se o arquivo registry.pol foi bloqueado por outro usuário e, se necessário, encerre a sessão desse usuário para desbloquear o arquivo.  
   
-## <a name="InternalServerError"></a>Ocorreu um erro interno  
+## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>Ocorreu um erro interno  
 **Erro recebido**. Ocorreu um erro interno.  
   
 **Causa**  

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bb8bb6dda6eab27413b462a4c7f17176fbed85a1
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a1dbd7bad0a6954d0cf66c372a48507a2a8d61be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822769"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309074"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Etapa 1 planejar a infraestrutura avançada do DirectAccess
 
@@ -25,7 +25,7 @@ ms.locfileid: "76822769"
 
 O primeiro passo do planejamento da implantação avançada do DirectAccess em um único servidor é planejar a infraestrutura necessária para a implantação. Este tópico descreve as etapas de planejamento da infraestrutura. Essas tarefas de planejamento não precisam ser concluídas em uma ordem específica.  
   
-|Tarefa|Descrição|
+|{1&gt;Tarefa&lt;1}|Descrição|
 |----|--------|  
 |[1,1 planejar a topologia de rede e as configurações](#11-plan-network-topology-and-settings)|Decidir onde colocar o servidor do DirectAccess (na borda, atrás de um dispositivo NAT [conversão de endereços de rede] ou de um firewall) e planejar o endereçamento IP, roteamento e criação de túneis à força.|  
 |[requisitos de firewall do plano 1,2](#12-plan-firewall-requirements)|Planejar como permitir o tráfego do DirectAccess através de firewalls de borda.|  
@@ -500,7 +500,7 @@ O DirectAccess usa AD DS e Active Directory objetos de política de grupo (GPOs)
   
     O DirectAccess pode usar a autenticação e criptografia IPsec entre os clientes e o servidor do DirectAccess. Você pode estender a autenticação e criptografia do cliente para os servidores internos de aplicativo especificados. Para tal, adicione os servidores de aplicativo desejados a um grupo de segurança.  
   
-**Requisitos de AD DS**  
+**Requisitos do AD DS**  
   
 Ao planejar o AD DS para uma implantação de DirectAccess, considere os requisitos a seguir:  
   
@@ -683,7 +683,7 @@ O console de gerenciamento de acesso remoto exibirá a seguinte mensagem de erro
   
 3.  Você verá uma mensagem de erro indicando que o GPO não foi encontrado. Clique em **Remover definições de configuração**. Depois de concluído, o servidor será restaurado para um estado não configurado.  
   
-## <a name="next-steps"></a>Próximas etapas  
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
   
 -   [Etapa 2: planejar implantações do DirectAccess](da-adv-plan-s2-deployments.md)  
   

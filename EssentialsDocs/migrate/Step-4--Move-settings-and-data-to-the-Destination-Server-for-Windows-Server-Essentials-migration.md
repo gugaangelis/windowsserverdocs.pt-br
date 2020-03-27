@@ -3,7 +3,7 @@ title: 'Etapa 4: Mover configurações e dados para o servidor de destino para m
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa6ab8e2108e569b7cef6bfbf0d20af4fa31016d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d9aea85513e2453c02f6c14fb3f4d708be211d3f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432573"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318751"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Etapa 4: Mover configurações e dados para o servidor de destino para migração para o Windows Server Essentials
 
@@ -29,9 +29,9 @@ Esta seção fornece informações sobre a migração de dados e configurações
   
 -   [Configurar a rede](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_Network)  
   
--   [Mapear os computadores permitidos para contas de usuário](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
+-   [Mapear computadores permitidos para contas de usuário](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
   
-##  <a name="BKMK_CopyData"></a> Copiar dados para o servidor de destino  
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>Copiar dados para o servidor de destino  
  Antes de copiar os dados do servidor de origem para o servidor de destino, execute as seguintes tarefas:  
   
 -   Examine a lista de pastas compartilhadas no servidor de origem, incluindo as permissões para cada pasta. Crie ou personalize as pastas no servidor de destino para corresponderem à estrutura de pasta que você está migrando do servidor de origem.  
@@ -42,7 +42,7 @@ Esta seção fornece informações sobre a migração de dados e configurações
   
 -   A pasta **Backup do computador cliente** não pode ser migrada para o servidor de destino. Antes da migração de servidor, certifique-se da integridade de todos os computadores cliente. Após a migração de servidor, é recomendável que você configure e inicie os backups de computador cliente, para garantir o backup dos dados para todos os computadores cliente importantes.  
   
--   O **File History Backups** pasta não pode ser migrada diretamente para o servidor de destino devido às pasta backup e a estrutura de alterações de metadados no Windows Server Essentials. No entanto, é possível migrar a pasta **Backups do histórico de arquivos** para um usuário específico em um computador específico. Para fazer isso, você deve localizar a pasta **Dados** na pasta **Backups do histórico de arquivos** para esse usuário e computador, depois copiar essa pasta **Dados** para a pasta **Backups do histórico de arquivos** no servidor de destino.  
+-   A pasta **backups do histórico de arquivos** não pode ser migrada diretamente para o servidor de destino devido à estrutura de pastas e às alterações de metadados de backup no Windows Server Essentials. No entanto, é possível migrar a pasta **Backups do histórico de arquivos** para um usuário específico em um computador específico. Para fazer isso, você deve localizar a pasta **Dados** na pasta **Backups do histórico de arquivos** para esse usuário e computador, depois copiar essa pasta **Dados** para a pasta **Backups do histórico de arquivos** no servidor de destino.  
   
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>Para copiar os dados do servidor de origem para o servidor de destino  
   
@@ -56,11 +56,11 @@ Esta seção fornece informações sobre a migração de dados e configurações
   
    - \<SourceServerName\> é o nome do servidor de origem  
   
-   - \<Nomedapastacompartilhadadeorigem\> é o nome da pasta compartilhada no servidor de origem  
+   - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem  
   
-   - \<Caminhododestino\> é o caminho absoluto onde você deseja mover a pasta  
+   - \<PathOfTheDestination\> é o caminho absoluto no qual você deseja mover a pasta  
   
-   - \<Nomedapastacompartilhadadedestino\> é a pasta no servidor de destino para o qual os dados serão copiados.  
+   - \<SharedDestinationFolderName\> é a pasta no servidor de destino para o qual os dados serão copiados  
   
      Por exemplo,  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`.  
   
@@ -70,7 +70,7 @@ Esta seção fornece informações sobre a migração de dados e configurações
   
 4. Repita esse processo para cada pasta compartilhada que você está migrando do servidor de origem.  
   
-##  <a name="BKMK_Network"></a> Configurar a rede  
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>Configurar a rede  
   
 #### <a name="to-configure-the-network"></a>Para configurar a rede  
   
@@ -82,14 +82,14 @@ Esta seção fornece informações sobre a migração de dados e configurações
   
    Se o roteador não oferecer suporte para a estrutura UPnP, ou se a estrutura UPnP estiver desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que sejam direcionadas para o endereço IP do servidor de destino:  
   
--   Porta 80: Tráfego da Web HTTP  
+-   Porta 80: tráfego HTTP da Web  
   
--   Porta 443: Tráfego da Web HTTPS  
+-   Porta 443: tráfego HTTPS da Web  
   
 > [!NOTE]
 >  Se você deseja configurar um nome de domínio público no servidor de destino, você deve liberar o nome de domínio do seu servidor de origem para evitar competição da atualização dinâmica de DNS.  
   
-##  <a name="BKMK_MapPermittedComputers"></a> Mapear os computadores permitidos para contas de usuário  
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>Mapear computadores permitidos para contas de usuário  
  Cada conta de usuário migrada de versões anteriores do Windows Small Business Server ou Windows Server Essentials deve ser mapeada para um ou mais computadores.  
   
 #### <a name="to-map-user-accounts-to-computers"></a>Para mapear contas de usuário para computadores  
@@ -114,8 +114,8 @@ Esta seção fornece informações sobre a migração de dados e configurações
 > [!NOTE]
 >  Depois de concluir a migração, se encontrar um problema ao criar a primeira nova conta de usuário no servidor de destino, remova a conta de usuário adicionada e crie a conta novamente.  
   
-## <a name="next-steps"></a>Próximas etapas  
- Você moveu suas configurações e dados para o servidor de destino. Agora vá para [etapa 5: Habilitar o redirecionamento de pasta na migração de servidor de destino para o Windows Server Essentials](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
+ Você moveu suas configurações e dados para o servidor de destino. Agora, vá para a [etapa 5: habilitar o redirecionamento de pasta no servidor de destino para a migração do Windows Server Essentials](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  
   
 
 Para exibir todas as etapas, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).

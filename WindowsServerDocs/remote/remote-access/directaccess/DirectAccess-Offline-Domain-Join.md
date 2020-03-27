@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 55528736-6c19-40bd-99e8-5668169ef3c7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 229e2955c7f382ff630829990a9dd6485d62652e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 09ed401fa4912a48033e4a51a29309e3fd4cc998
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388882"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310901"
 ---
 # <a name="directaccess-offline-domain-join"></a>Associação offline de domínio DirectAccess
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este guia explica as etapas para executar uma junção de domínio offline com o DirectAccess. Durante um ingresso no domínio offline, um computador é configurado para ingressar em um domínio sem conexão física ou VPN.  
   
@@ -44,12 +44,12 @@ Introduzido no Windows Server 2008 R2, os controladores de domínio incluem um r
   
 3.  Reinicialize o computador de destino e o computador será ingressado no domínio.  
   
-### <a name="BKMK_ODJOverview"></a>Visão geral do cenário de ingresso offline no domínio com políticas do DirectAccess  
+### <a name="offline-domain-join-with-directaccess-policies-scenario-overview"></a><a name="BKMK_ODJOverview"></a>Visão geral do cenário de ingresso offline no domínio com políticas do DirectAccess  
 O ingresso no domínio offline do DirectAccess é um processo que os computadores que executam o Windows Server 2016, o Windows Server 2012, o Windows 10 e o Windows 8 podem usar o para ingressar em um domínio sem ser fisicamente ingressado na rede corporativa ou conectado por meio de VPN. Isso possibilita a adição de computadores a um domínio a partir de locais onde não há conectividade com uma rede corporativa. O ingresso no domínio offline para o DirectAccess fornece políticas do DirectAccess para os clientes para permitir o provisionamento remoto.  
   
 Um ingresso no domínio cria uma conta de computador e estabelece uma relação de confiança entre um computador que executa um sistema operacional Windows e um domínio Active Directory.  
   
-## <a name="BKMK_ODJRequirements"></a>Preparar para ingresso no domínio offline  
+## <a name="prepare-for-offline-domain-join"></a><a name="BKMK_ODJRequirements"></a>Preparar para ingresso no domínio offline  
   
 1.  Crie a conta da máquina.  
   
@@ -84,7 +84,7 @@ A associação em **Admins**. do domínio, ou equivalente, é o mínimo necessá
   
 2.  Clique duas vezes no nome da floresta, clique duas vezes em **domínios**, clique duas vezes no nome do domínio no qual você deseja ingressar em um computador, clique com o botão direito do mouse em **política de domínio padrão**e clique em **Editar**.  
   
-3.  Na árvore de console, clique duas vezes em **configuração do computador**, clique duas vezes em **políticas**, clique duas vezes em **configurações do Windows**, clique duas vezes em **configurações de segurança**, clique duas vezes em **políticas locais**e clique duas vezes em  **Atribuição de direitos de usuário**.  
+3.  Na árvore de console, clique duas vezes em **configuração do computador**, clique duas vezes em **políticas**, clique duas vezes em **configurações do Windows**, clique duas vezes em **configurações de segurança**, clique duas vezes em **políticas locais**e clique duas vezes em **atribuição de direitos de usuário**.  
   
 4.  No painel de detalhes, clique duas vezes em **Adicionar estações de trabalho ao domínio**.  
   
@@ -92,12 +92,12 @@ A associação em **Admins**. do domínio, ou equivalente, é o mínimo necessá
   
 6.  Digite o nome da conta à qual você deseja conceder os direitos de usuário e clique em **OK** duas vezes.  
   
-## <a name="BKMK_ODKSxS"></a>Processo de ingresso no domínio offline  
+## <a name="offline-domain-join-process"></a><a name="BKMK_ODKSxS"></a>Processo de ingresso no domínio offline  
 Execute Djoin. exe em um prompt de comando elevado para provisionar os metadados da conta do computador. Quando você executa o comando de provisionamento, os metadados da conta de computador são criados em um arquivo binário que você especifica como parte do comando.  
   
 Para obter mais informações sobre a função NetProvisionComputerAccount que é usada para provisionar a conta de computador durante uma junção de domínio offline, consulte a [função NetProvisionComputerAccount](https://go.microsoft.com/fwlink/?LinkId=162426) (https://go.microsoft.com/fwlink/?LinkId=162426). Para obter mais informações sobre a função NetRequestOfflineDomainJoin que é executada localmente no computador de destino, consulte [NetRequestOfflineDomainJoin function](https://go.microsoft.com/fwlink/?LinkId=162427) (https://go.microsoft.com/fwlink/?LinkId=162427).  
   
-## <a name="BKMK_ODJSteps"></a>Etapas para executar um ingresso no domínio offline do DirectAccess  
+## <a name="steps-for-performing-a-directaccess-offline-domain-join"></a><a name="BKMK_ODJSteps"></a>Etapas para executar um ingresso no domínio offline do DirectAccess  
 O processo de ingresso no domínio offline inclui as seguintes etapas:  
   
 1.  Crie uma nova conta de computador para cada um dos clientes remotos e gere um pacote de provisionamento usando o comando Djoin. exe de um computador que já tenha ingressado no domínio na rede corporativa.  
@@ -114,7 +114,7 @@ Há duas opções a serem consideradas ao criar o pacote de provisionamento para
   
 Conclua as seguintes etapas para executar a junção de domínio offline:  
   
-##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>Opção 1: Criar um pacote de provisionamento para o cliente sem PKI  
+##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>Opção 1: criar um pacote de provisionamento para o cliente sem PKI  
   
 1.  Em um prompt de comando do seu servidor de acesso remoto, digite o seguinte comando para provisionar a conta do computador:  
   
@@ -122,7 +122,7 @@ Conclua as seguintes etapas para executar a junção de domínio offline:
     Djoin /provision /domain <your domain name> /machine <remote machine name> /policynames DA Client GPO name /rootcacerts /savefile c:\files\provision.txt /reuse  
     ```  
   
-##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Opção 2 Criar um pacote de provisionamento para o cliente com PKI  
+##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Opção 2: criar um pacote de provisionamento para o cliente com PKI  
   
 1.  Em um prompt de comando do seu servidor de acesso remoto, digite o seguinte comando para provisionar a conta do computador:  
   
@@ -138,7 +138,7 @@ Conclua as seguintes etapas para executar a junção de domínio offline:
   
 3.  No painel de detalhes, clique com o botão direito do mouse em **DirectAccessClients**e clique em **Propriedades**.  
   
-4.  Na guia **Membros** , clique em **Adicionar**.  
+4.  Na guia **Membros**, clique em **Adicionar**.  
   
 5.  Clique em **Tipos de Objeto**, selecione **Computadores** e clique em **OK**.  
   

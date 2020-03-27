@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d3a09ac9-75f8-4f57-aab4-b0fdfe110118
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1dfc1bb71d2800a8a9587e54147950dfd7fb371f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6ae3a221c1889facc8b7696dea0bcd6cbd8df926
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395999"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315634"
 ---
 # <a name="radius-clients"></a>Clientes RADIUS
 

@@ -3,7 +3,7 @@ title: Adicionar uma guia a Configurações
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: aac6b7f3-9020-46c3-a83f-b81542300385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9eaa1aa5a9c5e8d4c2e36f2000e0adecc83245d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a37fd65b143e800a76bac9a77daa4b400426c805
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854977"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310165"
 ---
 # <a name="add-a-tab-to-settings"></a>Adicionar uma guia a Configurações
 
@@ -34,21 +34,21 @@ Você pode adicionar uma guia a Configurações no Dashboard criando e instaland
   
 -   [Instalar o assembly no computador de referência](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly).  
   
-###  <a name="BKMK_ISettingsData"></a> Adicionar uma implementação da interface ISettingsData ao assembly  
+###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a>Adicionar uma implementação da interface ISettingsData ao assembly  
  A interface ISettingsData está incluída no namespace Microsoft.WindowsServerSolutions.Settings do assembly do AdminCommon.dll localizado em \Arquivos de programa\Windows Server\Bin.  
   
 ##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>Para adicionar o código de ISettingsData ao assembly  
   
 1.  Abra o Visual Studio 2010 como administrador clicando com o botão direito do mouse no programa no menu **Iniciar** e selecione **Executar como administrador**.  
   
-2.  Clique em **Arquivo**, em **Novo**e em **Projeto**.  
+2.  Clique em **Arquivo**, em **Novo** e em **Projeto**.  
   
-3.  Na caixa de diálogo **Novo Projeto** , clique em **Visual C#**, clique em **Biblioteca de Classes**, digite **DashboardSettingsPage** para o nome da solução e clique em **OK**.  
+3.  Na caixa de diálogo **Novo Projeto**, clique em **Visual C#** , clique em **Biblioteca de Classes**, digite **DashboardSettingsPage** para o nome da solução e clique em **OK**.  
   
     > [!IMPORTANT]
     >  O assembly instalado no servidor deve ser chamado de DashboardSettingsPage.dll e então copiar o dll em %Arquivos de programas%\Windows Server\Bin\OEM.  
   
-4.  Criar o controle que você deseja usar na guia. Neste exemplo, o controle de configurações é nomeado MySettingsControl.  
+4.  Crie o controle que você deseja usar na guia. Neste exemplo, o controle de configurações é denominado MySettingsControl.  
   
 5.  Renomeie o arquivo Class1.cs. Por exemplo, MySettingTab.cs.  
   
@@ -73,7 +73,7 @@ Você pode adicionar uma guia a Configurações no Dashboard criando e instaland
   
     ```  
   
-9. Criar uma instância do controle que você criou para a guia. Por exemplo:  
+9. Crie uma instância do controle que você criou para a guia. Por exemplo:  
   
     ```c#  
     private MySettingsControl tab;  
@@ -121,7 +121,7 @@ Você pode adicionar uma guia a Configurações no Dashboard criando e instaland
     }  
     ```  
   
-14. Adicione o método TabOrder, que retorna a ordem das guias. O exemplo de código a seguir mostra o método TabOrder:  
+14. Adicione o método TabOrder, que retorna a ordem da guia. O exemplo de código a seguir mostra o método TabOrder:  
   
     ```  
   
@@ -149,10 +149,10 @@ Você pode adicionar uma guia a Configurações no Dashboard criando e instaland
   
 16. Salve e crie a solução.  
   
-###  <a name="BKMK_SignAssembly"></a> Assinar o assembly com uma assinatura Authenticode  
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Assinar o assembly com uma assinatura Authenticode  
  Você deve assinar com a Authenticode o assembly para que seja usado no sistema operacional. Para obter mais informações sobre a assinatura do assembly, consulte [Assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
   
-###  <a name="BKMK_InstallAssembly"></a> Instalar o assembly no computador de referência  
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>Instalar o assembly no computador de referência  
  Depois de criar a solução com êxito, coloque uma cópia do arquivo DashboardSettingsPage.dll na seguinte pasta no computador de referência:  
   
  **%Programfiles%\Windows Server\Bin\OEM**  
@@ -161,4 +161,4 @@ Você pode adicionar uma guia a Configurações no Dashboard criando e instaland
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)

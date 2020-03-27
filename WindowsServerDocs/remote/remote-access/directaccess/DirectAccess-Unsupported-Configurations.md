@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-da
 ms.topic: article
 ms.assetid: 23d05e61-95c3-4e70-aa83-b9a8cae92304
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5e652083d4accf90b542a16d51e314299303954f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3908989b02f6388c994664aa8679c9198da4eea7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388845"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309392"
 ---
 # <a name="directaccess-unsupported-configurations"></a>Configurações sem suporte do DirectAccess
 
@@ -21,7 +21,7 @@ ms.locfileid: "71388845"
 
 Examine a seguinte lista de configurações do DirectAccess sem suporte antes de iniciar a implantação para evitar ter que iniciar a implantação novamente.  
 
-## <a name="bkmk_frs"></a>Distribuição de FRS (serviço de replicação de arquivo) de objetos de Política de Grupo (replicações de SYSVOL)  
+## <a name="file-replication-service-frs-distribution-of-group-policy-objects-sysvol-replications"></a><a name="bkmk_frs"></a>Distribuição de FRS (serviço de replicação de arquivo) de objetos de Política de Grupo (replicações de SYSVOL)  
 Não implante o DirectAccess em ambientes em que os controladores de domínio estejam executando o FRS (serviço de replicação de arquivo) para distribuição de objetos de Política de Grupo (replicações de SYSVOL). Não há suporte para a implantação do DirectAccess quando você usa o FRS.  
   
 Você está usando o FRS se tiver controladores de domínio que executam o Windows Server 2003 ou o Windows Server 2003 R2. Além disso, você pode estar usando o FRS se usou anteriormente os controladores de domínio do Windows 2000 Server ou do Windows Server 2003 e nunca migrou a replicação de SYSVOL do FRS para o Sistema de Arquivos Distribuído Replication (DFS-R).  
@@ -32,19 +32,19 @@ Se você estiver planejando implantar o DirectAccess, deverá usar controladores
   
 Para obter informações sobre como migrar do FRS para o DFS-R, consulte o [Guia de migração de replicação do SYSVOL: FRS para replicação do DFS](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx).  
   
-## <a name="bkmk_nap"></a>Proteção de acesso à rede para clientes do DirectAccess  
+## <a name="network-access-protection-for-directaccess-clients"></a><a name="bkmk_nap"></a>Proteção de acesso à rede para clientes do DirectAccess  
 A NAP (proteção de acesso à rede) é usada para determinar se os computadores cliente remotos atendem às políticas de ti antes de receberem acesso à rede corporativa. A NAP foi preterida no Windows Server 2012 R2 e não está incluída no Windows Server 2016. Por esse motivo, não é recomendável iniciar uma nova implantação do DirectAccess com a NAP. É recomendado um método diferente de controle de ponto de extremidade para a segurança de clientes do DirectAccess.  
   
-## <a name="bkmk_multi"></a>Suporte multissite para clientes do Windows 7  
+## <a name="multisite-support-for-windows-7-clients"></a><a name="bkmk_multi"></a>Suporte multissite para clientes do Windows 7  
 Quando o DirectAccess é configurado em uma implantação multissite, os clientes do Windows 10&reg;, do Windows&reg; 8,1 e do Windows&reg; 8 têm a capacidade de se conectar ao site mais próximo.  Os computadores cliente do Windows 7&reg; não têm o mesmo recurso. A seleção de site para clientes do Windows 7 é definida para um site específico no momento da configuração da política, e esses clientes sempre se conectarão a esse site designado, independentemente de sua localização.  
   
-## <a name="bkmk_user"></a>Controle de acesso baseado no usuário  
+## <a name="user-based-access-control"></a><a name="bkmk_user"></a>Controle de acesso baseado no usuário  
 As políticas do DirectAccess são baseadas em computador, não baseadas em usuário. Não há suporte para a especificação de políticas de usuário do DirectAccess para controlar o acesso à rede corporativa.  
   
-## <a name="bkmk_policy"></a>Personalizando a política do DirectAccess  
+## <a name="customizing-directaccess-policy"></a><a name="bkmk_policy"></a>Personalizando a política do DirectAccess  
 O DirectAccess pode ser configurado usando o assistente de instalação do DirectAccess, o console de gerenciamento de acesso remoto ou os cmdlets do Windows PowerShell de acesso remoto. O uso de qualquer meio que não seja o assistente de instalação do DirectAccess para configurar o DirectAccess, como a modificação direta de objetos do DirectAccess Política de Grupo ou a modificação manual das configurações de política padrão no servidor ou cliente, não tem suporte. Essas modificações podem resultar em uma configuração inutilizável.  
   
-## <a name="bkmk_kerb"></a>Autenticação KerbProxy  
+## <a name="kerbproxy-authentication"></a><a name="bkmk_kerb"></a>Autenticação KerbProxy  
 Quando você configura um servidor DirectAccess com o assistente de Introdução, o servidor DirectAccess é configurado automaticamente para usar a autenticação KerbProxy para autenticação de computador e de usuário. Por isso, você deve usar apenas o assistente de Introdução para implantações de site único em que somente clientes Windows 10&reg;, Windows 8.1 ou Windows 8 são implantados.  
   
 Além disso, os recursos a seguir não devem ser usados com a autenticação KerbProxy:  
@@ -69,16 +69,16 @@ Não há suporte para os seguintes planos de implantação se você habilitar a 
 > [!NOTE]  
 > Para as implantações anteriores, você deve usar o assistente de configuração avançada, que usa uma configuração de dois túneis com um computador baseado em certificado e autenticação de usuário. Para obter mais informações, consulte [implantar um único servidor DirectAccess com configurações avançadas](../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md).  
   
-## <a name="bkmk_isa"></a>Usando o ISATAP  
+## <a name="using-isatap"></a><a name="bkmk_isa"></a>Usando o ISATAP  
 O ISATAP é uma tecnologia de transição que fornece conectividade IPv6 em redes corporativas somente IPv4. Ele é limitado a organizações de pequeno e médio porte com uma única implantação do servidor DirectAccess e permite o gerenciamento remoto de clientes DirectAccess. Se o ISATAP for implantado em um ambiente multissite, de balanceamento de carga ou de multidomínio, você deverá removê-lo ou movê-lo para uma implantação IPv6 nativa antes de configurar o DirectAccess.  
   
-## <a name="bkmk_iphttps"></a>Configuração de ponto de extremidade de OTP (senha de uso único) e IPHTTPS  
+## <a name="iphttps-and-one-time-password-otp-endpoint-configuration"></a><a name="bkmk_iphttps"></a>Configuração de ponto de extremidade de OTP (senha de uso único) e IPHTTPS  
 Quando você usa o IPHTTPS, a conexão IPHTTPS deve terminar no servidor DirectAccess, não em qualquer outro dispositivo, como um balanceador de carga. Da mesma forma, a conexão de protocolo SSL fora de banda (SSL) criada durante a autenticação de OTP (senha de uso único) deve terminar no servidor DirectAccess. Todos os dispositivos entre os pontos de extremidade dessas conexões devem ser configurados no modo de passagem.  
   
-## <a name="bkmk_ft"></a>Forçar túnel com autenticação OTP  
+## <a name="force-tunnel-with-otp-authentication"></a><a name="bkmk_ft"></a>Forçar túnel com autenticação OTP  
 Não implante um servidor DirectAccess com a autenticação de dois fatores com a OTP e o túnel forçado, ou a autenticação OTP falhará. Uma conexão de protocolo SSL (SSL) fora de banda é necessária entre o servidor DirectAccess e o cliente DirectAccess. Essa conexão requer uma isenção para enviar o tráfego fora do túnel do DirectAccess. Em uma configuração de túnel forçado, todo o tráfego deve fluir por um túnel do DirectAccess e nenhuma isenção é permitida depois que o túnel é estabelecido. Por isso, não há suporte para a autenticação de OTP em uma configuração de túnel forçado.  
   
-## <a name="bkmk_rodc"></a>Implantando o DirectAccess com um controlador de domínio somente leitura  
+## <a name="deploying-directaccess-with-a-read-only-domain-controller"></a><a name="bkmk_rodc"></a>Implantando o DirectAccess com um controlador de domínio somente leitura  
 Os servidores DirectAccess devem ter acesso a um controlador de domínio de leitura/gravação e não funcionar corretamente com um RODC (controlador de domínio somente leitura).  
   
 Um controlador de domínio de leitura/gravação é necessário por vários motivos, incluindo o seguinte:  

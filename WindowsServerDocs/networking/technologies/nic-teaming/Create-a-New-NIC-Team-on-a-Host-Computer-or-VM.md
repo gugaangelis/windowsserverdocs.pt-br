@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 1785b34741ce525a5bdd27b77a0e52fc2ca6c1b6
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 1463d3b9a596436b93423806a0acdb40728a15fb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591101"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316691"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>Criar uma nova equipe de NIC em um computador host ou VM
 
@@ -46,7 +46,7 @@ O comutador físico, o comutador virtual do Hyper-V, a LAN (rede local) e os req
 ## <a name="step-1-configure-the-physical-and-virtual-network"></a>Etapa 1. Configurar a rede física e virtual  
 Neste procedimento, você cria dois comutadores virtuais Hyper-V externos, conecta uma VM aos comutadores e, em seguida, configura as conexões de VM com os comutadores.  
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Você deve ter a associação em **Administradores**ou equivalente.  
 
@@ -58,7 +58,7 @@ Você deve ter a associação em **Administradores**ou equivalente.
 
 2.  No Gerenciador de comutador virtual, verifique se **externo** está selecionado e, em seguida, clique em **criar comutador virtual**.  
 
-   ![Criar comutador virtual](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv_02.jpg)  
+   ![Criar o Comutador Virtual](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv_02.jpg)  
 
 3.  Em Propriedades do comutador virtual, digite um **nome** para o comutador virtual e adicione **anotações** conforme necessário.  
 
@@ -141,7 +141,7 @@ Opcionalmente, você também pode configurar a interface da equipe primária e c
 
 Para obter mais detalhes sobre essas configurações, consulte [configurações de agrupamento NIC](nic-teaming-settings.md).
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Você deve ter a associação em **Administradores**ou equivalente.  
 
@@ -212,7 +212,7 @@ _**Congratula!**_  Você criou uma nova equipe NIC em um computador host ou VM.
 
 - [Agrupamento NIC](NIC-Teaming.md): neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.   
 
-- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): ao configurar uma equipe NIC com o modo independente de comutador e de endereço hash ou distribuição dinâmica de carga, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário na saída tráfico. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
+- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): quando você configura uma equipe NIC com o modo independente de comutador e o hash ou a distribuição de carga dinâmica, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário no tráfego de saída. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
 
 - [Configurações de agrupamento NIC](nic-teaming-settings.md): neste tópico, fornecemos uma visão geral das propriedades da equipe NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
 

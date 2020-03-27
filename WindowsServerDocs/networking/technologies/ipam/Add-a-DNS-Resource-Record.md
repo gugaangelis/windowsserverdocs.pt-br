@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5379373f-a3d9-4f51-b6fc-bf0f6df1d244
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f8fd9974ad1670ae4106c5c38470fa51b53cf4f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b89502a7ba5ceceea10e1f7cfae9e91f6a7ead59
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405729"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316902"
 ---
 # <a name="add-a-dns-resource-record"></a>Adicionar um registro de recursos de DNS
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para adicionar um ou mais novos registros de recursos DNS usando o console do cliente IPAM.  
   

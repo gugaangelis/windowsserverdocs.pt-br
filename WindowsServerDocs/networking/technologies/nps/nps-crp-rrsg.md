@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d81678a7-be21-48f2-9b3f-5a75d6aef013
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 63a6eb5f0f78ed8dbcc0144602f16274fd6ec213
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8275c3e8902ed78d77d01a2ff5d769d3e99abf97
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396316"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316172"
 ---
 # <a name="remote-radius-server-groups"></a>Grupos de servidores RADIUS remotos
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Ao configurar o NPS (servidor de diretivas de rede) como um proxy de serviço RADIUS (RADIUS), você usa o NPS para encaminhar solicitações de conexão para servidores RADIUS que são capazes de processar as solicitações de conexão porque elas podem executar autenticação e autorização no domínio em que a conta de usuário ou computador está localizada. Por exemplo, se você quiser encaminhar solicitações de conexão para um ou mais servidores RADIUS em domínios não confiáveis, poderá configurar o NPS como um proxy RADIUS para encaminhar as solicitações para os servidores remotos RADIUS no domínio não confiável.
 

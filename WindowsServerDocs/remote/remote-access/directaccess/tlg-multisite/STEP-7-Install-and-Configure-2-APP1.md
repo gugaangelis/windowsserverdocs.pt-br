@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c5a316e1230692fb800c088d752c26ec4a0f3349
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fddffbc2954ef7f0687fc7865ec295295b32983a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388257"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314528"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>ETAPA 7 instalar e configurar o 2-APP1
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 2-APP1 fornece serviços de compartilhamento de arquivos e Web. a configuração 2-APP1 consiste no seguinte:  
   
@@ -35,20 +35,20 @@ ms.locfileid: "71388257"
   
 - Criar uma pasta compartilhada em 2-APP1 
   
-## <a name="bkmk_InstallOS"></a>Instalar o sistema operacional em 2-APP1  
+## <a name="install-the-operating-system-on-2-app1"></a><a name="bkmk_InstallOS"></a>Instalar o sistema operacional em 2-APP1  
 Primeiro, instale o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012.  
   
 #### <a name="to-install-the-operating-system-on-2-app1"></a>Para instalar o sistema operacional em 2-APP1  
   
 1.  Inicie a instalação do Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 (instalação completa).  
   
-2.  Siga as instruções para concluir a instalação, especificando uma senha forte para a conta local de administrador. Faça logon usando a conta local de administrador.  
+2.  Siga as instruções para concluir a instalação, especificando uma senha forte para a conta local de administrador. Faça logon usando a conta do Administrador local.  
   
 3.  Conecte o 2-APP1 a uma rede que tenha acesso à Internet e execute Windows Update para instalar as atualizações mais recentes do Windows Server 2016, do Windows Server 2012 R2 ou do Windows Server 2012 e desconecte-se da Internet.  
   
 4.  Conecte o 2-APP1 à sub-rede 2-corpnet.  
   
-## <a name="bkmk_TCP"></a>Configurar as propriedades de TCP/IP  
+## <a name="configure-tcpip-properties"></a><a name="bkmk_TCP"></a>Configurar as propriedades de TCP/IP  
 Configure as propriedades de TCP/IP em 2-APP1.  
   
 #### <a name="to-configure-tcpip-properties"></a>Para configurar as propriedades de TCP/IP  
@@ -63,7 +63,7 @@ Configure as propriedades de TCP/IP em 2-APP1.
   
 5.  Clique em **Usar os seguintes endereços de servidor DNS**. Em **servidor DNS preferencial**, digite **10.2.0.1**.  
   
-6.  Clique em **Avançado** e clique na guia **DNS**. Em **sufixo DNS para essa conexão**, digite **corp2.Corp.contoso.com**e clique em **OK** duas vezes.  
+6.  Clique em **avançado**e, em seguida, clique na guia **DNS** . Em **sufixo DNS para essa conexão**, digite **corp2.Corp.contoso.com**e clique em **OK** duas vezes.  
   
 7.  Clique em **Protocolo IP Versão 6 (TCP/IPv6)** e em **Propriedades**.  
   
@@ -75,9 +75,9 @@ Configure as propriedades de TCP/IP em 2-APP1.
   
 11. Na caixa de diálogo **Propriedades da conexão Ethernet com fio** , clique em **fechar**.  
   
-12. Feche a janela **Conexões de Rede** .  
+12. Feche a janela **Conexões de Rede**.  
   
-## <a name="bkmk_JoinDomain"></a>Junção 2-APP1 ao domínio CORP2  
+## <a name="join-2-app1-to-the-corp2-domain"></a><a name="bkmk_JoinDomain"></a>Junção 2-APP1 ao domínio CORP2  
 Junção 2-APP1 ao domínio corp2.corp.contoso.com.  
   
 #### <a name="to-join-2-app1-to-the-corp2-domain"></a>Para unir 2-APP1 ao domínio CORP2  
@@ -100,7 +100,7 @@ Junção 2-APP1 ao domínio corp2.corp.contoso.com.
   
 9. Depois que o computador for reiniciado, clique em **Alternar usuário**e, em seguida, clique em **outro usuário** e faça logon no domínio CORP2 com a conta de administrador.  
   
-## <a name="bkmk_IIS"></a>Instalar a função do servidor Web (IIS) em 2-APP1  
+## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>Instalar a função do servidor Web (IIS) em 2-APP1  
 Instale a função do servidor Web (IIS) para tornar o 2-APP1 um servidor Web.  
   
 #### <a name="to-install-the-web-server-iis-role"></a>Para instalar a função do servidor Web (IIS)  
@@ -115,7 +115,7 @@ Instale a função do servidor Web (IIS) para tornar o 2-APP1 um servidor Web.
   
 5.  Verifique se a instalação foi bem-sucedida e clique em **fechar**.  
   
-## <a name="bkmk_Share"></a>Criar uma pasta compartilhada em 2-APP1  
+## <a name="create-a-shared-folder-on-2-app1"></a><a name="bkmk_Share"></a>Criar uma pasta compartilhada em 2-APP1  
 Crie uma pasta compartilhada e um arquivo de texto dentro da pasta em 2-APP1.  
   
 #### <a name="to-create-a-shared-folder"></a>Para criar uma pasta compartilhada  

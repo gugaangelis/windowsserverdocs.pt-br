@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 54a8b9490fdf83d04c6b69fa88f4e8beca4f703a
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 196a124533b98c6945186ee827494b206028d2c8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259061"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317406"
 ---
 # <a name="secure-the-network-controller"></a>Proteger o controlador de rede
 
@@ -33,7 +33,7 @@ Os caminhos de comunicação que você pode proteger incluem a comunicação Nor
 
 O controlador de rede dá suporte à autenticação, autorização e criptografia para comunicação northbound. As seções a seguir fornecem informações sobre como definir essas configurações de segurança.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Autenticação
 
 Ao configurar a autenticação para a comunicação Northbound do controlador de rede, você permite que nós de cluster do controlador de rede e clientes de gerenciamento verifiquem a identidade do dispositivo com o qual estão se comunicando.
 
@@ -51,7 +51,7 @@ O controlador de rede dá suporte aos três modos de autenticação a seguir ent
 Você pode configurar o modo de autenticação para comunicação Northbound usando o comando do Windows PowerShell **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** com o parâmetro _clientauthentication válido_ . 
 
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>Autorização
 
 Ao configurar a autorização para a comunicação Northbound do controlador de rede, você permite que nós de cluster do controlador de rede e clientes de gerenciamento verifiquem se o dispositivo com o qual estão se comunicando é confiável e tem permissão para participar do comunicação.
 
@@ -94,7 +94,7 @@ Você pode configurar esse modo com o parâmetro **ClusterAuthentication** do co
 
 Para obter mais informações, consulte [install-NetworkControllerCluster](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontrollercluster).
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Autenticação
 
 Ao configurar a autenticação para comunicação de cluster do controlador de rede, você permite que nós de cluster do controlador de rede verifiquem a identidade dos outros nós com os quais estão se comunicando.
 
@@ -109,7 +109,7 @@ O controlador de rede dá suporte aos três modos de autenticação a seguir ent
 
 3. **Nenhum**. Quando você escolhe esse modo, não há nenhuma autenticação executada entre nós do controlador de rede. Esse modo é fornecido apenas para fins de teste e não é recomendado para uso em um ambiente de produção.
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>Autorização
 
 Ao configurar a autorização para comunicação de cluster do controlador de rede, você permite que os nós de cluster do controlador de rede verifiquem se os nós com os quais estão se comunicando são confiáveis e têm permissão para participar da comunicação.
 
@@ -125,7 +125,7 @@ Para cada um dos modos de autenticação com suporte do controlador de rede, os 
 
 A comunicação entre nós do controlador de rede é criptografada usando a criptografia do nível de transporte do WCF. Essa forma de criptografia é usada quando os métodos de autenticação e autorização são certificados Kerberos ou X509. Para obter mais informações, consulte estes tópicos.
 
-- [Como proteger um serviço com credenciais Windows](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [Como: proteger um serviço com credenciais do Windows](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
 - [Como: proteger um serviço com certificados X. 509](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate).
 
 ## <a name="southbound-communication"></a>Comunicação Southbound
@@ -139,12 +139,12 @@ A tabela a seguir fornece informações sobre a interação do controlador de re
 | Balanceador de Carga de Software    | WCF (MUX), TCP (host) | Certificados           |
 | Firewall                  | OVSDB                 | Certificados           |
 | Gateway                   | WinRM                 | Kerberos, certificados |
-| Rede Virtual        | OVSDB, WCF            | Certificados           |
+| Rede virtual        | OVSDB, WCF            | Certificados           |
 | Roteamento definido pelo usuário      | OVSDB                 | Certificados           |
 
 Para cada um desses protocolos, o mecanismo de comunicação é descrito na seção a seguir.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Autenticação
 
 Para a comunicação Southbound, são usados os seguintes protocolos e métodos de autenticação.
 
@@ -154,7 +154,7 @@ Para a comunicação Southbound, são usados os seguintes protocolos e métodos 
 
 2. **WinRM**. Para esse protocolo, a autenticação é executada usando o \(Kerberos para computadores ingressados no domínio\) e usando certificados \(para computadores não ingressados no domínio\).
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>Autorização
 
 Para a comunicação Southbound, são usados os seguintes protocolos e métodos de autorização.
 

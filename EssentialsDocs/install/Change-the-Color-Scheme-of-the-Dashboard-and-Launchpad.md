@@ -3,7 +3,7 @@ title: Alterar o Esquema de Cores do Dashboard e da Barra Inicial
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: b2913e51-7979-4d48-a431-d2ec5f1042be
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7079c9e59c44907fa203db48ce366c2b5a1102b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3ffac0b89a62b04b73aada0a49cb755c7e7bd9a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879637"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312284"
 ---
 # <a name="change-the-color-scheme-of-the-dashboard-and-launchpad"></a>Alterar o Esquema de Cores do Dashboard e da Barra Inicial
 
@@ -130,7 +130,7 @@ Você pode alterar o esquema de cores do Dashboard e da Barra Inicial definindo 
   
     1.  Clique com o botão direito do mouse em **Windows Server**, aponte para **Novo** e clique em **Chave**.  
   
-    2.  Digite **OEM** para o nome da chave.  
+    2.  Digite **OEM** como nome da chave.  
   
 4.  Clique com o botão direito do mouse em **OEM**, aponte para **Novo** e clique em **Valor da Cadeia de Caracteres**.  
   
@@ -142,37 +142,37 @@ Você pode alterar o esquema de cores do Dashboard e da Barra Inicial definindo 
   
 8.  Copie o arquivo para %programFiles%\Windows Server\Bin\OEM. Se o diretório OEM não existir, crie-o.  
   
-##  <a name="BKMK_Dashboard"></a> Áreas do Dashboard e a barra inicial que podem ser alteradas  
+##  <a name="dashboard-and-launchpad-areas-that-can-be-changed"></a><a name="BKMK_Dashboard"></a>Áreas de painel e Launchpad que podem ser alteradas  
  Esta seção inclui exemplos das áreas do Dashboard e da Barra Inicial que podem ser personalizadas.  
   
 ### <a name="examples"></a>Exemplos  
   
-####  <a name="BKMK_Figure1"></a> Figura 1: Página de entrada do Painel  
+####  <a name="figure-1-sign-in-page-of-the-dashboard"></a><a name="BKMK_Figure1"></a>Figura 1: página de entrada do painel  
  ![Painel do Windows Server Essentials](media/SBS8_ADK_Dashboard_Signin_RC.png "SBS8_ADK_Dashboard_Signin_RC")  
   
-####  <a name="BKMK_Figure2"></a> Figura 2: Barra Inicial  
- ![Logon do Windows SBS Launchpad&#45;na](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")  
+####  <a name="figure-2-launchpad"></a><a name="BKMK_Figure2"></a>Figura 2: Launchpad  
+ ![Entrada&#45;do Launchpad do Windows SBS](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")  
   
-####  <a name="BKMK_Figure3"></a> Figura 3: Página de entrada da Barra Inicial  
- ![Windows Server Essentials Launchpad](media/SBS8_ADK_Launchpad_Signin_RC.png "SBS8_ADK_Launchpad_Signin_RC")  
+####  <a name="figure-3-sign-in-page-of-the-launchpad"></a><a name="BKMK_Figure3"></a>Figura 3: página de entrada do Launchpad  
+ ![Launchpad do Windows Server Essentials](media/SBS8_ADK_Launchpad_Signin_RC.png "SBS8_ADK_Launchpad_Signin_RC")  
   
-####  <a name="BKMK_Figure4"></a> Figura 4: Texto do Painel  
+####  <a name="figure-4-dashboard-text"></a><a name="BKMK_Figure4"></a>Figura 4: texto do painel  
  ![Painel de navegação do Windows Server Essentials](media/SBS8_ADK_Navigation_RC.png "SBS8_ADK_Navigation_RC")  
   
-####  <a name="BKMK_Figure5"></a> Figura 5: Borda da subguia  
- ![Borda de subguia do Windows SBS Dashboard](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")  
+####  <a name="figure-5-subtab-border"></a><a name="BKMK_Figure5"></a>Figura 5: borda subtab  
+ ![Borda da subguia do painel do Windows SBS](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")  
   
-####  <a name="BKMK_Figure6"></a> Figura 6: Painel de tarefas  
- ![Painel de tarefas do Windows SBS Dashboard](media/SBS8_ADK_DashboardTaskPane.png "SBS8_ADK_DashboardTaskPane")  
+####  <a name="figure-6-task-pane"></a><a name="BKMK_Figure6"></a>Figura 6: painel de tarefas  
+ ![Painel de tarefas painel do Windows SBS](media/SBS8_ADK_DashboardTaskPane.png "SBS8_ADK_DashboardTaskPane")  
   
-####  <a name="BKMK_Figure9"></a> Figura 7a: Tela inicial do produto  
- ![Windows Server Essentials Splash Screen](media/SBS8_ADK_productspalshscreen_RC.png "SBS8_ADK_productspalshscreen_RC")  
+####  <a name="figure-7a-product-splash-screen"></a><a name="BKMK_Figure9"></a>Figura 7A: tela inicial do produto  
+ ![Tela inicial do Windows Server Essentials](media/SBS8_ADK_productspalshscreen_RC.png "SBS8_ADK_productspalshscreen_RC")  
   
-#### <a name="figure-7b-home-page"></a>Figura 7b: Página inicial  
- ![Página inicial do Windows Server Essentials](media/SBS8_ADK_Dashboard_HomePage_RC.png "SBS8_ADK_Dashboard_HomePage_RC")  
+#### <a name="figure-7b-home-page"></a>Figura 7b: Home page  
+ ![Home Page do Windows Server Essentials](media/SBS8_ADK_Dashboard_HomePage_RC.png "SBS8_ADK_Dashboard_HomePage_RC")  
   
 ## <a name="see-also"></a>Consulte também  
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)

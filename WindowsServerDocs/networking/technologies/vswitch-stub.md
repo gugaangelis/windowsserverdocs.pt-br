@@ -7,17 +7,17 @@ ms.topic: article
 ms.date: ''
 ms.assetid: d9ad2929-0db8-4483-8a74-fd89ea451d8e
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9ccff9942764193920735af85a560cf6051e97c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 42138b4c59f7bc1ea434d1db3204086497d4920c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395784"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315212"
 ---
 # <a name="hyper-v-virtual-switch"></a>Comutador Virtual Hyper-V
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 A documentação do comutador virtual do Hyper-V agora está localizada na seção **virtualização** desta biblioteca, em **comutador virtual Hyper-v**. Vá para o [comutador virtual do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch).

@@ -6,21 +6,21 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: 40150e312f4776ec093c9230eedb646eec277f49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e68da9be84e9567458467c9ebd89155e7c405c5c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405806"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312824"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>Configurar a criptografia para uma sub-rede virtual
 
 >Aplica-se a: Windows Server
 
-A criptografia de rede virtual permite a criptografia de tráfego de rede virtual entre VMs que se comunicam entre si em sub-redes marcadas como ' criptografia habilitada '. Ele também utiliza datagrama Transport Layer Security (DTLS) na sub-rede virtual para criptografar pacotes. O DTLS oferece proteção contra interceptações, falsificação e falsificação por qualquer pessoa com acesso à rede física.
+A criptografia de rede virtual permite a criptografia de tráfego de rede virtual entre VMs que se comunicam entre si em sub-redes marcadas como ' criptografia habilitada '. Ela também utiliza o DTLS (Datagrama do protocolo TLS) na sub-rede virtual para criptografar os pacotes. O DTLS protege contra interceptações, falsificação e adulteração por qualquer pessoa com acesso à rede física.
 
 A criptografia de rede virtual requer:
 - Certificados de criptografia instalados em cada um dos hosts Hyper-V habilitados para SDN.
@@ -118,7 +118,7 @@ Depois de executar o script, um novo certificado aparecerá no meu repositório:
 
 3. Instalar os certificados em cada um de seus hosts Hyper-v 
 
-   PS c:\> dir c:\$SubjectName. *
+   PS C:\> dir c:\$SubjectName. *
 
 
 ~~~
@@ -246,7 +246,7 @@ Esta etapa pressupõe que você já criou um nome de rede virtual "minha rede" e
 _**Congratula!**_ Quando concluir essas etapas, você terá concluído. 
 
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 
 

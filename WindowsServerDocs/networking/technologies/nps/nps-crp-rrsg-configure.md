@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ca125e57-249c-4d97-85d1-2929cbf871f1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fe34d25d2b54b02bb56fcad99c433054a309f60b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d9e1afd9505d3bbf1383d174cac6a2f543fcaae2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405452"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316186"
 ---
 # <a name="configure-remote-radius-server-groups"></a>Configurar grupos de servidores RADIUS remotos
 
@@ -30,7 +30,7 @@ Ao configurar o NPS como um proxy RADIUS, você cria uma nova política de solic
 >[!NOTE]
 >Você também pode configurar um novo grupo de servidores remotos RADIUS durante o processo de criação de uma nova política de solicitação de conexão.
 
-Ser membro do grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo exigido para concluir este procedimento.
 
 ### <a name="to-add-a-remote-radius-server-group"></a>Para adicionar um grupo de servidores RADIUS remotos 
 

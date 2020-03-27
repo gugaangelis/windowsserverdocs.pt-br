@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 76974e10-6a57-4533-83be-cfd5a0d364a3
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 935bda5ab47f3e9a362c81a8aeb99ebf22095725
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d0eb137716795c324afcf1a708fff00c2f7266d6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405324"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315559"
 ---
 # <a name="qos-policy-error-and-event-messages"></a>Mensagens de erro e evento da política de QoS
 
@@ -236,7 +236,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16700|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_REFERESH|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha ao atualizar as políticas de QoS do computador. Código de erro: "%2".|  
@@ -244,7 +244,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16701|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_REFERESH|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha ao atualizar as políticas de QoS de usuário. Código de erro: "%2".|  
@@ -252,7 +252,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16702|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_ROOT_KEY|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha de QoS ao abrir a chave raiz no nível da máquina para políticas de QoS. Código de erro: "%2".|  
@@ -260,7 +260,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16703|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_ROOT_KEY|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha do QoS ao abrir a chave raiz no nível do usuário para políticas de QoS. Código de erro: "%2".|  
@@ -268,7 +268,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16704|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_TOO_LONG|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Uma política de QoS de computador excede o comprimento máximo de nome permitido. A política incorreta está listada na chave raiz da política de QoS no nível da máquina, com o índice "%2".|  
@@ -276,7 +276,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16705|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_TOO_LONG|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Uma política de QoS de usuário excede o comprimento máximo de nome permitido. A política incorreta está listada na chave raiz de política de QoS de nível de usuário, com o índice "%2".|  
@@ -284,7 +284,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16706|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_SIZE_ZERO|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Uma política de QoS de computador tem um nome de comprimento zero. A política incorreta está listada na chave raiz da política de QoS no nível da máquina, com o índice "%2".|  
@@ -292,7 +292,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16707|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_SIZE_ZERO|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Uma política de QoS de usuário tem um nome de comprimento zero. A política incorreta está listada na chave raiz de política de QoS de nível de usuário, com o índice "%2".|  
@@ -300,7 +300,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16708|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_SUBKEY|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha do QoS ao abrir a subchave do registro para uma política de QoS do computador. A política está listada na chave raiz da política de QoS no nível da máquina, com o índice "%2".|  
@@ -308,7 +308,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16709|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_SUBKEY|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha de QoS ao abrir a subchave do registro para uma política de QoS de usuário. A política está listada na chave raiz de política de QoS de nível de usuário, com o índice "%2".|  
@@ -316,7 +316,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16710|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_MACHINE_POLICY_FIELD|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha de QoS ao ler ou validar o campo "%2" para a política de QoS do computador "%3".|  
@@ -324,7 +324,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16711|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_USER_POLICY_FIELD|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha de QoS ao ler ou validar o campo "%2" para a política de QoS de usuário "%3".|  
@@ -332,7 +332,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16712|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_TCP_AUTOTUNING|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha de QoS ao ler ou definir o nível de taxa de transferência TCP de entrada, código de erro: "%2".|  
@@ -340,7 +340,7 @@ A seguir está uma lista de mensagens de erro de política de QoS.
 |||  
 |-|-|  
 |**MessageId**|16713|  
-|**Severity**|Erro|  
+|**Severity**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_APP_MARKING|  
 |**Idioma**|Inglês|  
 |**Mensagem**|Falha de QoS ao ler ou definir a configuração de substituição de marcação DSCP, código de erro: "%2".|  

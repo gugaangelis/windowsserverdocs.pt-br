@@ -7,18 +7,18 @@ ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7126be417702eab54a36765c146acff14d8a8c88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6fe2cf5d593500565b02f60efb0976000095dd9e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406478"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319292"
 ---
 # <a name="deploy-branchcache"></a>Implantar o BranchCache
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 As seções a seguir fornecem informações sobre a implantação do BranchCache nos modos de cache distribuído e hospedado.  
   

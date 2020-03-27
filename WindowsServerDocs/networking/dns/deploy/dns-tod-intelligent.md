@@ -6,24 +6,24 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e497b0d73c816f0295588aa77a21c49d376c0dcf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4bb075368bb3dfadaa8046b177dbbac637763e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406184"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317819"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>Usar a política de DNS para respostas de DNS inteligente com base na hora do dia
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a distribuir o tráfego do aplicativo em diferentes instâncias distribuídas geograficamente de um aplicativo usando políticas de DNS com base na hora do dia.  
   
 Esse cenário é útil em situações em que você deseja direcionar o tráfego em um fuso horário para servidores de aplicativos alternativos, como servidores Web, que estão localizados em outro fuso horário. Isso permite balancear a carga de tráfego entre instâncias do aplicativo durante períodos de pico quando os servidores primários estão sobrecarregados com o tráfego.   
   
-### <a name="bkmk_example1"></a>Exemplo de respostas de DNS inteligente com base na hora do dia  
+### <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day"></a><a name="bkmk_example1"></a>Exemplo de respostas de DNS inteligente com base na hora do dia  
 Veja a seguir um exemplo de como você pode usar a política DNS para balancear o tráfego do aplicativo com base na hora do dia.  
   
 Este exemplo usa uma empresa fictícia, serviços de presente da Contoso, que fornece soluções de oferta online em todo o mundo por meio de seu site, contosogiftservices.com.   
@@ -38,7 +38,7 @@ A ilustração a seguir descreve esse cenário.
   
 ![Exemplo de política de DNS de hora do dia](../../media/DNS-Policy-Tod1/dns_policy_tod1.jpg)  
   
-### <a name="bkmk_works1"></a>Como as respostas do DNS inteligente com base na hora do dia funcionam  
+### <a name="how-intelligent-dns-responses-based-on-time-of-day-works"></a><a name="bkmk_works1"></a>Como as respostas do DNS inteligente com base na hora do dia funcionam  
   
 Quando o servidor DNS é configurado com a política de DNS de hora do dia, entre 6 e 9 PM em cada local geográfico, o servidor DNS faz o seguinte.  
   
@@ -53,7 +53,7 @@ Quando várias políticas de DNS são configuradas no DNS, elas são um conjunto
   
 Para obter mais informações sobre critérios e tipos de política, consulte [visão geral de políticas de DNS](../../dns/deploy/DNS-Policies-Overview.md).  
   
-### <a name="bkmk_how1"></a>Como configurar a política DNS para respostas de DNS inteligentes com base na hora do dia  
+### <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day"></a><a name="bkmk_how1"></a>Como configurar a política DNS para respostas de DNS inteligentes com base na hora do dia  
 Para configurar a política DNS para as respostas de consulta com base no balanceamento de carga do aplicativo de hora do dia, você deve executar as etapas a seguir.  
   
 - [Criar as sub-redes do cliente DNS](#bkmk_subnets)  
@@ -69,7 +69,7 @@ As seções a seguir fornecem instruções de configuração detalhadas.
 >[!IMPORTANT]
 >As seções a seguir incluem exemplos de comandos do Windows PowerShell que contêm valores de exemplo para muitos parâmetros. Certifique-se de substituir os valores de exemplo nesses comandos por valores apropriados para sua implantação antes de executar esses comandos.  
   
-#### <a name="bkmk_subnets"></a>Criar as sub-redes do cliente DNS  
+#### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>Criar as sub-redes do cliente DNS  
 A primeira etapa é identificar as sub-redes ou o espaço de endereço IP das regiões para as quais você deseja redirecionar o tráfego. Por exemplo, se você quiser redirecionar o tráfego para os EUA e Europa, precisará identificar as sub-redes ou os espaços de endereço IP dessas regiões.  
   
 Você pode obter essas informações de mapas de IP geográfico. Com base nessas distribuições de IP geográfico, você deve criar as "sub-redes de cliente DNS". Uma sub-rede de cliente DNS é um agrupamento lógico de sub-redes IPv4 ou IPv6 do qual as consultas são enviadas a um servidor DNS.  
@@ -84,7 +84,7 @@ Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.
 ```  
 Para obter mais informações, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).  
   
-#### <a name="bkmk_zscopes"></a>Criar os escopos de zona  
+#### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>Criar os escopos de zona  
 Depois que as sub-redes de cliente são configuradas, você deve particionar a zona cujo tráfego você deseja redirecionar em dois escopos de zona diferentes, um escopo para cada uma das sub-redes de cliente DNS que você configurou.  
   
 Por exemplo, se você quiser redirecionar o tráfego para o nome DNS www.contosogiftservices.com, deverá criar dois escopos de zona diferentes na zona contosogiftservices.com, um para os EUA e outro para a Europa.  
@@ -104,7 +104,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 ```  
 Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).  
   
-#### <a name="bkmk_records"></a>Adicionar registros aos escopos de zona  
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona  
 Agora você deve adicionar os registros que representam o host do servidor Web nos escopos de duas zonas.  
   
 Por exemplo, em **SeattleZoneScope**, o registro <strong>www.contosogiftservices.com</strong> é adicionado com o endereço IP 192.0.0.1, que está localizado em um datacenter de Seattle. Da mesma forma, no **DublinZoneScope**, o registro <strong>www.contosogiftservices.com</strong> é adicionado com o endereço IP 141.1.0.3 no datacenter Dublin  
@@ -121,7 +121,7 @@ O parâmetro ZoneScope não é incluído quando você adiciona um registro no es
   
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).  
   
-#### <a name="bkmk_policies"></a>Criar as políticas de DNS  
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Criar as políticas de DNS  
 Depois de criar as sub-redes, as partições (escopos de zona) e adicionar registros, você deve criar políticas que conectam as sub-redes e as partições, de modo que quando uma consulta vier de uma origem em uma das sub-redes de cliente DNS, a resposta de consulta será retornada de o escopo correto da zona. Nenhuma política é necessária para mapear o escopo de zona padrão.  
   
 Depois de configurar essas políticas de DNS, o comportamento do servidor DNS é o seguinte:  

@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 10/02/2018
-ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5425a562264addd3b2fc416f659f8ba79d6d99d6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406011"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317492"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>Saída de medição em uma rede virtual
 
@@ -25,7 +25,7 @@ Um aspecto fundamental do monetização de rede em nuvem é ser capaz de cobrar 
 
 A medição de saída para o tráfego de rede SDN no Windows Server 2019 permite a capacidade de oferecer medidores de uso para transferências de dados de saída. O tráfego de rede que deixa cada rede virtual, mas permanece dentro do data center pode ser acompanhado separadamente para que possa ser excluído dos cálculos de cobrança. Os pacotes associados aos endereços IP de destino que não estão incluídos em um dos intervalos de endereços não faturados são controlados como transferências de dados de saída cobradas.
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de endereços não cobrados da rede virtual (lista de permissões de intervalos de IP)
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de endereços não cobrados da rede virtual (lista branca de intervalos de IP)
 
 Você pode encontrar intervalos de endereços não faturados na propriedade **UnbilledAddressRanges** de uma rede virtual existente. Por padrão, não há nenhum intervalo de endereços adicionado.
 
@@ -51,7 +51,7 @@ A saída terá uma aparência semelhante a esta:
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>Exemplo: Gerenciar os intervalos de endereços não faturados de uma rede virtual
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>Exemplo: gerenciar os intervalos de endereços não faturados de uma rede virtual
 
 Você pode gerenciar o conjunto de prefixos de sub-rede IP para excluir da medição de egresso cobrada definindo a propriedade **UnbilledAddressRange** de uma rede virtual.  Qualquer tráfego enviado por interfaces de rede na rede virtual com um endereço IP de destino que corresponda a um dos prefixos não será incluído na propriedade BilledEgressBytes.
 

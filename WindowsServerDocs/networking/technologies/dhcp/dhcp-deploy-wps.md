@@ -6,14 +6,14 @@ ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 16900809c2c6b877d2b5c45f1c3ca26e55c6bea9
-ms.sourcegitcommit: 7df2bd3a7d07a50ace86477335ed6fbfb2dac373
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77027941"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312668"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>Implantar o DHCP usando o Windows PowerShell
 
@@ -39,19 +39,19 @@ Este guia contém as seções a seguir.
 - [Comandos do Windows PowerShell para DHCP](#bkmk_dhcpwps)
 - [Lista de comandos do Windows PowerShell neste guia](#bkmk_list)
 
-## <a name="bkmk_overview"></a>Visão geral da implantação de DHCP
+## <a name="dhcp-deployment-overview"></a><a name="bkmk_overview"></a>Visão geral da implantação de DHCP
 
 A ilustração a seguir descreve o cenário que você pode implantar usando este guia. O cenário inclui um servidor DHCP em um domínio Active Directory. O servidor está configurado para fornecer endereços IP a clientes DHCP em duas sub-redes diferentes. As sub-redes são separadas por um roteador que tem o encaminhamento de DHCP habilitado.
 
 ![Visão geral da topologia de rede do DHCP](../../media/Core-Network-Guide/cng16_overview.jpg)
 
-## <a name="bkmk_technologies"></a>Visões gerais de tecnologia
+## <a name="technology-overviews"></a><a name="bkmk_technologies"></a>Visões gerais de tecnologia
 
 As seções a seguir fornecem breves visões gerais de DHCP e TCP/IP.
 
 ### <a name="dhcp-overview"></a>Visão geral do DHCP
 
-O DHCP é um padrão de IP para simplificar o gerenciamento da configuração de IP do host. O padrão DHCP proporciona o uso de servidores DHCP como uma forma de gerenciar a alocação dinâmica de endereços IP e outros detalhes de configuração relacionados para clientes habilitados para DHCP em sua rede.
+O DHCP é um padrão de IP para simplificar o gerenciamento da configuração de IP do host. O padrão DHCP oferece o uso de servidores DHCP como uma maneira de gerenciar dinamicamente a alocação de endereços IP e outros detalhes relacionados a configuração para clientes habilitados para DHCP em sua rede.
 
 O DHCP permite que você use um servidor DHCP para atribuir dinamicamente um endereço IP a um computador ou outro dispositivo, como uma impressora, em sua rede local, em vez de configurar manualmente cada dispositivo com um endereço IP estático.
 
@@ -83,13 +83,13 @@ O TCP/IP oferece utilitários TCP/IP básicos que permitem que computadores base
 
 - Windows 10
 
-- R2 do Windows Server 2012
+- Windows Server 2012 R2
 
 - Windows 8.1
 
 - Windows Server 2012
 
-- O Windows 8
+- Windows 8
 
 - Windows Server 2008 R2
 
@@ -113,7 +113,7 @@ O TCP/IP oferece utilitários TCP/IP básicos que permitem que computadores base
 
 - Tablets e telefones celulares com Ethernet com fio ou tecnologia sem fio 802,11 habilitada
 
-## <a name="bkmk_plan"></a>Planejar a implantação do DHCP
+## <a name="plan-dhcp-deployment"></a><a name="bkmk_plan"></a>Planejar a implantação do DHCP
 
 A seguir estão as principais etapas de planejamento antes de instalar a função de servidor DHCP.
 
@@ -131,15 +131,15 @@ Na maioria dos casos, a configuração de roteadores para encaminhar mensagens d
 
 Cada sub-rede deve ter seu próprio intervalo de endereços IP exclusivo. Esses intervalos são representados em um servidor DHCP com escopos.
 
-Um escopo é um agrupamento administrativo de endereços IP para computadores em uma sub-rede que usa o serviço DHCP. O administrador primeiro cria um escopo para cada sub-rede física e, em seguida, usa o escopo para definir os parâmetros usados pelos clientes.
+Um escopo é um agrupamento administrativo de endereços IP para computadores em uma sub-rede que use o serviço DHCP. O administrador primeiro cria um escopo para cada sub-rede física e, em seguida, usa o escopo para definir os parâmetros usados pelos clientes.
 
 Um escopo tem as seguintes propriedades:
 
-- Um intervalo de endereços IP do qual incluir ou excluir endereços usados para ofertas de concessão de serviço DHCP.
+- Um intervalo de endereços IP a partir do qual são incluídos ou excluídos endereços usados nas ofertas de concessão de serviço DHCP.
 
 - Uma máscara de sub-rede, que determina o prefixo de sub-rede para um determinado endereço IP.
 
-- Um nome de escopo atribuído quando é criado.
+- Um nome de escopo atribuído na criação.
 
 - Valores de duração da concessão, que são atribuídos aos clientes DHCP que recebem endereços IP alocados dinamicamente.
 
@@ -210,7 +210,7 @@ Itens de configuração de exemplo adicionais para AD DS e DNS são fornecidos n
 |Valores de escopo<br /><br />1. nome do escopo<br />2. endereço IP inicial<br />3. endereço IP final<br />4. máscara de sub-rede<br />5. gateway padrão (opcional)<br />6. duração da concessão|1. sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
 |Modo de Operação do Servidor DHCP IPv6|Não habilitado|
 
-## <a name="bkmk_lab"></a>Usando este guia em um laboratório de teste
+## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>Usando este guia em um laboratório de teste
 
 Você pode usar este guia para implantar o DHCP em um laboratório de teste antes de implantá-lo em um ambiente de produção. 
 
@@ -273,7 +273,7 @@ Essa implantação requer um Hub ou comutador, um servidor físico e um cliente 
 3. Um computador físico executando um sistema operacional cliente Windows que será usado para verificar se o servidor DHCP está alocando dinamicamente endereços IP e opções DHCP para clientes DHCP.
 
 
-## <a name="bkmk_deploy"></a>Implantar o DHCP
+## <a name="deploy-dhcp"></a><a name="bkmk_deploy"></a>Implantar o DHCP
 
 Esta seção fornece exemplos de comandos do Windows PowerShell que você pode usar para implantar o DHCP em um servidor. Antes de executar esses comandos de exemplo em seu servidor, você deve modificar os comandos para corresponder à sua rede e ao seu ambiente. 
 
@@ -490,7 +490,7 @@ Se você tiver sub-redes adicionais que são atendidas por esse servidor DHCP, p
 > [!IMPORTANT]
 > Verifique se todos os roteadores entre os clientes DHCP e o servidor DHCP estão configurados para o encaminhamento de mensagens DHCP. Consulte a documentação do roteador para obter informações sobre como configurar o encaminhamento de DHCP.
 
-## <a name="bkmk_verify"></a>Verificar a funcionalidade do servidor
+## <a name="verify-server-functionality"></a><a name="bkmk_verify"></a>Verificar a funcionalidade do servidor
 
 Para verificar se o servidor DHCP está fornecendo a alocação dinâmica de endereços IP para clientes DHCP, você pode conectar outro computador a uma sub-rede atendida. Depois de conectar o cabo Ethernet ao adaptador de rede e ligar o computador, ele solicitará um endereço IP do servidor DHCP. Você pode verificar a configuração bem-sucedida usando o comando **ipconfig/all** e revisar os resultados, ou executando testes de conectividade, como tentar acessar recursos da Web com o navegador ou compartilhamentos de arquivos com o Windows Explorer ou outros aplicativos.
 
@@ -501,7 +501,7 @@ Se o cliente não receber um endereço IP do servidor DHCP, execute as seguintes
 3. Verifique se o servidor DHCP está autorizado no Active Directory executando o comando a seguir para recuperar a lista de servidores DHCP autorizados do Active Directory. [Get-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/Get-DhcpServerInDC).
 4. Verifique se os escopos estão ativados abrindo o console do DHCP \(Gerenciador do Servidor, **ferramentas**,\)**DHCP** , expandindo a árvore do servidor para examinar escopos e, em seguida,\-clicando em cada escopo. Se o menu resultante incluir a seleção **Ativar**, clique em **Ativar**. \(se o escopo já estiver ativado, a seleção de menu exibirá **desativar**.\)
 
-## <a name="bkmk_dhcpwps"></a>Comandos do Windows PowerShell para DHCP
+## <a name="windows-powershell-commands-for-dhcp"></a><a name="bkmk_dhcpwps"></a>Comandos do Windows PowerShell para DHCP
 
 A referência a seguir fornece descrições de comando e sintaxe para todos os comandos do Windows PowerShell do servidor DHCP para o Windows Server 2016. O tópico lista os comandos em ordem alfabética com base no verbo no início dos comandos, como **Get** ou **set**.
 
@@ -517,7 +517,7 @@ A referência a seguir fornece descrições de comando e sintaxe para todos os c
 
 - [Cmdlets do servidor DHCP no Windows PowerShell](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
 
-## <a name="bkmk_list"></a>Lista de comandos do Windows PowerShell neste guia
+## <a name="list-of-windows-powershell-commands-in-this-guide"></a><a name="bkmk_list"></a>Lista de comandos do Windows PowerShell neste guia
 
 A seguir está uma lista simples de comandos e valores de exemplo que são usados neste guia.
 

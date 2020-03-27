@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 364783e2188152fc5c57bba04991ae124b0bb8d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 278d813aa13ea42b7f597bdbe7eb210f68cee955
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405498"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316301"
 ---
 # <a name="network-policy-server-best-practices"></a>Práticas recomendadas do Servidor de Políticas de Rede
 

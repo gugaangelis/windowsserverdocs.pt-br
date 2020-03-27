@@ -3,7 +3,7 @@ title: Criar o Arquivo Oobe.xml Incluindo Logotipo e EULA
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5d7dac41ba6d6f73b0d3d65d3481fe45ff99a6bc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 58d98aa84b8851e3226ebc76c86cffd574400c42
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433616"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312054"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>Criar o Arquivo Oobe.xml Incluindo Logotipo e EULA
 
@@ -31,11 +31,11 @@ Você pode adicionar seu próprio Contrato de Licença de Usuário Final (EULA) 
   
 1. Abra o arquivo Oobe.xml em um editor de texto, como o Bloco de Notas.  
   
-2. Dentro de < logopath\>< / logopath\> , insira o caminho absoluto para o arquivo de logotipo. Esse arquivo deve conter um arquivo em formato PNG de 32 bits com 240 x 100 pixels.  
+2. Dentro do < logopath\>< marcas de\> de/logopath, insira o caminho absoluto para o seu arquivo de logotipo. Esse arquivo deve conter um arquivo em formato PNG de 32 bits com 240 x 100 pixels.  
   
-3. Dentro de < eulafilename\>< / eulafilename\> , insira o caminho absoluto para o arquivo EULA. O arquivo EULA deve ser um arquivo de formato RTF.  
+3. Dentro do < eulafilename\>< marcas de\> de/eulafilename, insira o caminho absoluto para o arquivo de EULA. O arquivo EULA deve ser um arquivo de formato RTF.  
   
-4. Dentro do < nome\>< / nome\> , insira o nome da empresa.  
+4. Dentro do nome do <\></name\> marcas, insira o nome da empresa.  
   
     O exemplo a seguir mostra as marcas em um arquivo Oobe.xml:  
   
@@ -59,9 +59,9 @@ Você pode adicionar seu próprio Contrato de Licença de Usuário Final (EULA) 
   
    |Local do Oobe.xml|Condição para determinar o local|  
    |-----------------------|----------------------------------------|  
-   |%WINDIR%\System32\Oobe\Info\|o servidor está enviando em um país/região único e um sistema único idioma.|  
-   |%windir%\system32\oobe\info\default\\< language\>|O servidor está enviando em um sistema de país/região único e vários idiomas.|  
-   |%WINDIR%\System32\Oobe\Info\\< país/região > \ e %windir%\system32\oobe\info\\< país/região >\\< language\>\|o servidor está enviando a mais de um país / região e as configurações exigem personalizações em uma base por país/região, cada um com um único idioma. Onde < país/região > é a versão decimal do identificador de localização geográfica (GeoID) do país ou região em que o servidor está sendo implantado, e < language\> é a versão decimal do identificador de localidade (LCID).|  
+   |%WINDIR%\System32\Oobe\Info\|o servidor está enviando em um único país/região e um único sistema de linguagem.|  
+   |%WINDIR%\system32\oobe\info\default\\< linguagem\>|O servidor está enviando em um sistema de país/região único e vários idiomas.|  
+   |%WINDIR%\System32\Oobe\Info\\< país/região > \ e%WINDIR%\System32\Oobe\Info\\< país/região >\\< linguagem\>\|o servidor está enviando para mais de um país/região e as configurações exigem personalizações por país/região, cada uma com uma única linguagem. Onde < país/região > é a versão decimal do GeoID (identificador de localização geográfica) do país ou da região onde o servidor está sendo implantado, e <\> de idioma é a versão decimal do LCID (identificador de localidade).|  
   
    Se você tiver um logotipo de empresa alternativo com texto branco, ele pode ser exibido melhor no fluxo de configuração devido ao plano de fundo azul.  Você pode, como opção, especificar esse logotipo configurando uma chave de registro e um valor.  
   
@@ -71,15 +71,15 @@ Você pode adicionar seu próprio Contrato de Licença de Usuário Final (EULA) 
   
 2.  Na caixa Pesquisar, digite **regedit** e clique no aplicativo Regedit.  
   
-3.  No painel de navegação, navegue para  **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**. Se a chave do OEM não existir, crie a chave da seguinte maneira:  
+3.  No painel de navegação, navegue para **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**. Se a chave do OEM não existir, crie a chave da seguinte maneira:  
   
-    1.  Clique com o botão direito do mouse em **Windows Server**, clique em **Novo**e em **Chave**.  
+    1.  Clique com o botão direito do mouse em **Windows Server**, clique em **Novo** e em **Chave**.  
   
     2.  Para o nome da chave, digite **OEM**.  
   
 4.  (Opcional) Se estiver criando uma entrada para um logotipo, você poderá criar diferentes chaves para distinguir as versões de idioma do logotipo. Por exemplo, se você tiver as versões em inglês e em alemão de um logotipo, é possível criar uma chave en-us e uma chave de-de. Como todos os arquivos de logotipo são armazenados na mesma pasta, é necessário fornecer instâncias do arquivo de imagem do logotipo com um nome exclusivo para cada idioma. Por exemplo, é possível criar um arquivo chamado LogoWithWhiteText_en.png e LogoWithWhiteText_de.png.  
   
-5.  Clique com o botão direito do mouse em **OEM** ou na chave de idioma apropriada, clique em **Novo**e então em **Valor da Cadeia de Caracteres**.  
+5.  Clique com o botão direito do mouse em **OEM** ou na chave de idioma apropriada, clique em **Novo** e então em **Valor da Cadeia de Caracteres**.  
   
 6.  Digite LogoWithWhiteText como a cadeia de caracteres e depois pressione ENTER.  
   
@@ -88,7 +88,7 @@ Você pode adicionar seu próprio Contrato de Licença de Usuário Final (EULA) 
 8.  Insira o caminho que contém a imagem do logotipo e depois clique em OK.  
   
 ## <a name="see-also"></a>Consulte também  
- [Introdução ao Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introdução com o Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   

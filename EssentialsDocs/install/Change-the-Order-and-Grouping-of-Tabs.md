@@ -3,7 +3,7 @@ title: Alterar a Ordem e o Agrupamento de Guias
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 79a417fd-1b3e-47ab-ae33-bb1faf95c86d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 578c5619cfdf076bb2735254494f393d56d35713
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: abb443994b413f35f6d70510191bc543fad418f5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887757"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312233"
 ---
 # <a name="change-the-order-and-grouping-of-tabs"></a>Alterar a Ordem e o Agrupamento de Guias
 
@@ -30,13 +30,13 @@ ms.locfileid: "59887757"
   
 #### <a name="to-display-your-tab-first-in-the-list-of-tabs"></a>Para exibir sua guia primeiro na lista de guias  
   
-1.  No computador de referência, clique em **Iniciar**, insira **regedit**e pressione **Enter**.  
+1.  No computador de referência, clique em **Iniciar**, insira **regedit** e pressione **Enter**.  
   
 2.  No painel esquerdo, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**. Se a chave **OEM** não existir, é necessário concluir as seguintes etapas para criá-la:  
   
     1.  Clique com o botão direito do mouse em **Windows Server**, aponte para **Novo** e clique em **Chave**.  
   
-    2.  Digite **OEM** para o nome da chave.  
+    2.  Digite **OEM** como nome da chave.  
   
 3.  Clique com o botão direito do mouse em **OEM**, aponte para **Novo** e clique em **Valor da Cadeia de Caracteres**.  
   
@@ -65,7 +65,7 @@ ms.locfileid: "59887757"
   
 4.  Digite **DashboardAddins** como o nome da chave e pressione **Enter**.  
   
-5.  Clique com o botão direito do mouse em **DashboardAddins**, aponte para **Novo**e clique em **Valor da Cadeia de Caracteres**.  
+5.  Clique com o botão direito do mouse em **DashboardAddins**, aponte para **Novo** e clique em **Valor da Cadeia de Caracteres**.  
   
 6.  Digite o identificador GUID de sua guia como o nome de cadeia de caracteres. Um valor não é necessário.  
   
@@ -77,4 +77,4 @@ ms.locfileid: "59887757"
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do usuário](Testing-the-Customer-Experience.md)
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)

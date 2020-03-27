@@ -6,21 +6,21 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: 1395cefca5d9ef696eed3f2735334954b9ee02a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 78d320f4309d60fa0396cbd723feafa07a65aea1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405713"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317007"
 ---
 # <a name="nic-advanced-properties"></a>As propriedades avançadas de NIC
 
 Você pode gerenciar NICs e todos os recursos por meio do Windows PowerShell usando o cmdlet do [netadapter](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps&viewFallbackFrom=winserverr2-ps) .  Você também pode gerenciar NICs e todos os recursos usando o painel de controle de rede (ncpa. cpl). 
 
-1. No **Windows PowerShell**, execute o cmdlet `Get‑NetAdapterAdvancedProperties` em duas marca/modelo diferentes de NICs.
+1. No **Windows PowerShell**, execute o cmdlet `Get‑NetAdapterAdvancedProperties` em relação a dois Make/modelo diferentes de NICs.
 
    ![M1 Get-NetAdapterAdvancedProperty](../../media/network-offload-and-optimization/Get-NetAdapterAdvancedProperty-m1.png)
 

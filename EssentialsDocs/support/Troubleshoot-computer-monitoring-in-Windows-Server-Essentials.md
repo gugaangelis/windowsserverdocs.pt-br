@@ -3,7 +3,7 @@ title: Solucionar problemas de monitoramento de computador no Windows Server Ess
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,27 +12,27 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1adf8ae2dd8763d0bc5a514609bb2470de6acde4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 968c8c82bfde350e631f1f6ae4830a4fd920aa4b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436075"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318604"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Solucionar problemas de monitoramento de computador no Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Este tópico fornece uma solução de problemas para problemas encontrados ao monitorar o status de integridade dos computadores no Visualizador de alertas e por meio de notificações de email no Windows Server Essentials.  
+Este tópico fornece a solução de problemas encontrados durante o monitoramento do status de integridade de computadores no Visualizador de alertas e por meio de notificações por email no Windows Server Essentials.  
   
 > [!NOTE]
->  Para obter as informações mais recentes para solução de problemas da comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](https://social.technet.microsoft.com/Forums/winserveressentials/threads). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.  
+>  Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](https://social.technet.microsoft.com/Forums/winserveressentials/threads). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.  
   
-##  <a name="BKMK_TS"></a> Solução de problemas de notificações por email para alertas  
+##  <a name="troubleshooting-email-notifications-for-alerts"></a><a name="BKMK_TS"></a>Solucionando problemas de notificações por email para alertas  
  Esta seção lista diversos problemas que você pode encontrar ao usar notificações por email para alertas.  
   
 ### <a name="cannot-send-the-test-email-for-the-alert"></a>Não é possível enviar o email de teste para o alerta  
- **Problema** você receber um erro mensagem que diz, não é possível enviar o email de teste de alerta.  
+ **Problema** Você recebe uma mensagem de erro que diz, não é possível enviar o email de teste para o alerta.  
   
  **Causa** Esse erro poderá ocorrer devido a qualquer um dos seguintes problemas nas configurações de notificações de alerta:  
   
@@ -40,7 +40,7 @@ Este tópico fornece uma solução de problemas para problemas encontrados ao mo
   
 - Foi especificado incorretamente que o servidor SMTP requer uma conexão Single Sockets Layer (SSL).  
   
-- O servidor SMTP exigir autenticação e credenciais incorretas foram inseridas.  
+- O servidor SMTP exige autenticação; além disso, credenciais incorretas foram inseridas.  
   
   **Soluções** Corrigir quaisquer erros em suas configurações de notificação por email.  
   
@@ -53,7 +53,7 @@ Este tópico fornece uma solução de problemas para problemas encontrados ao mo
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  Para ver a pasta ProgramData, você deve usar uma configuração para exibir itens ocultos. Se você não vir a pasta ProgramData, na faixa de opções **modo de exibição** guia, o **Mostrar/ocultar** grupo, selecione o **itens ocultos** caixa de texto.  
+    >  Para ver a pasta ProgramData, você deve usar uma configuração para exibir itens ocultos. Se você não vir a pasta ProgramData, na guia **exibição** da faixa de opções, no grupo **Mostrar/ocultar** , marque a caixa de texto **itens ocultos** .  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>Para atualizar a configuração de notificação por email para alertas  
   

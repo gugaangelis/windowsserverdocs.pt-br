@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ab9a8e309c8031108d58c73d82357e913d5ce398
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc9ab0fa3d1da0e7af8a7a1d7a8706ba6d128648
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396476"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316465"
 ---
 # <a name="nic-teaming-settings"></a>Configurações de agrupamento NIC
 Neste tópico, fornecemos uma visão geral das propriedades da equipe da NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
@@ -82,7 +82,7 @@ Como a opção adjacente sempre vê um endereço MAC específico em uma porta, o
   
 No entanto, se o host tiver apenas algumas VMs, esse modo poderá não ser granular o suficiente para alcançar uma distribuição bem balanceada. Esse modo também limitará sempre uma única VM (ou seja, o tráfego de uma única porta de comutador) para a largura de banda disponível em uma única interface. O agrupamento NIC usa a porta do comutador virtual Hyper-V como o identificador em vez de usar o endereço MAC de origem porque, em alguns casos, uma VM pode ser configurada com mais de um endereço MAC em uma porta de comutador.  
   
-### <a name="dynamic"></a>Dinâmico
+### <a name="dynamic"></a>Dynamic
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   

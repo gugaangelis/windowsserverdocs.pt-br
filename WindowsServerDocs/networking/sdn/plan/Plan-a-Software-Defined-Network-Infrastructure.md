@@ -11,24 +11,24 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/10/2018
-ms.openlocfilehash: ed2dc8861366b929de346d5bd5b3d40998cc8dd5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83f94d3770c475fca7f5d4b8cc2f5a5ade1a20d7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355791"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317459"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planejar uma infraestrutura de rede definida pelo software
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Saiba mais sobre o planejamento de implantação para uma infraestrutura de rede definida pelo software, incluindo os pré-requisitos de hardware e software. 
 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 Este tópico descreve uma série de pré-requisitos de hardware e software, incluindo:
 
 -   **Grupos de segurança configurados, locais de arquivos de log e registro de DNS dinâmico** Você deve preparar o datacenter para a implantação do controlador de rede, o que exige um ou mais computadores ou VMs e um computador ou VM. Antes de implantar o controlador de rede, você deve configurar os grupos de segurança, os locais do arquivo de log (se necessário) e o registro de DNS dinâmico.  Se você não preparou seu datacenter para a implantação do controlador de rede, consulte [requisitos de instalação e preparação para implantar o controlador de rede](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) para obter detalhes.
@@ -121,11 +121,11 @@ Se estiver usando o armazenamento baseado em RDMA, defina uma VLAN e uma sub-red
 
 Se você estiver implantando sua infraestrutura de SDN usando scripts, as sub-redes de gerenciamento, provedor HNV, trânsito e VIP deverão ser roteáveis entre si na rede física.     
 
-As informações \(de roteamento, por exemplo\) , o próximo salto para as sub-redes VIP são anunciadas pelos gateways SLB/MUX e RAS na rede física usando o emparelhamento via protocolo BGP interno. As redes lógicas VIP não têm uma VLAN atribuída e não são pré-configuradas na opção de camada 2 (por exemplo, o comutador Top-of-rack).  
+As informações de roteamento \(por exemplo,\) de próximo salto para as sub-redes VIP são anunciadas pelos gateways SLB/MUX e RAS na rede física usando o emparelhamento via protocolo BGP interno. As redes lógicas VIP não têm uma VLAN atribuída e não são pré-configuradas na opção de camada 2 (por exemplo, o comutador Top-of-rack).  
 
 Você precisa criar um par de BGP no roteador que é usado pela sua infraestrutura de SDN para receber rotas para as redes lógicas VIP anunciadas pelos gateways SLB/MUXes e RAS. O emparelhamento via protocolo BGP só precisa ocorrer de uma maneira (do SLB/MUX ou do gateway de RAS para o par de BGP externo).  Acima da primeira camada de roteamento, você pode usar rotas estáticas ou outro protocolo de roteamento dinâmico, como o OSPF, no entanto, como mencionado anteriormente, o prefixo de sub-rede IP para as redes lógicas VIP precisa ser roteável da rede física para o par de BGP externo.   
 
-O emparelhamento via protocolo BGP normalmente é configurado em um comutador ou roteador gerenciado como parte da infraestrutura de rede. O par de BGP também pode ser configurado em um Windows Server com a função de RAS (servidor de acesso remoto) instalada em um modo somente roteamento. Esse par de roteador BGP na infraestrutura de rede deve ser configurado para ter seu próprio ASN e permitir o emparelhamento de um ASN atribuído aos componentes \(Sdn SLB/MUX e\)gateways RAS. Você deve obter as seguintes informações do roteador físico ou do administrador de rede no controle desse roteador:
+O emparelhamento via protocolo BGP normalmente é configurado em um comutador ou roteador gerenciado como parte da infraestrutura de rede. O par de BGP também pode ser configurado em um Windows Server com a função de RAS (servidor de acesso remoto) instalada em um modo somente roteamento. Esse par de roteador BGP na infraestrutura de rede deve ser configurado para ter seu próprio ASN e permitir o emparelhamento de um ASN atribuído aos componentes de SDN \(os gateways SLB/MUX e RAS\). Você deve obter as seguintes informações do roteador físico ou do administrador de rede no controle desse roteador:
 
 - ASN do roteador  
 - Endereço IP do roteador  
@@ -165,28 +165,28 @@ Mudar o agrupamento incorporado (conjunto) é uma solução de agrupamento NIC a
 
 Para obter mais informações, consulte [acesso remoto direto à memória (RDMA) e Comutador incorporado (Set)](../../../virtualization//hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).   
 
-Para considerar a sobrecarga no tráfego de rede virtual de locatário causado por cabeçalhos de encapsulamento VXLAN ou NVGRE, o MTU da rede de malha de camada 2 (comutadores e hosts) deve ser definido como maior ou igual \(a 1674 bytes, incluindo Ethernet de camada 2 cabeçalhos\). 
+Para considerar a sobrecarga no tráfego de rede virtual de locatário causado por cabeçalhos de encapsulamento VXLAN ou NVGRE, o MTU da rede de malha de camada 2 (comutadores e hosts) deve ser definido como maior ou igual a 1674 bytes \(incluindo cabeçalhos de Ethernet de camada 2\). 
 
-As NICs que dão suporte à nova palavra-chave do adaptador avançado *EncapOverhead* definem o MTU automaticamente por meio do agente de host do controlador de rede. As NICs que não dão suporte à nova palavra-chave *EncapOverhead* precisam definir o tamanho de MTU manualmente em cada host físico usando o\) *JumboPacket* \(ou a palavra-chave equivalente. 
+As NICs que dão suporte à nova palavra-chave do adaptador avançado *EncapOverhead* definem o MTU automaticamente por meio do agente de host do controlador de rede. As NICs que não dão suporte à nova palavra-chave *EncapOverhead* precisam definir o tamanho de MTU manualmente em cada host físico usando o *JumboPacket* \(ou a palavra-chave equivalente\). 
 
 
 ### <a name="switches"></a>Comutadores
 
 Ao selecionar um comutador físico e um roteador para o seu ambiente, verifique se ele dá suporte ao seguinte conjunto de recursos:  
 
-- Configurações \(de MTU de switchport necessárias\)  
-- MTU definido como > = 1674 bytes \(, incluindo o cabeçalho L2-Ethernet\)  
-- Protocolos \(L3 necessários\)  
+- As configurações de MTU de switchport \(\) necessárias  
+- MTU definido como > = 1674 bytes \(incluindo o cabeçalho L2-Ethernet\)  
+- Os protocolos L3 \(necessários\)  
 - ECMP  
-- ECMP \(baseada em BGP\)IETF RFC 4271\-
+- BGP \(IETF RFC 4271\)\-com base em ECMP
 
 As implementações devem dar suporte às instruções deve nos seguintes padrões de IETF.
 
-- RFC 2545: "Extensões de protocolo BGP-4 para roteamento entre domínios IPv6"  
-- RFC 4760: "Extensões de vários protocolos para BGP-4"  
-- RFC 4893: "Suporte a BGP para quatro octetos como espaço numérico"  
-- RFC 4456: "Reflexão de rota BGP: Uma alternativa ao BGP interno de malha completa (IBGP) "  
-- RFC 4724: "Mecanismo de reinicialização normal para BGP"  
+- RFC 2545: "extensões do protocolo BGP-4 para roteamento entre domínios IPv6"  
+- RFC 4760: "extensões de multiprotocolo para BGP-4"  
+- RFC 4893: "suporte de BGP para quatro octetos como espaço numérico"  
+- RFC 4456: "reflexão de rota BGP: uma alternativa ao BGP interno de malha completa (IBGP)"  
+- RFC 4724: "mecanismo de reinicialização normal para BGP"  
 
 Os seguintes protocolos de marcação são necessários.
 
@@ -195,9 +195,9 @@ Os seguintes protocolos de marcação são necessários.
 
 Os itens a seguir fornecem controle de link.
 
-- A qualidade do \(PFC de serviço só é necessária se estiver usando RoCE\)
-- Seleção \(de tráfego aprimorada 802.1 Qaz\)
-- Controle \(de fluxo baseado em prioridade 802.1 p/Q e 802.1 QBB\)
+- A qualidade do serviço \(PFC só é necessária se estiver usando RoCE\)
+- Seleção de tráfego aprimorada \(802.1 Qaz\)
+- Controle de fluxo baseado em prioridade \(802.1 p/Q e 802.1 QBB\)
 
 Os itens a seguir fornecem disponibilidade e redundância.
 
@@ -209,8 +209,8 @@ Os itens a seguir fornecem recursos de gerenciamento.
 **Monitoriza**
 
 - SNMP v1 ou SNMP v2 (necessário se estiver usando o controlador de rede para o monitoramento de comutador físico)  
-- MIBs \(de SNMP são necessárias se você estiver usando o controlador de rede para monitoramento de comutador físico\)  
-- MIB-II (RFC 1213), LLDP, MIB \(de interface RFC 2863\), IF-MIB, IP-MIB, IP-forward-MIB, p-Bridge-MIB, Bridge-MIB, LLDB-MIB, Entity-MIB, IEEE8023-lag-MIB  
+- As MIBs SNMP \(necessárias se você estiver usando o controlador de rede para monitoramento de comutador físico\)  
+- MIB-II (RFC 1213), LLDP, MIB de interface \(RFC 2863\), IF-MIB, IP-MIB, IP-FORWARD-MIB, p-BRIDGE-MIB, BRIDGE-MIB, LLDB-MIB, Entity-MIB, IEEE8023-LAG-MIB  
 
 Os diagramas a seguir mostram um exemplo de configuração de quatro nós. Para fins de clareza, o primeiro diagrama mostra apenas o controlador de rede, o segundo mostra o controlador de rede mais o balanceador de carga de software e o terceiro diagrama mostra o controlador de rede, o balanceador de carga de software e o gateway.  
 
@@ -231,19 +231,19 @@ Todos os hosts Hyper-V devem ter o Windows Server 2016 instalado, o Hyper-V habi
 Qualquer tipo de armazenamento compatível com o Hyper-V, compartilhado ou local pode ser usado.   
 
 > [!TIP]  
-> É conveniente se você usa o mesmo nome para todos os seus comutadores virtuais, mas não é obrigatório. Se você planeja implantar com scripts, consulte o comentário associado `vSwitchName` à variável no arquivo config. psd1.  
+> É conveniente se você usa o mesmo nome para todos os seus comutadores virtuais, mas não é obrigatório. Se você planeja implantar com scripts, consulte o comentário associado à variável `vSwitchName` no arquivo config. psd1.  
 
 **Requisitos de computação do host**  
 A tabela a seguir mostra os requisitos mínimos de hardware e software para os quatro hosts físicos usados na implantação de exemplo.  
 
 Host|Requisitos de Hardware|Requisitos de Software|  
 --------|-------------------------|-------------------------  
-|Host do Hyper-v físico|CPU de 4-core de 2,66 GHz<br /><br />32 GB de RAM<br /><br />300 GB de espaço em disco<br /><br />1 GB/s (ou mais rápido) adaptador de rede física|SISTEMAS Windows Server 2016<br /><br />Função do Hyper-V instalada|  
+|Host do Hyper-v físico|CPU de 4-core de 2,66 GHz<br /><br />32 GB de RAM<br /><br />300 GB de espaço em disco<br /><br />1 GB/s (ou mais rápido) adaptador de rede física|Sistema operacional: Windows Server 2016<br /><br />Função do Hyper-V instalada|  
 
 
 **Requisitos da função de máquina virtual de infraestrutura SDN**  
 
-Role|requisitos do vCPU|Requisitos de memória|Requisitos de disco|  
+Função|requisitos do vCPU|Requisitos de memória|Requisitos de disco|  
 --------|---------------------|-----------------------|---------------------  
 |Controlador de rede (três nós)|4 vCPUs|4 GB min (8 GB recomendado)|75 GB para a unidade do sistema operacional  
 |SLB/MUX (três nós)|8 vCPUs|8 GB recomendados|75 GB para a unidade do sistema operacional  

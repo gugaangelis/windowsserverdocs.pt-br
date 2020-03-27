@@ -5,18 +5,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da2166d28edda5662797824d9b26ad930f51083c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 35c3c3b2610918e8b0fd69ccf04422e3f6df4d0e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406752"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318546"
 ---
 # <a name="whats-new-in-networking"></a>Novidades na rede
 
->Aplica-se a: Windows Server 2016
+>Aplica-se ao Windows Server 2016
 
 A seguir estão as tecnologias de rede novas ou aprimoradas no Windows Server 2016.  
   UPD este tópico contém as seções a seguir.  
@@ -25,7 +25,7 @@ A seguir estão as tecnologias de rede novas ou aprimoradas no Windows Server 20
   
 -   [Novos recursos para tecnologias de rede adicionais](#bkmk_existing)  
   
-## <a name="bkmk_features"></a>Novos recursos e tecnologias de rede
+## <a name="new-networking-features-and-technologies"></a><a name="bkmk_features"></a>Novos recursos e tecnologias de rede
 
 A rede é uma parte fundamental da plataforma do Data Center (SDDC) definida pelo software, e o Windows Server 2016 fornece tecnologias de SDN (rede definida pelo software) novas e aprimoradas para ajudá-lo a migrar para uma solução SDDC totalmente realizada para sua organização.  
   
@@ -70,30 +70,30 @@ Os conceitos básicos de escala de nuvem a seguir agora estão disponíveis.
   
 -   **Pacote direto**.  O pacote direto fornece uma alta taxa de transferência de tráfego de rede e uma infra-estrutura de processamento de pacotes de baixa latência.  
   
--   **Alterne a equipe inserida (Set)** .        O conjunto é uma solução de agrupamento NIC integrada ao comutador virtual Hyper-V. SET permite o agrupamento de até oito NICS físicas em uma única equipe de conjunto, o que melhora a disponibilidade e fornece failover. No Windows Server 2016, você pode criar equipes definidas que são restritas ao uso de protocolo SMB e RDMA. Além disso, você pode usar o SET Teams para distribuir o tráfego de rede para virtualização de rede Hyper-V. Para obter mais informações,consulte [Acesso remoto direto à memória &#40;Access&#41; RDMA e troca de equipe inserida &#40;Integration&#41;Set](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
+-   **Alterne a equipe inserida (Set)** .        O conjunto é uma solução de agrupamento NIC integrada ao comutador virtual Hyper-V. SET permite o agrupamento de até oito NICS físicas em uma única equipe de conjunto, o que melhora a disponibilidade e fornece failover. No Windows Server 2016, você pode criar equipes definidas que são restritas ao uso de protocolo SMB e RDMA. Além disso, você pode usar o SET Teams para distribuir o tráfego de rede para virtualização de rede Hyper-V. Para obter mais informações, [consulte Remote Direct Memory &#40;Access&#41; RDMA e switch Embedded &#40;Integration&#41;Set](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
   
-## <a name="bkmk_existing"></a>Novos recursos para tecnologias de rede adicionais
+## <a name="new-features-for-additional-networking-technologies"></a><a name="bkmk_existing"></a>Novos recursos para tecnologias de rede adicionais
 
 Esta seção contém informações sobre os novos recursos para tecnologias de rede familiares.
   
-## <a name="bkmk_dhcp"></a>DHCP  
+## <a name="dhcp"></a><a name="bkmk_dhcp"></a>DHCP  
 O DHCP é um padrão IETF (Internet Engineering Task Force) projetado para reduzir a carga administrativa e a complexidade da configuração de hosts em uma rede baseada em TCP/IP, por exemplo, uma intranet privada. Usando o serviço de servidor DHCP, o processo de configuração de TCP/IP em clientes DHCP é automático.  
   
 Para obter mais informações, consulte [What ' s New in DHCP](technologies/dhcp/What-s-New-in-DHCP.md).  
   
-## <a name="bkmk_dns"></a>DNS  
+## <a name="dns"></a><a name="bkmk_dns"></a>DNS  
 DNS é um sistema usado em redes TCP/IP para nomear computadores e serviços de rede. A nomeação DNS localiza computadores e serviços por meio de nomes simples. Quando um usuário insere um nome DNS em um aplicativo, os serviços DNS podem resolvê-lo para outra informação associada a ele, como um endereço IP.  
   
 Veja a seguir informações sobre o cliente DNS e o servidor DNS.  
   
-### <a name="bkmk_dnsc"></a>Cliente DNS  
+### <a name="dns-client"></a><a name="bkmk_dnsc"></a>Cliente DNS  
 A seguir estão as tecnologias de cliente DNS novas ou aprimoradas.  
   
 -   **Associação de serviço do cliente DNS**. No Windows 10, o serviço cliente DNS oferece suporte aprimorado para computadores com mais de uma interface de rede.  
   
 Para obter mais informações, consulte [o que há de novo no cliente DNS no Windows Server 2016](dns/What-s-New-in-DNS-Client.md)  
   
-### <a name="bkmk_dnss"></a>Servidor DNS  
+### <a name="dns-server"></a><a name="bkmk_dnss"></a>Servidor DNS  
 A seguir estão as tecnologias de servidor DNS novas ou aprimoradas.  
   
 -   **Políticas de DNS**.  Você pode configurar as políticas de DNS para especificar como um servidor DNS responde a consultas DNS. As respostas DNS podem ser baseadas no endereço IP do cliente (local), na hora do dia e em vários outros parâmetros. As políticas de DNS habilitam o DNS com reconhecimento de local, o gerenciamento de tráfego, o balanceamento de carga, o DNS de divisão e outros cenários.  
@@ -118,17 +118,17 @@ A seguir estão as tecnologias de servidor DNS novas ou aprimoradas.
   
 Para obter mais informações, consulte [o que há de novo no servidor DNS no Windows server 2016](dns/What-s-New-in-DNS-Server.md)  
   
-## <a name="bkmk_GRE"></a>Túnel GRE  
+## <a name="gre-tunneling"></a><a name="bkmk_GRE"></a>Túnel GRE  
 O gateway de RAS agora dá suporte a túneis GRE (encapsulamento de roteamento genérico) de alta disponibilidade para conexões site a site e a redundância M + N de gateways. GRE é um protocolo de túnel leve que pode encapsular uma ampla variedade de protocolos de camada de rede em links de ponto a ponto virtuais por meio de uma ligação entre redes de protocolo de Internet.  
   
 Para obter mais informações, consulte [túnel GRE no Windows Server 2016](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md).  
   
-## <a name="HNV"></a>Virtualização de rede Hyper-V  
+## <a name="hyper-v-network-virtualization"></a><a name="HNV"></a>Virtualização de rede Hyper-V  
 Introduzido no Windows Server 2012, a HNV (virtualização de rede do Hyper-V) permite a virtualização de redes de clientes sobre uma infraestrutura de rede física compartilhada. Com as alterações mínimas necessárias na malha de rede física, o HNV dá aos provedores de serviços a agilidade para implantar e migrar cargas de trabalho de locatário em qualquer lugar nas três nuvens: a nuvem do provedor de serviços, a nuvem privada ou a nuvem pública Microsoft Azure.  
   
 Para obter mais informações, consulte [o que há de novo na virtualização de rede Hyper-V no Windows Server 2016](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
   
-## <a name="bkmk_ipam"></a>IPAM  
+## <a name="ipam"></a><a name="bkmk_ipam"></a>IPAM  
 O IPAM fornece recursos de monitoramento e administração altamente personalizáveis para o endereço IP e a infraestrutura de DNS em uma rede da organização. Usando o IPAM, você pode monitorar, auditar e gerenciar servidores que estão executando o protocolo DHCP e o DNS (sistema de nomes de domínio).  
   
 -   **Gerenciamento de endereços IP aprimorado**.  

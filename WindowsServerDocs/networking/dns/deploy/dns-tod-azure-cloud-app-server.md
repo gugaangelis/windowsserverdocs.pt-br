@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4307ce1512980277af819e0710e0447d8dbac8c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: be0604a850e54f4945e7416298fad30ce3dbf083
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406201"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317843"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Respostas de DNS com base na hora do dia com o Servidor de aplicativos da nuvem do Azure
 
@@ -57,7 +57,7 @@ A ilustração a seguir descreve esse cenário.
  
 Este artigo demonstra como configurar o servidor DNS para responder a consultas DNS com dois endereços IP de servidor de aplicativos diferentes: um servidor Web está em Seattle e o outro está em um datacenter do Azure.
 
-Após a configuração de uma nova política de DNS com base nas horas de pico de 6 a 9 PM em Seattle, o servidor DNS envia 70 por cento das respostas DNS para clientes que contêm o endereço IP do servidor Web de Seattle e trinta por cento das respostas DNS para Atuali NTS que contém o endereço IP do servidor Web do Azure, direcionando assim o tráfego do cliente para o novo servidor Web do Azure e impedindo que o servidor Web de Seattle fique sobrecarregado. 
+Após a configuração de uma nova política de DNS com base nas horas de pico de 6 a 9 PM em Seattle, o servidor DNS envia 70 por cento das respostas DNS para clientes que contêm o endereço IP do servidor Web de Seattle e trinta por cento das respostas DNS aos clientes que contém o endereço IP do servidor Web do Azure, direcionando assim o tráfego do cliente para o novo servidor Web do Azure e impedindo que o servidor Web de Seattle fique sobrecarregado. 
 
 Em todas as outras ocasiões do dia, o processamento de consulta normal ocorre e as respostas são enviadas do escopo de zona padrão que contém um registro para o servidor Web no datacenter local. 
 

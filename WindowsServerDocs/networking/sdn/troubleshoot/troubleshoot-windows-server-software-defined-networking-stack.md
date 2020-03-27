@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
-ms.author: pashort
+ms.author: lizross
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5827ad3b23d6f084e0138bf34ad47223eccb4e76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949921"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312843"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solucionar problemas de pilha de rede definida do Windows Server Software
 
@@ -24,7 +24,7 @@ Este guia examina os erros comuns de SDN (rede definida pelo software) e os cen�
 
 Para obter mais informações sobre a rede definida pelo software da Microsoft, consulte [rede definida pelo software](../../sdn/Software-Defined-Networking--SDN-.md).  
 
-## <a name="error-types"></a>Tipos de erros  
+## <a name="error-types"></a>Tipos de erro  
 A lista a seguir representa a classe de problemas que mais frequentemente vimos com a HNVv1 (virtualização de rede do Hyper-V) no Windows Server 2012 R2 de implantações de produção no mercado e coincide de várias maneiras com os mesmos tipos de problemas vistos no Windows Server 2016 HNVv2 com a nova pilha de SDN (rede definida pelo software).  
 
 A maioria dos erros pode ser classificada em um pequeno conjunto de classes:   
@@ -121,9 +121,9 @@ Message:          Host is not Connected.
 A tabela a seguir mostra a lista de códigos de erro, mensagens e ações de acompanhamento a serem executadas com base no estado de configuração observado.
 
 
-| **Código**| **Message**| **Ação**|  
+| **Auto-completar**| **Mensagem**| **Ação**|  
 |--------|-----------|----------|  
-| Unknown| Erro desconhecido| |  
+| Desconhecido| Erro desconhecido| |  
 | HostUnreachable                       | O computador host não está acessível | Verificar a conectividade de rede de gerenciamento entre o controlador de rede e o host |  
 | PAIpAddressExhausted                  | Os endereços IP PA foram exauridos | Aumentar o tamanho do pool de IPS da sub-rede lógica do provedor HNV |  
 | PAMacAddressExhausted                 | Os endereços MAC do PA esgotados | Aumentar o intervalo do pool de Mac |  
@@ -266,8 +266,8 @@ Thumbprint                                Subject
 
 Você também pode verificar os seguintes parâmetros de cada certificado para certificar-se de que o nome da entidade é esperado (FQDN ou IP REST de nome de host ou NC), o certificado ainda não expirou e que todas as autoridades de certificação na cadeia de certificados estão incluídas na raiz confiável autoridades.
 
-- Nome do assunto  
-- Data de validade  
+- Nome da Entidade  
+- Data de Expiração  
 - Confiável por autoridade raiz  
 
 *Correção* Se vários certificados tiverem o mesmo nome de entidade no host Hyper-V, o agente de host do controlador de rede escolherá aleatoriamente um para apresentar ao controlador de rede. Isso pode não corresponder à impressão digital do recurso de servidor conhecido pelo controlador de rede. Nesse caso, exclua um dos certificados com o mesmo nome de entidade no host Hyper-V e reinicie o serviço de agente de host do controlador de rede. Se uma conexão ainda não puder ser feita, exclua o outro certificado com o mesmo nome de assunto no host Hyper-V e exclua o recurso de servidor correspondente no VMM. Em seguida, recrie o recurso de servidor no VMM, que irá gerar um novo certificado X. 509 e instalá-lo no host Hyper-V.
@@ -527,7 +527,7 @@ Cannot send jumbo packets to the destination. Physical switch ports may not be c
 # TODO: Success Results aftering updating MTU on physical switch ports
 ```
 
-*Remediação*
+*Corre*
 * Ajuste o tamanho de MTU nas portas do comutador físico para que seja pelo menos 1674B (incluindo o cabeçalho e o trailer de Ethernet 14B)
 * Se a placa NIC não oferecer suporte à palavra-chave EncapOverhead, ajuste a palavra-chave JumboPacket para ter pelo menos 1674B
 
@@ -566,7 +566,7 @@ As seções a seguir fornecem orientações para solucionar problemas de cenári
 >[!NOTE]
 >O VSID refere-se à ID de sub-rede virtual. No caso de VXLAN, esse é o VNI (identificador de rede VXLAN). Você pode encontrar esse valor executando o cmdlet **Get-PACAMapping** .
 
-#### <a name="example"></a>Exemplo
+#### <a name="example"></a>{1&gt;Exemplo&lt;1}
 
     $password = ConvertTo-SecureString -String "password" -AsPlainText -Force
     $cred = New-Object pscredential -ArgumentList (".\administrator", $password) 
@@ -597,7 +597,7 @@ Informações de roteamento do PA:
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
 
- <snip> ...
+ <snip>...
 
 4. Vários Verifique se não há políticas de firewall distribuídas especificadas na sub-rede virtual ou nas interfaces de rede de VM que bloqueiam o tráfego.    
 
@@ -658,7 +658,7 @@ Se um local de arquivo não tiver sido especificado, o log local será usado em 
 - NCApplicationLogs
 - PerfCounters
 - SDNDiagnostics
-- Rastreamentos
+- Traces
 
 O controlador de rede usa o Service Fabric do Azure. Service Fabric logs podem ser necessários ao solucionar determinados problemas. Esses logs podem ser encontrados em cada nó do controlador de rede na malha do C:\ProgramData\Microsoft\Service.
 

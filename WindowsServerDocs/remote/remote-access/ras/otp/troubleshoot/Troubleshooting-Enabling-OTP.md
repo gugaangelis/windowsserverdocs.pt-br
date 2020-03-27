@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a1c18f264a6a8d263f3e9f50bc325ef97f4240af
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2f3581451b65e96a277b23bd6808d2dea6ba45c9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366921"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313442"
 ---
 # <a name="troubleshooting-enabling-otp"></a>Solução de problemas da habilitação de OTP
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico contém informações de solução de problemas relacionados à habilitação da autenticação de OTP do DirectAccess usando o cmdlet **Enable-DAOtpAuthentication** do PowerShell ou o console de gerenciamento de acesso remoto.
   
@@ -49,7 +49,7 @@ Há três causas possíveis para esse erro:
 2.  Se o modelo não existir, crie-o conforme descrito em 3,3 planejar o certificado de autoridade de registro ou se outro modelo de correspondência existir, reconfigure a OTP do DirectAccess com o novo nome de modelo.  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>Falha ao habilitar a OTP do DirectAccess quando o WebDAV está instalado  
-**Cenário**. Ao tentar aplicar a configuração de OTP do DirectAccess no console de gerenciamento de acesso remoto ou usando o cmdlet `Enable-DAOtpAuthentication` do PowerShell, a operação falhará.  
+**Cenário**. Ao tentar aplicar a configuração de OTP do DirectAccess no console de gerenciamento de acesso remoto ou usando o cmdlet `Enable-DAOtpAuthentication` PowerShell, a operação falhará.  
   
 **Erro recebido** (log de eventos do servidor). As configurações de OTP do DirectAccess não podem ser aplicadas porque a extensão do IIS do WebDAV está em execução no servidor. Remova o WebDAV e aplique as configurações novamente.  
   

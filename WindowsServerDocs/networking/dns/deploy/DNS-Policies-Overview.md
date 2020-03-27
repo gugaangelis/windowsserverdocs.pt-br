@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 613bb7f43b382389dc0db953a48668147cfaee88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a6fe98dea50dd194c2bb2303a663968f93818332
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356047"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317961"
 ---
 # <a name="dns-policies-overview"></a>Visão geral das políticas de DNS
 
@@ -51,7 +51,7 @@ Você pode usar políticas de resolução de consulta DNS para especificar como 
 
 |Campo|Descrição|Valores possíveis|  
 |---------|---------------|-------------------|  
-|**Name**|Nome da política|-Até 256 caracteres<br />-Pode conter qualquer caractere válido para um nome de arquivo|  
+|**Nome**|Nome da política|-Até 256 caracteres<br />-Pode conter qualquer caractere válido para um nome de arquivo|  
 |**Estado**|Estado da política|-Habilitar (padrão)<br />-Desabilitado|  
 |**Geral**|Nível de política|-Servidor<br />-Zona|  
 |**Ordem de processamento**|Quando uma consulta é classificada por nível e aplica-se a, o servidor encontra a primeira política para a qual a consulta corresponde aos critérios e a aplica à consulta|-Valor numérico<br />-Valor exclusivo por política que contém o mesmo nível e aplica-se ao valor|  
@@ -65,7 +65,7 @@ Você pode usar políticas de resolução de consulta DNS para especificar como 
 O campo de critérios de política DNS é composto por dois elementos:
 
 
-|              Nome               |                                         Descrição                                          |                                                                                                                               Valores de exemplo                                                                                                                               |
+|              {1&gt;Nome&lt;1}               |                                         Descrição                                          |                                                                                                                               Valores de exemplo                                                                                                                               |
 |---------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        **Sub-rede do cliente**        | Nome de uma sub-rede de cliente predefinida. Usado para verificar a sub-rede da qual a consulta foi enviada. |                             -   **EQ, Espanha, França** -resolve para verdadeiro se a sub-rede for identificada como a Espanha ou a França<br />-   **ne, Canadá, México** -resolve para verdadeiro se a sub-rede do cliente for qualquer sub-rede diferente do Canadá e do México                             |
 |     **Protocolo de transporte**      |        Protocolo de transporte usado na consulta. As entradas possíveis são **UDP** e **TCP**        |                                                                                                                    -   **EQ, TCP**<br />-   **EQ, UDP**                                                                                                                     |
@@ -77,13 +77,13 @@ O campo de critérios de política DNS é composto por dois elementos:
 
 Usando a tabela acima como ponto de partida, a tabela a seguir pode ser usada para definir um critério que é usado para fazer a correspondência de consultas de qualquer tipo de registro, mas SRV registros no domínio contoso.com provenientes de um cliente na sub-rede 10.0.0.0/24 via TCP entre 8 e 10 PM por meio da interface 10.0.0.3:  
 
-|Nome|Valor|  
+|{1&gt;Nome&lt;1}|{1&gt;Valor&lt;1}|  
 |--------|---------|  
 |Sub-rede do cliente|EQ, 10.0.0.0/24|  
 |Protocolo de transporte|EQ, TCP|  
 |Endereço IP da interface do servidor|EQ, 10.0.0.3|  
 |FQDN|EQ, *. contoso. com|  
-|Tipo de Consulta|NE, SRV|  
+|Tipo de consulta|NE, SRV|  
 |Hora do dia|EQ, 20:00-22:00|  
 
 Você pode criar várias políticas de resolução de consulta do mesmo nível, desde que elas tenham um valor diferente para a ordem de processamento. Quando várias políticas estão disponíveis, o servidor DNS processa as consultas de entrada da seguinte maneira:  
@@ -97,7 +97,7 @@ Você pode usar políticas de recursão para implementar uma configuração de D
 
 As políticas de recursão contêm os mesmos elementos que uma política de resolução de consulta DNS regular contém, juntamente com os elementos na tabela abaixo:  
 
-|Nome|Descrição|  
+|{1&gt;Nome&lt;1}|Descrição|  
 |--------|---------------|  
 |**Aplicar na recursão**|Especifica que essa política só deve ser usada para recursão.|  
 |**Escopo da recursão**|Nome do escopo de recursão.|  

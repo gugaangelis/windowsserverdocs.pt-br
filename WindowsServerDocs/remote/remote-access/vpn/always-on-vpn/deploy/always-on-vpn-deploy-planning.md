@@ -6,22 +6,22 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 11/05/2018
-ms.openlocfilehash: f92cfdbe13633dd4c59012f566c6888fdc7fc7a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0e061a38170242a3808fbad0c82a4154bf9c536
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388163"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313302"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>Etapa 1. Planejar a implantação de VPN Always On
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior** Saiba mais sobre o fluxo de trabalho para implantar Always On VPN](always-on-vpn-deploy-deployment.md)
-- [**Última** Etapa 2. Configurar a infraestrutura do servidor](vpn-deploy-server-infrastructure.md)
+- [**Anterior:** Saiba mais sobre o fluxo de trabalho para implantar Always On VPN](always-on-vpn-deploy-deployment.md)
+- [**Em seguida:** Etapa 2. Configurar a infraestrutura do servidor](vpn-deploy-server-infrastructure.md)
 
 Nesta etapa, você começa a planejar e preparar sua implantação de VPN Always On. Antes de instalar a função de servidor de acesso remoto no computador que você está planejando usar como um servidor VPN, execute as seguintes tarefas. Após o planejamento adequado, você pode implantar Always On VPN e, opcionalmente, configurar o acesso condicional para conectividade VPN usando o Azure AD.
 
@@ -71,6 +71,6 @@ Instale o servidor VPN dentro da rede de perímetro, que particiona a rede de pe
 
 Na maioria dos ambientes, para alcançar a nova rede de perímetro interna, ajuste as rotas estáticas no firewall de borda e no servidor VPN. Em ambientes mais complexos, no entanto, talvez seja necessário adicionar rotas estáticas a roteadores internos ou ajustar as regras internas de firewall para o servidor VPN e o bloco de endereços IP associados a clientes VPN.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
-[Etapa 2. Configurar a infraestrutura](vpn-deploy-server-infrastructure.md)do servidor: Nesta etapa, você instala e configura os componentes do lado do servidor necessários para dar suporte à VPN. Os componentes do lado do servidor incluem a configuração de PKI para distribuir os certificados usados pelos usuários, o servidor VPN e o servidor NPS.
+[Etapa 2. Configurar a infraestrutura do servidor](vpn-deploy-server-infrastructure.md): nesta etapa, você instala e configura os componentes do lado do servidor necessários para dar suporte à VPN. Os componentes do lado do servidor incluem a configuração de PKI para distribuir os certificados usados pelos usuários, o servidor VPN e o servidor NPS.

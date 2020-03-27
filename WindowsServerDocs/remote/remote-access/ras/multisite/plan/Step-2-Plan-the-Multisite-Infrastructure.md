@@ -10,24 +10,24 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64c10107-cb03-41f3-92c6-ac249966f574
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ff8a58aa679691132d074ef52b876cea05366ab5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6e23c3c3d22509af46b1a1741b545a787be00bfc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367096"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313886"
 ---
 # <a name="step-2-plan-the-multisite-infrastructure"></a>Etapa 2 planejar a infraestrutura multissite
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 A próxima etapa na implantação do acesso remoto em uma topologia multissite é concluir o planejamento da infraestrutura multissite; incluindo, Active Directory, grupos de segurança e objetos Política de Grupo.  
-## <a name="bkmk_2_1_AD"></a>Active Directory de plano de 2,1  
+## <a name="21-plan-active-directory"></a><a name="bkmk_2_1_AD"></a>Active Directory de plano de 2,1  
 Uma implantação multissite de acesso remoto pode ser configurada em várias topologias:  
   
--   **Site de Active Directory único, vários pontos de entrada**-nessa topologia, você tem um único site de Active Directory para toda a sua organização com links rápidos de intranet em todo o site, mas você tem vários servidores de acesso remoto implantados em todo o sua organização, cada uma agindo como um ponto de entrada. Um exemplo geográfico dessa topologia é ter um único site de Active Directory para o Estados Unidos com pontos de entrada na costa leste e na costa oeste.  
+-   **Site de Active Directory único, vários pontos de entrada**-nessa topologia, você tem um único site de Active Directory para toda a sua organização com links rápidos de intranet em todo o site, mas você tem vários servidores de acesso remoto implantados em toda a sua organização, cada um agindo como um ponto de entrada. Um exemplo geográfico dessa topologia é ter um único site de Active Directory para o Estados Unidos com pontos de entrada na costa leste e na costa oeste.  
   
     ![Infraestrutura multissite](../../../../media/Step-2-Plan-the-Multisite-Infrastructure/RAMultisiteTopo1.png)  
   
@@ -56,16 +56,16 @@ Observe as recomendações e restrições a seguir para Active Directory implant
   
     2.  Se o controlador de domínio que gerencia um GPO de servidor não estiver disponível, use o cmdlet Set-DAEntryPointDC do PowerShell para associar um novo controlador de domínio ao ponto de entrada. O novo controlador de domínio deve ter GPOs atualizados antes de executar o cmdlet.  
   
-## <a name="bkmk_2_2_SG"></a>grupos de segurança do plano 2,2  
-Durante a implantação de um único servidor com configurações avançadas, todos os computadores cliente que acessam a rede interna por meio do DirectAccess foram coletados em um grupo de segurança. Em uma implantação multissite, esse grupo de segurança é usado somente para computadores cliente com Windows 8. Para uma implantação multissite, os computadores cliente do Windows 7 serão coletados em grupos de segurança separados para cada ponto de entrada na implantação multissite. Por exemplo, se você já tiver agrupado todos os computadores cliente no grupo DA_Clients, agora deverá remover todos os computadores com Windows 7 desse grupo e colocá-los em um grupo de segurança diferente. Por exemplo, na topologia vários sites Active Directory, vários pontos de entrada, você cria um grupo de segurança para o ponto de entrada de Estados Unidos (DA_Clients_US) e outro para o ponto de entrada Europeu (DA_Clients_Europe). Coloque todos os computadores cliente do Windows 7 localizados na Estados Unidos no grupo DA_Clients_US e todos localizados na Europa no grupo DA_Clients_Europe. Se você não tiver computadores cliente com o Windows 7, não será necessário planejar grupos de segurança para computadores com Windows 7.  
+## <a name="22-plan-security-groups"></a><a name="bkmk_2_2_SG"></a>grupos de segurança do plano 2,2  
+Durante a implantação de um único servidor com configurações avançadas, todos os computadores cliente que acessam a rede interna por meio do DirectAccess foram coletados em um grupo de segurança. Em uma implantação multissite, esse grupo de segurança é usado somente para computadores cliente com Windows 8. Para uma implantação multissite, os computadores cliente do Windows 7 serão coletados em grupos de segurança separados para cada ponto de entrada na implantação multissite. Por exemplo, se você já tiver agrupado todos os computadores cliente no grupo DA_Clients, agora deverá remover todos os computadores com Windows 7 desse grupo e colocá-los em um grupo de segurança diferente. Por exemplo, na topologia vários sites Active Directory, vários pontos de entrada, você cria um grupo de segurança para o ponto de entrada Estados Unidos (DA_Clients_US) e outro para o ponto de entrada da Europa (DA_Clients_Europe). Coloque todos os computadores cliente do Windows 7 localizados na Estados Unidos no grupo de DA_Clients_US e quaisquer localizados na Europa no grupo de DA_Clients_Europe. Se você não tiver computadores cliente com o Windows 7, não será necessário planejar grupos de segurança para computadores com Windows 7.  
   
 Os grupos de segurança necessários são os seguintes:  
   
 -   Um grupo de segurança para todos os computadores cliente do Windows 8. É recomendável criar um grupo de segurança exclusivo para esses clientes para cada domínio.  
   
--   Um grupo de segurança exclusivo que contém computadores cliente do Windows 7 para cada ponto de entrada. É recomendável criar um grupo exclusivo para cada domínio. Por exemplo: Domain1\DA_Clients_Europe; Domain2\DA_Clients_Europe; Domain1\DA_Clients_US; Domain2\DA_Clients_US.  
+-   Um grupo de segurança exclusivo que contém computadores cliente do Windows 7 para cada ponto de entrada. É recomendável criar um grupo exclusivo para cada domínio. Por exemplo: domain1 \ DA_Clients_Europe; Domain2 \ DA_Clients_Europe; Domain1 \ DA_Clients_US; Domain2 \ DA_Clients_US.  
   
-## <a name="bkmk_2_3_GPO"></a>2,3 planejar Política de Grupo objetos  
+## <a name="23-plan-group-policy-objects"></a><a name="bkmk_2_3_GPO"></a>2,3 planejar Política de Grupo objetos  
 As configurações do DirectAccess definidas durante a implantação de acesso remoto são coletadas em GPOs. Sua implantação de servidor único já usa GPOs para clientes DirectAccess, o servidor de acesso remoto e, opcionalmente, para servidores de aplicativos. Uma implantação multissite requer os seguintes GPOs:  
   
 -   Um GPO de servidor para cada ponto de entrada.  
@@ -84,7 +84,7 @@ Os GPOs podem ser configurados da seguinte maneira:
 > Depois que o DirectAccess estiver configurado para usar GPOs específicos, ele não poderá ser configurado para usar GPOs diferentes.  
   
 ### <a name="231-automatically-created-gpos"></a>2.3.1 GPOs criados automaticamente  
-Observe o seguinte ao usar GPOs criados automaticamente:  
+Observe o seguinte quando usar GPOs criados automaticamente:  
   
 -   GPOs criados automaticamente são aplicados de acordo com o local e o parâmetro de destino do link, da seguinte maneira:  
   
@@ -115,7 +115,7 @@ Observe o seguinte quando usar GPOs criados manualmente:
   
     -   **GPO de servidor**-um GPO de servidor para cada ponto de entrada (no domínio no qual o ponto de entrada está localizado). Esse GPO será aplicado em cada servidor de acesso remoto no ponto de entrada.  
   
-    -   **GPO do cliente (Windows 7)** – um GPO para cada ponto de entrada e cada domínio que contém computadores cliente do Windows 7 que se conectarão a pontos de entrada na implantação multissite. Por exemplo, Domain1\DA_W7_Clients_GPO_Europe; Domain2\DA_W7_Clients_GPO_Europe; Domain1\DA_W7_Clients_GPO_US; Domain2\DA_W7_Clients_GPO_US. Se nenhum computador cliente do Windows 7 se conectar a pontos de entrada, os GPOs não serão necessários.  
+    -   **GPO do cliente (Windows 7)** – um GPO para cada ponto de entrada e cada domínio que contém computadores cliente do Windows 7 que se conectarão a pontos de entrada na implantação multissite. Por exemplo, domain1 \ DA_W7_Clients_GPO_Europe; Domain2 \ DA_W7_Clients_GPO_Europe; Domain1 \ DA_W7_Clients_GPO_US; Domain2 \ DA_W7_Clients_GPO_US. Se nenhum computador cliente do Windows 7 se conectar a pontos de entrada, os GPOs não serão necessários.  
   
 -   Não há nenhum requisito para criar GPOs adicionais para computadores cliente do Windows 8. Um GPO para cada domínio que contém computadores cliente já foi criado quando o único servidor de acesso remoto foi implantado. Em uma implantação multissite, esses GPOs de cliente funcionarão como os GPOs para clientes do Windows 8.  
   
@@ -146,11 +146,11 @@ Se você quiser modificar manualmente as configurações do GPO, observe o segui
   
     2.  Depois de modificar as configurações, você deve aguardar até que as alterações sejam replicadas no controlador de domínio associado aos GPOs. Não faça alterações adicionais usando o console de gerenciamento de acesso remoto ou os cmdlets do PowerShell de acesso remoto até que a replicação seja concluída. Se um GPO for editado em dois controladores de domínio diferentes antes da conclusão da replicação, poderão ocorrer conflitos de mesclagem, resultando em uma configuração corrompida  
   
--   Como alternativa, você pode alterar a configuração padrão usando a caixa de diálogo **alterar controlador de domínio** no console de gerenciamento do política de grupo ou usando o cmdlet do PowerShell **Open-NetGPO** , para que as alterações feitas usando o console ou os cmdlets de rede Use o controlador de domínio que você especificar.  
+-   Como alternativa, você pode alterar a configuração padrão usando a caixa de diálogo **alterar controlador de domínio** no console de gerenciamento do política de grupo ou usando o cmdlet do PowerShell **Open-NetGPO** , para que as alterações feitas usando o console ou os cmdlets de rede usem o controlador de domínio que você especificar.  
   
     1.  Para fazer isso no console de gerenciamento de Política de Grupo, clique com o botão direito do mouse no contêiner de domínio ou sites e clique em **alterar controlador de domínio**.  
   
-    2.  Para fazer isso no PowerShell, especifique o parâmetro DomainController para o cmdlet Open-NetGPO. Por exemplo, para habilitar os perfis privado e público no firewall do Windows em um GPO chamado domain1\DA_Server_GPO _Europe usando um controlador de domínio chamado europe-dc.corp.contoso.com, faça o seguinte:  
+    2.  Para fazer isso no PowerShell, especifique o parâmetro DomainController para o cmdlet Open-NetGPO. Por exemplo, para habilitar os perfis privado e público no firewall do Windows em um GPO denominado domain1 \ DA_Server_GPO _Europe usando um controlador de domínio chamado europe-dc.corp.contoso.com, faça o seguinte:  
   
         ```  
         $gpoSession = Open-NetGPO -PolicyStore "domain1\DA_Server_GPO _Europe" -DomainController "europe-dc.corp.contoso.com"  
@@ -165,7 +165,7 @@ Para manter a consistência da configuração em uma implantação multissite, �
   
 -   **Otimização da distribuição de configuração**– após a alteração da infraestrutura de rede, pode ser necessário gerenciar o GPO do servidor de um ponto de entrada em um controlador de domínio no mesmo site Active Directory que o ponto de entrada.   
   
-## <a name="bkmk_2_4_DNS"></a>DNS do plano 2,4  
+## <a name="24-plan-dns"></a><a name="bkmk_2_4_DNS"></a>DNS do plano 2,4  
 Observe o seguinte ao planejar o DNS para uma implantação multissite:  
   
 1.  Os computadores cliente usam o endereço connectto para se conectar ao servidor de acesso remoto. Cada ponto de entrada em sua implantação requer um endereço connectto diferente. Cada endereço de conexão de ponto de entrada deve estar disponível no DNS público e o endereço que você escolher deve corresponder ao nome da entidade do certificado IP-HTTPS implantado para a conexão IP-HTTPS.   

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cae789974c3f2b4f83c9120558d77dbe27f4190a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356405"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319141"
 ---
 # <a name="core-network-components"></a>Principais componentes de rede
 
@@ -38,7 +38,7 @@ Este guia contém as seções a seguir.
 
 - [Apêndices A a E](#BKMK_appendix)
 
-## <a name="BKMK_about"></a>Sobre este guia
+## <a name="about-this-guide"></a><a name="BKMK_about"></a>Sobre este guia
 Este guia se destina aos administradores de rede e de sistema que estão instalando uma nova rede ou que desejam criar uma rede baseada em domínio para substituir uma rede constituída de grupos de trabalho. O cenário de implantação fornecido neste guia é especialmente útil quando você prevê a necessidade de adicionar mais recursos e serviços a sua rede no futuro.
 
 Recomendamos que você leia os guias de design e de implantação para cada uma das tecnologias usadas neste cenário de implantação para ajudar a determinar se este guia fornece os serviços e configurações que você precisa.
@@ -55,7 +55,7 @@ Uma rede principal do Windows Server fornece muitos benefícios, incluindo algun
 
 -   Uma floresta, que é um ou mais domínios do Active Directory que compartilham as mesmas definições de classe e de atributo (esquema), informações de local e replicação (configuração) e capacidades de pesquisa da floresta (catálogo global).
 
--   Um domínio raiz da floresta, que é o primeiro domínio criado em uma nova floresta. Os grupos Administradores de Empresa e Administradores de Esquema (que são grupos administrativos em toda a floresta) estão localizados no domínio raiz da floresta. Além disso, um domínio raiz da floresta, tal como acontece com outros domínios, é uma coleção de objetos de computador, de usuário e de grupo que são definidos pelo administrador no AD DS (Serviços de Domínio Active Directory). Esses objetos compartilham um banco de dados de diretório comum e políticas de segurança. Eles também poderão compartilhar relações de segurança com outros domínios se você adicionar domínios à medida que sua organização crescer. O serviço de diretório também armazena os dados de diretório e permite que computadores autorizados, aplicativos e usuários acessem os dados.
+-   Um domínio raiz de floresta, que é o primeiro domínio criado em uma nova floresta. Os grupos Administradores de Empresa e Administradores de Esquema (que são grupos administrativos em toda a floresta) estão localizados no domínio raiz da floresta. Além disso, um domínio raiz da floresta, tal como acontece com outros domínios, é uma coleção de objetos de computador, de usuário e de grupo que são definidos pelo administrador no AD DS (Serviços de Domínio Active Directory). Esses objetos compartilham um banco de dados de diretório comum e políticas de segurança. Eles também poderão compartilhar relações de segurança com outros domínios se você adicionar domínios à medida que sua organização crescer. O serviço de diretório também armazena os dados de diretório e permite que computadores autorizados, aplicativos e usuários acessem os dados.
 
 -   Um banco de dados de contas de usuário e de computador. O serviço de diretório fornece um banco de dados de contas de usuário centralizado que permite que você crie contas de usuário e de computador para pessoas e computadores que estão autorizados a se conectar à sua rede e acessar os recursos da rede, como aplicativos, bancos de dados, arquivos e pastas compartilhados, e impressoras.
 
@@ -91,14 +91,14 @@ Este guia não fornece instruções para implantar o seguinte:
 ## <a name="technology-overviews"></a>Visões gerais de tecnologia
 As seções a seguir fornecem visões gerais breves das tecnologias exigidas que são implantadas para criar uma rede principal.
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services
+### <a name="active-directory-domain-services"></a>Serviços de Domínio do Active Directory
 Um diretório é uma estrutura hierárquica que armazena informações sobre objetos na rede, como usuários e computadores. Um serviço de diretório, como o AD DS, fornece os métodos para armazenar dados de diretório e disponibilizar esses dados para usuários e administradores de rede. Por exemplo, AD DS armazena informações sobre contas de usuário, incluindo nomes, endereços de email, senhas e números de telefone, e permite que outros usuários autorizados na mesma rede acessem essas informações.
 
 ### <a name="dns"></a>DNS
 O DNS é um protocolo de resolução de nomes para redes TCP/IP, como a Internet ou uma rede da organização. Um servidor DNS hospeda as informações que permite que os computadores cliente e serviços resolvam nomes DNS alfanuméricos fáceis de reconhecer para os endereços IP que os computadores usam para comunicação entre si.
 
 ### <a name="dhcp"></a>DHCP
-O DHCP é um padrão de IP para simplificar o gerenciamento da configuração de IP do host. O padrão DHCP proporciona o uso de servidores DHCP como uma forma de gerenciar a alocação dinâmica de endereços IP e outros detalhes de configuração relacionados para clientes habilitados para DHCP em sua rede.
+O DHCP é um padrão de IP para simplificar o gerenciamento da configuração de IP do host. O padrão DHCP oferece o uso de servidores DHCP como uma maneira de gerenciar dinamicamente a alocação de endereços IP e outros detalhes relacionados a configuração para clientes habilitados para DHCP em sua rede.
 
 O DHCP permite que você use um servidor DHCP para atribuir dinamicamente um endereço IP a um computador ou outro dispositivo, como uma impressora em sua rede local. Todos os computadores em uma rede TCP/IP devem ter um endereço IP exclusivo, porque o endereço IP e a máscara de sub-rede relacionada identificam o computador host e a sub-rede à qual o computador está conectado. Usando o DHCP, você pode garantir que todos os computadores configurados como clientes DHCP recebam um endereço IP que seja apropriado para seu local de rede e sua sub-rede e, usando as opções de DHCP (como o gateway padrão e os servidores DNS), você pode fornecer automaticamente aos clientes DHCP as informações que eles precisam para funcionar corretamente na rede.
 
@@ -153,7 +153,7 @@ O TCP/IP oferece utilitários TCP/IP básicos que permitem que computadores base
 
 -   Tablets e telefones celulares com Ethernet com fio ou tecnologia sem fio 802,11 habilitada
 
-## <a name="BKMK_overview"></a>Visão geral da rede principal
+## <a name="core-network-overview"></a><a name="BKMK_overview"></a>Visão geral da rede principal
 A ilustração a seguir mostra a topologia de Rede Principal do Windows Server.
 
 ![Topologia de rede do Windows Server Core](../media/Core-Network-Guide/cng16_overview.jpg)
@@ -165,12 +165,12 @@ A ilustração a seguir mostra a topologia de Rede Principal do Windows Server.
 Estes são os componentes de uma rede principal.
 
 ##### <a name="router"></a>Roteador
-Este guia de implantação fornece instruções para a implantação de uma rede principal com duas sub-redes separadas por um roteador que tem o encaminhamento DHCP habilitado. No entanto, você pode implantar um comutador de Camada 2, comutador de Camada 3 ou um hub, dependendo das suas necessidades e recursos. Se você implantar uma opção, a opção deverá ser capaz de encaminhamento de DHCP ou você deverá posicionar um servidor DHCP em cada sub-rede. Se você implantar um hub, estará implantando uma única sub-rede e não precisará do encaminhamento DHCP ou de um segundo escopo no servidor DHCP.
+Este guia de implantação fornece instruções para a implantação de uma rede principal com duas sub-redes separadas por um roteador que tem o encaminhamento DHCP habilitado. No entanto, você pode implantar um comutador de Camada 2, comutador de Camada 3 ou um hub, dependendo das suas necessidades e recursos. Se você implantar um comutador, ele deverá ser capaz de encaminhar DHCP ou você deverá colocar um servidor DHCP em cada sub-rede. Se você implantar um hub, estará implantando uma única sub-rede e não precisará do encaminhamento DHCP ou de um segundo escopo no servidor DHCP.
 
 ##### <a name="static-tcpip-configurations"></a>Configurações TCP/IP estáticas
 Os servidores nesta implantação são configurados com endereços IPv4 estáticos. Os computadores cliente são configurados por padrão para receber concessões de endereço IP do servidor DHCP.
 
-##### <a name="active-directory-domain-services-global-catalog-and-dns-server-dc1"></a>Active Directory Domain Services catálogo global e o servidor DNS DC1
+##### <a name="active-directory-domain-services-global-catalog-and-dns-server-dc1"></a>Catálogo global dos Serviços de Domínio Active Directory e servidor DNS DC1
 Os Active Directory Domain Services (AD DS) e o DNS (sistema de nomes de domínio) estão instalados neste servidor, chamado DC1, que fornece serviços de resolução de diretório e nome para todos os computadores e dispositivos na rede.
 
 ##### <a name="dhcp-server-dhcp1"></a>Servidor DHCP DHCP1
@@ -179,7 +179,7 @@ O servidor DHCP, denominado DHCP1, está configurado com um escopo que fornece c
 ##### <a name="client-computers"></a>Computadores cliente
 Os computadores que executam sistemas operacionais cliente do Windows são configurados por padrão como clientes DHCP, que obtêm endereços IP e opções DHCP automaticamente do servidor DHCP.
 
-## <a name="BKMK_planning"></a>Planejamento de rede principal
+## <a name="core-network-planning"></a><a name="BKMK_planning"></a>Planejamento de rede principal
 Antes de implantar uma rede principal, você deve planejar os itens a seguir.
 
 -   [Planejando sub-redes](#bkmk_NetFndtn_Pln_Subnt)
@@ -197,7 +197,7 @@ As seções a seguir fornecem mais detalhes sobre cada um desses itens.
 > [!NOTE]
 > Para obter assistência com o planejamento de sua implantação, consulte o [Apêndice planilha de preparação de planejamento de rede E-Core](#BKMK_E).
 
-### <a name="bkmk_NetFndtn_Pln_Subnt"></a>Planejando sub-redes
+### <a name="planning-subnets"></a><a name="bkmk_NetFndtn_Pln_Subnt"></a>Planejando sub-redes
 No sistema de redes dos protocolos TCP/IP, os roteadores são usados para interconectar o hardware e o software usados em segmentos de rede física diferentes chamados sub-redes. Os roteadores também são usados para encaminhar pacotes IP entre cada uma das sub-redes. Determine o layout físico da rede, incluindo o número de roteadores e sub-redes que você precisa, antes de continuar com as instruções deste guia.
 
 Além disso, para configurar os servidores na rede com endereços IP estáticos, determine o intervalo de endereços IP que deseja usar para a sub-rede onde se encontram os servidores da rede principal. Neste guia, os intervalos de endereços IP privados 10.0.0.1-10.0.0.254 e 10.0.1.1-10.0.1.254 são usados como exemplos, mas você pode usar qualquer intervalo de endereços IP privado que preferir.
@@ -220,7 +220,7 @@ Quando você usa os intervalos de endereços IP privados como especificado na RF
 
 Para obter mais informações, consulte [Planejando a implantação do DHCP1](#bkmk_NetFndtn_Pln_DHCP-01).
 
-### <a name="bkmk_NetFndtn_Pln_AllSrvrs"></a>Planejando a configuração básica de todos os servidores
+### <a name="planning-basic-configuration-of-all-servers"></a><a name="bkmk_NetFndtn_Pln_AllSrvrs"></a>Planejando a configuração básica de todos os servidores
 Para cada servidor da rede principal, renomeie o computador e atribua e configure um endereço IPv4 estático e outras propriedades de TCP/IP para o computador.
 
 #### <a name="planning-naming-conventions-for-computers-and-devices"></a>Planejando convenções de nomenclatura para computadores e dispositivos
@@ -251,7 +251,7 @@ A tabela a seguir fornece valores de exemplo para a configuração de endereço 
 > [!NOTE]
 > Se você planeja implantar mais de um servidor DNS, também pode planejar o endereço IP do Servidor DNS Alternativo.
 
-### <a name="bkmk_NetFndtn_Pln_AD-DNS-01"></a>Planejando a implantação do DC1
+### <a name="planning-the-deployment-of-dc1"></a><a name="bkmk_NetFndtn_Pln_AD-DNS-01"></a>Planejando a implantação do DC1
 A seguir estão as principais etapas de planejamento antes de instalar o Active Directory Domain Services (AD DS) e o DNS no DC1.
 
 #### <a name="planning-the-name-of-the-forest-root-domain"></a>Planejando o nome do domínio raiz da floresta
@@ -308,7 +308,7 @@ Enquanto você estiver executando o Assistente de Nova Zona, recomendamos as seg
 |Página do assistente de Nome da Segunda Zona de Pesquisa Inversa|ID da Rede = 10.0.0.|
 |Atualizações Dinâmicas|**Permitir somente atualizações dinâmicas seguras**|
 
-### <a name="bkmk_NetFndtn_Pln_DomAccess"></a>Planejando o acesso ao domínio
+### <a name="planning-domain-access"></a><a name="bkmk_NetFndtn_Pln_DomAccess"></a>Planejando o acesso ao domínio
 Para fazer logon no domínio, o computador deve ser um computador membro do domínio e a conta de usuário deve ser criada no AD DS antes da tentativa de logon.
 
 > [!NOTE]
@@ -324,7 +324,7 @@ Antes de você fazer logon no domínio:
 
 -   Ingresse o computador no domínio. Qualquer computador que fornece ou acessa recursos de rede deve ser ingressado no domínio. Para obter mais informações, consulte [Ingressando computadores servidores no domínio e fazendo logon](#BKMK_joinlogserver) e [Ingressando computadores cliente no domínio e fazendo logon](#BKMK_joinlogclients).
 
-### <a name="bkmk_NetFndtn_Pln_DHCP-01"></a>Planejando a implantação do DHCP1
+### <a name="planning-the-deployment-of-dhcp1"></a><a name="bkmk_NetFndtn_Pln_DHCP-01"></a>Planejando a implantação do DHCP1
 Estas são as principais etapas de planejamento antes de instalar a função de servidor DHCP no DHCP1.
 
 #### <a name="planning-dhcp-servers-and-dhcp-forwarding"></a>Planejando os servidores DHCP e o encaminhamento DHCP
@@ -339,15 +339,15 @@ Na maioria dos casos, a configuração de roteadores para encaminhar mensagens d
 #### <a name="planning-ip-address-ranges"></a>Planejando intervalos de endereços IP
 Cada sub-rede deve ter seu próprio intervalo de endereços IP exclusivo. Esses intervalos são representados em um servidor DHCP com escopos.
 
-Um escopo é um agrupamento administrativo de endereços IP para computadores em uma sub-rede que usa o serviço DHCP. O administrador primeiro cria um escopo para cada sub-rede física e, em seguida, usa o escopo para definir os parâmetros usados pelos clientes.
+Um escopo é um agrupamento administrativo de endereços IP para computadores em uma sub-rede que use o serviço DHCP. O administrador primeiro cria um escopo para cada sub-rede física e, em seguida, usa o escopo para definir os parâmetros usados pelos clientes.
 
 Um escopo tem as seguintes propriedades:
 
--   Um intervalo de endereços IP do qual incluir ou excluir endereços usados para ofertas de concessão de serviço DHCP.
+-   Um intervalo de endereços IP a partir do qual são incluídos ou excluídos endereços usados nas ofertas de concessão de serviço DHCP.
 
 -   Uma máscara de sub-rede, que determina o prefixo de sub-rede para um determinado endereço IP.
 
--   Um nome de escopo atribuído quando é criado.
+-   Um nome de escopo atribuído na criação.
 
 -   Valores de duração da concessão, que são atribuídos aos clientes DHCP que recebem endereços IP alocados dinamicamente.
 
@@ -368,7 +368,7 @@ Por exemplo, a máscara de sub-rede normalmente usada com o endereço IP 131.107
 
 Esse número de máscara de sub-rede é 16 1 bits seguido de 16 bits, indicando que a ID de rede e as seções de ID de host desse endereço IP têm 16 bits de comprimento. Normalmente, essa máscara de sub-rede é exibida em notação decimal com ponto como 255.255.0.0.
 
-A tabela a seguir exibe máscaras de sub-rede para as classes de endereço da Internet.
+A tabela a seguir exibe as máscaras de sub-rede para as classes de endereço de Internet.
 
 |Classe de endereço|Bits para máscara de sub-rede|Máscara de sub-rede|
 |-----------------|------------------------|---------------|
@@ -398,7 +398,7 @@ Recomendamos que você configure o intervalo de exclusão com endereços extras 
 |Endereço IP Inicial do intervalo de exclusão|10.0.0.1|
 |Endereço IP Final do intervalo de exclusão|endereços 10.0.0.25|
 
-#### <a name="planning-tcpip-static-configuration"></a>Planejando a configuração estática de TCP/IP
+#### <a name="planning-tcpip-static-configuration"></a>Planejando a configuração estática do TCP/IP
 Certos dispositivos, como roteadores, servidores DHCP e servidores DNS, devem ser configurados com um endereço IP estático. Além disso, você pode ter dispositivos adicionais, como impressoras, onde deve garantir sempre o mesmo endereço IP. Liste os dispositivos que você deseja configurar estaticamente para cada sub-rede e planeje o intervalo de exclusão que deseja usar no servidor DHCP para garantir que o servidor DHCP não conceda o endereço IP de um dispositivo configurado estaticamente. Um intervalo de exclusão é uma sequência limitada de endereços IP dentro de um escopo, excluído das ofertas de serviço DHCP. Os intervalos de exclusão garantem que os endereços nesses intervalos não sejam oferecidos pelo servidor a clientes DHCP na sua rede.
 
 Por exemplo, se o intervalo de endereços IP de uma sub-rede for 192.168.0.1 a 192.168.0.254 e você tiver dez dispositivos que deseja configurar com um endereço IP estático, poderá criar um intervalo de exclusão para o escopo 192.168.0.*x* que inclui dez ou mais endereços IP: 192.168.0.1 a 192.168.0.15.
@@ -415,7 +415,7 @@ Itens de configuração de exemplo adicionais para AD DS e DNS são fornecidos n
 |Adicionar valores da caixa de diálogo Escopo<br /><br />1. nome do escopo<br />2. endereço IP inicial<br />3. endereço IP final<br />4. máscara de sub-rede<br />5. gateway padrão (opcional)<br />6. duração da concessão|1. sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
 |Modo de Operação do Servidor DHCP IPv6|Não habilitado|
 
-## <a name="BKMK_deployment"></a>Implantação de rede de núcleo
+## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>Implantação de rede de núcleo
 Para implantar uma rede principal, estas são as etapas básicas:
 
 1.  [Configurando todos os servidores](#BKMK_configuringAll)
@@ -434,7 +434,7 @@ Para implantar uma rede principal, estas são as etapas básicas:
 > -   Comandos equivalentes do Windows PowerShell são fornecidos para a maioria dos procedimentos neste guia. Antes de executar esses cmdlets no Windows PowerShell, substitua os valores de exemplo pelos valores que são apropriados para sua implantação de rede. Além disso, insira cada cmdlet em uma única linha no Windows PowerShell. Neste guia, cmdlets individuais podem aparecer em várias linhas devido à formatação de restrições e à exibição do documento por outro aplicativo ou navegador.
 > -   Os procedimentos deste guia não incluem instruções para os casos em que a caixa de diálogo **Controle de Conta de Usuário** é aberta para solicitar sua permissão para continuar. Caso essa caixa de diálogo seja aberta durante a execução dos procedimentos deste guia e em resposta às suas ações, clique em **Continuar**.
 
-### <a name="BKMK_configuringAll"></a>Configurando todos os servidores
+### <a name="configuring-all-servers"></a><a name="BKMK_configuringAll"></a>Configurando todos os servidores
 Antes de instalar outras tecnologias, como os Serviços de Domínio Active Directory ou o DHCP, é importante configurar os itens a seguir.
 
 -   [Renomear o computador](#BKMK_rename)
@@ -445,7 +445,7 @@ Você pode usar as seções a seguir para executar essas ações em cada servido
 
 A associação a **Administradores** ou equivalente é o requisito mínimo para a execução destes procedimentos.
 
-#### <a name="BKMK_rename"></a>Renomear o computador
+#### <a name="rename-the-computer"></a><a name="BKMK_rename"></a>Renomear o computador
 Você pode usar o procedimento nesta seção para alterar o nome de um computador. Renomear o computador é útil quando o sistema operacional cria automaticamente um nome de computador que você deseja usar.
 
 > [!NOTE]
@@ -468,7 +468,7 @@ Você pode usar o procedimento nesta seção para alterar o nome de um computado
 > [!NOTE]
 > Para obter informações sobre como renomear computadores que executam outros sistemas operacionais da Microsoft, consulte [o apêndice a-](#BKMK_A)renomeando computadores.
 
-#### <a name="BKMK_ip"></a>Configurar um endereço IP estático
+#### <a name="configure-a-static-ip-address"></a><a name="BKMK_ip"></a>Configurar um endereço IP estático
 Você pode usar os procedimentos neste tópico para configurar as propriedades do protocolo IP versão 4 (IPv4) de uma conexão de rede com um endereço estático para computadores que executam o Windows Server 2016.
 
 > [!NOTE]
@@ -506,7 +506,7 @@ Você pode usar os procedimentos neste tópico para configurar as propriedades d
 > [!NOTE]
 > Para obter informações sobre como configurar um endereço IP estático em computadores que executam outros sistemas operacionais da Microsoft, consulte o [Apêndice B-Configurando endereços IP estáticos](#BKMK_B).
 
-#### <a name="BKMK_deployADDNS01"></a>Implantando DC1
+#### <a name="deploying-dc1"></a><a name="BKMK_deployADDNS01"></a>Implantando DC1
 Para implantar o DC1, que é o computador executando o Active Directory Domain Services (AD DS) e o DNS, você deve concluir estas etapas na seguinte ordem:
 
 -   Siga as etapas na seção [Configurando todos os servidores](#BKMK_configuringAll).
@@ -535,7 +535,7 @@ Todos os membros do grupo Usuários do Domínio podem fazer logon em qualquer co
 
 Você pode configurar contas de usuário para designar os dias e horários em que o usuário tem permissão para fazer logon no computador. Você também pode designar que computadores cada usuário tem permissão para usar. Para definir essas configurações, abra Usuários e Computadores do Active Directory, localize a conta de usuário que deseja configurar e clique duas vezes na conta. Em **Propriedades** da conta de usuário, clique na guia **Conta** e clique em **Horário de Logon** ou em **Fazer Logon em**.
 
-#### <a name="BKMK_installAD-DNS"></a>Instalar AD DS e o DNS para uma nova floresta
+#### <a name="install-ad-ds-and-dns-for-a-new-forest"></a><a name="BKMK_installAD-DNS"></a>Instalar AD DS e o DNS para uma nova floresta
 
 Você pode usar um dos procedimentos a seguir para instalar Active Directory Domain Services (AD DS) e DNS e para criar um novo domínio em uma nova floresta. 
 
@@ -647,7 +647,7 @@ Os resultados desse comando são exibidos no Windows PowerShell e devem ser seme
 
 ![AD DS e DNS em Gerenciador do Servidor](../media/Core-Network-Guide/server-roles-installed-sm.jpg)
 
-##### <a name="BKMK_createUA"></a>Criar uma conta de usuário em Active Directory usuários e computadores
+##### <a name="create-a-user-account-in-active-directory-users-and-computers"></a><a name="BKMK_createUA"></a>Criar uma conta de usuário em Active Directory usuários e computadores
 Você pode usar este procedimento para criar uma nova conta de usuário de domínio no MMC (Console de Gerenciamento Microsoft) Usuários e Computadores do Active Directory.
 
 A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo para a execução deste procedimento.
@@ -689,7 +689,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 10. Clique em **Avançar**, analise as configurações da nova conta de usuário e clique em **Concluir**.
 
-##### <a name="BKMK_assigngroup"></a>Atribuir Associação de grupo
+##### <a name="assign-group-membership"></a><a name="BKMK_assigngroup"></a>Atribuir Associação de grupo
 Você pode usar este procedimento para adicionar um usuário, computador ou grupo a um grupo no MMC (Console de Gerenciamento Microsoft) Usuários e Computadores do Active Directory.
 
 A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo para a execução deste procedimento.
@@ -712,7 +712,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 6.  Para atribuir a associação de grupo a outros usuários, grupos ou computadores, repita as etapas 4 e 5 deste procedimento.
 
-##### <a name="BKMK_reverse"></a>Configurar uma zona de pesquisa inversa de DNS
+##### <a name="configure-a-dns-reverse-lookup-zone"></a><a name="BKMK_reverse"></a>Configurar uma zona de pesquisa inversa de DNS
 Você pode usar este procedimento para configurar uma zona de pesquisa inversa no DNS (Sistema de Nome de Domínio).
 
 O mínimo necessário para executar este procedimento é ser membro do grupo **Adminis. do Domínio**.
@@ -751,7 +751,7 @@ O mínimo necessário para executar este procedimento é ser membro do grupo **A
 
 11. Em **Concluindo o Assistente de Nova Zona**, verifique suas escolhas e clique em **Concluir**.
 
-#### <a name="BKMK_joinlogserver"></a>Unindo computadores de servidor ao domínio e fazendo logon
+#### <a name="joining-server-computers-to-the-domain-and-logging-on"></a><a name="BKMK_joinlogserver"></a>Unindo computadores de servidor ao domínio e fazendo logon
 Depois de instalar o Active Directory Domain Services (AD DS) e criar uma ou mais contas de usuário que tenham permissões para ingressar um computador no domínio, você pode unir os servidores de rede principal ao domínio e fazer logon nos servidores para instalar outros tecnologias, como o protocolo DHCP.
 
 Em todos os servidores que você está implantando, exceto para o servidor que executa o AD DS, faça o seguinte:
@@ -773,7 +773,7 @@ Em todos os servidores que você está implantando, exceto para o servidor que e
 
 1.  No Gerenciador do Servidor, clique em **Servidor Local**. No painel de detalhes, clique em **Grupo de Trabalho**. A caixa de diálogo **Propriedades do Sistema** será aberta.
 
-2.  Na caixa de diálogo **Propriedades do Sistema** , clique em **Alterar**. A caixa de diálogo **Alterações de Nome/Domínio do Computador** será aberta.
+2.  Na caixa de diálogo **Propriedades do Sistema**, clique em **Alterar**. A caixa de diálogo **Alterações de Nome/Domínio do Computador** será aberta.
 
 3.  No **Nome do Computador**, em **Membro de**, clique em **Domínio** e digite o nome do domínio no qual você deseja ingressar. Por exemplo, se o nome do domínio for corp.contoso.com, digite **corp.contoso.com**.
 
@@ -803,7 +803,7 @@ Em todos os servidores que você está implantando, exceto para o servidor que e
 > [!NOTE]
 > Para obter informações sobre como fazer logon no domínio usando computadores que executam outros sistemas operacionais da Microsoft, consulte o [Apêndice D – fazer logon no domínio](#BKMK_D).
 
-#### <a name="BKMK_deployDHCP01"></a>Implantando o DHCP1
+#### <a name="deploying-dhcp1"></a><a name="BKMK_deployDHCP01"></a>Implantando o DHCP1
 Antes de implantar este componente da rede principal, faça o seguinte:
 
 -   Siga as etapas na seção [Configurando todos os servidores](#BKMK_configuringAll).
@@ -837,7 +837,7 @@ Para implantar o DHCP1, que é o computador que executa a função de servidor d
 >
 > `Add-DhcpServerInDC -DnsName DHCP1.corp.contoso.com`
 
-##### <a name="BKMK_installDHCP"></a>Instalar o protocolo DHCP
+##### <a name="install-dynamic-host-configuration-protocol-dhcp"></a><a name="BKMK_installDHCP"></a>Instalar o protocolo DHCP
 Você pode usar este procedimento para instalar e configurar a função de Servidor DHCP usando o Assistente para Adicionar Funções e Recursos.
 
 A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo para a execução deste procedimento.
@@ -863,7 +863,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 8.  Em **Autorização**, especifique as credenciais que deseja usar para autorizar o servidor DHCP nos Serviços de Domínio Active Directory e clique em **Confirmar**. Na conclusão da autorização, clique em **Fechar**.
 
-##### <a name="BKMK_newscopeDHCP"></a>Criar e ativar um novo escopo do DHCP
+##### <a name="create-and-activate-a-new-dhcp-scope"></a><a name="BKMK_newscopeDHCP"></a>Criar e ativar um novo escopo do DHCP
 Você pode usar este procedimento para criar um novo escopo do DHCP usando o MMC (Console de Gerenciamento Microsoft) DHCP. Quando você conclui o procedimento, o escopo é ativado e o intervalo de exclusão que você cria impede que o servidor DHCP conceda os endereços IP usados para configurar estaticamente os servidores e outros dispositivos que exigem um endereço IP estático.
 
 A associação em **Administradores DHCP**, ou equivalente, é o requisito mínimo para executar este procedimento.
@@ -927,7 +927,7 @@ A associação em **Administradores DHCP**, ou equivalente, é o requisito míni
 > [!IMPORTANT]
 > Para criar novos escopos para sub-redes adicionais, repita o procedimento. Use um intervalo de endereços IP diferente para cada sub-rede que você planeja implantar e verifique se o encaminhamento de mensagem DHCP está habilitado em todos os roteadores que levam a outras sub-redes.
 
-### <a name="BKMK_joinlogclients"></a>Unindo computadores cliente ao domínio e fazendo logon
+### <a name="joining-client-computers-to-the-domain-and-logging-on"></a><a name="BKMK_joinlogclients"></a>Unindo computadores cliente ao domínio e fazendo logon
 
 > [!NOTE]
 > Para executar este procedimento usando o Windows PowerShell, abra o PowerShell, digite o cmdlet a seguir e pressione ENTER. Você também deve substituir o nome do domínio pelo nome que deseja usar.
@@ -990,7 +990,7 @@ A associação em **Administradores DHCP**, ou equivalente, é o requisito míni
 
 5.  Em **Senha**, digite sua senha do domínio e clique na seta ou pressione ENTER.
 
-### <a name="BKMK_optionalfeatures"></a>Implantando recursos opcionais para autenticação de acesso à rede e serviços Web
+### <a name="deploying-optional-features-for-network-access-authentication-and-web-services"></a><a name="BKMK_optionalfeatures"></a>Implantando recursos opcionais para autenticação de acesso à rede e serviços Web
 Se você pretende implantar servidores de acesso à rede, como pontos de acesso sem fio ou servidores VPN, depois de instalar sua rede principal, é recomendável que você implante um NPS e um servidor Web. Para implantações de acesso à rede, recomendamos o uso de métodos de autenticação baseada em certificado seguro. Você pode usar o NPS para gerenciar políticas de acesso à rede e implantar métodos de autenticação segura. Você pode usar um servidor Web para publicar a CRL (lista de revogação de certificados) de sua autoridade de certificação que fornece os certificados para autenticação segura.
 
 > [!NOTE]
@@ -1006,7 +1006,7 @@ As seções a seguir fornecem informações sobre como adicionar servidores NPS 
 
 -   [Implantando o WEB1](#BKMK_IIS)
 
-#### <a name="BKMK_deployNPS1"></a>Implantando o NPS1
+#### <a name="deploying-nps1"></a><a name="BKMK_deployNPS1"></a>Implantando o NPS1
 O servidor NPS (Servidor de Políticas de Rede) é instalado como uma etapa preparatória para a implantação de outras tecnologias de acesso à rede, como servidores VPN (rede virtual privada), pontos de acesso sem fio e comutadores de autenticação 802.1X.
 
 O NPS (servidor de diretivas de rede) permite que você configure e gerencie centralmente as políticas de rede com os seguintes recursos: serviço RADIUS (RADIUS) servidor e proxy RADIUS.
@@ -1035,7 +1035,7 @@ Para implantar o NPS1, que o computador está executando o serviço de função 
 > [!NOTE]
 > Este guia fornece instruções para implantar o NPS em um servidor autônomo ou VM chamada NPS1.  Outro modelo de implantação recomendado é a instalação do NPS em um controlador de domínio. Se preferir instalar o NPS em um controlador de domínio em vez de em um servidor autônomo, instale o NPS no DC1.
 
-##### <a name="bkmk_NetFndtn_Pln_NPS-01"></a>Planejando a implantação do NPS1
+##### <a name="planning-the-deployment-of-nps1"></a><a name="bkmk_NetFndtn_Pln_NPS-01"></a>Planejando a implantação do NPS1
 Se você pretende implantar servidores de acesso à rede, como pontos de acesso sem fio ou servidores VPN, depois de implantar a rede principal, recomendamos que implante o NPS.
 
 Quando você usa o NPS como um servidor do serviço RADIUS, o NPS executa a autenticação e a autorização para solicitações de conexão por meio de servidores de acesso à rede. O NPS também permite que você configure e gerencie de forma centralizada as políticas de rede que determinam quem pode acessar a rede, como eles podem acessar a rede e quando eles podem acessar a rede.
@@ -1046,7 +1046,7 @@ Estas são as principais etapas de planejamento antes de instalar o NPS.
 
 - Planeje a contabilização do RADIUS. O NPS permite que você registre em log os dados de contabilização em um banco de dados SQL Server ou em um arquivo de texto no computador local. Se você deseja usar o registro em log do SQL Server, planeje a instalação e a configuração de seu servidor que executa o SQL Server.
 
-##### <a name="BKMK_installNPS"></a>Instalar servidor de políticas de rede (NPS)
+##### <a name="install-network-policy-server-nps"></a><a name="BKMK_installNPS"></a>Instalar servidor de políticas de rede (NPS)
 Você pode usar este procedimento para instalar o NPS (servidor de diretivas de rede) usando o assistente para adicionar funções e recursos. O NPS é um serviço de função da função de servidor Serviços de Acesso e Política de Rede.
 
 > [!NOTE]
@@ -1082,7 +1082,7 @@ Para concluir este procedimento, você deve ser um membro do grupo **Administrad
 
 8.  Em **Confirmar seleções de instalação**, clique em **Reiniciar cada servidor de destino automaticamente, se necessário**. Na solicitação de confirmação dessa seleção, clique em **Sim** e em **Instalar**. A página Progresso da instalação exibe o status durante o processo de instalação. Quando o processo for concluído, a mensagem "a instalação foi bem-sucedida em *ComputerName*" será exibida, em que *ComputerName* é o nome do computador no qual você instalou o servidor de políticas de rede. Clique em **Fechar**.
 
-##### <a name="BKMK_registerNPS"></a>Registrar o NPS no domínio padrão
+##### <a name="register-the-nps-in-the-default-domain"></a><a name="BKMK_registerNPS"></a>Registrar o NPS no domínio padrão
 Você pode usar este procedimento para registrar um NPS no domínio em que o servidor é membro do domínio.
 
 NPSs deve ser registrado em Active Directory para que eles tenham permissão para ler as propriedades de discagem de contas de usuário durante o processo de autorização. O registro de um NPS adiciona o servidor ao grupo de **Servidores RAS e ias** em Active Directory.
@@ -1106,7 +1106,7 @@ Para concluir este procedimento, você deve ser um membro do grupo **Administrad
 
 Para obter mais informações sobre o servidor de políticas de rede, consulte [servidor de diretivas de rede (NPS)](../technologies/nps/nps-top.md).
 
-#### <a name="BKMK_IIS"></a>Implantando o WEB1
+#### <a name="deploying-web1"></a><a name="BKMK_IIS"></a>Implantando o WEB1
 
 A função do servidor Web (IIS) no Windows Server 2016 fornece uma plataforma segura, fácil de gerenciar, modular e extensível para hospedagem confiável de sites, serviços e aplicativos. Com o Serviços de Informações da Internet (IIS), você pode compartilhar informações com usuários na Internet, em uma intranet ou em uma extranet. O IIS é uma plataforma Web unificada que integra IIS, ASP.NET, serviços FTP, PHP e Windows Communication Foundation (WCF).
 
@@ -1130,7 +1130,7 @@ Para implantar o WEB1, que é o computador que está executando a função de se
 
 -   [Instalar a função de servidor do servidor Web (IIS)](#BKMK_install_IIS)
 
-##### <a name="BKMK_install_IIS"></a>Instalar a função de servidor do servidor Web (IIS)
+##### <a name="install-the-web-server-iis-server-role"></a><a name="BKMK_install_IIS"></a>Instalar a função de servidor do servidor Web (IIS)
 Para concluir este procedimento, é preciso ser um membro do grupo **Administradores**.
 
 > [!NOTE]
@@ -1155,7 +1155,7 @@ Para concluir este procedimento, é preciso ser um membro do grupo **Administrad
 
 7.  Confirme se todas as instalações tiveram êxito e clique em **Fechar**.
 
-## <a name="BKMK_resources"></a>Recursos técnicos adicionais
+## <a name="additional-technical-resources"></a><a name="BKMK_resources"></a>Recursos técnicos adicionais
 Para obter mais informações sobre as tecnologias neste guia, consulte os recursos a seguir:
 
  Recursos de biblioteca técnica do Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012
@@ -1174,7 +1174,7 @@ Para obter mais informações sobre as tecnologias neste guia, consulte os recur
 
 -   [Visão geral do servidor Web (IIS)](https://technet.microsoft.com/library/hh831725.aspx) em https://technet.microsoft.com/library/hh831725.aspx.
 
-## <a name="BKMK_appendix"></a>Apêndices A a E
+## <a name="appendices-a-through-e"></a><a name="BKMK_appendix"></a>Apêndices A a E
 As seções a seguir contêm informações de configuração adicionais para computadores que executam sistemas operacionais diferentes do Windows Server 2016, Windows 10, Windows Server 2012 e Windows 8. Além disso, uma planilha de preparação de rede é fornecida para ajudá-lo com sua implantação.
 
 1.  [Apêndice A – renomeando computadores](#BKMK_A)
@@ -1187,14 +1187,14 @@ As seções a seguir contêm informações de configuração adicionais para com
 
 5.  [Planilha de preparação de planejamento de rede E-Core do apêndice](#BKMK_E)
 
-## <a name="BKMK_A"></a>Apêndice A – renomeando computadores
+## <a name="appendix-a---renaming-computers"></a><a name="BKMK_A"></a>Apêndice A – renomeando computadores
 Você pode usar os procedimentos nesta seção para fornecer computadores que executam o Windows Server 2008 R2, Windows 7, Windows Server 2008 e Windows Vista com um nome de computador diferente.
 
 -   [Windows Server 2008 R2 e Windows 7](#bkmk_NetFndtn_Pln_rename_R2)
 
 -   [Windows Server 2008 e Windows Vista](#bkmk_NetFndtn_Pln_Renam08)
 
-### <a name="bkmk_NetFndtn_Pln_rename_R2"></a>Windows Server 2008 R2 e Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="bkmk_NetFndtn_Pln_rename_R2"></a>Windows Server 2008 R2 e Windows 7
 A associação a **Administradores** ou equivalente é o requisito mínimo para a execução destes procedimentos.
 
 ##### <a name="to-rename-computers-running-windows-server-2008-r2-and-windows-7"></a>Para renomear os computadores que executam o Windows Server 2008 R2 e o Windows 7
@@ -1212,7 +1212,7 @@ A associação a **Administradores** ou equivalente é o requisito mínimo para 
 
 5.  Clique em **OK** duas vezes, clique em **Fechar** e depois em **Reiniciar Agora** para reiniciar o computador.
 
-### <a name="bkmk_NetFndtn_Pln_Renam08"></a>Windows Server 2008 e Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="bkmk_NetFndtn_Pln_Renam08"></a>Windows Server 2008 e Windows Vista
 A associação a **Administradores** ou equivalente é o requisito mínimo para a execução destes procedimentos.
 
 ##### <a name="to-rename-computers-running-windows-server-2008-and-windows-vista"></a>Para renomear computadores que executam o Windows Server 2008 e o Windows Vista
@@ -1230,14 +1230,14 @@ A associação a **Administradores** ou equivalente é o requisito mínimo para 
 
 5.  Clique em **OK** duas vezes, clique em **Fechar** e depois em **Reiniciar Agora** para reiniciar o computador.
 
-## <a name="BKMK_B"></a>Apêndice B-Configurando endereços IP estáticos
+## <a name="appendix-b---configuring-static-ip-addresses"></a><a name="BKMK_B"></a>Apêndice B-Configurando endereços IP estáticos
 Este tópico fornece procedimentos para configurar endereços IP estáticos em computadores que executam os seguintes sistemas operacionais:
 
 -   [Windows Server 2008 R2](#bkmk_R2Cng_WS08R2IP)
 
 -   [Windows Server 2008](#bkmk_NetFndtn_Pln_CfgStatic08)
 
-### <a name="bkmk_R2Cng_WS08R2IP"></a>Windows Server 2008 R2
+### <a name="windows-server-2008-r2"></a><a name="bkmk_R2Cng_WS08R2IP"></a>Windows Server 2008 R2
 A associação em **Administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.
 
 ##### <a name="to-configure-a-static-ip-address-on-a-computer-running-windows-server-2008-r2"></a>Para configurar um endereço IP estático em um computador executando o Windows Server 2008 R2
@@ -1266,7 +1266,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo pa
 
 11. Clique em **OK** e em **Fechar**.
 
-### <a name="bkmk_NetFndtn_Pln_CfgStatic08"></a>Windows Server 2008
+### <a name="windows-server-2008"></a><a name="bkmk_NetFndtn_Pln_CfgStatic08"></a>Windows Server 2008
 A associação a **Administradores** ou equivalente é o requisito mínimo para a execução destes procedimentos.
 
 ##### <a name="to-configure-a-static-ip-address-on-a-computer-running-windows-server-2008"></a>Para configurar um endereço IP estático em um computador executando o Windows Server 2008
@@ -1293,7 +1293,7 @@ A associação a **Administradores** ou equivalente é o requisito mínimo para 
 
 11. Clique em **OK** e em **Fechar**.
 
-## <a name="BKMK_C"></a>Apêndice C – unindo computadores ao domínio
+## <a name="appendix-c---joining-computers-to-the-domain"></a><a name="BKMK_C"></a>Apêndice C – unindo computadores ao domínio
 Você pode usar esses procedimentos para unir computadores que executam o Windows Server 2008 R2, Windows 7, Windows Server 2008 e Windows Vista ao domínio.
 
 -   [Windows Server 2008 R2 e Windows 7](#BKMK_c1)
@@ -1303,7 +1303,7 @@ Você pode usar esses procedimentos para unir computadores que executam o Window
 > [!IMPORTANT]
 > Para ingressar um computador em um domínio, faça logon no computador com a conta de Administrador local ou, se já estiver conectado ao computador com uma conta de usuário que não tem credenciais administrativas do computador local, forneça as credenciais para a conta de Administrador local durante o processo de ingressar o computador no domínio. Além disso, você deve ter uma conta de usuário no domínio no qual deseja ingressar o computador. Durante o processo de ingressar o computador no domínio, você será solicitado para inserir as credenciais de conta de domínio (nome de usuário e senha).
 
-### <a name="BKMK_c1"></a>Windows Server 2008 R2 e Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="BKMK_c1"></a>Windows Server 2008 R2 e Windows 7
 O requisito mínimo para executar este procedimento é a associação ao grupo **Usuários do Domínio** ou equivalente.
 
 ##### <a name="to-join-computers-running-windows-server-2008-r2-and-windows-7-to-the-domain"></a>Para unir computadores que executam o Windows Server 2008 R2 e o Windows 7 ao domínio
@@ -1329,7 +1329,7 @@ O requisito mínimo para executar este procedimento é a associação ao grupo *
 
 9. Na caixa de diálogo **Propriedades do Sistema**, na guia **Nome do Computador**, clique em **Fechar**. A caixa de diálogo **Microsoft Windows** é aberta e exibe uma mensagem, indicando novamente que você deve reiniciar o computador para aplicar as alterações. Clique em **Reiniciar Agora**.
 
-### <a name="BKMK_c2"></a>Windows Server 2008 e Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="BKMK_c2"></a>Windows Server 2008 e Windows Vista
 O requisito mínimo para executar este procedimento é a associação ao grupo **Usuários do Domínio** ou equivalente.
 
 ##### <a name="to-join-computers-running-windows-server-2008-and-windows-vista-to-the-domain"></a>Para unir computadores que executam o Windows Server 2008 e o Windows Vista ao domínio
@@ -1352,14 +1352,14 @@ O requisito mínimo para executar este procedimento é a associação ao grupo *
 
 9. Na caixa de diálogo **Propriedades do Sistema**, na guia **Nome do Computador**, clique em **Fechar**. A caixa de diálogo **Microsoft Windows** é aberta e exibe uma mensagem, indicando novamente que você deve reiniciar o computador para aplicar as alterações. Clique em **Reiniciar Agora**.
 
-## <a name="BKMK_D"></a>Apêndice D – fazer logon no domínio
+## <a name="appendix-d---log-on-to-the-domain"></a><a name="BKMK_D"></a>Apêndice D – fazer logon no domínio
 Você pode usar esses procedimentos para fazer logon no domínio usando computadores que executam o Windows Server 2008 R2, o Windows 7, o Windows Server 2008 e o Windows Vista.
 
 -   [Windows Server 2008 R2 e Windows 7](#BKMK_d1)
 
 -   [Windows Server 2008 e Windows Vista](#BKMK_d2)
 
-### <a name="BKMK_d1"></a>Windows Server 2008 R2 e Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="BKMK_d1"></a>Windows Server 2008 R2 e Windows 7
 O requisito mínimo para executar este procedimento é a associação ao grupo **Usuários do Domínio** ou equivalente.
 
 ##### <a name="log-on-to-the-domain-using-computers-running-windows-server-2008-r2-and-windows-7"></a>Faça logon no domínio usando computadores que executam o Windows Server 2008 R2 e o Windows 7
@@ -1374,7 +1374,7 @@ O requisito mínimo para executar este procedimento é a associação ao grupo *
 
 5.  Em **Senha**, digite sua senha do domínio e clique na seta ou pressione ENTER.
 
-### <a name="BKMK_d2"></a>Windows Server 2008 e Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="BKMK_d2"></a>Windows Server 2008 e Windows Vista
 O requisito mínimo para executar este procedimento é a associação ao grupo **Usuários do Domínio** ou equivalente.
 
 ##### <a name="log-on-to-the-domain-using-computers-running-windows-server-2008-and-windows-vista"></a>Faça logon no domínio usando computadores que executam o Windows Server 2008 e o Windows Vista
@@ -1389,7 +1389,7 @@ O requisito mínimo para executar este procedimento é a associação ao grupo *
 
 5.  Em **Senha**, digite sua senha do domínio e clique na seta ou pressione ENTER.
 
-## <a name="BKMK_E"></a>Planilha de preparação de planejamento de rede E-Core do apêndice
+## <a name="appendix-e---core-network-planning-preparation-sheet"></a><a name="BKMK_E"></a>Planilha de preparação de planejamento de rede E-Core do apêndice
 Você pode usar esta Folha de preparação do planejamento de Rede Principal para obter as informações necessárias para instalar uma rede principal. Este tópico fornece as tabelas que contêm os itens de configuração individual para cada computador do servidor para o qual você deve fornecer informações ou valores específicos durante o processo de instalação ou configuração. Os valores de exemplo são fornecidos para cada item de configuração.
 
 Para fins de planejamento e acompanhamento, os espaços são fornecidos em cada tabela para você inserir os valores usados para sua implantação. Se você se registrar em log os valores relacionados com a segurança nessas tabelas, deverá armazenar as informações em um local seguro.
@@ -1408,7 +1408,7 @@ Estes links levam para as seções neste tópico que fornecem itens de configura
 
 3.  [Instalando o servidor de políticas de rede (opcional)](#BKMK_FndtnPrep_InstallNPS)
 
-### <a name="BKMK_FndtnPrep_InstallAD"></a>Instalando o Active Directory Domain Services e o DNS
+### <a name="installing-active-directory-domain-services-and-dns"></a><a name="BKMK_FndtnPrep_InstallAD"></a>Instalando o Active Directory Domain Services e o DNS
 As tabelas nesta seção listam itens de configuração para pré-instalação e instalação de Active Directory Domain Services (AD DS) e DNS.
 
 ##### <a name="pre-installation-configuration-items-for-ad-ds-and-dns"></a>Itens de configuração de pré-instalação para AD DS e DNS
@@ -1426,7 +1426,7 @@ As seguintes tabelas listam os itens de configuração de pré-instalação desc
 
 -   [Renomear o computador](#BKMK_rename)
 
-|Item de configuração|Valor de exemplo|Valor|
+|Item de configuração|Valor de exemplo|{1&gt;Valor&lt;1}|
 |----------------------|-----------------|---------|
 |Nome do computador|DC1||
 
@@ -1443,7 +1443,7 @@ Itens de configuração para o procedimento de implantação da Rede Principal d
 |Senha do Administrador do Modo de Restauração de Diretório|J*p2leO4$F||
 |Nome de arquivo de resposta (opcional)|DS_AnswerFile do AD||
 
-#### <a name="BKMK_FndtnPrep_DNSRevrsLook"></a>Configurando uma zona de pesquisa inversa de DNS
+#### <a name="configuring-a-dns-reverse-lookup-zone"></a><a name="BKMK_FndtnPrep_DNSRevrsLook"></a>Configurando uma zona de pesquisa inversa de DNS
 
 |Itens de configuração|Valores de exemplo|Valores|
 |-----------------------|------------------|----------|
@@ -1453,7 +1453,7 @@ Itens de configuração para o procedimento de implantação da Rede Principal d
 |Nome da zona de pesquisa inversa<br /><br />(tipo de IP)|-Zona de pesquisa inversa de IPv4<br />-Zona de pesquisa inversa do IPv6||
 |Nome da zona de pesquisa inversa<br /><br />(ID da rede)|10.0.0||
 
-### <a name="BKMK_FndtnPrep_InstallDHCP"></a>Instalando o DHCP
+### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>Instalando o DHCP
 As tabelas nesta seção listam os itens de configuração de pré-instalação e de instalação do DHCP.
 
 ##### <a name="pre-installation-configuration-items-for-dhcp"></a>Itens de configuração de pré-instalação do DHCP
@@ -1471,7 +1471,7 @@ As seguintes tabelas listam os itens de configuração de pré-instalação desc
 
 -   [Renomear o computador](#BKMK_rename)
 
-|Item de configuração|Valor de exemplo|Valor|
+|Item de configuração|Valor de exemplo|{1&gt;Valor&lt;1}|
 |----------------------|-----------------|---------|
 |Nome do computador|DHCP1||
 
@@ -1492,7 +1492,7 @@ Os itens de configuração do procedimento de implantação da Rede Principal do
 |Duração da concessão|8 dias||
 |Modo de operação do servidor DHCP IPv6|Não habilitado||
 
-#### <a name="BKMK_FndtnPrep_DHCP_Exclusn"></a>Criando um intervalo de exclusão no DHCP
+#### <a name="creating-an-exclusion-range-in-dhcp"></a><a name="BKMK_FndtnPrep_DHCP_Exclusn"></a>Criando um intervalo de exclusão no DHCP
 Itens de configuração para criar um intervalo de exclusão durante a criação de um escopo no DHCP.
 
 |Itens de configuração|Valores de exemplo|Valores|
@@ -1502,7 +1502,7 @@ Itens de configuração para criar um intervalo de exclusão durante a criação
 |Endereço IP inicial do intervalo de exclusão|10.0.0.1||
 |Endereço IP final do intervalo de exclusão|10.0.0.15||
 
-#### <a name="bkmk_NetFndtn_Pln_DHCP_NewScope"></a>Criando um novo escopo de DHCP
+#### <a name="creating-a-new-dhcp-scope"></a><a name="bkmk_NetFndtn_Pln_DHCP_NewScope"></a>Criando um novo escopo de DHCP
 Os itens de configuração do procedimento de implantação da Rede Principal do Windows Server [Criar e ativar um novo escopo do DHCP](#BKMK_newscopeDHCP):
 
 |Itens de configuração|Valores de exemplo|Valores|
@@ -1520,7 +1520,7 @@ Os itens de configuração do procedimento de implantação da Rede Principal do
 |Domínio pai DNS|corp.contoso.com||
 |Servidor DNS<br /><br />Endereço IP|10.0.0.2||
 
-### <a name="BKMK_FndtnPrep_InstallNPS"></a>Instalando o servidor de políticas de rede (opcional)
+### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>Instalando o servidor de políticas de rede (opcional)
 As tabelas nesta seção listam os itens de configuração de pré-instalação e de instalação do NPS.
 
 ##### <a name="pre-installation-configuration-items"></a>Itens de configuração de pré-instalação
@@ -1538,7 +1538,7 @@ As seguintes três tabelas listam os itens de configuração de pré-instalaçã
 
 -   [Renomear o computador](#BKMK_rename)
 
-|Item de configuração|Valor de exemplo|Valor|
+|Item de configuração|Valor de exemplo|{1&gt;Valor&lt;1}|
 |----------------------|-----------------|---------|
 |Nome do computador|NPS1||
 

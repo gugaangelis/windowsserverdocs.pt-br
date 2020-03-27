@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9271cf4e5f50adf93f421e830a226507034ac454
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517471"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316619"
 ---
 # <a name="choosing-a-network-adapter"></a>Escolhendo um adaptador de rede
 
@@ -26,7 +26,7 @@ Aplicativos com uso intensivo de rede exigem Adaptadores de rede de alto desempe
 > [!TIP]
 >  Você pode definir as configurações do adaptador de rede usando o Windows PowerShell. Para obter mais informações, consulte [cmdlets do adaptador de rede no Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter).
 
-##  <a name="bkmk_offload"></a>Recursos de descarga
+##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>Recursos de descarga
 
 O descarregamento de tarefas da unidade de processamento central \(CPU\) ao adaptador de rede pode reduzir o uso da CPU no servidor, o que melhora o desempenho geral do sistema.
 
@@ -42,7 +42,7 @@ A pilha de rede nos produtos da Microsoft pode descarregar uma ou mais tarefas e
 |Receber o dimensionamento lateral \(RSS\)|O RSS é uma tecnologia de driver de rede que permite a distribuição eficiente de processamento de recebimento de rede em várias CPUs em sistemas multiprocessadores. Mais detalhes sobre o RSS são fornecidos posteriormente neste tópico.|  
 |União de segmento de recebimento \(RSC\)|O RSC é a capacidade de agrupar pacotes para minimizar o processamento de cabeçalho necessário para que o host seja executado. Um máximo de 64 KB de carga recebida pode ser agrupado em um único pacote maior para processamento. Mais detalhes sobre o RSC são fornecidos posteriormente neste tópico.|  
   
-###  <a name="bkmk_rss"></a>Receber dimensionamento lateral
+###  <a name="receive-side-scaling"></a><a name="bkmk_rss"></a>Receber dimensionamento lateral
 
 O Windows Server 2016, o Windows Server 2012, o Windows Server 2012 R2, o Windows Server 2008 R2 e o Windows Server 2008 oferecem suporte ao dimensionamento lateral \(RSS\). 
 
@@ -158,7 +158,7 @@ Para utilizar totalmente as CPUs, o número de filas de recebimento RSS deve ser
 
 O RSS pode ser habilitado em um adaptador de rede que está agrupado com outra placa de interface de rede usando o agrupamento NIC. Nesse cenário, somente o adaptador de rede física subjacente pode ser configurado para usar o RSS. Um usuário não pode definir os cmdlets RSS no adaptador de rede agrupado.
   
-###  <a name="bkmk_rsc"></a>União de segmento de recebimento (RSC)
+###  <a name="receive-segment-coalescing-rsc"></a><a name="bkmk_rsc"></a>União de segmento de recebimento (RSC)
 
 A União de segmento de recebimento \(RSC\) ajuda o desempenho, reduzindo o número de cabeçalhos IP que são processados para uma determinada quantidade de dados recebidos. Ele deve ser usado para ajudar a dimensionar o desempenho de dados recebidos agrupando \(ou União\)ndo os pacotes menores em unidades maiores.
 
@@ -206,7 +206,7 @@ Somente há suporte para RSC no host físico quando o adaptador de rede do host 
 
 O RSC pode ser habilitado para uma máquina virtual quando a virtualização de entrada/saída de raiz única \(a\) de SR-IOV estiver habilitada. Nesse caso, as funções virtuais dão suporte ao recurso RSC; Portanto, as máquinas virtuais também recebem o benefício do RSC.
 
-##  <a name="bkmk_resources"></a>Recursos do adaptador de rede
+##  <a name="network-adapter-resources"></a><a name="bkmk_resources"></a>Recursos do adaptador de rede
 
 Alguns adaptadores de rede gerenciam ativamente seus recursos para obter um desempenho ideal. Vários adaptadores de rede permitem configurar manualmente os recursos usando a guia **rede avançada** para o adaptador. Para esses adaptadores, você pode definir os valores de um número de parâmetros, incluindo o número de buffers de recebimento e buffers de envio.
 

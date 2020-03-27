@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 427048db-bab6-49b1-9611-099bb547ec0e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 33eef13bc13081acf398f3d3f26dc04219aa1d20
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8358d52796fee29cc446aa78ae36572ee3332644
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405830"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312865"
 ---
 # <a name="troubleshoot-sdn"></a>Solucionar problemas de SDN
 
@@ -30,7 +30,7 @@ Os tópicos nesta seção fornecem informações sobre como solucionar problemas
 > - [Gerenciar SDN](../manage/manage-sdn.md)
 > - [Segurança para SDN](../security/sdn-security-top.md)
 
-Esta seção contém os seguintes tópicos.
+Esta seção contém os seguintes tópicos:
 
 - [Solucionar problemas de pilha de rede definida pelo software do Windows Server](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 - Postagem [do blog solução de problemas de Sdn: falhas de comunicação UDP e alteração do certificado do controlador de rede](https://techcommunity.microsoft.com/t5/Networking-Blog/SDN-Troubleshooting-UDP-Communication-failures-and-changing-the/ba-p/339694)

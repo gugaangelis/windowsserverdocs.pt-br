@@ -3,7 +3,7 @@ title: 'Etapa 1: Preparar o servidor de origem para a migração para o Windows 
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f95ebfec13c2ec1f374c60f48d5f8af6c4b22324
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cb0cffdda0e0f1528887d3c94a1905a99c5c55c3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947398"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318779"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Etapa 1: Preparar o servidor de origem para a migração para o Windows Server Essentials
 
@@ -38,7 +38,7 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
 
 5.  [Criar um plano para migrar aplicativos de linha de negócios](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MigrateLOB)  
 
-###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>Fazer backup do servidor de origem  
+###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>Fazer backup do servidor de origem  
  Faça o backup do Servidor de Origem antes de iniciar o processo migração. Isso ajuda a proteger seus dados de perda acidental caso ocorra um erro irrecuperável durante a migração.  
 
 ##### <a name="to-back-up-the-source-server"></a>Para fazer backup do Servidor de Origem  
@@ -56,27 +56,27 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
    |Windows Small Business Server 2011 Standard|[Gerenciando o backup do servidor](https://technet.microsoft.com/library/cc527488.aspx)  
    |Windows Server Essentials|[Gerenciar Backup e restauração no Windows Server Essentials](https://technet.microsoft.com/library/jj713536.aspx)
 
-###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instalar os service packs mais recentes  
+###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instalar os service packs mais recentes  
  Você deve instalar as últimas atualizações e service packs no Servidor de Origem antes da migração.  
 
-###  <a name="BKMK_DeleteSvcAcctSetting"></a>Excluir a configuração fazer logon como uma conta de serviço  
+###  <a name="delete-the-log-on-as-a-service-account-setting"></a><a name="BKMK_DeleteSvcAcctSetting"></a>Excluir a configuração fazer logon como uma conta de serviço  
  Se você estiver migrando do Windows Small Business Server 2003 ou Windows Server 2003, exclua a configuração de conta **fazer logon como um serviço** da política de grupo.  
 
 ##### <a name="to-delete-the-log-on-as-a-service-account-setting"></a>Para excluir a configuração fazer logon como uma conta de serviço  
 
-1.  Para abrir a ferramenta **Gerenciamento de Política de Grupo** , clique em **Iniciar**, clique em **Painel de controle**, clique em **Ferramentas administrativas**e, por fim, clique em **Gerenciamento de Política de Grupo**.  
+1.  Para abrir a ferramenta **Gerenciamento de Política de Grupo**, clique em **Iniciar**, clique em **Painel de controle**, clique em **Ferramentas administrativas** e, por fim, clique em **Gerenciamento de Política de Grupo**.  
 
-2.  Clique com botão direito na **Política de Controladores de Domínio Padrão**e clique em **Editar**.  
+2.  Clique com botão direito na **Política de Controladores de Domínio Padrão** e clique em **Editar**.  
 
 3.  Navegue até **Configuração\Configurações do Windows\Configurações de Segurança\Políticas locais\Atribuição de direitos de usuário**.  
 
 4.  No painel de detalhes, clique duas vezes em **Fazer logon como um serviço**.  
 
-5.  Limpe a caixa de seleção **Definir estas configurações de política** .  
+5.  Limpe a caixa de seleção **Definir estas configurações de política**.  
 
 6.  Excluir \\\localhost\SYSVOL\\< nome_do_domínio\>\scripts\ SBS_LOGIN_SCRIPT. bat.  
 
-###  <a name="BKMK_EvaluateHealth"></a>Avaliar a integridade do servidor de origem  
+###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>Avaliar a integridade do servidor de origem  
  É importante avaliar a integridade do servidor de origem antes de começar a migração. Use os procedimentos a seguir para garantir que as atualizações sejam atuais, para gerar um relatório de integridade do sistema e executar o Analisador de Práticas Recomendadas do Windows Server Solutions.  
 
 #### <a name="download-and-install-critical-and-security-updates"></a>Download e instalação de atualizações críticas e de segurança  
@@ -84,7 +84,7 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
 
 ###### <a name="to-check-for-the-latest-updates"></a>Para verificar as atualizações mais recentes  
 
-1.  No servidor de origem, clique em **Iniciar**, clique em **Todos os Programas**e clique em **Windows Update**.  
+1.  No servidor de origem, clique em **Iniciar**, clique em **Todos os Programas** e clique em **Windows Update**.  
 
 2.  Clique em **Procurar atualizações**.  
 
@@ -95,7 +95,7 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
 
 -   WMI (Instrumentação de Gerenciamento do Windows) do Active Directory  
 
--   O Registro  
+-   O registro  
 
 -   Serviços de Informações da Internet (IIS)  
 
@@ -112,7 +112,7 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
    |     Windows Server Essentials ou Windows Server 2012     |                                                          O Painel do servidor                                                           |
 
 
-2. Após a conclusão do download, clique em **Iniciar**, clique em **Todos os Programas**e clique em **Ferramenta Analisadora de Práticas Recomendadas do SBS**.  
+2. Após a conclusão do download, clique em **Iniciar**, clique em **Todos os Programas** e clique em **Ferramenta Analisadora de Práticas Recomendadas do SBS**.  
 
    > [!NOTE]
    >  Verifique se há atualizações antes de examinar o servidor.  
@@ -123,7 +123,7 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
 
    1.  Faça logon no servidor de destino como administrador e abra o Painel.  
 
-   2.  No painel, clique na guia **Dispositivos** .  
+   2.  No painel, clique na guia **Dispositivos**.  
 
    3.  No painel **tarefas** do >do <**Server** , clique em **analisador de práticas recomendadas**.  
 
@@ -140,7 +140,7 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
 
 Para exibir a descrição e as soluções de um problema, clique no problema no relatório. Nem todos os problemas relatados pela ferramenta BPA afetam a migração, mas você deve solucionar o máximo de problemas possível para garantir que a migração seja bem-sucedida.  
 
-####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>Sincronizar a hora do servidor de origem com uma fonte de tempo externa  
+####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>Sincronizar a hora do servidor de origem com uma fonte de tempo externa  
  A hora no Servidor de Origem pode ter uma diferença de, no máximo, cinco minutos da hora no Servidor de Destino e a data e o fuso horário devem ser os mesmos em ambos os servidores. Se o Servidor de Origem estiver sendo executado em uma máquina virtual, a data, a hora e o fuso horário no servidor host devem ser os mesmos que no Servidor de Origem e no Servidor de Destino. Para ajudar a garantir que o Windows Server Essentials seja instalado com êxito, você deve sincronizar a hora do servidor de origem com o servidor protocolo NTP (NTP) na Internet.  
 
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>Para sincronizar a hora do servidor de origem com a do servidor NTP  
@@ -158,7 +158,7 @@ Para exibir a descrição e as soluções de um problema, clique no problema no 
 > [!IMPORTANT]
 >  Durante a instalação do Windows Server Essentials, você tem a oportunidade de verificar a hora no servidor de destino e alterá-la, se necessário. Certifique-se de que a hora esteja no máximo cinco minutos à frente da hora definida no servidor de origem. Quando a instalação for concluída, o servidor de destino será sincronizado com o NTP. Todos os computadores que fazem parte do domínio, incluindo o servidor de origem, são sincronizados com o servidor de destino, que assume a função de mestre emulador PDC (controlador de domínio primário).  
 
-###  <a name="BKMK_MigrateLOB"></a>Criar um plano para migrar aplicativos de linha de negócios  
+###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_MigrateLOB"></a>Criar um plano para migrar aplicativos de linha de negócios  
  Um aplicativo LOB (linha de negócios) é um aplicativo de computador crítico para a administração de um negócio. Os aplicativos de LOB são os aplicativos de contabilidade, gerenciamento cadeia de fornecedores e planejamento de recursos.  
 
  Ao planejar a migração de seus aplicativos de LOB, consulte um provedor de aplicativo de LOB para determinar o método apropriado de migração de cada aplicativo. Você também deve localizar a mídia usada para instalar os aplicativos de LOB no Servidor de Destino.  
@@ -195,7 +195,7 @@ Para exibir a descrição e as soluções de um problema, clique no problema no 
 > [!NOTE]
 >  Depois de atualizar e preparar o servidor de origem para migração, você deve criar um backup do servidor atualizado antes de continuar o processo de migração.  
 
-## <a name="next-steps"></a>Próximas etapas  
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
  Você preparou o servidor de origem para migração para o Windows Server Essentials.  Agora vá para a [etapa 2: instalar o Windows Server Essentials como um novo controlador de domínio de réplica](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md).  
 
 Para exibir todas as etapas, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).

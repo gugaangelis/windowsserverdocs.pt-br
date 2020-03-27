@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5f87db78d6f07d11c36193b1a56cf66bd44e7160
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b55988d9e5d4832acf6c74039815c9e8c9a8a6ca
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356094"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318131"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>Verificar registro de servidor de um certificado do servidor
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este procedimento para verificar se os servidores do servidor de diretivas de rede (NPS) registraram um certificado de servidor da autoridade de certificação (CA).   
   
@@ -34,7 +34,7 @@ Para verificar se um certificado de servidor está configurado corretamente e re
   
 1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console de gerenciamento Microsoft (MMC) do servidor de diretivas de rede é aberto.  
   
-2.  Clique duas vezes em **políticas**, clique com o botão direito do mouse em **políticas de rede**e clique em **novo**. O assistente de nova política de rede é aberto.  
+2.  Clique duas vezes em **políticas**, clique com o botão direito do mouse em **políticas de rede**e clique em **novo**. O assistente Nova Diretiva de Rede é exibido.  
   
 3.  Em **especificar nome da política de rede e tipo de conexão**, em **nome da política**, digite **política de teste**. Verifique se o **tipo de servidor de acesso à rede** tem o valor **não especificado**e clique em **Avançar**.  
   
@@ -44,7 +44,7 @@ Para verificar se um certificado de servidor está configurado corretamente e re
   
 6.  Em **especificar permissão de acesso**, verifique se **acesso concedido** está selecionado e clique em **Avançar**.  
   
-7.  Em **Configurar métodos de autenticação**, clique em **Adicionar**. Em **Adicionar EAP**, clique em **Microsoft: EAP protegido (PEAP)**  e clique em **OK**. Em **tipos de EAP**, selecione **Microsoft: EAP protegido (PEAP)**  e clique em **Editar**. A caixa de diálogo **Editar propriedades EAP protegidas** é aberta.  
+7.  Em **Configurar métodos de autenticação**, clique em **Adicionar**. Em **Adicionar EAP**, clique em **Microsoft: EAP protegido (PEAP)** e clique em **OK**. Em **tipos de EAP**, selecione **Microsoft: EAP protegido (PEAP)** e clique em **Editar**. A caixa de diálogo **Editar propriedades EAP protegidas** é aberta.  
   
 8.  Na caixa de diálogo **Editar propriedades EAP protegidas** , em **certificado emitido para**, o NPS exibe o nome do certificado do servidor no formato *ComputerName*. *Domínio*. Por exemplo, se o seu NPS for chamado de NPS-01 e seu domínio for example.com, o NPS exibirá o certificado **NPS-01.example.com**. Além disso, no **emissor**, o nome da autoridade de certificação é exibido e, na **data de expiração**, a data de expiração do certificado do servidor é mostrada. Isso demonstra que o NPS registrou um certificado de servidor válido que pode ser usado para provar sua identidade para os computadores cliente que estão tentando acessar a rede por meio de seus servidores de acesso à rede, como servidores de rede virtual privada (VPN), compatíveis com 802.1 X pontos de acesso sem fio, Área de Trabalho Remota servidores de gateway e comutadores Ethernet compatíveis com 802.1 X.  
   

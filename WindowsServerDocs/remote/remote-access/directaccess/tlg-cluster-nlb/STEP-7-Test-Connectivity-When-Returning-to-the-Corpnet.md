@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5a7252d0-6db8-4a9d-98ee-75082ecd2929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fa89745d6efcae3591bba2aa5a694ee651bc9912
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 491533ae5d141de4ab4f15126d8977cf15c8f7f4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404860"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314682"
 ---
 # <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>ETAPA 7 testar a conectividade ao retornar ao corpnet
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Muitos de seus usuários se moverão entre locais remotos e o corpnet, portanto, é importante que, quando eles retornam ao corpnet, eles possam acessar recursos sem precisar fazer nenhuma alteração de configuração. O acesso remoto torna isso possível porque quando o cliente DirectAccess retorna para o corpnet, ele é capaz de estabelecer uma conexão com o servidor de local de rede. Depois que a conexão HTTPS for estabelecida com êxito ao servidor de local de rede, o cliente DirectAccess desabilitará a configuração do cliente DirectAccess e usará uma conexão direta com o corpnet.  
   
@@ -31,7 +31,7 @@ Muitos de seus usuários se moverão entre locais remotos e o corpnet, portanto,
   
 2. Abra uma janela do Windows PowerShell com privilégios elevados, digite **ipconfig/all**e pressione Enter. A saída indicará que CLIENT1 tem um endereço IP local e que não há nenhum túnel 6to4, Teredo ou IP-HTTPS ativo.  
   
-3. Teste a conectividade com o compartilhamento de rede em APP2. Na tela **Iniciar** , digite<strong>\\ \ APP2\FILES</strong>e pressione Enter. Você poderá abrir o arquivo nessa pasta.  
+3. Teste a conectividade com o compartilhamento de rede em APP2. Na tela **Iniciar** , digite<strong>\\\APP2\FILES</strong>e pressione Enter. Você poderá abrir o arquivo nessa pasta.  
   
 
 
