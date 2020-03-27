@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cbebd0388ccd5dd2540a20f5d325d7f97c7e2bb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8c1aef88aec45ee63614b889658daceca3779e91
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405434"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316006"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>Exportar uma configuração NPS para importação em outro servidor
 
@@ -50,7 +50,7 @@ A tabela a seguir lista os parâmetros para o cmdlet **Export-NpsConfiguration**
 
 **Credenciais administrativas**
 
-Para concluir este procedimento, você deve ser um membro do grupo Administradores.
+Para concluir este procedimento, é preciso ser um membro do grupo Administradores.
 
 ### <a name="export-example"></a>Exemplo de exportação 
 
@@ -85,7 +85,7 @@ Quando o comando **netsh nps Import** é executado, o NPS é atualizado automati
 
 **Credenciais administrativas**
 
-Para concluir este procedimento, você deve ser um membro do grupo Administradores.
+Para concluir este procedimento, é preciso ser um membro do grupo Administradores.
 
 ### <a name="to-copy-an-nps-configuration-to-another-nps-using-netsh-commands"></a>Para copiar uma configuração NPS para outro NPS usando comandos netsh
 

@@ -10,19 +10,19 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: 2356de674bfc6e57c9444136b1244934464a2d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396502"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316442"
 ---
 # <a name="nic-teaming"></a>Agrupamento NIC
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.  
   
@@ -40,7 +40,7 @@ Como o Windows Server 2016 dá suporte a até 32 interfaces de equipe por equipe
   
 Além disso, você pode conectar suas NICs agrupadas ao mesmo comutador ou a diferentes opções. Se você conectar NICs a diferentes comutadores, ambos os comutadores deverão estar na mesma sub-rede.  
   
-## <a name="availability"></a>Disponibilidade  
+## <a name="availability"></a>Availability  
 O agrupamento NIC está disponível em todas as versões do Windows Server 2016. Você pode usar uma variedade de ferramentas para gerenciar o agrupamento NIC de computadores que executam um sistema operacional cliente, como: • cmdlets do Windows PowerShell • Área de Trabalho Remota • Ferramentas de Administração de Servidor Remoto  
   
 ## <a name="supported-and-unsupported-nics"></a>NICs com e sem suporte   
@@ -97,7 +97,7 @@ Veja o porquê:
 -   Se a equipe estiver no modo de filas mínimas, os conjuntos de processadores usados pelos membros da equipe deverão ser idênticos.  
 
   
-## <a name="hyper-v-network-virtualization-hnv"></a>Virtualização de Rede Hyper-V (HNV)  
+## <a name="hyper-v-network-virtualization-hnv"></a>HNV (Virtualização de Rede Hyper-V)  
 O agrupamento NIC é totalmente compatível com a HNV (virtualização de rede do Hyper-V).  O sistema de gerenciamento de HNV fornece informações para o driver de agrupamento NIC que permite que o agrupamento NIC distribua a carga de forma a otimizar o tráfego HNV.  
   
 ## <a name="live-migration"></a>Migração ao vivo  
@@ -155,11 +155,11 @@ Como o failover entre NICs em uma VM pode resultar no tráfego enviado com o end
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Quando você configura uma equipe NIC com o modo independente de comutador e endereço hash ou distribuição dinâmica de carga, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário no tráfego de saída. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
+- [Uso e gerenciamento de endereço MAC de agrupamento NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): quando você configura uma equipe NIC com o modo independente de comutador e o hash ou a distribuição de carga dinâmica, a equipe usa o endereço MAC (controle de acesso à mídia) do membro da equipe NIC primário no tráfego de saída. O membro da equipe NIC primário é um adaptador de rede selecionado pelo sistema operacional do conjunto inicial de membros da equipe.
 
-- [Configurações de agrupamento NIC](nic-teaming-settings.md): Neste tópico, fornecemos uma visão geral das propriedades da equipe da NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
+- [Configurações de agrupamento NIC](nic-teaming-settings.md): neste tópico, fornecemos uma visão geral das propriedades da equipe NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
   
-- [Crie uma nova equipe NIC em um computador host ou VM](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): Neste tópico, você cria uma nova equipe NIC em um computador host ou em uma VM (máquina virtual) do Hyper-V que executa o Windows Server 2016.
+- [Criar uma nova equipe NIC em um computador host ou VM](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): neste tópico, você cria uma nova equipe NIC em um computador host ou em uma VM (máquina virtual) do Hyper-V que executa o Windows Server 2016.
 
-- [Solução de problemas de agrupamento NIC](Troubleshooting-NIC-Teaming.md): Neste tópico, discutiremos maneiras de solucionar problemas de agrupamento de NIC, como hardware, comutador físico de valores e desabilitar ou habilitar adaptadores de rede usando o Windows PowerShell. 
+- [Solução de problemas de agrupamento NIC](Troubleshooting-NIC-Teaming.md): neste tópico, discutimos maneiras de solucionar problemas de agrupamento de NIC, como hardware, comutador físico de valores e desabilitar ou habilitar adaptadores de rede usando o Windows PowerShell. 
  

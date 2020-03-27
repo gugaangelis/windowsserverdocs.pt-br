@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: dfde2e21-f3d5-41e8-8492-cb3f0d028afb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/25/2018
-ms.openlocfilehash: 0c154d4d4534f4c343107eecd158974b92903e39
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 26edf4d1ae4a30ccd9219392c7c4ee3604dcdad9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405567"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316361"
 ---
 # <a name="configure-network-policy-server-accounting"></a>Configurar a contabilização do Servidor de Políticas de Rede
 
@@ -90,7 +90,7 @@ Você pode usar este procedimento para registrar em log os dados de contabiliza�
 >[!NOTE]
 >O NPS formata dados de contabilidade como um documento XML que ele envia para o procedimento armazenado **report_event** no banco de dados SQL Server que você designa no NPS. Para que SQL Server log funcione corretamente, você deve ter um procedimento armazenado chamado **report_event** no banco de dados SQL Server que pode receber e analisar os documentos XML do NPS.
 
-A associação em admins. do domínio, ou equivalente, é o mínimo necessário para concluir este procedimento.
+A associação no Admins. do Domínio ou equivalente é o requisito mínimo exigido para concluir este procedimento.
 
 ### <a name="to-configure-sql-server-logging-in-nps"></a>Para configurar o log de SQL Server no NPS
 
@@ -122,7 +122,7 @@ Quando você configura uma entrada de registro para **ping User-Name**, o NPS co
 O **ping User-Name** não é instalado por padrão. Você deve adicionar **ping User-Name** ao registro. Você pode adicionar uma entrada ao registro usando o editor do registro.
 
 >[!CAUTION]
->a edição incorreta do Registro pode danificar gravemente o sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
+>A edição incorreta do Registro poderá causar danos graves ao sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.
 
 ### <a name="to-add-ping-user-name-to-the-registry"></a>Para adicionar ping User-Name ao registro
 

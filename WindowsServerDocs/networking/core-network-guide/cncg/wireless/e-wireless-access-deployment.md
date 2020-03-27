@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f07520dcdefa04cb43760c5e5c66e28c0d1ce878
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ddc5ebd5f2e00251bcd1cdd915702902dcdb14ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322108"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318090"
 ---
 # <a name="wireless-access-deployment"></a>Implantação de acesso sem fio
 
@@ -31,7 +31,7 @@ Siga estas etapas para implantar o acesso sem fio:
 
 - [Unir novos computadores sem fio ao domínio](#bkmk_domain)
 
-## <a name="bkmk_aps"></a>Implantar e configurar APs sem fio
+## <a name="deploy-and-configure-wireless-aps"></a><a name="bkmk_aps"></a>Implantar e configurar APs sem fio
 
 Siga estas etapas para implantar e configurar seus APs sem fio:
 
@@ -42,7 +42,7 @@ Siga estas etapas para implantar e configurar seus APs sem fio:
 >[!NOTE]
 >Os procedimentos deste guia não incluem instruções para os casos em que a caixa de diálogo **Controle de Conta de Usuário** é aberta para solicitar sua permissão para continuar. Caso essa caixa de diálogo seja aberta durante a execução dos procedimentos deste guia e em resposta às suas ações, clique em **Continuar**.
 
-### <a name="bkmk_channel"></a>Especificar frequências de canal AP sem fio
+### <a name="specify-wireless-ap-channel-frequencies"></a><a name="bkmk_channel"></a>Especificar frequências de canal AP sem fio
 
 Ao implantar vários APs sem fio em um único site geográfico, você deve configurar APs sem fio que têm sinais sobrepostos para usar frequências de canal exclusivas para reduzir a interferência entre APs sem fio.
 
@@ -52,7 +52,7 @@ Você pode usar as diretrizes a seguir para ajudá-lo a escolher as frequências
 
 - Identifique sinais sem fio sobrepostos em andares adjacentes em sua própria organização. Depois de identificar áreas de cobertura sobrepostas fora e dentro de sua organização, atribua frequências de canal para seus APs sem fio, garantindo que quaisquer dois APs sem fio com cobertura sobreposta sejam atribuídos a frequências de canal diferentes.
 
-### <a name="bkmk_wirelessaps"></a>Configurar APs sem fio
+### <a name="configure-wireless-aps"></a><a name="bkmk_wirelessaps"></a>Configurar APs sem fio
 
 Use as informações a seguir junto com a documentação do produto fornecida pelo fabricante do AP sem fio para configurar seus APs sem fio.
 
@@ -95,7 +95,7 @@ Siga estas etapas para criar um ou mais grupos de segurança de usuários sem fi
 
 - [Adicionar usuários ao grupo de segurança sem fio](#bkmk_addusers)
 
-### <a name="bkmk_groups"></a>Criar um grupo de segurança de usuários sem fio
+### <a name="create-a-wireless-users-security-group"></a><a name="bkmk_groups"></a>Criar um grupo de segurança de usuários sem fio
 
 Você pode usar este procedimento para criar um grupo de segurança sem fio no console de gerenciamento do Active Directory usuários e computadores \(MMC\) snap\-in.  
 
@@ -123,7 +123,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 Se você precisar de mais de um grupo de segurança para usuários sem fio, repita essas etapas para criar grupos de usuários sem fio adicionais. Posteriormente, você pode criar políticas de rede individuais no NPS para aplicar diferentes condições e restrições a cada grupo, fornecendo a eles permissões de acesso e regras de conectividade diferentes.
 
-### <a name="bkmk_addusers"></a>Adicionar usuários ao grupo de segurança usuários sem fio
+### <a name="add-users-to-the-wireless-users-security-group"></a><a name="bkmk_addusers"></a>Adicionar usuários ao grupo de segurança usuários sem fio
 
 Você pode usar este procedimento para adicionar um usuário, computador ou grupo ao grupo de segurança sem fio no console de gerenciamento do Active Directory usuários e computadores \(MMC\) snap\-no.
 
@@ -155,7 +155,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 4. Para atribuir a associação de grupo a outros computadores, repita as etapas 1\-3 deste procedimento.
 
-## <a name="bkmk_policies"></a>Configurar a rede sem fio \(as políticas de\) do IEEE 802,11
+## <a name="configure-wireless-network-ieee-80211-policies"></a><a name="bkmk_policies"></a>Configurar a rede sem fio \(as políticas de\) do IEEE 802,11
 
 Siga estas etapas para configurar a rede sem fio \(IEEE 802,11\) políticas Política de Grupo extensão:
 
@@ -165,7 +165,7 @@ Siga estas etapas para configurar a rede sem fio \(IEEE 802,11\) políticas Pol�
 
 - [Configurar a nova política de rede sem fio](#bkmk_policyconfig)
 
-### <a name="bkmk_opengpme"></a>Abrir ou adicionar e abrir um objeto Política de Grupo
+### <a name="open-or-add-and-open-a-group-policy-object"></a><a name="bkmk_opengpme"></a>Abrir ou adicionar e abrir um objeto Política de Grupo
 
 Por padrão, o recurso de gerenciamento de Política de Grupo é instalado em computadores que executam o Windows Server 2016 quando o Active Directory Domain Services \(AD DS função de servidor\) está instalado e o servidor é configurado como um controlador de domínio. O procedimento a seguir descreve como abrir o Console de Gerenciamento de Política de Grupo \(GPMC\) no controlador de domínio. Em seguida, o procedimento descreve como abrir um domínio existente\-nível Política de Grupo objeto \(GPO\) para edição ou criar um novo GPO de domínio e abri-lo para edição.
 
@@ -191,7 +191,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 Na próxima seção, você usará Editor de Gerenciamento de Política de Grupo para criar a política sem fio.
 
-### <a name="bkmk_activate"></a>Ativar a rede sem fio padrão \(as políticas de\) IEEE 802,11
+### <a name="activate-default-wireless-network-ieee-80211-policies"></a><a name="bkmk_activate"></a>Ativar a rede sem fio padrão \(as políticas de\) IEEE 802,11
 
 Este procedimento descreve como ativar a rede sem fio padrão \(as políticas de\) do IEEE 802,11 usando o Editor de Gerenciamento de Política de Grupo \(GPME\).
 
@@ -220,7 +220,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
 Na próxima seção, você pode executar a configuração de política, a ordem de preferência de processamento de política e as permissões de rede.
 
-### <a name="bkmk_policyconfig"></a>Configurar a nova política de rede sem fio
+### <a name="configure-the-new-wireless-network-policy"></a><a name="bkmk_policyconfig"></a>Configurar a nova política de rede sem fio
 
 Você pode usar os procedimentos nesta seção para configurar a rede sem fio \(a política de\) do IEEE 802,11. Essa política permite que você defina configurações de segurança e autenticação, gerencie perfis sem fio e especifique permissões para redes sem fio que não estão configuradas como redes preferenciais.
 
@@ -230,7 +230,7 @@ Você pode usar os procedimentos nesta seção para configurar a rede sem fio \(
 
 - [Definir permissões de rede](#bkmk_permissions)  
 
-#### <a name="bkmk_configureprofile"></a>Configurar um perfil de conexão sem fio para PEAP\-MS\-CHAP v2
+#### <a name="configure-a-wireless-connection-profile-for-peap-ms-chap-v2"></a><a name="bkmk_configureprofile"></a>Configurar um perfil de conexão sem fio para PEAP\-MS\-CHAP v2
 
 Este procedimento fornece as etapas necessárias para configurar um perfil sem fio PEAP\-MS\-CHAP v2.  
 
@@ -309,7 +309,7 @@ A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo 
 
 Na próxima seção, você pode ordenar os perfis de política para garantir a segurança ideal.
 
-#### <a name="bkmk_preferenceorder"></a>Definir a ordem de preferência para perfis de conexão sem fio
+#### <a name="set-the-preference-order-for-wireless-connection-profiles"></a><a name="bkmk_preferenceorder"></a>Definir a ordem de preferência para perfis de conexão sem fio
 Você pode usar este procedimento se tiver criado vários perfis sem fio em sua política de rede sem fio e desejar solicitar os perfis para obter a eficácia e a segurança ideais.
 
 Para garantir que os clientes sem fio se conectem com o nível mais alto de segurança que eles podem dar suporte, coloque suas políticas mais restritivas na parte superior da lista.
@@ -332,7 +332,7 @@ A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo 
 
 Na seção a seguir, você pode definir permissões de rede para a política sem fio.
 
-#### <a name="bkmk_permissions"></a>Definir permissões de rede
+#### <a name="define-network-permissions"></a><a name="bkmk_permissions"></a>Definir permissões de rede
 Você pode definir as configurações na guia **permissões de rede** para os membros do domínio aos quais a rede sem fio \(IEEE 802,11\) políticas se aplicam.
 
 Você só pode aplicar as seguintes configurações para redes sem fio que não estão configuradas na guia **geral** da página **Propriedades da política de rede sem fio** :
@@ -382,7 +382,7 @@ A associação em **Admins**. do domínio, ou equivalente, é o mínimo necessá
 
     -   Para especificar que os usuários só podem se conectar a redes permitidas usando perfis de Política de Grupo, selecione **usar somente perfis de política de grupo para redes permitidas**.
 
-## <a name="bkmk_nps"></a>Configurar seu NPSs
+## <a name="configure-your-npss"></a><a name="bkmk_nps"></a>Configurar seu NPSs
 Siga estas etapas para configurar o NPSs para executar a autenticação 802.1 X para acesso sem fio:
 
 - [Registrar o NPS no Active Directory Domain Services](#bkmk_npsreg)
@@ -391,7 +391,7 @@ Siga estas etapas para configurar o NPSs para executar a autenticação 802.1 X 
 
 - [Criar políticas de NPS para 802.1 X sem fio usando um assistente](#bkmk_npspolicy)
 
-### <a name="bkmk_npsreg"></a>Registrar o NPS no Active Directory Domain Services
+### <a name="register-nps-in-active-directory-domain-services"></a><a name="bkmk_npsreg"></a>Registrar o NPS no Active Directory Domain Services
 Você pode usar este procedimento para registrar um servidor que esteja executando o servidor de diretivas de rede \(NPS\) no Active Directory Domain Services \(AD DS no domínio em que o NPS é membro.\) Para que o NPSs receba permissão para ler a\-de discagem em Propriedades de contas de usuário durante o processo de autorização, cada NPS deve ser registrado em AD DS. O registro de um NPS adiciona o servidor ao grupo de segurança **Servidores RAS e ias** em AD DS.
 
 >[!NOTE]
@@ -409,7 +409,7 @@ A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo 
 
 3. Em **Servidor de Políticas de Rede**, clique em **OK** e em **OK** novamente.
 
-### <a name="bkmk_radiusclient"></a>Configurar um AP sem fio como um cliente RADIUS NPS
+### <a name="configure-a-wireless-ap-as-an-nps-radius-client"></a><a name="bkmk_radiusclient"></a>Configurar um AP sem fio como um cliente RADIUS NPS
 Você pode usar este procedimento para configurar um AP, também conhecido como *servidor de acesso à rede \(\)do nas* , como um\-de autenticação remota no serviço de usuário \(o cliente do RADIUS\) usando o snap\-do NPS no. 
 
 >[!IMPORTANT]
@@ -450,7 +450,7 @@ A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo 
 
 9. Clique em **OK**. Seu NAS aparece na lista de clientes RADIUS configurados no NPS.
 
-### <a name="bkmk_npspolicy"></a>Criar políticas de NPS para 802.1 X sem fio usando um assistente
+### <a name="create-nps-policies-for-8021x-wireless-using-a-wizard"></a><a name="bkmk_npspolicy"></a>Criar políticas de NPS para 802.1 X sem fio usando um assistente
 Você pode usar este procedimento para criar as políticas de solicitação de conexão e as políticas de rede necessárias para implantar o 802.1 X\-pontos de acesso sem fio com capacidade de autenticação remota\-no serviço de usuário \(RADIUS\) clientes para o servidor RADIUS que está executando o servidor de políticas de rede \(NPS\).  
 Depois de executar o assistente, as seguintes políticas são criadas:
 
@@ -512,7 +512,7 @@ A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo 
 
 Suas políticas de NPS agora são criadas e você pode passar para ingressar computadores sem fio no domínio.
 
-## <a name="bkmk_domain"></a>Unir novos computadores sem fio ao domínio
+## <a name="join-new-wireless-computers-to-the-domain"></a><a name="bkmk_domain"></a>Unir novos computadores sem fio ao domínio
 O método mais fácil de unir novos computadores sem fio ao domínio é anexar fisicamente o computador a um segmento da LAN com fio \(um segmento não controlado por um comutador 802.1 X\) antes de ingressar o computador no domínio. Isso é mais fácil porque as configurações da diretiva de grupo sem fio são aplicadas automaticamente e imediatamente e, se você tiver implantado sua própria PKI, o computador receberá o certificado de autoridade de certificação e o colocará no repositório de certificados de autoridades de certificação raiz confiáveis, permitir que o cliente sem fio confie no NPSs com certificados de servidor emitidos pela sua autoridade de certificação.
 
 Da mesma forma, depois que um novo computador sem fio é ingressado no domínio, o método preferencial para que os usuários façam logon no domínio é fazer logon usando uma conexão com fio com a rede.
@@ -528,7 +528,7 @@ Para obter mais informações, consulte a seção [ingressar no domínio e fazer
 
 Para obter mais informações, consulte a seção [ingressar no domínio e fazer logon usando a configuração de perfil sem fio de Bootstrap por usuários](#bkmk_userbootstrap).
 
-### <a name="bkmk_itstaff"></a>Ingressar no domínio e fazer logon usando o método de configuração do computador da equipe de ti
+### <a name="join-the-domain-and-log-on-by-using-the-it-staff-computer-configuration-method"></a><a name="bkmk_itstaff"></a>Ingressar no domínio e fazer logon usando o método de configuração do computador da equipe de ti
 Os usuários membros do domínio com computadores cliente sem fio ingressados no domínio\-podem usar um perfil sem fio temporário para se conectar a uma rede sem fio autenticada 802.1 X\-sem primeiro se conectar à LAN com fio. Esse perfil sem fio temporário é chamado de *perfil sem fio de Bootstrap*.
 
 Um perfil sem fio de Bootstrap exige que o usuário especifique manualmente suas credenciais de conta de usuário de domínio e não valida o certificado do\-de discagem de autenticação remota no serviço de usuário \(servidor de\) RADIUS que executa o servidor de diretivas de rede \(\)do NPS.
@@ -560,7 +560,7 @@ Depois de ingressar o computador no domínio, use este procedimento para configu
 
 Quando o usuário inicia o computador, o Windows solicita que o usuário insira seu nome de conta de usuário de domínio e senha. Como o logon único está habilitado, o computador usa as credenciais da conta de usuário de domínio para primeiro estabelecer uma conexão com a rede sem fio e, em seguida, fazer logon no domínio.
 
-#### <a name="bkmk_w10"></a>Faça logon no domínio usando computadores que executam o Windows 10
+#### <a name="log-on-to-the-domain-using-computers-running-windows-10"></a><a name="bkmk_w10"></a>Faça logon no domínio usando computadores que executam o Windows 10
 
 1. Faça logoff do computador ou o reinicie.
 
@@ -575,7 +575,7 @@ Quando o usuário inicia o computador, o Windows solicita que o usuário insira 
 >[!NOTE]
 >Se a tela **outro usuário** não incluir o logon de texto em **:** e seu nome de domínio, você deverá inserir seu nome de usuário no formato *domínio\\usuário*. Por exemplo, para fazer logon no domínio example.com com uma conta denominada **usuário\-01**, digite o **exemplo\\usuário\-01**.
 
-### <a name="bkmk_userbootstrap"></a>Ingressar no domínio e fazer logon usando a configuração de perfil sem fio de Bootstrap por usuários
+### <a name="join-the-domain-and-log-on-by-using-bootstrap-wireless-profile-configuration-by-users"></a><a name="bkmk_userbootstrap"></a>Ingressar no domínio e fazer logon usando a configuração de perfil sem fio de Bootstrap por usuários
 Com esse método, você conclui as etapas na seção etapas gerais e, em seguida, fornece ao seu domínio\-usuários Membros com as instruções sobre como configurar manualmente um computador sem fio com um perfil sem fio de bootstrap. O perfil sem fio de Bootstrap permite que o usuário estabeleça uma conexão sem fio e, em seguida, ingresse no domínio. Depois que o computador é ingressado no domínio e reiniciado, o usuário pode fazer logon no domínio por meio de uma conexão sem fio.
 
 #### <a name="general-steps"></a>Etapas gerais

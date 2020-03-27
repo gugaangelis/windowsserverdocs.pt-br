@@ -3,7 +3,7 @@ title: Mover configurações e dados para o servidor de destino para migração 
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 2b882e87-347a-4010-b7fd-9599d61198dd
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8e173de32230a219bec99586e1b5b533bbe84b73
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 4f4ba08c17429f70ef754b0861553e38ba116e5d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826970"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318836"
 ---
 # <a name="move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover configurações e dados para o servidor de destino para migração para o Windows Server Essentials
 
@@ -29,7 +29,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
 
 2. [Configurar a rede](#configure-the-network) 
 
-3. [Mapear os computadores permitidos para contas de usuário](#map-permitted-computers-to-user-accounts)
+3. [Mapear computadores permitidos para contas de usuário](#map-permitted-computers-to-user-accounts)
  
 ## <a name="copy-data-to-the-destination-server"></a>Copie os dados para o servidor de destino
  Antes de copiar os dados do servidor de origem para o servidor de destino, execute as seguintes tarefas: 
@@ -50,9 +50,9 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
  Onde:
  - \<SourceServerName\> é o nome do servidor de origem
- - \<Nomedapastacompartilhadadeorigem\> é o nome da pasta compartilhada no servidor de origem
- - \<Nomeservidordestino\> é o nome do servidor de destino,
- - \<Nomedapastacompartilhadadedestino\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados. 
+ - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem
+ - \<DestinationServerName\> é o nome do servidor de destino,
+ - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para a qual os dados serão copiados. 
  
 3. Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem. 
  
@@ -63,15 +63,15 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
 1. No servidor de destino, abra o painel. 
  
-2. Na página **Home** do painel, clique em **INSTALAÇÃO**, clique em **Configurar Acesso em Qualquer Local**e escolha a opção **Clique para configurar o Acesso em Qualquer Local** . 
+2. Na página **Home** do painel, clique em **INSTALAÇÃO**, clique em **Configurar Acesso em Qualquer Local** e escolha a opção **Clique para configurar o Acesso em Qualquer Local**. 
  
 3. Siga as instruções no assistente para configurar seu roteador e nomes de domínio. 
  
  Se o roteador não oferecer suporte para a estrutura UPnP, ou se a estrutura UPnP estiver desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que sejam direcionadas para o endereço IP do servidor de destino: 
  
-- Porta 80: Tráfego da Web HTTP 
+- Porta 80: tráfego HTTP da Web 
  
-- Porta 443: Tráfego da Web HTTPS 
+- Porta 443: tráfego HTTPS da Web 
  
 ## <a name="map-permitted-computers-to-user-accounts"></a>Mapeie os computadores permitidos para as contas de usuário
  Cada conta de usuário que for migrada do servidor de origem deve ser mapeada para um ou mais computadores. 
@@ -86,7 +86,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  
 4. Clique na guia **Acesso em Qualquer Local** e, em seguida, clique em **Permitir Acesso Remoto via Web e acesso a aplicativos de serviços Web**. 
  
-5. Selecione **Pastas Compartilhadas**, selecione **Computadores**, selecione **Links da Home Page**e, em seguida, clique em **Aplicar**. 
+5. Selecione **Pastas Compartilhadas**, selecione **Computadores**, selecione **Links da Home Page** e, em seguida, clique em **Aplicar**. 
  
 6. Clique na guia **Acesso ao Computador** e, em seguida, clique no nome do computador ao qual deseja permitir o acesso. 
  

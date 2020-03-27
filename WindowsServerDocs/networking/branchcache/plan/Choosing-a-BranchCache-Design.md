@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 86c1ccad-2aa4-40fe-84c1-f77c49eb1216
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a1b4615dfda3989f0321725fd27da066fcb8a5e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ca605589d28811f96296f2ff865e8ae6923304c3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406318"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319112"
 ---
 # <a name="choosing-a-branchcache-design"></a>Escolher um design para o BranchCache
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre os modos de BranchCache e para selecionar os melhores modos para sua implantação.  
   

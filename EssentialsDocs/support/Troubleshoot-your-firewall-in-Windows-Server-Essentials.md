@@ -3,7 +3,7 @@ title: Solucionar problemas do firewall no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 11372589528fcc78e0053bc7002449b53cb3181d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 15a2361284d041898d9ad7240643fdb55aa5b866
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436047"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318581"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Solucionar problemas do firewall no Windows Server Essentials
  
@@ -27,7 +27,7 @@ ms.locfileid: "66436047"
   
 ### <a name="to-run-the-repair-anywhere-access-wizard"></a>Para executar o assistente Reparar Acesso em Qualquer Local  
   
-1. Abra o Painel.  
+1. Abra o Dashboard.  
   
 2. Clique em **Configurações**, clique na guia **Acesso em Qualquer Local** e clique em **Reparar**.  
   
@@ -45,11 +45,11 @@ ms.locfileid: "66436047"
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar Acesso via Web remotos](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Gerenciar o acesso via Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Gerenciar Acesso via Web remotos](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Gerenciar o acesso em qualquer lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Gerenciar acesso em qualquer local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   

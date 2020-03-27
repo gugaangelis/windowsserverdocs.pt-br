@@ -3,7 +3,7 @@ title: 'Etapa 6: Rebaixar e remover o servidor de origem da nova rede do Windows
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6842137dd498b11bccc2216023d648d61edbb87e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3df8b2901ca2ca3d38066c592aaeb326d7471ba0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432538"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318730"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Etapa 6: Rebaixar e remover o servidor de origem da nova rede do Windows Server Essentials
 
@@ -25,15 +25,15 @@ ms.locfileid: "66432538"
 
 Depois de concluir a instalação do Windows Server Essentials e concluir a migração, você deve executar as seguintes tarefas:  
   
-1.  [Remover serviços de certificados do Active Directory](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
+1.  [Remover Active Directory serviços de certificados](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
   
-2.  [Desconectar impressoras diretamente conectadas ao servidor de origem](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)  
+2.  [Desconecte as impressoras que estão conectadas diretamente ao servidor de origem](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)  
   
 3.  [Rebaixar o servidor de origem](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_DemoteTheSourceServer)  
   
 4.  [Remover e realocar o servidor de origem](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)  
   
-##  <a name="BKMK_ADCS"></a> Remover serviços de certificados do Active Directory  
+##  <a name="remove-active-directory-certificate-services"></a><a name="BKMK_ADCS"></a>Remover Active Directory serviços de certificados  
  O procedimento é ligeiramente diferente se você tiver vários serviços de função de serviços de certificados do Active Directory (AD CS) instalados em um único servidor. Você pode usar o procedimento a seguir para desinstalar um serviço de função do AD CS e reter outros serviços de função do AD CS.  
   
  Para concluir este procedimento, faça logon com as mesmas permissões do usuário que instalou a autoridade de certificação (CA). Se você estiver desinstalando uma AC corporativa, a associação em Admins Corporativos ou equivalente será o requisito mínimo para concluir este procedimento.  
@@ -44,7 +44,7 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
   
 2.  Clique em **Iniciar**, clique em **Ferramentas Administrativas** e clique em **Gerenciador do Servidores**.  
   
-3.  Clique em **Continuar** na caixa de diálogo **Controle de Conta de Usuário** .  
+3.  Clique em **Continuar** na caixa de diálogo **Controle de Conta de Usuário**.  
   
 4.  Na seção **Resumo de Funções**, clique em **Remover Funções**.  
   
@@ -65,10 +65,10 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
     > [!IMPORTANT]
     >  Reinicie o servidor mesmo que isso não seja solicitado.  
   
-##  <a name="BKMK_PhysicallyDisconnect"></a> Desconectar impressoras diretamente conectadas ao servidor de origem  
- Antes de rebaixar o servidor de origem, desconecte fisicamente todas as impressoras diretamente conectadas ao servidor de origem e compartilhadas por meio do servidor de origem. Garanta que nenhum objeto do Active Directory permaneça para as impressoras estiverem diretamente conectadas ao servidor de origem. As impressoras podem ser diretamente conectadas ao servidor de destino e compartilhadas do Windows Server Essentials.  
+##  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a>Desconecte as impressoras que estão conectadas diretamente ao servidor de origem  
+ Antes de rebaixar o servidor de origem, desconecte fisicamente todas as impressoras diretamente conectadas ao servidor de origem e compartilhadas por meio do servidor de origem. Garanta que nenhum objeto do Active Directory permaneça para as impressoras estiverem diretamente conectadas ao servidor de origem. As impressoras podem ser conectadas diretamente ao servidor de destino e compartilhadas do Windows Server Essentials.  
   
-##  <a name="BKMK_DemoteTheSourceServer"></a> Rebaixar o servidor de origem  
+##  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a>Rebaixar o servidor de origem  
  Antes de rebaixar o servidor de origem da função de controlador de domínio AD DS para a função de um servidor membro de domínio, certifique-se de que as configurações de política de grupo tenham sido aplicadas a todos os computadores cliente, conforme descrito no procedimento a seguir.  
   
 > [!IMPORTANT]
@@ -84,21 +84,21 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
   
 4. O processo pode exigir fazer logoff e logon novamente para ser concluído. Clique em **Sim** para confirmar.  
   
-   Se você estiver migrando do Windows Server Essentials ou suas versões anteriores, para rebaixar o servidor, consulte [remover serviços de domínio Active Directory](https://technet.microsoft.com/library/hh472163.aspx). Depois de adicionar o servidor de origem como um membro de um grupo de trabalho e desconectá-lo da rede, remova-o do AD DS no servidor de destino.  
+   Se você estiver migrando do Windows Server Essentials ou de suas versões anteriores, para rebaixar o servidor, consulte [remover Active Directory Domain Services](https://technet.microsoft.com/library/hh472163.aspx). Depois de adicionar o servidor de origem como um membro de um grupo de trabalho e desconectá-lo da rede, remova-o do AD DS no servidor de destino.  
   
-   Se você estiver migrando do Windows Server Essentials, use o Gerenciador do servidor para remover a função de serviços de domínio do Active Directory, rebaixando assim o controlador de domínio no servidor de origem usando o procedimento a seguir:  
+   Se você estiver migrando do Windows Server Essentials, use Gerenciador do Servidor para remover a função Active Directory Domain Services, rebaixando o controlador de domínio no servidor de origem usando o seguinte procedimento:  
   
 #### <a name="to-remove-the-source-server-from-active-directory"></a>Para remover o servidor de origem do Active Directory  
   
 1.  No servidor de destino, abra **Usuários e Computadores do Active Directory**.  
   
-2.  No painel de navegação **Usuários e Computadores do Active Directory** , expanda o nome do domínio e expanda **Computadores**.  
+2.  No painel de navegação **Usuários e Computadores do Active Directory**, expanda o nome do domínio e expanda **Computadores**.  
   
 3.  Se o servidor de origem ainda existe na lista de servidores, clique com botão direito no nome do servidor de origem, clique em **Excluir** e depois clique em **Sim**.  
   
 4.  Verifique se o servidor de origem não está listado e, em seguida, feche **Usuários e Computadores do Active Directory**.  
   
-##  <a name="BKMK_RemoveTheSourceServer"></a> Remover e realocar o servidor de origem  
+##  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>Remover e realocar o servidor de origem  
  Desative o servidor de origem e desconecte-o da rede. É recomendável não reformatar o servidor de origem por pelo menos uma semana para garantir que todos os dados necessários sejam migrados para o servidor de destino. Depois de ter verificado que todos os dados foram migrados, você pode reinstalar este servidor na rede como um servidor secundário para outras tarefas, se necessário.  
   
 > [!NOTE]
@@ -106,8 +106,8 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
   
  Depois de rebaixar o servidor de origem, ele não está em estado íntegro. Se você desejar realocar o servidor de origem, a maneira mais simples é reformatá-lo, instalar um sistema operacional de servidor e, em seguida, configurá-lo para uso como um servidor adicional.  
   
-## <a name="next-steps"></a>Próximas etapas  
- Você rebaixou e removeu o servidor de origem da nova rede do Windows Server Essentials. Agora vá para [etapa 7: Realizar tarefas pós-migração para a migração do Windows Server Essentials](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md).  
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
+ Você rebaixou e removeu o servidor de origem da nova rede do Windows Server Essentials. Agora vá para a [etapa 7: executar tarefas de pós-implantação para a migração do Windows Server Essentials](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md).  
   
 
 Para exibir todas as etapas, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).

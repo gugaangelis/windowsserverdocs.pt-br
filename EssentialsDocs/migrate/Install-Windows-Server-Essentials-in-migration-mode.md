@@ -1,9 +1,9 @@
 ---
-title: Instalar o Windows Server Essentials no modo1 de migração
+title: Instalar o Windows Server Essentials no mode1 de migração
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,22 +12,22 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 74c40cc0f06d73a922a3d7fb819f7e71b47ac088
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: dbbd9f7303995e1547e48aa9701467b45e4bad34
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432959"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318992"
 ---
-# <a name="install-windows-server-essentials-in-migration-mode1"></a>Instalar o Windows Server Essentials no modo1 de migração
+# <a name="install-windows-server-essentials-in-migration-mode1"></a>Instalar o Windows Server Essentials no mode1 de migração
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Você pode ter apenas um servidor em sua rede que está executando o Windows Server Essentials, e ele deve ser um controlador de domínio para a rede.  
+Você pode ter apenas um servidor em sua rede que esteja executando o Windows Server Essentials e esse servidor deve ser um controlador de domínio para a rede.  
   
- Quando você instala o Windows Server Essentials no modo de migração, o Assistente de instalação executa as seguintes tarefas:  
+ Quando você instala o Windows Server Essentials no modo de migração, o assistente de instalação executa as seguintes tarefas:  
   
-1.  Instala e configura o software de servidor do Windows Server Essentials no servidor de destino.  
+1.  Instala e configura o software do servidor do Windows Server Essentials no servidor de destino.  
   
 2.  Atualiza o esquema de domínio para a versão mais recente.  
   
@@ -42,15 +42,15 @@ Você pode ter apenas um servidor em sua rede que está executando o Windows Ser
   
 6.  Configura o servidor de destino como o servidor de licenciamento de site.  
   
-##  <a name="BKMK_Install"></a> Instalar o Windows Server Essentials no servidor de destino  
+##  <a name="install-windows-server-essentials-on-the-destination-server"></a><a name="BKMK_Install"></a>Instalar o Windows Server Essentials no servidor de destino  
  Para instalar e configurar o Windows Server Essentials no servidor de destino no modo de migração, execute o procedimento a seguir.  
   
 #### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>Para instalar o Windows Server Essentials no servidor de destino  
   
-1. Ative o servidor de destino e insira o DVD1 do Windows Server Essentials na unidade de DVD. Se você visualizar uma mensagem perguntando se deseja inicializar a partir de um CD ou DVD, pressione qualquer tecla.  
+1. Ligue o servidor de destino e insira o DVD1 do Windows Server Essentials na unidade de DVD. Se você visualizar uma mensagem perguntando se deseja inicializar a partir de um CD ou DVD, pressione qualquer tecla.  
   
    > [!NOTE]
-   >  Se o servidor de destino der suporte à inicialização a partir de uma unidade flash USB, você pode usar o **ferramenta de Download de USB/DVD do Windows 7** para criar uma unidade Flash USB inicializável do arquivo ISO do Windows Server Essentials. O uso uma unidade flash USB pode acelerar consideravelmente o processo de instalação, pois as unidades flash leem dados muito mais rapidamente do que as unidades de DVD-ROM. Depois de criar uma unidade flash USB inicializável, você pode adicionar um arquivo de resposta para a unidade flash. Você pode [baixar a ferramenta de Download de USB/DVD do Windows 7](https://go.microsoft.com/fwlink/p/?LinkId=248282) gratuitamente no site da Microsoft Store.  
+   >  Se o servidor de destino oferecer suporte à inicialização a partir de uma unidade flash USB, você poderá usar a **ferramenta de Download USB/DVD do Windows 7** para criar uma unidade flash USB inicializável a partir do arquivo ISO do Windows Server Essentials. O uso uma unidade flash USB pode acelerar consideravelmente o processo de instalação, pois as unidades flash leem dados muito mais rapidamente do que as unidades de DVD-ROM. Depois de criar uma unidade flash USB inicializável, você pode adicionar um arquivo de resposta para a unidade flash. Você pode [baixar a ferramenta de download de USB/DVD do Windows 7](https://go.microsoft.com/fwlink/p/?LinkId=248282) gratuita no site Microsoft Store.  
   
    > [!NOTE]
    >  Se o servidor de destino não inicializar do DVD, reinicie o computador e verifique a configuração do BIOS para garantir que o **DVD-ROM** seja listado primeiro na sequência de inicialização. Para obter mais informações sobre como alterar a sequência de inicialização de configuração do BIOS, consulte a documentação do fabricante do hardware.  
@@ -68,9 +68,9 @@ Você pode ter apenas um servidor em sua rede que está executando o Windows Ser
    Após a conclusão da instalação, você é automaticamente conectado com a conta de usuário administrador e a senha fornecidas no arquivo de resposta da migração.  
   
 > [!NOTE]
->  Para desbloquear a área de trabalho durante a instalação do Windows Server Essentials, use a conta de administrador interno e deixe a senha em branco.  
+>  Para desbloquear a área de trabalho enquanto o Windows Server Essentials está sendo instalado, use a conta interna de administrador e deixe a senha em branco.  
   
-##  <a name="BKMK_VerifyTheHealthOfDC"></a> Verificar a integridade do controlador de domínio  
+##  <a name="verify-the-health-of-the-domain-controller"></a><a name="BKMK_VerifyTheHealthOfDC"></a>Verificar a integridade do controlador de domínio  
  Antes de prosseguir com a migração, você deve garantir que o controlador de domínio e a rede do Windows Server Essentials estejam íntegros.  
   
  A tabela a seguir lista as ferramentas que você pode usar para diagnosticar problemas em sua rede e o servidor de destino e no domínio:  
@@ -84,4 +84,4 @@ Você pode ter apenas um servidor em sua rede que está executando o Windows Ser
  Você deve corrigir todos os problemas apresentados pelas ferramentas antes de continuar a migração.  
   
 > [!NOTE]
->  Se você planeja migrar emails para outro servidor do Exchange no local, consulte [integrar um servidor do Exchange local com o Windows Server Essentials](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md) para obter informações sobre como configurar seu servidor do Exchange no local.
+>  Se você planeja migrar um email para outro servidor local do Exchange, consulte [integrar um Exchange Server local ao Windows Server Essentials](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md) para obter informações sobre como configurar seu Exchange Server local.

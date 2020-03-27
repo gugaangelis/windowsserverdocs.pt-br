@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 13f535b9a91f26b30600b637b46817cfa33ccd7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ad13e41e756f0185a748fe9e17df64c71a8754bc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355653"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317077"
 ---
 # <a name="network-controller"></a>Controlador de rede
 
@@ -32,7 +32,7 @@ Usando o Controlador de Rede, você pode automatizar a configuração da infraes
 > - [Etapas pós-implantação para o controlador de rede](post-deploy-steps-nc.md)
 > - [Cmdlets do controlador de rede](https://technet.microsoft.com/library/mt576401.aspx) 
 
-## <a name="bkmk_overview"></a>Visão geral do controlador de rede
+## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>Visão geral do controlador de rede
 
 O controlador de rede é uma função de servidor altamente disponível e escalonável e fornece uma interface de programação de aplicativo \(\) de API que permite que o controlador de rede se comunique com a rede e uma segunda API que permite que você se comunique com o controlador de rede.
 
@@ -56,7 +56,7 @@ Usando o Windows PowerShell, a API REST ou um aplicativo de gerenciamento, você
 
 - VMs e comutadores virtuais do Hyper-V
 
-- Firewall do datacenter
+- Firewall do Datacenter
 
 - Serviço de acesso remoto \(RAS\) gateways de multilocatário, gateways virtuais e pools de gateway
 
@@ -70,7 +70,7 @@ Se você estiver implantando o controlador de rede em um ambiente de laboratóri
 
 Para alta disponibilidade em data centers maiores, você pode implantar um cluster usando três VMs instaladas em três ou mais hosts Hyper-V. Para obter mais informações, consulte [alta disponibilidade do controlador de rede](network-controller-high-availability.md).
 
-## <a name="bkmk_features"></a>Recursos do controlador de rede
+## <a name="network-controller-features"></a><a name="bkmk_features"></a>Recursos do controlador de rede
 
 Os seguintes recursos do Controlador de Rede permitem configurar e gerenciar dispositivos e serviços de redes físicas e virtuais.  
   
@@ -85,25 +85,25 @@ Os seguintes recursos do Controlador de Rede permitem configurar e gerenciar dis
 >[!IMPORTANT]
 >O backup e a restauração do controlador de rede não estão disponíveis atualmente no Windows Server 2016.
   
-### <a name="bkmk_firewall"></a>Gerenciamento de firewall
+### <a name="firewall-management"></a><a name="bkmk_firewall"></a>Gerenciamento de firewall
 
 Este recurso do Controlador de Rede permite configurar e gerenciar regras de Controle de Acesso para permitir/negar firewall para as suas VMs de carga de trabalho para tráfego de rede tanto no sentido leste/oeste quanto no sentido norte/sul em seu datacenter. As regras de firewall são conectadas na porta vSwitch das VMs de carga de trabalho e distribuídas pela carga de trabalho no datacenter. Usando a API Northbound, você pode definir as regras de firewall para tráfego tanto de entrada quanto de saída na VM de carga de trabalho. Você também pode configurar cada regra de firewall para registrar o tráfego que é permitido ou negado pela regra.  
 
 Para obter mais informações, consulte [visão geral do firewall do datacenter](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md).
 
-### <a name="bkmk_slb"></a>Gerenciamento de Load Balancer de software
+### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>Gerenciamento de Load Balancer de software
 
 Este recurso do Controlador de Rede permite habilitar vários servidores para hospedar a mesma carga de trabalho, fornecendo alta disponibilidade e escalabilidade.  
   
 Para obter mais informações, consulte [ &#40;SLB&#41; de balanceamento de carga de software para Sdn](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).  
   
-### <a name="bkmk_virtual"></a>Gerenciamento de rede virtual
+### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>Gerenciamento de rede virtual
 
 Este recurso do Controlador de Rede permite implantar e configurar a Virtualização de Rede Hyper-V, incluindo o Comutador Virtual do Hyper-V e os adaptadores de rede virtuais em VMs individuais, além de armazenar e distribuir politicas de rede virtual.
 
 O Controlador de Rede dá suporte a NVGRE (protocolo GRE de virtualização de rede) e a VXLAN (rede local virtual extensível).
 
-### <a name="bkmk_gateway"></a>Gerenciamento de gateway RAS
+### <a name="ras-gateway-management"></a><a name="bkmk_gateway"></a>Gerenciamento de gateway RAS
 
 Esse recurso de controlador de rede permite implantar, configurar e gerenciar máquinas virtuais (VMs) que são membros de um pool de gateway de RAS, fornecendo serviços de gateway para seus locatários. O controlador de rede permite que você implante automaticamente as VMs que executam o gateway RAS com os seguintes recursos de gateway:
 

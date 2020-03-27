@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 2cda192f-6b45-4e6c-88d9-70ca179ddb94
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f058dbec42997f22106666b014508191a8861694
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 40e871c25e31bbb15964d856da0f83cdaf50c48b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406489"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319311"
 ---
 # <a name="create-the-branchcache-file-servers-organizational-unit"></a>Criar a unidade organizacional de servidores de arquivos BranchCache
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este procedimento para criar uma UO (unidade organizacional) no AD DS (Serviços de Domínio Active Directory) para servidores de arquivos BranchCache.  
   
@@ -29,7 +29,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
   
 2.  No console de Usuários e Computadores do Active Directory, clique com o botão direito do mouse no domínio ao qual você deseja adicionar uma UO. Por exemplo, se o domínio for denominado exemplo.com, clique com o botão direito do mouse em **exemplo.com**. Aponte para **Novo** e clique em **Unidade Organizacional**. A caixa de diálogo **novo objeto – unidade organizacional** é aberta.  
   
-3.  Na caixa de diálogo **novo objeto – unidade organizacional** , em **nome**, digite um nome para a nova UO. Por exemplo, se você quiser nomear os servidores de arquivos do OU BranchCache de UO, digite **servidores de arquivos do BranchCache**e clique em **OK**.  
+3.  Na caixa de diálogo **novo objeto – unidade organizacional** , em **nome**, digite um nome para a nova UO. Por exemplo, se desejar denominar a UO de Servidores de arquivos BranchCache, digite **Servidores de arquivos BranchCache** e clique em **OK**.  
   
 
 

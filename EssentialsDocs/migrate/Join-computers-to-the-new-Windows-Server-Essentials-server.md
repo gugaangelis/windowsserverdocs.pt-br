@@ -1,9 +1,9 @@
 ---
-title: Fazer computadores ingressarem o server1 novos do Windows Server Essentials
+title: Unir computadores ao novo Server1 do Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: cdfa9504-9881-4265-b308-c7ee8721bfaa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0240abfff58baedd79ab038af93b107dbb898eb2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6f7d20e2d74c311a34b98de7c33c755b5981fcef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432945"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318972"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>Fazer computadores ingressarem o server1 novos do Windows Server Essentials
+# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>Unir computadores ao novo Server1 do Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_JoinComputers"></a>   
- A próxima etapa no processo de migração é ingressar os computadores cliente para a nova rede do Windows Server Essentials e atualizar as configurações de diretiva de grupo.  
+ A próxima etapa do processo de migração é unir computadores cliente à nova rede do Windows Server Essentials e atualizar Política de Grupo configurações.  
   
 > [!NOTE]
 >  Se um computador cliente já está associado ao servidor de origem, você deve primeiro desinstalar o software Connector no computador cliente antes que o computador pode se conectar ao servidor de destino.  
@@ -47,7 +47,7 @@ ms.locfileid: "66432945"
   
 2.  No prompt de comando, digite **GPRESULT /R** e pressione Enter.  
   
-3.  Examine a saída resultante para a seção de política de grupo foi aplicada de: e certifique-se de que ela lista o servidor de destino, como **Destinationsrv**. Por exemplo:  
+3.  Examine a saída resultante para a seção Política de Grupo foi aplicada de: e verifique se ela lista o servidor de destino, como **DestinationSrv. domain. local**. Por exemplo:  
   
     ```  
     USER SETTINGS  
@@ -61,12 +61,12 @@ ms.locfileid: "66432945"
   
     ```  
   
-4.  Se o servidor de destino não estiver listado, em um prompt de comando, digite **gpupdate /force**e pressione ENTER para atualizar as configurações de política de grupo. Em seguida, execute o procedimento anterior novamente.  
+4.  Se o servidor de destino não estiver listado, em um prompt de comando, digite  **gpupdate /force** e pressione ENTER para atualizar as configurações de política de grupo. Em seguida, execute o procedimento anterior novamente.  
   
 5.  Se o servidor de destino não for exibido, pode haver um erro nas configurações da política de grupo ou um erro no aplicá-las para esse computador cliente específico. Se o servidor de destino não for exibido, execute as seguintes etapas:  
   
     1.  Clique em **Iniciar**, clique em **Executar**, digite **rsop.msc** (Conjunto de Políticas Resultante) e pressione ENTER.  
   
-    2.  Expanda a árvore com o X nele até chegar a um nó.  
+    2.  Expanda a árvore com o X nela até chegar a um nó.  
   
     3.  Com o botão direito no nó e clique em **Erro de modo de exibição** para obter informações sobre por que as configurações de política de grupo não estão carregando no computador listado.

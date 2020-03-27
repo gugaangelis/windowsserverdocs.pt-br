@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 5de80dc0-53be-42b7-8e5b-24d213bf2b25
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 527fbf52d68f36d198068514476868bcba930a68
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1bb6447197bfed1108a62be077b0a076bef995da
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396455"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316355"
 ---
 # <a name="network-policy-server-management-with-administration-tools"></a>Gerenciamento de Servidor de Políticas de Rede com Ferramentas de Administração
 
@@ -38,7 +38,7 @@ Depois de instalar o NPS, você pode usar este procedimento para gerenciar o NPS
 
 **Credenciais administrativas** 
 
-Para concluir este procedimento, você deve ser um membro do grupo Administradores.
+Para concluir este procedimento, é preciso ser um membro do grupo Administradores.
 
 ### <a name="to-configure-the-local-nps-by-using-the-nps-console"></a>Para configurar o NPS local usando o console do NPS
 
@@ -58,7 +58,7 @@ Dependendo das condições da rede e do número de NPSs que você gerencia usand
 
 **Credenciais administrativas** 
 
-Para concluir este procedimento, você deve ser um membro do grupo Administradores.
+Para concluir este procedimento, é preciso ser um membro do grupo Administradores.
 
 ### <a name="to-manage-multiple-npss-by-using-the-nps-snap-in"></a>Para gerenciar vários NPSs usando o snap\-do NPS em
 

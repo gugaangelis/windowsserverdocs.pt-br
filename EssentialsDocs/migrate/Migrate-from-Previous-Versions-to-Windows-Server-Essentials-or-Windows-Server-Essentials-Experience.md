@@ -2,18 +2,18 @@
 title: Migrar de versões anteriores para o Windows Server Essentials ou Experiência do Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f58a8f83fed4185ee51145b988cfef1074f889c7
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945134"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318894"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>Migrar de versões anteriores para o Windows Server Essentials ou Experiência do Windows Server Essentials
 
@@ -54,19 +54,19 @@ Este guia descreve como migrar de versões anteriores do Windows Small Business 
   
    Vários procedimentos de migração exigem a abertura de uma janela de prompt de comando como administrador. Os procedimentos a seguir explicam como fazer isso.  
   
-###  <a name="BKMK_OpenACommandPromptAsAdmin"></a>Para abrir uma janela de prompt de comando no servidor de origem como administrador  
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>Para abrir uma janela de prompt de comando no servidor de origem como administrador  
   
 1.  Clique em **Iniciar**.  
   
 2.  Na caixa de pesquisa, digite **cmd**.  
   
-3.  Na lista de resultados, clique com o botão direito em **cmd**e clique em **Executar como administrador**.  
+3.  Na lista de resultados, clique com o botão direito em **cmd** e clique em **Executar como administrador**.  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>Para abrir uma janela de prompt de comando no servidor de destino como administrador.  
   
 1.  Na tela **Início**, na caixa de pesquisa, digite **cmd**.  
   
-2.  Na lista de resultados, clique com o botão direito em **cmd**e clique em **Executar como administrador**.  
+2.  Na lista de resultados, clique com o botão direito em **cmd** e clique em **Executar como administrador**.  
   
 ## <a name="see-also"></a>Consulte também  
   

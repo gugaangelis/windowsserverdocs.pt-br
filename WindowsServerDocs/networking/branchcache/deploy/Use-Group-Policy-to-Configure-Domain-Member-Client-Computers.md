@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 911c1538-f79d-42e9-ba38-f4618f87b008
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/02/2018
-ms.openlocfilehash: 6f093e605ce735d8f86f7f4d479a646d144e8829
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6ca1ff8fabb559628afd2dd1abafc56a908909a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356522"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319192"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>Usar Política de Grupo para configurar computadores cliente membro do domínio
 
@@ -35,7 +35,7 @@ Esta seção contém os procedimentos a seguir.
   
 Você deve ser membro de **Admins**. do domínio ou equivalente a executar esses procedimentos.  
   
-## <a name="bkmk_gp"></a>Para criar um objeto de Política de Grupo e configurar modos de BranchCache  
+## <a name="to-create-a-group-policy-object-and-configure-branchcache-modes"></a><a name="bkmk_gp"></a>Para criar um objeto de Política de Grupo e configurar modos de BranchCache  
   
 1.  Em um computador no qual a função de servidor Active Directory Domain Services está instalada, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **Gerenciamento de política de grupo**. O console de gerenciamento do Política de Grupo é aberto.  
   
@@ -64,7 +64,7 @@ Você deve ser membro de **Admins**. do domínio ou equivalente a executar esses
   
 12. Use os procedimentos a seguir para definir as configurações de firewall em computadores cliente usando Política de Grupo.  
   
-## <a name="bkmk_inbound"></a>Para configurar o Firewall do Windows com regras de tráfego de entrada de segurança avançada  
+## <a name="to-configure-windows-firewall-with-advanced-security-inbound-traffic-rules"></a><a name="bkmk_inbound"></a>Para configurar o Firewall do Windows com regras de tráfego de entrada de segurança avançada  
   
 1.  No console de gerenciamento do Política de Grupo, expanda o seguinte caminho: **floresta:** *example.com*, **domínios**, *example.com*, **política de grupo objetos**, em que *example.com* é o nome do domínio em que as contas de computador cliente do BranchCache que você deseja configurar estão localizadas.  
   
@@ -94,7 +94,7 @@ Você deve ser membro de **Admins**. do domínio ou equivalente a executar esses
     > [!IMPORTANT]  
     > Selecione **Permitir a conexão** para que o cliente BranchCache possa receber o tráfego nesta porta.  
   
-## <a name="bkmk_outbound"></a>Para configurar o Firewall do Windows com regras de tráfego de saída de segurança avançada  
+## <a name="to-configure-windows-firewall-with-advanced-security-outbound-traffic-rules"></a><a name="bkmk_outbound"></a>Para configurar o Firewall do Windows com regras de tráfego de saída de segurança avançada  
   
 1.  No console do Editor de Gerenciamento de Diretiva de Grupo, clique com o botão direito do mouse em **Regras de Saída** e clique em **Nova Regra**. O Assistente para Nova Regra de Saída é aberto.  
   

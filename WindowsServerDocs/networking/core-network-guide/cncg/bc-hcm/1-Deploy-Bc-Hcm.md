@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 4235231c-4732-4ea9-9330-2a8c8a616d39
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 49e74132dba2909b7e5b639c95ef50064cf23e8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1da6df19933d3a4b9866b0428fb0088ac5f862b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356381"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319092"
 ---
 # <a name="deploy-branchcache-hosted-cache-mode"></a>Implantar o modo Cache Hospedado do BranchCache
 
@@ -44,7 +44,7 @@ Este guia contém as seções a seguir.
 
 - [Recursos adicionais](11-Bc-Hcm-additional-resources.md)
 
-## <a name="bkmk_pre"></a>Pré-requisitos para usar este guia
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>Pré-requisitos para usar este guia
 
 Este é um guia complementar para o guia de rede do Windows Server 2016 Core. Para implantar o BranchCache no modo de cache hospedado com este guia, você deve primeiro fazer o seguinte.
 
@@ -60,7 +60,7 @@ Este é um guia complementar para o guia de rede do Windows Server 2016 Core. Pa
 - Implante computadores cliente em sua filial que executam um dos seguintes sistemas operacionais, que fornecem ao BranchCache suporte para Serviço de Transferência Inteligente em Segundo Plano (BITS), protocolo HTTP e SMB (Server Message Block). .
     - Windows 10 Enterprise
     - Windows 10 Education
-    - Windows 8.1 Enterprise
+    - Windows 8,1 Enterprise
     - Windows 8 Enterprise
 
 > [!NOTE]
@@ -69,13 +69,13 @@ Este é um guia complementar para o guia de rede do Windows Server 2016 Core. Pa
 >     - Windows 8.1 Pro, somente suporte a BITS
 >     - Windows 8 Pro, somente suporte a BITS
 
-## <a name="bkmk_about"></a>Sobre este guia
+## <a name="about-this-guide"></a><a name="bkmk_about"></a>Sobre este guia
 
 Este guia foi projetado para administradores de rede e de sistema que seguiram as instruções no guia de rede do Windows Server 2016 core ou no guia de rede do Windows Server 2012 Core para implantar uma rede principal ou para aqueles que implantaram anteriormente as tecnologias incluídas no guia de rede principal, incluindo Active Directory Domain Services \(AD DS\), o serviço de nome de domínio \(o DNS\), o protocolo de configuração de host\(\)\/
 
 É recomendável que você examine os guias de design e implantação de cada uma das tecnologias usadas neste cenário de implantação. Esses guias podem ajudar a determinar se o cenário de implantação fornece os serviços e as configurações que você precisa para a rede de sua organização.
 
-## <a name="bkmk_not"></a>O que este guia não fornece
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>O que este guia não fornece
 
 Este guia não fornece informações conceituais sobre o BranchCache, incluindo informações sobre recursos e modos do BranchCache.  
 
@@ -88,7 +88,7 @@ Além disso, se você tiver computadores que executam o Windows 7, deverá confi
 > [!IMPORTANT]
 > Se os servidores de cache hospedados estiverem executando o Windows Server 2008 R2, use o [Guia de implantação do BranchCache](https://technet.microsoft.com/library/ee649232(v=ws.10).aspx) do windows Server 2008 R2, em vez deste guia, para implantar o BranchCache no modo de cache hospedado. Aplique as configurações de Política de Grupo que são descritas nesse guia para todos os clientes do BranchCache que estão executando versões do Windows do Windows 7 para o Windows 10. Os computadores que executam o Windows Server 2008 R2 não podem ser configurados usando as etapas deste guia.
 
-## <a name="bkmk_tech"></a>Visões gerais de tecnologia
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>Visões gerais de tecnologia
 
 Para este guia complementar, o BranchCache é a única tecnologia que você precisa instalar e configurar. Você deve executar comandos de BranchCache do Windows PowerShell nos servidores de conteúdo, como servidores Web e de arquivos, porém você não precisa alterar nem reconfigurar os servidores de conteúdo de qualquer outra forma. Além disso, você deve configurar computadores cliente usando Política de Grupo em seus controladores de domínio que estão executando o AD DS no Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012.
 
@@ -100,7 +100,7 @@ Para otimizar a largura de banda WAN quando os usuários acessam o conteúdo em 
 
 Quando você implanta o BranchCache no modo de cache hospedado, deve configurar computadores cliente na filial como clientes do modo de cache hospedado e, em seguida, implantar um servidor de cache hospedado na filial. Este guia demonstra como implantar o servidor de cache hospedado com conteúdo de hash e pré-carregado do seu servidor de arquivos e da Web\-servidores de conteúdo baseados em.
 
-### <a name="group-policy"></a>Política de Grupo
+### <a name="group-policy"></a>Diretiva de grupos
 
 Política de Grupo no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012 é uma infraestrutura usada para fornecer e aplicar uma ou mais configurações ou definições de política desejadas a um conjunto de usuários e computadores de destino em um ambiente de Active Directory. 
 

@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 6a1d210d25309be322359add20da4eb8d0eee091
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355809"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317483"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>Usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Neste tópico, você aprenderá a configurar listas de controle de acesso (ACLs) para gerenciar o fluxo de tráfego de dados usando o Firewall do datacenter e as ACLs em sub-redes virtuais. Você habilita e configura o Firewall do datacenter criando ACLs que são aplicadas a uma sub-rede virtual ou a uma interface de rede.   
 
@@ -35,17 +35,17 @@ Depois de implantar o SDN, você deve testar a conectividade de rede básica em 
 Use as entradas na tabela a seguir para criar um conjunto de regras que permitem todo o tráfego de rede de entrada e saída.
 
 
-| IP de Origem | IP de destino | Protocol | Porta de Origem | Porta de destino | Direction | Ação | Priority |
+| IP de Origem | IP de destino | Protocolo | Porta de Origem | Porta de destino | Direção | Ação | Prioridade |
 |:---------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
-|    \*     |       \*       |   Todas    |     \*      |        \*        |  Entrada  | Allow  |   100    |
-|    \*     |       \*       |   Todas    |     \*      |        \*        | Saída  | Allow  |   110    |
+|    \*     |       \*       |   Tudo    |     \*      |        \*        |  Entrada  | Permitir  |   100    |
+|    \*     |       \*       |   Tudo    |     \*      |        \*        | Saída  | Permitir  |   110    |
 
 ---       
 
-### <a name="example-create-an-acl"></a>Exemplo: Criar uma ACL 
+### <a name="example-create-an-acl"></a>Exemplo: criar uma ACL 
 Neste exemplo, você cria uma ACL com duas regras:
 
-1. **AllowAll_Inbound** – permite que todo o tráfego de rede passe para a interface de rede na qual essa ACL está configurada.    
+1. **AllowAll_Inbound** – permite que todo o tráfego de rede passe para o adaptador de rede em que essa ACL está configurada.    
 2. **AllowAllOutbound** – permite que todo o tráfego seja transmitido da interface de rede. Essa ACL, identificada pela ID de recurso "AllowAll-1", agora está pronta para ser usada em sub-redes virtuais e interfaces de rede.  
 
 O script de exemplo a seguir usa comandos do Windows PowerShell exportados do módulo **NetworkController** para criar essa ACL.  
@@ -90,14 +90,14 @@ New-NetworkControllerAccessControlList -ResourceId "AllowAll" -Properties $aclli
 Neste exemplo, você cria uma ACL que impede que as VMs na sub-rede 192.168.0.0/24 se comuniquem entre si. Esse tipo de ACL é útil para limitar a capacidade de um invasor se espalhar de forma mais tarde dentro da sub-rede, enquanto ainda permite que as VMs recebam solicitações de fora da sub-rede, bem como se comuniquem com outros serviços em outras sub-redes.   
 
 
-|   IP de Origem    | IP de destino | Protocol | Porta de Origem | Porta de destino | Direction | Ação | Priority |
+|   IP de Origem    | IP de destino | Protocolo | Porta de Origem | Porta de destino | Direção | Ação | Prioridade |
 |:--------------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
-|  192.168.0.1   |       \*       |   Todas    |     \*      |        \*        |  Entrada  | Allow  |   100    |
-|       \*       |  192.168.0.1   |   Todas    |     \*      |        \*        | Saída  | Allow  |   101    |
-| 192.168.0.0/24 |       \*       |   Todas    |     \*      |        \*        |  Entrada  | Bloqueio  |   102    |
-|       \*       | 192.168.0.0/24 |   Todas    |     \*      |        \*        | Saída  | Bloqueio  |   103    |
-|       \*       |       \*       |   Todas    |     \*      |        \*        |  Entrada  | Allow  |   104    |
-|       \*       |       \*       |   Todas    |     \*      |        \*        | Saída  | Allow  |   105    |
+|  192.168.0.1   |       \*       |   Tudo    |     \*      |        \*        |  Entrada  | Permitir  |   100    |
+|       \*       |  192.168.0.1   |   Tudo    |     \*      |        \*        | Saída  | Permitir  |   101    |
+| 192.168.0.0/24 |       \*       |   Tudo    |     \*      |        \*        |  Entrada  | Bloquear  |   102    |
+|       \*       | 192.168.0.0/24 |   Tudo    |     \*      |        \*        | Saída  | Bloquear  |   103    |
+|       \*       |       \*       |   Tudo    |     \*      |        \*        |  Entrada  | Permitir  |   104    |
+|       \*       |       \*       |   Tudo    |     \*      |        \*        | Saída  | Permitir  |   105    |
 
 --- 
 

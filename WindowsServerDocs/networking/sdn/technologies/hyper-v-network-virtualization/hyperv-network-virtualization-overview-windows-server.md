@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0eda30b0980f2080f1603eb906fd308440316248
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2d85545224d8487b4778b95b9366a0336b27b343
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405950"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317228"
 ---
 # <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Visão geral da virtualização de rede Hyper-V no Windows Server 2016
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 No Windows Server 2016 e Virtual Machine Manager, a Microsoft fornece uma solução de virtualização de rede de ponta a ponta.  Há cinco componentes principais que compõem a solução de virtualização de rede da Microsoft:  
 
@@ -47,10 +47,10 @@ Para obter mais detalhes técnicos sobre a virtualização de rede no Windows Se
 
 -   [Visão geral do Comutador Virtual do Hyper-V](assetId:///e6ec46af-6ef4-49b3-b1f1-5268dc03f05b)  
 
-## <a name="BKMK_OVER"></a>Descrição do recurso  
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>Descrição do recurso  
 A virtualização de rede do Hyper-V fornece "redes virtuais" (chamadas de uma rede VM) para máquinas virtuais semelhantes a como o hipervisor (virtualização de servidor) fornece "máquinas virtuais" para o sistema operacional. A virtualização de rede separa redes virtuais da infraestrutura de rede física e remove as restrições da atribuição de endereços IP hierárquicos e de VLAN do provisionamento de máquinas virtuais. Essa flexibilidade facilita a migração de clientes para nuvens IaaS e torna mais eficiente o gerenciamento da infraestrutura pelos hosters e administradores do datacenter, mantendo ainda o isolamento multilocatário, os requisitos de segurança e o suporte à sobreposição de endereços IP de máquinas virtuais.  
 
-Os clientes desejam estender diretamente seus datacenters para a nuvem. Hoje, há desafios técnicos na realização dessas arquiteturas de nuvem híbridas diretas. Um dos maiores obstáculos enfrentados pelos clientes é reutilizar suas topologias de rede existentes (sub-redes, endereços IP, serviços de rede etc.) na nuvem e a ponte entre seus recursos locais e seus recursos de nuvem.  A Virtualização de Rede Hyper-V oferece o conceito de uma Rede VM independente da rede física subjacente. Com esse conceito de Rede VM, composta de uma ou mais Sub-redes Virtuais, a localização física exata da rede física das máquinas virtuais ligadas a uma rede virtual é separada da topologia da rede virtual. Como resultado, os clientes podem mover facilmente suas sub-redes virtuais para a nuvem preservando seus endereços IP e sua topologia existente na nuvem, de forma que os serviços existentes continuam funcionando independentemente da localização física das sub-redes. Ou seja, a Virtualização de Rede Hyper-V permite uma nuvem híbrida integrada.  
+Os clientes desejam estender diretamente seus datacenters para a nuvem. Atualmente, existem desafios técnicos para a criação dessas arquiteturas de nuvem híbridas integradas. Um dos maiores obstáculos enfrentados pelos clientes é reutilizar suas topologias de rede existentes (sub-redes, endereços IP, serviços de rede etc.) na nuvem e a ponte entre seus recursos locais e seus recursos de nuvem.  A Virtualização de Rede Hyper-V oferece o conceito de uma Rede VM independente da rede física subjacente. Com esse conceito de Rede VM, composta de uma ou mais Sub-redes Virtuais, a localização física exata da rede física das máquinas virtuais ligadas a uma rede virtual é separada da topologia da rede virtual. Como resultado, os clientes podem mover facilmente suas sub-redes virtuais para a nuvem preservando seus endereços IP e sua topologia existente na nuvem, de forma que os serviços existentes continuam funcionando independentemente da localização física das sub-redes. Ou seja, a Virtualização de Rede Hyper-V permite uma nuvem híbrida integrada.  
 
 Além da nuvem híbrida, muitas organizações estão consolidando seus datacenters e criando nuvens privadas para obter internamente o benefício das arquiteturas em nuvem em termos de eficiência e escalabilidade. A virtualização de rede Hyper-V permite melhor flexibilidade e eficiência para nuvens privadas, desacoplando a topologia de rede de uma unidade de negócios (tornando-a virtual) da topologia de rede física real. Assim, as unidades de negócios podem facilmente compartilhar uma nuvem privada interna, ao mesmo tempo em que ficam isoladas umas das outras e continuam a manter as topologias de rede existentes. A equipe de operações do datacenter tem flexibilidade para implantar e mover dinamicamente cargas de trabalho em qualquer lugar do datacenter sem interrupções do servidor, fornecendo eficiências operacionais melhores e, no geral, um datacenter mais eficiente.  
 
@@ -58,7 +58,7 @@ Para proprietários de carga de trabalho, o principal benefício é que eles ago
 
 Para proprietários de infraestrutura, a flexibilidade adicional no posicionamento de máquinas virtuais torna possível mover cargas de trabalho em qualquer lugar dos datacenters sem alterar o as máquinas virtuais ou reconfigurar as redes. Por exemplo, a Virtualização de Rede Hyper-V permite a migração ao vivo entre sub-redes, de forma que uma máquina virtual pode migrar ao vivo em qualquer lugar do datacenter sem uma interrupção do serviço. Anteriormente, a migração ao vivo era limitada à mesma sub-rede, restringindo os locais onde as máquinas virtuais podiam ficar localizadas. A migração ao vivo entre sub-redes permite que os administradores consolidem cargas de trabalho com base em requisitos de recursos dinâmicos, eficiência de energia e também possam acomodar a manutenção da infraestrutura sem interromper o tempo de atividade da carga de trabalho do cliente.  
 
-## <a name="BKMK_APP"></a>Aplicativos práticos  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicativos práticos  
 Com o sucesso dos datacenters virtualizados, as organizações de TI e os provedores de hospedagem (provedores que fornecem aluguéis de servidores físicos ou colocação) começaram a oferecer infraestruturas virtualizadas mais flexíveis que facilitam a oferta de instâncias de servidor por demanda a seus clientes. Essa nova classe de serviços é chamada de IaaS (Infraestrutura como Serviço). O Windows Server 2016 fornece todos os recursos de plataforma necessários para permitir que os clientes corporativos criem nuvens privadas e façam a transição para um modelo operacional de serviço. O Windows Server 2016 2016 também permite que os hosters criem nuvens públicas e ofereçam soluções de IaaS para seus clientes. Quando combinado com Virtual Machine Manager e Pacote do Microsoft Azure para gerenciar a política de virtualização de rede Hyper-V, a Microsoft fornece uma solução de nuvem poderosa.  
 
 A virtualização de rede Hyper-V do Windows Server 2016 fornece virtualização de rede baseada em políticas, controlada por software, que reduz a sobrecarga de gerenciamento enfrentada pelas empresas quando elas expandem nuvens de IaaS dedicadas e fornece melhor hosters de nuvem flexibilidade e escalabilidade para gerenciar máquinas virtuais para obter maior utilização de recursos.  
@@ -91,7 +91,7 @@ O problema desse requisito é que, além de ser um endereço, há informações 
 
 A Virtualização de Rede Hyper-V separa as redes virtuais das máquinas virtuais do cliente da infraestrutura de rede física. Como resultado, as máquinas virtuais do cliente podem manter seus endereços IP originais, e os administradores do datacenter podem provisionar as máquinas virtuais do cliente em qualquer lugar do datacenter sem precisar reconfigurar endereços IP físicos ou IDs da VLAN. A próxima seção resume as principais funcionalidades.  
 
-## <a name="BKMK_NEW"></a>Funcionalidade importante  
+## <a name="important-functionality"></a><a name="BKMK_NEW"></a>Funcionalidade importante  
 Veja a seguir uma lista dos principais recursos, benefícios e funcionalidades da virtualização de rede Hyper-V no Windows Server 2016:  
 
 -   **Permite o posicionamento flexível da carga de trabalho e o isolamento da rede e reutilização de endereço IP sem VLANs**  
@@ -132,16 +132,16 @@ Veja a seguir uma lista dos principais recursos, benefícios e funcionalidades d
 
     As políticas de virtualização de rede no Windows Server 2016 são configuradas por meio do controlador de rede da Microsoft. O controlador de rede tem uma API Northbound RESTful e a interface do Windows PowerShell para configurar a política. Para obter mais informações sobre o controlador de rede da Microsoft, consulte [controlador de rede](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md).  
 
-## <a name="BKMK_SOFT"></a>Requisitos de software  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software  
 A virtualização de rede Hyper-V usando o controlador de rede da Microsoft requer o Windows Server 2016 e a função Hyper-V.  
 
-## <a name="BKMK_LINKS"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Consulte também  
 Para saber mais sobre a virtualização de rede Hyper-V no Windows Server 2016, consulte os links a seguir:  
 
 
 |       Tipo de conteúdo       |                                                                                                                                Referências                                                                                                                                |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Recursos da Comunidade**  |     [blog da arquitetura de nuvem privada](https://blogs.technet.com/b/privatecloud/archive/2012/03/19/cloud-datacenter-network-architecture-in-the-windows-server-8-era.aspx) -   <br />-Faça perguntas: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
+| **Recursos da comunidade**  |     [blog da arquitetura de nuvem privada](https://blogs.technet.com/b/privatecloud/archive/2012/03/19/cloud-datacenter-network-architecture-in-the-windows-server-8-era.aspx) -   <br />-Faça perguntas: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
 |         **RFC**          |                                                                                                     -VXLAN- [RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                                                      |
-| **Tecnologias relacionadas** | [controlador de rede](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md) -   <br />[visão geral da virtualização de rede do Hyper-V](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b) -    (Windows Server 2012 R2) |
+| **Tecnologias relacionadas** | [controlador de rede](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md) -   <br />[visão geral da virtualização de rede Hyper-V](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b) -   (Windows Server 2012 R2) |
 

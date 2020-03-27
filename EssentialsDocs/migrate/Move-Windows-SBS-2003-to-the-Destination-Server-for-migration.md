@@ -3,7 +3,7 @@ title: Mover configurações e dados do Windows SBS 2003 para o servidor de dest
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 67087ccb-d820-4642-8ca2-7d2d38714014
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ba6fbf0237a16451403a7d4618b935c7c01f7064
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: f9cf929016b608641e7a7c958cc1311c49b00221
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584769"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318886"
 ---
 # <a name="move-windows-sbs-2003-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover configurações e dados do Windows SBS 2003 para o servidor de destino para migração para o Windows Server Essentials
 
@@ -56,11 +56,11 @@ Antes de copiar os dados do servidor de origem para o servidor de destino, execu
 
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
 
-Sendo que:
+Onde:
  - \<SourceServerName\> é o nome do servidor de origem
  - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem
  - \<DestinationServerName\> é o nome do servidor de destino,
- - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados. 
+ - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para a qual os dados serão copiados. 
 
 4. Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem.
 
@@ -87,11 +87,11 @@ O Windows SBS 2003 usa scripts de logon para tarefas como instalar o software e 
 
 #### <a name="to-remove-the-windows-sbs-2003-logon-scripts"></a>Para remover os scripts de logon do Windows SBS 2003 
 
-1. Clique em **Iniciar**, aponte para **Ferramentas Administrativas**e clique em **Usuários e Computadores do Active Directory**.
+1. Clique em **Iniciar**, aponte para **Ferramentas Administrativas** e clique em **Usuários e Computadores do Active Directory**.
 
 2. Em **Usuários e Computadores do Active Directory**, expanda a rede e, em seguida, clique em **Usuários**.
 
-3. Clique com o botão direito no nome de usuário, clique em **Propriedades**e clique na guia **Perfil** .
+3. Clique com o botão direito no nome de usuário, clique em **Propriedades** e clique na guia **Perfil**.
 
 4. Exclua o conteúdo da caixa de texto **Script de Logon** e clique em **OK**.
 
@@ -111,7 +111,7 @@ Os objetos de Política de Grupo (GPOs) são atualizados para o Windows Server E
 
 3. No painel de navegação, clique em **gerenciamento avançado**, clique em **Gerenciamento de política de grupo**e, em seguida, clique em **floresta:** _< YourDomainName\>_ . 
 
-4. Clique em **domínios**, clique em *<\>YourDomainName*e, em seguida, clique em **objetos política de grupo**. 
+4. Clique em **domínios**, clique em *< YourDomainName\>* e, em seguida, clique em **política de grupo objetos**. 
 
 5. Clique com o botão direito do mouse em **Política de auditoria do Small Business Server**, clique em **Excluir** e, em seguida, clique em **OK**. 
 
@@ -153,11 +153,11 @@ Recomendamos que você configure a política de senha no Windows Server Essentia
 
 3. No painel de navegação, clique em **gerenciamento avançado**, clique em **Gerenciamento de política de grupo**e, em seguida, clique em **floresta:** _< YourNetworkDomainName\>_
 
-4. Clique em **domínios**, clique em *<\>YourNetworkDomainName*e, em seguida, clique em **filtros WMI**.
+4. Clique em **domínios**, clique em *< YourNetworkDomainName\>* e, em seguida, clique em **filtros WMI**.
 
 5. Clique com o botão direito em **PostSP2**, clique em **Excluir** e, em seguida, clique em **Sim**.
 
-6. Clique com o botão direito em **PreSP2**, clique em **Excluir**e clique em **Sim**.
+6. Clique com o botão direito em **PreSP2**, clique em **Excluir** e clique em **Sim**.
 
 7. Confirme se esses três filtros WMI foram excluídos.
 
@@ -167,15 +167,15 @@ Recomendamos que você configure a política de senha no Windows Server Essentia
 
 1. No servidor de destino, abra o painel. 
 
-2. Na página **Home** do painel, clique em **INSTALAÇÃO**, clique em **Configurar Acesso em Qualquer Local**e escolha a opção **Clique para configurar o Acesso em Qualquer Local** . 
+2. Na página **Home** do painel, clique em **INSTALAÇÃO**, clique em **Configurar Acesso em Qualquer Local** e escolha a opção **Clique para configurar o Acesso em Qualquer Local**. 
 
 3. Siga as instruções do assistente **Configurar Acesso em Qualquer Local** para configurar o roteador e o nome de domínio.
 
  Se o roteador não oferecer suporte para a estrutura UPnP, ou se a estrutura UPnP estiver desabilitada, um ícone de aviso amarelo pode aparecer ao lado do nome do roteador. Certifique-se de que as seguintes portas estejam abertas e que sejam direcionadas para o endereço IP do servidor de destino:
 
-- Porta 80: Tráfego da Web HTTP
+- Porta 80: tráfego HTTP da Web
 
-- Porta 443: Tráfego da Web HTTPS
+- Porta 443: tráfego HTTPS da Web
 
 > [!NOTE]
 > Se você tiver configurado um servidor do Exchange local em um segundo servidor, deve garantir que a porta 25 (SMTP) também esteja aberta e que seja redirecionada para o endereço IP do servidor do Exchange local.

@@ -1,32 +1,32 @@
 ---
-title: Planejamento de migração de acesso VPN Always On remoto
-description: Migrando do DirectAccess para sempre VPN requer planejamento adequado determinar suas fases de migração, que ajuda a identificar problemas antes que eles afetam toda a organização.
+title: Acesso remoto Always On planejamento de migração de VPN
+description: Migrar do DirectAccess para Always On VPN requer um planejamento adequado para determinar suas fases de migração, o que ajuda a identificar quaisquer problemas antes que eles afetem toda a organização.
 manager: dougkim
 ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/29/2018
-ms.openlocfilehash: 494dc7916b505991c22b07bec738c2300d660ec1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80a7a8b3ee13a9d9cc99b81ab917f6443147565f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835667"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314948"
 ---
 # <a name="plan-the-directaccess-to-always-on-vpn-migration"></a>Planejar o migração de VPN Always On do DirectAccess
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
+>Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
-&#171;[ **Anterior:** Visão geral do DirectAccess para a migração de VPN Always On](da-always-on-migration-overview.md)<br>
-&#187; [**Next:** Migrar para VPN Always On e encerrar o DirectAccess](da-always-on-migration-deploy.md)
+&#171;[ **Anterior:** visão geral do directaccess para Always on a migração de VPN](da-always-on-migration-overview.md)<br>
+&#187;[ **Em seguida:** migrar para Always on VPN e encerrar o DirectAccess](da-always-on-migration-deploy.md)
 
 
-Migrando do DirectAccess para sempre VPN requer planejamento adequado determinar suas fases de migração, que ajuda a identificar problemas antes que eles afetam toda a organização. É o principal objetivo da migração para os usuários a manter a conectividade remota ao escritório durante todo o processo. Se você executar tarefas fora de ordem, uma condição de corrida poderá ocorrer, deixando os usuários remotos com nenhuma maneira de acessar recursos da empresa. Portanto, a Microsoft recomenda a execução de uma migração planejada e lado a lado do DirectAccess para VPN Always On. Para obter detalhes, consulte o [implantação de migração de VPN Always On](da-always-on-migration-deploy.md) seção.
+Migrar do DirectAccess para Always On VPN requer um planejamento adequado para determinar suas fases de migração, o que ajuda a identificar quaisquer problemas antes que eles afetem toda a organização. O objetivo principal da migração é que os usuários mantenham a conectividade remota com o escritório durante todo o processo. Se você executar tarefas fora de ordem, poderá ocorrer uma condição de corrida, deixando os usuários remotos sem como acessar os recursos da empresa. Portanto, a Microsoft recomenda executar uma migração planejada lado a lado do DirectAccess para Always On VPN. Para obter detalhes, consulte a seção [Always on implantação de migração de VPN](da-always-on-migration-deploy.md) .
 
-A seção descreve os benefícios da separação de usuários para a migração, considerações sobre a configuração padrão e os aprimoramentos de recursos de VPN Always On. A fase de planejamento de migração inclui:
+A seção descreve os benefícios de separar usuários para a migração, considerações de configuração padrão e Always On aprimoramentos de recursos de VPN. A fase de planejamento de migração inclui:
 
 1.  [!INCLUDE [build-migration-rings-shortdesc-include](../includes/build-migration-rings-shortdesc-include.md)]
 
@@ -37,28 +37,28 @@ A seção descreve os benefícios da separação de usuários para a migração,
 4.  [!INCLUDE [review-the-technology-overview-shortdesc-include](../includes/review-the-technology-overview-shortdesc-include.md)]
 
 ## <a name="build-migration-rings"></a>Criar anéis de migração
-Anéis de migração são usados para dividir o esforço de migração de cliente VPN Always On em várias fases. Quando que chegar à última fase, o processo deve ser bem testado e consistente.
+Os anéis de migração são usados para dividir o Always On esforço de migração de cliente VPN em várias fases. No momento que chegar à última fase, seu processo deverá ser bem testado e consistente.
 
-Esta seção fornece uma abordagem para a separação de usuários em fases de migração e, em seguida, gerenciar essas fases. Independentemente do método de separação de fase do usuário escolhido, manter um único grupo de usuários de VPN para facilitar o gerenciamento quando a migração for concluída.
+Esta seção fornece uma abordagem para separar usuários em fases de migração e, em seguida, gerenciar essas fases. Independentemente do método de separação de fase de usuário que você escolher, mantenha um único grupo de usuários VPN para facilitar o gerenciamento quando a migração for concluída.
 
 >[!NOTE] 
->A palavra _fase_ não se destina para indicar que este é um processo longo. Se você percorrer cada fase em alguns dias ou alguns meses, a Microsoft recomenda que você aproveite a migração lado a lado e usa uma abordagem em fases.
+>A palavra _fase_ não se destina a indicar que esse é um processo longo. Se você passar por cada fase em alguns dias ou alguns meses, a Microsoft recomenda que você aproveite a migração lado a lado e use uma abordagem em fases.
 
 ### <a name="benefits-of-dividing-the-migration-effort-into-multiple-phases"></a>Benefícios de dividir o esforço de migração em várias fases
 
--   **Proteção de interrupção em massa.** Dividindo uma migração em fases, o número de pessoas que pode afetar a um problema de migração gerado é muito menor.
+-   **Proteção de interrupção em massa.** Dividindo uma migração em fases, o número de pessoas que um problema gerado pela migração pode afetar é muito menor.
 
--   **Melhoria no processo ou a comunicação de comentários.** O ideal é que os usuários não mesmo observou que a migração ocorreu. No entanto, se a sua experiência foi aquém do ideal, comentários desses usos lhe dá a oportunidade de melhorar o seu planejamento e evitar problemas no futuro.
+-   **Melhoria no processo ou comunicação de comentários.** O ideal é que os usuários nem mesmo percebam que a migração ocorreu. No entanto, se sua experiência fosse menor do que o ideal, os comentários desses usos oferecerão a oportunidade de melhorar o planejamento e evitar problemas no futuro.
 
-### <a name="tips-for-building-your-migration-ring"></a>Dicas para criar o anel de migração
+### <a name="tips-for-building-your-migration-ring"></a>Dicas para criar seu anel de migração
 
--   **Identifique os usuários remotos.** Comece separando os usuários em dois buckets: aqueles que vêm com frequência no escritório e aquelas que não. O processo de migração é o mesmo para ambos os grupos, mas é provável que levar mais tempo para os clientes remotos receber a atualização, que, para aqueles que se conectam com mais frequência. O ideal é que cada fase da migração, deve incluir os membros de cada bucket.
+-   **Identificar usuários remotos.** Comece separando os usuários em dois buckets: aqueles que freqüentemente entram no escritório e aqueles que não o fazem. O processo de migração é o mesmo para ambos os grupos, mas provavelmente levará mais tempo para que os clientes remotos recebam a atualização do que para aqueles que se conectam com mais frequência. Cada fase de migração, idealmente, deve incluir membros de cada Bucket.
 
--  **Priorize os usuários.** Liderança e outros usuários de alto impacto são normalmente entre os último usuários migrados. Quando a priorizar os usuários, no entanto, considere o impacto de produtividade nos negócios se a migração de seus computadores cliente falharem. Por exemplo, se você tivesse uma classificação de 1 a 3, com que 1 significa que o funcionário não seria capaz de trabalho e 3, ou seja, sem interrupção do trabalho imediato, um analista de negócios usando somente interno linha de negócios (LOB) aplicativos remotamente seria um 1, enquanto um vendedor usando uma nuvem  aplicativo seria um 3.
+-  **Priorize os usuários.** A liderança e outros usuários de alto impacto geralmente estão entre os últimos usuários migrados. No entanto, ao priorizar os usuários, considere seu impacto na produtividade comercial se a migração do computador cliente falhar. Por exemplo, se você tivesse uma classificação de 1 a 3, com 1 significando que o funcionário não seria capaz de trabalhar e 3 significando que não há nenhuma interrupção de trabalho imediata, um analista de negócios que usa apenas aplicativos LOB (linha de negócios) internos seria um 1, enquanto um vendedor usa uma nuvem o aplicativo seria um 3.
 
--   **Migre cada departamento ou unidade de negócios em várias fases.** Microsoft recomenda enfaticamente que você não migrar todo o departamento ao mesmo tempo. Se surgir um problema, você não deseja prejudicar o trabalho remoto para o departamento de inteiro. Em vez disso, migre cada departamento ou unidade de negócios em pelo menos duas fases.
+-   **Migre cada departamento ou unidade de negócios em várias fases.** A Microsoft recomenda enfaticamente que você não migre um departamento inteiro ao mesmo tempo. Se ocorrer um problema, você não deseja que ele atrapalhe o trabalho remoto de todo o departamento. Em vez disso, migre cada departamento ou unidade de negócios em pelo menos duas fases.
 
--   **Aumente gradualmente a contagem de usuários.** Cenários mais comuns de migração começam com os membros do departamento de TI e, em seguida, mova para usuários de negócios, seguidos de liderança e outros usuários de alto impacto. Normalmente, cada fase da migração envolve progressivamente mais pessoas. Por exemplo, a primeira fase pode incluir dez usuários, e o grupo final pode incluir a 5.000 usuários. Para simplificar a implantação, crie um único grupo de segurança de usuários da VPN e adicionar usuários a ele como sua fase é recebido. Dessa forma, você acaba com um único grupo de usuários da VPN ao qual você pode adicionar membros no futuro.
+-   **Aumentar gradualmente as contagens de usuários.** Os cenários de migração mais comuns começam com membros da organização de ti e, em seguida, mudam para os usuários empresariais seguidos por liderança e outros usuários de alto impacto. Cada fase de migração geralmente envolve progressivamente mais pessoas. Por exemplo, a primeira fase pode incluir dez usuários e o grupo final pode incluir 5.000 usuários. Para simplificar a implantação, crie um grupo de segurança de usuários de VPN único e adicione usuários a ele à medida que sua fase chega. Dessa forma, você acaba com um único grupo de usuários VPN ao qual você pode adicionar membros no futuro.
 
 [!INCLUDE [always-on-vpn-standard-config-considerations-include](../includes/always-on-vpn-standard-config-considerations-include.md)]
 
@@ -67,8 +67,8 @@ Esta seção fornece uma abordagem para a separação de usuários em fases de m
 
 |Se você quiser...  |Em seguida, consulte...  |
 |---------|---------|
-|Iniciar a migração para VPN Always On     |[Migrar para VPN Always On e encerrar o DirectAccess](da-always-on-migration-deploy.md). Migrando do DirectAccess para sempre VPN requer um processo específico, a migração de clientes, que ajuda a minimizar as condições de corrida que podem surgir de executar as etapas de migração fora de ordem.         |
-|Saiba mais sobre os recursos de VPN Always On e o DirectAccess    |[Comparação de recursos do Always On DirectAccess e VPN](../vpn/vpn-map-da.md). Nas versões anteriores da arquitetura de VPN do Windows, limitações da plataforma tornou difícil fornecer recursos essenciais necessários para substituir o DirectAccess (como conexões automáticas iniciadas antes que os usuários entrar). VPN Always On, no entanto, tiver atenuado a maioria dessas limitações ou expandida a funcionalidade VPN, além dos recursos do DirectAccess.         |
+|Iniciar a migração para a VPN Always On     |[Migre para Always on VPN e descomissionar o DirectAccess](da-always-on-migration-deploy.md). Migrar do DirectAccess para Always On VPN requer um processo específico para migrar clientes, o que ajuda a minimizar as condições de corrida que surgem da execução de etapas de migração fora de ordem.         |
+|Saiba mais sobre os recursos de Always On VPN e DirectAccess    |[Comparação de recursos de Always on VPN e DirectAccess](../vpn/vpn-map-da.md). Nas versões anteriores da arquitetura de VPN do Windows, as limitações de plataforma tornaram difícil fornecer a funcionalidade crítica necessária para substituir o DirectAccess (como conexões automáticas iniciadas antes que os usuários entrem). O Always On VPN, no entanto, reduziu a maioria dessas limitações ou expandiu a funcionalidade de VPN além dos recursos do DirectAccess.         |
 
 
 

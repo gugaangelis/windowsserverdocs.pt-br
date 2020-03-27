@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: a3f1f7c4-d9b2-43e6-8bfa-fac707bbd4d3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1e450b9a2282cb4820b8802aa6d36e822f56ca12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd39a8d7f08e3ac3e6249017a042c343d9179566
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356585"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319282"
 ---
 # <a name="enable-hash-publication-for-domain-member-file-servers"></a>Habilitar publicação de hash para servidores de arquivos associados ao domínio
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Quando estiver usando Active Directory Domain Services (AD DS), você poderá usar o Política de Grupo de domínio para habilitar a publicação de hash do BranchCache para vários servidores de arquivos. Para fazer isso, você deve criar uma UO (unidade organizacional), adicionar servidores de arquivos à UO, criar uma publicação de hash do BranchCache Política de Grupo objeto (GPO) e, em seguida, configurar o GPO.  
   

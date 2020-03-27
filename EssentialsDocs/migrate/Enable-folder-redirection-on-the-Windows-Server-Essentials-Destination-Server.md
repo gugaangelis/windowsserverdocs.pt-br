@@ -3,7 +3,7 @@ title: Habilitar o redirecionamento de pastas no servidor de destino 1 do Window
 description: Descreve como usar o Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -13,12 +13,12 @@ ms.assetid: f67d195e-36f6-495a-8361-6d5faa889441
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 50995f0d03b400d6e44d16389afc69e5f25465ac
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 301224256c196b9788e80d38112ed94a6073e054
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432975"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319000"
 ---
 # <a name="enable-folder-redirection-on-the-windows-server-essentials-destination-server1"></a>Habilitar o redirecionamento de pastas no servidor de destino 1 do Windows Server Essentials
 
@@ -38,7 +38,7 @@ Se o redirecionamento de pasta estiver habilitado no servidor de origem, você p
   
 4.  Na página **Habilitar Política de Grupo de Redirecionamento de Pasta**, selecione as pastas a serem redirecionadas e, em seguida, clique em **Avançar**.  
   
-5.  Na página **Habilitar Configurações de Política de Segurança** , clique em **Concluir**.  
+5.  Na página **Habilitar Configurações de Política de Segurança**, clique em **Concluir**.  
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>Para excluir a antiga configuração da Política de Grupo de Redirecionamento de Pasta  
   
@@ -46,7 +46,7 @@ Se o redirecionamento de pasta estiver habilitado no servidor de origem, você p
   
 2. Em **Gerenciamento de Política de Grupo**, expandaaa **Floresta:** <em>YourNetworkDomainName</em>, expandaaa **Domínios**, expandaaa *YourNetworkDomainName*, e expanda **Objetos de Política de Grupo**.  
   
-3. Clique com botão direito em **Redirecionamento de Pasta W7PVP**e clique em **Excluir**.  
+3. Clique com botão direito em **Redirecionamento de Pasta W7PVP** e clique em **Excluir**.  
   
 4. Leia o aviso e depois clique em **Sim**.  
   

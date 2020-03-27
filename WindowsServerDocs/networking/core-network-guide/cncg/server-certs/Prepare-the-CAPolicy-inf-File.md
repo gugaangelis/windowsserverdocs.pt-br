@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2af3a621991627addb94238e84cceb357fb47731
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4df23cd64bcf3bf9c27190908fb5f2a48b30b833
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588086"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318298"
 ---
 # <a name="capolicyinf-syntax"></a>Sintaxe de CAPolicy. inf
 >   Aplicável ao: Windows Server (canal semestral), Windows Server 2016
@@ -42,7 +42,7 @@ Os termos a seguir são usados para descrever a estrutura do arquivo. inf:
 
 -   _Valor_ – é o parâmetro e é exibido à direita do sinal de igual.
 
-No exemplo a seguir, **[Version]** é a seção, **Signature** é a chave e **"\$Windows NT \$"** é o valor.
+No exemplo a seguir, **[Version]** é a seção, **Signature** é a chave e **"\$Windows NT\$"** é o valor.
 
 Exemplo:
 
@@ -51,7 +51,7 @@ Exemplo:
 Signature="$Windows NT$"      #key=value
 ```
 
-###  <a name="version"></a>Versão
+###  <a name="version"></a>{1&gt;Version&lt;1}
 
 Identifica o arquivo como um arquivo. inf. A versão é a única seção necessária e deve estar no início do arquivo CAPolicy. inf.
 
@@ -193,7 +193,7 @@ Em uma instalação padrão da autoridade de certificação, um subconjunto dos 
 
 Talvez você não queira emitir certificados imediatamente após a instalação de uma CA, para que você possa usar a configuração LoadDefaultTemplates para impedir que os modelos padrão sejam adicionados à AC corporativa. Se não houver modelos configurados na autoridade de certificação, ele poderá emitir nenhum certificado.
 
-**AlternateSignatureAlgorithm** configura a AC para dar suporte ao formato de assinatura PKCS \#1 v 2.1 para as solicitações de certificado e certificado de autoridade de certificação. Quando definido como 1 em uma AC raiz, o certificado de autoridade de certificação incluirá o formato de assinatura PKCS \#1 V 2.1. Quando definido em uma autoridade de certificação subordinada, a autoridade de certificação subordinada criará uma solicitação de certificado que inclui o formato de assinatura PKCS \#1 V 2.1.
+**AlternateSignatureAlgorithm** configura a AC para dar suporte ao formato de assinatura PKCS\#1 v 2.1 para o certificado de autoridade de certificação e as solicitações de certificado. Quando definido como 1 em uma AC raiz, o certificado de autoridade de certificação incluirá o formato de assinatura PKCS\#1 V 2.1. Quando definido em uma autoridade de certificação subordinada, a autoridade de certificação subordinada criará uma solicitação de certificado que inclui o formato de assinatura PKCS\#1 V 2.1.
 
 **ForceUTF8** altera a codificação padrão de nomes diferenciados relativos (RDNS) em nomes diferenciados de assunto e emissor para UTF-8. Somente os RDNs que dão suporte a UTF-8, como os que são definidos como tipos de cadeia de caracteres de diretório por uma RFC, são afetados. Por exemplo, o RDN para o controlador de domínio (DC) dá suporte à codificação como IA5 ou UTF-8, enquanto o RDN de país (C) dá suporte apenas à codificação como uma cadeia de caracteres imprimível. Portanto, a diretiva ForceUTF8 afetará um RDN DC, mas não afetará um RDN C.
 

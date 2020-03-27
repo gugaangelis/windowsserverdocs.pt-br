@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 11584b73-f9e2-4530-afa5-b8df970e6b24
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e870863b497c17b4b56265d99d91274e34690767
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 223ffd17f1e623f974e97c787fb8b18a806e5d0c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356541"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319262"
 ---
 # <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>Habilitar publicação de hash para servidores de arquivos do membro que não sejam de domínio
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 Você pode usar este procedimento para configurar a publicação de hash para o BranchCache usando o computador local Política de Grupo em um servidor de arquivos que esteja executando o Windows Server 2016 com o serviço de função **BranchCache para arquivos de rede** da função de servidor serviços de arquivo instalada.  
   
@@ -30,13 +30,13 @@ A associação a **Administradores** ou equivalente é o requisito mínimo para 
   
 ### <a name="to-enable-hash-publication-for-one-file-server"></a>Para habilitar publicação de hash para um servidor de arquivos  
   
-1.  Abra o Windows PowerShell, digite **mmc**e pressione ENTER. O Console de Gerenciamento Microsoft (MMC) é aberto.  
+1.  Abra o Windows PowerShell, digite **mmc** e pressione ENTER. O Console de Gerenciamento Microsoft (MMC) é aberto.  
   
 2.  No MMC, no menu **Arquivo**, clique em **Adicionar/Remover Snap-in**. A caixa de diálogo **Adicionar ou Remover Snap-ins** é aberta.  
   
-3.  Em **Adicionar ou Remover Snap-ins**, em **Snap-ins disponíveis**, clique duas vezes em **Editor de Objeto de Diretiva de Grupo**. O Assistente de Diretiva de Grupo é aberto com o objeto Computador Local selecionado. Clique em **Concluir**e em **OK**.  
+3.  Em **Adicionar ou Remover Snap-ins**, em **Snap-ins disponíveis**, clique duas vezes em **Editor de Objeto de Diretiva de Grupo**. O Assistente de Diretiva de Grupo é aberto com o objeto Computador Local selecionado. Clique em **Concluir** e em **OK**.  
   
-4.  No MMC do Editor de Diretiva de Grupo Local, expanda o seguinte caminho: **Política do computador local**, **configuração do computador**, **modelos administrativos**, **rede**, **servidor do LanMan**. Clique em **Servidor Lanman**.  
+4.  No Editor de Política de Grupo Local MMC, expanda o seguinte caminho: **política de computador local**, **configuração do computador**, **modelos administrativos**, **rede**, **servidor do LanMan**. Clique em **Servidor Lanman**.  
   
 5.  No painel de detalhes, clique duas vezes em **Publicação de Hash para BranchCache**. A caixa de diálogo **Publicação de Hash para BranchCache** é aberta.  
   

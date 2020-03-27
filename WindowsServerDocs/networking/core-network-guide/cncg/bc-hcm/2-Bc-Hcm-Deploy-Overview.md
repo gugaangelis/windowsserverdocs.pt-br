@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dc6ade92eb5fe04271033973911ccb98e871d236
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2ac8dc289cf321266d39016f841c243899fe6cf4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406378"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319067"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>Visão geral da implantação do modo de cache hospedado BranchCache
 
@@ -23,7 +23,7 @@ Você pode usar este guia para implantar um servidor de cache hospedado do Branc
 
 Esta visão geral inclui a infraestrutura do BranchCache de que você precisa, bem como uma visão geral passo a passo simples de implantação.
 
-## <a name="bkmk_components"></a>Infraestrutura de implantação do servidor de cache hospedado
+## <a name="hosted-cache-server-deployment-infrastructure"></a><a name="bkmk_components"></a>Infraestrutura de implantação do servidor de cache hospedado
 
 Nessa implantação, o servidor de cache hospedado é implantado usando pontos de conexão de serviço no Active Directory Domain Services \(AD DS\), e você tem a opção com o BranchCache no Windows Server 2016, no Windows Server 2012 R2 e no Windows Server 2012, para fazer o prehash do conteúdo compartilhado em servidores de conteúdo baseados na Web e em arquivos, e então pré-carregar o conteúdo em servidores de cache hospedado.
 
@@ -56,7 +56,7 @@ Quando os computadores cliente na ramificação tiverem Política de Grupo atual
 
 Você deve atualizar Política de Grupo em computadores cliente para aplicar novas configurações de Política de Grupo do BranchCache e para permitir que os clientes localizem e usem o servidor de cache hospedado.
 
-## <a name="bkmk_overview"></a>Visão geral do processo de implantação do servidor de cache hospedado
+## <a name="hosted-cache-server-deployment-process-overview"></a><a name="bkmk_overview"></a>Visão geral do processo de implantação do servidor de cache hospedado
 
 >[!NOTE]
 >Os detalhes de como executar essas etapas são fornecidos na seção implantação do [modo de cache hospedado do BranchCache](4-Bc-Hcm-Deployment.md).
