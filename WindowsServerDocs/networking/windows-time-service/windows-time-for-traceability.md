@@ -2,19 +2,19 @@
 ms.assetid: ''
 title: Horário do Windows para rastreabilidade
 description: As regulamentações em muitos setores exigem que os sistemas sejam rastreáveis para o UTC.  Isso significa que a diferença de um sistema pode ser atestada com respeito ao UTC.
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 307739042426088fa92c50e6ea4dc5d2a744f15a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405209"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314933"
 ---
 # <a name="windows-time-for-traceability"></a>Horário do Windows para rastreabilidade
 >Aplica-se a: Windows Server 2016 versão 1709 ou posterior e Windows 10 versão 1703 ou posterior
@@ -41,7 +41,7 @@ Nenhuma configuração é necessária para usar este recurso.  Esses logs de eve
 
 A seção a seguir descreve os eventos registrados para uso em cenários de rastreabilidade.
 
-# <a name="257tab257"></a>[257](#tab/257)
+# <a name="257"></a>[257](#tab/257)
 Esse evento é registrado em log quando o Serviço de Horário do Windows (W32Time) é iniciado e registra informações em log sobre a hora atual, a contagem atual de tiques, a configuração do runtime, os provedores de horário e a taxa atual do relógio.
 
 |||
@@ -71,7 +71,7 @@ w32tm.exe /query /status /verbose
 ```
 
 
-# <a name="258tab258"></a>[258](#tab/258)
+# <a name="258"></a>[258](#tab/258)
 Esse evento é registrado em log quando o Serviço de Horário do Windows (W32Time) está parando e registra em logs as informações sobre a contagem atual de tempo e de tiques.
 
 |||
@@ -84,7 +84,7 @@ Esse evento é registrado em log quando o Serviço de Horário do Windows (W32Ti
 **Texto de exemplo:** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
 
-# <a name="259tab259"></a>[259](#tab/259)
+# <a name="259"></a>[259](#tab/259)
 Esse evento registra periodicamente em log a lista atual de fontes de horário e a fonte de horário escolhida dele.  Além disso, ele registra em log a contagem atual de tiques.  Esse evento não é disparado sempre que uma fonte de horário é alterada.  Outros eventos listados mais adiante neste documento oferecem essa funcionalidade.
 
 |||
@@ -105,7 +105,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 *Identificar pares*
 `w32tm.exe /query /peers`
 
-# <a name="260tab260"></a>[260](#tab/260)
+# <a name="260"></a>[260](#tab/260)
 
 |||
 |---|---|
@@ -113,7 +113,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |Detalhes |O W32time registra em log periodicamente a configuração e o status dele. Esse é o equivalente de chamar:<br><br>`w32tm /query /configuration /verbose`<br>OU<br>`w32tm /query /status /verbose` |
 |Mecanismo de limitação  |Registrado a cada 8 horas. |
 
-# <a name="261tab261"></a>[261](#tab/261)
+# <a name="261"></a>[261](#tab/261)
 Isso registra em log cada instância quando a Hora do Sistema é modificada usando a API SetSystemTime.
 
 |||
@@ -121,7 +121,7 @@ Isso registra em log cada instância quando a Hora do Sistema é modificada usan
 |Descrição do evento |A Hora do Sistema foi definida |
 |Mecanismo de limitação  |Nenhum.<br><br>Isso deve acontecer raramente em sistemas com sincronização de tempo razoável e quando queremos registrar em log sempre que ocorrer. Ignoramos a configuração TimeJumpAuditOffset ao registrar esse evento em log porque essa configuração era destinada a limitar eventos no log de eventos do sistema do Windows. |
 
-# <a name="262tab262"></a>[262](#tab/262)
+# <a name="262"></a>[262](#tab/262)
 
 |||
 |---|---|
@@ -129,7 +129,7 @@ Isso registra em log cada instância quando a Hora do Sistema é modificada usan
 |Detalhes |A frequência do relógio do sistema é modificada constantemente pelo W32time quando o relógio está em uma sincronização próxima. Queremos capturar ajustes “razoavelmente significativos” feitos na frequência do relógio sem executar o log de eventos excessivamente. |
 |Mecanismo de limitação  |Todos os ajustes de relógio abaixo de TimeAdjustmentAuditThreshold (mín. = 128 partes por milhão, padrão = 800 partes por milhão) não são registrados em log.<br><br>A alteração de 2 PPM na frequência do relógio com granularidade atual gera uma alteração de 120 µsec/s na precisão do relógio.<br><br>Em um sistema sincronizado, a maioria dos ajustes fica abaixo desse nível. Se você quiser um acompanhamento mais preciso, essa configuração poderá ser ajustada, você poderá usar PerfCounters ou poderá fazer ambos. |
 
-# <a name="263tab263"></a>[263](#tab/263)
+# <a name="263"></a>[263](#tab/263)
 
 |||
 |---|---|
@@ -138,7 +138,7 @@ Isso registra em log cada instância quando a Hora do Sistema é modificada usan
 |Mecanismo de limitação  |Nenhum.<br><br>Esse evento ocorre somente quando uma atualização de administrador ou GP altera os provedores de horário e dispara o W32time. Queremos registrar cada instância de alteração de configurações. |
 
 
-# <a name="264tab264"></a>[264](#tab/264)
+# <a name="264"></a>[264](#tab/264)
 
 |||
 |---|---|
@@ -146,7 +146,7 @@ Isso registra em log cada instância quando a Hora do Sistema é modificada usan
 |Detalhes |O cliente NTP registra um evento com o estado atual dos servidores de tempo/pares quando o estado de um servidor de tempo/par é alterado (**Pendente ->Sincronização**, **Sincronizar -> inacessível** ou outras transições) |
 |Mecanismo de limitação  |Frequência máxima – apenas uma vez a cada 5 minutos para proteger o log contra problemas transitórios e uma implementação de provedor inadequada. |
 
-# <a name="265tab265"></a>[265](#tab/265)
+# <a name="265"></a>[265](#tab/265)
 
 |||
 |---|---|
@@ -155,7 +155,7 @@ Isso registra em log cada instância quando a Hora do Sistema é modificada usan
 |Mecanismo de limitação  |Nenhum. |
 
 
-# <a name="266tab266"></a>[266](#tab/266)
+# <a name="266"></a>[266](#tab/266)
 
 |||
 |---|---|

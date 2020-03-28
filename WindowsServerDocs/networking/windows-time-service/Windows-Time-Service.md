@@ -2,19 +2,19 @@
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Referência Técnica do Serviço de Horário do Windows
 description: ''
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 31c7c53a5dd28813076fcaa745093050808b5755
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d6f203c43ccb764b3ccbfcabbf92f448920b41c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405222"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315048"
 ---
 # <a name="windows-time-service"></a>Serviço de Tempo do Windows
 
@@ -37,7 +37,7 @@ O Serviço de Horário do Windows, também conhecido como W32Time, sincroniza a 
 > [!IMPORTANT]  
 > Antes do Windows Server 2016, o serviço W32Time não era criado para atender a necessidades de aplicativos sensíveis ao tempo.  Contudo, agora as atualizações do Windows Server 2016 permitem que você implemente uma solução para ter precisão de 1 ms em seu domínio.  Confira [Tempo Preciso do Windows 2016](accurate-time.md) e [Limite de suporte para configurar o Serviço de Horário do Windows para ambientes de alta precisão](support-boundary.md) para obter mais informações.  
   
-## <a name="BKMK_Config"></a>Onde encontrar Informações sobre a Configuração do Serviço de Horário do Windows  
+## <a name="where-to-find-windows-time-service-configuration-information"></a><a name="BKMK_Config"></a>Onde encontrar Informações sobre a Configuração do Serviço de Horário do Windows  
 Este guia **não** discute a configuração do Serviço de Horário do Windows. Há vários tópicos diferentes no Microsoft TechNet e na Base de Dados de Conhecimento Microsoft que explicam os procedimentos para configurar o Serviço de Horário do Windows. Se você precisar de informações de configuração, os tópicos a seguir deverão ajudar a localizar as informações apropriadas.  
   
 -   Para configurar o Serviço de Horário do Windows para o emulador PDC (controlador de domínio primário) raiz da floresta, confira:  
@@ -63,7 +63,7 @@ Este guia **não** discute a configuração do Serviço de Horário do Windows. 
   
 -   Para configurar o Serviço de Horário do Windows em um servidor membro em execução como um computador virtual, use a hierarquia de tempo de domínio conforme descrito em ([Configurar um computador cliente para sincronização automática de tempo de domínio](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29).  
   
-## <a name="BKMK_WTS"></a>O que é o Serviço de Horário do Windows?  
+## <a name="what-is-the-windows-time-service"></a><a name="BKMK_WTS"></a>O que é o Serviço de Horário do Windows?  
 O Serviço de Horário do Windows (W32Time) fornece sincronização de relógio de rede para computadores sem a necessidade de configuração extensiva.  
   
 O Serviço de Horário do Windows é essencial para a operação bem-sucedida da autenticação do Kerberos versão 5 e, portanto, para a autenticação baseada em AD DS. Qualquer aplicativo com reconhecimento de Kerberos, incluindo a maioria dos serviços de segurança, depende da sincronização de tempo entre os computadores que participam da solicitação de autenticação. Os controladores de domínio do AD DS também devem ter relógios sincronizados para ajudar a garantir uma replicação de dados precisa.  
@@ -72,7 +72,7 @@ O Serviço de Horário do Windows é implementado em uma biblioteca de vínculo 
   
 O W32Time.dll foi originalmente desenvolvido para o Windows 2000 Server dar suporte a uma especificação pelo protocolo de autenticação Kerberos V5 que exigia que os relógios estivessem em uma rede para serem sincronizados. Do Windows Server 2003 em diante, o W32Time.dll fornecia maior precisão na sincronização do relógio de rede no sistema operacional Windows 2000 Server e, além disso, dava suporte a uma variedade de dispositivos de hardware e protocolos NTP por meio de provedores de horário. Embora originalmente criado para fornecer sincronização de relógio para a autenticação do Kerberos, muitos aplicativos atuais usam carimbos de data/hora para garantir a consistência transacional, registrar o temo de importantes eventos e outras informações críticas para os negócios e sensíveis ao tempo. Esses aplicativos se beneficiam da sincronização de tempo entre computadores fornecidos pelo Serviço de Horário do Windows.  
   
-## <a name="BKMK_TimeProtocols"></a>Importância dos Protocolos de Tempo  
+## <a name="importance-of-time-protocols"></a><a name="BKMK_TimeProtocols"></a>Importância dos Protocolos de Tempo  
 Os protocolos de tempo se comunicam entre dois computadores para trocar informações sobre tempo e usá-las para sincronizar os relógios deles. Com o protocolo de tempo do Serviço de Horário do Windows, um cliente solicita informações sobre tempo de um servidor e sincroniza o relógio dele com base nas informações recebidas.  
   
 O Serviço de Horário do Windows usa o NTP para ajudar a sincronizar o tempo em uma rede. O NTP é um protocolo de tempo da Internet que inclui os algoritmos de disciplina necessários para sincronizar relógios. O NTP é um protocolo de tempo mais preciso que o SNTP (protocolo NTP simples) usado em algumas versões do Windows; no entanto, o W32Time continua dando suporte ao SNTP para habilitar a compatibilidade com versões anteriores com computadores que executam serviços de tempo baseados em SNTP, como o Windows 2000.  

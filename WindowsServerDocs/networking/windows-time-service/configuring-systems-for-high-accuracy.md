@@ -2,18 +2,18 @@
 ms.assetid: ''
 title: Configurar sistemas para oferecer alta precisão
 description: A sincronização de tempo no Windows 10 e no Windows Server 2016 foi substancialmente aprimorada.  Em condições operacionais razoáveis, os sistemas podem ser configurados para manter a precisão de 1 ms (milissegundo) ou melhor (com respeito ao UTC).
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cdded0eb0dc663d352011fb1a6765a2ed358764
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405201"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315031"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>Configurar sistemas para oferecer alta precisão
 >Aplica-se a: Windows Server 2016 e Windows 10 versão 1607 ou posterior
@@ -106,7 +106,7 @@ Essa medida pode ser obtida usando a ferramenta w32tm.exe da caixa de entrada.  
 
 #### <a name="registry-settings"></a>Configurações do Registro
 
-# <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
 Configura o menor intervalo em log2 segundos permitido para sondagem do sistema.
 
 |  |  | 
@@ -120,7 +120,7 @@ O seguinte comando sinaliza o Tempo do Windows para selecionar as configuraçõe
 `w32tm /config /update`
 
 
-# <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
+# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 Configura o maior intervalo em log2 segundos permitido para sondagem do sistema.
 
 |  |  |  
@@ -133,7 +133,7 @@ O seguinte comando sinaliza o Tempo do Windows para selecionar as configuraçõe
 
 `w32tm /config /update`
 
-# <a name="updateintervaltabupdateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
+# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 O número de tiques de relógio entre os ajustes de correção de fase.
 
 |  |  |  
@@ -146,7 +146,7 @@ O seguinte comando sinaliza o Tempo do Windows para selecionar as configuraçõe
 
 `w32tm /config /update`
 
-# <a name="specialpollintervaltabspecialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
+# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 Configura o intervalo de sondagem em segundos quando o sinalizador SpecialInterval 0x1 está habilitado.
 
 |  |  |  
@@ -159,7 +159,7 @@ O seguinte comando reinicia o Tempo do Windows para selecionar as configuraçõe
 
 `net stop w32time && net start w32time`
 
-# <a name="frequencycorrectratetabfrequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
+# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
 
 |  |  |  
 |---------|---------|

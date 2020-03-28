@@ -3,7 +3,7 @@ ms.assetid: 6086947f-f9ef-4e18-9f07-6c7c81d7002c
 title: Ferramentas e configurações do Serviço de Tempo do Windows
 description: ''
 author: Teresa-Motiv
-ms.author: pashort
+ms.author: lizross
 manager: dougkim
 ms.date: 02/24/2020
 ms.topic: article
@@ -13,12 +13,12 @@ ms.custom:
 - CI ID 113344
 - CSSTroubleshoot
 audience: Admin
-ms.openlocfilehash: e99c07428a1689e3c079ff2570759c849a61e945
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e9432aa11446cdd4f00efca3af28c24d757d6019
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323468"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315137"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Ferramentas e configurações do Serviço de Tempo do Windows
 
@@ -256,7 +256,7 @@ Nas tabelas a seguir, "Todas as versões" refere-se às versões do Windows que 
 >  
 > Por exemplo, 5 minutos passam a ser 5 &times; 60 &times; 1.000 &times; 10.000 = 3.000.000.000 tiques do relógio.  
 
-### Entradas da subchave <a id="config"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig-subkey-entries"></a>Entradas da subchave <a id="config"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config"
 
 |Entrada de registro |Versões |Descrição |
 | --- | --- | --- |
@@ -289,7 +289,7 @@ Nas tabelas a seguir, "Todas as versões" refere-se às versões do Windows que 
 |**UpdateInterval** |Todas as versões |Especifica o número de tiques do relógio entre os ajustes de correção de fase. O valor padrão para controladores de domínio é **100**. O valor padrão para membros do domínio é **30.000**. O valor padrão para clientes e servidores autônomos é **360.000**.<br /><br />**Observação**<br />Zero não é um valor válido para a entrada do Registro **UpdateInterval**. Em computadores que executam o Windows Server 2003, o Windows Server 2003 R2, o Windows Server 2008 e o Windows Server 2008 R2, se o valor for definido como **0**, o Serviço de Hora do Windows vai alterá-lo automaticamente para **1**.|
 |**UtilizeSslTimeData** |Versões do Windows posteriores ao Windows 10 build 1511 |Um valor igual a **1** indica que o W32Time usa vários carimbos de data/hora SSL para propagar um relógio grosseiramente impreciso. |
 
-### Entradas da subchave <a id="parameters"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters-subkey-entries"></a>Entradas da subchave <a id="parameters"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"
 
 | Entrada de registro | Versões | Descrição |
 | --- | --- | --- |
@@ -299,7 +299,7 @@ Nas tabelas a seguir, "Todas as versões" refere-se às versões do Windows que 
 |**ServiceMain** |Todas as versões |Mantida pelo W32Time. Contém dados reservados usados pelo sistema operacional Windows. Qualquer alteração nessa configuração pode causar resultados imprevisíveis. O valor padrão em membros do domínio é **SvchostEntry_W32Time**. O valor padrão em clientes e servidores autônomos é **SvchostEntry_W32Time**. |
 |**Tipo** |Todas as versões |Indica de quais pares a sincronização será aceita:  <ul><li>**NoSync**. O serviço de horário não é sincronizado com outras fontes.</li><li>**NTP**. O serviço de horário é sincronizado dos servidores especificados no **NtpServer**. entrada do Registro.</li><li>**NT5DS**. O serviço de horário sincroniza da hierarquia de domínio.  </li><li>**AllSync**. O serviço de horário usa todos os mecanismos de sincronização disponíveis.  </li></ul>O valor padrão em membros do domínio é **NT5DS**. O valor padrão em clientes e servidores autônomos é **NTP**. |
 
-### Entradas da subchave <a id="ntpclient"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient-subkey-entries"></a>Entradas da subchave <a id="ntpclient"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient"
 
 |Entrada de registro |Versão |Descrição |
 | --- | --- | --- |
@@ -316,7 +316,7 @@ Nas tabelas a seguir, "Todas as versões" refere-se às versões do Windows que 
 |**SpecialPollInterval** |Todas as versões |Especifica o intervalo de sondagem especial, em segundos, para os pares manuais. Quando o sinalizador **SpecialInterval** 0x1 está habilitado, o W32Time usa esse intervalo de sondagem, em vez de um intervalo de sondagem determinado pelo sistema operacional. O valor padrão em membros do domínio é **3.600**. O valor padrão em clientes e servidores autônomos é **604.800**.<br/><br/>Uma novidade do build 1702, o **SpecialPollInterval** está contido nos valores do Registro de configuração **MinPollInterval** e **MaxPollInterval**.|
 |**SpecialPollTimeRemaining** |Todas as versões |Mantida pelo W32Time. Contém dados reservados usados pelo sistema operacional Windows. Ele especifica o tempo, em segundos, antes que o W32Time seja ressincronizado após a reinicialização do computador. Qualquer alteração a essa configuração pode causar resultados imprevisíveis. O valor padrão em membros do domínio e em clientes e servidores autônomos é deixado em branco. |
 
-### Entradas da subchave <a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a>Entradas da subchave <a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer"
 
 |Entrada do Registro |Versões |Descrição |
 | --- | --- | --- |

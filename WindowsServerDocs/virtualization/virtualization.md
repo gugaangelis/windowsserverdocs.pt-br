@@ -7,15 +7,15 @@ manager: brianlic
 ms.technology: compute
 ms.assetid: c248b41f-0de3-7136-9a25-b4b07e41ebf0
 ms.topic: landing-page
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.localizationpriority: high
-ms.openlocfilehash: 50d30631a6c2bbf9a94ab6c59bbd006323458241
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1d9f7da0bc2a2f6113242ab4af90f5d8da49b2c3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364046"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307900"
 ---
 # <a name="virtualization"></a>Virtualização
 
@@ -81,7 +81,7 @@ A virtualização no Windows Server é uma das tecnologias fundamentais necessá
                     <div class="cardText">
                         <h3>Contêineres do Windows</h3>
 <HR />
-                        <p>Os Contêineres do Windows fornecem uma virtualização no nível do sistema operacional que permite que vários aplicativos isolados sejam executados em um único sistema. Dois tipos diferentes de tempos de execução do contêiner são incluídos com o recurso, cada um com um grau diferente de isolamento do aplicativo.</p>
+                        <p>Os Contêineres do Windows fornecem uma virtualização no nível do sistema operacional que permite que vários aplicativos isolados sejam executados em um único sistema. Dois tipos diferentes de runtimes do contêiner são incluídos com o recurso, cada um com um grau diferente de isolamento do aplicativo.</p>
                      </div>
                   </div>
               </div>
