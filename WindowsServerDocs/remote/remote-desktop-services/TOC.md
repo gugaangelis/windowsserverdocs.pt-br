@@ -63,7 +63,7 @@
 ### [Como otimizar o Windows 10, versão 1909, para uma função de VDI (Virtual Desktop Infrastructure)](rds_vdi-recommendations-1909.md)
 ### [Como otimizar o Windows 10, versão 1803, para uma função de VDI (Infraestrutura de Área de Trabalho Virtual)](rds-vdi-recommendations-1803.md)
 ### [Gerenciar usuários na coleção de RDS](rds-user-management.md)
-### [Personalizar o título "recursos de trabalho" do RDS usando o PowerShell no Windows Server](rds-work-resources.md)
+### [Personalizar o título de RDS "Recursos de Trabalho" usando o PowerShell no Windows Server](rds-work-resources.md)
 ### [Diagnosticar problemas de desempenho do aplicativo com contadores de desempenho](rds-rdsh-performance-counters.md)
 
 ## Acessar seus recursos da Área de Trabalho Remota
@@ -93,8 +93,8 @@
 #### [Conceder acesso ao seu computador de fora da rede](clients/remote-desktop-allow-outside-access.md)
 #### [Alterar a porta de escuta da Área de Trabalho Remota em seu computador](clients/change-listening-port.md)
 ### Informações avançadas
-#### [Qual cliente funciona melhor para você?](clients/remote-desktop-app-compare.md)
-#### [Configurações de arquivo RDP da Área de Trabalho Remota](clients/rdp-files.md)
+#### [Comparar os clientes](clients/remote-desktop-app-compare.md)
+#### [Configurações de arquivo RDP de Área de Trabalho Remota compatível](clients/rdp-files.md)
 #### [Esquema de URI de Área de Trabalho Remota](clients/remote-desktop-uri.md)
 #### [Perguntas frequentes sobre o cliente da Área de Trabalho Remota](clients/remote-desktop-client-faq.md)
 #### [Configurações de privacidade para aplicativos gerenciados e áreas de trabalho](clients/remote-privacy-settings.md)
