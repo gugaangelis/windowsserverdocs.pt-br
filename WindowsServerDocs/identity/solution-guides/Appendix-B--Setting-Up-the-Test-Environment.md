@@ -95,7 +95,7 @@ Agora você criará uma rede virtual interna chamada ID_AD_Network.
 
 6.  Clique em **OK** para criar a rede virtual e feche o Gerenciador de Rede Virtual, ou clique em **Aplicar** para criar a rede virtual e continuar a usar o Gerenciador de Rede Virtual.  
 
-### <a name="BKMK_Build"></a>Criar o controlador de domínio  
+### <a name="build-the-domain-controller"></a><a name="BKMK_Build"></a>Criar o controlador de domínio  
 Crie uma máquina virtual para ser usada como o controlador de domínio (DC1). Instale a máquina virtual usando o Windows Server 2012 ISO e nomeie-o como DC1.  
 
 ##### <a name="to-install-active-directory-domain-services"></a>Para instalar os Serviços de Domínio Active Directory  
@@ -199,7 +199,7 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
     gpupdate /force  
     ```  
 
-### <a name="BKMK_FS1"></a>Compilar o servidor de arquivos e o servidor de AD RMS (ARQUIVO1)  
+### <a name="build-the-file-server-and-ad-rms-server-file1"></a><a name="BKMK_FS1"></a>Compilar o servidor de arquivos e o servidor de AD RMS (ARQUIVO1)  
 
 1. Crie uma máquina virtual com o nome ARQUIVO1 do Windows Server 2012 ISO.  
 
@@ -282,7 +282,7 @@ Ao criar cotas e telas de arquivo, você tem a opção de enviar notificações 
 > [!NOTE]  
 > As políticas de acesso central não estão habilitadas por padrão no sistema ou volume de inicialização C:.  
 
-#### <a name="BKMK_CS1"></a>Instalar Active Directory Rights Management Services  
+#### <a name="install-active-directory-rights-management-services"></a><a name="BKMK_CS1"></a>Instalar Active Directory Rights Management Services  
 Adicione o AD RMS e todos os recursos necessários pelo Gerenciador do Servidor. Escolha todos os padrões.  
 
 ###### <a name="to-install-active-directory-rights-management-services"></a>Para instalar o Active Directory Rights Management Services  
@@ -552,9 +552,9 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
     -   Valor: DWORD  
 
-## <a name="BKMK_CF"></a>Configuração de laboratório para implantação de declarações entre florestas cenário  
+## <a name="lab-setup-for-deploying-claims-across-forests-scenario"></a><a name="BKMK_CF"></a>Configuração de laboratório para implantação de declarações entre florestas cenário  
 
-### <a name="BKMK_2.1"></a>Criar uma máquina virtual para DC2  
+### <a name="build-a-virtual-machine-for-dc2"></a><a name="BKMK_2.1"></a>Criar uma máquina virtual para DC2  
 
 -   Crie uma máquina virtual do Windows Server 2012 ISO.  
 
@@ -567,7 +567,7 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 >   
 > Todas as imagens de máquina virtual (servidores e clientes) devem ser reconfiguradas para usar um endereço IPv4 (IP versão 4) estático e configurações do cliente do DNS (Sistema de Nome de Domínio). Para obter mais informações, consulte [Configurar um cliente DNS para o endereço IP estático](https://go.microsoft.com/fwlink/?LinkId=150952).  
 
-### <a name="BKMK_2.2"></a>Configurar uma nova floresta chamada adatum.com  
+### <a name="set-up-a-new-forest-called-adatumcom"></a><a name="BKMK_2.2"></a>Configurar uma nova floresta chamada adatum.com  
 
 ##### <a name="to-install-active-directory-domain-services"></a>Para instalar os Serviços de Domínio Active Directory  
 
@@ -620,7 +620,7 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 >   
 > Se esses comandos forem executados sem erros, as florestas podem se comunicar. Para ver mais informações sobre os erros de nslookup, consulte a seção de solução de problemas no tópico [Usando o NSlookup.exe](https://support.microsoft.com/kb/200525)  
 
-### <a name="BKMK_2.22"></a>Definir contoso.com como uma floresta confiante para adatum.com  
+### <a name="set-contosocom-as-a-trusting-forest-to-adatumcom"></a><a name="BKMK_2.22"></a>Definir contoso.com como uma floresta confiante para adatum.com  
 Nesta etapa, você criará a relação de confiança entre os sites da Adatum Corporation e da Contoso, Ltd.  
 
 ##### <a name="to-set-contoso-as-a-trusting-forest-to-adatum"></a>Para definir Contoso como floresta de confiança da Adatum  
@@ -641,7 +641,7 @@ Nesta etapa, você criará a relação de confiança entre os sites da Adatum Co
 
 8.  Continue a seguir as instruções do assistente.  
 
-### <a name="BKMK_2.4"></a>Criar usuários adicionais na floresta adatum  
+### <a name="create-additional-users-in-the-adatum-forest"></a><a name="BKMK_2.4"></a>Criar usuários adicionais na floresta adatum  
 Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o atributo Company com o valor **adatum**.  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>Para criar um usuário com o atributo Empresa  
@@ -662,7 +662,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
     ```  
 
-### <a name="BKMK_2.5"></a>Criar o tipo de declaração da empresa em adataum.com  
+### <a name="create-the-company-claim-type-on-adataumcom"></a><a name="BKMK_2.5"></a>Criar o tipo de declaração da empresa em adataum.com  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>Para criar um tipo de declaração usando o Windows PowerShell  
 
@@ -683,7 +683,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
     ```  
 
-### <a name="BKMK_2.55"></a>Habilitar a propriedade de recurso da empresa em contoso.com  
+### <a name="enable-the-company-resource-property-on-contosocom"></a><a name="BKMK_2.55"></a>Habilitar a propriedade de recurso da empresa em contoso.com  
 
 ##### <a name="to-enable-the-company-resource-property-on-contosocom"></a>Para habilitar a propriedade de recurso Empresa no contoso.com  
 
@@ -697,7 +697,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
 5.  Selecione **Empresa** na lista **Propriedades do Recurso**, clique com o botão direito do mouse e selecione **Habilitar**.  
 
-### <a name="BKMK_2.6"></a>Habilitar o controle de acesso dinâmico no adatum.com  
+### <a name="enable-dynamic-access-control-on-adatumcom"></a><a name="BKMK_2.6"></a>Habilitar o controle de acesso dinâmico no adatum.com  
 
 ##### <a name="to-enable-dynamic-access-control-for-adatumcom"></a>Para habilitar o Controle de Acesso Dinâmico para adatum.com  
 
@@ -717,7 +717,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
     gpupdate /force  
     ```  
 
-### <a name="BKMK_2.8"></a>Criar o tipo de declaração da empresa em contoso.com  
+### <a name="create-the-company-claim-type-on-contosocom"></a><a name="BKMK_2.8"></a>Criar o tipo de declaração da empresa em contoso.com  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>Para criar um tipo de declaração usando o Windows PowerShell  
 
@@ -734,7 +734,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
     ```  
 
-### <a name="BKMK_2.9"></a>Criar a regra de acesso central  
+### <a name="create-the-central-access-rule"></a><a name="BKMK_2.9"></a>Criar a regra de acesso central  
 
 ##### <a name="to-create-a-central-access-rule"></a>Para criar uma regra de acesso central  
 
@@ -765,7 +765,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
    -Server:"contoso.com" `  
    ```  
 
-### <a name="BKMK_2.10"></a>Criar a política de acesso central  
+### <a name="create-the-central-access-policy"></a><a name="BKMK_2.10"></a>Criar a política de acesso central  
 
 ##### <a name="to-create-a-central-access-policy"></a>Para criar uma política de acesso central  
 
@@ -779,7 +779,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
     -Member "AdatumEmployeeAccessRule" `  
     ```  
 
-### <a name="BKMK_2.11"></a>Publicar a nova política por meio de Política de Grupo  
+### <a name="publish-the-new-policy-through-group-policy"></a><a name="BKMK_2.11"></a>Publicar a nova política por meio de Política de Grupo  
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>Para aplicar a política de acesso central aos servidores do arquivo por meio da Política de Grupo  
 
@@ -811,13 +811,13 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
 7.  Feche o Editor de Gerenciamento de Política de Grupo. Você acaba de adicionar a política de acesso central à Política de Grupo.  
 
-### <a name="BKMK_2.12"></a>Criar a pasta de ganhos no servidor de arquivos  
+### <a name="create-the-earnings-folder-on-the-file-server"></a><a name="BKMK_2.12"></a>Criar a pasta de ganhos no servidor de arquivos  
 Crie um novo volume NTFS no FILE1 e crie a seguinte pasta: D:\Ganhos.  
 
 > [!NOTE]  
 > As políticas de acesso central não estão habilitadas por padrão no sistema ou volume de inicialização C:.  
 
-### <a name="BKMK_2.13"></a>Definir a classificação e aplicar a política de acesso central na pasta ganhos  
+### <a name="set-classification-and-apply-the-central-access-policy-on-the-earnings-folder"></a><a name="BKMK_2.13"></a>Definir a classificação e aplicar a política de acesso central na pasta ganhos  
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>Para atribuir a política de acesso central no servidor de arquivos  
 
