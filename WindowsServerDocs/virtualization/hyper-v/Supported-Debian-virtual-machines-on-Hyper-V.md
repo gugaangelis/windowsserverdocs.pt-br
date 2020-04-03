@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 7a717acf5c132d68d6ee041aeb5af5a430aa171b
+ms.sourcegitcommit: 9f7cc76b8c9add44dcbbd97f77b4f881d5a2c073
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791768"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80613002"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuais Debian com suporte no Hyper-V
 
@@ -32,7 +32,7 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
 
 * (*em branco*)-recurso não disponível
 
-| **Recurso**                                                                                                                                  | **Versão do sistema operacional Windows Server** | **10 (Buster)** | **9,0-9,6 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
+| **Recurso**                                                                                                                                  | **Versão do sistema operacional Windows Server** | **10.0-10.3 (Buster)** | **9.0-9.12 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **Disponibilidade**                                                                                                                             |                                             | Interno              | Interno              | Interno              | Interno (observação 6)     |
 | **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -71,7 +71,7 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
 | Inicialização segura                                                                                                                                  | 2019, 2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="BKMK_notes"></a>Registra
+## <a name="notes"></a><a name="BKMK_notes"></a>Registra
 
 1. Não há suporte para a criação de sistemas de arquivos em VHDs maiores que 2TB.
 
@@ -93,7 +93,7 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
    ```
 8. Os recursos mais recentes do kernel de upstream só estão disponíveis usando o kernel inclusos do [Debian](https://wiki.debian.org/Backports).
 
-Consulte também
+Veja também
 
 * [Máquinas virtuais CentOS e Red Hat Enterprise Linux com suporte no Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
