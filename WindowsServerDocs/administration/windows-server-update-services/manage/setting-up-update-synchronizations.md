@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4559016388f9b0d765c8e4d76f76fa7ef0a7f0f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361600"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639750"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configurar sincronizações de atualização
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Durante a sincronização, um servidor WSUS baixa atualizações (arquivos e metadados de atualização) de uma origem de atualização. Ele também baixa novas classificações e categorias de produtos, se houver. Quando o servidor do WSUS for sincronizado pela primeira vez, ele baixará todas as atualizações que você especificou quando configurou as opções de sincronização. Após a primeira sincronização, o servidor WSUS baixa apenas as atualizações da origem da atualização, bem como as revisões em metadados para atualizações existentes e as expirações para atualizações.
 

@@ -13,12 +13,12 @@ ms.assetid: deae35b9-7647-42b8-b6bf-45645a44c9c4
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: fba83d22d9e5d9f31a5809781aa04943cc4cd3af
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6416a86b0f80861d0272581c8468fa7d5bb7f329
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364146"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639950"
 ---
 # <a name="hyper-v-virtual-machine-connection"></a>Conexão com Máquina Virtual do Hyper-V
 
@@ -47,7 +47,7 @@ Você pode encontrar as seguintes informações úteis para usar o VMConnect:
 |Alterar as configurações da máquina virtual|Selecione **Arquivo** > **Configurações**.|  
 |Conecte-se a um \(arquivo .iso\) de imagem de DVD ou a \(arquivo .vfd\) de um disquete virtual|Selecione **Mídia**.<br /><br />Não há suporte para disquetes virtuais para máquinas virtuais de geração 2. Para obter mais informações, confira [Devo criar uma máquina virtual de geração 1 ou 2 no Hyper-V?](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md).|  
 |Usar os recursos locais de um host na máquina virtual do Hyper\-V, como uma unidade flash USB|Ative o modo de sessão avançado no host Hyper-V, use o VMConnect para se conectar à máquina virtual e, antes de se conectar, escolha o recurso local que deseja usar. Para obter as etapas específicas, confira [Usar recursos locais na máquina virtual do Hyper\-V com o VMConnect](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md).|  
-|Alterar configurações de VMConnect salvas para uma máquina virtual|Execute o seguinte comando do Windows PowerShell ou o prompt de comando:<br /><br />`VMConnect.exe <ServerName> <VMName> \/edit`|  
+|Alterar configurações de VMConnect salvas para uma máquina virtual|Execute o seguinte comando do Windows PowerShell ou o prompt de comando:<br /><br />`VMConnect.exe <ServerName> <VMName> /edit`|  
 |Impedir que um usuário do VMConnect assuma o controle da sessão VMConnect de outro usuário|[Ativar o modo de sessão avançada no host do Hyper-V](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#turn-on-enhanced-session-mode-on-a-hyper-v-host).<br /><br />Não ter o modo de sessão avançado ativado pode representar um risco de segurança e privacidade. Se um usuário estiver conectado e tiver feito logon em uma máquina virtual por meio do VMConnect e outro usuário autorizado conectar-se à mesma máquina virtual, a sessão será usada pelo segundo usuário e o primeiro usuário perderá a sessão. O segundo usuário poderá ver a área de trabalho, os documentos e os aplicativos do primeiro usuário.|
 |Gerenciar serviços de integração ou componentes que permitem que a VM se comunique com o host Hyper-V| Em hosts Hyper-V que executam o Windows 10 ou o Windows Server 2016, você não pode gerenciar os serviços de integração com o VMConnect. Confira estes tópicos: <br />- [Ligar/desligar Integration Services do host do Hyper-V](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics) <br />- [Ligar/desligar Integration Services de uma máquina virtual do Windows](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#manage-integration-services-from-guest-os-windows)<br />- [Ligar/desligar Integration Services de uma máquina virtual do Linux](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#manage-integration-services-from-guest-os-linux) <br />- [Manter os serviços de integração atualizados para a máquina virtual](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#integration-service-maintenance)  <br />Para hosts que executam o Windows Server 2012 ou o Windows Server 2012 R2, confira [Integration Services](https://technet.microsoft.com/library/dn798297(v=ws.11).aspx).|
 |Redimensionar a janela do VMConnect|Você pode alterar o tamanho da janela do VMConnect para máquinas virtuais de geração 2 que executam um sistema operacional Windows. Para fazer isso, talvez seja necessário ativar o modo de sessão avançada no host Hyper-V. Para obter mais informações, confira [Ativar o modo de sessão avançada no host do Hyper-V](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#turn-on-enhanced-session-mode-on-a-hyper-v-host). Para máquinas virtuais que executam o Ubuntu, confira [Como alterar a resolução de tela do Ubuntu em uma VM do Hyper-V](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/).|

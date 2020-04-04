@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 47269fbfac6aea3fe46513ad67d2cfa2f0c9b78e
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465490"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639923"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novidades no Windows Server 2019
 
@@ -63,7 +63,7 @@ O **Windows Defender ATP Exploit Guard** é um novo conjunto de funcionalidades 
 
 -   A [ASR (Redução da Superfície de Ataque)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) é um conjunto de controles que as empresas podem habilitar para impedir que malwares alcancem o computador, bloqueando arquivos suspeitos de serem mal-intencionados (por exemplo, arquivos do Office), scripts, movimentos laterais, comportamentos de ransomware e ameaças baseadas em email.
 
--   A [Proteção de rede](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/network-protection-exploit-guard?ocid=cx-blog-mmpc) protege o ponto de extremidade contra ameaças baseadas na Web, bloqueando qualquer processo de saída no dispositivo para endereços IP/hosts não confiáveis por meio do Windows Defender SmartScreen.
+-   A [Proteção de rede](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/network-protection) protege o ponto de extremidade contra ameaças baseadas na Web, bloqueando qualquer processo de saída no dispositivo para endereços IP/hosts não confiáveis por meio do Windows Defender SmartScreen.
 
 -   O [Acesso controlado a pastas](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc) protege dados confidenciais contra ransomware impedindo que processos não confiáveis acessem suas pastas protegidas.
 

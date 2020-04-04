@@ -8,12 +8,12 @@ ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856340"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661067"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -23,7 +23,7 @@ O serviço de migração de armazenamento é lançado em duas partes: o serviço
 
 Por exemplo, o Windows Server, versão 1903 inclui novos recursos e correções para o serviço de migração de armazenamento, que também estão disponíveis para o Windows Server 2019 e o Windows Server, versão 1809, instalando [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534).
 
-## <a name="collecting-logs"></a>Como coletar arquivos de log ao trabalhar com Suporte da Microsoft
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>Como coletar arquivos de log ao trabalhar com Suporte da Microsoft
 
 O serviço de migração de armazenamento contém logs de eventos para o serviço Orchestrator e o serviço de proxy. O servidor Orchestrator sempre contém ambos os logs de eventos, e os servidores de destino com o serviço de proxy instalado contêm os logs de proxy. Esses logs estão localizados em:
 
@@ -343,7 +343,7 @@ Ao tentar executar o corte de uma origem de cluster do Windows Server 2008 R2, a
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso de servidor de arquivos de origem do cluster e o endereço IP e, em seguida, alterando o IP e o cluster de destino de NetName Endereço para corresponder à fonte original. 
+Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso do servidor de arquivos de origem do cluster e o endereço IP e, em seguida, alterando o endereço IP e o nome do cluster de destino para corresponder à origem original. 
 
 ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar o DHCP 
 
@@ -421,7 +421,7 @@ Se você já executou a transferência uma ou mais vezes:
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
    
- 2. Para todos os usuários retornados com seu nome original, edite seu "nome de logon do usuário (anterior ao Windows 2000)" para remover o sufixo de caractere aleatório adicionado pelo serviço de migração de armazenamento, para que esse perdedor possa fazer logon.
+ 2. Para todos os usuários retornados com seu nome original, edite seu "nome de logon do usuário (anterior ao Windows 2000)" para remover o sufixo de caractere aleatório adicionado pelo serviço de migração de armazenamento, para que esse usuário possa fazer logon.
  3. Para todos os grupos retornados com seu nome original, edite seu "nome de grupo (anterior ao Windows 2000)" para remover o sufixo de caractere aleatório adicionado pelo serviço de migração de armazenamento.
  4. Para todos os usuários ou grupos desabilitados com nomes que agora contêm um sufixo adicionado pelo serviço de migração de armazenamento, você pode excluir essas contas. Você pode confirmar que as contas de usuário foram adicionadas posteriormente, pois elas só conterão o grupo de usuários de domínio e terão uma data/hora de criação que corresponda à hora de início da transferência do serviço de migração de armazenamento.
  
@@ -484,7 +484,7 @@ Neste estágio, o orquestrador do serviço de migração de armazenamento está 
  - O serviço de registro remoto não está em execução no computador de origem.
  - o firewall não permite conexões de registro remoto para o servidor de origem do Orchestrator.
  - A conta de migração de origem não tem permissões de registro remoto para se conectar ao computador de origem.
- - A conta de migração de origem não tem permissões de leitura no registro do computador de origem, em "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" ou em "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ LanManServer
+ - A conta de migração de origem não tem permissões de leitura no registro do computador de origem, em "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" ou em "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer"
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." 
 
