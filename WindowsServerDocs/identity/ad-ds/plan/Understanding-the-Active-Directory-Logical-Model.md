@@ -1,7 +1,6 @@
 ---
 ms.assetid: 62708b2e-4090-4cf7-8ae6-a557f31f561f
 title: Noções básicas do modelo lógico do Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8f1cb2d7e3970ace95f2d0a4fac6b12efba1ca9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf2b997d601d42a47282df0ed95382e471233ff6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408655"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821609"
 ---
 # <a name="understanding-the-active-directory-logical-model"></a>Noções básicas do modelo lógico do Active Directory
 
@@ -24,8 +23,8 @@ Projetar sua estrutura lógica para Active Directory Domain Services (AD DS) env
   
 Antes de projetar sua estrutura lógica de Active Directory, é importante entender o modelo lógico Active Directory. AD DS é um banco de dados distribuído que armazena e gerencia informações sobre recursos de rede, bem como dados específicos do aplicativo de aplicativos habilitados para diretório. AD DS permite que os administradores organizem elementos de uma rede (como usuários, computadores e dispositivos) em uma estrutura de confinamento hierárquica. O contêiner de nível superior é a floresta. Em florestas são domínios, e dentro de domínios são UOs (unidades organizacionais). Isso é chamado de modelo lógico porque é independente dos aspectos físicos da implantação, como o número de controladores de domínio necessários em cada topologia de domínio e rede.  
   
-## <a name="active-directory-forest"></a>Floresta Active Directory  
-Uma floresta é uma coleção de um ou mais domínios Active Directory que compartilham uma estrutura lógica comum, esquema de diretório (definições de classe e atributo), configuração de diretório (informações de site e replicação) e catálogo global (pesquisa em toda a floresta funcionalidades). Os domínios na mesma floresta são automaticamente vinculados a relações de confiança transitivas bidirecionais.  
+## <a name="active-directory-forest"></a>Floresta do Active Directory  
+Uma floresta é uma coleção de um ou mais domínios Active Directory que compartilham uma estrutura lógica comum, esquema de diretório (definições de classe e atributo), configuração de diretório (informações de site e replicação) e catálogo global (recursos de pesquisa em toda a floresta). Os domínios na mesma floresta são automaticamente vinculados a relações de confiança transitivas bidirecionais.  
   
 ## <a name="active-directory-domain"></a>Domínio do Active Directory  
 Um domínio é uma partição em uma floresta Active Directory. O particionamento de dados permite que as organizações repliquem dados somente para onde for necessário. Dessa forma, o diretório pode ser dimensionado globalmente em uma rede com largura de banda disponível limitada. Além disso, o domínio dá suporte a várias outras funções principais relacionadas à administração, incluindo:  

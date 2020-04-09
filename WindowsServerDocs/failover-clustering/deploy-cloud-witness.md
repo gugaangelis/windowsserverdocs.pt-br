@@ -2,27 +2,27 @@
 ms.assetid: 0cd1ac70-532c-416d-9de6-6f920a300a45
 title: Implantar uma testemunha de nuvem para um cluster de failover
 ms.prod: windows-server
-manager: eldenc
+manager: lizross
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: Como usar Microsoft Azure para hospedar a testemunha para um cluster de failover do Windows Server na nuvem – também conhecido como implantar uma testemunha em nuvem.
-ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0b4ba643dca81d2d19b94b1d27485149f938e1c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948172"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827909"
 ---
-# <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implantar uma testemunha em nuvem para um cluster de failover
+# <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implantar uma testemunha de nuvem para um Cluster de Failover
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
 A testemunha em nuvem é um tipo de testemunha de quorum de cluster de failover que usa Microsoft Azure para fornecer um voto no quorum de cluster. Este tópico fornece uma visão geral do recurso de testemunha em nuvem, os cenários aos quais ele dá suporte e instruções sobre como configurar uma testemunha de nuvem para um cluster de failover.
 
-## <a name="CloudWitnessOverview"></a>Visão geral da testemunha em nuvem
+## <a name="cloud-witness-overview"></a><a name="CloudWitnessOverview"></a>Visão geral da testemunha em nuvem
 
 A Figura 1 ilustra uma configuração de quorum de cluster de failover ampliado de vários sites com o Windows Server 2016. Neste exemplo de configuração (Figura 1), há dois nós em 2 datacenters (chamados de sites). Observe que é possível que um cluster abranja mais de 2 data centers. Além disso, cada datacenter pode ter mais de dois nós. Uma configuração de quorum de cluster típica nesta configuração (SLA de failover automático) fornece a cada nó um voto. Um voto extra é dado à testemunha de quorum para permitir que o cluster continue em execução mesmo se um dos datacenters sofrer uma queda de energia. A matemática é simples-há 5 votos totais e você precisa de três votos para o cluster mantê-lo em execução.  
 
@@ -47,7 +47,7 @@ Há benefícios significativos que essa abordagem:
 
 Como mostra a Figura 2, não há um terceiro site separado necessário. A testemunha em nuvem, como qualquer outra testemunha de quorum, obtém um voto e pode participar de cálculos de quorum.  
 
-## <a name="CloudWitnessSupportedScenarios"></a>Testemunha em nuvem: cenários com suporte para o tipo de testemunha única
+## <a name="cloud-witness-supported-scenarios-for-single-witness-type"></a><a name="CloudWitnessSupportedScenarios"></a>Testemunha em nuvem: cenários com suporte para o tipo de testemunha única
 Se você tiver uma implantação de cluster de failover, onde todos os nós podem acessar a Internet (por extensão do Azure), é recomendável que você configure uma testemunha de nuvem como seu recurso de testemunha de quorum.  
 
 Alguns dos cenários com suporte para o uso da testemunha de nuvem como uma testemunha de quorum são os seguintes:  
@@ -60,7 +60,7 @@ Alguns dos cenários com suporte para o uso da testemunha de nuvem como uma test
 
 A partir do Windows Server 2012 R2, é recomendável sempre configurar uma testemunha, pois o cluster gerencia automaticamente o voto da testemunha e os nós votam com o quorum dinâmico.  
 
-## <a name="CloudWitnessSetUp"></a>Configurar uma testemunha de nuvem para um cluster
+## <a name="set-up-a-cloud-witness-for-a-cluster"></a><a name="CloudWitnessSetUp"></a>Configurar uma testemunha de nuvem para um cluster
 Para configurar uma testemunha de nuvem como uma testemunha de quorum para o cluster, conclua as seguintes etapas:
 1. Criar uma conta de armazenamento do Azure para usar como uma testemunha de nuvem
 2. Configure a testemunha de nuvem como uma testemunha de quorum para o cluster.
@@ -78,12 +78,12 @@ Quando você usa a mesma conta de armazenamento do Azure para configurar a teste
 1. Entre no [portal do Azure](https://portal.azure.com).
 2. No menu Hub, selecione Novo -> Dados + Armazenamento -> Conta de armazenamento.
 3. Na página criar uma conta de armazenamento, faça o seguinte:
-    1. Insira um nome para a conta de armazenamento.
+    1. Insira um nome para sua conta de armazenamento.
     <br>Os nomes da conta de armazenamento devem ter entre 3 e 24 caracteres e podem conter apenas números e letras minúsculas. O nome da conta de armazenamento também deve ser exclusivo no Azure.
         
     2. Para **tipo de conta**, selecione **uso geral**.
     <br>Você não pode usar uma conta de armazenamento de BLOBs para uma testemunha em nuvem.
-    3. Para **Desempenho**, selecione **Standard**.
+    3. Para **desempenho**, selecione **padrão**.
     <br>Você não pode usar o armazenamento Premium do Azure para uma testemunha em nuvem.
     2. Para **replicação**, selecione **armazenamento com REDUNDÂNCIA local (LRS)** .
     <br>O clustering de failover usa o arquivo de blob como o ponto de arbitragem, o que requer algumas garantias de consistência ao ler os dados. Portanto, você deve selecionar **armazenamento com redundância local** para o tipo de **replicação** .
@@ -172,5 +172,5 @@ Ao configurar uma testemunha de nuvem como uma testemunha de quorum para o clust
 ### <a name="proxy-considerations-with-cloud-witness"></a>Considerações sobre proxy com testemunha de nuvem  
 A testemunha de nuvem usa HTTPS (porta padrão 443) para estabelecer a comunicação com o serviço blob do Azure. Verifique se a porta HTTPS está acessível por meio do proxy de rede.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 - [O que há de novo no clustering de failover no Windows Server](whats-new-in-failover-clustering.md)

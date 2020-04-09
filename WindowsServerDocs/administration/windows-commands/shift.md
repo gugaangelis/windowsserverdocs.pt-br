@@ -1,28 +1,22 @@
 ---
 title: shift
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para Shift, que altera a posição de parâmetros de lote em um arquivo em lotes.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f74e0f1f9041a4a7b95d83772ea79376c82876de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c242fe90a8bf32eda5a3db511910e3d7aa4610f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371254"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834259"
 ---
 # <a name="shift"></a>shift
-
-
 
 Altera a posição de parâmetros de lote em um arquivo em lotes.
 
@@ -34,7 +28,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 shift [/n <N>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -49,7 +43,7 @@ shift [/n <N>]
 - O comando **Shift** não tem nenhum efeito sobre o **%\\** * parâmetro de lote.
 - Não há nenhum comando de **deslocamento** para trás. Depois de implementar o comando **Shift** , você não pode recuperar o parâmetro de lote ( **%0**) que existia antes da mudança.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 As linhas a seguir de um arquivo em lotes de exemplo chamado mycopy. bat demonstram como usar **Shift** com qualquer número de parâmetros de lote. Neste exemplo, mycopy. bat copia uma lista de arquivos para um diretório específico. Os parâmetros de lote são representados pelos argumentos de nome de arquivo e diretório.
 ```
@@ -61,7 +55,7 @@ rem mycopy dir file1 file2 ...
 set todir=%1
 :getfile
 shift
-if "%1"=="" goto end
+if %1== goto end
 copy %1 %todir%
 goto getfile
 :end
@@ -69,6 +63,6 @@ set todir=
 echo All done
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

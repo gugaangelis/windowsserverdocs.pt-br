@@ -1,6 +1,5 @@
 ---
 title: Logoff único para OpenID Connect com o AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +7,12 @@ ms.date: 11/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5f0127e60243ca81f7e25282adc79e01c54b4b32
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fe176af74ebabb5cb56d8aa74d755c4e35ec94a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407854"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857309"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>Logoff único para OpenID Connect com o AD FS
 
@@ -110,5 +109,5 @@ O `LogoutUri` é a URL usada pelo AF FS para "fazer logoff" do usuário. Para im
 **R:** Sim. É responsabilidade do aplicativo cliente descartar todos os artefatos autenticados depois que uma solicitação de saída foi recebida no `LogoutUri`registrado.
 
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

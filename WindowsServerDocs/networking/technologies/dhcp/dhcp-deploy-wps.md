@@ -8,12 +8,12 @@ ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1e962948feaf6bb37beeb3c241d3ae3369be77dc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312668"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860699"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>Implantar o DHCP usando o Windows PowerShell
 
@@ -207,7 +207,7 @@ Itens de configuração de exemplo adicionais para AD DS e DNS são fornecidos n
 |Ligações de Conexão de Rede|Ethernet|
 |Configurações do servidor DNS|DC1.corp.contoso.com|
 |Endereço IP do servidor DNS preferencial|10.0.0.2|
-|Valores de escopo<br /><br />1. nome do escopo<br />2. endereço IP inicial<br />3. endereço IP final<br />4. máscara de sub-rede<br />5. gateway padrão (opcional)<br />6. duração da concessão|1. sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
+|Valores de escopo<p>1. nome do escopo<br />2. endereço IP inicial<br />3. endereço IP final<br />4. máscara de sub-rede<br />5. gateway padrão (opcional)<br />6. duração da concessão|1. sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
 |Modo de Operação do Servidor DHCP IPv6|Não habilitado|
 
 ## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>Usando este guia em um laboratório de teste

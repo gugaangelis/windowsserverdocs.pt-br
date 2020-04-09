@@ -1,23 +1,19 @@
 ---
 title: Configurar o DirectAccess no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 618c88e14fa86a06e763206a981bb42a667705eb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d8029b954a5957433fb0fcc71d3bef610a187939
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311487"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819700"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>Configurar o DirectAccess no Windows Server Essentials
 
@@ -77,7 +73,7 @@ Este tópico fornece instruções passo a passo para configurar o DirectAccess n
   
 ##  <a name="step-1-add-remote-access-management-tools-to-your-server"></a><a name="BKMK_AddRAM"></a>Etapa 1: Adicionar ferramentas de gerenciamento de acesso remoto ao seu servidor  
   
-#### <a name="to-add-remote-access-management-tools"></a>Para adicionar as Ferramentas de Gerenciamento de Acesso Remoto  
+#### <a name="to-add-remote-accregss-management-tools--reg"></a>Para adicionar as ferramentas de gerenciamento do ACC&reg;SS remotas &reg;
   
 1.  No servidor, no canto inferior esquerdo da tela Inicial, clique no ícone do **Gerenciador do Servidor**.  
   

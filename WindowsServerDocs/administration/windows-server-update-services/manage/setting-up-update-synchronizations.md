@@ -1,24 +1,20 @@
 ---
 title: Configurar sincronizações de atualização
 description: Tópico Windows Server Update Service (WSUS)-como configurar e configurar sincronizações de atualização
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639750"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828532"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configurar sincronizações de atualização
 
@@ -89,7 +85,7 @@ As opções para personalizar como o servidor do WSUS sincroniza com a origem de
 
 -   Você pode especificar uma porta personalizada para sincronização. Para obter informações sobre como configurar portas, consulte [etapa 3: configurar o WSUS](../deploy/2-configure-wsus.md) no guia de implantação do WSUS.
 
--   Você pode usar SSL (Secure Socket Layers) para proteger a sincronização de informações de atualização entre servidores WSUS. Para obter mais informações sobre como usar o SSL, consulte a seção "3,5. Proteger o WSUS com o protocolo protocolo SSL "da [etapa 3: configurar o WSUS](../deploy/2-configure-wsus.md) no guia de implantação do WSUS.
+-   Você pode usar SSL (Secure Socket Layers) para proteger a sincronização de informações de atualização entre servidores WSUS. Para obter mais informações sobre como usar o SSL, consulte a seção 3,5. Proteger o WSUS com o protocolo protocolo SSL da [etapa 3: configurar o WSUS](../deploy/2-configure-wsus.md) no guia de implantação do WSUS.
 
 ## <a name="synchronizing-manually-or-automatically"></a>Sincronizando manual ou automaticamente
 Você pode sincronizar o servidor do WSUS manualmente ou especificar um horário para que ele seja sincronizado automaticamente.

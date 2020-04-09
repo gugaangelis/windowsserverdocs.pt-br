@@ -1,7 +1,6 @@
 ---
 ms.assetid: 61ed00fd-51c7-4728-91fa-8501de9d8f28
 title: Publicar aplicativos com SharePoint, Exchange e RDG
-description: ''
 author: billmath
 manager: mtillman
 ms.author: billmath
@@ -9,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 3852baf866dae20d1d1d08219841295aa976c626
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79319930"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818679"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>Publicar aplicativos com SharePoint, Exchange e RDG
 
@@ -27,7 +26,7 @@ Este tópico descreve as tarefas necessárias para publicar o SharePoint Server,
 > [!NOTE]
 > Essas informações são fornecidas no estado em que se encontram.  Serviços de Área de Trabalho Remota dá suporte e recomenda usar o [Proxy Azure app para fornecer acesso remoto seguro a aplicativos locais](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started).
 
-## <a name="BKMK_6.1"></a>Publicar o SharePoint Server
+## <a name="publish-sharepoint-server"></a><a name="BKMK_6.1"></a>Publicar o SharePoint Server
 Você pode publicar um site do SharePoint por meio do proxy de aplicativo Web quando o site do SharePoint estiver configurado para autenticação baseada em declarações ou autenticação integrada do Windows. Se você quiser usar Serviços de Federação do Active Directory (AD FS) (AD FS) para pré-autenticação, deverá configurar uma terceira parte confiável usando um dos assistentes.
 
 -   Se o site do SharePoint usa a autenticação baseada em declarações, você deve usar o Assistente para Adicionar o Objeto de Confiança de Terceira Parte Confiável para configurar o objeto de confiança de terceira parte confiável para o aplicativo.
@@ -40,7 +39,7 @@ Você pode publicar um site do SharePoint por meio do proxy de aplicativo Web qu
 
 Se seu site do SharePoint for configurado usando AAM (mapeamentos alternativos de acesso) ou coleções de sites com nome de host, você pode usar diferentes URLs de servidor externo e de back-end para publicar seu aplicativo. No entanto, se você não configurar seu site do SharePoint usando o AAM ou coleções de sites com nome de host, deve usar as mesmas URLs de servidor externo e de back-end.
 
-## <a name="BKMK_6.2"></a>Publicar o Exchange Server
+## <a name="publish-exchange-server"></a><a name="BKMK_6.2"></a>Publicar o Exchange Server
 A tabela a seguir descreve os serviços do Exchange que você pode publicar por meio do proxy de aplicativo Web e a pré-autenticação com suporte para esses serviços:
 
 
@@ -48,7 +47,7 @@ A tabela a seguir descreve os serviços do Exchange que você pode publicar por 
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Outlook Web App     | -AD FS usando a autenticação não baseada em declarações<br />-Passagem<br />-AD FS usando a autenticação baseada em declarações para o Exchange 2013 Service Pack 1 (SP1) local |                                                                  Para obter mais informações, consulte [Usando autenticação baseada em declarações do AD FS com o Outlook Web App e o EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Painel de controle do Exchange |                                                                               Passagem                                                                               |                                                                                                                                                                                                                                                                                    |
-|    Outlook em Qualquer Lugar    |                                                                               Passagem                                                                               | Você deve publicar as três URLs para o Outlook em Qualquer Lugar funcionar corretamente:<br /><br />-A URL de descoberta automática.<br />-O nome de host externo do servidor Exchange; ou seja, a URL que está configurada para os clientes se conectarem.<br />-O FQDN interno do Exchange Server. |
+|    Outlook em Qualquer Lugar    |                                                                               Passagem                                                                               | Você deve publicar as três URLs para o Outlook em Qualquer Lugar funcionar corretamente:<p>-A URL de descoberta automática.<br />-O nome de host externo do servidor Exchange; ou seja, a URL que está configurada para os clientes se conectarem.<br />-O FQDN interno do Exchange Server. |
 |  Exchange ActiveSync   |                                                     Passagem<br/> AD FS usando o protocolo HTTP Basic Authorization                                                      |                                                                                                                                                                                                                                                                                    |
 
 Para publicar o Outlook Web App usando a autenticação integrada do Windows, você deve usar o Assistente para Adicionar o Objeto de Confiança de Terceira Parte Confiável Não Baseado em Declarações para configurar o objeto de confiança de terceira parte confiável para o aplicativo.
@@ -162,7 +161,7 @@ Se você quiser restringir o acesso ao gateway de acesso remoto e adicionar pré
 
             Para obter mais informações sobre o RDP, consulte [Configurando o cenário de OTP do Gateway TS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731249(v=ws.10)).
 
-## <a name="BKMK_Links"></a>Consulte também
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também
 
 - [Planejando a publicação de aplicativos usando o proxy de aplicativo Web](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))
 

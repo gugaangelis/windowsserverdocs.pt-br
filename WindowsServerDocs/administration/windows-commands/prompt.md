@@ -1,24 +1,20 @@
 ---
 title: prompt
 description: Saiba como personalizar o prompt de comando.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2df80d3af6344644a68b1b2d01ba48fbf41f1581
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6662cb7fb00b7d21311fef2ca127ba89591a00b2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372024"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837129"
 ---
 # <a name="prompt"></a>prompt
 
@@ -34,11 +30,11 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 prompt [<Text>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Text >|Especifica o texto e as informações que você deseja incluir no prompt de comando.|
+|> de texto \<|Especifica o texto e as informações que você deseja incluir no prompt de comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -47,7 +43,7 @@ Você pode personalizar o prompt de comando para exibir qualquer texto desejado,
 
 A tabela a seguir lista as combinações de caracteres que você pode incluir em vez de, ou além, uma ou mais cadeias de caracteres no parâmetro de *texto* . A lista inclui uma breve descrição do texto ou das informações que cada combinação de caracteres adiciona ao seu prompt de comando.  
 
-| espaço |                                 Descrição                                 |
+| Espaço |                                 Descrição                                 |
 |-----------|-----------------------------------------------------------------------------|
 |    $q     |                               = (sinal de igual)                                |
 |    $$     |                               $ (cifrão)                               |
@@ -65,18 +61,18 @@ A tabela a seguir lista as combinações de caracteres que você pode incluir em
 |    $a     |                                & (e comercial)                                |
 |    $c     |                            (parêntese esquerdo)                             |
 |    $f     |                            ) (parêntese direito)                            |
-|    $s     |                                    disco                                    |
+|    $s     |                                    de espaço                                    |
 
 Quando as extensões de comando são habilitadas (ou seja, o padrão), o comando de **prompt** dá suporte aos seguintes caracteres de formatação:  
 
-|espaço|Descrição|
+|Espaço|Descrição|
 |---------|-----------|
-|$+|Zero ou mais caracteres de sinal de adição ( **+** ), dependendo da profundidade da pilha de diretórios **PUSHD** (um caractere para cada nível enviado).|
+|$+|Zero ou mais caracteres de sinal de adição ( **+** ), dependendo da profundidade da pilha de diretórios **PUSHD** (um caractere para cada nível enviado por push).|
 |$m|O nome remoto associado à letra da unidade atual ou à cadeia de caracteres vazia se a unidade atual não for uma unidade de rede.|
 
 Se você incluir o caractere de **$p** no parâmetro de texto, o disco será lido depois que você inserir cada comando (para determinar a unidade e o caminho atuais). Isso pode levar mais tempo, especialmente para unidades de disquete.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 
 Para definir um prompt de comando de duas linhas com a hora e a data atuais na primeira linha e o sinal de maior que na próxima linha, digite:
 ```
@@ -96,6 +92,6 @@ Para alterar manualmente o prompt de comando para a configuração padrão (a un
 prompt $p$g
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
