@@ -2,18 +2,18 @@
 title: Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: brianlic
+manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: O FSRM (Gerenciador de recursos de servidor de arquivos) é uma ferramenta que permite gerenciar e classificar dados em um servidor de arquivos do Windows Server.
-ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ed7e5abce9389283a9b9d641f813b5df89a586b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394169"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854239"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
 
@@ -53,7 +53,7 @@ Os recursos incluídos no Gerenciador de recursos de servidor de arquivos podem 
   
 -   Agendar um relatório que será executado todo domingo à meia-noite, gerando uma lista que inclui os arquivos acessados mais recentemente dos dois dias anteriores. Isto pode ajudar a determinar a atividade de armazenamento do fim de semana e planejar o tempo de inatividade do seu servidor adequadamente.  
 
-## <a name="whats-new"></a>O que há de novo – impedir que o FSRM crie diários de alterações
+## <a name="whats-new---prevent-fsrm-from-creating-change-journals"></a><a name="whats-new"></a>O que há de novo – impedir que o FSRM crie diários de alterações
 
 A partir do Windows Server, versão 1803, agora você pode impedir que o serviço do Gerenciador de recursos do servidor de arquivos crie um diário de alterações (também conhecido como um diário de USN) em volumes quando o serviço for iniciado. Isso pode conservar um pouco de espaço em cada volume, mas desabilitará a classificação de arquivos em tempo real.
 
@@ -61,7 +61,7 @@ Para novos recursos mais antigos, consulte [novidades no Gerenciador de recursos
 
 Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diário de alterações em alguns ou todos os volumes quando o serviço for iniciado, use as seguintes etapas: 
 
-1. Pare o serviço SRMSVC. Por exemplo, abra uma sessão do PowerShell como administrador e digite `Stop-Service SrmSvc`.
+1. Pare o serviço SRMSVC. Por exemplo, abra uma sessão do PowerShell como administrador e insira `Stop-Service SrmSvc`.
 2. Exclua o diário de USN dos volumes nos quais você deseja conservar espaço usando o comando fsutil: 
 
       ```
@@ -69,14 +69,14 @@ Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diár
       ```
     Por exemplo: `fsutil usn deletejournal /d c:`
 
-3. Abra o editor do registro, por exemplo, `regedit` digitando a mesma sessão do PowerShell.
-4. Navegue até a seguinte chave: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**
+3. Abra o editor do registro, por exemplo, digitando `regedit` na mesma sessão do PowerShell.
+4. Navegue até a seguinte chave: **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**
 5. Para, opcionalmente, ignorar a criação do diário de alterações para todo o servidor (pule esta etapa se quiser desabilitá-la somente em volumes específicos):
     1. Clique com o botão direito do mouse na chave de **configurações** e selecione **novo** > **valor DWORD (32 bits)** . 
     1. Nomeie o valor `SkipUSNCreationForSystem`.
     1. Defina o valor como **1** (em hexadecimal).
 6. Para, opcionalmente, ignorar a criação do diário de alterações para volumes específicos:
-    1. Obtenha os caminhos de volume que você deseja ignorar usando o `fsutil volume list` comando ou o seguinte comando do PowerShell:
+    1. Obtenha os caminhos de volume que você deseja ignorar usando o comando `fsutil volume list` ou o seguinte comando do PowerShell:
         ```PowerShell
         Get-Volume | Format-Table DriveLetter,FileSystemLabel,Path
         ```
@@ -88,7 +88,7 @@ Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diár
                     System Reserved \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
         C                           \\?\Volume{8d3c9e8a-0000-0000-0000-501f00000000}\
        ```
-    2. De volta ao editor do registro, clique com o botão direito do mouse na chave **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** e selecione **novo** **valor de cadeia de caracteres múltipla** > .
+    2. De volta ao editor do registro, clique com o botão direito do mouse na chave **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings** e selecione **novo** > **valor de cadeia de caracteres múltipla**.
     3. Nomeie o valor `SkipUSNCreationForVolumes`.
     4. Insira o caminho de cada volume no qual você ignora a criação de um diário de alterações, colocando cada caminho em uma linha separada. Por exemplo:
 
@@ -98,9 +98,9 @@ Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diár
         ```
 
         > [!NOTE] 
-        > O editor do registro pode informar que removeu cadeias de caracteres vazias, exibindo este aviso de que você pode desconsiderar com segurança: *Data do tipo REG_MULTI_SZ não pode conter cadeias de caracteres vazias. O editor do registro removerá todas as cadeias de caracteres vazias encontradas.*
+        > O editor do registro pode informar que removeu cadeias de caracteres vazias, exibindo este aviso de que você pode desconsiderar com segurança: *dados do tipo REG_MULTI_SZ não podem conter cadeias de caracteres vazias. O editor do registro removerá todas as cadeias de caracteres vazias encontradas.*
 
-7. Inicie o serviço SRMSVC. Por exemplo, em uma sessão do PowerShell `Start-Service SrmSvc`, insira.
+7. Inicie o serviço SRMSVC. Por exemplo, em uma sessão do PowerShell, insira `Start-Service SrmSvc`.
 
 
 

@@ -1,12 +1,8 @@
 ---
-title: Adicionar servidores ao Gerenciador do Servidor
+title: Add Servers to Server Manager
 description: Gerenciador do Servidor
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aab895f2-fe4d-4408-b66b-cdeadbd8969e
 author: coreyp-at-msft
@@ -14,14 +10,14 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: ad30a8f1c4c1e0aa317512eb68fffbd76413175b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7b5a5b358fa2df54777e0f1f88b1e86a7dafd80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383261"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851569"
 ---
-# <a name="add-servers-to-server-manager"></a>Adicionar servidores ao Gerenciador do Servidor
+# <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -30,7 +26,7 @@ No Windows Server, você pode gerenciar vários servidores remotos usando um ún
 Este tópico descreve como adicionar servidores ao pool de servidores do Gerenciador de servidores.
 
 > [!NOTE]
-> Em nossos testes, o Server Manager no Windows Server 2012 e versões posteriores do Windows Server podem ser usados para gerenciar até 100 servidores que estão configurados com uma carga de trabalho típica. O número de servidores que podem ser gerenciadas usando um único console do Gerenciador de servidores pode variar dependendo da quantidade de dados que você solicita do servidores gerenciados e recursos de hardware e rede disponíveis para o computador que executa o Gerenciador de servidores. Conforme a quantidade de dados que você deseja exibir se aproxima de capacidade do recurso desse computador, você pode enfrentar respostas lentas do Gerenciador de servidores e atrasos na finalização de atualizações. Para ajudar a aumentar o número de servidores que você pode gerenciar usando o Gerenciador de servidores, é recomendável limitar os dados de evento que o Gerenciador do servidor obtém dos seus servidores gerenciados usando as configurações na caixa de diálogo **Configurar dados de eventos** . É possível abrir Configurar Dados do Evento no menu **Tarefas** do bloco **Eventos** . Se você precisar gerenciar um número de nível empresarial de servidores em sua organização, é recomendável avaliar produtos da [Microsoft System Center suite](https://go.microsoft.com/fwlink/p/?LinkId=239437).
+> Em nossos testes, o Server Manager no Windows Server 2012 e versões posteriores do Windows Server podem ser usados para gerenciar até 100 servidores que estão configurados com uma carga de trabalho típica. O número de servidores que podem ser gerenciadas usando um único console do Gerenciador de servidores pode variar dependendo da quantidade de dados que você solicita do servidores gerenciados e recursos de hardware e rede disponíveis para o computador que executa o Gerenciador de servidores. Conforme a quantidade de dados que você deseja exibir se aproxima de capacidade do recurso desse computador, você pode enfrentar respostas lentas do Gerenciador de servidores e atrasos na finalização de atualizações. Para ajudar a aumentar o número de servidores que você pode gerenciar usando o Gerenciador de servidores, é recomendável limitar os dados de evento que o Gerenciador do servidor obtém dos seus servidores gerenciados usando as configurações na caixa de diálogo **Configurar dados de eventos** . É possível abrir Configurar Dados do Evento no menu **Tarefas** do bloco **Eventos**. Se você precisar gerenciar um número de nível empresarial de servidores em sua organização, é recomendável avaliar produtos da [Microsoft System Center suite](https://go.microsoft.com/fwlink/p/?LinkId=239437).
 > 
 > Gerenciador de servidores podem receber status apenas online ou offline dos servidores que estão executando o Windows Server 2003. Embora você possa usar o Gerenciador de servidores para executar tarefas de gerenciamento em servidores que estão executando o Windows Server 2008 R2 ou Windows Server 2008, você não pode adicionar funções e recursos para servidores que estão executando o Windows Server 2008 R2, Windows Server 2008 ou Windows Server 2003 .
 > 
@@ -42,7 +38,7 @@ Este tópico contém as seguintes seções.
 
 -   [Fornecer credenciais com o comando gerenciar como](#BKMK_creds)
 
-## <a name="BKMK_creds"></a>Fornecer credenciais com o comando gerenciar como
+## <a name="provide-credentials-with-the-manage-as-command"></a><a name=BKMK_creds></a>Fornecer credenciais com o comando gerenciar como
 Como adicionar servidores remotos ao Gerenciador do servidor, alguns dos servidores que você adicionar podem exigir credenciais da conta de usuário diferente para acessar ou gerenciá-los. Para especificar as credenciais para um servidor gerenciado que serão diferentes daquele que você pode usar para fazer logon no computador no qual você está executando o Gerenciador de servidores, use o comando **Gerenciar como** depois de adicionar um servidor ao Gerenciador de servidores, que pode ser acessada clicando com o entrada para um servidor gerenciado em blocos de **servidores** da home page de uma função ou grupo. Ao clicar em **Gerenciar Como** a caixa de diálogo **Segurança do Windows** é exibida, na qual você pode fornecer um nome de usuário que tenha direitos de acesso no servidor gerenciado, em um dos formatos a seguir.
 
 -   *Nome de usuário*
@@ -64,7 +60,7 @@ Depois de adicionar servidores para gerenciar seguindo os procedimentos neste t�
 > [!NOTE]
 > Funções e recursos que não têm suporte para o comando **Gerenciar como** incluem serviços de área de trabalho remota (RDS) e o endereço IP de servidor de gerenciamento (IPAM). Se você não pode gerenciar o servidor remoto do RDS ou IPAM usando as mesmas credenciais que você está usando no computador no qual você está executando o Gerenciador de servidores, adicionando a conta que você normalmente usa para gerenciar esses servidores remotos ao grupo Administradores no computador de teste que está executando o Gerenciador de servidores. Em seguida, faça logon no computador que está executando o Gerenciador de servidores com a conta usada para gerenciar o servidor remoto que está executando o rdS ou IPAM.
 
-## <a name="BKMK_add"></a>Adicionar servidores a serem gerenciados
+## <a name="add-servers-to-manage"></a><a name=BKMK_add></a>Adicionar servidores a serem gerenciados
 Você pode adicionar servidores ao Gerenciador do servidor para gerenciar usando qualquer um dos três métodos na caixa de diálogo **Adicionar servidores** .
 
 -   **Active Directory Domain Services**  adicionar servidores para gerenciar que o active directory localiza no mesmo domínio do computador local.
@@ -96,13 +92,13 @@ Você pode adicionar servidores ao Gerenciador do servidor para gerenciar usando
 ### <a name="add-and-manage-servers-in-workgroups"></a>Adicionar e gerenciar servidores em grupos de trabalho
 Embora a adição de servidores que estão em grupos de trabalho ao Gerenciador de servidores possa ser bem-sucedida, depois que eles são adicionados, a coluna de **Capacidade de gerenciamento** do bloco **Servidores** em uma página de função ou grupo que inclui um servidor de grupo de trabalho pode exibir erros de **Credenciais inválidas** que ocorrem ao tentar se conectar ao ou coletar dados do servidor remoto do grupo de trabalho.
 
-Erros desse tipo ou semelhantes podem ocorrer nestas condições.
+Esses erros ou erros semelhantes podem ocorrer nas condições a seguir.
 
 -   O servidor gerenciado está no mesmo grupo de trabalho do computador que está executando o Gerenciador do servidor.
 
 -   O servidor gerenciado está em outro grupo de trabalho do computador que está executando o Gerenciador do servidor.
 
--   Um dos computadores está em um grupo de trabalho, enquanto o outro está em um domínio.
+-   Um dos computadores está um grupo de trabalho, enquanto o outro está em um domínio.
 
 -   O computador que está executando o Gerenciador do servidor está em um grupo de trabalho e os servidores remotos gerenciados estão em uma sub-rede diferente.
 
@@ -114,7 +110,7 @@ Erros desse tipo ou semelhantes podem ocorrer nestas condições.
 
 ##### <a name="to-add-remote-workgroup-servers-to-server-manager"></a>Para adicionar servidores de grupo de trabalho remotos ao Gerenciador do Servidor
 
-1.  No computador que está executando o Gerenciador do servidor, adicione o nome do servidor de grupo de trabalho à lista **TrustedHosts**. Este é um requisito da autenticação NTLM. Para adicionar um nome de computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o seguinte comando.
+1.  No computador que está executando o Gerenciador do servidor, adicione o nome do servidor de grupo de trabalho à lista **TrustedHosts**. Este é um requisito da autenticação NTLM. Por exemplo, para adicionar o nome do computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o comando a seguir.
 
     ```
     Set-Item wsman:\localhost\Client\TrustedHosts Server01 -Concatenate -force
@@ -127,9 +123,9 @@ Erros desse tipo ou semelhantes podem ocorrer nestas condições.
     Se elas não estiverem na mesma sub-rede ou se o perfil de rede do servidor de grupo de trabalho não estiver definida como **particular**, no servidor de grupo de trabalho, alterar a configuração do **gerenciamento remoto do Windows (HTTP-entrada)** entrada em Firewall do Windows para permitir explicitamente conexões de computadores remotos adicionando os nomes de computador na guia **computadores** da caixa de diálogo **Propriedades** da configuração.
 
 3.  > [!IMPORTANT]
-    > A execução do cmdlet nesta etapa substitui as medidas de UAC (Controle de Conta do Usuário) que impedem processos elevados de executar em computadores do grupo de trabalho, a menos que o Administrador interno ou a conta do Sistema esteja executando os processos. O cmdlet permite que membros do grupo de Administradores gerenciem o servidor de grupo de trabalho sem fazer logon como o Administrador interno. A segurança é reduzida ao permitir que usuários adicionais gerenciem o servidor de grupo de trabalho; entretanto, isso é mais seguro do que a fornecer credenciais de conta de administrador interno para várias pessoas que gerenciam o servidor de grupo de trabalho.
+    > A execução do cmdlet nesta etapa substitui as medidas de UAC (Controle de Conta do Usuário) que impedem processos elevados de executar em computadores do grupo de trabalho, a menos que o Administrador interno ou a conta do Sistema esteja executando os processos. O cmdlet permite que membros do grupo de Administradores gerenciem o servidor de grupo de trabalho sem fazer logon como o Administrador interno. Dar permissão para que usuários adicionais gerenciem o servidor de grupo de trabalho pode reduzir sua segurança; no entanto, isso é mais seguro do que fornecer credenciais da conta de Administrador interno, em que pode haver árias pessoas gerenciando o servidor de grupo de trabalho.
 
-    Para substituir as restrições de UAC em processos executados com privilégios elevados nos computadores de grupo de trabalho, crie uma entrada de registro chamada **LocalAccountTokenFilterPolicy** no servidor de grupo trabalho executando o cmdlet a seguir.
+    Para substituir as restrições de UAC em processos executados com privilégios elevados nos computadores de grupo de trabalho, crie uma entrada de Registro chamada **LocalAccountTokenFilterPolicy** no servidor de grupo trabalho executando o cmdlet a seguir.
 
     ```
     New-ItemProperty -Name LocalAccountTokenFilterPolicy -path HKLM:\SOFTWARE\Microsoft\Windows\Currentversion\Policies\System -propertytype DWord -value 1
@@ -145,7 +141,7 @@ Erros desse tipo ou semelhantes podem ocorrer nestas condições.
 
 ##### <a name="to-add-remote-servers-when-server-manager-is-running-on-a-workgroup-computer"></a>Para adicionar servidores remotos quando o Gerenciador do Servidor está executando em um computador de grupo de trabalho
 
-1.  No computador que está executando o Gerenciador do Servidor, adicione servidores remotos à lista **TrustedHosts** do computador local em uma sessão do Windows PowerShell. Para adicionar um nome de computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o seguinte comando.
+1.  No computador que está executando o Gerenciador do Servidor, adicione servidores remotos à lista **TrustedHosts** do computador local em uma sessão do Windows PowerShell. Por exemplo, para adicionar o nome do computador a uma lista existente de hosts confiáveis, adicione o parâmetro `Concatenate` ao comando. Por exemplo, para adicionar o computador `Server01` a uma lista existente de hosts confiáveis, use o comando a seguir.
 
     ```
     Set-Item wsman:\localhost\Client\TrustedHosts Server01 -Concatenate -force

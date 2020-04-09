@@ -2,20 +2,19 @@
 title: Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
-Keywords: Espaços de Armazenamento Diretos, S2D, manutenção
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 20439a06c255a73f20a297f765e6ed11abfde6f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402829"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857529"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
 
@@ -83,7 +82,7 @@ Todas as máquinas virtuais começarão a realizar a migração ao vivo para out
 
 Depois que o servidor tiver concluído o esvaziamento, ele aparecerá como **Em Pausa** no Gerenciador de Cluster de Failover e no PowerShell.
 
-![Pausado com](media/maintain-servers/paused.png)
+![Em pausa](media/maintain-servers/paused.png)
 
 Agora você pode reiniciá-lo ou desligá-lo com segurança como faria normalmente (por exemplo, usando os cmdlets Restart-Computer ou Stop-Computer do PowerShell).
 

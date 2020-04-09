@@ -1,7 +1,6 @@
 ---
 ms.assetid: 04b63d9f-e924-4146-9b1d-785ed8b4239c
 title: Planejamento para interoperabilidade com o AD FS 1.x
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e9f72bd83c90a804749329521a72e3232589c735
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a0bbf64a7bf110e3d73084dd047c84b2b83be8d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407962"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858609"
 ---
 # <a name="planning-for-interoperability-with-ad-fs-1x"></a>Planejamento para interoperabilidade com o AD FS 1.x
 
-Serviços de Federação do Active Directory (AD FS) \(AD FS\) servidores de Federação que executam o Windows Server® 2012 podem interoperar com um AD FS 1,0 \(instalado com o Windows Server 2003 R2\) Serviço de Federação e um AD FS 1,1 \(instalado com o Windows Server 2008 ou o Windows Server 2008 R2\) serviço de Federação. Qualquer uma das seguintes combinações de interoperabilidade tem suporte:  
+Serviços de Federação do Active Directory (AD FS) \(AD FS\) servidores de Federação que executam o Windows Server&reg; 2012 podem interoperar com um AD FS 1,0 \(instalado com o Windows Server 2003 R2\) Serviço de Federação e um AD FS 1,1 \(instalado com o Windows Server 2008 ou o Windows Server 2008 R2\) serviço de Federação. Qualquer uma das seguintes combinações de interoperabilidade tem suporte:  
 
 -   Qualquer AD FS 1. *x* serviço de Federação pode enviar uma declaração que pode ser consumida por um AD FS serviço de Federação no Windows Server 2012. Para obter mais informações, consulte [lista de verificação: Configurando AD FS para consumir declarações do AD FS 1. x](../../ad-fs/deployment/Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md).  
 

@@ -2,22 +2,18 @@
 title: Monitorar a carga existente no servidor de acesso remoto
 description: Este tópico faz parte do guia de monitoramento e contabilidade de acesso remoto no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0507a7f0151e1f5f8aefaf4de5a3a4f8a776971d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ba9aa4ea0e8031601ce04fd25814785e4b739f51
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314190"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860529"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>Monitorar a carga existente no servidor de acesso remoto
 

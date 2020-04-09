@@ -9,14 +9,13 @@ ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 ms.date: 05/01/2018
-ms.openlocfilehash: d393ad4af81ee1c24fa5f28b8a3b05217e7b34dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: def65c174ff608301f8d4f35ef1ce19818103e61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396295"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859369"
 ---
 # <a name="network-policy-server-user-data-collection"></a>Coleta de dados de usuário do servidor de políticas de rede
 
@@ -29,7 +28,7 @@ Este documento explica como localizar informações de usuário coletadas pelo N
 
 - Carimbo de data/hora
 - Carimbo de hora do evento
-- Nome de usuário
+- Nome de Usuário
 - Nome de usuário totalmente qualificado
 - Endereço IP do Cliente
 - Fornecedor do cliente
@@ -43,8 +42,8 @@ Se os dados de contabilidade estiverem habilitados e configurados, os registros 
 
 Se os dados de contabilidade estiverem configurados para SQL Server, consulte para todos os registros em que User_Name = `'<username>'`.
 
-Se os dados de contabilidade estiverem configurados para um arquivo de log, pesquise o `<username>` arquivo de log para localizar todas as entradas de log.
+Se os dados de contabilidade estiverem configurados para um arquivo de log, pesquise o arquivo de log para o `<username>` localizar todas as entradas de log.
 
 As entradas de log de eventos de serviços de acesso e política de rede são consideradas duplicadas para os dados de contabilidade e não precisam ser coletadas.
 
-Se os dados de contabilidade não estiverem habilitados, os registros das tentativas de autenticação do NPS de um usuário poderão ser obtidos no log de eventos de serviços de acesso `<username>`e diretiva de rede, pesquisando pelo.
+Se os dados de contabilidade não estiverem habilitados, os registros das tentativas de autenticação do NPS de um usuário poderão ser obtidos no log de eventos de serviços de acesso e diretiva de rede pesquisando o `<username>`.

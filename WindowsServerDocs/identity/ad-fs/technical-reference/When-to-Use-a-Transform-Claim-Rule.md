@@ -1,7 +1,6 @@
 ---
 ms.assetid: 77aa61bf-9c04-4889-a5d2-6f45bc1b8bd2
 title: Quando usar uma regra de declaração de transformação
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b7cdf68783db1b6b775209e4e42dc6b6ccf0e1b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b69156d1e2825f4287112735493ebc5cc8469d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385422"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853779"
 ---
 # <a name="when-to-use-a-transform-claim-rule"></a>Quando usar uma regra de declaração de transformação
 Você pode usar essa regra em Serviços de Federação do Active Directory (AD FS) \(AD FS\) quando precisar mapear um tipo de declaração de entrada para um tipo de declaração de saída e, em seguida, aplicar uma ação que determinará qual saída deve ocorrer com base nos valores originados na declaração de entrada. Quando você usa essa regra, passa ou transforma declarações que correspondem à lógica da regra a seguir, com base em uma das opções configuradas na regra, conforme descrito na tabela abaixo:  
@@ -48,7 +47,7 @@ Por exemplo, quando uma regra é definida com a opção lógica **Passar todos o
 ## <a name="transforming-a-claim"></a>Transformando uma declaração  
 Em AD FS, o termo *transformação de declarações* significa substituir um valor de declaração de entrada por um valor de declaração de saída diferente. É a regra Transformar uma declaração de entrada que torna essa função possível. Dentro das propriedades dessa regra, você pode definir condições para transformar os valores de entrada em um valor de declaração de saída diferente com base no tipo de declaração de entrada especificado.  
   
-Por exemplo, conforme mostrado na ilustração a seguir, quando uma regra é definida com a condição para substituir um valor de entrada por um valor de declaração de saída diferente, todos os tipos de declaração de entrada do grupo são mapeados para novos tipos de declaração de saída de função. Nesse caso, o valor da declaração de entrada do comprador é substituído pelo novo valor de declaração de saída do administrador.  
+Por exemplo, conforme mostrado na ilustração a seguir, quando uma regra é definida com a condição de substituir um valor de entrada por um valor diferente de declaração de saída, todos os tipos de declaração de entrada do Grupo são mapeados para novos tipos de declaração de saída da Função. Nesse caso, o valor da declaração de entrada do comprador é substituído pelo novo valor de declaração de saída do administrador.  
   
 ![Quando usar uma transformação](media/adfs2_transform.gif)  
   
@@ -79,10 +78,10 @@ Para obter mais instruções sobre como criar esse modelo, consulte [criar uma r
 Se a declaração de saída for construída por meio do conteúdo de mais de uma declaração de entrada, você deverá usar uma regra personalizada. Se o valor de declaração da declaração de saída for baseada no valor de declaração de entrada, mas com conteúdo adicional, você também deverá usar uma regra personalizada nesse contexto. Para obter mais informações, consulte [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md).  
   
 ### <a name="examples-of-how-to-construct-a-transform-rule-syntax"></a>Exemplos de como construir uma sintaxe de regra de transformação  
-Ao usar a sintaxe de linguagem de regra de declaração para transformar declarações, você pode definir uma propriedade da declaração transformada em um novo valor literal. Por exemplo, a regra a seguir altera o valor de declarações de função de "Administradores" para "raiz" mantendo o mesmo tipo de declaração:  
+Ao usar a sintaxe de linguagem de regra de declaração para transformar declarações, você pode definir uma propriedade da declaração transformada em um novo valor literal. Por exemplo, a regra a seguir altera o valor das declarações de função de "administradores" para "raiz", mantendo o mesmo tipo de declaração:  
   
 ```  
-c:[type == “https://schemas.microsoft.com/ws/2008/06/identity/claims/role”, value == “Administrators”]  => issue(type = c.type, value = “root”);  
+c:[type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/role", value == "Administrators"]  => issue(type = c.type, value = "root");  
 ```  
   
 Expressões regulares também podem ser usadas para transformações de declaração. Por exemplo, a regra a seguir definirá o domínio em declarações de nome de usuário do Windows no domínio\\formato de usuário como FABRIKAM:  
@@ -97,9 +96,9 @@ Transformação de declarações podem ser aplicadas seletivamente para declara�
 |Propriedade da declaração|Descrição|  
 |------------------|---------------|  
 |Tipo, Valor, ValueType|Essas propriedades serão usadas com mais frequência para atribuições. No mínimo, tipo e valor devem ser especificados para a declaração transformada resultante.|  
-|Emissor|Embora a linguagem da regra de declaração permita definir o Emissor de uma declaração, isso geralmente não é aconselhável. O emissor de uma declaração não é serializado no token. Quando um token é recebido, a propriedade Emissor de todas as declarações é definida como o identificador do servidor de federação que assinou o token. Portanto, a definição do emissor de uma declaração nas regras não terá efeito no conteúdo do token e a definição será perdida quando a declaração for empacotada em um token. O único cenário em que a definição do emissor de uma declaração faz sentido é se ela for definida como um valor específico no conjunto de regras do provedor de declarações e o conjunto de regras da terceira parte confiável for criado com regras que fazem referência a esse valor específico. Se a propriedade Emissor não for explicitamente definida como um valor em uma regra de declaração, o mecanismo de emissão de declarações a definirá como “LOCAL AUTHORITY”.|  
+|Emissor|Embora a linguagem da regra de declaração permita definir o Emissor de uma declaração, isso geralmente não é aconselhável. O emissor de uma declaração não é serializado no token. Quando um token é recebido, a propriedade Emissor de todas as declarações é definida como o identificador do servidor de federação que assinou o token. Portanto, a definição do emissor de uma declaração nas regras não terá efeito no conteúdo do token e a definição será perdida quando a declaração for empacotada em um token. O único cenário em que a definição do emissor de uma declaração faz sentido é se ela for definida como um valor específico no conjunto de regras do provedor de declarações e o conjunto de regras da terceira parte confiável for criado com regras que fazem referência a esse valor específico. Se a propriedade emissor não estiver explicitamente definida como um valor em uma regra de declaração, o mecanismo de emissão de declarações a definirá como "autoridade LOCAL".|  
 |OriginalIssuer|Da mesma forma do Emissor, OriginalIssuer não deve, geralmente, receber a atribuição explícita de um valor. Ao contrário de Emissor, a propriedade OriginalIssuer foi serializada no token, mas a expectativa dos consumidores de tokens é que, se definida, ela conterá o identificador do servidor de federação que originalmente emitiu uma declaração.|  
-|Propriedades|Conforme descrito na seção anterior, o recipiente de propriedades de uma declaração não é mantido no token, para que atribuições às propriedades só possam ser feitas se políticas locais subsequentes fizerem referência às informações armazenadas na propriedade.|  
+|{1&gt;Propriedades&lt;1}|Conforme descrito na seção anterior, o recipiente de propriedades de uma declaração não é mantido no token, para que atribuições às propriedades só possam ser feitas se políticas locais subsequentes fizerem referência às informações armazenadas na propriedade.|  
   
 Para obter mais informações sobre como usar o idioma da regra de declaração, consulte [a função do idioma da regra de declaração](The-Role-of-the-Claim-Rule-Language.md).  
   

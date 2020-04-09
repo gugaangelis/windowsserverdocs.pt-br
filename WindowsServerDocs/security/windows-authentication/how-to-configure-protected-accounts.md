@@ -1,23 +1,18 @@
 ---
 title: Como configurar contas protegidas
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: na
-ms.suite: na
 ms.technology: security-auditing
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e6f0bc53c48b7e9a721ddd3965630d7aa16f0e4b
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2467e28571ba6c782861d93497fe54badacec48d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950377"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861819"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Como configurar contas protegidas
 
@@ -114,7 +109,7 @@ Contas de serviços e computadores não podem ser membros do **Usuários protegi
   
 -   Rejeitar autenticação NTLM: somente por meio de [políticas de bloqueio NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx).  
   
--   Rejeitar o padrão de criptografia de dados (DES) na pré-autenticação de Kerberos: os controladores de domínio do Windows Server 2012 R2 não aceitam DES para contas de computador, a menos que estejam configurados para DES somente porque todas as versões do Windows lançadas com o Kerberos também dão suporte a RC4.  
+-   Rejeitar o padrão de criptografia de dados (DES) na pré-autenticação de Kerberos: os controladores de domínio do Windows Server 2012 R2 não aceitam DES para contas de computador, a menos que estejam configurados para DES somente porque cada versão do Windows lançada com o Kerberos também oferece suporte a RC4.  
   
 -   Rejeitar RC4 na pré-autenticação do Kerberos: não configurável.  
   
@@ -174,7 +169,7 @@ Você pode restringir as solicitações de tíquete de serviço por meio da troc
   
 ### <a name="requirements-for-using-authentication-policies"></a>Requisitos para usar políticas de autenticação  
   
-|Política|Requisitos|  
+|Política|{1&gt;{2&gt;Requisitos&lt;2}&lt;1}|  
 |-----|--------|  
 |Fornecer tempos de vida de TGT personalizados| Domínios de conta de nível funcional de domínio do Windows Server 2012 R2|  
 |Entrada de usuário restrita|-Domínios de conta de nível funcional de domínio do Windows Server 2012 R2 com suporte ao controle de acesso dinâmico<br />-Dispositivos Windows 8, Windows 8.1, Windows Server 2012 ou Windows Server 2012 R2 com suporte ao controle de acesso dinâmico|  
@@ -214,7 +209,7 @@ O domínio da conta do usuário deve estar no nível funcional do domínio do Wi
   
 2.  Clique em **Políticas de autenticação** e em **Nova** para criar uma nova política.  
   
-    ![Políticas de autenticação](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)  
+    ![Políticas de Autenticação](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)  
   
     As políticas de autenticação devem possuir um nome de exibição e são impostas por padrão.  
   
@@ -267,7 +262,7 @@ O domínio da conta do usuário deve estar no nível funcional do domínio do Wi
   
 4.  Para escolher objetos de computador no Active Directory, clique em **Computadores** e em **OK**.  
   
-    ![Computers](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)  
+    ![Computadores](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)  
   
 5.  Digite o nome dos computadores para restringir o usuário e clique em **Verificar nomes**.  
   

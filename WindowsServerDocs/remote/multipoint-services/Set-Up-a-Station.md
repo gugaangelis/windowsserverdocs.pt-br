@@ -1,36 +1,32 @@
 ---
 title: Configurar uma estação
 description: Saiba como configurar uma estação em serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dce05b6c-795e-43b2-9920-026550b873c5
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 95a332a3d15e82047b46cc19f168f945cdb334d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c3d40346402131e64c437da12f1ff89b4eb3f8f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389446"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853939"
 ---
 # <a name="set-up-a-station"></a>Configurar uma estação
 Uma *estação* do MultiPoint Services normalmente consiste em um *hub de estação*, mouse, teclado e monitor de vídeo. Este tópico descreve como conectar os dispositivos de hardware ao hub de estação para criar uma estação do MultiPoint Services.  
   
 O hub de estação é um dispositivo de hardware que conecta dispositivos periféricos a um computador em um sistema MultiPoint Services. O MultiPoint Services dá suporte a dois tipos de hubs de estação:  
   
--   **Hub USB:** Um hub de expansão USB multiporta genérico que está em conformidade com as especificações do barramento serial universal 2,0 ou posteriores. Tais hubs normalmente têm duas, quatro ou mais portas USB que permitem que vários dispositivos USB sejam conectados a uma única porta USB no computador. Hubs USB são comumente separada de dispositivos que podem ser ativados ou barramento externamente. Quando usado como um hub de estação com o MultiPoint Services, recomendamos que você use um hub com quatro ou mais portas.  
+-   **Hub USB:** um hub de expansão USB genérico de múltiplas portas que está em conformidade com as especificações de barramento serial universal 2.0 ou posterior. Tais hubs normalmente têm duas, quatro ou mais portas USB que permitem que vários dispositivos USB sejam conectados a uma única porta USB no computador. Hubs USB são comumente separada de dispositivos que podem ser ativados ou barramento externamente. Quando usado como um hub de estação com o MultiPoint Services, recomendamos que você use um hub com quatro ou mais portas.  
   
     > [!IMPORTANT]  
     > Se você pretende conectar dispositivos USB que não sejam um teclado e mouse ao hub, recomendamos o uso de um hub alimentado externamente para obter o melhor desempenho.  
   
--   **Hub multifuncional:** Um hub de expansão que se conecta ao computador por meio de uma porta USB e habilita a conexão de uma variedade de dispositivos não USB ao Hub, incluindo um monitor de vídeo. Hubs multifuncionais produzidos pelos fabricantes de hardware específico e podem exigir a instalação de um driver de dispositivo específico.  
+-   **Hub multifuncional:** um hub de expansão que conecta ao computador por meio de uma porta USB e permite a conexão de uma variedade de dispositivos USB não para o hub, incluindo um monitor de vídeo. Hubs multifuncionais produzidos pelos fabricantes de hardware específico e podem exigir a instalação de um driver de dispositivo específico.  
   
 Se você deseja adicionar uma estação ao MultiPoint Services, primeiro certifique-se de que você tem portas de conexão suficientes disponíveis para o hardware da estação que deseja usar. Além disso, você deve proteger o número apropriado de *licenças de acesso para cliente (CALs)* para o seu sistema de serviços do MultiPoint.  
   

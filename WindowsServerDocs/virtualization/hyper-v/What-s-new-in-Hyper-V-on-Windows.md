@@ -2,21 +2,19 @@
 title: O que há de novo no Hyper-V no Windows Server 2016
 description: Fornece um resumo dos novos recursos no Hyper-V
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: 195d78ff8de75ca9e3a88d4300bb2f52cd45632f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5fc82d8eea78ad5605dceb6a21e8d543f9d9c88e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322298"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857959"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>O que há de novo no Hyper-V no Windows Server
 
@@ -42,19 +40,19 @@ Para obter mais informações, confira [Recurso de compatibilidade de aplicativo
 
 - **Melhorias nas filiais**
 
-    Agora você pode executar máquinas virtuais blindadas em computadores com conectividade intermitente para o serviço de guardião de Host, aproveitando os novos recursos de [fallback HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) e [modo off-line](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) . HGS fallback permite que você configure um segundo conjunto de URLs do Hyper-V tentar se ele não puder acessar o servidor principal do HGS.
+    Agora você pode executar máquinas virtuais blindadas em computadores com conectividade intermitente ao Serviço Guardião de Host, aproveitando os novos recursos de [HGS de fallback](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) e [modo offline](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) . O HGS de fallback permite que você configure um segundo conjunto de URLs para o Hyper-V tentar caso não consiga acessar seu servidor HGS principal.
 
-    Modo offline permite que você continue a iniciar suas VMs blindadas, mesmo se HGS não puder ser atingido, desde que a VM foi iniciado com êxito uma vez, e a configuração de segurança do host não foi alterada.
+    O modo offline permite que você continue a iniciar suas VMs blindadas, mesmo se o HGS não puder ser alcançado, contato que a VM tenha sido iniciada com êxito pelo menos uma vez e as configurações de segurança do host não tenham sido alteradas desde então.
 
 - **Melhorias na solução de problemas**
 
-    Podemos tiver também facilitou o processo para [Solucionar problemas de suas máquinas virtuais protegidas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando suporte para o modo de sessão avançado VMConnect e PowerShell Direct. Essas ferramentas são particularmente úteis se você tiver perdido a conectividade de rede com a VM e precisar atualizar a configuração dela para restaurar o acesso.
+    Também facilitamos o processo para [solucionar problemas de suas máquinas virtuais blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando o suporte para o modo de sessão avançado VMConnect e o PowerShell Direct. Essas ferramentas são particularmente úteis se você tiver perdido a conectividade de rede com sua VM e precisar atualizar a configuração dela para restaurar o acesso.
 
-    Esses recursos não precisam ser configurados e são disponibilizados automaticamente quando uma VM protegida é colocada em um host Hyper-V que estiver executando o Windows Server versão 1803 ou posterior.
+    Esses recursos não precisam ser configurados e são disponibilizados automaticamente quando uma VM blindada é posta em um host Hyper-V que executa o Windows Server versão 1803 ou mais recente.
 
 - **Suporte a Linux**
 
-    Se você executar ambientes Mistos, Windows Server 2019 agora oferece suporte ao Ubuntu, Red Hat Enterprise Linux e SUSE Linux Enterprise Server em execução dentro de máquinas virtuais blindadas.
+    Se você executa ambientes com múltiplos sistemas operacionais, agora o Windows Server 2019 oferece suporte para executar o Ubuntu, o Red Hat Enterprise Linux e o SUSE Linux Enterprise Server em máquinas virtuais blindadas.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 

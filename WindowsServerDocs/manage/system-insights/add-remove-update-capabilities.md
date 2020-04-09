@@ -1,70 +1,65 @@
 ---
 title: Adicionar, remover e atualizar recursos
-description: Informações do sistema permite que você crie novos recursos que aproveitam a coleta de dados existente e a funcionalidade de gerenciamento. É importante que você também tem o suporte da plataforma para gerenciar a adição, remoção e as atualizações desses recursos. Este tópico descreve a funcionalidade de alto nível para adicionar, remover e atualizar recursos do sistema de informações.
-ms.custom: na
+description: O System insights permite que você crie novos recursos que aproveitam a funcionalidade de gerenciamento e coleta de dados existentes. É importante que você também tenha o suporte à plataforma para gerenciar a adição, remoção e atualizações desses recursos. Este tópico descreve a funcionalidade de alto nível para adicionar, remover e atualizar recursos no System insights.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 07fb036d1c4aa4a63107594ec1f81cb5be1c7724
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a760f25de79bc89b2aa67aec6bb1e3a493c1310
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880157"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856259"
 ---
 # <a name="adding-removing-and-updating-capabilities"></a>Adicionar, remover e atualizar recursos
 
 >Aplica-se a: Windows Server 2019
 
-Informações do sistema permite que você crie novos recursos que aproveitam a coleta de dados existente e a funcionalidade de gerenciamento. Depois que esses recursos são criados, no entanto, é igualmente importante que você também tem o suporte da plataforma para gerenciar a adição, remoção e as atualizações desses recursos. 
+O System insights permite que você crie novos recursos que aproveitam a funcionalidade de gerenciamento e coleta de dados existentes. Quando esses recursos são criados, no entanto, é igualmente importante que você também tenha o suporte da plataforma para gerenciar a adição, remoção e atualizações desses recursos. 
 
-Este tópico descreve a funcionalidade de alto nível para adicionar, remover e atualizar recursos do sistema de informações. 
+Este tópico descreve a funcionalidade de alto nível para adicionar, remover e atualizar recursos no System insights. 
 
-## <a name="adding-a-capability"></a>Adicionar um recurso
-Informações do sistema permite que você adicione novos recursos a qualquer momento usando o **InsightsCapability adicionar** cmdlet. O **InsightsCapability adicionar** exige que você especifique um nome de recurso e a biblioteca de funcionalidade. A biblioteca de recurso contém a descrição do recurso, fontes de dados e lógica de previsão.
+## <a name="adding-a-capability"></a>Adicionando um recurso
+O System insights permite que você adicione novos recursos a qualquer momento usando o cmdlet **Add-InsightsCapability** . O **Add-InsightsCapability** exige que você especifique um nome de recurso e a biblioteca de recursos. A biblioteca de recursos contém a descrição da funcionalidade, as fontes de dados e a lógica de previsão.
 
 ```PowerShell
-Add-InsightsCapability -Name "Sample capability" -Library "C:\SampleCapability.dll"
+Add-InsightsCapability -Name Sample capability -Library C:\SampleCapability.dll
 ```
 
-Depois que um recurso foi adicionado ao sistema Insights, você pode invocar e gerenciar o recurso usando o PowerShell ou Windows Admin Center imediatamente. 
+Depois que um recurso tiver sido adicionado ao insights do sistema, você poderá invocar e gerenciar imediatamente o recurso usando o PowerShell ou o centro de administração do Windows. 
 
 ## <a name="updating-a-capability"></a>Atualizando um recurso
-Informações do sistema também permite que você atualize um recurso usando o **InsightsCapability atualização** cmdlet.
+O System insights também permite que você atualize um recurso usando o cmdlet **Update-InsightsCapability** .
 
 ```PowerShell
-Update-InsightsCapability -Name "Sample capability" -Library "C:\SampleCapabilityv2.dll"
+Update-InsightsCapability -Name Sample capability -Library C:\SampleCapabilityv2.dll
 ```
 
-Atualizar um recurso permite que você especifique uma nova biblioteca de funcionalidade, que permite que você altere a descrição do recurso, as fontes de dados e a lógica de previsão associada com esse recurso. É importante, atualizar um recurso preserva todas as configuração e informações históricas sobre esse recurso, incluindo agendas personalizadas, ações e resultados de previsão histórica. 
+A atualização de um recurso permite que você especifique uma nova biblioteca de recursos, que permite alterar a descrição da capacidade, as fontes de dados e a lógica de previsão associada a esse recurso. De forma importante, a atualização de uma funcionalidade preserva todas as informações de configuração e históricas sobre esse recurso, incluindo agendas personalizadas, ações e resultados de previsão históricas. 
 
-## <a name="removing-a-capability"></a>Remover um recurso
-Você também pode remover recursos de sistema Insights usando o **InsightsCapability remover** cmdlet. 
+## <a name="removing-a-capability"></a>Removendo um recurso
+Você também pode remover funcionalidades do System insights usando o cmdlet **Remove-InsightsCapability** . 
 
 ```PowerShell
-Remove-InsightsCapability -Name "Sample capability" 
+Remove-InsightsCapability -Name Sample capability 
 ```
 >[!NOTE]
->O padrão de recursos de previsão não pode ser removido.
+>Os recursos de previsão padrão não podem ser removidos.
 
-Removendo uma funcionalidade permanentemente exclui o recurso e todos os respectivos informações, incluindo o agendamento, as ações de correção e últimos resultados da previsão. 
+Remover um recurso exclui permanentemente o recurso e todas as informações associadas, incluindo o agendamento, as ações de correção e os resultados de previsão anteriores. 
 
 >[!TIP]
->Considere desabilitar um recurso em vez de removê-lo se você estiver preocupado com a exclusão permanente de todas as informações associadas com a capacidade. 
+>Considere desabilitar uma funcionalidade em vez de removê-la se você estiver preocupado com a exclusão permanente de todas as informações associadas à funcionalidade. 
 
 ## <a name="see-also"></a>Consulte também
-Para saber mais sobre o sistema Insights, use os seguintes recursos:
+Para saber mais sobre o System insights, use os seguintes recursos:
 
-- [Visão geral de informações do sistema](overview.md)
-- [Recursos de compreensão](understanding-capabilities.md)
-- [Gerenciamento de recursos](managing-capabilities.md)
-- [Adicionando e desenvolvimento de recursos](adding-and-developing-capabilities.md)
-- [Perguntas Frequentes de Insights de sistema](faq.md)
+- [Visão geral do System insights](overview.md)
+- [Noções básicas dos recursos](understanding-capabilities.md)
+- [Gerenciar recursos](managing-capabilities.md)
+- [Adicionar e desenvolver recursos](adding-and-developing-capabilities.md)
+- [Perguntas frequentes do System insights](faq.md)

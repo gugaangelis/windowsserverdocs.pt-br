@@ -1,7 +1,6 @@
 ---
 ms.assetid: ceb9ce18-5a94-4166-9edd-2685b81fc15f
 title: Implantar declarações em florestas
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 99af1022870c891c75bb2008f57e8d8e171961ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357571"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861229"
 ---
 # <a name="deploy-claims-across-forests"></a>Implantar declarações em florestas
 
@@ -31,7 +30,7 @@ No Windows Server 2012, um tipo de declaração é uma asserção sobre o objeto
 -   Você também pode usar transformação de declaração para mapear diferentes tipos de declaração entre as florestas confiantes e confiáveis. Isso pode ser usado para generalizar o tipo de declaração, o valor da declaração, ou ambos. Sem isso, você precisará padronizar os dados entre as florestas antes de usar as declarações. Generalizar declarações entre as florestas confiantes e confiáveis reduz os custos de TI.  
   
 ## <a name="claim-transformation-rules"></a>Regras de transformação de declaração  
-A sintaxe de linguagem da regra de transformação divide uma única regra em duas partes principais: uma série de instruções de condição e a declaração do problema. Cada instrução de condição tem dois subcomponentes: o identificador de declaração e a condição. A instrução Issue contém palavras-chave, delimitadores e uma expressão de problema. A declaração da condição começa opcionalmente com uma variável de identificador de declaração, que representa a declaração de entrada correspondente. A condição verifica a expressão. Se a declaração de entrada não corresponder à condição, o mecanismo de transformação ignorará a declaração do problema e avaliará a próxima declaração de entrada em relação à regra de transformação. Se todas as condições corresponderem à declaração de entrada, ele processará a declaração do problema.  
+A sintaxe de linguagem da regra de transformação divide uma única regra em duas partes principais: uma série de instruções de condição e a declaração do problema. Cada instrução de condição tem dois subcomponentes: o identificador de declaração e a condição. A declaração do problema contém palavras-chave, delimitadores e uma expressão de problema. A declaração da condição começa opcionalmente com uma variável de identificador de declaração, que representa a declaração de entrada correspondente. A condição verifica a expressão. Se a declaração de entrada não corresponder à condição, o mecanismo de transformação ignorará a declaração do problema e avaliará a próxima declaração de entrada em relação à regra de transformação. Se todas as condições corresponderem à declaração de entrada, ele processará a declaração do problema.  
   
 Para obter informações detalhadas sobre linguagem de regras de declaração, consulte [Claims Transformation Rules Language](Claims-Transformation-Rules-Language.md).  
   
@@ -49,12 +48,12 @@ A orientação a seguir está disponível para este cenário:
   
 -   [Linguagem de regras de transformação de declarações](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista as funções e os recursos que fazem parte deste cenário e descreve como dar suporte a ele.  
   
 |Função/recurso|Como este cenário tem suporte|  
 |-----------------|---------------------------------|  
-|Active Directory Domain Services|Nesse cenário, você precisa configurar duas florestas do Active Directory com uma relação de confiança bidirecional. Você tem declarações nas duas florestas. Você também pode definir políticas de acesso central na floresta confiante na qual residem os recursos.|  
+|Serviços de Domínio do Active Directory|Nesse cenário, você precisa configurar duas florestas do Active Directory com uma relação de confiança bidirecional. Você tem declarações nas duas florestas. Você também pode definir políticas de acesso central na floresta confiante na qual residem os recursos.|  
 |Função dos Serviços de Arquivo e Armazenamento|Nesse cenário, a classificação de dados é aplicada aos recursos nos servidores de arquivos. A política de acesso central é aplicada à pasta a qual você deseja conceder acesso ao usuário. Depois da transformação, a declaração concede acesso de usuário a recursos com base na política de acesso central aplicada à pasta no servidor de arquivos.|  
   
 

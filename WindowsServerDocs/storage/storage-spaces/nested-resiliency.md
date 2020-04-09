@@ -2,32 +2,32 @@
 title: Resiliência aninhada para Espaços de Armazenamento Diretos
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dansimp
+manager: dansimp
 ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ea1c4b2c249759634e00f6a1ac2caa34f8085ae1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402867"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857339"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resiliência aninhada para Espaços de Armazenamento Diretos
 
 > Aplica-se a: Windows Server 2019
 
-A resiliência aninhada é um novo recurso de [espaços de armazenamento diretos](storage-spaces-direct-overview.md) no Windows Server 2019 que permite que um cluster de dois servidores resista a várias falhas de hardware ao mesmo tempo sem perda de disponibilidade de armazenamento, para que os usuários, aplicativos e máquinas virtuais Continue a ser executado sem interrupções. Este tópico explica como ele funciona, fornece instruções passo a passo para começar e responde às perguntas mais frequentes.
+A resiliência aninhada é um novo recurso de [espaços de armazenamento diretos](storage-spaces-direct-overview.md) no Windows Server 2019 que permite que um cluster de dois servidores resista a várias falhas de hardware ao mesmo tempo sem perda de disponibilidade de armazenamento, de modo que os usuários, aplicativos e máquinas virtuais continuem a ser executados sem interrupções. Este tópico explica como ele funciona, fornece instruções passo a passo para começar e responde às perguntas mais frequentes.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
-### <a name="green-checkmark-iconmedianested-resiliencysupportedpng-consider-nested-resiliency-if"></a>![Ícone de marca de seleção verde.](media/nested-resiliency/supported.png) Considere a resiliência aninhada se:
+### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![Ícone de marca de seleção verde.](media/nested-resiliency/supported.png) Considere a resiliência aninhada se:
 
 - O cluster executa o Windows Server 2019; e
 - O cluster tem exatamente 2 nós de servidor
 
-### <a name="red-x-iconmedianested-resiliencyunsupportedpng-you-cant-use-nested-resiliency-if"></a>![Ícone de X vermelho.](media/nested-resiliency/unsupported.png) Você não poderá usar resiliência aninhada se:
+### <a name="red-x-icon-you-cant-use-nested-resiliency-if"></a>![Ícone de X vermelho.](media/nested-resiliency/unsupported.png) Você não poderá usar resiliência aninhada se:
 
 - O cluster executa o Windows Server 2016; or
 - O cluster tem três ou mais nós de servidor
@@ -42,7 +42,7 @@ A desvantagem é que a resiliência aninhada tem **eficiência de capacidade men
 
 ## <a name="how-it-works"></a>Como funciona
 
-### <a name="inspiration-raid-51"></a>Inspiração RAID 5 + 1
+### <a name="inspiration-raid-51"></a>Inspiração: RAID 5 + 1
 
 O RAID 5 + 1 é uma forma estabelecida de resiliência de armazenamento distribuído que fornece um plano de fundo útil para entender a resiliência aninhada. No RAID 5 + 1, em cada servidor, a resiliência local é fornecida por RAID-5, ou *paridade única*, para proteger contra a perda de qualquer unidade única. Em seguida, a resiliência adicional é fornecida por RAID-1 ou *espelhamento bidirecional*, entre os dois servidores para proteger contra a perda de qualquer um dos servidores.
 
@@ -86,9 +86,9 @@ Observe que a eficiência da capacidade do espelhamento bidirecional clássico (
 
 Você pode usar cmdlets de armazenamento conhecidos no PowerShell para criar volumes com resiliência aninhada.
 
-### <a name="step-1-create-storage-tier-templates"></a>Etapa 1: Criar modelos de camada de armazenamento
+### <a name="step-1-create-storage-tier-templates"></a>Etapa 1: criar modelos de camada de armazenamento
 
-Primeiro, crie novos modelos de camada de armazenamento usando o cmdlet `New-StorageTier`. Você só precisa fazer isso uma vez e, em seguida, todos os novos volumes criados podem fazer referência a esse modelo. Especifique o `-MediaType` de suas unidades de capacidade e, opcionalmente, o `-FriendlyName` de sua escolha. Não modifique os outros parâmetros.
+Primeiro, crie novos modelos de camada de armazenamento usando o cmdlet `New-StorageTier`. Você só precisa fazer isso uma vez e, em seguida, todos os novos volumes criados podem fazer referência a esse modelo. Especifique a `-MediaType` de suas unidades de capacidade e, opcionalmente, a `-FriendlyName` de sua escolha. Não modifique os outros parâmetros.
 
 Se suas unidades de capacidade forem unidades de disco rígido (HDD), inicie o PowerShell como administrador e execute:
 
@@ -100,18 +100,18 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -Resili
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk 
 ``` 
 
-Se suas unidades de capacidade forem unidades de estado sólido (SSD), defina o `-MediaType` como `SSD` em vez disso. Não modifique os outros parâmetros.
+Se suas unidades de capacidade forem unidades de estado sólido (SSD), defina o `-MediaType` como `SSD`. Não modifique os outros parâmetros.
 
 > [!TIP]
 > Verifique se as camadas foram criadas com êxito com `Get-StorageTier`.
 
-### <a name="step-2-create-volumes"></a>Etapa 2: Criar volumes
+### <a name="step-2-create-volumes"></a>Etapa 2: criar volumes
 
 Em seguida, crie novos volumes usando o cmdlet `New-Volume`.
 
 #### <a name="nested-two-way-mirror"></a>Espelho bidirecional aninhado
 
-Para usar o espelhamento bidirecional aninhado, faça referência ao modelo de camada `NestedMirror` e especifique o tamanho. Por exemplo:
+Para usar o espelhamento bidirecional aninhado, referencie o modelo de camada de `NestedMirror` e especifique o tamanho. Por exemplo:
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -125,15 +125,15 @@ Para usar a paridade com aceleração de espelhamento aninhada, referencie os mo
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
 ```
 
-### <a name="step-3-continue-in-windows-admin-center"></a>Etapa 3: Continuar no centro de administração do Windows
+### <a name="step-3-continue-in-windows-admin-center"></a>Etapa 3: continuar no centro de administração do Windows
 
 Os volumes que usam resiliência aninhada aparecem no [centro de administração do Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) com rotulagem clara, como na captura de tela abaixo. Depois que eles forem criados, você poderá gerenciá-los e monitorá-los usando o centro de administração do Windows, assim como qualquer outro volume no Espaços de Armazenamento Diretos.
 
 ![](media/nested-resiliency/windows-admin-center.png)
 
-### <a name="optional-extend-to-cache-drives"></a>Opcional: Estender para unidades de cache
+### <a name="optional-extend-to-cache-drives"></a>Opcional: estender para unidades de cache
 
-Com suas configurações padrão, a resiliência aninhada protege contra a perda de várias unidades de capacidade ao mesmo tempo, ou um servidor e uma unidade de capacidade ao mesmo tempo. Estender essa proteção às [unidades de cache](understand-the-cache.md) tem uma consideração adicional: como as unidades de cache geralmente fornecem cache de leitura *e gravação* para *várias* unidades de capacidade, a única maneira de garantir que você possa tolerar a perda de uma unidade de cache quando o outro servidor está inoperante é simplesmente não armazenar em cache gravações, mas isso afeta o desempenho.
+Com suas configurações padrão, a resiliência aninhada protege contra a perda de várias unidades de capacidade ao mesmo tempo, ou um servidor e uma unidade de capacidade ao mesmo tempo. Para estender essa proteção às [unidades de cache](understand-the-cache.md) há uma consideração adicional: como as unidades de cache geralmente fornecem cache de leitura *e gravação* para *várias* unidades de capacidade, a única maneira de garantir que você possa tolerar a perda de uma unidade de cache quando o outro servidor está inativo é simplesmente não armazenar em cache gravações, mas isso afeta o desempenho.
 
 Para resolver esse cenário, o Espaços de Armazenamento Diretos oferece a opção de desabilitar automaticamente o cache de gravação quando um servidor em um cluster de dois servidores estiver inoperante e reabilitar o cache de gravação depois que o servidor for revertido. Para permitir reinicializações rotineiras sem impacto no desempenho, o cache de gravação não é desabilitado até que o servidor fique inoperante por 30 minutos. Quando o cache de gravação está desabilitado, o conteúdo do cache de gravação é gravado em dispositivos de capacidade. Depois disso, o servidor pode tolerar um dispositivo de cache com falha no servidor online, embora as leituras do cache possam ser atrasadas ou falhem se um dispositivo de cache falhar.
 
@@ -159,7 +159,7 @@ Não, os volumes não podem ser convertidos entre os tipos de resiliência. Para
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>Posso usar resiliência aninhada com vários tipos de unidades de capacidade?
 
-Sim, basta especificar o `-MediaType` de cada camada adequadamente durante a [etapa 1](#step-1-create-storage-tier-templates) acima. Por exemplo, com NVMe, SSD e HDD no mesmo cluster, o NVMe fornece o cache enquanto os dois últimos fornecem capacidade: defina a camada `NestedMirror` como `-MediaType SSD` e a camada `NestedParity` como `-MediaType HDD`. Nesse caso, observe que a eficiência da capacidade de paridade depende do número de unidades de HDD apenas, e você precisa de pelo menos 4 delas por servidor.
+Sim, basta especificar o `-MediaType` de cada camada adequadamente durante a [etapa 1](#step-1-create-storage-tier-templates) acima. Por exemplo, com NVMe, SSD e HDD no mesmo cluster, o NVMe fornece o cache enquanto os dois últimos fornecem capacidade: defina a camada de `NestedMirror` como `-MediaType SSD` e a camada de `NestedParity` como `-MediaType HDD`. Nesse caso, observe que a eficiência da capacidade de paridade depende do número de unidades de HDD apenas, e você precisa de pelo menos 4 delas por servidor.
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>Posso usar resiliência aninhada com três ou mais servidores?
 
@@ -171,11 +171,11 @@ O número mínimo de unidades necessárias para Espaços de Armazenamento Direto
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>A resiliência aninhada altera como funciona a substituição da unidade?
 
-Nº
+Não.
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>A resiliência aninhada altera como funciona a substituição de nó de servidor?
 
-Nº Para substituir um nó de servidor e suas unidades, siga esta ordem:
+Não. Para substituir um nó de servidor e suas unidades, siga esta ordem:
 
 1. Desativar as unidades no servidor de saída
 2. Adicionar o novo servidor, com suas unidades, ao cluster

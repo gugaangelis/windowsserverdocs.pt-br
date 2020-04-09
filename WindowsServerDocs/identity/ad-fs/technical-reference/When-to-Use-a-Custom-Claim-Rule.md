@@ -1,7 +1,6 @@
 ---
 ms.assetid: 20d183f0-ef94-44bb-9dfc-ed93799dd1a6
 title: Quando usar uma regra de declaração personalizada
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c784c4b6dbfee7034dd9302dc87fc74b896763f5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 41e7ea7c2bc627f2fce198e5c7227148e8b03d88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950140"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853819"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>Quando usar uma regra de declaração personalizada
 Você escreve uma regra de declaração personalizada em Serviços de Federação do Active Directory (AD FS) \(AD FS\) usando o idioma da regra de declaração, que é a estrutura que o mecanismo de emissão de declarações usa para gerar, transformar, passar e filtrar declarações programaticamente. Usando uma regra personalizada, você pode criar regras com lógica mais complexa do que um modelo de regra padrão. Considere o uso de uma regra personalizada quando quiser:  
@@ -41,7 +40,7 @@ A linguagem da regra de declarações é baseada em regras. Ele tem uma parte de
   
 As seções a seguir fornecem uma introdução básica às regras de declaração. Elas também fornecem detalhes sobre quando usar uma regra de declaração personalizada.  
   
-## <a name="about-claim-rules"></a>Sobre as regras de declaração  
+## <a name="about-claim-rules"></a>Sobre regras de declaração  
 Uma regra de declaração representa uma instância da lógica de negócios que usa uma declaração de entrada, aplicar uma condição a ela \(se x, em seguida, y\) e produzir uma declaração de saída com base nos parâmetros de condição.  
   
 > [!IMPORTANT]  
@@ -67,15 +66,15 @@ Para um melhor entendimento de como funciona a linguagem de regra de declaraçã
   
 Para obter mais informações sobre como usar o idioma da regra de declaração, consulte [a função do idioma da regra de declaração](The-Role-of-the-Claim-Rule-Language.md).  
   
-## <a name="using-the-claim-rule-language"></a>Usando a linguagem de regra de declaração  
+## <a name="using-the-claim-rule-language"></a>Usando linguagem de regra de declaração  
   
 ### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>Exemplo: como combinar nomes e sobrenomes com base em valores de atributo de nome de um usuário  
-A sintaxe de regra a seguir combina nomes e sobrenomes de valores de atributo em determinado repositório de atributos. O mecanismo de políticas forma um produto cartesiano de correspondências para cada condição. Por exemplo, a saída para o nome {"Frank", "Alan"} e sobrenomes {"Miller", "Shen"} é {"Frank Miller", "Frank Shen", "Alan Miller", "Alan Shen"}:  
+A sintaxe de regra a seguir combina nomes e sobrenomes de valores de atributo em determinado repositório de atributos. O mecanismo de políticas forma um produto cartesiano de correspondências para cada condição. Por exemplo, a saída para o primeiro nome {"Frank", "Alan"} e Last Names {"Miller", "Shen"} é {"Frank Miller", "Frank Shen", "Alan Miller", "Alan Shen"}:  
   
 ```  
 c1:[type == "http://exampleschema/firstname" ]  
 &&  c2:[type == "http://exampleschema/lastname",]   
-=> issue(type = "http://exampleschema/name", value = c1.value + “  “ + c2.value);  
+=> issue(type = "http://exampleschema/name", value = c1.value + "  " + c2.value);  
 ```  
   
 ### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>Exemplo: como emitir uma declaração de gerenciador com base em se os usuários têm subordinados diretos ou não  
@@ -83,7 +82,7 @@ A regra a seguir emite uma declaração de gerenciador apenas se o usuário tive
   
 ```  
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => add(store = "SQL Store", types = ("http://schemas.xmlsoap.org/claims/Reports"), query = "SELECT Reports FROM dbo.DirectReports WHERE UserName = {0}", param = c.value );  
-count([type == “http://schemas.xmlsoap.org/claims/Reports“] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
+count([type == "http://schemas.xmlsoap.org/claims/Reports"] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
 ```  
   
 ### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>Exemplo: como emitir uma declaração PPID com base em um atributo LDAP  

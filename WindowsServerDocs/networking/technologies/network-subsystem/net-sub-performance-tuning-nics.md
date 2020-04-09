@@ -1,24 +1,21 @@
 ---
 title: Ajuste de desempenho de adaptadores de rede
 description: Este tópico faz parte do guia de ajuste de desempenho do subsistema de rede para o Windows Server 2016.
-audience: Admin
-ms.custom:
-- CI ID 111485
-- CSSTroubleshoot
+audience: Admin - CI ID 111485 - CSSTroubleshoot
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
-ms.author: lizross
+ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: f802804d64b3047a2612b7f346de03aff61c30cd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: dec88eb81227b62cd0a0ca90810b2598b8f9fd52
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316540"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854739"
 ---
 # <a name="performance-tuning-network-adapters"></a>Ajuste de desempenho de adaptadores de rede
 
@@ -237,7 +234,7 @@ Você pode definir o ajuste automática da janela de recebimento para qualquer u
 |Desabilitado |Nenhum fator de escala disponível |Defina a janela de recepção TCP com seu valor padrão. |
 |Restricted (Restrito) |0x4 (fator de escala de 4) |Defina a janela de recepção TCP para aumentar além do valor padrão, mas limite esse crescimento em alguns cenários. |
 |Altamente restrito |0x2 (fator de escala de 2) |Defina a janela de recepção TCP para aumentar além do valor padrão, mas faça isso de forma muito conservadora. |
-|experimental |0xE (fator de escala de 14) |Defina a janela de recepção TCP para aumentar para acomodar cenários extremos. |
+|Experimental |0xE (fator de escala de 14) |Defina a janela de recepção TCP para aumentar para acomodar cenários extremos. |
 
 Se você usar um aplicativo para capturar pacotes de rede, o aplicativo deverá relatar dados semelhantes aos seguintes para configurações de nível de ajuste automática de janela diferentes.
 

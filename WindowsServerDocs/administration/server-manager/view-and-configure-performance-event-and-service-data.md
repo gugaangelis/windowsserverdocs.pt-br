@@ -1,34 +1,30 @@
 ---
 title: Exibir e configurar dados de serviço e eventos de desempenho
 description: Gerenciador do Servidor
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccd59c35-4dbf-48e7-88a4-c519c00184d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55ff19988cf502c2fdc968f08f207120956217df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 992fdc6e4f1bba69d540a4ae810bde00db207a46
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383037"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851459"
 ---
 # <a name="view-and-configure-performance-event-and-service-data"></a>Exibir e configurar dados de desempenho, eventos e serviços
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico descreve como exibir e configurar as entradas do log de eventos, os contadores de desempenho e os alertas de serviço que são exibidos para servidores locais e remotos no Gerenciador do Servidor.  
 
 Os dados de log de evento, serviço e desempenho são exibidos em dois locais no console do Gerenciador do Servidor no Windows Server.  
 
--   No painel, você pode clicar nas linhas **eventos**, **desempenho**e **Serviços** de miniaturas para configurar o evento, o desempenho e os dados de log do serviço que deseja ver para as funções, todo o pool de Servidores Gerenciador do servidor, grupos criados pelo usuário de servidores e o servidor local. Clicar nas linhas de hipertexto abre as caixas de diálogo **exibição de detalhes** que permitem especificar os dados sobre os quais você deseja ser alertado no painel. Depois de configurar o evento, o serviço e os dados de log de desempenho que você deseja realçar nas miniaturas do painel, as entradas de log que correspondem aos critérios especificados são listadas na parte inferior das caixas de diálogo **exibição de detalhes** .  
+-   No painel, você pode clicar nas linhas **eventos**, **desempenho**e **Serviços** de miniaturas para configurar o evento, o desempenho e os dados de log do serviço que deseja ver para as funções, todo o pool de Servidores Gerenciador do servidor, grupos de servidor criados pelo usuário e o servidor local. Clicar nas linhas de hipertexto abre as caixas de diálogo **exibição de detalhes** que permitem especificar os dados sobre os quais você deseja ser alertado no painel. Depois de configurar o evento, o serviço e os dados de log de desempenho que você deseja realçar nas miniaturas do painel, as entradas de log que correspondem aos critérios especificados são listadas na parte inferior das caixas de diálogo **exibição de detalhes** .  
 
 -   Os blocos **Eventos**, **Serviços** e **Desempenho** fazem parte das home pages de funções e grupos. Os comandos no menu **Tarefas** desses blocos permitem especificar os dados que serão coletados dos servidores gerenciados. Os blocos incluem filtros e consultas para limitar ainda mais as entradas de log exibidas no bloco, se desejado.  
 
@@ -44,26 +40,26 @@ Este tópico contém as seguintes seções.
 
 -   [Exibir e copiar eventos ou entradas de desempenho](#BKMK_copy)  
 
-## <a name="BKMK_thumb"></a>O que são miniaturas?  
-As *miniaturas* são exibidas no painel de Gerenciador do servidor para cada função (a miniatura de uma função reflete os dados coletados sobre todos os servidores no pool de Gerenciador do servidor que estão executando a função), para cada grupo de servidores, para o grupo **todos os** servidor (todos dos servidores no pool de Gerenciador do Servidor) e para o servidor local. Depois que Gerenciador do Servidor obtém dados de servidores gerenciados, as miniaturas são criadas automaticamente para funções que estão sendo executadas em servidores no pool de servidores.  
+## <a name="what-are-thumbnails"></a><a name=BKMK_thumb></a>O que são miniaturas?  
+As *miniaturas* são exibidas no painel de Gerenciador do servidor para cada função (a miniatura de uma função reflete os dados coletados sobre todos os servidores no pool de Gerenciador do servidor que estão executando a função), para cada grupo de servidores, para o grupo **todos os** servidor (todos os servidores no pool de Gerenciador do servidor) e para o servidor local. Depois que Gerenciador do Servidor obtém dados de servidores gerenciados, as miniaturas são criadas automaticamente para funções que estão sendo executadas em servidores no pool de servidores.  
 
 Se o console do Gerenciador do Servidor estiver em execução em um computador cliente como parte do Ferramentas de Administração de Servidor Remoto, não haverá nenhuma miniatura do **servidor local** .  
 
-A miniatura faz uma exibição rápida do status e da capacidade de gerenciamento de funções, servidores e grupos de servidores. A linha de título em miniatura altera a cor (e os números realçados são exibidos na margem esquerda) quando eventos, contadores de desempenho, resultados de Analisador de Práticas Recomendadas, serviços ou problemas de capacidade de gerenciamento geral atendem aos critérios configurados nos **detalhes Exibir** caixas de diálogo abertas clicando em linhas de miniatura. A tabela a seguir descreve os dados exibidos nas miniaturas.  
+A miniatura faz uma exibição rápida do status e da capacidade de gerenciamento de funções, servidores e grupos de servidores. A linha de título em miniatura altera a cor (e os números realçados são exibidos na margem esquerda) quando eventos, contadores de desempenho, resultados de Analisador de Práticas Recomendadas, serviços ou problemas de capacidade de gerenciamento geral atendem aos critérios que você configura nas caixas de diálogo de **exibição de detalhes** abertas clicando em linhas de miniatura. A tabela a seguir descreve os dados exibidos nas miniaturas.  
 
 |Linha de miniaturas|Descrição|  
 |---------|--------|  
-|Capacidade de gerenciamento|A capacidade de gerenciamento de um servidor inclui várias medidas: se o servidor está online ou offline, se ele é acessível e relata dados para Gerenciador do Servidor, se o usuário que fez logon no computador local tem direitos de usuário adequados para acessar ou gerenciar o servidor remoto, se o servidor remoto está executando todo o software necessário para gerenciá-lo remotamente ou se o servidor está configurado de forma a permitir que ele seja consultado e gerenciado usando Gerenciador do Servidor. Os únicos dados de capacidade de gerenciamento que Gerenciador do Servidor podem coletar de um servidor que executa o Windows Server 2003 é se o servidor está online ou offline. Para obter informações detalhadas sobre erros de status de gerenciabilidade e como resolvê-los, consulte o [Guia de solução de problemas do Gerenciador do Servidor](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx).|  
-|Events|Você pode configurar a linha de **Eventos** de uma miniatura para exibir alertas quando os eventos registrados correspondem aos níveis de severidade, às fontes, aos períodos de tempo, servidores ou IDs de eventos que você especificar. Exiba detalhes sobre os eventos e altere os alertas que você deseja ver clicando na linha **eventos** e abra a caixa de diálogo **exibição de detalhes de eventos** para a função ou grupo de servidores.|  
-|Serviços|Você pode configurar a linha de **Serviços** para exibir alertas quando forem encontrados serviços em uma função ou grupo de servidores que correspondam a tipos de inicialização, status de serviço, nomes de serviço e servidores que você especificar na caixa de diálogo **exibição de detalhes de serviços** .<br /><br />Depois que um servidor tiver sido adicionado ao pool de servidores do Gerenciador do Servidor, os alertas de serviço sobre o serviço de detecção de hardware do shell poderão ser exibidos se não houver usuários conectados ao servidor gerenciado. Isso ocorre porque o serviço de detecção do hardware do shell é executado apenas quando usuários estão conectados ao servidor gerenciado ou a uma sessão de área de trabalho remota no servidor gerenciado. Para impedir a exibição de alertas do serviço de detecção do hardware do shell nesse caso, clique em **Serviços** nas miniaturas dos grupos de servidores, incluindo o grupo **Todos os servidores**. Na caixa de diálogo **exibição de detalhes dos serviços** , na lista suspensa **Serviços** , desmarque a caixa de seleção para **detecção de hardware do Shell**e clique em **OK**.|  
-|Desempenho|Você pode configurar a linha de **desempenho** para exibir alertas para uma função ou grupo de servidores quando ocorrerem alertas de desempenho que correspondam a tipos de recursos, servidores ou períodos de tempo que você especificar na caixa de diálogo **exibição de detalhes de desempenho** .<br /><br />Por padrão, os contadores de desempenho estão desativados. Servidores gerenciados que estão executando sistemas operacionais mais recentes do que o Windows Server 2003 e para os quais os contadores de desempenho não foram iniciados, normalmente mostram erros de status de gerenciamento de **contadores de desempenho online não iniciados** nos **servidores** bloco de páginas de função ou grupo. Para ativar os contadores de desempenho para servidores gerenciados, na página **todos os servidores** , clique com o botão direito do mouse em entradas no bloco **desempenho** que mostram um valor de **status de contador** de **desativado**e clique em **Iniciar contadores de desempenho**. Você também pode iniciar contadores de desempenho clicando com o botão direito do mouse em entradas para servidores no bloco **servidores** de páginas de função ou grupo e, em seguida, clicando em **Iniciar contadores de desempenho**.|  
+|Capacidade de gerenciamento|A capacidade de gerenciamento de um servidor inclui várias medidas: se o servidor está online ou offline, se ele está acessível e relatando dados para Gerenciador do Servidor, se o usuário que está conectado ao computador local tem direitos de usuário adequados para acessar ou gerenciar o servidor remoto, se o servidor remoto está executando todo o software necessário para gerenciá-lo remotamente ou se o servidor está configurado de forma a permitir que ele seja consultado e gerenciado usando Gerenciador do Servidor. Os únicos dados de capacidade de gerenciamento que Gerenciador do Servidor podem coletar de um servidor que executa o Windows Server 2003 é se o servidor está online ou offline. Para obter informações detalhadas sobre erros de status de gerenciabilidade e como resolvê-los, consulte o [Guia de solução de problemas do Gerenciador do Servidor](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx).|  
+|Eventos|Você pode configurar a linha de **Eventos** de uma miniatura para exibir alertas quando os eventos registrados correspondem aos níveis de severidade, às fontes, aos períodos de tempo, servidores ou IDs de eventos que você especificar. Exiba detalhes sobre os eventos e altere os alertas que você deseja ver clicando na linha **eventos** e abra a caixa de diálogo **exibição de detalhes de eventos** para a função ou grupo de servidores.|  
+|Serviços|Você pode configurar a linha de **Serviços** para exibir alertas quando forem encontrados serviços em uma função ou grupo de servidores que correspondam a tipos de inicialização, status de serviço, nomes de serviço e servidores que você especificar na caixa de diálogo **exibição de detalhes de serviços** .<p>Depois que um servidor tiver sido adicionado ao pool de servidores do Gerenciador do Servidor, os alertas de serviço sobre o serviço de detecção de hardware do shell poderão ser exibidos se não houver usuários conectados ao servidor gerenciado. Isso ocorre porque o serviço de detecção do hardware do shell é executado apenas quando usuários estão conectados ao servidor gerenciado ou a uma sessão de área de trabalho remota no servidor gerenciado. Para impedir a exibição de alertas do serviço de detecção do hardware do shell nesse caso, clique em **Serviços** nas miniaturas dos grupos de servidores, incluindo o grupo **Todos os servidores**. Na caixa de diálogo **exibição de detalhes dos serviços** , na lista suspensa **Serviços** , desmarque a caixa de seleção para **detecção de hardware do Shell**e clique em **OK**.|  
+|Desempenho|Você pode configurar a linha de **desempenho** para exibir alertas para uma função ou grupo de servidores quando ocorrerem alertas de desempenho que correspondam a tipos de recursos, servidores ou períodos de tempo que você especificar na caixa de diálogo **exibição de detalhes de desempenho** .<p>Por padrão, os contadores de desempenho estão desativados. Os servidores gerenciados que estão executando sistemas operacionais mais recentes do que o Windows Server 2003 e para os quais os contadores de desempenho não foram iniciados, normalmente mostram erros de status de gerenciamento de **contadores de desempenho online não iniciados** no bloco **servidores** de páginas de função ou grupo. Para ativar os contadores de desempenho para servidores gerenciados, na página **todos os servidores** , clique com o botão direito do mouse em entradas no bloco **desempenho** que mostram um valor de **status de contador** de **desativado**e clique em **Iniciar contadores de desempenho**. Você também pode iniciar contadores de desempenho clicando com o botão direito do mouse em entradas para servidores no bloco **servidores** de páginas de função ou grupo e, em seguida, clicando em **Iniciar contadores de desempenho**.|  
 |Resultados BPA|Você pode configurar a linha de **resultados do BPA** para exibir alertas para uma função ou grupo de servidores quando forem encontrados resultados da verificação do BPA que correspondam aos níveis de severidade, servidores ou categorias do BPA que você especificar na caixa de diálogo **exibição de detalhes dos resultados do BPA** .|  
 
-## <a name="BKMK_events"></a>Exibir e configurar eventos  
+## <a name="view-and-configure-events"></a><a name=BKMK_events></a>Exibir e configurar eventos  
 Nesta seção, saiba como configurar quais dados de log de eventos são coletados dos servidores no pool de servidores do Gerenciador do Servidor e quais eventos você deseja realçar em miniaturas.  
 
 > [!NOTE]  
-> Os eventos sobre os quais você é alertado em miniaturas são um subconjunto do total de eventos que você instrui Gerenciador do Servidor a coletar de servidores gerenciados. Embora a alteração de critérios de evento na caixa de diálogo **configurar dados de eventos** em blocos de **eventos** possa alterar os números de alertas que você vê no painel de Gerenciador do servidor, alterar os critérios de alerta de evento em miniaturas não tem efeito sobre os dados do log de eventos que é coletado de servidores gerenciados.  
+> Os eventos sobre os quais você é alertado em miniaturas são um subconjunto do total de eventos que você instrui Gerenciador do Servidor a coletar de servidores gerenciados. Embora a alteração de critérios de evento na caixa de diálogo **configurar dados de eventos** em blocos de **eventos** possa alterar os números de alertas que você vê no painel Gerenciador do servidor, alterar os critérios de alerta de eventos em miniaturas não tem nenhum efeito sobre os dados do log de eventos que são coletados dos servidores gerenciados.  
 
 #### <a name="to-configure-the-events-collected-from-managed-servers"></a>Para configurar os eventos coletados dos servidores gerenciados  
 
@@ -81,7 +77,7 @@ Nesta seção, saiba como configurar quais dados de log de eventos são coletado
 
 #### <a name="to-configure-the-events-highlighted-in-thumbnails"></a>Para configurar os eventos destacados em miniaturas  
 
-1.  Se Gerenciador do Servidor já estiver aberto, vá para a próxima etapa. Se o Gerenciador do Servidor ainda não estiver aberto, abra-o de uma das maneiras a seguir.  
+1.  se Gerenciador do Servidor já estiver aberto, vá para a próxima etapa. Se o Gerenciador do Servidor ainda não estiver aberto, abra-o de uma das maneiras a seguir.  
 
     -   Na área de trabalho do Windows, inicie o Gerenciador do Servidor clicando em **Gerenciador do Servidor** na barra de tarefas do Windows.  
 
@@ -105,15 +101,15 @@ Nesta seção, saiba como configurar quais dados de log de eventos são coletado
 
 10. Clique em **OK** para salvar as alterações, feche a caixa de diálogo **exibição de detalhes** e exiba as alterações de alerta de evento na miniatura de origem.  
 
-## <a name="BKMK_perf"></a>Exibir e configurar dados de log de desempenho  
+## <a name="view-and-configure-performance-log-data"></a><a name=BKMK_perf></a>Exibir e configurar dados de log de desempenho  
 Nesta seção, saiba como configurar quais dados de log de desempenho são coletados dos servidores no pool de Servidores Gerenciador do Servidor e quais alertas do contador de desempenho você deseja realçados em miniaturas.  
 
-Por padrão, os contadores de desempenho estão desativados. Servidores gerenciados que estão executando sistemas operacionais mais recentes do que o Windows Server 2003 e para os quais os contadores de desempenho não foram iniciados, normalmente mostram erros de status de gerenciamento de **contadores de desempenho online não iniciados** nos **servidores** bloco de páginas de função ou grupo. Para ativar os contadores de desempenho para servidores gerenciados, na página **todos os servidores** , clique com o botão direito do mouse em entradas no bloco **desempenho** que mostram um valor de **status de contador** de **desativado**e clique em **Iniciar contadores de desempenho**. Você também pode iniciar contadores de desempenho clicando com o botão direito do mouse em entradas para servidores no bloco **servidores** de páginas de função ou grupo e, em seguida, clicando em **Iniciar contadores de desempenho**.  
+Por padrão, os contadores de desempenho estão desativados. Os servidores gerenciados que estão executando sistemas operacionais mais recentes do que o Windows Server 2003 e para os quais os contadores de desempenho não foram iniciados, normalmente mostram erros de status de gerenciamento de **contadores de desempenho online não iniciados** no bloco **servidores** de páginas de função ou grupo. Para ativar os contadores de desempenho para servidores gerenciados, na página **todos os servidores** , clique com o botão direito do mouse em entradas no bloco **desempenho** que mostram um valor de **status de contador** de **desativado**e clique em **Iniciar contadores de desempenho**. Você também pode iniciar contadores de desempenho clicando com o botão direito do mouse em entradas para servidores no bloco **servidores** de páginas de função ou grupo e, em seguida, clicando em **Iniciar contadores de desempenho**.  
 
 > [!NOTE]  
-> Os alertas de desempenho que você exibe em miniaturas são um subconjunto dos dados do contador de desempenho total que você instrui Gerenciador do Servidor a coletar de servidores gerenciados. Embora a alteração dos critérios de alerta de desempenho na caixa de diálogo **configurar alertas de desempenho** em blocos de **desempenho** possa alterar os números de alertas que você vê no painel Gerenciador do servidor, alterando os critérios de alerta de desempenho em miniaturas Não tem efeito sobre os dados de log de desempenho que são coletados dos servidores gerenciados.  
+> Os alertas de desempenho que você exibe em miniaturas são um subconjunto dos dados do contador de desempenho total que você instrui Gerenciador do Servidor a coletar de servidores gerenciados. Embora a alteração dos critérios de alerta de desempenho na caixa de diálogo **configurar alertas de desempenho** em blocos de **desempenho** possa alterar os números de alertas que você vê no painel de Gerenciador do servidor, alterar os critérios de alerta de desempenho em miniaturas não tem efeito sobre os dados de log de desempenho coletados dos servidores gerenciados.  
 >   
-> Por isso, a duração máxima dos dados de desempenho que você pode exibir nas miniaturas não pode ser maior que o período de exibição de gráfico máximo configurado na caixa de diálogo **Configurar alertas de desempenho** . Por exemplo, se o valor do **período de exibição do grafo** em **configurar alertas de desempenho** for **1 dia**, o valor máximo do campo **período de tempo** em uma caixa de diálogo exibição de **detalhes de desempenho** que você abriu do Gerenciador do servidor o painel pode ser de **1 dia**, **24 horas**ou **1.440 minutos**.  
+> Por isso, a duração máxima dos dados de desempenho que você pode exibir nas miniaturas não pode ser maior que o período de exibição de gráfico máximo configurado na caixa de diálogo **Configurar alertas de desempenho** . Por exemplo, se o valor do **período de exibição do grafo** em **configurar alertas de desempenho** for **1 dia**, o valor máximo do campo **período de tempo** em uma caixa de diálogo exibição de detalhes de **desempenho** que você abriu do painel Gerenciador do Servidor poderá ser de **1 dia**, **24 horas**ou **1.440 minutos**.  
 
 #### <a name="to-configure-the-performance-log-data-collected-from-managed-servers"></a>Para configurar os dados do log de desempenho coletados dos servidores gerenciados  
 
@@ -175,7 +171,7 @@ para obter mais informações sobre como analisar os dados do contador de desemp
 
 para obter mais informações sobre ferramentas avançadas de monitoramento e análise de desempenho disponíveis para o Windows Server 2012 e versões posteriores do Windows Server, incluindo o supervisor de desempenho do servidor 3,0, consulte [desempenho](https://msdn.microsoft.com/windows/hardware/gg463374.aspx) no msdn.  
 
-## <a name="BKMK_services"></a>Gerenciar serviços e configurar alertas de serviço  
+## <a name="manage-services-and-configure-service-alerts"></a><a name=BKMK_services></a>Gerenciar serviços e configurar alertas de serviço  
 Nesta seção, saiba como iniciar, parar, reiniciar, pausar ou retomar os serviços que são exibidos no bloco **Serviços** nas páginas função e grupo de servidores no Gerenciador do servidor. Você também pode configurar os serviços sobre os quais você é alertado em miniaturas no painel Gerenciador do Servidor.  
 
 > [!NOTE]  
@@ -209,7 +205,7 @@ Nesta seção, saiba como iniciar, parar, reiniciar, pausar ou retomar os servi�
 
 8.  Clique em **OK** para salvar as alterações, feche a caixa de diálogo **exibição de detalhes** e exiba as alterações de alerta de serviço na miniatura de origem.  
 
-## <a name="BKMK_copy"></a>Exibir e copiar entradas de evento, serviço ou desempenho  
+## <a name="view-and-copy-event-service-or-performance-entries"></a><a name=BKMK_copy></a>Exibir e copiar entradas de evento, serviço ou desempenho  
 Você pode copiar propriedades de evento, serviço ou entrada de desempenho nas caixas de diálogo **exibição de detalhes** e nos blocos **eventos** e **desempenho** de uma função ou grupo. Clique com o botão direito do mouse em um evento ou entrada de desempenho e clique em **copiar**.  
 
 O bloco **Eventos** também permite visualizar as propriedades de eventos na metade inferior do bloco selecionando um evento na lista. Para copiar as propriedades mostradas na visualização, clique com o botão direito do mouse no painel de visualização e clique em **copiar**.  

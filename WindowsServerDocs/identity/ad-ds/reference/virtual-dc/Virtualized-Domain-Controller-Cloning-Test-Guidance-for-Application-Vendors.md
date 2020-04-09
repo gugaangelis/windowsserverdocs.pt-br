@@ -1,7 +1,6 @@
 ---
 ms.assetid: fde99b44-cb9f-49bf-b888-edaeabe6b88d
 title: Diretrizes do teste de clonagem do controlador de domínio virtualizado para fornecedores de aplicativos
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4926fabe255f964b6d39e6c39c5e794a37423111
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 7273c59022edf4b03276a9e26c8291849ef93b40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517461"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853989"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>Diretrizes do teste de clonagem do controlador de domínio virtualizado para fornecedores de aplicativos
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico explica o que os fornecedores de aplicativos devem considerar para ajudar a garantir que seu aplicativo continue funcionando conforme o esperado após a conclusão do processo de clonagem do DC (controlador de domínio virtualizado). Ele aborda esses aspectos do processo de clonagem que interessam os fornecedores de aplicativos e cenários que podem garantir testes adicionais. Os fornecedores de aplicativos que validaram que seus aplicativos funcionam em controladores de domínio virtualizados que foram clonados são incentivados a listar o nome do aplicativo no conteúdo da Comunidade, na parte inferior deste tópico, junto com um link para seu site da organização onde os usuários podem saber mais sobre a validação.
+Este tópico explica o que os fornecedores de aplicativos devem considerar para ajudar a garantir que seu aplicativo continue funcionando conforme o esperado após a conclusão do processo de clonagem do DC (controlador de domínio virtualizado). Ele aborda esses aspectos do processo de clonagem que interessam os fornecedores de aplicativos e cenários que podem garantir testes adicionais. Os fornecedores de aplicativos que validaram que seus aplicativos funcionam em controladores de domínio virtualizados que foram clonados são incentivados a listar o nome do aplicativo no conteúdo da Comunidade, na parte inferior deste tópico, junto com um link para o site da sua organização, onde os usuários podem saber mais sobre a validação.
 
 ## <a name="overview-of-virtualized-dc-cloning"></a>Visão geral da clonagem de DC virtualizado
 O processo de clonagem do controlador de domínio virtualizado é descrito em detalhes na [introdução à virtualização de Active Directory Domain Services (AD DS) (nível 100) e à](https://docs.microsoft.com/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) [referência técnica do controlador de domínio virtualizado (nível 300)](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-). Da perspectiva de um fornecedor de aplicativos, estas são algumas considerações a serem levadas em conta ao avaliar o impacto da clonagem para seu aplicativo:

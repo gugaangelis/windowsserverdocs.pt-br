@@ -2,21 +2,19 @@
 title: Instalar a função Hyper-V no Windows Server
 description: Fornece instruções para instalar o Hyper-V usando o Gerenciador do Servidor ou o Windows PowerShell
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 2687a907852e2a81f03b147df1425cd01b34fb76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4d8f2343f0935ea7185890319a3e33564750572
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392804"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860819"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Instalar a função Hyper-V no Windows Server
 

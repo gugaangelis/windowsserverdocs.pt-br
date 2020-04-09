@@ -1,7 +1,6 @@
 ---
 ms.assetid: d282bb4e-38a0-4c7c-83d8-f6ea89278057
 title: Criar um aplicativo Web usando o OpenID Connect com o AD FS 2016 e posterior
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b3d64558c27e7b4bda20b6af27e02d55431c94d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49d952a49cf474708f57a0ae2a7760d2470af607
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358795"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857489"
 ---
 # <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>Criar um aplicativo Web usando o OpenID Connect com o AD FS 2016 e posterior
 
@@ -40,7 +39,7 @@ A seção a seguir descreve como configurar o grupo de aplicativos no AD FS 2016
 
 3.  Copie o valor do **identificador de cliente** .  Ele será usado posteriormente como o valor de ida: ClientId no arquivo Web. config dos aplicativos.  
 
-4.  Insira o seguinte para o **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar** . Clique em **Avançar**.  
+4.  Insira o seguinte para **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar**. Clique em **Avançar**.  
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
 
@@ -118,7 +117,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         -   Em vez de usar a autoridade para a comunicação de dados sobre o emissor confiável, especificamos o local do documento de descoberta diretamente por meio de MetadataAddress  
 
-        -   O Azure AD não impõe a presença de um redirect_uri na solicitação, mas o ADFS o faz. Então, precisamos adicioná-lo aqui  
+        -   O Azure AD não impõe a presença de um redirect_uri na solicitação, mas o ADFS faz. Então, precisamos adicioná-lo aqui  
 
 ## <a name="verify-the-app-is-working"></a>Verifique se o aplicativo está funcionando  
 Depois que as alterações acima tiverem sido feitas, pressione F5.  Isso abrirá a página de exemplo.  Clique em entrar.  
@@ -133,5 +132,5 @@ Quando isso for bem-sucedido, você verá que agora está conectado.
 
 ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_14.PNG)  
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

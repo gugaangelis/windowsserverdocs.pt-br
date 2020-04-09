@@ -2,20 +2,18 @@
 title: Planejar a rede do Hyper-V no Windows Server
 description: Descreve o que é necessário para a rede básica no Hyper-V e fornece links para instruções
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f09bc82d0dd47d3393dd05dcf03913db11e4c335
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3127c9579493ad8b317667b61de88304fd14f6cf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392509"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860759"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>Planejar a rede do Hyper-V no Windows Server
 
@@ -52,7 +50,7 @@ Os tipos de adaptadores de rede virtual são:
 -   **Adaptador de rede herdado** – disponível somente em máquinas virtuais de geração 1. Emula um adaptador Ethernet rápido PCI baseado em Intel 21140 e pode ser usado para inicializar uma rede para que você possa instalar um sistema operacional de um serviço como os serviços de implantação do Windows.  
   
 ## <a name="hyper-v-networking-and-related-technologies"></a>Rede do Hyper-V e tecnologias relacionadas  
-As versões recentes do Windows Server introduziram melhorias que oferecem mais opções para configurar a rede para o Hyper-V. Por exemplo, o Windows Server 2012 introduziu o suporte para rede convergida. Isso permite rotear o tráfego de rede por meio de um comutador virtual externo. O Windows Server 2016 baseia-se nele permitindo o acesso remoto direto à memória (RDMA) nos adaptadores de rede associados a um comutador virtual Hyper-V. Você pode usar essa configuração com ou sem o switch Embedded Integration (SET). Para obter detalhes,consulte [Acesso remoto direto à memória &#40;Access&#41; RDMA e troca de equipe inserida &#40;Set&#41; ](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
+As versões recentes do Windows Server introduziram melhorias que oferecem mais opções para configurar a rede para o Hyper-V. Por exemplo, o Windows Server 2012 introduziu o suporte para rede convergida. Isso permite rotear o tráfego de rede por meio de um comutador virtual externo. O Windows Server 2016 baseia-se nele permitindo o acesso remoto direto à memória (RDMA) nos adaptadores de rede associados a um comutador virtual Hyper-V. Você pode usar essa configuração com ou sem o switch Embedded Integration (SET). Para obter detalhes, [consulte Remote Direct Memory &#40;Access&#41; RDMA e switch Embedded Integration &#40;Set&#41; ](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
   
 Alguns recursos dependem de configurações de rede específicas ou têm melhor desempenho em determinadas configurações. Considere isso ao planejar ou atualizar sua infraestrutura de rede.  
   

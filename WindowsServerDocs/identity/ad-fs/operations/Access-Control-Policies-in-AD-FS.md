@@ -1,7 +1,6 @@
 ---
 ms.assetid: 102eeeb1-6c55-42a2-b321-71a7dab46146
 title: Políticas de controle de acesso no AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 27eb5b4b52dd727afae5cffc60e7d9749dd5d59f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6af511ac1aff488f192f75b31801c6fed751cedd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859419"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Políticas de controle de acesso no AD FS para Windows Server 2016
 
@@ -40,22 +39,22 @@ Para fornecer maior flexibilidade para atender às suas necessidades de negócio
   
 Para criar um modelo de política, um administrador precisa primeiro especificar sob quais condições uma solicitação será autorizada para emissão de token e/ou delegação. As opções de condição e ação são mostradas na tabela a seguir.   As condições em negrito podem ser configuradas ainda mais pelo administrador com valores diferentes ou novos. O administrador também pode especificar exceções se houver alguma. Quando uma condição for atendida, uma ação de permissão não será disparada se houver uma exceção especificada e a solicitação de entrada corresponder à condição especificada na exceção.  
   
-|Permitir usuários|Excepção| 
+|Permitir usuários|excepção| 
 | --- | --- | 
- |De uma rede **específica**|De uma rede **específica**<br /><br />De grupos **específicos**<br /><br />De dispositivos com níveis de confiança **específicos**<br /><br />Com declarações **específicas** na solicitação|  
-|De grupos **específicos**|De uma rede **específica**<br /><br />De grupos **específicos**<br /><br />De dispositivos com níveis de confiança **específicos**<br /><br />Com declarações **específicas** na solicitação|  
-|De dispositivos com níveis de confiança **específicos**|De uma rede **específica**<br /><br />De grupos **específicos**<br /><br />De dispositivos com níveis de confiança **específicos**<br /><br />Com declarações **específicas** na solicitação|  
-|Com declarações **específicas** na solicitação|De uma rede **específica**<br /><br />De grupos **específicos**<br /><br />De dispositivos com níveis de confiança **específicos**<br /><br />Com declarações **específicas** na solicitação|  
-|E exigem a autenticação multifator|De uma rede **específica**<br /><br />De grupos **específicos**<br /><br />De dispositivos com níveis de confiança **específicos**<br /><br />Com declarações **específicas** na solicitação|  
+ |De uma rede **específica**|De uma rede **específica**<p>De grupos **específicos**<p>De dispositivos com níveis de confiança **específicos**<p>Com declarações **específicas** na solicitação|  
+|De grupos **específicos**|De uma rede **específica**<p>De grupos **específicos**<p>De dispositivos com níveis de confiança **específicos**<p>Com declarações **específicas** na solicitação|  
+|De dispositivos com níveis de confiança **específicos**|De uma rede **específica**<p>De grupos **específicos**<p>De dispositivos com níveis de confiança **específicos**<p>Com declarações **específicas** na solicitação|  
+|Com declarações **específicas** na solicitação|De uma rede **específica**<p>De grupos **específicos**<p>De dispositivos com níveis de confiança **específicos**<p>Com declarações **específicas** na solicitação|  
+|E exigem a autenticação multifator|De uma rede **específica**<p>De grupos **específicos**<p>De dispositivos com níveis de confiança **específicos**<p>Com declarações **específicas** na solicitação|  
   
 Se um administrador selecionar várias condições, elas serão de **e** a relação. As ações são mutuamente exclusivas e para uma regra de política, você só pode escolher uma ação. Se o administrador selecionar várias exceções, elas serão de uma relação **ou** . Alguns exemplos de regras de política são mostrados abaixo:  
   
 |**Política**|**Regras de política**|
 | --- | --- |  
-|O acesso à extranet requer MFA<br /><br />Todos os usuários são permitidos|**#1 de regra**<br /><br />da **extranet**<br /><br />e com MFA<br /><br />Permissão<br /><br />**Regra n º 2**<br /><br />da **intranet**<br /><br />Permissão|  
-|Acesso externo não é permitido, exceto não FTE<br /><br />O acesso à intranet para FTE no dispositivo ingressado no local de trabalho é permitido|**#1 de regra**<br /><br />Da **extranet**<br /><br />e de um grupo **não FTE**<br /><br />Permissão<br /><br />**#2 de regra**<br /><br />da **intranet**<br /><br />e do dispositivo **ingressado no local de trabalho**<br /><br />e do grupo **FTE**<br /><br />Permissão|  
-|O acesso à extranet requer MFA, exceto "administrador do serviço"<br /><br />Todos os usuários têm permissão para acessar|**#1 de regra**<br /><br />da **extranet**<br /><br />e com MFA<br /><br />Permissão<br /><br />**Grupo de administradores de serviço** , exceto<br /><br />**#2 de regra**<br /><br />Constante<br /><br />Permissão|  
-|o dispositivo ingressado no local de não trabalho de extranet requer MFA<br /><br />Permitir acesso à infraestrutura de intranet e extranet do AD|**#1 de regra**<br /><br />da **intranet**<br /><br />E do grupo do **ad Fabric**<br /><br />Permissão<br /><br />**#2 de regra**<br /><br />da **extranet**<br /><br />e do dispositivo **não ingressado no local de trabalho**<br /><br />e do grupo do **ad Fabric**<br /><br />e com MFA<br /><br />Permissão<br /><br />**#3 de regra**<br /><br />da **extranet**<br /><br />e do dispositivo **ingressado no local de trabalho**<br /><br />e do grupo do **ad Fabric**<br /><br />Permissão|  
+|O acesso à extranet requer MFA<p>Todos os usuários são permitidos|**#1 de regra**<p>da **extranet**<p>e com MFA<p>Permissão<p>**Regra n º 2**<p>da **intranet**<p>Permissão|  
+|Acesso externo não é permitido, exceto não FTE<p>O acesso à intranet para FTE no dispositivo ingressado no local de trabalho é permitido|**#1 de regra**<p>da **extranet**<p>e de um grupo **não FTE**<p>Permissão<p>**#2 de regra**<p>da **intranet**<p>e do dispositivo **ingressado no local de trabalho**<p>e do grupo **FTE**<p>Permissão|  
+|O acesso à extranet requer MFA, exceto "administrador do serviço"<p>Todos os usuários têm permissão para acessar|**#1 de regra**<p>da **extranet**<p>e com MFA<p>Permissão<p>**Grupo de administradores de serviço** , exceto<p>**#2 de regra**<p>constante<p>Permissão|  
+|o dispositivo ingressado no local de não trabalho de extranet requer MFA<p>Permitir acesso à infraestrutura de intranet e extranet do AD|**#1 de regra**<p>da **intranet**<p>e do grupo do **ad Fabric**<p>Permissão<p>**#2 de regra**<p>da **extranet**<p>e do dispositivo **não ingressado no local de trabalho**<p>e do grupo do **ad Fabric**<p>e com MFA<p>Permissão<p>**#3 de regra**<p>da **extranet**<p>e do dispositivo **ingressado no local de trabalho**<p>e do grupo do **ad Fabric**<p>Permissão|  
   
 ## <a name="parameterized-policy-template-vs-non-parameterized-policy-template"></a>Modelo de política com parâmetros vs. modelo de política não parametrizada  
 As políticas de controle de acesso podem ser  
@@ -75,7 +74,7 @@ Para criar uma política de controle de acesso sem parâmetros, use o procedimen
   
 1.  Em gerenciamento de AD FS à esquerda, selecione políticas de controle de acesso e, à direita, clique em Adicionar política de controle de acesso.  
   
-2.  Insira um nome e uma descrição.  Por exemplo:  Permitir usuários com dispositivos autenticados.  
+2.  Insira um nome e uma descrição.  Por exemplo: permitir usuários com dispositivos autenticados.  
   
 3.  Em **permitir acesso se qualquer uma das regras a seguir for atendida**, clique em **Adicionar**.  
   
@@ -83,11 +82,11 @@ Para criar uma política de controle de acesso sem parâmetros, use o procedimen
   
 5.  Na parte inferior, selecione o **específico** sublinhado  
   
-6.  Na janela que aparece, selecione **autenticado** na lista suspensa.  Clique em **Ok**.  
+6.  Na janela que aparece, selecione **autenticado** na lista suspensa.  Clique em **OK**.  
   
     ![políticas de controle de acesso](media/Access-Control-Policies-in-AD-FS/ADFSACP6.PNG)  
   
-7.  Clique em **Ok**. Clique em **Ok**.  
+7.  Clique em **OK**. Clique em **OK**.  
   
     ![políticas de controle de acesso](media/Access-Control-Policies-in-AD-FS/ADFSACP7.PNG)  
   
@@ -98,7 +97,7 @@ Para criar uma política de controle de acesso com parâmetros, use o procedimen
   
 1.  Em gerenciamento de AD FS à esquerda, selecione políticas de controle de acesso e, à direita, clique em Adicionar política de controle de acesso.  
   
-2.  Insira um nome e uma descrição.  Por exemplo:  Permitir aos usuários uma declaração específica.  
+2.  Insira um nome e uma descrição.  Por exemplo: permitir que usuários com uma declaração específica.  
   
 3.  Em **permitir acesso se qualquer uma das regras a seguir for atendida**, clique em **Adicionar**.  
   
@@ -106,11 +105,11 @@ Para criar uma política de controle de acesso com parâmetros, use o procedimen
   
 5.  Na parte inferior, selecione o **específico** sublinhado  
   
-6.  Na janela que aparece, selecione **o parâmetro especificado quando a política de controle de acesso é atribuída**.  Clique em **Ok**.  
+6.  Na janela que aparece, selecione **o parâmetro especificado quando a política de controle de acesso é atribuída**.  Clique em **OK**.  
   
     ![políticas de controle de acesso](media/Access-Control-Policies-in-AD-FS/ADFSACP8.PNG)  
   
-7.  Clique em **Ok**. Clique em **Ok**.  
+7.  Clique em **OK**. Clique em **OK**.  
   
     ![políticas de controle de acesso](media/Access-Control-Policies-in-AD-FS/ADFSACP9.PNG)  
   
@@ -121,7 +120,7 @@ Para criar uma política de controle de acesso com uma exceção, use o procedim
   
 1.  Em gerenciamento de AD FS à esquerda, selecione políticas de controle de acesso e, à direita, clique em Adicionar política de controle de acesso.  
   
-2.  Insira um nome e uma descrição.  Por exemplo:  Permitir usuários com dispositivos autenticados, mas não gerenciados.  
+2.  Insira um nome e uma descrição.  Por exemplo: permitir usuários com dispositivos autenticados, mas não gerenciados.  
   
 3.  Em **permitir acesso se qualquer uma das regras a seguir for atendida**, clique em **Adicionar**.  
   
@@ -129,15 +128,15 @@ Para criar uma política de controle de acesso com uma exceção, use o procedim
   
 5.  Na parte inferior, selecione o **específico** sublinhado  
   
-6.  Na janela que aparece, selecione **autenticado** na lista suspensa.  Clique em **Ok**.  
+6.  Na janela que aparece, selecione **autenticado** na lista suspensa.  Clique em **OK**.  
   
 7.  Em Except, coloque uma marca na caixa ao lado **de dispositivos com nível de confiança específico**  
   
 8.  Na parte inferior sob Except, selecione a linha de base **específica**  
   
-9. Na janela que aparece, selecione **gerenciado** na lista suspensa.  Clique em **Ok**.  
+9. Na janela que aparece, selecione **gerenciado** na lista suspensa.  Clique em **OK**.  
   
-10. Clique em **Ok**. Clique em **Ok**.  
+10. Clique em **OK**. Clique em **OK**.  
   
     ![políticas de controle de acesso](media/Access-Control-Policies-in-AD-FS/ADFSACP10.PNG)  
   
@@ -148,7 +147,7 @@ Para criar uma política de controle de acesso com várias condições de permis
   
 1.  Em gerenciamento de AD FS à esquerda, selecione políticas de controle de acesso e, à direita, clique em Adicionar política de controle de acesso.  
   
-2.  Insira um nome e uma descrição.  Por exemplo:  Permitir aos usuários uma declaração específica e de um grupo específico.  
+2.  Insira um nome e uma descrição.  Por exemplo: permitir que usuários com uma declaração específica e de um grupo específico.  
   
 3.  Em **permitir acesso se qualquer uma das regras a seguir for atendida**, clique em **Adicionar**.  
   
@@ -156,13 +155,13 @@ Para criar uma política de controle de acesso com várias condições de permis
   
 5.  Na parte inferior, selecione o sublinhado **específico** para a primeira condição, ao lado de grupos  
   
-6.  Na janela que aparece, selecione **o parâmetro especificado quando a política é atribuída**.  Clique em **Ok**.  
+6.  Na janela que aparece, selecione **o parâmetro especificado quando a política é atribuída**.  Clique em **OK**.  
   
 7.  Na parte inferior, selecione o sublinhado **específico** para a segunda condição, ao lado de declarações  
   
-8.  Na janela que aparece, selecione **o parâmetro especificado quando a política de controle de acesso é atribuída**.  Clique em **Ok**.  
+8.  Na janela que aparece, selecione **o parâmetro especificado quando a política de controle de acesso é atribuída**.  Clique em **OK**.  
   
-9. Clique em **Ok**. Clique em **Ok**.  
+9. Clique em **OK**. Clique em **OK**.  
   
 ![políticas de controle de acesso](media/Access-Control-Policies-in-AD-FS/ADFSACP12.PNG)  
   

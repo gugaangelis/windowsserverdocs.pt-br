@@ -1,23 +1,19 @@
 ---
 title: Gerenciar segurança de camada de transporte (TLS)
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a4ac1ea5b0648dbb80f103c146ad3df23fc04ab7
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 065c8932667eed12d347e796c29cc7ee013c0383
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322678"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852929"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Gerenciar segurança de camada de transporte (TLS)
 
@@ -121,11 +117,11 @@ O Windows não pode usar uma curva nomeada depois que um administrador remove a 
 As organizações podem distribuir parâmetros de curva para o computador corporativo, ingressado no domínio usando Política de Grupo e a extensão de registro de preferências Política de Grupo.  
 O processo de distribuição de uma curva é:
 
-1.  No Windows 10 e no Windows Server 2016, use o **certutil. exe** para adicionar uma nova curva nomeada registrada ao Windows.
-2.  No mesmo computador, abra o Console de Gerenciamento de Política de Grupo (GPMC), crie um novo objeto de Política de Grupo e edite-o.
-3.  Navegar para **configuração do computador | Preferências | Configurações do Windows | Registro**.  Clique com o botão direito do mouse em **registro**. Passe o mouse sobre **novo** e selecione **item de coleta**. Renomeie o item de coleta para corresponder ao nome da curva. Você criará um item de coleção de registro para cada chave do registro em *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*.
-4.  Configure a coleção de registro de preferência de Política de Grupo recém-criada adicionando um novo **item de registro** para cada valor de registro listado em *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[curvename]* .
-5.  Implante o objeto de Política de Grupo que contém Política de Grupo item de coleção do registro em computadores com Windows 10 e Windows Server 2016 que devem receber as novas curvas nomeadas.
+1.    No Windows 10 e no Windows Server 2016, use o **certutil. exe** para adicionar uma nova curva nomeada registrada ao Windows.
+2.    No mesmo computador, abra o Console de Gerenciamento de Política de Grupo (GPMC), crie um novo objeto de Política de Grupo e edite-o.
+3.    Navegar para **configuração do computador | Preferências | Configurações do Windows | Registro**.  Clique com o botão direito do mouse em **registro**. Passe o mouse sobre **novo** e selecione **item de coleta**. Renomeie o item de coleta para corresponder ao nome da curva. Você criará um item de coleção de registro para cada chave do registro em *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*.
+4.    Configure a coleção de registro de preferência de Política de Grupo recém-criada adicionando um novo **item de registro** para cada valor de registro listado em *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[curvename]* .
+5.    Implante o objeto de Política de Grupo que contém Política de Grupo item de coleção do registro em computadores com Windows 10 e Windows Server 2016 que devem receber as novas curvas nomeadas.
 
     ![Distribuir curvas de GPP](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)
 
@@ -133,7 +129,7 @@ O processo de distribuição de uma curva é:
 
 ## <a name="managing-tls-ecc-order"></a>Gerenciando a ordem de ECC TLS
 
-A partir do Windows 10 e do Windows Server 2016, as configurações da política de grupo da ordem de curva do ECC podem ser usadas para configurar a ordem de curva de ECC TLS padrão. Usando o ECC genérico e essa configuração, as organizações podem adicionar suas próprias curvas nomeadas confiáveis (que são aprovadas para uso com TLS) para o sistema operacional e, em seguida, adicionar essas curvas nomeadas à prioridade de curva Política de Grupo configuração para garantir que elas sejam usadas no futuro TLS Handshakes. Novas listas de prioridades de curva se tornam ativas na próxima reinicialização depois de receber as configurações de política.     
+A partir do Windows 10 e do Windows Server 2016, as configurações da política de grupo da ordem de curva do ECC podem ser usadas para configurar a ordem de curva de ECC TLS padrão. Usando o ECC genérico e essa configuração, as organizações podem adicionar suas próprias curvas nomeadas confiáveis (que são aprovadas para uso com TLS) para o sistema operacional e, em seguida, adicionar essas curvas nomeadas à prioridade de curva Política de Grupo configuração para garantir que elas sejam usadas em Handshakes de TLS futuros. Novas listas de prioridades de curva se tornam ativas na próxima reinicialização depois de receber as configurações de política.     
 
 ![Distribuir curvas de GPP](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
 

@@ -2,22 +2,18 @@
 title: Planejamento da capacidade do DirectAccess
 description: Você pode usar este tópico para obter um relatório sobre o desempenho do servidor DirectAccess do Windows Server 2012 para ajudá-lo com o planejamento de capacidade para o DirectAccess no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e63b4c4f266d286b766c89b61676493328aa8652
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 413dc88ce9ec551a318b63f3df44ed256f289219
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310980"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815789"
 ---
 # <a name="directaccess-capacity-planning"></a>Planejamento da capacidade do DirectAccess
 
@@ -37,7 +33,7 @@ A tabela a seguir mostra os resultados do ambiente de teste de desempenho de har
 ||||  
 |-|-|-|  
 |Configuração-hardware|Hardware de baixa gama (4 GB de RAM, 4 núcleos)|Hardware de alta gama (8 GB, 8 núcleos)|  
-|Túnel Duplo<br /><br />-PKI<br /><br />-Incluindo DNS64/NAT64|750 conexões simultâneas a 50% da CPU, 50% da Memória com produtividade da Corpnet NIC de 75 Mbps. O destino de ampliação é 1000 usuários a 50% da CPU.|1500 conexões simultâneas em 50% CPU, 50% de memória com taxa de transferência de NIC corpnet 150 Mbps.|  
+|Túnel Duplo<p>-PKI<p>-Incluindo DNS64/NAT64|750 conexões simultâneas a 50% da CPU, 50% da Memória com produtividade da Corpnet NIC de 75 Mbps. O destino de ampliação é 1000 usuários a 50% da CPU.|1500 conexões simultâneas em 50% CPU, 50% de memória com taxa de transferência de NIC corpnet 150 Mbps.|  
 ## <a name="test-environment"></a>Ambiente de Teste
 
 **Topologia de bancada de perf**  

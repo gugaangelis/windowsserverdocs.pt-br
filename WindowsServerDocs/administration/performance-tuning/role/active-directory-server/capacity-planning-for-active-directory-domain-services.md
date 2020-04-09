@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: v-tea; kenbrunf
-author: Teresa-Motiv
+author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: c1cad3242d3abf2838a5aaf71d21c68152bc9b7f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 61efdad658385b3dd57dbe9a41b6168d4d849b87
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947274"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851939"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planejamento de capacidade para Active Directory Domain Services
 
@@ -27,9 +27,9 @@ O planejamento de capacidade não é o mesmo que solucionar problemas de inciden
   
 No planejamento de capacidade, uma organização pode ter um destino de linha de base de 40% de utilização do processador durante períodos de pico para atender aos requisitos de desempenho do cliente e acomodar o tempo necessário para atualizar o hardware no datacenter. Enquanto que, para ser notificado sobre incidentes de desempenho anormal, um limite de alerta de monitoramento pode ser definido em 90% por um intervalo de 5 minutos.
 
-A diferença é que, quando um limite de gerenciamento de capacidade é continuamente excedido (um evento único não é uma preocupação), a adição de capacidade (ou seja, adição em processadores mais rápidos) seria uma solução ou o dimensionamento do serviço em vários servidores seria um soluções. Os limites de alerta de desempenho indicam que a experiência do cliente está sofrendo no momento e são necessárias etapas imediatas para resolver o problema.
+A diferença é que, quando um limite de gerenciamento de capacidade é continuamente excedido (um evento único não é uma preocupação), a adição de capacidade (ou seja, adição em processadores mais rápidos) seria uma solução ou o dimensionamento do serviço em vários servidores seria uma solução. Os limites de alerta de desempenho indicam que a experiência do cliente está sofrendo no momento e são necessárias etapas imediatas para resolver o problema.
 
-Como uma analogia: o gerenciamento de capacidade está prestes a evitar um acidente de carro (condução defensiva, verificando se os freios estão funcionando corretamente e assim por diante) enquanto a solução de problemas de desempenho é o que a polícia, o departamento de incêndio e os profissionais médicos de emergência fazem após um acidente. Isso é sobre a "condução defensiva", estilo Active Directory.
+Como uma analogia: o gerenciamento de capacidade está prestes a evitar um acidente de carro (condução defensiva, verificando se os freios estão funcionando corretamente e assim por diante), enquanto a solução de problemas de desempenho é o que os profissionais de polícia, de departamento de incêndio e médicos de emergência fazem após um acidente. Isso é sobre a "condução defensiva", estilo Active Directory.
 
 Nos últimos anos, as diretrizes de planejamento de capacidade para sistemas de expansão mudaram drasticamente. As seguintes alterações nas arquiteturas do sistema enfrentam suposições fundamentais sobre a criação e o dimensionamento de um serviço:
 
@@ -46,7 +46,7 @@ Além disso, a abordagem está mudando de um exercício de planejamento de capac
 Ao longo deste artigo, são esperados os seguintes requisitos de linha de base:
 
 - Os leitores têm lido e estão familiarizados com as [diretrizes de ajuste de desempenho para o Windows Server 2012 R2](https://docs.microsoft.com/previous-versions//dn529133(v=vs.85)).
-- A plataforma Windows Server é uma arquitetura baseada em x64. Mas mesmo que seu ambiente de Active Directory esteja instalado no Windows Server 2003 x86 (agora além do fim do ciclo de vida do suporte) e tenha uma DIT (árvore de informações de diretório) com menos de 1,5 GB de tamanho e que possa ser facilmente mantida na memória, as diretrizes desse o artigo ainda é aplicável.
+- A plataforma Windows Server é uma arquitetura baseada em x64. Mas mesmo que seu ambiente de Active Directory esteja instalado no Windows Server 2003 x86 (agora além do fim do ciclo de vida do suporte) e tenha uma DIT (árvore de informações de diretório) com menos de 1,5 GB de tamanho e que possa ser facilmente mantida na memória, as diretrizes deste artigo ainda serão aplicáveis.
 - O planejamento de capacidade é um processo contínuo e você deve examinar regularmente o quão bem o ambiente está atendendo às expectativas.
 - A otimização ocorrerá em vários ciclos de vida de hardware à medida que os custos de hardware forem alterados. Por exemplo, a memória se torna mais barata, o custo por núcleo diminui ou o preço das diferentes opções de armazenamento mudam.
 - Planejar o pico do período de ocupado do dia. É recomendável observar isso em intervalos de 30 minutos ou de hora. Qualquer coisa maior pode ocultar os picos reais e qualquer coisa menos pode ser distorcida por "picos transitórios".
@@ -85,9 +85,9 @@ Para otimizar o desempenho, verifique se esses principais componentes estão cor
 1. Processador
 1. Logon de Rede
 
-Os requisitos de armazenamento básico do AD DS e o comportamento geral do software cliente bem escrito permitem que os ambientes com até 10.000 a 20.000 usuários tenham um investimento pesado no planejamento de capacidade com relação ao hardware físico, como quase qualquer servidor moderno o sistema de classe tratará a carga. Dito isso, a tabela a seguir resume como avaliar um ambiente existente a fim de selecionar o hardware certo. Cada componente é analisado em detalhes nas seções subsequentes para ajudar AD DS os administradores a avaliarem sua infraestrutura usando as recomendações de linha de base e as entidades específicas do ambiente.
+Os requisitos de armazenamento básico do AD DS e o comportamento geral do software cliente bem escrito permitem que os ambientes com até 10.000 a 20.000 usuários tenham um investimento pesado no planejamento de capacidade com relação ao hardware físico, pois quase qualquer sistema de classe de servidor moderno tratará da carga. Dito isso, a tabela a seguir resume como avaliar um ambiente existente a fim de selecionar o hardware certo. Cada componente é analisado em detalhes nas seções subsequentes para ajudar AD DS os administradores a avaliarem sua infraestrutura usando as recomendações de linha de base e as entidades específicas do ambiente.
 
-No geral:
+Em geral:
 
 - Qualquer dimensionamento com base nos dados atuais só será preciso para o ambiente atual.
 - Para todas as estimativas, espere a demanda para aumentar o ciclo de vida do hardware.
@@ -111,7 +111,7 @@ No geral:
 | Componente | Critérios de avaliação | Considerações de planejamento |
 |-|-|-|
 |Tamanho do armazenamento/banco de dados|A seção intitulada "para ativar o registro em log do espaço em disco liberado pela desfragmentação" nos [limites de armazenamento](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))| |
-|Desempenho de armazenamento/banco de dados|<ul><li>"LogicalDisk ( *\<unidade\>de banco de dados NTDS*) \Avg de disco s/leitura", "LogicalDisk ( *\<unidade\>de banco de dados NTDS*) \Avg de disco s/gravação", LogicalDisk ( *\<unidade de banco de dados NTDS )\>* \Avg de disco s/transferência "</li><li>"LogicalDisk ( *\<unidade\>de banco de dados NTDS*) \ leituras/s", "LogicalDisk ( *\<unidade\>de banco de dados NTDS*) \ gravações/s", "LogicalDisk ( *\<unidade\>debancodedadosNTDS)* ) \ Transferências/s "</li></ul>|<ul><li>O armazenamento tem duas preocupações para abordar<ul><li>Espaço disponível, que com o tamanho do armazenamento baseado em SSD e com base no eixo de hoje é irrelevante para a maioria dos ambientes do AD.</li> <li>Operações de e/s (entrada/saída) disponíveis – em muitos ambientes, isso geralmente é ignorado. Mas é importante avaliar apenas ambientes em que não há RAM suficiente para carregar todo o banco de dados NTDS na memória.</li></ul><li>O armazenamento pode ser um tópico complexo e deve envolver a experiência do fornecedor de hardware para o dimensionamento adequado. Particularmente com cenários mais complexos, como cenários de SAN, NAS e iSCSI. No entanto, em geral, o custo por gigabyte de armazenamento geralmente está no oposição direto ao custo por e/s:<ul><li>O RAID 5 tem um custo menor por gigabyte do que o RAID 1, mas o RAID 1 tem um custo menor por e/s</li><li>Unidades de disco rígido com base no eixo têm menor custo por gigabyte, mas o SSDs tem um custo menor por e/s</li></ul><li>Após a reinicialização do computador ou do serviço de Active Directory Domain Services, o cache do ESE (mecanismo de armazenamento extensível) estará vazio e o desempenho será vinculado ao disco enquanto o cache estiver quente.</li><li>Na maioria dos ambientes, O AD tem e/s de leitura intensiva em um padrão aleatório para discos, negando grande parte do benefício das estratégias de otimização de cache e leitura.  Além disso, o AD tem um modo de cache maior na memória do que a maioria dos caches do sistema de armazenamento.</li></ul>
+|Desempenho de armazenamento/banco de dados|<ul><li>"LogicalDisk ( *\<a unidade de banco de dados ntds\>* ) \Avg de disco s/leitura", "logicaldisk (\<unidade de *banco de dados NTDS\>* ) \Avg de disco s/gravação" "LogicalDisk ( *\<de unidade de banco de dados NTDS\>* ) \Avg disco s/transferência"</li><li>"LogicalDisk ( *\<unidade de banco de dados ntds\>* ) \ leituras/s", "logicaldisk (\<unidade de *banco de dados NTDS\>* ) \ gravações/s", "LogicalDisk ( *\<\>de unidade de banco de dados NTDS* ) \ transferências/s"</li></ul>|<ul><li>O armazenamento tem duas preocupações para abordar<ul><li>Espaço disponível, que com o tamanho do armazenamento baseado em SSD e com base no eixo de hoje é irrelevante para a maioria dos ambientes do AD.</li> <li>Operações de e/s (entrada/saída) disponíveis – em muitos ambientes, isso geralmente é ignorado. Mas é importante avaliar apenas ambientes em que não há RAM suficiente para carregar todo o banco de dados NTDS na memória.</li></ul><li>O armazenamento pode ser um tópico complexo e deve envolver a experiência do fornecedor de hardware para o dimensionamento adequado. Particularmente com cenários mais complexos, como cenários de SAN, NAS e iSCSI. No entanto, em geral, o custo por gigabyte de armazenamento geralmente está no oposição direto ao custo por e/s:<ul><li>O RAID 5 tem um custo menor por gigabyte do que o RAID 1, mas o RAID 1 tem um custo menor por e/s</li><li>Unidades de disco rígido com base no eixo têm menor custo por gigabyte, mas o SSDs tem um custo menor por e/s</li></ul><li>Após a reinicialização do computador ou do serviço de Active Directory Domain Services, o cache do ESE (mecanismo de armazenamento extensível) estará vazio e o desempenho será vinculado ao disco enquanto o cache estiver quente.</li><li>Na maioria dos ambientes, O AD tem e/s de leitura intensiva em um padrão aleatório para discos, negando grande parte do benefício das estratégias de otimização de cache e leitura.  Além disso, o AD tem um modo de cache maior na memória do que a maioria dos caches do sistema de armazenamento.</li></ul>
 |RAM|<ul><li>Tamanho do banco de dados</li><li>Recomendações do sistema operacional base</li><li>Aplicativos de terceiros</li></ul>|<ul><li>O armazenamento é o componente mais lento em um computador. Quanto mais que puder ser residente na RAM, menos será necessário ir para o disco.</li><li>Certifique-se de que RAM suficiente esteja alocada para armazenar o sistema operacional, agentes (antivírus, backup, monitoramento), banco de dados NTDS e crescimento ao longo do tempo.</li><li>Para ambientes em que a maximização da quantidade de RAM não é econômica (como locais de satélite) ou não viável (DIT é muito grande), faça referência à seção de armazenamento para garantir que o armazenamento seja dimensionado corretamente.</li></ul>|
 |Rede|<ul><li>"Interface de rede (\*) \Bytes recebidos/s"</li><li>"Interface de rede (\*) \Bytes enviados/s"|<ul><li>Em geral, o tráfego enviado de um controlador de domínio excede muito o tráfego enviado para um controlador de domínio.</li><li>Como uma conexão Ethernet comutada é full-duplex, o tráfego de entrada e saída de rede precisa ser dimensionado independentemente.</li><li>Consolidar o número de controladores de domínio aumentará a quantidade de largura de banda usada para enviar respostas de volta às solicitações do cliente para cada DC, mas será quase o bastante para linear para o site como um todo.</li><li>Se você remover os DCs do local satélite, não se esqueça de adicionar a largura de banda para o controlador de domínio satélite aos DCs do Hub, bem como usá-lo para avaliar a quantidade de tráfego de WAN que haverá.</li></ul>|
 |CPU|<ul><li>"Disco lógico ( *\<unidade de banco de dados NTDS\>* ) \Avg de disco s/leitura"</li><li>"Processo (Lsass)\\% tempo do processador"</li></ul>|<ul><li>Depois de eliminar o armazenamento como um afunilamento, resolva a quantidade de energia de computação necessária.</li><li>Embora não seja perfeitamente linear, o número de núcleos de processador consumidos em todos os servidores dentro de um escopo específico (como um site) pode ser usado para medir quantos processadores são necessários para dar suporte à carga total do cliente. Adicione o mínimo necessário para manter o nível de serviço atual em todos os sistemas dentro do escopo.</li><li>Alterações na velocidade do processador, incluindo alterações relacionadas ao gerenciamento de energia, os números de impacto derivados do ambiente atual. Em geral, é impossível avaliar com precisão como a saída de um processador de 2,5 GHz para um processador de 3 GHz reduzirá o número de CPUs necessárias.</li></ul>|
@@ -119,19 +119,19 @@ No geral:
 
 ## <a name="planning"></a>Planejamento
 
-Por muito tempo, a recomendação da Comunidade para o dimensionamento de AD DS tem sido "colocar o máximo de RAM como o tamanho do banco de dados". Na maior parte, essa recomendação é tudo que a maioria dos ambientes precisa estar preocupado. Mas o ecossistema que consome AD DS ficou muito maior, como tem os ambientes de AD DS em si, desde sua introdução em 1999. Embora o aumento no poder de computação e o switch de arquiteturas x86 para arquiteturas x64 tenham tornado os aspectos mais sutis de dimensionamento para o desempenho irrelevante para um conjunto maior de clientes que executam AD DS em hardware físico, o crescimento da virtualização tem reintroduziu as preocupações de ajuste para um público maior do que antes.
+Por muito tempo, a recomendação da Comunidade para o dimensionamento de AD DS tem sido "colocar o máximo de RAM como o tamanho do banco de dados". Na maior parte, essa recomendação é tudo que a maioria dos ambientes precisa estar preocupado. Mas o ecossistema que consome AD DS ficou muito maior, como tem os ambientes de AD DS em si, desde sua introdução em 1999. Embora o aumento na potência de computação e o switch de arquiteturas x86 para arquiteturas x64 tenham tornado os aspectos mais sutis de dimensionamento para o desempenho irrelevante para um conjunto maior de clientes que executam AD DS em hardware físico, o crescimento da virtualização reintroduziu as preocupações de ajuste em um público maior do que antes.
 
 As diretrizes a seguir tratam de como determinar e planejar as demandas de Active Directory como um serviço, independentemente de serem implantadas em um físico, um mix virtual/físico ou um cenário puramente virtualizado. Dessa forma, dividiremos a avaliação em cada um dos quatro componentes principais: armazenamento, memória, rede e processador. Em suma, para maximizar o desempenho na AD DS, o objetivo é chegar ao próximo limite possível do processador.
 
 ## <a name="ram"></a>RAM
 
-Simplesmente, quanto mais que puder ser armazenado em cache na RAM, menos será necessário ir para o disco. Para maximizar a escalabilidade do servidor, a quantidade mínima de RAM deve ser a soma do tamanho atual do banco de dados, o tamanho total do SYSVOL, o valor recomendado do sistema operacional e as recomendações do fornecedor para os agentes (antivírus, monitoramento, backup e assim por diante) ). Um valor adicional deve ser adicionado para acomodar o crescimento durante o tempo de vida do servidor. Isso será ambientalmente subjetivo com base nas estimativas de crescimento do banco de dados com base nas alterações ambientais.
+Simplesmente, quanto mais que puder ser armazenado em cache na RAM, menos será necessário ir para o disco. Para maximizar a escalabilidade do servidor, a quantidade mínima de RAM deve ser a soma do tamanho atual do banco de dados, o tamanho total do SYSVOL, o valor recomendado do sistema operacional e as recomendações do fornecedor para os agentes (antivírus, monitoramento, backup e assim por diante). Um valor adicional deve ser adicionado para acomodar o crescimento durante o tempo de vida do servidor. Isso será ambientalmente subjetivo com base nas estimativas de crescimento do banco de dados com base nas alterações ambientais.
 
 Para ambientes em que a maximização da quantidade de RAM não é econômica (como locais de satélite) ou não viável (DIT é muito grande), faça referência à seção de armazenamento para garantir que o armazenamento seja projetado corretamente.
 
 Um registro que surge no contexto geral na memória de dimensionamento é o dimensionamento do arquivo de paginação. No mesmo contexto que qualquer outra memória relacionada, o objetivo é minimizar o processo de disco muito mais lento. Portanto, a pergunta deve ir de "como o arquivo de paginação deve ser dimensionado?" para "a quantidade de RAM necessária para minimizar a paginação?" A resposta para a última pergunta é descrita no restante desta seção. Isso deixa a maior parte da discussão sobre o dimensionamento do arquivo de paginação para o realm das recomendações gerais do sistema operacional e a necessidade de configurar o sistema para despejos de memória, que não estão relacionados ao desempenho de AD DS.
 
-### <a name="evaluating"></a>Avaliando
+### <a name="evaluating"></a>Avaliar
 
 A quantidade de RAM de que um DC (controlador de domínio) precisa é, na verdade, um exercício complexo por estes motivos:
 
@@ -142,7 +142,7 @@ A quantidade de RAM de que um DC (controlador de domínio) precisa é, na verdad
 - Quanto mais que puder ser armazenado em cache na RAM, menos será necessário ir para o disco. 
 - O armazenamento é, de longe, o componente mais lento de um computador. O acesso a dados na mídia de armazenamento SSD e baseada em eixo está na ordem de 1, 000, 1.000 vezes mais lenta do que o acesso aos dados na RAM.
 
-Portanto, para maximizar a escalabilidade do servidor, a quantidade mínima de RAM é a soma do tamanho do banco de dados atual, o tamanho total do SYSVOL, o valor recomendado do sistema operacional e as recomendações de fornecedor para os agentes (antivírus, monitoramento, backup, e assim por diante). Adicione outros valores para acomodar o crescimento durante o tempo de vida do servidor. Isso será ambientalmente subjetivo com base nas estimativas de crescimento do banco de dados. No entanto, para locais de satélite com um pequeno conjunto de usuários finais, esses requisitos podem ser reduzidos, pois esses sites não precisarão armazenar em cache o máximo para atender à maioria das solicitações.
+Portanto, para maximizar a escalabilidade do servidor, a quantidade mínima de RAM é a soma do tamanho atual do banco de dados, o tamanho total do SYSVOL, o valor recomendado do sistema operacional e as recomendações de fornecedor para os agentes (antivírus, monitoramento, backup e assim por diante). Adicione outros valores para acomodar o crescimento durante o tempo de vida do servidor. Isso será ambientalmente subjetivo com base nas estimativas de crescimento do banco de dados. No entanto, para locais de satélite com um pequeno conjunto de usuários finais, esses requisitos podem ser reduzidos, pois esses sites não precisarão armazenar em cache o máximo para atender à maioria das solicitações.
 
 Para ambientes em que a maximização da quantidade de RAM não é econômica (como locais de satélite) ou não viável (DIT é muito grande), faça referência à seção de armazenamento para garantir que o armazenamento seja dimensionado corretamente.
 
@@ -160,7 +160,7 @@ Evite a confirmação da memória no host. A meta fundamental por trás da otimi
 |RAM recomendada do sistema operacional de base (Windows Server 2008)|2 GB|
 |Tarefas internas do LSASs|200 MB|
 |Agente de monitoramento|100 MB|
-|Integração com antivírus|100 MB|
+|Antivírus|100 MB|
 |Banco de dados (catálogo global)|8,5 GB tem certeza de que???|
 |Amortecedor para execução de backup, administradores para fazer logon sem impacto|1 GB|
 |Total|12 GB|
@@ -171,8 +171,8 @@ Com o passar do tempo, a suposição pode ser feita de que mais dados serão adi
 
 ## <a name="network"></a>Rede
 
-### <a name="evaluating"></a>Avaliando
-Esta seção tem menos informações sobre a avaliação das demandas relacionadas ao tráfego de replicação, que se concentram no tráfego que atravessa a WAN e é totalmente coberta em [Active Directory tráfego de replicação](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10)), do que diz respeito à avaliação da largura de banda total e à capacidade da rede necessária, inclusive consultas de clientes, política de grupo aplicativos e assim por diante. Para ambientes existentes, isso pode ser coletado usando contadores de desempenho "interface de\*r(ede) \Bytes recebidos/s" e "interface de\*(rede) \Bytes enviados/s". Intervalos de exemplo para contadores de interface de rede em 15, 30 ou 60 minutos. Qualquer coisa menor geralmente será muito volátil para boas medidas; qualquer coisa maior suavizará as exibições diárias em excesso.
+### <a name="evaluating"></a>Avaliar
+Esta seção tem menos informações sobre a avaliação das demandas relacionadas ao tráfego de replicação, que se concentram no tráfego que atravessa a WAN e é totalmente coberta em [Active Directory tráfego de replicação](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10)), do que diz respeito à avaliação da largura de banda total e à capacidade da rede necessária, inclusive consultas de clientes, política de grupo aplicativos e assim por diante. Para ambientes existentes, isso pode ser coletado usando contadores de desempenho "interface de rede (\*) \Bytes recebidos/s" e "interface de rede (\*) \Bytes enviados/s". Intervalos de exemplo para contadores de interface de rede em 15, 30 ou 60 minutos. Qualquer coisa menor geralmente será muito volátil para boas medidas; qualquer coisa maior suavizará as exibições diárias em excesso.
 
 > [!NOTE]
 > Em geral, a maior parte do tráfego de rede em um DC é de saída, pois o DC responde às consultas do cliente. Esse é o motivo para o foco no tráfego de saída, embora seja recomendável avaliar cada ambiente também para o tráfego de entrada. As mesmas abordagens podem ser usadas para abordar e revisar os requisitos de tráfego de rede de entrada. Para obter mais informações, consulte o artigo 929851 da base de dados de conhecimento [: o intervalo de portas dinâmicas padrão para TCP/IP foi alterado no Windows Vista e no Windows Server 2008](https://support.microsoft.com/kb/929851).
@@ -223,7 +223,7 @@ Em suma, a implantação final dos sistemas deve ter um adaptador de rede de 1 G
 
 ### <a name="calculation-summary-example"></a>Exemplo de Resumo de cálculo
 
-|Sistema|Largura de banda de pico|
+|{1&gt;Sistema&lt;1}|Largura de banda de pico|
 |-|-|
 DC 1|6,5 MB/s|
 DC 2|6,25 MB/s|
@@ -248,9 +248,9 @@ O planejamento de armazenamento constitui dois componentes:
 - Capacidade ou tamanho do armazenamento
 - Desempenho
 
-Uma grande quantidade de tempo e A documentação são gastos na capacidade de planejamento, deixando o desempenho com frequência totalmente ignorado. Com os custos de hardware atuais, a maioria dos ambientes não é grande o suficiente para que seja realmente uma preocupação, e a recomendação para "colocar o máximo de RAM como o tamanho do banco de dados" geralmente cobre o restante, embora possa ser um exagero para locais de satélite em maior sistemas.
+Uma grande quantidade de tempo e A documentação são gastos na capacidade de planejamento, deixando o desempenho com frequência totalmente ignorado. Com os custos de hardware atuais, a maioria dos ambientes não é grande o suficiente para que seja realmente uma preocupação, e a recomendação para "colocar o máximo de RAM como o tamanho do banco de dados" geralmente cobre o restante, embora possa ser um exagero para locais de satélite em ambientes maiores.
 
-### <a name="sizing"></a>Dimensionamento
+### <a name="sizing"></a>Sizing
 
 #### <a name="evaluating-for-storage"></a>Avaliando para armazenamento
 
@@ -290,7 +290,7 @@ Em um cenário em que vários arquivos de VHD (disco rígido virtual) estão sen
 > [!NOTE]
 > Esse armazenamento necessário é além do armazenamento necessário para SYSVOL, sistema operacional, arquivo de paginação, arquivos temporários, dados armazenados em cache local (como arquivos do instalador) e aplicativos.
 
-### <a name="storage-performance"></a>Desempenho de armazenamento
+### <a name="storage-performance"></a>Desempenho do armazenamento
 
 #### <a name="evaluating-performance-of-storage"></a>Avaliando o desempenho do armazenamento
 
@@ -320,7 +320,7 @@ Eles devem ser amostrados em intervalos de 15/30/60 minutos para avaliar as dema
 #### <a name="evaluating-the-results"></a>Avaliando os resultados
 
 > [!NOTE]
-> O foco está em leituras do banco de dados, pois esse é geralmente o componente mais exigente, a mesma lógica pode ser aplicada a gravações no arquivo de log, substituindo o LogicalDisk ( *\<log\>NTDS*) \Avg de disco s/gravação e LogicalDisk (*Log\>NTDS) \ gravações/s):\<*
+> O foco está em leituras do banco de dados, pois esse é geralmente o componente mais exigente, a mesma lógica pode ser aplicada a gravações no arquivo de log, substituindo o LogicalDisk ( *\<log ntds\>* ) \Avg de disco s/gravação e LogicalDisk ( *\<\>de log NTDS* ) \ gravações/s):
 >  
 > - LogicalDisk ( *\<NTDS\>* ) \Avg de disco s/leitura indica se o armazenamento atual tem ou não o tamanho adequado.  Se os resultados forem aproximadamente iguais ao tempo de acesso do disco para o tipo de disco, o LogicalDisk ( *\<NTDS\>* ) \ leituras/s será uma medida válida.  Verifique as especificações do fabricante para o armazenamento no back-end, mas bons intervalos para o LogicalDisk ( *\<NTDS\>* ) \Avg de disco s/leitura serão aproximadamente:
 >   - 7200 – 9 a 12,5 milissegundos (MS)
@@ -341,9 +341,9 @@ Considerações:
 
 #### <a name="virtualization-considerations-for-performance"></a>Considerações sobre virtualização para desempenho
 
-Semelhante a todas as discussões sobre virtualização anteriores, a chave aqui é garantir que a infraestrutura compartilhada subjacente possa dar suporte à carga de DC mais os outros recursos usando a mídia compartilhada subjacente e todos os caminhos para ela. Isso é verdadeiro se um controlador de domínio físico estiver compartilhando a mesma mídia subjacente em uma infraestrutura SAN, NAS ou iSCSI como outros servidores ou aplicativos, seja um convidado que usa acesso de passagem a uma infraestrutura SAN, NAS ou iSCSI que compartilha o a mídia subjacente, ou se o convidado estiver usando um arquivo VHD que reside em mídia compartilhada localmente ou em uma infraestrutura SAN, NAS ou iSCSI. O exercício de planejamento se refere a garantir que a mídia subjacente possa dar suporte à carga total de todos os consumidores.
+Semelhante a todas as discussões sobre virtualização anteriores, a chave aqui é garantir que a infraestrutura compartilhada subjacente possa dar suporte à carga de DC mais os outros recursos usando a mídia compartilhada subjacente e todos os caminhos para ela. Isso é verdadeiro se um controlador de domínio físico estiver compartilhando a mesma mídia subjacente em uma infraestrutura SAN, NAS ou iSCSI como outros servidores ou aplicativos, seja um convidado usando acesso de passagem a uma infraestrutura SAN, NAS ou iSCSI que compartilha a mídia subjacente, ou se o convidado estiver usando um arquivo VHD que reside na mídia compartilhada localmente ou em uma SAN , NAS ou infraestrutura iSCSI. O exercício de planejamento se refere a garantir que a mídia subjacente possa dar suporte à carga total de todos os consumidores.
 
-Além disso, de uma perspectiva de convidado, como há caminhos de código adicionais que devem ser percorridos, há um impacto no desempenho de ter que passar por um host para acessar qualquer armazenamento. Não surpreendentemente, o teste de desempenho de armazenamento indica que a virtualização tem um impacto na taxa de transferência que está sujeita à utilização do processador do sistema host (consulte o apêndice A: critérios de dimensionamento da CPU), que é obviamente influenciado pelos recursos de o host exigido pelo convidado. Isso contribui para as considerações de virtualização em relação às necessidades de processamento em um cenário virtualizado (consulte [considerações de virtualização para processamento](#virtualization-considerations-for-processing)).
+Além disso, de uma perspectiva de convidado, como há caminhos de código adicionais que devem ser percorridos, há um impacto no desempenho de ter que passar por um host para acessar qualquer armazenamento. Não surpreendentemente, o teste de desempenho de armazenamento indica que a virtualização tem um impacto na taxa de transferência que está sujeita à utilização do processador do sistema host (consulte o apêndice A: critérios de dimensionamento da CPU), que é obviamente influenciado pelos recursos do host exigido pelo convidado. Isso contribui para as considerações de virtualização em relação às necessidades de processamento em um cenário virtualizado (consulte [considerações de virtualização para processamento](#virtualization-considerations-for-processing)).
 
 Tornar isso mais complexo é que há uma variedade de opções de armazenamento diferentes que estão disponíveis e que todas têm impactos de desempenho diferentes. Como uma estimativa segura ao migrar do físico para o virtual, use um multiplicador de 1,10 para se ajustar para diferentes opções de armazenamento para convidados virtualizados no Hyper-V, como armazenamento de passagem, adaptador SCSI ou IDE. Os ajustes que precisam ser feitos durante a transferência entre os diferentes cenários de armazenamento são irrelevantes para se o armazenamento é local, SAN, NAS ou iSCSI.
 
@@ -353,15 +353,15 @@ Determinando a quantidade de e/s necessária para um sistema íntegro em condiç
 
 - LogicalDisk ( *\<unidade de banco de dados NTDS\>* ) \ transferências/s durante o período de pico de 15 minutos 
 - Para determinar a quantidade de e/s necessária para o armazenamento onde a capacidade do armazenamento subjacente é excedida:
-  >*IOPS necessário* = (LogicalDisk ( *\<unidade de banco\>de dados NTDS*) disco rígido &divide; \Avg s/ler *\<destino média\>de disco s/leitura*) &times; disco lógico ( *\<Unidade\>de banco de dados NTDS*) \ leitura/s
+  >*IOPS necessário* = (LogicalDisk ( *\<unidade de banco de dados NTDS\>* ) disco \Avg s/leitura &divide; *\<média de disco s de destino/leitura\>* ) &times; LogicalDisk (\<\>de*unidade de banco de dados NTDS*) \ leitura/s
 
-|Contador|Valor|
+|Contador|{1&gt;Valor&lt;1}|
 |-|-|
 |LogicalDisk real ( *\<unidade de banco de dados NTDS\>* ) \Avg de disco s/transferência|.02 segundos (20 milissegundos)|
 |LogicalDisk de destino ( *\<unidade de banco de dados NTDS\>* ) \Avg de disco s/transferência|.01 segundo|
 |Multiplicador para alteração na e/s disponível|0, 2 &divide; 0, 1 = 2|  
   
-|Nome do valor|Valor|
+|Nome do valor|{1&gt;Valor&lt;1}|
 |-|-|
 |LogicalDisk ( *\<\>de unidade de banco de dados NTDS* ) \ transferências/s|400|
 |Multiplicador para alteração na e/s disponível|2|
@@ -387,15 +387,15 @@ Observe que a taxa calculada, embora precisa, não será exata porque as página
 |Calcular o número de páginas no banco de dados|2\.097.152 KB &divide; 8 KB = *número de páginas*|262.144 páginas|
 |Calcular o IOPS necessário para o cache totalmente quente|262.144 páginas &divide; 600 segundos = *IOPS necessário*|IOPS DE 437|
 
-## <a name="processing"></a>Processing
+## <a name="processing"></a>Processamento
 
 ### <a name="evaluating-active-directory-processor-usage"></a>Avaliando Active Directory uso do processador
 
 Para a maioria dos ambientes, depois que o armazenamento, a RAM e a rede são ajustados corretamente conforme descrito na seção de planejamento, o gerenciamento da quantidade de capacidade de processamento será o componente que merece mais atenção. Há dois desafios na avaliação da capacidade da CPU necessária:
 
-- Se os aplicativos no ambiente estão sendo bem comportados em uma infraestrutura de serviços compartilhados e são discutidos na seção intitulada "acompanhamento de pesquisas caras e ineficientes" no artigo criando a Microsoft Active Aplicativos habilitados para diretório ou migração para fora de chamadas SAM de nível inferior para chamadas LDAP.  
+- Se os aplicativos no ambiente estão sendo bem comportados em uma infraestrutura de serviços compartilhados e são discutidos na seção intitulada "acompanhamento de pesquisas caras e ineficientes" no artigo criando aplicativos mais eficientes habilitados para o Microsoft Active Directory ou migrando de chamadas SAM de nível inferior para chamadas LDAP.  
   
-  Em ambientes maiores, o motivo disso é importante é que aplicativos mal codificados podem impulsionar o volatilidade na carga da CPU, "roubar" uma quantidade inordenada de tempo de CPU de outros aplicativos, artificialmente impulsionando as necessidades de capacidade e distribuindo de forma desigual a carga contra os DCs.  
+  Em ambientes maiores, o motivo de isso é importante é que aplicativos mal codificados podem impulsionar o volatilidade na carga da CPU, "roubar" uma quantidade incorreta de tempo de CPU de outros aplicativos, artificialmente impulsionando as necessidades de capacidade e distribuindo de forma desigual a carga nos DCs.  
 - Como AD DS é um ambiente distribuído com uma grande variedade de clientes potenciais, estimar a despesa de um "cliente único" é ambientalmente subjetivo devido aos padrões de uso e ao tipo ou à quantidade de aplicativos que aproveitam AD DS. Em suma, assim como a seção Networking, para uma grande aplicabilidade, isso é melhor abordado da perspectiva da avaliação da capacidade total necessária no ambiente.
 
 Para ambientes existentes, à medida que o dimensionamento de armazenamento foi discutido anteriormente, pressupõe-se que o armazenamento agora é dimensionado corretamente e, portanto, os dados relacionados à carga do processador são válidos. Para reiterar, é essencial garantir que o afunilamento no sistema não seja o desempenho do armazenamento. Quando existe um afunilamento e o processador está aguardando, há Estados ociosos que desaparecerão quando o afunilamento for removido.  À medida que os Estados de espera do processador são removidos, por definição, a utilização da CPU aumenta, pois não é mais necessário aguardar os dados. Portanto, colete contadores de desempenho "disco lógico ( *\<unidade de banco de dados NTDS\>* ) \Avg disco s/leitura" e "processo (Lsass)\\% tempo do processador". Os dados em "processo (Lsass)\\% tempo do processador" serão artificialmente baixos se "disco lógico ( *\<unidade de banco de dados NTDS\>* ) disco \Avg s/leitura" exceder de 10 a 15 ms, que é um limite geral que o suporte da Microsoft usa para solucionar problemas de desempenho relacionados ao armazenamento. Como antes, é recomendável que os intervalos de exemplo sejam 15, 30 ou 60 minutos. Qualquer coisa menor geralmente será muito volátil para boas medidas; qualquer coisa maior suavizará as exibições diárias em excesso.
@@ -436,7 +436,7 @@ Analisando os dados no gráfico (informações do processador (_Total)\% utilit�
 
 ### <a name="calculating-cpu-demands"></a>Calculando as demandas de CPU
 
-O contador de objetos de desempenho "processar\\% tempo do processador" soma a quantidade total de tempo que todos os threads de um aplicativo gastam na CPU e divide pela quantidade total de tempo do sistema que passou. O efeito disso é que um aplicativo multithread em um sistema de várias CPUs pode exceder 100% de tempo de CPU e seria interpretado de forma muito diferente do que o "processador de informações\\% Processor Utility". Na prática, o "processo (Lsass)\\% tempo do processador" pode ser exibido como a contagem de CPUs em execução às 100% que são necessárias para dar suporte às demandas do processo. Um valor de 200% significa que 2 CPUs, cada uma às 100%, são necessárias para dar suporte à carga de AD DS completa. Embora uma CPU em execução com a capacidade de 100% seja a mais econômica da perspectiva do dinheiro gasto em CPUs e consumo de energia e energia, por vários motivos detalhados no apêndice A, uma melhor capacidade de resposta em um sistema multi-threaded ocorre quando o sistema é Não está sendo executado às 100%.
+O contador de objetos de desempenho "processar\\% tempo do processador" soma a quantidade total de tempo que todos os threads de um aplicativo gastam na CPU e divide pela quantidade total de tempo do sistema que passou. O efeito disso é que um aplicativo multithread em um sistema de várias CPUs pode exceder 100% de tempo de CPU e seria interpretado de forma muito diferente do que o "processador de informações\\% Processor Utility". Na prática, o "processo (Lsass)\\% tempo do processador" pode ser exibido como a contagem de CPUs em execução às 100% que são necessárias para dar suporte às demandas do processo. Um valor de 200% significa que 2 CPUs, cada uma às 100%, são necessárias para dar suporte à carga de AD DS completa. Embora uma CPU em execução com a capacidade de 100% seja a mais econômica da perspectiva do dinheiro gasto em CPUs e consumo de energia e energia, por vários motivos detalhados no apêndice A, a melhor capacidade de resposta em um sistema multi-threaded ocorre quando o sistema não está em execução às 100%.
 
 Para acomodar picos transitórios na carga do cliente, é recomendável direcionar uma CPU de período de pico entre 40% e 60% da capacidade do sistema. Trabalhando com o exemplo acima, isso significaria que as CPUs 3,33 (60% Target) e 5 (40% Target) seriam necessárias para a carga de AD DS (processo Lsass). A capacidade adicional deve ser adicionada de acordo com as demandas do sistema operacional base e de outros agentes necessários (como antivírus, backup, monitoramento e assim por diante). Embora o impacto dos agentes precise ser avaliado em uma base por ambiente, uma estimativa entre 5% e 10% de uma única CPU pode ser feita. No exemplo atual, isso sugere que as CPUs 3,43 (60% Target) e 5,1 (40% Target) são necessárias durante períodos de pico.
 
@@ -465,7 +465,7 @@ Há vários cenários em que o ajuste de [LdapSrvWeight](https://docs.microsoft.
 
 Há dois motivos comuns para ajustar os pesos do LDAP:
 
-- O emulador de PDC é um exemplo que afeta todos os ambientes para os quais o comportamento de carga de usuário ou aplicativo não é distribuído uniformemente. Como determinadas ferramentas e ações visam o emulador de PDC, como as ferramentas de gerenciamento de Política de Grupo, segunda tentativas no caso de falhas de autenticação, estabelecimento de confiança e assim por diante, os recursos de CPU no emulador de PDC podem ser mais exigentes do que em outro lugar o site.
+- O emulador de PDC é um exemplo que afeta todos os ambientes para os quais o comportamento de carga de usuário ou aplicativo não é distribuído uniformemente. Como determinadas ferramentas e ações visam o emulador de PDC, como as ferramentas de gerenciamento de Política de Grupo, as tentativas de segundo no caso de falhas de autenticação, estabelecimento de confiança e assim por diante, os recursos de CPU no emulador de PDC podem ser mais exigentes do que em outro lugar no site.
   - Só é útil ajustar isso se houver uma diferença perceptível na utilização da CPU para reduzir a carga no emulador de PDC e aumentar a carga em outros controladores de domínio permitirá uma distribuição mais uniforme da carga.
   - Nesse caso, defina LDAPSrvWeight entre 50 e 75 para o emulador de PDC.
 - Servidores com contagens diferentes de CPUs (e velocidades) em um site.  Por exemplo, digamos que existam servidores 2 8-core e o servidor 1 4-core.  O último servidor tem metade dos processadores dos outros dois servidores.  Isso significa que uma carga de cliente bem distribuída aumentará a carga de CPU média na caixa de quatro núcleos para aproximadamente duas vezes a das caixas de oito núcleos.
@@ -510,7 +510,7 @@ Durante a análise e o cálculo das quantidades de CPU necessárias para dar sup
 
 ### <a name="calculation-summary-example"></a>Exemplo de Resumo de cálculo
 
-|Sistema|CPU de pico|
+|{1&gt;Sistema&lt;1}|CPU de pico|
 |-|-|-|
 |DC 1|120%|
 |DC 2|147%|
@@ -527,7 +527,7 @@ Repetindo devido à importância deste ponto, *Lembre-se de planejar o crescimen
 
 #### <a name="evaluating-cross-trust-client-authentication-load"></a>Avaliando a carga de autenticação de cliente de confiança cruzada
 
-Muitos ambientes podem ter um ou mais domínios conectados por uma relação de confiança. Uma solicitação de autenticação para uma identidade em outro domínio que não usa a autenticação Kerberos precisa atravessar uma relação de confiança usando o canal seguro do controlador de domínio para outro controlador de domínio no domínio de destino ou no próximo domínio no caminho para o domínio de destino. O número de chamadas simultâneas usando o canal seguro que um controlador de domínio pode fazer a um controlador de domínio em um domínio confiável é controlado por uma configuração conhecida como **MaxConcurrentAPI**. Para controladores de domínio, garantir que o canal seguro possa lidar com a quantidade de carga é realizado por uma das duas abordagens: ajuste **MaxConcurrentAPI** ou, em uma floresta, criando relações de confiança de atalho. Para medir o volume de tráfego em uma relação de confiança individual, consulte [como fazer o ajuste de desempenho para a autenticação NTLM usando a configuração MaxConcurrentApi](https://support.microsoft.com/kb/2688798).
+Muitos ambientes podem ter um ou mais domínios conectados por uma relação de confiança. Uma solicitação de autenticação para uma identidade em outro domínio que não usa a autenticação Kerberos precisa atravessar uma relação de confiança usando o canal seguro do controlador de domínio para outro controlador de domínio no domínio de destino ou no domínio seguinte no caminho para o domínio de destino. O número de chamadas simultâneas usando o canal seguro que um controlador de domínio pode fazer a um controlador de domínio em um domínio confiável é controlado por uma configuração conhecida como **MaxConcurrentAPI**. Para controladores de domínio, garantir que o canal seguro possa lidar com a quantidade de carga é realizado por uma das duas abordagens: ajuste **MaxConcurrentAPI** ou, em uma floresta, criando relações de confiança de atalho. Para medir o volume de tráfego em uma relação de confiança individual, consulte [como fazer o ajuste de desempenho para a autenticação NTLM usando a configuração MaxConcurrentApi](https://support.microsoft.com/kb/2688798).
 
 Durante a coleta de dados, isso, assim como acontece com todos os outros cenários, deve ser coletado durante os períodos de pico do dia para que os dados sejam úteis.
 
@@ -548,17 +548,17 @@ Há várias abordagens para gerenciar a carga de confiança cruzada, que, na pr�
 
 Para ajustar o **MaxConcurrentAPI** em um servidor existente, a equação é:
 
-> *New_MaxConcurrentApi_setting* &ge; (*semaphore_acquires*  +  *semaphore_time-outs*) &times; *average_semaphore_hold_time* &divide; *time_collection_length*
+> *New_MaxConcurrentApi_setting* &ge; (*semaphore_acquires* + *semaphore_time* *) &times; average_semaphore_hold_time &divide; time_collection_length* *time_collection_length*
 
 Para obter mais informações, consulte [o artigo 2688798 do KB: como fazer o ajuste de desempenho para a autenticação NTLM usando a configuração MaxConcurrentApi](https://support.microsoft.com/kb/2688798).
 
-## <a name="virtualization-considerations"></a>Considerações sobre a virtualização
+## <a name="virtualization-considerations"></a>Considerações sobre virtualização
 
 Nenhum, essa é uma configuração de ajuste do sistema operacional.
 
 ### <a name="calculation-summary-example"></a>Exemplo de Resumo de cálculo
 
-|Tipo de dado|Valor|
+|Tipo de dados|{1&gt;Valor&lt;1}|
 |-|-|
 |Aquisições de semáforo (mínimo)|6\.161|
 |Aquisições de semáforo (máximo)|6\.762|
@@ -574,14 +574,14 @@ Para esse sistema durante esse período de tempo, os valores padrão são aceit�
 
 Ao longo deste artigo, foi discutido que o planejamento e a escala vão para metas de utilização. Aqui está um gráfico de resumo dos limites recomendados que devem ser monitorados para garantir que os sistemas estejam operando dentro dos limites de capacidade adequados. Tenha em mente que esses não são limites de desempenho, mas limites de planejamento de capacidade. Um servidor operando em excesso desses limites funcionará, mas é hora de começar a validar que todos os aplicativos estão bem comparados. Se disse que os aplicativos estão bem comparados, é hora de começar a avaliar atualizações de hardware ou outras alterações de configuração.
 
-|Categoria|Contador de desempenho|Intervalo/amostragem|Target|Aviso|
+|Categoria|Contador de desempenho|Intervalo/amostragem|Destino|Aviso|
 |-|-|-|-|-|
-|Processador|Informações do processador (_Total)\\utilitário do processador|60 min|40%|60%|
-|RAM (Windows Server 2008 R2 ou anterior)|\ MB|< 100 MB|N/D|< 100 MB|
+|Processador|Informações do processador (_Total)\\utilitário do processador|mínimo de 60|40%|60%|
+|RAM (Windows Server 2008 R2 ou anterior)|\ MB|< 100 MB|{1&gt;N/A&lt;1}|< 100 MB|
 |RAM (Windows Server 2012)|Tempo de vida de cache de espera Memory\Long-Term médio (s)|30 min|Deve ser testado|Deve ser testado|
-|Rede|Interface de rede (\*) \Bytes enviados/s<br /><br />Interface de rede (\*) \Bytes recebidos/s|30 min|40%|60%|
-|Armazenamento|LogicalDisk ( *\<unidade de banco de dados NTDS\>* ) \Avg de disco s/leitura<br /><br />LogicalDisk ( *\<unidade de banco de dados NTDS\>* ) \Avg de disco s/gravação|60 min|10 ms|15 ms|
-|Serviços do AD|Tempo de espera de semáforo \ (\*) de Netlogon|60 min|0|1 segundo|
+|Rede|Interface de rede (\*) \Bytes enviados/s<p>Interface de rede (\*) \Bytes recebidos/s|30 min|40%|60%|
+|Armazenamento|LogicalDisk ( *\<unidade de banco de dados NTDS\>* ) \Avg de disco s/leitura<p>LogicalDisk ( *\<unidade de banco de dados NTDS\>* ) \Avg de disco s/gravação|mínimo de 60|10 ms|15 ms|
+|Serviços do AD|Tempo de espera de semáforo \ (\*) de Netlogon|mínimo de 60|0|1 segundo|
 
 ## <a name="appendix-a-cpu-sizing-criteria"></a>Apêndice A: critérios de dimensionamento da CPU
 
@@ -645,7 +645,7 @@ Retornando à analogia de condução usada anteriormente nesta seção:
 - Os horários ocupados de "meados da tarde", hipotéticomente, se enquadram em um intervalo de 40% a 70%. Há tráfego suficiente, de modo que a capacidade de escolher qualquer pista não seja muito restrita, e a possibilidade de outro driver estar no caminho, embora alto, não exija o nível de esforço para "encontrar" uma lacuna segura entre outros carros em trânsito.
 - Um deles perceberá que, à medida que o tráfego se aproxima de hora, o sistema de estrada se aproxima da capacidade de 100%. A alteração de pistas pode se tornar muito desafiador, pois os carros estão tão próximos que o maior cuidado deve ser exercido para fazer isso.
 
-É por isso que as médias de longo prazo da capacidade é rebaixada de forma conservadora em 40% permite a sala de cabeça para picos anormais na carga, quer dizer picos transitórios (como consultas mal suportadas que são executadas por alguns minutos) ou intermitências anormais em carga geral (a manhã de o primeiro dia após um longo período de semana.
+É por isso que a média de longo prazo da capacidade, de forma conservadora, estimada em 40% permite a sala de cabeça para picos anormais na carga, se disse picos transitórios (como consultas mal suportadas que são executadas por alguns minutos) ou intermitências anormais em carga geral (a manhã do primeiro dia após um longo período de semana).
 
 A instrução acima considera que o cálculo do tempo do processador é o mesmo que a lei de utilização é um pouco de simplificação para a facilidade do leitor geral. Para aqueles mais matematicamente rigorosos:  
 - Convertendo o [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))
@@ -660,7 +660,7 @@ A instrução acima considera que o cálculo do tempo do processador é o mesmo 
 
 ### <a name="applying-the-concepts-to-capacity-planning"></a>Aplicando os conceitos ao planejamento de capacidade
 
-A matemática anterior pode fazer com que as determinações sobre o número de processadores lógicos necessários em um sistema pareçam extremamente complexas. É por isso que a abordagem de dimensionamento dos sistemas concentra-se na determinação da utilização máxima de destino com base na carga atual e no cálculo do número de processadores lógicos necessários para chegar lá. Além disso, embora as velocidades de processador lógico tenham um impacto significativo no desempenho, as eficiências de cache, os requisitos de coerência de memória, o agendamento e a sincronização de threads e a carga de cliente com balanceamento de sobrecarga, todos terão impactos significativos em desempenho que variará em uma base servidor a servidor. Com o custo relativamente barato da capacidade de computação, a tentativa de analisar e determinar o número perfeito de CPUs necessárias se torna um exercício acadêmico do que fornece valor comercial.
+A matemática anterior pode fazer com que as determinações sobre o número de processadores lógicos necessários em um sistema pareçam extremamente complexas. É por isso que a abordagem de dimensionamento dos sistemas concentra-se na determinação da utilização máxima de destino com base na carga atual e no cálculo do número de processadores lógicos necessários para chegar lá. Além disso, embora as velocidades de processador lógico tenham um impacto significativo no desempenho, eficiências de cache, requisitos de coerência de memória, agendamento e sincronização de threads e carregamento de cliente com balanceamento de carga, todos terão impactos significativos no desempenho que variará de acordo com o servidor. Com o custo relativamente barato da capacidade de computação, a tentativa de analisar e determinar o número perfeito de CPUs necessárias se torna um exercício acadêmico do que fornece valor comercial.
 
 40 por cento não é um requisito difícil e rápido, é um início razoável. Vários consumidores de Active Directory exigem vários níveis de capacidade de resposta. Pode haver situações em que os ambientes possam ser executados às 80% ou 90% de utilização como uma média sustentada, pois os tempos de espera maiores para o acesso ao processador não afetarão notavelmente o desempenho do cliente. É importante repetir a iteração de que há muitas áreas no sistema que são muito mais lentas do que o processador lógico no sistema, incluindo acesso à RAM, acesso ao disco e transmissão da resposta pela rede. Todos esses itens precisam ser ajustados em conjunto. Exemplos:
 
@@ -691,12 +691,12 @@ Em todas as seções na seleção do processador, é feita a suposição que o p
 
 Como alternativa, se as velocidades do processador no hardware de substituição forem menores do que o hardware atual, seria seguro aumentar a estimativa dos processadores necessários por um valor proporcional. Por exemplo, é calculado que 10 processadores são necessários para manter a carga em um site, e os processadores atuais estão sendo executados a 3,3 GHz e os processadores de substituição serão executados a 2,6 GHz, isso é uma redução de 21% em velocidade. Nesse caso, 12 processadores seriam o valor recomendado.
 
-Dito isso, essa variabilidade não alteraria os destinos de utilização do processador de gerenciamento de capacidade. À medida que as velocidades do relógio do processador forem ajustadas dinamicamente com base na carga solicitada, a execução do sistema sob cargas mais altas gerará um cenário em que a CPU passa mais tempo em um estado de velocidade de clock maior, fazendo com que o objetivo final esteja à utilização de 40% em 100% Estado de velocidade do relógio no pico. Qualquer coisa menor que gerará economia de energia, pois as velocidades de CPU serão limitadas durante os cenários de pico.
+Dito isso, essa variabilidade não alteraria os destinos de utilização do processador de gerenciamento de capacidade. À medida que as velocidades do relógio do processador forem ajustadas dinamicamente com base na demanda de carga, a execução do sistema sob cargas mais altas gerará um cenário em que a CPU passa mais tempo em um estado de velocidade de clock maior, fazendo com que o objetivo final esteja em 40% de utilização em um estado de velocidade de clock de 100% no pico. Qualquer coisa menor que gerará economia de energia, pois as velocidades de CPU serão limitadas durante os cenários de pico.
 
 > [!NOTE]
 > Uma opção seria desativar o gerenciamento de energia nos processadores (definindo o plano de energia para **alto desempenho**) enquanto os dados são coletados. Isso daria uma representação mais precisa do consumo de CPU no servidor de destino.
 
-Para ajustar as estimativas para processadores diferentes, ele costumava ser seguro, excluindo outros afunilamentos do sistema descritos acima, para assumir que dobrar velocidades de processador dobraram a quantidade de processamento que poderia ser executada.  Hoje, a arquitetura interna dos processadores é diferente o suficiente entre os processadores, que é uma maneira mais segura de medir os efeitos do uso de processadores diferentes dos quais os dados foram obtidos é aproveitar o SPECint_rate2006 benchmark da avaliação de desempenho padrão Corporation.
+Para ajustar as estimativas para processadores diferentes, ele costumava ser seguro, excluindo outros afunilamentos do sistema descritos acima, para assumir que dobrar velocidades de processador dobraram a quantidade de processamento que poderia ser executada.  Hoje, a arquitetura interna dos processadores é diferente o suficiente entre os processadores, que é uma maneira mais segura de medir os efeitos do uso de processadores diferentes dos quais os dados foram tirados é aproveitar o SPECint_rate2006 benchmark da corporação de avaliação de desempenho Standard.
 
 1. Localize as pontuações de SPECint_rate2006 para o processador que estão em uso e o plano a ser usado.
     1. No site da empresa de avaliação de desempenho padrão, selecione **resultados**, realce **CPU2006**e selecione **pesquisar todos os resultados de SPECint_rate2006**.
@@ -769,8 +769,8 @@ Depois que os componentes são identificados, uma ideia de quantos dados podem t
   
   |E/s com suporte do barramento SCSI por tamanho de bloco|tamanho do bloco de 2 KB|tamanho do bloco de 8 KB (AD Jet) (SQL Server 7.0/SQL Server 2000)
   |-|-|-|
-  |20 MB/s|10.000|2,500|
-  |40 MB/s|20.000|5,000|
+  |20 MB/s|10.000|2\.500|
+  |40 MB/s|20.000|5\.000|
   |128 MB/s|65.536|16.384|
   |320 MB/s|160.000|40.000|
 
@@ -794,17 +794,17 @@ Após a análise dos componentes desse subsistema de armazenamento, o eixo é o 
 
 Agora, tendo analisado uma configuração simples, a tabela a seguir demonstra onde o afunilamento ocorrerá, pois os componentes no subsistema de armazenamento são alterados ou adicionados.
 
-|Anotações|Análise de afunilamento|Disco|Bus|Adaptador|Barramento PCI|
+|{1&gt;Observações&lt;1}|Análise de afunilamento|Disco|Bus|Personalizado|Barramento PCI|
 |-|-|-|-|-|-|
-|Essa é a configuração do controlador de domínio depois de adicionar um segundo disco. A configuração de disco representa o afunilamento em 800 KB/s.|Adicionar 1 disco (total = 2)<br /><br />E/s é aleatória<br /><br />tamanho do bloco de 4 KB<br /><br />HD DE 10.000 RPM|total de 200 I/os<br />total de 800 KB/s.| | | |
-|Depois de adicionar 7 discos, a configuração de disco ainda representa o afunilamento em 3200 KB/s.|**Adicionar 7 discos (total = 8)**  <br /><br />E/s é aleatória<br /><br />tamanho do bloco de 4 KB<br /><br />HD DE 10.000 RPM|total de 800 I/os.<br />total de 3200 KB/s| | | |
-|Depois de alterar a e/s para sequencial, o adaptador de rede torna-se o afunilamento porque está limitado a 1000 IOPS.|Adicionar 7 discos (total = 8)<br /><br />**E/s é sequencial**<br /><br />tamanho do bloco de 4 KB<br /><br />HD DE 10.000 RPM| | |2400 e/s s podem ser lidas/gravadas no disco, controlador limitada a 1000 IOPS| |
-|Depois de substituir o adaptador de rede por um adaptador SCSI que dá suporte a 10.000 IOPS, o afunilamento retorna à configuração do disco.|Adicionar 7 discos (total = 8)<br /><br />E/s é aleatória<br /><br />tamanho do bloco de 4 KB<br /><br />HD DE 10.000 RPM<br /><br />**Atualizar o adaptador SCSI (agora dá suporte a 10.000 e/s)**|total de 800 I/os.<br />total de 3.200 KB/s| | | |
-|Depois de aumentar o tamanho do bloco para 32 KB, o barramento se tornará o afunilamento, pois ele só dá suporte a 20 MB/s.|Adicionar 7 discos (total = 8)<br /><br />E/s é aleatória<br /><br />**tamanho do bloco de 32 KB**<br /><br />HD DE 10.000 RPM| |total de 800 I/os. 25.600 KB/s (25 MB/s) podem ser lidos/gravados no disco.<br /><br />O barramento só dá suporte a 20 MB/s| | |
-|Depois de atualizar o barramento e adicionar mais discos, o disco permanece o afunilamento.|**Adicionar 13 discos (total = 14)**<br /><br />Adicionar segundo adaptador SCSI com 14 discos<br /><br />E/s é aleatória<br /><br />tamanho do bloco de 4 KB<br /><br />HD DE 10.000 RPM<br /><br />**Atualizar para o barramento SCSI de 320 MB/s**|2800 I/os<br /><br />11.200 KB/s (10,9 MB/s)| | | |
-|Depois de alterar a e/s para sequencial, o disco permanece o afunilamento.|Adicionar 13 discos (total = 14)<br /><br />Adicionar segundo adaptador SCSI com 14 discos<br /><br />**E/s é sequencial**<br /><br />tamanho do bloco de 4 KB<br /><br />HD DE 10.000 RPM<br /><br />Atualizar para o barramento SCSI de 320 MB/s|8\.400 I/os<br /><br />33.600 KB\s<br /><br />(32,8 MB\s)| | | |
-|Depois de adicionar discos rígidos mais rápidos, o disco permanece o afunilamento.|Adicionar 13 discos (total = 14)<br /><br />Adicionar segundo adaptador SCSI com 14 discos<br /><br />E/s é sequencial<br /><br />tamanho do bloco de 4 KB<br /><br />**HD DE 15.000 RPM**<br /><br />Atualizar para o barramento SCSI de 320 MB/s|14.000 I/os<br /><br />56.000 KB/s<br /><br />(54,7 MB/s)| | | |
-|Depois de aumentar o tamanho do bloco para 32 KB, o barramento PCI torna-se o afunilamento.|Adicionar 13 discos (total = 14)<br /><br />Adicionar segundo adaptador SCSI com 14 discos<br /><br />E/s é sequencial<br /><br />**tamanho do bloco de 32 KB**<br /><br />HD DE 15.000 RPM<br /><br />Atualizar para o barramento SCSI de 320 MB/s| | | |14.000 I/os<br /><br />448.000 KB/s<br /><br />(437 MB/s) é o limite de leitura/gravação para o eixo.<br /><br />O barramento PCI dá suporte a um máximo teórico de 133 MB/s (75% eficiente na melhor das hipóteses).|
+|Essa é a configuração do controlador de domínio depois de adicionar um segundo disco. A configuração de disco representa o afunilamento em 800 KB/s.|Adicionar 1 disco (total = 2)<p>E/s é aleatória<p>tamanho do bloco de 4 KB<p>HD DE 10.000 RPM|total de 200 I/os<br />total de 800 KB/s.| | | |
+|Depois de adicionar 7 discos, a configuração de disco ainda representa o afunilamento em 3200 KB/s.|**Adicionar 7 discos (total = 8)**  <p>E/s é aleatória<p>tamanho do bloco de 4 KB<p>HD DE 10.000 RPM|total de 800 I/os.<br />total de 3200 KB/s| | | |
+|Depois de alterar a e/s para sequencial, o adaptador de rede torna-se o afunilamento porque está limitado a 1000 IOPS.|Adicionar 7 discos (total = 8)<p>**E/s é sequencial**<p>tamanho do bloco de 4 KB<p>HD DE 10.000 RPM| | |2400 e/s s podem ser lidas/gravadas no disco, controlador limitada a 1000 IOPS| |
+|Depois de substituir o adaptador de rede por um adaptador SCSI que dá suporte a 10.000 IOPS, o afunilamento retorna à configuração do disco.|Adicionar 7 discos (total = 8)<p>E/s é aleatória<p>tamanho do bloco de 4 KB<p>HD DE 10.000 RPM<p>**Atualizar o adaptador SCSI (agora dá suporte a 10.000 e/s)**|total de 800 I/os.<br />total de 3.200 KB/s| | | |
+|Depois de aumentar o tamanho do bloco para 32 KB, o barramento se tornará o afunilamento, pois ele só dá suporte a 20 MB/s.|Adicionar 7 discos (total = 8)<p>E/s é aleatória<p>**tamanho do bloco de 32 KB**<p>HD DE 10.000 RPM| |total de 800 I/os. 25.600 KB/s (25 MB/s) podem ser lidos/gravados no disco.<p>O barramento só dá suporte a 20 MB/s| | |
+|Depois de atualizar o barramento e adicionar mais discos, o disco permanece o afunilamento.|**Adicionar 13 discos (total = 14)**<p>Adicionar segundo adaptador SCSI com 14 discos<p>E/s é aleatória<p>tamanho do bloco de 4 KB<p>HD DE 10.000 RPM<p>**Atualizar para o barramento SCSI de 320 MB/s**|2800 I/os<p>11.200 KB/s (10,9 MB/s)| | | |
+|Depois de alterar a e/s para sequencial, o disco permanece o afunilamento.|Adicionar 13 discos (total = 14)<p>Adicionar segundo adaptador SCSI com 14 discos<p>**E/s é sequencial**<p>tamanho do bloco de 4 KB<p>HD DE 10.000 RPM<p>Atualizar para o barramento SCSI de 320 MB/s|8\.400 I/os<p>33.600 KB\s<p>(32,8 MB\s)| | | |
+|Depois de adicionar discos rígidos mais rápidos, o disco permanece o afunilamento.|Adicionar 13 discos (total = 14)<p>Adicionar segundo adaptador SCSI com 14 discos<p>E/s é sequencial<p>tamanho do bloco de 4 KB<p>**HD DE 15.000 RPM**<p>Atualizar para o barramento SCSI de 320 MB/s|14.000 I/os<p>56.000 KB/s<p>(54,7 MB/s)| | | |
+|Depois de aumentar o tamanho do bloco para 32 KB, o barramento PCI torna-se o afunilamento.|Adicionar 13 discos (total = 14)<p>Adicionar segundo adaptador SCSI com 14 discos<p>E/s é sequencial<p>**tamanho do bloco de 32 KB**<p>HD DE 15.000 RPM<p>Atualizar para o barramento SCSI de 320 MB/s| | | |14.000 I/os<p>448.000 KB/s<p>(437 MB/s) é o limite de leitura/gravação para o eixo.<p>O barramento PCI dá suporte a um máximo teórico de 133 MB/s (75% eficiente na melhor das hipóteses).|
 
 ### <a name="introducing-raid"></a>Apresentando o RAID
 
@@ -820,15 +820,15 @@ No RAID 1, os dados são espelhados (duplicados) em um par de eixos para redund�
 
 Quando a taxa de leituras para gravações e o número de eixos são conhecidos, a equação a seguir pode ser derivada da equação acima para identificar a e/s máxima que pode ser suportada pela matriz:  
 
-> *IOPS máximo por fuso* &times; 2 fuso &times; [( *%lê* +  *%Escreve*) &divide; ( *%lê* + 2 &times; *%Escreve*)] = *Total IOPS*
+> *Máximo de IOPS por eixo* &times; 2 eixos &times; [( *% leituras* +  *% gravações*) &divide; ( *% leituras* + 2 &times; *% gravações*)] = *IOPS total*
 
-RAID 1 + 0, comporta-se exatamente o mesmo que RAID 1 em relação às despesas de leitura e gravação. No entanto, a e/s agora é distribuída em cada conjunto espelhado. Se o  
+RAID 1 + 0, comporta-se exatamente o mesmo que RAID 1 em relação às despesas de leitura e gravação. No entanto, a e/s agora é distribuída em cada conjunto espelhado. Se  
 
-> *IOPS máximo por fuso* &times; 2 fuso &times; [( *%lê* +  *%Escreve*) &divide; ( *%lê* + 2 &times; *%Escreve*)] = *Total IOPS*  
+> *Máximo de IOPS por eixo* &times; 2 eixos &times; [( *% leituras* +  *% gravações*) &divide; ( *% leituras* + 2 &times; *% gravações*)] = total de *e/s*  
 
 em um conjunto de RAID 1, quando uma multiplicidade (*N*) de conjuntos de RAID 1 são distribuídos, a e/s total que pode ser processada se torna N &times; e/s por conjunto de RAID 1:  
 
-> *N* &times; {*IOPS máximo por fuso* &times; 2 fuso &times; [( *%lê*  +  *%E*) &divide; ( *%lê* + 2 &times; *%Escreve*)] } = *Total IOPS*
+> *N* &times; {*máximo de IOPS por eixo* &times; 2 eixos &times; [( *% leituras* +  *% gravações*) &divide; ( *% leituras* + 2 &times; *% gravações*)]} = *IOPS total*
 
 No RAID 5, às vezes referido como *n* + 1 RAID, os dados são distribuídos entre os eixos *n* e as informações de paridade são gravadas no eixo "+ 1". No entanto, o RAID 5 é muito mais caro ao executar uma e/s de gravação do que RAID 1 ou 1 + 0. O RAID 5 executa o seguinte processo toda vez que uma e/s de gravação é enviada para a matriz:
 
@@ -843,7 +843,7 @@ Como cada solicitação de e/s de gravação enviada ao controlador de matriz pe
 
 Da mesma forma, em um conjunto de RAID 1, quando a taxa de leituras para gravações e o número de eixos são conhecidos, a equação a seguir pode ser derivada da equação acima para identificar a e/s máxima que pode ser suportada pela matriz (Observe que o número total de eixos não inclui a "unidade" perdida para paridade):  
 
-> *IOPS por fuso* &times; (*fuso* – 1) &times; [( *%lê* +  *%Escreve*) &divide; ( *%lê* + 4 &times; *%Escreve*)] = *Total IOPS*
+> *IOPS por eixo* &times; (*eixos* – 1) &times; [( *% leituras* +  *% gravações*) &divide; ( *% leituras* + 4 &times; *% gravações*)] = *IOPS total*
 
 ### <a name="introducing-sans"></a>Apresentando SANs
 
@@ -857,7 +857,7 @@ Ao expandir a complexidade do subsistema de armazenamento, quando uma SAN é int
 - HBA (s)
 - O barramento PCI
 
-Ao criar qualquer sistema para redundância, os componentes adicionais são incluídos para acomodar o potencial de falha. É muito importante, quando o planejamento de capacidade, excluir o componente redundante dos recursos disponíveis. Por exemplo, se a SAN tiver dois módulos de controlador, a capacidade de e/s de um módulo de controlador será tudo o que deve ser usado para a taxa de transferência de e/s total disponível para o sistema. Isso se deve ao fato de que, se um controlador falhar, toda a carga de e/s exigida por todos os sistemas conectados precisará ser processada pelo controlador restante. Como todo o planejamento de capacidade é feito para períodos de pico de uso, os componentes redundantes não devem ser fatorados nos recursos disponíveis e a utilização de pico planejada não deve exceder 80% de saturação do sistema (para acomodar intermitências ou sistemas anormais comportamento). Da mesma forma, o comutador de SAN redundante, a unidade de armazenamento e os eixos não devem ser fatorados nos cálculos de e/s.
+Ao criar qualquer sistema para redundância, os componentes adicionais são incluídos para acomodar o potencial de falha. É muito importante, quando o planejamento de capacidade, excluir o componente redundante dos recursos disponíveis. Por exemplo, se a SAN tiver dois módulos de controlador, a capacidade de e/s de um módulo de controlador será tudo o que deve ser usado para a taxa de transferência de e/s total disponível para o sistema. Isso se deve ao fato de que, se um controlador falhar, toda a carga de e/s exigida por todos os sistemas conectados precisará ser processada pelo controlador restante. Como todo o planejamento de capacidade é feito para períodos de pico de uso, os componentes redundantes não devem ser fatorados nos recursos disponíveis e a utilização de pico planejada não deve exceder 80% de saturação do sistema (para acomodar intermitências ou comportamento anormal do sistema). Da mesma forma, o comutador de SAN redundante, a unidade de armazenamento e os eixos não devem ser fatorados nos cálculos de e/s.
 
 Ao analisar o comportamento do disco rígido SCSI ou Fibre Channel, o método de análise do comportamento, conforme descrito anteriormente, não é alterado. Embora haja determinadas vantagens e desvantagens em cada protocolo, o fator de limitação por disco é a limitação mecânica do disco rígido.
 

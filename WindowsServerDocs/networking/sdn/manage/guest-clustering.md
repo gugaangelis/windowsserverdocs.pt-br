@@ -1,24 +1,20 @@
 ---
 title: Clustering convidado em uma rede virtual
 description: As máquinas virtuais conectadas a uma rede virtual só têm permissão para usar os endereços IP que o controlador de rede atribuiu para se comunicar na rede.  As tecnologias de clustering que exigem um endereço IP flutuante, como o clustering de failover da Microsoft, exigem algumas etapas adicionais para funcionar corretamente.
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
-author: eross-msft
+author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 200d53d856d4b37daffde0c6213ec4f5eb26773d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6889b58f5d49a4932ef8277b11e1002e85606f3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317578"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854449"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>Clustering convidado em uma rede virtual
 
@@ -146,7 +142,7 @@ Você pode usar as etapas a seguir para configurar um cluster de failover do.
    
    $ClusterNetworkName = "Cluster Network 1"
    $IPResourceName =  
-   $ILBIP = “192.168.2.100” 
+   $ILBIP = "192.168.2.100" 
 
    $nodes = @("DB1", "DB2")
    ```

@@ -3,22 +3,21 @@ title: Falha de handshake de três vias TCP durante conexão SMB
 description: Apresenta a falha de handshake de três vias TCP durante a conexão SMB.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 8cef47e164b8768747cb383f4d7012130c7cb516
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: cb88fa89344172cfc1ed036865a4496ed73e9a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654627"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815319"
 ---
 # <a name="tcp-three-way-handshake-failure-during-smb-connection"></a>Falha de handshake de três vias TCP durante conexão SMB
 
 Ao analisar um rastreamento de rede, você observa que há uma falha de handshake de três vias do protocolo TCP (Transmission Control Protocol) que causa a ocorrência do problema SMB. Este artigo descreve como solucionar essa situação.
 
-## <a name="troubleshooting"></a>Painel de controle da
+## <a name="troubleshooting"></a>Solução de problemas
 
 Em geral, a causa é um firewall local ou de infraestrutura que bloqueia o tráfego. Esse problema pode ocorrer em qualquer um dos cenários a seguir.
 

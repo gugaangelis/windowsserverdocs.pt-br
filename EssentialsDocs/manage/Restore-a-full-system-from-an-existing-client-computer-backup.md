@@ -1,23 +1,19 @@
 ---
 title: Restaurar um sistema completo de um backup de computador cliente existente
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b9629f41c4e8eb707b19914a297d9d8b88c6aead
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 37e4d45f6bd34d77fbbf3cbabcd66a776b624c19
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310650"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852639"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restaurar um sistema completo de um backup de computador cliente existente
 
@@ -91,7 +87,7 @@ ms.locfileid: "80310650"
  Não há suporte para backup de RAID (Redundant Array of Independent Disk) e de discos dinâmicos.  
   
 ##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>Como funciona o ambiente de restauração do sistema?  
- A mídia de restauração do sistema fornecida com o Windows ServerÂ® 2012 Essentials instala Ambiente de Pré-Instalação do Windows (Windows PE) no computador. O Windows PE substitui o ambiente MS-DOS e contém os principais arquivos de programa para o Windows. No Windows Server Essentials, há duas maneiras suportadas de restaurar um sistema: usando o serviço de restauração do cliente, que usa uma rede e não conta com a mídia ou usando a unidade flash USB.  
+ A mídia de restauração do sistema fornecida com o Windows ServerÂ&reg; 2012 Essentials instala Ambiente de Pré-Instalação do Windows (Windows PE) no computador. O Windows PE substitui o ambiente MS-DOS e contém os principais arquivos de programa para o Windows. No Windows Server Essentials, há duas maneiras suportadas de restaurar um sistema: usando o serviço de restauração do cliente, que usa uma rede e não conta com a mídia ou usando a unidade flash USB.  
   
 > [!NOTE]
 >  O Windows PE não tem suporte para conexões sem fio. Em função disso, o computador sendo restaurado deve estar fisicamente conectado à rede para pequenas empresas.  

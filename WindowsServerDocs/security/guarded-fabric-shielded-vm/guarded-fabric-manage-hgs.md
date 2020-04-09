@@ -1,18 +1,18 @@
 ---
 title: Gerenciando o serviço guardião de host
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 41912c90beacbb0c0c285ea4da8305c1afdf2a51
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2eb9107427ff005c1b3c27e7064d677429d817ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322598"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856549"
 ---
 # <a name="managing-the-host-guardian-service"></a>Gerenciando o serviço guardião de host
 
@@ -706,7 +706,7 @@ Para cada VM blindada, execute as seguintes etapas:
    $updatedKP = Get-Content -Path .\updatedVM001.kp
    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
    ```
-12. Por fim, inicie a VM e certifique-se de que ela seja executada com êxito.
+12.    Por fim, inicie a VM e certifique-se de que ela seja executada com êxito.
 
 > [!NOTE]
 > Se o proprietário da VM definir um protetor de chave incorreto na VM e não autorizar sua malha para executar a VM, você não poderá iniciar a VM blindada.

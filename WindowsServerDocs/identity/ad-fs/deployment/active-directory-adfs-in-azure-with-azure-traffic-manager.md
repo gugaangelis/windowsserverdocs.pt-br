@@ -1,26 +1,20 @@
 ---
 title: Implantação AD FS de alta disponibilidade entre regiões no Azure com o Gerenciador de tráfego do Azure | Microsoft Docs
-description: Neste documento, você aprenderá a implantar o AD FS no Azure para alta disponibilidade.
-keywords: AD FS com o Gerenciador de tráfego do Azure, ADFS com o Gerenciador de tráfego do Azure, geográfico, Datacenter, data centers geográficos, vários data centers geográficos, implantar AD FS no Azure, implantar o ADFS do Azure, AD FS do Azure, implantar o ADFS, implantar o AD FS, ADFS no Azure, implantar o ADFS no Azure, implantar AD FS no Azure, AD FS Azure, introdução ao AD FS, Azure, AD FS no Azure, IaaS, ADFS, mover o ADFS para o Azure
+description: Como implantar AD FS no Azure para alta disponibilidade.
 services: active-directory
-documentationcenter: ''
 author: anandyadavmsft
 manager: mtillman
-editor: ''
+ms.prod: windows-server
 ms.assetid: a14bc870-9fad-45ed-acd5-a90ccd432e54
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: anandy;billmath
-ms.openlocfilehash: d98eb126513d707bce7abe3e901c8bf584d2319c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9bfb59fadd2cf6b07d3c47ab69f0fe67974706a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868020"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855199"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>Implantação AD FS de alta disponibilidade entre regiões no Azure com o Gerenciador de tráfego do Azure
 [AD FS implantação no Azure](how-to-connect-fed-azure-adfs.md) fornece diretrizes passo a passo sobre como você pode implantar uma infraestrutura de AD FS simples para sua organização no Azure. Este artigo fornece as próximas etapas para criar uma implantação entre as áreas geográficas do AD FS no Azure usando o [Gerenciador de tráfego do Azure](https://docs.microsoft.com/azure/traffic-manager/). O Gerenciador de tráfego do Azure ajuda a criar uma infraestrutura de alto AD FS desempenho e alta disponibilidade geograficamente difundida para sua organização, utilizando a variedade de métodos de roteamento disponíveis para atender a diferentes necessidades da infraestrutura.
@@ -41,7 +35,7 @@ Os princípios básicos de design serão os mesmos listados em princípios de de
 * **Grupos de segurança de rede:** Como contas de armazenamento, os grupos de segurança de rede criados em uma região não podem ser usados em outra região geográfica. Portanto, será necessário criar novos grupos de segurança de rede semelhantes aos da primeira região geográfica para a sub-rede INT e DMZ na nova região geográfica.
 * **Rótulos de DNS para endereços IP públicos:** O Gerenciador de tráfego do Azure pode se referir a pontos de extremidade somente por meio de rótulos DNS. Portanto, é necessário criar rótulos de DNS para os endereços IP públicos dos balanceadores de carga externos.
 * **Gerenciador de tráfego do Azure:** Gerenciador de Tráfego do Microsoft Azure permite que você controle a distribuição do tráfego do usuário para seus pontos de extremidade de serviço executados em diferentes data centers em todo o mundo. O Gerenciador de tráfego do Azure funciona no nível do DNS. Ele usa respostas DNS para direcionar o tráfego do usuário final para pontos de extremidade distribuídos globalmente. Em seguida, os clientes se conectam a esses pontos de extremidade diretamente. Com opções de roteamento diferentes de desempenho, peso e prioridade, você pode escolher facilmente a opção de roteamento mais adequada para as necessidades da sua organização. 
-* **Conectividade v-net para V-net entre duas regiões:** Você não precisa ter conectividade entre as redes virtuais em si. Como cada rede virtual tem acesso aos controladores de domínio e tem AD FS e servidor WAP em si, eles podem trabalhar sem qualquer conectividade entre as redes virtuais em regiões diferentes. 
+* **Conectividade v-net para v-net entre duas regiões:** Você não precisa ter conectividade entre as redes virtuais em si. Como cada rede virtual tem acesso aos controladores de domínio e tem AD FS e servidor WAP em si, eles podem trabalhar sem qualquer conectividade entre as redes virtuais em regiões diferentes. 
 
 ## <a name="steps-to-integrate-azure-traffic-manager"></a>Etapas para integrar o Gerenciador de tráfego do Azure
 ### <a name="deploy-ad-fs-in-the-new-geographical-region"></a>Implantar AD FS na nova região geográfica
@@ -60,7 +54,7 @@ Siga as etapas abaixo para criar um perfil do Gerenciador de tráfego. Para obte
     ![Criação do perfil do Gerenciador de tráfego](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/trafficmanager01.png)
 2. **Método de roteamento de tráfego:** Há três opções de roteamento disponíveis no Gerenciador de tráfego:
    
-   * Priority 
+   * Prioridade 
    * Desempenho
    * Ponderada
      
@@ -73,7 +67,7 @@ Siga as etapas abaixo para criar um perfil do Gerenciador de tráfego. Para obte
    
    **Tipo:** Selecione ponto de extremidade do Azure, pois vamos apontar para um endereço IP público do Azure.
    
-   **Name:** Crie um nome que você deseja associar ao ponto de extremidade. Esse não é o nome DNS e não tem nenhuma influência sobre os registros DNS.
+   **Nome:** Crie um nome que você deseja associar ao ponto de extremidade. Esse não é o nome DNS e não tem nenhuma influência sobre os registros DNS.
    
    **Tipo de recurso de destino:** Selecione endereço IP público como o valor para essa propriedade. 
    
@@ -106,7 +100,7 @@ A maneira mais fácil de testar AD FS é usando a página IdpInitiatedSignon. as
 
 1. Execute o cmdlet abaixo no servidor de AD FS, usando o PowerShell, para defini-lo como habilitado. 
    Set-Adfsproperties-EnableIdPInitiatedSignonPage $true
-2. De qualquer computador externo, Acesse https://<yourfederationservicedns>/adfs/ls/IdpInitiatedSignon.aspx
+2. Em qualquer computador externo, Acesse https://<yourfederationservicedns>/adfs/ls/IdpInitiatedSignon.aspx
 3. Você deve ver a página AD FS como abaixo:
    
     ![Teste do ADFS – desafio de autenticação](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/adfstest1.png)
@@ -120,7 +114,7 @@ A maneira mais fácil de testar AD FS é usando a página IdpInitiatedSignon. as
 * [Gerenciador de Tráfego do Microsoft Azure](https://docs.microsoft.com/azure/traffic-manager/)
 * [Métodos de roteamento de tráfego do Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods)
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 * [Gerenciar um perfil do Gerenciador de tráfego do Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles)
 * [Adicionar, desabilitar, habilitar ou excluir pontos de extremidade](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-endpoints) 
 

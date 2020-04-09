@@ -1,19 +1,18 @@
 ---
 title: Histórico de desempenho para servidores
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
-Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: bbfc92f7926b93f5f6716514e64672f4aa304c0f
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: cf4bdabb132c832370e5dffec215c24b54aebdd7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945248"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856189"
 ---
 # <a name="performance-history-for-servers"></a>Histórico de desempenho para servidores
 

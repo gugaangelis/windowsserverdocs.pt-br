@@ -4,15 +4,15 @@ description: Diretrizes de solução de problemas no ajuste de desempenho Active
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ab5b78917c51e3669dcaf27689e99ab064b992a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c41c6cc14f9a35a808eebfe025252090247f8a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370239"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851859"
 ---
 # <a name="troubleshooting-active-directory-domain-services-performance"></a>Solucionando problemas de desempenho de Active Directory Domain Services
 

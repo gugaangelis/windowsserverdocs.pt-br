@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4d002764-58b4-4137-9c86-1e55b02e07ce
 title: Configurando organizações parceiras
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 575d7e3fc97496c3f7c147220fe342add66517c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac83d9754365f3ceea5b363af4df93862bdb59e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408393"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855489"
 ---
 # <a name="configuring-partner-organizations"></a>Configurando organizações parceiras
 
@@ -28,7 +27,7 @@ Um parceiro de conta é a organização na relação de confiança da Federaçã
   
 Em outras palavras, um parceiro de conta representa a organização de cujos usuários a conta\-servidor de Federação do lado emite tokens de segurança. O servidor de Federação na organização do parceiro de conta autentica usuários locais e cria tokens de segurança que o parceiro de recurso usa para tomar decisões de autorização.  
   
-Em relação a repositórios de atributos, o parceiro de conta no AD FS é conceitualmente equivalente a uma única floresta de Active Directory cujas contas precisam de acesso a recursos que estão fisicamente localizados em outra floresta. As contas nessa floresta podem acessar recursos na floresta de recursos somente quando existe uma relação de confiança externa ou de floresta entre as duas florestas e os recursos aos quais os usuários estão tentando obter acesso com a autorização apropriada permissões.  
+Em relação a repositórios de atributos, o parceiro de conta no AD FS é conceitualmente equivalente a uma única floresta de Active Directory cujas contas precisam de acesso a recursos que estão fisicamente localizados em outra floresta. As contas nessa floresta podem acessar recursos na floresta de recursos somente quando existe uma relação de confiança externa ou de floresta entre as duas florestas e os recursos aos quais os usuários estão tentando obter acesso com as permissões de autorização adequadas.  
   
 ## <a name="about-resource-partner-organizations"></a>Sobre organizações de parceiros de recursos  
 O parceiro de recurso é a organização em uma implantação de AD FS em que os servidores Web estão localizados. O parceiro de recurso confia no parceiro de conta para autenticar usuários. Portanto, para tomar decisões de autorização, o parceiro de recurso consome as declarações que são empacotadas em tokens de segurança provenientes de usuários no parceiro de conta.  

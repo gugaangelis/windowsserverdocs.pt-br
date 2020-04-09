@@ -2,21 +2,19 @@
 title: Introdução ao Hyper-V no Windows Server
 description: Fornece links para artigos sobre como começar a usar o Hyper-V
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9a3f8b74-f3c0-433f-a320-850ca8610757
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/07/2016
-ms.openlocfilehash: b361b6d1ea1d20f63f97a0590586cac4180ba19d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fcbf7f52984d6cd1c0fcc0b04e6a9cf3a7aad639
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364274"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860829"
 ---
 # <a name="get-started-with-hyper-v-on-windows-server"></a>Introdução ao Hyper-V no Windows Server
 

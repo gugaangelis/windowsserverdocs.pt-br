@@ -1,28 +1,24 @@
 ---
 title: Protocolo DTLS
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 57b8873a-ad9c-4f2c-93e0-a2af352c6965
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: f603dc0c5616619088537ffcbd06f64baece0e23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d0c066b063cbfc8def54c2e0d02cbb0eaf7f1d40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402295"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852919"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>Protocolo DTLS
 
-Windows Server (canal semestral), Windows Server 2016, Windows 10
+Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
 Este tópico de referência para o profissional de ti descreve o protocolo DTLS (datatransport Layer Security), que faz parte do SSP (provedor de suporte de segurança Schannel).
 
@@ -38,3 +34,4 @@ Os conjuntos de codificação que estão disponíveis para configuração são p
 [Segurança da camada de transporte de datagrama IETF RFC 4347](http://tools.ietf.org/html/rfc4347)
 
 
+                                        

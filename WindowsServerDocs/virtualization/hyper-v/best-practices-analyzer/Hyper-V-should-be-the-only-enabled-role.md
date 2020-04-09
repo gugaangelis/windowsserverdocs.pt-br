@@ -2,20 +2,19 @@
 title: O Hyper-V deve ser a única função habilitada
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 5a0ed176-048f-40b1-b56c-8391b805fd37
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 9b16a3be1e2f842c251ff3ab31d467ef7f128c8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40dae4baad782d3be4fc6ca8ba2bc4e506131dbf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364762"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861909"
 ---
 # <a name="hyper-v-should-be-the-only-enabled-role"></a>O Hyper-V deve ser a única função habilitada
 
@@ -28,7 +27,7 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   

@@ -1,24 +1,20 @@
 ---
 title: Gerenciar áreas de trabalho virtuais
 description: Saiba como gerenciar as áreas de trabalho virtuais (VDI) nos serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa9ac0ed-47cb-4811-91ff-4fcb62d7858b
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 45bb3e98779bc27913c7e675a9c9db7e575d9d72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 114fde42ca36f9451680066056251bafbe944e56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389594"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853459"
 ---
 # <a name="manage-virtual-desktops"></a>Gerenciar áreas de trabalho virtuais
 O VDI de computador único permite configurar cada estação *local* dos serviços do MultiPoint para se conectar a um sistema operacional convidado do Windows 10 Enterprise em execução em uma VM (máquina virtual) do Hyper-V no mesmo computador de serviços do MultiPoint que a estação. Essas estações de área de trabalho virtual podem ser personalizadas com o aplicativo que não pode ser instalado em uma versão de servidor Windows.  
@@ -56,14 +52,14 @@ O sistema é reiniciado, o que pode levar vários minutos.
 ## <a name="import-a-virtual-desktop-template"></a>Importar um modelo de área de trabalho virtual  
 No caso em que você criou um modelo de área de trabalho virtual em outro MultiPoint Server, você pode importar o modelo usando as seguintes etapas.  
 
-1.  Abra o MultiPoint Manager e clique na guia **Áreas de Trabalho Virtuais**.  
+1.    Abra o MultiPoint Manager e clique na guia **Áreas de Trabalho Virtuais**.  
   
-2.  Nas tarefas de VDI, clique em **Import Virtual desktop template (Importar modelo de área de trabalho virtual)** .  
+2.    Nas tarefas de VDI, clique em **Import Virtual desktop template (Importar modelo de área de trabalho virtual)** .  
   
-3.  Localize o modelo e defina o caminho e o prefixo para o modelo importado.  
+3.    Localize o modelo e defina o caminho e o prefixo para o modelo importado.  
   
 ## <a name="customize-the-virtual-desktop-template"></a>Personalizar o modelo de área de trabalho virtual  
-Depois de criar o modelo de área de trabalho virtual, você pode personalizá-lo com aplicativos, atualizações de software e definir configurações do sistema.   
+Depois de criar o modelo de área de trabalho virtual, você pode personalizá-lo com os aplicativos, atualizações de software e definir configurações do sistema.   
 
 1. Abra o MultiPoint Manager e clique na guia **Áreas de Trabalho Virtuais**.  
 2. Escolha o modelo de área de trabalho virtual e clique em **Customize virtual desktop template (Personalizar o modelo de área de trabalho virtual)** .  
@@ -76,18 +72,18 @@ O modelo é aberto em uma janela separada e são fornecidas instruções adicion
     > [!NOTE]  
     > Se o sistema MultiPoint Services não estiver em execução no modo de estação, reinicie-o antes de concluir este procedimento.  
   
-2.  Selecione o modelo de área de trabalho virtual no painel do lado esquerdo\-. Ele é chamado <prefix –t >.  
+2.  Selecione o modelo de área de trabalho virtual no painel esquerdo. Ele é chamado <prefix –t >.  
   
 3.  Nas tarefas do modelo, clique em **Create virtual desktop stations (Criar estações de área de trabalho virtual)** e clique em **OK**.  
   
     O processo de criação da estação de área de trabalho virtual leva vários minutos.  
   
     > [!NOTE]  
-    > Se qualquer uma das estações locais estiver conectada a uma sessão\-com base na área de trabalho virtual, você deverá fazer logoff dessas estações para que elas se conectem a uma das estações de área de trabalho virtuais recém-criadas.  
+    > Se qualquer uma das estações locais estiver conectada no momento a uma área de trabalho virtual baseada em uma sessão, você deverá fazer logoff dessas estações para que elas se conectem a uma das estações da área de trabalho virtual recém-criadas.  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>Validar as áreas de trabalho da estação virtual personalizada recém-criadas  
   
-Você pode validar suas áreas de trabalho de estação virtual personalizadas fazendo logon em uma ou mais das estações de área de trabalho virtual usando uma conta de administrador local ou uma conta de domínio e, em seguida, verificar se as novas áreas de trabalho virtuais baseadas na VM\-estão funcionando corretamente.  
+Você pode validar suas áreas de trabalho de estação virtual personalizadas efetuando logon uma ou mais estações da área de trabalho virtual usando uma conta de administrador local ou uma conta de domínio e, em seguida, verificar se as novas áreas de trabalho virtuais baseadas em VM estão funcionando corretamente.  
   
 ## <a name="disable-virtual-desktops"></a>Desabilitar áreas de trabalho virtuais  
   

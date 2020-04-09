@@ -1,6 +1,5 @@
 ---
 title: Configurar a redundância geográfica com o Replicação do SQL Server
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.technology: active-directory-federation-services
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 16cf1a237043aa546d4fc24164045aa9f9a1e6ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54106ae635d44368542986c7c469560981f9888a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359822"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855839"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>Configurar a redundância geográfica com o Replicação do SQL Server
 
@@ -24,7 +23,7 @@ ms.locfileid: "71359822"
   
 Se você estiver usando SQL Server como seu banco de dados de configuração do AD FS, poderá configurar a redundância de\-geográfica para seu farm de AD FS usando a replicação SQL Server. A redundância de\-geográfica replica dados entre dois sites distantes geograficamente para que os aplicativos possam mudar de um site para outro. Dessa forma, em caso de falha de um site, você ainda pode ter todos os dados de configuração disponíveis no segundo site. Para obter mais informações, consulte a "seção SQL Server de redundância geográfica" no [farm de servidores de Federação usando SQL Server](../design/Federation-Server-Farm-Using-SQL-Server.md).  
   
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 Instalar e configurar um farm do SQL Server. Para obter mais informações, consulte [https://technet.microsoft.com/evalcenter/hh225126.aspx](https://technet.microsoft.com/evalcenter/hh225126.aspx). Na SQL Server inicial, verifique se o serviço SQL Server Agent está em execução e definido como início automático.  
   
 ## <a name="create-the-second-replica-sql-server-for-geo-redundancy"></a>Criar a segunda réplica de \(\) SQL Server para redundância de\-geográfica  
@@ -156,7 +155,7 @@ Certifique-se de que você criou as configurações do Publicador na SQL Server 
   
 4.  Além disso, você pode examinar o **SQL Server Agent\\nó trabalhos** para ver o trabalho\(s\) agendados para executar as operações da assinatura\/de publicação.  Somente os trabalhos locais são mostrados, portanto, certifique-se de verificar o Publicador e o Assinante para solução de problemas.  À direita\-clique em um trabalho e selecione **Exibir histórico** para exibir o histórico de execução e os resultados.  
   
-## <a name="sqlagent"></a>Configurar o logon do SQL para a conta de domínio CONTOSO\\SQLAgent  
+## <a name="configure-sql-login-for-the-domain-account-contososqlagent"></a><a name="sqlagent"></a>Configurar o logon do SQL para a conta de domínio CONTOSO\\SQLAgent  
   
 1.  Crie um novo logon no primário e na réplica SQL Server chamada CONTOSO\\SQLAgent \(o nome do novo usuário de domínio criado e configurado na página **segurança do agente** nos procedimentos acima.\)  
   

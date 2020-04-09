@@ -1,37 +1,33 @@
 ---
-title: Visão geral da autenticação Kerberos
+title: Kerberos Authentication Overview
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 646c6309-e865-4be2-b415-44dd125af5c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 33712dc8502035bd9e47e1d2bdd4583eb8347dec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5ec9bfa5c17a9ee9a5ad15af183d25bd533d7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386311"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856319"
 ---
-# <a name="kerberos-authentication-overview"></a>Visão geral da autenticação Kerberos
+# <a name="kerberos-authentication-overview"></a>Kerberos Authentication Overview
 
 >Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Kerberos é um protocolo de autenticação usado para verificar a identidade de um usuário ou host. Este tópico contém informações sobre a autenticação Kerberos no Windows Server 2012 e no Windows 8.
 
-## <a name="BKMK_OVER"></a>Descrição do recurso
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>Descrição do recurso
 Os sistemas operacionais Windows Server implementam o protocolo de autenticação Kerberos versão 5 e extensões para autenticação de chave pública, transporte de dados de autorização e delegação. O cliente de autenticação Kerberos é implementado como um provedor de suporte de segurança \(\)SSP e pode ser acessado por meio da interface do provedor de suporte de segurança \(SSPI\). A autenticação de usuário inicial é integrada com a arquitetura de\-de logon único do Winlogon.
 
 O Kerberos centro de distribuição de chaves \(KDC\) é integrado a outros serviços de segurança do Windows Server que são executados no controlador de domínio. O KDC usa o banco de dados de Active Directory Domain Services do domínio como seu banco de dados de conta de segurança. Os Serviços de Domínio do Active Directory são exigidos para implementações Kerberos padrão no domínio ou na floresta.
 
-## <a name="kerb_tr_Kerb_Benefits"></a>Aplicativos práticos
+## <a name="practical-applications"></a><a name="kerb_tr_Kerb_Benefits"></a>Aplicativos práticos
 Os benefícios obtidos com o uso do Kerberos para autenticação baseada em\-de domínio são:
 
 -   **Autenticação delegada.**

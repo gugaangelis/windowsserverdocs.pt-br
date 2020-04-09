@@ -2,23 +2,19 @@
 title: Agrupamento NIC
 description: Neste tópico, fornecemos uma visão geral do agrupamento NIC (placa de interface de rede) no Windows Server 2016. O agrupamento NIC permite que você agrupe entre um e 32 adaptadores de rede Ethernet físicos em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: lizross
 author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 13607bedb436b794e03e3b2ef67ca0e90d865ed7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316442"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854729"
 ---
 # <a name="nic-teaming"></a>Agrupamento NIC
 
@@ -41,7 +37,10 @@ Como o Windows Server 2016 dá suporte a até 32 interfaces de equipe por equipe
 Além disso, você pode conectar suas NICs agrupadas ao mesmo comutador ou a diferentes opções. Se você conectar NICs a diferentes comutadores, ambos os comutadores deverão estar na mesma sub-rede.  
   
 ## <a name="availability"></a>Availability  
-O agrupamento NIC está disponível em todas as versões do Windows Server 2016. Você pode usar uma variedade de ferramentas para gerenciar o agrupamento NIC de computadores que executam um sistema operacional cliente, como: • cmdlets do Windows PowerShell • Área de Trabalho Remota • Ferramentas de Administração de Servidor Remoto  
+O agrupamento NIC está disponível em todas as versões do Windows Server 2016. Você pode usar uma variedade de ferramentas para gerenciar o agrupamento NIC de computadores que executam um sistema operacional cliente, como:
+*    Cmdlets do Windows PowerShell
+*    Área de Trabalho Remota
+*    Ferramentas de Administração de Servidor Remoto  
   
 ## <a name="supported-and-unsupported-nics"></a>NICs com e sem suporte   
 Você pode usar qualquer NIC Ethernet que tenha aprovado o teste de logotipo e de qualificação de hardware do Windows (testes de WHQL) em uma equipe NIC no Windows Server 2016.  
@@ -116,9 +115,9 @@ Quando uma equipe se conecta a um comutador virtual do Hyper-V, toda a diferenci
 
 Planeje usar VLANs em uma VM configurada com uma equipe NIC usando as seguintes diretrizes:
   
--   O método preferencial de dar suporte a várias VLANs em uma VM é configurar a VM com várias portas no comutador virtual do Hyper-V e associar cada porta a uma VLAN. Nunca faça uma equipe dessas portas na VM porque isso causa problemas de comunicação de rede.  
+-    O método preferencial de dar suporte a várias VLANs em uma VM é configurar a VM com várias portas no comutador virtual do Hyper-V e associar cada porta a uma VLAN. Nunca faça uma equipe dessas portas na VM porque isso causa problemas de comunicação de rede.  
 
--   Se a VM tiver várias funções virtuais de SR-IOV (VFs), verifique se elas estão na mesma VLAN antes de agrupá-las na VM. É facilmente possível configurar o VFs diferente para estar em VLANs diferentes e fazer isso causa problemas de comunicação de rede.  
+-    Se a VM tiver várias funções virtuais de SR-IOV (VFs), verifique se elas estão na mesma VLAN antes de agrupá-las na VM. É facilmente possível configurar o VFs diferente para estar em VLANs diferentes e fazer isso causa problemas de comunicação de rede.  
  
   
 ### <a name="manage-network-interfaces-and-vlans"></a>Gerenciar adaptadores de rede e VLANs 

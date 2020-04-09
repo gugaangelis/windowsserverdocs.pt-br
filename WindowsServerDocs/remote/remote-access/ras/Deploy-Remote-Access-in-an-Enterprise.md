@@ -2,22 +2,18 @@
 title: Implantar o Acesso Remoto em uma Empresa
 description: Este tópico fornece uma introdução ao cenário do DirectAccess no Windows Server 2016 para a empresa.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: aebdbd02ebe256872b52e794c755e0d590b175a5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308473"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857429"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>Implantar o Acesso Remoto em uma Empresa
 
@@ -67,8 +63,8 @@ A tabela a seguir lista funções e recursos utilizados no cenário corporativo:
   
 |Função/recurso|Como este cenário tem suporte|  
 |---------|-----------------|  
-|Função servidor de Acesso Remoto:|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<br /><br />1. DirectAccess e roteamento e serviços de acesso remoto (RRAS) VPN-DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2. roteamento RRAS-os recursos de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<br /><br />A Função Servidor de Acesso Remoto depende dos seguintes recursos de servidor:<br /><br />-Serviços de Informações da Internet (IIS)-esse recurso é necessário para configurar o servidor de local de rede e a investigação da Web padrão.<br />-O recurso de Console de Gerenciamento de Política de Grupo-recurso é exigido pelo DirectAccess para criar e gerenciar os objetos de Política de Grupo (GPOs) no Active Directory e deve ser instalado como um recurso necessário para a função de servidor.|  
-|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />1. GUI de acesso remoto e ferramentas de linha de comando<br />2. módulo de acesso remoto para Windows PowerShell<br /><br />As dependências incluem:<br /><br />1. Console de Gerenciamento de Política de Grupo<br />2. kit de administração do Gerenciador de conexões RAS (CMAK)<br />3. Windows PowerShell 3,0<br />4. ferramentas e infraestrutura de gerenciamento gráfico|  
+|Função servidor de Acesso Remoto:|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<p>1. DirectAccess e roteamento e serviços de acesso remoto (RRAS) VPN-DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2. roteamento RRAS-os recursos de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<p>A Função Servidor de Acesso Remoto depende dos seguintes recursos de servidor:<p>-Serviços de Informações da Internet (IIS)-esse recurso é necessário para configurar o servidor de local de rede e a investigação da Web padrão.<br />-O recurso de Console de Gerenciamento de Política de Grupo-recurso é exigido pelo DirectAccess para criar e gerenciar os objetos de Política de Grupo (GPOs) no Active Directory e deve ser instalado como um recurso necessário para a função de servidor.|  
+|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<p>-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<p>O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<p>1. GUI de acesso remoto e ferramentas de linha de comando<br />2. módulo de acesso remoto para Windows PowerShell<p>As dependências incluem:<p>1. Console de Gerenciamento de Política de Grupo<br />2. kit de administração do Gerenciador de conexões RAS (CMAK)<br />3. Windows PowerShell 3,0<br />4. ferramentas e infraestrutura de gerenciamento gráfico|  
 |NLB do Windows|Este recurso permite o balanceamento de carga de diversos servidores de Acesso Remoto.|  
   
 

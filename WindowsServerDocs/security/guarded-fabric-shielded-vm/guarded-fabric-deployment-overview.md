@@ -1,6 +1,5 @@
 ---
 title: Início rápido para implantação de malha protegida
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: e060e052-39a0-4154-90bb-b97cc6dde68e
@@ -9,12 +8,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c0e29abf14ff1dded12e7e20a0c0a74f80a91d8e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856739"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Início rápido para implantação de malha protegida
 
@@ -105,9 +104,9 @@ Em outras palavras, as etapas rigorosas de validação usadas para o modo TPM n�
 
 Para o modo TPM, são necessárias três coisas: 
 
-1.  Uma _chave de endosso pública_ (ou _EKPUB_) do TPM 2,0 em cada e em cada host do Hyper-V. Para capturar o EKpub, use `Get-PlatformIdentifier`. 
-2.  Uma _linha de base de hardware_. Se cada um dos seus hosts Hyper-V for idêntico, uma única linha de base será tudo de que você precisa. Se não forem, você precisará de uma para cada classe de hardware. A linha de base está na forma de um arquivo de log do grupo de computação confiável ou TCGlog. O TCGlog contém tudo o que o host fez, do firmware UEFI, por meio do kernel, até onde o host é totalmente inicializado. Para capturar a linha de base do hardware, instale a função Hyper-V e o recurso de suporte do Hyper-V do guardião de host e use `Get-HgsAttestationBaselinePolicy`. 
-3.  Uma _política de integridade de código_. Se cada um dos hosts do Hyper-V for idêntico, uma única política de CI será tudo de que você precisa. Se não forem, você precisará de uma para cada classe de hardware. O Windows Server 2016 e o Windows 10 têm uma nova forma de imposição de políticas de CI, chamada _política HVAC (integridade de código imposta) do hipervisor_. O política HVAC fornece uma forte imposição e garante que um host só tenha permissão para executar binários que um administrador confiável permitiu a execução. Essas instruções são encapsuladas em uma política de CI que é adicionada ao HGS. O HGS mede a política de CI de cada host antes que tenha permissão para executar VMs blindadas. Para capturar uma política de CI, use `New-CIPolicy`. A política deve então ser convertida em seu formato binário usando `ConvertFrom-CIPolicy`.
+1.    Uma _chave de endosso pública_ (ou _EKPUB_) do TPM 2,0 em cada e em cada host do Hyper-V. Para capturar o EKpub, use `Get-PlatformIdentifier`. 
+2.    Uma _linha de base de hardware_. Se cada um dos seus hosts Hyper-V for idêntico, uma única linha de base será tudo de que você precisa. Se não forem, você precisará de uma para cada classe de hardware. A linha de base está na forma de um arquivo de log do grupo de computação confiável ou TCGlog. O TCGlog contém tudo o que o host fez, do firmware UEFI, por meio do kernel, até onde o host é totalmente inicializado. Para capturar a linha de base do hardware, instale a função Hyper-V e o recurso de suporte do Hyper-V do guardião de host e use `Get-HgsAttestationBaselinePolicy`. 
+3.    Uma _política de integridade de código_. Se cada um dos hosts do Hyper-V for idêntico, uma única política de CI será tudo de que você precisa. Se não forem, você precisará de uma para cada classe de hardware. O Windows Server 2016 e o Windows 10 têm uma nova forma de imposição de políticas de CI, chamada _política HVAC (integridade de código imposta) do hipervisor_. O política HVAC fornece uma forte imposição e garante que um host só tenha permissão para executar binários que um administrador confiável permitiu a execução. Essas instruções são encapsuladas em uma política de CI que é adicionada ao HGS. O HGS mede a política de CI de cada host antes que tenha permissão para executar VMs blindadas. Para capturar uma política de CI, use `New-CIPolicy`. A política deve então ser convertida em seu formato binário usando `ConvertFrom-CIPolicy`.
 
 ![Extrair identidades, linha de base e política de CI](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 

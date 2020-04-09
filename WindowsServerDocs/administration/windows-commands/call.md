@@ -1,35 +1,29 @@
 ---
 title: chamada
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para chamada, que chama um programa em lotes de outro sem parar o programa do lote pai.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
-ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
+ms.openlocfilehash: 58b2d03c76f53fa7bbf5c483c1a423cd4a011f94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280187"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848229"
 ---
 # <a name="call"></a>chamada
 
-
-
-Chama um programa em lotes de outro sem interromper o programa do lote pai. O comando **Call** aceita rótulos como o destino da chamada.
-
-> [!NOTE]
-> A **chamada** não tem nenhum efeito no prompt de comando quando ele é usado fora de um script ou arquivo em lotes.
+Chama um programa em lotes de outro sem interromper o programa do lote pai. O comando **Call** aceita rótulos como o destino da chamada
 
 Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
+> [!NOTE]
+> A chamada não tem nenhum efeito no prompt de comando quando ele é usado fora de um script ou arquivo em lotes.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,7 +31,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |           Parâmetro           |                                                                         Descrição                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,7 +51,7 @@ Você pode usar as seguintes sintaxes opcionais como substituições para parâm
 
 |Parâmetro de lote|Descrição|
 |---------------|-----------|
-|% ~ 1|Expande **%1** e remove aspas ao redor ("").|
+|% ~ 1|Expande **%1** e remove aspas ao redor ().|
 |% ~ F1|Expande **%1** para um caminho totalmente qualificado.|
 |% ~ D1|Expande **%1** somente para uma letra de unidade.|
 |% ~ P1|Expande **%1** somente para um caminho.|
@@ -100,7 +94,7 @@ Nos exemplos acima, **%1** e o caminho podem ser substituídos por outros valore
 
     `call :<Label> <Arguments>`
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para executar o programa Checknew. bat de outro programa em lotes, digite o seguinte comando no programa do lote pai:
 ```
@@ -111,6 +105,6 @@ Se o programa do lote pai aceitar dois parâmetros de lote e você quiser que el
 call checknew %1 %2
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

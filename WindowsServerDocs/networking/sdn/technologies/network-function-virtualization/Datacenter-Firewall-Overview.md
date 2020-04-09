@@ -1,23 +1,19 @@
 ---
 title: Visão geral do firewall do datacenter
 description: Você pode usar este tópico para saber mais sobre o Firewall do datacenter, que é uma camada de rede, 5 tuplas (protocolo, números de porta de origem e de destino, endereços IP de origem e de destino), firewall multilocatário com estado no Windows Server 2016.
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 141057d2ee3e648f589d255ea04fdef179cedf3c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 2f50ee45d64f6888306a5fb5efc8c9b801a1c3d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317030"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859639"
 ---
 # <a name="datacenter-firewall-overview"></a>Visão geral do firewall do datacenter
 

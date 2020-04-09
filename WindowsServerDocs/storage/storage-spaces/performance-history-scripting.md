@@ -1,57 +1,56 @@
 ---
-title: Scripts com o histórico de desempenho de espaços de armazenamento diretos
+title: Criando scripts com o histórico de desempenho Espaços de Armazenamento Diretos
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
-Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8ebcaaf7cc39cfadb0ebcec71ed573b436b466
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4c25ed4112035fa729ccf17792a846263ec68dfc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816317"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856169"
 ---
-# <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>Scripts com o histórico de desempenho do PowerShell e espaços de armazenamento diretos
+# <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>Criando scripts com o PowerShell e Espaços de Armazenamento Diretos histórico de desempenho
 
-> Aplica-se a: Build do Windows Server Insider Preview 17692 e posterior
+> Aplica-se a: Windows Server 2019
 
-No Windows Server de 2019, [espaços de armazenamento diretos](storage-spaces-direct-overview.md) registros e repositórios de amplo [histórico de desempenho](performance-history.md) para máquinas virtuais, servidores, discos, volumes, adaptadores de rede e muito mais. Histórico de desempenho é fácil consultar e processar no PowerShell para que você possa rapidamente da *dados brutos* à *respostas reais* a perguntas como:
+No Windows Server 2019, o [espaços de armazenamento diretos](storage-spaces-direct-overview.md) registra e armazena o [histórico de desempenho](performance-history.md) extensivo para máquinas virtuais, servidores, unidades, volumes, adaptadores de rede e muito mais. O histórico de desempenho é fácil de consultar e processar no PowerShell para que você possa ir rapidamente de *dados brutos* para *respostas reais* a perguntas como:
 
-1. Houve quaisquer picos de CPU na semana passada?
-2. Qualquer disco físico está apresentando latência anormal?
-3. No momento, quais VMs estão consumindo mais IOPS de armazenamento?
+1. Houve picos de CPU na semana passada?
+2. Algum disco físico está apresentando latência anormal?
+3. Quais VMs estão consumindo a maior parte do IOPS de armazenamento agora?
 4. Minha largura de banda de rede está saturada?
-5. Quando esse volume será executado sem espaço livre?
-6. No mês passado, quais VMs usadas mais memória?
+5. Quando esse volume ficar sem espaço livre?
+6. No último mês, quais VMs usaram mais memória?
 
-O `Get-ClusterPerf` cmdlet baseia-se para o script. Ele aceita a entrada de cmdlets como `Get-VM` ou `Get-PhysicalDisk` pelo pipeline para lidar com associação e você pode direcionar sua saída em cmdlets de utilitário como `Sort-Object`, `Where-Object`, e `Measure-Object` rapidamente compor consultas avançadas.
+O cmdlet `Get-ClusterPerf` é criado para scripts. Ele aceita a entrada de cmdlets como `Get-VM` ou `Get-PhysicalDisk` pelo pipeline para lidar com a associação, e você pode canalizar sua saída em cmdlets do utilitário como `Sort-Object`, `Where-Object`e `Measure-Object` para compor rapidamente consultas poderosas.
 
-**Este tópico fornece e explica os scripts de exemplo 6 que responda às 6 perguntas acima.** Além disso, apresentam padrões que você pode aplicar para encontrar picos, médias de localizar, criar gráficos de linhas de tendência, executar excepcionais detecção e muito mais, através de uma variedade de dados e períodos de tempo. Eles são fornecidos como código inicial gratuito para copiar, estender e reutilizar.
+**Este tópico fornece e explica 6 scripts de exemplo que respondem às 6 perguntas acima.** Eles apresentam padrões que você pode aplicar para localizar picos, encontrar médias, plotar linhas de tendência, executar detecção de exceção e muito mais, em uma variedade de dados e períodos de tempo. Eles são fornecidos como um código inicial gratuito para você copiar, estender e reutilizar.
 
    > [!NOTE]
-   > Para resumir, os scripts de exemplo omitir coisas como o tratamento de erros que você poderia esperar do código do PowerShell de alta qualidade. Elas são destinadas principalmente inspiração e educação em vez de produção use.
+   > Para resumir, os scripts de exemplo omitem coisas como o tratamento de erros que você pode esperar do código do PowerShell de alta qualidade. Elas são destinadas principalmente para inspiração e educação em vez de uso em produção.
 
-## <a name="sample-1-cpu-i-see-you"></a>Exemplo 1: CPU, estou vendo você!
+## <a name="sample-1-cpu-i-see-you"></a>Exemplo 1: CPU, vejo você!
 
-Este exemplo usa o `ClusterNode.Cpu.Usage` séries do `LastWeek` período de tempo para mostrar o máximo ("high watermark"), o uso de CPU mínimo e médio para todos os servidores no cluster. Ele também faz uma análise quartil simples para mostrar quantos de CPU de horas de uso foi mais de 25%, 50% e 75% nos últimos 8 dias.
+Este exemplo usa a série `ClusterNode.Cpu.Usage` da `LastWeek` período de tempo para mostrar o máximo ("marca d' água alta"), o mínimo e o uso médio da CPU para cada servidor no cluster. Ele também faz uma análise simples de quartil para mostrar quantas horas o uso da CPU foi superior a 25%, 50% e 75% nos últimos 8 dias.
 
 ### <a name="screenshot"></a>Screenshot
 
-Captura de tela abaixo, podemos ver que *Server-02* tivesse um pico inexplicáveis última semana:
+Na captura de tela abaixo, vemos que o *servidor-02* teve um pico não explicado na última semana:
 
 ![Captura de tela do PowerShell](media/performance-history/Show-CpuMinMaxAvg.png)
 
 ### <a name="how-it-works"></a>Como funciona
 
-A saída do `Get-ClusterPerf` pipes perfeitamente em interna `Measure-Object` cmdlet, simplesmente especificamos o `Value` propriedade. Com sua `-Maximum`, `-Minimum`, e `-Average` sinalizadores, `Measure-Object` fornece as três primeiras colunas quase para gratuitamente. Para fazer a análise quartil, é possível direcionar para `Where-Object` e conte quantos valores foram `-Gt` (maior que) 25, 50 ou 75. A última etapa é beautify com `Format-Hours` e `Format-Percent` funções auxiliares – certamente opcional.
+A saída de `Get-ClusterPerf` pipes é bem no cmdlet de `Measure-Object` interno, basta especificar a propriedade `Value`. Com seus sinalizadores `-Maximum`, `-Minimum`e `-Average`, `Measure-Object` nos dá as três primeiras colunas quase gratuitamente. Para fazer a análise de quartil, podemos canalizar para `Where-Object` e contar quantos valores foram `-Gt` (maior que) 25, 50 ou 75. A última etapa é Beautify com funções auxiliares `Format-Hours` e `Format-Percent` – certamente opcional.
 
 ### <a name="script"></a>Script
 
-Aqui está o script:
+Este é o script:
 
 ```
 Function Format-Hours {
@@ -91,30 +90,30 @@ $Output = Get-ClusterNode | ForEach-Object {
 $Output | Sort-Object ClusterNode | Format-Table
 ```
 
-## <a name="sample-2-fire-fire-latency-outlier"></a>Exemplo 2: Incêndio, incêndio, exceções de latência
+## <a name="sample-2-fire-fire-latency-outlier"></a>Exemplo 2: incêndio, incêndio, exceção de latência
 
-Este exemplo usa o `PhysicalDisk.Latency.Average` séries do `LastHour` procurar exceções estatísticas, no período de tempo definido como unidades com um excedendo de latência média por hora + 3σ (três desvios padrão) acima da média de população.
+Este exemplo usa a série de `PhysicalDisk.Latency.Average` do `LastHour` período para procurar por exceções estatísticas, definidas como unidades com latência média de hora excedente +3 σ (três desvios padrão) acima da média da população.
 
    > [!IMPORTANT]
-   > Para resumir, esse script não implementa proteções contra variação baixa, não lida com dados ausentes parciais, não distingue pelo modelo ou firmware, etc. Tenha bom senso e não contam com esse script apenas para determinar se é necessário substituir um disco rígido. Ela é apresentada aqui somente para fins educacionais.
+   > Para resumir, esse script não implementa proteções contra a baixa variação, não trata dados parciais ausentes, não distingue por modelo ou firmware, etc. Faça um bom Judgement e não confie nesse script sozinho para determinar se um disco rígido deve ser substituído. Ele é apresentado aqui apenas para fins educacionais.
 
 ### <a name="screenshot"></a>Screenshot
 
-Na captura de tela abaixo, vemos que há não há exceções:
+Na captura de tela abaixo, vemos que não há exceções:
 
 ![Captura de tela do PowerShell](media/performance-history/Show-LatencyOutlierHDD.png)
 
 ### <a name="how-it-works"></a>Como funciona
 
-Primeiro, podemos excluir unidades ociosas ou quase ociosas, verificando se `PhysicalDisk.Iops.Total` estiver consistentemente `-Gt 1`. Para cada ativo HDD, canalizamos seus `LastHour` período de tempo, composto de medições de 360 intervalos de 10 segundos, para `Measure-Object -Average` para obter sua média latência na última hora. Isso configura o nosso população.
+Primeiro, excluímos unidades ociosas ou quase ociosas verificando se `PhysicalDisk.Iops.Total` é consistente `-Gt 1`. Para cada HDD ativo, canalizamos seu `LastHour` período de tempo, composto de 360 medições em intervalos de 10 segundos, para `Measure-Object -Average` para obter sua latência média na última hora. Isso configura nossa população.
 
-Implementamos o [amplamente conhecido fórmula](http://www.mathsisfun.com/data/standard-deviation.html) para localizar a média `μ` e o desvio padrão `σ` da população. Para cada ativo HDD, podemos comparar sua latência média a média da população e divida pelo desvio padrão. Podemos manter os valores brutos, então, podemos `Sort-Object` nossos resultados, mas use `Format-Latency` e `Format-StandardDeviation` funções auxiliares para beautify o que vamos mostrar – certamente opcionais.
+Implementamos a [fórmula amplamente conhecida](http://www.mathsisfun.com/data/standard-deviation.html) para encontrar a média `μ` e o desvio padrão `σ` da população. Para cada HDD ativo, comparamos sua latência média com a média da população e dividemos pelo desvio padrão. Mantemos os valores brutos, para que possamos `Sort-Object` nossos resultados, mas use `Format-Latency` e `Format-StandardDeviation` funções auxiliares para Beautify o que mostraremos – certamente opcional.
 
-Se nenhuma unidade for mais de + 3σ, podemos `Write-Host` em vermelho; se não estiver, em verde.
+Se qualquer unidade for maior do que +3 σ, `Write-Host` em vermelho; caso contrário, em verde.
 
 ### <a name="script"></a>Script
 
-Aqui está o script:
+Este é o script:
 
 ```
 Function Format-Latency {
@@ -201,28 +200,28 @@ Else {
 }
 ```
 
-## <a name="sample-3-noisy-neighbor-thats-write"></a>Exemplo 3: Vizinho barulhento? Isso é gravação!
+## <a name="sample-3-noisy-neighbor-thats-write"></a>Exemplo 3: vizinho barulhento? Isso é escrito!
 
-Histórico de desempenho pode responder a perguntas sobre *agora*também. Novas medidas estão disponíveis em tempo real, a cada 10 segundos. Este exemplo usa o `VHD.Iops.Total` séries do `MostRecent` período de tempo para identificar mais ocupado (dizem "mais") máquinas de virtuais consumindo mais IOPS de armazenamento, em cada host no cluster e mostrar a divisão de leitura/gravação dos seus atividade.
+O histórico de desempenho também pode responder a perguntas sobre *o momento.* Novas medições estão disponíveis em tempo real, a cada 10 segundos. Este exemplo usa a série de `VHD.Iops.Total` do `MostRecent` período para identificar o mais ocupado (algumas podem dizer "noisiest") máquinas virtuais que consomem a maior parte do IOPS de armazenamento, em cada host no cluster e mostram a divisão de leitura/gravação de sua atividade.
 
 ### <a name="screenshot"></a>Screenshot
 
-Captura de tela abaixo, podemos ver as máquinas virtuais de 10 primeiros pela atividade de armazenamento:
+Na captura de tela abaixo, vemos as 10 principais máquinas virtuais por atividade de armazenamento:
 
 ![Captura de tela do PowerShell](media/performance-history/Show-TopIopsVMs.png)
 
 ### <a name="how-it-works"></a>Como funciona
 
-Diferentemente `Get-PhysicalDisk`, o `Get-VM` cmdlet não está com suporte a cluster – ele retorna apenas as VMs no servidor local. Para consultar de todos os servidores em paralelo, podemos encapsular nossa chamada no `Invoke-Command (Get-ClusterNode).Name { ... }`. Para cada VM, obtemos o `VHD.Iops.Total`, `VHD.Iops.Read`, e `VHD.Iops.Write` medidas. Não especificando o `-TimeFrame` parâmetro, obtemos o `MostRecent` único ponto de dados para cada um.
+Ao contrário de `Get-PhysicalDisk`, o cmdlet `Get-VM` não reconhece cluster – ele retorna apenas as VMs no servidor local. Para consultar a partir de cada servidor em paralelo, Encapsulamos nossa chamada em `Invoke-Command (Get-ClusterNode).Name { ... }`. Para cada VM, obtemos as medidas `VHD.Iops.Total`, `VHD.Iops.Read`e `VHD.Iops.Write`. Ao especificar o parâmetro `-TimeFrame`, obtemos o `MostRecent` único ponto de dados para cada um.
 
    > [!TIP]
-   > Essas séries refletem a soma da atividade desta VM para todos os seus arquivos VHD/VHDX. Este é um exemplo em que o histórico de desempenho está sendo agregado automaticamente para nós. Para obter a divisão por VHD/VHDX, você pode direcionar um indivíduo `Get-VHD` em `Get-ClusterPerf` em vez da VM.
+   > Essas séries refletem a soma da atividade dessa VM a todos os seus arquivos VHD/VHDX. Este é um exemplo em que o histórico de desempenho está sendo agregado automaticamente para nós. Para obter a divisão por VHD/VHDX, você pode canalizar um `Get-VHD` individual em `Get-ClusterPerf` em vez da VM.
 
-Os resultados de todos os servidores se reúnem como `$Output`, que podemos `Sort-Object` e, em seguida, `Select-Object -First 10`. Observe que `Invoke-Command` decora resultados com um `PsComputerName` propriedade que indica onde eles vieram, que podemos imprimir saber onde a VM está em execução.
+Os resultados de cada servidor são acompanhados como `$Output`, que podemos `Sort-Object` e depois `Select-Object -First 10`. Observe que `Invoke-Command` decora os resultados com uma propriedade `PsComputerName` indicando de onde eles vieram, que podemos imprimir para saber onde a VM está em execução.
 
 ### <a name="script"></a>Script
 
-Aqui está o script:
+Este é o script:
 
 ```
 $Output = Invoke-Command (Get-ClusterNode).Name {
@@ -253,26 +252,26 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawIopsTotal -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, IopsTotal, IopsRead, IopsWrite
 ```
 
-## <a name="sample-4-as-they-say-25-gig-is-the-new-10-gig"></a>Exemplo 4: Como dizem, "25 GB é o novo 10-gig"
+## <a name="sample-4-as-they-say-25-gig-is-the-new-10-gig"></a>Exemplo 4: como dizem, "25 GB é o novo" de 10 GB "
 
-Este exemplo usa o `NetAdapter.Bandwidth.Total` séries do `LastDay` definido pelo período de tempo para procurar por sinais de saturação da rede, como > 90% da largura de banda máxima teórica. Para cada adaptador de rede do cluster, ele compara o uso de largura de banda observados mais alto no último dia até a velocidade do link indicado.
+Este exemplo usa a série de `NetAdapter.Bandwidth.Total` do `LastDay` período de tempo para procurar sinais de saturação de rede, definidos como > 90% da largura de banda teórica máxima. Para cada adaptador de rede no cluster, ele compara o uso mais alto de largura de banda observado no último dia para sua velocidade de link declarada.
 
 ### <a name="screenshot"></a>Screenshot
 
-Captura de tela abaixo, podemos ver que um *NX Fabrikam-4 Pro n º 2* pico no último dia:
+Na captura de tela abaixo, vemos que uma *Fabrikam NX-4 Pro #2* foi efetuada com pico no último dia:
 
 ![Captura de tela do PowerShell](media/performance-history/Show-NetworkSaturation.png)
 
 ### <a name="how-it-works"></a>Como funciona
 
-Repetimos nossos `Invoke-Command` truque acima para `Get-NetAdapter` em cada servidor e pipe em `Get-ClusterPerf`. Ao longo do caminho, capturamos duas propriedades relevantes: seus `LinkSpeed` cadeia de caracteres como "10 Gbps" e seu brutos `Speed` inteiro como 10000000000. Usamos `Measure-Object` para obter a média e o horário de pico do último dia (lembrete: cada medida no `LastDay` período de tempo representa 5 minutos) e multiplicar por 8 bits por byte para obter uma comparação de igual para igual.
+Repetimos nosso truque de `Invoke-Command` acima para `Get-NetAdapter` em cada servidor e pipe para `Get-ClusterPerf`. Ao longo do caminho, pegamos duas propriedades relevantes: sua `LinkSpeed` cadeia de caracteres como "10 Gbps" e seu inteiro bruto `Speed` como 10000000000. Usamos `Measure-Object` para obter a média e o pico do último dia (lembrete: cada medida no período de `LastDay` representa 5 minutos) e multiplicada por 8 bits por byte para obter uma comparação de maçãs para maçãs.
 
    > [!NOTE]
-   > Alguns fornecedores, como Chelsio, incluem atividades de acesso (RDMA) de memória direta remota em seus *adaptador de rede* contadores de desempenho, portanto, ele está incluído no `NetAdapter.Bandwidth.Total` série. Outros, como Mellanox, podem não ter. Se o fornecedor não, basta adicionar o `NetAdapter.Bandwidth.RDMA.Total` série na sua versão do script.
+   > Alguns fornecedores, como o Chelsio, incluem atividade de RDMA (acesso remoto direto à memória) em seus contadores de desempenho do *adaptador de rede* , portanto, ele está incluído na série de `NetAdapter.Bandwidth.Total`. Outros, como o Mellanox, talvez não. Se seu fornecedor não, basta adicionar a série de `NetAdapter.Bandwidth.RDMA.Total` em sua versão do script.
 
 ### <a name="script"></a>Script
 
-Aqui está o script:
+Este é o script:
 
 ```
 $Output = Invoke-Command (Get-ClusterNode).Name {
@@ -325,30 +324,30 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object PsComputerName, InterfaceDescription | Format-Table PsComputerName, NetAdapter, LinkSpeed, MaxInbound, MaxOutbound, Saturated
 ```
 
-## <a name="sample-5-make-storage-trendy-again"></a>Exemplo 5: Torne o armazenamento moderno novamente!
+## <a name="sample-5-make-storage-trendy-again"></a>Exemplo 5: tornar a tendência de armazenamento novamente!
 
-Para examinar as tendências de macro, o histórico de desempenho é retido por até 1 ano. Este exemplo usa o `Volume.Size.Available` séries do `LastYear` período de tempo para determinar a taxa de armazenamento está ficando cheia e a estimativa quando ela estará completa.
+Para examinar as tendências de macro, o histórico de desempenho é retido por até 1 ano. Este exemplo usa a série de `Volume.Size.Available` do `LastYear` período para determinar a taxa em que o armazenamento está se enchendo e Estimando quando ele estará cheio.
 
 ### <a name="screenshot"></a>Screenshot
 
-Captura de tela abaixo, vemos o *Backup* volume é a adição de cerca de 15 GB por dia:
+Na captura de tela abaixo, vemos que o volume de *backup* está adicionando cerca de 15 GB por dia:
 
 ![Captura de tela do PowerShell](media/performance-history/Show-StorageTrend.png)
 
-Com essa taxa, ela será atingir sua capacidade em outro 42 dias.
+A essa taxa, ela atingirá sua capacidade em mais de 42 dias.
 
 ### <a name="how-it-works"></a>Como funciona
 
-O `LastYear` período de tempo tem um ponto de dados por dia. Embora você precise apenas estritamente dois pontos de acordo com uma linha de tendência, na prática é melhor exigir a obter mais informações, como 14 dias. Usamos `Select-Object -Last 14` para configurar uma matriz de *(x, y)* pontos, para *x* no intervalo [1, 14]. Com esses pontos, implementamos o simples [algoritmo linear mínimos quadrados](http://mathworld.wolfram.com/LeastSquaresFitting.html) para localizar `$A` e `$B` que parametrizar a linha de melhor ajuste *y = ax + b*. Bem-vindo ao ensino tudo novamente.
+A `LastYear` período de tempo tem um ponto de dados por dia. Embora você precise estritamente apenas de dois pontos para se ajustar a uma linha de tendência, na prática, é melhor exigir mais, como 14 dias. Usamos `Select-Object -Last 14` para configurar uma matriz de pontos *(x, y)* , para *x* no intervalo [1, 14]. Com esses pontos, implementamos o [algoritmo de quadrados mínimos lineares](http://mathworld.wolfram.com/LeastSquaresFitting.html) simples para localizar `$A` e `$B` que parametrizam a linha de melhor ajuste *y = ax + b*. Bem-vindo ao ensino médio.
 
-Dividindo o volume `SizeRemaining` propriedade pela tendência (a inclinação `$A`) nos permite a forma bruta, estimar o número de dias, na taxa atual de crescimento do armazenamento, até que o volume está cheio. O `Format-Bytes`, `Format-Trend`, e `Format-Days` funções auxiliares beautify a saída.
+Dividir a propriedade de `SizeRemaining` do volume pela tendência (a `$A`de inclinação) nos permite estimar de forma bruta quantos dias, na taxa atual de crescimento do armazenamento, até que o volume esteja cheio. As funções auxiliares `Format-Bytes`, `Format-Trend`e `Format-Days` beautifym a saída.
 
    > [!IMPORTANT]
-   > Essa estimativa é linear e com base apenas nas medidas diárias 14 mais recentes. Existem mais técnicas sofisticadas e precisas. Tenha bom senso e não contam com esse script apenas para determinar se vai investir no seu armazenamento de expansão. Ela é apresentada aqui somente para fins educacionais.
+   > Essa estimativa é linear e baseada apenas nas últimas 14 medidas diárias. Existem técnicas mais sofisticadas e precisas. Faça um bom Judgement e não confie nesse script sozinho para determinar se deve investir na expansão do armazenamento. Ele é apresentado aqui apenas para fins educacionais.
 
 ### <a name="script"></a>Script
 
-Aqui está o script:
+Este é o script:
 
 ```
 
@@ -440,23 +439,23 @@ $Output = $CSV | ForEach-Object {
 $Output | Format-Table
 ```
 
-## <a name="sample-6-memory-hog-you-can-run-but-you-cant-hide"></a>Exemplo 6: Sobrecarga para a memória, você pode executar, mas você não pode ocultar
+## <a name="sample-6-memory-hog-you-can-run-but-you-cant-hide"></a>Exemplo 6: conexagero de memória, você pode executar, mas não pode ocultar
 
-Como é de histórico de desempenho coletados e armazenados centralmente para o cluster inteiro, você nunca precisa unir dados em máquinas diferentes, não importa como muitas vezes VMs movem entre hosts. Este exemplo usa o `VM.Memory.Assigned` séries do `LastMonth` período de tempo para identificar as máquinas virtuais consumindo mais memória ao longo dos últimos 35 dias.
+Como o histórico de desempenho é coletado e armazenado centralmente para todo o cluster, você nunca precisa reunir dados de computadores diferentes, independentemente de quantas vezes as VMs se movem entre os hosts. Este exemplo usa a série `VM.Memory.Assigned` da `LastMonth` período de tempo para identificar as máquinas virtuais que consomem mais memória nos últimos 35 dias.
 
 ### <a name="screenshot"></a>Screenshot
 
-Na captura de tela abaixo, podemos ver as máquinas virtuais de 10 principais por último mês do uso de memória:
+Na captura de tela abaixo, vemos as 10 principais máquinas virtuais por uso de memória no mês passado:
 
 ![Captura de tela do PowerShell](media/performance-history/Show-TopMemoryVMs.png)
 
 ### <a name="how-it-works"></a>Como funciona
 
-Repetimos nossos `Invoke-Command` truque, apresentada acima, a `Get-VM` em todos os servidores. Usamos `Measure-Object -Average` para obter a média mensal para cada VM, em seguida, `Sort-Object` seguido de `Select-Object -First 10` obter nosso placar de líderes. (Ou talvez seja nossa *queria mais* lista?)
+Repetimos nosso truque de `Invoke-Command`, apresentado acima, para `Get-VM` em cada servidor. Usamos `Measure-Object -Average` para obter a média mensal de cada VM e, em seguida, `Sort-Object` seguido por `Select-Object -First 10` para obter nosso placar. (Ou talvez seja nossa lista *mais desejada* ?)
 
 ### <a name="script"></a>Script
 
-Aqui está o script:
+Este é o script:
 
 ```
 $Output = Invoke-Command (Get-ClusterNode).Name {
@@ -486,10 +485,10 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, AvgMemoryUsage
 ```
 
-É só isso! Esperamos que esses exemplos inspiram e ajudam a começar. Com o histórico de desempenho de espaços de armazenamento diretos e a poderosa, amigável para scripts `Get-ClusterPerf` cmdlet, você tem a capacidade fazer – e responder! – complexo perguntas como você gerenciar e monitorar sua infraestrutura do Windows Server 2019.
+Pronto! Espero que esses exemplos inspiram você e o ajudem a começar. Com o histórico de desempenho de Espaços de Armazenamento Diretos e o cmdlet de `Get-ClusterPerf` poderoso e amigável para scripts, você é capacitado a perguntar – e responder! – perguntas complexas ao gerenciar e monitorar sua infraestrutura do Windows Server 2019.
 
 ## <a name="see-also"></a>Consulte também
 
 - [Introdução ao Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
-- [Visão geral direta de espaços de armazenamento](storage-spaces-direct-overview.md)
+- [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
 - [Histórico de desempenho](performance-history.md)

@@ -1,36 +1,35 @@
 ---
-title: Histórico de desempenho para as máquinas virtuais
+title: Histórico de desempenho para máquinas virtuais
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
-Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: f8072ab5fc853248f2eedd26019956ec864a891d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: aefc9c3c33cb93be241aae4ef18d815a9f8defef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890867"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856139"
 ---
-# <a name="performance-history-for-virtual-machines"></a>Histórico de desempenho para as máquinas virtuais
+# <a name="performance-history-for-virtual-machines"></a>Histórico de desempenho para máquinas virtuais
 
-> Aplica-se a: Windows Server Insider Preview
+> Aplica-se a: Windows Server 2019
 
-Este tópico subpropriedades de [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para as máquinas virtuais (VM). Histórico de desempenho está disponível para cada execução, VM clusterizada.
+Este subtópico do [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para máquinas virtuais (VM). O histórico de desempenho está disponível para cada VM clusterizada em execução.
 
    > [!NOTE]
-   > Pode levar vários minutos para que a coleção começar a VMs recém-criado ou renomeadas.
+   > Pode levar vários minutos para que a coleta comece para VMs recém-criadas ou renomeadas.
 
 ## <a name="series-names-and-units"></a>Unidades e nomes de séries
 
-Essas séries são coletadas para todas as VMs qualificadas:
+Essas séries são coletadas para cada VM qualificada:
 
-| série                            | Unidade             |
+| Série                            | Unidade             |
 |-----------------------------------|------------------|
-| `vm.cpu.usage`                    | Por cento          |
+| `vm.cpu.usage`                    | {1&gt;percent&lt;1}          |
 | `vm.memory.assigned`              | bytes            |
 | `vm.memory.available`             | bytes            |
 | `vm.memory.maximum`               | bytes            |
@@ -38,43 +37,43 @@ Essas séries são coletadas para todas as VMs qualificadas:
 | `vm.memory.pressure`              | -                |
 | `vm.memory.startup`               | bytes            |
 | `vm.memory.total`                 | bytes            |
-| `vmnetworkadapter.bandwidth.inbound`  | Bits por segundo |
-| `vmnetworkadapter.bandwidth.outbound` | Bits por segundo |
-| `vmnetworkadapter.bandwidth.total`    | Bits por segundo |
+| `vmnetworkadapter.bandwidth.inbound`  | bits por segundo |
+| `vmnetworkadapter.bandwidth.outbound` | bits por segundo |
+| `vmnetworkadapter.bandwidth.total`    | bits por segundo |
 
-Além disso, todas as séries de disco rígido virtual (VHD), tais como `vhd.iops.total`, são agregados para todos os VHDS anexados à VM.
+Além disso, todas as séries de VHD (disco rígido virtual), como `vhd.iops.total`, são agregadas para cada VHD anexado à VM.
 
 ## <a name="how-to-interpret"></a>Como interpretar
 
 
-| série                            | Descrição                                                                                                  |
+| Série                            | Descrição                                                                                                  |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------|
-| `vm.cpu.usage`                    | Porcentagem da máquina virtual está usando do processador (es) do seu servidor de host.                                   |
+| `vm.cpu.usage`                    | Porcentagem que a máquina virtual está usando do (s) processador (es) do servidor host.                                   |
 | `vm.memory.assigned`              | A quantidade de memória atribuída à máquina virtual.                                                      |
-| `vm.memory.available`             | A quantidade de memória que permanece disponível, do valor atribuído.                                       |
-| `vm.memory.maximum`               | Se o uso de memória dinâmica, isso é a quantidade máxima de memória que pode ser atribuída à máquina virtual. |
-| `vm.memory.minimum`               | Se o uso de memória dinâmica, isso é a quantidade mínima de memória que pode ser atribuída à máquina virtual. |
-| `vm.memory.pressure`              | A taxa de memória exigida pela máquina virtual ao longo de memória alocada para a máquina virtual.            |
-| `vm.memory.startup`               | A quantidade de memória necessária para a máquina virtual seja iniciada.                                            |
-| `vm.memory.total`                 | Total de memória. |
+| `vm.memory.available`             | A quantidade de memória que permanece disponível, da quantidade atribuída.                                       |
+| `vm.memory.maximum`               | Se estiver usando memória dinâmica, essa é a quantidade máxima de memória que pode ser atribuída à máquina virtual. |
+| `vm.memory.minimum`               | Se estiver usando memória dinâmica, essa é a quantidade mínima de memória que pode ser atribuída à máquina virtual. |
+| `vm.memory.pressure`              | A taxa de memória exigida pela máquina virtual sobre a memória alocada para a máquina virtual.            |
+| `vm.memory.startup`               | A quantidade de memória necessária para que a máquina virtual seja iniciada.                                            |
+| `vm.memory.total`                 | Memória total. |
 | `vmnetworkadapter.bandwidth.inbound`  | Taxa de dados recebidos pela máquina virtual em todos os seus adaptadores de rede virtual.                        |
 | `vmnetworkadapter.bandwidth.outbound` | Taxa de dados enviados pela máquina virtual em todos os seus adaptadores de rede virtual.                            |
 | `vmnetworkadapter.bandwidth.total`    | Taxa total de dados recebidos ou enviados pela máquina virtual em todos os seus adaptadores de rede virtual.          |
 
    > [!NOTE]
-   > Contadores são medidos ao longo de todo o intervalo, não amostrado. Por exemplo, se a VM está ociosa por 9 segundos, mas picos usar 50% da CPU do host na segunda, 10 de seus `vm.cpu.usage` serão registradas como 5% em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para o ruído.
+   > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se a VM estiver ociosa por 9 segundos, mas picos para usar 50% da CPU do host no décimo segundo, sua `vm.cpu.usage` será registrada como 5% em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use o [Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm) cmdlet:
+Use o cmdlet [Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm) :
 
 ```PowerShell
 Get-VM <Name> | Get-ClusterPerf
 ```
 
    > [!NOTE]
-   > O cmdlet Get-VM retorna apenas as máquinas virtuais no servidor local (ou especificado), não em todo o cluster.
+   > O cmdlet Get-VM só retorna máquinas virtuais no servidor local (ou especificado), não no cluster.
 
 ## <a name="see-also"></a>Consulte também
 
-- [Histórico de desempenho para espaços de armazenamento diretos](performance-history.md)
+- [Histórico de desempenho para Espaços de Armazenamento Diretos](performance-history.md)

@@ -1,24 +1,20 @@
 ---
 title: Put FTP
 description: Tópico de comandos do Windows para FTP-put
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95cc1e3f-523d-4374-98b8-16e6c276b2ca vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: 019a81364dbedb443a3a23d5c5a6f8db1496d83d
-ms.sourcegitcommit: 479ad84a0d6c7c7b8308122b8bac8308cb36fe9b
+ms.openlocfilehash: ecd579a313fe1cad1b8a5b4a622aaaec2d6a6d63
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843129"
 ---
 # <a name="ftp-put"></a>FTP: Put
 
@@ -29,7 +25,7 @@ Copia um arquivo local para o computador remoto usando o tipo de transferência 
 ```
 put <LocalFile> [<remoteFile>]
 ```
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |    Parâmetro     |                    Descrição                    |
 |------------------|---------------------------------------------------|
@@ -48,7 +44,7 @@ put <LocalFile> [<remoteFile>]
   ```
   put program.exe
   ```
-  ## <a name="additional-references"></a>referências adicionais
+  ## <a name="additional-references"></a>Referências adicionais
 - [FTP: ASCII](ftp-ascii.md)
 - [FTP: binário](ftp-binary.md)
-- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

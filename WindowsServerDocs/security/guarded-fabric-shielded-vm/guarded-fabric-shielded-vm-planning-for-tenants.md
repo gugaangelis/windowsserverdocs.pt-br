@@ -1,18 +1,18 @@
 ---
 title: Malha protegida e guia de planejamento de VM blindada para hosters
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
+ms.author: nirb
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 829d6a3efef082e35c6a4f98e0ba9e4b70c27a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949778"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856469"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>Malha protegida e guia de planejamento de VM blindada para locatários
 

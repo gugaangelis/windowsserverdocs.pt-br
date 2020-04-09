@@ -2,20 +2,19 @@
 title: Mais de um adaptador de rede deve estar disponível
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 59940e56-e06a-490f-90ea-cf30d9f80b09
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6b043900c6fde4522e5805a1f0c1a635de335e31
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56cb747ac44d48b115dbf105ea96e4623d458b28
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861889"
 ---
 # <a name="more-than-one-network-adapter-should-be-available"></a>Mais de um adaptador de rede deve estar disponível
 
@@ -27,8 +26,8 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
-|**Severity**|Erro|  
-|**Categorias**|Configuração|  
+|**Severity**|Error|  
+|**Categoria**|Configuração|  
 
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
@@ -42,7 +41,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 ## <a name="resolution"></a>Resolução  
   
-*Add mais adaptadores de rede para este computador. Para reservar um adaptador de rede para uso exclusivo pelo sistema operacional de gerenciamento, não o configure para uso com uma rede virtual externa.*  
+*Adicione mais adaptadores de rede a este computador. Para reservar um adaptador de rede para uso exclusivo pelo sistema operacional de gerenciamento, não o configure para uso com uma rede virtual externa.*  
   
 Para obter informações sobre como adicionar um adaptador de rede ao computador, consulte a documentação do computador ou adaptador de rede. Em seguida, para reservar exclusivamente para o sistema operacional de gerenciamento, não conecte-o a um comutador virtual.   
   

@@ -1,17 +1,17 @@
 ---
 title: Considerações sobre filiais
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322498"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856559"
 ---
 # <a name="branch-office-considerations"></a>Considerações das filiais
 
@@ -61,4 +61,4 @@ Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
 Como os protetores de chave armazenáveis em cache são exclusivos para cada VM blindada, você precisará desligar completamente (não reiniciar) e iniciar suas VMs blindadas para obter um protetor de chave armazenável em cache depois que essa configuração estiver habilitada no HGS.
-Se a sua VM blindada migrar para um host Hyper-V executando uma versão mais antiga do Windows Server ou obtiver um novo protetor de chave de uma versão mais antiga do HGS, ela não poderá ser iniciada no modo offline, mas poderá continuar sendo executada no modo online quando o acesso ao HGS estiver disponível poderá.
+Se a sua VM blindada migrar para um host Hyper-V executando uma versão mais antiga do Windows Server ou obtiver um novo protetor de chave de uma versão mais antiga do HGS, ela não poderá ser iniciada no modo offline, mas poderá continuar sendo executada no modo online quando o acesso ao HGS estiver disponível.

@@ -2,18 +2,18 @@
 title: Visão geral de Namespaces DFS
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: daveba
+manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: Este tópico descreve o namespaces do DFS, que é um serviço de função no Windows Serve que permite que você agrupe pastas compartilhadas localizadas em diferentes servidores em um ou mais namespaces estruturados logicamente.
-ms.openlocfilehash: f4ff1bc394ddb57a290e5ffab1a89f596fc48d05
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 07f6ac857164257810b297f9e2b83db4e4bd42be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858979"
 ---
 # <a name="dfs-namespaces-overview"></a>Visão geral de Namespaces DFS
 
@@ -44,14 +44,14 @@ Servidores que executam os seguintes sistemas operacionais podem hospedar vário
 
 - Windows Server 2019
 - Windows Server 2016
-- R2 do Windows Server 2012
+- Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2 Datacenter e Enterprise Editions
-- Windows Server (Canal semestral)
+- Windows Server (canal semestral)
 
 Servidores que executam os seguintes sistemas operacionais podem hospedar um único namespace autônomo:
 
-- Windows Server 2008 R2 Standard
+- Windows Server 2008 R2 Standard
 
 A tabela a seguir descreve os fatores adicionais a serem considerados ao escolher servidores para hospedar um namespace.
 
@@ -63,35 +63,35 @@ A tabela a seguir descreve os fatores adicionais a serem considerados ao escolhe
 
 ## <a name="installing-dfs-namespaces"></a>Instalando os Namespaces de DFS
 
-Os Namespaces e a Replicação do DFS são parte da função Serviços de Arquivo e Armazenamento. As ferramentas de gerenciamento de DFS (Gerenciamento de DFS, módulo de Namespaces do DFS para Windows PowerShell e ferramentas de linha de comando) são instaladas separadamente como parte das Ferramentas de Administração de Servidor Remoto.
+Os Namespaces e a Replicação do DFS são parte da função Serviços de Arquivo e Armazenamento. As ferramentas de gerenciamento de DFS (Gerenciamento de DFS, módulo de Namespaces do DFS para Windows PowerShell e ferramentas de linha de comando) são instalados separadamente como parte das Ferramentas de Administração de Servidor Remoto.
 
 Instale os namespaces do DFS usando o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md), Gerenciador do servidor ou PowerShell, conforme descrito nas próximas seções.
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>Para instalar DFS usando o Gerenciador do Servidor
 
-1. Abra o Gerenciador do Servidor, clique em **Gerenciar**e em **Adicionar Funções e Recursos**. O Assistente para Adicionar Funções e Recursos é aberto.
+1. Abra o Gerenciador do Servidor, clique em **Gerenciar** e em **Adicionar Funções e Recursos**. O Assistente para Adicionar Funções e Recursos é aberto.
 
-2. Na página **Seleção de Servidor** , selecione o servidor no VHD (disco rígido virtual) de uma máquina virtual offline na qual deseja instalar o DFS.
+2. Na página **Seleção de Servidor**, selecione o servidor no VHD (disco rígido virtual) de uma máquina virtual offline na qual deseja instalar o DFS.
 
 3. Selecione os serviços de função e os recursos que deseja instalar.
 
     - Para instalar o serviço de Namespaces de DFS, o **funções de servidor** página, selecione **Namespaces DFS**.
 
-    - Para instalar apenas as Ferramentas de Gerenciamento de DFS, na página **Recursos** , expanda **Ferramentas de Administração do Servidor Remoto**, **Ferramentas de Administração de Funções**, expanda **Ferramentas de Serviços de Arquivo**e selecione **Ferramentas de Gerenciamento de DFS**.
+    - Para instalar apenas as Ferramentas de Gerenciamento de DFS, na página **Recursos**, expanda **Ferramentas de Administração do Servidor Remoto**, **Ferramentas de Administração de Funções**, expanda **Ferramentas de Serviços de Arquivo** e selecione **Ferramentas de Gerenciamento de DFS**.
 
          **Ferramentas de Gerenciamento de DFS** instala o snap-in Gerenciamento de DFS, o módulo de Namespaces do DFS para Windows PowerShell e as ferramentas de linha de comando, mas não instala servidos de DFS no servidor.
 
 ### <a name="to-install-dfs-by-using-windows-powershell"></a>Para instalar DFS usando o Windows PowerShell
 
-Abra uma sessão do Windows PowerShell com direitos de usuário elevados e digite o seguinte comando, em que < nome\> é o serviço de função ou recurso que você deseja instalar (consulte a tabela a seguir para obter uma lista de serviços de função ou nomes de recursos relevantes):
+Abra uma sessão do Windows PowerShell com direitos de usuário elevados e digite o seguinte comando, em que <name\> é o serviço de função ou recurso que você deseja instalar (consulte a tabela abaixo para ver uma lista de nomes de serviço de função ou recurso relevantes):
 
 ```PowerShell
 Install-WindowsFeature <name>
 ```
 
-| Serviço de função ou recurso | Nome |
+| Serviço de função ou recurso | {1&gt;Nome&lt;1} |
 | ----------------------- | ---- |
-| Namespaces do DFS          | `FS-DFS-Namespace` |
+| Namespaces DFS          | `FS-DFS-Namespace` |
 | Ferramentas de Gerenciamento de DFS    | `RSAT-DFS-Mgmt-Con` |
 
 Por exemplo, para instalar a parte das Ferramentas do Sistema de Arquivos Distribuído do recurso Ferramentas de Administração do Servidor Remoto, digite:
@@ -116,9 +116,9 @@ O uso de Namespaces em uma máquina virtual no Microsoft Azure foi testado; no e
 
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, consulte [Documentação de máquinas virtuais do Windows Azure](https://docs.microsoft.com/azure/virtual-machines/).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
-Para obter informações adicionais relacionadas, consulte os recursos a seguir.
+Para obter informações adicionais relacionadas, consulte os seguintes recursos.
 
 | Tipo de conteúdo        | Referências |
 | ------------------  | ----------------|

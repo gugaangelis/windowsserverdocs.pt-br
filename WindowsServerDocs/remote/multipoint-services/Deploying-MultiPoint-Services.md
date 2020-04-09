@@ -1,27 +1,23 @@
 ---
 title: Implantação do MultiPoint Services
 description: Visão geral do processo de implantação de serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 842b7b743624aa1e4b168b1be8e94f6d405d07e3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6dff10519a951e002facc200beeb987546f5ee2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395692"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859739"
 ---
 # <a name="deploying-multipoint-services"></a>Implantação do MultiPoint Services
-Este guia descreve como implantar um servidor que executa os serviços do MultiPoint e configurar estações do MultiPoint, instalar e configurar seu sistema, configurar contas de usuário e executar algumas tarefas básicas de administração, como ativar a proteção de disco e configurar backups, antes de começar a usar o sistema.  
+Este guia descreve como implantar um servidor executando os serviços do MultiPoint e configurar estações do MultiPoint, instalar e configurar seu sistema, configurar contas de usuário e executar algumas tarefas básicas de administração, como ativar a proteção de disco e configurar backups, antes de começar a usar o sistema.  
   
 > [!NOTE]  
 > Para obter suporte adicional, consulte a ajuda dos serviços do MultiPoint, que pode ser aberta clicando no ícone de ajuda ou F1 em qualquer tela do MultiPoint Manager ou do painel do MultiPoint.  

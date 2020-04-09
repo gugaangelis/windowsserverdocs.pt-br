@@ -3,19 +3,19 @@ ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: Adicionando servidores ou unidades a Espaços de Armazenamento Diretos
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: Como adicionar servidores ou unidades a um cluster Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: f5fb9da903bb76de3a075fa7feeeaba468d802c2
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465620"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859119"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Adicionando servidores ou unidades a Espaços de Armazenamento Diretos
 
@@ -23,7 +23,7 @@ ms.locfileid: "77465620"
 
 Este tópico descreve como adicionar servidores ou unidades a Espaços de Armazenamento Diretos.
 
-## <a name="adding-servers"></a>Adicionando servidores
+## <a name="adding-servers"></a><a name="adding-servers"></a>Adicionando servidores
 
 A adição de servidores, geralmente chamada de expansão horizontal, adiciona capacidade de armazenamento e pode melhorar o desempenho e a eficiência do armazenamento. Se sua implantação for hiperconvergente, adicionar servidores também fornecerá mais recursos de computação para sua carga de trabalho.
 
@@ -132,7 +132,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 
 Pronto! Agora você está pronto para criar volumes de paridade acelerada por espelho referenciando esses modelos de camada.
 
-#### <a name="example"></a>Exemplo
+#### <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 ```PowerShell
 New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size> 
@@ -166,7 +166,7 @@ Se sua implantação usar a tolerância a falhas em chassi ou rack, você dever�
 
 3. Adicione o servidor ao cluster conforme descrito em [Adicionando servidores](#adding-servers). Quando o novo servidor ingressa no cluster, ele é automaticamente associado (usando seu nome) ao domínio de falha do espaço reservado.
 
-## <a name="adding-drives"></a>Adicionando unidades
+## <a name="adding-drives"></a><a name="adding-drives"></a>Adicionando unidades
 
 A adição de unidades, também conhecida como expansão vertical, adiciona capacidade de armazenamento e pode melhorar o desempenho. Se você tiver slots disponíveis, você poderá adicionar unidades a cada servidor para expandir a capacidade de armazenamento sem adicionar servidores. Você pode adicionar unidades de cache ou de capacidade independentemente a qualquer momento.
 

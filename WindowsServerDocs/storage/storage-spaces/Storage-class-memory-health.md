@@ -3,18 +3,18 @@ ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Gerenciamento de integridade de memória de classe de armazenamento (NVDIMM-N) no Windows
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03d986832e14e0dd7b80324de3c9f14d0537dba5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07fdd682683be00ad7643bfa20b6e95270471f62
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402904"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859139"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Gerenciamento de integridade de memória de classe de armazenamento (NVDIMM-N) no Windows
 
@@ -53,7 +53,7 @@ Isso produz esta saída de exemplo:
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Íntegro | OK | |
+| 802c-01-1602-117cb5fc | Íntegra | OK | |
 | 802c-01-1602-117cb64f | Aviso | Falha preditiva | {Limite excedido, erro de NVDIMM\_N} |
 
 > [!NOTE]
@@ -67,7 +67,7 @@ Esta condição é quando você verifica a integridade de um dispositivo de mem�
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Íntegro | OK | |
+| 802c-01-1602-117cb5fc | Íntegra | OK | |
 | 802c-01-1602-117cb64f | Aviso | Falha preditiva | {Limite excedido, erro de NVDIMM\_N} |
 
 A tabela a seguir lista algumas informações sobre essa condição.
@@ -87,8 +87,8 @@ Esta condição ocorre quando você verifica a integridade de um dispositivo de 
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Íntegro | OK | |
-| 802c-01-1602-117cb64f | Unhealthy | {Metadados obsoletos, erro de E/S, erro temporário} | {Perda da persistência de dados, perda de dados, NV...} |
+| 802c-01-1602-117cb5fc | Íntegra | OK | |
+| 802c-01-1602-117cb64f | Não Íntegro | {Metadados obsoletos, erro de E/S, erro temporário} | {Perda da persistência de dados, perda de dados, NV...} |
 
 A tabela a seguir lista algumas informações sobre essa condição.
 
@@ -107,7 +107,7 @@ Esta condição é quando um dispositivo de memória de classe de armazenamento 
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Íntegro|OK||
+|802c-01-1602-117cb5fc|Íntegra|OK||
 ||Aviso|Comunicação perdida||
 
 A tabela a seguir lista algumas informações sobre essa condição.
@@ -127,8 +127,8 @@ Esta condição é quando você verifica a integridade de um dispositivo de mem�
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Íntegro|OK|{Desconhecido}|
-|802c-01-1602-117cb64f|Unhealthy|{Metadados não reconhecidos, metadados obsoletos}|{Desconhecido}|
+|802c-01-1602-117cb5fc|Íntegra|OK|{Desconhecido}|
+|802c-01-1602-117cb64f|Não Íntegro|{Metadados não reconhecidos, metadados obsoletos}|{Desconhecido}|
 
 A tabela a seguir lista algumas informações sobre essa condição.
 

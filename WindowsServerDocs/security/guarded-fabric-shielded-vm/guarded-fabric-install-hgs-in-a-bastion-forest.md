@@ -1,18 +1,18 @@
 ---
 title: Instalar o HGS em uma floresta de bastiões existente
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5c503331893dbea65c99d79eb7444893d5f3b657
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 20e0d5e73713c0d6280e95d51ec8de8fde612350
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403593"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856579"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalar o HGS em uma floresta de bastiões existente 
 
@@ -146,7 +146,7 @@ Verifique os objetos do Política de Grupo para as seguintes configurações e s
 
 
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - Para as próximas etapas para configurar o atestado baseado em TPM, consulte [inicializar o cluster HgS usando o modo TPM em uma floresta de bastiões existente](guarded-fabric-initialize-hgs-tpm-mode-bastion.md).
 - Para as próximas etapas para configurar o atestado de chave do host, consulte [inicializar o cluster HgS usando o modo de chave em uma floresta de bastiões existente](guarded-fabric-initialize-hgs-key-mode-bastion.md).

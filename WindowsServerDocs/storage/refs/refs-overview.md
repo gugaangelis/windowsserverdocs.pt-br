@@ -2,17 +2,17 @@
 title: Visão geral do ReFS (Sistema de Arquivos Resiliente)
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: mchad
+manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 91fdd5aa696c170cacc8903a65e996beb71c4b8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403016"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857539"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Visão geral do ReFS (Sistema de Arquivos Resiliente)
 
@@ -64,7 +64,7 @@ O ReFS foi projetado para dar suporte a conjuntos de dados extremamente grandes,
 
 ## <a name="supported-deployments"></a>Implantações com suporte
 
-A Microsoft desenvolveu o NTFS especificamente para uso geral com uma ampla gama de configurações e cargas de trabalho, no entanto, para os clientes que precisam especialmente da disponibilidade, resiliência e/ou escala que o ReFS fornece, a Microsoft dá suporte a ReFS para uso em as seguintes configurações e cenários. 
+A Microsoft desenvolveu o NTFS especificamente para uso geral com uma ampla gama de configurações e cargas de trabalho, no entanto, para os clientes que exigem especialmente a disponibilidade, a resiliência e/ou a escala que o ReFS fornece, a Microsoft dá suporte a ReFS para uso nas seguintes configurações e cenários. 
 
 > [!NOTE]
 > Todas as configurações com suporte do ReFS devem usar hardware certificado pelo [catálogo do Windows Server](https://www.WindowsServerCatalog.com) e atender aos requisitos do aplicativo.
@@ -122,7 +122,7 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 | Criptografia BitLocker | Sim | Sim |
 | Eliminação de Duplicação de Dados | Sim<sup>1</sup> | Sim |
 | Suporte para CSV (Volume Compartilhado Clusterizado) | Sim<sup>2</sup> | Sim |
-| Links virtuais | Sim | Sim |
+| Links flexíveis | Sim | Sim |
 | Suporte para cluster de failover | Sim | Sim |
 | Listas de controle de acesso | Sim | Sim |
 | Diário USN | Sim | Sim |

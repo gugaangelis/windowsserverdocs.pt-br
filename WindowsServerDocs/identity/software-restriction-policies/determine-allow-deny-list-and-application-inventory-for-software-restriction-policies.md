@@ -1,24 +1,20 @@
 ---
 title: Determinar a lista de permissão-restrição e inventário de aplicativos para políticas de restrição de Software
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ddea6daeb2150bd9fd3131a8457a6a4b408cfc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357662"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855089"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>Determinar a lista de permissão-restrição e inventário de aplicativos para políticas de restrição de Software
 
@@ -37,8 +33,8 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
 -   [Use as políticas de restrição de software para ajudar a proteger seu computador contra um vírus de email](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-### <a name="what-default-rule-to-choose-allow-or-deny"></a>Qual regra padrão escolher: Permitir ou negar
-As diretivas de restrição de software podem ser implantadas em um dos dois modos que são a base de sua regra padrão: Lista de permissões ou lista de negações. Você pode criar uma política que identifica cada aplicativo que tem permissão para ser executado em seu ambiente; a regra padrão em sua política é restrita e bloqueará todos os aplicativos que você não permitir explicitamente que sejam executados. Ou você pode criar uma política que identifica todos os aplicativos que não podem ser executados; a regra padrão é irrestrita e restringe apenas os aplicativos que você listou explicitamente.
+### <a name="what-default-rule-to-choose-allow-or-deny"></a>Qual regra padrão escolher: permitir ou negar
+As diretivas de restrição de software podem ser implantadas em um dos dois modos que são a base da sua regra padrão: lista de permissões ou lista de negações. Você pode criar uma política que identifica cada aplicativo que tem permissão para ser executado em seu ambiente; a regra padrão em sua política é restrita e bloqueará todos os aplicativos que você não permitir explicitamente que sejam executados. Ou você pode criar uma política que identifica todos os aplicativos que não podem ser executados; a regra padrão é irrestrita e restringe apenas os aplicativos que você listou explicitamente.
 
 > [!IMPORTANT]
 > O modo de lista de negações pode ser uma estratégia de alta manutenção para sua organização em relação ao controle do aplicativo. Criar e manter uma lista em evolução que proíba todos os malwares e outros aplicativos problemáticos seria um tempo demorado e suscetível a erros.
@@ -52,9 +48,9 @@ Para usar efetivamente a regra permitir padrão, você precisa determinar exatam
 
 2.  Crie o seguinte valor de registro para habilitar o recurso de registro em log avançado e defina o caminho para onde o arquivo de log deve ser gravado.
 
-    **"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
 
-    Valor da cadeia de caracteres: *Caminho do NameLogFile para NameLogFile*
+    Valor da cadeia *de caracteres: NameLogFile caminho para NameLogFile*
 
     Como o SRP está avaliando todos os aplicativos quando eles são executados, uma entrada é gravada no arquivo de log *NameLogFile* cada vez que o aplicativo é executado.
 

@@ -1,27 +1,23 @@
 ---
 title: Fazer logoff ou desconectar sessões do usuário
 description: Saiba como fazer logoff de um usuário manualmente
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3e9bbcdc-e33b-481e-8b46-787a4f6d58bc
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c636af35a78eab76d69c68b6f506b64dcb555f81
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a38722474fcd7e0fc346c5df1edc5df0c786ecf2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395272"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853669"
 ---
 # <a name="log-off-or-disconnect-user-sessions"></a>Fazer logoff ou desconectar sessões do usuário
-Os usuários dos serviços do MultiPoint podem fazer logon e logoff de suas sessões de desktop como fariam com qualquer sessão do Windows. Os usuários também podem desconectar ou suspender sua sessão para que a estação de serviços do MultiPoint não esteja sendo usada, mas sua sessão permanece ativa na memória do computador do sistema de serviços do MultiPoint.  
+Os usuários do MultiPoint Services podem fazer logon e fazer logoff das sessões da área de trabalho como eles fariam com qualquer sessão do Windows. Os usuários também podem desconectar ou suspender sua sessão para que a estação de serviços do MultiPoint não esteja sendo usada, mas sua sessão permanece ativa na memória do computador do sistema de serviços do MultiPoint.  
   
 Além disso, os usuários administrativos podem encerrar a sessão de um usuário se o usuário tiver passado de sua sessão de serviços do MultiPoint ou se tiver esquecido de fazer logoff do sistema.  
   
@@ -41,8 +37,8 @@ A tabela a seguir descreve as diferentes opções que você, como um usuário ad
 |||  
 |-|-|  
 |**Ação**|**Funciona**|  
-|**Suspend** No Gerenciador do MultiPoint, use a guia **estações** para suspender a sessão do usuário. Para obter mais informações, consulte o tópico [Suspender e manter a sessão do usuário ativa](Suspend-and-Leave-User-Session-Active.md).|A sessão do usuário termina e é preservada na memória do computador. A estação fica disponível para o logon pelo mesmo usuário ou por um usuário diferente. O usuário pode fazer logon na mesma estação ou em outra e continuar trabalhando.|  
-|**Completo** No Gerenciador do MultiPoint, use a guia **estações** para encerrar a sessão do usuário. Você também pode encerrar todas as sessões do usuário na guia **Estações**. Para obter mais informações, consulte o tópico [Encerrar uma sessão de usuário](End-a-User-Session.md).|A sessão do usuário termina e a estação fica disponível para logon por qualquer usuário. A sessão do usuário não é mais exibida na guia **estações** e não está na memória do computador.|  
+|**Suspender:** No Gerenciador do MultiPoint, use a guia **estações** para suspender a sessão do usuário. Para obter mais informações, consulte o tópico [Suspender e manter a sessão do usuário ativa](Suspend-and-Leave-User-Session-Active.md).|A sessão do usuário termina e é preservada na memória do computador. A estação fica disponível para o logon pelo mesmo usuário ou por um usuário diferente. O usuário pode fazer logon na mesma estação ou em outra e continuar trabalhando.|  
+|**Fim:** No Gerenciador do MultiPoint, use a guia **estações** para encerrar a sessão do usuário. Você também pode encerrar todas as sessões de usuário na guia **estações** . Para obter mais informações, consulte o tópico [encerrar uma sessão de usuário](End-a-User-Session.md) .|A sessão do usuário termina e a estação fica disponível para logon por qualquer usuário. A sessão do usuário não é mais exibida na guia **estações** e não está na memória do computador.|  
   
 ## <a name="see-also"></a>Consulte também  
 [Suspender e deixar a sessão de usuário ativa](Suspend-and-Leave-User-Session-Active.md)  

@@ -2,20 +2,19 @@
 title: O número de máquinas virtuais em execução ou configuradas deve estar dentro dos limites com suporte
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 56d7fd528d7fda20dbdbb16a6262bb072f053ef0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49013d6a4c9dda6e79d6a803bae0f5641d826817
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364630"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854619"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>O número de máquinas virtuais em execução ou configuradas deve estar dentro dos limites com suporte
 
@@ -27,8 +26,8 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
-|**Severity**|Erro  
-|**Categorias**|Configuração|  
+|**Severity**|Error  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -90,7 +89,7 @@ A associação no grupo **Administradores de domínio** é necessária para conc
   
 4.  Para permitir que a conta de computador do Hyper-V apresente credenciais delegadas ao computador remoto:  
   
-    1.  Clique em **Adicionar** .  
+    1.  Clique em **Adicionar**.  
   
     2.  Na caixa de diálogo **Adicionar serviços** , clique em **usuários ou computadores**, selecione o computador remoto e clique em **OK**.  
   

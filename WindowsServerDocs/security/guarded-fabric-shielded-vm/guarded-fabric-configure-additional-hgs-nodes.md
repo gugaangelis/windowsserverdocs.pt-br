@@ -1,19 +1,19 @@
 ---
 title: Configurar nós adicionais do HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: ece005617c4a2faac41c2be15967b2f43951517e
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: d131643db4dfb179f5bdb8bcbad9f003d1ae61e1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265858"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856889"
 ---
 # <a name="configure-additional-hgs-nodes"></a>Configurar nós adicionais do HGS
 
@@ -28,7 +28,7 @@ Use um desses métodos para adicionar nós HGS, conforme mais adequado para o se
 |Nova floresta HGS  | [Usando arquivos PFX](#dedicated-hgs-forest-with-pfx-certificates) | [Usando impressões digitais de certificado](#dedicated-hgs-forest-with-certificate-thumbprints) |
 |Floresta de bastiões existente |  [Usando arquivos PFX](#existing-bastion-forest-with-pfx-certificates) | [Usando impressões digitais de certificado](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Certifique-se de que cada nó adicional: 
 - Tem a mesma configuração de hardware e software que o nó primário 

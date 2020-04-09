@@ -2,20 +2,19 @@
 title: O Windows 7 deve ser configurado com a quantidade recomendada de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: d77d648c-6e26-43fa-be0a-6eb4b28f9cb4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3ce8d31b13664f09c97755399503de1c12ef070a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 742132228f2dae5b1b5b0d604b62142890cf9c3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364523"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854149"
 ---
 # <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>O Windows 7 deve ser configurado com a quantidade recomendada de memória
 

@@ -2,21 +2,19 @@
 title: Máquinas virtuais SUSE com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 45517c1d381ba55c819b09b53ae563092e161b1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c5daa73e2e0c59a262565237d979d2e1e544ae4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366731"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857999"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuais SUSE com suporte no Hyper-V
 
@@ -24,7 +22,7 @@ ms.locfileid: "71366731"
 
 Veja a seguir um mapa de distribuição de recursos que indica os recursos em cada versão. Os problemas conhecidos e as soluções alternativas para cada distribuição são listados após a tabela.
 
-Os drivers internos do SUSE Linux Enterprise Service para Hyper-V são certificados pelo SUSE. Uma configuração de exemplo pode ser exibida neste boletim: O [Boletim de certificação SuSE Yes](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176).
+Os drivers internos do SUSE Linux Enterprise Service para Hyper-V são certificados pelo SUSE. Uma configuração de exemplo pode ser exibida neste boletim: o [Boletim de certificação SuSE Yes](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176).
 
 ## <a name="table-legend"></a>Legenda da tabela
 
@@ -56,7 +54,7 @@ SLES12 + é de apenas 64 bits.
 |Suporte a corte|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |WWN DO SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;||||
 |**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**||||||||
-|Suporte ao kernel de PAE|2019, 2016, 2012 R2, 2012, 2008 R2|N/D|N/D|N/D|N/D|&#10004;|&#10004;|
+|Suporte ao kernel de PAE|2019, 2016, 2012 R2, 2012, 2008 R2|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|&#10004;|&#10004;|
 |Configuração da lacuna de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Memória Dinâmica-adição a quente|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
 |Memória Dinâmica-balões|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
@@ -74,7 +72,7 @@ SLES12 + é de apenas 64 bits.
 |Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9||
 |Inicialização segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
 
-## <a name="BKMK_notes"></a>Registra
+## <a name="notes"></a><a name="BKMK_notes"></a>Registra
 
 1. A injeção de IP estático poderá não funcionar se o **Gerenciador de rede** tiver sido configurado para um determinado adaptador de rede específico do Hyper-V na máquina virtual. Para garantir o funcionamento suave da injeção de IP estático, verifique se o Gerenciador de rede está desligado completamente ou se foi desligado para um adaptador de rede específico por meio de seu arquivo **ifcfg-ethX** .
 

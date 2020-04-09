@@ -1,28 +1,24 @@
 ---
 title: criar alerta de logman
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93e6fc2b-5bf5-413b-84b4-be8b9dd3a57d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9420c486d4c6161c2c5724384f0d916448164a2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7568d4a2164cb9c387f59ff581ab739e7bb1f3e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374582"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840939"
 ---
 # <a name="logman-create-alert"></a>criar alerta de logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 criar um coletor de dados de alerta.  
 
@@ -30,7 +26,7 @@ criar um coletor de dados de alerta.
 ```  
 logman create alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
 
 |                 Parâmetro                  |                                                                               Descrição                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,12 +58,12 @@ logman create alert <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
-## <a name="BKMK_examples"></a>Disso  
-O comando a seguir cria um alerta chamado new_alert que é acionado quando o contador de desempenho% tempo do processador no grupo de contadores processador (_ total) excede o valor do contador de 50.  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+O comando a seguir cria um alerta chamado new_alert que é acionado quando o contador de desempenho% tempo do processador no grupo de contadores processador (_Total) excede o valor do contador de 50.  
 ```  
-logman create alert new_alert -th "\Processor(_Total)\% Processor time>50"  
+logman create alert new_alert -th \Processor(_Total)\% Processor time>50  
 ```  
 > [!NOTE]
 > O valor de limite definido é baseado no valor coletado pelo contador, portanto, neste exemplo, o valor de 50 equivale a 50% de tempo do processador.  
-> #### <a name="additional-references"></a>Referências adicionais  
+> ## <a name="additional-references"></a>Referências adicionais  
 > [logman](logman.md)  

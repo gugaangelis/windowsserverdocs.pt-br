@@ -2,7 +2,7 @@
 title: Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
 ms.prod: windows-server
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: Uma discussão sobre opções de resiliência em Espaços de Armazenamento Diretos incluindo espelhamento e paridade.
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e60a715ffa0097f3f5c615792da3aa0a291d6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b64592bf3cf5659410dcbbeb4c190d2d6a85485a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950040"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859009"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
 
@@ -102,7 +102,7 @@ A eficiência de armazenamento de paridade acelerada por espelho está entre o q
 > [!IMPORTANT]
 > É recomendado usar o espelhamento para a maioria das cargas de trabalho de detecção de desempenho. Para saber mais sobre como equilibras o desempenho e a capacidade de acordo com sua carga de trabalho, consulte [Planejar volumes](plan-volumes.md#choosing-the-resiliency-type).
 
-## <a name="summary"></a>Resumo
+## <a name="summary"></a><a name="summary"></a>Resumo
 
 Esta seção resume os tipos de resiliência disponíveis em Espaços de Armazenamento Diretos, os requisitos de escala mínimos para usar cada tipo, quantas falhas cada tipo pode tolerar e a eficiência de armazenamento correspondente.
 
@@ -171,7 +171,7 @@ Esta tabela mostra a eficiência de armazenamento de paridade dual e códigos de
 |    15                 |    RS 6+2           |    75,0%        |
 |    16                 |    LRC (12, 2, 1)   |    80,0%        |
 
-## <a name="examples"></a>Disso
+## <a name="examples"></a><a name="examples"></a>Disso
 
 A menos que você tenha apenas dois servidores, recomendamos usar espelhamento triplo e/ou paridade dupla, porque eles oferecem uma tolerância a falhas melhor. Mais especificamente, eles garantem que todos os dados continuem seguros e acessíveis continuamente, mesmo quando dois domínios com falha – com Espaços de Armazenamento Diretos, isso significa dois servidores – são afetados por falhas simultâneas.
 

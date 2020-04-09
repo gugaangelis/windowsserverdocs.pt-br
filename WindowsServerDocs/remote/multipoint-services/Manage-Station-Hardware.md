@@ -1,27 +1,23 @@
 ---
 title: Gerenciar o hardware da estação
 description: Fornece uma visão geral de como gerenciar hardware para estações multiponto
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 429b8539-b17a-4e01-9576-860600466451
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9ca65352a6f016d5d18bdd92b39b737cdddb9057
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ffb6fd714293471a0e9aa020390943b201261c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395242"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853519"
 ---
 # <a name="manage-station-hardware"></a>Gerenciar o hardware da estação
-Um sistema de serviços do MultiPoint consiste em um único computador e pelo menos uma estação. O hardware de estação normalmente consiste em um hub de estação, mouse, teclado e monitor de vídeo. Estações normalmente ficam conectadas fisicamente ao computador.  
+Um sistema MultiPoint Services consiste em um único computador e pelo menos uma estação. O hardware da estação normalmente consiste em um hub de estação, mouse, teclado e monitor de vídeo. Estações normalmente ficam conectadas fisicamente ao computador.  
   
 A ilustração a seguir mostra um exemplo do layout de um sistema MultiPoint Services que contém quatro estações. Cada estação é conectada ao computador dos serviços do MultiPoint usando um hub USB e placas de vídeo com vários monitores. Essa ilustração não representa estações conectadas usando hubs multifuncionais.  
    
@@ -33,7 +29,7 @@ Os tópicos nesta seção descrevem como você pode ver o status de hardware con
 No MultiPoint Manager, você pode usar a guia **estações** para exibir o status das estações e dispositivos de hardware que estão conectados ao computador dos serviços do MultiPoint. Para obter mais informações sobre como ver o status do seu computador do MultiPoint Services e os dispositivos de hardware conectados a ele, consulte o tópico [Exibir o status de hardware](View-Hardware-Status.md).  
   
 ## <a name="work-with-usb-devices"></a>Trabalhar com dispositivos USB  
-Quando dispositivos USB e outros dispositivos de hardware periféricos são conectados ao sistema MultiPoint Services, eles funcionam de forma diferente quando estão conectados ao computador do MultiPoint Services do que quando estão conectados a uma estação do MultiPoint Services. O tópico [trabalhar com dispositivos USB](Work-with-USB-Devices.md) descreve como diferentes dispositivos de hardware podem funcionar nesses cenários e fornece informações detalhadas sobre como trabalhar com hubs de estação.  
+Quando dispositivos USB e outros dispositivos de hardware periféricos são conectados ao sistema MultiPoint Services, eles funcionam de forma diferente quando estão conectados ao computador do MultiPoint Services do que quando estão conectados a uma estação do MultiPoint Services. O tópico [Trabalhar com dispositivos USB](Work-with-USB-Devices.md) descreve como diferentes dispositivos de hardware podem funcionar nessas situações e fornece informações detalhadas sobre como trabalhar com hubs de estação.  
   
 ## <a name="work-with-video-devices"></a>Trabalhar com dispositivos de vídeo  
 O tópico [Trabalhar com dispositivos de vídeo](Work-with-Video-Devices.md) discute como dispositivos de vídeo, como um monitor ou projetor, funcionam quando eles estão conectados a um computador no seu sistema MultiPoint Services ou a uma estação do MultiPoint Services.  

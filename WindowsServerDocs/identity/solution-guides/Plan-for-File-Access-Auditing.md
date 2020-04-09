@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3ea48a72-20a2-4da4-84e4-26b5728513ce
 title: Planejar a auditoria de acesso ao arquivo
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 25d6e1c3dd3ab0d10f04cef3e88a7671957b51db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ffe8843f9ace604bc0904ba2d1eaef78d2872b99
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407089"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861159"
 ---
 # <a name="plan-for-file-access-auditing"></a>Planejar a auditoria de acesso ao arquivo
 
@@ -37,7 +36,7 @@ Os seguintes recursos de auditoria de segurança do Windows Server 2012 podem se
   
     -   **Acompanhamento de alterações nas políticas e regras de acesso central**. As políticas de acesso central e as regras de acesso central definem a política central que pode ser usada para controlar o acesso a recursos críticos. Qualquer alteração nelas pode afetar diretamente as permissões de acesso a arquivo que são concedidas aos usuários em vários computadores. Portanto, o acompanhamento de alterações em políticas e regras de acesso central pode ser importante para sua organização. Como as políticas e regras de acesso central são armazenadas no AD DS (Serviços de Domínio Active Directory), você pode fazer auditoria das tentativas para modificá-las, como a auditoria de alterações de qualquer outro objeto que pode ser protegido no AD DS. Para obter mais informações, consulte [Auditoria de acesso ao serviço de diretório](https://technet.microsoft.com/library/dd941618(WS.10).aspx).  
   
-    -   **Acompanhamento de alterações nas definições do dicionário de declarações**. As definições de declarações incluem o nome da declaração, a descrição e os valores possíveis. Qualquer alteração na definição de declaração pode afetar as permissões de acesso a recursos críticos. Portanto, o acompanhamento de alterações nas definições de declarações pode ser importante para sua organização. Como as políticas de acesso central e as regras de acesso central, as definições de declaração são armazenadas em AD DS; Portanto, eles podem ser auditados como qualquer outro objeto protegível no AD DS. Para obter mais informações, consulte [Auditoria de acesso ao serviço de diretório](https://technet.microsoft.com/library/dd941618(WS.10).aspx).  
+    -   **Acompanhamento de alterações nas definições do dicionário de declarações**. As definições de declarações incluem o nome da declaração, a descrição e os valores possíveis. Qualquer alteração na definição de declaração pode afetar as permissões de acesso a recursos críticos. Portanto, o acompanhamento de alterações nas definições de declarações pode ser importante para sua organização. Como as políticas e regras de acesso central, as definições de declarações são armazenadas no AD DS. Assim, elas podem sofrer auditorias como qualquer outro objeto protegível no AD DS. Para obter mais informações, consulte [Auditoria de acesso ao serviço de diretório](https://technet.microsoft.com/library/dd941618(WS.10).aspx).  
   
     -   **Acompanhamento de alterações nos atributos de arquivo**. Os atributos de arquivo determinam qual regra de central acesso se aplica ao arquivo. Uma alteração nos atributos de arquivo pode afetar as restrições de acesso no arquivo. Portanto, é importante acompanhar as alterações em atributos de arquivo. Você pode acompanhar as alterações nos atributos de arquivo em qualquer computador, configurando a política de auditoria de alteração da política de autorização. Para obter mais informações, consulte [Auditoria de alteração de políticas de autorização](https://go.microsoft.com/fwlink/?LinkId=241504) e [Auditoria de acesso para sistemas de arquivos](https://go.microsoft.com/fwlink/?LinkId=241505). No Windows Server 2012, o evento 4911 diferencia as alterações de política de atributo de arquivo de outros eventos de alteração de política de autorização.  
   

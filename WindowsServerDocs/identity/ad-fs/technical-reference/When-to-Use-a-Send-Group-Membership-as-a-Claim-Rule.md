@@ -1,7 +1,6 @@
 ---
 ms.assetid: af16e847-47c2-461e-9df1-cc352a322043
 title: Quando usar uma associação a um grupo de envio como uma regra de declaração
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,15 +8,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 82dd9cec2c75a796eb0def508082508a5d0dbf5f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 266f46ef30082541d49bf62d933c551f00fa08da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385427"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853789"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>Quando usar uma associação a um grupo de envio como uma regra de declaração
-Você pode usar essa regra em serviços de Federação do Active Directory (AD FS) \(AD FS\) quando desejar emitir um novo valor de declaração de saída somente para os usuários que são membros de um grupo de segurança de Active Directory especificado. Quando você usa essa regra, emite uma declaração única para apenas o grupo especificado e que corresponde à lógica da regra, conforme descrito na tabela a seguir.  
+Você pode usar essa regra em Serviços de Federação do Active Directory (AD FS) \(AD FS\) quando desejar emitir um novo valor de declaração de saída somente para os usuários que são membros de um grupo de segurança Active Directory especificado. Quando você usa essa regra, emite uma declaração única para apenas o grupo especificado e que corresponde à lógica da regra, conforme descrito na tabela a seguir.  
   
 |Opção de regras|Lógica de regras|  
 |---------------|--------------|  
@@ -26,11 +25,11 @@ Você pode usar essa regra em serviços de Federação do Active Directory (AD F
 As seções a seguir fornecem uma introdução básica às regras de declaração. Elas também fornecem detalhes sobre quando usar a associação a um grupo de envio como uma regra de declaração.  
   
 ## <a name="about-claim-rules"></a>Sobre regras de declaração  
-Uma regra de declaração representa uma instância da lógica de negócios que usará uma declaração de entrada, aplicará \(uma condição a ela\) se x depois y e produzir uma declaração de saída com base nos parâmetros de condição. A lista a seguir descreve dicas importantes que você deve conhecer sobre as regras de declaração antes de ler mais neste tópico:  
+Uma regra de declaração representa uma instância da lógica de negócios que usará uma declaração de entrada, aplicará uma condição a ela \(se x, y\) e produzir uma declaração de saída com base nos parâmetros de condição. A lista a seguir descreve dicas importantes que você deve conhecer sobre as regras de declaração antes de ler mais neste tópico:  
   
--   No snap\-in de gerenciamento de AD FS, as regras de declaração só podem ser criadas usando modelos de regra de declaração  
+-   No snap\-de gerenciamento de AD FS no, as regras de declaração só podem ser criadas usando modelos de regra de declaração  
   
--   As regras de declaração processam declarações de entrada diretamente de \(um provedor de declarações, como\) Active Directory ou outro serviço de Federação ou da saída das regras de transformação de aceitação em uma confiança do provedor de declarações.  
+-   As regras de declaração processam declarações de entrada diretamente de um provedor de declarações \(como Active Directory ou outro Serviço de Federação\) ou da saída das regras de transformação de aceitação em uma confiança do provedor de declarações.  
   
 -   As regras de declaração são processadas pelo mecanismo de emissão de declarações em ordem cronológica dentro de um determinado conjunto de regras. Ao definir a precedência em regras, você pode refinar ou filtrar mais as declarações geradas pelas regras anteriores dentro de um determinado conjunto de regras.  
   
@@ -41,7 +40,7 @@ Para obter informações mais detalhadas sobre regras de declaração e conjunto
 ## <a name="outgoing-claim-value"></a>Valor de declaração de saída  
 Usando o modelo de regras Enviar Associação a um Grupo como uma Declaração, você pode emitir uma declaração que é condicionada a se um usuário é um membro de um grupo especificado.  
   
-Em outras palavras, esse modelo de regra emite uma declaração somente quando o usuário tem o SID \(\) da ID de segurança do grupo que corresponde ao grupo de Active Directory que o administrador especifica. Todos os usuários que se autenticam\) no Active Directory Domain Services \(AD DS terão declarações de Sid de grupo de entrada para cada grupo ao qual pertencem. Por padrão, as regras de transformação de aceitação na relação de confiança do provedor de declarações do Active Directory passam por essas declarações da SID do grupo. Usar esses SIDs de grupo como base para emitir declarações é muito mais rápido do que Pesquisar os grupos do usuário em AD DS.  
+Em outras palavras, esse modelo de regra emite uma declaração somente quando o usuário tem a ID de segurança do grupo \(SID\) que corresponde ao grupo de Active Directory que o administrador especifica. Todos os usuários que se autenticam no Active Directory Domain Services \(AD DS\) terão declarações de SID de grupo de entrada para cada grupo ao qual pertencem. Por padrão, as regras de transformação de aceitação na relação de confiança do provedor de declarações do Active Directory passam por essas declarações da SID do grupo. Usar esses SIDs de grupo como base para emitir declarações é muito mais rápido do que Pesquisar os grupos do usuário em AD DS.  
   
 Quando você usa essa regra, somente uma única declaração é enviada, com base no grupo do Active Directory selecionado. Por exemplo, você pode usar esse modelo de regra para criar uma regra que enviará uma declaração de grupo com um valor de "Admin" se o usuário for um membro do grupo de segurança Admins. do Domínio.  
   
@@ -49,7 +48,7 @@ Quando você usa essa regra, somente uma única declaração é enviada, com bas
 Os administradores devem usar este tipo de regra nas regras de transformação de aceitação de uma relação de confiança do provedor de declarações somente quando as SIDs do grupo estão sendo recebidas do provedor de declarações, o que é muito raro que qualquer provedor de declarações exceto o AD DS ou o Active Directory.  
   
 ## <a name="how-to-create-this-rule"></a>Como criar essa regra  
-Você cria essa regra usando o idioma da regra de declaração ou usando o modelo enviar Associação de grupo LDAP como uma regra de declaração no snap\--in de gerenciamento de AD FS. Esse modelo de regra fornece as seguintes opções de configuração:  
+Você cria essa regra usando o idioma da regra de declaração ou usando o modelo enviar Associação de grupo LDAP como uma regra de declaração no snap\-de gerenciamento de AD FS no. Esse modelo de regra fornece as seguintes opções de configuração:  
   
 -   Especificar um nome de regra de declaração  
   
@@ -57,7 +56,7 @@ Você cria essa regra usando o idioma da regra de declaração ou usando o model
   
 -   Selecionar um tipo de saída  
   
--   Selecione um formato \(de ID de nome de saída que esteja disponível somente quando a ID de nome for escolhida no campo tipo de declaração de saída\)  
+-   Selecione um formato de ID de nome de saída \(que esteja disponível somente quando a ID de nome for escolhida no campo tipo de declaração de saída\)  
   
 -   Especificar um valor de declaração de saída  
   
@@ -66,7 +65,7 @@ Para obter mais informações sobre como criar essa regra, consulte [criar uma r
 ## <a name="using-the-claim-rule-language"></a>Usando linguagem de regra de declaração  
 Se você quiser emitir declarações com base em uma SID de entrada que não uma SID de grupo, use o modelo de regra Transformar uma Declaração de Entrada. Se o administrador deseja recuperar os nomes de todos os grupos dos quais o usuário é membro, use o modelo de regras Enviar Atributos LDAP como Declarações em vez disso com o atributo **tokenGroups**.  
   
-### <a name="example-how-to-issue-group-claims-based-on-the-users-group-membership"></a>Exemplo: Como emitir declarações de grupo com base na associação de grupo do usuário  
+### <a name="example-how-to-issue-group-claims-based-on-the-users-group-membership"></a>Exemplo: como emitir declarações de grupo com base na associação de grupo do usuário  
 A regra a seguir emite declarações de grupo para um usuário com base em uma SID de grupo de entrada:  
   
 ```  

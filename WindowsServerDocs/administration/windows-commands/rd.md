@@ -1,24 +1,20 @@
 ---
 title: rd
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 42e672f6-5bc2-4c16-af25-18e7ed2dd555
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 029935bcd8773e41adefcd6ca916d75edcea3065
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 298e6b291a6aa08701b6d54a11470b0cc4bea486
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371802"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836709"
 ---
 # <a name="rd"></a>rd
 
@@ -35,11 +31,11 @@ rd [<Drive>:]<Path> [/s [/q]]
 rmdir [<Drive>:]<Path> [/s [/q]]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |     Parâmetro     |                                                                 Descrição                                                                  |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive >:] <Path> |                      Especifica o local e o nome do diretório que você deseja excluir. O *caminho* é necessário.                       |
+| [\<drive >:]<Path> |                      Especifica o local e o nome do diretório que você deseja excluir. O *caminho* é necessário.                       |
 |        /s         |                     Exclui uma árvore de diretórios (o diretório especificado e todos os seus subdiretórios, incluindo todos os arquivos).                      |
 |        /q         | Especifica o modo silencioso. Não solicita confirmação ao excluir uma árvore de diretórios. (Observe que **/q** só funcionará se **/s** for especificado.) |
 |        /?         |                                                     Exibe a ajuda no prompt de comando.                                                     |
@@ -59,7 +55,7 @@ rmdir [<Drive>:]<Path> [/s [/q]]
     Se você receber essa mensagem de erro, deverá alterar para um diretório diferente (não um subdiretório do diretório atual) e, em seguida, usar **RD** (especifique o *caminho* , se necessário).
 -   O comando **RD** , com parâmetros diferentes, está disponível no console de recuperação.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Não é possível excluir o diretório no qual você está trabalhando no momento. Você deve alterar para um diretório que não esteja dentro do diretório atual. Por exemplo, para alterar para o diretório pai, digite:
 ```
@@ -79,6 +75,6 @@ rd /s /q test
 > [!CAUTION]
 > Quando você executa o **RD/s** no modo silencioso, toda a árvore de diretórios é excluída sem confirmação. Certifique-se de que arquivos importantes sejam movidos ou submetidos a backup antes de usar a opção de linha de comando **/q** .
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

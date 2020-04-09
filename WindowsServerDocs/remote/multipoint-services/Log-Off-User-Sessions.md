@@ -1,27 +1,23 @@
 ---
 title: Fazer logoff das sessões do usuário
 description: Saiba como fazer logoff dos serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5b604fa-17d7-4d23-88ca-8ffa6caad4e8
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b8107795f330fdf04758c35efc5682fd5cb734da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d7ea5cd3b266c9efeacf199438de2fda6e34bf87
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395284"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853659"
 ---
 # <a name="log-off-user-sessions"></a>Fazer logoff das sessões do usuário
-Os usuários padrão, os usuários do painel do MultiPoint e os usuários administrativos podem fazer logon e logoff de suas sessões de desktop como fariam com qualquer sessão do Windows. Além disso, os usuários administrativos e os usuários do painel do MultiPoint podem encerrar as sessões de usuário em todas as sessões monitoradas no sistema MultiPoint Services.  
+Usuários padrão, usuários do MultiPoint Dashboard e usuários administrativos podem fazer logon e logoff de suas sessões da área de trabalho como fariam com qualquer sessão do Windows. Além disso, os usuários administrativos e os usuários do MultiPoint Dashboard podem encerrar as sessões do usuário em todas as sessões monitoradas no sistema MultiPoint Services.  
   
 1.  No painel do MultiPoint, clique na guia **página inicial** .  
   

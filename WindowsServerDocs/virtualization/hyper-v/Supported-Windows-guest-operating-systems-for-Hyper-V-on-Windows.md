@@ -2,21 +2,19 @@
 title: Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 description: Lista os sistemas operacionais Windows com suporte para uso como um convidado em uma máquina virtual. Também fornece links para artigos semelhantes para versões anteriores do Hyper-V.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: 8b7fc4c6266c7d8e3255c35b105f92d4f2de9a2c
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: 34183deefef3eea94c2b1da8dcb111c2c17efd8a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956113"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857969"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 
@@ -76,7 +74,7 @@ A Microsoft dá suporte aos sistemas operacionais convidados da seguinte forma:
   
 ## <a name="see-also"></a>Consulte também  
   
--   [Máquinas virtuais Linux e FreeBSD no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
+-   [Máquinas Virtuais do Linux e FreeBSD no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
   
 -   [Sistemas operacionais convidados com suporte para o Hyper-V cliente no Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)  
   

@@ -2,22 +2,18 @@
 title: Instalar e configurar a implantação para o gerenciamento remoto de clientes DirectAccess
 description: Este tópico faz parte do guia gerenciar clientes DirectAccess remotamente no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4adce101-1e30-439e-b78b-65b26479f33e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 255144dba4a18fd358d9bd4ef9759f92b3c31902
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 91ae2d7a059d6b7cfcea7e1754b69a7d42ebfa00
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308161"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855180"
 ---
 # <a name="install-and-configure-deployment-for-remote-management-of-directaccess-clients"></a>Instalar e configurar a implantação para o gerenciamento remoto de clientes DirectAccess
 

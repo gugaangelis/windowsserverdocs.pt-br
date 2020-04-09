@@ -1,7 +1,6 @@
 ---
 ms.assetid: ea015cbc-dea9-4c72-a9d8-d6c826d07608
 title: Apêndice H-protegendo contas e grupos de administrador local
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7e0cff62851250009d8af6ec7d87ec8191dcaec0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c5cb76ff137912893c5bc0322d5b79bee2203fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408635"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821459"
 ---
 # <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apêndice H: Proteger contas e grupos de administrador local
 
@@ -132,7 +131,7 @@ Para a conta de administrador local em cada domínio em sua floresta, você deve
 
     5.  Crie links para todas as outras UOs que contêm servidores membro.  
 
-#### <a name="verification-steps"></a>Etapas de verificação  
+#### <a name="verification-steps"></a>Etapas de Verificação  
 
 ##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>Verificar as configurações de GPO "negar acesso a este computador pela rede"  
 
@@ -221,7 +220,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Localize e clique duas vezes em **spooler de impressão**.  
 
-5.  Clique na guia **Fazer Logon**.  
+5.  Clique na guia **Logon**.  
 
 6.  Em **fazer logon como** campo, clique **nessa conta**.  
 
@@ -247,7 +246,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Localize e clique duas vezes em **spooler de impressão**.  
 
-5.  Clique na guia **Fazer Logon**.  
+5.  Clique na guia **Logon**.  
 
 6.  No campo **fazer logon como**:, selecione **local SystemAccount**e clique em **OK**.  
 

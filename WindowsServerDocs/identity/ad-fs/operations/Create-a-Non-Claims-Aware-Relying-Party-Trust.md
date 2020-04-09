@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7b7ae389-5032-44f7-9c0a-94398c3e4d88
 title: Criar um objeto de confiança da terceira parte confiável sem reconhecimento de declarações
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0ea877170a07db6abe9ac82e72d1722600ec933
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6886145e910b76edbe99549266d651cdd7c3edf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358115"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816919"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>Criar uma relação de confiança de terceira parte confiável sem reconhecimento de declaração
 
@@ -25,7 +24,7 @@ Uma declaração não\-\-confiança de terceira parte confiável é uma relaçã
   
 Para adicionar uma nova declaração não\-\-confiança de terceira parte confiável, usando o\-de snap AD FS de gerenciamento no, execute o procedimento a seguir.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>Para criar uma relação de confiança de terceira parte confiável que não reconhece declarações manualmente 
 1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
@@ -45,7 +44,7 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
 6.  Em **escolher política de controle de acesso** , selecione uma política e clique em **Avançar**.  Para obter mais informações sobre políticas de controle de acesso, consulte [políticas de controle de acesso em AD FS](Access-Control-Policies-in-AD-FS.md). 
 ![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
-7. Na página **Pronto para adicionar confiança** , revise as configurações e clique em **Avançar** para salvar as informações do objeto de confiança de terceira parte confiável.  
+7. Na página **Pronto para adicionar confiança**, revise as configurações e clique em **Avançar** para salvar as informações do objeto de confiança de terceira parte confiável.  
    ![terceira parte confiável](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
 
 8. Na página **Concluir**, clique em **Fechar**. Essa ação exibe automaticamente a caixa de diálogo **Editar Regras de Declaração**.  

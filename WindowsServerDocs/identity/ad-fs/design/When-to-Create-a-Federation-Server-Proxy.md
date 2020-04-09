@@ -1,7 +1,6 @@
 ---
 ms.assetid: aa20c8b3-7f01-4165-8b73-92642bff9676
 title: Quando criar um proxy do Servidor de Federação
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f3325efe7acf8b0b0469489e8d9a42614a5af54a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13ca7d49e8044273c9f40e58c06e705e758c68bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358853"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858479"
 ---
 # <a name="when-to-create-a-federation-server-proxy"></a>Quando criar um proxy do Servidor de Federação
 
@@ -26,7 +25,7 @@ A criação de um proxy de servidor de Federação em sua organização adiciona
   
     Por outro lado, os computadores cliente que vêm da rede corporativa encontram uma experiência diferente, com base na configuração do servidor de Federação. O servidor de Federação de rede corporativa geralmente é configurado para a autenticação integrada do Windows, que fornece um\-de entrada contínuo para usuários na rede corporativa.  
   
-A função que um proxy de servidor de federação desempenha na sua organização depende se você coloca o proxy do servidor de Federação na organização do parceiro de conta ou na organização do parceiro de recurso. Por exemplo, quando um proxy de servidor de Federação é colocado na rede de perímetro do parceiro de conta, sua função é coletar as informações de credenciais de usuário de clientes de navegador. Quando um proxy de servidor de Federação é colocado na rede de perímetro do parceiro de recurso, ele retransmite as solicitações de token de segurança para um servidor de Federação de recurso e produz tokens de segurança organizacionais em resposta aos tokens de segurança que são fornecidos por seu parceiros de conta.  
+A função que um proxy de servidor de federação desempenha na sua organização depende se você coloca o proxy do servidor de Federação na organização do parceiro de conta ou na organização do parceiro de recurso. Por exemplo, quando um proxy de servidor de Federação é colocado na rede de perímetro do parceiro de conta, sua função é coletar as informações de credenciais de usuário de clientes de navegador. Quando um proxy de servidor de Federação é colocado na rede de perímetro do parceiro de recurso, ele retransmite as solicitações de token de segurança para um servidor de Federação de recurso e produz tokens de segurança organizacionais em resposta aos tokens de segurança fornecidos por seus parceiros de conta.  
   
 Para obter mais informações, consulte [Review the Role of the Federation Server Proxy in the Account Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md) e [Review the Role of the Federation Server Proxy in the Resource Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md).  
   

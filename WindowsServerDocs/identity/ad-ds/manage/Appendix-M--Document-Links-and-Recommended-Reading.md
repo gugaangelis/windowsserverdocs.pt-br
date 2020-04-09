@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: Apêndice M-links de documentos e leitura recomendada
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: f1c13f0a7054f236f1ba35201ad9ad62c978d08f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822739"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823289"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>Apêndice M: Links de documentos e leitura recomendada
 
@@ -195,18 +194,18 @@ A tabela a seguir contém uma lista de leituras recomendadas que ajudarão você
 |[Garantia do mecanismo de autenticação para AD DS no guia passo a passo do Windows Server 2008 R2](https://technet.microsoft.com/library/dd378897(WS.10).aspx).|  
 |[Validação de KDC estrita](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
-#### <a name="copyright-information"></a>Informações de direitos autorais  
+#### <a name="copyright-information"></a>Informações de Copyright  
 As informações contidas neste documento representam o ponto de vista atual da Microsoft Corporation em relação aos assuntos abordados na data da publicação. Como a Microsoft deve responder às mudanças das condições de mercado, este material não deve ser interpretado como um compromisso por parte da Microsoft, e a Microsoft não poderá garantir a precisão das informações apresentadas após a data da publicação.  
   
 Este white paper é apenas para fins informativos. A Microsoft não oferece nenhuma garantia, expressa ou implícita, neste documento.  
   
-O cumprimento de todas as leis de direitos autorais aplicáveis é de responsabilidade do usuário. Sem limitar os direitos de direitos autorais, nenhuma parte deste documento pode ser reproduzida, armazenada ou introduzida em um sistema de recuperação, ou transmitida de qualquer forma ou por qualquer meio (eletrônico, mecânico, fotocópia, gravação ou de outra forma) ou para qualquer finalidade , sem a permissão expressa por escrito da Microsoft Corporation.  
+O cumprimento de todas as leis de direito autorais aplicáveis é de responsabilidade do usuário. Sem limitar os direitos de direitos autorais, nenhuma parte deste documento pode ser reproduzida, armazenada ou introduzida em um sistema de recuperação, ou transmitida de qualquer forma ou por qualquer meio (eletrônico, mecânico, fotocópia, gravação ou de outra forma), ou para qualquer finalidade, sem a permissão expressa por escrito da Microsoft Corporation.  
   
-A Microsoft poderá ter patentes, aplicativos de patentes, marcas, direitos autorais ou outros direitos de propriedade intelectual que abranjam o conteúdo deste documento. A posse deste documento não lhe confere nenhum direito sobre as citadas patentes, marcas comerciais, direitos autorais ou outros direitos de propriedade intelectual, salvo aqueles expressamente mencionados em um contrato de licença, por escrito, da Microsoft.  
+A Microsoft pode ter patentes ou requisições para obtenção de patente, marcas comerciais, direitos autorais ou outros direitos de propriedade intelectual que abrangem o conteúdo deste documento. A posse deste documento não lhe confere nenhum direito sobre as citadas patentes, marcas comerciais, direitos autorais ou outros direitos de propriedade intelectual, salvo aqueles expressamente mencionados em um contrato de licença, por escrito, da Microsoft.  
   
-Microsoft, Active Directory, BitLocker, Hyper-V, Internet Explorer, Windows Vista, Windows e Windows Server são marcas registradas ou marcas comerciais da Microsoft Corporation na Estados Unidos e/ou em outros países. Todas as outras marcas pertencem aos seus respectivos proprietários.  
+Microsoft, Active Directory, BitLocker, Hyper-V, Internet Explorer, Windows Vista, Windows e Windows Server são marcas registradas ou marcas comerciais da Microsoft Corporation na Estados Unidos e/ou em outros países. Todas as outras marcas pertencem a seus respectivos proprietários.  
   
-As empresas de exemplo, as organizações, os produtos, os nomes de domínio, os endereços de email, os logotipos, as pessoas, os lugares e os eventos aqui descritos são fictícios. Nenhuma associação com qualquer empresa, organização, produto, nome de domínio, endereço de email, logotipo, pessoa, lugar ou acontecimento real é intencional ou deve ser inferida.  
+As empresas, organizações, produtos, nomes de domínio, endereços de email, logotipos, pessoas, lugares e eventos descritos como exemplo neste documento são fictícios. Nenhuma associação com qualquer empresa, organização, produto, nome de domínio, endereço de email, logotipo, pessoa, lugar ou evento real é intencional ou deve ser inferida.  
   
 ? 2013 Microsoft Corporation. Todos os direitos reservados.  
   

@@ -1,19 +1,19 @@
 ---
 title: Criar um disco de modelo de VM blindada do Windows
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 9c8b84e8-1f5a-47a1-83ca-b1dbd801cb0b
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 766ea9688b7f08914ca68a960cc21393963bd0e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949782"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856769"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada do Windows
 
@@ -28,7 +28,7 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 Primeiro, prepare um disco do sistema operacional que será executado por meio do assistente de criação de disco de modelo blindado. Esse disco será usado como o disco do sistema operacional nas VMs de seu locatário. Você pode usar qualquer ferramenta existente para criar esse disco, como o Microsoft Desktop Image Service Manager (DISM), ou configurar manualmente uma VM com um VHDX em branco e instalar o sistema operacional nesse disco. Ao configurar o disco, ele deve aderir aos seguintes requisitos específicos para VMs de geração 2 e/ou blindadas: 
 
-| Requisito para VHDX | Motivo |
+| Requisito para VHDX | Reason |
 |-----------|----|
 |Deve ser um disco de tabela de partição GUID (GPT) | Necessário para máquinas virtuais de geração 2 para dar suporte a UEFI|
 |O tipo de disco deve ser **básico** em oposição ao **dinâmico**. <br>Observação: isso se refere ao tipo de disco lógico, não ao recurso VHDX "de expansão dinâmica" com suporte do Hyper-V. | O BitLocker não dá suporte a discos dinâmicos.|
@@ -113,7 +113,7 @@ O ícone de escudo pequeno ao lado do nome do disco denota o disco como um disco
 
 ## <a name="create-the-shielded-vm-template-in-vmm-using-the-prepared-template-disk"></a>Criar o modelo de VM blindada no VMM usando o disco de modelo preparado
 
-Com um disco de modelo preparado em sua biblioteca do VMM, você está pronto para criar um modelo de VM para VMs blindadas. Os modelos de VM para VMs blindadas diferem ligeiramente dos modelos de VM tradicionais, pois determinadas configurações são corrigidas (VM de geração 2, UEFI e inicialização segura habilitada e assim por diante) e outras não estão disponíveis (a personalização de locatário está limitada a alguns, selecione Propriedades da VM) . Para criar o modelo de VM, execute as seguintes etapas:
+Com um disco de modelo preparado em sua biblioteca do VMM, você está pronto para criar um modelo de VM para VMs blindadas. Os modelos de VM para VMs blindadas diferem ligeiramente dos modelos de VM tradicionais, pois determinadas configurações são corrigidas (VM de geração 2, UEFI e inicialização segura habilitada e assim por diante) e outras não estão disponíveis (a personalização de locatário está limitada a algumas, selecione Propriedades da VM). Para criar o modelo de VM, execute as seguintes etapas:
 
 1. No espaço de trabalho **biblioteca** , clique em **criar modelo de VM** na guia início na parte superior.
 
@@ -167,7 +167,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [Criar um arquivo de dados de blindagem](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

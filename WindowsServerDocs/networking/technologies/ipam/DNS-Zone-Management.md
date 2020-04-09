@@ -2,22 +2,18 @@
 title: Gerenciamento de zonas DNS
 description: Este tópico faz parte do guia de gerenciamento do IPAM (gerenciamento de endereços IP) no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de3dc14b-164a-49f1-8a57-b9e788046c23
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6ab1450be2ceacb6f650b1be3d01e770c3c8116f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 27d65f1e456bad843fefd18fff45cd5ef6258278
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312412"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860679"
 ---
 # <a name="dns-zone-management"></a>Gerenciamento de zonas DNS
 

@@ -1,24 +1,20 @@
 ---
 title: Gerenciar o Log de Inventário de Software
 description: Descreve como gerenciar o log de inventário de software
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2176793bd0b7103f69c57476034342a0617329e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946992"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851419"
 ---
 # <a name="manage-software-inventory-logging"></a>Gerenciar o Log de Inventário de Software
 
@@ -90,10 +86,10 @@ As opções de configuração abordadas neste documento incluem:
 -   [Usando o log de inventário de software em um ambiente Windows Server 2012 R2 Hyper-V sem KB 3000850](manage-software-inventory-logging.md#BKMK_Step12)  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte Usando cmdlets.
+> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte Usando cmdlets.
 
   
-## <a name="BKMK_Step1"></a>Iniciando e parando o log de inventário de software  
+## <a name="starting-and-stopping-software-inventory-logging"></a><a name="BKMK_Step1"></a>Iniciando e parando o log de inventário de software  
 A coleta diária de log de inventário de software e o encaminhamento pela rede devem ser habilitados em um computador que esteja executando o Windows Server 2012 R2 para registrar o inventário de software.  
   
 > [!NOTE]  
@@ -131,13 +127,13 @@ Há três etapas para configurar o Log de Inventário de Software para encaminha
   
 Para obter um guia abrangente para configurar a estrutura do SIL como um todo, consulte [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md).  Em particular, se **Publish-SilData** produzir um erro ou o Log de Inventário de Software falhar, consulte a seção solução de problemas.  
   
-## <a name="BKMK_Step2"></a>Log de inventário de software ao longo do tempo  
+## <a name="software-inventory-logging-over-time"></a><a name="BKMK_Step2"></a>Log de inventário de software ao longo do tempo  
 Se o Log de Inventário de Software foi iniciado por um administrador, a coleta de hora em hora e o encaminhamento dos dados par o servidor de agregação (URI de destino) começa. O primeiro encaminhamento será um conjunto de dados completo dos mesmos dados que [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) recupera e exibe no console em um ponto no tempo. Depois, a cada intervalo, o SIL fará uma verificação dos dados e encaminhará somente uma pequena confirmação de identificação para o servidor de agregação de destino se não houver nenhuma alteração nos dados desde a última coleta. Se algum valor tiver sido alterado, o SIL enviará novamente um conjunto de dados completo.  
   
 > [!IMPORTANT]  
 > Se em qualquer intervalo o URI de destino estiver inacessível ou a transferência de dados pela rede for malsucedida por algum motivo, os dados coletados serão armazenados localmente por até um valor padrão de 30 dias (após o qual eles serão excluídos). No próximo encaminhamento bem-sucedido dos dados para o servidor de agregação de destino, todos os dados armazenados localmente serão encaminhados e os dados armazenados em cache locais serão excluídos.  
   
-## <a name="BKMK_Step3"></a>Exibindo dados de log de inventário de software  
+## <a name="displaying-software-inventory-logging-data"></a><a name="BKMK_Step3"></a>Exibindo dados de log de inventário de software  
 Além dos cmdlets do PowerShell descritos na seção anterior, seis cmdlets adicionais podem ser usados para coletar dados de Log de Inventário de Software:  
   
 -   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)** : exibe os valores pontuais para um servidor específico e dados relacionados ao sistema operacional, bem como o FQDN ou o nome de host do host físico, se disponível.  
@@ -199,9 +195,9 @@ SystemManufacturer        : Microsoft Corporation
 > [!NOTE]  
 > A saída desse cmdlet é igual à de todos os outros cmdlets **Get-Sil** para esse recurso combinados, mas é fornecida para o console de maneira assíncrona, portanto a ordem dos objetos pode nem sempre ser a mesma.  
 >   
-> Não é necessário ter o Log de Inventário de Software iniciado para usar os cmdlets **Get-Sil** .  
+> Não é necessário ter o Log de Inventário de Software iniciado para usar os cmdlets **Get-Sil**.  
   
-## <a name="BKMK_Step4"></a>Excluindo dados registrados no log de inventário de software  
+## <a name="deleting-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step4"></a>Excluindo dados registrados no log de inventário de software  
 O Log de Inventário de Software não tem a finalidade de ser um componente crítico. Seu design destina-se a afetar as operações do sistema local o mínimo possível, mantendo um alto nível de confiabilidade. Isso também permite que o administrador exclua manualmente o banco de dados de log de inventário de software e os arquivos de suporte (todos os arquivos no diretório \Windows\System32\LogFiles\SIL) para atender às necessidades operacionais.  
   
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>Para excluir dados registrados pelo Log de Inventário de Software  
@@ -214,7 +210,7 @@ O Log de Inventário de Software não tem a finalidade de ser um componente crí
   
 4. Exclua todos os arquivos da pasta.  
   
-## <a name="BKMK_Step5"></a>Fazendo backup e restaurando dados registrados no log de inventário de software  
+## <a name="backing-up-and-restoring-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step5"></a>Fazendo backup e restaurando dados registrados no log de inventário de software  
 O Log de Inventário de Software armazenará temporariamente coletas de dados de hora em hora se os encaminhamentos pela rede estiverem falhando. Os arquivos de log são armazenados no diretório \Windows\System32\LogFiles\SIL\. Os backups desses dados de Log de Inventário de Software podem ser feitos com seus backups de servidora programados regularmente.  
   
 > [!IMPORTANT]  
@@ -223,17 +219,17 @@ O Log de Inventário de Software armazenará temporariamente coletas de dados de
 > [!NOTE]  
 > Se, por qualquer motivo, o gerenciamento da duração da retenção dos dados registrados localmente pelo SIL se tornar importante, isso poderá ser configurado alterando o valor do registro aqui: \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. O padrão é ' 30 ' por 30 dias.  
   
-## <a name="BKMK_Step6"></a>Lendo dados registrados e publicados pelo log de inventário de software  
+## <a name="reading-data-logged-and-published-by-software-inventory-logging"></a><a name="BKMK_Step6"></a>Lendo dados registrados e publicados pelo log de inventário de software  
 Dados registrados por SIL, mas armazenados localmente (se o encaminhamento para o URI de destino falhar) ou dados que são encaminhados com êxito para o servidor de agregação de destino, são armazenados em um arquivo binário (para os dados de cada dia). Para exibir esses dados no PowerShell, use o cmdlet [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) .  
   
-## <a name="BKMK_Step7"></a>Segurança de log de inventário de software  
+## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>Segurança de log de inventário de software  
 São necessários privilégios administrativos no servidor local para recuperar dados do WMI de Log de Inventário de Software e das APIs do PowerShell.  
   
 Para utilizar com êxito a capacidade total do recurso de Log de Inventário de Software para encaminhar dados para um ponto de agregação continuamente ao longo do tempo (em intervalos de hora em hora), um administrador precisa utilizar certificados de cliente para garantir sessões SSL seguras para a transferência de dados por HTTPS. Uma visão geral básica da autenticação HTTPS pode ser encontrada em [Autenticação HTTPS](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx).  
   
 Todos os dados armazenados localmente em um Windows Server (ocorre apenas se o recurso é iniciado, mas o destino está inacessível por qualquer motivo) são acessíveis apenas com privilégios administrativos no servidor local.  
   
-## <a name="BKMK_Step8"></a>Trabalhando com configurações de data e hora no log de inventário de software do Windows Server 2012 R2  
+## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>Trabalhando com configurações de data e hora no log de inventário de software do Windows Server 2012 R2  
   
 -   Ao usar [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay para definir a hora em que o registro em log do SIL é executado, é necessário especificar uma data e hora. A data do calendário será definida e o registro em log não ocorrerá até que a data seja atingida, na hora do sistema local.  
   
@@ -241,7 +237,7 @@ Todos os dados armazenados localmente em um Windows Server (ocorre apenas se o r
   
 -   Ao usar [Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx), "SampleDate" sempre mostrará 11:59:13h, um valor sem sentido.  Data são os dados pertinentes para essas consultas de cmdlet.  
   
-## <a name="BKMK_Step10"></a>Habilitando e Configurando o log de inventário de software em um disco rígido virtual montado  
+## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>Habilitando e Configurando o log de inventário de software em um disco rígido virtual montado  
 O Log de Inventário de Software também dá suporte à configuração e habilitação em máquinas virtuais offline. Os usos práticos para isso se destinam a cobrir a configuração de "imagem ouro" para ampla implantação em data centers, bem como a configuração de imagens do usuário final de um local para uma implantação em nuvem.  
   
 Para dar suporte a esses usos, o Log de Inventário de Software tem entradas de Registro associadas a cada opção configurável.  Esses valores de registro podem ser encontrados em \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging.  
@@ -250,8 +246,8 @@ Para dar suporte a esses usos, o Log de Inventário de Software tem entradas de 
 |-|-|-|-|  
 |**Função**|**Nome do valor**|**Dados**|**Cmdlet correspondente (disponível somente no sistema operacional em execução)**|  
 |Iniciar/parar o recurso|CollectionState|1 ou 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx), [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
-|Especifica o ponto de agregação de destino na rede|TargetUri|sequência|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
-|Especifica a impressão digital do certificado ou Hash do certificado usado para a autenticação SSL para o servidor Web de destino|CertificateThumbprint|sequência|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
+|Especifica o ponto de agregação de destino na rede|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
+|Especifica a impressão digital do certificado ou Hash do certificado usado para a autenticação SSL para o servidor Web de destino|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
 |Especifica a data e hora em que o recurso deve iniciar (se o valor definido for no futuro de acordo com a hora do sistema local)|CollectionTime|Padrão: 2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
   
 Para modificar esses valores em um VHD offline (sistema operacional da VM não em execução), um VHD primeiro deve ser montado e, em seguida, os comandos a seguir podem ser usados para fazer alterações:  
@@ -266,7 +262,7 @@ Para modificar esses valores em um VHD offline (sistema operacional da VM não e
   
 O Log de Inventário de Software verificará esses valores quando o sistema operacional for iniciado e executará de acordo.  
   
-## <a name="BKMK_Step11"></a>Visão geral do uso do log de inventário de software no Windows Server 2012 R2 sem KB 3000850  
+## <a name="overview-of-using-software-inventory-logging-in-windows-server-2012-r2-without-kb-3000850"></a><a name="BKMK_Step11"></a>Visão geral do uso do log de inventário de software no Windows Server 2012 R2 sem KB 3000850  
 Foram feitas as seguintes alterações nas configurações padrão e de funcionalidade do Log de Inventário de Software com [KB 3000850](https://support.microsoft.com/kb/3000850):  
   
 -   O intervalo padrão para coleta e encaminhamento pela rede quando o registro em log do SIL é iniciado alterado de diário para cada hora (aleatório dentro de cada hora).  
@@ -275,7 +271,7 @@ Foram feitas as seguintes alterações nas configurações padrão e de funciona
   
 -   O convidado para comunicação de canal do host em ambientes Hyper-V foi removido.  
   
-## <a name="BKMK_Step12"></a>Usando o log de inventário de software em um ambiente Windows Server 2012 R2 Hyper-V sem KB 3000850  
+## <a name="using-software-inventory-logging-in-a-windows-server-2012-r2-hyper-v-environment-without-kb-3000850"></a><a name="BKMK_Step12"></a>Usando o log de inventário de software em um ambiente Windows Server 2012 R2 Hyper-V sem KB 3000850  
   
 > [!NOTE]  
 > Esta funcionalidade é removida com a instalação da atualização [KB 3000850](https://support.microsoft.com/kb/3000850) .  
@@ -295,7 +291,7 @@ Veja a seguir dois exemplos de como a saída no console do PowerShell ficaria (m
   
 ![](../media/software-inventory-logging/SILHyper-VExample2.png)  
   
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte também  
 [Introdução ao log de inventário de software](get-started-with-software-inventory-logging.md)  
 [Agregador de registro em log de inventário de software](software-inventory-logging-aggregator.md)  
 [Cmdlets de log de inventário de software no Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)  

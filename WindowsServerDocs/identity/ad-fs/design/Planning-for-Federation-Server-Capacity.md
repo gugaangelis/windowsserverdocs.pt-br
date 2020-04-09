@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7013fc21-9ced-4f9d-9588-cb04d6d60924
 title: Planning for Federation Server Capacity (Planejando a capacidade do servidor de federação)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 418bc5d53a2bd11afa8563b07bbff76c89495715
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5801196921c1f7632725dfddb2a5c8c2bf4ae2b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407973"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858619"
 ---
 # <a name="planning-for-federation-server-capacity"></a>Planning for Federation Server Capacity (Planejando a capacidade do servidor de federação)
 
@@ -47,7 +46,7 @@ Felizmente, os requisitos de memória, CPU e espaço em disco para servidores de
 > [!NOTE]  
 > Em testes que foram executados pela equipe de produto AD FS usando um farm de servidores de Federação configurado com um SQL Server dedicado para armazenar o banco de dados de configuração do AD FS, a carga geral no SQL Server tendiam para ser baixa. Em um teste usando uma federação de quatro\-\-farm de servidores que foi configurada para usar um único SQL Server, a utilização da CPU não excedeu 10%, apesar dos testes que trouxeram os servidores de Federação para a utilização de destino.  
   
-## <a name="bk_estimatefs"></a>Estimar o número de servidores de Federação para sua organização  
+## <a name="estimate-the-number-of-federation-servers-for-your-organization"></a><a name="bk_estimatefs"></a>Estimar o número de servidores de Federação para sua organização  
 Em um esforço para simplificar o processo de planejamento de hardware para servidores de Federação, a equipe de produto AD FS desenvolveu a planilha de dimensionamento de planejamento de capacidade AD FS. Esta planilha do Excel inclui a calculadora\-como a funcionalidade que obterá os dados de uso esperados que você fornece sobre os usuários em sua organização e retorna um número ideal de servidores de Federação recomendados para seu ambiente de produção AD FS.  
   
 > [!NOTE]  

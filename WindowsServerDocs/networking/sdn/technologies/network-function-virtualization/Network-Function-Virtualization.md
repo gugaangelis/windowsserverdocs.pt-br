@@ -1,23 +1,19 @@
 ---
 title: Virtualização de função de rede
 description: Você pode usar este tópico para saber mais sobre a virtualização de função de rede, que permite implantar dispositivos de rede virtual como firewall de datacenter, gateway de RAS multilocatário e SLB (balanceamento de carga de software) no Windows Server 2016.
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 1d5d5aaae5983e062dae203c60a7001f36e5629b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: aed1591756e7b491bd4c9ab325694dfb3e6fddb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309813"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859619"
 ---
 # <a name="network-function-virtualization"></a>Virtualização de função de rede
 

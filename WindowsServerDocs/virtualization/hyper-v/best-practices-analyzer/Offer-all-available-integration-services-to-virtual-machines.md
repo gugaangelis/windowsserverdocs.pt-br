@@ -2,20 +2,19 @@
 title: Oferecer todos os serviços de integração disponíveis para máquinas virtuais
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 2c4b2043-ad81-495e-aa7a-467f813bb3d2
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5ec2dc73cea8b8356d832bf9fdb960985df2df6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c7ddf53823a69e1bd66d4e0e43ee452a4614436e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393596"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861879"
 ---
 # <a name="offer-all-available-integration-services-to-virtual-machines"></a>Oferecer todos os serviços de integração disponíveis para máquinas virtuais
 
@@ -28,7 +27,7 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -40,11 +39,11 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 *Alguns recursos não estarão disponíveis para as seguintes máquinas virtuais:*  
   
-\<list de nomes de máquina virtual >  
+\<lista de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   
-*If isso é intencional, nenhuma ação adicional é necessária. Caso contrário, considere a possibilidade de oferecer todos os serviços de integração nas configurações dessas máquinas virtuais.*  
+*Se isso for intencional, nenhuma ação adicional será necessária. Caso contrário, considere a possibilidade de oferecer todos os serviços de integração nas configurações dessas máquinas virtuais.*  
   
 A disponibilidade de alguns serviços de integração pode ser gerenciada por meio das configurações de máquina virtual.   
   
