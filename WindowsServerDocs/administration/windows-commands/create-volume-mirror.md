@@ -1,24 +1,20 @@
 ---
 title: criar espelho de volume
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para criar espelhamento de volume, que cria um espelho de volume usando os dois discos dinâmicos especificados.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 48776917-783a-47ff-8da4-1cab77cea34b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 72ecc4e0ede163857c47c5b7013aacdd49719ac8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa5ea72eb0edacb841f32126f31a257b0573dd6d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378870"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846969"
 ---
 # <a name="create-volume-mirror"></a>criar espelho de volume
 
@@ -27,17 +23,15 @@ ms.locfileid: "71378870"
 Cria um espelho de volume usando os dois discos dinâmicos especificados.  
   
 > [!NOTE]  
-> Este comando só está disponível no Windows 7 e no Windows Server 2008 R2.  
-  
-  
-  
+> Este comando só está disponível no Windows 7 e no Windows Server 2008 R2.
+
 ## <a name="syntax"></a>Sintaxe  
   
 ```  
 create volume mirror [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr] [noerr]  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 |         Parâmetro         |                                                                                                                                     Descrição                                                                                                                                     |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -50,15 +44,15 @@ create volume mirror [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr] [noer
   
 -   Depois de criar o volume, o foco mudará automaticamente para o novo volume.  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para criar um volume espelhado de 1000 megabytes de tamanho, nos discos 1 e 2, digite:  
   
 ```  
 create volume mirror size=1000 disk=1,2  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   
