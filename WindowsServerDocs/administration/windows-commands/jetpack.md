@@ -1,28 +1,24 @@
 ---
 title: jetpack
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82a2b7ef-0db5-4575-a028-8acb0bf6c7ba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b011658c6a745d62707cf88404379b17b0e05eef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 008e9dd4d41fe270d775b1c44d799dd16429046f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375318"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841969"
 ---
 # <a name="jetpack"></a>jetpack
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 compacta um WINS (serviço de cadastramento na Internet do Windows) ou um banco de dados DHCP (protocolo de configuração dinâmica de hosts). A Microsoft recomenda que você compacte o banco de dados WINS sempre que ele se aproximar de 30 MB. 
 
@@ -31,14 +27,14 @@ compacta um WINS (serviço de cadastramento na Internet do Windows) ou um banco 
 jetpack.EXE <database name> <temp database name>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
 |<database name>|Especifica o arquivo de banco de dados original.|
 |<temp database name>|Especifica o arquivo de banco de dados temporário.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 Para compactar o banco de dados WINS:
 ```
 cd %SYSTEMROOT%\SYSTEM32\WINS
@@ -63,4 +59,4 @@ o Jetpack. exe compacta o banco de dados WINS ou DHCP fazendo o seguinte:
 > Durante o processo compacto, o Jetpack. exe cria um arquivo temporário com o nome especificado pelo parâmetro *nome do banco de dados Temp* . O arquivo temporário é removido quando o processo de compactação é concluído. Verifique se você não tem um arquivo já existente na pasta WINS ou DHCP com o mesmo nome que o especificado no parâmetro nome do *banco de dados Temp* .
 
 ## <a name="additional-references"></a>Referências adicionais
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

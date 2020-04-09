@@ -1,24 +1,20 @@
 ---
 title: Configurar uma estação de tela dividida
 description: Descreve como configurar os serviços do MultiPoint para que dois usuários possam compartilhar um único sistema
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d1d434-79b2-4e0a-835f-d94ed8ee6b21
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: d50148e9d39fb337bf02d95d0db09b4e07ee4720
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 006422614b87cd331dd157218ac910b6f7af1602
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395042"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853909"
 ---
 # <a name="set-up-a-split-screen-station"></a>Configurar uma estação de tela dividida
 Você pode configurar uma estação de tela de divisão para que dois usuários possam usar o sistema simultaneamente.

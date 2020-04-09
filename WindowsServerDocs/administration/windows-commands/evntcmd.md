@@ -1,24 +1,20 @@
 ---
 title: Evntcmd
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4496df6df1a40b383505627d58389c098493f59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e4290543ffcc0da1c768a661fd88a7638b1146
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377443"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845009"
 ---
 # <a name="evntcmd"></a>Evntcmd
 
@@ -29,13 +25,13 @@ Configura a conversão de eventos em interceptações, destinos de interceptaç�
 ```  
 evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>  
 ```  
-### <a name="parameters"></a>Parâmetros  
+#### <a name="parameters"></a>Parâmetros  
 
 |      Parâmetro      |                                                                                                                                                            Descrição                                                                                                                                                             |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  /s <computerName>  |                                                         Especifica, por nome, o computador no qual você deseja configurar a tradução de eventos para interceptações, destinos de interceptação ou ambos. Se você não especificar um computador, a configuração ocorrerá no computador local.                                                          |
 | /v <verbosityLevel> | Especifica quais tipos de mensagens de status aparecem como interceptações e destinos de interceptação são configurados. Esse parâmetro deve ser um inteiro entre 0 e 10. Se você especificar 10, todos os tipos de mensagens serão exibidos, incluindo mensagens de rastreamento e avisos sobre se a configuração de interceptação foi bem-sucedida. Se você especificar 0, nenhuma mensagem será exibida. |
-|         opção          |                                                                                                           Especifica que o serviço SNMP não deve ser reiniciado se este computador receber alterações de configuração de interceptação.                                                                                                            |
+|         /n          |                                                                                                           Especifica que o serviço SNMP não deve ser reiniciado se este computador receber alterações de configuração de interceptação.                                                                                                            |
 |     <FileName>      |                                                                                     Especifica, por nome, o arquivo de configuração que contém informações sobre a tradução de eventos para interceptações e destinos de interceptação que você deseja configurar.                                                                                     |
 |         /?          |                                                                                                                                                Exibe a ajuda no prompt de comando.                                                                                                                                                |
 
@@ -65,19 +61,19 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
   - O parâmetro *delete_TRAP_DEST* especifica que você não deseja que as mensagens de interceptação sejam enviadas a um host especificado em uma comunidade.  
   - O parâmetro *communityname* especifica, por nome, a Comunidade na qual as mensagens de interceptação são enviadas.  
   - O parâmetro *hostid* especifica, por nome ou endereço IP, o host para o qual você não deseja que as mensagens de interceptação sejam enviadas.  
-    ## <a name="BKMK_Examples"></a>Disso  
+    ## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
     Os exemplos a seguir ilustram as entradas no arquivo de configuração para o comando **evntcmd** . Eles não são projetados para serem digitados em um prompt de comando.  
     Para enviar uma mensagem de interceptação se o serviço log de eventos for reiniciado, digite:  
     ```  
-    #pragma add System "Eventlog" 2147489653  
+    #pragma add System Eventlog 2147489653  
     ```  
     Para enviar uma mensagem de interceptação se o serviço log de eventos for reiniciado duas vezes em três minutos, digite:  
     ```  
-    #pragma add System "Eventlog" 2147489653 2 180  
+    #pragma add System Eventlog 2147489653 2 180  
     ```  
     Para interromper o envio de uma mensagem de interceptação sempre que o serviço de log de eventos for reiniciado, digite:  
     ```  
-    #pragma delete System "Eventlog" 2147489653  
+    #pragma delete System Eventlog 2147489653  
     ```  
     Para enviar mensagens de interceptação na Comunidade denominada public para o host com o endereço IP 192.168.100.100, digite:  
     ```  
@@ -91,5 +87,5 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
     ```  
     #pragma delete_TRAP_DEST private localhost  
     ```  
-    ## <a name="additional-references"></a>referências adicionais  
-- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+    ## <a name="additional-references"></a>Referências adicionais  
+- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

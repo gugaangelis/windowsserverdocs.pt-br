@@ -2,22 +2,18 @@
 title: Planejar uma implantação de cluster de acesso remoto
 description: Este tópico faz parte do guia implantar o acesso remoto em um cluster no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88ffd598-2fde-402c-bd12-be790f84dc96
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 943ec8d386d5fe9910b4415a2ab2525d23efc32e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9a3bf30f6de6472fdd67748a3a387eaa2068d5c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308259"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855249"
 ---
 # <a name="plan-a-remote-access-cluster-deployment"></a>Planejar uma implantação de cluster de acesso remoto
 

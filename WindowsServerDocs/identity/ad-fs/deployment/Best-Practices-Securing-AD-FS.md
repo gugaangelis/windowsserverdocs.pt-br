@@ -1,7 +1,7 @@
 ---
 ms.assetid: b7bf7579-ca53-49e3-a26a-6f9f8690762f
 title: Práticas recomendadas para proteger o AD FS e o proxy de aplicativo Web
-description: Este documento fornece as práticas recomendadas para o planejamento e a implantação seguros do Serviços de Federação do Active Directory (AD FS) (AD FS) e do proxy de aplicativo Web.
+description: Práticas recomendadas para o planejamento e a implantação seguros do Serviços de Federação do Active Directory (AD FS) (AD FS) e do proxy de aplicativo Web.
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 8206ddc43eab7a220a9f0f988c294c627bc8c977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517541"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853019"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Práticas recomendadas para proteger Serviços de Federação do Active Directory (AD FS)
 
@@ -83,7 +83,7 @@ Abaixo está a lista de pontos de extremidade que devem ser habilitados no proxy
 |/adfs/services/trust/13/usernamemixed|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo.
 |/adfs/oauth2|Este é usado para todos os aplicativos modernos (no local ou na nuvem) que você configurou para autenticar diretamente no AD FS (ou seja, não por meio do AAD)
 |/adfs/services/trust/mex|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo.
-|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml |Requisito para qualquer fluxo passivo; e usados pelo Office 365/Azure AD para verificar AD FS certificados
+|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml    |Requisito para qualquer fluxo passivo; e usados pelo Office 365/Azure AD para verificar AD FS certificados
 
 
 AD FS pontos de extremidade podem ser desabilitados no proxy usando o seguinte cmdlet do PowerShell:
@@ -109,11 +109,11 @@ A propriedade é `ExtendedProtectionTokenCheck`.  A configuração padrão é pe
 O proxy do serviço de Federação (parte do WAP) fornece controle de congestionamento para proteger o serviço de AD FS de uma inundação de solicitações.  O proxy de aplicativo Web rejeitará solicitações de autenticação de cliente externo se o servidor de Federação estiver sobrecarregado conforme detectado pela latência entre o proxy de aplicativo Web e o servidor de Federação.  Esse recurso é configurado por padrão com um nível de limite de latência recomendado.
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>Para verificar as configurações, você pode fazer o seguinte:
-1.  Em seu computador Proxy do Aplicativo Web, abra uma janela de comando privilegiado.
-2.  Navegue até o diretório do ADFS, em%WINDIR%\adfs\config.
-3.  Altere as configurações de controle de congestionamento de seus valores padrão para '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'.
-4.  Salve e feche o arquivo.
-5.  Reinicie o serviço AD FS executando ' net stop adfssrv ' e, em seguida, ' net start adfssrv '.
+1.    Em seu computador Proxy do Aplicativo Web, abra uma janela de comando privilegiado.
+2.    Navegue até o diretório do ADFS, em%WINDIR%\adfs\config.
+3.    Altere as configurações de controle de congestionamento de seus valores padrão para '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'.
+4.    Salve e feche o arquivo.
+5.    Reinicie o serviço AD FS executando ' net stop adfssrv ' e, em seguida, ' net start adfssrv '.
 Para sua referência, a orientação sobre esse recurso pode ser encontrada [aqui](https://msdn.microsoft.com/library/azure/dn528859.aspx ).
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>Verificações de solicitação HTTP padrão no proxy
@@ -124,7 +124,7 @@ O proxy também executa as seguintes verificações padrão em todo o tráfego:
 - O FS-P executa a validação de solicitação HTTP que filtra especificamente os cabeçalhos HTTP que não são exigidos pelo serviço AD FS.
 
 ## <a name="recommended-security-configurations"></a>Configurações de segurança recomendadas
-Certifique-se de que todos os servidores AD FS e WAP recebam as atualizações mais recentes a recomendação de segurança mais importante para sua infraestrutura de AD FS é garantir que você tenha um meio em vigor para manter seus servidores AD FS e WAP atualizados com todas as atualizações de segurança, bem como aqueles opcionais atualizações especificadas como importantes para AD FS nesta página.
+Certifique-se de que todos os servidores AD FS e WAP recebam as atualizações mais recentes a recomendação de segurança mais importante para sua infraestrutura de AD FS é garantir que você tenha um meio em vigor para manter seus servidores AD FS e WAP atualizados com todas as atualizações de segurança, bem como as atualizações opcionais especificadas como importantes para AD FS nesta página.
 
 A maneira recomendada para os clientes do Azure AD monitorarem e manterem sua infraestrutura atual é por meio de Azure AD Connect Health para AD FS, um recurso do Azure AD Premium.  Azure AD Connect Health inclui monitores e alertas que disparam se um AD FS ou computador WAP não tem uma das atualizações importantes especificamente para AD FS e WAP.
 

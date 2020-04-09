@@ -1,24 +1,20 @@
 ---
 title: openfiles
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38b1d27b86551c6d4cd9e6b1ad87bfc0e8dd221d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f684acc48fbb279ced8ce1dfb3a930ff15f3bf13
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372503"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837819"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -31,7 +27,7 @@ Este tópico inclui informações sobre os seguintes comandos:
 -   [Openfiles/Query](#BKMK_query)
 -   [o Openfiles/local](#BKMK_local)
 
-## <a name="BKMK_disconnect"></a>Openfiles/Disconnect
+## <a name="openfiles-disconnect"></a><a name=BKMK_disconnect></a>Openfiles/Disconnect
 
 Permite que um administrador desconecte arquivos e pastas que foram abertos remotamente por meio de uma pasta compartilhada.
 
@@ -41,7 +37,7 @@ Permite que um administrador desconecte arquivos e pastas que foram abertos remo
 openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/id <OpenFileID>] | [/a <AccessedBy>] | [/o {read | write | read/write}]} [/op <OpenFile>]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |            Parâmetro             |                                                                                                                                 Descrição                                                                                                                                  |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,7 +56,7 @@ Para desconectar todos os arquivos abertos com a ID de arquivo 26843578, digite:
 ```
 openfiles /disconnect /id 26843578
 ```
-Para desconectar todos os arquivos e diretórios abertos acessados pelo usuário "hiropln", digite:
+Para desconectar todos os arquivos e diretórios abertos acessados pelo usuário hiropln, digite:
 ```
 openfiles /disconnect /a hiropln
 ```
@@ -68,16 +64,16 @@ Para desconectar todos os arquivos e diretórios abertos com o modo de leitura/g
 ```
 openfiles /disconnect /o read/write
 ```
-Para desconectar o diretório com o nome de arquivo aberto "C:\TestShare\", independentemente de quem o está acessando, digite:
+Para desconectar o diretório com o nome de arquivo aberto C:\TestShare\, independentemente de quem o está acessando, digite:
 ```
-openfiles /disconnect /a * /op "c:\testshare\"
+openfiles /disconnect /a * /op c:\testshare\
 ```
-Para desconectar todos os arquivos abertos no computador remoto "srvmain" que estão sendo acessados pelo usuário "hiropln", independentemente de sua ID, digite:
+Para desconectar todos os arquivos abertos no computador remoto srvmain que estão sendo acessados pelo usuário hiropln, independentemente de sua ID, digite:
 ```
 openfiles /disconnect /s srvmain /u maindom\hiropln /id *
 ```
 
-## <a name="BKMK_query"></a>Openfiles/Query
+## <a name="openfiles-query"></a><a name=BKMK_query></a>Openfiles/Query
 
 Consulta e exibe todos os arquivos abertos.
 
@@ -87,7 +83,7 @@ Consulta e exibe todos os arquivos abertos.
 openfiles /query [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] [/fo {TABLE | LIST | CSV}] [/nh] [/v]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |          Parâmetro           |                                                                                                                                 Descrição                                                                                                                                  |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -113,7 +109,7 @@ Para consultar e exibir todos os arquivos abertos em formato de lista com inform
 ```
 openfiles /query /fo list /v
 ```
-Para consultar e exibir todos os arquivos abertos no sistema remoto "srvmain" usando as credenciais para o usuário "hiropln" no domínio "maindom", digite:
+Para consultar e exibir todos os arquivos abertos no sistema remoto srvmain usando as credenciais para o usuário hiropln no domínio maindom, digite:
 ```
 openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 ```
@@ -121,7 +117,7 @@ openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 > [!NOTE]
 > Neste exemplo, a senha é fornecida na linha de comando. Para evitar a exibição da senha, deixe a opção **/p** . Você será solicitado a fornecer a senha, que não será ecoada na tela.
 
-## <a name="BKMK_local"></a>o Openfiles/local
+## <a name="openfiles-local"></a><a name=BKMK_local></a>o Openfiles/local
 
 Habilita ou desabilita o sinalizador global da lista de objetos de manutenção do sistema. Se usado sem parâmetros, o **Openfiles/local** exibe o status atual do sinalizador global manter a lista de objetos.
 
@@ -131,7 +127,7 @@ Habilita ou desabilita o sinalizador global da lista de objetos de manutenção 
 openfiles /local [on | off]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -167,6 +163,6 @@ Para desabilitar o sinalizador global manter a lista de objetos, digite:
 openfiles /local off
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

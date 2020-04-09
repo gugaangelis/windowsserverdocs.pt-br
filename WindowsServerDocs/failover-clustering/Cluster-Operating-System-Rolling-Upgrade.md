@@ -1,18 +1,19 @@
 ---
-title: Upgrade sem interrupção do sistema operacional do cluster
+title: Atualização sem interrupção do sistema operacional do cluster
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: get-started-article
 ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
+manager: lizross
 ms.date: 03/27/2018
-ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 8b2ea665542d57b12899a5993a62973c446485a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948534"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828349"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>Atualização sem interrupção do sistema operacional do cluster
 
@@ -45,7 +46,7 @@ O cenário a seguir não tem suporte no Windows Server 2016:
 
 A atualização sem interrupção do sistema operacional do cluster tem suporte total pelo SCVMM (System Center Virtual Machine Manager) 2016. Se você estiver usando o SCVMM 2016, consulte [executar uma atualização sem interrupção de um cluster de host do Hyper-V para o Windows Server 2016 no VMM](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807) para obter orientação sobre como atualizar os clusters e automatizar as etapas descritas neste documento.  
 
-## <a name="requirements"></a>Requisitos  
+## <a name="requirements"></a>{1&gt;{2&gt;Requisitos&lt;2}&lt;1}  
 Conclua os seguintes requisitos antes de iniciar o processo de atualização sem interrupção do sistema operacional do cluster:
 
 - Comece com um cluster de failover executando o Windows Server (canal semestral), Windows Server 2016 ou Windows Server 2012 R2.
@@ -226,7 +227,7 @@ A atualização sem interrupção do sistema operacional do cluster inclui as se
         ![captura mostrando a saída do cmdlet Get-VMHostSupportedVersion](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
         **Figura 21: exibindo as versões de configuração de VM do Hyper-V com suporte no host**  
 
-   3. Em cada nó de host do Hyper-V no cluster, as versões de configuração da VM do Hyper-V podem ser atualizadas agendando uma breve janela de manutenção com usuários, fazendo backup, desativando máquinas virtuais e executando o cmdlet [`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) (consulte a Figura 22). Isso atualizará a versão da máquina virtual e habilitará novos recursos do Hyper-V, eliminando a necessidade de atualizações de IC (componente de integração do Hyper-V) futuras. Esse cmdlet pode ser executado a partir do nó do Hyper-V que está hospedando a VM ou o parâmetro `-ComputerName` pode ser usado para atualizar a versão da VM remotamente. Neste exemplo, atualizamos a versão de configuração do VM1 de 5,0 para 7,0 para aproveitar muitos novos recursos do Hyper-V associados a essa versão de configuração de VM, como pontos de verificação de produção (backups consistentes com aplicativos) e VM binária arquivo de configuração.  
+   3. Em cada nó de host do Hyper-V no cluster, as versões de configuração da VM do Hyper-V podem ser atualizadas agendando uma breve janela de manutenção com usuários, fazendo backup, desativando máquinas virtuais e executando o cmdlet [`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) (consulte a Figura 22). Isso atualizará a versão da máquina virtual e habilitará novos recursos do Hyper-V, eliminando a necessidade de atualizações de IC (componente de integração do Hyper-V) futuras. Esse cmdlet pode ser executado a partir do nó do Hyper-V que está hospedando a VM ou o parâmetro `-ComputerName` pode ser usado para atualizar a versão da VM remotamente. Neste exemplo, atualizamos a versão de configuração do VM1 de 5,0 para 7,0 para aproveitar os muitos recursos novos do Hyper-V associados a essa versão de configuração da VM, como pontos de verificação de produção (backups consistentes com o aplicativo) e o arquivo de configuração de VM binária.  
 
        ![captura mostrando o cmdlet Update-VMVersion em ação](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
        **Figura 22: atualizando uma versão de VM usando o cmdlet Update-VMVersion do PowerShell**  
@@ -277,7 +278,7 @@ Embora tenhamos como alvo cenários de nuvem privada, especificamente o Hyper-V 
 **Posso usar o SCVMM (System Center 2016 Virtual Machine Manager) para automatizar o processo de atualização sem interrupção do sistema operacional do cluster?**  
     Sim, você pode automatizar o processo de atualização sem interrupção do sistema operacional do cluster usando o VMM no System Center 2016.  
 
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte também  
 -   [Notas de versão: problemas importantes no Windows Server 2016](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
 -   [Novidades no Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [O que há de novo no clustering de failover no Windows Server](whats-new-in-failover-clustering.md)  

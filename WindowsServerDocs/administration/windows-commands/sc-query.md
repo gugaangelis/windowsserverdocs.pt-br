@@ -1,24 +1,20 @@
 ---
 title: Consulta SC
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d2f3f603ad173b5ab90bc56a9a4e589c0fe9d8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 38d83fa07e9f85f3a5a4b86388bbed41fcf326d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384336"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835279"
 ---
 # <a name="sc-query"></a>Consulta SC
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |       Parâmetro        |                                                                                                                          Descrição                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,10 +38,10 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
 |     > do \<ServiceName     |                                      Especifica o nome do serviço retornado pela operação **GetKeyName** . Esse parâmetro de **consulta** não é usado em conjunto com outros parâmetros de **consulta** (diferente de *ServerName*).                                      |
 |     Type = {driver      |                                                                                                                            serviço                                                                                                                            |
 |       tipo = {próprio       |                                                                                                                             compartilhar                                                                                                                             |
-|     estado = {ativo     |                                                                                                                           Inativo                                                                                                                            |
+|     estado = {ativo     |                                                                                                                           inativas                                                                                                                            |
 | bufsize = \<BufferSize > |                     Especifica o tamanho (em bytes) do buffer de enumeração. O tamanho do buffer padrão é 1.024 bytes. Você deve aumentar o tamanho do buffer de enumeração quando a exibição resultante de uma consulta exceder 1.024 bytes.                      |
 |   ri = \<ResumeIndex >   | Especifica o número de índice no qual a enumeração deve ser iniciada ou retomada. O valor padrão é **0** (zero). Use esse parâmetro em conjunto com o parâmetro **bufsize =** quando mais informações forem retornadas por uma consulta do que o buffer padrão pode exibir. |
-|  Group = \<GroupName >   |                                                                             Especifica o grupo de serviços a ser enumerado. Por padrão, todos os grupos são enumerados (**Group = ""** ).                                                                              |
+|  Group = \<GroupName >   |                                                                             Especifica o grupo de serviços a ser enumerado. Por padrão, todos os grupos são enumerados (* * Group = * *).                                                                              |
 |           /?           |                                                                                                             Exibe a ajuda no prompt de comando.                                                                                                              |
 
 ## <a name="remarks"></a>Comentários
@@ -62,7 +58,7 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   sc query bufsize= 1822 ri= 79
   ```
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para exibir informações somente para os serviços ativos, digite um dos seguintes comandos:
 ```
@@ -98,6 +94,6 @@ Para exibir informações de drivers no grupo de especificação de interface de
 sc query type= driver group= ndis
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

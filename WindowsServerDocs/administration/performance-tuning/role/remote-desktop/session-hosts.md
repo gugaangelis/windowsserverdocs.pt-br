@@ -4,15 +4,15 @@ description: Diretrizes de ajuste de desempenho para hosts de sessão Área de T
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS; DenisGun
+ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: b439b0cbab66f98a1f74faeb7bff996b30a188d5
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 3227bfe3bf21343ca9b7e85a07f550b4684a2fb7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812335"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851709"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 
@@ -58,7 +58,7 @@ A atividade de disco gerada em um servidor Host da Sessão RD típico afeta as s
 
 -   Perfis de usuário e dados de usuário
 
-O ideal é que essas áreas sejam submetidas a backup por dispositivos de armazenamento distintos. O uso de configurações de RAID distribuídas ou outros tipos de armazenamento de alto desempenho melhora ainda mais o desempenho. É altamente recomendável que você use adaptadores de armazenamento com cache de gravação com suporte de bateria. Os controladores com cache de gravação em disco oferecem suporte aprimorado para operações de gravação síncronas. Como todos os usuários têm um Hive separado, as operações de gravação síncrona são significativamente mais comuns em um servidor de Host da Sessão RD. Os hives do registro são salvos periodicamente no disco usando operações de gravação síncronas. Para habilitar essas otimizações, no console de gerenciamento de disco, abra a caixa de diálogo **Propriedades** do disco de destino e, na guia **políticas** , selecione **Habilitar cache de gravação no disco** e **desativar o buffer de cache de gravação do Windows liberando** nas caixas de seleção do dispositivo.
+O ideal é que essas áreas sejam submetidas a backup por dispositivos de armazenamento distintos. O uso de configurações de RAID distribuídas ou outros tipos de armazenamento de alto desempenho melhora ainda mais o desempenho. É altamente recomendável que você use adaptadores de armazenamento com cache de gravação com suporte de bateria. Os controladores com cache de gravação em disco oferecem suporte aprimorado para operações de gravação síncronas. Como todos os usuários têm um Hive separado, as operações de gravação síncrona são significativamente mais comuns em um servidor de Host da Sessão RD. Os hives do registro são salvos periodicamente no disco usando operações de gravação síncronas. Para habilitar essas otimizações, no console de gerenciamento de disco, abra a caixa de diálogo **Propriedades** do disco de destino e, na guia **políticas** , selecione **Habilitar cache de gravação no disco** e **desativar a liberação do buffer de cache de gravação do Windows** nas caixas de seleção do dispositivo.
 
 ### <a name="network-configuration"></a>Configuração de rede
 
@@ -132,7 +132,7 @@ Os ícones de notificação na área de trabalho podem ter mecanismos de atualiz
 
 ### <a name="remote-desktop-protocol-data-compression"></a>Compactação de dados protocolo RDP
 
-Protocolo RDP compactação pode ser configurada usando Política de Grupo em **configuração do computador** &gt; **modelos administrativos** &gt; **componentes do Windows** **&gt; serviços de área de trabalho remota &gt;** **Host da Sessão da Área de Trabalho Remota** &gt; **ambiente de sessão remota** &gt; **Configurar a compactação para dados do RemoteFX**. Três valores são possíveis:
+Protocolo RDP compactação pode ser configurada usando Política de Grupo em **configuração do computador** &gt; **modelos administrativos** &gt; componentes do **Remote Desktop Session Host** **Windows** **&gt; serviços de área de trabalho remota &gt; host da sessão da área de trabalho remota** ambiente de **sessão remota** &gt; **Configurar a compactação para dados do RemoteFX**.&gt; Três valores são possíveis:
 
 -   **Otimizado para usar menos memória** Consome a menor quantidade de memória por sessão, mas tem a menor taxa de compactação e, portanto, o consumo de largura de banda mais alto.
 
@@ -144,7 +144,7 @@ Você também pode optar por não usar um algoritmo de compactação protocolo R
 
 ### <a name="device-redirection"></a>Redirecionamento de dispositivo
 
-O redirecionamento de dispositivo pode ser configurado usando Política de Grupo em **configuração do computador** &gt; **modelos administrativos** &gt; **componentes do Windows** &gt; serviços de área de trabalho remota **remoto Host de sessão de desktop** &gt; **redirecionamento de dispositivo e recurso** ou usando a caixa de propriedades **coleção de sessões** no Gerenciador do servidor.
+O redirecionamento de dispositivo pode ser configurado usando Política de Grupo em configuração do **computador** &gt; **modelos administrativos** &gt; **componentes** do Windows **Remote Desktop Session Host** **&gt; serviços de área de trabalho remota &gt; host da sessão da área de trabalho remota** **redirecionamento de dispositivo e recurso** ou usando a caixa Propriedades da **coleção de sessões** no &gt;.
 
 Geralmente, o redirecionamento de dispositivo aumenta a quantidade de largura de banda de rede Host da Sessão RD conexões do servidor, pois os dados são trocados entre dispositivos nos computadores cliente e processos que estão em execução na sessão do servidor. A extensão do aumento é uma função da frequência das operações executadas pelos aplicativos que estão em execução no servidor em relação aos dispositivos redirecionados.
 

@@ -1,28 +1,22 @@
 ---
 title: diskperf
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para diskperf, que pode ser usado para habilitar ou desabilitar remotamente os contadores de desempenho de disco físico ou lógico em computadores que executam o Windows 2000.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f06916e8-069b-4ec8-a6eb-59f1d9f77111
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 829f0284d761e6a5134011fa1dff99646d55fc13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b07471c051d57d0279e4fd8b38afdc4acdc4069
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377815"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845459"
 ---
 # <a name="diskperf"></a>diskperf
-
-
 
 No Windows 2000, os contadores de desempenho de disco físico e lógico não estão habilitados por padrão.
 
@@ -34,9 +28,9 @@ O **diskperf** está incluído no Windows XP, no windows Server 2003, no windows
 diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 ```
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
-|Opção|Descrição|
+|{1&gt;Opção&lt;1}|Descrição|
 |------|-----------|
 |-?|Exibe a ajuda contextual.|
 |-Y|Inicie todos os contadores de desempenho de disco quando o computador for reiniciado.|

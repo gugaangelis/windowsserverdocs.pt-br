@@ -1,28 +1,22 @@
 ---
 title: setlocal
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para setlocal, que inicia a localização de variáveis de ambiente em um arquivo em lotes.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 997c996854f488bb1776f135e3288e3b094e683c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 24ed41289bb517d41db11fd3ebc41e5751b7afd9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384091"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834359"
 ---
 # <a name="setlocal"></a>setlocal
-
-
 
 Inicia a localização de variáveis de ambiente em um arquivo em lotes. A localização continua até que um comando **ENDLOCAL** correspondente seja encontrado ou o final do arquivo em lotes seja atingido.
 
@@ -36,7 +30,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 ## <a name="arguments"></a>Argumentos
 
-|Argumento|Descrição|
+|{1&gt;Argumento&lt;1}|Descrição|
 |--------|-----------|
 |enableextensions|Habilita as extensões de comando até que o comando **ENDLOCAL** correspondente seja encontrado, independentemente da configuração antes da execução do comando **setlocal** .|
 |disableextensions|Desabilita as extensões de comando até que o comando **ENDLOCAL** correspondente seja encontrado, independentemente da configuração antes da execução do comando **setlocal** .|
@@ -63,9 +57,9 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    Como o **cmd** não define a variável ERRORLEVEL quando as extensões de comando são desabilitadas, o comando **Verify** Inicializa a variável ERRORLEVEL para um valor diferente de zero quando você a usa com um argumento inválido. Além disso, se você usar o comando **setlocal** com argumentos {**ENABLEEXTENSIONS** | **disableextensions**} ou {**enabledelayedexpansion** | **disabledelayedexpansion**} e não definir a variável ERRORLEVEL para **1**, as extensões de comando não estão disponíveis.
+    Como o **cmd** não define a variável ERRORLEVEL quando as extensões de comando são desabilitadas, o comando **Verify** Inicializa a variável ERRORLEVEL para um valor diferente de zero quando você a usa com um argumento inválido. Além disso, se você usar o comando **setlocal** com argumentos {**ENABLEEXTENSIONS** | **disableextensions**} ou {**enabledelayedexpansion** | **disabledelayedexpansion**} e não definir a variável ERRORLEVEL como **1**, as extensões de comando não estarão disponíveis.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Você pode localizar variáveis de ambiente em um arquivo em lotes, conforme mostrado no seguinte script de exemplo:
 ```
@@ -82,6 +76,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

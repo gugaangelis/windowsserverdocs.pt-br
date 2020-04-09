@@ -1,26 +1,22 @@
 ---
-title: Corrige
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: corrige
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f84f661-f3cd-48c8-bf08-87819cf626fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 88293422519488405d94e32596c81dbe4a697dee
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 46b98938394c10e31d4999ff0e060e10f7da9bdc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371532"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835929"
 ---
-# <a name="repair"></a>Corrige
+# <a name="repair"></a>corrige
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -34,7 +30,7 @@ Repara o volume RAID\-5 com foco, substituindo a região do disco com falha pelo
 repair disk=<n> [align=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 | Parâmetro  |                                                                                             Descrição                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,15 +44,15 @@ repair disk=<n> [align=<n>] [noerr]
   
 -   Um volume em uma matriz RAID\-5 deve ser selecionado para que essa operação seja realizada com sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para substituir o volume com foco, substituindo-o pelo disco dinâmico 4, digite:  
   
 ```  
 repair disk=4  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

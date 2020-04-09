@@ -1,28 +1,22 @@
 ---
-title: copy
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: copiar
+description: Tópico de comandos do Windows para cópia, que copia um ou mais arquivos de um local para outro.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 102fd6b59516b04b8986ee47b52f521be73f04de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f1ba088f62dec574a23406683bf5ae3d13c1e86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379043"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847139"
 ---
-# <a name="copy"></a>copy
-
-
+# <a name="copy"></a>copiar
 
 Copia um ou mais arquivos de um local para outro.
 
@@ -34,20 +28,20 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a | /b] [+ ...]] [<Destination> [/a | /b]]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |/d|Permite que os arquivos criptografados que estão sendo copiados sejam salvos como arquivos descriptografados no destino.|
 |/v|Verifica se os novos arquivos foram gravados corretamente.|
-|opção|Usa um nome de arquivo curto, se disponível, ao copiar um arquivo com um nome com mais de oito caracteres ou com uma extensão de nome de arquivo com mais de três caracteres.|
+|/n|Usa um nome de arquivo curto, se disponível, ao copiar um arquivo com um nome com mais de oito caracteres ou com uma extensão de nome de arquivo com mais de três caracteres.|
 |/y|Suprime a solicitação para confirmar que você deseja substituir um arquivo de destino existente.|
 |/-y|Solicita que você confirme se deseja substituir um arquivo de destino existente.|
 |/z|Copia arquivos em rede no modo reiniciável.|
-|SRDF|Indica um arquivo de texto ASCII.|
-|/b.|Indica um arquivo binário.|
-|\<Source >|Obrigatório. Especifica o local do qual você deseja copiar um arquivo ou conjunto de arquivos. A *origem* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
-|\<Destination >|Obrigatório. Especifica o local para o qual você deseja copiar um arquivo ou conjunto de arquivos. O *destino* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
+|/a|Indica um arquivo de texto ASCII.|
+|/b|Indica um arquivo binário.|
+|> de origem do \<|Obrigatório. Especifica o local do qual você deseja copiar um arquivo ou conjunto de arquivos. A *origem* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
+|\<de destino >|Obrigatório. Especifica o local para o qual você deseja copiar um arquivo ou conjunto de arquivos. O *destino* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -77,7 +71,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     Se **/y** for predefinido na variável de ambiente COPYCMD, você poderá substituir essa configuração usando **/-y** na linha de comando. Por padrão, você receberá uma solicitação quando substituir essa configuração, a menos que o comando de **cópia** seja executado em um script em lote.
 -   Anexando arquivos
 
-    Para acrescentar arquivos, especifique um único arquivo para o *destino*, mas vários arquivos para *origem* (use caracteres curinga ou *arquivo1*+*arquivo2*+ formato*arquivo3* ).
+    Para acrescentar arquivos, especifique um único arquivo para *destino*, mas vários arquivos para *origem* (use caracteres curinga ou *file1*+*arquivo2*+formato *arquivo3* ).
 -   Usando **/z**
 
     Se a conexão for perdida durante a fase de cópia (por exemplo, se o servidor ficar offline interromper a conexão), **Copy/z** retomará após a conexão ser restabelecida. **/z** também exibe a porcentagem da operação de cópia concluída para cada arquivo.
@@ -112,7 +106,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     Para copiar todos os arquivos e subdiretórios de um diretório, use o comando **xcopy** .
 -   O comando de **cópia** , com parâmetros diferentes, está disponível no console de recuperação.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para copiar um arquivo chamado Memo. doc para o Letter. doc na unidade atual e garantir que um caractere de fim de arquivo (CTRL + Z) esteja no final do arquivo copiado, digite:
 ```
@@ -153,6 +147,6 @@ Para combinar todos os arquivos com a extensão. txt e, em seguida, combinar tod
 copy *.txt + *.ref Combined.doc
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

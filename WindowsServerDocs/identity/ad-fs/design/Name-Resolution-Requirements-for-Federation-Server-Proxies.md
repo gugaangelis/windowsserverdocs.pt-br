@@ -1,7 +1,6 @@
 ---
 ms.assetid: c28c60ff-693d-49ee-a75b-58f24866217b
 title: Requisitos de resolução de nome para proxies de servidor de federação
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 51176101b471ec940e2b43a95e1a1a8d37b394f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47c5bd23d3ba82c3df81c71951c2a50db0fe99d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408063"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853039"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>Requisitos de resolução de nome para proxies de servidor de federação
 
@@ -38,7 +37,7 @@ A ilustração a seguir e as etapas correspondentes mostram como cada uma dessas
 Para obter mais informações sobre como configurar um endereço IP de cluster ou um FQDN de cluster usando NLB, consulte [especificando os parâmetros de cluster](https://go.microsoft.com/fwlink/?LinkId=75282).  
   
 ### <a name="1-configure-the-hosts-file-on-the-federation-server-proxy"></a>1. Configurar o arquivo de hosts no proxy do servidor de federação  
-Como o DNS na rede de perímetro está configurado para resolver todas as solicitações de fs.fabrikam.com para o proxy do servidor de Federação da conta, o proxy do servidor de Federação do parceiro de conta tem uma entrada em seu arquivo hosts local para resolver fs.fabrikam.com para o endereço IP do servidor de Federação da conta real \(ou nome DNS do cluster para o\) do farm de servidores de Federação que está conectado à rede corporativa Isso possibilita que o proxy de servidor de Federação de conta resolva o nome de host fs.fabrikam.com para o servidor de Federação de conta em vez de ser o próprio — como ocorreria se tentasse Pesquisar fs.fabrikam.com usando o DNS de perímetro — para que a Federação o proxy do servidor pode se comunicar com o servidor de Federação.  
+Como o DNS na rede de perímetro está configurado para resolver todas as solicitações de fs.fabrikam.com para o proxy do servidor de Federação da conta, o proxy do servidor de Federação do parceiro de conta tem uma entrada em seu arquivo hosts local para resolver fs.fabrikam.com para o endereço IP do servidor de Federação da conta real \(ou nome DNS do cluster para o\) do farm de servidores de Federação que está conectado à rede corporativa Isso possibilita que o proxy de servidor de Federação de conta resolva o nome de host fs.fabrikam.com para o servidor de Federação de conta em vez de ser o próprio — como ocorreria se tentasse Pesquisar fs.fabrikam.com usando o DNS de perímetro — para que o proxy do servidor de federação possa se comunicar com o servidor de Federação.  
   
 ### <a name="2-configure-perimeter-dns"></a>2. Configurar DNS de perímetro  
 Como há apenas um único nome de host AD FS para o qual os computadores cliente são direcionados — estejam eles em uma intranet ou na Internet — os computadores cliente na Internet que usam o servidor DNS de perímetro devem resolver o FQDN do servidor de Federação de conta \(fs.fabrikam.com\) para o endereço IP do proxy de servidor de Federação de conta na rede de perímetro. Para que ele possa encaminhar clientes para o proxy de servidor de Federação de conta ao tentar resolver fs.fabrikam.com, o DNS de perímetro contém uma zona DNS corp.fabrikam.com limitada com um único host \(um registro de recurso\) para FS \(fs.fabrikam.com\) e o endereço IP do proxy de servidor de Federação de conta na rede de perímetro.  
@@ -59,7 +58,7 @@ A ilustração a seguir e as etapas correspondentes mostram como cada uma dessas
 ### <a name="1-configure-perimeter-dns"></a>1. Configurar DNS de perímetro  
 Para esse cenário, como supõe-se que você configurará a zona DNS da Internet que você controla para resolver solicitações feitas para uma URL de ponto de extremidade específica \(ou seja, fs.fabrikam.com\) ao proxy do servidor de Federação na rede de perímetro, você também deve configurar a zona no DNS de perímetro para encaminhar essas solicitações para o servidor de Federação na rede corporativa.  
   
-Para que os clientes possam ser encaminhados para o servidor de Federação de conta quando tentarem resolver fs.fabrikam.com, o DNS de perímetro é configurado com um único host \(um registro de recurso\) para FS \(fs.fabrikam.com\) e o endereço IP do servidor de Federação da conta na rede corporativa. Isso possibilita que o proxy de servidor de Federação de conta resolva o nome de host fs.fabrikam.com para o servidor de Federação de conta em vez de ser o próprio — como ocorreria se tentasse procurar fs.fabrikam.com usando o DNS da Internet — para que o servidor de Federação o proxy pode se comunicar com o servidor de Federação.  
+Para que os clientes possam ser encaminhados para o servidor de Federação de conta quando tentarem resolver fs.fabrikam.com, o DNS de perímetro é configurado com um único host \(um registro de recurso\) para FS \(fs.fabrikam.com\) e o endereço IP do servidor de Federação da conta na rede corporativa. Isso possibilita que o proxy de servidor de Federação de conta resolva o nome de host fs.fabrikam.com para o servidor de Federação de conta em vez de ser o próprio — como ocorreria se tentasse procurar fs.fabrikam.com usando o DNS da Internet — para que o proxy do servidor de federação possa se comunicar com o servidor de Federação.  
   
 ### <a name="2-configure-internet-dns"></a>2. Configurar DNS da Internet  
 Para a resolução de nome ser bem-sucedida neste cenário, todas as solicitações de computadores cliente na Internet para fs.fabrikam.com devem ser resolvidas pela zona DNS da Internet que você controla. Consequentemente, você deve configurar sua zona DNS de Internet para encaminhar solicitações de cliente para fs.fabrikam.com para o endereço IP do proxy de servidor de Federação de conta na rede de perímetro.  

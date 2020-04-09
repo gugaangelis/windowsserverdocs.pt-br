@@ -1,24 +1,20 @@
 ---
 title: rdpsign
 description: Saiba como assinar digitalmente um arquivo RDP.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 406563a07d3760c2846c201410f3a7b8f1c2829b
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: c9df46ab09b758cbd86334d5b418c876c41f0eff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588051"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836669"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -35,14 +31,14 @@ para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_example
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------|--------|
 |> hash \</SHA1|Especifica a impressão digital, que é o hash Secure Hash Algorithm 1 (SHA1) do certificado de autenticação que está incluído no repositório de certificados. Usado no Windows Server 2012 R2 e mais antigo.|
 |> hash \</SHA256|Especifica a impressão digital, que é o hash do algoritmo de hash seguro 256 (SHA256) do certificado de autenticação que está incluído no repositório de certificados. Substitui/SHA1 no Windows Server 2016 e mais recente.|
 |/q|Modo silencioso. Nenhuma saída quando o comando for bem sucedido e a saída mínima se o comando falhar.|
-|/v|modo detalhado. Exibe todos os avisos, mensagens e status.|
+|/v|Modo detalhado. Exibe todos os avisos, mensagens e status.|
 |/l|Testa os resultados de assinatura e saída sem realmente substituir nenhum dos arquivos de entrada.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -56,7 +52,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   Os arquivos de saída assinados substituirão os arquivos de entrada.
 -   Se qualquer um dos arquivos. rdp não puder ser lido ou gravado, a ferramenta continuará para o próximo arquivo se vários arquivos forem especificados.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 - Para assinar um arquivo. rdp chamado arquivo1. rdp, navegue até a pasta em que você salvou o arquivo. RDP e, em seguida, digite o seguinte:
   ```
   rdpsign /sha1 hash file1.rdp
@@ -72,5 +68,5 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
   ## <a name="see-also"></a>Consulte também
-  [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)
+  - [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+  [referência de comando serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,24 +1,20 @@
 ---
 title: wmic
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para WMIC, que exibe informações de WMI dentro de um shell de comando interativo.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76397c72-d06f-4cea-88cf-c7603315a983
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 03ba4ecb4b12b03e010318bf6ca260dec00f28f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781323"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829049"
 ---
 # <a name="wmic"></a>wmic
 
@@ -40,12 +36,12 @@ Os seguintes subcomandos estão disponíveis o tempo todo:
 
 |Subcomando|Descrição|
 |-----------|-----------|
-|class|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
+|{1&gt;classe&lt;1}|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
 |path|Sai do modo de alias padrão do WMIC para acessar instâncias diretamente no esquema do WMI.|
-|noticioso|Exibe os valores atuais de todas as opções globais.|
+|contexto|Exibe os valores atuais de todas as opções globais.|
 |[sair \| sair]|Sai do Shell de comando do WMIC.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para exibir os valores atuais de todas as opções globais, digite:
 ```
@@ -75,6 +71,6 @@ Para alterar a ID de idioma usada pela linha de comando para inglês (ID de loca
 wmic /locale:ms_409
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

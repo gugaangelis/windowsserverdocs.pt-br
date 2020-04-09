@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8f994e2e-6c07-43f0-aef4-75f8b2c9a144
 title: Manter um ambiente mais seguro
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b058fb084b0c46010ba03a11a45e840aa902c7b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a22b1a0d776540e8ee2f2c223a1087bd88adaa47
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367677"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821169"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>Manter um ambiente mais seguro
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Law número dez: A tecnologia não é uma solução completa.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número da lei dez: a tecnologia não é uma solução.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
   
 Quando você tiver criado um ambiente gerenciável e seguro para seus ativos de negócios críticos, seu foco deverá mudar para garantir que ele seja mantido com segurança. Embora você tenha recebido controles técnicos específicos para aumentar a segurança de suas instalações de AD DS, a tecnologia sozinha não protegerá um ambiente no qual ela não funciona em parceria com a empresa para manter uma infraestrutura segura e utilizável. As recomendações de alto nível nesta seção devem ser usadas como diretrizes que você pode usar para desenvolver não apenas a segurança efetiva, mas o gerenciamento eficiente do ciclo de vida.  
   
@@ -40,12 +39,12 @@ Quando dados e sistemas são introduzidos em Active Directory sem proprietários
 ### <a name="assign-a-business-owner-to-active-directory-data"></a>Atribuir um proprietário da empresa a dados de Active Directory  
 Os dados no Active Directory devem ter um proprietário de negócios identificado, ou seja, um departamento ou usuário especificado que seja o ponto de contato para decisões sobre o ciclo de vida do ativo. Em alguns casos, o proprietário da empresa de um componente do Active Directory será um departamento de ti ou usuário. Componentes de infraestrutura, como controladores de domínio, servidores DHCP e DNS, e Active Directory provavelmente serão "de propriedade". Para dados que são adicionados a AD DS para dar suporte à empresa (por exemplo, novos funcionários, novos aplicativos e novos repositórios de informações), uma unidade de negócios ou um usuário designado deve ser associado aos dados.  
   
-Se você usar Active Directory para registrar a propriedade dos dados no diretório ou se você implementar um banco de dado separado para acompanhar ativos de ti, nenhuma conta de usuário deverá ser criada, nenhum servidor ou estação de trabalho deve ser instalado e nenhum aplicativo deve ser implantado sem um proprietário designado do registro. A tentativa de estabelecer a propriedade dos sistemas depois que eles foram implantados na produção pode ser desafiadora na melhor das hipóteses e não é possível em alguns casos. Portanto, a propriedade deve ser estabelecida no momento em que os dados são introduzidos em Active Directory.  
+Se você usar Active Directory para registrar a propriedade dos dados no diretório, ou se você implementar um banco de dado separado para acompanhar ativos de ti, nenhuma conta de usuário deverá ser criada, nenhum servidor ou estação de trabalho deverá ser instalado e nenhum aplicativo deverá ser implantado sem um proprietário designado do registro. A tentativa de estabelecer a propriedade dos sistemas depois que eles foram implantados na produção pode ser desafiadora na melhor das hipóteses e não é possível em alguns casos. Portanto, a propriedade deve ser estabelecida no momento em que os dados são introduzidos em Active Directory.  
   
 ### <a name="implement-business-driven-lifecycle-management"></a>Implementar o gerenciamento do ciclo de vida orientado aos negócios  
 O gerenciamento do ciclo de vida deve ser implementado para todos os dados no Active Directory. Por exemplo, quando um novo aplicativo é introduzido em um domínio Active Directory, o proprietário de negócios do aplicativo deve, em intervalos regulares, ser atestado para o uso contínuo do aplicativo. Quando uma nova versão de um aplicativo é liberada, o proprietário da empresa do aplicativo deve ser informado e deve decidir se e quando a nova versão será implementada.  
   
-Se um proprietário de negócios optar por não aprovar a implantação de uma nova versão de um aplicativo, o proprietário da empresa também deverá ser notificado sobre a data em que a versão atual não terá mais suporte e deverá ser responsável por determinar se o aplicativo irá ser descomissionado ou substituído. Manter aplicativos herdados em execução e sem suporte não deve ser uma opção.  
+Se um proprietário de negócios optar por não aprovar a implantação de uma nova versão de um aplicativo, o proprietário da empresa também deverá ser notificado sobre a data em que a versão atual não terá mais suporte e deverá ser responsável por determinar se o aplicativo será encerrado ou substituído. Manter aplicativos herdados em execução e sem suporte não deve ser uma opção.  
   
 Quando as contas de usuário são criadas no Active Directory, seus gerentes de registro devem ser notificados na criação do objeto e necessários para atestar a validade da conta em intervalos regulares. Ao implementar um ciclo de vida orientado por negócios e um atestado regular da validade dos dados, as pessoas que são mais bem equipadas para identificar anomalias nos dados são as pessoas que revisam os dados.  
   
@@ -60,7 +59,7 @@ Algumas organizações implementam políticas de classificação de dados que ro
   
 Em seu modelo de classificação de dados, você deve incluir classificação para dados de AD DS, como o seguinte.  
   
-### <a name="systems"></a>Sistemas  
+### <a name="systems"></a>Systems  
 Você não deve apenas classificar dados, mas também suas populações de servidor. Para cada servidor, você deve saber qual sistema operacional está instalado, quais funções gerais o servidor fornece, quais aplicativos estão em execução no servidor, o proprietário do registro e o proprietário comercial do registro, quando aplicável. Para todos os dados ou aplicativos em execução no servidor, você deve precisar de classificação e o servidor deve ser protegido de acordo com os requisitos para as cargas de trabalho que ele suporta e as classificações aplicadas ao sistema e aos dados. Você também pode agrupar servidores pela classificação de suas cargas de trabalho, o que permite identificar rapidamente os servidores que devem ser os mais bem monitorados e mais rigorosamente configurados.  
   
 ### <a name="applications"></a>Aplicativos  
@@ -69,11 +68,11 @@ Você deve classificar os aplicativos por funcionalidade (o que eles fazem), a b
 ### <a name="users"></a>Usuários  
 Se você chamá-los de usuários "VIP", contas críticas ou usar um rótulo diferente, as contas em suas Active Directory instalações com maior probabilidade de serem direcionadas por invasores devem ser marcadas e monitoradas. Na maioria das organizações, simplesmente não é possível monitorar todas as atividades de todos os usuários. No entanto, se for possível identificar as contas críticas em sua instalação do Active Directory, você poderá monitorar essas contas em busca de alterações, conforme descrito anteriormente neste documento.  
   
-Você também pode começar a criar um banco de dados de "comportamentos esperados" para essas contas à medida que audita as contas. Por exemplo, se você descobrir que um determinado executivo usa sua estação de trabalho protegida para acessar dados críticos para os negócios de seu escritório e de sua casa, mas raramente de outros locais, se você vir tentativas de acessar dados usando sua conta de um computador não autorizado ou um no local em metade do planeta em que você sabe que o executivo não está localizado atualmente, você pode identificar e investigar mais rapidamente esse comportamento anormal.  
+Você também pode começar a criar um banco de dados de "comportamentos esperados" para essas contas à medida que audita as contas. Por exemplo, se você descobrir que um executivo específico usa sua estação de trabalho protegida para acessar dados críticos de negócios de seu escritório e de sua casa, mas raramente de outros locais, se você vir tentativas de acessar dados usando sua conta de um computador não autorizado ou um local no meio do planeta em que você sabe que o executivo não está localizado no momento, você pode identificar e investigar mais rapidamente esse comportamento anormal.  
   
 Ao integrar as informações de negócios à sua infraestrutura, você pode usar essas informações comerciais para ajudá-lo a identificar falsos positivos. Por exemplo, se a viagem Executiva for registrada em um calendário acessível para a equipe de ti responsável por monitorar o ambiente, você poderá correlacionar as tentativas de conexão com os locais conhecidos dos executivos.  
   
-Digamos que o executivo A está localizado normalmente em Chicago e usa uma estação de trabalho protegida para acessar dados críticos para os negócios de sua mesa, e um evento é disparado por uma tentativa com falha de acessar os dados de uma estação de trabalho desprotegida localizada em Atlanta. Se for possível verificar se o executivo está atualmente em Atlanta, você pode resolver o evento entrando em contato com o executivo ou com o assistente do executivo para determinar se a falha de acesso foi o resultado do executivo esquecer de usar a estação de trabalho protegida para acessar os dados. Ao construir um programa que usa as abordagens descritas em [planejamento para o comprometimento](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md), você pode começar a criar um banco de dados de comportamentos esperados para as contas mais "importantes" em sua instalação do Active Directory, o que pode ajudar mais Descubra e responda rapidamente a ataques.  
+Digamos que o executivo A está localizado normalmente em Chicago e usa uma estação de trabalho protegida para acessar dados críticos para os negócios de sua mesa, e um evento é disparado por uma tentativa com falha de acessar os dados de uma estação de trabalho desprotegida localizada em Atlanta. Se for possível verificar se o executivo está atualmente em Atlanta, você pode resolver o evento entrando em contato com o executivo ou com o assistente do executivo para determinar se a falha de acesso foi o resultado do executivo esquecer de usar a estação de trabalho protegida para acessar os dados. Ao construir um programa que usa as abordagens descritas em [planejamento para o comprometimento](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md), você pode começar a criar um banco de dados de comportamentos esperados para as contas mais "importantes" na instalação do Active Directory que podem ajudá-lo a descobrir e responder a ataques com mais rapidez.  
   
 
 

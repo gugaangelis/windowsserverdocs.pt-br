@@ -1,24 +1,20 @@
 ---
 title: Excluir SC
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2fe94fb3-e4d1-47b5-b999-39995ecbb644
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad64d0f7c772b8d29a191b5f3e690d74c8765717
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05b276de04d4250cc03e4b2976bf8c1330ef82ce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371279"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835379"
 ---
 # <a name="sc-delete"></a>Excluir SC
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 sc [<ServerName>] delete [<ServiceName>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -53,6 +49,6 @@ Para excluir a subchave de serviço **NewServ** do registro no computador local,
 sc delete newserv
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

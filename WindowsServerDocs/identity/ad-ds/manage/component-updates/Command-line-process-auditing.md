@@ -1,7 +1,6 @@
 ---
 ms.assetid: c8597cc8-bdcb-4e59-a09e-128ef5ebeaf8
 title: Auditoria de processo de linha de comando
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5d5ab971327ab7ec16bf2748571882458cc38f72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6cba306a36589d8b585b23ecb43e7d16b7d201
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368990"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823069"
 ---
 # <a name="command-line-process-auditing"></a>Auditoria de processo de linha de comando
 
@@ -74,7 +73,7 @@ Volume de eventos: de baixo para médio, dependendo do uso do sistema
 |**Configuração**|**Incluir linha de comando em eventos de criação de processo**|  
 |**Configuração padrão**|Não configurado (não habilitado)|  
 |**Com suporte em:**|?|  
-|**Descrição**|Essa configuração de política determina quais informações são registradas nos eventos de auditoria de segurança quando um novo processo é criado.<br /><br />Essa configuração se aplica somente quando a política de criação de processo de auditoria está habilitada. Se você habilitar essa configuração de política, as informações de linha de comando para cada processo serão registradas em texto sem formatação no log de eventos de segurança como parte do evento de criação de processo de auditoria 4688, "um novo processo foi criado" nas estações de trabalho e servidores nos quais essa política a configuração é aplicada.<br /><br />Se você desabilitar ou não definir essa configuração de política, as informações de linha de comando do processo não serão incluídas nos eventos de criação do processo de auditoria.<br /><br />Padrão: não configurado<br /><br />Observação: quando essa configuração de política estiver habilitada, qualquer usuário com acesso para ler os eventos de segurança poderá ler os argumentos de linha de comando para qualquer processo criado com êxito. Argumentos de linha de comando podem conter informações confidenciais ou privadas, como senhas ou dados de usuário.|  
+|**Descrição**|Essa configuração de política determina quais informações são registradas nos eventos de auditoria de segurança quando um novo processo é criado.<p>Essa configuração se aplica somente quando a política de criação de processo de auditoria está habilitada. Se você habilitar essa configuração de política, as informações de linha de comando para cada processo serão registradas em texto sem formatação no log de eventos de segurança como parte do evento de criação de processo de auditoria 4688, "um novo processo foi criado" nas estações de trabalho e servidores nos quais essa configuração de política é aplicada.<p>Se você desabilitar ou não definir essa configuração de política, as informações de linha de comando do processo não serão incluídas nos eventos de criação do processo de auditoria.<p>Padrão: não configurado<p>Observação: quando essa configuração de política estiver habilitada, qualquer usuário com acesso para ler os eventos de segurança poderá ler os argumentos de linha de comando para qualquer processo criado com êxito. Argumentos de linha de comando podem conter informações confidenciais ou privadas, como senhas ou dados de usuário.|  
   
 ![auditoria de linha de comando](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
   
@@ -89,13 +88,13 @@ O procedimento a seguir mostra como evitar conflitos, bloqueando a aplicação d
   
 1.  Abra o console de gerenciamento do Política de Grupo  
   
-2.  Clique com o botão direito do mouse em política de domínio padrão e clique em Editar.  
+2.  Clique com o botão direito do mouse em Diretiva de Domínio Padrão e clique em Editar.  
   
-3.  Clique duas vezes em configuração do computador, clique duas vezes em políticas e clique duas vezes em configurações do Windows.  
+3.  Clique duas vezes em Configuração do Computador, clique duas vezes em Políticas e clique duas vezes em Configurações do Windows.  
   
 4.  Clique duas vezes em configurações de segurança, clique duas vezes em políticas locais e em opções de segurança.  
   
-5.  Clique duas vezes em auditoria: forçar as configurações de subcategoria da política de auditoria (Windows Vista ou posterior) para substituir as configurações de categoria da política de auditoria e clique em definir essa configuração de política.  
+5.  Clique duas vezes em Auditoria: forçar configurações de subcategorias de diretivas de auditoria (Windows Vista ou superior) para substituir configurações de categorias de diretivas de auditoria e clique em Definir esta configuração de política.  
   
 6.  Clique em habilitado e em OK.  
   

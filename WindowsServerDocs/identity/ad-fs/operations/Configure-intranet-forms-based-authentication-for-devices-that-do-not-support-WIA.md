@@ -1,7 +1,6 @@
 ---
 ms.assetid: d562ef46-f240-48be-bbd4-fd88fc6bbbdc
 title: Configurando a autenticação baseada em formulários de intranet para dispositivos que não dão suporte a WIA
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,17 +8,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09172b3fcfcedf0888205d099409647a6e077577
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: 7db040d98317cee67e78493b2210f33279221aa9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856350"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817039"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>Configurando a autenticação baseada em formulários de intranet para dispositivos que não dão suporte a WIA
 
 
-Por padrão, a autenticação integrada do Windows (WIA) é habilitada no Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2 para solicitações de autenticação que ocorrem na rede interna da organização (intranet) para qualquer aplicativo que usa um navegador para sua autenticação. Por exemplo, eles podem ser aplicativos baseados em navegador que usam protocolos WS-Federation ou SAML e aplicativos avançados que usam o protocolo OAuth. O WIA fornece aos usuários finais um logon contínuo para os aplicativos sem precisar inserir manualmente suas credenciais. No entanto, alguns dispositivos e navegadores não são capazes de dar suporte a WIA e, como resultado, solicitações de autenticação desses dispositivos falham. Além disso, a experiência em determinados navegadores que negociam com o NTLM não é desejável. A abordagem recomendada é fazer fallback para a autenticação baseada em formulários para esses dispositivos e navegadores.
+Por padrão, a autenticação integrada do Windows (WIA) é habilitada no Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2 para solicitações de autenticação que ocorrem na rede interna da organização (intranet) para qualquer aplicativo que use um navegador para sua autenticação. Por exemplo, eles podem ser aplicativos baseados em navegador que usam protocolos WS-Federation ou SAML e aplicativos avançados que usam o protocolo OAuth. O WIA fornece aos usuários finais um logon contínuo para os aplicativos sem precisar inserir manualmente suas credenciais. No entanto, alguns dispositivos e navegadores não são capazes de dar suporte a WIA e, como resultado, solicitações de autenticação desses dispositivos falham. Além disso, a experiência em determinados navegadores que negociam com o NTLM não é desejável. A abordagem recomendada é fazer fallback para a autenticação baseada em formulários para esses dispositivos e navegadores.
 
 AD FS no Windows Server 2016 e no Windows Server 2012 R2 fornece aos administradores a capacidade de configurar a lista de agentes de usuário que dão suporte ao fallback para autenticação baseada em formulários. O fallback se torna possível por duas configurações:
 

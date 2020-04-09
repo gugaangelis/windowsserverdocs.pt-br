@@ -1,24 +1,20 @@
 ---
 title: mqbkup
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7bdd41c4-75ef-455f-b241-1d64a4c7acf5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 66783e0bbfe5c82971e14fd05e913d485485dc6f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ff6fc2f483bceb99b970cd0c48f56985ecd485b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373514"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839349"
 ---
 # <a name="mqbkup"></a>mqbkup
 
@@ -31,14 +27,14 @@ Antes de usar o utilitário de backup/restauração de mensagens MSMQ, você dev
 ```  
 mqbkup {/b | /r} <folder path_to_storage_device>  
 ```  
-### <a name="parameters"></a>Parâmetros  
+#### <a name="parameters"></a>Parâmetros  
 |Parâmetro|Descrição|  
 |-------|--------|  
-|/b.|Especifica a operação de backup|  
+|/b|Especifica a operação de backup|  
 |/r|Especifica a operação de restauração|  
 |pasta < path_to_storage\_dispositivo >|Especifica o caminho onde os arquivos de mensagem MSMQ e as configurações do registro são armazenados|  
 |/?|Exibe a ajuda no prompt de comando.|  
-## <a name="BKMK_Examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
 Para fazer backup de todos os arquivos de mensagens MSMQ e configurações do registro e armazená-los na pasta *Msmqbkup* na unidade C:.  
 ```  
 mqbkup /b c:\msmqbkup  
@@ -53,5 +49,5 @@ Para restaurar mensagens MSMQ e configurações do registro:
 mqbkup /r c:\msmqbkup  
 ```  
 Os locais de pastas usados para armazenar arquivos de mensagens MSMQ são armazenados no registro. Portanto, o utilitário irá restaurar os arquivos de mensagem do MSMQ para as pastas especificadas no registro e não para as pastas de armazenamento usadas antes da operação de restauração. Se as pastas especificadas no registro não existirem, a operação de restauração as criará automaticamente. Se os diretórios de pastas existirem e não estiverem vazios, o utilitário solicitará permissão para excluir o conteúdo atual dessas pastas.  
-## <a name="additional-references"></a>referências adicionais  
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

@@ -1,28 +1,22 @@
 ---
-title: Detalhes
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: detalhes
+description: O tópico comandos do Windows para obter detalhes, que exibe informações sobre o disco, a partição, o volume ou o VHD (disco rígido virtual) selecionado.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 305755bd-1a51-486b-8515-62d3f227c291
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3d63993e3a5aabe44580553a15514808b28e2ea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71f4f72b5a11e7af9c245b0491902687cb352b66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378465"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846369"
 ---
-# <a name="detail"></a>Detalhes
-
-
+# <a name="detail"></a>detalhes
 
 Exibe informações sobre o disco, a partição, o volume ou o VHD (disco rígido virtual) selecionado.
 
@@ -35,7 +29,7 @@ detail volume
 detail vdisk
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -44,7 +38,7 @@ detail vdisk
 |[Volume de detalhes](detail-volume.md)|Exibe os discos nos quais o volume atual reside.|
 |[Detalhes do VDISK](detail-vdisk.md)|Exibe as propriedades do VHD selecionado.|
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

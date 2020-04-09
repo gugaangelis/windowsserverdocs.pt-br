@@ -1,7 +1,6 @@
 ---
 ms.assetid: 206b8072-1d0c-4a0b-ba8a-35a868d67b4c
 title: Criar um design de link de site
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fdff477a1fb7cbe42402b2bb608eea55f2f9ec09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d9f167a7721fd98179c30b83cc758aa2079dcb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402702"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822749"
 ---
 # <a name="creating-a-site-link-design"></a>Criar um design de link de site
 
@@ -32,7 +31,7 @@ Sempre que você adicionar sites a um link de site recém-criado, determine se o
   
 Para identificar os sites membros que você deseja conectar a um link de site, use a lista de locais e locais vinculados que você registrou na planilha "locais geográficos e links de comunicação" (DSSTOPO_1. doc). Se vários sites tiverem a mesma conectividade e disponibilidade entre si, você poderá conectá-los com o mesmo link de site.  
   
-O contêiner Transportes entre sites fornece os meios para mapear links de site para o transporte usado pelo link. Ao criar um objeto de link de site, você o cria no contêiner IP, que associa o link de site com a RPC (chamada de procedimento remoto) sobre o transporte de IP ou o contêiner SMTP, que associa o link do site ao SMTP porta.  
+O contêiner Transportes entre sites fornece os meios para mapear links de site para o transporte usado pelo link. Ao criar um objeto de link de site, você o cria no contêiner IP, que associa o link de site à RPC (chamada de procedimento remoto) sobre o transporte de IP ou o contêiner SMTP, que associa o link de site ao transporte SMTP.  
   
 > [!NOTE]  
 > A replicação SMTP não terá suporte em versões futuras do Active Directory Domain Services (AD DS); Portanto, a criação de objetos de links de site no contêiner SMTP não é recomendada.  
@@ -41,7 +40,7 @@ Quando você cria um objeto de link de site no respectivo contêiner de transpor
   
 Quando uma conexão IP direta não está disponível, você pode configurar a replicação entre sites para usar o SMTP. No entanto, a funcionalidade de replicação SMTP é limitada e requer uma autoridade de certificação (CA) corporativa. O SMTP só pode replicar a configuração, o esquema e as partições de diretório de aplicativo e não oferece suporte à replicação de partições de diretório de domínio.  
   
-Para nomear links de site, use um esquema de nomenclatura consistente, como name_of_site1-name_of_site2. Registre a lista de sites, sites vinculados e os nomes dos links de site que conectam esses sites em uma planilha. Para uma planilha para ajudá-lo a registrar nomes de site e nomes de links de site associados, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abra "sites e Links de site associados "(DSSTOPO_5. doc).  
+Para nomear links de site, use um esquema de nomenclatura consistente, como name_of_site1 name_of_site2. Registre a lista de sites, sites vinculados e os nomes dos links de site que conectam esses sites em uma planilha. Para uma planilha para ajudá-lo a registrar nomes de site e nomes de links de site associados, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abra "sites e links de site associados" (DSSTOPO_5. doc).  
   
 ## <a name="in-this-guide"></a>Neste guia
 

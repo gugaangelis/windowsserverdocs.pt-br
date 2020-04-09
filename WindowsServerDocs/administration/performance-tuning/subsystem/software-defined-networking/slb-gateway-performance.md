@@ -4,15 +4,15 @@ description: Diretrizes de ajuste de desempenho do gateway SLB em redes SDN
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a0d239da2ca321333ec757db22bbaf9a9b8ba30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383462"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851579"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Ajuste de desempenho do gateway SLB em redes definidas pelo software
 

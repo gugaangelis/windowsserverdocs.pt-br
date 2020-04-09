@@ -1,28 +1,22 @@
 ---
 title: cd
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico comandos do Windows para CD, que exibe o nome ou altera o diretório atual.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 932d9cc1-3dff-40da-835c-1cb0894874f1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed0942232eb205a8198d4b3d366ca9482af1f4b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d62f529ab6c45957f0fdea24358a2f13151adb6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379710"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848219"
 ---
 # <a name="cd"></a>cd
-
-
 
 Exibe o nome ou altera o diretório atual. Se usado com apenas uma letra de unidade (por exemplo, `cd C:`), **CD** exibe os nomes do diretório atual na unidade especificada. Se usado sem parâmetros, **CD** exibe a unidade e o diretório atuais.
 
@@ -40,7 +34,7 @@ chdir [/d] [<Drive>:][<Path>]
 chdir [..]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -60,7 +54,7 @@ Se as extensões de comando estiverem habilitadas, as seguintes condições se a
   ```  
   é o mesmo que:  
   ```
-  cd "username\programs\start menu"
+  cd username\programs\start menu
   ```  
   As aspas são obrigatórias, no entanto, se as extensões estiverem desabilitadas.
 
@@ -69,7 +63,7 @@ Para desabilitar as extensões de comando, digite:
 cmd /e:off
 ```
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 O diretório raiz é a parte superior da hierarquia de diretório de uma unidade. Para retornar ao diretório raiz, digite:
 ```
@@ -84,6 +78,6 @@ Para verificar a alteração no diretório, digite:
 cd [<Drive>:]
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

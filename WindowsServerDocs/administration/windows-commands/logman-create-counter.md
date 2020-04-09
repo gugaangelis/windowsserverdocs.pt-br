@@ -1,28 +1,24 @@
 ---
 title: criar contador de logman
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1e214c32-b704-43c1-b548-e1cf43b583c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3245ce1c153ac0d5fe95ea0c85009e33f71a230c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 416a62331bccc9c646ce0a00ec71b9ef7bb4238d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374556"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840869"
 ---
 # <a name="logman-create-counter"></a>criar contador de logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 criar um coletor de dados de contador.  
 
@@ -30,7 +26,7 @@ criar um coletor de dados de contador.
 ```  
 logman create counter <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
 
 |                    Parâmetro                     |                                                                               Descrição                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,14 +56,14 @@ logman create counter <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
-## <a name="BKMK_examples"></a>Disso  
-O comando a seguir cria um contador chamado perf_log usando o contador% Processor Time da categoria do contador processador (_ total).  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+O comando a seguir cria um contador chamado perf_log usando o contador% tempo do processador da categoria de contador processador (_Total).  
 ```  
-logman create counter perf_log -c "\Processor(_Total)\% Processor time"  
+logman create counter perf_log -c \Processor(_Total)\% Processor time  
 ```  
-O comando a seguir cria um contador chamado perf_log usando o contador de% tempo do processador da categoria do contador processador (_ total), criando um arquivo de log com um tamanho máximo de 10 MB e coletando dados por 1 minuto e 0 segundo.  
+O comando a seguir cria um contador chamado perf_log usando o contador% tempo do processador da categoria de contador processador (_Total), criando um arquivo de log com um tamanho máximo de 10 MB e coletando dados por 1 minuto e 0 segundo.  
 ```  
-logman create counter perf_log -c "\Processor(_Total)\% Processor time" -max 10 -rf 01:00  
+logman create counter perf_log -c \Processor(_Total)\% Processor time -max 10 -rf 01:00  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
 [logman](logman.md)  

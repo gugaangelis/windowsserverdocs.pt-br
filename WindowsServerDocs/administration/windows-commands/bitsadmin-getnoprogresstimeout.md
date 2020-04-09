@@ -1,50 +1,45 @@
 ---
 title: bitsadmin getnoprogresstimeout
-description: Tópico de comandos do Windows para **Bitsadmin getnoprogresstimeout** – recupera o período de tempo, em segundos, que o serviço tenta transferir o arquivo depois que um erro transitório ocorre.
-ms.custom: na
+description: O tópico de comandos do Windows para **Bitsadmin getnoprogresstimeout**, que recupera o período de tempo, em segundos, que o serviço tentará transferir o arquivo depois que ocorrer um erro transitório.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9cd9b19b-cbb4-4352-8419-978080f016b6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7dcc0e445f4cae25c27f5ff70c73f4f2f23975aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf2cfd77b494e221b60c8816ff46eed5f9252f39
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381497"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850599"
 ---
 # <a name="bitsadmin-getnoprogresstimeout"></a>bitsadmin getnoprogresstimeout
 
-
-
-Recupera o período de tempo, em segundos, que o serviço tenta transferir o arquivo após ocorrer um erro transitório.
+Recupera o período de tempo, em segundos, que o serviço tentará transferir o arquivo depois que ocorrer um erro transitório.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /GetNoProgressTimeout <Job>
+bitsadmin /getnoprogresstimeout <job>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Job|O nome de exibição ou o GUID do trabalho|
+| Parâmetro | Descrição |
+| -------------- | -------------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 O exemplo a seguir recupera o valor de tempo limite de progresso para o trabalho chamado *myDownloadJob*.
+
 ```
-C:\>bitsadmin /GetNoProgressTimeout myDownloadJob
+C:\>bitsadmin /getnoprogresstimeout myDownloadJob
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

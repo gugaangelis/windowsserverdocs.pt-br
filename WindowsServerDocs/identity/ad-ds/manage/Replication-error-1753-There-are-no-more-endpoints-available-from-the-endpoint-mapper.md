@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: Erro de replicação 1753 Não há mais pontos de extremidade disponíveis do mapeador de ponto de extremidade
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 64b479663dfc930ec9a6d2055b4c9ad5755b30fc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389973"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823159"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Erro de replicação 1753 Não há mais pontos de extremidade disponíveis do mapeador de ponto de extremidade
 
 >Aplica-se a: Windows Server
 
-Este artigo descreve os sintomas, as etapas de causa e resolução de Active Directory operações que falham com o erro 1753 do Win32: "Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades."
+Este artigo descreve os sintomas, as etapas de causa e resolução para as operações de Active Directory que falham com o erro 1753 do Win32: "não há mais pontos de extremidade disponíveis no mapeador de Endpoint".
 
-O DCDIAG relata que o teste de conectividade, Active Directory teste de replicações ou teste KnowsOfRoleHolders falhou com o erro 1753: "Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades."
+O DCDIAG relata que o teste de conectividade, Active Directory teste de replicações ou teste KnowsOfRoleHolders falhou com o erro 1753: "não há mais pontos de extremidade disponíveis no mapeador de ponto".
 
 ```
 Testing server: <site><DC Name>
@@ -90,18 +89,18 @@ O comando **check Replication Topology** em Active Directory sites e serviços r
 
 Clicar com o botão direito do mouse no objeto de conexão de um controlador de domínio de origem e escolher **verificar a topologia de replicação** falha com "não há mais pontos de extremidade disponíveis no mapeador de Endpoint". A mensagem de erro na tela é mostrada abaixo:
 
-Texto do título do diálogo: Verifique o texto da mensagem da caixa de diálogo de topologia de replicação: O seguinte erro ocorreu durante a tentativa de contatar o controlador de domínio: Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.
+Texto do título da caixa de diálogo: verificar o texto da mensagem da caixa de diálogo de topologia de replicação: o seguinte erro ocorreu durante a tentativa de contatar o controlador de domínio: não há mais pontos de extremidade disponíveis no mapeador de Endpoint.
 
 O comando **replicate Now** no Active Directory sites e serviços retorna "não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades."
 Clicar com o botão direito do mouse no objeto de conexão de um controlador de domínio de origem e escolher **replicar agora** falha com "não há mais pontos de extremidade disponíveis no mapeador de Endpoint".
 A mensagem de erro na tela é mostrada abaixo:
 
-Texto do título do diálogo: Texto da mensagem de diálogo replicate Now: O erro a seguir ocorreu durante a tentativa de sincronizar o contexto de nomenclatura \<% nome da partição de diretório% > do controlador de domínio \<Source DC > para o controlador de domínio \<Destination DC >:
+Texto do título da caixa de diálogo: replicar agora texto da mensagem de diálogo: o seguinte erro ocorreu durante a tentativa de sincronizar o contexto de nomenclatura \<% nome da partição de diretório% > do controlador de domínio \<> do DC de origem para o controlador de domínio \<DC de destino >:
 
 Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.
 A operação não continuará
 
-Os eventos NTDS KCC, NTDS General ou Microsoft-Windows-ActiveDirectory_DomainService com o status-2146893022 são registrados no log dos serviços de diretório no Visualizador de Eventos.
+Os eventos NTDS KCC, NTDS General ou Microsoft-Windows-ActiveDirectory_DomainService com o status-2146893022 são registrados no log dos serviços de diretório Visualizador de Eventos.
 
 Active Directory eventos que normalmente citam o status-2146893022 incluem, mas não estão limitados a:
 
@@ -141,22 +140,22 @@ O erro 1753 não é causado por:
 * A falta de conectividade de rede entre o servidor RPC (DC de origem) usando a porta 135 e o cliente RPC (DC de destino) na porta efêmera.
 * Uma incompatibilidade de senha ou a incapacidade pelo DC de origem para descriptografar um pacote criptografado Kerberos
 
-## <a name="resolutions"></a>Soluções
+## <a name="resolutions"></a>Resoluções
 
 Verifique se o serviço que está registrando seu serviço com o mapeador de ponto de extremidade foi iniciado
 
-* Para os DCs do Windows 2000 e do Windows Server 2003: Verifique se o controlador de domínio de origem é inicializado no modo normal.
-* Para o Windows Server 2008 ou o Windows Server 2008 R2: No console do DC de origem, inicie o Gerenciador de serviços (Services. msc) e verifique se o serviço de Active Directory Domain Services está em execução.
+* Para os DCs do Windows 2000 e do Windows Server 2003: Verifique se o controlador de domínio de origem foi inicializado no modo normal.
+* Para o Windows Server 2008 ou o Windows Server 2008 R2: no console do DC de origem, inicie o Gerenciador de serviços (Services. msc) e verifique se o serviço de Active Directory Domain Services está em execução.
 
 Verificar se o cliente RPC (DC de destino) está conectado ao servidor RPC pretendido (DC de origem)
 
-Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio no _ msdcs. o domínio raiz \<forest > zona DNS, independentemente de qual domínio eles residem na floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
+Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio na _msdcs. \<domínio raiz da floresta > zona DNS, independentemente de qual domínio eles residem na floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
 
 Ao executar operações baseadas em replicação, um DC de destino consulta o DNS para o registro CNAME de DCs de origem. O registro CNAME contém o nome do computador totalmente qualificado do DC de origem que é usado para derivar o endereço IP de DCs de origem por meio da pesquisa de cache do cliente DNS, pesquisa de arquivo do host/LMHost, registro A/AAAA do host no DNS ou WINS.
 
 Objetos de configurações NTDS obsoletos e mapeamentos de nome-para-IP incorretos em arquivos DNS, WINS, host e LMHOST podem fazer com que o cliente RPC (DC de destino) se conecte ao servidor RPC errado (DC de origem). Além disso, o mapeamento de nome para IP inadequado pode fazer com que o cliente RPC (DC de destino) se conecte a um computador que nem mesmo tenha o aplicativo de servidor RPC de seu interesse (a função Active Directory, nesse caso) instalada. (Exemplo: um registro de host obsoleto para DC2 contém o endereço IP de DC3 ou um computador membro).
 
-Verifique se o objectGUID do DC de origem que existe na cópia dos DCs de destino de Active Directory corresponde ao objectGUID do DC de origem armazenado na cópia dos DCs de origem de Active Directory. Se houver uma discrepância, use repadmin/showobjmeta no objeto de configurações NTDS para ver qual delas corresponde à última promoção do DC de origem (dica: Compare os carimbos de data para o objeto de configurações NTDS data de criação de/showobjmeta em relação à última data da promoção no DCs de origem. arquivo Dcpromo. log. Talvez seja necessário usar a data da última modificação/criação do DCPROMO. Próprio arquivo de LOG). Se os GUIDs de objeto não forem idênticos, o DC de destino provavelmente terá um objeto de configurações NTDS obsoleto para o DC de origem cujo registro CNAME se refere a um registro de host com um nome inválido para o mapeamento de IP.
+Verifique se o objectGUID do DC de origem que existe na cópia dos DCs de destino de Active Directory corresponde ao objectGUID do DC de origem armazenado na cópia dos DCs de origem de Active Directory. Se houver uma discrepância, use repadmin/showobjmeta no objeto de configurações NTDS para ver qual delas corresponde à última promoção do DC de origem (dica: Compare os carimbos de data para o objeto de configurações NTDS data de criação de/showobjmeta em relação à última data da promoção no arquivo. log dos DCs de origem. Talvez seja necessário usar a data da última modificação/criação do DCPROMO. Próprio arquivo de LOG). Se os GUIDs de objeto não forem idênticos, o DC de destino provavelmente terá um objeto de configurações NTDS obsoleto para o DC de origem cujo registro CNAME se refere a um registro de host com um nome inválido para o mapeamento de IP.
 
 No DC de destino, execute IPCONFIG/ALL para determinar quais servidores DNS o DC de destino está usando para a resolução de nomes:
 
@@ -240,9 +239,9 @@ Outras maneiras possíveis de resolver esse erro:
 * Verifique se o valor de inicialização e o status do serviço para o serviço RPC e o localizador RPC estão corretos para a versão do sistema operacional do cliente RPC (DC de destino) e do servidor RPC (DC de origem). Se o serviço estiver parado ou não configurado com valores de inicialização padrão, redefina os valores de inicialização padrão, reinicialize o controlador de domínio modificado e repita a operação.
    * Além disso, verifique se o contexto de serviço corresponde às configurações padrão listadas na tabela a seguir.
 
-      | Serviço | Status padrão (tipo de inicialização) no Windows Server 2003 e posterior | Status padrão (tipo de inicialização) no Windows Server 2000 |
+      | Service | Status padrão (tipo de inicialização) no Windows Server 2003 e posterior | Status padrão (tipo de inicialização) no Windows Server 2000 |
       | --- | --- | --- |
-      | Chamada de procedimento remoto | Iniciado (automático) | Iniciado (automático) |
+      | Chamada de Procedimento Remoto | Iniciado (automático) | Iniciado (automático) |
       | Localizador de chamada de procedimento remoto | Nulo ou parado (manual) | Iniciado (automático) |
 
 * Verifique se o tamanho do intervalo de portas dinâmicas não foi restrito. A sintaxe NETSH do Windows Server 2008 e do Windows Server 2008 R2 para enumerar o intervalo de portas RPC é mostrada abaixo:
@@ -295,11 +294,11 @@ Posteriormente, o computador membro com o endereço IP x. x. 1.2 é promovido co
 
 Esses mapeamentos inválidos de host para IP podem ser causados por entradas obsoletas em arquivos do host/LMHOST, os registros do host A/AAAA no DNS ou WINS.
 
-Resumo Este exemplo falhou porque um mapeamento de host para IP inválido (no arquivo de HOST, nesse caso) fez com que o DC de destino fosse resolvido para um controlador de domínio de "origem" que não tenha o serviço de Active Directory Domain Services em execução (ou até mesmo instalado para esse assunto) para que a replicação O SPN ainda não foi registrado e o DC de origem retornou o erro 1753. No segundo caso, um mapeamento de host para IP inválido (novamente no arquivo de HOST) fez com que o DC de destino se conectasse a um controlador de domínio que registrou o E351... o SPN de replicação, mas essa origem tinha um nome de host e uma identidade de segurança diferentes do DC de origem pretendido, para que as tentativas falhassem com o erro-2146893022: O nome da entidade de destino está incorreto.
+Resumo: Este exemplo falhou porque um mapeamento de host para IP inválido (no arquivo de HOST, nesse caso) fez com que o DC de destino fosse resolvido para um controlador de domínio de "origem" que não tenha o serviço de Active Directory Domain Services em execução (ou até mesmo instalado para esse assunto) para que o SPN de replicação não tenha sido registrado e o DC de origem retornou o erro 1753. No segundo caso, um mapeamento de host para IP inválido (novamente no arquivo de HOST) fez com que o DC de destino se conectasse a um controlador de domínio que registrou o E351... o SPN de replicação, mas essa origem tinha um nome de host e uma identidade de segurança diferentes do DC de origem pretendido, de modo que as tentativas falharam com Error-2146893022: o nome principal de destino está incorreto.
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-* [Troubleshooting Active Directory operações que falham com o erro 1753: Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades. ](https://support.microsoft.com/kb/2089874)
+* [Solução de problemas Active Directory operações que falham com o erro 1753: não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.](https://support.microsoft.com/kb/2089874)
 * [Artigo 839880 da base de problemas ao solucionar erros do mapeador de ponto de extremidade RPC usando as ferramentas de suporte do Windows Server 2003 do CD do produto](https://support.microsoft.com/kb/839880)
 * [Artigo 832017 do KB visão geral do serviço e requisitos de porta de rede para o sistema Windows Server](https://support.microsoft.com/kb/832017/)
 * [Artigo 224196 da base de conhecimento restringindo o tráfego de replicação Active Directory e o tráfego RPC de cliente para uma porta específica](https://support.microsoft.com/kb/224196/)

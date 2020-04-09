@@ -4,15 +4,15 @@ description: Máquina virtual Linux e BSD
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5668629e7eded214525561d30fec496a4e91b8dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7abc1ef5473365dd26dce1167bb685f116822a7d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385072"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851739"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Considerações sobre a máquina virtual do Linux
 
@@ -26,7 +26,7 @@ Mesmo quando o convidado está em execução Integration Services, ele pode ser 
 
 Por padrão, o Linux habilita aceleração e descarregamentos de hardware por padrão. Se o vRSS estiver habilitado nas propriedades de uma NIC no host e o convidado do Linux tiver a capacidade de usar o vRSS, a funcionalidade será habilitada. No PowerShell, esse mesmo parâmetro pode ser alterado com o comando `EnableNetAdapterRSS`.
 
-Da mesma forma, o recurso VMMQ (virtual switch RSS) pode ser habilitado na NIC física usada pelas **Propriedades**de convidado  > **Configurar...**  >  guia**avançado** > definir o **comutador virtual RSS** como **habilitado** ou habilitar VMMQ no PowerShell usando o seguinte:
+Da mesma forma, o recurso VMMQ (virtual switch RSS) pode ser habilitado na NIC física usada pelas **Propriedades** de convidado > **Configurar...**  > guia **avançado** > definir o **comutador virtual RSS** como **habilitado** ou habilitar VMMQ no PowerShell usando o seguinte:
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True

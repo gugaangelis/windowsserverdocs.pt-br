@@ -1,26 +1,22 @@
 ---
-title: more
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: mais
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: d505f99511d8702f11ac0c70edba3d62c8cf7996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c627e003e71cb2265c717669e082d48564dd483
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373912"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839419"
 ---
-# <a name="more"></a>more
+# <a name="more"></a>mais
 
 
 
@@ -36,7 +32,7 @@ more [[/c] [/p] [/s] [/t<N>] [+<N>]] < [<Drive>:][<Path>]<FileName>
 more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |           Parâmetro            |                               Descrição                               |
 |--------------------------------|-------------------------------------------------------------------------|
@@ -68,7 +64,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 -   Ao usar o caractere de redirecionamento ( **<** ), você deve especificar um nome de arquivo como a origem. Ao usar o pipe ( **\|** ), você pode usar comandos como **dir**, **Sort**e **Type**.
 -   O comando **more** , com parâmetros diferentes, está disponível no console de recuperação.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para exibir a primeira tela de informações de um arquivo chamado clients. New, digite um dos seguintes comandos:
 ```
@@ -114,6 +110,6 @@ Os exemplos a seguir podem ser usados no prompt **mais** (`-- More --`).
   ```  
   Digite o número de linhas a serem ignoradas e pressione ENTER. **Mais** ignora o número especificado de linhas e exibe a próxima tela de informações.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

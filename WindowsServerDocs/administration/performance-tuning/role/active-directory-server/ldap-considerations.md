@@ -4,15 +4,15 @@ description: Considerações sobre LDAP em cargas de trabalho Active Directory
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e407f9f32339e3f9c75e3722ad218228b608b9d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 86aef48575388ad76ff22fc6027c5ce2d4b6694a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947108"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851889"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Considerações sobre LDAP no adiciona ajuste de desempenho
 
@@ -98,7 +98,7 @@ Para obter mais informações, consulte o seguinte:
 
 -   [Atributos indexados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Ajuste de desempenho Active Directory servidores](index.md)
 - [Considerações sobre hardware](hardware-considerations.md)

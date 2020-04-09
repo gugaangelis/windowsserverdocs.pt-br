@@ -1,7 +1,6 @@
 ---
 ms.assetid: 70c99703-ff0d-4278-9629-b8493b43c833
 title: Como configurar contas protegidas
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d3e6b698bfd799fb1975bfdd20ecc8f85c07f935
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6410936e50f4fad34b18fb8f287d9df710347863
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949071"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823449"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Como configurar contas protegidas
 
@@ -34,7 +33,7 @@ Existem medidas para ajudar a evitar o roubo de credenciais adicionais integrada
 
 -   [Proteção do LSA](https://technet.microsoft.com/library/dn408187)
 
-## <a name="BKMK_AddtoProtectedUsers"></a>Usuários protegidos
+## <a name="protected-users"></a><a name="BKMK_AddtoProtectedUsers"></a>Usuários protegidos
 Usuários protegidos é um novo grupo de segurança global ao qual é possível adicionar usuários novos ou existentes. Os dispositivos Windows 8.1 e hosts Windows Server 2012 R2 têm comportamento especial com membros desse grupo para fornecer melhor proteção contra roubo de credenciais. Para um membro do grupo, um dispositivo Windows 8.1 ou um host do Windows Server 2012 R2 não armazena em cache as credenciais que não têm suporte para usuários protegidos. Os membros desse grupo não terão proteção adicional se estiverem conectados a um dispositivo que executa uma versão do Windows anterior à Windows 8.1.
 
 Os membros do grupo de usuários protegidos que estão conectados a dispositivos Windows 8.1 e hosts Windows Server 2012 R2 *não podem mais* usar:
@@ -72,14 +71,14 @@ Os membros do grupo Usuários Protegidos devem poder se autenticar usando Kerber
 
 -   **Altere a senha** para cada usuário antes de adicionar a conta ao grupo de usuários protegidos ou verifique se a senha foi alterada recentemente em um controlador de domínio que executa o Windows Server 2008 ou posterior.
 
-### <a name="BKMK_Prereq"></a>Requisitos para usar contas protegidas
+### <a name="requirements-for-using-protected-accounts"></a><a name="BKMK_Prereq"></a>Requisitos para usar contas protegidas
 Contas protegidas possuem os seguintes requisitos para implantação:
 
 -   Para fornecer restrições do lado do cliente para usuários protegidos, os hosts devem executar o Windows 8.1 ou o Windows Server 2012 R2. Um usuário precisa apenas entrar com uma conta membro do grupo Usuários protegidos. Nesse caso, o grupo usuários protegidos pode ser criado [transferindo a função de emulador PDC (controlador de domínio primário)](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) para um controlador de domínio que executa o Windows Server 2012 R2. Depois de o objeto do grupo ser replicado para outros controladores de domínio, a função do emulador de PDC pode se hospedada em um controlador de domínio que executa uma versão anterior do Windows Server.
 
 -   Para fornecer restrições do lado do controlador de domínio para usuários protegidos, isso é restringir o uso da autenticação NTLM e outras restrições, o nível funcional do domínio deve ser o Windows Server 2012 R2. Para obter mais informações sobre os níveis funcionais, consulte [noções básicas sobre níveis funcionais de Active Directory Domain Services (AD DS)](../active-directory-functional-levels.md).
 
-### <a name="BKMK_TrubleshootingEvents"></a>Solucionar problemas de eventos relacionados a usuários protegidos
+### <a name="troubleshoot-events-related-to-protected-users"></a><a name="BKMK_TrubleshootingEvents"></a>Solucionar problemas de eventos relacionados a usuários protegidos
 Esta seção aborda os novos logs para ajudar solucionar problemas de eventos relacionados aos Usuários protegidos e demonstra como os Usuários protegidos podem representar mudanças nas soluções de problemas de expiração de TGT e de delegação.
 
 #### <a name="new-logs-for-protected-users"></a>Novos logs para Usuários protegidos
@@ -104,15 +103,15 @@ Anteriormente, se uma tecnologia que usa delegação de Kerberos falhasse, a con
 
 ![contas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
-### <a name="BKMK_AuditAuthNattempts"></a>Auditar tentativas de autenticação
+### <a name="audit-authentication-attempts"></a><a name="BKMK_AuditAuthNattempts"></a>Auditar tentativas de autenticação
 Para auditar tentativas explicitamente para os membros do grupo **Usuários protegidos**, você pode continuar a coletar eventos de auditoria de log de segurança ou os dados dos novos logs administrativos operacionais. Para obter mais informações sobre esses eventos, consulte [políticas de autenticação e silos de política de autenticação](https://technet.microsoft.com/library/dn486813.aspx)
 
-### <a name="BKMK_ProvidePUdcProtections"></a>Fornecer proteções do lado do DC para serviços e computadores
+### <a name="provide-dc-side-protections-for-services-and-computers"></a><a name="BKMK_ProvidePUdcProtections"></a>Fornecer proteções do lado do DC para serviços e computadores
 Contas de serviços e computadores não podem ser membros do **Usuários protegidos**. Esta seção explica quais proteções baseadas no controlador de domínio podem ser oferecidas a tais contas:
 
 -   Rejeitar autenticação NTLM: somente por meio de [políticas de bloqueio NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
 
--   Rejeitar o padrão de criptografia de dados (DES) na pré-autenticação de Kerberos: os controladores de domínio do Windows Server 2012 R2 não aceitam DES para contas de computador, a menos que estejam configurados para DES somente porque todas as versões do Windows lançadas com o Kerberos também dão suporte a RC4.
+-   Rejeitar o padrão de criptografia de dados (DES) na pré-autenticação de Kerberos: os controladores de domínio do Windows Server 2012 R2 não aceitam DES para contas de computador, a menos que estejam configurados para DES somente porque cada versão do Windows lançada com o Kerberos também oferece suporte a RC4.
 
 -   Rejeitar RC4 na pré-autenticação do Kerberos: não configurável.
 
@@ -125,7 +124,7 @@ Contas de serviços e computadores não podem ser membros do **Usuários protegi
 
     ![contas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
-## <a name="BKMK_CreateAuthNPolicies"></a>Políticas de autenticação
+## <a name="authentication-policies"></a><a name="BKMK_CreateAuthNPolicies"></a>Políticas de autenticação
 Políticas de autenticação é um novo contêiner no AD DS que contém objetos de política de autenticação. As políticas de autenticação podem especificar configurações que ajudam a reduzir o risco de roubo de credenciais, tais como restringir o tempo de vida de TGT das contas ou adicionar outras condições relacionadas a declarações.
 
 No Windows Server 2012, o controle de acesso dinâmico introduziu uma classe de objeto de escopo de floresta Active Directory chamada de política de acesso central para fornecer uma maneira fácil de configurar servidores de arquivos em toda a organização. No Windows Server 2012 R2, uma nova classe de objeto chamada diretiva de autenticação (objectClass msDS-AuthNPolicies) pode ser usada para aplicar a configuração de autenticação a classes de conta em domínios do Windows Server 2012 R2. As classes da conta do Active Directory são:
@@ -170,9 +169,9 @@ Você pode restringir as solicitações de tíquete de serviço por meio da troc
 
 -   As condições de controle de acesso que devem ser cumpridas pelo cliente (usuário, serviço ou computador) ou dispositivo que enviam a troca TGS
 
-### <a name="BKMK_ReqForAuthnPolicies"></a>Requisitos para usar políticas de autenticação
+### <a name="requirements-for-using-authentication-policies"></a><a name="BKMK_ReqForAuthnPolicies"></a>Requisitos para usar políticas de autenticação
 
-|Política|Requisitos|
+|Política|{1&gt;{2&gt;Requisitos&lt;2}&lt;1}|
 |----------|----------------|
 |Fornecer tempos de vida de TGT personalizados| Domínios de conta de nível funcional de domínio do Windows Server 2012 R2|
 |Entrada de usuário restrita|-Domínios de conta de nível funcional de domínio do Windows Server 2012 R2 com suporte ao controle de acesso dinâmico<br />-Dispositivos Windows 8, Windows 8.1, Windows Server 2012 ou Windows Server 2012 R2 com suporte ao controle de acesso dinâmico|
@@ -328,7 +327,7 @@ Usando o Editor de Política de Grupo ou de Política de Grupo Local, habilite o
 
 ![contas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)
 
-### <a name="BKMK_TroubleshootAuthnPolicies"></a>Solucionar problemas de políticas de autenticação
+### <a name="troubleshoot-authentication-policies"></a><a name="BKMK_TroubleshootAuthnPolicies"></a>Solucionar problemas de políticas de autenticação
 
 #### <a name="determine-the-accounts-that-are-directly-assigned-an-authentication-policy"></a>Determinar as contas às quais uma Política de autenticação é diretamente atribuída
 A seção de contas na Política de autenticação mostra que as contas que possuem políticas diretamente aplicadas.
@@ -338,7 +337,7 @@ A seção de contas na Política de autenticação mostra que as contas que poss
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Usar as falhas da política de autenticação-log administrativo do controlador de domínio
 Uma nova **falha de política de autenticação – log administrativo do controlador de domínio** em **logs de aplicativos e serviços** > **Microsoft** > **Windows** > **autenticação** foi criada para facilitar a descoberta de falhas devido a políticas de autenticação. Este log fica desabilitado por padrão. Para habilitá-lo, clique com o botão direito no nome do log e clique em **Habilitar log**. Os novos eventos são muito semelhantes com relação ao conteúdo aos eventos de TGT de Kerberos e auditoria de tíquete de serviço. Para obter mais informações sobre esses eventos, consulte [políticas de autenticação e silos de política de autenticação](https://technet.microsoft.com/library/dn486813.aspx).
 
-### <a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>Gerenciar políticas de autenticação usando o Windows PowerShell
+### <a name="manage-authentication-policies-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>Gerenciar políticas de autenticação usando o Windows PowerShell
 Este comando cria uma política de autenticação chamada **TestAuthenticationPolicy**. O parâmetro **UserAllowedToAuthenticateFrom** especifica os dispositivos aos quais o usuário pode autenticar-se com uma cadeia SDDL no arquivo chamado someFile.txt.
 
 ```
@@ -370,7 +369,7 @@ Este comando usa o cmdlet **Get-ADAuthenticationPolicy** com o parâmetro **Filt
 PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthenticationPolicy
 ```
 
-## <a name="BKMK_CreateAuthNPolicySilos"></a>Silos de política de autenticação
+## <a name="authentication-policy-silos"></a><a name="BKMK_CreateAuthNPolicySilos"></a>Silos de política de autenticação
 Os Silos de política de autenticação são um novo contêiner (objectClass msDS-AuthNPolicySilos) no AD DS para contas de usuário, computador e serviço. Eles ajudam a proteger contas de alto valor. Embora todas as organizações precisem proteger membros dos grupos Administradores de Empresa, Admins. do Domínio e Administradores de Esquema devido ao fato de que essas contas podem ser usadas por um invasor para acessar qualquer coisa presente na floresta, outras contas também podem precisar de proteção.
 
 Algumas organizações isolam as cargas de trabalho criando contas específicas para elas e aplicando configurações de Política de grupo para limitar a entrada interativa local e remota e os privilégios administrativos. Os silos de política de autenticação complementam este trabalho ao criar uma maneira para definir uma relação entre as contas de Usuário, Computador e Serviço gerenciada. As contas podem pertencer somente a um silo. Você pode configurar uma política de autenticação para cada tipo de conta a fim de controlar:
@@ -428,7 +427,7 @@ Você pode criar um silo de política de autenticação usando Centro Administra
 
     ![contas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)
 
-### <a name="BKMK_ManageAuthnSilosUsingPSH"></a>Gerenciar silos de política de autenticação usando o Windows PowerShell
+### <a name="manage-authentication-policy-silos-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnSilosUsingPSH"></a>Gerenciar silos de política de autenticação usando o Windows PowerShell
 Este comando cria um objeto do silo de política de autenticação e o impõe.
 
 ```

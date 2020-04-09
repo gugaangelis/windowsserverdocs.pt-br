@@ -1,24 +1,20 @@
 ---
 title: Finalizar restauração
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 67ce83ec-a51e-4d1f-a182-d84ded999dc3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 642a0856719314ce619337f279925f7ffba86043
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e83b3a0c82390f6e865af8091ed915e1bb23b344
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377583"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845139"
 ---
 # <a name="end-restore"></a>Finalizar restauração
 
@@ -32,6 +28,6 @@ Encerra uma sessão de restauração e emite um evento de **restauração** para
 end restore
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

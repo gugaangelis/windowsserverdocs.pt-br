@@ -2,22 +2,19 @@
 title: Migrando o banco de dados do WSUS do WID (banco de dados interno do Windows) para o SQL
 description: Tópico Windows Server Update Service (WSUS)-como migrar o banco de dados do WSUS (SUSDB) de uma instância de banco de dados interna do Windows para uma instância local ou remota do SQL Server.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 594c20cbfea521006de6d1ec69763669298376e6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 8d38833170aae5e13f9d42b726d7cb0b3c12de56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948528"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828449"
 ---
 >Aplica-se a: Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
 
@@ -25,7 +22,7 @@ ms.locfileid: "75948528"
 
 Use as etapas a seguir para migrar o banco de dados do WSUS (SUSDB) de uma instância de banco de dados interna do Windows para uma instância local ou remota do SQL Server.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 - Instância do SQL. Isso pode ser o padrão **MSSQLSERVER** ou uma instância personalizada.
 - SQL Server Management Studio
@@ -124,7 +121,7 @@ A conta **NT Authority\Network Service** deve ser listada. Se não for, você pr
 4. Na página **mapeamento de usuário** :
     - Em **Usuários mapeados para este logon**: selecione **SUSDB**
     - Em **Associação de função de banco de dados para: SUSDB**, verifique se o seguinte está marcado:
-        - **public**
+        - **publicada**
         - **webService** ![image9](images/image9.png)
 5. Clique em **OK**.
 
@@ -149,8 +146,8 @@ A conta **NT Authority\Network Service** deve ser listada.
     >
     > ![image11](images/image11.png)
 
-4. Na página **mapeamento de usuário** , selecione o banco de dados **SUSDB** em **"Usuários mapeados para este logon"**
-5. Marque **WebService** na **"Associação de função de banco de dados para: SUSDB"** : ![IMAGE12](images/image12.png)
+4. Na página **mapeamento de usuário** , selecione o banco de dados **SUSDB** em **Usuários mapeados para este logon**
+5. Marque **WebService** na **Associação de função de banco de dados para: SUSDB**: ![IMAGE12](images/image12.png)
 6. Clique em **OK** para salvar as configurações.
     > [!NOTE]
     > Talvez seja necessário reiniciar o serviço SQL para que as alterações entrem em vigor.

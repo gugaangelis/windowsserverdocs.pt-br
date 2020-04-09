@@ -1,26 +1,20 @@
 ---
 title: Configurar a política de acesso condicional
 description: Após a criação de um certificado raiz, a ' conectividade VPN ' dispara a criação do aplicativo de nuvem ' servidor VPN ' no locatário do cliente.
-services: active-directory
 ms.prod: windows-server
 ms.technology: networking-ras
-documentationcenter: ''
-ms.assetid: ''
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2018
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 479c9fe4895f4181f8a776f024a7ff3c047fbc0e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 754182cc3f60e1e30625c11d8778cf24b6d098ac
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307813"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819009"
 ---
 # <a name="step-73-configure-the-conditional-access-policy"></a>Etapa 7.3. Configure a política de acesso condicional
 

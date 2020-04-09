@@ -2,22 +2,18 @@
 title: 'Etapa 3: configurar um cluster com balanceamento de carga'
 description: Este tópico faz parte do guia implantar o acesso remoto em um cluster no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f000066e-7cf8-4085-82a3-4f4fe1cb3c5c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 19a87762e19dd763376f50c7c5b04da3f2187874
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 335697f012bf4fef8c448de896ec89ad647cb68b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308353"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855279"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>Etapa 3: configurar um cluster com balanceamento de carga
 

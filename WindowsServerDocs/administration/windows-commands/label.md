@@ -1,24 +1,20 @@
 ---
 title: label
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e66a2d9a7d28462b287084e3f8b129ffc03800bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7ccb86e2167682e1048161f2d5f5386a8b5cf6ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374794"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841169"
 ---
 # <a name="label"></a>label
 
@@ -34,13 +30,13 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 label [/mp] [<Volume>] [<Label>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |/MP|Especifica que o volume deve ser tratado como um ponto de montagem ou nome de volume.|
-|\<Volume >|Especifica uma letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume. Se um nome de volume for especificado, o parâmetro **/MP** será desnecessário.|
-|\<Label >|Especifica o rótulo para o volume.|
+|\<volume >|Especifica uma letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume. Se um nome de volume for especificado, o parâmetro **/MP** será desnecessário.|
+|Rótulo de \<>|Especifica o rótulo para o volume.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -59,7 +55,7 @@ label [/mp] [<Volume>] [<Label>]
   ```  
   Pressione Y para excluir o rótulo ou pressione N para manter o rótulo.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para rotular um disco na unidade A que contém informações de vendas de julho, digite:
 ```
@@ -82,6 +78,6 @@ Para excluir o rótulo atual da unidade C, siga estas etapas:
    ```  
 3. Pressione Y para excluir o rótulo atual.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

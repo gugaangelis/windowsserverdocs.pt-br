@@ -2,20 +2,19 @@
 title: O Windows 10 deve ser configurado com a quantidade recomendada de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 0c810b82-b06a-4382-b598-5c642e8534be
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: a2722f9ecdfbab037de67ef77af7cec2eed4f0b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e38ca9d00ad502fc2ae3f2784a9e3f1a159d13a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364571"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854979"
 ---
 # <a name="windows-10-should-be-configured-with-the-recommended-amount-of-memory"></a>O Windows 10 deve ser configurado com a quantidade recomendada de memória
 

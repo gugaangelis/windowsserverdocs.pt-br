@@ -1,6 +1,5 @@
 ---
 title: Atualizando para o AD FS no Windows Server 2016 com SQL Server
-description: ''
 author: billmath
 manager: mtillman
 ms.date: 04/11/2018
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: dd843724faf1c7a8101def84091484a5e7f7900f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408238"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853999"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>Atualizando para o AD FS no Windows Server 2016 com SQL Server
 
@@ -33,7 +32,7 @@ Um Windows Server 2016 AD FS Server pode ser adicionado a um farm do Windows Ser
 
 -   Os administradores podem adicionar novos servidores de Federação do Windows Server 2016 a um farm existente do Windows Server 2012 R2.  Como resultado, o farm está no "modo misto" e opera o nível de comportamento do farm do Windows Server 2012 R2.  Para garantir um comportamento consistente em todo o farm, os novos recursos do Windows Server 2016 não podem ser configurados ou usados nesse modo.  
 
--   Depois que todos os servidores de Federação do Windows Server 2012 R2 tiverem sido removidos do farm de modo misto e, no caso de um farm de WID, um dos novos servidores de Federação do Windows servindo 2016 tiver sido promovido para a função de nó primário, o administrador poderá então elevar o FBL do Win o Windows Server 2012 R2 para o servidor 2016.  Como resultado, qualquer novo AD FS recursos do Windows Server 2016 podem ser configurados e usados.  
+-   Depois que todos os servidores de Federação do Windows Server 2012 R2 tiverem sido removidos do farm de modo misto e, no caso de um farm de WID, um dos novos servidores de Federação 2016 do Windows Server tiver sido promovido para a função de nó primário, o administrador poderá, então, elevar o FBL do servidor Windows 2012 R2 para o Windows Server 2016.  Como resultado, qualquer novo AD FS recursos do Windows Server 2016 podem ser configurados e usados.  
 
 -   Como resultado do recurso de farm misto, AD FS as organizações do Windows Server 2012 R2 que procuram atualizar para o Windows Server 2016 não precisarão implantar um farm totalmente novo, exportar e importar dados de configuração.  Em vez disso, eles podem adicionar nós do Windows Server 2016 a um farm existente enquanto estiverem online e incorrerem apenas no tempo de inatividade relativamente curto envolvido no FBL raise.  
 

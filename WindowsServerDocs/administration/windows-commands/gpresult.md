@@ -1,24 +1,20 @@
 ---
 title: gpresult
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb61911450ea8c0c68af0cf1a35c2f571810504b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 480599a4040ab1fdcc3842cdb0eaa8c35afa873c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375661"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842459"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -33,7 +29,7 @@ Para usar relatórios RSoP para computadores de destino remoto por meio do firew
 gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\]<TARGETUSER>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <FILENAME> [/f] | /?}
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 > [!NOTE]
 > Exceto quando você usa **/?** , você deve incluir uma opção de saída, ou **/r**, **/v**, **/z**, **/x**ou **/h**.
@@ -76,7 +72,7 @@ O exemplo a seguir exibe dados RSoP para o computador **srvmain** e o usuário c
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r
   ```
   
-## <a name="additional-references"></a>referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 - [TechCenter do Política de Grupo](https://go.microsoft.com/fwlink/?LinkID=145531)
 
-- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

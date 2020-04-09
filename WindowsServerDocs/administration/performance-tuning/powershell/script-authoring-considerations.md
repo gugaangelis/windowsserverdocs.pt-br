@@ -4,15 +4,15 @@ description: Scripts de desempenho no PowerShell
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 2898cf5ee965da77c9f6a3473e55c1cee6b53f2b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f22a4f1ba5c0f048e2aa01c744feb3b2b83007a0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71354983"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851919"
 ---
 # <a name="powershell-scripting-performance-considerations"></a>Considerações de desempenho de script do PowerShell
 
@@ -30,7 +30,7 @@ $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-A atribuição para `$null` ou a conversão para `[void]` são aproximadamente equivalentes e geralmente deve ser preferida onde o desempenho é importante.
+A atribuição para `$null` ou a conversão para `[void]` são aproximadamente equivalentes e, em geral, devem ser preferenciais onde o desempenho é importante.
 
 ```PowerShell
 $arrayList.Add($item) > $null
@@ -53,8 +53,8 @@ $null = . {
 }
 ```
 
-Introduzir um bloco de script e chamá-lo (usando o ponto de origem ou de outra forma) atribuir o resultado a `$null` é uma técnica conveniente para suprimir a saída de um grande bloco de script.
-Essa técnica é executada aproximadamente, bem como o direcionamento para `Out-Null` e deve ser evitada em script de desempenho sensível.
+Introduzir um bloco de script e chamá-lo (usando o ponto de origem ou de outra forma) atribuindo o resultado a `$null` é uma técnica conveniente para suprimir a saída de um grande bloco de script.
+Essa técnica é executada aproximadamente, bem como tubulação a `Out-Null` e deve ser evitada em script de desempenho sensível.
 A sobrecarga extra neste exemplo vem da criação e invocação de um bloco de script que estava anteriormente embutido em script.
 
 
@@ -84,8 +84,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-Se você precisar de uma matriz, poderá usar seu próprio `ArrayList` e simplesmente chamar `ArrayList.ToArray` quando desejar a matriz.
-Como alternativa, você pode permitir que o PowerShell crie o `ArrayList` e o `Array` para você:
+Se você precisar de uma matriz, poderá usar sua própria `ArrayList` e simplesmente chamar `ArrayList.ToArray` quando desejar a matriz.
+Como alternativa, você pode permitir que o PowerShell crie o `ArrayList` e `Array` para você:
 
 ```PowerShell
 $results = @(
@@ -95,7 +95,7 @@ $results = @(
 ```
 
 Neste exemplo, o PowerShell cria um `ArrayList` para armazenar os resultados gravados no pipeline dentro da expressão de matriz.
-Logo antes de atribuir a `$results`, o PowerShell converte o `ArrayList` em um `object[]`.
+Logo antes de atribuir ao `$results`, o PowerShell converte o `ArrayList` em um `object[]`.
 
 ## <a name="processing-large-files"></a>Processando arquivos grandes
 
@@ -129,7 +129,7 @@ finally
 
 Geralmente, é considerada uma prática ruim escrever a saída diretamente no console, mas quando faz sentido, muitos scripts usam `Write-Host`.
 
-Se você precisar gravar muitas mensagens no console, `Write-Host` pode ser uma ordem de magnitude mais lenta que `[Console]::WriteLine()`. No entanto, lembre-se de que `[Console]::WriteLine()` é apenas uma alternativa adequada para hosts específicos como PowerShell. exe ou Powershell_ise. exe – não há garantia de que funcione em todos os hosts.
+Se você precisar gravar muitas mensagens no console, `Write-Host` pode ser uma ordem de magnitude mais lenta do que `[Console]::WriteLine()`. No entanto, lembre-se de que `[Console]::WriteLine()` é apenas uma alternativa adequada para hosts específicos como PowerShell. exe ou powershell_ise. exe-não há garantia de que funcionem em todos os hosts.
 
 Em vez de usar `Write-Host`, considere o uso de [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1).
 

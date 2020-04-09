@@ -2,26 +2,23 @@
 title: Operações de atualizações
 description: Tópico Windows Server Update Service (WSUS)-como gerenciar atualizações, incluindo o processo de aprovação
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4cb7ff54-3014-4e91-842a-a7b831ea59ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7121f6303bef48486720d4cdca4582fd897467c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 327bff2e678e278dcba05ce1df807dc3842a56cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361478"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828489"
 ---
 # <a name="updates-operations"></a>Operações de atualizações
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Depois que as atualizações tiverem sido sincronizadas com o servidor do WSUS, elas serão verificadas automaticamente para fins de relevância para os computadores cliente do servidor. No entanto, você deve aprovar as atualizações antes que elas sejam implantadas nos computadores da sua rede. Ao aprovar uma atualização, você está basicamente dizendo ao WSUS o que fazer com ele (suas opções são **instalar** ou **recusar** uma nova atualização). Você pode aprovar atualizações para o grupo **todos os computadores** ou para subgrupos. Se você não aprovar uma atualização, seu status de aprovação permanecerá **não aprovado**e o servidor do WSUS permitirá que os clientes avaliem se precisam ou não da atualização.
 
@@ -38,9 +35,9 @@ Você pode aprovar a instalação de atualizações para todos os computadores e
 
 Há duas considerações importantes que você deve ter em mente:
 
--   Primeiro, você não pode definir um prazo para a instalação automática para uma atualização se a entrada do usuário for necessária (por exemplo, especificando uma configuração relevante para a atualização). Para determinar se uma atualização exigirá entrada do usuário, examine o campo de **entrada do usuário solicitar solicitação** nas propriedades de atualização de uma atualização exibida na página **atualizações** . Verifique também uma mensagem na caixa **aprovar atualizações** que diz "**a atualização selecionada requer entrada do usuário e não dá suporte a um prazo de instalação**".
+-   Primeiro, você não pode definir um prazo para a instalação automática para uma atualização se a entrada do usuário for necessária (por exemplo, especificando uma configuração relevante para a atualização). Para determinar se uma atualização exigirá entrada do usuário, examine o campo de **entrada do usuário solicitar solicitação** nas propriedades de atualização de uma atualização exibida na página **atualizações** . Verifique também uma mensagem na caixa **aprovar atualizações** que diz, **a atualização selecionada requer entrada do usuário e não dá suporte a um prazo de instalação**.
 
--   Se houver atualizações para o componente do servidor do WSUS, você não poderá aprovar outras atualizações para sistemas cliente até que a atualização do WSUS seja aprovada. Você verá essa mensagem de aviso na caixa de diálogo aprovar atualizações: "Há atualizações do WSUS que não foram aprovadas. Você deve aprovar as atualizações do WSUS antes de aprovar esta atualização. " Nesse caso, você deve clicar no nó atualizações do WSUS e certificar-se de que todas as atualizações nesse modo de exibição foram aprovadas antes de retornar às atualizações gerais.
+-   Se houver atualizações para o componente do servidor do WSUS, você não poderá aprovar outras atualizações para sistemas cliente até que a atualização do WSUS seja aprovada. Você verá essa mensagem de aviso na caixa de diálogo aprovar atualizações: há atualizações do WSUS que não foram aprovadas. Você deve aprovar as atualizações do WSUS antes de aprovar esta atualização. Nesse caso, você deve clicar no nó atualizações do WSUS e certificar-se de que todas as atualizações nesse modo de exibição foram aprovadas antes de retornar às atualizações gerais.
 
 #### <a name="to-approve-updates"></a>Para aprovar atualizações
 
@@ -88,7 +85,7 @@ Se você selecionar essa opção, a atualização será removida da lista padrã
 3.  Selecione **recusar**e, em seguida, clique em **Sim** na mensagem de confirmação.
 
 ## <a name="cleaning-up-declined-updates"></a>Limpando atualizações recusadas
-As atualizações recusadas continuam a consumir alguns recursos do servidor WSUS. Você deve executar o assistente de limpeza do servidor para remover atualizações recusadas do banco de dados do WSUS. Consulte: [O assistente para limpeza do servidor](the-server-cleanup-wizard.md), para obter detalhes adicionais.
+As atualizações recusadas continuam a consumir alguns recursos do servidor WSUS. Você deve executar o assistente de limpeza do servidor para remover atualizações recusadas do banco de dados do WSUS. Consulte: [Assistente para limpeza do servidor](the-server-cleanup-wizard.md), para obter detalhes adicionais.
 
 ## <a name="reinstating-declined-updates"></a>Atualizações recusadas do reinstaurando
 Depois que uma atualização for recusada, você ainda poderá reinstalá-la.
@@ -101,7 +98,7 @@ Depois que uma atualização for recusada, você ainda poderá reinstalá-la.
 
 3.  Na lista de atualizações, selecione uma ou mais atualizações recusadas que você deseja restabelecer.
 
-4.  Para reabilitar uma atualização específica, clique com o botão direito do mouse na atualização e selecione **aprovar**. Na caixa de diálogo **aprovar atualizações** , clique em **OK** para aplicar novamente o status de aprovação padrão "não aprovado". A atualização será mostrada na lista como **não aprovada** , em vez de recusada.
+4.  Para reabilitar uma atualização específica, clique com o botão direito do mouse na atualização e selecione **aprovar**. Na caixa de diálogo **aprovar atualizações** , clique em **OK** para aplicar novamente o status de aprovação padrão não aprovado. A atualização será mostrada na lista como **não aprovada** , em vez de recusada.
 
 Depois que uma atualização recusada for limpa usando o assistente de limpeza do servidor do WSUS, ela será excluída do servidor do WSUS e não aparecerá mais no modo de exibição todas as atualizações. Você pode importar novamente as atualizações recusadas e removidas do catálogo de Microsoft Update. Para obter informações adicionais, consulte [WSUS e o site do catálogo](wsus-and-the-catalog-site.md).
 
@@ -150,7 +147,7 @@ Você pode criar regras que o servidor do WSUS aplicará automaticamente durante
 
 4.  Na **etapa 2: editar as propriedades** clique nas propriedades sublinhadas para selecionar as classificações, os produtos e os grupos de computadores para os quais você deseja aprovações automáticas, conforme aplicável. Opcionalmente, escolha a data e a hora do prazo de aprovação da atualização.
 
-5.  Na **etapa 3: Especifique uma caixa**de nome, digite um nome exclusivo para a regra.
+5.  Na **caixa etapa 3: especificar um nome**, digite um nome exclusivo para a regra.
 
 6.  Clique em **OK**.
 
@@ -174,9 +171,9 @@ A seção aprovações automáticas do painel opções contém uma opção padr�
     > Manter os valores padrão para essas opções permite que você mantenha um bom desempenho na sua rede do WSUS. Se você não quiser que as atualizações expiradas sejam recusadas automaticamente, lembre-se de recusá-las manualmente em uma base periódica.
 
 ## <a name="automatically-declining-superseded-updates"></a>Recusando atualizações substituídas automaticamente
-Quando você aprova uma nova atualização que substitui uma atualização existente que é aprovada automaticamente, a atualização substituída se torna "não aplicável" a um computador ou dispositivo após a instalação da atualização mais recente. Você pode verificar no console do WSUS que uma atualização não é aplicável a todos os computadores. Quando esse for o caso, a atualização poderá ser recusada com segurança. Além disso, a atualização pode ser recusada automaticamente quando você executa o assistente de limpeza do servidor do WSUS.
+Quando você aprova uma nova atualização que substitui uma atualização existente que é aprovada automaticamente, a atualização substituída se torna não aplicável a um computador ou dispositivo depois que a atualização mais recente é instalada. Você pode verificar no console do WSUS que uma atualização não é aplicável a todos os computadores. Quando esse for o caso, a atualização poderá ser recusada com segurança. Além disso, a atualização pode ser recusada automaticamente quando você executa o assistente de limpeza do servidor do WSUS.
 
-Para procurar atualizações substituídas, você pode selecionar a coluna de sinalizador "substituída" na exibição todas as atualizações e classificar essa coluna. Haverá quatro grupos:
+Para procurar atualizações substituídas, você pode selecionar a coluna sinalizador substituído na exibição todas as atualizações e classificar essa coluna. Haverá quatro grupos:
 
 -   Atualizações que nunca foram substituídas (um ícone em branco).
 
@@ -186,7 +183,7 @@ Para procurar atualizações substituídas, você pode selecionar a coluna de si
 
 -   Atualizações que substituíram outra atualização (um ícone com um quadrado azul na parte superior).
 
-Não há nenhum recurso no Windows Server Update Services que recusa automaticamente as atualizações substituídas após a aprovação de uma atualização mais recente. É recomendável primeiro definir a aprovação como "não aprovado" e, em seguida, usar o assistente de limpeza do servidor para recusar a atualização automaticamente quando todas as condições relevantes forem satisfeitas. Para obter mais informações, consulte: [O assistente para limpeza do servidor](the-server-cleanup-wizard.md).
+Não há nenhum recurso no Windows Server Update Services que recusa automaticamente as atualizações substituídas após a aprovação de uma atualização mais recente. É recomendável primeiro definir a aprovação como não aprovada e, em seguida, usar o assistente de limpeza do servidor para recusar a atualização automaticamente quando todas as condições relevantes forem satisfeitas. Para obter mais informações, consulte: [Assistente para limpeza do servidor](the-server-cleanup-wizard.md).
 
 ## <a name="approving-superseding-or-superseded-updates"></a>Aprovando atualizações substitutas ou substituídas
 Normalmente, uma atualização que substitui outras atualizações faz um ou mais dos seguintes:
@@ -203,7 +200,7 @@ Por outro lado, uma atualização substituída por outra atualização faz o seg
 
 -   Atualiza versões anteriores de sistemas operacionais. Em alguns casos, essas versões de sistemas operacionais não são mais atualizadas pela atualização substituta.
 
-Em um painel de detalhes de uma atualização individual, um ícone informativo e uma mensagem na parte superior indicam que ele é substituído ou substituído por outra atualização. Além disso, você pode determinar quais atualizações são substituídas ou substituídas pela atualização examinando as atualizações que **substituem essa atualização** e **as atualizações substituídas por essas** entradas de atualização na seção **detalhes adicionais** do  **Propriedades**. O painel de detalhes de uma atualização é exibido abaixo da lista de atualizações.
+Em um painel de detalhes de uma atualização individual, um ícone informativo e uma mensagem na parte superior indicam que ele é substituído ou substituído por outra atualização. Além disso, você pode determinar quais atualizações são substituídas ou substituídas pela atualização examinando as atualizações que **substituem essa atualização** e **as atualizações substituídas por essas** entradas de atualização na seção **detalhes adicionais** das **Propriedades**. O painel de detalhes de uma atualização é exibido abaixo da lista de atualizações.
 
 O WSUS não recusa atualizações substituídas automaticamente, e é recomendável que você não assuma que as atualizações substituídas devem ser recusadas em favor da nova atualização substituta. Antes de recusar uma atualização substituída, verifique se ela não é mais necessária para nenhum dos seus computadores cliente. Veja a seguir exemplos de cenários em que você pode precisar instalar uma atualização substituída:
 

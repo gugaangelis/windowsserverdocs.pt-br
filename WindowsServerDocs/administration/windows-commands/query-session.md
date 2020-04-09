@@ -1,39 +1,35 @@
 ---
 title: sessão de consulta
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abc0ace8-0b74-4b6e-a937-a78bb4b61a1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bde9a246f2c46eaa466f2863c2cfc3c28a3a04eb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 173b6e53bbd5cd42f3172582a46277dccff7dcbd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384912"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836939"
 ---
 # <a name="query-session"></a>sessão de consulta
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre sessões em um servidor de Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
 A lista inclui informações não apenas sobre sessões ativas, mas também sobre outras sessões que o servidor executa.
-Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
 > ## <a name="syntax"></a>Sintaxe
 > ```
 > query session [<SessionName> | <UserName> | <SessionID>] [/server:<ServerName>] [/mode] [/flow] [/connect] [/counter]
 > ```
-> ## <a name="parameters"></a>Parâmetros
+> ### <a name="parameters"></a>Parâmetros
 > 
 > |      Parâmetro       |                                                      Descrição                                                      |
 > |----------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -61,7 +57,7 @@ Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_example
 >                                   5 idle
 >   ```
 >   O símbolo maior que (>) indica a sessão atual. SESSIONname especifica o nome atribuído à sessão. USERNAME indica o nome de usuário do usuário conectado à sessão. O estado fornece informações sobre o estado atual da sessão. TIPO indica o tipo de sessão. O dispositivo, que não está presente no console ou nas sessões conectadas à rede, é o nome do dispositivo atribuído à sessão. O comentário que as informações de sessão a seguir é do perfil de sessão. Todas as sessões em que o estado inicial é configurado como DESABILITAdo não aparecem na lista **sessão de consulta** até que elas sejam habilitadas.
->   ## <a name="BKMK_examples"></a>Disso
+>   ## <a name="examples"></a><a name=BKMK_examples></a>Disso
 > - Para exibir informações sobre todas as sessões ativas no servidor Servidor2, digite:
 >   ```
 >   query session /server:SERver2
@@ -70,7 +66,7 @@ Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_example
 >   ```
 >   query session modeM02
 >   ```
->   #### <a name="additional-references"></a>Referências adicionais
->   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
->   [consulta](query.md)
->   [ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)
+>   ## <a name="additional-references"></a>Referências adicionais
+>   - [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+>   
+>   [consultar](query.md) a [referência de comando serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

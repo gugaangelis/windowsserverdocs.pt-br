@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
 title: Configurar a ID de logon alternativa
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 026873e231628e93738cba096cfae44c8b053217
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948551"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816959"
 ---
 # <a name="configuring-alternate-login-id"></a>Configurar a ID de logon alternativa
 
@@ -137,13 +136,13 @@ Os aplicativos do Office dependem das informações enviadas pelo administrador 
 
 |RegKey a adicionar|Nome de dados RegKey, tipo e valor|Windows 7/8|Windows 10|Descrição|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER \Software\Microsoft\AuthN|LoginHint</br>REG_SZ</br>contoso.com|Necessária|Necessária|O valor dessa RegKey é um nome de domínio personalizado verificado no locatário da organização. Por exemplo, a Contoso Corp pode fornecer um valor de Contoso.com nessa RegKey se Contoso.com for um dos nomes de domínio personalizado verificados no Contoso.onmicrosoft.com de locatário.|
+|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Obrigatório|Obrigatório|O valor dessa RegKey é um nome de domínio personalizado verificado no locatário da organização. Por exemplo, a Contoso Corp pode fornecer um valor de Contoso.com nessa RegKey se Contoso.com for um dos nomes de domínio personalizado verificados no Contoso.onmicrosoft.com de locatário.|
 HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Necessário para o Outlook 2016 ProPlus|Necessário para o Outlook 2016 ProPlus|O valor dessa RegKey pode ser 1/0 para indicar ao aplicativo do Outlook se ele deve envolver a lógica de autenticação de ID alternativo aprimorada.|
-HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Necessária|Necessária|Essa RegKey pode ser usada para definir o STS como uma zona confiável nas configurações da Internet. A implantação padrão do ADFS recomenda adicionar o namespace do ADFS à zona da intranet local para o Internet Explorer|
+HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Obrigatório|Obrigatório|Essa RegKey pode ser usada para definir o STS como uma zona confiável nas configurações da Internet. A implantação padrão do ADFS recomenda adicionar o namespace do ADFS à zona da intranet local para o Internet Explorer|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>Novo fluxo de autenticação após configuração adicional
 
-![Fluxo de autenticação](media/Configure-Alternate-Login-ID/alt1a.png)
+![fluxo de autenticação](media/Configure-Alternate-Login-ID/alt1a.png)
 
 1. r: o usuário é provisionado no Azure AD usando a ID alternativa
    </br>b: o administrador de diretório envia as configurações de RegKey necessárias para computadores cliente impactados
@@ -156,7 +155,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Clientes não Exchange e Skype for Business
 
-|Remota|Declaração de suporte|Comentários|
+|Cliente|Instrução de suporte|Comentários|
 | ----- | -----|-----|
 |Microsoft Teams|Com suporte|<li>O Microsoft Teams dá suporte a AD FS (SAML-P, WS-enalimentate, WS-Trust e OAuth) e à autenticação moderna.</li><li> As principais equipes da Microsoft, como canais, chats e arquivos funcionais, funcionam com a ID de logon alternativa.</li><li>os aplicativos de primeira e de terceiros devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de suporte.</li>|     
 |OneDrive for Business|Com suporte-chave do registro do lado do cliente recomendada |Com a ID alternativa configurada, você vê que o UPN local é preenchido previamente no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro do lado do cliente indicada neste artigo: Office 2013 e Lync 2013 solicitam credenciais para o SharePoint Online, OneDrive e Lync Online periodicamente.|
@@ -165,7 +164,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Clientes do Exchange e Skype for Business
 
-|Remota|Instrução de suporte-com HMA|Instrução de suporte-sem HMA|
+|Cliente|Instrução de suporte-com HMA|Instrução de suporte-sem HMA|
 | ----- |----- | ----- |
 |Outlook|Com suporte, sem prompts extras|Com suporte</br></br>Com a **autenticação moderna** para o Exchange Online: com suporte</br></br>Com a **autenticação regular** para o Exchange Online: com suporte com as seguintes advertências:</br><li>Você deve estar em um computador ingressado no domínio e conectado à rede corporativa </li><li>Você só pode usar a ID alternativa em ambientes que não permitem acesso externo para usuários de caixa de correio. Isso significa que os usuários só podem se autenticar em sua caixa de correio de forma compatível quando estão conectados e ingressados na rede corporativa, em uma VPN ou conectados por meio de máquinas de acesso direto, mas você obtém alguns prompts adicionais ao configurar seu perfil do Outlook.| 
 |Pastas públicas híbridas|Com suporte, sem prompts adicionais.|Com a **autenticação moderna** para o Exchange Online: com suporte</br></br>Com **autenticação regular** para o Exchange Online: sem suporte</br></br><li>As pastas públicas híbridas não poderão ser expandidas se forem usadas IDs alternativas e, portanto, não deverão ser usadas hoje com métodos de autenticação regulares.|
@@ -185,7 +184,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 -   Quando habilitada, o recurso de ID de logon alternativo só estará disponível para autenticação de nome de usuário/senha em todos os protocolos de autenticação de nome/senha com suporte do AD FS (SAML-P, WS-enalimentated, WS-Trust e OAuth).
 
 
--   Quando a autenticação integrada do Windows (WIA) é executada (por exemplo, quando os usuários tentam acessar um aplicativo corporativo em um computador ingressado no domínio da intranet e AD FS administrador configurou a política de autenticação para usar WIA para intranet), o UPN é usado para autenticação. Se você tiver configurado qualquer regra de declaração para as terceiras partes confiáveis para o recurso de ID de logon alternativo, verifique se essas regras ainda são válidas no caso WIA.
+-   Quando a autenticação integrada do Windows (WIA) é executada (por exemplo, quando os usuários tentam acessar um aplicativo corporativo em um computador ingressado no domínio da intranet e AD FS administrador configurou a política de autenticação para usar o WIA para intranet), o UPN é usado para autenticação. Se você tiver configurado qualquer regra de declaração para as terceiras partes confiáveis para o recurso de ID de logon alternativo, verifique se essas regras ainda são válidas no caso WIA.
 
 -   Quando habilitado, o recurso de ID de logon alternativo exige que pelo menos um servidor de catálogo global seja acessível do servidor de AD FS para cada floresta de conta de usuário à qual o AD FS dá suporte. A falha ao acessar um servidor de catálogo global na floresta da conta de usuário resulta em AD FS voltando para usar o UPN. Por padrão, todos os controladores de domínio são servidores de catálogo global.
 
@@ -212,14 +211,14 @@ A seguir estão os vários casos de erro e o impacto correspondente na experiên
 
 
 
-|                       **Casos de erro**                        | **Impacto na experiência de entrada** |                                                              **Event**                                                              |
+|                       **Casos de erro**                        | **Impacto na experiência de entrada** |                                                              **Circunstância**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | Não é possível obter um valor para SAMAccountName para o objeto de usuário |          Falha de logon           |                  ID do evento 364 com a mensagem de exceção MSIS8012: não é possível encontrar samAccountName para o usuário: '{0}'.                   |
 |        O atributo Canôniconame não está acessível         |          Falha de logon           |               ID do evento 364 com a mensagem de exceção MSIS8013: Canônicaname: '{0}' do usuário: '{1}' está em formato inadequado.                |
 |        Vários objetos de usuário são encontrados em uma floresta        |          Falha de logon           | ID do evento 364 com mensagem de exceção MSIS8015: encontrou várias contas de usuário com a identidade '{0}' na floresta '{1}' com identidades: {2} |
 |   Vários objetos de usuário são encontrados em várias florestas    |          Falha de logon           |           ID do evento 364 com mensagem de exceção MSIS8014: encontrou várias contas de usuário com a identidade '{0}' em florestas: {1}            |
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)
 
 

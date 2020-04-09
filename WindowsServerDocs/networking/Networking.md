@@ -7,15 +7,15 @@ ms.technology: networking
 ms.topic: landing-page
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
 manager: dougkim
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.localizationpriority: medium
-ms.openlocfilehash: e625bb537ef514ff68241669c3e75f482a61f068
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: de1acf0a0ed233fdd7675da3bca63f7f16824a9a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318573"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855799"
 ---
 # <a name="networking"></a>Rede
 
@@ -66,7 +66,7 @@ Essa consistência significa que seus aplicativos agora são mais fáceis de ser
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="https://docs.microsoft.com/windows-server/networking/sdn/">SDN (Rede definida pelo software)</a></h3>
+                        <h3><a href="https://docs.microsoft.com/windows-server/networking/sdn/">SDN (rede definida pelo software)</a></h3>
                         <hr />
                         <p>Você pode usar este tópico para saber mais sobre as tecnologias SDN fornecidas no Windows Server, no System Center e no Microsoft Azure.</p>
                         <p><b>Observação:</b> Para hosts Hyper-V e VMs (máquinas virtuais) que executam servidores de infraestrutura SDN, como controladores de rede e nós de balanceamento de carga de software, você deve instalar o Windows Server Datacenter Edition. Para hosts Hyper-V que contêm apenas VMs de carga de trabalho de locatário que estão conectadas a redes controladas por SDN, você pode executar o Windows Server Standard Edition.</p>

@@ -1,24 +1,20 @@
 ---
 title: ping
 description: Use ping para verificar a conectividade de rede.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49272671-2eec-4fa5-881f-65c24cfbef52
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 7d9841c12d403d91e14021ff9df65246d322debd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9e03b45d889bcac87bd3e533ab69c7a07be74ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372313"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837549"
 ---
 # <a name="ping"></a>ping
 
@@ -32,12 +28,12 @@ O comando **ping** verifica a conectividade no nível de IP para outro computado
 ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] [/s <Count>] [{/j <Hostlist> | /k <Hostlist>}] [/w <timeout>] [/R] [/S <Srcaddr>] [/4] [/6] <TargetName>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------|--------|
 |/t|Especifica que o ping continua enviando mensagens de solicitação de eco para o destino até que seja interrompido. Para interromper e exibir estatísticas, pressione CTRL + BREAK. Para interromper e encerrar o **ping**, pressione CTRL + C.|
-|SRDF|Especifica que a resolução de nome inversa é executada no endereço IP de destino. Se isso for bem-sucedido, o ping exibirá o nome do host correspondente.|
+|/a|Especifica que a resolução de nome inversa é executada no endereço IP de destino. Se isso for bem-sucedido, o ping exibirá o nome do host correspondente.|
 |/n \<contagem\>|Especifica o número de mensagens de solicitação de eco enviadas. O padrão é 4.|
 |/l \<tamanho\>|Especifica o comprimento, em bytes, do campo de dados nas mensagens de solicitação de eco enviadas. O padrão é 32. O tamanho máximo é 65.527.|
 |/f|Especifica que as mensagens de solicitação de eco são enviadas com o sinalizador não fragmentar no cabeçalho IP definido como 1 (disponível somente em IPv4). A mensagem de solicitação de eco não pode ser fragmentada por roteadores no caminho para o destino. Esse parâmetro é útil para solucionar problemas de PMTU (unidade máxima de transmissão) do caminho.|
@@ -60,7 +56,7 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 -   Você pode usar o **ping** para testar o nome do computador e o endereço IP do computador. Se o ping do endereço IP for bem-sucedido, mas o ping do nome do computador não for, você poderá ter um problema de resolução de nome. Nesse caso, verifique se o nome do computador que você está especificando pode ser resolvido por meio do arquivo hosts local, usando consultas DNS (sistema de nomes de domínio) ou por meio de técnicas de resolução de nomes NetBIOS.
 -   Esse comando estará disponível somente se o protocolo TCP/IP estiver instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_Examples"></a>Disso
 
 O exemplo a seguir mostra a saída do comando **ping** :
 
@@ -97,5 +93,5 @@ Para executar o ping no 10.0.99.221 de destino e especificar a rota de origem fl
 ping /j 10.12.0.1 10.29.3.1 10.1.44.1 10.0.99.221
 ```
 
-## <a name="additional-references"></a>referências adicionais
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD-redefinindo a senha krbtgt
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 3bd6c1d0-d316-4b03-b7b4-557d4537635c
 ms.technology: identity-adds
-ms.openlocfilehash: 14dd09c6177d473547a67e1d79e9714f0a7a29b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2d19621c80b40fa70706bf75434dce74693990d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390296"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823629"
 ---
 # <a name="ad-forest-recovery---resetting-the-krbtgt-password"></a>Recuperação de floresta do AD-redefinindo a senha krbtgt
 
@@ -39,7 +38,7 @@ Use o procedimento a seguir para redefinir a senha krbtgt para o domínio. O pro
 > [!NOTE]
 > Você deve executar essa operação duas vezes. O histórico de senha da conta krbtgt é dois, o que significa que ele inclui as duas senhas mais recentes. Ao redefinir a senha duas vezes, você limpa efetivamente todas as senhas antigas do histórico, portanto, não há como o outro controlador de domínio será replicado com esse controlador de domínio usando uma senha antiga.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
 - [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md) 

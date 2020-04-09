@@ -4,15 +4,15 @@ description: Definição de site e considerações de posicionamento do controla
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 66c6f94f1f3fee924ba0d9a3bfa0c712d62bb095
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: aac7b8f37de2132778bd681d2f2e29ad0ad0810d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851869"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado de controladores de domínio e considerações de site
 
@@ -76,7 +76,7 @@ Para todos os cenários de confiança, as credenciais são roteadas de acordo co
 
 -   Desabilitar a passagem de solicitações de autenticação com um domínio nulo especificado em todas as relações de confiança disponíveis. [O processo Lsass. exe pode parar de responder se você tiver muitas relações de confiança externas em um controlador de domínio Active Directory](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 - [Ajuste de desempenho Active Directory servidores](index.md)
 - [Considerações sobre hardware](hardware-considerations.md)
 - [Considerações sobre LDAP](ldap-considerations.md)

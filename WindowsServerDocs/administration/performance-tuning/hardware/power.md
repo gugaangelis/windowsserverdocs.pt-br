@@ -4,15 +4,15 @@ description: Considerações de energia de hardware do servidor
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d4653824d497ea0c42337260aa788bab354ba3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 865899e5f33bde97dff97efaff6010b95aafd3e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355019"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851979"
 ---
 # <a name="server-hardware-power-considerations"></a>Considerações de energia de hardware do servidor
 
@@ -65,7 +65,7 @@ A terminologia do processador usada em todo este tópico reflete a hierarquia de
 -   Core
 -   Processador lógico
 
-![terminologia do processador](../media/perftune-guide-figure-1.png)
+![Terminologia do processador](../media/perftune-guide-figure-1.png)
 
 ## <a name="see-also"></a>Consulte também
 - [Considerações de desempenho de hardware do servidor](index.md)

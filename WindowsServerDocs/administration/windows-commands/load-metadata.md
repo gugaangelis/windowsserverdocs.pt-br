@@ -1,24 +1,20 @@
 ---
 title: Carregar metadados
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2c535487-668b-44fc-babb-ff59cf7d190e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 025f75743d61889c4b987e9a2a575d1c599f04c1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b8db98611fd78c6e30070901effafddd6e678c16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374624"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841019"
 ---
 # <a name="load-metadata"></a>Carregar metadados
 
@@ -34,11 +30,11 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 load metadata [<Drive>:][<Path>]<MetaData.cab>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[\<Drive >:] [<Path>]|Especifica o local do arquivo de metadados.|
+|[\<drive >:] [<Path>]|Especifica o local do arquivo de metadados.|
 |MetaData. cab|Especifica o arquivo Metadata. cab a ser carregado.|
 
 ## <a name="remarks"></a>Comentários
@@ -46,13 +42,13 @@ load metadata [<Drive>:][<Path>]<MetaData.cab>
 -   Você pode usar o comando de **importação** para importar uma cópia de sombra transportável com base nos metadados especificados pelos **metadados de carga**.
 -   Esse comando é necessário antes do comando **Iniciar restauração** para carregar os gravadores e componentes selecionados para a restauração.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para carregar um arquivo de metadados chamado Metafile. cab do local padrão, digite:
 ```
 load metadata metafile.cab
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

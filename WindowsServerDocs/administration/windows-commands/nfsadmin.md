@@ -1,24 +1,20 @@
 ---
 title: nfsadmin
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7375b2cf-c6b8-45b5-abf6-6c10e462defd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2658cf610e4328d382b9224f4230d68a022d1cc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6134ac7737cd761e752082b336e851dead23bd14
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373224"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838979"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -79,10 +75,10 @@ Libera os bloqueios mantidos por um *cliente* ou, se **todos** forem especificad
 **start**  
 inicia o servidor para o serviço NFS.  
   
-**stop**  
+**deixar**  
 Interrompe o serviço do servidor NFS.  
   
-**config**  
+**configuração**  
 Especifica as configurações gerais do servidor para NFS. Você deve fornecer pelo menos uma das seguintes opções com o argumento de comando **config** :  
   
 **mapsvr\=** <em>Server</em>  
@@ -94,7 +90,7 @@ Especifica se os eventos serão auditados e onde os eventos serão registrados. 
 **log**  
 Especifica que os eventos auditados serão registrados apenas no log do aplicativo Visualizador de Eventos.  
   
-**file**  
+**Grupo**  
 Especifica que os eventos auditados serão registrados somente no arquivo especificado por **config fname**.  
   
 **mesmo**  
@@ -109,7 +105,7 @@ Define o arquivo especificado pelo *arquivo* como o arquivo de auditoria. O padr
 **fsize\=** \=*tamanho*  
 Define o *tamanho* como o tamanho máximo em megabytes do arquivo de auditoria. O tamanho máximo padrão é 7 MB.  
   
-**audit\=** \[ **\+** | **\-** \]**montar** \[ **\+** | **\-** \]**ler** \[ **\+** | **\-** \]**gravação** \[ **\+** | **\-** \]**criar** \[ **\+|\-** \]**excluir** \[ **\+** | **\-** \]**bloqueio** \[ **\+|\-** \]**todos**  
+**audit\=** \[ **\+** | **\-** \]**montar** \[ **\+** | **\-** \]**ler** \[ **\+** | **\-** \]**gravação** \[ **\+** | **\-** \]**criar** \[ **\+** | **\-** \]**excluir** \[ **\+** | **\-** \]**bloqueio** \[ **\+** | **\-** \]**tudo**  
 Especifica os eventos a serem registrados. Para iniciar o registro em log de um evento, digite um sinal de adição \( **\+** \) antes do nome do evento; para parar de registrar um evento, digite um sinal de subtração \( **\-** \) antes do nome do evento. Se o sinal for omitido, o sinal de adição será assumido. Não use **todos** com nenhum outro nome de evento.  
   
 **lockperiod\=** <em>segundos</em>  
@@ -163,7 +159,7 @@ ObCaseInsensitive DWOrd
 **ntfscase\=** **{ | ** **inferior** | **preserve**  
 Especifica se o caso de caracteres nos nomes de arquivos no sistema de arquivos NTFS será retornado em letras minúsculas, em letras maiúsculas ou no formato armazenado no diretório. A configuração padrão é **preserve**. Essa configuração não poderá ser alterada se **casesensitivelookups** for definido como **Sim**.  
   
-*nome* de criação de um  
+**creategroup** *nome* de criação de um  
 Cria um novo grupo de clientes, dando a ele o *nome*especificado.  
   
 **listgroups**  
@@ -178,7 +174,7 @@ altera o nome do grupo de clientes especificado por *OldName* para *NewName*
 **addmembers** *nome host*\[...\]  
 Adiciona o *host* ao grupo de clientes especificado pelo *nome*.  
   
-*nome* do listmembers  
+**listmembers** *nome* do listmembers  
 lista os computadores host no grupo de clientes especificado por *nome*.  
   
 \[do *host do grupo* de **deletemembers** ...\]  
@@ -192,10 +188,10 @@ Use o comando **nfsadmin client** para administrar o cliente para NFS. A ação 
 **start**  
 inicia o cliente para o serviço NFS.  
   
-**stop**  
+**deixar**  
 Interrompe o cliente para o serviço NFS.  
   
-**config**  
+**configuração**  
 Especifica as configurações gerais para o cliente para NFS. Você deve fornecer pelo menos uma das seguintes opções com o argumento de comando **config** :  
   
 <em>modo</em> de\=de FileAccess  

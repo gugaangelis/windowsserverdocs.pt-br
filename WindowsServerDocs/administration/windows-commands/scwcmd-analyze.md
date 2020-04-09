@@ -1,24 +1,20 @@
 ---
 title: Scwcmd analyze
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0259271b-be5b-48d7-a51d-8b9b6786efb4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14426ae33144ae9bdd8f8154b4be74a3f088606b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b0657523b49f8db444b6a48a41e3078d6351a34
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371258"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835229"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
@@ -33,18 +29,18 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 <ResultDir>] [/u:<UserName>] [/pw:<Password>] [/t:<Threads>] [/l] [/e]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/m: \<ComputerName >|Especifica o nome NetBIOS, o nome DNS ou o endereço IP do computador a ser analisado. Se o parâmetro **/m** for especificado, o parâmetro **/p** também deverá ser especificado.|
-|/ou: \<OuName >|Especifica o FQDN (nome de domínio totalmente qualificado) de uma UO (unidade organizacional) em Active Directory Domain Services. Se o parâmetro **/ou** for especificado, o parâmetro **/p** também deverá ser especificado. Todos os computadores na UO serão analisados em relação à política fornecida.|
-|/p: \<Policy >|Especifica o caminho e o nome do arquivo de política. XML a ser usado para executar a análise.|
-|/i: \<ComputerList >|Especifica o caminho e o nome de arquivo de um arquivo. XML que contém uma lista de computadores junto com seus arquivos de política esperados. Todos os computadores no arquivo. XML serão analisados em relação aos seus arquivos de política correspondentes. Um arquivo. XML de exemplo é%windir%\security\SampleMachineList.xml.|
-|/o: \<ResultDir >|Especifica o caminho e o diretório em que os arquivos de resultado da análise devem ser salvos. O padrão é o diretório atual.|
-|/u: \<UserName >|Especifica uma credencial de usuário alternativa a ser usada ao executar a análise em um computador remoto. O padrão é o usuário conectado.|
-|/PW: \<Password >|Especifica uma credencial de usuário alternativa a ser usada ao executar a análise em um computador remoto. O padrão é a senha do usuário conectado.|
-|/t: \<Threads >|Especifica o número de operações de análise pendentes simultâneas que devem ser mantidas durante a análise (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
+|/m:\<ComputerName >|Especifica o nome NetBIOS, o nome DNS ou o endereço IP do computador a ser analisado. Se o parâmetro **/m** for especificado, o parâmetro **/p** também deverá ser especificado.|
+|/ou:\<OuName >|Especifica o FQDN (nome de domínio totalmente qualificado) de uma UO (unidade organizacional) em Active Directory Domain Services. Se o parâmetro **/ou** for especificado, o parâmetro **/p** também deverá ser especificado. Todos os computadores na UO serão analisados em relação à política fornecida.|
+|/p: política de\<>|Especifica o caminho e o nome do arquivo de política. XML a ser usado para executar a análise.|
+|/i:\<Computerlist >|Especifica o caminho e o nome de arquivo de um arquivo. XML que contém uma lista de computadores junto com seus arquivos de política esperados. Todos os computadores no arquivo. XML serão analisados em relação aos seus arquivos de política correspondentes. Um arquivo. XML de exemplo é%windir%\security\SampleMachineList.xml.|
+|/o:\<ResultDir >|Especifica o caminho e o diretório em que os arquivos de resultado da análise devem ser salvos. O padrão é o diretório atual.|
+|/u:\<nome de usuário >|Especifica uma credencial de usuário alternativa a ser usada ao executar a análise em um computador remoto. O padrão é o usuário conectado.|
+|/PW:\<> de senha|Especifica uma credencial de usuário alternativa a ser usada ao executar a análise em um computador remoto. O padrão é a senha do usuário conectado.|
+|/t:\<threads >|Especifica o número de operações de análise pendentes simultâneas que devem ser mantidas durante a análise (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
 |/l|Faz com que o processo de análise seja registrado. Um arquivo de log será gerado para cada computador que está sendo analisado. Os arquivos de log serão armazenados no mesmo diretório que os arquivos de resultado. Use a opção **/o** para especificar o diretório dos arquivos de resultado.|
 |/e|Registre um evento no log de eventos do aplicativo se uma incompatibilidade for encontrada.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -53,7 +49,7 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 Scwcmd. exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Para analisar uma política de segurança em relação ao arquivo webpolicy. xml, digite:
 ```
@@ -75,6 +71,6 @@ Para analisar uma política de segurança para a UO de servidores Webno arquivo 
 scwcmd analyze /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolicy.xml /u:DomainAdmin
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

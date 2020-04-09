@@ -4,19 +4,19 @@ description: Ajuste do gerenciamento de energia do processador (PPM) para o plan
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 53399c1ff1d9fa60df992b922b99c82d119b2f58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5c7319c843609f8bf846dd6ccf4bc2bf91f3b942
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355029"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851969"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Ajuste do gerenciamento de energia do processador (PPM) para o plano de energia balanceado do Windows Server
 
-A partir do Windows Server 2008, o Windows Server fornece três planos de energia: **Equilibrado**, **alto desempenho**e **economia de energia**. O plano de energia **equilibrado** é a opção padrão que visa fornecer a melhor eficiência de energia para um conjunto de cargas de trabalho de servidor típicas. Este tópico descreve as cargas de trabalho que foram usadas para determinar as configurações padrão do esquema **equilibrado** para as várias versões anteriores do Windows.
+A partir do Windows Server 2008, o Windows Server fornece três planos de energia: **equilibrado**, **alto desempenho**e **economia de energia**. O plano de energia **equilibrado** é a opção padrão que visa fornecer a melhor eficiência de energia para um conjunto de cargas de trabalho de servidor típicas. Este tópico descreve as cargas de trabalho que foram usadas para determinar as configurações padrão do esquema **equilibrado** para as várias versões anteriores do Windows.
 
 Se você executar um sistema de servidor que tenha características de carga de trabalho ou requisitos de desempenho e de energia drasticamente diferentes das cargas de trabalho, convém considerar o ajuste das configurações de energia padrão (ou seja, criar um plano de energia personalizado). Uma fonte de informações de ajuste úteis é as [considerações de energia de hardware do servidor](../power.md). Como alternativa, você pode decidir que o plano de energia de **alto desempenho** é a escolha certa para seu ambiente, reconhecendo que você provavelmente terá um impacto de energia significativo no Exchange para algum nível de maior capacidade de resposta.
 
@@ -58,12 +58,12 @@ Todos os benchmarks, exceto os SPECpower, foram originalmente projetados para an
 
 Para cada versão do Windows, os servidores de produção mais atuais são usados no processo de análise e otimização do plano de energia. Em alguns casos, os testes foram executados em sistemas de pré-produção cuja agenda de lançamento correspondeu à versão seguinte do Windows.
 
-Considerando que a maioria dos servidores é vendida com 1 a 4 soquetes de processador, e como os servidores de expansão têm menos probabilidade de ter eficiência de energia como uma preocupação principal, os testes de otimização do plano de energia são executados principalmente em sistemas de 2 e 4 soquetes. A quantidade de RAM, disco e recursos de rede para cada teste são escolhidos para permitir que cada sistema seja executado até sua capacidade total, ao mesmo tempo em que leva em conta as restrições de custo que normalmente seriam em vigor para ambientes de servidor do mundo real, como manter o configurações razoáveis.
+Considerando que a maioria dos servidores é vendida com 1 a 4 soquetes de processador, e como os servidores de expansão têm menos probabilidade de ter eficiência de energia como uma preocupação principal, os testes de otimização do plano de energia são executados principalmente em sistemas de 2 e 4 soquetes. A quantidade de RAM, disco e recursos de rede para cada teste são escolhidos para permitir que cada sistema seja executado até sua capacidade total, levando em conta as restrições de custo que normalmente seriam em vigor para ambientes de servidor reais, como manter as configurações razoáveis.
 
 > [!IMPORTANT]
-> Embora o sistema possa ser executado com sua carga de pico, normalmente otimizamos para níveis de carga mais baixos, já que os servidores que são executados consistentemente em seus níveis de carga de pico seriam bem aconselhados a usar o plano de energia de **alto desempenho** , a menos que a eficiência de energia seja alta prioridade.
+> Embora o sistema possa ser executado com seu pico de carga, normalmente otimizamos para níveis de carga mais baixos, já que os servidores que são executados consistentemente em seus níveis de carga de pico seriam bem aconselhados a usar o plano de energia de **alto desempenho** , a menos que a eficiência de energia seja uma prioridade alta.
 
-### <a name="metrics"></a>metrics
+### <a name="metrics"></a>Métricas
 
 Todos os benchmarks testados usam a taxa de transferência como a métrica de desempenho. O tempo de resposta é considerado um requisito de SLA para essas cargas de trabalho (exceto para SAP, onde é uma métrica primária). Por exemplo, uma execução de parâmetro de comparação é considerada "válida" se a média ou o tempo de resposta máximo for menor que determinado valor.
 
@@ -74,7 +74,7 @@ Portanto, a análise de ajuste PPM também usa a taxa de transferência como sua
 A execução dos núcleos de CPU em frequências menores reduz o consumo de energia. No entanto, frequências menores normalmente diminuem a taxa de transferência e aumentam o tempo de resposta Para o plano de energia **equilibrado** , há uma compensação intencional de capacidade de resposta e eficiência de energia. Os testes de carga de trabalho do SAP, bem como os SLAs de tempo de resposta em outras cargas de trabalho, certifique-se de que o aumento do tempo de resposta não exceda determinado limite (5% como exemplo) para essas cargas de trabalho específicas.
 
 > [!NOTE]
-> Se a carga de trabalho usar o tempo de resposta como a métrica de desempenho, o sistema deverá mudar para o plano de energia de **alto desempenho** ou alterar o plano de energia com **balanceamento** conforme sugerido nos [parâmetros do plano de energia equilibrado recomendado para resposta rápida Tempo](recommended-balanced-plan-parameters.md).
+> Se a carga de trabalho usar o tempo de resposta como a métrica de desempenho, o sistema deverá mudar para o plano de energia de **alto desempenho** ou alterar o plano de energia com **balanceamento** conforme sugerido em [parâmetros de plano de energia balanceados recomendados para tempo de resposta rápido](recommended-balanced-plan-parameters.md).
 
 ### <a name="tuning-results"></a>Resultados de ajuste
 
@@ -107,11 +107,11 @@ Devido ao número e à complexidade dos parâmetros, essa pode ser uma tarefa de
 
 ### <a name="understand-high-level-performance-and-power-requirements"></a>Entenda os requisitos de desempenho e de energia de alto nível
 
-Se sua carga de trabalho for "tempo real" (por exemplo, suscetível a problemas ou outros impactos visíveis do usuário final) ou tiver um requisito de capacidade de resposta muito rígido (por exemplo, uma corretora de ações) e se o consumo de energia não for um critério principal para seu ambiente, você provavelmente Basta mudar para o plano de energia de **alto desempenho** . Caso contrário, você deve compreender os requisitos de tempo de resposta de suas cargas de trabalho e ajustar os parâmetros PPM para obter a melhor eficiência de energia possível que ainda atenda a esses requisitos.
+Se sua carga de trabalho for "tempo real" (por exemplo, suscetível a problemas ou outros impactos visíveis do usuário final) ou tiver um requisito de capacidade de resposta muito rígido (por exemplo, uma corretora de ações) e se o consumo de energia não for um critério principal para o seu ambiente, você provavelmente deve simplesmente mudar para o plano de energia de **alto desempenho** . Caso contrário, você deve compreender os requisitos de tempo de resposta de suas cargas de trabalho e ajustar os parâmetros PPM para obter a melhor eficiência de energia possível que ainda atenda a esses requisitos.
 
 ### <a name="understand-underlying-workload-characteristics"></a>Entender as características de carga de trabalho subjacente
 
-Você deve saber suas cargas de trabalho e projetar os conjuntos de parâmetros de teste para ajuste. Por exemplo, se as frequências dos núcleos de CPU precisarem ser aumentadas muito rapidamente (talvez você tenha uma carga de trabalho intermitente com períodos ociosos significativos, mas precisa de uma capacidade de resposta muito rápida quando uma nova transação chegar), então a política de aumento de desempenho do processador Talvez precise ser definido como "Rocket" (que, como o nome indica, emite a frequência de núcleo da CPU para seu valor máximo em vez de resumir em um período de tempo).
+Você deve saber suas cargas de trabalho e projetar os conjuntos de parâmetros de teste para ajuste. Por exemplo, se as frequências dos núcleos de CPU precisarem ser aumentadas muito rapidamente (talvez você tenha uma carga de trabalho intermitente com períodos ociosos significativos, mas você precisa de uma capacidade de resposta muito rápida quando uma nova transação é exibida. em seguida, a política de aumento de desempenho do processador pode precisar ser definida como "Rocket" (que, como o nome sugere, emite a frequência de núcleo da CPU para seu valor máximo em vez de resumir em um período de tempo).
 
 Se a carga de trabalho for muito intermitente, o intervalo de verificação PPM poderá ser reduzido para fazer com que a frequência de CPU comece a ser reativada mais cedo após a chegada de uma intermitência. Se sua carga de trabalho não tiver alta simultaneidade de thread, o estacionamento principal poderá ser habilitado para forçar a execução da carga de trabalho em um número menor de núcleos, o que também pode melhorar as taxas de acertos do cache do processador.
 

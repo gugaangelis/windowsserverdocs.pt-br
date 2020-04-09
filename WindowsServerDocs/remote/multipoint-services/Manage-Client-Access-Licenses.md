@@ -1,24 +1,20 @@
 ---
 title: Gerenciar licenças de acesso para cliente
 description: Saiba como trabalhar com CALs nos serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 675e089e-d841-401e-bba7-69f3929ef609
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 4d809ab1bf2a18dff537bf63620623d576c0b25d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2981f22b2b85d90f4102c3a0b67e25901cb12395
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949880"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853539"
 ---
 # <a name="manage-client-access-licenses"></a>Gerenciar licenças de acesso para cliente
 Cada estação que se conecta a um sistema de serviços do MultiPoint, incluindo o computador que executa os serviços do MultiPoint que é usado como uma estação, deve ter uma *Cal (licença de acesso para cliente)* válida por usuário área de trabalho remota.
@@ -49,5 +45,5 @@ Se não estiver configurado corretamente, a configuração dos serviços do Mult
    - Selecione **OK** 
 
   
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte também  
 [Gerenciar tarefas de sistema usando o MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)

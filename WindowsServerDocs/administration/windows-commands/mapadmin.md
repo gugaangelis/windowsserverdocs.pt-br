@@ -1,24 +1,20 @@
 ---
 title: mapadmin
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc4b76c1989298ea83c480b9c838ce0fc18fef5f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ea60f4d9753ed90c0d13ee48289b011aeafe6b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839669"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -57,19 +53,19 @@ Além dos argumentos de comando específicos, o **mapadmin** aceita os seguintes
 -p &lt;senha&gt; especifica a senha do usuário. Se você especificar a opção **-u** , mas omitir a opção **-p** , será solicitada a senha do usuário.
 A ação específica que o **mapadmin** executa depende do argumento de comando que você especificar:
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 ### <a name="start"></a>start
 inicia o serviço Mapeamento de Nomes de Usuário.
 
 ### <a name="stop"></a>stop
 Interrompe o serviço de Mapeamento de Nomes de Usuário.
 
-### <a name="config"></a>configuração
+### <a name="config"></a>config
 Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As opções a seguir estão disponíveis com este argumento de comando: **-r &lt;dddd&gt;:&lt;hh&gt;:&lt;mm&gt;** -especifica o intervalo de atualização para atualização dos bancos de dados do Windows e NIS em dias, horas e minutos. O intervalo mínimo é de 5 minutos.
 **-i {yes | no}** -ativa o mapeamento simples (**Sim**) ou desativado (**não**). Por padrão, o mapeamento simples está ativado.
 **Adicionar** – cria um novo mapeamento para um usuário ou grupo. As seguintes opções estão disponíveis com este argumento de comando:
 
-|Opção|Definição|
+|{1&gt;Opção&lt;1}|Definição|
 |-----|-------|
 |-o nome de &lt;Wu&gt;|Especifica o nome do usuário do Windows para o qual um novo mapeamento está sendo criado.|
 |-UU &lt;nome&gt;|Especifica o nome do usuário UNIX para o qual um novo mapeamento está sendo criado.|
@@ -79,7 +75,7 @@ Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As op
 
 **setprimary** – especifica qual mapeamento é o mapeamento principal para um usuário ou grupo do UNIX com vários mapeamentos. As seguintes opções estão disponíveis com este argumento de comando:
 
-|Opção|Definição|
+|{1&gt;Opção&lt;1}|Definição|
 |-----|-------|
 |-o nome de &lt;Wu&gt;|Especifica o usuário do Windows do mapeamento primário. Se houver mais de um mapeamento para o usuário, use a opção **-uu** para especificar o mapeamento primário.|
 |-UU &lt;nome&gt;|Especifica o usuário UNIX do mapeamento principal.|
@@ -88,7 +84,7 @@ Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As op
 
 **excluir** – remove o mapeamento de um usuário ou grupo. As seguintes opções estão disponíveis para este argumento de comando:
 
-|Opção|Definição|
+|{1&gt;Opção&lt;1}|Definição|
 |-----|-------|
 |-&gt; de usuário do Wu &lt;|O usuário do Windows para o qual o mapeamento será excluído, especificado como &lt;*WindowsDomain&gt;\\&lt;nome de usuário&gt;* . Você deve especificar o **-Wu** ou a opção **-uu** , ou ambos. Se você especificar as duas opções, o mapeamento específico identificado pelas duas opções será excluído. Se você especificar apenas a opção **-Wu** , todos os mapeamentos para o usuário especificado serão excluídos.|
 |-WG &lt;grupo&gt;|O grupo do Windows para o qual o mapeamento será excluído, especificado como &lt;WindowsDomain&gt;\\&lt;GroupName&gt;. Você deve especificar a opção **-WG** ou **-UG** , ou ambos. Se você especificar as duas opções, o mapeamento específico identificado pelas duas opções será excluído. Se você especificar somente a opção **-WG** , todos os mapeamentos do grupo especificado serão excluídos.|
@@ -97,7 +93,7 @@ Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As op
 
 **lista** -exibe informações sobre mapeamentos de usuário e grupo. As seguintes opções estão disponíveis com este argumento de comando:
 
-|Opção|Definição|
+|{1&gt;Opção&lt;1}|Definição|
 |-----|-------|
 |-todos|lista os mapeamentos simples e avançados para usuários e grupos.|
 |– simples|lista todos os usuários e grupos mapeados simples.|
@@ -111,7 +107,7 @@ Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As op
 **Restore** – substitui a configuração e o mapeamento de dados com dados do arquivo (especificado por &lt;nome de arquivo&gt;) que foi criado usando o argumento de comando **backup** .
 **adddomainmap** -adiciona um mapa simples entre um domínio do Windows e um domínio ou senha do NIS e arquivos de grupo. As seguintes opções estão disponíveis para este argumento de comando:
 
-|Opção|Definição|
+|{1&gt;Opção&lt;1}|Definição|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|Especifica o domínio do Windows a ser mapeado.|
 |-y &lt;NISdomain&gt;|Especifica o domínio NIS a ser mapeado.&lt;br/&gt;&lt;br/&gt; **-n** &lt;NisServer&gt; especifica o servidor NIS para o domínio NIS especificado com a opção **-y** .|
@@ -119,7 +115,7 @@ Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As op
 
 **removedomainmap** -remove um mapa simples entre um domínio do Windows e um domínio NIS. As opções e o argumento a seguir estão disponíveis para este argumento de comando:
 
-|Opção|Definição|
+|{1&gt;Opção&lt;1}|Definição|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|Especifica o domínio do Windows do mapa a ser removido.|
 |-y &lt;NISdomain&gt;|Especifica o domínio NIS do mapa a ser removido.|
@@ -127,7 +123,7 @@ Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As op
 
 **listdomainmaps** -lista os domínios do Windows que são mapeados para domínios NIS ou senhas e arquivos de grupo.
 
-## <a name="notes"></a>Observações
+## <a name="notes"></a>{1&gt;Observações&lt;1}
 -   Se você não especificar um argumento de comando, **mapadmin** exibirá as configurações atuais para mapeamento de nomes de usuário.
 -   para todas as opções que especificam um nome de usuário ou grupo, os seguintes formatos podem ser usados:
 -   para usuários do Windows, use o formato &lt;domínio&gt;\\&lt;nome de usuário&gt;, \\\\&lt;computador&gt;\\&lt;nome de usuário&gt;, \\&lt;computador&gt;\\&lt;nome de usuário&gt;ou &lt;computador&gt;\\&lt;nome de usuário&gt;
@@ -135,5 +131,5 @@ Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As op
 -   para usuários do UNIX, use o formulário &lt;NISdomain&gt;\\&lt;nome de usuário&gt;, &lt;nome de usuário&gt;@&lt;NISdomain&gt;, usuário &lt;nome&gt;@PCNFSou PCNFS\\&lt;nome de usuário&gt;
 -   para grupos do UNIX, use o formulário &lt;NISdomain&gt;\\&lt;GroupName&gt;, &lt;GroupName&gt;@&lt;NISdomain&gt;, &lt;GroupName&gt;@PCNFSou PCNFS\\&lt;GroupName&gt;
 
-## <a name="additional-references"></a>referências adicionais
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

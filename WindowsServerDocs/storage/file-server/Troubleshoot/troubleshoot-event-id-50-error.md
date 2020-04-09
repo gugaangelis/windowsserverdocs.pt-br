@@ -3,16 +3,15 @@ title: Solucionar problemas da mensagem de erro 50 do ID do evento
 description: Descreve como solucionar problemas da mensagem de erro 50 do ID do evento
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 202e0604fc492ff72cd1794bc8197a12c1ab9163
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 7ce3551b60450a3720c9350b5c55f396368490c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654377"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815229"
 ---
 # <a name="troubleshoot-the-event-id-50-error-message"></a>Solucionar problemas da mensagem de erro 50 do ID do evento
 
@@ -83,7 +82,7 @@ A tabela a seguir descreve o que cada deslocamento dessa mensagem representa:
 
 **O código de erro**
 
-No exemplo na seção "Resumo", o código de erro é listado na segunda linha. Essa linha começa com "0008:" e inclui os últimos quatro bytes nesta linha: 0008:00 00 00 00 32 00 04 80 nesse caso, o código de erro é 0x80040032. O código a seguir é o código para o erro 50 e é o mesmo para todas as mensagens da ID de evento 50: IO_LOST_DELAYED_WRITEWARNINGNote quando você estiver convertendo os dados hexadecimais na mensagem de ID do evento para o código de status, lembre-se de que os valores são representados no formato little-endian.
+No exemplo na seção "Resumo", o código de erro é listado na segunda linha. Essa linha começa com "0008:" e inclui os últimos quatro bytes nesta linha: 0008:00 00 00 00 32 00 04 80 nesse caso, o código de erro é 0x80040032. O código a seguir é o código para o erro 50 e é o mesmo para todas as mensagens da ID de evento 50: IO_LOST_DELAYED_WRITEWARNINGNote quando você estiver convertendo os dados hexadecimais na mensagem ID do evento para o código de status, lembre-se de que os valores são representados no formato little-endian.
 
 **O disco de destino**
 

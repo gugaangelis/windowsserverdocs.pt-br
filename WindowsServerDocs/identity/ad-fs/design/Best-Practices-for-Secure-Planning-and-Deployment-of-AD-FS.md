@@ -1,7 +1,6 @@
 ---
 ms.assetid: 963a3d37-d5f1-4153-b8d5-2537038863cb
 title: Práticas recomendadas para o planejamento e a implantação seguros do AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: be488ccffee7b267d2a3a120b85436abf206f65a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcddb3cc7534f45f0a84e25a6174648f1e3b82af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359205"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858409"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>Práticas recomendadas para o planejamento e a implantação seguros do AD FS
 
@@ -57,12 +56,12 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
   
     A tabela a seguir explica como registrar a extensão de função de SCW apropriada com base na função do servidor AD FS escolhida no computador onde o AD FS foi instalado.  
   
-    |Função do servidor AD FS|Banco de dados de configuração do AD FS usado|Digite o comando a seguir em um prompt de comando:|  
+    |Função do servidor AD FS|Banco de dados de configuração do AD FS usado|Digite o seguinte comando em um prompt de comando:|  
     |---------------------|-------------------------------------|---------------------------------------------------|  
     |Servidor de federação autônomo|Banco de Dados Interno do Windows|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |Servidor de federação ingressado em farm|Banco de Dados Interno do Windows|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |Servidor de federação ingressado em farm|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |Proxy do servidor de federação|N/D|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |Proxy do servidor de federação|{1&gt;N/A&lt;1}|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     Para saber mais sobre os bancos de dados que podem ser usados com o AD FS, confira [A função do banco de dados de configuração do AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
   
@@ -75,7 +74,7 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
   
     A criptografia de tokens é altamente recomendável para aumentar a segurança e a proteção contra ataques MITM (Man-in-the-Middle) potenciais que podem ser testados em sua implantação de AD FS. Usar criptografia de uso pode representar um ligeiro impacto no resultado geral, porém este geralmente não é notado em muitas implantações, e os benefícios oferecidos por uma segurança mais elevada ultrapassam e muito qualquer custo em termos de desempenho do sistema.  
   
-    Para habilitar a criptografia de token, primeiramente adicione um certificado de criptografia à sua terceira parte confiável. Você pode configurar um certificado de criptografia ao criar um objeto de confiança de terceira parte confiável ou posteriormente. Para adicionar um certificado de criptografia posteriormente a uma relação de confiança de terceira parte confiável existente, você pode definir um certificado para uso na guia **criptografia** em Propriedades de confiança ao usar o snap-in de AD FS. Para especificar um certificado para uma relação de confiança existente usando os cmdlets AD FS, use o parâmetro EncryptionCertificate dos cmdlets **set-ClaimsProviderTrust** ou **set-RelyingPartyTrust** . Para definir um certificado para o Serviço de Federação a ser usado ao descriptografar tokens, use o cmdlet **set-ADFSCertificate** e especifique "`Token-Encryption`" para o parâmetro *certificatetype* . É possível habilitar e desativar a criptografia para um objeto de confiança de terceira parte confiável usando o parâmetro *EncryptClaims* do cmdlet **Set-RelyingPartyTrust** .  
+    Para habilitar a criptografia de token, primeiramente adicione um certificado de criptografia à sua terceira parte confiável. Você pode configurar um certificado de criptografia ao criar um objeto de confiança de terceira parte confiável ou posteriormente. Para adicionar um certificado de criptografia posteriormente a uma relação de confiança de terceira parte confiável existente, você pode definir um certificado para uso na guia **criptografia** em Propriedades de confiança ao usar o snap-in de AD FS. Para especificar um certificado para uma relação de confiança existente usando os cmdlets AD FS, use o parâmetro EncryptionCertificate dos cmdlets **set-ClaimsProviderTrust** ou **set-RelyingPartyTrust** . Para definir um certificado para o Serviço de Federação a ser usado ao descriptografar tokens, use o cmdlet **set-ADFSCertificate** e especifique "`Token-Encryption`" para o parâmetro *certificatetype* . É possível habilitar e desativar a criptografia para um objeto de confiança de terceira parte confiável usando o parâmetro *EncryptClaims* do cmdlet **Set-RelyingPartyTrust**.  
   
 -   **Utilizar a proteção estendida para autenticação**  
   
@@ -85,7 +84,7 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
   
     Para habilitar o recurso de proteção estendida, use o parâmetro **ExtendedProtectionTokenCheck** no cmdlet **Set-ADFSProperties**. Os possíveis valores desta configuração e o nível de segurança fornecido por esses valores são descritos na tabela a seguir.  
   
-    |Valor do parâmetro|Nível de segurança|Configuração de proteção|  
+    |Valor do Parâmetro|Nível de segurança|Configuração de proteção|  
     |-------------------|------------------|----------------------|  
     |Requerer|O servidor está totalmente protegido.|A proteção estendida é imposta e sempre necessária.|  
     |Permitir|O servidor está parcialmente protegido.|A proteção estendida é imposta nos casos em que os sistemas envolvidos foram atualizados para dar suporte a ela.|  
@@ -114,7 +113,7 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
      Para bloqueio inteligente de extranet para AD FS no Windows Server 2016, consulte [AD FS proteção de bloqueio inteligente de extranet](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md).  
   
 ## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>Práticas recomendadas de segurança do AD FS específicas para SQL Server  
-As práticas recomendadas de segurança a seguir são específicas para o uso de Microsoft SQL Server® ou banco de dados interno do Windows (WID) quando essas tecnologias de banco de dados são usadas para gerenciar o design e a implantação de AD FS.  
+As práticas recomendadas de segurança a seguir são específicas para o uso de Microsoft SQL Server&reg; ou banco de dados interno do Windows (WID) quando essas tecnologias de banco de dados são usadas para gerenciar o design e a implantação de AD FS.  
   
 > [!NOTE]  
 > Essas recomendações visam ampliar, e não substituir, o guia de segurança de produto do SQL Server. Para obter mais informações sobre como planejar uma instalação segura do SQL Server, consulte [considerações de segurança para uma instalação segura do SQL](https://go.microsoft.com/fwlink/?LinkID=139831) (https://go.microsoft.com/fwlink/?LinkID=139831).  
@@ -125,7 +124,7 @@ As práticas recomendadas de segurança a seguir são específicas para o uso de
   
 -   **Execute SQL Server em uma conta de serviço em vez de usar as contas de serviço do sistema padrão internas.**  
   
-    Por padrão, o SQL Server geralmente é instalado e configurado para usar uma das contas integradas do sistema com suporte, tal como as contas LocalSystem ou NetworkService. Para aprimorar a segurança de sua instalação do SQL Server para AD FS, sempre que possível, use uma conta de serviço separada para acessar seu serviço de SQL Server e habilitar a autenticação Kerberos registrando o SPN (nome da entidade de segurança) desta conta no seu Implantação de Active Directory. Isso habilita a autenticação mútua entre o cliente e o servidor. Sem registrar o SPN de uma conta de serviço separada, o SQL Server usará NTLM para autenticação do Windows, na qual somente o cliente é autenticado.  
+    Por padrão, o SQL Server geralmente é instalado e configurado para usar uma das contas integradas do sistema com suporte, tal como as contas LocalSystem ou NetworkService. Para aprimorar a segurança de sua instalação do SQL Server para AD FS, sempre que possível, use uma conta de serviço separada para acessar seu serviço de SQL Server e habilitar a autenticação Kerberos registrando o SPN (nome da entidade de segurança) dessa conta em sua implantação do Active Directory. Isso habilita a autenticação mútua entre o cliente e o servidor. Sem registrar o SPN de uma conta de serviço separada, o SQL Server usará NTLM para autenticação do Windows, na qual somente o cliente é autenticado.  
   
 -   **Minimize a área da superfície do SQL Server.**  
   

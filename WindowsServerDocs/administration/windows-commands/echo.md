@@ -1,24 +1,20 @@
 ---
 title: echo
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fb9fcd0f-5e73-4504-aa95-78204e1a79d3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 343d6327d262401b4be14e472a135062456890f1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e6e9c3c79cc8006efba0c97a574e3d6d94a6f7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377635"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845239"
 ---
 # <a name="echo"></a>echo
 
@@ -35,21 +31,21 @@ echo [<Message>]
 echo [on | off]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |[on \| off]|Ativa ou desativa o recurso de eco de comando. O eco de comando está ativado por padrão.|
-|\<Message >|Especifica o texto a ser exibido na tela.|
+|Mensagem de \<>|Especifica o texto a ser exibido na tela.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   O comando **Echo** *Message* é particularmente útil quando o **eco** é desativado. Para exibir uma mensagem com várias linhas sem exibir nenhum comando, você pode incluir vários comandos de *mensagem* de eco após o comando **echo off** no seu programa em lotes.
+-   O comando **Echo** *Message* é particularmente útil quando o **eco** é desativado. Para exibir uma mensagem com várias linhas sem exibir nenhum comando, você pode incluir vários comandos de **echo** *mensagem* de eco após o comando **echo off** no seu programa em lotes.
 -   Quando o **eco** é desativado, o prompt de comando não aparece na janela do prompt de comando. Para exibir o prompt de comando, digite **Echo on.**
 -   Se usado em um arquivo em lotes, **Echo on** e **echo off** não afetam a configuração no prompt de comando.
 -   Para impedir o eco de um comando específico em um arquivo em lotes, insira um sinal de arroba (@) na frente do comando. Para evitar o eco de todos os comandos em um arquivo em lotes, inclua o comando **echo off** no início do arquivo.
--   Para exibir um pipe ( **|** ) ou um caractere de redirecionamento ( **<** ou **>** ) quando você estiver usando o **eco**, use um cursor (^) imediatamente antes do pipe ou caractere de redirecionamento (por exemplo, **^|** , **0** ou **2**). Para exibir um cursor, digite dois Cursors em sucessão ( **^^** ).
+-   Para exibir um pipe ( **|** ) ou um caractere de redirecionamento ( **<** ou **>** ) quando você estiver usando o **eco**, use um cursor (^) imediatamente antes do pipe ou caractere de redirecionamento (por exemplo, **^|** , **^>** ou **^<** ). Para exibir um cursor, digite dois Cursors em sucessão ( **^^** ).
 
 ## <a name="examples"></a>Exemplos
 
@@ -117,6 +113,6 @@ File2.txt
 File3.txt
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

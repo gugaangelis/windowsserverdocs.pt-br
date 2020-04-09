@@ -1,30 +1,24 @@
 ---
 title: bitsadmin help
-description: Tópico de comandos do Windows para **Bitsadmin Help** – exibe o uso da linha de comando.
-ms.custom: na
+description: O tópico de comandos do Windows para a **ajuda do Bitsadmin**, que exibe o uso da linha de comando.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c30d89e4-25a3-4974-a002-37138d01e077
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9917e3537d4b642cdaeabf7d592614ec7de17ab8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 95bc71c058ee1b20f86202198b1c176744ee403d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850419"
 ---
 # <a name="bitsadmin-help"></a>bitsadmin help
 
-
-
-Exibe o uso da linha de comando.
+Exibe informações relacionadas à ajuda sobre os parâmetros e opções de linha de comando do Bitsadmin.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,13 +26,14 @@ Exibe o uso da linha de comando.
 bitsadmin /help | /?
 ```
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 O exemplo a seguir recupera a ajuda da linha de comando.
+
 ```
 C:\>bitsadmin /help
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

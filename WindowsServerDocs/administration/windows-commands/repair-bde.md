@@ -1,24 +1,20 @@
 ---
 title: repair-bde
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 817e5fb5cf032376ddfddb3a54f73411ac175def
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2107e5b7ef0339fc4f682632f3ef5a593578680a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384548"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835959"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -41,7 +37,7 @@ Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BK
 repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -51,15 +47,15 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 |-RP|Identifica a senha de recuperação numérica que deve ser usada para desbloquear o volume. Esse comando também pode ser especificado como **-RecoveryPassword**.|
 |-PW|Identifica a senha que deve ser usada para desbloquear o volume. Este comando também pode ser especificado como **senha**|
 |-KP|Identifica o pacote de chave de recuperação que pode ser usado para desbloquear o volume. Esse comando também pode ser especificado como **-KeyPackage**.|
-|-LF|Especifica o caminho para o arquivo que armazenará mensagens de erro, aviso e informações de reparo do bde. Esse comando também pode ser especificado como **-logfile**.|
+|-lf|Especifica o caminho para o arquivo que armazenará mensagens de erro, aviso e informações de reparo do bde. Esse comando também pode ser especificado como **-logfile**.|
 |-f|Força a desmontagem de um volume mesmo que ele não possa ser bloqueado. Esse comando também pode ser especificado como **-Force**.|
-|-? ou/?|Exibe a ajuda no prompt de comando.|
+|-? ou/?|Exibe a Ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
 Se o caminho para um pacote de chaves não for especificado, o **Repair-bde** pesquisará a unidade em busca de um pacote de chaves. No entanto, se o disco rígido tiver sido danificado, o **Repair-bde** poderá não conseguir localizar o pacote e solicitará que você forneça o caminho.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 O exemplo a seguir tenta reparar a unidade C e gravar o conteúdo da unidade C na unidade D usando o arquivo de chave de recuperação (RecoveryKey. Bek) armazenado na unidade F e grava os resultados dessa tentativa no arquivo de log (log. txt) na unidade Z.
 ```
@@ -78,6 +74,6 @@ O exemplo a seguir tenta reparar a unidade C e gravar o conteúdo da unidade C n
 repair-bde C: D: -pw
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

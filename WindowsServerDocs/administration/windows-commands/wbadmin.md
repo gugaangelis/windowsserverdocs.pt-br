@@ -1,24 +1,20 @@
 ---
 title: wbadmin
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Wbadmin, que permite fazer backup e restaurar seu sistema operacional, volumes, arquivos, pastas e aplicativos de um prompt de comando.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0b3f32-d21f-4861-84bb-b2eadbf1e7b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a0fe9b999e788af1316ca0dbbf50b84e80cb08e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362466"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829469"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -50,7 +46,7 @@ Você deve executar o **Wbadmin** em um prompt de comandos com privilégios elev
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|Recupera um catálogo de backup de um local de armazenamento especificado no caso em que o catálogo de backup no computador local está corrompido.|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|Exclui o catálogo de backup no computador local. Use esse subcomando somente se o catálogo de backup deste computador estiver corrompido e você não tiver nenhum backup armazenado em outro local que possa ser usado para restaurar o catálogo.|
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Backup e recuperação](https://go.microsoft.com/fwlink/?LinkID=195054)
 -   [Backup do Windows Server cmdlets no Windows PowerShell](https://technet.microsoft.com/library/jj902428.aspx)

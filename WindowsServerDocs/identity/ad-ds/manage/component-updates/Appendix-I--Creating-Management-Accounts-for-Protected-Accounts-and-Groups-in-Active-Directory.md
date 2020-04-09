@@ -1,7 +1,6 @@
 ---
 ms.assetid: 13fe87d9-75cf-45bc-a954-ef75d4423839
 title: Apêndice I-criando contas de gerenciamento para contas e grupos protegidos no Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c2141e4fad564579fd687b2dfc7e4a12e1634acb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949132"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823479"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Apêndice I: Criar o gerenciamento de contas para contas e grupos protegidos no Active Directory
 
@@ -22,14 +21,14 @@ ms.locfileid: "75949132"
 
 Um dos desafios de implementar um modelo de Active Directory que não depende da associação permanente em grupos altamente privilegiados é que deve haver um mecanismo para popular esses grupos quando a Associação temporária nos grupos é necessária. Algumas soluções com privilégios de gerenciamento de identidade exigem que as contas de serviço do software recebam associação permanente em grupos como DA ou administradores em cada domínio na floresta. No entanto, tecnicamente não é necessário para que as soluções de Privileged Identity Management (PIM) executem seus serviços em contextos altamente privilegiados.  
   
-Este apêndice fornece informações que você pode usar para soluções de PIM implementadas nativamente ou de terceiros para criar contas com privilégios limitados e podem ser rigorosamente controladas, mas podem ser usadas para preencher grupos com privilégios no Active Directory quando a elevação temporária é necessária. Se você estiver implementando o PIM como uma solução nativa, essas contas poderão ser usadas pela equipe administrativa para executar a população temporária do grupo e, se você estiver implementando o PIM por meio de software de terceiros, poderá adaptar essas contas para funcionar como serviço as.  
+Este apêndice fornece informações que você pode usar para soluções de PIM implementadas nativamente ou de terceiros para criar contas com privilégios limitados e podem ser rigorosamente controladas, mas podem ser usadas para popular grupos privilegiados em Active Directory quando a elevação temporária é necessária. Se você estiver implementando o PIM como uma solução nativa, essas contas poderão ser usadas pela equipe administrativa para executar a população de grupo temporária e, se você estiver implementando o PIM por meio de software de terceiros, você poderá adaptar essas contas para funcionar como contas de serviço.  
   
 > [!NOTE]  
 > Os procedimentos descritos neste apêndice fornecem uma abordagem para o gerenciamento de grupos altamente privilegiados no Active Directory. Você pode adaptar esses procedimentos para atender às suas necessidades, adicionar restrições adicionais ou omitir algumas das restrições descritas aqui.  
   
 ## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Criando contas de gerenciamento para contas e grupos protegidos no Active Directory
 
-A criação de contas que podem ser usadas para gerenciar a associação de grupos privilegiados sem exigir que as contas de gerenciamento recebam direitos e permissões excessivas consiste em quatro atividades gerais que são descritas nas instruções passo a passo que dar  
+A criação de contas que podem ser usadas para gerenciar a associação de grupos privilegiados sem exigir que as contas de gerenciamento recebam direitos e permissões excessivas consiste em quatro atividades gerais que são descritas nas instruções passo a passo que seguem:  
   
 1.  Primeiro, você deve criar um grupo que gerenciará as contas, pois essas contas devem ser gerenciadas por um conjunto limitado de usuários confiáveis. Se você ainda não tiver uma estrutura de UO que acomode segregando contas e sistemas com privilégios e protegidos da população geral no domínio, deverá criar um. Embora não sejam fornecidas instruções específicas neste apêndice, as capturas de tela mostram um exemplo dessa hierarquia de UO.  
   
@@ -39,7 +38,7 @@ A criação de contas que podem ser usadas para gerenciar a associação de grup
   
 4.  Configure permissões no objeto AdminSDHolder em cada domínio para permitir que as contas de gerenciamento alterem a Associação dos grupos privilegiados no domínio.  
   
-Você deve testar exaustivamente todos esses procedimentos e modificá-los conforme necessário para seu ambiente antes de implementá-los em um ambiente de produção. Você também deve verificar se todas as configurações funcionam conforme o esperado (alguns procedimentos de teste são fornecidos neste apêndice) e você deve testar um cenário de recuperação de desastre no qual as contas de gerenciamento não estão disponíveis para serem usadas para preencher os grupos protegidos para recuperação metas. Para obter mais informações sobre como fazer backup e restaurar Active Directory, consulte o guia passo a passo de [backup e recuperação do AD DS](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
+Você deve testar exaustivamente todos esses procedimentos e modificá-los conforme necessário para seu ambiente antes de implementá-los em um ambiente de produção. Você também deve verificar se todas as configurações funcionam conforme o esperado (alguns procedimentos de teste são fornecidos neste apêndice) e você deve testar um cenário de recuperação de desastre no qual as contas de gerenciamento não estão disponíveis para serem usadas para preencher grupos protegidos para fins de recuperação. Para obter mais informações sobre como fazer backup e restaurar Active Directory, consulte o guia passo a passo de [backup e recuperação do AD DS](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
   
 > [!NOTE]  
 > Ao implementar as etapas descritas neste apêndice, você criará contas que poderão gerenciar a associação de todos os grupos protegidos em cada domínio, não apenas os grupos Active Directory de maior privilégio, como EAs, DAs e BAs. Para obter mais informações sobre grupos protegidos no Active Directory, consulte o [Apêndice C: contas e grupos protegidos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
@@ -48,7 +47,7 @@ Você deve testar exaustivamente todos esses procedimentos e modificá-los confo
   
 #### <a name="creating-a-group-to-enable-and-disable-management-accounts"></a>Criando um grupo para habilitar e desabilitar contas de gerenciamento
 
-As contas de gerenciamento devem ter suas senhas redefinidas a cada uso e devem ser desabilitadas quando as atividades exigidas forem concluídas. Embora você também possa considerar a implementação de requisitos de logon de cartão inteligente para essas contas, é uma configuração opcional e essas instruções pressupõem que as contas de gerenciamento serão configuradas com um nome de usuário e uma senha longa e complexa como mínima controles. Nesta etapa, você criará um grupo que tem permissões para redefinir a senha nas contas de gerenciamento e para habilitar e desabilitar as contas.  
+As contas de gerenciamento devem ter suas senhas redefinidas a cada uso e devem ser desabilitadas quando as atividades exigidas forem concluídas. Embora você também possa considerar a implementação de requisitos de logon de cartão inteligente para essas contas, é uma configuração opcional e essas instruções pressupõem que as contas de gerenciamento serão configuradas com um nome de usuário e uma senha longa e complexa como controles mínimos. Nesta etapa, você criará um grupo que tem permissões para redefinir a senha nas contas de gerenciamento e para habilitar e desabilitar as contas.  
   
 Para criar um grupo para habilitar e desabilitar contas de gerenciamento, execute as seguintes etapas:  
   
@@ -106,7 +105,7 @@ Para criar um grupo para habilitar e desabilitar contas de gerenciamento, execut
   
 #### <a name="creating-the-management-accounts"></a>Criando as contas de gerenciamento
 
-Você deve criar pelo menos uma conta que será usada para gerenciar a associação de grupos com privilégios em sua instalação do Active Directory e, preferencialmente, uma segunda conta para servir como um backup. Se você optar por criar as contas de gerenciamento em um único domínio na floresta e conceder a eles recursos de gerenciamento para todos os grupos protegidos de domínios, ou se optar por implementar contas de gerenciamento em cada domínio na floresta, os procedimentos serão efetivamente o mesmo.  
+Você deve criar pelo menos uma conta que será usada para gerenciar a associação de grupos com privilégios em sua instalação do Active Directory e, preferencialmente, uma segunda conta para servir como um backup. Se você optar por criar as contas de gerenciamento em um único domínio na floresta e conceder a eles recursos de gerenciamento para todos os grupos protegidos de domínios, ou se optar por implementar contas de gerenciamento em cada domínio na floresta, os procedimentos serão efetivamente os mesmos.  
   
 > [!NOTE]  
 > As etapas neste documento pressupõem que você ainda não implementou controles de acesso baseado em função e o Privileged Identity Management para Active Directory. Portanto, alguns procedimentos devem ser executados por um usuário cuja conta seja membro do grupo Admins. do domínio para o domínio em questão.  
@@ -133,7 +132,7 @@ Para criar as contas de gerenciamento, execute as seguintes etapas:
 
 7. Clique com o botão direito do mouse no objeto de usuário que você acabou de criar e clique em **Propriedades**.  
 
-8. Clique na guia **Conta**.  
+8. Clique na guia **conta** .  
 
 9. No campo **Opções de conta** , selecione o sinalizador a **conta é confidencial e não pode ser delegado** , selecione **essa conta dá suporte à criptografia Kerberos AES 128 bits** e/ou a **seguinte conta dá suporte ao sinalizador de criptografia Kerberos AES 256** e clique em **OK**.  
 
@@ -178,7 +177,7 @@ Para criar as contas de gerenciamento, execute as seguintes etapas:
     > [!NOTE]  
     > É improvável que essa conta seja usada para fazer logon em controladores de domínio somente leitura (RODCs) em seu ambiente. No entanto, caso a circunstância exija a conta para fazer logon em um RODC, você deve adicionar essa conta ao grupo de replicação de senha do RODC negado para que sua senha não seja armazenada em cache no RODC.  
     >
-    > Embora a senha da conta deva ser redefinida após cada uso e a conta seja desabilitada, a implementação dessa configuração não tem um efeito deletério na conta e pode ajudar em situações em que um administrador se esqueça de redefinir a conta senha e desabilite-a.  
+    > Embora a senha da conta deva ser redefinida após cada uso e a conta seja desabilitada, a implementação dessa configuração não tem um efeito deletério na conta e pode ajudar em situações em que um administrador se esqueça de redefinir a senha da conta e desabilitá-la.  
 
 17. Clique na guia **Membro de**.  
 
@@ -239,7 +238,7 @@ Independentemente de como você opta por criar um grupo no qual você coloca as 
 
 Você deve configurar a auditoria na conta para registrar, no mínimo, todas as gravações na conta. Isso permitirá que você não só identifique a habilitação bem-sucedida da conta e a redefinição de sua senha durante os usos autorizados, mas também para identificar tentativas por usuários não autorizados a manipular a conta. As gravações com falha na conta devem ser capturadas em seu sistema SIEM (monitoramento de eventos e informações de segurança) (se aplicável) e devem disparar alertas que fornecem notificação à equipe responsável por investigar possíveis comprometimentos.  
   
-As soluções SIEM tomam informações de eventos de fontes de segurança envolvidas (por exemplo, logs de eventos, dados de aplicativos, fluxos de rede, produtos antimalware e fontes de detecção de intrusão), agrupam os dados e tentam fazer exibições inteligentes e ações proativas . Há muitas soluções de SIEM comercial, e muitas empresas criam implementações privadas. Um SIEM bem projetado e implementado adequadamente pode aprimorar significativamente os recursos de monitoramento de segurança e de resposta a incidentes. No entanto, os recursos e a precisão variam enormemente entre as soluções. Os SIEM estão além do escopo deste documento, mas as recomendações de eventos específicas contidas devem ser consideradas por qualquer implementador de SIEM.  
+As soluções SIEM tomam informações de eventos de fontes de segurança envolvidas (por exemplo, logs de eventos, dados de aplicativos, fluxos de rede, produtos antimalware e fontes de detecção de intrusão), agrupam os dados e tentam fazer exibições inteligentes e ações proativas. Há muitas soluções de SIEM comercial, e muitas empresas criam implementações privadas. Um SIEM bem projetado e implementado adequadamente pode aprimorar significativamente os recursos de monitoramento de segurança e de resposta a incidentes. No entanto, os recursos e a precisão variam enormemente entre as soluções. Os SIEM estão além do escopo deste documento, mas as recomendações de eventos específicas contidas devem ser consideradas por qualquer implementador de SIEM.  
   
 Para obter mais informações sobre as definições de configuração de auditoria recomendadas para controladores de domínio, consulte [monitoramento Active Directory para sinais de comprometimento](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md). As definições de configuração específicas do controlador de domínio são fornecidas no [monitoramento Active Directory para sinais de comprometimento](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md).  
   
@@ -309,7 +308,7 @@ Nesse caso, você concederá as contas de gerenciamento recém-criadas para perm
   
 #### <a name="verifying-group-and-account-configuration-settings"></a>Verificando as definições de configuração de grupo e conta
 
-Agora que você criou e configurou contas de gerenciamento que podem modificar a associação de grupos protegidos no domínio (que inclui os grupos EA, DA e BA mais altamente privilegiados), você deve verificar se as contas e seu grupo de gerenciamento foram criado corretamente. A verificação consiste nessas tarefas gerais:  
+Agora que você criou e configurou contas de gerenciamento que podem modificar a associação de grupos protegidos no domínio (que inclui os grupos EA, DA e BA mais altamente privilegiados), você deve verificar se as contas e seu grupo de gerenciamento foram criados corretamente. A verificação consiste nessas tarefas gerais:  
   
 1.  Teste o grupo que pode habilitar e desabilitar contas de gerenciamento para verificar se os membros do grupo podem habilitar e desabilitar as contas e redefinir suas senhas, mas não podem executar outras atividades administrativas nas contas de gerenciamento.  
   

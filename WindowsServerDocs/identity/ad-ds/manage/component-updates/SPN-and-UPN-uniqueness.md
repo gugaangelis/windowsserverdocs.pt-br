@@ -1,7 +1,6 @@
 ---
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: Exclusividade de SPN e UPN
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ded707276471fccd28f0ec17afef0a24015ff32f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f182f79b5bb97e45f1cfd34ad59cf52322f09063
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390032"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823059"
 ---
 # <a name="spn-and-upn-uniqueness"></a>Exclusividade de SPN e UPN
 
@@ -28,7 +27,7 @@ ms.locfileid: "71390032"
 ## <a name="overview"></a>Visão geral  
 Controladores de domínio que executam o Windows Server 2012 R2 bloqueiam a criação de SPN (nomes de entidade de serviço) duplicados e UPN (nomes de entidade de usuário). Isso inclui se a restauração ou reanimação de um objeto excluído ou a renomeação de um objeto resultaria em uma duplicata.  
   
-### <a name="background"></a>Histórico  
+### <a name="background"></a>Tela de fundo  
 Normalmente, os nomes de entidade de serviço (SPN) duplicados ocorrem e resultam em falhas de autenticação e podem levar à utilização excessiva da CPU do LSASs. Não há nenhum método na caixa para bloquear a adição de um SPN ou UPN duplicado. *  
   
 Valores UPN duplicados interrompem a sincronização entre o AD local e o Office 365.  
@@ -51,7 +50,7 @@ Os códigos de erro 8467 ou 8468 ou seus equivalentes hexadecimais, simbólicos 
   
 **Tabela SEQ \\\* árabe 2: códigos de erro de exclusividade de UPN e SPN**  
   
-|Decimal|Hex|Simbólico|String|  
+|DECIMAL|Hex|Simbólico|String|  
 |-----------|-------|------------|----------|  
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|A operação falhou porque o valor de SPN fornecido para adição/modificação não é exclusivo em toda a floresta.|  
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|A operação falhou porque o valor UPN fornecido para adição/modificação não é exclusivo em toda a floresta.|  

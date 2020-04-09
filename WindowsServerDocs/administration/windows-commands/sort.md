@@ -1,28 +1,22 @@
 ---
 title: sort
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para classificação, que lê entrada, classifica dados e grava os resultados na tela, em um arquivo ou em outro dispositivo.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65b091a6de4f20ce94389ed39f4fe645c72b3560
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 853a9d5dc0928eec78199c8e0d0fe1715ea64808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383955"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834079"
 ---
 # <a name="sort"></a>sort
-
-
 
 Lê a entrada, classifica os dados e grava os resultados na tela, em um arquivo ou em outro dispositivo.
 
@@ -34,18 +28,18 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:][<Path1>]<FileName1>] [/t [<Drive2>:][<Path2>]] [/o [<Drive3>:][<Path3>]<FileName3>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |/r|Reverte a ordem de classificação (ou seja, classifica de Z a A e de 9 a 0).|
-|/+ @ NO__T-1N >|Especifica o número da posição do caractere em que a **classificação** começará cada comparação. *N* pode ser qualquer número inteiro válido.|
-|/m \<Kilobytes >|Especifica a quantidade de memória principal a ser usada para a classificação em kilobytes (KB).|
-|/l \<Locale >|Substitui a ordem de classificação dos caracteres que são definidos pela localidade padrão do sistema (ou seja, o idioma e o país/região selecionados durante a instalação).|
-|/REC \<Characters >|Especifica o número máximo de caracteres em um registro ou uma linha do arquivo de entrada (o valor padrão é 4.096 e o máximo é 65.535).|
-|[\<Drive1 >:] [\<Path1 >] \<FileName1 >|Especifica o arquivo a ser classificado. Se nenhum nome de arquivo for especificado, a entrada padrão será classificada. Especificar o arquivo de entrada é mais rápido do que redirecionar o mesmo arquivo como entrada padrão.|
-|/t [\<Drive2 >:] [\<Path2 >]|Especifica o caminho do diretório para manter o armazenamento de trabalho do comando de **classificação** se os dados não couberem na memória principal. Por padrão, o diretório temporário do sistema é usado.|
-|/o [\<Drive3 >:] [\<Path3 >] \<FileName3 >|Especifica o arquivo onde a entrada classificada deve ser armazenada. Se não for especificado, os dados serão gravados na saída padrão. Especificar o arquivo de saída é mais rápido do que redirecionar a saída padrão para o mesmo arquivo.|
+|/+\<N >|Especifica o número da posição do caractere em que a **classificação** começará cada comparação. *N* pode ser qualquer número inteiro válido.|
+|/m \<kilobytes >|Especifica a quantidade de memória principal a ser usada para a classificação em kilobytes (KB).|
+|/l \<> de localidade|Substitui a ordem de classificação dos caracteres que são definidos pela localidade padrão do sistema (ou seja, o idioma e o país/região selecionados durante a instalação).|
+|/REC \<caracteres >|Especifica o número máximo de caracteres em um registro ou uma linha do arquivo de entrada (o valor padrão é 4.096 e o máximo é 65.535).|
+|[\<unidade1 >:] [\<caminho1 >]\<arquivo1 >|Especifica o arquivo a ser classificado. Se nenhum nome de arquivo for especificado, a entrada padrão será classificada. Especificar o arquivo de entrada é mais rápido do que redirecionar o mesmo arquivo como entrada padrão.|
+|/t [\<unidade2 >:] [\<Caminho2 >]|Especifica o caminho do diretório para manter o armazenamento de trabalho do comando de **classificação** se os dados não couberem na memória principal. Por padrão, o diretório temporário do sistema é usado.|
+|/o [\<Drive3 >:] [\<Path3 >]\<FileName3 >|Especifica o arquivo onde a entrada classificada deve ser armazenada. Se não for especificado, os dados serão gravados na saída padrão. Especificar o arquivo de saída é mais rápido do que redirecionar a saída padrão para o mesmo arquivo.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -60,11 +54,11 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
     O tamanho máximo de memória padrão quando nenhum tamanho é especificado é de 90% da memória principal disponível se a entrada e a saída forem arquivos ou 45% da memória principal, caso contrário. A configuração padrão geralmente oferece o melhor desempenho.
 -   Usando a opção de linha de comando **/l**
 
-    Atualmente, a única alternativa para a localidade padrão é a localidade "C", que é mais rápida do que a classificação de idioma natural (ela classifica caracteres de acordo com suas codificações binárias).
+    Atualmente, a única alternativa para a localidade padrão é a localidade C, que é mais rápida do que a classificação de idioma natural (ela classifica caracteres de acordo com suas codificações binárias).
 -   Usando símbolos de redirecionamento com o comando **Sort**
 
-    Você pode usar o símbolo de pipe ( **|** ) para direcionar dados de entrada para o comando de **classificação** de outro comando ou para direcionar a saída classificada para outro comando. Você pode especificar os arquivos de entrada e saída usando símbolos de redirecionamento ( **<** ou **>** ). Ele pode ser mais rápido e mais eficiente (especialmente com arquivos grandes) para especificar o arquivo de entrada diretamente (conforme definido por *arquivo1* na sintaxe do comando) e, em seguida, especificar o arquivo de saída usando o parâmetro **/o** .
--   Diferencia maiúsculas de minúsculas
+    Você pode usar o símbolo de pipe ( **|** ) para direcionar dados de entrada para o comando de **classificação** de outro comando ou para direcionar a saída classificada para outro comando. Você pode especificar arquivos de entrada e saída usando símbolos de redirecionamento ( **<** ou **>** ). Ele pode ser mais rápido e mais eficiente (especialmente com arquivos grandes) para especificar o arquivo de entrada diretamente (conforme definido por *arquivo1* na sintaxe do comando) e, em seguida, especificar o arquivo de saída usando o parâmetro **/o** .
+-   Diferenciação de maiúsculas e minúsculas
 
     O comando **Sort** não faz distinção entre letras maiúsculas e minúsculas.
 -   Limites no tamanho do arquivo
@@ -77,7 +71,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
     Se a classificação couber no tamanho máximo da memória (conforme definido por padrão ou conforme especificado pelo parâmetro **/m** ), a classificação será executada em uma única passagem. Caso contrário, a classificação é executada em duas passagens de classificação e mesclagem separadas, e as quantidades de memória usadas para ambas as passagens são iguais. Quando duas passagens são executadas, os dados parcialmente classificados são armazenados em um arquivo temporário no disco. Se não houver memória suficiente para executar a classificação em duas passagens, um erro de tempo de execução será emitido. Se a opção de linha de comando **/m** for usada para especificar mais memória do que está verdadeiramente disponível, a degradação do desempenho ou um erro em tempo de execução poderá ocorrer.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 **Classificando um arquivo**
 
@@ -87,9 +81,9 @@ Para classificar e exibir em ordem inversa, as linhas em um arquivo chamado desp
 
 **Classificando a saída de um comando**
 
-Para pesquisar um arquivo grande chamado maillist. txt para o texto "Jones" e para classificar os resultados da pesquisa, use o pipe (|) para direcionar a saída de um comando **Find** para o comando **Sort** , da seguinte maneira:
+Para pesquisar um arquivo grande chamado maillist. txt para o texto Jones e classificar os resultados da pesquisa, use o pipe (|) para direcionar a saída de um comando **Find** para o comando **Sort** , da seguinte maneira:
 
-`find "Jones" maillist.txt | sort`
+`find Jones maillist.txt | sort`
 
 O comando produz uma lista classificada de linhas que contêm o texto especificado.
 
@@ -101,6 +95,6 @@ Para classificar a entrada do teclado e exibir os resultados em ordem alfabétic
 
 Em seguida, digite o texto que você deseja classificar e pressione ENTER no final de cada linha. Quando terminar de digitar o texto, pressione CTRL + Z e pressione ENTER. O comando **classificar** exibe o texto digitado, classificado alfabeticamente.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

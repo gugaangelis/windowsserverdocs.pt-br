@@ -1,28 +1,24 @@
 ---
 title: Filtrar, classificar e consultar dados em blocos do Gerenciador do Servidor
 description: Gerenciador do Servidor
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8786f791-73e5-4c75-8d12-46e88a196976
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89604b73fd071030d0f800b3a38a7ac3858ef1c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8447d06c03b6adca00966d05978d4337d9b5984
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383196"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851529"
 ---
 # <a name="filter-sort-and-query-data-in-server-manager-tiles"></a>Filtrar, classificar e consultar dados em blocos do Gerenciador do Servidor
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 No Windows Server, os blocos no Gerenciador do Servidor permitem filtrar e classificar dados e criar e salvar consultas personalizadas. Você pode classificar, usar filtros de palavra-chave e executar consultas em entradas de lista nos blocos eventos, desempenho, Analisador de Práticas Recomendadas, serviços e funções e recursos nas páginas função de servidor ou grupo no Gerenciador do Servidor.  
   
@@ -34,7 +30,7 @@ Este tópico contém as seguintes seções.
   
 -   [criar e executar consultas personalizadas em dados de bloco](#BKMK_query)  
   
-## <a name="BKMK_tiles"></a>Filtrar entradas de lista em blocos  
+## <a name="filter-list-entries-in-tiles"></a><a name=BKMK_tiles></a>Filtrar entradas de lista em blocos  
 A caixa de texto **Filtrar** é um modo rápido de reduzir a lista de entradas que são exibidas em um bloco para apenas aquelas entradas que contém uma cadeia de caracteres de texto especificada.  
   
 #### <a name="to-apply-a-filter-to-the-list-of-entries-in-a-tile"></a>Para aplicar um filtro à lista de entradas em um bloco  
@@ -49,10 +45,10 @@ A caixa de texto **Filtrar** é um modo rápido de reduzir a lista de entradas q
   
 4.  Para limpar o filtro, exclua a cadeia de caracteres de texto na caixa de filtro ou clique em **X**.  
   
-## <a name="BKMK_sort"></a>classificar entradas de lista em blocos  
+## <a name="sort-list-entries-in-tiles"></a><a name=BKMK_sort></a>classificar entradas de lista em blocos  
 Classifique as entradas de lista em blocos de Gerenciador do Servidor clicando em títulos de coluna. Ao clicar em um cabeçalho de coluna pela primeira vez, os valores da coluna são classificados em ordem alfanumérica crescente (seta para cima); ao clicar novamente os valores da coluna são classificados em ordem alfanumérica decrescente (seta para baixo).  
   
-## <a name="BKMK_query"></a>criar e executar consultas personalizadas em dados de bloco  
+## <a name="create-and-run-custom-queries-on-tile-data"></a><a name=BKMK_query></a>criar e executar consultas personalizadas em dados de bloco  
 Você pode criar consultas personalizadas nos blocos eventos, desempenho, Analisador de Práticas Recomendadas, serviços ou funções e recursos no Gerenciador do Servidor. Por padrão, a área da barra de ferramentas do bloco na qual você seleciona critérios para criar uma consulta personalizada é oculta; clique em **expandir** (botão de divisa na borda direita da barra de ferramentas do bloco) para exibir os critérios de consulta.  
   
 #### <a name="to-create-a-custom-query-for-tile-data"></a>Para criar uma consulta personalizada para os dados do bloco  

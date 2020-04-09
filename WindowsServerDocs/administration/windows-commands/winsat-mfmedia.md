@@ -1,24 +1,20 @@
 ---
 title: mfmedia do WinSAT
-description: Comandos do Windows
-ms.custom: na
+description: Comandos do Windows para WinSAT mfmedia, que mede o desempenho da decodificação de vídeo (reprodução) usando a estrutura de Media Foundation.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 09a3b3dd-f746-4e6e-b684-76a9bde0c78d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3684d4b23ba6d34febe226f54b8b2ab2204f610c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ed3759c741b6f168bc67e8aef3e0b817595cfe4e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361902"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829059"
 ---
 # <a name="winsat-mfmedia"></a>mfmedia do WinSAT
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 winsat mfmedia <parameters>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetros|Descrição|
 |----------|-----------|
@@ -48,11 +44,11 @@ winsat mfmedia <parameters>
 |-XML \<nome do arquivo >|Salve a saída da avaliação como o arquivo XML especificado. Se o arquivo especificado existir, ele será substituído.|
 |-idiskinfo|Salve informações sobre volumes físicos e discos lógicos como parte da seção **\<SystemConfig >** na saída XML.|
 |-iguid|Crie um GUID (identificador global exclusivo) no arquivo de saída XML.|
-|-Nota "texto da nota"|Adicione o texto de nota à seção **\<observação >** no arquivo de saída XML.|
+|-texto da nota de nota|Adicione o texto de nota à seção **\<observação >** no arquivo de saída XML.|
 |-icn|Inclua o nome do computador local no arquivo de saída XML.|
 |-EEF|Enumere informações adicionais do sistema no arquivo de saída XML.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 - O exemplo a seguir executa a avaliação com o arquivo de entrada usado durante uma avaliação **formal do WinSAT** , sem empregar o Media Foundation MFPMP (pipeline de mídia protegida), em um computador em que c:\Windows é o local da pasta do Windows.  
   ```
@@ -64,5 +60,5 @@ winsat mfmedia <parameters>
 -   A associação no grupo local de administradores, ou equivalente, é o requisito mínimo necessário para usar o **WinSAT**. O comando deve ser executado em uma janela de prompt de comandos com privilégios elevados.
 -   Para abrir uma janela de prompt de comando com privilégios elevados, clique em **Iniciar**, **acessórios**, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 

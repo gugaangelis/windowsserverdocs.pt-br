@@ -1,28 +1,22 @@
 ---
 title: set
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Set, que exibe, define ou remove CMD. Variáveis de ambiente EXE.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12dce38bf8ad050c65a7a8c0fca4a71267cca93f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7477caa47ef8f728b2ebe99fe0bbf961888b846e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384097"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834389"
 ---
 # <a name="set"></a>set
-
-
 
 Exibe, define ou remove CMD. Variáveis de ambiente EXE. Se usado sem parâmetros, **set** exibe as configurações de variável de ambiente atuais.
 
@@ -36,7 +30,7 @@ set [/p] <Variable>=[<PromptString>]
 set /a <Variable>=<Expression>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -44,7 +38,7 @@ set /a <Variable>=<Expression>
 |Cadeia de caracteres \<>|Especifica a cadeia de caracteres a ser associada à variável de ambiente especificada.|
 |/p|Define o valor da *variável* para uma linha de entrada inserida pelo usuário.|
 |\<Promptstring >|Opcional. Especifica uma mensagem para solicitar a entrada do usuário. Esse parâmetro é usado com a opção de linha de comando **/p** .|
-|SRDF|Define a *cadeia de caracteres* para uma expressão numérica que é avaliada.|
+|/a|Define a *cadeia de caracteres* para uma expressão numérica que é avaliada.|
 |Expressão de \<>|Especifica uma expressão numérica. Consulte comentários para operadores válidos que podem ser usados na *expressão*.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -55,7 +49,7 @@ set /a <Variable>=<Expression>
   Quando as extensões de comando são habilitadas (o padrão) e você executa **definir** com um valor, ele exibe todas as variáveis que começam com esse valor.
 - Usando caracteres especiais
 
-  Os caracteres **<** , **>** , **|** , **&** , **^** são caracteres especiais do Shell de comando e devem ser precedidos pelo caractere de escape ( **^** ) ou colocados entre aspas quando usados na *cadeia de caracteres* (por exemplo, **"StringContaining & Symbol"** ). Se você usar aspas para colocar uma cadeia de caracteres que contenha um dos personagens especiais, as aspas serão definidas como parte do valor da variável de ambiente.
+  Os caracteres **<** , **>** , **|** , **&** , **^** são caracteres especiais do Shell de comando e devem ser precedidos pelo caractere de escape ( **^** ) ou colocados entre aspas quando usados na *cadeia de caracteres* (por exemplo, **StringContaining & Symbol**). Se você usar aspas para colocar uma cadeia de caracteres que contenha um dos personagens especiais, as aspas serão definidas como parte do valor da variável de ambiente.
 - Usando variáveis de ambiente
 
   Use variáveis de ambiente para controlar o comportamento de alguns arquivos e programas em lotes e para controlar a maneira como o Windows e o subsistema MS-DOS são exibidos e funcionam. O comando **set** é geralmente usado no arquivo autoexec. NT para definir variáveis de ambiente.
@@ -79,7 +73,7 @@ set /a <Variable>=<Expression>
   |           + -           |      Operações      |
   |          < < > >          |    Deslocamento lógico     |
   |            &            |     E      |
-  |            ^            | Or exclusivo de or |
+  |            ^            | OR exclusivo de bit a bit |
   |                         |                      |
   | = \*=/=% = + =-= & = ^ = |      = < < = > > =       |
   |            ,            | Separador de expressão |
@@ -105,7 +99,7 @@ set /a <Variable>=<Expression>
 
   O comando **set** , com parâmetros diferentes, está disponível no console de recuperação.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para definir uma variável de ambiente chamada TEST ^ 1, digite:
 ```
@@ -115,11 +109,11 @@ set testVar=test^^1
 > [!NOTE]
 > O comando **set** atribui tudo o que segue o sinal de igual (=) para o valor da variável. Se você digitar:
 > ```
-> set testVar="test^1"
+> set testVar=test^1
 > ```
 > Você Obtém o seguinte resultado:
 > ```
-> testVar="test^1"
+> testVar=test^1
 > ```
 > Para definir uma variável de ambiente chamada TEST & 1, digite:
 > ```
@@ -151,6 +145,6 @@ set p
 > [!NOTE]
 > Esse comando requer extensões de comando, que são habilitadas por padrão.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

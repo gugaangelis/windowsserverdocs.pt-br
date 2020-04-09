@@ -1,24 +1,20 @@
 ---
 title: consulta reg
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e6a0d7c-ed9b-4318-833d-33f265a81f39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2f616fb33974df4327c7b2536b3143b75d116be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf21933e1ce9928048f0f07ed502dfcab75d1783
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836388"
 ---
 # <a name="reg-query"></a>consulta reg
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] [{/k | /d}] [/c] [/e] [/t <Type>] [/z]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -56,12 +52,12 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 A tabela a seguir lista os valores de retorno para a operação **reg query** .
 
-|Valor|Descrição|
+|{1&gt;Valor&lt;1}|Descrição|
 |-----|-----------|
 |0|Êxito|
 |1|Falha|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para exibir o valor da versão de valor de nome na chave HKLM\Software\Microsoft\ResKit, digite:
 ```
@@ -88,6 +84,6 @@ Para exibir o valor e os dados para nomes de valores nulos (padrão) em HKLM\SOF
 REG QUERY HKLM\SOFTWARE /ve
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

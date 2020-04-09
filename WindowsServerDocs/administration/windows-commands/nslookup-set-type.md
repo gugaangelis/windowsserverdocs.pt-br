@@ -1,24 +1,20 @@
 ---
 title: nslookup set type
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5248e314-fac1-413e-81dc-bbe0a0873ba5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3f41cb6bc5117fdd26bba85c6cfd806414bbab4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37b6636d9bf457596fc070cdce4a02a023ffd263
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372881"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838259"
 ---
 # <a name="nslookup-set-type"></a>nslookup set type
 
@@ -29,10 +25,10 @@ Altera o tipo de registro de recurso para a consulta.
 ```
 set type=<ResourceRecordtype>
 ```
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 <ResourceRecordtype> especifica um tipo de registro de recurso DNS. O tipo de registro de recurso padrão é um. A tabela a seguir lista os valores válidos para esse comando.
 
-| Valor |                                                   Descrição                                                   |
+| {1&gt;Valor&lt;1} |                                                   Descrição                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
 |   A   |                                      Especifica o endereço&#39;IP de um computador                                      |
 |  OUTRO  |                                     Especifica o endereço&#39;IP de um computador.                                      |
@@ -57,6 +53,5 @@ Exibe um breve resumo dos subcomandos <strong>nslookup</strong> .
 ## <a name="remarks"></a>Comentários
 - O comando <strong>set type</strong> executa a mesma função que o comando <strong>set QueryType</strong> .
 - Para obter mais informações sobre tipos de registro de recurso, consulte solicitação de comentário (RFC) 1035.
-  ## <a name="additional-references"></a>referências adicionais
-  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">Chave de sintaxe de linha de comando</a>
-  <a href="nslookup-set-querytype.md" data-raw-source="[nslookup set querytype](nslookup-set-querytype.md)">nslookup Set QueryType</a>
+  ## <a name="additional-references"></a>Referências adicionais
+  < a href = Command-Line-Syntax-key.md data-RAW-Source =- [chave de sintaxe de linha de comando](command-line-syntax-key.md)> chave de sintaxe de linha de comando</a> < um href = nslookup-set-QueryType.MD data-RAW-Source =[nslookup set QueryType](nslookup-set-querytype.md)> nslookup Set QueryType</a>

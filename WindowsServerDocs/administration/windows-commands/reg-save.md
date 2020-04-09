@@ -1,24 +1,20 @@
 ---
 title: Reg salvar
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b326482b-c8af-467d-a20c-0481eeda3d5c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ae07cd3c90c51e7bd494bc6c35919680cde912a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5b1f7829aedc42c0b75bda951572a4c944798ec6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371698"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836349"
 ---
 # <a name="reg-save"></a>Reg salvar
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 reg save <KeyName> <FileName> [/y]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -47,19 +43,19 @@ reg save <KeyName> <FileName> [/y]
 
 -   A tabela a seguir lista os valores de retorno para a operação **reg Save** .
 
-|Valor|Descrição|
+|{1&gt;Valor&lt;1}|Descrição|
 |-----|-----------|
 |0|Êxito|
 |1|Falha|
 -   Antes de editar as entradas do registro, salve a subchave pai com a operação **reg Save** . Se a edição falhar, restaure a subchave original com a operação **reg Restore** .
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para salvar o hive MyApp na pasta atual como um arquivo chamado AppBkUp. HIV, digite:
 ```
 REG SAVE HKLM\Software\MyCo\MyApp AppBkUp.hiv
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

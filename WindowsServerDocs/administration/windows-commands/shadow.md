@@ -1,38 +1,35 @@
 ---
 title: shadow
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para sombra, que permite controlar remotamente uma sessão ativa de outro usuário em um servidor de Host da Sessão da Área de Trabalho Remota.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f81d9717-6883-4e14-9508-4b2a87e48ea7 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb2fad4b0a553e736755f2dc56e5d88297a1fef5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 90c3202d810257cc94c73b88c5c1627901f54af0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383965"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834329"
 ---
 # <a name="shadow"></a>shadow
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Permite controlar remotamente uma sessão ativa de outro usuário em um servidor Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
-para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+Permite controlar remotamente uma sessão ativa de outro usuário em um Host da Sessão da Área de Trabalho Remota Server.
+
+Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 ```
 shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
 |\<SessionName >|Especifica o nome da sessão que você deseja controlar remotamente.|
@@ -50,7 +47,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   A sessão de console não pode controlar remotamente outra sessão nem pode ser controlada remotamente por outra sessão.
 -   Quando você quiser encerrar o controle remoto (sombreamento), pressione CTRL +\* (usando \* somente do teclado numérico).
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 -   Para a sessão de sombra 93, digite:
     ```
     shadow 93
@@ -60,6 +57,6 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
     shadow ACCTG01
     ```
 
-#### <a name="additional-references"></a>referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[referência de comando serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

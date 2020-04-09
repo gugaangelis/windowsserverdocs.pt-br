@@ -4,15 +4,15 @@ description: Recommmendations de ajuste de desempenho para servidores Web do IIS
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: DavSo; Ericam; YaShi
+ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f4d309de073e84aa0a1c568c7cfc5f31ee88d83
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 229c4f53578430e35a66e3dbe50f0d9a8e9ac2f5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001871"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851659"
 ---
 # <a name="tuning-iis-100"></a>Ajustando o IIS 10,0
 
@@ -50,7 +50,7 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Http\Parameters
 
 Um benefício que o HTTP. sys fornece é um cache de modo kernel. Se a resposta estiver no cache do modo kernel, você poderá atender totalmente uma solicitação HTTP do modo kernel, o que reduz significativamente o custo da CPU de tratamento da solicitação. No entanto, o cache do modo kernel do IIS 10,0 é baseado na memória física e o custo de uma entrada é a memória que ela ocupa.
 
-Uma entrada no cache é útil somente quando é usada. No entanto, a entrada sempre consome memória física, se a entrada está sendo usada ou não. Você deve avaliar a utilidade de um item no cache (a economia de ser capaz de atendê-lo a partir do cache) e seu custo (a memória física ocupada) durante o tempo de vida da entrada considerando os recursos disponíveis (CPU e memória física) e a carga de trabalho requirement. O HTTP. sys tenta manter apenas os itens úteis, acessados ativamente no cache, mas você pode aumentar o desempenho do servidor Web ajustando o cache HTTP. sys para cargas de trabalho específicas.
+Uma entrada no cache é útil somente quando é usada. No entanto, a entrada sempre consome memória física, se a entrada está sendo usada ou não. Você deve avaliar a utilidade de um item no cache (a economia de ser capaz de atendê-lo do cache) e seu custo (a memória física ocupada) durante o tempo de vida da entrada considerando os recursos disponíveis (CPU e memória física) e os requisitos de carga de trabalho. O HTTP. sys tenta manter apenas os itens úteis, acessados ativamente no cache, mas você pode aumentar o desempenho do servidor Web ajustando o cache HTTP. sys para cargas de trabalho específicas.
 
 A seguir estão algumas configurações úteis para o cache do modo kernel HTTP. sys:
 
@@ -193,7 +193,7 @@ Para desabilitar completamente os documentos padrão, remova DefaultDocumentModu
 
 ## <a name="central-binary-logging"></a>Log binário central
 
-Quando a sessão do servidor tem inúmeros grupos de URLs, o processo de criação de centenas de arquivos de log formatados para grupos de URL individuais e a gravação dos dados de log em um disco pode consumir rapidamente recursos valiosos de CPU e memória, criando assim o desempenho e problemas de escalabilidade. O log binário centralizado minimiza a quantidade de recursos do sistema usados para registro em log, enquanto, ao mesmo tempo, fornece dados de log detalhados para organizações que o exigem. A análise de logs de formato binário requer uma ferramenta de pós-processamento.
+Quando a sessão do servidor tem inúmeros grupos de URLs, o processo de criação de centenas de arquivos de log formatados para grupos de URL individuais e a gravação dos dados de log em um disco pode consumir rapidamente recursos valiosos de CPU e memória, criando assim problemas de desempenho e escalabilidade. O log binário centralizado minimiza a quantidade de recursos do sistema usados para registro em log, enquanto, ao mesmo tempo, fornece dados de log detalhados para organizações que o exigem. A análise de logs de formato binário requer uma ferramenta de pós-processamento.
 
 Você pode habilitar o log binário central definindo o atributo centralLogFileMode como CentralBinary e definindo o atributo **Enabled** como **true**. Considere mover o local do arquivo de log central para fora da partição do sistema e para uma unidade de log dedicada para evitar a contenção entre atividades do sistema e atividades de registro em log.
 
@@ -238,7 +238,7 @@ Para remover módulos de applicationHost. config, remova todas as referências a
 
 ## <a name="classic-asp-settings"></a>Configurações ASP clássicas
 
-O custo principal do processamento de uma solicitação ASP clássica inclui a inicialização de um mecanismo de script, a compilação do script ASP solicitado em um modelo ASP e a execução do modelo no mecanismo de script. Embora o custo de execução do modelo dependa da complexidade do script ASP solicitado, o módulo ASP clássico do IIS pode armazenar em cache os mecanismos de script na memória e os modelos de cache em memória e disco (somente se houver estouros de cache de modelo na memória) para aumentar o desempenho no Cenários associados à CPU.
+O custo principal do processamento de uma solicitação ASP clássica inclui a inicialização de um mecanismo de script, a compilação do script ASP solicitado em um modelo ASP e a execução do modelo no mecanismo de script. Embora o custo de execução do modelo dependa da complexidade do script ASP solicitado, o módulo ASP clássico do IIS pode armazenar em cache os mecanismos de script na memória e os modelos de cache na memória e no disco (somente se houver estouros no cache de modelo na memória) para aumentar o desempenho em cenários associados à CPU.
 
 As configurações a seguir são usadas para configurar o cache de modelo ASP clássico e o cache do mecanismo de script, e eles não afetam as configurações de ASP.NET.
 
@@ -313,7 +313,7 @@ Você pode habilitar a reciclagem de processos para um aplicativo específico ad
 
 A partir do Windows Server 2012 R2, o IIS oferece a opção de configurar o processo de trabalho para suspender depois que eles ficam ociosos por um tempo (além da opção de terminar, que existia desde o IIS 7).
 
-A principal finalidade dos recursos de encerramento de processo de trabalho ocioso e de término do processo de trabalho ocioso é conservar a utilização de memória no servidor, já que um site pode consumir muita memória mesmo que esteja apenas ali, ouvindo. Dependendo da tecnologia usada no site (conteúdo estático vs ASP.NET versus outras estruturas), a memória usada pode ser de, em qualquer lugar, de cerca de 10 MB a centenas de MBs, e isso significa que, se o servidor estiver configurado com muitos sites, descobrindo as configurações mais eficazes para seus sites podem melhorar drasticamente o desempenho de sites ativos e suspensos.
+A principal finalidade dos recursos de encerramento de processo de trabalho ocioso e de término do processo de trabalho ocioso é conservar a utilização de memória no servidor, já que um site pode consumir muita memória mesmo que esteja apenas ali, ouvindo. Dependendo da tecnologia usada no site (conteúdo estático vs ASP.NET vs. outras estruturas), a memória usada pode ser de, em qualquer lugar, de cerca de 10 MB a centenas de MBs, e isso significa que, se o servidor estiver configurado com muitos sites, descobrir as configurações mais eficazes para seus sites pode melhorar consideravelmente o desempenho de sites ativos e suspensos.
 
 Antes de entrarmos em detalhes, devemos nos lembrar de que, se não houver nenhuma restrição de memória, provavelmente é melhor simplesmente definir os sites para nunca suspender ou encerrar. Afinal, thereâs pouco valor ao encerrar um processo de trabalho se ele for o único no computador.
 

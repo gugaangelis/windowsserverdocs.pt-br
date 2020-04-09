@@ -1,40 +1,36 @@
 ---
 title: bitsadmin gethttpmethod
-description: Tópico de comandos do Windows para **Bitsadmin gethttpmethod** -Obtém o verbo http a ser usado.
-ms.custom: na
+description: Tópico de comandos do Windows para **Bitsadmin gethttpmethod**, que obtém o verbo http a ser usado com o trabalho.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 8b5b933d402ff5b621cc6073a54f34b5d3095533
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b5f131c8502545e3c4ea4107167d6da56c68d8c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381561"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850649"
 ---
 # <a name="bitsadmin-gethttpmethod"></a>bitsadmin gethttpmethod
 
-Obtém o verbo HTTP a ser usado.
+Obtém o verbo HTTP a ser usado com o trabalho.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /GetHttpMethod <Job>
+bitsadmin /gethttpmethod <Job>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Job|O nome de exibição ou o GUID do trabalho|
+| Parâmetro | Descrição |
+| -------------- | -------------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

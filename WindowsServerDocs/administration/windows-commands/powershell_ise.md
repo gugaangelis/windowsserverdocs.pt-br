@@ -1,24 +1,20 @@
 ---
 title: PowerShell_ise
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 32c41b5b-a210-47d9-bd8c-91eb9830b4f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65d8b9e7b7952ec64cd24e8106802cf66de693c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6ae96dcd40c894e0a528c06b461173f626fb2d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372194"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837389"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -53,7 +49,7 @@ Você pode usar **PowerShell_ISE. exe** para iniciar e encerrar uma sessão do W
   ```
   PowerShell_Ise -help, -?, /?
   ```  
-  Para obter uma lista completa dos parâmetros de linha de comando **PowerShell_ISE. exe** , consulte [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512).
+  Para obter uma lista completa dos parâmetros de linha de comando do **PowerShell_ISE. exe** , consulte [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512).
 
 ## <a name="start-windows-powershell-ise-in-other-ways"></a>Iniciar ISE do Windows PowerShell de outras maneiras
 
@@ -67,5 +63,5 @@ O Windows PowerShell é executado na opção de instalação Server Core dos sis
 
 [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512)
 [about_PowerShell. exe](https://go.microsoft.com/fwlink/?LinkID=113439)
- o[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[script com o Windows PowerShell](https://technet.microsoft.com/scriptcenter/dd742419) consulte também
+script do [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
+[com o Windows PowerShell](https://technet.microsoft.com/scriptcenter/dd742419) consulte também

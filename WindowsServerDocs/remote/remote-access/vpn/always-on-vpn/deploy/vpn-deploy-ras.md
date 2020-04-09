@@ -4,18 +4,17 @@ description: O RRAS foi projetado para funcionar bem como um roteador e um servi
 ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
-ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 9d3afb21c466ef1010a20ec811df45b9dcb2b711
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 4cb5d5fc65eee997068ea3192081bf753fdd9083
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312252"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818979"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Etapa 3. Configurar o servidor de acesso remoto para VPN Always On
 

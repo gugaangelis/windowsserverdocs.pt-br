@@ -1,9 +1,7 @@
 ---
 title: Repositório de software do Linux para produtos da Microsoft
 description: Este documento descreve como usar e instalar pacotes de software do Linux para produtos da Microsoft.
-ms.custom: na
 ms.prod: windows-server
-ms.service: na
 manager: szark
 ms.technology: compute
 ms.topic: article
@@ -11,12 +9,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: e32c11dac1d887ba0ae0192bb658f71ece77a42c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b57a1e7243f989a4529a666880572a9ceaa57644
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947242"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852059"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Repositório de software do Linux para produtos da Microsoft
 
@@ -30,7 +28,7 @@ O repositório de software do Linux da Microsoft é composto por vários reposit
  - MSSQL-Server-esses repositórios contêm pacotes para Microsoft SQL Server em Linux-consulte também: [SQL Server em Linux](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux).
 
 > [!Note]
-> Os pacotes nos repositórios de software do Linux estão sujeitos aos termos de licença localizados nos pacotes. Leia os termos de licença antes de utilizar o pacote. A instalação e o uso do pacote constitui a aceitação desses termos. Se você não concorda com os termos de licença, não utilize o pacote.
+> Os pacotes nos repositórios de software do Linux estão sujeitos aos termos de licença localizados nos pacotes. Leia os termos de licença antes de usar o pacote. A instalação e o uso do pacote constituem sua aceitação desses termos. Se você não concordar com os termos de licença, não use o pacote.
 
 
 ## <a name="configuring-the-repositories"></a>Configurando os repositórios
@@ -63,19 +61,19 @@ Os repositórios podem ser configurados automaticamente instalando o pacote do L
 
  - Ubuntu 18, 4 (Bionic)
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
         sudo apt-get update
 
  - Ubuntu 18,10 (raios cósmicos)
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
         sudo apt-get update
 
  - Ubuntu 19, 4 (disco)
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
         sudo apt-get update
 

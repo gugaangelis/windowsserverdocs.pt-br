@@ -1,24 +1,20 @@
 ---
 title: Manage-bde protetores
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1f9b22c5-cc93-45df-9165-bedee94998da
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 86e170e199c7286d883f1248610c6f195add5b01
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 1a2e2c851ec9bc93ec434a35f14c6f92ec831876
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013031"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839949"
 ---
 # <a name="manage-bde-protectors"></a>Manage-bde: protetores
 
@@ -29,7 +25,7 @@ Gerencia os métodos de proteção usados para a chave de criptografia do BitLoc
 ```
 manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup}] <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |   Parâmetro   |                                                                                                                                                                                           Descrição                                                                                                                                                                                            |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,7 +42,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 |   -? ou/?    |                                                                                                                                                                            Exibe a ajuda resumida no prompt de comando.                                                                                                                                                                            |
 |  -Help ou-h  |                                                                                                                                                                          Exibe a ajuda completa no prompt de comando.                                                                                                                                                                           |
 
-### <a name="BKMK_addprotectors"></a>-Adicionar sintaxe e parâmetros
+### <a name="-add-syntax-and-parameters"></a><a name=BKMK_addprotectors></a>-Adicionar sintaxe e parâmetros
 ```
 manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
 [-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin] 
@@ -64,19 +60,19 @@ manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <Nume
 |         -startupkey          |                                                                                                                                 Adiciona um protetor de chave externa para inicialização. Você também pode usar **-SK** como uma versão abreviada desse comando.                                                                                                                                 |
 | <pathToExternalKeydirectory> |                                                                                                                                                                Representa o caminho do diretório para a chave de inicialização.                                                                                                                                                                |
 |         -certificado         |                                                                                                                               Adiciona um protetor de chave pública para uma unidade de dados. Você também pode usar **-CERT** como uma versão abreviada desse comando.                                                                                                                               |
-|             -CF              |                                                                                                                                              Especifica que um arquivo de certificado será usado para fornecer o certificado de chave pública.                                                                                                                                              |
+|             -cf              |                                                                                                                                              Especifica que um arquivo de certificado será usado para fornecer o certificado de chave pública.                                                                                                                                              |
 |   <pathToCertificateFile>    |                                                                                                                                                             Representa o caminho do diretório para o arquivo de certificado.                                                                                                                                                              |
 |             -CT              |                                                                                                                                           Especifica que uma impressão digital do certificado será usada para identificar o certificado de chave pública                                                                                                                                           |
-|   <CertificateThumbprint>    |                                                       Especifica o valor da propriedade de impressão digital do certificado que você deseja usar. Por exemplo, um valor de impressão digital de certificado de "a9 09 50 2D D8 2a E4 14 33 E6 F8 38 86 B0 0d 42 77 a3 2a 7B" deve ser especificado como "a909502dd82ae41433e6f83886b00d4277a32a7b".                                                        |
+|   <CertificateThumbprint>    |                                                       Especifica o valor da propriedade de impressão digital do certificado que você deseja usar. Por exemplo, um valor de impressão digital do certificado de a9 09 50 2D D8 2a E4 14 33 E6 F8 38 86 B0 0d 42 77 a3 2a 7B deve ser especificado como a909502dd82ae41433e6f83886b00d4277a32a7b.                                                        |
 |          -tpmandpin          |                                                                                           Adiciona um protetor de Trusted Platform Module (TPM) e número de identificação pessoal (PIN) para a unidade do sistema operacional. Você também pode usar **-TP** como uma versão abreviada desse comando.                                                                                           |
 |      -tpmandstartupkey       |                                                                                                                    Adiciona um protetor de chave de inicialização e TPM para a unidade do sistema operacional. Você também pode usar **-tsk** como uma versão abreviada deste comando.                                                                                                                    |
 |   -tpmandpinandstartupkey    |                                                                                                                Adiciona um protetor de TPM, PIN e chave de inicialização para a unidade do sistema operacional. Você também pode usar **-tpsk** como uma versão abreviada deste comando.                                                                                                                 |
-|          -senha           |                                                                                                                              Adiciona um protetor de chave de senha para a unidade de dados. Você também pode usar **-PW** como uma versão abreviada desse comando.                                                                                                                              |
+|          -password           |                                                                                                                              Adiciona um protetor de chave de senha para a unidade de dados. Você também pode usar **-PW** como uma versão abreviada desse comando.                                                                                                                              |
 |      -adaccountorgroup       | Adiciona um protetor de identidade baseado em SID (identificador de segurança) para o volume.  Você também pode usar **-Sid** como uma versão abreviada deste comando. **Importante:** Por padrão, você não pode adicionar um protetor ADAccountOrGroup remotamente usando o WMI ou o Manage-bde.  Se sua implantação exigir a capacidade de adicionar esse protetor remotamente, você deverá habilitar a delegação restrita. |
 |        -ComputerName         |                                                                                                       Especifica que o Manage-bde está sendo usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando.                                                                                                       |
 |            <Name>            |                                                                                                         Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.                                                                                                         |
 
-### <a name="BKMK_deleteprotectors"></a>-excluir sintaxe e parâmetros
+### <a name="-delete-syntax-and-parameters"></a><a name=BKMK_deleteprotectors></a>-excluir sintaxe e parâmetros
 ```
 manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
 [-id <KeyProtectorID>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
@@ -93,8 +89,8 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 |    tpmandstartupkey    |                                Especifica que qualquer TPM e protetores de chave baseados em chave de inicialização associados à unidade devem ser excluídos.                                |
 |       tpmandpin        |                                    Especifica que qualquer protetor de chave com base em TPM e PIN associado à unidade deve ser excluído.                                    |
 | tpmandpinandstartupkey |                             Especifica que qualquer TPM, PIN e chave de inicialização com base em protetores de chave associados à unidade devem ser excluídos.                             |
-|        senha        |                                        Especifica que qualquer protetor de chave de senha associado à unidade deve ser excluído.                                         |
-|        de autenticação        |                                        Especifica que qualquer protetor de chave de identidade associado à unidade deve ser excluído.                                         |
+|        password        |                                        Especifica que qualquer protetor de chave de senha associado à unidade deve ser excluído.                                         |
+|        identidade        |                                        Especifica que qualquer protetor de chave de identidade associado à unidade deve ser excluído.                                         |
 |          -ID           |                Identifica o protetor de chave a ser excluído usando o identificador de chave. Esse parâmetro é uma opção alternativa para o parâmetro **-Type** .                 |
 |    <KeyProtectorID>    |        Identifica um protetor de chave individual na unidade a ser excluída. As IDs de protetor de chave podem ser exibidas usando o comando **Manage-bde-protectors-get** .         |
 |     -ComputerName      | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
@@ -102,7 +98,7 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 |        -? ou/?        |                                                               Exibe a ajuda resumida no prompt de comando.                                                               |
 |      -Help ou-h       |                                                             Exibe a ajuda completa no prompt de comando.                                                              |
 
-### <a name="BKMK_disableprot"></a>-desabilitar sintaxe e parâmetros
+### <a name="-disable-syntax-and-parameters"></a><a name=BKMK_disableprot></a>-desabilitar sintaxe e parâmetros
 ```
 manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
@@ -116,10 +112,10 @@ manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-comp
 |   -? ou/?    |                                                                                                                                                                                                    Exibe a ajuda resumida no prompt de comando.                                                                                                                                                                                                    |
 |  -Help ou-h  |                                                                                                                                                                                                  Exibe a ajuda completa no prompt de comando.                                                                                                                                                                                                   |
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 O exemplo a seguir ilustra o uso do comando **-protectors** para adicionar um protetor de chave de certificado identificado por um arquivo de certificado para a unidade E.
 ```
-manage-bde  -protectors  -add E: -certificate  -cf "c:\File Folder\Filename.cer"
+manage-bde  -protectors  -add E: -certificate  -cf c:\File Folder\Filename.cer
 ```
 O exemplo a seguir ilustra o uso do comando **-protectors** para adicionar um protetor de chave **adaccountorgroup** identificado pelo domínio e pelo nome de usuário para a unidade E.
 ```
@@ -137,6 +133,6 @@ O exemplo a seguir ilustra o uso do comando **-protectors** para fazer backup de
 ```
 manage-bde  -protectors  -adbackup C:
 ```
-## <a name="additional-references"></a>referências adicionais
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [manage-bde](manage-bde.md)

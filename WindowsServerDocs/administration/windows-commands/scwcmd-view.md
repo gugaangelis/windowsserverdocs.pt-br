@@ -1,24 +1,20 @@
 ---
 title: Exibição de scwcmd
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7995959a-d93e-4865-a6a0-2ab18c2bb47f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a69db16696f42950af97b62ba6f28c4083954137
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36c6422a0118b0c6d6d70adbadfb401532121c3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371193"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835059"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 
@@ -32,7 +28,7 @@ Renderiza um arquivo. xml usando uma transformação. xsl especificada. Esse com
 scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -44,13 +40,13 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 Scwcmd. exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Para exibir o policyFile. xml usando a transformação Policyview. xsl, digite:
 ```
 scwcmd view /x:C:\policies\Policyfile.xml /s:C:\viewers\Policyview.xsl
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

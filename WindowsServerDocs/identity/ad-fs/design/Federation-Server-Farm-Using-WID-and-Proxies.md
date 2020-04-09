@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0464182-56a2-4bfa-a8c8-7e39c1bd62d3
 title: Farm de servidores de federação usando WID e proxies
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,19 +8,19 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a123afaebba002b8ee4fb98d5cee5aded286a96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 523e076ad9593f09ac2f9db5c45fa8c2e82f05bb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359126"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853099"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>Farm de servidores de federação usando WID e proxies
 
 Essa topologia de implantação para Serviços de Federação do Active Directory (AD FS) \(AD FS\) é idêntica ao farm de servidores de Federação com o banco de dados interno do Windows \(a topologia\) WID, mas adiciona computadores proxy à rede de perímetro para dar suporte a usuários externos. Esses proxies redirecionam as solicitações de autenticação de cliente que vêm de fora de sua rede corporativa para o farm de servidores de Federação. Nas versões anteriores do AD FS, esses proxies eram chamados de proxies de servidor de Federação.  
   
 > [!IMPORTANT]  
-> No Serviços de Federação do Active Directory (AD FS) \(AD FS\) no Windows Server 2012 R2, a função de um proxy de servidor de Federação é tratada por um novo serviço de função de acesso remoto chamado proxy de aplicativo Web. Para habilitar sua AD FS para acessibilidade de fora da rede corporativa, que foi a finalidade de implantar um proxy de servidor de Federação em versões herdadas do AD FS, como AD FS 2,0 e AD FS no Windows Server 2012, você pode implantar um ou mais proxies de aplicativo Web para um D FS no Windows Server 2012 R2.  
+> No Serviços de Federação do Active Directory (AD FS) \(AD FS\) no Windows Server 2012 R2, a função de um proxy de servidor de Federação é tratada por um novo serviço de função de acesso remoto chamado proxy de aplicativo Web. Para habilitar sua AD FS para acessibilidade de fora da rede corporativa, que foi a finalidade de implantar um proxy de servidor de Federação em versões herdadas do AD FS, como AD FS 2,0 e AD FS no Windows Server 2012, você pode implantar um ou mais proxies de aplicativo Web para AD FS no Windows Server 2012 R2.  
 >   
 > No contexto de AD FS, o proxy de aplicativo Web funciona como um proxy de servidor de Federação AD FS. Além disso, o Proxy de Aplicativo Web fornece funcionalidade de proxy reverso para aplicativos Web dentro da rede corporativa. Isso permite aos usuários acessá-los de qualquer dispositivo fora da rede corporativa. Para obter mais informações sobre o serviço da função Proxy de Aplicativo Web, consulte Visão geral de proxy de aplicativo Web.  
 >   
@@ -51,7 +50,7 @@ Esta seção descreve as várias considerações sobre o público-alvo, os benef
 
 ||1 \- de confianças do RP 100|Mais de 100 RP relações de confiança 
 | ----- |-----| ------ |
-|1 \- 30 nós AD FS|WID com suporte|Sem suporte usando o WID \- SQL necessário 
+|1 \- 30 nós AD FS|Suporte ao WID|Sem suporte usando o WID \- SQL necessário 
 |Mais de 30 nós AD FS|Sem suporte usando o WID \- SQL necessário|Sem suporte usando o WID \- SQL necessário  
   
 ## <a name="server-placement-and-network-layout-recommendations"></a>Recomendações de layout de rede e posicionamento do servidor  

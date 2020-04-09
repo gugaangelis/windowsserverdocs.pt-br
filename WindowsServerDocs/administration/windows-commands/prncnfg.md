@@ -1,24 +1,20 @@
 ---
 title: prncnfg
 description: Saiba como configurar uma impressora usando o comando prncfg.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5cbbf82e832c50d168e0bef06b2b7c3022dd90e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3db99c06232e4ed6b3ad5df4ee189d38bffb14c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372143"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837319"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -31,14 +27,14 @@ Configura ou exibe informações de configuração sobre uma impressora.
 cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <NewprinterName>] [-u <UserName>] [-w <Password>] [-r <PortName>] [-l <Location>] [-h <Sharename>] [-m <Comment>] [-f <SeparatorFileName>] [-y <Datatype>] [-st <starttime>] [-ut <Untiltime>] [-i <DefaultPriority>] [-o <Priority>] [<+|->shared] [<+|->direct] [<+|->hidden] [<+|->published] [<+|->rawonly] [<+|->queued] [<+|->enablebidi] [<+|->keepprintedjobs] [<+|->workoffline] [<+|->enabledevq] [<+|->docompletefirst]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
 |-g|Exibe informações de configuração sobre uma impressora.|
 |-t|Configura uma impressora.|
-|-x|Renomeia uma impressora.|
+|{1&gt;-&lt;1}x|Renomeia uma impressora.|
 |-S \<ServerName\>|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|
-|-P \<PrinterName\>|Especifica o nome da impressora que você deseja gerenciar. Necessário.|
+|-P \<PrinterName\>|Especifica o nome da impressora que você deseja gerenciar. Obrigatório.|
 |-z \<NewprinterName\>|Especifica o novo nome da impressora. Requer os parâmetros **-x** e **-P** .|
 |-u \<nome de usuário\>-w \<senha\>|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|
 |-r \<PortName\>|Especifica a porta onde a impressora está conectada. Se essa for uma porta paralela ou serial, use a ID da porta (por exemplo, LPT1 ou COM1). Se esta for uma porta TCP/IP, use o nome da porta que foi especificado quando a porta foi adicionada.|
@@ -71,7 +67,7 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
     ```
 -   Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, `"computer Name"`).
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para exibir informações de configuração para a impressora chamada colorprinter_2 com uma fila de impressão hospedada pelo computador remoto chamado HRServer, digite:
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
@@ -87,6 +83,6 @@ Para alterar o nome de uma impressora no computador remoto chamado HRServer de c
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3" 
 ```
 
-#### <a name="additional-references"></a>referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [referência de comando de impressão](print-command-reference.md)

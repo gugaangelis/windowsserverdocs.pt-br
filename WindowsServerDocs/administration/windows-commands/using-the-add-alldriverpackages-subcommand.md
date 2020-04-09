@@ -1,28 +1,22 @@
 ---
 title: Usando o subcomando Add-AllDriverPackages
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Add-AllDriverPackages, que adiciona todos os pacotes de driver armazenados em uma pasta a um servidor.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ba6641c1-d7e9-43a9-9819-702dad5484ed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8290a95dd53718b200d10b6804d312abe95e257
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc8252339fcae04517c2074c24bbfab44228b779
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363892"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832249"
 ---
-# <a name="using-the-add-alldriverpackages-subcommand"></a>Usando o subcomando Add-AllDriverPackages
-
-
+# <a name="add-alldriverpackages"></a>Add-AllDriverPackages
 
 Adiciona todos os pacotes de driver armazenados em uma pasta a um servidor.
 
@@ -32,7 +26,7 @@ Adiciona todos os pacotes de driver armazenados em uma pasta a um servidor.
 WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>] [/Architecture:{x86 | ia64 | x64}] [/DriverGroup:<Group Name>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |          Parâmetro           |                                                              Descrição                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,18 +35,18 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 |     [/Architecture: {x86      |                                                                 Win64                                                                  |
 | [/DriverGroup: nome do grupo de\<>] |                             Especifica o nome do grupo de drivers ao qual os pacotes devem ser adicionados.                             |
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para adicionar pacotes de driver, digite um dos seguintes:
 ```
-WDSUTIL /verbose /Add-AllDriverPackages /FolderPath:"C:\Temp\Drivers" /Architecture:x86
+WDSUTIL /verbose /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers /Architecture:x86
 ```
 ```
-WDSUTIL /Add-AllDriverPackages /FolderPath:"C:\Temp\Drivers\Printers" /DriverGroup:"Printer Drivers"
+WDSUTIL /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers\Printers /DriverGroup:Printer Drivers
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Add-WdsDriverPackage](https://technet.microsoft.com/library/dn283440.aspx)

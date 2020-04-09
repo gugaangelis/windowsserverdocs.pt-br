@@ -1,24 +1,25 @@
 ---
 title: Implantando um servidor de arquivos clusterizado de dois nós
+description: Este artigo descreve como criar um cluster de servidor de arquivos de dois nós
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 02/01/2019
-description: Este artigo descreve como criar um cluster de servidor de arquivos de dois nós
-ms.openlocfilehash: 03e78495b3fc85449d3d383706fb82541dd10372
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b92ab965e94bec5bc7cfa5d068bff601d2f8f6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361297"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827879"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implantando um servidor de arquivos clusterizado de dois nós
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Um cluster de failover é um conjunto de computadores independentes que trabalham em conjunto para aumentar a disponibilidade de aplicativos e serviços. Os servidores clusterizados (chamados de nós) são conectados por cabos físicos e por software. Se um dos nós do cluster falhar, o outro nó começará a fornecer o serviço (um processo conhecido como failover). Os usuários vivenciam um mínimo de interrupções no serviço.
+Um cluster de failover é um conjunto de computadores independentes que trabalham em conjunto para aumentar a disponibilidade de aplicativos e serviços. Os serviços clusterizados (chamados nós) estão conectados por cabos físicos e por software. Se um dos nós do cluster falhar, o outro nó começará a fornecer o serviço (um processo conhecido como failover). Os usuários vivenciam um mínimo de interrupções no serviço.
 
 Este guia descreve as etapas para instalar e configurar um cluster de failover do servidor de arquivos de uso geral que tem dois nós. Ao criar a configuração neste guia, você pode aprender sobre clusters de failover e se familiarizar com a interface de snap-in de gerenciamento de cluster de failover no Windows Server 2019 ou no Windows Server 2016.
 
@@ -42,7 +43,7 @@ O cenário a seguir descreve como pode ser configurado um cluster de failover de
 
 A lista a seguir descreve a funcionalidade de configuração de pasta compartilhada que é integrada ao clustering de failover:
 
-- A exibição tem como escopo somente pastas compartilhadas clusterizadas (sem combinação com pastas compartilhadas não clusterizadas): quando um usuário exibe pastas compartilhadas especificando o caminho de um servidor de arquivos clusterizado, a exibição incluirá apenas as pastas compartilhadas que fazem parte do arquivo específico função de servidor. Ele excluirá pastas compartilhadas não clusterizadas e compartilhará parte das funções de servidor de arquivos separadas que estão em um nó do cluster.
+- A exibição tem como escopo somente pastas compartilhadas clusterizadas (sem misturar com pastas compartilhadas não clusterizadas): quando um usuário exibe pastas compartilhadas especificando o caminho de um servidor de arquivos clusterizado, a exibição incluirá apenas as pastas compartilhadas que fazem parte da função de servidor de arquivos específica. Ele excluirá pastas compartilhadas não clusterizadas e compartilhará parte das funções de servidor de arquivos separadas que estão em um nó do cluster.
 
 - Enumeração baseada em acesso: você pode usar a enumeração baseada em acesso para ocultar uma pasta especificada da exibição dos usuários. Em vez de permitir que os usuários vejam a pasta, mas não acessem nada dela, é possível optar por impedi-los de ver a pasta. Você pode configurar a enumeração baseada em acesso para uma pasta compartilhada clusterizada da mesma maneira que para uma pasta compartilhada não clusterizada.
 
@@ -103,7 +104,7 @@ Será necessária a infraestrutura de rede a seguir para um cluster de failover 
 
     Se você tiver redes privadas que não sejam roteadas para o restante de sua infraestrutura de rede, verifique se cada uma dessas redes privadas usa uma sub-rede exclusiva. Isso será necessário mesmo que você dê a cada adaptador de rede um endereço IP exclusivo. Por exemplo, se você tiver um nó de cluster em uma matriz que use uma rede física e outro nó em uma filial que use uma rede física separada, não especifique 10.0.0.0/24 para as duas redes, mesmo que você atribua a cada adaptador um endereço IP exclusivo.
 
-    Para obter mais informações sobre os adaptadores de rede, consulte requisitos de hardware para um cluster de failover de dois nós, anteriormente neste guia.
+    Para obter mais informações sobre os adaptadores de rede, consulte Requisitos de hardware para um cluster de failover com dois nós, anteriormente neste guia.
 
 - **DNS:** Os servidores no cluster devem usar o DNS (sistema de nomes de domínio) para a resolução de nomes. O protocolo de atualização dinâmica de DNS pode ser usado.
 
@@ -113,7 +114,7 @@ Será necessária a infraestrutura de rede a seguir para um cluster de failover 
 
 - **Clientes:** Conforme necessário para o teste, você pode conectar um ou mais clientes em rede ao cluster de failover que você cria e observar o efeito em um cliente quando você move ou faz o failover do servidor de arquivos clusterizado de um nó de cluster para o outro.
 
-- **Conta para administrar o cluster:** Ao criar um cluster ou adicionar servidores a ele pela primeira vez, você deve estar conectado ao domínio com uma conta que tenha direitos de administrador e permissões em todos os servidores desse cluster. A conta não precisa ser uma conta Admins. do Domínio, mas poderá ser uma conta Usuários do Domínio que estiver no grupo Administradores em cada servidor com cluster. Além disso, se a conta não for uma conta admins. do domínio, a conta (ou o grupo do qual a conta é membro) deverá receber as permissões **criar objetos de computador** e **ler todas as propriedades** na unidade organizacional do domínio (UO) que residirá no.
+- **Conta para administrar o cluster:** Ao criar um cluster ou adicionar servidores a ele pela primeira vez, você deve estar conectado ao domínio com uma conta que tenha direitos de administrador e permissões em todos os servidores desse cluster. A conta não precisa ser uma conta de Admins. do Domínio, mas pode ser uma conta de Usuários do Domínio que esteja no grupo Administradores em cada servidor clusterizado. Além disso, se a conta não for uma conta admins. do domínio, a conta (ou o grupo do qual a conta é membro) deverá receber as permissões **criar objetos de computador** e **ler todas as propriedades** na unidade organizacional do domínio (UO) que residirá no.
 
 ## <a name="steps-for-installing-a-two-node-file-server-cluster"></a>Etapas para instalar um cluster de servidores de arquivos com dois nós
 
@@ -127,7 +128,7 @@ Etapa 3: validar a configuração do cluster
 
 Etapa 4: criar o cluster
 
-Se você já tiver instalado os nós de cluster e quiser configurar um cluster de failover de servidor de arquivos, consulte etapas para configurar um cluster de servidor de arquivos de dois nós, posteriormente neste guia.
+Se você já instalou os nós de cluster e deseja configurar um cluster de failover de servidor de arquivos, consulte Etapas para configurar um cluster de servidores de arquivos com dois nós, mais adiante neste guia.
 
 ### <a name="step-1-connect-the-cluster-servers-to-the-networks-and-storage"></a>Etapa 1: conectar os servidores de cluster às redes e ao armazenamento
 
@@ -153,9 +154,9 @@ Em um cluster de servidores de arquivos com dois nós, quando você conectar os 
 
 6. Se você comprou um software que controla o formato ou a função do disco, siga as instruções do fornecedor sobre como usar esse software com o Windows Server.
 
-7. Em um dos servidores que você deseja clusterizar, clique em Iniciar, em ferramentas administrativas, em gerenciamento do computador e em gerenciamento de disco. (Se a caixa de diálogo controle de conta de usuário for exibida, confirme se a ação exibida é o que você deseja e clique em continuar.) Em gerenciamento de disco, confirme se os discos de cluster estão visíveis.
+7. Em um dos servidores que você deseja incluir no cluster, clique em Iniciar, Ferramentas Administrativas, Gerenciamento do Computador e Gerenciamento de Disco. (Se a caixa de diálogo controle de conta de usuário for exibida, confirme se a ação exibida é o que você deseja e clique em continuar.) Em gerenciamento de disco, confirme se os discos de cluster estão visíveis.
 
-8. Se desejar ter um novo volume de armazenamento com mais de 2 terabytes e estiver usando a interface do Windows para controlar o formato do disco, converta esse disco no estilo de partição chamado de GPT (tabela de partição GUID). Para fazer isso, faça backup de todos os dados no disco, exclua todos os volumes no disco e, em seguida, no gerenciamento de disco, clique com o botão direito do mouse no disco (não em uma partição) e clique em converter em disco GPT.  Para volumes menores que 2 terabytes, em vez de usar a GGT, você pode usar o estilo de partição chamado MBR (registro mestre de inicialização).
+8. Se desejar ter um novo volume de armazenamento com mais de 2 terabytes e estiver usando a interface do Windows para controlar o formato do disco, converta esse disco no estilo de partição chamado de GPT (tabela de partição GUID). Para fazer isso, faça o backup de todos os dados do disco, exclua todos os volumes do disco e, em Gerenciamento de Disco, clique com o botão direito do mouse no disco (não em uma partição) e clique em Converter em Disco GPT.  Para volumes menores que 2 terabytes, em vez de usar a GGT, você pode usar o estilo de partição chamado MBR (registro mestre de inicialização).
 
 9. Verifique o formato de qualquer volume ou LUN exposto. É recomendável usar NTFS como formato (para o disco testemunha, é preciso usar NTFS).
 
@@ -189,7 +190,7 @@ Nesta etapa, a função de servidor de arquivos e o recurso de cluster de failov
 
 9. Repita as etapas no segundo computador.
 
-#### <a name="using-powershell"></a>Usando o PowerShell
+#### <a name="using-powershell"></a>Uso do PowerShell
 
 1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)** .
 2. Para instalar a função de servidor de arquivos, execute o comando:
@@ -241,9 +242,9 @@ Antes de criar um cluster, é recomendável validar a configuração. A validaç
 
 8. Ainda na página Resumo, clique em Exibir relatório e leia os resultados do teste. Faça as alterações necessárias na configuração e execute novamente os testes. <br>Para exibir os resultados dos testes depois de fechar o assistente, veja *data e hora do SystemRoot\Cluster\Reports\Validation Report. html*.
 
-9. Para exibir tópicos da ajuda sobre a validação do cluster depois de fechar o assistente, em gerenciamento de cluster de failover, clique em ajuda, clique em tópicos da ajuda, clique na guia conteúdo, expanda o conteúdo da ajuda do cluster de failover e clique em Validando uma configuração de cluster de failover .
+9. Para exibir os tópicos da Ajuda sobre a validação de cluster depois de fechar o assistente, em Gerenciamento de Cluster de Failover, clique em Ajuda, Tópicos da Ajuda, guia Conteúdo, expanda o conteúdo da Ajuda do cluster de failover e clique em Validando a Configuração de um Cluster de Failover.
 
-#### <a name="using-powershell"></a>Usando o PowerShell
+#### <a name="using-powershell"></a>Uso do PowerShell
 
 1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)** .
 
@@ -281,7 +282,7 @@ O seguinte procedimento criará um cluster fora dos computadores e da configura�
 
 8. Na página **Resumo** , ele fornecerá a configuração que ele criou.  Você pode selecionar Exibir relatório para ver o relatório da criação.
 
-#### <a name="using-powershell"></a>Usando o PowerShell
+#### <a name="using-powershell"></a>Uso do PowerShell
 
 1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)** .
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 85ca191c-0cc7-4453-a72c-42060ddf2ea2
 title: Síntese
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53f51d3a7a777ae378ce733ea9e66de66da5351a
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 75b98e3f8078f33098512c8ecd01d3bb49a1c8ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781333"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823039"
 ---
 # <a name="executive-summary"></a>Síntese
 
@@ -23,9 +22,9 @@ ms.locfileid: "74781333"
 >[!IMPORTANT] 
 >A documentação a seguir foi escrita em 2013 e é fornecida apenas para fins de histórico.  No momento, estamos analisando esta documentação e ela está sujeita a alterações.  Ele pode não refletir as práticas recomendadas atuais.
 
-Nenhuma organização com uma infra-estrutura de ti (tecnologia da informação) está imune contra ataques, mas se as políticas, os processos e os controles apropriados forem implementados para proteger os principais segmentos da infraestrutura de computação de uma organização, talvez seja possível impedir que um evento de violação aumente para um comprometimento atacadista do ambiente computacional.  
+Nenhuma organização com uma infra-estrutura de ti (tecnologia da informação) está imune contra ataques, mas se as políticas, os processos e os controles apropriados forem implementados para proteger os principais segmentos da infraestrutura de computação de uma organização, talvez seja possível evitar que um evento de violação aumente para um comprometimento atacadista do ambiente computacional.  
   
-Este resumo executivo destina-se a ser útil como um documento autônomo resumindo o conteúdo do documento, que contém recomendações que ajudarão as organizações a aprimorar a segurança de suas instalações de Active Directory. Ao implementar essas recomendações, as organizações poderão identificar e priorizar as atividades de segurança, proteger os principais segmentos da infraestrutura de computação da organização e criar controles que diminuem significativamente a probabilidade de ataques bem-sucedidos contra componentes críticos do ambiente de ti.  
+Este resumo executivo destina-se a ser útil como um documento autônomo resumindo o conteúdo do documento, que contém recomendações que ajudarão as organizações a aprimorar a segurança de suas instalações de Active Directory. Ao implementar essas recomendações, as organizações poderão identificar e priorizar as atividades de segurança, proteger os principais segmentos da infraestrutura de computação da organização e criar controles que diminuem significativamente a probabilidade de ataques bem-sucedidos contra os componentes críticos do ambiente de ti.  
   
 Embora este documento discuta os ataques mais comuns contra Active Directory e contramedidas para reduzir a superfície de ataque, ele também contém recomendações para recuperação no caso de um comprometimento completo. A única maneira de se recuperar no caso de um comprometimento completo do Active Directory é estar preparado para o comprometimento antes de acontecer.  
   
@@ -40,7 +39,7 @@ As principais seções deste documento são:
 -   Planejar para comprometimento  
   
 ## <a name="avenues-to-compromise"></a>Alternativas ao comprometimento  
-Esta seção fornece informações sobre algumas das vulnerabilidades mais utilizadas usadas pelos invasores para comprometer as infraestruturas dos clientes. Ele contém categorias gerais de vulnerabilidades e como elas são usadas para penetrar inicialmente nas infraestruturas dos clientes, propagar o comprometimento entre sistemas adicionais e, eventualmente, direcionar Active Directory e controladores de domínio para obter uma conclusão controle das florestas das organizações. Ele não fornece recomendações detalhadas sobre como abordar cada tipo de vulnerabilidade, particularmente nas áreas em que as vulnerabilidades não são usadas para direcionar diretamente Active Directory. No entanto, para cada tipo de vulnerabilidade, fornecemos links para informações adicionais a serem usadas para desenvolver medidas defensivas e reduzir a superfície de ataque da organização.  
+Esta seção fornece informações sobre algumas das vulnerabilidades mais utilizadas usadas pelos invasores para comprometer as infraestruturas dos clientes. Ele contém categorias gerais de vulnerabilidades e como elas são usadas para penetrar inicialmente nas infraestruturas dos clientes, propagar o comprometimento entre sistemas adicionais e, eventualmente, direcionar Active Directory e controladores de domínio para obter o controle total das florestas das organizações. Ele não fornece recomendações detalhadas sobre como abordar cada tipo de vulnerabilidade, particularmente nas áreas em que as vulnerabilidades não são usadas para direcionar diretamente Active Directory. No entanto, para cada tipo de vulnerabilidade, fornecemos links para informações adicionais a serem usadas para desenvolver medidas defensivas e reduzir a superfície de ataque da organização.  
   
 Estão incluídos os seguintes assuntos:  
   
@@ -134,7 +133,7 @@ As seguintes entidades estão incluídas nesta seção:
 -   **Recomendações de política de auditoria** – esta seção descreve as configurações da política de auditoria padrão do Windows, as configurações de política de auditoria recomendadas pela Microsoft e recomendações mais agressivas para que as organizações usem para auditar servidores e estações de trabalho críticos.  
   
 ## <a name="planning-for-compromise"></a>Planejar para comprometimento  
-Esta seção contém recomendações que ajudarão as organizações a se preparar para um comprometimento antes de acontecerem, implementar controles que possam detectar um evento de comprometimento antes que ocorra uma violação completa e fornecer diretrizes de resposta e recuperação para casos em que um comprometimento completo do diretório é obtido por invasores. As seguintes entidades estão incluídas nesta seção:  
+Esta seção contém recomendações que ajudarão as organizações a se preparar para um comprometimento antes de acontecerem, implementar controles que possam detectar um evento de comprometimento antes que ocorra uma violação completa e fornecer diretrizes de resposta e recuperação para casos em que um comprometimento completo do diretório seja obtido por invasores. As seguintes entidades estão incluídas nesta seção:  
   
 -   **Reformular a abordagem** -contém princípios e diretrizes para criar ambientes seguros nos quais uma organização pode posicionar seus ativos mais críticos. Essas diretrizes são as seguintes:  
   

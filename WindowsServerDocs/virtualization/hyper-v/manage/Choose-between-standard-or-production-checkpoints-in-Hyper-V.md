@@ -2,21 +2,19 @@
 title: Escolha entre pontos de verificação padrão ou de produção no Hyper-V
 description: Fornece instruções para configurar uma máquina virtual para usar pontos de verificação padrão ou de produção
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 29c7b8be5b1e9d392cead304ab35c3d5dd5ee86a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80e26c76e1377c904901f9da10e5fea347e2d333
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364212"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852889"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>Escolha entre pontos de verificação padrão ou de produção no Hyper-V
 

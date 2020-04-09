@@ -1,36 +1,32 @@
 ---
 title: criar API do logman
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2ecc0a75-2613-464a-8616-c5dc404bb736
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 512602213fcfd95770af0e27b721a589ed489771
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3beca5ddafcb1d4fbfc6fbe179e219553f7acaf8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374601"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840909"
 ---
 # <a name="logman-create-api"></a>criar API do logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-criar um coletor de dados de rastreamento de API.  
+Criar um coletor de dados de rastreamento de API.  
 
 ## <a name="syntax"></a>Sintaxe  
 ```  
 logman create api <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
 
 |                    Parâmetro                     |                                                                               Descrição                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,7 +59,7 @@ logman create api <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 O comando a seguir cria um contador de rastreamento de API chamado trace_notepad para o arquivo executável c:\Windows\Notepad.exe e gera os resultados para o arquivo c:\notepad.etl.  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl  
@@ -72,9 +68,9 @@ O comando a seguir cria um contador de rastreamento de API chamado trace_notepad
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll  
 ```  
-O comando a seguir cria um contador de rastreamento de API chamado trace_notepad para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada à API TlsGetValue produzida pelo módulo Kernel32. dll.  
+O comando a seguir cria um contador de rastreamento de API chamado trace_notepad para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo Kernel32. dll.  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
 [logman](logman.md)  

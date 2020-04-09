@@ -1,24 +1,20 @@
 ---
 title: Net print
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f59b2015-4698-415d-9a74-09566c466f40
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 241f9d74cb537924cf69c1e0bb5fd73a422c4b23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad631788a59c24dcb92d180330de25a5be320154
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373303"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839049"
 ---
 # <a name="net-print"></a>Net print
 
@@ -33,14 +29,14 @@ para obter exemplos de como usar esse comando, consulte a seção de [exemplos](
 > Net print {\\<computerName>\<Sharename> | 
 > \\<computerName> <JobNumber> [/hold | /release | /delete]} [help]
 > ```
-> ## <a name="parameters"></a>Parâmetros
+> ### <a name="parameters"></a>Parâmetros
 > 
 > |               Parâmetros               |                                                                                                                                                                                                                     Descrição                                                                                                                                                                                                                      |
 > |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > |    \\\\<computerName>\\<Sharename>     |                                                                                                                                                                            Especifica (por nome) o computador e a fila de impressão sobre os quais você deseja exibir informações.                                                                                                                                                                             |
 > |           \\\\<computerName>           |                                                                                                                                 Especifica (por nome) o computador que hospeda o trabalho de impressão que você deseja controlar. Se você não especificar um computador, o computador local será assumido. Requer o parâmetro <JobNumber>.                                                                                                                                  |
 > |              <JobNumber>               |                                             Especifica o número do trabalho de impressão que você deseja controlar. Esse número é atribuído pelo computador que hospeda a fila de impressão onde o trabalho de impressão é enviado. Depois que um computador atribui um número a um trabalho de impressão, esse número não é atribuído a outros trabalhos de impressão em nenhuma fila hospedada por esse computador. Necessário ao usar o parâmetro \\\\<computerName>.                                             |
-> | [/Hold &#124; /Release &#124; /DELETE] | Especifica a ação a ser tomada com o trabalho de impressão.<br /><br />-O parâmetro **/Hold** atrasa o trabalho, permitindo que outros trabalhos de impressão o ignorem até que sejam liberados.<br />-O parâmetro **/Release** libera um trabalho de impressão que foi atrasado.<br />-O parâmetro **/delete** remove um trabalho de impressão de uma fila de impressão.<br /><br />Se você especificar um número de trabalho, mas não especificar nenhuma ação, as informações sobre o trabalho de impressão serão exibidas. |
+> | [/Hold &#124; /Release &#124; /DELETE] | Especifica a ação a ser tomada com o trabalho de impressão.<p>-O parâmetro **/Hold** atrasa o trabalho, permitindo que outros trabalhos de impressão o ignorem até que sejam liberados.<br />-O parâmetro **/Release** libera um trabalho de impressão que foi atrasado.<br />-O parâmetro **/delete** remove um trabalho de impressão de uma fila de impressão.<p>Se você especificar um número de trabalho, mas não especificar nenhuma ação, as informações sobre o trabalho de impressão serão exibidas. |
 > |                  ajuda                  |                                                                                                                                                                                                     Exibe a ajuda para o comando **net Print** .                                                                                                                                                                                                     |
 > 
 > ## <a name="remarks"></a>Comentários
@@ -66,7 +62,7 @@ para obter exemplos de como usar esse comando, consulte a seção de [exemplos](
 >   Job parameters
 >   additional info
 >   ```
->   ## <a name="BKMK_examples"></a>Disso
+>   ## <a name="examples"></a><a name=BKMK_examples></a>Disso
 >   Este exemplo mostra como listar o conteúdo da fila de impressão Dotmatrix no computador \\\Production:
 >   ```
 >   Net print \\Production\Dotmatrix 
@@ -83,6 +79,6 @@ para obter exemplos de como usar esse comando, consulte a seção de [exemplos](
 >   ```
 >   Net print \\Production 263 /release 
 >   ```
->   #### <a name="additional-references"></a>referências adicionais
->   [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+>   ## <a name="additional-references"></a>Referências adicionais
+>   - [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 >   [referência de comando de impressão](print-command-reference.md)

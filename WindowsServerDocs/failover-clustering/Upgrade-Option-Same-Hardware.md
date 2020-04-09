@@ -1,25 +1,26 @@
 ---
 title: Atualizando clusters de failover usando o mesmo hardware
+description: Este artigo descreve como atualizar um cluster de failover de 2 nós usando o mesmo hardware
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 02/28/2019
-description: Este artigo descreve como atualizar um cluster de failover de 2 nós usando o mesmo hardware
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe93f1d43e0c3a1bc4269b585cb9d021d3461aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2d9866417908b3979a4ee17b25dd0d3a404bb1c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361402"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828179"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>Atualizando clusters de failover no mesmo hardware
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Um cluster de failover é um conjunto de computadores independentes que trabalham em conjunto para aumentar a disponibilidade de aplicativos e serviços. Os servidores clusterizados (chamados de nós) são conectados por cabos físicos e por software. Se um dos nós do cluster falhar, o outro nó começará a fornecer o serviço (um processo conhecido como failover). Os usuários vivenciam um mínimo de interrupções no serviço.
+Um cluster de failover é um conjunto de computadores independentes que trabalham em conjunto para aumentar a disponibilidade de aplicativos e serviços. Os serviços clusterizados (chamados nós) estão conectados por cabos físicos e por software. Se um dos nós do cluster falhar, o outro nó começará a fornecer o serviço (um processo conhecido como failover). Os usuários vivenciam um mínimo de interrupções no serviço.
 
 Este guia descreve as etapas para atualizar os nós de cluster para o Windows Server 2019 ou o Windows Server 2016 de uma versão anterior usando o mesmo hardware.
 
@@ -37,7 +38,7 @@ Antes de iniciar qualquer atualização, verifique se um backup atual, incluindo
 
 No exemplo a seguir, o nome do cluster de failover é CLUSTER e os nomes de nó são NODE1 e NODE2.
 
-## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>Etapa 1: Remova o primeiro nó e atualize para o Windows Server 2016
+## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>Etapa 1: remover o primeiro nó e atualizar para o Windows Server 2016
 
 1. Em Gerenciador de Cluster de Failover, dissipe todos os recursos de NODE1 para NODE2 clicando com o botão direito do mouse no nó e selecionando **Pausar** e **drenar funções**.  Como alternativa, você pode usar o comando [Suspend-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)do PowerShell.
 
@@ -61,7 +62,7 @@ No exemplo a seguir, o nome do cluster de failover é CLUSTER e os nomes de nó 
 
 7.  Depois que todos os recursos tiverem sido migrados, desligue o NODE2 (cluster original) e desconecte o armazenamento para não causar nenhuma interferência.  Conecte o armazenamento ao NODE1.  Quando todos estiverem conectados, coloque todos os recursos online e verifique se eles estão funcionando como deveria.
 
-## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>Etapa 2: Recompilar o segundo nó ao Windows Server 2019
+## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>Etapa 2: recompilar o segundo nó ao Windows Server 2019
 
 Depois de verificar que tudo está funcionando como deveria, o NODE2 pode ser recriado para o Windows Server 2019 e ingressado no cluster.
 
@@ -85,7 +86,7 @@ Depois de verificar que tudo está funcionando como deveria, o NODE2 pode ser re
 
 5. Dissipe todos os recursos de NODE1 para NODE2 clicando com o botão direito do mouse no nó e selecionando **Pausar** e **drenar funções**.  Como alternativa, você pode usar o comando [Suspend-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)do PowerShell.  Verifique se todos os recursos estão online e se estão funcionando como deveria.
 
-## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>Etapa 3: Recriar o primeiro nó para o Windows Server 2019
+## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>Etapa 3: recriar o primeiro nó para o Windows Server 2019
 
 1. Remova NODE1 do cluster e desconecte o armazenamento do nó da maneira que você fez anteriormente.
 

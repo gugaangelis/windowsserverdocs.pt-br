@@ -2,22 +2,18 @@
 title: Visão geral do cenário de Test Lab DirectAccess Cluster-NLB
 description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess em um cluster com o NLB do Windows para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cd1e9efd-19e9-49e7-8432-881f661c9792
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: abc3038cfe0dacb09c115f37289fe72f1c14b96d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7394562ce7a5c08a81fb3c243fb8671d281d8370
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308851"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819039"
 ---
 # <a name="overview-of-the-directaccess-cluster-nlb-test-lab-scenario"></a>Visão geral do cenário de Test Lab DirectAccess Cluster-NLB
 

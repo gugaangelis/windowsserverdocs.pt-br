@@ -1,28 +1,22 @@
 ---
 title: setx
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para setx, que cria ou modifica variáveis de ambiente no ambiente do usuário ou do sistema, sem a necessidade de programação ou script.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c206f36e2d0bc947329124b08fb797091e838bcd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19f6625ffaaf745ae2af26e52986e97382f42702
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384035"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834339"
 ---
 # <a name="setx"></a>setx
-
-
 
 Cria ou modifica variáveis de ambiente no ambiente do usuário ou do sistema, sem a necessidade de programação ou script. O comando **setx** também recupera os valores de chaves do registro e os grava em arquivos de texto.
 
@@ -33,10 +27,10 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 ```
 setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] <Variable> <Value> [/m]
 setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] [<Variable>] /k <Path> [/m]
-setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName> {[<Variable>] {/a <X>,<Y> | /r <X>,<Y> "<String>"} [/m] | /x} [/d <Delimiters>]
+setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName> {[<Variable>] {/a <X>,<Y> | /r <X>,<Y> <String>} [/m] | /x} [/d <Delimiters>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |         Parâmetro          |                                                                                                                                              Descrição                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,10 +42,10 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 |         /k \<caminho >         | Especifica que a variável é definida com base nas informações de uma chave do registro. O p*Ho* usa a seguinte sintaxe:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por exemplo, você pode especificar o seguinte caminho:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
 |      /f \<nome do arquivo >       |                                                                                                                               Especifica o arquivo que você deseja usar.                                                                                                                                |
 |        /a \<X ><Y>         |                                                                                                                    Especifica coordenadas absolutas e deslocamento como parâmetros de pesquisa.                                                                                                                    |
-|   /r \<X ><Y> "<String>"   |                                                                                                            Especifica as coordenadas relativas e o deslocamento da **cadeia de caracteres** como parâmetros de pesquisa.                                                                                                            |
+|   /r \<X ><Y> <String>   |                                                                                                            Especifica as coordenadas relativas e o deslocamento da **cadeia de caracteres** como parâmetros de pesquisa.                                                                                                            |
 |             /m             |                                                                                                Especifica a definição da variável no ambiente do sistema. A configuração padrão é o ambiente local.                                                                                                 |
 |             /x             |                                                                                                       Exibe as coordenadas do arquivo, ignorando as opções de linha de comando **/a**, **/r**e **/d** .                                                                                                        |
-|      /d \<delimitadores >      |                    Especifica os delimitadores, como " **,** " ou " **\\** ", a serem usados, além dos quatro delimitadores internos — espaço, tabulação, Enter e avanço de discagem. Os delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo delimitadores internos.                    |
+|      /d \<delimitadores >      |                    Especifica delimitadores como, ou **\\** a serem usados **,** além dos quatro delimitadores internos — espaço, tabulação, Enter e avanço de alimentação. Os delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo delimitadores internos.                    |
 |             /?             |                                                                                                                                 Exibe a ajuda no prompt de comando.                                                                                                                                  |
 
 ## <a name="remarks"></a>Comentários
@@ -66,7 +60,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 -   REG_DWORD valores do registro são extraídos e usados no modo hexadecimal.
 -   O modo de arquivo dá suporte apenas à análise de arquivos de texto de retorno de carro e alimentação de linha (CRLF).
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para definir a variável de ambiente de computador no ambiente local para o valor Brand1, digite:
 ```
@@ -74,7 +68,7 @@ setx MACHINE Brand1
 ```
 Para definir a variável de ambiente do computador no ambiente do sistema para o valor Brand1 computador, digite:
 ```
-setx MACHINE "Brand1 Computer" /m
+setx MACHINE Brand1 Computer /m
 ```
 Para definir a variável de ambiente MYPATH no ambiente local para usar o caminho de pesquisa definido na variável de ambiente PATH, digite:
 ```
@@ -102,11 +96,11 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\Syst
 ```
 Para definir a variável de ambiente BUILD no ambiente do sistema com o valor encontrado na chave do registro **HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber** , digite:
 ```
-setx BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber" /m
+setx BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber /m
 ```
 Para definir a variável de ambiente BUILD no ambiente do sistema de um computador remoto chamado Computador1 com o valor encontrado na chave do registro **HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber** , digite:
 ```
-setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber" /m
+setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber /m
 ```
 Para exibir o conteúdo de um arquivo chamado ipconfig. out, juntamente com as coordenadas correspondentes do conteúdo, digite:
 ```
@@ -116,11 +110,11 @@ Para definir a variável de ambiente IPADDR no ambiente local para o valor encon
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-Para definir a variável de ambiente OCTET1 no ambiente local para o valor encontrado na coordenada 5, 3 no arquivo ipconfig. out com delimitadores **"# $\*."** , digite:
+Para definir a variável de ambiente OCTET1 no ambiente local com o valor encontrado na coordenada 5, 3 no arquivo ipconfig. out com delimitadores **#$\*.** , digite:
 ```
-setx OCTET1 /f ipconfig.out /a 5,3 /d "#$*." 
+setx OCTET1 /f ipconfig.out /a 5,3 /d #$*. 
 ```
-Para definir a variável de ambiente IPGATEWAY no ambiente local para o valor encontrado na coordenada 0, 7 em relação à coordenada de "gateway" no arquivo ipconfig. out, digite:
+Para definir a variável de ambiente IPGATEWAY no ambiente local para o valor encontrado na coordenada 0, 7 em relação à coordenada de gateway no arquivo ipconfig. out, digite:
 ```
 setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway 
 ```
@@ -129,6 +123,6 @@ Para exibir o conteúdo de um arquivo chamado ipconfig. out – junto com as coo
 setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x 
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

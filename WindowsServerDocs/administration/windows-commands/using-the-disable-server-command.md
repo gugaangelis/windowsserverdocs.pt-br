@@ -1,28 +1,22 @@
 ---
-title: Usando o comando Disable-Server
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: desabilitar-servidor
+description: O tópico comandos do Windows para Disable-Server, que desabilita todos os serviços de um servidor de serviços de implantação do Windows.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b69fcfe0-b744-4794-bc75-2c9218c0ba66
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9376bf1c5a5641aa6763c88b58bfe92d799b44f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba8c42f8b951baa4679adc44c69bf28cb2af2629
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363513"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831629"
 ---
-# <a name="using-the-disable-server-command"></a>Usando o comando Disable-Server
-
-
+# <a name="disable-server"></a>desabilitar-servidor
 
 Desabilita todos os serviços de um servidor de serviços de implantação do Windows.
 
@@ -32,13 +26,13 @@ Desabilita todos os serviços de um servidor de serviços de implantação do Wi
 WDSUTIL [Options] /Disable-Server [/Server:<Server name>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[/Server: \<Server nome >]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
+|[/Server: nome do servidor\<>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para desabilitar o servidor, execute um dos seguintes:
 ```
@@ -46,7 +40,7 @@ WDSUTIL /Disable-Server
 WDSUTIL /Verbose /Disable-Server /Server:MyWDSServer
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

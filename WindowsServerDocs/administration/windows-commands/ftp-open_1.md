@@ -1,35 +1,31 @@
 ---
 title: open_1 FTP
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b61926a-dc60-4b4c-96d3-64e5c91c18ba vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5da1c73362c0396300f712b2e45b906d1652604
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8bd3063a52908d65f336afcda6b6982d5bc9bf94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376192"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843179"
 ---
 # <a name="ftp-open_1"></a>FTP: open_1
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Conecta-se ao servidor FTP especificado.   
 ## <a name="syntax"></a>Sintaxe  
 ```  
 open <computer> [<Port>]  
 ```  
-### <a name="parameters"></a>Parâmetros  
+#### <a name="parameters"></a>Parâmetros  
 
 | Parâmetro  |                                           Descrição                                            |
 |------------|--------------------------------------------------------------------------------------------------|
@@ -38,7 +34,7 @@ open <computer> [<Port>]
 
 ## <a name="remarks"></a>Comentários  
 Você pode usar um endereço IP ou nome do computador (nesse caso, um servidor DNS ou um arquivo hosts deve estar disponível) para especificar o **computador**.  
-## <a name="BKMK_Examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
 Conecte-se ao servidor FTP em **ftp.Microsoft.com**.  
 ```  
 Open ftp.microsoft.com  
@@ -48,4 +44,4 @@ Conecte-se ao servidor FTP em **ftp.Microsoft.com** que está escutando na porta
 open ftp.microsoft.com 755  
 ```  
 ## <a name="additional-references"></a>Referências adicionais  
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

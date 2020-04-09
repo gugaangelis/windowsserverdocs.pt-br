@@ -2,22 +2,19 @@
 title: Exibir e gerenciar atualizações
 description: Tópico Windows Server Update Service (WSUS)-como exibir e gerenciar atualizações no console do WSUS
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de2d12ad34ba11f948baa390546747a6bf4b635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2a9f7e1f1f3f648a0cba22d599ccc64e7b424d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361487"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828439"
 ---
 # <a name="viewing-and-managing-updates"></a>Exibir e gerenciar atualizações
 
@@ -98,7 +95,7 @@ O novo modo de exibição será exibido no painel exibição de árvore em atual
 
     -   A barra de título exibe o título da atualização; por exemplo, atualização de segurança para Windows Media Player 9 (KB911565).
 
-    -   A seção status exibe o status da instalação da atualização (os computadores nos quais ele precisa ser instalado, computadores nos quais ele foi instalado com erros, computadores nos quais ele foi instalado ou não é aplicável e computadores que não foram relatados status da atualização), bem como informações gerais (KB e números MSRC data de lançamento, etc.).
+    -   A seção status exibe o status da instalação da atualização (os computadores nos quais ele precisa ser instalado, os computadores nos quais ele foi instalado com erros, os computadores nos quais ele foi instalado ou não é aplicável, e os computadores que não relataram o status da atualização), bem como informações gerais (KB e números MSRC data de lançamento, etc.).
 
     -   A seção Descrição exibe uma breve descrição da atualização.
 
@@ -123,7 +120,7 @@ Observe que você pode executar esse procedimento em apenas uma atualização po
 ## <a name="managing-updates-with-wsus"></a>Gerenciando atualizações com o WSUS
 As atualizações são usadas para atualizar ou fornecer uma substituição completa de arquivos para o software instalado em um computador. Cada atualização que está disponível em Microsoft Update é composta de dois componentes:
 
--   Metadados: fornece informações sobre a atualização. Por exemplo, os metadados fornecem informações para as propriedades de uma atualização, permitindo que você descubra o que a atualização é útil. Os metadados também incluem termos de licença para software Microsoft. O pacote de metadados baixado para uma atualização normalmente é muito menor do que o pacote de arquivo de atualização real.
+-   Metadados: fornece informações sobre a atualização. Por exemplo, os metadados fornecem informações sobre as propriedades de uma atualização, permitindo que você determine para que a atualização é útil. Os metadados incluem também Termos de Licença para Software Microsoft. Normalmente, o pacote de metadados baixado para uma atualização é muito menor do que o pacote de arquivos de atualização real.
 
 -   Arquivos de atualização: os arquivos reais necessários para instalar uma atualização em um computador.
 

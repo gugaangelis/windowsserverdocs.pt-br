@@ -1,24 +1,20 @@
 ---
 title: schtasks
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2e713203-3dd8-491b-b9e1-9423618dc7e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8029bff5907c044e51b0a371265c3bde452e1366
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d4c28072a8e4d01ea3a045314796bcda32c8a59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371275"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835239"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -51,7 +47,7 @@ Para exibir a sintaxe do comando, clique em um dos seguintes comandos:
   ```  
   Não é possível recuperar tarefas corrompidas. Para restaurar os recursos de agendamento de tarefas do sistema, use **Schtasks. exe** ou **tarefas agendadas** para excluir as tarefas do sistema e reagendá-las.
 
-## <a name="BKMK_create"></a>criar Schtasks
+## <a name="schtasks-create"></a><a name=BKMK_create></a>criar Schtasks
 
 Agenda uma tarefa.
 
@@ -76,7 +72,7 @@ Agenda uma tarefa.
 -   [Para agendar uma tarefa que executa mais de um programa](#BKMK_multi_progs)
 -   [Para agendar uma tarefa que é executada em um computador remoto](#BKMK_remote)
 
-### <a name="BKMK_syntax"></a>Descrições de parâmetros e sintaxe combinadas
+### <a name="combined-syntax-and-parameter-descriptions"></a><a name=BKMK_syntax></a>Descrições de parâmetros e sintaxe combinadas
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -84,7 +80,7 @@ Agenda uma tarefa.
 schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]] [/ru {[<Domain>\]<User> | System}] [/rp <Password>] [/mo <Modifier>] [/d <Day>[,<Day>...] | *] [/m <Month>[,<Month>...]] [/i <IdleTime>] [/st <StartTime>] [/ri <Interval>] [{/et <EndTime> | /du <Duration>} [/k]] [/sd <StartDate>] [/ed <EndDate>] [/it] [/z] [/f]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 ##### <a name="sc-scheduletype"></a>/SC \<Scheduler >
 
@@ -129,10 +125,10 @@ Os parâmetros **/u** e **/p** são válidos somente para o agendamento de uma t
 Executa a tarefa com permissões da conta de usuário especificada. Por padrão, a tarefa é executada com as permissões do usuário atual do computador local ou com a permissão do usuário especificado pelo parâmetro **/u** , se houver uma incluída. O parâmetro **/ru** é válido ao agendar tarefas em computadores locais ou remotos.
 
 
-|       Valor        |                                                    Descrição                                                    |
+|       {1&gt;Valor&lt;1}        |                                                    Descrição                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------|
 | [\<\]de > de domínio <User> |                                       Especifica uma conta de usuário alternativa.                                        |
-|    Sistema ou ""    | Especifica a conta do sistema local, uma conta altamente privilegiada usada pelo sistema operacional e serviços do sistema. |
+|    Sistema ou     | Especifica a conta do sistema local, uma conta altamente privilegiada usada pelo sistema operacional e serviços do sistema. |
 
 ##### <a name="rp-password"></a>/RP \<senha >
 
@@ -146,9 +142,9 @@ Especifica com que frequência a tarefa é executada dentro de seu tipo de agend
 
 |Tipo de agendamento|Valores de modificador|Descrição|
 |-------------|---------------|-----------|
-|DEMORAR|1 - 1439|A tarefa é executada a cada \<N > minutos.|
+|MINUTE|1 - 1439|A tarefa é executada a cada \<N > minutos.|
 |POR hora|1 - 23|A tarefa é executada a cada \<N > horas.|
-|DIÁRIO|1 - 365|A tarefa é executada a cada \<N > dias.|
+|DAILY|1 - 365|A tarefa é executada a cada \<N > dias.|
 |QUINZENAL|1 - 52|A tarefa é executada a cada \<N > semanas.|
 |MESMO|Nenhum modificador.|A tarefa é executada uma vez.|
 |Star|Nenhum modificador.|A tarefa é executada na inicialização.|
@@ -167,7 +163,7 @@ Especifica um dia (ou dias) da semana ou um dia (ou dias) de um mês. Válido so
 |---------------|------------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    QUINZENAL     |               1 - 52               | MON-SOL [, MON-SOL...] |                                                                                                     \*                                                                                                      |
 |    MENSAL    | PRIMEIRO, SEGUNDO, TERCEIRO, QUARTO, ÚLTIMO |        SEG-SOL         |                                                                                   Necessário para uma agenda de semana específica.                                                                                    |
-|    MENSAL    |          Nenhum ou {1-12}          |          1 - 31          | Opcional e válido somente sem o parâmetro modificador ( **/mo**) (uma agenda de data específica) ou quando a **/mo** é 1-12 (uma agenda "a cada \<N > meses"). O padrão é dia 1 (o primeiro dia do mês). |
+|    MENSAL    |          Nenhum ou {1-12}          |          1 - 31          | Opcional e válido somente sem o parâmetro modificador ( **/mo**) (uma agenda de data específica) ou quando a **/mo** é 1-12 (uma agenda a cada \<N > meses). O padrão é dia 1 (o primeiro dia do mês). |
 
 ##### <a name="m-monthmonth"></a>/m mês [, mês...]
 
@@ -190,21 +186,21 @@ Especifica o intervalo de repetição em minutos. Isso não é aplicável para o
 Especifica a hora do dia em que uma agenda de tarefa de minuto ou hora termina em \<HH: MM > formato de 24 horas. Após a hora de término especificada, o **Schtasks** não inicia a tarefa novamente até que a hora de início ocorra. Por padrão, os agendamentos de tarefas não têm hora de término. Esse parâmetro é opcional e válido somente com um agendamento de minuto ou hora.
 
 Para obter um exemplo, consulte:
--   "Para agendar uma tarefa que é executada a cada 100 minutos fora do horário comercial" na seção **para agendar uma tarefa que é executada a cada** \<N > **minutos** .
+-   Para agendar uma tarefa que é executada a cada 100 minutos fora do horário comercial na seção **para agendar uma tarefa que executa a cada** \<N > **minutos** .
 
 ##### <a name="du-duration"></a>/du \<duração >
 
 Especifica um período máximo de tempo para uma agenda de minuto ou hora em \<HHHH: MM > formato de 24 horas. Depois que o tempo especificado expira, o **Schtasks** não inicia a tarefa novamente até que a hora de início ocorra. Por padrão, os agendamentos de tarefas não têm duração máxima. Esse parâmetro é opcional e válido somente com um agendamento de minuto ou hora.
 
 Para obter um exemplo, consulte:
--   "Para agendar uma tarefa que é executada a cada 3 horas por 10 horas" na seção **para agendar uma tarefa que é executada a cada** \<N > **horas** .
+-   Para agendar uma tarefa que é executada a cada três horas por 10 horas na seção **para agendar uma tarefa que é executada a cada** \<N > de **horas** .
 
 ##### <a name="k"></a>/k
 
 Interrompe o programa que a tarefa executa no momento especificado por **/et** ou **/du**. Sem **/k**, **Schtasks** não inicia o programa novamente depois de atingir o tempo especificado por **/et** ou **/du**, mas não interrompe o programa se ele ainda estiver em execução. Esse parâmetro é opcional e válido somente com um agendamento de minuto ou hora.
 
 Para obter um exemplo, consulte:
--   "Para agendar uma tarefa que é executada a cada 100 minutos fora do horário comercial" na seção **para agendar uma tarefa que é executada a cada** \<N > **minutos** .
+-   Para agendar uma tarefa que é executada a cada 100 minutos fora do horário comercial na seção **para agendar uma tarefa que executa a cada** \<N > **minutos** .
 
 ##### <a name="sd-startdate"></a>/SD \<StartDate >
 
@@ -215,7 +211,7 @@ O formato de *StartDate* varia com a localidade selecionada para o computador lo
 Os formatos de data válidos são listados na tabela a seguir. Use o formato mais semelhante ao formato selecionado para **data abreviada** em **Opções regionais e de idioma** no **painel de controle** no computador local.
 
 
-|       Valor       |                                        Descrição                                         |
+|       {1&gt;Valor&lt;1}       |                                        Descrição                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM >/<DD>/<YYYY> | Use para formatos de primeiro mês, como **Inglês (Estados Unidos)** e **espanhol (Panamá)** . |
 | \<DD >/<MM>/<YYYY> |       Use para formatos de primeiro dia, como **búlgaro** e **holandês (Países Baixos)** .        |
@@ -223,14 +219,14 @@ Os formatos de data válidos são listados na tabela a seguir. Use o formato mai
 
 /Ed \<EndDate >
 
-Especifica a data em que o agendamento termina. Este parâmetro é opcional. Ele não é válido de uma vez, OnStart, ONLOGON ou agenda ONIDLE. Por padrão, os agendamentos não têm data de término.
+Especifica a data em que o agendamento termina. Esse parâmetro é opcional. Ele não é válido de uma vez, OnStart, ONLOGON ou agenda ONIDLE. Por padrão, os agendamentos não têm data de término.
 
 O formato de *EndDate* varia com a localidade selecionada para o computador local em **Opções regionais e de idioma** no **painel de controle**. Apenas um formato é válido para cada localidade.
 
 Os formatos de data válidos são listados na tabela a seguir. Use o formato mais semelhante ao formato selecionado para **data abreviada** em **Opções regionais e de idioma** no **painel de controle** no computador local.
 
 
-|       Valor       |                                        Descrição                                         |
+|       {1&gt;Valor&lt;1}       |                                        Descrição                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM >/<DD>/<YYYY> | Use para formatos de primeiro mês, como **Inglês (Estados Unidos)** e **espanhol (Panamá)** . |
 | \<DD >/<MM>/<YYYY> |       Use para formatos de primeiro dia, como **búlgaro** e **holandês (Países Baixos)** .        |
@@ -238,13 +234,13 @@ Os formatos de data válidos são listados na tabela a seguir. Use o formato mai
 
 ##### <a name="it"></a>/It
 
-Especifica a execução da tarefa somente quando o usuário "executar como" (a conta de usuário sob a qual a tarefa é executada) está conectado ao computador. Esse parâmetro não tem nenhum efeito nas tarefas executadas com permissões do sistema.
+Especifica a execução da tarefa somente quando o usuário executar como (a conta de usuário sob a qual a tarefa é executada) está conectado ao computador. Esse parâmetro não tem nenhum efeito nas tarefas executadas com permissões do sistema.
 
-Por padrão, o usuário "executar como" é o usuário atual do computador local quando a tarefa é agendada ou a conta especificada pelo parâmetro **/u** , se uma for usada. No entanto, se o comando incluir o parâmetro **/ru** , o usuário "executar como" será a conta especificada pelo parâmetro **/ru** .
+Por padrão, o usuário executar como é o usuário atual do computador local quando a tarefa é agendada ou a conta especificada pelo parâmetro **/u** , se uma for usada. No entanto, se o comando incluir o parâmetro **/ru** , o usuário executar como será a conta especificada pelo parâmetro **/ru** .
 
 Para obter exemplos, consulte:
--   "Para agendar uma tarefa que é executada a cada 70 dias se eu estiver conectado" na seção **para agendar uma tarefa que é executada a cada** *N* **dias** .
--   "Para executar uma tarefa somente quando um usuário específico estiver conectado" na seção **para agendar uma tarefa que é executada com permissões diferentes** .
+-   Para agendar uma tarefa que é executada a cada 70 dias, se eu estiver conectado na seção **para agendar uma tarefa que é executada a cada** *N* **dias** .
+-   Executar uma tarefa somente quando um usuário específico estiver conectado na seção **para agendar uma tarefa que é executada com permissões diferentes** .
 
 ##### <a name="z"></a>/z
 
@@ -258,7 +254,7 @@ Especifica para criar a tarefa e suprimir avisos se a tarefa especificada já ex
 
 Exibe a ajuda no prompt de comando.
 
-### <a name="BKMK_minutes"></a>Para agendar uma tarefa que é executada a cada N minutos
+### <a name="to-schedule-a-task-that-runs-every-n-minutes"></a><a name=BKMK_minutes></a>Para agendar uma tarefa que é executada a cada N minutos
 
 #### <a name="minute-schedule-syntax"></a>Sintaxe de agendamento de minutos
 
@@ -278,17 +274,17 @@ O comando a seguir agenda um script de segurança, SEC. vbs, para ser executado 
 
 Como o comando não inclui uma data ou hora de início, a tarefa inicia 20 minutos após a conclusão do comando e é executada a cada 20 minutos após a execução do sistema. Observe que o arquivo de origem do script de segurança está localizado em um computador remoto, mas que a tarefa está agendada e executada no computador local.
 ```
-schtasks /create /sc minute /mo 20 /tn "Security Script" /tr \\central\data\scripts\sec.vbs
+schtasks /create /sc minute /mo 20 /tn Security Script /tr \\central\data\scripts\sec.vbs
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-100-minutes-during-non-business-hours"></a>Para agendar uma tarefa que é executada a cada 100 minutos fora do horário comercial
 
 O comando a seguir agenda um script de segurança, SEC. vbs, para ser executado no computador local a cada 100 minutos entre 5:00 P.M. e 7:59 A.M. todos os dias. O comando usa o parâmetro **/SC** para especificar um agendamento de minuto e o parâmetro **/mo** para especificar um intervalo de 100 minutos. Ele usa os parâmetros **/St** e **/et** para especificar a hora de início e a hora de término da agenda de cada dia. Ele também usa o parâmetro **/k** para interromper o script se ele ainda estiver em execução às 7:59 A.M. Sem **/k**, **Schtasks** não iniciaria o script após 7:59 a.m., mas se a instância fosse iniciada às 6:20 a.m. ainda estava em execução, ele não o interromperia.
 ```
-schtasks /create /tn "Security Script" /tr sec.vbs /sc minute /mo 100 /st 17:00 /et 08:00 /k
+schtasks /create /tn Security Script /tr sec.vbs /sc minute /mo 100 /st 17:00 /et 08:00 /k
 ```
 
-### <a name="BKMK_hours"></a>Para agendar uma tarefa que é executada a cada N horas
+### <a name="to-schedule-a-task-that-runs-every-n-hours"></a><a name=BKMK_hours></a>Para agendar uma tarefa que é executada a cada N horas
 
 #### <a name="hourly-schedule-syntax"></a>Sintaxe de agendamento por hora
 
@@ -308,14 +304,14 @@ O comando a seguir agenda o programa MyApp para ser executado a cada cinco horas
 
 Como o computador local está definido para usar a opção em **Inglês (Zimbábue)** em **Opções regionais e de idioma** no **painel de controle**, o formato da data de início é MM/DD/AAAA (03/01/2002).
 ```
-schtasks /create /sc hourly /mo 5 /sd 03/01/2002 /tn "My App" /tr c:\apps\myapp.exe
+schtasks /create /sc hourly /mo 5 /sd 03/01/2002 /tn My App /tr c:\apps\myapp.exe
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-hour-at-five-minutes-past-the-hour"></a>Para agendar uma tarefa que é executada a cada hora em cinco minutos após a hora
 
 O comando a seguir agenda o programa MyApp para ser executado a cada hora, começando em cinco minutos após a meia-noite. Como o parâmetro **/mo** é omitido, o comando usa o valor padrão para o agendamento por hora, que é a cada (1) hora. Se esse comando for executado após 12:05 A.M., o programa não será executado até o dia seguinte.
 ```
-schtasks /create /sc hourly /st 00:05 /tn "My App" /tr c:\apps\myapp.exe
+schtasks /create /sc hourly /st 00:05 /tn My App /tr c:\apps\myapp.exe
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-3-hours-for-10-hours"></a>Para agendar uma tarefa que é executada a cada três horas por 10 horas
@@ -324,11 +320,11 @@ O comando a seguir agenda o programa MyApp para ser executado a cada 3 horas por
 
 O comando usa o parâmetro **/SC** para especificar um agendamento por hora e o parâmetro **/mo** para especificar o intervalo de 3 horas. Ele usa o parâmetro **/St** para iniciar a agenda à meia-noite e o parâmetro **/du** para encerrar as recorrências após 10 horas. Como o programa é executado por apenas alguns minutos, o parâmetro **/k** , que interrompe o programa, se ainda estiver em execução quando a duração expirar, não é necessário.
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc hourly /mo 3 /st 00:00 /du 0010:00
+schtasks /create /tn My App /tr myapp.exe /sc hourly /mo 3 /st 00:00 /du 0010:00
 ```
 Neste exemplo, a tarefa é executada às 12:00, às 3:00, às 6:00 A.M. e às 9:00. Como a duração é de 10 horas, a tarefa não é executada novamente às 12:00 Em vez disso, ele começa novamente às 12:00 da manhã no dia seguinte.
 
-### <a name="BKMK_days"></a>Para agendar uma tarefa que é executada a cada N dias
+### <a name="to-schedule-a-task-that-runs-every-n-days"></a><a name=BKMK_days></a>Para agendar uma tarefa que é executada a cada N dias
 
 #### <a name="daily-schedule-syntax"></a>Sintaxe de agenda diária
 
@@ -348,7 +344,7 @@ O exemplo a seguir agenda o programa MyApp para ser executado uma vez por dia, t
 
 Neste exemplo, como o sistema de computador local está definido como a opção **Inglês (Reino Unido)** em **Opções regionais e de idioma** no **painel de controle**, o formato da data de término é DD/MM/AAAA (31/12/2002)
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /st 08:00 /ed 31/12/2002
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc daily /st 08:00 /ed 31/12/2002
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-12-days"></a>Para agendar uma tarefa que é executada a cada 12 dias
@@ -357,20 +353,20 @@ O exemplo a seguir agenda o programa MyApp para ser executado a cada doze dias �
 
 Neste exemplo, como o sistema está definido como a opção em **Inglês (Zimbábue)** em **Opções regionais e de idioma** no **painel de controle**, o formato da data de término é MM/DD/AAAA (12/31/2002)
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc daily /mo 12 /sd 12/31/2002 /st 13:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc daily /mo 12 /sd 12/31/2002 /st 13:00
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-70-days-if-i-am-logged-on"></a>Para agendar uma tarefa que é executada a cada 70 dias se eu estiver conectado
 
 O comando a seguir agenda um script de segurança, SEC. vbs, para ser executado a cada 70 dias. O comando usa o parâmetro **/mo** para especificar um intervalo de 70 dias. Ele também usa o parâmetro **/it** para especificar que a tarefa seja executada somente quando o usuário sob a conta em que a tarefa é executada é registrado no computador. Como a tarefa será executada com as permissões da minha conta de usuário, a tarefa será executada somente quando eu estiver conectado.
 ```
-schtasks /create /tn "Security Script" /tr sec.vbs /sc daily /mo 70 /it
+schtasks /create /tn Security Script /tr sec.vbs /sc daily /mo 70 /it
 ```
 
 > [!NOTE]
 > Para identificar tarefas com a propriedade somente interativa ( **/it**), use uma consulta detalhada **(/Query/v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o campo de **modo de logon** tem um valor **somente interativo**.
 
-### <a name="BKMK_weeks"></a>Para agendar uma tarefa que é executada a cada N semanas
+### <a name="to-schedule-a-task-that-runs-every-n-weeks"></a><a name=BKMK_weeks></a>Para agendar uma tarefa que é executada a cada N semanas
 
 #### <a name="weekly-schedule-syntax"></a>Sintaxe de agendamento semanal
 
@@ -394,17 +390,17 @@ Esse comando também usa o parâmetro **/s** para especificar o computador remot
 
 Além disso, como o comando é executado remotamente, todos os caminhos no comando, incluindo o caminho para MyApp. exe, se referem a caminhos no computador remoto.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16 /u Admin01
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 6 /s Server16 /u Admin01
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-other-week-on-friday"></a>Para agendar uma tarefa que é executada a cada semana na sexta-feira
 
 O comando a seguir agenda uma tarefa para ser executada a cada sexta-feira. Ele usa o parâmetro **/mo** para especificar o intervalo de duas semanas e o parâmetro **/d** para especificar o dia da semana. Para agendar uma tarefa que é executada toda sexta-feira, omita o parâmetro **/mo** ou defina-o como 1.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 2 /d FRI
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 2 /d FRI
 ```
 
-### <a name="BKMK_months"></a>Para agendar uma tarefa que é executada a cada N meses
+### <a name="to-schedule-a-task-that-runs-every-n-months"></a><a name=BKMK_months></a>Para agendar uma tarefa que é executada a cada N meses
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -422,14 +418,14 @@ Nesse tipo de agendamento, o parâmetro ' **/SC Monthly** ' é necessário. O pa
 
 O comando a seguir agenda o programa MyApp para ser executado no primeiro dia de cada mês. Como um valor de 1 é o padrão para o parâmetro **/mo** (modificador) e o parâmetro **/d** (Day), esses parâmetros são omitidos do comando.
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc monthly
+schtasks /create /tn My App /tr myapp.exe /sc monthly
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-three-months"></a>Para agendar uma tarefa que é executada a cada três meses
 
 O comando a seguir agenda o programa MyApp para ser executado a cada três meses. Ele usa o parâmetro **/mo** para especificar o intervalo.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 3
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 3
 ```
 
 #### <a name="to-schedule-a-task-that-runs-at-midnight-on-the-21st-day-of-every-other-month"></a>Para agendar uma tarefa que é executada à meia-noite no 21 dia de cada mês
@@ -438,10 +434,10 @@ O comando a seguir agenda o programa MyApp para ser executado todos os outros me
 
 O comando usa o parâmetro **/mo** para especificar o intervalo mensal (a cada dois meses), o parâmetro **/d** para especificar a data e **/St** para especificar a hora. Ele também usa os parâmetros **/SD** e **/Ed** para especificar a data de início e a data de término, respectivamente. Como o computador local é definido como a opção **Inglês (África do Sul)** nas **Opções regionais e de idioma** no **painel de controle**, as datas são especificadas no formato local, aaaa/mm/dd.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30 
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00:00 /sd 2002/07/01 /ed 2003/06/30 
 ```
 
-### <a name="BKMK_spec_day"></a>Para agendar uma tarefa que é executada em um dia específico da semana
+### <a name="to-schedule-a-task-that-runs-on-a-specific-day-of-the-week"></a><a name=BKMK_spec_day></a>Para agendar uma tarefa que é executada em um dia específico da semana
 
 #### <a name="weekly-schedule-syntax"></a>Sintaxe de agendamento semanal
 
@@ -451,7 +447,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON -
 
 #### <a name="remarks"></a>Comentários
 
-A agenda "dia da semana" é uma variação da agenda semanal. Em uma agenda semanal, o parâmetro **/SC Weekly** é necessário. O parâmetro **/mo** (modificador) é opcional e especifica o número de semanas entre cada execução da tarefa. O valor padrão de **/mo** é 1 (a cada semana). O parâmetro **/d** , que é opcional, agenda a tarefa para execução em dias da semana especificados ou em todos os dias (\*). O padrão é MON (segunda-feira). A opção de todos os dias ( **/d \*** ) é equivalente a agendar uma tarefa diária.
+A agenda do dia da semana é uma variação da agenda semanal. Em uma agenda semanal, o parâmetro **/SC Weekly** é necessário. O parâmetro **/mo** (modificador) é opcional e especifica o número de semanas entre cada execução da tarefa. O valor padrão de **/mo** é 1 (a cada semana). O parâmetro **/d** , que é opcional, agenda a tarefa para execução em dias da semana especificados ou em todos os dias (\*). O padrão é MON (segunda-feira). A opção de todos os dias ( **/d \*** ) é equivalente a agendar uma tarefa diária.
 
 #### <a name="examples"></a>Exemplos
 
@@ -459,17 +455,17 @@ A agenda "dia da semana" é uma variação da agenda semanal. Em uma agenda sema
 
 O comando a seguir agenda o programa MyApp para ser executado todas as semanas na quarta-feira. O comando usa o parâmetro **/d** para especificar o dia da semana. Como o comando omite o parâmetro **/mo** , a tarefa é executada todas as semanas.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /d WED
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /d WED
 ```
 
 #### <a name="to-schedule-a-task-that-runs-every-eight-weeks-on-monday-and-friday"></a>Para agendar uma tarefa que é executada a cada oito semanas na segunda-feira e na sexta-feira
 
 O comando a seguir agenda uma tarefa para ser executada na segunda-feira e na sexta-feira de cada oitava semana. Ele usa o parâmetro **/d** para especificar os dias e o parâmetro **/mo** para especificar o intervalo de oito semanas.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 8 /d MON,FRI
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 8 /d MON,FRI
 ```
 
-### <a name="BKMK_spec_week"></a>Para agendar uma tarefa que é executada em uma semana específica do mês
+### <a name="to-schedule-a-task-that-runs-on-a-specific-week-of-the-month"></a><a name=BKMK_spec_week></a>Para agendar uma tarefa que é executada em uma semana específica do mês
 
 #### <a name="specific-week-syntax"></a>Sintaxe da semana específica
 
@@ -487,17 +483,17 @@ Nesse tipo de agendamento, o parâmetro **/SC mensal** , o parâmetro **/mo** (m
 
 O comando a seguir agenda o programa MyApp para ser executado no segundo domingo de cada mês. Ele usa o parâmetro **/mo** para especificar a segunda semana do mês e o parâmetro **/d** para especificar o dia.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SUN
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo SECOND /d SUN
 ```
 
 #### <a name="to-schedule-a-task-for-the-first-monday-in-march-and-september"></a>Para agendar uma tarefa para a primeira segunda-feira em março e setembro
 
 O comando a seguir agenda o programa MyApp para ser executado na primeira segunda-feira em março e setembro. Ele usa o parâmetro **/mo** para especificar a primeira semana do mês e o parâmetro **/d** para especificar o dia. Ele usa o parâmetro **/m** para especificar o mês, separando os argumentos de mês com uma vírgula.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo FIRST /d MON /m MAR,SEP
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo FIRST /d MON /m MAR,SEP
 ```
 
-### <a name="BKMK_spec_date"></a>Para agendar uma tarefa que é executada em uma data específica a cada mês
+### <a name="to-schedule-a-task-that-runs-on-a-specific-date-each-month"></a><a name=BKMK_spec_date></a>Para agendar uma tarefa que é executada em uma data específica a cada mês
 
 #### <a name="specific-date-syntax"></a>Sintaxe de data específica
 
@@ -517,17 +513,17 @@ O parâmetro **/m** (month) é opcional para esse tipo de agendamento, e o padr�
 
 O comando a seguir agenda o programa MyApp para ser executado no primeiro dia de cada mês. Como o modificador padrão é nenhum (nenhum modificador), o dia padrão é o dia 1 e o mês padrão é todos os meses, o comando não precisa de nenhum parâmetro adicional.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly
 ```
 
 #### <a name="to-schedule-a-task-for-the-15th-days-of-may-and-june"></a>Para agendar uma tarefa nos 15º dias de maio e junho
 
 O comando a seguir agenda o programa MyApp para ser executado em 15 de maio e 15 de junho às 3:00 P.M. (15:00). Ele usa o parâmetro **/m** para especificar a data e o parâmetro **/m** para especificar os meses. Ele também usa o parâmetro **/St** para especificar a hora de início.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN /st 15:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN /st 15:00
 ```
 
-### <a name="BKMK_last_day"></a>Para agendar uma tarefa que é executada no último dia de um mês
+### <a name="to-schedule-a-task-that-runs-on-the-last-day-of-a-month"></a><a name=BKMK_last_day></a>Para agendar uma tarefa que é executada no último dia de um mês
 
 #### <a name="last-day-syntax"></a>Sintaxe do último dia
 
@@ -545,17 +541,17 @@ No tipo de agendamento do último dia, o parâmetro **/SC Monthly** , o parâmet
 
 O comando a seguir agenda o programa MyApp para ser executado no último dia de cada mês. Ele usa o parâmetro **/mo** para especificar o último dia e o parâmetro **/m** com o caractere curinga (*) para indicar que o programa é executado todos os meses.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo lastday /m *
 ```
 
 #### <a name="to-schedule-a-task-at-600-pm-on-the-last-days-of-february-and-march"></a>Para agendar uma tarefa às 6:00 nos últimos dias de fevereiro e março
 
 O comando a seguir agenda o programa MyApp para ser executado no último dia de fevereiro e no último dia de março às 6:00 P.M. Ele usa o parâmetro **/mo** para especificar o último dia, o parâmetro **/m** para especificar os meses e o parâmetro **/St** para especificar a hora de início.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m FEB,MAR /st 18:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo lastday /m FEB,MAR /st 18:00
 ```
 
-### <a name="BKMK_once"></a>Para agendar uma tarefa que é executada uma vez
+### <a name="to-schedule-a-task-that-runs-once"></a><a name=BKMK_once></a>Para agendar uma tarefa que é executada uma vez
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -577,10 +573,10 @@ O comando a seguir agenda o programa MyApp para ser executado à meia-noite em 1
 
 Como o computador local usa a opção **Inglês (Estados Unidos)** em **Opções regionais e de idioma** no **painel de controle**, o formato da data de início é mm/dd/aaaa.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /sd 01/01/2003 /st 00:00
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc once /sd 01/01/2003 /st 00:00
 ```
 
-### <a name="BKMK_startup"></a>Para agendar uma tarefa que é executada toda vez que o sistema é iniciado
+### <a name="to-schedule-a-task-that-runs-every-time-the-system-starts"></a><a name=BKMK_startup></a>Para agendar uma tarefa que é executada toda vez que o sistema é iniciado
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -600,10 +596,10 @@ O comando a seguir agenda o programa MyApp para ser executado toda vez que o sis
 
 Como o computador local usa a opção **Inglês (Estados Unidos)** em **Opções regionais e de idioma** no **painel de controle**, o formato da data de início é mm/dd/aaaa.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onstart /sd 03/15/2001
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc onstart /sd 03/15/2001
 ```
 
-### <a name="BKMK_logon"></a>Para agendar uma tarefa que é executada quando um usuário faz logon
+### <a name="to-schedule-a-task-that-runs-when-a-user-logs-on"></a><a name=BKMK_logon></a>Para agendar uma tarefa que é executada quando um usuário faz logon
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -613,7 +609,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc onlogon [/sd <StartDate>] [/it
 
 #### <a name="remarks"></a>Comentários
 
-O tipo de agendamento "no logon" agenda uma tarefa que é executada sempre que qualquer usuário faz logon no computador. No tipo de agendamento "no logon", o parâmetro **/SC ONLOGON** é necessário. O parâmetro **/SD** (data de início) é opcional e o padrão é a data atual.
+O tipo de agendamento no logon agenda uma tarefa que é executada sempre que qualquer usuário faz logon no computador. No tipo de agendamento de logon, o parâmetro **/SC ONLOGON** é necessário. O parâmetro **/SD** (data de início) é opcional e o padrão é a data atual.
 
 #### <a name="examples"></a>Exemplos
 
@@ -621,10 +617,10 @@ O tipo de agendamento "no logon" agenda uma tarefa que é executada sempre que q
 
 O comando a seguir agenda um arquivo em lotes a ser executado toda vez que um usuário (qualquer usuário) fizer logon no computador remoto. Ele usa o parâmetro **/s** para especificar o computador remoto. Como o comando é remoto, todos os caminhos no comando, incluindo o caminho para o arquivo em lotes, se referem a um caminho no computador remoto.
 ```
-schtasks /create /tn "Start Web Site" /tr c:\myiis\webstart.bat /sc onlogon /s Server23
+schtasks /create /tn Start Web Site /tr c:\myiis\webstart.bat /sc onlogon /s Server23
 ```
 
-### <a name="BKMK_idle"></a>Para agendar uma tarefa que é executada quando o sistema está ocioso
+### <a name="to-schedule-a-task-that-runs-when-the-system-is-idle"></a><a name=BKMK_idle></a>Para agendar uma tarefa que é executada quando o sistema está ocioso
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -634,7 +630,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc onidle /i {1 - 999} [/sd <Star
 
 #### <a name="remarks"></a>Comentários
 
-O tipo de agendamento "on Idle" agenda uma tarefa que é executada sempre que não há atividade de usuário durante o tempo especificado pelo parâmetro **/i** . No tipo de agendamento "em ociosidade", o parâmetro **/SC OnIdle** e o parâmetro **/i** são necessários. O **/SD** (data de início) é opcional e o padrão é a data atual.
+O tipo de agendamento on Idle agenda uma tarefa que é executada sempre que não há atividade de usuário durante o tempo especificado pelo parâmetro **/i** . No tipo de agendamento inativo, o parâmetro **/SC OnIdle** e o parâmetro **/i** são necessários. O **/SD** (data de início) é opcional e o padrão é a data atual.
 
 #### <a name="examples"></a>Exemplos
 
@@ -642,12 +638,12 @@ O tipo de agendamento "on Idle" agenda uma tarefa que é executada sempre que n�
 
 O comando a seguir agenda o programa MyApp para ser executado sempre que o computador estiver ocioso. Ele usa o parâmetro **/i** necessário para especificar que o computador deve permanecer ocioso por dez minutos antes que a tarefa seja iniciada.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onidle /i 10
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc onidle /i 10
 ```
 
-### <a name="BKMK_now"></a>Para agendar uma tarefa que é executada agora
+### <a name="to-schedule-a-task-that-runs-now"></a><a name=BKMK_now></a>Para agendar uma tarefa que é executada agora
 
-**Schtasks** não tem uma opção "executar agora", mas você pode simular essa opção criando uma tarefa que é executada uma vez e inicia em alguns minutos.
+**Schtasks** não tem uma opção executar agora, mas você pode simular essa opção criando uma tarefa que é executada uma vez e inicia em alguns minutos.
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -663,10 +659,10 @@ O comando a seguir agenda uma tarefa para ser executada uma vez, em 13 de novemb
 
 Como o computador local usa a opção **Inglês (Estados Unidos)** em **Opções regionais e de idioma** no **painel de controle**, o formato da data de início é mm/dd/aaaa.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /st 14:18 /sd 11/13/2002
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc once /st 14:18 /sd 11/13/2002
 ```
 
-### <a name="BKMK_diff_perms"></a>Para agendar uma tarefa que é executada com permissões diferentes
+### <a name="to-schedule-a-task-that-runs-with-different-permissions"></a><a name=BKMK_diff_perms></a>Para agendar uma tarefa que é executada com permissões diferentes
 
 Você pode agendar tarefas de todos os tipos para execução com permissões de uma conta alternativa no computador local e em um remoto. Além dos parâmetros necessários para o tipo de agendamento específico, o parâmetro **/ru** é necessário e o parâmetro **/RP** é opcional.
 
@@ -676,12 +672,12 @@ Você pode agendar tarefas de todos os tipos para execução com permissões de 
 
 O comando a seguir agenda o programa MyApp para ser executado no computador local. Ele usa a **/ru** para especificar que a tarefa deve ser executada com as permissões da conta de administrador do usuário (Admin06). Neste exemplo, a tarefa está agendada para ser executada todas as terças-feiras, mas você pode usar qualquer tipo de agendamento para uma tarefa executada com permissões alternativas.
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc weekly /d TUE /ru Admin06
+schtasks /create /tn My App /tr myapp.exe /sc weekly /d TUE /ru Admin06
 ```
-Em resposta, o **Schtasks. exe** solicita a senha "executar como" para a conta Admin06 e, em seguida, exibe uma mensagem de êxito.
+Em resposta, o **Schtasks. exe** solicita a senha executar como para a conta Admin06 e, em seguida, exibe uma mensagem de êxito.
 ```
 Please enter the run as password for Admin06: ********
-SUCCESS: The scheduled task "My App" has successfully been created.
+SUCCESS: The scheduled task My App has successfully been created.
 ```
 
 #### <a name="to-run-a-task-with-alternate-permissions-on-a-remote-computer"></a>Para executar uma tarefa com permissões alternativas em um computador remoto
@@ -692,7 +688,7 @@ O comando usa o parâmetro **/SC** para especificar um agendamento diário e um 
 
 O comando usa o parâmetro **/s** para fornecer o nome do computador remoto e o parâmetro **/u** para especificar uma conta com permissão para agendar uma tarefa no computador remoto (Admin01 no computador de marketing). Ele também usa o parâmetro **/ru** para especificar que a tarefa deve ser executada com as permissões da conta de não administrador do usuário (User01 no domínio Reskits). Sem o parâmetro **/ru** , a tarefa seria executada com as permissões da conta especificada por **/u**.
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc daily /mo 4 /s Marketing /u Marketing\Admin01 /ru Reskits\User01
+schtasks /create /tn My App /tr myapp.exe /sc daily /mo 4 /s Marketing /u Marketing\Admin01 /ru Reskits\User01
 ```
 O **Schtasks** primeiro solicita a senha do usuário chamado pelo parâmetro **/u** (para executar o comando) e, em seguida, solicita a senha do usuário chamado pelo parâmetro **/ru** (para executar a tarefa). Depois de autenticar as senhas, **Schtasks** exibe uma mensagem indicando que a tarefa está agendada.
 ```
@@ -700,7 +696,7 @@ Type the password for Marketing\Admin01:********
 
 Please enter the run as password for Reskits\User01: ********
 
-SUCCESS: The scheduled task "My App" has successfully been created.
+SUCCESS: The scheduled task My App has successfully been created.
 ```
 
 #### <a name="to-run-a-task-only-when-a-particular-user-is-logged-on"></a>Para executar uma tarefa somente quando um usuário específico tiver feito logon
@@ -711,14 +707,14 @@ O comando usa o parâmetro **/SC** para especificar uma agenda semanal, o parâm
 
 O comando usa o parâmetro **/s** para fornecer o nome do computador remoto e o parâmetro **/u** para especificar uma conta com permissão para agendar uma tarefa no computador remoto. Ele também usa o parâmetro **/ru** para configurar a tarefa a ser executada com as permissões do administrador do computador público (Public\Admin01) e o parâmetro **/it** para indicar que a tarefa é executada somente quando a conta Public\Admin01 está conectada.
 ```
-schtasks /create /tn "Check Admin" /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 /s Public /u Domain3\Admin06 /ru Public\Admin01 /it
+schtasks /create /tn Check Admin /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 /s Public /u Domain3\Admin06 /ru Public\Admin01 /it
 ```
 **Observação**
 -   Para identificar tarefas com a propriedade somente interativa ( **/it**), use uma consulta detalhada **(/Query/v**). Em uma exibição de consulta detalhada de uma tarefa com **/it**, o campo de **modo de logon** tem um valor **somente interativo**.
 
-### <a name="BKMK_sys_perms"></a>Para agendar uma tarefa que é executada com permissões do sistema
+### <a name="to-schedule-a-task-that-runs-with-system-permissions"></a><a name=BKMK_sys_perms></a>Para agendar uma tarefa que é executada com permissões do sistema
 
-Tarefas de todos os tipos podem ser executadas com permissões da conta do sistema tanto no computador local quanto em um remoto. Além dos parâmetros necessários para o tipo de agendamento específico, o parâmetro do **sistema/ru** (ou **/ru ""** ) é necessário e o parâmetro **/RP** não é válido.
+Tarefas de todos os tipos podem ser executadas com permissões da conta do sistema tanto no computador local quanto em um remoto. Além dos parâmetros necessários para o tipo de agendamento específico, o parâmetro do **sistema/ru** (ou * */ru * *) é necessário e o parâmetro **/RP** não é válido.
 
 **Importante**
 -   A conta do sistema não tem direitos de logon interativos. Os usuários não podem ver ou interagir com programas ou tarefas executadas com permissões do sistema.
@@ -736,12 +732,12 @@ O comando a seguir agenda o programa MyApp para ser executado no computador loca
 
 O comando usa o parâmetro de **sistema/ru** para especificar o contexto de segurança do sistema. Como as tarefas do sistema não usam uma senha, o parâmetro **/RP** é omitido.
 ```
-schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 15 /ru System
+schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /ru System
 ```
 Em resposta, o **Schtasks. exe** exibe uma mensagem informativa e uma mensagem de êxito. Ele não solicita uma senha.
 ```
-INFO: The task will be created under user name ("NT AUTHORITY\SYSTEM").
-SUCCESS: The Scheduled task "My App" has successfully been created.
+INFO: The task will be created under user name (NT AUTHORITY\SYSTEM).
+SUCCESS: The Scheduled task My App has successfully been created.
 ```
 
 #### <a name="to-run-a-task-with-system-permissions-on-a-remote-computer"></a>Para executar uma tarefa com permissões do sistema em um computador remoto
@@ -752,18 +748,18 @@ O comando usa o parâmetro **/TN** para nomear a tarefa e o parâmetro **/TR** p
 
 O comando usa o parâmetro **/s** para fornecer o nome do computador remoto e o parâmetro **/u** para especificar uma conta com permissão para agendar uma tarefa no computador remoto. Ele também usa o parâmetro **/ru** para especificar que a tarefa deve ser executada na conta do sistema. Sem o parâmetro **/ru** , a tarefa seria executada com as permissões da conta especificada por **/u**.
 ```
-schtasks /create /tn "My App" /tr myapp.exe /sc daily /st 04:00 /s Finance01 /u Admin01 /ru System
+schtasks /create /tn My App /tr myapp.exe /sc daily /st 04:00 /s Finance01 /u Admin01 /ru System
 ```
 **Schtasks** solicita a senha do usuário nomeada pelo parâmetro **/u** e, depois de autenticar a senha, exibe uma mensagem indicando que a tarefa foi criada e que será executada com permissões da conta do sistema.
 ```
 Type the password for Admin01:**********
 
-INFO: The Schedule Task "My App" will be created under user name ("NT AUTHORITY\
-SYSTEM").
-SUCCESS: The scheduled task "My App" has successfully been created.
+INFO: The Schedule Task My App will be created under user name (NT AUTHORITY\
+SYSTEM).
+SUCCESS: The scheduled task My App has successfully been created.
 ```
 
-### <a name="BKMK_multi_progs"></a>Para agendar uma tarefa que executa mais de um programa
+### <a name="to-schedule-a-task-that-runs-more-than-one-program"></a><a name=BKMK_multi_progs></a>Para agendar uma tarefa que executa mais de um programa
 
 Cada tarefa executa apenas um programa. No entanto, você pode criar um arquivo em lotes que executa vários programas e, em seguida, agendar uma tarefa para executar o arquivo em lotes. O procedimento a seguir demonstra esse método:
 1. Crie um arquivo em lotes que inicie os programas que você deseja executar.
@@ -784,7 +780,7 @@ Cada tarefa executa apenas um programa. No entanto, você pode criar um arquivo 
    ```  
    Como resultado desse comando, sempre que um usuário fizer logon no computador, a tarefa iniciará o Visualizador de Eventos e o monitor do sistema.
 
-### <a name="BKMK_remote"></a>Para agendar uma tarefa que é executada em um computador remoto
+### <a name="to-schedule-a-task-that-runs-on-a-remote-computer"></a><a name=BKMK_remote></a>Para agendar uma tarefa que é executada em um computador remoto
 
 Para agendar uma tarefa para ser executada em um computador remoto, você deve adicionar a tarefa à agenda do computador remoto. Tarefas de todos os tipos podem ser agendadas em um computador remoto, mas as condições a seguir devem ser atendidas.
 -   Você deve ter permissão para agendar a tarefa. Dessa forma, você deve estar conectado ao computador local com uma conta que seja membro do grupo Administradores no computador remoto, ou deve usar o parâmetro **/u** para fornecer as credenciais de um administrador do computador remoto.
@@ -799,7 +795,7 @@ O comando a seguir agenda o programa MyApp para ser executado no computador remo
 
 Observe que, ao agendar tarefas em um computador remoto, todos os parâmetros se referem ao computador remoto. Portanto, o arquivo executável especificado pelo parâmetro **/TR** refere-se à cópia do MyApp. exe no computador remoto.
 ```
-schtasks /create /s SRV01 /tn "My App" /tr "c:\program files\corpapps\myapp.exe" /sc daily /mo 10
+schtasks /create /s SRV01 /tn My App /tr c:\program files\corpapps\myapp.exe /sc daily /mo 10
 ```
 Em resposta, **Schtasks** exibe uma mensagem de êxito indicando que a tarefa está agendada.
 
@@ -807,7 +803,7 @@ Em resposta, **Schtasks** exibe uma mensagem de êxito indicando que a tarefa es
 
 O comando a seguir agenda o programa MyApp para ser executado no computador remoto SRV06 a cada três horas. Como as permissões de administrador são necessárias para agendar uma tarefa, o comando usa os parâmetros **/u** e **/p** para fornecer as credenciais da conta de administrador do usuário (Admin01 no domínio Reskits). Por padrão, essas permissões também são usadas para executar a tarefa. No entanto, como a tarefa não precisa de permissões de administrador para ser executada, o comando inclui os parâmetros **/u** e **/RP** para substituir o padrão e executar a tarefa com permissão de conta de não administrador do usuário no computador remoto.
 ```
-schtasks /create /s SRV06 /tn "My App" /tr "c:\program files\corpapps\myapp.exe" /sc hourly /mo 3 /u reskits\admin01 /p R43253@4$ /ru SRV06\user03 /rp MyFav!!Pswd
+schtasks /create /s SRV06 /tn My App /tr c:\program files\corpapps\myapp.exe /sc hourly /mo 3 /u reskits\admin01 /p R43253@4$ /ru SRV06\user03 /rp MyFav!!Pswd
 ```
 Em resposta, **Schtasks** exibe uma mensagem de êxito indicando que a tarefa está agendada.
 
@@ -815,15 +811,15 @@ Em resposta, **Schtasks** exibe uma mensagem de êxito indicando que a tarefa es
 
 O comando a seguir agenda o programa MyApp para ser executado no computador remoto SRV02 no último dia de cada mês. Como o usuário atual local (user03) não é um administrador do computador remoto, o comando usa o parâmetro **/u** para fornecer as credenciais da conta de administrador do usuário (Admin01 no domínio Reskits). As permissões de conta de administrador serão usadas para agendar a tarefa e executar a tarefa.
 ```
-schtasks /create /s SRV02 /tn "My App" /tr "c:\program files\corpapps\myapp.exe" /sc monthly /mo LASTDAY /m * /u reskits\admin01
+schtasks /create /s SRV02 /tn My App /tr c:\program files\corpapps\myapp.exe /sc monthly /mo LASTDAY /m * /u reskits\admin01
 ```
 Como o comando não incluiu o parâmetro **/p** (password), **Schtasks** solicita a senha. Em seguida, ele exibe uma mensagem de êxito e, nesse caso, um aviso.
 ```
 Type the password for reskits\admin01:********
 
-SUCCESS: The scheduled task "My App" has successfully been created.
+SUCCESS: The scheduled task My App has successfully been created.
 
-WARNING: The Scheduled task "My App" has been created, but may not run because
+WARNING: The Scheduled task My App has been created, but may not run because
 the account information could not be set.
 ```
 Esse aviso indica que o domínio remoto não pôde autenticar a conta especificada pelo parâmetro **/u** . Nesse caso, o domínio remoto não pôde autenticar a conta de usuário porque o computador local não é membro de um domínio no qual o domínio do computador remoto confia. Quando isso ocorre, o trabalho de tarefa é exibido na lista de tarefas agendadas, mas a tarefa está realmente vazia e não será executada.
@@ -877,7 +873,7 @@ Power Management: Disabled
 -   Cada tarefa executa apenas um programa. No entanto, você pode criar um arquivo em lotes que inicia várias tarefas e, em seguida, agendar uma tarefa que executa o arquivo em lotes.
 -   Você pode testar uma tarefa assim que criá-la. Use a operação **executar** para testar a tarefa e, em seguida, verifique se há erros no arquivo SchedLgU. txt (*systemroot*\SchedLgU.txt).
 
-## <a name="BKMK_change"></a>troca de Schtasks
+## <a name="schtasks-change"></a><a name=BKMK_change></a>troca de Schtasks
 
 Altera uma ou mais das propriedades a seguir de uma tarefa.
 -   O programa que a tarefa executa ( **/TR**).
@@ -891,7 +887,7 @@ Altera uma ou mais das propriedades a seguir de uma tarefa.
 schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]] [/ru {[<Domain>\]<User> | System}] [/rp <Password>] [/tr <TaskRun>] [/st <StartTime>] [/ri <Interval>] [{/et <EndTime> | /du <Duration>} [/k]] [/sd <StartDate>] [/ed <EndDate>] [/{ENABLE | DISABLE}] [/it] [/z]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |          Termo           |                                                                                                                                                                                                                                                                                                                                     Definição                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -911,7 +907,7 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 |     /Ed \<EndDate >      |                                                                                                                                                                                                                                                                                                 Especifica a última data em que a tarefa deve ser executada. O formato é MM/DD/AAAA.                                                                                                                                                                                                                                                                                                  |
 |         /ENABLE         |                                                                                                                                                                                                                                                                                                                       Especifica a habilitação da tarefa agendada.                                                                                                                                                                                                                                                                                                                       |
 |        /DISABLE         |                                                                                                                                                                                                                                                                                                                      Especifica a desabilitação da tarefa agendada.                                                                                                                                                                                                                                                                                                                       |
-|           /It           | Especifica a execução da tarefa agendada somente quando o usuário "executar como" (a conta de usuário sob a qual a tarefa é executada) está conectado ao computador.</br>Esse parâmetro não tem nenhum efeito nas tarefas que são executadas com permissões do sistema ou tarefas que já têm a propriedade somente interativa definida. Você não pode usar um comando Change para remover a propriedade somente interativa de uma tarefa.</br>Por padrão, o usuário "executar como" é o usuário atual do computador local quando a tarefa é agendada ou a conta especificada pelo parâmetro **/u** , se uma for usada. No entanto, se o comando incluir o parâmetro **/ru** , o usuário "executar como" será a conta especificada pelo parâmetro **/ru** . |
+|           /It           | Especifica a execução da tarefa agendada somente quando o usuário executar como (a conta de usuário sob a qual a tarefa é executada) está conectado ao computador.</br>Esse parâmetro não tem nenhum efeito nas tarefas que são executadas com permissões do sistema ou tarefas que já têm a propriedade somente interativa definida. Você não pode usar um comando Change para remover a propriedade somente interativa de uma tarefa.</br>Por padrão, o usuário executar como é o usuário atual do computador local quando a tarefa é agendada ou a conta especificada pelo parâmetro **/u** , se uma for usada. No entanto, se o comando incluir o parâmetro **/ru** , o usuário executar como será a conta especificada pelo parâmetro **/ru** . |
 |           /z            |                                                                                                                                                                                                                                                                                                          Especifica a exclusão da tarefa após a conclusão de sua agenda.                                                                                                                                                                                                                                                                                                          |
 |           /?            |                                                                                                                                                                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                                                         |
 
@@ -930,11 +926,11 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 
 O comando a seguir altera o programa que a tarefa de verificação de vírus executa de VirusCheck. exe para VirusCheck2. exe. Esse comando usa o parâmetro **/TN** para identificar a tarefa e o parâmetro **/TR** para especificar o novo programa para a tarefa. (Não é possível alterar o nome da tarefa.)
 ```
-schtasks /change /tn "Virus Check" /tr C:\VirusCheck2.exe
+schtasks /change /tn Virus Check /tr C:\VirusCheck2.exe
 ```
 Em resposta, o **Schtasks. exe** exibe a seguinte mensagem de êxito:
 ```
-SUCCESS: The parameters of the scheduled task "Virus Check" have been changed.
+SUCCESS: The parameters of the scheduled task Virus Check have been changed.
 ```
 Como resultado desse comando, a tarefa de verificação de vírus agora executa o VirusCheck2. exe.
 
@@ -948,7 +944,7 @@ schtasks /change /tn RemindMe /s Svr01 /rp p@ssWord3
 ```
 Em resposta, o **Schtasks. exe** exibe a seguinte mensagem de êxito:
 ```
-SUCCESS: The parameters of the scheduled task "RemindMe" have been changed.
+SUCCESS: The parameters of the scheduled task RemindMe have been changed.
 ```
 Como resultado desse comando, a tarefa RemindMe agora é executada em sua conta de usuário original, mas com uma nova senha.
 
@@ -960,7 +956,7 @@ O comando usa o parâmetro **/TN** para identificar a tarefa. Ele usa o parâmet
 
 O parâmetro **/ru**e **/RP** , que fornece a senha para a conta de usuário, é omitido. Você deve fornecer uma senha para a conta, mas pode usar o parâmetro **/ru**e **/RP** e digitar a senha em texto não criptografado ou aguardar o **Schtasks. exe** solicitar uma senha e, em seguida, digitar a senha no texto obscuro.
 ```
-schtasks /change /tn ChkNews /tr "c:\program files\Internet Explorer\iexplore.exe" /ru DomainX\Admin01
+schtasks /change /tn ChkNews /tr c:\program files\Internet Explorer\iexplore.exe /ru DomainX\Admin01
 ```
 Em resposta, o **Schtasks. exe** solicita a senha para a conta de usuário. Ele obscurece o texto que você digita, portanto, a senha não é visível.
 ```
@@ -970,26 +966,26 @@ Observe que o parâmetro **/TN** identifica a tarefa e que os parâmetros **/TR*
 
 Em resposta, o **Schtasks. exe** exibe a seguinte mensagem de êxito:
 ```
-SUCCESS: The parameters of the scheduled task "ChkNews" have been changed.
+SUCCESS: The parameters of the scheduled task ChkNews have been changed.
 ```
 Como resultado desse comando, a tarefa ChkNews agora executa o Internet Explorer com as permissões de uma conta de administrador.
 
 ### <a name="to-change-a-program-to-the-system-account"></a>Para alterar um programa para a conta do sistema
 
-O comando a seguir altera a tarefa SecurityScript para que ela seja executada com permissões da conta System. Ele usa o parâmetro **/ru ""** para indicar a conta do sistema.
+O comando a seguir altera a tarefa SecurityScript para que ela seja executada com permissões da conta System. Ele usa o parâmetro * */ru * * para indicar a conta do sistema.
 ```
-schtasks /change /tn SecurityScript /ru ""
+schtasks /change /tn SecurityScript /ru 
 ```
 Em resposta, o **Schtasks. exe** exibe a seguinte mensagem de êxito:
 ```
-INFO: The run as user name for the scheduled task "SecurityScript" will be changed to "NT AUTHORITY\SYSTEM".
-SUCCESS: The parameters of the scheduled task "SecurityScript" have been changed.
+INFO: The run as user name for the scheduled task SecurityScript will be changed to NT AUTHORITY\SYSTEM.
+SUCCESS: The parameters of the scheduled task SecurityScript have been changed.
 ```
 Como as tarefas executadas com permissões de conta do sistema não exigem uma senha, o **Schtasks. exe** não solicita um.
 
 ### <a name="to-run-a-program-only-when-i-am-logged-on"></a>Para executar um programa somente quando eu estiver conectado
 
-O comando a seguir adiciona a propriedade somente interativa a MyApp, uma tarefa existente. Essa propriedade garante que a tarefa seja executada somente quando o usuário "executar como", ou seja, a conta de usuário sob a qual a tarefa é executada, está conectado ao computador.
+O comando a seguir adiciona a propriedade somente interativa a MyApp, uma tarefa existente. Essa propriedade garante que a tarefa seja executada somente quando o usuário executar como, ou seja, a conta de usuário sob a qual a tarefa é executada, está conectado ao computador.
 
 O comando usa o parâmetro **/TN** para identificar a tarefa e o parâmetro **/it** para adicionar a propriedade interativa somente à tarefa. Como a tarefa já é executada com as permissões da minha conta de usuário, não preciso alterar o parâmetro **/ru** da tarefa.
 ```
@@ -997,10 +993,10 @@ schtasks /change /tn MyApp /it
 ```
 Em resposta, o **Schtasks. exe** exibe a seguinte mensagem de êxito.
 ```
-SUCCESS: The parameters of the scheduled task "MyApp" have been changed.
+SUCCESS: The parameters of the scheduled task MyApp have been changed.
 ```
 
-## <a name="BKMK_run"></a>execução de Schtasks
+## <a name="schtasks-run"></a><a name=BKMK_run></a>execução de Schtasks
 
 Inicia uma tarefa agendada imediatamente. A operação de **execução** ignora o agendamento, mas usa o local do arquivo de programa, a conta de usuário e a senha salvos na tarefa para executar a tarefa imediatamente.
 
@@ -1010,11 +1006,11 @@ Inicia uma tarefa agendada imediatamente. A operação de **execução** ignora 
 schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |         Termo          |                                                                                                                                                                 Definição                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /TN \<Nome_tarefa >    |                                                                                                                                                       Necessário. Identifica a tarefa.                                                                                                                                                        |
+|    /TN \<Nome_tarefa >    |                                                                                                                                                       Obrigatório. Identifica a tarefa.                                                                                                                                                        |
 |    /s \<computador >     |                                                                                                           Especifica o nome ou o endereço IP de um computador remoto (com ou sem barras invertidas). O padrão é o computador local.                                                                                                           |
 | /u [\<\]de domínio > <User> | Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local.</br>A conta de usuário especificada deve ser um membro do grupo Administradores no computador remoto. Os parâmetros **/u** e **/p** são válidos somente quando você usa **/s**. |
 |    /p \<senha >     |                          Especifica a senha da conta de usuário especificada no parâmetro **/u** . Se você usar o parâmetro **/u** , mas omitir o parâmetro **/p** ou o argumento password, **Schtasks** solicitará uma senha.</br>Os parâmetros **/u** e **/p** são válidos somente quando você usa **/s**.                           |
@@ -1030,13 +1026,13 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 ### <a name="to-run-a-task-on-the-local-computer"></a>Para executar uma tarefa no computador local
 
-O comando a seguir inicia a tarefa "script de segurança".
+O comando a seguir inicia a tarefa script de segurança.
 ```
-schtasks /run /tn "Security Script"
+schtasks /run /tn Security Script
 ```
 Em resposta, o **Schtasks. exe** inicia o script associado à tarefa e exibe a seguinte mensagem:
 ```
-SUCCESS: Attempted to run the scheduled task "Security Script".
+SUCCESS: Attempted to run the scheduled task Security Script.
 ```
 Como a mensagem implica, o **Schtasks** tenta iniciar o programa, mas não é possível que o programa seja realmente iniciado.
 
@@ -1048,11 +1044,11 @@ schtasks /run /tn Update /s Svr01
 ```
 Nesse caso, o **Schtasks. exe** exibe a seguinte mensagem de erro:
 ```
-ERROR: Unable to run the scheduled task "Update".
+ERROR: Unable to run the scheduled task Update.
 ```
 Para encontrar a causa do erro, procure no log de transações de tarefas agendadas, C:\Windows\SchedLgU.txt em SVR01. Nesse caso, a seguinte entrada aparece no log:
 ```
-"Update.job" (update.exe) 3/26/2001 1:15:46 PM ** ERROR **
+Update.job (update.exe) 3/26/2001 1:15:46 PM ** ERROR **
 The attempt to log on to the account associated with the task failed, therefore, the task did not run.
 The specific error is:
 0x8007052e: Logon failure: unknown user name or bad password.
@@ -1064,11 +1060,11 @@ schtasks /change /tn Update /s Svr01 /ru Administrator /rp PassW@rd3
 ```
 Após a conclusão do comando de **alteração** , o comando **executar** é repetido. Desta vez, o programa Update. exe é iniciado e **Schtasks. exe** exibe a seguinte mensagem:
 ```
-SUCCESS: Attempted to run the scheduled task "Update".
+SUCCESS: Attempted to run the scheduled task Update.
 ```
 Como a mensagem implica, o **Schtasks** tenta iniciar o programa, mas não é possível que o programa seja realmente iniciado.
 
-## <a name="BKMK_end"></a>término de Schtasks
+## <a name="schtasks-end"></a><a name=BKMK_end></a>término de Schtasks
 
 Interrompe um programa iniciado por uma tarefa.
 
@@ -1078,11 +1074,11 @@ Interrompe um programa iniciado por uma tarefa.
 schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |         Termo          |                                                                                                                                                               Definição                                                                                                                                                                |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /TN \<Nome_tarefa >    |                                                                                                                                         Necessário. Identifica a tarefa que iniciou o programa.                                                                                                                                         |
+|    /TN \<Nome_tarefa >    |                                                                                                                                         Obrigatório. Identifica a tarefa que iniciou o programa.                                                                                                                                         |
 |    /s \<computador >     |                                                                                                                        Especifica o nome ou o endereço IP de um computador remoto. O padrão é o computador local.                                                                                                                        |
 | /u [\<\]de domínio > <User> | Executa este comando com as permissões da conta de usuário especificada. Por padrão, o comando é executado com as permissões do usuário atual do computador local. A conta de usuário especificada deve ser um membro do grupo Administradores no computador remoto. Os parâmetros **/u** e **/p** são válidos somente quando você usa **/s**. |
 |    /p \<senha >     |                        Especifica a senha da conta de usuário especificada no parâmetro **/u** . Se você usar o parâmetro **/u** , mas omitir o parâmetro **/p** ou o argumento password, **Schtasks** solicitará uma senha.</br>Os parâmetros **/u** e **/p** são válidos somente quando você usa **/s**.                         |
@@ -1098,11 +1094,11 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 O comando a seguir interrompe a instância do Notepad. exe que foi iniciada pela tarefa meu bloco de notas:
 ```
-schtasks /end /tn "My Notepad"
+schtasks /end /tn My Notepad
 ```
 Em resposta, o **Schtasks. exe** interrompe a instância do Notepad. exe que a tarefa iniciou e exibe a seguinte mensagem de êxito:
 ```
-SUCCESS: The scheduled task "My Notepad" has been terminated successfully.
+SUCCESS: The scheduled task My Notepad has been terminated successfully.
 ```
 
 ### <a name="to-end-a-task-on-a-remote-computer"></a>Para finalizar uma tarefa em um computador remoto
@@ -1113,10 +1109,10 @@ schtasks /end /tn InternetOn /s Svr01
 ```
 Em resposta, o **Schtasks. exe** interrompe a instância do Internet Explorer que a tarefa iniciou e exibe a seguinte mensagem de êxito:
 ```
-SUCCESS: The scheduled task "InternetOn" has been terminated successfully.
+SUCCESS: The scheduled task InternetOn has been terminated successfully.
 ```
 
-## <a name="BKMK_delete"></a>exclusão de Schtasks
+## <a name="schtasks-delete"></a><a name=BKMK_delete></a>exclusão de Schtasks
 
 Exclui uma tarefa agendada.
 
@@ -1126,7 +1122,7 @@ Exclui uma tarefa agendada.
 schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |         Termo          |                                                                                                                                                                 Definição                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1146,14 +1142,14 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 
 ### <a name="to-delete-a-task-from-the-schedule-of-a-remote-computer"></a>Para excluir uma tarefa do agendamento de um computador remoto
 
-O comando a seguir exclui a tarefa "Iniciar mensagem" do agendamento de um computador remoto. Ele usa o parâmetro **/s** para identificar o computador remoto.
+O comando a seguir exclui a tarefa iniciar email do agendamento de um computador remoto. Ele usa o parâmetro **/s** para identificar o computador remoto.
 ```
-schtasks /delete /tn "Start Mail" /s Svr16
+schtasks /delete /tn Start Mail /s Svr16
 ```
 Em resposta, o **Schtasks. exe** exibe a seguinte mensagem de confirmação. Para excluir a tarefa, pressione Y<strong>.</strong> Para cancelar o comando, digite **n**:
 ```
-WARNING: Are you sure you want to remove the task "Start Mail" (Y/N )? 
-SUCCESS: The scheduled task "Start Mail" was successfully deleted.
+WARNING: Are you sure you want to remove the task Start Mail (Y/N )? 
+SUCCESS: The scheduled task Start Mail was successfully deleted.
 ```
 
 ### <a name="to-delete-all-tasks-scheduled-for-the-local-computer"></a>Para excluir todas as tarefas agendadas para o computador local
@@ -1164,9 +1160,9 @@ schtasks /delete /tn * /f
 ```
 Em resposta, o **Schtasks. exe** exibe as seguintes mensagens de êxito indicando que a única tarefa agendada, SecureScript, é excluída.
 
-`SUCCESS: The scheduled task "SecureScript" was successfully deleted.`
+`SUCCESS: The scheduled task SecureScript was successfully deleted.`
 
-## <a name="BKMK_query"></a>consulta Schtasks
+## <a name="schtasks-query"></a><a name=BKMK_query></a>consulta Schtasks
 
 Exibe as tarefas agendadas para execução no computador.
 
@@ -1176,7 +1172,7 @@ Exibe as tarefas agendadas para execução no computador.
 schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |         Termo          |                                                                                                                                                                 Definição                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1262,6 +1258,6 @@ schtasks /query /s Reskit16 /fo csv /nh >> \\svr01\data\tasklogs\p0102.csv
 ```
 Em resposta, o **Schtasks. exe** adiciona as tarefas agendadas para o computador Reskit16 ao arquivo p0102. csv no computador local, SVR01.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

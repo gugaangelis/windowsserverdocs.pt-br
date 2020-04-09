@@ -1,24 +1,20 @@
 ---
 title: Scwcmd transform
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 640dd892-0bb9-416d-8318-60a26605bcf4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36ee3a99828c7fdd9d4fc0ca14cbc0e203b01ea0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1fed9ff6369e6c966d9d1f5295db7db6648a1ab1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384313"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835119"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -39,7 +35,7 @@ Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BK
 scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -51,13 +47,13 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 Scwcmd. exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Para criar um GPO chamado FileServerSecurity a partir de um arquivo chamado FileServerPolicy. xml, digite:
 ```
 scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 24c4b9bb-928a-4118-acf1-5eb06c6b08e5
 title: Configurar o AD FS 2016 e o Azure MFA
-description: ''
 ms.author: billmath
 author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
-ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
+ms.openlocfilehash: d519b47d048068ad53e4f11a6b64621ab5f232b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145489"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855309"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>Configurar o Azure MFA como provedor de autenticação com AD FS
 
@@ -56,7 +55,7 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 
 ### <a name="azure-mfa-as-additional-authentication-to-office-365"></a>Azure MFA como autenticação adicional para o Office 365
 
-Anteriormente, se você queria ter o MFA do Azure como um método de autenticação adicional no AD FS para o Office 365 ou outras terceiras partes confiáveis, a melhor opção era configurar o Azure AD para fazer a MFA composta, na qual a autenticação principal é executada localmente em AD FS e a MFA é TR iggered pelo Azure AD. Agora, você pode usar o Azure MFA como autenticação adicional no AD FS quando a configuração de SupportsMfa de domínio estiver definida como $True.  
+Anteriormente, se você queria ter o Azure MFA como um método de autenticação adicional no AD FS para o Office 365 ou outras terceiras partes confiáveis, a melhor opção era configurar o Azure AD para fazer a MFA composta, na qual a autenticação principal é executada localmente no AD FS e a MFA é disparada pelo Azure AD. Agora, você pode usar o Azure MFA como autenticação adicional no AD FS quando a configuração de SupportsMfa de domínio estiver definida como $True.  
 
 Conforme descrito acima, qualquer usuário AD FS que ainda não tenha se registrado (informações de verificação de MFA configuradas) deverá ser solicitado por meio de uma página de erro de AD FS personalizada para visitar [https://aka.ms/mfasetup](https://aka.ms/mfasetup) para configurar informações de verificação e, em seguida, tentar novamente AD FS logon.  
 

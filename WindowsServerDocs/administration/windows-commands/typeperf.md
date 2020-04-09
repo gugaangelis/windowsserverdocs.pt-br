@@ -1,28 +1,22 @@
 ---
 title: typeperf
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para Typeperf, que grava dados de desempenho na janela de comando ou em um arquivo de log.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 087b201c51d5aec8e6f61c7469c59307d3ed8b4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac5f7def37939a472eb8f47cf65edf184a2fe2fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392299"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832359"
 ---
 # <a name="typeperf"></a>typeperf
-
-
 
 O comando **Typeperf** grava dados de desempenho na janela de comando ou em um arquivo de log. Para parar **Typeperf**, pressione CTRL + C.
 
@@ -37,7 +31,7 @@ typeperf -q [object] [options]
 typeperf -qx [object] [options]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -46,9 +40,9 @@ typeperf -qx [object] [options]
 > [!NOTE]
 > **\<contador >** é o nome completo de um contador de desempenho no formato *\\\\Computer\Object (instância) \Counter* , como **\\\\Server1\Processor (0)\% tempo de usuário**.
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
-|                   Opção                   |                                                         Descrição                                                          |
+|                   {1&gt;Opção&lt;1}                   |                                                         Descrição                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               Exibe a ajuda contextual.                                               |
 | -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL > |                                    Especifica o formato do arquivo de saída. O padrão é CSV.                                     |
@@ -62,11 +56,11 @@ typeperf -qx [object] [options]
 |            -s \<computer_name >             |                   Especifica um computador remoto para monitorar se nenhum computador for especificado no caminho do contador.                    |
 |                     -y                     |                                        Responda sim a todas as perguntas sem avisar.                                        |
 
-## <a name="BKMK_EXAMPLES"></a>Disso
+## <a name="examples"></a><a name=BKMK_EXAMPLES></a>Disso
 
 - O exemplo a seguir grava os valores para o contador de desempenho do computador local **\\\\processador (_Total)\% tempo do processador** para a janela de comando em um intervalo de exemplo padrão de 1 segundo até que CTRL + C seja pressionado.  
   ```
-  typeperf "\Processor(_Total)\% Processor Time"
+  typeperf \Processor(_Total)\% Processor Time
   ```  
 - O exemplo a seguir grava os valores da lista de contadores no arquivo **Counters. txt** para o arquivo delimitado por tabulação **domain2. tsv** em um intervalo de exemplo de 5 segundos até que 50 amostras tenham sido coletadas.  
   ```

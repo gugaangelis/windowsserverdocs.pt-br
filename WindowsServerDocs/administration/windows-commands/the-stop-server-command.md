@@ -1,30 +1,26 @@
 ---
-title: O comando parar servidor
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: parar-servidor
+description: O tópico de comandos do Windows para Stop-Server, que interrompe os serviços de implantação do Windows.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: adff42ca-464f-4f05-ba25-e24e8d702981
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 58e418af275dae7964f45d7ff6af1a6914a67920
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b78827d8c977bc228fa741863099ba382f6a6477
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363950"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832990"
 ---
-# <a name="the-stop-server-command"></a>O comando parar servidor
-
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+# <a name="stop-server"></a>parar-servidor
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Interrompe os serviços de serviços de implantação do Windows.
+
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descrição|
 |-------|--------|

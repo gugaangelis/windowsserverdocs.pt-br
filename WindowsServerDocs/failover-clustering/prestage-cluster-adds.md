@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.manager: daveba
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bf122923525de6e0005dd6d866220221dc9ce1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b14561a05778ed30e71363a2cd3b3b6fdf24f78e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392066"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827469"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar objetos de computador do cluster no Active Directory Domain Services
 
@@ -73,7 +73,7 @@ Veja como conceder as permissões de usuário para criar o cluster:
 2. Localize, clique com o botão direito do mouse no CNO e selecione **Propriedades**.
 3. Na guia **segurança** , selecione **Adicionar**.
 4. Na caixa de diálogo **Selecionar usuários, computadores ou grupos** , especifique a conta de usuário ou o grupo ao qual você deseja conceder permissões e, em seguida, selecione **OK**.
-5. Selecione a conta de usuário ou grupo que acabou de adicionar e, em seguida, ao lado de **Controle total**, marque a caixa de seleção **Permitir** .
+5. Selecione a conta de usuário ou grupo que acabou de adicionar e, em seguida, ao lado de **Controle total**, marque a caixa de seleção **Permitir**.
   
    ![Concedendo Controle Total ao usuário ou grupo que criará o cluster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
@@ -94,7 +94,7 @@ Caso tenha pré-configurado o CNO em AD DS, será possível escolher uma das op�
 - Opção 1: [Conceder as permissões do CNO à OU](#grant-the-cno-permissions-to-the-ou). Se usar essa opção, o cluster poderá criar os VCOs automaticamente em AD DS. Portanto, um administrador de cluster de failover poderá criar funções clusterizadas sem ter que solicitar que você pré-configure os VCOs em AD DS.
 
 >[!NOTE]
->A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo necessário para concluir as etapas desta opção.
+>A associação ao grupo **Admins. do Domínio**, ou equivalente, é o mínimo necessário para concluir as etapas desta opção.
 
 - Opção 2: [pré-configurar um VCO para uma função clusterizada](#prestage-a-vco-for-a-clustered-role). Utilize essa opção se for necessário pré-configurar as contas das funções clusterizadas devido aos requisitos de sua organização. Por exemplo, talvez você queira controlar a convenção de nomenclatura ou controlar quais funções clusterizadas são criadas.
 

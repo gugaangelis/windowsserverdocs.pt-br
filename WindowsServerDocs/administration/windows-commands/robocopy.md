@@ -1,24 +1,20 @@
 ---
 title: robocopy
 description: Saiba como usar o comando Robocopy no Windows e no Windows Server para copiar arquivos
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
 author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: f675f66eaafbfd79ac6b452a92417159d8ebb28c
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 27a08aabbfd1c2f19f4c70120182f4092cc2a6c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259032"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835669"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -30,25 +26,25 @@ Copia os dados do arquivo.
 robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |   Parâmetro    |                                                                                            Descrição                                                                                           |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   > de origem do \<    |                                                                            Especifica o caminho para o diretório de origem.                                                                           |
 | \<de destino > |                                                                          Especifica o caminho para o diretório de destino.                                                                        |
-|    Arquivo de \<     | Especifica o arquivo ou os arquivos a serem copiados. Você pode usar caracteres curinga ( **&#42;** ou **?** ), se desejar. Se o parâmetro **File** não for especificado, **\*.\*** será usado como o valor padrão. |
-|   Opções de \<   |                                                                    Especifica as opções a serem usadas com o comando **Robocopy** .                                                                   |
+|    Arquivo de \<>     | Especifica o arquivo ou os arquivos a serem copiados. Você pode usar caracteres curinga ( **&#42;** ou **?** ), se desejar. Se o parâmetro **File** não for especificado, **\*.\*** será usado como o valor padrão. |
+|   Opções de \<>   |                                                                    Especifica as opções a serem usadas com o comando **Robocopy** .                                                                   |
 
 ### <a name="copy-options"></a>Opções de cópia
 
-|Opção|Descrição|
+|{1&gt;Opção&lt;1}|Descrição|
 |------|-----------|
 |/s|Copia subdiretórios. Observe que essa opção exclui diretórios vazios.|
 |/e|Copia subdiretórios. Observe que essa opção inclui diretórios vazios. Para obter mais informações, consulte [comentários](#remarks).|
 |/Lev:\<N >|Copia apenas os *N* níveis superiores da árvore do diretório de origem.|
 |/z|Copia arquivos no modo reiniciável.|
-|/b|Copia os arquivos no modo de Backup.|
-|/zb|Usa o modo reiniciável. Se o acesso for negado, esta opção usa o modo Backup.|
+|/b|Copia arquivos no modo de Backup.|
+|/ZB|Usa o modo reiniciável. Se o acesso for negado, essa opção usará o modo de backup.|
 |/efsraw|Copia todos os arquivos criptografados no modo EFS RAW.|
 |/Copy:\<CopyFlags >|Especifica as propriedades de arquivo a serem copiadas. Estes são os valores válidos para esta opção:</br>Dados **D**</br>**Um** atributo</br>Carimbos de hora **T**</br>Lista de controle de acesso (ACL **) NTFS**</br>Informações sobre **O** proprietário</br>Informações de auditoria **U**</br>O valor padrão para **CopyFlags** é **dat** (data, atributos e carimbos de data/hora).|
 |/DCOPY:\<copyflags\>|Define o que copiar para diretórios. O padrão é DA. As opções são D = dados, A = atributos e T = carimbos de data/hora.|
@@ -68,7 +64,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/256|Desativa o suporte para caminhos muito longos (mais de 256 caracteres).|
 |/Mon:\<N >|Monitora a origem e executa novamente quando mais de *N* alterações são detectadas.|
 |/mot:\<M >|Monitora a origem e executa novamente em *M* minutos se forem detectadas alterações.|
-|/MT[:N]|Cria cópias multi-threaded com *N* threads. *N* deve ser um inteiro entre 1 e 128. O valor padrão para *N* é 8.</br>O parâmetro **/MT** não pode ser usado com os parâmetros **/IPG** e **/EFSRAW** .</br>Redirecione a saída usando a opção **/log** para melhorar o desempenho.</br>Observação: o parâmetro/MT se aplica ao Windows Server 2008 R2 e ao Windows 7.|
+|/MT [: N]|Cria cópias multi-threaded com *N* threads. *N* deve ser um inteiro entre 1 e 128. O valor padrão para *N* é 8.</br>O parâmetro **/MT** não pode ser usado com os parâmetros **/IPG** e **/EFSRAW** .</br>Redirecione a saída usando a opção **/log** para melhorar o desempenho.</br>Observação: o parâmetro/MT se aplica ao Windows Server 2008 R2 e ao Windows 7.|
 |/RH: hhmm-hhmm|Especifica os tempos de execução quando novas cópias podem ser iniciadas.|
 |/PF|Verifica os tempos de execução em uma base por arquivo (não por passagem).|
 |/IPG: n|Especifica a lacuna entre pacotes para a largura de banda livre em linhas lentas.|
@@ -84,7 +80,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="file-selection-options"></a>Opções de seleção de arquivo
 
-|Opção|Descrição|
+|{1&gt;Opção&lt;1}|Descrição|
 |------|-----------|
 |/a|Copia somente os arquivos para os quais o atributo de **arquivo** está definido.|
 |/m|Copia somente os arquivos para os quais o atributo de **arquivo** está definido e redefine o atributo de **arquivo morto** .|
@@ -113,16 +109,16 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="retry-options"></a>Opções de repetição
 
-|Opção|Descrição|
+|{1&gt;Opção&lt;1}|Descrição|
 |------|-----------|
 |/r:\<N >|Especifica o número de repetições em cópias com falha. O valor padrão de *N* é 1 milhão (1 milhão tentativas).|
-|/w:\<N >|Especifica o tempo de espera entre as tentativas, em segundos. O valor padrão de *N* é 30 (tempo de espera de 30 segundos).|
+|/w:\<N >|Especifica o tempo de espera entre as repetições, em segundos. O valor padrão de *N* é 30 (tempo de espera de 30 segundos).|
 |/reg|Salva os valores especificados nas opções **/r** e **/w** como configurações padrão no registro.|
 |/tbd|Especifica que o sistema aguardará a definição de nomes de compartilhamento (repita o erro 67).|
 
 ### <a name="logging-options"></a>Opções de log
 
-|Opção|Descrição|
+|{1&gt;Opção&lt;1}|Descrição|
 |------|-----------|
 |/l|Especifica que os arquivos devem ser listados apenas (e não copiados, excluídos ou com carimbo de data/hora).|
 |/x|Relata todos os arquivos extras, não apenas aqueles que estão selecionados.|
@@ -132,11 +128,11 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/bytes|Imprime tamanhos, como bytes.|
 |/ns|Especifica que os tamanhos de arquivo não devem ser registrados em log.|
 |/nc|Especifica que as classes de arquivo não devem ser registradas em log.|
-|/nfl|Especifica que os nomes de arquivo não devem ser registrados.|
-|/ndl|Especifica que os nomes de diretório não devem ser registrados.|
+|/nfl|Especifica que os nomes de arquivo não devem ser registrados em log.|
+|/ndl|Especifica que os nomes de diretório não devem ser registrados em log.|
 |/np|Especifica que o progresso da operação de cópia (o número de arquivos ou diretórios copiados até o momento) não será exibido.|
 |/eta|Mostra o tempo estimado de chegada (ETA) dos arquivos copiados.|
-|/log: arquivo de log de\<|Grava a saída de status no arquivo de log (substitui o arquivo de log existente).|
+|/log: arquivo de log de\<>|Grava a saída de status no arquivo de log (Substitui o arquivo de log existente).|
 |/log +:\<arquivo de log >|Grava a saída de status no arquivo de log (acrescenta a saída ao arquivo de log existente).|
 |/unicode|Exibe a saída de status como texto Unicode.|
 |/UNILOG: > do arquivo de log de\<|Grava a saída de status no arquivo de log como texto Unicode (Substitui o arquivo de log existente).|
@@ -147,7 +143,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="job-options"></a>Opções de trabalho
 
-|Opção|Descrição|
+|{1&gt;Opção&lt;1}|Descrição|
 |------|-----------|
 |/minuto:\<JobName >|Especifica que os parâmetros devem ser derivados do arquivo de trabalho nomeado.|
 |/Save:\<JobName >|Especifica que os parâmetros devem ser salvos no arquivo de trabalho nomeado.|
@@ -158,7 +154,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="exit-return-codes"></a>Sair (retornar) códigos
 
-Valor | Descrição
+{1&gt;Valor&lt;1} | Descrição
 -- | --
 0 | Nenhum arquivo foi copiado. Nenhuma falha foi encontrada.  Nenhum arquivo não correspondeu. Os arquivos já existem no diretório de destino; Portanto, a operação de cópia foi ignorada.
 1 | Todos os arquivos foram copiados com êxito.
@@ -178,6 +174,6 @@ Valor | Descrição
     -   Com as opções **/e** Plus **/Purge** , se o diretório de destino existir, as configurações de segurança do diretório de destino não serão substituídas.
     -   Com a opção **/Mir** , se o diretório de destino existir, as configurações de segurança do diretório de destino serão substituídas.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

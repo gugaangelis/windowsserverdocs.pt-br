@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22c514b2-401e-49e1-a87e-0cbaa2c1dac1
 title: Funções do site
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 109f576bfdacf68a0eadc7dd84ddb9a4148e6dd9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4443e5a0cfeba0eaee767404359febec256209d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408673"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821839"
 ---
 # <a name="site-functions"></a>Funções do site
 
@@ -28,7 +27,7 @@ O Active Directory Domain Services (AD DS) usa um método de replicação de vá
 Em sites, a replicação é otimizada para velocidade, as atualizações de dados disparam a replicação e os dados são enviados sem a sobrecarga exigida pela compactação de dados. Por outro lado, a replicação entre sites é compactada para minimizar o custo de transmissão em links de WAN (rede de longa distância). Quando ocorre a replicação entre sites, um único controlador de domínio por domínio em cada site coleta e armazena as alterações de diretório e as comunica em um horário agendado para um controlador de domínio em outro site.  
   
 ## <a name="client-affinity"></a>Afinidade de cliente  
-Os controladores de domínio usam informações do site para informar Active Directory clientes sobre controladores de domínio presentes no site mais próximo que o cliente. Por exemplo, considere um cliente no site de Seattle que não conhece sua afiliação de site e entre em contato com um controlador de domínio do site de Atlanta. Com base no endereço IP do cliente, o controlador de domínio em Atlanta determina em qual site o cliente está realmente e envia as informações do site de volta para o cliente. O controlador de domínio também informa ao cliente se o controlador de domínio escolhido é o mais próximo deles. O cliente armazena em cache as informações do site fornecidas pelo controlador de domínio em Atlanta, consulta o registro de recurso SRV (serviço específico do site) (um registro de recurso do sistema de nomes de domínio (DNS) usado para localizar controladores de domínio para AD DS) e, portanto, localiza um domínio controlador dentro do mesmo site.  
+Os controladores de domínio usam informações do site para informar Active Directory clientes sobre controladores de domínio presentes no site mais próximo que o cliente. Por exemplo, considere um cliente no site de Seattle que não conhece sua afiliação de site e entre em contato com um controlador de domínio do site de Atlanta. Com base no endereço IP do cliente, o controlador de domínio em Atlanta determina em qual site o cliente está realmente e envia as informações do site de volta para o cliente. O controlador de domínio também informa ao cliente se o controlador de domínio escolhido é o mais próximo deles. O cliente armazena em cache as informações do site fornecidas pelo controlador de domínio em Atlanta, consulta o registro de recurso SRV (serviço específico do site) (um registro de recurso do sistema de nomes de domínio (DNS) usado para localizar controladores de domínio para AD DS) e, portanto, localiza um controlador de domínio no mesmo site.  
   
 Ao localizar um controlador de domínio no mesmo site, o cliente evita as comunicações sobre links WAN. Se nenhum controlador de domínio estiver localizado no site do cliente, um controlador de domínio que tenha as conexões de custo mais baixo em relação a outros sites conectados se anunciará (registra um registro de recurso SRV (serviço específico do site) no DNS) no site que não tem um controlador de domínio. Os controladores de domínio que são publicados no DNS são aqueles do site mais próximo, conforme definido pela topologia do site. Esse processo garante que cada site tenha um controlador de domínio preferencial para autenticação.  
   

@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD – etapas para restaurar a floresta
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 07a043c4361f8eaae30b1dea665c604c0df42333
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 537543bedd68bff002054f637d96240a71f75793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390294"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823399"
 ---
 # <a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>Recuperação de floresta do AD – etapas para restaurar a floresta
 
@@ -30,7 +29,7 @@ A lista a seguir resume as etapas de recuperação em um alto nível:
   
 2. [Decidir como recuperar a floresta](AD-Forest-Recovery-Determine-how-to-Recover.md)  
 
-   Depois de determinar que a recuperação de floresta é necessária, conclua as etapas preliminares para se preparar para ela: Determine a estrutura da floresta atual, identifique as funções que cada DC executa, decida qual DC será restaurado para cada domínio e verifique se todos os DCs graváveis são colocados offline.  
+   Depois de determinar que a recuperação de floresta é necessária, conclua as etapas preliminares para se preparar para ela: Determine a estrutura atual da floresta, identifique as funções que cada DC executa, decida qual DC será restaurado para cada domínio e verifique se todos os DCs graváveis são colocados offline.  
 
 3. [Executar recuperação inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
 

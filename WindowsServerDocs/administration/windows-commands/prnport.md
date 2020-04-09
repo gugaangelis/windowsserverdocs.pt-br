@@ -1,24 +1,20 @@
 ---
 title: prnport
 description: Saiba como criar, excluir e listar portas de impressora.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9c162cef2a3ae2f3de1e891691572130ae68f93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17f81b127927a41e60c290535032876def109989
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372546"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837219"
 ---
 # <a name="prnport"></a>prnport
 
@@ -34,7 +30,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 [-i <SNMPIndex>] [-y <CommunityName>] -2{e | -d}
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |          Parâmetro           |                                                                                                                                                                                                                                                                                                     Descrição                                                                                                                                                                                                                                                                                                      |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -64,7 +60,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 -   Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, `"computer Name"`).
 -   O protocolo TCP bruto é um protocolo de desempenho mais alto no Windows do que o protocolo LPR.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para exibir todas as portas de impressão TCP/IP padrão no servidor \\\Server1, digite:
 ```
 cscript prnport -l -s Server1
@@ -86,6 +82,6 @@ Para adicionar uma porta de impressão TCP/IP padrão no computador local que se
 cscript prnport -a -r IP_10.2.3.4 -h 10.2.3.4
 ```
 
-#### <a name="additional-references"></a>referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [referência de comando de impressão](print-command-reference.md)

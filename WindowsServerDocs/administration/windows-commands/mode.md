@@ -1,26 +1,22 @@
 ---
-title: modo
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: '{1&gt;mode&lt;1}'
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b59b04f2-b41d-42df-b5be-19c3721445b1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00dabdbeb7f0665c99714d0a97c7d3c78b22e04e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 528277075f7448c86ca2d660c5e65c59098afbc0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373613"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839429"
 ---
-# <a name="mode"></a>modo
+# <a name="mode"></a>{1&gt;mode&lt;1}
 
 
 
@@ -34,7 +30,7 @@ Você pode usar o **modo** para executar as seguintes tarefas – cada tarefa us
 -   [Para alterar o tamanho do buffer da tela do prompt de comando](#BKMK_5)
 -   [Para definir a taxa de digitação do teclado](#BKMK_6)
 
-## <a name="BKMK_1"></a>Para configurar uma porta de comunicações serial
+## <a name="to-configure-a-serial-communications-port"></a><a name=BKMK_1></a>Para configurar uma porta de comunicações serial
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -42,7 +38,7 @@ Você pode usar o **modo** para executar as seguintes tarefas – cada tarefa us
 mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon={on|off}] [odsr={on|off}] [octs={on|off}] [dtr={on|off|hs}] [rts={on|off|hs|tg}] [idsr={on|off}]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |  Parâmetro  |                                                                                                                                                                                     Descrição                                                                                                                                                                                     |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,16 +47,16 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 | paridade =\<P > |                              Especifica como o sistema usa o bit de paridade para verificar se há erros de transmissão. A tabela a seguir lista os valores válidos para *P*. O valor padrão é **e**. Nem todos os computadores dão suporte aos valores **m** e **s**.</br>-   **n** = nenhum</br>-   **e** = mesmo</br>-   **o** = ímpar</br>-   **m** = marca</br>-   **s** = espaço                              |
 |  Data =\<D >  |                                                                                                    Especifica o número de bits de dados em um caractere. Os valores válidos para **d** estão no intervalo de 5 a 8. O valor padrão é 7. Nem todos os computadores dão suporte aos valores 5 e 6.                                                                                                     |
 |  Stop =\<S >  |                                                                                  Especifica o número de bits de parada que definem o final de um caractere: 1, 1,5 ou 2. Se a taxa de transmissão for 110, o valor padrão será 2. Caso contrário, o valor padrão será 1. Nem todos os computadores dão suporte ao valor 1,5.                                                                                   |
-|   para = {on    |                                                                                                                                                                                        desconto                                                                                                                                                                                         |
-|   Xon = {on   |                                                                                                                                                                                        desconto                                                                                                                                                                                         |
-|  odsr = {on   |                                                                                                                                                                                        desconto                                                                                                                                                                                         |
-|  Octs = {on   |                                                                                                                                                                                        desconto                                                                                                                                                                                         |
-|   DTR = {on   |                                                                                                                                                                                         desativar                                                                                                                                                                                         |
-|   RTS = {on   |                                                                                                                                                                                         desativar                                                                                                                                                                                         |
-|  IDSR = {on   |                                                                                                                                                                                        desconto                                                                                                                                                                                         |
+|   para = {on    |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
+|   Xon = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
+|  odsr = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
+|  Octs = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
+|   DTR = {on   |                                                                                                                                                                                         configurações                                                                                                                                                                                         |
+|   RTS = {on   |                                                                                                                                                                                         configurações                                                                                                                                                                                         |
+|  IDSR = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
 |     /?      |                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                         |
 
-## <a name="BKMK_2"></a>Para exibir o status de todos os dispositivos ou de um único dispositivo
+## <a name="to-display-the-status-of-all-devices-or-of-a-single-device"></a><a name=BKMK_2></a>Para exibir o status de todos os dispositivos ou de um único dispositivo
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -68,7 +64,7 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 mode [<Device>] [/status]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -80,7 +76,7 @@ mode [<Device>] [/status]
 
 Se usado sem parâmetros, o **modo** exibirá o status de todos os dispositivos que estão instalados no sistema.
 
-## <a name="BKMK_3"></a>Para redirecionar a saída de uma porta paralela para uma porta de comunicações serial
+## <a name="to-redirect-output-from-a-parallel-port-to-a-serial-communications-port"></a><a name=BKMK_3></a>Para redirecionar a saída de uma porta paralela para uma porta de comunicações serial
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -88,12 +84,12 @@ Se usado sem parâmetros, o **modo** exibirá o status de todos os dispositivos 
 mode lpt<N>[:]=com<M>[:]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|LPT\<N > [:]|Necessário. Especifica a porta paralela. Os valores válidos para *N* estão no intervalo de 1 a 3.|
-|> com\<M [:]|Necessário. Especifica a porta serial. Os valores válidos para *M* estão no intervalo de 1 a 4.|
+|LPT\<N > [:]|Obrigatório. Especifica a porta paralela. Os valores válidos para *N* estão no intervalo de 1 a 3.|
+|> com\<M [:]|Obrigatório. Especifica a porta serial. Os valores válidos para *M* estão no intervalo de 1 a 4.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ### <a name="remarks"></a>Comentários
@@ -115,7 +111,7 @@ mode lpt1
 ```
 Esse comando impede o redirecionamento do arquivo de LPT1 para COM1.
 
-## <a name="BKMK_4"></a>Para selecionar, atualizar ou exibir os números das páginas de código do console
+## <a name="to-select-refresh-or-display-the-numbers-of-the-code-pages-for-the-console"></a><a name=BKMK_4></a>Para selecionar, atualizar ou exibir os números das páginas de código do console
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -124,18 +120,18 @@ mode <Device> codepage select=<YYY>
 mode <Device> codepage [/status]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<dispositivo >|Necessário. Especifica o dispositivo para o qual você deseja selecionar uma página de código. CON é o único nome válido para um dispositivo.|
-|página de código Select =|Necessário. Especifica qual página de código usar com o dispositivo especificado. Você pode abreviar **CodePage** **Select** as **CP** **SEL**.|
-|\<YYY >|Necessário. Especifica o número da página de código a ser selecionada. A lista a seguir mostra cada página de código com suporte e seu país/região ou idioma.</br>437: Estados Unidos</br>850: multilíngue (I latino)</br>852: eslavo (latino II)</br>855: cirílico (russo)</br>857: Turco</br>860: Português</br>861: Islandês</br>863: Canadá – francês</br>865: nórdico</br>866: Russo</br>869: grego moderno|
-|código|Necessário. Exibe os números das páginas de código (se houver) selecionadas para o dispositivo especificado.|
+|\<dispositivo >|Obrigatório. Especifica o dispositivo para o qual você deseja selecionar uma página de código. CON é o único nome válido para um dispositivo.|
+|página de código Select =|Obrigatório. Especifica qual página de código usar com o dispositivo especificado. Você pode abreviar **CodePage** **Select** as **CP** **SEL**.|
+|\<YYY >|Obrigatório. Especifica o número da página de código a ser selecionada. A lista a seguir mostra cada página de código com suporte e seu país/região ou idioma.</br>437: Estados Unidos</br>850: multilíngue (I latino)</br>852: eslavo (latino II)</br>855: cirílico (russo)</br>857: Turco</br>860: Português</br>861: Islandês</br>863: Canadá – francês</br>865: nórdico</br>866: Russo</br>869: grego moderno|
+|código|Obrigatório. Exibe os números das páginas de código (se houver) selecionadas para o dispositivo especificado.|
 |/status|Exibe os números das páginas de código atuais selecionadas para o dispositivo especificado. Você pode abreviar **/status** para **/STA**. Independentemente de você especificar **/status**, o **modo CodePage** exibirá os números das páginas de código selecionadas para o dispositivo especificado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_5"></a>Para alterar o tamanho do buffer da tela do prompt de comando
+## <a name="to-change-the-size-of-the-command-prompt-screen-buffer"></a><a name=BKMK_5></a>Para alterar o tamanho do buffer da tela do prompt de comando
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -143,16 +139,16 @@ mode <Device> codepage [/status]
 mode con[:] [cols=<C>] [lines=<N>]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|con [:]|Necessário. Indica que a alteração se aplica à janela de prompt de comando.|
+|con [:]|Obrigatório. Indica que a alteração se aplica à janela de prompt de comando.|
 |cols =\<C >|Especifica o número de colunas no buffer da tela do prompt de comando.|
 |linhas =\<N >|Especifica o número de linhas no buffer da tela do prompt de comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_6"></a>Para definir a taxa de digitação do teclado
+## <a name="to-set-the-keyboard-typematic-rate"></a><a name=BKMK_6></a>Para definir a taxa de digitação do teclado
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -160,11 +156,11 @@ mode con[:] [cols=<C>] [lines=<N>]
 mode con[:] [rate=<R> delay=<D>]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|con [:]|Necessário. Refere-se ao teclado.|
+|con [:]|Obrigatório. Refere-se ao teclado.|
 |taxa =\<R >|Especifica a taxa na qual um caractere é repetido na tela quando você mantém uma tecla pressionada.|
 |atraso =\<D >|Especifica a quantidade de tempo que o decorrerá depois que você pressionar e manter uma tecla pressionada antes da repetição da saída de caracteres.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -179,6 +175,6 @@ mode con[:] [rate=<R> delay=<D>]
 
   Os valores válidos para *D* são 1, 2, 3 e 4 (representando 0,25, 0,50, 0,75 e 1 segundo). O valor padrão é 2. Se você definir o atraso, também deverá definir a taxa.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

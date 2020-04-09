@@ -1,24 +1,20 @@
 ---
 title: print
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ada0657e2f17754e55e97e6488aac99fb0025afb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36966d8d3beb032ee0dcee50d9bd5bc0111bf4f5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372146"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837369"
 ---
 # <a name="print"></a>print
 
@@ -34,14 +30,14 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |/d:\<PrinterName >|Especifica a impressora na qual você deseja imprimir o trabalho. Para imprimir em uma impressora conectada localmente, especifique a porta no computador em que a impressora está conectada.</br>-Os valores válidos para as portas paralelas são LPT1, LPT2 e LPT3.</br>-Os valores válidos para as portas seriais são COM1, COM2, COM3 e COM4.</br>Você também pode especificar uma impressora de rede usando seu nome de fila (\\\\*servername*\*impressoraname *). Se você não especificar uma impressora, o trabalho de impressão será enviado para LPT1 por padrão.|
 |> da unidade de \<:|Especifica a unidade lógica ou física na qual o arquivo que você deseja imprimir está localizado. Esse parâmetro não será necessário se o arquivo que você deseja imprimir estiver localizado na unidade atual.|
 |\<caminho >|Especifica o local do arquivo que você deseja imprimir. Esse parâmetro não será necessário se o arquivo que você deseja imprimir estiver localizado no diretório atual.|
-|\<nome de arquivo > [...]|Necessário. Especifica o arquivo que você deseja imprimir. Você pode incluir vários arquivos em um comando.|
+|\<nome de arquivo > [...]|Obrigatório. Especifica o arquivo que você deseja imprimir. Você pode incluir vários arquivos em um comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -55,7 +51,7 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
     -   Exibindo o status de uma impressora
     -   Preparando uma impressora para alternância de página de código
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para enviar o arquivo Report. txt no diretório atual para uma impressora conectada ao LPT2 no computador local, digite:
 ```
@@ -66,9 +62,9 @@ Para enviar o arquivo Report. txt no diretório c:\Accounting para a fila de imp
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Referência aos comandos de impressão](print-command-reference.md)
 

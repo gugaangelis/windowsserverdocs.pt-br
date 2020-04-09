@@ -1,24 +1,20 @@
 ---
 title: prnmngr
 description: Saiba como adicionar, excluir e listar impressoras e conexões.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 39eee1a8-4b41-4c9f-941e-486495135eb8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 12981519a1d3bfc079a58e5883bc845955b8a8c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 621bd6ef68b4243fc010c5c704c286a22028cd6e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837229"
 ---
 # <a name="prnmngr"></a>prnmngr
 
@@ -33,13 +29,13 @@ cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>]
 [-w <Password>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |           Parâmetro           |                                                                                                                                                                                        Descrição                                                                                                                                                                                        |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              -a               |                                                                                                                                                                             Adiciona uma conexão de impressora local.                                                                                                                                                                              |
 |              -d               |                                                                                                                                                                               exclui uma conexão de impressora.                                                                                                                                                                               |
-|              -x               |                                                                                                               exclui todas as impressoras do servidor especificado com o parâmetro **-s** . Se você não especificar um servidor, o Windows excluirá todas as impressoras no computador local.                                                                                                               |
+|              {1&gt;-&lt;1}x               |                                                                                                               exclui todas as impressoras do servidor especificado com o parâmetro **-s** . Se você não especificar um servidor, o Windows excluirá todas as impressoras no computador local.                                                                                                               |
 |              -g               |                                                                                                                                                                               Exibe a impressora padrão.                                                                                                                                                                               |
 |              -t               |                                                                                                                                                        Define a impressora padrão para a impressora especificada pelo parâmetro **-p** .                                                                                                                                                         |
 |              -l               |                                                                                                         lista todas as impressoras instaladas no servidor especificado pelo parâmetro **-s** . Se você não especificar um servidor, o Windows listará as impressoras instaladas no computador local.                                                                                                         |
@@ -58,7 +54,7 @@ cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>]
     ```
 -   Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, `"computer Name"`).
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para adicionar uma impressora chamada colorprinter_2 que está conectada a LPT1 no computador local e requer um driver de impressora chamado Color Printer Driver1, digite:
 ```
 cscript prnmngr -a -p colorprinter_2 -m "color printer Driver1" -r lpt1:
@@ -68,6 +64,6 @@ Para excluir a impressora denominada colorprinter_2 do computador remoto chamado
 cscript prnmngr -d -s HRServer -p colorprinter_2 
 ```
 
-#### <a name="additional-references"></a>referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [referência de comando de impressão](print-command-reference.md)

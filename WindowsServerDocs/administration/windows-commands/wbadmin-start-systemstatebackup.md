@@ -1,24 +1,20 @@
 ---
 title: Wbadmin start systemstatebackup
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Wbadmin start systemstatebackup, que cria um backup de estado do sistema do computador local e o armazena no local especificado.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 998366c1-0a64-45e6-9ed3-4c3f5b8406f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0244f984d29c8a802475d2dc08f1cdfe4495f0b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ecbf5a055684026413615a104b4c983ff51ca9e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362234"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829569"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>Wbadmin start systemstatebackup
 
@@ -41,7 +37,7 @@ wbadmin start systemstatebackup
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |   Parâmetro   |                                                                                                                                                                                                                      Descrição                                                                                                                                                                                                                      |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -52,15 +48,15 @@ wbadmin start systemstatebackup
 
 Para obter informações sobre como salvar um backup de estado do sistema em um volume que, por sua vez, contém arquivos de estado do sistema, consulte o artigo 944530 na base de dados de conhecimento Microsoft ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)).
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para criar um backup de estado do sistema e armazená-lo no volume f, digite:
 ```
 wbadmin start systemstatebackup -backupTarget:f:
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Start-WBBackup](https://technet.microsoft.com/library/jj902459.aspx)

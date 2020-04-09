@@ -4,15 +4,15 @@ description: Parâmetros de plano de energia balanceados recomendados para tempo
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 96037a577c9f2a835e9c49bf9339ed8dc6da1a6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383507"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851959"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parâmetros de plano de energia balanceados recomendados para cargas de trabalho que exigem tempos de resposta rápidos
 
@@ -26,7 +26,7 @@ No entanto, o **tempo de resposta** pode aumentar exponencialmente com aumentos 
 | Limite de aumento de desempenho do processador | Limite de utilização acima do qual a frequência deve aumentar | 90 | 60 |
 | Limite de redução de desempenho do processador | Limite de utilização abaixo do qual a frequência é reduzida | 80 | 40 |
 | Tempo de aumento de desempenho do processador | Número de janelas de verificação de PPM antes que a frequência seja aumentada | 3 | 1 |
-| Política de aumento de desempenho do processador | Quão rápido a frequência deve aumentar | Simples | Ideal |
+| Política de aumento de desempenho do processador | Quão rápido a frequência deve aumentar | Single | Ideal |
 
 Para definir os valores propostos, os usuários podem executar os seguintes comandos em uma janela com o administrador:
 

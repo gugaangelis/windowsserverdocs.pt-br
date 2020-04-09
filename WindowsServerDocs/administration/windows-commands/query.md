@@ -1,26 +1,22 @@
 ---
-title: consulta
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: query
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 675c5128-f3cf-4e8f-8a3f-b29ab2a8b6de
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0aee400a3fae38cce73a34b55aa92f266082b19
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d89ae8c7c526bce396b2583abc1728456f7bcc3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371842"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836819"
 ---
-# <a name="query"></a>consulta
+# <a name="query"></a>query
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -37,7 +33,7 @@ query termserver
 query user
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
 |[processo de consulta](query-process.md)|Exibe informações sobre os processos que estão sendo executados em um servidor de host de sessão de área de trabalho remota.|
@@ -45,6 +41,6 @@ query user
 |[termserver de consulta](query-termserver.md)|Exibe uma lista de todos os servidores de host da sessão da área de trabalho remota na rede.|
 |[consultar usuário](query-user.md)|Exibe informações sobre sessões de usuário em um servidor de host de sessão de área de trabalho remota.|
 
-#### <a name="additional-references"></a>referências adicionais
-[Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[ &#40;serviços de área de trabalho remota&#41; referência de comando de serviços de terminal](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+[referência de comando serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

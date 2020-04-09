@@ -4,15 +4,15 @@ description: Considerações de criação de módulo do PowerShell
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 8945339e7a7950d3cd722ab2af629b45e7f6dd5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370362"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851929"
 ---
 # <a name="powershell-module-authoring-considerations"></a>Considerações de criação de módulo do PowerShell
 
@@ -28,10 +28,10 @@ Durante a análise do módulo, se os comandos exportados puderem ser totalmente 
 
 ### <a name="guidelines"></a>Diretrizes
 
-* No manifesto do módulo, não use caracteres curinga nas entradas `AliasesToExport`, `CmdletsToExport` e `FunctionsToExport`.
+* No manifesto do módulo, não use caracteres curinga nas entradas `AliasesToExport`, `CmdletsToExport`e `FunctionsToExport`.
 
 * Se o módulo não exportar comandos de um tipo específico, especifique-o explicitamente no manifesto especificando `@()`.
-Uma entrada ausente ou `$null` é equivalente a especificar o curinga `*`.
+Uma entrada ausente ou `$null` é equivalente a especificar o `*`curinga.
 
 O seguinte deve ser evitado sempre que possível:
 

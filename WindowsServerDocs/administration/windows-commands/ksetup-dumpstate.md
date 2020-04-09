@@ -1,24 +1,20 @@
 ---
 title: 'ksetup: dumpstate'
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3ef2f7b8-97af-4f42-9542-cff324840637
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 625d05b2fea9ae58681648c64e309aa8b2a201ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 46f827d26d867392db4cbef92cf5be496aee8d74
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374997"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841509"
 ---
 # <a name="ksetupdumpstate"></a>ksetup: dumpstate
 
@@ -32,9 +28,9 @@ Exibe o estado atual das configurações de realm para todos os territórios def
 ksetup /dumpstate
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
-Nenhuma
+Nenhum
 
 ## <a name="remarks"></a>Comentários
 
@@ -49,14 +45,14 @@ Esse comando não exibe a senha do computador que é definida usando o comando *
 
 **Ksetup** produz a mesma saída que **Ksetup/dumpstate**.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Encontre a maioria das configurações de realm do Kerberos em um computador:
 ```
 ksetup /dumpstate
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Ksetup](ksetup.md)
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

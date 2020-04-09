@@ -3,16 +3,15 @@ title: Como detectar, habilitar e desabilitar SMBv1, SMBv2 e SMBv3 no Windows
 description: Descreve como habilitar e desabilitar o protocolo de bloqueio de mensagens do servidor (SMBv1, SMBv2 e SMBv3) em ambientes de cliente e servidor do Windows.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9da4d6f2b5616dc6f8aec3fefb1ae7141ed88b0b
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: d6c47843dedaf45842f70d1bb408b59d63c03eb4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654387"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815499"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Como detectar, habilitar e desabilitar SMBv1, SMBv2 e SMBv3 no Windows
 
@@ -46,7 +45,7 @@ No Windows 8, Windows 8.1, Windows 10, Windows Server 2012 e Windows Server 2016
 - Concessão de diretório-melhora os tempos de resposta do aplicativo em filiais por meio de cache    
 - Otimizações de desempenho-otimizações para e/s de leitura/gravação aleatórias pequenas
 
-##  <a name="more-information"></a>Mais Informações
+##  <a name="more-information"></a>Mais informações
 
 O protocolo SMBv2 foi introduzido no Windows Vista e no Windows Server 2008.
 
@@ -54,7 +53,7 @@ O protocolo SMBv3 foi introduzido no Windows 8 e no Windows Server 2012.
 
 Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, consulte os seguintes artigos:
 
-[Visão geral do bloco de mensagens do servidor](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
+[Visão geral do Protocolo SMB](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
 
 [Novidades do SMB](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
 
@@ -76,7 +75,7 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
   Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-- Habilitar: 
+- Desabilitar 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName smb1protocol
@@ -96,7 +95,7 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- Habilitar:
+- Desabilitar
 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true 
@@ -124,7 +123,7 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
   Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-- Habilitar: 
+- Desabilitar 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
@@ -144,7 +143,7 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
   Set-SmbServerConfiguration –EnableSMB2Protocol $false
   ```
 
-- Habilitar:
+- Desabilitar
 
   ```PowerShell
   Set-SmbServerConfiguration –EnableSMB2Protocol $true
@@ -179,7 +178,7 @@ Você não precisa reiniciar o computador depois de executar o cmdlet **set-SMBS
   Set-SmbServerConfiguration -EnableSMB1Protocol $false
   ```
 
-- Habilitar: 
+- Desabilitar 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
@@ -199,7 +198,7 @@ Para obter mais informações, consulte [armazenamento do servidor na Microsoft]
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- Habilitar:
+- Desabilitar
   
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true
@@ -230,7 +229,7 @@ Desativar
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 
-Habilitar:  
+Desabilitar  
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
@@ -251,7 +250,7 @@ Desativar
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force  
 ```
 
-Habilitar:
+Desabilitar
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force 
@@ -260,7 +259,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 > [!NOTE]
 > Você deve reiniciar o computador depois de fazer essas alterações. 
 
-#### <a name="registry-editor"></a>Editor do registro
+#### <a name="registry-editor"></a>Editor do Registro
 
 > [!IMPORTANT]
 > Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/help/322756) em caso de problemas.
@@ -312,7 +311,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= disabled
   ```
 
-- Habilitar:
+- Desabilitar
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -335,7 +334,7 @@ Para obter mais informações, consulte [armazenamento do servidor na Microsoft]
   sc.exe config mrxsmb20 start= disabled 
   ```
 
-- Habilitar:
+- Desabilitar
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -358,7 +357,7 @@ Este procedimento configura o seguinte novo item no registro:
 
 Para configurar isso usando Política de Grupo, siga estas etapas:
  
-1. Abra o **Console de Gerenciamento de Diretiva de Grupo**. Clique com o botão direito do mouse no GPO (Objeto de Política de Grupo) que deve conter o novo item de preferência e clique em **Edit**.
+1. Abra o **Console de Gerenciamento de Diretiva de Grupo**. Clique com o botão direito no GPO (Objeto de Diretiva de Grupo) que deve conter o novo item de preferência e clique em **Editar**.
 
 2. Na árvore de console em **configuração do computador**, expanda a pasta **preferências** e expanda a pasta **configurações do Windows** .
 
@@ -404,7 +403,7 @@ Entrada do registro: **DependOnService** REG_MULTI_SZ: **"Bowser", "MRxSmb20", "
 
 Para configurar isso usando Política de Grupo, siga estas etapas:
  
-1. Abra o **Console de Gerenciamento de Diretiva de Grupo**. Clique com o botão direito do mouse no GPO (Objeto de Política de Grupo) que deve conter o novo item de preferência e clique em **Edit**.
+1. Abra o **Console de Gerenciamento de Diretiva de Grupo**. Clique com o botão direito no GPO (Objeto de Diretiva de Grupo) que deve conter o novo item de preferência e clique em **Editar**.
 
 2. Na árvore de console em **configuração do computador**, expanda a pasta **preferências** e expanda a pasta **configurações do Windows** .
 

@@ -4,15 +4,15 @@ description: Considerações de hardware no ajuste de desempenho do AD
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e9b121036d33bc36cabb92ca682407bc2382fca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c40faca06668adf6fd29a5e4e753e5790b8104b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355103"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851909"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>Considerações de hardware no adiciona ajuste de desempenho 
 
@@ -27,7 +27,7 @@ Active Directory caches a maior parte do banco de dados que a memória permite. 
 
     -   Para limitações das plataformas herdadas, consulte [uso de memória pelo processo Lsass. exe em controladores de domínio que executam o Windows server 2003 ou o windows 2000 Server](https://support.microsoft.com/kb/308356).
 
-    -   Use o contador\\de desempenho tempo de vida médio de cache em espera &gt; de memória de 30 minutos (s).
+    -   Use a memória\\o contador de desempenho tempo médio de cache em espera de longo prazo &gt; 30 minutos.
 
 -   Coloque o sistema operacional, os logs e o banco de dados em volumes separados. Se toda ou a maioria da DIT puder ser armazenada em cache, quando o cache estiver quente e sob um estado estável, isso se tornará menos relevante e oferecerá um pouco mais de flexibilidade no layout de armazenamento. Em cenários em que a DIT inteira não pode ser armazenada em cache, a importância de dividir o sistema operacional, os logs e o banco de dados em volumes separados se torna mais importante.
 
@@ -41,13 +41,13 @@ Active Directory caches a maior parte do banco de dados que a memória permite. 
 
 -   Examine o desempenho do subsistema de disco individualmente para cada volume. A maioria dos cenários de Active Directory são basicamente baseados em leitura, portanto, as estatísticas do volume que hospeda a DIT são as mais importantes para inspecionar. No entanto, não ignore o monitoramento do restante das unidades, incluindo o sistema operacional e as unidades de arquivos de log. Para determinar se o controlador de domínio está configurado corretamente para evitar que o armazenamento seja o afunilamento do desempenho, consulte a seção sobre subsistemas de armazenamento para obter recomendações de armazenamento de padrões. Em vários ambientes, a filosofia é garantir que haja espaço suficiente na carga para acomodar picos de aumentos ou cargas. Esses limites são limites de aviso em que a sala de cabeça para acomodar picos ou picos de carga se torna restrita e a capacidade de resposta do cliente degrada. Em suma, exceder esses limites não é um mau período (de 5 a 15 minutos algumas vezes por dia), no entanto, um sistema em execução sustentado com esses tipos de estatísticas não está armazenando em cache completamente o banco de dados e pode ser excessivamente tributado e deve ser investigado.
 
-    -   Banco de dados&gt; = = instâncias (Lsass/NTDS\\) lê O banco de dados de latência &lt; média 15ms
+    -   Database = = instâncias de&gt; (Lsass/NTDSa)\\banco de dados de e/s lê latência média &lt; 15ms
 
-    -   Banco de dados&gt; = = instâncias (Lsass/NTDS\\) leituras de banco de dados de &lt; e/s/s 10
+    -   Database = = instâncias de&gt; (Lsass/NTDSa)\\leituras de banco de dados de e/s/s &lt; 10
 
-    -   Banco de dados&gt; = = instâncias (Lsass/NTDS\\) gravações de log de e/s &lt; com latência média de 10 ms
+    -   Database = = instâncias de&gt; (Lsass/NTDSa)\\a latência média de gravações de log de e/s &lt; 10 ms
 
-    -   Banco de dados&gt; = = instâncias (Lsass/NTDS\\) gravações de log de e/s/s – somente informativo.
+    -   Database = = instâncias de&gt; (Lsass/NTDSa)\\gravações de log de e/s/s – somente informativo.
 
         Para manter a consistência dos dados, todas as alterações devem ser gravadas no log. Não há um número bom ou ruim aqui, é apenas uma medida de quanto o armazenamento tem suporte.
 
@@ -55,13 +55,13 @@ Active Directory caches a maior parte do banco de dados que a memória permite. 
 
 ## <a name="dont-over-tax-the-processors"></a>Não há excesso de imposto sobre os processadores
 
-Os processadores que não têm ciclos livres suficientes podem causar tempos de espera longos para obter threads para o processador para execução. Em vários ambientes, a filosofia é garantir que exista espaço suficiente para acomodar surtos ou picos de carga para minimizar o impacto na capacidade de resposta do cliente nesses cenários. Em suma, exceder os limites abaixo não é um mau período (de 5 a 15 minutos algumas vezes por dia), no entanto, um sistema em execução sustentado com esses tipos de estatísticas não fornece nenhuma sala de cabeça para acomodar cargas anormais e pode ser facilmente colocado em uma s excessivamente tributada cenario. Os períodos de gastos de sistemas sustentados acima dos limites devem ser investigados para como reduzir as cargas do processador.
+Os processadores que não têm ciclos livres suficientes podem causar tempos de espera longos para obter threads para o processador para execução. Em vários ambientes, a filosofia é garantir que exista espaço suficiente para acomodar surtos ou picos de carga para minimizar o impacto na capacidade de resposta do cliente nesses cenários. Em suma, exceder os limites abaixo não é um problema em curto prazo (de 5 a 15 minutos algumas vezes por dia), no entanto, um sistema em execução sustentado com esses tipos de estatísticas não fornece nenhuma sala de cabeça para acomodar cargas anormais e pode ser facilmente colocado em um cenário em excesso de tributação. Os períodos de gastos de sistemas sustentados acima dos limites devem ser investigados para como reduzir as cargas do processador.
 
 -   Para obter mais informações sobre como selecionar um processador, consulte [ajuste de desempenho para hardware de servidor](../../hardware/index.md).
 
 -   Adicione hardware, otimize a carga, direcione clientes em outro lugar ou remova a carga do ambiente para reduzir a carga da CPU.
 
--   Use o contador de desempenho informações do processador (\_Total) \\% de utilização do processador &lt; 60%.
+-   Use as informações do processador (\_total)\\% de utilização do processador &lt; contador de desempenho 60%.
 
 ## <a name="avoid-overloading-the-network-adapter"></a>Evite sobrecarregar o adaptador de rede
 
@@ -69,7 +69,7 @@ Assim como ocorre com processadores, a utilização excessiva do adaptador de re
 
 -   Para obter mais informações sobre como ajustar o subsistema de rede, consulte [ajuste de desempenho para subsistemas de rede](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md).
 
--   Use o contador de desempenho\*comparar\\NetworkInterface () bytes enviados/s\*com\\NetworkInterface () de largura de banda atual. A proporção deve ser inferior a 60% utilizada.
+-   Use o contador de desempenho comparar NetworkInterface (\*)\\bytes enviados/s com NetworkInterface (\*)\\a largura de banda atual. A proporção deve ser inferior a 60% utilizada.
 
 ## <a name="see-also"></a>Consulte também
 - [Ajuste de desempenho Active Directory servidores](index.md)

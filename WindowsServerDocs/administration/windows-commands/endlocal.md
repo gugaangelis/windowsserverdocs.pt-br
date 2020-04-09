@@ -1,24 +1,20 @@
 ---
 title: endlocal
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 765fae3c-0c0a-4639-99a4-cf613489b949
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16d2b7b445a2220a10f88f21029948ed10ee96e4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4958c5419ed4f6374f7c6ecf09bdf67f61134d93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377567"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845109"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 endlocal
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -49,7 +45,7 @@ endlocal
 > [!NOTE]
 > Para obter mais informações sobre como habilitar e desabilitar extensões de comando, consulte [cmd](cmd.md).
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Você pode localizar variáveis de ambiente em um arquivo em lotes. Por exemplo, o programa a seguir inicia o programa superapp batch na rede, direciona a saída para um arquivo e exibe o arquivo no bloco de notas:
 ```
@@ -61,6 +57,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

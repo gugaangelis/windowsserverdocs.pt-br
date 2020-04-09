@@ -4,15 +4,15 @@ description: Ajuste do gerenciamento de energia do processador (PPM) para o plan
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f1d5e2f3f17c40f262b8cea98c04e3347790ba8
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 1457328a151c87d2d4cb41c4ee91b4759f4fb8e2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001821"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851989"
 ---
 # <a name="power-and-performance-tuning"></a>Ajuste de energia e desempenho
 
@@ -71,7 +71,7 @@ Para obter mais informações sobre o PowerCfg. exe, consulte [usando o Powercfg
 
 O Windows Server 2016 tem três planos de energia internos projetados para atender a diferentes conjuntos de necessidades comerciais. Esses planos fornecem uma maneira simples de personalizar um servidor para atender às metas de energia ou desempenho. A tabela a seguir descreve os planos, lista os cenários comuns nos quais usar cada plano e fornece alguns detalhes de implementação para cada plano.
 
-| **Planejar** | **Descrição** | **Cenários comuns aplicáveis** | **Destaques da implementação** |
+| **Plano** | **Descrição** | **Cenários comuns aplicáveis** | **Destaques da implementação** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Equilibrado (recomendado) | Configuração padrão. Tem como alvo uma boa eficiência de energia com impacto mínimo no desempenho. | Computação geral | Corresponde à capacidade de demanda. Recursos de economia de energia equilibram energia e desempenho. |
 | Alto Desempenho | Aumenta o desempenho ao custo de alto consumo de energia. As limitações de energia e térmica, as despesas operacionais e as considerações de confiabilidade se aplicam. | Aplicativos de baixa latência e código de aplicativo que são sensíveis a alterações de desempenho do processador | Os processadores são sempre bloqueados no estado de desempenho mais alto (incluindo frequências de "Turbo"). Todos os núcleos não são estacionados. A saída térmica pode ser significativa. |
@@ -100,7 +100,7 @@ O Turbo está habilitado para planos de energia de alto desempenho em todos os p
 > [!Note]
 > O registro EPB tem suporte apenas nos processadores Intel Westmere e posteriores.
 
-Para processadores Intel Nehalem e AMD, o Turbo está desabilitado por padrão nas plataformas baseadas em Estados P. No entanto, se um sistema oferecer suporte a CPPC (controle de desempenho de processador colaborativo), que é um novo modo alternativo de comunicação de desempenho entre o sistema operacional e o hardware (definido na ACPI 5,0), o Turbo poderá ser envolvido se o Windows Operating o sistema solicita dinamicamente o hardware para fornecer os níveis de desempenho mais altos possíveis.
+Para processadores Intel Nehalem e AMD, o Turbo está desabilitado por padrão nas plataformas baseadas em Estados P. No entanto, se um sistema oferecer suporte a CPPC (controle de desempenho de processador colaborativo), que é um novo modo alternativo de comunicação de desempenho entre o sistema operacional e o hardware (definido na ACPI 5,0), o Turbo poderá ser envolvido se o sistema operacional Windows solicitar dinamicamente o hardware para fornecer os níveis de desempenho mais altos possíveis.
 
 Para habilitar ou desabilitar o recurso Turbo Boost, o parâmetro modo de aumento de desempenho do processador deve ser configurado pelo administrador ou pelas configurações de parâmetro padrão para o plano de energia escolhido. O modo de aumento de desempenho do processador tem cinco valores permitidos, conforme mostrado na tabela 5.
 
@@ -112,11 +112,11 @@ No Windows Server 2016, o valor padrão para o modo Boost é 3.
 
 | **Nome** | **Comportamento baseado em estado P** | **Comportamento de CPPC** |
 |--------------------------|------------------------|-------------------|
-| 0 (desabilitado) | Desabilitada | Desabilitada |
-| 1 (habilitado) | Habilitada | Habilitado com eficiência |
-| 2 (agressivo) | Habilitada | Curtas |
+| 0 (desabilitado) | Desabilitado | Desabilitado |
+| 1 (habilitado) | Habilitado | Habilitado com eficiência |
+| 2 (agressivo) | Habilitado | Agressivo |
 | 3 (eficiente habilitado) | Eficiente | Habilitado com eficiência |
-| 4 (agressivo eficiente) | Eficiente | Curtas |
+| 4 (agressivo eficiente) | Eficiente | Agressivo |
 
  
 Os comandos a seguir habilitam o modo de aumento de desempenho do processador no plano de energia atual (especifique a política usando um alias de GUID):
@@ -220,7 +220,7 @@ Powercfg -setacvalueindex scheme_current sub_processor DISTRIBUTEUTIL 0
 Powercfg -setactive scheme_current
 ```
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 - [Considerações de desempenho de hardware do servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Considerações de energia de hardware do servidor)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Ajuste de gerenciamento de energia do processador)

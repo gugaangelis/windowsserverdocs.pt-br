@@ -4,19 +4,19 @@ description: Ajuste de desempenho para hosts de virtualização Área de Trabalh
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS; denisgun
+ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947124"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851699"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 
-Host de Virtualização de Área de Trabalho Remota (host de Virtualização RD) é um serviço de função que dá suporte a cenários de VDI (Virtual Desktop Infrastructure) e permite que vários usuários executem aplicativos baseados no Windows em máquinas virtuais hospedadas em um servidor que executa o Windows Server e Hyper-V.
+Host de Virtualização de Área de Trabalho Remota (host de virtualização de área de trabalho remota) é um serviço de função que dá suporte a cenários de VDI (Virtual Desktop Infrastructure) e permite que vários usuários executem aplicativos baseados no Windows em máquinas virtuais hospedadas em um servidor que executa o Windows Server e o Hyper-V.
 
 O Windows Server dá suporte a dois tipos de áreas de trabalho virtuais: áreas de trabalho virtuais pessoais e áreas de trabalho virtuais em pool.
 
@@ -93,10 +93,10 @@ Faz sentido desativar os recursos e serviços do Windows que dependem do estado 
 
 Cada serviço específico deve ser avaliado adequadamente antes de qualquer implantação ampla. Veja a seguir algumas coisas iniciais a serem consideradas:
 
-| Serviço                                      | Por quê?                                                                                                                                                                                                      |
+| Service                                      | Por quê?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Atualização automática                                  | As áreas de trabalho virtuais em pool são atualizadas recriando o modelo de área de trabalho virtual.                                                                                                                          |
-| Arquivos offline                                | As áreas de trabalho virtuais estão sempre online e conectadas de um ponto de vista de rede.                                                                                                                         |
+| Arquivos Offline                                | As áreas de trabalho virtuais estão sempre online e conectadas de um ponto de vista de rede.                                                                                                                         |
 | Desfragmentação em segundo plano                            | As alterações do sistema de arquivos são descartadas depois que um usuário é desligado (devido a uma reversão para o estado original ou recriação do modelo de área de trabalho virtual, o que resulta na recriação de todas as áreas de trabalho virtuais em pool). |
 | Hibernação ou suspensão                           | Não há tal conceito para VDI                                                                                                                                                                                   |
 | Despejo de memória de verificação de bug                        | Não há tal conceito para áreas de trabalho virtuais em pool. Um bug-verificar a área de trabalho virtual em pool será iniciada no estado original.                                                                                       |

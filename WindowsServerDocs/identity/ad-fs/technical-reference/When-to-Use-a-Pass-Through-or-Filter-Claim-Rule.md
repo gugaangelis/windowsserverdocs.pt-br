@@ -1,7 +1,6 @@
 ---
 ms.assetid: 606df285-259c-4c6b-8583-9aca1d614c43
 title: Quando usar uma regra de declaração de passagem ou filtro
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,31 +8,31 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 49061aaab2f46d7d3abe80d4fade98c10654fc37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 005f2544b8064e35f9bec1e9d814b49c46512414
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407292"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853809"
 ---
 # <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>Quando usar uma regra de declaração de passagem ou filtro
-Você pode usar essa regra em serviços de Federação do Active Directory (AD FS) \(AD FS\) quando precisar usar um tipo de declaração de entrada específico e, em seguida, aplicar uma ação que determinará qual saída deve ocorrer com base nos valores na declaração de entrada. Quando você usa essa regra, passa ou filtra quaisquer declarações que correspondem à lógica de regra na tabela a seguir, com base em uma das opções configuradas na regra.  
+Você pode usar essa regra em Serviços de Federação do Active Directory (AD FS) \(AD FS\) quando precisar usar um tipo de declaração de entrada específico e, em seguida, aplicar uma ação que determinará qual saída deve ocorrer com base nos valores na declaração de entrada. Quando você usa essa regra, passa ou filtra quaisquer declarações que correspondem à lógica de regra na tabela a seguir, com base em uma das opções configuradas na regra.  
   
 |Opção de regras|Lógica de regras|  
 |---------------|--------------|  
 |Passar todos os valores da declaração|Se o tipo de declaração de entrada for igual a *tipo de declaração especificada* e o valor for igual a *qualquer valor*, passe a declaração|  
 |Passar apenas um valor de declaração específica|Se o tipo de declaração de entrada for igual a *tipo de declaração especificada* e o valor for igual a *valor da declaração especificada*, passe a declaração|  
-|Passar apenas valores de declaração que correspondam a\-um valor de sufixo de email e específico|Se o tipo de declaração de entrada for igual a *tipo de declaração especificada* e o valor for igual a *valor de sufixo especificado*, passe a declaração|  
+|Passar apenas os valores de declaração que correspondem a um valor de sufixo de email de\-e específico|Se o tipo de declaração de entrada for igual a *tipo de declaração especificada* e o valor for igual a *valor de sufixo especificado*, passe a declaração|  
 |Passar apenas valores de declaração que iniciam com um valor específico|Se o tipo de declaração de entrada for igual a *tipo de declaração especificada* e o valor começar com *valor de declaração especificada*, passe a declaração|  
   
 As seções a seguir fornecem uma introdução básica às regras de declaração e mais detalhes sobre quando usar essa regra.  
   
 ## <a name="about-claim-rules"></a>Sobre regras de declaração  
-Uma regra de declaração representa uma instância da lógica de negócios que usará uma declaração de entrada, aplicará \(uma condição a ela\) se x depois y e produzir uma declaração de saída com base nos parâmetros de condição. A lista a seguir descreve dicas importantes que você deve conhecer sobre as regras de declaração antes de ler mais neste tópico:  
+Uma regra de declaração representa uma instância da lógica de negócios que usará uma declaração de entrada, aplicará uma condição a ela \(se x, y\) e produzir uma declaração de saída com base nos parâmetros de condição. A lista a seguir descreve dicas importantes que você deve conhecer sobre as regras de declaração antes de ler mais neste tópico:  
   
--   No snap\-in de gerenciamento de AD FS, as regras de declaração só podem ser criadas usando modelos de regra de declaração  
+-   No snap\-de gerenciamento de AD FS no, as regras de declaração só podem ser criadas usando modelos de regra de declaração  
   
--   As regras de declaração processam declarações de entrada diretamente de \(um provedor de declarações, como\) Active Directory ou outro serviço de Federação ou da saída das regras de transformação de aceitação em uma confiança do provedor de declarações.  
+-   As regras de declaração processam declarações de entrada diretamente de um provedor de declarações \(como Active Directory ou outro Serviço de Federação\) ou da saída das regras de transformação de aceitação em uma confiança do provedor de declarações.  
   
 -   As regras de declaração são processadas pelo mecanismo de emissão de declarações em ordem cronológica dentro de um determinado conjunto de regras. Ao definir a precedência em regras, você pode refinar ou filtrar mais as declarações geradas pelas regras anteriores dentro de um determinado conjunto de regras.  
   
@@ -51,18 +50,18 @@ Por exemplo, você pode usar essa regra para passar apenas declarações que cor
   
 Quando você usa uma condição de filtro com essa regra, todas as declarações de entrada são examinadas para determinar quais declarações atendem ao conjunto de critérios definidos pela regra. Todas as outras declarações são ignoradas para que somente os valores da declaração especificada, que correspondem a um tipo de declaração selecionado, passem.  
   
-Por exemplo, conforme mostrado na ilustração a seguir, quando uma regra é definida com a condição para filtrar somente as declarações de entrada que são digitadas para o tipo de declaração UPN @fabrikam.come também terminam com, todas as outras declarações de entrada são ignoradas, a menos que atendam a esses critérios. Isso inclui a declaração de entrada com o tipo de Declaração\-de endereço de email, embora seu valor de @fabrikam.comdeclaração termine. Nesse caso, somente a declaração que contém o valor de Nick@fabrikam.com é enviada para a terceira parte confiável.  
+Por exemplo, conforme mostrado na ilustração a seguir, quando uma regra é definida com a condição para filtrar somente as declarações de entrada que são codificadas para o tipo de declaração UPN e também terminam com @fabrikam.com, todas as outras declarações de entrada são ignoradas, a menos que atendam a esses critérios. Isso inclui a declaração de entrada com o tipo de declaração de E\-endereço de email, embora seu valor de declaração termine em @fabrikam.com. Nesse caso, somente a declaração que contém o valor de Nick@fabrikam.com é enviada para a terceira parte confiável.  
   
 ![Quando usar passagem](media/adfs2_filter.gif)  
   
 ## <a name="configuring-this-rule-on-a-claims-provider-trust"></a>Configurando essa regra em uma relação de confiança do provedor de declarações  
-Quando você usa uma relação de confiança do provedor de declarações, essa regra pode ser configurada para passar apenas declarações de entrada do provedor de declarações que correspondam a determinadas restrições. Por exemplo, talvez você queira aceitar\-apenas declarações de email do provedor de declarações; portanto, você usaria esse modelo de regra para\-aceitar tipos de declaração de email que terminem no DNS \(dosistemadenomesdedomíniodoprovedordedeclarações\) nome.  
+Quando você usa uma relação de confiança do provedor de declarações, essa regra pode ser configurada para passar apenas declarações de entrada do provedor de declarações que correspondam a determinadas restrições. Por exemplo, talvez você queira aceitar somente declarações do e\-mail do provedor de declarações; Portanto, você usaria esse modelo de regra para aceitar os tipos de declaração do e\-mail que terminam no sistema de nomes de domínio do provedor de declarações \(nome do\) DNS.  
   
 ## <a name="configuring-this-rule-on-a-relying-party-trust"></a>Configurando essa regra em um objeto de confiança de terceira parte confiável  
 Quando você usa um objeto de confiança de terceira parte confiável, essa regra pode ser configurada para passar ou filtrar declarações de saída que serão enviadas para a terceira parte confiável. Algumas partes confiáveis talvez não compreenda certos tipos de declaração ou determinadas declarações podem conter informações confidenciais que não devem ser enviadas para determinadas terceiras partes. Esse modelo de regra pode ajudar a impor essas políticas para um objeto de confiança de terceira parte confiável específico.  
   
 ## <a name="how-to-create-this-rule"></a>Como criar essa regra  
-Você pode criar essa regra usando o idioma da regra de declaração ou usando o modelo passagem ou filtrar um regra de declaração de entrada no snap\--in de gerenciamento de AD FS. Esse modelo de regra fornece as seguintes opções de configuração:  
+Você pode criar essa regra usando o idioma da regra de declaração ou usando o modelo passagem ou filtrar um regra de declaração de entrada no\-snap de gerenciamento de AD FS no. Esse modelo de regra fornece as seguintes opções de configuração:  
   
 -   Especificar um nome de regra de declaração  
   
@@ -72,7 +71,7 @@ Você pode criar essa regra usando o idioma da regra de declaração ou usando o
   
 -   Passar apenas um valor de declaração específica  
   
--   Passar apenas valores de declaração que correspondam a\-um valor de sufixo de email e específico  
+-   Passar apenas os valores de declaração que correspondem a um valor de sufixo de email de\-e específico  
   
 -   Passar apenas valores de declaração que iniciam com um valor específico  
   
@@ -82,32 +81,32 @@ Para obter mais instruções sobre como criar esse modelo, consulte [criar uma r
 Se uma declaração dever ser enviada apenas quando o valor da declaração corresponder a um padrão personalizado, você deverá usar uma regra personalizada. Para obter mais informações, consulte Quando usar uma regra personalizada.  
   
 ### <a name="examples-of-how-to-construct-a-pass-through-or-filter-rule-syntax"></a>Exemplos de como construir uma sintaxe de regras de passagem ou filtro  
-Uma regra de filtragem simples filtraria declarações com base em uma das propriedades descritas acima. Por exemplo, a regra a seguir passará por todas\-as declarações de email:  
+Uma regra de filtragem simples filtraria declarações com base em uma das propriedades descritas acima. Por exemplo, a regra a seguir passará por todas as declarações do e\-mail:  
   
 ```  
-c:[type == “http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress”]  => issue(claim  = c);  
+c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"]  => issue(claim  = c);  
 ```  
   
-Os filtros podem ser logicamente\-e Ed juntos. Por exemplo, a regra a seguir aceitará todas\-as declarações de email com valorjohndoe@fabrikam.com:  
+Os filtros podem ser logicamente e\-Ed em conjunto. Por exemplo, a regra a seguir aceitará todas as declarações do e\-mail com o valor johndoe@fabrikam.com:  
   
 ```  
-c:[type == “http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress”, value == “johndoe@fabrikam.com “]  => issue(claim  = c);  
+c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", value == "johndoe@fabrikam.com "]  => issue(claim  = c);  
 ```  
   
 Nos exemplos acima, os filtros usaram sempre um operador de igualdade. A linguagem de regra de declaração dá suporte aos seguintes operadores:  
   
--   \=\=diferenciar maiúsculas de minúsculas\- \- \(\)  
+-   \=\= \- é igual a \(caso\-sensível\)  
   
--   \!\=Não é \(igual a maiúsculas e\-minúsculas \-\)  
+-   \!\= não \- igual \(caso\-sensível\)  
   
--   \=~\-correspondência de expressão regular  
+-   \=~\- correspondência de expressão regular  
   
--   \!~ \-expressão regular sem\-correspondência  
+-   \!~ \- correspondência de expressão regular não\-  
   
-Por exemplo, a regra a seguir aceitará todas\-as declarações de email não emitidas pelo servidor de federação local que têm um sufixo de Boeing.com:  
+Por exemplo, a regra a seguir aceitará todas as declarações do e\-mail não emitidas pelo servidor de federação local que têm um sufixo de boeing.com:  
   
 ```  
-c:[type == “http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress”, value =~ “^.*@boeing\.com$” , issuer != “LOCAL AUTHORITY”]  => issue(claim  = c);  
+c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", value =~ "^.*@boeing\.com$" , issuer != "LOCAL AUTHORITY"]  => issue(claim  = c);  
 ```  
   
 ### <a name="best-practices-for-creating-custom-rules"></a>Práticas recomendadas para criar regras personalizadas  
@@ -116,10 +115,10 @@ Um filtro pode ser aplicado a uma ou mais das propriedades de cada declaração,
 
 | Propriedade da declaração |                                                                                                                                                                                                                                                                                                                                                  Descrição                                                                                                                                                                                                                                                                                                                                                  |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      type      |                                                                                                                                                                                        O tipo \(de declaração geralmente representado como um\) URI reflete um acordo implícito entre parceiros em uma federação sobre que tipo de informação é transmitida na declaração. Por exemplo, as declarações do tipo http\/:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims EmailAddress conterá o e\-endereço de email do usuário.                                                                                                                                                                                         |
-|     Valor      |                                                                                                                                                                                                                                                                   O valor da declaração. Por exemplo, uma declaração do tipo http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims\/EmailAddress pode ter um valor dejohndoe@fabrikam.com                                                                                                                                                                                                                                                                    |
-|   ValueType    |                                                                                                                                                                                                  O ValueType representa como as informações contidas no valor da declaração são interpretadas. Normalmente, o ValueType será definido como http:\/\/www.w3.org\/2001\/XmlSchema\#String, mas o valor da declaração poderá conter dados \(codificados Base64Binary, por exemplo, uma imagem \) ou uma data, booliano e assim por diante.                                                                                                                                                                                                  |
-|     Emissor     | O emissor representa a parte que emitiu por último as declarações sobre o usuário. Se as declarações forem obtidas em um servidor de federação do provedor de declarações, o emissor de todas as declarações será definido como "LOCAL AUTHORITY". Se as declarações foram recebidas por um servidor de federação do Provedor de Federações, o emissor das declarações será definido como o identificador do provedor de declarações do provedor de declarações que assinou o token. Assim, durante o processamento de regras de declarações recebidas de um provedor de declarações, o emissor de todas as declarações será definido como o mesmo valor. Ao criar regras para uma terceira parte confiável, a propriedade emissora pode ser usada para distinguir entre solicitações originadas de provedores de declarações diferentes. |
-| OriginalIssuer |                                                                                                   Essa propriedade de declaração deve transmitir o servidor de federação emitiu originalmente a declaração. Como a propriedade emissor de declarações é definida como o último servidor de Federação que assinou o token, o emissor original é útil em cenários em que uma declaração fluiu por mais de um servidor \(de Federação, por exemplo, uma terceira parte confiável que recebe um token de um servidor de Federação do provedor de Federação pode estar interessado no servidor de Federação do provedor de declarações em particular que autenticou o usuário\)                                                                                                   |
-|   Properties   |                                                                                                                             Além das cinco propriedades descritas acima, cada declaração também tem um recipiente de propriedades no qual as propriedades nomeadas podem ser armazenadas. Essas propriedades não são serializadas no token e só fazem sentido para transmitir informações entre os componentes do pipeline de emissão de declarações dentro do escopo de um servidor de federação único. Por exemplo, configuração de uma propriedade durante processamento de regras do provedor de declarações e depois fazer referência a ela nas regras da terceira parte confiável.                                                                                                                              |
+|      Tipo      |                                                                                                                                                                                        O tipo de declaração \(geralmente representado como um URI\) reflete um acordo implícito entre parceiros em uma federação sobre que tipo de informação é transmitida na declaração. Por exemplo, declarações do tipo http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/EmailAddress conterá o endereço de email do e\-do usuário.                                                                                                                                                                                         |
+|     {1&gt;Valor&lt;1}      |                                                                                                                                                                                                                                                                   O valor da declaração. Por exemplo, uma declaração do tipo http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/as declarações\/EmailAddress pode ter um valor de johndoe@fabrikam.com                                                                                                                                                                                                                                                                    |
+|   ValueType    |                                                                                                                                                                                                  O ValueType representa como as informações contidas no valor da declaração são interpretadas. Normalmente, o ValueType será definido como http:\/\/www.w3.org\/2001\/a cadeia de caracteres de\#XMLSchema, mas o valor da declaração pode conter dados codificados Base64Binary \(por exemplo, uma imagem\) ou uma data, booliano e assim por diante.                                                                                                                                                                                                  |
+|     Emissor     | O emissor representa a parte que emitiu por último as declarações sobre o usuário. Se as declarações forem obtidas em um servidor de Federação do provedor de declarações, o emissor de todas as declarações será definido como "autoridade LOCAL". Se as declarações foram recebidas por um servidor de federação do Provedor de Federações, o emissor das declarações será definido como o identificador do provedor de declarações do provedor de declarações que assinou o token. Assim, durante o processamento de regras de declarações recebidas de um provedor de declarações, o emissor de todas as declarações será definido como o mesmo valor. Ao criar regras para uma terceira parte confiável, a propriedade emissora pode ser usada para distinguir entre solicitações originadas de provedores de declarações diferentes. |
+| OriginalIssuer |                                                                                                   Essa propriedade de declaração deve transmitir o servidor de federação emitiu originalmente a declaração. Como a propriedade emissor de declarações é definida como o último servidor de Federação que assinou o token, o emissor original é útil em cenários em que uma declaração fluiu por mais de um servidor de Federação \(por exemplo, uma terceira parte confiável que recebe um token de um servidor de Federação do provedor de Federação pode estar interessada em que o servidor de Federação do provedor de declarações específico autenticou o usuário\)                                                                                                   |
+|   {1&gt;Propriedades&lt;1}   |                                                                                                                             Além das cinco propriedades descritas acima, cada declaração também tem um recipiente de propriedades no qual as propriedades nomeadas podem ser armazenadas. Essas propriedades não são serializadas no token e só fazem sentido para transmitir informações entre os componentes do pipeline de emissão de declarações dentro do escopo de um servidor de federação único. Por exemplo, configuração de uma propriedade durante processamento de regras do provedor de declarações e depois fazer referência a ela nas regras da terceira parte confiável.                                                                                                                              |
 

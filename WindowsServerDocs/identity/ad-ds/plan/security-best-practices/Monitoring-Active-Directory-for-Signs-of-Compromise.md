@@ -1,7 +1,6 @@
 ---
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: Monitorar o Active Directory em busca de sinais de comprometimento
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949630"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821139"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Monitorar o Active Directory em busca de sinais de comprometimento
 
@@ -50,7 +49,7 @@ Antes do Windows Vista e do Windows Server 2008, o Windows tinha apenas nove cat
 * Gerenciamento de contas  
 * Acesso ao serviço de diretório  
 * Eventos de logon  
-* Acesso a objeto  
+* Acesso a objetos  
 * Alteração de Política  
 * Uso de privilégios  
 * Controle de processos  
@@ -69,7 +68,7 @@ Essa categoria gera muitos "ruídos" porque o Windows está constantemente tendo
 ##### <a name="audit-account-management"></a>Gerenciamento de conta de auditoria  
 Essa configuração de auditoria determina se o gerenciamento de usuários e grupos deve ser acompanhado. Por exemplo, os usuários e grupos devem ser controlados quando uma conta de usuário ou computador, um grupo de segurança ou um grupo de distribuição é criado, alterado ou excluído; Quando uma conta de usuário ou computador é renomeada, desabilitada ou habilitada; ou quando uma senha de usuário ou computador é alterada. Um evento pode ser gerado para usuários ou grupos que são adicionados ou removidos de outros grupos.  
   
-##### <a name="audit-directory-service-access"></a>Auditoria de acesso do serviço de diretório  
+##### <a name="audit-directory-service-access"></a>Auditoria do acesso ao serviço de diretório  
 
 Essa configuração de política determina se deve-se auditar o acesso de entidade de segurança a um objeto Active Directory que tenha sua própria SACL (lista de controle de acesso) do sistema especificada. Em geral, essa categoria só deve ser habilitada em controladores de domínio. Quando habilitada, essa configuração gera muitos "ruídos".  
   
@@ -190,7 +189,7 @@ Essa subcategoria relata quando um objeto de AD DS é acessado. Somente objetos 
 ##### <a name="directory-service-changes"></a>Alterações no serviço de diretório  
 Essa subcategoria relata alterações em objetos no AD DS. Os tipos de alterações relatadas são as operações criar, modificar, mover e restaurar que são executadas em um objeto. Auditoria de alteração do serviço de diretório, quando apropriado, indica os valores novos e antigos das propriedades alteradas dos objetos que foram alterados. Somente objetos com SACLs causam a geração de eventos de auditoria e somente quando eles são acessados de uma maneira que corresponde às suas entradas de SACL. Alguns objetos e propriedades não fazem eventos de auditoria serem gerados por causa de configurações na classe de objeto no esquema. Essa subcategoria se aplica somente aos controladores de domínio.  
   
-##### <a name="directory-service-replication"></a>Replicação do Serviço de Diretório  
+##### <a name="directory-service-replication"></a>Replicação do serviço de diretório  
 Essa subcategoria relata quando a replicação entre dois controladores de domínio começa e termina.  
   
 ##### <a name="detailed-directory-service-replication"></a>Replicação detalhada do serviço de diretório  
@@ -248,17 +247,17 @@ Essa subcategoria relata outros tipos de alterações de política de segurança
 #### <a name="privilege-use"></a>Uso de privilégios  
   
 ##### <a name="sensitive-privilege-use"></a>Uso de privilégios confidenciais  
-Essa subcategoria relata quando uma conta de usuário ou serviço usa um privilégio confidencial. Um privilégio confidencial inclui os seguintes direitos de usuário: atuar como parte do sistema operacional, fazer backup de arquivos e diretórios, criar um objeto de token, depurar programas, habilitar contas de computador e de usuário para serem confiáveis para delegação, gerar auditorias de segurança, representar um cliente após a autenticação, carregar e descarregar drivers de dispositivo, gerenciar logs de auditoria e segurança, modificar os valores de ambiente de firmware, substituir um token de nível de processo, restaurar arquivos e diretórios e apropriar-se de arquivos ou outros objetos. A auditoria dessa subcategoria criará um alto volume de eventos.  
+Essa subcategoria relata quando uma conta de usuário ou serviço usa um privilégio confidencial. Um privilégio confidencial inclui os seguintes direitos de usuário: atuar como parte do sistema operacional, fazer backup de arquivos e diretórios, criar um objeto de token, depurar programas, habilitar contas de computador e de usuário para serem confiáveis para delegação, gerar auditorias de segurança, representar um cliente após autenticação, carregar e descarregar drivers de dispositivo, gerenciar auditoria e log de segurança, modificar os valores de ambiente de firmware , restaurar arquivos e diretórios e apropriar-se de arquivos ou outros objetos. A auditoria dessa subcategoria criará um alto volume de eventos.  
   
 ##### <a name="nonsensitive-privilege-use"></a>Uso de privilégios não confidenciais  
-Essa subcategoria relata quando uma conta de usuário ou serviço usa um privilégio não confidencial. Um privilégio não confidencial inclui os seguintes direitos de usuário: acessar o Gerenciador de credenciais como um chamador confiável, acessar este computador da rede, adicionar estações de trabalho ao domínio, ajustar cotas de memória para um processo, permitir logon localmente, permitir logon remotamente Serviços de área de trabalho, ignorar a verificação completa, alterar a hora do sistema, criar um arquivo de paginação, criar objetos globais, criar objetos compartilhados permanentemente, criar links simbólicos, negar acesso a este computador da rede, negar logon como um trabalho em lotes, negar logon como um serviço, Negar logon localmente, negar logon por meio de Serviços de Área de Trabalho Remota, forçar o desligamento de um sistema remoto, aumentar um conjunto de trabalho de processo, aumentar a prioridade de agendamento, bloquear páginas na memória, fazer logon como um trabalho em lotes, fazer logon como um serviço, modificar um rótulo de objeto, executar volume tarefas de manutenção, processo único de perfil, desempenho do sistema de perfil, remover computador da estação de encaixe, desligar o sistema e sincronizar dados do serviço de diretório. A auditoria dessa subcategoria criará um grande volume de eventos.  
+Essa subcategoria relata quando uma conta de usuário ou serviço usa um privilégio não confidencial. Um privilégio não confidencial inclui os seguintes direitos de usuário: acessar o Gerenciador de credenciais como um chamador confiável, acessar este computador da rede, adicionar estações de trabalho ao domínio, ajustar cotas de memória para um processo, permitir logon localmente, permitir logon por meio de Serviços de Área de Trabalho Remota, ignorar a verificação de percurso, alterar a hora do sistema, criar um arquivo de paginação, criar objetos globais, criar objetos , negar acesso a este computador da rede, negar logon como um trabalho em lotes, negar logon como um serviço, negar logon localmente, negar logon por meio de Serviços de Área de Trabalho Remota, forçar o desligamento de um sistema remoto, aumentar um conjunto de trabalho de processo, aumentar a prioridade de agendamento, bloquear páginas na memória, fazer logon como um trabalho em lotes, fazer logon como um serviço , executar tarefas de manutenção de volume, processo único de perfil, desempenho do sistema de perfil, remover computador da estação de encaixe, desligar o sistema e sincronizar dados do serviço de diretório. A auditoria dessa subcategoria criará um grande volume de eventos.  
   
 ##### <a name="other-privilege-use-events"></a>Outros eventos de uso de privilégio  
 Essa configuração de política de segurança não está sendo usada no momento.  
   
-#### <a name="object-access"></a>Acesso a objeto  
+#### <a name="object-access"></a>Acesso a objetos  
   
-##### <a name="file-system"></a>Sistema de arquivos  
+##### <a name="file-system"></a>Sistema de Arquivos  
 Essa subcategoria relata quando os objetos do sistema de arquivos são acessados. Somente objetos do sistema de arquivos com SACLs causam a geração de eventos de auditoria e somente quando eles são acessados de maneira correspondente às entradas da SACL. Por si só, essa configuração de política não causará a auditoria de nenhum evento. Ele determina se é necessário auditar o evento de um usuário que acessa um objeto do sistema de arquivos que tem uma SACL (lista de controle de acesso) do sistema especificada, permitindo que a auditoria ocorra com eficiência.  
   
 Se a configuração de acesso ao objeto de auditoria estiver configurada como **êxito**, uma entrada de auditoria será gerada cada vez que um usuário acessar com êxito um objeto com uma SACL especificada. Se essa configuração de política estiver configurada como **falha**, uma entrada de auditoria será gerada cada vez que um usuário falhar em uma tentativa de acessar um objeto com uma SACL especificada.  
@@ -281,7 +280,7 @@ Essa subcategoria relata quando os aplicativos tentam gerar eventos de auditoria
 ##### <a name="handle-manipulation"></a>Manipulação de identificador  
 Essa subcategoria relata quando um identificador para um objeto é aberto ou fechado. Somente objetos com SACLs fazem com que esses eventos sejam gerados e somente se a operação de identificador tentada corresponder às entradas da SACL. Os eventos de manipulação de identificadores são gerados somente para tipos de objeto em que a subcategoria de acesso a objeto correspondente está habilitada (por exemplo, sistema de arquivos ou registro).  
   
-##### <a name="file-share"></a>Comp. de Arquivos  
+##### <a name="file-share"></a>Compartilhamento de arquivos  
 Essa subcategoria relata quando um compartilhamento de arquivos é acessado. Por si só, essa configuração de política não causará a auditoria de nenhum evento. Ele determina se deve-se auditar o evento de um usuário que acessa um objeto de compartilhamento de arquivo que tem uma SACL (lista de controle de acesso) do sistema especificada, permitindo que a auditoria ocorra com eficiência.  
   
 ##### <a name="filtering-platform-packet-drop"></a>Remoção de pacote de plataforma de filtragem  
@@ -293,7 +292,7 @@ Essa subcategoria relata quando as conexões são permitidas ou bloqueadas pela 
 ##### <a name="other-object-access-events"></a>Outros eventos de acesso de objeto  
 Essa subcategoria relata outros eventos relacionados ao acesso a objetos, como Agendador de Tarefas trabalhos e objetos COM+.  
   
-#### <a name="system"></a>Sistema  
+#### <a name="system"></a>{1&gt;Sistema&lt;1}  
   
 ##### <a name="security-state-change"></a>Alteração do estado de segurança  
 Essa subcategoria relata as alterações no estado de segurança do sistema, como quando o subsistema de segurança é iniciado e interrompido.  
@@ -336,7 +335,7 @@ A política de auditoria avançada pode ser definida usando Active Directory ou 
 
 O Auditpol. exe (para configurar a política de auditoria do Windows) foi introduzido no Windows Server 2008 e no Windows Vista. Inicialmente, somente o Auditpol. exe poderia ser usado para definir a diretiva de auditoria avançada, mas Política de Grupo pode ser usado no Windows Server 2012, no Windows Server 2008 R2 ou no Windows Server 2008, Windows 8 e Windows 7.  
   
-Auditpol. exe é um utilitário de linha de comando. A sintaxe é assim:  
+Auditpol. exe é um utilitário de linha de comando. A sintaxe é a seguinte:  
   
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
   
@@ -388,7 +387,7 @@ Recomendamos que as subcategorias sejam habilitadas e configuradas em vez das no
   
 As subcategorias de auditoria podem ser configuradas usando vários métodos, incluindo Política de Grupo e o programa de linha de comando, Auditpol. exe.  
   
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
   
 * [Auditoria de segurança avançada no Windows 7 e no Windows Server 2008 R2](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   

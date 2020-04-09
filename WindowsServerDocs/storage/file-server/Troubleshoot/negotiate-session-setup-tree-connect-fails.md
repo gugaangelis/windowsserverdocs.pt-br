@@ -3,16 +3,15 @@ title: Negociar, configuração de sessão e falhas de conexão de árvore
 description: Apresenta como solucionar problemas de negociar, configuração de sessão e falhas de conexão de árvore.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0ccd8d882060432dcfc27ee47b82d0c61e3aad4d
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654367"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815379"
 ---
 # <a name="negotiate-session-setup-and-tree-connect-failures"></a>Negociar, configuração de sessão e falhas de conexão de árvore
 
@@ -30,7 +29,7 @@ Se você estiver usando o Windows Server 2008 R2, há hotfixes para esse problem
 
 O servidor SMB recebe uma sessão SMB\_solicitação de instalação de um cliente SMB, mas falhou ao responder.
 
-Se o nome de domínio totalmente qualificado (FQDN) ou o nome NetBIOS (sistema de entrada/saída básico) da rede do servidor for usado no caminho UNC, o Windows usará o Kerberos para autenticação.
+Se o nome de domínio totalmente qualificado (FQDN) ou o nome do sistema de entrada/saída básico (NetBIOS) do servidor for ' sed no caminho UNC (Convenção de nomenclatura universal), o Windows usará o Kerberos para autenticação.
 
 Após a resposta de negociação, haverá uma tentativa de obter um tíquete Kerberos para o SPN (nome da entidade de serviço) do CIFS (sistema de arquivos de Internet comum) do servidor. Examine o tráfego Kerberos na porta TCP 88 para certificar-se de que não haja erros de Kerberos quando o cliente SMB estiver obtendo o token.
 
@@ -89,7 +88,7 @@ Siga estas diretrizes ao solucionar problemas:
 
 ## <a name="references"></a>Referências
 
-Para obter mais informações, consulte os seguintes artigos.
+Para obter mais informações, consulte os artigos a seguir.
 
 [3.3.5.4 recebendo uma solicitação de negociação SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
 

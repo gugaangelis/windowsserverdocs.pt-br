@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD-determine como recuperar a floresta
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: d604efded5b6a2ff3911a92f52817498f43c9933
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fea55dc5551198f7bc06afb2ec38077398b9cf77
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824049"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>Determinar como recuperar a floresta
 
@@ -26,7 +25,7 @@ A recuperação de uma floresta Active Directory inteira envolve a restauração
 - Todas as atualizações que foram feitas em objetos existentes desde o último backup confiável
 - Todas as alterações feitas na partição de configuração ou na partição de esquema em AD DS (como alterações de esquema) desde o último backup confiável
 
-Para cada domínio na floresta, a senha de uma conta de administrador de domínio deve ser conhecida. Preferivelmente, essa é a senha da conta de administrador interna. Você também deve saber a senha do DSRM para executar uma restauração do estado do sistema de um controlador de domínio. Em geral, é uma prática recomendada arquivar a conta de administrador e o histórico de senha do DSRM em um local seguro, desde que os backups sejam válidos, ou seja, dentro do período de vida útil da marca de exclusão ou dentro do período de tempo de vida do objeto excluído se Active Directory reciclagem O compartimento está habilitado. Você também pode sincronizar a senha do DSRM com uma conta de usuário de domínio para facilitar a sua memorização. Para obter mais informações, consulte o artigo [961320](https://support.microsoft.com/kb/961320)da base de dados de conhecimento. A sincronização da conta do DSRM deve ser feita antes da recuperação da floresta, como parte da preparação.
+Para cada domínio na floresta, a senha de uma conta de administrador de domínio deve ser conhecida. Preferivelmente, essa é a senha da conta de administrador interna. Você também deve saber a senha do DSRM para executar uma restauração do estado do sistema de um controlador de domínio. Em geral, é uma prática recomendada arquivar a conta de administrador e o histórico de senha do DSRM em um local seguro, desde que os backups sejam válidos, ou seja, dentro do período de vida útil da marca de exclusão ou dentro do período de tempo de vida do objeto excluído se Active Directory Lixeira estiver habilitada. Você também pode sincronizar a senha do DSRM com uma conta de usuário de domínio para facilitar a sua memorização. Para obter mais informações, consulte o artigo [961320](https://support.microsoft.com/kb/961320)da base de dados de conhecimento. A sincronização da conta do DSRM deve ser feita antes da recuperação da floresta, como parte da preparação.
 
 > [!NOTE]
 > A conta de administrador é um membro do grupo de administradores internos por padrão, assim como os grupos admins. do domínio e administradores de empresa. Esse grupo tem controle total de todos os DCs no domínio.
@@ -53,7 +52,7 @@ Se a hora da ocorrência da falha for desconhecida, investigue mais para identif
 
 Se Active Directory Lixeira estiver habilitada, o tempo de vida do backup será igual ao valor **deletedObjectLifetime** ou ao valor **tombstoneLifetime** , o que for menor. Para obter mais informações, consulte [Active Directory guia passo a passo da lixeira](https://go.microsoft.com/fwlink/?LinkId=178657) (https://go.microsoft.com/fwlink/?LinkId=178657).
 
-Como alternativa, você também pode usar a ferramenta de montagem de banco de dados Active Directory (Dsamain. exe) e uma ferramenta LDAP (Lightweight Directory Access Protocol), como Ldp. exe ou Active Directory usuários e computadores, para identificar qual backup tem o último estado de segurança do floresta. A ferramenta de montagem de banco de dados Active Directory, que está incluída nos sistemas operacionais Windows Server 2008 e posteriores do Windows Server, expõe Active Directory dados armazenados em backups ou instantâneos como um servidor LDAP. Em seguida, você pode usar uma ferramenta LDAP para procurar os dados. Essa abordagem tem a vantagem de não exigir que você reinicie qualquer DC no Modo de Restauração dos Serviços de Diretório (DSRM) para examinar o conteúdo do backup de AD DS.
+Como alternativa, você também pode usar a ferramenta de montagem de banco de dados Active Directory (Dsamain. exe) e uma ferramenta LDAP (Lightweight Directory Access Protocol), como Ldp. exe ou Active Directory usuários e computadores, para identificar qual backup tem o último estado de segurança da floresta. A ferramenta de montagem de banco de dados Active Directory, que está incluída nos sistemas operacionais Windows Server 2008 e posteriores do Windows Server, expõe Active Directory dados armazenados em backups ou instantâneos como um servidor LDAP. Em seguida, você pode usar uma ferramenta LDAP para procurar os dados. Essa abordagem tem a vantagem de não exigir que você reinicie qualquer DC no Modo de Restauração dos Serviços de Diretório (DSRM) para examinar o conteúdo do backup de AD DS.
 
 Para obter mais informações sobre como usar a ferramenta de montagem de banco de dados Active Directory, consulte o [guia passo a passo da ferramenta de montagem de banco de dados do Active Directory](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx).
 
@@ -90,26 +89,26 @@ Determine a estrutura da floresta atual identificando todos os domínios na flor
 
 Prepare uma tabela que mostra as funções de cada DC no domínio, conforme mostrado no exemplo a seguir. Isso irá ajudá-lo a reverter para a configuração de pré-falha da floresta após a recuperação.
 
-|Nome do DC|Sistema operacional|FSMO|GCS|RODC|Backup|DNS|Server Core|VM|VM-GenID|  
+|Nome do DC|Sistema operacional|FSMO|{1&gt;GC&lt;1}|RODC|Backup|DNS|Server Core|VM|VM-GenID|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
 |DC_1|Windows Server 2012|Mestre de esquema, mestre de nomeação de domínio|Sim|Não|Sim|Não|Não|Sim|Sim|  
-|DC_2|Windows Server 2012|Nenhuma|Sim|Não|Sim|Sim|Não|Sim|Sim|  
+|DC_2|Windows Server 2012|Nenhum|Sim|Não|Sim|Sim|Não|Sim|Sim|  
 |DC_3|Windows Server 2012|Mestre de Infra-Estrutura|Não|Não|Não|Sim|Sim|Sim|Sim|  
 |DC_4|Windows Server 2012|Emulador de PDC, mestre de RID|Sim|Não|Não|Não|Não|Sim|Não|  
-|DC_5|Windows Server 2012|Nenhuma|Não|Não|Sim|Sim|Não|Sim|Sim|  
-|RODC_1|Windows Server 2008 R2|Nenhuma|Sim|Sim|Sim|Sim|Sim|Sim|Não|  
-|RODC_2|Windows Server 2008|Nenhuma|Sim|Sim|Não|Sim|Sim|Sim|Não|  
+|DC_5|Windows Server 2012|Nenhum|Não|Não|Sim|Sim|Não|Sim|Sim|  
+|RODC_1|Windows Server 2008 R2|Nenhum|Sim|Sim|Sim|Sim|Sim|Sim|Não|  
+|RODC_2|Windows Server 2008|Nenhum|Sim|Sim|Não|Sim|Sim|Sim|Não|  
 
 Para cada domínio na floresta, identifique um único DC gravável que tenha um backup confiável do banco de dados Active Directory para esse domínio. Tenha cuidado ao escolher um backup para restaurar um DC. Se o dia e a causa da falha forem aproximadamente conhecidos, a recomendação geral é usar um backup feito alguns dias antes dessa data.
   
 Neste exemplo, há quatro candidatos de backup: DC_1, DC_2, DC_4 e DC_5. Desses candidatos de backup, você restaura apenas um. O DC recomendado é DC_5 pelos seguintes motivos:  
 
-- Ele atende aos requisitos para usá-lo como uma fonte para clonagem virtualizada de DC, ou seja, ele executa o Windows Server 2012 como um controlador de domínio virtual em um hipervisor que dá suporte a VM-Generationid, executa software que pode ser clonado (ou que poderá ser removido se não puder ser clonado d). Após a restauração, a função de emulador de PDC será executada nesse servidor e poderá ser adicionada ao grupo de controladores de domínio clonáveis para o domínio.  
+- Ele atende aos requisitos para usá-lo como uma fonte para clonagem virtualizada de DC, ou seja, ele executa o Windows Server 2012 como um controlador de domínio virtual em um hipervisor que dá suporte a VM-Generationid, executa software que pode ser clonado (ou que poderá ser removido se não for capaz de ser clonado). Após a restauração, a função de emulador de PDC será executada nesse servidor e poderá ser adicionada ao grupo de controladores de domínio clonáveis para o domínio.  
 - Ele executa uma instalação completa do Windows Server 2012. Um DC que executa uma instalação do Server Core pode ser menos conveniente como um destino para recuperação.  
 - É um servidor DNS. Portanto, o DNS não precisa ser reinstalado.  
 
 > [!NOTE]
-> Como DC_5 não é um servidor de catálogo global, ele também tem uma vantagem em que o catálogo global não precisa ser removido após a restauração. Mas se o DC também é um servidor de catálogo global não é um fator decisivo porque, a partir do Windows Server 2012, todos os DCs são servidores de catálogo global por padrão e a remoção e a adição do catálogo global após a restauração é recomendada como parte da floresta processo de recuperação em qualquer caso.  
+> Como DC_5 não é um servidor de catálogo global, ele também tem uma vantagem em que o catálogo global não precisa ser removido após a restauração. Mas se o DC também é um servidor de catálogo global não é um fator decisivo porque, a partir do Windows Server 2012, todos os DCs são servidores de catálogo global por padrão e a remoção e a adição do catálogo global após a restauração é recomendada como parte do processo de recuperação de floresta em qualquer caso.  
 
 ## <a name="recover-the-forest-in-isolation"></a>Recuperar a floresta isoladamente
 
@@ -125,7 +124,7 @@ Se você estiver executando DCs virtualizados, poderá movê-los para uma rede v
 
 Se você estiver executando DCs em hardware físico, desconecte o cabo de rede do primeiro DC que você planeja restaurar no domínio raiz da floresta. Se possível, desconecte também os cabos de rede de todos os outros DCs. Isso impede que os DCs sejam replicados, se forem iniciados acidentalmente durante o processo de recuperação da floresta.  
 
-Em uma floresta grande que é distribuída em vários locais, pode ser difícil garantir que todos os DCs graváveis sejam desligados. Por esse motivo, as etapas de recuperação — como redefinir a conta de computador e a conta krbtgt, além da limpeza de metadados — foram projetadas para garantir que os DCs graváveis recuperados não sejam replicados com DCs graváveis perigosos (caso alguns ainda estejam online no floresta).  
+Em uma floresta grande que é distribuída em vários locais, pode ser difícil garantir que todos os DCs graváveis sejam desligados. Por esse motivo, as etapas de recuperação, como a redefinição da conta de computador e da conta krbtgt, além da limpeza de metadados, são projetadas para garantir que os controladores de domínio graváveis recuperados não sejam replicados com DCs graváveis perigosos (caso alguns ainda estejam online na floresta).  
   
 No entanto, apenas com o uso de DCs graváveis offline é possível garantir que a replicação não ocorra. Portanto, sempre que possível, você deve implantar a tecnologia de gerenciamento remoto que pode ajudá-lo a desligar e isolar fisicamente os DCs graváveis durante a recuperação da floresta.  
   
@@ -135,7 +134,7 @@ Os RODCs continuarão a permitir o acesso a recursos locais que são armazenados
   
 Se você estiver usando uma arquitetura de rede hub e spoke, poderá se concentrar primeiro na recuperação dos DCs graváveis nos sites do Hub. Posteriormente, você pode recriar os RODCs em sites remotos.  
   
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

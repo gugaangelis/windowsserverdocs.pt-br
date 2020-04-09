@@ -1,24 +1,20 @@
 ---
 title: xcopy
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para xcopy, w hich copia arquivos e diretórios, incluindo subdiretórios.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76a310d7-9925-4571-a252-0e28960d5f89
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 885729f2bca100d7ac89a3463135d56f48c8b75a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 660ef69a5f1df99c3b959a588984719c9d4dea6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361795"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828919"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,7 +28,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-DD-YYYY]] [/u] [/i] [/s [/e]] [/t] [/k] [/r] [/h] [{/a | /m}] [/n] [/o] [/x] [/exclude:FileName1[+[FileName2]][+[FileName3]] [{/y | /-y}] [/z] [/b] [/j]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -64,7 +60,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/y|Suprime a solicitação para confirmar que você deseja substituir um arquivo de destino existente.|
 |/-y|Solicita que você confirme se deseja substituir um arquivo de destino existente.|
 |/z|Copia em uma rede no modo reiniciável.|
-|/b.|Copia o link simbólico em vez dos arquivos. Esse parâmetro foi introduzido no Windows Vista®.|
+|/b|Copia o link simbólico em vez dos arquivos. Esse parâmetro foi introduzido no Windows Vista®.|
 |/j|Copia arquivos sem buffer. Recomendado para arquivos muito grandes. Esse parâmetro foi adicionado no Windows Server 2008 R2.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -210,7 +206,7 @@ rem  3 File(s) copied
 
 No exemplo anterior, esse valor de parâmetro de origem específico **.\\toc\*. yml** Copie os mesmos três arquivos mesmo se seus dois caracteres de caminho **.\\** foram removidos. No entanto, nenhum arquivo seria copiado se o curinga de asterisco fosse removido do parâmetro de origem, tornando-o apenas **.\\TOC. yml**.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Cópia](copy.md)
 -   [Mover](move.md)
@@ -218,4 +214,4 @@ No exemplo anterior, esse valor de parâmetro de origem específico **.\\toc\*. 
 -   [Atributos](attrib.md)
 -   [Diskcopy](diskcopy.md)
 -   [Que](if.md)
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

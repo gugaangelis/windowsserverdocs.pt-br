@@ -1,24 +1,20 @@
 ---
 title: secedit
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 58ed57ed-08e3-403d-a363-0620b358637a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5598f830ad4cef8d45c99594da12cbcdd84e7eef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e80217c201cde4dc1df58c0e8976fbe1422511fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834839"
 ---
 # <a name="secedit"></a>secedit
 
@@ -38,7 +34,7 @@ secedit
 [/validate <configuration file name>]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -66,7 +62,7 @@ Quando um modelo de segurança é criado usando o snap-in modelo de segurança e
 > [!NOTE]
 > O MMC (console de gerenciamento Microsoft) e o snap-in de análise e configuração de segurança não estão disponíveis no Server Core.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
 Para obter exemplos de como esse comando pode ser usado, consulte a seção exemplos em qualquer um dos arquivos de subcomando.
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

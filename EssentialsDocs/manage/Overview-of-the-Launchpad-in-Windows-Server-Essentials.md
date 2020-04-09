@@ -1,23 +1,19 @@
 ---
 title: Visão geral da Barra Inicial no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 63a161057f7068dcb9e02faa353270f0150200b4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ffff090e360282933723465bb3bbde6c0285a97b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310659"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852659"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Visão geral da Barra Inicial no Windows Server Essentials
 
@@ -77,7 +73,7 @@ A Barra Inicial do Windows Server Essentials é um pequeno aplicativo que é ins
  Os alertas que aparecem na Barra Inicial fornecem um status rápido da integridade imediata do computador. Para exibir informações sobre um alerta de integridade, clique em um indicador de alerta para abrir o visualizador de alertas. Alertas de integridade são exibidos no visualizador com base no nível de gravidade. Os alertas mais graves aparecem primeiro na lista; alertas menos graves aparecem posteriormente na lista. Para obter mais informações sobre alertas de integridade do computador, consulte [gerenciar a integridade do sistema](Manage-System-Health-in-Windows-Server-Essentials.md).  
   
 ##  <a name="use-the-launchpad-with-a-mac-computer"></a><a name="BKMK_Mac"></a>Usar o Launchpad com um computador Mac  
- Você pode conectar um computador Mac® executando o Mac OS X® 10,5 ou posterior ao Windows Server Essentials, Windows Server Essentials ou Windows Server 2012 R2 ou baixando e instalando o software do conector. Quando terminar de instalar o software do conector, você pode optar por iniciar automaticamente a Barra Inicial durante a inicialização.  
+ Você pode conectar um computador Mac&reg; executando o Mac OS X&reg; 10,5 ou posterior ao Windows Server Essentials, Windows Server Essentials ou Windows Server 2012 R2 ou baixando e instalando o software do conector. Quando terminar de instalar o software do conector, você pode optar por iniciar automaticamente a Barra Inicial durante a inicialização.  
   
  A Barra Inicial é um aplicativo pequeno que fornece aos usuários autenticados acesso aos principais recursos do servidor, incluindo mídias e arquivos compartilhados, suplementos e o Acesso via Web remoto. A Barra Inicial fornece também notificações e informações em tempo real sobre a integridade do computador.  
   

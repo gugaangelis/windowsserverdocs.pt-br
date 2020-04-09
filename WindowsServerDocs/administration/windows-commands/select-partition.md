@@ -1,24 +1,20 @@
 ---
 title: selecionar partição
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 25f70083-b8f7-4a8e-9b34-4b3ffbe06670
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a186e2678fde64396a8b4b57a2d14e4b0b7bf26
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97145d73cbbe1bdc9b27e545b047b78fe89e4984
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834799"
 ---
 # <a name="select-partition"></a>selecionar partição
 
@@ -34,7 +30,7 @@ seleciona a partição especificada e desloca o foco para ela. Esse comando tamb
 select partition=<n>  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 |   Parâmetro    |                                                                                    Descrição                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,11 +42,11 @@ select partition=<n>
   
 -   Se nenhum número de partição for especificado, esse comando exibirá a partição que atualmente tem o foco no disco selecionado.  
   
--   se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.  
+-   Se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.  
   
 -   se uma partição for selecionada com um volume correspondente, o volume será selecionado automaticamente.  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para deslocar o foco para a partição 3, digite:  
   
 ```  
@@ -63,8 +59,8 @@ Para exibir a partição que atualmente tem o foco no disco selecionado, digite:
 select partition  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   
