@@ -4,15 +4,15 @@ description: Considerações de desempenho de e/s de armazenamento no ajuste de 
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c5a7b667f24ee929a80010dc51508033f991ed5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370063"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851809"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Desempenho de e/s de armazenamento do Hyper-V
 
@@ -20,7 +20,7 @@ Esta seção descreve as diferentes opções e considerações para ajustar o de
 
 ## <a name="virtual-controllers"></a>Controladores virtuais
 
-O Hyper-V oferece três tipos de controladores virtuais: IDE, SCSI e adaptadores de barramento de host virtual (HBAs).
+O Hyper-V oferece três tipos de controladores virtuais: IDE, SCSI e HBAs (adaptadores de barramento de host virtual).
 
 ## <a name="ide"></a>IDE
 
@@ -160,7 +160,7 @@ O VHD aponta para um arquivo VHD pai. Qualquer gravação em blocos não gravado
 
 ## <a name="block-size-considerations"></a>Considerações de tamanho de bloco
 
-O tamanho do bloco pode afetar significativamente o desempenho. É ideal fazer a correspondência entre o tamanho do bloco e os padrões de alocação da carga de trabalho que está usando o disco. Por exemplo, se um aplicativo estiver alocando em partes de 16 MB, seria ideal ter um tamanho de bloco de disco rígido virtual de 16 MB. Um tamanho de bloco &gt;de 2 MB só é possível em discos rígidos virtuais com o formato VHDX. Ter um tamanho de bloco maior que o padrão de alocação para uma carga de trabalho de e/s aleatória aumentará significativamente o uso do espaço no host.
+O tamanho do bloco pode afetar significativamente o desempenho. É ideal fazer a correspondência entre o tamanho do bloco e os padrões de alocação da carga de trabalho que está usando o disco. Por exemplo, se um aplicativo estiver alocando em partes de 16 MB, seria ideal ter um tamanho de bloco de disco rígido virtual de 16 MB. Um tamanho de bloco de &gt;2 MB só é possível em discos rígidos virtuais com o formato VHDX. Ter um tamanho de bloco maior que o padrão de alocação para uma carga de trabalho de e/s aleatória aumentará significativamente o uso do espaço no host.
 
 ## <a name="sector-size-implications"></a>Implicações de tamanho de setor
 
@@ -212,7 +212,7 @@ Discos de passagem devem ser evitados devido às limitações introduzidas com c
 
 ### <a name="storage-quality-of-service-qos"></a>QoS (Qualidade de armazenamento do serviço)
 
-A partir do Windows Server 2012 R2, o Hyper-V inclui a capacidade de definir determinados parâmetros de QoS (qualidade de serviço) para armazenamento nas máquinas virtuais. A QoS de armazenamento fornece isolamento de desempenho de armazenamento em um ambiente multilocatário e mecanismos para notificá-lo quando o desempenho de e/s de armazenamento não atender ao limite definido para executar com eficiência suas cargas de trabalho de máquina virtual.
+A partir do Windows Server 2012 R2, o Hyper-V inclui a capacidade de definir determinados parâmetros de QoS (qualidade de serviço) para armazenamento nas máquinas virtuais. O QoS de armazenamento fornece isolamento de desempenho de armazenamento em um ambiente multilocatário e mecanismos para notificá-lo quando o desempenho de E/S do armazenamento não atender ao limites definido para executar, de forma eficiente, cargas de trabalho de sua máquina virtual.
 
 O QoS de armazenamento fornece a capacidade de especificar um valor máximo de IOPS (operações de entrada/saída por segundo) para seu disco rígido virtual. Um administrador pode restringir a E/S de armazenamento para impedir que um locatário consuma recursos de armazenamento excessivos que possam afetar outro locatário.
 
@@ -244,7 +244,7 @@ Os principais aprimoramentos a seguir introduzidos pela primeira vez na pilha de
 
 -   Um mecanismo de conclusão de e/s mais eficiente envolvendo a distribuição de interrupção entre os processadores virtuais para evitar interrupções caras de interprocessador.
 
-Introduzido no Windows Server 2012, há algumas entradas do registro, localizadas em HKLM\\System\\CurrentControlSet\\enum\\VMBUS\\{ID do dispositivo\\} {ID da instância}\\StorChannel, que permite que o número de canais seja ajustado. Eles também alinham os processadores virtuais que lidam com as conclusões de e/s para as CPUs virtuais que são atribuídas pelo aplicativo para serem os processadores de e/s. As configurações do registro são definidas em uma base por adaptador na chave de hardware do dispositivo.
+Introduzido no Windows Server 2012, há algumas entradas do registro, localizadas em HKLM\\System\\CurrentControlSet\\enum\\VMBUS\\{ID do dispositivo}\\{ID da instância}\\StorChannel, que permitem que o número de canais seja ajustado. Eles também alinham os processadores virtuais que lidam com as conclusões de e/s para as CPUs virtuais que são atribuídas pelo aplicativo para serem os processadores de e/s. As configurações do registro são definidas em uma base por adaptador na chave de hardware do dispositivo.
 
 -   **ChannelCount (DWORD)** O número total de canais a serem usados, com um máximo de 16. O padrão é um teto, que é o número de processadores virtuais/16.
 
@@ -262,7 +262,7 @@ O Hyper-V no Windows Server 2012 e posterior dá suporte a operações de descar
 
 Os arquivos de disco rígido virtual existem como arquivos em um volume de armazenamento e compartilham espaço disponível com outros arquivos. Como o tamanho desses arquivos tende a ser grande, o espaço que eles consomem pode crescer rapidamente. A demanda por mais armazenamento físico afeta o orçamento de hardware de ti. É importante otimizar o uso do armazenamento físico o máximo possível.
 
-Antes do Windows Server 2012, quando os aplicativos excluem o conteúdo dentro de um disco rígido virtual, o que efetivamente abandonou o espaço de armazenamento do conteúdo, a pilha de armazenamento do Windows no sistema operacional convidado e o host do Hyper-V tinham limitações que impediam isso informações de serem comunicadas ao disco rígido virtual e ao dispositivo de armazenamento físico. Isso impediu que a pilha de armazenamento do Hyper-V otimizasse o uso de espaço pelos arquivos de disco virtual baseados em VHD. Ele também impediu que o dispositivo de armazenamento subjacente recuperasse o espaço ocupado anteriormente pelos dados excluídos.
+Antes do Windows Server 2012, quando os aplicativos excluem o conteúdo dentro de um disco rígido virtual, o que efetivamente abandonou o espaço de armazenamento do conteúdo, a pilha de armazenamento do Windows no sistema operacional convidado e o host do Hyper-V tinham limitações que impediam que essas informações fossem comunicadas ao disco rígido virtual e ao dispositivo de armazenamento físico. Isso impediu que a pilha de armazenamento do Hyper-V otimizasse o uso de espaço pelos arquivos de disco virtual baseados em VHD. Ele também impediu que o dispositivo de armazenamento subjacente recuperasse o espaço ocupado anteriormente pelos dados excluídos.
 
 A partir do Windows Server 2012, o Hyper-V dá suporte a notificações de desmapeamento, que permitem que os arquivos VHDX sejam mais eficientes para representar esses dados dentro dele. Isso resulta em tamanho de arquivos menores e permite que o dispositivo de armazenamento físico subjacente recupere espaço não utilizado.
 

@@ -1,30 +1,24 @@
 ---
 title: dfsdiag
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para Dfsdiag, que fornece informações de diagnóstico para namespaces do DFS.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0891e67-0187-4f18-923d-5623e6127f90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61a6ab9a90e4d0220cfe27d2d21120be19b9ff1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c895dabbbafbe8ea253920d3bc6de17f42918e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846189"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
-
-
-O comando `Dfsdiag` fornece informações de diagnóstico para namespaces do DFS.
+Fornece informações de diagnóstico para namespaces do DFS.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -33,7 +27,7 @@ dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| 
 
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -44,6 +38,6 @@ dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| 
 |[Dfsdiag TestReferral](dfsdiag-testreferral.md)|Verifica as respostas de referência.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

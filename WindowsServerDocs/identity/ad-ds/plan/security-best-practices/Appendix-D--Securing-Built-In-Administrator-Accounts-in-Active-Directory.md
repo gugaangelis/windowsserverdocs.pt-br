@@ -1,7 +1,6 @@
 ---
 ms.assetid: 11f36f2b-9981-4da0-9e7c-4eca78035f37
 title: Apêndice D-protegendo contas de administrador internas no Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cc91ccd00c951863f4f9802f3d669e36ff3f3d9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e0060e4b732fe77de4371c7b84b77da21de9e20
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367841"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821659"
 ---
 # <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Apêndice D: Proteger contas de administrador internas no Active Directory
 
@@ -68,7 +67,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
         -   Negar o logon por meio dos Serviços de Área de Trabalho Remota  
 
 > [!NOTE]  
-> Essas configurações garantirão que a conta de administrador interno do domínio não possa ser usada para se conectar a um controlador de domínio, embora a conta, se habilitada, possa fazer logon localmente nos controladores de domínio. Como essa conta só deve ser habilitada e usada em cenários de recuperação de desastres, é esperado que o acesso físico a pelo menos um controlador de domínio estará disponível ou que outras contas com permissões para acessar os controladores de domínio remotamente possam ser utiliza.  
+> Essas configurações garantirão que a conta de administrador interno do domínio não possa ser usada para se conectar a um controlador de domínio, embora a conta, se habilitada, possa fazer logon localmente nos controladores de domínio. Como essa conta só deve ser habilitada e usada em cenários de recuperação de desastres, é esperado que o acesso físico a pelo menos um controlador de domínio esteja disponível ou que outras contas com permissões para acessar controladores de domínio remotamente possam ser usadas.  
 
 -   Configurar a auditoria de contas de administrador  
 
@@ -190,7 +189,7 @@ Para a conta de administrador interno em cada domínio em sua floresta, você de
 > [!IMPORTANT]  
 > Ao adicionar a conta de administrador a essas configurações, você especifica se está configurando uma conta de administrador local ou uma conta de administrador de domínio por meio da identificação das contas. Por exemplo, para adicionar a conta de administrador do domínio TAILSPINTOYS a esses direitos de negação, você navegará para a conta de administrador do domínio TAILSPINTOYS, que apareceria como TAILSPINTOYS\Administrator. Se você digitar "administrador" nessas configurações de direitos de usuário na Editor de Objeto de Política de Grupo, restringirá a conta de administrador local em cada computador ao qual o GPO é aplicado, conforme descrito anteriormente.  
 
-#### <a name="verification-steps"></a>Etapas de verificação  
+#### <a name="verification-steps"></a>Etapas de Verificação  
 As etapas de verificação descritas aqui são específicas para o Windows 8 e o Windows Server 2012.  
 
 ##### <a name="verify-smart-card-is-required-for-interactive-logon-account-option"></a>Opção de conta "cartão inteligente necessário para logon interativo"  
@@ -289,7 +288,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Localize e clique duas vezes em **spooler de impressão**.  
 
-5.  Clique na guia **Fazer Logon**.  
+5.  Clique na guia **Logon**.  
 
 6.  Em **fazer logon como:** , selecione **esta conta**.  
 
@@ -315,7 +314,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Localize e clique duas vezes em **spooler de impressão**.  
 
-5.  Clique na guia **Fazer Logon**.  
+5.  Clique na guia **Logon**.  
 
 6.  Em **fazer logon como:** , selecione a conta **sistema local** e clique em **OK**.  
 

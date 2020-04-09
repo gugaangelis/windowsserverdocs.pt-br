@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9ee8a6cb-7550-46e2-9c11-78d0545c3a97
 title: Visão geral do Controle de Acesso Dinâmico
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 343e51f113f54c3965ef45d49f5d8fd64c260991
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2374e2c8a1efb204dbae1ee633bc5ee41d049d57
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357515"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861169"
 ---
 # <a name="dynamic-access-control-overview"></a>Visão geral do Controle de Acesso Dinâmico
 
@@ -40,12 +39,12 @@ Recursos e conceitos associados ao Controle de Acesso Dinâmico incluem:
   
 -   [Permissões propostas](#BKMK_Permissions2)  
   
-### <a name="BKMK_Rules"></a>Regras de acesso central  
+### <a name="central-access-rules"></a><a name="BKMK_Rules"></a>Regras de acesso central  
 Uma regra de acesso central é uma expressão de regras de autorização que pode incluir uma ou mais condições que envolvem grupos de usuários, declarações de usuário, declarações de dispositivo e propriedades de recurso. Várias regras de acesso central podem ser combinadas em uma política de acesso central.  
   
 Se uma ou mais regras de acesso central foram definidas para um domínio, os administradores de compartilhamento de arquivos podem corresponder regras específicas a requisitos específicos de recursos e negócios.  
   
-### <a name="BKMK_Policies"></a>Políticas de acesso central  
+### <a name="central-access-policies"></a><a name="BKMK_Policies"></a>Políticas de acesso central  
 As políticas de acesso central são políticas de autorização que incluem expressões condicionais. Por exemplo, digamos que uma organização tenha um requisito de negócios para restringir o acesso a PII (informações de identificação pessoal) em arquivos apenas ao proprietário do arquivo e aos membros do departamento de RH (recursos humanos) que têm permissão para exibir informações de PII. Isso representa uma política em toda a organização que se aplica a todos os arquivos PII onde estiverem localizados em servidores de arquivos em toda a organização. Para implementar esta política, uma empresa precisa ser capaz de:  
   
 -   Identificar e marcar os arquivos que contêm o PII.  
@@ -56,7 +55,7 @@ As políticas de acesso central são políticas de autorização que incluem exp
   
 As políticas de acesso central atuam como protetores de segurança que uma organização aplica em seus servidores. Essas políticas complementam (mas não substituem) as políticas de acesso local ou as listas de controle de acesso discricionário (DACLs) que são aplicadas a arquivos e pastas.  
   
-### <a name="BKMK_Claims"></a>Declarações  
+### <a name="claims"></a><a name="BKMK_Claims"></a>Declarações  
 Uma declaração é uma peça única de informação sobre um usuário, dispositivo ou recurso é publicada por um controlador de domínio. O título do usuário, a classificação de departamento de um arquivo ou o estado de integridade de um computador são exemplos válidos de uma declaração. Uma entidade pode envolver mais de uma declaração e qualquer combinação de declarações pode ser usada para autorizar o acesso a recursos. Os seguintes tipos de declarações estão disponíveis nas versões do Windows com suporte:  
   
 -   **Declarações de usuário** Atributos do Active Directory que estão associados a um usuário específico.  
@@ -67,12 +66,12 @@ Uma declaração é uma peça única de informação sobre um usuário, disposit
   
 As declarações tornam possível para os administradores fazerem demonstrações precisas em toda a organização ou empresa sobre os usuários, dispositivos e recursos que podem ser incorporados em expressões, regras e políticas.  
   
-### <a name="BKMK_Expressions2"></a>Expressões  
+### <a name="expressions"></a><a name="BKMK_Expressions2"></a>Expressões  
 As expressões condicionais são uma melhoria no gerenciamento de controle de acesso que concede ou nega o acesso a recursos somente quando determinadas condições são atendidas, por exemplo, associação a grupo, local ou estado de segurança do dispositivo. As expressões são gerenciadas por meio da caixa de diálogo Configurações de Segurança Avançadas do Editor ACL ou do Editor de Regras de Acesso Central no ADAC (Centro Administrativo do Active Directory).  
   
 As expressões ajudam os administradores a gerenciar o acesso a recursos confidenciais com condições flexíveis em ambientes de negócios cada vez mais complexos.  
   
-### <a name="BKMK_Permissions2"></a>Permissões propostas  
+### <a name="proposed-permissions"></a><a name="BKMK_Permissions2"></a>Permissões propostas  
 As permissões propostas permitem que um administrador modele com mais precisão o impacto de possíveis mudanças nas configurações de controle de acesso sem realmente alterá-las.  
   
 Prever o acesso efetivo a um recurso ajuda você a planejar e configurar permissões para esses recursos antes de implementar essas alterações.  

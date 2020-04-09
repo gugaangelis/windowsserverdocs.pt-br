@@ -1,24 +1,20 @@
 ---
 title: Introdução com os serviços do MultiPoint
 description: Apresenta os serviços do MultiPoint e você começa a usá-lo.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aca5f0be-f253-46b5-b1e7-0bffa15f3227
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: cf31e62345b006ef9572a2ea97a23e3e0bf41b64
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2213c734831c1cde88ad0e2b6fb172f99a31b89c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395372"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859229"
 ---
 # <a name="getting-started-with-multipoint-services"></a>Introdução com os serviços do MultiPoint
 O sistema MultiPoint Services permite que muitos usuários usem várias estações conectadas fisicamente usando hubs de estação para apenas um computador. Em geral, cada estação consiste em um hub de estação, mouse, teclado e monitor de vídeo. Cada usuário em uma estação de serviços do MultiPoint experimenta uma sessão de computação exclusiva do Windows que você pode gerenciar usando o MultiPoint Manager.  
@@ -59,14 +55,14 @@ Os tipos de ações que você pode executar usando o Gerenciador do MultiPoint i
   
 -   **Alternando para o modo de console:** Você pode alterar o sistema de serviços do MultiPoint para o modo de console para instalar um novo software em seu sistema MultiPoint Services. Você pode especificar que todos os usuários possam executar o software ou que apenas você pode usar o software, dependendo das opções de instalação e licenciamento do software.  
   
--   **Solução** Se você tiver problemas com os serviços do MultiPoint, consulte a seção [solução de problemas](Troubleshooting.md) para encontrar tópicos que possam ajudá-lo a corrigir o problema.  
+-   **Solução de problemas:** Se você tiver problemas com os serviços do MultiPoint, consulte a seção [solução de problemas](Troubleshooting.md) para encontrar tópicos que possam ajudá-lo a corrigir o problema.  
   
 ## <a name="overview-of-multipoint-dashboard"></a>Visão geral do painel do MultiPoint  
 O MultiPoint Dashboard apresenta uma experiência de faixa de medida em que você pode escolher entre duas guias para acessar tarefas diárias comuns.  
   
 As guias são as seguintes:  
   
--   **Guia página inicial:** Bloquear ou desbloquear estações, definir opções de limitação da Web, áreas de trabalho de projeto para outras áreas de trabalho, iniciar ou fechar aplicativos, comunicar-se por meio de mensagens instantâneas, ajudar outros usuários por meio do controle de área de trabalho remota, ajustar exibições de miniaturas de desktop e habilitar ou desabilitar mensagens instantâneas e início automático do aplicativo. Para obter mais informações, consulte o tópico [gerenciar áreas de trabalho de usuário usando o painel do MultiPoint](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) .  
+-   **Guia página inicial:** Bloquear ou desbloquear estações, definir opções de limitação da Web, desktops de projeto para outros desktops, iniciar ou fechar aplicativos, comunicar-se por meio de mensagens instantâneas, ajudar outros usuários por meio do controle de área de trabalho remota, ajustar exibições de miniaturas de desktop e habilitar ou desabilitar mensagens instantâneas e inicialização automática de aplicativo. Para obter mais informações, consulte o tópico [gerenciar áreas de trabalho de usuário usando o painel do MultiPoint](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) .  
   
 -   **Guia sistemas:** Reiniciar, desligar ou mapear todos os sistemas ou os selecionados. Para obter mais informações, consulte o tópico [gerenciar sistemas MultiPoint usando o painel do MultiPoint](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) .  
   

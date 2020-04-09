@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5c8c6cc0-0d22-4f27-a111-0aa90db7d6c8
 title: Planejar a topologia de implantação do AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9cd036e9dd0b249197fb475504c9cad532ead0ea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53364e076a8c3b7d95e8c834a5a7621071ed6061
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408030"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858669"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>Planejar a topologia de implantação do AD FS
 
 A primeira etapa no planejamento de uma implantação do Serviços de Federação do Active Directory (AD FS) \(AD FS\) é determinar a topologia de implantação certa para atender às necessidades da sua organização.  
   
-Antes de ler este tópico, examine como AD FS dados são armazenados e replicados para outros servidores de Federação em um farm de servidores de Federação e certifique-se de entender a finalidade do e os métodos de replicação que podem ser usados para os dados subjacentes armazenados no AD FS con banco de dados figuração.  
+Antes de ler este tópico, examine como os dados de AD FS são armazenados e replicados em outros servidores de Federação em um farm de servidores de Federação e certifique-se de entender a finalidade do e os métodos de replicação que podem ser usados para os dados subjacentes armazenados no banco de AD FS configuração.  
   
 Há dois tipos de banco de dados que você pode usar para armazenar AD FS dados de configuração: banco de dados interno do Windows \(WID\) e Microsoft SQL Server. Para saber mais, confira [A função do banco de dados de configuração de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md). Examine os vários benefícios e limitações associados ao uso do WID ou SQL Server como o banco de dados de configuração do AD FS, juntamente com os vários cenários de aplicativos aos quais eles dão suporte e faça sua seleção.  
   
@@ -53,7 +52,7 @@ O impacto nos recursos de hardware de um servidor de federação que é implanta
   
 Em comparação, os servidores de federação que são implantados em um farm que usa o banco de dados do SQL Server não contém necessariamente uma instância local do banco de dados de configuração do AD FS. Portanto, eles podem fazer um pouco menos de exigências em recursos de hardware.  
   
-## <a name="BKMK_1"></a>Onde posicionar um servidor de Federação  
+## <a name="where-to-place-a-federation-server"></a><a name="BKMK_1"></a>Onde posicionar um servidor de Federação  
 Como prática recomendada de segurança, coloque AD FS servidores de Federação na frente de um firewall e conecte-os à sua rede corporativa para evitar a exposição da Internet. Isso é importante porque os servidores de Federação têm autorização total para conceder tokens de segurança. Portanto, eles devem ter a mesma proteção que um controlador de domínio. Se um servidor de Federação estiver comprometido, um usuário mal-intencionado terá a capacidade de emitir tokens de acesso completo para todos os aplicativos Web e para servidores de Federação protegidos pelo AD FS.  
   
 > [!NOTE]  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 434fd617-373a-405e-bae4-da324ea83efc
 title: Guia de Implantação do AD FS do Windows Server 2012 R2
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a3cada555fbf22a853e3aaf002c6413b6555fb8
-ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
+ms.openlocfilehash: b4cf161d9dfcbeeb467ccb0a83cc260c5299057e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376273"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855519"
 ---
 # <a name="configure-a-federation-server"></a>Configurar um servidor de federação
 
@@ -151,7 +150,7 @@ Você pode criar um novo farm de servidores de Federação usando uma conta do g
 4.  Na página **especificar farm** , forneça o nome do servidor de Federação primário em um farm que usa wid ou especifique o nome do host do banco de dados e o nome da instância do banco de dados de um farm de servidores de Federação existente que usa SQL Server.  
   
     > [!WARNING]  
-    > No Windows Server® 2012 R2, há uma solução alternativa para especificar a instância padrão do SQL Server. A solução alternativa é não usar a interface do usuário. Em vez disso, use as etapas em [para configurar o primeiro servidor de Federação em um novo farm de servidores de Federação por meio do Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).  
+    > No Windows Server&reg; 2012 R2, há uma solução alternativa para especificar a instância padrão do SQL Server. A solução alternativa é não usar a interface do usuário. Em vez disso, use as etapas em [para configurar o primeiro servidor de Federação em um novo farm de servidores de Federação por meio do Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).  
   
     > [!IMPORTANT]  
     > Se você deseja criar um farm do AD FS e usar o SQL Server para armazenar seus dados de configuração, pode usar o SQL Server 2008 e versões mais recentes, incluindo o SQL Server 2012.  
@@ -225,7 +224,7 @@ Depois de instalar o Serviços de Federação do Active Directory (AD FS) \(AD F
 
 -   [Adicionar um servidor de Federação a um farm de servidores de Federação existente](Configure-a-Federation-Server.md#BKMK_2)
 
-## <a name="BKMK_1"></a>Configurar o primeiro servidor de Federação em um novo farm de servidores de Federação
+## <a name="configure-the-first-federation-server-in-a-new-federation-server-farm"></a><a name="BKMK_1"></a>Configurar o primeiro servidor de Federação em um novo farm de servidores de Federação
 
 ### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-by-using-the-active-directory-federation-service-configuration-wizard"></a>Para configurar o primeiro servidor de Federação em um novo farm de servidores de Federação usando o assistente de configuração do Active Directory Serviço de Federação
 
@@ -271,7 +270,7 @@ Depois de instalar o Serviços de Federação do Active Directory (AD FS) \(AD F
 
 9. Na página **resultados** , examine os resultados e verifique se a configuração foi concluída com êxito e clique em **próximas etapas necessárias para concluir a implantação do serviço de Federação**. Para obter mais informações, consulte [próximas etapas para concluir a instalação do AD FS](https://go.microsoft.com/fwlink/p/?LinkId=286704). Clique em **Fechar** para sair do assistente.
 
-### <a name="BKMK_3"></a>Para configurar o primeiro servidor de Federação em um novo farm de servidores de Federação por meio do Windows PowerShell
+### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-via-windows-powershell"></a><a name="BKMK_3"></a>Para configurar o primeiro servidor de Federação em um novo farm de servidores de Federação por meio do Windows PowerShell
 Você pode criar um novo farm de servidores de Federação usando uma conta do gMSA nova ou existente ou uma conta de usuário de domínio existente.
 
 -   **Se você quiser criar um novo servidor de Federação usando uma nova conta do gMSA, faça o seguinte:**
@@ -330,7 +329,7 @@ Você pode criar um novo farm de servidores de Federação usando uma conta do g
         > [!IMPORTANT]
         > Se você quiser criar um farm de AD FS e usar SQL Server para armazenar seus dados de configuração, poderá usar SQL Server 2008 e versões mais recentes, incluindo SQL Server 2012 e SQL Server 2014.
 
-## <a name="BKMK_2"></a>Adicionar um servidor de Federação a um farm de servidores de Federação existente
+## <a name="add-a-federation-server-to-an-existing-federation-server-farm"></a><a name="BKMK_2"></a>Adicionar um servidor de Federação a um farm de servidores de Federação existente
 
 > [!IMPORTANT]
 > Verifique se você concluiu [a etapa 3: instalar o serviço de função de AD FS](../../ad-fs/deployment/Install-the-AD-FS-Role-Service.md), antes de iniciar qualquer um dos procedimentos nesta seção.
@@ -351,7 +350,7 @@ Você pode criar um novo farm de servidores de Federação usando uma conta do g
 4.  Na página **especificar farm** , forneça o nome do servidor de Federação primário em um farm que usa wid ou especifique o nome do host do banco de dados e o nome da instância do banco de dados de um farm de servidores de Federação existente que usa SQL Server.
 
     > [!WARNING]
-    > No Windows Server® 2012 R2, há uma solução alternativa para especificar a instância padrão do SQL Server. A solução alternativa é não usar a interface do usuário. Em vez disso, use as etapas em [para configurar o primeiro servidor de Federação em um novo farm de servidores de Federação por meio do Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).
+    > No Windows Server&reg; 2012 R2, há uma solução alternativa para especificar a instância padrão do SQL Server. A solução alternativa é não usar a interface do usuário. Em vez disso, use as etapas em [para configurar o primeiro servidor de Federação em um novo farm de servidores de Federação por meio do Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).
 
     > [!IMPORTANT]
     > Se você deseja criar um farm do AD FS e usar o SQL Server para armazenar seus dados de configuração, pode usar o SQL Server 2008 e versões mais recentes, incluindo o SQL Server 2012.

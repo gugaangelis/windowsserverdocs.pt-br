@@ -1,24 +1,20 @@
 ---
 title: Planilha de planejamento para migração de serviços do MultiPoint
 description: Fornece planilhas de planejamento para ajudá-lo a migrar para os serviços do MultiPoint no Windows Server 2016
-ms.custom: na
 ms.date: 07/29/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: d3d2ecca4062d28d210196d9191e08710eb731c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c0d5976e70bcf8009cd98e54e973dd6f585d7208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394633"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858899"
 ---
 # <a name="planning-worksheet-for-multipoint-services-migration"></a>Planilha de planejamento para migração de serviços do MultiPoint
 
@@ -44,7 +40,7 @@ Você pode encontrar as configurações do servidor na guia **início** do Geren
 
 Registre os nomes dos servidores e computadores gerenciados. Você pode encontrar essas informações na guia **página inicial** do MultiPoint Manager.
 
-| Computer | Nome do computador |
+| Computador | Nome do computador |
 |----------|---------------|
 | 1        |               |
 | 2        |               |
@@ -81,20 +77,20 @@ Copie os nomes de usuário para os administradores e os usuários do painel do M
 
 Administradores:
 
-- Nome do usuário:
-- Nome do usuário:
-- Nome do usuário:
-- Nome do usuário:
-- Nome do usuário:
-- Nome do usuário:
+- Nome de usuário:
+- Nome de usuário:
+- Nome de usuário:
+- Nome de usuário:
+- Nome de usuário:
+- Nome de usuário:
 
 Usuários do painel:
 
-- Nome do usuário:
-- Nome do usuário:
-- Nome do usuário:
-- Nome do usuário:
-- Nome do usuário:
+- Nome de usuário:
+- Nome de usuário:
+- Nome de usuário:
+- Nome de usuário:
+- Nome de usuário:
 
 ## <a name="vdi-template-and-virtual-desktops"></a>Modelo de VDI e áreas de trabalho virtuais
 

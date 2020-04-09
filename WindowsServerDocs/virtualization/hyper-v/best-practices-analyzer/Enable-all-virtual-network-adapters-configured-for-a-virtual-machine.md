@@ -2,20 +2,19 @@
 title: Habilitar todos os adaptadores de rede virtual configurados para uma máquina virtual
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: fcd350b7-4240-4359-aadd-93e7ac4d314e
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: bdca25be4af41d0f6ddfafe885f8c2b1301b71fb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 79971ff503afcc1a087aced579e30989233c2b4a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393651"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861959"
 ---
 # <a name="enable-all-virtual-network-adapters-configured-for-a-virtual-machine"></a>Habilitar todos os adaptadores de rede virtual configurados para uma máquina virtual
 
@@ -28,7 +27,7 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -40,7 +39,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 *As seguintes máquinas virtuais podem não ter conectividade de rede:*  
   
-\<list de nomes de máquina virtual >  
+\<lista de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   

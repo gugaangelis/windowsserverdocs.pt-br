@@ -1,30 +1,26 @@
 ---
 title: Gerenciar estações de usuário
 description: Saiba como gerenciar estações de usuário nos serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b418578d-3a4c-49b0-90db-8389b320b2f6
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 7f46d2a68fc6247bddc1251c32ac55544b6fbf52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b434002b5f542e3a9242290217fa66d418ee2f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405062"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853489"
 ---
 # <a name="manage-user-stations"></a>Gerenciar estações de usuário
 Esta seção aborda o gerenciamento das *estações* que compõem o sistema MultiPoint Services. O gerenciamento de um sistema de serviços do MultiPoint inclui o gerenciamento de componentes de hardware e software do MultiPoint Manager. Em um sistema de serviços do MultiPoint, uma área de trabalho é a interface do usuário do software apresentada no monitor para cada estação de usuário.  
   
 ## <a name="station-status"></a>Status da estação  
-Você pode exibir os seguintes tipos de status para cada área de trabalho na guia **Estações**. O status inclui:  
+Você pode exibir os seguintes tipos de status para cada área de trabalho na guia **estações** . o status inclui:  
   
 -   Usuários que estão conectados  
   

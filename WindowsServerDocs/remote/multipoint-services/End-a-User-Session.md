@@ -1,23 +1,19 @@
 ---
 title: Encerrar uma sessão de usuário
 description: Saiba quando e como encerrar manualmente uma sessão de usuário nos serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51b1076b-cce5-45a7-8cf2-ecc6aa390d14
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 73a04399c244adf1f9d8b6ec2c41dc0593e5ddd9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb4d76407082a2ac49b72e962c4e9a230b09e25f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395432"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859239"
 ---
 # <a name="end-a-user-session"></a>Encerrar uma sessão de usuário
 Você deve encerrar a sessão de um usuário quando precisar fazer logoff do usuário do sistema de serviços do MultiPoint para retornar a área de trabalho às suas configurações padrão. O usuário recebe um aviso de que a conexão está prestes a ser encerrada. Você deve encerrar a conexão de um usuário quando desejar:  

@@ -1,23 +1,19 @@
 ---
 title: Gerenciar a integridade do sistema no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbe05c0564e706ef0227e723a52bd10b2f774756
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8bca8f89e876da56dc6ede53a017e4d4331e39fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311074"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852709"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Gerenciar a integridade do sistema no Windows Server Essentials
 
@@ -28,7 +24,7 @@ ms.locfileid: "80311074"
 > [!NOTE]
 >  No Windows Server Essentials e no Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada, os alertas de integridade do servidor e dos computadores cliente na rede não são mais exibidos no Visualizador de alertas, mas podem ser exibidos na guia **relatórios de integridade** da página **inicial** .  
   
- O Windows Server Essentials monitora ativamente cada computador conectado ao servidor e alerta o administrador sobre problemas relacionados à integridade do sistema, incluindo atualizações críticas, proteção contra malware ausente, definições de vírus desatualizadas no cliente computadores e outros problemas importantes que exigem ação. Esses problemas são exibidos como alertas no Visualizador de alertas, que pode ser iniciado no painel do servidor ou no Launchpad do computador cliente no Windows Server Essentials, ou na guia **relatórios de integridade** no Windows Server Essentials. Por padrão, os alertas são atualizados a cada trinta minutos, mas você pode avaliar sua rede para alertas a qualquer momento, clicando em **Atualizar** no Visualizador de alertas ou no guia **Relatórios de integridade** .  
+ O Windows Server Essentials monitora ativamente cada computador conectado ao servidor e alerta o administrador sobre problemas relacionados à integridade do sistema, incluindo atualizações críticas, proteção contra malware ausente, definições de vírus desatualizadas em computadores cliente e outros problemas importantes que exigem ação. Esses problemas são exibidos como alertas no Visualizador de alertas, que pode ser iniciado no painel do servidor ou no Launchpad do computador cliente no Windows Server Essentials, ou na guia **relatórios de integridade** no Windows Server Essentials. Por padrão, os alertas são atualizados a cada trinta minutos, mas você pode avaliar sua rede para alertas a qualquer momento, clicando em **Atualizar** no Visualizador de alertas ou no guia **Relatórios de integridade** .  
   
  Os tópicos a seguir ajudarão você a entender, exibir e responder aos alertas no Visualizador de alerta e também fornece instruções para configurar seu servidor para receber notificações de alerta por email:  
   

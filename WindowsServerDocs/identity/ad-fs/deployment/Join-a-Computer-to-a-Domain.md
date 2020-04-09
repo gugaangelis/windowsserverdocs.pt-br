@@ -1,7 +1,6 @@
 ---
 ms.assetid: 10d6723e-c857-43da-9d2d-acb5641d3da8
 title: Adicionar um computador a um domínio
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9f6d657397cb07d081a229135e3e6c97c7191164
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 174f585f3e156fc8e068b9300fc90a20a67869cf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408348"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855349"
 ---
 # <a name="join-a-computer-to-a-domain"></a>Adicionar um computador a um domínio
 
@@ -22,7 +21,7 @@ Para Serviços de Federação do Active Directory (AD FS) \(AD FS\) funcionar, c
   
 Você não precisa ingressar um servidor Web em um domínio se o servidor Web estiver hospedando declarações\-apenas aplicativos cientes.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-join-a-computer-to-a-domain"></a>Para ingressar um computador em um domínio  
   
@@ -30,9 +29,9 @@ A associação a **Administradores**, ou equivalente, no computador local é o r
   
 2.  Navegue até **sistema e segurança**e clique em **sistema**.  
   
-3.  Em **configurações de grupo de trabalho, o domínio e o nome do computador**, clique em **alterar configurações**.  
+3.  Em **Nome do computador, domínio e configurações de grupo de trabalho**, clique em **Alterar configurações**.  
   
-4.  Na aba **Nome do Computador** , clique em **Alterar**.  
+4.  Na guia **Nome do Computador**, clique em **Alterar**.  
   
 5.  Em **membro de**, clique em **domínio**, digite o nome do domínio que você deseja que este computador ingresse e clique em **OK**.  
   

@@ -2,20 +2,19 @@
 title: O serviço gerenciamento de máquinas virtuais do Hyper-V deve estar em execução
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: f44d6887-6458-4438-9d93-574587e3f7d1
-author: KBDAzure
+author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: de1e2ed9fc24afe7d1ccc12bc11eb94a846f0664
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 50f101f9dad824e13fa5827175cc1c944a96a91b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364684"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859319"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-must-be-running"></a>O serviço gerenciamento de máquinas virtuais do Hyper-V deve estar em execução
 
@@ -27,8 +26,8 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
-|**Severity**|Erro|  
-|**Categorias**|Pré-requisitos|  
+|**Severity**|Error|  
+|**Categoria**|{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}|  
 
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
@@ -52,7 +51,7 @@ As máquinas virtuais que estão em execução continuarão a ser executadas. No
 Para instalar as ferramentas de gerenciamento do Hyper-V:  
 >   
 > - No Windows Server, abra Gerenciador do Servidor e use o assistente para adicionar funções e recursos. Para obter mais detalhes, consulte [instalar a função Hyper-V no Windows Server 2016](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md).  Você também pode usar o PowerShell para instalar as ferramentas (`Install-WindowsFeature -Name Hyper-V-Tools, Hyper-V-PowerShell`) 
-> - No Windows, na área de trabalho, comece digitando **programas**, clique em **programas e recursos** (painel de controle) > **Ativar ou desativar recursos do Windows** > **Hyper**-v  > **ferramentas de gerenciamento do Hyper-v**. Clique em **OK**.  
+> - No Windows, na área de trabalho, comece digitando **programas**, clique em **programas e recursos** (painel de controle) > **Ativar ou desativar recursos do Windows** > **Hyper-v** > **ferramentas de gerenciamento do Hyper-v**. Depois, clique em **OK**.  
   
 ### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>Para reconfigurar o serviço para iniciar automaticamente usando o aplicativo de área de trabalho de serviços  
   
@@ -82,7 +81,7 @@ Para instalar as ferramentas de gerenciamento do Hyper-V:
     sc start vmms  
     ```  
   
-Se o serviço já estiver configurado para iniciar automaticamente e você só precisar reiniciar o serviço, você poderá fazer isso no Gerenciador do Hyper-V ou no comando "SC Start VMMS" mostrado acima.  
+Se o serviço já estiver configurado para iniciar automaticamente e você só precisar reiniciar o serviço, você poderá fazer isso no Gerenciador do Hyper-V ou no comando sc Start VMMS mostrado acima.  
   
 #### <a name="to-restart-the-service-from-hyper-v-manager"></a>Para reiniciar o serviço do Gerenciador do Hyper-V  
   

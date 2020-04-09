@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 292bec5f73e2746103ffc41cde729ddc59728e0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407879"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857319"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>Cenário de delegação de identidade com AD FS
 
@@ -26,20 +26,20 @@ Com o modelo de delegação do Kerberos na plataforma Windows hoje, os recursos 
 
 O diagrama a seguir ilustra um cenário de delegação de identidade típico no qual um funcionário da Fabrikam acessa os recursos expostos em um aplicativo Contoso.com.
 
-![Identidade](media/ad-fs-identity-delegation/id1.png)
+![Identity](media/ad-fs-identity-delegation/id1.png)
 
 Os usuários fictícios que participam desse cenário são:
 
-- Frank Um funcionário da Fabrikam que deseja acessar os recursos da contoso.
-- Daniel Um desenvolvedor de aplicativos da Contoso que implementa as alterações necessárias no aplicativo.
-- Adam O administrador de ti da contoso.
+- Frank: um funcionário da Fabrikam que deseja acessar os recursos da contoso.
+- Daniel: um desenvolvedor de aplicativos da Contoso que implementa as alterações necessárias no aplicativo.
+- Adam: o administrador de ti da contoso.
 
 Os componentes envolvidos neste cenário são:
 
-- web1 Um aplicativo Web com links para recursos de back-end que exigem a identidade delegada do chamador inicial. Esse aplicativo é criado com ASP.NET.
+- web1: um aplicativo Web com links para recursos de back-end que exigem a identidade delegada do chamador inicial. Esse aplicativo é criado com ASP.NET.
 - Um serviço Web que acessa um SQL Server, que requer a identidade delegada do chamador inicial, junto com o chamador imediato. Esse serviço é criado com o WCF.
-- sts1: Um STS que está na função de provedor de declarações e emite declarações que são esperadas pelo aplicativo (web1). Ele estabeleceu confiança com Fabrikam.com e também com o aplicativo.
-- sts2: Um STS que está na função de provedor de identidade para Fabrikam.com e fornece um ponto de extremidade que o funcionário da Fabrikam usa para autenticar. Ele estabeleceu confiança com Contoso.com para que os funcionários da Fabrikam tenham permissão para acessar recursos no Contoso.com.
+- STS1: um STS que está na função do provedor de declarações e emite declarações que são esperadas pelo aplicativo (web1). Ele estabeleceu confiança com Fabrikam.com e também com o aplicativo.
+- sts2: um STS que está na função de provedor de identidade para Fabrikam.com e fornece um ponto de extremidade que o funcionário da Fabrikam usa para autenticar. Ele estabeleceu confiança com Contoso.com para que os funcionários da Fabrikam tenham permissão para acessar recursos no Contoso.com.
 
 >[!NOTE] 
 >O termo "token ActAs", que é usado com frequência neste cenário, refere-se a um token emitido por um STS e que contém a identidade do usuário. A propriedade actor contém a identidade do STS.
@@ -57,7 +57,7 @@ Conforme mostrado no diagrama anterior, o fluxo nesse cenário é:
 Há três opções disponíveis para o administrador do Fabrikam.com, Frank:
 
 
-1. Adquira e instale um produto STS, como Active Directory® serviços de Federação (AD FS).
+1. Adquira e instale um produto STS, como Active Directory&reg; serviços de Federação (AD FS).
 2. Assine um produto STS de nuvem, como o LiveID STS.
 3. Crie um STS personalizado usando o WIF.
 
@@ -182,5 +182,5 @@ using ( ServiceHost host = new ServiceHost( typeof( Service2 ), new Uri( "http:/
 }
 ```
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

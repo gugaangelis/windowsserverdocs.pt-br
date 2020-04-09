@@ -1,28 +1,24 @@
 ---
 title: rastreamento de atualização do logman
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c28256826e341ce1421984025546421258bb1db7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d619dc0c267351e842286044cc037e63c75740b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374272"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840509"
 ---
 # <a name="logman-update-trace"></a>rastreamento de atualização do logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Atualize as propriedades de um coletor de dados de rastreamento de eventos existente.  
 
@@ -30,7 +26,7 @@ Atualize as propriedades de um coletor de dados de rastreamento de eventos exist
 ```  
 logman update trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
 
 |                         Parâmetro                          |                                                                                                                                                                                                                                                                                                                                Descrição                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,15 +59,15 @@ logman update trace <[-n] <name>> [options]
 |                           -[-] UL                           |                                                                                                                                                                                                                                                                                                                 Execute a sessão de rastreamento de eventos no modo de usuário.                                                                                                                                                                                                                                                                                                                 |
 |                        -BS <value>                         |                                                                                                                                                                                                                                                                                                           Especifica o tamanho do buffer da sessão de rastreamento de eventos em KB.                                                                                                                                                                                                                                                                                                            |
 |                       -NB <min max>                        |                                                                                                                                                                                                                                                                                                           Especifica o número de buffers de sessão de rastreamento de eventos.                                                                                                                                                                                                                                                                                                            |
-| -Mode < globalsequence&#124;localsequence&#124;Pagedmemory > | Especifica o modo de agente de sessão de rastreamento de eventos.<br /><br />**Globalsequence** especifica que o rastreador de eventos adiciona um número de sequência a cada evento que ele recebe, independentemente de qual sessão de rastreamento recebeu o evento.<br /><br />**Localsequence** especifica que o rastreador de eventos adiciona números de sequência para eventos recebidos em uma sessão de rastreamento específica. Quando a opção **localsequence** é usada, números de sequência duplicados podem existir em todas as sessões, mas serão exclusivos em cada sessão de rastreamento.<br /><br />**Pagedmemory** especifica que o rastreador de eventos usa memória paginável em vez do pool de memória não paginável padrão para suas alocações de buffer internas. |
+| -Mode < globalsequence&#124;localsequence&#124;Pagedmemory > | Especifica o modo de agente de sessão de rastreamento de eventos.<p>**Globalsequence** especifica que o rastreador de eventos adiciona um número de sequência a cada evento que ele recebe, independentemente de qual sessão de rastreamento recebeu o evento.<p>**Localsequence** especifica que o rastreador de eventos adiciona números de sequência para eventos recebidos em uma sessão de rastreamento específica. Quando a opção **localsequence** é usada, números de sequência duplicados podem existir em todas as sessões, mas serão exclusivos em cada sessão de rastreamento.<p>**Pagedmemory** especifica que o rastreador de eventos usa memória paginável em vez do pool de memória não paginável padrão para suas alocações de buffer internas. |
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
-## <a name="BKMK_examples"></a>Disso  
-O comando a seguir atualiza o perf_log do coletor de dados existente, alterando o tamanho máximo do log para 10 MB, atualizando o formato do arquivo de log para CSV e acrescentando o controle de versão do arquivo no formato mmddhhmm.  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+O comando a seguir atualiza o coletor de dados existente perf_log, alterando o tamanho máximo do log para 10 MB, atualizando o formato do arquivo de log para CSV e acrescentando o controle de versão do arquivo no formato mmddhhmm.  
 ```  
 logman update perf_log -max 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
 [logman](logman.md)  
 [criar rastreamento de logman](logman-create-trace.md)  

@@ -1,72 +1,52 @@
 ---
 title: DFSUtil
-ms.custom: na
+description: Tópico de comandos do Windows para Dfsutil, que gerencia namespaces do DFS, servidores e clientes. os comandos Dfsutil usam a terminologia original do Sistema de Arquivos Distribuído, com a terminologia atualizada de namespaces do DFS fornecida como explicação para a maioria dos comandos.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef5093a4-0d24-4b21-9d04-59933ad98e2c
-robots: noindex,nofollow
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a06806b109bbd324213f935892bbbab415362df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 30415bc85fd8a4a4804946a3d4a168d6a7d1433a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377983"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845579"
 ---
 # <a name="dfsutil"></a>DFSUtil
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-O comando Dfsutil gerencia namespaces, servidores e clientes do DFS. os comandos Dfsutil usam a terminologia original do Sistema de Arquivos Distribuído, com a terminologia atualizada de namespaces do DFS fornecida como explicação para a maioria dos comandos.
+O comando Dfsutil gerencia namespaces, servidores e clientes do DFS. Na maioria das vezes, você pode usar os cmdlets do PowerShell de namespaces do DFS mais recentes, embora haja alguns comandos que ainda exigem DFSUtil.
 
-para obter exemplos de como esse comando pode ser usado, consulte 
+## <a name="parameters-available-in-powershell"></a>Parâmetros disponíveis no PowerShell
 
-## <a name="syntax"></a>Sintaxe
+Você pode usar os seguintes parâmetros do PowerShell:
 
-```
-command </parameter> </param2>
-```
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| root | Exibe, cria, remove, importa e exporta raízes de namespace. |
+| link | Exibe, cria, remove ou move pastas (links). |
+| target | Exibe, cria, remove o destino da pasta ou o servidor de namespace. |
+| {1&gt;propriedade&lt;1} | Exibe ou modifica um destino de pasta ou servidor de namespace. |
+| server | Exibe ou modifica a configuração do namespace. |
+| domain | Exibe todos os namespaces baseados em domínio em um domínio. |
 
-### <a name="parameters"></a>Parâmetros
+## <a name="parameters-only-available-in-dfsutil"></a>Parâmetros disponíveis somente em Dfsutil
 
-|Parâmetro|Descrição|
-|-------|--------|
-|[DFSUtil root](dfsutil-root.md)|Exibe, cria, remove, importa e exporta raízes de namespace.|
-|[DFSUtil link](dfsutil-link.md)|Exibe, cria, remove ou move pastas \(links\).|
-|[Destino Dfsutil](dfsutil-target.md)|Exibe, cria, remove o destino da pasta ou o servidor de namespace.|
-|[Propriedade Dfsutil](dfsutil-property.md)|Exibe ou modifica um destino de pasta ou servidor de namespace.|
-|[Cliente Dfsutil](dfsutil-client.md)|Exibe ou modifica informações do cliente ou chaves do registro.|
-|[DFSUtil Server](dfsutil-server.md)|Exibe ou modifica a configuração do namespace.|
-|[DFSUtil diag](dfsutil-diag.md)|Executar diagnóstico ou exibir dfsdirs\/dfspath.|
-|[DFSUtil Domain](dfsutil-domain.md)|Exibe todos os namespaces baseados em\-de domínio em um domínio.|
-|[Cache Dfsutil](dfsutil-cache.md)|Exibe ou libera o cache do cliente.|
-|[DFSUtil oldcli](dfsutil-oldcli.md)|Use o comando Dfsutil \/oldcli para usar a sintaxe Dfsutil original.|
+Você pode usar os parâmetros a seguir somente de DFSUtil.
 
-## <a name="remarks-optional-section"></a>Comentários <optional section>
-Se você especificar um objeto \(como um servidor de namespace\) no final de um comando, a maioria dos comandos exibirá informações sobre o objeto sem a necessidade de parâmetros ou comandos adicionais. Por exemplo, ao usar o comando Dfsutil root, você pode acrescentar uma raiz de namespace ao comando para exibir informações sobre a raiz.
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| Cliente | Exibe ou modifica informações do cliente ou chaves do registro. |
+| diag | Executar diagnóstico ou exibir dfsdirs/dfspath. |
+| cache | Exibe ou libera o cache do cliente. |
 
-## <a name="BKMK_Examples"></a>Disso
-&lt;aqui é onde você coloca uma descrição detalhada do seu exemplo.&gt;
+Para obter mais informações sobre cada um desses comandos, abra um prompt de comando em um servidor com as ferramentas de gerenciamento de namespaces do DFS instaladas e digite `dfsutil client /?`, `dfsutil diag /?`ou `dfsutil cache /?`.
 
-```
-This /is /the /example /of /calling /command /with /parameters
-```
+## <a name="additional-references"></a>Referências adicionais
 
-&lt;aqui é onde você coloca uma descrição detalhada de outro exemplo.&gt;
-
-```
-This /is /a:different /example
-```
-
-## <a name="additional-references"></a>referências adicionais
-
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-
-
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

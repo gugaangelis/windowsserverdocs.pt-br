@@ -1,25 +1,21 @@
 ---
 title: Criar uma conta de usuário padrão
-ms.custom: na
 description: Criar uma conta de usuário básica para serviços do MultiPoint
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1e113666-e45f-48b6-aad8-42c361c9046d
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc1307855b847b3d27f655e953c718e4049f8332
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d92b5b21c5a10e808e52bf5081ebc1ed7a2b9a3d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395483"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859779"
 ---
 # <a name="create-a-standard-user-account"></a>Criar uma conta de usuário padrão
-Crie *contas de usuário padrão* para os usuários que acessarem regularmente estações, mas que não gerenciarão seu sistema MultiPoint Services. Os usuários com contas de usuário padrão podem executar a maioria dos aplicativos e salvar arquivos, mas não podem executar o Gerenciador do MultiPoint. Para ver quem tem acesso de usuário padrão, no Gerenciador do MultiPoint, clique na guia **usuários** . Contas de usuário padrão são exibidas na coluna Tipo de conta como **Padrão**.  
+Crie *contas de usuário padrão* para os usuários que acessarem regularmente estações, mas que não gerenciarão seu sistema MultiPoint Services. Os usuários com contas de usuário padrão podem executar a maioria dos aplicativos e salvar arquivos, mas não podem executar o Gerenciador do MultiPoint. Para ver quem tem acesso de usuário padrão, no Gerenciador do MultiPoint, clique na guia **usuários** . as contas de usuário padrão são exibidas na coluna **tipo de conta** como **padrão**.  
   
 Se seus usuários do MultiPoint Services armazenarem documentos particulares no Windows, cada usuário deverá fazer logon no sistema MultiPoint Services usando um nome de usuário exclusivo e uma senha.  
   
@@ -42,4 +38,4 @@ Se seus usuários do MultiPoint Services armazenarem documentos particulares no 
   
 7.  No nível da página de acesso, selecione **Usuário padrão** e, em seguida, clique em **Avançar**.  
   
-8.  Clique em **Finalizar**.  
+8.  Clique em **Concluir**.  

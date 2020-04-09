@@ -2,22 +2,18 @@
 title: Etapa 2 preparar servidores de cluster
 description: Este tópico faz parte do guia implantar o acesso remoto em um cluster no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 74aac416a5aa69a0cd935d58e3ecb931e4b5fd02
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e53557f1fb2715f1d0318adc12aebb8f84423519
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308332"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861439"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>Etapa 2 preparar servidores de cluster
 
@@ -27,7 +23,7 @@ Antes de configurar uma implantação de cluster, você prepara servidores adici
   
 |{1&gt;Tarefa&lt;1}|Descrição|  
 |----|--------|  
-|[2,1 configurar a infraestrutura de acesso remoto](#BKMK_config)|Em cada servidor que você deseja adicionar ao cluster, configure a topologia do servidor, o endereçamento IP, o roteamento e o encaminhamento. Se você configurar um cluster com balanceamento de carga de máquinas virtuais, deverá configurar as máquinas virtuais para usar a falsificação de endereço MAC.<br /><br />Além disso, ingresse cada servidor no mesmo domínio e conecte todos os servidores à mesma sub-rede.|  
+|[2,1 configurar a infraestrutura de acesso remoto](#BKMK_config)|Em cada servidor que você deseja adicionar ao cluster, configure a topologia do servidor, o endereçamento IP, o roteamento e o encaminhamento. Se você configurar um cluster com balanceamento de carga de máquinas virtuais, deverá configurar as máquinas virtuais para usar a falsificação de endereço MAC.<p>Além disso, ingresse cada servidor no mesmo domínio e conecte todos os servidores à mesma sub-rede.|  
 |[2,2 instalar a função de acesso remoto](#BKMK_Install)|Em cada servidor adicional que você deseja adicionar ao cluster, instale a função de acesso remoto|  
 |[2,3 instalar o NLB](#BKMK_NLB)|No servidor de acesso remoto implantado e em cada servidor adicional que você deseja adicionar ao cluster, instale o recurso NLB. Observe que essa etapa não é necessária ao usar um Load Balancer externo.|  
   

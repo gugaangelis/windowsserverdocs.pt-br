@@ -1,23 +1,19 @@
 ---
 title: Personalizar pastas compartilhadas
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 861107035408fc39d0dc5e4d94a4d82d8dfba74e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311912"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818069"
 ---
 # <a name="customize-shared-folders"></a>Personalizar pastas compartilhadas
 
@@ -57,7 +53,7 @@ Por padrão, as pastas do servidor são criadas na maior partição de dados no 
   
 1.  crie um arquivo PostIC.cmd para executar tarefas após a configuração inicial, como detalhado na seção [Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md).  
   
-2.  Usando o Bloco de Notas, crie um arquivo chamado **customizefolders.ps1** na pasta C:\Windows\Setup\Scripts e cole os seguintes comandos do Windows PowerShell® no arquivo (desmarque as linhas adequadas dependendo do comportamento desejado).  
+2.  Usando o bloco de notas, crie um arquivo chamado **customizefolders. ps1** na pasta C:\Windows\Setup\Scripts e cole os seguintes comandos do Windows PowerShell&reg; no arquivo (desmarque as linhas apropriadas dependendo do comportamento desejado).  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  

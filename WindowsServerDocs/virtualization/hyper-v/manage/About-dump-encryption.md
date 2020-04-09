@@ -8,12 +8,12 @@ author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: 2232f62090e171060f25e4c2513a217e2ab98eaa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7df8de5a828b68a341191eaa1a400f80dd9127b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950545"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852899"
 ---
 # <a name="about-dump-encryption"></a>Sobre a criptografia de despejo
 A criptografia de despejo pode ser usada para criptografar despejos de memória e despejos dinâmicos gerados para um sistema. Os despejos são criptografados usando uma chave de criptografia simétrica que é gerada para cada despejo. Em seguida, essa chave é criptografada usando a chave pública especificada pelo administrador confiável do host (protetor de chave de criptografia de despejo de memória). Isso garante que apenas alguém que tenha a chave privada correspondente possa descriptografar e, portanto, acessar o conteúdo do despejo. Esse recurso é utilizado em uma malha protegida.
@@ -23,11 +23,11 @@ Observação: se você configurar a criptografia de despejo, também desabilite 
 ### <a name="manual-configuration"></a>Configuração manual
 Para ativar a criptografia de despejo usando o registro, configure os seguintes valores de registro em `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
-| Nome do valor | Digite | Valor |
+| Nome do valor | Tipo | {1&gt;Valor&lt;1} |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | 1 para habilitar a criptografia de despejo, 0 para desabilitar a criptografia de despejo |
 | EncryptionCertificates\Certificate.1::P ublicKey | Binário | Chave pública (RSA, 2048 bits) que deve ser usada para criptografar despejos. Isso deve ser formatado como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
-| EncryptionCertificates\Certificate.1:: impressão digital | Cadeia de caracteres | Impressão digital do certificado para permitir a pesquisa automática de chave privada no repositório de certificados local ao descriptografar um despejo de memória. |
+| EncryptionCertificates\Certificate.1:: impressão digital | String | Impressão digital do certificado para permitir a pesquisa automática de chave privada no repositório de certificados local ao descriptografar um despejo de memória. |
 
 
 ### <a name="configuration-using-script"></a>Configuração usando script

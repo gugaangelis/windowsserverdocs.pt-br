@@ -1,105 +1,100 @@
 ---
 title: Fontes de dados de informações do sistema
-description: Ao escrever uma nova funcionalidade no sistema Insights, você pode especificar as fontes de dados novo ou existente para coletar localmente e analisar. Este tópico descreve as fontes de dados que você pode escolher ao registrar uma nova funcionalidade.
-ms.custom: na
+description: Ao escrever um novo recurso no System insights, você pode especificar fontes de dados novas ou existentes para coletar localmente e analisar. Este tópico descreve as fontes de dados que você pode escolher ao registrar um novo recurso.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 9b46db90787d24a173ffa472ec1ecb8eaffe054b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 920c5fa5919fd2c35edb99cc4e724745715091c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845407"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858419"
 ---
 # <a name="system-insights-data-sources"></a>Fontes de dados de informações do sistema
 
 >Aplica-se a: Windows Server 2019
 
-Informações do sistema apresenta a funcionalidade de coleta de dados extensível. Ao escrever uma nova funcionalidade, você pode especificar as fontes de dados novo ou existente para coletar localmente e analisar. Este tópico descreve as fontes de dados que você pode escolher ao registrar uma nova funcionalidade.
+As informações do sistema introduzem a funcionalidade de coleta de dados extensível. Ao escrever um novo recurso, você pode especificar fontes de dados novas ou existentes para coletar localmente e analisar. Este tópico descreve as fontes de dados que você pode escolher ao registrar um novo recurso.
 
 ## <a name="data-sources"></a>Fontes de dados
-Ao escrever uma nova funcionalidade, você deve identificar as fontes de dados específico a ser obtida para cada recurso. As fontes de dados que você especificar serão coletadas e mantidas diretamente em seu computador, e você pode escolher entre três tipos de fontes de dados:
+Ao escrever um novo recurso, você deve identificar as fontes de dados específicas a serem coletadas para cada recurso. As fontes de dados que você especificar serão coletadas e mantidas diretamente em seu computador, e você poderá escolher entre três tipos de fontes de dados:
 
 - **Contadores de desempenho**: 
-    - Especifique o caminho do contador, o nome e a instâncias e sistema Insights coleta os dados relevantes relatados por esses contadores de desempenho. 
+    - Especifique o caminho, o nome e as instâncias do contador, e o System insights coleta os dados relevantes relatados por esses contadores de desempenho. 
 
 - **Eventos do sistema**:
-    - Especifique a ID de evento e o nome do canal e Insights de sistema registrará quantas vezes que o evento ocorreu.
+    - Especifique o nome do canal e a ID do evento, e o System insights registrará quantas vezes esse evento ocorreu.
 
-- **Série Well-Known**
-    - Sistema Insights coleta algumas informações básicas em seu computador para um bem definido, alguns recursos. Essas séries são usadas para os recursos padrão, mas eles também podem ser usados por qualquer recurso personalizado. Eles coletam as seguintes informações:
+- **Série conhecida**
+    - O System insights coleta algumas informações básicas em seu computador para alguns recursos bem definidos. Essas séries são usadas para os recursos padrão, mas também podem ser usadas por qualquer recurso personalizado. Eles coletam as seguintes informações:
 
         - **Disco**: 
-            - *Propriedades*: Guid
-            - *Dados*: Tamanho
+            - *Propriedades*: GUID
+            - *Dados*: tamanho
         - **Volume**:
             - *Propriedades*: UniqueId, DriveLetter, FileSystemLabel, Size
-            - *Dados*: Tamanho usado
+            - *Dados*: tamanho usado
         - **Adaptador de rede**:
             - *Propriedades*: InterfaceGuid, InterfaceDescription, Speed
-            - *Dados*: Bytes recebidos/s, Bytes enviados/s, Total de Bytes/s
+            - *Dados*: bytes recebidos/s, bytes enviados/s, total de bytes/s
         - **CPU**: 
             - *Propriedades*:-
-            - *Dados*: % tempo do processador
+            - *Dados*:% de tempo do processador
 
-    - Especificam uma série bem conhecida e Insights de sistema retorna os dados coletados por essa série. 
+    - Especifique uma série conhecida e as informações do sistema retornarão os dados coletados por essa série. 
 
 
-## <a name="retention-timelines-and-collection-intervals"></a>Intervalos de coleta e linhas do tempo de retenção
-As fontes de dados acima têm intervalos de coleta e linhas do tempo de retenção diferente. A tabela a seguir revela como longo e com que frequência cada fonte de dados é coletado:
+## <a name="retention-timelines-and-collection-intervals"></a>Linhas do tempo de retenção e intervalos de coleta
+As fontes de dados acima têm linhas de tempo de retenção e intervalos de coleta diferentes. A tabela a seguir revela quanto tempo e com que frequência cada fonte de dados é coletada:
 
 | Fonte de dados | Linha do tempo de retenção | Intervalo de coleta |
 | --------------- | --------------- | ----------- |
 | Contadores de desempenho | 3 meses | 15 minutos |
 | Eventos do sistema | 3 meses | 15 minutos |
-| Série Well-Known | 1 ano | 1 hora |
+| Série conhecida | 1 ano | 1 hora |
 
 
 ### <a name="aggregation-types"></a>Tipos de agregação
-Como cada série registram apenas um ponto de dados para cada intervalo de coleta, cada série tem uma conta do tipo de agregação-lo. A tabela a seguir descreve a fonte de dados e o tipo de agregação correspondente:
+Como cada série registra apenas um ponto de dados para cada intervalo de coleta, cada série tem um tipo de agregação associada-lo. A tabela a seguir descreve a fonte de dados e o tipo de agregação correspondente:
 
 >[!NOTE]
->Para contadores de desempenho, você pode escolher entre alguns tipos de agregação diferente.
+>Para contadores de desempenho, você pode escolher entre alguns tipos diferentes de agregação.
 
 | Fonte de dados | Tipos de agregação |
 | --------------- | --------------- |
-| Contadores de desempenho | Sum, max, min a média, |
-| Eventos do sistema | Contagem |
-| Série de disco bem conhecido | Último (valor mais recente no intervalo de coleta) |
-| Série bem conhecido de volume | Último (valor mais recente no intervalo de coleta) |
-| Série bem conhecido de CPU | Média |
-| Série bem conhecido de rede | Média |
+| Contadores de desempenho | Sum, Average, Max, min |
+| Eventos do sistema | {1&gt;{2&gt;Contagem&lt;2}&lt;1} |
+| Série bem conhecida de disco | Último (valor mais recente no intervalo de coleta) |
+| Série bem conhecida de volume | Último (valor mais recente no intervalo de coleta) |
+| Série bem conhecida de CPU | Média |
+| Série bem conhecida de rede | Média |
 
-## <a name="data-footprint"></a>Volume de dados
+## <a name="data-footprint"></a>Superfície de dados
 
-Sistema Insights coleta todos os dados localmente em sua unidade C (c). Em geral, o volume de dados do sistema Insights é pequeno. Ele depende diretamente o tipo e o número de fontes de dados que especifica cada funcionalidade e a tabela a seguir fornece detalhes sobre o uso do armazenamento para cada tipo de dados:
+O System insights coleta todos os dados localmente em sua unidade C (C:). Em geral, o volume de dados do System insights é modesto. Depende diretamente do tipo e do número de fontes de dados que cada funcionalidade especifica, e a tabela abaixo detalha o uso de armazenamento para cada tipo de dados:
 
-| Fonte de dados | Espaço máximo |
+| Fonte de dados | Superfície máxima |
 | --------------- | --------------- |
 | Contadores de desempenho | 240 KB |
 | Eventos do sistema | 200 KB |
-| Série de disco bem conhecido | 200 KB por disco |
-| Série bem conhecido de volume | 300 KB por volume |
-| Série bem conhecido de CPU | 100 KB |
-| Série bem conhecido de rede | 300 KB por adaptador de rede |
+| Série bem conhecida de disco | 200 KB por disco |
+| Série bem conhecida de volume | 300 KB por volume |
+| Série bem conhecida de CPU | 100 KB |
+| Série bem conhecida de rede | 300 KB por adaptador de rede |
 
 >[!NOTE]
->**Os recursos de previsão por padrão, o volume máximo deve ser menor que 10 MB para a maioria dos computadores de maneira autônoma.** 
+>**Para os recursos de previsão padrão, a superfície máxima deve ser inferior a 10 MB para a maioria das máquinas autônomas.** 
 
 ## <a name="see-also"></a>Consulte também
-Para saber mais sobre o sistema Insights, use os seguintes recursos:
+Para saber mais sobre o System insights, use os seguintes recursos:
 
-- [Visão geral de informações do sistema](overview.md)
-- [Recursos de compreensão](understanding-capabilities.md)
-- [Gerenciamento de recursos](managing-capabilities.md)
-- [Adicionando e desenvolvimento de recursos](adding-and-developing-capabilities.md)
-- [Perguntas Frequentes de Insights de sistema](faq.md)
+- [Visão geral do System insights](overview.md)
+- [Noções básicas dos recursos](understanding-capabilities.md)
+- [Gerenciar recursos](managing-capabilities.md)
+- [Adicionar e desenvolver recursos](adding-and-developing-capabilities.md)
+- [Perguntas frequentes do System insights](faq.md)

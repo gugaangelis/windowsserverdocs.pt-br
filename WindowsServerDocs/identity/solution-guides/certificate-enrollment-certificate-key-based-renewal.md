@@ -1,18 +1,17 @@
 ---
 title: Configurando Serviço Web de Registro de Certificado para renovação baseada em chave de certificado em uma porta personalizada
-description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163105"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856339"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configurando Serviço Web de Registro de Certificado para renovação baseada em chave de certificado em uma porta personalizada
 
@@ -21,7 +20,7 @@ Engenheiro de suporte do ankit Tyagi com o grupo do Windows
 
 ## <a name="summary"></a>Resumo
 
-Este artigo fornece instruções passo a passo para implementar o Serviço Web de Política de Registro de Certificado (CEP) e o Serviço Web de Registro de Certificado (CES) em uma porta personalizada diferente de 443 para a renovação baseada em chave de certificado para tirar proveito do recurso de renovação de CEP e CES.
+Este artigo fornece instruções passo a passo para implementar o Serviço Web de Política de Registro de Certificado (CEP) e o Serviço Web de Registro de Certificado (CES) em uma porta personalizada diferente de 443 para a renovação baseada em chave de certificado para aproveitar o recurso de renovação automática do CEP e do CES.
 
 Este artigo também explica como o CEP e o CES funcionam e fornece diretrizes de instalação.
 
@@ -231,7 +230,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
    ```
    
-   ![ADSI Edit](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
+   ![Editor ADSI](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>Configurar o computador cliente
 
@@ -287,7 +286,7 @@ Execute o seguinte comando:
 certreq -machine -q -enroll -cert <thumbprint> renew
 ```
 
-![.](media/certificate-enrollment-certificate-key-based-renewal-14.png)
+![comando](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
 ### <a name="method-2"></a>Método 2
 
@@ -297,7 +296,7 @@ Por exemplo, o modelo de certificado tem uma configuração de validade de 2 dia
 
 Portanto, se você adiantar o tempo até 8:10 P.M. no dia 19, uma vez que nossa janela de renovação foi definida como 8 horas no modelo, executar certutil-Pulse (para disparar o mecanismo da AE) registra o certificado para você.
 
-![.](media/certificate-enrollment-certificate-key-based-renewal-15.png)
+![comando](media/certificate-enrollment-certificate-key-based-renewal-15.png)
  
 Após a conclusão do teste, reverta a configuração de hora para o valor original e reinicie o computador cliente.
 

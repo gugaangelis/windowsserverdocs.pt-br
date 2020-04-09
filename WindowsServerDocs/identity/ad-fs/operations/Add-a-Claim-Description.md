@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7d230527-f4fe-4572-8838-0b354ee0b06b
 title: Adicionar uma descrição da declaração
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ff50ac8d41a5bbde282b1d5b93c85610f841b5ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c5293dc6070c9483054ce1dd827a20ec377573b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407780"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859709"
 ---
 # <a name="add-a-claim-description"></a>Adicionar uma descrição da declaração
 
@@ -25,14 +24,14 @@ Em uma organização de parceiro de recurso, os administradores criam declaraç�
 
 Você pode usar o procedimento a seguir para adicionar uma declaração.
 
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).
 
 ## <a name="to-add-a-claim-description"></a>Para adicionar uma descrição de declaração
 
 1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**. 
 
 2. Expanda **serviço** e clique com o botão direito do mouse em **Adicionar Descrição da declaração**.
-   ![Adicionar Descrição da declaração](media/Add-a-Claim-Description/claimdesc1.png)
+   ![adicionar descrição de declaração](media/Add-a-Claim-Description/claimdesc1.png)
 
 3. Na caixa de diálogo Adicionar uma descrição de declaração, em **nome de exibição**, digite um nome exclusivo que identifique o grupo ou a função dessa declaração.
 

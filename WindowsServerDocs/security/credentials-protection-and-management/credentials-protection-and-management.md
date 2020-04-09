@@ -1,28 +1,24 @@
 ---
 title: Proteção e gerenciamento de credenciais
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 31f0f89099a71f8ea6abcf0064113d6af9608c5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403797"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857059"
 ---
 # <a name="credentials-protection-and-management"></a>Proteção e gerenciamento de credenciais
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico para o profissional de ti discute os recursos e os métodos introduzidos no Windows Server 2012 R2 e Windows 8.1 para proteção de credenciais e controles de autenticação de domínio para reduzir o roubo de credenciais.
 
@@ -60,9 +56,9 @@ As políticas de Active Directory baseadas em floresta são introduzidas e podem
 
 A nova classe de objeto Active Directory, política de autenticação, permite aplicar a configuração de autenticação a classes de conta em domínios com um nível funcional de domínio do Windows Server 2012 R2. As políticas de autenticação são impostas durante o compartilhamento de Kerberos AS ou TGS. As classes da conta do Active Directory são:
 
--   User
+-   Usuário
 
--   Computer
+-   Computador
 
 -   Conta de Serviço Gerenciado
 

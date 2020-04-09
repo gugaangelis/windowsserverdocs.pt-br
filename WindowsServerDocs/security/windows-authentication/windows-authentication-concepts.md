@@ -1,28 +1,24 @@
 ---
 title: Conceitos de autenticação do Windows
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 29d1db15-cae0-4e3d-9d8e-241ac206bb8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 46a0f6c4c08146f1d8fcf9de45446b974e48ecac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4051bfea26d5c96d02132b50373f56b7b17ce5fb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402334"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857469"
 ---
 # <a name="windows-authentication-concepts"></a>Conceitos de autenticação do Windows
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico de visão geral de referência descreve os conceitos nos quais a autenticação do Windows é baseada.
 
@@ -34,7 +30,7 @@ O armazenamento das chaves criptográficas em um local central seguro torna o pr
 
 As técnicas de autenticação variam de um logon simples para um sistema operacional ou de uma entrada a um serviço ou aplicativo, que identifica os usuários com base em algo que apenas o usuário sabe, como uma senha, para mecanismos de segurança mais poderosos que usam algo que o usuário has'such como tokens, certificados de chave pública, imagens ou atributos biológicos. Em um ambiente de negócios, os usuários podem acessar vários aplicativos em muitos tipos de servidores em um único local ou em vários locais. Por esses motivos, a autenticação deve dar suporte a ambientes de outras plataformas e de outros sistemas operacionais Windows.
 
-## <a name="authentication-and-authorization-a-travel-analogy"></a>Autenticação e autorização: Uma analogia de viagem
+## <a name="authentication-and-authorization-a-travel-analogy"></a>Autenticação e autorização: uma analogia de viagem
 Uma analogia de viagem pode ajudar a explicar como funciona a autenticação. Algumas tarefas preparatórias geralmente são necessárias para iniciar a jornada. O viagem deve provar sua identidade verdadeira para suas autoridades de host. Essa prova pode estar na forma de prova de cidadania, local de nascimento, comprovante pessoal, fotografias ou o que for exigido pela lei do país do host. A identidade do viagem é validada pela emissão de um passaporte, que é análoga a uma conta de sistema emitida e administrada por uma organização – a entidade de segurança. O Passport e o destino pretendido são baseados em um conjunto de regras e regulamentos emitidos pela autoridade governamental.
 
 **A jornada**
@@ -67,7 +63,7 @@ Uma conta é um meio de identificar um solicitante – o usuário ou serviço hu
 
 As contas internas e os grupos de segurança, dos quais são membros, são definidos em cada versão do Windows. Usando grupos de segurança, você pode atribuir as mesmas permissões de segurança a muitos usuários que foram autenticados com êxito, o que simplifica a administração do acesso. As regras para a emissão de passaportes podem exigir que o viagem seja atribuído a determinados grupos, como Business ou Tourist ou governo. Esse processo garante permissões de segurança consistentes em todos os membros de um grupo. O uso de grupos de segurança para atribuir permissões significa que o controle de acesso dos recursos permanece constante e fácil de gerenciar e auditar. Ao adicionar e remover usuários que exigem acesso dos grupos de segurança apropriados, conforme necessário, você pode minimizar a frequência de alterações nas ACLs (listas de controle de acesso).
 
-Contas de serviço gerenciado autônomo e contas virtuais foram introduzidas no Windows Server 2008 R2 e no Windows 7 para fornecer os aplicativos necessários, como o Microsoft Exchange Server e o Serviços de Informações da Internet (IIS), com o isolamento de seu próprio domínio , ao mesmo tempo que elimina a necessidade de um administrador administrar manualmente o SPN (nome da entidade de serviço) e as credenciais dessas contas. As contas de serviço gerenciado de grupo foram introduzidas no Windows Server 2012 e fornecem a mesma funcionalidade no domínio, mas também estende essa funcionalidade em vários servidores. Ao se conectarem a um serviço hospedado em um farm de servidores, como o Balanceamento de Carga de Rede, os protocolos de autenticação que oferecem suporte para autenticação mútua exigem que todas as instâncias dos serviços usem a mesma entidade de segurança.
+As contas de serviço gerenciado autônomo e as contas virtuais foram introduzidas no Windows Server 2008 R2 e no Windows 7 para fornecer os aplicativos necessários, como o Microsoft Exchange Server e o Serviços de Informações da Internet (IIS), com o isolamento de suas próprias contas de domínio, ao mesmo tempo que elimina a necessidade de um administrador administrar manualmente o SPN (nome da entidade de serviço) e as credenciais dessas contas. As contas de serviço gerenciado de grupo foram introduzidas no Windows Server 2012 e fornecem a mesma funcionalidade no domínio, mas também estende essa funcionalidade em vários servidores. Ao se conectarem a um serviço hospedado em um farm de servidores, como o Balanceamento de Carga de Rede, os protocolos de autenticação que oferecem suporte para autenticação mútua exigem que todas as instâncias dos serviços usem a mesma entidade de segurança.
 
 Para obter mais informações sobre contas, consulte:
 
@@ -84,7 +80,7 @@ Para obter mais informações sobre contas, consulte:
 -   [Identidades especiais](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
 
 ## <a name="delegated-authentication"></a>Autenticação delegada
-Para usar a analogia de viagem, os países podem emitir o mesmo acesso a todos os membros de uma delegação governamental oficial, desde que os delegados sejam bem conhecidos. Essa delegação permite que um membro atue na autoridade de outro membro. No Windows, a autenticação delegada ocorre quando um serviço de rede aceita uma solicitação de autenticação de um usuário e assume a identidade desse usuário para iniciar uma nova conexão com um segundo serviço de rede. Para dar suporte à autenticação delegada, você deve estabelecer servidores front-end ou de primeira camada, como servidores Web, que são responsáveis por manipular solicitações de autenticação de cliente e servidores de back-end ou de n camadas, como bancos de dados grandes, que são responsáveis por armazenando informações. Você pode delegar o direito de configurar a autenticação delegada aos usuários em sua organização para reduzir a carga administrativa em seus administradores.
+Para usar a analogia de viagem, os países podem emitir o mesmo acesso a todos os membros de uma delegação governamental oficial, desde que os delegados sejam bem conhecidos. Essa delegação permite que um membro atue na autoridade de outro membro. No Windows, a autenticação delegada ocorre quando um serviço de rede aceita uma solicitação de autenticação de um usuário e assume a identidade desse usuário para iniciar uma nova conexão com um segundo serviço de rede. Para dar suporte à autenticação delegada, você deve estabelecer servidores front-end ou de primeira camada, como servidores Web, que são responsáveis por manipular solicitações de autenticação de cliente e servidores de back-end ou de n camadas, como bancos de dados grandes, que são responsáveis por armazenar informações. Você pode delegar o direito de configurar a autenticação delegada aos usuários em sua organização para reduzir a carga administrativa em seus administradores.
 
 Ao estabelecer um serviço ou computador como confiável para delegação, você permite que esse serviço ou computador conclua a autenticação delegada, receba um tíquete para o usuário que está fazendo a solicitação e, em seguida, acesse as informações para esse usuário. Esse modelo restringe o acesso a dados em servidores back-end apenas para os usuários ou serviços que apresentam credenciais com os tokens de controle de acesso corretos. Além disso, ele permite a auditoria de acesso desses recursos de back-end. Ao exigir que todos os dados sejam acessados por meio de credenciais que são delegadas ao servidor para uso em nome do cliente, você garante que o servidor não possa ser comprometido e que você possa obter acesso a informações confidenciais armazenadas em outros servidores. A autenticação delegada é útil para aplicativos multicamadas que são projetados para usar recursos de logon único em vários computadores.
 

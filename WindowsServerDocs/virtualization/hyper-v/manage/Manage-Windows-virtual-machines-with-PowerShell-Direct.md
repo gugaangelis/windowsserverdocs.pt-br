@@ -2,21 +2,19 @@
 title: Gerenciar máquinas virtuais do Windows com o PowerShell Direct
 description: Fornece instruções sobre como usar o PowerShell Direct para gerenciar máquinas virtuais sem depender de uma rede ou conexão remota a elas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f42e221b073cf199117f85ea96beef4997bbbbc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4a051de2d8f62c38ae0c44b1a62d5bf9df339e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392749"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859429"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>Gerenciar máquinas virtuais do Windows com o PowerShell Direct
 

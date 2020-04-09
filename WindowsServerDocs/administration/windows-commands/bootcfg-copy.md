@@ -1,24 +1,20 @@
 ---
 title: bootcfg copy
-description: O tópico de comandos do Windows para **Bootcfg Copy** – faz uma cópia de uma entrada de inicialização existente, à qual você pode adicionar opções de linha de comando.
-ms.custom: na
+description: O tópico de comandos do Windows para Bootcfg Copy, que faz uma cópia de uma entrada de inicialização existente, à qual você pode adicionar opções de linha de comando.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2a236c2a-8675-444d-b695-9cbc9aff643b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42a408443cbe6722c25780f7c27d70b05da7eb8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5194418a07aece4f15a84c3eccbc044431a865b9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380120"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848679"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 
@@ -30,7 +26,7 @@ Faz uma cópia de uma entrada de inicialização existente, à qual você pode a
 ```
 bootcfg /copy [/s <computer> [/u <Domain>\<User> /p <Password>]] [/d <Description>] [/id <OSEntryLineNum>]
 ```
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |      Parâmetro       |                                                                                             Descrição                                                                                             |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,10 +37,10 @@ bootcfg /copy [/s <computer> [/u <Domain>\<User> /p <Password>]] [/d <Descriptio
 | /ID <OSEntryLineNum> |         Especifica o número da linha da entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini a ser copiado. A primeira linha após o cabeçalho da seção [Operating Systems] é 1.         |
 |          /?          |                                                                                Exibe a ajuda no prompt de comando.                                                                                 |
 
-## <a name="BKMK_examples"></a>Disso
-Os exemplos a seguir mostram como você pode usar o comando **Bootcfg/Copy** para copiar a entrada de inicialização 1 e inserir "\ABC Server\\" como a descrição:
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
+Os exemplos a seguir mostram como você pode usar o comando **Bootcfg/Copy** para copiar a entrada de inicialização 1 e inserir o \ABC Server\\ como a descrição:
 ```
-bootcfg /copy /d "\ABC Server\" /id 1
+bootcfg /copy /d \ABC Server\ /id 1
 ```
-#### <a name="additional-references"></a>referências adicionais
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

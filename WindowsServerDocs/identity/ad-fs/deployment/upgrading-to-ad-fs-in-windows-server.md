@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
 title: Atualização para AD FS no Windows Server 2016
-description: ''
 author: billmath
 manager: femila
 ms.date: 04/09/2018
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 4c13a3ecbcc6ade1455c10dde5f6a89e0303e161
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517571"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857629"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Atualizando para o AD FS no Windows Server 2016 por meio de um banco de dados WID
 
@@ -152,13 +151,13 @@ Isso concluirá a atualização dos servidores WAP.
 
 
 > [!NOTE] 
-> Existe um problema de PRT conhecido no AD FS 2019 se o Windows Hello para empresas com uma confiança de certificado híbrido for executado. Você pode encontrar esse erro nos logs de eventos de administrador do ADFS: solicitação OAuth inválida recebida. O ' nome ' do cliente é proibido de acessar o recurso com o escopo ' UGS '. Para corrigir esse erro: 
-> 1. Inicie o console de gerenciamento do AD FS. Brose "descrições de escopo de > de serviços"
-> 2. Clique com o botão direito do mouse em "descrições de escopo" e selecione "Adicionar Descrição do escopo"
-> 3. Em nome, digite "UGS" e clique em aplicar > OK
-> 4. Iniciar o PowerShell como administrador
-> 5. Execute o comando "Get-AdfsApplicationPermission". Procure osnames de Scopes: {OpenID, Aza} que tem o ClientRoleIdentifier. Anote o objectidentifier.
-> 6. Execute o comando "Set-AdfsApplicationPermission-TargetIdentifier < objectidentifier da etapa 5 >-addscope ' UGS '
+> Existe um problema de PRT conhecido no AD FS 2019 se o Windows Hello para empresas com uma confiança de certificado híbrido for executado. Você pode encontrar esse erro nos logs de eventos de administrador do ADFS: solicitação OAuth inválida recebida. O 'NAME' do cliente é proibido de acessar o recurso com o escopo 'ugs'. Para corrigir esse erro: 
+> 1. Inicie o console de gerenciamento do AD FS. Procure "Serviços > Descrições de Escopo"
+> 2. Clique com o botão direito do mouse em "Descrições de Escopo" e selecione "Adicionar Descrição de Escopo"
+> 3. No nome, digite "ugs" e clique em Aplicar > OK
+> 4. Inicie o PowerShell como Administrador
+> 5. Execute o comando "Get-AdfsApplicationPermission". Procure os ScopeNames: {openid, aza} que tenham o ClientRoleIdentifier. Anote o ObjectIdentifier.
+> 6. Execute o comando "Set-AdfsApplicationPermission -TargetIdentifier <ObjectIdentifier da etapa 5> -AddScope 'ugs'
 > 7. Reinicie o serviço ADFS.
-> 8. No cliente: reinicie o cliente. O usuário deve ser solicitado a provisionar WHFB.
-> 9. Se a janela de provisionamento não aparecer, será necessário coletar logs de rastreamento do NGC e solucionar problemas adicionais.
+> 8. No cliente: reinicie o cliente. O usuário deverá ser solicitado a provisionar o WHFB.
+> 9. Se a janela de provisionamento não for exibida, será necessário coletar logs de rastreamento do NGC e solucionar problemas adicionais.

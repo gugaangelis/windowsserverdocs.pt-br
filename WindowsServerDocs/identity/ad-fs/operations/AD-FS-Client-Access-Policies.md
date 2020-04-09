@@ -1,7 +1,5 @@
 ---
-ms.assetid: ''
 title: Políticas de controle de acesso de cliente no AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c00a13076b3c3cf28f9efa0a5127f50e34219c84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f9939662c22e9500235bae014b7fb9064afd911b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358631"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858109"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>Controlando o acesso a dados organizacionais com Serviços de Federação do Active Directory (AD FS)
 
@@ -32,7 +30,7 @@ AD FS fornece o componente local da política de acesso condicional em um cenár
 
 Por exemplo, quando você registra dispositivos com o Azure AD para acesso condicional a recursos de nuvem, a Azure AD Connect capacidade de write-back do dispositivo disponibiliza informações de registro do dispositivo localmente para que AD FS políticas consumam e imponham.  Dessa forma, você tem uma abordagem consistente para acessar políticas de controle para recursos locais e na nuvem.  
 
-![Acesso condicional](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![acesso condicional](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 
 ### <a name="the-evolution-of-client-access-policies-for-office-365"></a>A evolução das políticas de acesso para cliente para o Office 365
@@ -54,7 +52,7 @@ Para saber mais sobre o acesso condicional do Azure AD, consulte [acesso condici
 
 Uma alteração importante ao habilitar esses cenários é a [autenticação moderna](https://blogs.office.com/2015/11/19/updated-office-365-modern-authentication-public-preview/), uma nova maneira de autenticar usuários e dispositivos que funciona da mesma maneira em clientes do Office, Skype, Outlook e navegadores.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 Para obter mais informações sobre como controlar o acesso na nuvem e no local, consulte:
 
 - [Acesso condicional no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)

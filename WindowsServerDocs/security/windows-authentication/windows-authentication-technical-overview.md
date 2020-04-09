@@ -1,28 +1,24 @@
 ---
 title: Visão geral técnica de autenticação do Windows
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 286d3e41-434f-4703-9320-706d06ebda51
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f2916bc9c3654f0e5e3d4dc27ce79874fdb863f7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7a19230e0fc1fb96700785fd83e70d501d59b76a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403266"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861689"
 ---
 # <a name="windows-authentication-technical-overview"></a>Visão geral técnica de autenticação do Windows
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável ao: Windows Server (canal semestral), Windows Server 2016
 
 Este tópico para o profissional de ti fornece links para tópicos sobre a visão geral técnica da autenticação do Windows. A autenticação do Windows é o processo para provar a autenticidade de um usuário ou serviço que tenta acessar o Windows.
 

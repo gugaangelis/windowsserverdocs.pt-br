@@ -2,22 +2,18 @@
 title: Implantar Acesso Remoto com autenticação OTP
 description: Este tópico faz parte do guia implantar o acesso remoto com autenticação OTP no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5b86cbe970c60f0684f3f6e5198fa91bbb9745b1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 47a92db6c451b2e1e9bb44393ab987f242cc0ef5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313683"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858249"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>Implantar Acesso Remoto com autenticação OTP
 
@@ -74,8 +70,8 @@ A tabela a seguir lista funções e recursos necessários para o cenário:
   
 |Recurso de\/de função|Como este cenário tem suporte|  
 |---------|-----------------|  
-|*Função de gerenciamento de acesso remoto*|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função abrange ambos o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2, e serviços de roteamento e acesso remoto que anteriormente era um serviço de função na diretiva de rede e serviços de acesso \(função de servidor NPAS\). A função Acesso Remoto consiste em dois componentes:<br /><br />1. DirectAccess e serviços de roteamento e acesso remoto \(RRAS\) VPN-DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2. roteamento RRAS-os recursos de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<br /><br />A função de Acesso Remoto é dependente dos seguintes recursos de servidor:<br /><br />-Serviços de Informações da Internet \(IIS\) servidor Web-esse recurso é necessário para configurar o servidor de local de rede, utilizar a autenticação OTP e configurar a investigação da Web padrão.<br />-Banco de dados interno do Windows-usado para contabilização local no servidor de acesso remoto.|  
-|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />-GUI de acesso remoto e ferramentas de linha de comando<br />-Módulo de acesso remoto para Windows PowerShell<br /><br />As dependências incluem:<br /><br />-Console de Gerenciamento de Política de Grupo<br />-Kit de administração do Gerenciador de conexões RAS \(CMAK\)<br />-Windows PowerShell 3,0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
+|*Função de gerenciamento de acesso remoto*|A função é instalada e desinstalada pelo console Gerenciador do Servidor. Essa função abrange ambos o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2, e serviços de roteamento e acesso remoto que anteriormente era um serviço de função na diretiva de rede e serviços de acesso \(função de servidor NPAS\). A função Acesso Remoto consiste em dois componentes:<p>1. DirectAccess e serviços de roteamento e acesso remoto \(RRAS\) VPN-DirectAccess e VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2. roteamento RRAS-os recursos de roteamento RRAS são gerenciados no console de roteamento e acesso remoto herdado.<p>A função de Acesso Remoto é dependente dos seguintes recursos de servidor:<p>-Serviços de Informações da Internet \(IIS\) servidor Web-esse recurso é necessário para configurar o servidor de local de rede, utilizar a autenticação OTP e configurar a investigação da Web padrão.<br />-Banco de dados interno do Windows-usado para contabilização local no servidor de acesso remoto.|  
+|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<p>-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<p>O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<p>-GUI de acesso remoto e ferramentas de linha de comando<br />-Módulo de acesso remoto para Windows PowerShell<p>As dependências incluem:<p>-Console de Gerenciamento de Política de Grupo<br />-Kit de administração do Gerenciador de conexões RAS \(CMAK\)<br />-Windows PowerShell 3,0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Os requisitos de hardware para este cenário incluem o seguinte:  

@@ -1,24 +1,20 @@
 ---
 title: Instalar ou desinstalar funções, serviços de função ou recursos
 description: Gerenciador do Servidor
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 04f16d84-45c2-4771-84c1-1cc973d0ee02
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca2e4c7ba2658c4d85b14ef61ef5f79fbc96345
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8c270fbdacf5359af4e3150d61693470207f566b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383194"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851519"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>Instalar ou desinstalar funções, serviços de função ou recursos
 
@@ -65,7 +61,7 @@ Em uma única sessão do assistente Adicionar funções e recursos, você pode i
   
 3.  Na página **Antes de começar**, verifique se o servidor de destino e o ambiente de rede estão preparados para a função e o recurso que você vai instalar. Clique em **Avançar**.  
   
-4.  Na página **Selecionar tipo de instalação** , escolha a **Instalação baseada em função ou recurso** para instalar todas as partes das funções ou dos recursos em um único servidor, ou a **Instalação de Serviços de Área de Trabalho Remota** para instalar uma infraestrutura de área de trabalho baseada em máquina virtual ou uma infraestrutura de área de trabalho baseada em sessão para os Serviços de Área de Trabalho Remota. A opção **Instalação dos Serviços de Área de Trabalho Remota** distribui partes lógicas da função Serviços de Área de Trabalho Remota por servidores diferentes, conforme necessário para os administradores. Clique em **Avançar**.  
+4.  Na página **Selecionar tipo de instalação**, escolha a **Instalação baseada em função ou recurso** para instalar todas as partes das funções ou dos recursos em um único servidor, ou a **Instalação de Serviços de Área de Trabalho Remota** para instalar uma infraestrutura de área de trabalho baseada em máquina virtual ou uma infraestrutura de área de trabalho baseada em sessão para os Serviços de Área de Trabalho Remota. A opção **Instalação dos Serviços de Área de Trabalho Remota** distribui partes lógicas da função Serviços de Área de Trabalho Remota por servidores diferentes, conforme necessário para os administradores. Clique em **Avançar**.  
   
 5.  Na página **Selecionar servidor de destino**, escolha um servidor no pool de servidores ou um VHD offline. Para selecionar um VHD offline como servidor de destino, primeiro selecione o servidor no qual deseja montar o VHD e selecione o arquivo VHD. Para obter informações sobre como adicionar servidores ao pool de servidores, consulte [adicionar servidores a Gerenciador do servidor](add-servers-to-server-manager.md). Após selecionar o servidor de destino, clique em **Avançar**.  
   
@@ -85,7 +81,7 @@ Em uma única sessão do assistente Adicionar funções e recursos, você pode i
   
     Além disso, se você pretende gerenciar a função remotamente, seja de outro servidor ou de um computador cliente com Windows que executa as Ferramentas de Administração de Servidor Remoto, pode optar por não instalar as ferramentas de gerenciamento e os snap-ins das funções no servidor de destino. Por padrão, no Assistente para adicionar funções e recursos, as ferramentas de gerenciamento são selecionadas para instalação.  
   
-7.  Na página **Confirmar seleções de instalação** , confira as seleções de função, recurso e servidor. Se já estiver pronto para instalar, clique em **Instalar**.  
+7.  Na página **Confirmar seleções de instalação**, confira as seleções de função, recurso e servidor. Se já estiver pronto para instalar, clique em **Instalar**.  
   
     Você também pode exportar suas seleções para um arquivo de configuração baseado em XML que pode ser usado para instalações autônomas com o Windows PowerShell. Para exportar a configuração especificada nesta sessão do assistente para adicionar funções e recursos, clique em **exportar definições de configuração**e salve o arquivo XML em um local conveniente.  
   
@@ -149,7 +145,7 @@ Os cmdlets de implantação Gerenciador do Servidor para o Windows PowerShell fu
 5. Quando a instalação for concluída, verifique a instalação abrindo a página **todos os servidores** em Gerenciador do servidor, selecionando um servidor no qual você instalou funções e recursos e exibindo o bloco **funções e recursos** na página do servidor selecionado. Você também pode executar o cmdlet `Get-WindowsFeature` direcionado ao servidor selecionado (Get-WindowsFeature-ComputerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
   
 ## <a name="remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard"></a>Remover funções, serviços de função e recursos usando o assistente para remover funções e recursos  
-Você deve estar conectado a um servidor como administrador para desinstalar funções, serviços de função e recursos. Caso esteja conectado ao computador remoto com uma conta sem direitos de administrador no servidor de destino de desinstalação, clique com o botão direito no servidor de destino, no bloco **Servidores** , e clique em **Gerenciar como** para fornecer uma conta com direitos de administrador. O servidor no qual você deseja montar o VHD offline deve ser adicionado ao Gerenciador do Servidor, e você deve ter direitos de Administrador nesse servidor.  
+Você deve estar conectado a um servidor como administrador para desinstalar funções, serviços de função e recursos. Caso esteja conectado ao computador remoto com uma conta sem direitos de administrador no servidor de destino de desinstalação, clique com o botão direito no servidor de destino, no bloco **Servidores**, e clique em **Gerenciar como** para fornecer uma conta com direitos de administrador. O servidor no qual você deseja montar o VHD offline deve ser adicionado ao Gerenciador do Servidor, e você deve ter direitos de Administrador nesse servidor.  
   
 #### <a name="to-remove-roles-and-features-by-using-the-remove-roles-and-features-wizard"></a>Para remover funções e recursos usando o assistente para remover funções e recursos  
   
@@ -157,7 +153,7 @@ Você deve estar conectado a um servidor como administrador para desinstalar fun
   
     -   Na área de trabalho do Windows, inicie o Gerenciador do Servidor clicando em **Gerenciador do Servidor** na barra de tarefas do Windows.  
   
-    -   Na **tela inicial** do Windows, clique no bloco **Gerenciador do Servidor** .  
+    -   Na **tela inicial** do Windows, clique no bloco **Gerenciador do Servidor**.  
   
 2.  No menu **Gerenciar**, clique em **Remover Funções e Recursos**.  
   
@@ -182,12 +178,12 @@ Você deve estar conectado a um servidor como administrador para desinstalar fun
   
     Além disso, você pode optar por remover as ferramentas de gerenciamento e os snap-ins para funções no servidor de destino. Por padrão, no Assistente para remover funções e recursos, as ferramentas de gerenciamento são selecionadas para remoção. Você pode deixar as ferramentas de gerenciamento e os snap-ins se planeja usar o servidor selecionado para gerenciar a função em outros servidores remotos.  
   
-6.  Na página **Confirmar seleções de remoção** , confira as seleções de função, recurso e servidor. Se você estiver pronto para remover as funções ou recursos, clique em **remover**.  
+6.  Na página **Confirmar seleções de remoção**, confira as seleções de função, recurso e servidor. Se você estiver pronto para remover as funções ou recursos, clique em **remover**.  
   
 7.  Depois de clicar em **remover**, a página **progresso da remoção** exibe o progresso, os resultados e as mensagens de remoção, como avisos, falhas ou etapas de configuração após a remoção que são necessárias, como reiniciar o servidor de destino. No Windows Server 2012 e versões posteriores do Windows Server, você pode fechar o assistente para remover funções e recursos enquanto a remoção ainda estiver em andamento e exibir os resultados da remoção ou outras mensagens na área de **notificações** na parte superior do console do Gerenciador do servidor. Clique no sinalizador **notificações** para ver mais detalhes sobre as remoções ou outras tarefas que você está executando em Gerenciador do servidor.  
   
 ## <a name="remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>Remover funções, serviços de função e recursos usando os cmdlets do Windows PowerShell  
-Os cmdlets de implantação Gerenciador do Servidor para o Windows PowerShell funcionam de forma semelhante ao Assistente para remover funções e recursos baseados em GUI, com uma diferença importante. No Windows PowerShell, ao contrário do assistente para remover funções e recursos, as ferramentas de gerenciamento e os snap-ins para uma função não são removidos por padrão. Para remover ferramentas de gerenciamento como parte da remoção de uma função, adicione o parâmetro `IncludeManagementTools` ao cmdlet. Se você estiver desinstalando funções e recursos de um servidor que está executando a opção de instalação Server Core do Windows Server 2012 ou uma versão posterior do Windows Server, esse parâmetro removerá as ferramentas de linha de comando e gerenciamento do Windows PowerShell para o especificado funções e recursos.  
+Os cmdlets de implantação Gerenciador do Servidor para o Windows PowerShell funcionam de forma semelhante ao Assistente para remover funções e recursos baseados em GUI, com uma diferença importante. No Windows PowerShell, ao contrário do assistente para remover funções e recursos, as ferramentas de gerenciamento e os snap-ins para uma função não são removidos por padrão. Para remover ferramentas de gerenciamento como parte da remoção de uma função, adicione o parâmetro `IncludeManagementTools` ao cmdlet. Se você estiver desinstalando funções e recursos de um servidor que está executando a opção de instalação Server Core do Windows Server 2012 ou uma versão posterior do Windows Server, esse parâmetro removerá as ferramentas de linha de comando e de gerenciamento do Windows PowerShell para as funções e recursos especificados.  
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>Para remover funções e recursos usando o cmdlet Uninstall-WindowsFeature  
   
@@ -236,10 +232,10 @@ Os cmdlets de implantação Gerenciador do Servidor para o Windows PowerShell fu
 5. Quando a remoção for concluída, verifique se as funções e os recursos foram removidos abrindo a página **todos os servidores** no Gerenciador do servidor, selecionando o servidor do qual você removeu funções e recursos e exibindo o bloco **funções e recursos** na página do servidor selecionado. Você também pode executar o cmdlet `Get-WindowsFeature` direcionado ao servidor selecionado (Get-WindowsFeature-ComputerName <*computer_name*>) para exibir uma lista de funções e recursos que estão instalados no servidor.  
   
 ## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>Instalar funções e recursos em vários servidores executando um script do Windows PowerShell  
-Embora você não possa usar o assistente para adicionar funções e recursos para instalar funções, serviços de função e recursos em mais de um servidor de destino em uma única sessão de assistente, você pode usar um script do Windows PowerShell para instalar funções, serviços de função e recursos em vários destinos servidores que você está gerenciando usando Gerenciador do Servidor. O script que você usa para executar a implantação em lote, como esse processo é chamado, aponta para um arquivo de configuração XML que você pode criar facilmente usando o assistente para adicionar funções e recursos e clicando em **exportar definições de configuração** depois de avançar pelo Assistente para a página **confirmar seleções de instalação** do assistente para adicionar funções e recursos.  
+Embora não seja possível usar o assistente para adicionar funções e recursos para instalar funções, serviços de função e recursos em mais de um servidor de destino em uma única sessão de assistente, você pode usar um script do Windows PowerShell para instalar funções, serviços de função e recursos em vários servidores de destino que você está gerenciando usando Gerenciador do Servidor. O script que você usa para executar a implantação em lote, como esse processo é chamado, aponta para um arquivo de configuração XML que você pode criar facilmente usando o assistente para adicionar funções e recursos e clicando em **exportar definições de configuração** depois de avançar pelo Assistente para a página **confirmar seleções de instalação** do assistente para adicionar funções e recursos.  
   
 > [!IMPORTANT]  
-> Todos os servidores de destino especificados no seu script devem estar executando o lançamento do Windows Server que corresponde à versão do Gerenciador do Servidor que você está executando no computador local. Por exemplo, se você estiver executando Gerenciador do Servidor no Windows 10, poderá instalar funções, serviços de função e recursos em servidores que executam o Windows Server 2016. Se as ferramentas de gerenciamento baseadas em GUI forem adicionadas à instalação, o processo de instalação converterá automaticamente os servidores de destino que estão executando a opção de instalação Server Core do Windows Server para a opção de instalação completa (servidor com uma GUI completa, também conhecida como como um shell gráfico do servidor em execução).  
+> Todos os servidores de destino especificados no seu script devem estar executando o lançamento do Windows Server que corresponde à versão do Gerenciador do Servidor que você está executando no computador local. Por exemplo, se você estiver executando Gerenciador do Servidor no Windows 10, poderá instalar funções, serviços de função e recursos em servidores que executam o Windows Server 2016. Se as ferramentas de gerenciamento baseadas em GUI forem adicionadas à instalação, o processo de instalação converterá automaticamente os servidores de destino que estão executando a opção de instalação Server Core do Windows Server para a opção de instalação completa (servidor com uma GUI completa, também conhecida como shell gráfico de servidor em execução).  
 >   
 > O script fornecido nesta seção é um exemplo de como a implantação do lote pode ser executada usando o cmdlet `Install-WindowsFeature` e um script do Windows PowerShell. Há outros scripts e métodos que podem ser usados para realizar implantação em lote em vários servidores. Para pesquisar ou fornecer outros scripts para implantar funções e recursos, pesquise o [Repositório da Central de Scripts](https://gallery.technet.microsoft.com/ScriptCenter).  
   
@@ -355,7 +351,7 @@ a partir do Windows Server 2012 e do Windows 8, os arquivos de recurso para .NET
   
    **Wim:\\\\** <em>server_name</em> **\share\install.wim: 3**  
   
-6. Clique em **OK**e em **Instalar**.  
+6. Clique em **OK** e em **Instalar**.  
   
 ### <a name="to-install-net-framework-35-by-using-dism"></a>Para instalar o .NET Framework 3.5 usando o DISM  
   

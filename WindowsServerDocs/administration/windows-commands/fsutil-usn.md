@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b62d031c547f140ac5008af20a9e0ee4bcecc919
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 326390a5b40de46ca932043e9982f84c7758d901
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376793"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843999"
 ---
 # <a name="fsutil-usn"></a>Fsutil USN
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -33,31 +33,31 @@ fsutil usn [readdata] <FileName>
 fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------------|---------------|
 |createjournal|Cria um diário de alterações de USN.|
-|m = \<MaxSize >|Especifica o tamanho máximo, em bytes, que o NTFS aloca para o diário de alterações.|
-|a = \<AllocationDelta >|Especifica o tamanho, em bytes, da alocação de memória que é adicionada ao final e removida do início do diário de alterações.|
+|m =\<MaxSize >|Especifica o tamanho máximo, em bytes, que o NTFS aloca para o diário de alterações.|
+|a =\<AllocationDelta >|Especifica o tamanho, em bytes, da alocação de memória que é adicionada ao final e removida do início do diário de alterações.|
 |\<VolumePath >|Especifica a letra da unidade (seguida por dois-pontos).|
 |deletejournal|Exclui ou desabilita um diário de alterações de USN ativo. **Cuidado:** A exclusão do diário de alterações afeta o FRS (serviço de replicação de arquivo) e o serviço de indexação, pois ele exigiria que esses serviços executassem uma verificação completa (e demorada) do volume. Isso, por sua vez, afeta negativamente a replicação SYSVOL do FRS e a replicação entre alternativas de link DFS enquanto o volume está sendo examinado novamente.|
 |/d|Desabilita um diário de alterações de USN ativo e retorna O controle de entrada/saída (e/s) enquanto o diário de alterações está sendo desabilitado.|
-|opção|Desabilita um diário de alterações de USN ativo e retorna O controle de e/s somente depois que o diário de alterações é desabilitado.|
+|/n|Desabilita um diário de alterações de USN ativo e retorna O controle de e/s somente depois que o diário de alterações é desabilitado.|
 |enablerangetracking|Habilita o rastreamento do intervalo de gravação de USN para um volume.|
-|c = \<chunk-tamanho >|Especifica o tamanho da parte a ser rastreada em um volume.|
-|s = \<file-size-Threshold >|Especifica o limite de tamanho do arquivo para rastreamento de intervalo.|
+|c =\<> de tamanho da parte|Especifica o tamanho da parte a ser rastreada em um volume.|
+|s =\<arquivo-tamanho-limite >|Especifica o limite de tamanho do arquivo para rastreamento de intervalo.|
 |enumdata|Enumera e lista as entradas do diário de alterações entre dois limites especificados.|
 |\<FileRef >|Especifica a posição ordinal dentro dos arquivos no volume no qual a enumeração deve começar.|
 |\<LowUSN >|Especifica o limite inferior do intervalo de valores USN usados para filtrar os registros que são retornados. Somente os registros cujo USN do último diário de alterações está entre ou igual aos valores de membro *LowUSN* e *HighUSN* são retornados.|
 |\<HighUSN >|Especifica o limite superior do intervalo de valores USN usados para filtrar os arquivos retornados.|
 |queryjournal|Consulta os dados de USN de um volume para coletar informações sobre o diário de alterações atual, seus registros e sua capacidade.|
 |readdata|Lê os dados de USN de um arquivo.|
-|\<Nome de arquivo >|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo: C:\documents\filename.txt|
+|\<nome de arquivo >|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo: C:\documents\filename.txt|
 |readjournal|Lê os registros USN no diário de USN.|
-|Minver = \<number >|Versão principal mínima do USN_RECORD a ser retornada. Padrão = 2.|
-|MaxVer = \<number >|Versão principal máxima do USN_RECORD a ser retornada. Padrão = 4.|
-|startusn = número de \<USN >|USN para o qual começar a ler o diário de USN. Padrão = 0.|
+|Minver = número\<>|Versão principal mínima do USN_RECORD para retornar. Padrão = 2.|
+|MaxVer = número\<>|Versão principal máxima do USN_RECORD a ser retornada. Padrão = 4.|
+|startusn =\<número USN >|USN para o qual começar a ler o diário de USN. Padrão = 0.|
 
 
 ## <a name="remarks"></a>Comentários
@@ -84,7 +84,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     Excluir ou desabilitar um diário de alterações ativo é muito demorado, pois o sistema deve acessar todos os registros na MFT (tabela de arquivos mestre) e definir o último atributo USN como 0 (zero). Esse processo pode levar vários minutos e pode continuar depois que o sistema for reiniciado, se uma reinicialização for necessária. Durante esse processo, o diário de alterações não é considerado ativo, nem está desabilitado. Enquanto o sistema está desabilitando o diário, ele não pode ser acessado e todas as operações de diário retornam erros. Você deve usar extrema atenção ao desabilitar um diário ativo, pois ele afeta negativamente outros aplicativos que estão usando o diário.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para criar um diário de alterações de USN na unidade C, digite:
 
 ```
@@ -127,8 +127,8 @@ Para ler o diário de USN com um USN de início específico, digite:
 fsutil usn readjournal startusn=0xF00
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

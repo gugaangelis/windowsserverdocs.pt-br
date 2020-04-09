@@ -1,29 +1,25 @@
 ---
 title: Configurações de registro de TLS (segurança de camada de transporte)
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 02/28/2019
-ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: d65b314d6896c886ce606d2b649fcfd7309c583b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322398"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820279"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configurações de registro de TLS (segurança de camada de transporte)
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10
 
-Este tópico de referência para o profissional de ti contém informações de configuração de registro com suporte para a implementação do Windows do protocolo TLS e o protocolo protocolo SSL (SSL) por meio do suporte de segurança Schannel Provedor (SSP). As subchaves do registro e as entradas abordadas neste tópico ajudam você a administrar e solucionar problemas do SSP do Schannel, especificamente os protocolos TLS e SSL. 
+Este tópico de referência para o profissional de ti contém informações de configuração do registro com suporte para a implementação do Windows do protocolo TLS e o protocolo protocolo SSL (SSL) por meio do SSP (provedor de suporte de segurança) do Schannel. As subchaves do registro e as entradas abordadas neste tópico ajudam você a administrar e solucionar problemas do SSP do Schannel, especificamente os protocolos TLS e SSL. 
 
 > [!CAUTION]
 > Essas informações são fornecidas como uma referência a ser usada quando você estiver solucionando problemas ou verificando se as configurações necessárias estão aplicadas.

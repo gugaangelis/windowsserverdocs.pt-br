@@ -2,22 +2,18 @@
 title: Solução de problemas do DirectAccess
 description: Este tópico fornece informações sobre como solucionar problemas de implantações do DirectAccess no Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61040e19-5960-4eb0-b612-d710627988f7
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6f969dfdaa2932990619c1e545f77615796e7104
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: bfd7d67a84eb6f2af4c52d05f3dc7c69835ed743
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314841"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856239"
 ---
 # <a name="troubleshooting-directaccess"></a>Solução de problemas do DirectAccess
 
@@ -34,8 +30,8 @@ Siga estas etapas para solucionar problemas de acesso remoto (DirectAccess).
 |Encontrando problemas relacionados a uma configuração multissite (por exemplo, habilitando um multissite, adicionando pontos de entrada ou configurando o controlador de domínio para um ponto de entrada)|Siga as etapas em [solucionar problemas de implantação multissite](https://technet.microsoft.com/library/jj554657(v=ws.11).aspx).|  
 |O bloco status da configuração no painel mostra um aviso ou erro|Siga as etapas em [monitorar o status de distribuição da configuração do servidor de acesso remoto](https://technet.microsoft.com/library/jj574221(v=ws.11).aspx).|  
 |Encontrando problemas relacionados à configuração do balanceamento de carga (por exemplo, a configuração falha quando você habilita o balanceamento de carga ou há problemas ao adicionar ou remover servidores de um cluster)|Se você estivesse habilitando o balanceamento de carga ou adicionando um nó, e a configuração for atualizada quando você clicou em **aplicar**, mas o cluster não tiver formado corretamente no servidor, execute o seguinte comando: **cmd. exe/c "reg Add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/v sinalizador/t REG_DWORD/d" "0xFFFFFFFF" ""** para coletar os logs da interface do usuário no novo servidor.|  
-|Status de operações mostra um erro ou aviso após as etapas a seguir para corrigir a situação|Se o status das operações estiver mostrando informações incorretas (como erros-mesmo depois de corrigi-las):<br /><br />– Habilite a chave do registro **cmd. exe/c "reg Add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/V EnableTracing/t REG_DWORD/d" "5" ""** .<br />-Atualize o status de operações e colete os logs de **% windir%/Tracing**.|  
-|Os computadores cliente do Windows 8 e posteriores do DirectAccess reportam "sem Internet" como status da conexão do DirectAccess e o indicador de status de conectividade de rede (NCSI) relata conectividade limitada.|Isso pode ocorrer quando o túnel forçado está habilitado na configuração do DirectAccess e, por isso, somente o IPHTTPS está sendo usado. Para resolver esse problema, você pode criar e configurar um servidor proxy. Em seguida, o NCSI usa o servidor proxy para realizar verificações de conectividade com a Internet. É recomendável que você adicione um proxy estático para o Tabela de Políticas de Resolução de Nomes (NRPT) usando o procedimento a seguir.<br /><br />Antes de executar os comandos neste procedimento, certifique-se de substituir todos os nomes de domínio, nomes de computador e outras variáveis de comando do Windows PowerShell por valores apropriados para sua implantação.<br /><br />**Configurar um proxy estático para uma regra NRPT**<br />1. exibir o "." Regra NRPT: `Get-DnsClientNrptRule -GpoName "corp.example.com\DirectAccess Client Settings" -Server <DomainControllerNetBIOSName>`<br />2. Observe o nome (GUID) do "." Regra NRPT. O nome (GUID) deve começar com o **da-{..}**<br />3. defina o proxy para o "." Regra NRPT para **proxy.Corp.example.com:8080**: `Set-DnsClientNrptRule -Name "DA-{..}" -Server <DomainControllerNetBIOSName> -GPOName "corp.example.com\DirectAccess Client Settings" -DAProxyServerName "proxy.corp.example.com:8080" -DAProxyType "UseProxyName"`<br />4. exibir o "." Regra NRPT novamente executando `Get-DnsClientNrptRule`e verifique se **ProxyFQDN: Port** está configurado corretamente.<br />5. atualize Política de Grupo executando `gpupdate /force` em um cliente do DirectAccess quando o cliente está conectado internamente e, em seguida, exiba o NRPT usando `Get-DnsClientNrptPolicy` e verifique se a regra "." mostra **ProxyFQDN: Port**.|  
+|Status de operações mostra um erro ou aviso após as etapas a seguir para corrigir a situação|Se o status das operações estiver mostrando informações incorretas (como erros-mesmo depois de corrigi-las):<p>– Habilite a chave do registro **cmd. exe/c "reg Add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/V EnableTracing/t REG_DWORD/d" "5" ""** .<br />-Atualize o status de operações e colete os logs de **% windir%/Tracing**.|  
+|Os computadores cliente do Windows 8 e posteriores do DirectAccess reportam "sem Internet" como status da conexão do DirectAccess e o indicador de status de conectividade de rede (NCSI) relata conectividade limitada.|Isso pode ocorrer quando o túnel forçado está habilitado na configuração do DirectAccess e, por isso, somente o IPHTTPS está sendo usado. Para resolver esse problema, você pode criar e configurar um servidor proxy. Em seguida, o NCSI usa o servidor proxy para realizar verificações de conectividade com a Internet. É recomendável que você adicione um proxy estático para o Tabela de Políticas de Resolução de Nomes (NRPT) usando o procedimento a seguir.<p>Antes de executar os comandos neste procedimento, certifique-se de substituir todos os nomes de domínio, nomes de computador e outras variáveis de comando do Windows PowerShell por valores apropriados para sua implantação.<p>**Configurar um proxy estático para uma regra NRPT**<br />1. exibir o "." Regra NRPT: `Get-DnsClientNrptRule -GpoName "corp.example.com\DirectAccess Client Settings" -Server <DomainControllerNetBIOSName>`<br />2. Observe o nome (GUID) do "." Regra NRPT. O nome (GUID) deve começar com o **da-{..}**<br />3. defina o proxy para o "." Regra NRPT para **proxy.Corp.example.com:8080**: `Set-DnsClientNrptRule -Name "DA-{..}" -Server <DomainControllerNetBIOSName> -GPOName "corp.example.com\DirectAccess Client Settings" -DAProxyServerName "proxy.corp.example.com:8080" -DAProxyType "UseProxyName"`<br />4. exibir o "." Regra NRPT novamente executando `Get-DnsClientNrptRule`e verifique se **ProxyFQDN: Port** está configurado corretamente.<br />5. atualize Política de Grupo executando `gpupdate /force` em um cliente do DirectAccess quando o cliente está conectado internamente e, em seguida, exiba o NRPT usando `Get-DnsClientNrptPolicy` e verifique se a regra "." mostra **ProxyFQDN: Port**.|  
   
 
 

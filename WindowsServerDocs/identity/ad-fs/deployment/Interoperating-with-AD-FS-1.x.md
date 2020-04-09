@@ -1,7 +1,6 @@
 ---
 ms.assetid: 97999892-29c6-4076-be19-5e5259d8ada6
 title: Implantando servidores de federação
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: f2aaca5ffc846c41af82c276750c564db38b5020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 800c7fc23c9b126a17e54311fc6df0d3dcf36b4c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359514"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855359"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>Interoperando com o AD FS 1.x
 
-Para interoperabilidade entre Serviços de Federação do Active Directory (AD FS) \(AD FS\) no Windows Server® 2012 e no AD FS 1. *x*, conclua uma ou mais das seguintes tarefas, dependendo das necessidades da sua organização:  
+Para interoperabilidade entre Serviços de Federação do Active Directory (AD FS) \(AD FS\) no Windows Server&reg; 2012 e no AD FS 1. *x*, conclua uma ou mais das seguintes tarefas, dependendo das necessidades da sua organização:  
   
 -   Planeje a interoperabilidade entre AD FS no Windows Server 2012 e versões anteriores do AD FS e saiba mais sobre o tipo de declaração ID de nome. Para obter mais informações, consulte [planejando a interoperabilidade com o AD FS 1. x](https://technet.microsoft.com/library/ff678040.aspx).  
   
@@ -34,9 +33,9 @@ Embora a maioria das AD FS 1. as configurações *x* serviço de Federação fun
 |Configuração de Serviço de Federação AD FS 1. x|AD FS equivalente Serviço de Federação na configuração do Windows Server 2012  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
 |Parceiro de conta|Relação de confiança do provedor de declarações  
-|Parceiro de recurso|Objeto de confiança de terceira parte confiável 
-|Aplicativo|Objeto de confiança de terceira parte confiável  
-|Propriedades do Aplicativo|Propriedades de confiança de terceira parte confiável  
+|Parceiro de recurso|Parte confiável subjacente 
+|Aplicativo|Parte confiável subjacente  
+|Propriedades do aplicativo|Propriedades de confiança de terceira parte confiável  
 |URL do aplicativo|Identificador de terceira parte confiável e URL de ponto de extremidade passivo da Federação WS\-  
 |URI de Serviço de Federação|Identificador do Serviço de Federação  
 |URL do ponto de extremidade Serviço de Federação|URL de ponto de extremidade passivo de Federação do WS\-  

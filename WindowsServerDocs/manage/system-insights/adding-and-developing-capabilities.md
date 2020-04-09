@@ -1,54 +1,49 @@
 ---
 title: Adicionando e recursos de desenvolvimento
-description: Informações do sistema permite que você adicionar novos recursos de previsão para o sistema Insights, sem a necessidade de quaisquer atualizações do sistema operacional. Isso permite que desenvolvedores, incluindo a Microsoft e terceiros, para criar e fornecer a nova versão intermediária de recursos para lidar com os cenários que importantes para você. Novos recursos podem especificar dados personalizados para coletar e analisar, e eles também integram com planos existentes de gerenciamento de informações do sistema.
-ms.custom: na
+description: O System insights permite que você adicione novos recursos de previsão ao System insights, sem a necessidade de qualquer atualização do sistema operacional. Isso permite que os desenvolvedores, incluindo a Microsoft e terceiros, criem e forneçam novos recursos de lançamento médio para atender aos cenários que você preocupa. Novos recursos podem especificar dados personalizados para coletar e analisar e também se integram aos planos de gerenciamento existentes do System insights.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 8caddead774ac69a38906f3c0a0d2eaf005c1d28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0dd4e24197d5a8c438d70a849e435ce28792dfce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817477"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858429"
 ---
-# <a name="adding-and-developing-new-capabilities"></a>Adicionando e desenvolver novos recursos
+# <a name="adding-and-developing-new-capabilities"></a>Adicionando e desenvolvendo novos recursos
 
 >Aplica-se a: Windows Server 2019
 
-Informações do sistema permite que você adicionar novos recursos de previsão para o sistema Insights, sem a necessidade de quaisquer atualizações do sistema operacional. Isso permite que desenvolvedores, incluindo a Microsoft e terceiros, para criar e fornecer a nova versão intermediária de recursos para lidar com os cenários que importantes para você. 
+O System insights permite que você adicione novos recursos de previsão ao System insights, sem a necessidade de qualquer atualização do sistema operacional. Isso permite que os desenvolvedores, incluindo a Microsoft e terceiros, criem e forneçam novos recursos de lançamento médio para atender aos cenários que você preocupa. 
 
-Um novo recurso pode se integrar e estender a infraestrutura existente do sistema de informações:
+Qualquer nova funcionalidade pode ser integrada com e estender a infraestrutura existente do insights do sistema:
 
-- Novos recursos podem **especificar qualquer evento de sistema ou contador de desempenho**, que será coletado, mantido localmente e retornado para o recurso para análise quando o recurso é invocado.  
-- Novos recursos podem **aproveitar os existentes de Windows Admin Center e planos de gerenciamento do PowerShell**. Não só será novos recursos podem ser descobertos no sistema Insights, eles também se beneficiar de agendas personalizadas e ações de correção. 
+- Novos recursos podem **especificar qualquer contador de desempenho ou evento do sistema**, que será coletado, persistido localmente e retornado para a capacidade de análise quando o recurso for invocado.  
+- Novos recursos podem **aproveitar os planos de gerenciamento do PowerShell e do centro de administração do Windows existentes**. Não apenas as novas funcionalidades serão detectáveis no System insights, elas também se beneficiarão de Agendamentos personalizados e ações de correção. 
 
 ## <a name="manage-new-capabilities"></a>Gerenciar novos recursos
-- [Saiba mais](add-remove-update-capabilities.md) como adicionar, remover e atualizar recursos usando o PowerShell. 
+- [Saiba](add-remove-update-capabilities.md) como adicionar, remover e atualizar recursos usando o PowerShell. 
 
 ## <a name="develop-a-capability"></a>Desenvolver um recurso
-Use os seguintes recursos para ajudá-lo a começar a escrever seus próprios recursos personalizados:
+Use os recursos a seguir para ajudá-lo a começar a escrever seus próprios recursos personalizados:
 - [Saiba mais](data-sources.md) sobre as fontes de dados que você pode coletar.
-- [Baixar](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/) o pacote NuGet de Insights do sistema, que contém as classes e interfaces que você precisa escrever uma funcionalidade.
-- [Visite](https://aka.ms/systeminsights-api) a documentação da API para saber mais sobre as interfaces e classes de informações do sistema. 
-- [Use](https://aka.ms/systeminsights-samplecapability) a capacidade de amostra de Insights de sistema para ajudar você a começar. Isso mostra como registrar um recurso, especifique as fontes de dados para coletar e começar a analisar dados do sistema.
+- [Baixe](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/) o pacote NuGet do System insights, que contém as classes e interfaces necessárias para escrever um recurso.
+- [Visite](https://aka.ms/systeminsights-api) a documentação da API para saber mais sobre as classes e interfaces do System insights. 
+- [Use](https://aka.ms/systeminsights-samplecapability) o recurso de exemplo do System insights para ajudá-lo a começar. Isso mostra como registrar um recurso, especificar as fontes de dados a serem coletadas e começar a analisar os dados do sistema.
 
 >[!NOTE]
->Essa é uma funcionalidade de pré-lançamento. Ela está sujeita a alterações, como podemos adicionar uma nova funcionalidade e incorporar o feedback.
+>Essa é a funcionalidade de pré-lançamento. Ele está sujeito a alterações, à medida que adicionamos nova funcionalidade e incorporamos comentários.
 
 ## <a name="see-also"></a>Consulte também
-Para saber mais sobre o sistema Insights, use os seguintes recursos:
+Para saber mais sobre o System insights, use os seguintes recursos:
 
-- [Visão geral de informações do sistema](overview.md)
-- [Recursos de compreensão](understanding-capabilities.md)
-- [Gerenciamento de recursos](managing-capabilities.md)
-- [Adicionando, removendo e atualizando recursos](add-remove-update-capabilities.md)
-- [Perguntas Frequentes de Insights de sistema](faq.md)
+- [Visão geral do System insights](overview.md)
+- [Noções básicas dos recursos](understanding-capabilities.md)
+- [Gerenciar recursos](managing-capabilities.md)
+- [Adicionar, remover e atualizar recursos](add-remove-update-capabilities.md)
+- [Perguntas frequentes do System insights](faq.md)

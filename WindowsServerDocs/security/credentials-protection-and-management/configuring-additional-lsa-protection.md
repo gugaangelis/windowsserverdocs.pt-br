@@ -1,24 +1,20 @@
 ---
 title: Configurando a proteção LSA adicional
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 1c923cfe39892ba105c437cf73843c2f6d07e49b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829625"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857069"
 ---
 # <a name="configuring-additional-lsa-protection"></a>Configurando a proteção LSA adicional
 
@@ -94,7 +90,7 @@ Para habilitar o modo de auditoria para vários computadores em um domínio, é 
 
 ##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>Para criar a configuração do valor AuditLevel em um GPO
 
-1.  Abra o GPMC (Console de Gerenciamento de Diretiva de Grupo).
+1.  Abra o Console de Gerenciamento de Diretiva de Grupo (GPMC).
 
 2.  Crie um novo GPO (Objeto de Política de Grupo) que esteja vinculado no nível de domínio ou à unidade organizacional que contém as contas do computador. Ou então, você pode selecionar um GPO que já esteja implantado.
 
@@ -102,17 +98,17 @@ Para habilitar o modo de auditoria para vários computadores em um domínio, é 
 
 4.  Expanda **Configuração do Computador**, **Preferências** e **Configurações do Windows**.
 
-5.  Clique com o botão direito do mouse em **Registro**, aponte para **Novo**e clique em **Item do Registro**. A caixa de diálogo **Novas Propriedades do Registro** é exibida.
+5.  Clique com o botão direito do mouse em **Registro**, aponte para **Novo** e clique em **Item do Registro**. A caixa de diálogo **Novas Propriedades do Registro** é exibida.
 
 6.  Na lista **Hive** , clique em **HKEY_LOCAL_MACHINE.**
 
-7.  Na lista **Caminho da Chave** , procure **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**.
+7.  Na lista **Caminho da Chave**, navegue até **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**.
 
 8.  Na caixa **Nome do valor**, digite **AuditLevel**.
 
 9. Na caixa **Tipo de valor**, clique para selecionar o **REG_DWORD**.
 
-10. Na caixa **Dados do valor** , digite **00000008**.
+10. Na caixa **Dados do valor**, digite **00000008**.
 
 11. Clique em **OK**.
 
@@ -134,7 +130,7 @@ Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Micros
 
 As Seções Compartilhadas geralmente são o resultado de técnicas de programação que permitem que os dados da instância interajam com outros processos que usam o mesmo contexto de segurança. Isso pode criar vulnerabilidades de segurança.
 
-## <a name="BKMK_HowToConfigure"></a>Como configurar a proteção de credenciais de LSA adicional
+## <a name="how-to-configure-additional-lsa-protection-of-credentials"></a><a name="BKMK_HowToConfigure"></a>Como configurar a proteção de credenciais de LSA adicional
 Em dispositivos que executam o Windows 8.1 (com ou sem inicialização segura ou UEFI), a configuração é possível executando os procedimentos descritos nesta seção. Para dispositivos que executam o Windows RT 8,1, a proteção LSASS. exe está sempre habilitada e não pode ser desativada.
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>Nos dispositivos baseados em x86 ou x64 que usam Inicialização Segura e UEFI ou não
@@ -154,7 +150,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 ##### <a name="to-enable-lsa-protection-using-group-policy"></a>Para habilitar a proteção de LSA usando a Política de Grupo
 
-1.  Abra o GPMC (Console de Gerenciamento de Diretiva de Grupo).
+1.  Abra o Console de Gerenciamento de Diretiva de Grupo (GPMC).
 
 2.  Crie um novo GPO que esteja vinculado no nível de domínio ou à unidade organizacional que contém as contas do computador. Ou então, você pode selecionar um GPO que já esteja implantado.
 
@@ -162,9 +158,9 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 4.  Expanda **Configuração do Computador**, **Preferências** e **Configurações do Windows**.
 
-5.  Clique com o botão direito do mouse em **Registro**, aponte para **Novo**e clique em **Item do Registro**. A caixa de diálogo **Novas Propriedades do Registro** é exibida.
+5.  Clique com o botão direito do mouse em **Registro**, aponte para **Novo** e clique em **Item do Registro**. A caixa de diálogo **Novas Propriedades do Registro** é exibida.
 
-6.  Na lista **Hive** , clique em **HKEY_LOCAL_MACHINE**.
+6.  Na lista **Hive**, clique em **HKEY_LOCAL_MACHINE**.
 
 7.  Na lista **Caminho da Chave** , procure **SYSTEM\CurrentControlSet\Control\Lsa**.
 
@@ -172,7 +168,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 9. Na caixa **Tipo de valor**, clique em **REG_DWORD**.
 
-10. Na caixa **Dados do valor** , digite **00000001**.
+10. Na caixa **Dados do valor**, digite **00000001**.
 
 11. Clique em **OK**.
 

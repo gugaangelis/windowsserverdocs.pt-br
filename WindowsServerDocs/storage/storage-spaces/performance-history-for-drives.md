@@ -1,34 +1,33 @@
 ---
 title: Histórico de desempenho para unidades
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: d162275a885dac79e7efe749328ebdca471fcad1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a6c6065b8d7963ada5d80844b270fe088eaa6e56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879187"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859449"
 ---
 # <a name="performance-history-for-drives"></a>Histórico de desempenho para unidades
 
-> Aplica-se a: Windows Server Insider Preview
+> Aplica-se a: Windows Server 2019
 
-Este tópico subpropriedades de [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para unidades. Histórico de desempenho está disponível para cada unidade no subsistema de armazenamento de cluster, independentemente de barramento ou tipo de mídia. No entanto, ele não está disponível para unidades de inicialização do sistema operacional.
+Este subtópico do [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para unidades. O histórico de desempenho está disponível para cada unidade no subsistema de armazenamento de cluster, independentemente do tipo de barramento ou de mídia. No entanto, ele não está disponível para unidades de inicialização do sistema operacional.
 
    > [!NOTE]
-   > Histórico de desempenho não pode ser coletado para unidades de um servidor que está inativo. Coleção será retomada automaticamente quando o servidor de volta a funcionar.
+   > O histórico de desempenho não pode ser coletado para unidades em um servidor que está inoperante. A coleta será retomada automaticamente quando o servidor voltar a ficar em funcionamento.
 
 ## <a name="series-names-and-units"></a>Unidades e nomes de séries
 
 Essas séries são coletadas para cada unidade qualificada:
 
-| série                          | Unidade             |
+| Série                          | Unidade             |
 |---------------------------------|------------------|
 | `physicaldisk.iops.read`        | por segundo       |
 | `physicaldisk.iops.write`       | por segundo       |
@@ -44,25 +43,25 @@ Essas séries são coletadas para cada unidade qualificada:
 
 ## <a name="how-to-interpret"></a>Como interpretar
 
-| série                          | Como interpretar                                                            |
+| Série                          | Como interpretar                                                            |
 |---------------------------------|-----------------------------------------------------------------------------|
-| `physicaldisk.iops.read`        | Número de operações de leitura por segundo concluídas por unidade.                |
-| `physicaldisk.iops.write`       | Número de operações de gravação por segundo concluídas por unidade.               |
-| `physicaldisk.iops.total`       | Número total de ler ou gravar operações por segundo concluídas por unidade. |
-| `physicaldisk.throughput.read`  | Quantidade de dados lidos do disco por segundo.                            |
-| `physicaldisk.throughput.write` | Quantidade de dados gravados no disco por segundo.                           |
-| `physicaldisk.throughput.total` | Quantidade total de dados lidos ou gravados para a unidade por segundo.        |
-| `physicaldisk.latency.read`     | Latência média das operações de leitura da unidade.                          |
-| `physicaldisk.latency.write`    | Latência média das operações de gravação para a unidade.                           |
+| `physicaldisk.iops.read`        | Número de operações de leitura por segundo concluídas pela unidade.                |
+| `physicaldisk.iops.write`       | Número de operações de gravação por segundo concluídas pela unidade.               |
+| `physicaldisk.iops.total`       | Número total de operações de leitura ou gravação por segundo concluídas pela unidade. |
+| `physicaldisk.throughput.read`  | Quantidade de dados lidos da unidade por segundo.                            |
+| `physicaldisk.throughput.write` | Quantidade de dados gravados na unidade por segundo.                           |
+| `physicaldisk.throughput.total` | Quantidade total de dados lidos ou gravados na unidade por segundo.        |
+| `physicaldisk.latency.read`     | Latência média de operações de leitura da unidade.                          |
+| `physicaldisk.latency.write`    | Latência média de operações de gravação na unidade.                           |
 | `physicaldisk.latency.average`  | Latência média de todas as operações de ou para a unidade.                     |
 | `physicaldisk.size.total`       | A capacidade de armazenamento total da unidade.                                    |
-| `physicaldisk.size.used`        | A capacidade de armazenamento usado da unidade.                                     |
+| `physicaldisk.size.used`        | A capacidade de armazenamento usada da unidade.                                     |
 
-## <a name="where-they-come-from"></a>Onde eles vêm
+## <a name="where-they-come-from"></a>De onde vêm
 
-O `iops.*`, `throughput.*`, e `latency.*` série é coletada a partir de `Physical Disk` contador de desempenho definido no servidor em que a unidade está conectada, uma instância por unidade. Esses contadores são medidos por `partmgr.sys` e não incluem muito da pilha de software do Windows nem qualquer saltos de rede. Eles são representativas de desempenho de hardware do dispositivo.
+As séries `iops.*`, `throughput.*`e `latency.*` são coletadas do contador de desempenho `Physical Disk` definido no servidor em que a unidade está conectada, uma instância por unidade. Esses contadores são medidos por `partmgr.sys` e não incluem grande parte da pilha de software do Windows nem de saltos de rede. Eles são representativos do desempenho do hardware do dispositivo.
 
-| série                          | Contador de origem           |
+| Série                          | Contador de origem           |
 |---------------------------------|--------------------------|
 | `physicaldisk.iops.read`        | `Disk Reads/sec`         |
 | `physicaldisk.iops.write`       | `Disk Writes/sec`        |
@@ -75,18 +74,18 @@ O `iops.*`, `throughput.*`, e `latency.*` série é coletada a partir de `Physic
 | `physicaldisk.latency.average`  | `Avg. Disk sec/Transfer` |
 
    > [!NOTE]
-   > Contadores são medidos ao longo de todo o intervalo, não amostrado. Por exemplo, se a unidade estiver ociosa por 9 segundos, mas é concluída 30 IOs na segunda, 10 de seus `physicaldisk.iops.total` serão registradas como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para o ruído.
+   > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se a unidade estiver ociosa por 9 segundos, mas concluir 30 IOs no décimo segundo, seu `physicaldisk.iops.total` será gravado como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
 
-O `size.*` série é coletada a partir de `MSFT_PhysicalDisk` classe no WMI, uma instância por unidade.
+A série `size.*` é coletada da classe `MSFT_PhysicalDisk` no WMI, uma instância por unidade.
 
-| série                          | Propriedade Source        |
+| Série                          | Propriedade Source        |
 |---------------------------------|------------------------|
 | `physicaldisk.size.total`       | `Size`                 |
 | `physicaldisk.size.used`        | `VirtualDiskFootprint` |
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use o [Get-PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/get-physicaldisk) cmdlet:
+Use o cmdlet [Get-PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/get-physicaldisk) :
 
 ```PowerShell
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
@@ -94,4 +93,4 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
 
 ## <a name="see-also"></a>Consulte também
 
-- [Histórico de desempenho para espaços de armazenamento diretos](performance-history.md)
+- [Histórico de desempenho para Espaços de Armazenamento Diretos](performance-history.md)

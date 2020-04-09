@@ -3,16 +3,15 @@ title: Solução de problemas avançada do protocolo SMB
 description: Apresenta os métodos avançados de solução de problemas de protocolo SMB.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 433221f9846e9e071557b5537974b5739131742b
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 654cb1b0eea65457d521d201739721ed8c3c0203
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949692"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815189"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>Solução de problemas avançada do protocolo SMB
 
@@ -31,7 +30,7 @@ Por exemplo, se você usar o Windows Server 2016 para alcançar um compartilhame
 
 ### <a name="collect-data"></a>Coletar dados
 
-Antes de solucionar problemas de SMB, recomendamos que você primeiro colete um rastreamento de rede nos lados do cliente e do servidor. As seguintes diretrizes se aplicam:
+Antes de solucionar problemas de SMB, recomendamos que você primeiro colete um rastreamento de rede nos lados do cliente e do servidor. As diretrizes a seguir se aplicam:
 
 - Em sistemas Windows, você pode usar o NetShell (netsh), Monitor de Rede, o analisador de mensagens ou o Wireshark para coletar um rastreamento de rede.
 

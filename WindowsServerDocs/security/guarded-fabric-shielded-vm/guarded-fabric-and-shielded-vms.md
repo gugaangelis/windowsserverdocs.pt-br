@@ -1,18 +1,18 @@
 ---
 title: Visão geral sobre malha protegida e VMs blindadas
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: edcf2e011b701904fb8c1b27d4f9b7d13415b2a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79321988"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856899"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Visão geral sobre malha protegida e VMs blindadas
 
@@ -89,9 +89,9 @@ A figura a seguir mostra o arquivo de dados de blindagem e os elementos de confi
 
 Malhas protegidas são capazes de executar VMs de três maneiras:
 
-1.  Uma VM normal que não oferece proteções além de versões anteriores do Hyper-V
-2.  Uma VM com suporte para criptografia cujas proteções podem ser configuradas por um administrador de malha
-3.  Uma VM blindada cujas proteções estão todas ligadas e não podem ser desabilitadas por um administrador de malha
+1.    Uma VM normal que não oferece proteções além de versões anteriores do Hyper-V
+2.    Uma VM com suporte para criptografia cujas proteções podem ser configuradas por um administrador de malha
+3.    Uma VM blindada cujas proteções estão todas ligadas e não podem ser desabilitadas por um administrador de malha
 
 VMs com suporte para criptografia destinam-se ao uso onde os administradores da malha são totalmente confiáveis.  Por exemplo, uma empresa pode implantar uma malha protegida para garantir que os discos de VM estejam criptografados em repouso para fins de conformidade. Os administradores da malha podem continuar a usar os recursos de gerenciamento convenientes, por exemplo, conexões de console de VM, PowerShell Direct e outras ferramentas de gerenciamento e solução de problemas diários.
 

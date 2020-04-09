@@ -1,40 +1,34 @@
 ---
 title: criar partição EFI
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para criar partição EFI, que cria uma partição de sistema de EFI (Extensible Firmware Interface) em um disco GPT (tabela de partição GUID) em computadores baseados em Itanium.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3cfc1fca-6515-4a4d-bfae-615fa8045ea9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76d97129fd67345f23eee2fc7b300493a1632cc6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1c61f103fc719c8144e942f64172e3be554a414
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379012"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847039"
 ---
 # <a name="create-partition-efi"></a>criar partição EFI
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Em computadores baseados no Itanium\-, o cria uma interface de firmware extensível \(partição do sistema EFI\) em uma tabela de partição GUID \(disco\) GPT.  
-  
-  
-  
+Em computadores baseados em Itanium, o cria uma partição de sistema de EFI (Extensible Firmware Interface) em um disco GPT (tabela de partição GUID).
+
 ## <a name="syntax"></a>Sintaxe  
   
 ```  
 create partition efi [size=<n>] [offset=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 |  Parâmetro  |                                                                                             Descrição                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,15 +42,15 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
   
 -   Um disco GPT deve ser selecionado para que essa operação tenha sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para criar uma partição EFI de 1000 megabytes no disco selecionado, digite:  
   
 ```  
 create partition efi size=1000  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

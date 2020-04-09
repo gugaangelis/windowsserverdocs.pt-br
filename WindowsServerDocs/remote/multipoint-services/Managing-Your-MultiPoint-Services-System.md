@@ -1,24 +1,20 @@
 ---
 title: Gerenciamento do seu sistema MultiPoint Services
 description: Saiba como gerenciar os serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8c7ffe24-f4e5-4fbf-b445-d860f935e4f3
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 6c1e6d7f63251627d6d193820f22af638ba17a0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c14c804b3825b976bdba74071ec920ed8e8a65d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389557"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853469"
 ---
 # <a name="managing-your-multipoint-services-system"></a>Gerenciamento do seu sistema MultiPoint Services
 O MultiPoint Services permite que várias estações sejam conectadas a um computador. Uma estação tradicional consiste em um [*hub de estação*](Switch-Between-Modes.md) ou cliente zero, monitor, teclado e mouse. Também há suporte para clientes de protocolo RDP conectado à rede (RDP).  

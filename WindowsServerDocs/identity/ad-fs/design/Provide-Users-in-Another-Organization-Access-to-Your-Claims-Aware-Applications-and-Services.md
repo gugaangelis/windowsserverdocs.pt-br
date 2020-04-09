@@ -1,7 +1,6 @@
 ---
 ms.assetid: de7e1e4a-f96d-4b59-ac9b-f65f5d37a96f
 title: Fornecer a usuários de outra organização acesso a seus aplicativos e serviços com reconhecimento de declarações
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0b2429599036f2893f23df7921a11c8232d9f67
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47197a980c9bcb576d6634a0031a8ae13afbfd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359073"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858599"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>Fornecer a usuários de outra organização acesso a seus aplicativos e serviços com reconhecimento de declarações
 
@@ -33,7 +32,7 @@ Os seguintes componentes são necessários para essa meta de implantação:
   
 -   **\)de AD DS de \(de Active Directory Domain Services:** O servidor de Federação do parceiro de recurso deve ser Unido a um domínio Active Directory.  
   
--   **DNS de perímetro:** O sistema de nomes de domínio \(\) DNS deve conter um host simples \(um registro de recurso de\) para que os computadores cliente possam localizar o servidor de Federação do parceiro de recurso e o servidor Web. O servidor DNS pode hospedar outros registros DNS que também são necessários na rede de perímetro. Para obter mais informações, consulte [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md).  
+-   **DNS de perímetro:** O sistema de nomes de domínio \(\) DNS deve conter um host simples \(um registro de recurso de\) para que os computadores cliente possam localizar o servidor de Federação do parceiro de recurso e o servidor Web. O servidor DNS pode hospedar outros registros DNS que também são necessários na rede de perímetro. Para obter mais informações, consulte [Requisitos de resolução de nomes para servidores de federação](Name-Resolution-Requirements-for-Federation-Servers.md).  
   
 -   **Servidor de Federação do parceiro de recurso:** O servidor de Federação do parceiro de recurso valida AD FS tokens que os parceiros de conta enviam. A descoberta de parceiro de conta é executada por meio desse servidor de Federação. Para obter mais informações, consulte [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md).  
   

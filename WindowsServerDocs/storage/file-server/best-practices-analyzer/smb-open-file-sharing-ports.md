@@ -1,18 +1,17 @@
 ---
-title: 'SMB: portas de compartilhamento de arquivo e impressora devem ser abertas'
-TOCTitle: 'SMB: File and printer sharing ports should be open'
+title: SMB-as portas de compartilhamento de arquivos e impressoras devem estar abertas
 ms.date: 07/02/2012
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 80cc75f983d4593e4ee98309d1fa39c024b7b379
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950292"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859459"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: portas de compartilhamento de arquivo e impressora devem ser abertas
 
@@ -31,16 +30,16 @@ Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>Sistema operacional</strong></p></td>
+<td><p><strong>Sistema Operacional</strong></p></td>
 <td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Produto/recurso</strong></p></td>
-<td><p>Serviços de arquivo</p></td>
+<td><p>Serviços de Arquivo</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Gravidade</strong></p></td>
-<td><p>Erro do</p></td>
+<td><p><strong>Severity</strong></p></td>
+<td><p>Error</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Categoria</strong></p></td>
@@ -71,7 +70,7 @@ A associação ao grupo **Administradores** , ou equivalente, é o mínimo neces
 
 3.  Em **regras de entrada**, localize o arquivo de regras **e compartilhamento de impressora (NB-sessão-in)** e **compartilhamento de arquivos e impressoras (SMB-in)** .
 
-4.  Para cada regra, clique com botão direito na regra e, em seguida, clique em **Habilitar regra**.
+4.  Para cada regra, clique com o botão direito do mouse na regra e clique em **Habilitar Regra**.
 
 ## <a name="additional-references"></a>Referências adicionais
 

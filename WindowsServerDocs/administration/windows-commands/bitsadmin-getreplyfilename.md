@@ -1,54 +1,49 @@
 ---
 title: bitsadmin getreplyfilename
-description: Tópico de comandos do Windows para **Bitsadmin getreplyfilename** -Obtém o caminho do arquivo que contém a resposta do servidor.
-ms.custom: na
+description: O tópico de comandos do Windows para **Bitsadmin getreplyfilename**, que obtém o caminho do arquivo que contém a resposta de carregamento do servidor para o trabalho.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 85447184-1732-4816-a365-2e3599551bf8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96b77e9bd19cdc094e6b025e143b05aff7bc60d5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 541a6e60d641405b5da2e65fecbbbe87468c8702
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381269"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850489"
 ---
 # <a name="bitsadmin-getreplyfilename"></a>bitsadmin getreplyfilename
 
-Obtém o caminho do arquivo que contém a resposta do servidor.
+Obtém o caminho do arquivo que contém a resposta de carregamento do servidor para o trabalho.
 
-**BITS 1,2 e anteriores**: Não compatível.
+> [!NOTE]
+> Esse comando não tem suporte no BITS 1,2 e versões anteriores.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /GetReplyFileName <Job>
+bitsadmin /getreplyfilename <job>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Job|O nome de exibição ou o GUID do trabalho|
+| Parâmetro | Descrição |
+| -------------- | -------------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="remarks"></a>Comentários
 
-Válido somente para trabalhos de resposta de upload.
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
-## <a name="BKMK_examples"></a>Disso
+O exemplo a seguir recupera o nome de arquivo de resposta de upload para o trabalho chamado *myDownloadJob*.
 
-O exemplo a seguir recupera o nome de arquivo de resposta para o trabalho chamado *myDownloadJob*.
 ```
-C:\>bitsadmin /GetReplyFileName myDownloadJob
+C:\>bitsadmin /getreplyfilename myDownloadJob
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
 title: Crie um aplicativo de várias camadas usando OBO (em nome de) usando o OAuth com o AD FS 2016 ou posterior
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 028396bffff6449a296e2922846fe2fc379fe624
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: ed8bb6300360553e0809f4a30cec38bc37777ae9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465610"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858839"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Crie um aplicativo de várias camadas usando OBO (em nome de) usando o OAuth com o AD FS 2016 ou posterior
 
@@ -44,7 +43,7 @@ Abaixo está o fluxo de autenticação que o exemplo obterá
 O exemplo incluirá três módulos
 
 
-Módulo | Descrição
+{1&gt;Módulo&lt;1} | Descrição
 -------|------------
 ToDoClient | Cliente nativo com o qual o usuário interage
 ToDoService | API Web da camada intermediária que atua como um cliente para o back-end WebAPI
@@ -274,7 +273,7 @@ Continue com o restante do assistente, como quando configuramos o ToDoListServic
 * Abra o arquivo Web. config
 * Modificar as seguintes chaves
 
-| Chave                      | Valor                                                                                                                                                                                                                   |
+| Chave                      | {1&gt;Valor&lt;1}                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ida: público             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI ToDoListService, por exemplo, https://localhost:44321/                                                                                         |
 | Ida: ClientID             | ID do ToDoListService, conforme fornecido para AD FS ao configurar o WebAPI ToDoListService, por exemplo, <https://localhost:44321/> </br>**É muito importante que o ida: Audience e Ida: ClientID correspondam um ao outro** |
@@ -499,5 +498,5 @@ Na primeira interação, apresentamos o código de acesso ao ponto de extremidad
 Na segunda interação com o ponto de extremidade do token, você pode ver que temos **requested_token_use** definido como **on_behalf_of** e estamos usando o token de acesso obtido para o serviço Web de camada intermediária, ou seja, https://localhost:44321/ como a declaração para obter o token em nome de.
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

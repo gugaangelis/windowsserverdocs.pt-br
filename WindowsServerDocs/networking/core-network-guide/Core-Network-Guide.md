@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b58fe9eaa66abd91de27713398759529ae6147ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319141"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861759"
 ---
 # <a name="core-network-components"></a>Principais componentes de rede
 
@@ -283,11 +283,11 @@ Os itens de configuração de exemplo para AD DS são fornecidos na tabela a seg
 
 |Itens de configuração:|Valores de exemplo:|
 |------------------------|-------------------|
-|Nome DNS completo|Exemplos:<br /><br />-corp.contoso.com<br />-example.com|
+|Nome DNS completo|Exemplos:<p>-corp.contoso.com<br />-example.com|
 |Nível funcional de floresta|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
-|Local da pasta do Banco de Dados dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.|
-|Local da pasta dos arquivos de Log dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.|
-|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.|
+|Local da pasta do Banco de Dados dos Serviços de Domínio Active Directory|\\ E:\Configuration<p>Ou aceite o local padrão.|
+|Local da pasta dos arquivos de Log dos Serviços de Domínio Active Directory|\\ E:\Configuration<p>Ou aceite o local padrão.|
+|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|\\ E:\Configuration<p>Ou aceite o local padrão.|
 |Senha do Administrador do Modo de Restauração de Diretório|**J\*p2leO4 $ F**|
 |Nome de arquivo de resposta (opcional)|**DS_AnswerFile do AD**|
 
@@ -412,7 +412,7 @@ Itens de configuração de exemplo adicionais para AD DS e DNS são fornecidos n
 |Ligações de Conexão de Rede|Ethernet|
 |Configurações do servidor DNS|DC1.corp.contoso.com|
 |Endereço IP do servidor DNS preferencial|10.0.0.2|
-|Adicionar valores da caixa de diálogo Escopo<br /><br />1. nome do escopo<br />2. endereço IP inicial<br />3. endereço IP final<br />4. máscara de sub-rede<br />5. gateway padrão (opcional)<br />6. duração da concessão|1. sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
+|Adicionar valores da caixa de diálogo Escopo<p>1. nome do escopo<br />2. endereço IP inicial<br />3. endereço IP final<br />4. máscara de sub-rede<br />5. gateway padrão (opcional)<br />6. duração da concessão|1. sub-rede primária<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 dias|
 |Modo de Operação do Servidor DHCP IPv6|Não habilitado|
 
 ## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>Implantação de rede de núcleo
@@ -1437,9 +1437,9 @@ Itens de configuração para o procedimento de implantação da Rede Principal d
 |-----------------------|------------------|----------|
 |Nome DNS completo|corp.contoso.com||
 |Nível funcional de floresta|Windows Server 2003||
-|Local da pasta do banco de dados dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.||
-|Local da pasta dos arquivos de log dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.||
-|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|\\ E:\Configuration<br /><br />Ou aceite o local padrão.||
+|Local da pasta do banco de dados dos Serviços de Domínio Active Directory|\\ E:\Configuration<p>Ou aceite o local padrão.||
+|Local da pasta dos arquivos de log dos Serviços de Domínio Active Directory|\\ E:\Configuration<p>Ou aceite o local padrão.||
+|Local da pasta do SYSVOL dos Serviços de Domínio Active Directory|\\ E:\Configuration<p>Ou aceite o local padrão.||
 |Senha do Administrador do Modo de Restauração de Diretório|J*p2leO4$F||
 |Nome de arquivo de resposta (opcional)|DS_AnswerFile do AD||
 
@@ -1448,10 +1448,10 @@ Itens de configuração para o procedimento de implantação da Rede Principal d
 |Itens de configuração|Valores de exemplo|Valores|
 |-----------------------|------------------|----------|
 |Tipo de zona:|-Zona primária<br />-Zona secundária<br />-Zona de stub||
-|Tipo de zona<br /><br />**Armazenar a zona em Active Directory**|-Selecionado<br />-Não selecionado||
+|Tipo de zona<p>**Armazenar a zona em Active Directory**|-Selecionado<br />-Não selecionado||
 |Escopo de replicação de zona do Active Directory|-Para todos os servidores DNS nesta floresta<br />-Para todos os servidores DNS neste domínio<br />-Para todos os controladores de domínio neste domínio<br />-Para todos os controladores de domínio especificados no escopo desta partição de diretório||
-|Nome da zona de pesquisa inversa<br /><br />(tipo de IP)|-Zona de pesquisa inversa de IPv4<br />-Zona de pesquisa inversa do IPv6||
-|Nome da zona de pesquisa inversa<br /><br />(ID da rede)|10.0.0||
+|Nome da zona de pesquisa inversa<p>(tipo de IP)|-Zona de pesquisa inversa de IPv4<br />-Zona de pesquisa inversa do IPv6||
+|Nome da zona de pesquisa inversa<p>(ID da rede)|10.0.0||
 
 ### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>Instalando o DHCP
 As tabelas nesta seção listam os itens de configuração de pré-instalação e de instalação do DHCP.
@@ -1509,16 +1509,16 @@ Os itens de configuração do procedimento de implantação da Rede Principal do
 |-----------------------|------------------|----------|
 |Novo nome do escopo|Corp2||
 |Descrição do escopo|Sub-rede principal do escritório 2||
-|(intervalo de endereços IP)<br /><br />Endereço IP inicial|10.0.1.1||
-|(intervalo de endereços IP)<br /><br />Endereço IP final|10.0.1.254||
+|(intervalo de endereços IP)<p>Endereço IP inicial|10.0.1.1||
+|(intervalo de endereços IP)<p>Endereço IP final|10.0.1.254||
 |Duração|8||
 |Máscara de sub-rede|255.255.255.0||
 |Endereço IP Inicial (intervalo de exclusão)|10.0.1.1||
 |Endereço IP final do intervalo de exclusão|10.0.1.15||
-|Duração da concessão<br /><br />Days<br /><br />Horas<br /><br />Minutos|-8<br />-   0<br />-   0||
-|Roteador (gateway padrão)<br /><br />Endereço IP|10.0.1.1||
+|Duração da concessão<p>Days<p>Horas<p>Minutos|-8<br />-   0<br />-   0||
+|Roteador (gateway padrão)<p>Endereço IP|10.0.1.1||
 |Domínio pai DNS|corp.contoso.com||
-|Servidor DNS<br /><br />Endereço IP|10.0.0.2||
+|Servidor DNS<p>Endereço IP|10.0.0.2||
 
 ### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>Instalando o servidor de políticas de rede (opcional)
 As tabelas nesta seção listam os itens de configuração de pré-instalação e de instalação do NPS.

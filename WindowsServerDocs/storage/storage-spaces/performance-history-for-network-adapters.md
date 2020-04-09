@@ -1,80 +1,79 @@
 ---
 title: Histórico de desempenho para adaptadores de rede
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: 340999a8f440975d3736277b1a30dddbb942785d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2379ce540cb26c02bc79f591d2a597874ab287c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849977"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856209"
 ---
 # <a name="performance-history-for-network-adapters"></a>Histórico de desempenho para adaptadores de rede
 
-> Aplica-se a: Windows Server Insider Preview
+> Aplica-se a: Windows Server 2019
 
-Este tópico subpropriedades de [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para adaptadores de rede. Histórico de desempenho do adaptador de rede está disponível para cada adaptador de rede física em cada servidor no cluster. Histórico de desempenho de acesso direto à memória (RDMA) remoto está disponível para cada adaptador de rede física com RDMA habilitado.
+Este subtópico do [histórico de desempenho para espaços de armazenamento diretos](performance-history.md) descreve detalhadamente o histórico de desempenho coletado para adaptadores de rede. O histórico de desempenho do adaptador de rede está disponível para cada adaptador de rede física em cada servidor no cluster. O histórico de desempenho de RDMA (acesso remoto direto à memória) está disponível para cada adaptador de rede física com RDMA habilitado.
 
    > [!NOTE]
-   > Histórico de desempenho não pode ser coletado para adaptadores de rede em um servidor que está inativo. Coleção será retomada automaticamente quando o servidor de volta a funcionar.
+   > O histórico de desempenho não pode ser coletado para adaptadores de rede em um servidor que está inoperante. A coleta será retomada automaticamente quando o servidor voltar a ficar em funcionamento.
 
 ## <a name="series-names-and-units"></a>Unidades e nomes de séries
 
-Essas séries são coletadas para cada adaptador de rede qualificados:
+Essas séries são coletadas para cada adaptador de rede elegível:
 
-| série                               | Unidade            |
+| Série                               | Unidade            |
 |--------------------------------------|-----------------|
-| `netadapter.bandwidth.inbound`       | Bits por segundo |
-| `netadapter.bandwidth.outbound`      | Bits por segundo |
-| `netadapter.bandwidth.total`         | Bits por segundo |
-| `netadapter.bandwidth.rdma.inbound`  | Bits por segundo |
-| `netadapter.bandwidth.rdma.outbound` | Bits por segundo |
-| `netadapter.bandwidth.rdma.total`    | Bits por segundo |
+| `netadapter.bandwidth.inbound`       | bits por segundo |
+| `netadapter.bandwidth.outbound`      | bits por segundo |
+| `netadapter.bandwidth.total`         | bits por segundo |
+| `netadapter.bandwidth.rdma.inbound`  | bits por segundo |
+| `netadapter.bandwidth.rdma.outbound` | bits por segundo |
+| `netadapter.bandwidth.rdma.total`    | bits por segundo |
 
    > [!NOTE]
-   > Histórico de desempenho do adaptador de rede é registrado no **bits** por segundo, não em bytes por segundo. Um adaptador de rede 10 GbE pode enviar e receber aproximadamente 1.000.000.000 bits = 125,000,000 bytes = 1,25 GB por segundo no seu máximo teórico.
+   > O histórico de desempenho do adaptador de rede é registrado em **bits** por segundo, não em bytes por segundo. O adaptador de rede 1 10 GbE pode enviar e receber aproximadamente 1.000.000.000 bits = 125 milhões bytes = 1,25 GB por segundo em seu máximo teórico.
 
 ## <a name="how-to-interpret"></a>Como interpretar
 
-| série                               | Como interpretar                                                      |
+| Série                               | Como interpretar                                                      |
 |--------------------------------------|-----------------------------------------------------------------------|
 | `netadapter.bandwidth.inbound`       | Taxa de dados recebidos pelo adaptador de rede.                         |
 | `netadapter.bandwidth.outbound`      | Taxa de dados enviados pelo adaptador de rede.                             |
 | `netadapter.bandwidth.total`         | Taxa total de dados recebidos ou enviados pelo adaptador de rede.           |
-| `netadapter.bandwidth.rdma.inbound`  | Taxa de dados recebidos em RDMA pelo adaptador de rede.               |
-| `netadapter.bandwidth.rdma.outbound` | Taxa de dados enviados por RDMA, o adaptador de rede.                   |
-| `netadapter.bandwidth.rdma.total`    | Taxa total de dados recebidos ou enviados em RDMA pelo adaptador de rede. |
+| `netadapter.bandwidth.rdma.inbound`  | Taxa de dados recebidos por RDMA pelo adaptador de rede.               |
+| `netadapter.bandwidth.rdma.outbound` | Taxa de dados enviados por RDMA pelo adaptador de rede.                   |
+| `netadapter.bandwidth.rdma.total`    | Taxa total de dados recebidos ou enviados por RDMA pelo adaptador de rede. |
 
-## <a name="where-they-come-from"></a>Onde eles vêm
+## <a name="where-they-come-from"></a>De onde vêm
 
-O `bytes.*` série é coletada a partir de `Network Adapter` contador de desempenho definido no servidor em que o adaptador de rede está instalado, uma instância por adaptador de rede.
+A série de `bytes.*` é coletada do contador de desempenho de `Network Adapter` definido no servidor onde o adaptador de rede está instalado, uma instância por adaptador de rede.
 
-| série                           | Contador de origem           |
+| Série                           | Contador de origem           |
 |----------------------------------|--------------------------|
 | `netadapter.bandwidth.inbound`   | 8 × `Bytes Received/sec` |
 | `netadapter.bandwidth.outbound`  | 8 × `Bytes Sent/sec`     |
 | `netadapter.bandwidth.total`     | 8 × `Bytes Total/sec`    |
 
-O `rdma.*` série é coletada a partir de `RDMA Activity` contador de desempenho definido no servidor em que o adaptador de rede está instalado, uma instância por adaptador de rede com RDMA habilitado.
+A série de `rdma.*` é coletada do contador de desempenho de `RDMA Activity` definido no servidor onde o adaptador de rede está instalado, uma instância por adaptador de rede com RDMA habilitado.
 
-| série                               | Contador de origem           |
+| Série                               | Contador de origem           |
 |--------------------------------------|--------------------------|
 | `netadapter.bandwidth.rdma.inbound`  | 8 × `Inbound bytes/sec`  |
 | `netadapter.bandwidth.rdma.outbound` | 8 × `Outbound bytes/sec` |
 | `netadapter.bandwidth.rdma.total`    | 8 × *soma dos itens acima*   |
 
    > [!NOTE]
-   > Contadores são medidos ao longo de todo o intervalo, não amostrado. Por exemplo, se o adaptador de rede ficar ocioso por 9 segundos, mas transferências bits 200 na segunda, 10 de seus `netadapter.bandwidth.total` serão registradas como 20 bits por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho captura todas as atividades e é robusto para o ruído.
+   > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se o adaptador de rede estiver ocioso por 9 segundos, mas transferir 200 bits no décimo segundo, seu `netadapter.bandwidth.total` será gravado como 20 bits por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use o [Get-NetAdapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter) cmdlet:
+Use o cmdlet [Get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter) :
 
 ```PowerShell
 Get-NetAdapter <Name> | Get-ClusterPerf
@@ -82,4 +81,4 @@ Get-NetAdapter <Name> | Get-ClusterPerf
 
 ## <a name="see-also"></a>Consulte também
 
-- [Histórico de desempenho para espaços de armazenamento diretos](performance-history.md)
+- [Histórico de desempenho para Espaços de Armazenamento Diretos](performance-history.md)

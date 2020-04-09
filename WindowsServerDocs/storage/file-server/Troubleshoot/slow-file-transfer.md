@@ -3,16 +3,15 @@ title: Velocidade de transferência de arquivos SMB lentos
 description: Apresenta como solucionar problemas de desempenho de transferência de arquivos SMB.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0e6c049404f464eba872075a8ef5060b303920c8
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654557"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815389"
 ---
 # <a name="slow-smb-files-transfer-speed"></a>Velocidade de transferência de arquivos SMB lentos
 
@@ -38,7 +37,7 @@ Se você observar transferências lentas de arquivos grandes, considere as segui
 
 - Para SMBv3 e versões posteriores, certifique-se de que o SMB multicanal está habilitado e funcionando.
 
-- No cliente SMB, habilite o MTU grande no SMB e desabilite a limitação da largura de banda. Para fazer isso, execute o comando a seguir:  
+- No cliente SMB, habilite o MTU grande no SMB e desabilite a limitação da largura de banda. Para fazer isso, execute o comando:  
   
   ```PowerShell
   Set-SmbClientConfiguration -EnableBandwidthThrottling 0 -EnableLargeMtu 1
@@ -46,7 +45,7 @@ Se você observar transferências lentas de arquivos grandes, considere as segui
 
 ## <a name="small-file-transfer-is-slow"></a>A transferência de arquivo pequena está lenta
 
-A transferência lenta de arquivos pequenos por meio de SMB ocorre com mais frequência se houver muitos arquivos. Este é um comportamento esperado.
+A transferência lenta de arquivos pequenos por meio de SMB ocorre com mais frequência se houver muitos arquivos. Esse é um comportamento esperado.
 
 Durante a transferência de arquivos, a criação de arquivos causa sobrecarga de protocolo alto e sobrecarga do sistema de arquivos alta. Para transferências de arquivos grandes, esses custos ocorrem apenas uma vez. Quando um grande número de arquivos pequenos for transferido, o custo será repetitivo e causará transferências lentas.
 

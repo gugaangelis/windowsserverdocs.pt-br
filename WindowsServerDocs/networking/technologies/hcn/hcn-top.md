@@ -3,13 +3,14 @@ title: API de serviço HCN (rede de computação de host) para VMs e contêinere
 description: A API de serviço HCN (rede de computação de host) é uma API Win32 voltada para o público que fornece acesso em nível de plataforma para gerenciar redes virtuais, pontos de extremidade de rede virtual e políticas associadas. Juntos, isso fornece conectividade e segurança para VMs (máquinas virtuais) e contêineres em execução em um host do Windows.
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: e30a778d661fa7c6d2e248234218eb25fba007a1
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031547"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859839"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de serviço HCN (rede de computação de host) para VMs e contêineres
 
@@ -20,20 +21,20 @@ A API de serviço HCN (rede de computação de host) é uma API Win32 voltada pa
 Os desenvolvedores usam a API de serviço HCN para gerenciar a rede para VMs e contêineres em seus fluxos de trabalho de aplicativo. A API HCN foi projetada para fornecer a melhor experiência para os desenvolvedores. Os usuários finais não interagem diretamente com essas APIs.  
 
 ## <a name="features-of-the-hcn-service-api"></a>Recursos da API do serviço HCN
--   Implementada como C API hospedada pelo serviço de rede do host (HNS) no Oncore/VM.
+-    Implementada como C API hospedada pelo serviço de rede do host (HNS) no Oncore/VM.
 
--   Fornece a capacidade de criar, modificar, excluir e enumerar objetos HCN, como redes, pontos de extremidade, namespaces e políticas. As operações são executadas em identificadores para os objetos (por exemplo, um identificador de rede) e internamente esses identificadores são implementados usando identificadores de contexto RPC.
+-    Fornece a capacidade de criar, modificar, excluir e enumerar objetos HCN, como redes, pontos de extremidade, namespaces e políticas. As operações são executadas em identificadores para os objetos (por exemplo, um identificador de rede) e internamente esses identificadores são implementados usando identificadores de contexto RPC.
 
--   Baseado em esquema. A maioria das funções da API definem parâmetros de entrada e saída como cadeias de caracteres que contêm os argumentos da chamada de função como documentos JSON. Os documentos JSON são baseados em esquemas com controle de versão e fortemente tipados, esses esquemas fazem parte da documentação pública. 
+-    Baseado em esquema. A maioria das funções da API definem parâmetros de entrada e saída como cadeias de caracteres que contêm os argumentos da chamada de função como documentos JSON. Os documentos JSON são baseados em esquemas com controle de versão e fortemente tipados, esses esquemas fazem parte da documentação pública. 
 
--   Uma API de assinatura/retorno de chamada é fornecida para permitir que os clientes se registrem para notificações de eventos de todo o serviço, como as exclusões e criações de rede.
+-    Uma API de assinatura/retorno de chamada é fornecida para permitir que os clientes se registrem para notificações de eventos de todo o serviço, como as exclusões e criações de rede.
 
--   A API do HCN funciona na ponte de desktop (também conhecido como Centennial) aplicativos em execução nos serviços do sistema. A API verifica a ACL recuperando o token do usuário do chamador.
+-    A API do HCN funciona na ponte de desktop (também conhecido como Centennial) aplicativos em execução nos serviços do sistema. A API verifica a ACL recuperando o token do usuário do chamador.
 
 >[!TIP]
 >A API do serviço HCN tem suporte em tarefas em segundo plano e em janelas que não são de primeiro plano. 
 
-## <a name="terminology-host-vs-compute"></a>Terminologia: Host versus Computação
+## <a name="terminology-host-vs-compute"></a>Terminologia: host versus computação
 O serviço de computação do host permite que os chamadores criem e gerenciem máquinas virtuais e contêineres em um único computador físico. Ele é nomeado para seguir a terminologia do setor. 
 
 - O **host** é amplamente usado no setor de virtualização para se referir ao sistema operacional que fornece recursos virtualizados.
@@ -44,18 +45,18 @@ O serviço de computação do host permite que os chamadores criem e gerenciem m
 Os documentos de configuração baseados em esquemas bem definidos são um padrão industrial estabelecido no espaço de virtualização. A maioria das soluções de virtualização, como Docker e kubernetes, fornece APIs baseadas em documentos de configuração. Várias iniciativas do setor, com a participação da Microsoft, orientam um ecossistema para definir e validar esses esquemas, como [openapi](https://www.openapis.org/).  Essas iniciativas também orientam a padronização de definições de esquema específicas para os esquemas usados para contêineres, como o [OCI (Open container Initiative)](https://www.opencontainers.org/).
 
 O idioma usado para criar documentos de configuração é [JSON](https://tools.ietf.org/html/rfc8259), que você usa em combinação com:
--   Definições de esquema que definem um modelo de objeto para o documento
--   Validação de se um documento JSON está em conformidade com um esquema
--   Conversão automatizada de documentos JSON de e para representações nativas desses esquemas nas linguagens de programação usadas pelos chamadores das APIs 
+-    Definições de esquema que definem um modelo de objeto para o documento
+-    Validação de se um documento JSON está em conformidade com um esquema
+-    Conversão automatizada de documentos JSON de e para representações nativas desses esquemas nas linguagens de programação usadas pelos chamadores das APIs 
 
 As definições de esquema usadas com frequência são [openapi](https://www.openapis.org/) e [esquema JSON](http://json-schema.org/), que permite especificar as definições detalhadas das propriedades em um documento, por exemplo:
--   O conjunto válido de valores para uma propriedade, como 0-100 para uma propriedade que representa uma porcentagem.
--   A definição de enumerações, que são representadas como um conjunto de cadeias de caracteres válidas para uma propriedade.
--   Uma expressão regular para o formato esperado de uma cadeia de caracteres. 
+-    O conjunto válido de valores para uma propriedade, como 0-100 para uma propriedade que representa uma porcentagem.
+-    A definição de enumerações, que são representadas como um conjunto de cadeias de caracteres válidas para uma propriedade.
+-    Uma expressão regular para o formato esperado de uma cadeia de caracteres. 
 
 Como parte da documentação das APIs do HCN, estamos planejando publicar o esquema de nossos documentos JSON como uma especificação OpenAPI. Com base nessa especificação, representações específicas de idioma do esquema podem permitir o uso seguro de tipo dos objetos de esquema na linguagem de programação usada pelo cliente. 
 
-### <a name="example"></a>Exemplo 
+### <a name="example"></a>{1&gt;Exemplo&lt;1} 
 
 Veja a seguir um exemplo desse fluxo de trabalho para o objeto que representa um controlador SCSI no documento de configuração de uma VM. 
 
@@ -277,7 +278,7 @@ class HostComputeLoadBalancer : HCN.Schema.Common.Base
 };
 ```
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - Saiba mais sobre os [cenários comuns de HCN](hcn-scenarios.md).
 

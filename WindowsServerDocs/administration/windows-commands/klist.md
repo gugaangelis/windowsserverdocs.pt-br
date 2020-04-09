@@ -1,24 +1,20 @@
 ---
 title: klist
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4689b4a9-1740-47dd-9240-02105efca428
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b35069faa835b59f2655262f640ddb18068702f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b693e4496f4fc1275e1f2b364900564ce86e97cb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375313"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841959"
 ---
 # <a name="klist"></a>klist
 
@@ -32,7 +28,7 @@ Exibe uma lista de tíquetes Kerberos atualmente armazenados em cache. Essas inf
 klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | sessions | kcd_cache | get | add_bind | query_bind | purge_bind
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -41,9 +37,9 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 |ticket|Lista os tíquetes de concessão de tíquetes (TGTs) e Tíquetes de serviço armazenados em cache no momento da sessão de logon especificada. Essa é a opção padrão.|
 |TGT|Exibe o TGT Kerberos inicial.|
 |limpar|Permite que você exclua todos os tíquetes da sessão de logon especificada.|
-|Das|Exibe uma lista de sessões de logon neste computador.|
+|sessões|Exibe uma lista de sessões de logon neste computador.|
 |kcd_cache|Exibe as informações de cache de delegação restrita de Kerberos.|
-|obter|Permite solicitar um tíquete para o computador de destino especificado pelo SPN (nome da entidade de serviço).|
+|get|Permite solicitar um tíquete para o computador de destino especificado pelo SPN (nome da entidade de serviço).|
 |add_bind|Permite especificar um controlador de domínio preferencial para a autenticação Kerberos.|
 |query_bind|Exibe uma lista de controladores de domínio preferenciais em cache para cada domínio que o Kerberos tenha contatado.|
 |purge_bind|Remove os controladores de domínio preferenciais em cache para os domínios especificados.|
@@ -60,48 +56,48 @@ Os parâmetros exibem as seguintes informações:
 -   **ticket**
 
     Lista os tíquetes atualmente armazenados em cache dos serviços que você autenticou desde o logon. Exibe os seguintes atributos de todos os tíquetes em cache:  
-    -   LogonId: O LUID
-    -   Cliente: A concatenação do nome do cliente e o nome de domínio do cliente
-    -   Servidor: A concatenação do nome do serviço e o nome de domínio do serviço
-    -   Tipo de criptografia KerbTicket: O tipo de criptografia usado para criptografar o tíquete Kerberos
-    -   Sinalizadores de tíquete: Os sinalizadores de tíquete Kerberos
-    -   Hora de início: A hora da qual o tíquete será válido
-    -   Hora de término: A hora em que o tíquete se torna não mais válido. Quando um tíquete é passado desta vez, ele não pode mais ser usado para autenticar em um serviço ou ser usado para renovação
-    -   Hora da renovação: A hora em que uma nova autenticação inicial é necessária
-    -   Tipo de chave de sessão: O algoritmo de criptografia que é usado para a chave de sessão
+    -   LogonId: o LUID
+    -   Cliente: a concatenação do nome do cliente e o nome de domínio do cliente
+    -   Servidor: a concatenação do nome do serviço e o nome de domínio do serviço
+    -   Tipo de criptografia KerbTicket: o tipo de criptografia que é usado para criptografar o tíquete Kerberos
+    -   Sinalizadores de tíquete: os sinalizadores de tíquete Kerberos
+    -   Hora de início: a hora a partir da qual o tíquete será válido
+    -   Hora de término: a hora em que o tíquete se torna não mais válido. Quando um tíquete é passado desta vez, ele não pode mais ser usado para autenticar em um serviço ou ser usado para renovação
+    -   Hora da renovação: a hora em que uma nova autenticação inicial é necessária
+    -   Tipo de chave de sessão: o algoritmo de criptografia que é usado para a chave de sessão
 -   **TGT**
 
     Lista o TGT Kerberos inicial e os seguintes atributos do tíquete atualmente armazenado em cache:  
-    -   LogonId: Identificado em hexadecimal
+    -   LogonId: identificado em hexadecimal
     -   ServiceName: krbtgt
-    -   > \<De SPN de TargetName: krbtgt
-    -   DomainName Nome do domínio que emite o TGT
-    -   TargetDomainName: Domínio para o qual o TGT é emitido
-    -   AltTargetDomainName: Domínio para o qual o TGT é emitido
-    -   Sinalizadores de tíquete: Ações de endereço e destino e tipo
-    -   Chave de sessão: Comprimento da chave e algoritmo de criptografia
-    -   StartTime Hora do computador local em que o tíquete foi solicitado
-    -   Final Hora em que o tíquete se torna não mais válido. Quando um tíquete é passado desta vez, ele não pode mais ser usado para autenticar em um serviço.
-    -   RenewUntil: Prazo para renovação de tíquete
-    -   Distorção de horários: Diferença de tempo com o centro de distribuição de chaves (KDC)
-    -   EncodedTicket: Tíquete codificado
+    -   \<do SPN > de TargetName: krbtgt
+    -   Nome_do_domínio: nome do domínio que emite o TGT
+    -   TargetDomainName: domínio ao qual o TGT é emitido
+    -   AltTargetDomainName: domínio ao qual o TGT é emitido
+    -   Sinalizadores de tíquete: ações de endereço e de destino e tipo
+    -   Chave de sessão: comprimento da chave e algoritmo de criptografia
+    -   StartTime: hora do computador local em que o tíquete foi solicitado
+    -   EndTime: hora em que o tíquete se torna não mais válido. Quando um tíquete é passado desta vez, ele não pode mais ser usado para autenticar em um serviço.
+    -   RenewUntil: prazo para renovação do tíquete
+    -   Distorção de tempo: diferença de hora com o centro de distribuição de chaves (KDC)
+    -   EncodedTicket: tíquete codificado
 -   **depuração**
 
     Permite que você exclua um tíquete específico. A limpeza de tíquetes destrói todos os tíquetes armazenados em cache, portanto, use esse atributo com cuidado. Ele pode impedir que você possa se autenticar nos recursos. Se isso acontecer, você precisará fazer logoff e logon novamente.  
-    -   LogonId: Identificado em hexadecimal
+    -   LogonId: identificado em hexadecimal
 -   **das**
 
     Permite listar e exibir as informações de todas as sessões de logon neste computador.  
-    -   LogonId: Se especificado, exibe a sessão de logon somente pelo valor especificado. Se não for especificado, exibirá todas as sessões de logon neste computador.
+    -   LogonId: se especificado, exibe a sessão de logon somente pelo valor especificado. Se não for especificado, exibirá todas as sessões de logon neste computador.
 -   **kcd_cache**
 
     Permite que você exiba as informações de cache de delegação restrita de Kerberos.  
-    -   LogonId: Se especificado, exibe as informações de cache para a sessão de logon pelo valor especificado. Se não for especificado, exibe as informações de cache para a sessão de logon do usuário atual.
--   **get**
+    -   LogonId: se especificado, exibe as informações de cache para a sessão de logon pelo valor especificado. Se não for especificado, exibe as informações de cache para a sessão de logon do usuário atual.
+-   **Obter**
 
     Permite solicitar um tíquete para o destino especificado pelo SPN.  
-    -   LogonId: Se especificado, solicita um tíquete usando a sessão de logon pelo valor especificado. Se não for especificado, o solicitará um tíquete usando a sessão de logon do usuário atual.
-    -   kdcoptions: Solicita um tíquete com as opções de KDC fornecidas
+    -   LogonId: se especificado, solicita um tíquete usando a sessão de logon pelo valor especificado. Se não for especificado, o solicitará um tíquete usando a sessão de logon do usuário atual.
+    -   kdcoptions: solicita um tíquete com as opções de KDC fornecidas
 -   **add_bind**
 
     Permite especificar um controlador de domínio preferencial para a autenticação Kerberos.
@@ -118,7 +114,7 @@ Os parâmetros exibem as seguintes informações:
 **Outras considerações**
 -   O klist. exe está disponível no Windows Server 2012 e no Windows 8, e não requer instalação especial.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 1. Quando você estiver diagnosticando uma ID de evento 27 durante o processamento de uma solicitação de TGS (serviço de concessão de tíquetes) para o servidor de destino, a conta não terá uma chave adequada para gerar um tíquete Kerberos. Você pode usar klist para consultar o cache de tíquete Kerberos para determinar se algum tíquete está ausente, se o servidor ou a conta de destino estiver em erro ou se não houver suporte para o tipo de criptografia.  
    ```
@@ -166,6 +162,6 @@ Os parâmetros exibem as seguintes informações:
    klist purge_bind
    ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

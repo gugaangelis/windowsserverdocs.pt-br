@@ -1,24 +1,20 @@
 ---
 title: Projetar uma estação em outras estações
 description: Saiba como compartilhar uma área de trabalho de um sistema para outro nos serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2c0d0faf-ba5b-406d-bd89-b685ddf81e93
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 242214ba69fc3265c9984e218110a16242b1cff3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 24ca032d566e9dfb9c95d716344be43aafca5135
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395136"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853329"
 ---
 # <a name="project-a-station-to-other-stations"></a>Projetar uma estação em outras estações
 Como um usuário do painel do MultiPoint, você pode projetar sua área de trabalho na estação de um único usuário ou em todas as estações de usuários (não administradores). Esse recurso é útil quando você deseja demonstrar uma tarefa a um usuário ou conjunto de usuários.  

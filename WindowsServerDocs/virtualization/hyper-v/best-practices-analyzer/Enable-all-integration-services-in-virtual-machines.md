@@ -2,20 +2,19 @@
 title: Habilitar todos os serviços de integração em máquinas virtuais
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 16e202ad-3795-40c9-8176-7ca319e56d26
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 1984c3d1d6261756bf83f899985b457681537046
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2497755185ba1971130b571ce654e0019df18e0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364892"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861969"
 ---
 # <a name="enable-all-integration-services-in-virtual-machines"></a>Habilitar todos os serviços de integração em máquinas virtuais
 
@@ -28,7 +27,7 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -40,7 +39,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 *O serviço ou o recurso de integração pode não funcionar corretamente para as seguintes máquinas virtuais:*  
   
-\<list de nomes de máquina virtual >  
+\<lista de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   
@@ -50,7 +49,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 1.  Use Serviços de Área de Trabalho Remota ou conexão de máquina virtual para se conectar à máquina virtual e fazer logon no sistema operacional convidado.  
   
-2.  Abrir Serviços. (Clique em **Iniciar**, clique na caixa **Iniciar pesquisa** , digite **Services. msc**e pressione Enter.)  
+2.  Abra Serviços. (Clique em **Iniciar**, clique na caixa **Iniciar pesquisa** , digite **Services. msc**e pressione Enter.)  
   
 3.  No painel de detalhes, clique com o botão direito no serviço que deseja configurar e clique em **Propriedades**.  
   

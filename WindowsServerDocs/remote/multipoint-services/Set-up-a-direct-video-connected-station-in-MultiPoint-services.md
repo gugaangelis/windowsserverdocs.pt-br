@@ -1,24 +1,20 @@
 ---
 title: Configurar uma estação conectada diretamente ao vídeo nos serviços do MultiPoint
 description: Saiba como criar uma estação conectada diretamente ao vídeo nos serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82ba3517-9743-4cde-8eea-63a17edb016f
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: ab57f3d996cfe9196fd256a76516a44dc146043b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4bab07a21c6e2de529797e240325b3ff27446fe0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389356"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859349"
 ---
 # <a name="set-up-a-direct-video-connected-station-in-multipoint-services"></a>Configurar uma estação conectada diretamente ao vídeo nos serviços do MultiPoint
 Em uma estação conectada direta por vídeo, o monitor é conectado diretamente a uma porta de vídeo no computador do MultiPoint Server. Um teclado e um mouse são conectados a um hub USB e estão associados ao monitor.  

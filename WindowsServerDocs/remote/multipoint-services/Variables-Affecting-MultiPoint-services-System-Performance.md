@@ -1,31 +1,27 @@
 ---
 title: Variáveis que afetam o desempenho do sistema MultiPoint Services
 description: Informações de desempenho para serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f3e8875-1b5e-4789-b16c-d06d6e31f38e
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: cba973e3b0a89c26f886a67154c27831adb2c8cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44f268c958ed32e527b66cebe1a10d33652eb9b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394832"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858909"
 ---
 # <a name="variables-affecting-multipoint-services-system-performance"></a>Variáveis que afetam o desempenho do sistema MultiPoint Services
 Há muitas variáveis que podem afetar o desempenho geral do seu sistema de serviços do MultiPoint. Talvez você queira considerar isso ao criar seu sistema.  
   
 ## <a name="usage"></a>Uso  
   
--   **Aplicativos** do O tipo e o número de aplicativos em execução ao mesmo tempo, especialmente\-os aplicativos gráficos pesados ou com uso intensivo de memória afetarão o desempenho geral do seu sistema. Para obter mais informações, consulte [aplicativos e conteúdo da Internet](hardware-and-performance-recommendations.md#applications-and-internet-content).  
+-   **Aplicativos** do O tipo e o número de aplicativos em execução ao mesmo tempo, especialmente elementos gráficos\-aplicativos pesados ou com uso intensivo de memória afetarão o desempenho geral do seu sistema. Para obter mais informações, consulte [aplicativos e conteúdo da Internet](hardware-and-performance-recommendations.md#applications-and-internet-content).  
   
 -   **Uso da Internet** Considere se os usuários exibirão conteúdo multimídia ou páginas da Web que usam vídeos de movimento completo. Esse tipo de conteúdo pode sobrecarregar o sistema se muitos usuários estiverem exibindo simultaneamente.  
   

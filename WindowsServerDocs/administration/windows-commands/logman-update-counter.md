@@ -1,28 +1,24 @@
 ---
 title: contador de atualização do logman
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 607df6d5-876c-428d-a0b3-f59cb244e2ce britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c0696b6077a919d93106cb39329c986e91883fa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d93ea91fb1b5d105923457aeb8d5515e1ac5b9c5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374348"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840569"
 ---
 # <a name="logman-update-counter"></a>contador de atualização do logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Atualize as propriedades de um coletor de dados do contador existente.  
 
@@ -30,7 +26,7 @@ Atualize as propriedades de um coletor de dados do contador existente.
 ```  
 logman update counter <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
 
 |                    Parâmetro                     |                                                                               Descrição                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,11 +56,11 @@ logman update counter <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
-## <a name="BKMK_examples"></a>Disso  
-O comando a seguir atualiza o perf_log do coletor de dados, alterando o intervalo de amostragem para 10 e o formato de log para CSV e adicionando o controle de versão ao nome do arquivo de log no formato mmddhhmm.  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+O comando a seguir atualiza o coletor de dados perf_log, alterando o intervalo de amostragem para 10 e o formato de log para CSV e adicionando o controle de versão ao nome do arquivo de log no formato mmddhhmm.  
 ```  
 logman update perf_log -si 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
 [logman](logman.md)  
 [criar contador de logman](logman-create-counter.md)  

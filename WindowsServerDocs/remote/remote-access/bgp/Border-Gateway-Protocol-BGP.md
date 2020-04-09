@@ -2,22 +2,18 @@
 title: BGP (Border Gateway Protocol)
 description: Você pode usar este tópico para obter uma compreensão do Border Gateway Protocol (BGP) no Windows Server 2016, incluindo topologias de implantação com suporte do BGP e recursos e funcionalidades do BGP.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3e04c732cbacb182731717215a4cf99cf3cc1f76
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5407c2580f9546c59df9e6c1c35520449bdfaa3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309296"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815859"
 ---
 # <a name="border-gateway-protocol-bgp"></a>BGP (Border Gateway Protocol)
 

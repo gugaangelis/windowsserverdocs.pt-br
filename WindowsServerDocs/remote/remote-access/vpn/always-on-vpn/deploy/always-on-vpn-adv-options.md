@@ -6,16 +6,16 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/24/2019
-ms.author: lizross, v-tea
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 30a8e3053f263ffad3be940a52e845fb7159dde1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 74cda6a899d69a951c34a9a88e2f51ef1590b621
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313293"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859489"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Recursos avançados do Always On VPN
 
@@ -32,7 +32,7 @@ A seguir estão as opções adicionais para alta disponibilidade.
 
 |{1&gt;Opção&lt;1}  |Descrição  |
 |---------|---------|
-|Resiliência do servidor e balanceamento de carga     |Em ambientes que exigem alta disponibilidade ou que dão suporte a um grande número de solicitações, você pode aumentar o desempenho e a resiliência do acesso remoto usando o balanceamento de carga entre vários servidores que estão executando o NPS (servidor de diretivas de rede) e habilitando Clustering de servidores de acesso remoto.<p>Documentos relacionados:<ul><li>[Balanceamento de carga do servidor proxy NPS](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[Implantar o acesso remoto em um cluster](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
+|Resiliência do servidor e balanceamento de carga     |Em ambientes que exigem alta disponibilidade ou que dão suporte a um grande número de solicitações, você pode aumentar o desempenho e a resiliência do acesso remoto usando o balanceamento de carga entre vários servidores que estão executando o NPS (servidor de diretivas de rede) e habilitando o clustering de servidor de acesso remoto.<p>Documentos relacionados:<ul><li>[Balanceamento de carga do servidor proxy NPS](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[Implantar o acesso remoto em um cluster](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
 |Resiliência do site geográfico     |Para localização geográfica baseada em IP, você pode usar o Gerenciador de tráfego global com DNS no Windows Server 2016. Para um balanceamento de carga geográfico mais robusto, você pode usar soluções de balanceamento de carga de servidor global, como Gerenciador de Tráfego do Microsoft Azure.<p>Documentos relacionados:<ul><li>[Visão geral do Gerenciador de tráfego](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Gerenciador de Tráfego do Microsoft Azure](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
 
 ## <a name="advanced-authentication"></a>Autenticação avançada
@@ -76,7 +76,7 @@ A tabela a seguir lista as versões que contêm as correções para cada versão
 
 1. Instale as atualizações do Windows à medida que elas se tornarem disponíveis.
 1. Verifique se todos os certificados do cliente VPN e do servidor RRAS que você usa têm entradas de CDP e se o servidor RRAS pode acessar as respectivas CRLs.
-1. No servidor RRAS, use o cmdlet **set-VpnAuthProtocol** do PowerShell para configurar o parâmetro **RootCertificateNameToAccept** .<br /><br />
+1. No servidor RRAS, use o cmdlet **set-VpnAuthProtocol** do PowerShell para configurar o parâmetro **RootCertificateNameToAccept** .<p>
    O exemplo a seguir lista os comandos para fazer isso. No exemplo, **CN = Contoso Root Certification Authority** representa o nome distinto da autoridade de certificação raiz. 
    ``` powershell
    $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority*" } )

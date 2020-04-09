@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
 title: Auditoria de acesso a arquivos de cenário
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37a3b17360112d958b59a7e9c3f64aed5e6f6a5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37ea1cf28e42f74a18cd57b8fa9def5f9d1646be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406996"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861119"
 ---
-# <a name="scenario-file-access-auditing"></a>Cenário: Auditoria de acesso a arquivo
+# <a name="scenario-file-access-auditing"></a>Scenario: File Access Auditing
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -71,12 +70,12 @@ Os seguintes tópicos fornecem orientação adicional para este cenário:
   
 -   [Implantar a auditoria de segurança com as etapas &#40;de demonstração das políticas de auditoria central&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
-## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista as funções e os recursos que fazem parte deste cenário e descreve como dar suporte a ele.  
   
 |Função/recurso|Como este cenário tem suporte|  
 |-----------------|---------------------------------|  
-|Função dos Serviços de Domínio Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite criar declarações de usuário e declarações de dispositivo, identidade composta, (usuário mais declarações de dispositivo), novo modelo de CAP (políticas de acesso central) e o uso de classificação de arquivos informações em decisões de autorização.|  
+|Função dos Serviços de Domínio Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite a criação de declarações de usuário e declarações de dispositivo, identidade composta (usuário mais declarações de dispositivo), novo modelo de CAP (políticas de acesso central) e o uso de informações de classificação de arquivo em decisões de autorização.|  
 |Função dos Serviços de Arquivo e Armazenamento|Os servidores de arquivos no Windows Server 2012 fornecem uma interface do usuário em que os administradores podem exibir as permissões efetivas para os usuários de um arquivo ou pasta e solucionar problemas de acesso e conceder acesso conforme necessário.|  
   
 

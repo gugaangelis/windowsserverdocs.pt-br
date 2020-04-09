@@ -1,19 +1,20 @@
 ---
 title: Migração de cluster entre domínios no Windows Server 2016/2019
+description: Este artigo descreve como mover um cluster do Windows Server 2019 de um domínio para outro
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/18/2019
-description: Este artigo descreve como mover um cluster do Windows Server 2019 de um domínio para outro
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f49795124dedf0655726853a4d865686f6d697
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361412"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828289"
 ---
 # <a name="failover-cluster-domain-migration"></a>Migração de domínio de cluster de failover
 
@@ -40,7 +41,7 @@ A Microsoft não oferece suporte a administradores que tentem mover recursos de 
 
 No Windows Server 2016 e versões anteriores, o Serviço de cluster não tinha a capacidade de mudar de um domínio para outro.  Isso ocorreu devido à maior dependência no Active Directory Domain Services e nos nomes virtuais criados.   
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
 Para fazer essa movimentação, há duas opções.
 
@@ -122,7 +123,7 @@ Nas etapas a seguir, um cluster está sendo movido do domínio Contoso.com para 
    New-ClusterNameAccount -Name CLUSTERNAME -Domain NEWDOMAINNAME.com -UpgradeVCOs
    ```
 
-    OBSERVAÇÃO:  Se você não tiver grupos adicionais com nomes de rede (ou seja, um cluster Hyper-V com apenas máquinas virtuais), a opção de parâmetro-UpgradeVCOs não será necessária.
+    Observação: se você não tiver grupos adicionais com nomes de rede (ou seja, um cluster Hyper-V com apenas máquinas virtuais), a opção de parâmetro-UpgradeVCOs não será necessária.
 
 9. Use Active Directory usuários e computadores para verificar o novo domínio e garantir que os objetos de computador associados foram criados. Se tiverem, coloque os recursos restantes nos grupos online.
 
