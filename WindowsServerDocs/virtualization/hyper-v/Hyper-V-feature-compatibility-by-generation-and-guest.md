@@ -2,21 +2,19 @@
 title: Compatibilidade de recursos do Hyper-V por geração e convidado
 description: Lista as gerações e os sistemas operacionais que são compatíveis com os principais recursos do Hyper-V
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: cdca6c31ff14fe63e99ec4afa2581885677bb61d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7212cf21858c8031db0a72efa8d79d78974b0309
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365541"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853229"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>Compatibilidade de recursos do Hyper-V por geração e convidado
 
@@ -79,8 +77,8 @@ GPUs | 1 e 2 | Geração 1 em versões de 32 bits e 64 bits do Windows a partir 
   
 Recurso  | Geração | Sistema operacional convidado  
 ------------- | ------------- | -----------  
-Inicialização segura | 2 | **Linux**: Ubuntu 14, 4 e posterior, SUSE Linux Enterprise Server 12 e posterior, Red Hat Enterprise Linux 7,0 e posterior e CentOS 7,0 e posterior<br>**Windows**: Todas as versões com suporte que podem ser executadas em uma máquina virtual de geração 2  
-Máquinas virtuais blindadas | 2 | **Windows**: Todas as versões com suporte que podem ser executadas em uma máquina virtual de geração 2  
+Inicialização segura | 2 | **Linux**: Ubuntu 14, 4 e posterior, SuSE Linux Enterprise Server 12 e posterior, Red Hat Enterprise Linux 7,0 e posterior e CentOS 7,0 e posterior<br>**Windows**: todas as versões com suporte que podem ser executadas em uma máquina virtual de geração 2  
+Máquinas virtuais blindadas | 2 | **Windows**: todas as versões com suporte que podem ser executadas em uma máquina virtual de geração 2  
   
 ## <a name="storage"></a>Armazenamento  
   

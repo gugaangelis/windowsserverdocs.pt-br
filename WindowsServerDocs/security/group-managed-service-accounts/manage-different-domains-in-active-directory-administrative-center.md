@@ -1,22 +1,18 @@
 ---
 title: Gerenciar domínios diferentes no Centro Administrativo do Active Directory
-ms.prod: windows-server
 description: Segurança do Windows Server
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.assetid: 166351c3-4076-48be-aa8f-797adf1e9d68
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 71edf6bb38cc665fe5c780ce986d0c0b8807d6ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6690ffbc558db4026c3fe67168907ca953ad4081
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386932"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856979"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>Gerenciar domínios diferentes no Centro Administrativo do Active Directory
 
@@ -24,7 +20,7 @@ ms.locfileid: "71386932"
 
   Quando você abre Active Directory administrativas, o domínio no qual você está conectado no momento neste computador \(o\) de domínio local aparece no painel de navegação Centro Administrativo do Active Directory \(painel esquerdo\). Dependendo dos direitos do seu conjunto atual de credenciais de logon, você pode exibir ou gerenciar os objetos de Active Directory nesse domínio local.
 
- Você também pode usar o mesmo conjunto de credenciais de logon e a mesma instância do Centro Administrativo do Active Directory para exibir ou gerenciar Active Directory objetos em qualquer outro domínio na mesma floresta ou um domínio em outra floresta que tenha uma relação de confiança estabelecida com o local controlador. Um\-maneira de confiar e duas\-como as relações de confiança têm suporte.
+ Você também pode usar o mesmo conjunto de credenciais de logon e a mesma instância do Centro Administrativo do Active Directory para exibir ou gerenciar Active Directory objetos em qualquer outro domínio na mesma floresta ou um domínio em outra floresta que tenha uma relação de confiança estabelecida com o domínio local. Um\-maneira de confiar e duas\-como as relações de confiança têm suporte.
 
 > [!NOTE]
 >  Se houver uma relação de confiança\-entre o domínio A e o domínio B por meio do qual os usuários no domínio A podem acessar recursos no domínio B, mas os usuários no domínio B não poderão acessar recursos no domínio A, se você estiver executando Centro Administrativo do Active Directory no computador em que o domínio A é o domínio local, poderá se conectar ao domínio B com o conjunto atual de credenciais de logon e na mesma Centro Administrativo do Active Directory instância Mas se você estiver executando Centro Administrativo do Active Directory no computador em que o domínio B é seu domínio local, não poderá se conectar ao domínio A com o mesmo conjunto de credenciais na mesma instância do Centro Administrativo do Active Directory.

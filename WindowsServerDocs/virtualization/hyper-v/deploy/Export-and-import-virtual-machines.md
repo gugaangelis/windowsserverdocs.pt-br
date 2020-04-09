@@ -2,19 +2,19 @@
 title: Exportar e importar máquinas virtuais
 description: Mostra como exportar e importar máquinas virtuais usando o Gerenciador do Hyper-V ou o Windows PowerShell.
 ms.prod: windows-server
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 6e130ee8a040cd5b56908d77d91bf196a60de6f7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e9cd8710a53c1e5d9d97e464c32dbf7f17d29a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392981"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860889"
 ---
 >Aplica-se a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
@@ -26,7 +26,7 @@ Este artigo mostra como exportar e importar uma máquina virtual, que é uma man
 
 Uma exportação reúne todos os arquivos necessários em uma unidade--arquivos de disco rígido virtual, arquivos de configuração de máquina virtual e qualquer arquivo de ponto de verificação. Você pode fazer isso em uma máquina virtual que esteja no estado iniciado ou parado.
 
-### <a name="using-hyper-v-manager"></a>Usando o Gerenciador do Hyper-V
+### <a name="using-hyper-v-manager"></a>Uso do Gerenciador Hyper-V
 
 Para criar uma exportação de máquina virtual:
 
@@ -36,7 +36,7 @@ Para criar uma exportação de máquina virtual:
 
 Quando a exportação for concluída, você poderá ver todos os arquivos exportados no local de exportação.
 
-### <a name="using-powershell"></a>Usando o PowerShell
+### <a name="using-powershell"></a>Uso do PowerShell
 
 Abra uma sessão como administrador e execute um comando como o seguinte, depois de substituir \<nome da VM\> e \<\>de caminho:
 
@@ -80,7 +80,7 @@ Esse tipo de importação usa os arquivos onde eles são armazenados no momento 
 Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
 ```
 
-#### <a name="restore"></a>Restaurar
+#### <a name="restore"></a>Restauração
 
 Para importar a máquina virtual especificando seu próprio caminho para os arquivos de máquina virtual, execute um comando como este, substituindo os exemplos pelos seus valores:
 

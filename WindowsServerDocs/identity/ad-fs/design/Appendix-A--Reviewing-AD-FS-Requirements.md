@@ -1,7 +1,6 @@
 ---
 ms.assetid: 39ecc468-77c5-4938-827e-48ce498a25ad
 title: Apêndice A-revisando requisitos de AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 281bb3763bc13e28b007a819254de382dc977f1c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8a11c7e6072d4aaa1ace19885c92639acfdbbb8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408156"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858049"
 ---
-# <a name="appendix-a-reviewing-ad-fs-requirements"></a>Apêndice A: Examinando requisitos do AD FS
+# <a name="appendix-a-reviewing-ad-fs-requirements"></a>Apêndice A: examinando requisitos do AD FS
 
-Para que os parceiros organizacionais em sua implantação de Serviços de Federação do Active Directory (AD FS) (AD FS) possam colaborar com êxito, você deve primeiro garantir que sua infraestrutura de rede corporativa esteja configurada para dar suporte a requisitos de AD FS para contas, nome resolução e certificados. AD FS tem os seguintes tipos de requisitos:  
+Para que os parceiros organizacionais em sua implantação de Serviços de Federação do Active Directory (AD FS) (AD FS) possam colaborar com êxito, você deve primeiro garantir que sua infraestrutura de rede corporativa esteja configurada para dar suporte a requisitos de AD FS para contas, resolução de nomes e certificados. O AD FS tem os seguintes tipos de requisitos:  
   
 > [!TIP]  
 > Você pode encontrar links de recursos do AD FS adicionais na página [Mapa de Conteúdo do AD FS](https://social.technet.microsoft.com/wiki/contents/articles/2735.aspx) , no TechNet Wiki da Microsoft. Essa página é gerenciada por membros da comunidade do AD FS e é monitorada regularmente pela equipe de produto do AD FS.  
@@ -28,12 +27,12 @@ Os requisitos de hardware mínimos e recomendados a seguir se aplicam ao servido
   
 |Requisito de hardware|Requisito mínimo|Requisito recomendado|  
 |------------------------|-----------------------|---------------------------|  
-|Velocidade da CPU|Um núcleo, 1 GHz (gigahertz)|Quatro núcleos, 2 GHz|  
-|RAM|1 GB|4 GB|  
+|Velocidade de CPU|Um núcleo, 1 GHz (gigahertz)|Quatro núcleos, 2 GHz|  
+|RAM|1 GB|4 GB|  
 |Espaço em disco|50 MB|100 MB|  
   
 ## <a name="software-requirements"></a>Requisitos de software  
-AD FS se baseia na funcionalidade do servidor que é integrada ao sistema operacional Windows Server® 2012.  
+AD FS se baseia na funcionalidade do servidor que é integrada ao sistema operacional Windows Server&reg; 2012.  
   
 > [!NOTE]  
 > Os serviços de função Serviço de Federação e Proxy do Serviço de Federação não podem coexistir no mesmo computador.  
@@ -41,14 +40,14 @@ AD FS se baseia na funcionalidade do servidor que é integrada ao sistema operac
 ## <a name="certificate-requirements"></a>Requisitos de certificado  
 Os certificados exercem a função mais crítica na proteção das comunicações entre os servidores de federação, os proxies dos servidores de federação, os aplicativos com reconhecimento de declaração e os clientes Web. Os requisitos dos certificados variam, dependendo de você configurar um computador servidor de federação ou um computador proxy de servidor de federação, conforme descrito nesta seção.  
   
-### <a name="federation-server-certificates"></a>Certificados de servidores de federação  
-Os servidores de federação exigem os certificados da tabela a seguir.  
+### <a name="federation-server-certificates"></a>Certificados de servidor de federação  
+Os servidores de federação requerem os certificados na tabela a seguir.  
   
 |Tipo de certificado|Descrição|O que você precisa saber antes da implantação|  
 |--------------------|---------------|------------------------------------------|  
-|Certificado SSL|Este é um certificado SSL padrão usado para proteger as comunicações entre servidores de federação e clientes.|Este certificado deve estar associados ao site padrão no IIS (Serviços de Informações da Internet) para um servidor de federação ou proxy de servidor de federação.  Para um proxy de servidor de federação, a associação deve ser configurada no IIS antes da execução bem-sucedida do Assistente de Configuração de Proxy de Servidor de Federação.<br /><br />**Recomendação** como esse certificado deve ser confiável aos clientes do AD FS, utilize um certificado de autenticação de servidor que seja emitido por uma AC (autoridade de certificação) pública (terceirizada), por exemplo, VeriSign. **Dica:** O Nome da entidade desse certificado é usado para representar o nome do Serviço de Federação de cada instância do AD FS que você implantar. Por esse motivo, talvez você queira considerar a escolha de um Nome da entidade em qualquer certificado emitido por uma nova AC que represente melhor o nome da sua empresa ou organização para os parceiros.|  
+|Certificado do Secure Sockets Layer (SSL)|Este é um certificado SSL padrão usado para proteger as comunicações entre servidores de federação e clientes.|Este certificado deve estar associados ao site padrão no IIS (Serviços de Informações da Internet) para um servidor de federação ou proxy de servidor de federação.  Para um proxy de servidor de federação, a associação deve ser configurada no IIS antes da execução bem-sucedida do Assistente de Configuração de Proxy de Servidor de Federação.<p>**Recomendação:** Como esse certificado deve ser confiável pelos clientes do AD FS, use um certificado de autenticação de servidor emitido por uma autoridade de certificação (CA) pública (terceiros), por exemplo, VeriSign. **Dica:** O nome da entidade desse certificado é usado para representar o nome do Serviço de Federação para cada instância do AD FS que você implanta. Por esse motivo, talvez você queira considerar a escolha de um Nome da entidade em qualquer certificado emitido por uma nova AC que represente melhor o nome da sua empresa ou organização para os parceiros.|  
 |Certificado de comunicação de serviço|Esse certificado habilita a segurança da mensagem WCF (Windows Communication Foundation) para proteger as comunicações entre os servidores de federação.|Por padrão, o certificado SSL é usado como o certificado das comunicações de serviço.  Isso pode ser alterado usando o console de Gerenciamento do AD FS.|  
-|Certificado de autenticação de tokens|Este é um certificado X509 padrão usado para autenticar com segurança todos os tokens que o servidor de federação emite.|O certificado de autenticação de tokens deve conter uma chave privada e deve fazer o encadeamento para uma raiz confiável no Serviço de Federação. Por padrão, o AD FS cria um certificado autoassinado. No entanto, você poderá alterar isso depois para um certificado emitido pela AC usando o snap-in Gerenciamento do AD FS, dependendo das necessidades da sua organização.|  
+|Certificado de assinatura de token|Este é um certificado X509 padrão usado para autenticar com segurança todos os tokens que o servidor de federação emite.|O certificado de assinatura de token deve conter uma chave privada e deve estar encadeado com uma raiz confiável no Serviço de Federação. Por padrão, o AD FS cria um certificado autoassinado. No entanto, você poderá alterar isso depois para um certificado emitido pela AC usando o snap-in Gerenciamento do AD FS, dependendo das necessidades da sua organização.|  
 |Certificado de descriptografia de token|Este é um certificado SSL padrão usado para descriptografar todos os tokens recebidos que são criptografados por um servidor de federação do parceiro. Ele também é publicado nos metadados de federação.|Por padrão, o AD FS cria um certificado autoassinado. No entanto, você poderá alterar isso depois para um certificado emitido pela AC usando o snap-in Gerenciamento do AD FS, dependendo das necessidades da sua organização.|  
   
 > [!CAUTION]  
@@ -56,12 +55,12 @@ Os servidores de federação exigem os certificados da tabela a seguir.
   
 Para obter mais informações sobre os certificados usados pelos servidores de federação, consulte [Requisitos de certificado para servidores de federação](Certificate-Requirements-for-Federation-Servers.md).  
   
-### <a name="federation-server-proxy-certificates"></a>Certificados de proxies de servidores de federação  
+### <a name="federation-server-proxy-certificates"></a>Certificados proxy do servidor de federação  
 Os proxies de servidores de federação exigem os certificados da tabela a seguir.  
   
 |Tipo de certificado|Descrição|O que você precisa saber antes da implantação|  
 |--------------------|---------------|------------------------------------------|  
-|Certificado de autenticação de servidor|Este é um certificado SSL padrão usado para proteger as comunicações entre um proxy de servidor de federação e os computadores cliente da Internet.|Este certificado deve estar associado ao site padrão no IIS (Serviços de Informações da Internet) antes que você possa executar com sucesso o Assistente de Configuração de Proxy de Servidor de Federação do AD FS.<br /><br />**Recomendação** como esse certificado deve ser confiável aos clientes do AD FS, utilize um certificado de autenticação de servidor que seja emitido por uma AC (autoridade de certificação) pública (terceirizada), por exemplo, VeriSign.<br /><br />**Dica:** O Nome da entidade desse certificado é usado para representar o nome do Serviço de Federação de cada instância do AD FS que você implantar. Por esse motivo, talvez você queira considerar a escolha de um Nome da entidade que represente melhor o nome da sua empresa ou organização para os parceiros.|  
+|Certificado de autenticação de servidor|Este é um certificado SSL padrão usado para proteger as comunicações entre um proxy de servidor de federação e os computadores cliente da Internet.|Este certificado deve estar associado ao site padrão no IIS (Serviços de Informações da Internet) antes que você possa executar com sucesso o Assistente de Configuração de Proxy de Servidor de Federação do AD FS.<p>**Recomendação:** Como esse certificado deve ser confiável pelos clientes do AD FS, use um certificado de autenticação de servidor emitido por uma autoridade de certificação (CA) pública (terceiros), por exemplo, VeriSign.<p>**Dica:** O nome da entidade desse certificado é usado para representar o nome do Serviço de Federação para cada instância do AD FS que você implanta. Por esse motivo, talvez você queira considerar a escolha de um Nome da entidade que represente melhor o nome da sua empresa ou organização para os parceiros.|  
   
 Para obter mais informações sobre os certificados usados pelos proxies de servidores de certificação, consulte [Requisitos de certificado para proxies de servidores de federação](Certificate-Requirements-for-Federation-Server-Proxies.md).  
   
@@ -70,7 +69,7 @@ Embora qualquer navegador da Web com funcionalidade de JavaScript possa funciona
   
 A equipe de produto AD FS na Microsoft testou com êxito as configurações do navegador e do sistema operacional na tabela a seguir.  
   
-|Navegador|Windows 7|Windows Vista|  
+|Navegador.|Windows 7|Windows Vista|  
 |-----------|-------------|-----------------|  
 |Internet Explorer 7,0|X|X|  
 |Internet Explorer 8,0|X|X|  
@@ -82,18 +81,18 @@ A equipe de produto AD FS na Microsoft testou com êxito as configurações do n
 > O AD FS dá suporte às versões de 32 e 64 bits dos navegadores mostrados na tabela acima.  
   
 ### <a name="cookies"></a>Cookies  
-O AD FS cria cookies persistentes e baseados na sessão que devem ser armazenados nos computadores cliente para fornecer conexão, saída do serviço, SSO (logon único) e outras funcionalidades. Portanto, o navegador do cliente deve ser configurado para aceitar cookies. Os cookies usados para autenticação são sempre cookies de sessão HTTPS (Secure Hypertext Transfer Protocol) que são criados para o servidor de origem. Se o navegador do cliente não estiver configurado para permitir esses cookies, o AD FS não poderá funcionar corretamente. Os cookies persistentes são usados para preservar a seleção de usuário do provedor de declarações. Você pode desabilitá-los usando uma definição de configuração do arquivo de configuração das páginas de conexão do AD FS.  
+O AD FS cria cookies persistentes e baseados na sessão que devem ser armazenados nos computadores cliente para fornecer conexão, saída do serviço, SSO (logon único) e outras funcionalidades. Portanto, o navegador do cliente deve estar configurado para aceitar cookies. Os cookies usados para autenticação são sempre cookies de sessão HTTPS (Secure Hypertext Transfer Protocol) que são criados para o servidor de origem. Se o navegador do cliente não estiver configurado para permitir esses cookies, o AD FS não poderá funcionar corretamente. Os cookies persistentes são usados para preservar a seleção de usuário do provedor de declarações. Você pode desabilitá-los usando uma definição de configuração do arquivo de configuração das páginas de conexão do AD FS.  
   
 Por motivos de segurança, é exigido o suporte a TLS/SSL.  
   
 ## <a name="network-requirements"></a>Requisitos de rede  
-Configurar os seguintes serviços de rede adequadamente é essencial para uma implantação bem-sucedida de AD FS em sua organização.  
+Configurar os seguintes serviços de rede corretamente é essencial para a implantação bem-sucedida do AD FS na sua organização.  
   
 ### <a name="tcpip-network-connectivity"></a>Conectividade de rede TCP/IP  
 Para que AD FS funcionem, a conectividade de rede TCP/IP deve existir entre o cliente; um controlador de domínio; e os computadores que hospedam o Serviço de Federação, o Proxy do Serviço de Federação (quando usado) e o Agente Web do AD FS.  
   
 ### <a name="dns"></a>DNS  
-O serviço de rede principal que é essencial para a operação de AD FS, diferente de Active Directory Domain Services (AD DS), é o DNS (sistema de nomes de domínio). Quando o DNS é implantado, os usuários podem utilizar nomes de computadores amigáveis e fáceis de lembrar para estabelecer conexão com os computadores e outros recursos das redes IP.  
+O serviço de rede principal que é essencial para a operação de AD FS, diferente de Active Directory Domain Services (AD DS), é o DNS (sistema de nomes de domínio). Quando o DNS é implantado, o usuários podem utilizar nomes de computador amigáveis, que sejam fáceis de lembrar, para se conectar aos computadores e outros recursos em redes IP.  
   
  O Windows Server 2008 usa DNS para resolução de nomes em vez da resolução de nomes NetBIOS do WINS (serviço de cadastramento na Internet do Windows) que foi usada em redes baseadas no Windows NT 4.0. Ainda é possível usar WINS nos aplicativos que o exigem. No entanto, AD DS e AD FS exigem a resolução de nomes DNS.  
   
@@ -101,7 +100,7 @@ O processo de configurar o DNS para dar suporte a AD FS varia, dependendo se:
   
 -   Sua organização já tenha uma infraestrutura de DNS existente. Na maioria dos cenários, o DNS já está configurado em toda a sua rede para que os clientes do navegador da Web da rede corporativa tenham acesso à Internet. Como o acesso à Internet e a resolução de nomes são requisitos de AD FS, essa infraestrutura é considerada em vigor para sua implantação de AD FS.  
   
--   Você queira adicionar um servidor federado à sua rede corporativa. Para autenticar usuários na rede corporativa, os servidores DNS internos da floresta da rede corporativa devem estar configurados para retornar o CNAME (nome canônico) do servidor interno que está executando o Serviço de Federação. Para obter mais informações, consulte [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md).  
+-   Você queira adicionar um servidor federado à sua rede corporativa. Para autenticar usuários na rede corporativa, os servidores DNS internos da floresta da rede corporativa devem estar configurados para retornar o CNAME (nome canônico) do servidor interno que está executando o Serviço de Federação. Para obter mais informações, consulte [Requisitos de resolução de nomes para servidores de federação](Name-Resolution-Requirements-for-Federation-Servers.md).  
   
 -   Você pretenda adicionar um proxy de servidor federado à sua rede de perímetro. Quando você deseja autenticar contas de usuário que estão localizadas na rede corporativa da organização do parceiro de identidade, os servidores DNS internos na floresta da rede corporativa devem ser configurados para retornar o CNAME do proxy do servidor de Federação interno. Para obter informações sobre como configurar o DNS para acomodar a adição de proxies de servidor de Federação, consulte [requisitos de resolução de nomes para proxies de servidor de Federação](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   

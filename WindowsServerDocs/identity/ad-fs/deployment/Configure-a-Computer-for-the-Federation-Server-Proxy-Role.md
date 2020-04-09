@@ -1,7 +1,6 @@
 ---
 ms.assetid: a2f23877-30a7-439f-817d-387da9e00e86
 title: Configurar um computador para a função de proxy do servidor de federação
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d47f7d3985aa779276f0712347eb9030857cefdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8bfe21f50a68edfcdbc7c937dc914ff1e1d94c3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359792"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854899"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>Configurar um computador para a função de proxy do servidor de federação
 
@@ -25,29 +24,29 @@ Depois de configurar um computador com os certificados necessários e ter instal
   
 Depois que você terminar de configurar o computador, verifique se o proxy de servidor de federação está funcionando como esperado. Para mais informações, consulte [Verificar se um Proxy do Servidor de Federação está operacional](Verify-That-a-Federation-Server-Proxy-Is-Operational.md).  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>Para configurar um computador para a função de proxy do servidor de federação  
+### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>Para configurar um computador para a função proxy do servidor de federação  
   
-1.  Há duas maneiras de iniciar o assistente de configuração do servidor de Federação AD FS. Para iniciar o assistente, tome uma das seguintes ações:  
+1.  Ha duas maneiras para iniciar o Assistente de Configuração do Servidor de Federação AD FS. Para iniciar o assistente,  faça o seguinte:  
   
     -   Na tela **Iniciar** , digite**AD FS assistente de configuração de proxy do servidor de Federação**e pressione Enter.  
   
     -   A qualquer momento após o assistente de instalação ser concluído, abra o Windows Explorer, navegue até a pasta **C:\\Windows\\ADFS** e clique duas vezes\-clique em **FspConfigWizard. exe**.  
   
-2.  Usando qualquer método, inicie o assistente e, na página **Bem-vindo**, clique em **Avançar**.  
+2.  Usando qualquer método, Iniciar o assistente, e em seguida, na página **Bem-vindo**, clique em **Próximo**.  
   
-3.  Na página **Especificar Nome do Serviço de Federação** em **Nome do Serviço de Federação**, digite o nome que representa o Serviço de Federação para o qual este computador agirá na função de proxy.  
+3.  Na página **Especificar o Nome de Serviço de Federação**, em **Nome de Serviço de Federação**, digite o nome que representa o Serviço de Federação para o qual este computador atua na função de proxy.  
   
-4.  Com base em seus requisitos de rede específicos, determine se você precisará usar um servidor proxy HTTP para encaminhar solicitações ao Serviço de Federação. Em caso positivo, marque a caixa de seleção **Usar um servidor proxy HTTP ao enviar solicitações a este Serviço de Federação**, em **Endereço do servidor proxy HTTP** digite o endereço do servidor proxy, clique em **Testar Conexão** para verificar a conectividade e clique em **Avançar**.  
+4.  Com base nos seus requisitos de rede específicos, determine se será necessário usar um servidor proxy HTTP para encaminhar solicitações ao Serviço de Federação. Se for assim, marque a caixa de seleção **Use um servidor proxy HTTP ao enviar solicitações para este Serviço de Federação**, em **Endereço de servidor proxy HTTP** digite o endereço no servidor proxy, clique em **Testar a Conexão** para verificar a conectividade, e em seguida clique em **Próximo**.  
   
-5.  Quando for solicitado, especifique as credenciais necessárias para estabelecer uma relação de confiança entre o proxy do servidor de federação e o Serviço de Federação.  
+5.  Quando for solicitado, especifique as credenciais que são necessárias para estabelecer uma confiança entre esse proxy de servidor de federação e o Serviço de Federação.  
   
     Por padrão, somente a conta de serviço usada pelo Serviço de Federação ou um membro do grupo local\\administradores de membros pode autorizar um proxy de servidor de Federação.  
   
-6.  Na página **Pronto para Aplicar Configurações**, examine os detalhes. Se as configurações parecerem corretas, clique em **Avançar** para começar a configurar este computador com as configurações de proxy.  
+6.  Na página **Pronto para Aplicar as Configurações**, verificar os detalhes. Se as configurações parecem estar certas, clique em **Próximo** para começar configurar este computador com estas configurações de proxy.  
   
-7.  Na página **Resultados da Configuração**, examine os resultados. Quando todas as etapas de configuração forem concluídas, clique em **fechar** para sair do assistente.  
+7.  Na página **Resultados de Configuração**, analise os resultados. Quando todas as etapas de configuração forem concluídas, clique em **fechar** para sair do assistente.  
   
     Não há um console de gerenciamento da Microsoft \(MMC\) snap\-in para ser usado para administrar os proxies do servidor de Federação. Para definir as configurações para cada um dos proxies do servidor de Federação em sua organização, use os cmdlets do Windows PowerShell.  
   

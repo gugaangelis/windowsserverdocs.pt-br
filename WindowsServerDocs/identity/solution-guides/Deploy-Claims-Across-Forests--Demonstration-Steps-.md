@@ -1,7 +1,6 @@
 ---
 ms.assetid: 846c3680-b321-47da-8302-18472be42421
 title: Implantar declarações em florestas (passo a passo)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6045c144a0da399e8279c781273235942316e538
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05ca21f343d2ad3db4ce00b53a66b3cd6dd6de16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407121"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861239"
 ---
 # <a name="deploy-claims-across-forests-demonstration-steps"></a>Implantar declarações em florestas (passo a passo)
 
@@ -35,15 +34,15 @@ Neste cenário:
 
 4.  [Validar o cenário](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_5)  
 
-## <a name="BKMK_1.1"></a>Configurar os pré-requisitos e o ambiente de teste  
-A configuração de teste envolve a configuração de duas florestas: A adatum Corporation e a contoso, Ltd e têm uma relação de confiança bidirecional entre a Contoso e a adatum. "adatum.com" é a floresta confiável e "contoso.com" é a floresta confiante.  
+## <a name="set-up-the-prerequisites-and-the-test-environment"></a><a name="BKMK_1.1"></a>Configurar os pré-requisitos e o ambiente de teste  
+A configuração de teste envolve a configuração de duas florestas: adatum Corporation e contoso, Ltd e ter uma relação de confiança bidirecional entre a Contoso e a adatum. "adatum.com" é a floresta confiável e "contoso.com" é a floresta confiante.  
 
 O cenário de transformação de declarações demonstra a transformação de uma declaração na floresta confiável para uma declaração na floresta confiante. Para fazer isso, você precisa configurar uma nova floresta chamada adatum.com e popular a floresta com um usuário de teste com um valor de empresa de ' adatum '. Em seguida, você precisa configurar uma relação de confiança bidirecional entre contoso.com e adatum.com.  
 
 > [!IMPORTANT]  
 > Ao configurar as florestas Contoso e adatum, você deve garantir que os domínios raiz estejam no nível funcional de domínio do Windows Server 2012 para que a transformação de declarações funcione.  
 
-Você precisa configurar o seguinte para o laboratório. Esses procedimentos são explicados em detalhes em [Appendix B: Como configurar o ambiente de teste](Appendix-B--Setting-Up-the-Test-Environment.md)  
+Você precisa configurar o seguinte para o laboratório. Esses procedimentos são explicados em detalhes no [Apêndice B: Configurando o ambiente de teste](Appendix-B--Setting-Up-the-Test-Environment.md)  
 
 Você precisa implementar os seguintes procedimentos para configurar o laboratório para este cenário:  
 
@@ -65,23 +64,23 @@ Você precisa implementar os seguintes procedimentos para configurar o laborató
 
 Use as seguintes informações para concluir este cenário:  
 
-|Objects|Detalhes|  
+|Objetos|Detalhes|  
 |-----------|-----------|  
 |Usuários|Jeff Low, contoso|  
-|Declarações do usuário em adatum e contoso|ID: ad://ext/Company:ContosoAdatum,<br /><br />Atributo de origem: empresa<br /><br />Valores sugeridos: Contoso, adatum **importante:** Você deve definir a ID no tipo de declaração ' Company ' em contoso e adatum como o mesmo para que a transformação de declarações funcione.|  
+|Declarações do usuário em adatum e contoso|ID: ad://ext/Company:ContosoAdatum,<p>Atributo de origem: empresa<p>Valores sugeridos: contoso, adatum **importante:** você deve definir a ID no tipo de declaração ' Company ' em contoso e adatum como o mesmo para que a transformação de declarações funcione.|  
 |Regra de acesso central na contoso|AdatumEmployeeAccessRule|  
 |Política de acesso central na contoso|Política de acesso somente adatum|  
 |Políticas de transformação de declarações em adatum e contoso|Empresa DenyAllExcept|  
 |Pasta de arquivos na contoso|D:\EARNINGS|  
 
-## <a name="BKMK_3"></a>Configurar a transformação de declarações na floresta confiável (adatum)  
+## <a name="set-up-claims-transformation-on-trusted-forest-adatum"></a><a name="BKMK_3"></a>Configurar a transformação de declarações na floresta confiável (adatum)  
 Nesta etapa, você cria uma política de transformação em adatum para negar todas as declarações, exceto ' Company ', a serem passadas para contoso.  
 
 O módulo Active Directory para o Windows PowerShell fornece o argumento **DenyAllExcept** , que descarta tudo, exceto as declarações especificadas na política de transformação.  
 
 Para configurar uma transformação de declarações, você precisa criar uma política de transformação de declarações e vinculá-la entre as florestas confiáveis e confiáveis.  
 
-### <a name="BKMK_2.2"></a>Criar uma política de transformação de declarações no adatum  
+### <a name="create-a-claims-transformation-policy-in-adatum"></a><a name="BKMK_2.2"></a>Criar uma política de transformação de declarações no adatum  
 
 ##### <a name="to-create-a-transformation-policy-adatum-to-deny-all-claims-except-company"></a>Para criar uma política de transformação adatum para negar todas as declarações, exceto ' Company '  
 
@@ -98,7 +97,7 @@ Para configurar uma transformação de declarações, você precisa criar uma po
 
    ```  
 
-### <a name="BKMK_2.3"></a>Definir um link de transformação de declarações no objeto de domínio de confiança de adatum  
+### <a name="set-a-claims-transformation-link-on-adatums-trust-domain-object"></a><a name="BKMK_2.3"></a>Definir um link de transformação de declarações no objeto de domínio de confiança de adatum  
 Nesta etapa, você aplica a política de transformação de declarações recém-criada no objeto de domínio confiável do adatum para a contoso.  
 
 ##### <a name="to-apply-the-claims-transformation-policy"></a>Para aplicar a política de transformação de declarações  
@@ -116,10 +115,10 @@ Nesta etapa, você aplica a política de transformação de declarações recém
 
    ```  
 
-## <a name="BKMK_4"></a>Configurar a transformação de declarações na floresta confiante (contoso)  
+## <a name="set-up-claims-transformation-in-the-trusting-forest-contoso"></a><a name="BKMK_4"></a>Configurar a transformação de declarações na floresta confiante (contoso)  
 Nesta etapa, você cria uma política de transformação de declarações na contoso (a floresta confiante) para negar todas as declarações, exceto ' Company. ' Você precisa criar uma política de transformação de declarações e vinculá-la à relação de confiança da floresta.  
 
-### <a name="BKMK_4.1"></a>Criar uma política de transformação de declarações na contoso  
+### <a name="create-a-claims-transformation-policy-in-contoso"></a><a name="BKMK_4.1"></a>Criar uma política de transformação de declarações na contoso  
 
 ##### <a name="to-create-a-transformation-policy-adatum-to-deny-all-except-company"></a>Para criar uma política de transformação adatum para negar tudo, exceto ' Company '  
 
@@ -136,7 +135,7 @@ Nesta etapa, você cria uma política de transformação de declarações na con
 
    ```  
 
-### <a name="BKMK_4.2"></a>Definir um link de transformação de declarações no objeto de domínio de confiança da contoso  
+### <a name="set-a-claims-transformation-link-on-contosos-trust-domain-object"></a><a name="BKMK_4.2"></a>Definir um link de transformação de declarações no objeto de domínio de confiança da contoso  
 Nesta etapa, você aplica a política de transformação de declarações recém-criada no objeto de domínio contoso.com Trust para adatum para permitir que "empresa" passe para contoso.com. O objeto de domínio de confiança é denominado adatum.com.  
 
 ##### <a name="to-set-the-claims-transformation-policy"></a>Para definir a política de transformação de declarações  
@@ -154,14 +153,14 @@ Nesta etapa, você aplica a política de transformação de declarações recém
 
    ```  
 
-## <a name="BKMK_5"></a>Validar o cenário  
+## <a name="validate-the-scenario"></a><a name="BKMK_5"></a>Validar o cenário  
 Nesta etapa, você tenta acessar a pasta D:\EARNINGS que foi configurada no servidor de arquivos FILE1 para validar que o usuário tem acesso à pasta compartilhada.  
 
 #### <a name="to-ensure-that-the-adatum-user-can-access-the-shared-folder"></a>Para garantir que o usuário adatum possa acessar a pasta compartilhada  
 
-1. Entre no computador cliente, CLIENT1 como Jeff Low com a senha <strong>pass@word1</strong>.  
+1. Entre no computador cliente, CLIENT1 como Jeff Low com a <strong>pass@word1</strong>de senha.  
 
-2. Navegue até a pasta \\ \ ARQUIVO1. contoso. com\Earnings.  
+2. Navegue até a pasta \\\FILE1.contoso.com\Earnings.  
 
 3. Jeff Low deve ser capaz de acessar a pasta.  
 
@@ -171,11 +170,11 @@ A seguir está uma lista de casos comuns adicionais na transformação de declar
 
 |                                                 Cenário                                                 |                                                                                                                                                                                                                                           Política                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                  Permitir que todas as declarações provenientes de adatum passem para contoso adatum                  |                                                          Auto-completar <br />New-ADClaimTransformPolicy \`<br /> -Descrição: "política de transformação de declarações para permitir todas as declarações" \`<br />-Name: "AllowAllClaimsPolicy" \`<br />-AllowAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsPolicy" \`<br />-TrustRole: confiança \`<br />-Server:"contoso. com" \`                                                          |
-|                  Negar todas as declarações provenientes de adatum para passar para o contoso adatum                   |                                                            Auto-completar <br />New-ADClaimTransformPolicy \`<br />-Descrição: "política de transformação de declarações para negar todas as declarações" \`<br />-Name: "DenyAllClaimsPolicy" \`<br /> -DenyAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Policy: "DenyAllClaimsPolicy" \`<br />-TrustRole: confiança \`<br />-Server:"contoso. com" \`                                                             |
-| Permitir que todas as declarações provenientes de adatum, exceto "empresa" e "departamento", passem para o contoso adatum | Código <br />-New-ADClaimTransformationPolicy \`<br />-Descrição: "política de transformação de declarações para permitir todas as declarações, exceto a empresa e o departamento" \`<br /> -Name: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br />-AllowAllExcept: empresa, departamento \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br /> -Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br /> -TrustRole: confiança \`<br />-Server:"contoso. com" \` |
+|                  Permitir que todas as declarações provenientes de adatum passem para contoso adatum                  |                                                          Auto-completar <br />\` New-ADClaimTransformPolicy<br /> -Descrição: "política de transformação de declarações para permitir todas as declarações" \`<br />-Name: "AllowAllClaimsPolicy" \`<br />-AllowAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Política: "AllowAllClaimsPolicy" \`<br />-TrustRole: confiar \`<br />-Server:"contoso. com" \`                                                          |
+|                  Negar todas as declarações provenientes de adatum para passar para o contoso adatum                   |                                                            Auto-completar <br />\` New-ADClaimTransformPolicy<br />-Descrição: "política de transformação de declarações para negar todas as declarações" \`<br />-Name: "DenyAllClaimsPolicy" \`<br /> -DenyAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Política: "DenyAllClaimsPolicy" \`<br />-TrustRole: confiar \`<br />-Server:"contoso. com"\`                                                             |
+| Permitir que todas as declarações provenientes de adatum, exceto "empresa" e "departamento", passem para o contoso adatum | Código <br />-\` New-ADClaimTransformationPolicy<br />-Descrição: "política de transformação de declarações para permitir todas as declarações, exceto a empresa e o departamento" \`<br /> -Name: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br />-AllowAllExcept: empresa, departamento \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br /> -Identity:"adatum. com" \`<br />-Política: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br /> -TrustRole: confiar \`<br />-Server:"contoso. com" \` |
 
-## <a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
 
 -   Para obter uma lista de todos os cmdlets do Windows PowerShell que estão disponíveis para transformação de declarações, consulte [Active Directory referência de cmdlet do PowerShell](https://go.microsoft.com/fwlink/?LinkId=243150).  
 

@@ -2,20 +2,19 @@
 title: O Windows Server 2012 R2 deve ser configurado com pelo menos a quantidade mínima de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 01da6f02-1a5f-4d3e-9bef-4d122a91c5c2
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 764cebc24855d7267b9b0b6a1b41de72c7cdd0fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7c13964f8f175ca62df48d26786f9c969db571e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364431"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860999"
 ---
 # <a name="windows-server-2012-r2-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>O Windows Server 2012 R2 deve ser configurado com pelo menos a quantidade mínima de memória
 
@@ -27,8 +26,8 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
-|**Severity**|Erro|  
-|**Categorias**|Configuração|  
+|**Severity**|Error|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -38,7 +37,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 ## <a name="impact"></a>**Causa**  
 *O sistema operacional convidado nas seguintes máquinas virtuais pode não ser executado ou pode ser executado de forma não confiável:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>**Resolução**  
 *Use o Gerenciador do Hyper-V para aumentar a memória alocada para esta máquina virtual para pelo menos 512 MB.*  

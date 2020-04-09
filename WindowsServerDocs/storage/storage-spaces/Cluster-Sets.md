@@ -1,19 +1,20 @@
 ---
 title: Conjuntos de cluster
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/30/2019
 description: Este artigo descreve o cenário de conjuntos de clusters
 ms.localizationpriority: medium
-ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639959"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861039"
 ---
 # <a name="cluster-sets"></a>Conjuntos de cluster
 
@@ -100,13 +101,13 @@ No Windows Server 2019, há uma nova função de servidor de arquivos de escalab
 
 As seguintes considerações se aplicam a uma função de infraestrutura SOFS:
 
-1.  Pode haver no máximo uma função de cluster SOFS de infraestrutura em um cluster de failover. A função SOFS de infraestrutura é criada especificando o parâmetro de opção " **-Infrastructure**" para o cmdlet **Add-ClusterScaleOutFileServerRole** .  Por exemplo:
+1.    Pode haver no máximo uma função de cluster SOFS de infraestrutura em um cluster de failover. A função SOFS de infraestrutura é criada especificando o parâmetro de opção " **-Infrastructure**" para o cmdlet **Add-ClusterScaleOutFileServerRole** .  Por exemplo:
 
-        Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+        Add-ClusterScaleoutFileServerRole-Name "my_infra_sofs_name"-infraestrutura
 
-2.  Cada volume CSV criado no failover aciona automaticamente a criação de um compartilhamento SMB com um nome gerado automaticamente com base no nome do volume CSV. Um administrador não pode criar ou modificar diretamente compartilhamentos SMB em uma função SOFS, exceto por operações de criação/modificação de volume CSV.
+2.    Cada volume CSV criado no failover aciona automaticamente a criação de um compartilhamento SMB com um nome gerado automaticamente com base no nome do volume CSV. Um administrador não pode criar ou modificar diretamente compartilhamentos SMB em uma função SOFS, exceto por operações de criação/modificação de volume CSV.
 
-3.  Em configurações hiperconvergentes, um SOFS de infraestrutura permite que um cliente SMB (host Hyper-V) se comunique com a AC (disponibilidade contínua garantida) para a infraestrutura SOFS servidor SMB. Essa AC de loopback de SMB hiperconvergente é obtida por meio de máquinas virtuais que acessam seus arquivos VHDx (disco virtual) em que a identidade proprietária da máquina virtual é encaminhada entre o cliente e o servidor. Esse encaminhamento de identidade permite arquivos de VHDx da ACL, assim como nas configurações de cluster hiperconvergentes padrão como antes.
+3.    Em configurações hiperconvergentes, um SOFS de infraestrutura permite que um cliente SMB (host Hyper-V) se comunique com a AC (disponibilidade contínua garantida) para a infraestrutura SOFS servidor SMB. Essa AC de loopback de SMB hiperconvergente é obtida por meio de máquinas virtuais que acessam seus arquivos VHDx (disco virtual) em que a identidade proprietária da máquina virtual é encaminhada entre o cliente e o servidor. Esse encaminhamento de identidade permite arquivos de VHDx da ACL, assim como nas configurações de cluster hiperconvergentes padrão como antes.
 
 Depois que um conjunto de clusters é criado, o namespace do conjunto de clusters depende de uma infraestrutura SOFS em cada um dos clusters Membros e, além disso, de uma infraestrutura SOFS no cluster de gerenciamento.
 

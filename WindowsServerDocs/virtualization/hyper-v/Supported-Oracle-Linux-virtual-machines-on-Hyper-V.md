@@ -2,21 +2,19 @@
 title: Máquinas virtuais Oracle Linux com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: cc2a864ddb1b2bcbc972c895fbb79105107a84b8
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: edf92689f1dbe93c387c65e64694c64635fe3958
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169626"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858009"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Máquinas virtuais Oracle Linux com suporte no Hyper-V
 
@@ -42,7 +40,7 @@ Nesta seção:
 
 * **UEK RxUy** -inquebrable Enterprise kernel (UEK), em que x é o número de versão e y é a atualização trimestral.
 
-## <a name="BKMK_rhc"></a>Recursos de versões de Oracle Linux com kernel compatível com Red Hat
+## <a name="features-of-oracle-linux-releases-with-the-red-hat-compatible-kernel"></a><a name="BKMK_rhc"></a>Recursos de versões de Oracle Linux com kernel compatível com Red Hat
 
 O kernel de 32 bits para a série 6. x é habilitado para PAE. Não há suporte interno de LIS para Oracle Linux RHCK 6.0-6.3. Oracle Linux Kernels 7. x são apenas de 64 bits.
 
@@ -85,7 +83,7 @@ O kernel de 32 bits para a série 6. x é habilitado para PAE. Não há suporte 
 | Inicialização segura                                                                                                                                  | 2019, 2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 
 
-## <a name="BKMK_uek"></a>Versões de Oracle Linux com o UEK (inquebrable Enterprise kernel)
+## <a name="oracle-linux-releases-with-the-unbreakable-enterprise-kernel-uek"></a><a name="BKMK_uek"></a>Versões de Oracle Linux com o UEK (inquebrable Enterprise kernel)
 
 Oracle Linux com o UEK (inquebrable Enterprise kernel) é de apenas 64 bits e tem suporte interno a LIS. 
 
@@ -127,7 +125,7 @@ Oracle Linux com o UEK (inquebrable Enterprise kernel) é de apenas 64 bits e te
 | Inicializar usando UEFI                                                                                                                              | 2019, 2016, 2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | Inicialização segura                                                                                                                                  | 2019, 2016                         | &#10004;                  | &#10004;                  |                           |                           |                      |
 
-## <a name="BKMK_notes"></a>Registra
+## <a name="notes"></a><a name="BKMK_notes"></a>Registra
 
 1. Para essa versão de Oracle Linux, a marcação de VLAN funciona, mas o entroncamento de VLAN não.
 
@@ -176,7 +174,7 @@ Oracle Linux com o UEK (inquebrable Enterprise kernel) é de apenas 64 bits e te
 14. A injeção de IP estático poderá não funcionar se o Gerenciador de rede tiver sido configurado para um determinado adaptador de rede sintético na máquina virtual. Para um funcionamento suave da injeção de IP estático, verifique se o Gerenciador de rede está desligado completamente ou se foi desligado para um adaptador de rede específico por meio de seu arquivo ifcfg-ethX.
 
 
-Veja também
+Consulte também
 
 * [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
 

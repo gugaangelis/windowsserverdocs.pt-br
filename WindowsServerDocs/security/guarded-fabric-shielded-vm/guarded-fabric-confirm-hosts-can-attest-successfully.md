@@ -1,19 +1,19 @@
 ---
 title: Confirmar que os hosts protegidos podem atestar
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7485796b-b840-4678-9b33-89e9710fbbc7
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 2bab2b653127ae13d27dea76225ada91b3ee8ecc
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: aa2075bda71c6713fa76577b685315118199e63b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940696"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856779"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>Confirmar que os hosts protegidos podem atestar
 
@@ -41,7 +41,7 @@ Um administrador de malha precisa confirmar que os hosts Hyper-V podem ser execu
 
     - **Por meio do VMM**: se você estiver usando o System Center 2016-Virtual Machine Manager (VMM), poderá configurar o atestado e as URLs de proteção de chave no VMM. Para obter detalhes, consulte [definir configurações globais do HgS](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings) em **provisionar hosts protegidos no VMM**.
 
-    >**Observações**
+    >**Registra**
     > - Se o administrador HGS [habilitou o HTTPS no servidor HgS](guarded-fabric-configure-hgs-https.md), inicie as URLs com `https://`.
     > - Se o administrador HGS habilitou o HTTPS no servidor HGS e usou um certificado autoassinado, você precisará importar o certificado para o repositório de autoridades de certificação raiz confiáveis em cada host. Para fazer isso, execute o seguinte comando em cada host:
        ```PowerShell

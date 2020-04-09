@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4deff06a-d0ef-4e5a-9701-5911ba667201
 title: Ferramenta de restauração rápida do AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 506734812689a42ec17768652ac715f5c7e24401
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465260"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858099"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Ferramenta de restauração rápida do AD FS
 
@@ -79,7 +78,7 @@ Conjuntos de parâmetros
 
 - **BackupDKM** -faz backup do contêiner Active Directory DKM que contém as chaves de AD FS na configuração padrão (certificados de assinatura e descriptografia de token gerados automaticamente). Isso usa uma ferramenta de anúncio ' LDIFDE ' para exportar o contêiner do AD e todas as suas subárvores.
 
-- -**storagetype &lt;cadeia de caracteres&gt;** -o tipo de armazenamento que o usuário deseja usar. "FileSystem" indica que o usuário deseja armazená-lo em uma pasta localmente ou na rede "Azure" indica que o usuário deseja armazená-lo no contêiner de armazenamento do Azure quando o usuário executa o backup, seleciona o local de backup, o sistema de arquivos ou o nuvem. Para que o Azure seja usado, as credenciais de armazenamento do Azure devem ser passadas para o cmdlet. As credenciais de armazenamento contêm o nome da conta e a chave. Além disso, um nome de contêiner também deve ser passado. Se o contêiner não existir, ele será criado durante o backup. Para o sistema de arquivos a ser usado, um caminho de armazenamento deve ser fornecido. Nesse diretório, um novo diretório será criado para cada backup. Cada diretório criado conterá os arquivos de backup. 
+- -**storagetype &lt;cadeia de caracteres&gt;** -o tipo de armazenamento que o usuário deseja usar. "FileSystem" indica que o usuário deseja armazená-lo em uma pasta localmente ou na rede "Azure" indica que o usuário deseja armazená-lo no contêiner de armazenamento do Azure quando o usuário executa o backup, seleciona o local de backup, o sistema de arquivos ou na nuvem. Para que o Azure seja usado, as credenciais de armazenamento do Azure devem ser passadas para o cmdlet. As credenciais de armazenamento contêm o nome da conta e a chave. Além disso, um nome de contêiner também deve ser passado. Se o contêiner não existir, ele será criado durante o backup. Para o sistema de arquivos a ser usado, um caminho de armazenamento deve ser fornecido. Nesse diretório, um novo diretório será criado para cada backup. Cada diretório criado conterá os arquivos de backup. 
 
 - **EncryptionPassword &lt;cadeia de caracteres&gt;** -a senha que será usada para criptografar todos os arquivos de backup antes de armazená-los
 
@@ -117,7 +116,7 @@ Backup-ADFS -StorageType "Azure" -AzureConnectionCredentials $cred -AzureStorage
 
 ### <a name="backup-the-ad-fs-configuration-without-the-dkm-to-the-file-system"></a>Fazer backup da configuração de AD FS sem o DKM para o sistema de arquivos
 
-```powershell   
+```powershell     
 Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -EncryptionPassword "password" -BackupComment "Clean Install of ADFS (FS)"
 ```
 

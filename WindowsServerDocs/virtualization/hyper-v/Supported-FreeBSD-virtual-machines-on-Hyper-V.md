@@ -2,21 +2,19 @@
 title: Máquinas virtuais FreeBSD com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: b7b02e1ec93d6255412a89e7e7d7b8246cf5e50e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea63a64ee0e1ce36ceb7783bbbc764c6ca5ca9d6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365512"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855949"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuais FreeBSD com suporte no Hyper-V
 
@@ -71,7 +69,7 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 |Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;||||||
 |Inicialização segura|2019, 2016|||||||
 
-## <a name="BKMK_notes"></a>Registra
+## <a name="notes"></a><a name="BKMK_notes"></a>Registra
 
 1. Sugira para [rotular dispositivos de disco]( https://www.freebsd.org/doc/handbook/geom-glabel.html) para evitar erro de montagem raiz durante a inicialização.
 
@@ -94,9 +92,9 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-   **Observações adicionais**: A matriz de recursos de 10 estável e 11 estável é a mesma que a versão FreeBSD 11,1. Além disso, o FreeBSD 10,2 e as versões anteriores (10,1, 10,0, 9. x, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) uma lista atualizada de versões com suporte e as mais recentes consultorias de segurança.
+   **Observações adicionais**: a matriz de recursos de 10 estável e 11 estável é a mesma com a versão FreeBSD 11,1. Além disso, o FreeBSD 10,2 e as versões anteriores (10,1, 10,0, 9. x, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) uma lista atualizada de versões com suporte e as mais recentes consultorias de segurança.
 
-**Observações adicionais**: A matriz de recursos de 10 estável e 11 estável é a mesma que a versão FreeBSD 11,1. Além disso, o FreeBSD 10,2 e as versões anteriores (10,1, 10,0, 9. x, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) uma lista atualizada de versões com suporte e as mais recentes consultorias de segurança.
+**Observações adicionais**: a matriz de recursos de 10 estável e 11 estável é a mesma com a versão FreeBSD 11,1. Além disso, o FreeBSD 10,2 e as versões anteriores (10,1, 10,0, 9. x, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) uma lista atualizada de versões com suporte e as mais recentes consultorias de segurança.
 
 ## <a name="see-also"></a>Consulte também
 

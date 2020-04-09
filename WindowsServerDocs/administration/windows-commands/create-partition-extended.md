@@ -1,40 +1,34 @@
 ---
 title: criar partição estendida
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para criar partição estendida, que cria uma partição estendida no disco com foco.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4ad7cb66-9c66-4153-b94e-1030a7225070
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21620da46be0e1375f320172e7ccfe2edc338114
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7071ed16d8ddbd1e37c9dd49bac8bb2b032b0b24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378907"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847069"
 ---
 # <a name="create-partition-extended"></a>criar partição estendida
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Cria uma partição estendida no disco com foco. Você pode usar esse comando somente no registro mestre de inicialização \(discos\) MBR.  
-  
-  
-  
+Cria uma partição estendida no disco com foco. Você pode usar esse comando somente em discos MBR (registro mestre de inicialização).
+
 ## <a name="syntax"></a>Sintaxe  
   
 ```  
 create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 |  Parâmetro  |                                                                                                                             Descrição                                                                                                                              |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -55,15 +49,15 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 -   Um disco MBR básico deve ser selecionado para que essa operação tenha sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para criar uma partição estendida de 1000 megabytes de tamanho, digite:  
   
 ```  
 create partition extended size=1000  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

@@ -1,49 +1,45 @@
 ---
 title: bitsadmin resume
-description: O tópico de comandos do Windows para **Bitsadmin resume** -ativa um trabalho novo ou suspenso na fila de transferência.
-ms.custom: na
+description: O tópico de comandos do Windows para o **Bitsadmin resume**, que ativa um trabalho novo ou suspenso na fila de transferência.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c7540a9-a11a-4910-923a-2a2a61cbf11d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1393e959980b72de09c546ced763a506d334b56c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0a3f464ba00c5cc233c42a40c063372dc0d584e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380774"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849749"
 ---
 # <a name="bitsadmin-resume"></a>bitsadmin resume
-
-
 
 Ativa um trabalho novo ou suspenso na fila de transferência.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /Resume <Job>
+bitsadmin /resume <job>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Job|O nome de exibição ou o GUID do trabalho|
+| Parâmetro | Descrição |
+| -------------- | -------------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 O exemplo a seguir retoma o trabalho chamado *myDownloadJob*.
-```
-C:\>bitsadmin /Resume myDownloadJob
-```
-Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+```
+C:\>bitsadmin /resume myDownloadJob
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

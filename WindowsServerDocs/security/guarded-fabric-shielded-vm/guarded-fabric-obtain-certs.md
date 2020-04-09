@@ -1,19 +1,19 @@
 ---
 title: Obter certificados para HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: e8f4a3696ec5096281ba1ffd130aa97004530cc1
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940732"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856529"
 ---
 # <a name="obtain-certificates-for-hgs"></a>Obter certificados para HGS
 
@@ -74,7 +74,7 @@ Remove-Item $encCert.PSPath
 
 ## <a name="request-an-ssl-certificate"></a>Solicitar um certificado SSL
 
-Todas as chaves e informações confidenciais transmitidas entre hosts Hyper-V e HGS são criptografadas no nível de mensagem, ou seja, as informações são criptografadas com chaves conhecidas para HGS ou Hyper-V, impedindo que alguém farejasse seu tráfego de rede e roubar chaves para suas VMs.
+Todas as chaves e informações confidenciais transmitidas entre hosts Hyper-V e HGS são criptografadas no nível de mensagem, ou seja, as informações são criptografadas com chaves conhecidas para HGS ou Hyper-V, impedindo que alguém farejasse seu tráfego de rede e roube chaves para suas VMs.
 No entanto, se você tiver reqiurements de conformidade ou simplesmente preferir criptografar todas as comunicações entre o Hyper-V e o HGS, poderá configurar o HGS com um certificado SSL que criptografará todos os dados no nível de transporte.
 
 Os hosts Hyper-V e os nós HGS precisarão confiar no certificado SSL fornecido, portanto, é recomendável que você solicite o certificado SSL de sua autoridade de certificação corporativa. Ao solicitar o certificado, certifique-se de especificar o seguinte:

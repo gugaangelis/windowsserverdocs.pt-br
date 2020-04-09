@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6a852428-c1ec-4703-b3b3-a4bfdf8cbb9d
-title: O&#39;que há de novo no Active Directory Domain Services no Windows Server 2016
-description: ''
+title: O que há de novo no Active Directory Domain Services no Windows Server 2016
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,22 +8,22 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1ef77613919ea6caf39a7cb41ba575652680466d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950113"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856279"
 ---
-# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>O que há de novo no Active Directory Domain Services para o Windows Server 2016
+# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Novidades no Active Directory Domain Services para Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
-Os novos recursos a seguir no Active Directory Domain Services (AD DS) melhoram a capacidade das organizações de protegerem os ambientes Active Directory e os ajudam a migrar para implantações e implantações híbridas somente na nuvem, em que alguns aplicativos e serviços são hospedado na nuvem e outros são hospedados localmente. As melhorias incluem:  
+Os novos recursos a seguir no Active Directory Domain Services (AD DS) melhoram a capacidade das organizações de protegerem os ambientes de Active Directory e os ajudam a migrar para implantações híbridas e somente na nuvem, em que alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados localmente. Os aprimoramentos incluem:  
   
 - [Privileged Access Management](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [Estendendo os recursos de nuvem para dispositivos Windows 10 por meio da Junção do Active Directory do Azure](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [Estendendo recursos de nuvem para dispositivos Windows 10 por meio do Azure Active Directory Join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
   
 - [Conectando dispositivos ingressados no domínio ao Azure AD para experiências com o Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
   
@@ -61,7 +60,7 @@ O PAM (Privileged Access Management) ajuda a reduzir as preocupações de segura
 
 O Azure Active Directory Join aprimora as experiências de identidade para clientes corporativos, empresariais e EDU-com recursos aprimorados para dispositivos corporativos e pessoais.  
   
-Benefícios:  
+Vantagens:  
   
 - **Disponibilidade de configurações modernas** em dispositivos Windows de propriedade corporativa. Os serviços oxigênios não exigem mais um conta Microsoft pessoal: agora eles executam as contas de trabalho existentes dos usuários para garantir a conformidade. Os serviços oxigênios funcionarão em computadores que ingressaram em um domínio local do Windows, e computadores e dispositivos que estão "Unidos" ao seu locatário do Azure AD ("domínio de nuvem"). Essas configurações incluem:  
 

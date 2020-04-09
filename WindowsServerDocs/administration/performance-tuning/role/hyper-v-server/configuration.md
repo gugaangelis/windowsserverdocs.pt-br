@@ -4,15 +4,15 @@ description: Considerações de configuração do Hyper-V para ajuste de desempe
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3c4fa32b97761ad05c88722ef090f96fff21cf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370163"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851789"
 ---
 # <a name="hyper-v-configuration"></a>Configuração do Hyper-V
 
@@ -76,15 +76,15 @@ O Hyper-V publica contadores de desempenho para ajudar a caracterizar o comporta
 
 Você deve sempre medir o uso da CPU do sistema físico usando os contadores de desempenho do processador lógico do hipervisor do Hyper-V. Os contadores de utilização da CPU que o Gerenciador de tarefas e o monitor de desempenho relatam nas partições raiz e filho não refletem o uso real da CPU física. Use os seguintes contadores de desempenho para monitorar o desempenho:
 
-- **Processador lógico do hipervisor Hyper-V (\*) \\% tempo de execução total** O tempo total não ocioso dos processadores lógicos
+- **Processador lógico do hipervisor Hyper-V (\*)\\% tempo de execução total** O tempo total não ocioso dos processadores lógicos
 
-- **Processador lógico do hipervisor Hyper-V (\*) \\% tempo de execução do convidado** O tempo gasto na execução de ciclos em um convidado ou dentro do host
+- **Processador lógico do hipervisor Hyper-V (\*)\\% tempo de execução do convidado** O tempo gasto na execução de ciclos em um convidado ou dentro do host
 
-- **Processador lógico do hipervisor Hyper-V (\*) \\% tempo de execução do hipervisor** O tempo gasto na execução dentro do hipervisor
+- **Processador lógico do hipervisor do Hyper-V (\*)\\% tempo de execução do hipervisor** O tempo gasto na execução dentro do hipervisor
 
-- **Processador virtual da raiz do hipervisor do Hyper\*-\\V ()\\** * mede o uso da CPU da partição raiz
+- O **processador virtual raiz do hipervisor Hyper-V (\*)\\\\** * mede o uso da CPU da partição raiz
 
-- **Processador virtual do hipervisor do Hyper-\*V\\()\\** * mede o uso da CPU de partições de convidado
+- O **processador virtual do hipervisor Hyper-V (\*)\\\\** * mede o uso da CPU de partições de convidado
 
 
 ## <a name="see-also"></a>Consulte também

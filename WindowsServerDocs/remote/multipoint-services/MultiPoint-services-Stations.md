@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Stations
 description: Saiba mais sobre as estações nos serviços do MultiPoint, incluindo as diferentes opções para os usuários
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 3bcdd2d3f7492b29ecf92c59714f1d93b910c9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322798"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853419"
 ---
 # <a name="multipoint--stations"></a>Estações multiponto
 Em um ambiente de sistema de serviços do MultiPoint, as *estações* são os pontos de extremidade do usuário para se conectarem ao computador que executa os serviços do MultiPoint. Cada estação fornece ao usuário uma experiência independente do Windows 10. Há suporte para os seguintes tipos de estação:  
@@ -48,7 +44,7 @@ O computador que executa os serviços do MultiPoint pode conter várias placas d
   
 **Figura 1** Sistema de serviços do MultiPoint com quatro estações conectadas diretamente ao vídeo  
   
-### <a name="BKMK_PS2stations"></a>Estações PS/2  
+### <a name="ps2-stations"></a><a name="BKMK_PS2stations"></a>Estações PS/2  
 Com os serviços do MultiPoint, você pode mapear o teclado e o mouse do PS/2 na motherboard para um monitor de vídeo conectado diretamente para criar uma estação PS/2. Áudio analógico de alta definição na placa-mãe é o áudio associado a esse tipo de estação. Isso não se aplica a computadores nos quais não há conectores PS/2 na placa-mãe.  
   
 ## <a name="usb-zero-client-connected-stations"></a>USB-nenhuma estação conectada ao cliente  
@@ -113,7 +109,7 @@ Depois que uma estação é dividida, um usuário pode fazer logon na estação 
   
 **Figura 4** Sistema de serviços do MultiPoint com estações de tela dividida  
   
-## <a name="BKMK_StationTypeComparison"></a>Comparação de tipo de estação  
+## <a name="station-type-comparison"></a><a name="BKMK_StationTypeComparison"></a>Comparação de tipo de estação  
   
 ||Vídeo direto conectado|Cliente USB zero conectado|RDP via LAN conectada|  
 |-|--------------------------|-----------------------------|----------------------------|  

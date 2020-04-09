@@ -1,24 +1,20 @@
 ---
 title: Wbadmin iniciar backup
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Wbadmin start backup, que cria um backup usando parâmetros especificados.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 56f3e752-d99a-4c3d-8e97-10303c37dd78
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8eb017e8bf49191c33cd2d9f0cf4a62b08ebb07
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afce1cd70f5481410071ff48d427be73b178744a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362343"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829649"
 ---
 # <a name="wbadmin-start-backup"></a>Wbadmin iniciar backup
 
@@ -63,7 +59,7 @@ Wbadmin start backup
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -76,13 +72,13 @@ Wbadmin start backup
 |-SystemState|Para o Windows ° 7 e o Windows Server 2008 R2 e posterior, o cria um backup que inclui o estado do sistema, além de quaisquer outros itens que você especificou com o parâmetro **-include** . O estado do sistema contém arquivos de inicialização (boot. ini, NDTLDR, NTDetect.com), o registro do Windows, incluindo configurações COM, o SYSVOL (diretivas de grupo e scripts de logon), o Active Directory e o NTDS. DIT em controladores de domínio e, se o serviço de certificados estiver instalado, o repositório de certificados. Se o servidor tiver a função de servidor Web instalada, o metadiretório do IIS será incluído. Se o servidor fizer parte de um cluster, as informações do serviço de cluster também serão incluídas.|
 |-noVerify|Especifica que os backups salvos em mídia removível (como um DVD) não são verificados quanto a erros. Se você não usar esse parâmetro, os backups salvos em mídia removível serão verificados quanto a erros.|
 |-usuário|Se o backup for salvo em uma pasta compartilhada remota, especifica o nome de usuário com permissão de gravação para a pasta.|
-|-senha|Especifica a senha para o nome de usuário que é fornecido pelo parâmetro **-User**.|
+|-password|Especifica a senha para o nome de usuário que é fornecido pelo parâmetro **-User**.|
 |-noInheritAcl|Aplica as permissões de ACL (lista de controle de acesso) que correspondem às credenciais fornecidas pelos parâmetros **-User** e **-password** para \\\\\<servername >\\\<ShareName >\\WindowsImageBackup\\\<ComputerBackedUp >\\ (a pasta que contém o backup). Para acessar o backup mais tarde, você deve usar essas credenciais ou ser um membro do grupo Administradores ou do grupo operadores de backup no computador com a pasta compartilhada. Se **-noInheritAcl** não for usado, as permissões de ACL da pasta compartilhada remota serão aplicadas à pasta \\\<ComputerBackedUp > por padrão para que qualquer pessoa com acesso à pasta compartilhada remota possa acessar o backup.|
-|-vssFull|Executa um backup completo usando o Serviço de Cópias de Sombra de Volume (VSS). Todos os arquivos são submetidos a backup, o histórico de cada arquivo é atualizado para refletir que foi feito backup e os logs de backups anteriores podem estar truncados. Se esse parâmetro não for usado, o **Wbadmin start backup** fará um backup de cópia, mas o histórico de arquivos cujo backup está sendo feito não será atualizado.</br>Cuidado: não use esse parâmetro se você estiver usando um produto que não seja Backup do Windows Server para fazer backup de aplicativos que estão nos volumes incluídos no backup atual. Isso pode potencialmente interromper o tipo de backup incremental, diferencial ou outro que o outro produto de backup está criando, pois o histórico do qual eles dependem para determinar a quantidade de dados para o backup pode estar ausente e pode executar um backup completo desnecessariamente.|
+|-vssFull|Executa um backup completo usando o Serviço de Cópias de Sombra de Volume (VSS). Todos os arquivos são submetidos a backup, o histórico de cada arquivo é atualizado para refletir que foi feito backup e os logs de backups anteriores podem estar truncados. Se esse parâmetro não for usado, o **Wbadmin start backup** fará um backup de cópia, mas o histórico de arquivos cujo backup está sendo feito não será atualizado.</br>Cuidado: não use esse parâmetro se você estiver usando um produto que não seja Backup do Windows Server para fazer backup de aplicativos que estão nos volumes incluídos no backup atual. Isso pode potencialmente dividir o tipo de backup incremental, diferencial ou outro que o outro produto de backup está criando, pois o histórico do qual eles dependem para determinar a quantidade de dados para o backup pode estar ausente e pode executar um backup completo desnecessariamente.|
 |-vssCopy|Para o Windows 7 e o Windows Server 2008 R2 e posterior, o executa um backup de cópia usando o VSS. Todos os arquivos são submetidos a backup, mas o histórico dos arquivos que estão sendo atualizados não é atualizado, de modo que você preserva todas as informações em quais arquivos foram alterados, excluídos e assim por diante, bem como quaisquer arquivos de log do aplicativo. O uso desse tipo de backup não afeta a sequência de backups incrementais e diferenciais que podem ocorrer independentemente desse backup de cópia. Esse é o valor padrão.</br>Aviso: um backup de cópia não pode ser usado para backups ou restaurações incrementais ou diferenciais.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Os exemplos a seguir mostram como o comando **Wbadmin start backup** pode ser usado em diferentes cenários de backup:
 
@@ -107,7 +103,7 @@ Cenário #1
   wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
   ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

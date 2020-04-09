@@ -2,20 +2,19 @@
 title: Evitar pausar uma máquina virtual
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 406b24edd4a7e87e32058006590ac7cd37206568
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56c147f6bd2423cdbe2c8847efb43d8601e12ddf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366454"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857739"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>Evitar pausar uma máquina virtual
 
@@ -28,7 +27,7 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
 
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
@@ -44,7 +43,7 @@ As máquinas virtuais em pausa não liberam sua memória alocada, o que signific
   
 ## <a name="resolution"></a>Resolução  
   
-*If isso é intencional, nenhuma ação adicional é necessária. Caso contrário, considere retomar essas máquinas virtuais ou desligá-las.*  
+*Se isso for intencional, nenhuma ação adicional será necessária. Caso contrário, considere retomar essas máquinas virtuais ou desligá-las.*  
   
 #### <a name="use-hyper-v-manager-to-resume-the-virtual-machine"></a>Usar o Gerenciador do Hyper-V para retomar a máquina virtual  
   
@@ -59,7 +58,7 @@ As máquinas virtuais em pausa não liberam sua memória alocada, o que signific
   
 #### <a name="use-windows-powershell-to-resume-the-virtual-machine"></a>Usar o Windows PowerShell para retomar a máquina virtual  
   
-Você pode fazer isso em um comando usando a filtragem e o pipeline depois de obter todas as máquinas virtuais no host. Digite:  
+Você pode fazer isso em um comando usando a filtragem e o pipeline depois de obter todas as máquinas virtuais no host. Tipo:  
   
 ```  
 get-vm | where state -eq 'paused' | resume-vm  

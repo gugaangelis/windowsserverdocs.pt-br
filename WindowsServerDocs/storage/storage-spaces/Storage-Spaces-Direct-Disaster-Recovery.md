@@ -1,19 +1,20 @@
 ---
 title: Cenários de recuperação de desastre para a infraestrutura hiperconvergente
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 03/29/2018
 description: Este artigo descreve os cenários disponíveis hoje para recuperação de desastre do Microsoft HCI (Espaços de Armazenamento Diretos)
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6372ec7b4759f672c13f4bd822172afaf3faf3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393754"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859159"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperação de desastre com Espaços de Armazenamento Diretos
 
@@ -45,10 +46,10 @@ Nesse cenário, há dois clusters independentes separados. Para configurar a ré
 
 As considerações a seguir se aplicam ao implantar a réplica de armazenamento. 
 
-1.  A configuração da replicação é feita fora do clustering de failover. 
-2.  Escolher o método de replicação dependerá da latência de rede e dos requisitos de RPO. O Synchronous replica os dados em redes de baixa latência com consistência de falhas para garantir que não haja perda de dados em um momento de falha. O assíncrona replica os dados em redes com latências mais altas, mas cada site pode não ter cópias idênticas em um momento de falha. 
-3.  No caso de um desastre, os failovers entre os clusters não são automáticos e precisam ser orquestrados manualmente por meio dos cmdlets do PowerShell da réplica de armazenamento. No diagrama acima, ClusterA é o primário e o ClusterB é o secundário. Se o ClusterA ficar inativo, você precisará definir manualmente ClusterB como primário antes de poder colocar os recursos. Depois de fazer backup do ClusterA, você precisaria torná-lo secundário. Depois que todos os dados tiverem sido sincronizados, faça a alteração e troque as funções de volta à maneira como elas foram originalmente definidas.
-4.  Como a réplica de armazenamento só está replicando os dados, uma nova máquina virtual ou um SOFS (servidor de arquivos de Scale Out) utilizando esses dados precisarão ser criados dentro do Gerenciador de Cluster de Failover no parceiro de réplica.
+1.    A configuração da replicação é feita fora do clustering de failover. 
+2.    Escolher o método de replicação dependerá da latência de rede e dos requisitos de RPO. O Synchronous replica os dados em redes de baixa latência com consistência de falhas para garantir que não haja perda de dados em um momento de falha. O assíncrona replica os dados em redes com latências mais altas, mas cada site pode não ter cópias idênticas em um momento de falha. 
+3.    No caso de um desastre, os failovers entre os clusters não são automáticos e precisam ser orquestrados manualmente por meio dos cmdlets do PowerShell da réplica de armazenamento. No diagrama acima, ClusterA é o primário e o ClusterB é o secundário. Se o ClusterA ficar inativo, você precisará definir manualmente ClusterB como primário antes de poder colocar os recursos. Depois de fazer backup do ClusterA, você precisaria torná-lo secundário. Depois que todos os dados tiverem sido sincronizados, faça a alteração e troque as funções de volta à maneira como elas foram originalmente definidas.
+4.    Como a réplica de armazenamento só está replicando os dados, uma nova máquina virtual ou um SOFS (servidor de arquivos de Scale Out) utilizando esses dados precisarão ser criados dentro do Gerenciador de Cluster de Failover no parceiro de réplica.
 
 A réplica de armazenamento pode ser usada se você tiver máquinas virtuais ou um SOFS em execução no cluster. Colocar os recursos online no HCI da réplica pode ser manual ou automatizado por meio do uso de scripts do PowerShell.
 
@@ -60,14 +61,14 @@ A réplica de armazenamento pode ser usada se você tiver máquinas virtuais ou 
 
 Com a réplica do Hyper-V, a replicação é manipulada pelo Hyper-V. Quando você habilita pela primeira vez uma máquina virtual para replicação, há três opções de como você deseja que a cópia inicial seja enviada para os clusters de réplica correspondentes.
 
-1.  Enviar a cópia inicial pela rede
-2.  Enviar a cópia inicial para a mídia externa para que ela possa ser copiada para o servidor manualmente
-3.  Usar uma máquina virtual existente já criada nos hosts de réplica
+1.    Enviar a cópia inicial pela rede
+2.    Enviar a cópia inicial para a mídia externa para que ela possa ser copiada para o servidor manualmente
+3.    Usar uma máquina virtual existente já criada nos hosts de réplica
 
 A outra opção é para quando você desejar que a replicação inicial ocorra.
 
-1.  Iniciar a replicação imediatamente
-2.  Agende um horário para quando a replicação inicial ocorrer. 
+1.    Iniciar a replicação imediatamente
+2.    Agende um horário para quando a replicação inicial ocorrer. 
 
 Outras considerações que serão necessárias são:
 
@@ -78,9 +79,9 @@ Outras considerações que serão necessárias são:
 
 Quando o HCI participa da réplica do Hyper-V, você deve ter o recurso [agente de réplica do Hyper-v](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/) criado em cada cluster. Esse recurso faz várias coisas:
 
-1.  Fornece um namespace único para cada cluster para que a réplica do Hyper-V se conecte.
-2.  Determina em qual nó do cluster a réplica (ou réplica estendida) residirá quando receber a cópia pela primeira vez.
-3.  Mantém o controle de qual nó possui a réplica (ou réplica estendida), caso a máquina virtual seja movida para outro nó. Ele precisa controlar isso para que, quando a replicação ocorrer, possa enviar as informações para o nó apropriado.
+1.    Fornece um namespace único para cada cluster para que a réplica do Hyper-V se conecte.
+2.    Determina em qual nó do cluster a réplica (ou réplica estendida) residirá quando receber a cópia pela primeira vez.
+3.    Mantém o controle de qual nó possui a réplica (ou réplica estendida), caso a máquina virtual seja movida para outro nó. Ele precisa controlar isso para que, quando a replicação ocorrer, possa enviar as informações para o nó apropriado.
 
 ## <a name="backup-and-restore"></a>Backup e restauração
 
@@ -102,13 +103,13 @@ Quando uma restauração autoritativa é iniciada em um nó de cluster, o servi�
 
 Para executar uma restauração autoritativa, as etapas a seguir podem ser realizadas.
 
-1.  Execute WBADMIN. EXE em um prompt de comando administrativo para obter a versão mais recente dos backups que você deseja instalar e garantir que o estado do sistema seja um dos componentes que você pode restaurar.
+1.    Execute WBADMIN. EXE em um prompt de comando administrativo para obter a versão mais recente dos backups que você deseja instalar e garantir que o estado do sistema seja um dos componentes que você pode restaurar.
 
     ```powershell
     Wbadmin get versions
     ```
 
-2.  Determine se o backup de versão tem as informações de registro de cluster nele como um componente. Há alguns itens que serão necessários nesse comando, a versão e o aplicativo/componente para uso na etapa 3. Para a versão, por exemplo, digamos que o backup foi feito em 3 de janeiro de 2018 em 2:04am e esse é o que você precisa restaurar.
+2.    Determine se o backup de versão tem as informações de registro de cluster nele como um componente. Há alguns itens que serão necessários nesse comando, a versão e o aplicativo/componente para uso na etapa 3. Para a versão, por exemplo, digamos que o backup foi feito em 3 de janeiro de 2018 em 2:04am e esse é o que você precisa restaurar.
 
     ```powershell
     wbadmin get items -backuptarget:\\backupserver\location

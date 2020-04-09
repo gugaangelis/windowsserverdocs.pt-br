@@ -1,23 +1,19 @@
 ---
 title: Manter-se conectado no Windows Server Essentials [A_Web_Client_H2]
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 05/07/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 14acbff8b538224546884e5bb51c40a22b8849b4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7591efcc896dd382afd50cf0e360e28e0cb08f3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318549"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852149"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Manter-se conectado no Windows Server Essentials [A_Web_Client_H2]
 
@@ -448,7 +444,7 @@ ms.locfileid: "80318549"
     > [!NOTE]
     >  Quando você fizer logon pela primeira vez em um computador que está executando o Windows 8 usando sua conta de rede depois que ele se conectar ao servidor, serão exibidas instruções sobre como migrar arquivos e aplicativos da conta de usuário antiga. Siga as instruções na página **Como migro arquivos e aplicativos de minha conta de usuário antiga?** para migrar todos os arquivos e aplicativos para a conta de usuário de rede.  
 
-9. Depois que o computador for conectado com êxito ao servidor, os atalhos para o conector TrayApp e o painel do servidor serão exibidos no menu Iniciar, que pode ser usado da seguinte maneira (se o computador estiver executando o Windows 8, Windows 8.1 ou Windows 10, o painel e o conector O TrayApp estará disponível na tela inicial do computador):  
+9. Depois que o computador estiver conectado com êxito ao servidor, os atalhos para o conector TrayApp e o painel do servidor serão exibidos no menu Iniciar, que pode ser usado da seguinte maneira (se o computador estiver executando o Windows 8, Windows 8.1 ou Windows 10, o painel e o conector TrayApp estarão disponíveis na tela inicial do computador):  
 
     -   Se o computador estiver executando o Windows 8, Windows 8.1 ou Windows 10, o painel e o conector TrayApp serão pesquisáveis como um aplicativo.  
 

@@ -1,19 +1,19 @@
 ---
 title: Implantar VMs blindadas
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5d1a06c9-24e1-4e14-9c9a-efb2adbfeddd
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: f7892dabb028b99cb4cb1c9045764a8e36aba7dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4550f8a92330c8f483e332ab9e4b36fda853b0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386771"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856859"
 ---
 # <a name="deploy-shielded-vms"></a>Implantar VMs blindadas
 
@@ -34,9 +34,9 @@ Os tópicos a seguir descrevem como um locatário pode trabalhar com VMs blindad
 
 4. Criar uma VM blindada:
  
-    - Usando **pacote do Microsoft Azure**: [Implantar uma VM blindada usando Pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md)
+    - Usando **pacote do Microsoft Azure**: [implantar uma VM blindada usando pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md)
 
-    - Usando **Virtual Machine Manager**: [Implantar uma VM blindada usando Virtual Machine Manager](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
+    - Usando **Virtual Machine Manager**: [implantar uma VM blindada usando Virtual Machine Manager](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
 
 ## <a name="next-step"></a>Próximas etapas
 

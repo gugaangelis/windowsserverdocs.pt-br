@@ -2,18 +2,18 @@
 title: Paridade acelerada por espelho
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 2721f1c744c5c03d8e4bce0508fd23fa5237f95f
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 752073e4f12db3b994261a70a9306d45b9a00d77
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591095"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861509"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridade acelerada por espelho
 
@@ -23,7 +23,7 @@ Espaços de armazenamento podem fornecer tolerância a falhas de dados usando du
 
 ![Volume de paridade acelerada por espelho](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
 
-## <a name="background"></a>Histórico
+## <a name="background"></a>Tela de fundo
 
 Esquemas de resiliência de espelhamento e paridade têm características de armazenamento e desempenho fundamentalmente diferentes:
 - A resiliência do espelho permite que os usuários obtenham desempenho rápido de gravação, mas replicar os dados para cada cópia não é eficiente em termos de espaço. 
@@ -53,17 +53,17 @@ Quando os dados são movidos de espelhamento para paridade, os dados são lidos,
 
     - **1a.** Se a gravação de entrada modificar os dados existentes no espelho, ReFS modificará os dados no local.
     - **1B.** Se a gravação de entrada for uma nova gravação e o ReFS encontrar com êxito espaço livre suficiente em espelho para suportar essa gravação, o ReFS escreve no espelho.
-    ](media/mirror-accelerated-parity/Write-to-Mirror.png) de ![Write para espelhamento
+    ![Write-to-Mirror](media/mirror-accelerated-parity/Write-to-Mirror.png)
 
 2. **Gravações no espelho, realocadas da paridade:**
 
     Se a gravação de entrada modificar os dados que estão em paridade, e ReFS puder encontrar com êxito espaço livre suficiente no espelho para atender à gravação de entrada, ReFS primeiro invalidará os dados anteriores na paridade e, em seguida, gravará no espelho. Essa invalidação é uma operação de metadados rápida e barata que ajuda a aumentar significativamente o desempenho de gravação feito a paridade.
-    ](media/mirror-accelerated-parity/Reallocated-Write.png) de ![Reallocated-gravação
+    ![realocada-](media/mirror-accelerated-parity/Reallocated-Write.png) de gravação
 
 3. **Gravações na paridade:**
     
     Se o ReFS não conseguir encontrar com sucesso espaço livre suficiente no espelhamento, o ReFS escreverá novos dados na paridade ou modificará dados existentes na paridade diretamente. A seção "Otimizações de desempenho" abaixo fornece orientações que ajudam a minimizar gravações na paridade.
-    ](media/mirror-accelerated-parity/Write-to-Parity.png) de ![Write para paridade
+    ](media/mirror-accelerated-parity/Write-to-Parity.png) ![Write-to-Parity
 
 **Leituras:** ReFS lerá diretamente da camada que contém os dados relevantes. Se a paridade é construída com HDDs, o cache em espaços de armazenamento direto armazenará em cache esses dados para acelerar leituras futuras. 
 

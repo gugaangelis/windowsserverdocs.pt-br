@@ -2,20 +2,19 @@
 title: Os adaptadores de vídeo devem ser habilitados em máquinas virtuais para fornecer recursos de vídeo
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: ac5992e6-3c0b-46c2-a48e-6ef37b679228
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0c515c7fb1ed160dfee1e1b7303022082e936157
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1821aae18b1712ba7d839ca9f42318edc5ef8a35
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364913"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861999"
 ---
 # <a name="display-adapters-should-be-enabled-in-virtual-machines-to-provide-video-capabilities"></a>Os adaptadores de vídeo devem ser habilitados em máquinas virtuais para fornecer recursos de vídeo
 
@@ -30,7 +29,7 @@ ms.locfileid: "71364913"
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -44,7 +43,7 @@ O dispositivo de vídeo do barramento de máquina virtual da Microsoft é um ada
   
 *O desempenho de vídeo para as seguintes máquinas virtuais será degradado:*  
   
-\<list de nomes de máquina virtual >  
+\<lista de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   

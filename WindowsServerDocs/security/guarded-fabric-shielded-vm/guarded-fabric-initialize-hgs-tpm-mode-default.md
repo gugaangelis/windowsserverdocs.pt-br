@@ -1,18 +1,18 @@
 ---
 title: Inicializar o cluster HGS usando o modo TPM em uma nova floresta dedicada (padrão)
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 56971f029dc8caa3b0d399230b75285396551390
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba7543dfa92942c6854edb6b0d7f0f6ee2547766
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403622"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856639"
 ---
 # <a name="initialize-the-hgs-cluster-using-tpm-mode-in-a-new-dedicated-forest-default"></a>Inicializar o cluster HGS usando o modo TPM em uma nova floresta dedicada (padrão)
 

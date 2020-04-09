@@ -3,17 +3,17 @@ ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
 title: Atualização com suporte a cluster-perguntas frequentes
 ms.topic: article
 ms.prod: windows-server
-manager: dongill
+manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Respostas para perguntas frequentes sobre a atualização com suporte a cluster no Windows Server.
-ms.openlocfilehash: 736b49222ae4c9e2a27229341f0d886bd3e0343c
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: ca81e952c0524af36ab6d241a205bd1cc971c74a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822129"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828099"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>Atualização com suporte a cluster: perguntas frequentes
 
@@ -40,7 +40,7 @@ Sim. Por padrão, a CAU é configurada com um plug\-no que usa o agente Windows 
 Sim. Por padrão, a CAU é configurada com um plug\-no que usa o agente Windows Update \(o WUA\) APIs do utilitário nos nós do cluster. A infraestrutura do WUA pode ser configurada para apontar para Microsoft Update e Windows Update ou para um Windows Server Update Services local \(servidor do WSUS\) como sua fonte de atualizações.  
   
 ## <a name="can-cau-apply-limited-distribution-release-updates"></a>A CAU pode aplicar as atualizações de versão de distribuição limitada?  
-Sim. A versão de distribuição limitada \(LDR\) atualizações, também chamadas de hotfixes, não são publicadas por meio de Microsoft Update ou Windows Update, portanto, elas não podem ser baixadas pelo agente de Windows Update \(o\) do do WUA em que a CAU usa por padrão.  
+Sim. A versão de distribuição limitada \(LDR\) atualizações, também chamadas de hotfixes, não são publicadas por meio de Microsoft Update ou Windows Update, portanto, elas não podem ser baixadas pelo agente de Windows Update \(o\) do do WUA em que a CAU usa por padrão.\-  
   
 No entanto, a CAU inclui um segundo plug\-em que você pode selecionar para aplicar atualizações de hotfix. Este hotfix plug\-in também pode ser personalizado para aplicar atualizações de BIOS, firmware e driver não\-Microsoft.  
   
@@ -118,11 +118,11 @@ A CAU oferece opções de exportação por meio do comando\-interface de linha e
   
 **Opções da interface do usuário:**  
   
--   Copie os resultados de relatório da tela **Visualizar atualizações** . Saída: CSV  
+-   Copie os resultados de relatório da tela **Visualizar atualizações**. Saída: CSV  
   
--   Copie os resultados de relatório da tela **Gerar relatório** . Saída: CSV  
+-   Copie os resultados de relatório da tela **Gerar relatório**. Saída: CSV  
   
--   Exporte os resultados de relatório da tela **Gerar relatório** . Saída: HTML  
+-   Exporte os resultados de relatório da tela **Gerar relatório**. Saída: HTML  
   
 ## <a name="how-do-i-install-cau"></a>Como posso instalar a CAU?  
 A instalação da CAU é totalmente integrada ao recurso Clustering de Failover. A CAU é instalada da seguinte forma:  
@@ -158,7 +158,7 @@ Sim. A CAU oferece suporte a várias opções de Execução de Atualização que
   
 -   [\-plug-in de atualização com reconhecimento de cluster em exemplo](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)  
   
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte também  
   
--   [Visão geral da Atualização com Suporte a Cluster](cluster-aware-updating.md)  
+-   [Visão geral da Atualização com Suporte a Cluster\-  
   

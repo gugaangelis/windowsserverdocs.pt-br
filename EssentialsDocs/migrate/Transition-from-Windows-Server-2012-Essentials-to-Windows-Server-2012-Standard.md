@@ -1,29 +1,25 @@
 ---
 title: Transição do Windows Server Essentials para o Windows Server 2012 Standard
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0d7ed80f61dcfa313f867afda5689b2c64b1406a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318704"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852299"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transição do Windows Server Essentials para o Windows Server 2012 Standard
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
- O Windows Server® 2012 Essentials dá suporte a até 25 usuários e 50 dispositivos. Quando suas necessidades de negócios excederem o limite, você poderá executar uma transição de licença in-loco do Windows Server Essentials para o Windows Server 2012 Standard para permanecer em conformidade com a licença.  
+ O Windows Server&reg; 2012 Essentials dá suporte a até 25 usuários e 50 dispositivos. Quando suas necessidades de negócios excederem o limite, você poderá executar uma transição de licença in-loco do Windows Server Essentials para o Windows Server 2012 Standard para permanecer em conformidade com a licença.  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>Como a transição afeta os limites de usuários e dispositivos  
  Depois de fazer a transição para o Windows Server 2012 Standard, os limites de conta de usuário e dispositivos são removidos, mas os recursos que são exclusivos do Windows Server Essentials (como o painel, Acesso via Web remota e backup do computador cliente) ainda permanecem disponíveis. Porém, por limitações técnicas, esses recursos oferecem suporte no máximo a 75 contas de usuário e 75 dispositivos. Se for necessário adicionar mais de 75 contas de usuário ou dispositivos, desative os recursos do Windows Server Essentials e use as ferramentas nativas do Windows Server 2012 Standard para gerenciar contas de usuário e dispositivos.  

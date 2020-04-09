@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d65dd9f8fb6328bd00be8a46af37ee69ccd2bf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 570b96d07f414442a00d5f7ec48de80f270f0a76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313390"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861309"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Visão geral da tecnologia de VPN Always On
 
@@ -202,10 +202,10 @@ O Windows 10 oferece muitos CSPs, mas essa implantação se concentra no uso do 
 
 - [DNS (sistema de nomes de domínio)](../../../../networking/dns/dns-top.md): Este tópico fornece uma visão geral dos sistemas de nomes de domínio (DNS). No Windows Server 2016, o DNS é uma função de servidor que você pode instalar usando Gerenciador do Servidor ou comandos do Windows PowerShell. Se você estiver instalando um novo Active Directory floresta e domínio, o DNS será instalado automaticamente com Active Directory como o servidor de catálogo global para a floresta e o domínio.
 
-- [Visão geral dos serviços de certificados Active Directory](https://technet.microsoft.com/library/hh831740.aspx): Este documento fornece uma visão geral dos serviços de certificados Active Directory (AD CS) no Windows Server® 2012. O AD CS é a Função de Servidor que permite construir uma infraestrutura de chave pública (PKI) e fornecer recursos de criptografia de chave pública, certificados digitais e assinaturas digitais para a sua organização.
+- [Visão geral dos serviços de certificados Active Directory](https://technet.microsoft.com/library/hh831740.aspx): Este documento fornece uma visão geral dos serviços de certificados Active Directory (AD CS) no Windows Server&reg; 2012. O AD CS é a Função de Servidor que permite construir uma infraestrutura de chave pública (PKI) e fornecer recursos de criptografia de chave pública, certificados digitais e assinaturas digitais para a sua organização.
 
 - [Diretrizes de design de infraestrutura de chave pública](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx): este wiki fornece orientação sobre como criar infraestruturas de chave pública (PKIs). Antes de configurar uma hierarquia de PKI e autoridade de certificação (CA), você deve estar ciente da política de segurança da sua organização e do CPS (declaração de prática de certificado).
 
-- [Guia passo a passo do AD CS: implantação de hierarquia de PKI de duas camadas](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): este guia passo a passo descreve as etapas necessárias para definir uma configuração básica de Active Directory® serviços de certificados (AD CS) em um ambiente de laboratório. O AD CS no Windows Server® 2008 R2 fornece serviços personalizáveis para criar e gerenciar certificados de chave pública usados em sistemas de segurança de software que empregam tecnologias de chave pública.
+- [Guia passo a passo do AD CS: implantação de hierarquia de PKI de duas camadas](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): este guia passo a passo descreve as etapas necessárias para definir uma configuração básica de Active Directory&reg; serviços de certificados (AD CS) em um ambiente de laboratório. O AD CS no Windows Server&reg; 2008 R2 fornece serviços personalizáveis para criar e gerenciar certificados de chave pública usados em sistemas de segurança de software que empregam tecnologias de chave pública.
 
 - [Servidor de políticas de rede (NPS)](../../../../networking/technologies/nps/nps-top.md): Este tópico fornece uma visão geral do servidor de políticas de rede no Windows Server 2016. O Servidor de Políticas de Rede (NPS) permite que você crie e aplique políticas de acesso de rede em toda a organização para autenticação e autorização de solicitações de conexão.

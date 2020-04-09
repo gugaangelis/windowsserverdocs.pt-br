@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Services
 description: Saiba como usar os serviços do MultiPoint, uma solução que permite que vários usuários acessem o mesmo sistema
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 426005e1-03af-4595-9418-964b0962b905
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 4b5900039dc241acb0da75a680b52088a6a6f3c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e96621319d541bbc2dc4b7fe9f915397ce451c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405043"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853429"
 ---
 # <a name="multipoint-services"></a>MultiPoint Services
 Os serviços do MultiPoint são uma solução que permite que vários usuários, cada um com sua própria experiência independente e familiar do Windows, compartilhem simultaneamente um computador.

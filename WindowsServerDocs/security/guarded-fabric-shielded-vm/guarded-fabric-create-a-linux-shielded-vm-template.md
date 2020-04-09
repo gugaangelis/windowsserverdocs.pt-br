@@ -1,19 +1,19 @@
 ---
 title: Criar um disco de modelo de VM blindada Linux
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 66d5f70f747a6209f2856afde58b6f486ea597f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386711"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856789"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada Linux
 
@@ -21,7 +21,7 @@ ms.locfileid: "71386711"
 
 Este tópico explica como preparar um disco de modelo para VMs blindadas Linux que podem ser usadas para criar uma instância de uma ou mais VMs de locatário.
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 Para preparar e testar uma VM blindada Linux, você precisará dos seguintes recursos disponíveis:
 

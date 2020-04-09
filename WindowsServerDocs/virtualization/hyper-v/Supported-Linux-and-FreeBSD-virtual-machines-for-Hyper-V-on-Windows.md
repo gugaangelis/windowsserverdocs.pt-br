@@ -2,21 +2,19 @@
 title: Máquinas virtuais Linux e FreeBSD com suporte para Hyper-V no Windows
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: e8be9f8ab768478417fdd6edce5b881ce3610bc1
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: dff7a0f829f11a92f2c87305da806b9be43f42fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947982"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855939"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Máquinas virtuais Linux e FreeBSD com suporte para Hyper-V no Windows
 

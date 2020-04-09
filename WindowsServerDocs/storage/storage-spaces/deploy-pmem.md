@@ -1,7 +1,6 @@
 ---
 title: Entender e implantar a memória persistente
 description: Informações detalhadas sobre o que é a memória persistente e como configurá-la com espaços de armazenamento diretos no Windows Server 2019.
-keywords: Espaços de Armazenamento Diretos, memória persistente, pMem, armazenamento, S2D
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9070d2e2ab73c7882f4b2ef585ccb01986695bb
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 43268986f0ef42aabc218062ac19f1d98f27be6d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822309"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861029"
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>Entender e implantar a memória persistente
 
@@ -22,7 +21,7 @@ ms.locfileid: "76822309"
 
 A memória persistente (ou PMem) é um novo tipo de tecnologia de memória que oferece uma combinação exclusiva de alta capacidade e persistência acessíveis. Este artigo fornece informações sobre o PMem e as etapas para implantá-lo no Windows Server 2019 usando o Espaços de Armazenamento Diretos.
 
-## <a name="background"></a>Histórico
+## <a name="background"></a>Tela de fundo
 
 O PMem é um tipo de memória RAM não volátil (NVDIMM) que mantém seu conteúdo por meio de ciclos de energia. O conteúdo da memória permanece mesmo quando a energia do sistema fica inativa no caso de uma perda de energia inesperada, um desligamento iniciado pelo usuário, uma falha do sistema e assim por diante. Essa característica exclusiva significa que você também pode usar a PMem como armazenamento. É por isso que você pode ouvir as pessoas se referirem à PMem como "memória de classe de armazenamento".
 
@@ -38,11 +37,11 @@ Qualquer sistema de armazenamento que fornece tolerância a falhas necessariamen
 
 Se você assistir ao vídeo de maneira mais minuciosa, observará que o que é ainda mais Jaw é a latência. Mesmo em mais de 13,7 M IOPS, o sistema de arquivos no Windows está relatando latência consistentemente menor que 40 μs! (Esse é o símbolo de microssegundos, um milionésimo de um segundo.) Essa velocidade é uma ordem de magnitude mais rápida do que os fornecedores típicos de tudo-flash que, de forma orgulho, anunciam hoje.
 
-Juntos, Espaços de Armazenamento Diretos no Windows Server 2019 e no Intel® Optane™ memória persistente de DC oferecem desempenho inovador. Esse benchmark de HCI líder do setor de 13.7 M IOPS, acompanhado por latência previsível e extremamente baixa, é mais do que o dobro de nosso benchmark líder do setor de IOPS de 6.7 M. Além disso, desta vez precisávamos de apenas 12 nós de servidor&mdash;25% menos de dois anos atrás.
+Juntos, Espaços de Armazenamento Diretos no Windows Server 2019 e no Intel&reg; Optane&trade; memória persistente de DC oferecem desempenho inovador. Esse benchmark de HCI líder do setor de 13.7 M IOPS, acompanhado por latência previsível e extremamente baixa, é mais do que o dobro de nosso benchmark líder do setor de IOPS de 6.7 M. Além disso, desta vez precisávamos de apenas 12 nós de servidor&mdash;25% menos de dois anos atrás.
 
 ![Ganhos de IOPS](media/deploy-pmem/iops-gains.png)
 
-O hardware de teste era um cluster de 12 servidores que foi configurado para usar o espelhamento triplo e volumes ReFS delimitados **, 12** x Intel® S2600WFT **, 384 GiB** de memória, 2 x 28-Core "CASCADELAKE", **1,5 TB** Intel® Optane™ memória persistente de DC como cache, **32 TB** NVME (4 x 8 TB Intel® DC P4510) como capacidade, **2** x Mellanox ConnectX-4 25 Gbps.
+O hardware de teste era um cluster de 12 servidores que foi configurado para usar o espelhamento triplo e volumes ReFS delimitados **, 12** x Intel&reg; S2600WFT **, 384 GiB** de memória, 2 x 28-Core "CASCADELAKE", **1,5 TB** Intel&reg; Optane&trade; memória persistente de DC como cache, **32 TB** NVME (4 x 8 TB Intel&reg; DC P4510) como capacidade, **2** x Mellanox ConnectX-4 25 Gbps.
 
 A tabela a seguir mostra os números de desempenho completos.  
 
@@ -59,14 +58,14 @@ A tabela a seguir mostra o hardware de memória persistente com suporte para o W
 | Tecnologia de memória persistente                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
 | **NVDIMM-N** no modo persistente                                  | Com suporte                | Com suporte                |
-| **Intel Optane™ memória persistente de DC** no modo direto do aplicativo             | Sem suporte            | Com suporte                |
-| **Intel Optane™ memória persistente de DC** no modo de memória | Com suporte            | Com suporte                |
+| **Intel Optane&trade; memória persistente de DC** no modo direto do aplicativo             | Sem suporte            | Com suporte                |
+| **Intel Optane&trade; memória persistente de DC** no modo de memória | Com suporte            | Com suporte                |
 
 > [!NOTE]  
 > O Intel Optane dá suporte aos modos de *memória* (volátil) e *direto do aplicativo* (persistente).
    
 > [!NOTE]  
-> Quando você reinicia um sistema que tem vários módulos PMem do Intel® Optane™ no modo de aplicativo direto que são divididos em vários namespaces, você pode perder o acesso a alguns ou todos os discos de armazenamento lógicos relacionados. Esse problema ocorre em versões do Windows Server 2019 anteriores à versão 1903.
+> Quando você reinicia um sistema que tem vários módulos PMem do Intel&reg; Optane&trade; no modo de aplicativo direto que são divididos em vários namespaces, você pode perder o acesso a alguns ou todos os discos de armazenamento lógicos relacionados. Esse problema ocorre em versões do Windows Server 2019 anteriores à versão 1903.
 >   
 > Essa perda de acesso ocorre porque um módulo PMem é não treinado ou, de outra forma, falha quando o sistema é iniciado. Nesse caso, todos os namespaces de armazenamento em qualquer módulo PMem no sistema falham, incluindo namespaces que não são mapeados fisicamente para o módulo com falha.
 >   
@@ -310,7 +309,7 @@ Initializing the physical persistent memory device. This may take a few moments.
 > [!IMPORTANT]  
 > **Initialize-PmemPhysicalDevice** causa a perda de dados na memória persistente. Use-o como um último recurso para corrigir problemas persistentes relacionados à memória.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
 - [Gerenciamento de integridade de memória de classe de armazenamento (NVDIMM-N) no Windows](storage-class-memory-health.md)

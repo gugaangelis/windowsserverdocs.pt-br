@@ -4,15 +4,15 @@ description: Recomendações de ajuste de desempenho para contêineres no Window
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: DavSo; Ericam; YaShi
+ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: 890632c9e8adf221e56ffa91331e5371a3fcdf86
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384944"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851629"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Ajuste de desempenho de contêineres do Windows Server
 

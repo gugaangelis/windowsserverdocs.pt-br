@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5e334c4e-75a7-453c-83e8-5ab4243cc685
 title: Criar o primeiro servidor de federação em um farm de servidores de federação
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 09b577ddcf722c6eac17ea145f29f9583d1cdb00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0fe5c3160f661357536ef3bd60762873063c8ed0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408423"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855469"
 ---
 # <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>Criar o primeiro servidor de federação em um farm de servidores de federação
 
@@ -29,39 +28,39 @@ O mínimo necessário para concluir esse procedimento é a associação em Admin
   
 ### <a name="to-create-the-first-federation-server-in-a-federation-server-farm"></a>Para criar o primeiro servidor de federação em um farm de servidores de federação  
   
-1.  Há duas maneiras de iniciar o assistente de configuração do servidor de Federação AD FS. Para iniciar o assistente, tome uma das seguintes ações:  
+1.  Ha duas maneiras para iniciar o Assistente de Configuração do Servidor de Federação AD FS. Para iniciar o assistente,  faça o seguinte:  
   
     -   Depois que a instalação do serviço de função Serviço de Federação for concluída, abra o\-snap de gerenciamento de AD FS no e clique no link **Assistente de configuração do servidor de federação AD FS** na página **visão geral** ou no painel **ações** .  
   
     -   Sempre que o assistente de instalação for concluído, abra o Windows Explorer, navegue até a pasta **C:\\Windows\\ADFS** e clique duas vezes\-clique em **FsConfigWizard. exe**.  
   
-2.  Na página **Bem-vindo**, verifique se **Criar um novo Serviço de Federação** está selecionado e clique em **Avançar**.  
+2.  Na página **Bem-vindo**, verifique que o **Cria um novo Serviço de Federação** esteja selecionado, e então clique em **Próximo**.  
   
 3.  Na página **selecionar\-autônomo ou implantação de farm** , clique em **novo farm de servidores de Federação**e clique em **Avançar**.  
   
-4.  Na página **Especificar o Nome do Serviço de Federação**, verifique se o **Certificado SSL** que aparece está correto. Se não for o certificado correto, selecione o certificado apropriado na lista **Certificado SSL**.  
+4.  Na página **Especificar o Nome do Serviço de Federação**, verifique que o **Certificado SSL** que é exibido seja o correto. Si este não for o certificado correto, selecione o certificado apropriado da lista **Certificado SSL**.  
   
-    Esse certificado é gerado a partir do protocolo SSL \(configurações de\) SSL para o site padrão. Se o Site Padrão tiver somente um certificado SSL configurado, esse certificado será apresentado e automaticamente selecionado para uso. Se vários certificados SSL forem configurados para o Site Padrão, todos esses certificados serão listados aqui e você deverá selecionar um dentre eles. Se não houver configurações do SSL definidas para o Site Padrão, a lista será gerada dos certificados disponíveis no repositório de certificados pessoal no computador local.  
+    Esse certificado é gerado a partir do protocolo SSL \(configurações de\) SSL para o site padrão. Se o Site Padrão só tiver um certificado SSL configurado, aquele certificado é apresentado e automaticamente selecionado para uso. Se vários certificados SSL são configurados para o Site Padrão, todos aqueles certificados são listados aqui e você deve selecionar de entre eles. Se não houver configurações SSL definidas para o Site Padrão, a lista é gerada a partir dos certificados que estiverem disponíveis no armazenamento pessoal de certificados no computador local.  
   
     > [!NOTE]  
-    > O assistente não permitirá que você substitua o certificado se um certificado SSL estiver configurado para IIS. Isso assegura que qualquer configuração anterior do IIS pretendida para certificados SSL seja preservada. Para resolver essa restrição, você poderá remover o certificado ou reconfigurá-lo manualmente com o Console de Gerenciamento do IIS.  
+    > O assistente não permitirá a substituição do certificado se um certificado SSL for configurado para o IIS. Isso assegura que qualquer objetivo antes da configuração do IIS para certificados SSL seja preservado. Para solucionar alternativamente esta restrição, você pode remover o certificado ou reconfigurá-lo manualmente com o Console de Gerenciamento IIS.  
   
-5.  Se o banco de dados de AD FS que você selecionou já existir, a página **banco de dados de configuração AD FS existente detectado** será exibida. Se essa página aparecer, clique em **Excluir banco de dados** e clique em **Avançar**.  
+5.  Se o banco de dados do AD FS que você selecionou já existir, a página **Banco de Dados de Configuração do AD FS Existente Detectada** aparece. Se aquela página aparecer, clique em **Excluir banco de dados**, e depois clique em **Próximo**.  
   
     > [!CAUTION]  
-    > Selecione esta opção somente quando você tiver certeza de que os dados nesse banco de dado AD FS não são importantes ou que não são usados em um farm de servidores de Federação de produção.  
+    > Selecione esta opção apenas quando você tiver certeza que os dados neste banco de dados do AD FS não forem importantes ou que não é usado em um farm de servidor de federação.  
   
-6.  Na página **Especificar uma Conta de Serviço**, clique em **Procurar**. Na caixa de diálogo **Procurar**, localize a conta de domínio que será usada como a conta de serviço nesse novo farm de servidores de federação, e clique em **OK**. Digite uma senha para essa conta, confirme-a e clique em **Avançar**.  
+6.  Na página **Especificar uma Conta de Serviço**, clique em **Navegar**. Na caixa de diálogo **Navegar**, localizar a conta de domínio que será usada como a conta de serviço neste farm de servidor de federação, e em seguida clique em **OK**. Digite a senha para esta conta, confirme ela, e em seguida clique em **Próximo**.  
   
     > [!NOTE]  
     > Confira [configurar manualmente uma conta de serviço para um farm de servidores de Federação](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md) para obter mais informações sobre como especificar uma conta de serviço para um farm de servidores de Federação. Cada servidor de Federação no farm de servidores de Federação deve especificar a mesma conta de serviço para o farm estar operacional. Por exemplo, se a conta de serviço criada foi contoso\\ADFS2SVC, cada computador configurado para a função de servidor de Federação e que participará do mesmo farm deverá especificar contoso\\ADFS2SVC nesta etapa no assistente de configuração do servidor de Federação para que o farm esteja operacional.  
   
-7.  Na página **Pronto para Aplicar Configurações**, examine os detalhes. Se as configurações parecerem corretas, clique em **Avançar** para começar a configurar AD FS com essas configurações.  
+7.  Na página **Pronto para Aplicar as Configurações**, verificar os detalhes. Se as configurações parecem estar certas, clique em **Próximo** para começar configurar o AD FS com estas configurações.  
   
-8.  Na página **Resultados da Configuração**, examine os resultados. Quando todas as etapas de configuração forem concluídas, clique em **fechar** para sair do assistente.  
+8.  Na página **Resultados de Configuração**, analise os resultados. Quando todas as etapas de configuração forem concluídas, clique em **fechar** para sair do assistente.  
   
     > [!IMPORTANT]  
-    > Para fins de implantação segura, a resolução de artefato e a detecção de resposta são desabilitadas quando você usa o Assistente de Configuração do Servidor de Federação do AD FS para configurar um farm de servidores de federação. Esse assistente configura automaticamente o Banco de Dados Interno do Windows para armazenar dados de configuração de serviço. No entanto, você pode desfazer essa alteração por engano, habilitando o ponto de extremidade de resolução de artefatos usando o nó **pontos** de extremidade no snap\-de gerenciamento de AD FS no ou o cmdlet Enable\-ADFSEndpoint no Windows PowerShell. Tenha cuidado para não reconfigurar a definição padrão de forma que esse ponto de extremidade permaneça desabilitado ao usar um farm de servidores de federação junto com o Banco de Dados Interno do Windows.  
+    > Para propósitos de implantação seguros, a resolução de artefato e detecção de resposta são desabilitados quando você usa o Assistente de Configuração do Servidor de Federação AD FS para configurar um farm do servidor de federação. Este assistente configura automaticamente o Banco de dados Interno do Windows para armazenar os dados de configuração do serviço. No entanto, você pode desfazer essa alteração por engano, habilitando o ponto de extremidade de resolução de artefatos usando o nó **pontos** de extremidade no snap\-de gerenciamento de AD FS no ou o cmdlet Enable\-ADFSEndpoint no Windows PowerShell. Seja cuidadoso em não reconfigurar as configurações padrão de modo que o ponto de extremidade permaneça desabilitado quando você usar um farm de servidor de federação e o Banco de Dados Interno do Windows juntos.  
   
 ## <a name="additional-references"></a>Referências adicionais  
 [Lista de verificação: Configurando um servidor de Federação](Checklist--Setting-Up-a-Federation-Server.md)  

@@ -8,18 +8,18 @@ ms.author: ifufondu
 manager: chhuybre
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: 515831df6b97271b52c4a715fd979f2afff4a3a1
-ms.sourcegitcommit: f73662069329b1abf6aa950c2a826bc113718857
+ms.openlocfilehash: 1165ce58cf781d6ef5f905cb8b01c00fa4552edb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73240348"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860259"
 ---
 # <a name="enable-intel-performance-monitoring-hardware-in-a-hyper-v-virtual-machine"></a>Habilitar o hardware de monitoramento de desempenho Intel em uma máquina virtual Hyper-V
 
 Os processadores Intel contêm recursos coletivamente chamados de monitoramento de desempenho de hardware (por exemplo, PMU, PEBS, LBR). Esses recursos são usados pelo software de ajuste de desempenho, como o Intel VTune Amplificator, para analisar o desempenho do software.  Antes do Windows Server 2019 e do Windows 10 versão 1809, nem o sistema operacional do host nem as máquinas virtuais convidadas do Hyper-V podiam usar o hardware de monitoramento de desempenho quando o Hyper-V estava habilitado.  A partir do Windows Server 2019 e do Windows 10 versão 1809, o sistema operacional do host tem acesso ao hardware de monitoramento de desempenho por padrão.  As máquinas virtuais de convidado do Hyper-V não têm acesso por padrão, mas os administradores do Hyper-V podem optar por conceder acesso a uma ou mais máquinas virtuais convidadas.  Este documento descreve as etapas necessárias para expor o monitoramento de desempenho de hardware para máquinas virtuais convidadas.
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements"></a>{1&gt;{2&gt;Requisitos&lt;2}&lt;1}
 
 Para habilitar o monitoramento de desempenho de hardware em uma máquina virtual, você precisará de:
 

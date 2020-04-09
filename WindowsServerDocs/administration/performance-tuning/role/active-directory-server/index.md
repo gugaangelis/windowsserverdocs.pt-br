@@ -4,15 +4,15 @@ description: Ajuste de desempenho de servidores do Active Directory
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c4d14cfb4bfc8a6919683a360ec171de8250799a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 643a603e89adeb0c1f3c70b0b0cabbf6bcb54731
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370322"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851899"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Ajuste de desempenho de servidores do Active Directory
 
@@ -44,7 +44,7 @@ No entanto, sabemos que isso leva tempo e muitos ambientes estão em execução 
 
 Incentivamos que você se mantenha atualizado sobre as notícias, as orientações e as práticas recomendadas mais recentes para gerenciar o ADDS pelo blog da nossa equipe, ["Pergunte à equipe dos Serviços de Diretório"](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS).
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Planejamento da capacidade do AD DS](capacity-planning-for-active-directory-domain-services.md)
 - [Considerações sobre hardware](hardware-considerations.md)

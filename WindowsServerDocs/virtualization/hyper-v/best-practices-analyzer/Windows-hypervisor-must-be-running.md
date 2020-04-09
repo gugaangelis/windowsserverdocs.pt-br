@@ -2,20 +2,19 @@
 title: O hipervisor do Windows deve estar em execução
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
-author: KBDAzure
+author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: 51f863425bd1107894fb5e4d44ed7c742a806394
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b24700e0ed617177af888013e36f971870d0ac59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393047"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860949"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>O hipervisor do Windows deve estar em execução
 
@@ -26,7 +25,7 @@ ms.locfileid: "71393047"
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Pré-requisitos|  
+|**Categoria**|{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -40,7 +39,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 ## <a name="resolution"></a>Resolução  
   
-*Check o catálogo do Windows Server para ver se este servidor está qualificado para executar o Hyper-V. Em seguida, verifique se o BIOS está habilitado para virtualização assistida por hardware e prevenção de execução de dados imposta por hardware. Em seguida, verifique o log de eventos do hipervisor do Hyper-V.*  
+*Verifique o catálogo do Windows Server para ver se este servidor está qualificado para executar o Hyper-V. Em seguida, verifique se o BIOS está habilitado para virtualização assistida por hardware e prevenção de execução de dados imposta por hardware. Em seguida, verifique o log de eventos do hipervisor do Hyper-V.*  
   
 Para verificar o catálogo, consulte [catálogo do Windows Server](https://go.microsoft.com/fwlink/?LinkId=111228) (https://go.microsoft.com/fwlink/?LinkId=111228).  
   
@@ -78,7 +77,7 @@ Em seguida, verifique o log de eventos do hipervisor do Hyper-V. Se houver probl
   
 1.  Abra o Visualizador de Eventos. Clique em **Iniciar**, em **Ferramentas administrativas**e em **Visualizador de eventos**.  
   
-2.  Abra o log de eventos do hipervisor do Hyper-V. No painel de navegação, expanda **logs de aplicativos e serviços** >> **Microsoft** >> **Windows** >> **Hyper-V-hipervisor**e clique em **operacional**.  
+2.  Abra o log de eventos do hipervisor do Hyper-V. No painel de navegação, expanda **logs de aplicativos e serviços** >> **Microsoft** >> **Windows** >> **Hyper-V-hipervisor**e, em seguida, clique em **operacional**.  
   
 3.  Se o hipervisor do Windows estiver em execução, nenhuma ação adicional será necessária. Se o hipervisor do Windows não estiver em execução, faça o seguinte:  
   
@@ -86,7 +85,7 @@ Em seguida, verifique o log de eventos do hipervisor do Hyper-V. Se houver probl
   
 5.  Use um filtro para localizar eventos do hipervisor do Hyper-V:   
     1. No painel **ações** , clique em **Filtrar log atual**. Para **fontes de evento**, especifique "Hyper-V-hipervisor".   
-    2. Procure eventos que relatam problemas. Por exemplo, a ID de evento 41 indica um problema com a configuração do BIOS: "Falha na inicialização do Hyper-V; A VMX não está presente ou não está habilitada no BIOS. "  
+    2. Procure eventos que relatam problemas. Por exemplo, a ID de evento 41 indica um problema com a configuração do BIOS: "falha na inicialização do Hyper-V; A VMX não está presente ou não está habilitada no BIOS. "  
   
 ### <a name="see-also"></a>Consulte também  
 Para obter detalhes sobre como usar o Hyper-V no Windows 10, incluindo como verificar se o computador pode executar o Hyper-v, consulte [requisitos de sistema do Hyper-v do Windows 10](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility). 

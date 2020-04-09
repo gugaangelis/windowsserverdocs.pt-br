@@ -1,19 +1,18 @@
 ---
 title: Impedindo que o Kerberos altere a senha que usa chaves de segredo RC4
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: de207d55-aa3d-4c16-bd3b-496db43663a4
 manager: alanth
 author: justinha
-ms.technology: security-crdential-protection-and-management
+ms.technology: security-credential-protection-and-management
 ms.date: 11/09/2016
-ms.openlocfilehash: 21c2d3d79653bd02fea9d2ac0d09bd18690a388f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4b335ca4432f17acd60d9246de81081cf0441552
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949740"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858819"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>Evitando que o Kerberos altere senhas que usam chaves secretas RC4
 
@@ -37,7 +36,7 @@ Nos sistemas operacionais Windows designados na lista aplica-se a ao início des
 
 - Implante domínios definidos para o nível funcional de domínio do Windows Server 2012 R2 ou superior e configure os usuários como membros do grupo de segurança usuários protegidos. Como esse recurso interrompe mais do que apenas o uso de RC4 no protocolo Kerberos, consulte os recursos na seção [Consulte também](#see-also) a seguir.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - Para obter informações sobre como evitar o uso do tipo de criptografia RC4 em domínios do Windows Server 2012 R2, consulte [grupo de segurança usuários protegidos](/../credentials-protection-and-management/protected-users-security-group.md)e [como configurar contas protegidas](/../credentials-protection-and-management/how-to-configure-protected-accounts.md).
 

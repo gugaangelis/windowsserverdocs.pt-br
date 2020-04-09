@@ -1,7 +1,6 @@
 ---
 ms.assetid: e831f781-3c45-4d44-b411-160d121d1324
 title: Linguagem de regras de transformação de declarações
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 200d592bc68562856bbdee623e70d73d41457c15
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f391c3f8ef2bb5b12f0dd15db55df4f861c05f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357579"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861269"
 ---
 # <a name="claims-transformation-rules-language"></a>Linguagem de regras de transformação de declarações
 
@@ -24,7 +23,7 @@ O recurso de transformação de declarações entre florestas permite a ponte de
   
 Os cmdlets do Windows PowerShell para políticas de transformação em relações de confiança entre florestas têm opções para definir políticas simples que são necessárias em cenários comuns. Esses cmdlets convertem a entrada do usuário em políticas e regras no idioma das regras de transformação de declarações e, em seguida, as armazenam em Active Directory no formato prescrito. Para obter mais informações sobre cmdlets para transformação de declarações, consulte os [cmdlets AD DS para o controle de acesso dinâmico](https://go.microsoft.com/fwlink/?LinkId=243150).  
   
-Dependendo da configuração de declarações e dos requisitos colocados na relação de confiança entre florestas em suas florestas de Active Directory, suas políticas de transformação de declarações podem precisar ser mais complexas do que as políticas com suporte dos cmdlets do Windows PowerShell para Active Active. Para criar efetivamente essas políticas, é essencial compreender a semântica e a sintaxe da linguagem de regras de transformação de declarações. Essa linguagem de regras de transformação de declarações ("a linguagem") em Active Directory é um subconjunto do idioma usado pelo [serviços de Federação do Active Directory (AD FS)](https://go.microsoft.com/fwlink/?LinkId=243982) para fins semelhantes, e tem uma sintaxe e semântica muito semelhantes. No entanto, há menos operações permitidas e restrições de sintaxe adicionais são colocadas na versão Active Directory da linguagem.  
+Dependendo da configuração de declarações e dos requisitos colocados na relação de confiança entre florestas em suas florestas de Active Directory, suas políticas de transformação de declarações podem precisar ser mais complexas do que as políticas com suporte dos cmdlets do Windows PowerShell para Active Directory. Para criar efetivamente essas políticas, é essencial compreender a semântica e a sintaxe da linguagem de regras de transformação de declarações. Essa linguagem de regras de transformação de declarações ("a linguagem") em Active Directory é um subconjunto do idioma usado pelo [serviços de Federação do Active Directory (AD FS)](https://go.microsoft.com/fwlink/?LinkId=243982) para fins semelhantes, e tem uma sintaxe e semântica muito semelhantes. No entanto, há menos operações permitidas e restrições de sintaxe adicionais são colocadas na versão Active Directory da linguagem.  
   
 Este tópico explica brevemente a sintaxe e a semântica da linguagem de regras de transformação de declarações no Active Directory e considerações a serem feitas durante a criação de políticas. Ele fornece vários conjuntos de regras de exemplo para você começar, bem como exemplos de sintaxe incorreta e as mensagens que elas geram, para ajudá-lo a decifrar mensagens de erro ao criar as regras.  
   
@@ -295,10 +294,10 @@ Esta seção ilustra alguns exemplos de regras que são escritas com sintaxe inc
   
    Este exemplo é sintaticamente e semanticamente correto. No entanto, o uso de "booliano" como um valor de cadeia de caracteres é limitado para causar confusão e deve ser evitado. Como mencionado anteriormente, o uso de terminais de idioma como valores de declarações deve ser evitado sempre que possível.  
   
-## <a name="BKMK_LT"></a>Terminais de idioma  
+## <a name="language-terminals"></a><a name="BKMK_LT"></a>Terminais de idioma  
 A tabela a seguir lista o conjunto completo de cadeias de caracteres de terminal e os terminais de idioma associados que são usados no idioma das regras de transformação de declarações. Essas definições usam cadeias de caracteres UTF-16 que não diferenciam maiúsculas de minúsculas.  
   
-|String|Componentes|  
+|String|Terminal|  
 |----------|------------|  
 |"= >"|DIZ|  
 |";"|PONTO E vírgula|  
@@ -314,7 +313,7 @@ A tabela a seguir lista o conjunto completo de cadeias de caracteres de terminal
 |"=~"|REGEXP_MATCH|  
 |"!~"|REGEXP_NOT_MATCH|  
 |"="|Cancele|  
-|"& &"|E|  
+|"& &"|AND|  
 |lo|PROBLEMA|  
 |Escreva|TYPE|  
 |valor|VALOR|  

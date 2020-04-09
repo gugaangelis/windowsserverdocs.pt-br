@@ -1,24 +1,19 @@
 ---
 title: Recursos de compreensão
 description: Este tópico define o conceito de recursos no System insights e apresenta os recursos padrão disponíveis no Windows Server 2019.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 131fbacaab97c1c2c42920a518ce96ba1b8f5d2b
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 9b0f043aab5773773785afc7fb48ba0295a76865
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465560"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858739"
 ---
 # <a name="understanding-capabilities"></a>Recursos de compreensão
 
@@ -80,10 +75,10 @@ Cada funcionalidade analisa os dados diários para prever o uso futuro. A CPU, a
 | --------------- | -------------- | ---------------- |
  Previsão de consumo de volume          | Tamanho do volume                    | Uso diário máximo              
  Previsão de consumo de armazenamento total   | Soma dos tamanhos de volume, soma dos tamanhos de disco              | Uso diário máximo             
- Previsão de capacidade de CPU                | % Tempo do processador  | Média máxima de 2 horas por dia   
+ Previsão de capacidade de CPU                | % do tempo do processador  | Média máxima de 2 horas por dia   
  Previsão de capacidade de rede         | Total de bytes/s         | Média máxima de 2 horas por dia  
 
-Ao avaliar a lógica de filtragem acima, é importante observar que cada recurso procura informar os administradores quando o uso futuro excederá significativamente a capacidade disponível – mesmo que a CPU pressione momentaneamente 100% de utilização, o uso da CPU pode não ter causou degradação de desempenho significativa ou contenção de recursos. Para CPU e rede, deve haver um alto uso sustentado em vez de picos momentâneos. A média do uso da CPU e da rede em todo o dia, no entanto, perderia informações de uso importantes, pois algumas horas de alto uso da CPU ou da rede poderiam impactar significativamente o desempenho de suas cargas de trabalho críticas. A média máxima de 2 horas durante cada dia evita esses extremos e ainda produz dados significativos para cada recurso a ser analisado.
+Ao avaliar a lógica de filtragem acima, é importante observar que cada recurso procura informar os administradores quando o uso futuro excederá significativamente a capacidade disponível – mesmo que a CPU pressione momentaneamente 100% de utilização, o uso da CPU pode não ter causado uma degradação significativa de desempenho ou contenção de recursos. Para CPU e rede, deve haver um alto uso sustentado em vez de picos momentâneos. A média do uso da CPU e da rede em todo o dia, no entanto, perderia informações de uso importantes, pois algumas horas de alto uso da CPU ou da rede poderiam impactar significativamente o desempenho de suas cargas de trabalho críticas. A média máxima de 2 horas durante cada dia evita esses extremos e ainda produz dados significativos para cada recurso a ser analisado.
 
 No entanto, para o uso de volume e armazenamento total, a utilização de armazenamento não pode exceder a capacidade disponível, mesmo momentaneamente, portanto, o uso diário máximo é usado para esses recursos. 
 

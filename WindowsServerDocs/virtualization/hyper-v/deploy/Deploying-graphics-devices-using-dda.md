@@ -2,20 +2,18 @@
 title: Implantar dispositivos gráficos usando a atribuição de dispositivo discreta
 description: Saiba como usar o DDA para implantar dispositivos gráficos no Windows Server
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
 ms.date: 08/21/2019
-ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 07f0ba19aaf998bb7b2fe8cf4ef1ba6cf8cae322
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923874"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860909"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implantar dispositivos gráficos usando a atribuição de dispositivo discreta
 
@@ -100,7 +98,7 @@ Mount-VMHostAssignableDevice -LocationPath $locationPath
 ```
 Você pode reabilitar o dispositivo no Gerenciador de dispositivos e o sistema operacional do host poderá interagir com o dispositivo novamente.
 
-## <a name="example"></a>Exemplo
+## <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 ### <a name="mounting-a-gpu-to-a-vm"></a>Montando uma GPU em uma VM
 Neste exemplo, usamos o PowerShell para configurar uma VM chamada "ddatest1" para pegar a primeira GPU disponível pelo fabricante NVIDIA e atribuí-la à VM.  
@@ -133,7 +131,7 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
 
-## <a name="troubleshooting"></a>Painel de controle da
+## <a name="troubleshooting"></a>Solução de problemas
 
 Se você tiver passado uma GPU em uma VM, mas Área de Trabalho Remota ou um aplicativo não estiver reconhecendo a GPU, verifique os seguintes problemas comuns:
 
@@ -141,4 +139,4 @@ Se você tiver passado uma GPU em uma VM, mas Área de Trabalho Remota ou um apl
 - Verifique se o dispositivo tem espaço MMIO suficiente alocado na VM. Para saber mais, confira [MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space).
 - Verifique se você está usando uma GPU à qual o fornecedor oferece suporte para uso nessa configuração. Por exemplo, alguns fornecedores impedem que seus cartões de consumidor funcionem quando passados para uma VM.
 - Verifique se o aplicativo que está sendo executado dá suporte à execução dentro de uma VM e se a GPU e seus drivers associados têm suporte no aplicativo. Alguns aplicativos têm permissões de lista de GPUs e ambientes.
-- Se você estiver usando a função de Host da Sessão da Área de Trabalho Remota ou os serviços do Windows MultiPoint no convidado, será necessário certificar-se de que uma entrada de Política de Grupo específica está definida para permitir o uso da GPU padrão. Usando um objeto Política de Grupo aplicado ao convidado (ou ao Editor de Política de Grupo Local no convidado), navegue até o seguinte Política de Grupo item: configuração do **computador** > **modelos de administrador** > **componentes do Windows** > **Serviços de Área de Trabalho Remota** > **host da sessão da área de trabalho remota** > **ambiente de sessão remota** > **use o adaptador gráfico de hardware padrão para todas as sessões de serviços de área de trabalho remota**. Defina esse valor como habilitado e reinicialize a VM depois que a política for aplicada.
+- Se você estiver usando a função de Host da Sessão da Área de Trabalho Remota ou os serviços do Windows MultiPoint no convidado, será necessário certificar-se de que uma entrada de Política de Grupo específica está definida para permitir o uso da GPU padrão. Usando um objeto Política de Grupo aplicado ao convidado (ou ao Editor de Política de Grupo Local no convidado), navegue até o seguinte Política de Grupo item: configuração do **computador** > **modelos de administrador** > **componentes** do Windows ** > serviços de área de trabalho remota > host da sessão da área de trabalho remota** **ambiente de sessão remota** ** > ** **use o adaptador gráfico de hardware padrão para todas as sessões de > ** . Defina esse valor como habilitado e reinicialize a VM depois que a política for aplicada.

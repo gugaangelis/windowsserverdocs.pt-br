@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
 title: Política de acesso central do cenário
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 91fd437895e765d4d73f3a200f76a5f8f96b52f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a22592e5c8af9fa23725de90a14a9a8a46c286d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407092"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861149"
 ---
 # <a name="scenario-central-access-policy"></a>Cenário: Política de Acesso Central
 
@@ -30,7 +29,7 @@ Políticas de acesso organizacional orientadas por requisitos de conformidade e 
   
 -   Criar uma política de acesso central que se aplique a todos os arquivos que contêm PII onde quer que eles estejam localizados em servidores de arquivos em toda a organização.  
   
-A iniciativa para implantar e impor uma política de autorização pode chegar por vários motivos e se aplicar a vários níveis da organização. Veja a seguir alguns exemplos de tipos de política:  
+A iniciativa de implantar e reforçar uma política de autorização pode surgir por diversas razões e se aplicar a diversos níveis da organização. Veja a seguir alguns exemplos de tipos de política:  
   
 -   **Política de autorização para toda a organização.** Geralmente iniciada no departamento de segurança das informações, essa política de autorização é orientada pelos requisitos de conformidade e alto nível da organização, sendo relevante para toda a organização. Por exemplo, arquivos de alto impacto nos negócios são acessíveis apenas a funcionários em tempo integral.  
   
@@ -85,12 +84,12 @@ As políticas a seguir estão disponíveis para políticas de acesso central:
   
 -   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos incluídos neste cenário  
 A tabela a seguir lista as funções e os recursos que fazem parte deste cenário e descreve como dar suporte a ele.  
   
 |Função/recurso|Como este cenário tem suporte|  
 |-----------------|---------------------------------|  
-|Função de Serviços de Domínio do Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite a criação de declarações de usuário e declarações de dispositivo, identidade composta, (declarações de usuário e dispositivo), novos modelos de CAP (política de acesso central) e o uso de classificação de arquivos informações em decisões de autorização.|  
+|Função de Serviços de Domínio do Active Directory|AD DS no Windows Server 2012 apresenta uma plataforma de autorização baseada em declarações que permite a criação de declarações de usuário e declarações de dispositivo, identidade composta, (declarações de usuário e dispositivo), novos modelos de CAP (política de acesso central) e o uso de informações de classificação de arquivos em decisões de autorização.|  
 |Função Servidor de Serviços de Arquivo e Armazenamento|Serviços de Arquivo e Armazenamento oferecem tecnologias que ajudam a configurar e gerenciar um ou mais servidores de arquivos, os quais são servidores que fornecem localizações centrais na rede na qual é possível armazenar arquivos e compartilhá-los com os usuários. Se os usuários da rede precisam ter acesso aos mesmos arquivos e aplicativos, ou se o backup centralizado e gerenciamento de arquivos são importantes para sua organização, você deve configurar um ou mais computadores como servidor de arquivos, adicionando a função de Serviços de Arquivo e Armazenamento e os serviços de função apropriados aos computadores.|  
 |Computador cliente Windows|Os usuários podem acessar arquivos e pastas da rede por meio do computador cliente.|  
   

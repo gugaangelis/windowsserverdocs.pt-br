@@ -1,24 +1,20 @@
 ---
 title: Glossário
 description: Define palavras, termos e conceitos nos serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 807bce1d-b993-49c6-9783-b01a3c55846c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 0c966f0c8e1ad239769c58e4648832ae5020d0dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a5f76f0f41d9ff1726a1a468fde7f53b6a7634d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389653"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859219"
 ---
 # <a name="glossary"></a>Glossário
 **associar uma estação**  
@@ -57,7 +53,7 @@ Consulte *cliente USB zero*.
 **Sistema de serviços do MultiPoint**  
 Uma coleção de hardware e software que consiste em um computador que tem o Windows Server 2016 instalado com a função de serviços do MultiPoint habilitada e pelo menos uma estação do MultiPoint. Para obter mais informações sobre opções de layout do sistema, consulte [planejamento de site dos serviços do MultiPoint](MultiPoint-services-Site-Planning.md)  
   
-**partition**  
+**particion**  
 Uma seção de espaço em um disco físico que funciona como se fosse um disco separado.  
   
 **Estação primária**  
@@ -79,13 +75,13 @@ Ao contrário da *estação primária*, que pode ser usada por um administrador 
 Ponto de extremidade do usuário para se conectar ao computador que executa os serviços do MultiPoint. Há suporte para três tipos de estação: estações conectadas por vídeo direto, USB-zero-cliente e RDP através da LAN. Para obter mais informações sobre estações, consulte [MultiPoint stations](MultiPoint-services-Stations.md).  
   
 **Hub de estação**  
-Um hub USB que foi associado a um monitor para criar uma estação do MultiPoint. Ele conecta os dispositivos USB periféricos aos serviços do MultiPoint. Confira também:   *Zero cliente USB* e *hub USB*.  
+Um hub USB que foi associado a um monitor para criar uma estação do MultiPoint. Ele conecta os dispositivos USB periféricos aos serviços do MultiPoint. Consulte também: *cliente USB zero* e *hub USB*.  
   
 **modo de estação**  
 Um dos dois modos dos serviços do MultiPoint pode iniciar. Normalmente, o sistema de serviços do MultiPoint está no modo de estação. Quando no modo de estação, as estações de serviços do MultiPoint se comportam como se cada estação fosse um computador separado que esteja executando o sistema operacional Windows, e vários usuários podem usar o sistema ao mesmo tempo. Consulte também: *modo de console*.  
   
 **Hub USB**  
-Um hub de expansão USB multiporta genérico que está em conformidade com as especificações USB (barramento serial universal) 2,0 ou posteriores. Esses hubs normalmente têm várias portas USB, o que permite que vários dispositivos USB sejam conectados a uma única porta USB no computador. Os hubs USB normalmente são dispositivos separados que podem ser *conectados externamente* ou *com barramento*. Alguns outros dispositivos, como alguns teclados e monitores de vídeo, podem incorporar um hub USB ao seu design. Confira também:   *Zero cliente USB*.  
+Um hub de expansão USB multiporta genérico que está em conformidade com as especificações USB (barramento serial universal) 2,0 ou posteriores. Esses hubs normalmente têm várias portas USB, o que permite que vários dispositivos USB sejam conectados a uma única porta USB no computador. Os hubs USB normalmente são dispositivos separados que podem ser *conectados externamente* ou *com barramento*. Alguns outros dispositivos, como alguns teclados e monitores de vídeo, podem incorporar um hub USB ao seu design. Consulte também: *cliente USB zero*.  
   
 **USB sobre cliente Ethernet zero**  
 Um cliente USB zero que se conecta ao computador por meio de uma conexão de LAN em vez de uma porta USB. Esse cliente aparece para o servidor como um dispositivo USB mesmo através dos dados enviados por meio da conexão Ethernet.  

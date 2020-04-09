@@ -1,7 +1,6 @@
 ---
 ms.assetid: 64142026-07b5-4601-840a-c8dcf6ab9814
 title: Criar um design de link de site
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 79e91481c357d05617ee0ddc716e2bf6e90b8b27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f75feb34b64e2ab41859dd708147a2e8d05a768a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408967"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822759"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>Criar um design de link de site
 
@@ -39,4 +38,4 @@ Se sua organização tiver uma topologia de rede hub e spoke, você geralmente n
   
 ### <a name="controlling-replication-through-a-firewall"></a>Controlando a replicação por meio de um firewall
 
-Se dois controladores de domínio que representam o mesmo domínio em dois sites diferentes forem especificamente autorizados a se comunicar entre si somente por meio de um firewall, você poderá desabilitar a **ponte de todos os links de site** e criar pontes de link de site para sites no mesmo lado do Firewall. Portanto, se sua rede estiver separada por firewalls, recomendamos que você desabilite a transitividade de links de site e crie pontes de link de site para a rede em um lado do firewall. Para obter informações sobre como gerenciar a replicação por meio de firewalls, consulte o artigo [Active Directory em redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=107074).
+Se dois controladores de domínio que representam o mesmo domínio em dois sites diferentes forem especificamente autorizados a se comunicar entre si somente por meio de um firewall, você poderá desabilitar a **ponte de todos os links de site** e criar pontes de link de site para sites no mesmo lado do firewall. Portanto, se sua rede estiver separada por firewalls, recomendamos que você desabilite a transitividade de links de site e crie pontes de link de site para a rede em um lado do firewall. Para obter informações sobre como gerenciar a replicação por meio de firewalls, consulte o artigo [Active Directory em redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=107074).

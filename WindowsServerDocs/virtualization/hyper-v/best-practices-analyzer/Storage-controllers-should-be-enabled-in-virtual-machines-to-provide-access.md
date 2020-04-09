@@ -2,20 +2,19 @@
 title: Os controladores de armazenamento devem ser habilitados em máquinas virtuais para fornecer acesso ao armazenamento anexado
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 532548a1-8ffe-4b5b-902e-ed2f0819012b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f0d10ab4c419a6014a9edb4b7f721714dc92798d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b530a5868633e6007f311f3d15c94b7ec4ded52c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393485"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858789"
 ---
 # <a name="storage-controllers-should-be-enabled-in-virtual-machines-to-provide-access-to-attached-storage"></a>Os controladores de armazenamento devem ser habilitados em máquinas virtuais para fornecer acesso ao armazenamento anexado
 
@@ -28,7 +27,7 @@ Para obter mais informações sobre práticas recomendadas e varreduras, consult
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
 |**Severity**|Aviso|  
-|**Categorias**|Configuração|  
+|**Categoria**|Configuração|  
 
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
 
@@ -38,9 +37,9 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
   
 ## <a name="impact"></a>Impacto  
   
-os computadores *Virtual não podem usar o armazenamento conectado a um controlador de armazenamento desabilitado. Isso afeta as seguintes máquinas virtuais:*  
+*As máquinas virtuais não podem usar o armazenamento conectado a um controlador de armazenamento desabilitado. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de nomes de máquina virtual >  
+\<lista de nomes de máquina virtual >  
   
 ## <a name="resolution"></a>Resolução  
   

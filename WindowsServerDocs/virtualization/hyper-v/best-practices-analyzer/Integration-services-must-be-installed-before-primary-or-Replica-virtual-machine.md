@@ -2,20 +2,19 @@
 title: O Integration Services deve ser instalado antes que as máquinas virtuais primárias ou de réplica possam usar um endereço IP alternativo após um failover
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas, com links para mais informações.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: a7fdd185-d6c8-4f58-9b58-2df5827bb056
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 58e744c182fb2013e55e91f58140c6ba14181f9f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d532d58d21b39963b41de969d83b720ed077e9c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393592"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861899"
 ---
 # <a name="integration-services-must-be-installed-before-primary-or-replica-virtual-machines-can-use-an-alternate-ip-address-after-a-failover"></a>O Integration Services deve ser instalado antes que as máquinas virtuais primárias ou de réplica possam usar um endereço IP alternativo após um failover
 
@@ -27,8 +26,8 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
-|**Severity**|Erro|  
-|**Categorias**|Configuração|  
+|**Severity**|Error|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -36,9 +35,9 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 *As máquinas virtuais que participam da replicação podem ser configuradas para usar um endereço IP específico em caso de failover, mas somente se o Integration Services estiver instalado no sistema operacional convidado da máquina virtual.*  
   
 ## <a name="impact"></a>Impacto  
-*In o evento de um failover (planejado, não planejado ou de teste), a máquina virtual de réplica será colocado online usando o mesmo endereço IP que a máquina virtual primária. Essa configuração pode causar problemas de conectividade. Isso afeta as seguintes máquinas virtuais:*  
+*No caso de um failover (planejado, não planejado ou de teste), a máquina virtual de réplica será colocado online usando o mesmo endereço IP que a máquina virtual primária. Essa configuração pode causar problemas de conectividade. Isso afeta as seguintes máquinas virtuais:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>Resolução  
 *Use a conexão de máquina virtual para instalar o Integration Services na máquina virtual.*  

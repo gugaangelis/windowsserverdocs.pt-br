@@ -1,24 +1,20 @@
 ---
 title: Definir data, hora e fuso horário
 description: Saiba como definir a data, a hora e o fuso horário nos serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 22a87c5f-3bfc-4da1-9905-24f768ede959
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: ab8b65cc9890a66c602f1e4b4eb102ac068ba8d3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a5c476078c7f83c2e0b4f388f42b023057af6820
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394606"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858869"
 ---
 # <a name="set-the-date-time-and-time-zone"></a>Definir data, hora e fuso horário
 Depois de concluir a instalação dos drivers de dispositivo, defina a data, a hora e o fuso horário no servidor MultiPoint.  

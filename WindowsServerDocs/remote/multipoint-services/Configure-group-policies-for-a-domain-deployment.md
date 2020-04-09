@@ -1,24 +1,20 @@
 ---
 title: Configurar políticas de grupo para uma implantação de domínio
 description: Saiba como configurar políticas de grupo nos serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 5ac6524289d231d152e366d2ba750a59d27ce14f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e851d12dad29de8b3498aad220354d31917fadee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395516"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862179"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>Configurar políticas de grupo para uma implantação de domínio
 Para garantir que a implantação de domínio dos serviços do MultiPoint funcione corretamente, aplique as seguintes configurações de política de grupo à conta de usuário WMSshell em um sistema MultiPoint Services.  
@@ -39,14 +35,14 @@ Atribua os seguintes valores:
 |Configuração|Valores|  
 |-----------|----------|  
 |Habilitar proteção de tela|Desabilitado|  
-|Tempo limite de Proteção de Tela|Desabilitado<br /><br />Segundos: xxx|  
+|Tempo limite de Proteção de Tela|Desabilitado<p>Segundos: xxx|  
 |Proteger com senha a proteção de tela|Desabilitado|  
   
 **Política:** Configuração do computador > configurações do Windows > configurações de segurança > políticas locais > atribuição de direitos de usuário > **Permitir logon local**  
   
 |Configuração|Valores|  
 |-----------|----------|  
-|Permitir logon localmente|Verifique se a lista de contas inclui a conta WMSshell.<br /><br />**Observação:** Por padrão, a conta WMSshell é um membro do grupo usuários. Se o grupo usuários estiver na lista e WMSshell for um membro do grupo usuários, você não precisará adicionar a conta WMSshell à lista.|  
+|Permitir logon localmente|Verifique se a lista de contas inclui a conta WMSshell.<p>**Observação:** Por padrão, a conta WMSshell é um membro do grupo usuários. Se o grupo usuários estiver na lista e WMSshell for um membro do grupo usuários, você não precisará adicionar a conta WMSshell à lista.|  
   
 > [!IMPORTANT]  
 > Ao definir qualquer política de grupo, verifique se as políticas não interferem nas atualizações automáticas e no relatório de erros do Windows no MultiPoint Server. Elas são definidas pelas configurações **instalar atualizações automaticamente** e **automáticas do relatório de erros do Windows** que foram selecionadas durante a instalação do Windows MultiPoint Server, configuradas no MultiPoint Manager usando **Editar configurações do servidor**ou configuradas em atualizações agendadas para proteção de disco.  
@@ -55,7 +51,7 @@ Atribua os seguintes valores:
 Para uma implantação de domínio dos serviços do MultiPoint, você deve atualizar as seguintes subchaves do registro.  
   
 > [!IMPORTANT]  
-> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.  
+> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.  
   
 #### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>Para atualizar as subchaves do registro para uma implantação de domínio dos serviços do MultiPoint  
   

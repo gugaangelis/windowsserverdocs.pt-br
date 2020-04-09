@@ -1,24 +1,20 @@
 ---
 title: regini
 description: Saiba como modificar o registro no prompt de comando ou usando um script.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5ff18dc3-5bd8-400a-b311-fd73a3267e8c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 482a0a256c537965a9960a896fa323aa8b8fac42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 632573f317eafa254f6c434f959a06f2c24f7353
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371640"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836239"
 ---
 # <a name="regini"></a>regini
 
@@ -32,11 +28,11 @@ Para obter detalhes sobre o formato e o conteúdo do arquivo de script de texto 
 regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] textFiles...
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 | Parâmetro | Descrição |
 
-|-m \< \\ ComputerName\\>|Especifica o nome do computador remoto com um registro que deve ser modificado. Use o  **\\ formato\\ComputerName**.|
+|-m \<\\\\ComputerName >|Especifica o nome do computador remoto com um registro que deve ser modificado. Use o formato **\\\\ComputerName**.|
 |---------------------|-|
 |-h \<hivefile hiveroot >|Especifica o hive do Registro local a ser modificado. Você deve especificar o nome do arquivo do hive e a raiz do hive no formato **hivefile hiveroot**.|
 |-i \<n >|Especifica o nível de recuo a ser usado para indicar a estrutura de árvore das chaves do registro na saída do comando. A ferramenta **Regdmp. exe** (que obtém as permissões atuais de uma chave do registro no formato binário) usa o recuo em múltiplos de quatro, portanto, o valor padrão é **4**.|
@@ -51,6 +47,6 @@ As diretrizes a seguir se aplicam principalmente ao conteúdo dos arquivos de te
 -   Use a barra invertida para indicar a continuação de uma linha. O comando irá ignorar todos os caracteres da barra invertida até (mas não incluindo) o primeiro caractere não em branco da linha seguinte. Se você incluir mais de um espaço antes da barra invertida, ele será substituído por um único espaço.
 -   Use caracteres de guia rígido para controlar o recuo. Esse recuo indica a estrutura de árvore das chaves do registro; no entanto, esses caracteres são convertidos em um único espaço, independentemente de sua posição.
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

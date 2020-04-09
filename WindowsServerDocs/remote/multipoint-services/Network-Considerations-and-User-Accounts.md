@@ -1,24 +1,20 @@
 ---
 title: Considerações de rede e contas de usuário
 description: Fornece informações de planejamento para diferentes cenários de rede e de usuário com os serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef4859fc-b7ae-4827-ab9c-b1dc07ab6c16
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 5369776a0341bf1f4d4d1d13569cf0964fdf11f1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ed9770ff6e91e548dfc38a1de927646590a25165
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405033"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853409"
 ---
 # <a name="network-considerations-and-user-accounts"></a>Considerações de rede e contas de usuário
 Os serviços do MultiPoint podem ser implantados em uma variedade de ambientes de rede e podem dar suporte a contas de usuário local e contas de usuário de domínio. Em geral, as contas de usuário dos serviços do MultiPoint serão gerenciadas em um dos seguintes ambientes de rede:  

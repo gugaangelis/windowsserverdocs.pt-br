@@ -1,24 +1,20 @@
 ---
 title: Selecionar o hardware para o sistema MultiPoint Services
 description: Considerações de hardware para serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9cfd6572c82bf5c3754165420e61054ec12b9617
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dca1b68564c977394c1b71f72db0fde5727c861
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388997"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859069"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>Selecionar o hardware para o sistema MultiPoint Services
 Ao criar um sistema de serviços do MultiPoint, você deve selecionar um computador que atenda aos requisitos de sistema do Windows Server 2016. Se você estiver decidindo quais componentes selecionar, considere o seguinte:  
@@ -129,7 +125,7 @@ Clientes USB zero contêm um controlador de vídeo externo para conectar um moni
   
 Selecione um cliente USB zero se você quiser habilitar o suporte para monitores adicionais sem abrir o computador ou se quiser dar suporte a mais estações do que as saídas de vídeo disponíveis. Por exemplo, se você tiver quatro monitores conectados\-em placas de vídeo internas e quiser adicionar mais dois monitores, poderá conectar\-em dois controladores de vídeo externos ao computador e ter espaço para mais dois monitores. Dessa maneira, você pode combinar um cliente USB zero com o controlador de vídeo e não usar slots PCI ou PCIe adicionais na placa-mãe.  
   
-## <a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>Selecionando vídeo de\-direta\-dispositivos de estação de cliente USB ou conectados  
+## <a name="selecting-direct-video-connected-or-usb-zero-client-station-devices"></a><a name="BKMK_Selectingdirect-video-connectedorUSBzeroclientstationdevices"></a>Selecionando vídeo de\-direta\-dispositivos de estação de cliente USB ou conectados  
 Uma estação de serviços do MultiPoint consiste em um hub de estação ou cliente USB com um teclado e mouse conectados\-e um monitor que é conectado\-no computador host ou em um cliente USB zero. Outros dispositivos periféricos podem ser conectados\-no Hub de estação ou cliente USB zero, mas não são necessários para criar a estação do MultiPoint. Esses outros dispositivos periféricos são descritos em [selecionando outros dispositivos periféricos de estação](#selecting-other-station-peripheral-devices).  
   
 Os dispositivos que você selecionar para criar uma estação de serviços do MultiPoint devem atender aos requisitos mínimos para trabalhar com os serviços do MultiPoint. Os detalhes sobre os requisitos para os seguintes dispositivos de estação de serviços do MultiPoint são fornecidos neste tópico:  
@@ -186,14 +182,14 @@ Os serviços do MultiPoint dão suporte a dispositivos periféricos conectados a
   
 ||Conectado ao computador host|Conectado ao Hub de estação ou ao Hub downstream|  
 |-|------------------------------|----------------------------------------------|  
-|Teclado|Não funcional, a menos que faça parte de uma estação PS/2. |Disponível para estação individual<br /><br />Não pode ser conectado a um hub downstream|  
+|Teclado|Não funcional, a menos que faça parte de uma estação PS/2. |Disponível para estação individual<p>Não pode ser conectado a um hub downstream|  
 |Mouse|Não funcional, a menos que faça parte de uma estação PS/2. |Disponível para estação individual|  
 |Palestrante/fone de ouvido|Não funcional, a menos que faça parte de uma estação PS/2.|Disponível para estação individual|  
 |Dispositivo de armazenamento USB|Disponível para todas as estações|Disponível para estação individual|  
 |Controle de consumidor HID|Não funcional|Disponível para estação individual|  
 |Outros dispositivos USB, como câmeras, leitores de documentos e unidades de DVD|Disponível para todas as estações, se houver suporte no Windows Server 2012|Disponível para todas as estações, se houver suporte do Windows Server 2008 R2 Serviços de Área de Trabalho Remota|  
   
-## <a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>Selecionando\-RDP em\-LAN\-hardware de estação conectada  
+## <a name="selecting-rdp-over-lan-connected-station-hardware"></a><a name="BKMK_SelectingRDP-over-LAN-connectedstationhardware"></a>Selecionando\-RDP em\-LAN\-hardware de estação conectada  
 Qualquer cliente de LAN que possa se conectar a Serviços de Área de Trabalho Remota, usando protocolo RDP, pode se tornar uma estação de serviços de MultiPoint.  
   
 Se você quiser que o cliente de LAN seja usado apenas como uma estação de MultiPoint, convém "bloquear" o cliente de LAN. Por exemplo, configure seu cliente fino para que ele possa se conectar somente a uma sessão de serviços do MultiPoint ou Configure seus computadores desktop para que o acesso a ícones da área de trabalho e a itens do menu Iniciar, como um navegador da Web, seja removido para evitar acesso direto à Internet. Você pode fazer essas configurações usando suas ferramentas de configuração de cliente de LAN ou políticas locais ou de grupo.  

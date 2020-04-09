@@ -1,7 +1,6 @@
 ---
 ms.assetid: cd4d4902-dcdf-49dd-8059-82a56bf4b585
 title: Exportar a parte da chave privada de um Certificado de Autenticação de Servidor
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8e1bbeddc4bae1c420b6cc78b52d6b873320ae8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6baa734e3fc346d94f4387e2ed54d3e707e5af75
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359584"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855419"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>Exportar a parte da chave privada de um Certificado de Autenticação de Servidor
 
@@ -27,7 +26,7 @@ Esse mesmo conceito é verdadeiro para farms de proxy de servidor de Federação
   
 Dependendo da função que este computador executará, use esse procedimento no computador do servidor de Federação ou no computador proxy do servidor de Federação em que você instalou o certificado de autenticação do servidor com a chave privada. Ao terminar este procedimento, você poderá importar o certificado no Site Padrão de cada servidor no farm. Para obter mais informações, consulte [importar um certificado de autenticação de servidor para o site da Web padrão](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>Para exportar a parte da chave privada de um certificado de autenticação de servidor  
   

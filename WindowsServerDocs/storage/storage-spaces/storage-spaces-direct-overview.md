@@ -2,7 +2,7 @@
 title: Visão geral de Espaços de Armazenamento Diretos
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,18 +10,18 @@ ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: Uma visão geral do Espaços de Armazenamento Diretos, um recurso do Windows Server que permite que você ClusterE servidores com armazenamento interno em uma solução de armazenamento definida por software.
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47adcebf7da87e9d3c96812f5d7d90ca00601b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b032d286398b3c1719d290ca83da8bbc9c6b9f85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402834"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859129"
 ---
 # <a name="storage-spaces-direct-overview"></a>Visão geral de Espaços de Armazenamento Diretos
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016
 
-O recurso Espaços de Armazenamento Diretos usa servidores padrão do setor com unidades conectadas localmente para criar um armazenamento definido pelo software altamente disponível e escalonável com custo menor do que o de matrizes de SAN ou NAS tradicionais. Sua arquitetura convergida ou hiperconvergente simplifica radicalmente a aquisição e a implantação, enquanto recursos como cache, camadas de armazenamento e codificação de eliminação, junto com as inovações de hardware mais recentes, como redes RDMA e unidades de NVMe, entrega eficiência e desempenho incomparáveis.
+O recurso Espaços de Armazenamento Diretos usa servidores padrão do setor com unidades conectadas localmente para criar um armazenamento definido pelo software altamente disponível e escalonável com custo menor do que o de matrizes de SAN ou NAS tradicionais. Sua arquitetura convergida ou hiperconvergente simplifica radicalmente a aquisição e a implantação, enquanto recursos como cache, camadas de armazenamento e codificação de eliminação, junto com as inovações de hardware mais recentes, como a rede RDMA e unidades de NVMe, proporcionam eficiência e desempenho incomparáveis.
 
 O Espaços de Armazenamento Diretos está incluído no Windows Server 2019 datacenter, no Windows Server 2016 datacenter e em [Builds do Windows Server Insider Preview](https://insider.windows.com/for-business-getting-started-server/). 
 
@@ -112,13 +112,13 @@ Há [mais de 10.000 clusters](https://blogs.technet.microsoft.com/filecab/2018/0
 
 Visite [Microsoft.com/HCI](https://www.microsoft.com/hci) para ler suas histórias:
 
-[![Grid de logotipos de clientes](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
+[![grade de logotipos de clientes](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
 
 ## <a name="management-tools"></a>Ferramentas de gerenciamento
 
 As seguintes ferramentas podem ser usadas para gerenciar e/ou monitorar Espaços de Armazenamento Diretos:
 
-| Nome | Gráfico ou linha de comando? | Pago ou incluído? |
+| {1&gt;Nome&lt;1} | Gráfico ou linha de comando? | Pago ou incluído? |
 |-----------------|----------------------------|-------------------|
 | [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | Corrompi    | Incluído |
 | Gerenciador do Servidor & Gerenciador de Cluster de Failover                                 | Corrompi    | Incluído |

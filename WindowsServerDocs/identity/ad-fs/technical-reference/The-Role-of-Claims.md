@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22f53391-8c6a-4873-a1f4-08b4760ea621
 title: A função das declarações
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 851a70bbed606530ca8292f65bc4f776eae77fae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2477152231489e309fc48fd57d38e09a9bf658eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407348"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860169"
 ---
 # <a name="the-role-of-claims"></a>A função das declarações
 No modelo de identidade baseado em declarações\-, as declarações desempenham uma função dinâmica no processo de Federação, são o principal componente pelo qual o resultado de todas as solicitações de autorização e autenticação baseadas\-na Web são determinados. Esse modelo permite que as organizações projetem, de forma segura, identidade digital e direitos de titularidade, ou *declarações*, através dos limites de segurança e da empresa, de forma padronizada.  
@@ -25,7 +24,7 @@ Em sua forma mais simples, as declarações são simplesmente *instruções* \(p
 ### <a name="how-claims-are-sourced"></a>Como as declarações são originadas  
 O Serviço de Federação em Serviços de Federação do Active Directory (AD FS) \(AD FS\) define quais declarações são trocadas entre parceiros federados. No entanto, antes de fazer isso, ele deve primeiro preencher ou criar a declaração com um valor recuperado ou um valor calculado. Cada valor de declaração representa um valor de um usuário, grupo ou entidade e é originado em uma das duas maneiras:  
   
-1.  Quando o valor que compõe a declaração é recuperado de um repositório de atributos, por exemplo, quando um valor de atributo do Departamento de Vendas é recuperado das propriedades de uma conta de usuário do Active Directory. Para obter mais informações, consulte [The Role of Attribute Stores](The-Role-of-Attribute-Stores.md).  
+1.  Quando o valor que compõe a declaração é recuperado de um repositório de atributos, por exemplo, quando um valor de atributo do Departamento de Vendas é recuperado das propriedades de uma conta de usuário do Active Directory. Para mais informações, consulte [A função dos repositórios de atributo](The-Role-of-Attribute-Stores.md).  
   
 2.  Quando o valor de uma declaração de entrada é transformado em outro valor com base na lógica expressa em uma regra. Por exemplo, quando uma declaração de entrada com o valor Admins. do Domínio é transformada em um novo valor de administradores antes de ser enviada como uma declaração de saída. Para mais informações, consulte [A função das regras de declaração](The-Role-of-Claim-Rules.md).  
   
@@ -45,16 +44,16 @@ O fluxo de declarações que usa este processo é conhecido como *pipeline de de
 Para mais informações, consulte [A função do pipeline de declarações](The-Role-of-the-Claims-Pipeline.md)  
   
 ### <a name="how-claims-are-issued"></a>Como as declarações são emitidas  
-Quando você escreve regras de declaração, a origem das declarações de entrada para as regras de declaração varia dependendo se você está escrevendo regras em um objeto de confiança do provedor de declarações ou em um objeto de confiança de terceira parte confiável. Quando você escreve regras para um objeto de confiança do provedor de declarações, as declarações de entrada são as reivindicações enviadas do provedor de declarações confiável para o Serviço de Federação. Quando você escreve regras para um objeto de confiança de terceira parte confiável, as declarações de entrada são as declarações de saída das regras de declaração do objeto de confiança do provedor de declarações. Para obter mais informações sobre declarações de entrada e saída, consulte [The Role of the Claims Pipeline](The-Role-of-the-Claims-Pipeline.md) e [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
+Quando você escreve regras de declaração, a origem das declarações de entrada para as regras de declaração varia dependendo se você está escrevendo regras em um objeto de confiança do provedor de declarações ou em um objeto de confiança de terceira parte confiável. Quando você escreve regras para um objeto de confiança do provedor de declarações, as declarações de entrada são as reivindicações enviadas do provedor de declarações confiável para o Serviço de Federação. Quando você escreve regras para um objeto de confiança de terceira parte confiável, as declarações de entrada são as declarações de saída das regras de declaração do objeto de confiança do provedor de declarações. Para mais informações sobre declarações de entrada e declarações de saída, consulte [A função do pipeline de declarações](The-Role-of-the-Claims-Pipeline.md) e [A função do mecanismo de declarações](The-Role-of-the-Claims-Engine.md).  
   
 ## <a name="what-are-claim-types"></a>Quais são os tipos de declaração?  
 Um tipo de declaração fornece o contexto para o valor da declaração. Normalmente, ele é expresso como um URI de \(Uniform Resource Identifier\). O AD FS pode dar suporte a qualquer tipo de declaração e está configurado com os tipos de declaração na tabela a seguir por padrão.  
   
-|Nome|Descrição|URI|  
+|{1&gt;Nome&lt;1}|Descrição|URI|  
 |--------|---------------|-------|  
 |Endereço de email do E\-|O endereço de email do e\-do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims\/EmailAddress|  
 |Nome fornecido|O nome fornecido do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/determinadoname|  
-|Nome|O nome exclusivo do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/nome|  
+|{1&gt;Nome&lt;1}|O nome exclusivo do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/nome|  
 |UPN|O nome principal do usuário \(\) UPN do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/UPN|  
 |Nome comum|O nome comum do usuário|http:\/\/schemas.xmlsoap.org\/declarações\/CommonName|  
 |Endereço de email do AD FS 1. x E\-|O endereço de email do e\-do usuário ao interoperar com AD FS 1,1 ou ADFS 1,0|http:\/\/schemas.xmlsoap.org\/declarações\/EmailAddress|  
@@ -64,7 +63,7 @@ Um tipo de declaração fornece o contexto para o valor da declaração. Normalm
 |Sobrenome|O sobrenome do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/sobrenome|  
 |PPID|O identificador privado do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/privatepersonalidentifier|  
 |Identificador de nome|O identificador de nome SAML do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/nameidentifier|  
-|Método de autenticação|O método usado para autenticar o usuário|http:\/\/schemas.microsoft.com\/WS\/2008\/06\/Identity\/Claims\/AuthenticationMethod|  
+|Método de Autenticação|O método usado para autenticar o usuário|http:\/\/schemas.microsoft.com\/WS\/2008\/06\/Identity\/Claims\/AuthenticationMethod|  
 |SID do grupo somente negar|O SID de grupo somente\-negação do usuário|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidade\/declarações\/DenyOnlySid|  
 |SID primário somente negar|A negação de\-somente o SID primário do usuário|http:\/\/schemas.microsoft.com\/WS\/2008\/06\/Identity\/Claims\/denyonlyprimarysid|  
 |SID de grupo primário somente negar|A negação\-somente o SID do grupo primário do usuário|http:\/\/schemas.microsoft.com\/WS\/2008\/06\/Identity\/Claims\/denyonlyprimarygroupsid|  

@@ -1,22 +1,22 @@
 ---
 title: Configurar o encaminhamento DNS e a confiança do domínio
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5d8ffe82065caeee27c5d13f5243f13addc6c325
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d6ad10dacf9c667069ecd43f38473a3f20bc781
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856849"
 ---
 # <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>Configurar o encaminhamento de DNS no domínio HGS e uma relação de confiança unidirecional com o domínio de malha
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016
 
 >[!IMPORTANT]
 >O modo AD é preterido a partir do Windows Server 2019. Para ambientes em que o atestado do TPM não é possível, configure o [atestado de chave do host](guarded-fabric-initialize-hgs-key-mode.md). O atestado de chave de host fornece garantia semelhante ao modo AD e é mais simples de configurar. 
@@ -31,7 +31,7 @@ Use as etapas a seguir para configurar o encaminhamento de DNS e estabelecer uma
 
 2.  Para criar uma relação de confiança de floresta unidirecional, execute o seguinte comando em um prompt de comando com privilégios elevados:
 
-    Substitua `bastion.local` pelo nome do domínio HGS e `fabrikam.com` pelo nome do domínio da malha. Forneça a senha para um administrador do domínio de malha.
+    Substitua `bastion.local` pelo nome do domínio HGS e `fabrikam.com` pelo nome do domínio de malha. Forneça a senha para um administrador do domínio de malha.
 
         netdom trust bastion.local /domain:fabrikam.com /userD:fabrikam.com\Administrator /passwordD:<password> /add
 

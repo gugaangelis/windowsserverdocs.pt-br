@@ -1,24 +1,20 @@
 ---
 title: Lista de verificação para pré-implantação
 description: Fornece uma lista de verificação que você pode usar para planejar a implantação do MultiPoint Services
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 87ea20e4-46cf-49e9-86bf-70be9098c8db
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 38ff3832551024e3d6d89fe6d0f5eb3e136abca6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f2a3b61e87abb285b3112dcad0fdfe2eceef6bb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405019"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853369"
 ---
 # <a name="predeployment-checklist"></a>Lista de verificação para pré-implantação
 Use a lista de verificação a seguir para ajudá-lo a planejar a implantação dos serviços do MultiPoint.  

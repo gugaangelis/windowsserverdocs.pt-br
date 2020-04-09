@@ -1,17 +1,17 @@
 ---
 title: Delimitar a alocação de volumes no Espaços de Armazenamento Diretos
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918298"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858969"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimitar a alocação de volumes no Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019
@@ -21,19 +21,19 @@ O Windows Server 2019 apresenta uma opção para delimitar manualmente a alocaç
    > [!IMPORTANT]
    > Esse recurso é novo no Windows Server 2019. Ele não está disponível no Windows Server 2016. 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
-### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![Ícone de marca de seleção verde.](media/delimit-volume-allocation/supported.png) Considere o uso desta opção se:
+### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![Ícone de marca de seleção verde.](media/delimit-volume-allocation/supported.png) Considere o uso desta opção se:
 
 - O cluster tem seis ou mais servidores; e
 - O cluster usa somente a resiliência [de espelhamento de três vias](storage-spaces-fault-tolerance.md#mirroring)
 
-### <a name="red-x-iconmediadelimit-volume-allocationunsupportedpng-do-not-use-this-option-if"></a>![Ícone de X vermelho.](media/delimit-volume-allocation/unsupported.png) Não use esta opção se:
+### <a name="red-x-icon-do-not-use-this-option-if"></a>![Ícone de X vermelho.](media/delimit-volume-allocation/unsupported.png) Não use esta opção se:
 
 - O cluster tem menos de seis servidores; or
 - Seu cluster usa [paridade](storage-spaces-fault-tolerance.md#parity) ou resiliência [de paridade acelerada por espelho](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)
 
-## <a name="understand"></a>Entender
+## <a name="understand"></a>Noções básicas
 
 ### <a name="review-regular-allocation"></a>Revisão: alocação regular
 
@@ -200,7 +200,7 @@ Sim. Você pode escolher por volume se deseja ou não delimitar a alocação.
 
 Não, é o mesmo que com a alocação regular.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
 - [Tolerância a falhas no Espaços de Armazenamento Diretos](storage-spaces-fault-tolerance.md)

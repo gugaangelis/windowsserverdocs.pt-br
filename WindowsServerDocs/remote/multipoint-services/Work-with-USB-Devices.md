@@ -1,27 +1,23 @@
 ---
 title: Trabalhar com dispositivos USB
 description: Saiba como os dispositivos USB funcionam com os serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a33f2b83-bbc2-4fc1-8a94-aaa985dfe1f9
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: ce4338eccc5640f8743093649685054718f9ed2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d366e8c61da86d0e47b2ce99d08a2046c8f8bd0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394781"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858029"
 ---
 # <a name="work-with-usb-devices"></a>Trabalhar com dispositivos USB
-Você pode conectar dispositivos ao computador em seu sistema de serviços do MultiPoint ou a um hub de estação do MultiPoint. O local no qual um dispositivo está conectado, e o tipo de dispositivo, afeta se um dispositivo está disponível para todos os usuários no sistema, somente a usuários individuais ou se ele não está disponível para todos os usuários. A seguir, há exemplos de diferentes tipos de conexão:  
+Você pode conectar dispositivos ao computador no seu sistema MultiPoint Services ou a um hub de estação do MultiPoint. O local no qual um dispositivo está conectado, e o tipo de dispositivo, afeta se um dispositivo está disponível para todos os usuários no sistema, somente a usuários individuais ou se ele não está disponível para todos os usuários. A seguir, há exemplos de diferentes tipos de conexão:  
   
 -   Se você conectar um dispositivo diretamente ao computador, como uma impressora ou dispositivo de armazenamento em massa USB, o dispositivo poderá ser acessado por todos os usuários da sessão no sistema MultiPoint Services. Os usuários da estação da área de trabalho virtual não poderão acessar os dispositivos conectados diretamente ao computador.  
   
@@ -33,15 +29,15 @@ A tabela a seguir mostra uma lista de dispositivos e como eles se comportam depe
   
 |||||  
 |-|-|-|-|  
-|**Dispositivo**|**Comportamento quando ele está conectado diretamente ao computador**|**Comportamento quando ele está conectado a uma estação**|**Observações**|  
-|Teclado|Não recomendamos conectar um teclado diretamente ao computador.|Acessível somente para o usuário da estação.|Se o teclado contiver uma porta USB, o hub USB dentro do teclado poderá ser o hub de estação. Outros dispositivos USB conectados a essa porta estão disponíveis somente para o usuário que está usando esse teclado.<br /><br />Alguns hubs de estação são equipados com uma porta para mouse PS\/2 que é convertida em uma conexão USB dentro do hub.|  
+|**Vice**|**Comportamento quando ele está conectado diretamente ao computador**|**Comportamento quando ele está conectado a uma estação**|**Registra**|  
+|Teclado|Não recomendamos conectar um teclado diretamente ao computador.|Acessível somente para o usuário da estação.|Se o teclado contiver uma porta USB, o hub USB dentro do teclado poderá ser o hub de estação. Outros dispositivos USB conectados a essa porta estão disponíveis somente para o usuário que está usando esse teclado.<p>Alguns hubs de estação são equipados com uma porta para mouse PS\/2 que é convertida em uma conexão USB dentro do hub.|  
 |Mouse|Não recomendamos conectar um mouse diretamente ao computador.|Acessível somente para o usuário da estação.|Alguns hubs de estação são equipados com uma porta para mouse PS\/2 que é convertida em uma conexão USB dentro do hub.|  
 |Hub USB|Consulte [trabalhando com hubs de estação](#working-with-station-hubs).|Consulte [trabalhando com hubs de estação](#working-with-station-hubs).||  
 |Monitor de vídeo|Consulte [dispositivos de vídeo dos serviços do MultiPoint](work-with-video-devices.md).|Consulte [dispositivos de vídeo dos serviços do MultiPoint](work-with-video-devices.md).||  
 |Dispositivos de saída de áudio como fones de ouvido|Não recomendamos conectar um dispositivo de saída de áudio diretamente ao computador.|Acessível somente para o usuário da estação.|Alguns hubs de estação são equipados com uma porta para áudio analógica que é convertida em uma conexão de áudio USB dentro do hub.|  
 |Dispositivos de entrada de áudio como microfones|Não recomendamos conectar um dispositivo de entrada de áudio diretamente ao computador.|Acessível somente para o usuário da estação.|Alguns hubs de estação são equipados com uma porta para áudio analógica que é convertida em uma conexão de áudio USB dentro do hub.|  
 |Impressoras|Acessível a todos os usuários no sistema. *|Acessível somente para o usuário da estação.||  
-|Dispositivo de armazenamento em massa USB|Acessível a todos os usuários no sistema. \*|Acessível somente para o usuário da estação.|Esses dispositivos incluem unidades flash USB, discos rígidos externos e câmeras digitais.|  
+|Dispositivo de armazenamento em massa USB|Acessível a todos os usuários no sistema.\*|Acessível somente para o usuário da estação.|Esses dispositivos incluem unidades flash USB, discos rígidos externos e câmeras digitais.|  
 |Webcams|Acessível a todos os usuários no sistema. *|Acessível somente para o usuário da estação.|Somente um usuário pode se conectar à câmera por vez.|  
   
 \* Os dispositivos que estão conectados ao computador host não são visíveis para os usuários que fizeram logon em estações de área de trabalho virtual.  

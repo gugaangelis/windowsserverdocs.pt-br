@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8ce6e7c4-cf8e-4b55-980c-048fea28d50f
 title: Farm de servidores de federação usando SQL Server
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 9f8375ffb73ff6be290b534d59e6ce5c8a7be27b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323098"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858059"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos do AD FS
 
@@ -48,7 +47,7 @@ A seguir estão os vários requisitos que você deve obedecer ao implantar AD FS
   
 -   [Requisitos de permissões](AD-FS-Requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>Requisitos de certificado  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>Requisitos de certificado  
 Os certificados desempenham a função mais crítica na proteção de comunicações entre servidores de Federação, proxies de aplicativos Web, declarações\-aplicativos com reconhecimento e clientes Web. Os requisitos de certificados variam, dependendo se você estiver configurando um servidor de Federação ou um computador proxy, conforme descrito nesta seção.  
   
 **Certificados do servidor de Federação**  
@@ -70,7 +69,7 @@ Os certificados desempenham a função mais crítica na proteção de comunicaç
 > [!NOTE]  
 > Depois de receber um certificado de uma AC, certifique-se de que todos os certificados sejam importados para o repositório de certificados pessoais do computador local. Você pode importar certificados para o repositório pessoal com o snap\-do MMC de certificados no.  
   
-## <a name="BKMK_2"></a>Requisitos de hardware  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>Requisitos de hardware  
 Os requisitos de hardware mínimos e recomendados a seguir se aplicam ao AD FS servidores de Federação no Windows Server 2012 R2:  
   
 ||||  
@@ -80,14 +79,14 @@ Os requisitos de hardware mínimos e recomendados a seguir se aplicam ao AD FS s
 |RAM|512 MB|4 GB|  
 |Espaço em disco|32 GB|100 GB|  
   
-## <a name="BKMK_3"></a>Requisitos de software  
-Os requisitos de AD FS a seguir são para a funcionalidade de servidor que é criada no sistema operacional Windows Server® 2012 R2:  
+## <a name="software-requirements"></a><a name="BKMK_3"></a>Requisitos de software  
+Os requisitos de AD FS a seguir são para a funcionalidade de servidor que é criada no sistema operacional Windows Server&reg; 2012 R2:  
   
--   Para acesso à extranet, você deve implantar o serviço de função do proxy de aplicativo Web \- parte da função de servidor de acesso remoto do Windows Server® 2012 R2. Não há suporte para versões anteriores de um proxy de servidor de Federação com AD FS no Windows Server® 2012 R2.  
+-   Para acesso à extranet, você deve implantar o serviço de função do proxy de aplicativo Web \- parte da função de servidor de acesso remoto do Windows Server&reg; 2012 R2. Não há suporte para versões anteriores de um proxy de servidor de Federação com AD FS no Windows Server&reg; 2012 R2.  
   
 -   Um servidor de federação e o serviço de função do Proxy de Aplicativo Web não podem ser instalados no mesmo computador.  
   
-## <a name="BKMK_4"></a>Requisitos do AD DS  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>Requisitos do AD DS  
 **Requisitos de controlador de domínio**  
   
 Os controladores de domínio em todos os domínios de usuário e o domínio ao qual os servidores de AD FS são associados devem estar executando o Windows Server 2008 ou posterior.  
@@ -134,7 +133,7 @@ A maioria dos recursos de AD FS não exigem modificações AD DS funcionais de n
   
 -   A conta de serviço de AD FS deve ser confiável em cada domínio de usuário que contenha usuários que se autenticam no serviço AD FS.  
   
-## <a name="BKMK_5"></a>Requisitos de banco de dados de configuração  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>Requisitos de banco de dados de configuração  
 A seguir estão os requisitos e as restrições que se aplicam com base no tipo de repositório de configuração:  
   
 **WID**  
@@ -157,7 +156,7 @@ A tabela a seguir fornece um resumo para usar um farm WID.  Use-o para planejar 
   
 Para AD FS no Windows Server 2012 R2, você pode usar SQL Server 2008 e superior  
   
-## <a name="BKMK_6"></a>Requisitos de navegador  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>Requisitos de navegador  
 Quando a autenticação do AD FS é executada por meio de um navegador ou controle de navegador, seu navegador deve atender aos seguintes requisitos:  
   
 -   O JavaScript deve estar habilitado  
@@ -187,12 +186,12 @@ Vários navegadores e plataformas principais passaram por validação para a ren
   
 AD FS cria\-de sessão com cookies persistentes e com base em sessões que devem ser armazenados em computadores cliente para fornecer\-de entrada, entrada\-saída,\-de logon único \(SSO\)e outras funcionalidades. Portanto, o navegador do cliente deve estar configurado para aceitar cookies. Cookies que são usados para autenticação são sempre seguros protocolo de transferência de hipertexto \(cookies de sessão de\) HTTPS que são gravados para o servidor de origem. Se o navegador do cliente não estiver configurado para permitir esses cookies, o AD FS não poderá funcionar corretamente. Os cookies persistentes são usados para preservar a seleção de usuário do provedor de declarações. Você pode desabilitá-los usando uma definição de configuração no arquivo de configuração para o\-de AD FS de entrada em páginas. O suporte para TLS\/SSL é necessário por motivos de segurança.  
   
-## <a name="BKMK_extranet"></a>Requisitos de extranet  
+## <a name="extranet-requirements"></a><a name="BKMK_extranet"></a>Requisitos de extranet  
 Para fornecer acesso à extranet para o serviço de AD FS, você deve implantar o serviço de função do proxy de aplicativo Web como a função de extranet que os proxies solicitam de autenticação de forma segura para o serviço AD FS. Isso fornece isolamento dos pontos de extremidade de serviço AD FS, bem como isolamento de todas as chaves de segurança \(como certificados de assinatura de token\) de solicitações originadas pela Internet. Além disso, recursos como o bloqueio de conta de extranet reversível exigem o uso do proxy de aplicativo Web. Para obter mais informações sobre o proxy de aplicativo Web, consulte [proxy de aplicativo Web](https://technet.microsoft.com/library/dn584107.aspx).  
   
 Se você quiser usar um terceiro proxy de\-de terceiros para acesso à extranet, esse terceiro proxy de\-deverá dar suporte ao protocolo definido em [http:\/\/download.microsoft.com\/download\/9\/5\/E\/95EF66AF\-9026\-4BB0\-A41D\-A4F81802D92C\/% 5bMS\-ADFSPIP %5 d. pdf](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf).  
   
-## <a name="BKMK_7"></a>Requisitos de rede  
+## <a name="network-requirements"></a><a name="BKMK_7"></a>Requisitos de rede  
 Configurar os seguintes serviços de rede adequadamente é essencial para uma implantação bem-sucedida de AD FS em sua organização:  
   
 **Configurando o firewall corporativo**  
@@ -220,7 +219,7 @@ Para obter informações sobre como configurar o DNS corporativo para proxies de
   
 Para obter informações sobre como configurar um endereço IP de cluster ou FQDN de cluster usando o NLB, consulte especificando os parâmetros de cluster em [http:\/\/go.microsoft.com\/fwlink\/? LinkId\=75282](https://go.microsoft.com/fwlink/?LinkId=75282).  
   
-## <a name="BKMK_8"></a>Requisitos de repositório de atributos  
+## <a name="attribute-store-requirements"></a><a name="BKMK_8"></a>Requisitos de repositório de atributos  
 AD FS exige que pelo menos um repositório de atributos seja usado para autenticar usuários e extrair declarações de segurança para esses usuários. Para obter uma lista de repositórios de atributos aos quais AD FS dá suporte, consulte [a função de repositórios de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
   
 > [!NOTE]  
@@ -256,7 +255,7 @@ Você pode desenvolver repositórios de atributos personalizados para habilitar 
   
 Quando você trabalha com um repositório de atributos personalizado, também pode ser necessário configurar uma cadeia de conexão. Nesse caso, você pode inserir um código personalizado de sua escolha que permite uma conexão com o repositório de atributos personalizado. A cadeia de conexão nessa situação é um conjunto de pares de nome\/valor que são interpretados como implementados pelo desenvolvedor do repositório de atributos personalizado. Para obter mais informações sobre como desenvolver e usar repositórios de atributos personalizados, consulte [visão geral do repositório de atributos](https://go.microsoft.com/fwlink/?LinkId=190782).  
   
-## <a name="BKMK_9"></a>Requisitos do aplicativo  
+## <a name="application-requirements"></a><a name="BKMK_9"></a>Requisitos do aplicativo  
 O AD FS dá suporte a aplicativos que reconhecem declarações\-que usam os seguintes protocolos:  
   
 -   Federação do WS\-  
@@ -269,7 +268,7 @@ O AD FS dá suporte a aplicativos que reconhecem declarações\-que usam os segu
   
 O AD FS também dá suporte à autenticação e autorização para qualquer declaração não\-\-aplicativos compatíveis com o proxy de aplicativo Web.  
   
-## <a name="BKMK_10"></a>Requisitos de autenticação  
+## <a name="authentication-requirements"></a><a name="BKMK_10"></a>Requisitos de autenticação  
 **Autenticação de AD DS \(autenticação primária\)**  
   
 Para acesso à intranet, há suporte para os mecanismos de autenticação padrão a seguir para AD DS:  
@@ -322,7 +321,7 @@ Para obter mais informações sobre MFA, consulte [gerenciar riscos com autentic
   
 O AD FS dá suporte à autenticação de dispositivo usando certificados provisionados pelo serviço de registro de dispositivo durante o ato de um local de trabalho do usuário final ingressando em seu dispositivo.  
   
-## <a name="BKMK_11"></a>Requisitos de ingresso no local de trabalho  
+## <a name="workplace-join-requirements"></a><a name="BKMK_11"></a>Requisitos de ingresso no local de trabalho  
 Os usuários finais podem ingressar seus dispositivos em uma organização usando AD FS. Isso é suportado pelo serviço de registro de dispositivo no AD FS. Como resultado, os usuários finais obtêm o benefício adicional do SSO nos aplicativos com suporte pelo AD FS. Além disso, os administradores podem gerenciar riscos restringindo o acesso a aplicativos somente a dispositivos que foram ingressados no local de trabalho na organização. Abaixo estão os requisitos a seguir para habilitar esse cenário.  
   
 -   AD FS dá suporte ao ingresso no local de trabalho para dispositivos Windows 8.1 e iOS 5\+  
@@ -331,7 +330,7 @@ Os usuários finais podem ingressar seus dispositivos em uma organização usand
   
 -   O nome alternativo da entidade do certificado SSL para AD FS serviço deve conter o valor enterpriseregistration que é seguido pelo nome principal \(sufixo de\) UPN da sua organização, por exemplo, enterpriseregistration.corp.contoso.com.  
   
-## <a name="BKMK_12"></a>Requisitos de criptografia  
+## <a name="cryptography-requirements"></a><a name="BKMK_12"></a>Requisitos de criptografia  
 A tabela a seguir fornece informações adicionais de suporte de criptografia sobre a assinatura de token AD FS, criptografia de token\/funcionalidade de descriptografia:  
   
 ||||  
@@ -347,10 +346,10 @@ A tabela a seguir fornece informações adicionais de suporte de criptografia so
 |AES256KeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes256](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|Algoritmo com suporte para criptografar a chave simétrica que criptografa o token de segurança.|  
 |RsaV15KeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-1\_5](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|Algoritmo com suporte para criptografar a chave simétrica que criptografa o token de segurança.|  
 |RsaOaepKeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-oaep\-mgf1p](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|Default. Algoritmo com suporte para criptografar a chave simétrica que criptografa o token de segurança.|  
-|SHA1\-[http:\/\/www.w3.org\/imgs\/DSig\/SHA1\_1\_0. html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/um|Usado pelo servidor de AD FS na geração de SourceID de artefato: nesse cenário, o STS usa a \(SHA1 de acordo com a recomendação no\) padrão SAML 2,0 para criar um valor de bit 160 curto para o artefato SourceID.<br /><br />Também usado pelo agente Web do ADFS \(componente herdado do WS2003 TimeTime\) para identificar alterações em um valor de tempo "última atualização" para que ele saiba quando atualizar as informações do STS.|  
-|\- SHA1withRSA<br /><br />[http:\/\/www.w3.org\/PICS\/DSig\/RSA\-SHA1\_1\_0. html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/um|Usado em casos em que o servidor AD FS valida a assinatura de AuthenticationRequest SAML, assine a solicitação de resolução de artefato ou a resposta, crie o token\-certificado de assinatura.<br /><br />Nesses casos, SHA256 é o padrão, e SHA1 é usado somente se o parceiro \(terceira parte confiável\) não dá suporte a SHA256 e deve usar SHA1.|  
+|SHA1\-[http:\/\/www.w3.org\/imgs\/DSig\/SHA1\_1\_0. html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/um|Usado pelo servidor de AD FS na geração de SourceID de artefato: nesse cenário, o STS usa a \(SHA1 de acordo com a recomendação no\) padrão SAML 2,0 para criar um valor de bit 160 curto para o artefato SourceID.<p>Também usado pelo agente Web do ADFS \(componente herdado do WS2003 TimeTime\) para identificar alterações em um valor de tempo "última atualização" para que ele saiba quando atualizar as informações do STS.|  
+|\- SHA1withRSA<p>[http:\/\/www.w3.org\/PICS\/DSig\/RSA\-SHA1\_1\_0. html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/um|Usado em casos em que o servidor AD FS valida a assinatura de AuthenticationRequest SAML, assine a solicitação de resolução de artefato ou a resposta, crie o token\-certificado de assinatura.<p>Nesses casos, SHA256 é o padrão, e SHA1 é usado somente se o parceiro \(terceira parte confiável\) não dá suporte a SHA256 e deve usar SHA1.|  
   
-## <a name="BKMK_13"></a>Requisitos de permissões  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>Requisitos de permissões  
 O administrador que executa a instalação e a configuração inicial de AD FS deve ter permissões de administrador de domínio no domínio local \(em outras palavras, o domínio ao qual o servidor de Federação está ingressado.\)  
   
 ## <a name="see-also"></a>Consulte também  

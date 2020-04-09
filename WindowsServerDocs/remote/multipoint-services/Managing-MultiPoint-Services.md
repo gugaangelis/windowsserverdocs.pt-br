@@ -1,27 +1,23 @@
 ---
 title: Gerenciamento do MultiPoint Services
 description: Visão geral de artigos sobre o gerenciamento de serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81135740-e9ce-4b4c-a770-760d741f20b1
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 3000ea7dbbcb32e117db5faceb41145233e1baca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 267ade36be28a90eecb6beafb49b338ea870c073
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405082"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853449"
 ---
 # <a name="managing-multipoint-services"></a>Gerenciamento do MultiPoint Services
-O MultiPoint™ Services permite que vários usuários, cada um com sua própria experiência com o Windows independente, compartilhem simultaneamente um computador. As estações de usuário, que consiste em um monitor, teclado e mouse, são conectadas diretamente ao computador host por meio de cabos de vídeo, USB ou da rede.  
+Os serviços do MultiPoint&trade; permitem que vários usuários, cada um com sua própria experiência independente do Windows, compartilhem simultaneamente um computador. As estações de usuário, que consiste em um monitor, teclado e mouse, são conectadas diretamente ao computador host por meio de cabos de vídeo, USB ou da rede.  
   
 Use as informações a seguir para saber mais sobre as tarefas que você pode executar no MultiPoint Manager e no painel do MultiPoint, como gerenciar estações de serviços do MultiPoint usando o MultiPoint Manager e como usar o painel do MultiPoint diariamente.  
   

@@ -1,24 +1,20 @@
 ---
 title: Wbadmin start sysrecovery
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Wbadmin start sysrecovery, que executa uma recuperação do sistema (recuperação bare-metal) usando os parâmetros que você especificar.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95b8232f-7c42-452b-838e-15b0cf6faebe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c653fa52a2a56267d6f0df169f8f9924f2aa94d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e0f1f79f35678b5c4a50022adf3413f3de217a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362283"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829589"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>Wbadmin start sysrecovery
 
@@ -47,7 +43,7 @@ wbadmin start sysrecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -60,7 +56,7 @@ wbadmin start sysrecovery
 |-skipBadClusterCheck|Ignora a verificação dos discos de recuperação em busca de informações de cluster inválidos. Se você estiver restaurando para um servidor ou hardware alternativo, recomendamos que você não use esse parâmetro. Você pode executar manualmente o **chkdsk/b** em seus discos de recuperação a qualquer momento para verificá-los quanto a clusters inválidos e, em seguida, atualizar as informações do sistema de arquivos de acordo.</br>Aviso: até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
 |-quiet|Executa o comando sem prompts para o usuário.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para iniciar a recuperação das informações do backup que foi executado em 31 de março de 2013 às 9:00, localizada na unidade d:, digite:
 ```
@@ -71,8 +67,8 @@ Para começar a recuperar as informações do backup que foi executado em 30 de 
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Get-WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx)

@@ -1,28 +1,24 @@
 ---
 title: atmadm
-description: Os comandos do Windows tópico para **atmadm** – monitora conexões e endereços que são registrados pelo Gerenciador de chamadas atM em uma rede ATM (modo de transferência assíncrona).
-ms.custom: na
+description: Tópico de comandos do Windows para **atmadm**, que monitora conexões e endereços registrados pelo Gerenciador de chamadas atM em uma rede ATM (modo de transferência assíncrona).
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 37156c2e-c4d4-4fd8-a03d-245fb60bf996
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdb0070063f2bfc6be7b762d71e2f30216f9d8d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cbfb787c472eaad4cbef5f86e7546f7b6f1da305
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382632"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851269"
 ---
 # <a name="atmadm"></a>atmadm
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Monitora conexões e endereços registrados pelo Gerenciador de chamadas atM em uma rede atM (modo de transferência assíncrona). Você pode usar **atmadm** para exibir estatísticas de chamadas de entrada e saída em adaptadores atM. Usado sem parâmetros, **atmadm** exibe estatísticas para monitorar o status de conexões atM ativas. 
 
@@ -32,14 +28,14 @@ Monitora conexões e endereços registrados pelo Gerenciador de chamadas atM em 
 atmadm [/c][/a][/s]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|-------|--------|
-|/c|Exibe informações de chamada para todas as conexões atuais com o adaptador de rede atM instalado neste computador.|
-|SRDF|Exibe o endereço do ponto de acesso do serviço de rede atM (NSAP) registrado para cada adaptador instalado neste computador.|
-|/s|Exibe estatísticas para monitorar o status de conexões atM ativas.|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| ------- | -------- |
+| /c | Exibe informações de chamada para todas as conexões atuais com o adaptador de rede atM instalado neste computador. |
+| /a | Exibe o endereço do ponto de acesso do serviço de rede atM (NSAP) registrado para cada adaptador instalado neste computador. |
+| /s | Exibe estatísticas para monitorar o status de conexões atM ativas. |
+| /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="remarks"></a>Comentários
 
@@ -75,21 +71,21 @@ atmadm [/c][/a][/s]
                               Tx:UBR,Peak 0,Avg 0,MaxSdu 0
                               Rx:UBR,Peak 16953936,Avg 16953936,MaxSdu 9180
     ```
-    
+
     A tabela a seguir contém descrições de cada elemento na saída de exemplo de **atmadm/c** .
-    
-    |tipo de dados|Exibição de tela|Descrição|
-    |--------|---------|--------|
-    |Informações de conexão|Entrada/saída|direção da chamada.  O **no** é o adaptador de rede atM de outro dispositivo.  **Out** é do adaptador de rede atM para outro dispositivo.|
-    ||PMP|Chamada ponto a multiponto.|
-    ||P-P|Chamada ponto a ponto.|
-    ||SVC|A conexão está em um circuito virtual comutado.|
-    ||PVC|A conexão está em um circuito virtual permanente.|
-    |Informações de VPI/VCI|VPI/VCI|O caminho virtual e o canal virtual da chamada de entrada ou saída.|
-    |Parâmetros de mídia/endereço remoto|47000580FFE1000000F21A2E180000C110081500|Endereço NSAP do dispositivo atM de chamada **(in)** ou chamado **(out)** .|
-    ||**TX**|O parâmetro **TX** inclui os três seguintes elementos:<br /><br />-Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)<br />-Velocidade de linha padrão ou especificada<br />-Tamanho de SDU (unidade de dados de serviço) especificado|
-    ||**RX**|O parâmetro **RX** inclui os três seguintes elementos:<br /><br />-Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)<br />-Velocidade de linha padrão ou especificada<br />-Tamanho de SDU especificado|
-    
+
+    | Tipo de dados | Exibição de tela | Descrição |
+    | -------- | --------- | -------- |
+    | Informações de conexão | Entrada/saída | Direção da chamada. O **no** é o adaptador de rede atM de outro dispositivo.  **Out** é do adaptador de rede atM para outro dispositivo. |
+    | PMP | Chamada ponto a multiponto. |
+    | P-P | Chamada ponto a ponto. |
+    | SVC | A conexão está em um circuito virtual comutado. |
+    | PVC | A conexão está em um circuito virtual permanente. |
+    | Informações de VPI/VCI | VPI/VCI | O caminho virtual e o canal virtual da chamada de entrada ou saída. |
+    | Parâmetros de mídia/endereço remoto | 47000580FFE1000000F21A2E180000C110081500 | Endereço NSAP do dispositivo atM de chamada **(in)** ou chamado **(out)** . |
+    | TX | O parâmetro **TX** inclui os três seguintes elementos:<p>-Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)<p>-Velocidade de linha padrão ou especificada<p>-Tamanho de SDU (unidade de dados de serviço) especificado. |
+    | RX | O parâmetro **RX** inclui os três seguintes elementos:<p>-Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)<p>-Velocidade de linha padrão ou especificada<p>-Tamanho de SDU especificado. |
+
 - O comando **atmadm/a** produz uma saída semelhante à seguinte:
 
     ```
@@ -97,7 +93,7 @@ atmadm [/c][/a][/s]
     atM addresses for Interface : [009] Olicom atM PCI 155 Adapter
     47000580FFE1000000F21A2E180000C110081500
     ```
-    
+
 - O comando **atmadm/s** produz uma saída semelhante à seguinte:
 
     ```
@@ -113,22 +109,22 @@ atmadm [/c][/a][/s]
     Signaling and ILMI Packets Sent            = 33655
     Signaling and ILMI Packets Received        = 34989
     ```
-    
+
     A tabela a seguir contém descrições de cada elemento na saída de exemplo de **atmadm/s** .
-    
-    |Estatística do Gerenciador de chamadas|Descrição|
-    |-------------|--------|
-    |Chamadas ativas atuais|chamadas atualmente ativas no adaptador atM instalado neste computador.|
-    |Total de chamadas de entrada com êxito|chamadas recebidas com êxito de outros dispositivos nesta rede atM.|
-    |Total de chamadas de saída com êxito|chamadas concluídas com êxito para outros dispositivos atM nesta rede deste computador.|
-    |Chamadas de entrada malsucedidas|Chamadas de entrada que falharam ao se conectar a este computador.|
-    |Chamadas de saída malsucedidas|Chamadas de saída que falharam ao se conectar a outro dispositivo na rede.|
-    |chamadas encerradas por remoto|chamadas fechadas por um dispositivo remoto na rede.|
-    |chamadas fechadas localmente|chamadas fechadas por este computador.|
-    |Pacotes de sinalização e ILMI enviados|Número de pacotes de ILMI (interface de gerenciamento local) integrados enviados ao comutador ao qual este computador está tentando se conectar.|
-    |Pacotes de sinalização e ILMI recebidos|Número de pacotes ILMI recebidos do comutador atM.|
-    
-## <a name="BKMK_Examples"></a>Disso
+
+    | Estatística do Gerenciador de chamadas | Descrição |
+    | ------------- | -------- |
+    | Chamadas ativas atuais | Chamadas atualmente ativas no adaptador atM instalado neste computador. |
+    | Total de chamadas de entrada com êxito | Chamadas recebidas com êxito de outros dispositivos nesta rede atM. |
+    | Total de chamadas de saída com êxito | Chamadas concluídas com êxito para outros dispositivos atM nesta rede deste computador. |
+    | Chamadas de entrada malsucedidas | Chamadas de entrada que falharam ao se conectar a este computador. |
+    | Chamadas de saída malsucedidas | Chamadas de saída que falharam ao se conectar a outro dispositivo na rede. |
+    | Chamadas encerradas por remoto | Chamadas fechadas por um dispositivo remoto na rede. |
+    | Chamadas fechadas localmente | Chamadas fechadas por este computador. |
+    | Pacotes de sinalização e ILMI enviados | Número de pacotes de ILMI (interface de gerenciamento local) integrados enviados ao comutador ao qual este computador está tentando se conectar. |
+    | Pacotes de sinalização e ILMI recebidos | Número de pacotes ILMI recebidos do comutador atM. |
+
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Para exibir informações de chamada para todas as conexões atuais com o adaptador de rede atM instalado neste computador, digite:
 

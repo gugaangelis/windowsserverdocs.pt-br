@@ -8,8 +8,8 @@ metadata:
   text: 'A Rede definida pelo software (SDN) possibilita gerenciar dinamicamente a rede do seu datacenter para atender aos requisitos de carga de trabalho e do aplicativo. As políticas de rede podem ser implementadas de maneira consistente em escala, mesmo quando você implanta novas cargas de trabalho ou move as cargas de trabalho entre redes físicas ou virtuais.'
   keywords: 'Windows Server, Windows Server 2016, rede definida pelo software, sdn'
   ms.localizationpriority: medium
-  author: eross-msft
-  ms.author: lizross
+  author: AnirbanPaul
+  ms.author: anpaul
   ms.date: 09/04/2018
   ms.topic: article
   ms.devlang: na

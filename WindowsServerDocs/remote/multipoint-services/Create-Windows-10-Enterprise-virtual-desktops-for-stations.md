@@ -1,24 +1,20 @@
 ---
 title: Criar áreas de trabalho virtuais do Windows 10 Enterprise para estações
 description: Saiba como criar desktops do Windows Server 2016 para estação
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: cd08caef8228a4d20c6d5f4a40fe5bd90aacbe40
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40af6ea98aa91730f78bde8a71f2ad9a741a6490
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395542"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859799"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>Criar áreas de trabalho virtuais do Windows 10 Enterprise para estações
 Essa configuração opcional nos serviços do MultiPoint destina-se principalmente a situações em que um aplicativo essencial requer sua própria instância de um sistema operacional cliente para cada usuário. Os exemplos incluem aplicativos que não podem ser instalados no Windows Server e aplicativos que não executarão várias instâncias no mesmo computador host.  
@@ -26,13 +22,13 @@ Essa configuração opcional nos serviços do MultiPoint destina-se principalmen
 > [!NOTE]  
 > Essas áreas de trabalho virtuais, também conhecidas como VDI, são muito mais intensivas em recursos do que as sessões de área de trabalho dos serviços do MultiPoint padrão, portanto, recomendamos que você use sessões padrão de serviços do MultiPoint quando possível.  
   
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 Para se preparar para criar áreas de trabalho virtuais de estação, verifique se o sistema de serviços do MultiPoint atende aos seguintes requisitos:      
   
-|Hardware|Requisitos|         |
+|Hardware|{1&gt;{2&gt;Requisitos&lt;2}&lt;1}|         |
 |------------|----------------|----------------| 
 |CPU (multimídia)|1 núcleo ou thread por máquina virtual|  
-|Unidade de estado sólido (SSD)|Capacidade > = 20 GB por estação + 40 GB para o sistema operacional do host de serviços do MultiPoint<br /><br />IOPS de\/leitura e gravação aleatória > = 3K por estação|  
+|Unidade de estado sólido (SSD)|Capacidade > = 20 GB por estação + 40 GB para o sistema operacional do host de serviços do MultiPoint<p>Leitura aleatória\/IOPS de gravação > = 3K por estação|  
 |RAM|2GB por estação + 2GB para o sistema operacional Windows MultiPoint Server host|  
 |Gráficos|DX11|  
 |BIOS|Configuração de CPU do BIOS configurada para habilitar a virtualização – SLAT (conversão de endereços de segundo nível)|  
@@ -77,7 +73,7 @@ A próxima etapa é criar um modelo de área de trabalho virtual. Literalmente, 
   
 6.  Em **prefixo**, insira um prefixo a ser usado para identificar o modelo e as áreas de trabalho virtuais criadas com o modelo. O prefixo padrão é o nome do computador host.  
   
-    O prefixo é usado para nomear o modelo e as estações da área de trabalho virtual. O modelo será <*prefixo*>-t. As estações da área de trabalho virtual serão nomeadas <*prefixo*>-*n*, em que *n* é o identificador da estação.  
+    O prefixo é usado para nomear o modelo e as estações da área de trabalho virtual. O modelo será <*prefixo*>-t. As estações de área de trabalho virtual serão nomeadas <*prefixo*>-*n*, em que *n* é o identificador de estação.  
   
 7.  Insira um nome de usuário e senha a serem usados para a conta de administrador local para o modelo. Em um domínio, insira as credenciais para uma conta de domínio que será adicionada ao grupo de administradores locais. Essa conta pode ser usada para fazer logon no modelo e em todas as estações de área de trabalho virtual criadas com base no modelo.  
   
@@ -156,7 +152,7 @@ Use o procedimento a seguir para criar uma cópia de um modelo de área de traba
   
 3.  Clique na guia **áreas de trabalho virtuais** .  
   
-4.  Clique em **Importar modelo de área de trabalho virtual**e use **procurar** para selecionar o arquivo. VHD (modelo) que você deseja importar. Quando você importa um modelo, é feita uma cópia do. vhd original. Por padrão, os serviços do MultiPoint armazenam arquivos. vhd na\\pasta\\C\\: Users\\Public Document\\discos\\ rígidos virtuais do Hyper\-V.  
+4.  Clique em **Importar modelo de área de trabalho virtual**e use **procurar** para selecionar o arquivo. VHD (modelo) que você deseja importar. Quando você importa um modelo, é feita uma cópia do. vhd original. Por padrão, os serviços do MultiPoint armazenam arquivos. vhd no C:\\usuários\\documentos de\\públicos\\a pasta\-discos rígidos virtuais\\do Hyper\\ V.  
   
 5.  Insira um prefixo para o novo modelo e clique em **OK**.  
   

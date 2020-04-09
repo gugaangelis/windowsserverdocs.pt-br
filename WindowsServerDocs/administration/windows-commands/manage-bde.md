@@ -1,24 +1,20 @@
 ---
 title: manage-bde
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 276a7841-7289-48d4-a57d-bc7c300affbb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ca23e5f4499672f1e4bfcca6b9ad27f4e84039b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 816e20152ec40ce54c1192f3075c6f4556aed3db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373770"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839689"
 ---
 # <a name="manage-bde"></a>manage-bde
 
@@ -33,7 +29,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 [–SetIdentifier] [-ForceRecovery] [–changepassword] [–changepin] [–changekey] [-KeyPackage] [–upgrade] [-WipeFreeSpace] [{-?|/?}] [{-help|-h}]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -58,7 +54,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 |-? ou/?|Exibe a ajuda resumida no prompt de comando.|
 |-Help ou-h|Exibe a ajuda completa no prompt de comando.|
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 O exemplo a seguir exibe as unidades no computador e identifica se elas são protegidas pelo BitLocker e o status de criptografia atual.
 ```
@@ -73,7 +69,7 @@ O exemplo a seguir ilustra o desbloqueio de uma unidade protegida pelo BitLocker
 manage-bde –unlock E: -recoverypassword 111111-222222-333333-444444-555555-666666-777777-888888
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Habilitando o BitLocker usando a linha de comando](https://technet.microsoft.com/library/dd894351(v=ws.10).aspx)

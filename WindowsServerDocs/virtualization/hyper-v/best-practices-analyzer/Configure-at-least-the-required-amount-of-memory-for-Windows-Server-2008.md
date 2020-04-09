@@ -2,20 +2,19 @@
 title: Configure pelo menos a quantidade necessária de memória para uma máquina virtual que executa o Windows Server 2008 e habilitada para Memória Dinâmica
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 0aaa7138-ce83-4b17-add7-fdfa3d469bea
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 24f72f5c7f9b601b907261615db7832273932fe8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f34332724bad3d2a0d150496ea8f0c610f5fd2b9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365012"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862099"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2008-and-enabled-for-dynamic-memory"></a>Configure pelo menos a quantidade necessária de memória para uma máquina virtual que executa o Windows Server 2008 e habilitada para Memória Dinâmica
 
@@ -27,8 +26,8 @@ Para obter mais informações sobre práticas recomendadas e verificações, con
 |-|-|  
 |**Sistema Operacional**|Windows Server 2016|  
 |**Produto/recurso**|Hyper-V|  
-|**Severity**|Erro|  
-|**Categorias**|Configuração|  
+|**Severity**|Error|  
+|**Categoria**|Configuração|  
   
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
   
@@ -38,7 +37,7 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 ## <a name="impact"></a>Impacto  
 *O sistema operacional convidado nas seguintes máquinas virtuais pode não ser executado ou pode ser executado de forma não confiável:*  
   
-\<list de máquinas virtuais >  
+\<lista de máquinas virtuais >  
   
 ## <a name="resolution"></a>Resolução  
 *Use o Gerenciador do Hyper-V ou o Windows PowerShell para aumentar a memória mínima para pelo menos 256 MB e a memória de inicialização e máxima para pelo menos 512 MB.*  

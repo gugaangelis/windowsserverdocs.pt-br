@@ -1,7 +1,6 @@
 ---
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
 title: Clonagem de blocos em ReFS
-description: ''
 author: gawatu
 ms.author: gawatu
 manager: gawatu
@@ -9,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: 81186624e19f9235cbdf8c7f0d44bd2927a68099
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b133e518c4226c516974ca89a457cf0aa64cac7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394016"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861349"
 ---
 # <a name="block-cloning-on-refs"></a>Clonagem de blocos em ReFS
 
@@ -32,7 +31,7 @@ A clonagem de blocos do ReFS converte uma operação de dados de arquivo em uma 
 
 Ao manter uma contagem de referência para cada cluster lógico, o ReFS não interrompe o isolamento entre arquivos: as gravações em regiões compartilhadas disparam um mecanismo de alocação mediante gravação, onde o ReFS aloca uma nova região para a gravação de entrada. Esse mecanismo preserva a integridade dos clusters lógicos compartilhados. 
 
-### <a name="example"></a>Exemplo
+### <a name="example"></a>{1&gt;Exemplo&lt;1}
 Suponhamos que haja dois arquivos, X e Y, onde cada arquivo é composto por três regiões, e cada região é mapeada para clusters lógicos separados.
 
 ![Dois arquivos com três regiões distintas cada que são mapeadas para regiões que têm a contagem de referência 1](media/block-clone-1.png)

@@ -1,24 +1,20 @@
 ---
 title: goto
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1caf3da3e8b873150af5be7ed8316cfcb526db83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 928a9031a7f86261789676257afe95ffc3be8a99
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375686"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842559"
 ---
 # <a name="goto"></a>goto
 
@@ -34,11 +30,11 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 goto <Label> 
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Label >|Especifica uma cadeia de texto que é usada como um rótulo no programa em lotes.|
+|Rótulo de \<>|Especifica uma cadeia de texto que é usada como um rótulo no programa em lotes.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -62,7 +58,7 @@ goto <Label>
 
     Você pode usar **goto** com outros comandos para executar operações condicionais. Para obter mais informações sobre como usar **goto** para operações condicionais, consulte a referência de comando [If](if.md) .
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 O programa em lotes a seguir formata um disco na unidade A como um disco do sistema. Se a operação for bem-sucedida, o comando **goto** direcionará o processamento para o rótulo **: End** :
 ```
@@ -74,9 +70,9 @@ echo An error occurred during formatting.
 echo End of batch program. 
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Cmd](cmd.md)
 

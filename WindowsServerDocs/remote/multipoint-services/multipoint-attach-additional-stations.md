@@ -1,24 +1,20 @@
 ---
 title: Anexar estações adicionais ao servidor do MultiPoint
 description: Adicionar mais estações à sua implantação do MultiPoint Services
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d78ebf4e-0968-4014-9a42-9f75cc50cb52
 author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 45340f02b120b1431b1f58a58ed03ea40e17a14c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f82cfb982d36e9d66ff5f951f65030f2f1d77539
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394750"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858729"
 ---
 # <a name="attach-additional-stations-to-multipoint-services"></a>Anexar estações adicionais aos serviços do MultiPoint
 Em seu ambiente de serviços do MultiPoint, os usuários usam estações para se conectarem aos serviços do MultiPoint e realizarem seu trabalho. As estações são os pontos de extremidade do usuário para se conectarem ao computador que executa os serviços do MultiPoint.  

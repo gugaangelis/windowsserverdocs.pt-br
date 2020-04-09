@@ -2,21 +2,19 @@
 title: Criar uma máquina virtual no Hyper-V
 description: Fornece instruções para criar uma máquina virtual usando o Gerenciador do Hyper-V ou o Windows PowerShell
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 739691650ce3cda8066e9f7ac77626f53f22affa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa8d23a184f7be4c55b4a694b38501edb43d661c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364251"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860849"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>Criar uma máquina virtual no Hyper-V
 
@@ -107,15 +105,15 @@ Saiba como criar uma máquina virtual usando o Gerenciador do Hyper-V e o Window
 ## <a name="options-in-hyper-v-manager-new-virtual-machine-wizard"></a>Opções no assistente de nova máquina virtual do Gerenciador do Hyper-V  
 A tabela a seguir lista as opções que você pode escolher ao criar uma máquina virtual no Gerenciador do Hyper-V e os padrões para cada uma.  
 
-|Page|Padrão para Windows Server 2016 e Windows 10|Outras opções|  
+|{1&gt;Página&lt;1}|Padrão para Windows Server 2016 e Windows 10|Outras opções|  
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|  
-|**Especificar o nome e o local**|Nome: nova máquina virtual.<br /><br />Local: **C:\ProgramData\Microsoft\Windows\Hyper-V\\** .|Você também pode inserir seu próprio nome e escolher outro local para a máquina virtual.<br /><br />É aí que os arquivos de configuração da máquina virtual serão armazenados.|  
+|**Especificar o nome e o local**|Nome: nova máquina virtual.<p>Local: **C:\ProgramData\Microsoft\Windows\Hyper-V\\** .|Você também pode inserir seu próprio nome e escolher outro local para a máquina virtual.<p>É aí que os arquivos de configuração da máquina virtual serão armazenados.|  
 |**Especificar a geração**|1ª geração|Você também pode optar por criar uma máquina virtual de geração 2. Para obter mais informações, consulte [devo criar uma máquina virtual de geração 1 ou 2 no Hyper-V?.](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|  
-|**Atribuir Memória**|Memória de inicialização: 1024 MB<br /><br />Memória dinâmica: **não selecionada**|Você pode definir a memória de inicialização de 32MB para 5902MB.<br /><br />Você também pode optar por usar Memória Dinâmica. Para obter mais informações, consulte [visão geral do memória dinâmica do Hyper-V](https://technet.microsoft.com/library/hh831766.aspx).|  
+|**Atribuir Memória**|Memória de inicialização: 1024 MB<p>Memória dinâmica: **não selecionada**|Você pode definir a memória de inicialização de 32MB para 5902MB.<p>Você também pode optar por usar Memória Dinâmica. Para obter mais informações, consulte [visão geral do memória dinâmica do Hyper-V](https://technet.microsoft.com/library/hh831766.aspx).|  
 |**Configurar a rede**|Não conectado|Você pode selecionar uma conexão de rede para a máquina virtual usar a partir de uma lista de comutadores virtuais existentes. Consulte [criar um comutador virtual para máquinas virtuais do Hyper-V](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md).|  
-|**Conectar o disco rígido virtual**|Criar um disco rígido virtual<br /><br />Nome: <*vmname*>. vhdx<br /><br />**Local**: **C:\Users\Public\Documents\Hyper-V\Virtual discos rígidos\\**<br /><br />**Tamanho**: 127 GB|Você também pode optar por usar um disco rígido virtual existente ou aguardar e anexar um disco rígido virtual mais tarde.|  
+|**Conectar o disco rígido virtual**|Criar um disco rígido virtual<p>Nome: <*vmname*>. vhdx<p>**Local**: **C:\Users\Public\Documents\Hyper-V\Virtual discos rígidos\\**<p>**Tamanho**: 127 GB|Você também pode optar por usar um disco rígido virtual existente ou aguardar e anexar um disco rígido virtual mais tarde.|  
 |**Opções de instalação**|Instalar um sistema operacional mais tarde|Essas opções alteram a ordem de inicialização da máquina virtual para que você possa instalar a partir de um arquivo. ISO, um disquete inicializável ou um serviço de instalação de rede, como o WDS (serviços de implantação do Windows).|  
-|**Resumo**|Exibe as opções escolhidas, para que você possa verificar se elas estão corretas.<br /><br />-Nome<br />-Geração<br />-Memória<br />-Rede<br />-Disco rígido<br />-Sistema operacional|**Dica:** Você pode copiar o resumo da página e colá-lo em email ou em outro lugar para ajudá-lo a acompanhar suas máquinas virtuais.|  
+|**Resumo**|Exibe as opções escolhidas, para que você possa verificar se elas estão corretas.<p>-Nome<br />-Geração<br />-Memória<br />-Rede<br />-Disco rígido<br />-Sistema operacional|**Dica:** Você pode copiar o resumo da página e colá-lo em email ou em outro lugar para ajudá-lo a acompanhar suas máquinas virtuais.|  
 
 ## <a name="see-also"></a>Consulte também  
 

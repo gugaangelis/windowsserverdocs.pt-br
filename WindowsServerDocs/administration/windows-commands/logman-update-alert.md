@@ -1,28 +1,24 @@
 ---
 title: alerta de atualização de logman
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72 britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc32e3de6078489e59fe24c97f02fb440e86628d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13bd7fbef96b75d9308b1e2c8475389d10bbb921
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374392"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840599"
 ---
 # <a name="logman-update-alert"></a>alerta de atualização de logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Atualize as propriedades de um coletor de dados de alerta existente.  
 
@@ -30,7 +26,7 @@ Atualize as propriedades de um coletor de dados de alerta existente.
 ```  
 logman update alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
 
 |                 Parâmetro                  |                                                                               Descrição                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,11 +58,11 @@ logman update alert <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
-## <a name="BKMK_examples"></a>Disso  
-O exemplo a seguir atualiza o new_alert do coletor de dados existente, definindo o valor do limite para o contador% tempo do processador no grupo de contadores processador (_ total) como 40%.  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+O exemplo a seguir atualiza o coletor de dados existente new_alert, definindo o valor de limite para o contador% tempo do processador no grupo de contadores processador (_Total) como 40%.  
 ```  
-logman update alert new_alert -th "\Processor(_Total)\% Processor time>40"  
+logman update alert new_alert -th \Processor(_Total)\% Processor time>40  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
 [logman](logman.md)  
 [criar alerta de logman](logman-create-alert.md)  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: d04dd17e-a843-46fd-8711-0039918f92d9
 title: Implementando seu plano de design do AD FS
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,18 +8,18 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 6306b87dd06774bfde5ffc3ff98818d47d0c858f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee822ef94e2723a4ce20e456a5507f572f038a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408377"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855409"
 ---
 # <a name="implementing-your-ad-fs-design-plan"></a>Implementando seu plano de design do AD FS
 
 As seguintes condições e requisitos ambientais são fatores importantes na implementação do seu Serviços de Federação do Active Directory (AD FS) \(AD FS plano de design\):  
   
--   **Parceiros com suporte:** Normalmente, você usa AD FS para trabalhar com organizações parceiras. Para estabelecer a Federação de identidade, determine as organizações com as quais você deseja formar uma parceria. Depois que uma linha de base AD FS implantação está em vigor, a operação com parceiros envolve a adição de parceiros, a exclusão de parceiros e a atualização de informações de parceiros. As alterações nas parcerias podem ocorrer por vários motivos. Por exemplo, sua implantação de AD FS pode exigir atualizações de parceria se seu parceiro alterar sua empresa de forma significativa, sua organização se tornará parte de uma organização maior ou de uma federação de organizações, ou sua organização será adquirida por um outro corporativa. Em qualquer cenário no qual você federa identidades de vários domínios, você precisará conhecer os domínios \(parceiros\) que você está atualmente dando suporte e todos os domínios adicionais que representam parceiros em potencial.  
+-   **Parceiros com suporte:** Normalmente, você usa AD FS para trabalhar com organizações parceiras. Para estabelecer a Federação de identidade, determine as organizações com as quais você deseja formar uma parceria. Depois que uma linha de base AD FS implantação está em vigor, a operação com parceiros envolve a adição de parceiros, a exclusão de parceiros e a atualização de informações de parceiros. As alterações nas parcerias podem ocorrer por vários motivos. Por exemplo, sua implantação de AD FS pode exigir atualizações de parceria se seu parceiro alterar sua empresa de forma significativa, sua organização se tornará parte de uma organização maior ou de uma federação de organizações, ou sua organização será adquirida por uma empresa diferente. Em qualquer cenário no qual você federa identidades de vários domínios, você precisará conhecer os domínios \(parceiros\) que você está atualmente dando suporte e todos os domínios adicionais que representam parceiros em potencial.  
   
 -   **Tipos de aplicativos e serviços com suporte:** Alguns aplicativos e serviços exigem acesso aos recursos do sistema operacional, enquanto outros são "reconhecimento de declarações". É importante entender os tipos de aplicativos e serviços que AD FS dá suporte para que você possa formular os requisitos de administração.  
   

@@ -2,26 +2,23 @@
 title: O Assistente para limpeza de servidor
 description: Tópico Windows Server Update Service (WSUS)-como usar o assistente de limpeza do servidor para gerenciar o espaço em disco
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c351797-2716-4442-a668-60d5b4e77751
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e285e59a27b6bf0ef1bf3b1ab0f78a96efa60c87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12049e2bba28f2381e6e80db07768b4e180861d6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361527"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828529"
 ---
 # <a name="the-server-cleanup-wizard"></a>O Assistente para limpeza de servidor
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 O assistente de limpeza do servidor é integrado à interface do usuário e pode ser usado para ajudá-lo a gerenciar o espaço em disco. Este assistente pode realizar as seguintes operações:
 
@@ -51,7 +48,7 @@ O assistente de limpeza do servidor é integrado à interface do usuário e pode
   > [!IMPORTANT]
   >  Se você remover o conteúdo desnecessário usando o assistente para limpeza do servidor, todos os arquivos de atualização particulares que você baixou do site do catálogo Microsoft Update também serão removidos. Você deve reimportar esses arquivos depois de executar o assistente de limpeza do servidor. 
 
-Se as atualizações forem aprovadas usando uma regra de aprovação automática, elas ainda poderão estar no estado "aprovado" e não serão removidas pelo assistente de limpeza do servidor. Para remover atualizações aprovadas automaticamente que estão em um estado "aprovado", o administrador do WSUS deve, no mínimo, definir manualmente o status de aprovação das atualizações substituídas como "não aprovadas" para que elas sejam elegíveis para a recusa do assistente de limpeza do servidor. O assistente de limpeza do servidor garantirá que uma atualização mais recente seja aprovada e que nenhum sistema cliente ainda esteja relatando a atualização conforme necessário antes de marcar a atualização como "recusada".
+Se as atualizações forem aprovadas usando uma regra de aprovação automática, elas ainda poderão estar no estado aprovado e não serão removidas pelo assistente de limpeza do servidor. Para remover atualizações aprovadas automaticamente que estão em um Estado aprovado, o administrador do WSUS deve, no mínimo, definir manualmente o status de aprovação das atualizações substituídas como não aprovadas para que elas fiquem qualificadas para a recusa pelo assistente de limpeza do servidor. O assistente de limpeza do servidor garantirá que uma atualização mais recente seja aprovada e que nenhum sistema cliente ainda esteja relatando a atualização conforme necessário antes de marcar a atualização como recusada.
 
 
 

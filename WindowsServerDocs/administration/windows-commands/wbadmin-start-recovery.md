@@ -1,24 +1,20 @@
 ---
 title: Wbadmin iniciar recuperação
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Wbadmin start Recovery, que executa uma operação de recuperação com base nos parâmetros que você especificar.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edb287573dc76619502faf58018f48c464140629
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5a65e67e7a34ca5263c85c1038820e0a4fc1ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362351"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829609"
 ---
 # <a name="wbadmin-start-recovery"></a>Wbadmin iniciar recuperação
 
@@ -48,7 +44,7 @@ wbadmin start recovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -73,7 +69,7 @@ wbadmin start recovery
 >     [!NOTE]
 >     Before using **wbadmin** to perform an install from media operation, you should consider using the **ntdsutil** command because **ntdsutil** only copies the minimum amount of data needed, and it uses a more secure data transport method.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:00 A.M., do volume d:, digite:
 ```
@@ -97,9 +93,9 @@ Para executar uma recuperação do backup de 30 de abril de 2013, obtido às 9:0
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Start-WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx)
 -   Cmdlet [Start-WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx)

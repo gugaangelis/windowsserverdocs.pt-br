@@ -1,6 +1,5 @@
 ---
 title: A função da linguagem da regra de declaração
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: ff4c43bb8dc5582716638f0a3f6e4f6a8022aece
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 742e0ce781225303c623461439f8d4460fec97c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407370"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860099"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>A função da linguagem da regra de declaração
 O idioma da regra de declaração de Serviços de Federação do Active Directory (AD FS) (AD FS) atua como o bloco de construção administrativo para o comportamento de declarações de entrada e saída, enquanto o mecanismo de declarações atua como mecanismo de processamento para a lógica no idioma da regra de declaração que define a regra personalizada. Para obter mais informações sobre como todas as regras são processadas pelo mecanismo de declarações, consulte [a função do mecanismo de declarações](The-Role-of-the-Claims-Engine.md).  
@@ -75,7 +74,7 @@ A tabela a seguir fornece um exemplo de condições de várias expressões.
 
 |                                                                                                                   Descrição da condição                                                                                                                    |                                        Exemplo de sintaxe da condição                                        |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Essa regra tem uma condição de verificação de duas declarações, cada um com um tipo de declaração especificado de entrada ("<http://test/name>" e "<http://test/email>"). Se houver duas declarações correspondentes nas declarações de entrada, a regra copia a declaração de nome no conjunto de declarações de saída. | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
+| Essa regra tem uma condição para verificar se há duas declarações de entrada, cada uma com um tipo de declaração especificado ("<http://test/name>" e "<http://test/email>"). Se houver duas declarações correspondentes nas declarações de entrada, a regra copia a declaração de nome no conjunto de declarações de saída. | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
 
 #### <a name="regular--condition-examples"></a>Exemplos de condição regular  
 A tabela a seguir fornece um exemplo de uma condição regular baseada em expressão.  
@@ -121,7 +120,7 @@ A tabela a seguir descreve algumas construções comuns de sintaxe para ambos os
 |Repositório de atributos|A regra a seguir usa o valor de uma declaração de entrada para consultar o repositório de atributos Active Directory:|```c: [Type  == "http://test/name" ] => issue (store  = "Enterprise AD Attribute Store", types  =  ("http://test/email" ), query  = ";mail;{0}", param  = c.Value )```|  
 |Repositório de atributos|A regra a seguir usa o valor de uma declaração de entrada para consultar um repositório de atributos de linguagem SQL (SQL) configurado anteriormente:|```c: [type  == "http://test/name"] => issue (store  = "Custom SQL store", types  =  ("http://test/email","http://test/displayname" ), query  = "SELECT mail, displayname FROM users WHERE name ={0}", param  = c.value );```|  
 
-#### <a name="expressions"></a>Expressões  
+#### <a name="expressions"></a>{1&gt;Expressões&lt;1}  
 As expressões são usadas no lado direito para as restrições do seletor de declarações e os parâmetros de instruções de emissão. Há vários tipos de expressões às quais a linguagem dá suporte. Todas as expressões da linguagem são baseadas em cadeias de caracteres, o que significa que elas usam as cadeias de caracteres como entrada e produzem cadeias de caracteres. Não há suporte para números ou outros tipos de dados, como data/hora, em expressões. A seguir, há os tipos de expressões às quais a linguagem dá suporte:  
 
 -   Literal de cadeia de caracteres: valor de cadeia de caracteres, delimitado pelo caractere de aspas (") em ambos os lados.  

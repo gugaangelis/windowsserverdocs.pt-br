@@ -1,20 +1,20 @@
 ---
 redirect_url: guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md
 title: VMs blindadas para locatários-criando uma nova VM blindada localmente e movendo-a para uma malha protegida
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0ca1efa0-01f9-4b6f-87d4-c66db00d7d70
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a4b5ff2942c8485a4c10770a4374d56734f7f3c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402387"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856719"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>VMs blindadas para locatários-criando uma nova VM blindada localmente e movendo-a para uma malha protegida
 

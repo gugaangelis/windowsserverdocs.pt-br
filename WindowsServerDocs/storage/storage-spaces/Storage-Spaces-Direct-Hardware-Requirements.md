@@ -3,18 +3,18 @@ title: Requisitos de hardware dos Espaços de Armazenamento Diretos
 ms.prod: windows-server
 description: Requisitos mínimos de hardware para testes de Espaços de Armazenamento Diretos.
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402932"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861049"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -29,7 +29,7 @@ Para produção, a Microsoft recomenda a compra de uma solução de hardware/sof
 
 ## <a name="base-requirements"></a>Requisitos básicos
 
-Os sistemas, componentes, dispositivos e drivers devem ser **certificados pelo Windows server 2016 pelo** [catálogo do Windows Server](https://www.windowsservercatalog.com). Além disso, recomendamos que servidores, unidades, adaptadores de barramento de host e adaptadores de rede tenham as qualificações adicionais do **SDDC (Data Center)** e/ou do **Data Center** (AQS) Premium definidas pelo software, como pictureed acima. Há mais de 1.000 componentes com o SDDC AQs.
+Os sistemas, componentes, dispositivos e drivers devem ser **certificados pelo Windows server 2016 pelo** [catálogo do Windows Server](https://www.windowsservercatalog.com). Além disso, recomendamos que servidores, unidades, adaptadores de barramento de host e adaptadores de rede tenham as qualificações adicionais do **SDDC (Data Center)** e/ou do **Data Center** (AQS) Premium definidas pelo software, conforme mostrado abaixo. Há mais de 1.000 componentes com o SDDC AQs.
 
 ![captura de tela do catálogo do Windows Server mostrando o AQs do SDDC](media/hardware-requirements/sddc-aqs.png)
 
@@ -52,7 +52,7 @@ Além disso, os seguintes requisitos se aplicam:
 - Memória para Windows Server, VMs e outros aplicativos ou cargas de trabalho; acrescido
 - 4 GB de RAM por terabyte (TB) de capacidade de unidade de cache em cada servidor, para metadados de Espaços de Armazenamento Diretos
 
-## <a name="boot"></a>inicialização
+## <a name="boot"></a>Inicialização
 
 - Qualquer dispositivo de inicialização com suporte do Windows Server, que [agora inclui SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
 - O espelho RAID 1 **não** é necessário, mas tem suporte para inicialização
@@ -72,8 +72,8 @@ Interconexão recomendada para alto desempenho, em escala ou implantações de 4
 - NIC de 25 Gbps ou mais rápido
 
 Interconexões de nó alternadas ou alternadas
-- Alternado Os comutadores de rede devem ser configurados corretamente para manipular a largura de banda e o tipo de rede.  Se estiver usando RDMA que implementa o protocolo RoCE, a configuração do dispositivo de rede e do comutador será ainda mais importante. 
-- SWITCHLESS: Os nós podem ser interconectados usando conexões diretas, evitando o uso de um comutador.  É necessário que cada nó tenha uma conexão direta com todos os outros nós do cluster.
+- Comutado: comutadores de rede devem ser configurados corretamente para lidar com a largura de banda e o tipo de rede.  Se estiver usando RDMA que implementa o protocolo RoCE, a configuração do dispositivo de rede e do comutador será ainda mais importante. 
+- SWITCHLESS: os nós podem ser interconectados usando conexões diretas, evitando o uso de uma opção.  É necessário que cada nó tenha uma conexão direta com todos os outros nós do cluster.
 
 
 ## <a name="drives"></a>Unidades
@@ -87,8 +87,8 @@ Espaços de Armazenamento Diretos funciona com unidades SATA, SAS ou NVMe com co
 - Os dispositivos de cache devem ter 32 GB ou mais
 - Ao usar dispositivos de memória persistentes como dispositivos de cache, você deve usar dispositivos de capacidade NVMe ou SSD (não é possível usar HDDs)
 - O driver NVMe é fornecido pela Microsoft, incluído no Windows. (stornvme. sys)
-- Recomendado: O número de unidades de capacidade é um múltiplo inteiro do número de unidades de cache
-- Recomendado: As unidades de cache devem ter alta Endurance de gravação: pelo menos 3 unidades-gravações por dia (DWPD) ou pelo menos 4 terabytes gravados (TBW) por dia – consulte [noções básicas sobre gravações de unidade por dia (DWPD), terabytes gravados (TBW) e o mínimo recomendado para espaços de armazenamento diretos ](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- Recomendado: o número de unidades de capacidade é um múltiplo completo do número de unidades de cache
+- Recomendado: as unidades de cache devem ter alta Endurance de gravação: pelo menos 3 unidades-gravações por dia (DWPD) ou pelo menos 4 terabytes gravados (TBW) por dia – consulte [noções básicas sobre gravações de unidade por dia (DWPD), terabytes gravados (TBW) e o mínimo recomendado para espaços de armazenamento diretos](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
 Veja como as unidades podem ser conectadas para Espaços de Armazenamento Diretos:
 
@@ -96,7 +96,7 @@ Veja como as unidades podem ser conectadas para Espaços de Armazenamento Direto
 - Unidades NVMe com conexão direta
 - HBA (adaptador de barramento de host) SAS com unidades SAS
 - HBA (adaptador de barramento de host) SAS com unidades SATA
-- **SEM SUPORTE:** Placas de controlador RAID ou armazenamento SAN (Fibre Channel, iSCSI, FCoE). Os cartões HBA (adaptador de barramento de host) devem implementar o modo de passagem simples.
+- **sem suporte:** Placas de controlador RAID ou armazenamento SAN (Fibre Channel, iSCSI, FCoE). Os cartões HBA (adaptador de barramento de host) devem implementar o modo de passagem simples.
 
 ![diagrama de interconexões de unidade com suporte](media/hardware-requirements/drive-interconnect-support-1.png)
 
@@ -104,7 +104,7 @@ As unidades podem ser internas ao servidor ou em um compartimento externo que es
 
 - Unidades internas para o servidor
 - Unidades em um compartimento externo ("JBOD") conectado a um servidor
-- **SEM SUPORTE:** Compartimentos SAS compartilhados conectados a vários servidores ou a qualquer forma de MPIO (Multipath IO), em que as unidades podem ser acessadas por vários caminhos.
+- **sem suporte:** Compartimentos SAS compartilhados conectados a vários servidores ou a qualquer forma de MPIO (Multipath IO), em que as unidades podem ser acessadas por vários caminhos.
 
 ![diagrama de interconexões de unidade com suporte](media/hardware-requirements/drive-interconnect-support-2.png)
 

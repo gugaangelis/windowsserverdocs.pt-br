@@ -1,24 +1,20 @@
 ---
 title: Wbadmin start systemstaterecovery
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para Wbadmin start systemstaterecovery, que executa uma recuperação de estado do sistema em um local e de um backup que você especificar.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 208b1be9-3452-4aba-bb49-46bc587fca96
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ae534eed26629be264b698869edc57232e2b571
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 581ad6fe3591e549c3f89e4c95d2f8ab0cde059c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362216"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829489"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>Wbadmin start systemstaterecovery
 
@@ -59,7 +55,7 @@ wbadmin start systemstaterecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -72,7 +68,7 @@ wbadmin start systemstaterecovery
 |-reinicialização|Especifica a reinicialização do sistema no final da operação de recuperação do estado do sistema. Esse parâmetro é válido somente para uma recuperação no local original. Não recomendamos que você use esse parâmetro se precisar executar etapas após a operação de recuperação.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 - Para executar uma recuperação de estado do sistema do backup de 03/31/2013 às 9:00, digite:  
   ```
@@ -83,8 +79,8 @@ wbadmin start systemstaterecovery
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx)
