@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/07/2019
 description: Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos.
-ms.openlocfilehash: ca76412a6e623b42718fc4f7589f7053073e0f64
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 67c62d81c7d9b6d33a198f5282fa39a88e07f2e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950190"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820779"
 ---
 # <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
 
@@ -32,7 +32,7 @@ Se você pretende baixar ou usar pastas de trabalho no Windows 10, Windows 7 ou 
 
 ## <a name="role-description"></a>Descrição da função
 
- Com Pastas de Trabalho, os usuários podem armazenar e acessar arquivos de trabalho em PCs e dispositivos, também conhecidos como BYOD (traga seu próprio dispositivo), além de computadores corporativos. Os usuários obtêm um local conveniente para armazenar arquivos de trabalho e acessá-los em qualquer lugar. As organizações mantêm controle sobre dados corporativos armazenando os arquivos em servidores de arquivos gerenciados centralmente e, opcionalmente, especificando políticas de dispositivo de usuário como criptografia e senhas de bloqueio de tela.  
+ Com Pastas de trabalho, os usuários podem armazenar e acessar arquivos de trabalho em PCs e dispositivos, também conhecidos como BYOD (traga seu próprio dispositivo), além de PCs corporativos. Os usuários obtêm um local conveniente para armazenar arquivos de trabalho e acessá-los em qualquer lugar. As organizações mantêm controle sobre dados corporativos armazenando os arquivos em servidores de arquivos gerenciados centralmente e, opcionalmente, especificando políticas de dispositivo de usuário como criptografia e senhas de bloqueio de tela.  
   
  Pastas de Trabalho pode ser implantado com implantações existentes de Redirecionamento de Pasta, Arquivos Offline e pastas base. Pastas de Trabalho armazena arquivos do usuário em uma pasta no servidor chamada *compartilhamento de sincronização*. Você pode especificar uma pasta que já contém dados do usuário, o que permite a você adotar Pastas de Trabalho sem a migração de dados e servidores ou a finalização imediata da solução existente.  
   
@@ -56,12 +56,12 @@ Se você pretende baixar ou usar pastas de trabalho no Windows 10, Windows 7 ou 
 
  O serviço Pastas de Trabalho oferece a funcionalidade a seguir.  
   
-| Funcionalidade | Disponibilidade | Descrição |  
+| Funcionalidade | Availability | Descrição |  
 | ------------------- | ------------------ | ----------------- |  
 | Serviço de função Pastas de Trabalho no Gerenciador do Servidor | Windows Server 2019, Windows Server 2016 ou Windows Server 2012 R2 | Os Serviços de Arquivo e Armazenamento oferece uma maneira de configurar compartilhamentos de sincronização (pastas que armazenam arquivos de trabalho do usuário), monitora Pastas de Trabalho e gerencia compartilhamentos de sincronização e o acesso de usuários |
 | Cmdlets de Pastas de Trabalho | Windows Server 2019, Windows Server 2016 ou Windows Server 2012 R2 | Um módulo do Windows PowerShell que contém cmdlets abrangentes para gerenciar servidores de Pastas de Trabalho |  
-| Integração de Pastas de Trabalho ao Windows | Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7 (é necessário download) | O serviço Pastas de Trabalho fornece a seguinte funcionalidade em computadores Windows:<br /><br /> -   Um item do Painel de Controle que configura e monitora Pastas de Trabalho<br />-   Integração ao Explorador de Arquivos que permite fácil acesso aos arquivos em Pastas de Trabalho<br />-   Um mecanismo de sincronização que transfere os arquivos de/para um servidor de arquivos central, maximizando, ao mesmo tempo, o desempenho do sistema e a duração da bateria |
-| Aplicativo Pastas de Trabalho para dispositivos | Android<br /><br /> Apple iPhone e iPad® | Um aplicativo que permite que dispositivos populares acessem arquivos em Pastas de Trabalho |  
+| Integração de Pastas de Trabalho ao Windows | Windows 10<p> Windows 8.1<p> Windows RT 8.1<p> Windows 7 (é necessário download) | O serviço Pastas de Trabalho fornece a seguinte funcionalidade em computadores Windows:<p> -   Um item do Painel de Controle que configura e monitora Pastas de Trabalho<br />-   Integração ao Explorador de Arquivos que permite fácil acesso aos arquivos em Pastas de Trabalho<br />-   Um mecanismo de sincronização que transfere os arquivos de/para um servidor de arquivos central, maximizando, ao mesmo tempo, o desempenho do sistema e a duração da bateria |
+| Aplicativo Pastas de Trabalho para dispositivos | Android<p> Apple iPhone e iPad® | Um aplicativo que permite que dispositivos populares acessem arquivos em Pastas de Trabalho |  
   
 ## <a name="new-and-changed-functionality"></a>Funcionalidade nova e alterada
   
@@ -76,19 +76,19 @@ A tabela a seguir descreve algumas das principais mudanças em Pastas de Trabalh
   
 ## <a name="software-requirements"></a>Requisitos de software
 
-O serviço Pastas de Trabalho tem os seguintes requisitos de software para os servidores de arquivos e sua infraestrutura de rede:  
+As Pastas de Trabalho têm os seguintes requisitos de software para os servidores de arquivos e sua infraestrutura de rede:  
   
 -   Um servidor que executa o Windows Server 2019, o Windows Server 2016 ou o Windows Server 2012 R2 para hospedar compartilhamentos de sincronização com arquivos de usuário  
   
 -   Um volume formatado com o sistema de arquivos NTFS para armazenar arquivos de usuário  
   
--   Para forçar políticas de senha nos computadores Windows 7, você deve usar políticas de senha de Política de Grupo. Também é necessário excluir os computadores Windows 7 das políticas de senha de Pastas de Trabalho (caso você as utilize).
+-   Para forçar políticas de senha nos computadores Windows 7, você deve usar políticas de senha de Política de Grupo. Também é necessário excluir os PCs Windows 7 de políticas de senha de Pastas de Trabalho (caso use-as).
 
 -   Um certificado de servidor para cada servidor de arquivo que hospedará Pastas de Trabalho. Esses certificados devem ser de uma autoridade de certificação (CA) confiável por seus usuários; o ideal é uma CA pública.
 
 -   Adicional Uma floresta Active Directory Domain Services com as extensões de esquema no Windows Server 2012 R2 para dar suporte a computadores e dispositivos com referência automática ao servidor de arquivos correto ao usar vários servidores de arquivos.  
   
-Para habilitar os usuários a realizar a sincronização na Internet, existem requisitos adicionais:  
+Para habilitar usuários a sincronizar na Internet, existem requisitos adicionais:  
   
 -   A capacidade de tornar um servidor acessível pela Internet, criando regras de publicação no proxy reverso ou gateway de rede de sua organização  
   
@@ -96,7 +96,7 @@ Para habilitar os usuários a realizar a sincronização na Internet, existem re
   
 -   (Opcional) Infraestrutura AD FS (Serviços de Federação do Active Directory) ao usar a autenticação AD FS  
   
-O serviço Pastas de Trabalho tem os seguintes requisitos de software para computadores clientes:  
+As Pastas de Trabalho têm os seguintes requisitos de software para computadores clientes:  
   
 -   Os computadores e dispositivos devem estar executando um dos seguintes sistemas operacionais:  
   
@@ -112,7 +112,7 @@ O serviço Pastas de Trabalho tem os seguintes requisitos de software para compu
   
     -   iOS 10.2 e posterior  
   
--   Os computadores Windows 7 devem estar executando uma das seguintes edições do Windows:  
+-   Os PCs Windows 7 devem estar executando uma das seguintes edições do Windows:  
   
     -   Windows 7 Professional  
   
@@ -126,20 +126,20 @@ O serviço Pastas de Trabalho tem os seguintes requisitos de software para compu
   
      No entanto, os usuários podem alterar o local durante a configuração (cartões microSD e unidades USB formatadas com o sistema de arquivos NTFS são locais com suporte, mas a sincronização será interrompida se as unidades forem removidas).  
   
-     O tamanho máximo para arquivos individuais é 10 GB, por padrão. Não há limite de armazenamento por usuário, embora os administradores possam usar a funcionalidade de cotas do Gerenciador de Recursos de Servidor de Arquivos para implementar cotas.  
+     O tamanho máximo para arquivos individuais é 10 GB, por padrão. Não há limite de armazenamento por usuário, embora os administradores possam usar a funcionalidade de cotas do Gerenciador de Recursos do Servidor de Arquivos para implementar cotas.  
   
--   O serviço Pastas de Trabalho não oferece suporte à reversão do estado das máquinas virtuais clientes. Em vez disso, execute operações de backup e restauração de dentro da máquina virtual cliente usando o Backup de Imagem de Sistema ou outro aplicativo de backup.  
+-   O serviço Pastas de Trabalho não oferece suporte à reversão do estado das máquinas virtuais clientes. Em vez disso, execute operações de backup e restauração de dentro da máquina virtual cliente usando o Backup de Imagem do Sistema ou outro aplicativo de backup.  
   
 ## <a name="work-folders-compared-to-other-sync-technologies"></a>Comparação de Pastas de Trabalho com outras tecnologias  
 
 A tabela a seguir aborda como diversas tecnologias de sincronização da Microsoft são posicionadas e quando usar cada uma delas.  
   
-| | Pastas de Trabalho | Arquivos Offline | OneDrive for Business | OneDrive |
+| | Pastas de trabalho | Arquivos Offline | OneDrive for Business | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **Resumo de tecnologia** | Sincroniza arquivos armazenados em um servidor de arquivos com computadores e dispositivos | Sincroniza arquivos armazenados em um servidor de arquivos com computadores que têm acesso à rede corporativa (pode ser substituído por Pastas de Trabalho) | Sincroniza arquivos armazenados no Office 365 ou no SharePoint com computadores e dispositivos dentro ou fora de uma rede corporativa e fornece funcionalidade de colaboração de documentos | Sincroniza arquivos pessoais armazenados no OneDrive com PCs, computadores Mac e dispositivos |
 | **Destinado a fornecer acesso de usuário a arquivos de trabalho** | Sim | Sim | Sim | Não |
-| **Serviço de nuvem** | Não | Não | Office 365 | Microsoft OneDrive |
-| **Servidores de rede internos** | Servidores de arquivos que executam o Windows Server 2012 R2 ou o Windows Server 2016 | Servidores de arquivos | SharePoint Server (opcional) | Não |
+| **Serviço de nuvem** | Nenhum | Nenhum | Office 365 | Microsoft OneDrive |
+| **Servidores de rede internos** | Servidores de arquivos que executam o Windows Server 2012 R2 ou o Windows Server 2016 | Servidores de arquivos | SharePoint Server (opcional) | Nenhum |
 | **Clientes com suporte** | PCs, iOS, Android | PCs em uma rede corporativa ou conectado por meio do DirectAccess, VPNs ou outras tecnologias de acesso remoto | PCs, iOS, Android, Windows Phone | PCs, computadores Mac, Windows Phone, iOS, Android |
   
 > [!NOTE]
@@ -161,9 +161,9 @@ O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armaz
   
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
- Para obter informações adicionais relacionadas, consulte os recursos a seguir.  
+ Para obter informações adicionais relacionadas, consulte os seguintes recursos.  
   
 | Tipo de conteúdo | Referências |
 | ------------------ | ---------------- |

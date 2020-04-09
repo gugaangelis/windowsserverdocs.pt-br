@@ -1,7 +1,6 @@
 ---
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
 title: Solucionar problemas de replicação do Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf6b50ab3b4991bd8cab8523494261f1284945a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a3e9c3e901f164d793ca40943934efbbccafda38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822959"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>Solucionar problemas de replicação do Active Directory
 
@@ -26,7 +25,7 @@ O restante deste tópico explica as ferramentas e uma metodologia geral para cor
 
 ## <a name="introduction-and-resources-for-troubleshooting-active-directory-replication"></a>Introdução e recursos para solução de problemas de replicação de Active Directory
 
-A falha de replicação de entrada ou saída faz com que Active Directory objetos que representam a topologia de replicação, o agendamento de replicação, os controladores de domínio, os usuários, os computadores, as senhas, os grupos de segurança, as associações de grupo e os Política de Grupo sejam inconsistentes entre controladores de domínio. A inconsistência de diretório e a falha de replicação causam falhas operacionais ou resultados inconsistentes, dependendo do controlador de domínio que é contatado para a operação e podem impedir o aplicativo de Política de Grupo e permissões de controle de acesso. O Active Directory Domain Services (AD DS) depende da conectividade de rede, da resolução de nomes, da autenticação e da autorização, do banco de dados de diretório, da topologia de replicação e do mecanismo de replicação. Quando a causa raiz de um problema de replicação não é imediatamente óbvia, determinar a causa entre as muitas causas possíveis requer uma eliminação sistemática das causas prováveis.
+A falha de replicação de entrada ou saída faz com que Active Directory objetos que representam a topologia de replicação, o agendamento de replicação, os controladores de domínio, os usuários, os computadores, as senhas, os grupos de segurança, as associações de grupo e a Política de Grupo sejam inconsistentes entre os controladores de domínio A inconsistência de diretório e a falha de replicação causam falhas operacionais ou resultados inconsistentes, dependendo do controlador de domínio que é contatado para a operação e podem impedir o aplicativo de Política de Grupo e permissões de controle de acesso. O Active Directory Domain Services (AD DS) depende da conectividade de rede, da resolução de nomes, da autenticação e da autorização, do banco de dados de diretório, da topologia de replicação e do mecanismo de replicação. Quando a causa raiz de um problema de replicação não é imediatamente óbvia, determinar a causa entre as muitas causas possíveis requer uma eliminação sistemática das causas prováveis.
 
 Para uma ferramenta baseada em interface do usuário para ajudar a monitorar a replicação e diagnosticar erros, consulte a [ferramenta de status de replicação do Active Directory](https://www.microsoft.com/download/details.aspx?id=30005)
 
@@ -49,7 +48,7 @@ Para obter informações detalhadas sobre como usar o repadmin para solucionar p
 
 ### <a name="intentional-disconnections"></a>Desconexões intencionales
 
-Se os erros de replicação forem relatados por um controlador de domínio que está tentando realizar a replicação com um controlador de domínio que foi criado em um site de preparo e está offline no momento aguardando sua implantação no site de produção final (um site remoto, como uma filial ), você pode considerar esses erros de replicação. Para evitar a separação de um controlador de domínio da topologia de replicação por períodos estendidos, o que causa erros contínuos até que o controlador de domínio seja reconectado, considere adicionar esses computadores inicialmente como servidores membro e usar a instalação da mídia ( IFM) para instalar Active Directory Domain Services (AD DS). Você pode usar a ferramenta de linha de comando Ntdsutil para criar uma mídia de instalação que você pode armazenar em mídia removível (CD, DVD ou outra mídia) e enviar para o site de destino. Em seguida, você pode usar a mídia de instalação para instalar AD DS nos controladores de domínio no site, sem o uso da replicação. 
+Se os erros de replicação forem relatados por um controlador de domínio que está tentando fazer a replicação com um controlador de domínio que foi criado em um site de preparo e estiver offline no momento aguardando sua implantação no site de produção final (um site remoto, como uma filial), você poderá considerar esses erros de replicação. Para evitar a separação de um controlador de domínio da topologia de replicação por períodos estendidos, o que causa erros contínuos até que o controlador de domínio seja reconectado, considere adicionar esses computadores inicialmente como servidores membro e usar o método IFM (instalar da mídia) para instalar o Active Directory Domain Services (AD DS). Você pode usar a ferramenta de linha de comando Ntdsutil para criar uma mídia de instalação que você pode armazenar em mídia removível (CD, DVD ou outra mídia) e enviar para o site de destino. Em seguida, você pode usar a mídia de instalação para instalar AD DS nos controladores de domínio no site, sem o uso da replicação. 
 
 ### <a name="hardware-failures-or-upgradestitle"></a>Falhas de hardware ou atualizações</title>
 
@@ -117,7 +116,7 @@ Use repadmin para monitorar o status de replicação diariamente, executando um 
 
 Você pode usar o procedimento a seguir para recuperar o status de replicação de todos os controladores de domínio na floresta. 
 
-Requisitos
+{1&gt;{2&gt;Requisitos&lt;2}&lt;1}
 
 A associação no **Admins. de Empresa** ou equivalente é o requisito mínimo exigido para concluir este procedimento. 
 
@@ -162,7 +161,7 @@ Para identificar Active Directory problemas de replicação, use o comando <syst
 | --- | --- | --- |
 |O tempo desde a última replicação com este servidor excedeu a vida útil da marca de exclusão.|Um controlador de domínio apresentou falha na replicação de entrada com o controlador de domínio de origem nomeado longo o suficiente para que uma exclusão tenha sido marcada para exclusão, replicada e coletada por lixo de AD DS.|ID do evento 2042: faz muito tempo que esta máquina replicou|
 |Não há vizinhos de entrada.|Se nenhum item aparecer na seção "vizinhos de entrada" da saída gerada pelo repadmin/showrepl, o controlador de domínio não conseguirá estabelecer links de replicação com outro controlador de domínio.|Corrigir problemas de conectividade de replicação (ID do evento 1925)| 
-|Acesso negado.|Existe um link de replicação entre dois controladores de domínio, mas a replicação não pode ser executada corretamente como resultado de uma falha de autenticação.|Corrigir problemas de segurança de replicação| 
+|O acesso é negado.|Existe um link de replicação entre dois controladores de domínio, mas a replicação não pode ser executada corretamente como resultado de uma falha de autenticação.|Corrigir problemas de segurança de replicação| 
 |Última tentativa em < data/hora > falhou com o "o nome da conta de destino está incorreto".|Esse problema pode estar relacionado a problemas de conectividade, DNS ou autenticação. Se esse for um erro DNS, o controlador de domínio local não poderá resolver o nome DNS baseado em GUID (identificador global exclusivo) de seu parceiro de replicação.|Corrigindo problemas de pesquisa de DNS de replicação (IDs de evento 1925, 2087, 2088) corrigindo problemas de segurança de replicação corrigindo problemas de conectividade de replicação (ID do evento 1925)| 
 |Erro de LDAP 49.|A conta do computador do controlador de domínio pode não ser sincronizada com o centro de distribuição de chaves (KDC).|Corrigir problemas de segurança de replicação| 
 |Não é possível abrir a conexão LDAP com o host local|A ferramenta de administração não pôde contatar o AD DS.|Corrigir problemas de pesquisa de DNS de replicação (ID do evento 1925, 2087, 2088)| 
@@ -184,6 +183,6 @@ A tabela a seguir lista os eventos comuns que podem indicar problemas com Active
 
 Para obter mais informações sobre os conceitos de replicação, consulte [Active Directory tecnologias de replicação](https://go.microsoft.com/fwlink/?LinkId=41950).
   
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 Para obter mais informações, incluindo artigos de suporte específicos para códigos de erro, consulte o artigo de suporte: [como solucionar erros comuns de replicação de Active Directory](https://support.microsoft.com/help/3108513)

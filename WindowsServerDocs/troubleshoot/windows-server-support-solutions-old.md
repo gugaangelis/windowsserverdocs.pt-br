@@ -2,19 +2,18 @@
 title: Principais soluções de suporte do Windows Server
 description: Obter links para soluções de problemas do Windows Server
 ms.prod: windows-server
-ms.service: na
 manager: alant
 ms.technology: server-general
 ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 61c10f25ac97934f73c4f393e2c91c9b36fc59fd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6bd0d22c7df7344e6c4bfbf8360532ab0f36d117
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950172"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820749"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Principais soluções de suporte do Windows Server 2016
 
@@ -23,7 +22,7 @@ A Microsoft lança regularmente atualizações e soluções para o Windows Serve
 Essas são as principais soluções do Suporte da Microsoft para a maioria dos problemas comuns enfrentados ao usar o Windows Server 2016. Os links a seguir incluem links para artigos da KB, atualizações e artigos de biblioteca.
 
 >[!TIP]
-> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
+> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
 
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>Soluções para instalar ou atualizar o Windows Server
 
@@ -39,7 +38,7 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
 
 ## <a name="solutions-for-volume-activation"></a>Soluções de ativação de volume
 - [Ativação do Windows Server 2016](../get-started/server-2016-activation.md)
-- [Revisar e Selecionar Métodos de Ativação](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
+- [Examinar e selecionar métodos de ativação](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
 - [Códigos de erro de ativação para ativação de volume](https://technet.microsoft.com/library/dn502528.aspx)
 - [Como solucionar problemas do serviço de gerenciamento de chaves (KMS)](https://technet.microsoft.com/library/ee939272.aspx)
 - [Solução de problemas de ativação de volume](https://technet.microsoft.com/library/ff793439.aspx)
@@ -52,7 +51,7 @@ Essas são as principais soluções do Suporte da Microsoft para a maioria dos p
 - [Suporte do Exchange Server para Windows Server 2016](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
 - [Usando o Ntdsutil. exe para transferir ou capturar funções FSMO para um controlador de domínio](https://support.microsoft.com/kb/255504)
 - [Solução de problemas de implantação de controlador de domínio](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Solução de problemas do Assistente de instalação do Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
+- [Solucionando problemas do assistente de instalação Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
 - [Problemas conhecidos para instalar e remover AD DS](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Soluções para Serviços de Federação do Active Directory (AD FS)

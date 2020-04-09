@@ -2,20 +2,19 @@
 title: Gerenciar Integration Services do Hyper-V
 description: Descreve como ativar e desativar o Integration Services e instalá-los, se necessário
 ms.technology: compute-hyper-v
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
 ms.prod: windows-server
-ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: bcf8109530043f5e0a6d141c484233c4364fb307
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: 2c5e2d67b391cd53a6995957da5dab108a34e1a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820709"
 ---
 >Aplica-se a: Windows 10, Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
 
@@ -235,7 +234,7 @@ Recomendamos que você mantenha os serviços de integração atualizados para ob
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| O Windows 8 | Windows Update | Requer o serviço de integração de Troca de Dados.* |
+| Windows 8 | Windows Update | Requer o serviço de integração de Troca de Dados.* |
 | Windows 7 | Windows Update | Requer o serviço de integração de Troca de Dados.* |
 | Windows Vista (SP 2) | Windows Update | Requer o serviço de integração de Troca de Dados.* |
 | - | | |
@@ -258,7 +257,7 @@ Recomendamos que você mantenha os serviços de integração atualizados para ob
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
-| O Windows 8 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
+| Windows 8 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
 | Windows 7 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
 | Windows Vista (SP 2) | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
 | Windows XP (SP 2, SP 3) | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
@@ -282,7 +281,7 @@ Recomendamos que você mantenha os serviços de integração atualizados para ob
 | Convidado  | Mecanismo de atualização | {1&gt;Observações&lt;1} |
 |:---------|:---------|:---------|
 | Windows 8.1 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
-| O Windows 8 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
+| Windows 8 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
 | Windows 7 | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
 | Windows Vista (SP 2) | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
 | Windows XP (SP 2, SP 3) | Disco dos Serviços de Integração | Consulte [as instruções](#install-or-update-integration-services)abaixo. |
@@ -307,7 +306,7 @@ Para obter mais detalhes sobre os convidados do Linux, consulte [máquinas virtu
 
 Procedimento para instalar ou atualizar os serviços de integração manualmente:
 
-1.  Abra o Gerenciador do Hyper-V. No menu ferramentas do Gerenciador do Servidor, clique em **Gerenciador do Hyper-V**.  
+1.  Abra o Gerenciador Hyper-V. No menu ferramentas do Gerenciador do Servidor, clique em **Gerenciador do Hyper-V**.  
   
 2.  Conecte-se à máquina virtual. Clique com o botão direito do mouse na máquina virtual e clique em **conectar**.  
   

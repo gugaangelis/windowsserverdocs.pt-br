@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ebd4e50d712b834db1f0fd7f8e46d27697a4065f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dec242282b0d7a07b8f244a1044134bd8af03f6f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361218"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827849"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>Requisitos de hardware e opções de armazenamento de clustering de failover
 
@@ -32,8 +33,8 @@ Você precisa do seguinte hardware para criar um cluster de failover. Para receb
 - **Controladores de dispositivo ou adaptadores adequados para o armazenamento**:
 
   - **SAS ou Fibre Channel**: Se você estiver usando SAS ou Fibre Channel em todos os servidores clusterizados, todos os elementos da pilha de armazenamento deverão ser idênticos. É necessário que o software de e/s de vários caminhos (MPIO) seja idêntico e que o software do módulo específico do dispositivo (DSM) seja idêntico. É recomendável que os controladores de dispositivo de armazenamento em massa — o HBA (adaptador de barramento de host), os drivers de HBA e o firmware do HBA — que são anexados ao armazenamento de cluster sejam idênticos. Se usar HBAs diferentes, você deverá verificar, com o fornecedor de armazenamento, se está cumprindo as configurações com suporte ou recomendadas.
-  - **iSCSI**: Se você estiver usando iSCSI, cada servidor com cluster deverá ter um ou mais adaptadores de rede ou HBAs dedicados para o armazenamento de cluster. A rede usada para o iSCSI não deve ser usada para comunicações de rede. Em todos os servidores clusterizados, os adaptadores de rede usados para conexão com o destino de armazenamento iSCSI devem ser idênticos. É recomendável também usar Gigabit Ethernet ou superior.
-- **Armazenamento**: Você deve usar o armazenamento [espaços de armazenamento diretos](../storage/storage-spaces/storage-spaces-direct-overview.md) ou compartilhado compatível com o windows Server 2012 R2 ou o windows Server 2012. Você pode usar o armazenamento compartilhado que está anexado e também pode usar compartilhamentos de arquivos SMB 3,0 como armazenamento compartilhado para servidores que executam o Hyper-V que estão configurados em um cluster de failover. Para obter mais informações, consulte [Implantar Hyper-V no SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
+  - **iSCSI**: Se você estiver usando iSCSI, cada servidor clusterizado deverá ter um ou mais adaptadores de rede ou HBAs dedicados para o armazenamento de cluster. A rede usada para o iSCSI não deve ser usada para comunicações de rede. Em todos os servidores clusterizados, os adaptadores de rede usados para conexão com o destino de armazenamento iSCSI devem ser idênticos. É recomendável também usar Gigabit Ethernet ou superior.
+- **Armazenamento**: você deve usar [espaços de armazenamento diretos](../storage/storage-spaces/storage-spaces-direct-overview.md) ou armazenamento compartilhado que seja compatível com o Windows Server 2012 R2 ou o Windows Server 2012. Você pode usar o armazenamento compartilhado que está anexado e também pode usar compartilhamentos de arquivos SMB 3,0 como armazenamento compartilhado para servidores que executam o Hyper-V que estão configurados em um cluster de failover. Para obter mais informações, consulte [Implantar Hyper-V no SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
 
     Na maioria dos casos, o armazenamento anexado deve conter múltiplos discos separados (números de unidade lógica, ou LUNs) configurados no nível do hardware. Para alguns clusters, um disco funciona como a testemunha de disco (descrito no final desta subseção). Outros discos contêm os arquivos necessários para as funções clusterizadas (antigamente chamado de serviços ou aplicativos clusterizados). Os requisitos de armazenamento incluem o seguinte:
 
@@ -61,7 +62,7 @@ Para obter mais informações sobre a função Hyper-V, consulte [Visão geral d
 Ao implantar uma rede de área de armazenamento (SAN) com um cluster de failover, siga estas diretrizes:
 
 - **Confirme a compatibilidade do armazenamento**: Confirme com os fabricantes e fornecedores se o armazenamento, incluindo drivers, firmware e software utilizados para o armazenamento, são compatíveis com clusters de failover na versão do Windows Server que você está executando.
-- **Isole dispositivos de armazenamento, um cluster por dispositivo**: Servidores de diferentes clusters não devem poder acessar os mesmos dispositivos de armazenamento. Na maioria dos casos, um LUN usado para um conjunto de servidores clusterizados deve ser isolado de todos os outros servidores através de uma máscara de LUN ou divisão em zonas.
+- **Isolar dispositivos de armazenamento, um cluster por dispositivo**: os servidores de diferentes clusters podem não conseguir acessar os mesmos dispositivos de armazenamento. Na maioria dos casos, um LUN usado para um conjunto de servidores clusterizados deve ser isolado de todos os outros servidores através de uma máscara de LUN ou divisão em zonas.
 - **Considere o uso de software MPIO ou adaptadores de rede atrelados**: Em uma malha de armazenamento altamente disponível, você pode implantar clusters de failover com vários adaptadores de barramento do host usando software MPIO ou agrupamento de adaptadores de rede (também chamado de balanceamento de carga e failover, ou LBFO). Isso fornece o mais alto nível de redundância e disponibilidade. Para o Windows Server 2012 R2 ou o Windows Server 2012, sua solução de vários caminhos deve ser baseada no Microsoft Multipath I/O (MPIO). O fornecedor de hardware normalmente fornece um DSM (módulo específico ao dispositivo) do MPIO para o hardware, embora o Windows Server inclua um ou mais DSMs como parte do sistema operacional.
 
     Para obter mais informações sobre o LBFO, consulte [visão geral do agrupamento NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming) na biblioteca técnica do Windows Server.
@@ -69,7 +70,7 @@ Ao implantar uma rede de área de armazenamento (SAN) com um cluster de failover
     >[!IMPORTANT]
     >As controladoras e o software MPIO podem fazer muita diferenciação de versões. Se você estiver implementando uma solução multipath para o cluster, trabalhe em sintonia com o fornecedor de hardware para escolher os adaptadores, firmware e software corretos para a versão do Windows Server que você está executando.
 
-- **Considere o uso de Espaços de Armazenamento**: Se você planeja implantar o armazenamento em cluster SAS (Serial Attached SCSI) configurado usando espaços de armazenamento, consulte [implantar espaços de armazenamento em cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>) para os requisitos.
+- **Considere o uso de espaços de armazenamento**: se você planeja implantar o armazenamento em cluster SAS (Serial Attached SCSI) configurado usando espaços de armazenamento, consulte [implantar espaços de armazenamento em cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>) para os requisitos.
 
 ## <a name="more-information"></a>Mais informações
 

@@ -1,26 +1,22 @@
 ---
-title: where
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: onde
+description: Tópico de comandos do Windows para Where, que exibe o local dos arquivos que correspondem ao padrão de pesquisa fornecido.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0b3486a5-896b-4d92-84b8-e463a0b76487
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abebe5799075653d2ace1af4eadbdd5d477d97a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b32424622e8a893023aad9365b6aec4a91764fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362163"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829329"
 ---
-# <a name="where"></a>where
+# <a name="where"></a>onde
 
 
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...] 
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -50,7 +46,7 @@ where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...]
 -   Se você não especificar uma extensão de nome de arquivo, as extensões listadas na variável de ambiente PATHEXT serão acrescentadas ao padrão por padrão.
 -   **Onde** o pode executar pesquisas recursivas, exibir informações do arquivo, como data ou tamanho, e aceitar variáveis de ambiente no lugar de caminhos em computadores locais.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para localizar todos os arquivos chamados Test na unidade C do computador atual e seus subdiretórios, digite:
 ```
@@ -65,6 +61,6 @@ Para localizar todos os arquivos chamados notepad na unidade C do computador rem
 where /r \\computer1\c notepad.*
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

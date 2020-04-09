@@ -1,28 +1,22 @@
 ---
 title: comp
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para comp, que compara o conteúdo de dois arquivos ou conjuntos de arquivos byte a byte.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84604cea36b0b4c9543a7169002551c0da4f0493
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f61743b55f38cfdebb17506368609895f48b4f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379262"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847449"
 ---
 # <a name="comp"></a>comp
-
-
 
 Compara o conteúdo de dois arquivos ou conjuntos de arquivos byte a byte. Se usado sem parâmetros, **comp** solicitará que você insira os arquivos a serem comparados.
 
@@ -34,19 +28,19 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |\<data1 >|Especifica o local e o nome do primeiro arquivo ou conjunto de arquivos que você deseja comparar. Você pode usar caracteres curinga ( **&#42;** e **?** ) para especificar vários arquivos.|
 |\<> data2|Especifica o local e o nome do segundo arquivo ou conjunto de arquivos que você deseja comparar. Você pode usar caracteres curinga ( **&#42;** e **?** ) para especificar vários arquivos.|
 |/d|Exibe as diferenças no formato decimal. (O formato padrão é hexadecimal.)|
-|SRDF|Exibe as diferenças como caracteres.|
+|/a|Exibe as diferenças como caracteres.|
 |/l|Exibe o número da linha em que ocorre uma diferença, em vez de exibir o deslocamento de byte.|
 |/n = número de\<>|Compara somente o número de linhas que são especificadas para cada arquivo, mesmo que os arquivos sejam tamanhos diferentes.|
 |/c|Executa uma comparação que não diferencia maiúsculas de minúsculas.|
 |/off [linha]|Processa arquivos com o atributo offline definido.|
-|/?|Exibe a ajuda no prompt de comando.|
+|/?|Exibe a Ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -91,7 +85,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
     Para comparar mais arquivos, pressione Y. O comando **comp** solicita os locais e nomes dos novos arquivos. Para interromper as comparações, pressione N. Quando você pressionar s, o **comp** solicitará as opções de linha de comando a serem usadas. Se você não especificar nenhuma opção de linha de comando, **comp** usará aquelas que você especificou anteriormente.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para comparar o conteúdo do diretório C:\Reports com o diretório de backup \\\\Sales\Backup\April, digite:
 ```
@@ -102,6 +96,6 @@ Para comparar as dez primeiras linhas dos arquivos de texto no diretório \Invoi
 comp \invoice\*.txt \invoice\backup\*.txt /n=10 /d
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

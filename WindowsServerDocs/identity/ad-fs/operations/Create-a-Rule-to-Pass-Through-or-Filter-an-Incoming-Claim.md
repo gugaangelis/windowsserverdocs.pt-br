@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6127963f-71b2-4d8f-8b53-7c525bf06521
 title: Criar uma regra para passar ou filtrar uma declaração de entrada
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 145558e620188c4311d79d2a9ba4ed7aaf7b13a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb885d8b822faf4bd5ee82ad70c59b99678a58e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358145"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816829"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>Criar uma regra para passar ou filtrar uma declaração de entrada
 
-Usando a passagem ou filtrar um modelo de regra de declaração de entrada no Serviços de Federação do Active Directory (AD FS) \(AD FS\), você pode passar todas as declarações de entrada com um tipo de declaração selecionado. Você também pode filtrar os valores de declarações de entrada com um tipo de declaração selecionado. Por exemplo, você pode usar esse modelo de regra para criar uma regra que enviará todas as declarações de grupo de entrada. Você também pode usar essa regra para enviar somente o nome principal do usuário \(declarações de\) UPN que terminam com @fabrikam.  
+Usando a passagem ou filtrar um modelo de regra de declaração de entrada no Serviços de Federação do Active Directory (AD FS) \(AD FS\), você pode passar todas as declarações de entrada com um tipo de declaração selecionado. Você também pode filtrar os valores de declarações de entrada com um tipo de declaração selecionada. Por exemplo, você pode usar este modelo de regra para criar uma regra que envie todas as declarações de grupo de entrada. Você também pode usar essa regra para enviar somente o nome principal do usuário \(declarações de\) UPN que terminam com @fabrikam.  
   
 Você pode usar o procedimento a seguir para criar uma regra de declaração com o snap\-de gerenciamento de AD FS no.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
 
 ## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para criar uma regra para passar ou filtrar uma declaração de entrada em uma relação de confiança de terceira parte confiável no Windows Server 2016 
 

@@ -1,23 +1,19 @@
 ---
 title: Solucionar problemas do Log de Inventário de Software
 description: Descreve como resolver problemas comuns de implantação de log de inventário de software.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 author: brentfor
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: fb6e6fbba835e049748ca8578f24a1ff7fc750bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a02caf63bbd02705aebb8306a7b50a32f3d6c82
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382901"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851409"
 ---
 # <a name="troubleshoot-software-inventory-logging"></a>Solucionar problemas do Log de Inventário de Software 
 
@@ -31,7 +27,7 @@ Antes de iniciar a solução de problemas do SIL, você deve ter uma boa compree
 
 2. [Log de inventário de software: Configurando o agregador SIL (14:34)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Setting-up-SIL-Aggregator)
 
-3. [Log de inventário de software: Habilitando o encaminhamento SIL (7:20)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Enabling-SIL-Forwarding)
+3. [Log de inventário de software: Habilitando o encaminhamento de SIL (7:20)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Enabling-SIL-Forwarding)
 
 ## <a name="how-sil-data-flow-works"></a>Como funciona o fluxo de dados do SIL
 
@@ -54,7 +50,7 @@ Antes de começar, você precisará saber quanto tempo atrás o agregador SIL co
 >[!IMPORTANT]
 >Não haverá dados no relatório até que o cubo de dados SQL seja processado em 3AM hora do sistema local. Não continue com as etapas de solução de problemas até que o cubo processe dados.
 
-Se você estiver solucionando problemas de dados no relatório (ou ausente do relatório) que seja mais recente do que a última vez que o cubo foi processado ou antes que o cubo tenha sido processado (para uma nova instalação), siga estas etapas para processar o cubo de dados SQL em tempo real :
+Se você estiver solucionando problemas de dados no relatório (ou ausente do relatório) que seja mais recente do que a última vez que o cubo foi processado ou antes que o cubo tenha sido processado (para uma nova instalação), siga estas etapas para processar o cubo de dados SQL em tempo real:
 
 1. Faça logon como administrador de SQL Server e execute o **SSMS** em um prompt de comando.
 2. Não é possível conectar-se ao Mecanismo do Banco de Dados.
@@ -69,7 +65,7 @@ Se ainda não houver dados no relatório, continue com a solução de problemas 
 
 #### <a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>Não há dados no relatório ao usar o cmdlet Publish-SilReport (ou os dados geralmente estão ausentes)
 
-Se os dados estiverem ausentes, provavelmente porque o cubo de dados SQL ainda não foi processado. Se ele tiver processado recentemente e você acreditar que os dados ausentes devem ter chegado ao agregador antes do processamento do cubo, siga o caminho dos dados na ordem inversa. Escolha um host exclusivo e uma VM exclusiva para solucionar problemas. O caminho de dados em ordem inversa seria o **Sila Report** &lt; **Sila Database** &lt; **Sila o diretório** &lt; local **Remote host físico** ou **WS VM running Sil agente/tarefa**.
+Se os dados estiverem ausentes, provavelmente porque o cubo de dados SQL ainda não foi processado. Se ele tiver processado recentemente e você acreditar que os dados ausentes devem ter chegado ao agregador antes do processamento do cubo, siga o caminho dos dados na ordem inversa. Escolha um host exclusivo e uma VM exclusiva para solucionar problemas. O caminho de dados em ordem inversa seria o **relatório de SILA** &lt; o **SILA de banco** &lt; **Sila diretório local** &lt; **host físico remoto** ou **WS VM executando o agente/tarefa do Sil**.
 
 #### <a name="check-to-see-if-data-is-in-the-database"></a>Verifique se os dados estão no banco de dado
 
@@ -92,9 +88,9 @@ Há duas maneiras de verificar os dados: **PowerShell** ou **SSMS**.
 
 **Outros comandos relacionados**
 
-**Get &lt;-SilAggregator-ComputerName FQDN de um servidor conhecido enviando dados&gt;por push**: Isso produzirá informações do banco de dados sobre um computador (VM) mesmo antes de o cubo ser processado. Portanto, esse cmdlet pode ser usado para verificar os dados no banco de dado para um Windows Server enviando dados SIL por HTTPS, antes ou sem, o processo de cubo em 3AM (ou se você não tiver atualizado o cubo em tempo real, conforme descrito no início desta seção).
+**Get-SilAggregator-computername &lt;FQDN de um servidor conhecido enviando dados por push&gt;** : isso produzirá informações do banco de dado sobre um computador (VM) mesmo antes de o cubo ser processado. Portanto, esse cmdlet pode ser usado para verificar os dados no banco de dado para um Windows Server enviando dados SIL por HTTPS, antes ou sem, o processo de cubo em 3AM (ou se você não tiver atualizado o cubo em tempo real, conforme descrito no início desta seção).
 
-**Get-SilAggregator-VmHostName &lt;FQDN de um host físico sondado onde há um valor na coluna de sondagem recente ao usar o cmdlet&gt;Get-SilVmHost**: Isso produzirá informações do banco de dados sobre um host físico, mesmo antes de o cubo ser processado.
+**Get-SilAggregator-VmHostName &lt;FQDN de um host físico sondado onde há um valor na coluna de sondagem recente ao usar o cmdlet Get-SilVmHost&gt;** : isso produzirá informações do banco de dados sobre um host físico, mesmo antes de o cubo ter sido processado.
 
 #### <a name="ssms"></a>SSMS
 
@@ -128,7 +124,7 @@ Isso provavelmente ocorrerá em ambientes virtuais quando o agregador SIL não s
 
         -   Você precisará aguardar uma hora depois de adicionar o host para que a sondagem ocorra (supondo que esse intervalo esteja definido como padrão – pode ser verificado usando o cmdlet **Get-silaggregator** ).
 
-        -   Se tiver sido uma hora desde que o host foi adicionado, verifique se a tarefa de sondagem está em execução: Em **Agendador de tarefas**, selecione **agregador de log de inventário de software** no **Microsoft** &gt; **Windows** e verifique o histórico da tarefa.
+        -   Se tiver sido uma hora desde que o host foi adicionado, verifique se a tarefa de sondagem está em execução: em **Agendador de tarefas**, selecione **agregador de log de inventário de Software** em **Microsoft** &gt; **Windows** e verifique o histórico da tarefa.
 
     -   Se um host estiver listado, mas não houver nenhum valor para **RecentPoll**, **HostType**ou **hipervisortype**, isso poderá ser amplamente ignorado. Isso só ocorrerá em ambientes do HyperV. Esses dados são realmente provenientes da VM do Windows Server, identificando o host físico que está sendo executado via HTTPS. Isso pode ser útil para identificar uma VM específica que está sendo relatada, mas requer a mineração do banco de dados usando o cmdlet **Get-SilAggregatorData** .
 
@@ -145,7 +141,7 @@ Depois que os hosts forem sondados corretamente, você poderá ver os dados para
    - Se houver um erro:
      - Verifique se **targetUri** tem **https://** na entrada.
      - Garantir que todos os pré-requisitos sejam atendidos 
-     - Verifique se todas as atualizações necessárias para o Windows Server estão instaladas (consulte pré-requisitos para SIL). Uma maneira rápida de verificar (somente no WS 2012 R2) é procurar por isso usando o seguinte cmdlet: **Get-SilWindowsUpdate \*3060, \*3000**
+     - Verifique se todas as atualizações necessárias para o Windows Server estão instaladas (consulte pré-requisitos para SIL). Uma maneira rápida de verificar (somente no WS 2012 R2) é procurar por isso usando o seguinte cmdlet: **Get-SilWindowsUpdate \*3060 \*3000**
      - Verifique se o certificado que está sendo usado para autenticar com o agregador está instalado no armazenamento correto no servidor local para ser inventariado com **SilLogging**.
      - No agregador SIL, certifique-se de que a impressão digital do certificado que está sendo usada para autenticar com o agregador seja adicionada à lista usando o cmdlet **set-SilAggregator** **– AddCertificateThumbprint** .
      - Se estiver usando certificados corporativos, verifique se o servidor com o SIL habilitado está ingressado no domínio para o qual o certificado foi criado ou se ele é, de outro modo, verificável com uma autoridade raiz. Se um certificado não for confiável no computador local que tenta encaminhar/enviar por push os dados para um Agregador, essa ação falhará com um erro.
@@ -156,7 +152,7 @@ Depois que os hosts forem sondados corretamente, você poderá ver os dados para
 
      -  Por fim, você pode verificar o seguinte local para arquivos SIL armazenados em cache no servidor que está tentando encaminhar/enviar por push, **\Windows\System32\Logfiles\SIL**. Se **SilLogging** tiver começado e estiver em execução por mais de uma hora, ou o **Publish-SilData** tiver sido executado recentemente, e não houver nenhum arquivo nesse diretório, o logon no agregador terá sido bem-sucedido.
 
-Se não houver nenhum erro e nenhuma saída no console, os dados enviados/publicados do nó final do Windows Server para o agregador SIL por HTTPS foram bem-sucedidos. Para seguir o caminho dos dados em direção, faça logon no agregador SIL como administrador e examine os arquivos de dados que chegaram. Acesse o diretório **arquivos de programas (x86)** &gt; **Microsoft Sil Aggregation** &gt; Sila. Você pode ver os arquivos de dados chegando em tempo real.
+Se não houver nenhum erro e nenhuma saída no console, os dados enviados/publicados do nó final do Windows Server para o agregador SIL por HTTPS foram bem-sucedidos. Para seguir o caminho dos dados em direção, faça logon no agregador SIL como administrador e examine os arquivos de dados que chegaram. Vá para **arquivos de programas (x86)** &gt; **agregador do Microsoft Sil** &gt; diretório do Sila. Você pode ver os arquivos de dados chegando em tempo real.
 
 >[!NOTE] 
 >Mais de um arquivo de dados pode ter sido transferido com o cmdlet **Publish-SilData** . SIL no nó final ocorrerá um erro de envio por push de cache por até 30 dias. No próximo Push bem-sucedido, todos os arquivos de dados vão para o agregador para processamento. Dessa forma, um novo agregador SIL poderia mostrar dados de um nó final bem antes de sua própria configuração.

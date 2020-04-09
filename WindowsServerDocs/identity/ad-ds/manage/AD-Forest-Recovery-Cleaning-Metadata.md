@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD-limpando metadados de DCS removidos
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: e7543381-4081-407f-adad-a9de792c6616
 ms.technology: identity-adds
-ms.openlocfilehash: cc41170051e55fbaeca048ac587ecd3351cd53ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b9ba00939ccb2ee747501733fb9654edb4c8132e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369271"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824249"
 ---
 # <a name="ad-forest-recovery---cleaning-metadata-of-removed-writable-domain-controllers"></a>Recuperação de floresta do AD-limpeza de metadados de controladores de domínio graváveis removidos
 
@@ -45,7 +44,7 @@ O procedimento a seguir é o mesmo para DCs que executam o Windows Server 2016, 
 4. Clique em **Sim** para confirmar a exclusão. Selecione o **controlador de domínio está permanentemente offline e não pode mais ser rebaixado usando a caixa de seleção assistente para instalação do Active Directory Domain Services (Dcpromo)** e clique em **excluir**.  
 5. Se o controlador de domínio for um servidor de catálogo global, clique em **Sim** confirmar que a exclusão.  
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
 - [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)

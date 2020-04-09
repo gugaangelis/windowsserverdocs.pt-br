@@ -1,7 +1,6 @@
 ---
 ms.assetid: f3506489-f695-4d7d-b27a-ec714843c002
 title: Apêndice A-inventário de DNS
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 379acf9250d11130f3d11381c62c59c43ba08b40
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 584cbe11a4b36793671a24af41905657709518f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409009"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822879"
 ---
 # <a name="appendix-a-dns-inventory"></a>Apêndice A: Inventário de DNS
 
@@ -24,12 +23,12 @@ Você pode usar as tabelas a seguir para ajudá-lo a documentar o método de res
   
 ## <a name="root-hints"></a>Dicas de raiz  
   
-|Nome|Endereço IPv4|Endereço IPv6|  
+|{1&gt;Nome&lt;1}|Endereço IPv4|Endereço IPv6|  
 |--------|----------------|----------------|  
 ||||  
   
 ## <a name="forwarding"></a>Encaminhamento  
   
-|Nome|Endereço IPv4|Endereço IPv6|Local físico|  
+|{1&gt;Nome&lt;1}|Endereço IPv4|Endereço IPv6|Local físico|  
 |--------|----------------|----------------|---------------------|  
 |||||  

@@ -1,6 +1,6 @@
 ---
 title: cleanmgr
-description: Saiba como usar opções de linha de comando para configurar a ferramenta de limpeza de disco (cleanmgr. exe) para limpar automaticamente determinados arquivos.
+description: Saiba como usar opções de linha de comando para configurar a ferramenta de Limpeza de Disco (cleanmgr.exe) para limpar automaticamente determinados arquivos.
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9abde0cb0db910cd500df94f98c76e6c370cba2a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947582"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847709"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,7 +29,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |      Parâmetro      |    Descrição     |
 | ------------------- | ------------------ |
@@ -41,7 +41,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 | /VERYLOWDISK | Execute com as configurações padrão, sem prompts do usuário. |
 | /?           | Exibir a ajuda. |
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
 As opções para os arquivos que você pode especificar para limpeza de disco usando/sageset e/sagerun incluem:
 

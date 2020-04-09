@@ -1,7 +1,6 @@
 ---
 ms.assetid: ba28bd05-16e6-465f-982b-df49633cfde4
 title: Proteger controladores de domínio contra ataques
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 06/18/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b91164e14f3ae94f6f7d01c62125f45124df0907
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a54e39cd25c0921516146c3f3b583bf4a3dbe467
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367624"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821039"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>Proteger controladores de domínio contra ataques
 
@@ -24,7 +23,7 @@ ms.locfileid: "71367624"
   
 Os controladores de domínio fornecem o armazenamento físico para o banco de dados de AD DS, além de fornecer os serviços e os dados que permitem às empresas gerenciar efetivamente seus servidores, estações de trabalho, usuários e aplicativos. Se o acesso privilegiado a um controlador de domínio for obtido por um usuário mal-intencionado, esse usuário poderá modificar, corromper ou destruir o banco de dados AD DS e, por extensão, todos os sistemas e contas que são gerenciados pelo Active Directory.  
   
-Como os controladores de domínio podem ler e gravar em qualquer coisa no banco de dados AD DS, o comprometimento de um controlador de domínio significa que sua Active Directory floresta nunca poderá ser considerada confiável novamente, a menos que você consiga se recuperar usando um backup bom conhecido e para Feche as lacunas que permitiam o comprometimento no processo.  
+Como os controladores de domínio podem ler e gravar em qualquer coisa no banco de dados AD DS, o comprometimento de um controlador de domínio significa que sua Active Directory floresta nunca pode ser considerada confiável novamente, a menos que você possa recuperar usando um backup válido e fechar as lacunas que permitiam o comprometimento no processo.  
   
 Dependendo da preparação, das ferramentas e das habilidades de um invasor, a modificação ou até mesmo danos irreparáveis ao banco de dados de AD DS podem ser concluídas em minutos a horas, não em dias ou semanas. O que importa não é por quanto tempo um invasor tem acesso privilegiado a Active Directory, mas quanto o invasor planejou durante o momento em que o acesso privilegiado é obtido. Comprometer um controlador de domínio pode fornecer o caminho mais vantajoso para a propagação de acesso em larga escala ou o caminho mais direto para a destruição de servidores membros, estações de trabalho e Active Directory. Por isso, os controladores de domínio devem ser protegidos separadamente e de forma mais restrita do que a infraestrutura geral do Windows.  
 
@@ -40,7 +39,7 @@ Em data centers, os controladores de domínio físicos devem ser instalados em r
   
 #### <a name="virtual-domain-controllers"></a>Controladores de domínio virtual 
 
-Se você implementar controladores de domínio virtual, deverá garantir que os controladores de domínio sejam executados em hosts físicos separados do que outras máquinas virtuais no ambiente. Mesmo que você use uma plataforma de virtualização de terceiros, considere implantar controladores de domínio virtuais no servidor Hyper-V no Windows Server 2012 ou no Windows Server 2008 R2, que fornece uma superfície de ataque mínima e pode ser gerenciado com os controladores de domínio que ele hospeda em vez de serem gerenciados com o restante dos hosts de virtualização. Se você implementar o System Center Virtual Machine Manager (SCVMM) para o gerenciamento de sua infraestrutura de virtualização, poderá delegar a administração para os hosts físicos nos quais as máquinas virtuais do controlador de domínio residem e os controladores de domínio a si mesmos para administradores autorizados. Você também deve considerar a separação do armazenamento de controladores de domínio virtuais para impedir que os administradores de armazenamento acessem os arquivos da máquina virtual.  
+Se você implementar controladores de domínio virtual, deverá garantir que os controladores de domínio sejam executados em hosts físicos separados do que outras máquinas virtuais no ambiente. Mesmo que você use uma plataforma de virtualização de terceiros, considere implantar controladores de domínio virtuais no servidor Hyper-V no Windows Server 2012 ou no Windows Server 2008 R2, que fornece uma superfície de ataque mínima e pode ser gerenciado com os controladores de domínio que ele hospeda, em vez de ser gerenciado com o restante dos hosts de virtualização. Se você implementar o System Center Virtual Machine Manager (SCVMM) para o gerenciamento de sua infraestrutura de virtualização, poderá delegar a administração para os hosts físicos em que as máquinas virtuais do controlador de domínio residem e os próprios controladores de domínio para administradores autorizados. Você também deve considerar a separação do armazenamento de controladores de domínio virtuais para impedir que os administradores de armazenamento acessem os arquivos da máquina virtual.  
   
 ### <a name="branch-locations"></a>Localizações de filiais  
   
@@ -54,7 +53,7 @@ Sempre que possível, você deve executar controladores de domínio virtuais em 
   
 ### <a name="remote-locations-with-limited-space-and-security"></a>Locais remotos com espaço limitado e segurança
 
-Se sua infraestrutura incluir locais em que apenas um único servidor físico pode ser instalado, um servidor capaz de executar cargas de trabalho de virtualização deve ser instalado no local remoto e Criptografia de Unidade de Disco BitLocker deve ser configurado para proteger todos volumes no servidor. Uma máquina virtual no servidor deve executar um RODC, com outros servidores em execução como máquinas virtuais separadas no host. Informações sobre o planejamento da implantação do RODC são fornecidas no [Guia de planejamento e implantação do controlador de domínio somente leitura](https://go.microsoft.com/fwlink/?LinkID=135993). Para obter mais informações sobre como implantar e proteger controladores de domínio virtualizados, consulte [executando controladores de domínio no Hyper-V](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx) no site do TechNet. Para obter diretrizes mais detalhadas para proteger o Hyper-V, delegar o gerenciamento de máquinas virtuais e proteger máquinas virtuais, consulte o [Guia de segurança do Hyper-v](https://www.microsoft.com/download/details.aspx?id=16650) Solution Accelerator no site da Microsoft.  
+Se sua infraestrutura incluir locais em que apenas um único servidor físico pode ser instalado, um servidor capaz de executar cargas de trabalho de virtualização deve ser instalado no local remoto e Criptografia de Unidade de Disco BitLocker deve ser configurado para proteger todos os volumes no servidor. Uma máquina virtual no servidor deve executar um RODC, com outros servidores em execução como máquinas virtuais separadas no host. Informações sobre o planejamento da implantação do RODC são fornecidas no [Guia de planejamento e implantação do controlador de domínio somente leitura](https://go.microsoft.com/fwlink/?LinkID=135993). Para obter mais informações sobre como implantar e proteger controladores de domínio virtualizados, consulte [executando controladores de domínio no Hyper-V](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx) no site do TechNet. Para obter diretrizes mais detalhadas para proteger o Hyper-V, delegar o gerenciamento de máquinas virtuais e proteger máquinas virtuais, consulte o [Guia de segurança do Hyper-v](https://www.microsoft.com/download/details.aspx?id=16650) Solution Accelerator no site da Microsoft.  
   
 ## <a name="domain-controller-operating-systems"></a>Sistemas operacionais do controlador de domínio
 
@@ -82,11 +81,11 @@ Embora possa parecer bem intuitivo, você deve considerar a aplicação de patch
   
 ### <a name="blocking-internet-access-for-domain-controllers"></a>Bloqueando o acesso à Internet para controladores de domínio  
 
-Uma das verificações executadas como parte de uma avaliação de segurança Active Directory é o uso e a configuração do Internet Explorer em controladores de domínio. O Internet Explorer (ou qualquer outro navegador da Web) não deve ser usado em controladores de domínio, mas a análise de milhares de controladores de domínio revelou vários casos em que usuários com privilégios usaram o Internet Explorer para navegar na intranet da organização ou na IP.  
+Uma das verificações executadas como parte de uma avaliação de segurança Active Directory é o uso e a configuração do Internet Explorer em controladores de domínio. O Internet Explorer (ou qualquer outro navegador da Web) não deve ser usado em controladores de domínio, mas a análise de milhares de controladores de domínio revelou vários casos em que os usuários com privilégios usaram o Internet Explorer para navegar pela intranet da organização ou pela Internet.  
   
 Conforme descrito anteriormente na seção "configuração incorreta" de [caminhos para comprometer](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md), navegar na Internet (ou em uma intranet infectada) de um dos computadores mais potentes em uma infraestrutura do Windows usando uma conta altamente privilegiada (que são as únicas contas permitidas para fazer logon localmente em controladores de domínio por padrão) apresenta um risco extraordinário à segurança de uma organização. Seja por meio de uma unidade por download ou por download de "utilitários" infectados por malware, os invasores podem obter acesso a tudo o que precisam para comprometer completamente ou destruir o ambiente de Active Directory.  
   
-Embora o Windows Server 2012, o Windows Server 2008 R2, o Windows Server 2008 e as versões atuais do Internet Explorer ofereçam várias proteções contra downloads mal-intencionados, na maioria dos casos em que os controladores de domínio e contas com privilégios foram usados para Navegue pela Internet, os controladores de domínio estavam executando o Windows Server 2003 ou as proteções oferecidas por sistemas operacionais e navegadores mais recentes foram desabilitadas intencionalmente.  
+Embora o Windows Server 2012, o Windows Server 2008 R2, o Windows Server 2008 e as versões atuais do Internet Explorer ofereçam várias proteções contra downloads mal-intencionados, na maioria dos casos em que os controladores de domínio e contas privilegiadas tinham sido usados para navegar pela Internet, os controladores de domínio estavam executando o Windows Server 2003, ou as proteções oferecidas por sistemas operacionais e navegadores mais recentes foram  
   
 Iniciar navegadores da Web em controladores de domínio deve ser proibido não apenas pela política, mas por controles técnicos e controladores de domínio não devem ter permissão para acessar a Internet. Se os controladores de domínio precisarem ser replicados entre sites, você deverá implementar conexões seguras entre os sites. Embora as instruções de configuração detalhadas estejam fora do escopo deste documento, você pode implementar vários controles para restringir a capacidade dos controladores de domínio de serem usados incorretamente ou que foram configurados de incorretas e, posteriormente, comprometidos.  
   

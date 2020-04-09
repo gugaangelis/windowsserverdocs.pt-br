@@ -2,22 +2,19 @@
 title: Mensagens do WSUS e dicas de solução de problemas
 description: Tópico do Windows Server Update Service (WSUS)-solucionar problemas usando mensagens do WSUS
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948481"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828309"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Mensagens do WSUS e dicas de solução de problemas
 
@@ -25,13 +22,13 @@ ms.locfileid: "75948481"
 
 Este tópico contém informações sobre as seguintes mensagens do WSUS:
 
--   "O computador não relatou o status"
+-   O computador não relatou o status
 
--   "ID da mensagem 6703-falha na sincronização do WSUS"
+-   ID da mensagem 6703-falha na sincronização do WSUS
 
--   "Erro 0x80070643: erro fatal durante a instalação"
+-   Erro 0x80070643: erro fatal durante a instalação
 
--   "Alguns serviços não estão em execução. Verifique os seguintes serviços [...] "
+-   Alguns serviços não estão em execução. Verifique os seguintes serviços [...]
 
 ## <a name="computer-has-not-reported-status"></a>O computador não relatou o status
 Essa mensagem é gerada no console do WSUS quando um computador cliente do WSUS não envia informações ao servidor do WSUS para indicar seu estado de atualização atual. Esse problema é normalmente causado pelo computador cliente do WSUS, não pelo servidor do WSUS.
@@ -90,6 +87,6 @@ Para resolver esse problema, conceda permissões de administrador do sistema a u
     
   - **MSSQLSERver** (se você estiver usando o WMSDE ou o MSDE, ou se estiver usando SQL Server e estiver usando o nome de instância padrão para o nome da instância)
     
-  - **MSSQL $ WSUS** (se você estiver usando um banco de dados SQL Server e tiver nomeado sua instância de banco de dados "WSUS")
+  - **MSSQL $ WSUS** (se você estiver usando um banco de dados SQL Server e tiver nomeado sua instância de banco de dados WSUS)
     
     Clique com o botão direito do mouse no serviço e clique em **Iniciar** se o serviço não estiver em execução ou **reinicie** para atualizar o serviço se ele estiver em execução.

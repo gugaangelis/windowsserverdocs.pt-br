@@ -1,7 +1,6 @@
 ---
 ms.assetid: e3ea1f67-60d4-4566-b24c-37faa95c3b2a
 title: Determinando o custo
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0ce7acddbfa9f7536f3d5a190c6968ea0d8cf6b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1bbc75cab2e78d1001fa13d419072807f202fd61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408879"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822579"
 ---
 # <a name="determining-the-cost"></a>Determinando o custo
 
@@ -24,17 +23,17 @@ Você atribui valores de custo a links de site para favorecer conexões baratas 
   
 Recomendamos que o valor de custo seja definido em todo o site. Geralmente, o custo é baseado não apenas na largura de banda total do link, mas também na disponibilidade, na latência e no custo monetário do link.  
   
-Para determinar os custos a serem colocados em links de site, documente a velocidade de conexão para cada link de site. Consulte a planilha "locais geográficos e links de comunicação" (DSSTOPO_1. doc) em [coleta de informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) para obter informações sobre a velocidade de conexão que você identificou.  
+Para determinar os custos a serem colocados em links de site, documente a velocidade de conexão para cada link de site. Consulte a planilha "locais geográficos e links de comunicação" (DSSTOPO_1. doc) em [coletando informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) para obter informações sobre a velocidade de conexão que você identificou.  
   
 A tabela a seguir lista as velocidades para diferentes tipos de redes.  
   
 |Tipo de rede|Velocidade|  
 |----------------|---------|  
-|Muito lento|56 kilobits por segundo (Kbps)|  
-|Modo Lento|64 Kbps|  
+|Muito lento|56 quilobits por segundo (Kbps)|  
+|Lenta|64 Kbps|  
 |Rede digital de serviços integrados (ISDN)|64 kbps ou 128 kbps|  
 |Frame Relay|Taxa variável, normalmente entre 56 kbps e 1,5 megabits por segundo (Mbps)|  
-|T1|1,5 Mbps|  
+|T1|1.5 Mbps|  
 |T3|45 Mbps|  
 |10Baset|10 Mbps|  
 |Modo de transferência assíncrona (ATM)|Taxa variável, normalmente entre 155 Mbps e 622 Mbps|  

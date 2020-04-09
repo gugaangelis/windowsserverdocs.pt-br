@@ -1,24 +1,20 @@
 ---
 title: gpupdate
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2fd4e567-2ce1-4637-b611-c2f0895e5708
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f73917721fca7b623501b521ad095d40ab98e33
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 23f9bf243210db7c47b9b08bc363f5dfa7815fc9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465410"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842419"
 ---
 # <a name="gpupdate"></a>gpupdate
 
@@ -30,7 +26,7 @@ Atualiza Política de Grupo configurações. Para obter exemplos de como esse co
 gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] [/sync] [/?]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |     Parâmetro     |                                                                                                                                                                                                                                                                                                                             Descrição                                                                                                                                                                                                                                                                                                                             |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,7 +36,7 @@ gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] 
 |      /logoff      |                                                                                                                                   Causa um logoff após a atualização das configurações de Política de Grupo. Isso é necessário para as extensões Política de Grupo do lado do cliente que não processam a política em um ciclo de atualização em segundo plano, mas processam a política quando um usuário faz logon. Os exemplos incluem instalação de software direcionado pelo usuário e redirecionamento de pasta. Essa opção não terá efeito se não houver extensões chamadas que exijam um logoff.                                                                                                                                    |
 |       /boot       |                                                                                                                                       Causa uma reinicialização do computador após a aplicação das configurações de Política de Grupo. Isso é necessário para as extensões Política de Grupo do lado do cliente que não processam a política em um ciclo de atualização em segundo plano, mas processam a política na inicialização do computador. Os exemplos incluem instalação de software destinado a computador. Essa opção não terá efeito se não houver extensões chamadas que exijam uma reinicialização.                                                                                                                                        |
 |       /sync       |                                                                                                                                                                              Faz com que o próximo aplicativo de política de primeiro plano seja executado de forma síncrona. A política de primeiro plano é aplicada na inicialização do computador e no logon do usuário. Você pode especificar isso para o usuário, computador ou ambos, usando o parâmetro **/target** . Os parâmetros **/Force** e **/Wait** serão ignorados se você especificá-los.                                                                                                                                                                               |
-|        /?         |                                                                                                                                                                                                                                                                                                                Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                                                 |
+|        /?         |                                                                                                                                                                                                                                                                                                                Exibe a Ajuda no prompt de comando.                                                                                                                                                                                                                                                                                                                 |
 
 ## <a name="remarks"></a>Comentários
 
@@ -54,7 +50,7 @@ Force uma atualização em segundo plano de todas as configurações de Polític
 gpupdate /force
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
 -   [TechCenter do Política de Grupo](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

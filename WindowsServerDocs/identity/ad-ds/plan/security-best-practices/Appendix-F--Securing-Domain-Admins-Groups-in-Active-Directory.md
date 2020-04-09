@@ -1,7 +1,6 @@
 ---
 ms.assetid: 017b88a6-f29b-4787-99b6-b5c8eaf8c3df
 title: Apêndice F-protegendo grupos de administradores de domínio no Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4f453aa9f076b0272821849840106dae0c52fbbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1df7403b7e50fa50894bb4dbaa0cac9c6f42727
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408692"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821499"
 ---
 # <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>Apêndice F: Proteger grupos de administrador de domínio no Active Directory
 
@@ -159,7 +158,7 @@ Para o grupo Admins. do domínio em cada domínio na floresta:
         > [!IMPORTANT]  
         > Se os servidores de salto forem usados para administrar controladores de domínio e Active Directory, verifique se os servidores de salto estão localizados em uma UO à qual esses GPOs não estão vinculados.  
 
-#### <a name="verification-steps"></a>Etapas de verificação  
+#### <a name="verification-steps"></a>Etapas de Verificação  
 
 ##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>Verificar as configurações de GPO "negar acesso a este computador pela rede"  
 De qualquer servidor membro ou estação de trabalho que não seja afetada pelas alterações de GPO (como um "servidor de salto"), tente acessar um servidor membro ou estação de trabalho na rede que é afetada pelas alterações de GPO. Para verificar as configurações do GPO, tente mapear a unidade do sistema usando o comando **net use** .  
@@ -245,7 +244,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Localize e clique duas vezes em **spooler de impressão**.  
 
-5.  Clique na guia **Fazer Logon**.  
+5.  Clique na guia **Logon**.  
 
 6.  Em **fazer logon como**, selecione a opção **esta conta** .  
 
@@ -271,7 +270,7 @@ De qualquer servidor membro ou estação de trabalho afetada pelas alterações 
 
 4.  Localize e clique duas vezes em **spooler de impressão**.  
 
-5.  Clique na guia **Fazer Logon**.  
+5.  Clique na guia **Logon**.  
 
 6.  Em **fazer logon como**, selecione a conta **sistema local** e clique em **OK**.  
 

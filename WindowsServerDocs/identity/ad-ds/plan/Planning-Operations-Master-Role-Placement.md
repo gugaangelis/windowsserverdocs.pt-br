@@ -1,7 +1,6 @@
 ---
 ms.assetid: bd64a766-5362-4f29-b963-5465c2bb79e7
 title: Planejando posicionamento da função de mestre das operações
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: eb17ed55ba7d7ba23d21162fd41f4022821948fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 990f93d44189a6061653d5e190a176b049a280c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402524"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822099"
 ---
 # <a name="planning-operations-master-role-placement"></a>Planejando posicionamento da função de mestre das operações
 
@@ -52,11 +51,11 @@ Você também deve designar mestres de operações em espera (alternativa) para 
 
 O emulador de PDC processa as alterações de senha do cliente. Somente um controlador de domínio atua como o emulador de PDC em cada domínio na floresta.  
   
-Mesmo se todos os controladores de domínio forem atualizados para o Windows 2000, o Windows Server 2003 e o Windows Server 2008 e o domínio estiver operando no nível funcional nativo do Windows 2000, o emulador de PDC receberá a replicação preferencial de alterações de senha executadas por outros controladores de domínio no domínio. Se uma senha tiver sido alterada recentemente, essa alteração levará tempo para ser replicada para cada controlador de domínio no domínio. Se a autenticação de logon falhar em outro controlador de domínio devido a uma senha inadequada, esse controlador de domínio encaminha a solicitação de autenticação para o emulador de PDC antes de decidir se deseja aceitar ou rejeitar a tentativa de logon.  
+Mesmo se todos os controladores de domínio forem atualizados para o Windows 2000, o Windows Server 2003 e o Windows Server 2008 e o domínio estiver operando no nível funcional nativo do Windows 2000, o emulador PDC receberá a replicação preferencial de alterações de senha executadas por outros controladores de domínio no domínio. Se uma senha tiver sido alterada recentemente, essa alteração levará tempo para ser replicada para cada controlador de domínio no domínio. Se a autenticação de logon falhar em outro controlador de domínio devido a uma senha inadequada, esse controlador de domínio encaminha a solicitação de autenticação para o emulador de PDC antes de decidir se deseja aceitar ou rejeitar a tentativa de logon.  
   
 Coloque o emulador de PDC em um local que contenha um grande número de usuários desse domínio para operações de encaminhamento de senha, se necessário. Além disso, verifique se o local está bem conectado a outros locais para minimizar a latência de replicação.  
   
-Para uma planilha para ajudá-lo a documentar as informações sobre onde você planeja posicionar emuladores de PDC e o número de usuários para cada domínio representado em cada local, consulte ajudas de trabalho para o Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)), baixar trabalho _Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4. doc).  
+Para uma planilha para ajudá-lo a documentar as informações sobre onde você planeja colocar emuladores de PDC e o número de usuários para cada domínio representado em cada local, consulte ajudas de trabalho para o Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4. doc).  
   
 Você precisa consultar as informações sobre os locais nos quais você precisa inserir emuladores de PDC ao implantar domínios regionais. Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).  
   
@@ -83,10 +82,10 @@ Embora essa configuração resulte em uma replicação bem-sucedida entre todos 
 - Os controladores de domínio nos sites C e D não podem adicionar ou remover diretórios, DNS ou partições de aplicativo personalizadas.  
 - Os controladores de domínio nos sites C e D não podem fazer alterações de esquema.  
   
-Para obter uma planilha para ajudá-lo a planejar o posicionamento da função mestre de operações, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir controlador de domínio Posicionamento (DSSTOPO_4. doc).  
+Para obter uma planilha para ajudá-lo a planejar o posicionamento da função mestre de operações, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4. doc).  
   
 Você precisará consultar essas informações ao criar o domínio raiz da floresta e os domínios regionais. Para obter mais informações sobre como implantar o domínio raiz da floresta, consulte Implantando um [domínio raiz da floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx). Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).  
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 Informações adicionais sobre o posicionamento da função FSMO podem ser encontradas no tópico de suporte [posicionamento e otimização do FSMO em controladores de domínio Active Directory](https://support.microsoft.com/help/223346)

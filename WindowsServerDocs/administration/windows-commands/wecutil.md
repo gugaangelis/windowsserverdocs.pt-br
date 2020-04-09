@@ -1,23 +1,19 @@
 ---
 title: wecutil
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para wecutil, que permite criar e gerenciar assinaturas para eventos que são encaminhados de computadores remotos.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: 78005a715a0dbd20124bfb24be27586a8e153310
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2bb397ace7cc99c8b8d6bbed3598346ff2d0801c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362181"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829429"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -39,22 +35,22 @@ wecutil  [{es | enum-subscription}]
 [{qc | quick-config} [/q:[<Quiet>]]].
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |{es \| enum-Subscription}|Exibe os nomes de todas as assinaturas de eventos remotos existentes.|
 |{GS \| Get-Subscription} \<subid > [/f:\<Format >] [/uni:\<Unicode >]|Exibe informações de configuração de assinatura remota. \<subid > é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<subid > é o mesmo que a cadeia de caracteres especificada na marca \<SubscriptionId > do arquivo de configuração XML, que foi usado para criar a assinatura.|
 |{GR \| Get-subscriptionruntimestatus} \<subid > [\<EventSource >...]|Exibe o status de tempo de execução de uma assinatura. \<subid > é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<subid > é o mesmo que a cadeia de caracteres especificada na marca \<SubscriptionId > do arquivo de configuração XML, que foi usado para criar a assinatura. \<EventSource > é uma cadeia de caracteres que identifica um computador que serve como uma fonte de eventos. \<EventSource > deve ser um nome de domínio totalmente qualificado, um nome NetBIOS ou um endereço IP.|
-|{SS \| Set-Subscription} \<subid > [/e: [\<subativada >]] [/ESA:\<endereço >] [/ESE: [\<Srcenabled >]] [/AES] [/res] [/un:\<nome de usuário >] [/up:\<senha >] [/d:\<desc >] [/URI:\<URI >] [/cm:\<ConfigMode >] [/ex:\<expira >] [/q:\<Query >] [/dia:\<dialeto >] [/TN:\<exportname >] [/TP:\<Transportport >] [/DM :\<DeliveryMode >] [/DMI:\<Deliverymax >] [/dmlt:\<deliverytime >] [/Hi:\<pulsação >] [/CF:\<Content >] [/l:\<locale >] [/Ree: [\<Readexist >]] [/LF:\<logfile >] [/PN:\<PublisherName >] [/ESSP:\<Enableport >] [/HN:\<nome_do_host >] [/CT:\<Type >]</br>ou</br>{SS \| Set-Subscription/c:\<ConfigFile > [/cun:\<fileusername >/Cup:\<repassword >]|Altera a configuração da assinatura. Você pode especificar a ID da assinatura e as opções apropriadas para alterar os parâmetros de assinatura ou pode especificar um arquivo de configuração XML para alterar os parâmetros de assinatura.|
+|{SS \| Set-Subscription} \<subid > [/e: [\<subativada >]] [/ESA:\<endereço >] [/ESE: [\<Srcenabled >]] [/AES] [/res] [/un:\<nome de usuário >] [/up:\<senha >] [/d:\<desc >] [/URI:\<URI >] [/cm:\<ConfigMode >] [/ex:\<expira >] [/q:\<> de consulta] [/dia:\<dialeto >] [/TN:\<exportname >] [/TP:\<Transportport >] [/DM:\<DeliveryMode >] [/DMI:\<Deliverymax >] [/dmlt:\<deliverytime >] [/Hi:\<Heartbeat >] [/CF:\<Content >] [/l :\<> de localidade] [/Ree: [\<Readexist >]] [/LF:\<logfile >] [/PN:\<PublisherName >] [/ESSP:\<Enableport >] [/HN:\<nome_do_host >] [/CT:\<Type >]</br>ou</br>{SS \| Set-Subscription/c:\<ConfigFile > [/cun:\<fileusername >/Cup:\<repassword >]|Altera a configuração da assinatura. Você pode especificar a ID da assinatura e as opções apropriadas para alterar os parâmetros de assinatura ou pode especificar um arquivo de configuração XML para alterar os parâmetros de assinatura.|
 |{CS \| criar-assinatura} \<ConfigFile > [/cun:\<nome de usuário >/Cup:\<senha >]|Cria uma assinatura remota. \<ConfigFile > especifica o caminho para o arquivo XML que contém a configuração de assinatura. O caminho pode ser absoluto ou relativo ao diretório atual.|
 |{DS \| excluir-Subscription} \<subid >|Exclui uma assinatura e cancela a assinatura de todas as origens de evento que entregam eventos no log de eventos para a assinatura. Todos os eventos já recebidos e registrados em log não são excluídos. \<subid > é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<subid > é o mesmo que a cadeia de caracteres especificada na marca \<SubscriptionId > do arquivo de configuração XML, que foi usado para criar a assinatura.|
 |{RS \| Retry-Subscription} \<subid > [\<EventSource >...]|Tenta estabelecer uma conexão e enviar uma solicitação de assinatura remota para uma assinatura inativa. Tenta reativar todas as fontes de eventos ou origens de eventos especificadas. As fontes desabilitadas não são repetidas. \<subid > é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<subid > é o mesmo que a cadeia de caracteres especificada na marca \<SubscriptionId > do arquivo de configuração XML, que foi usado para criar a assinatura. \<EventSource > é uma cadeia de caracteres que identifica um computador que serve como uma fonte de eventos. \<EventSource > deve ser um nome de domínio totalmente qualificado, um nome NetBIOS ou um endereço IP.|
 |{QC \| configuração rápida} [/q: [\<Quiet >]]|Configura o serviço coletor de eventos do Windows para garantir que uma assinatura pode ser criada e mantida por meio de reinicializações. Isso inclui as seguintes etapas:</br>1. Habilite o canal ForwardedEvents se ele estiver desabilitado.</br>2. defina o serviço coletor de eventos do Windows para atrasar o início.</br>3. Inicie o serviço coletor de eventos do Windows se ele não estiver em execução.|
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
-|Opção|Descrição|
+|{1&gt;Opção&lt;1}|Descrição|
 |------|-----------|
 |/f: formato de\<>|Especifica o formato das informações exibidas. \<> de formato pode ser XML ou conciso. Se <Format> for XML, a saída será exibida no formato XML. Se \<formato > for conciso, a saída será exibida em pares de nome-valor. O padrão é conciso.|
 |/c:\<ConfigFile >|Especifica o caminho para o arquivo XML que contém uma configuração de assinatura. O caminho pode ser absoluto ou relativo ao diretório atual. Essa opção só pode ser usada com as opções **/cun** e **/Cup** e é mutuamente exclusiva com todas as outras opções.|
@@ -78,7 +74,7 @@ wecutil  [{es | enum-subscription}]
 |/dmlt: > de entrega\<|Define a latência máxima no fornecimento de um lote de eventos. o > de entrega \<é o número de milissegundos. Essa opção só será válida se **/cm** estiver definido como personalizado.|
 |/Hi: > de pulsação de\<|Define o intervalo de pulsação. \<> de pulsação é o número de milissegundos. Essa opção só será válida se **/cm** estiver definido como personalizado.|
 |/CF: > de conteúdo de\<|Especifica o formato dos eventos que são retornados. \<> de conteúdo podem ser eventos ou RenderedText. Quando o valor é RenderedText, os eventos são retornados com as cadeias de caracteres localizadas (como descrição do evento) anexadas ao evento. O valor padrão é RenderedText.|
-|/l:\<> de localidade|Especifica a localidade para entrega das cadeias de caracteres localizadas no formato RenderedText. \<localidade > é um identificador de idioma e país/região, por exemplo, "EN-US". Essa opção só será válida se a opção **/CF** estiver definida como RenderedText.|
+|/l:\<> de localidade|Especifica a localidade para entrega das cadeias de caracteres localizadas no formato RenderedText. \<localidade > é um identificador de idioma e país/região, por exemplo, EN-US. Essa opção só será válida se a opção **/CF** estiver definida como RenderedText.|
 |/Ree: [\<Readexist >]|Identifica os eventos que são entregues para a assinatura. \<Readexist > pode ser true ou false. Quando a <Readexist> for verdadeira, todos os eventos existentes serão lidos das fontes de evento de assinatura. Quando o <Readexist> for false, somente os eventos futuros (chegando) serão entregues. O valor padrão é true para uma opção **/Ree** sem um valor. Se nenhuma opção **/Ree** for especificada, o valor padrão será false.|
 |/LF: > do arquivo de log de\<|Especifica o log de eventos local que é usado para armazenar eventos recebidos das origens do evento.|
 |/PN:\<PublisherName >|Especifica o nome do editor. Ele deve ser um Publicador que possui ou importa o log especificado pela opção **/LF** .|
@@ -96,7 +92,7 @@ wecutil  [{es | enum-subscription}]
 
 - O exemplo a seguir mostra o conteúdo de um arquivo de configuração:  
   ```
-  <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
+  <Subscription xmlns=https://schemas.microsoft.com/2006/03/windows/events/subscription>
   <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
   <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
   <ConfigurationMode>Normal</ConfigurationMode>
@@ -104,30 +100,30 @@ wecutil  [{es | enum-subscription}]
   <SubscriptionId>SampleSubscription</SubscriptionId>
   <Query><![CDATA[
   <QueryList>
-  <Query Path="Application">
+  <Query Path=Application>
   <Select>*</Select>
   </Query>
   </QueryList>
   ]]></Query>
   <EventSources>
-  <EventSource Enabled="true">
+  <EventSource Enabled=true>
   <Address>mySource.myDomain.com</Address>
   <UserName>myUserName</UserName>
   <Password>*</Password>
   </EventSource>
   </EventSources>
   <CredentialsType>Default</CredentialsType>
-  <Locale Language="EN-US"></Locale>
+  <Locale Language=EN-US></Locale>
   </Subscription>
   ```
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Informações de configuração de saída para uma assinatura chamada Sub1:
 ```
 wecutil gs sub1
 ```
-Exemplo de saída:
+Resultado de exemplo:
 ```
 EventSource[0]:
 Address: localhost
@@ -164,6 +160,6 @@ Exclua uma assinatura chamada Sub1:
 wecutil ds sub1
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

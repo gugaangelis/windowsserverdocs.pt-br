@@ -3,17 +3,17 @@ ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: Atualização do firmware da unidade
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: dmoss
+manager: dmoss
 ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 2f0530101bb7d597d2d95c26648aad65d62b69ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365867"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820869"
 ---
 # <a name="updating-drive-firmware"></a>Atualização do firmware da unidade
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows 10

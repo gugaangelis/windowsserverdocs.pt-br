@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: da0f541c34c7f8687822bec365364fdd406fa3c3
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 1d275e0379b5374899437bcf1f0387b304350840
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322688"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827739"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volumes compartilhados de cluster em um cluster de failover
 
@@ -31,7 +32,7 @@ O CSV fornece um sistema de arquivos clusterizado de uso geral, que é colocado 
 
 No Windows Server 2012, a funcionalidade CSV foi significativamente aprimorada. Por exemplo, foram removidas as dependências nos Serviços de Domínio Active Directory. Foi adicionado suporte às melhorias funcionais do **chkdsk** para interoperabilidade com aplicativos antivírus e de backup, além de integração com recursos de armazenamento gerais, como volumes criptografados com o BitLocker e Espaços de Armazenamento. Para obter uma visão geral da funcionalidade CSV introduzida no Windows Server 2012, consulte [novidades no clustering de failover no Windows server 2012 \[\]Redirecionado ](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
-O Windows Server 2012 R2 apresenta funcionalidade adicional, como a propriedade de CSV distribuída, maior resiliência por meio da disponibilidade do serviço de servidor, maior flexibilidade na quantidade de memória física que você pode alocar para o cache CSV, melhor diagnosibility e a interoperabilidade aprimorada que inclui suporte para ReFS e eliminação de duplicação. Para obter mais informações, consulte [novidades no clustering de failover](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
+O Windows Server 2012 R2 apresenta funcionalidade adicional, como propriedade de CSV distribuída, maior resiliência por meio da disponibilidade do serviço de servidor, maior flexibilidade na quantidade de memória física que você pode alocar para o cache CSV, melhor diagnosibility e interoperabilidade aprimorada que inclui suporte para ReFS e eliminação de duplicação. Para obter mais informações, consulte [novidades no clustering de failover](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
 > [!NOTE]
 > Para obter informações sobre o uso de eliminação de duplicação de dados em CSV para cenários de Virtual Desktop Infrastructure (VDI), consulte as postagens de blog [Implantação de eliminação de duplicação de dados para o armazenamento VDI no Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) e [Estendendo a duplicação de dados para novas cargas de trabalho no Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx).
@@ -65,7 +66,7 @@ Para uma visão geral dos requisitos de hardware, rede e armazenamento para os c
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>Sobre a sincronização de E/S e redirecionamento de E/S na comunicação do CSV
 
-- **Sincronização de e/s**: o CSV permite que vários nós tenham acesso de leitura/gravação simultâneo ao mesmo armazenamento compartilhado. Quando um nó realizar uma entrada/saída (E/S) de disco em um volume CSV, o nó se comunicará diretamente com o armazenamento, por meio se uma SAN (rede de área de armazenamento), por exemplo. Contudo, a todo momento, um único nó (chamado nó coordenador) é “dono” do recurso Disco Físico associado ao LUN. O nó coordenador de um volume CSV é exibido no Gerenciador de Cluster de Failover como **Nó do Proprietário**, em **Discos**. Ele também aparece na saída do cmdlet [Get-ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) do Windows PowerShell.
+- **Sincronização de e/s**: o CSV permite que vários nós tenham acesso de leitura/gravação simultâneo ao mesmo armazenamento compartilhado. Quando um nó realizar uma entrada/saída (E/S) de disco em um volume CSV, o nó se comunicará diretamente com o armazenamento, por meio se uma SAN (rede de área de armazenamento), por exemplo. No entanto, a qualquer momento, um único nó (chamado de nó de coordenador) "possui" o recurso de disco físico que está associado ao LUN. O nó coordenador de um volume CSV é exibido no Gerenciador de Cluster de Failover como **Nó do Proprietário**, em **Discos**. Ele também aparece na saída do cmdlet [Get-ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) do Windows PowerShell.
 
   >[!NOTE]
   >No Windows Server 2012 R2, a propriedade CSV é distribuída uniformemente entre os nós de cluster de failover com base no número de volumes CSV que cada nó possui. Além disso, a propriedade é rebalanceada automaticamente em caso de condições, como failover de CSV, um nó reingressar no cluster, adição de um novo nó ao cluster, reinicialização de um nó de cluster ou inicialização do cluster de failover após um desligamento.

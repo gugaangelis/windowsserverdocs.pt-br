@@ -1,7 +1,6 @@
 ---
 ms.assetid: eefcc989-8763-45ee-8a64-3a97b4397160
 title: Operações do AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162477"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815129"
 ---
 # <a name="ad-fs-operations"></a>Operações do AD FS
 
@@ -30,7 +29,7 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [Delegar acesso do Powershell Commandlet do AD FS para usuários não administradores](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
 - [Ajuste fino do SQL e da latência de endereço](../ad-fs/operations/adfs-sql-latency.md)
-- [Grupos de Disponibilidade AlwaysOn](../ad-fs/operations/ad-fs-always-on.md) 
+- [Grupos de disponibilidade AlwaysOn](../ad-fs/operations/ad-fs-always-on.md) 
 
 
 ## <a name="authentication-configuration"></a>Configuração de autenticação
@@ -78,7 +77,7 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Configurar o AD FS para enviar declarações de expiração de senha](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [Configurar a autenticação baseada em formulários de intranet para dispositivos que não são compatíveis com a WIA](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>Outro
+## <a name="other"></a>Outros
 - [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Gerenciar riscos com Autenticação Multifator adicional para aplicativos confidenciais](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [Gerenciar risco com o Controle de Acesso Condicional](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)

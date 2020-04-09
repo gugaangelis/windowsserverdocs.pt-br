@@ -1,7 +1,6 @@
 ---
 ms.assetid: d92731f1-e4d8-4223-9b07-ca1f40bb0e1f
 title: Namespace não contíguo
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5abe67c89ce4c2f4b5056f6197242b5db8db340e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b21e849bb69068f66b1b80c6b1a3afbdef91459f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408853"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822529"
 ---
 # <a name="disjoint-namespace"></a>Namespace não contíguo
 
@@ -27,7 +26,7 @@ Um namespace não contíguo é mais complexo de administrar, manter e solucionar
 ## <a name="support-for-disjoint-namespaces"></a>Suporte para namespaces não contíguos  
 Os computadores membros do domínio, incluindo controladores de domínio, podem funcionar em um namespace não contíguo. Os computadores membros do domínio podem registrar seu registro de recurso de host (A) e o registro de recurso de host (AAAA) do IP versão 6 (IPv6) em um namespace DNS não contíguo. Quando os computadores membros do domínio registram seus registros de recursos dessa forma, os controladores de domínio continuam a registrar os registros de recurso SRV (serviços globais e específicos do site) na zona DNS que é idêntica à Active Directory nome de domínio.  
   
-Por exemplo, suponha que um controlador de domínio para o domínio Active Directory chamado na.corp.fabrikam.com que usa um sufixo DNS primário de corp.fabrikam.com registra os registros de recurso host (A) e IPv6 (AAAA) na zona DNS corp.fabrikam.com. O controlador de domínio continua a registrar registros de recursos de serviço (SRV) globais e específicos do site nas zonas DNS _ msdcs. na. Corp. fabrikam. com e na.corp.fabrikam.com, o que torna possível o local do serviço.  
+Por exemplo, suponha que um controlador de domínio para o domínio Active Directory chamado na.corp.fabrikam.com que usa um sufixo DNS primário de corp.fabrikam.com registra os registros de recurso host (A) e IPv6 (AAAA) na zona DNS corp.fabrikam.com. O controlador de domínio continua a registrar registros de recursos de serviço (SRV) globais e específicos do site nas zonas DNS _msdcs. na. Corp. fabrikam. com e na.corp.fabrikam.com, o que torna possível o local do serviço.  
   
 > [!IMPORTANT]  
 > Embora os sistemas operacionais Windows possam dar suporte a um namespace não contíguo, os aplicativos que são escritos para pressupor que o sufixo DNS primário é o mesmo que o Active Directory sufixo de domínio pode não funcionar nesse ambiente. Por esse motivo, você deve testar todos os aplicativos e seus respectivos sistemas operacionais cuidadosamente antes de implantar um namespace não contíguo.  
@@ -94,7 +93,7 @@ Antes de modificar um namespace, examine as seguintes considerações, que se ap
   
     -   Se você quiser delegar permissões para modificar os SPNs para administradores subordinados, consulte Delegando autoridade para modificar SPNs ([https://go.microsoft.com/fwlink/?LinkId=106639](https://go.microsoft.com/fwlink/?LinkId=106639)).  
   
--   Se você usar o protocolo LDAP (Lightweight Directory Access Protocol) sobre protocolo SSL (SSL) (conhecido como LDAPs) com uma CA em uma implantação que tem controladores de domínio configurados em um namespace não contíguo, deverá usar o nome de domínio Active Directory apropriado e sufixo DNS primário ao configurar os certificados LDAPs.  
+-   Se você usar o protocolo LDAP (Lightweight Directory Access Protocol) sobre protocolo SSL (SSL) (conhecido como LDAPs) com uma CA em uma implantação que tem controladores de domínio configurados em um namespace não contíguo, deverá usar o nome de domínio Active Directory apropriado e o sufixo DNS primário ao configurar os certificados LDAPs.  
   
     Para obter mais informações sobre os requisitos de certificado do controlador de domínio, consulte o artigo 321051 na base de dados de conhecimento Microsoft ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)).  
   

@@ -1,24 +1,20 @@
 ---
 title: wevtutil
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para wevtutil, que permite recuperar informações sobre os logs de eventos e publicadores.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822 vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21f3b721a2a08a7fa101ec09f1f11b5e984f0113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 62be2b14373457a3b114e8d067e1c7aa32b2182d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829349"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -40,7 +36,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 [{cl | clear-log} <Logname> [/bu:<Backup>]] [/r:<Remote>] [/u:<Username>] [/p:<Password>] [/a:<Auth>] [/uni:<Unicode>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -57,9 +53,9 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{Al \| arquivo-log} \<logPath > [/l:\<localidade >]|Arquiva o arquivo de log especificado em um formato autônomo. Um subdiretório com o nome da localidade é criado e todas as informações específicas de localidade são salvas nesse subdiretório. Depois que o diretório e o arquivo de log são criados executando **wevtutil Al**, os eventos no arquivo podem ser lidos se o Publicador estiver instalado ou não.|
 |{CL \| Clear-log} \<LogName > [/BU:\<backup >]|Limpa os eventos do log de eventos especificado. A opção **/Bu** pode ser usada para fazer backup dos eventos limpos.|
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
-|       Opção       |                                                                                                                                                                                                                                                                 Descrição                                                                                                                                                                                                                                                                  |
+|       {1&gt;Opção&lt;1}       |                                                                                                                                                                                                                                                                 Descrição                                                                                                                                                                                                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /f: formato de\<>    |                                                                                                                                                               Especifica que a saída deve ser XML ou formato de texto. Se \<formato > for XML, a saída será exibida no formato XML. Se \<formato > for texto, a saída será exibida sem marcas XML. O padrão é Text.                                                                                                                                                                |
 |   /e:\<habilitado >    |                                                                                                                                                                                                                                         Habilita ou desabilita um log. \<habilitado > pode ser verdadeiro ou falso.                                                                                                                                                                                                                                          |
@@ -87,7 +83,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |   /Bu: > de backup do\<    |                                                                                                                                                                                                      Especifica o caminho para um arquivo em que os eventos limpos serão armazenados. Inclua a extensão. evtx no nome do arquivo de backup.                                                                                                                                                                                                       |
 |    /r:\<> remoto    |                                                                                                                                                                                            Executa o comando em um computador remoto. \<> remoto é o nome do computador remoto. Os parâmetros **im** e **um** não dão suporte à operação remota.                                                                                                                                                                                            |
 |   /u:\<nome de usuário >   |                                                                                                                                                                          Especifica um usuário diferente para fazer logon em um computador remoto. \<username > é um nome de usuário no formato domínio/usuário. Essa opção só é aplicável quando a opção **/r** é especificada.                                                                                                                                                                          |
-|   /p:\<a senha >   |                                                                                                                                               Especifica a senha do usuário. Se a opção **/u** for usada e essa opção não for especificada ou \<a senha > for " *", será solicitado que o usuário insira uma senha. Essa opção só é aplicável quando a opção \*\*/u*\* é especificada.                                                                                                                                                |
+|   /p:\<a senha >   |                                                                                                                                               Especifica a senha do usuário. Se a opção **/u** for usada e essa opção não for especificada ou \<a senha > for *, será solicitado que o usuário insira uma senha. Essa opção só é aplicável quando a opção \*\*/u*\* é especificada.                                                                                                                                                |
 |     /a:\<> de autenticação     |                                                                                                                                                                                             Define o tipo de autenticação para se conectar a um computador remoto. \<> de autenticação podem ser default, Negotiate, Kerberos ou NTLM. O padrão é Negotiate.                                                                                                                                                                                              |
 |  /Uni: > Unicode\<   |                                                                                                                                                                                                             Exibe a saída em Unicode. \<> Unicode pode ser true ou false. Se <Unicode> for true, a saída será em Unicode.                                                                                                                                                                                                             |
 
@@ -97,9 +93,9 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 
     O arquivo de configuração é um arquivo XML com o mesmo formato que a saída de wevtutil GL \<LogName >/f: XML. O exemplo a seguir mostra o formato de um arquivo de configuração que habilita a retenção, habilita o backup e define o tamanho máximo do log no log do aplicativo:  
     ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <channel name="Application" isolation="Application"
-    xmlns="https://schemas.microsoft.com/win/2004/08/events">
+    <?xml version=1.0 encoding=UTF-8?>
+    <channel name=Application isolation=Application
+    xmlns=https://schemas.microsoft.com/win/2004/08/events>
     <logging>
     <retention>true</retention>
     <autoBackup>true</autoBackup>
@@ -110,7 +106,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
     </channel>
     ```
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Listar os nomes de todos os logs:
 ```
@@ -155,4 +151,4 @@ wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 
 #### <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: selecionar vdisk
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8808872a-3523-4205-a6c6-83fa738ee37a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bfa6450d1704cde1e5ff2a50a8e3b61a30d0766
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 65e186413bebbf467cd4c2033d274badd1fbea80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384195"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834739"
 ---
 # <a name="select-vdisk"></a>selecionar vdisk
 
@@ -35,23 +31,23 @@ seleciona o disco rígido virtual especificado \(VHD\) e desloca o foco para ele
 select vdisk file=<full path> [noerr]  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 |Parâmetro|Descrição|  
 |-------|--------|  
 |<full path> de\=de arquivo|Especifica o caminho completo e o nome de arquivo de um arquivo VHD existente.|  
 |NOERR|Usado somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para deslocar o foco para o VHD chamado Test. VHD, digite:  
   
 ```  
-select vdisk file="c:\test\test.vhd"  
+select vdisk file=c:\test\test.vhd  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
   
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 -   [anexar vdisk](attach-vdisk.md)  
   

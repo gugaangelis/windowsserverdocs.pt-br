@@ -1,7 +1,6 @@
 ---
 ms.assetid: e6da5984-d99d-4c34-9c11-4a18cd413f06
 title: Instalar uma réplica de controlador de domínio do Windows Server 2012 em um domínio existente (nível 200)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5e72c18d3aa49774cf73d5365748e7bf20764b22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12068e5a062358463cf208f777144091e1de8257
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390837"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825199"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Instalar uma réplica de controlador de domínio do Windows Server 2012 em um domínio existente (nível 200)
 
@@ -28,22 +27,22 @@ Este tópico aborda as etapas necessárias para atualizar uma floresta ou um dom
   
 -   [Implantação](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Dep)  
   
-## <a name="BKMK_Workflow"></a>Fluxo de trabalho de atualização e réplica  
+## <a name="upgrade-and-replica-workflow"></a><a name="BKMK_Workflow"></a>Fluxo de trabalho de atualização e réplica  
 O diagrama a seguir ilustra o processo de configuração dos Serviços de Domínio Active Directory, quando você instalou anteriormente a função AD DS e iniciou o Assistente de Configuração de Serviços de Domínio Active Directory usando o Gerenciador do Servidor para criar um novo controlador de domínio em um domínio existente.  
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)  
   
-## <a name="BKMK_PS"></a>Atualização e réplica do Windows PowerShell  
+## <a name="upgrade-and-replica-windows-powershell"></a><a name="BKMK_PS"></a>Atualização e réplica do Windows PowerShell  
   
 |||  
 |-|-|  
 |**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-Nome_do_domínio***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-SiteName*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-AllowDomainControllerReinstall*<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-Force<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-SiteName<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-UseExistingAccount*<br /><br />*-WhatIf*|  
+|Install-AddsDomainController|-SkipPreChecks<p>***-Nome_do_domínio***<p>*-SafeModeAdministratorPassword*<p>*-SiteName*<p>*-ADPrepCredential*<p>-ApplicationPartitionsToReplicate<p>*-AllowDomainControllerReinstall*<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-Force<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>-NoDnsOnNetwork<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>-SiteName<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-UseExistingAccount*<p>*-WhatIf*|  
   
 > [!NOTE]  
 > O argumento **-credential** somente é requerido se você ainda não tiver entrado como membro dos grupos Administradores de Empresa e Administradores de Esquema (se você estiver atualizando a floresta) ou o grupo Admins. do Domínio (se você estiver adicionando um novo controlador de domínio a um domínio existente).  
   
-## <a name="BKMK_Dep"></a>Planta  
+## <a name="deployment"></a><a name="BKMK_Dep"></a>Planta  
   
 ### <a name="deployment-configuration"></a>Configuração de Implantação  
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)  
@@ -167,7 +166,7 @@ Para saber se você precisa criar uma delegação de DNS, consulte [Noções bá
   
 A página **Opções Adicionais** fornece a opção de configuração para nomear um controlador de domínio como origem de replicação, ou você pode usar qualquer controlador de domínio como origem de replicação.  
   
-Também é possível optar pela instalação do controlador de domínio usando uma mídia de backup e escolhendo a opção Instalar da mídia (IFM). A caixa de seleção **Instalar da mídia** fornece uma opção de navegação quando selecionada e você deve clicar em **Verificar** para garantir que o caminho fornecido é uma mídia válida. A mídia usada pela opção IFM deve ser criada com o Backup do Windows Server ou com o Ntdsutil.exe somente em outro computador Windows Server 2012 existente; não é possível usar o Windows Server 2008 R2 ou um sistema operacional anterior para criar mídia para um controlador de domínio do Windows Server 2012. Para mais informações sobre as alterações no IFM, consulte [Apêndice de Administração Simplificado](../../ad-ds/deploy/Simplified-Administration-Appendix.md). Se a mídia for protegida por SYSKEY, o Gerenciador do Servidor solicitará a senha da imagem durante a verificação.  
+Também é possível optar pela instalação do controlador de domínio usando uma mídia de backup e escolhendo a opção Instalar da mídia (IFM). A caixa de seleção **Instalar da mídia** fornece uma opção de navegação quando selecionada e você deve clicar em **Verificar** para garantir que o caminho fornecido é uma mídia válida. A mídia usada pela opção IFM deve ser criada com o Backup do Windows Server ou com o Ntdsutil.exe somente em outro computador Windows Server 2012 existente; não é possível usar o Windows Server 2008 R2 ou um sistema operacional anterior para criar mídia para um controlador de domínio do Windows Server 2012. Para mais informações sobre as alterações no IFM, consulte [Apêndice de administração simplificado](../../ad-ds/deploy/Simplified-Administration-Appendix.md). Se a mídia for protegida por SYSKEY, o Gerenciador do Servidor solicitará a senha da imagem durante a verificação.  
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_NtdsutilIFM.png)  
   
@@ -258,7 +257,7 @@ Ao instalar um novo controlador de domínio, o assistente de configuração dos 
   
 A **Verificação de Pré-requisitos** também dá superfície a informações relevantes, como alterações de segurança que afetam os sistemas operacionais mais antigos.  
   
-Para mais informações sobre as verificações de pré-requisitos específicas, consulte [Prerequisite Checking](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking).  
+Para mais informações sobre as verificações de pré-requisitos específicos, consulte [Verificação de pré-requisitos](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking).  
   
 Não é possível ignorar a **Verificação de Pré-requisitos** ao usar o Gerenciador do Servidor, mas você pode ignorar o processo ao usar o cmdlet de Implantação do AD DS com o seguinte argumento:  
   
@@ -317,7 +316,7 @@ Por exemplo:
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)  
   
 > [!NOTE]  
-> Para obter mais informações sobre como a instalação e o processo Adprep funcionam, consulte [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md).  
+> Para mais informações sobre como a instalação e o processo Adprep funcionam, consulte a [Solução de problemas da implantação do controlador de domínio](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md).  
   
 ### <a name="results"></a>Resultados  
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  

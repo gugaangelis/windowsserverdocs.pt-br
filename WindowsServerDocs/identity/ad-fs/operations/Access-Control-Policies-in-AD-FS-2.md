@@ -1,7 +1,5 @@
 ---
-ms.assetid: ''
 title: Políticas de controle de acesso de cliente no Serviços de Federação do Active Directory (AD FS) 2,0
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6ae1f34343e8574ce776fcc5761c078b12bc9977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948604"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814819"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Políticas de controle de acesso de cliente no AD FS 2,0
 As políticas de acesso para cliente no Serviços de Federação do Active Directory (AD FS) 2,0 permitem que você restrinja ou conceda acesso a recursos aos usuários.  Este documento descreve como habilitar as políticas de acesso do cliente no AD FS 2,0 e como configurar os cenários mais comuns.
@@ -141,7 +139,7 @@ O conjunto de regras se baseia na regra de autorização de emissão padrão cha
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Cenário 4: bloquear todo o acesso externo ao Office 365 para grupos de Active Directory designados
 
-O exemplo a seguir habilita o acesso de clientes internos com base no endereço IP. Ele bloqueia o acesso de clientes que residem fora da rede corporativa que têm um endereço IP de cliente externo, exceto aqueles indivíduos em um grupo de Active Directory especificado. o conjunto de regras se baseia na regra de autorização de emissão padrão chamada permitir acesso a Todos os usuários. Use as etapas a seguir para adicionar uma regra de autorização de emissão à Microsoft Office terceira parte confiável da plataforma de identidade 365 usando o assistente de regra de declaração:
+O exemplo a seguir habilita o acesso de clientes internos com base no endereço IP. Ele bloqueia o acesso de clientes que residem fora da rede corporativa que têm um endereço IP de cliente externo, exceto aqueles indivíduos em um grupo de Active Directory especificado. o conjunto de regras se baseia na regra de autorização de emissão padrão chamada permitir acesso a todos os usuários. Use as etapas a seguir para adicionar uma regra de autorização de emissão à Microsoft Office terceira parte confiável da plataforma de identidade 365 usando o assistente de regra de declaração:
 
 #### <a name="to-create-a-rule-to-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Para criar uma regra para bloquear todo o acesso externo ao Office 365 para grupos de Active Directory designados
 
@@ -187,7 +185,7 @@ Um único endereço IP: o endereço IP do cliente que está conectado diretament
 
 Os clientes que estão conectados à rede corporativa por uma VPN ou pelo Microsoft DirectAccess (DA) podem aparecer como clientes corporativos internos ou como clientes externos, dependendo da configuração da VPN ou DA.
 
-Um ou mais endereços IP: quando o Exchange Online não pode determinar o endereço IP do cliente que está se conectando, ele definirá o valor com base no valor do cabeçalho x-Forwarded-for, um cabeçalho não padrão que pode ser incluído em solicitações baseadas em HTTP e é suportado por muitos clientes, balanceadores de carga e proxies no mercado.
+Um ou mais endereços IP: quando o Exchange Online não pode determinar o endereço IP do cliente que está se conectando, ele definirá o valor com base no valor do cabeçalho x-Forwarded-for, um cabeçalho não padrão que pode ser incluído em solicitações baseadas em HTTP e tem suporte de vários clientes, balanceadores de carga e proxies no mercado.
 
 >[!Note]
 >Vários endereços IP, indicando o endereço IP do cliente e o endereço de cada proxy que passou na solicitação, serão separados por uma vírgula.
@@ -195,7 +193,7 @@ Um ou mais endereços IP: quando o Exchange Online não pode determinar o endere
 Os endereços IP relacionados à infraestrutura do Exchange Online não serão exibidos na lista.
 
 
-#### <a name="regular-expressions"></a>Expressões Regulares
+#### <a name="regular-expressions"></a>Expressões regulares
 
 Quando você precisa corresponder a um intervalo de endereços IP, é necessário construir uma expressão regular para executar a comparação. Na próxima série de etapas, forneceremos exemplos de como construir essa expressão para corresponder aos intervalos de endereços a seguir (Observe que você precisará alterar esses exemplos para corresponder ao seu intervalo de IP público):
 
@@ -261,7 +259,7 @@ Para verificar se as novas declarações de contexto de solicitação estão sen
 
 Para habilitar o log de eventos de auditoria para o log de segurança em um AD FS Server, siga as etapas em configurar a auditoria para AD FS 2,0.
 
-### <a name="event-logging"></a>Registro de eventos em log
+### <a name="event-logging"></a>Log de eventos
 
 Por padrão, as solicitações com falha são registradas no log de eventos do aplicativo localizado em logs de aplicativos e serviços \ AD FS 2,0 \ admin. para obter mais informações sobre o log de eventos para AD FS, consulte [configurar AD FS log de eventos 2,0](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx).
 

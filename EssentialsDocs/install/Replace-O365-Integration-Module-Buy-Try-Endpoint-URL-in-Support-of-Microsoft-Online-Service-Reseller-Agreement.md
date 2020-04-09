@@ -1,23 +1,19 @@
 ---
 title: Substituir a URL de ponto de extremidade de compra/teste do módulo de integração O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 11e18d7d61edb0a618fb71791f77c4df84c9d708
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a517fd56c16860b0c3bfeeaf5cac0d4049b9041e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311539"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819869"
 ---
 # <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Substituir a URL de ponto de extremidade de compra/teste do módulo de integração O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft
 

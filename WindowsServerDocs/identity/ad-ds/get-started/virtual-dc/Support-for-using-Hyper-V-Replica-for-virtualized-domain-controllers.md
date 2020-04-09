@@ -1,7 +1,6 @@
 ---
 ms.assetid: 45a65504-70b5-46ea-b2e0-db45263fabaa
 title: Suporte para usar a réplica do Hyper-V para controladores de domínio virtualizados
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 92324ef7c0fab81e80974a1f05eeec4833f09875
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d882fc5a8e519c461e17a7a82c8abfc6c16fbe9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390434"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824499"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>Suporte para usar a réplica do Hyper-V para controladores de domínio virtualizados
 
@@ -24,7 +23,7 @@ Este tópico explica a capacidade de suporte do uso da Réplica do Hyper-V para 
   
 A Réplica do Hyper-V replica de modo assíncrono as VMs escolhidas em um host Hyper-V primário para um host Hyper-V de réplica entre links de LAN (rede local) ou WAN (rede de longa distância). Depois que a replicação inicial é concluída, as alterações seguintes são replicadas a um intervalo definido pelo administrador.  
   
-O failover pode ser planejado ou não planejado. Um failover planejado é iniciado por um administrador na VM primária e todas as alterações não replicadas são copiadas para a VM de réplica para evitar qualquer perda de dados. Um failover não planejado é iniciado na VM de réplica em resposta a uma falha inesperada da VM primária. A perda de dados é possível porque não há oportunidade de transmitir as alterações da VM primária, que podem ainda não ter sido replicadas.  
+O failover pode ser planejado ou não planejado. Um failover planejado é iniciado por um administrador na VM primária, e todas as alterações não replicadas são copiadas na VM de réplica para evitar qualquer perda de dados. Um failover não planejado é iniciado na VM de réplica em resposta a uma falha inesperada da VM primária. A perda de dados é possível porque não há oportunidade de transmitir as alterações da VM primária, que podem ainda não ter sido replicadas.  
   
 Para obter mais informações sobre a réplica do Hyper-V, consulte [visão geral da réplica do Hyper-v](https://technet.microsoft.com/library/jj134172.aspx) e [implantar réplica do Hyper-v](https://technet.microsoft.com/library/jj134207.aspx).  
   
@@ -41,7 +40,7 @@ O Hyper-V do Windows Server 2012 introduziu VM-Generationid (VMGenID). O VMGenID
 Quando ocorre um failover de réplica do Hyper-V (planejado ou não planejado), o DC virtualizado detecta uma redefinição de VMGenID, disparando os recursos de segurança mencionados anteriormente. As operações do Active Directory continuarão normalmente. A VM de réplica será executada no lugar da VM primária.  
   
 > [!NOTE]  
-> Considerando que agora há duas instâncias da mesma identidade de DC, há um potencial para a instância primária e a instância replicada a ser executada. Embora a Réplica do Hyper-V tenha mecanismos de controle estabelecidos para garantir que as VMs primária e de réplica não sejam executadas simultaneamente, isso será possível caso o link entre elas falhe após a replicação da VM. No caso dessa ocorrência improvável, os DCs virtualizados executando o Windows Server 2012 têm garantias para ajudar a proteger o AD DS, enquanto os DCs virtualizados executando versões anteriores do Windows Server não têm.  
+> Como não existirão duas instâncias da mesma identidade de DC, é possível que as instâncias primária e replicada sejam executadas. Embora a Réplica do Hyper-V tenha mecanismos de controle estabelecidos para garantir que as VMs primária e de réplica não sejam executadas simultaneamente, isso será possível caso o link entre elas falhe após a replicação da VM. No caso dessa ocorrência improvável, os DCs virtualizados executando o Windows Server 2012 têm garantias para ajudar a proteger o AD DS, enquanto os DCs virtualizados executando versões anteriores do Windows Server não têm.  
   
 Ao usar a réplica do Hyper-V, certifique-se de seguir as práticas recomendadas para [executar controladores de domínio virtual no Hyper-v](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(v=WS.10).aspx). São discutidas, por exemplo, as recomendações de armazenamento de arquivos do Active Directory em discos SCSI virtuais, o que oferece garantias mais sólidas de durabilidade dos dados.  
   
@@ -62,9 +61,9 @@ A tabela a seguir explica o suporte a DCs virtualizados que executam o Windows S
   
 |||  
 |-|-|  
-|Failover planejado|Failover não planejado|  
-|Suportado|Suportado|  
-|Caso de teste:<br /><br />-DC1 e DC2 estão executando o Windows Server 2012.<br /><br />-DC2 é desligado e um failover é executado em DC2-rec. O failover pode ser planejado ou não planejado.<br /><br />-Depois que DC2-REC é iniciado, ele verifica se o valor de VMGenID que ele tem em seu banco de dados é o mesmo que o valor do driver de máquina virtual salvo pelo servidor de réplica do Hyper-V.<br /><br />-Como resultado, DC2-REC dispara proteções de virtualização; em outras palavras, ele redefine sua invocação, descarta seu pool RID e define um requisito de sincronização inicial antes de assumir uma função de mestre de operações. Para saber mais sobre o requisito de sincronização inicial, confira.<br /><br />-DC2-REC, em seguida, salva o novo valor de VMGenID em seu banco de dados e confirma todas as atualizações subsequentes no contexto da nova invocação.<br /><br />-Como resultado da redefinição de ininvocaid, DC1 convergirá em todas as alterações do AD introduzidas por DC2-REC, mesmo que tenha sido revertida no tempo, o que significa que todas as atualizações do AD executadas no DC2-REC após o failover irão convergir com segurança|O caso de teste é o mesmo do failover planejado, mas com estas exceções:<br /><br />-Quaisquer atualizações do AD recebidas no DC2, mas ainda não foram replicadas pelo AD para um parceiro de replicação antes que o evento de failover seja perdido.<br /><br />-As atualizações do AD recebidas no DC2 após a hora do ponto de recuperação que foram replicadas pelo AD para DC1 serão replicadas de DC1 de volta para DC2-rec.|  
+|Failover planejado|Failover Não Planejado|  
+|Com suporte|Com suporte|  
+|Caso de teste:<p>-DC1 e DC2 estão executando o Windows Server 2012.<p>-DC2 é desligado e um failover é executado em DC2-rec. O failover pode ser planejado ou não planejado.<p>-Depois que DC2-REC é iniciado, ele verifica se o valor de VMGenID que ele tem em seu banco de dados é o mesmo que o valor do driver de máquina virtual salvo pelo servidor de réplica do Hyper-V.<p>-Como resultado, DC2-REC dispara proteções de virtualização; em outras palavras, ele redefine sua invocação, descarta seu pool RID e define um requisito de sincronização inicial antes de assumir uma função de mestre de operações. Para saber mais sobre o requisito de sincronização inicial, confira.<p>-DC2-REC, em seguida, salva o novo valor de VMGenID em seu banco de dados e confirma todas as atualizações subsequentes no contexto da nova invocação.<p>-Como resultado da redefinição de ininvocaid, DC1 convergirá em todas as alterações do AD introduzidas por DC2-REC, mesmo que tenha sido revertida no tempo, o que significa que todas as atualizações do AD executadas no DC2-REC após o failover irão convergir com segurança|O caso de teste é o mesmo do failover planejado, mas com estas exceções:<p>-Quaisquer atualizações do AD recebidas no DC2, mas ainda não foram replicadas pelo AD para um parceiro de replicação antes que o evento de failover seja perdido.<p>-As atualizações do AD recebidas no DC2 após a hora do ponto de recuperação que foram replicadas pelo AD para DC1 serão replicadas de DC1 de volta para DC2-rec.|  
   
 ### <a name="windows-server-2008-r2-and-earlier-versions"></a>Windows Server 2008 R2 e versões anteriores
 
@@ -72,6 +71,6 @@ A tabela a seguir explica o suporte a DCs virtualizados executando o Windows Ser
   
 |||  
 |-|-|  
-|Failover planejado|Failover não planejado|  
-|Com suporte, mas não recomendável, porque os DCs que executam essas versões do Windows Server não dão suporte a VMGenID nem usam garantias de virtualização associadas. Isso os coloca em risco para a reversão de USN. Para obter mais informações, consulte [USN e reversão de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).|Observação sem suporte **:** O failover não planejado teria suporte nos casos em que a reversão de USN não representasse um risco, como um DC individual na floresta (uma configuração que não é recomendada).|  
-|Caso de teste:<br /><br />-DC1 e DC2 estão executando o Windows Server 2008 R2.<br /><br />-DC2 é desligado e um failover planejado é executado em DC2-rec. Todos os dados no DC2 são replicados para o DC2-Rec antes que o desligamento seja concluído.<br /><br />-Depois de DC2-REC ser iniciado, ele retoma a replicação com DC1 usando a mesma invocaid do DC2.|N/D|  
+|Failover planejado|Failover Não Planejado|  
+|Com suporte, mas não recomendável, porque os DCs que executam essas versões do Windows Server não dão suporte a VMGenID nem usam garantias de virtualização associadas. Isso os coloca em risco para a reversão de USN. Para obter mais informações, consulte [USN e reversão de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).|Observação sem suporte **:** o failover não planejado teria suporte quando a reversão de USN não for um risco, como um único controlador de domínio na floresta (uma configuração que não é recomendada).|  
+|Caso de teste:<p>-DC1 e DC2 estão executando o Windows Server 2008 R2.<p>-DC2 é desligado e um failover planejado é executado em DC2-rec. Todos os dados no DC2 são replicados para DC2-REC antes que o desligamento seja concluído.<p>-Depois de DC2-REC ser iniciado, ele retoma a replicação com DC1 usando a mesma invocaid do DC2.|{1&gt;N/A&lt;1}|  

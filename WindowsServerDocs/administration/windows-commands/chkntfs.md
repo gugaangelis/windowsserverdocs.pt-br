@@ -1,28 +1,22 @@
 ---
 title: chkntfs
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para chkntfs, que exibe ou modifica a verificação automática de disco quando o computador é iniciado.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93eca810-8699-4716-8e9d-aecd54f704be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f940fe81f0e7e01495e071931059b2375b78bb22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb04022964b3c315c1003a9746f6551fc281dba3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379348"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847769"
 ---
 # <a name="chkntfs"></a>chkntfs
-
-
 
 Exibe ou modifica a verificação automática de disco quando o computador é iniciado. Se for usado sem opções, o **chkntfs** exibirá o sistema de arquivos do volume especificado. Se a verificação automática de arquivos estiver agendada para execução, o **chkntfs** exibirá se o volume especificado está sujo ou agendado para ser verificado na próxima vez em que o computador for iniciado.
 
@@ -41,18 +35,18 @@ chkntfs [/x <Volume> [...]]
 chkntfs [/c <Volume> [...]]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Volume > [...]|Especifica um ou mais volumes a serem verificados quando o computador for iniciado. Os volumes válidos incluem letras de unidade (seguidas por dois-pontos), pontos de montagem ou nomes de volume.|
+|> de \<volume [...]|Especifica um ou mais volumes a serem verificados quando o computador for iniciado. Os volumes válidos incluem letras de unidade (seguidas por dois-pontos), pontos de montagem ou nomes de volume.|
 |/d|Restaura todas as configurações padrão do **chkntfs** , exceto o tempo de contagem regressiva da verificação automática de arquivos. Por padrão, todos os volumes são verificados quando o computador é iniciado e o **chkdsk** é executado naqueles que estão sujos.|
-|/t [: \<Time >]|Altera o tempo de contagem regressiva inicial do autochk. exe para o período de tempo especificado em segundos. Se você não inserir uma hora, **/t** exibirá o tempo de contagem regressiva atual.|
-|/x \<Volume > [...]|Especifica um ou mais volumes a serem excluídos da verificação quando o computador é iniciado, mesmo que o volume seja marcado como exigindo **chkdsk**.|
-|/c \<Volume > [...]|Agenda um ou mais volumes a serem verificados quando o computador é iniciado e executa o **chkdsk** naqueles que estão sujos.|
+|/t [: tempo de\<>]|Altera o tempo de contagem regressiva inicial do autochk. exe para o período de tempo especificado em segundos. Se você não inserir uma hora, **/t** exibirá o tempo de contagem regressiva atual.|
+|/x \<volume > [...]|Especifica um ou mais volumes a serem excluídos da verificação quando o computador é iniciado, mesmo que o volume seja marcado como exigindo **chkdsk**.|
+|/c \<volume > [...]|Agenda um ou mais volumes a serem verificados quando o computador é iniciado e executa o **chkdsk** naqueles que estão sujos.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para exibir o tipo de sistema de arquivos para a unidade C, digite:
 ```
@@ -95,6 +89,6 @@ chkntfs /x c: d: e:
 chkntfs /c d:
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

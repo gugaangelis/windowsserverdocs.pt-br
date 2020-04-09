@@ -1,7 +1,6 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: Rebaixar controladores de domínio e domínios (nível 200)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: b8c5502f50b065e8c75d0167328868ac129dfad1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588098"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825425"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Rebaixando controladores de domínio e domínios
 
@@ -36,8 +35,8 @@ Este tópico explica como remover o AD DS usando o Gerenciador do Servidor ou o 
 |||  
 |-|-|  
 |**Cmdlets ADDSDeployment e ServerManager**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Uninstall-ADDSDomainController|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
-|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Nome***<br /><br />***-IncludeManagementTools***<br /><br />*-Reiniciar*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
+|Uninstall-ADDSDomainController|-SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-RemoveApplicationPartitions*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata|  
+|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Nome***<p>***-IncludeManagementTools***<p>*-Reiniciar*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd|  
   
 > [!NOTE]  
 > O argumento **-credential** somente é necessário se você ainda não tiver entrado como membro do grupo Administradores de Empresa (rebaixando o último DC em um domínio) ou o grupo Admins. do Domínio (rebaixando um DC de réplica). O argumento **-includemanagementtools** é necessário somente se você também desejar remover todos os utilitários de gerenciamento do AD DS.  
@@ -58,7 +57,7 @@ O Gerenciador do Servidor oferece duas interfaces para remover a função do Ser
 
 Os cmdlets do ServerManager **Uninstall-WindowsFeature** e **Remove-WindowsFeature** impedirão que você remova a função de AD DS até rebaixar o controlador de domínio.
   
-### <a name="server-selection"></a>Seleção de servidor
+### <a name="server-selection"></a>Seleção de Servidor
 
 ![Assistente para remover funções e recursos selecionar servidor de destino](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)  
 
@@ -82,7 +81,7 @@ Desmarque a caixa de seleção **Serviços de Domínio Active Directory** para r
    * Servidor DNS  
    * Console de gerenciamento de política de grupo  
   
-Os cmdlets equivalentes do Windows PowerShell ADDSDeployment e ServerManager são:  
+Os cmdlets equivalentes do ADDSDeployment e ServerManager do Windows PowerShell são:  
   
 ```
 Uninstall-addsdomaincontroller  
@@ -118,7 +117,7 @@ Os argumentos equivalentes de ADDSDeployment do Windows PowerShell são:
 -lastdomaincontrollerindomain <{ $true | false }>  
 ```
 
-### <a name="warnings"></a>Avisos
+### <a name="warnings"></a>Warnings
 
 ![Assistente de configuração de Active Directory Domain Services-impacto das funções FSMO de credenciais](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)  
 

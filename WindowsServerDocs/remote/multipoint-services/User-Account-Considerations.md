@@ -1,34 +1,30 @@
 ---
 title: Considerações sobre conta de usuário
 description: Fornece considerações de conta de usuário, nome de usuário e senha para serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e225900b-cee9-48c9-b21c-394dc5e72b78
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c81d14d46e96d39676e1fb6fa31892e0d5e1b683
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 732100a79adbdd7d9fbe4ade742c43084d6b54f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389263"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820569"
 ---
 # <a name="user-account-considerations"></a>Considerações sobre conta de usuário
-Este tópico descreve os problemas que você, como usuário administrativo, devem considerar à medida que você cria e gerencia contas de usuário. Você gerencia contas de usuário na guia usuários no MultiPoint Manager. Para obter mais informações, consulte o tópico [Gerenciar contas de usuário](Manage-User-Accounts.md).  
+Este tópico descreve problemas que você, como usuário administrativo, deve considerar ao criar e gerenciar contas de usuário. Você gerencia contas de usuário na guia usuários no MultiPoint Manager. Para obter mais informações, consulte o tópico [Gerenciar contas de usuário](Manage-User-Accounts.md).  
   
 ## <a name="user-account-types"></a>Tipos de conta de usuário  
 Uma conta de usuário é uma coleção de informações que informa aos serviços do MultiPoint quais arquivos e pastas um usuário pode acessar, quais alterações eles podem fazer no sistema de serviços do MultiPoint e as preferências de cada usuário, como o plano de fundo da área de trabalho. Cada pessoa acessa sua própria conta de usuário usando um nome de usuário exclusivo e uma senha. Os serviços do MultiPoint dão suporte a três tipos de contas de usuário:  
   
 -   **As contas de usuário administrativo** são para indivíduos que usarão o MultiPoint Manager para usar e gerenciar o sistema de serviços do MultiPoint. Para obter mais informações, consulte [Criar uma conta de usuário administrativo](Create-an-Administrative-User-Account.md).  
   
--   **Contas de usuário padrão** são para aqueles que acessarão regularmente estações, mas não gerenciarão o sistema. Normalmente, você deve criar contas de usuário padrão para a maioria dos usuários de sistema MultiPoint Services. Para obter mais informações, consulte [criar uma conta de usuário padrão](Create-a-Standard-User-Account.md).  
+-   **Contas de usuário padrão** são para aqueles que acessarão regularmente estações, mas não gerenciarão o sistema. Normalmente, você deve criar contas de usuário padrão para a maioria dos usuários de sistema MultiPoint Services. Para obter mais informações, consulte [Criar uma conta de usuário padrão](Create-a-Standard-User-Account.md).  
   
 -   **Contas de usuário do MultiPoint Dashboard** são para aqueles que usam o MultiPoint Dashboard para gerenciar sessões do usuário padrão e que podem fazer logon de qualquer estação. Para obter mais informações, consulte [Criar uma conta de usuário do MultiPoint Dashboard](Create-a-MultiPoint-Dashboard-User-Account.md).  
   

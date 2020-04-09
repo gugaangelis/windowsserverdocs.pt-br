@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8c179884-f0d9-4c7a-973d-820119cf3c38
 title: Criar uma regra para permitir todos os usuários
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1356218c5f9f47073f007286e8acfdf4c3608b73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 894857813115002f3998a9ab5000d57b944fd448
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407625"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816779"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>Criar uma regra para permitir todos os usuários
 
@@ -24,7 +23,7 @@ Você pode usar regras de autorização adicionais para restringir ainda mais o 
   
 Você pode usar os procedimentos a seguir para criar uma regra de declaração com o snap\-de gerenciamento de AD FS no.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477). 
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477). 
 
 ## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>Para criar uma regra para permitir todos os usuários no Windows Server 2016
 

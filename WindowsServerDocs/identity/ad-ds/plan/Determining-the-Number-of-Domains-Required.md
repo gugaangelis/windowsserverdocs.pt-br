@@ -1,7 +1,6 @@
 ---
 ms.assetid: 87bca912-b912-4bbe-9533-2c34a7abc52d
 title: Determinando o número de domínios necessários
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 87214178fdda0cd70c79aed2e46e056deecb6291
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 32093409150e54f30eec5385ea80fc1c30851142
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402607"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822559"
 ---
 # <a name="determining-the-number-of-domains-required"></a>Determinando o número de domínios necessários
 
@@ -129,4 +128,4 @@ Embora o número total de usuários que você pode colocar em um domínio em uma
 
 Depois de dividir sua organização em domínios regionais, documente as regiões que você deseja que sejam representadas e o número de usuários que existirão em cada região. Além disso, observe a velocidade dos links mais lentos em cada região que será usada para Active Directory replicação. Essas informações são usadas para determinar se domínios ou florestas adicionais são necessários.  
 
-Para uma planilha para ajudá-lo a documentar as regiões identificadas, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558) e abra "identificando regiões" (DSSLOGI _4. doc).  
+Para uma planilha para ajudá-lo a documentar as regiões identificadas, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [auxílios de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558) e abra "identificando regiões" (DSSLOGI_4. doc).  

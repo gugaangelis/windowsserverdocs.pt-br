@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6863940d69e30f4984897a7e03369a834da21d1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8227fafc6b29471e2f09db171645012967553429
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376785"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844049"
 ---
 # <a name="fsutil-tiering"></a>Fsutil tiering
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
+>Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
 Habilita o gerenciamento de funções de camada de armazenamento, como a configuração e a desabilitação de sinalizadores e a listagem de camadas.
 
@@ -31,7 +31,7 @@ fsutil tiering [setflags] <volume> <flags>
 fsutil tiering [tierlist] <volume>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------------|---------------|
@@ -79,7 +79,7 @@ fsutil tiering tierlist C:
 
 
 ### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

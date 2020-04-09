@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef63d40c-a262-4a18-938d-b95c10680c0b
-title: Autonomia vs. Isolamento
-description: ''
+title: Autonomia x isolamento
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c3430ae9320ed2d39768d91f768adb3f9ab1c716
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d836804f1de84ed9d10a978876db9cbecc23123
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402647"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822829"
 ---
-# <a name="autonomy-vs-isolation"></a>Autonomia vs. Isolamento
+# <a name="autonomy-vs-isolation"></a>Autonomia x isolamento
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -70,7 +69,7 @@ Os requisitos operacionais ou legais normalmente criam uma necessidade de isolam
 ### <a name="service-autonomy"></a>Autonomia do serviço  
 A autonomia do serviço envolve a capacidade de gerenciar a infraestrutura sem necessidade de controle exclusivo; por exemplo, quando um grupo deseja fazer alterações na infraestrutura (como adicionar ou remover domínios, modificar o namespace do sistema de nomes de domínio (DNS) ou modificar o esquema) sem a aprovação do proprietário da floresta.  
   
-A autonomia do serviço pode ser necessária em uma organização para um grupo que deseja ser capaz de controlar o nível de serviço de AD DS (adicionando e removendo controladores de domínio, conforme necessário) ou para um grupo que precisa ser capaz de instalar aplicativos habilitados para diretório que exigir extensões de esquema.  
+A autonomia do serviço pode ser necessária em uma organização para um grupo que deseja ser capaz de controlar o nível de serviço de AD DS (adicionando e removendo controladores de domínio, conforme necessário) ou para um grupo que precisa ser capaz de instalar aplicativos habilitados para diretório que exigem extensões de esquema.  
   
 ## <a name="limited-connectivity"></a>Conectividade limitada  
 Se um grupo em sua organização possuir redes que são separadas por dispositivos que restringem ou limitam a conectividade entre redes (como firewalls e dispositivos NAT), isso pode afetar o design da floresta. Ao identificar os requisitos de design de sua floresta, lembre-se de anotar os locais em que você tem conectividade de rede limitada. Essas informações são necessárias para permitir que você tome decisões sobre o design da floresta.  

@@ -1,15 +1,15 @@
 ---
 title: Exemplo de código C# gerado para o IPAM de nível superior & objeto de sub-rede
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: ae324b0a376f4fdf55cf09df652893b7894cc73e
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 74096c86fefa82e4cc9dee0d5e6fa981b43d9335
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820949"
 ---
 # <a name="example-of-c-generated-code"></a>Exemplo de código gerado por C# 
 

@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 10f2847fd05658a481a10dfb5a1920a998559962
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2013173978838764b2ff83a8b7cbc35adc485264
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376822"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844089"
 ---
 # <a name="fsutil-resource"></a>Recurso fsutil
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
@@ -44,19 +44,19 @@ fsutil resource [start] <RmRootPathname> [<RmLogPathname> <TmLogPathname>
 fsutil resource [stop] <RmRootPathname>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |        Parâmetro        |                                                                                                                                                                                                                                        Descrição                                                                                                                                                                                                                                         |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         criar          |                                                                                                                                                                                                                    Cria um Gerenciador de recursos transacionais secundário.                                                                                                                                                                                                                     |
 |    <RmRootPathname>     |                                                                                                                                                                                                        Especifica o caminho completo para um diretório raiz do Gerenciador de recursos transacional.                                                                                                                                                                                                         |
-|          info           |                                                                                                                                                                                                            Exibe as informações do Gerenciador de recursos transacionais especificado.                                                                                                                                                                                                            |
-|      setautoreset       | Especifica se um Gerenciador de recursos transacionais padrão limpará os metadados transacionais na próxima montagem.<br /><br />-Defina o parâmetro **setautoreset** como **true** para especificar que o Gerenciador de recursos de transação limpará os metadados transacionais na próxima montagem, por padrão.<br />-Defina o parâmetro **setautoreset** como **false** para especificar que o Gerenciador de recursos de transação não limpará os metadados transacionais na próxima montagem, por padrão. |
+|          informações           |                                                                                                                                                                                                            Exibe as informações do Gerenciador de recursos transacionais especificado.                                                                                                                                                                                                            |
+|      setautoreset       | Especifica se um Gerenciador de recursos transacionais padrão limpará os metadados transacionais na próxima montagem.<p>-Defina o parâmetro **setautoreset** como **true** para especificar que o Gerenciador de recursos de transação limpará os metadados transacionais na próxima montagem, por padrão.<br />-Defina o parâmetro **setautoreset** como **false** para especificar que o Gerenciador de recursos de transação não limpará os metadados transacionais na próxima montagem, por padrão. |
 | <DefaultRmRootPathname> |                                                                                                                                                                                                                       Especifica o nome da unidade seguido por dois-pontos.                                                                                                                                                                                                                        |
 |      setdisponível       |                                                                                                                                                                                                 Especifica que um Gerenciador de recursos transacionais irá preferir a disponibilidade em relação à consistência.                                                                                                                                                                                                 |
 |      setconsistente      |                                                                                                                                                                                                 Especifica que um Gerenciador de recursos transacionais prefere a consistência em relação à disponibilidade.                                                                                                                                                                                                 |
 |         SETLOG          |                                                                                                                                                                                                  Altera as características de um Gerenciador de recursos transacionais que já está em execução.                                                                                                                                                                                                  |
-|         crescimento          |                                                                                                  Especifica a quantidade pela qual o log do Gerenciador de recursos transacionais pode crescer.<br /><br />O parâmetro de crescimento pode ser especificado da seguinte maneira:<br /><br />-Número de contêineres usando o formato: _Contêineres_ **contêineres**<br />-Porcentagem usando o formato: _Percentual_ **percentual**                                                                                                   |
+|         growth          |                                                                                                  Especifica a quantidade pela qual o log do Gerenciador de recursos transacionais pode crescer.<p>O parâmetro de crescimento pode ser especificado da seguinte maneira:<p>-Número**de contêineres** usando o formato _: contêiner contêineres_<br />-Porcentagem usando o formato: _percentual_**de porcentagem**                                                                                                   |
 |      <containers>       |                                                                                                                                                                                                      Especifica os objetos de dados que são usados pelo Gerenciador de recursos transacionais.                                                                                                                                                                                                       |
 |        maxextent        |                                                                                                                                                                                                Especifica o número máximo de contêineres para o Gerenciador de recursos transacionais especificado.                                                                                                                                                                                                |
 |        minextent        |                                                                                                                                                                                                Especifica o número mínimo de contêineres para o Gerenciador de recursos transacionais especificado.                                                                                                                                                                                                |
@@ -67,7 +67,7 @@ fsutil resource [stop] <RmRootPathname>
 |          start          |                                                                                                                                                                                                                    Inicia o Gerenciador de recursos transacionais especificado.                                                                                                                                                                                                                    |
 |          stop           |                                                                                                                                                                                                                    Interrompe o Gerenciador de recursos transacionais especificado.                                                                                                                                                                                                                     |
 
-### <a name="BKMK_examples"></a>Disso
+### <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para definir o log para o Gerenciador de recursos transacionais especificado por c:\test, para ter um aumento automático de cinco contêineres, digite:
 
 ```
@@ -87,7 +87,7 @@ fsutil resource setautoreset true c:\
 ```
 
 ### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

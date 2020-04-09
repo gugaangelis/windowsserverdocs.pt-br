@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
 title: Localizar recursos adicionais para design de estrutura lógica
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 257e78b58962b5a91d1c3845efdd1452a93efdfb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 562f29bb36f5ff0cc0b2260e29cc31189a1dfa36
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402581"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822469"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>Localizar recursos adicionais para design de estrutura lógica
 
@@ -24,7 +23,7 @@ Você pode encontrar recursos adicionais para o design de estrutura lógica na s
   
 - Para obter mais informações sobre como criar a topologia do site, consulte [projetando a topologia do site para o Windows Server 2008 AD DS](Designing-the-Site-Topology.md).  
 
-- Para planilhas para ajudá-lo a documentar a floresta, o domínio, a infraestrutura de DNS (sistema de nomes de domínio) e o design da UO (unidade organizacional) proposto, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de auxílios de trabalho para Kit de implantação do Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)).  
+- Para planilhas para ajudá-lo a documentar a floresta, o domínio, a infraestrutura de DNS (sistema de nomes de domínio) e o design da UO (unidade organizacional) proposto, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de auxílios de trabalho para o Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)).  
   
 - Para obter mais informações sobre autenticação delegada e delegação restrita, consulte Delegando autenticação ([https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614)).  
   
@@ -32,7 +31,7 @@ Você pode encontrar recursos adicionais para o design de estrutura lógica na s
   
 - Para obter mais informações sobre como atualizar domínios de Active Directory para o Windows Server 2008, consulte [atualizando domínios de Active Directory para domínios do Windows server 2008 e do Windows server 2008 R2 AD DS](https://technet.microsoft.com/library/cc731188.aspx).  
   
-- Para obter mais informações sobre como reestruturar AD DS domínios dentro e entre florestas, consulte Active Directory a ferramenta de migração versão 3,1 Guia de migração ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
+- Para obter mais informações sobre como reestruturar AD DS domínios dentro e entre florestas, consulte Active Directory ferramenta de migração versão 3,1 Guia de migração ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
   
 - Para obter mais informações sobre como implantar um domínio raiz de floresta, consulte [implantando um domínio raiz de floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
   
@@ -54,7 +53,7 @@ Você pode encontrar recursos adicionais para o design de estrutura lógica na s
   
 - Para obter mais informações sobre a infraestrutura de Política de Grupo, consulte Projetando uma infraestrutura de Política de Grupo ([https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655)).  
   
-- Para obter mais informações sobre controladores de domínio somente leitura (RODCs), consulte AD DS: Controladores de domínio somente leitura ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)).  
+- Para obter mais informações sobre controladores de domínio somente leitura (RODCs), consulte AD DS: controladores de domínio somente leitura ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)).  
   
 - Para obter mais informações sobre políticas de bloqueio de conta e senha refinadas, consulte o guia passo a passo para configuração de política de bloqueio de conta e senha refinada ([https://go.microsoft.com/fwlink/?LinkID=91477](https://go.microsoft.com/fwlink/?LinkID=91477)).  
   

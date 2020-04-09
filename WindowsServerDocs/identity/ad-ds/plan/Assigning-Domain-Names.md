@@ -1,7 +1,6 @@
 ---
 ms.assetid: 73897497-b189-4305-b234-e057ffda163a
-title: Atribuindo nomes de domínio
-description: ''
+title: Atribuindo nomes de domínios
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 357c136f108c6d8e9e2a15dd9449ab61663079e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d605a2f0d0b98a65848f94be9803122c4492a8b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408990"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822839"
 ---
-# <a name="assigning-domain-names"></a>Atribuindo nomes de domínio
+# <a name="assigning-domain-names"></a>Atribuindo nomes de domínios
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Você deve atribuir um nome a cada domínio em seu plano. Os domínios Active Directory Domain Services (AD DS) têm dois tipos de nomes: Nomes de DNS (sistema de nomes de domínio) e nomes NetBIOS. Em geral, os dois nomes são visíveis para os usuários finais. Os nomes DNS de domínios de Active Directory incluem duas partes, um prefixo e um sufixo. Ao criar nomes de domínio, primeiro determine o prefixo DNS. Esse é o primeiro rótulo no nome DNS do domínio. O sufixo é determinado quando você seleciona o nome do domínio raiz da floresta. A tabela a seguir lista as regras de nomenclatura de prefixo para nomes DNS.  
+Você deve atribuir um nome a cada domínio em seu plano. Os domínios Active Directory Domain Services (AD DS) têm dois tipos de nomes: nomes DNS (sistema de nomes de domínio) e nomes NetBIOS. Em geral, os dois nomes são visíveis para os usuários finais. Os nomes DNS de domínios de Active Directory incluem duas partes, um prefixo e um sufixo. Ao criar nomes de domínio, primeiro determine o prefixo DNS. Esse é o primeiro rótulo no nome DNS do domínio. O sufixo é determinado quando você seleciona o nome do domínio raiz da floresta. A tabela a seguir lista as regras de nomenclatura de prefixo para nomes DNS.  
   
 |Regra|Explicação|  
 |--------|---------------|  
@@ -31,7 +30,7 @@ Você deve atribuir um nome a cada domínio em seu plano. Os domínios Active Di
 Para obter mais informações, consulte Convenções de nomenclatura no Active Directory para computadores, domínios, sites e UOs ([https://go.microsoft.com/fwlink/?LinkId=106629](https://go.microsoft.com/fwlink/?LinkId=106629)).  
   
 > [!NOTE]  
->  Embora o Dcpromo.exe no Windows Server 2008 e no Windows Server 2003 permita que você crie um nome de domínio do DNS de rótulo único, você não deve usar um nome DNS de rótulo único para um domínio por vários motivos. No Windows Server 2008 R2, o Dcpromo.exe não permite que você crie um nome DNS de rótulo único para um domínio. Para obter mais informações, consulte [https://go.microsoft.com/fwlink/?LinkId=92467.](https://go.microsoft.com/fwlink/?LinkId=92467)   
+>  Embora o Dcpromo.exe no Windows Server 2008 e no Windows Server 2003 permita a criação de um nome de domínio DNS de rótulo único, você não deve usar um nome DNS de rótulo único para um domínio por vários motivos. No Windows Server 2008 R2, Dcpromo.exe não permite que você crie um nome DNS de rótulo único para um domínio. Para obter mais informações, consulte [https://go.microsoft.com/fwlink/?LinkId=92467.](https://go.microsoft.com/fwlink/?LinkId=92467)   
   
 Se o nome NetBIOS atual do domínio for inadequado para representar a região ou não atender às regras de nomenclatura de prefixo, selecione um novo prefixo. Nesse caso, o nome NetBIOS do domínio é diferente do prefixo DNS do domínio.  
   

@@ -1,24 +1,20 @@
 ---
 title: doskey
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d45a2ddfeba7ec136add07eac11c3a8522ef872b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 72a5a362a225f57245a015de43a7538928c0937e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377692"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845259"
 ---
 # <a name="doskey"></a>doskey
 
@@ -34,7 +30,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/insert | /overstrike] [/exename=<ExeName>] [/macrofile=<FileName>] [<MacroName>=[<Text>]]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |       Parâmetro        |                                                                                                                          Descrição                                                                                                                           |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -64,8 +60,8 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   |------------|-----------------------------------------------------------------------|
   |  SETA PARA CIMA  |  Recupera o comando que você usou antes do que é exibido.  |
   | SETA PARA BAIXO |  Recupera o comando que você usou após aquele que é exibido.   |
-  |  PÁGINA ACIMA   |    Recupera o primeiro comando que você usou na sessão atual.    |
-  | PAGE DOWN  | Recupera o comando mais recente que você usou na sessão atual. |
+  |  {1&gt;PAGE UP&lt;1}   |    Recupera o primeiro comando que você usou na sessão atual.    |
+  | {1&gt;PAGE DOWN&lt;1}  | Recupera o comando mais recente que você usou na sessão atual. |
 
 
 - Editando a linha de comando
@@ -80,19 +76,19 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   |      SETA PARA A DIREITA       |                                                                                                                                    Move o ponto de inserção para frente um caractere.                                                                                                                                     |
   |    CTRL + SETA PARA A ESQUERDA     |                                                                                                                                        Move o ponto de inserção de volta uma palavra.                                                                                                                                         |
   |    CTRL + SETA PARA A DIREITA    |                                                                                                                                       Move o ponto de inserção para frente uma palavra.                                                                                                                                       |
-  |          PÁGINA INICIAL          |                                                                                                                                 Move o ponto de inserção para o início da linha.                                                                                                                                 |
-  |          COMPLETO           |                                                                                                                                    Move o ponto de inserção para o fim da linha.                                                                                                                                    |
-  |          ESC           |                                                                                                                                          Limpa o comando da exibição.                                                                                                                                           |
-  |           F1           |                                                                      Copia um caractere de uma coluna no modelo para a mesma coluna na janela de prompt de comando. (O modelo é um buffer de memória que contém o último comando digitado.)                                                                       |
-  |           F2           |                                                                 Pesquisa adiante no modelo para a próxima chave que você digitar depois de pressionar F2. O Doskey. exe insere o texto do modelo — até, mas não incluindo, o caractere que você especificar.                                                                  |
-  |           F3           |                                                 Copia o restante do modelo para a linha de comando. O Doskey. exe começa a copiar os caracteres da posição no modelo que corresponde à posição indicada pelo ponto de inserção na linha de comando.                                                 |
-  |           F4           |                                                                            Exclui todos os caracteres da posição do ponto de inserção atual até, mas não incluindo, a próxima ocorrência do caractere que você digitar depois de pressionar F4.                                                                            |
-  |           F5           |                                                                                                                                   Copia o modelo para a linha de comando atual.                                                                                                                                    |
-  |           F6           |                                                                                                                    Coloca um caractere de fim de arquivo (CTRL + Z) na posição atual do ponto de inserção.                                                                                                                    |
-  |           F7           | Exibe (em uma caixa de diálogo) todos os comandos para esse programa que são armazenados na memória. Use a tecla de seta para cima e a tecla de seta para baixo para selecionar o comando desejado e pressione ENTER para executar o comando. Você também pode observar o número sequencial na frente do comando e usar esse número em conjunto com a tecla F9. |
+  |          INÍCIO          |                                                                                                                                 Move o ponto de inserção para o início da linha.                                                                                                                                 |
+  |          END           |                                                                                                                                    Move o ponto de inserção para o fim da linha.                                                                                                                                    |
+  |          {1&gt;ESC&lt;1}           |                                                                                                                                          Limpa o comando da exibição.                                                                                                                                           |
+  |           {1&gt;F1&lt;1}           |                                                                      Copia um caractere de uma coluna no modelo para a mesma coluna na janela de prompt de comando. (O modelo é um buffer de memória que contém o último comando digitado.)                                                                       |
+  |           {1&gt;F2&lt;1}           |                                                                 Pesquisa adiante no modelo para a próxima chave que você digitar depois de pressionar F2. O Doskey. exe insere o texto do modelo — até, mas não incluindo, o caractere que você especificar.                                                                  |
+  |           {1&gt;F3&lt;1}           |                                                 Copia o restante do modelo para a linha de comando. O Doskey. exe começa a copiar os caracteres da posição no modelo que corresponde à posição indicada pelo ponto de inserção na linha de comando.                                                 |
+  |           {1&gt;F4&lt;1}           |                                                                            Exclui todos os caracteres da posição do ponto de inserção atual até, mas não incluindo, a próxima ocorrência do caractere que você digitar depois de pressionar F4.                                                                            |
+  |           {1&gt;F5&lt;1}           |                                                                                                                                   Copia o modelo para a linha de comando atual.                                                                                                                                    |
+  |           {1&gt;F6&lt;1}           |                                                                                                                    Coloca um caractere de fim de arquivo (CTRL + Z) na posição atual do ponto de inserção.                                                                                                                    |
+  |           {1&gt;F7&lt;1}           | Exibe (em uma caixa de diálogo) todos os comandos para esse programa que são armazenados na memória. Use a tecla de seta para cima e a tecla de seta para baixo para selecionar o comando desejado e pressione ENTER para executar o comando. Você também pode observar o número sequencial na frente do comando e usar esse número em conjunto com a tecla F9. |
   |         ALT + F7         |                                                                                                                          Exclui todos os comandos armazenados na memória para o buffer de histórico atual.                                                                                                                          |
-  |           F8           |                                                                                                           Exibe todos os comandos no buffer de histórico que começam com os caracteres no comando atual.                                                                                                            |
-  |           F9           |                                             Solicita um número de comando de buffer de histórico e, em seguida, exibe o comando associado ao número que você especificar. Pressione ENTER para executar o comando. Para exibir todos os números e seus comandos associados, pressione F7.                                             |
+  |           {1&gt;F8&lt;1}           |                                                                                                           Exibe todos os comandos no buffer de histórico que começam com os caracteres no comando atual.                                                                                                            |
+  |           {1&gt;F9&lt;1}           |                                             Solicita um número de comando de buffer de histórico e, em seguida, exibe o comando associado ao número que você especificar. Pressione ENTER para executar o comando. Para exibir todos os números e seus comandos associados, pressione F7.                                             |
   |        ALT + F10         |                                                                                                                                             Exclui todas as definições de macro.                                                                                                                                              |
 
 
@@ -143,7 +139,7 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   doskey <MacroName> =
   ```
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 As opções de linha de comando **/macros** e **/history** são úteis para criar programas em lotes para salvar macros e comandos. Por exemplo, para armazenar todas as macros atuais do **doskey** , digite:
 ```
@@ -196,6 +192,6 @@ Para excluir uma macro chamada Vlist, digite:
 doskey vlist =
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

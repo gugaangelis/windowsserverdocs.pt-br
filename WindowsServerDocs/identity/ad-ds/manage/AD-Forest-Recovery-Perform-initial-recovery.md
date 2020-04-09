@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD-executar recuperação inicial
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: a369347fe889c7f6675d0091d05a6dee93cb4434
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7d592198187d44927f643b45e7a8bb4c2eec2a69
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369069"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823899"
 ---
 # <a name="perform-initial-recovery"></a>Executar recuperação inicial  
 
@@ -53,11 +52,11 @@ Em seguida, execute as etapas a seguir. Os procedimentos para executar determina
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl executar sincronizações iniciais**  
   
-      Crie a entrada com o tipo de dados **REG_DWORD** e um valor de **0**. Depois que a floresta é recuperada completamente, você pode redefinir o valor dessa entrada como **1**, que requer um controlador de domínio que reinicie e mantenha as funções de mestre de operações para ter êxito AD DS a replicação de entrada e de saída com sua réplica conhecida os parceiros antes de se anunciam como controlador de domínio e começam a fornecer serviços aos clientes. Para obter mais informações sobre os requisitos de sincronização inicial, consulte o artigo [305476](https://support.microsoft.com/kb/305476)do KB. 
+      Crie a entrada com o tipo de dados **REG_DWORD** e um valor de **0**. Depois que a floresta é recuperada completamente, você pode redefinir o valor dessa entrada como **1**, que requer um controlador de domínio que reinicie e mantenha as funções de mestre de operações para ter êxito AD DS a replicação de entrada e saída com seus parceiros de réplica conhecidos antes que ele se anuncie como controlador de domínio e comece a fornecer serviços aos clientes. Para obter mais informações sobre os requisitos de sincronização inicial, consulte o artigo [305476](https://support.microsoft.com/kb/305476)do KB. 
   
       Continue para as próximas etapas somente depois de restaurar e verificar os dados e antes de ingressar este computador na rede de produção. 
   
-4. Se você suspeitar que a falha em toda a floresta estava relacionada à invasão de rede ou a ataques mal-intencionados, redefina as senhas da conta para todas as contas administrativas, incluindo membros dos administradores corporativos, administradores de domínio, administradores de esquema, operadores de servidor, conta Grupos de operadores e assim por diante. A redefinição de senhas de conta administrativa deve ser concluída antes que os controladores de domínio adicionais sejam instalados durante a próxima fase da recuperação de floresta. 
+4. Se você suspeitar que a falha em toda a floresta estava relacionada à invasão de rede ou a um ataque mal-intencionado, redefina as senhas da conta para todas as contas administrativas, incluindo membros dos administradores corporativos, administradores de domínio, administradores de esquema, operadores de servidor, grupos de operadores de contas e assim por diante. A redefinição de senhas de conta administrativa deve ser concluída antes que os controladores de domínio adicionais sejam instalados durante a próxima fase da recuperação de floresta. 
 5. No primeiro DC restaurado no domínio raiz da floresta, capture todas as funções de mestre de operações de todo o domínio e de toda a floresta. As credenciais de administradores de empresa e administradores de esquema são necessárias para executar funções de mestre de operações em toda a floresta. 
   
      Em cada domínio filho, execute funções de mestre de operações em todo o domínio. Embora você possa reter as funções de mestre de operações no controlador de domínio restaurado apenas temporariamente, a captura dessas funções garante que o DC as hospede nesse ponto no processo de recuperação de floresta. Como parte do processo de pós-recuperação, você pode redistribuir as funções de mestre de operações conforme necessário. Para obter mais informações sobre como capturar funções de mestre de operações, consulte [capturando uma função de mestre de operações](AD-forest-recovery-seizing-operations-master-role.md). Para obter recomendações sobre onde posicionar as funções de mestre de operações, consulte [o que são mestres de operações?](https://technet.microsoft.com/library/cc779716.aspx). 
@@ -77,7 +76,7 @@ Em seguida, execute as etapas a seguir. Os procedimentos para executar determina
   
      Em cada domínio filho, configure o DC restaurado com o endereço IP do primeiro servidor DNS no domínio raiz da floresta como seu servidor DNS preferencial. Você pode definir essa configuração nas propriedades de TCP/IP do adaptador de LAN. Para obter mais informações, consulte [Configurar TCP/IP para usar o DNS](https://technet.microsoft.com/library/cc779282\(WS.10\).aspx). 
   
-     Nas zonas _ msdcs e DNS do domínio, exclua os registros NS de DCs que não existem mais após a limpeza de metadados. Verifique se os registros SRV dos DCs limpos foram removidos. Para ajudar a acelerar a remoção do registro SRV do DNS, execute:  
+     Nas zonas DNS de _msdcs e domínio, exclua os registros NS de DCs que não existem mais após a limpeza de metadados. Verifique se os registros SRV dos DCs limpos foram removidos. Para ajudar a acelerar a remoção do registro SRV do DNS, execute:  
   
     ```  
     nltest.exe /dsderegdns:server.domain.tld  
@@ -111,7 +110,7 @@ Em seguida, execute as etapas a seguir. Os procedimentos para executar determina
   
      Um segundo problema é que uma conta de usuário que não existe mais pode ainda aparecer na lista de endereços global. Um terceiro problema é que um grupo universal que não existe mais ainda pode aparecer no token de acesso de um usuário. 
   
-     Se você tiver restaurado um controlador de domínio que era um catálogo global, seja inadvertidamente ou porque esse era o backup solitários confiável, recomendamos que você impeça a ocorrência de objetos remanescentes desabilitando o catálogo global logo após a operação de restauração concluí. Desabilitar o sinalizador de catálogo global fará com que o computador perca todas as suas réplicas parciais (partições) e se reabilite para o status normal do DC. 
+     Se você tiver restaurado um controlador de domínio que era um catálogo global, seja inadvertidamente ou porque esse era o backup solitários confiável, recomendamos que você impeça a ocorrência de objetos remanescentes desabilitando o catálogo global logo após a conclusão da operação de restauração. Desabilitar o sinalizador de catálogo global fará com que o computador perca todas as suas réplicas parciais (partições) e se reabilite para o status normal do DC. 
   
 13. Configure o serviço de tempo do Windows. No domínio raiz da floresta, configure o emulador do PDC para sincronizar a hora de uma fonte de tempo externa. Para obter mais informações, consulte [Configurar o serviço de tempo do Windows no emulador do PDC no domínio raiz da floresta](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29). 
   
@@ -126,7 +125,7 @@ Após a validação, ingresse os controladores de domínio na rede de produção
 
 - Para corrigir a resolução de nomes, crie registros de delegação de DNS e configure as dicas de encaminhamento e raiz de DNS conforme necessário. Execute **repadmin/replsum** para verificar a replicação entre os DCS. 
 - Se os controladores de domínio restaurados não forem parceiros de replicação direta, a recuperação de replicação será muito mais rápida criando objetos de conexão temporários entre eles. 
-- Para validar a limpeza de metadados, execute **repadmin/viewlist \\** * para obter uma lista de todos os DCS na floresta. Execute **nltest/DCList:** *< domínio\>*  para obter uma lista de todos os DCS no domínio. 
+- Para validar a limpeza de metadados, execute **repadmin/viewlist \\** * para obter uma lista de todos os DCS na floresta. Execute **nltest/DCList:** *<\>de domínio* para obter uma lista de todos os DCS no domínio. 
 - Para verificar a integridade do DC e do DNS, execute DCDiag/v para relatar erros em todos os DCs na floresta. 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>Adicionar o catálogo global a um controlador de domínio no domínio raiz da floresta
@@ -149,7 +148,7 @@ Para obter mais informações, consulte [adicionando o catálogo global](AD-Fore
   
 Nesse estágio, você deve ter uma floresta estável, com um DC para cada domínio e um catálogo global na floresta. Você deve fazer um novo backup de cada um dos DCs que acabou de restaurar. Agora você pode começar a reimplantar outros controladores de domínio na floresta instalando AD DS. 
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

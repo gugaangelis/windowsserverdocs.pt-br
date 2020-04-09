@@ -1,24 +1,20 @@
 ---
 title: ver
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para ver, que exibe o número de versão do sistema operacional.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5a9c6cd4-b67d-4b30-8c56-5f9798eafd2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e48b3b1061edf793c88693b3353753c6a4cedcfc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d0d0676dcfa6546e4bbf74c4c58a24f51744d00f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362716"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830189"
 ---
 # <a name="ver"></a>ver
 
@@ -36,13 +32,13 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 ver
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para obter o número de versão do sistema operacional do Shell de comando (cmd. exe), digite:
 
@@ -57,6 +53,6 @@ $PSVersionTable.BuildVersion
 ````
 
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -1,30 +1,26 @@
 ---
 title: diskcomp
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para diskcomp, que compara o conteúdo de dois disquetes.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca5ea0f4587b21b2a274c772aab239668b7868b4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377874"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845549"
 ---
 # <a name="diskcomp"></a>diskcomp
 
+Compara o conteúdo de dois disquetes. Se usado sem parâmetros, **diskcomp** usará a unidade atual para comparar ambos os discos.
 
-
-Compara o conteúdo de dois disquetes. Se usado sem parâmetros, **diskcomp** usará a unidade atual para comparar ambos os discos. Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,12 +28,12 @@ Compara o conteúdo de dois disquetes. Se usado sem parâmetros, **diskcomp** us
 diskcomp [<Drive1>: [<Drive2>:]]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Drive1 >|Especifica a unidade que contém um dos disquetes.|
-|\<Drive2 >|Especifica a unidade que contém o outro disquete.|
+|\<unidade1 >|Especifica a unidade que contém um dos disquetes.|
+|\<unidade2 >|Especifica a unidade que contém o outro disquete.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -107,7 +103,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   Para processar códigos de saída retornados por **diskcomp**, você pode usar a variável de ambiente ERRORLEVEL na linha de comando **If** em um programa em lotes.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Se o computador tiver apenas uma unidade de disquete (por exemplo, unidade A) e você quiser comparar dois discos, digite:
 ```
@@ -131,7 +127,7 @@ goto exit
 echo ERROR: An irrecoverable error occurred 
 goto exit 
 :break 
-echo "You just pressed CTRL+C" to stop the comparison 
+echo You just pressed CTRL+C to stop the comparison 
 goto exit 
 :no_compare 
 echo Disks are not the same 
@@ -142,6 +138,6 @@ goto exit
 :exit
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

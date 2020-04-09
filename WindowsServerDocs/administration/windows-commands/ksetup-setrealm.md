@@ -1,24 +1,20 @@
 ---
 title: 'ksetup: setreale'
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ab268c40-276b-46ef-ab16-d5ce7667fbed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bbe5c000b7e84066c19511639fe3d92d7e4b558
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: acdbfaabe341c8efb19c6e9d183022375f679de7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374905"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841309"
 ---
 # <a name="ksetupsetrealm"></a>ksetup: setreale
 
@@ -32,11 +28,11 @@ Define o nome de um realm Kerberos. Para obter exemplos de como esse comando pod
 ksetup /setrealm <DNSDomainName>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<DNSDomainName >|O nome de domínio DNS pode estar na forma de um nome de domínio totalmente qualificado ou um nome de domínio simples.|
+|> \<NomeDomínioDNS|O nome de domínio DNS pode estar na forma de um nome de domínio totalmente qualificado ou um nome de domínio simples.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -44,15 +40,15 @@ O parâmetro de nome de domínio DNS deve ser inserido em letras maiúsculas. Ca
 
 Não há suporte para a definição do realm Kerberos em um controlador de domínio. Tentar fazer isso causará um aviso e uma falha de comando.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Defina o realm para este computador como um nome de domínio específico para restringir o acesso por um controlador que não seja de domínio apenas para o realm Kerberos da CONTOSO:
 ```
 ksetup /setrealm CONTOSO
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Ksetup](ksetup.md)
 -   [Ksetup:removerealm](ksetup-removerealm.md)

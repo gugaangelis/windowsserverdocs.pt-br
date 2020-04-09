@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0379abc3-25c7-46ab-9a6b-80a5152365b0
 title: Temas Web personalizados no AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 03e493c1022653e4c258634c2b0f258849876a00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 69255eeaecd3e5198054242c1ab6dd1d0a58ce33
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357997"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816419"
 ---
 # <a name="custom-web-themes-in-ad-fs"></a>Temas Web personalizados no AD FS 
 
-O tema que é enviado\-para a\-\-caixa é chamado de padrão. Você pode exportar o tema padrão e usá-lo de forma a poder iniciar rapidamente. Você pode personalizar a aparência e o comportamento, que incluem o layout, modificando o arquivo .css, importando e aplicando esse novo tema, depois você pode usar a aparência e o comportamento personalizados. Usar o arquivo .css também facilita o trabalho com seus web designers.  
+O tema que é enviado\-de\-caixa de\-é chamado de padrão. Você pode exportar o tema padrão e usá-lo de forma a poder iniciar rapidamente. Você pode personalizar a aparência e o comportamento, que incluem o layout, modificando o arquivo .css, importando e aplicando esse novo tema, depois você pode usar a aparência e o comportamento personalizados. Usar o arquivo .css também facilita o trabalho com seus web designers.  
   
 O cmdlet a seguir cria um tema da Web personalizado, que duplica o tema da Web padrão.  
   
@@ -35,13 +34,13 @@ Você pode modificar o arquivo .css e configurar o novo tema da Web usando o nov
 Para aplicar o arquivo .css para o novo tema, use o seguinte cmdlet.  
   
 
-    Set-AdfsWebTheme –TargetName custom –StyleSheet @{path=”c:\NewTheme.css”}  
+    Set-AdfsWebTheme –TargetName custom –StyleSheet @{path="c:\NewTheme.css"}  
   
   
 O seguinte cmdlet cria um tema da Web personalizado para uma nova folha de estilo.  
   
   
-`New-AdfsWebTheme –Name custom –StyleSheet @{path=”c:\NewTheme.css”} –RTLStyleSheetPath c:\NewRtlTheme.css ` 
+`New-AdfsWebTheme –Name custom –StyleSheet @{path="c:\NewTheme.css"} –RTLStyleSheetPath c:\NewRtlTheme.css ` 
   
   
   

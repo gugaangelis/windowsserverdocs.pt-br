@@ -1,7 +1,6 @@
 ---
 title: Espaços de armazenamento e Estados operacionais de Espaços de Armazenamento Diretos e integridade
 description: Como localizar e entender os diferentes Estados operacionais e de integridade de Espaços de Armazenamento Diretos e espaços de armazenamento (incluindo discos físicos, pools e discos virtuais) e o que fazer a respeito.
-keywords: Espaços de armazenamento, desanexados, disco virtual, disco físico, degradado
 author: jasongerend
 ms.author: jgerend
 ms.date: 12/06/2019
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: 40e820971f9d2ab0ba48fe30b100f07302ed7206
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: 83489cb7a8a44de13b5ba245d7ce1cb5ceabc08e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945275"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820969"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>Solucionar problemas de espaços de armazenamento e de Espaços de Armazenamento Diretos integridade e Estados operacionais
 
@@ -70,7 +69,7 @@ Quando um pool de armazenamento está no estado de integridade **desconhecido** 
 
 |Estado operacional    |Motivo de somente leitura |Descrição|
 |---------            |---------       |--------   |
-|Somente leitura|Incompleto|Isso pode ocorrer se o pool de armazenamento perder seu [Quorum](understand-quorum.md), o que significa que a maioria das unidades no pool falhou ou está offline por algum motivo. Quando um pool perde seu quorum, os espaços de armazenamento definem automaticamente a configuração do pool como somente leitura até que as unidades suficientes fiquem disponíveis novamente.<br><br>**Ação:** <br>1. Reconecte as unidades ausentes e, se você estiver usando Espaços de Armazenamento Diretos, coloque todos os servidores online. <br>2. defina o pool de volta para leitura/gravação abrindo uma sessão do PowerShell com permissões administrativas e, em seguida, digitando:<br><br> <code>Get-StoragePool <PoolName> -IsPrimordial $False \| Set-StoragePool -IsReadOnly $false</code>|
+|Somente leitura|Incompleto|Isso pode ocorrer se o pool de armazenamento perder seu [Quorum](understand-quorum.md), o que significa que a maioria das unidades no pool falhou ou está offline por algum motivo. Quando um pool perde seu quorum, os espaços de armazenamento definem automaticamente a configuração do pool como somente leitura até que as unidades suficientes fiquem disponíveis novamente.<br><br>**Action** <br>1. Reconecte as unidades ausentes e, se você estiver usando Espaços de Armazenamento Diretos, coloque todos os servidores online. <br>2. defina o pool de volta para leitura/gravação abrindo uma sessão do PowerShell com permissões administrativas e, em seguida, digitando:<br><br> <code>Get-StoragePool <PoolName> -IsPrimordial $False \| Set-StoragePool -IsReadOnly $false</code>|
 ||Política|Um administrador define o pool de armazenamento como somente leitura.<br><br>**Ação:** Para definir um pool de armazenamento clusterizado para acesso de leitura/gravação em Gerenciador de Cluster de Failover, vá para **pools**, clique com o botão direito do mouse no pool e selecione **colocar online**.<br><br>Para outros servidores e computadores, abra uma sessão do PowerShell com permissões administrativas e, em seguida, digite:<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||Iniciando|Os espaços de armazenamento estão sendo iniciados ou aguardando que as unidades sejam conectadas no pool. Esse deve ser um estado temporário. Uma vez completamente iniciado, o pool deve fazer a transição para um estado operacional diferente.<br><br>**Ação:** Se o pool permanecer no estado de *inicialização* , verifique se todas as unidades no pool estão conectadas corretamente.|
 
@@ -151,7 +150,7 @@ Uma unidade no estado de aviso pode ler e gravar dados com êxito, mas tem um pr
 |Estado operacional    |Descrição|
 |---------            |---------          |
 |Comunicação perdida|A unidade está ausente. Se você estiver usando Espaços de Armazenamento Diretos, isso pode ocorrer porque um servidor está inoperante.<br><br>**Ação**: se você estiver usando espaços de armazenamento diretos, coloque todos os servidores novamente online. Se isso não corrigir, reconecte a unidade, substitua-a ou tente obter informações de diagnóstico detalhadas sobre essa unidade seguindo as etapas em solução de problemas usando Relatório de Erros do Windows > [disco físico esgotou o tempo limite](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-timed-out).|
-|Removendo do pool|Os espaços de armazenamento estão no processo de remover a unidade de seu pool de armazenamento. <br><br> Este é um estado temporário. Após a conclusão da remoção, se a unidade ainda estiver anexada ao sistema, a unidade passará para outro estado operacional (normalmente OK) em um pool primordial.|
+|Removendo do pool|Os espaços de armazenamento estão no processo de remover a unidade de seu pool de armazenamento. <br><br> Esse é um estado temporário. Após a conclusão da remoção, se a unidade ainda estiver anexada ao sistema, a unidade passará para outro estado operacional (normalmente OK) em um pool primordial.|
 |Iniciando o modo de manutenção|Os espaços de armazenamento estão no processo de colocar a unidade no modo de manutenção depois que um administrador coloca a unidade no modo de manutenção. Esse é um estado temporário-a unidade deve estar em breve no estado do *modo de manutenção* .|
 |No modo de manutenção|Um administrador colocou a unidade no modo de manutenção, interrompendo leituras e gravações da unidade. Isso geralmente é feito antes da atualização do firmware da unidade ou do teste de falhas.<br><br>**Ação**: para retirar a unidade do modo de manutenção, use o cmdlet [Disable-StorageMaintenanceMode](https://technet.microsoft.com/itpro/powershell/windows/storage/disable-storagemaintenancemode) .|
 |Parando o modo de manutenção|Um administrador tirou a unidade do modo de manutenção e os espaços de armazenamento estão no processo de colocar a unidade online novamente. Esse é um estado temporário-a unidade deve estar em breve em outro Estado – idealmente *íntegro*.|
@@ -167,7 +166,7 @@ Uma unidade no estado não íntegro não pode ser gravada ou acessada no momento
 |Estado operacional    |Descrição|
 |---------            |---------          |
 |Não utilizável|Esta unidade não pode ser usada por espaços de armazenamento. Para obter mais informações, consulte [espaços de armazenamento diretos requisitos de hardware](storage-spaces-direct-hardware-requirements.md); Se você não estiver usando Espaços de Armazenamento Diretos, consulte [visão geral de espaços de armazenamento](https://technet.microsoft.com/library/hh831739(v=ws.11).aspx#Requirements).|
-|divisão|A unidade se tornou separada do pool.<br><br>**Ação**: redefina a unidade, apagando todos os dados da unidade e adicionando-o de volta ao pool como uma unidade vazia. Para fazer isso, abra uma sessão do PowerShell como administrador, execute o cmdlet [Reset-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) e execute [Repair-VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk). <br><br>Para obter informações de diagnóstico detalhadas sobre esta unidade, siga as etapas em solução de problemas usando Relatório de Erros do Windows > [disco físico não pôde ser colocado online](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online).|
+|Split|A unidade se tornou separada do pool.<br><br>**Ação**: redefina a unidade, apagando todos os dados da unidade e adicionando-o de volta ao pool como uma unidade vazia. Para fazer isso, abra uma sessão do PowerShell como administrador, execute o cmdlet [Reset-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) e execute [Repair-VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk). <br><br>Para obter informações de diagnóstico detalhadas sobre esta unidade, siga as etapas em solução de problemas usando Relatório de Erros do Windows > [disco físico não pôde ser colocado online](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online).|
 |Metadados obsoletos|Os espaços de armazenamento encontraram metadados antigos na unidade.<br><br>**Ação**: deve ser um estado temporário. Se a unidade não fizer a transição de volta para OK, você poderá executar o [Repair-VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk) para iniciar uma operação de reparo em discos virtuais afetados. Se isso não resolver o problema, você poderá redefinir a unidade com o cmdlet [Reset-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) , apagar todos os dados da unidade e executar [Repair-VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk).|
 |Metadados não reconhecidos|Os espaços de armazenamento encontraram metadados não reconhecidos na unidade, o que geralmente significa que a unidade tem metadados de um pool diferente.<br><br>**Ação**: para apagar a unidade e adicioná-la ao pool atual, redefina a unidade. Para redefinir a unidade, abra uma sessão do PowerShell como administrador, execute o cmdlet [Reset-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) e execute [Repair-VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk).|
 |Mídia com falha|A unidade falhou e não será mais usada por espaços de armazenamento.<br><br>**Ação**: substitua a unidade. <br><br>Para obter informações de diagnóstico detalhadas sobre esta unidade, siga as etapas em solução de problemas usando Relatório de Erros do Windows > [disco físico não pôde ser colocado online](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online).|
@@ -195,7 +194,7 @@ Generic Physical Disk SSD        119990648832   False In a Pool
 
 A tabela a seguir fornece um pouco mais de detalhes sobre cada um dos motivos.
 
-|Motivo|Descrição|
+|Reason|Descrição|
 |---|---|
 |Em um pool|A unidade já pertence a um pool de armazenamento. <br><br>As unidades podem pertencer apenas a um único pool de armazenamento de cada vez. Para usar essa unidade em outro pool de armazenamento, primeiro remova a unidade de seu pool existente, o que informa aos espaços de armazenamento para mover os dados na unidade para outras unidades no pool. Ou redefina a unidade se a unidade tiver sido desconectada de seu pool sem notificar os espaços de armazenamento. <br><br>Para remover uma unidade de um pool de armazenamento com segurança, use [Remove-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/remove-physicaldisk)ou vá para Gerenciador do servidor > **serviços de arquivo e armazenamento** > **pools de armazenamento**, > **discos físicos**, clique com o botão direito do mouse na unidade e selecione **remover disco**.<br><br>Para redefinir uma unidade, use [Reset-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk).|
 |Não íntegro|A unidade não está em um estado íntegro e talvez precise ser substituída.|

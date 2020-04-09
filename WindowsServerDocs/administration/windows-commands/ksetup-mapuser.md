@@ -1,24 +1,20 @@
 ---
 title: 'ksetup: mapuser'
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b80538999c364e9ed10ca0ed43387f603ac9ad3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61c67fa21eccb77601b78aed51791259d609c5e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374983"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841479"
 ---
 # <a name="ksetupmapuser"></a>ksetup: mapuser
 
@@ -32,12 +28,12 @@ Mapeia o nome de uma entidade de segurança Kerberos para uma conta. Para obter 
 ksetup /mapuser <Principal> <Account>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |  Parâmetro   |                                                   Descrição                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<Principal > |              O nome de domínio totalmente qualificado de qualquer entidade; por exemplo, mike@corp.CONTOSO.COM.              |
-|  \<Account >  | Qualquer nome de conta ou grupo de segurança existente neste computador, como convidado, usuários de domínio ou administrador. |
+| > principal do \< |              O nome de domínio totalmente qualificado de qualquer entidade; por exemplo, mike@corp.CONTOSO.COM.              |
+|  Conta de \<>  | Qualquer nome de conta ou grupo de segurança existente neste computador, como convidado, usuários de domínio ou administrador. |
 
 ## <a name="remarks"></a>Comentários
 
@@ -51,7 +47,7 @@ Use **ksetup** sem parâmetros ou argumentos para ver as configurações mapeada
 
 Sempre que forem feitas alterações no centro de distribuição de chaves externo (KDC) e na configuração de realm, será necessária uma reinicialização do computador em que a configuração foi alterada.
 
-## <a name="BKMK_Examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Mapeie a conta de Mike Danseglio no território Kerberos CONTOSO para a conta de convidado neste computador, concedendo a ele todos os privilégios de um membro da conta convidado interna sem a necessidade de se autenticar neste computador:
 ```
@@ -70,7 +66,7 @@ Mapeie todas as contas no realm Kerberos CONTOSO para qualquer conta existente d
 ksetup /mapuser * *
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Ksetup](ksetup.md)

@@ -1,24 +1,20 @@
 ---
 title: Wbadmin Delete systemstatebackup
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para WBADMIN Delete systemstatebackup, que exclui os backups de estado do sistema que você especificar.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 707d37cb-448d-4542-b6ac-1fc89e749788
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f324cba3fcdae8639009395c4df734a2db6b814
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e184a40612024f81e1c6ab93de8cec4a63eee578
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362517"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829889"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>Wbadmin Delete systemstatebackup
 
@@ -46,7 +42,7 @@ wbadmin delete systemstatebackup
 > [!IMPORTANT]
 > Um e apenas um desses parâmetros devem ser especificados: **-keepVersions**, **-version**ou **-deleteOldest**.
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -57,7 +53,7 @@ wbadmin delete systemstatebackup
 |-computador|Especifica o computador cujo backup de estado do sistema você deseja excluir. Útil quando é feito o backup de vários computadores no mesmo local. Deve ser usado quando o parâmetro **-backupTarget** é especificado.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para excluir o backup de estado do sistema criado em 31 de março de 2013 às 10:00, digite:
 ```
@@ -72,7 +68,7 @@ Para excluir o backup de estado do sistema mais antigo armazenado no disco f, di
 wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

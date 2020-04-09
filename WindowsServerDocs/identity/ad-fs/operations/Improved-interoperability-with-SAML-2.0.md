@@ -1,7 +1,6 @@
 ---
 ms.assetid: 80b5335b-fa02-4944-900c-5fe4f5c6111d
 title: Melhor interoperabilidade com SAML 2.0
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,19 +8,19 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d72636d77fe3240caab66dcab8657225d291bec6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3abc3f09e5ae572800e5580d14a76ada6d62e320
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407549"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816359"
 ---
 # <a name="improved-interoperability-with-saml-20"></a>Melhor interoperabilidade com SAML 2.0
 
 
 
   
-AD FS no Windows Server 2016 contém suporte a protocolo SAML adicional, incluindo suporte para importar relações de confiança com base em metadados que contêm várias entidades.  Isso permite que você configure o AD FS para participar de confederations, como Federação incomum e outras implementações em conformidade com o padrão eGov 2,0.   
+AD FS no Windows Server 2016 contém suporte a protocolo SAML adicional, incluindo suporte para importar relações de confiança com base em metadados que contêm várias entidades.  Isso permite que você configure o AD FS para participar de confederações, como Federação InCommon, bem como de outras implementações em conformidade com o padrão eGov 2.0.   
   
 A nova funcionalidade baseia-se em grupos de relações de confiança de provedor de declarações ou de terceira parte confiável. Cada grupo é um elemento EntitiesDescriptor (< MD: EntitiesDescriptor >), conforme especificado no perfil eGov 2,0, contendo um ou vários elementos EntityDescriptor.  Os grupos têm regras de autorização comuns e todas as outras propriedades podem ser modificadas como objetos de confiança individuais.  
   

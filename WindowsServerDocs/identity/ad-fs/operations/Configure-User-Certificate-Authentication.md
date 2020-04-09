@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1ea2e1be-874f-4df3-bc9a-eb215002da91
 title: Configurar suporte de AD FS para autenticação de certificado de usuário
-description: ''
 author: jenfieldmsft
 ms.author: billmath
 manager: samueld
@@ -9,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 5f2416e45fad8ca47cd756526dc6a554b3a952b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817069"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configurando AD FS para autenticação de certificado de usuário
 
@@ -27,7 +26,7 @@ A autenticação de certificado de usuário é usada principalmente em dois caso
 1) Determine o modo de autenticação de certificado de usuário AD FS que você deseja habilitar usando um dos modos descritos neste [artigo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 2) Verifique se a cadeia confiável de certificado de usuário está instalada & confiável por todos os AD FS e servidores WAP, incluindo quaisquer autoridades de certificação intermediárias. Geralmente isso é feito por meio de GPO em servidores AD FS/WAP
 3)  Verifique se o certificado raiz da cadeia de confiança para os certificados de usuário está no repositório NTAuth no Active Directory
-4) Se estiver usando AD FS no modo de autenticação de certificado alternativo, certifique-se de que os servidores AD FS e WAP tenham certificados SSL que contenham o nome de host AD FS prefixado com "certauth", por exemplo, "certauth.fs.contoso.com", e que o tráfego para esse nome de host é permitido por meio do firewall
+4) Se estiver usando AD FS no modo de autenticação de certificado alternativo, certifique-se de que seus servidores AD FS e WAP tenham certificados SSL que contenham o nome de host AD FS prefixado com "certauth", por exemplo, "certauth.fs.contoso.com", e que o tráfego para esse nome de host é permitido por meio do firewall
 5) Se estiver usando a autenticação de certificado da extranet, verifique se pelo menos um AIA e pelo menos um local de CDP ou OCSP da lista especificada em seus certificados estão acessíveis pela Internet.
 6) Além disso, para a autenticação de certificado do Azure AD, para clientes do Exchange ActiveSync, o certificado do cliente deve ter o endereço de email roteável dos usuários no Exchange Online no nome da entidade de segurança ou no valor do nome do RFC822 do campo nome alternativo da entidade. (Azure Active Directory mapeia o valor de RFC822 para o atributo de endereço de proxy no diretório.)
 

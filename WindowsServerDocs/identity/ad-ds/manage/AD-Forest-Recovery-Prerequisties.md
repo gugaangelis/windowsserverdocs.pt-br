@@ -1,6 +1,5 @@
 ---
 title: Pré-requisitos para planejar Active Directory recuperação de floresta
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
 ms.technology: identity-adds
-ms.openlocfilehash: fddd5e236774c7f054ccd6332eb45d4f03afdf3f
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 6dcd1185ba4d4c847cfe212f78ccc9661fd2aead
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013001"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823779"
 ---
 # <a name="active-directory-forest-recovery-prerequisites"></a>Pré-requisitos de recuperação de floresta Active Directory
 
@@ -51,7 +50,7 @@ Antes de começar a planejar a recuperação de uma floresta Active Directory, v
 
 Além disso, você deve ter feito backup e restaurado AD DS e SYSVOL em um ambiente de laboratório regularmente. Para obter mais informações, consulte [fazendo backup dos dados de estado do sistema](AD-Forest-Recovery-Procedures.md) e [executando uma restauração não autoritativa de Active Directory Domain Services](AD-Forest-Recovery-Procedures.md).
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 > [!div class="nextstepaction"]
 > [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)

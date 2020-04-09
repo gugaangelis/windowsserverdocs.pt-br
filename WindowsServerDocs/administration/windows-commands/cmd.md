@@ -1,26 +1,22 @@
 ---
-title: Cmd
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: cmd
+description: O tópico comandos do Windows para cmd, que inicia uma nova instância do interpretador de comandos, cmd. exe.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 032fbea2039faa09753ac0c2b51e4b62004d36ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b5e27017a9a0f979acec428b8ddaa73cd9d46b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379339"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847619"
 ---
-# <a name="cmd"></a>Cmd
+# <a name="cmd"></a>cmd
 
 Inicia uma nova instância do interpretador de comando, cmd. exe. Se usado sem parâmetros, o **cmd** exibirá a versão e as informações de direitos autorais do sistema operacional.
 
@@ -30,7 +26,7 @@ Inicia uma nova instância do interpretador de comando, cmd. exe. Se usado sem p
 cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}] [/v:{on|off}] [<String>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -66,7 +62,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 |8|Cinza|
 |9|Azul-claro|
 |a|Verde-claro|
-|b|Azul-claro|
+|B|Azul-claro|
 |c|Vermelho-claro|
 |d|Roxo-claro|
 |e|Amarelo-claro|
@@ -79,7 +75,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
     Para usar vários comandos para \<cadeia de caracteres >, separe-os pelo separador de comandos **&&** e coloque-os entre aspas. Por exemplo:
 
     ```
-    "<Command>&&<Command>&&<Command>"
+    <Command>&&<Command>&&<Command>
     ``` 
  
 -   Aspas de processamento
@@ -166,10 +162,10 @@ A conclusão de nome de arquivo e diretório processa corretamente os nomes de a
 
 Os seguintes caracteres especiais exigem aspas: & < > [] {} ^ =;! ' + ' ~ [espaço em branco].
 
-Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, "nome do computador").
+Se as informações fornecidas contiverem espaços, use aspas em volta do texto (por exemplo, nome do computador).
 
 Se você processar a conclusão do nome do arquivo e do diretório de dentro da *cadeia de caracteres*, qualquer parte do *caminho* à direita do cursor será descartada (no ponto na *cadeia de caracteres* em que a conclusão foi processada).
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

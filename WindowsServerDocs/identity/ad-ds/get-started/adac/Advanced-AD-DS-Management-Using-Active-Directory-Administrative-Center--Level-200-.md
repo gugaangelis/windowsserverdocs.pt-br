@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4d21d27d-5523-4993-ad4f-fbaa43df7576
 title: Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 197f994bdd5dedced24aa390dc562530c41e951d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949331"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824909"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
@@ -28,7 +27,7 @@ Este tópico abrange o Centro Administrativo do Active Directory atualizado, com
 - [Usando o Centro Administrativo do Active Directory Visualizador de histórico do Windows PowerShell](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
 - [Solução de problemas de gerenciamento de AD DS](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
   
-## <a name="BKMK_Arch"></a>Arquitetura de Centro Administrativo do Active Directory  
+## <a name="active-directory-administrative-center-architecture"></a><a name="BKMK_Arch"></a>Arquitetura de Centro Administrativo do Active Directory  
   
 ### <a name="active-directory-administrative-center-executables-dlls"></a>Centro Administrativo do Active Directory executáveis, DLLs  
 
@@ -44,9 +43,9 @@ O Windows PowerShell e camada de operações subjacentes para a nova funcionalid
   
 ![Gerenciamento de AD DS avançado](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
   
-## <a name="BKMK_EnableRecycleBin"></a>Habilitando e gerenciando a lixeira de Active Directory usando Centro Administrativo do Active Directory  
+## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Habilitando e gerenciando a lixeira de Active Directory usando Centro Administrativo do Active Directory  
   
-### <a name="capabilities"></a>Capacidades  
+### <a name="capabilities"></a>{1&gt;Capabilities&lt;1}  
   
 - O Windows Server 2012 ou mais recente Centro Administrativo do Active Directory permite que você configure e gerencie o Active Directory Lixeira para qualquer partição de domínio em uma floresta. Não há mais um requisito para usar o Windows PowerShell ou Ldp.exe para habilitar a Lixeira do Active Directory ou restaurar objetos em partições de domínio.
 - O Centro Administrativo do Active Directory tem critérios de filtragem avançados, facilitando a restauração de destino em grandes ambientes, com muitos objetos excluídos intencionalmente.
@@ -64,11 +63,11 @@ O Active Directory Lixeira requer um nível funcional de floresta do Windows Ser
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Habilitando a Lixeira do Active Directory usando o Centro Administrativo do Active Directory
 
-Para habilitar a Lixeira do Active Directory, abra o **Centro Administrativo do Active Directory** e clique no nome da floresta no painel de navegação. No painel **Tarefas** , clique em **Habilitar Lixeira**.  
+Para habilitar a Lixeira do Active Directory, abra o **Centro Administrativo do Active Directory** e clique no nome da floresta no painel de navegação. No painel **Tarefas**, clique em **Habilitar Lixeira**.  
   
 ![Gerenciamento de AD DS avançado](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
-O Centro Administrativo do Active Directory mostra a caixa de diálogo **Habilitar Confirmação de Lixeira** . Essa caixa de diálogo avisa que a habilitação da lixeira é irreversível. Clique em **OK** para habilitar a Lixeira do Active Directory. O Centro Administrativo do Active Directory mostra outra caixa de diálogo para lembrá-lo que a Lixeira do Active Directory não estará totalmente funcional até que todos os controladores de domínio repliquem a alteração de configuração.  
+O Centro Administrativo do Active Directory mostra a caixa de diálogo **Habilitar Confirmação de Lixeira**. Essa caixa de diálogo avisa que a habilitação da lixeira é irreversível. Clique em **OK** para habilitar a Lixeira do Active Directory. O Centro Administrativo do Active Directory mostra outra caixa de diálogo para lembrá-lo que a Lixeira do Active Directory não estará totalmente funcional até que todos os controladores de domínio repliquem a alteração de configuração.  
   
 > [!IMPORTANT]  
 > A opção para habilitar a Lixeira do Active Directory não estará disponível se:  
@@ -119,10 +118,10 @@ A operação de restauração dá suporte a todas as opções de critérios de f
 - *ANR (resolução de nome ambígua-não listado no menu, mas o que é usado quando você digita na caixa * * * * filtro * * * *)*  
 - Última modificação entre datas determinadas  
 - O objeto é user/inetorgperson/computer/group/organization unit  
-- Nome  
+- {1&gt;Nome&lt;1}  
 - Quando excluído  
 - Último pai conhecido  
-- Digite  
+- Tipo  
 - Descrição  
 - Cidade  
 - País/região  
@@ -151,7 +150,7 @@ A restauração de objetos excluídos sempre foi uma operação única.  O Centr
   
 1. Clique no nome de domínio no painel de navegação do Centro Administrativo do Active Directory.  
 2. Clique duas vezes em **Objetos excluídos** na lista de gerenciamento.  
-3. Clique com o botão direito do mouse no objeto e, em seguida, em **Restaurar**, ou clique em **Restaurar** no painel **Tarefas** .  
+3. Clique com o botão direito do mouse no objeto e, em seguida, em **Restaurar**, ou clique em **Restaurar** no painel **Tarefas**.  
   
 O objeto é restaurado ao seu local original.  
   
@@ -217,10 +216,10 @@ A funcionalidade do cmdlet **Restore-ADObject** não foi alterada entre o Window
 É possível que, com o tempo, o contêiner Objetos Excluídos acumule mais de 20.000 (ou até mesmo 100.000) objetos em médias e grandes empresas e tenha dificuldades em mostrar todos os objetos. Como o mecanismo de filtro no Centro Administrativo do Active Directory baseia-se na filtragem de cliente, ele não pode mostrar estes objetos adicionais. Para contornar essa limitação, use as seguintes etapas para realizar uma busca no servidor:  
   
 1. Clique com o botão direito do mouse no contêiner **Objetos Excluídos** e depois em **Pesquisar neste nó**.  
-2. Clique na divisa para expor o menu **+Adicionar critérios** , selecione e adicione **Última modificação entre determinadas datas**. A hora da última modificação (o atributo **whenChanged** ) é uma aproximação da hora de exclusão; na maioria dos ambientes, elas são idênticas. Esta consulta realiza uma pesquisa de servidor.  
+2. Clique na divisa para expor o menu **+Adicionar critérios**, selecione e adicione **Última modificação entre determinadas datas**. A hora da última modificação (o atributo **whenChanged**) é uma aproximação da hora de exclusão; na maioria dos ambientes, elas são idênticas. Esta consulta realiza uma pesquisa de servidor.  
 3. Localize os objetos excluídos para restaurar usando outra filtragem de exibição, classificação e assim por diante nos resultados e, em seguida, restaure-os normalmente.  
   
-## <a name="BKMK_FGPP"></a>Configurando e gerenciando políticas de senha refinadas usando o Centro Administrativo do Active Directory  
+## <a name="configuring-and-managing-fine-grained-password-policies-using-active-directory-administrative-center"></a><a name="BKMK_FGPP"></a>Configurando e gerenciando políticas de senha refinadas usando o Centro Administrativo do Active Directory  
   
 ### <a name="configuring-fine-grained-password-policies"></a>Configurando políticas de senha refinada
 
@@ -228,13 +227,13 @@ O Centro Administrativo do Active Directory permite que você crie e gerencie ob
   
 Para obter informações sobre Políticas de Senha Refinada, consulte o [Guia passo a passo da política de bloqueio de senhas e contas refinadas do AD DS (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx).  
   
-No painel de navegação, clique no modo de exibição de árvore, depois no domínio, em seguida, em **Sistema**, clique em **Contêiner de Configuração de Senha**e depois, no painel Tarefas, clique em **Novo** e **Configurações de Senha**.  
+No painel de navegação, clique no modo de exibição de árvore, depois no domínio, em seguida, em **Sistema**, clique em **Contêiner de Configuração de Senha** e depois, no painel Tarefas, clique em **Novo** e **Configurações de Senha**.  
   
 ![Gerenciamento de AD DS avançado](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
   
 ### <a name="managing-fine-grained-password-policies"></a>Gerenciando políticas de senha refinada
 
-A criação de uma nova FGPP ou edição de uma existente traz o editor de **Configurações de Senha** . A partir daqui, você pode configurar todas as políticas de senha desejadas, como no Windows Server 2008 ou Windows Server 2008 R2, só que agora com um editor construído para esse fim.  
+A criação de uma nova FGPP ou edição de uma existente traz o editor de **Configurações de Senha**. A partir daqui, você pode configurar todas as políticas de senha desejadas, como no Windows Server 2008 ou Windows Server 2008 R2, só que agora com um editor construído para esse fim.  
   
 ![Gerenciamento de AD DS avançado](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
@@ -270,7 +269,7 @@ A análise das **Propriedades** de qualquer usuário ou grupo mostra as **Config
   
 A atribuição de FGPP implícita não é exibida aqui; para isso, você deve usar a opção **exibir configurações de senha resultante...** .  
   
-## <a name="BKMK_HistoryViewer"></a>Usando o Centro Administrativo do Active Directory Visualizador de histórico do Windows PowerShell
+## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>Usando o Centro Administrativo do Active Directory Visualizador de histórico do Windows PowerShell
 
 O futuro do gerenciamento do Windows é o Windows PowerShell. Ao sobrepor ferramentas gráficas sobre uma estrutura de automação de tarefas, o gerenciamento dos sistemas distribuídos mais complexos torna-se consistente e eficiente. Você precisa entender como funciona o Windows PowerShell para atingir seu pleno potencial e maximizar seus investimentos em computação.  
   
@@ -316,7 +315,7 @@ set-aduser
 
 O design do Centro Administrativo do Active Directory exige o uso mínimo de código e modularidade. Portanto, em vez de um conjunto de funções que cria novos usuários e outro conjunto que modifica usuários existentes, ele executa minimamente cada função e, em seguida, as encadeia com os cmdlets. Lembre-se disso quando estiver aprendendo o Active Directory para o Windows PowerShell. Você também pode usar isso como uma técnica de aprendizagem, em que verá como é simples usar o Windows PowerShell para completar uma única tarefa.  
   
-## <a name="BKMK_Tshoot"></a>Solução de problemas de gerenciamento de AD DS  
+## <a name="troubleshooting-ad-ds-management"></a><a name="BKMK_Tshoot"></a>Solução de problemas de gerenciamento de AD DS  
   
 ### <a name="introduction-to-troubleshooting"></a>Introdução à solução de problemas
 
@@ -348,7 +347,7 @@ Crie o seguinte conteúdo:
 </system.diagnostics>
 ```
 
-Os níveis de detalhamento para **DsacLogLevel** são **Nenhum**, **Erro**, **Aviso**, **Informações**e **Detalhado**. O nome do arquivo de saída é configurável e grava na mesma pasta que dsac.exe. A saída pode dizer mais sobre como o ADAC está funcionando, quais controladores de domínio são contatados, quais comandos do Windows PowerShell foram executados, quais foram as respostas e outros detalhes.  
+Os níveis de detalhamento para **DsacLogLevel** são **Nenhum**, **Erro**, **Aviso**, **Informações** e **Detalhado**. O nome do arquivo de saída é configurável e grava na mesma pasta que dsac.exe. A saída pode dizer mais sobre como o ADAC está funcionando, quais controladores de domínio são contatados, quais comandos do Windows PowerShell foram executados, quais foram as respostas e outros detalhes.  
 
 Por exemplo, ao usar o nível INFORMAÇÕES, que retorna todos os resultados, exceto o detalhamento do rastreamento:  
   
@@ -447,7 +446,7 @@ A definição do nível de detalhe também mostra as pilhas .NET de cada funçã
 
 Os erros mostrados quando nenhuma instância dos Serviços Web do Active Directory está disponível são:  
   
-|Erro do|Operação|
+|Error|Operação|
 | --- | --- |  
 |"Não é possível se conectar a nenhum domínio. Atualize ou tente novamente quando a conexão estiver disponível"|Mostrado no início do aplicativo do Centro Administrativo do Active Directory|
 |"Não é possível encontrar um servidor disponível no domínio *<NetBIOS domain name>* que está executando o serviço Web do Active Directory (ADWS)"|Mostrado ao tentar selecionar um nó do domínio no aplicativo do Centro Administrativo do Active Directory|
@@ -484,6 +483,6 @@ Para solucionar esse problema, execute estas etapas:
   
 4. Instale o NetMon ou outro utilitário de captura de rede no computador que executa o Centro Administrativo do Active Directory e no controlador de domínio retornado por NLTEST. Reúna capturas de rede simultâneas de ambos os computadores onde você inicia o Centro Administrativo do Active Directory e veja o erro antes de parar as capturas. Verifique se o cliente é capaz de enviar e receber do controlador de domínio na porta TCP 9389. Se os pacotes são enviados, mas nunca chegam, ou chegam e o controlador de domínio responde, mas nunca chegam ao cliente, é provável que haja um firewall entre os computadores da rede deixando pacotes nessa porta. Esse firewall pode ser um software ou hardware, e pode ser parte de software (antivírus) de proteção de terminal de terceiros.  
   
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 [Lixeira do AD, Política de Senha refinada e Histórico do PowerShell](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

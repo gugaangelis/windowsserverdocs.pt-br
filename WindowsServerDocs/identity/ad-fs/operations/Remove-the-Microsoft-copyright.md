@@ -1,7 +1,6 @@
 ---
 ms.assetid: c89a977c-b09f-44ec-be42-41e76a6cf3ad
 title: Remova os direitos autorais da Microsoft
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c24173dd03e03f9e8a19ef5981a6dc1259d62d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9306950ab83ea94c1ff814ea9a404c0efeff0e40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407517"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816209"
 ---
 # <a name="remove-the-microsoft-copyright"></a>Remova os direitos autorais da Microsoft 
 
@@ -38,7 +37,7 @@ Por padrão, as páginas de AD FS contêm os direitos autorais da Microsoft. Par
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. Localize o arquivo `Style.css` que está localizado na pasta de saída. Usando o exemplo anterior, o caminho seria `C:\CustomWebTheme\Css\Style.css.`
+3. Localize o arquivo de `Style.css` que está localizado na pasta de saída. Usando o exemplo anterior, o caminho seria `C:\CustomWebTheme\Css\Style.css.`
   
 4. Abra o arquivo `Style.css` com um editor, como o bloco de notas.  
   
@@ -48,7 +47,7 @@ Por padrão, as páginas de AD FS contêm os direitos autorais da Microsoft. Par
    #copyright {color:#696969; display:none;}
    ```
 
-6. Crie um tema personalizado baseado no novo arquivo `Style.css`.  
+6. Crie um tema personalizado baseado no novo arquivo de `Style.css`.  
 
    ```powershell
    Set-AdfsWebTheme -TargetName custom -StyleSheet @{locale="";path="C:\customWebTheme\css\style.css"}

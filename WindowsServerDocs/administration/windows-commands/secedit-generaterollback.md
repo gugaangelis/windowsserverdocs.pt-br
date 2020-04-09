@@ -1,24 +1,20 @@
 ---
 title: 'secedit: generaterollback'
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 385a6799-51a7-4fe3-bd73-10c7998b6680
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 797f93f010a903d6ec21f568d8d665cb2e42e692
-ms.sourcegitcommit: 5ed817fff1262e390403a4f4f6c38fdc12300c29
+ms.openlocfilehash: 0d2a8ec7be0292fc096c072b0f4e5806e8051408
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75702737"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834929"
 ---
 # <a name="seceditgeneraterollback"></a>secedit: generaterollback
 
@@ -32,15 +28,15 @@ Permite gerar um modelo de reversão para um modelo de configuração especifica
 Secedit /generaterollback /db <database file name> /cfg <configuration file name> /rbk <rollback template file name> [/log <log file name>] [/quiet]
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|db|Necessário.</br>Especifica o caminho e o nome de arquivo de um banco de dados que contém a configuração armazenada na qual a análise será executada.</br>Se o nome do arquivo especificar um banco de dados que não tenha um modelo de segurança (como representado pelo arquivo de configuração) associado a ele, a opção de linha de comando `/cfg \<configuration file name>` também deverá ser especificada.|
-|cfg|Necessário.</br>Especifica o caminho e o nome do arquivo para o modelo de segurança que será importado para o banco de dados para análise.</br>Essa opção de/cfg só é válida quando usada com o parâmetro `/db \<database file name>`. Se isso não for especificado, a análise será executada em qualquer configuração já armazenada no banco de dados.|
-|rbk|Necessário.</br>Especifica um modelo de segurança no qual as informações de reversão são gravadas. Os modelos de segurança são criados usando o snap-in modelos de segurança. Os arquivos de reversão podem ser criados com este comando.|
+|db|Obrigatório.</br>Especifica o caminho e o nome de arquivo de um banco de dados que contém a configuração armazenada na qual a análise será executada.</br>Se o nome do arquivo especificar um banco de dados que não tenha um modelo de segurança (como representado pelo arquivo de configuração) associado a ele, a opção de linha de comando `/cfg \<configuration file name>` também deverá ser especificada.|
+|cfg|Obrigatório.</br>Especifica o caminho e o nome do arquivo para o modelo de segurança que será importado para o banco de dados para análise.</br>Essa opção de/cfg só é válida quando usada com o parâmetro `/db \<database file name>`. Se isso não for especificado, a análise será executada em qualquer configuração já armazenada no banco de dados.|
+|rbk|Obrigatório.</br>Especifica um modelo de segurança no qual as informações de reversão são gravadas. Os modelos de segurança são criados usando o snap-in modelos de segurança. Os arquivos de reversão podem ser criados com este comando.|
 |log|Opcional.</br>Especifica o caminho e o nome do arquivo de log para o processo.|
-|silencioso|Opcional.</br>Suprime a saída de tela e de log. Você ainda pode exibir os resultados da análise usando o snap-in configuração e análise de segurança no console de gerenciamento Microsoft (MMC).|
+|tranqüilo|Opcional.</br>Suprime a saída de tela e de log. Você ainda pode exibir os resultados da análise usando o snap-in configuração e análise de segurança no console de gerenciamento Microsoft (MMC).|
 
 ## <a name="remarks"></a>Comentários
 
@@ -48,18 +44,18 @@ Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão,
 
 A partir do Windows Server 2008, `Secedit /refreshpolicy` foi substituído por `gpupdate`. Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
 
-A execução bem-sucedida desse comando irá declarar "a tarefa foi concluída com êxito". e registra apenas as incompatibilidades entre o modelo de segurança declarado e a configuração da política de segurança. Ele lista essas diferenças no scesrv. log.
+A execução bem-sucedida desse comando irá indicar que a tarefa foi concluída com êxito. e registra apenas as incompatibilidades entre o modelo de segurança declarado e a configuração da política de segurança. Ele lista essas diferenças no scesrv. log.
 
 Se um modelo de reversão existente for especificado, esse comando irá substituí-lo. Você pode criar um novo modelo de reversão com esse comando. Nenhum parâmetro adicional é necessário para qualquer condição.
 
-## <a name="BKMK_Examples"></a>Exemplos
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso
 
 Depois de criar o modelo de segurança usando o snap-in configuração e análise de segurança, SecTmplContoso. inf, crie o arquivo de configuração de reversão para salvar as configurações originais. Escreva a ação no arquivo de log FY11.
 ```
 Secedit /generaterollback /db C:\Security\FY11\SecDbContoso.sdb /cfg sectmplcontoso.inf /rbk sectmplcontosoRBK.inf /log C:\Security\FY11\SecAnalysisContosoFY11.log
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Utilitário](secedit.md)
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

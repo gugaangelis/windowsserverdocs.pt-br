@@ -1,30 +1,26 @@
 ---
-title: Desanexar vdisk
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: detach vdisk
+description: O tópico comandos do Windows para desanexar VDISK, que impede que o VHD (disco rígido virtual) selecionado apareça como uma unidade de disco rígido local no computador host.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5f01dcb8-9237-4564-ad94-8a8dd0fd0cca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4850f9f17218178f210820dd4c6ca96fd918accc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 14eb66031841624156afb03f492e2afce5bc56f0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378691"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846499"
 ---
-# <a name="detach-vdisk"></a>Desanexar vdisk
+# <a name="detach-vdisk"></a>detach vdisk
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Interrompe o disco rígido virtual selecionado \(o\) VHD seja exibido como uma unidade de disco rígido local no computador host. Quando um VHD é desanexado, você pode copiá-lo a outros locais.  
+Interrompe a exibição do VHD (disco rígido virtual) selecionado como uma unidade de disco rígido local no computador host. Quando um VHD é desanexado, você pode copiá-lo a outros locais.  
   
 > [!NOTE]  
 > Esse comando só é aplicável ao Windows 7 e ao Windows Server 2008 R2.  
@@ -35,7 +31,7 @@ Interrompe o disco rígido virtual selecionado \(o\) VHD seja exibido como uma u
 detach vdisk [noerr]  
 ```  
   
-### <a name="parameters"></a>Parâmetros  
+#### <a name="parameters"></a>Parâmetros  
   
 |Parâmetro|Descrição|  
 |-------|--------|  
@@ -45,23 +41,21 @@ detach vdisk [noerr]
   
 -   Um VHD deve ser selecionado e desanexado para que essa operação tenha sucesso. Use o comando **Select VDISK** para selecionar um VHD e deslocar o foco para ele.  
   
-## <a name="BKMK_Examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
 Para desanexar o VHD selecionado, digite:  
   
 ```  
 detach vdisk  
 ```  
   
-## <a name="additional-references"></a>referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
   
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 -   [anexar vdisk](attach-vdisk.md)  
   
 -   [Compact vdisk](compact-vdisk.md)  
-  
-  
-  
+
 -   [detalhes do VDISK](detail-vdisk.md)  
   
 -   [expandir vdisk](expand-vdisk.md)  

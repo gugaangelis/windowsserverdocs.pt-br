@@ -2,22 +2,18 @@
 title: Etapas para configurar o Test Lab
 description: Este tópico faz parte do guia de laboratório de teste – demonstre o DirectAccess com autenticação OTP e RSA SecurID para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0a40183c-afd1-43ca-b306-05745640a37d
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d7acc592bcec4d43972da73a782b0894847ddb13
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fc40bf8f1b4bcb3d28b23abd981575a6438f871e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308512"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814379"
 ---
 # <a name="steps-for-configuring-the-test-lab"></a>Etapas para configurar o Test Lab
 

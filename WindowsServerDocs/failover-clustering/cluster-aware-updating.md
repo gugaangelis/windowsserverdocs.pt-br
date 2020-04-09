@@ -1,20 +1,20 @@
 ---
 title: Visão geral da Atualização com Suporte a Cluster
+description: A CAU (atualização com suporte a cluster) automatiza a instalação de atualização de software em clusters que executam o Windows Server.
 ms.topic: article
 ms.prod: windows-server
-ms.manager: dongill
+manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
-description: A CAU (atualização com suporte a cluster) automatiza a instalação de atualização de software em clusters que executam o Windows Server.
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: e96223e0b4b44e87ade9dc8eb875f9aa7104f451
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a2b6ad06b8a003f9cbf020956994b08cb8cf194
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361246"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827989"
 ---
 # <a name="cluster-aware-updating-overview"></a>Visão geral da Atualização com Suporte a Cluster
 
@@ -25,7 +25,7 @@ Este tópico fornece uma visão geral da atualização de\-com reconhecimento de
 > [!NOTE]
 > Ao atualizar [espaços de armazenamento diretos](../storage/storage-spaces/storage-spaces-direct-overview.md) clusters, é recomendável usar a atualização com suporte a cluster.
   
-## <a name="BKMK_OVER"></a>Descrição do recurso  
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>Descrição do recurso  
 A atualização com suporte a cluster é um recurso automatizado que permite atualizar servidores em um [cluster de failover](failover-clustering-overview.md) com pouca ou nenhuma perda na disponibilidade durante o processo de atualização. Durante uma execução de atualização, a atualização com suporte a cluster executa as seguintes tarefas de forma transparente:  
 
 1. Coloca cada nó do cluster no modo de manutenção do nó.
@@ -67,7 +67,7 @@ Veja a seguir uma descrição da funcionalidade de atualização importante com 
   
 A atualização com suporte a cluster pode coordenar a operação de atualização de cluster completa em dois modos:  
   
--   **Modo de atualização de auto\-** Para esse modo, a função clusterizada CAU é configurada como uma carga de trabalho no cluster de failover que deve ser atualizada e uma agenda de atualização associada é definida. O cluster se atualiza em horários agendados usando um padrão ou um perfil personalizado para Execução de Atualização. Durante a execução da atualização, o processo do coordenador de atualização da CAU é iniciado no nó que atualmente possui a função clusterizada CAU e o processo executa as atualizações sequencialmente em cada nó de cluster. Para atualizar o nó do cluster atual, a função clusterizada da CAU faz failover para outro nó do cluster, e um novo processo do Coordenador de Atualização nesse nó assume o controle da Execução de Atualização. No modo de atualização de auto\-, a CAU pode atualizar o cluster de failover usando um\-final totalmente automatizado para\-finalizar o processo de atualização. Um administrador também pode disparar atualizações em\-demanda nesse modo ou simplesmente usar a abordagem de atualização de\-remota, se desejado. No modo de atualização de auto\-, um administrador pode obter informações resumidas sobre uma execução de atualização em andamento, conectando-se ao cluster e executando o cmdlet **get\-CauRun** do Windows PowerShell.  
+-   **Modo de atualização de auto\-** Para esse modo, a função clusterizada CAU é configurada como uma carga de trabalho no cluster de failover que deve ser atualizada e uma agenda de atualização associada é definida. O cluster se atualiza em horários agendados usando um padrão ou um perfil personalizado para Execução de Atualização. Durante a Execução de Atualização, o processo do Coordenador de Atualização da CAU é iniciado no nó que possui a função clusterizada da CAU e executa as atualizações em cada nó do cluster sequencialmente. Para atualizar o nó do cluster atual, a função clusterizada da CAU faz failover para outro nó do cluster, e um novo processo do Coordenador de Atualização nesse nó assume o controle da Execução de Atualização. No modo de atualização de auto\-, a CAU pode atualizar o cluster de failover usando um\-final totalmente automatizado para\-finalizar o processo de atualização. Um administrador também pode disparar atualizações em\-demanda nesse modo ou simplesmente usar a abordagem de atualização de\-remota, se desejado. No modo de atualização de auto\-, um administrador pode obter informações resumidas sobre uma execução de atualização em andamento, conectando-se ao cluster e executando o cmdlet **get\-CauRun** do Windows PowerShell.  
   
 -   **Modo de atualização de\-remoto** Para esse modo, um computador remoto, que é chamado de coordenador de atualização, é configurado com as ferramentas de CAU. O Coordenador de Atualização não é um membro do cluster que é atualizado durante a Execução de Atualização. No computador remoto, o administrador dispara uma execução de atualização de\-demanda usando um perfil de execução de atualização padrão ou personalizada. O modo de atualização de\-remoto é útil para monitorar o andamento real\-tempo durante a execução da atualização e para clusters em execução em instalações do Server Core.  
   
@@ -126,7 +126,7 @@ Para obter requisitos detalhados e práticas recomendadas para usar a CAU e info
 ## <a name="see-also"></a>Consulte também  
 Os links a seguir fornecem mais informações sobre como usar a atualização com suporte a cluster.  
   
--   [Requisitos e práticas recomendadas para atualização com reconhecimento de\-de cluster](cluster-aware-updating.md)  
+-   [Requisitos e práticas recomendadas para Atualização com Suporte a Cluster\-  
   
 -   [Atualização com reconhecimento de\-de cluster: perguntas frequentes](cluster-aware-updating-faq.md)  
   

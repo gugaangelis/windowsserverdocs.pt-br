@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b89d96535512f79c83c601be50327c24dc40787
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 175b5e17f186653d4fdbc7efb505637e915cfe38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376982"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844319"
 ---
 # <a name="fsutil-file"></a>Arquivo fsutil
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -42,37 +42,37 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------------|---------------|
 |CreateNew|Cria um arquivo com o nome e o tamanho especificados, com conteúdo que consiste em zeros.|
-|\<filename >|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, C:\documents\filename.txt.|
-|\<length >|Especifica o comprimento de dados válido do arquivo.|
+|\<nome de arquivo >|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, C:\documents\filename.txt.|
+|comprimento de \<>|Especifica o comprimento de dados válido do arquivo.|
 |findbysid|Localiza os arquivos que pertencem a um usuário especificado em volumes NTFS em que as cotas de disco estão habilitadas.|
-|\<username >|Especifica o nome de usuário ou o nome de logon do usuário.|
-|\<directory>|Especifica o caminho completo para o diretório, por exemplo C:\Users.|
+|\<nome de usuário >|Especifica o nome de usuário ou o nome de logon do usuário.|
+|\<do diretório >|Especifica o caminho completo para o diretório, por exemplo C:\Users.|
 |optimizemetadata|Isso executa uma compactação imediata dos metadados para um determinado arquivo.|
 |/A|Analise os metadados do arquivo antes e depois da otimização.|
 |queryallocranges|Consulta os intervalos alocados para um arquivo em um volume NTFS. Útil para determinar se um arquivo tem regiões esparsas.|
-|offset = \<offset >|Especifica o início do intervalo que deve ser definido como zeros.|
-|comprimento = \<length >|Especifica o comprimento do intervalo (em bytes).|
+|offset =\<deslocamento >|Especifica o início do intervalo que deve ser definido como zeros.|
+|comprimento =\<comprimento >|Especifica o comprimento do intervalo (em bytes).|
 |queryextents|As extensões de consultas para um arquivo.|
 |/R|Se <filename> for um ponto de nova análise, abra-o em vez de seu destino.|
 |\<startingvcn >|Especifica primeiro VCN a ser consultado. Se omitido, inicie em VCN 0.|
 |\<numvcns >|Número de VCNs a ser consultado. Se for omitido ou 0, consulte até EOF.|
-|queryfileid|Consulta a ID de arquivo de um arquivo em um volume NTFS.<br /><br />Esse parâmetro se aplica a:  Windows Server 2008 R2 e Windows 7.|
+|queryfileid|Consulta a ID de arquivo de um arquivo em um volume NTFS.<p>Esse parâmetro aplica-se a: Windows Server 2008 R2 e Windows 7.|
 |\<volume >|Especifica o volume como nome da unidade seguido por dois-pontos.|
-|queryfilenamebyid|Exibe um nome de link aleatório para uma ID de arquivo especificada em um volume NTFS. Como um arquivo pode ter mais de um nome de link apontando para esse arquivo, não há garantia de que o link de arquivo será fornecido como resultado da consulta para o nome do arquivo.<br /><br />Esse parâmetro se aplica a:  Windows Server 2008 R2 e Windows 7.|
-|\<fileid >|Especifica a ID do arquivo em um volume NTFS.|
+|queryfilenamebyid|Exibe um nome de link aleatório para uma ID de arquivo especificada em um volume NTFS. Como um arquivo pode ter mais de um nome de link apontando para esse arquivo, não há garantia de que o link de arquivo será fornecido como resultado da consulta para o nome do arquivo.<p>Esse parâmetro aplica-se a: Windows Server 2008 R2 e Windows 7.|
+|\<FileID >|Especifica a ID do arquivo em um volume NTFS.|
 |queryoptimizemetadata|Consulta o estado de metadados de um arquivo.|
 |queryvaliddata|Consulta o comprimento de dados válido para um arquivo.|
 |/D|Exibir informações de dados válidas detalhadas.|
 |seteof|Define o EOF do arquivo fornecido.|
 |setcurtoname|Define o nome curto (8,3 nome de arquivo de comprimento de caractere) para um arquivo em um volume NTFS.|
-|\<shortname >|Especifica o nome curto do arquivo.|
+|\<curtoname >|Especifica o nome curto do arquivo.|
 |setvaliddata|Define o comprimento de dados válido para um arquivo em um volume NTFS.|
-|\<datalength >|Especifica o comprimento do arquivo em bytes.|
+|\<de comprimento de >|Especifica o comprimento do arquivo em bytes.|
 |setzerodata|Define um intervalo (especificado por *deslocamento* e *comprimento*) do arquivo como zeros, o que esvazia o arquivo. Se o arquivo for um arquivo esparso, as unidades de alocação subjacentes serão confirmadas.|
 
 ## <a name="remarks"></a>Comentários
@@ -87,7 +87,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
     -   Criando arquivos grandes quando o desempenho é um problema. Isso evita o tempo necessário para preencher o arquivo com zeros quando o arquivo é criado ou estendido.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para localizar arquivos que são de propriedade de scottb na unidade C, digite:
 
 ```
@@ -136,8 +136,8 @@ Para definir um intervalo de um arquivo em um volume NTFS como zeros para esvazi
 fsutil file setzerodata offset=100 length=150 c:\temp\sample.txt  
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

@@ -1,24 +1,20 @@
 ---
 title: if
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8518fffc4f271369b13899e149ebd30145726b8
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 706ac1569ac3ca7ae504410935f334be360eda3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259029"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842229"
 ---
 # <a name="if"></a>if
 
@@ -42,7 +38,7 @@ if cmdextversion <Number> <Command> [else <Expression>]
 if defined <Variable> <Command> [else <Expression>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |        Parâmetro        |                                                                                                                                                                                                                Descrição                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -55,7 +51,7 @@ if defined <Variable> <Command> [else <Expression>]
 |           /i            |                                                            Força comparações de cadeia de caracteres a ignorar maiúsculas e minúsculas  Você pode usar **/i** no formulário <em>seqüência1</em> **==** <em>seqüência2</em> de **If**. Essas comparações são genéricas, pois se *seqüência1* e *seqüência2* forem compostas apenas de dígitos numéricos, as cadeias de caracteres serão convertidas em números e uma comparação numérica será executada.                                                            |
 | Número de \<CMDEXTVERSION > | Especifica uma condição verdadeira somente se o número de versão interno associado ao recurso de extensões de comando do cmd. exe for igual ou maior que o número especificado. A primeira versão é 1. Ele aumenta em incrementos de um quando aprimoramentos significativos são adicionados às extensões de comando. A **CMDEXTVERSION** condicional nunca é verdadeira quando as extensões de comando estão desabilitadas (por padrão, as extensões de comando estão habilitadas). |
 |   Variável de \<definida >   |                                                                                                                                                                                            Especifica uma condição verdadeira se a *variável* for definida.                                                                                                                                                                                            |
-|      Expressão de \<      |                                                                                                                                                                   Especifica um comando de linha de comando e quaisquer parâmetros a serem passados para o comando em uma cláusula **else** .                                                                                                                                                                   |
+|      Expressão de \<>      |                                                                                                                                                                   Especifica um comando de linha de comando e quaisquer parâmetros a serem passados para o comando em uma cláusula **else** .                                                                                                                                                                   |
 |           /?            |                                                                                                                                                                                                    Exibe a ajuda no prompt de comando.                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentários
@@ -68,9 +64,9 @@ if defined <Variable> <Command> [else <Expression>]
     -   **% CMDEXTVERSION%** se expande para a representação de cadeia de caracteres do valor atual de **CMDEXTVERSION**. Isso pressupõe que não há uma variável de ambiente existente com o nome CMDEXTVERSION — se houver, você obterá o valor de CMDEXTVERSION em vez disso.
 -   Você deve usar a cláusula **else** na mesma linha que o comando depois de **If**.
 
-## <a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
-Para exibir a mensagem "não é possível localizar o arquivo de dados" se o arquivo Product. dat não puder ser encontrado, digite:
+Para exibir a mensagem não é possível localizar o arquivo de dados se o arquivo Product. dat não puder ser encontrado, digite:
 ```
 if not exist product.dat echo Cannot find data file 
 ```
@@ -110,15 +106,15 @@ echo The Product.dat file is missing.
 > :end
 > echo Done! 
 > ```
-> Para ir para o rótulo "OK" se o valor da variável de ambiente ERRORLEVEL for menor ou igual a 1, digite:
+> Para ir para o rótulo ok se o valor da variável de ambiente ERRORLEVEL for menor ou igual a 1, digite:
 > ```
 > if %errorlevel% LEQ 1 goto okay
 > ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-[Se](if.md)
+[Que](if.md)
 
 [Fim](goto.md)

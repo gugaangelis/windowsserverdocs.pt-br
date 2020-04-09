@@ -1,7 +1,6 @@
 ---
 ms.assetid: 19feca0e-a6d0-4d27-93b0-cb44f8c26484
 title: Delegando administração das UOs de conta e de recurso
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 63fda63d5a34404563bab44ee54ba2e22d852782
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3043aaf79b2c0894fffe2f896a235ad519222e05
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402697"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822739"
 ---
 # <a name="delegating-administration-of-account-ous-and-resource-ous"></a>Delegando administração das UOs de conta e de recurso
 
@@ -45,7 +44,7 @@ A ilustração a seguir mostra um exemplo de um design de grupo administrativo p
   
 Os grupos que gerenciam as UOs filhas recebem controle total apenas sobre a classe específica de objetos que eles são responsáveis por gerenciar.  
   
-Os tipos de grupos que você usa para delegar controle dentro de uma estrutura de UO são baseados em onde as contas estão localizadas em relação à estrutura da UO a ser gerenciada. Se as contas de usuário administrador e a estrutura da UO existirem em um único domínio, os grupos que você criar para serem usados para delegação deverão ser grupos globais. Se sua organização tiver um departamento que gerencia suas próprias contas de usuário e existir em mais de uma região geográfica, você poderá ter um grupo de administradores de dados que são responsáveis pelo gerenciamento de UOs de conta em mais de um domínio. Se as contas dos administradores de dados existirem em um único domínio e você tiver estruturas de UO em vários domínios para os quais você precisa delegar o controle, torne essas contas administrativas membros de grupos globais e delegue o controle das estruturas de UO em cada domínio para esses grupos globais. Se as contas de administradores de dados para as quais você delega o controle de uma estrutura de UO são provenientes de vários domínios, você deve usar um grupo universal. Os grupos universais podem conter usuários de diferentes domínios e, portanto, podem ser usados para delegar o controle em vários domínios.  
+Os tipos de grupos que você usa para delegar controle dentro de uma estrutura de UO são baseados em onde as contas estão localizadas em relação à estrutura da UO a ser gerenciada. Se as contas de usuário administrador e a estrutura da UO existirem em um único domínio, os grupos que você criar para serem usados para delegação deverão ser grupos globais. Se sua organização tiver um departamento que gerencia suas próprias contas de usuário e existir em mais de uma região geográfica, você poderá ter um grupo de administradores de dados que são responsáveis pelo gerenciamento de UOs de conta em mais de um domínio. Se as contas dos administradores de dados existirem em um único domínio e você tiver estruturas de UO em vários domínios para os quais você precisa delegar controle, torne essas contas administrativas membros de grupos globais e delegue o controle das estruturas de UO em cada domínio para esses grupos globais. Se as contas de administradores de dados para as quais você delega o controle de uma estrutura de UO são provenientes de vários domínios, você deve usar um grupo universal. Os grupos universais podem conter usuários de diferentes domínios e, portanto, podem ser usados para delegar o controle em vários domínios.  
   
 ## <a name="delegating-administration-of-resource-ous"></a>Delegando a administração de UOs de recursos  
 As UOs de recurso são usadas para gerenciar o acesso aos recursos. O proprietário da UO do recurso cria contas de computador para servidores que ingressaram no domínio que incluem recursos como compartilhamentos de arquivos, bancos de dados e impressoras. O proprietário da UO do recurso também cria grupos para controlar o acesso a esses recursos.  

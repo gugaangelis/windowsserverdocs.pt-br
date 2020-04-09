@@ -1,7 +1,6 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: Configurar um computador para solução de problemas
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
-ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
+ms.openlocfilehash: d9d279615dc1f70ffdcff9e49a4aa619f0106a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278551"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822969"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>Configurar um computador para solução de problemas
 
@@ -36,7 +35,7 @@ Para obter informações sobre como instalar o RSAT, consulte o artigo [ferramen
 
 ### <a name="configure-reliability-and-performance-monitor"></a>Configurar o monitor de desempenho e confiabilidade
 
-O Windows Server inclui o monitor de desempenho e confiabilidade do Windows, que é um snap-in do MMC (console de gerenciamento Microsoft) que combina a funcionalidade de ferramentas autônomas anteriores, incluindo Logs e Alertas de Desempenho, supervisor de desempenho de servidor, e o monitor do sistema. Esse snap-in fornece uma GUI (interface gráfica do usuário) para personalizar conjuntos de coletores de dados e sessões de rastreamento de eventos.
+O Windows Server inclui o monitor de desempenho e confiabilidade do Windows, que é um snap-in do MMC (console de gerenciamento Microsoft) que combina a funcionalidade das ferramentas autônomas anteriores, incluindo Logs e Alertas de Desempenho, o supervisor de desempenho do servidor e o monitor do sistema. Esse snap-in fornece uma GUI (interface gráfica do usuário) para personalizar conjuntos de coletores de dados e sessões de rastreamento de eventos.
 
 O monitor de confiabilidade e desempenho também inclui o monitor de confiabilidade, um snap-in do MMC que controla as alterações no sistema e os compara com as alterações na estabilidade do sistema, fornecendo uma exibição gráfica de sua relação.
 

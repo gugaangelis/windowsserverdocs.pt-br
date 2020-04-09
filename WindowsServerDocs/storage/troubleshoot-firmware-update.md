@@ -3,21 +3,21 @@ ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: Solução de problemas de atualizações de firmware de unidade
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 9c9c1083def53e09b063a0ca9879e4d4527e98c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365889"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820879"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>Solução de problemas de atualizações de firmware de unidade
 
->Aplica-se a: Windows 10, Windows Server (canal semestral),
+>Aplicável a: Windows 10, Windows Server (canal semestral),
 
 O Windows 10, versão 1703, e o novo Windows Server (canal semestral) incluem a capacidade de atualizar o firmware de HDDs e SSDs que foram certificados com o AQ (Qualificador Adicional) de upgrade de firmware por meio do PowerShell.
 
@@ -41,7 +41,7 @@ Em termos de arquitetura, esse novo recurso depende de APIs implementadas na pil
 As seções a seguir descrevem informações de solução de problemas, dependendo se drivers da Microsoft ou de terceiros são usados.
 
 ## <a name="identifying-inappropriate-hardware"></a>Identificando hardware inadequado
-A maneira mais rápida para identificar se um dispositivo dá suporte ao conjunto correto de comandos é simplesmente iniciar o PowerShell e passar um objeto do disco que representa PhysicalDisk para o cmdlet Get-StorageFirmwareInfo. Veja um exemplo:
+A maneira mais rápida para identificar se um dispositivo dá suporte ao conjunto correto de comandos é simplesmente iniciar o PowerShell e passar um objeto do disco que representa PhysicalDisk para o cmdlet Get-StorageFirmwareInfo. Aqui está um exemplo:
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -142,7 +142,7 @@ Os logs de diagnóstico não são mostrados por padrão e podem ser ativados/mos
 
 Para coletar essas entradas avançadas do log, habilite o log, reproduza a falha de atualização de firmware e salve o log de diagnóstico.
 
-Aqui está um exemplo de uma atualização de firmware em um dispositivo SATA falhando, porque a imagem a ser baixada era inválida (ID do evento: 258):
+Veja um exemplo de uma atualização de firmware em uma falha de dispositivo SATA, pois a imagem a ser baixada era inválida (ID de evento: 258):
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 O evento acima contém informações detalhadas de dispositivo nos valores de parâmetro 2 a 6. Aqui estamos olhando vários valores do registro ATA. A especificação ATA ACS pode ser usada para decodificar os valores abaixo pela falha de um comando Download Microcode:
-- Código de retorno: 0 (0000 0000) (N/A-sem sentido porque nenhuma carga foi transferida)
+- Código de retorno: 0 (0000 0000) (N/A - sem sentido, pois nenhuma carga foi transferida)
 - Recursos: 15 (0000 1111) (bit 1 é definido como "1" e indica "Abort")
 - SectorCount: 0 (0000 0000) (N/A)
-- DriveHead: 160 (1010 0000) (N/A – somente bits obsoletos são definidos)
-- Linha 146 (1001 0010) (bit 1 é definido como "1" indicando a disponibilidade dos dados de detecção)
+- DriveHead: 160 (1010 0000) (N/A – apenas bits obsoletos são definidos)
+- Comando: 146 (1001 0010) (bit 1 é definido como "1" indicando a disponibilidade dos dados de detecção)
 
 Isso informa que a operação de atualização de firmware foi cancelada pelo dispositivo.
 

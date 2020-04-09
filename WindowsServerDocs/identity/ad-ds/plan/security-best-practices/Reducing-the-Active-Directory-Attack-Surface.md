@@ -1,7 +1,6 @@
 ---
 ms.assetid: 864ad4bc-8428-4a8b-8671-cb93b68b0c03
 title: Redução da superfície de ataque do Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 94bc65d42fa90dd7c93ba759a41d34edec10de09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd0b412e7a0005bc6574638e0f6fce4554c6487
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367651"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821049"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>Redução da superfície de ataque do Active Directory
 
@@ -32,7 +31,7 @@ Esta seção aborda os controles técnicos a serem implementados para reduzir a 
 Esta seção fornece informações básicas sobre contas e grupos com privilégios no Active Directory destinado a explicar o semelhanças e as diferenças entre contas com privilégios e grupos no Active Directory. Ao compreender essas distinções, se você implementar as recomendações na [implementação de modelos administrativos de privilégios mínimos](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md) ou optar por personalizá-los para sua organização, terá as ferramentas necessárias para proteger cada grupo e conta adequadamente.  
   
 ### <a name="built-in-privileged-accounts-and-groups"></a>Contas e grupos com privilégios internos  
-Active Directory facilita a delegação de administração e dá suporte ao princípio de privilégios mínimos na atribuição de direitos e permissões. Os usuários "regulares" que têm contas em um domínio são, por padrão, capazes de ler grande parte do que está armazenado no diretório, mas podem alterar apenas um conjunto muito limitado de dados no diretório. Os usuários que exigem privilégios adicionais podem receber associação em vários grupos "privilegiados" que são criados no diretório para que possam executar tarefas específicas relacionadas às suas funções, mas não podem executar tarefas que não são relevantes para suas tarefas. As organizações também podem criar grupos que são adaptados a responsabilidades específicas de trabalho e recebem direitos e permissões granulares que permitem à equipe de ti executar funções administrativas cotidianas sem conceder direitos e permissões que excedem o que é necessário para essas funções.  
+Active Directory facilita a delegação de administração e dá suporte ao princípio de privilégios mínimos na atribuição de direitos e permissões. Os usuários "regulares" que têm contas em um domínio são, por padrão, capazes de ler grande parte do que está armazenado no diretório, mas podem alterar apenas um conjunto muito limitado de dados no diretório. Os usuários que exigem privilégios adicionais podem receber associação em vários grupos "privilegiados" que são criados no diretório para que possam executar tarefas específicas relacionadas às suas funções, mas não podem executar tarefas que não são relevantes para suas tarefas. As organizações também podem criar grupos que são personalizados para responsabilidades específicas de trabalho e recebem direitos e permissões granulares que permitem que a equipe de ti execute funções administrativas cotidianas sem conceder direitos e permissões que excedem o que é necessário para essas funções.  
   
 Em Active Directory, três grupos internos são os grupos de privilégios mais altos no diretório: administradores corporativos, administradores de domínio e administradores. A configuração padrão e os recursos de cada um desses grupos são descritos nas seções a seguir:  
   
@@ -43,7 +42,7 @@ O EA (Enterprise Admins) é um grupo que existe somente no domínio raiz da flor
   
 ##### <a name="domain-admins"></a>Administradores do domínio  
 
-Cada domínio em uma floresta tem seu próprio grupo de administradores de domínio (DA), que é um membro do grupo de administradores desse domínio e um membro do grupo de Administradores local em cada computador ingressado no domínio. O único membro padrão do grupo DA para um domínio é a conta de administrador interna para esse domínio. O DAs são "todos-poderosos" em seus domínios, enquanto EAs têm privilégios de toda a floresta. Em um modelo de delegação projetado e implementado corretamente, a associação de administradores de domínio deve ser necessária somente em cenários de "interrupção" (como situações em que uma conta com altos níveis de privilégio em cada computador no domínio é necessária). Embora os mecanismos nativos de delegação de Active Directory permitam a delegação na medida em que é possível usar contas DA dos somente em cenários de emergência, construir um modelo de delegação eficaz pode ser demorado e muitas organizações aproveitam ferramentas de terceiros para agilizar o processo.  
+Cada domínio em uma floresta tem seu próprio grupo de administradores de domínio (DA), que é um membro do grupo de administradores desse domínio e um membro do grupo de Administradores local em cada computador ingressado no domínio. O único membro padrão do grupo DA para um domínio é a conta de administrador interna para esse domínio. O DAs são "todos-poderosos" em seus domínios, enquanto EAs têm privilégios de toda a floresta. Em um modelo de delegação projetado e implementado corretamente, a associação de administradores de domínio deve ser necessária somente em cenários de "interrupção" (como situações em que uma conta com altos níveis de privilégio em cada computador no domínio é necessária). Embora os mecanismos de delegação de Active Directory nativos permitam a delegação na medida em que é possível usar contas DA dos somente em cenários de emergência, construir um modelo de delegação eficaz pode ser demorado e muitas organizações aproveitam ferramentas de terceiros para agilizar o processo.  
   
 ##### <a name="administrators"></a>Administradores  
 O terceiro grupo é o grupo de administradores locais de domínio (BA) interno no qual o DAs e EAs são aninhados. Esse grupo recebe muitos dos direitos e permissões diretos no diretório e nos controladores de domínio. No entanto, o grupo de administradores de um domínio não tem privilégios em servidores membros ou em estações de trabalho. É por meio da associação no grupo local de administradores do computador que o privilégio local é concedido.  
@@ -55,7 +54,7 @@ O terceiro grupo é o grupo de administradores locais de domínio (BA) interno n
 
 Um quarto grupo privilegiado, administradores de esquema (SA), existe apenas no domínio raiz da floresta e tem apenas a conta de administrador interno do domínio como um membro padrão, semelhante ao grupo Administradores de empresa. O grupo Administradores de esquema deve ser preenchido apenas temporariamente e ocasionalmente (quando a modificação do esquema de AD DS é necessária).  
   
-Embora o grupo SA seja o único grupo que pode modificar o esquema de Active Directory (ou seja, as estruturas de dados subjacentes do diretório, como objetos e atributos), o escopo dos direitos e permissões do grupo SA é mais limitado do que o descrito anteriormente agrupa. Também é comum descobrir que as organizações desenvolveram as práticas apropriadas para o gerenciamento da associação do grupo SA, pois a associação no grupo normalmente é raramente necessária e apenas por longos períodos de tempo. Isso é tecnicamente verdadeiro nos grupos EA, DA e BA em Active Directory, mas é muito menos comum descobrir que as organizações implementaram práticas semelhantes para esses grupos como para o grupo SA.  
+Embora o grupo SA seja o único grupo que pode modificar o esquema de Active Directory (ou seja, as estruturas de dados subjacentes do diretório, como objetos e atributos), o escopo dos direitos e permissões do grupo SA é mais limitado do que os grupos descritos anteriormente. Também é comum descobrir que as organizações desenvolveram as práticas apropriadas para o gerenciamento da associação do grupo SA, pois a associação no grupo normalmente é raramente necessária e apenas por longos períodos de tempo. Isso é tecnicamente verdadeiro nos grupos EA, DA e BA em Active Directory, mas é muito menos comum descobrir que as organizações implementaram práticas semelhantes para esses grupos como para o grupo SA.  
   
 #### <a name="protected-accounts-and-groups-in-active-directory"></a>Contas e grupos protegidos no Active Directory  
 No Active Directory, um conjunto padrão de contas com privilégios e grupos chamados de contas e grupos "protegidos" são protegidos de forma diferente dos outros objetos no diretório. Qualquer conta que tenha associação direta ou transitiva em qualquer grupo protegido (independentemente de a associação ser derivada de grupos de segurança ou de distribuição) herda essa segurança restrita.  
@@ -100,7 +99,7 @@ A herança de permissões é desabilitada em contas e grupos protegidos, o que s
 ###### <a name="adminsdholder-ownership"></a>Propriedade do AdminSDHolder  
 A maioria dos objetos em Active Directory pertence ao grupo de BA do domínio. No entanto, o objeto AdminSDHolder é, por padrão, de Propriedade do grupo DA dos do domínio. (Essa é uma circunstância na qual o DAs não deriva seus direitos e permissões por meio da associação no grupo Administradores para o domínio.)  
   
-Em versões do Windows anteriores ao Windows Server 2008, os proprietários de um objeto podem alterar as permissões do objeto, incluindo a concessão de permissões que não tinham originalmente. Portanto, as permissões padrão no objeto AdminSDHolder de um domínio impedem que os usuários que são membros de grupos de BA ou EA alterem as permissões para o objeto AdminSDHolder de um domínio. No entanto, os membros do grupo Administradores do domínio podem apropriar-se do objeto e conceder permissões adicionais, o que significa que essa proteção é rudimentar e só protege o objeto contra modificação acidental por usuários que estão Não são membros do grupo DA no domínio. Além disso, os grupos BA e EA (onde aplicável) têm permissão para alterar os atributos do objeto AdminSDHolder no domínio local (domínio raiz para EA).  
+Em versões do Windows anteriores ao Windows Server 2008, os proprietários de um objeto podem alterar as permissões do objeto, incluindo a concessão de permissões que não tinham originalmente. Portanto, as permissões padrão no objeto AdminSDHolder de um domínio impedem que os usuários que são membros de grupos de BA ou EA alterem as permissões para o objeto AdminSDHolder de um domínio. No entanto, os membros do grupo Administradores do domínio podem apropriar-se do objeto e conceder permissões adicionais, o que significa que essa proteção é rudimentar e só protege o objeto contra a modificação acidental por usuários que não são membros do grupo DA no domínio. Além disso, os grupos BA e EA (onde aplicável) têm permissão para alterar os atributos do objeto AdminSDHolder no domínio local (domínio raiz para EA).  
   
 > [!NOTE]  
 > Um atributo no objeto AdminSDHolder, dSHeuristics, permite a personalização limitada (remoção) de grupos que são considerados grupos protegidos e são afetados pelo AdminSDHolder e pelo SDProp. Essa personalização deve ser considerada cuidadosamente se for implementada, embora haja circunstâncias válidas nas quais a modificação do dSHeuristics em AdminSDHolder seja útil. Mais informações sobre a modificação do atributo dSHeuristics em um objeto AdminSDHolder podem ser encontradas nos artigos da Suporte da Microsoft [817433](https://support.microsoft.com/?id=817433) e [973840](https://support.microsoft.com/kb/973840)e no [Apêndice C: contas e grupos protegidos no Active Directory](Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  

@@ -1,28 +1,22 @@
 ---
 title: diskraid
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para o DiskRAID, que é uma ferramenta de linha de comando que permite que você configure e gerencie a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f72e91f856da3b24e7450381b293f4b365d914f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea71fc67420700527a3a14494c947aed7a2ec747
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377803"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845399"
 ---
 # <a name="diskraid"></a>diskraid
-
-
 
 O DiskRAID é uma ferramenta de linha de comando que permite configurar e gerenciar a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
 
@@ -38,13 +32,13 @@ A maioria dos comandos do DiskRAID opera em uma porta específica de HBA (adapta
 ## <a name="diskraid-commands"></a>Comandos do DiskRAID
 
 Para exibir a sintaxe do comando, clique em um comando:
--   [agrega](#BKMK_1)
+-   [add](#BKMK_1)
 -   [sócio](#BKMK_2)
 -   [automagic](#BKMK_3)
 -   [break](#BKMK_4)
 -   [via](#BKMK_5)
 -   [criada](#BKMK_6)
--   [apagar](#BKMK_7)
+-   [delete](#BKMK_7)
 -   [detalhes](#BKMK_8)
 -   [desassociar](#BKMK_9)
 -   [exit](#BKMK_10)
@@ -68,14 +62,14 @@ Para exibir a sintaxe do comando, clique em um comando:
 -   [rem](#BKMK_29)
 -   [exclu](#BKMK_30)
 -   [replace](#BKMK_31)
--   [definido](#BKMK_32)
+-   [reset](#BKMK_32)
 -   [Não](#BKMK_33)
 -   [SetFlag](#BKMK_34)
 -   [shrink](#BKMK_shrink)
 -   [Espera](#BKMK_35)
 -   [unmask](#BKMK_36)
 
-### <a name="BKMK_1"></a>agrega
+### <a name="add"></a><a name=BKMK_1></a>agrega
 
 Adiciona um LUN existente ao LUN selecionado no momento ou adiciona um portal de destino iSCSI ao grupo do portal de destino iSCSI selecionado no momento.
 
@@ -86,7 +80,7 @@ add plex lun=n [noerr]
 add tpgroup tportal=n [noerr]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **LUN de plex**=*n*
 
@@ -103,9 +97,9 @@ Especifica o número do portal de destino iSCSI a ser adicionado ao grupo do por
 
 Especifica que qualquer falha que ocorra durante a execução desta operação será ignorada. Isso é útil no modo de script.
 
-### <a name="BKMK_2"></a>sócio
+### <a name="associate"></a><a name=BKMK_2></a>sócio
 
-Define a lista especificada de portas do controlador como ativas para o LUN selecionado atualmente (outras portas do controlador tornam-se inativas) ou adiciona as portas do controlador especificado à lista de portas do controlador ativo existentes para o LUN selecionado no momento ou associa a destino iSCSI especificado para o LUN selecionado no momento.
+Define a lista especificada de portas do controlador como ativas para o LUN selecionado atualmente (outras portas do controlador tornam-se inativas) ou adiciona as portas do controlador especificado à lista de portas do controlador ativo existentes para o LUN selecionado no momento ou associa o destino iSCSI especificado para o LUN selecionado no momento.
 
 #### <a name="syntax"></a>Sintaxe
 
@@ -115,7 +109,7 @@ associate ports [add] <n-m>[,<n-m>[,…]]
 associate targets [add] <n>[,<n> [,…]]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **controladores**
 
@@ -129,7 +123,7 @@ Para uso somente com provedores VDS 1,1. Adiciona ou substitui a lista de portas
 
 Para uso somente com provedores VDS 1,1. Adiciona ou substitui a lista de destinos iSCSI associados ao LUN selecionado no momento.
 
-**agrega**
+**add**
 
 Para provedores VDS 1,0, o adiciona os controladores especificados à lista existente de controladores associados ao LUN. Se esse parâmetro não for especificado, a lista de controladores substituirá a lista existente de controladores associados a esse LUN.
 
@@ -159,7 +153,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 0, Ctlr 0 Port 1, Ctlr 1 Port 1)
 ```
 
-### <a name="BKMK_3"></a>automagic
+### <a name="automagic"></a><a name=BKMK_3></a>automagic
 
 Define ou limpa sinalizadores que dão dicas aos provedores sobre como configurar um LUN. Usado sem parâmetros, a operação **automagic** exibe uma lista de sinalizadores.
 
@@ -169,7 +163,7 @@ Define ou limpa sinalizadores que dão dicas aos provedores sobre como configura
 automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **set**
 
@@ -207,7 +201,7 @@ Os sinalizadores são identificados por acrônimos de três letras.
 |WTC|Cache de gravação habilitado|
 |YNK|Removível|
 
-### <a name="BKMK_4"></a>interrupção
+### <a name="break"></a><a name=BKMK_4></a>interrupção
 
 Remove o Plex do LUN selecionado no momento. O Plex e os dados contidos nela não são retidos e as extensões de unidade podem ser recuperadas.
 
@@ -217,7 +211,7 @@ Remove o Plex do LUN selecionado no momento. O Plex e os dados contidos nela nã
 break plex=<plex_number> [noerr]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **plexos**
 
@@ -238,7 +232,7 @@ Especifica que qualquer falha que ocorra durante a execução desta operação s
 > [!CAUTION]
 > Não há garantia de que todos os dados contidos no LUN original sejam consistentes.
 
-### <a name="BKMK_5"></a>via
+### <a name="chap"></a><a name=BKMK_5></a>via
 
 Define o segredo compartilhado do CHAP (Challenge Handshake Authentication Protocol) para que os iniciadores iSCSI e os destinos iSCSI possam se comunicar uns com os outros.
 
@@ -251,7 +245,7 @@ chap target set secret=[<secret>] [initiator=<initiatorname>]
 chap target remember secret=[<secret>] initiator=<initiatorname>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **conjunto de iniciadores**
 
@@ -281,7 +275,7 @@ Especifica um destino no subsistema selecionado no momento para associar ao segr
 
 Especifica um nome iSCSI do iniciador a ser associado ao segredo. Isso é opcional ao definir um segredo em um destino e deixá-lo fora indica que o segredo será usado para todos os iniciadores que ainda não têm um segredo associado.
 
-### <a name="BKMK_6"></a>criada
+### <a name="create"></a><a name=BKMK_6></a>criada
 
 Cria um novo LUN ou destino iSCSI no subsistema selecionado no momento ou cria um grupo de portais de destino no destino selecionado no momento. Você pode exibir a associação real usando o comando de **lista do DiskRAID** .
 
@@ -374,7 +368,7 @@ Especifica que qualquer falha que ocorra durante a execução desta operação s
 -   O parâmetro **size**= ou **drives**= deve ser especificado. Eles também podem ser usados juntos.
 -   O tamanho da distribuição para um LUN não pode ser alterado após a criação.
 
-### <a name="BKMK_7"></a>apagar
+### <a name="delete"></a><a name=BKMK_7></a>apagar
 
 Exclui o LUN selecionado no momento, o destino iSCSI (desde que não haja LUNs associados ao destino iSCSI) ou o grupo do portal de destino iSCSI.
 
@@ -386,7 +380,7 @@ delete target [noerr]
 delete tpgroup [noerr]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **LUN**
 
@@ -408,7 +402,7 @@ Exclui o grupo do portal de destino iSCSI selecionado no momento.
 
 Especifica que qualquer falha que ocorra durante a execução desta operação será ignorada. Isso é útil no modo de script.
 
-### <a name="BKMK_8"></a>detalhes
+### <a name="detail"></a><a name=BKMK_8></a>detalhes
 
 Exibe informações detalhadas sobre o objeto selecionado no momento do tipo especificado.
 
@@ -418,7 +412,7 @@ Exibe informações detalhadas sobre o objeto selecionado no momento do tipo esp
 Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup} [verbose]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **destes**
 
@@ -472,7 +466,7 @@ Lista informações detalhadas sobre o grupo do portal de destino iSCSI selecion
 
 Para uso somente com o parâmetro LUN. Lista informações adicionais, incluindo seus plexes.
 
-### <a name="BKMK_9"></a>desassociar
+### <a name="dissociate"></a><a name=BKMK_9></a>desassociar
 
 Define a lista especificada de portas do controlador como inativas para o LUN selecionado atualmente (outras portas do controlador não são afetadas) ou dissocia a lista especificada de destinos iSCSI para o LUN selecionado no momento.
 
@@ -525,7 +519,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 1)
 ```
 
-### <a name="BKMK_10"></a>sido
+### <a name="exit"></a><a name=BKMK_10></a>sido
 
 Sai do DiskRAID.
 
@@ -535,7 +529,7 @@ Sai do DiskRAID.
 exit
 ```
 
-### <a name="BKMK_11"></a>estender
+### <a name="extend"></a><a name=BKMK_11></a>estender
 
 Estende o LUN selecionado no momento adicionando setores ao final do LUN. Nem todos os provedores dão suporte à extensão de LUNs. Não estende os volumes ou sistemas de arquivos contidos no LUN. Depois de estender o LUN, você deve estender as estruturas em disco associadas usando o comando de **extensão do DiskPart** .
 
@@ -545,7 +539,7 @@ Estende o LUN selecionado no momento adicionando setores ao final do LUN. Nem to
 extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noerr]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **tamanho =**
 
@@ -571,7 +565,7 @@ Especifica que qualquer falha que ocorra durante a execução desta operação d
 
 O *tamanho* ou o parâmetro da unidade de \<> deve ser especificado. Eles também podem ser usados juntos.
 
-### <a name="BKMK_12"></a>flushcache
+### <a name="flushcache"></a><a name=BKMK_12></a>flushcache
 
 Limpa o cache no controlador selecionado no momento.
 
@@ -581,7 +575,7 @@ Limpa o cache no controlador selecionado no momento.
 flushcache controller
 ```
 
-### <a name="BKMK_13"></a>Ajuda
+### <a name="help"></a><a name=BKMK_13></a>Ajuda
 
 Exibe uma lista de todos os comandos do DiskRAID.
 
@@ -591,7 +585,7 @@ Exibe uma lista de todos os comandos do DiskRAID.
 help
 ```
 
-### <a name="BKMK_14"></a>importtarget
+### <a name="importtarget"></a><a name=BKMK_14></a>importtarget
 
 Recupera ou define o destino de importação de Serviço de Cópias de Sombra de Volume (VSS) atual definido para o subsistema selecionado no momento.
 
@@ -607,7 +601,7 @@ importtarget subsystem [set target]
 
 Se especificado, define o destino selecionado no momento para o destino de importação do VSS para o subsistema selecionado no momento. Se não for especificado, o comando recuperará o destino de importação VSS atual que está definido para o subsistema selecionado no momento.
 
-### <a name="BKMK_15"></a>Configure
+### <a name="initiator"></a><a name=BKMK_15></a>Configure
 
 Recupera informações sobre o iniciador iSCSI local.
 
@@ -617,7 +611,7 @@ Recupera informações sobre o iniciador iSCSI local.
 initiator
 ```
 
-### <a name="BKMK_16"></a>invalidatecache
+### <a name="invalidatecache"></a><a name=BKMK_16></a>invalidatecache
 
 Invalida o cache no controlador selecionado no momento.
 
@@ -627,7 +621,7 @@ Invalida o cache no controlador selecionado no momento.
 invalidatecache controller
 ```
 
-### <a name="BKMK_18"></a>lbpolicy
+### <a name="lbpolicy"></a><a name=BKMK_18></a>lbpolicy
 
 Define a política de balanceamento de carga no LUN selecionado no momento.
 
@@ -638,7 +632,7 @@ lbpolicy set lun type=<type> [paths=<path>-{primary | <weight>}[,<path>-{primary
 lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[,…]]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **type**
 
@@ -662,7 +656,7 @@ Especifica a política de balanceamento de carga. Se o tipo não for especificad
 
 Especifica se um caminho é **primário** ou tem um determinado peso de \<>. Todos os caminhos não especificados são definidos implicitamente como backup. Todos os caminhos listados devem ser um dos caminhos de LUN atualmente selecionados.
 
-### <a name="BKMK_19"></a>lista
+### <a name="list"></a><a name=BKMK_19></a>lista
 
 Exibe uma lista de objetos do tipo especificado.
 
@@ -672,7 +666,7 @@ Exibe uma lista de objetos do tipo especificado.
 List {hbaports | iadapters | iportals | providers | subsystems | controllers | ports | drives | LUNs | tportals | targets | tpgroups}
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **hbaports**
 
@@ -722,7 +716,7 @@ Lista informações de resumo sobre todos os destinos iSCSI no subsistema seleci
 
 Lista informações de resumo sobre todos os grupos do portal de destino iSCSI no destino selecionado no momento. O grupo do portal selecionado atualmente é marcado por um asterisco (*).
 
-### <a name="BKMK_20"></a>entrar
+### <a name="login"></a><a name=BKMK_20></a>entrar
 
 Registra o adaptador do iniciador iSCSI especificado no destino iSCSI selecionado no momento.
 
@@ -732,7 +726,7 @@ Registra o adaptador do iniciador iSCSI especificado no destino iSCSI selecionad
 login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none | oneway | mutual}] [iportal=<iportal>] [tportal=<tportal>] [<flag> [<flag> […]]]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **type**
 
@@ -746,7 +740,7 @@ Especifica o tipo de logon a ser executado: **manual**, **persistente**ou **inic
 
 **via**
 
-Especifica o tipo de autenticação CHAP a ser usado: nenhum **, unichap ou CHAP** **mútuo** ; Se não for especificado, nenhuma autenticação será usada.
+Especifica o tipo de autenticação CHAP a ser usado **none**: nenhum **, unichap ou CHAP** **mútuo** ; Se não for especificado, nenhuma autenticação será usada.
 
 **tportal**
 
@@ -768,7 +762,7 @@ Identificado por três acrônimos de letra:
 
 **EDD**: habilitar o resumo de dados
 
-### <a name="BKMK_21"></a>logout
+### <a name="logout"></a><a name=BKMK_21></a>logout
 
 Registra o adaptador do iniciador iSCSI especificado fora do destino iSCSI selecionado no momento.
 
@@ -778,13 +772,13 @@ Registra o adaptador do iniciador iSCSI especificado fora do destino iSCSI selec
 logout target iadapter= <iadapter>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **IADAPTER**
 
 Especifica o adaptador do iniciador com uma sessão de logon da qual fazer logoff.
 
-### <a name="BKMK_22"></a>manter
+### <a name="maintenance"></a><a name=BKMK_22></a>manter
 
 Executa operações de manutenção no objeto selecionado no momento do tipo especificado.
 
@@ -794,7 +788,7 @@ Executa operações de manutenção no objeto selecionado no momento do tipo esp
 maintenance <object operation> [count=<iteration>]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 objeto \<>
 
@@ -808,7 +802,7 @@ Especifica a operação de manutenção a ser executada. O tipo de *operação* 
 
 Especifica o número de vezes para repetir a *operação*. Normalmente, isso é usado com **intermitência**, **alarme sonoro**ou **ping**.
 
-### <a name="BKMK_23"></a>nomes
+### <a name="name"></a><a name=BKMK_23></a>nomes
 
 Define o nome amigável do subsistema, LUN ou destino iSCSI atualmente selecionado para o nome especificado.
 
@@ -824,7 +818,7 @@ nome do \<>
 
 Especifica um nome para o subsistema, LUN ou destino. O nome deve ter menos de 64 caracteres de comprimento. Se nenhum nome for fornecido, o nome existente, se houver, será excluído.
 
-### <a name="BKMK_24"></a>está
+### <a name="offline"></a><a name=BKMK_24></a>está
 
 Define o estado do objeto selecionado no momento do tipo especificado como **offline**.
 
@@ -842,7 +836,7 @@ Especifica o tipo de objeto no qual executar esta operação. O objeto \<>
 
 o tipo pode ser **subsistema**, **controlador**, **unidade**, **LUN**ou **tportal**.
 
-### <a name="BKMK_25"></a>conectar
+### <a name="online"></a><a name=BKMK_25></a>conectar
 
 Define o estado do objeto selecionado do tipo especificado como **online**. Se Object for **hbaport**, o alterará o status dos caminhos para a porta de HBA selecionada no momento para **online**.
 
@@ -860,7 +854,7 @@ Especifica o tipo de objeto no qual executar esta operação. O objeto \<>
 
 o tipo pode ser **hbaport**, **Subsystem**, **Controller**, **drive**, **LUN**ou **tportal**.
 
-### <a name="BKMK_26"></a>Recupera
+### <a name="recover"></a><a name=BKMK_26></a>Recupera
 
 Executa as operações necessárias, como ressincronização ou Hot Sparing, para reparar o LUN tolerante a falhas selecionado no momento. Por exemplo, a recuperação pode fazer com que um hot spare seja associado a um conjunto de RAID que tenha um disco com falha ou outra realocação de extensão de disco.
 
@@ -870,7 +864,7 @@ Executa as operações necessárias, como ressincronização ou Hot Sparing, par
 recover <lun>
 ```
 
-### <a name="BKMK_27"></a>reenumerar
+### <a name="reenumerate"></a><a name=BKMK_27></a>reenumerar
 
 Reenumera objetos do tipo especificado. Se você usar o comando Extend LUN, deverá usar o comando Refresh para atualizar o tamanho do disco antes de usar o comando reenumerate.
 
@@ -880,7 +874,7 @@ Reenumera objetos do tipo especificado. Se você usar o comando Extend LUN, deve
 reenumerate {subsystems | drives}
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **subsistemas**
 
@@ -890,7 +884,7 @@ Consulta o provedor para descobrir novos subsistemas que foram adicionados ao pr
 
 Consulta os barramentos de e/s internos para descobrir as novas unidades que foram adicionadas no subsistema selecionado no momento.
 
-### <a name="BKMK_28"></a>Nova
+### <a name="refresh"></a><a name=BKMK_28></a>Nova
 
 Atualiza os dados internos do provedor selecionado no momento.
 
@@ -900,7 +894,7 @@ Atualiza os dados internos do provedor selecionado no momento.
 refresh provider
 ```
 
-### <a name="BKMK_29"></a>Trab
+### <a name="rem"></a><a name=BKMK_29></a>Trab
 
 Usado para comentar scripts.
 
@@ -910,7 +904,7 @@ Usado para comentar scripts.
 Rem <comment>
 ```
 
-### <a name="BKMK_30"></a>exclu
+### <a name="remove"></a><a name=BKMK_30></a>exclu
 
 Remove o portal de destino iSCSI especificado do grupo do portal de destino selecionado no momento.
 
@@ -930,7 +924,7 @@ Especifica o portal de destino iSCSI a ser removido.
 
 Especifica que qualquer falha que ocorra durante a execução desta operação deve ser ignorada. Isso é útil no modo de script.
 
-### <a name="BKMK_31"></a>Substitua
+### <a name="replace"></a><a name=BKMK_31></a>Substitua
 
 Substitui a unidade especificada pela unidade selecionada no momento.
 
@@ -950,7 +944,7 @@ Especifica o > de drive_number \<para a unidade a ser substituída.
 
 -   A unidade especificada pode não ser a unidade selecionada no momento.
 
-### <a name="BKMK_32"></a>definido
+### <a name="reset"></a><a name=BKMK_32></a>definido
 
 Redefine a porta ou o controlador selecionado no momento.
 
@@ -960,7 +954,7 @@ Redefine a porta ou o controlador selecionado no momento.
 Reset {controller | port}
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **controle**
 
@@ -970,7 +964,7 @@ Redefine o controlador.
 
 Redefine a porta.
 
-### <a name="BKMK_33"></a>Não
+### <a name="select"></a><a name=BKMK_33></a>Não
 
 Exibe ou altera o objeto selecionado no momento.
 
@@ -980,7 +974,7 @@ Exibe ou altera o objeto selecionado no momento.
 Select {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup } [<n>]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **objeto**
 
@@ -1038,7 +1032,7 @@ Define o foco para o grupo do portal de destino iSCSI especificado no destino iS
 
 Especifica o número do objeto de \<> a ser selecionado. Se o <object number> especificado não for válido, todas as seleções existentes para objetos do tipo especificado serão limpas. Se nenhum <object number> for especificado, o objeto atual será exibido.
 
-### <a name="BKMK_34"></a>SetFlag
+### <a name="setflag"></a><a name=BKMK_34></a>SetFlag
 
 Define a unidade atualmente selecionada como um hot spare.
 
@@ -1048,7 +1042,7 @@ Define a unidade atualmente selecionada como um hot spare.
 setflag drive hotspare={true | false}
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **true**
 
@@ -1062,7 +1056,7 @@ Desmarca a unidade selecionada no momento como um hot spare.
 
 Os sobressalentes não podem ser usados para operações de associação de LUN comuns. Eles são reservados apenas para tratamento de falhas. A unidade não deve estar atualmente associada a nenhum LUN existente.
 
-### <a name="BKMK_shrink"></a>PodeReduzir
+### <a name="shrink"></a><a name=BKMK_shrink></a>PodeReduzir
 
 Reduz o tamanho do LUN selecionado.
 
@@ -1072,7 +1066,7 @@ Reduz o tamanho do LUN selecionado.
 shrink lun size=<n> [noerr]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **tamanho =**
 
@@ -1082,7 +1076,7 @@ Especifica a quantidade desejada de espaço em megabytes (MB) para reduzir o tam
 
 Especifica que qualquer falha que ocorra durante a execução desta operação será ignorada. Isso é útil no modo de script.
 
-### <a name="BKMK_35"></a>Espera
+### <a name="standby"></a><a name=BKMK_35></a>Espera
 
 Altera o status dos caminhos para a porta do adaptador de barramento de host (HBA) atualmente selecionada para em espera.
 
@@ -1092,13 +1086,13 @@ Altera o status dos caminhos para a porta do adaptador de barramento de host (HB
 standby hbaport
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **destes**
 
 Altera o status dos caminhos para a porta do adaptador de barramento de host (HBA) atualmente selecionada para em espera.
 
-### <a name="BKMK_36"></a>unmask
+### <a name="unmask"></a><a name=BKMK_36></a>unmask
 
 Torna os LUNs atualmente selecionados acessíveis a partir dos hosts especificados.
 
@@ -1108,7 +1102,7 @@ Torna os LUNs atualmente selecionados acessíveis a partir dos hosts especificad
 unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [;…]] | [add] initiator=<initiator>[;<initiator>[;…]]} [uninstall]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+##### <a name="parameters"></a>Parâmetros
 
 **os**
 
@@ -1124,7 +1118,7 @@ Especifica que o LUN não deve ser acessível a nenhum host.
 > [!IMPORTANT]
 > Você deve fazer logoff do destino antes de executar o comando unmask LUN NONE.
 
-**agrega**
+**add**
 
 Especifica que os hosts especificados devem ser adicionados à lista existente de hosts do qual esse LUN está acessível. Se esse parâmetro não for especificado, a lista de hosts fornecida substituirá a lista existente de hosts dos quais esse LUN pode ser acessado.
 

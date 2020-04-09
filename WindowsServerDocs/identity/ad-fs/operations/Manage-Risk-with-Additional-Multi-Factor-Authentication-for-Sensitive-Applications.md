@@ -1,7 +1,6 @@
 ---
 ms.assetid: 934ac796-e2ee-490d-8265-6a818be5ee79
 title: gerencie riscos com Multi-Factor Authentication adicional para aplicativos confidenciais
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79319f54ceb14195dffd56b5a4dfe1b17f048df9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407520"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816249"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>gerencie riscos com Multi-Factor Authentication adicional para aplicativos confidenciais
 
@@ -39,10 +38,10 @@ Esse guia contém as seguintes informações:
 
     Para obter instruções passo a passo detalhadas para configurar e verificar esse cenário, consulte [guia passo a passos: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).
 
-## <a name="BKMK_1"></a>Principais conceitos-mecanismos de autenticação no AD FS
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>Principais conceitos-mecanismos de autenticação no AD FS
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>Benefícios dos mecanismos de autenticação no AD FS
-O Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2 fornece aos administradores de ti um conjunto mais avançado e flexível de ferramentas para autenticar usuários que desejam acessar recursos corporativos. Ele capacita os administradores com controle flexível sobre os métodos de autenticação primário e adicional, fornece uma experiência de gerenciamento avançada para configurar políticas de autenticação (tanto por meio da interface do usuário quanto do Windows PowerShell) e aprimoramentos a experiência para os usuários finais que acessam aplicativos e serviços protegidos pelo AD FS. A seguir estão alguns dos benefícios de proteger seu aplicativo e serviços com AD FS no Windows Server 2012 R2:
+O Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2 fornece aos administradores de ti um conjunto mais avançado e flexível de ferramentas para autenticar usuários que desejam acessar recursos corporativos. Ele capacita os administradores com controle flexível sobre os métodos de autenticação principais e adicionais, fornece uma experiência de gerenciamento avançada para configurar políticas de autenticação (tanto por meio da interface do usuário quanto do Windows PowerShell), além de aprimorar a experiência dos usuários finais que acessam aplicativos e serviços protegidos pelo AD FS. A seguir estão alguns dos benefícios de proteger seu aplicativo e serviços com AD FS no Windows Server 2012 R2:
 
 -   Política de autenticação global – um recurso de gerenciamento central, do qual um administrador de ti pode escolher quais métodos de autenticação são usados para autenticar usuários com base no local de rede do qual eles acessam recursos protegidos. Isso permite que os administradores façam o seguinte:
 
@@ -118,7 +117,7 @@ As seguintes opções estão disponíveis para configurações de MFA (condiçõ
 
 -   É possível exigir MFA quando a solicitação de acesso para os recursos protegidos é proveniente da extranet ou da intranet.
 
-## <a name="BKMK_2"></a>Visão geral do cenário
+## <a name="scenario-overview"></a><a name="BKMK_2"></a>Visão geral do cenário
 Nesse cenário, você habilita a MFA com base nos dados de associação de grupo do usuário para um aplicativo específico. Em outras palavras, você definirá uma política de autenticação no servidor de federação para exigir MFA quando os usuários que pertencem a um determinado grupo solicitarem acesso a um aplicativo específico que está hospedado em um servidor Web.
 
 Mais especificamente, nesse cenário, você habilita uma política de autenticação para um aplicativo de teste baseado em declarações chamado **claimapp**, pela qual um usuário do AD de **Robert Hatley** será requisitado a passar por MFA porque pertence ao **Finance** do grupo AD.

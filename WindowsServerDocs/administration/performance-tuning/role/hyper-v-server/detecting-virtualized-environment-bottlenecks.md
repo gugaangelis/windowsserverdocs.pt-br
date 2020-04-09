@@ -4,15 +4,15 @@ description: Como detectar e resolver possíveis afunilamentos de desempenho do 
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 53ec6159d177284773f17a05a37dd89184ef3c12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 211f35c151e94bc8b8a11a614edad18053cb18b9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851769"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>Detectando afunilamentos em um ambiente virtualizado
 

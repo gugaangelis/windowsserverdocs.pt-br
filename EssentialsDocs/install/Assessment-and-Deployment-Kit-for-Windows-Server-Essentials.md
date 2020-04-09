@@ -1,29 +1,25 @@
 ---
 title: Kit de Avaliação e Implantação para Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 88e268f1bdb01488667e4b88878552561fe7c762
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: daa8f75671c4dc663cca12dd0618a593c2010103
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310121"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817439"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Kit de Avaliação e Implantação para Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-O ADK (Kit de avaliação e implantação) do Windows Server® 2012 Essentials é uma coleção de ferramentas, binários e pacotes de idiomas do sistema operacional que você pode usar para personalizar, avaliar e implantar o Windows Server Essentials em novos computadores. Este documento inclui informações específicas para parceiros que pretendem pré-instalar o sistema operacional para seus clientes e inclui os seguintes tópicos:  
+O ADK (Kit de avaliação e implantação) do Windows Server&reg; 2012 Essentials é uma coleção de ferramentas, binários e pacotes de idiomas do sistema operacional que você pode usar para personalizar, avaliar e implantar o Windows Server Essentials em novos computadores. Este documento inclui informações específicas para parceiros que pretendem pré-instalar o sistema operacional para seus clientes e inclui os seguintes tópicos:  
   
 
 -   [Introdução ao ADK do Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
@@ -152,4 +148,4 @@ O ADK (Kit de avaliação e implantação) do Windows Server® 2012 Essentials �
   
  Active Directory, Microsoft, Windows Live, Windows PowerShell, Windows e Windows Server são marcas registradas do grupo de empresas Microsoft. Todas as outras marcas pertencem a seus respectivos proprietários.  
   
- © 2012 Microsoft. Todos os direitos reservados.
+ &copy; 2012 Microsoft. Todos os direitos reservados.

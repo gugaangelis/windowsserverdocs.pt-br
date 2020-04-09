@@ -1,26 +1,22 @@
 ---
-title: Agregador do Log de Inventário de Software
+title: Agregador de Log de Inventário de Software
 description: Descreve como instalar e gerenciar o agregador de log de inventário de software
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5834c07e0fdc9f826e3b02fd494c28b9e773ad8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e58898359c15a19f139d074bca4ef7bd1aaf9062
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947008"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851429"
 ---
-# <a name="software-inventory-logging-aggregator"></a>Agregador do Log de Inventário de Software
+# <a name="software-inventory-logging-aggregator"></a>Agregador de Log de Inventário de Software
 
 >Aplica-se a: Windows Server 2012 R2
 
@@ -61,11 +57,11 @@ Depois de implantados corretamente, os seguintes dados podem ser exibidos no Agr
 
 -   Contagem e localização de instalações de SQL Server ao longo do tempo \(apenas SKUs e edições que exigem uma licença\)
 
--   Listas de softwares instalados em Adicionar\/remover programas
+-   Lista de softwares instalados em Adicionar ou Remover Programas
 
 ### <a name="who-will-use-sil"></a>Quem usará o SIL?
 
--   **Profissionais de TI ou administradores de datacenter**que buscam um método de baixo custo para coletar dados de inventário de software valiosos, de forma automática e que abrangem um período de tempo.
+-   **Profissionais de TI ou administradores de datacenter** que buscam um método de baixo custo para coletar dados de inventário de software valiosos, de forma automática e que abrangem um período de tempo.
 
 -   **Cios e controladores de finanças**, que precisam relatar o uso do software corporativo da Microsoft nas implantações de ti de suas organizações.
 
@@ -121,7 +117,7 @@ Em um host do Windows Server que você deseja configurar para sondagem pelo Agre
 
 6.  Clique em **Segurança**.
 
-7.  Selecione **namespace cimv2** no modo de exibição em árvore **Namespace** .
+7.  Selecione **namespace cimv2** no modo de exibição em árvore **Namespace**.
 
 8.  Clique em **Segurança** (botão).
 
@@ -146,7 +142,7 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
     -   O nome do Windows Server e o nome do certificado devem corresponder.
 
--   O**SQL Server Standard Edition está instalado**ou está instalado em um servidor remoto que você pretende usar com este software.
+-   O **SQL Server Standard Edition está instalado** ou está instalado em um servidor remoto que você pretende usar com este software.
 
     -   O Agregador do SIL funciona com o SQL Server 2012 sp2 e SQL Server 2014. Não há nada fora do comum necessário ao fazer seleções durante a instalação do SQL Server.
 
@@ -162,7 +158,7 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
 -   Você está **conectado ao servidor com uma conta que tem privilégios de sysadmin no SQL Server**, caso deseje a Autenticação do Windows
 
-    ou do
+    OR
 
     Caso deseje a Autenticação do SQL, **você tem a senha de uma conta que tem privilégios administrativos do SQL**.
 
@@ -174,9 +170,9 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
 3.  Se você aceitar o EULA, marque a caixa para aceitar o contrato e clique em **Avançar**.
 
-4.  Em **Escolher Recursos**, selecione **Instalar Agregador do Log de Inventário de Software e o Módulo de Relatório**e clique em **Avançar**.
+4.  Em **Escolher Recursos**, selecione **Instalar Agregador do Log de Inventário de Software e o Módulo de Relatório** e clique em **Avançar**.
 
-    Para obter mais informações sobre como instalar apenas o módulo de relatórios, veja `Publish-SilReport` na seção **Detalhes de cmdlets do Agregador do SIL** .
+    Para obter mais informações sobre como instalar apenas o módulo de relatórios, veja `Publish-SilReport` na seção **Detalhes de cmdlets do Agregador do SIL**.
 
 5.  Depois que todos os pré-requisitos forem verificados, clique em **Avançar**.
 
@@ -196,7 +192,7 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
 9. Clique em **Avançar**e, em seguida, em **Detalhes do Servidor de Serviços de Informações da Internet**, selecione um número da porta ou mantenha o padrão.
 
-10. Procure o local do arquivo **.pfx** , digite a senha para o arquivo .pfx e clique em **Avançar**.
+10. Procure o local do arquivo **.pfx**, digite a senha para o arquivo .pfx e clique em **Avançar**.
 
 11. A última tela mostrará o andamento da instalação. Depois de concluído com êxito, clique em **Concluir**.
 
@@ -208,7 +204,7 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
     Por design, o Agregador do SIL processará arquivos após 20 minutos ou depois que 100 arquivos forem recebidos.  Em ambientes de alta escala, nunca ocorrerá nesse cenário, mas em escala baixa, alguns arquivos podem permanecer para serem processados antes que o agregador possa ser interrompido. Use o parâmetro `–Force` se esses arquivos forem mantidos e os dados não forem necessários.
 
-2.  Vá para **Painel de Controle**, clique em **Programas e Recursos**, em **Desinstalar Programas**, em **Agregador do Log de Inventário de Software**e em **Desinstalar**.
+2.  Vá para **Painel de Controle**, clique em **Programas e Recursos**, em **Desinstalar Programas**, em **Agregador do Log de Inventário de Software** e em **Desinstalar**.
 
     O Agregador do Log de Inventário de Software abrirá uma janela para solicitar que você escolha entre excluir ou manter todos os dados no banco de dados. A seleção padrão é mantê-los (se desejar fazer uma reinstalação, você poderá anexar o banco de dados existente para escolher o ponto em que o Agregador parou).
 
@@ -249,7 +245,7 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
         -   Por padrão, a sondagem começará a cada hora, iniciando uma hora depois que `Start-SilAggregator` for executado ou uma hora depois que um host for recém-adicionado à lista de sondagem.  O intervalo de sondagem pode ser alterado por meio do `Set-SilAggregator cmdlet`.
 
-        -   Esse cmdlet detectará automaticamente de uma lista predefinida de opções (veja a seção **Detalhes de cmdlets do Agregador do SIL** ) e indicará qual HostType e HyperVisorType são corretos para o host que você está adicionando. Se não for possível reconhecê-los ou se as credenciais fornecidas forem incorretas, um prompt será exibido. Se você aceitar com uma entrada **Y** , o host será adicionado e listado como **Desconhecido**, mas não será pesquisado.
+        -   Esse cmdlet detectará automaticamente de uma lista predefinida de opções (veja a seção **Detalhes de cmdlets do Agregador do SIL**) e indicará qual HostType e HyperVisorType são corretos para o host que você está adicionando. Se não for possível reconhecê-los ou se as credenciais fornecidas forem incorretas, um prompt será exibido. Se você aceitar com uma entrada **Y**, o host será adicionado e listado como **Desconhecido**, mas não será pesquisado.
 
     -   Execute `Set-SilAggregator –AddCertificateThumbprint` "a impressão digital do certificado do cliente"
 
@@ -377,7 +373,7 @@ Os dados de relatório afetados pela troca para um novo mês incluem:
 
 -   Na seção **SQL Server** da guia **Painel** , a contagem total de instalações do SQL Server é um resumo de todos os totais de edição no Painel.  Isso pode levar a uma discrepância entre o total visto na guia **Detalhes do SQL** nos casos em que várias edições do SQL estão instaladas em um único servidor.  O Painel as contaria separadamente em cada servidor, a guia **Detalhes** não.  Várias edições do SQL instaladas em um Windows Server sempre são contados como uma contagem de um, de acordo com os termos de licenciamento.
 
--   Na seção **Windows Server** da guia **Painel** , as linhas de **Outros Hosts de Hipervisor** e **Total de Hosts de Hipervisor** incluem hosts físicos do Windows Server que podem ou NÃO estar executando o Hyper-V.
+-   Na seção **Windows Server** da guia **Painel**, as linhas de **Outros Hosts de Hipervisor** e **Total de Hosts de Hipervisor** incluem hosts físicos do Windows Server que podem ou NÃO estar executando o Hyper-V.
 
 ### <a name="column-descriptions"></a>Descrições de coluna
 Veja a seguir as descrições de cada coluna na guia **Detalhes do Windows Server** do relatório baseado no Excel criado pelo Agregador do SIL. Outras guias de dados são as mesmas ou um subconjunto dessas colunas. A única exceção seria a "contagem de instalação" nas guias de SQL Server (consulte a seção **marca d' água alta** ).
@@ -385,20 +381,20 @@ Veja a seguir as descrições de cada coluna na guia **Detalhes do Windows Serve
 |Cabeçalho de coluna|Descrição|
 |-----------------|---------------|
 |Mês calendário|Os dados em relatórios são agrupados por mês, com os mais recentes em primeiro lugar. Os dados no mês não estão listados em uma ordem específica.|
-|Nome do Host|O nome da rede, ou o FQDN, do host físico que o Agregador do SIL está sondando com êxito.<br /><br />Use o cmdlet Get-SilVMHost para localizar os hosts que foram adicionados, mas que não são, ou que não estão mais, sendo pesquisados com êxito. A última sondagem bem-sucedida será exibida.|
+|Host Name|O nome da rede, ou o FQDN, do host físico que o Agregador do SIL está sondando com êxito.<p>Use o cmdlet Get-SilVMHost para localizar os hosts que foram adicionados, mas que não são, ou que não estão mais, sendo pesquisados com êxito. A última sondagem bem-sucedida será exibida.|
 |Tipo de host|Fabricante do Sistema Operacional no host físico.|
 |Tipo de hipervisor|Fabricante do hipervisor no host físico.|
 |Fabricante do processador|Fabricante do processador dos processadores no host físico.|
 |Modelo de processador|O modelo de processador dos processadores no host físico.|
 |É habilitado para Hyper Threading?|É exibido como True ou False dependendo se o hyper threading está habilitado nos processadores do host físico.|
 |Nome da VM|O nome da rede, ou o FQDN, da máquina virtual do Windows Server. Se o Agregador não recebeu dados neste computador via HTTPS, o nome amigável da VM no hipervisor é listado.|
-|VMs do Windows Server em execução simultânea por host|Contagem de VMs do Windows Server em execução simultânea no host. O número mais alto no mês para que o host é a contagem de marca d'água alta listada e capturada nesse ponto no tempo.<br /><br />Veja a seção **Marca d'água alta** desta documentação.<br /><br />Hosts físicos com Windows Server instalado ou com Windows Server instalado e nenhuma VM conhecida do Windows Server em execução sempre terão uma contagem de um. Se, pelo menos, uma VM conhecida do Windows Server estiver em execução no host e o Windows Server estiver em execução no próprio host, o SO do host não fará parte da contagem.|
+|VMs do Windows Server em execução simultânea por host|Contagem de VMs do Windows Server em execução simultânea no host. O número mais alto no mês para que o host é a contagem de marca d'água alta listada e capturada nesse ponto no tempo.<p>Veja a seção **Marca d'água alta** desta documentação.<p>Hosts físicos com Windows Server instalado ou com Windows Server instalado e nenhuma VM conhecida do Windows Server em execução sempre terão uma contagem de um. Se, pelo menos, uma VM conhecida do Windows Server estiver em execução no host e o Windows Server estiver em execução no próprio host, o SO do host não fará parte da contagem.|
 |Contagem de processadores físicos|Número de processadores físicos instalados no host físico.|
 |Contagem de núcleos físicos|Número de núcleos de processador físico instalados no host físico.|
 |Contagem de processadores virtuais|Número de processadores virtuais que o Windows reconhece dentro da VM. Esse valor é fornecido apenas pelos dados encaminhados via HTTPS com o SIL em um Windows Server.|
-|Data e hora da sondagem|Data e hora do ponto mais recente da marca d'água alta de VMs do Windows Server em execução simultânea nesse host físico.<br /><br />Veja a seção **Data e hora da sondagem** desta documentação.|
+|Data e hora da sondagem|Data e hora do ponto mais recente da marca d'água alta de VMs do Windows Server em execução simultânea nesse host físico.<p>Veja a seção **Data e hora da sondagem** desta documentação.|
 |Data hora da VM vista pela última vez|Data e hora do último recebimento pelo Agregador do inventário de dados via HTTPS dessa VM do Windows Server.|
-|Data hora do host vista pela última vez|Data e hora do último recebimento pelo Agregador do inventário de dados via HTTPS desse host físico do Windows Server.<br /><br />Há suporte para hosts físicos, que executam o Windows Server e o HyperV, para habilitar o SIL e encaminhar dados de inventário via HTTPS para um Agregador do SIL.|
+|Data hora do host vista pela última vez|Data e hora do último recebimento pelo Agregador do inventário de dados via HTTPS desse host físico do Windows Server.<p>Há suporte para hosts físicos, que executam o Windows Server e o HyperV, para habilitar o SIL e encaminhar dados de inventário via HTTPS para um Agregador do SIL.|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>Detalhes de cmdlets do Agregador do SIL
 Veja a seguir os detalhes de cmdlets do Agregador do SIL. Para obter a documentação completa de cmdlets, veja: [Cmdlets do PowerShell do Agregador do SIL](https://technet.microsoft.com/library/mt548455.aspx)
@@ -407,7 +403,7 @@ Veja a seguir os detalhes de cmdlets do Agregador do SIL. Para obter a documenta
 
 -   Esse cmdlet, usado como está, criará um relatório de log de inventário de software e o posicionará no diretório de documentos do usuário conectado (o Excel 2013 é necessário no computador em que o cmdlet é executado).
 
--   Usado com o parâmetro `–OpenReport`, ele criará o relatório e vai abri-lo no Excel para exibição.
+-   Usado com o parâmetro `–OpenReport` , ele criará o relatório e vai abri-lo no Excel para exibição.
 
 -   Ao instalar o Agregador do SIL, você observará que há uma opção para instalar somente o módulo de relatório. É possível instalar o módulo de relatório em um sistema operacional do cliente do Windows, como o Windows 8.1 ou Windows 10. Isso permite que um cliente fino, como um laptop ou tablet, se conecte a um servidor de banco de dados do Agregador do SIL para publicar relatórios do SIL diretamente.
 
@@ -422,7 +418,7 @@ Há suporte para os seguintes tipos de host e versões de hipervisor ao usar o c
 
 |Versão do hipervisor|Agregador do SIL         Valor de HostType|Valor HypervisorType do Agregador do SIL|
 |----------------------|-----------------------------------------|---------------------------------------|
-|Windows Server, 2012 R2|Windows|Hyper V|
+|Windows Server, 2012 R2|Portal|HyperV|
 |VMware 5.5|VMware|Esxi|
 |Xen 4.x|Ubuntu, OpenSuse ou CentOS|Xen|
 |XenServer 6.2|Citrix|XenServer|
@@ -464,7 +460,7 @@ O `Get-SilAggregator` fornece informações de configuração para o seu aplicat
     `UserProfile       : Local`
 
 ### <a name="set-silaggregator"></a>Set-SilAggregator
-Com o cmdlet `Set-SilAggregator`, você pode:
+Com o cmdlet `Set-SilAggregator` , você pode:
 
 -   Alterar o intervalo de hora no qual a sondagem ocorrerá.
 
@@ -490,11 +486,11 @@ Com o cmdlet `Set-SilAggregator`, você pode:
 
 -   Esse cmdlet também listará todos os nomes de host que foram adicionados por meio dos dados provenientes das próprias VMs, se estiverem disponíveis na VM. Eles serão exibidos na lista, mas não terão nenhum HostType ou HypervisorType. Esses dados podem ajudar na correspondência de VMs e hosts que não podem ser configurados para sondagem.
 
--   Use os parâmetros `–StartTime` e `–EndTime` para ajudá-lo a entender quando os hosts foram adicionados pela primeira vez ou pesquisados pela última vez.
+-   Use os parâmetros `–StartTime` e`–EndTime` para ajudá-lo a entender quando os hosts foram adicionados pela primeira vez ou pesquisados pela última vez.
 
 ### <a name="remove-silvmhost"></a>Remove-SilVMHost
 
--   Este cmdlet removerá qualquer host da lista de hosts a serem pesquisados. Se um host for removido, é possível que uma VM no host adicione novamente o host à lista, mas o host não será pesquisado com as credenciais corretas especificadas com o cmdlet `Add-SilVMHost`.
+-   Este cmdlet removerá qualquer host da lista de hosts a serem pesquisados. Se um host for removido, é possível que uma VM no host adicione novamente o host à lista, mas o host não será pesquisado com as credenciais corretas especificadas com o cmdlet `Add-SilVMHost` .
 
 -   Se um host for removido, ele será removido da sondagem, mas não será removido dos relatórios. Já que a sondagem será interrompida, o host não estará presente nos relatórios do(s) mês(meses) seguinte(s).
 
@@ -502,7 +498,7 @@ Com o cmdlet `Set-SilAggregator`, você pode:
 
 ## <a name="avoid-these-errors-and-issues-with-sil-and-sil-aggregator-troubleshooting-guide"></a>Evitar esses erros e problemas com o SIL e o Agregador do SIL (Guia de solução de problemas)
 
--   Coisas para verificar em caso de falha ou erro no cmdlet `SilLogging` ou `Publish-Sildata`:
+-   Coisas para verificar em caso de falha ou erro no cmdlet `SilLogging` ou `Publish-Sildata` :
 
     -   Verifique se o **targeturi** tem **https://** na entrada.
 
@@ -565,9 +561,9 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
 -   Em TODOS os servidores que encaminham dados, use o cmdlet `Set-SilLogging –CertificateThumbprint` para atualizar para a impressão digital do novo certificado.
 
--   **CRÍTICO: somente depois que todos os servidores que encaminham dados forem atualizados, remova a impressão digital antiga** do Agregador do SIL usando o cmdlet `Set-SilAggregator –RemoveCertificateThumbprint` . Se um servidor que encaminha dados continuar encaminhando com um certificado antigo que foi removido do Agregador do SIL, **os dados serão perdidos** e não são inseridos no banco de dados do Agregador. Isso afeta apenas os cenários em que um servidor encaminhou com êxito os dados para um agregador SIL e o certificado é removido da lista de impressões digitais do agregador SIL para aceitar dados.
+-   **CRÍTICO: somente depois que todos os servidores que encaminham dados forem atualizados, remova a impressão digital antiga** do Agregador do SIL usando o cmdlet `Set-SilAggregator –RemoveCertificateThumbprint`. Se um servidor que encaminha dados continuar encaminhando com um certificado antigo que foi removido do Agregador do SIL, **os dados serão perdidos** e não são inseridos no banco de dados do Agregador. Isso afeta apenas os cenários em que um servidor encaminhou com êxito os dados para um agregador SIL e o certificado é removido da lista de impressões digitais do agregador SIL para aceitar dados.
 
-## <a name="release-notes"></a>Notas de Versão
+## <a name="release-notes"></a>Notas de versão
 
 -   Há um problema conhecido que o Agregador SIL não processará e relatará na presentação das instalaçoes do SQL Server Standard Edition.  Estas são as etapas para corrigir isso:
 
@@ -593,7 +589,7 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
 -   Embora seja possível adicionar hosts do Windows Server 2008 R2 e do Windows Server 2012 à lista de hosts de sondagem, esta versão (1.0) do Agregador do SIL dá suporte apenas à sondagem do Windows Server 2012 R2, para hosts baseados no Windows/Hyper-V, para ter êxito com todos os recursos e funcionalidades.  Em particular, é comum que durante a sondagem de hosts do Windows Server 2008 R2, as máquinas virtuais e os hosts talvez não sejam correspondentes nos relatórios do Agregador do SIL.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 [Agregador de log de inventário de software 1,0 para Windows Server](https://www.microsoft.com/download/details.aspx?id=49046)<br>
 [Cmdlets do PowerShell do agregador SIL](https://technet.microsoft.com/library/mt548455.aspx)<br>
 [Cmdlets do PowerShell do SIL](https://technet.microsoft.com/library/dn283390.aspx)<br>

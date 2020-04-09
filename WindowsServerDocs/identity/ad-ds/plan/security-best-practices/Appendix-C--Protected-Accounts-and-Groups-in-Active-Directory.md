@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b2876ac-fe7d-4054-bfba-b692e57bc0d2
 title: Apêndice C-contas e grupos protegidos no Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 606b3a42d70ee5c2a3479f9c9df2f95a495d6afd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408723"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821679"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apêndice C: Contas protegidas e grupos no Active Directory
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408723"
 
 ## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apêndice C: Contas protegidas e grupos no Active Directory
 
-No Active Directory, um conjunto padrão de contas e grupos altamente privilegiados é considerado contas e grupos protegidos. Com a maioria dos objetos no Active Directory, os administradores delegados (usuários que têm permissões delegadas para gerenciar objetos Active Directory) podem alterar permissões nos objetos, incluindo alterar permissões para permitir que eles alterem associações de os grupos, por exemplo.  
+No Active Directory, um conjunto padrão de contas e grupos altamente privilegiados é considerado contas e grupos protegidos. Com a maioria dos objetos no Active Directory, os administradores delegados (usuários que têm permissões delegadas para gerenciar objetos Active Directory) podem alterar as permissões nos objetos, incluindo a alteração de permissões para permitir que eles alterem associações dos grupos, por exemplo.  
 
 No entanto, com contas e grupos protegidos, as permissões dos objetos são definidas e impostas por meio de um processo automático que garante que as permissões nos objetos permaneçam consistentes, mesmo se os objetos forem movidos para o diretório. Mesmo que alguém altere manualmente as permissões de um objeto protegido, esse processo garante que as permissões sejam retornadas rapidamente aos seus padrões.  
 

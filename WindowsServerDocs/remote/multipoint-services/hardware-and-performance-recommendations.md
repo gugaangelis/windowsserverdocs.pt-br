@@ -1,24 +1,20 @@
 ---
 title: Requisitos de hardware e recomendações de desempenho
 description: Fornece requisitos de hardware e desempenho e recomendações para os serviços do MultiPoint
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99a5c9c2-270f-4753-a28c-434882c03125
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 284131028b308ee86389f25102d934390ba2f16d
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: dcb139cddf6a7838511365c6a85dc12bd06a81eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322078"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820339"
 ---
 # <a name="hardware-requirements-and-performance-recommendations"></a>Requisitos de hardware e recomendações de desempenho
 Este tópico descreve o hardware necessário para executar um sistema de serviços do MultiPoint e dar suporte a cenários de aplicativos de usuário. O cenário do usuário afeta diretamente os requisitos de CPU, RAM e largura de banda de rede.  
@@ -41,9 +37,9 @@ Para obter um bom desempenho com seu sistema de serviços do MultiPoint sob vár
   
 |Cenário do aplicativo|Até 5 estações|6-8 estações|9-12 estações|13-16 estações|17-20 estações|21-24 estações|  
 |------------------------|----------------------|-------------------|------------------|-------------------|-------------------|-----------------|  
-|**Dos**<br /><br />Office, navegação na Web, aplicativos de linha de negócios|CPU: 2C<br /><br />RAM: 2 GB|CPU: 2C<br /><br />RAM: 4 GB|CPU: 4C<br /><br />RAM: 6 GB|CPU: 4C<br /><br />RAM: 8 GB|CPU: 4C + MT ou 6C<br /><br />RAM: 10 GB| CPU: 6C + MT<br /><br />RAM: 12 GB|
-|**Norte**<br /><br />Office, navegação na Web, aplicativos de linha de negócios e uso ocasional de vídeos por alguns usuários|CPU: 2C<br /><br />RAM: 2 GB|CPU: 2C<br /><br />RAM: 4 GB|CPU: 4C<br /><br />RAM: 6 GB|CPU: 4C + MT ou 6C<br /><br />RAM: 8 GB|CPU: 6C + MT<br /><br />RAM: 10 GB| CPU: 6C + MT<br /><br />RAM: 12 GB| 
-|**Uso intensivo de vídeo**<br /><br />Office, navegação na Web, aplicativos de linha de negócios e uso frequente de vídeos por todos os usuários **Observação:** o teste de vídeo foi executado usando o vídeo 360p H. 264 na resolução nativa.|CPU: 4C + MT<br /><br />RAM: 2 GB|CPU: 6C + MT<br /><br />RAM: 4 GB|CPU: 8C + MT<br /><br />RAM: 6 GB|CPU: 12C + MT<br /><br />RAM: 8 GB|CPU: 16C + MT<br /><br />RAM: 10 GB<br /><br />-Cliente fino: RemoteFX<br />-Vídeo USB não recomendado| CPU: 20C + MT<br /><br />RAM: 12 GB<br /><br />-Cliente fino: RemoteFX<br />-Vídeo USB não recomendado|   
+|**Dos**<p>Office, navegação na Web, aplicativos de linha de negócios|CPU: 2C<p>RAM: 2 GB|CPU: 2C<p>RAM: 4 GB|CPU: 4C<p>RAM: 6 GB|CPU: 4C<p>RAM: 8 GB|CPU: 4C + MT ou 6C<p>RAM: 10 GB| CPU: 6C + MT<p>RAM: 12 GB|
+|**Norte**<p>Office, navegação na Web, aplicativos de linha de negócios e uso ocasional de vídeos por alguns usuários|CPU: 2C<p>RAM: 2 GB|CPU: 2C<p>RAM: 4 GB|CPU: 4C<p>RAM: 6 GB|CPU: 4C + MT ou 6C<p>RAM: 8 GB|CPU: 6C + MT<p>RAM: 10 GB| CPU: 6C + MT<p>RAM: 12 GB| 
+|**Uso intensivo de vídeo**<p>Office, navegação na Web, aplicativos de linha de negócios e uso frequente de vídeos por todos os usuários **Observação:** o teste de vídeo foi executado usando o vídeo 360p H. 264 na resolução nativa.|CPU: 4C + MT<p>RAM: 2 GB|CPU: 6C + MT<p>RAM: 4 GB|CPU: 8C + MT<p>RAM: 6 GB|CPU: 12C + MT<p>RAM: 8 GB|CPU: 16C + MT<p>RAM: 10 GB<p>-Cliente fino: RemoteFX<br />-Vídeo USB não recomendado| CPU: 20C + MT<p>RAM: 12 GB<p>-Cliente fino: RemoteFX<br />-Vídeo USB não recomendado|   
   
 ## <a name="minimum-recommended-hardware-for-running-full-windows-10-virtual-desktops"></a>Hardware mínimo recomendado para executar áreas de trabalho virtuais do Windows 10 completas  
 A execução de uma instância completa do sistema operacional virtual para cada estação é mais computacional com uso intensivo de recursos do que a execução das sessões padrão do MultiPoint desktop, de modo que os requisitos de hardware do host por estação são maiores:  

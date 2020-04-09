@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 01b5490ef7c57e48a43cae15902e03a33794a826
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf3685bae9ed76ede4da6df244139437d92250c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377014"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844329"
 ---
 # <a name="fsutil-dirty"></a>Fsutil Dirty
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -29,13 +29,13 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 fsutil dirty {query | set} <VolumePath>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |   Parâmetro   |                                                 Descrição                                                  |
 |---------------|--------------------------------------------------------------------------------------------------------------|
 |     query     |                                  Consulta o bit sujo do volume especificado.                                   |
 |      set      |                                    Define o bit sujo do volume especificado.                                    |
-| \<VolumePath > | Especifica o nome da unidade seguido por dois-pontos ou GUID no seguinte formato: **Volume {** <em>GUID</em> **}** . |
+| \<VolumePath > | Especifica o nome da unidade seguido por dois-pontos ou GUID no seguinte formato: **volume {** <em>GUID</em> **}** . |
 
 ## <a name="remarks"></a>Comentários
 
@@ -49,7 +49,7 @@ fsutil dirty {query | set} <VolumePath>
 
 -   Se o bit sujo for definido quando o computador for reiniciado, **chkdsk** será executado para verificar a integridade do sistema de arquivos e tentar corrigir quaisquer problemas com o volume.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para consultar o bit sujo na unidade C, digite:
 
 ```
@@ -70,8 +70,8 @@ Para definir o bit sujo na unidade C, digite:
 fsutil dirty set C:
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

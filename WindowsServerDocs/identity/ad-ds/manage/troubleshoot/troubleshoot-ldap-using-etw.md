@@ -1,26 +1,20 @@
 ---
 title: Usando o ETW para solucionar problemas de conexões LDAP
 description: Como ativar e usar o ETW para rastrear conexões LDAP entre AD DS controladores de domínio.
-audience: Admin
-ms.custom:
-- CI ID 110964
-- CSSTroubleshoot
 author: Teresa-Motiv
 manager: dcscontentpm
 ms.prod: windows-server-dev
 ms.technology: active-directory-lightweight-directory-services
-ms.tgt_platform: multiple
-keywords:
-- LDAP de rastreamento de eventos
+audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: 32929a89e959ee28fdf29ec121e74eafcb0209e4
-ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+ms.openlocfilehash: f7b7df714dbd02b15555fa20c70c1e995e121a48
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74854175"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822929"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>Usando o ETW para solucionar problemas de conexões LDAP
 
@@ -112,7 +106,7 @@ Para usar um sinalizador, substitua o valor do sinalizador para o <*sinalizadore
 |**DEBUG_ERRORS** |0x10000000 |Registra erros gerais. A maioria desses erros pode ser categorizada como erros de inicialização de módulo, erros de SSL ou erros de estouro ou Subfluxo. |
 |**DEBUG_PERFORMANCE** |0x20000000 |Registra dados sobre estatísticas de atividade de LDAP global do processo depois de receber uma resposta do servidor para uma solicitação LDAP. |
 
-## <a name="example"></a>Exemplo
+## <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 Considere um aplicativo, App1. exe, que define senhas para contas de usuário. Suponha que App1. exe produz um erro inesperado. Para usar o ETW para ajudar a diagnosticar esse problema, siga estas etapas:
 

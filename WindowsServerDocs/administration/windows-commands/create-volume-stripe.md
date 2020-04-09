@@ -1,24 +1,20 @@
 ---
 title: criar faixa de volume
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para criar distribuição de volume, que cria um volume distribuído usando dois ou mais discos dinâmicos especificados.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 20dce735-5f7c-4f83-a580-d087e2913a00
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 46c1367b5667294a7a9df742861a011090e7a337
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8123d2b5852f606398e3be7161ef0341698b7fb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379138"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846899"
 ---
 # <a name="create-volume-stripe"></a>criar faixa de volume
 
@@ -27,17 +23,15 @@ ms.locfileid: "71379138"
 Cria um volume distribuído usando dois ou mais discos dinâmicos especificados.  
   
 > [!IMPORTANT]  
-> para o Windows Vista, esse comando do DiskPart só está disponível nas edições Windows Vista Ultimate, Windows Vista Enterprise e Windows Vista Business.  
-  
-  
-  
+> para o Windows Vista, esse comando do DiskPart só está disponível nas edições Windows Vista Ultimate, Windows Vista Enterprise e Windows Vista Business.
+
 ## <a name="syntax"></a>Sintaxe  
   
 ```  
 create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 |         Parâmetro         |                                                                                                                            Descrição                                                                                                                            |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -50,15 +44,15 @@ create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 -   Depois de criar o volume, o foco mudará automaticamente para o novo volume.  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para criar um volume distribuído de 1000 megabytes de tamanho, nos discos 1 e 2, digite:  
   
 ```  
 create volume stripe size=1000 disk=1,2  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

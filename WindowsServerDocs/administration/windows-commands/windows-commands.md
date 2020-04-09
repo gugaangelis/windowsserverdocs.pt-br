@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362057"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829229"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
@@ -29,9 +29,27 @@ Para localizar informações sobre um comando específico, no menu a-Z a seguir,
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L ](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3 [W](#w)5[X](#x) | Y | Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[i](#i) |
+[J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r) | 
+[S](#s) | 
+[t](#t) | 
+[U](#u) | 
+[V](#v) | 
+[W](#w) | 
+[X](#x) | Y | Z
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
 
 As informações contidas neste tópico aplicam-se a:
 
@@ -49,7 +67,7 @@ As informações contidas neste tópico aplicam-se a:
 
 O Shell de comando foi o primeiro Shell interno do Windows para automatizar tarefas rotineiras, como o gerenciamento de contas de usuário ou backups noturnos, com arquivos de lote (. bat). Com o Windows Script Host, você poderia executar scripts mais sofisticados no Shell de comando. Para obter mais informações, consulte [cscript](cscript.md) ou [WScript](wscript.md). Você pode executar operações com mais eficiência usando scripts do que é possível usando a interface do usuário. Os scripts aceitam todos os comandos que estão disponíveis na linha de comando.
 
-O Windows tem dois shells de comando: O Shell de comando e o [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de ti.
+O Windows tem dois shells de comando: o Shell de comando e o [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de ti.
 
 O PowerShell foi projetado para estender os recursos do Shell de comando para executar comandos do PowerShell chamados cmdlets. Os cmdlets são semelhantes aos comandos do Windows, mas fornecem uma linguagem de script mais extensível. Você pode executar comandos do Windows e cmdlets do PowerShell no PowerShell, mas o Shell de comando só pode executar comandos do Windows e não cmdlets do PowerShell.
 
@@ -58,14 +76,14 @@ Para a automação do Windows mais robusta e atualizada, recomendamos o uso do P
 >Você também pode baixar e instalar o [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell. 
 
 > [!CAUTION]
-> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.
+> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.
 
 > [!NOTE]
-> Para habilitar ou desabilitar a conclusão de nome de arquivo e diretório no Shell de comando em um computador ou sessão de logon de usuário, execute **regedit. exe** e defina o seguinte **valor de reg_DWOrd**:
+> Para habilitar ou desabilitar a conclusão do nome de arquivo e diretório no Shell de comando em uma sessão de logon de computador ou usuário, execute **regedit. exe** e defina o seguinte **valor de reg_DWOrd**:
 > 
-> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
+> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
 > 
-> Para definir o valor **reg_DWOrd** , use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 9** é Tab e **0 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
+> Para definir o valor de **reg_DWOrd** , use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 9** é Tab e **0 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
 ## <a name="command-line-reference-a-z"></a>Referência de linha de comando A-Z
 
@@ -76,7 +94,25 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L ](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3 [W](#w)5[X](#x) | Y | Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[i](#i) |
+[J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r) | 
+[S](#s) | 
+[t](#t) | 
+[U](#u) | 
+[V](#v) | 
+[W](#w) | 
+[X](#x) | Y | Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -280,7 +316,7 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="i"></a>ENCONTREI
+### <a name="i"></a>I
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -348,13 +384,13 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
   -   [Manage-bde: protetores](manage-bde-protectors.md)
   -   [Manage-bde: TPM](manage-bde-tpm.md)
   -   [Manage-bde: setidentifier](manage-bde-setidentifier.md)
-  -   [manage-bde: ForceRecovery](manage-bde-forcerecovery.md)
+  -   [Manage-bde: ForceRecovery](manage-bde-forcerecovery.md)
   -   [Manage-bde: ChangePassword](manage-bde-changepassword.md)
   -   [Manage-bde: changepin](manage-bde-changepin.md)
   -   [Manage-bde: ChangeKey](manage-bde-changekey.md)
-  -   [manage-bde: KeyPackage](manage-bde-keypackage.md)
+  -   [Manage-bde: KeyPackage](manage-bde-keypackage.md)
   -   [Manage-bde: atualizar](manage-bde-upgrade.md)
-  -   [manage-bde: WipeFreeSpace](manage-bde-wipefreespace.md)
+  -   [Manage-bde: WipeFreeSpace](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
 - [mkdir](mkdir.md)
@@ -445,7 +481,7 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
 ### <a name="q"></a>Q
 -   [qappsrv](qappsrv.md)
 -   [qprocess](qprocess.md)
--   [query](query.md)
+-   [consulta](query.md)
 -   [quser](quser.md)
 -   [qwinsta](qwinsta.md)
 
@@ -545,7 +581,7 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
 -   [typeperf](typeperf.md)
 -   [tzutil](tzutil.md)
 
-### <a name="u"></a>T
+### <a name="u"></a>U
 -   [unlodctr](unlodctr_1.md)
 
 ### <a name="v"></a>V
@@ -582,7 +618,6 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
 - [winnt32](winnt32.md)
 - [winpop](winpop.md)
 - [winrs](winrs.md)
-- [WLBS](wlbs_1.md)
 - [wmic](wmic.md)
 - [wscript](wscript.md)
 

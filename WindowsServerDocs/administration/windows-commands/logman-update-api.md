@@ -1,28 +1,24 @@
 ---
 title: API de atualização do logman
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8e5a45270ec0ed70928688728abceb5bcb8bb29
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7739098343f7b98b0812a9b7199dea2da044786e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374374"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840589"
 ---
 # <a name="logman-update-api"></a>API de atualização do logman
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Atualize as propriedades de um coletor de dados de rastreamento de API existente.  
 
@@ -30,7 +26,7 @@ Atualize as propriedades de um coletor de dados de rastreamento de API existente
 ```  
 logman update api <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
 
 |                    Parâmetro                     |                                                                               Descrição                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,11 +59,11 @@ logman update api <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentários  
 Onde [-] está listado, um extra-nega a opção.  
-## <a name="BKMK_examples"></a>Disso  
-O comando a seguir atualiza o contador de rastreamento de API existente chamado trace_notepad para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada à API TlsGetValue produzida pelo módulo Kernel32. dll.  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+O comando a seguir atualiza o contador de rastreamento de API existente chamado trace_notepad para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo Kernel32. dll.  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
 ```  
-#### <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
 [logman](logman.md)  
 [criar API do logman](logman-create-api.md)  

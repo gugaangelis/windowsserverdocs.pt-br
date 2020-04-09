@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD-executando uma recuperação completa do servidor
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 1ade1f2e316387fbe84209c1bc7a986fff6f2a71
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf321ae769aa6f0da1cebce7700ea429161a0956
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390541"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824009"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>Recuperação de floresta do AD-executando uma recuperação completa do servidor 
 
@@ -84,7 +83,7 @@ Dependendo do seu cenário, use um dos procedimentos a seguir para executar uma 
 Se você precisar habilitar um adaptador de rede do prompt de comando para restaurar de um compartilhamento de rede, use as etapas a seguir.
 
 1. Inicie Instalação do Windows, especifique o idioma, o formato de hora e de moeda e as opções de teclado e clique em **Avançar**. 
-2. Clique em **Reparar seu computador**. Encontrei
+2. Clique em **Reparar seu computador**. I
 3. Clique em **solucionar problemas**, clique em **prompt de comando**. 
 4. Digite o seguinte comando e pressione ENTER:  
 
@@ -130,7 +129,7 @@ Se você precisar habilitar um adaptador de rede do prompt de comando para resta
 
 6. Agora que o adaptador de rede está funcionando, selecione as etapas acima para concluir a restauração.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
 - [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)

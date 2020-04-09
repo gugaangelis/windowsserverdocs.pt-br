@@ -1,24 +1,20 @@
 ---
 title: graftabl
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b08351d4-3d24-490c-86f6-1252da11d923
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac7748b43eb8859a17a2c61ef9ef4444019ad51b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d55df814cb962e82775a86e154a024c579987cf2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375632"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842409"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -35,11 +31,11 @@ graftabl <CodePage>
 graftabl /status
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<CodePage >|Especifica uma página de código para definir a aparência de caracteres estendidos no modo gráfico.</br>Os números de identificação de página de código válidos são:</br>437: Estados Unidos</br>850: Multilíngue (Latino I)</br>852: Eslavo (latino II)</br>855: Cirílico (russo)</br>857: Turco</br>860: Português</br>861: islandês</br>863: Canadá-francês</br>865: Nórdico</br>866: Russo</br>869: Grego moderno|
+|> de página de \<|Especifica uma página de código para definir a aparência de caracteres estendidos no modo gráfico.</br>Os números de identificação de página de código válidos são:</br>437: Estados Unidos</br>850: multilíngue (I latino)</br>852: eslavo (latino II)</br>855: cirílico (russo)</br>857: Turco</br>860: Português</br>861: Islandês</br>863: Canadá – francês</br>865: nórdico</br>866: Russo</br>869: grego moderno|
 |/status|Exibe a página de código atual que **GRAFTABL** está usando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -54,7 +50,7 @@ graftabl /status
     |2|Ocorreu um erro de arquivo.|
 -   Você pode usar a variável de ambiente ERRORLEVEL em um programa em lotes para processar códigos de saída retornados por **GRAFTABL**.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para exibir a página de código atual usada por **GRAFTABL**, digite:
 ```
@@ -69,9 +65,9 @@ Para carregar o conjunto de caracteres gráficos para a página de código 850 (
 graftabl 850
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Freedisk](freedisk.md)
 

@@ -1,24 +1,20 @@
 ---
 title: Wbadmin obter versões
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para WBADMIN Get Versions, que lista detalhes sobre os backups disponíveis que são armazenados no computador local ou em outro computador.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b7ba0749c8ef347e27590bde4eed7bbcf25af7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61353d4d607f87878d8001a626279016274c8eff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362364"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829729"
 ---
 # <a name="wbadmin-get-versions"></a>Wbadmin obter versões
 
@@ -38,7 +34,7 @@ wbadmin get versions
 [-machine:BackupMachineName]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -49,7 +45,7 @@ wbadmin get versions
 
 Para listar itens disponíveis para recuperação de um backup específico, use **Wbadmin Get Items**.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para ver uma lista de backups disponíveis que são armazenados no volume h, digite:
 ```
@@ -60,8 +56,8 @@ Para ver uma lista de backups disponíveis que são armazenados na pasta compart
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Get-WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx)

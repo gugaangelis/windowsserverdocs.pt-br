@@ -1,24 +1,20 @@
 ---
 title: bootcfg addsw
-description: O tópico de comandos do Windows para **Bootcfg addsw** -adiciona opções de carregamento do sistema operacional para uma entrada de sistema operacional especificada.
-ms.custom: na
+description: O tópico de comandos do Windows para Bootcfg addsw, que adiciona opções de carregamento do sistema operacional para uma entrada de sistema operacional especificada.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2dd727c839babe1ae4f7743285844f35cf5bf76e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a9ae5175dfc3b068276f6ab95d6823699c96b2b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380185"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848709"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
@@ -30,7 +26,7 @@ adiciona opções de carregamento do sistema operacional para uma entrada de sis
 ```
 bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumRAM>] [/bv] [/so] [/ng] /id <OSEntryLineNum>
 ```
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |         Termo         |                                                                                                            Definição                                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +40,7 @@ bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumR
 | /ID <OSEntryLineNum> | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini ao qual as opções de carregamento do sistema operacional são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1. |
 |          /?          |                                                                                               Exibe a ajuda no prompt de comando.                                                                                               |
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 Os exemplos a seguir mostram como você pode usar o comando **Bootcfg/addsw** :
 ```
 bootcfg /addsw /mm 64 /id 2 
@@ -53,5 +49,5 @@ bootcfg /addsw /so /ng /s srvmain /u hiropln /id 2
 bootcfg /addsw /ng /id 2 
 bootcfg /addsw /mm 96 /ng /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>referências adicionais
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

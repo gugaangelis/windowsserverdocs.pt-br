@@ -1,7 +1,6 @@
 ---
 ms.assetid: c911d6c6-98c6-4532-b1db-5724e1ceb96c
 title: Apêndice de administração simplificada
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 545d0541d1f51da7d2df793b9961657e214c789c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323238"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824999"
 ---
 # <a name="simplified-administration-appendix"></a>Apêndice de administração simplificada
 
@@ -31,7 +30,7 @@ ms.locfileid: "79323238"
   
 -   [Instalação do Ntdsutil. exe de alterações de mídia](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
   
-## <a name="BKMK_AddServers"></a>Caixa de diálogo Gerenciador do Servidor adicionar servidores (Active Directory)  
+## <a name="server-manager-add-servers-dialog-active-directory"></a><a name="BKMK_AddServers"></a>Caixa de diálogo Gerenciador do Servidor adicionar servidores (Active Directory)  
 
 A caixa de diálogo **adicionar servidores** permite pesquisar Active Directory de servidores, por sistema operacional, usando curingas e por local. A caixa de diálogo também permite o uso de consultas DNS por nome de domínio totalmente qualificado ou nome de prefixo. Essas pesquisas usam protocolos DNS e LDAP nativos implementados por meio do .NET, não o AD do Windows PowerShell no gateway de gerenciamento do AD por meio do SOAP, o que significa que os controladores de domínio contatados pelo Gerenciador do Servidor podem até mesmo executar o Windows Server 2003. Você também pode importar um arquivo com nomes de servidor para fins de provisionamento.  
   
@@ -57,12 +56,12 @@ A pesquisa Active Directory retorna os seguintes atributos:
   
 ```  
   
-## <a name="BKMK_ServerMgrStatus"></a>Status do servidor Gerenciador do Servidor remoto  
+## <a name="server-manager-remote-server-status"></a><a name="BKMK_ServerMgrStatus"></a>Status do servidor Gerenciador do Servidor remoto  
 Gerenciador do Servidor testa a acessibilidade de servidor remoto usando o protocolo de roteamento de endereços. Os servidores que não respondem às solicitações ARP não são listados, mesmo que estejam no pool.  
   
 Se o ARP responder, as conexões DCOM e WMI serão feitas ao servidor para retornar informações de status. Se RPC, DCOM e WMI estiverem inacessíveis, o Gerenciador do servidor não poderá gerenciar totalmente o servidor.  
   
-## <a name="BKMK_PSLoadModule"></a>Carregamento de módulo do Windows PowerShell  
+## <a name="windows-powershell-module-loading"></a><a name="BKMK_PSLoadModule"></a>Carregamento de módulo do Windows PowerShell  
 O Windows PowerShell 3,0 implementa o carregamento de módulos dinâmicos. O uso do cmdlet **Import-Module** normalmente não é mais necessário; em vez disso, simplesmente invocar o cmdlet, o alias ou a função carrega o módulo automaticamente.  
   
 Para ver os módulos carregados, use o cmdlet **Get-Module** .  
@@ -90,10 +89,10 @@ dir
   
 ```  
   
-## <a name="BKMK_Rid"></a>Hotfixes de emissão de RID para sistemas operacionais anteriores  
+## <a name="rid-issuance-hotfixes-for-previous-operating-systems"></a><a name="BKMK_Rid"></a>Hotfixes de emissão de RID para sistemas operacionais anteriores  
 Veja [uma atualização disponível para detectar e evitar muito consumo do pool de RID global em um controlador de domínio que esteja executando o Windows Server 2008 R2](https://support.microsoft.com/kb/2618669).  
   
-## <a name="BKMK_IFM"></a>Instalação do Ntdsutil. exe de alterações de mídia  
+## <a name="ntdsutilexe-install-from-media-changes"></a><a name="BKMK_IFM"></a>Instalação do Ntdsutil. exe de alterações de mídia  
 O Windows Server 2012 adiciona duas opções adicionais à ferramenta de linha de comando Ntdsutil. exe para o menu **IFM (criação de mídia IFM)** . Eles permitem que você crie lojas IFM sem primeiro executar uma desfragmentação offline do NTDS exportado. Arquivo de banco de dados DIT. Quando o espaço em disco não é um Premium, isso poupa tempo na criação da IFM.  
   
 A tabela a seguir descreve os dois novos itens de menu:  

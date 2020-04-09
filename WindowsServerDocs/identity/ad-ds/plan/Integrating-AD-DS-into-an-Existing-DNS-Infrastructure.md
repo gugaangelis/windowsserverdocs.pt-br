@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4981b32f-741e-4afc-8734-26a8533ac530
 title: Integrando o AD DS a uma infraestrutura de DNS existente
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f4bb480be4696f15f0a63c20ab47042264584d2c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402556"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822269"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>Integrando o AD DS a uma infraestrutura de DNS existente
 
@@ -31,13 +30,13 @@ Ao integrar AD DS com um namespace DNS existente, recomendamos que você faça o
   
 -   Configure os controladores de domínio para cada domínio regional para hospedar as zonas DNS que correspondem aos seus domínios de Active Directory.  
   
--   Configure a zona que contém os Active Directory registros de localizador de toda a floresta (isto é, o _ msdcs. *nomedafloresta* Zone) a ser replicada em todos os servidores DNS na floresta usando a partição de diretório de aplicativo DNS de toda a floresta.  
+-   Configure a zona que contém os Active Directory registros de localizador de toda a floresta (ou seja, o _msdcs. *nomedafloresta* Zone) a ser replicada em todos os servidores DNS na floresta usando a partição de diretório de aplicativo DNS de toda a floresta.  
   
     > [!NOTE]  
     > Quando o serviço do servidor DNS é instalado com o Assistente para Instalação do Active Directory Domain Services (recomendamos essa opção), todas as tarefas anteriores são executadas automaticamente. Para obter mais informações, consulte [implantando um domínio raiz de floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
   
     > [!NOTE]  
-    > AD DS usa registros de localizador em toda a floresta para permitir que os parceiros de replicação encontrem um ao outro e para permitir que os clientes encontrem servidores de catálogo global. AD DS armazena os registros de localizador de toda a floresta no _ msdcs. zona *nomedafloresta* . Como as informações na zona devem estar amplamente disponíveis, essa zona é replicada para todos os servidores DNS na floresta por meio da partição de diretório de aplicativos DNS em toda a floresta.  
+    > AD DS usa registros de localizador em toda a floresta para permitir que os parceiros de replicação encontrem um ao outro e para permitir que os clientes encontrem servidores de catálogo global. AD DS armazena os registros de localizador de toda a floresta no _msdcs. zona *nomedafloresta* . Como as informações na zona devem estar amplamente disponíveis, essa zona é replicada para todos os servidores DNS na floresta por meio da partição de diretório de aplicativos DNS em toda a floresta.  
   
 A estrutura DNS existente permanece intacta. Você não precisa mover nenhum servidor ou zona. Você simplesmente precisa criar uma delegação para suas zonas de DNS integradas ao Active Directory da sua hierarquia de DNS existente.  
   
@@ -46,7 +45,7 @@ Para configurar o DNS em computadores cliente, o DNS para AD DS proprietário de
   
 |Elemento de design|Configuração|  
 |------------------|-----------------|  
-|Nomeação do computador|Use a nomenclatura padrão. Quando um computador com Windows 2000, Windows XP, Windows Server 2003, Windows Server 2008 ou Windows Vista ingressa em um domínio, o computador atribui a ele mesmo um FQDN (nome de domínio totalmente qualificado) que compreende o nome do host do computador e o nome do ativo Domínio do diretório.|  
+|Nomeação do computador|Use a nomenclatura padrão. Quando um computador com Windows 2000, Windows XP, Windows Server 2003, Windows Server 2008 ou Windows Vista ingressa em um domínio, o computador atribui a ele mesmo um FQDN (nome de domínio totalmente qualificado) que compreende o nome do host do computador e o nome do domínio de Active Directory.|  
 |Configuração do resolvedor de cliente|Configure os computadores cliente para apontarem para qualquer servidor DNS na rede.|  
   
 > [!NOTE]  

@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c4496cfec94823ae177bc6de4fac83dc977fb61d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 587ff48bd0af80667f9a336323641b87be808b1d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376702"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843929"
 ---
 # <a name="fsutil-volume"></a>Fsutil volume
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -34,7 +34,7 @@ fsutil volume [list]
 fsutil volume [querycluster] <VolumePath> <Cluster> [<Cluster>] … …
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------------|---------------|
@@ -43,12 +43,12 @@ fsutil volume [querycluster] <VolumePath> <Cluster> [<Cluster>] … …
 |diskfree|Consulta a unidade de disco rígido para determinar a quantidade de espaço livre nela.|
 |desmontagem|Desmonta um volume.|
 |filelayout|Exibe os metadados NTFS para o arquivo fornecido.|
-|\<fileid >|Especifica a ID do arquivo.|
-|lista|Lista todos os volumes no sistema.|
-|querycluster|Localiza qual arquivo está usando um cluster especificado. Você pode especificar vários clusters com o parâmetro **querycluster** .<br /><br />Esse parâmetro se aplica a:  Windows Server 2008 R2 e Windows 7.|
-|\<cluster >|Especifica o número do cluster lógico (LCN).|
+|\<FileID >|Especifica a ID do arquivo.|
+|{1&gt;list&lt;1}|Lista todos os volumes no sistema.|
+|querycluster|Localiza qual arquivo está usando um cluster especificado. Você pode especificar vários clusters com o parâmetro **querycluster** .<p>Esse parâmetro aplica-se a: Windows Server 2008 R2 e Windows 7.|
+|> de cluster \<|Especifica o número do cluster lógico (LCN).|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para exibir um relatório de clusters alocados, digite:
 
 ```
@@ -87,8 +87,8 @@ Para localizar os arquivos que estão usando os clusters, especificados pelos n�
 fsutil volume querycluster C: 50 0x2000
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

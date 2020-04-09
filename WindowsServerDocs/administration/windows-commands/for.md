@@ -1,24 +1,20 @@
 ---
 title: for
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0bf54e35e4226cb020b040d5fc36ddd88dc02b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7040e4cb8e0f38e58ce5e868535dcfb2d897fbd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377118"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844529"
 ---
 # <a name="for"></a>for
 
@@ -34,13 +30,13 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|{%%\|%}\<variável >|Necessário. Representa um parâmetro substituível. Use um único sinal de porcentagem ( **%** ) para executar o comando **for** no prompt de comando. Use sinais de porcentagem duplas ( **%%** ) para executar o comando **for** em um arquivo em lotes. As variáveis diferenciam maiúsculas de minúsculas e devem ser representadas com um valor alfabético, como **% A**, **% B**ou **% C**.|
-|(conjunto de\<>)|Necessário. Especifica um ou mais arquivos, diretórios ou cadeias de caracteres de texto ou um intervalo de valores nos quais o comando deve ser executado. Os parênteses são necessários.|
-|> de comando \<|Necessário. Especifica o comando que você deseja executar em cada arquivo, diretório ou cadeia de caracteres de texto ou no intervalo de valores incluídos no *conjunto*.|
+|{%%\|%}\<variável >|Obrigatório. Representa um parâmetro substituível. Use um único sinal de porcentagem ( **%** ) para executar o comando **for** no prompt de comando. Use sinais de porcentagem duplas ( **%%** ) para executar o comando **for** em um arquivo em lotes. As variáveis diferenciam maiúsculas de minúsculas e devem ser representadas com um valor alfabético, como **% A**, **% B**ou **% C**.|
+|(conjunto de\<>)|Obrigatório. Especifica um ou mais arquivos, diretórios ou cadeias de caracteres de texto ou um intervalo de valores nos quais o comando deve ser executado. Os parênteses são necessários.|
+|> de comando \<|Obrigatório. Especifica o comando que você deseja executar em cada arquivo, diretório ou cadeia de caracteres de texto ou no intervalo de valores incluídos no *conjunto*.|
 |\<CommandLineOptions >|Especifica as opções de linha de comando que você deseja usar com o comando especificado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -104,17 +100,17 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     As sintaxes são:  
     ```
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ("<LiteralString>") do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<LiteralString>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
     ```  
     O argumento *set* especifica um ou mais nomes de arquivo. Cada arquivo é aberto, lido e processado antes de passar para o próximo arquivo no *conjunto*. Para substituir o comportamento de análise padrão, especifique *ParsingKeywords*. Esta é uma cadeia de caracteres entre aspas que contém uma ou mais palavras-chave para especificar opções de análise diferentes.
 
     Se você usar a opção **usebackq** , use uma das seguintes sintaxes:  
     ```
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ("<Set>") do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
     ```  
     A tabela a seguir lista as palavras-chave de análise que você pode usar para *ParsingKeywords*.  
 
@@ -133,7 +129,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     |Variável com modificador|Descrição|
     |----------------------|-----------|
-    |% ~ I|Expande **% I** que remove qualquer aspas ao redor ("").|
+    |% ~ I|Expande **% I** que remove qualquer aspa ao redor ().|
     |% ~ fI|Expande **% I** para um nome de caminho totalmente qualificado.|
     |% ~ dI|Expande **% I** somente para uma letra da unidade.|
     |% ~ pI|Expande **% I** para apenas um caminho.|
@@ -160,12 +156,12 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     Usando nomes de variáveis em letras maiúsculas, como **% I**, você pode tornar seu código mais legível e evitar confusão com os modificadores, que não diferenciam maiúsculas de minúsculas.
 - Analisando uma cadeia de caracteres
 
-  Você pode usar a lógica **de análise for/f** em uma cadeia de caracteres imediata encapsulando *\<literastring\>* em: aspas duplas (*sem* "usebackq") ou entre aspas simples (*com* "usebackq")--por exemplo, ("MyString") ou ("MyString"). *\<literalstring\>* é tratado como uma única linha de entrada de um arquivo. Ao analisar *\<literastring\>* em aspas duplas, símbolos de comando (como **\\ \& \|** \> \< \^) são tratados como caracteres comuns.
+  Você pode usar a lógica **de análise for/f** em uma cadeia de caracteres imediata encapsulando *\<literastring\>* em: aspas duplas (*sem* usebackq) ou entre aspas simples (*com* usebackq) – por exemplo, (MyString) ou (' MyString '). *\<literalstring\>* é tratado como uma única linha de entrada de um arquivo. Ao analisar *\<literastring\>* em aspas duplas, símbolos de comando (como **\\ \& \|** \> \< \^) são tratados como caracteres comuns.
 - Saída de análise
 
   Você pode usar o comando **for/f** para analisar a saída de um comando colocando um *comando de\<* entre aspas invertidas\>entre os parênteses. Ele é tratado como uma linha de comando, que é passada para um cmd. exe filho. A saída é capturada na memória e analisada como se fosse um arquivo.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para usar o **para** o em um arquivo em lotes, use a seguinte sintaxe:
 ```
@@ -179,17 +175,17 @@ No exemplo anterior, cada arquivo que tem a extensão. doc ou. txt no diretório
 
 Para analisar um arquivo, ignorando linhas comentadas, digite:
 ```
-for /f "eol=; tokens=2,3* delims=," %i in (myfile.txt) do @echo %i %j %k
+for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 ```
-Esse comando analisa cada linha em MyFile. txt. Ele ignora as linhas que começam com um ponto e vírgula e passa o segundo e o terceiro token de cada linha para o corpo **de para** (os tokens são delimitados por vírgulas ou espaços). O corpo da instrução **for** faz referência a **% i** para obter o segundo token, **% j** para obter o terceiro token e **% k** para obter todos os tokens restantes. Se os nomes de arquivo fornecidos contiverem espaços, use aspas em volta do texto (por exemplo, "nome do arquivo"). Para usar aspas, você deve usar **usebackq**. Caso contrário, as aspas são interpretadas como definição de uma cadeia de caracteres literal para análise.
+Esse comando analisa cada linha em MyFile. txt. Ele ignora as linhas que começam com um ponto e vírgula e passa o segundo e o terceiro token de cada linha para o corpo **de para** (os tokens são delimitados por vírgulas ou espaços). O corpo da instrução **for** faz referência a **% i** para obter o segundo token, **% j** para obter o terceiro token e **% k** para obter todos os tokens restantes. Se os nomes de arquivo fornecidos contiverem espaços, use aspas em volta do texto (por exemplo, nome de arquivo). Para usar aspas, você deve usar **usebackq**. Caso contrário, as aspas são interpretadas como definição de uma cadeia de caracteres literal para análise.
 
-**% i** é declarado explicitamente na instrução **for** . **% j** e **% k** são declarados implicitamente usando **tokens =** . Você pode usar **tokens =** para especificar até 26 tokens, desde que ele não cause uma tentativa de declarar uma variável maior que a letra "z" ou "z".
+**% i** é declarado explicitamente na instrução **for** . **% j** e **% k** são declarados implicitamente usando **tokens =** . Você pode usar **tokens =** para especificar até 26 tokens, desde que ele não cause uma tentativa de declarar uma variável maior que a letra Z ou z.
 
 O exemplo a seguir enumera os nomes de variáveis de ambiente no ambiente atual. Para analisar a saída de um comando colocando *definido* entre parênteses, digite:
 ```
-for /f "usebackq delims==" %i in ('set') do @echo %i 
+for /f usebackq delims== %i in ('set') do @echo %i 
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

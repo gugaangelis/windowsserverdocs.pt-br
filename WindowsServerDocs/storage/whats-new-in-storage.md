@@ -3,17 +3,17 @@ ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Novidades no armazenamento no Windows Server
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dongill
+manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0de83c8642629b3a7ff21c9accadec5f9331178e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322328"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820849"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>O que há de novo no armazenamento no Windows Server
 
@@ -65,7 +65,7 @@ Para ser justo, o centro de administração do Windows é um download separado q
 
 O Serviço de Migração do Armazenamento é uma nova tecnologia que facilita migrar servidores para uma versão mais recente do Windows Server. Ele fornece uma ferramenta gráfica que faz o inventário de dados em servidores, transfere os dados e a configuração para servidores mais recentes e, em seguida, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que aplicativos e usuários não precisem alterar nada. Para obter mais informações, consulte o [Serviço de Migração do Armazenamento](storage-migration-service/overview.md).
 
-### <a id="storage-spaces-direct"></a>Espaços de Armazenamento Diretos (somente Windows Server 2019)
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>Espaços de Armazenamento Diretos (somente Windows Server 2019)
 
 Há uma série de aprimoramentos para Espaços de Armazenamento Diretos no Windows Server 2019 (Espaços de Armazenamento Diretos não está incluído no Windows Server, canal semestral):
 
@@ -109,7 +109,7 @@ Há uma série de aprimoramentos para Espaços de Armazenamento Diretos no Windo
 
     Isso permite que os administradores delimitem manualmente a alocação de volumes em Espaços de Armazenamento Diretos. Isso pode aumentar significativamente a tolerância a falhas sob determinadas condições, mas impõe algumas considerações e complexidade de gerenciamento adicionais. Para obter mais informações, consulte [delimitar a alocação de volumes](storage-spaces/delimit-volume-allocation.md).
 
-### <a name="storage-replica2019"></a>Réplica de armazenamento
+### <a name="storage-replica"></a><a name="storage-replica2019"></a>Réplica de armazenamento
 
 Há várias melhorias na [réplica de armazenamento](storage-replica/storage-replica-overview.md) nesta versão:
 
@@ -193,7 +193,7 @@ A réplica de armazenamento também contém os seguintes aprimoramentos:
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Novidades no armazenamento no Windows Server 2016
 
-### <a name="s2d"></a>Espaços de Armazenamento Diretos  
+### <a name="storage-spaces-direct"></a><a name="s2d"></a>Espaços de Armazenamento Diretos  
 Os Espaços de Armazenamento Direto habilitam a criação de armazenamento altamente disponível e escalonável usando servidores com armazenamento local. Ele simplifica a implantação e o gerenciamento de sistemas de armazenamento definidos por software e desbloqueia o uso de novas classes de dispositivos de disco, como dispositivos de disco SATA SSD e NVMe, que anteriormente não eram possíveis com Espaços de Armazenamento clusterizados com discos compartilhados.  
 
 **Qual é o valor agregado desta alteração?**  
@@ -205,7 +205,7 @@ Para saber mais, consulte [Novidades nos Espaços de Armazenamento Direto no Win
 **O que passou a funcionar de maneira diferente?**  
 Esse recurso é novo no Windows Server 2016.  
 
-### <a name="storage-replica"></a>Réplica de armazenamento
+### <a name="storage-replica"></a><a name="storage-replica"></a>Réplica de armazenamento
 
 A Réplica de Armazenamento habilita a replicação síncrona em nível de bloco independente de armazenamento entre servidores ou clusters para recuperação de desastre, bem como a expansão de um cluster de failover entre sites. A replicação síncrona habilita o espelhamento de dados em locais físicos com volumes consistentes com falha para garantir perda zero de dados no nível do sistema de arquivos. A replicação assíncrona permite a extensão de site além das dimensões metropolitanas com a possibilidade de perda de dados.  
 
@@ -229,7 +229,7 @@ Para saber mais, consulte [Novidades na Réplica de Armazenamento no Windows Ser
 **O que passou a funcionar de maneira diferente?**  
 Esse recurso é novo no Windows Server 2016.  
 
-### <a name="storage-qos"></a>Qualidade de serviço de armazenamento  
+### <a name="storage-quality-of-service"></a><a name="storage-qos"></a>Qualidade de serviço de armazenamento  
 Agora você pode usar QoS (qualidade de serviço) de armazenamento para monitorar centralmente e de ponta a ponta o desempenho do armazenamento e criar políticas de gerenciamento usando clusters Hyper-V e CSV no Windows Server 2016.  
 
 **Qual é o valor agregado desta alteração?**  
@@ -248,7 +248,7 @@ Esse recurso é novo no Windows Server 2016. Não era possível realizar o geren
 
 Para saber mais, consulte [Qualidade de serviço do armazenamento](storage-qos/storage-qos-overview.md)
 
-### <a name="dedup"></a>Eliminação de duplicação de dados  
+### <a name="data-deduplication"></a><a name="dedup"></a>Eliminação de duplicação de dados  
 | Funcionalidade | Novo ou atualizado | Descrição |
 |---------------|----------------|-------------|
 | [Suporte para grandes volumes](data-deduplication/whats-new.md#large-volume-support) | Atualizado | Antes do Windows Server 2016, os volumes tinham que ser dimensionados especificamente para a variação esperada e tamanhos de volume acima de 10 TB não eram bons candidatos para eliminação de duplicação. No Windows Server 2016, a Eliminação de Duplicação de Dados dá suporte a tamanhos de volume de **até 64 TB**. |
@@ -257,7 +257,7 @@ Para saber mais, consulte [Qualidade de serviço do armazenamento](storage-qos/s
 | [Suporte de backup simplificado](data-deduplication/whats-new.md#simple-backup-support) | Novo | No Windows Server 2012 R2, Aplicativos de Backup Virtualizado, como o [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx), tinham suporte por meio de uma série de etapas de configuração manual. No Windows Server 2016, um novo "Backup" de tipo de uso padrão foi adicionado para implantação perfeita da Eliminação de Duplicação de Dados para aplicativos de backup virtualizado. |
 | [Suporte para atualizações sem interrupção do sistema operacional do cluster](data-deduplication/whats-new.md#cluster-upgrade-support) | Novo | A Eliminação de Duplicação de Dados dá suporte completo ao novo recurso [Atualização sem Interrupção do SO de Cluster](..//failover-clustering/cluster-operating-system-rolling-upgrade.md) do Windows Server 2016. |
 
-### <a name="smb-hardening-improvements"></a>Melhorias de proteção SMB para conexões SYSVOL e NETLOGON  
+### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>Melhorias de proteção SMB para conexões SYSVOL e NETLOGON  
 No Windows 10 e no Windows Server 2016, conexões de cliente para os compartilhamentos padrão SYSVOL e NETLOGON do Active Directory Domain Services em controladores de domínio agora exigem assinatura SMB e autenticação mútua (como Kerberos).   
 
 **Qual é o valor agregado desta alteração?**  

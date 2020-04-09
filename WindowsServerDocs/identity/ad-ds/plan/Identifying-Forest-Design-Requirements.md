@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7d957ebb-3476-49d8-b00b-6e93b4a94778
 title: Identificando requisitos de design de floresta
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41caeca82819eaea3d86d5f1eb4883ab8bbf53cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 33025dc2e08185744ffd0dee7eac4d0c020a0691
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408797"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822399"
 ---
 # <a name="identifying-forest-design-requirements"></a>Identificando requisitos de design de floresta
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408797"
 
 Para criar um design de floresta para sua organização, você deve identificar os requisitos de negócios que sua estrutura de diretório precisa acomodar. Isso envolve determinar a quantidade de autonomia que os grupos em sua organização precisam para gerenciar seus recursos de rede e se cada grupo precisa ou não isolar seus recursos na rede de outros grupos.  
   
-O Active Directory Domain Services (AD DS) permite que você projete uma infraestrutura de diretório que acomoda vários grupos em uma organização com requisitos de gerenciamento exclusivos e obtenha independência estrutural e operacional entre os grupos conforme necessário.  
+O Active Directory Domain Services (AD DS) permite que você projete uma infraestrutura de diretório que acomoda vários grupos em uma organização com requisitos de gerenciamento exclusivos e obtenha uma independência estrutural e operacional entre os grupos, conforme necessário.  
   
 Os grupos em sua organização podem ter alguns dos seguintes tipos de requisitos:  
   
@@ -38,11 +37,11 @@ Os grupos em sua organização podem ter alguns dos seguintes tipos de requisito
   
 -   **Requisitos legais**. Algumas organizações têm requisitos legais para operar de uma maneira específica, por exemplo, restringindo o acesso a determinadas informações conforme especificado em um contrato de negócios. Algumas organizações têm requisitos de segurança para operar em redes internas isoladas. A falha ao atender a esses requisitos pode resultar na perda do contrato e possivelmente na ação legal.  
   
-Parte da identificação de seus requisitos de design de floresta envolve identificar o grau em que os grupos em sua organização podem confiar nos possíveis proprietários de floresta e seus administradores de serviço e identificar os requisitos de autonomia e isolamento para cada um grupo em sua organização.  
+Parte da identificação de seus requisitos de design de floresta envolve identificar o grau em que os grupos em sua organização podem confiar nos possíveis proprietários de floresta e seus administradores de serviço e identificar os requisitos de autonomia e isolamento para cada grupo em sua organização.  
   
 A equipe de design deve documentar os requisitos de isolamento e autonomia para serviços e administração de dados para cada grupo na organização que pretende usar AD DS. A equipe também deve observar quaisquer áreas de conectividade limitada que possam afetar a implantação do AD DS.  
   
-A equipe de design deve documentar os requisitos de isolamento e autonomia para serviços e administração de dados para cada grupo na organização que pretende usar AD DS. A equipe também deve observar quaisquer áreas de conectividade limitada que possam afetar a implantação do AD DS. Para uma planilha para ajudá-lo a documentar as regiões identificadas, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [ajudas de trabalho para o kit de implantação do Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) e abra "requisitos de design de floresta" ( DSSLOGI_2. doc).  
+A equipe de design deve documentar os requisitos de isolamento e autonomia para serviços e administração de dados para cada grupo na organização que pretende usar AD DS. A equipe também deve observar quaisquer áreas de conectividade limitada que possam afetar a implantação do AD DS. Para uma planilha para ajudá-lo a documentar as regiões identificadas, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [auxílios de trabalho para o kit de implantação do Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) e abra "requisitos de design de floresta" (DSSLOGI_2. doc).  
   
 ## <a name="in-this-section"></a>Nesta seção  
   

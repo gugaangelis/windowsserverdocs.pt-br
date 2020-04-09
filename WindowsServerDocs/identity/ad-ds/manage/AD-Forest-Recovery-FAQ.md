@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD - perguntas Frequentes
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: ac9e5a3d-8b1e-41b7-8e02-f64b7acf1359
 ms.technology: identity-adds
-ms.openlocfilehash: 49cd12621c6ddf89393f0463e4856555ca241491
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f32111cf7cc81f8f49b7b1058cc1a0ccc780da7f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369107"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823999"
 ---
 # <a name="ad-forest-recovery---faq"></a>Recuperação de floresta do AD - perguntas Frequentes
 
@@ -24,7 +23,7 @@ Este documento contém perguntas frequentes (FAQs) sobre a recuperação da flor
 
 ## <a name="general-recovery"></a>Recuperação geral
 
-**PERGUNTAS O que posso fazer para acelerar a recuperação?**
+**P: o que posso fazer para acelerar a recuperação?**
 
 Embora a velocidade de recuperação não seja a principal meta deste guia, você pode alcançar tempos de recuperação menores:  
   
@@ -46,7 +45,7 @@ Outros fatores que afetam a duração do processo de recuperação de floresta i
 - Quando você recria DCs, leva tempo para replicar dados para promoções baseadas em rede.  
    - Você pode diminuir o tempo necessário para restaurar os DCs executando as seguintes etapas:  
 - Reduza o tempo de recuperação de mídia de backup:  
-   - Usando a ferramenta de montagem de banco de dados Active Directory (Dsamain. exe) para identificar o melhor backup a ser usado para operações de restauração. Para obter mais informações sobre como usar a ferramenta de montagem de banco de dados Active Directory, consulte o guia passo a [passo da ferramenta de montagem de banco de dados do Active Directory](https://go.microsoft.com/fwlink/?LinkId=132577) (https://go.microsoft.com/fwlink/?LinkId=132577).  
+   - Usando a ferramenta de montagem de banco de dados Active Directory (Dsamain. exe) para identificar o melhor backup a ser usado para operações de restauração. Para obter mais informações sobre como usar a ferramenta de montagem de banco de dados Active Directory, consulte o guia passo a [passo Active Directory ferramenta de montagem de banco de dados](https://go.microsoft.com/fwlink/?LinkId=132577) (https://go.microsoft.com/fwlink/?LinkId=132577).  
    - Rotular a mídia de backup de forma clara e armazenar a mídia de maneira organizada em um local conveniente, embora seguro, que permita a recuperação rápida.  
    - Usar o Serviço de Cópias de Sombra de Volume com uma SAN (rede de área de armazenamento) para manter backups de diferentes pontos no tempo. Para obter mais informações, consulte [Windows Server 2003 Active Directory recuperação rápida com serviço de cópias de sombra de volume e serviço de disco virtual](https://go.microsoft.com/fwlink/?LinkId=70781) (https://go.microsoft.com/fwlink/?LinkId=70781).  
 - Force a remoção de AD DS dos DCs em vez de reinstalar o sistema operacional. Se a causa da falha em toda a floresta tiver sido identificada como puramente dentro do escopo de AD DS, você não precisará reinstalar o sistema operacional nos controladores de domínio.  
@@ -57,7 +56,7 @@ Você também pode ajudar a acelerar AD DS instalações usando o recurso IFM (i
   
 As empresas que têm um SLA (contrato de nível de serviço) mais agressivo podem considerar a alteração dos procedimentos de recuperação de floresta para acelerar a recuperação.  
   
-**PERGUNTAS Posso automatizar o processo de recuperação de floresta?**
+**P: posso automatizar o processo de recuperação de floresta?**
 
 Devido à natureza complexa e crítica do processo de recuperação de floresta, atualmente, não há nenhuma automação de ponta a ponta. O processo de recuperação de floresta é mais um desafio logístico e organizacional de restaurar a continuidade dos negócios do que um problema técnico de automação de processos. Portanto, o indivíduo que administra o ambiente deve criar um plano de recuperação de floresta específico para esse ambiente e, em seguida, automatizar as seções de ti que podem ser automatizadas com êxito.  
   
@@ -65,7 +64,7 @@ Você pode executar a maioria das etapas de recuperação de floresta usando fer
   
 Embora os scripts possam acelerar a recuperação, você deve testar exaustivamente esses scripts antes de aplicá-los em um ambiente real. Além disso, você deve atualizá-los de acordo com as alterações no ambiente de Active Directory, como a adição de um novo domínio ou DC, ou uma nova versão do Active Directory.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

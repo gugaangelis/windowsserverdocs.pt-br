@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 472c3b91285810ac1ff528da24de50533bae526d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376937"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844299"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -33,11 +33,11 @@ fsutil fsinfo [statistics] <VolumePath>
 fsutil fsinfo [volumeinfo] <RootPath>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|controla|Lista todas as unidades no computador.|
+|unidades|Lista todas as unidades no computador.|
 |DriveType|Consulta uma unidade e lista seu tipo, por exemplo, unidade de CD-ROM.|
 |NTFSInfo|Lista informações de volume específicas do NTFS para o volume especificado, como o número de setores, total de clusters, clusters livres e o início e término da zona MFT.|
 |sectorinfo|Lista informações sobre o tamanho e o alinhamento do setor do hardware.|
@@ -46,7 +46,7 @@ fsutil fsinfo [volumeinfo] <RootPath>
 |< "VolumePath" >|Especifica a letra da unidade (seguida por dois-pontos).|
 |< "RootPathname" >|Especifica a letra da unidade (seguida por dois-pontos) da unidade raiz.|
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para listar todas as unidades no computador, digite:
 
 ```
@@ -153,8 +153,8 @@ UserFileReadBytes :    1305244512
 LogFileWriteBytes :    180936704       
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
-[Chave de sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
 [fsutil](Fsutil.md)
 
 

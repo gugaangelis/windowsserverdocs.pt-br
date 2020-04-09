@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dc083a15d0cd6a21b5512c1506bc9a461c4b886c
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 78f95f25d365b1b30a9e4e2d311128b8c7cb13b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001761"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827409"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Visão geral do servidor de arquivos de expansão para dados de aplicativos
 
@@ -91,7 +92,7 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 </tr>
 <tr class="even">
 <td>SMB</td>
-<td>Criptografia do SMB</td>
+<td>Criptografia SMB</td>
 <td>Sim</td>
 <td>Sim</td>
 </tr>
@@ -102,19 +103,19 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 <td>Sim</td>
 </tr>
 <tr class="even">
-<td>Sistema de arquivos</td>
+<td>Sistema de Arquivos</td>
 <td>NTFS</td>
 <td>Sim</td>
 <td>N/D</td>
 </tr>
 <tr class="odd">
-<td>Sistema de arquivos</td>
+<td>Sistema de Arquivos</td>
 <td><a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>(sistema de arquivos resiliente)</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 </tr>
 <tr class="even">
-<td>Sistema de arquivos</td>
+<td>Sistema de Arquivos</td>
 <td>Sistema de arquivos CSV (Volume Compartilhado Clusterizado)</td>
 <td>N/D</td>
 <td>Sim</td>
@@ -175,7 +176,7 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 </tr>
 <tr class="even">
 <td>Gerenciamento de arquivos</td>
-<td>Redirecionamento de pasta</td>
+<td>Redirecionamento de Pastas</td>
 <td>Sim</td>
 <td>Não recomendado<em></td>
 </tr>
@@ -199,7 +200,7 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 </tr>
 <tr class="even">
 <td>Gerenciamento de arquivos</td>
-<td>Pastas de Trabalho</td>
+<td>Pastas de trabalho</td>
 <td>Sim</td>
 <td>Não</td>
 </tr>
@@ -210,13 +211,13 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 <td>Não</td>
 </tr>
 <tr class="even">
-<td>Aplicativo</td>
+<td>Aplicativos</td>
 <td>Hyper-V</td>
 <td>Não recomendável</td>
 <td>Sim</td>
 </tr>
 <tr class="odd">
-<td>Aplicativo</td>
+<td>Aplicativos</td>
 <td>Microsoft SQL Server</td>
 <td>Não recomendável</td>
 <td>Sim</td>
@@ -231,7 +232,7 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 Servidores de Arquivos de Escalabilidade Horizontal são ideais para armazenamento de aplicativos para servidores. Alguns exemplos de aplicativos de servidor que podem armazenar seus dados em um compartilhamento de arquivos de escalabilidade horizontal estão listados abaixo:
 
 - O servidor Web IIS (Serviços de Informações da Internet) pode armazenar dados de configuração e de sites em um compartilhamento de arquivos de escalabilidade horizontal. Para obter mais informações, consulte [Configuração compartilhada](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264).
-- O Hyper-V pode armazenar configuração e discos virtuais dinâmicos em um compartilhamento de arquivos de escalabilidade horizontal. Para obter mais informações, consulte [Deploy Hyper-V over SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
+- O Hyper-V pode armazenar configuração e discos virtuais dinâmicos em um compartilhamento de arquivos de escalabilidade horizontal. Para obter mais informações, consulte [Implantar Hyper-V no SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
 - O SQL Server pode armazenar arquivos de banco de dados dinâmicos em um compartilhamento de arquivo de escalabilidade horizontal. Para obter mais informações, consulte [Instalar SQL Server com compartilhamento de arquivo SMB como uma opção de armazenamento](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option).
 - VMM (Virtual Machine Manager) pode armazenar um compartilhamento de biblioteca (que contém modelos de máquina virtual e arquivos relacionados) em um compartilhamento de arquivos de escalabilidade horizontal. No entanto, o próprio servidor de biblioteca não pode ser um Servidor de Arquivos de Escalabilidade Horizontal — ele deve estar em um servidor autônomo ou em um cluster de failover que não use a função de cluster Servidor de Arquivos de Escalabilidade Horizontal.
 
@@ -259,7 +260,7 @@ A tabela a seguir lista os recursos que fazem parte deste cenário e descreve co
 <td>Os clusters de failover adicionaram os seguintes recursos no Windows Server 2012 para dar suporte ao servidor de arquivos de escalabilidade horizontal: nome de rede distribuído, tipo de recurso de Servidor de Arquivos de Escalabilidade Horizontal, CSV (volumes compartilhados de cluster) 2 e Servidor de Arquivos de Escalabilidade Horizontal função de alta disponibilidade. Para obter mais informações sobre esses recursos, <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">consulte&#39;o que há de novo no clustering de failover no Windows Server 2012 [redirected]</a>.</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">Bloco de mensagens do servidor</a></td>
+<td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">Protocolo SMB</a></td>
 <td>O SMB 3,0 adicionou os seguintes recursos no Windows Server 2012 para dar suporte ao servidor de arquivos de escalabilidade horizontal: failover transparente SMB, SMB Multichannel e SMB Direct.<br />
 <br />
 Para obter mais informações sobre a funcionalidade nova e alterada para SMB no Windows Server 2012 R2, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">novidades&#39;do SMB no Windows Server</a>.</td>
@@ -271,7 +272,7 @@ Para obter mais informações sobre a funcionalidade nova e alterada para SMB no
 
 - [Guia de considerações de design de armazenamento definido pelo software](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
 - [Aumento da disponibilidade de servidor, armazenamento e rede](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [Implantar o Hyper-V em SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-- [Implantando servidores de arquivos rápidos e eficientes para aplicativos de servidor](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+- [Implantar o Hyper-V no SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [Como implantar servidores de arquivos rápidos e eficientes em aplicativos para servidores](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
 - [Escalar horizontalmente ou não, eis a questão](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx) (postagem de blog)
-- [Redirecionamento de pasta, Arquivos Offline e perfis de usuário de roaming](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)
+- [Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)

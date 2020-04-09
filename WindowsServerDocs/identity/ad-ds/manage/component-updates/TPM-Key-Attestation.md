@@ -1,7 +1,6 @@
 ---
 ms.assetid: 16a344a9-f9a6-4ae2-9bea-c79a0075fd04
-title: Atestado de chave do TPM
-description: ''
+title: Atestado de chave de TPM
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d7104daaa10cf7093370cb309e0366e1ab2b9b51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389865"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823009"
 ---
-# <a name="tpm-key-attestation"></a>Atestado de chave do TPM
+# <a name="tpm-key-attestation"></a>Atestado de chave de TPM
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -41,7 +40,7 @@ Embora o suporte para chaves protegidas por TPM tenha existido desde o Windows 8
 |EKCert|Certificado EK. Um certificado de TPM emitido pelo fabricante para EKPub. Nem todos os TPMs têm EKCert.|  
 |TPM|Trusted Platform Module. Um TPM é projetado para fornecer funções relacionadas à segurança com base em hardware. Um chip TPM é um processador de criptografia seguro projetado para desempenhar as operações de criptografia. O chip inclui vários mecanismos de segurança física para torná-lo resistente a adulterações nas funções de segurança do TPM por software mal-intencionado.|  
   
-### <a name="background"></a>Histórico  
+### <a name="background"></a>Tela de fundo  
 A partir do Windows 8, um Trusted Platform Module (TPM) pode ser usado para proteger a chave privada de um certificado. O KSP (provedor de armazenamento de chaves) do provedor Microsoft Platform crypto habilita esse recurso. Houve duas preocupações com a implementação:  
 
 -   Não havia nenhuma garantia de que uma chave seja realmente protegida por um TPM (alguém pode facilmente falsificar um KSP de software como um KSP de TPM com credenciais de administrador local).
@@ -67,7 +66,7 @@ Em geral, o atestado de chave do TPM baseia-se nos seguintes pilares:
   
 4.  A CA emite um certificado com um OID de política de emissão especial para indicar que a chave agora está atestada para ser protegida por um TPM.  
   
-## <a name="BKMK_DeploymentOverview"></a>Visão geral da implantação  
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>Visão geral da implantação  
 Nessa implantação, supõe-se que uma autoridade de certificação Enterprise do Windows Server 2012 R2 está configurada. Além disso, os clientes (Windows 8.1) são configurados para se registrarem nessa AC corporativa usando modelos de certificado. 
 
 Há três etapas para implantar o atestado de chave do TPM:  
@@ -101,9 +100,9 @@ Há três etapas para implantar o atestado de chave do TPM:
     > -   O atestado de chave do TPM não tem suporte para uma AC autônoma.  
     > -   O atestado de chave do TPM não dá suporte ao [processamento de certificado não persistente](https://technet.microsoft.com/library/ff934598).  
   
-## <a name="BKMK_DeploymentDetails"></a>Detalhes da implantação  
+## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>Detalhes da implantação  
   
-### <a name="BKMK_ConfigCertTemplate"></a>Configurar um modelo de certificado  
+### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>Configurar um modelo de certificado  
 Para configurar o modelo de certificado para o atestado de chave do TPM, execute as seguintes etapas de configuração:  
   
 1.  Guia **compatibilidade**  
@@ -154,9 +153,9 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
   
     |OID|Tipo de atestado de chave|Descrição|Nível de garantia|  
     |-------|------------------------|---------------|-------------------|  
-    |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para lista de EK gerenciada pelo administrador|Alto|  
-    |1.3.6.1.4.1.311.21.31|Certificado de endosso|"Certificado EK verificado": quando a cadeia de certificados EK é validada|Médio|  
-    |1.3.6.1.4.1.311.21.32|Credenciais de usuário|"EK confiável em uso": para EK atestado pelo usuário|Baixa|  
+    |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para lista de EK gerenciada pelo administrador|Alta|  
+    |1.3.6.1.4.1.311.21.31|Certificado de endosso|"Certificado EK verificado": quando a cadeia de certificados EK é validada|Média|  
+    |1.3.6.1.4.1.311.21.32|Credenciais de usuário|"EK confiável em uso": para EK atestado pelo usuário|Baixo|  
   
     Os OIDs serão inseridos no certificado emitido se **incluir políticas de emissão** estiver selecionada (a configuração padrão).  
   
@@ -165,7 +164,7 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
     > [!TIP]  
     > Um uso potencial de ter a OID presente no certificado é limitar o acesso a redes VPN ou sem fio a determinados dispositivos. Por exemplo, sua política de acesso pode permitir conexão (ou acesso a uma VLAN diferente) se o OID 1.3.6.1.4.1.311.21.30 estiver presente no certificado. Isso permite que você limite o acesso a dispositivos cuja EK do TPM está presente na lista EKPUB.  
   
-### <a name="BKMK_CAConfig"></a>Configuração da AC  
+### <a name="ca-configuration"></a><a name="BKMK_CAConfig"></a>Configuração da AC  
   
 1.  **Configurar repositórios de certificados EKCA e EKROOT em uma AC emissora**  
   
@@ -201,7 +200,7 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
   
         |Nome do valor|Tipo|Dados|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< caminho LOCAL ou UNC para EKPUB permitir lista (s) ><br /><br />Exemplo:<br /><br />*\\\blueCA.contoso.com\ekpub*<br /><br />*\\\bluecluster1.contoso.com\ekpub*<br /><br />D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|< caminho LOCAL ou UNC para EKPUB permitir lista (s) ><p>Exemplo:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   

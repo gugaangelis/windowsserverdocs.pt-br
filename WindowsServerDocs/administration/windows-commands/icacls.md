@@ -1,24 +1,20 @@
 ---
 title: icacls
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 494c87073cfd78c7f5e17c72d4c65bec33a49b98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 59d10b9ed681b7e0af120798dde9f200182d67d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375492"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842259"
 ---
 # <a name="icacls"></a>icacls
 
@@ -33,7 +29,7 @@ icacls <FileName> [/grant[:r] <Sid>:<Perm>[...]] [/deny <Sid>:<Perm>[...]] [/rem
 icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c] [/l] [/q]]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
@@ -141,18 +137,18 @@ Para restaurar as DACLs para cada arquivo em ACLFile que existe no diretório C:
 icacls c:\windows\ /restore aclfile
 ```
 
-Para conceder ao usuário usuário1 excluir e gravar permissões de DAC em um arquivo chamado "test1", digite:
+Para conceder ao usuário usuário1 excluir e gravar permissões de DAC em um arquivo chamado Test1, digite:
 
 ```
 icacls test1 /grant User1:(d,wdac)
 ```
 
-Para conceder ao usuário definido por SID S-1-1-0 excluir e gravar permissões de DAC em um arquivo, chamado "test2", digite:
+Para conceder ao usuário definido por SID S-1-1-0 excluir e gravar permissões de DAC em um arquivo, chamado test2, digite:
 
 ```
 icacls test2 /grant *S-1-1-0:(d,wdac)
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

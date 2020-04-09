@@ -1,24 +1,20 @@
 ---
 title: nfsshare
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d205bcfad11d22fea7fc9d0651aca61f234347cf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 032baaf3013d2658b1040345da3a35cb6a1631f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948504"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838899"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -37,7 +33,7 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 
 Sem argumentos, o utilitário de linha de comando **nfsshare** lista todos os compartilhamentos de NFS (sistema de arquivos de rede) exportados pelo servidor para NFS. Com *ShareName* como o único argumento, **nfsshare** lista as propriedades do compartilhamento NFS identificado por *ShareName*. Quando *ShareName* e <em>drive</em> **:** <em>caminho</em> são fornecidos, **nfsshare** exporta a pasta identificada por <em>unidade</em> **:** <em>caminho</em> como *ShareName*. Quando a opção **/delete** é usada, a pasta especificada não é mais disponibilizada para clientes NFS.
 
-## <a name="options"></a>Opções
+## <a name="options"></a>{1&gt;Opções&lt;1}
 
 O comando **nfsshare** aceita as seguintes opções e argumentos:
 
@@ -56,6 +52,6 @@ O comando **nfsshare** aceita as seguintes opções e argumentos:
 > [!NOTE]
 > Para exibir a sintaxe completa desse comando, no prompt de comando, digite:</br>> **nfsshare/?**
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 [Referência aos comandos dos Serviços para Network File System](services-for-network-file-system-command-reference.md)

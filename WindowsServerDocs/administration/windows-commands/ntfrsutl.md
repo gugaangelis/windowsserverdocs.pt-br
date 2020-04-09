@@ -1,24 +1,20 @@
 ---
 title: ntfrsutl
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d7721a19-5a87-4ab6-b816-65d2da2c811f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1301b6876698e9eb552ae0ef9e70ed278319a7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 14e718550247b8854073407146456d366d562d2b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372616"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837989"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
@@ -37,7 +33,7 @@ ntfrsutl [version][<computer>]
 ntfrsutl poll[/quickly[=[<N>]]][/slowly[=[<N>]]][/now][<computer>]  
 ```  
   
-### <a name="parameters"></a>Parâmetros  
+#### <a name="parameters"></a>Parâmetros  
   
 |  Parâmetro  |                                                                                                                                                                                                                                                                                                                                        Descrição                                                                                                                                                                                                                                                                                                                                         |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -50,12 +46,12 @@ ntfrsutl poll[/quickly[=[<N>]]][/slowly[=[<N>]]][/now][<computer>]
 |   threads   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |    preparar    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |     AD      |                                                                                                                                                                                                                                                                                                                         lista o modo de exibição do serviço NTFRS do DS.                                                                                                                                                                                                                                                                                                                          |
-|    Defina     |                                                                                                                                                                                                                                                                                                                             Especifica os conjuntos de réplica ativas                                                                                                                                                                                                                                                                                                                              |
-|   versão   |                                                                                                                                                                                                                                                                                                                       Especifica a API e as versões do serviço NTFRS.                                                                                                                                                                                                                                                                                                                        |
-|    Sondagem     | Especifica os intervalos de sondagem atuais.<br /><br />Parâmetros:<br /><br /><ul><li>**\/rapidamente**\[ **\=** \[ <N>\]\]\(pesquisas rapidamente\)<br /><br /><ul><li>**rapidamente** \- sondagens rapidamente até que a configuração estável seja rectrieved</li><li>**\=rapidamente** \- pesquisas rapidamente a cada minutos padrão.</li><li>**\=rapidamente**<N> \- pesquisas rapidamente a cada *N* minutos</li></ul></li><li>**\/lentamente**\[ **\=** \[ <N>\]\] \(as pesquisas lentamente\)<br /><br /><ul><li>**lentamente** \- sondagens lentamente até que a configuração estável seja recuperada</li><li>**\=lentamente** \- sondagens lentamente a cada minutos padrão</li><li>**\=lentamente**<N> \- pesquisas rapidamente a cada *N* minutos</li></ul></li><li>**agora\/** \(sondagens agora\)</li></ul> |
+|    conjuntos     |                                                                                                                                                                                                                                                                                                                             Especifica os conjuntos de réplica ativas                                                                                                                                                                                                                                                                                                                              |
+|   version   |                                                                                                                                                                                                                                                                                                                       Especifica a API e as versões do serviço NTFRS.                                                                                                                                                                                                                                                                                                                        |
+|    sondagem     | Especifica os intervalos de sondagem atuais.<p>Parâmetros:<p><ul><li>**\/rapidamente**\[ **\=** \[ <N>\]\]\(pesquisas rapidamente\)<p><ul><li>**rapidamente** \- sondagens rapidamente até que a configuração estável seja rectrieved</li><li>**\=rapidamente** \- pesquisas rapidamente a cada minutos padrão.</li><li>**\=rapidamente**<N> \- pesquisas rapidamente a cada *N* minutos</li></ul></li><li>**\/lentamente**\[ **\=** \[ <N>\]\] \(as pesquisas lentamente\)<p><ul><li>**lentamente** \- sondagens lentamente até que a configuração estável seja recuperada</li><li>**\=lentamente** \- sondagens lentamente a cada minutos padrão</li><li>**\=lentamente**<N> \- pesquisas rapidamente a cada *N* minutos</li></ul></li><li>**agora\/** \(sondagens agora\)</li></ul> |
 |     \/?     |                                                                                                                                                                                                                                                                                                                            Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                                                            |
   
-## <a name="BKMK_Examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
 Para determinar o intervalo de sondagem para a replicação de arquivo:  
   
 ```  
@@ -68,9 +64,9 @@ Para determinar a interface do programa de aplicativo do NTFRS \(versão\) da AP
 C:\Program Files\SupportTools>ntfrsutl version  
 ```  
   
-## <a name="additional-references"></a>referências adicionais  
+## <a name="additional-references"></a>Referências adicionais  
   
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
   
   

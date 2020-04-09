@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 130b51e472ebf3d900186d6d63e318c88a340579
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 21f6ac91faefa17f153df43fbd2530a2c8c0f713
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252356"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847779"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -37,7 +37,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]] [/b]  
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |      Parâmetro       |                  Descrição                                    |
 | -------------------- | ------------------------------------------------------------------------ |
@@ -50,10 +50,10 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |         /i          | Use somente com NTFS. Executa uma verificação menos rigorosa de entradas de índice, o que reduz a quantidade de tempo necessária para executar **chkdsk**.  |
 |         /c          | Use somente com NTFS. Não verifica os ciclos dentro da estrutura de pastas, o que reduz a quantidade de tempo necessária para executar **chkdsk**.  |
 |    /l [:\<tamanho >]     | Use somente com NTFS. Altera o tamanho do arquivo de log para o tamanho que você digitar. Se você omitir o parâmetro de tamanho, **/l** exibirá o tamanho atual. |
-|         /b.          | Somente NTFS: limpa a lista de clusters inválidos no volume e examina novamente todos os clusters alocados e livres para erros. **/b** inclui a funcionalidade de **/r**. Use esse parâmetro após a geração de imagens de um volume para uma nova unidade de disco rígido.            |
+|         /b          | Somente NTFS: limpa a lista de clusters inválidos no volume e examina novamente todos os clusters alocados e livres para erros. **/b** inclui a funcionalidade de **/r**. Use esse parâmetro após a geração de imagens de um volume para uma nova unidade de disco rígido.            |
 | /Scan               | Somente NTFS: executa uma verificação online no volume. |
-| /forceofflinefix    | Somente NTFS: (deve ser usado com "/Scan"). Ignorar todo o reparo online; todos os defeitos encontrados são enfileirados para reparo offline (ou seja, "chkdsk/spotfix"). |
-| /perf               | Somente NTFS: (deve ser usado com "/Scan"). O usa mais recursos do sistema para concluir uma verificação o mais rápido possível. Isso pode afetar o desempenho negativo em outras tarefas em execução no sistema.|
+| /forceofflinefix    | Somente NTFS: (deve ser usado com/scan). Ignorar todo o reparo online; todos os defeitos encontrados são enfileirados para reparo offline (ou seja, chkdsk/spotfix). |
+| /perf               | Somente NTFS: (deve ser usado com/scan). O usa mais recursos do sistema para concluir uma verificação o mais rápido possível. Isso pode afetar o desempenho negativo em outras tarefas em execução no sistema.|
 | /spotfix            | Somente NTFS: executa a correção de pontos no volume. |
 | /sdcleanup          | Somente NTFS: o lixo coleta dados de descritor de segurança desnecessários (implica/F). |
 | /offlinescanandfix  | Executa uma verificação offline e corrige o volume. |
@@ -144,4 +144,4 @@ chkdsk *.*
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

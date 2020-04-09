@@ -1,24 +1,20 @@
 ---
 title: fc
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f6c004fcebcf5eb743354d9e0a121ff8598217a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b358b8c1bf44b5b7942cef05bd09fa8cac850a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377253"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844739"
 ---
 # <a name="fc"></a>fc
 
@@ -35,16 +31,16 @@ fc /a [/c] [/l] [/lb<N>] [/n] [/off[line]] [/t] [/u] [/w] [/<NNNN>] [<Drive1>:][
 fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |            Parâmetro             |                                                                                                                                     Descrição                                                                                                                                      |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                SRDF                |                                                 Abrevia a saída de uma comparação ASCII. Em vez de exibir todas as linhas que são diferentes, o **FC** exibe apenas a primeira e a última linha para cada conjunto de diferenças.                                                  |
-|                /b.                |             Compara os dois arquivos no modo binário, byte por byte, e não tenta ressincronizar os arquivos depois de encontrar uma incompatibilidade. Este é o modo padrão para comparar arquivos que têm as seguintes extensões de arquivo:. exe,. com,. sys,. obj,. lib ou. bin.              |
+|                /a                |                                                 Abrevia a saída de uma comparação ASCII. Em vez de exibir todas as linhas que são diferentes, o **FC** exibe apenas a primeira e a última linha para cada conjunto de diferenças.                                                  |
+|                /b                |             Compara os dois arquivos no modo binário, byte por byte, e não tenta ressincronizar os arquivos depois de encontrar uma incompatibilidade. Este é o modo padrão para comparar arquivos que têm as seguintes extensões de arquivo:. exe,. com,. sys,. obj,. lib ou. bin.              |
 |                /c                |                                                                                                                               Ignora o caso de letra.                                                                                                                               |
 |                /l                |               Compara os arquivos no modo ASCII, linha por linha, e tenta ressincronizar os arquivos depois de encontrar uma incompatibilidade. Esse é o modo padrão para comparar arquivos, exceto arquivos com as seguintes extensões de arquivo:. exe,. com,. sys,. obj,. lib ou. bin.                |
 |             /lb\<N >              |                         Define o número de linhas para o buffer de linha interno como *N*. O comprimento padrão do buffer de linha é de 100 linhas. Se os arquivos que você está comparando tiverem mais de 100 linhas de diferença consecutivas, o **FC** cancelará a comparação.                         |
-|                opção                |                                                                                                                Exibe os números de linha durante uma comparação ASCII.                                                                                                                 |
+|                /n                |                                                                                                                Exibe os números de linha durante uma comparação ASCII.                                                                                                                 |
 |            /off [linha]            |                                                                                                               Não ignora arquivos que têm o atributo offline definido.                                                                                                               |
 |                /t                |                                                                    Impede que o **FC** converta tabulações em espaços. O comportamento padrão é tratar as guias como espaços, com paradas em cada oitavo posição de caractere.                                                                    |
 |                /u                |                                                                                                                        Compara arquivos como arquivos de texto Unicode.                                                                                                                         |
@@ -85,7 +81,7 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 
     Ao comparar arquivos binários maiores que a memória disponível, o **FC** compara os arquivos completamente, sobrepondo as partes na memória com as próximas partes do disco. A saída é a mesma que para arquivos que se encaixam completamente na memória.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para fazer uma comparação ASCII de dois arquivos de texto, Monthly. RPT e Sales. RPT e exibir os resultados em formato abreviado, digite:
 ```
@@ -124,6 +120,6 @@ Para comparar cada arquivo em lotes no diretório raiz na unidade C para o arqui
 fc c:*.bat d:*.bat
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

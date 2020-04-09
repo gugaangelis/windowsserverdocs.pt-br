@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD-planejando um plano de recuperação da floresta do AD
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 17381f30-55f2-4e00-977a-b701675fa4ff
 ms.technology: identity-adds
-ms.openlocfilehash: 0ef0fbc19f1b3ba5a46fe09f66da6721f2e84712
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ebdff0616d0e3a99b710e07e3bff149a275ff4ea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369153"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824020"
 ---
 # <a name="ad-forest-recovery---devising-an-ad-forest-recovery-plan"></a>Recuperação de floresta do AD-planejando um plano de recuperação da floresta do AD
 
@@ -26,7 +25,7 @@ Por exemplo, no plano de recuperação de sua floresta, você deve ter um mapa d
   
 Você deve praticar seu plano de recuperação de floresta pelo menos uma vez por ano. Além disso, é uma boa ideia executar uma análise de recuperação de floresta quando há alterações de associação ao grupo Administradores de empresa ou administradores de domínio. Isso ajuda a garantir que sua equipe de tecnologia da informação (TI) entenda totalmente o plano de recuperação da floresta.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

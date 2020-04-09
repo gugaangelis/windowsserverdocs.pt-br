@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD - procedimentos
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 47a471fb-3b0b-4aa8-8525-1c92d0d51e93
 ms.technology: identity-adds
-ms.openlocfilehash: 0d427448c8d2a6616b87a524bcc941fc8555cbd4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37422ce09d02615a6048142695820200388661a6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823760"
 ---
 # <a name="ad-forest-recovery---procedures"></a>Recuperação de floresta do AD - procedimentos
 
@@ -47,7 +46,7 @@ Estas etapas explicam como executar uma restauração autoritativa do SYSVOL ao 
 - [Adicionando o catálogo global](AD-Forest-Recovery-Add-GC.md)  
 - [Recursos para verificar se a replicação está funcionando](AD-Forest-Recovery-Verify-Replication.md)  
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

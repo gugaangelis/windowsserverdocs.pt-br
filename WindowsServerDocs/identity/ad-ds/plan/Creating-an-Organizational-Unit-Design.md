@@ -1,7 +1,6 @@
 ---
 ms.assetid: b8df1828-5ead-4c90-b0fe-95c675116b7c
 title: Criar um design de unidade organizacional
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a699a30cce3b330c434fdb3784214de3a2daa403
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 718cb4ed8efebbd92f13db67cc4b8f86ac9feb56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408958"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822729"
 ---
 # <a name="creating-an-organizational-unit-design"></a>Criar um design de unidade organizacional
 

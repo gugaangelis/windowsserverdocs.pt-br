@@ -1,7 +1,6 @@
 ---
 ms.assetid: da7b6dcf-53ec-4394-88c0-c087d92f3893
 title: Escopo de autoridade do administrador do serviço
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2c54279f591545c6207dfec1536f16e29e69aa99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a891ade46fdee1dffc35df31a11c6d138e71e8a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408665"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821889"
 ---
 # <a name="service-administrator-scope-of-authority"></a>Escopo de autoridade do administrador do serviço
 
@@ -38,7 +37,7 @@ Por esse motivo, os grupos que armazenam dados em UOs (unidades organizacionais)
   
 -   O proprietário da floresta pode ser confiável para agir nos interesses do grupo e não tem motivo para agir de forma mal-intencionada contra o grupo.  
   
--   O proprietário da floresta restringe adequadamente o acesso físico aos controladores de domínio. Controladores de domínio em uma floresta não podem ser isolados uns dos outros. É possível que um invasor que tenha acesso físico a um único controlador de domínio faça alterações offline no banco de dados do diretório e, ao fazer isso, interfira na operação de qualquer domínio na floresta, exiba ou manipule dados armazenados em qualquer lugar da floresta e exibir ou manipular dados armazenados em qualquer computador ingressado na floresta. Por esse motivo, o acesso físico aos controladores de domínio deve ser restrito à equipe confiável.  
+-   O proprietário da floresta restringe adequadamente o acesso físico aos controladores de domínio. Controladores de domínio em uma floresta não podem ser isolados uns dos outros. É possível que um invasor que tenha acesso físico a um único controlador de domínio faça alterações offline no banco de dados do diretório e, ao fazer isso, interfira na operação de qualquer domínio na floresta, exiba ou manipule dados armazenados em qualquer lugar da floresta e exiba ou manipule dados armazenados em qualquer computador ingressado na floresta. Por esse motivo, o acesso físico aos controladores de domínio deve ser restrito à equipe confiável.  
   
 -   Você entende e aceita o risco potencial que os administradores de serviços confiáveis podem impor para comprometer a segurança do sistema.  
   

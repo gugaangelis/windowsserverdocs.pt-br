@@ -1,28 +1,22 @@
 ---
-title: Usando o comando Get-DriverPackage
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+title: Get-DriverPackage
+description: O tópico de comandos do Windows para Get-DriverPackage, que exibe informações sobre um pacote de driver no servidor.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 94d231e4-ff01-48e7-9bc8-7b0d97a4339e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3d31d9a02454b0f7fca06b28a4df27174f7b02e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1906a109d22b24b5a44227d56c726996e6532bd6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363195"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831049"
 ---
-# <a name="using-the-get-driverpackage-command"></a>Usando o comando Get-DriverPackage
-
-
+# <a name="get-driverpackage"></a>Get-DriverPackage
 
 Exibe informações sobre um pacote de driver no servidor.
 
@@ -32,16 +26,16 @@ Exibe informações sobre um pacote de driver no servidor.
 WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name> | /PackageId:<ID>} [/Show:{Drivers | Files | All}]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |        Parâmetro         |                                                                           Descrição                                                                            |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server: \<Server nome >] |              Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.               |
-| [/DriverPackage: \<Name >] |                                                        Especifica o nome do pacote de driver a ser mostrado.                                                         |
-|    [/PackageId: \<ID >]    | Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser mostrado. Você deve especificar a ID se o pacote de driver não puder ser identificado exclusivamente pelo nome. |
-|     [/Show: {drivers     |                                                                              Arquivos                                                                               |
+| [/Server: nome do servidor\<>] |              Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.               |
+| [/DriverPackage: nome do\<>] |                                                        Especifica o nome do pacote de driver a ser mostrado.                                                         |
+|    [/PackageId: ID de\<>]    | Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser mostrado. Você deve especificar a ID se o pacote de driver não puder ser identificado exclusivamente pelo nome. |
+|     [/Show: {drivers     |                                                                              Files                                                                               |
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para exibir informações sobre um pacote de driver, digite um dos seguintes:
 ```
@@ -51,6 +45,6 @@ WDSUTIL /Get-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318}
 WDSUTIL /Get-DriverPackage /DriverPackage:MyDriverPackage /Show:All
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

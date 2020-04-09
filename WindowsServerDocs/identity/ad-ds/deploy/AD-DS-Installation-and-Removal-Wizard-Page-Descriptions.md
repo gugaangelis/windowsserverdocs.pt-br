@@ -1,7 +1,6 @@
 ---
 ms.assetid: ac727bd1-a892-47ed-a7ba-439b34187d4e
 title: Descrições das páginas do assistente de instalação e remoção do AD DS
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 7370dfed68e22ca88030aec913db4eb52eef9ec3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323248"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825449"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>Descrições das páginas do assistente de instalação e remoção do AD DS
 
@@ -50,7 +49,7 @@ Este tópico fornece descrições dos controles localizados nas seguintes págin
   
 -   [Confirmar seleções de remoção de função](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_ConfirmRoleRemovalPage)  
   
-## <a name="BKMK_DepConfigPage"></a>Configuração de implantação  
+## <a name="deployment-configuration"></a><a name="BKMK_DepConfigPage"></a>Configuração de implantação  
 O Gerenciador do Servidor começa cada instalação de controlador de domínio na página **Configuração de Implantação**. As demais opções e campos exigidos mudam nessa página e nas páginas subsequentes, dependendo da operação de implantação selecionada. Por exemplo, se você criar uma nova floresta, a página **Opções de preparação** não será exibida, mas se você instalar o primeiro controlador de domínio que executa o Windows Server 2012 em uma floresta ou domínio existente.  
   
 Alguns testes de validação são executados nessa página e, mais tarde, serão executados novamente como parte das verificações de pré-requisitos. Por exemplo, se você tentar instalar o primeiro controlador de domínio do Windows Server 2012 em uma floresta que tenha um nível funcional do Windows 2000, um erro aparecerá nessa página.  
@@ -96,7 +95,7 @@ As opções a seguir são exibidas quando você adiciona um novo controlador de 
   
 Para obter mais informações sobre como adicionar um controlador de domínio a um domínio existente, consulte [instalar um controlador de domínio de réplica do Windows Server 2012 &#40;em um&#41;nível de domínio existente 200](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md).  
   
-## <a name="BKMK_DCOptionsPage"></a>Opções do controlador de domínio  
+## <a name="domain-controller-options"></a><a name="BKMK_DCOptionsPage"></a>Opções do controlador de domínio  
 Ao criar uma nova floresta, este será o conteúdo da página Opções do Controlador de Domínio:  
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DCOptions_Forest.gif)  
@@ -141,7 +140,7 @@ Se estiver adicionando um controlador de domínio a um domínio, este será o co
   
 Para obter mais informações sobre como adicionar um controlador de domínio a um domínio existente, consulte [instalar um controlador de domínio de réplica do Windows Server 2012 &#40;em um&#41;nível de domínio existente 200](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md).  
   
-## <a name="BKMK_DNSOptionsPage"></a>Opções de DNS  
+## <a name="dns-options"></a><a name="BKMK_DNSOptionsPage"></a>Opções de DNS  
 Se você instalar o servidor DNS, a seguinte página **Opções de DNS** será exibida:  
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DNSOptions_Replica.gif)  
@@ -168,7 +167,7 @@ Para obter mais informações sobre delegação, consulte [noções básicas](ht
   
 -   [Noções básicas sobre encaminhadores](https://go.microsoft.com/fwlink/?LinkId=164778) (https://go.microsoft.com/fwlink/?LinkId=164778)  
   
-## <a name="BKMK_RODCOptionsPage"></a>Opções do RODC  
+## <a name="rodc-options"></a><a name="BKMK_RODCOptionsPage"></a>Opções do RODC  
 As opções a seguir são exibidas quando um RODC (controlador de domínio somente leitura) é instalado.  
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_RODCOptions.gif)  
@@ -183,7 +182,7 @@ As opções a seguir são exibidas quando um RODC (controlador de domínio somen
   
 Para obter mais informações sobre a instalação de RODCs, consulte [instalar um Windows Server 2012 Active Directory nível &#40;de&#41; &#40;RODC do&#41;controlador de domínio somente leitura 200](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md).  
   
-## <a name="BKMK_AdditionalOptionsPage"></a>Opções adicionais  
+## <a name="additional-options"></a><a name="BKMK_AdditionalOptionsPage"></a>Opções adicionais  
 A opção a seguir aparecerá na página **Opções Adicionais** se você criar um novo domínio:  
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_AdditionalOptions_Child.gif)  
@@ -198,7 +197,7 @@ As opções a seguir aparecerão na página **Opções Adicionais** se você ins
   
 Para obter mais informações sobre como criar um domínio, consulte [instalar um novo Windows Server 2012 Active Directory nível de domínio &#40;filho ou de&#41;árvore 200](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md). Para obter mais informações sobre como adicionar um controlador de domínio a um domínio existente, consulte [instalar um controlador de domínio de réplica do Windows Server 2012 &#40;em um&#41;nível de domínio existente 200](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md).  
   
-## <a name="BKMK_Paths"></a>Estruturas  
+## <a name="paths"></a><a name="BKMK_Paths"></a>Estruturas  
 As opções a seguir aparecem na página **Rotas**.  
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_Paths.gif)  
@@ -207,7 +206,7 @@ As opções a seguir aparecem na página **Rotas**.
   
 Especifique o local do banco de dados AD DS (NTDS.DIT), dos arquivos de log e do SYSVOL. Para uma instalação local, é possível procurar o local onde você quer armazenar os arquivos.  
   
-## <a name="BKMK_AdprepCreds"></a>Opções de preparação  
+## <a name="preparation-options"></a><a name="BKMK_AdprepCreds"></a>Opções de preparação  
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PreparationOptions.gif)  
   
 Se, no momento, você não estiver conectado com credenciais suficientes para executar os comandos adprep.exe. e for necessário executar o adprep para concluir a instalação do AD DS, você será solicitado a fornecer as credenciais para executar adprep.exe. A Adprep deve ser executada para adicionar o primeiro controlador de domínio que executa o Windows Server 2012 a um domínio ou floresta existente. Mais especificamente:  
@@ -220,14 +219,14 @@ Se, no momento, você não estiver conectado com credenciais suficientes para ex
   
 Para obter mais informações sobre adprep. exe, consulte [integração adprep. exe](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_NewAdprep) e veja [executando adprep. exe](https://technet.microsoft.com/library/dd464018(WS.10).aspx).  
   
-## <a name="BKMK_ViewInstallOptionsPage"></a>Opções de revisão  
+## <a name="review-options"></a><a name="BKMK_ViewInstallOptionsPage"></a>Opções de revisão  
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_ReviewOptions.gif)  
   
 -   A página **Opções de revisão** permite que você valide suas configurações e se assegure de que elas cumprem os requisitos, antes de iniciar a instalação. Esta não é a última oportunidade de interromper a instalação usando o Gerenciador do Servidor. Essa página simplesmente permite que você examine e confirme suas configurações antes de continuar.  
   
 -   A página **Opções de revisão** do Gerenciador do Servidor também oferece um botão **Exibir Script** para criar um arquivo de texto Unicode contendo a configuração atual de ADDSDeployment como um script simples do Windows PowerShell. Isso permite que você use a interface gráfica do Gerenciador do Servidor como um estúdio de implantação do Windows PowerShell. Use o Assistente de Configuração dos Serviços de Domínio do Active Directory para configurar opções, exportar a configuração e então cancelar o assistente. Esse processo cria um exemplo válido e sintaticamente correto para modificações adicionais ou uso direto.  
   
-## <a name="BKMK_PrerqCheckPage"></a>Verificação de pré-requisitos  
+## <a name="prerequisites-check"></a><a name="BKMK_PrerqCheckPage"></a>Verificação de pré-requisitos  
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PrerequisitesCheck.gif)  
   
 Alguns dos avisos apresentados nessa página incluem:  
@@ -240,7 +239,7 @@ Alguns dos avisos apresentados nessa página incluem:
   
 Para obter mais informações sobre verificações de pré-requisito específicas que são executadas para a instalação do AD DS, consulte [Testes de pré-requisito](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_ADDSInstallPrerequisiteTests).  
   
-## <a name="BKMK_Results"></a>Da  
+## <a name="results"></a><a name="BKMK_Results"></a>Da  
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_SMResultsBeta.gif)  
   
 Nessa página, é possível revisar os resultados da instalação.  
@@ -249,7 +248,7 @@ Você também pode optar por reiniciar o servidor de destino após a conclusão 
   
 Se não for possível reiniciar o servidor de destino, reinicie-o manualmente. Ferramentas como shutdown.exe ou Windows PowerShell não podem reiniciá-lo. Os Serviços de Área de Trabalho Remota podem ser usados para fazer logon e desligar remotamente o servidor de destino.  
   
-## <a name="BKMK_RemovalCredsPage"></a>Credenciais de remoção de função  
+## <a name="role-removal-credentials"></a><a name="BKMK_RemovalCredsPage"></a>Credenciais de remoção de função  
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_Credentials.gif)  
   
 Você pode configurar opções de rebaixamento na página **Credenciais** . Forneça as credenciais necessárias à execução do rebaixamento na lista a seguir:  
@@ -263,7 +262,7 @@ Você pode configurar opções de rebaixamento na página **Credenciais** . Forn
   
 Para obter mais informações sobre como remover AD DS, consulte [remover Active Directory Domain Services (nível 100)](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) e [rebaixar controladores de &#40;domínio e&#41;domínios nível 200](Demoting-Domain-Controllers-and-Domains--Level-200-.md).  
   
-## <a name="BKMK_RemovalOptionsPage"></a>AD DS opções e avisos de remoção  
+## <a name="ad-ds-removal-options-and-warnings"></a><a name="BKMK_RemovalOptionsPage"></a>AD DS opções e avisos de remoção  
 Se precisar de ajuda na página Opções de revisão, consulte Opções de revisão  
   
 Se o controlador de domínio hospeda funções adicionais, como uma função de servidor DNS ou um servidor de catálogo global, a seguinte página de aviso será exibida:  
@@ -298,14 +297,14 @@ Se o controlador de domínio for um servidor DNS delegado para hospedar a zona D
   
 Para obter mais informações sobre como remover AD DS, consulte [remover Active Directory Domain Services (nível 100)](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) e [rebaixar controladores de &#40;domínio e&#41;domínios nível 200](Demoting-Domain-Controllers-and-Domains--Level-200-.md).  
   
-## <a name="BKMK_NewAdminPwdPage"></a>Nova senha de administrador  
+## <a name="new-administrator-password"></a><a name="BKMK_NewAdminPwdPage"></a>Nova senha de administrador  
 A página **nova senha do administrador** exige que você forneça uma senha para a conta de administrador do computador local, depois que o rebaixamento for concluído e o computador se tornar um servidor membro do domínio ou um computador do grupo de trabalho.  
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_NewAdminPwd.gif)  
   
 Para obter mais informações sobre como remover AD DS, consulte [remover Active Directory Domain Services (nível 100)](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) e [rebaixar controladores de &#40;domínio e&#41;domínios nível 200](Demoting-Domain-Controllers-and-Domains--Level-200-.md).  
   
-## <a name="BKMK_ConfirmRoleRemovalPage"></a>Opções de revisão  
+## <a name="review-options"></a><a name="BKMK_ConfirmRoleRemovalPage"></a>Opções de revisão  
 A página **Opções de revisão** fornece a possibilidade de exportar as definições de configuração para rebaixamento em um script do Windows PowerShell, assim você pode automatizar outros rebaixamentos. Clique em **Rebaixar** para remover AD DS.  
   
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_ReviewOptions.gif)  

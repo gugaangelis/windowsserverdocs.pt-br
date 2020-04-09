@@ -1,7 +1,6 @@
 ---
 ms.assetid: bbb84ea6-7e31-4442-85ab-a9447e7c19e8
 title: Adicionar um certificado de autenticação de tokens
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c8b2246842dd70c06442faed995f6b883dbaf70a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9b737cf8c9efb89ef9b3befaa1875b273bfcadf9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360092"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814929"
 ---
 # <a name="add-a-token-signing-certificate"></a>Adicionar um certificado de autenticação de tokens
 
@@ -26,7 +25,7 @@ Os servidores de Federação no Serviços de Federação do Active Directory (AD
   
 O token\-certificado de autenticação deve encadear uma raiz confiável no Serviço de Federação. Você pode usar o procedimento a seguir para adicionar o token\-certificado de assinatura ao\-snap de gerenciamento de AD FS no de um arquivo que você exportou.  
   
-A associação a **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir esse procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=\)83477.   
+A associação em **Administradores**, ou equivalente, no computador local é o mínimo necessário para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=\)83477.   
   
 ### <a name="to-add-a-token-signing-certificate"></a>Para adicionar um token\-certificado de assinatura  
   

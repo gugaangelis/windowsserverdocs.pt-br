@@ -1,7 +1,6 @@
 ---
 ms.assetid: 50bd2566-e03c-4884-b5c4-895c8aab80aa
 title: Identificar os participantes do projeto de implantação
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bb5ded466a45061649585a747be74adcdc1148cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 516c37165952e46c8e6e76499909e90851e305ce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408775"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822309"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>Identificar os participantes do projeto de implantação
 
@@ -28,10 +27,10 @@ A primeira etapa ao estabelecer um projeto de implantação para o Domínio do A
   
 -   [Criando equipes de projeto](#BKMK_3)  
   
-## <a name="BKMK_1"></a>Definindo funções específicas do projeto  
+## <a name="defining-project-specific-roles"></a><a name="BKMK_1"></a>Definindo funções específicas do projeto  
 Uma etapa importante no estabelecimento das equipes de projeto é identificar os indivíduos que devem manter funções específicas do projeto. Isso inclui o patrocinador executivo, o arquiteto do projeto e o gerente de projeto. Esses indivíduos são responsáveis por executar o projeto de implantação Active Directory.  
   
-Depois que você se deparar com o arquiteto de projeto e o gerente de projeto, essas pessoas estabelecerão canais de comunicação em toda a organização, criarão agendamentos de projeto e identificarão os indivíduos que serão membros das equipes do projeto, começando pelo vários proprietários.  
+Depois que você se deparar com o arquiteto de projeto e o gerente de projeto, essas pessoas estabelecerão canais de comunicação em toda a organização, criarão agendamentos de projeto e identificarão os indivíduos que serão membros das equipes do projeto, começando com os vários proprietários.  
   
 ### <a name="executive-sponsor"></a>Patrocinador executivo  
 Implantar uma infraestrutura como o AD DS pode ter um impacto amplo em uma organização. Por esse motivo, é importante ter um patrocinador executivo que entenda o valor comercial da implantação, dê suporte ao projeto no nível executivo e possa ajudar a resolver conflitos em toda a organização.  
@@ -71,7 +70,7 @@ O gerente de projeto facilita a cooperação entre as unidades de negócios e os
   
 -   Estabelecendo e mantendo a comunicação com o patrocinador executivo em todo o projeto de implantação  
   
-## <a name="BKMK_2"></a>Estabelecendo proprietários e administradores  
+## <a name="establishing-owners-and-administrators"></a><a name="BKMK_2"></a>Estabelecendo proprietários e administradores  
 Em um projeto de implantação Active Directory, as pessoas que são proprietários são responsáveis pelo gerenciamento para garantir que as tarefas de implantação sejam concluídas e que Active Directory especificações de design atendam às necessidades da organização. Os proprietários não têm necessariamente acesso ou manipulam a infraestrutura de diretório diretamente. Os administradores são os indivíduos responsáveis por concluir as tarefas de implantação necessárias. Os administradores têm o acesso à rede e as permissões necessárias para manipular o diretório e sua infraestrutura.  
   
 A função do proprietário é estratégica e gerencial. Os proprietários são responsáveis por se comunicar com os administradores as tarefas necessárias para a implementação do design de Active Directory, como a criação de novos controladores de domínio dentro da floresta. Os administradores são responsáveis por implementar o design na rede de acordo com as especificações de design.  
@@ -85,10 +84,10 @@ O gerenciamento de AD DS diariamente envolve dois tipos de proprietários:
   
 -   Proprietários de dados que são responsáveis pela manutenção das informações armazenadas no diretório. Isso inclui gerenciamento de conta de usuário e computador e gerenciamento de recursos locais, como servidores membro e estações de trabalho.  
   
-É importante identificar o serviço de Active Directory e os proprietários de dados antecipadamente para que eles possam participar tanto do processo de design quanto possível. Como os proprietários de serviço e de dados são responsáveis pela manutenção de longo prazo do diretório após a conclusão do projeto de implantação, é importante que esses indivíduos forneçam informações sobre as necessidades organizacionais e estejam familiarizados com como e por que certas decisões de design são feitas. Os proprietários de serviço incluem o proprietário da floresta, o proprietário do sistema de nomenclatura de Domínio do Active Directory (DNS) e o proprietário da topologia do site. Os proprietários de dados incluem proprietários da UO (unidade organizacional).  
+É importante identificar o serviço de Active Directory e os proprietários de dados antecipadamente para que eles possam participar tanto do processo de design quanto possível. Como os proprietários de serviço e de dados são responsáveis pela manutenção de longo prazo do diretório após a conclusão do projeto de implantação, é importante que esses indivíduos forneçam informações sobre as necessidades organizacionais e estejam familiarizados com como e por que determinadas decisões de design são feitas. Os proprietários de serviço incluem o proprietário da floresta, o proprietário do sistema de nomenclatura de Domínio do Active Directory (DNS) e o proprietário da topologia do site. Os proprietários de dados incluem proprietários da UO (unidade organizacional).  
   
 ### <a name="service-and-data-administrators"></a>Administradores de serviços e dados  
-A operação do AD DS envolve dois tipos de administradores: administradores de serviço e administradores de dados. Os administradores de serviço implementam decisões de política feitas por proprietários de serviço e lidam com as tarefas cotidianas associadas à manutenção do serviço de diretório e da infraestrutura. Isso inclui o gerenciamento de controladores de domínio que hospedam o serviço de diretório, o gerenciamento de outros serviços de rede, como o DNS, necessário para AD DS, o controle da configuração de configurações de toda a floresta e a garantia de que o diretório seja sempre Há.  
+A operação do AD DS envolve dois tipos de administradores: administradores de serviço e administradores de dados. Os administradores de serviço implementam decisões de política feitas por proprietários de serviço e lidam com as tarefas cotidianas associadas à manutenção do serviço de diretório e da infraestrutura. Isso inclui o gerenciamento de controladores de domínio que hospedam o serviço de diretório, o gerenciamento de outros serviços de rede, como o DNS, necessário para AD DS, o controle da configuração de configurações de toda a floresta e a garantia de que o diretório esteja sempre disponível.  
   
 Os administradores de serviço também são responsáveis por concluir tarefas de implantação de Active Directory em andamento que são necessárias após a conclusão do processo inicial de implantação do Windows Server 2008 Active Directory. Por exemplo, conforme as demandas no diretório aumentam, os administradores de serviço criam controladores de domínio adicionais e estabelecem ou removem relações de confiança entre domínios, conforme necessário. Por esse motivo, a equipe de implantação Active Directory precisa incluir administradores de serviço.  
   
@@ -96,7 +95,7 @@ Você deve ter cuidado para atribuir funções de administrador de serviço some
   
 Os administradores de dados são usuários em um domínio que são responsáveis por manter os dados armazenados em AD DS, como contas de usuário e de grupo, e para manter os computadores que são membros de seu domínio. Os administradores de dados controlam subconjuntos de objetos no diretório e não têm controle sobre a instalação ou a configuração do serviço de diretório.  
   
-As contas de administrador de dados não são fornecidas por padrão. Depois que a equipe de design determina como os recursos devem ser gerenciados para a organização, os proprietários de domínio devem criar contas de administrador de dados e delegar a elas as permissões apropriadas com base no conjunto de objetos para os quais os administradores serão responsáveis .  
+As contas de administrador de dados não são fornecidas por padrão. Depois que a equipe de design determina como os recursos devem ser gerenciados para a organização, os proprietários de domínio devem criar contas de administrador de dados e delegar a elas as permissões apropriadas com base no conjunto de objetos para os quais os administradores devem ser responsáveis.  
   
 É melhor limitar o número de administradores de serviço em sua organização ao número mínimo necessário para garantir que a infraestrutura continue a funcionar. A maior parte do trabalho administrativo pode ser concluída pelos administradores de dados. Os administradores de serviço exigem um conjunto de habilidades muito mais amplo porque são responsáveis por manter o diretório e a infraestrutura que oferece suporte a ele. Os administradores de dados exigem apenas as habilidades necessárias para gerenciar sua parte do diretório. Dividir as atribuições de trabalho dessa forma resulta em economia de custos para a organização porque apenas um pequeno número de administradores precisa ser treinado para operar e manter o diretório inteiro e sua infraestrutura.  
   
@@ -107,7 +106,7 @@ A implantação de AD DS requer coordenação e comunicação entre vários grup
 Depois que o projeto de implantação for concluído, esses proprietários de serviço e de dados continuarão sendo responsáveis pela parte da infraestrutura gerenciada por seu grupo. Em um ambiente Active Directory, esses proprietários são o proprietário da floresta, o DNS para AD DS proprietário, o proprietário da topologia do site e o proprietário da UO. As funções desses serviços e proprietários de dados são explicadas nas seções a seguir.  
   
 #### <a name="forest-owner"></a>Proprietário da floresta  
-O proprietário da floresta é normalmente um gerente de ti (tecnologia da informação) sênior na organização responsável pelo processo de implantação de Active Directory e que, por fim, se responsabiliza por manter a entrega de serviço dentro da floresta após a a implantação foi concluída. O proprietário da floresta atribui indivíduos para preencher as outras funções de propriedade identificando a equipe-chave na organização que é capaz de contribuir com as informações necessárias sobre a infraestrutura de rede e as necessidades administrativas. O proprietário da floresta é responsável pelo seguinte:  
+O proprietário da floresta é normalmente um gerente de ti (tecnologia da informação) sênior na organização responsável pelo processo de implantação de Active Directory e que, por fim, se responsabiliza por manter a entrega de serviço dentro da floresta após a conclusão da implantação. O proprietário da floresta atribui indivíduos para preencher as outras funções de propriedade identificando a equipe-chave na organização que é capaz de contribuir com as informações necessárias sobre a infraestrutura de rede e as necessidades administrativas. O proprietário da floresta é responsável pelo seguinte:  
   
 -   Implantação do domínio raiz da floresta para criar a floresta  
   
@@ -172,7 +171,7 @@ O proprietário da UO é responsável por gerenciar os dados armazenados no dire
   
 O proprietário da UO é um proprietário de dados.  
   
-## <a name="BKMK_3"></a>Criando equipes de projeto  
+## <a name="building-project-teams"></a><a name="BKMK_3"></a>Criando equipes de projeto  
 Active Directory equipes de projeto são grupos temporários que são responsáveis por concluir Active Directory tarefas de design e implantação. Quando o projeto de implantação de Active Directory é concluído, os proprietários assumem a responsabilidade pelo diretório e as equipes de projeto podem disbandr.  
   
 O tamanho das equipes do projeto varia de acordo com o tamanho da organização. Em pequenas organizações, uma única pessoa pode cobrir várias áreas de responsabilidade em uma equipe de projeto e estar envolvida em mais de uma fase da implantação. Organizações de grande porte podem exigir equipes maiores com indivíduos diferentes ou até mesmo equipes diferentes que abrangem diferentes áreas de responsabilidade. O tamanho das equipes não é importante, desde que todas as áreas de responsabilidade sejam atribuídas e que as metas de design da organização sejam atendidas.  
@@ -184,7 +183,7 @@ A separação do serviço e da administração de dados no AD DS possibilita que
   
 Para organizações que têm um grupo de infraestrutura de ti centralizado, o grupo de ti é geralmente o proprietário da floresta e, portanto, o proprietário potencial da floresta para qualquer implantação futura. As organizações que incluem vários grupos de ti de infraestrutura independentes têm vários proprietários de floresta em potencial. Se sua organização já tiver uma infraestrutura de Active Directory em vigor, todos os proprietários de floresta atuais também serão proprietários potenciais de floresta para novas implantações.  
   
-Selecione um dos possíveis proprietários da floresta para atuar como o proprietário da floresta para cada floresta que você está considerando para a implantação. Esses proprietários potenciais da floresta são responsáveis por trabalhar com a equipe de design para determinar se sua floresta será ou não implantada na verdade ou se um curso alternativo de ação (como ingressar em outra floresta existente) é um melhor uso dos recursos disponíveis e ainda atende às suas necessidades. O proprietário da floresta (ou proprietários) em sua organização são membros da equipe de design de Active Directory.  
+Selecione um dos possíveis proprietários da floresta para atuar como o proprietário da floresta para cada floresta que você está considerando para a implantação. Esses possíveis proprietários de floresta são responsáveis por trabalhar com a equipe de design para determinar se sua floresta será ou não implantada na verdade ou se um curso alternativo de ação (como ingressar em outra floresta existente) é um melhor uso dos recursos disponíveis e ainda atende às suas necessidades. O proprietário da floresta (ou proprietários) em sua organização são membros da equipe de design de Active Directory.  
   
 ### <a name="establishing-a-design-team"></a>Estabelecendo uma equipe de design  
 A equipe de design de Active Directory é responsável por reunir todas as informações necessárias para tomar decisões sobre o design de estrutura lógica Active Directory.  
@@ -253,7 +252,7 @@ A equipe de implantação do Active Directory inclui os seguintes membros:
 A equipe de implantação trabalha com os administradores de serviço e de dados durante a fase de implantação para garantir que os membros da equipe de operações estejam familiarizados com o novo design. Isso ajuda a garantir uma transição tranqüila de propriedade quando a operação de implantação é concluída. Na conclusão do processo de implantação, a responsabilidade de manter o novo ambiente de Active Directory passa para a equipe de operações.  
   
 ### <a name="documenting-the-design-and-deployment-teams"></a>Documentando as equipes de design e implantação  
-Documente os nomes e as informações de contato das pessoas que farão parte do design e da implantação de AD DS. Identifique quem será responsável por cada função nas equipes de design e implantação. Inicialmente, essa lista inclui os possíveis proprietários da floresta, o gerente de projeto e o arquiteto do projeto. Ao determinar o número de florestas que serão implantadas, talvez seja necessário criar novas equipes de design para florestas adicionais. Observe que você precisará atualizar sua documentação à medida que as associações da equipe forem alteradas e ao identificar os vários proprietários do Active Directory durante o processo de design. Para uma planilha para ajudá-lo a documentar as equipes de design e implantação para cada floresta, baixe o Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de ajudas de trabalho para o Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) e abra " Informações da equipe de design e implantação "(DSSLOGI_1. doc).  
+Documente os nomes e as informações de contato das pessoas que farão parte do design e da implantação de AD DS. Identifique quem será responsável por cada função nas equipes de design e implantação. Inicialmente, essa lista inclui os possíveis proprietários da floresta, o gerente de projeto e o arquiteto do projeto. Ao determinar o número de florestas que serão implantadas, talvez seja necessário criar novas equipes de design para florestas adicionais. Observe que você precisará atualizar sua documentação à medida que as associações da equipe forem alteradas e ao identificar os vários proprietários do Active Directory durante o processo de design. Para uma planilha para ajudá-lo a documentar as equipes de design e implantação para cada floresta, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de ajudas de trabalho para o Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) e abra "informações da equipe de design e implantação" (DSSLOGI_1. doc).  
   
 
 

@@ -1,40 +1,34 @@
 ---
 title: criar partição lógica
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para criar partição lógica, que cria uma partição lógica em uma partição estendida existente.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1f59b79a-d690-4d0e-ad38-40df5a0ce38e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f18048272eda710f7cb53a631ddeda81784a56b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b16c161bf12476eee9d3959e5f313fd844ff3519
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378895"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847059"
 ---
 # <a name="create-partition-logical"></a>criar partição lógica
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Cria uma partição lógica em uma partição estendida existente. Você só pode usar esse comando no registro mestre de inicialização \(discos\) MBR.  
-  
-  
-  
+Cria uma partição lógica em uma partição estendida existente. Você só pode usar esse comando em discos MBR (registro mestre de inicialização).
+
 ## <a name="syntax"></a>Sintaxe  
   
 ```  
 create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>Parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
 |  Parâmetro  |                                                                                                                                                                                                                       Descrição                                                                                                                                                                                                                        |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,15 +45,15 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 -   Um disco MBR básico deve ser selecionado para que essa operação tenha sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.  
   
-## <a name="BKMK_examples"></a>Disso  
+## <a name="examples"></a><a name=BKMK_examples></a>Disso  
 Para criar uma partição lógica de 1000 megabytes de tamanho, na partição estendida do disco selecionado, digite:  
   
 ```  
 create partition logical size=1000  
 ```  
   
-#### <a name="additional-references"></a>referências adicionais  
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
 
   

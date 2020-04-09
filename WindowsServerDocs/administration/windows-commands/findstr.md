@@ -1,24 +1,20 @@
 ---
 title: findstr
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 547a0abf658ef826cca8c87d451144181f8dac7d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dbdc1b741b5934f53340bda773909fb5035e449b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377193"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844629"
 ---
 # <a name="findstr"></a>findstr
 
@@ -32,11 +28,11 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] [/c:<String>] [/g:<File>] [/d:<DirList>] [/a:<ColorAttribute>] [/off[line]] <Strings> [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/b.|Corresponde ao padrão de texto se estiver no início de uma linha.|
+|/b|Corresponde ao padrão de texto se estiver no início de uma linha.|
 |/e|Faz a correspondência do padrão de texto se ele estiver no final de uma linha.|
 |/l|Processa cadeias de caracteres de pesquisa literalmente.|
 |/r|Processa cadeias de caracteres de pesquisa como expressões regulares. Essa é a configuração padrão.|
@@ -44,7 +40,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/i|Ignora o caso dos caracteres ao pesquisar a cadeia de caracteres.|
 |/x|Imprime as linhas que correspondem exatamente.|
 |/v|Imprime apenas as linhas que não contêm uma correspondência.|
-|opção|Imprime o número de linha de cada linha correspondente.|
+|/n|Imprime o número de linha de cada linha correspondente.|
 |/m|Imprime somente o nome do arquivo se um arquivo contiver uma correspondência.|
 |/o|Imprime o deslocamento de caractere antes de cada linha correspondente.|
 |/p|Ignora arquivos com caracteres não imprimíveis.|
@@ -54,9 +50,9 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/g: arquivo de\<>|Obtém as cadeias de caracteres de pesquisa do arquivo especificado.|
 |/d:\<DirList >|Pesquisa a lista de diretórios especificada. Cada diretório deve ser separado com um ponto e vírgula (;), por exemplo `dir1;dir2;dir3`.|
 |/a:\<Colorattribute >|Especifica os atributos de cor com dois dígitos hexadecimais. Digite `color /?` para obter informações adicionais.|
-|Cadeias de caracteres \<>|Especifica o texto a ser pesquisado em *nome de arquivo*. Necessário.|
+|Cadeias de caracteres \<>|Especifica o texto a ser pesquisado em *nome de arquivo*. Obrigatório.|
 |[\<drive >:] [<Path>]<FileName>[...]|Especifica o local e arquivo ou arquivos a serem pesquisados. É necessário pelo menos um nome de arquivo.|
-|/?|Exibe a ajuda no prompt de comando.|
+|/?|Exibe a Ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -65,7 +61,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
   A tabela a seguir lista os metacaracteres que o **findstr** aceita.  
 
-  |Metacaractere|Valor|
+  |Metacaractere|{1&gt;Valor&lt;1}|
   |-------------|-----|
   |.|Curinga: qualquer caractere|
   |*|Repetir: zero ou mais ocorrências da classe ou caractere anterior|
@@ -84,7 +80,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   .*
   ``` 
 
-  Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres que comece com "b" e terminando com "ing": 
+  Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres que comece com b e terminando com ing: 
 
   ```
   b.*ing
@@ -94,19 +90,19 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 Use espaços para separar várias cadeias de caracteres de pesquisa, a menos que o argumento seja prefixado com **/c**.
 
-Para procurar "Olá" ou "lá" no arquivo x. y, digite:
+Para procurar Olá ou no arquivo x. y, digite:
 
 ```
-findstr "hello there" x.y 
+findstr hello there x.y 
 ```
 
-Para procurar "Olá," no arquivo x. y, digite:
+Para procurar Olá no arquivo x. y, digite:
 
 ```
-findstr /c:"hello there" x.y 
+findstr /c:hello there x.y 
 ```
 
-Para localizar todas as ocorrências da palavra "Windows" (com uma letra inicial maiúscula W) no arquivo proposta. txt, digite:
+Para localizar todas as ocorrências da palavra Windows (com uma letra maiúscula W) no arquivo proposta. txt, digite:
 
 ```
 findstr Windows proposal.txt 
@@ -118,10 +114,10 @@ Para pesquisar todos os arquivos no diretório atual e todos os subdiretórios q
 findstr /s /i Windows *.* 
 ```
 
-Para localizar todas as ocorrências de linhas que começam com "FOR" e são precedidas por zero ou mais espaços (como em um loop de programa de computador) e para exibir o número de linha em que cada ocorrência é encontrada, digite:
+Para localizar todas as ocorrências de linhas que começam com FOR e são precedidas por zero ou mais espaços (como em um loop de programa de computador) e para exibir o número de linha em que cada ocorrência é encontrada, digite:
 
 ```
-findstr /b /n /r /c:"^ *FOR" *.bas 
+findstr /b /n /r /c:^ *FOR *.bas 
 ```
 
 Para pesquisar várias cadeias de caracteres em um conjunto de arquivos, crie um arquivo de texto que contenha cada critério de pesquisa em uma linha separada. Você também pode listar os arquivos exatos que deseja pesquisar em um arquivo de texto. Por exemplo, para usar os critérios de pesquisa no arquivo StringList. txt, pesquise os arquivos listados em FileList. txt e, em seguida, armazene os resultados no arquivo Results. out, digite:
@@ -130,18 +126,18 @@ Para pesquisar várias cadeias de caracteres em um conjunto de arquivos, crie um
 findstr /g:stringlist.txt /f:filelist.txt > results.out 
 ```
 
-Para listar todos os arquivos que contêm a palavra "computador" no diretório atual e todos os subdiretórios, independentemente do caso, digite:
+Para listar cada arquivo que contém a palavra Computer no diretório atual e todos os subdiretórios, independentemente do caso, digite:
 
 ```
-findstr /s /i /m "\<computer\>" *.*
+findstr /s /i /m \<computer\> *.*
 ```
 
-Para listar todos os arquivos que contêm a palavra "computador" e quaisquer outras palavras que comecem com "comp", (como "elogio" e "competir"), digite:
+Para listar todos os arquivos que contêm o computador do Word e as outras palavras que começam com comp, (como elogio e competir), digite:
 
 ```
-findstr /s /i /m "\<comp.*" *.*
+findstr /s /i /m \<comp.* *.*
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

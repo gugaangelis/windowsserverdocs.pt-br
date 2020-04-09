@@ -1,24 +1,20 @@
 ---
 title: Solucionar problemas de políticas de restrição de software
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 8dff3e1542afcc3cba3645b6834981bd6ed33f58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6b3a475f21925b506d073bd3618d78e2ee0c1d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407160"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819719"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>Solucionar problemas de políticas de restrição de software
 
@@ -34,14 +30,14 @@ A partir do Windows Server 2008 R2 e do Windows 7, o Windows AppLocker pode ser 
 ### <a name="windows-cannot-open-a-program"></a>O Windows não pode abrir um programa
 Os usuários recebem uma mensagem dizendo que "o Windows não pode abrir este programa porque ele foi impedido por uma diretiva de restrição de software. Para obter mais informações, abra Visualizador de Eventos ou contate o administrador do sistema. " Ou, na linha de comando, uma mensagem diz "o sistema não pode executar o programa especificado".
 
-**Causa**: O nível de segurança padrão (ou uma regra) foi criado para que o programa de software seja definido como não **permitido**e, consequentemente, ele não será iniciado.
+**Causa:** O nível de segurança padrão (ou uma regra) foi criado para que o programa de software seja definido como não **permitido**e, consequentemente, ele não será iniciado.
 
 **Solução:** Examine o log de eventos para obter uma descrição detalhada da mensagem. A mensagem de log de eventos indica qual programa de software está definido como não **permitido** e qual regra é aplicada ao programa.
 
 ### <a name="modified-software-restriction-policies-are-not-taking-effect"></a>As políticas de restrição de software modificadas não estão tendo efeito
-**Causa**: As políticas de restrição de software especificadas em um domínio por meio de Política de Grupo substituem as configurações de diretiva que são configuradas localmente. Isso pode implicar que há uma configuração de política do domínio que está substituindo sua configuração de política.
+**Causa:** As políticas de restrição de software especificadas em um domínio por meio de Política de Grupo substituem as configurações de diretiva que são configuradas localmente. Isso pode implicar que há uma configuração de política do domínio que está substituindo sua configuração de política.
 
-**Causa**: Política de Grupo pode não ter atualizado suas configurações de política. Política de Grupo aplica alterações às configurações de política periodicamente; Portanto, é provável que as alterações de política feitas no diretório ainda não tenham sido atualizadas.
+**Causa:** Política de Grupo pode não ter atualizado suas configurações de política. Política de Grupo aplica alterações às configurações de política periodicamente; Portanto, é provável que as alterações de política feitas no diretório ainda não tenham sido atualizadas.
 
 **Soluções**
 
@@ -58,19 +54,19 @@ Os usuários recebem uma mensagem dizendo que "o Windows não pode abrir este pr
 6.  Se as configurações de política de SRP e AppLocker estiverem no mesmo GPO, as configurações do AppLocker terão precedência no Windows 7, Windows Server 2008 R2 e posterior. É recomendável colocar as configurações de política do SRP e do AppLocker em GPOs diferentes.
 
 ### <a name="after-adding-a-rule-through-srp-you-cannot-log-on-to-your-computer"></a>Depois de adicionar uma regra por meio do SRP, você não pode fazer logon no computador
-**Causa**: O computador acessa muitos programas e arquivos quando ele é iniciado. Você pode ter definido inadvertidamente um desses programas ou arquivos como não **permitido**. Como o computador não pode acessar o programa ou arquivo, ele não pode ser iniciado corretamente.
+**Causa:** O computador acessa muitos programas e arquivos quando ele é iniciado. Você pode ter definido inadvertidamente um desses programas ou arquivos como não **permitido**. Como o computador não pode acessar o programa ou arquivo, ele não pode ser iniciado corretamente.
 
 **Solução:** Inicie o computador no modo de segurança, faça logon como administrador local e, em seguida, altere as diretivas de restrição de software para permitir que o programa ou arquivo seja executado.
 
 ### <a name="a-new-policy-setting-is-not-applying-to-a-specific-file-name-extension"></a>Uma nova configuração de política não está sendo aplicada a uma extensão de nome de arquivo específica
-**Causa**: A extensão de nome de arquivo não está na lista de tipos de arquivos com suporte.
+**Causa:** A extensão de nome de arquivo não está na lista de tipos de arquivos com suporte.
 
 **Solução:** Adicione a extensão de nome de arquivo à lista de tipos de arquivos com suporte pelo SRP.
 
 As diretivas de restrição de software resolvem o problema de regulagem de código desconhecido ou não confiável. As diretivas de restrição de software são configurações de segurança para identificar o software e controlar sua capacidade de execução em um computador local, em um site, domínio ou UO e pode ser implementado por meio de um GPO.
 
 ### <a name="a-default-rule-is-not-restricting-as-expected"></a>Uma regra padrão não está restringindo conforme o esperado
-**Causa**: Regras que são aplicadas em uma ordem específica que pode fazer com que as regras padrão sejam substituídas por regras específicas. O SRP aplica regras na seguinte ordem (mais específica para geral):
+**Causa:** Regras que são aplicadas em uma ordem específica que pode fazer com que as regras padrão sejam substituídas por regras específicas. O SRP aplica regras na seguinte ordem (mais específica para geral):
 
 1.  Regras de hash
 
@@ -85,7 +81,7 @@ As diretivas de restrição de software resolvem o problema de regulagem de cód
 **Solução:** Avalie as regras que restringem o aplicativo e, se apropriado, remova todas as regras, exceto a padrão.
 
 ### <a name="unable-to-discover-which-restrictions-are-applied"></a>Não é possível descobrir quais restrições são aplicadas
-**Causa**: Não há nenhuma causa aparente para o comportamento inesperado, e a atualização de GPO não resolveu o problema, de modo que uma investigação adicional é necessária.
+**Causa:** Não há nenhuma causa aparente para o comportamento inesperado, e a atualização de GPO não resolveu o problema, de modo que uma investigação adicional é necessária.
 
 **Soluções**
 

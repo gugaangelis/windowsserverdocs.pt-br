@@ -1,28 +1,22 @@
 ---
 title: convert
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: O tópico de comandos do Windows para converter, que converte FAT (tabela de alocação de arquivos) e volumes FAT32 no sistema de arquivos NTFS, deixando os arquivos e diretórios existentes intactos.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 96e437c0-1aa3-46ab-9078-a7b8cdaf3792
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1e22f67768bbe2f37f3627ca69b162cae96f2d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0fb2981d6cd5a54737700b64b28f7a8a52de72b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379082"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847169"
 ---
 # <a name="convert"></a>convert
-
-
 
 Converte os volumes FAT (tabela de alocação de arquivo) e FAT32 no sistema de arquivos NTFS, deixando os arquivos e diretórios existentes intactos. Os volumes convertidos no sistema de arquivos NTFS não podem ser convertidos de volta para FAT ou FAT32.
 
@@ -34,14 +28,14 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_example
 convert [<Volume>] /fs:ntfs [/v] [/cvtarea:<FileName>] [/nosecurity] [/x]
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Volume >|Especifica a letra da unidade (seguida por dois-pontos), o ponto de montagem ou o nome do volume a ser convertido em NTFS.|
+|\<volume >|Especifica a letra da unidade (seguida por dois-pontos), o ponto de montagem ou o nome do volume a ser convertido em NTFS.|
 |/FS: NTFS|Obrigatório. Converte o volume em NTFS.|
 |/v|Executa a **conversão** em modo detalhado, que exibe todas as mensagens durante o processo de conversão.|
-|/CvtArea: \<FileName >|Especifica que a tabela de arquivos mestre (MFT) e outros arquivos de metadados NTFS são gravados em um arquivo de espaço reservado contíguo existente. Esse arquivo deve estar no diretório raiz do sistema de arquivos a ser convertido. O uso do parâmetro **/Cvtarea** pode resultar em um sistema de arquivos menos fragmentado após a conversão. Para obter melhores resultados, o tamanho desse arquivo deve ser 1 KB multiplicado pelo número de arquivos e diretórios no sistema de arquivos, embora o utilitário de **conversão** aceite arquivos de qualquer tamanho.</br>Importante: Você deve criar o arquivo de espaço reservado usando o comando **fsutil file createnew** antes de executar **Convert**. **Converter** não cria esse arquivo para você. **Convert** substitui esse arquivo por metadados NTFS. Após a conversão, qualquer espaço não utilizado nesse arquivo será liberado.|
+|/CvtArea: nome de > do\<|Especifica que a tabela de arquivos mestre (MFT) e outros arquivos de metadados NTFS são gravados em um arquivo de espaço reservado contíguo existente. Esse arquivo deve estar no diretório raiz do sistema de arquivos a ser convertido. O uso do parâmetro **/Cvtarea** pode resultar em um sistema de arquivos menos fragmentado após a conversão. Para obter melhores resultados, o tamanho desse arquivo deve ser 1 KB multiplicado pelo número de arquivos e diretórios no sistema de arquivos, embora o utilitário de **conversão** aceite arquivos de qualquer tamanho.</br>Importante: você deve criar o arquivo de espaço reservado usando o comando **fsutil file createnew** antes de executar **Convert**. **Converter** não cria esse arquivo para você. **Convert** substitui esse arquivo por metadados NTFS. Após a conversão, qualquer espaço não utilizado nesse arquivo será liberado.|
 |/nosecurity|Especifica que as configurações de segurança nos arquivos e diretórios convertidos permitem o acesso por todos os usuários.|
 |/x|Desmonta o volume, se necessário, antes de ser convertido. Os identificadores abertos para o volume deixarão de ser válidos.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -55,13 +49,13 @@ convert [<Volume>] /fs:ntfs [/v] [/cvtarea:<FileName>] [/nosecurity] [/x]
 
     A conversão de volume de FAT ou FAT32 para NTFS deixa os arquivos intactos, mas o volume pode não ter alguns benefícios de desempenho em comparação com os volumes inicialmente formatados com NTFS. Por exemplo, o MFT pode ficar fragmentado em volumes convertidos. Além disso, nos volumes de inicialização convertidos, **Convert** aplica a mesma segurança padrão que é aplicada durante a instalação do Windows.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
 Para converter o volume na unidade E em NTFS e exibir todas as mensagens durante o processo de conversão, digite:
 ```
 convert e: /fs:ntfs /v
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

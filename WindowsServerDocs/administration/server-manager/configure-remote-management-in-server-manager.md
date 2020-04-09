@@ -1,24 +1,20 @@
 ---
 title: Configurar o gerenciamento remoto no Gerenciador do Servidor
 description: Gerenciador do Servidor
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e1058a5679f73fcd2ceb8586da687158762d10f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01bc2d2d262882c08d1213bae6149896a8b284ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383214"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851559"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar o gerenciamento remoto no Gerenciador do Servidor
 
@@ -30,7 +26,7 @@ Você pode usar Gerenciador do Servidor para gerenciar servidores remotos que ex
 
 Para gerenciar servidores que executam versões anteriores ao Windows Server 2016, instale o software e as atualizações a seguir para fazer com que as versões mais antigas do Windows Server sejam gerenciadas usando Gerenciador do Servidor no Windows Server 2016.
 
-|Sistema operacional|Software necessário|Capacidade de gerenciamento|
+|Sistema Operacional|Software Necessário|Capacidade de gerenciamento|
 |----------|-----------|---------|
 | Windows Server 2012 R2 ou Windows Server 2012 |-   [.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   o [Windows Management Framework 5,0](https://go.microsoft.com/fwlink/?LinkID=395058). O pacote de download do Windows Management Framework 5,0 atualiza os provedores de Instrumentação de Gerenciamento do Windows (WMI) no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2008 R2. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2012 R2, Windows Server 2012 ou Windows Server 2008 R2 têm um status de capacidade de gerenciamento **não acessível**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) não é mais necessária em servidores que executam o windows Server 2012 R2 ou o windows Server 2012.||
 | Windows Server 2008 R2 |-   [.NET Framework 4,5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   o [Windows Management Framework 4,0](https://go.microsoft.com/fwlink/?LinkId=293881). O pacote de download do Windows Management Framework 4,0 atualiza os provedores de Instrumentação de Gerenciamento do Windows (WMI) no Windows Server 2008 R2. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2008 R2 têm um status de capacidade de gerenciamento **não acessível**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite Gerenciador do servidor coletar dados de desempenho do Windows Server 2008 R2.||
@@ -64,7 +60,7 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
     -   [Para desabilitar o gerenciamento remoto usando um arquivo de resposta durante a instalação autônoma](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
 
--   Para configurar o gerenciamento remoto DCOM, consulte [Configurar o gerenciamento remoto DCOM](#to-configure-mmc-or-other-tool-remote-management-over-dcom).
+-   Para configurar o gerenciamento remoto do DCOM, consulte [Para configurar o gerenciamento remoto do DCOM](#to-configure-mmc-or-other-tool-remote-management-over-dcom).
 
 ### <a name="to-enable-server-manager-remote-management-by-using-the-windows-interface"></a>Para habilitar o gerenciamento remoto do Gerenciador do Servidor usando a interface do Windows
 
@@ -168,7 +164,7 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
     > [!NOTE]
     > Essa configuração desabilita o gerenciamento remoto como parte do processo de instalação do sistema operacional. Definir essa configuração não impede que um administrador habilite Gerenciador do Servidor gerenciamento remoto em um servidor após a conclusão da instalação do sistema operacional. Os administradores podem habilitar Gerenciador do Servidor gerenciamento remoto novamente usando as etapas em [para configurar Gerenciador do servidor gerenciamento remoto usando a interface do Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) ou [para habilitar Gerenciador do servidor gerenciamento remoto usando o Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell) neste tópico.
     > 
-    > Se você desabilitar o gerenciamento remoto por padrão como parte de uma instalação autônoma e não habilitar o gerenciamento remoto no servidor novamente após a instalação, os servidores aos quais esse arquivo de resposta é aplicado não poderão ser totalmente gerenciados com o uso de Gerenciador do Servidor. Os servidores que executam o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (e que têm o gerenciamento remoto desabilitado por padrão) geram erros de status de capacidade de gerenciamento no console do Gerenciador do Servidor depois de serem adicionados ao servidor Gerenciador do Servidor pool.
+    > Se você desabilitar o gerenciamento remoto por padrão como parte de uma instalação autônoma e não habilitar o gerenciamento remoto no servidor novamente após a instalação, os servidores aos quais esse arquivo de resposta é aplicado não poderão ser totalmente gerenciados com o uso de Gerenciador do Servidor. Os servidores que executam o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (e que têm o gerenciamento remoto desabilitado por padrão) geram erros de status de capacidade de gerenciamento no console do Gerenciador do Servidor depois de serem adicionados ao pool de servidores do Gerenciador do Servidor.
 
 ## <a name="windows-remote-management-winrm-listener-settings"></a>Configurações do ouvinte do Windows Remote Management (WinRM)
 Gerenciador do Servidor se baseia nas configurações padrão do ouvinte do WinRM nos servidores remotos que você deseja gerenciar. Se o mecanismo de autenticação padrão ou o número da porta do ouvinte do WinRM em um servidor remoto tiver sido alterado das configurações padrão, Gerenciador do Servidor não poderá se comunicar com o servidor remoto.

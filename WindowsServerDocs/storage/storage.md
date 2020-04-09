@@ -1,6 +1,5 @@
 ---
 title: Armazenamento
-description: ''
 author: JasonGerend
 manager: elizapo
 layout: LandingPage
@@ -11,19 +10,19 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5c8e6831e7e424896722c65d2ca6f34b3cc15e8d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950222"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820910"
 ---
 # <a name="storage"></a>Armazenamento
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
 >[!TIP]
-> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
+> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
 
 <hr />
 O armazenamento no Windows Server oferece recursos novos e aprimorados para clientes SDDC (datacenter definido pelo software) que privilegiam cargas de trabalho virtualizadas. O Windows Server também fornece suporte extensivo para clientes corporativos usando servidores de arquivos com cargas de trabalho existentes.
@@ -88,7 +87,7 @@ O armazenamento no Windows Server oferece recursos novos e aprimorados para clie
                     <div class="cardText">
                         <h3>Servidores de arquivos de finalidade geral</h3>
 <HR />
-                        <p><h3><a href="storage-migration-service/overview.md">Serviço de migração de armazenamento</a></h3>Migre servidores para uma versão mais recente do Windows Server usando uma ferramenta gráfica que inventaria dados em servidores, transfere os dados e a configuração para servidores mais recentes e, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que os aplicativos e usuários Não precisa alterar nada.</p>
+                        <p><h3><a href="storage-migration-service/overview.md">Serviço de migração de armazenamento</a></h3>Migre servidores para uma versão mais recente do Windows Server usando uma ferramenta gráfica que inventaria dados em servidores, transfere os dados e a configuração para servidores mais recentes e, opcionalmente, move as identidades dos servidores antigos para os novos servidores para que os aplicativos e usuários não precisem alterar nada.</p>
 <HR />
                         <p><h3><a href="work-folders/work-folders-overview.md">Pastas de trabalho</a></h3> Armazene e acesse arquivos de trabalho em computadores e dispositivos pessoais, geralmente conhecidos como BYOD (Traga seu próprio dispositivo), além dos PCs corporativos. Os usuários obtêm um local conveniente para armazenar arquivos de trabalho e acessá-los em qualquer lugar. As organizações mantêm controle sobre dados corporativos armazenando os arquivos em servidores de arquivos gerenciados centralmente e, opcionalmente, especificando políticas de dispositivo de usuário como criptografia e senhas de bloqueio de tela.</p>
 <HR />
@@ -130,7 +129,7 @@ O armazenamento no Windows Server oferece recursos novos e aprimorados para clie
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/cc766295(v=ws.10).aspx">Criptografia de Unidade de Disco BitLocker</a></h3> Armazena dados em volumes em um formato criptografado, mesmo que o computador seja adulterado ou quando o sistema operacional não estiver em execução. Ele ajuda a proteger contra ataques offline, ataques feitos para desabilitar ou descartar o sistema operacional instalado ou feitos removendo fisicamente a unidade de disco rígido para atacar os dados separadamente.<p>
 <HR />
-                        <p><h3><a href="https://technet.microsoft.com/library/dn466522(v=ws.11).aspx">NT</a></h3> O sistema de arquivos primário para versões recentes do Windows e do Windows Server — fornece um conjunto completo de recursos, incluindo descritores de segurança, criptografia, cotas de disco e metadados avançados, e pode ser usado com CSV (volumes compartilhados de cluster) para fornecer continuamente volumes disponíveis que podem ser acessados simultaneamente de vários nós de um cluster de failover.<p>
+                        <p><h3><a href="https://technet.microsoft.com/library/dn466522(v=ws.11).aspx">NT</a></h3> O sistema de arquivos primário para versões recentes do Windows e do Windows Server — fornece um conjunto completo de recursos, incluindo descritores de segurança, criptografia, cotas de disco e metadados avançados, e pode ser usado com CSV (volumes compartilhados de cluster) para fornecer volumes continuamente disponíveis que podem ser acessados simultaneamente de vários nós de um cluster de failover.<p>
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/jj592688(v=ws.11).aspx">NFS (sistema de arquivos de rede)</a></h3> O fornece uma solução de compartilhamento de arquivos para empresas que têm ambientes heterogêneos que consistem em computadores Windows e não Windows.<p>
                     </div>

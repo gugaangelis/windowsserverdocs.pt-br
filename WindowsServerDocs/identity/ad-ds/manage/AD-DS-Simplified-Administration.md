@@ -1,7 +1,6 @@
 ---
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: Administração simplificada do AD DS
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323158"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824419"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administração simplificada do AD DS
 
@@ -173,7 +172,7 @@ O código de preparação AD, antes situado no ADprep.exe, é refatorado no adpr
 > [!IMPORTANT]  
 > Não há ferramenta Adprep32.exe de 32 bits para o Windows Server 2012. Você deve ter pelo menos um computador com Windows Server 2008 x64, Windows Server 2008 R2 ou Windows Server 2012 executando como controlador de domínio, servidor membro ou em um grupo de trabalho para preparar a floresta e o domínio. O Adprep.exe não executa em Windows Server 2003 x64.  
   
-## <a name="BKMK_PrereuisiteChecking"></a>Verificação de pré-requisitos
+## <a name="prerequisite-checking"></a><a name="BKMK_PrereuisiteChecking"></a>Verificação de pré-requisitos
 
 O sistema de verificação de pré-requisitos compilado no código gerenciado do ADDSDeployment do Windows PowerShell funciona em diferentes modos, de acordo com a operação. As tabelas abaixo descrevem cada teste, quando ele é usado e contêm uma explicação de como e o que ele valida. Essas tabelas podem ser úteis se houver problemas em que a validação falha e o erro não é suficiente para a solução de problemas.  
   
@@ -191,23 +190,23 @@ Há cmdlets do ADDSDeployment do Windows PowerShell para todos os cmdlets de imp
 
 Normalmente, não há necessidade de executar esses cmdlets; eles já são executados automaticamente com os cmdlets de implantação por padrão.  
 
-#### <a name="BKMK_ADDSInstallPrerequisiteTests"></a>Testes de pré-requisito
+#### <a name="prerequisite-tests"></a><a name="BKMK_ADDSInstallPrerequisiteTests"></a>Testes de pré-requisito
 
 ||||  
 |-|-|-|  
-|Nome do teste|Protocolos<br /><br />used|Explicação e notas|  
-|VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|Valida se você tem o privilégio de "Habilitar contas de computador e usuário para serem confiáveis para delegação" (SeEnableDelegationPrivilege) no controlador de domínio parceiro existente. Isso requer acesso ao seu atributo tokenGroups construído.<br /><br />Não usado quando em contato com controladores de domínio do Windows Server 2003. Você deve confirmar manualmente esse privilégio antes da promoção|  
-|VerifyADPrep<br /><br />Pré-requisitos (floresta)|LDAP|Descobre e contata o Mestre de Esquema usando o atributo rootDSE namingContexts e o atributo fsmoRoleOwner de contexto de nomenclatura do Esquema. Determina quais operações preparatórias (forestprep, domainprep ou rodcprep) são necessárias para a instalação do AD DS. Verifica se objectVersion do esquema é esperado e se ele requer extensão adicional.|  
-|VerifyADPrep<br /><br />Pré-requisitos (domínio e RODC)|LDAP|Descobre e contata o Mestre da Infraestrutura usando o atributo rootDSE namingContexts e o atributo fsmoRoleOwner do contêiner de Infraestrutura. No caso de uma instalação RODC, esse teste descobre o mestre de nomenclatura do domínio e assegura que ele esteja online.|  
-|CheckGroup<br /><br />Associação|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Admins. do Domínio ou Admistradores de Empresa, dependendo da operação (DA para adicionar ou rebaixar um controlador de domínio, EA para adicionar ou remover um domínio)|  
-|CheckForestPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro dos grupos Administradores de Esquema e Administradores de Empresa e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
-|CheckDomainPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Admins. do Domínio e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
-|CheckRODCPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Administradores de Empresa e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
-|VerifyInitSync<br /><br />AfterReboot|LDAP|Validar se o Mestre do esquema replicou pelo menos uma vez antes de reiniciar definindo um valor fictício no atributo becomeSchemaMaster do rootDSE|  
-|VerifySFUHotFix<br /><br />Aplicado|LDAP|Validar se o esquema de floresta existente não contém problema conhecido com a extensão SFU2 para o atributo UID com OID 1.2.840.113556.1.4.7000.187.102<br /><br />([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<br /><br />SchemaFixed|LDAP, WMI, DCOM, RPC|Validar que o esquema de floresta existente ainda não contém as extensões do Exchange 2000 de problemas ms-Exch-Assistant-Name, ms-Exch-LabeledURI e ms-Exch-House-Identifier ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
-|VerifyWin2KSchema<br /><br />Consistência|LDAP|Validar se o esquema de floresta existente tem atributos núcleos e classes consistentes (não modificados incorretamente por terceiros).|  
-|DCPromo|DRSR via RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC via SMB (SAMR)|Validar a sintaxe de linha de comando passada para o código de promoção e testar a promoção. Validar se a floresta ou o domínio já existe ou não para criar um novo.|  
-|VerifyOutbound<br /><br />ReplicationEnabled|LDAP, DRSR via SMB, RPC via SMB (LSARPC)|Validar que o controlador de domínio existente especificado como o parceiro de replicação tem a replicação de saída habilitada, verificando o atributo das opções do objeto de Configurações do NTDS para NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)|  
-|VerifyMachineAdmin<br /><br />Senha|DRSR via RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC via SMB (SAMR)|Validar se a senha de modo seguro definida para DSRM atende aos requisitos de complexidade do domínio.|  
+|Nome do teste|Protocolos<p>used|Explicação e notas|  
+|VerifyAdminTrusted<p>ForDelegationProvider|LDAP|Valida se você tem o privilégio de "Habilitar contas de computador e usuário para serem confiáveis para delegação" (SeEnableDelegationPrivilege) no controlador de domínio parceiro existente. Isso requer acesso ao seu atributo tokenGroups construído.<p>Não usado quando em contato com controladores de domínio do Windows Server 2003. Você deve confirmar manualmente esse privilégio antes da promoção|  
+|VerifyADPrep<p>Pré-requisitos (floresta)|LDAP|Descobre e contata o Mestre de Esquema usando o atributo rootDSE namingContexts e o atributo fsmoRoleOwner de contexto de nomenclatura do Esquema. Determina quais operações preparatórias (forestprep, domainprep ou rodcprep) são necessárias para a instalação do AD DS. Verifica se objectVersion do esquema é esperado e se ele requer extensão adicional.|  
+|VerifyADPrep<p>Pré-requisitos (domínio e RODC)|LDAP|Descobre e contata o Mestre da Infraestrutura usando o atributo rootDSE namingContexts e o atributo fsmoRoleOwner do contêiner de Infraestrutura. No caso de uma instalação RODC, esse teste descobre o mestre de nomenclatura do domínio e assegura que ele esteja online.|  
+|CheckGroup<p>Associação|LDAP,<p>RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Admins. do Domínio ou Admistradores de Empresa, dependendo da operação (DA para adicionar ou rebaixar um controlador de domínio, EA para adicionar ou remover um domínio)|  
+|CheckForestPrep<p>GroupMembership|LDAP,<p>RPC via SMB (LSARPC)|Validar se o usuário é um membro dos grupos Administradores de Esquema e Administradores de Empresa e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
+|CheckDomainPrep<p>GroupMembership|LDAP,<p>RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Admins. do Domínio e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
+|CheckRODCPrep<p>GroupMembership|LDAP,<p>RPC via SMB (LSARPC)|Validar se o usuário é um membro do grupo Administradores de Empresa e se possui privilégio para Gerenciar auditoria e Logs de eventos de segurança (SesScurityPrivilege) nos controladores de domínio existentes|  
+|VerifyInitSync<p>AfterReboot|LDAP|Validar se o Mestre do esquema replicou pelo menos uma vez antes de reiniciar definindo um valor fictício no atributo becomeSchemaMaster do rootDSE|  
+|VerifySFUHotFix<p>Aplicado|LDAP|Validar se o esquema de floresta existente não contém problema conhecido com a extensão SFU2 para o atributo UID com OID 1.2.840.113556.1.4.7000.187.102<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
+|VerifyExchange<p>SchemaFixed|LDAP, WMI, DCOM, RPC|Validar que o esquema de floresta existente ainda não contém as extensões do Exchange 2000 de problemas ms-Exch-Assistant-Name, ms-Exch-LabeledURI e ms-Exch-House-Identifier ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
+|VerifyWin2KSchema<p>Consistência|LDAP|Validar se o esquema de floresta existente tem atributos núcleos e classes consistentes (não modificados incorretamente por terceiros).|  
+|DCPromo|DRSR via RPC,<p>LDAP,<p>DNS<p>RPC via SMB (SAMR)|Validar a sintaxe de linha de comando passada para o código de promoção e testar a promoção. Validar se a floresta ou o domínio já existe ou não para criar um novo.|  
+|VerifyOutbound<p>ReplicationEnabled|LDAP, DRSR via SMB, RPC via SMB (LSARPC)|Validar que o controlador de domínio existente especificado como o parceiro de replicação tem a replicação de saída habilitada, verificando o atributo das opções do objeto de Configurações do NTDS para NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)|  
+|VerifyMachineAdmin<p>Senha|DRSR via RPC,<p>LDAP,<p>DNS<p>RPC via SMB (SAMR)|Validar se a senha de modo seguro definida para DSRM atende aos requisitos de complexidade do domínio.|  
 |VerifySafeModePassword|*N/D*|Validar se a senha do Administrador local definida atende aos requisitos de complexidade da política de segurança do computador.|  

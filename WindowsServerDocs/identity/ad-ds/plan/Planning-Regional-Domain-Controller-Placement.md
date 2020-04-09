@@ -1,7 +1,6 @@
 ---
 ms.assetid: eb600904-24b8-4488-a278-c1c971dc2f2d
 title: Planejando o posicionamento do controlador de domínio regional
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2508476f35462516f32877365cb15be919b5b6df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb1d83d5afca92de85c4de8b3e9125e119250f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408734"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822109"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>Planejando o posicionamento do controlador de domínio regional
 
@@ -80,6 +79,6 @@ Por exemplo, considere uma rede que tem filiais conectadas por meio de links len
   
 Se a redução do custo de manutenção de controladores de domínio for mais importante do que o tráfego de rede, centralize os controladores de domínio para esse domínio e não coloque nenhum controlador de domínio regional no local ou considere colocar os RODCs no local.  
   
-Para uma planilha para ajudá-lo a documentar o posicionamento de controladores de domínio regionais e o número de usuários para cada domínio representado em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_ Deploying_Directory_and_Security_Services. zip e abra "posicionamento do controlador de domínio" (DSSTOPO_4. doc).  
+Para uma planilha para ajudá-lo a documentar o posicionamento de controladores de domínio regionais e o número de usuários para cada domínio representado em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir "posicionamento do controlador de domínio" (DSSTOPO_4. doc).  
   
 Você precisará consultar as informações sobre os locais nos quais você precisa inserir controladores de domínio regionais ao implantar domínios regionais. Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).  

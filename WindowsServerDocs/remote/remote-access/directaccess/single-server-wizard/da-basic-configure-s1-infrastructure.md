@@ -2,22 +2,18 @@
 title: Etapa 1 configurar a infraestrutura básica do DirectAccess
 description: Este tópico faz parte do guia implantar um único servidor DirectAccess usando o assistente de Introdução para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c53adce68168ac4890f14c766e10b2b886dd598c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 622e8e0f6b4b692cc9bec5bfebeca3336e1e77a1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308952"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819519"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Etapa 1 configurar a infraestrutura básica do DirectAccess
 

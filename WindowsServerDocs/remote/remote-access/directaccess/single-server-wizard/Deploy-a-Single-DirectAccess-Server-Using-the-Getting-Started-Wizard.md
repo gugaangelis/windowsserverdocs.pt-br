@@ -2,22 +2,18 @@
 title: Implantar um único servidor de DirectAccess usando o Assistente de Introdução
 description: Este tópico faz parte do guia implantar um único servidor DirectAccess usando o assistente de Introdução para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eb0cf464-0668-40f8-8222-feb6bae6d3d5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c37ed120b811cd86dd70580d31cff18f2c330677
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 13b3fdea120a857cc0c8e890bba87c13823c3a38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309059"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819559"
 ---
 # <a name="deploy-a-single-directaccess-server-using-the-getting-started-wizard"></a>Implantar um único servidor de DirectAccess usando o Assistente de Introdução
 
@@ -98,8 +94,8 @@ A tabela a seguir lista funções e recursos necessários para o cenário:
   
 |Função/recurso|Como este cenário tem suporte|  
 |---------|-----------------|  
-|Função Acesso Remoto|A função é instalada e desinstalada usando o console de Gerenciador do Servidor ou o Windows PowerShell. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<br /><br />1. DirectAccess e roteamento e VPN RRAS (serviços de acesso remoto). O DirectAccess e a VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2. roteamento RRAS. Os recursos de roteamento do RRAS são gerenciados no console de roteamento e acesso remoto herdado.<br /><br />A Função Servidor de Acesso Remoto depende dos seguintes recursos/funções de servidor:<br /><br />-Serviços de Informações da Internet (IIS) servidor Web-esse recurso é necessário para configurar o servidor de local de rede no servidor de acesso remoto e a investigação da Web padrão.<br />-Banco de dados interno do Windows. Usado para contabilidade local no servidor de Acesso Remoto.|  
-|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<br /><br />-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto e aos cmdlets do Windows PowerShell.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<br /><br />O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<br /><br />-GUI de acesso remoto<br />-Módulo de acesso remoto para Windows PowerShell<br /><br />As dependências incluem:<br /><br />-Console de Gerenciamento de Política de Grupo<br />-Kit de administração do Gerenciador de conexões RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
+|Função Acesso Remoto|A função é instalada e desinstalada usando o console de Gerenciador do Servidor ou o Windows PowerShell. Essa função engloba o DirectAccess, que era anteriormente um recurso no Windows Server 2008 R2 e Serviços de Roteamento e Acesso Remoto que eram anteriormente um serviço de função sob a função de servidor de Serviços de Acesso e Política de Rede (NPAS). A função Acesso Remoto consiste em dois componentes:<p>1. DirectAccess e roteamento e VPN RRAS (serviços de acesso remoto). O DirectAccess e a VPN são gerenciados juntos no console de gerenciamento de acesso remoto.<br />2. roteamento RRAS. Os recursos de roteamento do RRAS são gerenciados no console de roteamento e acesso remoto herdado.<p>A Função Servidor de Acesso Remoto depende dos seguintes recursos/funções de servidor:<p>-Serviços de Informações da Internet (IIS) servidor Web-esse recurso é necessário para configurar o servidor de local de rede no servidor de acesso remoto e a investigação da Web padrão.<br />-Banco de dados interno do Windows. Usado para contabilidade local no servidor de Acesso Remoto.|  
+|Recurso Ferramentas de Gerenciamento de Acesso Remoto|Este recurso é instalado da seguinte maneira:<p>-Ele é instalado por padrão em um servidor de acesso remoto quando a função de acesso remoto é instalada e dá suporte à interface do usuário do console de gerenciamento remoto e aos cmdlets do Windows PowerShell.<br />-Ele pode ser instalado opcionalmente em um servidor que não está executando a função de servidor de acesso remoto. Neste caso, ele é usado para gerenciamento remoto de um computador de Acesso Remoto que executa o DirectAccess e VPN.<p>O recurso de Ferramentas de Gerenciamento de Acesso Remoto consiste em:<p>-GUI de acesso remoto<br />-Módulo de acesso remoto para Windows PowerShell<p>As dependências incluem:<p>-Console de Gerenciamento de Política de Grupo<br />-Kit de administração do Gerenciador de conexões RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestrutura e ferramentas de gerenciamento gráfico|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Os requisitos de hardware para este cenário incluem o seguinte:  

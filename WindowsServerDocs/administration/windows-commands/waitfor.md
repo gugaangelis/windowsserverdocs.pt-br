@@ -1,24 +1,20 @@
 ---
 title: waitfor
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para WAITFOR, que envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aecea0ad19ee42e61396eb8b8ccd579b9ce2057b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4542fc9d231b8150ab89e07e173d9671d6b7a3f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362602"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829929"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -35,7 +31,7 @@ waitfor [/s <Computer> [/u [<Domain>\]<User> [/p [<Password>]]]] /si <SignalName
 waitfor [/t <Timeout>] <SignalName>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |       Parâmetro       |                                                                                         Descrição                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,23 +53,23 @@ waitfor [/t <Timeout>] <SignalName>
 -   Os computadores só poderão receber sinais se estiverem no mesmo domínio que o computador que está enviando o sinal.
 -   Você pode usar **WAITFOR** quando testar as compilações de software. Por exemplo, o computador de compilação pode enviar um sinal para vários computadores executando **WAITFOR** após a conclusão bem-sucedida da compilação. No recebimento do sinal, o arquivo em lotes que inclui o **WAITFOR** pode instruir os computadores a iniciarem imediatamente a instalação do software ou a execução de testes na compilação compilada.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
-Para aguardar até que o sinal "espresso\build007" seja recebido, digite:
+Para aguardar até que o sinal espresso\build007 seja recebido, digite:
 ```
 waitfor espresso\build007
 ```
 Por padrão, **WAITFOR** espera indefinidamente por um sinal.
 
-Para aguardar 10 segundos para o sinal "espresso\compile007" ser recebido antes do tempo limite, digite:
+Para aguardar 10 segundos para o sinal espresso\compile007 ser recebido antes do tempo limite, digite:
 ```
 waitfor /t 10 espresso\build007
 ```
-Para ativar manualmente o sinal "espresso\build007", digite:
+Para ativar manualmente o sinal espresso\build007, digite:
 ```
 waitfor /si espresso\build007
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
+## <a name="additional-references"></a>Referências adicionais
 
-[Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

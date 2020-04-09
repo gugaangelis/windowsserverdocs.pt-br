@@ -1,24 +1,20 @@
 ---
 title: criar e gerenciar grupos de servidores
 description: Gerenciador do Servidor
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9d5b1be8-49fd-4ff7-9580-e4ff21fe4b17
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74075f091cd707f6faf73567c1dce6f22a2f6753
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f4ad512c55bcd1391ad55bdbdeb9a2ba3bfd7f0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383222"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851539"
 ---
 # <a name="create-and-manage-server-groups"></a>criar e gerenciar grupos de servidores
 
@@ -26,7 +22,7 @@ ms.locfileid: "71383222"
 
 Este tópico descreve como criar grupos de servidores personalizados e definidos pelo usuário no Gerenciador do Servidor no Windows Server.
 
-## <a name="BKMK_groups"></a>Grupos de servidores
+## <a name="server-groups"></a><a name=BKMK_groups></a>Grupos de servidores
 Os servidores que você adiciona ao pool de servidores são exibidos na página **todos os servidores** no Gerenciador do servidor. Você pode criar grupos personalizados de servidores adicionados. Os grupos de servidores permitem exibir e gerenciar um subconjunto menor de seu pool de servidores como uma unidade lógica; por exemplo, você pode criar um grupo chamado **servidores de contabilidade** para todos os servidores no departamento de contabilidade de sua organização ou um grupo chamado **Chicago** para todos os servidores que estão geograficamente localizados em Chicago. Depois de criar um grupo de servidores, o home page do grupo em Gerenciador do Servidor exibe informações sobre eventos, serviços, contadores de desempenho, resultados de Analisador de Práticas Recomendadas e funções e recursos instalados para o grupo como um todo.
 
 Os servidores podem ser membros de mais de um grupo.

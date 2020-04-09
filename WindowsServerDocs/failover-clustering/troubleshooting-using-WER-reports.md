@@ -1,26 +1,23 @@
 ---
 title: Solucionando problemas de um cluster de failover usando o Relatório de Erros do Windows
 description: Solução de problemas de um cluster de failover usando relatórios do WER, com detalhes específicos sobre como coletar relatórios e diagnosticar problemas comuns.
-keywords: Cluster de failover, relatórios do WER, diagnósticos, cluster Relatório de Erros do Windows
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.author: vpetter
-ms.topic: article
-author: vpetter
+author: dcuomo
 ms.date: 03/27/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322148"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827349"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solucionando problemas de um cluster de failover usando o Relatório de Erros do Windows 
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server
 
-O Relatório de Erros do Windows (WER) é uma infra-estrutura de comentários flexível baseada em eventos, criada para ajudar os administradores avançados ou o suporte da camada 3 a coletar informações sobre os problemas de hardware e software que o Windows pode detectar, relatar as informações à Microsoft, e forneça aos usuários qualquer solução disponível. Essa [referência](https://docs.microsoft.com/powershell/module/windowserrorreporting/) fornece descrições e sintaxe para todos os cmdlets WindowsErrorReporting.
+O Relatório de Erros do Windows (WER) é uma infra-estrutura de comentários flexível baseada em eventos, criada para ajudar os administradores avançados ou o suporte da camada 3 a coletar informações sobre os problemas de hardware e software que o Windows pode detectar, relatar as informações à Microsoft e fornecer aos usuários todas as soluções disponíveis. Essa [referência](https://docs.microsoft.com/powershell/module/windowserrorreporting/) fornece descrições e sintaxe para todos os cmdlets WindowsErrorReporting.
 
 As informações sobre solução de problemas apresentadas abaixo serão úteis para solucionar problemas avançados que foram escalonados e que podem exigir que os dados sejam enviados à Microsoft para fins de preparo.
 
@@ -39,7 +36,7 @@ Para evitar esses problemas, você pode habilitar canais de eventos na inicializ
 PS C:\Windows\system32> (get-cluster).EnabledEventLogs
 ```
 
-Eis um exemplo da saída:
+Veja um exemplo da saída:
 ```
 Microsoft-Windows-Hyper-V-VmSwitch-Diagnostic,4,0xFFFFFFFD
 Microsoft-Windows-SMBDirect/Debug,4
@@ -109,7 +106,7 @@ Dentro da pasta **WER** , a pasta **ReportsQueue** contém relatórios que estã
 PS C:\Windows\system32> dir c:\ProgramData\Microsoft\Windows\WER\ReportQueue
 ```
 
-Eis um exemplo da saída:
+Veja um exemplo da saída:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -146,7 +143,7 @@ Dentro da pasta **WER** , a pasta **ReportsArchive** contém relatórios que já
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive
 ```
 
-Eis um exemplo da saída:
+Veja um exemplo da saída:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -174,7 +171,7 @@ Para diagnosticar esse problema, navegue até a pasta de relatório do WER:
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_b46b8883d892cfa8a26263afca228b17df8133d_00000000_cab_08abc39c
 ```
 
-Eis um exemplo da saída:
+Veja um exemplo da saída:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -261,7 +258,7 @@ Como o recurso falhou em ficar online, nenhum despejo foi coletado, mas o relat�
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
 ```
 
-Eis um exemplo da saída:
+Veja um exemplo da saída:
 ```
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-Kernel-PnP/Configuration">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-ReFS/Operational">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
@@ -315,7 +312,7 @@ Para diagnosticar esse problema, navegue até a pasta de relatório do WER. A pa
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_64acaf7e4590828ae8a3ac3c8b31da9a789586d4_00000000_cab_1d94712e
 ```
 
-Eis um exemplo da saída:
+Veja um exemplo da saída:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397

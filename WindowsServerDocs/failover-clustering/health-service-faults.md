@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 11af69d1c6f32205b87ad4605edebacb59b0b710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369712"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827559"
 ---
 # <a name="health-service-faults"></a>Falhas de Serviço de Integridade
 > Aplica-se a: Windows Server 2019, Windows Server 2016
@@ -24,7 +23,7 @@ O Serviço de Integridade monitora constantemente o cluster Espaços de Armazena
 
 Cada falha contém cinco campos importantes:  
 
--   Gravidade
+-   Severity
 -   Descrição do problema
 -   Próximas etapas recomendadas para solucionar o problema
 -   Informações de identificação para a entidade com falha
@@ -291,7 +290,7 @@ Esta tabela apresenta várias propriedades-chave do objeto de falha. Para o esqu
 |---------------------------|-----------------------------------------------------------------|
 | Faultid                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. Health. FaultType. volume. Capacity                      |
-| Motivo                    | "O volume está ficando sem espaço disponível."                 |
+| Reason                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Rack A06, RU 25, slot 11                                        |
@@ -318,7 +317,7 @@ Observe o **ChangeType**, que indica se uma falha está sendo criada, removida o
 | ChangeType                | 0                                                               |
 | Faultid                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. Health. FaultType. volume. Capacity                      |
-| Motivo                    | "O volume está ficando sem espaço disponível."                 |
+| Reason                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Rack A06, RU 25, slot 11                                        |
@@ -333,42 +332,42 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 ### <a name="physicaldisk-8"></a>**PhysicalDisk (8)**
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. FailedMedia
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o disco físico falhou."*
 * Recomendado: *"substituir o disco físico".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. LostCommunication
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a conectividade foi perdida no disco físico".*
 * Recomendado: *"Verifique se o disco físico está funcionando e conectado corretamente".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. sem resposta
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o disco físico está apresentando uma falta de resposta recorrente".*
 * Recomendado: *"substituir o disco físico".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. PredictiveFailure
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"uma falha do disco físico é prevista para ocorrer em breve".*
 * Recomendado: *"substituir o disco físico".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. UnsupportedHardware
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o disco físico está em quarentena porque não há suporte para ele no fornecedor da solução".*
 * Recomendado: *"Substitua o disco físico por hardware com suporte".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. UnsupportedFirmware
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o disco físico está em quarentena porque sua versão do firmware não é suportada pelo fornecedor da solução."*
 * Recomendado: *"atualizar o firmware no disco físico para a versão de destino."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. UnrecognizedMetadata
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o disco físico tem metadados* não reconhecidos."
 * Recomendado: *"este disco pode conter dados de um pool de armazenamento desconhecido. Primeiro, verifique se não há dados úteis neste disco e, em seguida, redefina o disco. "*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultType: Microsoft. Health. FaultType. PhysicalDisk. FailedFirmwareUpdate
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"falha na tentativa de atualizar o firmware no disco físico".*
 * Recomendado: *"Tente usar um binário de firmware diferente".*
 
@@ -387,14 +386,14 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 ### <a name="pool-capacity-1"></a>**Capacidade do pool (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType: Microsoft. Health. FaultType. StoragePool. InsufficientReserveCapacityFault
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o pool de armazenamento não tem a capacidade de reserva mínima recomendada. Isso pode limitar sua capacidade de restaurar a resiliência de dados no caso de falhas de unidade. "*
 * Recomendado: *"adicionar capacidade adicional ao pool de armazenamento ou liberar capacidade. A reserva mínima recomendada varia de acordo com a implantação, mas tem aproximadamente 2 unidades de capacidade. "*
 
 ### <a name="volume-capacity-2sup1sup"></a>**Capacidade do volume (2)** <sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. Health. FaultType. volume. Capacity
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o volume está ficando sem espaço disponível".*
 * Recomendado: *"expandir o volume ou migrar cargas de trabalho para outros volumes".*
 
@@ -430,88 +429,88 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 ### <a name="network-adapterinterface-4"></a>**Adaptador/interface de rede (4)**
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType: Microsoft. Health. FaultType. adaptador. Disconnected
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a interface de rede foi desconectada".*
 * Recomendado: *"reconectar o cabo de rede".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType: Microsoft. Health. FaultType. NetworkInterface. Missing
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o servidor {Server} tem adaptador (s) de rede ausentes conectados à rede de cluster {cluster Network}."*
 * Recomendado: *"conectar o servidor à rede de cluster ausente".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType: Microsoft. Health. FaultType. adaptador. hardware
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a interface de rede teve uma falha de hardware."*
 * Recomendado: *"substituir o adaptador de interface de rede".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultType: Microsoft. Health. FaultType. adaptador. Disabled
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a interface de rede {interface de rede} não está habilitada e não está sendo usada."*
 * Recomendado: *"habilitar a interface de rede".*
 
 ### <a name="enclosure-6"></a>**Compartimento (6)**
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. LostCommunication
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a comunicação foi perdida no compartimento de armazenamento."*
 * Recomendado: *"iniciar ou substituir o compartimento de armazenamento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. FanError
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o ventilador na posição {position} do compartimento de armazenamento falhou".*
 * Recomendado: *"Substitua o ventilador no compartimento de armazenamento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. CurrentSensorError
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o sensor atual na posição {position} do compartimento de armazenamento falhou".*
 * Recomendado: *"substituir um sensor atual no compartimento de armazenamento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. VoltageSensorError
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o sensor de tensão na posição {position} do compartimento de armazenamento falhou".*
 * Recomendado: *"substituir um sensor de tensão no compartimento de armazenamento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. IoControllerError
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o controlador de e/s na posição {position} do compartimento de armazenamento falhou".*
 * Recomendado: *"substituir um controlador de e/s no compartimento de armazenamento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. TemperatureSensorError
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o sensor de temperatura na posição {position} do compartimento de armazenamento falhou".*
 * Recomendado: *"substituir um sensor de temperatura no compartimento de armazenamento."*
 
 ### <a name="firmware-rollout-3"></a>**Distribuição de firmware (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType: Microsoft. Health. FaultType. FaultDomain. FailedMaintenanceMode
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"Atualmente, não é possível fazer o andamento ao executar a distribuição de firmware".*
 * Recomendado: *"Verifique se todos os espaços de armazenamento estão íntegros e se nenhum domínio de falha está em modo de manutenção no momento."*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultType: Microsoft. Health. FaultType. FaultDomain. FirmwareVerifyVersionFaile
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a distribuição de firmware foi cancelada devido a informações de versão de firmware ilegível ou inesperadas após a aplicação de uma atualização de firmware".*
 * Recomendado: *"reinicie a distribuição do firmware depois que o problema do firmware tiver sido resolvido".*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultType: Microsoft. Health. FaultType. FaultDomain. TooManyFailedUpdates
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a distribuição do firmware foi cancelada devido a muitos discos físicos falhando em uma tentativa de atualização do firmware".*
 * Recomendado: *"reinicie a distribuição do firmware depois que o problema do firmware tiver sido resolvido".*
 
 ### <a name="storage-qos-3sup2sup"></a>**QoS de armazenamento (3)** <sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: Microsoft. Health. FaultType. StorQos. InsufficientThroughput
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"a taxa de transferência de armazenamento é insuficiente para atender às reservas".*
 * Recomendado: *"reconfigurar políticas de QoS de armazenamento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultType: Microsoft. Health. FaultType. StorQos. LostCommunication
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"o Gerenciador de políticas de QoS de armazenamento perdeu a comunicação com o volume".*
 * Recomendado: *"reinicializar nós {Nodes}"*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType: Microsoft. Health. FaultType. StorQos. MisconfiguredFlow
-* Severidade: aviso
+* Gravidade: Aviso
 * Motivo: *"um ou mais consumidores de armazenamento (geralmente máquinas virtuais) estão usando uma política inexistente com a ID {ID}."*
 * Recomendado: *"recriar quaisquer políticas de QoS de armazenamento ausentes".*
 

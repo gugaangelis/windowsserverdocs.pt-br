@@ -1,24 +1,20 @@
 ---
 title: bitsadmin
-description: O tópico de comandos do Windows para **Bitsadmin** -Bitsadmin é uma ferramenta de linha de comando que você pode usar para criar, baixar ou carregar trabalhos e monitorar seu progresso.
-ms.custom: na
+description: O tópico de comandos do Windows para Bitsadmin, que é uma ferramenta de linha de comando usada para criar, baixar ou carregar trabalhos e monitorar seu progresso.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b53293b28a83ecced34d248741996c958531d517
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ae6536b5c149f54bbfd37a5e0e814ffaa09a6bae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380100"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848739"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 

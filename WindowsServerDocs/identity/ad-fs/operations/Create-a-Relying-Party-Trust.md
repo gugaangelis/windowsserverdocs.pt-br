@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b9fc9c1-5d12-4ad4-8ddc-3b8a6d45b217
 title: Criar um objeto de confiança de terceira parte confiável
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: c9134360498184ab578b02809634279a84753e43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323048"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816839"
 ---
 # <a name="create-a-relying-party-trust"></a>Criar um objeto de confiança de terceira parte confiável
 
@@ -64,7 +63,7 @@ A associação em **Administradores**, ou equivalente, no computador local é o 
 
 ## <a name="to-create-a-claims-aware-relying-party-trust-using-federation-metadata"></a>Para criar um confiança de terceira parte confiável com reconhecimento de declarações usando metadados de Federação
 
-Para adicionar uma nova relação de confiança de terceira parte confiável, usando o snap-in de gerenciamento de AD FS, importando automaticamente os dados de configuração sobre o parceiro de metadados de Federação que o parceiro publicou em uma rede local ou com a Internet, execute o seguinte procedimento em um servidor de Federação na organização do parceiro de conta.
+Para adicionar uma nova relação de confiança de terceira parte confiável, usando o snap-in de gerenciamento de AD FS, importando automaticamente os dados de configuração sobre o parceiro de metadados de Federação que o parceiro publicou em uma rede local ou com a Internet, execute o procedimento a seguir em um servidor de Federação na organização do parceiro de conta.
 
 >[!NOTE]
 >Embora tenha sido uma prática comum usar certificados com nomes de host não qualificados, como https://myserver, esses certificados não têm nenhum valor de segurança e podem permitir que um invasor represente um Serviço de Federação que esteja publicando metadados de Federação. Portanto, ao consultar metadados de Federação, você deve usar apenas um nome de domínio totalmente qualificado, como https://myserver.contoso.com.

@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 0f338c80dca0ed88ca206aea5aeb415bc191e03a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376674"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843899"
 ---
 # <a name="fsutil"></a>Fsutil
 
@@ -32,14 +32,14 @@ Executa tarefas relacionadas à FAT (tabela de alocação de arquivos) e aos sis
 >```
 > Você será solicitado a reiniciar o computador quando ele estiver instalado. Depois que o computador for reiniciado, você poderá executar o **fsutil** como administrador.
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |Subcomando |Descrição|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | Consulta ou altera as configurações de comportamento de nome curto no sistema, por exemplo, gera 8,3 nomes de arquivo de comprimento de caractere. Remove nomes curtos de todos os arquivos em um diretório. Examina um diretório e identifica as chaves do registro que podem ser afetadas se nomes curtos forem removidos dos arquivos no diretório.|
 |[Comportamento de fsutil](fsutil-behavior.md) |Consulta ou define o comportamento do volume.|
 |[Fsutil Dirty](fsutil-dirty.md)| Consulta se o bit sujo do volume está definido ou define um bit sujo do volume. Quando o bit sujo de um volume é definido, o **autochk** verifica automaticamente o volume em busca de erros na próxima vez em que o computador for reiniciado.|
-|[Arquivo fsutil](fsutil-file.md)|Localiza um arquivo por nome de usuário (se as cotas de disco estiverem habilitadas), consulta intervalos alocados para um arquivo, define o nome curto de um arquivo, define o comprimento de dados válido de um arquivo, define zero data para um arquivo, cria um novo arquivo de um tamanho especificado, encontra uma ID de arquivo, se for fornecido o nome ou localiza um nome de link de arquivo para uma ID de arquivo especificada.|
+|[Arquivo fsutil](fsutil-file.md)|Localiza um arquivo por nome de usuário (se as cotas de disco estiverem habilitadas), consulta intervalos alocados para um arquivo, define o nome curto de um arquivo, define o comprimento de dados válido de um arquivo, define zero data para um arquivo, cria um novo arquivo de um tamanho especificado, encontra uma ID de arquivo, se o nome ou encontra um nome de link de arquivo para uma|
 |[Fsutil fsinfo](fsutil-fsinfo.md)|Lista todas as unidades e consulta o tipo de unidade, informações de volume, informações de volume específicas do NTFS ou estatísticas do sistema de arquivos.|
 |[Fsutil hardlink](fsutil-hardlink.md)|Lista links físicos de um arquivo ou cria um link físico (uma entrada de diretório para um arquivo). Cada arquivo pode ser considerado com pelo menos um link físico. Em volumes NTFS, cada arquivo pode ter vários links físicos, de modo que um único arquivo pode aparecer em muitos diretórios (ou mesmo no mesmo diretório, com nomes diferentes). Como todos os links fazem referência ao mesmo arquivo, os programas podem abrir qualquer um dos links e modificar o arquivo. Um arquivo é excluído do sistema de arquivos somente depois que todos os links para ele são excluídos. Depois de criar um link físico, os programas podem usá-lo como qualquer outro nome de arquivo.|
 |[ObjectID do fsutil](fsutil-objectid.md)|Gerencia identificadores de objeto, que são usados pelo sistema operacional Windows para controlar objetos como arquivos e diretórios.|
@@ -55,4 +55,4 @@ Executa tarefas relacionadas à FAT (tabela de alocação de arquivos) e aos sis
 |[Fsutil wim](fsutil-wim.md)|Fornece funções para descobrir e gerenciar arquivos com suporte do WIM.|
 
 ## <a name="see-also"></a>Consulte também
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

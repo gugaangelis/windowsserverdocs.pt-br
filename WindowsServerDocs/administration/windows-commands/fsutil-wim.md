@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fc79b70e8dedb9ecad5e8c6e89f51ece3279faa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4a8f2c008c1a28e498edb7726a8c209e91f41af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376662"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843919"
 ---
 # <a name="fsutil-wim"></a>Fsutil wim
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10
+>Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
 Fornece funções para descobrir e gerenciar arquivos com suporte de imagem do Windows (WIM).
 
@@ -30,16 +30,16 @@ fsutil wim [queryfile] <filename>
 fsutil wim [removewim] <drive name> <data source>
 ```
 
-### <a name="parameters"></a>Parâmetros
+#### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |-------------|---------------|
 |enumfiles|Enumera arquivos de backup do WIM.|
-|nome do \<drive >|Especifica o nome da unidade.|
-|> de origem \<data|Especifica a fonte de dados.|
+|nome da unidade de \<>|Especifica o nome da unidade.|
+|\<> da fonte de dados|Especifica a fonte de dados.|
 |enumwims|Enumera os arquivos WIM de backup.|
 |queryfile|Consulta se o arquivo tem o suporte do WIM e, em caso afirmativo, exibe detalhes sobre o arquivo WIM.|
-|\<filename >|Especifica o nome do arquivo.|
+|\<nome de arquivo >|Especifica o nome do arquivo.|
 |removewim|Remove um WIM do backup de arquivos.|
 
 
@@ -72,6 +72,6 @@ fsutil wim removewims C: 2
 ```
 
 ### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)

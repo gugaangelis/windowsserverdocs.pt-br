@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fe274ad9a6dffc72607102d3430ba7527d3cc558
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b819f15e473738996484283bceac439f482a13d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376846"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844149"
 ---
 # <a name="fsutil-reparsepoint"></a>Fsutil reparsepoint
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
@@ -30,7 +30,7 @@ fsutil reparsepoint [query] <FileName>
 fsutil reparsepoint [delete] <FileName>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 | Parâmetro  |                                                                Descrição                                                                |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,7 +46,7 @@ fsutil reparsepoint [delete] <FileName>
 
 -   Quando um programa define um ponto de nova análise, ele armazena esses dados, além de uma marca de nova análise, que identifica exclusivamente os dados que estão sendo armazenados. Quando o sistema de arquivos abre um arquivo com um ponto de nova análise, ele tenta localizar o filtro do sistema de arquivos associado. Se o filtro do sistema de arquivos for encontrado, o filtro processará o arquivo conforme direcionado pelos dados de nova análise. Se nenhum filtro do sistema de arquivos for encontrado, a operação de abertura de arquivo falhará.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para recuperar os dados do ponto de nova análise associados ao C:\Server, digite:
 
 ```
@@ -59,8 +59,8 @@ Para excluir um ponto de nova análise de um arquivo ou diretório especificado,
 fsutil reparsepoint delete c:\server
 ```
 
-#### <a name="additional-references"></a>Referências adicionais
-[Chave da sintaxe de linha de comando](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

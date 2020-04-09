@@ -1,24 +1,20 @@
 ---
 title: Trabalhar com regras de políticas de restrição de software
 description: Segurança do Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 249426f7b0ef1b427d903e8d0cac9ca2e0747b68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322948"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820979"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabalhar com regras de políticas de restrição de software
 
@@ -47,7 +43,7 @@ Com as diretivas de restrição de software, você pode proteger seu ambiente de
 
 Para obter informações sobre outras tarefas para gerenciar diretivas de restrição de software, consulte [administrar políticas de restrição de software](administer-software-restriction-policies.md).
 
-## <a name="BKMK_Cert_Rules"></a>Trabalhando com regras de certificado
+## <a name="working-with-certificate-rules"></a><a name="BKMK_Cert_Rules"></a>Trabalhando com regras de certificado
 As diretivas de restrição de software também podem identificar o software por seu certificado de autenticação. Você pode criar uma regra de certificado que identifica software e que permite ou não que ele seja executado, dependendo do nível de segurança. Por exemplo, você pode usar regras de certificado para confiar automaticamente em software de uma fonte confiável em um domínio sem solicitar informações do usuário. Também pode usar regras de certificado para executar arquivos em áreas não permitidas do sistema operacional. As regras de certificado não são habilitadas por padrão.
 
 Quando as regras são criadas para o domínio usando Política de Grupo, você deve ter permissões para criar ou modificar um objeto de Política de Grupo. Se estiver criando regras para o computador local, você deverá ter credenciais administrativas nesse computador.
@@ -82,7 +78,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
 -   [Somente para controladores de domínio, e você está em um controlador de domínio ou em uma estação de trabalho que tem o pacote de Ferramentas de Administração de Servidor Remoto instalado](#BKMK_4)
 
-#### <a name="BKMK_1"></a>Para habilitar regras de certificado para seu computador local
+#### <a name="to-enable-certificate-rules-for-your-local-computer"></a><a name="BKMK_1"></a>Para habilitar regras de certificado para seu computador local
 
 1.  Abra as Configurações de Segurança Locais.
 
@@ -96,7 +92,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
     -   Para desabilitar as regras de certificado, clique em **Desabilitado**.
 
-#### <a name="BKMK_2"></a>Para habilitar regras de certificado para um objeto Política de Grupo, e você está em um servidor que ingressou em um domínio
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-server-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>Para habilitar regras de certificado para um objeto Política de Grupo, e você está em um servidor que ingressou em um domínio
 
 1.  Abra o MMC (Console de Gerenciamento Microsoft).
 
@@ -122,7 +118,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
     -   Para desabilitar as regras de certificado, clique em **Desabilitado**.
 
-#### <a name="BKMK_3"></a>Para habilitar regras de certificado para um objeto Política de Grupo e você está em um controlador de domínio ou em uma estação de trabalho que tenha o Ferramentas de Administração de Servidor Remoto instalado
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>Para habilitar regras de certificado para um objeto Política de Grupo e você está em um controlador de domínio ou em uma estação de trabalho que tenha o Ferramentas de Administração de Servidor Remoto instalado
 
 1.  Abra Usuários e Computadores do Active Directory.
 
@@ -144,7 +140,7 @@ Há diferentes procedimentos para habilitar as regras de certificado dependendo 
 
     -   Para desabilitar as regras de certificado, clique em **Desabilitado**.
 
-#### <a name="BKMK_4"></a>Para habilitar regras de certificado somente para controladores de domínio, e você está em um controlador de domínio ou em uma estação de trabalho com o Ferramentas de Administração de Servidor Remoto instalado
+#### <a name="to-enable-certificate-rules-for-only-domain-controllers-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>Para habilitar regras de certificado somente para controladores de domínio, e você está em um controlador de domínio ou em uma estação de trabalho com o Ferramentas de Administração de Servidor Remoto instalado
 
 1.  Abra as Configurações de Segurança do Controlador de Domínio.
 
@@ -218,7 +214,7 @@ As configurações de políticas na guia **Fornecedores Confiáveis** da políti
 
 6.  Marque a caixa de seleção **Definir estas configurações de política**, implemente as alterações desejadas e clique em **OK** para aplicar as novas configurações.
 
-## <a name="BKMK_Hash_Rules"></a>Trabalhando com regras de hash
+## <a name="working-with-hash-rules"></a><a name="BKMK_Hash_Rules"></a>Trabalhando com regras de hash
 Um hash é uma série de bytes com comprimento fixo que identifica exclusivamente um programa de software ou arquivo. O hash é calculado por um algoritmo de hash. Quando uma regra de hash é criada para um programa de software, as políticas de restrição de software calculam um hash do programa. Quando um usuário tenta abrir um programa de software, um hash do programa é comparado com as regras de hash existentes para as políticas de restrição de software. O hash de um programa de software sempre é o mesmo, independentemente de onde o programa está localizado no computador. Entretanto, se um programa de software for alterado de alguma maneira, seu hash também será alterado e ele não corresponderá mais ao hash na regra de hash para políticas de restrição de software.
 
 Por exemplo, é possível criar uma regra de hash e definir o nível de segurança como **Não Permitido** para impedir que os usuários executem um determinado arquivo. Um arquivo pode ser renomeado ou movido para outra pasta e ainda resultar no mesmo hash. Entretanto, quaisquer alterações no arquivo em si também alteram seu valor hash e permitem que o arquivo ignore as restrições.
@@ -248,7 +244,7 @@ Por exemplo, é possível criar uma regra de hash e definir o nível de seguran�
 > -   Para que as diretivas de restrição de software entrem em vigor, os usuários devem atualizar as configurações de política, fazendo logoff e fazendo logon em seus computadores.
 > -   Quando mais de uma regra de diretivas de restrição de software é aplicada às configurações de política, há uma precedência de regras para lidar com conflitos.
 
-## <a name="BKMK_Internet_Zone_Rules"></a>Trabalhando com regras de zona da Internet
+## <a name="working-with-internet-zone-rules"></a><a name="BKMK_Internet_Zone_Rules"></a>Trabalhando com regras de zona da Internet
 As regras de zona da Internet se aplicam somente aos pacotes do Windows Installer. Uma zona da Internet pode identificar software de uma zona especificada pelo Internet Explorer. Essas zonas são Internet, Intranet local, Sites restritos, Sites confiáveis e Meu Computador. Uma regra de zona da Internet foi criada para impedir que os usuários baixem e instalem software.
 
 #### <a name="to-create-an-internet-zone-rule"></a>Para criar uma regra de zona da Internet
@@ -267,7 +263,7 @@ As regras de zona da Internet se aplicam somente aos pacotes do Windows Installe
 > -   Para que as diretivas de restrição de software entrem em vigor, os usuários devem atualizar as configurações de política, fazendo logoff e fazendo logon em seus computadores.
 > -   Quando mais de uma regra de diretivas de restrição de software é aplicada às configurações de política, há uma precedência de regras para lidar com conflitos.
 
-## <a name="BKMK_Path_Rules"></a>Trabalhando com regras de caminho
+## <a name="working-with-path-rules"></a><a name="BKMK_Path_Rules"></a>Trabalhando com regras de caminho
 Uma regra de caminho identifica o software pelo respectivo caminho de arquivo. Por exemplo, se você tiver um computador com nível de segurança padrão de **Não Permitido**, ainda assim poderá conceder acesso irrestrito a uma pasta específica para cada usuário. Você pode criar uma regra de caminho usando o caminho de arquivo e definindo o nível de segurança como **Irrestrito**. Alguns caminhos comuns para esse tipo de regra são %userprofile%, %windir%, %appdata%, %programfiles% e %temp%. Você também pode criar regras de caminho do Registro que usam a chave do Registro do software como caminho.
 
 Como essas regras são especificadas pelo caminho, se um programa de software for movido, a regra de caminho não será mais aplicada.

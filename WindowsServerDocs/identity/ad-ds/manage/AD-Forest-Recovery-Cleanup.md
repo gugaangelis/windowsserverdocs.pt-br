@@ -1,6 +1,5 @@
 ---
 title: Recuperação de floresta do AD – limpeza
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: c4e800f380cf75022c03e21b91f3b6f71cf79708
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 205c71930c14ef42596b0e08c27abae6646e4ddf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369244"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824149"
 ---
 # <a name="ad-forest-recovery---cleanup"></a>Recuperação de floresta do AD – limpeza
 
@@ -28,7 +27,7 @@ ms.locfileid: "71369244"
 - Como a floresta inteira é restaurada para um estado anterior, todos os objetos (como usuários e computadores) que foram adicionados e todas as atualizações (como alterações de senha) que foram feitas em objetos existentes após esse ponto são perdidos. Portanto, você deve recriar esses objetos ausentes e aplicar novamente as atualizações ausentes conforme apropriado.  
 - Talvez você também precise restaurar as relações de confiança de saída com domínios e florestas externos, pois essas relações de confiança externas não são restauradas automaticamente dos backups.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
 - [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)  

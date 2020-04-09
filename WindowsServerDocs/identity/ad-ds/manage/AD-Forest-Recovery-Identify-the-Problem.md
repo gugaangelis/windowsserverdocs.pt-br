@@ -1,6 +1,5 @@
 ---
 title: AD floresta recuperação - identificar o problema
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: dddbd187fb100b94b505a74595e040cec580a797
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 73b7ef8dc6093ae28c4b5076e7b332b704090b4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369122"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823989"
 ---
 # <a name="identify-the-problem"></a>Identificar o problema
 
@@ -37,7 +36,7 @@ Quando os sintomas de uma falha em toda a floresta aparecem, como nos logs de ev
 - Não é possível fazer alterações para AD DS em qualquer controlador de domínio.  
 - Novos DCs não podem ser instalados em nenhum domínio.  
   
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

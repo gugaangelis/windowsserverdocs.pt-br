@@ -1,19 +1,20 @@
 ---
 title: Implantar uma testemunha de compartilhamento de arquivos no Windows Server 2019
+description: O compartilhamento de arquivos testemunhas permite que você use um compartilhamento de arquivos para votar no quorum do cluster. Este tópico descreve o compartilhamento de arquivos testemunhas e a nova funcionalidade, incluindo o uso de uma unidade USB conectada a um roteador como uma testemunha de compartilhamento de arquivos.
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/24/2019
-description: O compartilhamento de arquivos testemunhas permite que você use um compartilhamento de arquivos para votar no quorum do cluster. Este tópico descreve o compartilhamento de arquivos testemunhas e a nova funcionalidade, incluindo o uso de uma unidade USB conectada a um roteador como uma testemunha de compartilhamento de arquivos.
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f0a0c5b48f7c382367e4b1100ff649fe73d3be9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827669"
 ---
 # <a name="deploy-a-file-share-witness"></a>Implantar uma testemunha de compartilhamento de arquivos
 
