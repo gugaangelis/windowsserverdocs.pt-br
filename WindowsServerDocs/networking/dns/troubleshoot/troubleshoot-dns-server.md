@@ -2,18 +2,17 @@
 title: Solucionando problemas de servidores DNS
 description: Este artigo apresenta como solucionar problemas do problema de DNS do lado do servidor.
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 23e51adafa5ab6da0a9317a1b0fad88bd3901073
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 4413c60072c43b623f386d5037e3da7ed5dc128d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265798"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861319"
 ---
 # <a name="troubleshooting-dns-servers"></a>Solucionando problemas de servidores DNS
 
@@ -56,7 +55,7 @@ Verifique os seguintes logs para ver se há erros gravados:
 
 - Aplicativo
 
-- Sistema
+- {1&gt;Sistema&lt;1}
 
 - Servidor DNS
 
@@ -129,7 +128,7 @@ Se esse servidor encaminhar consultas para outro servidor, verifique se há prob
 
 Se o servidor estiver íntegro e puder encaminhar consultas, repita essa etapa e examine o servidor ao qual esse servidor encaminha as consultas.
 
-Se este servidor não encaminhar consultas para outro servidor, teste se este servidor pode consultar um servidor raiz. Para fazer isso, execute o comando a seguir:
+Se este servidor não encaminhar consultas para outro servidor, teste se este servidor pode consultar um servidor raiz. Para fazer isso, execute o comando:
 
 ```cmd
 nslookup

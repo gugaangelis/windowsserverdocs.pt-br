@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f4973da0d9e0c347cff8fc910f96277055b66dec
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: f7e68558945fcd26d5e8ab405f39e86266beeea8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465540"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853859"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Crie um aplicativo Web de página única usando OAuth e ADAL. JS com AD FS 2016 ou posterior
 
@@ -43,9 +43,9 @@ O passo a passo usa o Visual Studio 2015. O projeto usa a biblioteca do ADAL JS.
 ## <a name="setting-up-the-environment"></a>Configurando o ambiente
 Neste tutorial, usaremos uma configuração básica de:
 
-1.  DC: controlador de domínio para o domínio no qual AD FS será hospedado
-2.  Servidor de AD FS: o servidor de AD FS para o domínio
-3.  Máquina de desenvolvimento: computador onde o Visual Studio foi instalado e desenvolverei nosso exemplo
+1.    DC: controlador de domínio para o domínio no qual AD FS será hospedado
+2.    Servidor de AD FS: o servidor de AD FS para o domínio
+3.    Máquina de desenvolvimento: computador onde o Visual Studio foi instalado e desenvolverei nosso exemplo
 
 Você pode, se desejar, usar apenas duas máquinas. Um para DC/AD FS e o outro para desenvolver o exemplo.
 
@@ -178,5 +178,5 @@ Agora, você poderá chamar a API de back-end para adicionar itens de lista de t
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

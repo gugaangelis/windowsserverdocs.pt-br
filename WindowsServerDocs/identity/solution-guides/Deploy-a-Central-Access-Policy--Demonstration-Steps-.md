@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8738c03d-6ae8-49a7-8b0c-bef7eab81057
 title: Implantar uma política de acesso central (passo a passo)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 09b7edcd843dfe65d7e2391612f029cf18b633ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f4d94facc57cf2b71d6d546b4a2b60253ff58fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357503"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861199"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>Implantar uma política de acesso central (passo a passo)
 
@@ -31,28 +30,28 @@ A implantação de uma política de acesso central abrange as seguintes fases:
 |[Implantar a política de acesso central](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|Implante a política.  
 |[Manter: alterar e preparar a política](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|Alterações de política e preparo. 
 
-## <a name="BKMK_1.1"></a>Configurar um ambiente de teste  
+## <a name="set-up-a-test-environment"></a><a name="BKMK_1.1"></a>Configurar um ambiente de teste  
 Antes de começar, você precisa configurar um laboratório para testar esse cenário. As etapas para configurar o laboratório são explicadas em detalhes no [Apêndice B: Configurando o ambiente de teste](Appendix-B--Setting-Up-the-Test-Environment.md).  
 
-## <a name="BKMK_1.2"></a>Plano: identificar a necessidade de política e a configuração necessária para a implantação  
+## <a name="plan-identify-the-need-for-policy-and-the-configuration-required-for-deployment"></a><a name="BKMK_1.2"></a>Plano: identificar a necessidade de política e a configuração necessária para a implantação  
 Esta seção apresenta a série de etapas de alto nível que auxiliam na fase de planejamento da sua implantação.  
 
-||Etapa|Exemplo|  
+||Etapa|{1&gt;Exemplo&lt;1}|  
 |-|--------|-----------|  
 |1.1|A empresa determina que uma política de acesso central é necessária.|Para proteger as informações financeiras armazenadas nos servidores de arquivos, as operações de segurança do departamento financeiro trabalham com a segurança das informações para especificar a necessidade de uma política de acesso central.|  
 |1.2|Expressar a política de acesso|Os documentos financeiros só devem ser lidos pelos membros do departamento financeiro. Os membros do departamento financeiro só devem acessar documentos do próprio país. Apenas os administradores financeiros devem ter acesso de gravação. Uma exceção será permitida para os membros do grupo FinanceException. Esse grupo terá acesso de leitura.|  
-|1.3|Expressar a política de acesso em construções do Windows Server 2012|Direcionamento:<br /><br />-Resource. Department contém Finance<br /><br />Regras de acesso:<br /><br />-Permitir leitura de usuário. país = recurso. país e usuário. departamento = recurso. departamento<br />-Permitir controle total de usuário. MemberOf (FinanceAdmin)<br /><br />Exceção:<br /><br />Allow read memberOf(FinanceException)|  
-|1.4|Determinar as propriedades de arquivo necessárias para a política|Marque os arquivos com:<br /><br />-Departamento<br />-País|  
-|1.5|Determinar os tipos de declarações e os grupos necessários para a política|Tipos de declarações:<br /><br />-País<br />-Departamento<br /><br />Grupos de usuários:<br /><br />- FinanceAdmin<br />-Financeexception|  
+|1.3|Expressar a política de acesso em construções do Windows Server 2012|Destino:<p>-Resource. Department contém Finance<p>Regras de acesso:<p>-Permitir leitura de usuário. país = recurso. país e usuário. departamento = recurso. departamento<br />-Permitir controle total de usuário. MemberOf (FinanceAdmin)<p>Exceção:<p>Allow read memberOf(FinanceException)|  
+|1.4|Determinar as propriedades de arquivo necessárias para a política|Marque os arquivos com:<p>-Departamento<br />-País|  
+|1.5|Determinar os tipos de declarações e os grupos necessários para a política|Tipos de declarações:<p>-País<br />-Departamento<p>Grupos de usuários:<p>- FinanceAdmin<br />-Financeexception|  
 |1.6|Determinar os servidores aos quais essa política será aplicada|Aplique a política a todos os servidores de arquivos financeiros.|  
 
-## <a name="BKMK_1.3"></a>Implementar: configurar os componentes e a política  
+## <a name="implement-configure-the-components-and-policy"></a><a name="BKMK_1.3"></a>Implementar: configurar os componentes e a política  
 Esta seção apresenta um exemplo de implantação de uma política de acesso central para documentos financeiros.  
 
-|Não|Etapa|Exemplo|  
+|Não|Etapa|{1&gt;Exemplo&lt;1}|  
 |------|--------|-----------|  
-|2.1|Criar tipos de declarações|Crie os seguintes tipos de declarações:<br /><br />-Departamento<br />-País|  
-|2.2|Criar propriedades de recurso|Crie e habilite as seguintes propriedades de recurso:<br /><br />-Departamento<br />-País|  
+|2.1|Criar tipos de declarações|Crie os seguintes tipos de declarações:<p>-Departamento<br />-País|  
+|2.2|Criar propriedades de recurso|Crie e habilite as seguintes propriedades de recurso:<p>-Departamento<br />-País|  
 |2.3|Configurar uma regra de acesso central|Crie a regra Documentos Financeiros incluindo a política determinada na seção anterior.|  
 |2.4|Configurar uma CAP (política de acesso central)|Crie uma CAP chamada Política Financeira e adicione a ela a regra Documentos Financeiros.|  
 |2.5|Direcionar a política de acesso central aos servidores de arquivos|Publique a CAP Política Financeira nos servidores de arquivos.|  
@@ -87,7 +86,7 @@ No procedimento a seguir, você cria dois tipos de declaração: país e departa
 
 ![guias de solução](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
 
 
     New-ADClaimType country -SourceAttribute c -SuggestedValues:@((New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("US","US","")), (New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("JP","JP","")))  
@@ -123,7 +122,7 @@ A próxima etapa consiste em criar as propriedades de recurso. No procedimento a
 
 ![guias de solução](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
 
 ```  
 New-ADResourceProperty Country -IsSecured $true -ResourcePropertyValueType MS-DS-MultivaluedChoice -SharesValuesWith country  
@@ -191,7 +190,7 @@ Regras de acesso:
 
     ![guias de solução](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
-    O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+    O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
 
 
 ~~~
@@ -226,7 +225,7 @@ Você deve agora ter uma regra de acesso central que permita às pessoas acessar
 
    ![guias de solução](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
-   O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+   O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
 
    ```  
    New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember   
@@ -271,7 +270,7 @@ Para os controladores de domínio de um domínio fornecerem declarações ou dad
 
 1.  Abra o Gerenciamento de Política de Grupo, clique em **contoso.com** e, depois, em **Controladores de Domínio**.  
 
-2.  Clique com botão direito na **Política de Controladores de Domínio Padrão**e clique em **Editar**.  
+2.  Clique com botão direito na **Política de Controladores de Domínio Padrão** e clique em **Editar**.  
 
 3.  Na janela Editor de Gerenciamento de Política de Grupo, clique duas vezes em **Configuração do Computador**, duas vezes em **Políticas**, duas vezes em **Modelos Administrativos**, duas vezes em **Sistema** e, por fim, duas vezes em **KDC**.  
 
@@ -281,9 +280,9 @@ Para os controladores de domínio de um domínio fornecerem declarações ou dad
 
 6.  Abra um prompt de comando e digite `gpupdate /force`.  
 
-## <a name="BKMK_1.4"></a>Implantar a política de acesso central  
+## <a name="deploy-the-central-access-policy"></a><a name="BKMK_1.4"></a>Implantar a política de acesso central  
 
-||Etapa|Exemplo|  
+||Etapa|{1&gt;Exemplo&lt;1}|  
 |-|--------|-----------|  
 |3.1|Atribuir a CAP às pastas compartilhadas apropriadas no servidor de arquivos.|Atribua a política de acesso central à pasta compartilhada apropriada no servidor de arquivos.|  
 |3.2|Verificar se o acesso está configurado adequadamente.|Verifique o acesso de usuários de países e departamentos diferentes.|  
@@ -302,7 +301,7 @@ Nesta etapa, você atribuirá a política de acesso central ao servidor de arqui
    > Você também pode atualizar as Propriedades de Recursos Globais fazendo logon no servidor de arquivos. Para atualizar as Propriedades de Recursos Globais a partir do servidor de arquivos, faça o seguinte:  
    > 
    > 1. Logon no servidor de arquivos FILE1 como CONTOSO\Administrator, usando a senha <strong>pass@word1</strong>.  
-   > 2. Abra o Gerenciador de Recursos de Servidor de Arquivos. Para abrir o Gerenciador de Recursos de Servidor de Arquivos, clique em **Iniciar**, digite **gerenciador de recursos do servidor de arquivos**e clique em **Gerenciador de Recursos do Servidor de Arquivos**.  
+   > 2. Abra o Gerenciador de Recursos de Servidor de Arquivos. Para abrir o Gerenciador de Recursos de Servidor de Arquivos, clique em **Iniciar**, digite **gerenciador de recursos do servidor de arquivos** e clique em **Gerenciador de Recursos do Servidor de Arquivos**.  
    > 3. No Gerenciador de Recursos de Servidor de Arquivos, clique em **Gerenciamento de Classificação de Arquivos**, clique com o botão direito do mouse em **Propriedades de Classificação** e clique em **Atualizar**.  
 
 4. Abra o Windows Explorer e, no painel esquerdo, clique na unidade D. Clique com o botão direito do mouse na pasta **Documentos Financeiros** e clique em **Propriedades**.  
@@ -314,7 +313,7 @@ Nesta etapa, você atribuirá a política de acesso central ao servidor de arqui
    > [!NOTE]  
    > Lembre-se de que a política de acesso central foi configurada para os arquivos de destino do Departamento Financeiro. As etapas anteriores marcam todos os documentos da pasta que contêm os atributos País e Departamento.  
 
-7. Clique na guia **Segurança** e clique em **Avançada**. Clique na guia **Política Central**.  
+7. Clique na guia **Segurança** e clique em **Avançado**. Clique na guia **Política Central**.  
 
 8. Clique em **Alterar**, selecione **Política Financeira** no menu suspenso e clique em **Aplicar**. Você poderá ver a **Regra de Documentos Financeiros** listada na política. Expanda o item para exibir todas as permissões que você definiu quando criou a regra no Active Directory.  
 
@@ -340,15 +339,15 @@ Na próxima etapa, você garantirá que o acesso esteja configurado adequadament
 
     Observe a última coluna denominada **Acesso limitado por** na janela de acesso efetivo. Esta coluna informa quais Gates estão afetando as permissões da pessoa. Nesse caso, as permissões Compartilhar e NTFS permitem controle total a todos os usuários. No entanto, a política de acesso central restringe o acesso com base nas regras configuradas anteriormente.  
 
-## <a name="BKMK_1.5"></a>Manter: alterar e preparar a política  
+## <a name="maintain-change-and-stage-the-policy"></a><a name="BKMK_1.5"></a>Manter: alterar e preparar a política  
 
 ||||  
 |-|-|-|  
-|Número|Etapa|Exemplo|  
+|Número|Etapa|{1&gt;Exemplo&lt;1}|  
 |4.1|Configurar declarações de dispositivo para clientes|Definir a configuração da política de grupo para habilitar declarações de dispositivo|  
 |4.2|Habilitar uma declaração para os dispositivos.|Habilite o tipo de declaração de país para os dispositivos.|  
 |4.3|Adicionar uma política de preparo à regra de acesso central existente que você deseja modificar.|Modifique a Regra de Documentos Financeiros para adicionar uma política de preparo.|  
-|4,4|Exibir os resultados da política de preparo.|Verifique as permissões do Ester Velle.|  
+|4.4|Exibir os resultados da política de preparo.|Verifique as permissões do Ester Velle.|  
 
 #### <a name="to-set-up-group-policy-setting-to-enable-claims-for-devices"></a>Para definir uma configuração de política de grupo a fim de habilitar declarações para dispositivos  
 
@@ -364,7 +363,7 @@ Na próxima etapa, você garantirá que o acesso esteja configurado adequadament
 
 2. No menu **Ferramentas**, abra o Centro Administrativo do Active Directory.  
 
-3. Clique em **Modo de Exibição de Árvore**, expanda **Controle de Acesso Dinâmico**, clique duas vezes em **Tipos de Declarações** e clique duas vezes na declaração **país/região**.  
+3. Clique em **Modo de Exibição de Árvore**, expanda **Controle de Acesso Dinâmico**, clique duas vezes em **Tipos de Declarações** e clique duas vezes na declaração **país**.  
 
 4. Em **As declarações desse tipo podem ser emitidas para as seguintes classes**, marque a caixa de seleção **Computador**. Clique em **OK**.   
    Agora, as caixas de seleção **Usuário** e **Computador** devem estar marcadas. A declaração de país pode agora ser usada com dispositivos, além dos usuários.  
@@ -404,7 +403,7 @@ A próxima etapa é criar uma regra de política de preparo. As políticas de pr
 
 ![guias de solução](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
 
 ```  
 Set-ADCentralAccessRule  
@@ -433,7 +432,7 @@ No próximo procedimento, você verificará os resultados da política de prepar
 
 5. Abra o **Visualizador de Eventos** a partir do atalho da área de trabalho. Expanda **Logs do Windows** e selecione **Segurança**. Abra as entradas com a **ID de evento 4818**na categoria de tarefa de **preparo da política de acesso central** . Você verá que EValle recebeu permissão de acesso. No entanto, de acordo com a política de preparo, a usuária teria o acesso negado.  
 
-## <a name="next-steps"></a>Próximas etapas  
+## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
 Se tiver um sistema de gerenciamento de servidor central como o System Center Operations Manager, você também poderá configurar o monitoramento de eventos. Isso permite que os administradores monitorem os efeitos das políticas de acesso central antes de impô-las.  
 
 

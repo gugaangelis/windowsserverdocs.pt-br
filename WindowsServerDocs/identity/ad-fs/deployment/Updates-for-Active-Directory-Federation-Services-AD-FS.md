@@ -1,7 +1,6 @@
 ---
 ms.assetid: ed3206b4-bbfc-4bc7-a43c-981b0544a50d
 title: Atualizações necessárias para Serviços de Federação do Active Directory (AD FS) (AD FS)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b50b1b7b43002c91ee849f352e255f520f6d96f0
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: f72a29d97da89b0b6de93b6b573bce4fdf5e35c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822729"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855859"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Atualizações necessárias para Serviços de Federação do Active Directory (AD FS) (AD FS) e proxy de aplicativo Web (WAP)
 
@@ -39,7 +38,7 @@ As atualizações do Windows Server 2016 são entregues mensalmente por meio de 
 |[4093120 (Build do so 14393,2214)](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)| Resolve um problema de validação de token de atualização sem tratamento. Ele gera o seguinte erro: "Microsoft. IdentityServer. Web. Protocols. OAuth. Exceptions. OAuthInvalidRefreshTokenException: MSIS9312: token de atualização OAuth inválido recebido. O token de atualização foi recebido antes do tempo permitido no token. " |Abril de 2018|
 |[4077525 (Build do so 14393,2097)](https://support.microsoft.com/help/4077525/windows-10-update-kb4077525)|Aborda o problema em que um erro HTTP 500 ocorre quando um farm do ADFS tem pelo menos dois servidores usando o banco de dados interno do Windows (WID). Nesse cenário, a pré-autenticação básica HTTP no servidor WAP (proxy de aplicativo Web) falha ao autenticar alguns usuários. Quando o erro ocorrer, você também poderá ver a ID do evento 13039 de aviso do proxy de aplicativo Web do Microsoft Windows no log de eventos WAP. A descrição lê, "o proxy de aplicativo Web não conseguiu autenticar o usuário. Pré-autenticação é ' ADFS para clientes avançados '. O usuário fornecido não está autorizado a acessar a terceira parte confiável fornecida. As regras de autorização da terceira parte confiável de destino ou da terceira parte confiável de WAP são necessárias para serem modificadas. "</br></br>Aborda o problema no qual AD FS não pode mais ignorar prompt = logon durante a autenticação. Uma opção desabilitada foi adicionada para oferecer suporte a cenários nos quais a autenticação de senha não é usada. Para obter mais informações, consulte AD FS ignora o parâmetro "prompt = login" durante uma autenticação no Windows Server 2016 RTM.</br></br>Aborda o problema no AD FS em que os clientes autorizados (e terceiras partes confiáveis) que selecionam o certificado como uma opção de autenticação falharão ao se conectar. A falha ocorre ao usar prompt = logon se a autenticação integrada do Windows (WIA) estiver habilitada e a solicitação puder fazer a WIA.</br></br>Aborda o problema em que AD FS exibe incorretamente a página HRD (descoberta de realm inicial) quando um IDP (provedor de identidade) está associado a uma terceira parte confiável (RP) em um grupo OAuth. A menos que vários IDPs estejam associados à RP no grupo OAuth, o usuário não será exibido na página HRD. Em vez disso, o usuário vai diretamente para o IDP associado para autenticação.|Fevereiro de 2018|
 |[4041688 (Build do so 14393,1794)](https://support.microsoft.com/kb/4041688)|Essa correção resolve um problema que direciona de forma intermitente as solicitações de autoridade do AD para o provedor de identidade errado devido ao comportamento incorreto do cache. Isso pode afetar os recursos de autenticação como a autenticação multifator. </br></br>Adicionada a capacidade do AAD Connect Health de relatar a integridade do servidor ADFS com a fidelidade correta (usando a auditoria detalhada) em farms WS2012R2 e WS2016 ADFS mistos.</br></br>Corrigido um problema em que durante a atualização do farm do ADFS 2012 R2 para o ADFS 2016, o cmdlet do PowerShell para gerar o nível de comportamento do farm falhará com um tempo limite quando houver muitas relações de confiança de terceira parte confiável.</br></br>Foi resolvido um problema em que o AD FS causa falhas de autenticação modificando o valor do parâmetro WCT ao federar as solicitações a outro STS (servidor de token de segurança).|Outubro de 2017|
-|[4038801 (Build do so 14393,1737)](https://support.microsoft.com/kb/4038801)|Suporte adicionado para OIDC logout usando LDPs federado. Isso permitirá "cenários de quiosque", em que vários usuários podem ser conectados em série em um único dispositivo em que há Federação com um LDP.</br></br>Correção de um problema WinHello em que os certificados baseados em CEP/CES não funcionam com contas gMSA.</br></br>Corrige um problema em que o banco de dados interno do Windows (WID) nos servidores ADFS do Windows Server 2016 falha ao sincronizar algumas configurações, como as colunas ApplicationGroupId das tabelas IdentityServerPolicy. escopos e IdentityServerPolicy. clients) devido a uma chave estrangeira Constraint. Essas falhas de sincronização podem causar uma declaração diferente, o provedor de declarações e as experiências do aplicativo entre os servidores ADFS primários e secundários. Além disso, se a função primária WID for movida para um nó secundário, os grupos de aplicativos não poderão mais ser gerenciados no UX de gerenciamento do ADFS.</br></br>Esta atualização corrige um problema em que a autenticação multifator não funciona corretamente com dispositivos móveis que usam definições de cultura personalizadas|Setembro de 2017|
+|[4038801 (Build do so 14393,1737)](https://support.microsoft.com/kb/4038801)|Suporte adicionado para OIDC logout usando LDPs federado. Isso permitirá "cenários de quiosque", em que vários usuários podem ser conectados em série em um único dispositivo em que há Federação com um LDP.</br></br>Correção de um problema WinHello em que os certificados baseados em CEP/CES não funcionam com contas gMSA.</br></br>Corrige um problema em que o banco de dados interno do Windows (WID) nos servidores ADFS do Windows Server 2016 falha ao sincronizar algumas configurações, como as colunas ApplicationGroupId das tabelas IdentityServerPolicy. escopos e IdentityServerPolicy. clients) devido a uma restrição FOREIGN KEY. Essas falhas de sincronização podem causar uma declaração diferente, o provedor de declarações e as experiências do aplicativo entre os servidores ADFS primários e secundários. Além disso, se a função primária WID for movida para um nó secundário, os grupos de aplicativos não poderão mais ser gerenciados no UX de gerenciamento do ADFS.</br></br>Esta atualização corrige um problema em que a autenticação multifator não funciona corretamente com dispositivos móveis que usam definições de cultura personalizadas|Setembro de 2017|
 |[4034661 (Build do so 14393,1613)](https://support.microsoft.com/kb/4034661)|Corrige um problema em que o endereço IP do chamador é Nog registrado por eventos 411 no log de eventos de segurança dos servidores ADFS 4,0 \ Windows Server 2016 RS1 ADFS mesmo depois de habilitar "auditorias com êxito" e "auditorias de falha".</br></br>Essa correção resolve um problema com o MFA (autenticação multifator do Azure) quando um servidor ADFX é configurado para usar um proxy HTTP.</br></br>"Foi resolvido um problema em que a apresentação de um certificado expirado ou revogado para o servidor proxy do ADFS não retorna um erro para o usuário."|Agosto de 2017|
 |[4034658 (Build do so 14393,1593)](https://support.microsoft.com/kb/4034658)|Correção para o 2016 AD FS Server a fim de dar suporte ao registro de certificado MFA para implantações locais do Windows Hello para empresas|Agosto de 2017|
 |[4025334 (Build do so 14393,1532)](https://support.microsoft.com/kb/4025334)|Foi resolvido um problema em que o manipulador de token PkeyAuth poderia falhar uma autenticação se a solicitação PkeyAuth contiver dados incorretos. A autenticação ainda deve continuar sem executar a autenticação do dispositivo|Julho de 2017|
@@ -80,21 +79,21 @@ Abaixo está a lista de hotfixes e pacotes cumulativos de atualizações que for
 |[3020813](https://support.microsoft.com/kb/3020813)|Você será solicitado a fornecer autenticação quando executar um aplicativo Web no Windows Server 2012 R2 AD FS|janeiro de 2015
 |[3020773](https://support.microsoft.com/kb/3020773)|Falhas de tempo limite após a implantação inicial do serviço de registro de dispositivo no Windows Server 2012 R2|janeiro de 2015
 |[3018886](https://support.microsoft.com/kb/3018886)|Você será solicitado a fornecer um nome de usuário e senha duas vezes ao acessar o Windows Server 2012 R2 AD FS Server da intranet|janeiro de 2015
-|[3013769](https://support.microsoft.com/kb/3013769)|Acumulação de atualização do Windows Server 2012 R2|Dezembro de 2014
+|[3013769](https://support.microsoft.com/kb/3013769)|Acumulação de atualização do Windows Server 2012 R2|dezembro de 2014
 |[3000850](https://support.microsoft.com/kb/3000850)|Acumulação de atualização do Windows Server 2012 R2|Novembro de 2014
 |[2975719](https://support.microsoft.com/kb/2975719)|Acumulação de atualização do Windows Server 2012 R2|Agosto de 2014
 |[2967917](https://support.microsoft.com/kb/2967917)|Acumulação de atualização do Windows Server 2012 R2|Julho de 2014
-|[2962409](https://support.microsoft.com/kb/2962409)|Acumulação de atualização do Windows Server 2012 R2|Junho de 2014
+|[2962409](https://support.microsoft.com/kb/2962409)|Acumulação de atualização do Windows Server 2012 R2|junho de 2014
 |[2955164](https://support.microsoft.com/kb/2955164)|Acumulação de atualização do Windows Server 2012 R2|Maio de 2014
 |[2919355](https://support.microsoft.com/kb/2919355)|Acumulação de atualização do Windows Server 2012 R2|Abril de 2014
 
 ## <a name="updates-for-ad-fs-in-windows-server-2012-ad-fs-21-and-ad-fs-20"></a>Atualizações para AD FS no Windows Server 2012 (AD FS 2,1) e AD FS 2,0
 Abaixo está a lista de hotfixes e pacotes cumulativos de atualizações que foram lançados para o AD FS 2,0 e 2,1.
 
-|QUILOBYTE # |Descrição|Data de lançamento|Aplica-se a:
+|QUILOBYTE # |Descrição|Data de lançamento|Aplicável a:
 |----- | ----- |-----|-----
 |[3197878](https://support.microsoft.com/kb/3197878)|A autenticação por meio do proxy falha no Windows Server 2012 (esta é a versão geral do hotfix 3094446)|ROLLUP de qualidade de 2016 de novembro|AD FS 2,1
-|[3197869](https://support.microsoft.com/kb/3197869)|A autenticação por meio de um proxy falha no Windows Server 2008 R2 SP1 (esta é a versão geral do hotfix 3094446)|ROLLUP de qualidade de 2016 de novembro|AD FS 2,0
+|[3197869](https://support.microsoft.com/kb/3197869)|A autenticação por meio de um proxy falha no Windows Server 2008 R2 SP1 (esta é a versão geral do hotfix 3094446)|ROLLUP de qualidade de 2016 de novembro|AD FS 2.0
 |[3094446](https://support.microsoft.com/kb/3094446)|A autenticação por meio de um proxy falha no Windows Server 2012 ou no Windows Server 2008 R2 SP1|Setembro de 2015|AD FS 2,0 e 2,1
 |[3070078](https://support.microsoft.com/kb/3070078)|AD FS 2,1 gera uma exceção quando você se autentica em um certificado de criptografia no Windows Server 2012|Julho de 2015|AD FS 2,1
 |[3062577](https://support.microsoft.com/kb/3062577)|MS15-062: vulnerabilidade no Active Directory serviços de Federação pode permitir a elevação de privilégio|Junho de 2015|AD FS 2,0/2,1
@@ -104,9 +103,9 @@ Abaixo está a lista de hotfixes e pacotes cumulativos de atualizações que for
 |[2926658](https://support.microsoft.com/kb/2926658)|A implantação do farm do SQL do ADFS falhará se você não tiver permissões do SQL|Outubro de 2014|AD FS 2,1
 |[2896713](https://support.microsoft.com/kb/2896713) ou [2989956](https://support.microsoft.com/kb/2989956)|A atualização está disponível para corrigir vários problemas após a instalação da atualização de segurança 2843638 em um servidor AD FS|Novembro de 2013</br></br>Setembro de 2014|AD FS 2,0/2,1
 |[2877424](https://support.microsoft.com/kb/2877424)|A atualização permite que você use um certificado para várias relações de confiança de terceira parte confiável em um farm AD FS 2,1|Outubro de 2013|AD FS 2,1
-|[2873168](https://support.microsoft.com/kb/2873168)|CORREÇÃO: um erro ocorre quando você usa um CSP de terceiros e um HSM e, em seguida, configura uma confiança do provedor de declarações no pacote cumulativo de atualizações 3 para AD FS 2,0 no Windows Server 2008 R2 Service Pack 1|Setembro de 2013|AD FS 2,0
-|[2861090](https://support.microsoft.com/kb/2861090)|Uma vírgula no nome da entidade de um certificado de criptografia causa uma exceção no Windows Server 2008 R2 SP1|Agosto de 2013|AD FS 2,0
+|[2873168](https://support.microsoft.com/kb/2873168)|CORREÇÃO: um erro ocorre quando você usa um CSP de terceiros e um HSM e, em seguida, configura uma confiança do provedor de declarações no pacote cumulativo de atualizações 3 para AD FS 2,0 no Windows Server 2008 R2 Service Pack 1|Setembro de 2013|AD FS 2.0
+|[2861090](https://support.microsoft.com/kb/2861090)|Uma vírgula no nome da entidade de um certificado de criptografia causa uma exceção no Windows Server 2008 R2 SP1|Agosto de 2013|AD FS 2.0
 |[2843639](https://support.microsoft.com/kb/2843639)|Segurança Vulnerabilidade no Serviços de Federação do Active Directory (AD FS) pode permitir a divulgação de informações|Novembro de 2013|AD FS 2,1
-|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066: Descrição da atualização de segurança para Serviços de Federação do Active Directory (AD FS) 2,0:13 de agosto de 2013|Agosto de 2013|AD FS 2,0
+|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066: Descrição da atualização de segurança para Serviços de Federação do Active Directory (AD FS) 2,0:13 de agosto de 2013|Agosto de 2013|AD FS 2.0
 |[2827748](https://support.microsoft.com/kb/2827748)|O arquivo FederationMetadata. xml não contém as informações de ponto de extremidade MEX para os pontos de extremidades WS-Trust e WS-Federation no Windows Server 2012|Maio de 2013|AD FS 2,1
-|[2790338](https://support.microsoft.com/kb/2790338)|Descrição do pacote cumulativo de atualizações 3 para Serviços de Federação do Active Directory (AD FS) (AD FS) 2,0|Março de 2013|AD FS 2,0
+|[2790338](https://support.microsoft.com/kb/2790338)|Descrição do pacote cumulativo de atualizações 3 para Serviços de Federação do Active Directory (AD FS) (AD FS) 2,0|Março de 2013|AD FS 2.0

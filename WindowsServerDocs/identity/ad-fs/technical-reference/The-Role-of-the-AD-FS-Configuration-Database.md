@@ -1,7 +1,6 @@
 ---
 ms.assetid: 68db7f26-d6e3-4e67-859b-80f352e6ab6a
 title: A função do banco de dados de configuração do AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,22 +8,22 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 22047a93ab67d3f21b3e2318fcce497feab8f996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ffdd1876e2dfbc044cebb65d7d6ef80880a64b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385576"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860159"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>A função do banco de dados de configuração do AD FS
-O banco de dados de configuração do AD FS armazena todos as configurações que representam uma única instância do Serviços de Federação do Active Directory (AD FS) \(AD FS\) \(ou seja, serviço de Federação\). O banco de dados de configuração do AD FS define o conjunto de parâmetros que um Serviço de Federação requer para identificar parceiros, certificados, repositórios de atributo, declarações e diversos dados sobre essas entidades associadas. Você pode armazenar esses dados de configuração em um Microsoft SQL Server banco de® ou no banco de dados interno do Windows \(recurso de\) do WID que está incluído no Windows Server® 2008, no Windows Server 2008 R2 e no Windows Server® 2012.  
+O banco de dados de configuração do AD FS armazena todos as configurações que representam uma única instância do Serviços de Federação do Active Directory (AD FS) \(AD FS\) \(ou seja, serviço de Federação\). O banco de dados de configuração do AD FS define o conjunto de parâmetros que um Serviço de Federação requer para identificar parceiros, certificados, repositórios de atributo, declarações e diversos dados sobre essas entidades associadas. Você pode armazenar esses dados de configuração em um Microsoft SQL Server banco de&reg; ou no banco de dados interno do Windows \(recurso de\) do WID que está incluído no Windows Server&reg; 2008, no Windows Server 2008 R2 e no Windows Server&reg; 2012.  
   
 > [!NOTE]  
 > Todo o conteúdo do banco de dados de configuração do AD FS pode ser armazenado em uma instância do WID ou do banco de dados do SQL, mas não em ambas. Isso significa que não é possível ter alguns servidores de federação usando o WID e outros usando um banco de dados do SQL Server para a mesma instância do banco de dados de configuração do AD FS.  
   
 Use as informações fornecidas mais adiante neste tópico juntamente com o conteúdo oferecido em [Considerações de topologia de implantação do AD FS](https://technet.microsoft.com/library/gg982489.aspx) para saber mais sobre as vantagens e desvantagens de escolher o WID ou o SQL Server para armazenar o banco de dados de configuração do AD FS:  
   
-O WID usa um repositório de dados relacional e não tem sua própria interface do usuário de gerenciamento \(\)da interface Em vez disso, os administradores podem modificar o conteúdo do banco de dados de configuração do AD FS usando o snap\-de gerenciamento de AD FS no, fsconfig. exe ou cmdlets™ do Windows PowerShell.  
+O WID usa um repositório de dados relacional e não tem sua própria interface do usuário de gerenciamento \(\)da interface Em vez disso, os administradores podem modificar o conteúdo do banco de dados de configuração do AD FS usando o snap\-de gerenciamento de AD FS no, fsconfig. exe ou cmdlets&trade; do Windows PowerShell.  
   
 ## <a name="using-wid-to-store-the-ad-fs-configuration-database"></a>Usando o WID para armazenar o banco de dados de configuração do AD FS  
 Você pode criar o banco de dados de configuração do AD FS usando o WID como o armazenamento usando o comando fsconfig. exe\-ferramenta de linha ou o assistente de configuração do servidor de Federação AD FS. Ao usar uma dessas ferramentas, escolha uma das opções a seguir para criar sua topologia do servidor de federação. Todas essas opções usam o WID para armazenar o banco de dados de configuração do AD FS:  
@@ -48,7 +47,7 @@ Se você selecionar a opção de adicionar um servidor de federação, o WID ser
 Esta seção descreve os conceitos mais importantes que mostram como o farm de servidores de federação do WID replica os dados entre os servidores de federação primários e secundários. .  
   
 #### <a name="primary-federation-server"></a>Servidor de federação primário  
-Um servidor de Federação primário é um computador executando o Windows Server 2008, o Windows Server 2008 R2 ou o Windows Server® 2012 que foi configurado na função de servidor de Federação com o assistente de configuração do servidor de Federação AD FS e que tem uma cópia de leitura/gravação do banco de dados de configuração do AD FS. O servidor de Federação primário sempre é criado quando você usa o assistente de configuração do servidor de Federação AD FS e seleciona a opção para criar um novo Serviço de Federação e tornar esse computador o primeiro servidor de Federação no farm. Todos os demais servidores de federação deste farm, também chamados de servidores de federação secundários, deverão sincronizar as alterações realizadas no servidor primário para uma cópia do banco de dados de configuração do AD FS armazenado localmente.  
+Um servidor de Federação primário é um computador executando o Windows Server 2008, o Windows Server 2008 R2 ou o Windows Server&reg; 2012 que foi configurado na função de servidor de Federação com o assistente de configuração do servidor de Federação AD FS e que tem uma cópia de leitura/gravação do banco de dados de configuração do AD FS. O servidor de Federação primário sempre é criado quando você usa o assistente de configuração do servidor de Federação AD FS e seleciona a opção para criar um novo Serviço de Federação e tornar esse computador o primeiro servidor de Federação no farm. Todos os demais servidores de federação deste farm, também chamados de servidores de federação secundários, deverão sincronizar as alterações realizadas no servidor primário para uma cópia do banco de dados de configuração do AD FS armazenado localmente.  
   
 #### <a name="secondary-federation-servers"></a>Servidores de federação secundários  
 Os servidores de Federação secundários armazenam uma cópia do banco de dados de configuração do AD FS do servidor de Federação primário, mas essas cópias são somente leitura\-. Os servidores de federação secundários conectam-se e sincronizam os dados com o servidor de federação primário no farm sondando-o em intervalos regulares para verificar se os dados foram alterados. Os servidores de Federação secundários existem para fornecer tolerância a falhas para o servidor de Federação primário enquanto atuam para carregar\-balancear as solicitações de acesso feitas em diferentes sites em todo o ambiente de rede.  
@@ -79,7 +78,7 @@ Você pode criar o banco de dados de configuração do AD FS usando uma única i
   
 -   Ele fornece suporte a recursos de resolução de artefato SAML e detecção de reprodução de token de Federação SAML/WS\-\(descritas abaixo\).  
   
-O termo "servidor de federação primário" não se aplica quando o banco de dados de configuração do AD FS é armazenado em uma instância de banco de dados SQL, pois todos os servidores de federação podem ler e gravar igualmente o banco de dados de configuração do AD FS que está usando a mesma instância do SQL Server em cluster, como mostrado na ilustração a seguir.  
+O termo "servidor de Federação primário" não se aplica quando o banco de dados de configuração do AD FS é armazenado em uma instância do banco de dados SQL porque todos os servidores de Federação podem ler e gravar igualmente no banco de dados de configuração do AD FS que está usando a mesma instância de SQL Server clusterizado, conforme mostrado na ilustração a seguir.  
   
 ![AD FS funções](media/adfs2_SQL.png)  
   

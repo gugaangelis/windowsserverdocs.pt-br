@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
-title: Recomendações de política de auditoria
-description: ''
+title: Recomendações de Política de Auditoria
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6cecf2edcb834a963c706fa4a63e7d15b13f7888
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c25df61246bf6a7c731e08e11cee54fd87d6ae4c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949628"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821339"
 ---
-# <a name="audit-policy-recommendations"></a>Recomendações de política de auditoria
+# <a name="audit-policy-recommendations"></a>Recomendações de Política de Auditoria
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Windows 8.1, Windows 7
 
@@ -38,7 +37,7 @@ Esta seção contém tabelas que listam as recomendações de configuração de 
 
 -   Windows Server 2012  
 
--   R2 do Windows Server 2012  
+-   Windows Server 2012 R2  
 
 -   Windows Server 2008  
 
@@ -59,162 +58,162 @@ Essas tabelas contêm a configuração padrão do Windows, as recomendações de
 |NÃO|Não **habilitar em** cenários gerais|  
 |IF|Habilitar, se necessário, para um cenário específico, ou se uma função ou recurso para o qual a auditoria é desejada estiver instalado no computador|  
 |DC|Habilitar em controladores de domínio|  
-|Ficará|Sem recomendações|  
+|Ficará|Nenhuma recomendação|  
 
 **Recomendações de configurações de auditoria do Windows 10, do Windows 8 e do Windows 7**  
 
 **Política de auditoria**  
 
-|Categoria ou subcategoria da política de auditoria|Padrão do Windows<br /><br />Falha de êxito|Recomendação de linha de base<br /><br />Falha de êxito|Recomendação mais forte<br /><br />Falha de êxito|  
+|Categoria ou subcategoria da política de auditoria|Padrão do Windows<p>Falha de êxito|Recomendação de linha de base<p>Falha de êxito|Recomendação mais forte<p>Falha de êxito|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Logon da conta**||||  
-|Validação de Credenciais de Auditoria|Não|Sim não|Sim Sim|  
+|Auditoria da validação de credenciais|Não|Sim não|Sim Sim|  
 |Auditoria do serviço de autenticação Kerberos|||Sim Sim|  
 |Auditoria das operações do tíquete de serviço Kerberos|||Sim Sim|  
 |Auditoria de outros eventos de logon de conta|||Sim Sim|  
 |**Gerenciamento de contas**||||  
 |Auditoria do gerenciamento de grupo de aplicativos||||  
-|Auditoria do gerenciamento da conta de computador||Sim não|Sim Sim|  
-|Auditoria do gerenciamento do grupo de distribuição||||  
-|Auditoria de outros eventos de gerenciamento de conta||Sim não|Sim Sim|  
-|Auditoria de gerenciamento do grupo de distribuição||Sim não|Sim Sim|  
-|Auditoria de gerenciamento de conta de usuário|Sim não|Sim não|Sim Sim|  
+|Auditoria de Gerenciamento de Conta de Computador||Sim não|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Distribuição||||  
+|Auditoria de Outros Eventos de Gerenciamento de Contas||Sim não|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Segurança||Sim não|Sim Sim|  
+|Auditoria de Gerenciamento de Conta de Usuário|Sim não|Sim não|Sim Sim|  
 |**Acompanhamento detalhado**||||  
-|Auditoria da atividade DPAPI|||Sim Sim|  
-|Auditoria do processo de criação||Sim não|Sim Sim|  
-|Auditoria do encerramento do processo||||  
-|Auditoria de eventos de RPC||||  
+|Auditoria de Atividade DPAPI|||Sim Sim|  
+|Auditoria de Criação de Processo||Sim não|Sim Sim|  
+|Auditoria de Terminação de Processo||||  
+|Auditoria de Eventos de RPC||||  
 |**Acesso ao DS**||||  
-|Auditoria de replicação detalhada do serviço de diretório||||  
-|Auditoria de acesso do serviço de diretório||||  
-|Auditoria de mudanças do serviço de diretório||||  
-|Auditoria de replicação do serviço de diretório||||  
+|Auditoria de Replicação Detalhada do Serviço de Diretório||||  
+|Auditoria do acesso ao serviço de diretório||||  
+|Auditoria de Alterações no Serviço de Diretório||||  
+|Auditoria de Replicação do Serviço de Diretório||||  
 |**Logon e logoff**||||  
-|Auditoria de bloqueio de conta|Sim não||Sim não|  
+|Auditoria de Bloqueio de Conta|Sim não||Sim não|  
 |Auditoria das declarações de dispositivo/usuário||||  
-|Auditoria do modo IPsec estendido||||  
-|Auditoria do modo IPsec principal|||SE FOR|  
-|Auditoria do modo IPsec rápido||||  
-|Auditoria de logoff|Sim não|Sim não|Sim não|  
+|Auditoria de Modo Estendido do IPsec||||  
+|Auditoria de Modo Principal do IPsec|||SE FOR|  
+|Auditoria de Modo Rápido do IPsec||||  
+|Logoff de Auditoria|Sim não|Sim não|Sim não|  
 |Logon de auditoria <sup>1</sup>|Sim Sim|Sim Sim|Sim Sim|  
-|Auditoria do Servidor de Políticas de Rede|Sim Sim|||  
+|Auditoria de Servidor de Política de Rede|Sim Sim|||  
 |Auditoria de outros eventos de logon/logoff||||  
-|Auditoria de logon especial|Sim não|Sim não|Sim Sim|  
+|Auditoria de Logon Especial|Sim não|Sim não|Sim Sim|  
 |**Acesso a objeto**||||  
-|Auditoria de aplicativo gerado||||  
+|Auditoria de Aplicativo Gerado||||  
 |Auditoria de serviços de certificação||||  
-|Auditoria de compartilhamento de arquivos detalhado||||  
-|Auditoria de compartilhamento de arquivos||||  
-|Auditoria de sistema de arquivos||||  
-|Auditoria de conexão de plataforma de filtragem||||  
-|Auditoria de descarte de pacote de plataforma de filtragem||||  
-|Auditoria de manipulação de identificador||||  
-|Auditoria de objeto de Kernel||||  
-|Auditoria de outros eventos de acesso ao objeto||||  
-|Auditoria do registro||||  
+|Compartilhamento de Arquivos de Auditoria Detalhado||||  
+|Auditoria de Compartilhamento de Arquivos||||  
+|Auditoria de Sistema de Arquivos||||  
+|Auditoria de Conexão de Plataforma de Filtragem||||  
+|Auditoria de Descarte de Pacote de Plataforma de Filtragem||||  
+|Auditoria de Manipulação de Identificador||||  
+|Auditoria de Objeto Kernel||||  
+|Auditoria de Outros Eventos de Acesso a Objetos||||  
+|Auditoria de Registro||||  
 |Auditoria do armazenamento removível||||  
 |Auditoria de SAM||||  
 |Auditoria do preparo da política de acesso central||||  
 |**Alteração de política**||||  
-|Auditoria da mudança na política de auditoria|Sim não|Sim Sim|Sim Sim|  
-|Auditoria da mudança na política de autenticação|Sim não|Sim não|Sim Sim|  
-|Auditoria da mudança na política de autorização||||  
-|Auditoria da mudança na política de plataforma de filtragem||||  
-|Auditoria da mudança na política de nível de regra MPSSVC|||Sim  |  
-|Auditoria de outros eventos de mudança de política||||  
+|Auditoria de Alteração de Políticas de Auditoria|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autenticação|Sim não|Sim não|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autorização||||  
+|Auditoria de Alteração na Política da Plataforma de Filtragem||||  
+|Auditoria de Alteração na Política de Nível de Regra MPSSVC|||Sim  |  
+|Auditoria de Outros Eventos de Alteração de Políticas||||  
 |**Uso de privilégios**||||  
 |Auditoria de Uso de Privilégio Não Importante||||  
 |Auditoria de outros eventos de uso de privilégios||||  
-|Auditoria do uso de privilégios confidenciais||||  
-|**System**||||  
+|Auditoria de Uso de Privilégio Importante||||  
+|**Sistema**||||  
 |Auditoria do driver IPsec||Sim Sim|Sim Sim|  
 |Auditoria de outros eventos do sistema|Sim Sim|||  
-|Auditoria da mudança no estado de segurança|Sim não|Sim Sim|Sim Sim|  
-|Auditoria da extensão do sistema de segurança||Sim Sim|Sim Sim|  
+|Auditoria de Alteração no Estado de Segurança|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Extensão do Sistema de Segurança||Sim Sim|Sim Sim|  
 |Auditoria da integridade do sistema|Sim Sim|Sim Sim|Sim Sim|  
 |**Auditoria de acesso a objetos globais**||||  
 |Auditoria do driver IPsec||||  
 |Auditoria de outros eventos do sistema||||  
-|Auditoria da mudança no estado de segurança||||  
-|Auditoria da extensão do sistema de segurança||||  
+|Auditoria de Alteração no Estado de Segurança||||  
+|Auditoria de Extensão do Sistema de Segurança||||  
 |Auditoria da integridade do sistema||||  
 
 <sup>1</sup> a partir do Windows 10 versão 1809, o logon de auditoria é habilitado por padrão para êxito e falha. Nas versões anteriores do Windows, apenas êxito é habilitado por padrão.
 
 **Recomendações de configurações de auditoria do Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2008**  
 
-|Categoria ou subcategoria da política de auditoria|Padrão do Windows<br /><br />Falha de êxito|Recomendação de linha de base<br /><br />Falha de êxito|Recomendação mais forte<br /><br />Falha de êxito|  
+|Categoria ou subcategoria da política de auditoria|Padrão do Windows<p>Falha de êxito|Recomendação de linha de base<p>Falha de êxito|Recomendação mais forte<p>Falha de êxito|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Logon da conta**||||  
-|Validação de Credenciais de Auditoria|Não|Sim Sim|Sim Sim|  
+|Auditoria da validação de credenciais|Não|Sim Sim|Sim Sim|  
 |Auditoria do serviço de autenticação Kerberos|||Sim Sim|  
 |Auditoria das operações do tíquete de serviço Kerberos|||Sim Sim|  
 |Auditoria de outros eventos de logon de conta|||Sim Sim|  
 |**Gerenciamento de contas**||||  
 |Auditoria do gerenciamento de grupo de aplicativos||||  
-|Auditoria do gerenciamento da conta de computador||Sim DC|Sim Sim|  
-|Auditoria do gerenciamento do grupo de distribuição||||  
-|Auditoria de outros eventos de gerenciamento de conta||Sim Sim|Sim Sim|  
-|Auditoria de gerenciamento do grupo de distribuição||Sim Sim|Sim Sim|  
-|Auditoria de gerenciamento de conta de usuário|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Gerenciamento de Conta de Computador||Sim DC|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Distribuição||||  
+|Auditoria de Outros Eventos de Gerenciamento de Contas||Sim Sim|Sim Sim|  
+|Auditoria de Gerenciamento de Grupo de Segurança||Sim Sim|Sim Sim|  
+|Auditoria de Gerenciamento de Conta de Usuário|Sim não|Sim Sim|Sim Sim|  
 |**Acompanhamento detalhado**||||  
-|Auditoria da atividade DPAPI|||Sim Sim|  
-|Auditoria do processo de criação||Sim não|Sim Sim|  
-|Auditoria do encerramento do processo||||  
-|Auditoria de eventos de RPC||||  
+|Auditoria de Atividade DPAPI|||Sim Sim|  
+|Auditoria de Criação de Processo||Sim não|Sim Sim|  
+|Auditoria de Terminação de Processo||||  
+|Auditoria de Eventos de RPC||||  
 |**Acesso ao DS**||||  
-|Auditoria de replicação detalhada do serviço de diretório||||  
-|Auditoria de acesso do serviço de diretório||CONTROLADOR DE DOMÍNIO DC|CONTROLADOR DE DOMÍNIO DC|  
-|Auditoria de mudanças do serviço de diretório||CONTROLADOR DE DOMÍNIO DC|CONTROLADOR DE DOMÍNIO DC|  
-|Auditoria de replicação do serviço de diretório||||  
+|Auditoria de Replicação Detalhada do Serviço de Diretório||||  
+|Auditoria do acesso ao serviço de diretório||CONTROLADOR DE DOMÍNIO DC|CONTROLADOR DE DOMÍNIO DC|  
+|Auditoria de Alterações no Serviço de Diretório||CONTROLADOR DE DOMÍNIO DC|CONTROLADOR DE DOMÍNIO DC|  
+|Auditoria de Replicação do Serviço de Diretório||||  
 |**Logon e logoff**||||  
-|Auditoria de bloqueio de conta|Sim não||Sim não|  
+|Auditoria de Bloqueio de Conta|Sim não||Sim não|  
 |Auditoria das declarações de dispositivo/usuário||||  
-|Auditoria do modo IPsec estendido||||  
-|Auditoria do modo IPsec principal|||SE FOR|  
-|Auditoria do modo IPsec rápido||||  
-|Auditoria de logoff|Sim não|Sim não|Sim não|  
-|Auditoria de logon|Sim Sim|Sim Sim|Sim Sim|  
-|Auditoria do Servidor de Políticas de Rede|Sim Sim|||  
+|Auditoria de Modo Estendido do IPsec||||  
+|Auditoria de Modo Principal do IPsec|||SE FOR|  
+|Auditoria de Modo Rápido do IPsec||||  
+|Logoff de Auditoria|Sim não|Sim não|Sim não|  
+|Logon de Auditoria|Sim Sim|Sim Sim|Sim Sim|  
+|Auditoria de Servidor de Política de Rede|Sim Sim|||  
 |Auditoria de outros eventos de logon/logoff|||Sim Sim|  
-|Auditoria de logon especial|Sim não|Sim não|Sim Sim|  
+|Auditoria de Logon Especial|Sim não|Sim não|Sim Sim|  
 |**Acesso a objeto**||||  
-|Auditoria de aplicativo gerado||||  
+|Auditoria de Aplicativo Gerado||||  
 |Auditoria de serviços de certificação||||  
-|Auditoria de compartilhamento de arquivos detalhado||||  
-|Auditoria de compartilhamento de arquivos||||  
-|Auditoria de sistema de arquivos||||  
-|Auditoria de conexão de plataforma de filtragem||||  
-|Auditoria de descarte de pacote de plataforma de filtragem||||  
-|Auditoria de manipulação de identificador||||  
-|Auditoria de objeto de Kernel||||  
-|Auditoria de outros eventos de acesso ao objeto||||  
-|Auditoria do registro||||  
+|Compartilhamento de Arquivos de Auditoria Detalhado||||  
+|Auditoria de Compartilhamento de Arquivos||||  
+|Auditoria de Sistema de Arquivos||||  
+|Auditoria de Conexão de Plataforma de Filtragem||||  
+|Auditoria de Descarte de Pacote de Plataforma de Filtragem||||  
+|Auditoria de Manipulação de Identificador||||  
+|Auditoria de Objeto Kernel||||  
+|Auditoria de Outros Eventos de Acesso a Objetos||||  
+|Auditoria de Registro||||  
 |Auditoria do armazenamento removível||||  
 |Auditoria de SAM||||  
 |Auditoria do preparo da política de acesso central||||  
 |**Alteração de política**||||  
-|Auditoria da mudança na política de auditoria|Sim não|Sim Sim|Sim Sim|  
-|Auditoria da mudança na política de autenticação|Sim não|Sim não|Sim Sim|  
-|Auditoria da mudança na política de autorização||||  
-|Auditoria da mudança na política de plataforma de filtragem||||  
-|Auditoria da mudança na política de nível de regra MPSSVC|||Sim  |  
-|Auditoria de outros eventos de mudança de política||||  
+|Auditoria de Alteração de Políticas de Auditoria|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autenticação|Sim não|Sim não|Sim Sim|  
+|Auditoria de Alteração de Políticas de Autorização||||  
+|Auditoria de Alteração na Política da Plataforma de Filtragem||||  
+|Auditoria de Alteração na Política de Nível de Regra MPSSVC|||Sim  |  
+|Auditoria de Outros Eventos de Alteração de Políticas||||  
 |**Uso de privilégios**||||  
 |Auditoria de Uso de Privilégio Não Importante||||  
 |Auditoria de outros eventos de uso de privilégios||||  
-|Auditoria do uso de privilégios confidenciais||||  
-|**System**||||  
+|Auditoria de Uso de Privilégio Importante||||  
+|**Sistema**||||  
 |Auditoria do driver IPsec||Sim Sim|Sim Sim|  
 |Auditoria de outros eventos do sistema|Sim Sim|||  
-|Auditoria da mudança no estado de segurança|Sim não|Sim Sim|Sim Sim|  
-|Auditoria da extensão do sistema de segurança||Sim Sim|Sim Sim|  
+|Auditoria de Alteração no Estado de Segurança|Sim não|Sim Sim|Sim Sim|  
+|Auditoria de Extensão do Sistema de Segurança||Sim Sim|Sim Sim|  
 |Auditoria da integridade do sistema|Sim Sim|Sim Sim|Sim Sim|  
 |**Auditoria de acesso a objetos globais**||||  
 |Auditoria do driver IPsec||||  
 |Auditoria de outros eventos do sistema||||  
-|Auditoria da mudança no estado de segurança||||  
-|Auditoria da extensão do sistema de segurança||||  
+|Auditoria de Alteração no Estado de Segurança||||  
+|Auditoria de Extensão do Sistema de Segurança||||  
 |Auditoria da integridade do sistema||||  
 
 ## <a name="set-audit-policy-on-workstations-and-servers"></a>Definir política de auditoria em estações de trabalho e servidores  

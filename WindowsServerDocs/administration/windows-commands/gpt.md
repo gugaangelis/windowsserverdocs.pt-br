@@ -1,24 +1,20 @@
 ---
 title: GPT
-description: 'Tópico de comandos do Windows para * * * *- '
-ms.custom: na
+description: Tópico de comandos do Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1d6f9029-807f-4420-a336-36669b5361bc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 585e08aac887bc80f5211148f64f94402dd10f09
-ms.sourcegitcommit: dffde00fdcee2f0c3eaafae358e98e190a3957a2
+ms.openlocfilehash: 1db2a3fe21b0343c23bbc2432d4d07a500b72e8e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76973656"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842449"
 ---
 # <a name="gpt"></a>GPT
 
@@ -35,18 +31,18 @@ Em discos básicos da tabela de partição GUID (GPT), o atribui os atributos GP
 gpt attributes=<n>
 ```
 
-## <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 |   Parâmetro    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| atributos =<n> | Especifica o valor do atributo que você deseja aplicar à partição com foco. O campo atributo GPT é um campo de 64 bits que contém dois subcampos. O campo superior é interpretado apenas no contexto da ID da partição, enquanto o campo inferior é comum a todas as IDs de partição. Os valores aceitos incluem:<br /><br />-   **0x0000000000000001**. Especifica que a partição é exigida pelo computador para funcionar corretamente.<br />-   **0x8000000000000000**. Especifica que a partição não receberá uma letra de unidade por padrão quando o disco for movido para outro computador ou quando o disco for visto pela primeira vez por um computador.<br />-   **0x4000000000000000**. Oculta o volume de uma partição. Ou seja, a partição não será detectada pelo Gerenciador de montagem.<br />-   **0x2000000000000000**. Especifica que a partição é uma cópia de sombra de outra partição.<br />-   **0x1000000000000000**. Especifica que a partição é somente leitura. Esse atributo impede que o volume seja gravado no.<br /><br />Para obter mais informações sobre esses atributos, consulte a seção atributos em [Create_PARTITION_PARAMETERS estrutura](https://go.microsoft.com/fwlink/?LinkId=203812). |
+| atributos =<n> | Especifica o valor do atributo que você deseja aplicar à partição com foco. O campo atributo GPT é um campo de 64 bits que contém dois subcampos. O campo superior é interpretado apenas no contexto da ID da partição, enquanto o campo inferior é comum a todas as IDs de partição. Os valores aceitos incluem:<p>-   **0x0000000000000001**. Especifica que a partição é exigida pelo computador para funcionar corretamente.<br />-   **0x8000000000000000**. Especifica que a partição não receberá uma letra de unidade por padrão quando o disco for movido para outro computador ou quando o disco for visto pela primeira vez por um computador.<br />-   **0x4000000000000000**. Oculta o volume de uma partição. Ou seja, a partição não será detectada pelo Gerenciador de montagem.<br />-   **0x2000000000000000**. Especifica que a partição é uma cópia de sombra de outra partição.<br />-   **0x1000000000000000**. Especifica que a partição é somente leitura. Esse atributo impede que o volume seja gravado no.<p>Para obter mais informações sobre esses atributos, consulte a seção atributos em [Create_PARTITION_PARAMETERS estrutura](https://go.microsoft.com/fwlink/?LinkId=203812). |
 
 ## <a name="remarks"></a>Comentários
 
 - A partição do sistema EFI contém somente os binários necessários para iniciar o sistema operacional. Isso torna mais fácil para os binários OEM ou binários específicos de um sistema operacional serem colocados em outras partições.
 - Uma partição GPT básica deve ser selecionada para que essa operação tenha sucesso. Use o comando **selecionar partição** para selecionar uma partição GPT básica e deslocar o foco para ela.
 
-## <a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name=BKMK_examples></a>Disso
 
   Se você estiver movendo um disco GPT para um novo computador e quiser impedir que esse computador atribua automaticamente uma letra de unidade à partição com foco, digite:
   ```

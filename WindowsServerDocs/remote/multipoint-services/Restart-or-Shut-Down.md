@@ -1,24 +1,20 @@
 ---
 title: Reiniciar ou desligar
 description: Saiba como reiniciar ou desligar completamente um sistema nos serviços do MultiPoint
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fc9ce813-6ecb-4422-8f4b-5226386823f3
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 76155fa5f8baf877999bdc3eb0753d7805087a72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d6c09f6b7809bdcae19afbb6babc75887e1b57d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389424"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855669"
 ---
 # <a name="restart-or-shut-down"></a>Reiniciar ou desligar
 Talvez você precise reiniciar o computador host e todas as *estações* em seu sistema MultiPoint Services, se instruído, depois de instalar o hardware, software e atualizações de software. Se você adicionou novos dispositivos de hardware a uma estação, talvez você também precise associar os dispositivos de hardware a essa estação. Para obter mais informações sobre como *associar estações*, consulte o tópico [Alternar entre modos](Switch-Between-Modes.md).  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a443181-7ded-4912-8e40-5aa447faf00c
 title: Configurações de logon único do AD FS 2016
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949196"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860079"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS configurações de logon único
 
@@ -40,7 +39,7 @@ O AD FS dá suporte a vários tipos de experiências de logon único:
   
      No cenário OAuth, um token de atualização é usado para manter o estado de SSO do usuário dentro do escopo de um aplicativo específico.  
   
-     Se um dispositivo estiver registrado, AD FS definirá o tempo de expiração de um token de atualização com base na vida útil dos cookies de SSO persistente para um dispositivo registrado que é 7 dias por padrão para AD FS 2012R2 e até um máximo de 90 dias com AD FS 2016 se usarem seu dispositivo para Acesse AD FS recursos dentro de uma janela de 14 dias. 
+     Se um dispositivo estiver registrado, AD FS definirá o tempo de expiração de um token de atualização com base na vida útil dos cookies de SSO persistentes para um dispositivo registrado que é 7 dias por padrão para AD FS 2012R2 e até um máximo de 90 dias com AD FS 2016 se usarem seu dispositivo para acessar AD FS recursos em uma janela de 14 dias. 
 
 Se o dispositivo não estiver registrado, mas um usuário selecionar a opção "manter-me conectado", a hora de expiração do token de atualização será igual ao tempo de vida dos cookies de SSO persistentes para "Mantenha-me conectado", que é 1 dia por padrão, com o máximo de 7 dias. Caso contrário, o tempo de vida do token de atualização será igual ao tempo de vida do cookie SSO da sessão, que é 8  
   
@@ -48,7 +47,7 @@ Se o dispositivo não estiver registrado, mas um usuário selecionar a opção "
  
  Para o Windows Server 2012 R2, para habilitar o PSSO para o cenário "Mantenha-me conectado", você precisa instalar esse [hotfix](https://support.microsoft.com/kb/2958298/) que também faz parte do [pacote cumulativo de atualizações de agosto de 2014 para Windows RT 8,1, Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/kb/2975719).   
 
-Tarefa | PowerShell | Descrição
+{1&gt;Tarefa&lt;1} | PowerShell | Descrição
 ------------ | ------------- | -------------
 Habilitar/desabilitar SSO persistente | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| O SSO persistente é habilitado por padrão. Se estiver desabilitado, nenhum cookie PSSO será gravado.
 "Habilitar/desabilitar" Mantenha-me conectado " | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | O recurso "Mantenha-me conectado" está desabilitado por padrão. Se estiver habilitado, o usuário final verá uma opção "Mantenha-me conectado" na página de entrada AD FS
@@ -96,14 +95,14 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ```   
 
 ## <a name="multi-factor-authentication-mfa-behavior"></a>Comportamento da autenticação multifator (MFA)  
-É importante observar que, embora forneça períodos relativamente longos de logon único, AD FS solicitará autenticação adicional (autenticação multifator) quando um logon anterior se basear em credenciais primárias e não MFA, mas o logon atual requer MFA.  Isso é independente da configuração de SSO. AD FS, quando ele recebe uma solicitação de autenticação, primeiro determina se há um contexto SSO (como um cookie) e, em seguida, se a MFA for necessária (como se a solicitação for proveniente de fora), ele avaliará se o contexto SSO contém MFA ou não.  Caso contrário, a MFA será solicitada.  
+É importante observar que, embora forneça períodos relativamente longos de logon único, AD FS solicitará autenticação adicional (autenticação multifator) quando um logon anterior se basear em credenciais primárias e não MFA, mas o logon atual exigir MFA.  Isso é independente da configuração de SSO. AD FS, quando ele recebe uma solicitação de autenticação, primeiro determina se há um contexto SSO (como um cookie) e, em seguida, se a MFA for necessária (como se a solicitação for proveniente de fora), ele avaliará se o contexto SSO contém MFA ou não.  Caso contrário, a MFA será solicitada.  
 
 
   
 ## <a name="psso-revocation"></a>Revogação de PSSO  
  Para proteger a segurança, AD FS rejeitará qualquer cookie de SSO persistente emitido anteriormente quando as condições a seguir forem atendidas. Isso exigirá que o usuário forneça suas credenciais para se autenticar com o AD FS novamente. 
   
-- O usuário altera a senha  
+- Usuário altera a senha  
   
 - A configuração de SSO persistente está desabilitada no AD FS  
   
@@ -165,21 +164,21 @@ Para resumir:
  <tr align="center">
     <td>SSO =&gt;definir token de atualização =&gt;</td>
     <td>8 horas</td>
-    <td>N/D</td>
-    <td>N/D</td>
+    <td>{1&gt;N/A&lt;1}</td>
+    <td>{1&gt;N/A&lt;1}</td>
     <th></th>
     <td>8 horas</td>
-    <td>N/D</td>
-    <td>N/D</td>
+    <td>{1&gt;N/A&lt;1}</td>
+    <td>{1&gt;N/A&lt;1}</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;definir token de atualização =&gt;</td>
-    <td>N/D</td>
+    <td>{1&gt;N/A&lt;1}</td>
     <td>24 horas</td>
     <td>7 dias</td>
     <th></th>
-    <td>N/D</td>
+    <td>{1&gt;N/A&lt;1}</td>
     <td>24 horas</td>
     <td>Máximo de 90 dias com janela de 14 dias</td>
   </tr>

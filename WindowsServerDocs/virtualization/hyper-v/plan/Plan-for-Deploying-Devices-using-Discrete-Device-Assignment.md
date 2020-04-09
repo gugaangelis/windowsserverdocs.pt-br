@@ -2,19 +2,17 @@
 title: Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 description: Saiba mais sobre como o DDA funciona no Windows Server
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 08/21/2019
-ms.openlocfilehash: 114dd87b86bfffd1070229af57ae65deea2c2db0
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 9cc9614524c424398df550351aa2abfa7d173d43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923869"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856089"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 >Aplica-se a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server 2019, Windows Server 2019
@@ -29,11 +27,11 @@ Para saber mais sobre outros métodos de virtualização de GPU, consulte [plane
 Há suporte para a atribuição de dispositivo discreto para VMs de geração 1 ou 2.  Além disso, os convidados com suporte incluem Windows 10, Windows Server 2019, Windows Server 2016, Windows Server 2012r2 com [KB 3133690](https://support.microsoft.com/kb/3133690) aplicado e várias distribuições do [sistema operacional Linux.](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
 
 ## <a name="system-requirements"></a>Requisitos do sistema
-Além dos requisitos do [sistema para o Windows Server](../../../get-started/System-Requirements--and-Installation.md) e os [requisitos do sistema para o Hyper-V](../System-requirements-for-Hyper-V-on-Windows.md), a atribuição de dispositivo discreta requer hardware de classe de servidor capaz de conceder o controle do sistema operacional sobre a configuração do PCIe Fabric (controle nativo de PCI Express). Além disso, a raiz do PCIe complexa tem que dar suporte ao "ACS (Access Control Services"), que habilita o Hyper-V a forçar todo o tráfego de PCIe por meio do MMU de e/s.
+Além dos requisitos do [sistema para o Windows Server](../../../get-started/System-Requirements--and-Installation.md) e os [requisitos do sistema para o Hyper-V](../System-requirements-for-Hyper-V-on-Windows.md), a atribuição de dispositivo discreta requer hardware de classe de servidor capaz de conceder o controle do sistema operacional sobre a configuração da malha PCIe (controle nativo de PCI Express). Além disso, a raiz do PCIe complexa tem que dar suporte ao "ACS (Access Control Services"), que habilita o Hyper-V a forçar todo o tráfego de PCIe por meio do MMU de e/s.
 
 Esses recursos geralmente não são expostos diretamente no BIOS do servidor e, em geral, são ocultos por trás de outras configurações.  Por exemplo, os mesmos recursos são necessários para o suporte a SR-IOV e, no BIOS, talvez seja necessário definir "Habilitar SR-IOV".  Entre em contato com o fornecedor do sistema se não for possível identificar a configuração correta em seu BIOS.
 
-Para ajudar a garantir o hardware que o hardware é capaz de atribuir uma atribuição de dispositivo discreta, nossos engenheiros criaram um [script de perfil de computador](#machine-profile-script) que você pode executar em um host habilitado para Hyper-V para testar se o servidor está configurado corretamente e quais dispositivos são capazes de Atribuição de dispositivo discreta.
+Para ajudar a garantir o hardware que o hardware é capaz de atribuir uma atribuição de dispositivo discreta, nossos engenheiros criaram um [script de perfil de computador](#machine-profile-script) que você pode executar em um host habilitado para Hyper-V para testar se o servidor está configurado corretamente e quais dispositivos são capazes de atribuir uma atribuição de dispositivo discreta.
 
 ## <a name="device-requirements"></a>Requisitos do dispositivo
 Nem todo dispositivo PCIe pode ser usado com atribuição de dispositivo discreta.  Por exemplo, dispositivos mais antigos que utilizam interrupções de PCI herdadas (INTx) não têm suporte. As [Postagens de blog](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/) de Jake Oshin entram em mais detalhes – no entanto, para o consumidor, a execução do [script de perfil do computador](#machine-profile-script) exibirá quais dispositivos são capazes de serem usados para atribuição de dispositivo discreta.
