@@ -8,17 +8,17 @@ ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
-ms.date: 10/03/2016
-ms.openlocfilehash: c5daa73e2e0c59a262565237d979d2e1e544ae4f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.date: 04/07/2020
+ms.openlocfilehash: 96dadc56c17dcdbf391c480029e3124bf70dbec7
+ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857999"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80994517"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuais SUSE com suporte no Hyper-V
 
->Aplica-se a: Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
+>Aplica-se a: Windows Server 2019, Hyper-V Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows 10, Windows 8.1
 
 Veja a seguir um mapa de distribuição de recursos que indica os recursos em cada versão. Os problemas conhecidos e as soluções alternativas para cada distribuição são listados após a tabela.
 
@@ -34,43 +34,43 @@ Os drivers internos do SUSE Linux Enterprise Service para Hyper-V são certifica
 
 SLES12 + é de apenas 64 bits.
 
-|**Recurso**|**Versão do sistema operacional Windows Server**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
-|-|-|-|-|-|-|-|-|
-|**Disponibilidade**||Internos|Internos|Internos|Internos|Internos|Internos|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Tempo preciso do Windows Server 2016|2019, 2016|&#10004;|&#10004;|&#10004;||||
-|**[Rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
-|Quadros jumbo|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Marcação e entroncamento de VLAN|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Migração ao vivo|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Injeção de IP estático|2019, 2016, 2012 R2, 2012|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|
-|vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|||
-|Segmentação de TCP e descarregamentos de soma de verificação|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
-|SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;||||
-|**[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||||
-|Redimensionamento de VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Fibre Channel Virtual|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|
-|Suporte a corte|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
-|WWN DO SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;||||
-|**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**||||||||
-|Suporte ao kernel de PAE|2019, 2016, 2012 R2, 2012, 2008 R2|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|&#10004;|&#10004;|
-|Configuração da lacuna de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memória Dinâmica-adição a quente|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
-|Memória Dinâmica-balões|2019, 2016, 2012 R2, 2012|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
-|Redimensionamento de memória de Runtime|2019, 2016|&#10004;Observação 5, 6|&#10004;Observação 5, 6|&#10004;Observação 5, 6||||
-|**[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||||
-|Dispositivo de vídeo específico do Hyper-V|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**||||||||
-|Par chave/valor|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;Observação 7|&#10004;Observação 7|
-|Interrupção não mascarável|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Cópia de arquivo do host para o convidado|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
-|comando lsvmbus|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;||||
-|Soquetes do Hyper-V|2019, 2016|&#10004;|&#10004;|||||
-|Passagem de PCI/DDA|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
-|**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**||||||||
-|Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9||
-|Inicialização segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
+|**Recurso**|**Versão do sistema operacional Windows Server**|**SLES 15 SP1**|**SLES 15**|**SLES 12 SP3-SP5**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
+|-|-|-|-|-|-|-|-|-|
+|**Disponibilidade**||Internos|Internos|Internos|Internos|Internos|Internos|Internos|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Tempo preciso do Windows Server 2016|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||||
+|**[Rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|||||||||
+|Quadros jumbo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Marcação e entroncamento de VLAN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Migração ao vivo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Injeção de IP estático|2019, 2016, 2012 R2|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|
+|vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
+|Segmentação de TCP e descarregamentos de soma de verificação|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
+|SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||||
+|**[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||||||
+|Redimensionamento de VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Fibre Channel Virtual|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|
+|Suporte a corte|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
+|WWN DO SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
+|**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|Suporte ao kernel de PAE|2019, 2016, 2012 R2|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|&#10004;|&#10004;|
+|Configuração da lacuna de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Memória Dinâmica-adição a quente|2019, 2016, 2012 R2|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
+|Memória Dinâmica-balões|2019, 2016, 2012 R2|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
+|Redimensionamento de memória de Runtime|2019, 2016|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6||||
+|**[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|Dispositivo de vídeo específico do Hyper-V|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
+|Par chave/valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;Observação 7|&#10004;Observação 7|
+|Interrupção não mascarável|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Cópia de arquivo do host para o convidado|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
+|comando lsvmbus|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
+|Soquetes do Hyper-V|2019, 2016|&#10004;|&#10004;|&#10004;|||||
+|Passagem de PCI/DDA|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
+|**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
+|Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9||
+|Inicialização segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 
 ## <a name="notes"></a><a name="BKMK_notes"></a>Registra
 
