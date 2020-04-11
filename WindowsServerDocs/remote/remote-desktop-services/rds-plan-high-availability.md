@@ -1,24 +1,20 @@
 ---
 title: Serviços de Área de Trabalho Remota – Alta disponibilidade
 description: Informações de planejamento sobre como configurar uma implantação de RDS altamente disponível.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ec630ea0-ab80-4dfe-a25f-f4f601651f72
 author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 3d3d216c528b0b83d9dfd5265fe153a388c7382a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86c5f59fcd403e838a316174840b93608d7f06ec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387280"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858139"
 ---
 # <a name="remote-desktop-services---high-availability"></a>Serviços de Área de Trabalho Remota – Alta disponibilidade
 

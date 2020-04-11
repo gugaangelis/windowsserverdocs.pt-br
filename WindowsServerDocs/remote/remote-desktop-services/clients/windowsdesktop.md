@@ -1,24 +1,20 @@
 ---
 title: Introdução ao cliente da Área de Trabalho do Windows
 description: Informações básicas sobre o cliente da Área de Trabalho do Windows.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 03/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b7aefa169fe2121c5a2da1f913714d23d989d16
-ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
+ms.openlocfilehash: 2a04d6058b40d87dba7116760bbab164979435ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79518731"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861299"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 

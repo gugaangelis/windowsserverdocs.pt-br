@@ -1,24 +1,20 @@
 ---
 title: Configuração recomendada para desktops VDI
 description: Configurações e definições recomendadas para minimizar a sobrecarga para desktops com Windows 10 1607 (10.0.1393) usados como imagens de VDI
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 12/18/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: ca6d82973ae8201cdb4021c205a580a11c599b2f
-ms.sourcegitcommit: d7045c56046dbfaefd59a8ba132bfd8444690a73
+ms.openlocfilehash: 2ab78ccbc4e49bd95a74fe1e17d5ea14891eb1b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256666"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857269"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>Configurações recomendadas para desktops de VDI
 

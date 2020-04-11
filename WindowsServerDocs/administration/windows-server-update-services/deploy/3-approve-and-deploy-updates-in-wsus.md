@@ -2,7 +2,6 @@
 title: Etapa 3 – Aprovar e implantar atualizações no WSUS
 description: Tópico sobre o WSUS (Serviço de Atualização do Windows Server) – aprovar e implantar atualizações no WSUS é a etapa três em um processo de quatro etapas para implantar o WSUS
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 8d728ff9-170f-47e6-aefe-52be93315a75
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7731cc84f946bfab7f53a3446ed90d1be92cae75
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: d8758c4f957d2d9abb156652a568b23634cb1bf0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639805"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828849"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>Etapa 3: Aprovar e implantar atualizações no WSUS
 
@@ -29,7 +28,7 @@ Os computadores de um grupo de computadores contatam automaticamente o servidor 
 |[3.2. Configurar regras de aprovação automática](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|Configure o WSUS para aprovar automaticamente a instalação de atualizações para grupos selecionados e como aprovar revisões de atualizações existentes.|
 |[3.3. Examinar as atualizações instaladas com os Relatórios do WSUS](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|Examine as atualizações que foram instaladas, os computadores que receberam essas atualizações e outros detalhes usando o recurso de Relatórios do WSUS.|
 
-## <a name="31-approve-and-deploy-wsus-updates"></a><a name="BKM_3.1."></a>3.1. Aprovar e implantar atualizações do WSUS
+## <a name="31-approve-and-deploy-wsus-updates"></a><a name=BKM_3.1.></a>3.1. Aprovar e implantar atualizações do WSUS
 Use o procedimento a seguir para aprovar e implantar atualizações.
 
 #### <a name="to-approve-and-deploy-wsus-updates"></a>Para aprovar e implantar atualizações do WSUS
@@ -48,7 +47,7 @@ Use o procedimento a seguir para aprovar e implantar atualizações.
 
 7.  Será exibida a janela **Progresso da Aprovação** , que mostra o progresso das tarefas que afetam a aprovação de atualizações. Quando o processo de aprovação for concluído, clique em **Fechar**.
 
-## <a name="32-configure-auto-approval-rules"></a><a name="BKM_3.2.a."></a>3.2. Configurar regras de aprovação automática
+## <a name="32-configure-auto-approval-rules"></a><a name=BKM_3.2.a.></a>3.2. Configurar regras de aprovação automática
 As Aprovações Automáticas permitem que você especifique como aprovar automaticamente a instalação de atualizações para grupos selecionados e como aprovar revisões de atualizações existentes.
 
 #### <a name="to-configure-automatic-approvals"></a>Para configurar as Aprovações Automáticas
@@ -73,7 +72,7 @@ As Aprovações Automáticas permitem que você especifique como aprovar automat
 
 7.  Clique em **OK** para fechar a caixa de diálogo Aprovações Automáticas.
 
-## <a name="33-review-installed-updates-with-wsus-reports"></a><a name="BKM_3.3."></a>3.3. Examinar as atualizações instaladas com os Relatórios do WSUS
+## <a name="33-review-installed-updates-with-wsus-reports"></a><a name=BKM_3.3.></a>3.3. Examinar as atualizações instaladas com os Relatórios do WSUS
 Após 24 horas da aprovação das atualizações, você poderá usar o recurso de Relatórios do WSUS para determinar se as atualizações foram implantadas nos computadores de grupos de teste. Para verificar o status de uma atualização, é possível usar o recurso de Relatórios do WSUS da seguinte maneira.
 
 #### <a name="to-review-updates"></a>Para examinar as atualizações

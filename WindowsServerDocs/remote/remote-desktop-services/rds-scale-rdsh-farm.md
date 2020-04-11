@@ -1,23 +1,19 @@
 ---
 title: Expandir sua implantação do RDS adicionando um farm de Host da Sessão RD
 description: Adicione um segundo Host da Sessão RD ao seu ambiente de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: da0dbd4332cd05d580c2b1f4dc5eb0734b36b13e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61d5569c44d7c7ea300b85bf635fccf86275423d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403888"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859049"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Expandir sua implantação de Serviços de Área de Trabalho Remota adicionando um farm de Host da Sessão RD
 
@@ -44,7 +40,7 @@ Use as etapas a seguir para adicionar outro Host da Sessão RD à sua implantaç
    
    1. Crie um endereço IP público para a máquina virtual executando o RDMS (Serviços de Gerenciamento da Área de Trabalho Remota). A máquina virtual do RDMS normalmente será a máquina virtual executando a primeira instância da função do Agente de Conexão de Área de Trabalho Remota.  
        1. No portal do Azure, clique em **Procurar > Grupos de recursos**, clique no grupo de recursos para a implantação e, em seguida, clique na máquina virtual do RDMS (por exemplo, Contoso-Cb1).  
-       2. Clique em **Configurações > Interfaces de rede** e, em seguida, clique no adaptador de rede correspondente.   
+       2. Clique em **Configurações > Interfaces de rede** e no adaptador de rede correspondente.   
        3. Clique em **Configurações > Endereço IP**.
        4. Em **Endereço IP público**, selecione **Habilitado** e clique em **Endereço IP**.   
        5. Se tiver um endereço IP público que deseja usar, selecione-o na lista. Caso contrário, clique em **Criar novo**, insira um nome e, em seguida, clique em **OK** e em **Salvar**.   

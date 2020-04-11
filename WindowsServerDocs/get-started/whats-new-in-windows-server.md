@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce821c2e793792032e2f91aa806b1bd8d8a76f6
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: 6c424d19c006cfae6343d577dc08ff3553a5616b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956067"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825869"
 ---
 # <a name="whats-new-in-windows-server"></a>Novidades no Windows Server
 
@@ -35,7 +35,7 @@ Versões do Canal Semestral:
 
 As versões do Canal semestral do Windows Server fornecem novos recursos de sistema operacional em um ritmo mais rápido. Uma nova versão é lançada a cada seis meses e tem suporte por 18 meses. Verifique as [Informações sobre versão do Windows Server](windows-server-release-info.md) e a [Página de suporte do ciclo de vida](https://support.microsoft.com/lifecycle) para datas de suporte e use sempre a versão mais recente, se possível.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Notas de versão: problemas importantes no Windows Server 2019](../get-started-19/rel-notes-19.md)
 - [Notas de versão: Problemas importantes no Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)

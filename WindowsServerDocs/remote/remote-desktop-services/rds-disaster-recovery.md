@@ -1,23 +1,19 @@
 ---
 title: Proteger a implantação de RDS – recuperação de desastre
 description: Saiba mais sobre as opções de recuperação de desastre para os Serviços de Área de Trabalho Remota
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9ff6a3b0-ea14-424e-9524-209252e9f1a8
 author: lizap
 ms.author: elizapo
 ms.date: 06/12/2017
-ms.openlocfilehash: 6691a6ab0e8762840faf3dd7fa8a8aea8cae0e47
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5c3257be5b3e9a53b8aa2400777f0519f8891843
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404001"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861289"
 ---
 # <a name="configure-disaster-recovery-for-remote-desktop-services"></a>Configurar a recuperação de desastres para os Serviços de Área de Trabalho Remota
 

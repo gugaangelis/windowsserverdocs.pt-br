@@ -1,24 +1,20 @@
 ---
 title: RDS - parceiros para hospedar aplicativos e áreas de trabalho
 description: Lista de parceiros que podem hospedar áreas de trabalho e aplicativos usando o RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/27/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4d9a6d4885566204bf9fc29cd9513d25d1b39deb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 503a9917e271c69a78e5f26db6556d788254c823
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949854"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861359"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>Parceiros de hospedagem de Serviços de Área de Trabalho Remota e avaliação
 
@@ -36,7 +32,7 @@ Já é um Parceiro da Microsoft e tem dúvidas? Contate a equipe de área de tra
 
 ## <a name="partners-who-have-passed-the-learning-path-assessment"></a>Parceiros que já passaram pela avaliação do caminho de aprendizagem 
 
-Se você for um cliente procurando por um parceiro para ajudá-lo a hospedar áreas de trabalho do Windows e aplicativos no Azure para seus usuários, compilamos uma lista de parceiros que já passaram pela avaliação. Aqui está uma [lista de parceiros](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/remote/remote-desktop-services/RDS-Hosting-Partners.pdf) de 28/03/2017 que você pode baixar.
+Se você for um cliente procurando por um parceiro para ajudá-lo a hospedar áreas de trabalho do Windows e aplicativos no Azure para seus usuários, compilamos uma lista de parceiros que já passaram pela avaliação. Aqui está uma [lista de parceiros](rds-hosting-partners.md) de 28/03/2017 que você pode baixar.
 
 Você pode encontrar mais informações sobre cada parceiro usando as seguintes etapas:
 

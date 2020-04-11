@@ -1,23 +1,19 @@
 ---
 title: Usar as áreas de trabalho de sessão pessoal com os Serviços de Área de Trabalho Remota
 description: Aprenda a compartilhar áreas de trabalho personalizadas e atribuídas por meio de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: 9386733911ca81ad60d038854bd68e5603aae4cf
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: c0c36793d08391ad98fa797004ed6dec9883e9f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812278"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857399"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>Usar as áreas de trabalho de sessão pessoal com os Serviços de Área de Trabalho Remota
 
@@ -99,4 +95,4 @@ O cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta as associações
 -Path \<string\>
 
 
-Todos os novos cmdlets dão suporte aos parâmetros comuns: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer e -OutVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).
+Todos os novos cmdlets dão suporte aos parâmetros comuns: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer e -OutVariable. Para obter mais informações, confira [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).

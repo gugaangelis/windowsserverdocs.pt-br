@@ -1,25 +1,21 @@
 ---
 title: Bem-vindo aos Serviços de Área de Trabalho Remota no Windows Server 2016
 description: Fornece uma visão geral dos Serviços de Área de Trabalho Remota
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 02/22/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a04905d5247ae940ca900297171d1112cf936b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70979eae2ad9f54ab895572f97d9b5968cff31d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404210"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854679"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>Bem-vindo aos serviços de área de trabalho remota 
 
@@ -46,7 +42,7 @@ Com essas opções e configurações, você tem a flexibilidade de implantar as 
 ## <a name="next-steps"></a>Próximas etapas
 
 Aqui estão algumas das próximas etapas para ajudá-lo a obter uma melhor compreensão do RDS e até mesmo começar a implantar seu próprio ambiente:
--   Compreender as [configurações compatíveis](rds-supported-config.md) para o RDS com as diversas versões do Windows e do Windows Server
--   [Planejar e projetar](rds-plan-and-design.md) um ambiente de RDS para acomodar vários requisitos, como alta disponibilidade e autenticação multifator.
--   Examine os [modelos de arquitetura dos Serviços de Área de Trabalho Remota](desktop-hosting-logical-architecture.md) que funcionam melhor para seu ambiente desejado.
--   Comece a [implantar um ambiente de RDS com o ARM e o Azure Marketplace](rds-in-azure.md).
+-    Compreender as [configurações compatíveis](rds-supported-config.md) para o RDS com as diversas versões do Windows e do Windows Server
+-    [Planejar e projetar](rds-plan-and-design.md) um ambiente de RDS para acomodar vários requisitos, como alta disponibilidade e autenticação multifator.
+-    Examine os [modelos de arquitetura dos Serviços de Área de Trabalho Remota](desktop-hosting-logical-architecture.md) que funcionam melhor para seu ambiente desejado.
+-    Comece a [implantar um ambiente de RDS com o ARM e o Azure Marketplace](rds-in-azure.md).

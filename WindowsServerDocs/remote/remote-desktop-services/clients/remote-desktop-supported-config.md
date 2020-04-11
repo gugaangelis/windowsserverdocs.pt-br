@@ -1,12 +1,8 @@
 ---
 title: Cliente de Área de Trabalho Remota - configuração com suporte
 description: Saiba quais computadores você pode acessar usando clientes de Área de Trabalho Remota
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bb932dad-6f74-484f-8f7b-dd957b615d44
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc8eb68aebc904640aa4adc3e75cdeda34e97b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1480a2a14a1c3fc23c4e5122e366741d37d9091f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387653"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856009"
 ---
 # <a name="remote-desktop-client---supported-configuration"></a>Cliente de Área de Trabalho Remota - configuração com suporte
 
@@ -27,7 +23,7 @@ ms.locfileid: "71387653"
 É possível conectar a computadores que executam os seguintes sistemas operacionais Windows:
 - Windows 10 Pro
 - Windows 10 Enterprise
-- Windows 8 Enterprise
+- O Windows 8 Enterprise
 - Windows 8 Professional
 - Windows 7 Professional
 - Windows 7 Enterprise

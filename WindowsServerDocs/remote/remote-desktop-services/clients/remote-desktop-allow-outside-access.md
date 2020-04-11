@@ -1,24 +1,20 @@
 ---
 title: Área de Trabalho Remota – Conceder acesso ao seu computador de fora da rede
 description: Saiba mais sobre as opções para acessar remotamente seu computador de fora da rede
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: haley-rowland
 manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a8062530d5ea546ebb822f1c1149aeca5799a023
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9cc1b7568006ef9e32132d772702212c5fd78ec4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387821"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857419"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>Área de Trabalho Remota – Conceder acesso ao seu computador de fora da rede
 

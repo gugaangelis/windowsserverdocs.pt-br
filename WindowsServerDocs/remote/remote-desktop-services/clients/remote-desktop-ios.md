@@ -1,12 +1,8 @@
 ---
 title: Introdução ao cliente para iOS
 description: Saiba como configurar o cliente da Área de Trabalho Remota para iOS
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
@@ -14,12 +10,12 @@ manager: lizross
 ms.author: helohr
 date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef13227a9f7b83f01786bbb11498da912c86581b
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 686971ac3c56402bb42064e9f5babff6128c7df9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323458"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856029"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 

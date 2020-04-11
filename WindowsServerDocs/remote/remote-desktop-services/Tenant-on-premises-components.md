@@ -1,24 +1,20 @@
 ---
 title: Componentes locais do locatário
 description: Descreve os componentes locais na implantação do RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: 5ae0a711d146de5b7eff272916cc7f06568848e6
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 849b0e3eb751c4e45a7c23da4230c7c4eb6bfcb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812267"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854699"
 ---
 # <a name="tenant-on-premises-components"></a>Componentes locais do locatário
 

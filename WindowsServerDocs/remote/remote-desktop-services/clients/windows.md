@@ -1,12 +1,8 @@
 ---
 title: Introdução ao cliente para Microsoft Store
 description: Etapas básicas de configuração para o cliente de Área de Trabalho Remota para Microsoft Store.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 13fbe22ef33ea7861ae4c8677792b5758f37ad0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64362c6f6da77ee15a95ddcbaf33c6cb9ecd5cf4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387606"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861429"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Introdução ao cliente para Microsoft Store
 
@@ -193,7 +189,7 @@ Dois modos de mouse estão disponíveis para interagir com a sessão.
 > [!NOTE]
 > Ao interagir com o Windows 8 ou mais recente, gestos de toque nativos são compatíveis no modo de toque direto.
 
-| Modo de mouse    | Operação do mouse      | Gesto                                                               |
+| Modo do mouse    | Operação do mouse      | Gesto                                                               |
 |---------------|----------------------|-----------------------------------------------------------------------|
 | Toque direto  | Clicar com o botão esquerdo do mouse           | Tocar com um dedo                                                          |
 | Toque direto  | Clicar com o botão direito do mouse          | Tocar e segurar com um dedo                                                 |

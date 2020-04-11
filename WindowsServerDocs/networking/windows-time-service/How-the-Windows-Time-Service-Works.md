@@ -1,20 +1,19 @@
 ---
 ms.assetid: d1953097-63ea-4a0e-b860-2f3b7c175c41
 title: Como funciona o serviço Horário do Windows
-description: ''
-author: eross-msft
-ms.author: lizross
+author: dcuomo
+ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: d8532dedb6473a34591a1f160a94a785cc4ba367
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b8b30893abe4cdfe8d7e8c5a95ede651f85643a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315169"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861659"
 ---
 # <a name="how-the-windows-time-service-works"></a>Como funciona o serviço Horário do Windows
 
@@ -207,10 +206,10 @@ A tabela a seguir lista as consultas que um controlador de domínio faz para loc
 |----------------|---------------------|------------|------------------------------|  
 |1|Controlador de domínio pai|No local|Prefere uma fonte de horário confiável, mas poderá sincronizar com uma fonte de horário não confiável se for o que está disponível.|  
 |2|Controlador de domínio local|No local|Só sincroniza com uma fonte de horário confiável.|  
-|3|Emulador de PDC local|No local|Não se aplica.<br /><br />Um controlador de domínio não tenta sincronizar com ele mesmo.|  
+|3|Emulador de PDC local|No local|Não se aplica.<p>Um controlador de domínio não tenta sincronizar com ele mesmo.|  
 |4|Controlador de domínio pai|Fora do site|Prefere uma fonte de horário confiável, mas poderá sincronizar com uma fonte de horário não confiável se for o que está disponível.|  
 |5|Controlador de domínio local|Fora do site|Só sincroniza com uma fonte de horário confiável.|  
-|6|Emulador de PDC local|Fora do site|Não se aplica.<br /><br />Um controlador de domínio não tenta sincronizar com ele mesmo.| 
+|6|Emulador de PDC local|Fora do site|Não se aplica.<p>Um controlador de domínio não tenta sincronizar com ele mesmo.| 
   
 **Observação**  
   

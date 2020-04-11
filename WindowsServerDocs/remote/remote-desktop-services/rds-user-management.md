@@ -1,24 +1,20 @@
 ---
 title: Gerenciar usuários na coleção de RDS
 description: Saiba como gerenciar usuários nos Serviços de Área de Trabalho Remota.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 870a6360f685c2de31485135202b0f1415c90d85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403856"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858679"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>Gerenciar usuários na coleção de RDS
 
@@ -26,8 +22,8 @@ ms.locfileid: "71403856"
 
 Como administrador, você pode gerenciar diretamente quais usuários têm acesso a coleções específicas. Dessa forma, você pode criar uma coleção com aplicativos padrão para os operadores de informações, mas, em seguida, crie uma coleção separada com aplicativos de modelagem de gráficos avançados para engenheiros. Há duas etapas principais para gerenciar o acesso de usuário em uma implantação de RDS (Serviços de Área de Trabalho Remota):
 
-1.  [Criar usuários e grupos no Active Directory](#create-your-users-and-groups-in-active-directory)
-2.  [Atribuir usuários e grupos a coleções](#assign-users-and-groups-to-collections)
+1.    [Criar usuários e grupos no Active Directory](#create-your-users-and-groups-in-active-directory)
+2.    [Atribuir usuários e grupos a coleções](#assign-users-and-groups-to-collections)
 
 
 ## <a name="create-your-users-and-groups-in-active-directory"></a>Criar seus usuários e grupos no Active Directory

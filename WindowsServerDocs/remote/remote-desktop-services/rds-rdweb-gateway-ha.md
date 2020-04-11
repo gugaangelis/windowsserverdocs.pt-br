@@ -1,23 +1,19 @@
 ---
 title: Adicionar alta disponibilidade ao front-end de Gateway Web e Web da Área de Trabalho Remota
 description: Fornece etapas para instalar os servidores Web e Gateway de área de trabalho remota em uma implantação do RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 5838480847e5f86a03f264a0ece1f8d4097597cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387230"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860279"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Adicionar alta disponibilidade ao front-end de Gateway Web e Web da Área de Trabalho Remota
 
@@ -76,10 +72,10 @@ Configure um servidor para atuar como um gateway e Web da área de trabalho remo
     8.  No Gerenciador do IIS, em **Site Padrão**, selecione **Feed**, **FeedLogon** e **Páginas**.
     9. Para cada parte:
         1.  Clique com o botão direito do mouse em **Chave do Computador** e, em seguida, clique em **Abrir Recurso**.
-        2.  Para a chave de validação, desmarque **Gerar automaticamente no tempo de execução** e cole a chave que você copiou na etapa g.
+        2.  Para a chave de validação, desmarque **Gerar automaticamente no runtime** e cole a chave que você copiou na etapa g.
     10.  Minimize a Conexão da área de trabalho remota para esse servidor Web da área de trabalho remota.  
     11.  Repita as etapas de b até e para o segundo Servidor de Acesso via Web da Área de Trabalho Remota, terminando na exibição de recurso da **Chave do computador**.
-    12. Para a chave de validação, desmarque **Gerar automaticamente no tempo de execução** e cole a chave que você copiou na etapa g.
+    12. Para a chave de validação, desmarque **Gerar automaticamente no runtime** e cole a chave que você copiou na etapa g.
     13. Clique em **Aplicar**.
     14. Conclua esse processo para as páginas **RDWeb**, **Feed**, **FeedLogon** e **Pages**.
     15. Minimize a janela Conexão de área de trabalho remota para o segundo Servidor de Acesso via Web da Área de Trabalho Remota e maximize a janela Conexão de área de trabalho remota para o primeiro Servidor de Acesso via Web da Área de Trabalho Remota.  

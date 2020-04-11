@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: f2940e5ad75fab90f717284eabafd555573cab35
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: ce4c35f0b65d0461e9dc2e23404d2637aecff415
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973857"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827099"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparação das edições Standard e Datacenter do Windows Server 2016
 
@@ -45,19 +45,19 @@ ms.locfileid: "71973857"
 | -------------------                | ----------    | ----------                   | ---------------------------    |  
 | Serviços de Certificados do Active Directory|              | Sim                          | Sim                            |
 | Active Directory Domain Services    |               | Sim                          | Sim                            |
-| Serviços de Federação do Active Directory (AD FS)|               | Sim                          | Sim                            |
+| Serviços de Federação do Active Directory|               | Sim                          | Sim                            |
 | AD Lightweight Directory Services| |Sim|Sim|
 | AD Rights Management Services| |Sim|Sim|
-| Atestado de integridade de dispositivo| |Sim|Sim|
+| Atestado de Integridade do Dispositivo| |Sim|Sim|
 | Servidor DHCP| |Sim|Sim|
 | Servidor DNS| |Sim|Sim|
 | Servidor de Fax| |Sim|Sim|
 | Serviços de Arquivo e Armazenamento|Servidor de arquivos|Sim|Sim|
 | Serviços de Arquivo e Armazenamento|BranchCache para arquivos de rede|Sim|Sim|
-| Serviços de Arquivo e Armazenamento|Eliminação de Duplicação de Dados|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|Eliminação de duplicação de dados|Sim|Sim|
 | Serviços de Arquivo e Armazenamento|Namespaces DFS|Sim|Sim|
 | Serviços de Arquivo e Armazenamento|Replicação do DFS|Sim|Sim|
-| Serviços de Arquivo e Armazenamento|Gerenciador de Recursos de Servidor de Arquivos|Sim|Sim|
+| Serviços de Arquivo e Armazenamento|File Server Resource Manager|Sim|Sim|
 | Serviços de Arquivo e Armazenamento|Serviço de Agente VSS de Servidor de Arquivos|Sim|Sim|
 | Serviços de Arquivo e Armazenamento|iSCSI Target Server|Sim|Sim|
 | Serviços de Arquivo e Armazenamento|Provedor de Armazenamento do destino iSCSI|Sim|Sim|
@@ -71,10 +71,10 @@ ms.locfileid: "71973857"
 | Network Policy and Access Services| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 | Serviços de impressão e documentos| |Sim|Sim|
 | Acesso remoto| |Sim|Sim|
-| Serviços da Área de Trabalho Remota| |Sim|Sim|
+| Serviços da área de trabalho Remota| |Sim|Sim|
 | Serviços de Ativação por Volume| |Sim|Sim|
 | Web Services (IIS)| |Sim|Sim|
-| Serviços de Implantação do Windows| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
+| Windows Deployment Services| |Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 | Experiência do Windows Server Essentials| |Sim|Sim|
 | Windows Server Update Services| |Sim|Sim|
 
@@ -84,13 +84,13 @@ ms.locfileid: "71973857"
 |-------------------|----------|---------------------------|  
 |.NET Framework 3.5|Sim|Sim|
 |.NET Framework 4.6|Sim|Sim|
-|Serviço de Transferência Inteligente em Segundo Plano (BITS)|Sim|Sim|
+|BITS|Sim|Sim|
 |Criptografia de Unidade de Disco BitLocker|Sim|Sim|
-|Desbloqueio pela rede do BitLocker|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
+|Desbloqueio de Rede do BitLocker|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |BranchCache|Sim|Sim|
 |Cliente NFS|Sim|Sim|
 |Contêineres|Sim (contêineres do Windows ilimitados; até 2 contêineres do Hyper-V)|Sim (todos os tipos de contêineres ilimitados)|
-|Data Center Bridging|Sim|Sim|
+|Ponte de Data Center|Sim|Sim|
 |Direct Play|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Armazenamento Avançado|Sim|Sim|
 |Clustering de failover|Sim|Sim|
@@ -107,7 +107,7 @@ ms.locfileid: "71973857"
 |Message Queueing|Sim|Sim|
 |Multipath I/O|Sim|Sim|
 |MultiPoint Connector|Sim|Sim|
-|Balanceamento de Carga de Rede|Sim|Sim|
+|Network Load Balancing|Sim|Sim|
 |Protocolo PNRP|Sim|Sim|
 |Quality Windows Audio-Video Experience|Sim|Sim|
 |Kit de Administração do Gerenciador de Conexões|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
@@ -117,7 +117,7 @@ ms.locfileid: "71973857"
 |RPC sobre Proxy HTTP|Sim|Sim|
 |Coleta de Eventos de Instalação e Inicialização|Sim|Sim|
 |Serviços TCP/IP Simples|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
-|Suporte para Compartilhamento de Arquivos SMB 1.0/ CIFS|Instalado|Instalado|
+|Suporte para Compartilhamento de Arquivos SMB 1.0/ CIFS|Instalada|Instalada|
 |Limite de Largura de Banda do SMB|Sim|Sim|
 |Servidor SMTP|Sim|Sim|
 |Serviço SNMP|Sim|Sim|
@@ -128,32 +128,32 @@ ms.locfileid: "71973857"
 |Ferramentas de Blindagem de VM para Gerenciamento de Malha|Sim|Sim|
 |Redirecionador WebDAV|Sim|Sim|
 |Windows Biometric Framework|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
-|Recursos do Windows Defender|Instalado|Instalado|
+|Recursos do Windows Defender|Instalada|Instalada|
 |Windows Identity Foundation 3.5|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Banco de Dados Interno do Windows|Sim|Sim|
-|Windows PowerShell|Instalado|Instalado|
+|Usando o Windows PowerShell|Instalada|Instalada|
 |Serviço de Ativação de Processos do Windows|Sim|Sim|
 |Serviço Windows Search|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Backup do Windows Server|Sim|Sim|
 |Ferramentas de Migração do Windows Server|Sim|Sim|
-|Gerenciamento de Armazenamento com base nos padrões do Windows|Sim|Sim|
+|Gerenciamento de Armazenamento Baseado em Padrões do Windows|Sim|Sim|
 |Windows TIFF IFilter|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 |Extensão IIS WinRM|Sim|Sim|
 |Servidor WINS|Sim|Sim|
 |Serviço de LAN sem fio|Sim|Sim|
-|Suporte a WoW64|Instalado|Instalado|
+|Suporte a WoW64|Instalada|Instalada|
 |Visualizador XPS|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 
 |Recursos disponíveis em geral|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|---------------------------|  
-|Analisador de Práticas Recomendadas|Sim|Sim|
+|Analisador de práticas recomendadas|Sim|Sim|
 |Direct Access|Sim|Sim|
 |Memória Dinâmica (em virtualização)|Sim|Sim|
 |Adicionar/Substituir RAM a quente|Sim|Sim|
 |Console de Gerenciamento Microsoft|Sim|Sim|
 |Interface Mínima do Servidor|Sim|Sim|
-|Balanceamento de Carga de Rede|Sim|Sim|
-|Windows PowerShell|Sim|Sim|
+|Network Load Balancing|Sim|Sim|
+|Usando o Windows PowerShell|Sim|Sim|
 |Opção de instalação do Server Core|Sim|Sim|
 |Opção de instalação do Nano Server|Sim|Sim|
 |Gerenciador do Servidor|Sim|Sim|
@@ -161,11 +161,11 @@ ms.locfileid: "71973857"
 | Redes definidas por software | Não | <strong>Sim</strong> |
 |Réplica de Armazenamento | Não | <strong>Sim</strong> |
 |Espaços de Armazenamento|Sim|Sim|
-|Espaços de Armazenamento Diretos|Não| <strong>Sim</strong> |
+|Espaços de Armazenamento Direct|Não| <strong>Sim</strong> |
 |Serviços de Ativação por Volume|Sim|Sim|
 |Integração VSS (Serviço de Cópias de Sombra de Volume)|Sim|Sim|
 |Windows Server Update Services|Sim|Sim|
-|Gerenciador de Recursos de Sistema do Windows|Sim|Sim|
+|Gerenciador de recursos de sistema do Windows|Sim|Sim|
 |Log de Licença de Servidor|Sim|Sim|
 |Ativação herdada|Como convidado, se hospedado no Datacenter| <strong>Pode ser host ou convidado</strong> |
 |Pastas de trabalho|Sim|Sim|
