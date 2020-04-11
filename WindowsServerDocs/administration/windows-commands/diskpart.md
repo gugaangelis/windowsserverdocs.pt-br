@@ -1,27 +1,27 @@
 ---
 title: DiskPart
-description: O tópico comandos do Windows para o DiskPart, que ajuda você a gerenciar as unidades do computador.
+description: O tópico comandos do Windows para o **DiskPart**, que ajuda você a gerenciar as unidades do computador.
 ms.prod: windows-server
 ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 45fe66e4843b96db8e4593c0e963e4a80dbd22c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb2921d8da4a4a29c4f700107ef5b6d7bfb41481
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845469"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122531"
 ---
 # <a name="diskpart"></a>DiskPart
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 e Windows Server 2008 R2, Windows Server 2008
 
-Os comandos do DiskPart ajudam você a gerenciar as unidades de seu computador (discos, partições, volumes ou discos rígidos virtuais). 
+Os comandos do DiskPart ajudam você a gerenciar as unidades de seu computador (discos, partições, volumes ou discos rígidos virtuais).
 
 Antes de usar os comandos do DiskPart, primeiro você deve listar e, em seguida, selecionar um objeto para dar o foco. Quando um objeto tiver foco, todos os comandos do DiskPart que você digitar agirão nesse objeto.
 
-## <a name="list-the-available-objects"></a>Listar os objetos disponíveis
+## <a name="list-available-objects"></a>Listar objetos disponíveis
 
 Você pode listar os objetos disponíveis e determinar o número ou a letra da unidade de um objeto usando:
 
@@ -33,7 +33,7 @@ Você pode listar os objetos disponíveis e determinar o número ou a letra da u
 
 - `list vdisk`-exibe todos os discos virtuais no computador.
 
-Quando você usa os comandos da **lista** , um asterisco (\*) é exibido ao lado do objeto com foco.
+Quando você usa os comandos da **lista** , um asterisco (*) é exibido ao lado do objeto com foco.
 
 ## <a name="determine-focus"></a>Determinar o foco
 
@@ -52,7 +52,7 @@ diskpart
 ```
 
 > [!IMPORTANT]
-> Você deve estar no grupo **Administradores** local ou em um grupo com permissões semelhantes para executar o DiskPart. 
+> Você deve estar no grupo **Administradores** local ou em um grupo com permissões semelhantes para executar o DiskPart.
 
 Você pode executar os seguintes comandos no interpretador de comandos do DiskPart:
 
@@ -73,33 +73,33 @@ Você pode executar os seguintes comandos no interpretador de comandos do DiskPa
 | [Desanexar vdisk](detach-vdisk.md) | Interrompe a exibição do VHD (disco rígido virtual) selecionado como uma unidade de disco rígido local no computador host. |
 | [Detalhes](detail.md) | Exibe informações sobre o disco, a partição, o volume ou o VHD (disco rígido virtual) selecionado. |
 | [Sair](exit.md) | Sai do interpretador de comandos do DiskPart. |
-| [Expandir vdisk](expand-vdisk.md) | 
-| [Estender](extend.md) | 
-| [Sistemas](filesystems.md) | 
-| [Ao](format.md) | 
-| [GPT](gpt.md) | 
-| [Ajuda](help.md) | 
-| [Importar](import.md) | 
-| [Inativo](inactive.md) | 
-| [Lista](list.md) | 
-| [Mesclar vdisk](merge-vdisk.md) | 
-| [Está](offline.md) | 
-| [Conectar](online.md) | 
-| [Recupera](recover.md) | 
-| [Trab](rem.md) | 
-| [Remover](remove.md) | 
-| [Corrige](repair.md) | 
-| [Examinar novamente](rescan.md) | 
-| [Manteve](retain.md) | 
-| [Solução](san.md) | 
-| [Não](select.md) | 
-| [ID do conjunto](set-id.md) | 
-| [PodeReduzir](shrink.md) | 
-| [UniqueId](uniqueid.md) | 
+| [Expandir vdisk](expand-vdisk.md) | expande um VHD (disco rígido virtual) para o tamanho que você especificar. |
+| [Estender](extend.md) | Estende o volume ou a partição com foco, juntamente com seu sistema de arquivos, para espaço livre (não alocado) em um disco. |
+| [Sistemas](filesystems.md) | Exibe informações sobre o sistema de arquivos atual do volume com foco e lista os sistemas de arquivos com suporte para formatar o volume. |
+| [Ao](format.md) | Formata um disco para aceitar arquivos do Windows. |
+| [GPT](gpt.md) | Atribui os atributos GPT à partição com foco em discos básicos da tabela de partição GUID (GPT). |
+| [Ajuda](help.md) | Exibe uma lista de comandos disponíveis ou informações de ajuda detalhadas sobre um comando especificado. |
+| [Importar](import.md) | Importa um grupo de discos externos para o grupo de discos do computador local. |
+| [Inativo](inactive.md) | Marca a partição do sistema ou a partição de inicialização com foco como inativa em discos básicos de MBR (registro mestre de inicialização). |
+| [Lista](list.md) | Exibe uma lista de discos, de partições em um disco, de volumes em um disco ou de VHDs (discos rígidos virtuais). |
+| [Mesclar vdisk](merge-vdisk.md) | Mescla um VHD (disco rígido virtual) diferencial com seu VHD pai correspondente. |
+| [Está](offline.md) | Coloca um disco ou volume online no estado offline. |
+| [Conectar](online.md) | Coloca um disco ou volume offline para o estado online. |
+| [Recupera](recover.md) | Atualiza o estado de todos os discos em um grupo de discos, tenta recuperar discos em um grupo de discos inválido e sincroniza novamente os volumes espelhados e os volumes RAID-5 que têm dados obsoletos. |
+| [Trab](rem.md) | Fornece uma maneira de adicionar comentários a um script. |
+| [Remover](remove.md) | Remove uma letra de unidade ou ponto de montagem de um volume. |
+| [Corrige](repair.md) | Repara o volume RAID-5 com foco, substituindo a região do disco com falha pelo disco dinâmico especificado. |
+| [Examinar novamente](rescan.md) | Localiza novos discos que podem ter sido adicionados ao computador. |
+| [Manteve](retain.md) | Prepara um volume simples dinâmico existente para ser usado como um volume do sistema ou de inicialização. |
+| [Solução](san.md) | Exibe ou define a política de San (rede de área de armazenamento) para o sistema operacional. |
+| [Não](select.md) | Desloca o foco para um disco, partição, volume ou VHD (disco rígido virtual). |
+| [ID do conjunto](set-id.md) | Altera o campo de tipo de partição para a partição com foco. |
+| [PodeReduzir](shrink.md) | Reduz o tamanho do volume selecionado pelo valor especificado. |
+| [UniqueId](uniqueid.md) | Exibe ou define o identificador GPT (tabela de partição GUID) ou a assinatura MBR (registro mestre de inicialização) para o disco com foco. |
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [Chave de sintaxe de linha de comando] (command-line-syntax-key.md
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 - [Visão geral do gerenciamento de disco](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
 

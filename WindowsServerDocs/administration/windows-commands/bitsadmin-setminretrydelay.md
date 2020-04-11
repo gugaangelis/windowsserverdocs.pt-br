@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setminretrydelay
-description: O tópico de comandos do Windows para Bitsadmin setminretrydelay, que define o período mínimo de tempo, em segundos, que o BITS aguarda depois de encontrar um erro transitório antes de tentar transferir o arquivo.
+description: O tópico de comandos do Windows para **Bitsadmin setminretrydelay**, que define o período mínimo de tempo, em segundos, que o bits aguarda depois de encontrar um erro transitório antes de tentar transferir o arquivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb2fe4c6d0e4f90c6ec49fa1da63404393d4f634
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ddae9a62a49ca07bb03649f131a0a1ebad8ee3fe
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849359"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122877"
 ---
 # <a name="bitsadmin-setminretrydelay"></a>bitsadmin setminretrydelay
 
@@ -23,21 +23,22 @@ Define o período mínimo de tempo, em segundos, que o BITS aguarda depois de en
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /SetMinRetryDelay <Job> <RetryDelay>
+bitsadmin /setminretrydelay <job> <retrydelay>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
-|RetryDelay|Um número representado em segundos.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
+| retrydelay | Período mínimo de tempo para que os BITS aguardem após um erro durante a transferência, em segundos. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 O exemplo a seguir define o atraso mínimo de repetição para o trabalho chamado *myDownloadJob* a 35 segundos.
+
 ```
-C:\>bitsadmin /SetMinRetryDelay myDownloadJob 35
+C:\>bitsadmin /setminretrydelay myDownloadJob 35
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
