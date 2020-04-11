@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setmaxdownloadtime
-description: Tópico de comandos do Windows para Bitsadmin setmaxdownloadtime, que define o tempo limite de download em segundos.
+description: Tópico de comandos do Windows para **Bitsadmin setmaxdownloadtime**, que define o tempo limite de download em segundos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd44011cd14d575a9c3798ede45641fac4c3dc75
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f07931dfb9fabaec272384dced6d60f1335b6a94
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849369"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122918"
 ---
 # <a name="bitsadmin-setmaxdownloadtime"></a>bitsadmin setmaxdownloadtime
 
@@ -23,25 +23,22 @@ Define o tempo limite de download em segundos.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /SetMaxDownloadTime <Job> <Timeout>
+bitsadmin /setmaxdownloadtime <job> <timeout>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
-|Limite de tempo|O tempo limite em segundos|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
+| timeout | O comprimento do tempo limite de download, em segundos. |
 
-## <a name="remarks"></a>Comentários
-
--   {1&gt;N/A&lt;1}
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 O exemplo a seguir define o tempo limite para o trabalho chamado *myDownloadJob* como 10 segundos.
+
 ```
-C:\>bitsadmin /SetMaxDownloadTime myDownloadJob 10
+C:\>bitsadmin /setmaxdownloadtime myDownloadJob 10
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

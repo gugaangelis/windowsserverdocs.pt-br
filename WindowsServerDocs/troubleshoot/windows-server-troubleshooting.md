@@ -1,26 +1,24 @@
 ---
 title: Solução de problemas do Windows Server
 description: Obtenha links para artigos de solução de problemas do Windows Server
-layout: LandingPage
 ms.prod: windows-server
 ms.technology: server-general
 ms.date: 1/24/2020
-ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 0537f00a06b27f855fcd87e9b1caa9d2e5085685
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e5fdae6e005adf6ea221fb3c2bf3ea09bfbfb03a
+ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820729"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119252"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionando problemas de componentes do Windows Server
 
 > [!TIP]
-> Procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com.  
+> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com.  
 >   
-> Você também pode [pesquisar neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obter informações específicas.
+> Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
 
 A Microsoft lança regularmente as duas atualizações para o Windows Server. Para garantir que os servidores podem receber atualizações futuras, incluindo atualizações de segurança, é importante mantê-los atualizados. Confira [Histórico de atualizações do Windows 10 e Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history) para obter uma lista completa das atualizações lançadas.
 

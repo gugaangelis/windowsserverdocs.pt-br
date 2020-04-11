@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setsecurityflags
-description: O tópico de comandos do Windows para Bitsadmin setsecurityflags, que define sinalizadores para HTTP que determinam se o BITS deve verificar a lista de certificados revogados, ignorar determinados erros de certificado e definir a política a ser usada quando um servidor redireciona a solicitação HTTP.
+description: O tópico de comandos do Windows para **Bitsadmin setsecurityflags**, que define sinalizadores de segurança para http para determinar se o bits deve verificar a lista de certificados revogados, ignorar determinados erros de certificado e definir a política a ser usada quando um servidor redireciona a solicitação HTTP.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,49 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a7b857bb398e3061a3435a730bf9a751ee2c5e3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8d73361bceda8c0eb24992bdee176b47bf82a878
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849139"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122722"
 ---
 # <a name="bitsadmin-setsecurityflags"></a>bitsadmin setsecurityflags
 
-Define sinalizadores para HTTP que determinam se o BITS deve verificar a lista de certificados revogados, ignorar determinados erros de certificado e definir a política a ser usada quando um servidor redireciona a solicitação HTTP. O valor é um inteiro sem sinal.
+Define sinalizadores de segurança para HTTP para determinar se o BITS deve verificar a lista de certificados revogados, ignorar determinados erros de certificado e definir a política a ser usada quando um servidor redireciona a solicitação HTTP. O valor é um inteiro sem sinal.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /SetSecurityFlags <Job> <Value>
+bitsadmin /setsecurityflags <job> <value>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
-|{1&gt;Valor&lt;1}|Ver comentários|
+| Parâmetro | Descrição |
+| -------------- | -------------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
+| {1&gt;Valor&lt;1} | Pode incluir um ou mais dos seguintes sinalizadores de notificação, incluindo:<ul><li>Defina o bit menos significativo para habilitar a verificação de CRL.</li><li>Defina o 2º bit da direita para ignorar nomes comuns incorretos no certificado do servidor.</li><li>Defina o terceiro bit da direita para ignorar as datas incorretas no certificado do servidor.</li><li>Defina o 4º bit da direita para ignorar autoridades de certificação incorretas no certificado do servidor.</li><li>Defina o quinto bit da direita para ignorar o uso incorreto do certificado do servidor.</li><li>Defina o nono através dos bits 11 do lado direito para implementar sua política de redirecionamento especificada, incluindo:<ul><li>**0, 0, 0.** Os redirecionamentos são permitidos automaticamente.</li><li>**0, 0, 1.** O nome remoto na interface **IBackgroundCopyFile** será atualizado se ocorrer um redirecionamento.</li><li>**0, 1, 0.** O BITS falhará no trabalho se ocorrer um redirecionamento.</li></ul></li><li>Defina o 12 bits à direita para permitir o redirecionamento de HTTPS para HTTP.</li></ul> |
 
-## <a name="remarks"></a>Comentários
+## <a name="examples"></a>Exemplos
 
-O parâmetro **Value** pode conter um ou mais dos seguintes sinalizadores de notificação.
+O exemplo a seguir define os sinalizadores de segurança para habilitar uma verificação de CRL para o trabalho chamado *myDownloadJob*.
 
-|Ação|Representação binária|
-|------|---------------------|
-|Habilitar verificação de CRL|Definir o bit menos significativo|
-|Ignorar nome comum inválido no certificado do servidor|Definir o 2º bit à direita|
-|Ignorar data inválida no certificado do servidor|Definir o terceiro bit à direita|
-|Ignorar autoridade de certificação inválida no certificado do servidor|Definir o 4º bit à direita|
-|Ignorar uso inválido do certificado|Definir o quinto bit à direita|
-|Política de redirecionamento|Controlado pelo nono para 11 bits a partir da direita</br>0, 0, 0-os redirecionamentos serão automaticamente permitidos.</br>0, 0, 1-o nome remoto na interface IBackgroundCopyFile será atualizado se ocorrer um redirecionamento.</br>0, 1, 0-os BITS falharão no trabalho se ocorrer um redirecionamento.|
-|Permitir redirecionamento de HTTPS para HTTP|Definir o 12 bits à direita|
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
-
-O exemplo a seguir define os sinalizadores de segurança para habilitar uma verificação de CRL para o trabalho chamado *myJob*.
 ```
-C:\>bitsadmin /SetSecurityFlags myJob 0x0001
+C:\>bitsadmin /setsecurityflags myDownloadJob 0x0001
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

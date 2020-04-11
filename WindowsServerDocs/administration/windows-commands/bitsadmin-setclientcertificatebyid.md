@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setclientcertificatebyid
-description: Tópico de comandos do Windows para Bitsadmin setclientcertificatebyid, que especifica o identificador do certificado do cliente a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL)
+description: Tópico de comandos do Windows para **Bitsadmin setclientcertificatebyid**, que especifica o identificador do certificado do cliente a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL)
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80c97b21194c773d1b21aab2ee31794624da671c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 376bb850664a5ed569488634029cb7384856f158
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849659"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123044"
 ---
 # <a name="bitsadmin-setclientcertificatebyid"></a>bitsadmin setclientcertificatebyid
 
@@ -23,23 +23,24 @@ Especifica o identificador do certificado do cliente a ser usado para autentica�
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /SetClientCertificateByID <Job> <store_location> <store_name> hexa-decimal_cert_id>
+bitsadmin /setclientcertificatebyid <job> <store_location> <store_name> <hexadecimal_cert_id>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
-|Store_location|Identifica o local de um armazenamento do sistema a ser usado para pesquisar o certificado. Os valores possíveis incluem:</br>1 (CURRENT_USER)</br>2 (LOCAL_MACHINE)</br>3 (CURRENT_SERVICE)</br>4 (SERVIÇOS)</br>5 (USUÁRIOS)</br>6 (CURRENT_USER_GROUP_POLICY)</br>7 (LOCAL_MACHINE_GROUP_POLICY)</br>8 (LOCAL_MACHINE_ENTERPRISE)|
-|Store_name|O nome do repositório de certificados. Os valores possíveis incluem:</br>AC (certificados de autoridade de certificação)</br>MEU (certificados pessoais)</br>RAIZ (certificados raiz)</br>SPC (certificado do fornecedor de software)|
-|Hexadecimal_cert_id|Um número hexadecimal que representa o hash do certificado|
+| Parâmetro | Descrição |
+| -------------- | -------------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
+| store_location | Identifica o local de um armazenamento do sistema a ser usado para pesquisar o certificado, incluindo:<ul><li>CURRENT_USER</li><li>LOCAL_MACHINE</li><li>CURRENT_SERVICE</li><li>SERVIÇOS</li><li>USUÁRIOS</li><li>CURRENT_USER_GROUP_POLICY</li><li>LOCAL_MACHINE_GROUP_POLICY</li><li>LOCAL_MACHINE_ENTERPRISE.</li></ul> |
+| store_name | O nome do repositório de certificados, incluindo:<ul><li>AC (certificados de autoridade de certificação)</li><li>MEU (certificados pessoais)</li><li>RAIZ (certificados raiz)</li><li>SPC (certificado do fornecedor de software).</li></ul> |
+| hexadecimal_cert_id | Um número hexadecimal que representa o hash do certificado. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir especifica o identificador do certificado do cliente a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL) para o trabalho chamado *myJob*.
+O exemplo a seguir especifica o identificador do certificado do cliente a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL) para o trabalho chamado *myDownloadJob*.
+
 ```
-C:\>bitsadmin Bitsadmin /SetClientCertificateByID myJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD 
+C:\>bitsadmin /setclientcertificatebyid myDownloadJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

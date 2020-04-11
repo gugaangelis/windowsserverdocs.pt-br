@@ -1,6 +1,6 @@
 ---
 title: bitsadmin suspend
-description: O tópico de comandos do Windows para Bitsadmin Suspend, que suspende o trabalho especificado.
+description: O tópico de comandos do Windows para **Bitsadmin Suspend**, que suspende o trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0419f4cdf59d04539b8b4c6d47cec886197d412b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 42ed83d4dbf8c3d982c5c186b440cf17997903c9
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849049"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123151"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
 > Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Suspende o trabalho especificado.
+Suspende o trabalho especificado. Se você suspendeu o trabalho por engano, poderá usar a opção [Bitsadmin resume](bitsadmin-resume.md) para reiniciar o trabalho.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /Suspend <Job>
+bitsadmin /suspend <job>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|-------|--------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
+| Parâmetro | Descrição |
+| --------- | ---------- |
+| Trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="remarks"></a>Comentários
-
-Para reiniciar o trabalho, use a opção [Bitsadmin resume](bitsadmin-resume.md) .
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="example"></a>{1&gt;Exemplo&lt;1}
 
 O exemplo a seguir suspende o trabalho chamado *myDownloadJob*.
 
+
 ```
-C:\>bitsadmin /Suspend myDownloadJob
+C:\>bitsadmin /suspend myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

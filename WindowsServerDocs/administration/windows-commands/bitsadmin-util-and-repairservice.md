@@ -1,6 +1,6 @@
 ---
 title: Bitsadmin util e repairservice
-description: Tópico de comandos do Windows para Bitsadmin util e repairservice, que corrige problemas conhecidos em várias versões do serviço BITS.
+description: Tópico de comandos do Windows para **Bitsadmin util e repairservice**, que corrige problemas conhecidos em várias versões do serviço bits.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,46 +9,41 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aaaa6edab22031dc53d266984bb669634e3bb362
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 164a402e7cbfc0a9223a97f4246eac84f0797aed
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848889"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122513"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>Bitsadmin util e repairservice
 
-Se o BITS falhar ao iniciar, use essa opção para corrigir problemas conhecidos em várias versões do BITS.
+Se o BITS não for iniciado, essa opção tentará resolver erros relacionados à configuração de serviço incorreta e às dependências nos serviços do Windows (como LANManworkstation) e no diretório de rede. Essa opção também gera saída que indica se os problemas foram resolvidos.
 
-**BITSAdmin 1,5 e anterior:** não há suporte para .
+> [!NOTE]
+> Esse comando não tem suporte no BITS 1,5 e versões anteriores.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /Util /RepairService [/Force]
+bitsadmin /util /repairservice [/force]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Force|Opcional — exclui e recria o serviço.|
-
-## <a name="remarks"></a>Comentários
-
-Essa opção resolve erros relacionados à configuração de serviço incorreta e dependências nos serviços do Windows (como LANManworkstation) e no diretório de rede. Essa opção gera saída que indica se os problemas foram resolvidos.
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| /Force | Opcional. Exclui e cria o serviço novamente.|
 
 > [!NOTE]
-> Se o BITS recriar o serviço, a cadeia de caracteres de descrição do serviço poderá ser definida como Inglês em um sistema localizado.
+> Se o BITS criar o serviço novamente, a cadeia de caracteres de descrição do serviço poderá ser definida como Inglês, mesmo em um sistema localizado.
 
-> [!IMPORTANT]
-> Não há suporte para esse comando no Windows Vista.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 O exemplo a seguir repara a configuração do serviço BITS.
+
 ```
-C:\>bitsadmin /Util /RepairService
+C:\>bitsadmin /util /repairservice
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

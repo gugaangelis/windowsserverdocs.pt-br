@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed1dcf9bce06af527ffb5b6a79d76d860d78450c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b73bd3b9c66b24330a0f9444836b9c8bd1730722
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849789"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123088"
 ---
 # <a name="bitsadmin-reset"></a>bitsadmin reset
 
@@ -35,7 +35,7 @@ bitsadmin /reset [/allusers]
 | -------------- | -------------- |
 | /allusers | Opcional. Cancela todos os trabalhos na fila de Propriedade do usuário atual. Você deve ter privilégios de administrador para usar esse parâmetro. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 O exemplo a seguir cancela todos os trabalhos na fila de transferência para o usuário atual.
 

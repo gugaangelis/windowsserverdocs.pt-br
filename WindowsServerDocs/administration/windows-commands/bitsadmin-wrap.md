@@ -1,6 +1,6 @@
 ---
 title: bitsadmin wrap
-description: O tópico de comandos do Windows para Bitsadmin Wrap, que encapsula qualquer linha de texto de saída que se estende além da borda mais à direita da janela de comando para a próxima linha.
+description: O tópico de comandos do Windows para **Bitsadmin Wrap**, que encapsula qualquer linha de texto de saída que se estende além da borda mais à direita da janela de comando para a próxima linha.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 009a0452f44c4944ae110ca6b9e0570793c32a72
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e754a765d94661baf24190431b455584d29991ec
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848749"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122560"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
 >Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Encapsula qualquer linha de texto de saída que se estenda além da borda mais à direita da janela de comando para a próxima linha.
+Encapsula qualquer linha de texto de saída que se estenda além da borda mais à direita da janela de comando para a próxima linha. Você deve especificar essa opção antes de qualquer outra opção.
+
+Por padrão, todas as opções, exceto a opção de [Monitor Bitsadmin](bitsadmin-monitor.md) , encapsulam o texto de saída.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /Wrap Job
+bitsadmin /wrap <job>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|-------|--------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
+| Parâmetro | Descrição |
+| --------- | ---------- |
+| Trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="remarks"></a>Comentários
-
-Especifique antes de outras opções. Por padrão, todas as opções, exceto a opção de [Monitor Bitsadmin](bitsadmin-monitor.md) , encapsulam a saída.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 O exemplo a seguir recupera informações para o trabalho chamado *myDownloadJob* e encapsula a saída.
 
 ```
-C:\>bitsadmin /Wrap /Info myDownloadJob /verbose
+C:\>bitsadmin /wrap /info myDownloadJob /verbose
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

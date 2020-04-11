@@ -1,6 +1,6 @@
 ---
 title: Bitsadmin util e enableanalyticchannel
-description: Tópico de comandos do Windows para Bitsadmin util e enableanalyticchannel, que habilita ou desabilita o canal analítico do cliente BITS.
+description: Tópico de comandos do Windows para **Bitsadmin util e enableanalyticchannel**, que habilita ou desabilita o canal analítico do cliente bits.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7302c9368649d47cd65110f4a515b527d3df2aac
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8ff1f835415979036fdc0f8aa637fe693e57d46
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848979"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122681"
 ---
 # <a name="bitsadmin-util-and-enableanalyticchannel"></a>Bitsadmin util e enableanalyticchannel
 
@@ -23,14 +23,19 @@ Habilita ou desabilita o canal analítico do cliente BITS.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /Util /EnableAnalyticChannel TRUE|FALSE
+bitsadmin /util /enableanalyticchannel TRUE|FALSE
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+| Parâmetro | Descrição |
+| --------- | ---------- |
+| VERDADEIRO ou falso | **True** ativa a validação de conteúdo para o arquivo especificado, enquanto **false** o desativa. |
+
+## <a name="examples"></a>Exemplos
 
 O exemplo a seguir habilita o canal analítico do cliente BITS.
+
 ```
-C:\>bitsadmin /Util / EnableAnalyticChannel TRUE
+C:\>bitsadmin /util / enableanalyticchannel TRUE
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

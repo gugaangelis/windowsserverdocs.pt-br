@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setreplyfilename
-description: O tópico de comandos do Windows para Bitsadmin setreplyfilename, que especifica o caminho do arquivo que contém a resposta do servidor.
+description: O tópico de comandos do Windows para **Bitsadmin setreplyfilename**, que especifica o caminho do arquivo que contém a resposta de upload do servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd45174a7deac89cc943fb19d544e372c0198139
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6c476073cb22ff66bcefc75a45fcd0526cdf3d25
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849179"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122731"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 
-Especifica o caminho do arquivo que contém a resposta do servidor.
+Especifica o caminho do arquivo que contém a resposta de upload do servidor.
 
-**BITS 1,2 e anteriores**: sem suporte.
+> [!NOTE]
+> Esse comando não tem suporte no BITS 1,2 e versões anteriores.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /SetReplyFileName <Job> <Path>
+bitsadmin /setreplyfilename <job> <file_path>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
-|Caminho|Local onde o servidor deve ser respondido|
+| Parâmetro | Descrição |
+| -------------- | -------------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
+| file_path | Local para colocar o upload do servidor-responder. |
 
-## <a name="remarks"></a>Comentários
+## <a name="examples"></a>Exemplos
 
-Válido somente para trabalhos de resposta de upload.
+O exemplo a seguir define o caminho do arquivo de nome de arq upload-resposta para o trabalho chamado *myDownloadJob*.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
-
-O exemplo a seguir define o nome de arquivo de resposta pathfor o trabalho chamado *myDownloadJob*.
 ```
-C:\>bitsadmin /SetReplyFileName myDownloadJob c:\reply
+C:\>bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

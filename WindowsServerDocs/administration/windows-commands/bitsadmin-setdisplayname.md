@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdisplayname
-description: Tópico de comandos do Windows para Bitsadmin SetDisplayName, que define o nome de exibição do trabalho especificado.
+description: Tópico de comandos do Windows para **Bitsadmin SetDisplayName**, que define o nome de exibição do trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,35 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 601c5b406132e70fb7d4facb97329f7456002bb4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0b1086903dd130392800f325c451bb4750fbf8fa
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849539"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123001"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
 
-Define o nome de exibição do trabalho especificado.
+Define o nome de exibição para o trabalho especificado.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /SetDisplayName <Job> <DisplayName>
+bitsadmin /setdisplayname <job> <display_name>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|Trabalho|O nome de exibição ou o GUID do trabalho|
-|DisplayName|Texto usado para o nome de exibição do trabalho especificado.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| trabalho | O nome de exibição ou o GUID do trabalho. |
+| display_name | Texto usado como o nome exibido para o trabalho específico. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir define o nome para exibição do trabalho chamado *myDownloadJob* como *myDownloadJob2*.
+O exemplo a seguir define o nome de exibição para o trabalho como *myDownloadJob*.
+
 ```
-C:\>bitsadmin /SetDisplayName myDownloadJob Download Music Job
+C:\>bitsadmin /setdisplayname myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
