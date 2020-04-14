@@ -1,19 +1,18 @@
 ---
 ms.assetid: 5f733510-c96e-4d3a-85d2-4407de95926e
 title: Publicar aplicativos usando a Pré-autenticação do AD FS
-description: ''
-author: kgremban
-manager: femila
+ms.author: kgremban
+author: eross-msft
 ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: bd5c4c97e01942e7c5ab8ed1aba3fcf92030ac59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97bfae42c873ecf7196138920a21d96714239da9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404270"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818699"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>Publicar aplicativos usando a Pré-autenticação do AD FS
 
@@ -70,12 +69,12 @@ O fluxo de pré-autenticação AD FS geral é o seguinte:
 > Ao configurar a URL externa e a URL do servidor de back-end, você deve incluir o nome de domínio totalmente qualificado (FQDN), e não um endereço IP.  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_1.1"></a>Publicar um aplicativo baseado em declarações para clientes de navegador da Web  
+## <a name="publish-a-claims-based-application-for-web-browser-clients"></a><a name="BKMK_1.1"></a>Publicar um aplicativo baseado em declarações para clientes de navegador da Web  
 Para publicar um aplicativo que usa declarações para autenticação, você deve adicionar ao Serviço de Federação um objeto de confiança de terceira parte confiável para o aplicativo.  
   
-Ao publicar aplicativos baseados em declarações e acessar o aplicativo em um navegador, o fluxo de autenticação geral é o seguinte:  
+Ao publicar aplicativos baseados em declarações e acessar o aplicativo de um navegador, o fluxo geral de autenticação será o seguinte:  
   
 1.  O cliente tenta acessar um aplicativo baseado em declarações usando um navegador da Web; por exemplo, https://appserver.contoso.com/claimapp/.  
   
@@ -130,7 +129,7 @@ Este procedimento descreve como publicar um aplicativo baseado em declarações,
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes do Windows PowerShell</em>***  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -142,7 +141,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'SP_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.2"></a>Publicar um aplicativo integrado baseado no Windows autenticado para clientes de navegador da Web  
+## <a name="publish-an-integrated-windows-authenticated-based-application-for-web-browser-clients"></a><a name="BKMK_1.2"></a>Publicar um aplicativo integrado baseado no Windows autenticado para clientes de navegador da Web  
 O proxy de aplicativo Web pode ser usado para publicar aplicativos que usam a autenticação integrada do Windows; ou seja, o proxy de aplicativo Web executa a pré-autenticação conforme necessário e, em seguida, pode executar o SSO para o aplicativo publicado que usa a autenticação integrada do Windows. Para publicar um aplicativo que usa autenticação integrada do Windows, você deve adicionar ao Serviço de Federação um objeto de confiança de terceira parte confiável sem reconhecimento de declarações para o aplicativo.  
   
 Para permitir que o proxy de aplicativo Web execute SSO (logon único) e execute a delegação de credenciais usando a delegação restrita de Kerberos, o servidor proxy de aplicativo Web deve ser Unido a um domínio. Consulte [Active Directory de plano](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD).  
@@ -212,7 +211,7 @@ Este procedimento descreve como publicar um aplicativo que usa a autenticação 
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes do Windows PowerShell</em>***  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -225,7 +224,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'Non-Claims_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.3"></a>Publicar um aplicativo que usa MS-OFBA  
+## <a name="publish-an-application-that-uses-ms-ofba"></a><a name="BKMK_1.3"></a>Publicar um aplicativo que usa MS-OFBA  
 O proxy de aplicativo Web dá suporte ao acesso de clientes Microsoft Office, como o Microsoft Word, que acessam documentos e dados em servidores de back-end. A única diferença entre esses aplicativos e um navegador padrão é que o redirecionamento para o STS não é feito por meio do redirecionamento de HTTP regular, mas com cabeçalhos especiais do MS-OFBA, conforme especificado em: [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx). O aplicativo de back-end pode ser declarações ou IWA.   
 Para publicar um aplicativo para clientes que usam o MS-OFBA, você deve adicionar um confiança de terceira parte confiável para o aplicativo ao Serviço de Federação. Dependendo do aplicativo, você pode usar autenticação baseada em declarações ou autenticação integrada do Windows. Portanto, você deve adicionar o objeto de confiança de terceira parte confiável relevante, dependendo do aplicativo.  
   
@@ -312,7 +311,7 @@ O procedimento a seguir explica como publicar aplicativos HTTP básicos.
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes do Windows PowerShell</em>***  
   
-O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 Este script do Windows PowerShell habilita a pré-autenticação para todos os dispositivos, não apenas para dispositivos ingressados no local de trabalho.  
   
@@ -339,7 +338,7 @@ Add-WebApplicationProxyApplication
      -ADFSRelyingPartyName 'EAS_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.4"></a>Publicar um aplicativo que usa OAuth2 como um aplicativo Microsoft Store  
+## <a name="publish-an-application-that-uses-oauth2-such-as-a-microsoft-store-app"></a><a name="BKMK_1.4"></a>Publicar um aplicativo que usa OAuth2 como um aplicativo Microsoft Store  
 Para publicar um aplicativo para Microsoft Store aplicativos, você deve adicionar um confiança de terceira parte confiável para o aplicativo ao Serviço de Federação.  
   
 Para permitir que o proxy de aplicativo Web execute SSO (logon único) e execute a delegação de credenciais usando a delegação restrita de Kerberos, o servidor proxy de aplicativo Web deve ser Unido a um domínio. Consulte [Active Directory de plano](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD).  
@@ -347,7 +346,7 @@ Para permitir que o proxy de aplicativo Web execute SSO (logon único) e execute
 > [!NOTE]  
 > O proxy de aplicativo Web dá suporte à publicação somente para aplicativos Microsoft Store que usam o protocolo OAuth 2,0.  
   
-No console de gerenciamento do AD FS, você deve verificar se o ponto de extremidade OAuth está habilitado para proxy. Para verificar se o ponto de extremidade OAuth está habilitado para proxy, abra o console de Gerenciamento do AD FS, expanda **Serviço**, clique em **Pontos de Extremidade**, na lista **Pontos de Extremidade** , localize o ponto de extremidade OAuth e verifique se o valor na coluna **Habilitado para Proxy** é **Sim**.  
+No console de gerenciamento do AD FS, você deve verificar se o ponto de extremidade OAuth está habilitado para proxy. Para verificar se o ponto de extremidade OAuth está habilitado para proxy, abra o console de Gerenciamento do AD FS, expanda **Serviço**, clique em **Pontos de Extremidade**, na lista **Pontos de Extremidade**, localize o ponto de extremidade OAuth e verifique se o valor na coluna **Habilitado para Proxy** é **Sim**.  
   
 O fluxo de autenticação para clientes que usam aplicativos Microsoft Store é descrito abaixo:  
   
@@ -418,7 +417,7 @@ Este procedimento descreve como publicar um aplicativo para OAuth2. Esse tipo de
   
 8.  Na página **Resultados**, verifique se o aplicativo foi publicado com êxito e clique em **Fechar**.  
   
-Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
   
 Para definir a URL de autenticação OAuth para um endereço de servidor de Federação de fs.contoso.com e um caminho de URL de/ADFS/oauth2/:  
   
@@ -439,7 +438,7 @@ Add-WebApplicationProxyApplication
     -UseOAuthAuthentication  
 ```  
   
-## <a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
   
 -   [Como solucionar problemas de proxy de aplicativo Web](https://technet.microsoft.com/library/dn770156.aspx)  
   

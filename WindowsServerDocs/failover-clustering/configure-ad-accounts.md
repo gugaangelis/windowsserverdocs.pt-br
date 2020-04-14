@@ -4,14 +4,14 @@ ms.date: 11/12/2012
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 author: JasonGerend
-manager: elizapo
+manager: lizross
 ms.author: jgerend
-ms.openlocfilehash: 47f3a515379eb79f628a0ee97ef2c7965c4d8d50
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c087b3f86dcb70c07221a5436d921b09fb5a917f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948151"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827889"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuração de contas de cluster no Active Directory
 
@@ -30,7 +30,7 @@ Esta seção descreve as contas de computador do Active Directory (também chama
       
     Por exemplo, se você criar um cluster chamado Cluster1 e tentar configurar um servidor de impressão clusterizado chamado PrintServer1 em seu cluster, a conta de Cluster1 no Active Directory precisará reter as permissões corretas, de forma que ela possa ser usada para criar uma conta de computador chamada PrintServer1.  
       
-    A conta de nome do cluster é criada no contêiner padrão de contas de computador no Active Directory. Por padrão, esse contêiner é "Computadores", mas o administrador de domínio pode optar por redirecioná-la para outro contêiner ou outra unidade organizacional.  
+    A conta de nome do cluster é criada no contêiner padrão de contas de computador no Active Directory. Por padrão, esse é o contêiner "Computers", mas o administrador de domínio pode optar por redirecioná-lo para outro contêiner ou unidade organizacional (UO).  
       
   - **A conta de computador (objeto de computador) de um serviço ou aplicativo em cluster.** Essas contas são criadas automaticamente pelo assistente para Alta Disponibilidade como parte do processo de criação da maioria dos tipos de aplicativo ou serviços clusterizados, com exceção de uma máquina virtual Hyper-V. A conta de nome de cluster recebe as permissões necessárias para controlar essas contas.  
       
@@ -47,7 +47,7 @@ A tabela a seguir descreve as permissões necessárias para essas contas.
 </colgroup>
 <thead>
 <tr class="header">
-<th>Conta</th>
+<th>Account</th>
 <th>Detalhes sobre permissões</th>
 </tr>
 </thead>
@@ -107,7 +107,7 @@ Conforme descrito nas três seções anteriores, determinados requisitos devem s
           
       - A conta (ou o grupo do qual a conta é um membro) deve receber as permissões **Criar Objetos de computador** e **Ler Todas as Propriedades** no contêiner que é usado para contas de computador no domínio. Para obter mais informações, consulte [Etapas para configurar a conta para a pessoa que instala o cluster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), mais adiante neste guia.  
           
-      - Se sua organização optar por pré-preparar a conta de nome do cluster (uma conta de computador com o mesmo nome do cluster), essa conta pré-preparada deverá fornecer a permissão "Controle Total" à conta da pessoa que instala o cluster. Para obter outros detalhes importantes sobre como pré-preparar a conta de nome do cluster, consulte [Etapas para pré-preparar a conta de nome do cluster](#steps-for-prestaging-the-cluster-name-account), mais adiante neste guia.  
+      - Se sua organização optar por pré-configurar a conta de nome de cluster (uma conta de computador com o mesmo nome que o cluster), a conta de nome de cluster pré-configurado deverá conceder permissão de "controle total" à conta da pessoa que instala o cluster. Para obter outros detalhes importantes sobre como pré-preparar a conta de nome do cluster, consulte [Etapas para pré-preparar a conta de nome do cluster](#steps-for-prestaging-the-cluster-name-account), mais adiante neste guia.  
           
 
 ### <a name="planning-ahead-for-password-resets-and-other-account-maintenance"></a>Planejando redefinições de senha e outra manutenção de conta com antecipação
@@ -126,7 +126,7 @@ A associação de grupo mínima exigida para concluir o procedimento a seguir de
 
 2.  Se a conta que foi criada ou obtida na etapa 1 não for incluída automaticamente no grupo de **Administradores** locais em computadores no domínio, adicione a conta ao grupo de **Administradores** locais nos servidores que serão nós no cluster de failover:
     
-    1.  Clique em **Iniciar**, clique em **Ferramentas Administrativas**e clique em **Gerenciador do Servidores**.  
+    1.  Clique em **Iniciar**, clique em **Ferramentas Administrativas** e clique em **Gerenciador do Servidores**.  
           
     2.  Na árvore de console, expanda **Configuração**, expanda **Usuários e Grupos Locais** e, por fim, expanda **Grupos**.  
           
@@ -151,7 +151,7 @@ A associação de grupo mínima exigida para concluir o procedimento a seguir de
           
    3.  Clique com o botão direito do mouse no contêiner padrão **Computadores** ou no contêiner padrão no qual as contas de computador são criadas no seu domínio e clique em **Propriedades**. Os **computadores** estão localizados em <b>Active Directory usuários e computadores/</b><i>domínio-nó</i><b>/Computers</b>.  
           
-   4.  Na guia **Segurança** , clique em **Avançado**.  
+   4.  Na guia **Segurança**, clique em **Avançado**.  
           
    5.  Clique em **Adicionar**, digite o nome da conta que foi criada ou obtida na etapa 1 e clique em **OK**.  
           
@@ -187,7 +187,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 8.  Clique com o botão direito do mouse na pasta que você clicou com o botão direito do mouse na etapa 3 e clique em **Propriedades**.
 
-9.  Na guia **Segurança** , clique em **Avançado**.
+9.  Na guia **Segurança**, clique em **Avançado**.
 
 10. Clique em **Adicionar**, em **Tipos de Objeto**, verifique se a opção **Computadores** está selecionada e clique em **OK**. Em **Digite o nome do objeto a ser selecionado**, digite o nome da conta de computador que acabou de ser criada e clique em **OK**. Se uma mensagem for exibida informando que você está prestes a adicionar um objeto desabilitado, clique em **OK**.
 
@@ -262,7 +262,7 @@ As mensagens de evento que se enquadram na descrição acima indicam que a senha
 
 Para obter informações sobre como garantir que os administradores de cluster tenham as permissões corretas para executar o procedimento a seguir, conforme a necessidade, consulte Planejando redefinições de senha e outra manutenção de conta com antecipação, mais acima neste guia.
 
-A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento. Além disso, sua conta deve receber a permissão **Redefinir senha** para a conta de nome do cluster (a menos que conta seja uma conta de **Admins. de Domínio** ou seja o Proprietário Criador da conta de nome do cluster). A conta que foi usada pela pessoa que instalou o cluster pode ser usada para este procedimento. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
+A associação no grupo **Administradores** local, ou equivalente, é o mínimo necessário para concluir este procedimento. Além disso, sua conta deve receber a permissão **Redefinir senha** para a conta de nome do cluster (a menos que conta seja uma conta de **Admins. de Domínio** ou seja o Proprietário Criador da conta de nome do cluster). A conta que foi usada pela pessoa que instalou o cluster pode ser usada para este procedimento. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-troubleshoot-password-problems-with-the-cluster-name-account"></a>Para solucionar problemas de senha com a conta de nome do cluster
 
@@ -296,7 +296,7 @@ A associação ao grupo **Admins. do Domínio** , ou equivalente, é o mínimo n
 
 6.  Clique em **Propriedades**.
 
-7.  Na guia **Segurança** , clique em **Avançado**.
+7.  Na guia **Segurança**, clique em **Avançado**.
 
 8.  Na lista de contas com permissões, clique na conta de nome do cluster e em **Editar**.
     
