@@ -8,22 +8,22 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cbcb5c2357a60d6d12551a7d08055cacecd515b7
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950488"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269233"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
 >Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 > [!Tip]
-> Novo no Windows Admin Center?
+> Conhecendo o Windows Admin Center agora?
 > [Baixe ou saiba mais sobre o centro de administração do Windows](../overview.md).
 
-## <a name="managing-windows-server-machines"></a>Como gerenciar máquinas do Windows Server
+## <a name="managing-windows-server-machines"></a>Gerenciando computadores Windows Server
 
 Você pode adicionar servidores individuais que executam o Windows Server 2012 ou posterior ao centro de administração do Windows para gerenciar o servidor com um conjunto abrangente de ferramentas, incluindo certificados, dispositivos, eventos, processos, funções e recursos, atualizações, máquinas virtuais e muito mais.
 
@@ -57,16 +57,16 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | [Dispositivos](#devices) | Exibir e modificar dispositivos |
 | [DHCP](#dhcp) | Exibir e gerenciar a configuração do servidor DHCP |
 | [DNS](#dns) | Exibir e gerenciar a configuração do servidor DNS |
-| [Eventos](#events) | Exibir eventos |
+| [LostFocus](#events) | Exibir eventos |
 | [Arquivos](#files) | Procurar arquivos e pastas |
 | [Firewall](#firewall) | Exibir e modificar regras de firewall |
 | [Aplicativos instalados](#installed-apps) | Exibir e remover aplicativos instalados |
 | [Usuários e grupos locais](#local-users-and-groups) | Exibir e modificar usuários e grupos locais |
-| [Network](#network) | Exibir e modificar dispositivos de rede |
+| [Rede](#network) | Exibir e modificar dispositivos de rede |
 | [Monitoramento de pacotes](https://aka.ms/wac1908) | Monitorar pacotes de rede |
 | [Monitor de desempenho](https://aka.ms/perfmon-blog) | Exibir contadores de desempenho e relatórios |
 | [PowerShell](#powershell) | Interagir com o servidor por meio do PowerShell |
-| [Processos](#processes) | Exibir e modificar processos em execução |
+| [Processar](#processes) | Exibir e modificar processos em execução |
 | [Registry](#registry) | Exibir e modificar entradas do registro |
 | [Área de Trabalho Remota](#remote-desktop) | Interagir com o servidor via Área de Trabalho Remota |
 | [Funções e recursos](#roles-and-features) | Exibir e modificar funções e recursos |
@@ -219,7 +219,7 @@ Os seguintes recursos têm suporte em eventos:
 
 [**Exibir comentários e recursos propostos para eventos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D).
 
-## <a name="files"></a>Arquivos
+## <a name="files"></a>Files
 
 **Os arquivos** permitem que você gerencie arquivos e pastas em um computador ou servidor.
 
@@ -235,6 +235,7 @@ Os seguintes recursos têm suporte em arquivos:
 - Carregar um arquivo ou uma pasta
 - Renomear um arquivo ou pasta
 - Extrair um arquivo zip
+- Copiar e mover arquivos e pastas
 - Exibir Propriedades de arquivo ou pasta
 - Adicionar, editar ou Remover compartilhamentos de arquivos
 - Modificar permissões de usuário e grupo em compartilhamentos de arquivos
@@ -400,6 +401,7 @@ Os recursos a seguir têm suporte nos serviços do:
 - Exibir detalhes de um serviço
 - Iniciar um serviço
 - Pausar um serviço
+- Reiniciar um serviço
 - Editar as propriedades de um serviço
 
 [**Exibir comentários e recursos propostos para serviços**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BServices%5D).
@@ -448,7 +450,7 @@ O **serviço de migração de armazenamento** permite migrar servidores e compar
 >[!NOTE]
 >O serviço de migração de armazenamento requer o Windows Server 2019.
 
-## <a name="storage-replica"></a>Réplica de armazenamento
+## <a name="storage-replica"></a>Réplica de Armazenamento
 
 Use a **réplica de armazenamento** para gerenciar a replicação de armazenamento de servidor para servidor.
 [Saiba mais sobre a réplica de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
@@ -477,11 +479,11 @@ Os recursos a seguir têm suporte em atualizações:
 
 [**Exibir comentários e recursos propostos para atualizações**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 
-## <a name="virtual-machines"></a>Máquinas virtuais
+## <a name="virtual-machines"></a>Máquinas Virtuais
 
 Consulte [Gerenciando máquinas virtuais com o centro de administração do Windows](manage-virtual-machines.md)
 
-## <a name="virtual-switches"></a>Switches virtuais
+## <a name="virtual-switches"></a>Comutadores virtuais
 
 Os **comutadores virtuais** permitem que você gerencie comutadores virtuais do Hyper-V em um computador ou servidor.
 

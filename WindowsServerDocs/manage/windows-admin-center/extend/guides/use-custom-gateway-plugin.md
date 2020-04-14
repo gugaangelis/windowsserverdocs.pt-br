@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 829cbf6df8cc2738bf4066b36210b860595774ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385231"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269223"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>Usar um plug-in de gateway personalizado em sua extensão de ferramenta
 
->Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
 
 Neste artigo, usaremos um plug-in de gateway personalizado em uma nova extensão de ferramenta vazia que criamos com a CLI do centro de administração do Windows.
 
@@ -61,10 +61,10 @@ export class PluginService {
 }
 ```
 
-Altere as referências a ```Sample Uno``` e ```Sample%20Uno``` para o nome do recurso, conforme apropriado.
+Altere as referências a ```Sample Uno``` e ```Sample%20Uno``` ao nome do recurso conforme apropriado.
 
-[!WARNING]
-> É recomendável que o interno ```this.appContextService.node``` seja usado para chamar qualquer API que esteja definida em seu plug-in de gateway personalizado. Isso garantirá que, se as credenciais forem necessárias dentro do seu plug-in de gateway, elas serão tratadas corretamente.
+> [!WARNING]
+> É recomendável que o ```this.appContextService.node``` interno seja usado para chamar qualquer API que esteja definida em seu plug-in de gateway personalizado. Isso garantirá que, se as credenciais forem necessárias dentro do seu plug-in de gateway, elas serão tratadas corretamente.
 
 ### <a name="modify-modulets"></a>Modificar módulo. TS
 
