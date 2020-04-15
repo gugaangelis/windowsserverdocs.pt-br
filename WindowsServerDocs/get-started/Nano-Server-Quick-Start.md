@@ -2,21 +2,19 @@
 title: Início rápido do Nano Server
 description: Etapas para implantar rapidamente um Nano Server básico em máquinas virtuais ou físicas
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/05/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de589d9da1c7d4fc9eb116e6ea1f6a326d1ad7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7729b853f2e54c7f99d428fcb821a68d7a22aef0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391724"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826809"
 ---
 # <a name="nano-server-quick-start"></a>Início rápido do Nano Server
 
@@ -64,7 +62,7 @@ Execute estas etapas para criar um VHD do Nano Server que será executado em uma
   
 5. Reinicialize a máquina virtual e, no Gerenciador do Hyper-V, conecte-se à máquina virtual normalmente.  
   
-6. Faça logon no Console de Recuperação (confira a seção "Console de Recuperação do Nano Server" neste guia), usando o administrador e a senha que você forneceu ao executar o script na Etapa 3.  
+6. Faça logon no Console de Recuperação (confira a seção Console de Recuperação do Nano Server neste guia), usando o administrador e a senha que você forneceu ao executar o script na Etapa 3.  
    > [!NOTE]  
    > O Console de Recuperação só oferece suporte a funções básicas de teclado. Não há suporte para as luzes do teclado, seções de 10 teclas e alternância do layout do teclado, como caps lock e bloqueio de número.
   
@@ -72,7 +70,7 @@ Execute estas etapas para criar um VHD do Nano Server que será executado em uma
   
 **Nano Server em um computador físico**  
   
-Você também pode criar um VHD que executará o Nano Server em um computador físico, usando os drivers de dispositivo pré-instalados. Se o seu hardware exigir um driver que ainda não foi fornecido para inicializar ou conectar-se a uma rede, execute as etapas na seção "Adicionar outros drivers" deste guia.  
+Você também pode criar um VHD que executará o Nano Server em um computador físico, usando os drivers de dispositivo pré-instalados. Se o seu hardware exigir um driver que ainda não tiver sido fornecido para inicializar ou conectar-se a uma rede, execute as etapas na seção Adicionar outros drivers deste guia.  
   
 ## <a name="to-quickly-deploy-nano-server-on-a-physical-computer"></a>Para implantar rapidamente o Nano Server em um computador físico  
   
@@ -111,7 +109,7 @@ Você também pode criar um VHD que executará o Nano Server em um computador f�
   
 6. Inicialize o computador físico no Nano Server VHD.  
   
-7. Faça logon no Console de Recuperação (confira a seção "Console de Recuperação do Nano Server" neste guia), usando o administrador e a senha que você forneceu ao executar o script na Etapa 3.
+7. Faça logon no Console de Recuperação (confira a seção Console de Recuperação do Nano Server neste guia), usando o administrador e a senha que você forneceu ao executar o script na Etapa 3.
    > [!NOTE]  
    > O Console de Recuperação só oferece suporte a funções básicas de teclado. Não há suporte para as luzes do teclado, seções de 10 teclas e alternância do layout do teclado, como caps lock e bloqueio de número. 
   

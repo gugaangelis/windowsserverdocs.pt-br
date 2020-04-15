@@ -1,25 +1,21 @@
 ---
-title: Área de Trabalho Remota – Comparar os clientes
-description: Saiba como se comparam os diferentes clientes da Área de Trabalho Remota quando se trata de recursos e funções compatíveis.
-ms.custom: na
+title: Área de Trabalho Remota – comparar os aplicativos cliente
+description: Saiba como se comparam os diferentes aplicativos de área de trabalho remota quando se trata de funções e recursos compatíveis.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/28/2020
+ms.date: 04/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c91ac951db27915d9313f7f98e5e2cfc56b726
-ms.sourcegitcommit: 78c00944b6990702d28bdcc4a9215927ca901bfb
+ms.openlocfilehash: 8c41d2691f22e7feb89518a02736f3607940a2f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80440375"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856219"
 ---
 # <a name="compare-the-clients"></a>Comparar os clientes
 
@@ -53,15 +49,15 @@ Se você acessar sua área de trabalho pessoal remotamente, haverá vários redi
 
 Quando você habilita o redirecionamento de porta USB, quaisquer dispositivos USB conectados à porta USB são reconhecidos automaticamente na sessão remota.
 
-### <a name="other-redirection-devices-etc"></a>Outros redirecionamentos (dispositivos, etc.)
+### <a name="other-redirection-devices-etc"></a>Outros redirecionamentos (dispositivos etc.)
 
 | Redirecionamento         | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Windows Store | Android | iOS         | macOS                           | Cliente Web    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
-| Câmeras             | X                         | X                           |               |         |             | X                               |               |
-| Área de Transferência           | X                         | X                           | X             | texto    | texto, imagem | X                               | texto          |
-| Unidade local/armazenamento | X                         | X                           |               | X       |             | X                               |               |
+| Câmeras             | X                         | X                           |               |         |   X         | X                               |               |
+| Área de Transferência           | X                         | X                           | X             | Texto    | Texto, imagens | X                               | texto          |
+| Unidade local/armazenamento | X                         | X                           |               | X       |   X        | X                               |               |
 | Local            | X                         | X                           |               |         |             |                                 |               |
-| Microfones         | X                         | X                           | X             |         |             | X                               |               |
+| Microfones         | X                         | X                           | X             |         |  X          | X                               |               |
 | Impressoras            | X                         | X                           |               |         |             | X (somente CUPS)                   | Impressão PDF     |
 | Scanners            | X                         | X                           |               |         |             |                                 |               |
 | Smart Cards         | X                         | X                           |               |         |             | X (não há suporte para o logon do Windows) |               |

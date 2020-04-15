@@ -1,18 +1,18 @@
 ---
 title: Visão geral sobre atualizações do Windows Server | Microsoft Docs
 description: Conheça algumas informações gerais sobre a atualização do Windows Server, juntamente com pontos a considerar antes de fazer a atualização de fato.
-ms.prod: windows server
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/10/2019
-ms.openlocfilehash: 6f57e52657ca3c80c92d56c54ea87e43aabd1e99
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 1ac4cbe8b9bda4ac2de2c7ad7ec27b1534c0de72
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124786"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854229"
 ---
 # <a name="overview-about-windows-server-upgrades"></a>Visão geral sobre as atualizações do Windows Server
 
@@ -42,3 +42,4 @@ No entanto, sabemos que nem sempre isso é possível. Você pode usar o seguinte
 O Windows Server normalmente pode ser atualizado por pelo menos uma e, às vezes, duas versões. Por exemplo, o Windows Server 2012 R2 e o Windows Server 2016 podem ser atualizados in-loco para o Windows Server 2019.
 
 Também é possível atualizar de uma versão de avaliação do sistema operacional para uma versão comercial, de uma versão comercial mais antiga para uma versão mais nova ou, em alguns casos, de uma edição com licença de volume do sistema operacional para uma edição comercial comum. Para obter mais informações sobre outras opções de atualização além da atualização in-loco, confira [Opções de atualização e conversão para o Windows Server](../get-started/supported-upgrade-paths.md).
+""'

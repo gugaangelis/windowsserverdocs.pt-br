@@ -4,19 +4,18 @@ description: Como obter e instalar uma instalação do Server Core no Windows Se
 ms.prod: windows-server
 ms.date: 05/21/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: e6264a59a837003e49e82529750cfb153cc37b92
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360343"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826969"
 ---
 # <a name="install-server-core"></a>Instalar o Server Core
 
@@ -27,15 +26,15 @@ Ao instalar o Windows Server 2016 pela primeira vez, você tem as seguintes opç
 >[!NOTE]
 > Na lista a seguir, as edições sem "Experiência Desktop" são as opções de instalação do Server Core
 
--   Windows Server Standard
--   Windows Server Standard com Experiência Desktop
--   Windows Server Datacenter
--   Windows Server Datacenter com Experiência Desktop
+-    Windows Server Standard
+-    Windows Server Standard com Experiência Desktop
+-    Windows Server Datacenter
+-    Windows Server Datacenter com Experiência Desktop
 
 Ao instalar o Windows Server 2016 (Canal Semestral) pela primeira vez, você tem as seguintes opções de instalação:
 
--   Windows Server Standard 
--   Windows Server Datacenter
+-    Windows Server Standard 
+-    Windows Server Datacenter
 
 A opção Server Core reduz o espaço necessário em disco e a superfície de ataque potencial, portanto recomendamos que você escolha a instalação Server Core, a menos que tenha uma necessidade particular por elementos adicionais da interface do usuário e ferramentas gráficas de gerenciamento que estão incluídas no Server com a opção Experiência Desktop. Se você achar que precisa de elementos de interface do usuário adicionais, consulte [Instalar o Server com Experiência Desktop](Getting-Started-with-Server-with-Desktop-Experience.md). 
 

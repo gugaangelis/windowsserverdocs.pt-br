@@ -1,17 +1,16 @@
 ---
 ms.date: 09/27/2018
 ms.topic: conceptual
-keywords: OpenSSH, SSH, SSHD, instalar, instalação
 contributor: maertendMSFT
-ms.product: w10
-author: maertendMSFT
+ms.product: windows-server
+author: maertendmsft
 title: Configuração do servidor OpenSSH para Windows
-ms.openlocfilehash: 3d8e656981661f8263484437e90780a4e1463d94
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 61f176f7f73495a6b9dbbcb1a25f2337a44ab99b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639939"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852019"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuração do servidor OpenSSH para Windows 10 1809 e Server 2019
 
@@ -76,7 +75,7 @@ Para o Windows OpenSSH, os únicos métodos de autenticação disponíveis são 
 
 ### <a name="authorizedkeysfile"></a>AuthorizedKeysFile 
 
-O padrão é ".ssh/authorized_keys. ssh/authorized_keys2". Se o caminho não for absoluto, ele será considerado em relação ao diretório base do usuário (ou o caminho da imagem do perfil). Ex. c:\users\user. Observe que, se o usuário pertencer ao grupo de administradores, %programdata%/ssh/administrators_authorized_keys será usado.
+O padrão é ".ssh/authorized_keys .ssh/authorized_keys2". Se o caminho não for absoluto, ele será considerado em relação ao diretório base do usuário (ou o caminho da imagem do perfil). Ex. c:\users\user. Observe que, se o usuário pertencer ao grupo de administradores, %programdata%/ssh/administrators_authorized_keys será usado.
 
 ### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory (suporte adicionado na v7.7.0.0)
 

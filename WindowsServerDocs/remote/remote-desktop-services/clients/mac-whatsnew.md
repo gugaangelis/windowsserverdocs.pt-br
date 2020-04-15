@@ -1,30 +1,56 @@
 ---
 title: Novidades do cliente para macOS
 description: Saiba mais sobre as recentes alterações no cliente da Área de Trabalho Remota para MAC
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/06/2020
+ms.date: 04/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2a9966da7046a14fb1d9d4562f0ef9b1a09a45
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
+ms.sourcegitcommit: f95d0e6904b103fc30dcae13e9199e138c287e2b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919855"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80980848"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novidades do cliente para macOS
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para macOS](remote-desktop-mac.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
 Caso tenha problemas, entre em contato conosco a qualquer momento navegando em **Ajuda** > **Relatar um Problema**.
+
+## <a name="updates-for-version-1039"></a>Atualizações da versão 10.3.9
+
+*Data da publicação: 06/04/20*
+
+Nessa versão, fizemos algumas alterações para aprimorar a interoperabilidade com o [serviço de Área de Trabalho Virtual do Windows](https://azure.microsoft.com/services/virtual-desktop/). Além disso, incluímos as seguintes atualizações:
+
+- Control+Option+Delete agora dispara a sequência Ctrl+Alt+Del (anteriormente era preciso pressionar a tecla Fn).
+- Correção do esquema de cores de notificação do modo de teclado para o modo claro.
+- Resolução de cenários em que as conexões iniciadas usando a propriedade de arquivo RDP GatewayAccessToken não funcionavam.
+
+>[!NOTE]
+>Esta é a última versão que será compatível com o macOS 10.12.
+
+## <a name="updates-for-version-1038"></a>Atualizações da versão 10.3.8
+
+*Data da publicação: 12/02/20*
+
+É hora de nossa primeira versão de 2020!
+
+Com essa atualização, você pode alternar entre os modos Scancode (Ctrl+Command+K) e Unicode (Ctrl+Command+U) ao inserir a entrada de teclado. O modo Unicode permite que os caracteres estendidos sejam digitados usando a tecla Option em um teclado Mac. Por exemplo, em um teclado Mac dos EUA, a Option+2 inserirá o símbolo de marca comercial (&trade;). Você também pode inserir caracteres com acento no modo Unicode. Por exemplo, em um teclado Mac dos EUA, pressionar Option+E e a tecla "A" ao mesmo tempo inserirá o caractere "á" na sessão remota.
+
+Outras atualizações dessa versão incluem:
+
+- Limpeza da experiência e da interface do usuário de atualização do workspace.
+- Resolução de um problema de redirecionamento de cartão inteligente que fazia a sessão remota parar de responder na tela de entrada quando a mensagem "Verificando Status" era exibida.
+- Redução do tempo para criar arquivos temporários usados para copiar e colar arquivos baseados na área de transferência.
+- Arquivos temporários usados para copiar e colar arquivos de área de transferência agora são excluídos automaticamente quando você sai do aplicativo, em vez de depender do macOS para excluí-los.
+- As ações de indicador de computador agora são renderizadas no canto superior direito das miniaturas.
+- Realização de correções para resolver problemas relatados pela telemetria de falhas.
 
 ## <a name="updates-for-version-1037"></a>Atualizações para a versão 10.3.7
 
@@ -259,7 +285,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 
 *Data da publicação: 06/08/2018*
 
-- Habilitação de conectividade para PCs associados ao AAD (Azure Active Directory). Para conectar um computador associado ao AAD, o nome de usuário deve estar em um dos seguintes formatos: "AzureAD\usuário" ou "AzureAD\user@domain".
+- Habilitação de conectividade para PCs associados ao AAD (Azure Active Directory). Para conectar um computador associado ao AAD, o nome de usuário deve estar em um dos seguintes formatos: "AzureAD\user" ou "AzureAD\user@domain".
 - Solução de alguns bugs que afetavam o uso de cartões inteligentes em uma sessão remota.
 
 ## <a name="updates-for-version-1020"></a>Atualizações para a versão 10.2.0
@@ -310,7 +336,7 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 - Agora é possível iniciar uma conexão ao pressionar ENTER em um bloco da área de trabalho.
 - Quando você estiver no modo de exibição de tela inteira, CMD+M agora será mapeado corretamente para WIN+M.
 - O Connection Center, as Preferências e Sobre o Windows agora respondem a CMD+M.
-- Agora é possível começar a descobrir feeds pressionando ENTER na página **Adicionar Recursos Remotos**.
+- Agora é possível começar a descobrir feeds pressionando ENTER na página **Adicionar Recursos Remotos*.
 - Correção de um problema em que um novo feed de recursos remotos aparecia vazio no Connection Center até que você atualizasse.
 
 ## <a name="updates-for-version-1016"></a>Atualizações para a versão 10.1.6

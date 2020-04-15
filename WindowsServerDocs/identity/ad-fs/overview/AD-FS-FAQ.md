@@ -7,15 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/17/2019
 ms.topic: article
-ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265738"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814426"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes do AD FS
 
@@ -105,8 +104,8 @@ Para garantir que os servidores AD FS e WAP negociem somente conjuntos de cripto
 
 ## <a name="developer"></a>Desenvolvedor
 
-### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>Ao gerar um id_token com o ADFS para um usuário autenticado no AD, como a “subdeclaração” é gerada no id_token?
-O valor da “subdeclaração” é o hash da ID do cliente + valor da declaração de âncora.
+### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>Ao gerar um id_token com o ADFS para um usuário autenticado no AD, como a "subdeclaração" é gerada no id_token?
+O valor da "subdeclaração" é o hash da ID do cliente + o valor da declaração de âncora.
 
 ### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>Qual é o tempo de vida do token de atualização/token de acesso quando o usuário faz logon por meio de uma relação de confiança remota do provedor de declarações por meio do WS-Fed/SAML-P?
 O tempo de vida do token de atualização será o tempo de vida do token que o ADFS obteve da relação de confiança remota do provedor de declarações. O tempo de vida do token de acesso será o tempo de vida do token da terceira parte confiável para o qual o token de acesso está sendo emitido.
@@ -181,7 +180,7 @@ Se você não tiver políticas de controle de acesso baseadas no dispositivo no 
 
 ### <a name="how-long-are-ad-fs-tokens-valid"></a>Por quanto tempo os tokens do AD FS são válidos?
 
-Geralmente, essa pergunta significa ‘Por quanto tempo os usuários obtêm o SSO (logon único) sem precisar inserir novas credenciais e como eu, como administrador, controlo isso?’  Esse comportamento e as definições de configuração que o controlam são descritos no artigo [Configurações de logon único do AD FS](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/ad-fs-2016-single-sign-on-settings).
+Geralmente, essa pergunta significa 'por quanto tempo os usuários obtêm o SSO (logon único) sem precisar inserir novas credenciais e como eu, como administrador, controlo isso?'  Esse comportamento e as definições de configuração que o controlam são descritos no artigo [Configurações de logon único do AD FS](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/ad-fs-2016-single-sign-on-settings).
 
 Os tempos de vida padrão dos vários cookies e tokens são listados abaixo (bem como os parâmetros que controlam os tempos de vida):
 
@@ -232,14 +231,14 @@ Esse evento é registrado em log normalmente para um acesso de recurso inválido
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>Por que estou vendo um aviso de falha ao adicionar a conta de serviço do AD FS ao grupo de Administradores de Chaves Empresariais?
 Esse grupo só é criado quando um controlador de domínio do Windows 2016 com a função de controlador de domínio primário do FSMO existe no domínio. Para resolver o erro, crie o grupo manualmente e siga as instruções abaixo para dar a permissão necessária depois de adicionar a conta de serviço como membro do grupo.
-1.  Abra **Usuários e Computadores do Active Directory**.
-2.  **Clique com o botão direito do mouse** no nome de domínio no painel de navegação e **clique** em Propriedades.
-3.  **Clique** em Segurança (se a guia Segurança estiver ausente, ative Recursos Avançados no menu Exibir).
-4.  **Clique** em Avançado. **Clique** em Adicionar. **Clique** em Selecionar uma entidade.
-5.  A caixa de diálogo Selecionar Usuário, Computador, Conta de Serviço ou Grupo será exibida.  Na caixa de texto Insira o nome do objeto a ser selecionado, digite Grupo de Administradores de Chaves.  Clique em OK.
-6.  Na caixa de listagem Aplicável a, selecione **objetos de Usuário descendente**.
-7.  Usando a barra de rolagem, role a página até a parte inferior da página e **clique** em Desmarcar tudo.
-8.  Na seção **Propriedades**, selecione **Ler msDS-KeyCredentialLink** e **Gravar msDS-KeyCrendentialLink**.
+1.    Abra **Usuários e Computadores do Active Directory**.
+2.    **Clique com o botão direito do mouse** no nome de domínio no painel de navegação e **clique** em Propriedades.
+3.    **Clique** em Segurança (se a guia Segurança estiver ausente, ative Recursos Avançados no menu Exibir).
+4.    **Clique** em Avançado. **Clique** em Adicionar. **Clique** em Selecionar uma entidade.
+5.    A caixa de diálogo Selecionar Usuário, Computador, Conta de Serviço ou Grupo será exibida.  Na caixa de texto Insira o nome do objeto a ser selecionado, digite Grupo de Administradores de Chaves.  Clique em OK.
+6.    Na caixa de listagem Aplicável a, selecione **objetos de Usuário descendente**.
+7.    Usando a barra de rolagem, role a página até a parte inferior da página e **clique** em Desmarcar tudo.
+8.    Na seção **Propriedades**, selecione **Ler msDS-KeyCredentialLink** e **Gravar msDS-KeyCrendentialLink**.
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>Por que a autenticação moderna em dispositivos Android falha se o servidor não envia todos os certificados intermediários na cadeia com o certificado SSL?
 

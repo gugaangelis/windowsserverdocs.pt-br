@@ -1,25 +1,21 @@
 ---
 title: Novidades no Console do Windows no Windows Server 2016
 description: Lista os novos recursos importantes do console do Windows Server 2016.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: server-general
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/04/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da9fc582-033b-4973-84e7-0c6024ecfcbc
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 305363646aa1714504b0cfb4838170b994ce5da9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b055c379e1d5ee632e420ffd1362389878d3dfd1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391445"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825959"
 ---
 # <a name="whats-new-in-the-windows-console-in-windows-server-2016"></a>Novidades no Console do Windows no Windows Server 2016
 >Aplica-se a: Windows Server 2016
@@ -68,7 +64,7 @@ Há muitas opções novas para a seleção de texto e linhas, além de marcar te
 
 **Para desenvolvedores**: se ocorrer um conflito, geralmente você poderá controlar o comportamento de uso da linha de entrada, a entrada processada e os modos de entrada de eco do aplicativo com a API SetConsoleMode(). Se você executar em modo de entrada processada, os atalhos abaixo se aplicarão, mas em outros modos, seu aplicativo deverá lidar com eles. As combinações de teclas não listadas aqui funcionam como nas versões anteriores do console. Você também pode tentar resolver conflitos com diversas configurações na guia **Opções**. Se tudo o mais falhar, você sempre poderá reverter para o console original.  
 
-Agora você pode usar a seleção de "clicar e arrastar" fora do modo de Edição Rápida e isso poderá selecionar texto em linhas como no Bloco de Notas, em vez de apenas um bloco retangular. As operações de cópia não exigem mais remover quebras de linha. Além da seleção "clicar e arrastar", essas combinações de teclas estão disponíveis:  
+Agora você pode usar a seleção de clicar e arrastar fora do modo de Edição Rápida e isso poderá selecionar texto em linhas como no Bloco de Notas, em vez de apenas um bloco retangular. As operações de cópia não exigem mais remover quebras de linha. Além da seleção de clicar e arrastar, estas combinações de teclas estão disponíveis:  
 
 **Seleção de texto**  
 
@@ -84,7 +80,7 @@ Agora você pode usar a seleção de "clicar e arrastar" fora do modo de Ediçã
 |Se o cursor **não** estiver na linha que está sendo editada, use este comando para estender a seleção até a margem esquerda.|SHIFT+HOME|  
 |Estender a seleção uma tela para baixo|SHIFT+PAGE DOWN|  
 |Estender a seleção uma tela para cima|SHIFT+PAGE UP|  
-|Estender a seleção uma palavra à direita (Você pode definir os delimitadores para "palavra" na chave do registro WordDelimiters.)|CTRL+SHIFT+SETA PARA DIREITA|  
+|Estender a seleção uma palavra à direita (Você pode definir os delimitadores para palavra na chave do Registro WordDelimiters.)|CTRL+SHIFT+SETA PARA DIREITA|  
 |Estender a seleção uma palavra à esquerda|CTRL+SHIFT+HOME|  
 |Estender a seleção até o início do buffer da tela|CTRL+SHIFT+END|  
 |Selecionar todo o texto após o prompt, se o cursor estiver na linha atual e a linha não estiver vazia|CTRL+A|  

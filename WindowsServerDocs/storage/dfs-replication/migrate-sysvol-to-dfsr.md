@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d8d9d47ff8f14ce316d2352729247ab2dcf4acbc
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: eb7997b4ed16812ac6b1d6c7d3ccc220f8f63ce7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949699"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815579"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>Migrar a replicação do SYSVOL para a Replicação do DFS
 
@@ -76,9 +76,9 @@ Este documento pressupõe que você tenha um conhecimento básico do AD DS (Acti
 
 [Série de Migração SYSVOL: Parte 3 – Como migrar para o estado "PREPARADO"](https://go.microsoft.com/fwlink/?linkid=121758)
 
-[Série de Migração SYSVOL: Parte 4 – Como migrar para o estado "REDIRECIONADO"](https://go.microsoft.com/fwlink/?linkid=121759)
+[Série de Migração SYSVOL: Parte 4 – Migrar para o estado 'REDIRECIONADO'](https://go.microsoft.com/fwlink/?linkid=121759)
 
-[Série de Migração SYSVOL: Parte 5 – Como migrar para o estado "ELIMINADO"](https://go.microsoft.com/fwlink/?linkid=121760)
+[Série de Migração SYSVOL: Parte 5 – Migrar para o estado 'ELIMINADO'](https://go.microsoft.com/fwlink/?linkid=121760)
 
 [Guia passo a passo para Sistemas de Arquivos Distribuídos no Windows Server 2008](https://go.microsoft.com/fwlink/?linkid=85231)
 

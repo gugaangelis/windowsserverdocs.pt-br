@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 5dbbdc19707f2eadfa3b2c919af95b58645de441
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07479bc5bd2fdf661db8a30e3a9f20c7cce0513e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391372"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825989"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novidades no Windows Server, versão 1709
 
 >Aplica-se a: Windows Server (Canal semestral)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Para saber mais sobre os recursos mais recentes do Windows, consulte [Novidades no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1709. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também [Windows Server, versão 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
+<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Para saber mais sobre os recursos mais recentes do Windows, consulte [Novidades no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1709. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também [Windows Server, versão 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
 
 > [!IMPORTANT]
 > O Windows Server versão 1709 está sem suporte desde 9 de abril de 2019.
@@ -74,7 +74,7 @@ A **Memória Persistente Virtualizada (vPMEM)** é habilitada ao criar um arquiv
 
 **Armazenamento de contêiner: volumes de dados persistentes com mapeamento global de SMB**. No Windows Server, versão 1709, adicionamos suporte para mapeamento de um compartilhamento de arquivo SMB para a letra da unidade em um contêiner; isso é chamado de mapeamento global de SMB. Essa unidade mapeada fica acessível para todos os usuários no servidor local, de modo que o contêiner de E/S no volume de dados pode passar da unidade montada para o compartilhamento de arquivo subjacente. Para obter mais informações, confira [Suporte ao armazenamento de contêiner com Volumes Compartilhados do Cluster (CSV), Espaços de Armazenamento Diretos (S2D), Mapeamento Global de SMB](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/).
 
-**Formato de arquivo de configuração de máquina virtual (atualizado)** . Um outro arquivo (.vmgs) foi adicionado a máquinas virtuais com uma versão de configuração 8.2 e superior. VMGS significa o estado de convidado da VM e é um novo arquivo interno que inclui o estado do dispositivo que já fazia parte do arquivo de estado de tempo de execução da VM.
+**Formato de arquivo de configuração de máquina virtual (atualizado)** . Um outro arquivo (.vmgs) foi adicionado a máquinas virtuais com uma versão de configuração 8.2 e superior. VMGS significa o estado de convidado da VM e é um novo arquivo interno que inclui o estado do dispositivo que já fazia parte do arquivo de estado de runtime da VM.
 
 ## <a name="security-and-assurance"></a>Segurança e garantia
 
@@ -149,7 +149,7 @@ O **Roteamento de malha do Docker** é compatível. A malha de roteamento de ing
 
 **Rede definida pelo software**
 
-- A **criptografia de rede virtual** é um novo recurso que oferece a capacidade de criptografar o tráfego de rede virtual entre Máquinas Virtuais que se comunicam entre si em sub-redes marcadas com "Criptografia habilitada". Esse recurso usa o Protocolo DTLS na sub-rede virtual para criptografar os pacotes.  O DTLS oferece proteção contra interceptações, adulteração e falsificação por qualquer pessoa com acesso à rede física.
+- A **Criptografia de Rede Virtual** é um novo recurso que oferece a capacidade de criptografar o tráfego de rede virtual entre Máquinas Virtuais que se comunicam entre si em sub-redes marcadas com Criptografia Habilitada. Esse recurso usa o Protocolo DTLS na sub-rede virtual para criptografar os pacotes.  O DTLS oferece proteção contra interceptações, adulteração e falsificação por qualquer pessoa com acesso à rede física.
  
 **Windows 10 VPN**
 

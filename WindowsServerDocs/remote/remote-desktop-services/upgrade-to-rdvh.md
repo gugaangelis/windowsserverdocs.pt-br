@@ -1,24 +1,20 @@
 ---
 title: Atualização das suas implantações de Host de Área de Trabalho Remota para o Windows Server 2016
 description: Este artigo descreve como atualizar as implantações existentes de Serviços de Área de Trabalho Remota para o Windows Server 2016.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 319074987ae161e2b567c15e9e56cce0e2106a1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7bbf5f6a81a18303d4f9f4b02a1b8dead3c9a53a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403790"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857109"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>Atualização das suas implantações de Host de Área de Trabalho Remota para o Windows Server 2016
 
@@ -38,7 +34,7 @@ Esses servidores devem ser atualizados ao mesmo tempo. Siga as etapas a seguir p
 ## <a name="rd-virtualization-host-servers-in-the-deployment-where-vms-are-stored-in-cluster-shared-volumes-csv"></a>Servidores de Host de Virtualização de Área de Trabalho Remota na implantação em que as VMs são armazenadas nos Volumes Compartilhados de Cluster (CSV) 
 
 1. Determine uma estratégia de atualização em que alguns dos servidores RDVH serão atualizados e alguns continuarão a hospedar VMs no Windows Server 2012 R2.  
-2. Isole um ou mais servidores RDVH direcionados para a fase inicial de atualização, migrando todas as VMs para outros servidores RDVH “que ainda não serão atualizados” que continuarão fazendo parte do cluster original do 2012 R2.
+2. Isole um ou mais servidores RDVH direcionados para a fase inicial de atualização migrando todas as VMs para outros servidores RDVH "que ainda não serão atualizados" que continuarão fazendo parte do cluster original do 2012 R2.
     1. Abra o Gerenciador de Cluster de Failover. 
     1. Clique em **Funções**. 
     1. Selecione uma ou mais VMs. Clique com botão direito do mouse para abrir o menu de contexto. 
@@ -54,7 +50,7 @@ Esses servidores devem ser atualizados ao mesmo tempo. Siga as etapas a seguir p
     1. Clique em **Funções**. 
     1. Clique com o botão direito do mouse nos objetos de VM e em **Remover**. 
 10. Em um dos servidores RDVH não atualizados, use o Gerenciador do Hyper-V para mover todas as VMs para um dos servidores RDVH atualizados e o novo Cluster CSV:
-    1. Abra o Gerenciador Hyper-V. 
+    1. Abra o Gerenciador do Hyper-V. 
     2. Selecione um dos servidores RDVH não atualizados. 
     3. Clique com o botão direito do mouse em uma das VMs a ser movida e clique em **Mover**. 
     4. Escolha **Mover a máquina virtual** e clique em **Avançar**. 

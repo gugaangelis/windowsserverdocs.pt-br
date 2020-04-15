@@ -2,21 +2,18 @@
 title: Suporte mensal a ISVs para atualização delta sem WSUS
 description: Tópico sobre o WSUS (Windows Server Update Service) – como ISVs (fornecedores independentes de software) podem usar temporariamente a atualização Delta mensal, em vez da entrega de atualizações do WSUS Express para reduzir o tamanho do pacote
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 4607827d73c34f50f721a2774fa498eb95f9dbb8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361730"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828739"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>Suporte mensal a ISVs para atualização delta sem WSUS
 
@@ -39,7 +36,7 @@ A atualização Delta Mensal é nova e uma solução provisória para ISVs que n
 >[!IMPORTANT]
 >**A atualização Delta está disponível para manutenção do Windows 10, versão 1607 (Atualização de Aniversário), versão 1703 (Atualização para Criadores) e versão 1709 (Fall Creators Update).** Para versões posteriores à versão 1709, você precisará implementar uma infraestrutura de implantação compatível com a [entrega de atualização Express](express-update-delivery-ISV-support.md) para continuar utilizando atualizações incrementais.
 
-Ao usar a atualização Delta mensal, os pacotes conterão apenas as atualizações de um mês. A Cumulativa Mensal contém todas as atualizações até esta versão de atualização, resultando em um arquivo grande que cresce a cada mês. As atualizações Delta e Mensal são lançadas na segunda terça-feira de cada mês, também conhecida como "Atualização de terça-feira". A tabela a seguir compara as atualizações Delta e Cumulativa:
+Ao usar a atualização Delta mensal, os pacotes conterão apenas as atualizações de um mês. A Cumulativa Mensal contém todas as atualizações até esta versão de atualização, resultando em um arquivo grande que cresce a cada mês. As atualizações Delta e Mensal são lançadas na segunda terça-feira de cada mês, também conhecida como Atualização de terças-feira. A tabela a seguir compara as atualizações Delta e Cumulativa:
 
 |                    | Atualização **Delta** mensal                                                                                                                                                                                                       | Atualização mensal **Cumulativa**                                                                                                                                                                                             |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

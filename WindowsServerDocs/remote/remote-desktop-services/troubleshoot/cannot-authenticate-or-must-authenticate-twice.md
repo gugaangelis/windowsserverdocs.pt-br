@@ -1,24 +1,19 @@
 ---
 title: O usuário não consegue se autenticar ou deve se autenticar duas vezes
 description: Solução de um problema no qual o usuário não consegue se autenticar ou deve se autenticar duas vezes ao iniciar uma conexão de área de trabalho remota.
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
 manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dbb037e335af52dacbc56c920b1776be995e753
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265928"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857229"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>O usuário não consegue se autenticar ou deve se autenticar duas vezes
 
@@ -116,7 +111,7 @@ Esse problema pode ocorrer quando um usuário tenta se conectar a uma área de t
 
 Para resolver esse problema, atualize o computador que executa o Windows 10 versão 1709 com o KB 4343893 de [30 de agosto de 2018 – KB4343893 (SO Build 16299.637)](https://support.microsoft.com/help/4343893/windows-10-update-kb4343893).
 
-## <a name="user-cant-sign-in-and-receives-authentication-error-and-credssp-encryption-oracle-remediation-messages"></a>Um usuário não consegue entrar e recebe as mensagens "erro de autenticação" e "correção de Oráculo de criptografia CredSSP"
+## <a name="user-cant-sign-in-and-receives-authentication-error-and-credssp-encryption-oracle-remediation-messages"></a>Um usuário não consegue entrar e recebe as mensagens "erro de autenticação" e "correção do oráculo de criptografia CredSSP"
 
 Quando os usuários tentam entrar usando qualquer versão do Windows, do Windows Vista SP2 e versões posteriores ou do Windows Server 2008 SP2 e versões posteriores, o acesso é negado a eles, que recebem mensagens como as seguintes:
 
@@ -127,7 +122,7 @@ This could be due to CredSSP encryption oracle remediation
 ...
 ```
 
-"Correção de Oráculo de Criptografia CredSSP" refere-se a um conjunto de atualizações de segurança lançado em março, abril e maio de 2018. O CredSSP é um provedor de autenticação que processa solicitações de autenticação para outros aplicativos. A atualização "3B" de 13 de março de 2018 e as atualizações subsequentes resolveram uma exploração em que um invasor podia retransmitir credenciais do usuário para executar o código no sistema de destino.
+"Correção do Oráculo de Criptografia CredSSP" refere-se a um conjunto de atualizações de segurança lançado em março, abril e maio de 2018. O CredSSP é um provedor de autenticação que processa solicitações de autenticação para outros aplicativos. A atualização "3B" de 13 de março de 2018 e as atualizações subsequentes resolveram uma exploração em que um invasor podia retransmitir credenciais do usuário para executar o código no sistema de destino.
 
 As atualizações inicias adicionaram suporte para um novo objeto de política de grupo, Correção do Oráculo de Criptografia, que tem as seguintes configurações possíveis:
 

@@ -1,17 +1,16 @@
 ---
 ms.date: 09/27/2018
 ms.topic: conceptual
-keywords: OpenSSH, SSH, SSHD, instalar, instalação
 contributor: maertendMSFT
-author: maertendMSFT
+author: maertendmsft
 title: Configuração do servidor OpenSSH para Windows
-ms.product: w10
-ms.openlocfilehash: 5b2fbc974223a6e4e611f92ce2a0c32bc77eca5d
-ms.sourcegitcommit: d46f3a1b238ab773900089b0de7279326789a327
+ms.product: windows-server
+ms.openlocfilehash: defb8875ca73c0d08fb0fa0764ed3ddf9003e09c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78214917"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852039"
 ---
 # <a name="openssh-key-management"></a>Gerenciamento de chaves OpenSSH
 
@@ -25,7 +24,7 @@ O OpenSSH inclui ferramentas para ajudar a dar suporte a isso, especificamente:
 * __ssh-agent__ e __SSH-add__ para armazenar chaves privadas com segurança
 * __scp__ e __sftp__ para copiar arquivos de chave pública com segurança durante o uso inicial de um servidor
 
-Este documento apresenta uma visão geral de como usar essas ferramentas no Windows para começar a usar a autenticação de chave com o SSH. Se você não estiver familiarizado com o gerenciamento de chaves SSH, é altamente recomendável examinar o [documento do NIST IR 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf) intitulado "Security of Interactive and Automated Access Management Using Secure Shell (SSH)" (Segurança de gerenciamento de acesso interativo e automatizado usando SSH (Secure Shell)).
+Este documento apresenta uma visão geral de como usar essas ferramentas no Windows para começar a usar a autenticação de chave com o SSH. Se você não está familiarizado com o gerenciamento de chaves SSH, é altamente recomendável examinar o [documento do NIST IR 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf) intitulado "Security of Interactive and Automated Access Management Using Secure Shell (SSH)" (Segurança de gerenciamento de acesso interativo e automatizado usando SSH (Secure Shell)).
 
 ## <a name="about-key-pairs"></a>Sobre pares de chaves
 

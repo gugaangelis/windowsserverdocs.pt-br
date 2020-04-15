@@ -2,7 +2,6 @@
 title: Planejar sua implantação do WSUS
 description: O tópico WUS (Windows Server Update Service) – uma visão geral do processo de planejamento da implantação com links para os tópicos relacionados
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 68825c6bc4d24bca41c04a238fbf4d6291a6625b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639927"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828189"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planejar sua implantação do WSUS
 
@@ -218,7 +217,7 @@ O WSUS (Windows Server Update Services) usa dois tipos de sistemas de armazename
 As atualizações consistem em duas partes: os metadados que descrevem a atualização; e os arquivos necessários para instalar a atualização. Os metadados de atualização normalmente são bem menores do que a atualização real e são armazenados no banco de dados do WSUS. Os arquivos de atualização são armazenados em um servidor do WSUS local ou em um servidor Web do Microsoft Update.
 
 ### <a name="wsus-database"></a>Banco de dados do WSUS
-O WSUS requer um banco de dados para cada servidor do WSUS. O WSUS dá suporte ao uso de um banco de dados que reside em um computador diferente do servidor do WSUS, com algumas restrições. Para obter uma lista contendo os bancos de dados compatíveis e as limitações de bancos de dados remotos, consulte a seção "1.1 Examinar considerações iniciais e requisitos do sistema" neste guia.
+O WSUS requer um banco de dados para cada servidor do WSUS. O WSUS dá suporte ao uso de um banco de dados que reside em um computador diferente do servidor do WSUS, com algumas restrições. Para obter uma lista contendo os bancos de dados compatíveis e as limitações de bancos de dados remotos, confira a seção 1.1 Examinar considerações iniciais e requisitos do sistema neste guia.
 
 O banco de dados do WSUS armazena as seguintes informações:
 
@@ -436,7 +435,7 @@ Por padrão, os produtos que serão atualizados são o Windows e o Office, e as 
 ### <a name="installation"></a>Instalação
 As atualizações normalmente consistem em novas versões de arquivos que já existem no computador que está sendo atualizado. Em um nível binário, esses arquivos existentes podem não ser muito diferentes das versões atualizadas. O recurso de arquivos de instalação expressa identifica os bytes exatos entre as versões, cria e distribui atualizações somente dessas diferenças e mescla o arquivo existente juntamente com os bytes atualizados.
 
-Esse recurso às vezes é chamado de "entrega delta" porque ele baixa somente a diferença (delta) entre duas versões de um arquivo. Os arquivos de instalação expressa são maiores do que as atualizações distribuídas aos computadores clientes porque o arquivo de instalação expressa contém todas as versões possíveis de cada arquivo que será atualizado.
+Esse recurso às vezes é chamado de entrega delta porque ele baixa somente o delta (diferença) entre duas versões de um arquivo. Os arquivos de instalação expressa são maiores do que as atualizações distribuídas aos computadores clientes porque o arquivo de instalação expressa contém todas as versões possíveis de cada arquivo que será atualizado.
 
 Você pode usar arquivos de instalação expressa para limitar a largura de banda consumida na rede local, porque o WSUS transmite apenas o delta aplicável a uma versão específica de um componente atualizado. No entanto, isso ocorre à custa de largura de banda adicional entre o servidor do WSUS, quaisquer servidores do WSUS upstream e Microsoft Update e requer espaço adicional no disco local. Por padrão, o WSUS não usa arquivos de instalação expressa.
 

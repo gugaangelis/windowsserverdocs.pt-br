@@ -1,24 +1,19 @@
 ---
 title: Os clientes não conseguem se conectar e veem o erro "Nenhuma licença disponível"
 description: Solução do erro “Nenhuma licença disponível” com a conexão com a área de trabalho remota
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
 manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 74b4656216d5568f546d1a13722eeec748f1f9b5
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: f163908277b2ab8cc0e3bfbcbc4ae5e8001a2b4a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265888"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857169"
 ---
 # <a name="clients-cant-connect-and-see-no-licenses-available-error"></a>Os clientes não conseguem se conectar e veem o erro "Nenhuma licença disponível"
 
@@ -41,7 +36,7 @@ Esses problemas tendem a ser associados com as seguintes mensagens de usuário:
 
 Nesse caso, [configure o serviço de Licenciamento de Área de Trabalho Remota](#configure-the-rd-licensing-service).
 
-Se o Diagnosticador de Licença da Área de Trabalho Remota lista outros problemas, tais como "O componente de protocolo RDP X.224 detectou um erro no fluxo do protocolo e desconectou o cliente," pode haver um problema que afeta os certificados de licença. Esses problemas tendem a ser associados com mensagens de usuário, tais como as seguintes:
+Se o Diagnosticador de Licença RD listar outros problemas, tais como "O componente de protocolo RDP X.224 detectou um erro no fluxo do protocolo e desconectou o cliente," poderá haver um problema que afeta os certificados de licença. Esses problemas tendem a ser associados com mensagens de usuário, tais como as seguintes:
 
 Devido a um erro de segurança, o cliente não pôde se conectar ao servidor Host da Sessão da Área de Trabalho Remota. Após verificar se você está conectado à rede, tente se conectar ao servidor novamente.
 

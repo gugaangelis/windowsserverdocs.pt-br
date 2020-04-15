@@ -2,18 +2,18 @@
 ms.assetid: 72a90d00-56ee-48a9-9fae-64cbad29556c
 title: Hora precisa no Windows Server 2016
 description: A precisão da sincronização de hora no Windows Server 2016 foi substancialmente aprimorada, mantendo, ao mesmo tempo, a compatibilidade completa do NTP com versões mais antigas do Windows.
-author: eross-msft
+author: dcuomo
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 3320c67d52978f0e9abaae7d5bec9b4fcb727fd6
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 0486033ee52432191cb35f2ce38c44d5b7728a2e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315087"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861679"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Hora precisa no Windows Server 2016
 
@@ -46,7 +46,7 @@ As configurações autônomas e de domínio funcionam de maneira diferente.
 Como os convidados do Hyper-V terão, pelo menos, dois provedores de tempo do Windows à escolha, a hora do host e o NTP, você poderá ver comportamentos diferentes com Domínio ou Autônomo na execução como convidado.
 
 > [!NOTE] 
-> Para obter mais informações sobre a hierarquia de domínio e o sistema de pontuação, confira [“O que é o Serviço de Horário do Windows?”](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) .
+> Para obter mais informações sobre a hierarquia de domínio e o sistema de pontuação, confira ["O que é o Serviço de Tempo do Windows?"](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) .
 
 > [!NOTE]
 > A camada é um conceito usado nos provedores NTP e Hyper-V; o valor delas indica a localização dos relógios na hierarquia.  A camada 1 é reservada para o relógio de nível mais alto e a camada 0 é reservada para o hardware considerado preciso e que tenha pouco ou nenhum atraso associado a ele.  A camada 2 se comunica com os servidores da camada 1, a camada 3 com a camada 2 e assim por diante.  Embora uma camada mais baixa geralmente indique um relógio mais preciso, é possível encontrar discrepâncias.  Além disso, o W32Time aceita apenas a hora da camada 15 ou abaixo.  Para ver a camada de um cliente, use *w32tm /query /status*.

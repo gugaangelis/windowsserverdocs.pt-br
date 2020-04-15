@@ -1,12 +1,8 @@
 ---
 title: Introdução ao cliente para Android
 description: Informações gerais sobre o cliente Android.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
@@ -14,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323418"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856229"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -72,7 +68,7 @@ Para criar uma conexão de Área de Trabalho Remota:
 Deseja remover a conexão? Novamente, toque no menu **Mais opções** ( **…** ) e, em seguida, toque em **Remover**.
 
 >[!TIP]
-> Se você receber o erro 0xf07 por uma senha incorreta ("Não foi possível conectar ao PC remoto porque a senha associada com a conta de usuário expirou"), altere sua senha e tente novamente.
+> Se você receber o erro 0xf07 por uma senha incorreta (Não foi possível conectar ao PC remoto porque a senha associada com a conta de usuário expirou), altere sua senha e tente novamente.
 
 ### <a name="add-remote-resources"></a>Adicionar recursos remotos
 
@@ -103,7 +99,7 @@ O cliente da Área de Trabalho Remota dá suporte à fixação de conexões em s
 
 1. Toque em **Aplicativos** para iniciar o menu de aplicativos.
 2. Toque em **Widgets**.
-3. Passe o dedo pelos widgets e procure o ícone de Área de Trabalho Remota com a descrição: "Fixar Área de Trabalho Remota".
+3. Passe o dedo pelos widgets e procure o ícone de Área de Trabalho Remota com a descrição: Fixar Área de Trabalho Remota.
 4. Toque nesse widget de Área de Trabalho Remota e segure, movendo-o em seguida para a tela inicial.
 5. Quando soltar o ícone, você verá as áreas de trabalho remotas salvas. Escolha a conexão que você deseja salvar em sua tela inicial.
 

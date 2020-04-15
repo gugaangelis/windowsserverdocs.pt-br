@@ -1,19 +1,18 @@
 ---
-ms.assetid: ''
 title: Insider Preview para os recursos do Serviço de Horário do Windows no Windows Server 2019
 description: Novos recursos do Serviço de Horário do Windows no Windows Server 2019
-author: eross-msft
-ms.author: lizross
+author: dcuomo
+ms.author: dacuo
 ms.date: 09/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 3c61b1ca7a11e01d2d8234cb505998946a774691
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f26822d52b55191ad7096135a2757e9f72b7e772
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315011"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861639"
 ---
 # <a name="insider-preview"></a>Insider Preview 
 
@@ -57,7 +56,7 @@ Ao receber um pacote de tempo pela rede de um servidor de horário, ele deve ser
 
 ![carimbo de data/hora do software](../media/Windows-Time-Service/software-timestamping.png)
 
-Para resolver esse problema, o carimbo de data/hora do software nos permite pacotes de carimbo de data/hora antes e depois dos "Componentes de Rede do Windows" mostrados acima para considerar o atraso no sistema operacional.
+Para resolver esse problema, o carimbo de data/hora do software nos permite carimbar pacotes com data/hora antes e depois dos "Componentes de Rede do Windows" mostrados acima para considerar o atraso no sistema operacional.
 
 Para obter mais informações, consulte:
 

@@ -1,23 +1,20 @@
 ---
 title: Data center definido por software do Windows Server
-description: Visão geral do Windows Server SDDC
+Description: Visão geral do Windows Server SDDC
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: SDDC
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6490bd9a6cb7b305ba9746a357a8c909c7b84555
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5a90ad13a51a540c6c76adacb7df0225d642573a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950462"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857189"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Datacenter definido por software do Windows Server
 
@@ -25,13 +22,13 @@ ms.locfileid: "75950462"
 
 ![](media/sddc/heading.png)
 
-## <a name="what-is-windows-server-software-defined-datacenter"></a>O que é o datacenter definido pelo software do Windows Server?
+## <a name="what-is-windows-server-software-defined-datacenter"></a>O que é o datacenter definido por software do Windows Server?
 
-O SDDC (datacenter definido pelo software) é um termo comum no setor, que geralmente se refere a um Datacenter em que a infraestrutura inteira é virtualizada. A virtualização é a chave e significa simplesmente que o hardware e o software no datacenter se expandem além de uma proporção de um para um tradicional. Com um hardware de emulação de hipervisor de software, é possível abstrair sistemas operacionais e aplicativos do hardware físico e multiplicar para formar grupos de recursos elásticos de processadores, memória, E/S e redes.
+O SDDC (datacenter definido por software) é um termo comum no setor, que geralmente se refere a um Datacenter em que a infraestrutura inteira é virtualizada. A virtualização é a chave e significa simplesmente que o hardware e o software no datacenter se expandem além de uma proporção de um para um tradicional. Com um hardware de emulação de hipervisor de software, é possível abstrair sistemas operacionais e aplicativos do hardware físico e multiplicar para formar grupos de recursos elásticos de processadores, memória, E/S e redes.
  
 A implementação do SDDC da Microsoft consiste nas tecnologias do Windows Server destacadas neste artigo. Começa com o hipervisor do Hyper-V que fornece a plataforma de virtualização na qual a rede e o armazenamento são criados. As tecnologias de segurança, desenvolvidas para desafios específicos da infraestrutura virtualizada, reduzem as ameaças internas e externas. Com o PowerShell integrado ao Windows Server e a adição do [System Center](https://docs.microsoft.com/system-center/) e/ou do [Operations Management Suite](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview), você pode programar e automatizar o provisionamento, a implantação, a configuração e o gerenciamento.
 
-As tecnologias integradas ao Windows Server e ao System Center são as principais bases da experiência do Windows Server SDDC. Porém, mesmo que seja uma plataforma virtualizada, ela ainda requer o hardware adequado. Os parceiros da Microsoft participando dos programas **Soluções WSSD (Definidas pelo Software do Windows Server)** e **Soluções do Azure Stack HCI** podem ajudar sua empresa a adquirir o hardware adequado, instalá-lo e executá-lo desde o primeiro dia.
+As tecnologias integradas ao Windows Server e ao System Center são as principais bases da experiência do Windows Server SDDC. Porém, mesmo que seja uma plataforma virtualizada, ela ainda requer o hardware adequado. Os parceiros da Microsoft participando dos programas **Soluções WSSD (Definidas por Software do Windows Server)** e **Soluções do Azure Stack HCI** podem ajudar sua empresa a adquirir o hardware adequado, instalá-lo e executá-lo desde o primeiro dia.
 
 ![](media/sddc/video.png) **[Assista ao vídeo para saber mais sobre o SDDC da Microsoft](https://mva.microsoft.com/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
 
@@ -41,9 +38,9 @@ As tecnologias integradas ao Windows Server e ao System Center são as principai
 
 ## <a name="azure-stack-hci-solutions"></a>Soluções do Azure Stack HCI
 
-Criar seu datacenter definido pelo software do Windows Server na infraestrutura de hardware adequada é a primeira etapa essencial para o sucesso. É por isso que fizemos uma parceria com 15 parceiros para criar designs de SDDC e práticas recomendadas validadas pela Microsoft para implantação.
+Criar seu datacenter definido por software do Windows Server na infraestrutura de hardware adequada é a primeira etapa essencial para o sucesso. É por isso que fizemos uma parceria com 15 parceiros para criar designs de SDDC e práticas recomendadas validadas pela Microsoft para implantação.
 
-Os parceiros da Microsoft oferecem uma matriz de soluções que funcionam com o Windows Server 2019 por meio do programa do Azure Stack HCI e do Microsoft Server 2016 por meio do programa WSSD (definido pelo software do Windows Server) para fornecer uma infraestrutura de rede e armazenamento de alto desempenho e hiperconvergente. As soluções hiperconvergentes unem a computação, o armazenamento e a rede em servidores padrão do setor e os componentes para aprimorar a inteligência e o controle do datacenter.
+Os parceiros da Microsoft oferecem uma matriz de soluções que funcionam com o Windows Server 2019 por meio do programa do Azure Stack HCI e do Microsoft Server 2016 por meio do programa WSSD (definido por software do Windows Server) para fornecer uma infraestrutura de rede e armazenamento de alto desempenho e hiperconvergente. As soluções hiperconvergentes unem a computação, o armazenamento e a rede em servidores padrão do setor e os componentes para aprimorar a inteligência e o controle do datacenter.
 
 ![](media/sddc/learn.png) **[Saiba mais sobre as Soluções Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci)**
 
@@ -59,7 +56,7 @@ O restante deste tópico lista as tecnologias do Windows Server SDDC e fornece l
 
 ### <a name="windows-server-hyper-converged"></a>Windows Server hiperconvergente
 
-As tecnologias de virtualização do Windows Server incluem atualizações ao Hyper-V, ao Comutador Virtual do Hyper-V, à Malha Protegida e a VMs (Máquinas Virtuais) Protegidas, que aprimoram a segurança, a escalabilidade e a confiabilidade. As atualizações de cluster de failover, rede e armazenamento facilitam ainda mais a implantação e o gerenciamento dessas tecnologias quando usadas com o Hyper-V.
+As tecnologias de virtualização do Windows Server incluem atualizações ao Hyper-V, ao Comutador Virtual do Hyper-V, à Malha Protegida e a VMs (Máquinas Virtuais) Protegidas, que aprimorar a segurança, a escalabilidade e a confiabilidade. As atualizações de cluster de failover, rede e armazenamento facilitam ainda mais a implantação e o gerenciamento dessas tecnologias quando usadas com o Hyper-V.
 
 ![](media/sddc/spacer1.png)![](media/sddc/hyper-converged.png)
 
@@ -81,7 +78,7 @@ Flexível, seguro e não vinculado à topologia de armazenamento subjacente, o V
 
 ![](media/sddc/spacer1.png)![](media/sddc/cluster.png)
 
-- O VHDX compartilhado pode residir em um CSV (Volume Compartilhado Clusterizado) no armazenamento em bloco ou no armazenamento SMB com base em arquivos.
+- O VHDX compartilhado pode residir em um CSV (Volume Compartilhado Clusterizado) no armazenamento de bloco ou no armazenamento SMB com base em arquivos.
 - Protegido: o VHDX compartilhado é compatível com a Réplica do Hyper-V e ao backup em nível de host.
 
 ![](media/sddc/learn.png) **[Saiba mais sobre o Clustering de convidado com VHDX compartilhado](https://technet.microsoft.com/library/dn281956(v=ws.11).aspx)**
@@ -168,7 +165,7 @@ Monitore e gerencie centralmente o desempenho de armazenamento de máquinas virt
 
 ![](media/sddc/spacer1.png)![](media/sddc/qos.png)
 
-A QoS do armazenamento é integrada na solução de armazenamento definida pelo software da Microsoft fornecida pelo Servidor de Arquivos de Escalabilidade Horizontal e pelo Hyper-V usando o protocolo SMB3. Um novo Gerenciador de Política oferece monitoramento de desempenho de armazenamento central.
+A QoS do armazenamento é integrada na solução de armazenamento definida por software da Microsoft fornecida pelo Servidor de Arquivos de Escalabilidade Horizontal e pelo Hyper-V usando o protocolo SMB3. Um novo Gerenciador de Política oferece monitoramento de desempenho de armazenamento central.
 
 ![](media/sddc/learn.png) **[Saiba mais sobre a QoS de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-qos/storage-qos-overview)**
 
@@ -255,11 +252,11 @@ A Desired State Configuration do Windows PowerShell fornece uma plataforma de ge
 
 ![](media/sddc/spacer1.png)![](media/sddc/dsc.png)
 
-A DSC é compatível com as "implantações contínuas" para que você possa implantar configurações repetidamente sem perder nada.
+A DSC é compatível com "implantações contínuas" para que você possa implantar configurações repetidamente sem perder nada.
 
 -  As configurações de DSC aplicam-se somente às configurações que foram alteradas em relação à original para implantações mais rápidas.
 -  A DSC pode ser usada em um ambiente de Nuvem pública, privada ou local.
--  Você pode integrar a DSC a qualquer solução da Microsoft ou de terceiros, desde que possa executar um script do PowerShell no sistema alvo.
+-  Você pode integrar a DSC a qualquer solução da Microsoft ou não, desde que possa executar um script do PowerShell no sistema alvo.
 
 ![](media/sddc/learn.png) **[Saiba mais sobre a DSC do PowerShell](https://docs.microsoft.com/powershell/dsc/overview)**
 

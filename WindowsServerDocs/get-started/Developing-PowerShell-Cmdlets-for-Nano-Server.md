@@ -1,23 +1,21 @@
 ---
 title: Desenvolvimento de cmdlets do PowerShell para Nano Server
-description: 'portabilidade CIM, cmdlets do .NET, C++ '
+description: portabilidade CIM, cmdlets do .NET, C++
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b4267f0-1c91-4a40-9262-5daf4659f686
 author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3965e453483b3515e4957ecfaba39cf9a0b8104f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948450"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827069"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desenvolvimento de cmdlets do PowerShell para Nano Server
 
@@ -74,7 +72,7 @@ CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] C
 ```  
 Ao obter uma lista de módulos disponíveis, é possível filtrá-la por edição do PowerShell.  
 ```powershell  
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Desktop"  
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Desktop  
   
     Directory: C:\Program Files\WindowsPowerShell\Modules  
   
@@ -83,21 +81,21 @@ ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------  
 Manifest   1.0        ModuleWithPSEditions  
   
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Core" | % CompatiblePSEditions  
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Core | % CompatiblePSEditions  
 Desktop  
 Core  
   
 ```  
 Os autores de script podem impedir que um script seja executado, a menos que seja executado em uma edição compatível do PowerShell, usando o parâmetro PSEdition em uma instrução #requires.  
 ```powershell  
-Set-Content C:\script.ps1 -Value "#requires -PSEdition Core  
-Get-Process -Name PowerShell"  
+Set-Content C:\script.ps1 -Value #requires -PSEdition Core  
+Get-Process -Name PowerShell  
 Get-Content C:\script.ps1  
 #requires -PSEdition Core  
 Get-Process -Name PowerShell  
   
 C:\script.ps1  
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.  
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a #requires statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.  
 At line:1 char:1  
 + C:\script.ps1  
 + ~~~~~~~~~~~~~  
@@ -145,7 +143,7 @@ Para conferir os pré-requisitos e uma explicação passo a passo sobre o desenv
 Há suporte para a maioria dos códigos em C# no Nano Server. Você pode usar [ApiPort](https://github.com/Microsoft/dotnet-apiport) para verificar se há APIs incompatíveis.  
   
 ### <a name="powershell-core-sdk"></a>SDK do PowerShell Core  
-O módulo "Microsoft.PowerShell.NanoServer.SDK" está disponível na [Galeria do PowerShell](https://www.powershellgallery.com/packages/Microsoft.PowerShell.NanoServer.SDK/) para facilitar o desenvolvimento de cmdlets em .NET usando a Atualização 2 do Visual Studio 2015, que atende à versões do CoreCLR e do PowerShell Core disponíveis no Nano Server. Você pode instalar o módulo usando PowerShellGet com este comando:  
+O módulo Microsoft.PowerShell.NanoServer.SDK está disponível na [Galeria do PowerShell](https://www.powershellgallery.com/packages/Microsoft.PowerShell.NanoServer.SDK/) para facilitar o desenvolvimento de cmdlets em .NET usando a Atualização 2 do Visual Studio 2015 direcionados a versões do CoreCLR e do PowerShell Core disponíveis no Nano Server. Você pode instalar o módulo usando PowerShellGet com este comando:  
   
 `Find-Module Microsoft.PowerShell.NanoServer.SDK -Repository PSGallery | Install-Module -Scope <scope>`  
   
@@ -214,7 +212,7 @@ public class TestNetConnectionResult
 '@  
 # Create object and set properties  
 $result = New-Object TestNetConnectionResult  
-$result.ComputerName = "Foo"  
+$result.ComputerName = Foo  
 $result.RemoteAddress = 1.1.1.1  
   
 ```  
@@ -231,7 +229,7 @@ class TestNetConnectionResult
 }  
 # Create object and set properties  
 $result = [TestNetConnectionResult]::new()  
-$result.ComputerName = "Foo"  
+$result.ComputerName = Foo  
 $result.RemoteAddress = 1.1.1.1  
   
 ```  

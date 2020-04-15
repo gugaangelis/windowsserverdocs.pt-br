@@ -1,25 +1,21 @@
 ---
 title: Requisitos do Sistema
 description: Quais são os requisitos mínimos de armazenamento, CPU, rede, memória e RAM em uma instalação limpa para cada opção de instalação.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/17/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8b42d7-9fe5-4efe-9ea1-ace2131fe068
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8b0c04137ff3b11cdaa7aba3c7899ca6300848
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947748"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826489"
 ---
 # <a name="system-requirements"></a>Requisitos do Sistema
 
@@ -31,16 +27,16 @@ Este tópico aborda os requisitos mínimos de sistema para executar o Windows Se
 > Nesta versão, apenas instalações limpas são recomendadas.  
 
 > [!NOTE]  
-> Se, no momento da instalação, você optar por instalar com a opção Server Core, deverá estar ciente de que nenhum componente de GUI está instalado e você não poderá instalá-los ou desinstalá-los com o Gerenciador do Servidor. Se você precisar de recursos de GUI, escolha a opção "Servidor com Experiência Desktop" ao instalar o Windows Server 2016. Para obter mais informações, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server)  
+> Se, no momento da instalação, você optar por instalar com a opção Server Core, deverá estar ciente de que nenhum componente de GUI está instalado e você não poderá instalá-los ou desinstalá-los com o Gerenciador do Servidor. Se você precisar de recursos de GUI, escolha a opção Servidor com Experiência Desktop ao instalar o Windows Server 2016. Para obter mais informações, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server)  
 
 
 ## <a name="review-system-requirements"></a>Examine os requisitos de sistema  
-A seguir apresentamos requisitos de sistema estimados para o Windows Server 2016. Se o seu computador não atender aos requisitos "mínimos", não será possível instalar este produto corretamente. Os requisitos reais variam conforme a configuração do sistema e dos aplicativos e recursos instalados.
+A seguir apresentamos requisitos de sistema estimados para o Windows Server 2016. Se o seu computador não atender aos requisitos definidos como mínimos, não será possível instalar este produto corretamente. Os requisitos reais variam conforme a configuração do sistema e dos aplicativos e recursos instalados.
 
 Salvo indicação em contrário, esses requisitos mínimos de sistema aplicam-se a todas as opções de instalação (Server Core, Server com Experiência Desktop e Nano Server) e às edições Standard e Datacenter.  
 
 > [!IMPORTANT]  
-> O escopo muito diversificado de possíveis implantações inviabiliza a determinação de requisitos de sistema "recomendados" para aplicação geral. Consulte a documentação de cada função de servidor a ser implantada para obter mais detalhes sobre os recursos necessários a determinadas funções de servidor. Para obter os melhores resultados, realize implantações de teste para determinar os requisitos de sistema adequados aos cenários da sua implantação em particular.  
+> O escopo muito diversificado de possíveis implantações inviabiliza a determinação de requisitos de sistema recomendados para aplicação geral. Consulte a documentação de cada função de servidor a ser implantada para obter mais detalhes sobre os recursos necessários a determinadas funções de servidor. Para obter os melhores resultados, realize implantações de teste para determinar os requisitos de sistema adequados aos cenários da sua implantação em particular.  
 
 
 ## <a name="processor"></a>Processador  

@@ -2,21 +2,19 @@
 title: PowerShell do Nano Server
 description: Diferenças no conjunto reduzido de recursos do PowerShell no Nano Server
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9b25b939-1e2c-4bed-a8d3-2a8e8e46b53d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 1105ba9f4415061b25d0655d3f2d56929dbbdfec
-ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
+ms.openlocfilehash: 4879ae58c24596d64d24b6bece54d4c35837f00f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76248388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826759"
 ---
 # <a name="powershell-on-nano-server"></a>PowerShell do Nano Server
 
@@ -67,7 +65,7 @@ CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] C
 ```
 Ao obter uma lista de módulos disponíveis, é possível filtrá-la por edição do PowerShell.
 ```powershell
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Desktop"
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Desktop
 
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
@@ -76,21 +74,21 @@ ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
 
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Core" | % CompatiblePSEditions
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Core | % CompatiblePSEditions
 Desktop
 Core
 
 ```
 Os autores de script podem impedir que um script seja executado, a menos que seja executado em uma edição compatível do PowerShell, usando o parâmetro PSEdition em uma instrução #requires.
 ```powershell
-Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
-Get-Process -Name PowerShell"
+Set-Content C:\script.ps1 -Value #requires -PSEdition Core
+Get-Process -Name PowerShell
 Get-Content C:\script.ps1
 #requires -PSEdition Core
 Get-Process -Name PowerShell
 
 C:\script.ps1
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a #requires statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
 At line:1 char:1
 + C:\script.ps1
 + ~~~~~~~~~~~~~
@@ -104,9 +102,9 @@ O Nano Server inclui o PowerShell Core por padrão em todas as instalações do 
 
 **Recursos do Windows PowerShell não disponíveis no Nano Server**
 * Adaptadores de tipo ADSI, ADO e o WMI
-* Enable-PSRemoting, Disable-PSRemoting (a comunicação remota do PowerShell é habilitada por padrão; consulte a seção "Using Windows PowerShell Remoting" (Usar a comunicação remota do Windows PowerShell) de [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server)).
+* Enable-PSRemoting, Disable-PSRemoting (a comunicação remota do PowerShell é habilitada por padrão; confira a seção Usar a comunicação remota do Windows PowerShell de [Instalar o Nano Server](Getting-Started-with-Nano-Server.md)).
 * Trabalhos agendados e módulo PSScheduledJob
-* Cmdlets de computador para ingressar em um domínio { Add | Remove } (para ver métodos diferentes de ingressar em um domínio do Nano Server, consulte a seção "Joining Nano Server to a domain" [Junção do Nano Server em um domínio] em [Install Nano Server](Getting-Started-with-Nano-Server.md) [Instalar o Nano Server]).
+* Cmdlets de computador para ingressar em um domínio { Add | Remove } (para ver métodos diferentes de ingressar em um domínio do Nano Server, confira a seção Ingressar o Nano Server em um domínio em [Instalar o Nano Server](Getting-Started-with-Nano-Server.md)).
 * Reset-ComputerMachinePassword, Test-ComputerSecureChannel
 * Perfis (é possível adicionar um script de inicialização para conexões de entrada remotas com o `Set-PSSessionConfiguration`)
 * Área de transferência de Cmdlets

@@ -1,23 +1,19 @@
 ---
 title: 'Notas de versão: problemas importantes no Windows Server 2016'
 description: Resume os problemas críticos que exigem solução alternativa para evitar falhas, congelamento, falha de instalação e perda de dados.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 11/13/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822159"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826379"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas sobre a versão: Problemas importantes no Windows Server 2016
 
@@ -29,7 +25,7 @@ Este documento é atualizado continuamente. À medida que são descobertas quest
 
 ## <a name="express-updates-available-starting-in-november-2018-new"></a>Atualizações Expressas disponíveis a partir de novembro de 2018 (NOVO)
 
-Na "atualização das terças-feiras" de novembro de 2018 em diante, o Windows publicará as [Atualizações expressas](express-updates.md) novamente para o Windows Server 2016. Se estiver usando o WSUS e o Configuration Manager, você verá mais uma vez dois pacotes para a atualização do Windows Server 2016: uma atualização completa e uma atualização expressa. Caso deseje usar a Expressa nos ambientes de servidor, você precisará confirmar que o servidor fez uma atualização completa desde novembro de 2017 (KB nº 4048953) para garantir que a atualização Expressa seja instalada corretamente. Se você tentar fazer uma atualização Expressa em um servidor que ainda não foi atualizado desde a atualização 11B de 2017 (KB nº 4048953), verá falhas repetidas que consomem a largura de banda e os recursos da CPU em um loop infinito. Caso você experimente esse cenário, pare de enviar a atualização Expressa por push e, em vez disso, envie uma atualização Completa recente por push para interromper o loop de falha.
+Da atualização de terças-feiras de novembro de 2018 em diante, o Windows publicará as [Atualizações expressas](express-updates.md) novamente para o Windows Server 2016. Se estiver usando o WSUS e o Configuration Manager, você verá mais uma vez dois pacotes para a atualização do Windows Server 2016: uma atualização completa e uma atualização expressa. Caso deseje usar a Expressa nos ambientes de servidor, você precisará confirmar que o servidor fez uma atualização completa desde novembro de 2017 (KB nº 4048953) para garantir que a atualização Expressa seja instalada corretamente. Se você tentar fazer uma atualização Expressa em um servidor que ainda não foi atualizado desde a atualização 11B de 2017 (KB nº 4048953), verá falhas repetidas que consomem a largura de banda e os recursos da CPU em um loop infinito. Caso você experimente esse cenário, pare de enviar a atualização Expressa por push e, em vez disso, envie uma atualização Completa recente por push para interromper o loop de falha.
 
 ## <a name="server-core-installation-option"></a>Opção de instalação do Server Core
 
@@ -42,7 +38,7 @@ Para evitar isso, após a primeira inicialização, desabilite o spooler de impr
 ## <a name="containers"></a>Contêineres
 
 [comment]: # (ID: 371; Remetente: taylorb; estado: aprovado)
-- Antes de usar contêineres, instale a [Atualização da pilha de manutenção para o Windows 10 versão 1607: 23 de agosto de 2016](https://support.microsoft.com/kb/3176936) ou as atualizações mais recentes que estiverem disponíveis. Caso contrário, vários problemas poderão ocorrer, incluindo falhas na criação, na inicialização ou na execução de contêineres, bem como erros semelhantes a "Falha de CreateProcess no Win32: O servidor RPC não está disponível."
+- Antes de usar contêineres, instale a [Atualização da pilha de manutenção para o Windows 10 versão 1607: 23 de agosto de 2016](https://support.microsoft.com/kb/3176936) ou as atualizações mais recentes que estiverem disponíveis. Caso contrário, vários problemas poderão ocorrer, incluindo falhas na criação, na inicialização ou na execução de contêineres, bem como erros semelhantes à Falha CreateProcess no Win32: O servidor RPC não está disponível.
 
 [comment]: # (ID: 373; Remetente: plang; estado: aprovado)
 - O provedor NanoServerPackage OneGet não funciona em contêineres do Windows. Para solucionar esse problema, use Find-NanoServerPackage e Save-NanoServerPackage em um computador diferente (não um contêiner) para baixar o pacote necessário. Em seguida, copie os pacotes no contêiner e instale-os.
@@ -86,7 +82,7 @@ Alguns sistemas podem apresentar um desempenho de armazenamento reduzido ao exec
 
 ## <a name="copyright"></a>Direitos autorais
 
-Este documento é fornecido "na condição em que se encontra". As informações e visualizações apresentadas neste documento, incluindo URL e outras referências a sites, estão sujeitas a alterações sem prévio aviso.  
+Este documento é fornecido no estado em que se encontra. As informações e visualizações apresentadas neste documento, incluindo URL e outras referências a sites, estão sujeitas a alterações sem prévio aviso.  
 
 Este documento não fornece direitos legais e nenhuma propriedade intelectual sobre qualquer produto da Microsoft. Você pode copiar e usar este documento para fins de referência interna.  
 

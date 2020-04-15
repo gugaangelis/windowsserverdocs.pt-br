@@ -1,5 +1,5 @@
 ---
-title: Implantar Redirecionamento de Pastas com Arquivos Offline
+title: Implantar o Redirecionamento de Pastas com o Redirecionamento de Pastas FilesDeploy Offline com Arquivos Offline
 description: Como usar o Windows Server para implantar o Redirecionamento de Pastas com o Arquivos Offline para computadores cliente Windows.
 ms.prod: windows-server
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d8f6bf0df67b76028945403352bd135e6641a5a
-ms.sourcegitcommit: ab3967d71dcbb962079af194875de58e7c32c4e2
+ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967414"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855879"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implantar Redirecionamento de Pastas com Arquivos Offline
 
@@ -30,7 +30,7 @@ Para obter uma lista das alterações recentes a este tópico, confira o [Histó
 
 ### <a name="hardware-requirements"></a>Requisitos de hardware
 
-O Redirecionamento de Pastas requer um computador baseado em x64 ou x86. Não há suporte para ele no Windows® RT.
+O Redirecionamento de Pastas requer um computador baseado em x64 ou x86; não há suporte para ele no Windows&reg; RT.
 
 ### <a name="software-requirements"></a>Requisitos de software
 
@@ -99,7 +99,7 @@ Veja como criar um compartilhamento de arquivo no Windows Server 2019, no Window
 | Sistema     | Controle total        |    Essa pasta, subpastas e arquivos     |
 | Administradores     | Controle total       | Apenas essa pasta        |
 | Criador/Proprietário     |   Controle total      |   Apenas subpastas e arquivos      |
-| Grupo de segurança de usuários que precisam colocar dados no compartilhamento (Usuários de Redirecionamento de Pastas)     |   Listar pasta/ler dados *(permissões avançadas)* <br /><br />Criar pastas/acrescentar dados *(permissões avançadas)* <br /><br />Ler atributos *(permissões avançadas)* <br /><br />Ler atributos estendidos *(permissões avançadas)* <br /><br />Ler permissões *(permissões avançadas)*      |  Apenas essa pasta       |
+| Grupo de segurança de usuários que precisam colocar dados no compartilhamento (Usuários de Redirecionamento de Pastas)     |   Listar pasta/ler dados *(permissões avançadas)* <p>Criar pastas/acrescentar dados *(permissões avançadas)* <p>Ler atributos *(permissões avançadas)* <p>Ler atributos estendidos *(permissões avançadas)* <p>Ler permissões *(permissões avançadas)*      |  Apenas essa pasta       |
 | Outros grupos e contas     |  Nenhum (remover)       |         |
 
 ## <a name="step-3-create-a-gpo-for-folder-redirection"></a>Etapa 3: Criar GPO para Redirecionamento de Pastas

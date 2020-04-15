@@ -1,20 +1,19 @@
 ---
-ms.assetid: ''
 title: Horário do Windows para rastreabilidade
 description: As regulamentações em muitos setores exigem que os sistemas sejam rastreáveis para o UTC.  Isso significa que a diferença de um sistema pode ser atestada com respeito ao UTC.
-author: eross-msft
+author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 30952c7a15109ccdd8bcbb09d7c8dda44f716d5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314933"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859809"
 ---
 # <a name="windows-time-for-traceability"></a>Horário do Windows para rastreabilidade
 >Aplica-se a: Windows Server 2016 versão 1709 ou posterior e Windows 10 versão 1703 ou posterior
@@ -126,7 +125,7 @@ Isso registra em log cada instância quando a Hora do Sistema é modificada usan
 |||
 |---|---|
 |Descrição do evento |Frequência do relógio do sistema ajustada |
-|Detalhes |A frequência do relógio do sistema é modificada constantemente pelo W32time quando o relógio está em uma sincronização próxima. Queremos capturar ajustes “razoavelmente significativos” feitos na frequência do relógio sem executar o log de eventos excessivamente. |
+|Detalhes |A frequência do relógio do sistema é modificada constantemente pelo W32time quando o relógio está em uma sincronização próxima. Queremos capturar ajustes "razoavelmente significativos" feitos na frequência do relógio sem executar o log de eventos excessivamente. |
 |Mecanismo de limitação  |Todos os ajustes de relógio abaixo de TimeAdjustmentAuditThreshold (mín. = 128 partes por milhão, padrão = 800 partes por milhão) não são registrados em log.<br><br>A alteração de 2 PPM na frequência do relógio com granularidade atual gera uma alteração de 120 µsec/s na precisão do relógio.<br><br>Em um sistema sincronizado, a maioria dos ajustes fica abaixo desse nível. Se você quiser um acompanhamento mais preciso, essa configuração poderá ser ajustada, você poderá usar PerfCounters ou poderá fazer ambos. |
 
 # <a name="263"></a>[263](#tab/263)

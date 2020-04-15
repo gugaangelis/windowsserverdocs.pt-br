@@ -1,7 +1,6 @@
 ---
 title: Atribuir um caminho da pasta do ponto de montagem a uma unidade.
 description: Este artigo descreve como atribuir um caminho da pasta do ponto de montagem (em vez de uma letra da unidade) a uma unidade.
-keywords: virtualização, segurança, malware
 ms.date: 06/07/2019
 ms.prod: windows-server
 ms.technology: storage
@@ -9,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1255eadd50adb0eaaf44774e150d69f6dad8adae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2fda216b57fbf036ce20c40b4c8b38d44404f3c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386055"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815529"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>Atribuir um caminho da pasta do ponto de montagem a uma unidade
 
@@ -65,7 +64,7 @@ ms.locfileid: "71386055"
 -   Ao atribuir um caminho da pasta do ponto de montagem a uma unidade, use o **Visualizador de Eventos** para verificar no log do sistema se há erros de serviço do Cluster ou avisos indicando falhas de caminho da pasta do ponto de montagem. Esses erros seriam listados como **ClusSvc** na coluna **Origem** e **Recurso de disco físico** na coluna **Categoria**.
 -   Também é possível criar uma unidade montada usando o comando [mountvol](https://go.microsoft.com/fwlink/?linkid=64111).
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 -   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
 
 

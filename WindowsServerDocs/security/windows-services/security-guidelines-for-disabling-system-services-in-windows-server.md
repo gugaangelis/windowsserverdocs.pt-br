@@ -1,21 +1,19 @@
 ---
 title: Diretrizes de segurança para serviços do sistema no Windows Server 2016
 description: Diretrizes de segurança para desabilitar serviços no Windows Server 2016 com Experiência Desktop
-ms.custom: na
 ms.prod: windows-server
 ms.technology: techgroup-security
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 1711eb94b622775feaf02f6bada596fe03b08ea9
-ms.sourcegitcommit: b8e120fc574450e9eee13e7315424137a43e6a6c
+ms.openlocfilehash: f7bb6f73fb2d898c3e5170dda96fef5aea611a88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74044803"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855049"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Diretrizes para desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop
 
@@ -23,7 +21,7 @@ Aplica-se a: Windows Server 2016
 
 O sistema operacional Windows inclui muitos serviços do sistema que fornecem funcionalidades importantes. Diferentes serviços têm políticas de inicialização padrão diferentes: algumas são iniciadas por padrão (automático), outras quando necessário (manual) e outras são desabilitadas por padrão e precisam ser habilitadas explicitamente antes de serem executadas. Esses padrões foram escolhidos cuidadosamente para cada serviço, visando equilibrar o desempenho, a funcionalidade e a segurança para clientes típicos.
 
-No entanto, alguns clientes corporativos podem preferir um equilíbrio mais voltado para segurança para seus servidores e computadores Windows, que reduza sua superfície de ataque ao mínimo absoluto e, portanto, podem desejar desabilitar totalmente todos os serviços que não sejam necessários em seus ambientes específicos. Para esses clientes, a Microsoft® fornece diretrizes complementares em relação a quais serviços podem ser desabilitados com segurança para essa finalidade.
+No entanto, alguns clientes corporativos podem preferir um equilíbrio mais voltado para segurança para seus servidores e computadores Windows, que reduza sua superfície de ataque ao mínimo absoluto e, portanto, podem desejar desabilitar totalmente todos os serviços que não sejam necessários em seus ambientes específicos. Para esses clientes, a Microsoft&reg; fornece diretrizes complementares em relação a quais serviços podem ser desabilitados com segurança para essa finalidade.
 
 As diretrizes destinam-se apenas ao Windows Server 2016 com Experiência Desktop (a menos que seja usado como uma substituição da área de trabalho para usuários finais). No Windows Server 2019 em diante, essas diretrizes estão configuradas por padrão. Cada serviço do sistema é categorizado da seguinte maneira:
 
@@ -209,7 +207,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Define automaticamente o fuso horário do sistema.
 |   **Nome do serviço**    |   tzautoupdate
 |   **Instalação**    |   Somente com a Experiência Desktop
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         
@@ -366,7 +364,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Mantém uma lista atualizada dos computadores na rede e fornece essa lista aos computadores designados como pesquisadores. Se esse serviço for interrompido, essa lista não será atualizada nem mantida. Se esse serviço for desabilitado, os serviços que dependem explicitamente dele não serão iniciados.
 |   **Nome do serviço**    |   Navegador
 |   **Instalação**    |   Sempre instalado
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         
@@ -1108,7 +1106,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Gerencia os usuários e os aplicativos virtuais do App-V
 |   **Nome do serviço**    |   AppVClient
 |   **Instalação**    |   Somente com a Experiência Desktop
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         
@@ -1192,7 +1190,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Fornece a capacidade de compartilhar portas TCP no protocolo net.tcp.
 |   **Nome do serviço**    |   NetTcpPortSharing
 |   **Instalação**    |   Sempre instalado
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         
@@ -1318,7 +1316,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   O serviço Arquivos Offline executa atividades de manutenção no cache dos Arquivos Offline, responde a eventos de logon e logoff do usuário, implementa as informações internas da API pública e expede eventos interessantes para aqueles interessados nas atividades dos Arquivos Offline e nas alterações no estado do cache.
 |   **Nome do serviço**    |   CscService
 |   **Instalação**    |   Somente com a Experiência Desktop
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         
@@ -1409,12 +1407,12 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 
 
 
-## <a name="power"></a>Potência            
+## <a name="power"></a>Energia            
 
 | | |           
 |---|---|       
 |   **Descrição do serviço** |   Gerencia a política de energia e a entrega de notificação da política de energia.
-|   **Nome do serviço**    |   Potência
+|   **Nome do serviço**    |   Energia
 |   **Instalação**    |   Sempre instalado
 |   **StartType**   |   Automática
 |   **Recomendação**  | Sem diretrizes   
@@ -1549,7 +1547,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 
 
 
-## <a name="remote-desktop-services"></a>Serviços da Área de Trabalho Remota          
+## <a name="remote-desktop-services"></a>Serviços da área de trabalho Remota          
 
 | | |           
 |---|---|   
@@ -1640,7 +1638,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Oferece serviços de roteamento a empresas em ambientes de rede local e rede de longa distância.
 |   **Nome do serviço**    |   RemoteAccess
 |   **Instalação**    |   Sempre instalado
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   Já desabilitado
 |||         
@@ -1741,7 +1739,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Comentários**    |
 |||
 
-## <a name="server"></a>Servidor           
+## <a name="server"></a>Server (Servidor)           
 
 | | |           
 |---|---|   
@@ -1776,7 +1774,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Gerencia o acesso aos cartões inteligentes lidos por este computador. Se esse serviço for interrompido, esse computador não poderá ler cartões inteligentes. Se esse serviço for desabilitado, os serviços que dependem explicitamente dele não serão iniciados.
 |   **Nome do serviço**    |   SCardSvr
 |   **Instalação**    |   Sempre instalado
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         
@@ -2168,7 +2166,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Fornece suporte para o roaming de configurações de aplicativo e do sistema operacional
 |   **Nome do serviço**    |   UevAgentService
 |   **Instalação**    |   Somente com a Experiência Desktop
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         
@@ -2587,7 +2585,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 |   **Descrição do serviço** |   Fornece indexação de conteúdo, cache de propriedades e resultados da pesquisa para arquivos, emails e outros tipos de conteúdo.
 |   **Nome do serviço**    |   WSearch
 |   **Instalação**    |   Somente com a Experiência Desktop
-|   **StartType**   |   Desabilitada
+|   **StartType**   |   Desabilitado
 |   **Recomendação**  |   Já desabilitado
 |   **Comentários**    |   
 |||         

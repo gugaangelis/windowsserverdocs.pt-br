@@ -1,27 +1,23 @@
 ---
 title: Instalar o Servidor com Experiência Desktop
-description: 'Explica como obter e instalar uma instalação de Servidor com Experiência Desktop '
-ms.custom: na
+description: Explica como obter e instalar uma instalação de Servidor com Experiência Desktop
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d92ae9e0013d622c1e0a6b8b6a1662dc82360f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18c454d9ef4deb8c9ea681a486e85f356ad5c9cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391792"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826939"
 ---
-# <a name="install-server-with-desktop-experience"></a>Instalar o Server com a Experiência Desktop
+# <a name="install-server-with-desktop-experience"></a>Instalar o Servidor com Experiência Desktop
 > Aplica-se a: Windows Server 2016
   
 
@@ -33,7 +29,7 @@ A opção Servidor com Experiência Desktop instala a interface de usuário padr
 >
 > Ao contrário de algumas versões anteriores do Windows Server, não é possível converter entre Server Core e Server com Experiência Desktop após a instalação. Se você instalar o Server com Experiência Desktop e posteriormente decidir usar o Server Core, deverá fazer uma nova instalação.
 
-**Interface do usuário:** interface gráfica de usuário padrão ("Shell Gráfico de Servidor"). O Shell Gráfico de Servidor inclui o novo shell do Windows 10. Os recursos específicos do Windows instalados por padrão com essa opção são User-Interfaces-Infra, Server-GUI-Shell, Server-GUI-Mgmt-Infra, InkAndHandwritingServices, ServerMediaFoundation e Experiência Desktop. Embora esses recursos estejam no Gerenciador do Servidor nesta versão, não há suporte para desinstalá-los e eles não estarão disponíveis em versões futuras.
+**Interface do usuário:** interface gráfica do usuário padrão (Shell Gráfico de Servidor). O Shell Gráfico de Servidor inclui o novo shell do Windows 10. Os recursos específicos do Windows instalados por padrão com essa opção são User-Interfaces-Infra, Server-GUI-Shell, Server-GUI-Mgmt-Infra, InkAndHandwritingServices, ServerMediaFoundation e Experiência Desktop. Embora esses recursos estejam no Gerenciador do Servidor nesta versão, não há suporte para desinstalá-los e eles não estarão disponíveis em versões futuras.
 
 **Instale, configure, desinstale funções de servidor localmente:** com o Gerenciador do Servidor ou com o Windows PowerShell
 
@@ -93,19 +89,19 @@ A capacidade de migrar varia entre as diferentes funções de servidor. A grade 
 
 |Função de servidor|Pode ser atualizado do Windows Server 2012 R2?|Pode ser atualizado do Windows Server 2012?|Migração compatível?|A migração pode ser concluída sem tempo de inatividade?|  
 |-------------------|----------|--------------|--------------|----------|  
-|Serviços de Certificados do Active Directory| Sim|    Sim|    Sim|    Não|
-|Active Directory Domain Services|  Sim|    Sim|    Sim|    Sim|
-|Serviços de Federação do Active Directory|  Não| Não| Sim|    Não (os novos nós precisam ser adicionados ao farm)|
-|Active Directory Lightweight Directory Services|   Sim|    Sim|    Sim|    Sim|
-|Active Directory Rights Management Services|   Sim|    Sim|    Sim|    Não|
-|Cluster de failover|Sim com o processo [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)contém o nó Pause-Drain, Evict, atualização para o Windows Server 2016 e o reingresso no cluster original. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.|Não enquanto o servidor fizer parte de um cluster. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.  |Sim|Não para Clusters de Failover no Windows Server 2012. Sim para Clusters de Failover do Windows Server 2012 R2 com máquinas virtuais do Hyper-V ou Clusters de Failover do Windows Server 2012 R2 executando a função Servidor de Arquivos de Escalabilidade Horizontal. confira [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
-|Serviços de Arquivo e Armazenamento| Sim|    Sim|    Varia de acordo com o sub-recurso|  Não|
-|Serviços de impressão e fax|    Não| Não| Sim (Printbrm.exe)| Não|
-|Serviços da Área de Trabalho Remota|   Sim, para todas as subfunções, mas o modo de farm misto não é compatível|   Sim, para todas as subfunções, mas o modo de farm misto não é compatível|   Sim|    Não|
-|Servidor Web (IIS)|  Sim|    Sim|    Sim|    Não|
-|Experiência do Windows Server Essentials|  Sim|    N/D, novo recurso|  Sim|    Não|
+|Serviços de Certificados do Active Directory|    Sim|    Sim|    Sim|    Não|
+|Active Directory Domain Services|    Sim|    Sim|    Sim|    Sim|
+|Serviços de Federação do Active Directory|    Não|    Não|    Sim|    Não (os novos nós precisam ser adicionados ao farm)|
+|Active Directory Lightweight Directory Services|    Sim|    Sim|    Sim|    Sim|
+|Active Directory Rights Management Services|    Sim|    Sim|    Sim|    Não|
+|Cluster de failover|Sim com o processo [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)contém o nó Pause-Drain, Evict, atualização para o Windows Server 2016 e o reingresso no cluster original. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.|Não enquanto o servidor fizer parte de um cluster. Sim, quando o servidor é removido pelo cluster para atualização e adicionado a um cluster diferente.    |Sim|Não para Clusters de Failover no Windows Server 2012. Sim para Clusters de Failover do Windows Server 2012 R2 com máquinas virtuais do Hyper-V ou Clusters de Failover do Windows Server 2012 R2 executando a função Servidor de Arquivos de Escalabilidade Horizontal. confira [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
+|Serviços de Arquivo e Armazenamento|    Sim|    Sim|    Varia de acordo com o sub-recurso|    Não|
+|Serviços de impressão e fax|    Não|    Não|    Sim (Printbrm.exe)|    Não|
+|Serviços da área de trabalho Remota|    Sim, para todas as subfunções, mas o modo de farm misto não é compatível|    Sim, para todas as subfunções, mas o modo de farm misto não é compatível|    Sim|    Não|
+|Servidor Web (IIS)|    Sim|    Sim|    Sim|    Não|
+|Experiência do Windows Server Essentials|    Sim|    N/D, novo recurso|    Sim|    Não|
 |Windows Server Update Services|    Sim|    Sim|    Sim|    Não|
-|Pastas de trabalho|  Sim|    Sim|    Sim|    Sim do cluster do WS 2012 R2 ao usar a [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
+|Pastas de trabalho|    Sim|    Sim|    Sim|    Sim do cluster do WS 2012 R2 ao usar a [Atualização sem interrupção do sistema operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
 
 > [!IMPORTANT]  
 > Após a conclusão da instalação e imediatamente depois de ter instalado todas as funções e recursos de servidor necessários, procure por e instale as atualizações disponíveis para o Windows Server 2016 usando o Windows Update ou outros métodos de atualização.

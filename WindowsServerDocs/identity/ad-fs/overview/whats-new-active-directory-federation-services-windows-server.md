@@ -1,7 +1,6 @@
 ---
 ms.assetid: aa892a85-f95a-4bf1-acbb-e3c36ef02b0d
 title: Novidades nos Serviços de Federação do Active Directory (AD FS) para Windows Server 2016
-description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
@@ -9,12 +8,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: e88297bdbd55d2f834f1bff72b6d05bdf356bb85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517551"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860249"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novidades nos Serviços de Federação do Active Directory (AD FS)
 
@@ -52,7 +51,7 @@ As seguintes funcionalidades de autenticação/política estão inclusas no AD F
 Os seguintes aprimoramentos de SSO de entrada foram feitos no AD FS 2019:
 
 - [Experiência do usuário paginada com tema centralizado](../operations/AD-FS-paginated-sign-in.md) – o ADFS agora foi movido para um fluxo de experiência do usuário paginada que permite ao ADFS validar e fornecer uma experiência de entrada mais suave. O ADFS agora usa uma interface do usuário centralizada (em vez do lado direito da tela). Você pode exigir que as imagens mais recentes de logotipo e de tela de fundo se alinhem com essa experiência. Isso também espelha a funcionalidade oferecida no Azure AD.
-- **Correção de bug: estado de SSO persistente para dispositivos Win10 ao fazer a autenticação de PRT** isso resolve um problema em que o estado de MFA não foi persistido ao usar a autenticação de PRT para dispositivos Windows 10. O resultado do problema era que os usuários finais eram solicitados a inserir a credencial de segundo fator (MFA) com frequência. A correção também torna a experiência consistente quando a autenticação do dispositivo é executada com êxito via TLS do cliente e por meio do mecanismo de PRT. 
+- **Correção de bug: estado de SSO persistente para dispositivos Win10 ao fazer a autenticação de PRT** isso resolve um problema em que o estado de MFA não era persistente ao usar a autenticação de PRT para dispositivos Windows 10. O resultado do problema era que os usuários finais eram solicitados a inserir a credencial de segundo fator (MFA) com frequência. A correção também torna a experiência consistente quando a autenticação do dispositivo é executada com êxito via TLS do cliente e por meio do mecanismo de PRT. 
 
 
 ### <a name="suppport-for-building-modern-line-of-business-apps"></a>Suporte para criar aplicativos de linha de negócios modernos
@@ -72,7 +71,7 @@ Os seguintes aprimoramentos de suporte não fazem parte do AD FS 2019:
 As seguintes atualizações de implantação foram incluídas no AD FS 2019:
 - **Nível de comportamento de farm 2019** – como com o AD FS 2016, há uma nova versão de nível de comportamento de farm necessária para habilitar a nova funcionalidade discutida acima. Isso permite fazer as seguintes atualizações:
     - 2012 R2-> 2019
-    - 2016 -> 2019   
+    - 2016 -> 2019     
 
 ### <a name="saml-updates"></a>Atualizações SAML
 A seguinte atualização SAML está inclusa no AD FS 2019:
