@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855089"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524901"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>Determinar a lista de permissão-restrição e inventário de aplicativos para políticas de restrição de Software
 
@@ -48,9 +48,9 @@ Para usar efetivamente a regra permitir padrão, você precisa determinar exatam
 
 2.  Crie o seguinte valor de registro para habilitar o recurso de registro em log avançado e defina o caminho para onde o arquivo de log deve ser gravado.
 
-    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
 
-    Valor da cadeia *de caracteres: NameLogFile caminho para NameLogFile*
+    Valor da cadeia *de caracteres: LogFileName caminho para LogFileName*
 
     Como o SRP está avaliando todos os aplicativos quando eles são executados, uma entrada é gravada no arquivo de log *NameLogFile* cada vez que o aplicativo é executado.
 
@@ -69,5 +69,4 @@ Para usar efetivamente a regra permitir padrão, você precisa determinar exatam
     Um exemplo da saída gravada em um arquivo de log:
 
 **Explorer. exe (PID = 4728) identifiedC: \ Windows\system32\onenote.exe como regra usingpath irrestrita, GUID = {320bd852-aa7c-4674-82c5-9a80321670a3}**    Todos os aplicativos e o código associado que o SRP verifica e definem para bloquear serão indicados no arquivo de log, que você pode usar para determinar quais executáveis devem ser considerados para sua lista de permissões.
-
 
