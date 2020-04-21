@@ -1,28 +1,24 @@
 ---
 title: route_ws2008
 description: Saiba como modificar e exibir entradas na tabela de roteamento de IP local.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: afcd666c-0cef-47c2-9bcc-02d202b983b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: cc68dd5634ae4832376924c1678dc10a0427f2b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a0287fed8452cb155ea858ff0a544962dd765c3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371417"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835599"
 ---
 # <a name="route_ws2008"></a>route_ws2008
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe e modifica as entradas na tabela de roteamento IP local. Usado sem parâmetros, a **rota** exibe a ajuda.   
 
@@ -31,13 +27,13 @@ Exibe e modifica as entradas na tabela de roteamento IP local. Usado sem parâme
 route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric <Metric>]] [if <Interface>]]  
 ```  
 
-### <a name="parameters"></a>Parâmetros  
+#### <a name="parameters"></a>Parâmetros  
 
 |Parâmetro|Descrição|  
 |-------|--------|  
 |/f|Limpa a tabela de roteamento de todas as entradas que não são rotas de host (rotas com uma máscara de rede de 255.255.255.255), a rota de redes de auto-retorno (rotas com um destino de 127.0.0.0 e uma máscara de difusão de 255.0.0.0) ou uma rota de multicast (rotas com um destino de 224.0.0.0 e uma máscara de rede de 240.0.0.0). Se isso for usado em conjunto com um dos comandos (como adicionar, alterar ou excluir), a tabela será limpa antes da execução do comando.|  
 |/p|Quando usado com o comando Add, a rota especificada é adicionada ao registro e é usada para inicializar a tabela de roteamento de IP sempre que o protocolo TCP/IP é iniciado. Por padrão, as rotas adicionadas não são preservadas quando o protocolo TCP/IP é iniciado. Quando usado com o comando Print, a lista de rotas persistentes é exibida. Esse parâmetro é ignorado para todos os outros comandos. As rotas persistentes são armazenadas no local do registro **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\tcpip\parameters\persistentroutes**.|  
-|> de comando \<|Especifica o comando que você deseja executar. A tabela a seguir lista os comandos válidos:<br /><br />-   **Adicionar:** adiciona uma rota.<br />alteração de -    **:** modifica uma rota existente.<br />-   **excluir:** exclui uma ou mais rotas.<br />-   **Imprimir:** imprime uma rota ou rotas.|  
+|> de comando \<|Especifica o comando que você deseja executar. A tabela a seguir lista os comandos válidos:<p>-   **Adicionar:** adiciona uma rota.<br />alteração de -    **:** modifica uma rota existente.<br />-   **excluir:** exclui uma ou mais rotas.<br />-   **Imprimir:** imprime uma rota ou rotas.|  
 |\<de destino >|Especifica o destino de rede da rota. O destino pode ser um endereço de rede IP (em que os bits de host do endereço de rede são definidos como 0), um endereço IP para uma rota de host ou 0.0.0.0 para a rota padrão.|  
 |máscara \<máscara de rede >|Especifica o destino de rede da rota. O destino pode ser um endereço de rede IP (em que os bits de host do endereço de rede são definidos como 0), um endereço IP para uma rota de host ou 0.0.0.0 para a rota padrão.|  
 |> do \<gateway|Especifica o endereço IP de encaminhamento ou próximo salto sobre o qual o conjunto de endereços definido pelo destino de rede e a máscara de sub-rede podem ser acessados. Para rotas de sub-rede conectadas localmente, o endereço de gateway é o endereço IP atribuído à interface que está anexada à sub-rede. Para rotas remotas, disponíveis em um ou mais roteadores, o endereço de gateway é um endereço IP acessível diretamente que é atribuído a um roteador vizinho.|  
@@ -53,7 +49,7 @@ route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric 
 - O parâmetro **/p** só tem suporte no comando Route para windows NT 4,0, Windows 2000, Windows Millennium Edition, Windows XP e windows Server 2003. Esse parâmetro não é suportado pelo comando **Route** para Windows 95 ou Windows 98.  
 - Esse comando estará disponível somente se o protocolo TCP/IP estiver instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.  
 
-## <a name="BKMK_Examples"></a>Disso  
+## <a name="examples"></a><a name="BKMK_Examples"></a>Disso  
 Para exibir todo o conteúdo da tabela de roteamento IP, digite:  
 ```  
 route print  
@@ -95,5 +91,5 @@ Para alterar o endereço do próximo salto da rota com o destino de 10.41.0.0 e 
 route change 10.41.0.0 mask 255.255.0.0 10.27.0.25  
 ```  
 
-## <a name="additional-references"></a>referências adicionais  
--   [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais  
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  

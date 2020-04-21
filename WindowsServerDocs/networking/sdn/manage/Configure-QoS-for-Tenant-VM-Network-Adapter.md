@@ -1,34 +1,30 @@
 ---
 title: Configurar a QoS (qualidade de serviço) para um adaptador de rede de VM de locatário
 description: Ao configurar o QoS para um adaptador de rede de VM de locatário, você tem uma opção entre a ponte do Data Center \(DCB\)ou a rede definida pelo software \(SDN\) QoS.
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 61f790898d2a6068afb1436957e64861f4c0ebe8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 76a37bde8ca89fe6808a12aff51185d179f5d523
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309937"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854549"
 ---
 # <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>Configurar a QoS (qualidade de serviço) para um adaptador de rede de VM de locatário
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplicável a Windows Server (Canal Semestral), Windows Server 2016
 
 Ao configurar o QoS para um adaptador de rede de VM de locatário, você tem uma opção entre a ponte do Data Center \(DCB\)ou a rede definida pelo software \(SDN\) QoS.
 
-1.  **DCB**. Você pode configurar o DCB usando os cmdlets do NetQoS do Windows PowerShell. Para obter um exemplo, consulte a seção "habilitar ponte do Data Center" no tópico [RDMA (acesso remoto direto à memória) e no conjunto inserido de equipe (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
+1.    **DCB**. Você pode configurar o DCB usando os cmdlets do NetQoS do Windows PowerShell. Para obter um exemplo, consulte a seção "habilitar ponte do Data Center" no tópico [RDMA (acesso remoto direto à memória) e no conjunto inserido de equipe (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
 
-2.  **QoS de Sdn**. Você pode habilitar o QoS de SDN usando o controlador de rede, que pode ser definido para limitar a largura de banda em uma interface virtual para impedir que uma VM de tráfego alto bloqueie outros usuários.  Você também pode configurar o QoS de SDN para reservar uma quantidade específica de largura de banda para uma VM a fim de garantir que a VM esteja acessível, independentemente da quantidade de tráfego de rede.  
+2.    **QoS de Sdn**. Você pode habilitar o QoS de SDN usando o controlador de rede, que pode ser definido para limitar a largura de banda em uma interface virtual para impedir que uma VM de tráfego alto bloqueie outros usuários.  Você também pode configurar o QoS de SDN para reservar uma quantidade específica de largura de banda para uma VM a fim de garantir que a VM esteja acessível, independentemente da quantidade de tráfego de rede.  
 
 Aplique todas as configurações de QoS de SDN pelas configurações de porta das propriedades da interface de rede. Consulte a tabela abaixo para obter mais detalhes.
 
@@ -41,7 +37,7 @@ Aplique todas as configurações de QoS de SDN pelas configurações de porta da
 |portFlowLimit| O número máximo de fluxos que podem ser executados para a porta. Um valor em branco ou zero \(0\) significa que não há limite. |
 |vmqWeight| O peso relativo descreve a afinidade do adaptador de rede virtual para usar a fila de máquina virtual (VMQ). O intervalo de valor é de 0 a 100.<p>Valores permitidos:<ul><li>0 – desabilita a VMQ no adaptador de rede virtual.</li><li>1-100 – habilita a VMQ no adaptador de rede virtual.</li></ul>|
 |iovWeight| O peso relativo define a afinidade do adaptador de rede virtual para a virtualização de e/s de raiz única atribuída \(a função virtual de SR-IOV\). <p>Valores permitidos:<ul><li>0 – desabilita o SR-IOV no adaptador de rede virtual.</li><li>1-100 – habilita o SR-IOV no adaptador de rede virtual.</li></ul>|
-|iovInterruptModeration|<p>Valores permitidos:<ul><li>padrão – a configuração do fornecedor do adaptador de rede física determina o valor.</li><li>adaptável </li><li>configurações </li><li>low</li><li>médio</li><li>high</li></ul><p>Se você escolher **padrão**, a configuração do fornecedor do adaptador de rede física determinará o valor.  Se você escolher, **adaptável**, o padrão de tráfego de tempo de execução determina a taxa de moderação de interrupção.|
+|iovInterruptModeration|<p>Valores permitidos:<ul><li>padrão – a configuração do fornecedor do adaptador de rede física determina o valor.</li><li>adaptável </li><li>configurações </li><li>low</li><li>médio</li><li>alto</li></ul><p>Se você escolher **padrão**, a configuração do fornecedor do adaptador de rede física determinará o valor.  Se você escolher, **adaptável**, o padrão de tráfego de tempo de execução determina a taxa de moderação de interrupção.|
 |iovQueuePairsRequested| O número de pares de fila de hardware alocados a uma função virtual SR-IOV. Se o \(do RSS\) for necessário, e se o adaptador de rede física que se associar ao comutador virtual oferecer suporte a RSS em funções virtuais SR-IOV, mais de um par de filas será necessário. <p>Valores permitidos: 1 a 4294967295.|
 |QosSettings| Defina as seguintes configurações de QoS, todas as quais são opcionais: <ul><li>**outboundReservedValue** -se outboundReservedMode for "Absolute", o valor indicará a largura de banda, em Mbps, garantida para a porta virtual para transmissão (Egresso). Se outboundReservedMode for "Weight", o valor indicará a parte ponderada da largura de banda garantida.</li><li>**outboundMaximumMbps** -indica o máximo permitido de largura de banda do lado do envio, em Mbps, para a porta virtual (Egresso).</li><li>**InboundMaximumMbps** -indica o máximo permitido de largura de banda do lado de recebimento para a porta virtual (entrada) em Mbps.</li></ul> |
 
