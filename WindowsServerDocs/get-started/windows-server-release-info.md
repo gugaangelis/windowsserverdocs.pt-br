@@ -4,16 +4,16 @@ description: Informações sobre versões do Windows Server
 ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
-ms.date: 11/12/2019
+ms.date: 04/14/2020
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 19911ceb52587a0897e7fde34bd4b95d375c13a8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 455b5609c1409d7c01e464c51025042d3b0090c8
+ms.sourcegitcommit: 719b2ee1fe08429cb7929a201dd2816e861ec534
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825839"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81385305"
 ---
 # <a name="windows-server-release-information"></a>Informações sobre versões do Windows Server
 
@@ -28,8 +28,11 @@ O Canal semestral oferece a oportunidade para clientes que estão inovando rapid
 | Windows Server, versão 1909 (Canal Semestral) (Datacenter Core, Standard Core) | 1909  | 18363.418.191007-0143 | 12/11/2019 | 11/05/2021 | Nota de revisão |
 | Windows Server, versão 1903 (Canal Semestral) (Datacenter Core, Standard Core) | 1903  | 18362.30.190401-1528 | 21/5/2019 | 08/12/2020 | Nota de revisão |
 |Windows Server 2019 (canal de manutenção em longo prazo) (Datacenter, Essentials, Standard)|1809|17763.107.1010129-1455|13/11/2018|09/01/2024|09/01/2029|
-|Windows Server, versão 1809 (Canal Semestral) (Datacenter Core, Standard Core)|1809|17763.107.1010129-1455|13/11/2018|12/5/2020|Nota de revisão|
+|Windows Server, versão 1809 (Canal Semestral) (Datacenter Core, Standard Core)|1809|17763.107.1010129-1455|13/11/2018|10/11/2020|Nota de revisão|
 | Windows Server 2016 (canal de manutenção em longo prazo)| 1607 | 14393.0 | 15/10/2016 |11/01/2022| 11/01/2027|
 
-> [!NOTE]
+> [!IMPORTANT]
+> O fim do serviço da versão 1809 do Windows Server foi adiado devido à crise de saúde pública em andamento. Para saber mais, confira [nosso artigo de Suporte](https://support.microsoft.com/help/4557164).
+
+>[!NOTE]
 > O Windows Server, versão 1803 ou mais recente, é regido pela [Política moderna de ciclo de vida](https://support.microsoft.com/help/30881). Consulte as [Perguntas frequentes sobre o ciclo de vida do Windows](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products) e a [Comparação dos canais de manutenção](../get-started-19/servicing-channels-19.md) para obter detalhes sobre os requisitos de manutenção e outras informações importantes.

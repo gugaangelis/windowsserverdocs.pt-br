@@ -1,7 +1,6 @@
 ---
 ms.assetid: 82918181-525d-4e93-af96-957dac6aedb6
 title: Apêndice B Configurando o ambiente de teste
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: af045545826269630af9327480cda59093d219df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f529e6b0176b7ad416a728163b4ae9671040bf8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407142"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861279"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>Apêndice B: configuração do ambiente de teste
 
@@ -22,7 +21,7 @@ ms.locfileid: "71407142"
 
 Este tópico descreve as etapas para criar um laboratório prático para testar o Controle de Acesso Dinâmico. As instruções devem ser seguidas na ordem apresentada, pois muitos componentes dependem de outros.  
 
-## <a name="prerequisites"></a>Pré-requisitos  
+## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
 **Requisitos de hardware e software**  
 
 Requisitos de configuração do laboratório de teste:  
@@ -64,17 +63,17 @@ As senhas das máquinas virtuais deverão ser as seguintes:
 
 ##### <a name="to-install-the-hyper-v-role"></a>Para instalar a função Hyper-V  
 
-1.  Clique em **Iniciar**e, em seguida, em Gerenciador de Servidores.  
+1.  Clique em **Iniciar** e, em seguida, em Gerenciador de Servidores.  
 
 2.  Na área Resumo das Funções da janela principal do Gerenciador do Servidor, clique em **Adicionar Funções**.  
 
 3.  Na página **Selecionar Funções do Servidor**, clique em **Hyper-V**.  
 
-4.  Na página **Criar Redes Virtuais** , clique em um ou mais adaptadores de rede se desejar disponibilizar sua conexão de rede para as máquinas virtuais.  
+4.  Na página **Criar Redes Virtuais**, clique em um ou mais adaptadores de rede se desejar disponibilizar sua conexão de rede para as máquinas virtuais.  
 
 5.  Na página **Confirmar Seleções de Instalação**, clique em **Instalar**.  
 
-6.  O computador deverá ser reinicializado para concluir a instalação. Clique em **Fechar** para encerrar o assistente e em **Sim** para reiniciar o computador.  
+6.  O computador deverá ser reiniciado para concluir a instalação. Clique em **Fechar** para encerrar o assistente e em **Sim** para reiniciar o computador.  
 
 7.  Depois de reiniciar o computador, entre com a mesma conta usada para instalar a função. Depois que o Assistente para Continuar Configuração concluir a instalação, clique em **Fechar** para encerrar o assistente.  
 
@@ -104,21 +103,21 @@ Crie uma máquina virtual para ser usada como o controlador de domínio (DC1). I
 
 2. No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**.  
 
-3. Na página **Before you begin**, clique em **Next**.  
+3. Na página **Antes de começar**, clique em **Avançar**.  
 
-4. Na página **Selecionar tipo de instalação** , clique em **Instalação baseada em função ou recurso**e depois em **Avançar**.  
+4. Na página **Selecionar tipo de instalação**, clique em **Instalação baseada em função ou recurso** e depois em **Avançar**.  
 
 5. Na página **Selecionar servidor de destino**, clique em **Avançar**.  
 
-6. Na página **Selecionar funções de servidor**, clique em **Serviços de Domínio Active Directory**. Na caixa de diálogo **Assistente de Adição de Funções e Recursos** , clique em **Adicionar Recursos**e em **Avançar**.  
+6. Na página **Selecionar funções de servidor**, clique em **Serviços de Domínio Active Directory**. Na caixa de diálogo **Assistente de Adição de Funções e Recursos**, clique em **Adicionar Recursos** e em **Avançar**.  
 
 7. Na página **Selecionar recursos**, clique em **Avançar**.  
 
-8. Na página **Serviços de Domínio Active Directory** , revise as informações e clique em **Avançar**.  
+8. Na página **Serviços de Domínio Active Directory**, revise as informações e clique em **Avançar**.  
 
 9. Na página **Confirmar seleções de instalação** , clique em **Instalar**. A barra de progresso de instalação do recurso na página Resultados indica que a função está sendo instalada.  
 
-10. Na página **Resultados** , confirme se a instalação foi concluída com êxito e clique em **Fechar**. No Gerenciador do Servidor, clique no ícone de aviso com o ponto de exclamação no canto superior direito da tela, ao lado de **Gerenciar**. Na lista de Tarefas, clique no link **Promover este servidor a um controlador de domínio**.  
+10. Na página **Resultados**, confirme se a instalação foi concluída com êxito e clique em **Fechar**. No Gerenciador do Servidor, clique no ícone de aviso com o ponto de exclamação no canto superior direito da tela, ao lado de **Gerenciar**. Na lista de Tarefas, clique no link **Promover este servidor a um controlador de domínio**.  
 
 11. Na página **Configuração de implantação**, clique em **Adicionar nova floresta**, digite o nome do domínio raiz **contoso.com** e clique em **Avançar**.  
 
@@ -126,11 +125,11 @@ Crie uma máquina virtual para ser usada como o controlador de domínio (DC1). I
 
 13. Na página **Opções de DNS**, clique em **Avançar**.  
 
-14. Na página **Opções Adicionais** , clique em **Avançar**.  
+14. Na página **Opções Adicionais**, clique em **Avançar**.  
 
-15. Na página **Caminhos** , digite os locais do banco de dados Active Directory, dos arquivos de log e da pasta SYSVOL (ou aceite os locais padrão) e clique em **Avançar**.  
+15. Na página **Caminhos**, digite os locais do banco de dados Active Directory, dos arquivos de log e da pasta SYSVOL (ou aceite os locais padrão) e clique em **Avançar**.  
 
-16. Na página **Opções de Revisão** , confirme suas seleções e clique em **Avançar**.  
+16. Na página **Opções de Revisão**, confirme suas seleções e clique em **Avançar**.  
 
 17. Na página **Verificação de Pré-requisitos**, confirme se a validação foi concluída e clique em **Instalar**.  
 
@@ -164,13 +163,13 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
 4. Crie os usuários a seguir com os atributos indicados:  
 
 
-   |       Usuário       |  Nome de usuário  |     Endereço de email      | Departamento |      Grupo       | País/região |
+   |       Usuário       |  Nome de Usuário  |     Endereço de email      | Departamento |      Grupo       | País/região |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finanças   |                  |       EUA       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finanças   |   FinanceAdmin   |       EUA       |
-   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operações | FinanceException |       EUA       |
-   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     RH     |                  |       EUA       |
-   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     RH     |                  |       EUA       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finanças   |                  |       US       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finanças   |   FinanceAdmin   |       US       |
+   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operações | FinanceException |       US       |
+   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     RH     |                  |       US       |
+   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     RH     |                  |       US       |
    |    Servidor RMS    |    rms     |    rms@contoso.com     |            |                  |                |
 
    Para obter mais informações sobre como criar grupos de segurança, consulte [Criar um novo grupo](https://technet.microsoft.com/library/dd861305.aspx) no site do Windows Server.  
@@ -179,9 +178,9 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
 
 1.  Mova o cursor para o canto superior direito da tela e clique no ícone de pesquisa. Na caixa Pesquisar, digite **gerenciamento de política de grupo** e clique em **Gerenciamento de Política de Grupo**.  
 
-2.  Expanda **Floresta: contoso.com**e depois **Domínios**, navegue para **contoso.com**, expanda **(contoso.com)** e selecione **FileServerOU**. Clique com o botão direito do mouse em **criar um GPO neste domínio e vincule-o aqui**
+2.  Expanda **Floresta: contoso.com** e depois **Domínios**, navegue para **contoso.com**, expanda **(contoso.com)** e selecione **FileServerOU**. Clique com o botão direito do mouse em **criar um GPO neste domínio e vincule-o aqui**
 
-3.  Digite um nome descritivo para o GPO, como **GPOdeAcessoFlexível**e depois clique em **OK**.  
+3.  Digite um nome descritivo para o GPO, como **GPOdeAcessoFlexível** e depois clique em **OK**.  
 
 ##### <a name="to-enable-dynamic-access-control-for-contosocom"></a>Para habilitar o Controle de Acesso Dinâmico para contoso.com  
 
@@ -213,15 +212,15 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
 
 1.  No Gerenciador do Servidor, clique em **Adicionar Funções e Recursos**.  
 
-2.  Na página **Before you begin**, clique em **Next**.  
+2.  Na página **Antes de começar**, clique em **Avançar**.  
 
-3.  Na página **Selecionar tipo de instalação** , clique em **Avançar**.  
+3.  Na página **Selecionar tipo de instalação**, clique em **Avançar**.  
 
 4.  Na página **Selecionar servidor de destino**, clique em **Avançar**.  
 
 5.  Na página **Selecionar Funções de Servidor**, expanda **Serviços de Arquivo e Armazenamento**, marque a caixa de seleção ao lado de **Serviços de Arquivo e iSCSI**, expanda e selecione **Gerenciador de Recursos do Servidor de Arquivos**.  
 
-    No Assistente de Adição de Funções e Recursos, clique em **Adicionar Recursos**e em **Avançar**.  
+    No Assistente de Adição de Funções e Recursos, clique em **Adicionar Recursos** e em **Avançar**.  
 
 6.  Na página **Selecionar recursos**, clique em **Avançar**.  
 
@@ -239,11 +238,11 @@ Ao criar cotas e telas de arquivo, você tem a opção de enviar notificações 
 
 ###### <a name="to-configure-email-options-in-file-server-resource-manager"></a>Para configurar as opções de email no Gerenciador de Recursos de Servidor de Arquivos  
 
-1. Abra o Gerenciador de Recursos de Servidor de Arquivos. Para abrir o Gerenciador de Recursos de Servidor de Arquivos, clique em **Iniciar**, digite **gerenciador de recursos do servidor de arquivos**e clique em **Gerenciador de Recursos do Servidor de Arquivos**.  
+1. Abra o Gerenciador de Recursos de Servidor de Arquivos. Para abrir o Gerenciador de Recursos de Servidor de Arquivos, clique em **Iniciar**, digite **gerenciador de recursos do servidor de arquivos** e clique em **Gerenciador de Recursos do Servidor de Arquivos**.  
 
 2. Na interface do Gerenciador de Recursos de Servidor de Arquivos, clique com o botão direito do mouse em **Gerenciador de Recursos de Servidor de Arquivos** e depois em **Configurar opções**. A caixa de diálogo **Opções do Gerenciador de Recursos de Servidor de Arquivos** é aberta.  
 
-3. Na guia **Notificações por Email** , no nome do servidor SMTP ou endereço IP, digite o nome do host ou o endereço IP do servidor SMTP para encaminhar as notificações por email.  
+3. Na guia **Notificações por Email**, no nome do servidor SMTP ou endereço IP, digite o nome do host ou o endereço IP do servidor SMTP para encaminhar as notificações por email.  
 
 4. Se você quiser notificar rotineiramente determinados administradores de eventos de cota ou de triagem de arquivos, em **destinatários do administrador padrão**, digite cada endereço de email, como fileadmin@contoso.com. Use o formato account@domaine use ponto e vírgula para separar várias contas.  
 
@@ -296,33 +295,33 @@ Adicione o AD RMS e todos os recursos necessários pelo Gerenciador do Servidor.
 
 3. Na tela **Antes de começar**, clique em **Avançar**.  
 
-4. Na tela **Selecionar Tipo de Instalação** , clique em **Instalação Baseada em Função/Recurso**e em **Avançar**.  
+4. Na tela **Selecionar Tipo de Instalação**, clique em **Instalação Baseada em Função/Recurso** e em **Avançar**.  
 
 5. Na tela **Selecionar Destinos do Servidor**, clique em **Avançar**.  
 
-6. Na tela **Selecionar Funções de Servidor** , marque a caixa ao lado do **Active Directory Rights Management Services**e clique em **Avançar**.  
+6. Na tela **Selecionar Funções de Servidor**, marque a caixa ao lado do **Active Directory Rights Management Services** e clique em **Avançar**.  
 
 7. Na caixa de diálogo **Adicionar recursos requeridos para os Active Directory Rights Management Services?** , clique em **Adicionar Recursos**.  
 
 8. Na tela **Selecionar Funções de Servidor**, clique em **Avançar**.  
 
-9. Na tela **Selecionar Recursos a Serem Instalados** , clique em **Avançar**.  
+9. Na tela **Selecionar Recursos a Serem Instalados**, clique em **Avançar**.  
 
 10. Na tela **Active Directory Rights Management Services**, clique em Avançar.  
 
-11. Na tela **Selecionar Serviços de Função** , clique em **Avançar**.  
+11. Na tela **Selecionar Serviços de Função**, clique em **Avançar**.  
 
 12. Na tela **Função de Servidor Web (IIS)** , clique em **Avançar**.  
 
-13. Na tela **Selecionar Serviços de Função** , clique em **Avançar**.  
+13. Na tela **Selecionar Serviços de Função**, clique em **Avançar**.  
 
-14. Na tela **Confirmar Seleções de Instalação** , clique em **Instalar**.  
+14. Na tela **Confirmar Seleções de Instalação**, clique em **Instalar**.  
 
-15. Depois da conclusão da instalação, na tela **Progresso da Instalação** , clique em **Executar configuração adicional**. O Assistente de Configuração de AD RMS é exibido.  
+15. Depois da conclusão da instalação, na tela **Progresso da Instalação**, clique em **Executar configuração adicional**. O Assistente de Configuração de AD RMS é exibido.  
 
-16. Na tela **AD RMS** , clique em **Avançar**.  
+16. Na tela **AD RMS**, clique em **Avançar**.  
 
-17. Na tela **Cluster do AD RMS** , selecione **Criar novo cluster AD RMS raiz** e clique em **Avançar**.  
+17. Na tela **Cluster do AD RMS**, selecione **Criar novo cluster AD RMS raiz** e clique em **Avançar**.  
 
 18. Na tela **Banco de Dados de Configuração**, clique em **Usar o Banco de Dados Interno do Windows neste servidor** e depois em **Avançar**.  
 
@@ -333,17 +332,17 @@ Adicione o AD RMS e todos os recursos necessários pelo Gerenciador do Servidor.
 
 20. Na tela **Modo Criptográfico**, clique em **Modo Criptográfico 2**.  
 
-21. Na tela **Armazenamento de Chave do Cluster**, clique em **Avançar**.  
+21. Na tela **Armazenamento de Chave do Cluster** , clique em **Avançar**.  
 
 22. Na tela **senha da chave do cluster** , nas caixas **senha** e **Confirmar senha** , digite <strong>pass@word1</strong>e clique em **Avançar**.  
 
-23. Na tela **Site do Cluster** , verifique se **Site Padrão** está selecionado e depois clique em **Avançar**.  
+23. Na tela **Site do Cluster**, verifique se **Site Padrão** está selecionado e depois clique em **Avançar**.  
 
 24. Na tela **Endereço do Cluster**, selecione a opção **Usar uma conexão descriptografada** e na caixa **Nome de Domínio Totalmente Qualificado**, digite **FILE1.contoso.com** e clique em **Avançar**.  
 
 25. Na tela **Nome do Certificado de Licenciante**, aceite o nome padrão (**FILE1**) na caixa de texto e clique em **Avançar**.  
 
-26. Na tela **Registro de SCP** , selecione **Registrar SCP agora**e clique em **Avançar**.  
+26. Na tela **Registro de SCP**, selecione **Registrar SCP agora** e clique em **Avançar**.  
 
 27. Na tela **Confirmação**, clique em **Instalar**.  
 
@@ -353,7 +352,7 @@ Adicione o AD RMS e todos os recursos necessários pelo Gerenciador do Servidor.
 
     Para abrir o console do AD RMS, no Gerenciador do Servidor, clique em **Servidor Local** na árvore de console, clique em **Ferramentas** e selecione **Active Directory Rights Management Services**.  
 
-30. Clique no modelo **Criar Política de Direitos Distribuídos** localizado no painel direito, clique em **Adicionar**e selecione as seguintes informações:  
+30. Clique no modelo **Criar Política de Direitos Distribuídos** localizado no painel direito, clique em **Adicionar** e selecione as seguintes informações:  
 
     -   Idioma: Inglês dos EUA  
 
@@ -365,13 +364,13 @@ Adicione o AD RMS e todos os recursos necessários pelo Gerenciador do Servidor.
 
 31. Na seção usuários e direitos, clique em **usuários e direitos**, clique em **adicionar**, digite <strong>financeadmin@contoso.com</strong>e clique em **OK**.  
 
-32. Selecione **Controle Total**e deixe **Conceder ao proprietário (autor) o direito ininterrupto de controle total** selecionado.  
+32. Selecione **Controle Total** e deixe **Conceder ao proprietário (autor) o direito ininterrupto de controle total** selecionado.  
 
 33. Passe pelas guias seguintes sem fazer alterações e clique em **Concluir**. Faça login como CONTOSO\Administrator.  
 
 34. Navegue até a pasta, C:\inetpub\wwwroot\\_wmcs \certification, selecione o arquivo ServerCertification. asmx e adicione usuários autenticados para ter permissões de leitura e gravação para o arquivo.  
 
-35. Abra o Windows PowerShell e execute `Get-FsrmRmsTemplate`. Verifique se você consegue ver o modelo RMS criado nas etapas anteriores neste procedimento com este comando.  
+35. Abra o Windows PowerShell e execute `Get-FsrmRmsTemplate`. Verifique se é possível ver o modelo de RMS criado nas etapas anteriores deste procedimento com este comando.  
 
 > [!IMPORTANT]  
 > Se desejar que os servidores de arquivo sejam alterados imediatamente para que você possa testá-los, faça o seguinte:  
@@ -518,7 +517,7 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
 2. Instale o Microsoft Office 2010.  
 
-3. Entre como Contoso\Administrator e use as informações a seguir para configurar o Microsoft Outlook.  
+3. Entre como Contoso\Administrator e use as seguintes informações para configurar o Microsoft Outlook.  
 
    - Seu nome: Administrador de Arquivos  
 
@@ -575,13 +574,13 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
 2. No Gerenciador do Servidor, clique em **Gerenciar**e depois em **Adicionar Funções e Recursos**.  
 
-3. Na página **Before you begin**, clique em **Next**.  
+3. Na página **Antes de começar**, clique em **Avançar**.  
 
-4. Na página **Selecionar Tipo de Instalação** , clique em **Instalação baseada em função ou recurso**e depois em **Avançar**.  
+4. Na página **Selecionar Tipo de Instalação**, clique em **Instalação baseada em função ou recurso** e depois em **Avançar**.  
 
-5. Na página **Selecionar servidor de destino** , clique em **Selecionar um servidor no pool de servidores**, clique nos nomes do servidor em que você deseja instalar o AD DS (Serviços de Domínio Active Directory) e em **Avançar**.  
+5. Na página **Selecionar servidor de destino**, clique em **Selecionar um servidor no pool de servidores**, clique nos nomes do servidor em que você deseja instalar o AD DS (Serviços de Domínio Active Directory) e em **Avançar**.  
 
-6. Na página **Selecionar Funções de Servidor** , clique em **Serviços de Domínio Active Directory**. Na caixa de diálogo **Assistente de Adição de Funções e Recursos** , clique em **Adicionar Recursos**e em **Avançar**.  
+6. Na página **Selecionar Funções de Servidor**, clique em **Serviços de Domínio Active Directory**. Na caixa de diálogo **Assistente de Adição de Funções e Recursos**, clique em **Adicionar Recursos** e em **Avançar**.  
 
 7. Na página **Selecionar Recursos**, clique em **Avançar**.  
 
@@ -589,7 +588,7 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
 9. Na página **Confirmação**, clique em **Instalar**. A barra de progresso de instalação do recurso na página Resultados indica que a função está sendo instalada.  
 
-10. Na página **Resultados** , verifique se a instalação foi bem-sucedida e, em seguida, clique no ícone de aviso com um ponto de exclamação no canto superior direito da tela, ao lado de **Gerenciar**. Na lista de Tarefas, clique no link **Promover este servidor a um controlador de domínio**.  
+10. Na página **Resultados**, verifique se a instalação foi bem-sucedida e, em seguida, clique no ícone de aviso com um ponto de exclamação no canto superior direito da tela, ao lado de **Gerenciar**. Na lista de Tarefas, clique no link **Promover este servidor a um controlador de domínio**.  
 
     > [!IMPORTANT]  
     > Se você fechar o assistente de instalação neste momento, em vez de clicar em **Promover este servidor a controlador de domínio**, poderá continuar com a instalação do AD DS clicando em **Tarefas** no Gerenciador do Servidor.  
@@ -600,11 +599,11 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 
 13. Na página **Opções de DNS**, clique em **Avançar**.  
 
-14. Na página **Opções Adicionais** , clique em **Avançar**.  
+14. Na página **Opções Adicionais**, clique em **Avançar**.  
 
-15. Na página **Caminhos** , digite os locais do banco de dados Active Directory, dos arquivos de log e da pasta SYSVOL (ou aceite os locais padrão) e clique em **Avançar**.  
+15. Na página **Caminhos**, digite os locais do banco de dados Active Directory, dos arquivos de log e da pasta SYSVOL (ou aceite os locais padrão) e clique em **Avançar**.  
 
-16. Na página **Opções de Revisão** , confirme suas seleções e clique em **Avançar**.  
+16. Na página **Opções de Revisão**, confirme suas seleções e clique em **Avançar**.  
 
 17. Na página **Verificação de Pré-requisitos**, confirme se a validação foi concluída e clique em **Instalar**.  
 
@@ -625,19 +624,19 @@ Nesta etapa, você criará a relação de confiança entre os sites da Adatum Co
 
 ##### <a name="to-set-contoso-as-a-trusting-forest-to-adatum"></a>Para definir Contoso como floresta de confiança da Adatum  
 
-1.  Entre no DC2 como administrador. Na tela **Iniciar** , digite domain.msc.  
+1.  Entre no DC2 como administrador. Na tela **Iniciar**, digite domain.msc.  
 
 2.  Na árvore de consoles, clique com o botão direito do mouse em adatum.com e clique em Propriedades.  
 
-3.  Na guia **Relações de Confiança** , clique em **Nova Relação de Confiança**e em **Avançar**.  
+3.  Na guia **Relações de Confiança**, clique em **Nova Relação de Confiança** e em **Avançar**.  
 
 4.  Na página **Nome da Relação de Confiança**, digite **contoso.com**, no campo de nome do DNS e depois clique em **Avançar**.  
 
 5.  Na página **Tipo de Relação de Confiança**, clique em **Relação de Confiança da Floresta** e em **Avançar**.  
 
-6.  Na página **Direção da Relação de Confiança** , clique em **Bidirecional**.  
+6.  Na página **Direção da Relação de Confiança**, clique em**Bidirecional**.  
 
-7.  Na página **Lados da Relação de Confiança** , clique em **Neste domínio e no domínio especificado**e depois clique em **Avançar**.  
+7.  Na página **Lados da Relação de Confiança**, clique em **Neste domínio e no domínio especificado** e depois clique em **Avançar**.  
 
 8.  Continue a seguir as instruções do assistente.  
 
@@ -693,7 +692,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
 3.  No painel esquerdo do Centro Administrativo do Active Directory, clique em **Modo de Exibição de Árvore**. No painel esquerdo, clique em **Controle de Acesso Dinâmico** e clique duas vezes em **Propriedades do Recurso**.  
 
-4.  Selecione **Empresa** na lista de **Propriedades do Recurso** , clique com o botão direito do mouse e selecione **Propriedades**. Na seção **Valores Sugeridos** , clique em **Adicionar** para adicionar os valores sugeridos: Contoso e Adatum, depois clique duas vezes em **OK** .  
+4.  Selecione **Empresa** na lista de **Propriedades do Recurso**, clique com o botão direito do mouse e selecione **Propriedades**. Na seção **Valores Sugeridos** , clique em **Adicionar** para adicionar os valores sugeridos: Contoso e Adatum, depois clique duas vezes em **OK** .  
 
 5.  Selecione **Empresa** na lista **Propriedades do Recurso**, clique com o botão direito do mouse e selecione **Habilitar**.  
 
@@ -740,11 +739,11 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
 1. No painel esquerdo do Centro Administrativo do Active Directory, clique em **Modo de Exibição de Árvore**. No painel esquerdo, clique em **Controle de Acesso Dinâmico** e clique em **Regras de Acesso Central**.  
 
-2. Clique com o botão direito em **Regras de Acesso Central**, em **Nova**e depois em **Regra de Acesso Central**.  
+2. Clique com o botão direito em **Regras de Acesso Central**, em **Nova** e depois em**Regra de Acesso Central**.  
 
 3. No campo **Nome**, digite **RegradeAcessoparaFuncionáriosAdatum**.  
 
-4. Na seção **Permissões**, selecione a opção **Usar as seguintes permissões como atuais**, clique em **Editar** e em **Adicionar**. Clique no link **Selecionar uma entidade** , digite **Usuários Autenticados**e clique em **OK**.  
+4. Na seção **Permissões**, selecione a opção **Usar as seguintes permissões como atuais**, clique em **Editar** e em **Adicionar**. Clique no link **Selecionar uma entidade**, digite **Usuários Autenticados** e clique em **OK**.  
 
 5. Na caixa de diálogo **Permissão de Entrada para Permissões**, clique em **Adicionar uma condição** e digite as condições a seguir: [**Usuário**] [**Empresa**] [**Equivale**] [**Valor**] [**Adatum**]. As permissões devem ser **Modificar, Ler e Executar, Ler e Gravar**.  
 
@@ -754,7 +753,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
    ![guias de solução](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
 
-   O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
+   O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
 
    ```  
    New-ADCentralAccessRule `  
@@ -767,7 +766,7 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
 ### <a name="create-the-central-access-policy"></a><a name="BKMK_2.10"></a>Criar a política de acesso central  
 
-##### <a name="to-create-a-central-access-policy"></a>Para criar uma política de acesso central  
+##### <a name="to-create-a-central-access-policy"></a>Para criar a política de acesso central  
 
 1.  Entre em contoso.com como administrador.  
 
@@ -783,14 +782,14 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>Para aplicar a política de acesso central aos servidores do arquivo por meio da Política de Grupo  
 
-1.  Na tela **Iniciar** , digite **Ferramentas Administrativas**e na barra **Pesquisar** , clique em **Configurações**. Nos resultados de **Configurações** , clique em **Ferramentas Administrativas**. Abra o Console de Gerenciamento de Política de Grupo na pasta **Ferramentas Administrativas** .  
+1.  Na tela **Iniciar** , digite **Ferramentas Administrativas**e na barra **Pesquisar** , clique em **Configurações**. Nos resultados de **Configurações**, clique em **Ferramentas Administrativas**. Abra o Console de Gerenciamento de Política de Grupo na pasta **Ferramentas Administrativas**.  
 
     > [!TIP]  
     > Se a configuração **Mostrar Ferramentas Administrativas** estiver desabilitada, a pasta Ferramentas Administrativas e seus conteúdos não aparecerão nos resultados de **Configurações**.  
 
 2.  Clique com o botão direito do mouse no domínio contoso.com, clique em **criar um GPO neste domínio e vincule-o aqui**  
 
-3.  Digite um nome descritivo para o GPO, como **GPOdeAcessodaDatum**e depois clique em **OK**.  
+3.  Digite um nome descritivo para o GPO, como **GPOdeAcessodaDatum** e depois clique em **OK**.  
 
 ##### <a name="to-apply-the-central-access-policy-to-the-file-server-through-group-policy"></a>Para aplicar a política de acesso central ao servidor de arquivos por meio da Política de Grupo  
 
@@ -803,11 +802,11 @@ Crie o usuário Jeff Low com a <strong>pass@word1</strong>de senha e atribua o a
 
 3.  Clique com o botão direito do mouse na política**GPOdeAcessodaDatum** e selecione **Editar**.  
 
-4.  No Editor de Gerenciamento de Política de Grupo, clique em **Configuração do Computador**, expanda **Políticas**, expanda **Configurações do Windows**e clique em **Configurações de Segurança**.  
+4.  No Editor de Gerenciamento de Política de Grupo, clique em **Configuração do Computador**, expanda **Políticas**, expanda **Configurações do Windows** e clique em **Configurações de Segurança**.  
 
 5.  Expanda **Sistema de Arquivos**, clique com o botão direito do mouse em **Política de Acesso Central** e clique em **Gerenciar políticas de acesso central**.  
 
-6.  Na caixa de diálogo **Configuração de Políticas de Acesso Central** , clique em **Adicionar**, selecione **Política de Acesso Somente para Adatum**e clique em **OK**.  
+6.  Na caixa de diálogo **Configuração de Políticas de Acesso Central**, clique em **Adicionar**, selecione **Política de Acesso Somente para Adatum** e clique em **OK**.  
 
 7.  Feche o Editor de Gerenciamento de Política de Grupo. Você acaba de adicionar a política de acesso central à Política de Grupo.  
 
