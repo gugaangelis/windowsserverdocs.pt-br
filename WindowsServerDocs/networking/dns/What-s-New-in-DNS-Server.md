@@ -67,9 +67,9 @@ Você pode definir configurações de RRL para controlar como responder a solici
   
 -   **Máximo de respostas**. Esse é o número máximo de respostas que o servidor emitirá para um cliente enquanto as respostas são suspensas.  
   
--   **Domínios de lista branca**. Esta é uma lista de domínios a serem excluídos das configurações de RRL.  
+-   **Domínios de lista de permissões**. Esta é uma lista de domínios a serem excluídos das configurações de RRL.  
   
--   **Sub-redes de lista branca**. Esta é uma lista de sub-redes a serem excluídas das configurações de RRL.  
+-   **Sub-redes de lista de permissões**. Esta é uma lista de sub-redes a serem excluídas das configurações de RRL.  
   
 -   **Interfaces de servidor de lista**de permissões. Esta é uma lista de interfaces do servidor DNS a ser excluída das configurações de RRL.  
   

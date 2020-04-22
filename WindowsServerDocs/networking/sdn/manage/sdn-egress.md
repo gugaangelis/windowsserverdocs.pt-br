@@ -24,7 +24,7 @@ Um aspecto fundamental do monetização de rede em nuvem é ser capaz de cobrar 
 
 A medição de saída para o tráfego de rede SDN no Windows Server 2019 permite a capacidade de oferecer medidores de uso para transferências de dados de saída. O tráfego de rede que deixa cada rede virtual, mas permanece dentro do data center pode ser acompanhado separadamente para que possa ser excluído dos cálculos de cobrança. Os pacotes associados aos endereços IP de destino que não estão incluídos em um dos intervalos de endereços não faturados são controlados como transferências de dados de saída cobradas.
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de endereços não cobrados da rede virtual (lista branca de intervalos de IP)
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de endereços não cobrados da rede virtual (lista de permissões de intervalos de IP)
 
 Você pode encontrar intervalos de endereços não faturados na propriedade **UnbilledAddressRanges** de uma rede virtual existente. Por padrão, não há nenhum intervalo de endereços adicionado.
 
