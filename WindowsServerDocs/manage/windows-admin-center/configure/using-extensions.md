@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7c1a70e36dfac9b23ded8f920ffcc8cccbfff023
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323578"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269293"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar e gerenciar extensões
 
@@ -36,7 +36,7 @@ O Windows Admin Center dá suporte a vários feeds e você pode exibir e gerenci
 1. Clique no botão **Configurações** no > superior direito. No painel esquerdo, clique em **Extensões**.
 2. No painel direito, clique na guia **Feeds**.
 3. Clique no botão **Adicionar** para adicionar outro feed. Para um feed do NuGet, insira a URL do feed do NuGet V2. O provedor ou o administrador do feed do NuGet deve ser capaz de fornecer as informações de URL. Para um compartilhamento de arquivo, insira o caminho completo do compartilhamento de arquivo no qual os arquivos de pacote de extensão (.nupkg) são armazenados.
-4. Clique em **Adicionar**. Se o gateway precisar ser executado no modo elevado para fazer essa alteração, você receberá uma solicitação de elevação do UAC.
+4. Clique em **Adicionar**. Se o gateway precisar ser executado no modo elevado para fazer essa alteração, você receberá uma solicitação de elevação do UAC. Esse prompt será apresentado somente se você estiver executando o Windows Admin Center no modo de área de trabalho.
 
 A lista **Extensões Disponíveis** mostrará extensões de todos os feeds registrados. Você pode verificar de qual feed cada extensão vem usando a coluna **Feed de Pacote**.
 

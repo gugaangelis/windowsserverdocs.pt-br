@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd94e997deaaf358c72793e6ff35d51a9ab3df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80826180"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524931"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Diretrizes para solucionar problemas de ativação relacionados ao DNS
 
@@ -241,7 +241,7 @@ Conforme descrito em [Atribuir um host KMS a um cliente KMS manualmente](#manual
 - Para computadores ingressados no domínio, o domínio do computador, conforme atribuído pelo sistema DNS – como o DNS do AD DS (Active Directory Domain Services).
 - Para computadores do grupo de trabalho, o domínio do computador, conforme atribuído pelo protocolo DHCP. Esse nome de domínio é definido pela opção que tem o valor do código 15, conforme definido no RFC (Request for Comments) 2132.
 
-Por padrão, um host KMS registra seus registros SRV na zona DNS que corresponde ao domínio do computador host do KMS. Por exemplo, suponha que um host KMS ingresse no domínio contoso.com. Nesse cenário, o host KMS registra seu registro SRV _vmlcs na zona DNS contoso.com. Portanto, o registro identifica o serviço como VLMCS._TCP.CONTOSO.COM.
+Por padrão, um host KMS registra seus registros SRV na zona DNS que corresponde ao domínio do computador host do KMS. Por exemplo, suponha que um host KMS ingresse no domínio contoso.com. Nesse cenário, o host KMS registra seu registro SRV _vmlcs na zona DNS contoso.com. Portanto, o registro identifica o serviço como _VLMCS._TCP.CONTOSO.COM.
 
 Se o host KMS e os clientes KMS usarem zonas DNS diferentes, você deverá configurar o host KMS para publicar automaticamente seus registros SRV em vários domínios DNS. Para fazer isso, execute estas etapas:
 

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bd7ec8a5a072cbda99b036718d24ec1908fb8b53
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950511"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269243"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>Que tipo de instalação é ideal para você?
 
@@ -64,10 +64,9 @@ Você pode **gerenciar** os seguintes sistemas operacionais Windows usando o Win
 | Windows Server 2012 R2 | Sim | Sim |
 | Microsoft Hyper-V Server 2012 R2 | Sim | Sim |
 | Windows Server 2012 | Sim | Sim |
-| Windows Server 2008 R2 | Sim, funcionalidade limitada | N/D |
 
 > [!NOTE]
-> Requer os recursos do PowerShell para Windows Admin Center que não estão incluídos no Windows Server 2008 R2, 2012 e 2012 R2. Se você for gerenciá-los com o Windows Admin Center, precisará instalar o Windows Management Framework (WMF) versão 5.1 ou superior nesses servidores.
+> O Windows Admin Center requer os recursos do PowerShell que não estão incluídos no Windows Server 2012 e 2012 R2. Se você for gerenciá-los com o Windows Admin Center, precisará instalar o Windows Management Framework (WMF) versão 5.1 ou superior nesses servidores.
 > 
 > Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e se a versão é 5.1 ou superior. 
 > 

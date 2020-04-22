@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/24/2020
+ms.date: 04/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f5fdb5a2826173edf471fd65248008761863dd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861409"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81279692"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -27,7 +27,26 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 |Grupo de usuários |Versão  |
 |-----------|---------|
 |Público     |1.2.790  |
-|Participante do Programa Windows Insider    |1.2.790  |
+|Participante do Programa Windows Insider    |1.2.940  |
+
+## <a name="updates-for-version-12940"></a>Atualizações para a versão 1.2.940
+
+*Data da publicação: 14/04/2020*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+
+- Adição de novas opções de configurações de exibição para conexões da área de trabalho disponíveis ao clicar com o botão direito do mouse em um ícone de área de trabalho no Centro de Conexão.
+  - Agora há três opções de configuração de exibição: **Todas as exibições**, **Exibição única** e **Exibições selecionadas**.
+  - Agora mostramos apenas configurações disponíveis quando uma configuração de exibição é selecionada.
+  - No modo Exibição selecionada, uma nova opção **Maximizar para exibições atuais** permite que você altere dinamicamente as exibições usadas para a sessão sem se reconectar. Quando habilitada, a maximização da sessão a faz entrar em modo de tela inteira em todas as exibições abrangidas pela janela de sessão.
+  - Adicionamos uma nova **Exibição única quando está em modo de janela** para todas as exibições e modos de exibição selecionados. A opção alterna sua sessão automaticamente para uma exibição única quando você sai do modo de tela inteira e retorna automaticamente para várias exibições quando você maximiza a janela.
+- Adicionamos um novo grupo **Configurações de exibição** ao menu de sistema que é exibido quando você clica com o botão direito do mouse na barra de título de uma sessão de área de trabalho do modo de janela. Isso permitirá que você altere algumas configurações dinamicamente durante uma sessão. Por exemplo, você pode alterar as novas configurações de **Modo de exibição única quando está em modo de janela** e **Maximizar para exibições atuais**.
+- Quando você sair da tela inteira, a janela da sessão voltará ao local original de quando você entrou em tela inteira pela primeira vez.
+- A redefinição dos dados do usuário na página Sobre agora realiza o redirecionamento para o Centro de Conexão quando concluída, em vez de fechar o cliente.
+- Resolvemos alguns problemas de acessibilidade com navegação por guias e leitores de tela.
+- Correção de um problema de cintilação e redução ao arrastar uma janela de sessão da área de trabalho entre exibições de diferentes fatores de escala.
+- Correção de um erro que ocorreu ao redirecionar câmeras.
+- Correção de várias falhas para aprimorar a confiabilidade.
 
 ## <a name="updates-for-version-12790"></a>Atualizações para a versão 1.2.790
 

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 110e1442b6660c24dc1e3fd9649138390117ffd6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406811"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269263"
 ---
 # <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center?
 
@@ -27,7 +27,7 @@ O Windows Admin Center é a evolução moderna das ferramentas de gerenciamento 
 
 ## <a name="how-does-windows-admin-center-work"></a>Como funciona o Windows Admin Center?
 
-O Windows Admin Center é executado em um navegador da Web e gerencia o Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 2008 R2, Windows 10 e mais através do **gateway do Windows Admin Center** instalado no Windows Server 10 ou Windows 10. O gateway gerencia servidores por meio do PowerShell Remoto e WMI em WinRM. O gateway está incluído no Windows Admin Center em um único pacote .msi leve que você pode [baixar](https://aka.ms/windowsadmincenter).
+O Windows Admin Center é executado em um navegador da Web e gerencia o Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 10 e mais por meio do **gateway do Windows Admin Center** instalado no Windows Server ou Windows 10 ingressado em domínio. O gateway gerencia servidores por meio do PowerShell Remoto e WMI em WinRM. O gateway está incluído no Windows Admin Center em um único pacote .msi leve que você pode [baixar](https://aka.ms/windowsadmincenter).
 
 O gateway do Windows Admin Center, depois de publicado no DNS e ter acesso concedido através de firewalls corporativos correspondentes, permite a você conectar com segurança e gerenciar os servidores de qualquer lugar com o Microsoft Edge ou o Google Chrome.
 
