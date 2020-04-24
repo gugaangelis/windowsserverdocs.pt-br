@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74945203"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Recursos removidos ou preteridos no Windows Server 2016

@@ -12,7 +12,7 @@
 ## [Recurso de compatibilidade de aplicativo principal do servidor sob demanda (FOD)](install-fod-19.md)
 ## [Padrão | Comparação de edições de datacenter](editions-comparison-19.md)
 ## Recursos removidos
-### [Recursos removidos ou planejados para substituição no Windows Server](removed-features.md)
+### [Recursos removidos ou com substituição planejada no Windows Server](removed-features.md)
 ### [Recursos removidos ou planejados para substituição a partir do Windows Server 2019](removed-features-19.md)
 ### [Recursos removidos ou planejados para substituição a partir do Windows Server, versão 1903](removed-features-1903.md)
 ## [Informações sobre versões do Windows Server](../get-started/windows-server-release-info.md)

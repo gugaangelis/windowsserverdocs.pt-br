@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76822709"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Novidades no Windows Server 2016
@@ -23,7 +23,7 @@ ms.locfileid: "76822709"
 
 ![Ícone mostrando um jornal](media/whats-new.png) Para saber mais sobre os recursos mais recentes do Windows, confira [Novidades no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server&reg; 2016. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão.
 
-## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
+## <a name="compute"></a>[Compute](../virtualization/virtualization.md)
 
 A área de virtualização inclui produtos e recursos de virtualização para profissionais de TI projetarem, implantarem e manterem o Windows Server.  
 
@@ -59,7 +59,7 @@ O Windows Server 2016 fornece uma nova máquina virtual blindada com base em Hyp
 
 Para obter mais detalhes e instruções para trabalhar com máquinas virtuais blindadas, consulte [Guia de validação de VMs blindadas e malha protegida para Windows Server 2016 (TPM)](https://aka.ms/shieldedvms).  
 
-## <a name="identity-and-accessidentityidentity-and-accessmd"></a>[Identidade e acesso](../identity/Identity-and-Access.md)  
+## <a name="identity-and-access"></a>[Identidade e acesso](../identity/Identity-and-Access.md)  
 Novos recursos na identidade melhoram a capacidade para as organizações protegerem ambientes do Active Directory e ajuda a migrar para implantações apenas na nuvem e implantações híbridas, onde alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados no local.  
 
 ### <a name="active-directory-certificate-services"></a>Serviços de Certificados do Active Directory  
@@ -74,7 +74,7 @@ Novidades nos Serviços de Federação do Active Directory. O AD FS (Serviços d
 ### <a name="web-application-proxy"></a>Proxy de aplicativo Web  
 A versão mais recente do Proxy de aplicativo Web se concentra em novos recursos que habilitam a publicação e a pré-autenticação para mais aplicativos e experiência do usuário aprimorada. Confira a lista completa dos novos recursos que incluem a pré-autenticação para aplicativos de cliente avançado como o Exchange ActiveSync e domínios curinga para a publicação mais fácil de aplicativos do SharePoint. Para obter mais informações, confira [Proxy de aplicativo Web no Windows Server 2016](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).  
 
-##  <a name="administrationadministrationmanage-windows-servermd"></a>[Administração](../administration/manage-windows-server.md)  
+##  <a name="administration"></a>[Administração](../administration/manage-windows-server.md)  
 A área de gerenciamento e automação concentra-se na ferramenta e nas informações de referência para profissionais de TI que desejam executar e gerenciar o Windows Server 2016, incluindo o Windows PowerShell.
 
 O Windows PowerShell 5.1 contém novos recursos significativos, incluindo suporte para o desenvolvimento com classes e novos recursos de segurança, que ampliam seu uso, melhoram sua usabilidade e permitem controlar e gerenciar ambientes baseados em Windows de forma mais fácil e abrangente. Confira [Novos cenários e recursos no WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features) para obter mais detalhes.
@@ -98,7 +98,7 @@ Para ajudar a equipe responsável pela investigação de sistemas comprometidos 
 
 Para obter mais informações, confira [PowerShell ♥ a equipe azul](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/).
 
-## <a name="networkingnetworkingnetworkingmd"></a>[Rede](../networking/Networking.md)  
+## <a name="networking"></a>[Rede](../networking/Networking.md)  
 Esta área aborda os produtos e recursos de rede para o profissional de TI desenvolver, implantar e manter o Windows Server 2016.  
 
 ### <a name="software-defined-networking"></a>Redes definidas por software
@@ -109,7 +109,7 @@ A ICW (Janela de Congestionamento Inicial) padrão aumentou de quatro para 10 e 
 
 Para melhorar o comportamento do TCP durante a recuperação de perda de pacotes, implementamos o TLP (TCP Tail Loss Probe) e o RACK (Confirmação recente). O TLP ajuda a converter RTOs (Tempo limite de retransmissão) em Recuperações rápidas, e o RACK reduz o tempo necessário para Recuperação rápida a fim de retransmitir um pacote perdido. 
 
-## <a name="security-and-assurancesecuritysecurity-and-assurancemd"></a>[Segurança e garantia](../security/Security-and-Assurance.md)  
+## <a name="security-and-assurance"></a>[Segurança e garantia](../security/Security-and-Assurance.md)  
 Inclui recursos e soluções de segurança para profissionais de TI implantarem em seu data center e ambiente de nuvem. Para obter informações sobre a segurança no Windows Server 2016 em geral, confira [Garantia e segurança](../security/Security-and-Assurance.md).  
 
 ### <a name="just-enough-administration"></a>Administração Just Enough  
@@ -132,7 +132,7 @@ O Device Guard fornece KMCI (integridade de código no modo kernel) e UMCI (inte
 O CFG (Proteção de Fluxo de Controle) é um recurso de segurança de plataforma que foi criado para combater as vulnerabilidades de corrupção da memória. Para saber mais, confira [Control Flow Guard (Proteção de Fluxo de Controle)](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx).
 
 
-## <a name="storagestoragestoragemd"></a>[Armazenamento](../storage/storage.md)
+## <a name="storage"></a>[Armazenamento](../storage/storage.md)
 
 O armazenamento no Windows Server 2016 inclui novos recursos e aprimoramentos de armazenamento definidos pelo software, bem como para servidores de arquivos tradicionais. Veja abaixo alguns dos recursos novos. Para conferir outros aprimoramentos e detalhes, confira [Novidades no Armazenamento no Windows Server 2016](../storage/whats-new-in-storage.md).
 
@@ -154,7 +154,7 @@ Agora você pode usar QoS (qualidade do serviço de armazenamento) para monitora
 
 Para saber mais, confira [Qualidade do serviço de armazenamento](../storage/storage-qos/storage-qos-overview.md).
 
-## <a name="failover-clusteringfailover-clusteringwhats-new-in-failover-clusteringmd"></a>[Clustering de failover](../failover-clustering/whats-new-in-failover-clustering.md)
+## <a name="failover-clustering"></a>[Clustering de failover](../failover-clustering/whats-new-in-failover-clustering.md)
 
 O Windows Server 2016 inclui diversos recursos novos e aprimoramentos para vários servidores agrupados em um único cluster tolerante a falhas usando o recurso de Clustering de Failover. Algumas das adições estão listadas abaixo; para obter uma lista mais completa, confira [Novidades em Clustering de Failover no Windows Server 2016](../failover-clustering/whats-new-in-failover-clustering.md).
 

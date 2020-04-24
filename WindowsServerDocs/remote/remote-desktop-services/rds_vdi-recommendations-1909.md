@@ -10,10 +10,10 @@ author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
 ms.openlocfilehash: 44aa465773674625fa392a644ffb188140138bde
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77519591"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Como otimizar o Windows 10, versão 1909, para uma função da VDI (Virtual Desktop Infrastructure)
@@ -35,7 +35,7 @@ Há outros tipos de VDI, como RDS (Sessão da Área de Trabalho Remota) e a rece
 
 Segurança e estabilidade são as principais prioridades da Microsoft quando se trata de produtos e serviços. Os clientes empresariais podem optar por utilizar a Segurança interna do Windows, um conjunto de serviços que funciona bem com ou sem a Internet. Para os ambientes VDI não conectados à Internet, as assinaturas de segurança podem ser baixadas várias vezes por dia, pois a Microsoft pode lançar mais de uma atualização de assinatura por dia. Essas assinaturas podem então ser fornecidas às VMs da VDI e agendadas para serem instaladas durante a produção, independentemente de serem persistentes ou não persistentes. Dessa forma, a proteção da VM é a mais atual possível.
 
-Há algumas configurações de segurança que não são aplicáveis aos ambientes VDI que não estão conectados à Internet e, portanto, não podem participar da segurança habilitada para nuvem. Há outras configurações que os dispositivos “normais” do Windows podem utilizar, como a Experiência de Nuvem, a Microsoft Store etc. A remoção do acesso aos recursos não utilizados reduz o volume, a largura de banda da rede e a superfície de ataque.
+Há algumas configurações de segurança que não são aplicáveis aos ambientes VDI que não estão conectados à Internet e, portanto, não podem participar da segurança habilitada para nuvem. Há outras configurações que os dispositivos “normais” do Windows podem utilizar, como a Experiência de Nuvem, a Micosoft Store etc. A remoção do acesso aos recursos não utilizados reduz o volume, a largura de banda da rede e a superfície de ataque.
 
 Em relação às atualizações, o Windows 10 utiliza um algoritmo de atualização mensal, não havendo, portanto, a necessidade de uma tentativa de atualização por parte dos clientes. Na maioria dos casos, os administradores da VDI controlam o processo de atualização por meio de um processo de desligamento de VMs com base em uma imagem “mestre” ou “ouro”, desselam a imagem que é somente leitura, aplicam o patch a ela e, em seguida, selam a imagem novamente e a colocam de novo em produção. Portanto, não é necessário ter VMs da VDI verificando o Windows Update. Em alguns casos, por exemplo, VMs da VDI persistentes, são realizados os procedimentos normais de aplicação de patch. O Windows Update ou o Microsoft Intune também podem ser usados. O System Center Configuration Manager pode ser usado para lidar com a atualização e outros tipos de entrega de pacote. Cabe a cada organização determinar a melhor abordagem para atualizar a VDI.
 

@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75950252"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Visão geral de Redirecionamento de pasta, Arquivos offline e Perfis de usuário móvel

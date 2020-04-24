@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 2eee5820891c108475c58c9ad024cd7c00391e43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385916"
 ---
 # <a name="manage-basic-volumes"></a>Gerenciar volumes básicos
@@ -23,7 +23,7 @@ Um disco básico é um disco físico contendo partições primárias, estendidas
 
 É possível adicionar mais espaço às partições primárias e lógicas existentes estendendo-as para um espaço não alocado adjacente e contíguo no mesmo disco. Para estender um volume básico, ele deve ser formatado com o sistema de arquivos NTFS. É possível estender uma unidade lógica no espaço livre contíguo na partição estendida que contém essa unidade. Se você estender uma unidade lógica além do espaço livre disponível na partição estendida, esta aumenta para conter a unidade lógica, contanto que a partição estendida seja seguida por espaço não alocado contíguo.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 -   [Atribuir um caminho de pasta do ponto de montagem a uma unidade](assign-a-mount-point-folder-path-to-a-drive.md)
 -   [Estender um volume básico](extend-a-basic-volume.md)

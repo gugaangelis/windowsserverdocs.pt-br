@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385943"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>Converter um disco MBR em GPT
@@ -65,6 +65,6 @@ Execute as seguintes etapas para converter um disco MBR vazio em um disco GPT. H
 | **clean** | Remove todas as partições ou volumes do disco com foco.  |
 | **convert gpt**| Converte um disco básico vazio com o estilo de partição MBR (Registro Mestre de Inicialização) em um disco básico com o estilo de partição GPT (Tabela de Partição GUID). |
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 -   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)

@@ -9,15 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 5c6efb0697af663b32ce6f0e27634c3962eca492
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71402103"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>Transformar um disco GPT em um disco MBR
 
-> **Aplicável a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Os discos MBR (Registro Mestre de Inicialização) usam a tabela de partição padrão do BIOS. Os discos GPT (Tabela de Partição GUID) usam UEFI (Unified Extensible Firmware Interface). Os discos MBR não dão suporte a mais de quatro partições em cada disco. O método de partição MBR não é recomendado para discos com mais de 2 TB (terabytes).
 
@@ -62,6 +62,6 @@ Os discos MBR (Registro Mestre de Inicialização) usam a tabela de partição p
 | <strong>select disk</strong> |                                                                                                          Seleciona o disco especificado, onde <em>disknumber</em> é o número do disco e concede foco a ele.                                                                                                           |
 | <strong>convert mbr</strong> |                                                                               Converte um disco básico vazio com o estilo de partição GPT (Tabela de Partição GUID) em um disco básico com o estilo de partição MBR (Registro Mestre de Inicialização).                                                                                |
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 -   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)

@@ -1,5 +1,5 @@
 ---
-title: Controle remoto
+title: Remoto
 description: Diretrizes sobre o aproveitamento do acesso remoto e da administrador de servidor
 ms.prod: windows-server
 layout: LandingPage
@@ -10,13 +10,13 @@ ms.author: coreyp
 manager: dougkim
 ms.localizationpriority: high
 ms.openlocfilehash: 659f40f2e6e33378ef9828a746f72c43edaf0859
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71395874"
 ---
-# <a name="remote"></a>Controle remoto
+# <a name="remote"></a>Remoto
 
 >[!TIP]
 > Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
@@ -37,7 +37,7 @@ ms.locfileid: "71395874"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Serviços da Área de Trabalho Remota</h3><hr />
+                                            <h3>Serviços da área de trabalho Remota</h3><hr />
                                             <p>Os Serviços de Área de Trabalho Remota permitem que os usuários acessem os programas baseados no Windows instalados em um servidor de Host de Sessão de Área de Trabalho Remota (Host de Sessão de RD) ou acessem toda a área de trabalho do Windows. Com os Serviços de Área de Trabalho Remota, os usuários podem acessar um servidor de Host de Sessão de RD por uma rede corporativa ou pela Internet.</p>
                                         </div>
                                     </div>

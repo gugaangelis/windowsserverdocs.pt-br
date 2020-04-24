@@ -9,10 +9,10 @@ ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
-ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74189467"
 ---
 # <a name="get-started-with-the-web-client"></a>Introdução ao cliente Web
@@ -25,7 +25,7 @@ O cliente Web da Área de Trabalho Remota permite usar um navegador da Web compa
 ## <a name="what-youll-need-to-use-the-web-client"></a>O que você precisará para usar o cliente Web
 
 * Para o cliente Web, será necessário um PC executando o Windows, macOS, ChromeOS ou Linux. Não há suporte para dispositivos móveis no momento.
-* Um navegador moderno, como o Microsoft Edge, Internet Explorer 11, Google Chrome, Safari ou Mozilla Firefox (v55.0 e posterior).
+* Um navegador moderno, como o Edge, Internet Explorer 11, Google Chrome, Safari ou Mozilla Firefox (v55.0 e posterior).
 * A URL que seu administrador enviou a você.
 
 >[!NOTE]

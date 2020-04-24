@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77517531"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos do AD FS
@@ -38,7 +38,7 @@ Os requisitos para implantar o AD FS são:
   
 -   [Requisitos de permissões](ad-fs-requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>Requisitos de certificado  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>Requisitos de certificado  
   
 ### <a name="ssl-certificates"></a>Certificados SSL
 
@@ -90,7 +90,7 @@ Esse certificado é usado por provedores de declarações que criptografam token
 ### <a name="user-certificates"></a>Certificados do usuário
 - Ao usar a autenticação de certificado de usuário x509 com o AD FS, todos os certificados de usuário devem se ligar a uma autoridade de certificado raiz que tem a confiança de servidores AD FS e do Proxy de Aplicativo Web.
 
-## <a name="BKMK_2"></a>Requisitos de hardware  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>Requisitos de hardware  
 Os requisitos de hardware (físicos ou virtuais) do AD FS e do Proxy de Aplicativo Web são controlados na CPU. Portanto, você deve dimensionar seu farm para capacidade de processamento.  
 - Use a [planilha do Planejamento da Capacidade do AD FS 2016](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx) para determinar o número de servidores AD FS e Proxy de Aplicativo Web de que você precisará.
 
@@ -106,7 +106,7 @@ Os requisitos de memória e disco do AD FS são razoavelmente estáticos, confir
 
 Se você estiver usando o SQL Server para seu banco de dados de configuração do AD FS, dimensione-o de acordo com as recomendações mais básicas do SQL Server.  O tamanho do banco de dados do AD FS é muito pequeno e o AD FS não coloca uma carga de processamento significativa na instância de banco de dados.  O AD FS, no entanto, se conecta ao banco de dados várias vezes durante uma autenticação; portanto, a conexão de rede deve ser robusta.  Não há suporte para o SQL Azure no banco de dados de configuração do AD FS.
   
-## <a name="BKMK_3"></a>Requisitos de proxy  
+## <a name="proxy-requirements"></a><a name="BKMK_3"></a>Requisitos de proxy  
   
 -   Para acesso à extranet, você deve implantar a parte \- do serviço de função do Proxy de Aplicativo Web da função de servidor do Acesso Remoto. 
 
@@ -116,7 +116,7 @@ Se você estiver usando o SQL Server para seu banco de dados de configuração d
   
 -   Um servidor de federação e o serviço de função do Proxy de Aplicativo Web não podem ser instalados no mesmo computador.  
   
-## <a name="BKMK_4"></a>Requisitos do AD DS  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>Requisitos do AD DS  
 **Requisitos de controlador de domínio**  
   
 - O AD FS requer controladores de domínio que executam o Windows Server 2008 ou posterior.
@@ -165,7 +165,7 @@ Se você estiver usando o SQL Server para seu banco de dados de configuração d
   
 -   A conta de serviço do AD FS deve ter permissões para ler atributos de usuário em cada domínio que contenha usuários que se autenticam no serviço do AD FS.  
   
-## <a name="BKMK_5"></a>Requisitos de banco de dados de configuração  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>Requisitos de banco de dados de configuração  
 Esta seção descreve os requisitos e as restrições para farms do AD FS que usam respectivamente o WID (Banco de Dados Interno do Windows) ou o SQL Server como o banco de dados:  
   
 **WID**  
@@ -188,7 +188,7 @@ A tabela a seguir fornece um resumo de quantos servidores AD FS têm suporte em 
 
 - Há suporte para a resolução de artefato SAML e a detecção de reprodução de tokens em um farm do SQL Server.  
   
-## <a name="BKMK_6"></a>Requisitos de navegador  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>Requisitos de navegador  
 Quando a autenticação do AD FS é executada por meio de um navegador ou controle de navegador, seu navegador deve atender aos seguintes requisitos:  
   
 - O JavaScript deve estar habilitado  
@@ -200,7 +200,7 @@ Quando a autenticação do AD FS é executada por meio de um navegador ou contro
 - Para a autenticação de certificado do usuário e do dispositivo, o navegador deve dar suporte à autenticação de certificado de cliente SSL  
 
 - Para o logon contínuo usando a Autenticação Integrada do Windows, o nome do Serviço de Federação (como https:\/\/fs.contoso.com) deve ser configurado na zona da intranet local ou na zona de sites confiáveis.
-  ## <a name="BKMK_7"></a>Requisitos de rede  
+  ## <a name="network-requirements"></a><a name="BKMK_7"></a>Requisitos de rede  
  
 **Requisitos de firewall**  
   
@@ -237,7 +237,7 @@ Para obter informações adicionais, confira [Melhores práticas para proteger o
 - NÃO é recomendável usar o round robin de DNS como uma maneira de balancear carga. O uso desse tipo de balanceamento de carga não fornece uma maneira automatizada de remover um nó do balanceador de carga usando investigações de integridade. 
 - NÃO é recomendável usar a afinidade de sessão baseada em IP ou as sessões adesivas para o tráfego de autenticação para o AD FS no balanceador de carga. Isso pode causar uma sobrecarga de determinados nós ao usar o protocolo de autenticação herdado para clientes de email que se conectam os serviços de email do Office 365 (Exchange Online). 
 
-## <a name="BKMK_13"></a>Requisitos de permissões  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>Requisitos de permissões  
 O administrador que executa a instalação e a configuração inicial do AD FS deve ter permissões de administrador local no servidor AD FS.  Se o administrador local não tiver permissões para criar objetos no Active Directory, primeiro ele deverá fazer um administrador de domínio criar os objetos do AD necessários e configurar o farm do AD FS usando o parâmetro AdminConfiguration.  
   
   

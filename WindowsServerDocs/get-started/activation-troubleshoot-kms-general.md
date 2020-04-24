@@ -9,10 +9,10 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: fc673d2c3e1404dbd750d4c0ef05ec6db50017aa
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71963072"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>Diretrizes para solucionar problemas do KMS (Serviço de Gerenciamento de Chaves)
@@ -133,7 +133,7 @@ Se você precisar chamar o suporte para solucionar problemas de ativação, o en
 - Saída **Slmgr.vbs /dlv** do host KMS e dos sistemas de cliente KMS. Se você usar wscript ou cscript para executar o comando, poderá usar Ctrl + C para copiar a saída e, em seguida, colá-la no Bloco de notas para enviá-la ao contato de suporte.
 - Logs de eventos do host KMS (log do Serviço de Gerenciamento de Chaves) e dos sistemas de cliente KMS (log do aplicativo)
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 - [Pergunte à equipe principal: #Activation](https://blogs.technet.microsoft.com/askcore/tag/Activation/)
 
 

@@ -66,13 +66,11 @@
 #### [Usar um plug-in de gateway personalizado em sua extensão de ferramenta](extend/guides/use-custom-gateway-plugin.md)
 #### [Criar um provedor de conexão](extend/guides/create-connection-provider.md)
 #### [Modificar o comportamento de navegação raiz](extend/guides/modify-root-navigation.md)
-#### [Alterações do tipo de conexão de cluster no Windows Admin Center v1909](extend/guides/cluster-connection-change-wac-1909.md)
 #### [Controlar a visibilidade da ferramenta](extend/guides/dynamic-tool-display.md)
 #### [Cadeias de caracteres e localização](extend/guides/strings-localization.md)
 #### [Guia de estilo de texto e design de interface do usuário](extend/guides/ui-text-style-guide.md)
 #### [Como usar o PowerShell em sua extensão](extend/guides/powershell.md)
 #### [Guia de ícone CSS](extend/guides/cssicons.md)
-#### [Migrar para o SDK mais recente](extend/guides/migration-guide-0_1-1_0.md)
 #### [Habilitar a faixa de descoberta da extensão](extend/guides/extension-discovery-banner.md)
 ### [Extensões de publicação](extend/publish-extensions.md)
 ### Estudos de caso

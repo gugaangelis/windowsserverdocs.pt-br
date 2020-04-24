@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
 ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77520638"
 ---
 # <a name="windows-server-2016-improvements"></a>Aprimoramentos do Windows Server 2016
@@ -321,7 +321,7 @@ Para cumprir as regulamentações de rastreamento de tempo, você poderá arquiv
 ### <a name="event-logging"></a>Log de eventos
 Para obter a história completa, você também precisará das informações do log de eventos. Se você coletar o log de eventos do sistema e filtrar em Time-Server, Microsoft-Windows-Kernel-Boot e Microsoft-Windows-Kernel-General, poderá descobrir se há outras influências que alteraram a hora, por exemplo, terceiros. Esses logs podem ser necessários para eliminar a interferência externa. A Política de Grupo pode afetar os logs de eventos que são gravados no log. Confira a seção acima sobre como usar a Política de Grupo para obter mais detalhes.
 
-### <a name="W32Logging"></a>Log de depuração do W32Time
+### <a name="w32time-debug-logging"></a><a name="W32Logging"></a>Log de depuração do W32Time
 Para habilitar o w32tm para fins de auditoria, o comando a seguir habilita o log que mostra as atualizações periódicas do relógio e indica o relógio de origem. Reinicie o serviço para habilitar o novo log. 
 
 Para obter mais informações, confira [Como ativar o log de depuração no Serviço de Horário do Windows](https://support.microsoft.com/kb/816043).

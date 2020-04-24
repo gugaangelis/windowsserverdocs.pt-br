@@ -27,7 +27,7 @@
 #### [Detectar gargalos em um ambiente virtualizado](role/hyper-v-server/detecting-virtualized-environment-bottlenecks.md)
 #### [Considerações sobre a máquina virtual do Linux](role/hyper-v-server/linux-virtual-machine-considerations.md)
 ### [Contêineres do Windows Server](role/windows-server-container/index.md)
-### [Serviços de Área de Trabalho Remota](role/remote-desktop/session-hosts.md)
+### [Serviços de área de trabalho remota](role/remote-desktop/session-hosts.md)
 #### [Hosts de sessão](role/remote-desktop/session-hosts.md)
 #### [Host de virtualização](role/remote-desktop/virtualization-hosts.md)
 #### [Gateways](role/remote-desktop/gateways.md)
