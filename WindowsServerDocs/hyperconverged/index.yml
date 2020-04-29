@@ -32,7 +32,7 @@ sections:
             html: '<p>Virtualiza o hardware de armazenamento, permitindo criar volumes sobre um pool virtualizado de unidades distribuídas entre os servidores em um cluster hiperconvergente.</p>'
             image:
               src: ../media/i-store.svg
-            title: Espaços de Armazenamento Diretos
+            title: Espaços de Armazenamento Direct
           - href: ../failover-clustering/failover-clustering-overview.md
             html: '<p>Agrupa vários servidores para que as cargas de trabalho, como máquinas virtuais, possam ser executadas em qualquer servidor no cluster, balanceando a carga e o failover entre servidores.</p>'
             image:
@@ -43,8 +43,23 @@ sections:
             image:
               src: ../media/i-network.svg
             title: Rede definida pelo software
+          - href: ../manage/windows-admin-center/overview.md
+            html: <p>Gerencia seu cluster e outros servidores Windows.</p>
+            image:
+              src: ../media/i-admin-center.svg
+            title: Windows Admin Center
+          - href: ../azure-hybrid-services.md
+            html: '<p>Conecta o seu cluster aos serviços híbridos do Azure para recuperação de sites, monitoramento e mais.</p>'
+            image:
+              src: ../media/i-microsoft-azure.svg
+            title: Conectar-se aos serviços híbridos do Azure
+          - href: ../azure-stack-hci
+            html: '<p>Emparelha as tecnologias de virtualização e clustering do Windows Server 2019 com as soluções de hardware validadas pelo parceiro de sua escolha, ajudando a dispensar a adivinhação ao ajustar um datacenter definido por software.</p>'
+            image:
+              src: ../media/i-azure-stack.svg
+            title: Azure Stack HCI
           - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: '<p>Pareia a virtualização e as tecnologias de clustering do Windows Server com as soluções de hardware validadas pelo parceiro de sua escolha, ajudando a eliminar a suposição ao ajustar um datacenter definido por software.</p>'
+            html: '<p>Emparelha as tecnologias de virtualização e clustering do Windows Server 2016 com as soluções de hardware validadas pelo parceiro de sua escolha, ajudando a dispensar a adivinhação ao ajustar um datacenter definido por software.</p>'
             image:
               src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
             title: WSSD (Definido pelo software do Windows Server)

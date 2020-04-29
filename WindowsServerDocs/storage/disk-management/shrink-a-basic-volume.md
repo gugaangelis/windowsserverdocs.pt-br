@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385865"
 ---
 # <a name="shrink-a-basic-volume"></a>Reduzir um volume básico
@@ -70,6 +70,6 @@ Em alguns casos, é possível realocar o arquivo temporariamente. Por exemplo, s
 
 -   É possível reduzir partições primárias e unidades lógicas em partições brutas (aquelas sem um sistema de arquivos) ou partições usando o sistema de arquivos NTFS.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 -   [Gerenciar volumes básicos](manage-basic-volumes.md)

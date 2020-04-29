@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860329"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650064"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Use contadores de desempenho para diagnosticar os problemas de desempenho do aplicativo nos Hosts da Sessão da Área de Trabalho Remota
 
@@ -22,8 +22,8 @@ ms.locfileid: "80860329"
 
 Um dos problemas mais difíceis de diagnosticar é o desempenho insatisfatório do aplicativo – quando os aplicativos estão lentos ou não respondem. Tradicionalmente, você pode iniciar o seu diagnóstico pela coleta de CPU, memória, entrada/saída de disco e outras métricas e, em seguida, usar ferramentas como o Windows Performance Analyzer para tentar descobrir o que está causando o problema. Na maioria das situações, esses dados não o ajudarão a identificar a causa raiz, porque contadores de consumo de recursos têm variações grandes e frequentes. Isso torna difícil ler os dados e correlacioná-los com o problema relatado. Para ajudá-lo a resolver seus problemas de desempenho do aplicativo rapidamente, adicionamos alguns novos contadores de desempenho (disponíveis [para download](#download-windows-server-insider-software) por meio do [Programa Windows Insider](https://insider.windows.com)) que medem os fluxos de entrada do usuário.
 
->[!NOTE]
->O contador de Atraso de Entrada do Usuário só é compatível com:
+> [!NOTE]
+> O contador de Atraso de Entrada do Usuário só é compatível com:
 > - Windows Server 2019 ou posterior
 > - Windows 10, versão 1809 ou posterior
 
@@ -33,7 +33,7 @@ A imagem a seguir mostra uma representação aproximada do fluxo de entrada do u
 
 ![Área de Trabalho Remota – fluxos de entrada do usuário do cliente de Área de Trabalho Remota para o aplicativo](./media/rds-user-input.png)
 
-O contador de Atraso de Entrada do Usuário mede o delta máximo (dentro de um intervalo de tempo) entre a entrada que está sendo enfileirada e quando ela é coletada pelo aplicativo em um [loop de mensagem tradicional](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop), conforme mostrado no fluxograma a seguir:
+O contador de Atraso de Entrada do Usuário mede o delta máximo (dentro de um intervalo de tempo) entre a entrada que está sendo enfileirada e quando ela é coletada pelo aplicativo em um [loop de mensagem tradicional](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop), conforme mostrado no fluxograma a seguir:
 
 ![Área de Trabalho Remota – fluxo de contador de desempenho de Atraso de Entrada do Usuário](./media/rds-user-input-delay.png)
 
@@ -41,9 +41,9 @@ Um detalhe importante desse contador é que ele relata o atraso máximo de entra
 
 Por exemplo, na tabela a seguir, o atraso de entrada do usuário seria informado como 1.000 ms dentro deste intervalo. O contador informa o atraso de entrada do usuário mais lento no intervalo porque a percepção do usuário de "lento" é determinada pelo tempo de entrada mais lento (o máximo) que ele experimenta, não pela velocidade média de todas as entradas no total.
 
-|Número| 0 | 1 | 2 |
-|------|---|---|---|
-|Atraso |16 ms| 20 ms| 1\.000 ms|
+| Número |   0   |   1   |    2     |
+| ------ | ----- | ----- | -------- |
+| Atraso  | 16 ms | 20 ms | 1\.000 ms |
 
 ## <a name="enable-and-use-the-new-performance-counters"></a>Habilitar e usar os novos contadores de desempenho
 
@@ -53,7 +53,7 @@ Para usar esses novos contadores de desempenho, você precisa primeiro habilitar
 reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCounter" /t REG_DWORD /d 0x1 /f
 ```
 
->[!NOTE]
+> [!NOTE]
 > Se estiver usando o Windows 10 versão 1809 ou posterior ou Windows Server 2019 ou posterior, você não precisará habilitar a chave do Registro.
 
 Em seguida, reinicie o servidor. Depois, abra o Monitor de Desempenho e selecione o sinal de adição (+), conforme mostrado na captura de tela a seguir.
@@ -68,12 +68,12 @@ Depois de fazer isso, você deverá ver a caixa de diálogo Adicionar Contadores
 
 Se selecionar **Atraso de Entrada do Usuário por Processo**, você verá as **instâncias do objeto selecionado** (em outras palavras, os processos) no formato ```SessionID:ProcessID <Process Image>```.
 
-Por exemplo, se o aplicativo Calculadora estiver executando uma [ID de Sessão 1](https://msdn.microsoft.com/library/ms524326.aspx), você verá ```1:4232 <Calculator.exe>```.
+Por exemplo, se o aplicativo Calculadora estiver executando uma [ID de Sessão 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)), você verá ```1:4232 <Calculator.exe>```.
 
 > [!NOTE]
 > Nem todos os processos são incluídos. Você não verá todos os processos que estão sendo executados como SYSTEM.
 
-O contador começará a reportar o atraso de entrada do usuário assim que você adicioná-lo. Observe que a escala máxima é definida como 100 (ms) por padrão. 
+O contador começará a reportar o atraso de entrada do usuário assim que você adicioná-lo. Observe que a escala máxima é definida como 100 (ms) por padrão.
 
 ![Área de Trabalho Remota – um exemplo de atividade para o atraso de entrada do usuário por processo no Monitor de Desempenho](./media/rds-sample-user-input-delay-perfmon.png)
 
@@ -81,15 +81,15 @@ Em seguida, vamos examinar o **Atraso de entrada do usuário por sessão**. Há 
 
 Esta tabela mostra um exemplo visual dessas instâncias. (Você pode obter as mesmas informações no Perfmon, alternando para o tipo de grafo de Relatório.)
 
-|Tipo de contador|Nome da instância|Atraso relatado (ms)|
-|---------------|-------------|-------------------|
-|Atraso de Entrada do Usuário por processo|1:4232 <Calculator.exe>|    200|
-|Atraso de Entrada do Usuário por processo|2:1000 <Calculator.exe>|    16|
-|Atraso de Entrada do Usuário por processo|1:2000 <Calculator.exe>|    32|
-|Atraso de entrada do usuário por sessão|1|    200|
-|Atraso de entrada do usuário por sessão|2|    16|
-|Atraso de entrada do usuário por sessão|Média|     108|
-|Atraso de entrada do usuário por sessão|Máx.|     200|
+| Tipo de contador | Nome da instância | Atraso relatado (ms) |
+| --------------- | ------------- | ------------------- |
+| Atraso de Entrada do Usuário por processo | 1:4232 <Calculator.exe> |    200 |
+| Atraso de Entrada do Usuário por processo | 2:1000 <Calculator.exe> |     16 |
+| Atraso de Entrada do Usuário por processo | 1:2000 <Calculator.exe> |     32 |
+| Atraso de entrada do usuário por sessão | 1 |    200 |
+| Atraso de entrada do usuário por sessão | 2 |     16 |
+| Atraso de entrada do usuário por sessão | Média |     108 |
+| Atraso de entrada do usuário por sessão | Máx. |     200 |
 
 ## <a name="counters-used-in-an-overloaded-system"></a>Contadores usados em um sistema sobrecarregado
 
@@ -120,8 +120,8 @@ Para corrigir isso, você pode definir a chave do Registro a seguir para corresp
 "LagCounterInterval"=dword:00005000
 ```
 
->[!NOTE]
->Se estiver usando o Windows 10 versão 1809 ou posterior ou o Windows Server 2019 ou posterior, você não precisará definir LagCounterInterval para corrigir o contador de desempenho.
+> [!NOTE]
+> Se estiver usando o Windows 10 versão 1809 ou posterior ou o Windows Server 2019 ou posterior, você não precisará definir LagCounterInterval para corrigir o contador de desempenho.
 
 Também adicionamos algumas chaves que podem ser úteis sob a mesma chave do Registro:
 
@@ -135,11 +135,11 @@ Eis aqui a aparência que isso teria se você ativasse ambas as chaves:
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Usando os novos contadores com ferramentas não Microsoft
 
-Ferramentas de monitoramento podem consumir esse contador usando a [API do Perfmon](https://msdn.microsoft.com/library/windows/desktop/aa371903.aspx).
+Ferramentas de monitoramento podem consumir esse contador ao [Usar Contadores de Desempenho](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters).
 
 ## <a name="download-windows-server-insider-software"></a>Baixar o software do Windows Server Insider
 
-Insiders registrados podem navegar diretamente para a [página de download do Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) para obter os downloads de software mais recentes do Insider.  Para saber como se registrar como um Insider, confira [Introdução ao servidor](https://insider.windows.com/en-us/for-business-getting-started-server/).
+Insiders registrados podem navegar diretamente para a [página de download do Windows Server Insider Preview](https://microsoft.com/en-us/software-download/windowsinsiderpreviewserver) para obter os downloads de software mais recentes do Insider.  Para saber como se registrar como um Insider, confira [Introdução ao servidor](https://insider.windows.com/en-us/for-business-getting-started-server/).
 
 ## <a name="share-your-feedback"></a>Compartilhe seus comentários
 

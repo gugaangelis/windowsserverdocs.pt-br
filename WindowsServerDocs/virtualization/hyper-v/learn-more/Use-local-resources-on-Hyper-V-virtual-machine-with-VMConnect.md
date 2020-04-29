@@ -9,12 +9,12 @@ ms.assetid: 18eface5-7518-4c6b-9282-93e2e3e87492
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/06/2016
-ms.openlocfilehash: dccc4ccf66d457da9dcc2a71ff8d259565fe2714
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 40dd4076a4d1a57c8a1e999669e589dadeb88cbe
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860469"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650120"
 ---
 # <a name="use-local-resources-on-hyper-v-virtual-machine-with-vmconnect"></a>Use local resources on Hyper-V virtual machine with VMConnect
 
@@ -95,6 +95,9 @@ Você pode editar facilmente as configurações de conexão do VMConnect executa
   
 `VMConnect.exe <ServerName> <VMName> /edit`  
   
+> [!Note]
+> Uma janela do prompt de comandos com privilégios elevados pode ser necessária.
+  
 ## <a name="requirements-for-using-local-resources"></a>Requisitos para usar os recursos locais
 
 Para poder usar os recursos locais de um computador em uma máquina virtual:  
@@ -139,6 +142,5 @@ Você pode desejar usar os recursos locais de um computador para:
 ## <a name="see-also"></a>Consulte Também  
 [Conectar-se a uma Máquina Virtual](https://technet.microsoft.com/library/cc742407.aspx)  
 [Devo criar uma máquina virtual de geração 1 ou 2 no Hyper-V?](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
-
 
 

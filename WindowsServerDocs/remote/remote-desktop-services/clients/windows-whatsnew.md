@@ -7,18 +7,33 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/02/2020
+ms.date: 04/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 540630ce4baa8246d654b0d50f203623705286c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd9e353c18293d22b18c6ffb6a57ad97a819a4a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859729"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650041"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novidades do cliente para Microsoft Store
 
 Atualizamos regularmente o [cliente da Windows Store](windows.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
+
+## <a name="updates-for-version-1011215"></a>Atualizações para a versão 10.1.1215
+
+*Data da publicação: 20/04/2020*
+
+- Atualização da cadeia de caracteres de agente do usuário para a Área de Trabalho Virtual do Windows.
+
+## <a name="updates-for-version-1011195"></a>Atualizações para a versão 10.1.1195
+
+*Data da publicação: 06/03/2020*
+
+- O áudio da sessão agora continua a ser reproduzido mesmo quando o aplicativo é minimizado ou está em segundo plano.
+- Correção de um problema que fazia com que as teclas de alternância (caps lock, num lock e outras) ficassem fora de sincronia entre os PCs locais e remotos.
+- Aprimoramentos do desempenho em dispositivos de 64 bits.
+- Correção de uma falha que ocorria sempre que o aplicativo fosse suspenso.
 
 ## <a name="updates-for-version-1011107"></a>Atualizações para a versão 10.1.1107
 
