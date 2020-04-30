@@ -8,12 +8,12 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bc881efcd932e36e40f4483ae5a8378884db64a6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 53bbc2bd30f7ede3fc9e4f3580a96514068a7d5f
+ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948861"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82037155"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Criar um método de autenticação personalizado para AD FS no Windows Server
 
@@ -21,7 +21,7 @@ Este tutorial fornece instruções para implementar um método de autenticação
 
 
 > [!WARNING]
-> O exemplo que você pode criar aqui é&nbsp;apenas para fins educacionais. &nbsp;essas instruções são para a implementação mais simples e mínima possível para expor os elementos necessários do modelo.&nbsp; não há nenhum back-end de autenticação, processamento de erro ou dados de configuração. 
+> O exemplo que você pode criar aqui é&nbsp;apenas para fins educacionais. &nbsp;Essas instruções são para a implementação mais simples e mínima possível para expor os elementos necessários do modelo. &nbsp; Não há nenhum back-end de autenticação, processamento de erro ou dados de configuração. 
 > <P></P>
 
 
@@ -40,8 +40,8 @@ O passo a passo usa o Visual Studio 2012.  O projeto pode ser criado usando qual
 <tbody>
 <tr class="odd">
 <td><p><strong>DLL de referência</strong></p></td>
-<td><p><strong>Onde encontrá-lo</strong></p></td>
-<td><p><strong>Necessário para</strong></p></td>
+<td><p><strong>Onde encontrá-las</strong></p></td>
+<td><p><strong>Obrigatório para</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>Microsoft. IdentityServer. Web. dll</p></td>
@@ -56,13 +56,13 @@ O passo a passo usa o Visual Studio 2012.  O projeto pode ser criado usando qual
 
 ## <a name="create-the-provider"></a>Criar o provedor
 
-1.  No Visual Studio 2012: escolha Arquivo-\>novo\>projeto...
+1.  No Visual Studio 2012: escolha arquivo-\>novo-\>projeto...
 
 2.  Selecione biblioteca de classes e verifique se você está direcionando para o .NET 4,5.
 
     ![criar o provedor](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "criar o provedor")
 
-3.  Faça uma cópia de **Microsoft. IdentityServer. Web. dll** de% windir%\\ADFS no servidor do Windows Server 2012 R2 em que AD FS foi instalado e cole-o na pasta do projeto no computador de desenvolvimento.
+3.  Faça uma cópia de **Microsoft. IdentityServer. Web. dll** de% windir%\\ADFS no servidor Windows Server 2012 R2 em que o AD FS foi instalado e cole-o na pasta do projeto no computador de desenvolvimento.
 
 4.  Em **Gerenciador de soluções**, clique com o botão direito do mouse em **referências** e **adicione referência...**
 
@@ -74,7 +74,7 @@ O passo a passo usa o Visual Studio 2012.  O projeto pode ser criado usando qual
 
     Agora você deve estar configurado para resolver todos os tipos necessários para o provedor. 
 
-7.  Adicione uma nova classe ao seu projeto (clique com o botão direito do mouse no projeto, **adicione... Classe...** ) e dê a ele um nome como **myadapter**, mostrado abaixo:
+7.  Adicione uma nova classe ao seu projeto (clique com o botão direito do mouse no projeto, **adicione... Classe...**) e dê a ele um nome como **myadapter**, mostrado abaixo:
 
     ![criar o provedor](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "criar o provedor")
 
@@ -277,7 +277,7 @@ O passo a passo usa o Visual Studio 2012.  O projeto pode ser criado usando qual
 
    Você pode corrigi-lo em um minuto, mas primeiro vamos adicionar as instruções de retorno finais necessárias, com base nos tipos implementados recentemente, à sua classe inicial myadapter.  Para fazer isso, adicione os itens em *itálico* abaixo à implementação de IAuthenticationAdapter existente:
 
-       classe myadaptador: IAuthenticationAdapter {metadados IAuthenticationAdapterMetadata públicos {//get {retornar novo <instance of IAuthenticationAdapterMetadata derived class>;}     Get {retornar novo MyMetadata ();}     }
+       classe myadaptador: IAuthenticationAdapter {metadados de IAuthenticationAdapterMetadata públicos {//get {retornar <instance of IAuthenticationAdapterMetadata derived class>novo;}     Get {retornar novo MyMetadata ();}     }
 
         public IAdapterPresentation BeginAuthentication(Claim identityClaim, HttpListenerRequest request, IAuthenticationContext authContext)
         {
@@ -325,8 +325,8 @@ O passo a passo usa o Visual Studio 2012.  O projeto pode ser criado usando qual
         <input id="context" type="hidden" name="Context" value="%Context%"/>
         <!-- End inputs are required by the presentation framework. -->
         <p id="pageIntroductionText">Esse conteúdo é fornecido pelo adaptador de exemplo do MFA. As entradas de desafio devem ser apresentadas abaixo.</p>
-        <input id="challengeQuestionInput" name="ChallengeQuestionAnswer" type="text" value="" class="text" placeholder="Answer placeholder" />de 
-        <label for="challengeQuestionInput" class="block">texto de pergunta</label> 
+        <label for="challengeQuestionInput" class="block">Texto da pergunta</label>
+        <input id="challengeQuestionInput" name="ChallengeQuestionAnswer" type="text" value="" class="text" placeholder="Answer placeholder" />
         <div id="submissionArea" class="submitMargin">
         <input id="submitButton" type="submit" name="Submit" value="Submit" onclick="return AuthPage.submitAnswer()"/>
         </div>
@@ -341,7 +341,7 @@ O passo a passo usa o Visual Studio 2012.  O projeto pode ser criado usando qual
         //]]>
         </script></div>
 
-14. Em seguida, selecione **projeto-\>adicionar componente...** Arquivo de recursos e nomeie os **recursos**de arquivo e clique em **Adicionar:**
+14. Em seguida, selecione **projeto\>-adicionar componente... **Arquivo de recursos e nomeie os **recursos**de arquivo e clique em **Adicionar:**
 
    ![criar o provedor](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "criar o provedor")
 
@@ -359,9 +359,9 @@ O adaptador deve ser incorporado em um assembly .NET fortemente nomeado que pode
 
 1.  Clique com o botão direito do mouse no nome do projeto em Gerenciador de Soluções e clique em **Propriedades**.
 
-2.  Na guia **assinatura** , marque **assinar o assembly** e escolha **\<novo...\>** em **escolher um arquivo de chave de nome forte:** Insira um nome de arquivo de chave e uma senha e clique em **OK**.  Em seguida, certifique-se **de que assinar o assembly** esteja marcado e a opção **somente sinal de atraso** esteja desmarcada.  A página de **assinatura** de propriedades deve ter esta aparência:
+2.  Na guia **assinatura** , marque **assinar o assembly** e escolha ** \<novo... \> ** em **escolher um arquivo de chave de nome forte:** Insira um nome de arquivo de chave e uma senha e clique em **OK**.  Em seguida, certifique-se **de que assinar o assembly** esteja marcado e a opção **somente sinal de atraso** esteja desmarcada.  A página de **assinatura** de propriedades deve ter esta aparência:
 
-    ![criar o provedor](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "compilar o provedor")
+    ![compilar o provedor](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "compilar o provedor")
 
 3.  Em seguida, Compile a solução.
 
@@ -381,13 +381,13 @@ Copie os arquivos e adicione-o ao GAC.
 
 3.  Copie as ferramentas Gacutil. exe para o servidor.
 
-    O Gacutil. exe pode ser encontrado em **% HomeDrive%\\arquivos de programas (x86)\\Microsoft SDKs\\Windows\\v 8.0 a\\bin\\NETFX 4,0 Tools\\** em um computador com Windows 8.  Você precisará do próprio arquivo **Gacutil. exe** , bem como o **1033**, **en-US**e a outra pasta de recursos localizados abaixo do local das **ferramentas NETFX 4,0** .
+    O Gacutil. exe pode ser encontrado **em% HomeDrive\\% Program Files (\\x86)\\Microsoft\\SDKs Windows v\\8.0\\a bin NETFX\\ 4,0 Tools** em um computador com Windows 8.  Você precisará do próprio arquivo **Gacutil. exe** , bem como o **1033**, **en-US**e a outra pasta de recursos localizados abaixo do local das **ferramentas NETFX 4,0** .
 
 4.  Copie seus arquivos de provedor (um ou mais arquivos. dll assinados com nomes fortes) para o mesmo local de pasta que o **Gacutil. exe** (o local é apenas para conveniência)
 
 5.  Adicione seus arquivos. dll ao GAC em cada AD FS servidor de Federação no farm:
 
-    Exemplo: usando a ferramenta de linha de comando GACutil. exe para adicionar uma dll ao GAC: `C:\>.\gacutil.exe /if .\<yourdllname>.dll`
+    Exemplo: usando a ferramenta de linha de comando GACutil. exe para adicionar uma dll ao GAC:`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
 
     Para exibir a entrada resultante no GAC:`C:\>.\gacutil.exe /l <yourassemblyname>`
 
@@ -395,11 +395,11 @@ Copie os arquivos e adicione-o ao GAC.
 
 ### <a name="register-your-provider-in-ad-fs"></a>Registrar seu provedor no AD FS
 
-Depois que os pré-requisitos acima forem atendidos, abra uma janela de comando do Windows PowerShell no servidor de Federação e insira os comandos a seguir (Observe que se você estiver usando o farm de servidores de Federação que usa o banco de dados interno do Windows, execute estes comandos no servidor de Federação primário do farm):
+Depois que os pré-requisitos acima forem atendidos, abra uma janela de comando do Windows PowerShell no servidor de Federação e insira os seguintes comandos (Observe que se você estiver usando o farm de servidores de Federação que usa o banco de dados interno do Windows, execute estes comandos no servidor de Federação primário do farm):
 
 1.  `Register-AdfsAuthenticationProvider –TypeName YourTypeName –Name “AnyNameYouWish” [–ConfigurationFilePath (optional)]`
 
-    Em que YourTypeName é o nome do tipo forte do .NET: "YourDefaultNamespace. YourIAuthenticationAdapterImplementationClassName, YourAssemblyName, Version = YourAssemblyVersion, Culture = neutral, PublicKeyToken = YourPublicKeyTokenValue, processorArchitecture = MSIL "
+    Em que YourTypeName é o nome do tipo forte do .NET: "YourDefaultNamespace. YourIAuthenticationAdapterImplementationClassName, YourAssemblyName, Version = YourAssemblyVersion, Culture = neutral, PublicKeyToken = YourPublicKeyTokenValue, processorArchitecture = MSIL"
 
     Isso registrará seu provedor externo no AD FS, com o nome fornecido como AnyNameYouWish acima.
 
@@ -416,7 +416,7 @@ Depois que os pré-requisitos acima forem atendidos, abra uma janela de comando 
         PS C:\>net stop adfssrv
         PS C:\>net start adfssrv
 
-    Se você tiver o serviço de registro de dispositivo habilitado em seu ambiente de AD FS, também execute o seguinte: `PS C:\>net start drs`
+    Se você tiver o serviço de registro de dispositivo habilitado em seu ambiente de AD FS, também execute o seguinte:`PS C:\>net start drs`
 
     Para verificar o provedor registrado, use o seguinte comando:`PS C:\>Get-AdfsAuthenticationProvider`.
 
@@ -438,9 +438,9 @@ Depois que os pré-requisitos acima forem atendidos, abra uma janela de comando 
 
 6.  Verifique os resultados usando os seguintes comandos:
 
-    Primeiro, use `Get-AdfsGlobalAuthenticationPolicy`. Você deve ver o nome do provedor como um dos valores de AdditionalAuthenticationProvider.
+    Primeiro uso `Get-AdfsGlobalAuthenticationPolicy`. Você deve ver o nome do provedor como um dos valores de AdditionalAuthenticationProvider.
 
-    Em seguida, use `Get-AdfsAdditionalAuthenticationRule`. Você deve ver as regras para extranet e intranet configuradas como resultado de sua seleção de política na interface do usuário do administrador.
+    Em seguida `Get-AdfsAdditionalAuthenticationRule`, use. Você deve ver as regras para extranet e intranet configuradas como resultado de sua seleção de política na interface do usuário do administrador.
 
 #### <a name="create-the-authentication-policy-using-windows-powershell"></a>Criar a política de autenticação usando o Windows PowerShell
 
@@ -479,7 +479,7 @@ Por fim, execute as etapas abaixo para testar seu adaptador:
 
 2.  Verifique se a **autenticação de formulários** é a única opção verificada para a extranet e o método de autenticação de intranet.  Clique em **OK**.
 
-3.  Abra a página HTML de logon iniciada pelo IDP (https://\<FSName\>/adfs/ls/idpinitiatedsignon.htm) e entre como um usuário válido do AD em seu ambiente de teste.
+3.  Abra a página HTML de logon iniciada pelo IDP (\<https://\>FSName/adfs/ls/idpinitiatedsignon.htm) e entre como um usuário válido do AD em seu ambiente de teste.
 
 4.  Insira as credenciais para a autenticação primária.
 
@@ -495,7 +495,7 @@ Agora você tem uma implementação funcional da interface e tem o conhecimento 
 
 ## <a name="update-the-adapter-for-successful-authentication"></a>Atualizar o adaptador para autenticação bem-sucedida
 
-Mas espere – o adaptador de exemplo nunca se autenticará com êxito\!  Isso ocorre porque nada em seu código retorna NULL para TryEndAuthentication.
+Mas espere – o adaptador de exemplo nunca será autenticado com êxito\!  Isso ocorre porque nada em seu código retorna NULL para TryEndAuthentication.
 
 Ao concluir os procedimentos acima, você criou uma implementação básica de adaptador e a adicionou a um servidor AD FS.  Você pode obter a página de formulários do MFA, mas ainda não pode ser autenticado porque você ainda não colocou a lógica correta em sua implementação do TryEndAuthentication.  Então, vamos adicionar isso.
 
@@ -539,7 +539,7 @@ Em seguida, atualize TryEndAuthentication como mostrado abaixo:
      outgoingClaims = new[] 
      {
      // Return the required authentication method claim, indicating the particulate authentication method used.
-     new Claim( "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
+     new Claim( "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
      "http://example.com/myauthenticationmethod1" )
      };
      return null;
@@ -565,7 +565,7 @@ Desmarque todas as caixas de seleção relacionadas à MFA na interface do usuá
 
 `PS C:\> Unregister-AdfsAuthenticationProvider –Name “YourAuthProviderName”`
 
-Exemplo: `PS C:\> Unregister-AdfsAuthenticationProvider –Name “MyMFAAdapter”`
+Exemplo:`PS C:\> Unregister-AdfsAuthenticationProvider –Name “MyMFAAdapter”`
 
 Observe que o valor que você passa para "Name" é o mesmo valor que o "Name" fornecido ao cmdlet Register-AdfsAuthenticationProvider.  Também é a propriedade "Name" que é saída de Get-AdfsAuthenticationProvider.
 
@@ -575,13 +575,13 @@ Observe que o serviço de AD FS deve ser reiniciado após essa operação.
 
 ### <a name="remove-assembly-from-gac"></a>Remover assembly do GAC
 
-1.  Primeiro, use o seguinte comando para localizar o nome forte totalmente qualificado da entrada:`C:\>.\gacutil.exe /l <yourAdapterAssemblyName>`
+1.  Primeiro, use o seguinte comando para encontrar o nome forte totalmente qualificado da entrada:`C:\>.\gacutil.exe /l <yourAdapterAssemblyName>`
 
-    Exemplo: `C:\>.\gacutil.exe /l mfaadapter`
+    Exemplo:`C:\>.\gacutil.exe /l mfaadapter`
 
 2.  Em seguida, use o seguinte comando para removê-lo do GAC:`.\gacutil /u “<output from the above command>”`
 
-    Exemplo: `C:\>.\gacutil /u “mfaadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”`
+    Exemplo:`C:\>.\gacutil /u “mfaadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”`
 
 ### <a name="add-the-updated-assembly-to-gac"></a>Adicionar o assembly atualizado ao GAC
 
@@ -623,7 +623,7 @@ Por fim, execute as etapas abaixo para testar seu adaptador:
 
 2.  Verifique se a **autenticação de formulários** é a única opção verificada para a **extranet** e o método de autenticação de **intranet** .  Clique em **OK**.
 
-3.  Abra a página HTML de logon iniciada pelo IDP (https://\<FSName\>/adfs/ls/idpinitiatedsignon.htm) e entre como um usuário válido do AD em seu ambiente de teste.
+3.  Abra a página HTML de logon iniciada pelo IDP (\<https://\>FSName/adfs/ls/idpinitiatedsignon.htm) e entre como um usuário válido do AD em seu ambiente de teste.
 
 4.  Insira as credenciais para autenticação primária.
 
@@ -637,7 +637,7 @@ Você deverá ver uma entrada bem-sucedida ao inserir "adfabric" na página de a
 
 ![entrar com adaptador](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "entrar com adaptador")
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte Também
 
 #### <a name="other-resources"></a>Outros recursos
 

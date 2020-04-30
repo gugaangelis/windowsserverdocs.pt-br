@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: abc02bec101b39a66a78da871f838d2585d89377
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524921"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81623874"
 ---
 # <a name="selecting-the-forest-root-domain"></a>Selecionando o domínio raiz da floresta
 
@@ -68,7 +68,7 @@ Para selecionar um sufixo para o domínio raiz da floresta:
 Recomendamos que você use nomes DNS que são registrados com uma autoridade de Internet no namespace Active Directory. Somente nomes registrados têm a garantia de serem globalmente exclusivos. Se outra organização posteriormente registrar o mesmo nome de domínio DNS (ou se a sua organização mescla, adquire ou é adquirida por outra empresa que usa o mesmo nome DNS), as duas infraestruturas não podem interagir umas com as outras.
 
 > [!CAUTION]
-> Não use nomes DNS de rótulo único. Para obter mais informações, consulte ([implantação e operação de Active Directory domínios configurados usando nomes DNS de rótulo único](https://go.microsoft.com/fwlink/?LinkId=106631)). Além disso, não recomendamos o uso de sufixos não registrados, como. local.
+> Não use nomes DNS de rótulo único. Para obter mais informações, consulte [implantação e operação de Active Directory domínios configurados usando nomes DNS de rótulo único](https://support.microsoft.com/help/300684/). Além disso, não recomendamos o uso de sufixos não registrados, como. local.
 
 ### <a name="selecting-a-prefix"></a>Selecionando um prefixo
 
@@ -78,14 +78,14 @@ Se você selecionou um domínio regional para funcionar como um domínio raiz de
 
 A tabela a seguir lista as regras para selecionar um prefixo para um nome DNS registrado.
 
-|Regra|Explicação|
-|--------|---------------|
-|Selecione um prefixo que provavelmente não se tornará desatualizado.|Evite nomes como uma linha de produto ou sistema operacional que possam ser alterados no futuro. É recomendável usar nomes genéricos, como Corp ou DS.|
-|Selecione um prefixo que inclua somente caracteres padrão da Internet.|A-Z, a-z, 0-9 e (-), mas não totalmente numérica.|
-|Inclua 15 caracteres ou menos no prefixo.|Se você escolher um comprimento de prefixo de 15 caracteres ou menos, o nome NetBIOS será o mesmo que o prefixo.|
+| Regra     | Explicação |
+| -------- | --------------- |
+| Selecione um prefixo que provavelmente não se tornará desatualizado. | Evite nomes como uma linha de produto ou sistema operacional que possam ser alterados no futuro. É recomendável usar nomes genéricos, como Corp ou DS.|
+| Selecione um prefixo que inclua somente caracteres padrão da Internet. | A-Z, a-z, 0-9 e (-), mas não totalmente numérica. |
+| Inclua 15 caracteres ou menos no prefixo. | Se você escolher um comprimento de prefixo de 15 caracteres ou menos, o nome NetBIOS será o mesmo que o prefixo. |
 
 É importante que o proprietário do DNS Active Directory funcione com o proprietário do DNS da organização para obter a propriedade do nome que será usado para o namespace de Active Directory. Para obter mais informações sobre como criar uma infraestrutura de DNS para dar suporte a AD DS, consulte [criando um design de infraestrutura de DNS](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md).
 
 ## <a name="documenting-the-forest-root-domain-name"></a>Documentando o nome de domínio raiz da floresta
 
-Documente o prefixo e o sufixo DNS que você selecionar para o domínio raiz da floresta. Neste ponto, identifique qual domínio será a raiz da floresta. Você pode adicionar as informações de nome de domínio raiz da floresta à planilha "planejamento de domínio" que você criou para documentar seu plano para domínios novos e atualizados e seus nomes de domínio. Para abri-lo, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [auxílios de trabalho para o kit de implantação do Windows Server 2003](https://www.microsoft.com/download/details.aspx?id=9608) e abra "planejamento de domínio" (DSSLOGI_5. doc).
+Documente o prefixo e o sufixo DNS que você selecionar para o domínio raiz da floresta. Neste ponto, identifique qual domínio será a raiz da floresta. Você pode adicionar as informações de nome de domínio raiz da floresta à planilha "planejamento de domínio" que você criou para documentar seu plano para domínios novos e atualizados e seus nomes de domínio. Para abri-lo, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [auxílios de trabalho para o kit de implantação do Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) e abra "planejamento de domínio" (DSSLOGI_5. doc).

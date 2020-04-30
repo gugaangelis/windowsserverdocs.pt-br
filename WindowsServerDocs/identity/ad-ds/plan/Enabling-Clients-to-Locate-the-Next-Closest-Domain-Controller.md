@@ -8,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 55e19728e247240ca35bf7cc7b47b36171f1f195
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 75e31a435e8d8411fbe4db242e6d31fd7676fe4e
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822499"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81624244"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>Permitindo que os clientes localizem o controlador de domínio mais próximo
 
->Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Se você tiver um controlador de domínio que executa o Windows Server 2008 ou mais recente, poderá torná-lo possível para computadores cliente que executam o Windows Vista ou mais recente ou o Windows Server 2008 ou mais recente para localizar controladores de domínio com mais eficiência, habilitando a configuração de Política de Grupo **tentar o próximo site** mais próximos. Essa configuração melhora o localizador de controlador de domínio (localizador de DC) ajudando a simplificar o tráfego de rede, especialmente em grandes empresas que têm muitas filiais e sites.
 
@@ -31,7 +31,7 @@ Por padrão, a configuração **tentar site mais próximo** não está habilitad
 - Se nenhum controlador de domínio estiver disponível no mesmo site, tente localizar qualquer controlador de domínio no domínio.
 
 > [!NOTE]
-> Esse é o mesmo algoritmo que o localizador de DC usado em versões anteriores do Active Directory. Para obter mais informações, consulte o artigo [como o suporte a DNS para Active Directory funciona](https://go.microsoft.com/fwlink/?LinkId=108587).
+> Esse é o mesmo algoritmo que o localizador de DC usado em versões anteriores do Active Directory. Para obter mais informações, consulte o artigo [como o suporte a DNS para Active Directory funciona](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10)).
 
 Se você habilitar a configuração de **experimentar o site mais próximo** , o localizador de DC usará o seguinte algoritmo para localizar um controlador de domínio:
 
@@ -54,4 +54,4 @@ Se a configuração não estiver habilitada, o cliente tentará localizar um con
 > [!NOTE]
 > A configuração **Experimente o site mais próximo** funciona em coordenação com a cobertura automática de site. Por exemplo, se o site mais próximo não tiver nenhum controlador de domínio, o localizador de DC tentará localizar o controlador de domínio que executa a cobertura automática de site para esse site.
 
-Para aplicar a configuração **Experimente o site mais próximo** , você pode criar um objeto de política de grupo (GPO) e vinculá-lo ao objeto apropriado para sua organização ou pode modificar a política de domínio padrão para que ela afete todos os clientes que executam o Windows Vista ou mais recente e o Windows Server 2008 ou mais recente no domínio. Para obter mais informações sobre como definir a configuração do **site try Next mais** próximo, consulte [habilitar clientes para localizar um controlador de domínio no próximo site mais](https://technet.microsoft.com/library/cc772592.aspx)próximo.
+Para aplicar a configuração **Experimente o site mais próximo** , você pode criar um objeto de política de grupo (GPO) e vinculá-lo ao objeto apropriado para sua organização ou pode modificar a política de domínio padrão para que ela afete todos os clientes que executam o Windows Vista ou mais recente e o Windows Server 2008 ou mais recente no domínio. Para obter mais informações sobre como definir a configuração do **site try Next mais** próximo, consulte [habilitar clientes para localizar um controlador de domínio no próximo site mais](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772592(v=ws.10))próximo.

@@ -8,13 +8,13 @@ ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
-ms.date: 3/1/2019
-ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.date: 04/15/2020
+ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853299"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82072232"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Práticas recomendadas para executar o Linux no Hyper-V
 
@@ -49,7 +49,7 @@ Devido ao hardware herdado ser removido da emulação em máquinas virtuais de g
 
 Como o temporizador PIT não está presente nas máquinas virtuais de geração 2, as conexões de rede com o servidor de TFTP PxE podem ser encerradas prematuramente e impedir que o carregador de carga Leia a configuração do grub e carregue um kernel do servidor.
 
-No RHEL 6. x, o carregador de logon EFI v 0.97 do grub herdado pode ser usado em vez de Grub2, conforme descrito aqui: [https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
+No RHEL 6. x, o carregador de logon EFI v 0.97 do grub herdado pode ser usado em vez de Grub2, conforme descrito aqui:[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
 
 Em distribuições Linux diferentes do RHEL 6. x, etapas semelhantes podem ser seguidas para configurar o grub v 0.97 para carregar kernels do Linux de um servidor PxE.
 
@@ -74,13 +74,15 @@ As máquinas virtuais do Linux que serão implantadas usando o clustering de fai
 
 Configure e use o adaptador Ethernet virtual, que é uma placa de rede específica do Hyper-V com desempenho aprimorado. Se os adaptadores de rede herdados e do Hyper-V forem anexados a uma máquina virtual, os nomes de rede na saída de **ifconfig-a** poderão mostrar valores aleatórios, como **_tmp12000801310**. Para evitar esse problema, remova todos os adaptadores de rede herdados ao usar adaptadores de rede específicos do Hyper-V em uma máquina virtual Linux.
 
-## <a name="use-io-scheduler-noop-for-better-disk-io-performance"></a>Usar NOOP do Agendador de e/s para melhorar O desempenho de e/s de disco
+## <a name="use-io-scheduler-noopnone-for-better-disk-io-performance"></a>Usar NOOP/O Scheduler do Agendador de e/s para melhorar O desempenho de e/s de disco
 
-O kernel do Linux tem quatro agendadores de e/s diferentes para reordenar solicitações com algoritmos diferentes. NOOP é uma fila de primeiro a entrar, que passa a decisão de agendamento para ser feita pelo hipervisor. É recomendável usar NOOP como o Agendador ao executar a máquina virtual do Linux no Hyper-V. Para alterar o Agendador de um dispositivo específico, na configuração do carregador de inicialização (/etc/grub.conf, por exemplo), adicione **elevador = NOOP** aos parâmetros do kernel e reinicie o.
+O kernel do Linux oferece dois conjuntos de agendadores de e/s de disco para reordenar solicitações.  Um conjunto é para o subsistema ' BLK ' mais antigo e um conjunto é para o subsistema ' BLK-MQ ' mais recente. Em ambos os casos, com os discos de estado sólido de hoje, é recomendável usar um Agendador que passa as decisões de agendamento para o hipervisor do Hyper-V subjacente. Para kernels do Linux usando o subsistema ' BLK ', esse é o Agendador de "NOOP". Para kernels do Linux usando o subsistema ' BLK-MQ ', esse é o Agendador "nenhum".
+
+Para um disco específico, os agendadores disponíveis podem ser vistos neste local do sistema de arquivos:`<diskname>`/sys/Class/Block//Queue/Scheduler, com o Agendador selecionado no momento entre colchetes. Você pode alterar o Agendador gravando nesse local do sistema de arquivos. A alteração deve ser adicionada a um script de inicialização para persistir entre reinicializações. Consulte a documentação do Linux distribuição para obter detalhes.
 
 ## <a name="numa"></a>NUMA
 
-As versões do kernel do Linux anteriores ao 2.6.37 não dão suporte a NUMA no Hyper-V com tamanhos de VM maiores. Esse problema afeta principalmente as distribuições mais antigas usando o kernel upstream Red Hat 2.6.32 e foi corrigido em Red Hat Enterprise Linux (RHEL) 6,6 (kernel-2.6.32-504). Sistemas que executam kernels personalizados com mais de 2.6.37 ou kernels baseados em RHEL mais antigos que 2.6.32-504 devem definir o parâmetro de inicialização `numa=off` na linha de comando do kernel em grub. conf. Para obter mais informações, consulte [Red Hat KB 436883](https://access.redhat.com/solutions/436883).
+As versões do kernel do Linux anteriores à 2.6.37 não são suporte para NUMA no Hyper-V com tamanhos de VM maiores. Esse problema afeta principalmente distribuições mais antigas usando o kernel do Red Hat 2.6.32, e foi corrigido no RHEL (Red Hat Enterprise Linux) 6.6 (kernel-2.6.32-504). Sistemas que executam kernels personalizados anteriores a 2.6.37 ou com base em RHEL anteriores a 2.6.32-504 devem definir o parâmetro de inicialização `numa=off` na linha de comando do kernel em grub.conf. Para obter mais informações, consulte o [KB 436883](https://access.redhat.com/solutions/436883) do Red Hat.
 
 ## <a name="reserve-more-memory-for-kdump"></a>Reserve mais memória para kdump
 
@@ -92,14 +94,14 @@ O Hyper-V permite a redução de arquivos de VHDX (disco virtual) sem considerar
 
 Depois de redimensionar um VHD ou VHDX, os administradores devem usar um utilitário como o fdisk ou parcialmente para atualizar a partição, o volume e as estruturas do sistema de arquivos para refletir a alteração no tamanho do disco. Reduzir ou expandir o tamanho de um VHD ou VHDX que tenha uma tabela de partição GUID (GPT) causará um aviso quando uma ferramenta de gerenciamento de partição for usada para verificar o layout da partição, e o administrador será avisado para corrigir os cabeçalhos GPT primeiros e secundários. Essa etapa manual é segura para ser executada sem perda de dados.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 * [Máquinas virtuais Linux e FreeBSD com suporte para Hyper-V no Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
 * [Práticas recomendadas para executar o FreeBSD no Hyper-V](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [Implantar um cluster Hyper-V](https://technet.microsoft.com/library/jj863389.aspx)
+* [Implantar um cluster do Hyper-V](https://technet.microsoft.com/library/jj863389.aspx)
 
 * [Criar imagens do Linux para o Azure](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
 
-* [Otimizar sua VM do Linux no Azure](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)
+* [Otimizar sua VM Linux no Azure](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)

@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 90f5b670744b812769164a7a2c70fc673fe4089f
-ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
+ms.openlocfilehash: 010ab340dc71d199119f1bd51fbc22e3ad449040
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79432445"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650086"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Extensões para o Windows Admin Center
 
->Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 O Windows Admin Center foi criado como uma plataforma extensível para permitir aos parceiros e desenvolvedores aproveitar as funcionalidades existentes no Windows Admin Center, integrar com outros produtos de administração de TI e soluções, e fornecer valor adicional para clientes. Cada ferramenta e solução no Windows Admin Center é criada como uma extensão usando os mesmos recursos de extensibilidade disponíveis para parceiros e desenvolvedores. Dessa forma, você poder criar ferramentas tão eficientes como as que estão disponíveis no Windows Admin Center hoje.
 
@@ -30,7 +30,7 @@ Este é o valor que você pode trazer para seu produto e clientes ao desenvolver
 - **Integração com as ferramentas do Windows Admin Center:** integre seus produtos e serviços com ferramentas de gerenciamento de servidor e cluster no Windows Admin Center, além de oferecer monitoramento, gerenciamento e experiências de solução de problemas unificadas, em interrupção e de ponta a ponta.
 - **Aproveite os recursos de segurança, identidade e gerenciamento da plataforma:** Habilite o suporte a Azure Active Directory (AAD), autenticação multifator, RBAC (controle de acesso baseado em função), registro em log, auditoria para seu produto e serviços aproveitando os recursos da plataforma centro de administração do Windows para atender aos requisitos complexos das organizações de ti atuais.
 - **Desenvolver usando as tecnologias mais recentes da Web:** crie rapidamente experiências do usuário impressionantes usando tecnologias de Web moderna, incluindo o HTML5, CSS, angulares, TypeScript e jQuery e controles de interface de usuário avançados incluídos no SDK do Windows Admin Center.
-- **Estender o alcance do produto:** faça parte do ecossistema novo do Windows Admin Center com alcance rápido para nossa base de clientes em expansão e aproveite o lançamento do Windows Server 2019 posteriormente neste ano.
+- **Estenda o âmbito do produto:** Torne-se parte do ecossistema do centro de administração do Windows com a nossa base de clientes em expansão.
 
 ## <a name="start-developing-with-the-windows-admin-center-sdk"></a>Comece a desenvolver com o SDK do centro de administração do Windows
 
@@ -42,7 +42,7 @@ Também temos um código de exemplo hospedado no GitHub: [ferramentas para desen
 
 Consulte os tópicos a seguir para saber mais sobre o SDK e começar:
 
-- [Entenda como funcionam as extensões](understand-extensions.md)
+- [Compreender como extensões funcionam](understand-extensions.md)
 - [Desenvolver uma extensão](developing-extensions.md)
 - [Guias](guides.md)
 - [Publicar sua extensão](publish-extensions.md)
@@ -58,7 +58,7 @@ A extensão BiitOps Changes fornece controle de alterações para configuraçõe
 
 ### <a name="dataon"></a>DataON
 
-A data de extensão deve trazer monitoramento, gerenciamento e informações de ponta a ponta em sistemas de armazenamento e infraestrutura hiperconvergentes de dados com base no Windows Server. A extensão deve adicionar um valor exclusivo, como relatórios de dados históricos, mapeamento de disco, alertas de sistema e serviço de chamada de rede por meio de SAN, complementando o servidor do centro de administração do Windows e recursos de gerenciamento de infraestrutura hiperconvergente, por meio de uma experiência unificada. [Saiba mais sobre a extensão DataON MUST e sua experiência de desenvolvimento](case-studies/dataon.md).
+A data de extensão deve trazer monitoramento, gerenciamento e informações de ponta a ponta em sistemas de armazenamento e infraestrutura hiperconvergentes de dados com base no Windows Server. A extensão deve agrega um valor exclusivo, como relatórios de dados históricos, mapeamento de disco, alertas de sistema e serviço de chamada de rede de linha de SAN, complementando o servidor do centro de administração do Windows e recursos de gerenciamento de infraestrutura hiperconvergente, por meio de uma experiência direta e unificada. [Saiba mais sobre a extensão DataON MUST e sua experiência de desenvolvimento](case-studies/dataon.md).
 
 ![Extensão DataON MUST](../media/extensibility-overview/dataon-must-extension.png)
 
@@ -74,9 +74,9 @@ A extensão do integrador do Lenovo XClarity leva o gerenciamento de hardware pa
 
 ![Extensão do Lenovo](../media/extensibility-overview/lenovo-extension.png)
 
-### <a name="pure-storage"></a>Pure Storage
+### <a name="pure-storage"></a>Armazenamento puro
 
-O armazenamento puro fornece soluções de armazenamento de dados empresariais e totalmente flash que fornecem uma arquitetura centrada em dados para acelerar sua empresa para uma vantagem competitiva. A extensão de armazenamento puro para o centro de administração do Windows fornece uma exibição de painel único em produtos FlashArray puros e permite que os usuários realizem tarefas de monitoramento, exibam métricas de desempenho em tempo real e gerenciem volumes de armazenamento e iniciadores por meio de uma única interface do usuário ocorrer. [Saiba mais sobre extensões puras e sua experiência de desenvolvimento](case-studies/purestorage.md).
+O armazenamento puro fornece soluções de armazenamento de dados empresariais e totalmente flash que fornecem uma arquitetura centrada em dados para acelerar sua empresa para uma vantagem competitiva. A extensão de armazenamento puro para o centro de administração do Windows fornece uma exibição de painel único em produtos FlashArray puros e permite que os usuários realizem tarefas de monitoramento, exibam métricas de desempenho em tempo real e gerenciem volumes de armazenamento e iniciadores por meio de uma única experiência de interface do usuário. [Saiba mais sobre extensões puras e sua experiência de desenvolvimento](case-studies/purestorage.md).
 
 ![Extensão de armazenamento pura](../media/extensibility-overview/purestorage-extension.png)
 

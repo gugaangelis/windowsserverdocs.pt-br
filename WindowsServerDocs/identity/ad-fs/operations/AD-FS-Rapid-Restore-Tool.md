@@ -4,16 +4,16 @@ title: Ferramenta de restauração rápida do AD FS
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 07/02/2019
+ms.date: 04/24/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 506734812689a42ec17768652ac715f5c7e24401
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dde9d60278a32ae4e6ba0baf35bc11ce631d4e02
+ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858099"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192593"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Ferramenta de restauração rápida do AD FS
 
@@ -54,9 +54,9 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 ```
 
 >[!NOTE] 
->Se você estiver usando o banco de dados integrado do Windows (WID), essa ferramenta precisará ser executada no servidor de AD FS primário.  Você pode usar o cmdlet `Get-AdfsSyncProperties` PowerShell para determinar se o servidor no qual você está ou não é o servidor primário.
+>Se você estiver usando o banco de dados integrado do Windows (WID), essa ferramenta precisará ser executada no servidor de AD FS primário.  Você pode usar o `Get-AdfsSyncProperties` cmdlet do PowerShell para determinar se o servidor no qual você está ou não é o servidor primário.
 
-### <a name="system-requirements"></a>Requisitos de sistema
+### <a name="system-requirements"></a>Requisitos do sistema
 
 - Essa ferramenta funciona para AD FS no Windows Server 2012 R2 e posterior. 
 - O .NET Framework necessário é pelo menos 4,0. 
@@ -78,19 +78,19 @@ Conjuntos de parâmetros
 
 - **BackupDKM** -faz backup do contêiner Active Directory DKM que contém as chaves de AD FS na configuração padrão (certificados de assinatura e descriptografia de token gerados automaticamente). Isso usa uma ferramenta de anúncio ' LDIFDE ' para exportar o contêiner do AD e todas as suas subárvores.
 
-- -**storagetype &lt;cadeia de caracteres&gt;** -o tipo de armazenamento que o usuário deseja usar. "FileSystem" indica que o usuário deseja armazená-lo em uma pasta localmente ou na rede "Azure" indica que o usuário deseja armazená-lo no contêiner de armazenamento do Azure quando o usuário executa o backup, seleciona o local de backup, o sistema de arquivos ou na nuvem. Para que o Azure seja usado, as credenciais de armazenamento do Azure devem ser passadas para o cmdlet. As credenciais de armazenamento contêm o nome da conta e a chave. Além disso, um nome de contêiner também deve ser passado. Se o contêiner não existir, ele será criado durante o backup. Para o sistema de arquivos a ser usado, um caminho de armazenamento deve ser fornecido. Nesse diretório, um novo diretório será criado para cada backup. Cada diretório criado conterá os arquivos de backup. 
+- -**Cadeia de caracteres&gt; storagetype-o tipo de armazenamento que o usuário deseja usar. &lt;** "FileSystem" indica que o usuário deseja armazená-lo em uma pasta localmente ou na rede "Azure" indica que o usuário deseja armazená-lo no contêiner de armazenamento do Azure quando o usuário executa o backup, seleciona o local de backup, o sistema de arquivos ou na nuvem. Para que o Azure seja usado, as credenciais de armazenamento do Azure devem ser passadas para o cmdlet. As credenciais de armazenamento contêm o nome da conta e a chave. Além disso, um nome de contêiner também deve ser passado. Se o contêiner não existir, ele será criado durante o backup. Para o sistema de arquivos a ser usado, um caminho de armazenamento deve ser fornecido. Nesse diretório, um novo diretório será criado para cada backup. Cada diretório criado conterá os arquivos de backup. 
 
-- **EncryptionPassword &lt;cadeia de caracteres&gt;** -a senha que será usada para criptografar todos os arquivos de backup antes de armazená-los
+- **Cadeia &lt;de&gt; caracteres EncryptionPassword** -a senha que será usada para criptografar todos os arquivos de backup antes de armazená-los
 
-- **AzureConnectionCredentials &lt;pscredential&gt;** -o nome da conta e a chave da conta de armazenamento do Azure
+- **AzureConnectionCredentials &lt;PSCredential&gt; ** -o nome da conta e a chave da conta de armazenamento do Azure
 
-- **AzureStorageContainer cadeia de caracteres &lt;&gt;** -o contêiner de armazenamento no qual o backup será armazenado no Azure
+- **Cadeia &lt;de&gt; caracteres AzureStorageContainer** -o contêiner de armazenamento em que o backup será armazenado no Azure
 
-- **StoragePath cadeia de caracteres &lt;&gt;** -o local em que os backups serão armazenados
+- **Cadeia &lt;de&gt; caracteres StoragePath** -o local em que os backups serão armazenados
 
-- **ServiceAccountCredential &lt;pscredential&gt;** -especifica a conta de serviço que está sendo usada para o serviço de AD FS em execução no momento. Esse parâmetro só será necessário se o usuário quiser fazer backup do DKM e não for um administrador de domínio ou não tiver acesso ao conteúdo do contêiner. 
+- **ServiceAccountCredential &lt;PSCredential&gt; ** -especifica a conta de serviço que está sendo usada para o serviço AD FS em execução no momento. Esse parâmetro só será necessário se o usuário quiser fazer backup do DKM e não for um administrador de domínio ou não tiver acesso ao conteúdo do contêiner. 
 
-- **BackupComment &lt;String []&gt;** -uma cadeia de caracteres informativa sobre o backup que será exibido durante a restauração, semelhante ao conceito de nomenclatura do ponto de verificação do Hyper-V. O padrão é uma cadeia de caracteres vazia
+- **BackupComment &lt;String []&gt; ** – uma cadeia de caracteres informativa sobre o backup que será exibida durante a restauração, semelhante ao conceito de nomenclatura do ponto de verificação do Hyper-V. O padrão é uma cadeia de caracteres vazia
 
  
 ## <a name="backup-examples"></a>Exemplos de backup
@@ -123,7 +123,7 @@ Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testE
 ## <a name="restore-from-backup"></a>Restaurar do backup
 Para aplicar uma configuração criada usando backup-ADFS em uma nova instalação do AD FS, use o cmdlet Restore-ADFS.
 
-Esse cmdlet cria um novo farm de AD FS usando o cmdlet `Install-AdfsFarm` e restaura a configuração do AD FS, o banco de dados, os certificados, etc.  Se a função de AD FS não tiver sido instalada no servidor, o cmdlet irá instalá-lo.  O cmdlet verifica o local de restauração de backups existentes e solicita que o usuário escolha um backup apropriado com base na data/hora em que foi tirado e qualquer comentário de backup que o usuário pode ter anexado ao backup. Se houver várias configurações de AD FS com diferentes nomes de serviço de Federação, o usuário será solicitado a escolher primeiro a configuração apropriada de AD FS.
+Esse cmdlet cria um novo farm de AD FS usando o `Install-AdfsFarm` cmdlet e restaura a configuração de AD FS, o banco de dados, os certificados, etc.  Se a função de AD FS não tiver sido instalada no servidor, o cmdlet irá instalá-lo.  O cmdlet verifica o local de restauração de backups existentes e solicita que o usuário escolha um backup apropriado com base na data/hora em que foi tirado e qualquer comentário de backup que o usuário pode ter anexado ao backup. Se houver várias configurações de AD FS com diferentes nomes de serviço de Federação, o usuário será solicitado a escolher primeiro a configuração apropriada de AD FS.
 O usuário deve ser administrador local e de domínio para executar este cmdlet.
 
 
@@ -136,28 +136,28 @@ O cmdlet usa os seguintes parâmetros:
 
 ### <a name="detailed-description"></a>Descrição detalhada
 
-- **Storagetype &lt;cadeia de caracteres&gt;** -o tipo de armazenamento que o usuário deseja usar.
+- **Cadeia de caracteres&gt; storagetype-o tipo de armazenamento que o usuário deseja usar. &lt;**
  "FileSystem" indica que o usuário deseja armazená-lo em uma pasta localmente ou na rede "Azure" indica que o usuário deseja armazená-lo no contêiner de armazenamento do Azure
 
-- **DecryptionPassword &lt;cadeia de caracteres&gt;** -a senha que foi usada para criptografar todos os arquivos de backup 
+- **Cadeia &lt;de&gt; caracteres DecryptionPassword** -a senha que foi usada para criptografar todos os arquivos de backup 
 
-- **AzureConnectionCredentials &lt;pscredential&gt;** -o nome da conta e a chave da conta de armazenamento do Azure
+- **AzureConnectionCredentials &lt;PSCredential&gt; ** -o nome da conta e a chave da conta de armazenamento do Azure
 
-- **AzureStorageContainer cadeia de caracteres &lt;&gt;** -o contêiner de armazenamento no qual o backup será armazenado no Azure
+- **Cadeia &lt;de&gt; caracteres AzureStorageContainer** -o contêiner de armazenamento em que o backup será armazenado no Azure
 
-- **StoragePath cadeia de caracteres &lt;&gt;** -o local em que os backups serão armazenados
+- **Cadeia &lt;de&gt; caracteres StoragePath** -o local em que os backups serão armazenados
 
-- **Adfsname &lt; cadeia de caracteres &gt;** -o nome da Federação cujo backup foi feito e será restaurado. Se isso não for fornecido e houver apenas um nome de serviço de Federação, ele será usado. Se houver mais de um serviço de Federação do qual foi feito backup no local, o usuário será solicitado a escolher um dos serviços de Federação do backup.
+- **Cadeia de caracteres &gt; adfsname-o nome da Federação cujo backup foi feito e será restaurado. &lt; ** Se isso não for fornecido e houver apenas um nome de serviço de Federação, ele será usado. Se houver mais de um serviço de Federação do qual foi feito backup no local, o usuário será solicitado a escolher um dos serviços de Federação do backup.
 
-- **ServiceAccountCredential &lt; pscredential &gt;** -especifica a conta de serviço que será usada para o novo serviço de AD FS que está sendo restaurado 
+- **ServiceAccountCredential &lt; PSCredential &gt; ** -especifica a conta de serviço que será usada para o novo serviço de AD FS que está sendo restaurado 
 
-- **GroupServiceAccountIdentifier &lt;cadeia de caracteres&gt;** -o GMSA que o usuário deseja usar para o novo serviço de AD FS que está sendo restaurado. Por padrão, se nenhum for fornecido, o nome da conta de backup será usado se for GMSA, caso contrário, o usuário será solicitado a colocar uma conta de serviço
+- **Cadeia &lt;de&gt; caracteres GroupServiceAccountIdentifier** -o GMSA que o usuário deseja usar para o novo serviço de AD FS que está sendo restaurado. Por padrão, se nenhum for fornecido, o nome da conta de backup será usado se for GMSA, caso contrário, o usuário será solicitado a colocar uma conta de serviço
 
-- **Dbconnectionstring &lt;cadeia de caracteres&gt;** -se o usuário quiser usar um BD diferente para a restauração, ele deverá passar a cadeia de conexão SQL ou digitar o wid para o wid.
+- Cadeia de dbconnectionstring-se o usuário quiser usar um banco de forma diferente para a restauração, ele deverá passar a cadeia de conexão SQL ou digitar o wid para wid. ** &lt;&gt; **
 
-- **Forçar &lt;bool&gt;** -ignore os prompts que a ferramenta pode ter depois que o backup for escolhido
+- **Forçar &lt;bool&gt; ** – ignore os prompts que a ferramenta pode ter depois que o backup é escolhido
 
-- **RestoreDKM &lt;bool&gt;** -restaurar o contêiner DKM para o anúncio, deverá ser definido se for para um novo anúncio e o DKM tiver sido copiado inicialmente.
+- **RestoreDKM &lt;bool&gt; ** -restaurar o contêiner DKM para o anúncio, deverá ser definido se for para um novo anúncio e o DKM tiver sido copiado inicialmente.
 
 ## <a name="restore-examples"></a>Exemplos de restauração
 
@@ -217,12 +217,23 @@ Toda vez que um backup ou restauração é executado, um arquivo de log é criad
 >[!NOTE]
 > Ao executar uma restauração, um arquivo de PostRestore_Instructions pode ser criado contendo uma visão geral dos provedores de autenticação adicionais, repositórios de atributos e relações de confiança do provedor de declarações locais a serem instalados manualmente antes de iniciar o serviço de AD FS.
 
-## <a name="version-release-history"></a>Histórico de lançamento de versão
+## <a name="version-release-history"></a>Histórico de Lançamento de Versão
 
-### <a name="version-10820"></a>1\.0.82.0 da versão
+### <a name="version-10823"></a>1.0.82.3 da versão
+Versão: abril de 2020
+
+**Problemas corrigidos:**
+
+
+- Suporte adicionado para certificados baseados em CNG
+
+
+### <a name="version-10820"></a>1.0.82.0 da versão
 Versão: julho de 2019
 
 **Problemas corrigidos:**
+
+
 - Correção de bug para nomes de conta de serviço AD FS que contêm caracteres de escape LDAP
 
 

@@ -8,14 +8,14 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 28f7fc4a8c7129d9f88cc030b1b150db44321bf9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 843ed0b3ebf25d662d0b90c17f8fe23548829a7e
+ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859939"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192592"
 ---
-# <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>Bloqueio de extranet e bloqueio inteligente de extranet AD FS
+# <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>Bloqueio de Extranet do AD FS e Extranet Smart Lockout
 
 ## <a name="overview"></a>Visão geral
 
@@ -30,11 +30,11 @@ O bloqueio inteligente de extranet no AD FS 2019 adiciona as seguintes vantagens
 - Defina limites de bloqueio independentes para locais familiares e desconhecidos para que os usuários em locais bons conhecidos possam ter mais espaço para o erro do que solicitações de locais suspeitos
 - Habilite o modo de auditoria para bloqueio inteligente enquanto continua a impor o comportamento de bloqueio flexível anterior. Isso permite que você saiba mais sobre os locais familiares do usuário e que ainda serão protegidos pelo recurso de bloqueio de extranet disponível em AD FS 2012R2.  
 
-## <a name="how-it-works"></a>Como ela funciona
+## <a name="how-it-works"></a>Como funciona
 ### <a name="configuration-information"></a>Informações da configuração
 Quando ESL está habilitado, uma nova tabela no banco de dados de artefato, AdfsArtifactStore. AccountActivity, é criada e um nó é selecionado no farm de AD FS como o mestre de "atividade do usuário". Em uma configuração de WID, esse nó é sempre o nó primário. Em uma configuração do SQL, um nó é selecionado para ser o mestre de atividade do usuário.  
 
-Para exibir o nó selecionado como mestre de atividade do usuário. Get-AdfsFarmInformation. FarmRoles
+Para exibir o nó selecionado como mestre de atividade do usuário. (Get-AdfsFarmInformation). FarmRoles
 
 Todos os nós secundários entrarão em contato com o nó mestre em cada logon novo pela porta 80 para saber o valor mais recente das contagens de senha inadequadas e novos valores de local familiares, e atualizará esse nó depois que o logon for processado.
 
@@ -57,7 +57,7 @@ Todos os nós secundários entrarão em contato com o nó mestre em cada logon n
 Há suporte para endereços IPv4 e IPv6.
 
 ### <a name="anatomy-of-a-transaction"></a>Anatomia de uma transação
-- **Verificação de pré-autenticação**: durante uma solicitação de autenticação, o ESL verifica todos os IPs apresentados. Esses IPs serão uma combinação de IP de rede, IP encaminhado e o x-Forwarded-for IP opcional. Nos logs de auditoria, esses IPs são listados no campo <IpAddress> na ordem de x-MS-Forwarded-Client-IP, x-forwardd-for, x-MS-proxy-Client-IP.
+- **Verificação de pré-autenticação**: durante uma solicitação de autenticação, o ESL verifica todos os IPs apresentados. Esses IPs serão uma combinação de IP de rede, IP encaminhado e o x-Forwarded-for IP opcional. Nos logs de auditoria, esses IPs são listados no <IpAddress> campo na ordem de x-MS-encaminhar-Client-IP, x-encaminhád-for, x-MS-proxy-Client-IP.
 
   Com base nesses IPs, o ADFS determina se a solicitação é de um local familiar ou desconhecido e, em seguida, verifica se o respectivo badPwdCount é menor que o limite de limite definido ou se a última tentativa de **falha** ocorreu mais do que o intervalo de tempo da janela de observação. Se uma dessas condições for verdadeira, o ADFS permitirá essa transação para processamento adicional e validação de credenciais. Se ambas as condições forem falsas, a conta já estará em um estado bloqueado até que a janela de observação passe. Após a janela de observação passar, o usuário tem permissão para se autenticar. Observe que, em 2019, o ADFS verificará o limite de limite apropriado com base em se o endereço IP corresponder a um local familiar ou não.
 - **Logon bem-sucedido**: se o logon for bem-sucedido, os IPs da solicitação serão adicionados à lista de IPS de local familiar do usuário.  
@@ -144,7 +144,7 @@ A tabela AccountActivity é populada durante o modo ' somente log ' e o modo ' i
 Esse recurso usa os logs de auditoria de segurança, portanto, a auditoria deve ser habilitada em AD FS, bem como a política local em todos os servidores de AD FS.
 
 ### <a name="configuration-instructions"></a>Instruções de configuração
-O bloqueio inteligente de extranet usa a propriedade **ExtranetLockoutEnabled**do ADFS. Essa propriedade foi usada anteriormente para controlar "bloqueio de software de extranet" no servidor 2012R2. Se o bloqueio flexível de extranet tiver sido habilitado, para exibir a configuração da propriedade atual, execute ` Get-AdfsProperties`.
+O bloqueio inteligente de extranet usa a propriedade **ExtranetLockoutEnabled**do ADFS. Essa propriedade foi usada anteriormente para controlar "bloqueio de software de extranet" no servidor 2012R2. Se o bloqueio flexível de extranet tiver sido habilitado, para exibir a configuração da ` Get-AdfsProperties` propriedade atual, execute.
 
 ### <a name="configuration-recommendations"></a>Recomendações de configuração
 Ao configurar o bloqueio inteligente da extranet, siga as práticas recomendadas para definir limites:  
@@ -212,7 +212,7 @@ Esse comportamento pode ser substituído passando o parâmetro-Server.
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  Properties
+  Propriedades:
     - BadPwdCountFamiliar: incrementado quando uma autenticação é bem-sucedida em um local conhecido.
     - BadPwdCountUnknown: incrementado quando uma autenticação não é bem-sucedida em um local desconhecido
     - LastFailedAuthFamiliar: se a autenticação não foi bem-sucedida em um local familiar, o LastFailedAuthUnknown está definido para a hora da autenticação malsucedida
@@ -235,10 +235,14 @@ Esse comportamento pode ser substituído passando o parâmetro-Server.
 
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>Log de eventos & informações de atividade do usuário para AD FS bloqueio de extranet
 
-### <a name="connect-health"></a>Conectar integridade
-A maneira recomendada para monitorar a atividade de conta de usuário é por meio do Connect Health. O Connect Health gera relatórios para download em IPs arriscados e tentativas de senha inadequadas. Cada item no relatório de IP arriscado mostra informações agregadas sobre atividades de entrada AD FS com falha que excedem o limite designado. As notificações por email podem ser definidas para alertar os administradores assim que isso ocorrer com as configurações de email personalizáveis. Para obter informações adicionais e instruções de instalação, visite a [documentação do Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs).
+### <a name="connect-health"></a>Connect Health
+A maneira recomendada para monitorar a atividade de conta de usuário é por meio do Connect Health. O Connect Health gera relatórios para download em IPs arriscados e tentativas de senha inadequadas. Cada item no Relatório de IP arriscado mostra informações agregadas sobre atividades de entrada do AD FS com falha que excedem o limite designado. As notificações por email podem ser definidas para alertar os administradores assim que isso ocorrer com as configurações de email personalizáveis. Para obter informações adicionais e instruções de instalação, visite a [documentação do Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs).
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS eventos de bloqueio inteligente da extranet.
+
+>[!NOTE]
+> Solucionar problemas de bloqueio inteligente de extranet com o [AD FS ajudar a proteger o guia de solução de problemas](https://adfshelp.microsoft.com/TroubleshootingGuides/Workflow/a73d5843-9939-4c03-80a1-adcbbf3ccec8)
+
 Para que os eventos de bloqueio inteligente da extranet sejam gravados, o ESL deve ser habilitado no modo ' somente log ' ou ' impor ' e a auditoria de segurança do ADFS está habilitada.
 AD FS gravará eventos de bloqueio de extranet no log de auditoria de segurança:
 - Quando um usuário é bloqueado (atinge o limite de bloqueio para tentativas de logon malsucedidas)
@@ -247,7 +251,7 @@ AD FS gravará eventos de bloqueio de extranet no log de auditoria de segurança
 No modo somente log, você pode verificar o log de auditoria de segurança para eventos de bloqueio. Para todos os eventos encontrados, você pode verificar o estado do usuário usando o cmdlet Get-ADFSAccountActivity para determinar se o bloqueio ocorreu de endereços IP conhecidos ou desconhecidos e para verificar novamente a lista de endereços IP familiares para esse usuário.
 
 
-|ID de evento|Descrição|
+|ID do evento|Descrição|
 |-----|-----|
 |1203|Esse evento é gravado para cada tentativa de senha inadequada. Assim que o badPwdCount atingir o valor especificado em ExtranetLockoutThreshold, a conta será bloqueada no ADFS durante a duração especificada em ExtranetObservationWindow.</br>ID da atividade: %1</br>XML: %2|
 |1201|Esse evento é gravado cada vez que um usuário é bloqueado. </br>ID da atividade: %1</br>XML: %2|
@@ -266,11 +270,11 @@ R: se o bloqueio inteligente do ADFS estiver definido para o modo "impor", você
 
 **O que acontece ESL está habilitado e o ator inadequado tem uma senha de usuário?** 
 
-R: o objetivo típico do cenário de ataque de força bruta é adivinhar uma senha e entrar com êxito.  Se um usuário for Phish ou se uma senha for adivinhada, o recurso ESL não bloqueará o acesso, já que a entrada atenderá aos critérios "bem-sucedidos" de senha correta mais novo IP. O IP dos atores defeituosos seria exibido como "familiar". A melhor mitigação nesse cenário é limpar a atividade do usuário no ADFS e exigir a autenticação multifator para os usuários. É altamente recomendável instalar a proteção de senha do AAD, que garante que senhas adivinhes não cheguem ao sistema.
+R: o objetivo típico do cenário de ataque de força bruta é adivinhar uma senha e entrar com êxito.Se um usuário for Phish ou se uma senha for adivinhada, o recurso ESL não bloqueará o acesso, já que a entrada atenderá aos critérios "bem-sucedidos" de senha correta mais novo IP. O IP dos atores defeituosos seria exibido como "familiar".A melhor mitigação nesse cenário é limpar a atividade do usuário no ADFS e exigir a autenticação multifator para os usuários. É altamente recomendável instalar a proteção de senha do AAD, que garante que senhas adivinhes não cheguem ao sistema.
 
 **Se meu usuário nunca tiver se conectado com êxito de um IP e tentar com uma senha incorreta algumas vezes, eles poderão fazer logon depois de digitarem a senha corretamente?** 
 
-R: se um usuário enviar várias senhas incorretas (isto é, legitimamente digitar incorretamente) e, na seguinte tentativa, a senha for correta, o usuário terá a conexão imediatamente.  Isso limpará a contagem de senha incorreto e adicionará esse IP à lista FamiliarIPs.  No entanto, se eles ultrapassarem o limite de logons com falha do local desconhecido, eles entrarão no estado de bloqueio e precisarão aguardar a janela de observação e entrar com uma senha válida ou exigir a intervenção do administrador para redefinir sua conta.  
+R: se um usuário enviar várias senhas incorretas (isto é, legitimamente digitar incorretamente) e, na seguinte tentativa, a senha for correta, o usuário terá a conexão imediatamente. Isso limpará a contagem de senha incorreto e adicionará esse IP à lista FamiliarIPs.No entanto, se eles ultrapassarem o limite de logons com falha do local desconhecido, eles entrarão no estado de bloqueio e precisarão aguardar a janela de observação e entrar com uma senha válida ou exigir a intervenção do administrador para redefinir sua conta.  
  
 **O ESL também funciona na intranet?**
 
@@ -278,10 +282,10 @@ R: se os clientes se conectarem diretamente aos servidores ADFS e não por meio 
 
 **Estou vendo os endereços IP da Microsoft no campo IP do cliente. O ESL bloqueia ataques de força bruta EXO com proxy?**  
 
-R: o ESL funcionará bem para evitar cenários de ataque de força bruta do Exchange Online ou de outras autenticações herdadas. Uma autenticação herdada tem uma "ID da atividade" de 00000000-0000-0000-0000-000000000000. Nesses ataques, o ator inadequado é tirar proveito da autenticação básica do Exchange Online (também conhecida como autenticação herdada) para que o endereço IP do cliente seja exibido como um Microsoft One. Os servidores do Exchange Online no proxy de nuvem a verificação de autenticação em nome do cliente do Outlook. Nesses cenários, o endereço IP do emissor mal-intencionado estará no IP x-MS-encaminhar-Client-IP e o Microsoft Exchange Online Server estará no valor x-MS-Client-IP.
+R: o ESL funcionará bem para evitar cenários de ataque de força bruta do Exchange Online ou de outras autenticações herdadas. Uma autenticação herdada tem uma "ID da atividade" de 00000000-0000-0000-0000-000000000000.Nesses ataques, o ator inadequado é tirar proveito da autenticação básica do Exchange Online (também conhecida como autenticação herdada) para que o endereço IP do cliente seja exibido como um Microsoft One. Os servidores do Exchange Online no proxy de nuvem a verificação de autenticação em nome do cliente do Outlook. Nesses cenários, o endereço IP do emissor mal-intencionado estará no IP x-MS-encaminhar-Client-IP e o Microsoft Exchange Online Server estará no valor x-MS-Client-IP.
 O bloqueio inteligente de extranet verifica IPs de rede, IPs encaminhados, o x-Forwarded-Client-IP e o valor x-MS-Client-IP. Se a solicitação for bem-sucedida, todos os IPs serão adicionados à lista conhecida. Se uma solicitação chegar e qualquer um dos IPs apresentados não estiver na lista conhecida, a solicitação será marcada como desconhecida. O usuário familiar poderá entrar com êxito enquanto as solicitações dos locais desconhecidos serão bloqueadas.  
 
-\* * P: posso estimar o tamanho do ADFSArtifactStore antes de habilitar o ESL?
+* * P: posso estimar o tamanho do ADFSArtifactStore antes de habilitar o ESL?
 
 R: com o ESL habilitado, AD FS rastreia a atividade da conta e os locais conhecidos para os usuários no banco de dados ADFSArtifactStore. Esse banco de dados é dimensionado em tamanho em relação ao número de usuários e localizações conhecidas acompanhados. Ao planejar a habilitação do ESL, você pode estimar o aumento do tamanho do banco de dados ADFSArtifactStore a uma taxa de até 1 GB a cada 100.000 usuários. Se o farm de AD FS estiver usando o banco de dados interno do Windows (WID), o local padrão para os arquivos de banco de dados será C:\Windows\WID\Data\. Para evitar o preenchimento desta unidade, verifique se você tem um mínimo de 5 GB de armazenamento livre antes de habilitar o ESL. Além do armazenamento em disco, planeje um aumento da memória total do processo depois de habilitar o ESL em até um 1 GB de RAM adicional para populações de usuário de 500.000 ou menos.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4c13a3ecbcc6ade1455c10dde5f6a89e0303e161
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9389d1565462572a5617856f0f2531580b069745
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857629"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650071"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Atualizando para o AD FS no Windows Server 2016 por meio de um banco de dados WID
 
@@ -56,17 +56,20 @@ O restante do documento is fornece as etapas para adicionar um servidor de Feder
 > [!NOTE]
 > Antes de poder mover para AD FS no Windows Server 2019 FBL, você deve remover todos os nós do Windows Server 2016 ou do 2012 R2. Não é possível apenas atualizar um sistema operacional Windows Server 2016 ou 2012 R2 para o Windows Server 2019 e fazer com que ele se torne um nó 2019. Será necessário removê-lo e substituí-lo por um novo nó 2019.
 
+> [!NOTE]
+> Se grupos de AlwaysOnAvailability ou replicação de mesclagem estiverem configurados no AD FS, remova toda a replicação de quaisquer bancos de dados do ADFS antes da atualização e aponte todos os nós para o banco de dados SQL primário. Depois de fazer isso, execute a atualização do farm conforme documentado. Após a atualização, adicione grupos de AlwaysOnAvailability ou replicação de mesclagem para os novos bancos de dados.
+
 ##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>Para atualizar o farm de AD FS para o nível de comportamento de farm do Windows Server 2019
 
 1. Usando Gerenciador do Servidor, instale a função Serviços de Federação do Active Directory (AD FS) no Windows Server 2019
 
 2. Usando o assistente de configuração do AD FS, ingresse o novo servidor do Windows Server 2019 no farm de AD FS existente.
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
 
 3. No servidor de Federação do Windows Server 2019, abra o gerenciamento de AD FS. Observe que os recursos de gerenciamento não estão disponíveis porque esse servidor de Federação não é o servidor primário.
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
 
 4. No servidor do Windows Server 2019, abra uma janela de comando do PowerShell com privilégios elevados e execute o seguinte cmdlet:
 
@@ -74,7 +77,7 @@ O restante do documento is fornece as etapas para adicionar um servidor de Feder
 Set-AdfsSyncProperties -Role PrimaryComputer
 ```
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
 
 5. No servidor AD FS configurado anteriormente como primário, abra uma janela de comando do PowerShell com privilégios elevados e execute o seguinte cmdlet:
 
@@ -82,22 +85,22 @@ Set-AdfsSyncProperties -Role PrimaryComputer
 Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 ```
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
 
 6. Agora, no servidor de Federação do Windows Server 2016, abra AD FS Management. Observe que agora todos os recursos de administração são exibidos porque a função primária foi transferida para esse servidor.
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
 
-7. Se você estiver atualizando um farm AD FS 2012 R2 para 2016 ou 2019, a atualização do farm exigirá que o esquema do AD esteja pelo menos no nível 85.  Para atualizar o esquema, com a mídia de instalação do Windows Server 2016, abra um prompt de comando e navegue até o diretório support\adprep. Execute o seguinte: `adprep /forestprep`
+7. Se você estiver atualizando um farm AD FS 2012 R2 para 2016 ou 2019, a atualização do farm exigirá que o esquema do AD esteja pelo menos no nível 85.  Para atualizar o esquema, com a mídia de instalação do Windows Server 2016, abra um prompt de comando e navegue até o diretório support\adprep. Execute o seguinte:`adprep /forestprep`
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
 
-Assim que concluir a execução `adprep/domainprep`
+Depois que a execução for concluída`adprep/domainprep`
 
 > [!NOTE]
 > Antes de executar a próxima etapa, verifique se o Windows Server está atualizado executando Windows Update de configurações. Continue esse processo até que não existam mais atualizações.
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
 
 8. Agora, no servidor do Windows Server 2016, abra o PowerShell e execute o seguinte cmdlet:
 
@@ -109,19 +112,19 @@ Assim que concluir a execução `adprep/domainprep`
 Invoke-AdfsFarmBehaviorLevelRaise
 ```
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
 
 9. Quando solicitado, digite Y. Isso começará a gerar o nível. Quando isso for concluído, o FBL será gerado com êxito.
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
 
 10. Agora, se você for para AD FS Management, verá que os novos recursos foram adicionados para a versão mais recente do AD FS
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. Da mesma forma, você pode usar o cmdlet do PowerShell: `Get-AdfsFarmInformation` para mostrar a você o FBL atual.
+11. Da mesma forma, você pode usar o cmdlet `Get-AdfsFarmInformation` do PowerShell: para mostrar o FBl atual.
 
-![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
+![atualização](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
 12. Para atualizar os servidores WAP para o nível mais recente, em cada proxy de aplicativo Web, reconfigure o WAP executando o seguinte cmdlet do PowerShell em uma janela com privilégios elevados:
 
@@ -151,7 +154,7 @@ Isso concluirá a atualização dos servidores WAP.
 
 
 > [!NOTE] 
-> Existe um problema de PRT conhecido no AD FS 2019 se o Windows Hello para empresas com uma confiança de certificado híbrido for executado. Você pode encontrar esse erro nos logs de eventos de administrador do ADFS: solicitação OAuth inválida recebida. O 'NAME' do cliente é proibido de acessar o recurso com o escopo 'ugs'. Para corrigir esse erro: 
+> Existe um problema de PRT conhecido no AD FS 2019 se o Windows Hello para empresas com uma confiança de certificado híbrido for executado. Você poderá receber esse erro nos logs de eventos de administrador do ADFS: Solicitação OAuth inválida recebida. O 'NAME' do cliente é proibido de acessar o recurso com o escopo 'ugs'. Para corrigir esse erro: 
 > 1. Inicie o console de gerenciamento do AD FS. Procure "Serviços > Descrições de Escopo"
 > 2. Clique com o botão direito do mouse em "Descrições de Escopo" e selecione "Adicionar Descrição de Escopo"
 > 3. No nome, digite "ugs" e clique em Aplicar > OK
@@ -159,5 +162,5 @@ Isso concluirá a atualização dos servidores WAP.
 > 5. Execute o comando "Get-AdfsApplicationPermission". Procure os ScopeNames: {openid, aza} que tenham o ClientRoleIdentifier. Anote o ObjectIdentifier.
 > 6. Execute o comando "Set-AdfsApplicationPermission -TargetIdentifier <ObjectIdentifier da etapa 5> -AddScope 'ugs'
 > 7. Reinicie o serviço ADFS.
-> 8. No cliente: reinicie o cliente. O usuário deverá ser solicitado a provisionar o WHFB.
+> 8. No cliente: Reinicie o cliente. O usuário deverá ser solicitado a provisionar o WHFB.
 > 9. Se a janela de provisionamento não for exibida, será necessário coletar logs de rastreamento do NGC e solucionar problemas adicionais.

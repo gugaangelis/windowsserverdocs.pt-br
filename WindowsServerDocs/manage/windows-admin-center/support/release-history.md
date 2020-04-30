@@ -7,18 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
 ms.prod: windows-server
-ms.openlocfilehash: 5f6777939b907a0d50d134c5507efec5f03e3286
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3976761836e4bbec2a3d06d56220066a595046b4
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75952738"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650093"
 ---
 # <a name="windows-admin-center-release-history"></a>Histórico de lançamento do centro de administração do Windows
 
 Aqui está uma lista de nossos recursos mais recentes lançados:
 
-- A versão [1910](https://aka.ms/wac1910) é a mais recente a entrar em disponibilidade geral – ela introduz vários novos serviços híbridos do Azure e traz ao canal de disponibilidade geral recursos que, anteriormente, estavam em versão prévia.
+- A versão [1910,2](https://aka.ms/wac1910.2) é a versão mais recente do GA – inclui atualizações para a acessibilidade da plataforma e numerosas correções de bugs
+- A versão [1910](https://aka.ms/wac1910) apresenta vários novos serviços híbridos do Azure e traz recursos que estavam anteriormente em visualização para o canal ga.
 - A versão [1909](https://aka.ms/wac1909) apresenta o tipo de conexão específica da VM do Azure e unifica os tipos de conexão para clusters de failover tradicionais e clusters de HCI.
 - A versão [1908](https://aka.ms/wac1908) adicionou atualizações visuais, Packetmon, FlowLog Audit, integração do Azure Monitor para clusters e suporte ao WinRM por HTTPS (porta 5986).
 - A versão [1907](https://aka.ms/wac1907) adicionou links de estimativa de custo do Azure e realizou melhorias na importação/exportação e marcação de máquinas virtuais.
