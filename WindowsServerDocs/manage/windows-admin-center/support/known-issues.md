@@ -8,16 +8,16 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322918"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605546"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
-> Aplica-se a: centro de administração do Windows, versão prévia do centro de administração do Windows
+> Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 Se você encontrar um problema não descrito nessa página, [informe-nos](https://aka.ms/WACfeedback).
 
@@ -29,7 +29,7 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 
 ## <a name="general"></a>Geral
 
-- Se você tiver o centro de administração do Windows instalado como um gateway no **Windows Server 2016** sob uso intenso, o serviço poderá falhar com um erro no log de eventos que contém ```Faulting application name: sme.exe``` e ```Faulting module name: WsmSvc.dll```. Isso ocorre devido a um bug que foi corrigido no Windows Server 2019. O patch para o Windows Server 2016 foi incluído na atualização cumulativa de fevereiro de 2019, [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977).
+- Se você tiver o centro de administração do Windows instalado como um gateway no **Windows Server 2016** sob uso intenso, o serviço poderá falhar com um erro no log de ```Faulting application name: sme.exe``` eventos ```Faulting module name: WsmSvc.dll```que contém e. Isso ocorre devido a um bug que foi corrigido no Windows Server 2019. O patch para o Windows Server 2016 foi incluído na atualização cumulativa de fevereiro de 2019, [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977).
 
 - Se você tiver o centro de administração do Windows instalado como um gateway e sua lista de conexão parecer estar corrompida, execute as seguintes etapas:
 
@@ -44,7 +44,7 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 
 - Pode haver uma pequena variação entre os números de versão do OSS em execução nos módulos do centro de administração do Windows e o que está listado no aviso de software de terceiros.
 
-### <a name="extension-manager"></a>Gerenciador de extensões
+### <a name="extension-manager"></a>Gerenciador de Extensões
 
 - Ao atualizar o centro de administração do Windows, você deve reinstalar suas extensões.
 - Se você adicionar um feed de extensão que está inacessível, não haverá nenhum aviso. [14412861]
@@ -53,7 +53,7 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- Se você tiver o centro de administração do Windows implantado como um serviço e estiver usando o Microsoft Edge como seu navegador, conectar seu gateway ao Azure poderá falhar após a geração de uma nova janela do navegador. Tente solucionar esse problema adicionando https://login.microsoftonline.com, https://login.live.come a URL do seu gateway como sites confiáveis e sites permitidos para configurações do bloqueador de pop-ups no navegador do lado do cliente. Para obter mais diretrizes sobre como corrigir isso no [Guia de solução de problemas](troubleshooting.md#azure-features-dont-work-properly-in-edge). [17990376]
+- Se você tiver o centro de administração do Windows implantado como um serviço e estiver usando o Microsoft Edge como seu navegador, conectar seu gateway ao Azure poderá falhar após a geração de uma nova janela do navegador. Tente contornar esse problema adicionando https://login.microsoftonline.com, https://login.live.come a URL do seu gateway como sites confiáveis e sites permitidos para configurações de bloqueador de pop-up no navegador do lado do cliente. Para obter mais diretrizes sobre como corrigir isso no [Guia de solução de problemas](troubleshooting.md#azure-features-dont-work-properly-in-edge). [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -67,11 +67,11 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 
 O Windows Admin Center não foi testado com o Mozilla Firefox, mas a maior parte da funcionalidade deve funcionar.
 
-- Instalação do Windows 10: o Mozilla Firefox tem seu próprio repositório de certificados, portanto, você deve importar o ```Windows Admin Center Client``` certificado para o Firefox para usar o centro de administração do Windows no Windows 10.
+- Instalação do Windows 10: o Mozilla Firefox tem seu próprio repositório de certificados, portanto, você ```Windows Admin Center Client``` deve importar o certificado para o Firefox para usar o centro de administração do Windows no Windows 10.
 
-## <a name="websocket-compatibility-when-using-a-proxy-service"></a>Compatibilidade WebSocket ao usar um serviço de proxy
+## <a name="websocket-compatibility-when-using-a-proxy-service"></a>Compatibilidade de WebSocket ao usar um serviço de proxy
 
-Os módulos de Área de trabalho remota, PowerShell e Eventos no Windows Admin Center utilizam o protocolo WebSocket, que geralmente não é suportado ao usar um serviço de proxy. O suporte de WebSocket na compatibilidade de Proxy de aplicativo do Azure AD está em [visualização](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/) e procurando feedback sobre compatibilidade.
+Os módulos de Área de trabalho remota, PowerShell e Eventos no Windows Admin Center utilizam o protocolo WebSocket, que geralmente não é suportado ao usar um serviço de proxy. 
 
 ## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>Suporte para versões do Windows Server anteriores a 2016 (2012 R2, 2012, 2008 R2)
 
@@ -80,9 +80,9 @@ Os módulos de Área de trabalho remota, PowerShell e Eventos no Windows Admin C
 
 Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e se a versão é 5.1 ou superior.
 
-Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.microsoft.com/download/details.aspx?id=54616).
+Se não estiver instalado, você poderá [baixar e instalar o WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).
 
-## <a name="role-based-access-control-rbac"></a>RBAC (controle de acesso baseado em função)
+## <a name="role-based-access-control-rbac"></a>RBAC (Controle de Acesso Baseado em Função)
 
 - A implantação de RBAC não terá êxito em computadores que estão configurados para usar o Controle de aplicativos do Windows Defender (WDAC, anteriormente conhecido como Integridade de código.) [16568455]
 
@@ -102,11 +102,11 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
 
 - Você pode receber um erro que faz referência a "tamanho de pacote" ao exportar os arquivos de log grandes.
 
-  - Para resolver isso, use o seguinte comando em um prompt de comando com privilégios elevados no computador do gateway: ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - Para resolver isso, use o seguinte comando em um prompt de comando com privilégios elevados no computador do gateway:```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>Files
+### <a name="files"></a>Arquivos
 
-- Carregar ou baixar arquivos grandes que ainda não são suportados. (limite de 100 MB de\~) [12524234]
+- Carregar ou baixar arquivos grandes que ainda não são suportados. (\~limite de 100 MB) [12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -128,9 +128,9 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
 
 - A ferramenta de Área de Trabalho Remota pode não conseguir se conectar ao gerenciar o Windows Server 2012. [20258278]
 
-- Ao usar o Área de Trabalho Remota para se conectar a um computador que não ingressou no domínio, você deve inserir sua conta no formato de ```MACHINENAME\USERNAME```.
+- Ao usar o Área de Trabalho Remota para se conectar a um computador que não está ingressado no domínio, você deve inserir sua ```MACHINENAME\USERNAME``` conta no formato.
 
-- Algumas configurações podem bloquear o cliente da área de trabalho remota do centro de administração do Windows com a diretiva de grupo. Se você encontrar isso, habilite ```Allow users to connect remotely by using Remote Desktop Services``` em ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- Algumas configurações podem bloquear o cliente da área de trabalho remota do centro de administração do Windows com a diretiva de grupo. Se você encontrar isso, habilite ```Allow users to connect remotely by using Remote Desktop Services``` em```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - O Área de Trabalho Remota é afetado pela [compatibilidade do WebSocket.](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -179,7 +179,7 @@ Se não estiver instalado, você pode [baixar e instalar 5.1 WMF](https://www.mi
 
 - Os recursos avançados disponíveis no Gerenciador do Hyper-V, como o Gerenciador de SAN Virtual, Mover VM, Exportar VM, Replicação de VM atualmente não são suportados.
 
-### <a name="virtual-switches"></a>Comutadores virtuais
+### <a name="virtual-switches"></a>Comutadores Virtuais
 
 - Switch Embedded Teaming (definido): ao adicionar NICs a uma equipe, eles devem estar na mesma sub-rede.
 
@@ -215,15 +215,15 @@ A solução de gerenciamento do computador contém um subconjunto das ferramenta
 
 ### <a name="azure-file-sync-permissions"></a>Sincronização de Arquivos do Azure permissões
 
-Sincronização de Arquivos do Azure requer permissões no Azure que o centro de administração do Windows não forneceu antes da versão 1910. Se você registrou seu gateway do centro de administração do Windows com o Azure usando uma versão anterior à versão 1910 do centro de administração do Windows, será necessário atualizar seu aplicativo Azure Active Directory para obter as permissões corretas para usar Sincronização de Arquivos do Azure na versão mais recente do Centro de administração do Windows. A permissão adicional permite que Sincronização de Arquivos do Azure execute a configuração automática do acesso à conta de armazenamento, conforme descrito neste artigo: [Verifique se sincronização de arquivos do Azure tem acesso à conta de armazenamento](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal).
+Sincronização de Arquivos do Azure requer permissões no Azure que o centro de administração do Windows não forneceu antes da versão 1910. Se você registrou seu gateway do centro de administração do Windows com o Azure usando uma versão anterior à versão 1910 do centro de administração do Windows, será necessário atualizar seu aplicativo Azure Active Directory para obter as permissões corretas para usar Sincronização de Arquivos do Azure na versão mais recente do centro de administração do Windows. A permissão adicional permite que Sincronização de Arquivos do Azure execute a configuração automática do acesso à conta de armazenamento, conforme descrito neste artigo: [Verifique se sincronização de arquivos do Azure tem acesso à conta de armazenamento](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal).
 
 Para atualizar seu aplicativo Azure Active Directory, você pode fazer uma das duas coisas
-1. Acesse **configurações** > **Azure** > **cancelar o registro**e registre o centro de administração do Windows com o Azure novamente, verificando se você escolheu criar um novo aplicativo de Azure Active Directory. 
-2. Vá para o aplicativo Azure Active Directory e adicione manualmente a permissão necessária ao seu aplicativo Azure Active Directory existente registrado no centro de administração do Windows. Para fazer isso, vá para **configurações** > **modo de exibição de** > **do Azure** no Azure. Na folha **registro de aplicativo** no Azure, acesse **permissões de API**, selecione **Adicionar uma permissão**. Role para baixo para selecionar **Azure Active Directory grafo**, selecione **permissões delegadas**, expanda **diretório**e selecione **Directory. AccessAsUser. All**. Clique em **adicionar permissões** para salvar as atualizações no aplicativo.
+1. Acesse **configurações** > **Azure** > **Cancelar registro**e registre o centro de administração do Windows com o Azure novamente, verificando se você escolheu criar um novo aplicativo Azure Active Directory. 
+2. Vá para o aplicativo Azure Active Directory e adicione manualmente a permissão necessária ao seu aplicativo Azure Active Directory existente registrado no centro de administração do Windows. Para fazer isso, vá para **configurações** > exibição**do Azure** > **no Azure**. Na folha **registro de aplicativo** no Azure, acesse **permissões de API**, selecione **Adicionar uma permissão**. Role para baixo para selecionar **Azure Active Directory grafo**, selecione **permissões delegadas**, expanda **diretório**e selecione **Directory. AccessAsUser. All**. Clique em **adicionar permissões** para salvar as atualizações no aplicativo.
 
 ### <a name="options-for-setting-up-azure-management-services"></a>Opções para configurar os serviços de gerenciamento do Azure
 
-Os serviços de gerenciamento do Azure, incluindo Azure Monitor, Azure Gerenciamento de Atualizações e central de segurança do Azure, usam o mesmo agente para um servidor local: o Microsoft Monitoring Agent. O Azure Gerenciamento de Atualizações tem um conjunto mais limitado de regiões com suporte e requer que o espaço de trabalho Log Analytics seja vinculado a uma conta de automação do Azure. Devido a essa limitação, se você quiser configurar vários serviços no centro de administração do Windows, deverá configurar o Azure Gerenciamento de Atualizações primeiro e, em seguida, a central de segurança do Azure ou o Azure Monitor. Se você tiver configurado os serviços de gerenciamento do Azure que usam o Microsoft Monitoring Agent e tentar configurar o Azure Gerenciamento de Atualizações usando o centro de administração do Windows, o centro de administração do Windows permitirá que você configure somente o Azure Gerenciamento de Atualizações se o existente os recursos vinculados ao Microsoft Monitoring Agent oferecem suporte a Gerenciamento de Atualizações do Azure. Se não for o caso, você terá duas opções:
+Os serviços de gerenciamento do Azure, incluindo Azure Monitor, Azure Gerenciamento de Atualizações e central de segurança do Azure, usam o mesmo agente para um servidor local: o Microsoft Monitoring Agent. O Azure Gerenciamento de Atualizações tem um conjunto mais limitado de regiões com suporte e requer que o espaço de trabalho Log Analytics seja vinculado a uma conta de automação do Azure. Devido a essa limitação, se você quiser configurar vários serviços no centro de administração do Windows, deverá configurar o Azure Gerenciamento de Atualizações primeiro e, em seguida, a central de segurança do Azure ou o Azure Monitor. Se você tiver configurado os serviços de gerenciamento do Azure que usam o Microsoft Monitoring Agent e, em seguida, tentar configurar o Azure Gerenciamento de Atualizações usando o centro de administração do Windows, o centro de administração do Windows permitirá que você configure o Azure Gerenciamento de Atualizações somente se os recursos existentes vinculados ao Microsoft Monitoring Agent do Gerenciamento de Atualizações do Azure forem compatíveis. Se não for o caso, você terá duas opções:
 
 1. Acesse o painel de controle > Microsoft Monitoring Agent para [desconectar o servidor das soluções de gerenciamento do Azure existentes](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics) (como Azure monitor ou central de segurança do Azure). Em seguida, configure o Azure Gerenciamento de Atualizações no centro de administração do Windows. Depois disso, você pode voltar para configurar suas outras soluções de gerenciamento do Azure por meio do centro de administração do Windows sem problemas.
 2. Você pode [configurar manualmente os recursos do Azure necessários para o azure gerenciamento de atualizações](https://docs.microsoft.com/azure/automation/automation-update-management) e, em seguida, [atualizar manualmente o Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (fora do centro de administração do Windows) para adicionar o novo espaço de trabalho correspondente à solução de gerenciamento de atualizações que você deseja usar.
