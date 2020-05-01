@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: d7dc3455c5d7c6b00940008ceea646436b40bed0
+ms.sourcegitcommit: e51dd9dabec82c59e805e7a04c27e56c83773857
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605546"
+ms.locfileid: "82613728"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
@@ -28,6 +28,8 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 - Não há suporte para o uso da porta abaixo de 1024. No modo de serviço, você pode opcionalmente configurar a porta 80 para redirecionar para a porta especificada.
 
 ## <a name="general"></a>Geral
+
+- Na versão 1910,2 do centro de administração do Windows, talvez você não consiga se conectar a servidores Hyper-V em um hardware específico. Se você estiver bloqueado sobre esse problema, [Baixe nossa compilação anterior](https://aka.ms/wacprevious). 
 
 - Se você tiver o centro de administração do Windows instalado como um gateway no **Windows Server 2016** sob uso intenso, o serviço poderá falhar com um erro no log de ```Faulting application name: sme.exe``` eventos ```Faulting module name: WsmSvc.dll```que contém e. Isso ocorre devido a um bug que foi corrigido no Windows Server 2019. O patch para o Windows Server 2016 foi incluído na atualização cumulativa de fevereiro de 2019, [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977).
 
