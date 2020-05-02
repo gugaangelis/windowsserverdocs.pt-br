@@ -1,6 +1,6 @@
 ---
 title: consultar usuário
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6624c559bc85263da955f993ae7e4ad7e8b9ee2d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e8c095226a5445e976e47e461044ec002dc007fe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836799"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722688"
 ---
 # <a name="query-user"></a>consultar usuário
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre sessões de usuário em um servidor de Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
-para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
 > ## <a name="syntax"></a>Sintaxe
@@ -50,7 +50,7 @@ para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_example
 > - Se você usar o **usuário de consulta** sem especificar <*UserName*>, <*SessionName*> ou <*SessionID*>, será retornada uma lista de todos os usuários que fizeram logon no servidor. Como alternativa, você também pode usar a **sessão de consulta** para exibir uma lista de todas as sessões em um servidor.
 > - Quando o **usuário da consulta** retorna informações, um símbolo maior que (>) é exibido antes da sessão atual.
 > - O parâmetro **/Server** será necessário somente se você usar o **usuário de consulta** de um servidor remoto.
->   ## <a name="examples"></a><a name=BKMK_examples></a>Disso
+>   ## <a name="examples"></a>Exemplos
 > - Para exibir informações sobre todos os usuários conectados ao sistema, digite:
 >   ```
 >   query user
@@ -60,6 +60,6 @@ para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_example
 >   query user USER1 /server:SERver1
 >   ```
 >   ## <a name="additional-references"></a>Referências adicionais
->   - [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
->   
->   [consultar](query.md) a [referência de comando serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+>   - [Command-Line Syntax Key](command-line-syntax-key.md)
+>   Referência de comando de serviços de área de trabalho remota de[consulta](query.md)
+>   de chave de sintaxe de linha de comando[(serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

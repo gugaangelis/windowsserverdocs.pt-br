@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 3db99c06232e4ed6b3ad5df4ee189d38bffb14c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 49d079c8c659fc1f8abc821935c401ae00bc8ba4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837319"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722846"
 ---
 # <a name="prncnfg"></a>prncnfg
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Configura ou exibe informações de configuração sobre uma impressora.
 
@@ -31,12 +31,12 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |Parâmetro|Descrição|
 |-------|--------|
 |-g|Exibe informações de configuração sobre uma impressora.|
-|-t|Configura uma impressora.|
-|{1&gt;-&lt;1}x|Renomeia uma impressora.|
+|-T|Configura uma impressora.|
+|-X|Renomeia uma impressora.|
 |-S \<ServerName\>|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|
-|-P \<PrinterName\>|Especifica o nome da impressora que você deseja gerenciar. Obrigatório.|
+|-P \<PrinterName\>|Especifica o nome da impressora que você deseja gerenciar. Obrigatórios.|
 |-z \<NewprinterName\>|Especifica o novo nome da impressora. Requer os parâmetros **-x** e **-P** .|
-|-u \<nome de usuário\>-w \<senha\>|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|
+|-u \<senha\> de nome \<de usuário-w\>|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|
 |-r \<PortName\>|Especifica a porta onde a impressora está conectada. Se essa for uma porta paralela ou serial, use a ID da porta (por exemplo, LPT1 ou COM1). Se esta for uma porta TCP/IP, use o nome da porta que foi especificado quando a porta foi adicionada.|
 |-l \<local\>|Especifica o local da impressora, como "copiar sala".|
 |-h \<ShareName\>|Especifica o nome de compartilhamento da impressora.|
@@ -46,26 +46,26 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |-St \<StartTime\>|Configura a impressora para a disponibilidade limitada. Especifica a hora do dia em que a impressora está disponível. Se você enviar um documento para uma impressora quando ela não estiver disponível, o documento será mantido (colocado em spool) até que a impressora fique disponível. Você deve especificar a hora como um relógio de 24 horas. Por exemplo, para especificar 11:00 P.M., digite **2300**.|
 |-UT \<EndTime\>|Configura a impressora para a disponibilidade limitada. Especifica a hora do dia em que a impressora não está mais disponível. Se você enviar um documento para uma impressora quando ela não estiver disponível, o documento será mantido (colocado em spool) até que a impressora fique disponível. Você deve especificar a hora como um relógio de 24 horas. Por exemplo, para especificar 11:00 P.M., digite **2300**.|
 |-o \<prioridade\>|Especifica uma prioridade que o spooler usa para rotear trabalhos de impressão na fila de impressão. Uma fila de impressão com prioridade mais alta recebe todos os seus trabalhos antes de qualquer fila com prioridade mais baixa.|
-|-i \<default\>|Especifica a prioridade padrão atribuída a cada trabalho de impressão.|
+|-i \<noanteriority\>|Especifica a prioridade padrão atribuída a cada trabalho de impressão.|
 |{+&#124;-} compartilhado|Especifica se esta impressora é compartilhada na rede.|
 |{+&#124;-} direto|Especifica se o documento deve ser enviado diretamente para a impressora sem ser colocado no spool.|
 |{+&#124;-} publicado|Especifica se esta impressora deve ser publicada no Active Directory. Se você publicar a impressora, outros usuários poderão procurá-la com base em sua localização e recursos (como impressão de cores e grampeamento).|
 |{+&#124;-} ocultos|Função reservada.|
 |{+&#124;-} rawonly|Especifica se somente trabalhos de impressão de dados brutos podem ser colocados em spool nessa fila.|
-|{+ &#124; -} na fila|Especifica que a impressora não deve começar a imprimir até que a última página do documento seja colocada no spool. O programa de impressão não está disponível até que o documento termine de ser impresso. No entanto, o uso desse parâmetro garante que todo o documento esteja disponível para a impressora.|
-|{+ &#124; -} KeepPrintedJobs|Especifica se o spooler deve reter os documentos depois de serem impressos. Habilitar essa opção permite que um usuário reenvie um documento para a impressora da fila de impressão em vez do programa de impressão.|
-|{+ &#124; -} WorkOffline|Especifica se um usuário é capaz de enviar trabalhos de impressão para a fila de impressão se o computador não estiver conectado à rede.|
-|{+ &#124; -} EnableDevq|Especifica se os trabalhos de impressão que não correspondem à configuração da impressora (por exemplo, arquivos PostScript em spool em impressoras não-PostScript) devem ser mantidos na fila em vez de serem impressos.|
-|{+ &#124; -} DoCompleteFirst|Especifica se o spooler deve enviar trabalhos de impressão com uma prioridade mais baixa que concluiu o spooling antes de enviar trabalhos de impressão com uma prioridade mais alta que não concluiu o spooling. Se essa opção estiver habilitada e nenhum documento tiver concluído o spool, o spooler enviará documentos maiores antes dos menores. Você deve habilitar essa opção se quiser maximizar a eficiência da impressora no custo da prioridade do trabalho. Se essa opção estiver desabilitada, o spooler sempre enviará trabalhos de prioridade mais alta para suas respectivas filas primeiro.|
-|{+ &#124; -} EnableBIDI|Especifica se a impressora envia informações de status para o spooler.|
+|{+ &#124;-} na fila|Especifica que a impressora não deve começar a imprimir até que a última página do documento seja colocada no spool. O programa de impressão não está disponível até que o documento termine de ser impresso. No entanto, o uso desse parâmetro garante que todo o documento esteja disponível para a impressora.|
+|{+ &#124;-} KeepPrintedJobs|Especifica se o spooler deve reter os documentos depois de serem impressos. Habilitar essa opção permite que um usuário reenvie um documento para a impressora da fila de impressão em vez do programa de impressão.|
+|{+ &#124;-} WorkOffline|Especifica se um usuário é capaz de enviar trabalhos de impressão para a fila de impressão se o computador não estiver conectado à rede.|
+|{+ &#124;-} EnableDevq|Especifica se os trabalhos de impressão que não correspondem à configuração da impressora (por exemplo, arquivos PostScript em spool em impressoras não-PostScript) devem ser mantidos na fila em vez de serem impressos.|
+|{+ &#124;-} DoCompleteFirst|Especifica se o spooler deve enviar trabalhos de impressão com uma prioridade mais baixa que concluiu o spooling antes de enviar trabalhos de impressão com uma prioridade mais alta que não concluiu o spooling. Se essa opção estiver habilitada e nenhum documento tiver concluído o spool, o spooler enviará documentos maiores antes dos menores. Você deve habilitar essa opção se quiser maximizar a eficiência da impressora no custo da prioridade do trabalho. Se essa opção estiver desabilitada, o spooler sempre enviará trabalhos de prioridade mais alta para suas respectivas filas primeiro.|
+|{+ &#124;-} EnableBIDI|Especifica se a impressora envia informações de status para o spooler.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
--   O comando **prncnfg** é um script Visual Basic localizado no diretório <language> do printing_Admin_Scripts\\do%windir%\system32\. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prncnfg ou altere os diretórios para a pasta apropriada. Por exemplo:
+-   O comando **prncnfg** é um script Visual Basic localizado no diretório%windir%\system32\ printing_Admin_Scripts\\ <language> . Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prncnfg ou altere os diretórios para a pasta apropriada. Por exemplo: 
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg
     ```
--   Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, `"computer Name"`).
+-   Se as informações fornecidas contiverem espaços, use aspas em volta do texto (por exemplo, `"computer Name"`).
 
 ## <a name="examples"></a><a name="BKMK_examples"></a>Disso
 Para exibir informações de configuração para a impressora chamada colorprinter_2 com uma fila de impressão hospedada pelo computador remoto chamado HRServer, digite:
@@ -84,5 +84,5 @@ cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3"
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[referência de comando de impressão](print-command-reference.md)
+- [Referência de comando de impressão de chave](command-line-syntax-key.md)
+[print Command Reference](print-command-reference.md) de sintaxe de linha de comando

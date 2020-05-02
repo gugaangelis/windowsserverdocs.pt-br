@@ -1,6 +1,6 @@
 ---
 title: Excluir SC
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05b276de04d4250cc03e4b2976bf8c1330ef82ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd40b5eb82def3b3c437cbdb5b60d279529d25a0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835379"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722187"
 ---
 # <a name="sc-delete"></a>Excluir SC
 
@@ -34,8 +34,8 @@ sc [<ServerName>] delete [<ServiceName>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ServerName >|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo, \\\\meuservidor). Para executar o SC. exe localmente, omita esse parâmetro.|
-|> do \<ServiceName|Especifica o nome do serviço retornado pela operação **GetKeyName** .|
+|\<ServerName>|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo \\ \\, meuservidor). Para executar o SC. exe localmente, omita esse parâmetro.|
+|\<> do ServiceName|Especifica o nome do serviço retornado pela operação **GetKeyName** .|
 |?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

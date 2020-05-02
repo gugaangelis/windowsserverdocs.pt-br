@@ -1,6 +1,6 @@
 ---
 title: Exibição de scwcmd
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36c6422a0118b0c6d6d70adbadfb401532121c3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa35cc46af36bca17cc042c658f7613572823bc9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835059"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722108"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 
@@ -32,15 +32,15 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/x:\<xmlfile. XML >|Especifica o arquivo. XML a ser exibido. Esse parâmetro deve ser especificado.|
-|/s:\<xslfile. xsl >|Especifica a transformação. xsl a ser aplicada ao arquivo. xml como parte do processo de renderização. Esse parâmetro é opcional para arquivos ACS. xml. Quando o comando **View** é usado para renderizar um arquivo SCW. xml, ele tenta automaticamente carregar a transformação padrão correta para o arquivo. XML especificado. Se uma transformação. xsl for especificada, a transformação deverá ser escrita sob a suposição de que o arquivo. xml esteja no mesmo diretório que a transformação. Xsl.|
+|/x:\<xmlfile. xml>|Especifica o arquivo. XML a ser exibido. Esse parâmetro deve ser especificado.|
+|/s:\<xslfile. xsl>|Especifica a transformação. xsl a ser aplicada ao arquivo. xml como parte do processo de renderização. Esse parâmetro é opcional para arquivos ACS. xml. Quando o comando **View** é usado para renderizar um arquivo SCW. xml, ele tenta automaticamente carregar a transformação padrão correta para o arquivo. XML especificado. Se uma transformação. xsl for especificada, a transformação deverá ser escrita sob a suposição de que o arquivo. xml esteja no mesmo diretório que a transformação. Xsl.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
 Scwcmd. exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir o policyFile. xml usando a transformação Policyview. xsl, digite:
 ```

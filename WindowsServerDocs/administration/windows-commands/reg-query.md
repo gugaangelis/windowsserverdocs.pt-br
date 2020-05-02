@@ -1,6 +1,6 @@
 ---
 title: consulta reg
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf21933e1ce9928048f0f07ed502dfcab75d1783
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea66a7d96435309a3b30b67f45bc68200f30dd2f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836388"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722526"
 ---
 # <a name="reg-query"></a>consulta reg
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836388"
 
 Retorna uma lista da próxima camada de subchaves e entradas localizadas em uma subchave especificada no registro.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,30 +34,30 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName >|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\\\ComputerName\) como parte do *KeyName*. Omitir \\\\computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
-|/v \<valueName >|Especifica o nome do valor do registro que deve ser consultado. Se omitido, todos os nomes de valor para *KeyName* serão retornados. *ValueName* para esse parâmetro será opcional se a opção **/f** também for usada.|
+|\<KeyName>|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no \\ \\formato ComputerName\) como parte do *KeyName*. \\ \\Omitir computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|/v \<valor>|Especifica o nome do valor do registro que deve ser consultado. Se omitido, todos os nomes de valor para *KeyName* serão retornados. *ValueName* para esse parâmetro será opcional se a opção **/f** também for usada.|
 |/ve|Executa uma consulta para nomes de valores vazios.|
 |/s|Especifica para consultar todas as subchaves e nomes de valor recursivamente.|
-|separador de \</se >|Especifica o separador de valor único a ser procurado no tipo de nome de valor REG_MULTI_SZ. Se o *separador* não for especificado, será usado **\ 0** .|
-|/f \<de dados >|Especifica os dados ou o padrão a ser pesquisado. Use aspas duplas se uma cadeia de caracteres contiver espaços. Se não for especificado, um curinga **&#42;** () será usado como o padrão de pesquisa.|
+|> \<separador de/se|Especifica o separador de valor único a ser procurado no tipo de nome de valor REG_MULTI_SZ. Se o *separador* não for especificado, será usado **\ 0** .|
+|/f \<> de dados|Especifica os dados ou o padrão a ser pesquisado. Use aspas duplas se uma cadeia de caracteres contiver espaços. Se não for especificado, um curinga (**&#42;**) será usado como o padrão de pesquisa.|
 |/k|Especifica a pesquisa somente em nomes de chave.|
 |/d|Especifica a pesquisa somente em dados.|
 |/c|Especifica que a consulta diferencia maiúsculas de minúsculas. Por padrão, as consultas não diferenciam maiúsculas de minúsculas.|
 |/e|Especifica para retornar apenas correspondências exatas. Por padrão, todas as correspondências são retornadas.|
-|/t \<tipo >|Especifica os tipos de registro a serem pesquisados. Os tipos válidos são: REG_SZ, REG_MULTI_SZ, REG_EXPAND_SZ, REG_DWORD, REG_BINARY, REG_NONE. Se não for especificado, todos os tipos serão pesquisados.|
+|/t \<tipo>|Especifica os tipos de registro a serem pesquisados. Os tipos válidos são: REG_SZ, REG_MULTI_SZ, REG_EXPAND_SZ, REG_DWORD, REG_BINARY, REG_NONE. Se não for especificado, todos os tipos serão pesquisados.|
 |/z|Especifica para incluir o equivalente numérico para o tipo de registro nos resultados da pesquisa.|
 |/?|Exibe a ajuda para a **consulta reg** no prompt de comando.|
 
-## <a name="remarks-optional-section"></a>Comentários \<seção opcional >
+## <a name="remarks-optional-section"></a>Comentários \<da seção opcional>
 
 A tabela a seguir lista os valores de retorno para a operação **reg query** .
 
-|{1&gt;Valor&lt;1}|Descrição|
+|Valor|Descrição|
 |-----|-----------|
-|0|Êxito|
+|0|Sucesso|
 |1|Falha|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir o valor da versão de valor de nome na chave HKLM\Software\Microsoft\ResKit, digite:
 ```

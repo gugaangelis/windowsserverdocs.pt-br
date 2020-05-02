@@ -1,5 +1,5 @@
 ---
-title: replace
+title: substituir
 description: Saiba como usar o comando Replace para substituir arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d44e4f8383a77582177f4d9b161210207ce46e63
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4ac424154968b4f4c55664d0d20f524345b87986
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835899"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722378"
 ---
-# <a name="replace"></a>replace
+# <a name="replace"></a>substituir
 
 
 
 Substitui arquivos. Se usado com a opção **/a** , **replace** adiciona novos arquivos a um diretório em vez de substituir os arquivos existentes.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,8 +35,8 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[\<unidade1 >:] [\<caminho1 >]\<nome do arquivo >|Especifica o local e o nome do arquivo de origem ou conjunto de arquivos. O *nome de arquivo* é necessário e pode incluir caracteres **&#42;** curinga (e **?** ).|
-|[\<unidade2 >:] [\<Caminho2 >]|Especifica o local do arquivo de destino. Não é possível especificar um nome de arquivo para os arquivos que você substituir. Se você não especificar uma unidade ou um caminho, **replace** usará a unidade e o diretório atuais como destino.|
+|[\<Unidade1>:] [\<Caminho1>] \<Nome de arquivo>|Especifica o local e o nome do arquivo de origem ou conjunto de arquivos. O *nome de arquivo* é necessário e pode incluir caracteres curinga (**&#42;** e **?**).|
+|[\<Unidade2>:] [\<Caminho2>]|Especifica o local do arquivo de destino. Não é possível especificar um nome de arquivo para os arquivos que você substituir. Se você não especificar uma unidade ou um caminho, **replace** usará a unidade e o diretório atuais como destino.|
 |/a|Adiciona novos arquivos ao diretório de destino em vez de substituir os arquivos existentes. Você não pode usar essa opção de linha de comando com a opção de linha de comando **/s** ou **/u** .|
 |/p|Solicita a confirmação antes de substituir um arquivo de destino ou adicionar um arquivo de origem.|
 |/r|Substitui arquivos somente leitura e não protegidos. Se você tentar substituir um arquivo somente leitura, mas não especificar **/r**, um erro resultará e interromperá a operação de substituição.|
@@ -57,7 +57,7 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 - Se você estiver usando disquetes e precisar alternar discos durante a operação de **substituição** , você poderá especificar a opção de linha de comando **/w** para que **replace** espere que você alterne os discos.
 - Você não pode usar **replace** para atualizar arquivos ocultos ou arquivos do sistema.
 - A tabela a seguir mostra cada código de saída e uma breve descrição de seu significado:  
-  |Código de Saída|Descrição|
+  |Código de saída|Descrição|
   |---------|-----------|
   |0|O comando **replace** substituiu ou adicionou os arquivos com êxito.|
   |1|O comando **replace** encontrou uma versão incorreta do MS-dos.|

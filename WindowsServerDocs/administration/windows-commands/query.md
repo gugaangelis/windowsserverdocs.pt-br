@@ -1,6 +1,6 @@
 ---
-title: query
-description: Tópico de comandos do Windows para * * * *-
+title: Consulta
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d89ae8c7c526bce396b2583abc1728456f7bcc3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 90ef2cc14ef0131978956de8df029eaf04baabd3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836819"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722683"
 ---
-# <a name="query"></a>query
+# <a name="query"></a>Consulta
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre os servidores de processos, sessões e Host da Sessão da Área de Trabalho Remota (Host da Sessão RD).
 
@@ -42,5 +42,5 @@ query user
 |[consultar usuário](query-user.md)|Exibe informações sobre sessões de usuário em um servidor de host de sessão de área de trabalho remota.|
 
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[referência de comando serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+- [Command-Line Syntax Key](command-line-syntax-key.md)
+Referência de comando da chave de sintaxe de linha de comando[serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

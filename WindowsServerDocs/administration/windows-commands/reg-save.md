@@ -1,6 +1,6 @@
 ---
 title: Reg salvar
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b1f7829aedc42c0b75bda951572a4c944798ec6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1dd3e932e67df7eb972bd625ecec24f986cf3f3d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836349"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722508"
 ---
 # <a name="reg-save"></a>Reg salvar
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836349"
 
 Salva uma cópia de subchaves, entradas e valores especificados do registro em um arquivo especificado.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,22 +34,22 @@ reg save <KeyName> <FileName> [/y]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName >|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no formato \\\\ComputerName\) como parte do *KeyName*. Omitir \\\\computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
-|\<nome de arquivo >|Especifica o nome e o caminho do arquivo que é criado. Se nenhum caminho for especificado, o caminho atual será usado.|
+|\<KeyName>|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no \\ \\formato ComputerName\) como parte do *KeyName*. \\ \\Omitir computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|\<Nome de arquivo>|Especifica o nome e o caminho do arquivo que é criado. Se nenhum caminho for especificado, o caminho atual será usado.|
 |/y|Substitui um arquivo existente pelo *nome nome do arquivo sem solicitar* confirmação.|
 |/?|Exibe a ajuda para o **reg Save** no prompt de comando.|
 
-## <a name="remarks-optional-section"></a>Comentários \<seção opcional >
+## <a name="remarks-optional-section"></a>Comentários \<da seção opcional>
 
 -   A tabela a seguir lista os valores de retorno para a operação **reg Save** .
 
-|{1&gt;Valor&lt;1}|Descrição|
+|Valor|Descrição|
 |-----|-----------|
-|0|Êxito|
+|0|Sucesso|
 |1|Falha|
 -   Antes de editar as entradas do registro, salve a subchave pai com a operação **reg Save** . Se a edição falhar, restaure a subchave original com a operação **reg Restore** .
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para salvar o hive MyApp na pasta atual como um arquivo chamado AppBkUp. HIV, digite:
 ```

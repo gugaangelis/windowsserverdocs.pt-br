@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d07d8caa0568b26f5edc16258085a59ecdafcf4e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 377b448eb74f0a27228d8502ce149fb04869895b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837199"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722796"
 ---
 # <a name="prnqctl"></a>prnqctl
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-imprime uma página de teste, pausa ou retoma uma impressora e limpa uma fila de impressora.  
+Imprime uma página de teste, pausa ou retoma uma impressora e limpa uma fila de impressora.  
 
 ## <a name="syntax"></a>Sintaxe  
 ```  
@@ -31,24 +31,24 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]
 
 |Parâmetro|Descrição|  
 |-------|--------|  
-|-z|pausa a impressão na impressora especificada com o parâmetro **-p** .|  
-|-m|Retoma a impressão na impressora especificada com o parâmetro **-p** .|  
-|{1&gt;-e&lt;1}|imprime uma página de teste na impressora especificada com o parâmetro **-p** .|  
-|{1&gt;-&lt;1}x|Cancela todos os trabalhos de impressão na impressora especificada com o parâmetro **-p** .|  
-|-s \<ServerName >|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|  
-|-p \<PrinterName >|Especifica o nome da impressora que você deseja gerenciar. Obrigatório.|  
-|-u \<nome de usuário >-w \<senha >|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|  
+|-Z|pausa a impressão na impressora especificada com o parâmetro **-p** .|  
+|-M|Retoma a impressão na impressora especificada com o parâmetro **-p** .|  
+|-E|imprime uma página de teste na impressora especificada com o parâmetro **-p** .|  
+|-X|Cancela todos os trabalhos de impressão na impressora especificada com o parâmetro **-p** .|  
+|-s \<servername>|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|  
+|-p \<printername>|Especifica o nome da impressora que você deseja gerenciar. Obrigatórios.|  
+|-u \<nome de usuário> \<-w senha>|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|  
 |/?|Exibe a ajuda no prompt de comando.|  
 
 ## <a name="remarks"></a>Comentários  
-- O comando **prnqctl** é um script Visual Basic localizado no printing_Admin_Scripts diretório <language>\\do%windir%\system32\. Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prnqctl ou altere os diretórios para a pasta apropriada. Por exemplo:  
+- O comando **prnqctl** é um script Visual Basic localizado no diretório%windir%\system32\ printing_Admin_Scripts\\ <language> . Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prnqctl ou altere os diretórios para a pasta apropriada. Por exemplo:   
   ```  
   cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl  
   ```  
-- Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, `"computer Name"`).  
+- Se as informações fornecidas contiverem espaços, use aspas em volta do texto (por exemplo, `"computer Name"`).  
 
 ## <a name="examples"></a><a name="BKMK_examples"></a>Disso  
-Para imprimir uma página de teste na impressora Laserprinter1 compartilhada pelo computador do \\\Server1, digite:  
+Para imprimir uma página de teste na impressora Laserprinter1 compartilhada pelo computador \\\Server1, digite:  
 ```  
 cscript Prnqctl -e -s Server1 -p Laserprinter1  
 ```  

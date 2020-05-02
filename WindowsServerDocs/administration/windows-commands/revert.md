@@ -1,6 +1,6 @@
 ---
 title: voltar
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7dae609e4615868b03e4b5ea9a681f553aa0667
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b967904c28661be82909ebcc0aa7cb42c73e418c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835749"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722330"
 ---
 # <a name="revert"></a>voltar
 
@@ -32,7 +32,7 @@ revert <ShadowCopyID>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<ShadowCopyID >|Especifica a ID da cópia de sombra para a qual reverter o volume.|
+|\<> ShadowCopyID|Especifica a ID da cópia de sombra para a qual reverter o volume.|
 
 ## <a name="additional-references"></a>Referências adicionais
 

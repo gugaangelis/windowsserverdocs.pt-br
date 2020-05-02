@@ -1,6 +1,6 @@
 ---
 title: pushprinterconnections
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5941b1eba55ce7524946f3257c093d409ef7d773
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94ba2d09a3e67248a393350e46e971aa8b24b00d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837069"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722765"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 
@@ -33,7 +33,7 @@ pushprinterconnections <-log> <-?>
 |Parâmetro|Descrição|
 |---------|-----------|
 |> de < log|Grava um arquivo de log de depuração por usuário em% temp ou grava um log de depuração por computador em%WINDIR%\temp.|
-|<-? >|Exibe a Ajuda no prompt de comando.|
+|<-? >|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 

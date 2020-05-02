@@ -1,6 +1,6 @@
 ---
 title: REG DELETE
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 726a3c700a9278dbc7abb1873aae7ea3c957bbb5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4ff643970bac021a6b7dcb731e64c412deb8df3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836499"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722572"
 ---
 # <a name="reg-delete"></a>REG DELETE
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836499"
 
 Exclui uma subchave ou entradas do registro.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,8 +34,8 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<KeyName >|Especifica o caminho completo da subchave ou da entrada a ser excluída. Para especificar um computador remoto, inclua o nome do computador (no formato \\\\ComputerName\) como parte do *KeyName*. Omitir \\\\computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
-|/v \<valueName >|Exclui uma entrada específica sob a subchave. Se nenhuma entrada for especificada, todas as entradas e subchaves na subchave serão excluídas.|
+|\<KeyName>|Especifica o caminho completo da subchave ou da entrada a ser excluída. Para especificar um computador remoto, inclua o nome do computador (no formato \\ \\ComputerName\) como parte do *KeyName*. \\ \\Omitir computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
+|/v \<valor>|Exclui uma entrada específica sob a subchave. Se nenhuma entrada for especificada, todas as entradas e subchaves na subchave serão excluídas.|
 |/ve|Especifica que somente as entradas que não têm nenhum valor serão excluídas.|
 |/va|Exclui todas as entradas na subchave especificada. As subchaves na subchave especificada não são excluídas.|
 |/f|Exclui a subchave ou entrada do registro existente sem solicitar confirmação.|
@@ -45,12 +45,12 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 A tabela a seguir lista os valores de retorno para a operação de **exclusão de reg** .
 
-|{1&gt;Valor&lt;1}|Descrição|
+|Valor|Descrição|
 |-----|-----------|
-|0|Êxito|
+|0|Sucesso|
 |1|Falha|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para excluir o tempo limite da chave do registro e suas subchaves e valores, digite:
 ```

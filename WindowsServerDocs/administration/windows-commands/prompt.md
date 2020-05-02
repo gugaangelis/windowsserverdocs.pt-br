@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6662cb7fb00b7d21311fef2ca127ba89591a00b2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4b3aedc341dfcee094e20f43e39f34dc6fd08109
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837129"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722790"
 ---
 # <a name="prompt"></a>prompt
 
 
 
-Altera o prompt de comando cmd. exe. Se usado sem parâmetros, **prompt** redefine o prompt de comando para a configuração padrão, que é a letra da unidade e o diretório atuais seguidos pelo símbolo maior que ( **>** ).
+Altera o prompt de comando cmd. exe. Se usado sem parâmetros, **prompt** redefine o prompt de comando para a configuração padrão, que é a letra da unidade e o diretório atuais seguidos pelo símbolo**>** maior que ().
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,7 +34,7 @@ prompt [<Text>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> de texto \<|Especifica o texto e as informações que você deseja incluir no prompt de comando.|
+|\<> de texto|Especifica o texto e as informações que você deseja incluir no prompt de comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -43,7 +43,7 @@ Você pode personalizar o prompt de comando para exibir qualquer texto desejado,
 
 A tabela a seguir lista as combinações de caracteres que você pode incluir em vez de, ou além, uma ou mais cadeias de caracteres no parâmetro de *texto* . A lista inclui uma breve descrição do texto ou das informações que cada combinação de caracteres adiciona ao seu prompt de comando.  
 
-| Espaço |                                 Descrição                                 |
+| Caractere |                                 Descrição                                 |
 |-----------|-----------------------------------------------------------------------------|
 |    $q     |                               = (sinal de igual)                                |
 |    $$     |                               $ (cifrão)                               |
@@ -54,20 +54,20 @@ A tabela a seguir lista as combinações de caracteres que você pode incluir em
 |    $n     |                                Unidade atual                                |
 |    $g     |                            > (sinal de maior que)                            |
 |    $l     |                             < (sinal de menor que)                              |
-|    $b     |                              \| (símbolo de pipe)                               |
+|    $b     |                              \|(símbolo de pipe)                               |
 |    $_     |                               INSERIR ALIMENTAÇÃO DE DISCAGEM                                |
 |    $e     |                         Código de escape ANSI (código 27)                          |
 |    $h     | Backspace (para excluir um caractere que foi gravado na linha de comando) |
 |    $a     |                                & (e comercial)                                |
 |    $c     |                            (parêntese esquerdo)                             |
 |    $f     |                            ) (parêntese direito)                            |
-|    $s     |                                    de espaço                                    |
+|    $s     |                                    espaço                                    |
 
 Quando as extensões de comando são habilitadas (ou seja, o padrão), o comando de **prompt** dá suporte aos seguintes caracteres de formatação:  
 
-|Espaço|Descrição|
+|Caractere|Descrição|
 |---------|-----------|
-|$+|Zero ou mais caracteres de sinal de adição ( **+** ), dependendo da profundidade da pilha de diretórios **PUSHD** (um caractere para cada nível enviado por push).|
+|$+|Zero ou mais caracteres de sinal**+** de adição (), dependendo da profundidade da pilha de diretórios **PUSHD** (um caractere para cada nível enviado).|
 |$m|O nome remoto associado à letra da unidade atual ou à cadeia de caracteres vazia se a unidade atual não for uma unidade de rede.|
 
 Se você incluir o caractere de **$p** no parâmetro de texto, o disco será lido depois que você inserir cada comando (para determinar a unidade e o caminho atuais). Isso pode levar mais tempo, especialmente para unidades de disquete.
@@ -83,7 +83,7 @@ O prompt é alterado da seguinte maneira, em que a data e a hora são atuais:
 Fri 06/01/2007  13:53:28.91
 >
 ```
-Para definir o prompt de comando para exibir como uma seta (`-->`), digite:
+Para definir o prompt de comando para exibir como uma seta`-->`(), digite:
 ```
 prompt --$g
 ```

@@ -1,6 +1,6 @@
 ---
 title: Definir metadados
-description: Tópico de comandos do Windows para definir metadados, que define o nome e o local do arquivo de metadados de criação de sombra usado para transferir cópias de sombra de um computador para outro.
+description: Tópico de referência para definir metadados, que define o nome e o local do arquivo de metadados de criação de sombra usado para transferir cópias de sombra de um computador para outro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5bd728650cf163f98a82ff1e6f88755c4cc1aea
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 683e54a7efc072d8709d6257771ba6bc5bde206e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834519"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721909"
 ---
 # <a name="set-metadata"></a>Definir metadados
 
@@ -30,8 +30,8 @@ set metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[\<drive >:] [<Path>]|Especifica o local para criar o arquivo de metadados.|
-|\<MetaData. cab >|Especifica o nome do arquivo CAB para armazenar metadados de criação de sombra.|
+|[\<Unidade>:] [<Path>]|Especifica o local para criar o arquivo de metadados.|
+|\<> de MetaData. cab|Especifica o nome do arquivo CAB para armazenar metadados de criação de sombra.|
 
 ## <a name="additional-references"></a>Referências adicionais
 

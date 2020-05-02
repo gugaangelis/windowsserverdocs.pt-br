@@ -1,6 +1,6 @@
 ---
 title: Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,29 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2e188be84c657688a971a75788942d4acf598d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 630b2274e96e446af07f7630d95056b40858209f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836059"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722438"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Veja a seguir uma lista de Serviços de Área de Trabalho Remota ferramentas de linha de comando.
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
 > 
-> |                 {1&gt;Comando&lt;1}                 |                                                      Descrição                                                       |
+> |                 Comando                 |                                                      Descrição                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | altera as configurações de servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD) para logons, mapeamentos de porta COM e modo de instalação. |
 > |     [change logon](change-logon.md)     |    Habilita ou desabilita os logons de sessões de cliente em um servidor de host de sessão de área de trabalho remota ou exibe o status de logon atual.     |
-> |      [change port](change-port.md)      |                   Lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.                    |
+> |      [change port](change-port.md)      |                   lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.                    |
 > |      [change user](change-user.md)      |                                altera o modo de instalação do servidor de host da sessão da área de trabalho remota.                                |
 > |         [chglogon](chglogon.md)         |    Habilita ou desabilita os logons de sessões de cliente em um servidor de host de sessão de área de trabalho remota ou exibe o status de logon atual.     |
-> |          [chgport](chgport.md)          |                   Lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.                    |
+> |          [chgport](chgport.md)          |                   lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.                    |
 > |           [chgusr](chgusr.md)           |                                altera o modo de instalação do servidor de host da sessão da área de trabalho remota.                                |
 > |         [flattemp](flattemp.md)         |                                      Habilita ou desabilita pastas temporárias simples.                                       |
 > |           [logoff](logoff.md)           |          Faz logoff de um usuário de uma sessão em um servidor de host de sessão de área de trabalho remota e exclui a sessão do servidor.          |

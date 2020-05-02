@@ -1,6 +1,6 @@
 ---
 title: solução
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e1a5762309054cb9e5df0936990afa2331a9ceec
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9e73453b0bb5f087ccb8a7c59b693bbdc1ff951a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835399"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722212"
 ---
 # <a name="san"></a>solução
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe ou define a política de San (rede de área de armazenamento) para o sistema operacional.
 > [!NOTE]
@@ -37,7 +37,7 @@ san [policy={onlineAll | offlineAll | offlineShared}] [noerr]
 
 ## <a name="remarks"></a>Comentários
 - Se o comando for fornecido sem parâmetros, a política San atual será exibida.
-  ## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+  ## <a name="examples"></a>Exemplos
   Para exibir a política atual, digite:
   ```
   san

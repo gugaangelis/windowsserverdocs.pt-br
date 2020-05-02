@@ -1,6 +1,6 @@
 ---
 title: selecionar partição
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 97145d73cbbe1bdc9b27e545b047b78fe89e4984
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 55b06f247c8e9f183a2971278a8f16ac237e9cfe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834799"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722008"
 ---
 # <a name="select-partition"></a>selecionar partição
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 seleciona a partição especificada e desloca o foco para ela. Esse comando também pode ser usado para exibir a partição que atualmente tem o foco no disco selecionado.  
   
@@ -34,7 +34,7 @@ select partition=<n>
   
 |   Parâmetro    |                                                                                    Descrição                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \=de partição <n> | O número da partição que receberá o foco. Você pode exibir os números de todas as partições no disco selecionado no momento usando o comando **listar partição** no DiskPart. |
+| particion\=<n> | O número da partição que receberá o foco. Você pode exibir os números de todas as partições no disco selecionado no momento usando o comando **listar partição** no DiskPart. |
   
 ## <a name="remarks"></a>Comentários  
   
@@ -42,11 +42,11 @@ select partition=<n>
   
 -   Se nenhum número de partição for especificado, esse comando exibirá a partição que atualmente tem o foco no disco selecionado.  
   
--   Se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.  
+-   se um volume for selecionado com uma partição correspondente, a partição será selecionada automaticamente.  
   
 -   se uma partição for selecionada com um volume correspondente, o volume será selecionado automaticamente.  
   
-## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Para deslocar o foco para a partição 3, digite:  
   
 ```  

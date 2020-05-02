@@ -1,6 +1,6 @@
 ---
 title: Consulta SC
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38d83fa07e9f85f3a5a4b86388bbed41fcf326d1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6a6b4555790a8f9bb1149531251e724189177975
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835279"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722178"
 ---
 # <a name="sc-query"></a>Consulta SC
 
@@ -22,7 +22,7 @@ ms.locfileid: "80835279"
 
 Obtém e exibe informações sobre o serviço, o driver, o tipo de serviço especificado ou o tipo de driver.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,14 +34,14 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
 
 |       Parâmetro        |                                                                                                                          Descrição                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     \<ServerName >      |                       Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo, \\\\meuservidor). Para executar o SC. exe localmente, omita esse parâmetro.                        |
-|     > do \<ServiceName     |                                      Especifica o nome do serviço retornado pela operação **GetKeyName** . Esse parâmetro de **consulta** não é usado em conjunto com outros parâmetros de **consulta** (diferente de *ServerName*).                                      |
+|     \<ServerName>      |                       Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo \\ \\, meuservidor). Para executar o SC. exe localmente, omita esse parâmetro.                        |
+|     \<> do ServiceName     |                                      Especifica o nome do serviço retornado pela operação **GetKeyName** . Esse parâmetro de **consulta** não é usado em conjunto com outros parâmetros de **consulta** (diferente de *ServerName*).                                      |
 |     Type = {driver      |                                                                                                                            serviço                                                                                                                            |
 |       tipo = {próprio       |                                                                                                                             compartilhar                                                                                                                             |
-|     estado = {ativo     |                                                                                                                           inativas                                                                                                                            |
-| bufsize = \<BufferSize > |                     Especifica o tamanho (em bytes) do buffer de enumeração. O tamanho do buffer padrão é 1.024 bytes. Você deve aumentar o tamanho do buffer de enumeração quando a exibição resultante de uma consulta exceder 1.024 bytes.                      |
-|   ri = \<ResumeIndex >   | Especifica o número de índice no qual a enumeração deve ser iniciada ou retomada. O valor padrão é **0** (zero). Use esse parâmetro em conjunto com o parâmetro **bufsize =** quando mais informações forem retornadas por uma consulta do que o buffer padrão pode exibir. |
-|  Group = \<GroupName >   |                                                                             Especifica o grupo de serviços a ser enumerado. Por padrão, todos os grupos são enumerados (* * Group = * *).                                                                              |
+|     estado = {ativo     |                                                                                                                           inativos                                                                                                                            |
+| bufsize = \<BufferSize> |                     Especifica o tamanho (em bytes) do buffer de enumeração. O tamanho do buffer padrão é 1.024 bytes. Você deve aumentar o tamanho do buffer de enumeração quando a exibição resultante de uma consulta exceder 1.024 bytes.                      |
+|   ri = \<ResumeIndex>   | Especifica o número de índice no qual a enumeração deve ser iniciada ou retomada. O valor padrão é **0** (zero). Use esse parâmetro em conjunto com o parâmetro **bufsize =** quando mais informações forem retornadas por uma consulta do que o buffer padrão pode exibir. |
+|  Group = \<GroupName>   |                                                                             Especifica o grupo de serviços a ser enumerado. Por padrão, todos os grupos são enumerados (* * Group = * *).                                                                              |
 |           /?           |                                                                                                             Exibe a ajuda no prompt de comando.                                                                                                              |
 
 ## <a name="remarks"></a>Comentários
@@ -58,7 +58,7 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   sc query bufsize= 1822 ri= 79
   ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir informações somente para os serviços ativos, digite um dos seguintes comandos:
 ```
