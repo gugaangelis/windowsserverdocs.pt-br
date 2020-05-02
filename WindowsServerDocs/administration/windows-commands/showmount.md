@@ -1,6 +1,6 @@
 ---
 title: showmount
-description: Tópico de comandos do Windows para o createmount, que exibe diretórios montados.
+description: Tópico de referência para o inmount, que exibe diretórios montados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fa61d47bb14cf21d93beec0a6e9257b9f66737b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 60057c154e7a646d14a0e57d5cf4cd72d0f90876
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834219"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721809"
 ---
 # <a name="showmount"></a>showmount
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar a **montagem** para exibir diretórios montados.  
   
@@ -28,13 +28,13 @@ showmount {-e|-a|-d} <Server>
 ```
 
 ## <a name="description"></a>Descrição  
-O comando de **desmontagem**\-utilitário de linha exibe informações sobre sistemas de arquivos montados exportados pelo servidor para NFS no computador especificado pelo *servidor*. Se o *servidor* não for fornecido, a **montagem** exibirá informações sobre o computador no qual o comando de **conmontagem** é executado.  
+O utilitário de linha\-de comando de **addmount** exibe informações sobre sistemas de arquivos montados exportados pelo servidor para NFS no computador especificado pelo *servidor*. Se o *servidor* não for fornecido, a **montagem** exibirá informações sobre o computador no qual o comando de **conmontagem** é executado.  
   
 Você deve fornecer uma das seguintes opções:  
   
-- **\-e** -exibe todos os sistemas de arquivos exportados no servidor.  
-- **\-a** -exibe todos os clientes do sistema de arquivos de rede \(NFS\) e os diretórios no servidor que cada um tiver montado.  
-- **\-d** – exibe todos os diretórios no servidor que estão montados atualmente por clientes NFS.  
+- e-exibe todos os sistemas de arquivos exportados no servidor. ** \-**  
+- a-exibe todos os clientes NFS \(\) do sistema de arquivos de rede e os diretórios no servidor que cada um montou. ** \-**  
+- d-exibe todos os diretórios no servidor que estão atualmente montados por clientes NFS. ** \-**  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
 [Referência aos comandos dos Serviços para Network File System](services-for-network-file-system-command-reference.md)  

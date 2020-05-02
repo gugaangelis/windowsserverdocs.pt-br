@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e6e9c3c79cc8006efba0c97a574e3d6d94a6f7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05b42e4df38c3eafd3dcf3a92ced7b7b2c088e2b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845239"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720875"
 ---
 # <a name="echo"></a>echo
 
@@ -35,8 +35,8 @@ echo [on | off]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[on \| off]|Ativa ou desativa o recurso de eco de comando. O eco de comando está ativado por padrão.|
-|Mensagem de \<>|Especifica o texto a ser exibido na tela.|
+|[ligado \| desativado]|Ativa ou desativa o recurso de eco de comando. O eco de comando está ativado por padrão.|
+|\<> de mensagem|Especifica o texto a ser exibido na tela.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -45,7 +45,7 @@ echo [on | off]
 -   Quando o **eco** é desativado, o prompt de comando não aparece na janela do prompt de comando. Para exibir o prompt de comando, digite **Echo on.**
 -   Se usado em um arquivo em lotes, **Echo on** e **echo off** não afetam a configuração no prompt de comando.
 -   Para impedir o eco de um comando específico em um arquivo em lotes, insira um sinal de arroba (@) na frente do comando. Para evitar o eco de todos os comandos em um arquivo em lotes, inclua o comando **echo off** no início do arquivo.
--   Para exibir um pipe ( **|** ) ou um caractere de redirecionamento ( **<** ou **>** ) quando você estiver usando o **eco**, use um cursor (^) imediatamente antes do pipe ou caractere de redirecionamento (por exemplo, **^|** , **^>** ou **^<** ). Para exibir um cursor, digite dois Cursors em sucessão ( **^^** ).
+-   Para exibir um pipe (**|**) ou um caractere de redirecionamento**<** (ou **>**) quando você estiver usando **Echo**, use um cursor (^) imediatamente antes do pipe ou caractere de redirecionamento ( **^|** por **^>** exemplo, **^<**, ou). Para exibir um cursor, digite dois Cursors em sucessão (**^^**).
 
 ## <a name="examples"></a>Exemplos
 

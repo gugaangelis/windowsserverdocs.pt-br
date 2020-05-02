@@ -1,6 +1,6 @@
 ---
 title: setlocal
-description: O tópico de comandos do Windows para setlocal, que inicia a localização de variáveis de ambiente em um arquivo em lotes.
+description: Tópico de referência para setlocal, que inicia a localização de variáveis de ambiente em um arquivo em lotes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24ed41289bb517d41db11fd3ebc41e5751b7afd9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: def4e8c58399af498e3c097f53e526fbedf9de0d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834359"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721858"
 ---
 # <a name="setlocal"></a>setlocal
 
 Inicia a localização de variáveis de ambiente em um arquivo em lotes. A localização continua até que um comando **ENDLOCAL** correspondente seja encontrado ou o final do arquivo em lotes seja atingido.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -30,7 +30,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 ## <a name="arguments"></a>Argumentos
 
-|{1&gt;Argumento&lt;1}|Descrição|
+|Argumento|Descrição|
 |--------|-----------|
 |enableextensions|Habilita as extensões de comando até que o comando **ENDLOCAL** correspondente seja encontrado, independentemente da configuração antes da execução do comando **setlocal** .|
 |disableextensions|Desabilita as extensões de comando até que o comando **ENDLOCAL** correspondente seja encontrado, independentemente da configuração antes da execução do comando **setlocal** .|
@@ -51,15 +51,15 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     Você pode ter mais de um comando **setlocal** ou **ENDLOCAL** em um programa em lotes (ou seja, comandos aninhados).
 -   Testando extensões de comando em arquivos em lotes
 
-    O comando **setlocal** define a variável ERRORLEVEL. Se você passar {**enableextensions** | **DISABLEEXTENSIONS**} ou {**enabledelayedexpansion** | **disabledelayedexpansion**}, a variável ERRORLEVEL será definida como **0** (zero). Caso contrário, ele será definido como **1**. Você pode usar essas informações em scripts do lote para determinar se as extensões estão disponíveis, conforme mostrado no exemplo a seguir:  
+    O comando **setlocal** define a variável ERRORLEVEL. Se você passar {**ENABLEEXTENSIONS** | **DISABLEEXTENSIONS**} ou {**enabledelayedexpansion** | **disabledelayedexpansion**}, a variável ERRORLEVEL será definida como **0** (zero). Caso contrário, ele será definido como **1**. Você pode usar essas informações em scripts do lote para determinar se as extensões estão disponíveis, conforme mostrado no exemplo a seguir:  
     ```
     setlocal enableextensions
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    Como o **cmd** não define a variável ERRORLEVEL quando as extensões de comando são desabilitadas, o comando **Verify** Inicializa a variável ERRORLEVEL para um valor diferente de zero quando você a usa com um argumento inválido. Além disso, se você usar o comando **setlocal** com argumentos {**ENABLEEXTENSIONS** | **disableextensions**} ou {**enabledelayedexpansion** | **disabledelayedexpansion**} e não definir a variável ERRORLEVEL como **1**, as extensões de comando não estarão disponíveis.
+    Como o **cmd** não define a variável ERRORLEVEL quando as extensões de comando são desabilitadas, o comando **Verify** Inicializa a variável ERRORLEVEL para um valor diferente de zero quando você a usa com um argumento inválido. Além disso, se você usar o comando **setlocal** com argumentos **{ENABLEEXTENSIONS** | **DISABLEEXTENSIONS**} ou {**enabledelayedexpansion** | **disabledelayedexpansion**} e não definir a variável ERRORLEVEL como **1**, as extensões de comando não estarão disponíveis.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Você pode localizar variáveis de ambiente em um arquivo em lotes, conforme mostrado no seguinte script de exemplo:
 ```

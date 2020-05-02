@@ -1,6 +1,6 @@
 ---
 title: sair do telnet
-description: O tópico comandos do Windows para telnet Quit, que sai do telnet.
+description: Tópico de referência para o Telnet Quit, que sai do telnet.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c6c5ef0d563096be2384454f0480bb250a6485c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 795629887b27cad0c125e7f580799a41d41666f9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833299"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721496"
 ---
 # <a name="telnet-quit"></a>Telnet: sair
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Sai do telnet.   
 
@@ -28,7 +28,7 @@ q[uit]
 ```  
 #### <a name="parameters"></a>Parâmetros  
 none  
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Saia do telnet.  
 ```  
 q  

@@ -1,6 +1,6 @@
 ---
 title: Início do subcomando-MulticastTransmission
-description: O tópico de comandos do Windows para o subcomando Start-MulticastTransmission, que inicia uma transmissão de conversão agendada de uma imagem.
+description: Tópico de referência para o subcomando Start-MulticastTransmission, que inicia uma transmissão de conversão agendada de uma imagem.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e882c54d2fbe744ca9fe25b2631f4d875886c756
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5f3ea615da5aa48e805b3b5e3d0df0a02198a304
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833779"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721674"
 ---
 # <a name="subcommand-start-multicasttransmission"></a>Subcomando: Start-MulticastTransmission
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Inicia uma transmissão de conversão agendada de uma imagem.
 
 ## <a name="syntax"></a>Sintaxe
-**Windows Server 2008**
+**Windows Server 2008**
 ```
 wdsutil /start-MulticastTransmissiomedia:<Image name> [/Server:<Server namemediatype:InstallmediaGroup:<Image group name>] [/Filename:<File name>]
 ```
@@ -46,13 +46,13 @@ wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
 ### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-mídia:<Image name>|Especifica o nome da imagem.|
+meio<Image name>|Especifica o nome da imagem.|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
 MediaType: {instalar&#124;inicialização}|Especifica o tipo de imagem. Observe que essa opção deve ser definida como **instalar** para o Windows Server 2008.|
 |/Architecture: {x86 &#124; IA64 &#124; x64}|A arquitetura da imagem de inicialização associada à transmissão para iniciar. Como é possível ter o mesmo nome de imagem para imagens de inicialização em diferentes arquiteturas, você deve especificar a arquitetura para garantir que a transmissão correta seja usada.|
 |\mediaGroup:<Image group name>]|Especifica o grupo de imagens da imagem. Se nenhum nome de grupo de imagens for especificado e houver apenas um grupo de imagens no servidor, esse grupo de imagens será usado. Se houver mais de um grupo de imagens no servidor, você deverá usar essa opção para especificar o nome do grupo de imagens.|
 |[/Filename:<File name>]|Especifica o nome do arquivo que contém a imagem. Se a imagem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.|
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 Para iniciar uma transmissão multicast, digite uma das seguintes opções:
 ```
 wdsutil /start-MulticastTransmissiomedia:Vista with Office
@@ -65,8 +65,8 @@ wdsutil /start-MulticastTransmission /Server:MyWDSServemedia:X64 Boot Imagemedia
 /Filename:boot.wim\n\
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [A chave de sintaxe de linha de comando](command-line-syntax-key.md)
-usando o [comando get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)
-[usando o comando Get-MulticastTransmission](using-the-get-multicasttransmission-command.md)
-[usando o comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md)
-[usando o comando Remove-MulticastTransmission](using-the-remove-multicasttransmission-command.md)
+- [Chave](command-line-syntax-key.md)
+de sintaxe de linha de comando usando o comando[Get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)
+usando o
+
+[comando Get-MulticastTransmission](using-the-get-multicasttransmission-command.md)[usando o comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md)[usando o comando Remove-MulticastTransmission](using-the-remove-multicasttransmission-command.md)

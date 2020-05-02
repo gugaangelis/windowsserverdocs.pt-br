@@ -1,6 +1,6 @@
 ---
 title: tzutil
-description: O tópico de comandos do Windows para tzutil, que exibe o utilitário de fuso horário do Windows.
+description: Tópico de referência para tzutil, que exibe o utilitário de fuso horário do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 330ee1eb4318df5aca1a5bb1a456711cd103c467
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4011f04b762522c8c0d157993bad71d88758d32f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832339"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721198"
 ---
 # <a name="tzutil"></a>tzutil
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe o utilitário de fuso horário do Windows. 
 
@@ -31,13 +31,13 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|Exibe a ajuda no prompt de comando.|
 |/g|Exibe a ID do fuso horário atual.|
-|/s \<TimeZoneID > [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
-|/l|lista todas as IDs de fuso horário e nomes de exibição válidos. A saída será:<p>-   \<nome de exibição ><br />-   \<ID de fuso horário >|
+|/s \<timezoneid> [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
+|/l|lista todas as IDs de fuso horário e nomes de exibição válidos. A saída será:<p>-   \<> de nome de exibição<br />-   \<ID de fuso horário>|
 
 ## <a name="remarks"></a>Comentários
 Um código de saída **0** indica que o comando foi concluído com êxito.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 Para exibir a ID do fuso horário atual, digite:
 ```
 tzutil /g

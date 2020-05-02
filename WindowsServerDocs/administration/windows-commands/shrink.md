@@ -1,6 +1,6 @@
 ---
 title: shrink
-description: O tópico de comandos do Windows para o DiskPart Shrink, que reduz o tamanho do volume selecionado pelo valor especificado.
+description: Tópico de referência para o DiskPart Shrink, que reduz o tamanho do volume selecionado pelo valor especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2afdaf4ac27ef0c4378d6ae34d959dc81e63bc18
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 357a2320bf8b26130c9aa148d513edff6f1e85db
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834199"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721797"
 ---
 # <a name="shrink"></a>shrink
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 O comando de redução do DiskPart reduz o tamanho do volume selecionado pelo valor especificado. Esse comando disponibiliza o espaço livre em disco do espaço não utilizado no final do volume.
 
@@ -46,7 +46,7 @@ shrink querymax [noerr]
 - se uma quantidade mínima for especificada, mas não houver espaço livre suficiente disponível, o comando falhará.
 - Um volume deve ser selecionado para que essa operação seja realizada com sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.
 - Esse comando não funciona em partições de OEM (fabricante de equipamento original), partições de sistema de EFI (Extensible Firmware Interface) ou partições de recuperação.
-  ## <a name="examples"></a><a name=BKMK_examples></a>Disso
+  ## <a name="examples"></a>Exemplos
   Para reduzir o tamanho do volume selecionado pelo maior valor possível entre 250 e 500 megabytes, digite:
   ```
   shrink desired=500 minimum=250

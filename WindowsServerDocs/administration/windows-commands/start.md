@@ -1,6 +1,6 @@
 ---
 title: start
-description: O tópico de comandos do Windows para iniciar, que inicia uma janela de prompt de comando separada para executar um programa ou comando especificado.
+description: Tópico de referência para Start, que inicia uma janela de prompt de comando separada para executar um programa ou comando especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ab8fc07923a2396a173803264d54a036983fb71
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 388a6b0871382c7704813298e6978a40cadeb709
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834069"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721758"
 ---
 # <a name="start"></a>start
 
 Inicia uma janela de prompt de comando separada para executar um programa ou comando especificado.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,18 +32,18 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<título >|Especifica o título a ser exibido na barra de título da janela do prompt de comando.|
-|/d \<caminho >|Especifica o diretório de inicialização.|
+|\<Título>|Especifica o título a ser exibido na barra de título da janela do prompt de comando.|
+|/d \<caminho>|Especifica o diretório de inicialização.|
 |/i|Passa o ambiente de inicialização cmd. exe para a nova janela de prompt de comando. Se **/i** não for especificado, o ambiente atual será usado.|
-|/min \|/Max|Especifica para minimizar ( **/min**) ou maximizar ( **/Max**) a nova janela do prompt de comando.|
-|/Separate \|/Shared|Inicia programas de 16 bits em um espaço de memória separado ( **/separate**) ou espaço de memória compartilhada ( **/Shared**). Essas opções não têm suporte em plataformas de 64 bits.|
-|/Low \|/normal \|/High \|/Realtime \|/AboveNormal \|/BelowNormal|Inicia um aplicativo na classe de prioridade especificada. Os valores de classe de prioridade válidos são **/Low**, **/normal**, **/High**, **/Realtime**, **/AboveNormal**e **/BelowNormal**.|
-|/Affinity \<HexAffinity >|Aplica a máscara de afinidade de processador especificada (expressa como um número hexadecimal) ao novo aplicativo.|
+|/Min \| /Max|Especifica para minimizar (**/min**) ou maximizar (**/Max**) a nova janela do prompt de comando.|
+|/Separate \| /Shared|Inicia programas de 16 bits em um espaço de memória separado (**/separate**) ou espaço de memória compartilhada (**/Shared**). Essas opções não têm suporte em plataformas de 64 bits.|
+|/Low \| /normal \| /High \| /Realtime \| /AboveNormal \| /BelowNormal|Inicia um aplicativo na classe de prioridade especificada. Os valores de classe de prioridade válidos são **/Low**, **/normal**, **/High**, **/Realtime**, **/AboveNormal**e **/BelowNormal**.|
+|/Affinity \<HexAffinity>|Aplica a máscara de afinidade de processador especificada (expressa como um número hexadecimal) ao novo aplicativo.|
 |/Wait|Inicia um aplicativo e aguarda sua finalização.|
 |/elevate|Executa o aplicativo como administrador.|
 |/b|Inicia um aplicativo sem abrir uma nova janela de prompt de comando. A manipulação CTRL + C é ignorada, a menos que o aplicativo permita o processamento de CTRL + C. Use CTRL + BREAK para interromper o aplicativo.|
-|\<> de comando \| programa de \<>|Especifica o comando ou programa a ser iniciado.|
-|Parâmetro de \<>...|Especifica os parâmetros a serem passados para o comando ou o programa.|
+|\<> do \| \<programa de> de comando|Especifica o comando ou programa a ser iniciado.|
+|\<> do parâmetro...|Especifica os parâmetros a serem passados para o comando ou o programa.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -58,7 +58,7 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
   Observe que a sintaxe é a mesma que a variável PATH, com ponto-e-vírgula separando cada extensão.
 - Quando ele pesquisa um arquivo executável, se não houver nenhuma correspondência em nenhuma extensão, **Iniciar** verificará se o nome corresponde a um nome de diretório. Se tiver, **Iniciar** abrirá Explorer. exe nesse caminho.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para iniciar o programa MyApp no prompt de comando e manter o uso da janela do prompt de comando atual, digite:
 ```

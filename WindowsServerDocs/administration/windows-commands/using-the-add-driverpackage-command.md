@@ -1,6 +1,6 @@
 ---
 title: Add-DriverPackage
-description: O tópico de comandos do Windows para Add-DriverPackage, que adiciona um pacote de driver ao servidor.
+description: Tópico de referência para Add-DriverPackage, que adiciona um pacote de driver ao servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2ccdfcddd2f605eccd9cd32fed7b8c6921297fc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12d7f7078cf3dde10f834a4d4c7784ecc1d9bdf2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832009"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721089"
 ---
 # <a name="add-driverpackage"></a>Add-DriverPackage
 
@@ -30,13 +30,13 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 |          Parâmetro           |                                                              Descrição                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|   InfFile:\<caminho do arquivo inf >   |                                           Especifica o caminho completo do arquivo. inf a ser adicionado.                                            |
-|    /Server: nome do servidor de\<>    | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
+|   InfFile:\<caminho do arquivo inf>   |                                           Especifica o caminho completo do arquivo. inf a ser adicionado.                                            |
+|    /Server:\<nome do servidor>    | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
 |      /Architecture: {x86      |                                                                 Win64                                                                  |
-| [/DriverGroup: nome do grupo de\<>] |                             Especifica o nome do grupo de drivers ao qual o pacote deve ser adicionado.                              |
-|   [/Name:\<nome amigável >]   |                                           Declara o nome amigável para o pacote de driver.                                            |
+| [/DriverGroup:\<nome do grupo>] |                             Especifica o nome do grupo de drivers ao qual o pacote deve ser adicionado.                              |
+|   [/Name:\<nome amigável>]   |                                           Declara o nome amigável para o pacote de driver.                                            |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para adicionar um pacote de driver, digite um dos seguintes:
 ```

@@ -1,6 +1,6 @@
 ---
 title: setx
-description: O tópico de comandos do Windows para setx, que cria ou modifica variáveis de ambiente no ambiente do usuário ou do sistema, sem a necessidade de programação ou script.
+description: Tópico de referência para setx, que cria ou modifica variáveis de ambiente no ambiente do usuário ou do sistema, sem a necessidade de programação ou script.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19f6625ffaaf745ae2af26e52986e97382f42702
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63cfb28770f635f97c8f3c7a701d9e959cee4a05
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834339"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721850"
 ---
 # <a name="setx"></a>setx
 
 Cria ou modifica variáveis de ambiente no ambiente do usuário ou do sistema, sem a necessidade de programação ou script. O comando **setx** também recupera os valores de chaves do registro e os grava em arquivos de texto.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,18 +34,18 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 |         Parâmetro          |                                                                                                                                              Descrição                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<computador >       |                                                                                  Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O valor padrão é o nome do computador local.                                                                                  |
-| /u [\<\]de domínio > <User name> |                                                                                           Executa o script com as credenciais da conta de usuário especificada. O valor padrão é as permissões do sistema.                                                                                            |
-|      /p [\<a senha >]      |                                                                                                         Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                         |
-|        Variável de \<>         |                                                                                                                 Especifica o nome da variável de ambiente que você deseja definir.                                                                                                                  |
-|          \<valor >          |                                                                                                                Especifica o valor para o qual você deseja definir a variável de ambiente.                                                                                                                 |
-|         /k \<caminho >         | Especifica que a variável é definida com base nas informações de uma chave do registro. O p*Ho* usa a seguinte sintaxe:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por exemplo, você pode especificar o seguinte caminho:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
-|      /f \<nome do arquivo >       |                                                                                                                               Especifica o arquivo que você deseja usar.                                                                                                                                |
-|        /a \<X ><Y>         |                                                                                                                    Especifica coordenadas absolutas e deslocamento como parâmetros de pesquisa.                                                                                                                    |
-|   /r \<X ><Y> <String>   |                                                                                                            Especifica as coordenadas relativas e o deslocamento da **cadeia de caracteres** como parâmetros de pesquisa.                                                                                                            |
+|       /s \<> do computador       |                                                                                  Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O valor padrão é o nome do computador local.                                                                                  |
+| /u [\<domínio>\]<User name> |                                                                                           Executa o script com as credenciais da conta de usuário especificada. O valor padrão é as permissões do sistema.                                                                                            |
+|      /p [\<senha>]      |                                                                                                         Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                         |
+|        \<> de variável         |                                                                                                                 Especifica o nome da variável de ambiente que você deseja definir.                                                                                                                  |
+|          \<Valor>          |                                                                                                                Especifica o valor para o qual você deseja definir a variável de ambiente.                                                                                                                 |
+|         > \<do caminho/k         | Especifica que a variável é definida com base nas informações de uma chave do registro. O p*Ho* usa a seguinte sintaxe:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por exemplo, você pode especificar o seguinte caminho:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<nome do arquivo>       |                                                                                                                               Especifica o arquivo que você deseja usar.                                                                                                                                |
+|        /a \<X>,<Y>         |                                                                                                                    Especifica coordenadas absolutas e deslocamento como parâmetros de pesquisa.                                                                                                                    |
+|   /r \<X>,<Y><String>   |                                                                                                            Especifica as coordenadas relativas e o deslocamento da **cadeia de caracteres** como parâmetros de pesquisa.                                                                                                            |
 |             /m             |                                                                                                Especifica a definição da variável no ambiente do sistema. A configuração padrão é o ambiente local.                                                                                                 |
 |             /x             |                                                                                                       Exibe as coordenadas do arquivo, ignorando as opções de linha de comando **/a**, **/r**e **/d** .                                                                                                        |
-|      /d \<delimitadores >      |                    Especifica delimitadores como, ou **\\** a serem usados **,** além dos quatro delimitadores internos — espaço, tabulação, Enter e avanço de alimentação. Os delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo delimitadores internos.                    |
+|      /d \<delimitadores>      |                    Especifica delimitadores como **,** ou **\\** a serem usados, além dos quatro delimitadores internos — espaço, tabulação, Enter e avanço de alimentação. Os delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo delimitadores internos.                    |
 |             /?             |                                                                                                                                 Exibe a ajuda no prompt de comando.                                                                                                                                  |
 
 ## <a name="remarks"></a>Comentários
@@ -60,7 +60,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 -   REG_DWORD valores do registro são extraídos e usados no modo hexadecimal.
 -   O modo de arquivo dá suporte apenas à análise de arquivos de texto de retorno de carro e alimentação de linha (CRLF).
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para definir a variável de ambiente de computador no ambiente local para o valor Brand1, digite:
 ```
@@ -74,7 +74,7 @@ Para definir a variável de ambiente MYPATH no ambiente local para usar o caminh
 ```
 setx MYPATH %PATH%
 ```
-Para definir a variável de ambiente MYPATH no ambiente local para usar o caminho de pesquisa definido na variável de ambiente PATH depois de substituir **~** por **%** , digite:
+Para definir a variável de ambiente MYPATH no ambiente local para usar o caminho de pesquisa definido na variável de ambiente PATH após **~** a **%** substituição por, digite:
 ```
 setx MYPATH ~PATH~ 
 ```
@@ -110,7 +110,7 @@ Para definir a variável de ambiente IPADDR no ambiente local para o valor encon
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-Para definir a variável de ambiente OCTET1 no ambiente local com o valor encontrado na coordenada 5, 3 no arquivo ipconfig. out com delimitadores **#$\*.** , digite:
+Para definir a variável de ambiente OCTET1 no ambiente local com o valor encontrado na coordenada 5, 3 no arquivo ipconfig. out com delimitadores ** #$ \*.**, digite:
 ```
 setx OCTET1 /f ipconfig.out /a 5,3 /d #$*. 
 ```

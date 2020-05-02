@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: Tópico de comandos do Windows para TSecImp, que importa informações de atribuição de um arquivo linguagem XML (XML) para o arquivo de segurança do servidor TAPI (Tsec. ini).
+description: Tópico de referência para TSecImp, que importa informações de atribuição de um arquivo linguagem XML (XML) para o arquivo de segurança do servidor TAPI (Tsec. ini).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a097bcd25e981f72a421b81b80b595343404ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: afd38f7081a9b4674eb6cac26f52849794b8d5e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832499"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721249"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -31,7 +31,7 @@ tsecimp /d
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/f \<nome do arquivo >|Obrigatório. Especifica o nome do arquivo XML que contém as informações de atribuição que você deseja importar.|
+|/f \<nome de arquivo>|Obrigatórios. Especifica o nome do arquivo XML que contém as informações de atribuição que você deseja importar.|
 |/v|Valida a estrutura do arquivo XML sem importar as informações para o arquivo Tsec. ini.|
 |/u|Verifica se cada usuário é um membro do domínio especificado no arquivo XML. O computador no qual você usa esse parâmetro deve estar conectado à rede. Esse parâmetro poderá reduzir significativamente o desempenho se você estiver processando uma grande quantidade de informações de atribuição de usuário.|
 |/d|Exibe uma lista de provedores de telefonia instalados. Para cada provedor de telefonia, os dispositivos de linha associados são listados, bem como os endereços e usuários associados a cada dispositivo de linha.|

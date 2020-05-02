@@ -1,6 +1,6 @@
 ---
 title: unlodctr
-description: Tópico de comandos do Windows para Unlodctr, que remove nomes de contadores de desempenho e explica o texto de um serviço ou driver de dispositivo do registro do sistema
+description: Tópico de referência para o Unlodctr, que remove nomes de contadores de desempenho e texto explicativo para um serviço ou driver de dispositivo do registro do sistema
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe7fc3c9eafefd59a5daab625e3af06b6addd292
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 56b6310dd48537c1f68780666efef750e12daf7d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832253"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721171"
 ---
 # <a name="unlodctr"></a>unlodctr
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Remove os nomes de **contadores de desempenho** e o texto **explicativo** para um serviço ou driver de dispositivo do registro do sistema.   
 
@@ -34,11 +34,11 @@ Unlodctr <DriverName>
 
 ## <a name="remarks"></a>Comentários  
 > [!WARNING]  
-> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.  
+> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.  
 
-Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, <DriverName>).  
+Se as informações fornecidas contiverem espaços, use aspas em volta do texto (por exemplo, <DriverName>).  
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Para remover as configurações atuais do registro de desempenho e o texto explicativo do contador para o serviço SMTP:  
 ```  
 unlodctr SMTPSVC  

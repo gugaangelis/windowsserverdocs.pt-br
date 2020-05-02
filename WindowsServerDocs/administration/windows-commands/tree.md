@@ -1,6 +1,6 @@
 ---
 title: árvore
-description: Tópico de comandos do Windows para árvore, que exibe a estrutura de diretório de um caminho, ou do disco em uma unidade, graficamente.
+description: Tópico de referência para árvore, que exibe a estrutura de diretório de um caminho, ou do disco em uma unidade, graficamente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14b9a4dfd5c84b55a32dbc3f6fd7e8a2cc00c7ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94b0429dadc3965c7e41ad5aa881fc902988ec9b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832669"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721279"
 ---
 # <a name="tree"></a>árvore
 
 Exibe a estrutura de diretório de um caminho ou do disco em uma unidade graficamente.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,8 +32,8 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> da unidade de \<:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
-|\<caminho >|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
+|\<> da unidade:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
+|\<Caminho>|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
 |/f|Exibe os nomes dos arquivos em cada diretório.|
 |/a|Especifica que a **árvore** deve usar caracteres de texto em vez de caracteres gráficos para mostrar as linhas que vinculam subdiretórios.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -42,7 +42,7 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 A estrutura exibida pela **árvore** depende dos parâmetros que você especificar no prompt de comando. Se você não especificar uma unidade ou caminho, a **árvore** exibirá a estrutura de árvore que começa com o diretório atual da unidade atual.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir os nomes de todos os subdiretórios no disco na unidade atual, digite:
 ```

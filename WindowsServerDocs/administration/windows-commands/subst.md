@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43cbc57aba29ea0b9150dccdfc566a93017a09a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62ba0de33e69998e7d3e343b1e53c1de7e630e10
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833639"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721609"
 ---
 # <a name="subst"></a>subst
 
@@ -22,7 +22,7 @@ ms.locfileid: "80833639"
 
 Associa um caminho a uma letra da unidade. Se usado sem parâmetros, **subst** exibirá os nomes das unidades virtuais em vigor.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,8 +35,8 @@ subst <Drive1>: /d
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> \<unidade1:|Especifica a unidade virtual à qual você deseja atribuir um caminho.|
-|[\<unidade2 >:]\<caminho >|Especifica a unidade física e o caminho que você deseja atribuir a uma unidade virtual.|
+|\<> unidade1:|Especifica a unidade virtual à qual você deseja atribuir um caminho.|
+|[\<Unidade2>:] \<Caminho>|Especifica a unidade física e o caminho que você deseja atribuir a uma unidade virtual.|
 |/d|Exclui uma unidade substituída (virtual).|
 |/?|Exibe a ajuda no prompt de comando.|
 

@@ -1,6 +1,6 @@
 ---
 title: shift
-description: Tópico de comandos do Windows para Shift, que altera a posição de parâmetros de lote em um arquivo em lotes.
+description: Tópico de referência para Shift, que altera a posição de parâmetros de lote em um arquivo em lotes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c242fe90a8bf32eda5a3db511910e3d7aa4610f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 617d7f712ccae13c522bc65db147c12c526b4efb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834259"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721828"
 ---
 # <a name="shift"></a>shift
 
 Altera a posição de parâmetros de lote em um arquivo em lotes.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,18 +32,18 @@ shift [/n <N>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/n \<N >|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
+|/n \<n>|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
 - O comando **Shift** altera os valores dos parâmetros de lote **%0** a **%9** copiando cada parâmetro para o anterior — o valor de **%1** é copiado para **%0**, o valor de **%2** é copiado para **%1**e assim por diante. Isso é útil para gravar um arquivo em lotes que executa a mesma operação em qualquer número de parâmetros.
 - Se as extensões de comando estiverem habilitadas, o comando **Shift** dará suporte à opção de linha de comando **/n** . A opção **/n** especifica o início da mudança no argumento enésimo, em que **n** é qualquer valor de 0 a 8. Por exemplo, **Shift/2** mudaria **%3** para **%2**, **%4** para **%3**e assim por diante e deixará **%0** e **%1** não afetado. As extensões de comando são habilitadas por padrão.
-- Você pode usar o comando **Shift** para criar um arquivo em lotes que pode aceitar mais de 10 parâmetros de lote. Se você especificar mais de 10 parâmetros na linha de comando, aqueles que aparecerem após o décimo ( **%9**) serão deslocados um de cada vez em **%9**.
-- O comando **Shift** não tem nenhum efeito sobre o **%\\** * parâmetro de lote.
-- Não há nenhum comando de **deslocamento** para trás. Depois de implementar o comando **Shift** , você não pode recuperar o parâmetro de lote ( **%0**) que existia antes da mudança.
+- Você pode usar o comando **Shift** para criar um arquivo em lotes que pode aceitar mais de 10 parâmetros de lote. Se você especificar mais de 10 parâmetros na linha de comando, aqueles que aparecerem após o décimo (**%9**) serão deslocados um de cada vez em **%9**.
+- O comando **Shift** não tem nenhum efeito no ** % **parâmetro * Batch.
+- Não há nenhum comando de **deslocamento** para trás. Depois de implementar o comando **Shift** , você não pode recuperar o parâmetro de lote (**%0**) que existia antes da mudança.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 As linhas a seguir de um arquivo em lotes de exemplo chamado mycopy. bat demonstram como usar **Shift** com qualquer número de parâmetros de lote. Neste exemplo, mycopy. bat copia uma lista de arquivos para um diretório específico. Os parâmetros de lote são representados pelos argumentos de nome de arquivo e diretório.
 ```

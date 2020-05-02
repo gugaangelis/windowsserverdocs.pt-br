@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: O tópico de comandos do Windows para tpmvscmgr, que é uma ferramenta de linha de comando que permite aos usuários com credenciais administrativas criar e excluir cartões inteligentes virtuais do TPM em um computador.
+description: Tópico de referência para tpmvscmgr, que é uma ferramenta de linha de comando que permite aos usuários com credenciais administrativas criar e excluir cartões inteligentes virtuais do TPM em um computador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4411e0ec3c75cd768b2fe32ad26b17331328e3ca
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ab0419060121033571eeba643cc0e2d42b45c743
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832729"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721301"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
-A ferramenta de linha de comando Tpmvscmgr permite que os usuários com credenciais administrativas criem e excluam cartões inteligentes virtuais do TPM em um computador. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+A ferramenta de linha de comando Tpmvscmgr permite que os usuários com credenciais administrativas criem e excluam cartões inteligentes virtuais do TPM em um computador.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,12 +35,12 @@ O comando Create configura novos cartões inteligentes virtuais no sistema do us
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/Name|Obrigatório. Indica o nome do novo cartão inteligente virtual.|
+|/Name|Obrigatórios. Indica o nome do novo cartão inteligente virtual.|
 |/AdminKey|Indica a chave de administrador desejada que pode ser usada para redefinir o PIN do cartão se o usuário esquecer o PIN.</br>**Padrão** Especifica o valor padrão de 010203040506070801020304050607080102030405060708.</br>**Aviso** Solicita que o usuário insira um valor para a chave de administrador.</br>**Aleatório** Resulta em uma configuração aleatória para a chave de administrador de um cartão que não é retornado ao usuário. Isso cria um cartão que pode não ser gerenciável usando ferramentas de gerenciamento de cartão inteligente. Quando gerado com RANDOM, a chave de administrador deve ser inserida como 48 caracteres hexadecimais.|
 |/PIN|Indica o valor de PIN do usuário desejado.</br>**Padrão** Especifica o PIN padrão de 12345678.</br>**Aviso** Solicita que o usuário insira um PIN na linha de comando. O PIN deve ter no mínimo oito caracteres e pode conter numerais, caracteres e caracteres especiais.|
 |/PUK|Indica o valor de PUK (chave de desbloqueio de PIN) desejado. O valor de PUK deve ter no mínimo oito caracteres e pode conter numerais, caracteres e caracteres especiais. Se o parâmetro for omitido, o cartão será criado sem um PUK.</br>**Padrão** Especifica o PUK padrão de 12345678.</br>**Aviso** Solicita que o usuário insira um PUK na linha de comando.|
 |/generate|Gera os arquivos no armazenamento que são necessários para que o cartão inteligente virtual funcione. Se o parâmetro/Generate for omitido, será equivalente a criar um cartão sem esse sistema de arquivos. Um cartão sem um sistema de arquivos pode ser gerenciado apenas por um sistema de gerenciamento de cartão inteligente, como o Microsoft Configuration Manager.|
-|/Machine|Permite que você especifique o nome de um computador remoto no qual o cartão inteligente virtual pode ser criado. Isso pode ser usado somente em um ambiente de domínio e depende do DCOM. Para que o comando tenha sucesso na criação de um cartão inteligente virtual em um computador diferente, o usuário que está executando esse comando deve ser um membro do grupo local de administradores no computador remoto.|
+|/machine|Permite que você especifique o nome de um computador remoto no qual o cartão inteligente virtual pode ser criado. Isso pode ser usado somente em um ambiente de domínio e depende do DCOM. Para que o comando tenha sucesso na criação de um cartão inteligente virtual em um computador diferente, o usuário que está executando esse comando deve ser um membro do grupo local de administradores no computador remoto.|
 |/?|Exibe a ajuda para este comando.|
 
 #### <a name="parameters-for-destroy-command"></a>Parâmetros para o comando Destroy
@@ -61,7 +61,7 @@ A associação no grupo **Administradores** (ou equivalente) no computador de de
 
 Para entradas alfanuméricas, o conjunto de caracteres ASCII completo de 127 é permitido.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 O comando a seguir mostra como criar um cartão inteligente virtual que pode ser gerenciado posteriormente por uma ferramenta de gerenciamento de cartão inteligente iniciada em outro computador.
 ```
@@ -79,7 +79,7 @@ O comando a seguir criará um cartão inteligente virtual com uma chave de admin
 ```
 tpmvscmgr.exe destroy /instance <instance ID> 
 ```
-em que \<ID de instância > é o valor impresso na tela quando o usuário criou o cartão. Especificamente, para o primeiro cartão criado, a ID da instância é ROOT\SMARTCARDREADER\0000.
+em \<que ID de instância> é o valor impresso na tela quando o usuário criou o cartão. Especificamente, para o primeiro cartão criado, a ID da instância é ROOT\SMARTCARDREADER\0000.
 
 ## <a name="additional-references"></a>Referências adicionais
 

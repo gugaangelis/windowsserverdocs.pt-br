@@ -1,6 +1,6 @@
 ---
 title: Parada do subcomando-TransportServer
-description: Tópico de comandos do Windows para Stop-TransportServer
+description: Tópico de referência para Stop-TransportServer
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44d62332307ffda4dcfa6af286c7b95cb12423dc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4321ec991b2c20911f992e4c3c38e5c9cfa5f165
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833699"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721617"
 ---
 # <a name="subcommand-stop-transportserver"></a>Subcomando: Stop-TransportServer
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Interrompe todos os serviços em um servidor de transporte.
 ## <a name="syntax"></a>Sintaxe
@@ -36,9 +36,9 @@ wdsutil /Stop-TransportServer
 wdsutil /verbose /Stop-TransportServer /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- A [chave de sintaxe de linha de comando](command-line-syntax-key.md)
-usando o [comando disable-TransportServer](using-the-disable-transportserver-command.md)
-[usando o comando Enable-TransportServer](using-the-enable-transportserver-command.md)
-[usando o comando Get-TransportServer,](using-the-get-transportserver-command.md)
-subcomando [: Set-TransportServer](subcommand-set-transportserver.md)
-[Subcommand: Start-TransportServer](subcommand-start-transportserver.md)
+- [Chave](command-line-syntax-key.md)
+de sintaxe de linha de comando usando o
+[comando Disable-TransportServer](using-the-disable-transportserver-command.md)
+[usando o comando Enable-TransportServer](using-the-enable-transportserver-command.md)[usando o subcomando Get-TransportServer comando](using-the-get-transportserver-command.md)
+[: Set-TransportServer](subcommand-set-transportserver.md)
+[subcomando: Start-TransportServer](subcommand-start-transportserver.md)

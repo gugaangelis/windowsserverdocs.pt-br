@@ -1,6 +1,6 @@
 ---
 title: tsdiscon
-description: Tópico de comandos do Windows para tsdiscon, que desconecta uma sessão de um servidor host de sessão de área de trabalho remota.
+description: Tópico de referência para tsdiscon, que desconecta uma sessão de um servidor de host de sessão de área de trabalho remota.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b008fa920290043b64e7421e91a545123634f1e7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e2a97d1b157445fd43acce5a80f3d793ed5ae5af
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832509"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721258"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Desconecta uma sessão de um servidor Host da Sessão da Área de Trabalho Remota.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
@@ -36,9 +36,9 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 |Parâmetro|Descrição|
 |-------|--------|
-|\<SessionId >|Especifica a ID da sessão a ser desconectada.|
-|\<SessionName >|Especifica o nome da sessão a ser desconectada.|
-|/Server:\<ServerName >|Especifica o servidor de terminal que contém a sessão que você deseja desconectar. Caso contrário, o servidor host da Sessão RD atual será usado.|
+|\<> SessionId|Especifica a ID da sessão a ser desconectada.|
+|\<SESSIONNAME>|Especifica o nome da sessão a ser desconectada.|
+|/Server:\<servername>|Especifica o servidor de terminal que contém a sessão que você deseja desconectar. Caso contrário, o servidor host da Sessão RD atual será usado.|
 |/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -49,7 +49,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 -   O parâmetro **/Server** será necessário somente se você usar o **tsdiscon** de um servidor remoto.
 -   A sessão do console não pode ser desconectada.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 - Para desconectar a sessão atual, digite:
   ```
   tsdiscon
@@ -63,5 +63,5 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   tsdiscon TERM04
   ```
   ## <a name="additional-references"></a>Referências adicionais
-  - [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [referência de comando serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+  - [Command-Line Syntax Key](command-line-syntax-key.md)
+  Referência de comando da chave de sintaxe de linha de comando[serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

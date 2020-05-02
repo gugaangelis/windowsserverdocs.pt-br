@@ -1,6 +1,6 @@
 ---
 title: envio de Telnet
-description: O tópico comandos do Windows para o Telnet Send, que envia comandos Telnet para o servidor Telnet.
+description: Tópico de referência para envio por Telnet, que envia comandos Telnet para o servidor Telnet.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fef48ca04a3817f58d063bc8b23f5c11c4ea197
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 432401bbe2050a7954967a73b5ba8abeee5bb1d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833279"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721495"
 ---
 # <a name="telnet-send"></a>Telnet: enviar
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Envia comandos Telnet para o servidor Telnet.   
 
@@ -33,13 +33,13 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 |    ao     |       Envia a saída de anulação do comando telnet.        |
 |    ayt    |       Envia o comando telnet.       |
 |    brk    |            Envia o comando telnet BRK.            |
-|    ESC    |      Envia o caractere de escape Telnet atual.      |
+|    esc    |      Envia o caractere de escape Telnet atual.      |
 |    IP     |     Envia o processo de interrupção do comando telnet.     |
 |   sincronização   |           Envia a sincronização do comando telnet.           |
 | <string>  | Envia qualquer cadeia de caracteres que você digitar para o servidor Telnet. |
 |     ?     |     Exibe a ajuda associada a este comando.      |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Envie-o para o servidor Telnet.  
 ```  
 sen ayt  

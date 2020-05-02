@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b43f4c9a89fa60f2244253d48d3dca646fe8e02d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c189af48e30729b53b04b343d2d4c0e4e81c4d0e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833429"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721538"
 ---
 # <a name="tasklist"></a>tasklist
 
 Exibe uma lista de processos em execução atualmente no computador local ou em um computador remoto. O **TaskList** substitui a ferramenta **tlist** .
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,29 +32,29 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 |          Parâmetro           |                                                                                                                                            Descrição                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        /s \<computador >        |                                                                                         Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                         |
-| /u [\<domínio >\\\]nome de usuário do \<> | Executa o comando com as permissões de conta do usuário que é especificado por *username* ou *Domain*\*username<em>. \*\*/u</em>\* pode ser especificado somente se **/s** for especificado. O padrão é as permissões do usuário que está conectado no momento no computador que está emitindo o comando. |
-|        /p \<senha >        |                                                                                                       Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                        |
-|         /m \<módulo >         |                                                               Lista todas as tarefas com módulos DLL carregados que correspondem ao nome de padrão fornecido. Se o nome do módulo não for especificado, essa opção exibirá todos os módulos carregados por cada tarefa.                                                                |
+|        /s \<> do computador        |                                                                                         Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                         |
+| /u [\<domínio>\\ \] \<nome de usuário> | Executa o comando com as permissões de conta do usuário que é especificado por *username* ou *Domain*\*username<em>. \*/u \*</em> \* pode ser especificado somente se **/s** for especificado. O padrão é as permissões do usuário que está conectado no momento no computador que está emitindo o comando. |
+|        /p \<senha>        |                                                                                                       Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                        |
+|         /m \<> do módulo         |                                                               Lista todas as tarefas com módulos DLL carregados que correspondem ao nome de padrão fornecido. Se o nome do módulo não for especificado, essa opção exibirá todos os módulos carregados por cada tarefa.                                                                |
 |             /svc             |                                                                                    Lista todas as informações de serviço para cada processo sem truncamento. Válido quando o parâmetro **/fo** é definido como **Table**.                                                                                    |
 |              /v              |                                                                                 Exibe informações detalhadas da tarefa na saída. Para obter a saída detalhada completa sem truncamento, use **/v** e **/svc** juntos.                                                                                 |
-|  /FO {tabela \| lista \| CSV}  |                                                                             Especifica o formato a ser usado para a saída. Os valores válidos são **tabela**, **lista**e **CSV**. O formato padrão de saída é **tabela**.                                                                             |
+|  /Fo {CSV \| da \| lista de tabelas}  |                                                                             Especifica o formato a ser usado para a saída. Os valores válidos são **tabela**, **lista**e **CSV**. O formato padrão de saída é **tabela**.                                                                             |
 |             /NH              |                                                                                             Suprime cabeçalhos de coluna na saída. Válido quando o parâmetro **/fo** é definido como **Table** ou **CSV**.                                                                                              |
-|        /Fi \<filtro >         |                                                                          Especifica os tipos de processos a serem incluídos ou excluídos da consulta. Consulte a tabela a seguir para obter nomes de filtro, operadores e valores válidos.                                                                          |
+|        /Fi \<filtro>         |                                                                          Especifica os tipos de processos a serem incluídos ou excluídos da consulta. Consulte a tabela a seguir para obter nomes de filtro, operadores e valores válidos.                                                                          |
 |              /?              |                                                                                                                                Exibe a ajuda no prompt de comando.                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>Filtrar nomes, operadores e valores
 
 | Nome do filtro |    Operadores válidos     |                                                                 Valores válidos                                                                 |
 |-------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-|   STATUS    |         eq, ne         |                                                                   EM EXECUÇÃO                                                                    |
+|   STATUS    |         eq, ne         |                                                                   RUNNING                                                                    |
 |  IMAGENAME  |         eq, ne         |                                                                  Nome da imagem                                                                  |
 |     PID     | eq, ne, gt, lt, ge, le |                                                                  Valor PID                                                                   |
-|   SESSÃO   | eq, ne, gt, lt, ge, le |                                                                Número da sessão                                                                |
+|   SESSION   | eq, ne, gt, lt, ge, le |                                                                Número da sessão                                                                |
 | SESSIONNAME |         eq, ne         |                                                                 Nome da sessão                                                                 |
-|   CPUTIME   | eq, ne, gt, lt, ge, le | O tempo de CPU no formato <em>hh</em> **:** <em>mm</em> **:** <em>SS</em>, em que *mm* e *SS* estão entre 0 e 59 e *hh* é qualquer número não assinado |
+|   CPUTIME   | eq, ne, gt, lt, ge, le | O tempo de CPU no formato <em>hh</em>**:**<em>mm</em>**:**<em>SS</em>, em que *mm* e *SS* estão entre 0 e 59 e *hh* é qualquer número não assinado |
 |  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              Uso de memória em KB                                                              |
-|  NOME DE USUÁRIO   |         eq, ne         |                                                             Qualquer nome de usuário válido                                                              |
+|  USERNAME   |         eq, ne         |                                                             Um nome de usuário válido                                                              |
 |  SERVIÇOS   |         eq, ne         |                                                                 Nome do serviço                                                                 |
 | WINDOWTITLE |         eq, ne         |                                                                 Título da janela                                                                 |
 |   MÓDULOS   |         eq, ne         |                                                                   Nome da DLL                                                                   |
