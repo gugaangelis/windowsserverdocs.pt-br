@@ -1,6 +1,6 @@
 ---
-title: cache Bitsadmin e DeleteUrl
-description: Tópico de comandos do Windows para **cache Bitsadmin e DeleteUrl**, que exclui todas as entradas de cache para a URL fornecida.
+title: cache Bitsadmin e deleteURL
+description: Tópico de referência para o cache Bitsadmin e o comando deleteURL, que exclui todas as entradas de cache para a URL fornecida.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,37 +9,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70099e795d0f05d0fcf75fbf6b82f5466d1c0c55
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 075c48e5c8c205cbbf3fe476260ec7909edcc3e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850929"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718444"
 ---
-# <a name="bitsadmin-cache-and-deleteurl"></a>cache Bitsadmin e DeleteUrl
+# <a name="bitsadmin-cache-and-deleteurl"></a>cache Bitsadmin e deleteURL
 
 Exclui todas as entradas de cache para a URL fornecida.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bitsadmin /deleteURL url
+bitsadmin /deleteURL URL
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
 | Parâmetro | Descrição |
 | -------------- | -------------- |
-| url | O localizador de recursos uniforme que identifica um arquivo remoto. |
+| URL | O localizador de recursos uniforme que identifica um arquivo remoto. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir exclui todas as entradas de cache para `https://www.contoso.com/en/us/default.aspx`
+Para excluir todas as entradas de `https://www.contoso.com/en/us/default.aspx`cache para:
 
 ```
-C:\>bitsadmin /deleteURL https://www.contoso.com/en/us/default.aspx 
+bitsadmin /deleteURL https://www.contoso.com/en/us/default.aspx 
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando de cache Bitsadmin](bitsadmin-cache.md)

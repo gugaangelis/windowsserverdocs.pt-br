@@ -1,6 +1,6 @@
 ---
 title: add
-description: O tópico de comandos do Windows para **Adicionar**, que adiciona volumes ao conjunto de volumes que devem ser copiados por sombra ou adiciona aliases ao ambiente de alias.
+description: Tópico de referência para o comando Add, que adiciona volumes ao conjunto de volumes que devem ser copiados por sombra ou adiciona aliases ao ambiente de alias.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9895082cc10223fd08cff6916c20c3af5613e947
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b621a3061c4e3366085c5cc44f91f26dd33d4e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851339"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719002"
 ---
 # <a name="add"></a>add
 
@@ -23,25 +23,23 @@ Adiciona volumes ao conjunto de volumes que devem ser copiados em sombra ou adic
 > [!NOTE]
 > Os aliases não são adicionados ao ambiente de alias até que a cópia de sombra seja criada. Os aliases que você precisa imediatamente devem ser adicionados usando **Add alias**.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
-
 ## <a name="syntax"></a>Sintaxe
 
 ```
-add 
-add volume <Volume> [provider <ProviderID>] 
-add alias <AliasName> <AliasValue>
+add
+add volume <volume> [provider <providerid>]
+add alias <aliasname> <aliasvalue>
 ```
 
-## <a name="add-subcommands"></a>Adicionar subcomandos
+### <a name="parameters"></a>Parâmetros
 
-| Subcomando | Descrição |
+| Parâmetro | Descrição |
 | ---------- | ----------- |
 | volume | Adiciona um volume ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados em sombra. Consulte [Adicionar volume](add-volume.md) para sintaxe e parâmetros. |
 | alias | Adiciona o nome e o valor fornecidos ao ambiente do alias. Consulte [Adicionar alias](add-alias.md) para sintaxe e parâmetros. |
-| `/?` | Exibe a ajuda na linha de comando. |
+| /? | Exibe a ajuda na linha de comando. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir os volumes adicionados e os aliases que estão atualmente no ambiente, digite:
 

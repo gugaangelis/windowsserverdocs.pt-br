@@ -1,6 +1,6 @@
 ---
 title: cprofile
-description: O tópico de comandos do Windows para cprofile, que foi preterido e não tem garantia de suporte em versões futuras do Windows.
+description: Tópico de referência para o comando cprofile. Esse comando foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed79e96f2e3703a3025be259889061ba58ceac7c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1b1103286859f1ab7c790ed20ae14f034d4030bb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847129"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719252"
 ---
 # <a name="cprofile"></a>cprofile
 
 O cprofile foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
 
-Cprofile. exe: limpar perfil. Essa ferramenta está incluída em todos os sistemas operacionais Windows Server 2003, exceto no Windows Server 2003, Web Edition. Para obter mais informações [, consulte ferramentas e configurações dos serviços de terminal](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).
+Cprofile. exe: limpar perfil. Os serviços de terminal foram atualizados para Serviços de Área de Trabalho Remota. Para obter mais informações, consulte [Bem-vindo ao serviços de área de trabalho remota](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/welcome-to-rds).

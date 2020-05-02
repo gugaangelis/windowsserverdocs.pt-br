@@ -1,6 +1,6 @@
 ---
 title: Auditpol Get
-description: O tópico de comandos do Windows para **Auditpol Get**, que recupera a política do sistema, a política por usuário, as opções de auditoria e o objeto do descritor de segurança de auditoria.
+description: Tópico de referência para o comando de obtenção do Auditpol, que recupera a política do sistema, a política por usuário, as opções de auditoria e o objeto do descritor de segurança de auditoria.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe2b1bd060f128e39fa1c687ec963c964798fe1b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 859ea9e2e42af0fe7f34f4e378166685f8316b9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851189"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719132"
 ---
 # <a name="auditpol-get"></a>Auditpol Get
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server, 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Recupera a política do sistema, a política por usuário, as opções de auditoria e o objeto do descritor de segurança de auditoria.
+
+Para executar operações *Get* nas políticas *por usuário* e *sistema* , você deve ter permissão de **leitura** para esse objeto definido no descritor de segurança. Você também pode executar operações *Get* se tiver o direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite o acesso adicional que não é necessário para executar as operações de *obtenção* geral.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-auditpol /get 
+auditpol /get
 [/user[:<username>|<{sid}>]]
 [/category:*|<name>|<{guid}>[,:<name|<{guid}> ]]
 [/subcategory:*|<name>|<{guid}>[,:<name|<{guid}> ]]
@@ -46,12 +48,11 @@ auditpol /get
 | /r | Exibe a saída no formato de relatório, CSV (valor separado por vírgulas). |
 | /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+### <a name="remarks"></a>Comentários
 
 Todas as categorias e subcategorias podem ser especificadas pelo GUID ou pelo nome entre aspas ("). Os usuários podem ser especificados por SID ou nome.
-para todas as operações get para a política por usuário e a política do sistema, você deve ter permissão de leitura nesse objeto definido no descritor de segurança. Você também pode executar operações Get por meio do direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite o acesso adicional que não é necessário para executar a operação get.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para recuperar a política de auditoria por usuário para a conta de convidado e exibir a saída para o sistema, controle detalhado e categorias de acesso a objeto, digite:
 
@@ -60,7 +61,7 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:Syst
 ```
 
 > [!NOTE]
-> Esse comando é útil em dois cenários. Ao monitorar uma conta de usuário específica para atividades suspeitas, você pode usar o comando/Get para recuperar os resultados em categorias específicas usando uma política de inclusão para habilitar a auditoria adicional. Ou, se as configurações de auditoria em uma conta estiverem registrando vários eventos, mas supérfluos, você poderá usar o comando/Get para filtrar eventos estranhos para essa conta com uma política de exclusão. Para obter uma lista de todas as categorias, use o comando Auditpol/list/Category.
+> Esse comando é útil em dois cenários. 1) ao monitorar uma conta de usuário específica para atividades suspeitas, você pode `/get` usar o comando para recuperar os resultados em categorias específicas usando uma política de inclusão para habilitar a auditoria adicional. 2) se as configurações de auditoria em uma conta estiverem registrando vários eventos, mas supérfluos `/get` , você poderá usar o comando para filtrar eventos estranhos para essa conta com uma política de exclusão. Para obter uma lista de todas as categorias, `auditpol /list /category` use o comando.
 
 Para recuperar a política de auditoria por usuário para uma categoria e uma determinada subcategoria, que relata as configurações inclusivas e exclusivas para essa subcategoria na categoria sistema da conta de convidado, digite:
 
@@ -105,4 +106,7 @@ auditpol /get /option:CrashOnAuditFail /r
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
+
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comandos Auditpol](auditpol.md)

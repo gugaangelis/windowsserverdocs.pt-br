@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDFSConfig
-description: Tópico de comandos do Windows para Dfsdiag TestDFSConfig, que verifica a configuração de um namespace de Sistema de Arquivos Distribuído (DFS).
+description: Tópico de referência para Dfsdiag TestDFSConfig, que verifica a configuração de um namespace de Sistema de Arquivos Distribuído (DFS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffb75ba26b4ed90dbf5c8bfda80f4a81f986e46a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 057b0662fddb7148837be16380d190cdb37382c5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846318"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719585"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Verifica a configuração de um namespace de Sistema de Arquivos Distribuído (DFS) executando as seguintes ações:  
   
@@ -46,7 +46,7 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
 |-----------------------|-----------------------------------------|
 | /DFSRoot:`<namespace>` | O namespace (raiz DFS) a ser diagnosticado. |
   
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
   
 ```  
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  

@@ -1,6 +1,6 @@
 ---
 title: endlocal
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4958c5419ed4f6374f7c6ecf09bdf67f61134d93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f007a9ec1e86093192630011c5197740dfefe922
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845109"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719376"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -22,7 +22,7 @@ ms.locfileid: "80845109"
 
 Encerra a localização de alterações de ambiente em um arquivo em lotes e restaura as variáveis de ambiente para seus valores antes da execução do comando **setlocal** correspondente.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -45,7 +45,7 @@ endlocal
 > [!NOTE]
 > Para obter mais informações sobre como habilitar e desabilitar extensões de comando, consulte [cmd](cmd.md).
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Você pode localizar variáveis de ambiente em um arquivo em lotes. Por exemplo, o programa a seguir inicia o programa superapp batch na rede, direciona a saída para um arquivo e exibe o arquivo no bloco de notas:
 ```

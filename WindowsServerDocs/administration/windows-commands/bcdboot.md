@@ -1,6 +1,6 @@
 ---
 title: bcdboot
-description: Tópico de comandos do Windows para o **BCDboot**, que configura rapidamente uma partição do sistema ou repara o ambiente de inicialização localizado na partição do sistema.
+description: Tópico de referência para o comando do BCDboot, que configura rapidamente uma partição do sistema ou repara o ambiente de inicialização localizado na partição do sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 637170cbd8ee4f3c11ee1dc77a0cd49b5dfa3038
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cde91738f524350f72f0278495e4bd46a3960e6f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851079"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718707"
 ---
 # <a name="bcdboot"></a>bcdboot
 
@@ -30,11 +30,11 @@ bcdboot <source> [/l] [/s]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| {1&gt;source&lt;1} | Especifica o local do diretório do Windows a ser usado como a origem para copiar os arquivos do ambiente de inicialização. |
+| source | Especifica o local do diretório do Windows a ser usado como a origem para copiar os arquivos do ambiente de inicialização. |
 | /l | Especifica a localidade. A localidade padrão é inglês americano. |
 | /s | Especifica a letra de volume da partição do sistema. O padrão é a partição do sistema identificada pelo firmware. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para obter informações sobre onde encontrar o BCDboot e exemplos de como usar esse comando, consulte o tópico [Opções de linha de comando do BCDboot](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824874(v=win.10)x) .
 

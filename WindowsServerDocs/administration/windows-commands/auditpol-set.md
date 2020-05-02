@@ -1,6 +1,6 @@
 ---
 title: conjunto de Auditpol
-description: O tópico de comandos do Windows para o **conjunto de Auditpol**, que define a política de auditoria por usuário, a política de auditoria do sistema ou as opções de auditoria.
+description: Tópico de referência para o comando de conjunto Auditpol, que define a política de auditoria por usuário, a política de auditoria do sistema ou as opções de auditoria.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0773a0a9ae9237b39293bae80001616d00630436
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851139"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718885"
 ---
 # <a name="auditpol-set"></a>conjunto de Auditpol
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Define a política de auditoria por usuário, a política de auditoria do sistema ou as opções de auditoria.
+
+Para executar operações de *definição* nas políticas *por usuário* e *sistema* , você deve ter a permissão **gravar** ou **controle total** para esse objeto definido no descritor de segurança. Você também pode executar operações *set* se tiver o direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite acesso adicional que não é necessário para executar as operações de *conjunto* geral.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -49,11 +51,7 @@ auditpol /set
 | /SD | Define o descritor de segurança usado para delegar acesso à política de auditoria. O descritor de segurança deve ser especificado usando o SDDL (Security Descriptor Definition Language). O descritor de segurança deve ter uma DACL (lista de controle de acesso discricionário). |
 | /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-
-Para todas as operações de conjunto para a política por usuário e a política do sistema, você deve ter a permissão gravar ou controle total nesse objeto definido no descritor de segurança. Você também pode executar operações de definição por meio do direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite o acesso adicional que não é necessário para executar a operação set.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para definir a política de auditoria por usuário para todas as subcategorias na categoria controle detalhado para o usuário Mikedan para que todas as tentativas bem-sucedidas do usuário sejam auditadas, digite:
 
@@ -97,3 +95,5 @@ auditpol /set /option:CrashOnAuditFail /value:enable
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comandos Auditpol](auditpol.md)

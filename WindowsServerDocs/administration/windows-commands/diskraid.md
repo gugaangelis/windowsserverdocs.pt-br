@@ -1,6 +1,6 @@
 ---
 title: diskraid
-description: O tópico de comandos do Windows para o DiskRAID, que é uma ferramenta de linha de comando que permite que você configure e gerencie a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
+description: Tópico de referência para o DiskRAID, que é uma ferramenta de linha de comando que permite que você configure e gerencie a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea71fc67420700527a3a14494c947aed7a2ec747
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25a6a0315b74e948fd23ac1257072ac583f311d0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845399"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719437"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -42,14 +42,14 @@ Para exibir a sintaxe do comando, clique em um comando:
 -   [detalhes](#BKMK_8)
 -   [desassociar](#BKMK_9)
 -   [exit](#BKMK_10)
--   [extend](#BKMK_11)
+-   [estender](#BKMK_11)
 -   [flushcache](#BKMK_12)
 -   [help](#BKMK_13)
 -   [importtarget](#BKMK_14)
 -   [Configure](#BKMK_15)
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
--   [lista](#BKMK_19)
+-   [list](#BKMK_19)
 -   [entrar](#BKMK_20)
 -   [logout](#BKMK_21)
 -   [manter](#BKMK_22)
@@ -60,7 +60,7 @@ Para exibir a sintaxe do comando, clique em um comando:
 -   [reenumerar](#BKMK_27)
 -   [Nova](#BKMK_28)
 -   [rem](#BKMK_29)
--   [exclu](#BKMK_30)
+-   [remover](#BKMK_30)
 -   [replace](#BKMK_31)
 -   [reset](#BKMK_32)
 -   [Não](#BKMK_33)
@@ -89,7 +89,7 @@ Especifica o número de LUN a ser adicionado como um plex para o LUN selecionado
 > [!CAUTION]
 > Todos os dados no LUN que está sendo adicionado como um plex serão excluídos.
 
-**TPGROUP tportal =** <em>n</em>
+**TPGROUP tportal =**<em>n</em>
 
 Especifica o número do portal de destino iSCSI a ser adicionado ao grupo do portal de destino iSCSI selecionado no momento.
 
@@ -137,9 +137,9 @@ Para uso com o parâmetro **controladores** ou **destinos** . Especifica os núm
 ```
 Para uso com o parâmetro **ports** . Especifica as portas do controlador para definir o ativo usando um par de número de controlador (*n*) e número de porta (*m*).
 
-#### <a name="example"></a>{1&gt;Exemplo&lt;1}
+#### <a name="example"></a>Exemplo
 
-O exemplo a seguir mostra como associar e adicionar portas a um LUN que usa um provedor VDS 1,1:
+Para mostrar como associar e adicionar portas a um LUN que usa um provedor VDS 1,1:
 ```
 DISKRAID> SEL LUN 5
 LUN 5 is now the selected LUN.
@@ -177,11 +177,11 @@ Limpa os sinalizadores especificados. A palavra-chave **All** apaga todos os sin
 
 Aplica os sinalizadores atuais ao LUN selecionado.
 
-sinalizador de \<>
+\<sinalizador>
 
 Os sinalizadores são identificados por acrônimos de três letras.
 
-|Flag|Descrição|
+|Sinalizador|Descrição|
 |----|-----------|
 |FCR|Recuperação rápida de falhas necessária|
 |FTL|Tolerante a falhas|
@@ -267,7 +267,7 @@ Comunica o segredo CHAP de um iniciador iSCSI para o destino iSCSI atual em foco
 
 Especifica o segredo a ser usado. Se estiver vazio, o segredo será limpo.
 
-**alvo**
+**destino**
 
 Especifica um destino no subsistema selecionado no momento para associar ao segredo. Isso é opcional ao definir um segredo no iniciador e deixá-lo fora indica que o segredo será usado para todos os destinos que ainda não têm um segredo associado.
 
@@ -297,7 +297,7 @@ create tpgroup [noerr]
 
 Cria um LUN simples.
 
-**Stripe**
+**faixa**
 
 Cria um LUN distribuído.
 
@@ -313,7 +313,7 @@ Cria um LUN espelhado.
 
 Cria um LUN usando as dicas *automagic* atualmente em vigor. Consulte o subcomando **automagic** para obter mais informações.
 
-= de **tamanho**
+**tamanho**=
 
 Especifica o tamanho total do LUN em megabytes. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas.
 
@@ -327,7 +327,7 @@ Para especificar o tamanho usando outras unidades, use um dos seguintes sufixos 
 -   **TB** para terabyte.
 -   **PB** para petabyte.
 
-**unidades**=
+**controla**=
 
 Especifica o *drive_number* para as unidades a serem usadas para criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Se o parâmetro **size =** for especificado, os provedores selecionarão unidades da lista de unidades especificadas para criar o LUN. Os provedores tentarão usar as unidades na ordem especificada, quando possível.
 
@@ -343,7 +343,7 @@ Para especificar o tamanho usando outras unidades, use um dos seguintes sufixos 
 -   **TB** para terabyte.
 -   **PB** para petabyte.
 
-**alvo**
+**destino**
 
 Cria um novo destino iSCSI no subsistema selecionado no momento.
 
@@ -390,7 +390,7 @@ Exclui o LUN selecionado no momento e todos os dados nele.
 
 Especifica que o disco no sistema local associado ao LUN será limpo antes que o LUN seja excluído.
 
-**alvo**
+**destino**
 
 Excluirá o destino iSCSI atualmente selecionado se nenhum LUN estiver associado ao destino.
 
@@ -454,7 +454,7 @@ Lista informações detalhadas sobre o LUN selecionado no momento, incluindo as 
 
 Lista informações detalhadas sobre o portal de destino iSCSI selecionado no momento.
 
-**alvo**
+**destino**
 
 Lista informações detalhadas sobre o destino iSCSI selecionado no momento.
 
@@ -500,7 +500,7 @@ Para uso com o parâmetro **controladores** ou **destinos** . Especifica os núm
 ```
 Para uso com o parâmetro **ports** . Especifica as portas do controlador a serem definidas como inativas usando um par de número de controlador (*n*) e número de porta (*m*).
 
-#### <a name="example"></a>{1&gt;Exemplo&lt;1}
+#### <a name="example"></a>Exemplo
 
 ```
 DISKRAID> SEL LUN 5
@@ -555,7 +555,7 @@ Para especificar o tamanho usando outras unidades, use um dos seguintes sufixos 
 
 **unidades =**
 
-Especifica o > de drive_number \<para as unidades a serem usadas ao criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Os provedores usam as unidades na ordem especificada quando possível.
+Especifica o \<> drive_number para as unidades a serem usadas ao criar um LUN. Se o parâmetro **size =** não for especificado, o LUN criado será o maior tamanho possível permitido por todas as unidades especificadas. Os provedores usam as unidades na ordem especificada quando possível.
 
 **NOERR**
 
@@ -563,7 +563,7 @@ Especifica que qualquer falha que ocorra durante a execução desta operação d
 
 #### <a name="remarks"></a>Comentários
 
-O *tamanho* ou o parâmetro da unidade de \<> deve ser especificado. Eles também podem ser usados juntos.
+O *tamanho* ou a \<unidade> parâmetro deve ser especificado. Eles também podem ser usados juntos.
 
 ### <a name="flushcache"></a><a name=BKMK_12></a>flushcache
 
@@ -636,7 +636,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 **type**
 
-Especifica a política de balanceamento de carga. Se o tipo não for especificado, o parâmetro **path** deverá ser especificado. O tipo pode ser um dos seguintes:
+Especifica a política de balanceamento de carga. Se o tipo não for especificado, o parâmetro **path** deverá ser especificado. Tipo pode ser um dos seguintes:
 
 **Failover**: usa um caminho primário com outros caminhos sendo caminhos de backup.
 
@@ -654,9 +654,9 @@ Especifica a política de balanceamento de carga. Se o tipo não for especificad
 
 **estruturas**
 
-Especifica se um caminho é **primário** ou tem um determinado peso de \<>. Todos os caminhos não especificados são definidos implicitamente como backup. Todos os caminhos listados devem ser um dos caminhos de LUN atualmente selecionados.
+Especifica se um caminho é **primário** ou tem um determinado \<peso>. Todos os caminhos não especificados são definidos implicitamente como backup. Todos os caminhos listados devem ser um dos caminhos de LUN atualmente selecionados.
 
-### <a name="list"></a><a name=BKMK_19></a>lista
+### <a name="list"></a><a name=BKMK_19></a>list
 
 Exibe uma lista de objetos do tipo especificado.
 
@@ -750,7 +750,7 @@ Especifica um portal de destino opcional no subsistema selecionado no momento pa
 
 Especifica um portal do iniciador opcional no adaptador do iniciador especificado a ser usado para o logon.
 
-sinalizador de \<>
+\<sinalizador>
 
 Identificado por três acrônimos de letra:
 
@@ -790,11 +790,11 @@ maintenance <object operation> [count=<iteration>]
 
 ##### <a name="parameters"></a>Parâmetros
 
-objeto \<>
+\<> de objeto
 
 Especifica o tipo de objeto no qual executar a operação. O tipo de *objeto* pode ser um **subsistema**, **controlador**, **porta, unidade** ou **LUN**.
 
-\<operação >
+\<> de operação
 
 Especifica a operação de manutenção a ser executada. O tipo de *operação* pode ser **SPINUP**, **spindown**, **piscar**, **emitir aviso sonoro** ou **ping**. Uma *operação* deve ser especificada.
 
@@ -814,7 +814,7 @@ name {subsystem | lun | target} [<name>]
 
 #### <a name="parameter"></a>Parâmetro
 
-nome do \<>
+\<nome>
 
 Especifica um nome para o subsistema, LUN ou destino. O nome deve ter menos de 64 caracteres de comprimento. Se nenhum nome for fornecido, o nome existente, se houver, será excluído.
 
@@ -830,9 +830,9 @@ offline <object>
 
 #### <a name="parameter"></a>Parâmetro
 
-objeto \<>
+\<> de objeto
 
-Especifica o tipo de objeto no qual executar esta operação. O objeto \<>
+Especifica o tipo de objeto no qual executar esta operação. O \<objeto>
 
 o tipo pode ser **subsistema**, **controlador**, **unidade**, **LUN**ou **tportal**.
 
@@ -848,9 +848,9 @@ online <object>
 
 #### <a name="parameter"></a>Parâmetro
 
-objeto \<>
+\<> de objeto
 
-Especifica o tipo de objeto no qual executar esta operação. O objeto \<>
+Especifica o tipo de objeto no qual executar esta operação. O \<objeto>
 
 o tipo pode ser **hbaport**, **Subsystem**, **Controller**, **drive**, **LUN**ou **tportal**.
 
@@ -916,7 +916,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 #### <a name="parameter"></a>Parâmetro
 
-**TPGROUP tportal =** \<tportal >
+**TPGROUP tportal =** \<tportal>
 
 Especifica o portal de destino iSCSI a ser removido.
 
@@ -938,7 +938,7 @@ replace drive=<drive_number>
 
 **unidade =**
 
-Especifica o > de drive_number \<para a unidade a ser substituída.
+Especifica o \<> drive_number para a unidade a ser substituída.
 
 #### <a name="remarks"></a>Comentários
 
@@ -978,59 +978,59 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 **objeto**
 
-Especifica o tipo de objeto a ser selecionado. O tipo de objeto de \<> pode ser **provedor**, **subsistema**, **controlador**, **unidade**ou **LUN**.
+Especifica o tipo de objeto a ser selecionado. O \<tipo de> de objeto pode ser **Provider**, **Subsystem**, **Controller**, **drive**ou **LUN**.
 
-**hbaport** [\<n >]
+**hbaport** [\<n>]
 
 Define o foco para a porta HBA local especificada. Se nenhuma porta HBA for especificada, o comando exibirá a porta HBA selecionada no momento (se houver). A especificação de um índice de porta HBA inválido resulta em nenhuma porta HBA em foco. A seleção de uma porta HBA anula a seleção de todos os adaptadores iniciadores e portais iniciadores selecionados.
 
-**IADAPTER** [\<n >]
+**IADAPTER** [\<n>]
 
 Define o foco para o adaptador do iniciador iSCSI local especificado. Se nenhum adaptador do iniciador for especificado, o comando exibirá o adaptador do iniciador selecionado no momento (se houver). A especificação de um índice de adaptador iniciador inválido resulta em nenhum adaptador de iniciador em foco. A seleção de um adaptador de iniciador anula a seleção de portas HBA selecionadas e portais do iniciador.
 
-**IPORTAL** [\<n >]
+**IPORTAL** [\<n>]
 
 Define o foco para o portal do iniciador iSCSI local especificado no adaptador do iniciador iSCSI selecionado. Se nenhum portal do iniciador for especificado, o comando exibirá o portal do iniciador selecionado no momento (se houver). A especificação de um índice inválido do portal do iniciador resulta em nenhum portal do iniciador selecionado.
 
-**provedor** [\<n >]
+**provedor** [\<n>]
 
 Define o foco para o provedor especificado. Se nenhum provedor for especificado, o comando exibirá o provedor selecionado no momento (se houver). A especificação de um índice de provedor inválido resulta em nenhum provedor em foco.
 
-**subsistema** [\<n >]
+**subsistema** [\<n>]
 
 Define o foco para o subsistema especificado. Se nenhum subsistema for especificado, o comando exibirá o subsistema com foco (se houver). A especificação de um índice de subsistema inválido resulta em nenhum subsistema em foco. A seleção de um subsistema seleciona implicitamente seu provedor associado.
 
-**controlador** [\<n >]
+**controlador** [\<n>]
 
 Define o foco para o controlador especificado no subsistema selecionado no momento. Se nenhum controlador for especificado, o comando exibirá o controlador selecionado no momento (se houver). A especificação de um índice de controlador inválido resulta em nenhum controlador em foco. A seleção de um controlador anula a seleção de quaisquer portas de controlador, unidades, LUNs, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**porta** [\<n >]
+**porta** [\<n>]
 
 Define o foco para a porta do controlador especificado no controlador selecionado no momento. Se nenhuma porta for especificada, o comando exibirá a porta selecionada no momento (se houver). A especificação de um índice de porta inválido resulta em nenhuma porta selecionada.
 
-**unidade** [\<n >]
+**unidade** [\<n>]
 
 Define o foco para a unidade especificada ou o eixo físico no subsistema selecionado no momento. Se nenhuma unidade for especificada, o comando exibirá a unidade selecionada no momento (se houver). A especificação de um índice de unidade inválido resulta em nenhuma unidade em foco. A seleção de uma unidade anula a seleção de todos os controladores, portas do controlador, LUNs, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**LUN** [\<n >]
+**LUN** [\<n>]
 
 Define o foco para o LUN especificado no subsistema selecionado no momento. Se nenhum LUN for especificado, o comando exibirá o LUN selecionado no momento (se houver). A especificação de um índice LUN inválido resulta em nenhum LUN selecionado. A seleção de um LUN anula a seleção de todos os controladores, portas do controlador, unidades, portais de destino, destinos e grupos do portal de destino selecionados.
 
-**tportal** [\<n >]
+**tportal** [\<n>]
 
 Define o foco para o portal de destino iSCSI especificado no subsistema selecionado no momento. Se nenhum portal de destino for especificado, o comando exibirá o portal de destino selecionado no momento (se houver). A especificação de um índice do portal de destino inválido resulta em nenhum portal de destino selecionado. A seleção de um portal de destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, destinos e grupos do portal de destino.
 
-**destino** [\<n >]
+**destino** [\<n>]
 
 Define o foco para o destino iSCSI especificado no subsistema selecionado no momento. Se nenhum destino for especificado, o comando exibirá o destino selecionado no momento (se houver). A especificação de um índice de destino inválido resulta em nenhum destino selecionado. A seleção de um destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, portais de destino e grupos do portal de destino.
 
-**TPGROUP** [\<n >]
+**TPGROUP** [\<n>]
 
 Define o foco para o grupo do portal de destino iSCSI especificado no destino iSCSI selecionado no momento. Se nenhum grupo do portal de destino for especificado, o comando exibirá o grupo do portal de destino selecionado no momento (se houver). A especificação de um índice de grupo do portal de destino inválido resulta em nenhum grupo de portal de destino em foco.
 
-[\<n >]
+[\<n>]
 
-Especifica o número do objeto de \<> a ser selecionado. Se o <object number> especificado não for válido, todas as seleções existentes para objetos do tipo especificado serão limpas. Se nenhum <object number> for especificado, o objeto atual será exibido.
+Especifica o \<número do objeto> a ser selecionado. Se o <object number> especificado não for válido, todas as seleções existentes para objetos do tipo especificado serão limpas. Se não <object number> for especificado, o objeto atual será exibido.
 
 ### <a name="setflag"></a><a name=BKMK_34></a>SetFlag
 
@@ -1111,7 +1111,7 @@ Especifica que o LUN deve se tornar acessível de todos os hosts. No entanto, n�
 > [!IMPORTANT]
 > Você deve fazer logoff do destino antes de executar o comando remover máscara de tudo.
 
-**None**
+**nenhum**
 
 Especifica que o LUN não deve ser acessível a nenhum host.
 
@@ -1144,7 +1144,7 @@ Por padrão, o DiskRAID para o processamento de comandos e retorna um código de
 
 ### <a name="diskraid-error-codes"></a>Códigos de erro do DiskRAID
 
-|Código de erro|Descrição do Erro|
+|Código do Erro|Descrição do erro|
 |----------|-----------------|
 |0|Não ocorreu nenhum erro. Todo o script foi executado sem falha.|
 |1|Ocorreu uma exceção fatal.|
@@ -1159,7 +1159,7 @@ Se você quiser exibir o status do subsistema 0 em seu computador, digite o segu
 ```
 diskraid
 ```
-Pressione ENTER. O seguinte é exibido:
+Pressione ENTER. O seguinte resultado é exibido:
 ```
 Microsoft Diskraid version 5.2.xxxx
 Copyright (©) 2003 Microsoft Corporation
@@ -1169,7 +1169,7 @@ Para selecionar subsistema 0, digite o seguinte no prompt do DiskRAID:
 ```
 select subsystem 0
 ```
-Pressione ENTER. Uma saída semelhante à seguinte é exibida:
+Pressione ENTER. Uma saída semelhante à apresentada a seguir será exibida:
 ```
 Subsystem 0 is now the selected subsystem.
 

@@ -1,6 +1,6 @@
 ---
 title: autofmt
-description: O tópico de comandos do Windows para **autofmt**, que formata uma unidade ou partição quando chamado no console de recuperação do Windows.
+description: Tópico de referência para o comando autofmt, que formata uma unidade ou partição quando chamado no console de recuperação do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59aec4b42652f3a42f336be81f1ba99bee128140
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b7b82d940f2d8bd54d023a2a105208d1a18fc4c8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851099"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718759"
 ---
 # <a name="autofmt"></a>autofmt
 
-Formata uma unidade ou partição quando chamada no console de recuperação do Windows.
+Inicia o utilitário de formato do sistema de arquivos automático, que formata uma unidade ou partição quando chamado no console de recuperação do Windows.
 
-## <a name="remarks"></a>Comentários
-
-Você não pode executar o **autofmt** diretamente da linha de comando.
+> [!IMPORTANT]
+> Você não pode executar o **autofmt** diretamente da linha de comando.
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Trabalhando com sistemas de arquivos](https://go.microsoft.com/fwlink/?LinkId=4509)
+- [Ambiente de recuperação do Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+
+- [Como usar o Ambiente de Recuperação do Windows (WinRE) para solucionar problemas comuns de inicialização](https://support.microsoft.com/help/4026030/how-to-use-windows-recovery-environment-winre-to-troubleshoot-common-s)

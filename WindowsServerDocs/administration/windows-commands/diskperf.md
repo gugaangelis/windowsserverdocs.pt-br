@@ -1,6 +1,6 @@
 ---
 title: diskperf
-description: Tópico de comandos do Windows para diskperf, que pode ser usado para habilitar ou desabilitar remotamente os contadores de desempenho de disco físico ou lógico em computadores que executam o Windows 2000.
+description: Tópico de referência para diskperf, que pode ser usado para habilitar ou desabilitar remotamente os contadores de desempenho de disco físico ou lógico em computadores que executam o Windows 2000.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b07471c051d57d0279e4fd8b38afdc4acdc4069
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c8f505d924ee1de311f2f2736ff65be844c3f2ea
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845459"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719443"
 ---
 # <a name="diskperf"></a>diskperf
 
@@ -28,15 +28,15 @@ O **diskperf** está incluído no Windows XP, no windows Server 2003, no windows
 diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 ```
 
-## <a name="options"></a>{1&gt;Opções&lt;1}
+## <a name="options"></a>Opções
 
-|{1&gt;Opção&lt;1}|Descrição|
+|Opção|Descrição|
 |------|-----------|
 |-?|Exibe a ajuda contextual.|
-|-Y|Inicie todos os contadores de desempenho de disco quando o computador for reiniciado.|
+|-y|Inicie todos os contadores de desempenho de disco quando o computador for reiniciado.|
 |-YD|Habilitar contadores de desempenho de disco para unidades físicas quando o computador for reiniciado.|
 |-YV|Habilite os contadores de desempenho de disco para unidades lógicas ou volumes de armazenamento quando o computador for reiniciado.|
-|-N|Desabilite todos os contadores de desempenho de disco quando o computador for reiniciado.|
+|-n|Desabilite todos os contadores de desempenho de disco quando o computador for reiniciado.|
 |-ND|Desabilite os contadores de desempenho de disco para unidades físicas quando o computador for reiniciado.|
 |-NV|Desabilite os contadores de desempenho de disco para unidades lógicas ou volumes de armazenamento quando o computador for reiniciado.|
-|\\\\ *\<computername >*|Especifique o nome do computador no qual você deseja habilitar ou desabilitar os contadores de desempenho de disco.|
+|\\\\*\<ComputerName>*|Especifique o nome do computador no qual você deseja habilitar ou desabilitar os contadores de desempenho de disco.|

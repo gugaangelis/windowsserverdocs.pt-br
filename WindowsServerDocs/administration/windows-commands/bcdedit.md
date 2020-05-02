@@ -1,6 +1,6 @@
 ---
 title: bcdedit
-description: Tópico de comandos do Windows para **bcdedit**, que cria novas lojas, modifica os repositórios existentes e adiciona parâmetros de menu de inicialização.
+description: Tópico de referência para o comando bcdedit, que cria novas lojas, modifica as lojas existentes e adiciona parâmetros de menu de inicialização.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: f5bd39fa29dc99bba0d3600fc8609a355ffe540c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: df68c2c1b1087f7e32dbe270657a54e072261c46
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851069"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718692"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -36,20 +36,20 @@ O BCDEdit é limitado aos tipos de dados padrão e é projetado principalmente p
 ## <a name="syntax"></a>Sintaxe
 
 ```
-BCDEdit /Command [<Argument1>] [<Argument2>] ...
+bcdedit /command [<argument1>] [<argument2>] ...
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-### <a name="general-bcdedit-command-line-option"></a>Opção de linha de comando BCDEdit geral
+### <a name="general-bcdedit-command-line-options"></a>Opções gerais de linha de comando BCDEdit
 
-| {1&gt;Opção&lt;1} | Descrição |
+| Opção | Descrição |
 | ------ | ----------- |
-| /? | Exibe uma lista de comandos BCDEdit. Executar esse comando sem um argumento exibe um resumo dos comandos disponíveis. Para exibir a ajuda detalhada para um comando específico, execute **bcdedit/?** `<command>`, em que `<command>` é o nome do comando para o qual você está pesquisando mais informações. Por exemplo, **bcdedit/? CreateStore** exibe ajuda detalhada para o comando CreateStore. |
+| /? | Exibe uma lista de comandos BCDEdit. Executar esse comando sem um argumento exibe um resumo dos comandos disponíveis. Para exibir a ajuda detalhada para um comando específico, execute **bcdedit/?** `<command>`, em `<command>` que é o nome do comando no qual você está pesquisando mais informações. Por exemplo, **bcdedit/? CreateStore** exibe ajuda detalhada para o comando CreateStore. |
 
 #### <a name="parameters-that-operate-on-a-store"></a>Parâmetros que operam em uma loja
 
-| {1&gt;Opção&lt;1} | Descrição |
+| Opção | Descrição |
 | ------ | ----------- |
 | /createstore | Cria um novo armazenamento de dados de configuração de inicialização vazio. O repositório criado não é um repositório do sistema. |
 | /Export | Exporta o conteúdo do repositório do sistema para um arquivo. Esse arquivo pode ser usado posteriormente para restaurar o estado do repositório do sistema. Esse comando é válido somente para o repositório do sistema. |
@@ -101,10 +101,10 @@ BCDEdit /Command [<Argument1>] [<Argument2>] ...
 | Parâmetro | Descrição |
 | ------ | ----------- |
 | /bootdebug | Habilita ou desabilita o depurador de inicialização para uma entrada de inicialização especificada. Embora esse comando funcione para qualquer entrada de inicialização, ele só é eficaz para aplicativos de inicialização. |
-| /dbgsettings | Especifica ou exibe as configurações globais do depurador para o sistema. Este comando não enablepose. Para definir uma configuração de depurador global individual, use o comando **bcdedit/set** `<dbgsettings> <type> <value>`. |
+| /dbgsettings | Especifica ou exibe as configurações globais do depurador para o sistema. Este comando não enablepose. Para definir uma configuração de depurador global individual, use o comando **bcdedit/set** `<dbgsettings> <type> <value>` . |
 | /debug | Habilita ou desabilita o depurador de kernel para uma entrada de inicialização especificada. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="additional-references"></a>Referências adicionais
 
 Para obter exemplos de como usar BCDEdit, consulte o artigo [referência de opções de bcdedit](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference) .
 

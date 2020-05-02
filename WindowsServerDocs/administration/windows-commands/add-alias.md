@@ -1,6 +1,6 @@
 ---
 title: Adicionar alias
-description: Tópico de comandos do Windows para **Adicionar alias**, que adiciona aliases ao ambiente de alias.
+description: Tópico de referência para o comando Add alias, que adiciona aliases ao ambiente de alias.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebffc1504f502711dab30f6f9b120ad20e64ae9d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 807981c3581eea328291f2389e08065edbd280d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851359"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719027"
 ---
 # <a name="add-alias"></a>Adicionar alias
 
-Adiciona aliases ao ambiente de alias. Se usado sem parâmetros, **Add alias** exibe a ajuda no prompt de comando.
-
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+Adiciona aliases ao ambiente de alias. Se usado sem parâmetros, **Add alias** exibe a ajuda no prompt de comando. Os aliases são salvos no arquivo de metadados e serão carregados com o comando **carregar metadados** .
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -30,17 +28,13 @@ add alias <AliasName> <AliasValue>
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|`<AliasName>`|Especifica o nome do alias.|
-|`<AliasValue>`|Especifica o valor do alias.|
-|`/?`|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<AliasName>` | Especifica o nome do alias. |
+| `<AliasValue>` | Especifica o valor do alias. |
+| `/?` | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-
--   Os aliases são salvos no arquivo de metadados e serão carregados com o comando **carregar metadados** .
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para listar todas as sombras, incluindo seus aliases, digite:
 
@@ -70,3 +64,5 @@ add alias System1 {ff47165a-1946-4a0c-b7f4-80f46a309278}
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando carregar metadados](load-metadata.md)

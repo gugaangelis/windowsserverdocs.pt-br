@@ -1,6 +1,6 @@
 ---
 title: restauração de Auditpol
-description: O tópico de comandos do Windows para **restauração de Auditpol**, que restaura as configurações de política de auditoria do sistema, as configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria de um arquivo que é sintaticamente consistente com o formato de arquivo CSV (valores separados por vírgula) usado pela opção/backup.
+description: Tópico de referência para o comando Auditpol Restore, que restaura as configurações de política de auditoria do sistema, as configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria de um arquivo que é sintaticamente consistente com o formato de arquivo CSV (valores separados por vírgula) usado pela opção/backup.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd166ca6f3a268015e5cd25bd1fbdd78e1a9eed7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 64605a985c1cff13b842a99ae4ea52485bfc8220
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851159"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719054"
 ---
 # <a name="auditpol-restore"></a>restauração de Auditpol
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Restaura as configurações da política de auditoria do sistema, as configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria de um arquivo que é sintaticamente consistente com o formato de arquivo CSV (valores separados por vírgula) usado pela opção/backup.
+
+Para executar operações de *restauração* nas políticas *por usuário* e *sistema* , você deve ter a permissão **gravar** ou **controle total** para esse objeto definido no descritor de segurança. Você também pode executar operações de *restauração* se tiver o direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege), que é útil ao restaurar o descritor de segurança em caso de erro ou ataque mal-intencionado.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,11 +37,7 @@ auditpol /restore /file:<filename>
 | /File | Especifica o arquivo do qual a política de auditoria deve ser restaurada. O arquivo deve ter sido criado usando a opção/backup ou deve ser sintaticamente consistente com o formato de arquivo CSV usado pela opção/backup. |
 | /? |Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-
-Para operações de restauração para a política por usuário e política do sistema, você deve ter a permissão gravar ou controle total nesse objeto definido no descritor de segurança. Você também pode executar a operação de restauração por meio do direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). SeSecurityPrivilege é útil ao restaurar o descritor de segurança no caso de um erro inadvertido ou um ataque mal-intencionado.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para restaurar as configurações de política de auditoria do sistema, as configurações de política de auditoria por usuário para todos os usuários e todas as opções de auditoria de um arquivo chamado Auditpolicy. csv que foi criado usando o comando/backup, digite:
 
@@ -51,4 +49,6 @@ auditpol /restore /file:c:\auditpolicy.csv
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [backup de Auditpol](auditpol-backup.md) '    '    
+- [backup de Auditpol](auditpol-backup.md)
+
+- [comandos Auditpol](auditpol.md)

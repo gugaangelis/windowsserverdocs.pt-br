@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdescription
-description: O tópico de comandos do Windows para **Bitsadmin SetDescription**, que define a descrição do trabalho especificado.
+description: Tópico de referência para o comando Bitsadmin SetDescription, que define a descrição do trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b62e6b030c23c475418cd6f2c63f04edba1acff
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: dc76da7cbe348461a79984b8061767711e090da7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123013"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719305"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
@@ -35,12 +35,14 @@ bitsadmin /setdescription <job> <description>
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir recupera a descrição para o trabalho chamado *myDownloadJob*.
+Para recuperar a descrição para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setdescription myDownloadJob music_downloads
+bitsadmin /setdescription myDownloadJob music_downloads
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

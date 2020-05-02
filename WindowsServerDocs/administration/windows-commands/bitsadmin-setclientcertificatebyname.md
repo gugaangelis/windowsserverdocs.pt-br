@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setclientcertificatebyname
-description: O tópico de comandos do Windows para **Bitsadmin setclientcertificatebyname**, que especifica o nome da entidade do certificado do cliente a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL).
+description: Tópico de referência para o comando Bitsadmin setclientcertificatebyname, que especifica o nome da entidade do certificado do cliente a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2308bb5331f1555965b278a64bb7ab95e03779b
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: ef7111d462cd0509e8959855e9bc950dc15f3bfe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123053"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719345"
 ---
 # <a name="bitsadmin-setclientcertificatebyname"></a>bitsadmin setclientcertificatebyname
 
@@ -37,12 +37,14 @@ bitsadmin /setclientcertificatebyname <job> <store_location> <store_name> <subje
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir especifica o nome do certificado de cliente *myCertificate* a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL) para o trabalho chamado *myDownloadJob*.
+Para especificar o nome do certificado de cliente *myCertificate* a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL) para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setclientcertificatebyname myDownloadJob 1 MY myCertificate
+bitsadmin /setclientcertificatebyname myDownloadJob 1 MY myCertificate
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

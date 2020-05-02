@@ -1,6 +1,6 @@
 ---
 title: detalhes
-description: O tópico comandos do Windows para obter detalhes, que exibe informações sobre o disco, a partição, o volume ou o VHD (disco rígido virtual) selecionado.
+description: Tópico de referência para obter detalhes, que exibe informações sobre o disco, a partição, o volume ou o VHD (disco rígido virtual) selecionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71f4f72b5a11e7af9c245b0491902687cb352b66
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4601e637f9e087dfa9647d633cee6a1dbc80638f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846369"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719602"
 ---
 # <a name="detail"></a>detalhes
 

@@ -1,6 +1,6 @@
 ---
 title: volume de detalhes
-description: O tópico de comandos do Windows para obter detalhes sobre o volume, que exibe os discos nos quais reside o volume atual.
+description: Tópico de referência para o volume de detalhes, que exibe os discos nos quais o volume atual reside.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f0441beba769066c593e77b55b9266918e5f778
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2958c82b1dfc3b99d0e15690ef9857e7d83b244f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846310"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719615"
 ---
 # <a name="detail-volume"></a>volume de detalhes
 
@@ -31,7 +31,7 @@ detail volume
 -   Um volume deve ser selecionado para que essa operação seja realizada com sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.
 -   Os detalhes do volume não são aplicáveis a volumes somente leitura, como uma unidade de DVD-ROM ou CD-ROM.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para ver todos os discos nos quais reside o volume atual, digite:
 ```

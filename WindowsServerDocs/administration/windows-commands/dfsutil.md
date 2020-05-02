@@ -1,6 +1,6 @@
 ---
 title: DFSUtil
-description: Tópico de comandos do Windows para Dfsutil, que gerencia namespaces do DFS, servidores e clientes. os comandos Dfsutil usam a terminologia original do Sistema de Arquivos Distribuído, com a terminologia atualizada de namespaces do DFS fornecida como explicação para a maioria dos comandos.
+description: Tópico de referência para Dfsutil, que gerencia namespaces do DFS, servidores e clientes. os comandos Dfsutil usam a terminologia original do Sistema de Arquivos Distribuído, com a terminologia atualizada de namespaces do DFS fornecida como explicação para a maioria dos comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47d468ee122dc78cc880f4a9bc0705354e0b5214
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 999eef79227d4531ba724c9cac40127297ea38a0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122551"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719520"
 ---
 # <a name="dfsutil"></a>DFSUtil
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 O comando Dfsutil gerencia namespaces, servidores e clientes do DFS.
 
@@ -33,10 +33,10 @@ Você pode usar os seguintes parâmetros do PowerShell:
 | --------- | ----------- |
 | root | Exibe, cria, remove, importa e exporta raízes de namespace. |
 | link | Exibe, cria, remove ou move pastas (links). |
-| target | Exibe, cria, remove o destino da pasta ou o servidor de namespace. |
-| {1&gt;propriedade&lt;1} | Exibe ou modifica um destino de pasta ou servidor de namespace. |
-| server | Exibe ou modifica a configuração do namespace. |
-| domain | Exibe todos os namespaces baseados em domínio em um domínio. |
+| destino | Exibe, cria, remove o destino da pasta ou o servidor de namespace. |
+| propriedade | Exibe ou modifica um destino de pasta ou servidor de namespace. |
+| Servidor | Exibe ou modifica a configuração do namespace. |
+| domínio | Exibe todos os namespaces baseados em domínio em um domínio. |
 
 ## <a name="parameters-only-available-in-dfsutil"></a>Parâmetros disponíveis somente em Dfsutil
 
@@ -44,11 +44,11 @@ Você pode usar os parâmetros a seguir somente de DFSUtil.
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| Cliente | Exibe ou modifica informações do cliente ou chaves do registro. |
+| cliente | Exibe ou modifica informações do cliente ou chaves do registro. |
 | diag | Executar diagnóstico ou exibir dfsdirs/dfspath. |
 | cache | Exibe ou libera o cache do cliente. |
 
-Para obter mais informações sobre cada um desses comandos, abra um prompt de comando em um servidor com as ferramentas de gerenciamento de namespaces do DFS instaladas e digite `dfsutil client /?`, `dfsutil diag /?`ou `dfsutil cache /?`.
+Para obter mais informações sobre cada um desses comandos, abra um prompt de comando em um servidor com as ferramentas de gerenciamento de namespaces do DFS `dfsutil client /?`instaladas e, em seguida, digite, `dfsutil diag /?`ou `dfsutil cache /?`.
 
 ## <a name="additional-references"></a>Referências adicionais
 

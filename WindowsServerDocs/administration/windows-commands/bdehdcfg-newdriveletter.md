@@ -1,6 +1,6 @@
 ---
 title: BdeHdCfg newdriveletter
-description: O tópico de comandos do Windows para **BdeHdCfg newdriveletter**, que atribui uma nova letra da unidade à parte de uma unidade usada como unidade do sistema.
+description: Tópico de referência para o comando BdeHdCfg newdriveletter, que atribui uma nova letra da unidade à parte de uma unidade usada como a unidade do sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,36 +9,32 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a8757e7d0684912525817708fbe34953b049582
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: da09ae1469c6fc8370e6bd0f2f7a8f3efd8dc4f0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851049"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718664"
 ---
 # <a name="bdehdcfg-newdriveletter"></a>BdeHdCfg: newdriveletter
 
-Atribui uma nova letra da unidade à parte de uma unidade usada como a unidade do sistema. Para obter um exemplo de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Atribui uma nova letra da unidade à parte de uma unidade usada como a unidade do sistema. Como prática recomendada, recomendamos não atribuir uma letra de unidade à unidade do sistema.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} -newdriveletter <DriveLetter>
+bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge} -newdriveletter <drive_letter>
 ```
 
 #### <a name="parameters"></a>Parâmetros
 
 | Parâmetro | Descrição |
 | ---------| ----------- |
-|`<DriveLetter>`|Define a letra da unidade que será atribuída à unidade de destino especificada.|
+| `<drive_letter>` | Define a letra da unidade que será atribuída à unidade de destino especificada. |
 
-## <a name="remarks"></a>Comentários
+## <a name="examples"></a>Exemplos
 
-Como prática recomendada, é recomendável que você não atribua uma letra de unidade à unidade do sistema.
-
-## <a name="examples"></a><a name="BKMK_Examples"></a>Disso
-
-O exemplo a seguir mostra a unidade padrão que está sendo atribuída à letra de unidade P.
+Para atribuir a unidade padrão à letra `P`da unidade:
 
 ```
 bdehdcfg -target default -newdriveletter P:
@@ -48,4 +44,4 @@ bdehdcfg -target default -newdriveletter P:
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [BdeHdCfg](bdehdcfg.md)
+- [bdehdcfg](bdehdcfg.md)

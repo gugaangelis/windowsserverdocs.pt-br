@@ -1,6 +1,6 @@
 ---
 title: remoção de Auditpol
-description: O tópico de comandos do Windows para **remoção de Auditpol**, que remove a política de auditoria por usuário para uma conta especificada ou todas as contas.
+description: Tópico de referência para o comando de remoção de Auditpol, que remove a política de auditoria por usuário para uma conta especificada ou todas as contas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eda43d6708a31b2966022d2ae2c162bbfc888cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9aedde39d44c7640e6aa2516465e1c8ec7d022c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851169"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719084"
 ---
 # <a name="auditpol-remove"></a>remoção de Auditpol
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Remove a política de auditoria por usuário para uma conta especificada ou todas as contas.
+
+Para executar operações de *remoção* na política *por usuário* , você deve ter permissões de **controle total** ou de **gravação** para esse objeto definido no descritor de segurança. Você também pode executar as operações de *remoção* se tiver o direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite acesso adicional que não é necessário para executar as operações de *remoção* geral.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,11 +39,7 @@ auditpol /remove [/user[:<username>|<{SID}>]]
 | /allusers | Remove a política de auditoria por usuário para todos os usuários. |
 | /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-
-Para remover operações para a política por usuário, você deve ter a permissão gravar ou controle total nesse objeto definido no descritor de segurança. Você também pode executar operações de remoção por meio do direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite o acesso adicional que não é necessário para executar a operação de remoção.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para remover a política de auditoria por usuário para Mikedan de usuário por nome, digite:
 
@@ -64,3 +62,5 @@ auditpol /remove /allusers
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comandos Auditpol](auditpol.md)

@@ -1,6 +1,6 @@
 ---
 title: volume de atributos
-description: Tópico de comandos do Windows para o **volume de atributos**, que exibe, define ou limpa os atributos de um volume.
+description: Tópico de referência para o comando de volume Attributes, que exibe, define ou limpa os atributos de um volume.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00991cdba57f0728cfa348dea2b0916ad758b34a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bbe1d66584216875daa82a7e250f3d2f525c2280
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851229"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719190"
 ---
 # <a name="attributes-volume"></a>volume de atributos
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe, define ou limpa os atributos de um volume.
 
@@ -38,9 +38,9 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 | oculto | Especifica que o volume está oculto. |  
 | nodefaultdriveletter | Especifica que o volume não recebe uma letra de unidade por padrão. |  
 | shadowcopy | Especifica que o volume é um volume de cópia de sombra. |  
-| NOERR | somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |  
+| NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |  
   
-## <a name="remarks"></a>Comentários  
+### <a name="remarks"></a>Comentários  
   
 - Em discos básicos de MBR (registro mestre de inicialização), os parâmetros **Hidden**, **ReadOnly**e **nodefaultdriveletter** se aplicam a todos os volumes no disco.  
   
@@ -48,7 +48,7 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
   
 - Um volume deve ser selecionado para que o comando de **volume de atributos** seja bem-sucedidos. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.  
   
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir os atributos atuais no volume selecionado, digite:  
   
@@ -71,3 +71,5 @@ attributes volume clear hidden readonly
 ## <a name="additional-references"></a>Referências adicionais  
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Selecionar comando de volume](select-volume.md)

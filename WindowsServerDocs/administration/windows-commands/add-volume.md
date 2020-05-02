@@ -1,6 +1,6 @@
 ---
 title: Adicionar volume
-description: O tópico de comandos do Windows para **Adicionar volume**, que adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados em sombra.
+description: Tópico de referência para o comando Add volume, que adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados por sombra.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,43 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 806ab273dbb63eb7341520f56a07691fe3fac214
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a8cfd3d8f7d9f008e3136d8f694dc00370b8b0f2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851349"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719206"
 ---
 # <a name="add-volume"></a>Adicionar volume
 
-Adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados em sombra. Esse comando é necessário para criar cópias de sombra. Se usado sem parâmetros, **Adicionar volume** exibirá a ajuda no prompt de comando.
+Adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados em sombra. Quando uma cópia de sombra é criada, uma variável de ambiente vincula o alias à ID de sombra, portanto, o alias pode ser usado para scripts.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+Os volumes são adicionados um de cada vez. Sempre que um volume é adicionado, ele é verificado para garantir que o VSS dê suporte à criação de cópia de sombra para esse volume. Essa verificação pode ser invalidada pelo uso posterior do comando **set Context** .
+
+Esse comando é necessário para criar cópias de sombra. Se usado sem parâmetros, **Adicionar volume** exibirá a ajuda no prompt de comando.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-add volume <Volume> [provider <ProviderID>]
+add volume <volume> [provider <providerid>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-| `<Volume>` | Especifica um volume a ser adicionado ao conjunto de cópias de sombra. Pelo menos um volume é necessário para a criação da cópia de sombra.|
-| `[provider \<ProviderID>]` | Especifica a ID do provedor de um provedor registrado a ser usado para criar a cópia de sombra. Se o **provedor** não for especificado, o provedor padrão será usado.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<volume>` | Especifica um volume a ser adicionado ao conjunto de cópias de sombra. Pelo menos um volume é necessário para a criação da cópia de sombra. |
+| `[provider \<providerid>]` | Especifica a ID do provedor de um provedor registrado a ser usado para criar a cópia de sombra. Se o **provedor** não for especificado, o provedor padrão será usado. |
 
-## <a name="remarks"></a>Comentários
+## <a name="examples"></a>Exemplos
 
--   Os volumes são adicionados um de cada vez.
-
--   Cada vez que um volume é adicionado, ele é verificado para garantir que o VSS dê suporte à criação de cópia de sombra desse volume. No entanto, essa verificação primária pode ser invalidada pelo uso posterior do comando **set Context** .
-
--   Quando uma cópia de sombra é criada, uma variável de ambiente vincula o alias à ID de sombra, portanto, o alias pode ser usado para scripts.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
-
-Para exibir a lista atual de provedores registrados, no prompt de `DISKSHADOW>`, digite:
+Para exibir a lista atual de provedores registrados, no `diskshadow>` prompt, digite:
 
 ```
 list providers
@@ -62,7 +56,7 @@ A saída a seguir exibe um único provedor, que será usado por padrão:
 1 provider registered.
 ```
 
-Para adicionar a unidade C ao conjunto de cópias de sombra e atribuir um alias chamado System1, digite:
+Para adicionar a unidade C: ao conjunto de cópias de sombra e atribuir um alias chamado *System1*, digite:
 
 ```
 add volume c: alias System1
@@ -71,3 +65,5 @@ add volume c: alias System1
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Definir comando de contexto](set-context.md)

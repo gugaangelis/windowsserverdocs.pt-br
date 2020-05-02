@@ -1,6 +1,6 @@
 ---
 title: auditpol
-description: O tópico comandos do Windows para **Auditpol**, que exibe informações sobre e executa funções para manipular políticas de auditoria.
+description: Tópico de referência para o comando Auditpol, que exibe informações sobre e executa funções para manipular políticas de auditoria.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00365b0e46b8bff761cf991dbdbd09d8f5e9c687
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89fee7ccd3b6671a6f2633c3b5d15d0cbee261fa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851129"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718826"
 ---
 # <a name="auditpol"></a>auditpol
 
-Exibe informações sobre e executa funções para manipular políticas de auditoria.
+Exibe informações sobre e executa funções para manipular políticas de auditoria, incluindo:
 
-Para obter exemplos de como esse comando pode ser usado, consulte a seção exemplos em cada tópico.
+- Configurando e consultando uma política de auditoria do sistema.
+
+- Configurando e consultando uma política de auditoria por usuário.
+
+- Configurando e consultando opções de auditoria.
+
+- Configurando e consultando o descritor de segurança usado para delegar acesso a uma política de auditoria.
+
+- Relatando ou fazendo backup de uma política de auditoria para um arquivo de texto de valores separados por vírgulas (CSV).
+
+- Carregando uma política de auditoria de um arquivo de texto CSV.
+
+- Configurando SACLs de recursos globais.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -28,7 +40,7 @@ Para obter exemplos de como esse comando pode ser usado, consulte a seção exem
 auditpol command [<sub-command><options>]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 | Subcomando | Descrição |
 | ----------- | ----------- |
@@ -41,24 +53,6 @@ auditpol command [<sub-command><options>]
 | /remove | Remove todas as configurações de política de auditoria por usuário e desabilita todas as configurações de política de auditoria do sistema. Para obter mais informações, consulte [Auditpol remove](auditpol-remove.md) para sintaxe e opções. |
 | /resourceSACL | Configura as SACLs (listas de controle de acesso) do sistema de recursos globais. **Observação:** Aplica-se somente ao Windows 7 e ao Windows Server 2008 R2. Para obter mais informações, consulte [Auditpol resourceSACL](auditpol-resourcesacl.md). |
 | /?| Exibe a ajuda no prompt de comando. |
-
-## <a name="remarks"></a>Comentários
-
-A ferramenta de linha de comando de diretiva de auditoria pode ser usada para:
-
-- Definir e consultar uma política de auditoria do sistema.
-
-- Definir e consultar uma política de auditoria por usuário.
-
-- Definir e consultar opções de auditoria.
-
-- Defina e consulte o descritor de segurança usado para delegar acesso a uma política de auditoria.
-
-- Relatar ou fazer backup de uma política de auditoria em um arquivo de texto de valores separados por vírgulas (CSV).
-
-- Carregar uma política de auditoria de um arquivo de texto CSV.
-
-- Configure as SACLs de recursos globais.
 
 ## <a name="additional-references"></a>Referências adicionais
 

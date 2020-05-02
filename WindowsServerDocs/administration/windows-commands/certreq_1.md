@@ -1,6 +1,6 @@
 ---
 title: certreq
-description: O tópico comandos do Windows para certreq, que solicita certificados de uma autoridade de certificação (CA), recupera uma resposta a uma solicitação anterior de uma CA, cria uma nova solicitação de um arquivo. inf, aceita e instala uma resposta a uma solicitação, constrói uma solicitação de certificação cruzada ou de subordinação qualificada de um certificado ou solicitação de autoridade de certificação
+description: Tópico de referência para o comando certreq, que solicita certificados de uma autoridade de certificação (CA), recupera uma resposta a uma solicitação anterior de uma CA, cria uma nova solicitação de um arquivo. inf, aceita e instala uma resposta a uma solicitação, constrói uma solicitação de certificação cruzada ou de subordinação qualificada de um certificado ou solicitação de autoridade de certificação existente e assina uma solicitação de certificação cruzada ou de subordinação qualificada
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,226 +9,200 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: babe28932b57fd0a1adc39ba1cb9a8018552c331
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 14fc717ad49a676387206692af32842f212c4296
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848209"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719645"
 ---
 # <a name="certreq"></a>certreq
 
-O Certreq pode ser usado para solicitar certificados de uma autoridade de certificação (CA), para recuperar uma resposta a uma solicitação anterior de uma autoridade de certificação, para criar uma nova solicitação de um arquivo. inf, para aceitar e instalar uma resposta a uma solicitação, para construir uma solicitação de certificação cruzada ou de subordinação qualificada de um certificado ou solicitação de autoridade de certificação existente e para assinar uma solicitação de certificação cruzada ou de subordinação qualificada.
+O comando certreq pode ser usado para solicitar certificados de uma autoridade de certificação (CA), para recuperar uma resposta a uma solicitação anterior de uma autoridade de certificação, para criar uma nova solicitação de um arquivo. inf, para aceitar e instalar uma resposta a uma solicitação, para construir uma solicitação de certificação cruzada ou de subordinação qualificada de um certificado ou solicitação de autoridade de certificação existente e para assinar uma solicitação de certificação cruzada ou de subordinação qualificada.
+
+> [!IMPORTANT]
+> As versões anteriores do comando certreq podem não fornecer todas as opções descritas aqui. Para ver as opções com suporte com base em versões específicas do certreq, execute a opção de ajuda de `certreq -v -?`linha de comando,.
+>
+> O comando certreq não dá suporte à criação de uma nova solicitação de certificado com base em um modelo de atestado de chave quando estiver em um ambiente de CEP/CES.
 
 > [!WARNING]
-> As versões anteriores do Certreq podem não fornecer todas as opções descritas neste documento. Você pode ver todas as opções que uma versão específica do Certreq fornece executando os comandos mostrados na seção de notações de sintaxe. O Certreq não oferece suporte à criação de uma nova solicitação de certificado com base em um modelo de atestado de chave quando estiver em um ambiente de CEP/CES
+> O conteúdo deste tópico baseia-se nas configurações padrão do Windows Server; por exemplo, definindo o comprimento da chave como 2048, selecionando provedor de armazenamento de chaves de software da Microsoft como o CSP e usando Secure Hash Algorithm 1 (SHA1). Avalie essas seleções em relação aos requisitos da política de segurança da sua empresa.
 
-## <a name="contents"></a><a name=BKMK_Contents></a>Índice
-
-As principais seções deste artigo são as seguintes:
-1.  [Verbos](#BKMK_Verbs)
-2.  [Notações de sintaxe](#BKMK_notation)
-3.  [Opções](#BKMK_Options)
-4.  [Forma](#BKMK_Formats)
-5.  [Exemplos adicionais de certreq](#BKMK_Examples)
-
-## <a name="verbs"></a><a name=BKMK_Verbs></a>Verbos
-
-A tabela a seguir descreve os verbos que podem ser usados com o comando certreq
-
-|Alternar|Descrição|
-|------|-----------|
-|-Enviar|Envia uma solicitação para uma autoridade de certificação. Para obter mais informações, consulte [Certreq-Submit](#BKMK_Submit).|
-|-recuperar *RequestId*|Recupera uma resposta a uma solicitação anterior de uma autoridade de certificação. Para obter mais informações, consulte [certreq-retrieve](#BKMK_Retrieve).|
-|-Novo|Cria uma nova solicitação de um arquivo. inf. Para obter mais informações, consulte [Certreq-New](#BKMK_New).|
-|-Aceitar|Aceita e instala uma resposta a uma solicitação de certificado. Para obter mais informações, consulte [certreq-accept](#BKMK_accept).|
-|-Política|Define a política para uma solicitação. Para obter mais informações, consulte [certreq-policy](#BKMK_policy).|
-|-Assinar|Assina uma solicitação de certificação cruzada ou de subordinação qualificada. Para obter mais informações, consulte [Certreq-Sign](#BKMK_sign).|
-|-Registrar|Registra ou renova um certificado. Para obter mais informações, consulte [Certreq-Enroll](#BKMK_enroll).|
-|-?|Exibe uma lista de sintaxe, opções e descrições de Certreq.|
-|*\<de verbo >* -?|Exibe a ajuda para o verbo especificado.|
-|-v-?|Exibe uma lista detalhada da sintaxe, das opções e das descrições do Certreq.|
-
-Retornar ao [conteúdo](#BKMK_Contents)
-
-## <a name="syntax-notations"></a><a name=BKMK_notation></a>Notações de sintaxe
-
--   Para obter a sintaxe básica de linha de comando, execute `certreq -?`
--   Para obter a sintaxe sobre como usar o Certutil com um verbo específico, execute **certreq** *\<verbo >* **-?**
--   Para enviar toda a sintaxe de certutil para um arquivo de texto, execute os seguintes comandos:  
-    -   `certreq -v -? > certreqhelp.txt`
-    -   `notepad certreqhelp.txt`
-
-A tabela a seguir descreve a notação usada para indicar a sintaxe da linha de comando.
-
-|Notation|Descrição|
-|--------|-----------|
-|Texto sem colchetes ou chaves|Itens que você deve digitar, conforme mostrado|
-|\<texto dentro de colchetes angulares >|Espaço reservado para o qual você deve fornecer um valor|
-|[Texto dentro de colchetes]|Itens opcionais|
-|{Texto dentro de chaves}|Conjunto de itens necessários; Escolha um|
-|Barra vertical (&#124;)|Separador para itens mutuamente exclusivos; Escolha um|
-|Reticências (…)|Itens que podem ser repetidos|
-
-Retornar ao [conteúdo](#BKMK_Contents)
-
-## <a name="certreq--submit"></a><a name=BKMK_Submit></a>Certreq-enviar
-
-Esse é o parâmetro Certreq. exe padrão, se nenhuma opção for especificada explicitamente no prompt de linha de comando, o Certreq. exe tentará enviar uma solicitação de certificado a uma AC.
-```
-CertReq [-Submit] [Options] [RequestFileIn [CertFileOut [CertChainFileOut [FullResponseFileOut]]]]
-```
-Você deve especificar um arquivo de solicitação de certificado ao usar a opção – Submit. Se esse parâmetro for omitido, uma janela de abertura de arquivo comum será exibida, onde você poderá selecionar o arquivo de solicitação de certificado apropriado.
-
-Você pode usar esses exemplos como um ponto de partida para criar sua solicitação de envio de certificado:
-
-Para enviar uma solicitação de certificado simples, use o exemplo a seguir:
-```
-certreq –submit certRequest.req certnew.cer certnew.pfx
-```
-Para solicitar um certificado especificando o atributo SAN, consulte as etapas detalhadas no artigo 931351 da base de dados de conhecimento Microsoft [como adicionar um nome alternativo da entidade a um certificado LDAP seguro](https://support.microsoft.com/kb/931351) no tópico como usar o utilitário Certreq. exe para criar e enviar uma solicitação de certificado que inclui uma seção de San.
-
-Retornar ao [conteúdo](#BKMK_Contents)
-
-## <a name="certreq--retrieve"></a><a name=BKMK_Retrieve></a>Certreq-recuperar
+## <a name="syntax"></a>Sintaxe
 
 ```
-certreq -retrieve [Options] RequestId [CertFileOut [CertChainFileOut [FullResponseFileOut]]]
+certreq [-submit] [options] [requestfilein [certfileout [certchainfileout [fullresponsefileOut]]]]
+certreq -retrieve [options] requestid [certfileout [certchainfileout [fullresponsefileOut]]]
+certreq -new [options] [policyfilein [requestfileout]]
+certreq -accept [options] [certchainfilein | fullresponsefilein | certfilein]
+certreq -sign [options] [requestfilein [requestfileout]]
+certreq –enroll [options] templatename
+certreq –enroll –cert certId [options] renew [reusekeys]
 ```
--   Se você não especificar a caixa de diálogo CAComputerName ou CAName in-config CAComputerName\CANamea será exibida e exibirá uma lista de todas as CAs disponíveis.
--   Se você usar - configuração - em vez de - configuração CAComputerName\CAName, a operação é processada usando a CA padrão.
--   Você pode usar certreq-retrieve *RequestId* para recuperar o certificado depois que a CA realmente o emitir. O *RequestId*PKC pode ser um decimal ou hex com o prefixo 0x e pode ser um número de série do certificado sem prefixo 0x. Você também pode usá-lo para recuperar qualquer certificado que já tenha sido emitido pela autoridade de certificação, incluindo certificados revogados ou expirados, sem considerar se a solicitação do certificado já estava no estado pendente.
--   Se você enviar uma solicitação para a autoridade de certificação, o módulo de política da autoridade de certificação poderá deixar a solicitação em um estado pendente e retornar a *RequestId* para o chamador CertReq para exibição. Eventualmente, o administrador da autoridade de certificação emitirá o certificado ou negará a solicitação.
 
-O comando a seguir recupera a ID de certificado 20 e cria o arquivo de certificado (. cer):
-```
-certreq -retrieve 20 MyCertificate.cer 
-```
-Retornar ao [conteúdo](#BKMK_Contents)
+### <a name="parameters"></a>Parâmetros
 
-## <a name="certreq--new"></a><a name=BKMK_New></a>Certreq-novo
+| Parâmetro | Descrição |
+| -------- | ----------- |
+| -Enviar | Envia uma solicitação para uma autoridade de certificação. |
+| -recuperar`<requestid>` | Recupera uma resposta a uma solicitação anterior de uma autoridade de certificação. |
+| -novo | Cria uma nova solicitação de um arquivo. inf. |
+| -aceitar | Aceita e instala uma resposta a uma solicitação de certificado. |
+| -política | Define a política para uma solicitação. |
+| -assinar | Assina uma solicitação de certificação cruzada ou de subordinação qualificada. |
+| -registrar | Registra ou renova um certificado. |
+| -? | Exibe uma lista de sintaxe, opções e descrições de Certreq. |
+| `<parameter>` -? | Exibe a ajuda para o parâmetro especificado. |
+| -v-? | Exibe uma lista detalhada da sintaxe, das opções e das descrições do Certreq. |
+
+## <a name="examples"></a>Exemplos
+
+### <a name="certreq--submit"></a>certreq-enviar
+
+Para enviar uma solicitação de certificado simples:
 
 ```
-certreq -new [Options] [PolicyFileIn [RequestFileOut]]
+certreq –submit certrequest.req certnew.cer certnew.pfx
 ```
-Como o arquivo INF permite que um conjunto avançado de parâmetros e opções seja especificado, é difícil definir um modelo padrão que os administradores devem usar para todas as finalidades. Portanto, esta seção descreve todas as opções para permitir que você crie um arquivo INF personalizado para suas necessidades específicas. As palavras-chave a seguir são usadas para descrever a estrutura do arquivo INF.
-1.  Uma *seção* é uma área no arquivo inf que abrange um grupo lógico de chaves. Uma seção sempre aparece entre colchetes no arquivo INF.
-2.  Uma *chave* é o parâmetro que está à esquerda do sinal de igual.
-3.  Um *valor* é o parâmetro que está à direita do sinal de igual.
 
-Por exemplo, um arquivo INF mínimo seria semelhante ao seguinte:
+#### <a name="remarks"></a>Comentários
+
+- Esse é o parâmetro Certreq. exe padrão. Se nenhuma opção for especificada no prompt da linha de comando, o Certreq. exe tentará enviar uma solicitação de certificado a uma autoridade de certificação. Você deve especificar um arquivo de solicitação de certificado ao usar a opção **– Submit** . Se esse parâmetro for omitido, uma janela de **abertura de arquivo** comum será exibida, permitindo que você selecione o arquivo de solicitação de certificado apropriado.
+
+- Para solicitar um certificado especificando o atributo SAN, consulte a seção *como usar o utilitário Certreq. exe para criar e enviar uma solicitação de certificado* do artigo 931351 da base de dados de conhecimento Microsoft [como adicionar um nome alternativo da entidade a um certificado LDAP seguro](https://support.microsoft.com/kb/931351).
+
+### <a name="certreq--retrieve"></a>certreq-recuperar
+
+Para recuperar a ID de certificado 20 e criar um arquivo de certificado (. cer), chamado *myCertificate*:
+
 ```
-[NewRequest] 
-; At least one value must be set in this section 
-Subject = CN=W2K8-BO-DC.contoso2.com
+certreq -retrieve 20 MyCertificate.cer
 ```
+
+#### <a name="remarks"></a>Comentários
+
+- Use Certreq-recuperar *RequestId* para recuperar o certificado depois que a autoridade de certificação o tiver emitido. O *RequestId* PKC pode ser um decimal ou hex com o prefixo 0x e pode ser um número de série do certificado sem prefixo 0x. Você também pode usá-lo para recuperar qualquer certificado que já tenha sido emitido pela autoridade de certificação, incluindo certificados revogados ou expirados, sem considerar se a solicitação do certificado já estava no estado pendente.
+
+- Se você enviar uma solicitação para a autoridade de certificação, o módulo de política da autoridade de certificação poderá deixar a solicitação em um estado pendente e retornar a *RequestId* para o chamador CertReq para exibição. Eventualmente, o administrador da autoridade de certificação emitirá o certificado ou negará a solicitação.
+
+### <a name="certreq--new"></a>certreq-novo
+
+Para criar uma nova solicitação:
+
+```
+[newrequest]
+; At least one value must be set in this section
+subject = CN=W2K8-BO-DC.contoso2.com
+```
+
 A seguir estão algumas das seções possíveis que podem ser adicionadas ao arquivo INF:
 
-**[NewRequest]**
+#### <a name="newrequest"></a>[newrequest]
 
-Esta seção é obrigatória para um arquivo INF que atua como um modelo para uma nova solicitação de certificado. Esta seção requer pelo menos uma chave com um valor.
+Essa área do arquivo INF é obrigatória para qualquer novo modelo de solicitação de certificado e deve incluir pelo menos um parâmetro com um valor.
 
-|Chave|Definição|{1&gt;Valor&lt;1}|{1&gt;Exemplo&lt;1}|
-|---|----------|-----|-------|
-|Assunto|Vários aplicativos dependem das informações da entidade em um certificado. Portanto, é recomendável que um valor para essa chave seja especificado. Se o assunto não estiver definido aqui, é recomendável que um nome de entidade seja incluído como parte da extensão de certificado de nome alternativo da entidade.|Valores de cadeia de caracteres do nome distinto relativo|Subject = CN = Computador1. contoso. com Subject = CN = John Smith, CN = Users, DC = contoso, DC = com|
-|Exportável|Se esse atributo for definido como TRUE, a chave privada poderá ser exportada com o certificado. Para garantir um alto nível de segurança, as chaves privadas não devem ser exportáveis; no entanto, em alguns casos, pode ser necessário tornar a chave privada exportável se vários computadores ou usuários precisarem compartilhar a mesma chave privada.|true, false|Exportável = TRUE. As chaves CNG podem distinguir entre esse e o texto não criptografado exportável. As chaves CAPI1 não podem.|
-|ExportableEncrypted|Especifica se a chave privada deve ser definida para ser exportável.|true, false|ExportableEncrypted = true</br>Dica: nem todos os tamanhos e algoritmos de chave pública funcionarão com todos os algoritmos de hash. O CSP especificado de Tamehe também deve oferecer suporte ao algoritmo de hash especificado. Para ver a lista de algoritmos de hash com suporte, você pode executar o comando <code>certutil -oid 1 &#124; findstr pwszCNGAlgid &#124; findstr /v CryptOIDInfo</code>|
-|HashAlgorithm|Algoritmo de hash a ser usado para esta solicitação.|SHA256, Sha384, SHA512, SHA1, MD5, MD4, MD2|HashAlgorithm = SHA1. Para ver a lista de algoritmos de hash com suporte, use: &#124; certutil- &#124; OID 1 findstr pwszCNGAlgid findstr/v CryptOIDInfo|
-|KeyAlgorithm|O algoritmo que será usado pelo provedor de serviços para gerar um par de chaves pública e privada.|RSA, DH, DSA, ECDH_P256, ECDH_P521, ECDSA_P256, ECDSA_P384, ECDSA_P521|KeyAlgorithm = RSA|
-|KeyContainer|Não é recomendável definir esse parâmetro para novas solicitações em que o novo material de chave é gerado. O contêiner de chave é automaticamente gerado e mantido pelo sistema. Para solicitações em que o material de chave existente deve ser usado, esse valor pode ser definido como o nome do contêiner de chave da chave existente. Use o comando certutil – Key para exibir a lista de contêineres de chave disponíveis para o contexto do computador. Use o comando certutil – Key – User para o contexto do usuário atual.|Valor de cadeia de caracteres aleatória</br>Dica: você deve usar aspas duplas em qualquer valor de chave INF que tenha espaços em branco ou caracteres especiais para evitar possíveis problemas de análise de INF.|KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}|
-|KeyLength|Define o comprimento da chave pública e privada. O comprimento da chave tem um impacto sobre o nível de segurança do certificado. O comprimento de chave maior geralmente fornece um nível de segurança mais alto; no entanto, alguns aplicativos podem ter limitações em relação ao comprimento da chave.|Qualquer comprimento de chave válido com suporte do provedor de serviços de criptografia.|KeyLength = 2048|
-|KeySpec|Determina se a chave pode ser usada para assinaturas, para o Exchange (criptografia) ou para ambos.|AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE|KeySpec = AT_KEYEXCHANGE|
-|Uso de|Define a que a chave de certificado deve ser usada.|CERT_DIGITAL_SIGNATURE_KEY_USAGE--80 (128)</br>Dica: os valores mostrados são valores hexadecimais (decimais) para cada definição de bit. A sintaxe mais antiga também pode ser usada: um único valor hexadecimal com vários bits definidos, em vez da representação simbólica. Por exemplo, KeyUsage = 0XA0.</br>CERT_NON_REPUDIATION_KEY_USAGE--40 (64)</br>CERT_KEY_ENCIPHERMENT_KEY_USAGE--20 (32)</br>CERT_DATA_ENCIPHERMENT_KEY_USAGE--10 (16)</br>CERT_KEY_AGREEMENT_KEY_USAGE--8</br>CERT_KEY_CERT_SIGN_KEY_USAGE--4</br>CERT_OFFLINE_CRL_SIGN_KEY_USAGE--2</br>CERT_CRL_SIGN_KEY_USAGE--2</br>CERT_ENCIPHER_ONLY_KEY_USAGE--1</br>CERT_DECIPHER_ONLY_KEY_USAGE--8000 (32768)|KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE &#124; CERT_KEY_ENCIPHERMENT_KEY_USAGE</br>Dica: vários valores usam um separador de símbolo de pipe (&#124;). Certifique-se de usar aspas duplas ao usar vários valores para evitar problemas de análise de INF.|
-|Keyutilizaproperty|Recupera um valor que identifica a finalidade específica para a qual uma chave privada pode ser usada.|NCRYPT_ALLOW_DECRYPT_FLAG--1</br>NCRYPT_ALLOW_SIGNING_FLAG--2</br>NCRYPT_ALLOW_KEY_AGREEMENT_FLAG--4</br>NCRYPT_ALLOW_ALL_USAGES--FFFFFF (16777215)|KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG &#124; NCRYPT_ALLOW_SIGNING_FLAG|
-|MachineKeyset|Essa chave é importante quando você precisa criar certificados que pertencem à máquina e não um usuário. O material da chave gerado é mantido no contexto de segurança da entidade de segurança (conta de usuário ou computador) que criou a solicitação. Quando um administrador cria uma solicitação de certificado em nome de um computador, o material da chave deve ser criado no contexto de segurança da máquina e não no contexto de segurança do administrador. Caso contrário, o computador não poderá acessar sua chave privada, pois ela estaria no contexto de segurança do administrador.|true, false|MachineKeyset = true</br>Dica: o padrão é false.|
-|NotBefore|Especifica uma data ou data e hora antes da qual a solicitação não pode ser emitida. Não é possível usar não antes de ValidityPeriod e ValidityPeriodUnits.|Data ou data e hora|Não antes de = 7/24/2012 10:31 AM</br>Tip: não before e não After são somente para RequestType = CERT. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades.|
-|NotAfter|Especifica uma data ou data e hora após a qual a solicitação não pode ser emitida. Não é possível usar não após ValidityPeriod ou ValidityPeriodUnits.|Data ou data e hora|Não após = 9/23/2014 10:31 AM</br>Tip: não before e não After são somente para RequestType = CERT. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades.|
-|PrivateKeyArchive|A configuração PrivateKeyArchive só funcionará se o RequestType correspondente for definido como CMC porque apenas o formato de solicitação de mensagens de gerenciamento de certificado sobre CMS (CMC) permite transferir com segurança a chave privada do solicitante para a autoridade de arquivamento de chave.|true, false|PrivateKeyArchive = true|
-|EncryptionAlgorithm|O algoritmo de criptografia a ser usado.|As opções possíveis variam, dependendo da versão do sistema operacional e do conjunto de provedores criptográficos instalados. Para ver a lista de algoritmos disponíveis, execute o comando <code>certutil -oid 2 &#124; findstr pwszCNGAlgid</code> o CSP especificado também deve oferecer suporte ao algoritmo de criptografia simétrica e ao comprimento especificados.|EncryptionAlgorithm = 3DES|
-|EncryptionLength|Comprimento do algoritmo de criptografia a ser usado.|Qualquer comprimento permitido pelo EncryptionAlgorithm especificado.|EncryptionLength = 128|
-|ProviderName|O nome do provedor é o nome de exibição do CSP.|Se você não souber o nome do provedor do CSP que está usando, execute certutil – csplist de uma linha de comando. O comando exibirá os nomes de todos os CSPs disponíveis no sistema local|ProviderName = provedor criptográfico do Microsoft RSA SChannel|
-|ProviderType|O tipo de provedor é usado para selecionar provedores específicos com base no recurso de algoritmo específico, como RSA Full.|Se você não souber o tipo de provedor do CSP que está usando, execute o Certutil – csplist de um prompt de linha de comando. O comando exibirá o tipo de provedor de todos os CSPs disponíveis no sistema local.|ProviderType = 1|
-|RenewalCert|Se precisar renovar um certificado que existe no sistema em que a solicitação de certificado é gerada, você deve especificar seu hash de certificado como o valor para essa chave.|O hash de certificado de qualquer certificado disponível no computador em que a solicitação de certificado é criada. Se você não souber o hash de certificado, use o snap-in do MMC de certificados e examine o certificado que deve ser renovado. Abra as propriedades do certificado e veja o atributo impressão digital do certificado. A renovação de certificado requer um formato de solicitação PKCS n º 7 ou CMC.|RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D|
-|RequesterName</br>Observação: isso faz com que a solicitação seja registrada em nome de outra solicitação do usuário. A solicitação também deve ser assinada com um certificado de agente de registro ou a autoridade de certificação rejeitará a solicitação. Use a opção-CERT para especificar o certificado do agente de registro.|O nome do solicitante pode ser especificado para solicitações de certificado se o RequestType for definido como PKCS # 7 ou CMC. Se o RequestType for definido como PKCS # 10, essa chave será ignorada. O Requestername só pode ser definido como parte da solicitação. Você não pode manipular o Requestername em uma solicitação pendente.|Usuário|Requestername = Contoso\BSmith|
-|RequestType|Determina o padrão usado para gerar e enviar a solicitação de certificado.|PKCS10--1</br>PKCS7--2</br>CMC--3</br>Certificado--4</br>SCEP--fd00 (64768)</br>Dica: essa opção indica um certificado autoassinado ou emitido por conta própria. Ele não gera uma solicitação, mas sim um novo certificado e, em seguida, instala o certificado. Auto-assinado é o padrão. Especifique um certificado de assinatura usando a opção – CERT para criar um certificado autoemitido que não tenha assinatura automática.|RequestType = CMC|
-|SecurityDescriptor</br>Dica: isso é relevante apenas para chaves de cartão não inteligente de contexto de computador.|Contêm as informações de segurança associadas a objetos protegíveis. Para a maioria dos objetos protegíveis, você pode especificar o descritor de segurança de um objeto na chamada de função que cria o objeto.|Cadeias de caracteres baseadas na [linguagem de definição do descritor de segurança](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx).|SecurityDescriptor = D:P (A;; GA;;; SY) (A;; GA;;; BA|
-|AlternateSignatureAlgorithm|Especifica e recupera um valor booliano que indica se o OID (identificador de objeto) de algoritmo de assinatura para uma solicitação PKCS # 10 ou assinatura de certificado é discreto ou combinado.|true, false|AlternateSignatureAlgorithm = false</br>Dica: para uma assinatura RSA, false indica um Pkcs1 v 1.5. Verdadeiro indica uma assinatura v 2.1.|
-|Silencioso|Por padrão, essa opção permite que o CSP acesse a área de trabalho do usuário interativo e solicite informações como um PIN do cartão inteligente do usuário. Se essa chave for definida como TRUE, o CSP não deverá interagir com a área de trabalho e será impedido de exibir qualquer interface do usuário para o usuário.|true, false|Silent = true|
-|SMIME|Se esse parâmetro for definido como TRUE, uma extensão com o valor do identificador de objeto 1.2.840.113549.1.9.15 será adicionada à solicitação. O número de identificadores de objeto depende do na versão do sistema operacional instalada e do recurso CSP, que se refere aos algoritmos de criptografia simétrica que podem ser usados por aplicativos Secure Multipurpose Internet Mail Extensions (S/MIME), como o Outlook.|true, false|SMIME = verdadeiro|
-|UseExistingKeySet|Esse parâmetro é usado para especificar que um par de chaves existente deve ser usado na criação de uma solicitação de certificado. Se essa chave for definida como TRUE, você também deverá especificar um valor para a chave RenewalCert ou o nome do keycontainer. Você não deve definir a chave exportável porque não pode alterar as propriedades de uma chave existente. Nesse caso, nenhum material da chave é gerado quando a solicitação de certificado é criada.|true, false|UseExistingKeySet = true|
-|Proteção contra keyprotection|Especifica um valor que indica como uma chave privada é protegida antes do uso.|XCN_NCRYPT_UI_NO_PROTCTION_FLAG--0</br>XCN_NCRYPT_UI_PROTECT_KEY_FLAG--1</br>XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG--2|Proteção contra keyprotection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG|
-|SuppressDefaults|Especifica um valor booliano que indica se as extensões e os atributos padrão estão incluídos na solicitação. Os padrões são representados por seus OIDs (identificadores de objeto).|true, false|SuppressDefaults = true|
-|FriendlyName|Um nome amigável para o novo certificado.|Texto|FriendlyName = Server1|
-|ValidityPeriodUnits</br>Observação: isso é usado somente quando o tipo de solicitação = CERT.|Especifica um número de unidades que deve ser usado com ValidityPeriod.|Numérico|ValidityPeriodUnits = 3|
-|ValidityPeriod</br>Observação: isso é usado somente quando o tipo de solicitação = CERT.|VValidityPeriod deve ser um período de tempo no inglês dos EUA.|Anos, meses, semanas, dias, horas, minutos, segundos|ValidityPeriod = anos|
+| Chave<sup>1</sup> | Descrição | Valor<sup>2</sup> | Exemplo |
+| --- | ---------- | ----- | ------- |
+| Assunto | Vários aplicativos dependem das informações da entidade em um certificado. É recomendável especificar um valor para essa chave. Se o assunto não estiver definido aqui, recomendamos que você inclua um nome de assunto como parte da extensão de certificado de nome alternativo da entidade. | Valores de cadeia de caracteres do nome distinto relativo | Subject = CN = Computador1. contoso. com Subject = CN = John Smith, CN = Users, DC = contoso, DC = com |
+| Exportável | Se definido como TRUE, a chave privada pode ser exportada com o certificado. Para garantir um alto nível de segurança, as chaves privadas não devem ser exportáveis; no entanto, em alguns casos, pode ser necessário se vários computadores ou usuários tiverem que compartilhar a mesma chave privada. | `true | false` | `Exportable = TRUE`. As chaves CNG podem distinguir entre esse e o texto não criptografado exportável. As chaves CAPI1 não podem. |
+| ExportableEncrypted | Especifica se a chave privada deve ser definida para ser exportável. | `true | false` | `ExportableEncrypted = true`<p>**Dica:** Nem todos os tamanhos de chave pública e algoritmos funcionarão com todos os algoritmos de hash. O CSP especificado também deve oferecer suporte ao algoritmo de hash especificado. Para ver a lista de algoritmos de hash com suporte, você pode executar o comando:`certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
+| HashAlgorithm | Algoritmo de hash a ser usado para esta solicitação. | `Sha256, sha384, sha512, sha1, md5, md4, md2` | `HashAlgorithm = sha1`. Para ver a lista de algoritmos de hash com suporte, use: certutil-OID 1 | findstr pwszCNGAlgid | findstr/v CryptOIDInfo|
+| KeyAlgorithm| O algoritmo que será usado pelo provedor de serviços para gerar um par de chaves pública e privada.| `RSA, DH, DSA, ECDH_P256, ECDH_P521, ECDSA_P256, ECDSA_P384, ECDSA_P521` | `KeyAlgorithm = RSA` |
+| KeyContainer | Não recomendamos definir esse parâmetro para novas solicitações nas quais o novo material de chave é gerado. O contêiner de chave é automaticamente gerado e mantido pelo sistema.<p>Para solicitações em que o material de chave existente deve ser usado, esse valor pode ser definido como o nome do contêiner de chave da chave existente. Use o `certutil –key` comando para exibir a lista de contêineres de chave disponíveis para o contexto do computador. Use o `certutil –key –user` comando para o contexto do usuário atual.| Valor de cadeia de caracteres aleatória<p>**Dica:** Use aspas duplas em qualquer valor de chave INF que tenha espaços em branco ou caracteres especiais para evitar possíveis problemas de análise de INF. | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
+| KeyLength | Define o comprimento da chave pública e privada. O comprimento da chave tem um impacto sobre o nível de segurança do certificado. O comprimento de chave maior geralmente fornece um nível de segurança mais alto; no entanto, alguns aplicativos podem ter limitações em relação ao comprimento da chave. | Qualquer comprimento de chave válido com suporte do provedor de serviços de criptografia. | `KeyLength = 2048` |
+| KeySpec | Determina se a chave pode ser usada para assinaturas, para o Exchange (criptografia) ou para ambos. | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
+| Uso de | Define a que a chave de certificado deve ser usada. | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**Dica:** Vários valores usam um pipe (|) separador de símbolo. Certifique-se de usar aspas duplas ao usar vários valores para evitar problemas de análise de INF. Os valores mostrados são valores hexadecimais (decimais) para cada definição de bit. A sintaxe mais antiga também pode ser usada: um único valor hexadecimal com vários bits definidos, em vez da representação simbólica. Por exemplo, `KeyUsage = 0xa0`. |
+| Keyutilizaproperty | Recupera um valor que identifica a finalidade específica para a qual uma chave privada pode ser usada. | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
+| MachineKeyset | Essa chave é importante quando você precisa criar certificados que pertencem à máquina e não um usuário. O material da chave gerado é mantido no contexto de segurança da entidade de segurança (conta de usuário ou computador) que criou a solicitação. Quando um administrador cria uma solicitação de certificado em nome de um computador, o material da chave deve ser criado no contexto de segurança da máquina e não no contexto de segurança do administrador. Caso contrário, o computador não poderá acessar sua chave privada, pois ela estaria no contexto de segurança do administrador. | `true | false`. O padrão é false. | `MachineKeySet = true` |
+| NotBefore | Especifica uma data ou data e hora antes da qual a solicitação não pode ser emitida. `NotBefore`pode ser usado com `ValidityPeriod` e `ValidityPeriodUnits`. | Data ou data e hora | `NotBefore = 7/24/2012 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são apenas para`equestType=cert` R. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
+| NotAfter | Especifica uma data ou data e hora após a qual a solicitação não pode ser emitida. `NotAfter`Não pode ser usado `ValidityPeriod` com `ValidityPeriodUnits`ou. | Data ou data e hora | `NotAfter = 9/23/2014 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são apenas `RequestType=cert` para. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
+| PrivateKeyArchive | A configuração PrivateKeyArchive só funcionará se o RequestType correspondente for definido como CMC porque apenas o formato de solicitação de mensagens de gerenciamento de certificado sobre CMS (CMC) permite transferir com segurança a chave privada do solicitante para a autoridade de arquivamento de chave. | `true | false` | `PrivateKeyArchive = true` |
+| EncryptionAlgorithm | O algoritmo de criptografia a ser usado. | As opções possíveis variam, dependendo da versão do sistema operacional e do conjunto de provedores criptográficos instalados. Para ver a lista de algoritmos disponíveis, execute o comando `certutil -oid 2 | findstr pwszCNGAlgid`:. O CSP especificado também deve oferecer suporte ao algoritmo de criptografia simétrica especificado e ao comprimento. | `EncryptionAlgorithm = 3des` |
+| EncryptionLength | Comprimento do algoritmo de criptografia a ser usado. | Qualquer comprimento permitido pelo EncryptionAlgorithm especificado. | `EncryptionLength = 128` |
+| ProviderName | O nome do provedor é o nome de exibição do CSP. | Se você não souber o nome do provedor do CSP que está usando, execute `certutil –csplist` de uma linha de comando. O comando exibirá os nomes de todos os CSPs disponíveis no sistema local | `ProviderName = Microsoft RSA SChannel Cryptographic Provider` |
+| ProviderType | O tipo de provedor é usado para selecionar provedores específicos com base no recurso de algoritmo específico, como RSA Full. | Se você não souber o tipo de provedor do CSP que está usando, execute `certutil –csplist` de um prompt de linha de comando. O comando exibirá o tipo de provedor de todos os CSPs disponíveis no sistema local. | `ProviderType = 1` |
+| RenewalCert | Se precisar renovar um certificado que existe no sistema em que a solicitação de certificado é gerada, você deve especificar seu hash de certificado como o valor para essa chave. | O hash de certificado de qualquer certificado disponível no computador em que a solicitação de certificado é criada. Se você não souber o hash de certificado, use o snap-in do MMC de certificados e examine o certificado que deve ser renovado. Abra as propriedades do certificado e veja `Thumbprint` o atributo do certificado. A renovação de certificado requer `PKCS#7` um ou `CMC` um formato de solicitação. | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
+| RequesterName | Faz com que a solicitação se registre em nome de outra solicitação de usuário. A solicitação também deve ser assinada com um certificado de agente de registro ou a autoridade de certificação rejeitará a solicitação. Use a `-cert` opção para especificar o certificado do agente de registro. O nome do solicitante pode ser especificado para solicitações de certificado `RequestType` se o for `PKCS#7` definido `CMC`como ou. Se o `RequestType` for definido como `PKCS#10`, essa chave será ignorada. O `Requestername` só pode ser definido como parte da solicitação. Você não pode manipular `Requestername` o em uma solicitação pendente. | `Domain\User` | `Requestername = Contoso\BSmith` |
+| RequestType | Determina o padrão usado para gerar e enviar a solicitação de certificado. | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul>**Dica:** Essa opção indica um certificado autoassinado ou emitido por conta própria. Ele não gera uma solicitação, mas sim um novo certificado e, em seguida, instala o certificado. Auto-assinado é o padrão. Especifique um certificado de assinatura usando a opção – CERT para criar um certificado autoemitido que não tenha assinatura automática. | `RequestType = CMC` |
+| SecurityDescriptor | Contém as informações de segurança associadas a objetos protegíveis. Para a maioria dos objetos protegíveis, você pode especificar o descritor de segurança de um objeto na chamada de função que cria o objeto. Cadeias de caracteres baseadas na [linguagem de definição do descritor de segurança](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx).<p>**Dica:** Isso é relevante apenas para chaves de cartão não inteligente de contexto de computador. | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
+| AlternateSignatureAlgorithm | Especifica e recupera um valor booliano que indica se o OID (identificador de objeto) de algoritmo de assinatura para uma solicitação PKCS # 10 ou assinatura de certificado é discreto ou combinado. | `true | false` | `AlternateSignatureAlgorithm = false`<p>Para uma assinatura RSA, `false` indica um `Pkcs1 v1.5`, enquanto `true` indica uma `v2.1` assinatura. |
+| Silencioso | Por padrão, essa opção permite que o CSP acesse a área de trabalho do usuário interativo e solicite informações como um PIN do cartão inteligente do usuário. Se essa chave for definida como TRUE, o CSP não deverá interagir com a área de trabalho e será impedido de exibir qualquer interface do usuário para o usuário. | `true | false` | `Silent = true` |
+| SMIME | Se esse parâmetro for definido como TRUE, uma extensão com o valor do identificador de objeto 1.2.840.113549.1.9.15 será adicionada à solicitação. O número de identificadores de objeto depende do na versão do sistema operacional instalada e do recurso CSP, que se refere aos algoritmos de criptografia simétrica que podem ser usados por aplicativos Secure Multipurpose Internet Mail Extensions (S/MIME), como o Outlook. | `true | false` | `SMIME = true` |
+| UseExistingKeySet | Esse parâmetro é usado para especificar que um par de chaves existente deve ser usado na criação de uma solicitação de certificado. Se essa chave for definida como TRUE, você também deverá especificar um valor para a chave RenewalCert ou o nome do keycontainer. Você não deve definir a chave exportável porque não pode alterar as propriedades de uma chave existente. Nesse caso, nenhum material da chave é gerado quando a solicitação de certificado é criada. | `true | false` | `UseExistingKeySet = true` |
+| Proteção contra keyprotection | Especifica um valor que indica como uma chave privada é protegida antes do uso. | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
+| SuppressDefaults | Especifica um valor booliano que indica se as extensões e os atributos padrão estão incluídos na solicitação. Os padrões são representados por seus OIDs (identificadores de objeto). | `true | false` | `SuppressDefaults = true` |
+| FriendlyName | Um nome amigável para o novo certificado. | Texto | `FriendlyName = Server1` |
+| ValidityPeriodUnits | Especifica um número de unidades que deve ser usado com ValidityPeriod. Observação: isso é usado somente quando o `request type=cert`. | Numérico | `ValidityPeriodUnits = 3` |
+| ValidityPeriod | ValidityPeriod deve ser um período de tempo no inglês dos EUA. Observação: isso é usado somente quando o tipo de solicitação = CERT. | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
-Retornar ao [conteúdo](#BKMK_Contents)
+<sup>1</sup> O parâmetro à esquerda do sinal de igual (=)
 
-**WMZ**
+<sup>2</sup> O parâmetro à direita do sinal de igual (=)
+
+#### <a name="extensions"></a>WMZ
 
 Esta seção é opcional.
 
-
-|  OID de extensão   | Definição | {1&gt;Valor&lt;1} |                                                                                                                                                                                                                                                                                                                                                                                                                      {1&gt;Exemplo&lt;1}                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|------------------|------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    2.5.29.17     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                                2.5.29.17 = {Text}                                                                                                                                                                                                                                                                                                                                                                                                                |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                        *continue* = UPN =User@Domain.com&                                                                                                                                                                                                                                                                                                                                                                                                         |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                       *continue* = EMail =User@Domain.com&                                                                                                                                                                                                                                                                                                                                                                                                        |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                        *continuação* = DNS = host. domain. com &                                                                                                                                                                                                                                                                                                                                                                                                         |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                               *continue* = DIRECTORYNAME = CN = Name, DC = Domain, DC = com &                                                                                                                                                                                                                                                                                                                                                                                               |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                             *continuar* = URL =<http://host.domain.com/default.html&>                                                                                                                                                                                                                                                                                                                                                                                              |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                         *continuar* = IPAddress = 10.0.0.1 &                                                                                                                                                                                                                                                                                                                                                                                                         |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                       *continue* = registeredid = 1.2.3.4.5 &                                                                                                                                                                                                                                                                                                                                                                                                       |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                      *continuar* = 1.2.3.4.6.1 = {UTF8} cadeia de caracteres &                                                                                                                                                                                                                                                                                                                                                                                                      |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                  *continue* = 1.2.3.4.6.2 = {octet} AAECAwQFBgc = &                                                                                                                                                                                                                                                                                                                                                                                                   |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                          *continue* = 1.2.3.4.6.2 = {octeto} {hex} 00 01 02 03 04 05 06 07 &                                                                                                                                                                                                                                                                                                                                                                                           |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                 *continue* = 1.2.3.4.6.3 = {ASN} BAgAAQIDBAUGBw = = &                                                                                                                                                                                                                                                                                                                                                                                                  |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                           *continue* = 1.2.3.4.6.3 = {hex} 04 08 00 01 02 03 04 05 06 07                                                                                                                                                                                                                                                                                                                                                                                            |
-|    2.5.29.37     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                                 2.5.29.37 = {Text}                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                            *continue* = 1.3.6.1.5.5.7.                                                                                                                                                                                                                                                                                                                                                                                                            |
-|    *continua*    |            |       |                                                                                                                                                                                                                                                                                                                                                                                                          *continuar* = 1.3.6.1.5.5.7.3.1                                                                                                                                                                                                                                                                                                                                                                                                          |
-|    2.5.29.19     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                              {Text} AC = 0pathlength = 3                                                                                                                                                                                                                                                                                                                                                                                                              |
-|     Crítico     |            |       |                                                                                                                                                                                                                                                                                                                                                                                                                 Crítico = 2.5.29.19                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|     KeySpec      |            |       |                                                                                                                                                                                                                                                                                                                                                                                             AT_NONE--0</br>AT_SIGNATURE--2</br>AT_KEYEXCHANGE--1                                                                                                                                                                                                                                                                                                                                                                                             |
-|   RequestType    |            |       |                                                                                                                                                                                                                                                                                                                                                                                   PKCS10--1</br>PKCS7--2</br>CMC--3</br>Certificado--4</br>SCEP--fd00 (64768)                                                                                                                                                                                                                                                                                                                                                                                   |
-|     Uso de     |            |       |                                                                                                                                                                                                       CERT_DIGITAL_SIGNATURE_KEY_USAGE--80 (128)</br>CERT_NON_REPUDIATION_KEY_USAGE--40 (64)</br>CERT_KEY_ENCIPHERMENT_KEY_USAGE--20 (32)</br>CERT_DATA_ENCIPHERMENT_KEY_USAGE--10 (16)</br>CERT_KEY_AGREEMENT_KEY_USAGE--8</br>CERT_KEY_CERT_SIGN_KEY_USAGE--4</br>CERT_OFFLINE_CRL_SIGN_KEY_USAGE--2</br>CERT_CRL_SIGN_KEY_USAGE--2</br>CERT_ENCIPHER_ONLY_KEY_USAGE--1</br>CERT_DECIPHER_ONLY_KEY_USAGE--8000 (32768)                                                                                                                                                                                                       |
-| Keyutilizaproperty |            |       |                                                                                                                                                                                                                                                                                                                                            NCRYPT_ALLOW_DECRYPT_FLAG--1</br>NCRYPT_ALLOW_SIGNING_FLAG--2</br>NCRYPT_ALLOW_KEY_AGREEMENT_FLAG--4</br>NCRYPT_ALLOW_ALL_USAGES--FFFFFF (16777215)                                                                                                                                                                                                                                                                                                                                             |
-|  Proteção contra keyprotection   |            |       |                                                                                                                                                                                                                                                                                                                                                                NCRYPT_UI_NO_PROTECTION_FLAG--0</br>NCRYPT_UI_PROTECT_KEY_FLAG--1</br>NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG--2                                                                                                                                                                                                                                                                                                                                                                 |
-| SubjectNameFlags |  {1&gt;modelo&lt;1}  |       |                                                                           CT_FLAG_SUBJECT_REQUIRE_COMMON_NAME--40 MILHÕES (1073741824)</br>CT_FLAG_SUBJECT_REQUIRE_DIRECTORY_PATH--80 MILHÕES (2147483648)</br>CT_FLAG_SUBJECT_REQUIRE_DNS_AS_CN--10 MILHÕES (268435456)</br>CT_FLAG_SUBJECT_REQUIRE_EMAIL--20 MILHÕES (536870912)</br>CT_FLAG_OLD_CERT_SUPPLIES_SUBJECT_AND_ALT_NAME--8</br>CT_FLAG_SUBJECT_ALT_REQUIRE_DIRECTORY_GUID--1 MILHÃO (16777216)</br>CT_FLAG_SUBJECT_ALT_REQUIRE_DNS--8 MILHÕES (134217728)</br>CT_FLAG_SUBJECT_ALT_REQUIRE_DOMAIN_DNS--400000 (4194304)</br>CT_FLAG_SUBJECT_ALT_REQUIRE_EMAIL--4 MILHÕES (67108864)</br>CT_FLAG_SUBJECT_ALT_REQUIRE_SPN--800000 (8388608)</br>CT_FLAG_SUBJECT_ALT_REQUIRE_UPN--2 MILHÕES (33554432)                                                                            |
-|  X500NameFlags   |            |       | CERT_NAME_STR_NONE--0</br>CERT_OID_NAME_STR--2</br>CERT_X500_NAME_STR--3</br>CERT_NAME_STR_SEMICOLON_FLAG--40 MILHÕES (1073741824)</br>CERT_NAME_STR_NO_PLUS_FLAG--20 MILHÕES (536870912)</br>CERT_NAME_STR_NO_QUOTING_FLAG--10 MILHÕES (268435456)</br>CERT_NAME_STR_CRLF_FLAG--8 MILHÕES (134217728)</br>CERT_NAME_STR_COMMA_FLAG--4 MILHÕES (67108864)</br>CERT_NAME_STR_REVERSE_FLAG--2 MILHÕES (33554432)</br>CERT_NAME_STR_FORWARD_FLAG--1 MILHÃO (16777216)</br>CERT_NAME_STR_DISABLE_IE4_UTF8_FLAG--10000 (65536)</br>CERT_NAME_STR_ENABLE_T61_UNICODE_FLAG--20000 (131072)</br>CERT_NAME_STR_ENABLE_UTF8_UNICODE_FLAG--40000 (262144)</br>CERT_NAME_STR_FORCE_UTF8_DIR_STR_FLAG--80000 (524288)</br>CERT_NAME_STR_DISABLE_UTF8_DIR_STR_FLAG--100000 (1048576)</br>CERT_NAME_STR_ENABLE_PUNYCODE_FLAG--200000 (2097152) |
-
-Retornar ao [conteúdo](#BKMK_Contents)
+| OID de extensão | Definição | Exemplo |
+| ------------- | ---------- | ----- | ------- |
+| 2.5.29.17 | | 2.5.29.17 = {Text} |
+| *continua* | | `continue = UPN=User@Domain.com&` |
+| *continua* | | `continue = EMail=User@Domain.com&` |
+| *continua* | | `continue = DNS=host.domain.com&` |
+| *continua* | | `continue = DirectoryName=CN=Name,DC=Domain,DC=com&` |
+| *continua* | | `continue = URL=<http://host.domain.com/default.html&>` |
+| *continua* | | `continue = IPAddress=10.0.0.1&` |
+| *continua* | | `continue = RegisteredId=1.2.3.4.5&` |
+| *continua* | | `continue = 1.2.3.4.6.1={utf8}String&` |
+| *continua* | | `continue = 1.2.3.4.6.2={octet}AAECAwQFBgc=&` |
+| *continua* | | `continue = 1.2.3.4.6.2={octet}{hex}00 01 02 03 04 05 06 07&` |
+| *continua* | | `continue = 1.2.3.4.6.3={asn}BAgAAQIDBAUGBw==&` |
+| *continua* | | `continue = 1.2.3.4.6.3={hex}04 08 00 01 02 03 04 05 06 07` |
+| 2.5.29.37 | | `2.5.29.37={text}` |
+| *continua* | | `continue = 1.3.6.1.5.5.7` |
+| *continua* | | `continue = 1.3.6.1.5.5.7.3.1` |
+| 2.5.29.19 | | `{text}ca=0pathlength=3` |
+| Crítico | | `Critical=2.5.29.19` |
+| KeySpec | | <ul><li>`AT_NONE -- 0`</li><li>`AT_SIGNATURE -- 2`</li><li>`AT_KEYEXCHANGE -- 1`</ul></li> |
+| RequestType | | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul> |
+| Uso de | | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> |
+| Keyutilizaproperty | | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> |
+| Proteção contra keyprotection | | <ul><li>`NCRYPT_UI_NO_PROTECTION_FLAG -- 0`</li><li>`NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> |
+| SubjectNameFlags | template | <ul><li>`CT_FLAG_SUBJECT_REQUIRE_COMMON_NAME -- 40000000 (1073741824)`</li><li>`CT_FLAG_SUBJECT_REQUIRE_DIRECTORY_PATH -- 80000000 (2147483648)`</li><li>`CT_FLAG_SUBJECT_REQUIRE_DNS_AS_CN -- 10000000 (268435456)`</li><li>`CT_FLAG_SUBJECT_REQUIRE_EMAIL -- 20000000 (536870912)`</li><li>`CT_FLAG_OLD_CERT_SUPPLIES_SUBJECT_AND_ALT_NAME -- 8`</li><li>`CT_FLAG_SUBJECT_ALT_REQUIRE_DIRECTORY_GUID -- 1000000 (16777216)`</li><li>`CT_FLAG_SUBJECT_ALT_REQUIRE_DNS -- 8000000 (134217728)`</li><li>`CT_FLAG_SUBJECT_ALT_REQUIRE_DOMAIN_DNS -- 400000 (4194304)`</li><li>`CT_FLAG_SUBJECT_ALT_REQUIRE_EMAIL -- 4000000 (67108864)`</li><li>`CT_FLAG_SUBJECT_ALT_REQUIRE_SPN -- 800000 (8388608)`</li><li>`CT_FLAG_SUBJECT_ALT_REQUIRE_UPN -- 2000000 (33554432)`</li></ul> |
+| X500NameFlags | | <ul><li>`CERT_NAME_STR_NONE -- 0`</li><li>`CERT_OID_NAME_STR -- 2`</li><li>`CERT_X500_NAME_STR -- 3`</li><li>`CERT_NAME_STR_SEMICOLON_FLAG -- 40000000 (1073741824)`</li><li>`CERT_NAME_STR_NO_PLUS_FLAG -- 20000000 (536870912)`</li><li>`CERT_NAME_STR_NO_QUOTING_FLAG -- 10000000 (268435456)`</li><li>`CERT_NAME_STR_CRLF_FLAG -- 8000000 (134217728)`</li><li>`CERT_NAME_STR_COMMA_FLAG -- 4000000 (67108864)`</li><li>`CERT_NAME_STR_REVERSE_FLAG -- 2000000 (33554432)`</li><li>`CERT_NAME_STR_FORWARD_FLAG -- 1000000 (16777216)`</li><li>`CERT_NAME_STR_DISABLE_IE4_UTF8_FLAG -- 10000 (65536)`</li><li>`CERT_NAME_STR_ENABLE_T61_UNICODE_FLAG -- 20000 (131072)`</li><li>`CERT_NAME_STR_ENABLE_UTF8_UNICODE_FLAG -- 40000 (262144)`</li><li>`CERT_NAME_STR_FORCE_UTF8_DIR_STR_FLAG -- 80000 (524288)`</li><li>`CERT_NAME_STR_DISABLE_UTF8_DIR_STR_FLAG -- 100000 (1048576)`</li><li>`CERT_NAME_STR_ENABLE_PUNYCODE_FLAG -- 200000 (2097152)`</li></ul> |
 
 > [!NOTE]
-> SubjectNameFlags permite que o arquivo INF especifique quais campos de extensão de assunto e SubjectAltName devem ser preenchidos automaticamente pelo Certreq com base no usuário atual ou nas propriedades do computador atual: nome DNS, UPN e assim por diante. O uso do modelo literal significa que os sinalizadores de nome do modelo são usados. Isso permite que um único arquivo INF seja usado em vários contextos para gerar solicitações com informações de assunto específicas do contexto.
+> `SubjectNameFlags`permite que o arquivo INF especifique quais campos de extensão de **assunto** e **SubjectAltName** devem ser preenchidos automaticamente pelo Certreq com base no usuário atual ou nas propriedades do computador atual: nome DNS, UPN e assim por diante. O uso do modelo literal significa que os sinalizadores de nome do modelo são usados. Isso permite que um único arquivo INF seja usado em vários contextos para gerar solicitações com informações de assunto específicas do contexto.
 >
-> X500NameFlags especifica os sinalizadores a serem passados diretamente para a API do CertStrToName quando o valor das chaves INF do assunto é convertido em um nome diferenciado com codificação ASN. 1.
+> `X500NameFlags`Especifica os sinalizadores a serem passados diretamente para `CertStrToName` a API quando `Subject INF keys` o valor é convertido em um **nome**diferenciado de ASN. 1 codificado.
 
-Para solicitar um certificado baseado usando Certreq-New, use as etapas do exemplo abaixo:
+#### <a name="example"></a>Exemplo
 
-> [!WARNING]
-> O conteúdo deste tópico baseia-se nas configurações padrão do Windows Server 2008 AD CS; por exemplo, definindo o comprimento da chave como 2048, selecionando provedor de armazenamento de chaves de software da Microsoft como o CSP e usando Secure Hash Algorithm 1 (SHA1). Avalie essas seleções em relação aos requisitos da política de segurança da sua empresa.
+Para criar um arquivo de política (. inf) no bloco de notas e salvá-lo como *RequestConfig. inf*:
 
-Para criar uma cópia de arquivo de política (. inf) e salve o exemplo abaixo no bloco de notas e salve como RequestConfig. inf:
 ```
-[NewRequest] 
-Subject = CN=<FQDN of computer you are creating the certificate> 
-Exportable = TRUE 
-KeyLength = 2048 
-KeySpec = 1 
-KeyUsage = 0xf0 
-MachineKeySet = TRUE 
+[NewRequest]
+Subject = CN=<FQDN of computer you are creating the certificate>
+Exportable = TRUE
+KeyLength = 2048
+KeySpec = 1
+KeyUsage = 0xf0
+MachineKeySet = TRUE
 [RequestAttributes]
 CertificateTemplate=WebServer
-[Extensions] 
-OID = 1.3.6.1.5.5.7.3.1 
-OID = 1.3.6.1.5.5.7.3.2  
+[Extensions]
+OID = 1.3.6.1.5.5.7.3.1
+OID = 1.3.6.1.5.5.7.3.2
 ```
-No computador para o qual você está solicitando um certificado, digite o comando a seguir:
+
+No computador para o qual você está solicitando um certificado:
+
 ```
-CertReq –New RequestConfig.inf CertRequest.req 
+certreq –new requestconfig.inf certrequest.req
 ```
-O exemplo a seguir demonstra a implementação da sintaxe da seção [Strings] para OIDs e outros dados difíceis de interpretar. O novo exemplo de sintaxe de {Text} para extensão EKU, que usa uma lista separada por vírgulas de OIDs:
+
+Para usar a sintaxe da seção [Strings] para OIDs e outros dados difíceis de interpretar. O novo exemplo de sintaxe de {Text} para extensão EKU, que usa uma lista separada por vírgulas de OIDs:
+
 ```
 [Version]
 Signature=$Windows NT$
@@ -246,130 +220,131 @@ Requesttype = Cert
 %szOID_ENHANCED_KEY_USAGE%={text}%szOID_PKIX_KP_SERVER_AUTH%,
 _continue_ = %szOID_PKIX_KP_CLIENT_AUTH%
 ```
-Retornar ao [conteúdo](#BKMK_Contents)
 
-## <a name="certreq--accept"></a><a name=BKMK_accept></a>Certreq-aceitar
+### <a name="certreq--accept"></a>certreq-aceitar
+
+O `–accept` parâmetro vincula a chave privada gerada anteriormente com o certificado emitido e remove a solicitação de certificado pendente do sistema em que o certificado é solicitado (se houver uma solicitação correspondente).
+
+Para aceitar um certificado manualmente:
 
 ```
-CertReq -accept [Options] [CertChainFileIn | FullResponseFileIn | CertFileIn]
-```
-O parâmetro – Accept vincula a chave privada gerada anteriormente com o certificado emitido e remove a solicitação de certificado pendente do sistema em que o certificado é solicitado (se houver uma solicitação correspondente).
-
-Você pode usar este exemplo para aceitar um certificado manualmente:
-```
-certreq -accept certnew.cer 
+certreq -accept certnew.cer
 ```
 
 > [!WARNING]
-> O verbo-Accept, as opções-user e – Machine indicam se o certificado que está sendo instalado deve ser instalado no contexto do usuário ou da máquina. Se houver uma solicitação pendente em qualquer contexto que corresponda à chave pública que está sendo instalada, essas opções não serão necessárias. Se não houver nenhuma solicitação pendente, um deles deverá ser especificado.
+> O uso `-accept` do parâmetro com `-user` as `–machine` opções e indica se o certificado de instalação deve ser instalado no contexto do **usuário** ou da **máquina** . Se houver uma solicitação pendente em qualquer contexto que corresponda à chave pública que está sendo instalada, essas opções não serão necessárias. Se não houver nenhuma solicitação pendente, um deles deverá ser especificado.
 
-Retornar ao [conteúdo](#BKMK_Contents)
+### <a name="certreq--policy"></a>certreq-política
 
-## <a name="certreq--policy"></a><a name=BKMK_policy></a>Certreq-política
+O arquivo Policy. inf é um arquivo de configuração que define as restrições aplicadas a uma certificação de autoridade de certificação quando uma subordinação qualificada é definida.
 
-```
-certreq -policy [-attrib AttributeString] [-binary] [-cert CertID] [RequestFileIn [PolicyFileIn [RequestFileOut [PKCS10FileOut]]]]
-```
--   O arquivo de configuração que define as restrições que são aplicadas a um certificado de autoridade de certificação quando a subordinação qualificada é definida é chamado de Policy. inf..
--   Você pode encontrar um exemplo do arquivo Policy. inf no [Apêndice a de planejando e implementando a certificação cruzada e a subordinação qualificada](https://technet.microsoft.com/library/cc738878(WS.10).aspx) White Paper.
--   Se você digitar o certreq-policy sem nenhum parâmetro adicional, ele abrirá uma janela de diálogo para que você possa selecionar o arquivos solicitado (req, CMC, txt, der, CER ou CRT). Depois de selecionar o arquivo solicitado e clicar no botão abrir, outra janela de diálogo será aberta para selecionar o arquivo INF.
-
-Você pode usar este exemplo para criar uma solicitação de certificado cruzado:
-```
-certreq -policy Certsrv.req Policy.inf newcertsrv.req 
-```
-Retornar ao [conteúdo](#BKMK_Contents)
-
-## <a name="certreq--sign"></a><a name=BKMK_sign></a>Certreq-assinar
+Para criar uma solicitação de certificado cruzado:
 
 ```
-certreq -sign [Options] [RequestFileIn [RequestFileOut]]
+certreq -policy certsrv.req policy.inf newcertsrv.req
 ```
--   Se você digitar o Certreq-Sign sem nenhum parâmetro adicional, ele abrirá uma janela de diálogo para que você possa selecionar o arquivo solicitado (req, CMC, txt, der, CER ou CRT).
--   Assinar a solicitação de subordinação qualificada pode exigir credenciais de administrador corporativo. Essa é uma prática recomendada para emitir certificados de assinatura para subordinação qualificada.
--   O certificado usado para assinar a solicitação de subordinação qualificada é criado usando o modelo de subordinação qualificado. Os administradores de empresa terão que assinar a solicitação ou conceder permissões de usuário para os indivíduos que assinarão o certificado.
--   Ao assinar a solicitação CMC, talvez seja necessário que várias pessoas assinem essa solicitação, dependendo do nível de garantia associado à subordinação qualificada.
--   Se a autoridade de certificação pai da AC subordinada qualificada que você está instalando estiver offline, você deverá obter o certificado de autoridade de certificação para a AC subordinada qualificada do pai offline. Se a AC pai estiver online, especifique o certificado de autoridade de certificação para a autoridade de certificação subordinada qualificada durante o assistente de instalação de serviços de certificados.
 
-A sequência de comandos abaixo mostrará como criar uma nova solicitação de certificado, conectá-la e enviá-la:
-```
-certreq -new policyfile.inf MyRequest.req
-certreq -sign MyRequest.req MyRequest_Sign.req
-certreq -submit MyRequest_Sign.req MyRequest_cert.cer 
-```
-Retornar ao [conteúdo](#BKMK_Contents)
+Usar `certreq -policy` sem nenhum parâmetro adicional abre uma janela da caixa de diálogo, permitindo que você selecione o arquivos solicitado (. req,. CMC,. txt,. der,. cer ou. CRT). Depois de selecionar o arquivo solicitado e clicar em **abrir**, outra janela de diálogo será aberta, permitindo que você selecione o arquivo Policy. inf.
 
-## <a name="certreq--enroll"></a><a name=BKMK_enroll></a>Certreq-registrar
+#### <a name="examples"></a>Exemplos
 
-Para registrar-se em um certificado
-```
-certreq –enroll [Options] TemplateName
-```
-Para renovar um certificado existente
-```
-certreq –enroll –cert CertId [Options] Renew [ReuseKeys]
-```
-Você só pode renovar certificados que são válidos. Os certificados expirados não podem ser renovados e devem ser substituídos por um novo certificado.
+Localize um exemplo do arquivo Policy. inf na sintaxe do [CAPolicy. inf](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file).
 
-Aqui está um exemplo de renovação de um certificado usando seu número de série:
+### <a name="certreq--sign"></a>certreq-assinar
+
+Para criar uma nova solicitação de certificado, assine-a e enviá-la:
+
 ```
-certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 Renew
+certreq -new policyfile.inf myrequest.req
+certreq -sign myrequest.req myrequest.req
+certreq -submit myrequest_sign.req myrequest_cert.cer
 ```
-Aqui, um exemplo de registro em um modelo de certificado chamado WebServer usando o asterisco (*) para selecionar o servidor de políticas por meio de U/I:
+
+#### <a name="remarks"></a>Comentários
+
+- Usando `certreq -sign` sem qualquer parâmetro adicional, será aberta uma janela de diálogo para que você possa selecionar o arquivo solicitado (req, CMC, txt, der, CER ou CRT).
+
+- Assinar a solicitação de subordinação qualificada pode exigir credenciais de **administrador corporativo** . Essa é uma prática recomendada para emitir certificados de assinatura para subordinação qualificada.
+
+- O certificado usado para assinar a solicitação de subordinação qualificada usa o modelo de subordinação qualificado. Os administradores corporativos terão que assinar a solicitação ou conceder permissões de usuário para os indivíduos que assinarem o certificado.
+
+- Talvez seja necessário que a equipe adicional assine a solicitação CMC depois de você. Isso dependerá do nível de garantia associado à subordinação qualificada.
+
+- Se a autoridade de certificação pai da AC subordinada qualificada que você está instalando estiver offline, você deverá obter o certificado de autoridade de certificação para a AC subordinada qualificada do pai offline. Se a AC pai estiver online, especifique o certificado de autoridade de certificação para a autoridade de certificação subordinada qualificada durante o assistente de **instalação de serviços de certificados** .
+
+### <a name="certreq--enroll"></a>certreq-registrar
+
+Você pode usar este comentário para registrar ou renovar seus certificados.
+
+#### <a name="examples"></a>Exemplos
+
+Para registrar um certificado, usando o modelo do *WebServer* e selecionando o servidor de políticas usando U/I:
+
 ```
 certreq -enroll –machine –policyserver * WebServer
 ```
-Retornar ao [conteúdo](#BKMK_Contents)
 
-## <a name="options"></a><a name=BKMK_Options></a>Opções
+Para renovar um certificado usando um número de série:
 
-|{1&gt;Opções&lt;1}|Descrição|
-|-------|-----------|
-|-qualquer|Force ICertRequest:: Submit para determinar o tipo de codificação.|
-|-Atrib \<AttributeString >|Especifica os pares de cadeia de caracteres de nome e valor, separados por dois-pontos.</br>Separe os pares de cadeia de caracteres de nome e valor com \n (por exemplo, Nome1: Value1\nName2: value2).|
-|-binário|Formata arquivos de saída como binários em vez de codificados em base64.|
-|-PolicyServer *\<PolicyServer >*|LDAP: *caminho de\<>*</br>Insira o URI ou a ID exclusiva para um computador que executa o Serviço Web de Política de Registro de Certificado.</br>Para especificar que você gostaria de usar um arquivo de solicitação navegando, basta usar um sinal de menos (-) para *\<policyserver >* .|
-|-config \<ConfigString >|Processa a operação usando a autoridade de certificação especificada na cadeia de caracteres de configuração, que é CAHostName\CAName. Para uma conexão HTTPS, especifique o URI do servidor de registro. Para a AC do repositório do computador local, use um sinal de menos (-).|
-|-Anônimo|Use credenciais anônimas para serviços Web de registro de certificado.|
-|-Kerberos|Use credenciais Kerberos (domínio) para serviços Web de registro de certificado.|
-|-ClientCertificate *\<ClientCertId >*|Você pode substituir o *\<ClientCertID >* por uma impressão digital do certificado, CN, EKU, modelo, email, UPN e a nova sintaxe name = value.|
-|-UserName *\<nome de usuário >*|Usado com serviços Web de registro de certificado. Você pode substituir *\<nome de usuário >* com o nome Sam ou Domain\User. Essa opção é para uso com a opção-p.|
-|-p *\<senha >*|Usado com serviços Web de registro de certificado. Substitua *\<senha >* pela senha do usuário real. Essa opção é para uso com a opção-UserName.|
-|-usuário|Configura o contexto do usuário para uma nova solicitação de certificado ou especifica o contexto para uma aceitação de certificado. Esse é o contexto padrão, se nenhum for especificado no INF ou no modelo.|
-|-computador|Configura uma nova solicitação de certificado ou especifica o contexto de uma aceitação de certificado para o contexto da máquina. Para novas solicitações, ele deve ser consistente com a chave do MachineKeyset INF e o contexto do modelo. Se essa opção não for especificada e o modelo não definir um contexto, o padrão será o contexto do usuário.|
-|-CRL|Inclui listas de certificados revogados (CRLs) na saída para o arquivo de #7 PKCS codificado em base64 especificado por CertChainFileOut ou para o arquivo codificado em base64 especificado por RequestFileOut.|
-|-RPC|Instrui Active Directory serviços de certificados (AD CS) para usar uma conexão de servidor RPC (chamada de procedimento remoto) em vez de COM distribuído.|
-|-AdminForceMachine|Use o serviço de chave ou a representação para enviar a solicitação do contexto do sistema local. Requer que o usuário que invoca essa opção seja membro de administradores locais.|
-|-RenewOnBehalfOf|Envie uma renovação em nome do assunto identificado no certificado de autenticação. Isso define CR_IN_ROBO ao chamar [ICertRequest:: Submit](https://technet.microsoft.com/subscriptions/aa385040.aspx)|
-|-f|Forçar os arquivos existentes a serem substituídos. Isso também ignora os modelos de cache e a política.|
-|-q|Usar o modo silencioso; suprimir todos os prompts interativos.|
-|-Unicode|Grava a saída Unicode quando a saída padrão é redirecionada ou canalizada para outro comando, o que ajuda quando é invocado do Windows PowerShell® scripts).|
-|-UnicodeText|Envia a saída Unicode ao gravar blobs de dados codificados em texto base64 em arquivos.|
+```
+certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
+```
 
-Retornar ao [conteúdo](#BKMK_Contents)
+Você só pode renovar certificados válidos. Os certificados expirados não podem ser renovados e devem ser substituídos por um novo certificado.
 
-## <a name="formats"></a><a name=BKMK_Formats></a>Forma
+## <a name="options"></a>Opções
 
-|Forma|Descrição|
-|-------|-----------|
-|RequestFileIn|Nome de arquivo de entrada binário ou codificado na base64: solicitação de certificado de #10 de dados PKCS, solicitação de certificado CMS, solicitação de renovação de certificado #7 PKCS, certificado X. 509 a ser certificados cruzados ou solicitação de certificado de formato de marca KeyGen.|
-|RequestFileOut|Nome do arquivo de saída codificado na base64|
-|CertFileOut|Nome de arquivo X-509 codificado na base64.|
-|PKCS10FileOut|Para uso com somente o verbo [certreq-policy](#BKMK_policy) . Nome do arquivo de saída PKCS10 codificado na base64.|
-|CertChainFileOut|Nome de arquivo de #7 PKCS codificado em base64.|
-|FullResponseFileOut|Nome de arquivo de resposta completa codificado em base64.|
-|PolicyFileIn|Para uso com somente o verbo [certreq-policy](#BKMK_policy) . Arquivo INF que contém uma representação textual das extensões usadas para qualificar uma solicitação.|
+| Opções | Descrição |
+| ------- | ----------- |
+| -qualquer | `Force ICertRequest::Submit`para determinar o tipo de codificação.|
+| -Atrib.`<attributestring>` | Especifica os pares de cadeia de caracteres de **nome** e **valor** , separados por dois-pontos.<p>Separe os pares **nome** e cadeia de `\n` caracteres de **valor** usando (por exemplo, Nome1: value1\nName2: value2). |
+| -binário | Formata arquivos de saída como binários em vez de codificados em base64. |
+| -policyserver`<policyserver>` | LDAP`<path>`<br>Insira o URI ou a ID exclusiva para um computador que executa o serviço Web da política de registro de certificado.<p>Para especificar que você gostaria de usar um arquivo de solicitação navegando, basta usar um sinal de menos (-) `<policyserver>`para. |
+| -configuração`<ConfigString>` | Processa a operação usando a autoridade de certificação especificada na cadeia de caracteres de configuração, que é **CAHostName\CAName**. Para uma conexão HTTPS\\: \, ESPECIFIQUE o URI do servidor de registro. Para a AC do repositório do computador local, use um sinal de menos (-). |
+| -anônimo | Use credenciais anônimas para serviços Web de registro de certificado. |
+| -Kerberos | Use credenciais Kerberos (domínio) para serviços Web de registro de certificado. |
+| -ClientCertificate`<ClientCertId>` | Você pode substituir por `<ClientCertId>` uma impressão digital do certificado, CN, EKU, modelo, email, UPN ou a nova `name=value` sintaxe. |
+| -nome de usuário`<username>` | Usado com serviços Web de registro de certificado. Você pode substituir `<username>` pelo nome Sam ou pelo **domínio \** valor. Essa opção é para uso com a `-p` opção. |
+| -p`<password>` | Usado com serviços Web de registro de certificado. Substitua `<password>` pela senha do usuário real. Essa opção é para uso com a `-username` opção. |
+| -usuário | Configura o `-user` contexto para uma nova solicitação de certificado ou especifica o contexto para uma aceitação de certificado. Esse é o contexto padrão, se nenhum for especificado no INF ou no modelo. |
+| -computador | Configura uma nova solicitação de certificado ou especifica o contexto de uma aceitação de certificado para o contexto da máquina. Para novas solicitações, ele deve ser consistente com a chave do MachineKeyset INF e o contexto do modelo. Se essa opção não for especificada e o modelo não definir um contexto, o padrão será o contexto do usuário. |
+| -CRL | Inclui listas de certificados revogados (CRLs) na saída para o arquivo de #7 PKCS codificado em base64 especificado `certchainfileout` por ou para o arquivo codificado em base64 especificado `requestfileout`por. |
+| -RPC | Instrui Active Directory serviços de certificados (AD CS) para usar uma conexão de servidor RPC (chamada de procedimento remoto) em vez de COM distribuído. |
+| -adminforcemachine | Use o serviço de chave ou a representação para enviar a solicitação do contexto do sistema local. Requer que o usuário que invoca essa opção seja membro de administradores locais. |
+| -renewonbehalfof | Envie uma renovação em nome do assunto identificado no certificado de autenticação. Isso define CR_IN_ROBO ao chamar o [método ICertRequest:: Submit](https://docs.microsoft.com/windows/win32/api/certcli/nf-certcli-icertrequest-submit) |
+| -f | Forçar os arquivos existentes a serem substituídos. Isso também ignora os modelos de cache e a política. |
+| -Q | Usar o modo silencioso; suprimir todos os prompts interativos. |
+| -Unicode | Grava a saída Unicode quando a saída padrão é redirecionada ou canalizada para outro comando, o que ajuda quando é invocado de scripts do Windows PowerShell. |
+| -unicodetext | Envia a saída Unicode ao gravar blobs de dados codificados em texto base64 em arquivos. |
 
-## <a name="additional-certreq-examples"></a><a name=BKMK_Examples></a>Exemplos adicionais de certreq
+## <a name="formats"></a>Formatos
+
+| Formatos | Descrição |
+| ------- | ----------- |
+| requestfilein | Nome de arquivo de entrada binário ou codificado na base64: solicitação de certificado de #10 de dados PKCS, solicitação de certificado CMS, solicitação de renovação de certificado #7 PKCS, certificado X. 509 a ser certificados cruzados ou solicitação de certificado de formato de marca KeyGen. |
+| requestfileout | Nome do arquivo de saída codificado na base64. |
+| certfileout | Nome de arquivo X-509 codificado na base64. |
+| PKCS10fileout | Para uso somente com `certreq -policy` o parâmetro. Nome do arquivo de saída PKCS10 codificado na base64. |
+| certchainfileout | Nome de arquivo de #7 PKCS codificado em base64. |
+| fullresponsefileout | Nome de arquivo de resposta completa codificado em base64. |
+| policyfilein | Para uso somente com `certreq -policy` o parâmetro. Arquivo INF que contém uma representação textual das extensões usadas para qualificar uma solicitação. |
+
+## <a name="additional-resources"></a>Recursos adicionais
 
 Os artigos a seguir contêm exemplos de uso de Certreq:
--   [Como solicitar um certificado com um nome alternativo da entidade personalizada](https://technet.microsoft.com/library/ff625722.aspx)
--   [Guia de laboratório de teste: Implantando uma hierarquia de PKI de duas camadas do AD CS](https://technet.microsoft.com/library/hh831348.aspx)
--   [Apêndice 3: sintaxe do Certreq. exe](https://technet.microsoft.com/library/cc736326.aspx)
--   [Como criar um certificado SSL do servidor Web manualmente](https://blogs.technet.com/b/pki/archive/2009/08/05/how-to-create-a-web-server-ssl-certificate-manually.aspx)
--   [Solicitar um certificado de provisionamento AMT usando uma AC do Windows Server 2008](https://social.technet.microsoft.com/wiki/contents/articles/request-an-amt-provisioning-certificate-using-a-windows-server-2008-ca.aspx)
--   [Registro de certificado para o agente de System Center Operations Manager](https://social.technet.microsoft.com/wiki/contents/articles/certificate-enrollment-for-system-center-operations-manager-agent.aspx)
--   [Guia passo a passo do AD CS: implantação de hierarquia de PKI de duas camadas](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
--   [Como habilitar LDAP sobre SSL com uma autoridade de certificação de terceiros](https://support.microsoft.com/kb/321051)
 
-Retornar ao [conteúdo](#BKMK_Contents)
+- [Como adicionar um nome alternativo da entidade a um certificado LDAP seguro](https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate)
+
+- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831348(v=ws.11))
+
+- [Apêndice 3: sintaxe do Certreq. exe](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
+
+- [Como criar um certificado SSL do servidor Web manualmente](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
+
+- [Solicitar um certificado de provisionamento AMT usando uma AC do Windows Server 2008](https://social.technet.microsoft.com/wiki/contents/articles/548.request-an-amt-provisioning-certificate-using-a-windows-server-2008-ca.aspx)
+
+- [Registro de certificado para o agente de System Center Operations Manager](https://social.technet.microsoft.com/wiki/contents/articles/2017.certificate-enrollment-for-system-center-operations-manager-agent.aspx)
+
+- [Guia passo a passo do AD CS: implantação de hierarquia de PKI de duas camadas](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
+
+- [Como habilitar LDAP sobre SSL com uma autoridade de certificação de terceiros](https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority)

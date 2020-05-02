@@ -1,6 +1,6 @@
 ---
 title: diskcomp
-description: Tópico de comandos do Windows para diskcomp, que compara o conteúdo de dois disquetes.
+description: Tópico de referência para diskcomp, que compara o conteúdo de dois disquetes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e1b15e9b6669a22ac95693e635bae1642c307e09
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845549"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719491"
 ---
 # <a name="diskcomp"></a>diskcomp
 
 Compara o conteúdo de dois disquetes. Se usado sem parâmetros, **diskcomp** usará a unidade atual para comparar ambos os discos.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,8 +31,8 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<unidade1 >|Especifica a unidade que contém um dos disquetes.|
-|\<unidade2 >|Especifica a unidade que contém o outro disquete.|
+|\<Unidade1>|Especifica a unidade que contém um dos disquetes.|
+|\<Unidade2>|Especifica a unidade que contém o outro disquete.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -94,7 +93,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   A tabela a seguir explica cada código de saída.  
 
-  |Código de Saída|Descrição|
+  |Código de saída|Descrição|
   |---------|-----------|
   |0|Os discos são os mesmos|
   |1|Foram encontradas diferenças|
@@ -103,7 +102,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   Para processar códigos de saída retornados por **diskcomp**, você pode usar a variável de ambiente ERRORLEVEL na linha de comando **If** em um programa em lotes.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Se o computador tiver apenas uma unidade de disquete (por exemplo, unidade A) e você quiser comparar dois discos, digite:
 ```
@@ -111,7 +110,7 @@ diskcomp a: a:
 ```
 **Diskcomp** solicita que você insira cada disco, conforme necessário.
 
-O exemplo a seguir ilustra como processar um código de saída de **diskcomp** em um programa em lotes que usa a variável de ambiente ERRORLEVEL na linha de comando **If** :
+Para ilustrar como processar um código de saída de **diskcomp** em um programa em lotes que usa a variável de ambiente ERRORLEVEL na linha de comando **If** :
 ```
 rem Checkout.bat compares the disks in drive A and B 
 echo off 

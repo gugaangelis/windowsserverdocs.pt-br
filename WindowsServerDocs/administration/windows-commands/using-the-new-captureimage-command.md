@@ -1,6 +1,6 @@
 ---
 title: New-CaptureImage
-description: O tópico de comandos do Windows para New-CaptureImage, que cria uma nova imagem de captura de uma imagem de inicialização existente.
+description: Tópico de referência para New-CaptureImage, que cria uma nova imagem de captura de uma imagem de inicialização existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d8847888b87dfadb25cbb79dc172bf9b721b819
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32c895792701630d6cfa849a298dc7a55f18a5a6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830739"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719703"
 ---
 # <a name="new-captureimage"></a>New-CaptureImage
 
@@ -39,13 +39,13 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 |        Parâmetro         |                                                                                                                                                                                                                         Descrição                                                                                                                                                                                                                          |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server: nome do servidor\<>] |                                                                                                                                       Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                                                        |
-|   /Image: nome da imagem de\<>   |                                                                                                                                                                                                         Especifica o nome da imagem de inicialização de origem.                                                                                                                                                                                                         |
+| [/Server:\<nome do servidor>] |                                                                                                                                       Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                                                        |
+|   /Image:\<nome da imagem>   |                                                                                                                                                                                                         Especifica o nome da imagem de inicialização de origem.                                                                                                                                                                                                         |
 |   /Architecture: {x86    |                                                                                                                                                                                                                             Win64                                                                                                                                                                                                                             |
-| [/Filename: \<filename >] |                                                                                                                                                                            Se a imagem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.                                                                                                                                                                            |
-|    /DestinationImage     | Especifica as configurações para a imagem de destino. Você especifica as configurações usando as seguintes opções:</br>-/FilePath.: caminho e nome do arquivo de \<> define o caminho completo do arquivo para a nova imagem de captura.</br>-[/Name: \<Name >] – define o nome de exibição da imagem. Se nenhum nome de exibição for especificado, o nome de exibição da imagem de origem será usado.</br>-[/Description: \<Description >] – define a descrição da imagem.</br>-[/Overwrite: {Sim |
+| [/Filename: \<filename>] |                                                                                                                                                                            Se a imagem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.                                                                                                                                                                            |
+|    /DestinationImage     | Especifica as configurações para a imagem de destino. Você especifica as configurações usando as seguintes opções:</br>-/FilePath.: \<caminho e nome do arquivo> define o caminho completo do arquivo para a nova imagem de captura.</br>-[/Name: \<Name>] – define o nome de exibição da imagem. Se nenhum nome de exibição for especificado, o nome de exibição da imagem de origem será usado.</br>-[/Description: \<Description>] – define a descrição da imagem.</br>-[/Overwrite: {Sim |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para criar uma imagem de captura e nomeá-la WinPECapture. wim, digite:
 ```

@@ -1,6 +1,6 @@
 ---
 title: atmadm
-description: Tópico de comandos do Windows para **atmadm**, que monitora conexões e endereços registrados pelo Gerenciador de chamadas atM em uma rede ATM (modo de transferência assíncrona).
+description: Tópico de referência para o comando atmadm, que monitora conexões e endereços que são registrados pelo Gerenciador de chamadas atM em uma rede atM (modo de transferência assíncrona).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cbfb787c472eaad4cbef5f86e7546f7b6f1da305
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32dad00e5a4d03c905f95c48e112f512a9dbc2e5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851269"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718914"
 ---
 # <a name="atmadm"></a>atmadm
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Monitora conexões e endereços registrados pelo Gerenciador de chamadas atM em uma rede atM (modo de transferência assíncrona). Você pode usar **atmadm** para exibir estatísticas de chamadas de entrada e saída em adaptadores atM. Usado sem parâmetros, **atmadm** exibe estatísticas para monitorar o status de conexões atM ativas. 
+Monitora conexões e endereços registrados pelo Gerenciador de chamadas atM em uma rede atM (modo de transferência assíncrona). Você pode usar **atmadm** para exibir estatísticas de chamadas de entrada e saída em adaptadores atM. Usado sem parâmetros, **atmadm** exibe estatísticas para monitorar o status de conexões atM ativas.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,7 +37,7 @@ atmadm [/c][/a][/s]
 | /s | Exibe estatísticas para monitorar o status de conexões atM ativas. |
 | /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+### <a name="remarks"></a>Comentários
 
 - O comando **atmadm/c** produz uma saída semelhante à seguinte:
 
@@ -76,15 +76,15 @@ atmadm [/c][/a][/s]
 
     | Tipo de dados | Exibição de tela | Descrição |
     | -------- | --------- | -------- |
-    | Informações de conexão | Entrada/saída | Direção da chamada. O **no** é o adaptador de rede atM de outro dispositivo.  **Out** é do adaptador de rede atM para outro dispositivo. |
+    | Informações de Conexão | Entrada/saída | Direção da chamada. O **no** é o adaptador de rede atM de outro dispositivo.  **Out** é do adaptador de rede atM para outro dispositivo. |
     | PMP | Chamada ponto a multiponto. |
     | P-P | Chamada ponto a ponto. |
     | SVC | A conexão está em um circuito virtual comutado. |
     | PVC | A conexão está em um circuito virtual permanente. |
     | Informações de VPI/VCI | VPI/VCI | O caminho virtual e o canal virtual da chamada de entrada ou saída. |
     | Parâmetros de mídia/endereço remoto | 47000580FFE1000000F21A2E180000C110081500 | Endereço NSAP do dispositivo atM de chamada **(in)** ou chamado **(out)** . |
-    | TX | O parâmetro **TX** inclui os três seguintes elementos:<p>-Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)<p>-Velocidade de linha padrão ou especificada<p>-Tamanho de SDU (unidade de dados de serviço) especificado. |
-    | RX | O parâmetro **RX** inclui os três seguintes elementos:<p>-Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)<p>-Velocidade de linha padrão ou especificada<p>-Tamanho de SDU especificado. |
+    | TX | O parâmetro **TX** inclui os três seguintes elementos:<ul><li>Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)</li><li>Velocidade de linha padrão ou especificada</li><li>Tamanho de SDU (unidade de dados de serviço) especificado.</li></ul> |
+    | Rx | O parâmetro **RX** inclui os três seguintes elementos:<ul><li>Tipo de taxa de bits padrão ou especificada (UBR, CBR, VBR ou ABR)</li><li>Velocidade de linha padrão ou especificada</li><li>Tamanho de SDU especificado.</li></ul> |
 
 - O comando **atmadm/a** produz uma saída semelhante à seguinte:
 
@@ -124,7 +124,7 @@ atmadm [/c][/a][/s]
     | Pacotes de sinalização e ILMI enviados | Número de pacotes de ILMI (interface de gerenciamento local) integrados enviados ao comutador ao qual este computador está tentando se conectar. |
     | Pacotes de sinalização e ILMI recebidos | Número de pacotes ILMI recebidos do comutador atM. |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir informações de chamada para todas as conexões atuais com o adaptador de rede atM instalado neste computador, digite:
 

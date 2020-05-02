@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestSites
-description: O tópico de comandos do Windows para Dfsdiag TestSites, que verifica a configuração dos sites dos serviços de domínio Active Directory (AD DS), verificando se os servidores que atuam como servidores de namespace ou destinos de pasta (link) têm as mesmas associações de site em todos os controladores de domínio.
+description: Tópico de referência para Dfsdiag TestSites, que verifica a configuração dos sites dos serviços de domínio Active Directory (AD DS), verificando se os servidores que atuam como servidores de namespace ou destinos de pasta (link) têm as mesmas associações de site em todos os controladores de domínio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80cc9095748dafb030b204130bfa2ccb61ec69ea
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 68048699a812beac94fa121d6801da5f42e5393b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846219"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719560"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag TestSites
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Verifica a configuração dos sites dos serviços de domínio do Active Directory (AD DS) verificando se os servidores que atuam como servidores de namespace ou destinos de pasta (link) têm as mesmas associações de site em todos os controladores de domínio.
 
@@ -32,12 +32,12 @@ dfsdiag /TestSites </Machine:<server name>| /DFSpath:<namespace root or DFS fold
   
 |Parâmetro|Descrição|  
 |-------|--------|  
-|Computador \/:<server name>|O nome do servidor no qual verificar a associação do site.|  
-|\/DFSpath:<namespace root or DFS folder>|A raiz do namespace ou a pasta do Sistema de Arquivos Distribuído (DFS) (link) com destinos para os quais verificar a associação do site.|  
-|recurse \/|Enumera e verifica as associações de site para todos os destinos de pasta na raiz de namespace especificada.|  
-|\/completo|verifica se AD DS e o registro do servidor contêm as mesmas informações de associação do site.|  
+|\/Tradução<server name>|O nome do servidor no qual verificar a associação do site.|  
+|\/DFSpath<namespace root or DFS folder>|A raiz do namespace ou a pasta do Sistema de Arquivos Distribuído (DFS) (link) com destinos para os quais verificar a associação do site.|  
+|\/Recurse|Enumera e verifica as associações de site para todos os destinos de pasta na raiz de namespace especificada.|  
+|\/Completo|verifica se AD DS e o registro do servidor contêm as mesmas informações de associação do site.|  
   
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
   
 ```  
 dfsdiag /TestSites /Machine:MyServer  

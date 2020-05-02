@@ -1,6 +1,6 @@
 ---
 title: lista de Auditpol
-description: O tópico de comandos do Windows para a **lista Auditpol**, que lista categorias de política de auditoria e subcategorias, ou lista os usuários para os quais uma política de auditoria por usuário é definida.
+description: Tópico de referência para o comando lista de busca, que lista categorias de política de auditoria e subcategorias, ou lista os usuários para os quais uma política de auditoria por usuário é definida.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e0aff46e62ea4e4259360b78aae223dfcd66ef7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 96ee4388c716c066a2e9b55b57dd2e70b4b4f69c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851179"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719093"
 ---
 # <a name="auditpol-list"></a>lista de Auditpol
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Lista categorias de política de auditoria e/ou subcategorias ou lista os usuários para os quais uma política de auditoria por usuário é definida.
+Lista categorias de política de auditoria e subcategorias ou lista os usuários para os quais uma política de auditoria por usuário é definida.
+
+Para executar operações de *lista* na política *por usuário* , você deve ter permissão de **leitura** para esse objeto definido no descritor de segurança. Você também pode executar operações de *lista* se tiver o direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite acesso adicional que não é necessário para executar as operações de *lista* geral.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -41,11 +43,7 @@ auditpol /list
 | /r | Exibe a saída como um relatório no formato de valores separados por vírgulas (CSV). |
 | /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-
-Para todas as operações de lista para a política por usuário, você deve ter permissão de leitura nesse objeto definido no descritor de segurança. Você também pode executar operações de lista por meio do direito de usuário **gerenciar auditoria e log de segurança** (SeSecurityPrivilege). No entanto, esse direito permite o acesso adicional que não é necessário para executar a operação de lista.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para listar todos os usuários que têm uma política de auditoria definida, digite:
 
@@ -74,3 +72,5 @@ auditpol /list /subcategory:detailed Tracking,DS Access
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comandos Auditpol](auditpol.md)
