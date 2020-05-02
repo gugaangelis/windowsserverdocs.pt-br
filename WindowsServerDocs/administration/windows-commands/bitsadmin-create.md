@@ -1,6 +1,6 @@
 ---
 title: bitsadmin create
-description: O tópico de comandos do Windows para **Bitsadmin Create**, que cria um trabalho de transferência com o nome de exibição fornecido.
+description: Tópico de referência para o comando Bitsadmin Create, que cria um trabalho de transferência com o nome de exibição fornecido.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a922d9f15aff0a9bd064a7e987920adf3a9107d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 728027eb4680805c1f9a2afc32d8d37a14239597
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850809"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718213"
 ---
 # <a name="bitsadmin-create"></a>bitsadmin create
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Cria um trabalho de transferência com o nome de exibição fornecido. Baixar trabalhos transferir dados de um servidor para um arquivo local. Carregar trabalhos de transferência de dados de um arquivo local para um servidor. Upload – os trabalhos de resposta transferem dados de um arquivo local para um servidor e recebem um arquivo de resposta do servidor.
+Cria um trabalho de transferência com o nome de exibição fornecido.
 
-Use a opção [Bitsadmin resume](bitsadmin-resume.md) para ativar o trabalho na fila de transferência.
+> [!NOTE]
+> Os tipos de parâmetro **/upload** e **/upload-Reply** não têm suporte do bits 1,2 e anteriores.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,17 +35,21 @@ bitsadmin /create [type] displayname
 
 | Parâmetro | Descrição |
 | ------- | -------- |
-| type | -  **/Download** transfere dados de um servidor para um arquivo local.<p>-  **/upload** transfere dados de um arquivo local para um servidor.<p>-  **/upload-Reply** transfere dados de um arquivo local para um servidor e recebe um arquivo de resposta do servidor.<p>O padrão desse parâmetro é **/Download** quando não especificado na linha de comando. Além disso, os tipos **/Upload** e **/upload-Reply** não estão disponíveis no bits 1,2 e versões anteriores. |
+| type | Há três tipos de trabalho:<ul><li>**Baixar.** Transfere dados de um servidor para um arquivo local.</li><li>**Carregar.** Transfere dados de um arquivo local para um servidor.</li><li>**/Upload-Reply.** Transfere dados de um arquivo local para um servidor e recebe um arquivo de resposta do servidor.</li></ul>O padrão desse parâmetro será **/Download** se não for especificado. |
 | displayname | O nome de exibição atribuído ao trabalho recém-criado. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-Cria um trabalho de download chamado *myDownloadJob*.
+Para criar um trabalho de download chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /create myDownloadJob
+bitsadmin /create myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando retomar Bitsadmin](bitsadmin-resume.md)
+
+- [comando Bitsadmin](bitsadmin.md)

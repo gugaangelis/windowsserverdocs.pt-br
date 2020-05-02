@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gethttpmethod
-description: Tópico de comandos do Windows para **Bitsadmin gethttpmethod**, que obtém o verbo http a ser usado com o trabalho.
+description: Tópico de referência para o comando Bitsadmin gethttpmethod, que obtém o verbo HTTP a ser usado com o trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 4b5f131c8502545e3c4ea4107167d6da56c68d8c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a458322a5ace69df74df054a537a7365da9e7329
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850649"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717889"
 ---
 # <a name="bitsadmin-gethttpmethod"></a>bitsadmin gethttpmethod
 
@@ -31,6 +31,16 @@ bitsadmin /gethttpmethod <Job>
 | -------------- | -------------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
+## <a name="examples"></a>Exemplos
+
+Para recuperar o verbo HTTP a ser usado com o trabalho chamado *myDownloadJob*:
+
+```
+bitsadmin /gethttpmethod myDownloadJob
+```
+
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

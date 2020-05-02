@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getminretrydelay
-description: O tópico de comandos do Windows para **Bitsadmin getminretrydelay**, que recupera o período de tempo, em segundos, que o serviço aguarda depois de encontrar um erro transitório antes de tentar transferir o arquivo.
+description: Tópico de referência para o comando Bitsadmin getminretrydelay, que recupera o período de tempo, em segundos, que o serviço aguarda depois de encontrar um erro transitório antes de tentar transferir o arquivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d79ffdf1f45b0198b4af535ed83154c3c2ec24f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a50b9d98fe0b873dc58b8e86dc672a8f4157208a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850619"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717842"
 ---
 # <a name="bitsadmin-getminretrydelay"></a>bitsadmin getminretrydelay
 
@@ -32,14 +32,16 @@ bitsadmin /getminretrydelay <job>
 | -------------- | -------------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir recupera o atraso mínimo de repetição para o trabalho chamado *myDownloadJob*.
+Para recuperar o atraso mínimo de repetição para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getminretrydelay myDownloadJob
+bitsadmin /getminretrydelay myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnoprogresstimeout
-description: O tópico de comandos do Windows para **Bitsadmin getnoprogresstimeout**, que recupera o período de tempo, em segundos, que o serviço tentará transferir o arquivo depois que ocorrer um erro transitório.
+description: Tópico de referência para o comando Bitsadmin getnoprogresstimeout, que recupera o período de tempo, em segundos, que o serviço tentará transferir o arquivo após ocorrer um erro transitório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf2cfd77b494e221b60c8816ff46eed5f9252f39
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3ee0377bde8a438f23ca571bc9859deef92f18fb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850599"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717821"
 ---
 # <a name="bitsadmin-getnoprogresstimeout"></a>bitsadmin getnoprogresstimeout
 
@@ -32,14 +32,16 @@ bitsadmin /getnoprogresstimeout <job>
 | -------------- | -------------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir recupera o valor de tempo limite de progresso para o trabalho chamado *myDownloadJob*.
+Para recuperar o valor de tempo limite de progresso para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getnoprogresstimeout myDownloadJob
+bitsadmin /getnoprogresstimeout myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)
