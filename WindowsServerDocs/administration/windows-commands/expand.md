@@ -1,6 +1,6 @@
 ---
-title: expandir
-description: Tópico de comandos do Windows para * * * *-
+title: expand
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ab4b9bcb5c9da2aeace71a8e535fa762d6d6e95
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b757f630e08249b1c716803a07cd9a163d7398d2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844869"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725687"
 ---
-# <a name="expand"></a>expandir
+# <a name="expand"></a>expand
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 expande um ou mais arquivos compactados. Você pode usar esse comando para recuperar arquivos compactados dos discos de distribuição.  
 ## <a name="syntax"></a>Sintaxe  
@@ -34,11 +34,11 @@ expand <source>.cab /f:<files> <destination>
 |  Parâmetro  |                                                                                                                                                                   Descrição                                                                                                                                                                    |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /r      |                                                                                                                                                             renomeia arquivos expandidos.                                                                                                                                                              |
-|   {1&gt;source&lt;1}    |                                                                              Especifica os arquivos a serem expandidos. A *origem* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses. Você pode usar caracteres curinga ( **\\** \* ou **?** ).                                                                               |
-| destino | Especifica onde os arquivos devem ser expandidos.<p>se a *fonte* consistir em vários arquivos e você não especificar **/r**, o *destino* deverá ser um diretório.<p>O *destino* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.<p>Especificação do &#124; caminho do arquivo de destino. |
+|   source    |                                                                              Especifica os arquivos a serem expandidos. A *origem* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses. Você pode usar caracteres curinga (**\\** \* ou **?**).                                                                               |
+| destino | Especifica onde os arquivos devem ser expandidos.<p>se a *fonte* consistir em vários arquivos e você não especificar **/r**, o *destino* deverá ser um diretório.<p>O *destino* pode consistir em uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.<p>Especificação do caminho do &#124; do arquivo de destino. |
 |     /i      |                                                                                                   renomeia arquivos expandidos, mas ignora a estrutura de diretório.<p>Esse parâmetro aplica-se a: Windows Server 2008 R2 e Windows 7.                                                                                                    |
 |     /d      |                                                                                                                              Exibe uma lista de arquivos no local de origem. Não expande nem extrai os arquivos.                                                                                                                              |
-|     /f:     |                                                                                                                 Especifica os arquivos em um arquivo de gabinete (. cab) que você deseja expandir. Você pode usar caracteres curinga ( **\\** \* ou **?** ).                                                                                                                 |
+|     /f:     |                                                                                                                 Especifica os arquivos em um arquivo de gabinete (. cab) que você deseja expandir. Você pode usar caracteres curinga (**\\** \* ou **?**).                                                                                                                 |
 |     /?      |                                                                                                                                                       Exibe a ajuda no prompt de comando.                                                                                                                                                       |
 
 ## <a name="remarks"></a>Comentários  

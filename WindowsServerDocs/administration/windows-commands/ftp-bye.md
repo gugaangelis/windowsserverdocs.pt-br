@@ -1,6 +1,6 @@
 ---
 title: até o FTP
-description: Tópico de comandos do Windows para o FTP
+description: Tópico de referência para o FTP
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 20d9073a8e8e0cc8bc9c0ec1c65d611b560cbed4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6271b7f60c27f9ba42b9744e8f2023f14eed4a99
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843699"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725363"
 ---
 # <a name="ftp-bye"></a>FTP: até aqui
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Encerra a sessão de FTP com o computador remoto e sai.   
 ## <a name="syntax"></a>Sintaxe  
@@ -29,7 +29,7 @@ bye
 none  
 ## <a name="remarks"></a>Comentários  
 Até o fim e **encerre** as duas sessões de FTP com o computador **remoto e elas** são encerradas.  
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Encerre a sessão de FTP com o computador remoto e saia.  
 ```  
 bye  

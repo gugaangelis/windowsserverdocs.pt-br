@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b819f15e473738996484283bceac439f482a13d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05c203ef610dda0443ddc845245a4072e617f7a6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844149"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725433"
 ---
 # <a name="fsutil-reparsepoint"></a>Fsutil reparsepoint
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
 
 Consulta ou exclui pontos de nova análise.  O comando **fsutil reparsepoint** normalmente é usado por profissionais de suporte.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,8 +34,8 @@ fsutil reparsepoint [delete] <FileName>
 
 | Parâmetro  |                                                                Descrição                                                                |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-|   query    |            Recupera os dados do ponto de nova análise que estão associados ao arquivo ou diretório identificado pelo identificador especificado.             |
-|   delete   | Exclui um ponto de nova análise do arquivo ou diretório que é identificado pelo identificador especificado, mas não exclui o arquivo ou diretório. |
+|   Consulta    |            Recupera os dados do ponto de nova análise que estão associados ao arquivo ou diretório identificado pelo identificador especificado.             |
+|   excluir   | Exclui um ponto de nova análise do arquivo ou diretório que é identificado pelo identificador especificado, mas não exclui o arquivo ou diretório. |
 | <FileName> |             Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, C:\documents\filename.txt.             |
 
 ## <a name="remarks"></a>Comentários

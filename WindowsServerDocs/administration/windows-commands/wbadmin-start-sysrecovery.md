@@ -1,6 +1,6 @@
 ---
 title: Wbadmin start sysrecovery
-description: O tópico de comandos do Windows para Wbadmin start sysrecovery, que executa uma recuperação do sistema (recuperação bare-metal) usando os parâmetros que você especificar.
+description: Tópico de referência para Wbadmin start sysrecovery, que executa uma recuperação do sistema (recuperação bare-metal) usando os parâmetros que você especificar.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e0f1f79f35678b5c4a50022adf3413f3de217a7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829589"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725891"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>Wbadmin start sysrecovery
 
@@ -26,8 +26,6 @@ Executa uma recuperação do sistema (recuperação bare-metal) usando os parâm
 > Esse subcomando pode ser executado somente do ambiente de recuperação do Windows e não está listado por padrão no texto de uso de **Wbadmin**. Para obter mais informações, consulte [visão geral do ambiente de recuperação do Windows (Windows re)](https://technet.microsoft.com/library/hh825173.aspx).
 
 Para executar uma recuperação do sistema com esse subcomando, você deve ser um membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas.
-
-Para obter exemplos de como usar esse subcomando, consulte [exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -47,7 +45,7 @@ wbadmin start sysrecovery
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-versão|Especifica o identificador de versão para o backup a ser recuperado no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.|
+|-version|Especifica o identificador de versão para o backup a ser recuperado no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.|
 |-backupTarget|Especifica o local de armazenamento que contém os backups ou backups que você deseja recuperar. Esse parâmetro é útil quando o local de armazenamento é diferente de onde os backups deste computador geralmente são armazenados.|
 |-computador|Especifica o nome do computador que você deseja recuperar. Esse parâmetro é útil quando é feito o backup de vários computadores no mesmo local. Deve ser usado quando o parâmetro **-backupTarget** é especificado.|
 |-restoreAllVolumes|Recupera todos os volumes do backup selecionado. Se esse parâmetro não for especificado, somente os volumes críticos (volumes que contêm o estado do sistema e os componentes do sistema operacional) serão recuperados. Esse parâmetro é útil quando você precisa recuperar volumes não críticos durante a recuperação do sistema.|
@@ -56,13 +54,13 @@ wbadmin start sysrecovery
 |-skipBadClusterCheck|Ignora a verificação dos discos de recuperação em busca de informações de cluster inválidos. Se você estiver restaurando para um servidor ou hardware alternativo, recomendamos que você não use esse parâmetro. Você pode executar manualmente o **chkdsk/b** em seus discos de recuperação a qualquer momento para verificá-los quanto a clusters inválidos e, em seguida, atualizar as informações do sistema de arquivos de acordo.</br>Aviso: até que você execute **chkdsk** conforme descrito, os clusters inválidos relatados em seu sistema recuperado podem não ser precisos.|
 |-quiet|Executa o comando sem prompts para o usuário.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para iniciar a recuperação das informações do backup que foi executado em 31 de março de 2013 às 9:00, localizada na unidade d:, digite:
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-Para começar a recuperar as informações do backup que foi executado em 30 de abril de 2013 às 9:00, localizadas na pasta compartilhada \\\\servername\shared: para Server01, digite:
+Para começar a recuperar as informações do backup que foi executado em 30 de abril de 2013 às 9:00, localizada na pasta \\ \\compartilhada servername\shared: para Server01, digite:
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

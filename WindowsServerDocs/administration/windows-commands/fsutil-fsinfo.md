@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b7af3859cd16b89587a86e3436d5c832620c4e22
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844299"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725490"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
 Lista todas as unidades, consulta o tipo de unidade, consulta informações de volume, consulta informações de volume específicas de NTFS ou consulta estatísticas do sistema de arquivos.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -41,7 +41,7 @@ fsutil fsinfo [volumeinfo] <RootPath>
 |DriveType|Consulta uma unidade e lista seu tipo, por exemplo, unidade de CD-ROM.|
 |NTFSInfo|Lista informações de volume específicas do NTFS para o volume especificado, como o número de setores, total de clusters, clusters livres e o início e término da zona MFT.|
 |sectorinfo|Lista informações sobre o tamanho e o alinhamento do setor do hardware.|
-|estatística|Lista as estatísticas do sistema de arquivos para o volume especificado, como metadados, arquivo de log e leituras e gravações de MFT.|
+|estatísticas|Lista as estatísticas do sistema de arquivos para o volume especificado, como metadados, arquivo de log e leituras e gravações de MFT.|
 |volumeinfo|Lista informações para o volume especificado, como o sistema de arquivos, e se o volume dá suporte a nomes de arquivos que diferenciam maiúsculas de minúsculas, Unicode em nomes de arquivo, cotas de disco ou é um volume do DirectAccess (DAX).|
 |< "VolumePath" >|Especifica a letra da unidade (seguida por dois-pontos).|
 |< "RootPathname" >|Especifica a letra da unidade (seguida por dois-pontos) da unidade raiz.|
@@ -154,7 +154,7 @@ LogFileWriteBytes :    180936704
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
+- [Tecla de sintaxe de linha de comando](command-line-syntax-key.md)
 [fsutil](Fsutil.md)
 
 

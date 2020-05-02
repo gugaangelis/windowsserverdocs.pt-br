@@ -1,6 +1,6 @@
 ---
 title: finger
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78313fc4980b32e3aeb6d1611ef80d7eb6831fc1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ec8040480a7cb75a5a42e051393e3db4a47f8e2f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844599"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725611"
 ---
 # <a name="finger"></a>finger
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre um usuário ou usuários em um computador remoto especificado (normalmente um computador executando UNIX) que está executando o daemon ou serviço Finger. O computador remoto especifica o formato e a saída da exibição de informações do usuário. Usado sem parâmetros, **Finger** exibe a ajuda. 
 ## <a name="syntax"></a>Sintaxe
@@ -35,11 +35,11 @@ finger [-l] [<User>] [@<Host>] [...]
 |    /?     |                                                               Exibe a ajuda no prompt de comando.                                                                |
 
 ## <a name="remarks"></a>Comentários
-Vários parâmetros de User@Host podem ser especificados.
+Vários User@Host parâmetros podem ser especificados.
 Você deve prefixar parâmetros de **dedo** com um hífen (-) em vez de uma barra (/).
 Esse comando estará disponível somente se o protocolo TCP/IP estiver instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.
 O Windows Server 2003 não fornece um serviço Finger.
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 Para exibir informações para user1 no computador users.microsoft.com, digite:
 ```
 finger user1@users.microsoft.com

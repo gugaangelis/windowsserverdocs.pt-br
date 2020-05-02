@@ -1,6 +1,6 @@
 ---
 title: Wbadmin parar trabalho
-description: O tópico de comandos do Windows para WBADMIN Stop Job, que cancela a operação de backup ou recuperação que está em execução no momento. As operações canceladas não podem ser reiniciadas — você deve executar novamente uma operação de backup ou recuperação cancelada desde o início.
+description: Tópico de referência para WBADMIN Stop Job, que cancela a operação de backup ou recuperação que está em execução no momento. As operações canceladas não podem ser reiniciadas — você deve executar novamente uma operação de backup ou recuperação cancelada desde o início.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a00b4a93e0aaa954f8f07adae825a4f582c5581
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3133688ac0d60d97d80192611c9b561c53a74c35
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829479"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725844"
 ---
 # <a name="wbadmin-stop-job"></a>Wbadmin parar trabalho
 

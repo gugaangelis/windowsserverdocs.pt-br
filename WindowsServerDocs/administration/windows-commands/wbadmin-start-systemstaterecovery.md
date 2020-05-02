@@ -1,6 +1,6 @@
 ---
 title: Wbadmin start systemstaterecovery
-description: O tópico de comandos do Windows para Wbadmin start systemstaterecovery, que executa uma recuperação de estado do sistema em um local e de um backup que você especificar.
+description: Tópico de referência para Wbadmin start systemstaterecovery, que executa uma recuperação de estado do sistema em um local e de um backup que você especificar.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 581ad6fe3591e549c3f89e4c95d2f8ab0cde059c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829489"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725871"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>Wbadmin start systemstaterecovery
 
@@ -27,7 +27,7 @@ Executa uma recuperação de estado do sistema em um local e de um backup que vo
 
 Para executar uma recuperação de estado do sistema com esse subcomando, você deve ser um membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -59,7 +59,7 @@ wbadmin start systemstaterecovery
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|-versão|Especifica o identificador de versão para o backup a ser recuperado no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.|
+|-version|Especifica o identificador de versão para o backup a ser recuperado no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.|
 |-Resumo dos|Relata o resumo da última recuperação de estado do sistema (após a reinicialização necessária para concluir a operação). Este parâmetro não pode ser acompanhado por nenhum outro parâmetro.|
 |-backupTarget|Especifica o local de armazenamento que contém os backups ou backups que você deseja recuperar. Esse parâmetro é útil quando o local de armazenamento é diferente de onde os backups desse computador geralmente são armazenados.|
 |-computador|Especifica o nome do computador que você deseja recuperar. Esse parâmetro é útil quando é feito o backup de vários computadores no mesmo local. Deve ser usado quando o parâmetro **-backupTarget** é especificado.|
@@ -68,13 +68,13 @@ wbadmin start systemstaterecovery
 |-reinicialização|Especifica a reinicialização do sistema no final da operação de recuperação do estado do sistema. Esse parâmetro é válido somente para uma recuperação no local original. Não recomendamos que você use esse parâmetro se precisar executar etapas após a operação de recuperação.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 - Para executar uma recuperação de estado do sistema do backup de 03/31/2013 às 9:00, digite:  
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- Para executar uma recuperação de estado do sistema do backup de 04/30/2013 às 9:00. que está armazenado no recurso compartilhado \\\\servername\share para Server01, digite:  
+- Para executar uma recuperação de estado do sistema do backup de 04/30/2013 às 9:00. que está armazenado no recurso \\ \\compartilhado servername\share para Server01, digite:  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

@@ -1,6 +1,6 @@
 ---
 title: Wbadmin start systemstatebackup
-description: O tópico de comandos do Windows para Wbadmin start systemstatebackup, que cria um backup de estado do sistema do computador local e o armazena no local especificado.
+description: Tópico de referência para Wbadmin start systemstatebackup, que cria um backup de estado do sistema do computador local e o armazena no local especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ecbf5a055684026413615a104b4c983ff51ca9e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7c4ca390d910a5a38919d60421091264aa56de33
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829569"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725907"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>Wbadmin start systemstatebackup
 
@@ -26,8 +26,6 @@ Cria um backup de estado do sistema do computador local e o armazena no local es
 > Backup do Windows Server não faz backup ou recupera hives de usuário do registro (HKEY_CURRENT_USER) como parte do backup do estado do sistema ou da recuperação do estado do sistema.
 
 Para executar um backup de estado do sistema com esse subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
-
-Para obter exemplos de como usar esse subcomando, consulte [exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -41,14 +39,14 @@ wbadmin start systemstatebackup
 
 |   Parâmetro   |                                                                                                                                                                                                                      Descrição                                                                                                                                                                                                                      |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -backupTarget | Especifica o local em que você deseja armazenar o backup. O local de armazenamento requer uma letra da unidade ou um volume baseado em GUID do formato: \\\\?*GUID*do \Volume{}.</br>Não há suporte para um backup de estado do sistema em uma pasta de rede compartilhada em um computador que esteja executando o Windows Server 2008. Se o servidor estiver executando o Windows Server 2008 R2 ou posterior, você poderá usar o comando **-backuptarget:\\\\servername\sharedFolder\\** para armazenar os backups de estado do sistema. |
+| -backupTarget | Especifica o local em que você deseja armazenar o backup. O local de armazenamento requer uma letra da unidade ou um volume baseado em GUID do formato \\ \\:? \Volume{*GUID*}.</br>Não há suporte para um backup de estado do sistema em uma pasta de rede compartilhada em um computador que esteja executando o Windows Server 2008. Se o servidor estiver executando o Windows Server 2008 R2 ou posterior, você poderá usar o comando **-\\\\backupTarget\\ : servername\sharedFolder** para armazenar os backups de estado do sistema. |
 |    -quiet     |                                                                                                                                                                                                   Executa o subcomando sem prompts para o usuário.                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentários
 
-Para obter informações sobre como salvar um backup de estado do sistema em um volume que, por sua vez, contém arquivos de estado do sistema, consulte o artigo 944530 na base de dados de conhecimento Microsoft ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)).
+Para obter informações sobre como salvar um backup de estado do sistema em um volume que, por sua vez, contém arquivos de estado do sistema, consulte o[https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)artigo 944530 na base de dados de conhecimento Microsoft ().
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para criar um backup de estado do sistema e armazená-lo no volume f, digite:
 ```

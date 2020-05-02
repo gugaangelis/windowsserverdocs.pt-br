@@ -1,6 +1,6 @@
 ---
-title: find
-description: Tópico de comandos do Windows para * * * *-
+title: localizar
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b966db4117e9273ae6aed8d30baec76362de2f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cd731ef64912644965ef6bb96d060a46f0a6067
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844689"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725621"
 ---
-# <a name="find"></a>find
+# <a name="find"></a>localizar
 
 
 
 Pesquisa uma cadeia de caracteres de texto em um ou mais arquivos e exibe linhas de texto que contêm a cadeia de caracteres especificada.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,13 +34,13 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
 |           Parâmetro           |                                              Descrição                                               |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|
-|              /v               |                    Exibe todas as linhas que não contêm a cadeia de caracteres de \<especificada >.                     |
-|              /c               |              Conta as linhas que contêm a cadeia de caracteres de \<especificada > e exibe o total.              |
+|              /v               |                    Exibe todas as linhas que não contêm a cadeia \<de caracteres especificada>.                     |
+|              /c               |              Conta as linhas que contêm a cadeia \<de caracteres especificada>e exibe o total.              |
 |              /n               |                            Precede cada linha com o número de linha do arquivo.                             |
 |              /i               |                            Especifica que a pesquisa não diferencia maiúsculas de minúsculas.                            |
 |         [/off [line]]          |                        Não ignora arquivos que têm o atributo offline definido.                        |
-|          Cadeia de caracteres \<>          | Obrigatório. Especifica o grupo de caracteres (entre aspas) que você deseja pesquisar. |
-| [\<drive >:] [<Path>]<FileName> |        Especifica o local e o nome do arquivo no qual Pesquisar a cadeia de caracteres especificada.        |
+|          \<Cadeia de caracteres>          | Obrigatórios. Especifica o grupo de caracteres (entre aspas) que você deseja pesquisar. |
+| [\<Unidade>:] [<Path>]<FileName> |        Especifica o local e o nome do arquivo no qual Pesquisar a cadeia de caracteres especificada.        |
 |              /?               |                                  Exibe a ajuda no prompt de comando.                                  |
 
 ## <a name="remarks"></a>Comentários
@@ -58,7 +58,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
     Você pode digitar parâmetros e opções de linha de comando para o comando **Find** em qualquer ordem.
 -   Usando curingas
 
-    Você não pode usar caracteres curinga **&#42;** (e **?** ) em nomes de arquivos ou extensões que você especificar com o comando **Localizar** . Para pesquisar uma cadeia de caracteres em um conjunto de arquivos que você especifica com curingas, você pode usar o comando **Find** dentro de um comando **for** .
+    Você não pode usar caracteres curinga (**&#42;** e **?**) em nomes de arquivos ou extensões que você especificar com o comando **Localizar** . Para pesquisar uma cadeia de caracteres em um conjunto de arquivos que você especifica com curingas, você pode usar o comando **Find** dentro de um comando **for** .
 -   Usando **/v** ou **/n** com **/c**
 
     Se você usar **/c** e **/v** na mesma linha de comando, **Find** exibirá uma contagem das linhas que não contêm a cadeia de caracteres especificada. Se você especificar **/c** e **/n** na mesma linha de comando, **Find** irá ignorar **/n**.
@@ -66,7 +66,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
     O comando **Find** não reconhece retornos de carro. Quando você usa **Localizar** para Pesquisar texto em um arquivo que inclui retornos de carro, você deve limitar a cadeia de caracteres de pesquisa ao texto que pode ser encontrado entre retornos de carro (ou seja, uma cadeia de caracteres que provavelmente não será interrompida por um retorno de carro). Por exemplo, **Localizar** não relatará uma correspondência para o arquivo de imposto sobre cadeia de caracteres se ocorrer um retorno de carro entre as palavras imposto e arquivo.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir todas as linhas de Pencil.ad que contêm o apontador de lápis de cadeia de caracteres, digite:
 ```

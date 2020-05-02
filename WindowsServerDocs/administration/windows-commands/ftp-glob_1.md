@@ -1,6 +1,6 @@
 ---
 title: glob_1 FTP
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0045af460c159dcbabe51b495876436bb724731
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 455709d58d30eda6929f8dee0f7ce6f8d14a596b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843459"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725288"
 ---
 # <a name="ftp-glob_1"></a>FTP: glob_1
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Alterna a expansão de curinga de nomes de arquivo locais.   
 ## <a name="syntax"></a>Sintaxe  
@@ -30,7 +30,7 @@ none
 ## <a name="remarks"></a>Comentários  
 - Por padrão, o mascaramento está ativado.  
 - O mascaramento permite o uso do asterisco (*) e do ponto de interrogação (?) como caracteres curinga em nomes de caminho ou arquivo local.  
-  ## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+  ## <a name="examples"></a>Exemplos  
   Alternar a expansão de curinga de nomes de arquivos locais.  
   ```  
   glob  

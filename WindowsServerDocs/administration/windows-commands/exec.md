@@ -1,6 +1,6 @@
 ---
 title: exec
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d39fbf948050dd00f329e461c34c2365030cb05d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f10e28a8da96bc7228af4561fb36824899f2d7a4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844989"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725734"
 ---
 # <a name="exec"></a>exec
 
 
 
-executa um arquivo no computador local. O arquivo pode ser um script **cmd** .
+Executa um arquivo no computador local. O arquivo pode ser um script **cmd** .
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,7 +32,7 @@ exec <ScriptFile.cmd>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<scriptfile. cmd >|Especifica o arquivo de script a ser executado.|
+|\<> scriptfile. cmd|Especifica o arquivo de script a ser executado.|
 
 ## <a name="remarks"></a>Comentários
 

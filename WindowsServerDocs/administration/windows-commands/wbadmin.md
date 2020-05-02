@@ -1,6 +1,6 @@
 ---
 title: wbadmin
-description: O tópico de comandos do Windows para Wbadmin, que permite fazer backup e restaurar seu sistema operacional, volumes, arquivos, pastas e aplicativos de um prompt de comando.
+description: Tópico de referência para o Wbadmin, que permite fazer backup e restaurar seu sistema operacional, volumes, arquivos, pastas e aplicativos de um prompt de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94f07d17d46dad4e5301ba3ea6be94b10f26a3af
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829469"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725832"
 ---
 # <a name="wbadmin"></a>wbadmin
 

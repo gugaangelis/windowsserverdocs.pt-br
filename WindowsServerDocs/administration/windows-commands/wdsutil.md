@@ -1,6 +1,6 @@
 ---
 title: wdsutil
-description: O tópico de comandos do Windows para o WDSUTIL, que é um utilitário de linha de comando usado para gerenciar o servidor dos serviços de implantação do Windows.
+description: Tópico de referência para o WDSUTIL, que é um utilitário de linha de comando usado para gerenciar seu servidor de serviços de implantação do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f57411c1b000355940772003c7ac5343c82838cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d2acd720b21346836cfdd6a5eb24e9f8cae2dbef
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829430"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725849"
 ---
 # <a name="wdsutil"></a>wdsutil
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 o WDSUTIL é um utilitário de linha de comando usado para gerenciar o servidor dos serviços de implantação do Windows. Para executar esses comandos, clique em **Iniciar**, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.  
-## <a name="commands"></a>Commands  
-|{1&gt;Comando&lt;1}|Descrição|  
+## <a name="commands"></a>Comandos  
+|Comando|Descrição|  
 |------|--------|  
 |[Usando o comando Add](using-the-add-command.md)|Adiciona objetos ou pré-testar computadores.|  
 |[Usando o comando Approve-AutoaddDevices](using-the-approve-autoadddevices-command.md)|Aprova computadores que estão com aprovação de administrador pendente.|  

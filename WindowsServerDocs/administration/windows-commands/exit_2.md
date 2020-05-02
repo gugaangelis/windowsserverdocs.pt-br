@@ -1,6 +1,6 @@
 ---
 title: exit
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13cf7a7658394e59ce6cc7e66c3083cd3d359574
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e47dfa42f2bacb3fe9f12d1da9163bcf828e9488
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844879"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725701"
 ---
 # <a name="exit"></a>exit
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Sai do programa cmd. exe (o interpretador de comando) ou o script em lote atual.  
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).  
+  
 ## <a name="syntax"></a>Sintaxe  
 ```  
 exit [/b] [<exitCode>]  
@@ -34,7 +34,7 @@ exit [/b] [<exitCode>]
 | `<exitCode>` | Especifica um número numérico. Se **/b** for especificado, a variável de ambiente ERRORLEVEL será definida para esse número. Se você estiver encerrando **cmd. exe**, o código de saída do processo será definido como esse número. |
 |     /?     |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Para fechar o interpretador de comandos, cmd. exe, digite:  
 ```  
 exit  

@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 8227fafc6b29471e2f09db171645012967553429
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 71bf1e82222626b2808258154352aaca2b3860c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844049"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725421"
 ---
 # <a name="fsutil-tiering"></a>Fsutil tiering
->Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows 10
 
 Habilita o gerenciamento de funções de camada de armazenamento, como a configuração e a desabilitação de sinalizadores e a listagem de camadas.
 
@@ -36,7 +36,7 @@ fsutil tiering [tierlist] <volume>
 |Parâmetro|Descrição|
 |-------------|---------------|
 |clearflags|Desabilita os sinalizadores de comportamento de camadas de um volume.|
-|\<volume >|Especifica o volume.|
+|\<> de volume|Especifica o volume.|
 |/TrNH|Para volumes com armazenamento em camadas, o faz com que a coleta de calor seja desabilitada.<br /><br>Aplica-se somente a NTFS e ReFS.|
 |queryflags|Consulta os sinalizadores de comportamento de camadas de um volume.|
 |regiãolist|Lista as regiões em camadas de um volume e suas respectivas camadas de armazenamento.|

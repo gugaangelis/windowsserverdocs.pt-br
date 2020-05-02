@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbdc1b741b5934f53340bda773909fb5035e449b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 97cc58d2b87190c43137e8b193f0217fb98c006c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844629"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725608"
 ---
 # <a name="findstr"></a>findstr
 
@@ -45,14 +45,14 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/o|Imprime o deslocamento de caractere antes de cada linha correspondente.|
 |/p|Ignora arquivos com caracteres não imprimíveis.|
 |/off [linha]|Não ignora arquivos que têm o atributo offline definido.|
-|/f: arquivo de\<>|Obtém uma lista de arquivos do arquivo especificado.|
-|/c: cadeia de caracteres de\<>|Usa o texto especificado como uma cadeia de caracteres de pesquisa literal.|
-|/g: arquivo de\<>|Obtém as cadeias de caracteres de pesquisa do arquivo especificado.|
-|/d:\<DirList >|Pesquisa a lista de diretórios especificada. Cada diretório deve ser separado com um ponto e vírgula (;), por exemplo `dir1;dir2;dir3`.|
-|/a:\<Colorattribute >|Especifica os atributos de cor com dois dígitos hexadecimais. Digite `color /?` para obter informações adicionais.|
-|Cadeias de caracteres \<>|Especifica o texto a ser pesquisado em *nome de arquivo*. Obrigatório.|
-|[\<drive >:] [<Path>]<FileName>[...]|Especifica o local e arquivo ou arquivos a serem pesquisados. É necessário pelo menos um nome de arquivo.|
-|/?|Exibe a Ajuda no prompt de comando.|
+|/f:\<arquivo>|Obtém uma lista de arquivos do arquivo especificado.|
+|/c:\<cadeia de caracteres>|Usa o texto especificado como uma cadeia de caracteres de pesquisa literal.|
+|/g:\<arquivo>|Obtém as cadeias de caracteres de pesquisa do arquivo especificado.|
+|/d:\<DirList>|Pesquisa a lista de diretórios especificada. Cada diretório deve ser separado com um ponto e vírgula (;), `dir1;dir2;dir3`por exemplo.|
+|/a:\<> de colorattribute|Especifica os atributos de cor com dois dígitos hexadecimais. Digite `color /?` para obter informações adicionais.|
+|\<Cadeias de caracteres>|Especifica o texto a ser pesquisado em *nome de arquivo*. Obrigatórios.|
+|[\<Unidade>:] [<Path>]<FileName>[ ...]|Especifica o local e arquivo ou arquivos a serem pesquisados. É necessário pelo menos um nome de arquivo.|
+|/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -61,7 +61,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
   A tabela a seguir lista os metacaracteres que o **findstr** aceita.  
 
-  |Metacaractere|{1&gt;Valor&lt;1}|
+  |Metacaractere|Valor|
   |-------------|-----|
   |.|Curinga: qualquer caractere|
   |*|Repetir: zero ou mais ocorrências da classe ou caractere anterior|
@@ -70,9 +70,9 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   |classes|Classe de caractere: qualquer caractere em um conjunto|
   |[^ classe]|Classe inversa: qualquer caractere que não esteja em um conjunto|
   |[x-y]|Intervalo: quaisquer caracteres dentro do intervalo especificado|
-  |\X|Escape: uso literal de um metacaractere x|
-  |Cadeia de < \\|Posição da palavra: início da palavra|
-  |Cadeia de caracteres\>|Posição da palavra: fim da palavra|
+  |\x|Escape: uso literal de um metacaractere x|
+  |\\<cadeia de caracteres|Posição da palavra: início da palavra|
+  |string\>|Posição da palavra: fim da palavra|
 
   Os caracteres especiais na sintaxe de expressão regular têm o máximo de energia ao usá-los juntos. Por exemplo, use a seguinte combinação do caractere curinga (.) e REPEAT (*) caractere para corresponder a qualquer cadeia de caracteres:
 

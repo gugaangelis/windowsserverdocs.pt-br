@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 210196471123e9fc2456a2ee84b1949f9f883d90
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 860e843063db141c31cccdab5c3f5ffaa3a8aa7d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844289"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725501"
 ---
 # <a name="fsutil-hardlink"></a>Fsutil hardlink
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
 Cria um vínculo físico entre um arquivo existente e um novo arquivo.
 
@@ -32,10 +32,10 @@ fsutil hardlink list <Filename>
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|criar|Estabelece um vínculo físico NTFS entre um arquivo existente e um novo arquivo. (Um link físico NTFS é semelhante a um vínculo físico POSIX.)|
-|\<NewFilename >|Especifica o arquivo para o qual você deseja criar um link físico.|
-|\<ExistingFileName >|Especifica o arquivo do qual você deseja criar um link físico.|
-|{1&gt;list&lt;1}|Lista o links físicos para *nome de arquivo*.<p>Esse parâmetro aplica-se a: Windows Server 2008 R2 e Windows 7.|
+|create|Estabelece um vínculo físico NTFS entre um arquivo existente e um novo arquivo. (Um link físico NTFS é semelhante a um vínculo físico POSIX.)|
+|\<NewFilename>|Especifica o arquivo para o qual você deseja criar um link físico.|
+|\<> ExistingFileName|Especifica o arquivo do qual você deseja criar um link físico.|
+|list|Lista o links físicos para *nome de arquivo*.<p>Esse parâmetro aplica-se a: Windows Server 2008 R2 e Windows 7.|
 
 ## <a name="remarks"></a>Comentários
 

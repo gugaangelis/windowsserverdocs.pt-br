@@ -1,6 +1,6 @@
 ---
 title: extend
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11991f9fc338dca5201d8f9c9c598b9d7dcf239b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5c5dfeeaec966bfab3c1de2bb91bf79c9d870401
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844779"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725660"
 ---
 # <a name="extend"></a>extend
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-estende o volume ou a partição com foco e seu sistema de arquivos para livre \(espaço\) não alocado em um disco.  
+estende o volume ou a partição com foco e seu sistema de arquivos \(para espaço\) livre não alocado em um disco.  
   
   
   
@@ -36,15 +36,15 @@ extend filesystem [noerr]
 | Parâmetro  |                                                                                             Descrição                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | tamanho\=<n>  |      Especifica a quantidade de espaço em megabytes \(MB\) a ser adicionada ao volume ou à partição atual. Se nenhum tamanho for fornecido, todo o espaço livre contíguo disponível no disco será usado.       |
-| \=de disco <n>  |                          Especifica o disco no qual o volume ou a partição é estendida. Se nenhum disco for especificado, o volume ou a partição será estendido no disco atual.                          |
+| disco\=<n>  |                          Especifica o disco no qual o volume ou a partição é estendida. Se nenhum disco for especificado, o volume ou a partição será estendido no disco atual.                          |
 | WPD |                                   estende o sistema de arquivos do volume com foco. Para uso somente em discos em que o sistema de arquivos não foi estendido com o volume.                                    |
 |   NOERR    | somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
   
 ## <a name="remarks"></a>Comentários  
   
--   Em discos básicos, o espaço livre deve estar no mesmo disco que o volume ou a partição com foco. Ele também deve seguir imediatamente o volume ou a partição com foco \(ou seja, ele deve iniciar no próximo deslocamento de setor\).  
+-   Em discos básicos, o espaço livre deve estar no mesmo disco que o volume ou a partição com foco. Ele também deve seguir imediatamente o volume ou a partição com \(foco ou seja, ele deve iniciar no próximo deslocamento\)do setor.  
   
--   Em discos dinâmicos com volumes simples ou estendidos, um volume pode ser estendido para qualquer espaço livre em qualquer disco dinâmico. Usando esse comando, você pode converter um volume dinâmico simples em um volume dinâmico estendido. Volumes espelhados, RAID\-5 e distribuídos não podem ser estendidos.  
+-   Em discos dinâmicos com volumes simples ou estendidos, um volume pode ser estendido para qualquer espaço livre em qualquer disco dinâmico. Usando esse comando, você pode converter um volume dinâmico simples em um volume dinâmico estendido. Volumes espelhados,\-RAID 5 e distribuídos não podem ser estendidos.  
   
 -   se a partição tiver sido formatada anteriormente com o sistema de arquivos NTFS, o sistema de arquivos será estendido automaticamente para preencher a partição maior e não ocorrerá nenhuma perda de dados.  
   
@@ -54,7 +54,7 @@ extend filesystem [noerr]
   
 -   A partição deve ter um volume associado para que possa ser estendida.  
   
-## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Para estender o volume ou a partição com foco em 500 megabytes, no disco 3, digite:  
   
 ```  

@@ -9,22 +9,22 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e39b36a6c3126429bc47d5b89d104612cab5db96
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a9dd84898e3c0cbf8d6ae2fc63c94504be691a31
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844279"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725483"
 ---
 # <a name="fsutil-objectid"></a>ObjectID do fsutil
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
 Gerencia identificadores de objeto (OIDs), que são objetos internos usados pelo serviço de cliente DLT (rastreamento de link distribuído) e pelo FRS (serviço de replicação de arquivo) para acompanhar outros objetos, como arquivos, diretórios e links. Os identificadores de objeto são invisíveis para a maioria dos programas e nunca devem ser modificados.
 
 > [!CAUTION]
 > Não exclua, defina ou modifique um identificador de objeto. A exclusão ou a definição de um identificador de objeto pode resultar na perda de dados de partes de um arquivo, até e incluindo volumes inteiros de dados. Além disso, você pode causar um comportamento adverso no serviço de cliente DLT (rastreamento de link distribuído) e no FRS (serviço de replicação de arquivo).
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -39,15 +39,15 @@ fsutil objectid [set] <ObjectID> <BirthVolumeID> <BirthObjectID> <DomainID> <Fil
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|criar|Cria um identificador de objeto se o arquivo especificado ainda não tiver um. Se o arquivo já tiver um identificador de objeto, esse subcomando será equivalente ao subcomando de **consulta** .|
-|delete|Exclui um identificador de objeto.|
-|query|Consulta um identificador de objeto.|
+|create|Cria um identificador de objeto se o arquivo especificado ainda não tiver um. Se o arquivo já tiver um identificador de objeto, esse subcomando será equivalente ao subcomando de **consulta** .|
+|excluir|Exclui um identificador de objeto.|
+|Consulta|Consulta um identificador de objeto.|
 |set|Define um identificador de objeto.|
-|\<ObjectID >|Define um identificador hexadecimal de 16 bytes específico de arquivo que é garantido como exclusivo em um volume. O identificador de objeto é usado pelo serviço de cliente DLT (rastreamento de link distribuído) e pelo FRS (serviço de replicação de arquivo) para identificar arquivos.|
-|\<BirthVolumeID >|Indica o volume no qual o arquivo foi localizado quando ele obteve pela primeira vez um identificador de objeto. Esse valor é um identificador hexadecimal de 16 bytes que é usado pelo serviço do cliente DLT.|
-|\<BirthObjectID >|Indica o identificador de objeto original do arquivo (o *ObjectID* pode ser alterado quando um arquivo é movido). Esse valor é um identificador hexadecimal de 16 bytes que é usado pelo serviço do cliente DLT.|
-|\<nome_do_domínio >|identificador de domínio hexadecimal de 16 bytes. Esse valor não é usado no momento e deve ser definido como todos os zeros.|
-|\<nome de arquivo >|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, C:\documents\filename.txt.|
+|\<ObjectID>|Define um identificador hexadecimal de 16 bytes específico de arquivo que é garantido como exclusivo em um volume. O identificador de objeto é usado pelo serviço de cliente DLT (rastreamento de link distribuído) e pelo FRS (serviço de replicação de arquivo) para identificar arquivos.|
+|\<> BirthVolumeID|Indica o volume no qual o arquivo foi localizado quando ele obteve pela primeira vez um identificador de objeto. Esse valor é um identificador hexadecimal de 16 bytes que é usado pelo serviço do cliente DLT.|
+|\<> BirthObjectID|Indica o identificador de objeto original do arquivo (o *ObjectID* pode ser alterado quando um arquivo é movido). Esse valor é um identificador hexadecimal de 16 bytes que é usado pelo serviço do cliente DLT.|
+|\<> de nome_do_domínio|identificador de domínio hexadecimal de 16 bytes. Esse valor não é usado no momento e deve ser definido como todos os zeros.|
+|\<Nome de arquivo>|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, C:\documents\filename.txt.|
 
 ## <a name="remarks"></a>Comentários
 
