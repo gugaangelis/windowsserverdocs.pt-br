@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: ChangePassword'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68b14388ff3c33458873b494c8d5a770b44f7545
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32c48e896b77043820eea42159e20c089bd69fb8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841779"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724720"
 ---
 # <a name="ksetupchangepassword"></a>ksetup: ChangePassword
 
 
 
-Usa o valor de centro de distribuição de chaves (KDC) senha (kpasswd) para alterar a senha do usuário conectado. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Usa o valor de centro de distribuição de chaves (KDC) senha (kpasswd) para alterar a senha do usuário conectado.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,8 +32,8 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<OldPasswd >|Declara a senha existente do usuário conectado.|
-|\<NewPasswd >|Declara a nova senha do usuário conectado.|
+|\<> OldPasswd|Declara a senha existente do usuário conectado.|
+|\<> NewPasswd|Declara a nova senha do usuário conectado.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -47,7 +47,7 @@ Se você quiser forçar uma alteração de senha no próximo logon, esse comando
 
 A saída do comando informa o status de êxito ou falha.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Altere a senha de um usuário que está conectado no momento neste computador neste domínio:
 ```

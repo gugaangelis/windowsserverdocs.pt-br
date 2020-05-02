@@ -1,6 +1,6 @@
 ---
 title: mput_1 FTP
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 489e18da937e12a1fc69e0ee84d9dda00309ccd6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b3fb654d5a2f44b9b63238abdbaee8d6a0294861
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843229"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725225"
 ---
 # <a name="ftp-mput_1"></a>FTP: mput_1
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Copia arquivos locais para o computador remoto usando o tipo de transferência de arquivo atual.   
 ## <a name="syntax"></a>Sintaxe  
@@ -31,7 +31,7 @@ mput <LocalFile>[ ]
 |-------------|----------------------------------------------------------|
 | <LocalFile> | Especifica o arquivo local a ser copiado para o computador remoto. |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Copie **Program1. exe** e **Program2. exe** para o computador remoto usando o tipo de transferência de arquivo atual.  
 ```  
 mput Program1.exe Program2.exe  

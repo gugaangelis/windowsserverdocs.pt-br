@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: addkpasswd'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73abfff54ecfcd31ebbd7469c12228fff850fbf1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c260c711ae87f88be8b9466e73afaf3fe1c83a1e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841813"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724732"
 ---
 # <a name="ksetupaddkpasswd"></a>ksetup: addkpasswd
 
 
 
-Adiciona um endereço de servidor de senha Kerberos (Kpasswd) para um realm. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Adiciona um endereço de servidor de senha Kerberos (Kpasswd) para um realm.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,8 +34,8 @@ Se o realm Kerberos que a estação de trabalho estará Autenticando para dar su
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Realmsname >|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM e é listado como o realm ou Realm padrão = quando **ksetup** é executado.|
-|\<KpasswdName >|O nome do KDC que deve ser usado como o servidor de senha Kerberos é declarado como um nome de domínio totalmente qualificado que não diferencia maiúsculas de minúsculas, como mitkdc.microsoft.com. Se o nome do KDC for omitido, o DNS poderá ser usado para localizar KDCs.|
+|\<Realmsname>|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM e é listado como o realm ou Realm padrão = quando **ksetup** é executado.|
+|\<> KpasswdName|O nome do KDC que deve ser usado como o servidor de senha Kerberos é declarado como um nome de domínio totalmente qualificado que não diferencia maiúsculas de minúsculas, como mitkdc.microsoft.com. Se o nome do KDC for omitido, o DNS poderá ser usado para localizar KDCs.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -45,7 +45,7 @@ Execute o comando **ksetup** para verificar o nome do KDC. Se **kpasswd =** não
 
 Você pode adicionar mais nomes KDC um de cada vez.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Configurar o realm, CORP. CONTOSO.COM, para que ele use o servidor KDC não Windows, mitkdc.contoso.com, como o servidor de senha:
 ```

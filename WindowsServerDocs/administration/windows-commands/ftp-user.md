@@ -1,6 +1,6 @@
 ---
 title: usuário de FTP
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29081bd8c5d537e1f060e4c848b720a60b4c8aea
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb4f0f47f23bec312c57266479c261c96535e8cc
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842849"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725076"
 ---
 # <a name="ftp-user"></a>FTP: usuário
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Especifica um usuário para o computador remoto.   
 ## <a name="syntax"></a>Sintaxe  
@@ -33,7 +33,7 @@ user <UserName> [<Password>] [<Account>]
 | [<Password>] |               Especifica a senha para o *nome de usuário*. Se uma senha não for especificada, mas for necessária, o **FTP** solicitará a senha.               |
 | [<Account>]  | Especifica uma conta com a qual fazer logon no computador remoto. Se uma *conta* não for especificada, mas for necessária, o **FTP** solicitará a conta. |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Especifique user1 com a senha password1.  
 ```  
 user User1 Password1  

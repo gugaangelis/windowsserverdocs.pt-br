@@ -1,6 +1,6 @@
 ---
 title: icacls
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para o comando icacls, que exibe ou modifica listas de controle de acesso discricional (DACL) em arquivos especificados, e aplica as DACLs armazenadas a arquivos em diretórios especificados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,119 +9,129 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 59d10b9ed681b7e0af120798dde9f200182d67d3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dcf4fa9fa9205a762ead99ac4a8486ac04c23514
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842259"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724870"
 ---
 # <a name="icacls"></a>icacls
 
 Exibe ou modifica DACLs (listas de controle de acesso condicional) em arquivos especificados e aplica a DACLs armazenadas a arquivos nos diretórios especificados.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
+> [!NOTE]
+> Esse comando substitui o [comando cacls](cacls.md)preterido.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-icacls <FileName> [/grant[:r] <Sid>:<Perm>[...]] [/deny <Sid>:<Perm>[...]] [/remove[:g|:d]] <Sid>[...]] [/t] [/c] [/l] [/q] [/setintegritylevel <Level>:<Policy>[...]]
-icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c] [/l] [/q]]
+icacls <filename> [/grant[:r] <sid>:<perm>[...]] [/deny <sid>:<perm>[...]] [/remove[:g|:d]] <sid>[...]] [/t] [/c] [/l] [/q] [/setintegritylevel <Level>:<policy>[...]]
+icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c] [/l] [/q]]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<nome de arquivo >|Especifica o arquivo para o qual exibir as DACLs.|
-|\<do diretório >|Especifica o diretório para o qual exibir as DACLs.|
-|/t|Executa a operação em todos os arquivos especificados no diretório atual e em seus subdiretórios.|
-|/c|Continua a operação, apesar de quaisquer erros de arquivo. As mensagens de erro ainda serão exibidas.|
-|/l|Executa a operação em um link simbólico versus seu destino.|
-|/q|Suprime as mensagens de êxito.|
-|[/Save \<ACLfile > [/t] [/c] [/l] [/q]]|Armazena as DACLs de todos os arquivos correspondentes no *ACLfile* para uso posterior com **/Restore**.|
-|[/SetOwner \<nome de usuário > [/t] [/c] [/l] [/q]]|Altera o proprietário de todos os arquivos correspondentes para o usuário especificado.|
-|[/findSID \<Sid > [/t] [/c] [/l] [/q]]|Localiza todos os arquivos correspondentes que contêm uma DACL mencionando explicitamente o SID (identificador de segurança) especificado.|
-|[/Verify [/t] [/c] [/l] [/q]]|Localiza todos os arquivos com ACLs que não são canônicas ou têm tamanhos inconsistentes com as contagens de ACE (entrada de controle de acesso).|
-|[/Reset reiniciar [/t] [/c] [/l] [/q]]|Substitui ACLs por ACLs herdadas padrão para todos os arquivos correspondentes.|
-|[/Grant [: r] \<Sid >:<Perm>[...]]|Concede direitos de acesso de usuário especificado. As permissões substituem as permissões explícitas concedidas anteriormente.</br>Sem **: r**, as permissões são adicionadas a quaisquer permissões explícitas concedidas anteriormente.|
-|[/Deny \<Sid >:<Perm>[...]]|Nega explicitamente os direitos de acesso de usuário especificados. Uma ACE de negação explícita é adicionada para as permissões declaradas e as mesmas permissões em qualquer concessão explícita são removidas.|
-|[/remove [: g\|:d]] \<Sid > [...]] /t /c /l /q|Remove todas as ocorrências do SID especificado da DACL.</br>**: g** remove todas as ocorrências de direitos concedidos para o SID especificado.</br>**:d** remove todas as ocorrências de direitos negados para o SID especificado.|
-|[/setintegritylevel [(CI) (OI)]\<nível >:<Policy>[...]]|Adiciona explicitamente uma ACE de integridade a todos os arquivos correspondentes. O *nível* é especificado como:</br>-   **L**[OMO]</br>-   **M**[edium]</br>-   **H**[perior]</br>As opções de herança para a ACE de integridade podem preceder o nível e são aplicadas somente a diretórios.|
-|[/substitute \<SidOld > <SidNew> [...]]|Substitui um SID existente (*SidOld*) por um novo SID (*SidNew*). Requer o parâmetro *Directory* .|
-|/Restore \<ACLfile > [/c] [/l] [/q]|Aplica as DACLs armazenadas de *ACLfile* a arquivos no diretório especificado. Requer o parâmetro *Directory* .|
-|/InheritanceLevel: [e\|d\|r]|Define o nível de herança: <br>  **e** -habilita enheritance <br>**d** -desabilita a herança e copia as ACEs <br>**r** -remove todas as ACEs herdadas
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<filename>` | Especifica o arquivo para o qual exibir as DACLs. |
+| `<directory>` | Especifica o diretório para o qual exibir as DACLs. |
+| /t | Executa a operação em todos os arquivos especificados no diretório atual e em seus subdiretórios. |
+| /c | Continua a operação, apesar de quaisquer erros de arquivo. As mensagens de erro ainda serão exibidas. |
+| /l | Executa a operação em um link simbólico em vez de seu destino. |
+| /q | Suprime as mensagens de êxito. |
+| [/Save `<ACLfile>` [/t] [/c] [/l] [/q]] | Armazena as DACLs de todos os arquivos correspondentes no *ACLfile* para uso posterior com **/Restore**. |
+| [/SetOwner `<username>` [/t] [/c] [/l] [/q]] | Altera o proprietário de todos os arquivos correspondentes para o usuário especificado. |
+| [/findsid `<sid>` [/t] [/c] [/l] [/q]] | Localiza todos os arquivos correspondentes que contêm uma DACL mencionando explicitamente o SID (identificador de segurança) especificado. |
+| [/Verify [/t] [/c] [/l] [/q]] | Localiza todos os arquivos com ACLs que não são canônicas ou têm tamanhos inconsistentes com as contagens de ACE (entrada de controle de acesso). |
+| [/Reset reiniciar [/t] [/c] [/l] [/q]] | Substitui ACLs por ACLs herdadas padrão para todos os arquivos correspondentes. |
+| [/Grant [: r] \<Sid>:<perm>[...]] | Concede direitos de acesso de usuário especificado. As permissões substituem as permissões explícitas concedidas anteriormente.<p>Não adicionar o **: r**, significa que as permissões são adicionadas a quaisquer permissões explícitas concedidas anteriormente. |
+| [/Deny \<Sid>:<perm>[...]] | Nega explicitamente os direitos de acesso de usuário especificados. Uma ACE de negação explícita é adicionada para as permissões declaradas e as mesmas permissões em qualquer concessão explícita são removidas. |
+| [/remove`[:g | :d]]` `<sid>`[...] /t /c /l /q | Remove todas as ocorrências do SID especificado da DACL. Esse comando também pode usar:<ul><li>**: g** -remove todas as ocorrências de direitos concedidos para o SID especificado.</li><li>**:d** -remove todas as ocorrências de direitos negados para o SID especificado. |
+| [/setintegritylevel [(CI) (OI)] `<Level>:<Policy>`[...]] | Adiciona explicitamente uma ACE de integridade a todos os arquivos correspondentes. O nível pode ser especificado como:<ul><li>**l** -baixo</li><li>**m**-médio</li><li>**h** -alta</li></ul>As opções de herança para a ACE de integridade podem preceder o nível e são aplicadas somente a diretórios. |
+| [/substitute `<sidold> <sidnew>` [...]] | Substitui um SID existente (*sidold*) por um novo SID (*sidnew*). Requer o uso do `<directory>` com o parâmetro. |
+| /Restore `<ACLfile>` [/c] [/l] [/q] | Aplica as DACLs armazenadas `<ACLfile>` de em arquivos no diretório especificado. Requer o uso do `<directory>` com o parâmetro. |
+| /inheritancelevel:`[e | d | r]` | Define o nível de herança, que pode ser:<ul><li>**e** -habilita a herança</li><li>**d** -desabilita a herança e copia as ACEs</li><li>**r** -remove todas as ACEs herdadas</li></ul> |
 
 ## <a name="remarks"></a>Comentários
 
--   Os SIDs podem estar na forma de nome numérico ou amigável. Se você usar um formato numérico, afixará o caractere **&#42;** curinga ao início do Sid.
--   o **icacls** preserva a ordem canônica das entradas Ace como:  
-    -   Negações explícitas
-    -   Concessões explícitas
-    -   Negações herdadas
-    -   Concessões herdadas
--   *Perm* é uma máscara de permissão que pode ser especificada em uma das seguintes formas:  
-    -   Uma sequência de direitos simples:
+- Os SIDs podem estar na forma de nome numérico ou amigável. Se você usar um formato numérico, afixará o caractere curinga **&#42;** ao início do Sid.
 
-        **F** (acesso completo)
+- Esse comando preserva a ordem canônica das entradas ACE como:  
 
-        **M** (modificar acesso)
+    - Negações explícitas
 
-        **RX** (acesso de leitura e execução)
+    -  Concessões explícitas
 
-        **R** (acesso somente leitura)
+    - Negações herdadas
 
-        **W** (acesso somente gravação)
-    -   Uma lista separada por vírgulas em parênteses de direitos específicos:
+    - Concessões herdadas
 
-        **D** (excluir)
+- A `<perm>` opção é uma máscara de permissão que pode ser especificada em uma das seguintes formas:
 
-        **RC** (controle de leitura)
+    - Uma sequência de direitos simples:
 
-        **WDAC** (DAC de gravação)
+      - **F** -acesso completo
 
-        **Wo** (proprietário da gravação)
+      - **M**-modificar o acesso
 
-        **S** (sincronizar)
+      - **RX** -acesso de leitura e execução
 
-        **Como** (segurança do sistema de acesso)
+      - **R** -acesso somente leitura
 
-        **Ma** (máximo permitido)
+      - **W** -acesso somente gravação
 
-        **Gr** (leitura genérica)
+    - Uma lista separada por vírgulas em parênteses de direitos específicos:
 
-        **GW** (gravação genérica)
+      - **D** -excluir
 
-        **GE** (execução genérica)
+      - **RC** -controle de leitura
 
-        **GA** (todos genéricos)
+      - **WDAC** -gravar DAC
 
-        **RD** (ler dados/diretório de lista)
+      - **Wo** -proprietário da gravação
 
-        **WD** (gravar dados/Adicionar arquivo)
+      - **S** -sincronizar
 
-        **Ad** (acrescentar dados/adicionar subdiretório)
+      - Segurança do sistema do **as** -Access
 
-        **Rea** (atributos estendidos de leitura)
+      - **Ma** -máximo permitido
 
-        **Tem** (atributos estendidos de gravação)
+      - **Gr** -leitura genérica
 
-        **X** (executar/percorrer)
+      - **GW** -gravação genérica
 
-        **DC** (excluir filho)
+      - **GE** -execução genérica
 
-        **Ra** (atributos de leitura)
+      - **GA** -tudo genérico
 
-        **Wa** (atributos de gravação)
--   Os direitos de herança podem preceder o formulário *Perm* e são aplicados somente aos diretórios:
+      - **RD** – ler diretório de dados/lista
 
-    **(Oi)** : herança de objeto
+      - **WD** -gravar dados/Adicionar arquivo
 
-    **(CI)** : herança de contêiner
+      - **Ad** -acrescentar dados/adicionar subdiretório
 
-    **(E/s)** : herdar somente
+      - **Rea** -atributos estendidos de leitura
 
-    **(NP)** : não propagar herança
+      - **Tem** -gravar atributos estendidos
+
+      - **X** -executar/percorrer
+
+      - **DC** -excluir filho
+
+      - **Ra** -ler atributos
+
+      - **Wa** -gravar atributos
+
+  - Os direitos de herança podem preceder qualquer `<perm>` forma e são aplicados somente a diretórios:
+
+      - **(Oi)** -herança de objeto
+
+      - **(CI)** -herança de contêiner
+
+      - **(E/s)** -herdar somente
+
+      - **(NP)** – não propagar herança
 
 ## <a name="examples"></a>Exemplos
 

@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: getenctypeattr'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60de138ac73140c69e9a863083e01a51c0e13ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8363113d4fbb310d98b40d852b36a00f20320e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841529"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724631"
 ---
 # <a name="ksetupgetenctypeattr"></a>ksetup: getenctypeattr
 
 
 
-Recupera o atributo de tipo de criptografia para o domínio. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Recupera o atributo de tipo de criptografia para o domínio.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,7 +32,7 @@ ksetup /getenctypeattr <DomainName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<nome_do_domínio >|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso.|
+|\<> DomainName|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -40,9 +40,9 @@ Para exibir o tipo de criptografia para o tíquete de concessão de tíquete (TG
 
 Se o comando for bem-sucedido ou falhar, uma mensagem de status será exibida após a conclusão bem-sucedida ou com falha.
 
-Para definir o domínio ao qual você deseja se conectar e usar, execute o comando **ksetup/domain \<domainname >** .
+Para definir o domínio ao qual você deseja se conectar e usar, execute o comando **ksetup \</Domain nomedodomínio>** .
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Verifique o atributo de tipo de criptografia para o domínio:
 ```

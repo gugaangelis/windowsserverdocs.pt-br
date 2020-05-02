@@ -1,6 +1,6 @@
 ---
 title: Carregar metadados
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b8db98611fd78c6e30070901effafddd6e678c16
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3d3132bca86533ec3f2d0a27247bd3c116cf55b6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841019"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724461"
 ---
 # <a name="load-metadata"></a>Carregar metadados
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841019"
 
 Carrega um arquivo Metadata. cab antes de importar uma cópia de sombra transportável ou carrega os metadados do gravador no caso de uma restauração. Se usado sem parâmetros, **carregar metadados** exibe a ajuda no prompt de comando.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,7 +34,7 @@ load metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[\<drive >:] [<Path>]|Especifica o local do arquivo de metadados.|
+|[\<Unidade>:] [<Path>]|Especifica o local do arquivo de metadados.|
 |MetaData. cab|Especifica o arquivo Metadata. cab a ser carregado.|
 
 ## <a name="remarks"></a>Comentários
@@ -42,7 +42,7 @@ load metadata [<Drive>:][<Path>]<MetaData.cab>
 -   Você pode usar o comando de **importação** para importar uma cópia de sombra transportável com base nos metadados especificados pelos **metadados de carga**.
 -   Esse comando é necessário antes do comando **Iniciar restauração** para carregar os gravadores e componentes selecionados para a restauração.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para carregar um arquivo de metadados chamado Metafile. cab do local padrão, digite:
 ```

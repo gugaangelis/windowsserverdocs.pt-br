@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f3fde0ada4ab8bcbe52eccf22b959f99f91319f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841249"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724546"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -64,7 +64,7 @@ ksetup
 |[Ksetup:server](ksetup-server.md)|Permite especificar o nome de um computador Windows no qual as alterações serão aplicadas.|
 |[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|Define a senha para a conta de domínio do computador (ou a entidade de segurança do host).|
 |[Ksetup:removerealm](ksetup-removerealm.md)|Exclui todas as informações do realm especificado do registro.|
-|[Ksetup:domain](ksetup-domain.md)|Permite que você especifique um domínio (se \<o > DomainName não tiver sido definido usando **/Domain**).|
+|[Ksetup:domain](ksetup-domain.md)|Permite que você especifique um domínio (se \<o domainname> não tiver sido definido usando **/Domain**).|
 |[Ksetup:changepassword](ksetup-changepassword.md)|Permite que você use o Kpasswd para alterar a senha do usuário conectado.|
 |[Ksetup:listrealmflags](ksetup-listrealmflags.md)|Lista os sinalizadores de realm disponíveis que o **ksetup** pode detectar.|
 |[Ksetup:setrealmflags](ksetup-setrealmflags.md)|Define os sinalizadores de realm para um realm específico.|
@@ -77,7 +77,7 @@ ksetup
 |[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|Obtém o atributo de confiança dos tipos de criptografia para o domínio.|
 |[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|Adiciona tipos de criptografia ao atributo de confiança tipos de criptografia para o domínio.|
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|Exclui o atributo de confiança dos tipos de criptografia para o domínio.|
-|/?|Exibe a Ajuda no prompt de comando.|
+|/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 

@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: dumpstate'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 46f827d26d867392db4cbef92cf5be496aee8d74
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 27a7e3154b9dfa663b88b04857ea7650995613c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841509"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724648"
 ---
 # <a name="ksetupdumpstate"></a>ksetup: dumpstate
 
 
 
-Exibe o estado atual das configurações de realm para todos os territórios definidos no computador. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Exibe o estado atual das configurações de realm para todos os territórios definidos no computador.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -45,7 +45,7 @@ Esse comando não exibe a senha do computador que é definida usando o comando *
 
 **Ksetup** produz a mesma saída que **Ksetup/dumpstate**.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Encontre a maioria das configurações de realm do Kerberos em um computador:
 ```

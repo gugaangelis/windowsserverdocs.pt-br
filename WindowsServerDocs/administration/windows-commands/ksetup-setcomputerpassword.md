@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: setcomputerpassword'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e65ea6e935d9fde9c23842755c36e418928dec7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9cb0c2ee36ed85ddfb015a80e86198fe788f8474
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841369"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724588"
 ---
 # <a name="ksetupsetcomputerpassword"></a>ksetup: setcomputerpassword
 
 
 
-Define a senha para o computador local. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Define a senha para o computador local.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,7 +32,7 @@ ksetup /setcomputerpassword <Password>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<senha >|Usa a senha fornecida para definir a conta de computador no computador local.</br>A senha só pode ser definida usando uma conta com privilégios administrativos. A senha pode ter de 1 a 156 caracteres alfanuméricos ou especiais.|
+|\<> de senha|Usa a senha fornecida para definir a conta de computador no computador local.</br>A senha só pode ser definida usando uma conta com privilégios administrativos. A senha pode ter de 1 a 156 caracteres alfanuméricos ou especiais.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -42,7 +42,7 @@ Você deve reiniciar o computador para que a alteração da senha entre em vigor
 
 A senha da conta de computador não é exibida no registro nem como saída do comando **ksetup** .
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Altere a senha da conta de computador no computador local de IPops897 para IPop $897!.
 ```

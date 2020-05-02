@@ -1,6 +1,6 @@
 ---
 title: logman query
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7b7cc202266a568108c7cbf0eac89260721014a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05448a4f129a59145813dd0da7199d4adf845c5c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840659"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724351"
 ---
 # <a name="logman-query"></a>logman query
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 consultar as propriedades do coletor de dados ou do conjunto de coletores de dados.  
 
@@ -31,12 +31,12 @@ logman query [providers|Data Collector Set name] [options]
 |     Parâmetro      |                                 Descrição                                  |
 |--------------------|------------------------------------------------------------------------------|
 |         /?         |                       Exibe a ajuda contextual.                       |
-| -s <computer name> |            Execute o comando no computador remoto especificado.             |
+| -s<computer name> |            Execute o comando no computador remoto especificado.             |
 |  -config <value>   |           Especifica o arquivo de configurações que contém as opções de comando.            |
-|    [-n] <name>     |                          Nome do objeto de destino.                          |
+|    [-n]<name>     |                          O nome do objeto de destino.                          |
 |        -ETS        | Envie comandos para sessões de rastreamento de eventos diretamente sem salvar ou agendar. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 O comando a seguir lista todos os conjuntos de coletores de dados configurados no sistema de destino.  
 ```  
 logman query  

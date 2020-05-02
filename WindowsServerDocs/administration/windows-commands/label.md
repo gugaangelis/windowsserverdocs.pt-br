@@ -1,6 +1,6 @@
 ---
 title: label
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ccb86e2167682e1048161f2d5f5386a8b5cf6ed
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63603eda8d23b6f7b89b8d1ba858575a60e3c65c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841169"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724512"
 ---
 # <a name="label"></a>label
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841169"
 
 Cria, altera ou exclui o rótulo de volume (ou seja, o nome) de um disco. Se usado sem parâmetros, o comando **Label** altera o rótulo do volume atual ou exclui o rótulo existente.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,9 +34,9 @@ label [/mp] [<Volume>] [<Label>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/MP|Especifica que o volume deve ser tratado como um ponto de montagem ou nome de volume.|
-|\<volume >|Especifica uma letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume. Se um nome de volume for especificado, o parâmetro **/MP** será desnecessário.|
-|Rótulo de \<>|Especifica o rótulo para o volume.|
+|/mp|Especifica que o volume deve ser tratado como um ponto de montagem ou nome de volume.|
+|\<> de volume|Especifica uma letra da unidade (seguida por dois-pontos), ponto de montagem ou nome do volume. Se um nome de volume for especificado, o parâmetro **/MP** será desnecessário.|
+|\<Rótulo>|Especifica o rótulo para o volume.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -55,14 +55,14 @@ label [/mp] [<Volume>] [<Label>]
   ```  
   Pressione Y para excluir o rótulo ou pressione N para manter o rótulo.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para rotular um disco na unidade A que contém informações de vendas de julho, digite:
 ```
 label a:sales-july
 ```
 Para excluir o rótulo atual da unidade C, siga estas etapas:
-1. Em um prompt de comando, digite:  
+1. No prompt de comando, digite:  
    ```
    Label
    ```  

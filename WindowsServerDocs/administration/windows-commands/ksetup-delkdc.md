@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: delkdc'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63b264da227d51b6f47f982c66828536bd677920
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19ebe322d414d1ae9007275772ccd747f6f0ff8d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841689"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724672"
 ---
 # <a name="ksetupdelkdc"></a>ksetup: delkdc
 
 
 
-Exclui instâncias de nomes de centro de distribuição de chaves (KDC) para o realm Kerberos. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Exclui instâncias de nomes de centro de distribuição de chaves (KDC) para o realm Kerberos.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,8 +32,8 @@ ksetup /delkdc <RealmName> <KDCName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Realmsname >|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM, e ele é listado como o realm padrão quando **ksetup** é executado. É nesse realm que você está tentando excluir o outro KDC.|
-|\<KDCName >|O nome do KDC é declarado como um nome de domínio totalmente qualificado, que não diferencia maiúsculas de minúsculas, como mitkdc.contoso.com.|
+|\<Realmsname>|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM, e ele é listado como o realm padrão quando **ksetup** é executado. É nesse realm que você está tentando excluir o outro KDC.|
+|\<> KDCName|O nome do KDC é declarado como um nome de domínio totalmente qualificado, que não diferencia maiúsculas de minúsculas, como mitkdc.contoso.com.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -43,7 +43,7 @@ Em computadores que executam o Windows 2000 Server com Service Pack 1 (SP1) e an
 
 Para verificar o nome de realm padrão do computador, ou para verificar se esse comando funcionou conforme o esperado, execute **ksetup** no prompt de comando e verifique se o KDC removido não existe na lista.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Os requisitos de segurança para este computador foram alterados, portanto, o vínculo entre o realm do Windows e o realm não Windows deve ser removido. Primeiro, determine qual associação remover e produzir a saída de associações existentes:
 ```

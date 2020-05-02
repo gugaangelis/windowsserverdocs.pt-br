@@ -1,6 +1,6 @@
 ---
 title: klist
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b693e4496f4fc1275e1f2b364900564ce86e97cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f83a46f158cd83aa8393630aa0138271e8868575
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841959"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724749"
 ---
 # <a name="klist"></a>klist
 
 
 
-Exibe uma lista de tíquetes Kerberos atualmente armazenados em cache. Essas informações se aplicam ao Windows Server 2012. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Exibe uma lista de tíquetes Kerberos atualmente armazenados em cache. Essas informações se aplicam ao Windows Server 2012.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,7 +36,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 |-Li|Denota a parte inferior do identificador local exclusivo (LUID) do usuário, expresso em hexadecimal. Se nenhum – LH ou – li estiver presente, o comando usa como padrão o LUID do usuário que está conectado no momento.|
 |ticket|Lista os tíquetes de concessão de tíquetes (TGTs) e Tíquetes de serviço armazenados em cache no momento da sessão de logon especificada. Essa é a opção padrão.|
 |TGT|Exibe o TGT Kerberos inicial.|
-|limpar|Permite que você exclua todos os tíquetes da sessão de logon especificada.|
+|depuração|Permite que você exclua todos os tíquetes da sessão de logon especificada.|
 |sessões|Exibe uma lista de sessões de logon neste computador.|
 |kcd_cache|Exibe as informações de cache de delegação restrita de Kerberos.|
 |get|Permite solicitar um tíquete para o computador de destino especificado pelo SPN (nome da entidade de serviço).|
@@ -70,7 +70,7 @@ Os parâmetros exibem as seguintes informações:
     Lista o TGT Kerberos inicial e os seguintes atributos do tíquete atualmente armazenado em cache:  
     -   LogonId: identificado em hexadecimal
     -   ServiceName: krbtgt
-    -   \<do SPN > de TargetName: krbtgt
+    -   > \<de SPN de TargetName: krbtgt
     -   Nome_do_domínio: nome do domínio que emite o TGT
     -   TargetDomainName: domínio ao qual o TGT é emitido
     -   AltTargetDomainName: domínio ao qual o TGT é emitido
@@ -93,7 +93,7 @@ Os parâmetros exibem as seguintes informações:
 
     Permite que você exiba as informações de cache de delegação restrita de Kerberos.  
     -   LogonId: se especificado, exibe as informações de cache para a sessão de logon pelo valor especificado. Se não for especificado, exibe as informações de cache para a sessão de logon do usuário atual.
--   **Obter**
+-   **get**
 
     Permite solicitar um tíquete para o destino especificado pelo SPN.  
     -   LogonId: se especificado, solicita um tíquete usando a sessão de logon pelo valor especificado. Se não for especificado, o solicitará um tíquete usando a sessão de logon do usuário atual.
@@ -114,7 +114,7 @@ Os parâmetros exibem as seguintes informações:
 **Outras considerações**
 -   O klist. exe está disponível no Windows Server 2012 e no Windows 8, e não requer instalação especial.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 1. Quando você estiver diagnosticando uma ID de evento 27 durante o processamento de uma solicitação de TGS (serviço de concessão de tíquetes) para o servidor de destino, a conta não terá uma chave adequada para gerar um tíquete Kerberos. Você pode usar klist para consultar o cache de tíquete Kerberos para determinar se algum tíquete está ausente, se o servidor ou a conta de destino estiver em erro ou se não houver suporte para o tipo de criptografia.  
    ```

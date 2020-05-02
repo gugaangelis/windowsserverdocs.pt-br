@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: addkdc'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bb31cbc8ba7920c4ba609f86202e2e62a705078
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76d592e4f1c32305d6f939a66a6ad42cd582b032
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841829"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724761"
 ---
 # <a name="ksetupaddkdc"></a>ksetup: addkdc
 
 
 
-Adiciona um endereço centro de distribuição de chaves (KDC) para o realm Kerberos especificado. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Adiciona um endereço centro de distribuição de chaves (KDC) para o realm Kerberos especificado.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,8 +32,8 @@ ksetup /addkdc <RealmName> [<KDCName>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Realmsname >|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM, e ele é listado como o realm padrão quando **ksetup** é executado. É nesse realm que você está tentando adicionar o outro KDC.|
-|\<KDCName >|O nome do KDC é declarado como um nome de domínio totalmente qualificado que não diferencia maiúsculas de minúsculas, como mitkdc.microsoft.com. Se o nome do KDC for omitido, o DNS localizará KDCs.|
+|\<Realmsname>|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM, e ele é listado como o realm padrão quando **ksetup** é executado. É nesse realm que você está tentando adicionar o outro KDC.|
+|\<> KDCName|O nome do KDC é declarado como um nome de domínio totalmente qualificado que não diferencia maiúsculas de minúsculas, como mitkdc.microsoft.com. Se o nome do KDC for omitido, o DNS localizará KDCs.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -43,13 +43,13 @@ O computador deve ser reiniciado para que a nova configuração de realm seja us
 
 Para verificar o nome de realm padrão do computador ou para verificar se esse comando funcionou conforme o esperado, execute **ksetup** no prompt de comando e verifique a saída do KDC adicionado.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Configure um servidor KDC não Windows e o realm que a estação de trabalho deve usar:
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-Execute a ferramenta Ksetup na linha de comando do mesmo computador que no comando anterior para definir a senha da conta do computador local para p@sswrd1%. Em seguida, reinicie o computador.
+Execute a ferramenta Ksetup na linha de comando do mesmo computador que o comando anterior para definir a senha da conta do computador local como p@sswrd1%. Em seguida, reinicie o computador.
 ```
 Ksetup /setcomputerpassword p@sswrd1%
 ```

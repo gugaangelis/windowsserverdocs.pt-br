@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: addenctypeattr'
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 217e8a707c0af23901da3f433f630b253360f093
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 26441f739979cde31715e5fb06b5f3ab59845d97
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841939"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724744"
 ---
 # <a name="ksetupaddenctypeattr"></a>ksetup: addenctypeattr
 
 
 
-Adiciona o atributo de tipo de criptografia à lista de tipos possíveis para o domínio. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Adiciona o atributo de tipo de criptografia à lista de tipos possíveis para o domínio.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,7 +32,7 @@ ksetup /addenctypeattr <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<nome_do_domínio >|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso.|
+|\<> DomainName|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso.|
 |Tipo de criptografia|Deve ser um dos seguintes tipos de criptografia com suporte:</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-CTS-HMAC-SHA1-96</br>-AES256-CTS-HMAC-SHA1-96|
 
 ## <a name="remarks"></a>Comentários
@@ -43,9 +43,9 @@ Você pode definir ou adicionar vários tipos de criptografia separando os tipos
 
 Se o comando tiver êxito ou falhar, será exibida uma mensagem de status.
 
-Para definir o domínio ao qual você deseja se conectar e usar, execute o comando **ksetup/domain \<domainname >** .
+Para definir o domínio ao qual você deseja se conectar e usar, execute o comando **ksetup \</Domain nomedodomínio>** .
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Determine os tipos de criptografia atuais que estão definidos neste computador:
 ```

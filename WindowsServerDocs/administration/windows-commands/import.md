@@ -1,6 +1,6 @@
 ---
 title: importar
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07fdd03c73c454e92218a4c6983eac7f29b50883
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72cbd6195de64a6a0a7f2c258e19b2d5eb1378b1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842169"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724851"
 ---
 # <a name="import"></a>importar
 
 
 
-importa uma cópia de sombra transportável de um arquivo de metadados carregado para o sistema.
+Importa uma cópia de sombra transportável de um arquivo de metadados carregado para o sistema.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,7 +35,7 @@ import
 -   As cópias de sombra transportáveis não são armazenadas imediatamente no sistema. Seus detalhes são armazenados em um arquivo XML de documentos de componentes de backup, que o DiskShadow solicita e salva automaticamente em um arquivo de metadados. cab no diretório de trabalho. Você pode alterar o caminho e o nome desse arquivo usando o comando **set Metadata** .
 -   Antes de poder usar a **importação**, você deve carregar um arquivo de metadados do DiskShadow usando o comando **carregar metadados** .
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Veja a seguir um exemplo de script de DiskShadow que demonstra o uso do comando de **importação** :
 ```

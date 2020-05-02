@@ -1,6 +1,6 @@
 ---
 title: GPT
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1db2a3fe21b0343c23bbc2432d4d07a500b72e8e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5eaa52329a08f85a2a97d89ff178039c5b883017
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842449"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724944"
 ---
 # <a name="gpt"></a>GPT
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Em discos básicos da tabela de partição GUID (GPT), o atribui os atributos GPT à partição com foco.  os atributos de partição GPT fornecem informações adicionais sobre o uso da partição. Alguns atributos são específicos para o GUID do tipo de partição.
 
@@ -42,7 +42,7 @@ gpt attributes=<n>
 - A partição do sistema EFI contém somente os binários necessários para iniciar o sistema operacional. Isso torna mais fácil para os binários OEM ou binários específicos de um sistema operacional serem colocados em outras partições.
 - Uma partição GPT básica deve ser selecionada para que essa operação tenha sucesso. Use o comando **selecionar partição** para selecionar uma partição GPT básica e deslocar o foco para ela.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
   Se você estiver movendo um disco GPT para um novo computador e quiser impedir que esse computador atribua automaticamente uma letra de unidade à partição com foco, digite:
   ```

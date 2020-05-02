@@ -1,6 +1,6 @@
 ---
 title: listar gravadores
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e12c4f36c3fd840b7b37b12d9f4171429e5a52d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ef7fa0bd6e9857e22994178849e49afeb3305a2a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841109"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724481"
 ---
 # <a name="list-writers"></a>listar gravadores
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841109"
 
 Lista gravadores que estão no sistema. Se usado sem parâmetros, **list** exibirá a saída para **listar metadados** por padrão.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,11 +34,11 @@ list writers [metadata | detailed | status]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|los|Lista a identidade e o status dos gravadores e exibe os metadados, como detalhes do componente e arquivos excluídos. Esse é o parâmetro padrão.|
+|metadata|Lista a identidade e o status dos gravadores e exibe os metadados, como detalhes do componente e arquivos excluídos. Esse é o parâmetro padrão.|
 |detalhado|Lista as mesmas informações que os **metadados**, mas **detalhado** inclui a lista completa de arquivos para todos os componentes.|
 |status|Lista somente a identidade e o status dos gravadores registrados.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para listar apenas a identidade e o status dos gravadores, digite:
 ```
