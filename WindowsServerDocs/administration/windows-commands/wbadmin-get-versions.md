@@ -1,6 +1,6 @@
 ---
 title: Wbadmin obter versões
-description: O tópico de comandos do Windows para WBADMIN Get Versions, que lista detalhes sobre os backups disponíveis que são armazenados no computador local ou em outro computador.
+description: Tópico de referência para WBADMIN Get Versions, que lista detalhes sobre os backups disponíveis que são armazenados no computador local ou em outro computador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61353d4d607f87878d8001a626279016274c8eff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 542f65b7d87eacb102f64fb4103e6c684df4faa5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829729"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720148"
 ---
 # <a name="wbadmin-get-versions"></a>Wbadmin obter versões
 
@@ -23,8 +23,6 @@ ms.locfileid: "80829729"
 Lista detalhes sobre os backups disponíveis que são armazenados no computador local ou em outro computador. Quando esse subcomando é usado sem parâmetros, ele lista todos os backups do computador local, mesmo que esses backups não estejam disponíveis. Os detalhes fornecidos para um backup incluem o tempo de backup, o local de armazenamento de backup, o identificador de versão (necessário para o subcomando **Wbadmin Get Items** e para executar recuperações) e o tipo de recuperações que você pode executar.
 
 Para obter detalhes sobre os backups disponíveis usando esse subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um **prompt de comando** de prompt de comandos com privilégios elevados e clique em **Executar como administrador**.)
-
-Para obter exemplos de como usar esse subcomando, consulte [exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -45,13 +43,13 @@ wbadmin get versions
 
 Para listar itens disponíveis para recuperação de um backup específico, use **Wbadmin Get Items**.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para ver uma lista de backups disponíveis que são armazenados no volume h, digite:
 ```
 wbadmin get versions -backupTarget:h:
 ```
-Para ver uma lista de backups disponíveis que são armazenados na pasta compartilhada remota \\\\servername\share para o computador Server01, digite:
+Para ver uma lista de backups disponíveis que são armazenados na pasta \\ \\compartilhada remota servername\share para o computador Server01, digite:
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```

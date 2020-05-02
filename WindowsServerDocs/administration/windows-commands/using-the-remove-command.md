@@ -1,6 +1,6 @@
 ---
-title: remover
-description: O tópico comandos do Windows para remover, que remove várias informações relacionadas ao driver.
+title: remove
+description: Tópico de referência para remover, que remove várias informações relacionadas ao driver.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 420fe02656bfa3a23026e02b20ccb03176d2748a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c80b21853b878fbe931c890b0d45acfa9aa188b1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830539"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720428"
 ---
-# <a name="remove"></a>remover
+# <a name="remove"></a>remove
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 ## <a name="subcommands"></a>Subcomandos
 |Subommand|Descrição|

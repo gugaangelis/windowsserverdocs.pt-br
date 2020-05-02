@@ -1,6 +1,6 @@
 ---
 title: Get-AllImageGroups
-description: O tópico de comandos do Windows para Get-AllImageGroups, que recupera informações sobre todos os grupos de imagens em um servidor e todas as imagens nesses grupos de imagens.
+description: Tópico de referência para Get-AllImageGroups, que recupera informações sobre todos os grupos de imagens em um servidor e todas as imagens nesses grupos de imagens.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19285422612f8be34d39e6152fcf0300e1919b8a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 204618955e91f1c9c9659d37ac3dfe2a01897c51
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831319"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720034"
 ---
 # <a name="get-allimagegroups"></a>Get-AllImageGroups
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Recupera informações sobre todos os grupos de imagens em um servidor e todas as imagens nesses grupos de imagens.
 
@@ -31,15 +31,15 @@ wdsutil [Options] /Get-AllImageGroups [/Server:<Server name>] [/detailed]
 |-------|--------|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
 |[/detailed]|Retorna os metadados da imagem de cada imagem. Se esse parâmetro não for usado, o comportamento padrão será retornar apenas o nome da imagem, a descrição e o nome do arquivo para cada imagem.|
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 Para exibir informações sobre os grupos de imagens, digite um dos seguintes:
 ```
 wdsutil /Get-AllImageGroups
 wdsutil /verbose /Get-AllImageGroups /Server:MyWDSServer /detailed
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- A [chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando Add-Image do](using-the-add-imagegroup-command.md)
-[usando o comando Get-Image](using-the-get-imagegroup-command.md) do
-[usando o comando remove-Image](using-the-remove-imagegroup-command.md) do grupo de imagens
-[subcomando: Set-Image](subcommand-set-imagegroup.md)
+- [Chave](command-line-syntax-key.md)
+de sintaxe de linha de comando usando o
+[comando Add-](using-the-add-imagegroup-command.md)Image do conjunto de imagens usando o comando[Get-imageus](using-the-get-imagegroup-command.md)
+
+[usando o comando Remove-Image-](using-the-remove-imagegroup-command.md)Command[: Set-grupo de imagens](subcommand-set-imagegroup.md)

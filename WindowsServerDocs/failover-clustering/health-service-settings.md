@@ -7,14 +7,15 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: 7ae78137bbd4e39291cc2e307f62697876c98135
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a8262567abdd18847e99026c43d722351a00d3f2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827519"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720537"
 ---
 # <a name="health-service-settings"></a>Configurações de Serviço de Integridade
+
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
 O Serviço de Integridade é um novo recurso do Windows Server 2016 que melhora o monitoramento diário e a experiência operacional para clusters que executam o Espaços de Armazenamento Diretos.
@@ -29,7 +30,7 @@ Use o seguinte cmdlet do PowerShell para definir ou modificar as configurações
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Value <Value>  
 ```
 
-#### <a name="example"></a>{1&gt;Exemplo&lt;1}
+#### <a name="example"></a>Exemplo
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.Volume.CapacityThreshold.Warning" -Value 70
@@ -98,7 +99,7 @@ Consulte a seção anterior.
 "System.LogLevel" = 4
 ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 - [Serviço de Integridade no Windows Server 2016](health-service-overview.md)
 - [Espaços de Armazenamento Diretos no Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)

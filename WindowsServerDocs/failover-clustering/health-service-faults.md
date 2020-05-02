@@ -7,14 +7,15 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827559"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720558"
 ---
 # <a name="health-service-faults"></a>Falhas de Serviço de Integridade
+
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-faults"></a>O que são falhas
@@ -69,14 +70,13 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 Isso retorna todas as falhas que afetam apenas o volume ou o compartilhamento de arquivos específico. Geralmente, essas falhas estão relacionadas ao planejamento de capacidade, à resiliência de dados ou a recursos como armazenamento de qualidade de serviço ou de réplica de armazenamento. 
 
-## <a name="usage-in-net-and-c"></a>Uso no .NET eC#
+## <a name="usage-in-net-and-c"></a>Uso em .NET e C #
 
 ### <a name="connect"></a>Conectar
 
-Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão o C\#, a opção mais direta para essa camada de acesso a dados.
+Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C\#, a opção mais direta para essa camada de acesso a dados.
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -105,7 +105,7 @@ O nome de usuário fornecido deve ser um administrador local do computador de de
 
 Com o **CimSession** estabelecido, você pode consultar Instrumentação de gerenciamento do Windows (WMI) no cluster.
 
-Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT\_StorageSubSystem** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter cada **msft\_StorageNode** no cluster e todos os\_de dados do **MSFT** Por fim, você precisará do **MSFT\_StorageHealth**, o serviço de integridade em si.
+Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **StorageSubSystem\_do MSFT** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter todos **os\_StorageNode de MSFT** no cluster, e todos os volumes de **MSFT\_** e de dados. Por fim, você precisará **do\_MSFT StorageHealth**, o serviço de integridade em si.
 
 ```
 CimInstance Cluster;
@@ -138,7 +138,6 @@ Esses são os mesmos objetos que você obtém no PowerShell usando cmdlets como 
 Você pode acessar todas as mesmas propriedades, documentadas em [classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -213,7 +212,7 @@ A lista completa de propriedades em cada falha (**DiagnoseResult**) está docume
 
 Quando as falhas são criadas, removidas ou atualizadas, o Serviço de Integridade gera eventos WMI. Eles são essenciais para manter o estado do aplicativo em sincronia sem sondagem frequente e podem ajudar com coisas como determinar quando enviar alertas por email, por exemplo. Para assinar esses eventos, este código de exemplo usa o padrão de design observador novamente.
 
-Primeiro, assine o **MSFT\_eventos StorageFaultEvent** .
+Primeiro, assine os eventos do **MSFT\_StorageFaultEvent** .
 
 ```      
 public void ListenForFaultEvents()
@@ -284,13 +283,13 @@ No entanto, em alguns casos, as falhas podem ser redescobertas pelo Serviço de 
 
 ### <a name="properties-of-faults"></a>Propriedades de falhas
 
-Esta tabela apresenta várias propriedades-chave do objeto de falha. Para o esquema completo, inspecione a classe **MSFT\_StorageDiagnoseResult** em *storagewmi. mof*.
+Esta tabela apresenta várias propriedades-chave do objeto de falha. Para o esquema completo, inspecione a **classe\_MSFT StorageDiagnoseResult** em *storagewmi. mof*.
 
 | **Propriedade**              | **Exemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | Faultid                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. Health. FaultType. volume. Capacity                      |
-| Reason                    | "O volume está ficando sem espaço disponível."                 |
+| Motivo                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Rack A06, RU 25, slot 11                                        |
@@ -308,7 +307,7 @@ Esta tabela apresenta várias propriedades-chave do objeto de falha. Para o esqu
 
 ## <a name="properties-of-fault-events"></a>Propriedades de eventos de falha
 
-Esta tabela apresenta várias propriedades-chave do evento de falha. Para o esquema completo, inspecione a classe **MSFT\_StorageFaultEvent** em *storagewmi. mof*.
+Esta tabela apresenta várias propriedades-chave do evento de falha. Para o esquema completo, inspecione a **classe\_MSFT StorageFaultEvent** em *storagewmi. mof*.
 
 Observe o **ChangeType**, que indica se uma falha está sendo criada, removida ou atualizada e a **faultid**. Um evento também contém todas as propriedades da falha afetada.
 
@@ -317,7 +316,7 @@ Observe o **ChangeType**, que indica se uma falha está sendo criada, removida o
 | ChangeType                | 0                                                               |
 | Faultid                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. Health. FaultType. volume. Capacity                      |
-| Reason                    | "O volume está ficando sem espaço disponível."                 |
+| Motivo                    | "O volume está ficando sem espaço disponível."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Rack A06, RU 25, slot 11                                        |
@@ -379,7 +378,7 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 * Recomendado: *"restaurando a resiliência dos dados."*
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType: Microsoft. Health. FaultType. VirtualDisks. desanexado
-* Severidade: crítico
+* Gravidade: crítica
 * Motivo: *"o volume está inacessível. Alguns dados podem ser perdidos. "*
 * Recomendado: *"Verifique a conectividade física e/ou de rede de todos os dispositivos de armazenamento. Talvez seja necessário restaurar a partir do backup. "*
 
@@ -390,7 +389,7 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 * Motivo: *"o pool de armazenamento não tem a capacidade de reserva mínima recomendada. Isso pode limitar sua capacidade de restaurar a resiliência de dados no caso de falhas de unidade. "*
 * Recomendado: *"adicionar capacidade adicional ao pool de armazenamento ou liberar capacidade. A reserva mínima recomendada varia de acordo com a implantação, mas tem aproximadamente 2 unidades de capacidade. "*
 
-### <a name="volume-capacity-2sup1sup"></a>**Capacidade do volume (2)** <sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**Capacidade do volume (2)**<sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. Health. FaultType. volume. Capacity
 * Gravidade: Aviso
@@ -398,31 +397,31 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 * Recomendado: *"expandir o volume ou migrar cargas de trabalho para outros volumes".*
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. Health. FaultType. volume. Capacity
-* Severidade: crítico
+* Gravidade: crítica
 * Motivo: *"o volume está ficando sem espaço disponível".*
 * Recomendado: *"expandir o volume ou migrar cargas de trabalho para outros volumes".*
 
 ### <a name="server-3"></a>**Servidor (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType: Microsoft. Health. FaultType. Server. Down
-* Severidade: crítico
+* Gravidade: crítica
 * Motivo: *"o servidor não pode ser acessado".*
 * Recomendado: *"iniciar ou substituir servidor".*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType: Microsoft. Health. FaultType. Server. Isolated
-* Severidade: crítico
+* Gravidade: crítica
 * Motivo: *"o servidor está isolado do cluster devido a problemas de conectividade".*
 * Recomendado: *"se o isolamento persistir, verifique as redes ou migre cargas de trabalho para outros nós".*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType: Microsoft. Health. FaultType. Server. Quarantineed
-* Severidade: crítico
+* Gravidade: crítica
 * Motivo: *"o servidor é colocado em quarentena pelo cluster devido a falhas recorrentes".*
 * Recomendado: *"substituir o servidor ou corrigir a rede".*
 
 ### <a name="cluster-1"></a>**Cluster (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType: Microsoft. Health. FaultType. ClusterQuorumWitness. Error
-* Severidade: crítico
+* Gravidade: crítica
 * Motivo: *"o cluster é uma falha de um servidor fora de ficar inativo".*
 * Recomendado: *"Verifique o recurso de testemunha e reinicie conforme necessário. Iniciar ou substituir servidores com falha. "*
 
@@ -497,7 +496,7 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 * Motivo: *"a distribuição do firmware foi cancelada devido a muitos discos físicos falhando em uma tentativa de atualização do firmware".*
 * Recomendado: *"reinicie a distribuição do firmware depois que o problema do firmware tiver sido resolvido".*
 
-### <a name="storage-qos-3sup2sup"></a>**QoS de armazenamento (3)** <sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**QoS de armazenamento (3)**<sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: Microsoft. Health. FaultType. StorQos. InsufficientThroughput
 * Gravidade: Aviso
@@ -520,6 +519,6 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 >[!NOTE]
 > A integridade dos componentes do compartimento de armazenamento, como sensores, fontes de alimentação e ventiladores, é derivada de SES (Serviços de Compartimento) SCSI. Se o fornecedor não lhe der essas informações, o Serviço de Integridade não poderá exibi-las.  
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 - [Serviço de Integridade no Windows Server 2016](health-service-overview.md)

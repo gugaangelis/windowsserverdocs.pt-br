@@ -1,6 +1,6 @@
 ---
 title: verificar
-description: O tópico comandos do Windows para verificar, que informa ao **cmd** se é para verificar se os arquivos estão gravados corretamente em um disco.
+description: Tópico de referência para verificar, que informa ao **cmd** se é para verificar se os arquivos estão gravados corretamente em um disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91a0777999a604a23e2de83eda6b89c926cb241c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f7fc35b37d5e0a429e1ecc2ebefc117804a0c645
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830049"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720288"
 ---
 # <a name="verify"></a>verificar
 
@@ -22,7 +22,7 @@ ms.locfileid: "80830049"
 
 Informa ao **cmd** se é para verificar se os arquivos estão gravados corretamente em um disco. Se usado sem parâmetros, **Verify** exibirá a configuração atual.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,10 +34,10 @@ verify [on | off]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[on \| off]|Ativa ou desativa a configuração de **verificação** .|
+|[ligado \| desativado]|Ativa ou desativa a configuração de **verificação** .|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir a configuração de **verificação** atual, digite:
 ```

@@ -1,5 +1,5 @@
 ---
-title: Pré-configurar objetos de computador do cluster no Active Directory Domain Services
+title: Pré-configurar os objetos de computador do cluster no Active Directory Domain Services
 description: Como pré-configurar objetos de computador de cluster no Active Directory Domain Services.
 ms.prod: windows-server
 ms.topic: article
@@ -9,16 +9,16 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b14561a05778ed30e71363a2cd3b3b6fdf24f78e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb9077f40c33d615c0bbe18f1c02b29ce27165a2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827469"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720519"
 ---
-# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar objetos de computador do cluster no Active Directory Domain Services
+# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar os objetos de computador do cluster no Active Directory Domain Services
 
->Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico mostra como pré-configurar os objetos de computador do cluster em AD DS (Serviços de Domínio Active Directory). É possível usar esse procedimento para habilitar um usuário ou grupo para a criação de um cluster de failover quando não tiverem permissões para a criação de objetos de computador em AD DS.
 
@@ -71,7 +71,7 @@ Veja como conceder as permissões de usuário para criar o cluster:
 
 1. Em Usuários e Computadores do Active Directory, no menu **Exibir**, verifique se a opção **Recursos Avançados** está selecionada.
 2. Localize, clique com o botão direito do mouse no CNO e selecione **Propriedades**.
-3. Na guia **segurança** , selecione **Adicionar**.
+3. Na guia **Segurança**, selecione **Adicionar**.
 4. Na caixa de diálogo **Selecionar usuários, computadores ou grupos** , especifique a conta de usuário ou o grupo ao qual você deseja conceder permissões e, em seguida, selecione **OK**.
 5. Selecione a conta de usuário ou grupo que acabou de adicionar e, em seguida, ao lado de **Controle total**, marque a caixa de seleção **Permitir**.
   
@@ -128,7 +128,7 @@ Um administrador no cluster de failover poderá agora criar funções clusteriza
 4. Na caixa **nome do computador** , digite o nome que será usado para a função clusterizada e selecione **OK**.
 5. Como prática recomendada, clique com o botão direito do mouse na conta de computador que você acabou de criar, selecione **Propriedades**e, em seguida, selecione a guia **objeto** . Na guia **objeto** , marque a caixa de seleção **proteger objeto contra exclusão acidental** e selecione **OK**.
 6. Clique com o botão direito do mouse na conta de computador que você acabou de criar e selecione **Propriedades**.
-7. Na guia **segurança** , selecione **Adicionar**.
+7. Na guia **Segurança**, selecione **Adicionar**.
 8. Na caixa de diálogo **Selecionar usuário, computador, conta de serviço ou grupos** , selecione **tipos de objeto**, marque a caixa de seleção **computadores** e, em seguida, selecione **OK**.
 9. Em **Inserir os nomes de objeto a serem selecionados**, insira o nome do CNO, selecione **verificar nomes**e, em seguida, selecione **OK**. Se você receber uma mensagem de aviso dizendo que está prestes a adicionar um objeto desabilitado, selecione **OK**.
 10. Verifique se o CNO está selecionado e, em seguida, ao lado de **Controle total**, marque a caixa de seleção **Permitir**.

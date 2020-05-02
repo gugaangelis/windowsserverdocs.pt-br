@@ -1,6 +1,6 @@
 ---
 title: Get-myservers
-description: Tópico de comandos do Windows para Get-myservers, que recupera informações sobre todos os servidores de serviços de implantação do Windows.
+description: Tópico de referência para Get-myservers, que recupera informações sobre todos os servidores de serviços de implantação do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b400d5a2be69e8e89a05b233cc2e8f29bec848f6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b623b5e95e2a57147b7d9d191d42556191dd8e4d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831209"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719978"
 ---
 # <a name="get-allservers"></a>Get-myservers
 
@@ -37,7 +37,7 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 |  [/Detailed]  | Quando usado em conjunto com **/show: images** ou **/show: ALL**, retorna todos os metadados de imagem de cada imagem. Se a opção **/detailed** não for especificada, o comportamento padrão será retornar o nome da imagem, a descrição e o nome do arquivo. |
 | [/Forest: {Sim |                                                                                                                     Não}]                                                                                                                     |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir informações sobre todos os servidores, digite:
 ```

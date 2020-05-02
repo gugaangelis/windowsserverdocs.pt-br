@@ -1,6 +1,6 @@
 ---
 title: wscript
-description: O tópico de comandos do Windows para WScript, que fornece um ambiente no qual os usuários podem executar scripts em uma variedade de idiomas que usam uma variedade de modelos de objeto para executar tarefas.
+description: Tópico de referência para o WScript, que fornece um ambiente no qual os usuários podem executar scripts em uma variedade de idiomas que usam uma variedade de modelos de objeto para executar tarefas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 77a0087eee1287699d66c4e1e5ab2aef69551440
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cf2d23c7d5773662f679a9a20b0aaba118f35548
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828929"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720634"
 ---
 # <a name="wscript"></a>wscript
 
@@ -39,14 +39,14 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/h: cscript|Registra o **cscript. exe** como o host de script padrão para executar scripts.|
 |/h: WScript|Registra o **WScript. exe** como o host de script padrão para executar scripts. Esse é o padrão quando a opção **/h** é omitida.|
 |/i|Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada.</br>Esse é o padrão e o oposto de **/b**.|
-|/minuto: identificador de\<>|Executa o trabalho identificado pelo *identificador* em um arquivo de script **. wsf** .|
+|/minuto:\<identificador>|Executa o trabalho identificado pelo *identificador* em um arquivo de script **. wsf** .|
 |/logo|Especifica que a faixa do host de scripts do Windows é exibida no console do antes de o script ser executado.</br>Esse é o padrão e o oposto de **/nologo**.|
 |/nologo|Especifica que a faixa do host de scripts do Windows não é exibida antes de o script ser executado. Esse é o oposto de **/logo**.|
 |/s|Salva as opções de prompt de comando atuais do usuário atual.|
-|/t: número de\<>|Especifica o tempo máximo que o script pode executar (em segundos). Você pode especificar até 32.767 segundos.</br>O padrão é sem limite de tempo.|
+|/t:\<número>|Especifica o tempo máximo que o script pode executar (em segundos). Você pode especificar até 32.767 segundos.</br>O padrão é sem limite de tempo.|
 |/x|Inicia o script no depurador.|
 |ScriptArguments|Especifica os argumentos passados para o script. Cada argumento de script deve ser precedido por uma barra (/).|
-|/?|Exibe a Ajuda no prompt de comando.|
+|/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 

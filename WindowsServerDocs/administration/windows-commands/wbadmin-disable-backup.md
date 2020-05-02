@@ -1,6 +1,6 @@
 ---
 title: Wbadmin Disable backup
-description: O tópico de comandos do Windows para WBADMIN Disable backup, que interrompe a execução dos backups diários agendados existentes.
+description: Tópico de referência para WBADMIN Disable backup, que interrompe a execução dos backups diários agendados existentes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2fb3d22fc3857cce191ee11381ae6e7e6ac1175
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b38460b5b8408d73c857cf7314805f33adfa3108
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829849"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720188"
 ---
 # <a name="wbadmin-disable-backup"></a>Wbadmin Disable backup
 

@@ -1,6 +1,6 @@
 ---
 title: obter o ImageFile
-description: O tópico de comandos do Windows para Get-ImageFile, que recupera informações sobre as imagens contidas em um arquivo de imagem do Windows (. wim).
+description: Tópico de referência para Get-ImageFile, que recupera informações sobre as imagens contidas em um arquivo de imagem do Windows (. wim).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef1cf2b9eec6739690d286c32d26dd84b07e348c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4f60be17f13e1436a0e895991c72d5ccb7130782
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830989"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719910"
 ---
 # <a name="get-imagefile"></a>obter o ImageFile
 
@@ -30,10 +30,10 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/ImageFile: caminho de arquivo\<WIM >|Especifica o caminho completo e o nome do arquivo. wim.|
+|/ImageFile:\<caminho do arquivo WIM>|Especifica o caminho completo e o nome do arquivo. wim.|
 |[/Detailed]|Retorna todos os metadados de imagem de cada imagem. Se essa opção não for usada, o comportamento padrão será retornar apenas o nome da imagem, a descrição e o nome do arquivo.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir informações sobre uma imagem, digite:
 ```

@@ -1,6 +1,6 @@
 ---
 title: Get-DriverPackageFile
-description: O tópico de comandos do Windows para Get-DriverPackageFile, que exibe informações sobre um pacote de driver, incluindo os drivers e arquivos que ele contém.
+description: Tópico de referência para Get-DriverPackageFile, que exibe informações sobre um pacote de driver, incluindo os drivers e arquivos que ele contém.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d485a24479aa857270968a1bff7bd55a014347a3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 71fc38e31471a1deb9d6be29b04d3cd911be1bd6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831029"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719928"
 ---
 # <a name="get-driverpackagefile"></a>Get-DriverPackageFile
 
@@ -30,11 +30,11 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 
 |         Parâmetro         |                              Descrição                               |
 |---------------------------|------------------------------------------------------------------------|
-| /InfFile:\<caminho do arquivo inf > | Especifica o caminho completo e o nome do arquivo do pacote de driver. inf. |
+| /InfFile:\<caminho do arquivo inf> | Especifica o caminho completo e o nome do arquivo do pacote de driver. inf. |
 |    [/Architecture: {x86    |                                  Win64                                  |
-|     [/Show: {drivers      |                                 Files                                  |
+|     [/Show: {drivers      |                                 Arquivos                                  |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir informações sobre um arquivo de driver, digite:
 ```

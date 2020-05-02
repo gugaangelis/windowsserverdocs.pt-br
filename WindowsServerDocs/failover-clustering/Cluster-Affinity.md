@@ -8,22 +8,22 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: Este artigo descreve os níveis de afinidade e antiafinidade de cluster de failover
-ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0c2209680f3c34ac8376d5662620595aff92c0b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828279"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720610"
 ---
 # <a name="cluster-affinity"></a>Afinidade de cluster
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Um cluster de failover pode conter várias funções que podem se mover entre nós e executar.  Há ocasiões em que determinadas funções (ou seja, máquinas virtuais, grupos de recursos, etc.) não devem ser executadas no mesmo nó.  Isso pode ser devido ao consumo de recursos, uso de memória, etc.  Por exemplo, há duas máquinas virtuais com uso intensivo de memória e CPU e, se as duas máquinas virtuais estiverem em execução no mesmo nó, uma ou ambas as máquinas virtuais poderão ter problemas de impacto no desempenho.  Este artigo explicará os níveis de antiafinidade de cluster e como você pode usá-los.
+Um cluster de failover pode conter várias funções que podem se mover entre nós e executar. Há ocasiões em que determinadas funções (ou seja, máquinas virtuais, grupos de recursos, etc.) não devem ser executadas no mesmo nó.  Isso pode ser devido ao consumo de recursos, uso de memória, etc.  Por exemplo, há duas máquinas virtuais com uso intensivo de memória e CPU e, se as duas máquinas virtuais estiverem em execução no mesmo nó, uma ou ambas as máquinas virtuais poderão ter problemas de impacto no desempenho.  Este artigo explicará os níveis de antiafinidade de cluster e como você pode usá-los.
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>O que é afinidade e antiafinidade?
 
-Affinity é uma regra que você configuraria que estabelece uma relação entre duas ou mais funções (i, e, máquinas virtuais, grupos de recursos, etc) para mantê-las juntas.  A antiafinidade é a mesma, mas é usada para tentar manter as funções especificadas separadas umas das outras.  Os clusters de failover usam a antiafinidade para suas funções.  Mais especificamente, o parâmetro [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) definido nas funções para que eles não sejam executados no mesmo nó.  
+Affinity é uma regra que você configuraria que estabelece uma relação entre duas ou mais funções (i, e, máquinas virtuais, grupos de recursos, etc) para mantê-las juntas.  A antiafinidade é a mesma, mas é usada para tentar manter as funções especificadas separadas umas das outras. Os clusters de failover usam a antiafinidade para suas funções.  Mais especificamente, o parâmetro [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) definido nas funções para que eles não sejam executados no mesmo nó.  
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
@@ -81,13 +81,10 @@ Em uma listagem do PowerShell dos grupos, você verá isto:
     Group1     Offline(Anti-Affinity Conflict)
     Group2     Online
 
-## <a name="additional-comments"></a>Comentários adicionais
+## <a name="additional-comments"></a>Comentários Adicionais
 
 - Verifique se você está usando a configuração de antiafinidade apropriada dependendo das necessidades.
 - Tenha em mente que, em um cenário de dois nós e ClusterEnforcedAntiAffinity, se um nó estiver inativo, os dois grupos não serão executados.  
 
 - O uso de proprietários preferenciais em grupos pode ser combinado com antiafinidade em um cluster de três ou mais nós.
-- As configurações de AntiAffinityClassNames e ClusterEnforcedAntiAffinity só ocorrerão após uma reciclagem dos recursos. I.E. Você pode defini-los, mas se ambos os grupos estiverem online no mesmo nó quando definidos, ambos continuarão a permanecer online.
-
-
-
+- As configurações de AntiAffinityClassNames e ClusterEnforcedAntiAffinity só ocorrerão após uma reciclagem dos recursos. ,. Você pode defini-los, mas se ambos os grupos estiverem online no mesmo nó quando definidos, ambos continuarão a permanecer online.

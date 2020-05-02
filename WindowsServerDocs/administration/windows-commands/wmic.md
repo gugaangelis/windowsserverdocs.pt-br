@@ -1,6 +1,6 @@
 ---
 title: wmic
-description: Tópico de comandos do Windows para WMIC, que exibe informações de WMI dentro de um shell de comando interativo.
+description: Tópico de referência para WMIC, que exibe informações de WMI dentro de um shell de comando interativo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03ba4ecb4b12b03e010318bf6ca260dec00f28f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 252ba6b59c29378dd1f5e437de21a2ec4f5ec5c8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829049"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720655"
 ---
 # <a name="wmic"></a>wmic
 
@@ -22,7 +22,7 @@ ms.locfileid: "80829049"
 
 Exibe informações de WMI dentro de um shell de comando interativo.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,12 +36,12 @@ Os seguintes subcomandos estão disponíveis o tempo todo:
 
 |Subcomando|Descrição|
 |-----------|-----------|
-|{1&gt;classe&lt;1}|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
+|classe|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
 |path|Sai do modo de alias padrão do WMIC para acessar instâncias diretamente no esquema do WMI.|
 |contexto|Exibe os valores atuais de todas as opções globais.|
 |[sair \| sair]|Sai do Shell de comando do WMIC.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir os valores atuais de todas as opções globais, digite:
 ```

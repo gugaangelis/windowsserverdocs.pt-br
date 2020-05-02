@@ -9,20 +9,20 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a12647908811066293772ab1e9354a0d67874d88
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843899"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720054"
 ---
 # <a name="fsutil"></a>Fsutil
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
 Executa tarefas relacionadas à FAT (tabela de alocação de arquivos) e aos sistemas de arquivos NTFS, como o gerenciamento de pontos de nova análise, o gerenciamento de arquivos esparsos ou a desmontagem de um volume. Se for usado sem parâmetros, **fsutil** exibirá uma lista de subcomandos com suporte. 
 
-> [!Note] 
+> [!NOTE] 
 > Você deve estar conectado como administrador ou membro do grupo Administradores para usar o fsutil. O comando fsutil é bastante poderoso e deve ser usado apenas por usuários avançados que têm um conhecimento completo dos sistemas operacionais Windows.
 >
 >Você precisa habilitar o subsistema do Windows para Linux antes de executar o **fsutil**. Execute o seguinte comando como administrador no PowerShell para habilitar esse recurso opcional:
@@ -54,5 +54,5 @@ Executa tarefas relacionadas à FAT (tabela de alocação de arquivos) e aos sis
 |[Fsutil volume](fsutil-volume.md)|Gerencia um volume. Desmonta um volume, consulta para ver a quantidade de espaço livre disponível em um disco ou localiza um arquivo que está usando um cluster especificado.|
 |[Fsutil wim](fsutil-wim.md)|Fornece funções para descobrir e gerenciar arquivos com suporte do WIM.|
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

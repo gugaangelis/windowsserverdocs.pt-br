@@ -1,6 +1,6 @@
 ---
 title: Substituir imagem
-description: O tópico de comandos do Windows para Replace-Image, que substitui uma imagem existente por uma nova versão dessa imagem.
+description: Tópico de referência para Replace-Image, que substitui uma imagem existente por uma nova versão da imagem.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d16ec07171e4560af8074cb9b0be7b6dc252119
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9dad35e54f064e02b863059ae6da9378403ee4f9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830219"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720316"
 ---
 # <a name="using-the-replace-image-command"></a>Usando o comando Replace-Image
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Substitui uma imagem existente por uma nova versão da imagem.
 ## <a name="syntax"></a>Sintaxe
@@ -48,13 +48,13 @@ wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]
 ### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-mídia:<Image name>|Especifica o nome da imagem a ser substituída.|
+meio<Image name>|Especifica o nome da imagem a ser substituída.|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
-MediaType: {instalação &#124; de inicialização}|Especifica o tipo de imagem a ser substituído.|
+MediaType: {boot &#124; install}|Especifica o tipo de imagem a ser substituído.|
 |/Architecture: {x86 &#124; IA64 &#124; x64}|Especifica a arquitetura da imagem a ser substituída. Como é possível ter o mesmo nome de imagem para diferentes imagens de inicialização em diferentes arquiteturas, especificar a arquitetura garante que a imagem correta seja substituída.|
-|[/Filename:<File name>]|Se a imagem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.|
-|/replacementImage|Especifica as configurações para a imagem de substituição. Defina essas configurações usando as seguintes opções:<p>-mediafile: <file path>-especifica o nome e o local (caminho completo) do novo arquivo. wim.<br />-[/SourceImage: <image name>]-Especifica a imagem a ser usada se o arquivo. wim contiver várias imagens. Essa opção se aplica somente a imagens de instalação.<br />-[/Name:<Image name>] define o nome de exibição da imagem.<br />-[/Description:<Image description>] – define a descrição da imagem.|
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+|[/Filename:<File name>]|se a imagem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.|
+|/replacementImage|Especifica as configurações para a imagem de substituição. Defina essas configurações usando as seguintes opções:<p>-mediafile: <file path> -especifica o nome e o local (caminho completo) do novo arquivo. wim.<br />-[/SourceImage: <image name>]-Especifica a imagem a ser usada se o arquivo. wim contiver várias imagens. Essa opção se aplica somente a imagens de instalação.<br />-[/Name:<Image name>] define o nome de exibição da imagem.<br />-[/Description:<Image description>] – define a descrição da imagem.|
+## <a name="examples"></a>Exemplos
 Para substituir uma imagem de inicialização, digite uma das seguintes opções:
 ```
 wdsutil /replace-Imagmedia:WinPE Boot Imagemediatype:Boot /Architecture:x86 /replacementImagmediaFile:C:\MyFolder\Boot.wim
@@ -68,10 +68,10 @@ wdsutil /verbose /Progress /replace-Imagmedia:Windows Vista Pro /Server:MyWDSSer
 /Filename:Install.wim /replacementImagmediaFile:\\MyServer\Share \Install.wim /SourceImage:Windows Vista Ultimate /Name:Windows Vista Desktop /Description:Windows Vista Ultimate with standard business applications.
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [A chave de sintaxe de linha de comando](command-line-syntax-key.md)
-usando o [comando add-Image](using-the-add-image-command.md)
+- [Chave](command-line-syntax-key.md)
+de sintaxe de linha de comando usando o
+[comando](using-the-add-image-command.md)
+Add-Image
 [usando o comando copy-Image](using-the-copy-image-command.md)
 [usando o comando Export-Image](using-the-export-image-command.md)
-[usando o comando Get-Image](using-the-get-image-command.md)
-[usando o comando Replace-Image](using-the-replace-image-command.md)
-[Subcommand: Set-Image](subcommand-set-image.md)
+[usando o comando Get-Image](using-the-get-image-command.md)[usando o subcomando Replace-Image comando](using-the-replace-image-command.md)[: Set-Image](subcommand-set-image.md)

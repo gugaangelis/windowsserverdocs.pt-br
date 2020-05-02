@@ -9,16 +9,16 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e5f875b19a9d903f7cefa9d2174b6e60b44c13
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e2060a28395c874005876c3c29184414110cbe92
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827809"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720574"
 ---
 # <a name="create-a-failover-cluster"></a>criar um cluster de failover
 
->Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012
 
 Este tópico mostra como criar um cluster de failover usando o snap-in Gerenciador de Cluster de Failover ou o Windows PowerShell. O tópico aborda uma implantação típica, na qual os objetos de computador do cluster e suas funções clusterizadas associadas são criados no AD DS (Serviços de Domínio Active Directory). Se você estiver implantando um cluster Espaços de Armazenamento Diretos, consulte [implantar espaços de armazenamento diretos](../storage/storage-spaces/deploy-storage-spaces-direct.md).
 
@@ -26,10 +26,10 @@ Você também pode implantar um cluster desanexado Active Directory. Este métod
 
 #### <a name="checklist-create-a-failover-cluster"></a>Lista de verificação: criar um cluster de failover
 
-| Status | {1&gt;Tarefa&lt;1} | Referência |
+| Status | Tarefa | Referência |
 | ---    | ---  | ---       |
 | ☐    | Verificar os pré-requisitos | [Verificar os pré-requisitos](#verify-the-prerequisites) |
-| ☐    | Instalar o recurso de Clustering de Failover em todos os servidores que você deseja adicionar como um nó de cluster | [Instalar o recurso de clustering de failover](#install-the-failover-clustering-feature) |
+| ☐    | Instalar o recurso de Clustering de Failover em todos os servidores que você deseja adicionar como um nó de cluster | [Instalar o recurso de Clustering de Failover](#install-the-failover-clustering-feature) |
 | ☐    | Executar o Assistente de Validação de cluster para validar a configuração | [Validar a configuração](#validate-the-configuration) |
 | ☐ | Executar o Assistente para Criação de Clusters para criar o cluster de failover | [Criar o cluster de failover](#create-the-failover-cluster) |
 | ☐ | Criar funções clusterizadas para as cargas de trabalho do cluster do host | [Criar funções clusterizadas](#create-clustered-roles) |
@@ -47,7 +47,7 @@ Antes de começar, verifique os seguintes pré-requisitos:
 Além disso, verifique os seguintes requisitos de conta:
 
 - Verifique se a conta que você deseja usar para criar o cluster é de um usuário do domínio que tenha direitos de administrador em todos os servidores que você deseja adicionar como nós de cluster.
-- Verifique se qualquer uma destas opções é verdadeira:
+- Garanta que uma das seguintes opções é verdadeira:
     - O usuário que cria o cluster tem permissão para **Criar Objetos de Computador** para a OU ou o contêiner no qual residem os servidores que formarão o cluster.
     - Se o usuário não tiver permissão para **Criar Objetos de Computador**, peça para um administrador do domínio pré-configurar um objeto de computador para o cluster. Para obter mais informações, consulte [Pré-configurar objetos de computador de cluster nos Serviços de Domínio Active Directory](prestage-cluster-adds.md).
 
@@ -88,7 +88,7 @@ Antes que você crie o cluster de failover, é expressamente recomendável valid
 
 1. Em um computador que tenha Ferramentas de Gerenciamento de Cluster de Failover instaladas a partir das Ferramentas de Administração de Servidor Remoto ou em um servidor no qual você tenha instalado o recurso de Clustering de Failover, inicie o Gerenciador de Cluster de Failover. Para fazer isso em um servidor, inicie o Gerenciador do Servidor e, no menu **ferramentas** , selecione **Gerenciador de cluster de failover**.
 2. No painel de **Gerenciador de cluster de failover** , em **Gerenciamento**, selecione **validar configuração**.
-3. Na página **antes de começar** , selecione **Avançar**.
+3. Na página **Antes de Começar** escolha **Avançar**.
 4. Na página **selecionar servidores ou um cluster** , na caixa **Inserir nome** , insira o nome NetBIOS ou o nome de domínio totalmente qualificado de um servidor que você planeja adicionar como um nó de cluster de failover e, em seguida, selecione **Adicionar**. Repita essa etapa para cada servidor que quiser adicionar. Para adicionar vários servidores ao mesmo tempo, separe os nomes usando uma vírgula ou um ponto e vírgula. Por exemplo, insira os nomes no formato `server1.contoso.com, server2.contoso.com`. Quando tiver terminado, selecione **Avançar**.
 5. Na página **Opções de teste** , selecione **executar todos os testes (recomendado)** e, em seguida, selecione **Avançar**.
 6. Na página **confirmação** , selecione **Avançar**.
@@ -113,7 +113,7 @@ Para concluir esta etapa, verifique se a conta de usuário com a qual você fez 
 3. No painel de **Gerenciador de cluster de failover** , em **Gerenciamento**, selecione **criar cluster**.
     
     O Assistente para Criação de Clusters é aberto.
-4. Na página **antes de começar** , selecione **Avançar**.
+4. Na página **Antes de Começar** escolha **Avançar**.
 5. Se a página **selecionar servidores** aparecer, na caixa **Inserir nome** , insira o nome NetBIOS ou o nome de domínio totalmente qualificado de um servidor que você planeja adicionar como um nó de cluster de failover e, em seguida, selecione **Adicionar**. Repita essa etapa para cada servidor que quiser adicionar. Para adicionar vários servidores ao mesmo tempo, separe os nomes usando vírgula ou ponto e vírgula. Por exemplo, digite os nomes no formato *server1.contoso.com; server2.contoso.com*. Quando tiver terminado, selecione **Avançar**.
     
     > [!NOTE]
@@ -161,17 +161,17 @@ Veja como criar uma função clusterizada:
    | ---------       | ---------                    |
    | Servidor de namespace     |   Namespaces (parte da função de servidor de arquivos)       |
    | Servidor de namespace do DFS     |  Função Servidor DHCP       |
-   | Coordenador de transações distribuídas (DTC)     | Nenhum        |
+   | DTC (Coordenador de Transações Distribuídas)     | Nenhum        |
    | Servidor de arquivos     |  Função Servidor de Arquivos       |
-   | Aplicativo genérico     |  Não Aplicável       |
-   | Script genérico     |   Não Aplicável      |
-   | Serviço genérico     |   Não Aplicável      |
-   | Agente de Réplica do Hyper-V     |   Função de Hyper-V      |
-   | Servidor de Destino iSCSI     |    Servidor de Destino iSCSI (parte da função Servidor de Arquivos)     |
+   | Aplicativo genérico     |  Não aplicável       |
+   | Script genérico     |   Não aplicável      |
+   | Serviço genérico     |   Não aplicável      |
+   | Agente de Réplica do Hyper-V     |   Função Hyper-V      |
+   | iSCSI Target Server     |    Servidor de Destino iSCSI (parte da função Servidor de Arquivos)     |
    | iSNS Server     |  Recurso Serviço do iSNS Server       |
    | Enfileiramento de Mensagens     |  Recurso Serviços de Enfileiramento de Mensagens       |
    | Outro servidor     |  Nenhum       |
-   | Virtual Machine     |  Função de Hyper-V       |
+   | Máquina Virtual     |  Função Hyper-V       |
    | Servidor WINS     |   Recurso Servidor WINS      |
 
 2. Em Gerenciador de Cluster de Failover, expanda o nome do cluster, clique com o botão direito do mouse em **funções**e selecione **Configurar função**.
@@ -198,7 +198,7 @@ Test-Cluster –Node Server1, Server2
 ```
 
 > [!NOTE]
-> O cmdlet **Test-cluster** gera os resultados em um arquivo de log no diretório de trabalho atual. Por exemplo: C:\Users\<username > \AppData\Local\Temp.
+> O cmdlet **Test-cluster** gera os resultados em um arquivo de log no diretório de trabalho atual. Por exemplo: C:\Users\<username> \AppData\Local\Temp.
 
 O exemplo a seguir cria um cluster de failover denominado como *MyCluster* com os nós *Server1* e *Server2*, atribui o endereço IP estático *192.168.1.12* e adiciona todo o armazenamento qualificado ao cluster de failover.
 
@@ -223,10 +223,10 @@ Para obter exemplos de como adicionar funções clusterizadas, consulte tópicos
 ## <a name="more-information"></a>Mais informações
 
   - [Clustering de failover](failover-clustering.md)
-  - [Implantar um cluster Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)
+  - [Implantar um cluster do Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)
   - [Servidor de Arquivos de Escalabilidade Horizontal para Dados de Aplicativos](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
-  - [Implantar um cluster desanexado Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))
-  - [Usando o clustering de convidado para alta disponibilidade](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)
+  - [Implantar um cluster desanexado do Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))
+  - [Usando clustering convidado para alta disponibilidade](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)
   - [Atualização com suporte a cluster](cluster-aware-updating.md)
-  - [Novo cluster](https://docs.microsoft.com/powershell/module/failoverclusters/new-cluster?view=win10-ps)
-  - [Teste-cluster](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)
+  - [New-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/new-cluster?view=win10-ps)
+  - [Test-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)

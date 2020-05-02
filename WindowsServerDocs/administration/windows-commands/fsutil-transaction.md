@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: aa6692dbb8af1ec832650971c6723c060fc2cd56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18088bcedd077d5c8052bca91c648e2719304a78
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844009"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720088"
 ---
 # <a name="fsutil-transaction"></a>Transação fsutil
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
 
 Gerencia transações de NTFS.
 
-Para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples) .
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -37,13 +37,13 @@ fsutil transaction [rollback] <GUID>
 
 | Parâmetro  |                                                                                                                                                     Descrição                                                                                                                                                     |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   confirmação   |                                                                                                                      Marca o fim de uma transação especificada implícita ou explícita bem-sucedida.                                                                                                                      |
+|   confirmar   |                                                                                                                      Marca o fim de uma transação especificada implícita ou explícita bem-sucedida.                                                                                                                      |
 |   <GUID>   |                                                                                                                               Especifica o valor GUID que representa uma transação.                                                                                                                               |
 |  FileInfo  |                                                                                                                              Exibe informações de transação para o arquivo especificado.                                                                                                                               |
 | <Filename> |                                                                                                                                         Especifica o caminho completo e nome de arquivo.                                                                                                                                          |
-|    {1&gt;list&lt;1}    |                                                                                                                                 Exibe uma lista de transações em execução.                                                                                                                                  |
-|   query    | Exibe informações para a transação especificada.<p>-Se **fsutil transação consultar arquivos** for especificado, as informações do arquivo serão exibidas somente para a transação especificada.<br />-Se **fsutil transação query** for especificado, todas as informações para a transação serão exibidas. |
-|  reverter  |                                                                                                                                Reverte uma transação especificada para o início.                                                                                                                                 |
+|    list    |                                                                                                                                 Exibe uma lista de transações em execução.                                                                                                                                  |
+|   Consulta    | Exibe informações para a transação especificada.<p>-Se **fsutil transação consultar arquivos** for especificado, as informações do arquivo serão exibidas somente para a transação especificada.<br />-Se **fsutil transação query** for especificado, todas as informações para a transação serão exibidas. |
+|  reversão  |                                                                                                                                Reverte uma transação especificada para o início.                                                                                                                                 |
 
 ### <a name="remarks"></a>Comentários
 
@@ -61,6 +61,6 @@ fsutil transaction fileinfo c:\test.txt
 
 [Fsutil](Fsutil.md)
 
-[NTFS Transacional](https://go.microsoft.com/fwlink/?LinkID=165402)
+[NTFS transacional](https://go.microsoft.com/fwlink/?LinkID=165402)
 
 

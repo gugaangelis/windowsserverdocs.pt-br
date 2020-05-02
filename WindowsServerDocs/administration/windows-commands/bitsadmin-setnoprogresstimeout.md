@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: O tópico de comandos do Windows para **Bitsadmin setnoprogresstimeout**, que define o período de tempo, em segundos, que o serviço tenta transferir o arquivo após ocorrer um erro transitório.
+description: Tópico de referência para o comando Bitsadmin setnoprogresstimeout, que define o período de tempo, em segundos, que o serviço tenta transferir o arquivo após ocorrer um erro transitório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8adff95b0dbae68634db2e248d4493549c5ac85d
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 398882cf795e98dc0bbc0fb81006d3406fded707
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122873"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720114"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -33,7 +33,7 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 | tempo limite | O período de tempo que o BITS aguarda para transferir um arquivo após o primeiro erro, em segundos. |
 
-## <a name="remarks"></a>Comentários
+### <a name="remarks"></a>Comentários
 
 - O intervalo de tempo limite de "nenhum progresso" começa quando o trabalho encontra seu primeiro erro transitório.
 
@@ -43,12 +43,14 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir define o valor de tempo limite "no Progress" como 20 segundos para o trabalho chamado *myDownloadJob*.
+Para definir o valor de tempo limite "sem progresso" para 20 segundos, para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setnoprogresstimeout myDownloadJob 20
+bitsadmin /setnoprogresstimeout myDownloadJob 20
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

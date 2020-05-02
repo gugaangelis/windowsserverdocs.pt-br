@@ -1,6 +1,6 @@
 ---
 title: driverquery
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c3e7cc5dc84794a5cfb5ac21edb00f8dacfaa18
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 993c05a930a7702880af23fcfa7c19a43aa8b22b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845279"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720828"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -22,7 +22,7 @@ ms.locfileid: "80845279"
 
 Permite que um administrador exiba uma lista de drivers de dispositivo instalados e suas propriedades. Se usado sem parâmetros, **DRIVERQUERY** é executado no computador local.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,16 +34,16 @@ driverquery [/s <System> [/u [<Domain>\]<Username> [/p <Password>]]] [/fo {table
 
 |         Parâmetro         |                                                                                                                                         Descrição                                                                                                                                          |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<> do sistema        |                                                                                      Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O padrão é o computador local.                                                                                       |
-| /u [\<\]de domínio > <Username> | Executa o comando com as credenciais da conta de usuário, conforme especificado pelo *usuário* ou *domínio*\*usuário<em>. Por padrão, \*\*/s</em>\* usa as credenciais do usuário que está conectado no momento ao computador que está emitindo o comando. **/u** não pode ser usado a menos que **/s** seja especificado. |
-|      /p \<senha >       |                                                                           Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . **/p** não pode ser usado a menos que **/u** seja especificado.                                                                            |
-|        /FO {tabela         |                                                                                                                                             {1&gt;list&lt;1}                                                                                                                                             |
+|       /s \<sistema>        |                                                                                      Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O padrão é o computador local.                                                                                       |
+| /u [\<domínio>\]<Username> | Executa o comando com as credenciais da conta de usuário, conforme especificado pelo *usuário* ou *domínio*\*usuário<em>. Por padrão, \* \*/s</em> \* usa as credenciais do usuário que está conectado no momento no computador que está emitindo o comando. **/u** não pode ser usado a menos que **/s** seja especificado. |
+|      /p \<senha>       |                                                                           Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . **/p** não pode ser usado a menos que **/u** seja especificado.                                                                            |
+|        /FO {tabela         |                                                                                                                                             list                                                                                                                                             |
 |            /NH            |                                                                                      Omite a linha de cabeçalho das informações de driver exibidas. Não é válido se o parâmetro **/fo** estiver definido como **list**.                                                                                      |
 |            /v             |                                                                                                               Exibe a saída detalhada. **/v** não é válido para drivers assinados.                                                                                                               |
 |            /si            |                                                                                                                          Fornece informações sobre drivers assinados.                                                                                                                          |
 |            /?             |                                                                                                                             Exibe a ajuda no prompt de comando.                                                                                                                             |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir uma lista de drivers de dispositivo instalados no computador local, digite:
 ```

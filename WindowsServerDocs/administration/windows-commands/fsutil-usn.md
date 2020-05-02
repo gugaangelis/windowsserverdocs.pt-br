@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 326390a5b40de46ca932043e9982f84c7758d901
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d17246b03de20d0bc327af801621a28f406edf63
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843999"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720077"
 ---
 # <a name="fsutil-usn"></a>Fsutil USN
->Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
 Gerencia o diário de alterações do USN (número de sequência de atualização).
 
@@ -38,26 +38,26 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 |Parâmetro|Descrição|
 |-------------|---------------|
 |createjournal|Cria um diário de alterações de USN.|
-|m =\<MaxSize >|Especifica o tamanho máximo, em bytes, que o NTFS aloca para o diário de alterações.|
-|a =\<AllocationDelta >|Especifica o tamanho, em bytes, da alocação de memória que é adicionada ao final e removida do início do diário de alterações.|
-|\<VolumePath >|Especifica a letra da unidade (seguida por dois-pontos).|
+|m =\<MaxSize>|Especifica o tamanho máximo, em bytes, que o NTFS aloca para o diário de alterações.|
+|a =\<AllocationDelta>|Especifica o tamanho, em bytes, da alocação de memória que é adicionada ao final e removida do início do diário de alterações.|
+|\<> VolumePath|Especifica a letra da unidade (seguida por dois-pontos).|
 |deletejournal|Exclui ou desabilita um diário de alterações de USN ativo. **Cuidado:** A exclusão do diário de alterações afeta o FRS (serviço de replicação de arquivo) e o serviço de indexação, pois ele exigiria que esses serviços executassem uma verificação completa (e demorada) do volume. Isso, por sua vez, afeta negativamente a replicação SYSVOL do FRS e a replicação entre alternativas de link DFS enquanto o volume está sendo examinado novamente.|
 |/d|Desabilita um diário de alterações de USN ativo e retorna O controle de entrada/saída (e/s) enquanto o diário de alterações está sendo desabilitado.|
 |/n|Desabilita um diário de alterações de USN ativo e retorna O controle de e/s somente depois que o diário de alterações é desabilitado.|
 |enablerangetracking|Habilita o rastreamento do intervalo de gravação de USN para um volume.|
-|c =\<> de tamanho da parte|Especifica o tamanho da parte a ser rastreada em um volume.|
-|s =\<arquivo-tamanho-limite >|Especifica o limite de tamanho do arquivo para rastreamento de intervalo.|
+|c =\<tamanho do bloco>|Especifica o tamanho da parte a ser rastreada em um volume.|
+|s =\<arquivo-tamanho-limite>|Especifica o limite de tamanho do arquivo para rastreamento de intervalo.|
 |enumdata|Enumera e lista as entradas do diário de alterações entre dois limites especificados.|
-|\<FileRef >|Especifica a posição ordinal dentro dos arquivos no volume no qual a enumeração deve começar.|
-|\<LowUSN >|Especifica o limite inferior do intervalo de valores USN usados para filtrar os registros que são retornados. Somente os registros cujo USN do último diário de alterações está entre ou igual aos valores de membro *LowUSN* e *HighUSN* são retornados.|
-|\<HighUSN >|Especifica o limite superior do intervalo de valores USN usados para filtrar os arquivos retornados.|
+|\<> FileRef|Especifica a posição ordinal dentro dos arquivos no volume no qual a enumeração deve começar.|
+|\<> LowUSN|Especifica o limite inferior do intervalo de valores USN usados para filtrar os registros que são retornados. Somente os registros cujo USN do último diário de alterações está entre ou igual aos valores de membro *LowUSN* e *HighUSN* são retornados.|
+|\<> HighUSN|Especifica o limite superior do intervalo de valores USN usados para filtrar os arquivos retornados.|
 |queryjournal|Consulta os dados de USN de um volume para coletar informações sobre o diário de alterações atual, seus registros e sua capacidade.|
 |readdata|Lê os dados de USN de um arquivo.|
-|\<nome de arquivo >|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo: C:\documents\filename.txt|
+|\<Nome de arquivo>|Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo: C:\documents\filename.txt|
 |readjournal|Lê os registros USN no diário de USN.|
-|Minver = número\<>|Versão principal mínima do USN_RECORD para retornar. Padrão = 2.|
-|MaxVer = número\<>|Versão principal máxima do USN_RECORD a ser retornada. Padrão = 4.|
-|startusn =\<número USN >|USN para o qual começar a ler o diário de USN. Padrão = 0.|
+|Minver =\<número>|Versão principal mínima do USN_RECORD para retornar. Padrão = 2.|
+|MaxVer =\<número>|Versão principal máxima do USN_RECORD a ser retornada. Padrão = 4.|
+|startusn =\<número USN>|USN para o qual começar a ler o diário de USN. Padrão = 0.|
 
 
 ## <a name="remarks"></a>Comentários

@@ -7,14 +7,15 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a03dc5d646d24c9f24f979df36fb3fe1eafe631
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827539"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720549"
 ---
 # <a name="health-service-reports"></a>Relatórios de Serviço de Integridade
+
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-reports"></a>O que são relatórios  
@@ -43,14 +44,13 @@ Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
 
-## <a name="usage-in-net-and-c"></a>Uso no .NET eC#
+## <a name="usage-in-net-and-c"></a>Uso em .NET e C #
 
 ### <a name="connect"></a>Conectar
 
-Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão o C\#, a opção mais direta para essa camada de acesso a dados.
+Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C\#, a opção mais direta para essa camada de acesso a dados.
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -79,7 +79,7 @@ O nome de usuário fornecido deve ser um administrador local do computador de de
 
 Com o **CimSession** estabelecido, você pode consultar Instrumentação de gerenciamento do Windows (WMI) no cluster.
 
-Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **MSFT\_StorageSubSystem** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter cada **msft\_StorageNode** no cluster e todos os\_de dados do **MSFT** Por fim, você precisará do **MSFT\_StorageHealth**, o serviço de integridade em si.
+Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **StorageSubSystem\_do MSFT** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter todos **os\_StorageNode de MSFT** no cluster, e todos os volumes de **MSFT\_** e de dados. Por fim, você precisará **do\_MSFT StorageHealth**, o serviço de integridade em si.
 
 ```
 CimInstance Cluster;
@@ -112,7 +112,6 @@ Esses são os mesmos objetos que você obtém no PowerShell usando cmdlets como 
 Você pode acessar todas as mesmas propriedades, documentadas em [classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -208,14 +207,14 @@ Não é necessário dizer que essas métricas podem ser visualizadas, armazenada
 
 Cada exemplo de métricas é um "relatório" que contém muitos "registros" correspondentes a métricas individuais.
 
-Para o esquema completo, inspecione as classes **msft\_StorageHealthReport** e **MSFT\_HealthRecord** no *storagewmi. mof*.
+Para o esquema completo, inspecione as **classes\_MSFT StorageHealthReport** e **MSFT\_HealthRecord** em *storagewmi. mof*.
 
 Cada métrica tem apenas três propriedades, por esta tabela.
 
 | **Propriedade** | **Exemplo**       |
 | -------------|-------------------|
-| {1&gt;Nome&lt;1}         | IOLatencyAverage  |
-| {1&gt;Valor&lt;1}        | 0, 21           |
+| Nome         | IOLatencyAverage  |
+| Valor        | 0, 21           |
 | Unidades        | 3                 |
 
 Units = {0, 1, 2, 3, 4}, em que 0 = "bytes", 1 = "BytesPerSecond", 2 = "CountPerSecond", 3 = "Seconds" ou 4 = "Percentage".
@@ -226,7 +225,7 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **Nome**                        | **Unit** |
+| **Nome**                        | **Unidades** |
 |---------------------------------|-----------|
 | Os                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -250,7 +249,7 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **Nome**            | **Unit** |
+| **Nome**            | **Unidades** |
 |---------------------|-----------|
 | Os            | 4         |
 | IOLatencyAverage    | 3         |
@@ -267,7 +266,7 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **Nome**            | **Unit** |
+| **Nome**            | **Unidades** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |
@@ -281,6 +280,6 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 - [Serviço de Integridade no Windows Server 2016](health-service-overview.md)

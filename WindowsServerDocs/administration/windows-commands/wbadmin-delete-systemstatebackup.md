@@ -1,6 +1,6 @@
 ---
 title: Wbadmin Delete systemstatebackup
-description: O tópico de comandos do Windows para WBADMIN Delete systemstatebackup, que exclui os backups de estado do sistema que você especificar.
+description: Tópico de referência para WBADMIN Delete systemstatebackup, que exclui os backups de estado do sistema que você especificar.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e184a40612024f81e1c6ab93de8cec4a63eee578
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12d8ba6ff24e338c6afa5556d7a60e2157156acc
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829889"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720204"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>Wbadmin Delete systemstatebackup
 
@@ -27,7 +27,7 @@ Exclui os backups de estado do sistema que você especificar. Se o volume especi
 
 Para excluir um backup de estado do sistema com este subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -47,13 +47,13 @@ wbadmin delete systemstatebackup
 |Parâmetro|Descrição|
 |---------|-----------|
 |-keepVersions|Especifica o número de backups de estado do sistema mais recentes a serem mantidos. O valor deve ser um inteiro positivo. O valor do parâmetro **-keepVersions: 0** exclui todos os backups de estado do sistema.|
-|-versão|Especifica o identificador de versão do backup no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.</br>Versões que são exclusivamente backups de estado do sistema podem ser excluídas usando este comando. Use **Wbadmin Get Items** para exibir o tipo de versão.|
+|-version|Especifica o identificador de versão do backup no formato MM/DD/AAAA-HH: MM. Se você não souber o identificador de versão, digite **Wbadmin obter versões**.</br>Versões que são exclusivamente backups de estado do sistema podem ser excluídas usando este comando. Use **Wbadmin Get Items** para exibir o tipo de versão.|
 |-deleteOldest|Exclui o backup de estado do sistema mais antigo.|
 |-backupTarget|Especifica o local de armazenamento do backup que você deseja excluir. O local de armazenamento para backups de discos pode ser uma letra de unidade, um ponto de montagem ou um caminho de volume baseado em GUID. Esse valor só precisa ser especificado para localizar backups que não sejam do computador local. As informações sobre backups do computador local estarão disponíveis no catálogo de backup no computador local.|
 |-computador|Especifica o computador cujo backup de estado do sistema você deseja excluir. Útil quando é feito o backup de vários computadores no mesmo local. Deve ser usado quando o parâmetro **-backupTarget** é especificado.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para excluir o backup de estado do sistema criado em 31 de março de 2013 às 10:00, digite:
 ```

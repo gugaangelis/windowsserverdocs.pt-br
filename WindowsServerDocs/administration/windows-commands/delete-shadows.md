@@ -1,6 +1,6 @@
 ---
 title: excluir sombras
-description: Tópico de comandos do Windows para excluir sombras, que exclui cópias de sombra.
+description: Tópico de referência para excluir sombras, que exclui cópias de sombra.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd109f7ddc0365d03737eddba31a1a4b7f34915b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1dd367d76ad1699321af9caf47a0ddc351088a05
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846559"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720804"
 ---
 # <a name="delete-shadows"></a>excluir sombras
 
-exclui cópias de sombra.
+Exclui cópias de sombra.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -31,11 +31,11 @@ delete shadows [all | volume <Volume> | oldest <Volume> | set <SetID> | id <Shad
 | Parâmetro | Descrição |
 | ---- | ---- |
 | all | Exclui todas as cópias de sombra. |
-| volume \<volume > | Exclui todas as cópias de sombra do volume especificado. |
-| Volume de \<mais antigo > | Exclui a cópia de sombra mais antiga do volume especificado. |
-| definir \<SetID > | Exclui as cópias de sombra no conjunto de cópias de sombra da ID fornecida. Você pode especificar um alias usando o símbolo de **%** se o alias existir no ambiente atual. |
-| ID \<Shadowid > | Exclui uma cópia de sombra da ID fornecida. Você pode especificar um alias usando o símbolo de **%** se o alias existir no ambiente atual. |
-| exposição de {\<drive > | <MountPoint>} |
+| \<volume do volume> | Exclui todas as cópias de sombra do volume especificado. |
+| > \<de volume mais antigo | Exclui a cópia de sombra mais antiga do volume especificado. |
+| definir \<SetID> | Exclui as cópias de sombra no conjunto de cópias de sombra da ID fornecida. Você pode especificar um alias usando o **%** símbolo se o alias existir no ambiente atual. |
+| ID \<de shadowid> | Exclui uma cópia de sombra da ID fornecida. Você pode especificar um alias usando o **%** símbolo se o alias existir no ambiente atual. |
+| exposto {\<Drive> | <MountPoint>} |
 
 ## <a name="additional-references"></a>Referências adicionais
 

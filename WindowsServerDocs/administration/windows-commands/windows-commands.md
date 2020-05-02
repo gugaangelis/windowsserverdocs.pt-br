@@ -1,6 +1,6 @@
 ---
 title: Comandos do Windows
-description: Comandos do Windows
+description: Referência
 ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829229"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720729"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
@@ -26,35 +26,35 @@ Para localizar informações sobre um comando específico, no menu a-Z a seguir,
 
 [A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[i](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r) | 
-[S](#s) | 
-[t](#t) | 
-[U](#u) | 
-[V](#v) | 
-[W](#w) | 
-[X](#x) | Y | Z
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H i J | 
+K L M | 
+N | 
+O | 
+P | 
+Q R S T U V W X | | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ Y | Z
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 As informações contidas neste tópico aplicam-se a:
 
 -   Windows Server 2019
--   Windows Server (canal semestral)
+-   Windows Server (Canal semestral)
 -   Windows Server 2016
 -   Windows Server 2012 R2
 -   Windows Server 2012 
@@ -76,7 +76,7 @@ Para a automação do Windows mais robusta e atualizada, recomendamos o uso do P
 >Você também pode baixar e instalar o [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell. 
 
 > [!CAUTION]
-> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.
+> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.
 
 > [!NOTE]
 > Para habilitar ou desabilitar a conclusão do nome de arquivo e diretório no Shell de comando em uma sessão de logon de computador ou usuário, execute **regedit. exe** e defina o seguinte **valor de reg_DWOrd**:
@@ -91,30 +91,30 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
 
 [A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[i](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r) | 
-[S](#s) | 
-[t](#t) | 
-[U](#u) | 
-[V](#v) | 
-[W](#w) | 
-[X](#x) | Y | Z
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H i J | 
+K L M | 
+N | 
+O | 
+P | 
+Q R S T U V W X | | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ Y | Z
 
-### <a name="a"></a>A
+### <a name="a"></a>Um
 -   [append](append.md)
 -   [arp](arp.md)
 -   [assoc](assoc.md)
@@ -155,7 +155,7 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
   -   [bitsadmin getnotifyflags](bitsadmin-getnotifyflags.md)
   -   [bitsadmin getnotifyinterface](bitsadmin-getnotifyinterface.md)
   -   [bitsadmin getowner](bitsadmin-getowner.md)
-  -   [Bitsadmin obter prioridade](bitsadmin-getpriority.md)
+  -   [bitsadmin get priority](bitsadmin-getpriority.md)
   -   [bitsadmin getproxybypasslist](bitsadmin-getproxybypasslist.md)
   -   [bitsadmin getproxylist](bitsadmin-getproxylist.md)
   -   [bitsadmin getproxyusage](bitsadmin-getproxyusage.md)
@@ -361,10 +361,10 @@ Para encontrar informações sobre um comando específico do Windows, no menu a-
 - [logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
-  -   [logman iniciar & 124; deixar](logman-start-stop.md)
+  -   [logman start &124; deixar](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [importação de logman & 124; Export](logman-import-export.md)
+  -   [importação de logman &124; Export](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)

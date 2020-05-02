@@ -1,6 +1,6 @@
 ---
 title: doskey
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 72a5a362a225f57245a015de43a7538928c0937e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fca89bd2e99b6139b13a5bd45481ae0ec2248574
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845259"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720807"
 ---
 # <a name="doskey"></a>doskey
 
@@ -22,7 +22,7 @@ ms.locfileid: "80845259"
 
 Chama o Doskey. exe (que recupera comandos de linha de comando inseridos anteriormente), edita linhas de comando e cria macros.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,16 +35,16 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 |       Parâmetro        |                                                                                                                          Descrição                                                                                                                           |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /REINSTALL       |                                                                                            Instala uma nova cópia do Doskey. exe e limpa o buffer de histórico de comandos.                                                                                            |
-|   /ListSize = tamanho\<>    |                                                                                                Especifica o número máximo de comandos no buffer de histórico.                                                                                                 |
-|        /macros         |                                        Exibe uma lista de todas as macros do **doskey** . Você pode usar o símbolo de redirecionamento ( **>** ) com **/macros** para redirecionar a lista para um arquivo. Você pode abreviar **/macros** para **/m**.                                         |
+|   /ListSize =\<tamanho>    |                                                                                                Especifica o número máximo de comandos no buffer de histórico.                                                                                                 |
+|        /macros         |                                        Exibe uma lista de todas as macros do **doskey** . Você pode usar o símbolo de redirecionamento**>**() com **/macros** para redirecionar a lista para um arquivo. Você pode abreviar **/macros** para **/m**.                                         |
 |      /macros: todos       |                                                                                                        Exibe as macros do **doskey** para todos os executáveis.                                                                                                         |
-|   /macros:\<ExeName >   |                                                                                             Exibe as macros do **doskey** para o executável especificado por *EXEName*.                                                                                              |
-|        /History        |                                    Exibe todos os comandos que estão armazenados na memória. Você pode usar o símbolo de redirecionamento ( **>** ) com **/history** para redirecionar a lista para um arquivo. Você pode abreviar **/history** como **/h**.                                    |
+|   /macros:\<EXEName>   |                                                                                             Exibe as macros do **doskey** para o executável especificado por *EXEName*.                                                                                              |
+|        /History        |                                    Exibe todos os comandos que estão armazenados na memória. Você pode usar o símbolo de redirecionamento**>**() com **/history** para redirecionar a lista para um arquivo. Você pode abreviar **/history** como **/h**.                                    |
 | /Insert | Especifica que o novo texto digitado é inserido no texto antigo. |
 | /overstrike | Especifica que o novo texto substitui o texto antigo. |
-|  /EXEName =\<ExeName >   |                                                                                        Especifica o programa (ou seja, executável) no qual a macro do **doskey** é executada.                                                                                         |
-| /MACROFILE =\<nome do arquivo > |                                                                                              Especifica um arquivo que contém as macros que você deseja instalar.                                                                                               |
-| \<macroname > = [\<texto >]  | Cria uma macro que executa os comandos especificados pelo *texto*. *Macroname* especifica o nome que você deseja atribuir à macro. *Texto* especifica os comandos que você deseja registrar. Se o *texto* for deixado em branco, *macroname* será desmarcada de todos os comandos atribuídos. |
+|  /EXEName =\<EXEName>   |                                                                                        Especifica o programa (ou seja, executável) no qual a macro do **doskey** é executada.                                                                                         |
+| /MACROFILE =\<nome de arquivo> |                                                                                              Especifica um arquivo que contém as macros que você deseja instalar.                                                                                               |
+| \<Macroname>= [\<> de texto]  | Cria uma macro que executa os comandos especificados pelo *texto*. *Macroname* especifica o nome que você deseja atribuir à macro. *Texto* especifica os comandos que você deseja registrar. Se o *texto* for deixado em branco, *macroname* será desmarcada de todos os comandos atribuídos. |
 |           /?           |                                                                                                              Exibe a ajuda no prompt de comando.                                                                                                              |
 
 ## <a name="remarks"></a>Comentários
@@ -60,8 +60,8 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   |------------|-----------------------------------------------------------------------|
   |  SETA PARA CIMA  |  Recupera o comando que você usou antes do que é exibido.  |
   | SETA PARA BAIXO |  Recupera o comando que você usou após aquele que é exibido.   |
-  |  {1&gt;PAGE UP&lt;1}   |    Recupera o primeiro comando que você usou na sessão atual.    |
-  | {1&gt;PAGE DOWN&lt;1}  | Recupera o comando mais recente que você usou na sessão atual. |
+  |  PAGE UP   |    Recupera o primeiro comando que você usou na sessão atual.    |
+  | PAGE DOWN  | Recupera o comando mais recente que você usou na sessão atual. |
 
 
 - Editando a linha de comando
@@ -70,25 +70,25 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 
   A tabela a seguir lista as chaves de edição do **doskey** e suas funções.  
 
-  | Combinação de tecla ou chave |                                                                                                                                                       Descrição                                                                                                                                                       |
+  | Tecla ou combinação de teclas |                                                                                                                                                       Descrição                                                                                                                                                       |
   |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
   |       SETA PARA A ESQUERDA       |                                                                                                                                      Move o ponto de inserção de volta um caractere.                                                                                                                                      |
   |      SETA PARA A DIREITA       |                                                                                                                                    Move o ponto de inserção para frente um caractere.                                                                                                                                     |
   |    CTRL + SETA PARA A ESQUERDA     |                                                                                                                                        Move o ponto de inserção de volta uma palavra.                                                                                                                                         |
   |    CTRL + SETA PARA A DIREITA    |                                                                                                                                       Move o ponto de inserção para frente uma palavra.                                                                                                                                       |
-  |          INÍCIO          |                                                                                                                                 Move o ponto de inserção para o início da linha.                                                                                                                                 |
+  |          HOME          |                                                                                                                                 Move o ponto de inserção para o início da linha.                                                                                                                                 |
   |          END           |                                                                                                                                    Move o ponto de inserção para o fim da linha.                                                                                                                                    |
-  |          {1&gt;ESC&lt;1}           |                                                                                                                                          Limpa o comando da exibição.                                                                                                                                           |
-  |           {1&gt;F1&lt;1}           |                                                                      Copia um caractere de uma coluna no modelo para a mesma coluna na janela de prompt de comando. (O modelo é um buffer de memória que contém o último comando digitado.)                                                                       |
-  |           {1&gt;F2&lt;1}           |                                                                 Pesquisa adiante no modelo para a próxima chave que você digitar depois de pressionar F2. O Doskey. exe insere o texto do modelo — até, mas não incluindo, o caractere que você especificar.                                                                  |
-  |           {1&gt;F3&lt;1}           |                                                 Copia o restante do modelo para a linha de comando. O Doskey. exe começa a copiar os caracteres da posição no modelo que corresponde à posição indicada pelo ponto de inserção na linha de comando.                                                 |
-  |           {1&gt;F4&lt;1}           |                                                                            Exclui todos os caracteres da posição do ponto de inserção atual até, mas não incluindo, a próxima ocorrência do caractere que você digitar depois de pressionar F4.                                                                            |
-  |           {1&gt;F5&lt;1}           |                                                                                                                                   Copia o modelo para a linha de comando atual.                                                                                                                                    |
-  |           {1&gt;F6&lt;1}           |                                                                                                                    Coloca um caractere de fim de arquivo (CTRL + Z) na posição atual do ponto de inserção.                                                                                                                    |
-  |           {1&gt;F7&lt;1}           | Exibe (em uma caixa de diálogo) todos os comandos para esse programa que são armazenados na memória. Use a tecla de seta para cima e a tecla de seta para baixo para selecionar o comando desejado e pressione ENTER para executar o comando. Você também pode observar o número sequencial na frente do comando e usar esse número em conjunto com a tecla F9. |
-  |         ALT + F7         |                                                                                                                          Exclui todos os comandos armazenados na memória para o buffer de histórico atual.                                                                                                                          |
-  |           {1&gt;F8&lt;1}           |                                                                                                           Exibe todos os comandos no buffer de histórico que começam com os caracteres no comando atual.                                                                                                            |
-  |           {1&gt;F9&lt;1}           |                                             Solicita um número de comando de buffer de histórico e, em seguida, exibe o comando associado ao número que você especificar. Pressione ENTER para executar o comando. Para exibir todos os números e seus comandos associados, pressione F7.                                             |
+  |          ESC           |                                                                                                                                          Limpa o comando da exibição.                                                                                                                                           |
+  |           F1           |                                                                      Copia um caractere de uma coluna no modelo para a mesma coluna na janela de prompt de comando. (O modelo é um buffer de memória que contém o último comando digitado.)                                                                       |
+  |           F2           |                                                                 Pesquisa adiante no modelo para a próxima chave que você digitar depois de pressionar F2. O Doskey. exe insere o texto do modelo — até, mas não incluindo, o caractere que você especificar.                                                                  |
+  |           F3           |                                                 Copia o restante do modelo para a linha de comando. O Doskey. exe começa a copiar os caracteres da posição no modelo que corresponde à posição indicada pelo ponto de inserção na linha de comando.                                                 |
+  |           F4           |                                                                            Exclui todos os caracteres da posição do ponto de inserção atual até, mas não incluindo, a próxima ocorrência do caractere que você digitar depois de pressionar F4.                                                                            |
+  |           F5           |                                                                                                                                   Copia o modelo para a linha de comando atual.                                                                                                                                    |
+  |           F6           |                                                                                                                    Coloca um caractere de fim de arquivo (CTRL + Z) na posição atual do ponto de inserção.                                                                                                                    |
+  |           F7           | Exibe (em uma caixa de diálogo) todos os comandos para esse programa que são armazenados na memória. Use a tecla de seta para cima e a tecla de seta para baixo para selecionar o comando desejado e pressione ENTER para executar o comando. Você também pode observar o número sequencial na frente do comando e usar esse número em conjunto com a tecla F9. |
+  |         ALT+F7         |                                                                                                                          Exclui todos os comandos armazenados na memória para o buffer de histórico atual.                                                                                                                          |
+  |           F8           |                                                                                                           Exibe todos os comandos no buffer de histórico que começam com os caracteres no comando atual.                                                                                                            |
+  |           F9           |                                             Solicita um número de comando de buffer de histórico e, em seguida, exibe o comando associado ao número que você especificar. Pressione ENTER para executar o comando. Para exibir todos os números e seus comandos associados, pressione F7.                                             |
   |        ALT + F10         |                                                                                                                                             Exclui todas as definições de macro.                                                                                                                                              |
 
 
@@ -112,21 +112,21 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 
   Você pode usar o Doskey. exe para criar macros que executam um ou mais comandos. A tabela a seguir lista os caracteres especiais que você pode usar para controlar as operações de comando ao definir uma macro.  
 
-  |   Espaço   |                                                                                                                                                                               Descrição                                                                                                                                                                               |
+  |   Caractere   |                                                                                                                                                                               Descrição                                                                                                                                                                               |
   |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-  |   $G ou $g    |                                                                                   Redireciona a saída. Use qualquer um desses caracteres especiais para enviar a saída para um dispositivo ou um arquivo em vez de para a tela. Esse caractere é equivalente ao símbolo de redirecionamento para saída ( **>** ).                                                                                    |
-  | $G $ G ou $g $ g  |                                                         Anexa a saída ao final de um arquivo. Use qualquer um desses caracteres duplos para acrescentar a saída a um arquivo existente em vez de substituir os dados no arquivo. Esses caracteres duplos são equivalentes ao símbolo de redirecionamento de acréscimo para saída ( **>>** ).                                                         |
-  |   $L ou $l    |                                                                                  Redireciona a entrada. Use qualquer um desses caracteres especiais para ler a entrada de um dispositivo ou de um arquivo, em vez do teclado. Esse caractere é equivalente ao símbolo de redirecionamento para entrada ( **<** ).                                                                                  |
-  |   $B ou $b    |                                                                                                                                    Envia a saída da macro para um comando. Esses caracteres especiais são equivalentes a usar o pipe (\*\*                                                                                                                                     |
-  |   $T ou $t    |                                                            Separa os comandos. Use qualquer um desses caracteres especiais para separar comandos ao criar macros ou digitar comandos na linha de comando do **doskey** . Esses caracteres especiais são equivalentes a usar o e comercial ( **&** ) em uma linha de comando.                                                            |
-  |      $$       |                                                                                                                                                              Especifica o caractere de cifrão ( **$** ).                                                                                                                                                               |
+  |   $G ou $g    |                                                                                   Redireciona a saída. Use qualquer um desses caracteres especiais para enviar a saída para um dispositivo ou um arquivo em vez de para a tela. Esse caractere é equivalente ao símbolo de redirecionamento para output (**>**).                                                                                    |
+  | $G $ G ou $g $ g  |                                                         Anexa a saída ao final de um arquivo. Use qualquer um desses caracteres duplos para acrescentar a saída a um arquivo existente em vez de substituir os dados no arquivo. Esses caracteres duplos são equivalentes ao símbolo de redirecionamento de acréscimo**>>** para saída ().                                                         |
+  |   $L ou $l    |                                                                                  Redireciona a entrada. Use qualquer um desses caracteres especiais para ler a entrada de um dispositivo ou de um arquivo, em vez do teclado. Esse caractere é equivalente ao símbolo de redirecionamento para Input (**<**).                                                                                  |
+  |   $B ou $b    |                                                                                                                                    Envia a saída da macro para um comando. Esses caracteres especiais são equivalentes ao uso do pipe (\*\*                                                                                                                                     |
+  |   $T ou $t    |                                                            Separa os comandos. Use qualquer um desses caracteres especiais para separar comandos ao criar macros ou digitar comandos na linha de comando do **doskey** . Esses caracteres especiais são equivalentes a usar o e**&** comercial () em uma linha de comando.                                                            |
+  |      $$       |                                                                                                                                                              Especifica o caractere de cifrão (**$**).                                                                                                                                                               |
   | $1 a $9 |             Represente as informações de linha de comando que você deseja especificar ao executar a macro. Os caracteres especiais **$1** a **$9** são parâmetros de lote que permitem que você use dados diferentes na linha de comando sempre que executar a macro. O caractere **$1** em um comando do **doskey** é semelhante ao caractere **%1** em um programa em lotes.             |
-  |      $\*      | Representa todas as informações de linha de comando que você deseja especificar ao digitar o nome da macro. O caractere especial **$\\** \* é um parâmetro de substituição que é semelhante aos parâmetros de lote de **$1** a **$9**, com uma diferença importante: tudo que você digitar na linha de comando depois que o nome da macro for substituído pelo **$\\** \* na macro. |
+  |      $\*      | Representa todas as informações de linha de comando que você deseja especificar ao digitar o nome da macro. ** $ ** O caractere \* especial é um parâmetro substituível que é semelhante aos parâmetros de lote de **$1** a **$9**, com uma diferença importante: tudo que você digita na linha de comando depois que o nome da macro ** $ ** é substituído pelo \* na macro. |
 
 
 - Executando uma macro do **doskey**
 
-  Para executar uma macro, digite o nome da macro no prompt de comando, começando na primeira posição. Se a macro tiver sido definida com **$\\** * ou qualquer um dos parâmetros de lote **$1** a **$9**, use um espaço para separar os parâmetros. Não é possível executar uma macro do **doskey** a partir de um programa em lotes.
+  Para executar uma macro, digite o nome da macro no prompt de comando, começando na primeira posição. Se a macro tiver sido definida ** $ **com * ou qualquer um dos parâmetros de lote **$1** a **$9**, use um espaço para separar os parâmetros. Não é possível executar uma macro do **doskey** a partir de um programa em lotes.
 - Criando uma macro com o mesmo nome que um comando da família do Windows Server 2003
 
   Se você sempre usar um comando específico com opções de linha de comando específicas, poderá criar uma macro com o mesmo nome do comando. Para especificar se você deseja executar a macro ou o comando, siga estas diretrizes:  
@@ -139,7 +139,7 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   doskey <MacroName> =
   ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 As opções de linha de comando **/macros** e **/history** são úteis para criar programas em lotes para salvar macros e comandos. Por exemplo, para armazenar todas as macros atuais do **doskey** , digite:
 ```
@@ -157,7 +157,7 @@ Para definir uma macro com vários comandos, use **$t** para separar comandos, d
 ```
 doskey tx=cd temp$tdir/w $*
 ```
-No exemplo anterior, a macro TX altera o diretório atual para temp e, em seguida, exibe uma listagem de diretório no formato de exibição largo. Você pode usar **$\\** * no final da macro para acrescentar outras opções de linha de comando ao **dir** ao executar TX.
+No exemplo anterior, a macro TX altera o diretório atual para temp e, em seguida, exibe uma listagem de diretório no formato de exibição largo. Você pode usar ** $ *** no final da macro para acrescentar outras opções de linha de comando ao **dir** ao executar TX.
 
 A macro a seguir usa um parâmetro de lote para um novo nome de diretório:
 ```

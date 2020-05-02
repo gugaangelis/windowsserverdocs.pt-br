@@ -1,6 +1,6 @@
 ---
 title: flattemp
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a291c102d70ff9166a7bb0261e506792a49dc18
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0969209044784f87c917d90af257c5b3b523af16
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844569"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720096"
 ---
 # <a name="flattemp"></a>flattemp
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Habilita ou desabilita pastas temporárias simples.
-para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+
 
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
@@ -47,7 +47,7 @@ flattemp {/query | /enable | /disable}
 -   Você poderá encontrar erros de aplicativo se a pasta temporária do usuário estiver em uma unidade de rede. Isso ocorre quando a unidade de rede compartilhada torna-se momentaneamente inacessível na rede. Como os arquivos temporários do aplicativo são inacessíveis ou estão fora de sincronização, ele responde como se o disco fosse interrompido. Não é recomendável mover a pasta temporária para uma unidade de rede. O padrão é manter as pastas temporárias no disco rígido local. Se você tiver um comportamento inesperado ou erros de corrupção de disco com determinados aplicativos, estabilize sua rede ou mova as pastas temporárias de volta para o disco rígido local.
 -   Se você desabilitar o uso de pastas temporárias separadas por sessão, as configurações de **flattemp** serão ignoradas. Essa opção é definida na ferramenta de configuração do Serviços de Área de Trabalho Remota.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 -   Para exibir a configuração atual de pastas temporárias simples, digite:
     ```
     flattemp /query

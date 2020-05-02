@@ -1,6 +1,6 @@
 ---
 title: Wbadmin excluir catálogo
-description: O tópico de comandos do Windows para WBADMIN Delete Catalog, que exclui o catálogo de backup armazenado no computador local.
+description: Tópico de referência para WBADMIN Delete Catalog, que exclui o catálogo de backup armazenado no computador local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5cf069163cb18c1763de2842b518f269b9fa57dd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 73f6f44fb343d3347d18cf2c86913aea59613e07
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829899"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720212"
 ---
 # <a name="wbadmin-delete-catalog"></a>Wbadmin excluir catálogo
 

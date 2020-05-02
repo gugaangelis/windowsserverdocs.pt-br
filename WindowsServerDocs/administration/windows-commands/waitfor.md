@@ -1,6 +1,6 @@
 ---
 title: waitfor
-description: Tópico de comandos do Windows para WAITFOR, que envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
+description: Tópico de referência para WAITFOR, que envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4542fc9d231b8150ab89e07e173d9671d6b7a3f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1264fa3bffde303577bd56a0f1f68a6d7b2d98c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829929"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720218"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -22,7 +22,7 @@ ms.locfileid: "80829929"
 
 Envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,12 +35,12 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       Parâmetro       |                                                                                         Descrição                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<computador >     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u [\<\]de domínio > <User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
-|   /p [\<a senha >]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
+|    /s \<> do computador     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| /u [\<domínio>\]<User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
+|   /p [\<senha>]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
 |          /si          |                                                                        Envia o sinal especificado pela rede.                                                                        |
-|     /t \<tempo limite >     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
-|     \<Signalname >     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
+|     /t \<Timeout>     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
+|     \<Signalname>     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
 |          /?           |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 
 ## <a name="remarks"></a>Comentários
@@ -53,7 +53,7 @@ waitfor [/t <Timeout>] <SignalName>
 -   Os computadores só poderão receber sinais se estiverem no mesmo domínio que o computador que está enviando o sinal.
 -   Você pode usar **WAITFOR** quando testar as compilações de software. Por exemplo, o computador de compilação pode enviar um sinal para vários computadores executando **WAITFOR** após a conclusão bem-sucedida da compilação. No recebimento do sinal, o arquivo em lotes que inclui o **WAITFOR** pode instruir os computadores a iniciarem imediatamente a instalação do software ou a execução de testes na compilação compilada.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para aguardar até que o sinal espresso\build007 seja recebido, digite:
 ```

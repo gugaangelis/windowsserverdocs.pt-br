@@ -1,6 +1,6 @@
 ---
 title: Remove-DriverPackage
-description: O tópico comandos do Windows para Remove-DriverPackage, que remove um pacote de driver de um servidor.
+description: Tópico de referência para Remove-DriverPackage, que remove um pacote de driver de um servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f9eeebd0fd560f18aa49ac46f7eea30d8a9cc958
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 623fa7bb22c4aa4e545156cf0b214a4042fb90a3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830399"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720378"
 ---
 # <a name="remove-driverpackage"></a>Remove-DriverPackage
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 
 
 Remove um pacote de driver de um servidor.
 
@@ -30,11 +30,11 @@ wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package N
 
 |        Parâmetro        |                                                                            Descrição                                                                             |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server:<Server name>] |              Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. se um nome de servidor não for especificado, o servidor local será usado.              |
+| [/Server:<Server name>] |              Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se um nome de servidor não for especificado, o servidor local será usado.              |
 | [/DriverPackage:<Name>] |                                                        Especifica o nome do pacote de driver a ser removido.                                                         |
 |    [/PackageId:<ID>]    | Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser removido. Você deve especificar a ID se o pacote de driver não puder ser identificado exclusivamente pelo nome. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 Para exibir informações sobre as imagens, digite um dos seguintes:
 ```
 wdsutil /remove-DriverPackage /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}

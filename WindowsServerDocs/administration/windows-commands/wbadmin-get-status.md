@@ -1,6 +1,6 @@
 ---
 title: Wbadmin obter status
-description: O tópico de comandos do Windows para WBADMIN Get status, que relata o status da operação de backup ou recuperação que está em execução no momento.
+description: Tópico de referência para WBADMIN Get status, que relata o status da operação de backup ou recuperação que está em execução no momento.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ebf1a078632f78dc8d58c232550345f0de78f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1e8e5194cd49770f72ce810f4652d9bc98af75e2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829739"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720165"
 ---
 # <a name="wbadmin-get-status"></a>Wbadmin obter status
 

@@ -1,6 +1,6 @@
 ---
 title: Get-DriverPackage
-description: O tópico de comandos do Windows para Get-DriverPackage, que exibe informações sobre um pacote de driver no servidor.
+description: Tópico de referência para Get-DriverPackage, que exibe informações sobre um pacote de driver no servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1906a109d22b24b5a44227d56c726996e6532bd6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4fc6bc327b46f8219a7c40fa47e85cc94b6fc749
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80831049"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719942"
 ---
 # <a name="get-driverpackage"></a>Get-DriverPackage
 
@@ -30,12 +30,12 @@ WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name
 
 |        Parâmetro         |                                                                           Descrição                                                                            |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server: nome do servidor\<>] |              Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.               |
-| [/DriverPackage: nome do\<>] |                                                        Especifica o nome do pacote de driver a ser mostrado.                                                         |
-|    [/PackageId: ID de\<>]    | Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser mostrado. Você deve especificar a ID se o pacote de driver não puder ser identificado exclusivamente pelo nome. |
-|     [/Show: {drivers     |                                                                              Files                                                                               |
+| [/Server:\<nome do servidor>] |              Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.               |
+| [/DriverPackage:\<nome>] |                                                        Especifica o nome do pacote de driver a ser mostrado.                                                         |
+|    [/PackageId:\<ID>]    | Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser mostrado. Você deve especificar a ID se o pacote de driver não puder ser identificado exclusivamente pelo nome. |
+|     [/Show: {drivers     |                                                                              Arquivos                                                                               |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir informações sobre um pacote de driver, digite um dos seguintes:
 ```

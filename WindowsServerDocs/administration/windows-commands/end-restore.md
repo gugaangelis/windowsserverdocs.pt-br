@@ -1,6 +1,6 @@
 ---
 title: Finalizar restauração
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e83b3a0c82390f6e865af8091ed915e1bb23b344
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0136d10a1332c9f6700cab0ad8bc7e0bfb8eba4c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845139"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720838"
 ---
 # <a name="end-restore"></a>Finalizar restauração
 
