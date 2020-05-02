@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setpriority
-description: Tópico de comandos do Windows para **Bitsadmin setanteriority**, que define a prioridade do trabalho especificado.
+description: Tópico de referência para o comando Bitsadmin setanteriority, que define a prioridade do trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9348680a61649b938267b3277de9aa5aa521361f
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 556a1d94700780ea22acc1e4c2f32961c0e43342
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122763"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717260"
 ---
 # <a name="bitsadmin-setpriority"></a>bitsadmin setpriority
 
@@ -35,12 +35,14 @@ bitsadmin /setpriority <job> <priority>
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir define a prioridade para o trabalho chamado *myDownloadJob* como normal.
+Para definir a prioridade para o trabalho chamado *myDownloadJob* como normal:
 
 ```
-C:\>bitsadmin /setpriority myDownloadJob NORMAL
+bitsadmin /setpriority myDownloadJob NORMAL
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

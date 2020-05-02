@@ -1,6 +1,6 @@
 ---
 title: detach vdisk
-description: O tópico comandos do Windows para desanexar VDISK, que impede que o VHD (disco rígido virtual) selecionado apareça como uma unidade de disco rígido local no computador host.
+description: Tópico de referência para desanexar VDISK, que impede que o VHD (disco rígido virtual) selecionado apareça como uma unidade de disco rígido local no computador host.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14eb66031841624156afb03f492e2afce5bc56f0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e5e64559650597eb8d15e28075f74704fdf338a6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846499"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716665"
 ---
 # <a name="detach-vdisk"></a>detach vdisk
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Interrompe a exibição do VHD (disco rígido virtual) selecionado como uma unidade de disco rígido local no computador host. Quando um VHD é desanexado, você pode copiá-lo a outros locais.  
   
@@ -41,7 +41,7 @@ detach vdisk [noerr]
   
 -   Um VHD deve ser selecionado e desanexado para que essa operação tenha sucesso. Use o comando **Select VDISK** para selecionar um VHD e deslocar o foco para ele.  
   
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Para desanexar o VHD selecionado, digite:  
   
 ```  
@@ -52,7 +52,7 @@ detach vdisk
   
 -   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
   
--   [anexar vdisk](attach-vdisk.md)  
+-   [attach vdisk](attach-vdisk.md)  
   
 -   [Compact vdisk](compact-vdisk.md)  
 

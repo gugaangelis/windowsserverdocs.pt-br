@@ -1,6 +1,6 @@
 ---
-title: pares e lista de Bitsadmin
-description: Tópico de comandos do Windows para **Bitsadmin Peers** e **list**, que lista todos os pares.
+title: bitsadmin peers e list
+description: Tópico de referência para o comando Bitsadmin Peers e List, que lista todos os pares.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a38f3ed825f6629c196d5ebac1e967f4fa06a940
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a6c1f8fbcb6ca40c86a1d589ba7217392b9875cf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849929"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717150"
 ---
-# <a name="bitsadmin-peers-and-list"></a>pares e lista de Bitsadmin
+# <a name="bitsadmin-peers-and-list"></a>bitsadmin peers e list
 
 Lista todos os pares.
 
@@ -26,14 +26,18 @@ Lista todos os pares.
 bitsadmin /peers /list
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir lista todos os pares.
+Para listar todos os pares:
 
 ```
-C:\>bitsadmin /peers /list
+bitsadmin /peers /list
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)
+
+- [comando de pares de Bitsadmin](bitsadmin-peers.md)

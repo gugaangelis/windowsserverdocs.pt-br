@@ -1,6 +1,6 @@
 ---
-title: Bitsadmin util e repairservice
-description: Tópico de comandos do Windows para **Bitsadmin util e repairservice**, que corrige problemas conhecidos em várias versões do serviço bits.
+title: bitsadmin util e repairservice
+description: Tópico de referência para o comando Bitsadmin util e repairservice, que corrige problemas conhecidos em várias versões do serviço BITS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 164a402e7cbfc0a9223a97f4246eac84f0797aed
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 0104a3f2ace972821151bf5083f9b0795e427ff1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122513"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707650"
 ---
-# <a name="bitsadmin-util-and-repairservice"></a>Bitsadmin util e repairservice
+# <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util e repairservice
 
 Se o BITS não for iniciado, essa opção tentará resolver erros relacionados à configuração de serviço incorreta e às dependências nos serviços do Windows (como LANManworkstation) e no diretório de rede. Essa opção também gera saída que indica se os problemas foram resolvidos.
 
@@ -40,12 +40,16 @@ bitsadmin /util /repairservice [/force]
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir repara a configuração do serviço BITS.
+Para reparar a configuração do serviço BITS:
 
 ```
-C:\>bitsadmin /util /repairservice
+bitsadmin /util /repairservice
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin util](bitsadmin-util.md)
+
+- [comando Bitsadmin](bitsadmin.md)

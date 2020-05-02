@@ -1,6 +1,6 @@
 ---
 title: cls
-description: Tópico de comandos do Windows para CLS, que limpa a janela do prompt de comando.
+description: Tópico de referência para o comando CLS, que limpa a janela de prompt de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c00c97ff8d703f30c17c9d3f126a1711d951da1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a30c48bb95f2a8f95acd10c9cdea1a90d324e674
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847629"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82712642"
 ---
 # <a name="cls"></a>cls
 
 Limpa a janela do prompt de comando.
-
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -30,15 +28,16 @@ cls
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para limpar todas as informações que aparecem na janela do prompt de comando e retornar a uma janela em branco, digite:
+
 ```
-cls 
+cls
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

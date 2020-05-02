@@ -1,6 +1,6 @@
 ---
-title: pares de Bitsadmin e claro
-description: O tópico de comandos do Windows para **pares de Bitsadmin** e **claro**, que limpa a lista de pares.
+title: bitsadmin peers e clear
+description: Tópico de referência para os pares Bitsadmin e o comando Clear, que limpa a lista de pares.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87c33d011f38e0ebda2383fc468cad9b30ab22c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 445ce0db00abb3d46f2dc7379c066624cef7afae
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850019"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717203"
 ---
-# <a name="bitsadmin-peers-and-clear"></a>pares de Bitsadmin e claro
+# <a name="bitsadmin-peers-and-clear"></a>bitsadmin peers e clear
 
 Limpa a lista de pares.
 
@@ -26,14 +26,18 @@ Limpa a lista de pares.
 bitsadmin /peers /clear
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir limpa a lista de pares.
+Para limpar a lista de pares.
 
 ```
-C:\>bitsadmin /peers /clear
+bitsadmin /peers /clear
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)
+
+- [comando de pares de Bitsadmin](bitsadmin-peers.md)

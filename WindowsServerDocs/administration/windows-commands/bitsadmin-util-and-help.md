@@ -1,6 +1,6 @@
 ---
-title: Bitsadmin util e ajuda
-description: Tópico de comandos do Windows para **Bitsadmin util e Help**, que exibe o uso da linha de comando para as opções do util.
+title: bitsadmin util e help
+description: Tópico de referência para o comando Bitsadmin util e Help, que exibe o uso de linha de comando para as opções de/util.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3cbfcb5a630d6670202551a433ca3acc4b9b7fa0
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: a4f43e35242627cb66156e839722aea2e2078118
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122488"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707628"
 ---
-# <a name="bitsadmin-util-and-help"></a>Bitsadmin util e ajuda
+# <a name="bitsadmin-util-and-help"></a>bitsadmin util e help
 
-Exibe o uso da linha de comando para as opções do **util** .
+Exibe o uso da linha de comando para os comutadores **/util** .
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -28,12 +28,16 @@ bitsadmin /util /help
 
 ## <a name="examples"></a>Exemplos
 
-O comando a seguir exibe a ajuda de linha de comando para as opções do **util** .
+Para exibir a ajuda de linha de comando para os comutadores **/util** :
 
 ```
-C:\>bitsadmin /util /help
+bitsadmin /util /help
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin util](bitsadmin-util.md)
+
+- [comando Bitsadmin](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
-title: Bitsadmin util e getieproxy
-description: Tópico de comandos do Windows para **Bitsadmin util e getieproxy**, que recupera o uso de proxy para a conta de serviço específica.
+title: bitsadmin util e getieproxy
+description: Tópico de referência para o comando Bitsadmin util e getieproxy, que recupera o uso de proxy para a conta de serviço específica.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22b24c4f9c0941c88c70b488a82de47c7901bd8b
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 576f308bc7fb9a4e448638d06621f95eebef0cd0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122461"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707661"
 ---
-# <a name="bitsadmin-util-and-getieproxy"></a>Bitsadmin util e getieproxy
+# <a name="bitsadmin-util-and-getieproxy"></a>bitsadmin util e getieproxy
 
-> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Recupera o uso de proxy para a conta de serviço determinada. Esse comando mostra o valor para cada uso de proxy, não apenas o uso de proxy especificado para a conta de serviço. Para obter detalhes sobre como definir o uso de proxy para contas de serviço específicas, consulte o comando [Bitsadmin util e setieproxy](bitsadmin-util-and-setieproxy.md) .
 
@@ -37,12 +37,16 @@ bitsadmin /util /getieproxy <account> [/conn <connectionname>]
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir exibe o uso de proxy para a conta de serviço de rede.
+Para exibir o uso de proxy para a conta de serviço de rede:
 
 ```
-C:\>bitsadmin /util /getieproxy NETWORKSERVICE
+bitsadmin /util /getieproxy NETWORKSERVICE
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin util](bitsadmin-util.md)
+
+- [comando Bitsadmin](bitsadmin.md)

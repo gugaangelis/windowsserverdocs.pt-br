@@ -1,6 +1,6 @@
 ---
-title: Bitsadmin colegas e ajuda
-description: Tópico de comandos do Windows para **Bitsadmin colegas** e **ajuda**, que exibe o uso de linha de comando para as opções de/peers.
+title: bitsadmin peers e help
+description: Tópico de referência para os pares Bitsadmin e o comando help, que exibe o uso de linha de comando para as opções de/peers.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f1eee039830fce2fc311afaf782b97ddd641c70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 405bf6d0641d46a9e7d365bbd9742633df403020
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850079"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717155"
 ---
-# <a name="bitsadmin-peers-and-help"></a>Bitsadmin colegas e ajuda
+# <a name="bitsadmin-peers-and-help"></a>bitsadmin peers e help
 
 Exibe o uso da linha de comando para os comutadores **/Peers** .
 
@@ -26,14 +26,18 @@ Exibe o uso da linha de comando para os comutadores **/Peers** .
 bitsadmin /peers /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O comando a seguir exibe a ajuda de linha de comando para os comutadores **/Peers** .
+Para exibir o uso da linha de comando para os comutadores **/Peers** :
 
 ```
-C:\>bitsadmin /peers /help
+bitsadmin /peers /help
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)
+
+- [comando de pares de Bitsadmin](bitsadmin-peers.md)

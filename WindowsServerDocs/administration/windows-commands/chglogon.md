@@ -1,6 +1,6 @@
 ---
 title: chglogon
-description: O tópico de comandos do Windows para chglogon, que habilita ou desabilita os logons de sessões de cliente em um servidor de host de sessão de área de trabalho remota ou exibe o status de logon atual.
+description: Tópico de referência para o comando chglogon, que habilita ou desabilita os logons de sessões de cliente em um servidor Host da Sessão da Área de Trabalho Remota ou exibe o status de logon atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 82b51aaaaa741ef31c7a9ef1569a183a852a30ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f232439e51f2d32f1ef4834a3bba7f4428cce093
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847909"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82714545"
 ---
 # <a name="chglogon"></a>chglogon
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Habilita ou desabilita os logons de sessões de cliente em um servidor de host de sessão de área de trabalho remota ou exibe o status de logon atual.
+Habilita ou desabilita os logons de sessões de cliente em um servidor Host da Sessão da Área de Trabalho Remota ou exibe o status de logon atual.
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
-
-## <a name="remarks"></a>Comentários
-Esse comando é o mesmo que o comando **alterar logon** .
+> Este comando foi substituído pelo **comando log de alterações**. Para obter mais informações, incluindo a sintaxe e os detalhes do parâmetro, consulte [alterar o comando de logon](change-logon.md).
 
 ## <a name="additional-references"></a>Referências adicionais
-- [change logon](change-logon.md)
-- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [alterar comando de logon](change-logon.md)
+
 - [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)

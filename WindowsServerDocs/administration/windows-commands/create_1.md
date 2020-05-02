@@ -1,6 +1,6 @@
 ---
-title: criar
-description: O tópico de comandos do Windows para criar, que inicia o processo de criação de cópia de sombra, usando o contexto atual e as configurações de opção.
+title: create
+description: Tópico de referência para criar, que inicia o processo de criação de cópia de sombra, usando o contexto atual e as configurações de opção.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d29285517ca678a15828079c95663fc4d501eaf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cfddbebd5744d8cd222d67e46690ce8b5d2e0fde
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846829"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716833"
 ---
-# <a name="create"></a>criar
+# <a name="create"></a>create
 
 Inicia o processo de criação de cópia de sombra usando as configurações de contexto e opção atuais. Requer pelo menos um volume no conjunto de cópias de sombra.
 

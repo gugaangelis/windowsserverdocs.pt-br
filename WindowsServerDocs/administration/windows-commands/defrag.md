@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: O tópico de comandos do Windows para Defrag, que localiza e consolida arquivos fragmentados em volumes locais para melhorar o desempenho do sistema.
+description: Tópico de referência para Defrag, que localiza e consolida arquivos fragmentados em volumes locais para melhorar o desempenho do sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8723afc936fa1ea311e275a58a85b20988f92a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47a19ec697da29b1eff152de8fc5930516d5b806
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846709"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716767"
 ---
 # <a name="defrag"></a>defrag
 
->Aplica-se a: Windows 10, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows 10, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Localiza e consolida arquivos fragmentados em volumes locais para melhorar o desempenho do sistema.
 
@@ -36,7 +36,7 @@ defrag <volume> [/<Parameter>]*
 |Parâmetro|Descrição|
 |-------|--------|
 |`<volume>`|Especifica a letra da unidade ou o caminho do ponto de montagem do volume a ser desfragmentado ou analisado.|
-|A|Executar análise nos volumes especificados.|
+|Um|Executar análise nos volumes especificados.|
 |C|Execute a operação em todos os volumes.|
 |D|Execute a desfragmentação tradicional (esse é o padrão). No entanto, em um volume em camadas, a desfragmentação tradicional é executada apenas na camada de capacidade.|
 |E|Execute a operação em todos os volumes, exceto aqueles especificados.|
@@ -65,11 +65,11 @@ defrag <volume> [/<Parameter>]*
 - Um volume deve ter pelo menos 15% de espaço livre para **desfragmentar de forma completa** e adequada. a **desfragmentação** usa esse espaço como uma área de classificação para fragmentos de arquivos. Se um volume tiver menos de 15% de espaço livre, a **desfragmentação** irá desfragmentá-lo apenas parcialmente. Para aumentar o espaço livre em um volume, exclua arquivos desnecessários ou mova-os para outro disco.
 - Embora a **desfragmentação** esteja analisando e desfragmentando um volume, ele exibe um cursor piscando. Quando **a desfragmentação** termina de analisar e desfragmentar o volume, ele exibe o relatório de análise, o relatório de desfragmentação ou ambos os relatórios e, em seguida, sai para o prompt de comando.
 - Por padrão, a **desfragmentação** exibirá um resumo dos relatórios de análise e de desfragmentação se você não especificar os parâmetros **/a** ou **/v** .
-- Você pode enviar os relatórios para um arquivo de texto digitando **>** <em>filename. txt</em>, em que *filename. txt* é um nome de arquivo que você especificar. Por exemplo: `defrag volume /v > FileName.txt`
+- Você pode enviar os relatórios para um arquivo de texto digitando **>** <em>filename. txt</em>, em que *filename. txt* é um nome de arquivo que você especifica. Por exemplo: `defrag volume /v > FileName.txt`
 - Para interromper o processo de desfragmentação, na linha de comando, pressione **Ctrl + C**.
 - A execução do comando de **desfragmentação** e do Desfragmentador de disco são mutuamente exclusivas. Se você estiver usando o Desfragmentador de disco para desfragmentar um volume e executar o comando de **desfragmentação** em uma linha de comando, o comando de **desfragmentação** falhará. Por outro lado, se você executar o **comando de** desfragmentação e abrir o Desfragmentador de disco, as opções de desfragmentação no Desfragmentador de disco não estarão disponíveis.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 Para desfragmentar o volume na unidade C ao fornecer o progresso e a saída detalhada, digite:
 ```
 defrag C: /U /V

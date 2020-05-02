@@ -1,6 +1,6 @@
 ---
 title: Excluir partição
-description: Tópico de comandos do Windows para excluir partição, que exclui a partição com foco.
+description: Tópico de referência para excluir partição, que exclui a partição com foco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a24c18cf98f2899fbb57f1f5f2d2776824d637b7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 259abdfc6e3ba8db22d5582bff08d7a4bc8b807b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846569"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716724"
 ---
 # <a name="delete-partition"></a>Excluir partição
 
@@ -30,8 +30,8 @@ delete partition [noerr] [override]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|substituir|Permite que o DiskPart exclua qualquer partição, independentemente do tipo. Normalmente, o DiskPart só permite que você exclua partições de dados conhecidas.|
-|NOERR|somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
+|override|Permite que o DiskPart exclua qualquer partição, independentemente do tipo. Normalmente, o DiskPart só permite que você exclua partições de dados conhecidas.|
+|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
 
 ## <a name="remarks"></a>Comentários
 
@@ -40,7 +40,7 @@ delete partition [noerr] [override]
 > -   Não é possível excluir a partição do sistema, a partição de inicialização ou qualquer partição que contenha o arquivo de paginação ativo ou informações de despejo de memória.
 > -   Uma partição deve ser selecionada para que essa operação seja realizada com sucesso. Use o comando **selecionar partição** para selecionar uma partição e deslocar o foco para ela.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para excluir a partição com foco, digite:
 ```

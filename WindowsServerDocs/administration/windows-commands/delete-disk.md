@@ -1,6 +1,6 @@
 ---
 title: excluir disco
-description: Tópico de comandos do Windows para excluir disco, que exclui um disco dinâmico ausente da lista de discos.
+description: Tópico de referência para excluir o disco, que exclui um disco dinâmico ausente da lista de discos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a767e0689d5fbabb193df37528a0909ab63a1ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ad4888835c0bb1862344f104099b8b59027d1de9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846649"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716760"
 ---
 # <a name="delete-disk"></a>excluir disco
 
@@ -32,10 +32,10 @@ delete disk [noerr] [override]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|NOERR|somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
-|substituir|Permite que o DiskPart exclua todos os volumes simples no disco. Se o disco contiver metade de um volume espelhado, a metade do espelho no disco será excluída. O comando excluir substituição de disco falhará se o disco for membro de um volume RAID-5.|
+|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
+|override|Permite que o DiskPart exclua todos os volumes simples no disco. Se o disco contiver metade de um volume espelhado, a metade do espelho no disco será excluída. O comando excluir substituição de disco falhará se o disco for membro de um volume RAID-5.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para excluir um disco dinâmico ausente da lista de discos, digite:
 ```

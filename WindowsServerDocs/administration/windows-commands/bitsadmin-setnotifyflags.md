@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifyflags
-description: Tópico de comandos do Windows para **Bitsadmin setnotifyflags**, que define os sinalizadores de notificação de eventos para o trabalho especificado.
+description: Tópico de referência para o comando Bitsadmin setnotifyflags, que define os sinalizadores de notificação de eventos para o trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73c088ce2bae8d2ad99b313417c14449ddd822b5
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 00b704bf0943790ef01bbfbdbcbbde4dfd1845c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122795"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717276"
 ---
 # <a name="bitsadmin-setnotifyflags"></a>bitsadmin setnotifyflags
 
@@ -35,12 +35,14 @@ bitsadmin /setnotifyflags <job> <notifyflags>
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir define os sinalizadores de notificação para gerar um evento quando ocorre um erro, para um trabalho chamado *myDownloadJob*.
+Para definir os sinalizadores de notificação para gerar um evento quando ocorrer um erro, para um trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setnotifyflags myDownloadJob 2
+bitsadmin /setnotifyflags myDownloadJob 2
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: break
-description: O tópico de comandos do Windows para break_2, que Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular.
+description: Tópico de referência para o comando break, que Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6683c44c84f4baae5f016f7df62d5bd6591cff70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848249"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707783"
 ---
 # <a name="break"></a>break
 
@@ -22,36 +22,29 @@ Desassocia um volume de cópia de sombra do VSS e o torna acessível como um vol
 
 > [!NOTE]
 > Esse comando é relevante apenas para cópias de sombra de hardware após a importação.
-
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+>
+> Os volumes expostos, como as cópias de sombra de origem, são somente leitura por padrão. O acesso ao volume é feito diretamente para o provedor de hardware sem registro do volume que tem sido uma cópia de sombra.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-break [writable] <SetID>
+break [writable] <setid>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|escrita|Habilita o acesso de leitura/gravação no volume.|
-|\<SetID >|Especifica a ID do conjunto de cópias de sombra.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| escrita | Habilita o acesso de leitura/gravação no volume. |
+| \<> SetID | Especifica a ID do conjunto de cópias de sombra. O alias da ID da cópia de sombra, que é armazenado como uma variável de ambiente pelo comando **carregar metadados** , pode ser usado no parâmetro *SetID* . |
 
-## <a name="remarks"></a>Comentários
+## <a name="examples"></a>Exemplos
 
--   Os volumes expostos, como as cópias de sombra de origem, são somente leitura por padrão.
--   O alias da ID da cópia de sombra, que é armazenado como uma variável de ambiente pelo comando **carregar metadados** , pode ser usado no parâmetro *SetID* .
+Para fazer uma cópia de sombra usando o nome do alias Alias1 acessível como um volume gravável no sistema operacional:
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
-
-Para fazer uma cópia de sombra com o nome do alias Alias1 acessível como um volume gravável no sistema operacional, digite:
 ```
 break writable %Alias1%
 ```
-
-> [!NOTE]
-> O acesso ao volume é feito diretamente para o provedor de hardware sem registro do volume que tem sido uma cópia de sombra.
 
 ## <a name="additional-references"></a>Referências adicionais
 

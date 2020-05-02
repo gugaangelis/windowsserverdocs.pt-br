@@ -1,6 +1,6 @@
 ---
 title: bitsadmin makecustomheaderswriteonly
-description: Tópico de comandos do Windows para **Bitsadmin makecustomheaderswriteonly**, que tornam os cabeçalhos HTTP personalizados de um trabalho somente gravação.
+description: Tópico de referência para o comando Bitsadmin makecustomheaderswriteonly, que torna os cabeçalhos HTTP personalizados de um trabalho somente gravação.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 9183b1b5de51020c5c6d2efad2c0a788d158a183
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2aeab7e0ee7797b3e0be7be1156920f3bafc84dc
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850239"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717410"
 ---
 # <a name="bitsadmin-makecustomheaderswriteonly"></a>bitsadmin makecustomheaderswriteonly
 
 Faça com que os cabeçalhos HTTP personalizados de um trabalho somente sejam gravados.
 
-> [!Important]
+> [!IMPORTANT]
 > Esta ação não pode ser desfeita.
 
 ## <a name="syntax"></a>Sintaxe
@@ -34,14 +34,16 @@ bitsadmin /makecustomheaderswriteonly <job>
 | -------------- | -------------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir torna os cabeçalhos HTTP personalizados somente gravação para o trabalho chamado *myDownloadJob*.
+Para fazer com que cabeçalhos HTTP personalizados sejam gravados somente para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /makecustomheaderswriteonly myDownloadJob
+bitsadmin /makecustomheaderswriteonly myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

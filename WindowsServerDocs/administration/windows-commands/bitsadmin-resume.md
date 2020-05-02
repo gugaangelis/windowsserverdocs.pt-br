@@ -1,6 +1,6 @@
 ---
 title: bitsadmin resume
-description: O tópico de comandos do Windows para o **Bitsadmin resume**, que ativa um trabalho novo ou suspenso na fila de transferência.
+description: Tópico de referência para o comando Bitsadmin resume, que ativa um trabalho novo ou suspenso na fila de transferência.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e81bd80232cd4ec8fbba70c86cd97bb9695680f8
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: ba4cd57ddeeb3c35ca0871c2953fd409ddb57e73
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123074"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717000"
 ---
 # <a name="bitsadmin-resume"></a>bitsadmin resume
 
-Ativa um trabalho novo ou suspenso na fila de transferência.
+Ativa um trabalho novo ou suspenso na fila de transferência. Se você retomou seu trabalho por engano ou simplesmente precisar suspender seu trabalho, poderá usar a opção de [suspensão Bitsadmin](bitsadmin-suspend.md) para suspender o trabalho.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,12 +34,16 @@ bitsadmin /resume <job>
 
 ## <a name="examples"></a>Exemplos
 
-O exemplo a seguir retoma o trabalho chamado *myDownloadJob*.
+Para retomar o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /resume myDownloadJob
+bitsadmin /resume myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando de suspensão Bitsadmin](bitsadmin-suspend.md)
+
+- [comando Bitsadmin](bitsadmin.md)

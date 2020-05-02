@@ -1,6 +1,6 @@
 ---
 title: del
-description: Tópico de comandos do Windows para del, que exclui um ou mais arquivos.
+description: Tópico de referência para del, que exclui um ou mais arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7069ee50a810296d31e1a034b24955299918020a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 703597ae422518a5b401b656ace0b4cd73418be8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846659"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716742"
 ---
 # <a name="del"></a>del
 
 Exclui um ou mais arquivos. Esse comando é o mesmo que o comando **Erase** .
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -33,12 +33,12 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Nomes de \<>|Especifica uma lista de um ou mais arquivos ou diretórios. Caracteres curinga podem ser usados para excluir vários arquivos. Se um diretório for especificado, todos os arquivos dentro do diretório serão excluídos.|
+|\<Nomes>|Especifica uma lista de um ou mais arquivos ou diretórios. Caracteres curinga podem ser usados para excluir vários arquivos. Se um diretório for especificado, todos os arquivos dentro do diretório serão excluídos.|
 |/p|Solicita confirmação antes de excluir o arquivo especificado.|
 |/f|Força a exclusão de arquivos somente leitura.|
 |/s|Exclui os arquivos especificados do diretório atual e de todos os subdiretórios. Exibe os nomes dos arquivos à medida que eles são excluídos.|
 |/q|Especifica o modo silencioso. Não será solicitada a confirmação de exclusão.|
-|/a [:]\<atributos >|Exclui arquivos com base nos seguintes atributos de arquivo:</br>arquivos somente leitura do **r**</br>arquivos ocultos **h**</br>Não **tenho** conteúdo de arquivos indexados</br>**s** arquivos do sistema</br>**um** arquivo pronto para arquivamento</br>**l** pontos de nova análise</br>-Prefix significado ' not '|
+|/a [:]\<atributos>|Exclui arquivos com base nos seguintes atributos de arquivo:</br>arquivos somente leitura do **r**</br>arquivos ocultos **h**</br>Não **tenho** conteúdo de arquivos indexados</br>**s** arquivos do sistema</br>**um** arquivo pronto para arquivamento</br>**l** pontos de nova análise</br>-Prefix significado ' not '|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -56,7 +56,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
   ```
   del \work
   ```  
-- Você pode usar caracteres curinga ( **&#42;** e **?** ) para excluir mais de um arquivo de cada vez. No entanto, para evitar a exclusão acidental de arquivos, você deve usar caracteres curinga com cuidado com o comando **del** . Por exemplo, se você digitar o seguinte comando:  
+- Você pode usar caracteres curinga (**&#42;** e **?**) para excluir mais de um arquivo por vez. No entanto, para evitar a exclusão acidental de arquivos, você deve usar caracteres curinga com cuidado com o comando **del** . Por exemplo, se você digitar o seguinte comando:  
   ```
   del *.*
   ```  
@@ -71,7 +71,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 -   O comando **del** , com parâmetros diferentes, está disponível no console de recuperação.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para excluir todos os arquivos em uma pasta chamada Test na unidade C, digite um dos seguintes:
 ```

@@ -1,6 +1,6 @@
 ---
 title: chgusr
-description: Tópico de comandos do Windows para chgusr, que altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
+description: Tópico de referência para o comando chgusr, que altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ff1294d1334b08c7794a34bef3c9cbc0ac55bd3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 41f4dba85e88e34e085fe60882e00ecd42d1c0c8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847849"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82714447"
 ---
 # <a name="chgusr"></a>chgusr
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.  
+Altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.  
+> Este comando foi substituído pelo **comando Change User**. Para obter mais informações, incluindo a sintaxe e os detalhes do parâmetro, consulte [alterar comando do usuário](change-user.md).
 
-## <a name="remarks"></a>Comentários  
-Esse comando é o mesmo que o comando **Change User** .
+## <a name="additional-references"></a>Referências adicionais
 
-## <a name="additional-references"></a>Referências adicionais  
-- [change user](change-user.md)  
-- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
-- [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)  
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [alterar comando do usuário](change-user.md)
+
+- [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)

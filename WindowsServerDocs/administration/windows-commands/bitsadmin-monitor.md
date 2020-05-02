@@ -1,6 +1,6 @@
 ---
 title: bitsadmin monitor
-description: Tópico de comandos do Windows para o **Monitor Bitsadmin**, que monitora os trabalhos na fila de transferência que pertencem ao usuário atual.
+description: Tópico de referência para o comando Bitsadmin monitor, que monitora os trabalhos na fila de transferência que pertencem ao usuário atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bda268afd5fda24bba2afb04b32bac9cda9a05bb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4c8fa52f9fcf30a66b41c9cdbf7b7e1fab69f06e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850209"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717372"
 ---
 # <a name="bitsadmin-monitor"></a>bitsadmin monitor
 
@@ -33,14 +33,16 @@ bitsadmin /monitor [/allusers] [/refresh <seconds>]
 | /allusers | Opcional. Monitora trabalhos para todos os usuários. Você deve ter privilégios de administrador para usar esse parâmetro. |
 | /Refresh | Opcional. Atualiza os dados em um intervalo especificado por `<seconds>`. O intervalo de atualização padrão é cinco segundos. Para interromper a atualização, pressione CTRL + C. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir monitora a fila de transferência de trabalhos pertencentes ao usuário atual e atualiza as informações a cada 60 segundos.
+Para monitorar a fila de transferência para trabalhos pertencentes ao usuário atual e atualiza as informações a cada 60 segundos.
 
 ```
-C:\>bitsadmin /monitor /refresh 60
+bitsadmin /monitor /refresh 60
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

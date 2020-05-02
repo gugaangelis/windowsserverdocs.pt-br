@@ -1,6 +1,6 @@
 ---
 title: date
-description: O tópico de comandos do Windows para data, que exibe ou define a data do sistema. Se usado sem parâmetros,
+description: Tópico de referência para data, que exibe ou define a data do sistema. Se usado sem parâmetros,
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f9e32240eb27d651e324becefd72e9b1a545215
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d7bcdb35579ac86b4ec7f9c7c639cf905f6a05fa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846739"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716810"
 ---
 # <a name="date"></a>date
 
 Exibe ou define a data do sistema. Se usado sem parâmetros, **Data** exibe a configuração de data atual do sistema e solicita que você insira uma nova data.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,7 +32,7 @@ date [/t | <Month-Day-Year>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<mês-dia-ano >|Define a data especificada, em que *mês* é o mês (um ou dois dígitos), *dia* é o dia (um ou dois dígitos) e *ano* é o ano (dois ou quatro dígitos).|
+|\<Mês-dia/ano>|Define a data especificada, em que *mês* é o mês (um ou dois dígitos), *dia* é o dia (um ou dois dígitos) e *ano* é o ano (dois ou quatro dígitos).|
 |/t|Exibe a data atual sem solicitar uma nova data.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -44,7 +44,7 @@ date [/t | <Month-Day-Year>]
 -   Os valores de *dia* válidos são de 1 a 31.
 -   Valores de *ano* válidos são 00 a 99 ou 1980 a 2099. Se você usar dois dígitos, os valores de 80 a 99 corresponderão aos anos de 1980 a 1999.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Se as extensões de comando estiverem habilitadas, para exibir a data atual do sistema, digite:
 ```
