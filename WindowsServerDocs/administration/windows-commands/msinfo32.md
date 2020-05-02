@@ -1,6 +1,6 @@
 ---
 title: msinfo32
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a77cf9ae4c5f054e66839ff5b5b057e031b36ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0db8a4549ac26ef61d4aa8f435a01d3224501a77
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839109"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723843"
 ---
 # <a name="msinfo32"></a>msinfo32
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Abre a ferramenta de informações do sistema para exibir uma visão abrangente do hardware, dos componentes do sistema e do ambiente de software no computador local. 
 ## <a name="syntax"></a>Sintaxe
@@ -43,7 +43,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 
 ## <a name="remarks"></a>Comentários
 Algumas categorias de informações do sistema contêm grandes quantidades de dados. Você pode usar o comando **Start/Wait** para otimizar o desempenho de relatórios para essas categorias. Para obter mais informações, consulte [informações do sistema](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx).
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 Para listar as IDs de categoria disponíveis, digite:
 ```
 msinfo32 /showcategories

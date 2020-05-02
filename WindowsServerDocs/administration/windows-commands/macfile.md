@@ -1,6 +1,6 @@
 ---
 title: macfile
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0156be5a3209bf8cedf13b35ceab61ef38a0f49a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4384ce8d4f23966aea278e90b9ddddc42da6e77
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840309"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724229"
 ---
 # <a name="macfile"></a>macfile
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Gerencia o servidor de arquivos para servidores Macintosh, volumes, diretórios e arquivos. Você pode automatizar tarefas administrativas incluindo uma série de comandos em arquivos em lotes e iniciá-los manualmente ou em horários predeterminados. 
 -   [Para modificar diretórios em volumes acessíveis ao Macintosh](#BKMK_Moddirs)
@@ -34,8 +34,8 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 ```
 
 #### <a name="parameters"></a>Parâmetros
--   /Server:\\\\<computerName> especifica o servidor no qual um diretório será alterado. Se omitido, a operação será executada no computador local.
--   /Path:<directory> necessário. Especifica o caminho para o diretório que você deseja alterar. O diretório deve existir. o **diretório MacFile** não cria diretórios.
+-   /Server:\\ \\ <computerName> especifica o servidor no qual alterar um diretório. Se omitido, a operação será executada no computador local.
+-   /Path:<directory> obrigatório. Especifica o caminho para o diretório que você deseja alterar. O diretório precisa existir. o **diretório MacFile** não cria diretórios.
 -   /Owner:<OwnerName> altera o proprietário do diretório. Se omitido, o proprietário permanecerá inalterado.
 -   /Group:<GroupName> especifica ou altera o grupo primário do Macintosh que está associado ao diretório. Se omitido, o grupo primário permanecerá inalterado.
 -   /Permissions:<Permissions> define permissões no diretório para o proprietário, o grupo primário e o mundo (todos). Um número de 11 dígitos é usado para definir permissões. O número 1 concede permissão e 0 revoga a permissão (por exemplo, 11111011000). Se omitido, as permissões permanecerão inalteradas.
@@ -43,7 +43,7 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 
     |Posição|Define a permissão para|
     |------|------------|
-    |First|OwnerSeeFiles|
+    |Primeiro|OwnerSeeFiles|
     |Segundo|OwnerSeeFolders|
     |Terceiro|OwnerMakechanges|
     |Quarto|GroupSeeFiles|
@@ -61,8 +61,8 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 ### <a name="remarks"></a>Comentários
 - Se as informações fornecidas contiverem espaços ou caracteres especiais, use aspas em volta do texto (por exemplo, * * * *<em>nome do computador</em>* * * *).
 - Use **macfiledirectory** para tornar um diretório existente em um volume acessível para Macintosh disponível para usuários do Macintosh. O comando **macfiledirectory** não cria diretórios. Use o Gerenciador de arquivos, o prompt de comando ou o comando de **nova pasta do Macintosh** para criar um diretório em um volume acessível por Macintosh antes de usar o comando **Macfile directory** .
-  ### <a name="examples"></a><a name=BKMK_Examples></a>Disso
-  O exemplo a seguir altera as permissões do subdiretório pode ser vendas, nas estatísticas de volume acessíveis ao Macintosh, na unidade E do servidor local. O exemplo atribui a permissão ver arquivos, ver pastas e fazer alterações ao proprietário e ver os arquivos e ver as permissões de pastas para todos os outros usuários, ao mesmo tempo em que impede que o diretório seja renomeado, movido ou excluído.
+  ### <a name="examples"></a>Exemplos
+  Para alterar as permissões do subdiretório pode ser vendas, nas estatísticas de volume acessíveis ao Macintosh, na unidade E do servidor local. O exemplo atribui a permissão ver arquivos, ver pastas e fazer alterações ao proprietário e ver os arquivos e ver as permissões de pastas para todos os outros usuários, ao mesmo tempo em que impede que o diretório seja renomeado, movido ou excluído.
   ```
   macfile directory /path:e:\statistics\may sales /permissions:11111011000
   ```
@@ -78,12 +78,12 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 
 |         Parâmetro          |                                                                                                           Descrição                                                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Server:\\\\<computerName> |                                                            Especifica o servidor no qual os arquivos são agrupados. Se omitido, a operação será executada no computador local.                                                            |
-|   /Creator:<CreatorName>   |                                      Especifica o criador do arquivo. O localizador de Macintosh usa a opção de linha de comando **/Creator** para determinar o aplicativo que criou o arquivo.                                       |
-|      /Type:<typeName>      |                                 Especifica o tipo de arquivo. O localizador de Macintosh usa a opção de linha de comando **/Type** para determinar o tipo de arquivo dentro do aplicativo que criou o arquivo.                                 |
+| /Server\\\\<computerName> |                                                            Especifica o servidor no qual os arquivos são agrupados. Se omitido, a operação será executada no computador local.                                                            |
+|   necessitam<CreatorName>   |                                      Especifica o criador do arquivo. O localizador de Macintosh usa a opção de linha de comando **/Creator** para determinar o aplicativo que criou o arquivo.                                       |
+|      /Type<typeName>      |                                 Especifica o tipo de arquivo. O localizador de Macintosh usa a opção de linha de comando **/Type** para determinar o tipo de arquivo dentro do aplicativo que criou o arquivo.                                 |
 |    /datafork:<Filepath>    |                                                                   Especifica o local da bifurcação de dados que deve ser unida. Você pode especificar um caminho remoto.                                                                   |
 |  /resourcefork:<Filepath>  |                                                                 Especifica o local da bifurcação de recursos que deve ser unida. Você pode especificar um caminho remoto.                                                                 |
-|   /TargetFile:<Filepath>   | Obrigatório. Especifica o local do arquivo que é criado unindo-se uma bifurcação de dados e uma bifurcação de recursos, ou especifica o local do arquivo cujo tipo ou criador você está alterando. O arquivo deve estar no servidor especificado. |
+|   TargetFile<Filepath>   | Obrigatórios. Especifica o local do arquivo que é criado unindo-se uma bifurcação de dados e uma bifurcação de recursos, ou especifica o local do arquivo cujo tipo ou criador você está alterando. O arquivo deve estar no servidor especificado. |
 |             /?             |                                                                                               Exibe a ajuda no prompt de comando.                                                                                               |
 
 ### <a name="remarks"></a>Comentários
@@ -94,7 +94,7 @@ Para criar o arquivo treeapp no volume acessível para Macintosh D:\Release, usa
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
-Para alterar o criador do arquivo para o Microsoft Word 5,1, para o arquivo WOrd. txt no diretório D:\Word documents\Group files, no servidor \\\SERverA, digite:
+Para alterar o criador do arquivo para o Microsoft Word 5,1, para o arquivo WOrd. txt no diretório D:\Word documents\Group files, no \\servidor \SERverA, digite:
 ```
 macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
@@ -109,8 +109,8 @@ macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/
 
 |               Parâmetro                |                                                                                                                                                                           Descrição                                                                                                                                                                            |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /Server:\\\\<computerName>       |                                                                                                                        Especifica o servidor no qual os parâmetros são alterados. Se omitido, a operação será executada no computador local.                                                                                                                         |
-| /maxsessions: {número &#124; ilimitado} |                                                                                         Especifica o número máximo de usuários que podem usar simultaneamente os servidores de arquivos e de impressão para Macintosh. Se omitido, a configuração **maxsessions** para o servidor permanecerá inalterada.                                                                                         |
+|       /Server\\\\<computerName>       |                                                                                                                        Especifica o servidor no qual os parâmetros são alterados. Se omitido, a operação será executada no computador local.                                                                                                                         |
+| /maxsessions: {Number &#124; Unlimited} |                                                                                         Especifica o número máximo de usuários que podem usar simultaneamente os servidores de arquivos e de impressão para Macintosh. Se omitido, a configuração **maxsessions** para o servidor permanecerá inalterada.                                                                                         |
 |        /loginmessage:<Message>         | altera a mensagem que os usuários do Macintosh veem ao fazer logon no servidor de arquivos para Macintosh Server. O número máximo de caracteres para a mensagem de logon é 199. Se omitido, a mensagem **loginmessage** para o servidor permanecerá inalterada. Para remover uma mensagem de logon existente, inclua o parâmetro **/loginmessage** , mas deixe a variável de *mensagem* em branco. |
 |                   /?                   |                                                                                                                                                               Exibe a ajuda no prompt de comando.                                                                                                                                                               |
 
@@ -134,13 +134,13 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 
 |              Parâmetro               |                                                                                                                                                                       Descrição                                                                                                                                                                        |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|          {/Add &#124; /Set}          |                                                                                                                      Necessário quando você está adicionando ou alterando um volume acessível para Macintosh. Adiciona ou altera o volume especificado.                                                                                                                       |
-|      /Server:\\\\<computerName>      |                                                                                                             Especifica o servidor no qual adicionar, alterar ou remover um volume. Se omitido, a operação será executada no computador local.                                                                                                              |
-|          /Name:<volumeName>          |                                                                                                                                          Obrigatório. Especifica o nome do volume a ser adicionado, alterado ou removido.                                                                                                                                           |
-|          /Path:<directory>           |                                                                                                                Obrigatório e válido somente quando você está adicionando um volume. Especifica o caminho para o diretório raiz do volume a ser adicionado.                                                                                                                 |
+|          {/Add &#124;/Set}          |                                                                                                                      Necessário quando você está adicionando ou alterando um volume acessível para Macintosh. Adiciona ou altera o volume especificado.                                                                                                                       |
+|      /Server\\\\<computerName>      |                                                                                                             Especifica o servidor no qual adicionar, alterar ou remover um volume. Se omitido, a operação será executada no computador local.                                                                                                              |
+|          /Name<volumeName>          |                                                                                                                                          Obrigatórios. Especifica o nome do volume a ser adicionado, alterado ou removido.                                                                                                                                           |
+|          /Path<directory>           |                                                                                                                Obrigatório e válido somente quando você está adicionando um volume. Especifica o caminho para o diretório raiz do volume a ser adicionado.                                                                                                                 |
 |    /ReadOnly: {true &#124; false}     | Especifica se os usuários podem alterar arquivos no volume. Digite true para especificar que os usuários não podem alterar arquivos no volume. Digite false para especificar que os usuários podem alterar arquivos no volume. Se omitido ao adicionar um volume, as alterações nos arquivos são permitidas. Se omitido ao alterar um volume, a configuração **ReadOnly** para o volume permanece inalterada. |
 |  /guestsallowed: {true &#124; false}  |      Especifica se os usuários que fazem logon como convidados podem usar o volume. Digite true para especificar que os convidados podem usar o volume. Digite false para especificar que convidados não podem usar o volume. Se omitido ao adicionar um volume, os convidados poderão usar o volume. Se omitido ao alterar um volume, a configuração **guestsallowed** para o volume permanece inalterada.       |
-|         /Password:<Password>         |                                                                               Especifica uma senha que será necessária para acessar o volume. Se omitido ao adicionar um volume, nenhuma senha é criada. Se omitido ao alterar um volume, a senha permanece inalterada.                                                                               |
+|         /Password<Password>         |                                                                               Especifica uma senha que será necessária para acessar o volume. Se omitido ao adicionar um volume, nenhuma senha é criada. Se omitido ao alterar um volume, a senha permanece inalterada.                                                                               |
 | /maxusers: {<Number>>&#124;ilimitado} |                                                 Especifica o número máximo de usuários que podem usar simultaneamente os arquivos no volume. Se omitido ao adicionar um volume, um número ilimitado de usuários poderá usar o volume. Se omitido ao alterar um volume, o valor de **maxusers** permanece inalterado.                                                 |
 |               /remove                |                                                                                                                                Necessário quando você está removendo um volume Macintosh-acessível. Remove o volume especificado.                                                                                                                                |
 |                  /?                  |                                                                                                                                                           Exibe a ajuda no prompt de comando.                                                                                                                                                           |
@@ -157,7 +157,7 @@ Para alterar o volume criado acima para somente leitura e exigir uma senha e def
 ```
 macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
-Para adicionar um volume chamado Landscape design, no servidor \\\Magnolia, usando o diretório Trees na unidade E para especificar que o volume pode ser acessado por convidados, digite:
+Para adicionar um volume chamado Landscape design, no servidor \\\Magnolia, usando o diretório Trees na unidade e para especificar que o volume pode ser acessado por convidados, digite:
 ```
 macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```

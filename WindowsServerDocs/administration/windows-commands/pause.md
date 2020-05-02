@@ -1,6 +1,6 @@
 ---
 title: pause
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 135d074a71c7153cc1665ad7b543bdba56ed66e8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89e76c4f45f59c32ef879fb518a1a92c973f5cdf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837679"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723350"
 ---
 # <a name="pause"></a>pause
 
@@ -24,7 +24,7 @@ Suspende o processamento de um programa em lotes e exibe o seguinte prompt:
 ```
 Press any key to continue . . .
 ```
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -51,7 +51,7 @@ pause
   Se você pressionar s (para Sim) em resposta a essa mensagem, o programa do lote terminará e controlará o retorno ao sistema operacional.
 - Você pode inserir o comando **Pause** antes de uma seção do arquivo em lotes que você talvez não queira processar. Quando a **pausa** suspende o processamento do programa em lotes, você pode pressionar CTRL + C e, em seguida, pressionar Y para interromper o programa em lotes.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para criar um programa em lotes que solicita que o usuário altere os discos em uma das unidades, digite:
 ```

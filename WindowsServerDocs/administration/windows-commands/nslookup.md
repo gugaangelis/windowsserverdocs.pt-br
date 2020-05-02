@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35f790a3a537959501afe7c3173317f22b934ec6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838089"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723496"
 ---
 # <a name="nslookup"></a>nslookup
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações que você pode usar para diagnosticar a infraestrutura do DNS (sistema de nomes de domínio). Antes de usar essa ferramenta, você deve estar familiarizado com o funcionamento do DNS. A ferramenta de linha de comando nslookup só estará disponível se você tiver instalado o protocolo TCP/IP.
 ## <a name="syntax"></a>Sintaxe
@@ -93,7 +93,7 @@ nslookup /view <FileName>
   Se você precisar pesquisar mais de um dado, poderá usar o modo interativo. Digite um hífen (-) para o primeiro parâmetro e o nome ou endereço IP de um servidor de nomes DNS para o segundo parâmetro. Ou, omita os parâmetros e **nslookup** usa o servidor de nomes DNS padrão. A seguir estão algumas dicas sobre como trabalhar no modo interativo:
   -   Para interromper comandos interativos a qualquer momento, pressione CTRL + B.
   -   Para sair, digite **Exit**.
-  -   Para tratar um comando interno como um nome de computador, preceda-o com o caractere de escape (\\).
+  -   Para tratar um comando interno como um nome de computador, preceda-o com o caractere de escape\\().
   -   Um comando não reconhecido é interpretado como um nome de computador.
 - Se a solicitação de pesquisa falhar, o **nslookup** imprime uma mensagem de erro. A tabela a seguir lista as possíveis mensagens de erro.
   |**Mensagem de erro**|**Descrição**|
@@ -112,5 +112,5 @@ nslookup /view <FileName>
   - Larson, M. e C. Liu. 2001. *DNS no Windows 2000*. Sebastopol, Califórnia: o ' Reilly and Associates, Inc.
     #### <a name="examples"></a>Exemplos
     Cada opção de linha de comando consiste em um hífen (-) seguido imediatamente pelo nome do comando e, em alguns casos, um sinal de igual (=) e, em seguida, um valor. Por exemplo, para alterar o tipo de consulta padrão para informações de host (computador) e o tempo limite inicial para 10 segundos, digite: **nslookup-QueryType = HINFO-Timeout = 10**
-    ## <a name="see-also"></a>Consulte também
+    ## <a name="see-also"></a>Consulte Também
     - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

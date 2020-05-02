@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ff6fc2f483bceb99b970cd0c48f56985ecd485b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25bc5a0b5da0c78ccc68cf7b8fc70a5b4ec11a1f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839349"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723901"
 ---
 # <a name="mqbkup"></a>mqbkup
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Faz backup de arquivos de mensagens do MSMQ e configurações do registro em um dispositivo de armazenamento e restaura as mensagens e configurações armazenadas anteriormente.   
 O backup e a operação de restauração irão parar o serviço MSMQ local. Se o serviço MSMQ foi iniciado com antecedência, o utilitário tentará reiniciar o serviço MSMQ no final do backup ou na operação de restauração. Se o serviço já tiver sido interrompido antes da execução do utilitário, nenhuma tentativa de reiniciar o serviço será feita.  
@@ -32,9 +32,9 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 |-------|--------|  
 |/b|Especifica a operação de backup|  
 |/r|Especifica a operação de restauração|  
-|pasta < path_to_storage\_dispositivo >|Especifica o caminho onde os arquivos de mensagem MSMQ e as configurações do registro são armazenados|  
+|> de <\_de pasta path_to_storage dispositivo|Especifica o caminho onde os arquivos de mensagem MSMQ e as configurações do registro são armazenados|  
 |/?|Exibe a ajuda no prompt de comando.|  
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso  
+## <a name="examples"></a>Exemplos  
 Para fazer backup de todos os arquivos de mensagens MSMQ e configurações do registro e armazená-los na pasta *Msmqbkup* na unidade C:.  
 ```  
 mqbkup /b c:\msmqbkup  

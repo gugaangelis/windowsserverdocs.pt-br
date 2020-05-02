@@ -1,6 +1,6 @@
 ---
 title: manage-bde
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 816e20152ec40ce54c1192f3075c6f4556aed3db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 567e0ed45f6bef42e82c3a68b3c0cbbb352b12d9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839689"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724037"
 ---
 # <a name="manage-bde"></a>manage-bde
 
 
 
-Usado para ativar ou desativar o BitLocker, especificar mecanismos de desbloqueio, atualizar métodos de recuperação e desbloquear unidades de dados protegidas pelo BitLocker. Essa ferramenta de linha de comando pode ser usada no lugar do **criptografia de unidade de disco BitLocker** item do painel de controle. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Usado para ativar ou desativar o BitLocker, especificar mecanismos de desbloqueio, atualizar métodos de recuperação e desbloquear unidades de dados protegidas pelo BitLocker. Essa ferramenta de linha de comando pode ser usada no lugar do **criptografia de unidade de disco BitLocker** item do painel de controle.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -54,17 +54,17 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 |-? ou/?|Exibe a ajuda resumida no prompt de comando.|
 |-Help ou-h|Exibe a ajuda completa no prompt de comando.|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir exibe as unidades no computador e identifica se elas são protegidas pelo BitLocker e o status de criptografia atual.
+Para exibir as unidades no computador e identificar se elas são protegidas pelo BitLocker e o status de criptografia atual.
 ```
 manage-bde -status
 ```
-O exemplo a seguir ilustra como habilitar o BitLocker na unidade C com a opção de uma senha de recuperação. A senha de recuperação será gerada pelo BitLocker e exibida na tela para que você possa gravá-la.
+Para ilustrar como habilitar o BitLocker na unidade C com a opção de uma senha de recuperação. A senha de recuperação será gerada pelo BitLocker e exibida na tela para que você possa gravá-la.
 ```
 manage-bde –on C: -recoverypassword
 ```
-O exemplo a seguir ilustra o desbloqueio de uma unidade protegida pelo BitLocker usando uma senha de recuperação.
+Para ilustrar o desbloqueio de uma unidade protegida pelo BitLocker usando uma senha de recuperação.
 ```
 manage-bde –unlock E: -recoverypassword 111111-222222-333333-444444-555555-666666-777777-888888
 ```

@@ -1,6 +1,6 @@
 ---
 title: msdt
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87c1e4e8cd6d9de036b47de590867a6531d0335a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e5d31b1b5a73d975aec08d675aaff04ee29c7d3c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839249"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723871"
 ---
 # <a name="msdt"></a>msdt
 
@@ -35,9 +35,9 @@ A tabela a seguir inclui os parâmetros e as opções com suporte do MSDT. exe.
 
 |      Parâmetro      |                                                                                            Descrição                                                                                             |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /ID \<nome do pacote > |        Especifica qual pacote de diagnóstico deve ser executado. Para obter uma lista de pacotes disponíveis, consulte a ID do pacote de solução de problemas na seção pacotes de solução de problemas disponíveis mais adiante neste tópico.         |
-|  /Path \<Directory  |                                                                                           arquivo. diagpkg                                                                                            |
-|   /DCI \<chave de acesso >   |                                        Popula o campo de chave de acesso na MSDT. Esse parâmetro só é usado quando um provedor de suporte forneceu uma chave de acesso.                                         |
-|  /DT \<Directory >   | Exibe o histórico de solução de problemas no diretório especificado. Os resultados de diagnóstico são armazenados nos diretórios **%LocalAppData%\Diagnostics** ou **%LocalAppData%\ElevatedDiagnostics** do usuário. |
-| /AF \<arquivo de resposta >  |                                               Especifica um arquivo de resposta em formato XML que contém respostas a uma ou mais interações de diagnóstico.                                               |
+| /ID \<nome do pacote> |        Especifica qual pacote de diagnóstico deve ser executado. Para obter uma lista de pacotes disponíveis, consulte a ID do pacote de solução de problemas na seção pacotes de solução de problemas disponíveis mais adiante neste tópico.         |
+|  diretório \</Path  |                                                                                           arquivo. diagpkg                                                                                            |
+|   > \<de chave de acesso/DCI   |                                        Popula o campo de chave de acesso na MSDT. Esse parâmetro só é usado quando um provedor de suporte forneceu uma chave de acesso.                                         |
+|  > \<do diretório/DT   | Exibe o histórico de solução de problemas no diretório especificado. Os resultados de diagnóstico são armazenados nos diretórios **%LocalAppData%\Diagnostics** ou **%LocalAppData%\ElevatedDiagnostics** do usuário. |
+| > \<do arquivo de resposta/AF  |                                               Especifica um arquivo de resposta em formato XML que contém respostas a uma ou mais interações de diagnóstico.                                               |
 

@@ -1,6 +1,6 @@
 ---
 title: nslookup set recurse
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bdcdaecdfc6923584a53bc09f985a16ff9b76126
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c4386bd5738806016b9ec15802faebf3efdcedf0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838389"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723597"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 

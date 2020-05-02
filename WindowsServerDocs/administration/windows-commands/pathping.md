@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 3f853ef430207c08e78e0446ce67c6b5bec4c1db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05675e4764c4c3e135647a1185da05634ee7264f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837689"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723363"
 ---
 # <a name="pathping"></a>pathping
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Fornece informações sobre a latência de rede e a perda de rede em saltos intermediários entre uma origem e um destino. o **pathping** envia várias mensagens de solicitação de eco para cada roteador entre uma origem e um destino durante um período de tempo e, em seguida, computa os resultados com base nos pacotes retornados de cada roteador. Como o **pathping** exibe o grau de perda de pacotes em um determinado roteador ou link, você pode determinar quais roteadores ou sub-redes podem estar tendo problemas de rede. 
 
@@ -32,15 +32,15 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 |Parâmetro|Descrição|
 |-------|--------|
 |/n|Impede o **pathping** de tentar resolver os endereços IP de roteadores intermediários para seus nomes. Isso pode agilizar a exibição dos resultados do **pathping** .|
-|/h \<MaximumHops >|Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos.|
-|/g \<hostlist >|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem flexível no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços.|
-|/p \<período >|Especifica o número de milissegundos a aguardar entre pings consecutivos. O padrão é 250 milissegundos (1/4 segundo).|
-|/q \<NumQueries >|Especifica o número de mensagens de solicitação de eco enviadas a cada roteador no caminho. O padrão é 100 consultas.|
-|/w \<tempo limite >|Especifica o número de milissegundos para aguardar cada resposta. O padrão é 3000 milissegundos (3 segundos).|
-|/i \<IPaddress >|Especifica o endereço de origem.|
+|/h \<MaximumHops>|Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos.|
+|/g \<hostlist>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem flexível no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços.|
+|/p \<período>|Especifica o número de milissegundos a aguardar entre pings consecutivos. O padrão é 250 milissegundos (1/4 segundo).|
+|/q \<NumQueries>|Especifica o número de mensagens de solicitação de eco enviadas a cada roteador no caminho. O padrão é 100 consultas.|
+|tempo \<limite de/w>|Especifica o número de milissegundos para aguardar cada resposta. O padrão é 3000 milissegundos (3 segundos).|
+|/i \<IPAddress>|Especifica o endereço de origem.|
 |/4 \<> IPv4|Especifica que pathping usa somente IPv4.|
 |/6 \<> IPv6|Especifica que o pathping usa somente IPv6.|
-|> de \<TargetName|Especifica o destino, que é identificado pelo endereço IP ou pelo nome do host.|
+|\<> TargetName|Especifica o destino, que é identificado pelo endereço IP ou pelo nome do host.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -51,9 +51,9 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 -   Ao usar o parâmetro **/w** , vários pings podem ser enviados em paralelo. Por isso, a quantidade de tempo especificada no parâmetro *Timeout* não é limitada pela quantidade de tempo especificada no parâmetro *period* para aguardar entre pings.
 -   Esse comando estará disponível somente se o protocolo TCP/IP estiver instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir mostra a saída do comando **pathping** :
+Para mostrar a saída do comando **pathping** :
 
 ```
 D:\>pathping /n corp1
@@ -85,7 +85,7 @@ Quando o **pathping** é executado, os primeiros resultados listam o caminho. Es
 
 No relatório de exemplo acima, **este nó/link**, **perdido/enviado = PCT** e colunas de **endereço** mostram que o link entre 172.16.87.218 e 192.168.52.1 está removendo 13% dos pacotes. Os roteadores em saltos 2 e 4 também estão descartando pacotes endereçados a eles, mas essa perda não afeta a capacidade de encaminhar o tráfego que não é endereçado a eles.
 
-As tarifas de perda exibidas para os links, identificadas como uma barra vertical ( **|** ) na coluna **endereço** , indicam o congestionamento de link que está causando a perda de pacotes que estão sendo encaminhados no caminho. As tarifas de perda exibidas para roteadores (identificadas por seus endereços IP) indicam que esses roteadores podem estar sobrecarregados.
+As tarifas de perda exibidas para os links, identificadas como uma barra**|** vertical () na coluna **endereço** , indicam o congestionamento do link que está causando a perda de pacotes que estão sendo encaminhados no caminho. As tarifas de perda exibidas para roteadores (identificadas por seus endereços IP) indicam que esses roteadores podem estar sobrecarregados.
 
 ## <a name="additional-references"></a>Referências adicionais
 -   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

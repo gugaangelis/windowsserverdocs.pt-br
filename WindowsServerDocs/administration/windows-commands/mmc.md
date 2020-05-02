@@ -1,6 +1,6 @@
 ---
 title: mmc
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d143336db3369b3b319391967db879126d2fb29
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c168a9f4d91422f3877fd0c210c76248d1172b00
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839439"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723963"
 ---
 # <a name="mmc"></a>mmc
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Usando opções de linha de comando do MMC, você pode abrir um console do **MMC** específico, abrir o **MMC** no modo de autor ou especificar que a versão de 32 bits ou 64 bits do **MMC** esteja aberta.
 ## <a name="syntax"></a>Sintaxe
@@ -36,7 +36,7 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 |           /?           |                                                                                    Exibe a ajuda no prompt de comando.                                                                                     |
 
 ## <a name="remarks"></a>Comentários
-- Usando a opção de linha de comando <path> **\\** <filename> **. msc** , você pode usar variáveis de ambiente para criar linhas de comando ou atalhos que não dependem do local explícito dos arquivos de console. Por exemplo, se o caminho para um arquivo de console estiver na pasta do sistema (por exemplo, **MMC c:\winnt\system32\ console_name. msc**), você poderá usar a cadeia de caracteres de dados expansível **% systemroot%** para especificar o local (**mmc% systemroot% \ system32 \ console_name. msc**). Isso pode ser útil se você estiver delegando tarefas a pessoas em sua organização que estão trabalhando em computadores diferentes.
+- Usando a <path> **\\** <filename>opção de linha de comando **. msc** , você pode usar variáveis de ambiente para criar linhas de comando ou atalhos que não dependem do local explícito dos arquivos de console. Por exemplo, se o caminho para um arquivo de console estiver na pasta do sistema (por exemplo, **MMC c:\winnt\system32\ console_name. msc**), você poderá usar a cadeia de caracteres de dados expansível **% systemroot%** para especificar o local (**mmc% systemroot% \ system32 \ console_name. msc**). Isso pode ser útil se você estiver delegando tarefas a pessoas em sua organização que estão trabalhando em computadores diferentes.
 - Usando a opção de linha de comando **/A** quando os consoles são abertos com essa opção, eles são abertos no modo de autor, independentemente do seu modo padrão. Isso não altera permanentemente a configuração de modo padrão para arquivos; Quando você omite essa opção, o MMC abre arquivos de console de acordo com suas configurações de modo padrão.
 - Depois de abrir o **MMC** ou um arquivo de console no modo de autor, você pode abrir qualquer console existente clicando em **abrir** no menu do **console** .
 - Você pode usar a linha de comando para criar atalhos para abrir o **MMC** e os consoles salvos. Um comando de linha de comando funciona com o comando **executar** no menu **Iniciar** , em qualquer janela de prompt de comando, em atalhos ou em qualquer arquivo ou programa em lotes que chame o comando.

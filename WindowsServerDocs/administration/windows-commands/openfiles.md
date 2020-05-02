@@ -1,6 +1,6 @@
 ---
 title: openfiles
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f684acc48fbb279ced8ce1dfb3a930ff15f3bf13
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 050e3f31435949ecce2a9a06a70d86eacd745687
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837819"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723396"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -41,13 +41,13 @@ openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]]
 
 |            Parâmetro             |                                                                                                                                 Descrição                                                                                                                                  |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           /s \<> do sistema           | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-|    /u [\<\]de domínio > <UserName>     |                                                          Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão.                                                           |
-|         /p [\<a senha >]         |                                               Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado.                                                |
-|        /ID \<OpenFileid >         |                                       Desconecta arquivos abertos pela ID de arquivo especificada. O caractere curinga ( **&#42;** ) pode ser usado com esse parâmetro.</br>Observação: você pode usar o comando **Openfiles/Query** para localizar a ID do arquivo.                                       |
-|         /a \<AccessedBy >         |                                                Desconecta todos os arquivos abertos associados ao nome de usuário especificado no parâmetro *AccessedBy* . O caractere curinga ( **&#42;** ) pode ser usado com esse parâmetro.                                                 |
-| /o {leitura de \| gravação \| leitura/gravação} |                                               Desconecta todos os arquivos abertos com o valor de modo aberto especificado. Os valores válidos são leitura, gravação ou leitura/gravação. O caractere curinga ( **&#42;** ) pode ser usado com esse parâmetro.                                                |
-|         /op \<OpenFile >          |                                                           Desconecta todas as conexões de arquivos abertas que são criadas por um nome de arquivo aberto específico. O caractere curinga ( **&#42;** ) pode ser usado com esse parâmetro.                                                           |
+|           /s \<sistema>           | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+|    /u [\<domínio>\]<UserName>     |                                                          Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão.                                                           |
+|         /p [\<senha>]         |                                               Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado.                                                |
+|        /ID \<openfileid>         |                                       Desconecta arquivos abertos pela ID de arquivo especificada. O caractere curinga (**&#42;**) pode ser usado com esse parâmetro.</br>Observação: você pode usar o comando **Openfiles/Query** para localizar a ID do arquivo.                                       |
+|         /a \<AccessedBy>         |                                                Desconecta todos os arquivos abertos associados ao nome de usuário especificado no parâmetro *AccessedBy* . O caractere curinga (**&#42;**) pode ser usado com esse parâmetro.                                                 |
+| /o {leitura \| / \| leitura/gravação de gravação} |                                               Desconecta todos os arquivos abertos com o valor de modo aberto especificado. Os valores válidos são leitura, gravação ou leitura/gravação. O caractere curinga (**&#42;**) pode ser usado com esse parâmetro.                                                |
+|         > \</op OpenFile          |                                                           Desconecta todas as conexões de arquivos abertas que são criadas por um nome de arquivo aberto específico. O caractere curinga (**&#42;**) pode ser usado com esse parâmetro.                                                           |
 |                /?                |                                                                                                                     Exibe a ajuda no prompt de comando.                                                                                                                     |
 
 ### <a name="examples"></a>Exemplos
@@ -64,7 +64,7 @@ Para desconectar todos os arquivos e diretórios abertos com o modo de leitura/g
 ```
 openfiles /disconnect /o read/write
 ```
-Para desconectar o diretório com o nome de arquivo aberto C:\TestShare\, independentemente de quem o está acessando, digite:
+Para desconectar o diretório com o nome de arquivo\, aberto C:\TestShare, independentemente de quem o está acessando, digite:
 ```
 openfiles /disconnect /a * /op c:\testshare\
 ```
@@ -87,10 +87,10 @@ openfiles /query [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] [/fo
 
 |          Parâmetro           |                                                                                                                                 Descrição                                                                                                                                  |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         /s \<> do sistema         | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-|  /u [\<\]de domínio > <UserName>   |                                                          Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão.                                                           |
-|       /p [\<a senha >]       |                                               Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado.                                                |
-| [/FO {tabela \| lista \| CSV}] |                             Exibe a saída no formato especificado. Os valores válidos para *Format* são:</br>TABELA: exibe a saída em uma tabela.</br>LISTA: exibe a saída em uma lista.</br>CSV: exibe a saída no formato de valores separados por vírgula.                              |
+|         /s \<sistema>         | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+|  /u [\<domínio>\]<UserName>   |                                                          Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão.                                                           |
+|       /p [\<senha>]       |                                               Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado.                                                |
+| [/FO {tabela \| de \| lista CSV}] |                             Exibe a saída no formato especificado. Os valores válidos para *Format* são:</br>TABELA: exibe a saída em uma tabela.</br>LISTA: exibe a saída em uma lista.</br>CSV: exibe a saída no formato de valores separados por vírgula.                              |
 |             /NH              |                                                                                Suprime o cabeçalho da coluna na saída. Válido somente quando o parâmetro **/fo** é definido como **Table** ou **CSV**.                                                                                 |
 |              /v              |                                                                                                       Especifica que informações detalhadas serão exibidas na saída.                                                                                                        |
 |              /?              |                                                                                                                     Exibe a ajuda no prompt de comando.                                                                                                                     |
@@ -131,7 +131,7 @@ openfiles /local [on | off]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[on \| off]|Habilita ou desabilita o sinalizador global da lista de objetos de manutenção do sistema, que controla os identificadores de arquivos locais.|
+|[ligado \| desativado]|Habilita ou desabilita o sinalizador global da lista de objetos de manutenção do sistema, que controla os identificadores de arquivos locais.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ### <a name="remarks"></a>Comentários

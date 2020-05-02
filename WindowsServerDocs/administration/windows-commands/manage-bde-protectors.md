@@ -1,6 +1,6 @@
 ---
 title: Manage-bde protetores
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 1a2e2c851ec9bc93ec434a35f14c6f92ec831876
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e01049a5fb3dc419e219fe4ec8b11dcdc790f919
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839949"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724114"
 ---
 # <a name="manage-bde-protectors"></a>Manage-bde: protetores
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Gerencia os métodos de proteção usados para a chave de criptografia do BitLocker. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Gerencia os métodos de proteção usados para a chave de criptografia do BitLocker.
 ## <a name="syntax"></a>Sintaxe
 ```
 manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup}] <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
@@ -84,8 +84,8 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 |         -tipo          |                               Identifica o protetor de chave a ser excluído. Você também pode usar **-t** como uma versão abreviada desse comando.                               |
 |    recoverypassword    |                                                 Especifica que qualquer protetor de chave de senha de recuperação deve ser excluído.                                                 |
 |      externalkey       |                                        Especifica que qualquer protetor de chave externa associado à unidade deve ser excluído.                                         |
-|      Certificate       |                                       Especifica que qualquer protetor de chave de certificado associado à unidade deve ser excluído.                                       |
-|          TPM           |                                        Especifica que qualquer protetor de chave somente TPM associado à unidade deve ser excluído.                                         |
+|      certificado       |                                       Especifica que qualquer protetor de chave de certificado associado à unidade deve ser excluído.                                       |
+|          tpm           |                                        Especifica que qualquer protetor de chave somente TPM associado à unidade deve ser excluído.                                         |
 |    tpmandstartupkey    |                                Especifica que qualquer TPM e protetores de chave baseados em chave de inicialização associados à unidade devem ser excluídos.                                |
 |       tpmandpin        |                                    Especifica que qualquer protetor de chave com base em TPM e PIN associado à unidade deve ser excluído.                                    |
 | tpmandpinandstartupkey |                             Especifica que qualquer TPM, PIN e chave de inicialização com base em protetores de chave associados à unidade devem ser excluídos.                             |
@@ -112,24 +112,24 @@ manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-comp
 |   -? ou/?    |                                                                                                                                                                                                    Exibe a ajuda resumida no prompt de comando.                                                                                                                                                                                                    |
 |  -Help ou-h  |                                                                                                                                                                                                  Exibe a ajuda completa no prompt de comando.                                                                                                                                                                                                   |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
-O exemplo a seguir ilustra o uso do comando **-protectors** para adicionar um protetor de chave de certificado identificado por um arquivo de certificado para a unidade E.
+## <a name="examples"></a>Exemplos
+Ilustra o uso do comando **-protectors** para adicionar um protetor de chave de certificado identificado por um arquivo de certificado para a unidade E.
 ```
 manage-bde  -protectors  -add E: -certificate  -cf c:\File Folder\Filename.cer
 ```
-O exemplo a seguir ilustra o uso do comando **-protectors** para adicionar um protetor de chave **adaccountorgroup** identificado pelo domínio e pelo nome de usuário para a unidade E.
+Para ilustrações usando o comando **-protectors** para adicionar um protetor de chave **adaccountorgroup** identificado pelo domínio e pelo nome de usuário na unidade E.
 ```
 manage-bde  -protectors  -add E: -sid DOMAIN\user
 ```
-O exemplo a seguir ilustra o uso do comando **protectors** para desabilitar a proteção até que o computador tenha sido reinicializado 3 vezes.
+Para ilustrar o uso do comando **protectors** para desabilitar a proteção até que o computador tenha sido reinicializado 3 vezes.
 ```
 manage-bde  -protectors  -disable C: -rc 3
 ```
-O exemplo a seguir ilustra o uso do comando **-protectors** para excluir todos os protetores de chave com base em TPM e chave de inicialização na unidade C.
+Para ilustrações usando o comando **-protectors** para excluir todos os protetores de chave com base em TPM e chave de inicialização na unidade C.
 ```
 manage-bde  -protectors -delete C: -type tpmandstartupkey
 ```
-O exemplo a seguir ilustra o uso do comando **-protectors** para fazer backup de todas as informações de recuperação da unidade C para AD DS.
+Para ilustrar o uso do comando **-protectors** para fazer backup de todas as informações de recuperação da unidade C para AD DS.
 ```
 manage-bde  -protectors  -adbackup C:
 ```

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb77cac3871dcf4a411638409de68d038a317d24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 52d4a99d21574f9cae3120201dcd4db0cd9a2202
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837709"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723371"
 ---
 # <a name="path"></a>path
 
@@ -22,7 +22,7 @@ ms.locfileid: "80837709"
 
 Define o caminho de comando na variável de ambiente PATH (o conjunto de diretórios usado para pesquisar arquivos executáveis). Se usado sem parâmetros, **path** exibe o caminho do comando atual.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -35,7 +35,7 @@ path ;
 
 |     Parâmetro     |                                                                                                     Descrição                                                                                                      |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<drive >:]<Path> |                                                                            Especifica a unidade e o diretório a serem definidos no caminho de comando.                                                                             |
+| [\<Unidade>:]<Path> |                                                                            Especifica a unidade e o diretório a serem definidos no caminho de comando.                                                                             |
 |         ;         | Separa diretórios no caminho de comando. Se usado sem outros parâmetros, **;** limpa os caminhos de comando existentes da variável de ambiente Path e direciona o cmd. exe para pesquisar somente no diretório atual. |
 |      Multi-Path       |                                                         Anexa o caminho do comando ao conjunto existente de diretórios listados na variável de ambiente PATH.                                                         |
 |        /?         |                                                                                         Exibe a ajuda no prompt de comando.                                                                                         |

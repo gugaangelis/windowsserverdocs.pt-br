@@ -1,6 +1,6 @@
 ---
 title: mais
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 4c627e003e71cb2265c717669e082d48564dd483
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f600d25dac32be2e7a0ebc2504a03dbf01235169
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839419"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723948"
 ---
 # <a name="more"></a>mais
 
@@ -22,7 +22,7 @@ ms.locfileid: "80839419"
 
 Exibe uma tela de saída de cada vez.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,14 +36,14 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 |           Parâmetro            |                               Descrição                               |
 |--------------------------------|-------------------------------------------------------------------------|
-|           > de comando \<           |      Especifica um comando para o qual você deseja exibir a saída.      |
+|           \<> de comando           |      Especifica um comando para o qual você deseja exibir a saída.      |
 |               /c               |               Limpa a tela antes de exibir uma página.               |
 |               /p               |                      Expande os caracteres de feed de formulário.                      |
 |               /s               |          Exibe várias linhas em branco como uma única linha em branco.          |
-|             /t\<N >             |         Exibe as guias como o número de espaços especificado por *N*.         |
-|             +\<N >              |     Exibe o primeiro arquivo que começa na linha especificada por *N*.     |
-| [\<drive >:] [\<caminho >]\<nome do arquivo > |          Especifica o local e o nome de um arquivo a ser exibido.          |
-|            Arquivos de \<>            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivos com um espaço. |
+|             /t\<N>             |         Exibe as guias como o número de espaços especificado por *N*.         |
+|             +\<N>              |     Exibe o primeiro arquivo que começa na linha especificada por *N*.     |
+| [\<Unidade>:] [\<Caminho>] \<Nome de arquivo> |          Especifica o local e o nome de um arquivo a ser exibido.          |
+|            \<Arquivos>            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivos com um espaço. |
 |               /?               |                  Exibe a ajuda no prompt de comando.                   |
 
 ## <a name="remarks"></a>Comentários
@@ -52,19 +52,19 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
     | Chave | Ação |
     | --- | ------ |
-    | PRESSIONA | Exibe a próxima página. |
-    | ENTER | Exibe a próxima linha. |
+    | BARRA DE ESPAÇOS | Exibe a próxima página. |
+    | Enter | Exibe a próxima linha. |
     | f | Exibe o próximo arquivo. |
     | q | Encerra o comando **more** . |
     | = | Mostra o número da linha. |
-    | p \<N > | Exibe as próximas *N* linhas. |
-    | s \<N > |S KIPS as próximas *N* linhas. |
+    | p \<N> | Exibe as próximas *N* linhas. |
+    | s \<N> |S KIPS as próximas *N* linhas. |
     | ? | Mostra os comandos que estão disponíveis no prompt **mais** .| 
     
--   Ao usar o caractere de redirecionamento ( **<** ), você deve especificar um nome de arquivo como a origem. Ao usar o pipe ( **\|** ), você pode usar comandos como **dir**, **Sort**e **Type**.
+-   Ao usar o caractere de redirecionamento**<**(), você deve especificar um nome de arquivo como a origem. Ao usar o pipe (**\|**), você pode usar comandos como **dir**, **Sort**e **Type**.
 -   O comando **more** , com parâmetros diferentes, está disponível no console de recuperação.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para exibir a primeira tela de informações de um arquivo chamado clients. New, digite um dos seguintes comandos:
 ```
@@ -95,7 +95,7 @@ Os exemplos a seguir podem ser usados no prompt **mais** (`-- More --`).
 - Para exibir o próximo arquivo listado na linha de comando, digite **f** no prompt **mais** .
 - Para mostrar os comandos disponíveis, digite **?** no prompt **mais** .
 - Para encerrar **mais**, digite **q** no prompt **mais** .
-- Para exibir o número de linha atual, digite **=** no prompt **mais** . O número da linha atual é adicionado ao prompt **mais** da seguinte maneira:  
+- Para exibir o número de linha atual, **=** digite no prompt **mais** . O número da linha atual é adicionado ao prompt **mais** da seguinte maneira:  
   ```
   -- More [Line: 24] --
   ```  

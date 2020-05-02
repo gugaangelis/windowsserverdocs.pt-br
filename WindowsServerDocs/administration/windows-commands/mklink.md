@@ -1,6 +1,6 @@
 ---
 title: mklink
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d6328d972b07b1bebd272788b896fd491e47380
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 83a607711f0abe51810aa5abf4eb731206d810c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839549"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723969"
 ---
 # <a name="mklink"></a>mklink
 Cria um link simbólico.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -34,13 +34,13 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 |/d|Cria um link simbólico de diretório. Por padrão, o **MKLINK** cria um link simbólico de arquivo.|
 |/h|Cria um link físico em vez de um link simbólico.|
 |/j|Cria uma junção de diretório.|
-|Link de \<>|Especifica o nome do link simbólico que está sendo criado.|
-|\<de destino >|Especifica o caminho (relativo ou absoluto) ao qual o novo link simbólico se refere.|
+|\<> de link|Especifica o nome do link simbólico que está sendo criado.|
+|\<Target>|Especifica o caminho (relativo ou absoluto) ao qual o novo link simbólico se refere.|
 |/?|Exibe a ajuda no prompt de comando.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir demonstra a criação e a remoção de um link simbólico chamado MyFolder e MyFile. File do diretório raiz para o diretório \Users\User1\Documents e um exemplo. File localizado no diretório:
+Demonstra a criação e a remoção de um link simbólico chamado MyFolder e MyFile. File do diretório raiz para o diretório \Users\User1\Documents e um exemplo. File localizado no diretório:
 ```
 mklink /d \MyFolder \Users\User1\Documents
 mklink /h \MyFile.file \User1\Documents\example.file

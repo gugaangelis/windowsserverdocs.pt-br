@@ -1,6 +1,6 @@
 ---
 title: atualização do Manage-bde
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0bca75e78ac5b6fec432fa93eadfd9bde795ee9a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce7d1805a98a3029ce9b83a1b475ecd8bdb0a4ab
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839779"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724051"
 ---
 # <a name="manage-bde-upgrade"></a>Manage-bde: atualizar
 
 
 
-Atualiza a versão do BitLocker. Para obter exemplos de como esse comando pode ser usado, consulte [exemplos](#BKMK_Examples).
+Atualiza a versão do BitLocker.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,15 +32,15 @@ manage-bde -upgrade [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|Unidade de \<>|Representa uma letra de unidade seguida de dois-pontos.|
+|\<> da unidade|Representa uma letra de unidade seguida de dois-pontos.|
 |-ComputerName|Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando.|
-|Nome do \<>|Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.|
+|\<Name>|Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador.|
 |-? ou/?|Exibe a ajuda resumida no prompt de comando.|
 |-Help ou-h|Exibe a ajuda completa no prompt de comando.|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir ilustra o uso do comando **-upgrade** para atualizar a criptografia BitLocker na unidade C.
+Para ilustrações usando o comando **-upgrade** para atualizar a criptografia BitLocker na unidade C.
 ```
 manage-bde –upgrade C:
 ```

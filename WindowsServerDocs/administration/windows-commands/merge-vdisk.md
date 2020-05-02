@@ -1,6 +1,6 @@
 ---
 title: Mesclar vdisk
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1315b82510ae356f80d5b519c0676d0d156ab9fd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1bfcdde34d2c7dd6146222d04e982aa1ec8009c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839619"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723997"
 ---
 # <a name="merge-vdisk"></a>Mesclar vdisk
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Mescla um VHD (disco rígido virtual) diferencial com seu VHD pai correspondente. O VHD pai será modificado para incluir as modificações do VHD diferencial.
 > [!NOTE]
@@ -36,14 +36,14 @@ Mescla um VHD (disco rígido virtual) diferencial com seu VHD pai correspondente
 > ## <a name="remarks"></a>Comentários
 > - Um VHD deve ser selecionado e desanexado para que essa operação tenha sucesso. Use o comando **Select VDISK** para selecionar um VHD e deslocar o foco para ele.
 > - Esse parâmetro modifica o VHD pai. Como resultado, outros VHDs diferenciais que dependem do pai não serão mais válidos.
->   ## <a name="examples"></a><a name=BKMK_Examples></a>Disso
+>   ## <a name="examples"></a>Exemplos
 >   Para mesclar um VHD diferencial com seu VHD pai, digite:
 >   ```
 >   merge vdisk depth=1
 >   ```
 >   ## <a name="additional-references"></a>Referências adicionais
 > - - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-> - [anexar vdisk](attach-vdisk.md)
+> - [attach vdisk](attach-vdisk.md)
 > - [Compact vdisk](compact-vdisk.md)
 
 -   [detalhes do VDISK](detail-vdisk.md)

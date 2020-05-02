@@ -1,6 +1,6 @@
 ---
 title: Md
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2fad89fe4b7e8425064301f6020fefaa5705b25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a605571fb74af99d0f365a100dd33fd4db0d3f22
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839579"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724001"
 ---
 # <a name="md"></a>Md
 
@@ -25,7 +25,7 @@ Cria um diretório ou subdiretório.
 > [!NOTE]
 > Esse comando é o mesmo que o comando **mkdir** .
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -38,15 +38,15 @@ mkdir [<Drive>:]<Path>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|> da unidade de \<:|Especifica a unidade na qual você deseja criar o novo diretório.|
-|\<caminho >|Obrigatório. Especifica o nome e o local do novo diretório. O comprimento máximo de qualquer caminho único é determinado pelo sistema de arquivos.|
+|\<> da unidade:|Especifica a unidade na qual você deseja criar o novo diretório.|
+|\<Caminho>|Obrigatórios. Especifica o nome e o local do novo diretório. O comprimento máximo de qualquer caminho único é determinado pelo sistema de arquivos.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
 Extensões de comando, que são habilitadas por padrão, permitem que você use um único comando **MD** para criar diretórios intermediários em um caminho especificado.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para criar um diretório chamado directory1 no diretório atual, digite:
 ```

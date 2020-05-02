@@ -1,6 +1,6 @@
 ---
-title: mascara
-description: Tópico de comandos do Windows para * * * *-
+title: mask
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1cb92caacb955449c1baaad411fdbe4cdf05b73
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 816bcd932091b33ed897add5a13603e3a1eea925
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839639"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724015"
 ---
-# <a name="mask"></a>mascara
+# <a name="mask"></a>mask
 
 
 
 Remove cópias de sombra de hardware que foram importadas usando o comando de **importação** .
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -40,7 +40,7 @@ mask <ShadowSetID>
 
 -   Você pode usar um alias existente ou uma variável de ambiente no lugar de *ShadowSetID*. Use **Adicionar** sem parâmetros para ver os aliases existentes.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
 Para remover a cópia de sombra importada% Import_1%, digite:
 ```

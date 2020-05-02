@@ -1,6 +1,6 @@
 ---
 title: nslookup set querytype
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c066277a22325e5db8383f58cda31038aa656e0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dc992d83de8537c285b6d2d97e5f44545e2f930f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838429"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723604"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Altera o tipo de registro de recurso para a consulta.
 ## <a name="syntax"></a>Sintaxe
@@ -26,15 +26,15 @@ Altera o tipo de registro de recurso para a consulta.
 set querytype=<ResourceRecordtype>
 ```
 ### <a name="parameters"></a>Parâmetros
-<ResourceRecordtype> especifica um tipo de registro de recurso DNS. O tipo de registro de recurso padrão é um. A tabela a seguir lista os valores válidos para esse comando.
+<ResourceRecordtype>Especifica um tipo de registro de recurso DNS. O tipo de registro de recurso padrão é um. A tabela a seguir lista os valores válidos para esse comando.
 
-| {1&gt;Valor&lt;1} |                                                   Descrição                                                   |
+| Valor |                                                   Descrição                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
-|   A   |                                      Especifica o endereço&#39;IP de um computador                                      |
-|  OUTRO  |                                     Especifica o endereço&#39;IP de um computador.                                      |
+|   Um   |                                      Especifica um endereço IP&#39;s de computador                                      |
+|  ANY  |                                     Especifica um endereço IP&#39;s de computador.                                      |
 | CNAME |                                    Especifica um nome canônico para um alias.                                     |
 |  GID  |                                  Especifica um identificador de grupo de um nome de grupo.                                  |
-| HINFO |                          Especifica a CPU&#39;e o tipo de sistema operacional do computador.                           |
+| HINFO |                          Especifica um computador&#39;s CPU e o tipo de sistema operacional.                           |
 |  MB   |                                        Especifica um nome de domínio de caixa de correio.                                         |
 |  MG   |                                         Especifica um membro do grupo de email.                                          |
 | MINFO |                                   Especifica informações da caixa de correio ou da lista de mensagens.                                   |
@@ -54,4 +54,4 @@ Exibe um breve resumo dos subcomandos <strong>nslookup</strong>
 - O comando <strong>set type</strong> executa a mesma função que o comando <strong>set QueryType</strong> .
 - Para obter mais informações sobre tipos de registro de recurso, consulte solicitação de comentário (RFC) 1035.
   ## <a name="additional-references"></a>Referências adicionais
-  < a href = Command-Line-Syntax-key.md data-RAW-Source =- [Command-Line Syntax key](command-line-syntax-key.md)> chave de sintaxe de linha de comando</a> < um href = nslookup-set-type.MD data-RAW-Source =[nslookup set type](nslookup-set-type.md)> tipo de conjunto nslookup</a>
+  <a href = Command-Line-Syntax-key.md data-RAW-Source =- [Command-Line Syntax key](command-line-syntax-key.md)>chave</a> de sintaxe de linha de comando <a href = nslookup-Set-Type.MD data-RAW-Source =[nslookup set type](nslookup-set-type.md)>nslookup set type</a>

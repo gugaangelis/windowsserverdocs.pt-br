@@ -1,6 +1,6 @@
 ---
 title: msg
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91a85cd5d043b6c613f88e199670f55f6e0e72a7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e44d754557f918c218e9e9d35149bffd983a0d54
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839139"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723861"
 ---
 # <a name="msg"></a>msg
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Envia uma mensagem a um usuário em um servidor de Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
-para obter exemplos de como usar esse comando, consulte [exemplos](#BKMK_examples).
+
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
 
@@ -40,9 +40,9 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
 |     @<FileName>      |                                                                         Identifica um arquivo que contém uma lista de nomes de usuário, nomes de sessão e IDs de sessão que você deseja receber a mensagem.                                                                         |
 |          \*          |                                                                                                           Envia a mensagem a todos os nomes de usuário no sistema.                                                                                                            |
 | /server:<ServerName> |                                              Especifica o servidor de host da sessão da área de trabalho remota cuja sessão ou usuário você deseja receber a mensagem. Se não for especificado, o **/Server** usará o servidor no qual você está conectado no momento.                                              |
-|   /Time:<Seconds>    | Especifica a quantidade de tempo que a mensagem enviada é exibida na tela do usuário. Depois que o limite de tempo é atingido, a mensagem desaparece. Se nenhum limite de tempo for definido, a mensagem permanecerá na tela do usuário até que o usuário veja a mensagem e clique em **OK**. |
+|   momento<Seconds>    | Especifica a quantidade de tempo que a mensagem enviada é exibida na tela do usuário. Depois que o limite de tempo é atingido, a mensagem desaparece. Se nenhum limite de tempo for definido, a mensagem permanecerá na tela do usuário até que o usuário veja a mensagem e clique em **OK**. |
 |          /v          |                                                                                                         Exibe informações sobre as ações que estão sendo executadas.                                                                                                         |
-|          /w          |         Aguarda uma confirmação do usuário de que a mensagem foi recebida. Use esse parâmetro com **/Time:** <*segundos*> para evitar um longo atraso possível se o usuário não responder imediatamente. O uso desse parâmetro com **/v** também é útil.          |
+|          /w          |         Aguarda uma confirmação do usuário de que a mensagem foi recebida. Use esse parâmetro com **/Time:**<*segundos*> para evitar um possível atraso longo se o usuário não responder imediatamente. O uso desse parâmetro com **/v** também é útil.          |
 |      <Message>       |                  Especifica o texto da mensagem que você deseja enviar. Se nenhuma mensagem for especificada, você será solicitado a inserir uma mensagem. Para enviar uma mensagem contida em um arquivo, digite o símbolo menor que (<) seguido pelo nome do arquivo.                  |
 |          /?          |                                                                                                                  Exibe a ajuda no prompt de comando.                                                                                                                   |
 
@@ -50,7 +50,7 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
 -   Se você não especificar um usuário ou uma sessão, **msg** exibirá uma mensagem de erro. Ao especificar uma sessão, ela deve ser uma ativa.
 -   O usuário deve ter a permissão acesso especial à mensagem para enviar uma mensagem.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 -   Para enviar a mensagem denominada vamos atender às às 13:00 hoje para todas as sessões do Usuário1, digite:
     ```
     msg User1 Let's meet at 1PM today

@@ -1,6 +1,6 @@
 ---
-title: '{1&gt;mode&lt;1}'
-description: Tópico de comandos do Windows para * * * *-
+title: mode
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 528277075f7448c86ca2d660c5e65c59098afbc0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bd7875687aa112c500a966e0ebbcb5af142eb83
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839429"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723951"
 ---
-# <a name="mode"></a>{1&gt;mode&lt;1}
+# <a name="mode"></a>mode
 
 
 
@@ -42,17 +42,17 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 
 |  Parâmetro  |                                                                                                                                                                                     Descrição                                                                                                                                                                                     |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| > Com\<M [:]  |                                                                                                                                                      Especifica o número da porta de comunicação assíncrona prncnfg. vbshronous.                                                                                                                                                      |
-|  baud =\<B >  | Especifica a taxa de transmissão em bits por segundo. A tabela a seguir lista as abreviações válidas para *B* e suas taxas relacionadas.</br>-   **11** = 110 baud</br>-   **15** = 150 baud</br>-   **30** = 300 baud</br>-   **60** = 600 baud</br>-   **12** = 1200 baud</br>-   **24** = 2400 baud</br>-   **48** = 4800 baud</br>-   **96** = 9600 baud</br>-   **19** = 19.200 baud |
-| paridade =\<P > |                              Especifica como o sistema usa o bit de paridade para verificar se há erros de transmissão. A tabela a seguir lista os valores válidos para *P*. O valor padrão é **e**. Nem todos os computadores dão suporte aos valores **m** e **s**.</br>-   **n** = nenhum</br>-   **e** = mesmo</br>-   **o** = ímpar</br>-   **m** = marca</br>-   **s** = espaço                              |
-|  Data =\<D >  |                                                                                                    Especifica o número de bits de dados em um caractere. Os valores válidos para **d** estão no intervalo de 5 a 8. O valor padrão é 7. Nem todos os computadores dão suporte aos valores 5 e 6.                                                                                                     |
-|  Stop =\<S >  |                                                                                  Especifica o número de bits de parada que definem o final de um caractere: 1, 1,5 ou 2. Se a taxa de transmissão for 110, o valor padrão será 2. Caso contrário, o valor padrão será 1. Nem todos os computadores dão suporte ao valor 1,5.                                                                                   |
+| >\<M com [:]  |                                                                                                                                                      Especifica o número da porta de comunicação assíncrona prncnfg. vbshronous.                                                                                                                                                      |
+|  baud =\<B>  | Especifica a taxa de transmissão em bits por segundo. A tabela a seguir lista as abreviações válidas para *B* e suas taxas relacionadas.</br>-   **11** = 110 baud</br>-   **15** = 150 baud</br>-   **30** = 300 baud</br>-   **60** = 600 baud</br>-   **12** = 1200 baud</br>-   **24** = 2400 baud</br>-   **48** = 4800 baud</br>-   **96** = 9600 baud</br>-   **19** = 19.200 baud |
+| paridade =\<P> |                              Especifica como o sistema usa o bit de paridade para verificar se há erros de transmissão. A tabela a seguir lista os valores válidos para *P*. O valor padrão é **e**. Nem todos os computadores dão suporte aos valores **m** e **s**.</br>-   **n** = nenhum</br>-   **e** = par</br>-   **o** = ímpar</br>-   **m** = marca</br>-   **s** = espaço                              |
+|  dados =\<D>  |                                                                                                    Especifica o número de bits de dados em um caractere. Os valores válidos para **d** estão no intervalo de 5 a 8. O valor padrão é 7. Nem todos os computadores dão suporte aos valores 5 e 6.                                                                                                     |
+|  Stop =\<S>  |                                                                                  Especifica o número de bits de parada que definem o final de um caractere: 1, 1,5 ou 2. Se a taxa de transmissão for 110, o valor padrão será 2. Caso contrário, o valor padrão será 1. Nem todos os computadores dão suporte ao valor 1,5.                                                                                   |
 |   para = {on    |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
 |   Xon = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
 |  odsr = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
 |  Octs = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
-|   DTR = {on   |                                                                                                                                                                                         configurações                                                                                                                                                                                         |
-|   RTS = {on   |                                                                                                                                                                                         configurações                                                                                                                                                                                         |
+|   DTR = {on   |                                                                                                                                                                                         Desligar                                                                                                                                                                                         |
+|   RTS = {on   |                                                                                                                                                                                         Desligar                                                                                                                                                                                         |
 |  IDSR = {on   |                                                                                                                                                                                        {1&gt;off&lt;1}}                                                                                                                                                                                         |
 |     /?      |                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                         |
 
@@ -68,7 +68,7 @@ mode [<Device>] [/status]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<dispositivo >|Especifica o nome do dispositivo para o qual você deseja exibir o status.|
+|\<> de dispositivo|Especifica o nome do dispositivo para o qual você deseja exibir o status.|
 |/status|Solicita o status de qualquer impressora paralela redirecionada. Você pode abreviar a opção de linha de comando **/status** como **/STA**.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -88,8 +88,8 @@ mode lpt<N>[:]=com<M>[:]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|LPT\<N > [:]|Obrigatório. Especifica a porta paralela. Os valores válidos para *N* estão no intervalo de 1 a 3.|
-|> com\<M [:]|Obrigatório. Especifica a porta serial. Os valores válidos para *M* estão no intervalo de 1 a 4.|
+|>\<LPT N [:]|Obrigatórios. Especifica a porta paralela. Os valores válidos para *N* estão no intervalo de 1 a 3.|
+|>\<M com [:]|Obrigatórios. Especifica a porta serial. Os valores válidos para *M* estão no intervalo de 1 a 4.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ### <a name="remarks"></a>Comentários
@@ -124,10 +124,10 @@ mode <Device> codepage [/status]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<dispositivo >|Obrigatório. Especifica o dispositivo para o qual você deseja selecionar uma página de código. CON é o único nome válido para um dispositivo.|
-|página de código Select =|Obrigatório. Especifica qual página de código usar com o dispositivo especificado. Você pode abreviar **CodePage** **Select** as **CP** **SEL**.|
-|\<YYY >|Obrigatório. Especifica o número da página de código a ser selecionada. A lista a seguir mostra cada página de código com suporte e seu país/região ou idioma.</br>437: Estados Unidos</br>850: multilíngue (I latino)</br>852: eslavo (latino II)</br>855: cirílico (russo)</br>857: Turco</br>860: Português</br>861: Islandês</br>863: Canadá – francês</br>865: nórdico</br>866: Russo</br>869: grego moderno|
-|código|Obrigatório. Exibe os números das páginas de código (se houver) selecionadas para o dispositivo especificado.|
+|\<> de dispositivo|Obrigatórios. Especifica o dispositivo para o qual você deseja selecionar uma página de código. CON é o único nome válido para um dispositivo.|
+|página de código Select =|Obrigatórios. Especifica qual página de código usar com o dispositivo especificado. Você pode abreviar **CodePage** **Select** as **CP** **SEL**.|
+|\<YYY>|Obrigatórios. Especifica o número da página de código a ser selecionada. A lista a seguir mostra cada página de código com suporte e seu país/região ou idioma.</br>437: Estados Unidos</br>850: multilíngue (I latino)</br>852: eslavo (latino II)</br>855: cirílico (russo)</br>857: Turco</br>860: Português</br>861: Islandês</br>863: Canadá – francês</br>865: nórdico</br>866: Russo</br>869: grego moderno|
+|codepage|Obrigatórios. Exibe os números das páginas de código (se houver) selecionadas para o dispositivo especificado.|
 |/status|Exibe os números das páginas de código atuais selecionadas para o dispositivo especificado. Você pode abreviar **/status** para **/STA**. Independentemente de você especificar **/status**, o **modo CodePage** exibirá os números das páginas de código selecionadas para o dispositivo especificado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -143,9 +143,9 @@ mode con[:] [cols=<C>] [lines=<N>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|con [:]|Obrigatório. Indica que a alteração se aplica à janela de prompt de comando.|
-|cols =\<C >|Especifica o número de colunas no buffer da tela do prompt de comando.|
-|linhas =\<N >|Especifica o número de linhas no buffer da tela do prompt de comando.|
+|con [:]|Obrigatórios. Indica que a alteração se aplica à janela de prompt de comando.|
+|cols =\<C>|Especifica o número de colunas no buffer da tela do prompt de comando.|
+|linhas =\<N>|Especifica o número de linhas no buffer da tela do prompt de comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="to-set-the-keyboard-typematic-rate"></a><a name=BKMK_6></a>Para definir a taxa de digitação do teclado
@@ -160,15 +160,15 @@ mode con[:] [rate=<R> delay=<D>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|con [:]|Obrigatório. Refere-se ao teclado.|
-|taxa =\<R >|Especifica a taxa na qual um caractere é repetido na tela quando você mantém uma tecla pressionada.|
-|atraso =\<D >|Especifica a quantidade de tempo que o decorrerá depois que você pressionar e manter uma tecla pressionada antes da repetição da saída de caracteres.|
+|con [:]|Obrigatórios. Refere-se ao teclado.|
+|taxa =\<R>|Especifica a taxa na qual um caractere é repetido na tela quando você mantém uma tecla pressionada.|
+|atraso =\<D>|Especifica a quantidade de tempo que o decorrerá depois que você pressionar e manter uma tecla pressionada antes da repetição da saída de caracteres.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ### <a name="remarks"></a>Comentários
 
 - A taxa de digitação é a taxa na qual um caractere se repete quando você mantém a chave para esse caractere. A taxa de digitação tem dois componentes, a taxa e o atraso. Alguns teclados não reconhecem esse comando.
-- Usando **Rate =** <em>R</em>
+- Usando **Rate =**<em>R</em>
 
   Os valores válidos estão no intervalo de 1 a 32. Esses valores são iguais a aproximadamente de 2 a 30 caracteres por segundo. O valor padrão é 20 para teclados compatíveis com IBM e 21 para teclados compatíveis com IBM PS/2. Se você definir a taxa, também deverá definir o atraso.
 - Usando o **atraso**=*D*

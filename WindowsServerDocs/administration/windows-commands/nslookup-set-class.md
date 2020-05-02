@@ -1,6 +1,6 @@
 ---
 title: nslookup set class
-description: Tópico de comandos do Windows para * * * *-
+description: Tópico de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc3bb4e36582f01584c0b89a12d43874322c3190
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b1ae3a5336815a5273aafa976b1dcad8b60fac9b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838579"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723651"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 
@@ -32,7 +32,7 @@ set class=<Class>
 
 | Parâmetro |                                                                                                                                    Descrição                                                                                                                                    |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Classe de \<>  | A classe padrão está em. O a seguir lista os valores válidos para esse comando.</br>-IN: especifica a classe da Internet.</br>-CAOS: especifica a classe de caos.</br>-HESIOD: especifica a classe Hesiod do MIT Athena.</br>-ANY: Especifica qualquer um dos curingas listados anteriormente. |
+| \<Class>  | A classe padrão está em. O a seguir lista os valores válidos para esse comando.</br>-IN: especifica a classe da Internet.</br>-CAOS: especifica a classe de caos.</br>-HESIOD: especifica a classe Hesiod do MIT Athena.</br>-ANY: Especifica qualquer um dos curingas listados anteriormente. |
 |   {ajuda   |                                                                                                                                        ?}                                                                                                                                         |
 
 ## <a name="additional-references"></a>Referências adicionais
