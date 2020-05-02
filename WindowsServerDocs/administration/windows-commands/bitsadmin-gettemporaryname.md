@@ -1,6 +1,6 @@
 ---
-title: Bitsadmin gettemporárioname
-description: O tópico de comandos do Windows para **Bitsadmin gettemporárioname**, que relata o nome de arquivo temporário do arquivo fornecido dentro do trabalho.
+title: bitsadmin gettemporaryname
+description: Tópico de referência para o comando gettemporárioname Bitsadmin, que relata o nome de arquivo temporário do arquivo fornecido dentro do trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c331ecf12cb02d34c76692158c79eafbe5691c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f7780691f37fb78f1553fa993fd408d224be39ff
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850449"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717491"
 ---
-# <a name="bitsadmin-gettemporaryname"></a>Bitsadmin gettemporárioname
+# <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
 
 Informa o nome de arquivo temporário do arquivo fornecido dentro do trabalho.
 
@@ -33,14 +33,16 @@ bitsadmin /gettemporaryname <job> <file_index>
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 | file_index | Começa em 0. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir relata o nome de arquivo temporário de File 2 para o trabalho chamado *myDownloadJob*.
+Para relatar o nome de arquivo temporário de File 2 para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /gettemporaryname myDownloadJob 1
+bitsadmin /gettemporaryname myDownloadJob 1
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

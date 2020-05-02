@@ -1,6 +1,6 @@
 ---
 title: Bitsadmin getproxylist – recupera a lista de proxy para o trabalho especificado.
-description: Tópico de comandos do Windows para **Bitsadmin getproxylist**, que recupera a lista de proxy para o trabalho especificado.
+description: Tópico de referência para o comando Bitsadmin getproxylist, que recupera a lista de proxy para o trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c0d26fb074bd1b792caa7fe2ce8fd31b64365e2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a92703d83cc872204d3dc488c15d703dfd50a780
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850519"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717653"
 ---
 # <a name="bitsadmin-getproxylist"></a>bitsadmin getproxylist
 
@@ -32,14 +32,16 @@ bitsadmin /getproxylist <job>
 | -------------- | -------------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir recupera a lista de proxy para o trabalho chamado *myDownloadJob*.
+Para recuperar a lista de proxy para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getproxylist myDownloadJob
+bitsadmin /getproxylist myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
-title: Bitsadmin getvalidable
-description: O tópico de comandos do Windows para **Bitsadmin getvalidable**, que relata o estado de validação de conteúdo do arquivo fornecido dentro do trabalho.
+title: bitsadmin getvalidationstate
+description: Tópico de referência para o comando getvalidable Bitsadmin, que relata o estado de validação de conteúdo do arquivo fornecido dentro do trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52d7d983cc7858607c350483ed81223d107cee25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca753b20a1b7834d2e05d4ff8729a08332256f8c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850429"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717456"
 ---
-# <a name="bitsadmin-getvalidationstate"></a>Bitsadmin getvalidable
+# <a name="bitsadmin-getvalidationstate"></a>bitsadmin getvalidationstate
 
 Relata o estado de validação de conteúdo do arquivo fornecido dentro do trabalho.
 
@@ -33,14 +33,16 @@ bitsadmin /getvalidationstate <job> <file_index>
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 | file_index | Começa em 0. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir obtém o estado de validação de conteúdo do arquivo 2 no trabalho chamado *myDownloadJob*.
+Para recuperar o estado de validação de conteúdo do arquivo 2 no trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getvalidationstate myDownloadJob 1
+bitsadmin /getvalidationstate myDownloadJob 1
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

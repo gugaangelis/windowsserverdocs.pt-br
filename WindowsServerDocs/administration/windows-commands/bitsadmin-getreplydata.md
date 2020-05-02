@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getreplydata
-description: O tópico de comandos do Windows para **Bitsadmin getreplydata**, que recupera os dados de resposta de upload do servidor em formato hexadecimal para o trabalho.
+description: Tópico de referência para o comando Bitsadmin getreplydata, que recupera os dados de upload-resposta do servidor em formato hexadecimal para o trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb83ca93f8e73445788d926e0d5e6db4c774d759
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea2a82403fe05776abbbf65e87a4b6e72c8767b8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850499"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717624"
 ---
 # <a name="bitsadmin-getreplydata"></a>bitsadmin getreplydata
 
@@ -35,14 +35,16 @@ bitsadmin /getreplydata <job>
 | -------------- | -------------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir recupera os dados de resposta de upload para o trabalho chamado *myDownloadJob*.
+Para recuperar os dados de resposta de upload para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getreplydata myDownloadJob
+bitsadmin /getreplydata myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

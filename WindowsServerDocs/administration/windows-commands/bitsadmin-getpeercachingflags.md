@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getpeercachingflags
-description: O tópico de comandos do Windows para **Bitsadmin getpeercachingflags**, que recupera sinalizadores que determinam se os arquivos do trabalho podem ser armazenados em cache e atendidos aos pares e se o bits pode baixar conteúdo para o trabalho de pares.
+description: Tópico de referência para o comando Bitsadmin getpeercachingflags, que recupera sinalizadores que determinam se os arquivos do trabalho podem ser armazenados em cache e servidos para os pares e se o BITS pode baixar conteúdo para o trabalho de pares.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59ff3e3a5802c6023d85129c82f19cd7ee625d2f
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: f30eead56958af3cd0fb0d91f6ee2bf9f79fdc4e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123127"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717687"
 ---
 # <a name="bitsadmin-getpeercachingflags"></a>bitsadmin getpeercachingflags
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Recupera sinalizadores que determinam se os arquivos do trabalho podem ser armazenados em cache e servidos para os pares e se o BITS pode baixar conteúdo para o trabalho de pares.
 
@@ -34,14 +34,16 @@ bitsadmin /getpeercachingflags <job>
 | -------------- | -------------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir recupera os sinalizadores para o trabalho chamado *myDownloadJob*.
+Para recuperar os sinalizadores para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getpeercachingflags myJob
+bitsadmin /getpeercachingflags myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)

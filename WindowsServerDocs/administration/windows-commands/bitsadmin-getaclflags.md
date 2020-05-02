@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getaclflags
-description: Tópico de comandos do Windows para **Bitsadmin getaclflags**, que recupera os sinalizadores de propagações da ACL (lista de controle de acesso).
+description: Tópico de referência para o comando Bitsadmin getaclflags, que recupera os sinalizadores de propagações da ACL (lista de controle de acesso).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d53018e2fa5c659c8cf4b0ec985beda848a8c1af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a9ca541b488c3c83e7a64a138bae0914001778e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850789"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718181"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
@@ -32,9 +32,9 @@ bitsadmin /getaclflags <job>
 | --------- | ----------- |
 | trabalho | O nome de exibição ou o GUID do trabalho. |
 
-## <a name="remarks"></a>Comentários
+### <a name="remarks"></a>Comentários
 
-Exibe um ou mais dos seguintes valores de sinalizador:
+Retorna um ou mais dos seguintes valores de sinalizador:
 
 - **o** -copie as informações do proprietário com o arquivo.
 
@@ -44,14 +44,16 @@ Exibe um ou mais dos seguintes valores de sinalizador:
 
 - **s** -copiar informações de SACL (lista de controle de acesso) do sistema com o arquivo.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Disso
+## <a name="examples"></a>Exemplos
 
-O exemplo a seguir recupera os sinalizadores de propagação da lista de controle de acesso para o trabalho chamado *myDownloadJob*.
+Para recuperar os sinalizadores de propagação da lista de controle de acesso para o trabalho chamado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getaclflags myDownloadJob
+bitsadmin /getaclflags myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando Bitsadmin](bitsadmin.md)
