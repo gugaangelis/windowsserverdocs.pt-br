@@ -99,7 +99,7 @@ As etapas a seguir são uma alternativa para criar um balanceador de carga inter
       2. No painel esquerdo, expanda **DNS**, clique na máquina DNS, clique em **Zonas de pesquisa direta** e em seu nome de domínio (por exemplo, Contoso.com). Pode levar alguns segundos para o servidor DNS processar a consulta para obter as informações.  
       3. Clique em **Ação** e **Novo Host (A ou AAAA)** .   
       4. Insira o **Nome DNS** para o Agente de Conexão RD do cluster (por exemplo, hacb) e insira o **Endereço IP** do Agente de Conexão RD.   
-      5. ***Repita as etapas 3 e 4 para cada Agente de Conexão RD adicional, fornecendo um endereço IP exclusivo para cada registro adicional.
+      5. Repita as etapas 3 e 4 para cada Agente de Conexão RD adicional, fornecendo um endereço IP exclusivo para cada registro adicional.
 
 
 Por exemplo, se os endereços IP das duas máquinas virtuais de Agente de Conexão RD forem 10.0.0.8 e 10.0.0.9, você criaria dois registros de host DNS:
