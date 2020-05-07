@@ -8,14 +8,14 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 29db78fdf38a6fab23d9a5ec5539c0606e2fbbaa
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b947ca49a82c18fd7a6c1da71b1e4b43ea741b41
+ms.sourcegitcommit: f247065941508b913c31828944978d3e721e2110
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814479"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82876411"
 ---
-# <a name="azure-site-recovery-services-integration"></a>Integração de Serviços do Azure Site Recovery
+# <a name="azure-site-recovery-services-integration"></a>Integração de Serviços do Azure Site Recovery 
 
 >Aplica-se a: Windows Server 2016 Essentials
 
@@ -39,7 +39,7 @@ Após a seleção da assinatura e da região, uma nova guia será exibida no **p
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>Habilitando máquinas virtuais convidadas para proteção
 
-Após a seleção de uma máquina virtual presente na janela de recuperação do Azure, você pode clicar em **habilitar replicação no Azure** no lado direito do painel para preparar e copiar a imagem da máquina virtual &trade;s para o Azure:
+Após a seleção de uma máquina virtual presente na janela de recuperação do Azure, você pode clicar em **habilitar replicação no Azure** no lado direito do painel para preparar e copiar a imagem &trade;da máquina virtual para o Azure:
 
 ![Uma captura de tela mostrando a caixa de diálogo Habilitar replicação para o Azure. Uma barra de progresso é exibida à medida que um host está sendo adicionado.](media/azure-site-recovery-5.PNG)
 
@@ -63,6 +63,6 @@ Em qualquer um dos três casos acima, quando uma VM passar por failover para o A
 
 ![Uma captura de tela mostrando a página recuperação do Azure do painel do Windows Server Essentials. A replicação para o Azure foi habilitada para um host chamado Essentials e uma máquina virtual chamada Essentials-Test em execução no Azure indica que o host passou por failover no Azure.](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>Consulte também
+<a name="see-also"></a>Confira também
 --------
 [Introdução ao Windows Server Essentials](get-started.md)

@@ -1,6 +1,6 @@
 ---
-title: Excluir SC
-description: Tópico de referência para * * * *-
+title: Excluir SC. exe
+description: Saiba como cancelar o registro de serviços usando o utilitário SC. exe
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd40b5eb82def3b3c437cbdb5b60d279529d25a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 284012cf6799df52832e62c3eea1b2f0fcd84805
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722187"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850107"
 ---
-# <a name="sc-delete"></a>Excluir SC
-
-
+# <a name="scexe-delete"></a>Excluir SC. exe
 
 Exclui uma subchave de serviço do registro. Se o serviço estiver em execução ou se outro processo tiver um identificador aberto para o serviço, o serviço será marcado para exclusão.
 
@@ -27,7 +25,7 @@ Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
 ## <a name="syntax"></a>Sintaxe
 
 ```
-sc [<ServerName>] delete [<ServiceName>]
+sc.exe [<ServerName>] delete [<ServiceName>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -40,13 +38,13 @@ sc [<ServerName>] delete [<ServiceName>]
 
 ## <a name="remarks"></a>Comentários
 
-Use **Adicionar ou remover programas** no **painel de controle** para excluir DHCP, DNS ou qualquer outro serviço interno do sistema operacional. Observe que **Adicionar ou remover programas** não apenas removerá a subchave do registro para o serviço, mas também desinstalará o serviço e excluirá todos os atalhos para ele.
+Não é recomendável usar SC. exe para excluir serviços internos do sistema operacional, como DHCP, DNS ou Serviços de Informações da Internet. Para instalar, remover ou reconfigurar funções, serviços e componentes do sistema operacional, consulte [instalar ou desinstalar funções, serviços de função ou recursos](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)
 
 ## <a name="examples"></a>Exemplos
 
 Para excluir a subchave de serviço **NewServ** do registro no computador local, digite:
 ```
-sc delete newserv
+sc.exe delete newserv
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

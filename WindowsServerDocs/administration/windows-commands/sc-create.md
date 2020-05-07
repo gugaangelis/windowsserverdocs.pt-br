@@ -1,6 +1,6 @@
 ---
-title: Criar SC
-description: Tópico de referência para * * * *-
+title: Criar SC. exe
+description: Saiba como registrar novos serviços com o Windows Service Manager usando o utilitário SC. exe
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0406e82afbe1f70dc27236a29c3c20489f46f44e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9e1a581273def291502bf01e3fc9acf0c296707b
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722204"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850097"
 ---
-# <a name="sc-create"></a>Criar SC
-
-
+# <a name="scexe-create"></a>Criar SC. exe
 
 Cria uma subchave e entradas para um serviço no registro e no banco de dados do Gerenciador de controle de serviço.
-
-
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys | rec | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto }] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
+sc.exe [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys | rec | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto }] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -55,10 +51,10 @@ sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys 
 
 ## <a name="examples"></a>Exemplos
 
-Os exemplos a seguir mostram como você pode usar o comando **SC Create** :
+Os exemplos a seguir mostram como você pode usar o comando **SC. exe Create** :
 ```
-sc \\myserver create NewService binpath= c:\windows\system32\NewServ.exe
-sc create NewService binpath= c:\windows\system32\NewServ.exe type= share start= auto depend= +TDI NetBIOS
+sc.exe \\myserver create NewService binpath= c:\windows\system32\NewServ.exe
+sc.exe create NewService binpath= c:\windows\system32\NewServ.exe type= share start= auto depend= +TDI NetBIOS
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

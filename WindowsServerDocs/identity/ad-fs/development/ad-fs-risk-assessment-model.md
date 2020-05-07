@@ -3,16 +3,16 @@ title: Criar Plug-ins com o Modelo de Avaliação de Risco do AD FS 2019
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/16/2019
+ms.date: 05/05/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6433513f525572254e4aaef65e2bfc992a7c5280
-ms.sourcegitcommit: 41dc7f487d282895a242e788049285363dd19eeb
+ms.openlocfilehash: c9795ea1b945d5da773b8d257434f216d842799d
+ms.sourcegitcommit: f0f447193a0bd14d9a623aaead80329b95bf1f47
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82169171"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82842835"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>Criar Plug-ins com o Modelo de Avaliação de Risco do AD FS 2019
 
@@ -213,8 +213,8 @@ A classe inclui métodos e propriedades a seguir.
 |[OnAuthenticationPipelineUnload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |Void|Chamado por AD FS quando o plug-in é descarregado de seu pipeline| 
 |[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| Void|Chamado por AD FS na atualização de configuração |
 |**Propriedade** |**Tipo** |**Definição**|
-|[Nome_do_Fornecedor](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|String |Obtém o nome do fornecedor que possui o plug-in|
-|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|String |Obtém o identificador do plug-in|
+|[Nome_do_Fornecedor](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|Cadeia de caracteres |Obtém o nome do fornecedor que possui o plug-in|
+|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|Cadeia de caracteres |Obtém o identificador do plug-in|
 
 Em nosso plug-in de exemplo, estamos usando os métodos [OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) e [OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) para ler os IPs predefinidos do AD FS DB. [OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) é chamado quando o plug-in é registrado com AD FS enquanto [OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) é chamado quando o. csv é importado usando o `Import-AdfsThreatDetectionModuleConfiguration` cmdlet. 
 
@@ -297,7 +297,7 @@ O método retorna a [Pontuação de risco](https://docs.microsoft.com/dotnet/api
 >[!NOTE]
 >Para que o plug-in funcione, a classe principal (nesse caso, UserRiskAnalyzer) precisa derivar a classe abstrata [ThreatDetectionModule](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019) e deve implementar pelo menos uma das três interfaces descritas acima. Depois que a dll é registrada, o AD FS verifica quais das interfaces são implementadas e as chama no estágio apropriado no pipeline.
 
-### <a name="faqs"></a>Perguntas frequentes
+### <a name="faqs"></a>Perguntas Frequentes
 
 **Por que devo criar esses plug-ins?**</br>
 **R:** Esses plug-ins não só fornecem recursos adicionais para proteger seu ambiente contra ataques como ataques de irrigação de senha, mas também oferecem a flexibilidade para criar sua própria lógica de avaliação de riscos com base em suas necessidades. 
@@ -313,6 +313,7 @@ O método retorna a [Pontuação de risco](https://docs.microsoft.com/dotnet/api
 
 **Quais outros plug-ins de exemplo estão disponíveis?**</br>
 **R:** Os seguintes plug-ins de exemplo estão disponíveis:
+
 |Nome|Descrição| 
 |-----|-----|
 |[Plug-in de usuário arriscado](https://github.com/microsoft/adfs-sample-block-user-on-adfs-marked-risky-by-AzureAD-IdentityProtection)|Plug-in de exemplo que bloqueia a autenticação ou impõe a MFA com base no nível de risco do usuário determinado por Azure AD Identity Protection.| 

@@ -1,6 +1,6 @@
 ---
-title: Configuração do SC
-description: Tópico de referência para * * * *-
+title: Configuração do SC. exe
+description: Saiba como alterar as configurações de serviço usando o utilitário SC. exe
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 45a94b3eea78552b61535542d85793bbaffd3df2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8f1d6b284b9bfe5a520f89c03dd0dedc263a5faf
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722225"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850087"
 ---
-# <a name="sc-config"></a>Configuração do SC
-
-
+# <a name="scexe-config"></a>Configuração do SC. exe
 
 Modifica o valor das entradas de um serviço no registro e no banco de dados do Gerenciador de controle de serviço.
-
-
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys | rec | adapt | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
+sc.exe [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys | rec | adapt | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -36,7 +32,7 @@ sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys 
 |---------|-----------|
 |\<ServerName>|Especifica o nome do servidor remoto no qual o serviço está localizado. O nome deve usar o formato UNC (Convenção de nomenclatura universal) (por exemplo \\ \\, meuservidor). Para executar o SC. exe localmente, omita esse parâmetro.|
 |\<> do ServiceName|Especifica o nome do serviço retornado pela operação **GetKeyName** .|
-|Type = {próprio\| compartilhamento \| de \| arquivos de \| kernel \| os \| rec. interagir com o \| tipo = {próprio compartilhamento}} | Especifica o tipo de serviço.</br>**próprio** -especifica um serviço que é executado em seu próprio processo. Ele não compartilha um arquivo executável com outros serviços. Este é o valor padrão.</br>**compartilhamento** – especifica um serviço que é executado como um processo compartilhado. Ele compartilha um arquivo executável com outros serviços.</br>**kernel** -especifica um driver.</br>**arquivos** -especifica um driver de sistema de arquivos.</br>**REC** -especifica um driver reconhecido pelo sistema de arquivos que identifica os sistemas de arquivos usados no computador.</br>**adaptação** – especifica um driver de adaptador que identifica dispositivos de hardware, como teclados, mouses e unidades de disco.</br>**interagir** -especifica um serviço que pode interagir com a área de trabalho, recebendo entrada de usuários. Os serviços interativos devem ser executados na conta LocalSystem. Esse tipo deve ser usado em conjunto com **Type = próprio** ou **Type = Shared** (por exemplo, **Type = interaja** **Type =** is). Usar **Type = interagir** por si só gerará um erro.|
+|Type = {próprio\| compartilhamento \| de \| arquivos de \| kernel \| os \| rec. interagir com o \| tipo = {próprio compartilhamento}} | Especifica o tipo de serviço.</br>**próprio** -especifica um serviço que é executado em seu próprio processo. Ele não compartilha um arquivo executável com outros serviços. Esse é o valor padrão.</br>**compartilhamento** – especifica um serviço que é executado como um processo compartilhado. Ele compartilha um arquivo executável com outros serviços.</br>**kernel** -especifica um driver.</br>**arquivos** -especifica um driver de sistema de arquivos.</br>**REC** -especifica um driver reconhecido pelo sistema de arquivos que identifica os sistemas de arquivos usados no computador.</br>**adaptação** – especifica um driver de adaptador que identifica dispositivos de hardware, como teclados, mouses e unidades de disco.</br>**interagir** -especifica um serviço que pode interagir com a área de trabalho, recebendo entrada de usuários. Os serviços interativos devem ser executados na conta LocalSystem. Esse tipo deve ser usado em conjunto com **Type = próprio** ou **Type = Shared** (por exemplo, **Type = interaja** **Type =** is). Usar **Type = interagir** por si só gerará um erro.|
 |início = {a \| demanda \| \| \| automática do sistema \| de inicialização foi desabilitada com atraso-automática}|Especifica o tipo de início para o serviço.</br>**boot** -especifica um driver de dispositivo que é carregado pelo carregador de inicialização.</br>**sistema** -especifica um driver de dispositivo que é iniciado durante a inicialização do kernel.</br>**automaticamente** especifica um serviço que é iniciado automaticamente cada vez que o computador é reiniciado e é executado mesmo que ninguém faça logon no computador.</br>**demanda** -especifica um serviço que deve ser iniciado manualmente. Esse será o valor padrão se **Start =** não for especificado.</br>**Disabled** -especifica um serviço que não pode ser iniciado. Para iniciar um serviço desabilitado, altere o tipo de início para algum outro valor.</br>**atrasada –** especifica automaticamente um serviço que inicia de forma automática um curto período após a inicialização de outros serviços automáticos.|
 |erro = {ignorar \| crítico \| \| normal grave}|Especifica a severidade do erro se o serviço não for iniciado no momento da inicialização.</br>**normal** – especifica que o erro é registrado e uma caixa de mensagem é exibida, informando ao usuário que um serviço falhou ao iniciar. A inicialização continuará. Essa é a configuração padrão.</br>**grave** -especifica que o erro é registrado (se possível). O computador tenta reiniciar com a última configuração válida conhecida. Isso pode fazer com que o computador possa ser reiniciado, mas o serviço ainda pode não ser executado.</br>**crítico** -especifica que o erro é registrado (se possível). O computador tenta reiniciar com a última configuração válida conhecida. Se a configuração válida mais conhecida falhar, a inicialização também falhará e o processo de inicialização é interrompido com um erro de parada.</br>**ignorar** – especifica que o erro é registrado e a inicialização continua. Nenhuma notificação é dada ao usuário além de registrar o erro no log de eventos.|
 |BinPath = \<BinaryPathName>|Especifica um caminho para o arquivo binário do serviço.|
@@ -57,7 +53,7 @@ sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys 
 
 Para especificar um caminho binário para o serviço NEWSERVICE, digite:
 ```
-sc config NewService binpath= ntsd -d c:\windows\system32\NewServ.exe
+sc.exe config NewService binpath= ntsd -d c:\windows\system32\NewServ.exe
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
