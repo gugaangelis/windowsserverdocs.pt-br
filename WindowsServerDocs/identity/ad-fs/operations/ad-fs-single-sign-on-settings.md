@@ -8,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cdd35ccc7800616f7803937738c942e68bf04c00
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860079"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903434"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS configurações de logon único
 
@@ -47,7 +47,7 @@ Se o dispositivo não estiver registrado, mas um usuário selecionar a opção "
  
  Para o Windows Server 2012 R2, para habilitar o PSSO para o cenário "Mantenha-me conectado", você precisa instalar esse [hotfix](https://support.microsoft.com/kb/2958298/) que também faz parte do [pacote cumulativo de atualizações de agosto de 2014 para Windows RT 8,1, Windows 8.1 e Windows Server 2012 R2](https://support.microsoft.com/kb/2975719).   
 
-{1&gt;Tarefa&lt;1} | PowerShell | Descrição
+Tarefa | PowerShell | Descrição
 ------------ | ------------- | -------------
 Habilitar/desabilitar SSO persistente | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| O SSO persistente é habilitado por padrão. Se estiver desabilitado, nenhum cookie PSSO será gravado.
 "Habilitar/desabilitar" Mantenha-me conectado " | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | O recurso "Mantenha-me conectado" está desabilitado por padrão. Se estiver habilitado, o usuário final verá uma opção "Mantenha-me conectado" na página de entrada AD FS
@@ -102,7 +102,7 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ## <a name="psso-revocation"></a>Revogação de PSSO  
  Para proteger a segurança, AD FS rejeitará qualquer cookie de SSO persistente emitido anteriormente quando as condições a seguir forem atendidas. Isso exigirá que o usuário forneça suas credenciais para se autenticar com o AD FS novamente. 
   
-- Usuário altera a senha  
+- O usuário altera a senha  
   
 - A configuração de SSO persistente está desabilitada no AD FS  
   
@@ -153,32 +153,32 @@ Para resumir:
 
   <tr align="center">
     <th></th>
-    <th>NÃO</th>
+    <th>Não</th>
     <th>Não, mas KMSI</th>
-    <th>SIM</th>
+    <th>YES</th>
     <th></th>
-    <th>NÃO</th>
+    <th>Não</th>
     <th>Não, mas KMSI</th>
-    <th>SIM</th>
+    <th>YES</th>
   </tr>
  <tr align="center">
     <td>SSO =&gt;definir token de atualização =&gt;</td>
     <td>8 horas</td>
-    <td>{1&gt;N/A&lt;1}</td>
-    <td>{1&gt;N/A&lt;1}</td>
+    <td>N/D</td>
+    <td>N/D</td>
     <th></th>
     <td>8 horas</td>
-    <td>{1&gt;N/A&lt;1}</td>
-    <td>{1&gt;N/A&lt;1}</td>
+    <td>N/D</td>
+    <td>N/D</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;definir token de atualização =&gt;</td>
-    <td>{1&gt;N/A&lt;1}</td>
+    <td>N/D</td>
     <td>24 horas</td>
     <td>7 dias</td>
     <th></th>
-    <td>{1&gt;N/A&lt;1}</td>
+    <td>N/D</td>
     <td>24 horas</td>
     <td>Máximo de 90 dias com janela de 14 dias</td>
   </tr>
@@ -201,6 +201,10 @@ Para resumir:
 QUE
  - [x] o administrador habilitou o recurso KMSI [e]
  - [x] o usuário clica na caixa de seleção KMSI na página de logon do Forms
+ 
+  
+O ADFS emitirá um novo token de atualização somente se a validade do token de atualização mais recente for maior do que o token anterior. O tempo de vida máximo de um token é de 84 dias, mas AD FS mantém o token válido em uma janela deslizante de 14 dias. Se o token de atualização for válido por 8 horas, que é o tempo de SSO normal, um novo token de atualização não será emitido. 
+ 
  
 **Bom saber:** <br>
 Os usuários federados que não têm o atributo **LastPasswordChangeTimestamp** sincronizado são cookies de sessão emitidos e tokens de atualização que têm um **valor de idade máxima de 12 horas**.<br>
