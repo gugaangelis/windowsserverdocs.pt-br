@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2958c82b1dfc3b99d0e15690ef9857e7d83b244f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: eac3749304a06ea4cc11bf90a3220f5e24f9b5ae
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719615"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993009"
 ---
 # <a name="detail-volume"></a>volume de detalhes
 
-Exibe os discos nos quais o volume atual reside.
+Exibe os discos nos quais o volume atual reside. Antes de começar, você deve selecionar um volume para que essa operação seja realizada com sucesso. Use o comando [selecionar volume](select-volume.md) para selecionar um volume e deslocar o foco para ele. Os detalhes do volume não são aplicáveis a volumes somente leitura, como uma unidade de DVD-ROM ou CD-ROM.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -26,14 +26,10 @@ Exibe os discos nos quais o volume atual reside.
 detail volume
 ```
 
-## <a name="remarks"></a>Comentários
-
--   Um volume deve ser selecionado para que essa operação seja realizada com sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.
--   Os detalhes do volume não são aplicáveis a volumes somente leitura, como uma unidade de DVD-ROM ou CD-ROM.
-
 ## <a name="examples"></a>Exemplos
 
 Para ver todos os discos nos quais reside o volume atual, digite:
+
 ```
 detail volume
 ```
@@ -42,3 +38,6 @@ detail volume
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
+- [select volume](select-volume.md)
+
+- [comando de detalhe](detail.md)

@@ -1,6 +1,6 @@
 ---
-title: dfsdiag TestDFSIntegrity
-description: Tópico de referência para **Dfsdiag TestDFSIntegrity**, que verifica a integridade do namespace do sistema de arquivos distribuído (DFS).
+title: dfsdiag testdfsintegrity
+description: Tópico de referência para o comando Dfsdiag testdfsintegrity, que verifica a integridade do namespace do Sistema de Arquivos Distribuído (DFS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21aa6ef3d7d4a7b4a9c64fc51aec77f49f1e0a0c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b54c7f597926abc91bb9201dfec1a04f44e04ecb
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719572"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992956"
 ---
-# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
+# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag testdfsintegrity
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -31,27 +31,27 @@ Verifica a integridade do namespace do Sistema de Arquivos Distribuído (DFS) ex
 ## <a name="syntax"></a>Sintaxe
 
 ```
-dfsdiag /TestDFSIntegrity /DFSRoot: <DFS root path> [/Recurse] [/Full]
+dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
 | Parâmetro | Descrição |
-|-------|--------|
-| /DFSRoot:`<DFS root path>`| O namespace do DFS para diagnosticar. |
-| /Recurse | Executa os testes, incluindo os Interlinks de namespace. |
-| /Full | Verifica a consistência do compartilhamento e das ACLs de NTFS e da configuração do lado do cliente em todos os destinos de pasta. Ele também verifica se a propriedade online está definida. |
+| --------- | ----------- |
+| /DFSroot:`<DFS root path>` | O namespace do DFS para diagnosticar. |
+| /recurse | Executa o teste, incluindo qualquer Interlink de namespace. |
+| /full | Verifica a consistência do compartilhamento e das ACLs de NTFS, juntamente com a configuração do lado do cliente em todos os destinos de pasta. Ele também verifica se a propriedade online está definida. |
 
 ## <a name="examples"></a>Exemplos
 
+Para verificar a integridade e a consistência dos namespaces de Sistema de Arquivos Distribuído (DFS) no *contoso. com\MyNamespace*, incluindo quaisquer Interlinks, digite:
+
 ```
-dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full
+dfsdiag /testdfsintegrity /DFSRoot:\contoso.com\MyNamespace /recurse /full
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
--   [dfsdiag](dfsdiag.md)
-
-
+- [comando Dfsdiag](dfsdiag.md)

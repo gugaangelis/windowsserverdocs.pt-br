@@ -1,6 +1,6 @@
 ---
 title: date
-description: Tópico de referência para data, que exibe ou define a data do sistema. Se usado sem parâmetros,
+description: Tópico de referência para o comando date, que exibe ou define a data do sistema. Se usado sem parâmetros,
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,59 +9,58 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7bcdb35579ac86b4ec7f9c7c639cf905f6a05fa
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 64d0d94061e1b5c7891b364f4c0fe153b44a564e
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716810"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993197"
 ---
 # <a name="date"></a>date
 
 Exibe ou define a data do sistema. Se usado sem parâmetros, **Data** exibe a configuração de data atual do sistema e solicita que você insira uma nova data.
 
-
+>[!IMPORTANT]
+> Você deve ser um administrador para usar este comando.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-date [/t | <Month-Day-Year>]
+date [/t | <month-day-year>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<Mês-dia/ano>|Define a data especificada, em que *mês* é o mês (um ou dois dígitos), *dia* é o dia (um ou dois dígitos) e *ano* é o ano (dois ou quatro dígitos).|
-|/t|Exibe a data atual sem solicitar uma nova data.|
-|/?|Exibe a ajuda no prompt de comando.|
-
-## <a name="remarks"></a>Comentários
-
--   Para alterar a data atual, você deve ter credenciais administrativas.
--   Você deve separar valores para *mês*, *dia*e *ano* com pontos (.), hifens (-) ou barras (/).
--   Os valores de *mês* válidos são de 1 a 12.
--   Os valores de *dia* válidos são de 1 a 31.
--   Valores de *ano* válidos são 00 a 99 ou 1980 a 2099. Se você usar dois dígitos, os valores de 80 a 99 corresponderão aos anos de 1980 a 1999.
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<month-day-year>` | Define a data especificada, em que *month* é o mês (um ou dois dígitos, incluindo os valores de 1 a 12), *Day* é o dia (um ou dois dígitos, incluindo os valores de 1 a 31) e *year* é o ano (dois ou quatro dígitos, incluindo os valores de 00 a 99 ou 1980 a 2099). Você deve separar valores para *mês*, *dia*e *ano* com pontos (.), hifens (-) ou barras (/).<p>**Observação:** Lembre-se de que, se você usar dois dígitos para representar o ano, os valores 80-99 corresponderão a 1980 até 1999. |
+| /t | Exibe a data atual sem solicitar uma nova data. |
+| /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="examples"></a>Exemplos
 
 Se as extensões de comando estiverem habilitadas, para exibir a data atual do sistema, digite:
+
 ```
 date /t
 ```
+
 Para alterar a data atual do sistema para 3 de agosto de 2007, você pode digitar qualquer um dos seguintes:
+
 ```
 date 08.03.2007
 date 08-03-07
 date 8/3/07
 ```
+
 Para exibir a data atual do sistema, seguido de um prompt para inserir uma nova data, digite:
+
 ```
 The current date is: Mon 04/02/2007
-Enter the new date: (mm-dd-yy)
+Enter the new date: (mm-dd-yyyy)
 ```
-Para manter a data atual e retornar ao prompt de comando, pressione ENTER. Para alterar a data atual, digite a nova data e pressione ENTER.
+
+Para manter a data atual e retornar ao prompt de comando, pressione **Enter**. Para alterar a data atual, digite a nova data e pressione **Enter**.
 
 ## <a name="additional-references"></a>Referências adicionais
 

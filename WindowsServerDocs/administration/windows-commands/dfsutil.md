@@ -1,6 +1,6 @@
 ---
 title: DFSUtil
-description: Tópico de referência para Dfsutil, que gerencia namespaces do DFS, servidores e clientes. os comandos Dfsutil usam a terminologia original do Sistema de Arquivos Distribuído, com a terminologia atualizada de namespaces do DFS fornecida como explicação para a maioria dos comandos.
+description: Tópico de referência para o comando Dfsutil, que gerencia namespaces do DFS, servidores e clientes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 999eef79227d4531ba724c9cac40127297ea38a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d6905d90ee42958e47dfed4869520000a4fd3ddf
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719520"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992620"
 ---
 # <a name="dfsutil"></a>DFSUtil
 
@@ -22,12 +22,9 @@ ms.locfileid: "82719520"
 
 O comando Dfsutil gerencia namespaces, servidores e clientes do DFS.
 
->[!NOTE]
->O **módulo namespaces DFS do PowerShell** fornece substituições para alguns dos parâmetros Dfsutil, enquanto outros ainda exigem que você use DFSUtil. Para obter mais informações sobre os equivalentes do PowerShell atualizados, consulte [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps).
+## <a name="functionality-available-in-powershell"></a>Funcionalidade disponível no PowerShell
 
-## <a name="parameters-available-in-powershell"></a>Parâmetros disponíveis no PowerShell
-
-Você pode usar os seguintes parâmetros do PowerShell:
+O módulo [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps) do PowerShell fornece funcionalidade equivalente aos seguintes parâmetros DFSUtil.
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
@@ -38,9 +35,9 @@ Você pode usar os seguintes parâmetros do PowerShell:
 | Servidor | Exibe ou modifica a configuração do namespace. |
 | domínio | Exibe todos os namespaces baseados em domínio em um domínio. |
 
-## <a name="parameters-only-available-in-dfsutil"></a>Parâmetros disponíveis somente em Dfsutil
+## <a name="functionality-available-only-in-dfsutil"></a>Funcionalidade disponível somente em Dfsutil
 
-Você pode usar os parâmetros a seguir somente de DFSUtil.
+A funcionalidade a seguir está disponível apenas como parâmetros Dfsutil:
 
 | Parâmetro | Descrição |
 | --------- | ----------- |

@@ -1,6 +1,6 @@
 ---
 title: delete volume
-description: Tópico de referência para excluir o volume, que exclui o volume selecionado.
+description: Tópico de referência para o comando excluir volume, que exclui o volume selecionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9a8ae0fc863cec5c1a3f6debccf8201e96badd0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 59856e89ff96d2881040365d157540dc62c1aeb0
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716691"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993104"
 ---
 # <a name="delete-volume"></a>delete volume
 
-Exclui o volume selecionado.
+Exclui o volume selecionado. Antes de começar, você deve selecionar um volume para que essa operação seja realizada com sucesso. Use o comando [selecionar volume](select-volume.md) para selecionar um volume e deslocar o foco para ele.
+
+> [!IMPORTANT]
+> Não é possível excluir o volume do sistema, o volume de inicialização ou qualquer volume que contenha o arquivo de paginação ativo ou o despejo de memória (despejo).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -32,14 +35,10 @@ delete volume [noerr]
 | --------- | ----------- |
 | NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
-## <a name="remarks"></a>Comentários
-
--   Não é possível excluir o volume do sistema, o volume de inicialização ou qualquer volume contendo o arquivo de paginação ativo ou o despejo (despejo de memória).
--   Um volume deve ser selecionado para que essa operação seja realizada com sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.
-
 ## <a name="examples"></a>Exemplos
 
 Para excluir o volume com foco, digite:
+
 ```
 delete volume
 ```
@@ -48,3 +47,6 @@ delete volume
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
+- [select volume](select-volume.md)
+
+- [Excluir comando](delete.md)

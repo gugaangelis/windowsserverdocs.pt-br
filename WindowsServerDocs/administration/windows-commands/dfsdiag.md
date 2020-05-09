@@ -1,6 +1,6 @@
 ---
 title: dfsdiag
-description: Tópico de referência para Dfsdiag, que fornece informações de diagnóstico para namespaces do DFS.
+description: Tópico de referência para o comando Dfsdiag, que fornece informações de diagnóstico para namespaces do DFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d5a9b147994628ccad6a723311decbccbe82ec6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7e9e0de18b48a4233b950ad6aa8f1e450a99da62
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719548"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992834"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
@@ -23,21 +23,24 @@ Fornece informações de diagnóstico para namespaces do DFS.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| /DFSPath:<namespace root or DFS folder> [/Recurse]> [/Full] | /TestDFSConfig /DFSRoot:<namespace> | /TestDFSIntegrity /DFSRoot:<DFS root path> [/Recurse] [/Full] | /TestReferral /DFSPath:<DFS path for getting referrals> [/Full] | /?] 
-
+dfsdiag /testdcs [/domain:<domain name>]
+dfsdiag /testsites </machine:<server name>| /DFSPath:<namespace root or DFS folder> [/recurse]> [/full]
+dfsdiag /testdfsconfig /DFSRoot:<namespace>
+dfsdiag /testdfsintegrity /DFSRoot:<DFS root path> [/recurse] [/full]
+dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[Dfsdiag TestDCs](dfsdiag-testdcs.md)|Verifica a configuração do controlador de domínio.|
-|[Dfsdiag TestSites](dfsdiag-testsites.md)|Verifica as associações do site.|
-|[Dfsdiag TestDFSConfig](dfsdiag-testdfsconfig.md)|Verifica a configuração do namespace do DFS.|
-|[Dfsdiag TestDFSIntegrity](dfsdiag-testdfsintegrity.md)|Verifica a integridade do namespace do DFS.|
-|[Dfsdiag TestReferral](dfsdiag-testreferral.md)|Verifica as respostas de referência.|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| [dfsdiag testdcs](dfsdiag-testdcs.md) | Verifica a configuração do controlador de domínio. |
+| [dfsdiag testsites](dfsdiag-testsites.md) | Verifica as associações do site. |
+| [dfsdiag testdfsconfig](dfsdiag-testdfsconfig.md) | Verifica a configuração do namespace do DFS. |
+| [dfsdiag testdfsintegrity](dfsdiag-testdfsintegrity.md) | Verifica a integridade do namespace do DFS. |
+| [dfsdiag testreferral](dfsdiag-testreferral.md) | Verifica as respostas de referência. |
+| /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

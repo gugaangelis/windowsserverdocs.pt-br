@@ -7,12 +7,12 @@ ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daa766b63cd99b86abb5a9fad791061c21aba766
+ms.sourcegitcommit: be4f67ae8e40a0bf1086881ba8963c69d7ea889f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857539"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82986022"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Visão geral do ReFS (Sistema de Arquivos Resiliente)
 
@@ -35,11 +35,11 @@ O ReFS introduz novos recursos que podem detectar precisamente danos e também c
 
 Além de fornecer melhorias em resiliência, o ReFS apresenta novos recursos para cargas de trabalho sensíveis ao desempenho e virtualizadas. Otimização de camada em tempo real, clonagem de blocos e VDL esparso são bons exemplos dos recursos em evolução do ReFS, que foram desenvolvidos para dar suporte a cargas de trabalho dinâmicas e diversificadas:
 
-- Paridade **[acelerada por espelhamento](./mirror-accelerated-parity.md)** – a paridade acelerada oferece alto desempenho e também armazenamento eficiente de capacidade para seus dados. 
+- **[Paridade com aceleração de espelho](./mirror-accelerated-parity.md)**: a paridade com aceleração de espelho oferece alto desempenho e também armazenamento eficiente de capacidade para seus dados. 
 
     - Para oferecer alto desempenho e capacidade de armazenamento eficiente, o ReFS divide um volume em dois grupos lógicos de armazenamento, conhecidos como faixas. Essas camadas podem ter seus próprios tipos de unidade e resiliência, permitindo que cada camada se otimize para desempenho ou capacidade. Alguns exemplos de configurações incluem: 
     
-      | Camada de desempenho | Camada de capacidade |
+      | Nível de desempenho | Camada de capacidade |
       | ---------------- | ----------------- |
       | SSD espelhado | HDD espelhado |
       | SSD espelhado | SSD de paridade |
@@ -69,7 +69,7 @@ A Microsoft desenvolveu o NTFS especificamente para uso geral com uma ampla gama
 > [!NOTE]
 > Todas as configurações com suporte do ReFS devem usar hardware certificado pelo [catálogo do Windows Server](https://www.WindowsServerCatalog.com) e atender aos requisitos do aplicativo.
 
-### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Diretos
+### <a name="storage-spaces-direct"></a>Espaços de Armazenamento Direct
 
 Implantar o ReFS nos Espaços de Armazenamento Diretos é recomendado para cargas de trabalho individualizadas ou armazenamento junto à rede: 
 - A paridade acelerada por espelhamento e [o cache nos Espaços de armazenamento diretos](../storage-spaces/understand-the-cache.md) oferecem armazenamento de alto desempenho e de capacidade eficiente. 
@@ -92,7 +92,7 @@ A implantação de ReFS em discos básicos é mais adequada para aplicativos que
 - Os aplicativos que apresentam suas próprias soluções de software de resiliência e disponibilidade podem aproveitar fluxos de integridade, clonagem de bloco, além da capacidade de dimensionar e oferecer suporte a grandes conjuntos de dados. 
 
 > [!NOTE]
-> Os discos básicos incluem conexão direta local não removível via BusTypes SATA, SAS, NVME ou RAID. 
+> Os discos básicos incluem conexão direta local não removível via BusTypes SATA, SAS, NVME ou RAID. Os discos básicos não incluem espaços de armazenamento.
 
 ### <a name="backup-target"></a>Destino de backup
 
@@ -104,7 +104,7 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 
 ## <a name="feature-comparison"></a>Comparação de recursos
 
-### <a name="limits"></a>Limites
+### <a name="limits"></a>limites
 
 | Recurso       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
@@ -119,10 +119,10 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 
 | Funcionalidade       | ReFS                                        | NTFS |
 |---------------------------|------------------|-----------------------|
-| Criptografia BitLocker | Sim | Sim |
-| Eliminação de Duplicação de Dados | Sim<sup>1</sup> | Sim |
+| Criptografia de BitLocker | Sim | Sim |
+| Eliminação de duplicação de dados | Sim<sup>1</sup> | Sim |
 | Suporte para CSV (Volume Compartilhado Clusterizado) | Sim<sup>2</sup> | Sim |
-| Links flexíveis | Sim | Sim |
+| Links virtuais | Sim | Sim |
 | Suporte para cluster de failover | Sim | Sim |
 | Listas de controle de acesso | Sim | Sim |
 | Diário USN | Sim | Sim |
@@ -155,7 +155,7 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 |---------------------------|------------------|-----------------------|
 | Compactação de sistema de arquivos | Não | Sim |
 | Criptografia de sistema de arquivos | Não | Sim |
-| Transações | Não | Sim |
+| Transactions | Não | Sim |
 | Links físicos | Não | Sim |
 | Identificadores de objeto | Não | Sim |
 | Transferência de Dados descarregadas (ODX) | Não | Sim |
@@ -166,9 +166,9 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 | Suporte ao arquivo de paginação | Não | Sim |
 | Com suporte em mídia removível | Não | Sim |
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 - [Recomendações de tamanho de cluster para ReFS e NTFS](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [Visão geral de Espaços de Armazenamento Diretos](../storage-spaces/storage-spaces-direct-overview.md)
-- [Clonagem de bloco ReFS](block-cloning.md)
+- [Clonagem de blocos ReFS](block-cloning.md)
 - [Fluxos de integridade ReFS](integrity-streams.md)
