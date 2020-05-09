@@ -1,6 +1,6 @@
 ---
 title: dir
-description: Tópico de referência para dir, que exibe uma lista de arquivos e subdiretórios de um diretório.
+description: Tópico de referência para o comando dir, que exibe uma lista de arquivos e subdiretórios de um diretório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,85 +9,85 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc1d2a744ca07ab01d4a8509152cf208ced5dc52
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 067b4961aecc6149d6ff68872123acb2cfe99305
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719494"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992537"
 ---
 # <a name="dir"></a>dir
 
-Exibe uma lista de arquivos e subdiretórios de um diretório. Se usado sem parâmetros, **dir** exibirá o rótulo de volume e o número de série do disco, seguido por uma lista de diretórios e arquivos no disco (incluindo seus nomes e a data e hora em que cada foi modificado pela última vez). Para arquivos, **dir** exibe a extensão de nome e o tamanho em bytes. **Dir** também exibe o número total de arquivos e diretórios listados, seu tamanho cumulativo e o espaço livre (em bytes) restante no disco.
+Exibe uma lista de arquivos e subdiretórios de um diretório. Se usado sem parâmetros, esse comando exibe o rótulo de volume e o número de série do disco, seguido por uma lista de diretórios e arquivos no disco (incluindo seus nomes e a data e hora em que cada foi modificado pela última vez). Para arquivos, esse comando exibe a extensão de nome e o tamanho em bytes. Esse comando também exibe o número total de arquivos e diretórios listados, seu tamanho cumulativo e o espaço livre (em bytes) restante no disco.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
+O comando **dir** também pode ser executado no console de recuperação do Windows, usando parâmetros diferentes. Para obter mais informações, consulte [ambiente de recuperação do Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>]][/o[[:]<SortOrder>]] [/t[[:]<TimeField>]] [/s] [/b] [/l] [/n] [/x] [/c] [/4]
+dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>]][/o[[:]<sortorder>]] [/t[[:]<timefield>]] [/s] [/b] [/l] [/n] [/x] [/c] [/4]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[\<Unidade>:] [<Path>]|Especifica a unidade e o diretório para os quais você deseja ver uma listagem.|
-|[\<Nome do arquivo>]|Especifica um arquivo ou grupo de arquivos específico para o qual você deseja ver uma listagem.|
-|/p|Exibe uma tela da listagem de cada vez. Para ver a próxima tela, pressione qualquer tecla no teclado.|
-|/q|Exibe informações de Propriedade do arquivo.|
-|/w|Exibe a lista em formato largo, com até cinco nomes de arquivo ou nomes de diretório em cada linha.|
-|/d|Exibe a listagem no mesmo formato que **/w**, mas os arquivos são classificados por coluna.|
-|/a [[:]\<atributos>]|Exibe somente os nomes desses diretórios e arquivos com os atributos que você especificar. Se você omitir **/a**, **dir** exibirá os nomes de todos os arquivos, exceto arquivos ocultos e do sistema. Se você usar **/a** sem especificar *atributos*, **dir** exibirá os nomes de todos os arquivos, incluindo arquivos ocultos e do sistema.</br>A lista a seguir descreve cada um dos valores que você pode usar para *atributos*. Usando dois-pontos (:) é opcional. Use qualquer combinação desses valores e não separe os valores com espaços.</br>diretórios **d**</br>arquivos ocultos **h**</br>**s** arquivos do sistema</br>**l** pontos de nova análise</br>arquivos somente leitura do **r**</br>**um** arquivo pronto para arquivamento</br>Não **tenho** conteúdo de arquivos indexados</br>**-** Significado de prefixo não|
-|/o [[:]\<SortOrder>]|Classifica a saída de acordo com a *SortOrder*, que pode ser qualquer combinação dos seguintes valores:</br>**n** por nome (em ordem alfabética)</br>**e** por extensão (alfabética)</br>**g** agrupar diretórios primeiro</br>**s** por tamanho (menor primeiro)</br>**d** por data/hora (mais antigo primeiro)</br>**-** Prefixo para ordem inversa</br>Observação: o uso de dois pontos é opcional. Vários valores são processados na ordem em que são listados. Não Separe vários valores com espaços.</br>Se *SortOrder* não for especificada, **dir/o** listará os diretórios em ordem alfabética, seguidos pelos arquivos, que também são classificados em ordem alfabética.|
-|/t [[:]\<timefield>]|Especifica qual campo de hora exibir ou usar para classificação. A lista a seguir descreve cada um dos valores que você pode usar para o *timefield*:</br>criação de **c**</br>**um** último acesso</br>**w** gravado pela última vez|
-|/s|Lista todas as ocorrências do nome de arquivo especificado no diretório especificado e em todos os subdiretórios.|
-|/b|Exibe uma lista simples de diretórios e arquivos, sem informações adicionais. **/b** substitui **/w**.|
-|/l|Exibe nomes de diretório e nomes de arquivos não classificados em minúsculas.|
-|/n|Exibe um formato de lista longa com nomes de arquivo na extrema direita da tela.|
-|/x|Exibe os nomes curtos gerados para nomes de arquivo não 8dot3. A exibição é igual à exibição de **/n**, mas o nome curto é inserido antes do nome longo.|
-|/c|Exibe o separador de milhar em tamanhos de arquivo. Esse é o comportamento padrão. Use **/-c** para ocultar separadores.|
-|/4|Exibe anos no formato de quatro dígitos.|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `[<drive>:][<path>]` | Especifica a unidade e o diretório para os quais você deseja ver uma listagem. |
+| `[<filename>]` | Especifica um arquivo ou grupo de arquivos específico para o qual você deseja ver uma listagem. |
+| /p | Exibe uma tela da listagem de cada vez. Para ver a próxima tela, pressione qualquer tecla. |
+| /q | Exibe informações de Propriedade do arquivo. |
+| /w | Exibe a lista em formato largo, com até cinco nomes de arquivo ou nomes de diretório em cada linha. |
+| /d | Exibe a listagem no mesmo formato que **/w**, mas os arquivos são classificados por coluna. |
+| /a [[:]`<attributes>`] | Exibe somente os nomes desses diretórios e arquivos com os atributos especificados. Se você não usar esse parâmetro, o comando exibirá os nomes de todos os arquivos, exceto arquivos ocultos e do sistema. Se você usar esse parâmetro sem especificar nenhum *atributo*, o comando exibirá os nomes de todos os arquivos, incluindo arquivos ocultos e do sistema. A lista de possíveis valores de *atributos* é:<ul><li>**d** -diretórios</li><li>**h** -arquivos ocultos</li><li>arquivos do sistema **s**</li><li>**l** -pontos de nova análise</li><li>**r** -arquivos somente leitura</li><li>**a** -arquivos prontos para arquivamento</li><li>Não há **conteúdo de arquivos** indexados</li></ul>Você pode usar qualquer combinação desses valores, mas não separe seus valores usando espaços. Opcionalmente, você pode usar dois-pontos (:) ou você pode usar um hífen (-) como um prefixo para média, "não". Por exemplo, o uso do atributo **-s** não mostrará os arquivos do sistema. |
+| /o [[:]`<sortorder>`] | Classifica a saída de acordo com a *SortOrder*, que pode ser qualquer combinação dos seguintes valores:<ul><li>**n** -alfabeticamente por nome</li><li>**e** -alfabeticamente por extensão</li><li>diretório **g** -Group First</li><li>**s** – tamanho, o menor primeiro</li><li>**d** -por data/hora, primeiro o mais antigo</li><li>Usar o **-** prefixo para reverter a ordem de classificação</li></ul>Vários valores são processados na ordem em que são listados. Não Separe vários valores com espaços, mas, opcionalmente, você pode usar dois-pontos (:).<p>Se *SortOrder* não for especificado, **dir/o** listará os diretórios em ordem alfabética, seguido pelos arquivos, que também são classificados alfabeticamente. |
+| /t [[:]`<timefield>`] | Especifica qual campo de hora exibir ou usar para classificação. Os valores de *timefield* disponíveis são:<ul><li>criação de **c**</li><li>**a** -último acessado</li><li>**w** -escrito pela última vez</li></ul> |
+| /s | Lista todas as ocorrências do nome de arquivo especificado no diretório especificado e em todos os subdiretórios. |
+| /b | Exibe uma lista simples de diretórios e arquivos, sem informações adicionais. O parâmetro **/b** substitui **/w**. |
+| /l | Exibe nomes de diretório e nomes de arquivos não classificados, usando letras minúsculas. |
+| /n | Exibe um formato de lista longa com nomes de arquivo na extrema direita da tela. |
+| /x | Exibe os nomes curtos gerados para nomes de arquivo não 8dot3. A exibição é igual à exibição de **/n**, mas o nome curto é inserido antes do nome longo. |
+| /c | Exibe o separador de milhar em tamanhos de arquivo. Esse é o comportamento padrão. Use **/c** para ocultar separadores. |
+| /4 | Exibe anos no formato de quatro dígitos. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
 - Para usar vários parâmetros *filename* , separe cada nome de arquivo com um espaço, vírgula ou ponto-e-vírgula.
+
 - Você pode usar caracteres curinga (**&#42;** ou **?**), para representar um ou mais caracteres de um nome de arquivo e para exibir um subconjunto de arquivos ou subdiretórios.
 
-  **Asterisco (\*):** Use o asterisco como um substituto para qualquer cadeia de caracteres, por exemplo:  
-  - **dir \*. txt** lista todos os arquivos no diretório atual com extensões que começam com. txt, como. txt,. txt1,. txt_old.
-  - **dir Read\*. txt** lista todos os arquivos no diretório atual que começam com leitura e com extensões que começam com. txt, como. txt,. txt1 ou. txt_old.
-  - **pasta de\*leitura. \* ** lista todos os arquivos no diretório atual que começam com ler com qualquer extensão.
+- Você pode usar o caractere curinga, **&#42;**, para substituir qualquer cadeia de caracteres, por exemplo:
 
-  O curinga asterisco sempre usa mapeamento de nome de arquivo curto, portanto, você pode obter resultados inesperados. Por exemplo, o diretório a seguir contém dois arquivos (t. txt2 e T97. txt): 
- 
+  - `dir *.txt`lista todos os arquivos no diretório atual com extensões que começam com. txt, como. txt,. txt1,. txt_old.
+
+  - `dir read *.txt`lista todos os arquivos no diretório atual que começam com leitura e com extensões que começam com. txt, como. txt,. txt1 ou. txt_old.
+
+  - `dir read *.*`lista todos os arquivos no diretório atual que começam com ler com qualquer extensão.
+
+  O curinga asterisco sempre usa mapeamento de nome de arquivo curto, portanto, você pode obter resultados inesperados. Por exemplo, o diretório a seguir contém dois arquivos (t. txt2 e T97. txt):
+
   ```
   C:\test>dir /x
   Volume in drive C has no label.
   Volume Serial Number is B86A-EF32
-    
+
   Directory of C:\test
-    
+
   11/30/2004  01:40 PM <DIR>  .
   11/30/2004  01:40 PM <DIR> ..
   11/30/2004  11:05 AM 0 T97B4~1.TXT t.txt2
   11/30/2004  01:16 PM 0 t97.txt
-  ```  
+  ```
 
-  Você pode esperar que digitar **dir T97\\*** retornaria o arquivo T97. txt. No entanto, a digitação de **dir T97\\*** retorna ambos os arquivos, porque o curinga asterisco corresponde ao arquivo t. txt2 a T97. txt usando seu mapa de nome curto T97B4 ~ 1. txt. Da mesma forma, digitar **del T97\\*** excluiria ambos os arquivos.
+  Você pode esperar que a `dir t97\*` digitação retorne o arquivo T97. txt. No entanto `dir t97\*` , a digitação retorna ambos os arquivos, porque o curinga asterisco corresponde ao arquivo t. txt2 para T97. txt usando seu mapa de nome curto *T97B4 ~ 1. txt*. Da mesma forma `del t97\*` , a digitação excluiria ambos os arquivos.
 
-  **Ponto de interrogação (?):** Use o ponto de interrogação como um substituto para um único caractere em um nome. Por exemplo, digitando **dir de leitura???. txt** lista todos os arquivos no diretório atual com a extensão. txt que começam com Read e são seguidos por até três caracteres. Isso inclui Read. txt, Read1. txt, Read12. txt, Read123. txt e Readme1. txt, mas não Readme12. txt.
-- Especificando atributos de exibição de arquivo
+- Você pode usar o ponto de interrogação (?) como um substituto para um único caractere em um nome. Por exemplo, a `dir read???.txt` digitação lista todos os arquivos no diretório atual com a extensão. txt que começam com Read e são seguidos por até três caracteres. Isso inclui Read. txt, Read1. txt, Read12. txt, Read123. txt e Readme1. txt, mas não Readme12. txt.
 
-  Se você usar **/a** com mais de um valor em *atributos*, **dir** exibirá os nomes apenas desses arquivos com todos os atributos especificados. Por exemplo, se você usar **/a** com **r** e **-h** como atributos (usando **/a: r-h** ou **/ar-h**), o **dir** exibirá apenas os nomes dos arquivos somente leitura que não estão ocultos.
-- Especificando a classificação de nome de arquivo
+- Se você usar **/a** com mais de um valor em *atributos*, esse comando exibirá os nomes somente desses arquivos com todos os atributos especificados. Por exemplo, se você usar a **opção/a** com **r** e **-h** como atributos (usando `/a:r-h` ou `/ar-h`), esse comando exibirá apenas os nomes dos arquivos somente leitura que não estão ocultos.
 
-  Se você especificar mais de um valor de *SortOrder* , **dir** classificará os nomes de arquivo pelo primeiro critério e, em seguida, pelo segundo critério, e assim por diante. Por exemplo, se você usar **/o** com os valores **e** e **-s** para *SortOrder* (usando **/o: e-s** ou **/OE-s**), **dir** classificará os nomes de diretórios e arquivos por extensão, com o maior primeiro e, em seguida, exibirá o resultado final. A classificação alfabética por extensão faz com que os nomes de arquivo sem extensões apareçam primeiro, depois nomes de diretório e, em seguida, nomes de arquivo com extensões.
-- Usando os símbolos de redirecionamento e pipes
+- Se você especificar mais de um valor de *SortOrder* , esse comando classificará os nomes de arquivo pelo primeiro critério e, em seguida, pelo segundo critério, e assim por diante. Por exemplo, se você usar **/o** com os parâmetros **e** e **-s** para *ordem* de classificação (usando `/o:e-s` ou `/oe-s`), esse comando classificará os nomes de diretórios e arquivos por extensão, com o maior primeiro e, em seguida, exibirá o resultado final. A classificação alfabética por extensão faz com que os nomes de arquivo sem extensões apareçam primeiro, depois nomes de diretório e, em seguida, nomes de arquivo com extensões.
 
-  Quando você usa o símbolo de redirecionamento**>**() para enviar a saída **dir** para um arquivo ou um**|** pipe () para enviar a saída **dir** para outro comando, use **/a:-d** e **/b** para listar apenas os nomes dos arquivos. Você pode usar *nome de arquivo* com **/b** e **/s** para especificar que **dir** é Pesquisar o diretório atual e seus subdiretórios para todos os nomes de arquivo que correspondam a *filename*. **Dir** lista somente a letra da unidade, o nome do diretório, o nome do arquivo e a extensão de nome de arquivo (um caminho por linha), para cada nome de arquivo que encontrar. Antes de usar um pipe para enviar a saída **dir** para outro comando, você deve definir a variável de ambiente TEMP em seu arquivo autoexec. NT.
-- O comando **dir** , com parâmetros diferentes, está disponível no console de recuperação.
+- Se você usar o símbolo de redirecionamento`>`() para enviar a saída desse comando para um arquivo ou se usar um pipe (`|`) para enviar a saída desse comando para outro comando, você deverá usar `/a:-d` e **/b** para listar apenas os nomes dos arquivos. Você pode usar *nome de arquivo* com **/b** e **/s** para especificar que esse comando é para pesquisar o diretório atual e seus subdiretórios para todos os nomes de arquivo que correspondam a *filename*. Esse comando lista somente a letra da unidade, o nome do diretório, o nome do arquivo e a extensão de nome de arquivo (um caminho por linha), para cada nome de arquivo que encontrar. Antes de usar um pipe para enviar a saída desse comando para outro comando, você deve definir a variável de ambiente *Temp* no arquivo autoexec. NT.
 
 ## <a name="examples"></a>Exemplos
 
@@ -97,7 +97,7 @@ Para exibir todos os diretórios, um após o outro, em ordem alfabética, em for
 dir /s/w/o/p
 ```
 
-O comando **dir** lista o diretório raiz, os subdiretórios e os arquivos no diretório raiz, incluindo extensões. Em seguida, **dir** lista os nomes de subdiretório e nomes de arquivo em cada subdiretório na árvore.
+A saída lista o diretório raiz, os subdiretórios e os arquivos no diretório raiz, incluindo extensões. Esse comando também lista os nomes de subdiretórios e os nomes de arquivo em cada subdiretório na árvore.
 
 Para alterar o exemplo anterior para que **dir** exiba os nomes de arquivo e extensões, mas omita os nomes de diretório, digite:
 
@@ -119,9 +119,11 @@ Você também pode redirecionar a saída do comando **dir** para um arquivo, sub
 dir > \records\dir.doc
 ```
 
-Se dir. doc não existir, o **dir** o criará, a menos que o diretório de registros não exista. Nesse caso, a seguinte mensagem é exibida:
+Se dir. doc não existir, o **dir** o criará, a menos que o diretório de **registros** não exista. Nesse caso, a seguinte mensagem é exibida:
 
-`File creation error`
+```
+File creation error
+```
 
 Para exibir uma lista de todos os nomes de arquivo com a extensão. txt em todos os diretórios na unidade C, digite:
 
@@ -133,4 +135,4 @@ O comando **dir** exibe, em formato amplo, uma lista em ordem alfabética dos no
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

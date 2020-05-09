@@ -1,6 +1,6 @@
 ---
 title: Excluir partição
-description: Tópico de referência para excluir partição, que exclui a partição com foco.
+description: Tópico de referência para o comando Excluir partição, que exclui a partição com foco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 259abdfc6e3ba8db22d5582bff08d7a4bc8b807b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 13c79b826480171af578334942af8f73b77d796b
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716724"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993118"
 ---
 # <a name="delete-partition"></a>Excluir partição
 
-Exclui a partição com foco.
+Exclui a partição com foco. Antes de começar, você deve selecionar uma partição para que essa operação seja realizada com sucesso. Use o comando [selecionar partição](select-partition.md) para selecionar uma partição e deslocar o foco para ela.
+
+> [!WARNING]
+> A exclusão de uma partição em um disco dinâmico pode excluir todos os volumes dinâmicos no disco, destruindo todos os dados e deixando o disco em um estado corrompido.
+>
+> Não é possível excluir a partição do sistema, a partição de inicialização ou qualquer partição que contenha o arquivo de paginação ativo ou informações de despejo de memória.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -28,21 +33,21 @@ delete partition [noerr] [override]
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|override|Permite que o DiskPart exclua qualquer partição, independentemente do tipo. Normalmente, o DiskPart só permite que você exclua partições de dados conhecidas.|
-|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
+| override | Permite que o DiskPart exclua qualquer partição, independentemente do tipo. Normalmente, o DiskPart só permite que você exclua partições de dados conhecidas. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
-> [!CAUTION]
-> A exclusão de uma partição em um disco dinâmico pode excluir todos os volumes dinâmicos no disco, destruindo os dados e deixando o disco em um estado corrompido. Para excluir um volume dinâmico, sempre use o comando **delete volume** . As partições podem ser excluídas de discos dinâmicos, mas não devem ser criadas. Por exemplo, é possível excluir uma partição GPT (tabela de partição GUID) não reconhecida em um disco GPT dinâmico. Excluir tal partição não faz com que o espaço livre resultante fique disponível. Este comando destina-se a permitir a recuperação de espaço em um disco dinâmico offline corrompido em uma situação de emergência em que o comando **Clean** no DiskPart não pode ser usado.
-> -   Não é possível excluir a partição do sistema, a partição de inicialização ou qualquer partição que contenha o arquivo de paginação ativo ou informações de despejo de memória.
-> -   Uma partição deve ser selecionada para que essa operação seja realizada com sucesso. Use o comando **selecionar partição** para selecionar uma partição e deslocar o foco para ela.
+- Para excluir um volume dinâmico, sempre use o comando [delete volume](delete-volume.md) .
+
+- As partições podem ser excluídas de discos dinâmicos, mas não devem ser criadas. Por exemplo, é possível excluir uma partição GPT (tabela de partição GUID) não reconhecida em um disco GPT dinâmico. A exclusão dessa partição não faz com que o espaço livre resultante fique disponível. Em vez disso, esse comando destina-se a permitir que você recupere espaço em um disco dinâmico offline corrompido em uma situação de emergência em que o comando [Clean](clean.md) no DiskPart não possa ser usado.
 
 ## <a name="examples"></a>Exemplos
 
 Para excluir a partição com foco, digite:
+
 ```
 delete partition
 ```
@@ -51,3 +56,10 @@ delete partition
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
+- [selecionar partição](select-partition.md)
+
+- [Excluir comando](delete.md)
+
+- [comando excluir volume](delete-volume.md)
+
+- [Limpar comando](clean.md)
