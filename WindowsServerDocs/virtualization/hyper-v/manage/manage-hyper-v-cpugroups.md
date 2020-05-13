@@ -7,16 +7,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: fcf61c22a24abb6b16baf75b4846cc188dcecd49
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860789"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203533"
 ---
->Aplica-se a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
-
 # <a name="virtual-machine-resource-controls"></a>Controles de recurso de máquina virtual
+
+> Aplica-se a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
 Este artigo descreve os controles de isolamento e recursos do Hyper-V para máquinas virtuais.  Esses recursos, que vamos nos referir como grupos de CPU de máquina virtual, ou apenas "grupos de CPU", foram introduzidos no Windows Server 2016.  Os grupos de CPU permitem que os administradores do Hyper-V gerenciem e aloquem melhor os recursos de CPU do host em máquinas virtuais convidadas.  Usando grupos de CPU, os administradores do Hyper-V podem:
 
@@ -30,7 +30,7 @@ Este artigo descreve os controles de isolamento e recursos do Hyper-V para máqu
 
 Os grupos de CPU são gerenciados por meio do serviço de computação do host Hyper-V ou HCS. Uma grande descrição do HCS, seu Genesis, links para as APIs do HCS e muito mais está disponível no blog da equipe de virtualização da Microsoft na postagem [que apresenta o HCS (serviço de computação do host)](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/).
 
->[!NOTE] 
+>[!NOTE]
 >Somente o HCS pode ser usado para criar e gerenciar grupos de CPU; o miniaplicativo do Gerenciador do Hyper-V, as interfaces de gerenciamento do WMI e do PowerShell não dão suporte a grupos de CPU.
 
 A Microsoft fornece um utilitário de linha de comando, cpugroups. exe, no [centro de download da Microsoft](https://go.microsoft.com/fwlink/?linkid=865968) que usa a interface HCS para gerenciar grupos de CPU.  Esse utilitário também pode exibir a topologia de CPU de um host.
@@ -51,7 +51,7 @@ Por exemplo, considere um grupo de CPU configurado com 4 processadores lógicos 
     G = 4 * 50%
     G = 2 LP's worth of CPU time for the entire group
 
-Neste exemplo, o grupo de CPU G é alocado 2 LP de tempo de CPU.  
+Neste exemplo, o grupo de CPU G é alocado 2 LP de tempo de CPU.
 
 Observe que o limite do grupo se aplica independentemente do número de máquinas virtuais ou processadores virtuais associados ao grupo e, independentemente do estado (por exemplo, desligamento ou inicialização) das máquinas virtuais atribuídas ao grupo de CPU. Portanto, cada VM associada ao mesmo grupo de CPU receberá uma fração da alocação total de CPU do grupo, e isso será alterado com o número de VMs associadas ao grupo de CPU. Portanto, à medida que as VMs são associadas ou desassociadas a VMs de um grupo de CPU, a extremidade geral do grupo de CPU deve ser reajustada e definida para manter o limite resultante por VM desejado. A camada de software de gerenciamento de virtualização ou administrador de host de VM é responsável por gerenciar Caps de grupo conforme necessário para atingir a alocação de recursos de CPU por VM desejada.
 
@@ -120,7 +120,7 @@ Para obter mais informações sobre a configuração "minroot", consulte [Gerenc
 
 Vejamos alguns exemplos de como usar a ferramenta CpuGroups.
 
->[!NOTE] 
+>[!NOTE]
 >Os parâmetros de linha de comando para a ferramenta CpuGroups são passados usando apenas espaços como delimitadores. Nenhum caractere '/' ou '-' deve prosseguir com a opção de linha de comando desejada.
 
 ### <a name="discovering-the-cpu-topology"></a>Descobrindo a topologia da CPU
@@ -128,7 +128,7 @@ Vejamos alguns exemplos de como usar a ferramenta CpuGroups.
 A execução de CpuGroups com o GetCpuTopology retorna informações sobre o sistema atual, como mostrado abaixo, incluindo o índice de LP, o nó NUMA ao qual o LP pertence, o pacote e as IDs de núcleo e o índice de VP raiz.
 
 O exemplo a seguir mostra um sistema com dois soquetes de CPU e nós NUMA, um total de 32 LPs e vários threads habilitados e configurados para habilitar Minroot com 8 VPSs raiz, 4 de cada nó NUMA.
-Os LPs que têm VPSs raiz têm um RootVpIndex > = 0; LPs com um RootVpIndex de-1 não estão disponíveis para a partição raiz, mas ainda são gerenciados pelo hipervisor e serão executados VPSs de convidado conforme permitido por outras definições de configuração.
+Os LPs que têm VPSs raiz têm um RootVpIndex >= 0; LPs com um RootVpIndex de-1 não estão disponíveis para a partição raiz, mas ainda são gerenciados pelo hipervisor e serão executados VPSs de convidado conforme permitido por outras definições de configuração.
 
 ```console
 C:\vm\tools>CpuGroups.exe GetCpuTopology

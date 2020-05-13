@@ -8,32 +8,32 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8da873fa10564be788261069b00a1afac1732c48
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c05b4ecc3e245a6127584fbab1bac727a9306c7
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856949"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203423"
 ---
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
-
 # <a name="authorize-hyper-v-hosts-using-admin-trusted-attestation"></a>Autorizar hosts Hyper-V usando o atestado de administrador confiável
 
->[!IMPORTANT]
->O atestado confiável de administrador (modo de anúncio) é preterido a partir do Windows Server 2019. Para ambientes em que o atestado do TPM não é possível, configure o [atestado de chave do host](guarded-fabric-initialize-hgs-key-mode.md). O atestado de chave de host fornece garantia semelhante ao modo AD e é mais simples de configurar. 
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+
+> [!IMPORTANT]
+> O atestado confiável de administrador (modo de anúncio) é preterido a partir do Windows Server 2019. Para ambientes em que o atestado do TPM não é possível, configure o [atestado de chave do host](guarded-fabric-initialize-hgs-key-mode.md). O atestado de chave de host fornece garantia semelhante ao modo AD e é mais simples de configurar.
 
 
-Para autorizar um host protegido no modo AD: 
+Para autorizar um host protegido no modo AD:
 
 1. No domínio de malha, adicione os hosts Hyper-V a um grupo de segurança.
-2. No domínio HGS, registre o SID do grupo de segurança com HGS. 
+2. No domínio HGS, registre o SID do grupo de segurança com HGS.
 
 ## <a name="add-the-hyper-v-host-to-a-security-group-and-reboot-the-host"></a>Adicionar o host Hyper-V a um grupo de segurança e reinicializar o host
 
-1. Crie um grupo de segurança **global** no domínio de malha e adicione hosts Hyper-V que executarão VMs blindadas. 
+1. Crie um grupo de segurança **global** no domínio de malha e adicione hosts Hyper-V que executarão VMs blindadas.
    Reinicie os hosts para atualizar sua associação de grupo.
 
-2. Use Get-ADGroup para obter o SID (identificador de segurança) do grupo de segurança e fornecê-lo ao administrador do HGS. 
+2. Use Get-ADGroup para obter o SID (identificador de segurança) do grupo de segurança e fornecê-lo ao administrador do HGS.
 
    ```powershell
    Get-ADGroup "Guarded Hosts"
@@ -41,17 +41,17 @@ Para autorizar um host protegido no modo AD:
 
    ![Comando Get-AdGroup com saída](../media/Guarded-Fabric-Shielded-VM/guarded-host-get-adgroup.png)
 
-## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registrar o SID do grupo de segurança com HGS  
+## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registrar o SID do grupo de segurança com HGS
 
-1. Obtenha o SID do grupo de segurança para hosts protegidos do administrador da malha e execute o comando a seguir para registrar o grupo de segurança com o HGS. 
-   Execute novamente o comando, se necessário, para grupos adicionais. 
-   Forneça um nome amigável para o grupo. 
-   Ele não precisa corresponder ao nome do grupo de segurança Active Directory. 
+1. Obtenha o SID do grupo de segurança para hosts protegidos do administrador da malha e execute o comando a seguir para registrar o grupo de segurança com o HGS.
+   Execute novamente o comando, se necessário, para grupos adicionais.
+   Forneça um nome amigável para o grupo.
+   Ele não precisa corresponder ao nome do grupo de segurança Active Directory.
 
    ```powershell
    Add-HgsAttestationHostGroup -Name "<GuardedHostGroup>" -Identifier "<SID>"
    ```
 
-2. Para verificar se o grupo foi adicionado, execute [Get-HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx). 
+2. Para verificar se o grupo foi adicionado, execute [Get-HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx).
 
 

@@ -8,20 +8,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: b29f8bb4bfb8b2b685a6c4ec1a1d2965d8fbde58
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b6fac7792b91e7415d0714b43201c404da2155bf
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856939"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203410"
 ---
 # <a name="create-a-security-group-for-guarded-hosts-and-register-the-group-with-hgs"></a>Criar um grupo de segurança para hosts protegidos e registrar o grupo com o HGS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
->[!IMPORTANT]
->O modo AD é preterido a partir do Windows Server 2019. Para ambientes em que o atestado do TPM não é possível, configure o [atestado de chave do host](guarded-fabric-initialize-hgs-key-mode.md). O atestado de chave de host fornece garantia semelhante ao modo AD e é mais simples de configurar. 
-
+> [!IMPORTANT]
+> O modo AD é preterido a partir do Windows Server 2019. Para ambientes em que o atestado do TPM não é possível, configure o [atestado de chave do host](guarded-fabric-initialize-hgs-key-mode.md). O atestado de chave de host fornece garantia semelhante ao modo AD e é mais simples de configurar.
 
 Este tópico descreve as etapas intermediárias para preparar hosts Hyper-V para se tornarem hosts protegidos usando o atestado confiável de administrador (modo AD). Antes de executar essas etapas, conclua as etapas em [Configurando o DNS de malha para hosts que se tornarão hosts protegidos](guarded-fabric-configuring-fabric-dns-ad.md).
 
@@ -30,7 +29,7 @@ Este tópico descreve as etapas intermediárias para preparar hosts Hyper-V para
 
 1. Crie um novo grupo de segurança **global** no domínio de malha e adicione hosts Hyper-V que executarão VMs blindadas. Reinicie os hosts para atualizar sua associação de grupo.
 
-2. Use Get-ADGroup para obter o SID (identificador de segurança) do grupo de segurança e fornecê-lo ao administrador do HGS. 
+2. Use Get-ADGroup para obter o SID (identificador de segurança) do grupo de segurança e fornecê-lo ao administrador do HGS.
 
     ```powershell
     Get-ADGroup "Guarded Hosts"
@@ -38,25 +37,25 @@ Este tópico descreve as etapas intermediárias para preparar hosts Hyper-V para
 
     ![Comando Get-AdGroup com saída](../media/Guarded-Fabric-Shielded-VM/guarded-host-get-adgroup.png)
 
-## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registrar o SID do grupo de segurança com HGS  
+## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registrar o SID do grupo de segurança com HGS
 
-1. Em um servidor HGS, execute o seguinte comando para registrar o grupo de segurança com o HGS. 
-   Execute novamente o comando, se necessário, para grupos adicionais. 
-   Forneça um nome amigável para o grupo. 
-   Ele não precisa corresponder ao nome do grupo de segurança Active Directory. 
+1. Em um servidor HGS, execute o seguinte comando para registrar o grupo de segurança com o HGS.
+   Execute novamente o comando, se necessário, para grupos adicionais.
+   Forneça um nome amigável para o grupo.
+   Ele não precisa corresponder ao nome do grupo de segurança Active Directory.
 
    ```powershell
    Add-HgsAttestationHostGroup -Name "<GuardedHostGroup>" -Identifier "<SID>"
    ```
 
-2. Para verificar se o grupo foi adicionado, execute [Get-HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx). 
+2. Para verificar se o grupo foi adicionado, execute [Get-HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx).
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 
 > [!div class="nextstepaction"]
 > [Confirmar atestado](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
-- [Implantando o serviço guardião de host para hosts protegidos e VMs blindadas](guarded-fabric-deploying-hgs-overview.md)
+- [Implantar o Serviço Guardião de Host para hosts protegidos e VMs blindadas](guarded-fabric-deploying-hgs-overview.md)

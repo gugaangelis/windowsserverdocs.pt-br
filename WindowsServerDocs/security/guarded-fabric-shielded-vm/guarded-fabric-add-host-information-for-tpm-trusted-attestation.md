@@ -8,23 +8,23 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: f9a0ee9cb78a89b20140e40a2bd3ae42da56c84f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1c25cc88c577ccb1bc0e8cc690114471e86b6ba
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856929"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203400"
 ---
->Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
-
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>Adicionar informações do host para o atestado confiável do TPM
+
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
 Para o modo TPM, o administrador de malha captura três tipos de informações de host, cada um deles precisa ser adicionado à configuração do HGS:
 
 - Um identificador TPM (EKpub) para cada host Hyper-V
-- Políticas de integridade de código, uma lista de permissões de binários permitidos para os hosts do Hyper-V
+- Políticas de integridade de código, uma lista branca de binários permitidos para os hosts do Hyper-V
 - Uma linha de base do TPM (medidas de inicialização) que representa um conjunto de hosts Hyper-V que são executados na mesma classe de hardware
-    
+
 AF er o administrador da malha captura as informações, adiciona-as à configuração do HGS, conforme descrito no procedimento a seguir.
 
 1. Obtenha os arquivos XML que contêm as informações de EKpub e copie-os para um servidor HGS. Haverá um arquivo XML por host. Em seguida, em um console do Windows PowerShell com privilégios elevados em um servidor HGS, execute o comando a seguir. Repita o comando para cada um dos arquivos XML.
@@ -46,7 +46,7 @@ AF er o administrador da malha captura as informações, adiciona-as à configur
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
        ```
-    
+
     > [!NOTE]
     > If you're using a signed code integrity policy, register an unsigned copy of the same policy with HGS.
     > The signature on code integrity policies is used to control updates to the policy, but is not measured into the host TPM and therefore cannot be attested to by HGS.
@@ -59,7 +59,7 @@ AF er o administrador da malha captura as informações, adiciona-as à configur
 
 Isso conclui o processo de configuração de um cluster HGS para o modo TPM. O administrador de malha pode precisar que você forneça duas URLs do HGS para que a configuração possa ser concluída para os hosts. Para obter essas URLs, em um servidor HGS, execute [Get-HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/get-hgsserver?view=win10-ps).
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 
 > [!div class="nextstepaction"]
 > [Confirmar atestado](guarded-fabric-confirm-hosts-can-attest-successfully.md)

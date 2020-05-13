@@ -27,7 +27,7 @@ Esses repositórios são ativamente gerenciados e incluem a origem do conteúdo 
 
 ## <a name="markdown-info"></a>Informações de redução
 
-Para obter informações sobre como usar a redução nos tópicos do Docs.microsoft.com, consulte [referência de redução de documentos](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master). A versão publicamente acessível deste conteúdo está aqui: [referência de redução de documentos públicos](https://docs.microsoft.com/contribute/how-to-write-use-markdown).
+Para obter informações sobre como usar a redução nos tópicos do Docs.microsoft.com, consulte [referência de redução de documentos](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master). A versão publicamente acessível deste conteúdo está aqui: [referência de redução de documentos públicos](https://docs.microsoft.com/contribute/markdown-reference).
 
 ## <a name="license"></a>Licença
 
@@ -35,4 +35,4 @@ Confira os tópicos [LICENSE](https://github.com/MicrosoftDocs/windowsserverdocs
 
 ## <a name="code-of-conduct"></a>Código de Conduta
 
-Este projeto adotou o [Código de conduta de software livre da Microsoft](https://opensource.microsoft.com/codeofconduct/). Para saber mais, confira as [Perguntas Frequentes sobre o Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou contate [opencode@microsoft.com](mailto:opencode@microsoft.com) com perguntas ou comentários adicionais.
+Este projeto adotou o [Código de Conduta de Software Livre da Microsoft](https://opensource.microsoft.com/codeofconduct/). Para obter mais informações, confira as [Perguntas frequentes sobre o código de conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou entre em contato com [opencode@microsoft.com](mailto:opencode@microsoft.com) para enviar outras perguntas ou comentários.

@@ -1,6 +1,6 @@
 ---
 title: exit
-description: Tópico de referência para Exit, que sai do interpretador de comandos do DiskPart.
+description: Tópico de referência para Exit, que sai do interpretador de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c36d0f7f6770ead39a6b31919fc1ae34a8af205b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 97068232a7ffa82e59ba486b449af96638e3d8f0
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725713"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235071"
 ---
 # <a name="exit"></a>exit
 
-Sai do interpretador de comandos do DiskPart.
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+Sai do interpretador de comando ou do script do lote atual.
 
 ## <a name="syntax"></a>Sintaxe
+
+```
+exit [/b] [<exitcode>]
+```
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| /b | Sai do script do lote atual em vez de sair do cmd. exe. Se executado de fora de um script em lotes, o fechará cmd. exe. |
+| `<exitcode>` | Especifica um número numérico. Se **/b** for especificado, a variável de ambiente ERRORLEVEL será definida para esse número. Se você estiver encerrando o interpretador de comandos, o código de saída do processo será definido como esse número. |
+| /? | Exibe a ajuda no prompt de comando. |
+
+## <a name="examples"></a>Exemplos
+
+Para fechar o interpretador de comando, digite:
 
 ```
 exit
@@ -29,4 +47,3 @@ exit
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-
