@@ -8,18 +8,18 @@ ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5c73714dff2d89201ac93704105038c604f12e06
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318894"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404579"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>Migrar de versões anteriores para o Windows Server Essentials ou Experiência do Windows Server Essentials
 
->Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Aplica-se a: Windows Server 2012 R2 Essentials
 
-Este guia descreve como migrar de versões anteriores do Windows Small Business Server e do Windows Server Essentials (incluindo o Windows Server Essentials, o Windows Small Business Server 2011 Standard, o Windows Small Business Server 2011 Essentials, o Windows Small Business Server 2008 e Windows Small Business Server 2003) para o Windows Server Essentials ou para o Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada.  
+Este guia descreve como migrar de versões anteriores do Windows Small Business Server e do Windows Server Essentials (incluindo o Windows Server Essentials, o Windows Small Business Server 2011 Standard, o Windows Small Business Server 2011 Essentials, o Windows Small Business Server 2008 e o Windows Small Business Server 2003) para o Windows Server Essentials ou o Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada.  
   
  **Para ambientes com até 25 usuários e 50 dispositivos**, você pode seguir as etapas neste guia para migrar de versões anteriores do Windows SBS para o Windows Server Essentials.  
   
@@ -68,7 +68,7 @@ Este guia descreve como migrar de versões anteriores do Windows Small Business 
   
 2.  Na lista de resultados, clique com o botão direito em **cmd** e clique em **Executar como administrador**.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Confira também  
   
 -   [Migrar dados do servidor para o Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

@@ -8,16 +8,16 @@ ms.assetid: c7ccfc34-63fd-436b-a1cd-e05810f60bfe
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 932ff1010ebe0be3b560375ac46b0372f86e3dc2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5d86f5ae25c67ffb9e0f00fc5d373e6a095df98
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852369"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404553"
 ---
 # <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>Etapa 2: Instalar o Windows Server Essentials como um novo controlador de domínio de réplica
 
->Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Esta seção descreve como instalar o Windows Server Essentials e o Windows Server 2012 R2 Standard (com a função de experiência do Windows Server Essentials habilitada) como um controlador de domínio.  
   
@@ -52,7 +52,7 @@ Esta seção descreve como instalar o Windows Server Essentials e o Windows Serv
   
 7.  Verifique a instalação da seguinte maneira:  
   
-    1.  Abra o Dashboard.  
+    1.  Abra o Painel.  
   
     2.  Clique na guia **Usuários** e verifique se as contas de usuário no seu Active Directory estão listadas.  
   
@@ -75,7 +75,7 @@ Esta seção descreve como instalar o Windows Server Essentials e o Windows Serv
   
     3.  Digite **conexões** e pressione ENTER.  
   
-    4.  Digite **conectar-se ao servidor** *<* ServerName\>(em que *< ServerName\>* é o nome do servidor de destino) e pressione Enter.  
+    4.  Digite **conectar-se ao servidor** * \><* servername * \> * (em que<ServerName é o nome do servidor de destino) e pressione Enter.  
   
     5.  No prompt de comando, digite **q** e pressione ENTER.  
   
@@ -94,7 +94,7 @@ Esta seção descreve como instalar o Windows Server Essentials e o Windows Serv
 > [!NOTE]
 >  A partir de qualquer servidor na rede, você pode verificar se as funções mestre de operações foram transferidas para o servidor de destino. Abra uma janela de prompt de comando como administrador (para obter mais informações, consulte [Para abrir uma janela de prompt de comando como um administrador](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx)). Digite **fsmo de consulta netdom** e pressione ENTER.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
+## <a name="next-steps"></a>Próximas etapas  
  Você instalou o Windows Server Essentials como um novo controlador de domínio de réplica. Agora vá para a [etapa 3: unir computadores ao novo servidor do Windows Server Essentials](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md).  
   
 Para exibir todas as etapas, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).

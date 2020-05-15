@@ -8,16 +8,16 @@ ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d004d89f6606c8b38360c9139f882f087b7c554
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8efb8251bd85638b8ad4b760a5292a2b6d6681fd
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852359"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404549"
 ---
 # <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>Etapa 3: Fazer computadores ingressarem no novo servidor do Windows Server Essentials
 
->Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 A próxima etapa do processo de migração é conectar computadores cliente ao novo servidor que executa o Windows Server Essentials.  
   
@@ -46,11 +46,11 @@ A próxima etapa do processo de migração é conectar computadores cliente ao n
   
 2.  Abra um navegador de Internet, como o Internet Explorer.  
   
-3.  Na barra de endereços, digite **http://< servername\>/Connect**e pressione Enter.  
+3.  Na barra de endereços, digite **http://<ServerName \> /Connect**e pressione Enter.  
   
 4.  Siga as instruções na tela para ingressar o computador cliente no novo servidor do Windows Server Essentials.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
+## <a name="next-steps"></a>Próximas etapas  
  Você ingressou seus computadores cliente no novo servidor que executa o Windows Server Essentials. Agora vá para a [etapa 4: mover as configurações e os dados para o servidor de destino para a migração do Windows Server Essentials](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  
   
 

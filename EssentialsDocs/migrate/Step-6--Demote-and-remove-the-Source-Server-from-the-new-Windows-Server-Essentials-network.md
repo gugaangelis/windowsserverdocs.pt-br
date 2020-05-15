@@ -8,22 +8,22 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b1b7836e976ef35aec66e206ec8b1de0e2150d62
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 406010234528a094bfb36a606072f98c043c397a
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852329"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404519"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Etapa 6: Rebaixar e remover o servidor de origem da nova rede do Windows Server Essentials
 
->Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Depois de concluir a instalação do Windows Server Essentials e concluir a migração, você deve executar as seguintes tarefas:  
   
-1.  [Remover Active Directory serviços de certificados](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
+1.  [Remover os serviços de certificados do Active Directory](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
   
-2.  [Desconecte as impressoras que estão conectadas diretamente ao servidor de origem](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)  
+2.  [Desconectar impressoras diretamente conectadas ao servidor de origem](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)  
   
 3.  [Rebaixar o servidor de origem](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_DemoteTheSourceServer)  
   
@@ -74,7 +74,7 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
   
 1. Autentique-se no computador cliente como administrador.  
   
-2. Abra uma janela de Prompt de Comando como administrador.  
+2. Abra uma janela de Prompt de comando como administrador.  
   
 3. No prompt de comando, digite **gpupdate /force** e pressione ENTER.  
   
@@ -102,7 +102,7 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
   
  Depois de rebaixar o servidor de origem, ele não está em estado íntegro. Se você desejar realocar o servidor de origem, a maneira mais simples é reformatá-lo, instalar um sistema operacional de servidor e, em seguida, configurá-lo para uso como um servidor adicional.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
+## <a name="next-steps"></a>Próximas etapas  
  Você rebaixou e removeu o servidor de origem da nova rede do Windows Server Essentials. Agora vá para a [etapa 7: executar tarefas de pós-implantação para a migração do Windows Server Essentials](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md).  
   
 

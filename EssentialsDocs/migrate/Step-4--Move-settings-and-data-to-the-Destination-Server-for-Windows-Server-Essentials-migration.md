@@ -8,24 +8,24 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e19f3a8333cc08568f8d437da2e35a6c64920df1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd3ba0b54e24a5fcafb72c970f05224c3606ff3a
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852349"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404522"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Etapa 4: Mover configurações e dados para o servidor de destino para migração para o Windows Server Essentials
 
->Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem. Mova as configurações e os dados para o servidor de destino da seguinte maneira:  
   
--   [Copiar dados para o servidor de destino](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_CopyData)  
+-   [Copie os dados para o servidor de destino](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_CopyData)  
   
 -   [Configurar a rede](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_Network)  
   
--   [Mapear computadores permitidos para contas de usuário](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
+-   [Mapeie os computadores permitidos para as contas de usuário](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
   
 ##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>Copiar dados para o servidor de destino  
  Antes de copiar os dados do servidor de origem para o servidor de destino, execute as seguintes tarefas:  
@@ -48,17 +48,17 @@ Esta seção fornece informações sobre a migração de dados e configurações
   
    `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
   
-    Onde:  
+    Sendo que:  
   
-   - \<SourceServerName\> é o nome do servidor de origem  
+   - \<SourceServerName \> é o nome do servidor de origem  
   
-   - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem  
+   - \<SharedSourceFolderName \> é o nome da pasta compartilhada no servidor de origem  
   
-   - \<PathOfTheDestination\> é o caminho absoluto no qual você deseja mover a pasta  
+   - \<PathOfTheDestination \> é o caminho absoluto onde você deseja mover a pasta  
   
-   - \<SharedDestinationFolderName\> é a pasta no servidor de destino para o qual os dados serão copiados  
+   - \<SharedDestinationFolderName \> é a pasta no servidor de destino para a qual os dados serão copiados  
   
-     Por exemplo,  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`.  
+     Por exemplo, `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`.  
   
 3. Se você usar o Windows PowerShell, digite o comando a seguir e pressione ENTER.  
   
@@ -110,7 +110,7 @@ Esta seção fornece informações sobre a migração de dados e configurações
 > [!NOTE]
 >  Depois de concluir a migração, se encontrar um problema ao criar a primeira nova conta de usuário no servidor de destino, remova a conta de usuário adicionada e crie a conta novamente.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
+## <a name="next-steps"></a>Próximas etapas  
  Você moveu suas configurações e dados para o servidor de destino. Agora, vá para a [etapa 5: habilitar o redirecionamento de pasta no servidor de destino para a migração do Windows Server Essentials](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  
   
 
