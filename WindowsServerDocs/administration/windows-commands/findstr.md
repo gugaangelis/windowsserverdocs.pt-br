@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando Findstr, que procura padrões de texto em arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,133 +9,130 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 97cc58d2b87190c43137e8b193f0217fb98c006c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f8d353b6d3aee77960b208d89372aee5dca07e3
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725608"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436112"
 ---
 # <a name="findstr"></a>findstr
 
 Pesquisa padrões de texto em arquivos.
 
-Para obter exemplos de como usar esse comando, consulte [Exemplos](#examples).
-
 ## <a name="syntax"></a>Sintaxe
 
 ```
-findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] [/c:<String>] [/g:<File>] [/d:<DirList>] [/a:<ColorAttribute>] [/off[line]] <Strings> [<Drive>:][<Path>]<FileName>[ ...]
+findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] [/c:<string>] [/g:<file>] [/d:<dirlist>] [/a:<colorattribute>] [/off[line]] <strings> [<drive>:][<path>]<filename>[ ...]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/b|Corresponde ao padrão de texto se estiver no início de uma linha.|
-|/e|Faz a correspondência do padrão de texto se ele estiver no final de uma linha.|
-|/l|Processa cadeias de caracteres de pesquisa literalmente.|
-|/r|Processa cadeias de caracteres de pesquisa como expressões regulares. Essa é a configuração padrão.|
-|/s|Pesquisa o diretório atual e todos os subdiretórios.|
-|/i|Ignora o caso dos caracteres ao pesquisar a cadeia de caracteres.|
-|/x|Imprime as linhas que correspondem exatamente.|
-|/v|Imprime apenas as linhas que não contêm uma correspondência.|
-|/n|Imprime o número de linha de cada linha correspondente.|
-|/m|Imprime somente o nome do arquivo se um arquivo contiver uma correspondência.|
-|/o|Imprime o deslocamento de caractere antes de cada linha correspondente.|
-|/p|Ignora arquivos com caracteres não imprimíveis.|
-|/off [linha]|Não ignora arquivos que têm o atributo offline definido.|
-|/f:\<arquivo>|Obtém uma lista de arquivos do arquivo especificado.|
-|/c:\<cadeia de caracteres>|Usa o texto especificado como uma cadeia de caracteres de pesquisa literal.|
-|/g:\<arquivo>|Obtém as cadeias de caracteres de pesquisa do arquivo especificado.|
-|/d:\<DirList>|Pesquisa a lista de diretórios especificada. Cada diretório deve ser separado com um ponto e vírgula (;), `dir1;dir2;dir3`por exemplo.|
-|/a:\<> de colorattribute|Especifica os atributos de cor com dois dígitos hexadecimais. Digite `color /?` para obter informações adicionais.|
-|\<Cadeias de caracteres>|Especifica o texto a ser pesquisado em *nome de arquivo*. Obrigatórios.|
-|[\<Unidade>:] [<Path>]<FileName>[ ...]|Especifica o local e arquivo ou arquivos a serem pesquisados. É necessário pelo menos um nome de arquivo.|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| /b | Corresponde ao padrão de texto se estiver no início de uma linha. |
+| /e | Faz a correspondência do padrão de texto se ele estiver no final de uma linha. |
+| /l | Processa cadeias de caracteres de pesquisa literalmente. |
+| /r | Processa cadeias de caracteres de pesquisa como expressões regulares. Essa é a configuração padrão. |
+| /s | Pesquisa o diretório atual e todos os subdiretórios. |
+| /i | Ignora o caso dos caracteres ao pesquisar a cadeia de caracteres. |
+| /x | Imprime as linhas que correspondem exatamente. |
+| /v | Imprime apenas as linhas que não contêm uma correspondência. |
+| /n | Imprime o número de linha de cada linha correspondente. |
+| /m | Imprime somente o nome do arquivo se um arquivo contiver uma correspondência. |
+| /o | Imprime o deslocamento de caractere antes de cada linha correspondente. |
+| /p | Ignora arquivos com caracteres não imprimíveis. |
+| /off [linha] | Não ignora arquivos que têm o atributo offline definido. |
+| f`<file>` | Obtém uma lista de arquivos do arquivo especificado. |
+| /c`<string>` | Usa o texto especificado como uma cadeia de caracteres de pesquisa literal. |
+| /g`<file>` | Obtém as cadeias de caracteres de pesquisa do arquivo especificado. |
+| /d`<dirlist>` | Pesquisa a lista de diretórios especificada. Cada diretório deve ser separado com um ponto e vírgula (;), por exemplo `dir1;dir2;dir3` . |
+| SRDF`<colorattribute>` | Especifica os atributos de cor com dois dígitos hexadecimais. Digite `color /?` para obter informações adicionais. |
+| `<strings>` | Especifica o texto a ser pesquisado em *nome de arquivo*. Obrigatórios. |
+| `[\<drive>:][<path>]<filename>[ ...]` | Especifica o local e arquivo ou arquivos a serem pesquisados. É necessário pelo menos um nome de arquivo. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
 - Todas as opções de linha de comando **findstr** devem preceder *cadeias* de caracteres e *nome de arquivo* na cadeia de comando.
-- As expressões regulares usam caracteres literais e metacaracteres para localizar padrões de texto, em vez de cadeias de caracteres exatas. Um caractere literal é um caractere que não tem um significado especial na sintaxe de expressão regular — ele corresponde a uma ocorrência desse caractere. Por exemplo, letras e números são caracteres literais. Um metacaractere é um símbolo com significado especial (um operador ou delimitador) na sintaxe de expressão regular.
 
-  A tabela a seguir lista os metacaracteres que o **findstr** aceita.  
+- As expressões regulares usam caracteres literais e metacaracteres para localizar padrões de texto, em vez de cadeias de caracteres exatas.
 
-  |Metacaractere|Valor|
-  |-------------|-----|
-  |.|Curinga: qualquer caractere|
-  |*|Repetir: zero ou mais ocorrências da classe ou caractere anterior|
-  |^|Posição da linha: início da linha|
-  |$|Posição da linha: fim da linha|
-  |classes|Classe de caractere: qualquer caractere em um conjunto|
-  |[^ classe]|Classe inversa: qualquer caractere que não esteja em um conjunto|
-  |[x-y]|Intervalo: quaisquer caracteres dentro do intervalo especificado|
-  |\x|Escape: uso literal de um metacaractere x|
-  |\\<cadeia de caracteres|Posição da palavra: início da palavra|
-  |string\>|Posição da palavra: fim da palavra|
+  - Um caractere literal é um caractere que não tem um significado especial na sintaxe de expressão regular; em vez disso, ele corresponde a uma ocorrência desse caractere. Por exemplo, letras e números são caracteres literais.
 
-  Os caracteres especiais na sintaxe de expressão regular têm o máximo de energia ao usá-los juntos. Por exemplo, use a seguinte combinação do caractere curinga (.) e REPEAT (*) caractere para corresponder a qualquer cadeia de caracteres:
+  - Um meta-caractere é um símbolo com significado especial (um operador ou delimitador) na sintaxe de expressão regular.
 
-  ```
-  .*
-  ``` 
+    Os meta-caracteres aceitos são:
 
-  Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres que comece com b e terminando com ing: 
+    | Meta-caractere | Valor |
+    | -------------- | ----- |
+    | `.` | **Curinga** -qualquer caractere |
+    | `*` | **REPEAT** -zero ou mais ocorrências da classe ou caractere anterior. |
+    | `^` | **Posição da linha inicial** – início da linha. |
+    | `$` | **Posição da linha final** -fim da linha. |
+    | `[class]` | **Classe de caractere** -qualquer caractere em um conjunto. |
+    | `[^class]` | **Classe inversa** -qualquer caractere que não esteja em um conjunto. |
+    | `[x-y]` | **Intervalo** -todos os caracteres dentro do intervalo especificado. |
+    | `\x` | **Escape** -uso literal de um caractere de meta. |
+    | `<string` | **Iniciando posição do Word** -início da palavra. |
+    | `string>` | **Posição da palavra final** -fim da palavra. |
 
-  ```
-  b.*ing
-  ```
+    Os caracteres especiais na sintaxe de expressão regular têm o máximo de energia ao usá-los juntos. Por exemplo, use a combinação do caractere curinga ( `.` ) e o caractere REPEAT ( `*` ) para corresponder a qualquer cadeia de caracteres:`.*`
 
-## <a name="examples"></a>Exemplos
+    Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres que comece com *b* e terminando com *ing*:`b.*ing`
 
-Use espaços para separar várias cadeias de caracteres de pesquisa, a menos que o argumento seja prefixado com **/c**.
+- Para pesquisar várias cadeias de caracteres em um conjunto de arquivos, você deve criar um arquivo de texto que contenha cada critério de pesquisa em uma linha separada.
 
-Para procurar Olá ou no arquivo x. y, digite:
+- Use espaços para separar várias cadeias de caracteres de pesquisa, a menos que o argumento seja prefixado com **/c**.
 
-```
-findstr hello there x.y 
-```
+### <a name="examples"></a>Exemplos
 
-Para procurar Olá no arquivo x. y, digite:
+Para procurar *Olá* *ou no* arquivo *x. y*, digite:
 
 ```
-findstr /c:hello there x.y 
+findstr hello there x.y
 ```
 
-Para localizar todas as ocorrências da palavra Windows (com uma letra maiúscula W) no arquivo proposta. txt, digite:
+Para procurar *Olá* no arquivo *x. y*, digite:
 
 ```
-findstr Windows proposal.txt 
+findstr /c:hello there x.y
 ```
 
-Para pesquisar todos os arquivos no diretório atual e todos os subdiretórios que continham a palavra Windows, independentemente do caso de letra, digite:
+Para localizar todas as ocorrências da palavra *Windows* (com uma letra maiúscula W) no arquivo *proposta. txt*, digite:
 
 ```
-findstr /s /i Windows *.* 
+findstr Windows proposal.txt
 ```
 
-Para localizar todas as ocorrências de linhas que começam com FOR e são precedidas por zero ou mais espaços (como em um loop de programa de computador) e para exibir o número de linha em que cada ocorrência é encontrada, digite:
+Para pesquisar todos os arquivos no diretório atual e todos os subdiretórios que continham a palavra *Windows*, independentemente do caso de letra, digite:
 
 ```
-findstr /b /n /r /c:^ *FOR *.bas 
+findstr /s /i Windows *.*
 ```
 
-Para pesquisar várias cadeias de caracteres em um conjunto de arquivos, crie um arquivo de texto que contenha cada critério de pesquisa em uma linha separada. Você também pode listar os arquivos exatos que deseja pesquisar em um arquivo de texto. Por exemplo, para usar os critérios de pesquisa no arquivo StringList. txt, pesquise os arquivos listados em FileList. txt e, em seguida, armazene os resultados no arquivo Results. out, digite:
+Para localizar todas as ocorrências de linhas que começam com *for* e são precedidas por zero ou mais espaços (como em um loop de programa de computador) e para exibir o número de linha em que cada ocorrência é encontrada, digite:
 
 ```
-findstr /g:stringlist.txt /f:filelist.txt > results.out 
+findstr /b /n /r /c:^ *FOR *.bas
 ```
 
-Para listar cada arquivo que contém a palavra Computer no diretório atual e todos os subdiretórios, independentemente do caso, digite:
+Para listar os arquivos exatos que você deseja pesquisar em um arquivo de texto, use os critérios de pesquisa no arquivo *StringList. txt*, para pesquisar os arquivos listados em *FileList. txt*e, em seguida, para armazenar os resultados no arquivo *Results. out*, digite:
 
 ```
-findstr /s /i /m \<computer\> *.*
+findstr /g:stringlist.txt /f:filelist.txt > results.out
+```
+
+Para listar cada arquivo que contém a palavra *Computer* no diretório atual e todos os subdiretórios, independentemente do caso, digite:
+
+```
+findstr /s /i /m <computer> *.*
 ```
 
 Para listar todos os arquivos que contêm o computador do Word e as outras palavras que começam com comp, (como elogio e competir), digite:
 
 ```
-findstr /s /i /m \<comp.* *.*
+findstr /s /i /m <comp.* *.*
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

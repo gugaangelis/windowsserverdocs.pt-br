@@ -9,16 +9,16 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: da9164eea4ab7e2fb38864fb69c47252448b77b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f5a7ec331c9d70214cbd0a772de6e2b2c7f4f58e
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854419"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433170"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos para a implantação do controlador de rede
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Prepare seu datacenter para a implantação do controlador de rede, que exige um ou mais computadores ou VMs e um computador ou VM. Antes de implantar o controlador de rede, você deve configurar os grupos de segurança, os locais do arquivo de log (se necessário) e o registro de DNS dinâmico.
 
@@ -126,15 +126,11 @@ Há três máquinas virtuais de gateway; dois estão ativos e um é redundante.
 
 ![Planejamento do SDN NC](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
 
-
-
-Para a automação de implantação baseada em TP5, Active Directory deve estar disponível e acessível nessas sub-redes. Para obter mais informações sobre Active Directory, consulte [Active Directory Domain Services visão geral](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).  
-
 >[!IMPORTANT] 
 >Se você implantar usando o VMM, verifique se suas máquinas virtuais de infraestrutura (servidor VMM, AD/DNS, SQL Server etc.) não estão hospedadas em nenhum dos quatro hosts mostrados nos diagramas.  
 
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 [Planejar uma infraestrutura de rede definida pelo software](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure).
 
 ## <a name="related-topics"></a>Tópicos relacionados

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fbf5010b7ed4ae17775995111d86f56f0b1f5a7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: df4ca03d5d3655a5b12592ef56580c1dea83e697
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720249"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436635"
 ---
 # <a name="vssadmin-list-writers"></a>VSSadmin list writers
 

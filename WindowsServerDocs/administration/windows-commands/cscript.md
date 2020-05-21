@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfba4b6a1c75183d58664e74da22bb7f8b866739
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 24d5d46a0a994ca44230076786fbd59c00cbdc57
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993158"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437051"
 ---
 # <a name="cscript"></a>cscript
 
@@ -40,17 +40,17 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /d | Inicia o depurador. |
 | /e:`<engine>` | Especifica o mecanismo usado para executar o script. |
 | /h: cscript | Registra o cscript. exe como o host de script padrão para executar scripts. |
-| /h: WScript | Registra o WScript. exe como o host de script padrão para executar scripts. Esse é o padrão. |
-| /i | Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada. Esse é o padrão e o oposto de `/b`. |
+| /h: WScript | Registra o WScript. exe como o host de script padrão para executar scripts. Este é o padrão. |
+| /i | Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada. Esse é o padrão e o oposto de `/b` . |
 | /minuto<identifier> | Executa o trabalho identificado pelo *identificador* em um arquivo de script. wsf. |
-| /logo | Especifica que a faixa do host de scripts do Windows é exibida no console do antes de o script ser executado. Esse é o padrão e o oposto de `/nologo`. |
+| /logo | Especifica que a faixa do host de scripts do Windows é exibida no console do antes de o script ser executado. Esse é o padrão e o oposto de `/nologo` . |
 | /nologo | Especifica que a faixa do host de scripts do Windows não é exibida antes de o script ser executado. |
 | /s | Salva as opções de prompt de comando atuais do usuário atual. |
 | /t:<seconds> | Especifica o tempo máximo que o script pode executar (em segundos). Você pode especificar até 32.767 segundos. O padrão é sem limite de tempo. |
 | /u | Especifica o Unicode para entrada e saída que é redirecionado do console do. |
 | /x | Inicia o script no depurador. |
 | /? | Exibe os parâmetros de comando disponíveis e fornece ajuda para usá-los. Isso é o mesmo que digitar **cscript. exe** sem parâmetros e nenhum script. |
-| scriptarguments | Especifica os argumentos passados para o script. Cada argumento de script deve ser precedido por uma barra**/**(). |
+| scriptarguments | Especifica os argumentos passados para o script. Cada argumento de script deve ser precedido por uma barra ( **/** ). |
 
 #### <a name="remarks"></a>Comentários
 

@@ -1,6 +1,6 @@
 ---
-title: Finalizar backup
-description: Tópico de referência para * * * *-
+title: finalizar backup
+description: Tópico de referência para o comando end backup, que termina uma sessão de backup completo e emite um evento **BackupComplete** com o estado de gravador apropriado, se necessário.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 941ab648c4811facd284d49a4797e50ba5241ee6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6d9cb3cbf474b5306a1cac7df4516f0492740591
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720855"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436901"
 ---
-# <a name="end-backup"></a>Finalizar backup
-
-
-
+# <a name="end-backup"></a>finalizar backup
 
 Encerra uma sessão de backup completo e emite um evento **BackupComplete** com o estado de gravador apropriado, se necessário.
 
@@ -28,10 +25,6 @@ Encerra uma sessão de backup completo e emite um evento **BackupComplete** com 
 ```
 end backup
 ```
-
-## <a name="remarks"></a>Comentários
-
--   Esse comando deve ser usado para todos os backups completos.
 
 ## <a name="additional-references"></a>Referências adicionais
 

@@ -9,33 +9,33 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c68b122082ab394424792bc5166cdfdfd14c666
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c1361cded9ebf26eeaea7abcaba1b1f3ca1428ac
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720679"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436791"
 ---
 # <a name="winrs"></a>winrs
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-O gerenciamento remoto do Windows permite que você gerencie e execute programas remotamente.   
-## <a name="syntax"></a>Sintaxe  
-```  
-winrs [/<parameter>[:<value>]] <command>  
-```  
-#### <a name="parameters"></a>Parâmetros  
+O gerenciamento remoto do Windows permite que você gerencie e execute programas remotamente.
+## <a name="syntax"></a>Sintaxe
+```
+winrs [/<parameter>[:<value>]] <command>
+```
+#### <a name="parameters"></a>Parâmetros
 
 |           Parâmetro            |                                                                                                                                                                                    Descrição                                                                                                                                                                                     |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /Remote:\<Endpoint>       |                                                                                          Especifica o ponto de extremidade de destino usando um nome NetBIOS ou a conexão padrão:<p>-   <url>: [\<transporte>://]\<> de destino [\<: porta>]<p>Se não for especificado, **/r: localhost** será usado.                                                                                          |
+|      /Remote: \< endpoint>       |                                                                                          Especifica o ponto de extremidade de destino usando um nome NetBIOS ou a conexão padrão:<p>-   <url>: [ \< transporte>://] \<> de destino [: \< porta>]<p>Se não for especificado, **/r: localhost** será usado.                                                                                          |
 |          /unencrypted          | Especifica que as mensagens para o shell remoto não serão criptografadas. Isso é útil para solucionar problemas ou quando o tráfego de rede já está criptografado usando **IPSec**ou quando a segurança física é imposta.<p>Por padrão, as mensagens são criptografadas usando chaves Kerberos ou NTLM.<p>Essa opção de linha de comando é ignorada quando o transporte HTTPS é selecionado. |
-|     /username:\<username>      |                                                                                Especifica o nome de usuário na linha de comando.<p>Se não for especificado, a ferramenta usará a autenticação Negotiate ou solicitará o nome.<p>Se **/username** for especificado, **/password** também deverá ser especificado.                                                                                 |
-|     /Password:\<senha>      |                                                                           Especifica a senha na linha de comando.<p>Se **/password** não for especificado, mas **/username** for, a ferramenta solicitará a senha.<p>Se **/password** for especificado, **/username** também deverá ser especificado.                                                                            |
-|      /timeout:\<segundos>       |                                                                                                                                                                             Essa opção foi preterida.                                                                                                                                                                             |
-|       /diretório:\<caminho>       |                                                                                            Especifica o diretório inicial para o shell remoto.<p>Se não for especificado, o shell remoto será iniciado no diretório base do usuário definido pela variável de ambiente **% USERPROFILE%**.                                                                                             |
-| /Environment:\<cadeia de caracteres>=<value> |                                                                          Especifica uma única variável de ambiente a ser definida quando o Shell é iniciado, o que permite a alteração do ambiente padrão para o Shell.<p>Várias ocorrências dessa opção devem ser usadas para especificar várias variáveis de ambiente.                                                                          |
+|     /username: \< username>      |                                                                                Especifica o nome de usuário na linha de comando.<p>Se não for especificado, a ferramenta usará a autenticação Negotiate ou solicitará o nome.<p>Se **/username** for especificado, **/password** também deverá ser especificado.                                                                                 |
+|     /Password: \< senha>      |                                                                           Especifica a senha na linha de comando.<p>Se **/password** não for especificado, mas **/username** for, a ferramenta solicitará a senha.<p>Se **/password** for especificado, **/username** também deverá ser especificado.                                                                            |
+|      /timeout: \< segundos>       |                                                                                                                                                                             Essa opção foi preterida.                                                                                                                                                                             |
+|       /diretório: \< caminho>       |                                                                                            Especifica o diretório inicial para o shell remoto.<p>Se não for especificado, o shell remoto será iniciado no diretório base do usuário definido pela variável de ambiente **% USERPROFILE%**.                                                                                             |
+| /Environment: \< cadeia de caracteres>=<value> |                                                                          Especifica uma única variável de ambiente a ser definida quando o Shell é iniciado, o que permite a alteração do ambiente padrão para o Shell.<p>Várias ocorrências dessa opção devem ser usadas para especificar várias variáveis de ambiente.                                                                          |
 |            /noecho             |                                                                                                    Especifica que o eco deve ser desabilitado. Isso pode ser necessário para garantir que as respostas do usuário para prompts remotos não sejam exibidas localmente.<p>Por padrão, o eco está ativado.                                                                                                    |
 |           /noprofile           |                                              Especifica que o perfil do usuário não deve ser carregado.<p>Por padrão, o servidor tentará carregar o perfil do usuário.<p>Se o usuário remoto não for um administrador local no sistema de destino, essa opção será necessária (o padrão resultará em erro).                                               |
 |         /allowdelegate         |                                                                                                                  Especifica que as credenciais do usuário podem ser usadas para acessar um compartilhamento remoto, por exemplo, encontradas em um computador diferente do ponto de extremidade de destino.                                                                                                                   |
@@ -43,46 +43,46 @@ winrs [/<parameter>[:<value>]] <command>
 |            /usessl             |                                                                                                               Use uma conexão SSL ao usar um ponto de extremidade remoto.  Especificando isso em vez do HTTPS de transporte **:** usará a porta padrão **WinRM** default.                                                                                                                |
 |               /?               |                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                        |
 
-## <a name="remarks"></a>Comentários  
--   Todas as opções de linha de comando aceitam forma abreviada ou longa. Por exemplo, **/r** e **/Remote** são válidos.  
--   Para encerrar o comando **/Remote** , o usuário pode digitar **Ctrl-C** ou **Ctrl-Break**, que será enviado para o shell remoto. O segundo **Ctrl-C** forçará o encerramento de **winrs. exe**.  
--   Para gerenciar os shells remotos ativos ou a configuração do WinRS, use a ferramenta WinRM.  O alias de URI para gerenciar shells ativos é **shell/cmd**.  O alias do URI para a configuração do WinRS é **WinRM/config/WinRS**.  
+## <a name="remarks"></a>Comentários
+-   Todas as opções de linha de comando aceitam forma abreviada ou longa. Por exemplo, **/r** e **/Remote** são válidos.
+-   Para encerrar o comando **/Remote** , o usuário pode digitar **Ctrl-C** ou **Ctrl-Break**, que será enviado para o shell remoto. O segundo **Ctrl-C** forçará o encerramento de **winrs. exe**.
+-   Para gerenciar os shells remotos ativos ou a configuração do WinRS, use a ferramenta WinRM.  O alias de URI para gerenciar shells ativos é **shell/cmd**.  O alias do URI para a configuração do WinRS é **WinRM/config/WinRS**.
 
-## <a name="examples"></a>Exemplos  
-```  
-winrs /r:https://contoso.com command  
-```  
-```  
-winrs /r:contoso.com /usessl command  
-```  
-```  
-winrs /r:myserver command  
-```  
-```  
-winrs /r:http://127.0.0.1 command  
-```  
-```  
-winrs /r:http://169.51.2.101:80 /unencrypted command  
-```  
-```  
-winrs /r:https://[::FFFF:129.144.52.38] command  
-```  
-```  
-winrs /r:http://[1080:0:0:0:8:800:200C:417A]:80 command  
-```  
-```  
-winrs /r:https://contoso.com /t:600 /u:administrator /p:$%fgh7 ipconfig  
-```  
-```  
-winrs /r:myserver /env:path=^%path^%;c:\tools /env:TEMP=d:\temp config.cmd  
-```  
-```  
-winrs /r:myserver netdom join myserver /domain:testdomain /userd:johns /passwordd:$%fgh789  
-```  
-```  
-winrs /r:myserver /ad /u:administrator /p:$%fgh7 dir \\anotherserver\share  
-```  
+## <a name="examples"></a>Exemplos
+```
+winrs /r:https://contoso.com command
+```
+```
+winrs /r:contoso.com /usessl command
+```
+```
+winrs /r:myserver command
+```
+```
+winrs /r:http://127.0.0.1 command
+```
+```
+winrs /r:http://169.51.2.101:80 /unencrypted command
+```
+```
+winrs /r:https://[::FFFF:129.144.52.38] command
+```
+```
+winrs /r:http://[1080:0:0:0:8:800:200C:417A]:80 command
+```
+```
+winrs /r:https://contoso.com /t:600 /u:administrator /p:$%fgh7 ipconfig
+```
+```
+winrs /r:myserver /env:path=^%path^%;c:\tools /env:TEMP=d:\temp config.cmd
+```
+```
+winrs /r:myserver netdom join myserver /domain:testdomain /userd:johns /passwordd:$%fgh789
+```
+```
+winrs /r:myserver /ad /u:administrator /p:$%fgh7 dir \\anotherserver\share
+```
 
-## <a name="additional-references"></a>Referências adicionais  
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="additional-references"></a>Referências adicionais
+-   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

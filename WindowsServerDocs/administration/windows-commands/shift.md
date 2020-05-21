@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 617d7f712ccae13c522bc65db147c12c526b4efb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 870bda19de3426fd7007020efb2f3db39bf654c8
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721828"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433160"
 ---
 # <a name="shift"></a>shift
 
@@ -32,7 +32,7 @@ shift [/n <N>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/n \<n>|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
+|/n \< n>|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -40,7 +40,7 @@ shift [/n <N>]
 - O comando **Shift** altera os valores dos parâmetros de lote **%0** a **%9** copiando cada parâmetro para o anterior — o valor de **%1** é copiado para **%0**, o valor de **%2** é copiado para **%1**e assim por diante. Isso é útil para gravar um arquivo em lotes que executa a mesma operação em qualquer número de parâmetros.
 - Se as extensões de comando estiverem habilitadas, o comando **Shift** dará suporte à opção de linha de comando **/n** . A opção **/n** especifica o início da mudança no argumento enésimo, em que **n** é qualquer valor de 0 a 8. Por exemplo, **Shift/2** mudaria **%3** para **%2**, **%4** para **%3**e assim por diante e deixará **%0** e **%1** não afetado. As extensões de comando são habilitadas por padrão.
 - Você pode usar o comando **Shift** para criar um arquivo em lotes que pode aceitar mais de 10 parâmetros de lote. Se você especificar mais de 10 parâmetros na linha de comando, aqueles que aparecerem após o décimo (**%9**) serão deslocados um de cada vez em **%9**.
-- O comando **Shift** não tem nenhum efeito no ** % **parâmetro * Batch.
+- O comando **Shift** não tem nenhum efeito sobre o **%\*** parâmetro Batch.
 - Não há nenhum comando de **deslocamento** para trás. Depois de implementar o comando **Shift** , você não pode recuperar o parâmetro de lote (**%0**) que existia antes da mudança.
 
 ## <a name="examples"></a>Exemplos

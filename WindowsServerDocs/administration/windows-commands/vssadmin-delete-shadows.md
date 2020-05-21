@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e18823c5c030aa1a7b8f032f820e415f36fd7827
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b52701f831502c16487dbbaf0cd61d839c046c68
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720274"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436701"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin excluir sombras
 
@@ -31,10 +31,10 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 |Parâmetro|Descrição|
 |---|---|
-|/for =\<ForVolumeSpec>|Especifica qual cópia de sombra do volume será excluída.|
+|/for = \< ForVolumeSpec>|Especifica qual cópia de sombra do volume será excluída.|
 |/oldest|Exclui somente a cópia de sombra mais antiga.|
 |/all|Exclui todas as cópias de sombra do volume especificado.|
-|/Shadow =\<shadowid>|Exclui a cópia de sombra especificada por Shadowid. Para obter a ID da cópia de sombra, use o comando **VSSadmin list Shadows** . Ao inserir uma ID de cópia de sombra, use o seguinte formato, em que cada *X* representa um caractere hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/Shadow = \< shadowid>|Exclui a cópia de sombra especificada por Shadowid. Para obter a ID da cópia de sombra, use o comando **VSSadmin list Shadows** . Ao inserir uma ID de cópia de sombra, use o seguinte formato, em que cada *X* representa um caractere hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 |/quiet|Especifica que o comando não exibirá mensagens durante a execução.|
 
 ## <a name="remarks"></a>Comentários

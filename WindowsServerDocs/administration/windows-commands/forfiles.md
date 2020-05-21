@@ -1,6 +1,6 @@
 ---
 title: forfiles
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando Forfiles, que seleciona e executa um comando em um arquivo ou conjunto de arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,87 +8,97 @@ ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 08/21/2018
-ms.openlocfilehash: 21cbc24028af5c4194d36258aecdd5432fb4069f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.date: 05/20/2020
+ms.openlocfilehash: 96ef7d016bd13961a4814ba4cd09095aed4f0e97
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725571"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716841"
 ---
 # <a name="forfiles"></a>forfiles
 
-
-
-Seleciona e executa um comando em um arquivo ou conjunto de arquivos. Esse comando é útil para processamento em lotes.
-
-
+Seleciona e executa um comando em um arquivo ou conjunto de arquivos. Esse comando é usado com mais frequência em arquivos em lotes.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c <Command>] [/d [{+|-}][{<Date>|<Days>}]]
+forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | <days>}]]
 ```
-
 
 ### <a name="parameters"></a>Parâmetros
 
-|                     Parâmetro                      |                                                                                                                                                                                                                                                                                                    Descrição                                                                                                                                                                                                                                                                                                     |
-|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                     /p \<caminho>                     |                                                                                                                                                                                                                                                 Especifica o caminho do qual iniciar a pesquisa. Por padrão, a pesquisa começa no diretório de trabalho atual.                                                                                                                                                                                                                                                  |
-|                  /m \<SearchMask>                  |                                                                                                                                                                                                                                                           Pesquisa arquivos de acordo com a máscara de pesquisa especificada. A máscara de pesquisa padrão ** \*é\\ .** \*.                                                                                                                                                                                                                                                           |
-|                         /s                         |                                                                                                                                                                                                                                                                   Instrui o comando **Forfiles** a Pesquisar de forma recursiva os subdiretórios.                                                                                                                                                                                                                                                                    |
-|                  /c \<> de comando                   |                                                                                                                                                                                                                                  Executa o comando especificado em cada arquivo. As cadeias de caracteres de comando devem ser colocadas entre aspas. O comando padrão é **cmd/c Echo @file **.                                                                                                                                                                                                                                   |
-| /d&nbsp;[{+\|-}] &#8288; [{\<Date>\|&#8288;\<dias>}] | Seleciona os arquivos com uma data da última modificação dentro do período de tempo especificado.</br>-Seleciona arquivos com uma data da última modificação posterior ou igual a (**+**) ou anterior ou igual a (**-**) a data especificada, em que a *Data* está no formato mm/dd/aaaa.</br>-Seleciona os arquivos com uma data da última modificação posterior ou igual a**+**() a data atual mais o número de dias especificado ou anterior ou igual a (**-**) a data atual menos o número de dias especificado.</br>-Os valores válidos para *dias* incluem qualquer número no intervalo de 0 a 32768. Se nenhum sinal for especificado, **+** será usado por padrão. |
-|                         /?                         |                                                                                                                                                                                                                                                                                        Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                        |
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| /P`<pathname>` | Especifica o caminho do qual iniciar a pesquisa. Por padrão, a pesquisa começa no diretório de trabalho atual. |
+| Opção`<searchmask>` | Pesquisa arquivos de acordo com a máscara de pesquisa especificada. O searchmask padrão é `*` . |
+| /S | Instrui o comando **Forfiles** para pesquisar em subdiretórios de forma recursiva. |
+| /C`<command>` | Executa o comando especificado em cada arquivo. As cadeias de caracteres de comando devem ser encapsuladas entre aspas duplas. O comando padrão é `"cmd /c echo @file"` . |
+| /D`[{+\|-}][{<date> | <days>}]` | Seleciona os arquivos com uma data da última modificação dentro do período de tempo especificado:<ul><li>Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) ou anterior ou igual a ( **-** ) a data especificada, em que a *Data* está no formato mm/dd/aaaa.</li><li>Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) a data atual mais o número de dias especificado ou anterior ou igual a ( **-** ) a data atual menos o número de dias especificado.</li><li>Os valores válidos para *dias* incluem qualquer número no intervalo de 0 a 32768. Se nenhum sinal for especificado, **+** será usado por padrão.</li></ul> |
+| /? | Exibe o texto de ajuda na janela cmd. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
--   **Forfiles** é mais comumente usado em arquivos em lotes.
--   **Forfiles/s** é semelhante a **dir/s.**
--   Você pode usar as seguintes variáveis na cadeia de caracteres de comando, conforme especificado pela opção de linha de comando **/c** .  
+- O `forfiles /S` comando é semelhante a `dir /S` .
 
-|Variável|Descrição|
-|--------|-----------|
-|@FILE|Nome do arquivo.|
-|@FNAME|Nome do arquivo sem extensão.|
-|@EXT|Extensão de nome de arquivo.|
-|@PATH|Caminho completo do arquivo.|
-|@RELPATH|Caminho relativo do arquivo.|
-|@ISDIR|Avaliará como TRUE se um tipo de arquivo for um diretório. Caso contrário, essa variável será avaliada como FALSE.|
-|@FSIZE|Tamanho do arquivo, em bytes.|
-|@FDATE|Carimbo de data da última modificação no arquivo.|
-|@FTIME|Carimbo de data/hora da última modificação no arquivo.|
+- Você pode usar as seguintes variáveis na cadeia de caracteres de comando, conforme especificado pela opção de linha de comando **/c** :
 
--   Com **Forfiles**, você pode executar um comando ou passar argumentos para vários arquivos. Por exemplo, você pode executar o comando **Type** em todos os arquivos em uma árvore com a extensão de nome de arquivo. txt. Ou você pode executar cada arquivo em lotes (*. bat) na unidade C, com o nome de arquivo MyInput. txt como o primeiro argumento.
--   Com **Forfiles**, você pode fazer o seguinte:  
-    -   Selecione arquivos por uma data absoluta ou uma data relativa usando o parâmetro **/d** .
-    -   Crie uma árvore de arquivos de arquivo usando variáveis como @FSIZE e. @FDATE
-    -   Diferenciar arquivos de diretórios usando a @ISDIR variável.
-    -   Inclua caracteres especiais na linha de comando usando o código hexadecimal para o caractere, no formato 0x*hh* (por exemplo, 0x09 para uma tabulação).
--   **Forfiles** funciona implementando o sinalizador **recurse de subdiretórios** em ferramentas que são projetadas para processar apenas um único arquivo.
+    | Variável | Descrição |
+    | -------- | ----------- |
+    | @FILE | Nome do arquivo. |
+    | @FNAME | Nome do arquivo sem extensão. |
+    | @EXT | Extensão de nome de arquivo. |
+    | @PATH | Caminho completo do arquivo. |
+    | @RELPATH | Caminho relativo do arquivo. |
+    | @ISDIR | Avaliará como TRUE se um tipo de arquivo for um diretório. Caso contrário, essa variável será avaliada como FALSE. |
+    | @FSIZE | Tamanho do arquivo, em bytes. |
+    | @FDATE | Carimbo de data da última modificação no arquivo. |
+    | @FTIME | Carimbo de data/hora da última modificação no arquivo. |
 
-## <a name="examples"></a>Exemplos
+- O comando **Forfiles** permite executar um comando ou passar argumentos para vários arquivos. Por exemplo, você pode executar o comando **Type** em todos os arquivos em uma árvore com a extensão de nome de arquivo. txt. Ou você pode executar cada arquivo em lotes (*. bat) na unidade C, com o nome de arquivo MyInput. txt como o primeiro argumento.
+
+- Este comando pode:
+
+    - Selecione arquivos por uma data absoluta ou uma data relativa usando o parâmetro **/d** .
+
+    - Crie uma árvore de arquivos de arquivo usando variáveis como @FSIZE e @FDATE .
+
+    - Diferenciar arquivos de diretórios usando a @ISDIR variável.
+
+    - Inclua caracteres especiais na linha de comando usando o código hexadecimal para o caractere, no formato 0x*hh* (por exemplo, 0x09 para uma tabulação).
+
+- Esse comando funciona implementando o `recurse subdirectories` sinalizador em ferramentas que foram projetadas para processar apenas um único arquivo.
+
+### <a name="examples"></a>Exemplos
 
 Para listar todos os arquivos em lotes na unidade C, digite:
+
 ```
-forfiles /p c:\ /s /m *.bat /c cmd /c echo @file is a batch file
+forfiles /P c:\ /S /M *.bat /C "cmd /c echo @file is a batch file"
 ```
+
 Para listar todos os diretórios na unidade C, digite:
+
 ```
-forfiles /p c:\ /s /m *.* /c cmd /c if @isdir==TRUE echo @file is a directory
+forfiles /P c:\ /S /M *.* /C "cmd /c if @isdir==TRUE echo @file is a directory"
 ```
+
 Para listar todos os arquivos no diretório atual que têm pelo menos um ano de idade, digite:
+
 ```
-forfiles /s /m *.* /d -365 /c cmd /c echo @file is at least one year old.
+forfiles /S /M *.* /D -365 /C "cmd /c echo @file is at least one year old."
 ```
+
 Para exibir o *arquivo* de texto está desatualizado para cada um dos arquivos no diretório atual que são anteriores a 1º de janeiro de 2007, digite:
+
 ```
-forfiles /s /m *.* /d -01/01/2007 /c cmd /c echo @file is outdated. 
+forfiles /S /M *.* /D -01/01/2007 /C "cmd /c echo @file is outdated."
 ```
+
 Para listar as extensões de nome de arquivo de todos os arquivos no diretório atual no formato de coluna e adicionar uma guia antes da extensão, digite:
+
 ```
-forfiles /s /m *.* /c cmd /c echo The extension of @file is 0x09@ext 
+forfiles /S /M *.* /C "cmd /c echo The extension of @file is 0x09@ext"
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

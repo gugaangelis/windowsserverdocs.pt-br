@@ -9,16 +9,16 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 5478a97a6b333cfc92de100440d53a769a8c0fd9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 105225736d6b883e8451aa599af1937068ebe43d
+ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855179"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546554"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Visão geral do TLS-SSL (Schannel SSP)
 
->Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
 Este tópico para o profissional de ti descreve as alterações na funcionalidade no provedor de suporte de segurança Schannel (SSP), que inclui o protocolo TLS, o protocolo SSL (SSL) e os protocolos de autenticação DTLS (datatransport Layer Security), para o Windows Server 2012 R2, o Windows Server 2012, o Windows 8.1 e o Windows 8.
 
@@ -33,7 +33,7 @@ Veja a seguir uma descrição dos recursos do TLS no SSP do Schannel.
 ### <a name="tls-session-resumption"></a>Retomada da sessão TLS
 O protocolo TLS (Transport Layer Security), um componente do Provedor de Suporte de Segurança Schannel, é usado para proteger os dados enviados entre os aplicativos em uma rede não confiável. Você pode usar o TLS/SSL para autenticar servidores e computadores cliente, e também para criptografar mensagens entre as partes autenticadas.
 
-Os dispositivos que conectam o TLS aos servidores frequentemente precisam se reconectar devido à expiração de sessão. O Windows 8.1 e o Windows Server 2012 R2 agora dão suporte à RFC 5077 (retomada da sessão TLS sem estado do lado do servidor). Essa modificação fornece dispositivos Windows Phone e Windows RT com:
+Os dispositivos que conectam o TLS aos servidores frequentemente precisam se reconectar devido à expiração de sessão. O Windows 8.1 e o Windows Server 2012 R2 agora dão suporte à RFC 5077 (retomada da sessão TLS sem estado do lado do servidor). Essa modificação fornece aos dispositivos Windows Phone e Windows RT:
 
 -   Uso reduzido de recursos do servidor
 
@@ -42,7 +42,7 @@ Os dispositivos que conectam o TLS aos servidores frequentemente precisam se rec
 -   Menos tempo gasto para o handshake do TLS devido às retomadas de conexão.
 
 > [!NOTE]
-> A implementação do lado do cliente do RFC 5077 foi adicionada ao Windows 8.
+> A implementação de cliente do RFC 5077 foi adicionada no Windows 8.
 
 Para obter informações sobre a retomada de sessão TLS sem estado, consulte o documento IETF [RFC 5077.](http://www.ietf.org/rfc/rfc5077)
 
@@ -68,6 +68,10 @@ No Windows Server 2012 e no Windows 8, foram feitas alterações no processo de 
 
 -   A compatibilidade com versões anteriores dos sistemas operacionais Windows é preservada.
 
+> [!NOTE]
+> Se o mapeador do sistema estiver habilitado pelo aplicativo cliente e você tiver configurado `SendTrustedIssuers` , o mapeador do sistema será adicionado `CN=NT Authority` à lista de emissores.
+
+
 **Que valor isso adiciona?**
 
 A partir do Windows Server 2012, o uso da CTL foi substituído por uma implementação baseada em repositório de certificados. Isso permite uma capacidade de gerenciamento mais familiar por meio dos commandlets existentes de gerenciamento de certificados do provedor do Windows PowerShell e das ferramentas de linha de comando como certutil.exe.
@@ -90,23 +94,23 @@ Se o repositório de **autoridades de Certifictation raiz confiáveis** que foi 
 
 A arquitetura do SSP do Schannel no Windows Server 2012 usará, por padrão, as lojas, conforme descrito acima, para gerenciar a lista de emissores confiáveis. Você ainda pode usar os commandlets existentes de gerenciamento de certificados do provedor do PowerShell, bem como as ferramentas de linha de comando como Certutil, para gerenciar certificados.
 
-Para obter informações sobre como gerenciar certificados usando o provedor do PowerShell, consulte [cmdlets de administração do AD CS no Windows](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx).
+Para obter informações sobre como gerenciar certificados usando o provedor do PowerShell, consulte [Cmdlets de administração do AD CS no Windows](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx).
 
-Para obter informações sobre como gerenciar certificados usando o utilitário de certificado, consulte [certutil. exe](https://technet.microsoft.com/library/cc732443.aspx).
+Para obter informações sobre como gerenciar certificados usando o utilitário de certificados, consulte [certutil.exe](https://technet.microsoft.com/library/cc732443.aspx).
 
-Para obter informações sobre quais dados, incluindo o repositório definido pelo aplicativo, são definidos para uma credencial Schannel, consulte [estrutura de SCHANNEL_CRED (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx).
+Para obter informações sobre quais dados, incluindo o repositório definido pelo aplicativo, são definidos para uma credencial do Schannel, consulte [Estrutura SCHANNEL_CRED (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx).
 
 **Padrões para modos de confiança**
 
 O provedor Schannel dá suporte a três modos de confiança de autenticação de clientes. O modo de confiança controla como a validação da cadeia de certificados do cliente é executada e é uma configuração de todo o sistema controlada pelo REG_DWORD "ClientAuthTrustMode" em HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel.
 
-|{1&gt;Valor&lt;1}|Modo de confiança|Descrição|
+|Valor|Modo de confiança|Descrição|
 |-----|-------|--------|
 |0|Confiança do computador (padrão)|Requer que o certificado do cliente seja emitido por um certificado da lista de emissores confiáveis.|
 |1|Confiança raiz exclusiva|Requer que um certificado de cliente esteja ligado a um certificado raiz contido no repositório de emissor confiável especificado pelo chamador. O certificado também deve ser emitido por um emissor da lista de emissores confiáveis|
 |2|Confiança de AC exclusiva|Requer que a cadeia de certificados de um cliente esteja ligado a um Certificado de Autoridade de Certificação intermediário ou a um certificado raiz do repositório do emissor confiável especificado pelo chamador.|
 
-Para obter informações sobre falhas de autenticação devido a problemas de configuração de emissores confiáveis, consulte o artigo [280256](https://support.microsoft.com/kb/2802568)da base de dados de conhecimento.
+Para obter informações sobre falhas de autenticação devido a problemas de configuração dos emissores confiáveis, consulte o artigo [280256](https://support.microsoft.com/kb/2802568) da Base de Dados de Conhecimento.
 
 ### <a name="tls-support-for-server-name-indicator-sni-extensions"></a><a name="BKMK_SNI"></a>Suporte a TLS para extensões SNI (Server Name Indicator)
 O recurso de Indicação do Nome do Servidor estende os protocolos SSL e TLS para permitir identificação adequada do servidor quando diversas imagens virtuais são executadas em um único servidor. Para proteger corretamente a comunicação entre um computador cliente e um servidor, o computador cliente solicita um certificado digital do servidor. Após o servidor responder ao pedido e enviar o certificado, o computador cliente o analisa, usa para criptografar a comunicação e prossegue com a troca normal de solicitação e resposta. No entanto, em um cenário de hospedagem virtual, vários domínios, cada um com o seu próprio certificado potencialmente distinto, são hospedados em um servidor. Nesse caso, o servidor não tem como saber previamente qual certificado enviar para o computador cliente. O SNI permite que o computador cliente informe o domínio de destino antecipadamente no protocolo, e isso permite que o servidor selecione corretamente o certificado adequado.
@@ -129,7 +133,7 @@ O SSP Schannel mantém um cache na memória dos estados de conexão permitidos p
 
 A seleção do certificado por parte do usuário final foi melhorada, ao permitir que você construa uma lista de nomes prováveis de emissores de certificado que fornecem dicas ao usuário final sobre qual escolher. Essa lista é configurável usando a Política de Grupo.
 
-### <a name="datagram-transport-layer-security-dtls"></a><a name="BKMK_DTLS"></a>Segurança de camada de transporte de datagrama (DTLS)
+### <a name="datagram-transport-layer-security-dtls"></a><a name="BKMK_DTLS"></a>Protocolo DTLS
 O protocolo DTLS versão 1.0 foi adicionado ao Provedor de Suporte de Segurança Schannel. O protocolo DTLS proporciona privacidade nas comunicações para protocolos de datagrama. O protocolo permite que os aplicativos cliente/servidor se comuniquem de uma maneira concebida para impedir a espionagem, sabotagem ou falsificação de mensagem. O protocolo DTLS baseia-se no protocolo Transport Layer Security (TLS) e fornece garantias de segurança equivalentes, reduzindo a necessidade de usar o IPsec ou criar um protocolo personalizado de segurança de camada de aplicativos.
 
 **Que valor isso adiciona?**
@@ -140,11 +144,10 @@ Os datagramas são comuns em mídia de streaming, como jogos ou videoconferênci
 
 Os aplicativos que usam DTLS sobre UDP podem usar o modelo SSPI no Windows Server 2012 e no Windows 8. Alguns pacotes de codificações estão disponíveis para configuração, de maneira semelhante à forma como se configura o TLS. O Schannel continua a usar o provedor de criptografia CNG, que usa a certificação FIPS 140, introduzida no Windows Vista.
 
-### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>Funcionalidade preterida
+### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>Funcionalidades preteridas
 No SSP do Schannel para Windows Server 2012 e Windows 8, não há recursos ou funcionalidades preteridos.
 
-## <a name="see-also"></a>Consulte também
--   [Modelo de segurança de nuvem privada-funcionalidade de wrapper](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
-
+## <a name="see-also"></a>Veja também
+-   [Modelo de segurança de nuvem privada - funcionalidade Wrapper](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
 
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8a0a4608a16df0336b90ea5df281278ae47a503
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b3ae6858a70d22b3ad928474648a3b2ee156235
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722696"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436231"
 ---
 # <a name="query-termserver"></a>termserver de consulta
 
@@ -29,7 +29,7 @@ Exibe uma lista de todos os servidores de Host da Sessão da Área de Trabalho R
 > query termserver [<ServerName>] [/domain:<Domain>] [/address] [/continue]
 > ```
 > ### <a name="parameters"></a>Parâmetros
-> 
+>
 > |    Parâmetro     |                                                                        Descrição                                                                         |
 > |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > |   <ServerName>   |                                               Especifica o nome que identifica o servidor de host da sessão da área de trabalho remota.                                               |
@@ -37,8 +37,8 @@ Exibe uma lista de todos os servidores de Host da Sessão da Área de Trabalho R
 > |     /address     |                                                  Exibe os endereços de rede e de nó para cada servidor.                                                  |
 > |    /continue     |                                              Impede a pausa após a exibição de cada tela de informações.                                               |
 > |        /?        |                                                            Exibe a ajuda no prompt de comando.                                                            |
-> 
-> ## <a name="remarks"></a>Comentários
+>
+>#### <a name="remarks"></a>Comentários
 > - o **Query termserver** pesquisa a rede em busca de todos os servidores de host da sessão da área de trabalho remota conectados e retorna as seguintes informações:
 >   - O nome do servidor
 >   - A rede (e o endereço do nó se a opção/address for usada)
@@ -60,6 +60,6 @@ Exibe uma lista de todos os servidores de Host da Sessão da Área de Trabalho R
 >   query termserver Server3 /address
 >   ```
 >   ## <a name="additional-references"></a>Referências adicionais
->   - [Command-Line Syntax Key](command-line-syntax-key.md)
->   Referência de comando de serviços de área de trabalho remota de[consulta](query.md)
->   de chave de sintaxe de linha de comando[(serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+>   - Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+>    [consulta](query.md) 
+>    do [Referência de comando de serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 094416a0d7b3adf5c99579ea51b7f343a6dec4f7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4e0ebf422019d6e8023a2a3cc5da2085635c8422
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722734"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436341"
 ---
 # <a name="qprocess"></a>qprocess
 
@@ -29,6 +29,6 @@ Exibe informações sobre os processos que estão sendo executados em um servido
 Esse comando é o mesmo que o comando de **processo de consulta** .
 
 ## <a name="additional-references"></a>Referências adicionais
-[processo de consulta](query-process.md)  
-- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
-[Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)  
+[processo de consulta](query-process.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Referência de comando de serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
