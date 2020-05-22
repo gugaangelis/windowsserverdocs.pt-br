@@ -8,29 +8,29 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 58d849fa1003148b034cc426817b97d3a70d4421
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 481647c1b655a5ddd0ed05507ad474ab56ce3c4c
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312692"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775341"
 ---
 # <a name="whats-new-in-dhcp"></a>Novidades no DHCP
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve a funcionalidade DHCP (protocolo de configuração dinâmica de hosts) que é nova ou alterada no Windows Server 2016.
   
-O DHCP é um padrão IETF (Internet Engineering Task Force) que foi projetado para reduzir a carga administrativa e a complexidade da configuração de hosts em uma rede baseada em\-TCP/IP, como uma intranet privada. Usando o serviço de servidor DHCP, o processo de configuração de TCP/IP em clientes DHCP é automático.
+O DHCP é um padrão IETF (Internet Engineering Task Force), projetado para reduzir a carga administrativa e a complexidade da configuração de hosts em uma \- rede baseada em TCP/IP, como uma intranet privada. Usando o serviço de servidor DHCP, o processo de configuração de TCP/IP em clientes DHCP é automático.
 
 As seções a seguir fornecem informações sobre novos recursos e alterações na funcionalidade do DHCP.
 
 ## <a name="dhcp-subnet-selection-options"></a>Opções de seleção de sub-rede DHCP
 
-O DHCP agora dá suporte às opções 118 e 82 \(a subopção 5\). Você pode usar essas opções para permitir que clientes proxy DHCP e agentes de retransmissão solicitem um endereço IP para uma sub-rede específica e de um intervalo de endereços IP e escopo específicos.
+O DHCP agora dá suporte à opção 82 \( sub-opção 5 \) . Você pode usar essa opção para permitir que clientes proxy DHCP e agentes de retransmissão solicitem um endereço IP para uma sub-rede específica.
 
 
-Se você estiver usando um agente de retransmissão DHCP configurado com a opção de DHCP 82, sub\-opção 5, o agente de retransmissão poderá solicitar uma concessão de endereço IP para clientes DHCP de um intervalo de endereços IP específico.
+Se você estiver usando um agente de retransmissão DHCP configurado com a opção de DHCP 82, \- a subopção 5, o agente de retransmissão poderá solicitar uma concessão de endereço IP para clientes DHCP de um intervalo de endereços IP específico.
 
 Para obter mais informações, consulte [Opções de seleção de sub-rede do DHCP](dhcp-subnet-options.md).
 
@@ -42,13 +42,13 @@ Para obter mais informações, consulte [eventos de log do DHCP para registros d
 
 ## <a name="dhcp-nap-is-not-supported-in-windows-server-2016"></a>Não há suporte para NAP do DHCP no Windows Server 2016
 
-A proteção de acesso à rede \(NAP\) foi preterida no Windows Server 2012 R2 e no Windows Server 2016 a função de servidor DHCP não oferece mais suporte a NAP. Para obter mais informações, consulte [recursos removidos ou preteridos no Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx).  
+A NAP de proteção de acesso à rede \( \) foi preterida no windows Server 2012 R2 e no windows Server 2016 a função de servidor DHCP não oferece mais suporte a NAP. Para obter mais informações, consulte [recursos removidos ou preteridos no Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx).  
   
 O suporte a NAP foi introduzido na função de servidor DHCP com o Windows Server 2008 e tem suporte em sistemas operacionais de cliente e servidor do Windows antes do Windows 10 e do Windows Server 2016. A tabela a seguir resume o suporte para NAP no Windows Server.  
   
 |Sistema operacional|Suporte a NAP|  
 |--------------------|---------------|  
-| Windows Server 2008 |Com suporte|  
+| Windows Server 2008 |Com suporte|  
 | Windows Server 2008 R2 |Com suporte|  
 | Windows Server 2012 |Com suporte|  
 | Windows Server 2012 R2 |Com suporte|  
@@ -56,11 +56,11 @@ O suporte a NAP foi introduzido na função de servidor DHCP com o Windows Serve
   
 Em uma implantação de NAP, um servidor DHCP que executa um sistema operacional que dá suporte a NAP pode funcionar como um ponto de imposição de NAP para o método de imposição de DHCP NAP. Para obter mais informações sobre o DHCP em NAP, consulte [lista de verificação: Implementando um design de imposição de DHCP](https://technet.microsoft.com/library/dd314186.aspx).  
   
-No Windows Server 2016, os servidores DHCP não impõem políticas NAP e os escopos DHCP não podem ser NAP\-habilitados. Os computadores cliente DHCP que também são clientes NAP enviam uma declaração de integridade \(SoH\) com a solicitação DHCP. Se o servidor DHCP estiver executando o Windows Server 2016, essas solicitações serão processadas como se nenhuma SoH estiver presente. O servidor DHCP concede uma concessão DHCP normal ao cliente. 
+No Windows Server 2016, os servidores DHCP não impõem políticas NAP e os escopos DHCP não podem ser \- habilitados para NAP. Os computadores cliente DHCP que também são clientes NAP enviam uma declaração de soh de integridade \( \) com a solicitação DHCP. Se o servidor DHCP estiver executando o Windows Server 2016, essas solicitações serão processadas como se nenhuma SoH estiver presente. O servidor DHCP concede uma concessão DHCP normal ao cliente. 
 
-Se servidores que executam o Windows Server 2016 são proxies RADIUS que encaminham solicitações de autenticação para um servidor de diretivas de rede \(\) de NPS com suporte a NAP, esses clientes NAP são avaliados pelo NPS como não NAP\-compatíveis e o processamento de NAP falha.
+Se servidores que executam o Windows Server 2016 são proxies RADIUS que encaminham solicitações de autenticação para um NPS de servidor de diretivas de rede \( \) que dá suporte a NAP, esses clientes NAP são avaliados pelo NPS como sem \- capacidade de NAP e o processamento de NAP falha.
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 -   [Protocolo DHCP](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
   
