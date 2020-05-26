@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: domínio'
-description: Tópico de referência para * * * *-
+title: domínio ksetup
+description: Tópico de referência para o comando de domínio ksetup, que define o nome de domínio para todas as operações Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,44 +9,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f127eaf33e9ef6d597851c31a4167ceaa3516abb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1d497f2bc76bae8a95b077658c661e0fdc1e93f3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724683"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817796"
 ---
-# <a name="ksetupdomain"></a>ksetup: domínio
-
-
+# <a name="ksetup-domain"></a>domínio ksetup
 
 Define o nome de domínio para todas as operações Kerberos.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /domain <DomainName>
+ksetup /domain <domainname>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<> DomainName|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como contoso.com ou contoso.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<domainname>` | Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como contoso.com ou contoso.|
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
-Nenhum.
+Para estabelecer uma conexão com um domínio válido, como a Microsoft, usando o `ksetup /mapuser` subcomando, digite:
 
-## <a name="examples"></a>Exemplos
-
-Estabeleça uma conexão com um domínio válido, como a Microsoft usando o subcomando/mapuser:
 ```
 ksetup /mapuser principal@realm domain-user /domain domain-name
 ```
-Quando a conexão for bem-sucedida, você receberá uma nova TGT ou um TGT existente será atualizado.
+
+Após uma conexão bem-sucedida, você receberá uma nova TGT ou um TGT existente será atualizado.
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Ksetup](ksetup.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)
+
+- [comando ksetup mapuser](ksetup-mapuser.md)

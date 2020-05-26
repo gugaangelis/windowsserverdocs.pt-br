@@ -9,22 +9,22 @@ author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: 295536afc77d0559fd7d2d4a22f555231a1aab75
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858069"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775319"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licenciar a implantação do RDS com CALs (Licenças de Acesso para Cliente)
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Cada usuário e dispositivo que conecta a um Host da Sessão da Área de Trabalho Remota precisa de uma CAL (Licença de Acesso para Cliente). Use o Licenciamento de Área de Trabalho Remota para instalar, emitir e rastrear as CALs para Serviços de Área de Trabalho Remota.  
+Cada usuário e dispositivo que se conecta a um Host da Sessão da Área de Trabalho Remota precisa de uma CAL (licença de acesso para cliente). Use o Licenciamento de Área de Trabalho Remota para instalar, emitir e rastrear as CALs para Serviços de Área de Trabalho Remota.  
 
 Quando um usuário ou um dispositivo se conecta a um servidor Host da Sessão da Área de Trabalho Remota, ele determina se uma CAL para Serviços de Área de Trabalho Remota é necessária. Em seguida, o servidor Host da Sessão da Área de Trabalho Remota solicita uma CAL para Serviços de Área de Trabalho Remota do servidor de licenças de Área de Trabalho Remota. Se uma CAL para Serviços de Área de Trabalho Remota apropriada estiver disponível em um servidor de licença, uma CAL para Serviços de Área de Trabalho Remota será emitida para o cliente e, a partir de lá, para a área de trabalho ou aplicativos que estão tentando usar.
 
-Embora exista um período de cortesia do licenciamento, durante o qual não é necessário nenhum servidor de licença, ao final deste período, os clientes precisarão receber uma CAL para Serviços de Área de Trabalho Remota válida emitida por um servidor de licença para poderem fazer o logon em um servidor Host da Sessão da Área de Trabalho Remota.
+Há um período de carência da licença de 180 dias durante o qual nenhum servidor de licença é necessário. Depois que o período de carência terminar, os clientes deverão ter uma CAL para Serviços de Área de Trabalho Remota válida emitida por um servidor de licença antes de fazer logon em um servidor Host da Sessão da Área de Trabalho Remota.
 
 Use as informações a seguir para saber mais sobre como funciona o licenciamento de acesso para cliente nos Serviços de Área de Trabalho Remota e como implantar e gerenciar suas licenças:
 
@@ -54,7 +54,9 @@ Quando você usa o modelo por dispositivo, uma licença temporária é emitida n
 
 Quando você usa o modelo por usuário, licenciamento não é imposto e cada usuário recebe uma licença para conectar a um Host da Sessão RD em qualquer número de dispositivos. O servidor de licença emite licenças do pool da CAL para Serviços de Área de Trabalho Remota disponível ou para o pool da CAL para Serviços de Área de Trabalho Remota superutilizada. É sua responsabilidade verificar se todos os seus usuários têm uma licença válida e nenhuma CAL Superutilizada; caso contrário, você estará violando os termos de licença dos Serviços de Área de Trabalho Remota.
 
-Para verificar se você está em conformidade com os termos de licença dos Serviços de Área de Trabalho Remota, rastreie o número de CALs por Usuário aos Serviços de Área de Trabalho Remota usadas na sua organização e verifique se você tem CALs por Usuário aos Serviços de Área de Trabalho Remota instaladas no servidor de licença de todos os seus usuários.
+Um exemplo do local em que alguém usaria o modelo Por Dispositivo seria um ambiente em que há dois ou mais turnos usando os mesmos computadores para acessar os Hosts da Sessão RD. O modelo Por Usuário seria melhor para ambientes em que os usuários têm o próprio dispositivo Windows dedicado para acessar os Hosts da Sessão RD.
+
+Para verificar se você está em conformidade com os termos de licença dos Serviços de Área de Trabalho Remota, rastreie o número de CALs por Usuário aos Serviços de Área de Trabalho Remota usadas na sua organização e verifique se você tem CALs por Usuário aos Serviços de Área de Trabalho Remota instaladas no servidor de licença suficientes para todos os usuários.
 
 Você pode usar o Gerenciador de Licenciamento de Área de Trabalho Remota para rastrear e gerar relatórios sobre CALs de RDS por usuário.
 

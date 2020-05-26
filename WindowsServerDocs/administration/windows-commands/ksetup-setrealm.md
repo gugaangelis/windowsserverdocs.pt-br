@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: setreale'
-description: Tópico de referência para * * * *-
+title: ksetup
+description: Tópico de referência para o comando ksetup setrealm, que define o nome de um realm Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,46 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 453977ac39dd3a52b4f5a3104995f944e4a48392
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 03b33977f57e187a8bea69be78c1e9c094b9a73e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724553"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817276"
 ---
-# <a name="ksetupsetrealm"></a>ksetup: setreale
-
-
+# <a name="ksetup-setrealm"></a>ksetup
 
 Define o nome de um realm Kerberos.
+
+> [!IMPORTANT]
+> Não há suporte para a definição do realm Kerberos em um controlador de domínio. A tentativa de fazer isso causa um aviso e uma falha de comando.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /setrealm <DNSDomainName>
+ksetup /setrealm <DNSdomainname>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<NomeDomínioDNS>|O nome de domínio DNS pode estar na forma de um nome de domínio totalmente qualificado ou um nome de domínio simples.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<DNSdomainname>` | Especifica o nome DNS em maiúsculas, como CORP. CONTOSO.COM. Você pode usar o nome de domínio totalmente qualificado ou uma forma simples do nome. Se você não usar letras maiúsculas para o nome DNS, será solicitado que você faça a verificação para continuar. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
-O parâmetro de nome de domínio DNS deve ser inserido em letras maiúsculas. Caso contrário, o comando **ksetup** solicitará a verificação para continuar.
+Para definir o realm deste computador para um nome de domínio específico e para restringir o acesso por um controlador que não seja de domínio apenas ao realm Kerberos do CONTOSO, digite:
 
-Não há suporte para a definição do realm Kerberos em um controlador de domínio. Tentar fazer isso causará um aviso e uma falha de comando.
-
-## <a name="examples"></a>Exemplos
-
-Defina o realm para este computador como um nome de domínio específico para restringir o acesso por um controlador que não seja de domínio apenas para o realm Kerberos da CONTOSO:
 ```
 ksetup /setrealm CONTOSO
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
--   [Ksetup](ksetup.md)
--   [Ksetup:removerealm](ksetup-removerealm.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)
+
+- [ksetup removerealm](ksetup-removerealm.md)

@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: listrealmflags'
-description: Tópico de referência para * * * *-
+title: ksetup listrealmflags
+description: Tópico de referência para o comando ksetup listrealmflags, que lista os sinalizadores de realm disponíveis que podem ser relatados pelo ksetup.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0646be8daaad4bc3303389cfca1f3a09136fe1a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5c5ebbee7f937733286e0354eca1cf5524459e86
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724622"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817716"
 ---
-# <a name="ksetuplistrealmflags"></a>ksetup: listrealmflags
-
-
+# <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
 Lista os sinalizadores de realm disponíveis que podem ser relatados por **ksetup**.
 
@@ -28,44 +26,50 @@ Lista os sinalizadores de realm disponíveis que podem ser relatados por **ksetu
 ksetup /listrealmflags
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="remarks"></a>Comentários
 
-Nenhum
+- Os sinalizadores de realm especificam recursos adicionais de um realm Kerberos que não se baseiam no sistema operacional Windows Server. Os computadores que executam o Windows Server podem usar um servidor Kerberos para administrar a autenticação no realm do Kerberos, em vez de usar um domínio que esteja executando um sistema operacional Windows Server. Essa entrada estabelece os recursos do Realm e são as seguintes:
 
-## <a name="remarks"></a>Comentários
+| Valor | Sinalizador de realm | Descrição |
+| ----- | ---------- | ----------- |
+| 0xF | Tudo | Todos os sinalizadores de realm estão definidos. |
+| 0x00 | Nenhum | Nenhum sinalizador de realm definido, e nenhum recurso adicional está habilitado. |
+| 0x01 | sendaddress | O endereço IP será incluído dentro dos tíquetes de concessão de tíquetes. |
+| 0x02 | tcpsupported | Tanto o protocolo TCP quanto o UDP (User Datagram Protocol) têm suporte nesse realm. |
+| 0x04 | delegado | Todos nesse realm são confiáveis para delegação. |
+| 0x08 | ncsupported | Esse Realm dá suporte à canonização de nome, que permite padrões de nomenclatura de DNS e de realm. |
+| 0x80 | RC4 | Esse Realm dá suporte à criptografia RC4 para habilitar a relação de confiança entre territórios, o que permite o uso de TLS. |
 
-Os sinalizadores de realm especificam recursos adicionais de um realm Kerberos não baseado no Windows. Computadores que executam o Windows Server 2003, Windows Server 2008 ou Windows Server 2008 R2 podem usar um servidor Kerberos não baseado no Windows para administrar a autenticação em vez de usar um domínio que esteja executando um sistema operacional Windows Server. Esses sistemas participam de um realm Kerberos em vez de um domínio do Windows. Essa entrada estabelece os recursos do realm. A tabela a seguir descreve cada um.
-
-|Valor|Sinalizador de realm|Descrição|
-|-----|----------|-----------|
-|0xF|Todos|Todos os sinalizadores de realm estão definidos.|
-|0x00|Nenhum|Nenhum sinalizador de realm definido, e nenhum recurso adicional está habilitado.|
-|0x01|SendAddress|O endereço IP será incluído dentro dos tíquetes de concessão de tíquetes.|
-|0x02|TcpSupported|O protocolo TCP e o UDP (User Datagram Protocol) têm suporte nesse realm.|
-|0x04|delegado|Todos nesse realm são confiáveis para delegação.|
-|0x08|NcSupported|Esse Realm dá suporte à canonização de nome, que permite padrões de nomenclatura de DNS e de realm.|
-|0x80|RC4|Esse Realm dá suporte à criptografia RC4 para habilitar a relação de confiança entre territórios, o que permite o uso de TLS.|
-
-Os sinalizadores de realm são armazenados no registro em HKEY_LOCAL_MACHINE<em>nome Realm</em> **\\\system\currentcontrolset\control\lsa\kerberos\domains**. Essa entrada não existe no Registro por padrão. Você pode usar o comando [Ksetup: addrealmflags](ksetup-addrealmflags.md) para popular o registro.
+- Os sinalizadores de realm são armazenados no registro em `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\<realmname>` . Por padrão, essa entrada não existe no registro. Você pode usar o [comando ksetup addrealmflags](ksetup-addrealmflags.md) para popular o registro.
 
 ## <a name="examples"></a>Exemplos
 
-Liste os sinalizadores de realm conhecidos neste computador:
+Para listar os sinalizadores de realm conhecidos neste computador, digite:
+
 ```
 ksetup /listrealmflags
 ```
-Defina os sinalizadores de realm disponíveis que o **Ksetup** não sabe digitando um dos comandos a seguir na linha de comando:
+
+Para definir os sinalizadores de realm disponíveis que o **ksetup** não sabe, digite:
+
 ```
 ksetup /setrealmflags CORP.CONTOSO.COM sendaddress tcpsupported delete ncsupported
 ```
+
+**OR**
+
 ```
 ksetup /setrealmflags CORP.CONTOSO.COM 0xF
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Ksetup:setrealmflags](ksetup-setrealmflags.md)
--   [Ksetup:addrealmflags](ksetup-addrealmflags.md)
--   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
--   [Ksetup](ksetup.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)
+
+- [comando ksetup addrealmflags](ksetup-addrealmflags.md)
+
+- [comando ksetup setrealmflags](ksetup-setrealmflags.md)
+
+- [comando ksetup delrealmflags](ksetup-delrealmflags.md)

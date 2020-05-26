@@ -5,16 +5,16 @@ description: Perguntas frequentes sobre o AD FS
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/17/2019
+ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 947c34e6c3a3b9a26a225221bbf29e46343b25df
+ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80814426"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546553"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes do AD FS
 
@@ -73,6 +73,9 @@ O AD FS dá suporte a diversas configurações de várias florestas e se baseia 
 >[!NOTE]  
 >Se a autenticação eletiva for usada com uma configuração de relação de confiança bidirecional, garanta que o usuário chamador receba a permissão "permitir autenticação" na conta de serviço de destino. 
 
+### <a name="does-ad-fs-extranet-smart-lockout-support-ipv6"></a>O Bloqueio Inteligente de Extranet do AD FS é compatível com IPv6?
+Sim, os endereços IPv6 são considerados para locais familiares/desconhecidos.
+
 
 ## <a name="design"></a>Design
 
@@ -82,7 +85,7 @@ O AD FS fornece um mecanismo extensível para provedores de MFA de terceiros a s
 A lista de fornecedores que notificaram a Microsoft foi publicada em [Provedores de MFA para o AD FS](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md).  Pode sempre haver provedores disponíveis que desconhecemos, por isso, atualizaremos a lista à medida que ficarmos cientes deles.
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>Há suporte para proxies de terceiros no AD FS?
-Sim, os proxies de terceiros podem ser colocados na frente do Proxy de aplicativo Web, mas qualquer proxy de terceiros precisa dar suporte ao [protocolo MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx) a ser usado no lugar do Proxy de aplicativo Web.
+Sim, os proxies de terceiros podem ser colocados na frente dos AD FS, mas qualquer proxy de terceiros precisa ser compatível com o [protocolo MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx) a ser usado no lugar do Proxy de aplicativo Web.
 
 Veja abaixo uma lista de provedores de terceiros dos quais estamos cientes.  Pode sempre haver provedores disponíveis que desconhecemos, por isso, atualizaremos a lista à medida que ficarmos cientes deles.
 
@@ -310,3 +313,11 @@ Após uma atualização para o Windows Server 2019, a versão de configuração 
 
 ### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>Posso estimar o tamanho do ADFSArtifactStore antes de habilitar o ESL?
 Com o ESL habilitado, o AD FS acompanha a atividade da conta e as localizações conhecidas para os usuários no banco de dados ADFSArtifactStore. Esse banco de dados é dimensionado em tamanho em relação ao número de usuários e localizações conhecidas acompanhados. Ao planejar a habilitação do ESL, você pode estimar o aumento do tamanho do banco de dados ADFSArtifactStore a uma taxa de até 1 GB a cada 100.000 usuários. Se o farm do AD FS estiver usando o WID (Banco de Dados Interno do Windows), a localização padrão dos arquivos de banco de dados será C:\Windows\WID\Data. Para evitar o preenchimento desta unidade, verifique se você tem um mínimo de 5 GB de armazenamento livre antes de habilitar o ESL. Além do armazenamento em disco, planeje um aumento da memória total do processo depois de habilitar o ESL em até um 1 GB de RAM adicional para populações de usuário de 500.000 ou menos.
+
+### <a name="i-am-seeing-event-570-active-directory-trust-enumeration-was-unable-to-enumerate-one-of-more-domains-due-to-the-following-error-enumeration-will-continue-but-the-active-directory-identifier-list-may-not-be-correct-validate-that-all-expected-active-directory-identifiers-are-present-by-running-get-adfsdirectoryproperties-on-ad-fs-2019-what-is-the-mitigation-for-this-event"></a>Estou vendo o Evento 570 (a enumeração de confiança do Active Directory não pôde enumerar um ou mais domínios devido ao erro a seguir. A enumeração continuará, mas a lista de identificadores do Active Directory pode não estar correta. Valide se todos os identificadores do Active Directory esperados estão presentes executando Get-ADFSDirectoryProperties) no AD FS 2019. Qual é a mitigação para este evento?
+Esse evento ocorre quando as florestas não são confiáveis enquanto o AD FS tenta enumerar todas as florestas em uma cadeia de florestas confiáveis e se conectar em todas as florestas. Por exemplo, se a Floresta A e a Floresta B do AD FS forem confiáveis e a Floresta B e a Floresta C forem confiáveis, o AD FS enumerará todas as três florestas e tentará encontrar uma relação de confiança entre a Floresta A e a C. Se os usuários da floresta com falha devem ser autenticados pelo AD FS, configure uma relação de confiança entre a floresta do AD FS e a floresta com falha. Se os usuários da floresta com falha não devem ser autenticados pelo AD FS, esse erro deve ser ignorado.
+
+### <a name="i-am-seeing-an-event-id-364-microsoftidentityserverauthenticationfailedexception-msis5015-authentication-of-the-presented-token-failed-token-binding-claim-in-token-must-match-the-binding-provided-by-the-channel-what-should-i-do-to-resolve-this"></a>Estou recebendo uma mensagem "Evento ID 364: Microsoft.IdentityServer.AuthenticationFailedException: MSIS5015: Falha na autenticação do token apresentado. A declaração de Associação do Token no token deve corresponder à associação fornecida pelo canal". O que devo fazer para resolver isso?
+No AD FS 2016, a associação de token é habilitada automaticamente e causa vários problemas conhecidos com cenários de proxy e federação que resultam nesse erro. Para resolver isso, execute o comando do PowerShell a seguir e remova o suporte de associação de token.
+
+`Set-AdfsProperties -IgnoreTokenBinding $true`

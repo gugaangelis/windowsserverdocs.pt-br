@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: ChangePassword'
-description: Tópico de referência para * * * *-
+title: ChangePassword ksetup
+description: Tópico de referência para o comando ChangePassword ksetup, que usa o valor de centro de distribuição de chaves (KDC) senha (kpasswd) para alterar a senha do usuário conectado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,59 +9,71 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32c48e896b77043820eea42159e20c089bd69fb8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5c1ed9d9b611a7911c4a22c7ca803b480f52f323
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724720"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817976"
 ---
-# <a name="ksetupchangepassword"></a>ksetup: ChangePassword
+# <a name="ksetup-changepassword"></a>ChangePassword ksetup
 
+Usa o valor de centro de distribuição de chaves (KDC) senha (kpasswd) para alterar a senha do usuário conectado. A saída do comando informa o status de êxito ou falha.
 
+Você pode verificar se o **kpasswd** está definido, executando o `ksetup /dumpstate` comando e exibindo a saída.
 
-Usa o valor de centro de distribuição de chaves (KDC) senha (kpasswd) para alterar a senha do usuário conectado.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /changepassword <OldPasswd> <NewPasswd>
+ksetup /changepassword <oldpassword> <newpassword>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<> OldPasswd|Declara a senha existente do usuário conectado.|
-|\<> NewPasswd|Declara a nova senha do usuário conectado.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<oldpassword>` | Especifica a senha existente do usuário conectado. |
+| `<newpassword>` | Especifica a nova senha do usuário conectado. Essa senha deve atender a todos os requisitos de senha definidos neste computador. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
-Esse comando usa o valor de senha do KDC (kpasswd) para alterar a senha do usuário conectado. O kpasswd, se definido, é exibido na saída executando o comando **ksetup/dumpstate** .
+- Se a conta de usuário não for encontrada no domínio atual, o sistema solicitará que você forneça o nome de domínio onde a conta de usuário reside.
 
-A nova senha do usuário deve atender a todos os requisitos de senha definidos neste computador.
+- Se você quiser forçar uma alteração de senha no próximo logon, esse comando permitirá o uso do asterisco (*), de modo que o usuário será solicitado a fornecer uma nova senha.
 
-Se a conta de usuário não for encontrada no domínio atual, o sistema solicitará que você forneça o nome de domínio onde a conta de usuário reside.
+-
 
-Se você quiser forçar uma alteração de senha no próximo logon, esse comando permitirá o uso do asterisco (*), de modo que o usuário será solicitado a fornecer uma nova senha.
+### <a name="examples"></a>Exemplos
 
-A saída do comando informa o status de êxito ou falha.
+Para alterar a senha de um usuário que está conectado atualmente neste computador neste domínio, digite:
 
-## <a name="examples"></a>Exemplos
-
-Altere a senha de um usuário que está conectado no momento neste computador neste domínio:
 ```
 ksetup /changepassword Pas$w0rd Pa$$w0rd
 ```
-Altere a senha de um usuário que está conectado no momento no domínio contoso:
+
+Para alterar a senha de um usuário que está conectado no momento no domínio contoso, digite:
+
 ```
 ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ```
-Forçar o usuário conectado no momento a alterar a senha no próximo logon:
+
+Para forçar o usuário conectado no momento a alterar a senha no próximo logon, digite:
+
 ```
 ksetup /changepassword Pas$w0rd *
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)
+
+- [comando ksetup dumpstate](ksetup-dumpstate.md)
+
+- [comando ksetup addkpasswd](ksetup-addkpasswd.md)
+
+- [comando ksetup delkpasswd](ksetup-delkpasswd.md)
+
+- [comando ksetup dumpstate](ksetup-dumpstate.md)

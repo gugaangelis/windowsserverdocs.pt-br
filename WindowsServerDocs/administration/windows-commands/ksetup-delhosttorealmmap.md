@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: delhosttorealmmap'
-description: Tópico de referência para * * * *-
+title: ksetup delhosttorealmmap
+description: Tópico de referência para o comando ksetup delhosttorealmmap, que remove um mapeamento de SPN (nome da entidade de serviço) entre o host declarado e o realm.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b6b14785f254a63f0e16fcd16f1cd464a2d69c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 17fc30e76247c570c653d5ec38501a2199435c7f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724690"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817856"
 ---
-# <a name="ksetupdelhosttorealmmap"></a>ksetup: delhosttorealmmap
+# <a name="ksetup-delhosttorealmmap"></a>ksetup delhosttorealmmap
 
+Remove um mapeamento de SPN (nome da entidade de serviço) entre o host declarado e o realm. Esse comando também remove qualquer mapeamento entre um host para o realm (ou vários hosts para o realm).
 
-
-Remove um mapeamento de SPN (nome da entidade de serviço) entre o host declarado e o realm.
+O mapeamento é armazenado no registro, em `HKEY_LOCAL_MACHINE\SYSTEM\CurrentContolSet\Lsa\Kerberos\HostToRealm` . Depois de executar esse comando, é recomendável verificar se o mapeamento aparece no registro.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /delhosttorealmmap <HostName> <RealmName>
+ksetup /delhosttorealmmap <hostname> <realmname>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<> do nome do host|O nome do host é o nome do computador e pode ser declarado como o nome de domínio totalmente qualificado do computador.|
-|\<Realmsname>|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<hostname>` | Especifica o nome de domínio totalmente qualificado do computador. |
+| `<realmname>` | Especifica o nome DNS em maiúsculas, como CORP. CONTOSO.COM. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
-Quando um host para o mapeamento de realm (ou vários hosts para território) existirem, esse comando removerá esse mapeamento.
+Para alterar a configuração da CONTOSO Realm e excluir o mapeamento do computador host IPops897 para o realm, digite:
 
-O mapeamento é registrado no registro no **HKEY_LOCAL_MACHINE \system\currentcontolset\lsa\kerberos\hosttorealm**. Você deve verificar o mapeamento no registro depois de usar esse comando.
-
-## <a name="examples"></a>Exemplos
-
-Alterando a configuração do Realm CONTOSO, exclua o mapeamento do computador host IPops897 para o realm:
 ```
 ksetup /delhosttorealmmap IPops897 CONTOSO
 ```
-Depois de executar esse comando, você pode verificar no registro se o mapeamento está como pretendido.
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)
--   [Ksetup](ksetup.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)
+
+- [comando ksetup addhosttorealmmap](ksetup-addhosttorealmmap.md)

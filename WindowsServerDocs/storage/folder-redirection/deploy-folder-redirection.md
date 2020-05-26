@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855879"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716871"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implantar Redirecionamento de Pastas com Arquivos Offline
 
@@ -199,6 +199,6 @@ A tabela a seguir resume algumas das alterações mais importantes para este tó
 * [Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis](folder-redirection-rup-overview.md)
 * [Implantar computadores primários para Redirecionamento de Pastas e Perfis de Usuários Móveis](deploy-primary-computers.md)
 * [Habilitar a funcionalidade de Arquivos Offline avançada](enable-always-offline.md)
-* [Declaração de suporte da Microsoft sobre dados de perfil do usuário replicados](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+* [Declaração de suporte da Microsoft sobre dados de perfil do usuário replicados](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [Realizar o sideload de aplicativos com o DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [Solução de problemas de empacotamento, implantação e consulta de aplicativos baseados em Windows Runtime](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

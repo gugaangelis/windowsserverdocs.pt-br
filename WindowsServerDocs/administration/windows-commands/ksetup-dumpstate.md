@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: dumpstate'
-description: Tópico de referência para * * * *-
+title: ksetup dumpstate
+description: Tópico de referência para o ksetup dumpstate comando, que exibe o estado atual das configurações de realm para todos os territórios definidos no computador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 27a7e3154b9dfa663b88b04857ea7650995613c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4ccb75ac143239d97b823fb7030f9a8020b4b4f6
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724648"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817736"
 ---
-# <a name="ksetupdumpstate"></a>ksetup: dumpstate
+# <a name="ksetup-dumpstate"></a>ksetup dumpstate
 
-
-
-Exibe o estado atual das configurações de realm para todos os territórios definidos no computador.
+Exibe o estado atual das configurações de realm para todos os territórios definidos no computador. Esse comando exibe a mesma saída que o comando **ksetup** .
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -28,31 +26,30 @@ Exibe o estado atual das configurações de realm para todos os territórios def
 ksetup /dumpstate
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="remarks"></a>Comentários
 
-Nenhum
+- A saída desse comando inclui o realm padrão (o domínio do qual o computador é membro) e todos os territórios definidos neste computador. O seguinte está incluído para cada realm:
 
-## <a name="remarks"></a>Comentários
+  - Todos os KDCs (centros de distribuição de chaves) associados a esse realm.
 
-A saída desse comando inclui o realm padrão (o domínio do qual o computador é membro) e todos os territórios definidos neste computador. O seguinte está incluído para cada realm:
--   Todos os KDCs (centros de distribuição de chaves) associados a este Realm
--   Todos os sinalizadores de **Realm definido** para este Realm
--   A senha do KDC
+  - Todos os sinalizadores de **Realm definido** para esse realm.
 
-Esse comando não exibe o nome de domínio que é especificado pela detecção de DNS ou pelo comando **ksetup/Domain**.
+  - A senha do KDC.
 
-Esse comando não exibe a senha do computador que é definida usando o comando **ksetup/setcomputerpassword**.
+- Esse comando não exibe o nome de domínio especificado pela detecção de DNS ou pelo comando `ksetup /domain` .
 
-**Ksetup** produz a mesma saída que **Ksetup/dumpstate**.
+- Esse comando não exibe a senha do computador definida usando o comando `ksetup /setcomputerpassword` .
 
 ## <a name="examples"></a>Exemplos
 
-Encontre a maioria das configurações de realm do Kerberos em um computador:
+Para localizar as configurações de realm Kerberos em um computador, digite:
+
 ```
 ksetup /dumpstate
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Ksetup](ksetup.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)

@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7e7a233d17d8f2e32286a0869b283e450a34bbbc
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 76ec8a817f0c500380c9bef6fc1ee7eb8dddc105
+ms.sourcegitcommit: 319796ec327530c9656ac103b89bd48cc8d373f6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860139"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790567"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Ferramentas e configurações do Serviço de Tempo do Windows
 
@@ -87,6 +87,15 @@ W32tm /query /computer:contosoW1 /configuration
 ```
 
 O resultado desse comando é uma lista de parâmetros de configuração que são definidos para o cliente de Hora do Windows.
+
+> [!IMPORTANT]  
+> [O Windows Server 2016 aprimorou os algoritmos de sincronização de tempo](https://aka.ms/WS2016Time) para se alinhar com as especificações de RFC. Portanto, se você quiser definir o cliente local de Horário do Windows para apontar para vários pares, é altamente recomendável preparar três ou mais servidores de horário diferentes.
+>  
+> Se você tiver apenas dois servidores de horário, deverá especificar o sinalizador (0x2) **UseAsFallbackOnly** para eliminar a prioridade de um deles. Por exemplo, se você quiser priorizar ntpserver.contoso.com em vez de clock.adatum.com, execute o comando a seguir.
+> ```cmd
+> w32tm /config /manualpeerlist:"ntpserver.contoso.com,0x8 clock.adatum.com,0xa" /syncfromflags:manual /update
+> ```
+> Para entender o significado do sinalizador especificado, consulte [Entradas de subchave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"](#parameters).
 
 ## <a name="using-group-policy-to-configure-the-windows-time-service"></a>Como usar a Política de Grupo para configurar o Serviço de Hora do Windows
 
@@ -307,7 +316,7 @@ Nas tabelas a seguir, "Todas as versões" refere-se às versões do Windows que 
 |**LargeSampleSkew** |Todas as versões |Especifica a distorção de amostra grande para o log, em segundos. Para estar em conformidade com as especificações da SEC (Security and Exchange Commission), isso deve ser definido como três segundos. Os eventos serão registrados em log para essa configuração somente quando **EventLogFlags** estiver explicitamente configurado para a distorção de amostra grande 0x2. O valor padrão em membros do domínio é 3. O valor padrão em clientes e servidores autônomos é 3. |
 |**ResolvePeerBackOffMaxTimes** |Todas as versões |Especifica o número máximo de vezes a dobrar o intervalo de espera quando há tentativas repetidas de localizar um par com o qual foi feita uma sincronização com falha. Um valor de zero significa que o intervalo de espera é sempre o mínimo. O valor padrão em membros do domínio é **7**. O valor padrão em clientes e servidores autônomos é **7**. |
 |**ResolvePeerBackoffMinutes** |Todas as versões |Especifica o intervalo inicial de espera, em minutos, antes da tentativa de localizar um par com o qual será feita a sincronização. O valor padrão em membros do domínio é **15**. O valor padrão em clientes e servidores autônomos é **15**.  |
-|**SpecialPollInterval** |Todas as versões |Especifica o intervalo de sondagem especial, em segundos, para os pares manuais. Quando o sinalizador **SpecialInterval** 0x1 está habilitado, o W32Time usa esse intervalo de sondagem, em vez de um intervalo de sondagem determinado pelo sistema operacional. O valor padrão em membros do domínio é **3.600**. O valor padrão em clientes e servidores autônomos é **604.800**.<br/><br/>Uma novidade do build 1702, o **SpecialPollInterval** está contido nos valores do Registro de configuração **MinPollInterval** e **MaxPollInterval**.|
+|**SpecialPollInterval** |Todas as versões |Especifica o intervalo de sondagem especial, em segundos, para os pares manuais. Quando o sinalizador **SpecialInterval** 0x1 está habilitado, o W32Time usa esse intervalo de sondagem, em vez de um intervalo de sondagem determinado pelo sistema operacional. O valor padrão em membros do domínio é **3.600**. O valor padrão em clientes e servidores autônomos é **604.800**.<br/><br/>Uma novidade do build 1703, o **SpecialPollInterval** está contido nos valores do Registro de configuração **MinPollInterval** e **MaxPollInterval**.|
 |**SpecialPollTimeRemaining** |Todas as versões |Mantida pelo W32Time. Contém dados reservados usados pelo sistema operacional Windows. Ele especifica o tempo, em segundos, antes que o W32Time seja ressincronizado após a reinicialização do computador. Qualquer alteração a essa configuração pode causar resultados imprevisíveis. O valor padrão em membros do domínio e em clientes e servidores autônomos é deixado em branco. |
 
 ### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a>Entradas da subchave <a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer"

@@ -1,6 +1,6 @@
 ---
 title: ipxroute
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando ipxroute, que exibe e modifica informações sobre as tabelas de roteamento usadas pelo protocolo IPX.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,43 +9,50 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a6d0cac3f835e86d40e03141c0da51d514ef0c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: afcb5064bc8d4eb4a3b4a8920fcfcf71591d7af5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724803"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818316"
 ---
 # <a name="ipxroute"></a>ipxroute
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe e modifica informações sobre as tabelas de roteamento usadas pelo protocolo IPX. Usado sem parâmetros, o **ipxroute** exibe as configurações padrão para pacotes que são enviados a endereços desconhecidos, de difusão e multicast.   
-## <a name="syntax"></a>Sintaxe  
-```  
-ipxroute servers [/type=X]  
-ipxroute ripout <Network>  
-ipxroute resolve {guid | name} {GUID | <AdapterName>}  
-ipxroute board= N [def] [gbr] [mbr] [remove=xxxxxxxxxxxx]  
-ipxroute config  
-```  
-#### <a name="parameters"></a>Parâmetros  
-|Parâmetro|Descrição|  
-|-------|--------|  
-|servidores [/Type = X]|Exibe a tabela de ponto de acesso de serviço (SAP) para o tipo de servidor especificado.  **X** deve ser um número inteiro. Por exemplo, **/Type = 4** exibe todos os servidores de arquivos. Se você não especificar **/Type**, o **ipxroute** servers exibirá todos os tipos de servidores, listando-os por nome do servidor.|  
-|Rede ripout|Descobre se a *rede* pode ser acessada consultando a tabela de rotas da pilha IPX e enviando uma solicitação RIP, se necessário.  *Rede* é o número de segmento de rede IPX.|  
-|resolver {GUID&#124; name} {GUID&#124; AdapterName}|Resolve o nome do GUID para seu nome amigável ou o nome amigável para seu GUID.|  
-|quadro = *N*|Especifica o adaptador de rede para o qual consultar ou definir parâmetros.|  
-|def|Envia pacotes para a difusão todas as rotas. Se um pacote for transmitido para um endereço MAC (cartão de acesso de mídia) exclusivo que não esteja na tabela de roteamento de origem, o **ipxroute** enviará o pacote para a difusão de rotas únicas por padrão.|  
-|gbr|Envia pacotes para a difusão todas as rotas. Se um pacote for transmitido para o endereço de difusão (FFFFFFFFFFFF), o **ipxroute** enviará o pacote para a difusão de rotas únicas por padrão.|  
-|MBR|Envia pacotes para a difusão todas as rotas. Se um pacote for transmitido para um endereço de multicast (C000xxxxxxxx), o **ipxroute** enviará o pacote para a difusão de rotas únicas por padrão.|  
-|Remover = *xxxxxxxxxxxx*|Remove o endereço de nó fornecido da tabela de roteamento de origem.|  
-|config|Exibe informações sobre todas as associações para as quais o IPX está configurado.|  
-|/?|Exibe a ajuda no prompt de comando.|  
-## <a name="examples"></a>Exemplos  
-Para exibir os segmentos de rede aos quais a estação de trabalho está anexada, o endereço do nó da estação de trabalho e o tipo de quadro que está sendo usado, digite:  
-```  
-ipxroute config  
-```  
-## <a name="additional-references"></a>Referências adicionais  
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+Exibe e modifica informações sobre as tabelas de roteamento usadas pelo protocolo IPX. Usado sem parâmetros, o **ipxroute** exibe as configurações padrão para pacotes que são enviados a endereços desconhecidos, de difusão e multicast.
+
+## <a name="syntax"></a>Sintaxe
+
+```
+ipxroute servers [/type=x]
+ipxroute ripout <network>
+ipxroute resolve {guid | name} {GUID | <adaptername>}
+ipxroute board= N [def] [gbr] [mbr] [remove=xxxxxxxxxxxx]
+ipxroute config
+```
+
+### <a name="parameters"></a>Parâmetros
+| Parâmetro | Descrição |
+| ------- | -------- |
+| servidores`[/type=x]` | Exibe a tabela de ponto de acesso de serviço (SAP) para o tipo de servidor especificado. **x** deve ser um número inteiro. Por exemplo, `/type=4` exibe todos os servidores de arquivos. Se você não especificar **/Type**, o `ipxroute servers` exibirá todos os tipos de servidores, listando-os por nome do servidor. |
+| resolver `{GUID | name}``{GUID | adaptername}` | Resolve o nome do GUID para seu nome amigável ou o nome amigável para seu GUID. |
+| quadro = *n* | Especifica o adaptador de rede para o qual consultar ou definir parâmetros. |
+| def | Envia pacotes para a difusão todas as rotas. Se um pacote for transmitido para um endereço MAC (cartão de acesso de mídia) exclusivo que não esteja na tabela de roteamento de origem, o **ipxroute** enviará o pacote para a difusão de rotas únicas por padrão. |
+| gbr | Envia pacotes para a difusão todas as rotas. Se um pacote for transmitido para o endereço de difusão (FFFFFFFFFFFF), o **ipxroute** enviará o pacote para a difusão de rotas únicas por padrão. |
+| MBR | Envia pacotes para a difusão todas as rotas. Se um pacote for transmitido para um endereço de multicast (C000xxxxxxxx), o **ipxroute** enviará o pacote para a difusão de rotas únicas por padrão. |
+| Remover =*xxxxxxxxxxxx* | Remove o endereço de nó fornecido da tabela de roteamento de origem. |
+| config | Exibe informações sobre todas as associações para as quais o IPX está configurado. |
+| /? | Exibe a ajuda no prompt de comando. |
+
+### <a name="examples"></a>Exemplos
+
+Para exibir os segmentos de rede aos quais a estação de trabalho está anexada, o endereço do nó da estação de trabalho e o tipo de quadro que está sendo usado, digite:
+
+```
+ipxroute config
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
