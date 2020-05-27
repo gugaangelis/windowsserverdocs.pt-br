@@ -1,6 +1,6 @@
 ---
 title: set
-description: Tópico de referência para conjunto, que exibe, define ou remove CMD. Variáveis de ambiente EXE.
+description: Tópico de referência para Set, que exibe, define ou remove variáveis de ambiente cmd. exe.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d537188e1f0fafdd5ecd4075a77397e12328ddf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5de835dd591e1f70acc896772df501d5ddbdf237
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721881"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819386"
 ---
 # <a name="set"></a>set
 
-Exibe, define ou remove CMD. Variáveis de ambiente EXE. Se usado sem parâmetros, **set** exibe as configurações de variável de ambiente atuais.
+Exibe, define ou remove variáveis de ambiente cmd. exe. Se usado sem parâmetros, **set** exibe as configurações de variável de ambiente atuais.
 
 
 
@@ -49,7 +49,7 @@ set /a <Variable>=<Expression>
   Quando as extensões de comando são habilitadas (o padrão) e você executa **definir** com um valor, ele exibe todas as variáveis que começam com esse valor.
 - Usando caracteres especiais
 
-  Os caracteres **<**, **>**, **|** **&**,, **^** são caracteres especiais do Shell de comando e devem ser precedidos pelo caractere de escape**^**() ou colocados entre aspas quando usados na *cadeia de caracteres* (por exemplo, **StringContaining&símbolo**). Se você usar aspas para colocar uma cadeia de caracteres que contenha um dos personagens especiais, as aspas serão definidas como parte do valor da variável de ambiente.
+  Os caracteres **<** , **>** ,,, **|** **&** **^** são caracteres especiais do Shell de comando e devem ser precedidos pelo caractere de escape ( **^** ) ou colocados entre aspas quando usados na *cadeia de caracteres* (por exemplo, **StringContaining&símbolo**). Se você usar aspas para incluir uma cadeia de caracteres que contenha um dos caracteres especiais, as aspas serão definidas como parte do valor da variável de ambiente.
 - Usando variáveis de ambiente
 
   Use variáveis de ambiente para controlar o comportamento de alguns arquivos e programas em lotes e para controlar a maneira como o Windows e o subsistema MS-DOS são exibidos e funcionam. O comando **set** é geralmente usado no arquivo autoexec. NT para definir variáveis de ambiente.
@@ -63,7 +63,7 @@ set /a <Variable>=<Expression>
   Se você especificar apenas uma variável e um sinal de igual (sem *cadeia de caracteres*) para o comando **set** , o valor da cadeia de *caracteres* associado à variável será limpo (como se a variável não existir).
 - Usando **/a**
 
-  A tabela a seguir lista os operadores com suporte para **/a** em ordem decrescente de precedência.  
+  A tabela a seguir lista os operadores com suporte para **/a** em ordem decrescente de precedência.
 
   |        Operador         | Operação executada  |
   |-------------------------|----------------------|
@@ -78,7 +78,7 @@ set /a <Variable>=<Expression>
   | = \*=/=% = + =-= &= ^ = |      = <<= >>=       |
   |            ,            | Separador de expressão |
 
-  Se você usar operadores**&&** lógicos **||**(ou) ou**%** de módulo (), coloque a cadeia de caracteres de expressão entre aspas. Todas as cadeias de caracteres não numéricas na expressão são consideradas nomes de variáveis de ambiente e seus valores são convertidos em números antes de serem processados. Se você especificar um nome de variável de ambiente que não esteja definido no ambiente atual, um valor de zero será alocado, o que permitirá que você execute aritmética com valores de variáveis de ambiente sem usar% para recuperar um valor.
+  Se você usar operadores lógicos ( **&&** ou **||** ) ou de módulo ( **%** ), coloque a cadeia de caracteres de expressão entre aspas. Todas as cadeias de caracteres não numéricas na expressão são consideradas nomes de variáveis de ambiente e seus valores são convertidos em números antes de serem processados. Se você especificar um nome de variável de ambiente que não esteja definido no ambiente atual, um valor de zero será alocado, o que permitirá que você execute aritmética com valores de variáveis de ambiente sem usar% para recuperar um valor.
 
   Se você executar **set/a** na linha de comando fora de um script de comando, ele exibirá o valor final da expressão.
 
@@ -94,7 +94,7 @@ set /a <Variable>=<Expression>
   Ao criar arquivos em lotes, você pode usar **set** para criar variáveis e, em seguida, usá-las da mesma maneira que usaria as variáveis numeradas **%0** a **%9**. Você também pode usar as variáveis **%0** a **%9** como entrada para o **conjunto**.
 - Chamando uma variável **set** de um arquivo em lotes
 
-  Ao chamar um valor de variável de um arquivo em lotes, coloque o valor com sinais de**%** porcentagem (). Por exemplo, se o programa do lote criar uma variável de ambiente chamada BAUD, você poderá usar a cadeia de caracteres associada à BAUD como um parâmetro substituível digitando **% baud%** no prompt de comando.
+  Ao chamar um valor de variável de um arquivo em lotes, coloque o valor com sinais de porcentagem ( **%** ). Por exemplo, se o programa do lote criar uma variável de ambiente chamada BAUD, você poderá usar a cadeia de caracteres associada à BAUD como um parâmetro substituível digitando **% baud%** no prompt de comando.
 - Usando **set** no console de recuperação
 
   O comando **set** , com parâmetros diferentes, está disponível no console de recuperação.
@@ -123,13 +123,13 @@ set testVar=test^^1
 > ```
 > set include=c:\inc
 > ```
-> Em seguida, você pode usar a cadeia de caracteres C:\Inc em arquivos em lotes ao colocar o nome incluir**%** com sinais de porcentagem (). Por exemplo, você pode incluir o seguinte comando em um arquivo em lotes para que você possa exibir o conteúdo do diretório que está associado à variável de ambiente INCLUDE:
+> Em seguida, você pode usar a cadeia de caracteres C:\Inc em arquivos em lotes ao colocar o nome incluir com sinais de porcentagem ( **%** ). Por exemplo, você pode incluir o seguinte comando em um arquivo em lotes para que você possa exibir o conteúdo do diretório que está associado à variável de ambiente INCLUDE:
 > ```
 > dir %include%
 > ```
 > Quando esse comando é processado, a cadeia de caracteres C:\Inc substitui **% include%**.
 
-Você também pode usar **set** em um programa em lotes que adiciona um novo diretório à variável de ambiente Path. Por exemplo: 
+Você também pode usar **set** em um programa em lotes que adiciona um novo diretório à variável de ambiente Path. Por exemplo:
 ```
 @echo off
 rem ADDPATH.BAT adds a new directory
@@ -139,7 +139,7 @@ set
 ```
 Para exibir uma lista de todas as variáveis de ambiente que começam com a letra P, digite:
 ```
-set p 
+set p
 ```
 
 > [!NOTE]

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8be1897b241871bcb65126b39f201769f82f50bf
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6943a9762aed0a6c2ac71c73565ab49811a8e307
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436811"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821166"
 ---
 # <a name="pathping"></a>pathping
 
@@ -88,4 +88,4 @@ No relatório de exemplo acima, **este nó/link**, **perdido/enviado = PCT** e c
 As tarifas de perda exibidas para os links, identificadas como uma barra vertical ( **|** ) na coluna **endereço** , indicam o congestionamento do link que está causando a perda de pacotes que estão sendo encaminhados no caminho. As tarifas de perda exibidas para roteadores (identificadas por seus endereços IP) indicam que esses roteadores podem estar sobrecarregados.
 
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

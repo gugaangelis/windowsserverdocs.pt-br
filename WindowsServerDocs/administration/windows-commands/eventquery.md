@@ -1,6 +1,6 @@
 ---
 title: eventquery
-description: Tópico de referência para o comando eventquery, que foi preterido e não tem garantia de suporte em versões futuras do Windows.
+description: Tópico de referência para o comando eventquery. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5031d18311c177c7f745bc771c212727ce700ee3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8de367329a089df7e1a179f982929de447910220
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436861"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819546"
 ---
 # <a name="eventquery"></a>eventquery
 

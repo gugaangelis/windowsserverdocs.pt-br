@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: addkdc'
-description: Tópico de referência para * * * *-
+title: ksetup addkdc
+description: Tópico de referência para o comando ksetup addkdc, que ADS um endereço centro de distribuição de chaves (KDC) para o realm Kerberos especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,53 +9,60 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76d592e4f1c32305d6f939a66a6ad42cd582b032
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e51279166bf60196d12f877506d3228b78c4a711
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724761"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818086"
 ---
-# <a name="ksetupaddkdc"></a>ksetup: addkdc
+# <a name="ksetup-addkdc"></a>ksetup addkdc
 
+Adiciona um endereço centro de distribuição de chaves (KDC) para o realm Kerberos especificado
 
+O mapeamento é armazenado no registro, em **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains** e o computador deve ser reiniciado antes que a nova configuração de realm seja usada.
 
-Adiciona um endereço centro de distribuição de chaves (KDC) para o realm Kerberos especificado.
+> [!NOTE]
+> Para implantar dados de configuração de realm Kerberos em vários computadores, você deve usar o snap-in de **modelo de configuração de segurança** e a distribuição de política, explicitamente em computadores individuais. Você não pode usar este comando.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /addkdc <RealmName> [<KDCName>] 
+ksetup /addkdc <realmname> [<KDCname>]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<Realmsname>|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM, e ele é listado como o realm padrão quando **ksetup** é executado. É nesse realm que você está tentando adicionar o outro KDC.|
-|\<> KDCName|O nome do KDC é declarado como um nome de domínio totalmente qualificado que não diferencia maiúsculas de minúsculas, como mitkdc.microsoft.com. Se o nome do KDC for omitido, o DNS localizará KDCs.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<realmname>` | Especifica o nome DNS em maiúsculas, como CORP. CONTOSO.COM. Esse valor também aparece como o realm padrão quando **ksetup** é executado e é o realm ao qual você deseja adicionar o outro KDC. |
+| `<KDCname>` | Especifica o nome de domínio totalmente qualificado, não diferencia maiúsculas de minúsculas, como mitkdc.contoso.com. Se o nome do KDC for omitido, o DNS localizará KDCs. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
-Esses mapeamentos são armazenados no registro em **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**. Para implantar dados de configuração de realm Kerberos em vários computadores, use o snap-in de modelo de configuração de segurança e a distribuição de política em vez de usar **ksetup** explicitamente em computadores individuais.
+Para configurar um servidor KDC não Windows e o realm que a estação de trabalho deve usar, digite:
 
-O computador deve ser reiniciado para que a nova configuração de realm seja usada.
-
-Para verificar o nome de realm padrão do computador ou para verificar se esse comando funcionou conforme o esperado, execute **ksetup** no prompt de comando e verifique a saída do KDC adicionado.
-
-## <a name="examples"></a>Exemplos
-
-Configure um servidor KDC não Windows e o realm que a estação de trabalho deve usar:
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-Execute a ferramenta Ksetup na linha de comando do mesmo computador que o comando anterior para definir a senha da conta do computador local como p@sswrd1%. Em seguida, reinicie o computador.
+
+Para definir a senha da conta do computador local como p@sswrd1 % no mesmo computador do exemplo anterior e, em seguida, reiniciar o computador, digite:
+
 ```
-Ksetup /setcomputerpassword p@sswrd1%
+ksetup /setcomputerpassword p@sswrd1%
 ```
+
+Para verificar o nome de realm padrão do computador ou para verificar se esse comando funcionou como pretendido, digite:
+
+```
+ksetup
+```
+Verifique o registro para certificar-se de que o mapeamento ocorreu conforme o esperado.
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Ksetup](ksetup.md)
--   [Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)
+
+- [comando ksetup setcomputerpassword](ksetup-setcomputerpassword.md)

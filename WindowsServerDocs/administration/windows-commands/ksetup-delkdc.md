@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: delkdc'
-description: Tópico de referência para * * * *-
+title: ksetup delkdc
+description: Tópico de referência para o comando ksetup delkdc, que exclui instâncias de nomes de centro de distribuição de chaves (KDC) para o realm Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,53 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19ebe322d414d1ae9007275772ccd747f6f0ff8d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bd3901558f1cda0d2e1d4e7c12b0d2b151870fa8
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724672"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817846"
 ---
-# <a name="ksetupdelkdc"></a>ksetup: delkdc
-
-
+# <a name="ksetup-delkdc"></a>ksetup delkdc
 
 Exclui instâncias de nomes de centro de distribuição de chaves (KDC) para o realm Kerberos.
+
+O mapeamento é armazenado no registro, em `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\LSA\Kerberos\Domains` . Depois de executar esse comando, é recomendável verificar se o KDC foi removido e não aparece mais na lista.
+
+> [!NOTE]
+> Para remover dados de configuração de realm de vários computadores, use o snap-in **modelo de configuração de segurança** com distribuição de política, em vez de usar o comando **ksetup** explicitamente em computadores individuais.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /delkdc <RealmName> <KDCName>
+ksetup /delkdc <realmname> <KDCname>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<Realmsname>|O nome do realm é declarado como um nome DNS em maiúsculas, como CORP. CONTOSO.COM, e ele é listado como o realm padrão quando **ksetup** é executado. É nesse realm que você está tentando excluir o outro KDC.|
-|\<> KDCName|O nome do KDC é declarado como um nome de domínio totalmente qualificado, que não diferencia maiúsculas de minúsculas, como mitkdc.contoso.com.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<realmname>` | Especifica o nome DNS em maiúsculas, como CORP. CONTOSO.COM. Esse é o realm padrão que aparece quando você executa o comando **ksetup** e é o realm do qual você deseja excluir o KDC. |
+| `<KDCname>` | Especifica o nome de domínio totalmente qualificado, diferenciando maiúsculas de minúsculas, como mitkdc.contoso.com. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
-Esses mapeamentos são armazenados no registro no **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**. Para remover dados de configuração de realm de vários computadores, use o snap-in de modelo de configuração de segurança e a distribuição de política em vez de usar **ksetup** explicitamente em computadores individuais.
+Para exibir todas as associações entre o realm do Windows e o realm não Windows, e para determinar quais deles remover, digite:
 
-Em computadores que executam o Windows 2000 Server com Service Pack 1 (SP1) e anterior, o computador deve ser reiniciado antes que a configuração de configuração de realm seja usada.
-
-Para verificar o nome de realm padrão do computador, ou para verificar se esse comando funcionou conforme o esperado, execute **ksetup** no prompt de comando e verifique se o KDC removido não existe na lista.
-
-## <a name="examples"></a>Exemplos
-
-Os requisitos de segurança para este computador foram alterados, portanto, o vínculo entre o realm do Windows e o realm não Windows deve ser removido. Primeiro, determine qual associação remover e produzir a saída de associações existentes:
 ```
 ksetup
 ```
-Remova a Associação usando o seguinte comando:
+
+Para remover a associação, digite:
+
 ```
-Ksetup /delkdc CORP.CONTOSO.COM mitkdc.contoso.com
+ksetup /delkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Ksetup](ksetup.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)
+
+- [comando ksetup addkdc](ksetup-addkdc.md)

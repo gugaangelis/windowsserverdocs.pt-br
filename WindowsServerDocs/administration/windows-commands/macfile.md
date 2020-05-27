@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4384ce8d4f23966aea278e90b9ddddc42da6e77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bf914e4e7da4f00c547353da4fc8d04ad6828646
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724229"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820516"
 ---
 # <a name="macfile"></a>macfile
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Gerencia o servidor de arquivos para servidores Macintosh, volumes, diretórios e arquivos. Você pode automatizar tarefas administrativas incluindo uma série de comandos em arquivos em lotes e iniciá-los manualmente ou em horários predeterminados. 
+Gerencia o servidor de arquivos para servidores Macintosh, volumes, diretórios e arquivos. Você pode automatizar tarefas administrativas incluindo uma série de comandos em arquivos em lotes e iniciá-los manualmente ou em horários predeterminados.
 -   [Para modificar diretórios em volumes acessíveis ao Macintosh](#BKMK_Moddirs)
 -   [Para unir os dados de um arquivo do Macintosh e as bifurcações de recursos](#BKMK_Joinforks)
 -   [Para alterar a mensagem de logon e limitar as sessões](#BKMK_LogonLimit)
@@ -34,11 +34,11 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 ```
 
 #### <a name="parameters"></a>Parâmetros
--   /Server:\\ \\ <computerName> especifica o servidor no qual alterar um diretório. Se omitido, a operação será executada no computador local.
--   /Path:<directory> obrigatório. Especifica o caminho para o diretório que você deseja alterar. O diretório precisa existir. o **diretório MacFile** não cria diretórios.
--   /Owner:<OwnerName> altera o proprietário do diretório. Se omitido, o proprietário permanecerá inalterado.
--   /Group:<GroupName> especifica ou altera o grupo primário do Macintosh que está associado ao diretório. Se omitido, o grupo primário permanecerá inalterado.
--   /Permissions:<Permissions> define permissões no diretório para o proprietário, o grupo primário e o mundo (todos). Um número de 11 dígitos é usado para definir permissões. O número 1 concede permissão e 0 revoga a permissão (por exemplo, 11111011000). Se omitido, as permissões permanecerão inalteradas.
+-   /Server: \\ \\ <computerName> especifica o servidor no qual alterar um diretório. Se omitido, a operação será executada no computador local.
+-   /Path: <directory> obrigatório. Especifica o caminho para o diretório que você deseja alterar. O diretório precisa existir. o **diretório MacFile** não cria diretórios.
+-   /Owner: <OwnerName> altera o proprietário do diretório. Se omitido, o proprietário permanecerá inalterado.
+-   /Group: <GroupName> especifica ou altera o grupo primário do Macintosh que está associado ao diretório. Se omitido, o grupo primário permanecerá inalterado.
+-   /Permissions: <Permissions> define permissões no diretório para o proprietário, o grupo primário e o mundo (todos). Um número de 11 dígitos é usado para definir permissões. O número 1 concede permissão e 0 revoga a permissão (por exemplo, 11111011000). Se omitido, as permissões permanecerão inalteradas.
     A posição do dígito determina qual permissão está definida, conforme descrito na tabela a seguir.
 
     |Posição|Define a permissão para|
@@ -94,7 +94,7 @@ Para criar o arquivo treeapp no volume acessível para Macintosh D:\Release, usa
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
-Para alterar o criador do arquivo para o Microsoft Word 5,1, para o arquivo WOrd. txt no diretório D:\Word documents\Group files, no \\servidor \SERverA, digite:
+Para alterar o criador do arquivo para o Microsoft Word 5,1, para o arquivo WOrd. txt no diretório D:\Word documents\Group files, no servidor \\ \SERverA, digite:
 ```
 macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
@@ -141,7 +141,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 |    /ReadOnly: {true &#124; false}     | Especifica se os usuários podem alterar arquivos no volume. Digite true para especificar que os usuários não podem alterar arquivos no volume. Digite false para especificar que os usuários podem alterar arquivos no volume. Se omitido ao adicionar um volume, as alterações nos arquivos são permitidas. Se omitido ao alterar um volume, a configuração **ReadOnly** para o volume permanece inalterada. |
 |  /guestsallowed: {true &#124; false}  |      Especifica se os usuários que fazem logon como convidados podem usar o volume. Digite true para especificar que os convidados podem usar o volume. Digite false para especificar que convidados não podem usar o volume. Se omitido ao adicionar um volume, os convidados poderão usar o volume. Se omitido ao alterar um volume, a configuração **guestsallowed** para o volume permanece inalterada.       |
 |         /Password<Password>         |                                                                               Especifica uma senha que será necessária para acessar o volume. Se omitido ao adicionar um volume, nenhuma senha é criada. Se omitido ao alterar um volume, a senha permanece inalterada.                                                                               |
-| /maxusers: {<Number>>&#124;ilimitado} |                                                 Especifica o número máximo de usuários que podem usar simultaneamente os arquivos no volume. Se omitido ao adicionar um volume, um número ilimitado de usuários poderá usar o volume. Se omitido ao alterar um volume, o valor de **maxusers** permanece inalterado.                                                 |
+| /maxusers: { <Number>>&#124;ilimitado} |                                                 Especifica o número máximo de usuários que podem usar simultaneamente os arquivos no volume. Se omitido ao adicionar um volume, um número ilimitado de usuários poderá usar o volume. Se omitido ao alterar um volume, o valor de **maxusers** permanece inalterado.                                                 |
 |               /remove                |                                                                                                                                Necessário quando você está removendo um volume Macintosh-acessível. Remove o volume especificado.                                                                                                                                |
 |                  /?                  |                                                                                                                                                           Exibe a ajuda no prompt de comando.                                                                                                                                                           |
 
@@ -157,7 +157,7 @@ Para alterar o volume criado acima para somente leitura e exigir uma senha e def
 ```
 macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
-Para adicionar um volume chamado Landscape design, no servidor \\\Magnolia, usando o diretório Trees na unidade e para especificar que o volume pode ser acessado por convidados, digite:
+Para adicionar um volume chamado Landscape design, no servidor \\ \Magnolia, usando o diretório Trees na unidade e para especificar que o volume pode ser acessado por convidados, digite:
 ```
 macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```
@@ -167,4 +167,4 @@ macfile volume /remove /name:Sales Reports
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

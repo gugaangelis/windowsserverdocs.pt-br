@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a7c32818461c46a7d582029ec127c574d6a8f3e3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725891"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819106"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>Wbadmin start sysrecovery
 
@@ -60,13 +60,13 @@ Para iniciar a recuperação das informações do backup que foi executado em 31
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-Para começar a recuperar as informações do backup que foi executado em 30 de abril de 2013 às 9:00, localizada na pasta \\ \\compartilhada servername\shared: para Server01, digite:
+Para começar a recuperar as informações do backup que foi executado em 30 de abril de 2013 às 9:00, localizada na pasta compartilhada \\ \\ servername\shared: para Server01, digite:
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Get-WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx)

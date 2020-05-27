@@ -1,39 +1,43 @@
 ---
-title: hash_1 FTP
-description: Tópico de referência para * * * *-
+title: hash de FTP
+description: Tópico de referência para o comando FTP hash, que alterna a impressão de sinal numérico (#) para cada bloco de dados transferido.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 76bed9b3-3efd-4a3e-831f-460626d02c44 vhorne
+ms.assetid: 76bed9b3-3efd-4a3e-831f-460626d02c44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7672bcd55cc4d96096dc484d80593dd52f507a98
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1aad92feb49e3ce8ab5bc0865c73983edf25e4a9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725272"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819688"
 ---
-# <a name="ftp-hash_1"></a>FTP: hash_1
+# <a name="ftp-hash"></a>hash de FTP
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Alterna a impressão de sinal numérico (#) para cada bloco de dados transferido.   
-## <a name="syntax"></a>Sintaxe  
-```  
-hash  
-```  
-#### <a name="parameters"></a>Parâmetros  
-none  
-## <a name="remarks"></a>Comentários  
-- O tamanho de um bloco de dados é de 2048 bytes.  
-- Por padrão, o **hash** é desativado.  
-  ## <a name="examples"></a>Exemplos  
-  Alterne a impressão de sinal numérico (#) para cada bloco de dados transferido.  
-  ```  
-  hash  
-  ```  
-  ## <a name="additional-references"></a>Referências adicionais  
-- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+Alterna a impressão de sinal numérico (#) para cada bloco de dados transferido. Por padrão, o comando de hash é desativado. O tamanho de um bloco de dados é de 2048 bytes.
+
+## <a name="syntax"></a>Sintaxe
+
+```
+hash
+```
+
+### <a name="examples"></a>Exemplos
+
+Para alternar a impressão de sinal numérico (#) para cada bloco de dados transferido, digite:
+
+```
+hash
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

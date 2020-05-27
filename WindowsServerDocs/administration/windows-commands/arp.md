@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70b40b6fe16ce37f6fe7cb64c09463db8db4b47c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fdbb9fe636bb30be90164d9a2163c495a9c2e704
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718974"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819646"
 ---
 # <a name="arp"></a>arp
 
@@ -54,13 +54,13 @@ Para exibir as tabelas de cache ARP para todas as interfaces, digite:
 arp /a
 ```
 
-Para exibir a tabela de cache ARP para a interface que recebe o endereço IP 10.0.0.99, digite:
+Para exibir a tabela de cache ARP para a interface que recebe o endereço IP *10.0.0.99*, digite:
 
 ```
 arp /a /n 10.0.0.99
 ```
 
-Para adicionar uma entrada de cache ARP estática que resolve o endereço IP 10.0.0.80 para o endereço físico 00-AA-00-4F-2A-9C, digite:
+Para adicionar uma entrada de cache ARP estática que resolve o endereço IP *10.0.0.80* para o endereço físico *00-AA-00-4F-2A-9C*, digite:
 
 ```
 arp /s 10.0.0.80 00-AA-00-4F-2A-9C

@@ -1,42 +1,54 @@
 ---
-title: literal_1 FTP
-description: Tópico de referência para * * * *-
+title: literal de FTP
+description: Tópico de referência para o comando FTP literal, que envia argumentos textuais para o servidor FTP remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: fb81aa2d-07fa-4e79-bf44-1fb5526fdf14 vhorne
+ms.assetid: fb81aa2d-07fa-4e79-bf44-1fb5526fdf14
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc4f8aff5a22da93330a12a75e5f368285366216
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5015f2184c9273aae6dbd01b18ee1f540d5b9aa3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725253"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820156"
 ---
-# <a name="ftp-literal_1"></a>FTP: literal_1
+# <a name="ftp-literal"></a>literal de FTP
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, o Windows Server 2012 envia argumentos textuais para o servidor FTP remoto. Um único código de resposta FTP é retornado.   
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-## <a name="syntax"></a>Sintaxe  
-```  
-literal <Argument> [ ]  
-```  
-#### <a name="parameters"></a>Parâmetros  
+Envia argumentos textuais para o servidor FTP remoto. Um único código de resposta FTP é retornado.
 
-| Parâmetro  |                    Descrição                    |
-|------------|---------------------------------------------------|
-| <Argument> | Especifica o argumento a ser enviado ao servidor FTP. |
+> [!NOTE]
+> Esse comando é o mesmo que o [comando de aspas de FTP](ftp-quote.md).
 
-## <a name="remarks"></a>Comentários  
-O comando **literal** é idêntico ao comando **quote** .  
-## <a name="examples"></a>Exemplos  
-Envie um comando **Quit** para o servidor FTP remoto.  
-```  
-literal quit  
-```  
-## <a name="additional-references"></a>Referências adicionais  
--   [FTP: cotação](ftp-quote.md)  
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="syntax"></a>Sintaxe
+
+```
+literal <argument> [ ]
+```
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<argument>` | Especifica o argumento a ser enviado ao servidor FTP. |
+
+### <a name="examples"></a>Exemplos
+
+Para enviar um comando **Quit** para o servidor FTP remoto, digite:
+
+```
+literal quit
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando de aspas de FTP](ftp-quote.md)
+
+- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

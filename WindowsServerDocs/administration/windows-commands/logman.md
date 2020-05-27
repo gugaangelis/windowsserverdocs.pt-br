@@ -1,6 +1,6 @@
 ---
 title: logman
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando logman, que cria e gerencia a sessão de rastreamento de eventos e os logs de desempenho e dá suporte a muitas funções do monitor de desempenho da linha de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,28 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9aed5a83c503c03f52757abf525aa5d122f41466
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 44b5e134440d71eed61ca8e03739abcc962df1f9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724270"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820546"
 ---
 # <a name="logman"></a>logman
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-**logman** cria e gerencia logs de desempenho e sessão de rastreamento de eventos e dá suporte a muitas funções de monitor de desempenho da linha de comando.
+Cria e gerencia os logs de Sessão de Rastreamento de Eventos e de Desempenho e dá suporte a várias funções do Monitor de Desempenho na linha de comando.
+
 ## <a name="syntax"></a>Sintaxe
+
 ```
 logman [create | query | start | stop | delete| update | import | export | /?] [options]
 ```
-## <a name="actions"></a>Ações
-|Ação|Descrição|
-|-----|--------|
-|[logman create](logman-create.md)|Crie um contador, rastreamento, coletor de dados de configuração ou API.|
-|[logman query](logman-query.md)|Propriedades do coletor de dados de consulta.|
-|[logman start &#124; stop](logman-start-stop.md)|iniciar ou parar a coleta de dados.|
-|[logman delete](logman-delete.md)|excluir um coletor de dados existente.|
-|[logman update](logman-update.md)|Atualize as propriedades de um coletor de dados existente.|
-|[logman import &#124; export](logman-import-export.md)|importar um conjunto de coletores de dados de um arquivo XML ou exportar um conjunto de coletores de dados para um arquivo XML.|
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| [logman create](logman-create.md) | Cria um contador, rastreamento, coletor de dados de configuração ou API. |
+| [logman query](logman-query.md) | Consulta as propriedades do coletor de dados. |
+| [logman start &#124; stop](logman-start-stop.md) | Inicia ou interrompe a coleta de dados. |
+| [logman delete](logman-delete.md) | Exclui um coletor de dados existente. |
+| [logman update](logman-update.md) | Atualiza as propriedades de um coletor de dados existente. |
+| [logman import &#124; export](logman-import-export.md) | Importa um conjunto de coletores de dados de um arquivo XML ou exporta um conjunto de coletores de dados para um arquivo XML. |
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

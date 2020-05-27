@@ -1,6 +1,6 @@
 ---
 title: helpctr
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando helpctr. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2fa3c1210aaa903ffecda28604353cede2311060
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b2dc9d0f5dfbd9ae61e0e4279596f68ccfae0055
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993324"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818576"
 ---
 # <a name="helpctr"></a>helpctr
 
+O comando helpctr foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
 
-
-O helpctr foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
-
-Essa ferramenta está incluída no Windows Server 2003. Para obter mais informações, consulte [helpctr](https://technet.microsoft.com/library/cc755821(v=ws.10).aspx).
+Essa ferramenta está incluída no Windows Server 2003. Para obter mais informações, consulte [helpctr](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755821(v=ws.10)).

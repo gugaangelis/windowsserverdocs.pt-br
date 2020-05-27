@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: delenctypeattr'
-description: Tópico de referência para * * * *-
+title: ksetup delenctypeattr
+description: Tópico de referência para o ksetup delenctypeattr, que remove o atributo de tipo de criptografia para o domínio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,63 +9,67 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2908cc0a095a6985c11f7885766926b7f0354ab0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b3076a25b619615402a599bd8aaa6ce9d10d4fe0
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724702"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817936"
 ---
-# <a name="ksetupdelenctypeattr"></a>ksetup: delenctypeattr
+# <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 
+Remove o atributo de tipo de criptografia para o domínio. Uma mensagem de status é exibida após A conclusão bem-sucedida ou falha.
 
-
-Remove o atributo de tipo de criptografia para o domínio.
+Você pode exibir o tipo de criptografia para o tíquete de concessão de tíquete (TGT) e a chave de sessão do Kerberos, executando o comando **klist** e exibindo a saída. Você pode definir o domínio para se conectar e usar o, executando o `ksetup /domain <domainname>` comando.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /delenctypeattr <DomainName> 
+ksetup /delenctypeattr <domainname>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<> DomainName|Nome do domínio ao qual você deseja estabelecer uma conexão. Use o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso.|
+| Parâmetro | Descrição |
+| ----------| ----------- |
+| `<domainname>` | Nome do domínio ao qual você deseja estabelecer uma conexão. Você pode usar o nome de domínio totalmente qualificado ou uma forma simples do nome, como corp.contoso.com ou contoso. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
-Para exibir o tipo de criptografia para o tíquete de concessão de tíquete (TGT) e a chave de sessão do Kerberos, execute o comando **klist** e exiba a saída.
+Para determinar os tipos de criptografia atuais que estão definidos neste computador, digite:
 
-Uma mensagem de status é exibida após A conclusão bem-sucedida ou falha.
-
-Para definir o domínio ao qual você deseja se conectar e usar, execute o comando **ksetup \</Domain nomedodomínio>** .
-
-## <a name="examples"></a>Exemplos
-
-Determine os tipos de criptografia atuais que estão definidos neste computador:
 ```
 klist
 ```
-Defina o domínio como mit.contoso.com:
+
+Para definir o domínio como mit.contoso.com, digite:
+
 ```
 ksetup /domain mit.contoso.com
 ```
-Verifique qual é o atributo de tipo de criptografia para o domínio:
+
+Para verificar qual é o atributo de tipo de criptografia para o domínio, digite:
+
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
-Remova o atributo definir tipo de criptografia para o mit.contoso.com de domínio:
+
+Para remover o atributo definir tipo de criptografia para o domínio mit.contoso.com, digite:
+
 ```
 ksetup /delenctypeattr mit.contoso.com
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando klist](klist.md)
+
+- [comando ksetup](ksetup.md)
+
+- [comando de domínio ksetup](ksetup-domain.md)
+
+- [comando ksetup addenctypeattr](ksetup-addenctypeattr.md)
+
+- [comando ksetup setenctypeattr](ksetup-setenctypeattr.md)

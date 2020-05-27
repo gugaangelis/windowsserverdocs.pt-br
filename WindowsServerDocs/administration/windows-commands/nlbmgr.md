@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59ec2ad6b4614f89f9c1c3cbda97d5283a2374bd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a055eb30984bd1832d84bce40607eb0722b175b2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723747"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820846"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -32,9 +32,9 @@ nlbmgr [/help] [/noping] [/hostlist <filename>] [/autorefresh <interval>]
 |          /help          |                                                                                                                                                                                   Exibe a ajuda no prompt de comando.                                                                                                                                                                                    |
 |         /noping         | Impede que o Gerenciador de balanceamento de carga de rede execute ping nos hosts antes de tentar contatá-los por meio de Instrumentação de Gerenciamento do Windows (WMI). Use esta opção se você desabilitou o protocolo ICMP em todos os adaptadores de rede disponíveis. Se o Gerenciador de balanceamento de carga de rede tentar contatar um host que não está disponível, você passará por um atraso ao usar essa opção. |
 |  /hostlist<filename>   |                                                                                                                                                                Carrega os hosts especificados em filename no Gerenciador de balanceamento de carga de rede.                                                                                                                                                                 |
-| /autorefresh<interval> |                                                                                                          Faz com que o Gerenciador de balanceamento de carga de rede Atualize suas <interval> informações de host e de cluster a cada segundos. Se nenhum intervalo for especificado, as informações serão atualizadas a cada 60 segundos.                                                                                                          |
+| /autorefresh<interval> |                                                                                                          Faz com que o Gerenciador de balanceamento de carga de rede Atualize suas informações de host e de cluster a cada <interval> segundos. Se nenhum intervalo for especificado, as informações serão atualizadas a cada 60 segundos.                                                                                                          |
 |           /?            |                                                                                                                                                                                   Exibe a ajuda no prompt de comando.                                                                                                                                                                                    |
 
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

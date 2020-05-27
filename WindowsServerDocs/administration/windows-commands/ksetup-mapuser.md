@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: mapuser'
-description: Tópico de referência para * * * *-
+title: ksetup mapuser
+description: Tópico de referência para o comando ksetup mapuser, que mapeia o nome de uma entidade de segurança Kerberos para uma conta.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,64 +9,75 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: daa1b8d2c6d0ce2801191b953a533a63bcd8f4ab
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0ac2f3e30b3057ceea4376d7ffe8286875d5301d
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724612"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817666"
 ---
-# <a name="ksetupmapuser"></a>ksetup: mapuser
-
-
+# <a name="ksetup-mapuser"></a>ksetup mapuser
 
 Mapeia o nome de uma entidade de segurança Kerberos para uma conta.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-ksetup /mapuser <Principal> <Account>
+ksetup /mapuser <principal> <account>
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|  Parâmetro   |                                                   Descrição                                                   |
-|--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<> principal |              O nome de domínio totalmente qualificado de qualquer entidade; por exemplo, mike@corp.CONTOSO.COM.              |
-|  \<> de conta  | Qualquer nome de conta ou grupo de segurança existente neste computador, como convidado, usuários de domínio ou administrador. |
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<principal>` | Especifica o nome de domínio totalmente qualificado de qualquer usuário principal. Por exemplo, mike@corp.CONTOSO.COM. Se você não especificar um parâmetro de conta, o mapeamento será excluído para a entidade de segurança especificada. |
+| `<account>` | Especifica qualquer nome de conta ou grupo de segurança que exista neste computador, como **convidado**, **usuários de domínio**ou **administrador**. Se esse parâmetro for omitido, o mapeamento será excluído para a entidade de segurança especificada. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
-Uma conta pode ser identificada especificamente, como convidados do domínio. Ou você pode usar o caractere curinga (*) para incluir todas as contas.
+- Uma conta pode ser identificada especificamente, como **convidados do domínio**, ou você pode usar um caractere curinga (*) para incluir todas as contas.
 
-Se um nome de conta for omitido, o mapeamento será excluído para a entidade de segurança especificada.
+- O computador só autenticará as entidades do Realm se apresentarem tíquetes Kerberos válidos.
 
-O computador só autenticará as entidades do Realm se apresentarem tíquetes Kerberos válidos.
+- Sempre que forem feitas alterações no centro de distribuição de chaves externo (KDC) e na configuração de realm, será necessária uma reinicialização do computador em que a configuração foi alterada.
 
-Use **ksetup** sem parâmetros ou argumentos para ver as configurações mapeadas atuais e o realm padrão.
+### <a name="examples"></a>Exemplos
 
-Sempre que forem feitas alterações no centro de distribuição de chaves externo (KDC) e na configuração de realm, será necessária uma reinicialização do computador em que a configuração foi alterada.
+Para ver as configurações mapeadas atuais e o realm padrão, digite:
 
-## <a name="examples"></a>Exemplos
+```
+ksetup
+```
 
-Mapeie a conta de Mike Danseglio no território Kerberos CONTOSO para a conta de convidado neste computador, concedendo a ele todos os privilégios de um membro da conta convidado interna sem a necessidade de se autenticar neste computador:
+Para mapear a conta de Mike Danseglio no território Kerberos CONTOSO para a conta de convidado neste computador, concedendo a ele todos os privilégios de um membro da conta de convidado interna sem a necessidade de se autenticar neste computador, digite:
+
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM guest
 ```
-Remova o mapeamento da conta de Mike Danseglio para a conta de convidado neste computador para impedir que ele se autentique neste computador com suas credenciais da CONTOSO:
+
+Para remover o mapeamento da conta de Mike Danseglio para a conta de convidado neste computador para impedir que ele se autentique neste computador com suas credenciais da CONTOSO, digite:
+
 ```
-ksetup /mapuser mike@corp.CONTOSO.COM 
+ksetup /mapuser mike@corp.CONTOSO.COM
 ```
-Mapeie a conta de Mike Danseglio no realm Kerberos CONTOSO para qualquer conta existente neste computador. (se apenas o usuário padrão e as contas de convidado estiverem ativas neste computador, os privilégios de Mike serão definidos para eles):
+
+Para mapear a conta de Mike Danseglio dentro do realm Kerberos CONTOSO para qualquer conta existente neste computador, digite:
+
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM *
 ```
-Mapeie todas as contas no realm Kerberos CONTOSO para qualquer conta existente de mesmo nome neste computador:
+
+> [!NOTE]
+> Se apenas o usuário padrão e as contas de convidado estiverem ativas neste computador, os privilégios de Mike serão definidos para eles.
+
+Para mapear todas as contas no realm Kerberos CONTOSO para qualquer conta existente de mesmo nome neste computador, digite:
+
 ```
 ksetup /mapuser * *
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
--   [Ksetup](ksetup.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando ksetup](ksetup.md)

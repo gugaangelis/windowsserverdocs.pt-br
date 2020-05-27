@@ -1,6 +1,6 @@
 ---
 title: cacls
-description: Tópico de referência para o comando cacls, que exibe ou modifica listas de controle de acesso discricional (DACL) em arquivos especificados.
+description: Tópico de referência para o comando Cacls. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,24 +9,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d827199ea319bd41511f9abadfde8c6e8949976e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8602157bf87e523d6d842d5636031c61b52e8ef4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82726018"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819246"
 ---
 # <a name="cacls"></a>cacls
 
 >[!IMPORTANT]
-> Este comando foi preterido. Em vez disso, use o [icacls](icacls.md) .  
+> Este comando foi preterido. Em vez disso, use o [icacls](icacls.md) .
 
-Exibe ou modifica as listas de controle de acesso discricional (DACL) nos arquivos especificados.  
+Exibe ou modifica as listas de controle de acesso discricional (DACL) nos arquivos especificados.
 
 ## <a name="syntax"></a>Sintaxe
 
-```  
-cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]  
+```
+cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -63,7 +63,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 - Você pode usar curingas (**?** e **&#42;**) para especificar vários arquivos.
 
-- Você pode especificar mais de um usuário.  
+- Você pode especificar mais de um usuário.
 
 ## <a name="additional-references"></a>Referências adicionais
 
