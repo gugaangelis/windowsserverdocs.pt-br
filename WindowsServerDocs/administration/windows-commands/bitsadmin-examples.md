@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 2fcf7d3716ae45c24510b433ab125551a6d04c85
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1db9dd387d7b9cc39c582ce79e5163c83579b613
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718204"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819626"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin examples
 
@@ -64,7 +64,7 @@ Se vários trabalhos usarem *myDownloadJob* como seu nome, você deverá usar o 
 
 ## <a name="determine-the-progress-of-the-download-job"></a>Determinar o progresso do trabalho de download
 
-A opção **/info** retorna o estado do trabalho e o número de arquivos e bytes transferidos. Quando o estado é mostrado como `TRANSFERRED`, isso significa que o bits transferiu com êxito todos os arquivos no trabalho. Você também pode adicionar o argumento **/Verbose** para obter detalhes completos do trabalho e **/list** ou **/Monitor** para obter todos os trabalhos na fila de transferência.
+A opção **/info** retorna o estado do trabalho e o número de arquivos e bytes transferidos. Quando o estado é mostrado como `TRANSFERRED` , isso significa que o bits transferiu com êxito todos os arquivos no trabalho. Você também pode adicionar o argumento **/Verbose** para obter detalhes completos do trabalho e **/list** ou **/Monitor** para obter todos os trabalhos na fila de transferência.
 
 Para retornar o estado do trabalho:
 
@@ -76,7 +76,7 @@ Se vários trabalhos usarem *myDownloadJob* como seu nome, você deverá usar o 
 
 ## <a name="complete-the-download-job"></a>Concluir o trabalho de download
 
-Para concluir o trabalho depois que o estado for alterado `TRANSFERRED`para:
+Para concluir o trabalho depois que o estado for alterado para `TRANSFERRED` :
 
 ```
 bitsadmin /complete myDownloadJob
@@ -142,7 +142,7 @@ RETRY DELAY: 600 NO PROGRESS TIMEOUT: 1209600 ERROR COUNT: 0
 PROXY USAGE: PRECONFIG PROXY LIST: NULL PROXY BYPASS LIST: NULL
 ERROR FILE:    https://downloadsrv/10mb.zip -> c:\10mb.zip
 ERROR CODE:    0x80072ee7 - The server name or address could not be resolved
-ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being 
+ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being
 processed.
 DESCRIPTION:
 JOB FILES:

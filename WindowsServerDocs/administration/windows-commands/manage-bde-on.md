@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55f9dc446b17b8e61655686b9f4b6259b12dafc9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 471bea3946aff39689ad219585d10c2d43f99a93
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724131"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820646"
 ---
 # <a name="manage-bde-on"></a>Manage-bde: on
 
@@ -27,7 +27,7 @@ Criptografa a unidade e ativa o BitLocker.
 ```
 manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey <PathToExternalDirectory>]|[-startupkey <PathToExternalKeyDirectory>]|[-certificate]|
 [-tpmandpin]|[-tpmandpinandstartupkey <PathToExternalKeyDirectory>]|[-tpmandstartupkey <PathToExternalKeyDirectory>]|[-password]|[-ADAccountOrGroup <Domain\Account>]}
-[-UsedSpaceOnly][-encryptionmethod {aes128_diffuser|aes256_diffuser|aes128|aes256}] [-skiphardwaretest] [-discoveryvolumetype <FileSystemType>] [-ForceEncryptionType <type>] [-RemoveVolumeShadowCopies][-computername <Name>] 
+[-UsedSpaceOnly][-encryptionmethod {aes128_diffuser|aes256_diffuser|aes128|aes256}] [-skiphardwaretest] [-discoveryvolumetype <FileSystemType>] [-ForceEncryptionType <type>] [-RemoveVolumeShadowCopies][-computername <Name>]
 [{-?|/?}] [{-help|-h}]
 ```
 
@@ -47,7 +47,7 @@ manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey 
 |-tpmandstartupkey|Adiciona um protetor de chave de inicialização e TPM para a unidade do sistema operacional. Você também pode usar **-tsk** como uma versão abreviada deste comando.|
 |-tpmandpinandstartupkey|Adiciona um protetor de TPM, PIN e chave de inicialização para a unidade do sistema operacional. Você também pode usar **-tpsk** como uma versão abreviada deste comando.|
 |-password|Adiciona um protetor de chave de senha para a unidade de dados. Você também pode usar **-PW** como uma versão abreviada desse comando.|
-|-ADAccountOrGroup|Adiciona um protetor de identidade baseado em SID para o volume. O volume será desbloqueado automaticamente se o usuário ou o computador tiver as credenciais apropriadas. Ao especificar uma conta de computador, acrescente **$** a ao nome do computador e especifique **– Service** para indicar que o desbloqueio deve ocorrer no conteúdo do servidor BitLocker em vez do usuário. Você também pode usar **-Sid** como uma versão abreviada deste comando.|
+|-ADAccountOrGroup|Adiciona um protetor de identidade baseado em SID para o volume. O volume será desbloqueado automaticamente se o usuário ou o computador tiver as credenciais apropriadas. Ao especificar uma conta de computador, acrescente a **$** ao nome do computador e especifique **– Service** para indicar que o desbloqueio deve ocorrer no conteúdo do servidor BitLocker em vez do usuário. Você também pode usar **-Sid** como uma versão abreviada deste comando.|
 |-UsedSpaceOnly|Define o modo de criptografia para criptografia somente de espaço usado. As seções do volume que contém o espaço usado serão criptografadas, mas o espaço livre não será. Se essa opção não for especificada, todo o espaço usado e o espaço livre no volume serão criptografados. Você também pode usar **-usado** como uma versão abreviada deste comando.|
 |-encryptionMethod|Configura o algoritmo de criptografia e o tamanho da chave. Você também pode usar **-em** como uma versão abreviada deste comando.|
 |-skiphardwaretest|Inicia a criptografia sem um teste de hardware. Você também pode usar **-s** como uma versão abreviada deste comando.|
@@ -85,5 +85,5 @@ manage-bde –on C: -fet Hardware
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

@@ -1,6 +1,6 @@
 ---
 title: inuse
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando inuse. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6413fe21f4b7da464347e49910fbf6cd649b319d
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b25750c8ad57c3b1a795830b743f679e7fce88b5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993307"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818426"
 ---
 # <a name="inuse"></a>inuse
 
+O comando inuse foi preterido e não há garantia de que haja suporte em versões futuras do Windows.
 
+Essa ferramenta está incluída no Windows Server 2003. Para obter mais informações, consulte [inuse](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/dd996699(v=ws.10)).
 
-O inuse é preterido e não há garantia de que haja suporte em versões futuras do Windows.
+## <a name="additional-references"></a>Referências adicionais
 
-Essa ferramenta está incluída no Windows Server 2003. Para obter mais informações, consulte [inuse](https://technet.microsoft.com/library/dd996699(v=ws.10).aspx).
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

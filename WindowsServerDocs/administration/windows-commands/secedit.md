@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89405e767e3fa06dbe0caf742fc898974b217552
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 56c9cdecfe2a5553230f1c8120c827e7f05d0ba9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722027"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821086"
 ---
 # <a name="secedit"></a>secedit
 
@@ -25,7 +25,7 @@ Configura e analisa a segurança do sistema comparando sua configuração atual 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-secedit 
+secedit
 [/analyze /db <database file name> /cfg <configuration file name> [/overwrite] /log <log file name> [/quiet]]
 [/configure /db <database file name> [/cfg <configuration filename>] [/overwrite] [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]]
 [/export /db <database file name> [/mergedpolicy] /cfg <configuration file name> [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>]]
@@ -55,9 +55,9 @@ Quando um modelo de segurança é criado usando o snap-in modelo de segurança e
 |           Arquivo           |                                                                                                                                                                                                                                                               Descrição                                                                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        Scesrv. log        |                                                                                                                             **Local**:%WINDIR%\Security\Logs</br>**Criado por**: sistema operacional</br>**Tipo de arquivo**: texto</br>**Taxa de atualização**: substituída quando secedit/Analyze,/configure,/Export ou/Import são executados.</br>**Conteúdo**: contém os resultados da análise agrupados por tipo de política.                                                                                                                             |
-| *Nome do usuário selecionado*. sdb |                                                                                    **Local**:% WINDIR%\*\Documents\Security\Database da<em>conta de usuário</br></em>*Criado por*<em>: executando o snap-in de configuração e análise de segurança</br></em>*Tipo de arquivo*<em>: proprietário</br></em>*Taxa de atualização*<em>: atualizada sempre que um novo modelo de segurança é criado.</br></em>*Conteúdo*\*: políticas de segurança local e modelos de segurança criados pelo usuário.                                                                                    |
-| *Nome do usuário selecionado*. log | **Local**: definido pelo usuário, mas o padrão é% windir\*% \Documents\Security\Logs<em>da conta de usuário</br></em>*Criado por*<em>: executando os subcomando/Analyze e/configure (ou usando o snap-in de configuração e análise de segurança)</br></em>*Tipo de arquivo*<em>: texto</br></em>*Taxa de atualização*<em>: executando os subcomandos/analyze e/configure (ou usando o snap-in de configuração e análise de segurança); substituído.</br></em>*Conteúdo*\*:</br>1. nome do arquivo de log</br>2. Data e hora</br>3. resultados da análise ou investigação. |
-| *Nome do usuário selecionado*. inf |                                                                                     **Local**:% WINDIR%\*\Documents\Security\Templates da<em>conta de usuário</br></em>*Criado por*<em>: executando o snap-in do modelo de segurança</br></em>*Tipo de arquivo*<em>: texto</br></em>*Taxa de atualização*<em>: cada vez que o modelo de segurança é atualizado</br></em>*Conteúdo*\*: contém as informações de configuração do modelo para cada política selecionada usando o snap-in.                                                                                     |
+| *Nome do usuário selecionado*. sdb |                                                                                    **Local**:% WINDIR% \* \Documents\Security\Database da conta de usuário <em></br></em>*Criado por* <em> : executando o snap-in de configuração e análise de segurança</br></em>*Tipo de arquivo* <em> : proprietário</br></em>*Taxa de atualização* <em> : atualizada sempre que um novo modelo de segurança é criado.</br></em>*Conteúdo* \* : políticas de segurança local e modelos de segurança criados pelo usuário.                                                                                    |
+| *Nome do usuário selecionado*. log | **Local**: definido pelo usuário, mas o padrão é% windir% \* \Documents\Security\Logs da conta de usuário <em></br></em>*Criado por* <em> : executando os subcomando/Analyze e/configure (ou usando o snap-in de configuração e análise de segurança)</br></em>*Tipo de arquivo* <em> : texto</br></em>*Taxa de atualização* <em> : executando os subcomandos/analyze e/configure (ou usando o snap-in de configuração e análise de segurança); substituído.</br></em>*Conteúdo* \* :</br>1. nome do arquivo de log</br>2. Data e hora</br>3. resultados da análise ou investigação. |
+| *Nome do usuário selecionado*. inf |                                                                                     **Local**:% WINDIR% \* \Documents\Security\Templates da conta de usuário <em></br></em>*Criado por* <em> : executando o snap-in do modelo de segurança</br></em>*Tipo de arquivo* <em> : texto</br></em>*Taxa de atualização* <em> : cada vez que o modelo de segurança é atualizado</br></em>*Conteúdo* \* : contém as informações de configuração do modelo para cada política selecionada usando o snap-in.                                                                                     |
 
 > [!NOTE]
 > O MMC (console de gerenciamento Microsoft) e o snap-in de análise e configuração de segurança não estão disponíveis no Server Core.
@@ -65,4 +65,4 @@ Quando um modelo de segurança é criado usando o snap-in modelo de segurança e
 ## <a name="additional-references"></a>Referências adicionais
 
 Para obter exemplos de como esse comando pode ser usado, consulte a seção exemplos em qualquer um dos arquivos de subcomando.
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

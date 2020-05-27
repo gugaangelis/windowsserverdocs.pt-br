@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00a45890f9b579c0261a074dace707a9e5c769bb
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 81068055a23147ad6fafa1c9fa27a63174d52574
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436801"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820917"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -71,5 +71,5 @@ para obter informações sobre como modificar as configurações de inicializaç
 Usar a opção de linha de comando **/Unattend** para automatizar a instalação afirma que você leu e aceitou o contrato de licença da Microsoft para o Windows Server 2003. Antes de usar essa opção de linha de comando para instalar o Windows Server 2003 em nome de uma organização que não seja a sua, você deve confirmar se o usuário final (seja um indivíduo ou uma entidade única) recebeu, leu e aceitou os termos do contrato de licença da Microsoft para esse produto.  Os OEMs não podem especificar essa chave em máquinas que estão sendo vendidas aos usuários finais.
 
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

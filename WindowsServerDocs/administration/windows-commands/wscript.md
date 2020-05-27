@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: cf2d23c7d5773662f679a9a20b0aaba118f35548
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b4727e985070e2e76fd53038d33148003d87ebb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720634"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820886"
 ---
 # <a name="wscript"></a>wscript
 
@@ -39,11 +39,11 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/h: cscript|Registra o **cscript. exe** como o host de script padrão para executar scripts.|
 |/h: WScript|Registra o **WScript. exe** como o host de script padrão para executar scripts. Esse é o padrão quando a opção **/h** é omitida.|
 |/i|Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada.</br>Esse é o padrão e o oposto de **/b**.|
-|/minuto:\<identificador>|Executa o trabalho identificado pelo *identificador* em um arquivo de script **. wsf** .|
+|/minuto: \< identificador>|Executa o trabalho identificado pelo *identificador* em um arquivo de script **. wsf** .|
 |/logo|Especifica que a faixa do host de scripts do Windows é exibida no console do antes de o script ser executado.</br>Esse é o padrão e o oposto de **/nologo**.|
 |/nologo|Especifica que a faixa do host de scripts do Windows não é exibida antes de o script ser executado. Esse é o oposto de **/logo**.|
 |/s|Salva as opções de prompt de comando atuais do usuário atual.|
-|/t:\<número>|Especifica o tempo máximo que o script pode executar (em segundos). Você pode especificar até 32.767 segundos.</br>O padrão é sem limite de tempo.|
+|/t: \< número>|Especifica o tempo máximo que o script pode executar (em segundos). Você pode especificar até 32.767 segundos.</br>O padrão é sem limite de tempo.|
 |/x|Inicia o script no depurador.|
 |ScriptArguments|Especifica os argumentos passados para o script. Cada argumento de script deve ser precedido por uma barra (/).|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -61,4 +61,4 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

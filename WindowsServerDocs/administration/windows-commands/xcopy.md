@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 0145de2828c1d33cf1b82f595dd6c00812ace54e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: eba7092a9a26b25b1fe77b39b8098d117b38981a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436781"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820996"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -214,4 +214,4 @@ No exemplo anterior, esse valor de parâmetro de origem específico **. \\ TOC \
 -   [Atributos](attrib.md)
 -   [Diskcopy](diskcopy.md)
 -   [Que](if.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

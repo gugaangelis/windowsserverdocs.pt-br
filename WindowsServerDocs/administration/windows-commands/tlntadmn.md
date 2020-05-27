@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee6caac0002cecb9eaecd00f6d3d4a2d23456d72
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 273381fa62f42e9cf084c2b7dbf30ed7211295fb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436961"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821006"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -66,4 +66,4 @@ tlntadmn -s
 
 ## <a name="additional-references"></a>Referências adicionais
 -   [Guia de operações de Telnet](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

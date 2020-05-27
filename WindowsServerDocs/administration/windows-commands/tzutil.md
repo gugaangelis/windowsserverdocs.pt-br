@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4011f04b762522c8c0d157993bad71d88758d32f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5d4a94fa9f776af1ae21ad9057b6f9225691b516
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721198"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821296"
 ---
 # <a name="tzutil"></a>tzutil
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe o utilitário de fuso horário do Windows. 
+Exibe o utilitário de fuso horário do Windows.
 
 ## <a name="syntax"></a>Sintaxe
 ```
@@ -31,7 +31,7 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|Exibe a ajuda no prompt de comando.|
 |/g|Exibe a ID do fuso horário atual.|
-|/s \<timezoneid> [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
+|/s \< Timezoneid> [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
 |/l|lista todas as IDs de fuso horário e nomes de exibição válidos. A saída será:<p>-   \<> de nome de exibição<br />-   \<ID de fuso horário>|
 
 ## <a name="remarks"></a>Comentários
@@ -51,5 +51,5 @@ Para definir o fuso horário atual como hora padrão do Pacífico e desabilitar 
 tzutil /s Pacific Standard time_dstoff
 ```
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73f6f44fb343d3347d18cf2c86913aea59613e07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4903c7ad2996a9f69d20f4711364669b87366527
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720212"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821436"
 ---
 # <a name="wbadmin-delete-catalog"></a>Wbadmin excluir catálogo
 
@@ -43,6 +43,6 @@ Se você excluir o catálogo de backup de um computador, não poderá acessar os
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [Remove-WBCatalog](https://technet.microsoft.com/library/jj902445.aspx)

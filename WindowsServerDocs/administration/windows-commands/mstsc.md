@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3355aa310bb9919b5218052878d94416f577381
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bee9dabe0e9344c7870e53ed34e4c9dd057cfc42
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723837"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820836"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -37,7 +37,7 @@ mstsc.exe /migrate
 |        Parâmetro        |                                                         Descrição                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   Especifica o nome de um arquivo. rdp para a conexão.                                    |
-|  /v: servidor\>de <[: porta\><] |                Especifica o computador remoto e, opcionalmente, o número da porta à qual você deseja se conectar.                 |
+|  /v: servidor de <\> [: porta <\> ] |                Especifica o computador remoto e, opcionalmente, o número da porta à qual você deseja se conectar.                 |
 |         /admin          |                                   Conecta você a uma sessão para administrar o servidor.                                   |
 |           /f            |                                    inicia Conexão de Área de Trabalho Remota no modo de tela inteira.                                    |
 |       /w<Width>        |                                      Especifica a largura da janela de Área de Trabalho Remota.                                      |
@@ -63,5 +63,5 @@ mstsc.exe /migrate
     ```
 
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)

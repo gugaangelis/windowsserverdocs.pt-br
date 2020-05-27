@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0db8a4549ac26ef61d4aa8f435a01d3224501a77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 09767502585754bec690b40dd71fabd78540ab50
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723843"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820816"
 ---
 # <a name="msinfo32"></a>msinfo32
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Abre a ferramenta de informações do sistema para exibir uma visão abrangente do hardware, dos componentes do sistema e do ambiente de software no computador local. 
+Abre a ferramenta de informações do sistema para exibir uma visão abrangente do hardware, dos componentes do sistema e do ambiente de software no computador local.
 ## <a name="syntax"></a>Sintaxe
 ```
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
@@ -61,5 +61,5 @@ Para exibir informações de conflito de recursos e criar um arquivo. NFO chamad
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

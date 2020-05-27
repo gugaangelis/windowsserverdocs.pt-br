@@ -9,34 +9,34 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c4529670ef934cfa19c9864ac59f5317eb2887a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ed2c00b44143942ba1ccb77eec17ca975f23b498
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721509"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821316"
 ---
 # <a name="telnet-open"></a>Telnet: abrir
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Conecta-se a um servidor Telnet.    
+Conecta-se a um servidor Telnet.
 
-## <a name="syntax"></a>Sintaxe  
-```  
-o[pen] <hostname> [<Port>]  
-```  
-#### <a name="parameters"></a>Parâmetros  
+## <a name="syntax"></a>Sintaxe
+```
+o[pen] <hostname> [<Port>]
+```
+#### <a name="parameters"></a>Parâmetros
 
 | Parâmetro  |                                        Descrição                                         |
 |------------|--------------------------------------------------------------------------------------------|
 | <hostname> |                         Especifica o nome do computador ou o endereço IP.                         |
 |  [<Port>]  | Especifica a porta TCP na qual o servidor Telnet está escutando. O padrão é a porta TCP 23. |
 
-## <a name="examples"></a>Exemplos  
-Conecte-se a um servidor Telnet em telnet.microsoft.com.  
-```  
-o telnet.microsoft.com  
-```  
-## <a name="additional-references"></a>Referências adicionais  
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+## <a name="examples"></a>Exemplos
+Conecte-se a um servidor Telnet em telnet.microsoft.com.
+```
+o telnet.microsoft.com
+```
+## <a name="additional-references"></a>Referências adicionais
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

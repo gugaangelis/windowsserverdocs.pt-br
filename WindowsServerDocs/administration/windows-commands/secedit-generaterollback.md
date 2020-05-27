@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d561db9c4a893c0e6848e87b5c4a03b70882023
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 90d139f14db0052c52967e739131a16f92992353
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722062"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821106"
 ---
 # <a name="seceditgeneraterollback"></a>secedit: generaterollback
 
@@ -32,17 +32,17 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|db|Obrigatórios.</br>Especifica o caminho e o nome de arquivo de um banco de dados que contém a configuração armazenada na qual a análise será executada.</br>Se o nome do arquivo especificar um banco de dados que não tenha um modelo de segurança (como representado pelo arquivo de configuração) associado `/cfg \<configuration file name>` a ele, a opção de linha de comando também deverá ser especificada.|
-|cfg|Obrigatórios.</br>Especifica o caminho e o nome do arquivo para o modelo de segurança que será importado para o banco de dados para análise.</br>Essa opção de/cfg só é válida quando usada com `/db \<database file name>` o parâmetro. Se isso não for especificado, a análise será executada em qualquer configuração já armazenada no banco de dados.|
+|db|Obrigatórios.</br>Especifica o caminho e o nome de arquivo de um banco de dados que contém a configuração armazenada na qual a análise será executada.</br>Se o nome do arquivo especificar um banco de dados que não tenha um modelo de segurança (como representado pelo arquivo de configuração) associado a ele, a `/cfg \<configuration file name>` opção de linha de comando também deverá ser especificada.|
+|cfg|Obrigatórios.</br>Especifica o caminho e o nome do arquivo para o modelo de segurança que será importado para o banco de dados para análise.</br>Essa opção de/cfg só é válida quando usada com o `/db \<database file name>` parâmetro. Se isso não for especificado, a análise será executada em qualquer configuração já armazenada no banco de dados.|
 |rbk|Obrigatórios.</br>Especifica um modelo de segurança no qual as informações de reversão são gravadas. Os modelos de segurança são criados usando o snap-in modelos de segurança. Os arquivos de reversão podem ser criados com este comando.|
 |log|Opcional.</br>Especifica o caminho e o nome do arquivo de log para o processo.|
 |silencioso|Opcional.</br>Suprime a saída de tela e de log. Você ainda pode exibir os resultados da análise usando o snap-in configuração e análise de segurança no console de gerenciamento Microsoft (MMC).|
 
 ## <a name="remarks"></a>Comentários
 
-Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão*systemroot*, ( \*raiz_do_sistema \ usuários USERACCOUNT<em>\Meus Documents\Security\Logs\*DatabaseName</em>. log) será usado.
+Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão, (*raiz_do_sistema*\ Usuários \* USERACCOUNT<em>\Meus Documents\Security\Logs \* DatabaseName</em>. log) será usado.
 
-A partir do Windows Server 2008 `Secedit /refreshpolicy` , foi substituído por `gpupdate`. Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
+A partir do Windows Server 2008, foi `Secedit /refreshpolicy` substituído por `gpupdate` . Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
 
 A execução bem-sucedida desse comando irá indicar que a tarefa foi concluída com êxito. e registra apenas as incompatibilidades entre o modelo de segurança declarado e a configuração da política de segurança. Ele lista essas diferenças no scesrv. log.
 
@@ -58,4 +58,4 @@ Secedit /generaterollback /db C:\Security\FY11\SecDbContoso.sdb /cfg sectmplcont
 ## <a name="additional-references"></a>Referências adicionais
 
 -   [Utilitário](secedit.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

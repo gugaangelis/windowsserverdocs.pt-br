@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f1e0f99c226edae467ecb09222b18098ac399ee
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fc252bd0d9d8227badb35bafea96575e37fca243
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724041"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820786"
 ---
 # <a name="manage-bde-wipefreespace"></a>Manage-bde: WipeFreeSpace
 
@@ -52,5 +52,5 @@ manage-bde -w -Cancel C:
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

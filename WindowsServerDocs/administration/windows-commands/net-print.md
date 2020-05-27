@@ -1,6 +1,6 @@
 ---
-title: Net print
-description: Tópico de referência para * * * *-
+title: NET Print
+description: Tópico de referência para o comando net Print, que exibe informações sobre uma fila de impressora ou um trabalho de impressão especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f2febdb79f4d0429cfb1cd423188ed9fafc198c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 44b781cb0c3b9fb7def5ee72bcc1242ac83ba4b2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437251"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820876"
 ---
-# <a name="net-print"></a>Net print
+# <a name="net-print"></a>NET Print
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe informações sobre uma fila de impressora especificada ou um trabalho de impressão especificado, ou controla um trabalho de impressão especificado.
+
 > [!NOTE]
 > Esse comando foi preterido no Windows 7 e no Windows Server 2008 R2. No entanto, você pode executar muitas das mesmas tarefas usando o prnjobs, Instrumentação de Gerenciamento do Windows (WMI) ou cmdlets do Windows PowerShell. Para obter mais informações, consulte [prnjobs](prnjobs.md), [Instrumentação de gerenciamento do Windows](https://go.microsoft.com/fwlink/?LinkID=29991) ( https://go.microsoft.com/fwlink/?LinkID=29991) , [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) ( https://go.microsoft.com/fwlink/?LinkID=128426) e a [Galeria do TechNet Script Center](https://go.microsoft.com/fwlink/?LinkId=164635) ( https://go.microsoft.com/fwlink/?LinkId=164635) .
-> ## <a name="syntax"></a>Sintaxe
+
+## <a name="syntax"></a>Sintaxe
 > ```
 > Net print {\\<computerName>\<Sharename> |
 > \\<computerName> <JobNumber> [/hold | /release | /delete]} [help]

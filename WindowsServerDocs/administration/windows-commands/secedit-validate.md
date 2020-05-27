@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3043a4af6c2ac4a6c58b973cca5abd066109eac5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b93ad6ceadb08f6df8390edc3fc454d951519aad
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722044"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821087"
 ---
 # <a name="seceditvalidate"></a>secedit: validar
 
@@ -25,7 +25,7 @@ Valida as configurações de segurança armazenadas em um modelo de segurança (
 ## <a name="syntax"></a>Sintaxe
 
 ```
-Secedit /validate <configuration file name>  
+Secedit /validate <configuration file name>
 
 ```
 
@@ -43,7 +43,7 @@ Um modelo de segurança inválido não será aplicado.
 
 O arquivo de log não será atualizado.
 
-No Windows Server 2008, `Secedit /refreshpolicy` foi substituído por `gpupdate`. Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
+No Windows Server 2008, foi `Secedit /refreshpolicy` substituído por `gpupdate` . Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
 
 ## <a name="examples"></a>Exemplos
 
@@ -56,4 +56,4 @@ Secedit /validate secRBKcontoso.inf
 
 -   [Secedit:generaterollback](secedit-generaterollback.md)
 -   [Utilitário](secedit.md)
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

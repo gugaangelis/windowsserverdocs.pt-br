@@ -1,50 +1,56 @@
 ---
-title: mls_1 FTP
-description: Tópico de referência para * * * *-
+title: MLS FTP
+description: Tópico de referência para o comando de MLS do FTP, que exibe uma lista abreviada de arquivos e subdiretórios em um diretório remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 4738fd49-0e80-4bdf-a773-0f973db3a710 vhorne
+ms.assetid: 4738fd49-0e80-4bdf-a773-0f973db3a710
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 27f74d4c1d03cb4d9f665566f69485e80f8eccdc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 372c0b9a42fdfb8600083a301b71c37ada43c014
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725201"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820389"
 ---
-# <a name="ftp-mls_1"></a>FTP: mls_1
+# <a name="ftp-mls"></a>MLS FTP
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe uma lista abreviada de arquivos e subdiretórios em um diretório remoto.   
-## <a name="syntax"></a>Sintaxe  
-```  
-mls <remoteFile>[ ] <LocalFile>  
-```  
-#### <a name="parameters"></a>Parâmetros  
+Exibe uma lista abreviada de arquivos e subdiretórios em um diretório remoto.
 
-|  Parâmetro   |                       Descrição                       |
-|--------------|---------------------------------------------------------|
-| <remoteFile> | Especifica o arquivo para o qual você deseja ver uma listagem. |
-| <LocalFile>  |  Especifica um arquivo local no qual armazenar a listagem.  |
+## <a name="syntax"></a>Sintaxe
 
-## <a name="remarks"></a>Comentários  
-- Especificando *remoteFiles*  
-  Digite um hífen (**-**) para usar o diretório de trabalho atual no computador remoto.  
-- Especificando o *LocalFile*  
-  Digite um hífen (**-**) para exibir a listagem na tela.  
-  ## <a name="examples"></a>Exemplos  
-  Exiba uma lista abreviada de arquivos e subdiretórios para **dir1** e **dir2**.  
-  ```  
-  mls dir1 dir2 -  
-  ```  
-  Salve uma lista abreviada de arquivos e subdiretórios para **dir1** e **dir2** no arquivo local **DirList. txt**  
-  ```  
-  mls dir1 dir2 dirlist.txt   
-  ```  
-  ## <a name="additional-references"></a>Referências adicionais  
-- - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
+```
+mls <remotefile>[ ] <localfile>
+```
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<remotefile>` | Especifica o arquivo para o qual você deseja ver uma listagem. Ao especificar *remotefiles*, use um hífen para representar o diretório de trabalho atual no computador remoto. |
+| `<localfile>` | Especifica um arquivo local no qual armazenar a listagem. Ao especificar o *LocalFile*, use um hífen para exibir a listagem na tela. |
+
+### <a name="examples"></a>Exemplos
+
+Para exibir uma lista abreviada de arquivos e subdiretórios para *dir1* e *dir2*, digite:
+
+```
+mls dir1 dir2 -
+```
+
+Para salvar uma lista abreviada de arquivos e subdiretórios para *dir1* e *dir2* no arquivo local *DirList. txt*, digite:
+
+```
+mls dir1 dir2 dirlist.txt
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

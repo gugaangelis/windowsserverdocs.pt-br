@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 70d10267e6b5f77c9cc32ea29f222e730b1182d1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6e97ed800ab64a9a7ec276ed6bb498ef04139ca6
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723318"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820766"
 ---
 # <a name="ping"></a>ping
 
@@ -34,18 +34,18 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 |-------|--------|
 |/t|Especifica que o ping continua enviando mensagens de solicitação de eco para o destino até que seja interrompido. Para interromper e exibir estatísticas, pressione CTRL + BREAK. Para interromper e encerrar o **ping**, pressione CTRL + C.|
 |/a|Especifica que a resolução de nome inversa é executada no endereço IP de destino. Se isso for bem-sucedido, o ping exibirá o nome do host correspondente.|
-|/n \<contagem\>|Especifica o número de mensagens de solicitação de eco enviadas. O padrão é 4.|
-|/l \<tamanho\>|Especifica o comprimento, em bytes, do campo de dados nas mensagens de solicitação de eco enviadas. O padrão é 32. O tamanho máximo é 65.527.|
+|/n \< contagem\>|Especifica o número de mensagens de solicitação de eco enviadas. O padrão é 4.|
+|/l \< tamanho\>|Especifica o comprimento, em bytes, do campo de dados nas mensagens de solicitação de eco enviadas. O padrão é 32. O tamanho máximo é 65.527.|
 |/f|Especifica que as mensagens de solicitação de eco são enviadas com o sinalizador não fragmentar no cabeçalho IP definido como 1 (disponível somente em IPv4). A mensagem de solicitação de eco não pode ser fragmentada por roteadores no caminho para o destino. Esse parâmetro é útil para solucionar problemas de PMTU (unidade máxima de transmissão) do caminho.|
-|/i \<TTL\>|Especifica o valor do campo TTL no cabeçalho IP para mensagens de solicitação de eco enviadas. O padrão é o valor de TTL padrão para o host. O *TTL* máximo é 255.|
-|/v \<tos\>|Especifica o valor do campo tipo de serviço (TOS) no cabeçalho IP para mensagens de solicitação de eco enviadas (disponível somente em IPv4). O padrão é 0. *Tos* é especificado como um valor decimal de 0 a 255.|
-|contagem \<de/r\>|Especifica que a opção de rota de registro no cabeçalho IP é usada para registrar o caminho usado pela mensagem de solicitação de eco e a mensagem de resposta de eco correspondente (disponível somente em IPv4). Cada salto no caminho usa uma entrada na opção de rota de registro. Se possível, especifique uma *contagem* que seja igual ou maior que o número de saltos entre a origem e o destino. A *contagem* deve ser no mínimo 1 e no máximo 9.|
-|/s \<contagem\>|Especifica que a opção de carimbo de data/hora da Internet no cabeçalho IP é usada para registrar a hora de chegada da mensagem de solicitação de eco e a mensagem de resposta de eco correspondente para cada salto. A *contagem* deve ser no mínimo 1 e no máximo 4. Isso é necessário para endereços de destino de link local.|
-|/j \<hostlist\>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem flexível no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços.|
-|/k \<hostlist\>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem estrita no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem estrito, o próximo destino intermediário deve ser diretamente acessível (deve ser um vizinho em uma interface do roteador). O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços.|
-|tempo \<limite de/w\>|Especifica a quantidade de tempo, em milissegundos, para aguardar a mensagem de resposta de eco que corresponde a uma determinada mensagem de solicitação de eco a ser recebida. Se a mensagem de resposta de eco não for recebida dentro do tempo limite, a mensagem de erro "tempo limite de solicitação expirado" será exibida. O tempo limite padrão é 4000 (4 segundos).|
+|/i \< TTL\>|Especifica o valor do campo TTL no cabeçalho IP para mensagens de solicitação de eco enviadas. O padrão é o valor de TTL padrão para o host. O *TTL* máximo é 255.|
+|/v \< tos\>|Especifica o valor do campo tipo de serviço (TOS) no cabeçalho IP para mensagens de solicitação de eco enviadas (disponível somente em IPv4). O padrão é 0. *Tos* é especificado como um valor decimal de 0 a 255.|
+|contagem de/r \<\>|Especifica que a opção de rota de registro no cabeçalho IP é usada para registrar o caminho usado pela mensagem de solicitação de eco e a mensagem de resposta de eco correspondente (disponível somente em IPv4). Cada salto no caminho usa uma entrada na opção de rota de registro. Se possível, especifique uma *contagem* que seja igual ou maior que o número de saltos entre a origem e o destino. A *contagem* deve ser no mínimo 1 e no máximo 9.|
+|/s \< contagem\>|Especifica que a opção de carimbo de data/hora da Internet no cabeçalho IP é usada para registrar a hora de chegada da mensagem de solicitação de eco e a mensagem de resposta de eco correspondente para cada salto. A *contagem* deve ser no mínimo 1 e no máximo 4. Isso é necessário para endereços de destino de link local.|
+|/j \< hostlist\>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem flexível no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços.|
+|/k \< hostlist\>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem estrita no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem estrito, o próximo destino intermediário deve ser diretamente acessível (deve ser um vizinho em uma interface do roteador). O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços.|
+|\<tempo limite de/w\>|Especifica a quantidade de tempo, em milissegundos, para aguardar a mensagem de resposta de eco que corresponde a uma determinada mensagem de solicitação de eco a ser recebida. Se a mensagem de resposta de eco não for recebida dentro do tempo limite, a mensagem de erro "tempo limite de solicitação expirado" será exibida. O tempo limite padrão é 4000 (4 segundos).|
 |/R|Especifica que o caminho de viagem de ida e volta é rastreado (disponível somente em IPv6).|
-|/S \<srcaddr\>|Especifica o endereço de origem a ser usado (disponível somente em IPv6).|
+|/S \< srcaddr\>|Especifica o endereço de origem a ser usado (disponível somente em IPv6).|
 |/4|Especifica que o IPv4 é usado para executar ping. Esse parâmetro não é necessário para identificar o host de destino com um endereço IPv4. Ele só é necessário para identificar o host de destino por nome.|
 |/6|Especifica que o IPv6 é usado para executar ping. Esse parâmetro não é necessário para identificar o host de destino com um endereço IPv6. Ele só é necessário para identificar o host de destino por nome.|
 |\<TargetName\>|Especifica o nome do host ou o endereço IP do destino.|
@@ -61,11 +61,11 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 Para mostrar a saída do comando **ping** :
 
 ```
-C:\>ping example.microsoft.com       
-         pinging example.microsoft.com [192.168.239.132] with 32 bytes of data:       
-         Reply from 192.168.239.132: bytes=32 time=101ms TTL=124       
-         Reply from 192.168.239.132: bytes=32 time=100ms TTL=124       
-         Reply from 192.168.239.132: bytes=32 time=120ms TTL=124       
+C:\>ping example.microsoft.com
+         pinging example.microsoft.com [192.168.239.132] with 32 bytes of data:
+         Reply from 192.168.239.132: bytes=32 time=101ms TTL=124
+         Reply from 192.168.239.132: bytes=32 time=100ms TTL=124
+         Reply from 192.168.239.132: bytes=32 time=120ms TTL=124
          Reply from 192.168.239.132: bytes=32 time=120ms TTL=124
 ```
 
@@ -94,4 +94,4 @@ ping /j 10.12.0.1 10.29.3.1 10.1.44.1 10.0.99.221
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

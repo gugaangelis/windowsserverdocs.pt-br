@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab0419060121033571eeba643cc0e2d42b45c743
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 60c824de891917a2652776ee86b389f04d8eada8
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721301"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821366"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
@@ -77,10 +77,10 @@ tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN P
 ```
 O comando a seguir criará um cartão inteligente virtual com uma chave de administrador aleatória. A chave é automaticamente descartada após a criação do cartão. Isso significa que, se o usuário esquecer o PIN ou quiser alterar o PIN, o usuário precisará excluir o cartão e criá-lo novamente. Para excluir o cartão, o usuário pode executar o comando a seguir.
 ```
-tpmvscmgr.exe destroy /instance <instance ID> 
+tpmvscmgr.exe destroy /instance <instance ID>
 ```
-em \<que ID de instância> é o valor impresso na tela quando o usuário criou o cartão. Especificamente, para o primeiro cartão criado, a ID da instância é ROOT\SMARTCARDREADER\0000.
+em que \< ID de instância> é o valor impresso na tela quando o usuário criou o cartão. Especificamente, para o primeiro cartão criado, a ID da instância é ROOT\SMARTCARDREADER\0000.
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

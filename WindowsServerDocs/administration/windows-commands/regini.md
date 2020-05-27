@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 632573f317eafa254f6c434f959a06f2c24f7353
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 33e0dcaa59be3c1748763cce5c9979fe318b271a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836239"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820146"
 ---
 # <a name="regini"></a>regini
 
@@ -32,11 +32,11 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 
 | Parâmetro | Descrição |
 
-|-m \<\\\\ComputerName >|Especifica o nome do computador remoto com um registro que deve ser modificado. Use o formato **\\\\ComputerName**.|
+|-m \< \\ \\ ComputerName>|Especifica o nome do computador remoto com um registro que deve ser modificado. Use o formato ** \\ \\ ComputerName**.|
 |---------------------|-|
-|-h \<hivefile hiveroot >|Especifica o hive do Registro local a ser modificado. Você deve especificar o nome do arquivo do hive e a raiz do hive no formato **hivefile hiveroot**.|
-|-i \<n >|Especifica o nível de recuo a ser usado para indicar a estrutura de árvore das chaves do registro na saída do comando. A ferramenta **Regdmp. exe** (que obtém as permissões atuais de uma chave do registro no formato binário) usa o recuo em múltiplos de quatro, portanto, o valor padrão é **4**.|
-|-o \<outputwidth >|Especifica a largura da saída do comando, em caracteres. Se a saída for exibida na janela de comando, o valor padrão será a largura da janela. Se a saída for direcionada para um arquivo, o valor padrão será de **240** caracteres.|
+|-h \< hivefile hiveroot>|Especifica o hive do Registro local a ser modificado. Você deve especificar o nome do arquivo do hive e a raiz do hive no formato **hivefile hiveroot**.|
+|-i \< n>|Especifica o nível de recuo a ser usado para indicar a estrutura de árvore das chaves do registro na saída do comando. A ferramenta **Regdmp. exe** (que obtém as permissões atuais de uma chave do registro no formato binário) usa o recuo em múltiplos de quatro, portanto, o valor padrão é **4**.|
+|-o \< outputwidth>|Especifica a largura da saída do comando, em caracteres. Se a saída for exibida na janela de comando, o valor padrão será a largura da janela. Se a saída for direcionada para um arquivo, o valor padrão será de **240** caracteres.|
 |-b|Especifica que a saída de **Regini. exe** é compatível com versões anteriores do **Regini. exe**. Consulte a seção comentários para obter detalhes.|
 |textfiles|Especifica o nome de um ou mais arquivos de texto que contêm dados de registro. Qualquer número de arquivos de texto ANSI ou Unicode pode ser listado.|
 
@@ -49,4 +49,4 @@ As diretrizes a seguir se aplicam principalmente ao conteúdo dos arquivos de te
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

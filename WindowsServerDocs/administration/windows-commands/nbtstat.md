@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c3405818d3ed11d14dee6c2fc8796c024ef253e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f0589fcd094d60fd5c3d9bc8798d273c49fb042b
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723822"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820896"
 ---
 # <a name="nbtstat"></a>nbtstat
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe as estatísticas de protocolo NetBIOS sobre TCP/IP (NetBT), as tabelas de nomes NetBIOS para o computador local e para os computadores remotos e o cache de nomes NetBIOS. o **NBTSTAT** permite uma atualização do cache de nomes NetBIOS e os nomes registrados com o WINS (serviço de cadastramento na Internet do Windows). Usado sem parâmetros, **NBTSTAT** exibe a ajuda. 
+Exibe as estatísticas de protocolo NetBIOS sobre TCP/IP (NetBT), as tabelas de nomes NetBIOS para o computador local e para os computadores remotos e o cache de nomes NetBIOS. o **NBTSTAT** permite uma atualização do cache de nomes NetBIOS e os nomes registrados com o WINS (serviço de cadastramento na Internet do Windows). Usado sem parâmetros, **NBTSTAT** exibe a ajuda.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -59,7 +59,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |Nome local|O nome NetBIOS local associado à conexão.|
     |Host remoto|O nome ou endereço IP associado ao computador remoto.|
     |<03>|O último byte de um nome NetBIOS convertido em hexadecimal. Cada nome NetBIOS tem 16 caracteres. Geralmente, esse último byte tem um significado especial, pois o mesmo nome pode estar presente várias vezes em um computador, diferente somente no último byte. Por exemplo, <20> é um espaço em texto ASCII.|
-    |type|O tipo do nome. Um nome pode ser um nome exclusivo ou um nome de grupo.|
+    |tipo|O tipo do nome. Um nome pode ser um nome exclusivo ou um nome de grupo.|
     |Status|Se o serviço NetBIOS no computador remoto está em execução (registrado) ou se um nome de computador duplicado registrou o mesmo serviço (conflito).|
     |Estado|O estado das conexões NetBIOS.|
 
@@ -126,6 +126,6 @@ nbtstat /S 5
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
 

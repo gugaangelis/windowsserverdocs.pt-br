@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ffaff594a8927b3fcdfc871ec380fd5f134ce90
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54f488eea2478c0b38f7ed9bea5ec15c0db3538f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722154"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820976"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
@@ -32,13 +32,13 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/m:\<ComputerName>|Especifica o nome NetBIOS, o nome DNS ou o endereço IP do computador a ser configurado. Se o parâmetro **/m** for especificado, o parâmetro **/p** também deverá ser especificado.|
-|/ou:\<OuName>|Especifica o FQDN (nome de domínio totalmente qualificado) de uma UO (unidade organizacional) em Active Directory Domain Services. Se o parâmetro **/ou** for especificado, o parâmetro **/p** também deverá ser especificado. Todos os computadores da UO serão analisados de acordo com a política fornecida.|
-|/p:\<política>|Especifica o caminho e o nome do arquivo de política. XML a ser usado para executar a configuração.|
-|/i:\<computerlist>|Especifica o caminho e o nome de arquivo de um arquivo. XML que contém uma lista de computadores junto com seus arquivos de política esperados. Todos os computadores no arquivo. XML serão configurados de acordo com seus arquivos de política correspondentes. Um arquivo. XML de exemplo é%windir%\security\SampleMachineList.xml.|
-|/u:\<username>|Especifica uma credencial de usuário alternativa a ser usada ao configurar um computador remoto. O padrão é o usuário conectado.|
-|/PW:\<senha>|Especifica uma credencial de usuário alternativa a ser usada ao configurar um computador remoto. O padrão é a senha do usuário conectado.|
-|/t:\<threads>|Especifica o número de operações de configuração pendentes simultâneas que devem ser mantidas durante o processo de configuração (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
+|/m: \< computername>|Especifica o nome NetBIOS, o nome DNS ou o endereço IP do computador a ser configurado. Se o parâmetro **/m** for especificado, o parâmetro **/p** também deverá ser especificado.|
+|/ou: \< OuName>|Especifica o FQDN (nome de domínio totalmente qualificado) de uma UO (unidade organizacional) em Active Directory Domain Services. Se o parâmetro **/ou** for especificado, o parâmetro **/p** também deverá ser especificado. Todos os computadores da UO serão analisados de acordo com a política fornecida.|
+|/p: \< política>|Especifica o caminho e o nome do arquivo de política. XML a ser usado para executar a configuração.|
+|/i: \< computerlist>|Especifica o caminho e o nome de arquivo de um arquivo. XML que contém uma lista de computadores junto com seus arquivos de política esperados. Todos os computadores no arquivo. XML serão configurados de acordo com seus arquivos de política correspondentes. Um arquivo. XML de exemplo é%windir%\security\SampleMachineList.xml.|
+|/u: \< UserName>|Especifica uma credencial de usuário alternativa a ser usada ao configurar um computador remoto. O padrão é o usuário conectado.|
+|/PW: \< senha>|Especifica uma credencial de usuário alternativa a ser usada ao configurar um computador remoto. O padrão é a senha do usuário conectado.|
+|/t: \< threads>|Especifica o número de operações de configuração pendentes simultâneas que devem ser mantidas durante o processo de configuração (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -66,4 +66,4 @@ scwcmd configure /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolic
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b38460b5b8408d73c857cf7314805f33adfa3108
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6bc211946c908b44b196995a9e5000d6ff3b7f82
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720188"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821416"
 ---
 # <a name="wbadmin-disable-backup"></a>Wbadmin Disable backup
 
@@ -39,5 +39,5 @@ wbadmin disable backup
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

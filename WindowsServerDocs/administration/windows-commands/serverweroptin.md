@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3acba57aa012c57c5c6109ed948ce6bb5b28078
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6329552d3525a1330286e04c6400378b14039fbf
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721949"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821257"
 ---
 # <a name="serverweroptin"></a>serverweroptin
 
@@ -46,5 +46,5 @@ Para enviar automaticamente relatórios de resumo, digite
 serverweroptin /summary
 ```
 ## <a name="additional-references"></a>Referências adicionais
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 

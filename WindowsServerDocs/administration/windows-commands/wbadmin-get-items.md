@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6305c9036b611f879608386dbf71398e993ea03
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9987a3628682c47cde53433558ef89c01684ccf5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720170"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821196"
 ---
 # <a name="wbadmin-get-items"></a>Wbadmin obter itens
 
@@ -47,13 +47,13 @@ Para listar itens do backup que foi executado em 31 de março de 2013 às 9:00, 
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-Para listar itens do backup de Server01 que foi executado em 30 de abril de 2013 às 9:00. e armazenados em \\ \\servername\share, digite:
+Para listar itens do backup de Server01 que foi executado em 30 de abril de 2013 às 9:00. e armazenados em \\ \\ servername\share, digite:
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Get-WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx)
