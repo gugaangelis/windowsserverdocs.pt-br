@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c87a6cb5e3fb52af9a13a7be35218e35b24d7ddc
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
+ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436921"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83855660"
 ---
 # <a name="echo"></a>echo
 
@@ -31,7 +31,7 @@ echo [on | off]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| no | desconto | Ativa ou desativa o recurso de eco de comando. O eco de comando está ativado por padrão. |
+| [ligado \| desativado] | Ativa ou desativa o recurso de eco de comando. O eco de comando está ativado por padrão. |
 | `<message>` | Especifica o texto a ser exibido na tela. |
 | /? | Exibe a ajuda no prompt de comando. |
 
