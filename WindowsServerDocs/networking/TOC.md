@@ -93,6 +93,12 @@
 #### [Opções de seleção de sub-rede DHCP](technologies/dhcp/dhcp-subnet-options.md)
 #### [Eventos de registro em log de DHCP para registros de DNS](technologies/dhcp/dhcp-dns-events.md)
 ### [Implantar o DHCP usando o Windows PowerShell](technologies/dhcp/dhcp-deploy-wps.md)
+### [Solucionar problemas do DHCP](../troubleshoot/troubleshoot-dhcp-issue.md)
+#### [Noções básicas do DHCP (protocolo DHCP)](../troubleshoot/dynamic-host-configuration-protocol-basics.md)
+#### [Diretrizes gerais para solucionar problemas do DHCP](../troubleshoot/general-guidance-to-troubleshoot-dhcp.md)
+##### [Como usar o endereçamento TCP/IP automático sem um servidor DHCP](../troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh.md)
+#### [Solucionar problemas no cliente DHCP](../troubleshoot/troubleshoot-problems-on-dhcp-client.md)
+#### [Solucionar problemas no servidor DHCP](../troubleshoot/troubleshoot-problems-on-dhcp-server.md)
 
 ## [HPN (rede de alto desempenho)](technologies/hpn/hpn-top.md)
 ### [Tecnologias de descarregamento e de otimização de rede](technologies/hpn/network-offload-and-optimization.md)
