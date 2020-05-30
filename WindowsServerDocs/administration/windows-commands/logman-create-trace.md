@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9b0a74c6da894eeadef8aef86f25761d6616e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820446"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222984"
 ---
 # <a name="logman-create-trace"></a>criar rastreamento de logman
 
@@ -69,7 +69,7 @@ logman create trace <[-n] <name>> [options]
 
 ### <a name="examples"></a>Exemplos
 
-Para criar um coletor de dados de rastreamento de eventos chamado trace_log, usando no máximo 16 e no máximo 256 buffers, com cada buffer com tamanho de 64 KB, colocando os resultados em c:\logfile, digite:
+Para criar um coletor de dados de rastreamento de eventos chamado *trace_log*, usando no máximo 16 e no máximo 256 buffers, com cada buffer com tamanho de 64 KB, colocando os resultados em c:\logfile, digite:
 
 ```
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
@@ -79,4 +79,6 @@ logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [comando de rastreamento de atualização do logman](logman-update-trace.md)
+
+- [comando logman](logman.md)

@@ -1,69 +1,80 @@
 ---
 title: API de atualização do logman
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando de API de atualização do logman, que atualiza as propriedades de um coletor de dados de rastreamento de API existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc britw
+ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42ee594bfb4578cebec062a5c2a81d11dae81349
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0087edc7cd96bf2bf7611d9a3975d97384c02949
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724311"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222773"
 ---
 # <a name="logman-update-api"></a>API de atualização do logman
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Atualize as propriedades de um coletor de dados de rastreamento de API existente.  
+Atualiza as propriedades de um coletor de dados de rastreamento de API existente.
 
-## <a name="syntax"></a>Sintaxe  
-```  
-logman update api <[-n] <name>> [options]  
-```  
-### <a name="parameters"></a>Parâmetros  
+## <a name="syntax"></a>Sintaxe
 
-|                    Parâmetro                     |                                                                               Descrição                                                                               |
-|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                        /?                        |                                                                    Exibe a ajuda contextual.                                                                     |
-|                -s<computer name>                |                                                          Execute o comando no computador remoto especificado.                                                          |
-|                 -config <value>                  |                                                         Especifica o arquivo de configurações que contém as opções de comando.                                                         |
-|                   [-n]<name>                    |                                                                       O nome do objeto de destino.                                                                        |
-| -f <bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL> |                                                            Especifica o formato de log para o coletor de dados.                                                             |
-|             -[-] u <usuário [senha] >              | Especifica o usuário a ser executado como. Inserir um \* para a senha produz um prompt para a senha. A senha não é exibida quando você a digita no prompt de senha. |
-|    -m < [início] [parar] [[Iniciar] [parar] [...]] >    |                                                Altere para início ou parada manual em vez de uma hora de início ou de término agendada.                                                 |
-|                -RF < [[hh:] mm:] SS>                |                                                        Execute o coletor de dados para o período de tempo especificado.                                                         |
-|        -b <M/d/AAAA h:mm: SS [AM&#124;PM] >         |                                                              Comece a coletar dados no horário especificado.                                                               |
-|        -e <M/d/AAAA h:mm: SS [AM&#124;PM] >         |                                                               Terminar a coleta de dados na hora especificada.                                                                |
-|                -si < [[hh:] mm:] SS>                |                                                 Especifica o intervalo de amostragem para coletores de dados de contador de desempenho.                                                  |
-|              -o caminho de <&#124;DSN! log>              |                                              Especifica o arquivo de log de saída ou o DSN e o nome do conjunto de logs em um banco de dados SQL.                                               |
-|                      -[-] r                       |                                                  Repita o coletor de dados diariamente nas horas de início e término especificadas.                                                  |
-|                      -[-] um                       |                                                                     anexar a um arquivo de log existente.                                                                     |
-|                      -[-] Omo                      |                                                                     Substituir um arquivo de log existente.                                                                     |
-|           -[-] v <nnnnnn&#124;mmddhhmm>           |                                                   Anexe informações de controle de versão do arquivo ao final do nome do arquivo de log.                                                   |
-|                  -[-] RC<task>                   |                                                         Execute o comando especificado cada vez que o log for fechado.                                                          |
-|                 -[-] máx. <value>                  |                                                 Tamanho máximo do arquivo de log em MB ou número máximo de registros para logs SQL.                                                  |
-|              -[-] CNF < [[hh:] mm:] SS>              |     Quando o tempo for especificado, crie um novo arquivo quando o tempo especificado tiver decorrido. Quando a hora não for especificada, crie um novo arquivo quando o tamanho máximo for excedido.     |
-|                        -y                        |                                                             Responda sim a todas as perguntas sem avisar.                                                              |
-|            -mods <caminho [caminho [...]] >             |                                                          Especifica a lista de módulos da qual registrar chamadas de API.                                                           |
-|     -inapis <módulo! API [módulo! API [...]] >      |                                                         Especifica a lista de chamadas de API a serem incluídas no registro em log.                                                          |
-|     -exapis <módulo! API [módulo! API [...]] >      |                                                        Especifica a lista de chamadas de API a serem excluídas do registro em log.                                                         |
-|                     -[-] ano                      |                                                     Somente nomes de API de log (-ano) ou não registram somente os nomes de API (-ano).                                                     |
-|                  -[-] recursivo                   |                                          Registrar (-recursivo) ou não registrar (-recursivo) APIs recursivamente além da primeira camada.                                           |
-|                   -exe <value>                   |                                                        Especifica o caminho completo para um executável para rastreamento de API.                                                        |
+```
+logman update api <[-n] <name>> [options]
+```
 
-## <a name="remarks"></a>Comentários  
-Onde [-] está listado, um extra-nega a opção.  
-## <a name="examples"></a>Exemplos  
-O comando a seguir atualiza o contador de rastreamento de API existente chamado trace_notepad para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo Kernel32. dll.  
-```  
-logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
-```  
-## <a name="additional-references"></a>Referências adicionais  
-[logman](logman.md)  
-[criar API do logman](logman-create-api.md)  
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| -s`<computer name>` | Executa o comando no computador remoto especificado. |
+| -configuração`<value>` | Especifica o arquivo de configurações que contém as opções de comando. |
+| [-n]`<name>` | O nome do objeto de destino. |
+| -f`<bin|bincirc>` | Especifica o formato de log para o coletor de dados. |
+| -[-] u`<user [password]>` | Especifica o usuário a ser executado como. Inserir um `*` para a senha produz um prompt para a senha. A senha não é exibida quando você a digita no prompt de senha. |
+| -m`<[start] [stop] [[start] [stop] [...]]>` | Alterado para iniciar ou parar manualmente em vez de uma hora de início ou de término agendada. |
+| -RF`<[[hh:]mm:]ss>` | Execute o coletor de dados para o período de tempo especificado. |
+| -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comece a coletar dados no horário especificado. |
+| -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Terminar a coleta de dados na hora especificada. |
+| -si`<[[hh:]mm:]ss>` | Especifica o intervalo de amostragem para coletores de dados de contador de desempenho. |
+| -o`<path|dsn!log>` | Especifica o arquivo de log de saída ou o DSN e o nome do conjunto de logs em um banco de dados SQL. |
+| -[-] r | Repita o coletor de dados diariamente nas horas de início e término especificadas. |
+| -[-] um | Acrescentar um arquivo de log existente. |
+| -[-] Omo | Substituir um arquivo de log existente. |
+| -[-] v`<nnnnnn|mmddhhmm>` | Anexa informações de controle de versão do arquivo ao final do nome do arquivo de log. |
+| -[-] RC`<task>` | Execute o comando especificado cada vez que o log for fechado. |
+| -[-] máx.`<value>` | Tamanho máximo do arquivo de log em MB ou número máximo de registros para logs SQL. |
+| -[-] CNF`<[[hh:]mm:]ss>` | Quando o tempo for especificado, o criará um novo arquivo quando o tempo especificado tiver decorrido. Quando a hora não for especificada, o criará um novo arquivo quando o tamanho máximo for excedido. |
+| -y | Responda sim a todas as perguntas sem avisar. |
+| -mods`<path [path [...]]>` | Especifica a lista de módulos da qual registrar chamadas de API. |
+| -inapis` <module!api [module!api [...]]>` | Especifica a lista de chamadas de API a serem incluídas no registro em log. |
+| -exapis`<module!api [module!api [...]]>` | Especifica a lista de chamadas de API a serem excluídas do registro em log. |
+| -[-] ano | Somente nomes de API de log (-ano) ou não registram somente os nomes de API (-ano). |
+| -[-] recursivo | Registrar (-recursivo) ou não registrar (-recursivo) APIs recursivamente além da primeira camada. |
+| -exe`<value>` | Especifica o caminho completo para um executável para rastreamento de API. |
+| /? | Exibe a ajuda contextual. |
+
+#### <a name="remarks"></a>Comentários
+
+- Onde [-] está listado, adicionar um hífen extra (-) nega a opção.
+
+### <a name="examples"></a>Exemplos
+
+Para atualizar um contador de rastreamento de API existente chamado *trace_notepad*, para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo Kernel32. dll, digite:
+
+```
+logman update api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando logman Create API](logman-create-api.md)
+
+- [comando logman](logman.md)

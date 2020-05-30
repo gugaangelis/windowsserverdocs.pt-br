@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cfb391c68cfb551ef2179e7210dff3a26d540fde
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720729"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222639"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
@@ -24,30 +24,30 @@ Este conjunto de documentação descreve os comandos do Windows que você pode u
 
 Para localizar informações sobre um comando específico, no menu a-Z a seguir, clique na letra com a qual o comando começa e, em seguida, clique no nome do comando.
 
-[A](#a) |
-[B](#b) | 
-[M](#m)[D](#d) | 
-[V](#v)[C](#c) |
-[J](#j) | 
-[W](#w)[F](#f) | 
-[S](#s)[E](#e) | 
-[R](#r)[G](#g) | 
-[U](#u)[H](#h) | 
-[X](#x) [I](#i) | 
-[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H i J | 
-K L M | 
-N | 
-O | 
-P | 
-Q R S T U V W X | | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
- Y | Z
+[Um](#a)  |
+ [B](#b)  |
+ [C](#c)  |
+ [D](#d)  |
+ [E](#e)  |
+ [F](#f)  |
+ [G](#g)  |
+ [H](#h)  |
+ [I](#i)  |
+ [J](#j)  |
+ [K](#k)  |
+ [L](#l)  |
+ [M](#m)  |
+ [N](#n)  |
+ [O](#o)  |
+ [P](#p)  |
+ [P](#q)  |
+ [R](#r)  |
+ [S](#s)  |
+ [T](#t)  |
+ [U](#u)  |
+ [V](#v)  |
+ [W](#w)  |
+ [X](#x) | Y | Z
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -57,7 +57,7 @@ As informações contidas neste tópico aplicam-se a:
 -   Windows Server (Canal semestral)
 -   Windows Server 2016
 -   Windows Server 2012 R2
--   Windows Server 2012 
+-   Windows Server 2012
 -   Windows Server 2008 R2
 -   Windows Server 2008
 -   Windows 10
@@ -71,48 +71,48 @@ O Windows tem dois shells de comando: o Shell de comando e o [PowerShell](https:
 
 O PowerShell foi projetado para estender os recursos do Shell de comando para executar comandos do PowerShell chamados cmdlets. Os cmdlets são semelhantes aos comandos do Windows, mas fornecem uma linguagem de script mais extensível. Você pode executar comandos do Windows e cmdlets do PowerShell no PowerShell, mas o Shell de comando só pode executar comandos do Windows e não cmdlets do PowerShell.
 
-Para a automação do Windows mais robusta e atualizada, recomendamos o uso do PowerShell em vez de comandos do Windows ou do Windows Script Host para automação do Windows. 
+Para a automação do Windows mais robusta e atualizada, recomendamos o uso do PowerShell em vez de comandos do Windows ou do Windows Script Host para automação do Windows.
 > [!NOTE]
->Você também pode baixar e instalar o [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell. 
+>Você também pode baixar e instalar o [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell.
 
 > [!CAUTION]
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.
 
 > [!NOTE]
 > Para habilitar ou desabilitar a conclusão do nome de arquivo e diretório no Shell de comando em uma sessão de logon de computador ou usuário, execute **regedit. exe** e defina o seguinte **valor de reg_DWOrd**:
-> 
+>
 > HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
-> 
+>
 > Para definir o valor de **reg_DWOrd** , use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 9** é Tab e **0 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
 ## <a name="command-line-reference-a-z"></a>Referência de linha de comando A-Z
 
 Para encontrar informações sobre um comando específico do Windows, no menu a-Z a seguir, clique na letra com a qual o comando começa e, em seguida, clique no nome do comando.
 
-[A](#a) |
-[B](#b) | 
-[M](#m)[D](#d) | 
-[V](#v)[C](#c) |
-[J](#j) | 
-[W](#w)[F](#f) | 
-[S](#s)[E](#e) | 
-[R](#r)[G](#g) | 
-[U](#u)[H](#h) | 
-[X](#x) [I](#i) | 
-[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H i J | 
-K L M | 
-N | 
-O | 
-P | 
-Q R S T U V W X | | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
- Y | Z
+[Um](#a)  |
+ [B](#b)  |
+ [C](#c)  |
+ [D](#d)  |
+ [E](#e)  |
+ [F](#f)  |
+ [G](#g)  |
+ [H](#h)  |
+ [I](#i)  |
+ [J](#j)  |
+ [K](#k)  |
+ [L](#l)  |
+ [M](#m)  |
+ [N](#n)  |
+ [O](#o)  |
+ [P](#p)  |
+ [P](#q)  |
+ [R](#r)  |
+ [S](#s)  |
+ [T](#t)  |
+ [U](#u)  |
+ [V](#v)  |
+ [W](#w)  |
+ [X](#x) | Y | Z
 
 ### <a name="a"></a>Um
 -   [append](append.md)
@@ -298,7 +298,7 @@ Q R S T U V W X | |
   -   [fsutil usn](fsutil-usn.md)
   -   [fsutil volume](fsutil-volume.md)
   -   [fsutil wim](fsutil-wim.md)
-- [FTP](ftp.md)
+- [ftp](ftp.md)
 - [ftype](ftype.md)
 - [fveupdate](fveupdate.md)
 
@@ -351,14 +351,14 @@ Q R S T U V W X | |
   -   [ksetup: setenctypeattr](ksetup-setenctypeattr.md)
   -   [ksetup: getenctypeattr](ksetup-getenctypeattr.md)
   -   [ksetup: addenctypeattr](ksetup-addenctypeattr.md)
-  -   [ksetup: delenctypeattr](ksetup-delenctypeattr.md) 
+  -   [ksetup: delenctypeattr](ksetup-delenctypeattr.md)
 - [ktmutil](ktmutil.md)
 - [ktpass](ktpass.md)
 
 ### <a name="l"></a>L
 - [label](label.md)
 - [lodctr](lodctr.md)
-- [logman](logman.md)
+- [comando logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
   -   [logman start &124; deixar](logman-start-stop.md)
@@ -527,7 +527,7 @@ Q R S T U V W X | |
 - [scwcmd](Scwcmd.md)
   -   [scwcmd: analisar](scwcmd-analyze.md)
   -   [scwcmd: configurar](scwcmd-configure.md)
-  -   [scwcmd: Register](scwcmd-register.md) 
+  -   [scwcmd: Register](scwcmd-register.md)
   -   [scwcmd: Rollback](scwcmd-rollback.md) 
   -   [scwcmd: Transform](scwcmd-transform.md) 
   -   [scwcmd: exibir](scwcmd-view.md) 
@@ -589,7 +589,7 @@ Q R S T U V W X | |
 -   [verifier](verifier.md)
 -   [verify](verify_1.md)
 -   [vol](vol.md)
--   [vssadmin](vssadmin.md)- 
+-   [vssadmin](vssadmin.md)-
 
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)

@@ -1,6 +1,6 @@
 ---
 title: fazer logoff
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando logoff, que faz logoff de um usuário de uma sessão em um servidor de Host da Sessão da Área de Trabalho Remota e exclui a sessão.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,57 +9,68 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3daecbc2f4034070a5b805c75a6b647ba168e2c5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 636591843ce878bc85c5cccf6faece6652e25424
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820536"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222733"
 ---
 # <a name="logoff"></a>fazer logoff
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Faz logoff de um usuário de uma sessão em um servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD) e exclui a sessão do servidor.
-
-
-> [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
+Faz logoff de um usuário de uma sessão em um servidor Host da Sessão da Área de Trabalho Remota e exclui a sessão.
 
 ## <a name="syntax"></a>Sintaxe
 ```
-logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
+logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 ```
+
 ### <a name="parameters"></a>Parâmetros
 
-|      Parâmetro       |                                                                             Descrição                                                                              |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <SessionName>     |                                                                  Especifica o nome da sessão.                                                                  |
-|     <SessionID>      |                                                 Especifica a ID numérica que identifica a sessão para o servidor.                                                 |
-| /server:<ServerName> | Especifica o servidor de host da sessão da área de trabalho remota que contém a sessão cujo usuário você deseja fazer logoff. Se não for especificado, o servidor no qual você está ativo no momento será usado. |
-|          /v          |                                                       Exibe informações sobre as ações que estão sendo executadas.                                                        |
-|          /?          |                                                                 Exibe a ajuda no prompt de comando.                                                                 |
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<sessionname>` | Especifica o nome da sessão. Isso deve ser uma sessão ativa.|
+| `<sessionID>` | Especifica a ID numérica que identifica a sessão para o servidor. |
+| /server:`<servername>` | Especifica o servidor de Host da Sessão da Área de Trabalho Remota que contém a sessão cujo usuário você deseja fazer logoff. Se não for especificado, o servidor no qual você está ativo no momento será usado. |
+| /v | Exibe informações sobre as ações que estão sendo executadas. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-- Você sempre pode fazer logoff da sessão à qual você está conectado no momento. No entanto, você deve ter permissão controle total para fazer logoff de usuários de outras sessões.
+#### <a name="remarks"></a>Comentários
+
+- Você sempre pode fazer logoff da sessão na qual está conectado no momento. No entanto, você deve ter permissão **controle total** para fazer logoff de usuários de outras sessões.
+
 - Fazer logoff de um usuário de uma sessão sem aviso pode resultar em perda de dados na sessão do usuário. Você deve enviar uma mensagem para o usuário usando o comando **msg** para avisar o usuário antes de executar esta ação.
-- se <*SessionID*> ou <*SessionName*> não for especificado, **logoff fará logoff** do usuário da sessão atual. Se você especificar <*sessionname*>, ele deverá ser um ativo.
-- Quando você faz logoff de um usuário, todos os processos são encerrados e a sessão é excluída do servidor.
+
+- Se `<sessionID>` ou `<sessionname>` não for especificado, **logoff fará logoff** do usuário da sessão atual.
+
+- Depois de fazer logoff de um usuário, todos os processos são encerrados e a sessão é excluída do servidor.
+
 - Não é possível fazer logoff de um usuário da sessão de console.
-  ## <a name="examples"></a>Exemplos
-- Para fazer logoff de um usuário da sessão atual, digite:
-  ```
-  logoff
-  ```
-- Para fazer logoff de um usuário de uma sessão usando a ID da sessão, por exemplo, sessão 12, digite:
-  ```
-  logoff 12
-  ```
-- Para fazer logoff de um usuário de uma sessão usando o nome da sessão e do servidor, por exemplo, Session TERM04 no Server1, digite:
-  ```
-  logoff TERM04 /server:Server1
-  ```
+
+### <a name="examples"></a>Exemplos
+
+Para fazer logoff de um usuário da sessão atual, digite:
+
+```
+logoff
+```
+
+Para fazer logoff de um usuário de uma sessão usando a ID da sessão, por exemplo, *sessão 12*, digite:
+
+```
+logoff 12
+```
+
+Para fazer logoff de um usuário de uma sessão usando o nome da sessão e do servidor, por exemplo, Session *TERM04* no *Server1*, digite:
+
+```
+logoff TERM04 /server:Server1
+```
 
 ## <a name="additional-references"></a>Referências adicionais
+
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
--   [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)
+
+- [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)

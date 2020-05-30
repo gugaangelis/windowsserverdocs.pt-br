@@ -4,17 +4,17 @@ description: Saiba como auditar os drivers de dispositivo em um computador, bem 
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8 britw
+ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5feafc4d99d4fdea2a7da888c8e818088dd7f6e0
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e79dd4869a88dc48e579451bfdf2f8fecc55e4f9
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821206"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222024"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 

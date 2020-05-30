@@ -4,17 +4,17 @@ description: Transferir arquivos de e para um computador remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef vhorne
+ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb9977d0bc4f45b610d8bf3409c6beeadfaf7ee5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821016"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223043"
 ---
 # <a name="tftp"></a>tftp
 
@@ -34,8 +34,8 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 |\<Host\>|Especifica o computador local ou remoto.|
 |put|Transfere a *origem* do arquivo no computador local para o *destino* do arquivo no computador remoto. Como o protocolo TFTP não oferece suporte à autenticação de usuário, o usuário deve estar conectado ao computador remoto e os arquivos devem ser graváveis no computador remoto.|
 |get|Transfere o *destino* do arquivo no computador remoto para a *origem* do arquivo no computador local.|
-|\<Origem\>|Especifica o arquivo a ser transferido.|
-|\<Destino\>|Especifica para onde transferir o arquivo.|
+|\<Source\>|Especifica o arquivo a ser transferido.|
+|\<Destination\>|Especifica para onde transferir o arquivo.|
 
 ## <a name="remarks"></a>Comentários
 -   Você pode instalar o cliente tftp usando o assistente para adicionar recursos.
