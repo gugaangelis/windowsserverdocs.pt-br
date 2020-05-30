@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: fbdef69f62a76fcc8d01aa0319b2b0859fc4f7cd
+ms.sourcegitcommit: 6973690a8705b24d09eb98f1713743d5e6079161
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716871"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84211905"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implantar Redirecionamento de Pastas com Arquivos Offline
 
->Aplica-se a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Vista, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2, Windows Server (Canal Semestral)
+> Aplica-se a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Vista, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2, Windows Server (Canal Semestral)
 
 Este tópico descreve como usar o Windows Server para implantar o Redirecionamento de Pastas com o Arquivos Offline para computadores cliente Windows.
 
@@ -83,9 +83,9 @@ Veja como criar um compartilhamento de arquivo no Windows Server 2019, no Window
 7. Na página **Permissões**, clique em **Personalizar Permissões…** . A caixa de diálogo Configurações de Segurança Avançada é exibida.
 8. Clique em **Desabilitar herança** e, em seguida, selecione **Converter permissões herdadas em permissões explícitas nesse objeto**.
 9. Definir as permissões conforme descrito na Tabela 1 e mostrado na Figura 1, removendo as permissões para contas e grupos não listados e incluindo permissões especiais ao grupo Usuários de Redirecionamento de Pastas que você criou na Etapa 1.
-    
+
     ![Como definir as permissões para o compartilhamento de pastas redirecionadas](media/deploy-folder-redirection/setting-the-permissions-for-the-redirected-folders-share.png)
-    
+
     **Figura 1** Como definir as permissões para o compartilhamento de pastas redirecionadas
 10. Se você escolher o perfil **Compartilhamento SMB - Avançado** , na página **Propriedades de Gerenciamento** , selecione o valor de Uso da Pasta de **Arquivos do Usuário** .
 11. Se você escolher o perfil **Compartilhamento SMB - Avançado** , na página **Cota** , opcionalmente selecione uma cota para aplicar aos usuários do compartilhamento.
@@ -95,7 +95,6 @@ Veja como criar um compartilhamento de arquivo no Windows Server 2019, no Window
 
 | Conta de Usuário  | Acesso  | Aplica-se a  |
 | --------- | --------- | --------- |
-| Conta de Usuário | Acesso | Aplica-se a |
 | Sistema     | Controle total        |    Essa pasta, subpastas e arquivos     |
 | Administradores     | Controle total       | Apenas essa pasta        |
 | Criador/Proprietário     |   Controle total      |   Apenas subpastas e arquivos      |
@@ -117,11 +116,11 @@ Veja como criar um GPO para o Redirecionamento de Pastas:
 7. Na seção **Filtro de Segurança**, selecione **Adicionar**.
 8. Na caixa de diálogo **Selecionar Usuário, Computador ou Grupo**, digite o nome do grupo de segurança criado por você na Etapa 1 (por exemplo, **Usuários de Redirecionamento de Pastas**) e, em seguida, selecione **OK**.
 9. Selecione a guia **Delegação**, selecione **Adicionar**, insira **Usuários Autenticados**, selecione **OK** e, em seguida, selecione **OK** novamente para aceitar as permissões de leitura padrão.
-    
+
     Esta etapa é necessária devido a alterações de segurança feitas em [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016).
 
 > [!IMPORTANT]
-> Devido às alterações de segurança feitas em [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), agora você deve conceder ao grupo usuários autenticados permissões de leitura delegadas para o GPO de Redirecionamento de Pastas. Caso contrário, o GPO não será aplicado aos usuários ou, se já estiver aplicado, será removido, redirecionando as pastas de volta para o computador local. Para obter mais informações, confira [Implantar a Atualização de Segurança da Política de Grupo MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
+> Devido às alterações de segurança feitas em [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), agora você deve conceder ao grupo usuários autenticados permissões de leitura delegadas para o GPO de Redirecionamento de Pastas. Caso contrário, o GPO não será aplicado aos usuários ou, se já estiver aplicado, será removido, redirecionando as pastas de volta para o computador local. Para obter mais informações, confira [Implantar a Atualização de Segurança da Política de Grupo MS16-072](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/deploying-group-policy-security-update-ms16-072-kb3163622/ba-p/400434).
 
 ## <a name="step-4-configure-folder-redirection-with-offline-files"></a>Etapa 4: Configurar o Redirecionamento de Pastas com Arquivos Offline
 
@@ -165,7 +164,7 @@ Veja aqui como testar o Redirecionamento de Pastas:
 
 1. Entre em um computador primário (caso seu computador primário esteja habilitado para suporte) com uma conta de usuário para a qual você tenha habilitado o Redirecionamento de Pastas.
 2. Caso o usuário tenha sido anteriormente designado para o computador, abra um prompt de comandos com privilégios elevados e, em seguida, digite o comando a seguir para garantir que as configurações de Política de Grupo mais recentes sejam aplicadas ao computador cliente:
-    
+
     ```PowerShell
     gpupdate /force
     ```
@@ -201,4 +200,4 @@ A tabela a seguir resume algumas das alterações mais importantes para este tó
 * [Habilitar a funcionalidade de Arquivos Offline avançada](enable-always-offline.md)
 * [Declaração de suporte da Microsoft sobre dados de perfil do usuário replicados](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [Realizar o sideload de aplicativos com o DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-* [Solução de problemas de empacotamento, implantação e consulta de aplicativos baseados em Windows Runtime](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+* [Solução de problemas de empacotamento, implantação e consulta de aplicativos baseados em Windows Runtime](https://docs.microsoft.com/windows/win32/appxpkg/troubleshooting)
