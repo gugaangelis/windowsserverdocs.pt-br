@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90ef2cc14ef0131978956de8df029eaf04baabd3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1dcea0fa4ea91de56e81c51bf9fe87ec7e3a49fa
+ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722683"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84254709"
 ---
 # <a name="query"></a>Consulta
 
@@ -23,9 +23,10 @@ ms.locfileid: "82722683"
 Exibe informações sobre os servidores de processos, sessões e Host da Sessão da Área de Trabalho Remota (Host da Sessão RD).
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
+> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)) na biblioteca Microsoft docs Windows Server.
 
 ## <a name="syntax"></a>Sintaxe
+
 ```
 query process
 query session
@@ -34,6 +35,7 @@ query user
 ```
 
 ### <a name="parameters"></a>Parâmetros
+
 |Parâmetro|Descrição|
 |-------|--------|
 |[processo de consulta](query-process.md)|Exibe informações sobre os processos que estão sendo executados em um servidor de host de sessão de área de trabalho remota.|
@@ -42,5 +44,6 @@ query user
 |[consultar usuário](query-user.md)|Exibe informações sobre sessões de usuário em um servidor de host de sessão de área de trabalho remota.|
 
 ## <a name="additional-references"></a>Referências adicionais
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-Referência de comando da chave de sintaxe de linha de comando[serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+- [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: eba7092a9a26b25b1fe77b39b8098d117b38981a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c55d6ae5ff701555eb9bfb7135ffa28692bd4391
+ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820996"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84254719"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,8 +32,8 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<> de origem|Obrigatórios. Especifica o local e os nomes dos arquivos que você deseja copiar. Esse parâmetro deve incluir uma unidade ou um caminho.|
-|[ \< Destino>]|Especifica o destino dos arquivos que você deseja copiar. Esse parâmetro pode incluir uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
+|\<Source>|Obrigatórios. Especifica o local e os nomes dos arquivos que você deseja copiar. Esse parâmetro deve incluir uma unidade ou um caminho.|
+|[\<Destination>]|Especifica o destino dos arquivos que você deseja copiar. Esse parâmetro pode incluir uma letra de unidade e dois-pontos, um nome de diretório, um nome de arquivo ou uma combinação desses.|
 |/w|Exibe a mensagem a seguir e aguarda sua resposta antes de começar a copiar arquivos:</br>**Pressione qualquer tecla para começar a Copiar arquivo (s)**|
 |/p|Solicita que você confirme se deseja criar cada arquivo de destino.|
 |/c|Ignora erros.|
@@ -192,7 +192,7 @@ copyit c:\prgmcode b:
 
 O interpretador de comando substitui **C:\Prgmcode** para *%1* e **B:** para *%2*, usa **xcopy** com as opções de linha de comando **/e** e **/s** . Se **xcopy** encontrar um erro, o programa em lotes lerá o código de saída e vai para o rótulo indicado na instrução **If ERRORLEVEL** apropriada e, em seguida, exibirá a mensagem apropriada e sairá do programa em lotes.
 
-**9.** este exemplo todos os diretórios não vazios, além de arquivos cujo nome corresponde ao padrão fornecido com o símbolo de asterisco.
+**9.** este exemplo copia todos os diretórios não vazios, além dos arquivos cujo nome corresponde ao padrão fornecido com o símbolo de asterisco.
 
 ```
 xcopy .\toc*.yml ..\..\Copy-To\ /S /Y
@@ -204,14 +204,14 @@ rem  .\d2\toc.yml
 rem  3 File(s) copied
 ```
 
-No exemplo anterior, esse valor de parâmetro de origem específico **. \\ TOC \* . yml** copiará os mesmos três arquivos mesmo que seus dois caracteres de caminho **. \\ ** tenham sido removidos. No entanto, nenhum arquivo seria copiado se o curinga de asterisco fosse removido do parâmetro de origem, tornando-o apenas **. \\ TOC. yml**.
+No exemplo anterior, esse valor de parâmetro de origem específico **. \\ TOC \* . yml** copia os mesmos três arquivos mesmo se seus dois caracteres de **caminho \\ .** foram removidos. No entanto, nenhum arquivo seria copiado se o curinga de asterisco fosse removido do parâmetro de origem, tornando-o apenas **. \\ TOC. yml**.
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Cópia](copy.md)
--   [Mover](move.md)
--   [Comando](dir.md)
--   [Atributos](attrib.md)
--   [Diskcopy](diskcopy.md)
--   [Que](if.md)
+- [Cópia](copy.md)
+- [Mover](move.md)
+- [Comando](dir.md)
+- [Atributos](attrib.md)
+- [Diskcopy](diskcopy.md)
+- [Que](if.md)
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
