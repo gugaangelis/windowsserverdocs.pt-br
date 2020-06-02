@@ -56,7 +56,7 @@ Obtenha a lista de recursos gerenciados que você pode acessar, como aplicativos
 
 ### <a name="subscribe-to-a-workspace"></a>Assinar um Workspace
 
-Há duas maneiras de assinar um workspace. O cliente pode tentar descobrir os recursos disponíveis por meio da conta corporativa ou de estudante, ou você pode especificar diretamente a URL onde os recursos estão nos casos em que o cliente não consegue encontrá-los. Depois da assinatura de um workspace, é possível iniciar recursos com um dos seguintes métodos:
+Há duas maneiras de assinar um workspace. O cliente pode tentar descobrir os recursos disponíveis para você por meio da sua conta corporativa ou de estudante, ou, caso ele não consiga encontrá-los, você pode especificar diretamente a URL onde os recursos estão. Depois da assinatura de um workspace, é possível iniciar recursos com um dos seguintes métodos:
 
 - Acesse a Central de Conexão e clique duas vezes em um recurso para iniciá-lo.
 - Também é possível acessar o menu Iniciar e procurar uma pasta com o nome do Workspace ou inserir o nome do recurso na barra de pesquisa.
@@ -71,7 +71,7 @@ Há duas maneiras de assinar um workspace. O cliente pode tentar descobrir os re
 
 1. Na página principal do cliente, toque em **Assinar com URL**.
 2. Insira a URL do workspace ou o endereço de email:
-   - Se você usar a **URL do workspace**, use aquela que o administrador lhe forneceu. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, será possível usar um das seguintes URLs:
+   - Se você usar a **URL do workspace**, use aquela que o administrador lhe forneceu. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, será possível usar uma das seguintes URLs:
      - Área de Trabalho Virtual do Windows no outono de 2019: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
      - Área de Trabalho Virtual do Windows na primavera de 2020: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
    - Para usar o **email**, insira o seu. Isso instrui o cliente a procurar uma URL associada ao endereço de email caso o administrador tenha configurado a [descoberta de email](../rds-email-discovery.md).
