@@ -7,12 +7,12 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c50353316db4288f01893125ecd651db63cbb7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
+ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826349"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84205627"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de erro de ativação do Windows
 
@@ -33,7 +33,7 @@ O SaRA (Assistente de Recuperação e Suporte da Microsoft) simplifica a soluç�
 
 Essa ferramenta tentará ativar o Windows. Se ele retornar um código de erro de ativação, a ferramenta exibirá soluções direcionadas para códigos de erro conhecidos.
 
-Há suporte para os seguintes códigos de erro: 0xC004F038, 0xC004F039, 0xC004F041, 0xC004F074, 0xC004C008.
+Há suporte para os seguintes códigos de erro: 0xC004F038, 0xC004F039, 0xC004F041, 0xC004F074, 0xC004C008, 0x8007007b, 0xC004C003, 0x8007232B.
 
 ## <a name="summary-of-error-codes"></a>Resumo dos códigos de erro
 

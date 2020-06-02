@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/04/2020
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a04d6058b40d87dba7116760bbab164979435ab
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c229eefbc0cc00ed1af940cd986c89e979873d29
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861299"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025497"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -47,23 +47,37 @@ Também é possível pesquisar manualmente novas atualizações para o cliente:
 
 1. Na Central de Conexão, toque no menu de estouro ( **...** ) na barra de comandos na parte superior do cliente.
 2. Selecione **Sobre** no menu suspenso.
-3. Toque em **Verificar se há atualizações**.
+3. O cliente procura atualizações automaticamente.
 4. Se houver uma atualização disponível, toque em **Instalar atualização** para atualizar o cliente.
 
-## <a name="feeds"></a>Feeds
+## <a name="workspaces"></a>Workspaces
 
-Obtenha a lista de recursos gerenciados que você pode acessar, como aplicativos e áreas de trabalho, assinando o feed que seu administrador forneceu. Quando você assina, os recursos são disponibilizados no PC local. No momento, o cliente da Área de Trabalho do Windows dá suporte a recursos publicados na Área de Trabalho Virtual do Windows.
+Obtenha a lista de recursos gerenciados que você pode acessar, como aplicativos e áreas de trabalho, assinando o Workspace que seu administrador forneceu. Quando você assina, os recursos são disponibilizados no PC local. No momento, o cliente da Área de Trabalho do Windows dá suporte a recursos publicados na Área de Trabalho Virtual do Windows.
 
-### <a name="subscribe-to-a-feed"></a>Assinar um feed
+### <a name="subscribe-to-a-workspace"></a>Assinar um Workspace
 
-1. Na página principal do cliente, também conhecida como Central de Conexão, toque em **Assinar**.
-2. Entre com sua conta quando solicitado.
-3. Os recursos serão exibidos na Central de Conexão agrupados por Workspace.
-
-É possível iniciar recursos com um dos seguintes métodos:
+Há duas maneiras de assinar um workspace. O cliente pode tentar descobrir os recursos disponíveis por meio da conta corporativa ou de estudante, ou você pode especificar diretamente a URL onde os recursos estão nos casos em que o cliente não consegue encontrá-los. Depois da assinatura de um workspace, é possível iniciar recursos com um dos seguintes métodos:
 
 - Acesse a Central de Conexão e clique duas vezes em um recurso para iniciá-lo.
 - Também é possível acessar o menu Iniciar e procurar uma pasta com o nome do Workspace ou inserir o nome do recurso na barra de pesquisa.
+
+#### <a name="subscribe-with-a-user-account"></a>Assinar com uma conta de usuário
+
+1. Na página principal do cliente, toque em **Assinar**.
+2. Entre com sua conta quando solicitado.
+3. Os recursos serão exibidos na Central de Conexão agrupados por Workspace.
+
+#### <a name="subscribe-with-url"></a>Assinar com URL
+
+1. Na página principal do cliente, toque em **Assinar com URL**.
+2. Insira a URL do workspace ou o endereço de email:
+   - Se você usar a **URL do workspace**, use aquela que o administrador lhe forneceu. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, será possível usar um das seguintes URLs:
+     - Área de Trabalho Virtual do Windows no outono de 2019: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Área de Trabalho Virtual do Windows na primavera de 2020: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+   - Para usar o **email**, insira o seu. Isso instrui o cliente a procurar uma URL associada ao endereço de email caso o administrador tenha configurado a [descoberta de email](../rds-email-discovery.md).
+3. Toque em **Avançar**.
+4. Entre com sua conta quando solicitado.
+5. Os recursos serão exibidos na Central de Conexão agrupados por Workspace.
 
 ### <a name="workspace-details"></a>Detalhes do Workspace
 
@@ -81,13 +95,17 @@ Acessar o painel Detalhes:
 2. Selecione **Detalhes** no menu suspenso.
 3. O painel Detalhes é exibido no lado direito do cliente.
 
-Depois de assinar, o Workspace será atualizado automaticamente de forma regular. Os recursos podem ser adicionados, alterados ou removidos com base nas alterações realizadas pelo seu administrador.
+Depois de assinar, o Workspace será atualizado automaticamente de maneira regular. Os recursos podem ser adicionados, alterados ou removidos com base nas alterações realizadas pelo seu administrador.
 
-Também é possível procurar manualmente atualizações para os recursos, quando necessário, selecionando **Atualizar agora** no painel Detalhes.
+Também é possível procurar manualmente atualizações para os recursos, quando necessário, selecionando **Atualizar** no painel Detalhes.
 
-### <a name="unsubscribe-from-a-feed"></a>Cancelar a assinatura de um feed
+### <a name="refreshing-a-workspace"></a>Atualizando um Workspace
 
-Esta seção ensinará como cancelar a assinatura de um feed. É possível cancelar a assinatura para assinar novamente com uma conta diferente ou remover seus recursos do sistema.
+Você pode atualizar manualmente um Workspace selecionando **Atualizar** no menu de estouro ( **...** ) ao lado do Workspace.
+
+### <a name="unsubscribe-from-a-workspace"></a>Cancelar a assinatura de um Workspace
+
+Esta seção ensinará como cancelar a assinatura de um Workspace. É possível cancelar a assinatura para assinar novamente com uma conta diferente ou remover seus recursos do sistema.
 
 1. Na Central de Conexão, toque no menu de estouro ( **...** ) ao lado do Workspace.
 2. Selecione **Cancelar assinatura** no menu suspenso.
@@ -103,15 +121,20 @@ Os workspaces podem conter vários recursos gerenciados, incluindo áreas de tra
 
 O cliente usará as configurações definidas pelo administrador, a menos que você desative a opção **Usar configurações padrão**. Isso permite que você configure as seguintes opções:
 
-- **Usar várias exibições** alterna a sessão da área de trabalho entre o uso de uma ou de várias exibições.
-- **Selecionar as exibições a serem usadas para a sessão** especifica quais exibições locais usar para a sessão. Todas as exibições selecionadas devem ser adjacentes umas às outras. Essa configuração é desabilitada automaticamente quando você usa uma só exibição.
-- **Iniciar em tela inteira** determina se a sessão será iniciada no modo de tela inteira ou de janela. Essa configuração é habilitada automaticamente ao usar várias exibições.
-- **Atualizar a resolução ao redimensionar** faz com que a resolução de Área de Trabalho Remota seja atualizada automaticamente quando você redimensiona a sessão no modo de janela. Quando desabilitada, a sessão sempre permanece na resolução especificada em **Resolução**. Essa configuração é habilitada automaticamente ao usar várias exibições.
-- A **Resolução** permite que você especifique a resolução da área de trabalho remota. A sessão reterá essa resolução por toda a duração. Essa configuração será desabilitada automaticamente caso a resolução seja definida como atualizar ao redimensionar.
-- **Alterar o tamanho do texto e dos aplicativos** especifica o tamanho do conteúdo da sessão. Essa configuração se aplica somente ao se conectar ao Windows 8.1 e posterior ou ao Windows Server 2012 R2 e posterior. Essa configuração será desabilitada automaticamente caso a resolução seja definida como atualizar ao redimensionar.
-- **Ajustar a sessão à janela** determina como a sessão é exibida quando a resolução da área de trabalho remota difere do tamanho da janela local. Quando habilitado, o conteúdo da sessão será redimensionado para se ajustar dentro da janela enquanto preserva a taxa de proporção da sessão. Quando desabilitadas, as barras de rolagem ou as áreas pretas serão mostradas quando a resolução e o tamanho da janela não corresponderem.
+- **Exibir configuração** seleciona quais telas usar para a sessão de área de trabalho e afeta quais configurações adicionais estão disponíveis.
+  - **Todas as telas** garante que a sessão sempre use todas as suas telas locais, mesmo quando algumas delas forem adicionadas ou removidas mais tarde.
+  - **Tela única** garante que a sessão sempre use uma única tela e permite que você configure suas propriedades.
+  - **Selecionar telas** permite que você escolha quais telas usar para a sessão e fornece uma opção para alterar dinamicamente a lista de telas durante a sessão.
+- **Selecionar as exibições a serem usadas para a sessão** especifica quais exibições locais usar para a sessão. Todas as exibições selecionadas devem ser adjacentes umas às outras. Essa configuração só está disponível no modo **Selecionar tela**.
+- **Maximizar para telas atuais** determina quais telas as sessões usarão ao passar para tela inteira. Quando habilitada, a sessão é exibida em tela inteira nas exibições tocadas pela janela da sessão. Isso permite que você altere as telas durante a sessão. Quando desabilitada, a sessão é exibida em tela inteira na mesma tela em que estava na última vez em que esteve em tela inteira. Essa configuração só está disponível no modo **Selecionar tela**, e será desabilitada em outro caso.
+- **Exibição única quando em janela** determina quais telas ficam disponíveis na sessão ao sair da tela inteira. Quando habilitada, a sessão alterna para uma única tela no modo de janela. Quando desabilitada, a sessão retém as mesmas telas no modo de janela, como na tela inteira. Essa configuração só está disponível nos modos **Todas as telas** e **Selecionar tela**, e será desabilitada em outros casos.
+- **Iniciar em tela inteira** determina se a sessão será iniciada no modo de tela inteira ou de janela. Essa configuração só está disponível no modo **Tela única** e será desabilitada em outros casos.
+- **Ajustar a sessão à janela** determina como a sessão é exibida quando a resolução da área de trabalho remota difere do tamanho da janela local. Quando habilitado, o conteúdo da sessão será redimensionado para se ajustar dentro da janela enquanto preserva a taxa de proporção da sessão. Quando desabilitadas, as barras de rolagem ou as áreas pretas serão mostradas quando a resolução e o tamanho da janela não corresponderem. Essa configuração está disponível em todos os modos.
+- **Atualizar a resolução ao redimensionar** faz com que a resolução de área de trabalho remota seja atualizada automaticamente quando você redimensiona a sessão no modo de janela. Quando desabilitada, a sessão sempre permanece na resolução especificada em **Resolução**. Essa configuração só está disponível no modo **Tela única** e será desabilitada em outros casos.
+- A **Resolução** permite que você especifique a resolução da área de trabalho remota. A sessão reterá essa resolução por toda a duração. Essa configuração só está disponível no modo **Tela única** e quando **Atualizar a resolução ao redimensionar** está desabilitado.
+- **Alterar o tamanho do texto e dos aplicativos** especifica o tamanho do conteúdo da sessão. Essa configuração se aplica somente ao se conectar ao Windows 8.1 e posterior ou ao Windows Server 2012 R2 e posterior. Essa configuração só está disponível no modo **Tela única** e quando **Atualizar a resolução ao redimensionar** está desabilitado.
 
-## <a name="provide-feedback"></a>Envie comentários
+## <a name="provide-feedback"></a>Fornecer comentários
 
 Tem uma sugestão de recursos ou deseja relatar um problema? Conte-nos usando o [Hub de Comentários](feedback-hub://?tabid=2&contextid=883). Você também pode acessar o Hub de Feedback por meio do cliente:
 

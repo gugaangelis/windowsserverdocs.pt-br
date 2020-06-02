@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/14/2020
+ms.date: 05/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81279692"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025507"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -26,14 +26,35 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Público     |1.2.790  |
-|Participante do Programa Windows Insider    |1.2.940  |
+|Público     |1.2.1026 |
+|Participante do Programa Windows Insider    |1.2.1026 |
 
-## <a name="updates-for-version-12940"></a>Atualizações para a versão 1.2.940
+## <a name="updates-for-version-121026"></a>Atualizações para a versão 1.2.1026
 
-*Data da publicação: 14/04/2020*
+*Data da publicação: 27/05/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
+
+- Agora, ao assinar, é possível escolher a conta em vez de digitar o endereço de email.
+- Foi adicionada uma nova opção **Assinar com URL** que permite especificar a URL do workspace que você está assinando ou aproveitar, quando disponível, a [descoberta de email](../rds-email-discovery.md) nos casos em que não conseguimos localizar seus recursos automaticamente. Isso é parecido com o processo de assinatura em outros clientes da Área de Trabalho Remota. E pode ser usado para assinar diretamente os workspaces da atualização da primavera de 2020 para o WVD.
+- Foi adicionado suporte para assinar um workspace usando um novo [esquema de URI](remote-desktop-uri.md) que pode ser enviado em um email para os usuários ou adicionado a um site de suporte.
+- Foi adicionada uma nova caixa de diálogo **Informações da conexão** que fornece detalhes de cliente, rede e servidor para sessões de área de trabalho e de aplicativo. Você pode acessar a caixa de diálogo na barra de conexão no modo de tela inteira ou no menu de sistema quando em janela.
+- As sessões de área de trabalho iniciadas no modo de janela agora sempre maximizam em vez de ficar em tela inteira ao maximizar a janela. Use a opção **Tela inteira** no menu de sistema para entrar em tela inteira.
+- O prompt Cancelar assinatura agora exibe um ícone de aviso e mostra os nomes do workspace como uma lista com marcadores.
+- Foi adicionada a seção Detalhes a mais caixas de diálogo de erro para ajudar a diagnosticar problemas.
+- Foi adicionado um carimbo de data/hora à seção Detalhes das caixas de diálogo de erro.
+- Corrigido um problema em que a configuração **desktop size id** do arquivo do RDP não funcionava corretamente.
+- Corrigido um problema em que a configuração de exibição **Atualizar a resolução ao redimensionar** não se aplicava após iniciar a sessão.
+- Problemas de localização corrigidos no painel de configurações da área de trabalho.
+- Foi corrigido o tamanho da caixa de foco ao alternar entre controles no painel de configurações da área de trabalho.
+- Corrigido um problema que fazia com que os nomes de recursos ficassem difíceis de ler no modo de alto contraste.
+- Corrigido um problema que fazia com que a notificação de atualização na central de ações fosse mostrada mais de uma vez por dia.
+
+## <a name="updates-for-version-12945"></a>Atualizações para a versão 1.2.945
+
+*Data da publicação: 28/04/2020*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - Adição de novas opções de configurações de exibição para conexões da área de trabalho disponíveis ao clicar com o botão direito do mouse em um ícone de área de trabalho no Centro de Conexão.
   - Agora há três opções de configuração de exibição: **Todas as exibições**, **Exibição única** e **Exibições selecionadas**.
@@ -42,8 +63,11 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
   - Adicionamos uma nova **Exibição única quando está em modo de janela** para todas as exibições e modos de exibição selecionados. A opção alterna sua sessão automaticamente para uma exibição única quando você sai do modo de tela inteira e retorna automaticamente para várias exibições quando você maximiza a janela.
 - Adicionamos um novo grupo **Configurações de exibição** ao menu de sistema que é exibido quando você clica com o botão direito do mouse na barra de título de uma sessão de área de trabalho do modo de janela. Isso permitirá que você altere algumas configurações dinamicamente durante uma sessão. Por exemplo, você pode alterar as novas configurações de **Modo de exibição única quando está em modo de janela** e **Maximizar para exibições atuais**.
 - Quando você sair da tela inteira, a janela da sessão voltará ao local original de quando você entrou em tela inteira pela primeira vez.
+- A atualização em segundo plano para Workspaces foi alterada para ocorrer a cada quatro horas, em vez de a cada hora. Agora ocorre uma atualização automaticamente ao iniciar o cliente.
 - A redefinição dos dados do usuário na página Sobre agora realiza o redirecionamento para o Centro de Conexão quando concluída, em vez de fechar o cliente.
+- Os itens no menu de sistema para conexões de área de trabalho foram reordenados e o tópico de Ajuda agora aponta para a documentação do cliente.
 - Resolvemos alguns problemas de acessibilidade com navegação por guias e leitores de tela.
+- Corrigido um problema em que a caixa de diálogo de autenticação do Azure Active Directory aparecia atrás da janela da sessão.
 - Correção de um problema de cintilação e redução ao arrastar uma janela de sessão da área de trabalho entre exibições de diferentes fatores de escala.
 - Correção de um erro que ocorreu ao redirecionar câmeras.
 - Correção de várias falhas para aprimorar a confiabilidade.
