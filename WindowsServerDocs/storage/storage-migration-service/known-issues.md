@@ -4,16 +4,16 @@ description: Problemas conhecidos e suporte de solução de problemas para o ser
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 02/10/2020
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
-ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
+ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80661067"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306495"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -30,7 +30,7 @@ O serviço de migração de armazenamento contém logs de eventos para o serviç
 - Logs de aplicativos e serviços \ Microsoft \ Windows \ StorageMigrationService
 - Logs de aplicativos e serviços \ Microsoft \ Windows \ StorageMigrationService-proxy
 
-Se você precisar reunir esses logs para exibição offline ou para enviar para Suporte da Microsoft, há um script do PowerShell de software livre disponível no GitHub:
+Se você precisar reunir esses logs para exibição offline ou para enviar para Suporte da Microsoft, há um script do PowerShell de código aberto disponível no GitHub:
 
  [Auxiliar do serviço de migração de armazenamento](https://aka.ms/smslogs) 
 
@@ -40,7 +40,7 @@ Examine o LEIAme para uso.
 
 Ao usar a versão 1809 do centro de administração do Windows para gerenciar um Orchestrator do Windows Server 2019, você não vê a opção de ferramenta para o serviço de migração de armazenamento. 
 
-A extensão de serviço de migração de armazenamento do Windows Admin Center é associada à versão somente para gerenciar o Windows Server 2019 versão 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas operacionais Windows Server mais antigos ou visualizações Insider, a ferramenta não será exibida. Esse comportamento é previsto no design. 
+A extensão de serviço de migração de armazenamento do Windows Admin Center é associada à versão somente para gerenciar o Windows Server 2019 versão 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas operacionais Windows Server mais antigos ou visualizações Insider, a ferramenta não será exibida. Este comportamento ocorre por design. 
 
 Para resolver, use ou atualize para o Windows Server 2019 Build 1809 ou posterior.
 
@@ -64,7 +64,7 @@ Corrigimos esse problema em uma versão posterior do Windows Server.
 
 Ao usar o centro de administração do Windows ou o PowerShell para baixar o log CSV somente erros detalhados de operações de transferência, você recebe o erro:
 
- >   Log de transferência-Verifique se o compartilhamento de arquivos é permitido em seu firewall. : Esta operação de solicitação enviada para net. TCP://localhost: 28940/SMS/Service/1/Transfer não recebeu uma resposta dentro do tempo limite configurado (00:01:00). O tempo alocado para esta operação pode ter sido uma parte de um tempo limite maior. Isso pode ocorrer porque o serviço ainda está processando a operação ou porque o serviço não pôde enviar uma mensagem de resposta. Considere aumentar o tempo limite da operação (convertendo o canal/proxy para IContextChannel e definindo a propriedade OperationTimeout) e verifique se o serviço é capaz de se conectar ao cliente.
+ >   Log de transferência-Verifique se o compartilhamento de arquivos é permitido em seu firewall. : Esta operação de solicitação enviada para net. TCP://localhost: 28940/SMS/Service/1/Transfer não recebeu uma resposta dentro do tempo limite configurado (00:01:00). O tempo determinado para essa operação pode ter sido uma parte de um tempo limite maior. Isso pode ocorrer porque o serviço ainda está processando a operação ou porque o serviço não pôde enviar uma mensagem de resposta. Considere aumentar o tempo limite da operação (convertendo o canal/proxy para IContextChannel e definindo a propriedade OperationTimeout) e verifique se o serviço é capaz de se conectar ao cliente.
 
 Esse problema é causado por um número muito grande de arquivos transferidos que não podem ser filtrados no tempo limite de um minuto padrão permitido pelo serviço de migração de armazenamento. 
 
@@ -90,7 +90,7 @@ Para contornar este problema:
 7. Clique com o botão direito do mouse em "WcfOperationTimeoutInMinutes" e clique em Modificar. 
 8. Na caixa dados base, clique em "decimal"
 9. Na caixa dados do valor, digite "10" e clique em OK.
-10. Saia do editor do registro.
+10. Saia do Editor do Registro.
 11. Tente baixar o arquivo CSV somente erros novamente. 
 
 Pretendemos alterar esse comportamento em uma versão posterior do Windows Server 2019.  
@@ -136,7 +136,7 @@ Para resolver esse problema, instale [Windows Update 2 de abril de 2019 — KB44
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Hashes DFSR incompatíveis ao usar o serviço de migração de armazenamento para propagar dados
 
-Ao usar o serviço de migração de armazenamento para transferir arquivos para um novo destino, em seguida, configurar o Replicação do DFS (DFSR) para replicar esses dados com um servidor DFSR existente por meio de replicação pré-propagada ou clonagem de banco de dados DFSR, todos os arquivos terão um hash incompatibilidade e rereplicado. Os fluxos de dados, os fluxos de segurança, os tamanhos e os atributos parecem ser perfeitamente correspondidos depois de usar o SMS para transferi-los. Examinar os arquivos com ICACLS ou o log de depuração de clonagem de banco de dados DFSR revela:
+Ao usar o serviço de migração de armazenamento para transferir arquivos para um novo destino e, em seguida, configurar o Replicação do DFS para replicar esses dados com um servidor existente por meio de replicação pré-propagada ou clonagem de banco de dado Replicação do DFS, todos os arquivos terão uma incompatibilidade de hash e serão replicados novamente. Os fluxos de dados, os fluxos de segurança, os tamanhos e os atributos parecem ser perfeitamente correspondidos depois de usar o serviço de migração de armazenamento para transferi-los. Examinando os arquivos com ICACLS ou o Replicação do DFS log de depuração de clonagem de banco de dados revela:
 
 Arquivo de origem:
 
@@ -260,9 +260,9 @@ Depois de instalar o [KB4512534](https://support.microsoft.com/help/4512534/wind
     Description:
     02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
   
-Esse erro é causado por um defeito de código no serviço de migração de armazenamento quando você fornece credenciais de migração na forma de um UPN (nome principal do usuário), como 'meghan@contoso.com'. O serviço Orchestrator do serviço de migração de armazenamento não analisa corretamente esse formato, o que leva a uma falha em uma pesquisa de domínio que foi adicionada para suporte de migração de cluster em KB4512534 e 19H1.
+Esse erro é causado por um defeito de código no serviço de migração de armazenamento quando você fornece credenciais de migração na forma de um UPN (nome principal do usuário), como ' meghan@contoso.com '. O serviço Orchestrator do serviço de migração de armazenamento não analisa corretamente esse formato, o que leva a uma falha em uma pesquisa de domínio que foi adicionada para suporte de migração de cluster em KB4512534 e 19H1.
 
-Para solucionar esse problema, forneça credenciais no formato domínio \ usuário, como ' Contoso\Meghan '.
+Para contornar esse problema, forneça credenciais no formato domínio \ usuário, como ' Contoso\Meghan '.
 
 ## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>Erro "ServiceError0x9006" ou "o proxy não está disponível no momento". ao migrar para um cluster de failover do Windows Server
 
@@ -291,7 +291,7 @@ Ao tentar executar o inventário com o serviço de migração de armazenamento e
     DLL not found
     [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   
 
-Para solucionar esse problema, instale o "ferramentas de gerenciamento de cluster de failover" (RSAT-clustering-MGMT) no servidor que executa o Orchestrator do serviço de migração de armazenamento. 
+Para contornar esse problema, instale o "ferramentas de gerenciamento de cluster de failover" (RSAT-clustering-MGMT) no servidor que executa o Orchestrator do serviço de migração de armazenamento. 
 
 ## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Erro "não há mais pontos de extremidade disponíveis no mapeador de ponto de extremidades" ao executar o inventário em um computador de origem do Windows Server 2003
 
@@ -301,7 +301,7 @@ Ao tentar executar o inventário com o Orchestrator do serviço de migração de
 
 Esse problema é resolvido pela atualização do [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
 
-## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>A desinstalação de uma atualização do cumulutative impede que o serviço de migração de armazenamento seja iniciado
+## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>A desinstalação de uma atualização cumulativa impede a inicialização do serviço de migração de armazenamento
 
 A desinstalação de atualizações cumulativas do Windows Server pode impedir que o serviço de migração de armazenamento seja iniciado. Para resolver esse problema, você pode fazer backup e excluir o banco de dados do serviço de migração de armazenamento:
 
@@ -343,11 +343,11 @@ Ao tentar executar o corte de uma origem de cluster do Windows Server 2008 R2, a
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso do servidor de arquivos de origem do cluster e o endereço IP e, em seguida, alterando o endereço IP e o nome do cluster de destino para corresponder à origem original. 
+Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso do servidor de arquivos de origem do cluster e o endereço IP, alterando o endereço IP e o nome do cluster de destino para corresponder à origem original. 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar o DHCP 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar IPs estáticos 
 
-Ao tentar executar o recorte de um computador de origem, ter definido o computador de origem para usar um novo endereço IP estático (não DHCP) em uma ou mais interfaces de rede, o corte é paralisado na fase "38% mapeando interfaces de rede no comnputer de origem..." e você receberá o seguinte erro no log de eventos do SMS:
+Ao tentar executar o recorte de um computador de origem, ter definido o computador de origem para usar um novo endereço IP estático (não DHCP) em uma ou mais interfaces de rede, o corte é paralisado na fase "38% mapeando interfaces de rede no computador de origem..." e você receberá o seguinte erro no log de eventos do serviço de migração de armazenamento:
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -372,9 +372,13 @@ Ao tentar executar o recorte de um computador de origem, ter definido o computad
 
 Examinar o computador de origem mostra que o endereço IP original não é alterado. 
 
-Esse problema não ocorrerá se você selecionou "usar DHCP" na tela do centro de administração do Windows "configurar a transferência", somente se você especificar um novo endereço IP estático, sub-rede e gateway. 
+Esse problema não ocorrerá se você selecionou "usar DHCP" na tela do centro de administração do Windows "configurar a transferência", somente se você especificar um novo endereço IP estático. 
 
-Esse problema é resolvido pela atualização do [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
+Há duas soluções para esse problema: 
+
+1. Esse problema foi resolvido primeiro pela atualização do [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) . Esse código anterior removeu todo o uso de endereços IP estáticos.
+
+2. Se você não tiver especificado um endereço IP de gateway padrão nas interfaces de rede do computador de origem, esse problema ocorrerá mesmo com a atualização KB4537818. Para contornar esse problema, defina um endereço IP padrão válido nas interfaces de rede usando o applet conexões de rede (NCPA. CPL) ou o cmdlet Set-netroute do PowerShell.   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>Mais lento do que o esperado desempenho de retransferência
 
@@ -389,7 +393,7 @@ Depois de iniciar a transferência de ou para um controlador de domínio:
  1. Nenhum dado é migrado e nenhum compartilhamento é criado no destino.
  2. Há um símbolo de erro vermelho mostrado no centro de administração do Windows sem mensagem de erro
  3. Um ou mais usuários do AD e grupos locais de domínio têm seu nome e/ou atributo de logon anterior ao Windows 2000 alterado
- 4. Você verá o evento 3509 no Orchestrator do SMS:
+ 4. Você verá o evento 3509 no Orchestrator do serviço de migração de armazenamento:
  
         Log Name:      Microsoft-Windows-StorageMigrationService/Admin
         Source:        Microsoft-Windows-StorageMigrationService
@@ -415,7 +419,7 @@ Esse é o comportamento esperado se você tentou migrar do ou para um controlado
 
 Se você já executou a transferência uma ou mais vezes:
 
- 1. Use o seguinte comando do PowerShell do AD em um DC para localizar usuários ou grupos modificados (alterando SearchBase para corresponder ao nome do dinstringuished do domínio): 
+ 1. Use o seguinte comando do PowerShell do AD em um DC para localizar usuários ou grupos modificados (alterando SearchBase para corresponder ao nome distinto do domínio): 
 
     ```PowerShell
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
@@ -488,7 +492,7 @@ Neste estágio, o orquestrador do serviço de migração de armazenamento está 
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." 
 
-Ao tentar executar o corte em um computador de origem, o sobreCorte fica preso na fase "38% mapeando interfaces de rede no comnputer de origem..." e você receberá o seguinte erro no log de eventos do SMS:
+Ao tentar executar o corte em um computador de origem, o sobreCorte fica preso na fase "38% mapeando interfaces de rede no computador de origem..." e você receberá o seguinte erro no log de eventos do serviço de migração de armazenamento:
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -522,12 +526,12 @@ Ele também pode ser definido usando preferências de Política de Grupo com uma
 
 O serviço de migração de armazenamento habilita temporariamente o [LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows) como parte do processo de sobreCorte e, em seguida, remove-o quando terminar. Quando Política de Grupo aplica um objeto de Política de Grupo conflitante (GPO), ele substitui o serviço de migração de armazenamento e impede a transferência.
 
-Para solucionar esse problema, use uma das seguintes opções:
+Para contornar esse problema, use uma das seguintes opções:
 
 1. Mova temporariamente o computador de origem do Active Directory OU que aplica esse GPO conflitante. 
 2. Desabilite temporariamente o GPO que aplica essa política conflitante.
 3. Crie temporariamente um novo GPO que defina essa configuração como desabilitada e se aplique a uma UO específica de servidores de origem, com precedência mais alta do que quaisquer outros GPOs.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)

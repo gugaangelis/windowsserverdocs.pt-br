@@ -4,16 +4,16 @@ description: Perguntas frequentes sobre o serviço de migração de armazenament
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 08/19/2019
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 19f114dc663351f1b5d071340acf9c8a3de41617
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125137"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306505"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento
 
@@ -38,7 +38,7 @@ O serviço de migração de armazenamento não permite a migração entre Active
 
 ## <a name="are-clusters-supported-as-sources-or-destinations"></a>Há suporte para clusters como origens ou destinos?
 
-O serviço de migração de armazenamento dá suporte à migração de e para clusters após a instalação da atualização cumulativa [KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ou atualizações subsequentes. Isso inclui a migração de um cluster de origem para um cluster de destino, bem como a migração de um servidor de origem autônomo para um cluster de destino para fins de consolidação de dispositivos. 
+O serviço de migração de armazenamento dá suporte à migração de e para clusters após a instalação da atualização cumulativa [KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) ou atualizações subsequentes. Isso inclui a migração de um cluster de origem para um cluster de destino, bem como a migração de um servidor de origem autônomo para um cluster de destino para fins de consolidação de dispositivos. No entanto, não é possível migrar um cluster para um servidor autônomo. 
 
 ## <a name="do-local-groups-and-local-users-migrate"></a>Os grupos locais e os usuários locais são migrados?
 
@@ -63,21 +63,21 @@ O serviço de migração de armazenamento migra todos os sinalizadores, configur
     - Limite de usuários simultâneos
     - Continuamente disponível
     - Descrição           
-    - Criptografar dados
+    - Criptografar Dados
     - Comunicação remota de identidade
     - Infraestrutura
-    - {1&gt;Nome&lt;1}
+    - Nome
     - Caminho
     - Com escopo
     - Nome do escopo
     - Descritor de Segurança
     - Cópia de sombra
     - Especial
-    - Temporary
+    - Temporário
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>Posso consolidar vários servidores em um servidor?
 
-A versão do serviço de migração de armazenamento fornecida no Windows Server 2019 não dá suporte à consolidação de vários servidores em um servidor. Um exemplo de consolidação seria a migração de três servidores de origem separados, que podem ter os mesmos nomes de compartilhamento e caminhos de arquivo locais, em um único servidor novo que virtualizava esses caminhos e compartilhamentos para evitar qualquer sobreposição ou colisão e, em seguida, responder a todos os três nomes de servidores anteriores e endereço IP. No entanto, você pode migrar servidores autônomos para vários recursos de servidor de arquivos em um único cluster. 
+A versão do serviço de migração de armazenamento fornecida no Windows Server 2019 não dá suporte à consolidação de vários servidores em um servidor. Um exemplo de consolidação seria migrar três servidores de origem separados, que podem ter os mesmos nomes de compartilhamento e caminhos de arquivo locais – em um único servidor novo que virtualizava esses caminhos e compartilhamentos para evitar qualquer sobreposição ou colisão, então respondeu a todos os três nomes de servidores e endereços IP anteriores. No entanto, você pode migrar servidores autônomos para vários recursos de servidor de arquivos em um único cluster. 
 
 ## <a name="can-i-migrate-from-sources-other-than-windows-server"></a>Posso migrar de fontes diferentes do Windows Server?
 
@@ -99,11 +99,21 @@ O serviço de migração de armazenamento contém um mecanismo de leitura e cóp
     
     FileTransferThreadCount
 
-   O intervalo válido é de 1 a 128 no Windows Server 2019. Após a alteração, você deve reiniciar o serviço de proxy de serviço de migração de armazenamento em todos os computadores que participam de uma migração. Tome cuidado com essa configuração; a configuração mais alta pode exigir núcleos adicionais, desempenho de armazenamento e largura de banda de rede. Configurá-lo muito alto pode levar a um desempenho reduzido em comparação com as configurações padrão.
+   O intervalo válido é de 1 a 512 no Windows Server 2019. Você não precisa reiniciar o serviço para começar a usar essa configuração, desde que você crie um novo trabalho. Tome cuidado com essa configuração; a configuração mais alta pode exigir núcleos adicionais, desempenho de armazenamento e largura de banda de rede. Configurá-lo muito alto pode levar a um desempenho reduzido em comparação com as configurações padrão.
+
+- **Alterar threads de compartilhamento paralelo padrão.** O serviço de proxy de serviço de migração de armazenamento copia de 8 compartilhamentos simultaneamente em um determinado trabalho. Você pode aumentar o número de threads de compartilhamento simultâneos ajustando o seguinte registro REG_DWORD nome do valor em decimal no servidor do Orchestrator do serviço de migração de armazenamento:
+
+    HKEY_Local_Machine \Software\Microsoft\SMS
+    
+    EndpointFileTransferTaskCount 
+
+   O intervalo válido é de 1 a 512 no Windows Server 2019. Você não precisa reiniciar o serviço para começar a usar essa configuração, desde que você crie um novo trabalho. Tome cuidado com essa configuração; a configuração mais alta pode exigir núcleos adicionais, desempenho de armazenamento e largura de banda de rede. Configurá-lo muito alto pode levar a um desempenho reduzido em comparação com as configurações padrão. 
+   
+    A soma de FileTransferThreadCount e EndpointFileTransferTaskCount é quantos arquivos o serviço de migração de armazenamento pode copiar simultaneamente de um nó de origem em um trabalho. Para adicionar mais nós de origem paralelos, crie e execute trabalhos mais simultâneos.
 
 - **Adicione núcleos e memória.**  É altamente recomendável que os computadores de origem, Orchestrator e de destino tenham pelo menos dois núcleos de processador ou dois vCPUs, e mais pode ajudar significativamente o desempenho de inventário e transferência, especialmente quando combinado com FileTransferThreadCount (acima). Ao transferir arquivos maiores do que os formatos usuais do Office (gigabytes ou superior), o desempenho de transferência se beneficiará de mais memória do que o mínimo de 2 GB padrão.
 
-- **Criar vários trabalhos.** Ao criar um trabalho com várias fontes de servidor, cada servidor é contatado de modo Serial para inventário, transferência e transição. Isso significa que cada servidor deve concluir sua fase antes do início de outro servidor. Para executar mais servidores em paralelo, basta criar vários trabalhos, com cada trabalho contendo apenas um servidor. O SMS dá suporte a até 100 executando trabalhos simultaneamente, o que significa que um único orquestrador pode paralelizar muitos computadores de destino do Windows Server 2019. Não recomendamos a execução de vários trabalhos paralelos se os computadores de destino forem Windows Server 2016 ou Windows Server 2012 R2, assim como sem o serviço de proxy do SMS em execução no destino, o orquestrador deverá executar todas as transferências e poderá se tornar um atraso. A capacidade de execução de servidores em paralelo dentro de um único trabalho é um recurso que planejamos adicionar em uma versão posterior do SMS.
+- **Crie vários trabalhos.** Ao criar um trabalho com várias fontes de servidor, cada servidor é contatado de modo Serial para inventário, transferência e transição. Isso significa que cada servidor deve concluir sua fase antes do início de outro servidor. Para executar mais servidores em paralelo, basta criar vários trabalhos, com cada trabalho contendo apenas um servidor. O SMS dá suporte a até 100 executando trabalhos simultaneamente, o que significa que um único orquestrador pode paralelizar muitos computadores de destino do Windows Server 2019. Não recomendamos a execução de vários trabalhos paralelos se os computadores de destino forem Windows Server 2016 ou Windows Server 2012 R2, assim como sem o serviço de proxy do SMS em execução no destino, o orquestrador deverá executar todas as transferências e se tornar um afunilamento. A capacidade de execução de servidores em paralelo dentro de um único trabalho é um recurso que planejamos adicionar em uma versão posterior do SMS.
 
 - **Use o SMB 3 com redes RDMA.** Se estiver transferindo de um computador de origem do Windows Server 2012 ou posterior, o SMB 3. x dá suporte ao modo SMB direto e à rede RDMA. O RDMA move a maior parte do custo da CPU de transferência das CPUs da motherboard para processadores de NIC integrados, reduzindo a latência e a utilização da CPU do servidor. Além disso, redes RDMA, como ROCE e iWARP, normalmente têm largura de banda consideravelmente maior do que o TCP/Ethernet típico, incluindo 25, 50 e velocidades de 100 GB por interface. O uso do SMB Direct normalmente move o limite de velocidade de transferência da rede para o próprio armazenamento.   
 
@@ -133,12 +143,13 @@ A versão do serviço de migração de armazenamento fornecida no Windows Server
 O serviço de migração de armazenamento usa um banco de dados ESE (mecanismo de armazenamento extensível) que é instalado por padrão na pasta c:\programdata\microsoft\storagemigrationservice oculta. Esse banco de dados aumentará à medida que os trabalhos forem adicionados e as transferências forem concluídas e poderão consumir espaço em disco significativo após a migração de milhões de arquivos se você não excluir os trabalhos. Se o banco de dados precisar ser movido, execute as seguintes etapas:
 
 1. Pare o serviço de "serviço de migração de armazenamento" no computador do Orchestrator.
-2. Apropriar-se da pasta `%programdata%/Microsoft/StorageMigrationService`
+2. Apropriar-se da `%programdata%/Microsoft/StorageMigrationService` pasta
 3. Adicione sua conta de usuário para ter controle total sobre esse compartilhamento e todos os seus arquivos e subpastas.
 4. Mova a pasta para outra unidade no computador do Orchestrator.
 5. Defina o seguinte valor de REG_SZ do registro:
 
-    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath = *caminho para a nova pasta de banco de dados em um volume diferente* . 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath = *caminho para a nova pasta de banco de dados em um volume diferente*
+    
 6. Verifique se o sistema tem controle total para todos os arquivos e subpastas dessa pasta
 7. Remova suas próprias permissões de conta.
 8. Inicie o serviço "serviço de migração de armazenamento".
@@ -155,13 +166,13 @@ Ao executar uma transferência, o serviço de migração de armazenamento procur
 
 A maioria dos erros encontrados no arquivo CSV de transferência são os códigos de erro do sistema Windows. Você pode descobrir o que cada erro significa examinando a [documentação de códigos de erro do Win32](https://docs.microsoft.com/windows/win32/debug/system-error-codes). 
 
-## <a name="give-feedback"></a>Quais são minhas opções para fornecer comentários, arquivos de erros ou obter suporte?
+## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>Quais são minhas opções para fornecer comentários, arquivos de erros ou obter suporte?
 
 Para fornecer comentários sobre o serviço de migração de armazenamento:
 
 - Use a ferramenta de Hub de comentários incluída no Windows 10, clicando em "sugerir um recurso" e especificando a categoria do "Windows Server" e a subcategoria de "migração de armazenamento"
 - Usar o site [UserVoice do Windows Server](https://windowsserver.uservoice.com)
-- smsfeed@microsoft.com de email
+- Email smsfeed@microsoft.com
 
 Para arquivar bugs:
 
@@ -174,6 +185,6 @@ Para obter suporte:
  - Poste no [Fórum do TechNet do Windows Server 2019](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc) 
  - Abrir um caso de suporte por meio de [suporte da Microsoft](https://support.microsoft.com)
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Veja também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)
