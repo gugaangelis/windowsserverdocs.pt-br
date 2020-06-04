@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 843ed0b3ebf25d662d0b90c17f8fe23548829a7e
-ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
+ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192592"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333908"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>Bloqueio de Extranet do AD FS e Extranet Smart Lockout
 
@@ -144,14 +144,14 @@ A tabela AccountActivity é populada durante o modo ' somente log ' e o modo ' i
 Esse recurso usa os logs de auditoria de segurança, portanto, a auditoria deve ser habilitada em AD FS, bem como a política local em todos os servidores de AD FS.
 
 ### <a name="configuration-instructions"></a>Instruções de configuração
-O bloqueio inteligente de extranet usa a propriedade **ExtranetLockoutEnabled**do ADFS. Essa propriedade foi usada anteriormente para controlar "bloqueio de software de extranet" no servidor 2012R2. Se o bloqueio flexível de extranet tiver sido habilitado, para exibir a configuração da ` Get-AdfsProperties` propriedade atual, execute.
+O bloqueio inteligente de extranet usa a propriedade **ExtranetLockoutEnabled**do ADFS. Essa propriedade foi usada anteriormente para controlar "bloqueio de software de extranet" no servidor 2012R2. Se o bloqueio flexível de extranet tiver sido habilitado, para exibir a configuração da propriedade atual, execute ` Get-AdfsProperties` .
 
 ### <a name="configuration-recommendations"></a>Recomendações de configuração
 Ao configurar o bloqueio inteligente da extranet, siga as práticas recomendadas para definir limites:  
 
 `ExtranetObservationWindow (new-timespan -Minutes 30)`
 
-`ExtranetLockoutThreshold: – 2x AD Threshold Value`
+`ExtranetLockoutThreshold: Half of AD Threshold Value`
 
 Valor do AD: 20, ExtranetLockoutThreshold: 10
 
