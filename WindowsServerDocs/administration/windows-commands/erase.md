@@ -9,19 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437121"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354676"
 ---
 # <a name="erase"></a>erase
 
-Exclui um ou mais arquivos. Esse comando executa as mesmas ações que o comando **del** .
+Exclui um ou mais arquivos. Se você usar **apagar** para excluir um arquivo do disco, não poderá recuperá-lo.
 
-> [!WARNING]
-> Se você usar **apagar** para excluir um arquivo do disco, não poderá recuperá-lo.
+> [!NOTE]
+> Esse comando é o mesmo que o [comando del](del.md).
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -97,3 +98,5 @@ erase /a:r *.*
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando del](del.md)

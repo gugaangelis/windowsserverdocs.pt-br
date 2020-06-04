@@ -1,6 +1,6 @@
 ---
 title: mais
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando more, que exibe uma tela de saída de cada vez.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,107 +9,105 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: f600d25dac32be2e7a0ebc2504a03dbf01235169
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 042669aa638990375157d08d9e12840ade486165
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723948"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354566"
 ---
 # <a name="more"></a>mais
 
-
-
 Exibe uma tela de saída de cada vez.
 
-
+> [!NOTE]
+> O comando **more** , com parâmetros diferentes, também está disponível no console de recuperação.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-<Command> | more [/c] [/p] [/s] [/t<N>] [+<N>]
-more [[/c] [/p] [/s] [/t<N>] [+<N>]] < [<Drive>:][<Path>]<FileName>
-more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
+<command> | more [/c] [/p] [/s] [/t<n>] [+<n>]
+more [[/c] [/p] [/s] [/t<n>] [+<n>]] < [<drive>:][<path>]<filename>
+more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|           Parâmetro            |                               Descrição                               |
-|--------------------------------|-------------------------------------------------------------------------|
-|           \<> de comando           |      Especifica um comando para o qual você deseja exibir a saída.      |
-|               /c               |               Limpa a tela antes de exibir uma página.               |
-|               /p               |                      Expande os caracteres de feed de formulário.                      |
-|               /s               |          Exibe várias linhas em branco como uma única linha em branco.          |
-|             /t\<N>             |         Exibe as guias como o número de espaços especificado por *N*.         |
-|             +\<N>              |     Exibe o primeiro arquivo que começa na linha especificada por *N*.     |
-| [\<Unidade>:] [\<Caminho>] \<Nome de arquivo> |          Especifica o local e o nome de um arquivo a ser exibido.          |
-|            \<Arquivos>            | Especifica uma lista de arquivos a serem exibidos. Separe os nomes de arquivos com um espaço. |
-|               /?               |                  Exibe a ajuda no prompt de comando.                   |
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<command>` | Especifica um comando para o qual você deseja exibir a saída. |
+| /c | Limpa a tela antes de exibir uma página. |
+| /p | Expande os caracteres de feed de formulário. |
+| /s | Exibe várias linhas em branco como uma única linha em branco. |
+| /t`<n>` | Exibe as guias como o número de espaços especificado por *n*. |
+| +`<n>` | Exibe o primeiro arquivo, começando na linha especificada por *n*. |
+| `[<drive>:][<path>]<filename>` | Especifica o local e o nome de um arquivo a ser exibido. |
+| `<files>` | Especifica uma lista de arquivos a serem exibidos. Os arquivos devem ser separados usando espaços. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
--   Os seguintes subcomandos são aceitos no prompt **mais** (`-- More --`). 
+- Os seguintes subcomandos são aceitos no prompt **mais** ( `-- More --` ), incluindo:
 
     | Chave | Ação |
     | --- | ------ |
-    | BARRA DE ESPAÇOS | Exibe a próxima página. |
-    | Enter | Exibe a próxima linha. |
-    | f | Exibe o próximo arquivo. |
-    | q | Encerra o comando **more** . |
+    | BARRA DE ESPAÇOS | Pressione a **barra de espaços** para exibir a próxima tela. |
+    | Enter | Pressione **Enter** para exibir o arquivo uma linha por vez. |
+    | f | Pressione **F** para exibir o próximo arquivo listado na linha de comando. |
+    | q | Pressione **Q** para fechar o comando **more** . |
     | = | Mostra o número da linha. |
-    | p \<N> | Exibe as próximas *N* linhas. |
-    | s \<N> |S KIPS as próximas *N* linhas. |
-    | ? | Mostra os comandos que estão disponíveis no prompt **mais** .| 
-    
--   Ao usar o caractere de redirecionamento**<**(), você deve especificar um nome de arquivo como a origem. Ao usar o pipe (**\|**), você pode usar comandos como **dir**, **Sort**e **Type**.
--   O comando **more** , com parâmetros diferentes, está disponível no console de recuperação.
+    | DTI`<n>` | Pressione **P** para exibir as próximas *n* linhas. |
+    | &`<n>` | Pressione **S** para ignorar as próximas *n* linhas. |
+    | ? | Pressionar **?** para mostrar os comandos que estão disponíveis no prompt **mais** .|
 
-## <a name="examples"></a>Exemplos
+- Se você usar o caractere de redirecionamento ( `<` ), também deverá especificar um nome de arquivo como a origem.
 
-Para exibir a primeira tela de informações de um arquivo chamado clients. New, digite um dos seguintes comandos:
+- Se você usar o pipe ( `|` ), poderá usar comandos como **dir**, **Sort**e **Type**.
+
+### <a name="examples"></a>Exemplos
+
+Para exibir a primeira tela de informações de um arquivo chamado *clients. New*, digite um dos seguintes comandos:
+
 ```
 more < clients.new
 type clients.new | more
 ```
-O comando **more** exibe a primeira tela de informações de clients. New e, em seguida, exibe o seguinte prompt:
-```
--- More --
-```
-Em seguida, você pode pressionar a barra de espaços para ver a próxima tela de informações.
 
-Para limpar a tela e remover todas as linhas em branco extras antes de exibir o arquivo clients. New, digite um dos seguintes comandos:
+O comando **more** exibe a primeira tela de informações de clients. New, e você pode pressionar a barra de espaços para ver a próxima tela de informações.
+
+Para limpar a tela e remover todas as linhas em branco extras antes de exibir o arquivo *clients. New*, digite um dos seguintes comandos:
+
 ```
 more /c /s < clients.new
 type clients.new | more /c /s
 ```
-O comando **more** exibe a primeira tela de informações de clients. New e, em seguida, exibe o seguinte prompt:
+
+Para exibir o número da linha atual no prompt **mais** , digite:
+
 ```
--- More --
+more =
 ```
 
-### <a name="using-more-subcommands"></a>Usando mais subcomandos
+O número da linha atual é adicionado ao prompt **mais** , como`-- More [Line: 24] --`
 
-Os exemplos a seguir podem ser usados no prompt **mais** (`-- More --`).
-- Para exibir o arquivo uma linha por vez, pressione ENTER no prompt **mais** .
-- Para exibir a próxima tela, pressione a barra de espaços no prompt **mais** .
-- Para exibir o próximo arquivo listado na linha de comando, digite **f** no prompt **mais** .
-- Para mostrar os comandos disponíveis, digite **?** no prompt **mais** .
-- Para encerrar **mais**, digite **q** no prompt **mais** .
-- Para exibir o número de linha atual, **=** digite no prompt **mais** . O número da linha atual é adicionado ao prompt **mais** da seguinte maneira:  
-  ```
-  -- More [Line: 24] --
-  ```  
-- Para exibir um número específico de linhas, digite **p** no prompt **mais** . **Mais** solicita o número de linhas a serem exibidas da seguinte maneira:  
-  ```
-  -- More -- Lines:
-  ```  
-  Digite o número de linhas a serem exibidas e pressione ENTER. **Mais** exibe o número especificado de linhas.
-- Para ignorar um número específico de linhas, digite **s** no prompt **mais** . **Mais** solicita o número de linhas a serem ignoradas da seguinte maneira:  
-  ```
-  -- More -- Lines:
-  ```  
-  Digite o número de linhas a serem ignoradas e pressione ENTER. **Mais** ignora o número especificado de linhas e exibe a próxima tela de informações.
+Para exibir um número específico de linhas no prompt **mais** , digite:
+
+```
+more p
+```
+
+A solicitação **mais** solicita o número de linhas a serem exibidas, da seguinte maneira: `-- More -- Lines:` . Digite o número de linhas a serem exibidas e pressione ENTER. A tela é alterada para mostrar apenas o número de linhas.
+
+Para ignorar um número específico de linhas no prompt **mais** , digite:
+
+```
+more s
+```
+
+A solicitação **mais** solicita o número de linhas a serem ignoradas, da seguinte maneira: `-- More -- Lines:` . Digite o número de linhas a serem ignoradas e pressione ENTER. A tela é alterada para mostrar que essas linhas são ignoradas.
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Ambiente de recuperação do Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

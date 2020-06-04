@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3e781e49aa978288de45da90224a3f1c2b247b1
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 546f867b2cde199f54975a127b0faf11130996d2
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992486"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354666"
 ---
 # <a name="diskpart-scripts-and-examples"></a>scripts e exemplos do DiskPart
 
@@ -49,7 +49,7 @@ Para criar um script do DiskPart, crie um arquivo de texto que contenha os coman
 
 ### <a name="remarks"></a>Comentários
 
-- Ao usar o comando **DiskPart** como parte de um script, recomendamos que você conclua todas as operações do DiskPart juntas como parte de um único script do DiskPart. Você pode executar scripts do DiskPart consecutivos, mas deve permitir pelo menos 15 segundos entre cada script para um desligamento completo da execução anterior antes de executar o comando **DiskPart** novamente em scripts sucessivos. Caso contrário, os scripts sucessivos podem falhar. Você pode adicionar uma pausa entre scripts do DiskPart consecutivos adicionando `timeout /t 15` o comando ao arquivo em lotes junto com seus scripts do DiskPart.
+- Ao usar o comando **DiskPart** como parte de um script, recomendamos que você conclua todas as operações do DiskPart juntas como parte de um único script do DiskPart. Você pode executar scripts do DiskPart consecutivos, mas deve permitir pelo menos 15 segundos entre cada script para um desligamento completo da execução anterior antes de executar o comando **DiskPart** novamente em scripts sucessivos. Caso contrário, os scripts sucessivos podem falhar. Você pode adicionar uma pausa entre scripts do DiskPart consecutivos adicionando o `timeout /t 15` comando ao arquivo em lotes junto com seus scripts do DiskPart.
 
 - Quando o DiskPart é iniciado, a versão do DiskPart e o nome do computador são exibidos no prompt de comando. Por padrão, se o DiskPart encontrar um erro ao tentar executar uma tarefa com script, o DiskPart interromperá o processamento do script e exibirá um código de erro (a menos que você tenha especificado o parâmetro **noerr** ). No entanto, o DiskPart sempre retorna erros quando encontra erros de sintaxe, independentemente de você ter usado o parâmetro **noerr** . O parâmetro **noerr** permite que você execute tarefas úteis, como usar um único script para excluir todas as partições em todos os discos, independentemente do número total de discos.
 
@@ -57,8 +57,8 @@ Para criar um script do DiskPart, crie um arquivo de texto que contenha os coman
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Exemplo: configurar partições\/de\-disco rígido baseado em UEFI com base em GPT usando o Windows PE e o DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
+- [Exemplo: configurar partições de disco rígido com base em UEFI/GPT usando o Windows PE e o DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
 
-- [Exemplo: configurar partições\/de\-disco rígido com base em MBR do BIOS usando o Windows PE e o DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
+- [Exemplo: configurar partições de disco rígido com base em BIOS/MBR usando o Windows PE e o DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
 - [Cmdlets de armazenamento no Windows PowerShell](https://docs.microsoft.com/powershell/module/storage/?view=win10-ps)

@@ -1,6 +1,6 @@
 ---
 title: netcfg
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando netcfg, que instala o Ambiente de Pré-Instalação do Windows (WinPE), uma versão leve do Windows usada para implantar estações de trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,64 +9,83 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dee1a5efd0459f68f31d739741062dc964b88d41
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6910f7e3f3d2f100942897bd9712293f7eb0f4d9
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223033"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354256"
 ---
 # <a name="netcfg"></a>netcfg
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Instala o Ambiente de Pré-Instalação do Windows (WinPE), uma versão leve do Windows usada para implantar estações de trabalho.
+
 ## <a name="syntax"></a>Sintaxe
+
 ```
 netcfg [/v] [/e] [/winpe] [/l ] /c /i
 ```
-#### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|/v|Executar no modo **detalhado** (detalhado)|
-|/e|Usar variáveis de **ambiente** de serviço durante a instalação e desinstalação|
-|/winpe|Instala TCP/IP, NetBIOS e cliente Microsoft para o ambiente de pré-instalação do Windows (WinPE)|
-|/l|Fornece o **local** do inf|
-|/c|Fornece a **classe** do componente a ser instalado; protocolo, serviço ou cliente|
-|/i|Fornece a **ID** do componente|
-|/s|Fornece o tipo de componentes a serem **mostrados**.<p>\tA = adaptadores, n = componentes de rede|
-|/b|Exibe os **caminhos de associação**, quando seguido por uma cadeia de caracteres que contém o nome do caminho.|
-|/?|Exibe a **ajuda** no prompt de comando.|
 
-## <a name="examples"></a>Exemplos
+### <a name="parameters"></a>Parâmetros
 
-Para instalar o *exemplo* de protocolo usando c:\oemdir\example.inf:
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| /v | É executado no modo detalhado (detalhado). |
+| /e | Usa variáveis de ambiente de manutenção durante a instalação e a desinstalação. |
+| /winpe | Instala TCP/IP, NetBIOS e cliente Microsoft para o ambiente de pré-instalação do Windows (WinPE). |
+| /l | Fornece o local do arquivo INF. |
+| /c | Fornece a classe do componente a ser instalado; **protocolo**, **serviço**ou **cliente**. |
+| /i | Fornece a ID do componente. |
+| /s | Fornece o tipo de componentes a serem mostrados, incluindo **\tA** para adaptadores ou **n** para componentes net. |
+| /b | Exibe os caminhos de associação, quando seguido por uma cadeia de caracteres que contém o nome do caminho. |
+| /? | Exibe a ajuda no prompt de comando. |                                                    |
+
+### <a name="examples"></a>Exemplos
+
+Para instalar o *exemplo* de protocolo usando c:\oemdir\example.inf, digite:
+
 ```
 netcfg /l c:\oemdir\example.inf /c p /i example
 ```
-Para instalar o serviço de *MS_Server* :
+
+Para instalar o serviço de *MS_Server* , digite:
+
 ```
 netcfg /c s /i MS_Server
 ```
-Para instalar o ambiente de pré-instalação TCP/IP, NetBIOS e cliente Microsoft para Windows
+
+Para instalar o ambiente de pré-instalação do cliente TCP/IP, NetBIOS e Microsoft para Windows, digite:
+
 ```
 netcfg /v /winpe
 ```
-Para exibir se o componente *MS_IPX* está instalado:
+
+Para exibir se o componente *MS_IPX* está instalado, digite:
+
 ```
 netcfg /q MS_IPX
 ```
-Para desinstalar o *MS_IPX*de componentes:
+
+Para desinstalar o componente *MS_IPX*, digite:
+
 ```
 netcfg /u MS_IPX
 ```
-Para mostrar todos os componentes net instalados:
+
+Para mostrar todos os componentes net instalados, digite:
+
 ```
 netcfg /s n
 ```
-Para exibir os caminhos de associação que contêm *MS_TCPIP*:
+
+Para exibir os caminhos de associação que contêm *MS_TCPIP*, digite:
+
 ```
 netcfg /b ms_tcpip
 ```
+
 ## <a name="additional-references"></a>Referências adicionais
+
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

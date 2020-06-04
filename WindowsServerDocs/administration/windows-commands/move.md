@@ -1,6 +1,6 @@
 ---
 title: move
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando mover, que move um ou mais arquivos de um diretório para outro diretório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,47 +9,42 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1df37753239fea5d5ba9ba22256706a47d4c6a2f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 283ee793769d991c1932eb2271c5117354bdf6a4
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723916"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354497"
 ---
 # <a name="move"></a>move
 
-
-
 Move um ou mais arquivos de um diretório para outro diretório.
 
-
+> [!IMPORTANT]
+> Mover arquivos criptografados para um volume que não dá suporte aos resultados de Encrypting File System (EFS) resultará em um erro. Primeiro, você deve descriptografar os arquivos ou movê-los para um volume que ofereça suporte ao EFS.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-move [{/y | /-y}] [<Source>] [<Target>]
+move [{/y|-y}] [<source>] [<target>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/y|Suprime a solicitação para confirmar que você deseja substituir um arquivo de destino existente.|
-|/-y|Faz com que o prompt confirme que você deseja substituir um arquivo de destino existente.|
-|\<> de origem|Especifica o caminho e o nome do arquivo ou dos arquivos a serem movidos. Se você quiser mover ou renomear um diretório, a *origem* deverá ser o nome e o caminho do diretório atual.|
-|\<Target>|Especifica o caminho e o nome para os quais mover os arquivos. Se você quiser mover ou renomear um diretório, o *destino* deverá ser o caminho e o nome do diretório desejado.|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| /y | Interrompe a solicitação de confirmação de que você deseja substituir um arquivo de destino existente. Esse parâmetro pode ser predefinido na variável de ambiente COPYCMD. Você pode substituir essa predefinição usando o parâmetro **-y** . O padrão é solicitar antes de substituir arquivos, a menos que o comando seja executado de dentro de um script em lotes. |
+| -y | Inicia a solicitação de confirmação de que você deseja substituir um arquivo de destino existente. |
+| `<source>` | Especifica o caminho e o nome dos arquivos a serem movidos. Para mover ou renomear um diretório, a *origem* deve ser o nome e o caminho do diretório atual. |
+| `<target>` | Especifica o caminho e o nome para os quais mover os arquivos. Para mover ou renomear um diretório, o *destino* deve ser o caminho e o nome do diretório desejado. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
--   A opção de linha de comando **/y** pode ser predefinida na variável de ambiente COPYCMD. Você pode substituir isso por **/-y** na linha de comando. O padrão é solicitar antes de substituir arquivos, a menos que o comando de **cópia** seja executado de dentro de um script em lotes.
--   Mover arquivos criptografados para um volume que não dá suporte a Encrypting File System (EFS) resulta em um erro. Descriptografe os arquivos primeiro ou mova os arquivos para um volume que dê suporte ao EFS.
+Para mover todos os arquivos com a extensão. xls do diretório *\data* para o diretório *\ Second_Q \Reports* , digite:
 
-## <a name="examples"></a>Exemplos
-
-Para mover todos os arquivos com a extensão. xls do diretório \data para o diretório \ Second_Q \Reports, digite:
 ```
-move \data\*.xls \second_q\reports\ 
+move \data\*.xls \second_q\reports\
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

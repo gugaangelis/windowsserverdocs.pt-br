@@ -1,6 +1,6 @@
 ---
-title: Md
-description: Tópico de referência para * * * *-
+title: md
+description: Tópico de referência para o comando MD, que cria um diretório ou subdiretório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,54 +9,50 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a605571fb74af99d0f365a100dd33fd4db0d3f22
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 928454c406216547783921005c9ff036a2844686
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724001"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354631"
 ---
-# <a name="md"></a>Md
+# <a name="md"></a>md
 
-
-
-Cria um diretório ou subdiretório.
+Cria um diretório ou subdiretório. Extensões de comando, que são habilitadas por padrão, permitem que você use um único comando **MD** para criar diretórios intermediários em um caminho especificado.
 
 > [!NOTE]
-> Esse comando é o mesmo que o comando **mkdir** .
-
-
+> Esse comando é o mesmo que o [comando mkdir](mkdir.md).
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-md [<Drive>:]<Path>
-mkdir [<Drive>:]<Path>
+md [<drive>:]<path>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<> da unidade:|Especifica a unidade na qual você deseja criar o novo diretório.|
-|\<Caminho>|Obrigatórios. Especifica o nome e o local do novo diretório. O comprimento máximo de qualquer caminho único é determinado pelo sistema de arquivos.|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<drive>`: | Especifica a unidade na qual você deseja criar o novo diretório. |
+| `<path>` | Especifica o nome e o local do novo diretório. O comprimento máximo de qualquer caminho único é determinado pelo sistema de arquivos. Esse é um parâmetro necessário. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
-Extensões de comando, que são habilitadas por padrão, permitem que você use um único comando **MD** para criar diretórios intermediários em um caminho especificado.
+Para criar um diretório chamado *directory1* no diretório atual, digite:
 
-## <a name="examples"></a>Exemplos
-
-Para criar um diretório chamado directory1 no diretório atual, digite:
 ```
 md Directory1
 ```
-Para criar a árvore de diretórios Taxes\Property\Current no diretório raiz, com extensões de comando habilitadas, digite:
+
+Para criar a árvore de diretórios *Taxes\Property\Current* no diretório raiz, com extensões de comando habilitadas, digite:
+
 ```
 md \Taxes\Property\Current
 ```
-Para criar a árvore de diretórios Taxes\Property\Current dentro do diretório raiz como no exemplo anterior, mas com as extensões de comando desabilitadas, digite a seguinte sequência de comandos:
+
+Para criar a árvore de diretórios *Taxes\Property\Current* dentro do diretório raiz como no exemplo anterior, mas com as extensões de comando desabilitadas, digite a seguinte sequência de comandos:
+
 ```
 md \Taxes
 md \Taxes\Property
@@ -67,4 +63,4 @@ md \Taxes\Property\Current
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-[Cmd](cmd.md)
+- [comando mkdir](mkdir.md)

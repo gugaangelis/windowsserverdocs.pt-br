@@ -1,6 +1,6 @@
 ---
 title: mqtgsvc
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando mqtgsvc, que monitora uma fila de mensagens de entrada e executa uma ação, na forma de um arquivo executável ou componente COM, quando as regras de um gatilho são avaliadas como true.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,29 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca75ea9fca34a5803db8f05b37e5aef226b2fb33
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 70937c4918b2b01425417368bfa347bd02e5bf22
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820796"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354407"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
-
-
-Monitora uma fila de mensagens de entrada e executa uma ação, na forma de um arquivo executável ou componente COM, quando as regras de um gatilho são avaliadas como true. Para obter exemplos de como o serviço de gatilhos do enfileiramento de mensagens pode ser usado, consulte [gatilhos do enfileiramento de mensagens](https://go.microsoft.com/fwlink/?LinkId=248725)no MSDN
+Monitora uma fila de mensagens de entrada e executa uma ação, na forma de um arquivo executável ou componente COM, quando as regras de um gatilho são avaliadas como true. Para obter exemplos de como o serviço de gatilhos do enfileiramento de mensagens pode ser usado, consulte [disparadores do Message Queuing](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms703197(v=vs.85)).
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-Mqtgsvc.exe
+mqtgsvc.exe
 ```
-
-#### <a name="parameters"></a>Parâmetros
-
-Nenhum
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Referência do PowerShell do MSMQ](https://docs.microsoft.com/powershell/module/msmq/?view=win10-ps)
