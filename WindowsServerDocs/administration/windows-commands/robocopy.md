@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: lizapo
-ms.date: 07/25/2018
-ms.openlocfilehash: 27a08aabbfd1c2f19f4c70120182f4092cc2a6c9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.date: 06/07/2020
+ms.openlocfilehash: 3ce409d0995449a4f5da98b69df6f436d75e04b7
+ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835669"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84505788"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -26,28 +26,34 @@ Copia os dados do arquivo.
 robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 ```
 
+Por exemplo, para copiar um arquivo chamado *yearly-Report. mov* de c:\Reports para um compartilhamento de arquivos (* \\ marketing\videos*) enquanto habilita o multithreading para um melhor desempenho (com o parâmetro/MT) e a capacidade de reiniciar a transferência caso ela seja interrompida (com o parâmetro/z), você usaria a seguinte sintaxe:
+
+```dos
+robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
+```
+
 ### <a name="parameters"></a>Parâmetros
 
 |   Parâmetro    |                                                                                            Descrição                                                                                           |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   > de origem do \<    |                                                                            Especifica o caminho para o diretório de origem.                                                                           |
-| \<de destino > |                                                                          Especifica o caminho para o diretório de destino.                                                                        |
-|    Arquivo de \<>     | Especifica o arquivo ou os arquivos a serem copiados. Você pode usar caracteres curinga ( **&#42;** ou **?** ), se desejar. Se o parâmetro **File** não for especificado, **\*.\*** será usado como o valor padrão. |
-|   Opções de \<>   |                                                                    Especifica as opções a serem usadas com o comando **Robocopy** .                                                                   |
+|   \<Source>    |                                                                            Especifica o caminho para o diretório de origem.                                                                           |
+| \<Destination> |                                                                          Especifica o caminho para o diretório de destino.                                                                        |
+|    \<File>     | Especifica o arquivo ou os arquivos a serem copiados. Você pode usar caracteres curinga (**&#42;** ou **?**), se desejar. Se o parâmetro **File** não for especificado, ** \* . \* ** será usado como o valor padrão. |
+|   \<Options>   |                                                                    Especifica as opções a serem usadas com o comando **Robocopy** .                                                                   |
 
 ### <a name="copy-options"></a>Opções de cópia
 
-|{1&gt;Opção&lt;1}|Descrição|
+|Opção|Descrição|
 |------|-----------|
 |/s|Copia subdiretórios. Observe que essa opção exclui diretórios vazios.|
 |/e|Copia subdiretórios. Observe que essa opção inclui diretórios vazios. Para obter mais informações, consulte [comentários](#remarks).|
-|/Lev:\<N >|Copia apenas os *N* níveis superiores da árvore do diretório de origem.|
+|nível\<N>|Copia apenas os *N* níveis superiores da árvore do diretório de origem.|
 |/z|Copia arquivos no modo reiniciável.|
 |/b|Copia arquivos no modo de Backup.|
-|/ZB|Usa o modo reiniciável. Se o acesso for negado, essa opção usará o modo de backup.|
+|/zb|Usa o modo reiniciável. Se o acesso for negado, esta opção usa o modo Backup.|
 |/efsraw|Copia todos os arquivos criptografados no modo EFS RAW.|
-|/Copy:\<CopyFlags >|Especifica as propriedades de arquivo a serem copiadas. Estes são os valores válidos para esta opção:</br>Dados **D**</br>**Um** atributo</br>Carimbos de hora **T**</br>Lista de controle de acesso (ACL **) NTFS**</br>Informações sobre **O** proprietário</br>Informações de auditoria **U**</br>O valor padrão para **CopyFlags** é **dat** (data, atributos e carimbos de data/hora).|
-|/DCOPY:\<copyflags\>|Define o que copiar para diretórios. O padrão é DA. As opções são D = dados, A = atributos e T = carimbos de data/hora.|
+|/Copy\<CopyFlags>|Especifica as propriedades de arquivo a serem copiadas. Estes são os valores válidos para esta opção:</br>Dados **D**</br>**Um** atributo</br>Carimbos de hora **T**</br>Lista de controle de acesso (ACL **) NTFS**</br>Informações sobre **O** proprietário</br>Informações de auditoria **U**</br>O valor padrão para **CopyFlags** é **dat** (data, atributos e carimbos de data/hora).|
+|/dcopy:\<copyflags\>|Define o que copiar para diretórios. O padrão é DA. As opções são D = dados, A = atributos e T = carimbos de data/hora.|
 |/s|Copia arquivos com segurança (equivalente a **/Copy: DATs**).|
 |/copyall|Copia todas as informações do arquivo (equivalente a **/Copy: DATSOU**).|
 |/nocopy|Não copia nenhuma informação de arquivo (útil com **/Purge**).|
@@ -62,9 +68,9 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/Create|Cria apenas uma árvore de diretórios e arquivos de comprimento zero.|
 |/fat|Cria arquivos de destino usando somente nomes de arquivo FAT de comprimento de caractere 8,3.|
 |/256|Desativa o suporte para caminhos muito longos (mais de 256 caracteres).|
-|/Mon:\<N >|Monitora a origem e executa novamente quando mais de *N* alterações são detectadas.|
-|/mot:\<M >|Monitora a origem e executa novamente em *M* minutos se forem detectadas alterações.|
-|/MT [: N]|Cria cópias multi-threaded com *N* threads. *N* deve ser um inteiro entre 1 e 128. O valor padrão para *N* é 8.</br>O parâmetro **/MT** não pode ser usado com os parâmetros **/IPG** e **/EFSRAW** .</br>Redirecione a saída usando a opção **/log** para melhorar o desempenho.</br>Observação: o parâmetro/MT se aplica ao Windows Server 2008 R2 e ao Windows 7.|
+|Mon\<N>|Monitora a origem e executa novamente quando mais de *N* alterações são detectadas.|
+|/mot:\<M>|Monitora a origem e executa novamente em *M* minutos se forem detectadas alterações.|
+|/MT[:N]|Cria cópias multi-threaded com *N* threads. *N* deve ser um inteiro entre 1 e 128. O valor padrão para *N* é 8.</br>O parâmetro **/MT** não pode ser usado com os parâmetros **/IPG** e **/EFSRAW** .</br>Redirecione a saída usando a opção **/log** para melhorar o desempenho.</br>Observação: o parâmetro/MT se aplica ao Windows Server 2008 R2 e ao Windows 7.|
 |/RH: hhmm-hhmm|Especifica os tempos de execução quando novas cópias podem ser iniciadas.|
 |/PF|Verifica os tempos de execução em uma base por arquivo (não por passagem).|
 |/IPG: n|Especifica a lacuna entre pacotes para a largura de banda livre em linhas lentas.|
@@ -80,14 +86,14 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="file-selection-options"></a>Opções de seleção de arquivo
 
-|{1&gt;Opção&lt;1}|Descrição|
+|Opção|Descrição|
 |------|-----------|
 |/a|Copia somente os arquivos para os quais o atributo de **arquivo** está definido.|
 |/m|Copia somente os arquivos para os quais o atributo de **arquivo** está definido e redefine o atributo de **arquivo morto** .|
 |/ia: [RASHCNETO]|Inclui somente os arquivos para os quais qualquer um dos atributos especificados são definidos.|
 |/xa:[RASHCNETO]|Exclui os arquivos para os quais qualquer um dos atributos especificados são definidos.|
-|/XF \<nome do arquivo > [...]|Exclui os arquivos que correspondem aos nomes ou caminhos especificados. Observe que *filename* pode incluir caracteres curinga ( **&#42;** e **?** ).|
-|/xD \<Directory > [...]|Exclui os diretórios que correspondem aos nomes e caminhos especificados.|
+|/XF \<FileName> [...]|Exclui os arquivos que correspondem aos nomes ou caminhos especificados. Observe que *filename* pode incluir caracteres curinga (**&#42;** e **?**).|
+|/xD \<Directory> [...]|Exclui os diretórios que correspondem aos nomes e caminhos especificados.|
 |/xc|Exclui arquivos alterados.|
 |/xn|Exclui arquivos mais recentes.|
 |/xo|Exclui arquivos mais antigos.|
@@ -95,12 +101,12 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/xl|Exclui arquivos e diretórios "próprios".|
 |/is|Inclui os mesmos arquivos.|
 |/It|Inclui arquivos "ajustados".|
-|/Max:\<N >|Especifica o tamanho máximo do arquivo (para excluir arquivos maiores que *N* bytes).|
-|/min:\<N >|Especifica o tamanho mínimo do arquivo (para excluir arquivos menores que *N* bytes).|
-|/MaxAge:\<N >|Especifica a idade máxima do arquivo (para excluir arquivos com mais de *N* dias ou data).|
-|/MINAGE:\<N >|Especifica a idade mínima do arquivo (excluir arquivos mais recentes que *N* dias ou data).|
-|/MAXLAD:\<N >|Especifica a data máxima do último acesso (exclui arquivos não usados desde *N*).|
-|/MINLAD:\<N >|Especifica a data mínima do último acesso (exclui arquivos usados desde *n*) se *N* for menor que 1900, *N* especifica o número de dias. Caso contrário, *N* especifica uma data no formato AAAAMMDD.|
+|maximizar\<N>|Especifica o tamanho máximo do arquivo (para excluir arquivos maiores que *N* bytes).|
+|min\<N>|Especifica o tamanho mínimo do arquivo (para excluir arquivos menores que *N* bytes).|
+|período\<N>|Especifica a idade máxima do arquivo (para excluir arquivos com mais de *N* dias ou data).|
+|/minage:\<N>|Especifica a idade mínima do arquivo (excluir arquivos mais recentes que *N* dias ou data).|
+|/maxlad:\<N>|Especifica a data máxima do último acesso (exclui arquivos não usados desde *N*).|
+|/minlad:\<N>|Especifica a data mínima do último acesso (exclui arquivos usados desde *n*) se *N* for menor que 1900, *N* especifica o número de dias. Caso contrário, *N* especifica uma data no formato AAAAMMDD.|
 |/xj|Exclui pontos de junção, que normalmente são incluídos por padrão.|
 |/fft|Pressupõe tempos de arquivo FAT (precisão de dois segundos).|
 |/dst|Compensa as diferenças de hora de Verão de uma hora.|
@@ -109,16 +115,16 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="retry-options"></a>Opções de repetição
 
-|{1&gt;Opção&lt;1}|Descrição|
+|Opção|Descrição|
 |------|-----------|
-|/r:\<N >|Especifica o número de repetições em cópias com falha. O valor padrão de *N* é 1 milhão (1 milhão tentativas).|
-|/w:\<N >|Especifica o tempo de espera entre as repetições, em segundos. O valor padrão de *N* é 30 (tempo de espera de 30 segundos).|
+|/r\<N>|Especifica o número de repetições em cópias com falha. O valor padrão de *N* é 1 milhão (1 milhão tentativas).|
+|/w\<N>|Especifica o tempo de espera entre as tentativas, em segundos. O valor padrão de *N* é 30 (tempo de espera de 30 segundos).|
 |/reg|Salva os valores especificados nas opções **/r** e **/w** como configurações padrão no registro.|
 |/tbd|Especifica que o sistema aguardará a definição de nomes de compartilhamento (repita o erro 67).|
 
 ### <a name="logging-options"></a>Opções de log
 
-|{1&gt;Opção&lt;1}|Descrição|
+|Opção|Descrição|
 |------|-----------|
 |/l|Especifica que os arquivos devem ser listados apenas (e não copiados, excluídos ou com carimbo de data/hora).|
 |/x|Relata todos os arquivos extras, não apenas aqueles que estão selecionados.|
@@ -128,25 +134,25 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/bytes|Imprime tamanhos, como bytes.|
 |/ns|Especifica que os tamanhos de arquivo não devem ser registrados em log.|
 |/nc|Especifica que as classes de arquivo não devem ser registradas em log.|
-|/nfl|Especifica que os nomes de arquivo não devem ser registrados em log.|
-|/ndl|Especifica que os nomes de diretório não devem ser registrados em log.|
+|/nfl|Especifica que os nomes de arquivo não devem ser registrados.|
+|/ndl|Especifica que os nomes de diretório não devem ser registrados.|
 |/np|Especifica que o progresso da operação de cópia (o número de arquivos ou diretórios copiados até o momento) não será exibido.|
 |/eta|Mostra o tempo estimado de chegada (ETA) dos arquivos copiados.|
-|/log: arquivo de log de\<>|Grava a saída de status no arquivo de log (Substitui o arquivo de log existente).|
-|/log +:\<arquivo de log >|Grava a saída de status no arquivo de log (acrescenta a saída ao arquivo de log existente).|
+|/log\<LogFile>|Grava a saída de status no arquivo de log (substitui o arquivo de log existente).|
+|/log +:\<LogFile>|Grava a saída de status no arquivo de log (acrescenta a saída ao arquivo de log existente).|
 |/unicode|Exibe a saída de status como texto Unicode.|
-|/UNILOG: > do arquivo de log de\<|Grava a saída de status no arquivo de log como texto Unicode (Substitui o arquivo de log existente).|
-|/UNILOG +:\<arquivo de log >|Grava a saída de status no arquivo de log como texto Unicode (acrescenta a saída ao arquivo de log existente).|
+|/unilog:\<LogFile>|Grava a saída de status no arquivo de log como texto Unicode (Substitui o arquivo de log existente).|
+|/UNILOG +:\<LogFile>|Grava a saída de status no arquivo de log como texto Unicode (acrescenta a saída ao arquivo de log existente).|
 |/tee|Grava a saída de status na janela do console, bem como no arquivo de log.|
 |/njh|Especifica que não há nenhum cabeçalho de trabalho.|
 |/njs|Especifica que não há nenhum resumo do trabalho.|
 
 ### <a name="job-options"></a>Opções de trabalho
 
-|{1&gt;Opção&lt;1}|Descrição|
+|Opção|Descrição|
 |------|-----------|
-|/minuto:\<JobName >|Especifica que os parâmetros devem ser derivados do arquivo de trabalho nomeado.|
-|/Save:\<JobName >|Especifica que os parâmetros devem ser salvos no arquivo de trabalho nomeado.|
+|/minuto\<JobName>|Especifica que os parâmetros devem ser derivados do arquivo de trabalho nomeado.|
+|/Save\<JobName>|Especifica que os parâmetros devem ser salvos no arquivo de trabalho nomeado.|
 |/quit|Encerra após o processamento da linha de comando (para exibir parâmetros).|
 |/nosd|Indica que nenhum diretório de origem foi especificado.|
 |/nodd|Indica que nenhum diretório de destino foi especificado.|
@@ -154,7 +160,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ### <a name="exit-return-codes"></a>Sair (retornar) códigos
 
-{1&gt;Valor&lt;1} | Descrição
+Valor | Descrição
 -- | --
 0 | Nenhum arquivo foi copiado. Nenhuma falha foi encontrada.  Nenhum arquivo não correspondeu. Os arquivos já existem no diretório de destino; Portanto, a operação de cópia foi ignorada.
 1 | Todos os arquivos foram copiados com êxito.
