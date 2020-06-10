@@ -7,17 +7,21 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
-ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
+ms.custom:
+- CI ID 116803
+- CSSTroubleshoot
+manager: dcscontentpm
+ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
+ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84205627"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84269220"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de erro de ativação do Windows
 
-> **Usuários domésticos**  
-> Este artigo destina-se ao uso de agentes de suporte e profissionais de TI. Caso esteja buscando mais informações sobre as mensagens de erro de ativação do Windows, confira [Obter ajuda com erros de ativação do Windows](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors).  
+> [!NOTE]  
+> Este artigo destina-se ao uso de agentes de suporte técnico e profissionais de TI. Caso esteja buscando mais informações sobre as mensagens de erro de ativação do Windows, confira [Obter ajuda com erros de ativação do Windows](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors).  
 
 Este artigo fornece informações de solução de problemas para ajudá-lo a responder às mensagens de erro que você possa receber ao tentar usar um MAK (chave de ativação múltipla) ou o KMS (Serviço de Gerenciamento de Chaves) para executar a Ativação de Volume em um ou mais computadores baseados no Windows. Procure o código de erro na tabela a seguir e, em seguida, selecione o link para ver mais informações sobre esse código de erro e como resolvê-lo.
 
@@ -28,6 +32,10 @@ Para obter mais informações sobre a ativação de volume para versões atuais 
 Para obter mais informações sobre a ativação de volume para versões mais antigas do Windows, confira a KB 929712, [Informações sobre a Ativação de Volume para Windows Vista, Windows Server 2008, Windows Server 2008 R2 e Windows 7](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi).
 
 ## <a name="diagnostic-tool"></a>Ferramenta de diagnóstico
+
+> [!NOTE]  
+> Essa ferramenta destina-se a ajudar a corrigir problemas de ativação do Windows em computadores que executam a edição Enterprise, Professional ou Server do Windows.
+
 
 O SaRA (Assistente de Recuperação e Suporte da Microsoft) simplifica a solução de problemas de ativação do Windows KMS. Baixe a ferramenta de diagnóstico [aqui](https://aka.ms/SaRA-WindowsActivation).
 

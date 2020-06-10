@@ -7,18 +7,63 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0c5be0c4cf274224d25b62f7553ae49f8219b2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 176c601d98ebc743e455c5f83efe2c10267a38ba
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854669"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306445"
 ---
 # <a name="whats-new-in-the-android-client"></a>Novidades do cliente para Android
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para Android](remote-desktop-android.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
+
+## <a name="updates-for-version-8180"></a>Atualizações da versão 8.1.80
+
+*Data da publicação: 26/05/2020*
+
+- Alteração do ícone do cliente para distingui-lo do novo cliente atualmente em versão prévia.
+- Preparação do cliente para dar suporte à transferência de configurações e conexões para o novo cliente.
+
+## <a name="updates-for-version-8179"></a>Atualizações da versão 8.1.79
+
+*Data da publicação: 24/03/2020*
+
+- Correção de um problema em que os scanners de código de barras não funcionavam.
+
+## <a name="updates-for-version-8177"></a>Atualizações da versão 8.1.77
+
+*Data da publicação: 11/02/2020*
+
+- Aprimoramento da acessibilidade para os usuários da navegação somente de teclado.
+
+## <a name="updates-for-version-8176"></a>Atualizações da versão 8.1.76
+
+*Data da publicação: 09/01/2020*
+
+- Pequenas correções de bug e melhorias.
+
+## <a name="updates-for-version-8175"></a>Atualizações da versão 8.1.75
+
+*Data da publicação: 31/10/2019*
+
+- Correção de um problema em que uma URL do feed de recurso remoto não era carregada.
+- Aprimoramento da acessibilidade para os usuários da navegação somente de teclado e do TalkBack.
+
+## <a name="updates-for-version-8174"></a>Atualizações da versão 8.1.74
+
+*Data da publicação: 17/08/2019*
+
+- Correção de uma falha ao se conectar a servidores que enviam certificados proprietários.
+
+## <a name="updates-for-version-8173"></a>Atualizações da versão 8.1.73
+
+*Data da publicação: 14/06/2019*
+
+- Adição do suporte de 64 bits.
+- Resolução dos problemas de segurança descritos em CVE-2019-1108.
 
 ## <a name="updates-for-version-8171"></a>Atualizações para a versão 8.1.71
 
