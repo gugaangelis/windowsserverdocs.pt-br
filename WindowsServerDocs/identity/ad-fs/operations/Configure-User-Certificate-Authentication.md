@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4aa2f219852dc97833365645e7455f8141a0988e
-ms.sourcegitcommit: d23f880e144acf0912831557c70f777d48e3152b
+ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
+ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632780"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663179"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configurando AD FS para autenticação de certificado de usuário
 
@@ -29,7 +29,7 @@ A autenticação de certificado de usuário é usada principalmente em dois caso
 4) Se estiver usando AD FS no modo de autenticação de certificado alternativo, certifique-se de que seus servidores AD FS e WAP tenham certificados SSL que contenham o nome de host AD FS prefixado com "certauth", por exemplo, "certauth.fs.contoso.com", e que o tráfego para esse nome de host é permitido por meio do firewall
 5) Se estiver usando a autenticação de certificado da extranet, verifique se pelo menos um AIA e pelo menos um local de CDP ou OCSP da lista especificada em seus certificados estão acessíveis pela Internet.
 6) Além disso, para a autenticação de certificado do Azure AD, para clientes do Exchange ActiveSync, o certificado do cliente deve ter o endereço de email roteável dos usuários no Exchange Online no nome da entidade de segurança ou no valor do nome do RFC822 do campo nome alternativo da entidade. (Azure Active Directory mapeia o valor de RFC822 para o atributo de endereço de proxy no diretório.)
-7) Ao usar uma autenticação baseada em cartão inteligente/certificado, a entidade no certificado pode não corresponder ao UserPricipalName na conta do AD. Nesse caso, a entrada falha com "usuário não encontrado".
+7) AD FS não dá suporte a dicas de nome de usuário com autenticação baseada em cartão inteligente/certificado. 
 
 
 ## <a name="configure-ad-fs-for-user-certificate-authentication"></a>Configurar o AD FS para autenticação de certificado do usuário  
