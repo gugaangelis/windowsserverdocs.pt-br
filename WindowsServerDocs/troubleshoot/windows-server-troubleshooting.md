@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 1/24/2020
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: e5fdae6e005adf6ea221fb3c2bf3ea09bfbfb03a
-ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
+ms.openlocfilehash: f3012f499e67f73ec9e8ab20b24df122492ea0ea
+ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81119252"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714898"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionando problemas de componentes do Windows Server
 
@@ -34,19 +34,19 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 - [Problemas conhecidos de ativação da MAK](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-mak-issues)
 - [Diretrizes para solução de problemas de ativação relacionados ao DNS](https://docs.microsoft.com/windows-server/get-started/common-troubleshooting-procedures-kms-dns)
 - [Recompilar o arquivo Tokens.dat](https://docs.microsoft.com/windows-server/get-started/activation-rebuild-tokens-dat-file)
-- [Solucionando problemas de clientes do ADBA](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
+- [Solucionar problemas de clientes ADBA](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
 
 ## <a name="troubleshoot-startup-and-restart"></a>Solucionar problemas de inicialização e reinicialização
 
-- [Solução de problemas avançada para inicialização do Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [Solução de problemas avançada de inicialização do Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
 - [Como determinar o tamanho do arquivo de paginação apropriado para versões de 64 bits do Windows](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
 - [Gerar um kernel ou um despejo de memória completo](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
 - [Introdução ao arquivo de paginação](https://docs.microsoft.com/windows/client-management/introduction-page-file)
 - [Configurar opções de falha e recuperação do sistema no Windows](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
-- [Solução de problemas avançada para problemas de inicialização do Windows](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
-- [Solução de problemas avançada para congelamento de computadores baseados no Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
-- [Solução de problemas avançada para parar erro ou erro de tela azul](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
-- [Solução de problemas avançada para parar o erro 7B ou Inaccessible_Boot_Device](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [Solução de problemas avançada para erros de inicialização do Windows](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Solução de problemas avançada de congelamento de computador baseado no Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [Solução de problemas avançada para erro de tela azul ou erro de parada](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [Solução de problemas avançada para erro de parada 7B ou Inaccessible_Boot_Device](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
 - [Solução de problemas avançada para a ID de evento 41 "o sistema foi reinicializado sem desligar o primeiro"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
 - [O erro de parada ocorre quando você atualiza o driver de adaptador de rede Broadcom in-box](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
@@ -63,7 +63,7 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 
 ## <a name="troubleshoot-ad-fs"></a>Solucionar problemas AD FS
 
-- [Solução de problemas AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
+- [Solução de problemas do AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
 - [AD FS solução de problemas-eventos e log de auditoria](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging)
 - [Solução de problemas AD FS-conectividade do SQL](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-sql)
 - [Solução de problemas de AD FS-emissão de declarações](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-issuance)
@@ -74,7 +74,7 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 - [AD FS solução de problemas – regras de declarações](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
 - [Solução de problemas AD FS-autenticação integrada do Windows](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
 - [Solução de problemas AD FS-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
-- [PERGUNTAS FREQUENTES AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [Perguntas frequentes sobre o AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
 - [Analisador de diagnóstico de ajuda do AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
 
 ## <a name="troubleshoot-aovpn"></a>Solucionar problemas de AoVPN
@@ -95,7 +95,7 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 
 ## <a name="troubleshoot-disk-management"></a>Solucionar problemas do gerenciamento de disco
 
-- [Solução de problemas do gerenciamento de disco](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
+- [Solução de problemas do Gerenciamento de disco](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
 
 ## <a name="troubleshoot-dns"></a>Solucionar problemas de DNS
 
@@ -108,6 +108,19 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 
 - [Solução de problemas de um Cluster de Failover usando o Relatório de Erros do Windows](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
 - [Atualização com suporte a cluster-perguntas frequentes](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+- [Solucionando problemas de cluster com a ID de evento 1135](https://docs.microsoft.com/windows-server/troubleshoot/troubleshooting-cluster-event-id-1135)
+- [Tendo um problema com os nós sendo removidos da Associação de cluster de failover ativo](https://docs.microsoft.com/windows-server/troubleshoot/problem-nodes-failover-cluster)
+- [Nós sendo removidos da Associação de cluster de failover no VMWare ESX](https://docs.microsoft.com/windows-server/troubleshoot/nodes-failover-cluster-vmware)
+- [IaaS com SQL AlwaysOn - Ajustando Limites de Rede de Cluster de Failover](https://docs.microsoft.com/windows-server/troubleshoot/iaas-sql-failover-cluster)
+
+## <a name="troubleshoot-dhcp"></a>Solucionar problemas de DHCP
+
+- [Guia de solução de problemas do DHCP (protocolo de configuração dinâmica de hosts)](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-dhcp-issue)
+- [Noções básicas do DHCP (protocolo de configuração de host dinâmico)](https://docs.microsoft.com/windows-server/troubleshoot/dynamic-host-configuration-protocol-basics)
+- [Diretrizes gerais para solucionar problemas do DHCP](https://docs.microsoft.com/windows-server/troubleshoot/general-guidance-to-troubleshoot-dhcp)
+- [Como usar o endereçamento TCP/IP automático sem um servidor DHCP](https://docs.microsoft.com/windows-server/troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh)
+- [Solucionar problemas no cliente DHCP](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-client)
+- [Solucionar problemas no servidor DHCP](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-server)
 
 ## <a name="troubleshoot-fsrm"></a>Solucionar problemas de FSRM
 
@@ -182,8 +195,8 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 
 ## <a name="troubleshoot-storage-replica"></a>Solucionar problemas de réplica de armazenamento
 
-- [Problemas conhecidos com a réplica de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
-- [Perguntas frequentes sobre a réplica de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
+- [Problemas conhecidos com a Réplica de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
+- [Perguntas frequentes sobre Réplica de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
 
 ## <a name="troubleshoot-user-profiles"></a>Solucionar problemas de perfis de usuário
 
@@ -199,6 +212,6 @@ Esta seção contém tópicos e links de solução de problemas avançados para 
 
 ## <a name="troubleshoot-windows-admin-center"></a>Solucionar problemas do Windows Admin Center
 
-- [Etapas de solução de problemas comuns do centro de administração do Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
-- [Problemas conhecidos do centro de administração do Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
-- [Perguntas frequentes sobre o centro de administração do Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
+- [Etapas de solução de problemas comuns do Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
+- [Problemas conhecidos do Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
+- [Perguntas frequentes sobre o Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
