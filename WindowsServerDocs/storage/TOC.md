@@ -31,6 +31,8 @@
 ### [Migrar a replicação do SYSVOL para a replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)
 ### [Usar o robocopy para propagar previamente arquivos para replicação do DFS](dfs-replication/preseed-dfsr-with-robocopy.md)
 ### [Replicação do DFS: perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)
+### [Como determinar a área mínima de preparo exigida pela DFSR para uma pasta replicada](../troubleshoot/how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder.md)
+### [Entender a ausência de bloqueio de arquivo distribuído na DFSR](../troubleshoot/understanding-the-lack-of-distributed-file-locking-in-dfsr.md)
 ## [Gerenciamento de disco](disk-management/overview-of-disk-management.md)
 ## [SMB e servidor de arquivos](file-server/file-server-smb-overview.md)
 ### [SMB Direct](file-server/smb-direct.md)
