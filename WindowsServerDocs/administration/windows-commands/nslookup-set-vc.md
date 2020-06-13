@@ -1,6 +1,6 @@
 ---
 title: nslookup set vc
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando Set vc do nslookup, que especifica se um circuito virtual deve ser usado ao enviar solicitações ao servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4cd465ecfbf9da540b8e693a6f0f3938e5752a4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 49220589de2d2440735e056a8aa3acdd2122a376
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723522"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721199"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
-
-
-Especifica o uso ou não de um circuito virtual ao enviar solicitações para o servidor.
+Especifica se um circuito virtual deve ser usado ao enviar solicitações ao servidor.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -30,11 +28,13 @@ set [no]vc
 
 ### <a name="parameters"></a>Parâmetros
 
-| Parâmetro |                                              Descrição                                               |
-|-----------|--------------------------------------------------------------------------------------------------------|
-| **novc**  | Especifica para nunca usar um circuito virtual ao enviar solicitações para o servidor. O padrão é **novc**. |
-|  **vc**   |             Especifica sempre usar um circuito virtual ao enviar solicitações para o servidor.             |
-|   {ajuda   |                                                   ?}                                                   |
+
+| Parâmetro | Descrição |
+| ---------- | ---------- |
+| novc | Especifica para nunca usar um circuito virtual ao enviar solicitações para o servidor. Esse é o valor padrão. |
+| vc | Especifica sempre usar um circuito virtual ao enviar solicitações para o servidor. |
+| /? | Exibe a ajuda no prompt de comando. |
+| /help | Exibe a ajuda no prompt de comando. |
 
 ## <a name="additional-references"></a>Referências adicionais
 

@@ -1,6 +1,6 @@
 ---
 title: nslookup view
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando de exibição Nslookup, que classifica e lista a saída dos comandos ou subcomandos **ls** anteriores.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,29 +9,35 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 72f34afa059fc9b3778ab89612d7dc7a467da97c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74ee505a2a84eab23c218c145606d9e58fcd4b5f
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723508"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721159"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Classifica e lista a saída do subcomando ou dos comandos **ls** anteriores.  
-## <a name="syntax"></a>Sintaxe  
-```  
-view <FileName>  
-```  
-### <a name="parameters"></a>Parâmetros  
+Classifica e lista a saída dos comandos ou subcomandos **ls** anteriores.
 
-|    Parâmetro    |                                            Descrição                                            |
-|-----------------|---------------------------------------------------------------------------------------------------|
-|   <FileName>    | Especifica o nome do arquivo que contém a saída do subcomando ou dos comandos **ls** anteriores. |
-| {ajuda &#124;?} |                       Exibe um breve resumo dos subcomandos **nslookup** .                       |
+## <a name="syntax"></a>Sintaxe
 
-## <a name="additional-references"></a>Referências adicionais  
-- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
-[nslookup ls](nslookup-ls.md)  
+```
+view <filename>
+```
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| `<filename>` | Especifica o nome do arquivo que contém a saída dos comandos **ls** anteriores ou subcomandos. |
+| /? | Exibe a ajuda no prompt de comando. |
+| /help | Exibe a ajuda no prompt de comando. |
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [nslookup ls](nslookup-ls.md)

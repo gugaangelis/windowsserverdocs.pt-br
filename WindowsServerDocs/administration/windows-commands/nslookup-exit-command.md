@@ -1,6 +1,6 @@
 ---
-title: nslookup exit Command
-description: Tópico de referência para * * * *-
+title: saída do nslookup
+description: Tópico de referência para o comando exit do nslookup, que sai da ferramenta de linha de comando nslookup.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25696b5889d4b430586285de1f4d6471f9e28b27
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c233e39d711c37540c30bc64296c6b24b57689c8
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723731"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721479"
 ---
-# <a name="nslookup-exit-command"></a>nslookup exit Command
+# <a name="nslookup-exit"></a>/Exit nslookup
 
-
-
-Sai do **nslookup**.
+Sai da ferramenta de linha de comando nslookup.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-Nslookup /exit
+nslookup /exit
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
 | Parâmetro | Descrição |
-|-----------|-------------|
-|   {ajuda   |     ?}      |
+| --------- | ----------- |
+| /? | Exibe a ajuda no prompt de comando. |
+| /help | Exibe a ajuda no prompt de comando. |
 
 ## <a name="additional-references"></a>Referências adicionais
 

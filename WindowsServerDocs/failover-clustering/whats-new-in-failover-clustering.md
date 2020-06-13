@@ -8,12 +8,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 926c9c862d77c9fe082274a44af57e3b8339a655
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cdc9280c4c7129d2e76341bd97b0ae3b8209888f
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720501"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721734"
 ---
 # <a name="whats-new-in-failover-clustering"></a>Novidades no Clustering de Failover
 
@@ -76,12 +76,12 @@ A atualização sem interrupção do sistema operacional do cluster permite que 
 
 **Qual é o valor agregado desta alteração?**  
 
-A atualização de um cluster Hyper-V ou Servidor de Arquivos de Escalabilidade Horizontal do Windows Server 2012 R2 para o Windows Server 2016 não requer mais tempo de inatividade. O cluster continuará a funcionar em um nível do Windows Server 2012 R2 até que todos os nós no cluster estejam executando o Windows Server 2016. O nível funcional do cluster é atualizado para o Windows Server 2016 usando o cmdlt `Update-ClusterFunctionalLevel`do Windows PowerShell.
+A atualização de um cluster Hyper-V ou Servidor de Arquivos de Escalabilidade Horizontal do Windows Server 2012 R2 para o Windows Server 2016 não requer mais tempo de inatividade. O cluster continuará a funcionar em um nível do Windows Server 2012 R2 até que todos os nós no cluster estejam executando o Windows Server 2016. O nível funcional do cluster é atualizado para o Windows Server 2016 usando o cmdlt do Windows PowerShell `Update-ClusterFunctionalLevel` .
 
 > [!WARNING]  
 > - Depois de atualizar o nível funcional do cluster, você não pode voltar para um nível funcional de cluster do Windows Server 2012 R2.
 >
-> - Até que `Update-ClusterFunctionalLevel` o cmdlet seja executado, o processo é reversível e os nós do windows Server 2012 R2 podem ser adicionados e os nós do windows Server 2016 podem ser removidos.
+> - Até que o `Update-ClusterFunctionalLevel` cmdlet seja executado, o processo é reversível e os nós do Windows server 2012 R2 podem ser adicionados e os nós do Windows server 2016 podem ser removidos.
 
 **O que passou a funcionar de maneira diferente?**  
 
@@ -95,11 +95,11 @@ Os sistemas operacionais de cluster para a atualização em fases são os seguin
 -   Neste ponto, o cluster deve estar sendo executado no modo misto, pois os nós de cluster estão executando o Windows Server 2012 R2 ou o Windows Server 2016. 
 -   O nível funcional do cluster permanece no Windows Server 2012 R2. Nesse nível funcional, os novos recursos do Windows Server 2016 que afetam a compatibilidade com as versões anteriores do sistema operacional ficarão indisponíveis. 
 -   Eventualmente, todos os nós são atualizados para o Windows Server 2016. 
--   O nível funcional do cluster é então alterado para o Windows Server 2016 usando o `Update-ClusterFunctionalLevel`cmdlet do Windows PowerShell. Neste ponto, você pode aproveitar os recursos do Windows Server 2016. 
+-   O nível funcional do cluster é então alterado para o Windows Server 2016 usando o cmdlet do Windows PowerShell `Update-ClusterFunctionalLevel` . Neste ponto, você pode aproveitar os recursos do Windows Server 2016. 
 
 Para obter mais informações, consulte [atualização sem interrupção do sistema operacional do cluster](cluster-operating-system-rolling-upgrade.md). 
 
-### <a name="storage-replica"></a><a name="BKMK_SR"></a>Réplica de Armazenamento  
+### <a name="storage-replica"></a><a name="BKMK_SR"></a>Réplica de armazenamento  
 A réplica de armazenamento é um novo recurso que permite a replicação síncrona de nível de bloco e independente de armazenamento entre servidores ou clusters para recuperação de desastre, bem como o alargamento de um cluster de failover entre sites. A replicação síncrona habilita o espelhamento de dados em locais físicos com volumes consistentes com falha para garantir perda zero de dados no nível do sistema de arquivos. A replicação assíncrona permite a extensão de site além das dimensões metropolitanas com a possibilidade de perda de dados. 
 
 **Qual é o valor agregado desta alteração?**  
@@ -176,13 +176,13 @@ No Windows Server 2016, a resiliência de armazenamento de máquina virtual tamb
 
 Para ajudar a diagnosticar problemas com clusters de failover, o Windows Server 2016 inclui o seguinte:  
 
-- Vários aprimoramentos nos arquivos de log de cluster (como informações de fuso horário e log DiagnosticVerbose) facilitam a solução de problemas de clustering de failover. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-log de cluster](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx). 
+- Vários aprimoramentos nos arquivos de log de cluster (como informações de fuso horário e log DiagnosticVerbose) que facilitam a solução de problemas de clustering de failover. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-log de cluster](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372005).
 
-- Um novo tipo de despejo de **despejo de memória ativo**, que filtra a maioria das páginas de memória alocadas para máquinas virtuais e, portanto, torna o Memory. dmp muito menor e mais fácil de salvar ou copiar. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-despejo ativo](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx). 
+- Um novo tipo de despejo de **despejo de memória ativo**, que filtra a maioria das páginas de memória alocadas para máquinas virtuais e, portanto, torna o Memory. dmp muito menor e mais fácil de salvar ou copiar. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-despejo ativo](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372008).
 
 ### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>Clusters de Failover com reconhecimento de site
 
-O Windows Server 2016 inclui clusters de failover com reconhecimento de site que habilitam nós de grupo em clusters ampliados com base em seu local físico (site). O reconhecimento de site de cluster aprimora as principais operações durante o ciclo de vida do cluster, como comportamento de failover, políticas de posicionamento, pulsação entre os nós e o comportamento de quorum. Para obter mais informações, consulte [clusters de failover com reconhecimento de site no Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx). 
+O Windows Server 2016 inclui clusters de failover com reconhecimento de site que habilitam nós de grupo em clusters ampliados, com base em seu local físico (site). O reconhecimento de site de cluster aprimora as principais operações durante o ciclo de vida do cluster, como comportamento de failover, políticas de posicionamento, pulsação entre os nós e o comportamento de quorum. Para obter mais informações, consulte [clusters de failover com reconhecimento de site no Windows Server 2016](https://techcommunity.microsoft.com/t5/failover-clustering/site-aware-failover-clusters-in-windows-server-2016/ba-p/372060).
 
 ### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>Clusters de grupo de trabalho e vários domínios
 
@@ -194,7 +194,7 @@ No Windows Server 2012 R2 e versões anteriores, um cluster só pode ser criado 
 
 -   **Clusters de grupo de trabalho.** Clusters com nós que são servidores membros/grupo de trabalho (não ingressados no domínio). 
 
-Para obter mais informações, consulte [clusters de vários domínios e grupos de trabalho no Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)
+Para obter mais informações, consulte [clusters de vários domínios e grupos de trabalho no Windows Server 2016](https://techcommunity.microsoft.com/t5/failover-clustering/workgroup-and-multi-domain-clusters-in-windows-server-2016/ba-p/372059)
 
 ### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>Balanceamento de carga de máquina virtual  
 

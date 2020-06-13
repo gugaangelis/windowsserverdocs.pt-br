@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6910f7e3f3d2f100942897bd9712293f7eb0f4d9
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5a308441df55873b205972d703ec52f53345beb5
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354256"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721549"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -40,7 +40,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 | /i | Fornece a ID do componente. |
 | /s | Fornece o tipo de componentes a serem mostrados, incluindo **\tA** para adaptadores ou **n** para componentes net. |
 | /b | Exibe os caminhos de associação, quando seguido por uma cadeia de caracteres que contém o nome do caminho. |
-| /? | Exibe a ajuda no prompt de comando. |                                                    |
+| /? | Exibe a ajuda no prompt de comando. |
 
 ### <a name="examples"></a>Exemplos
 

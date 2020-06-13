@@ -1,6 +1,6 @@
 ---
 title: nslookup set root
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando Set root do nslookup, que altera o nome do servidor raiz que é usado para consultas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d913669fd4fede06c9983756df1bbf626ca430ac
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1271dbeb0381d01e70380bded82a94ba20163853
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723578"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721449"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Altera o nome do servidor raiz usado para consultas.
+
+> [!NOTE]
+> Esse comando dá suporte ao comando [raiz nslookup](nslookup-root.md) .
+
 ## <a name="syntax"></a>Sintaxe
+
 ```
-set root=<RootServer>
+set root=<rootserver>
 ```
+
 ### <a name="parameters"></a>Parâmetros
 
-|    Parâmetro    |                                   Descrição                                    |
-|-----------------|----------------------------------------------------------------------------------|
-|  <RootServer>   | Especifica o novo nome para o servidor raiz. O valor padrão é ns.nic.ddn.mil. |
-| {ajuda &#124;?} |              Exibe um breve resumo dos subcomandos **nslookup** .               |
+| Parâmetro | Descrição |
+| ---------- | ---------- |
+| `<rootserver>` | Especifica o novo nome para o servidor raiz. O valor padrão é **ns.NIC.DDN.mil**. |
+| /? | Exibe a ajuda no prompt de comando. |
+| /help | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-- O subcomando **set root** afeta o subcomando **raiz** .
-  ## <a name="additional-references"></a>Referências adicionais
-  - [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [raiz nslookup](nslookup-root.md)
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [nslookup root](nslookup-root.md)

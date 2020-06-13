@@ -1,6 +1,6 @@
 ---
 title: nslookup set retry
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando Set Retry do nslookup, que define o número de tentativas de obter informações de um servidor especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1baeeaefedc211434f46bd0cfad713f093a873bf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 268a9f0023c0e7e19e8ed413895f639444fe3b88
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723580"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721459"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Define o número de repetições.
+Se uma resposta não for recebida dentro de um determinado período de tempo, o período de tempo limite será duplicado e a solicitação será enviada novamente. Esse comando define o número de vezes que uma solicitação é enviada novamente a um servidor para obter informações, antes de desistir.
+
+> [!NOTE]
+> Para alterar o período de tempo antes que a solicitação expire, use o comando [nslookup set timeout](nslookup-set-timeout.md) .
+
 ## <a name="syntax"></a>Sintaxe
+
 ```
-set retry=<Number>
+set retry=<number>
 ```
+
 ### <a name="parameters"></a>Parâmetros
 
-|    Parâmetro    |                                      Descrição                                       |
-|-----------------|----------------------------------------------------------------------------------------|
-|    <Number>     | Especifica o novo valor para o número de repetições. O número padrão de repetições é 4. |
-| {ajuda &#124;?} |                 Exibe um breve resumo dos subcomandos **nslookup** .                  |
+| Parâmetro | Descrição |
+| ---------- | ---------- |
+| `<number>` | Especifica o novo valor para o número de repetições. O número padrão de repetições é **4**. |
+| /? | Exibe a ajuda no prompt de comando. |
+| /help | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-- Quando uma resposta a uma solicitação não é recebida dentro de um determinado período de tempo, o período de tempo limite é duplicado e a solicitação é reenviada. O valor de repetição controla quantas vezes uma solicitação é enviada novamente antes de desistir. Você pode alterar o período de tempo limite com o subcomando **set timeout** .
-  ## <a name="additional-references"></a>Referências adicionais
-  - [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-  [nslookup set timeout](nslookup-set-timeout.md)
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [nslookup set timeout](nslookup-set-timeout.md)

@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: d6c47843dedaf45842f70d1bb408b59d63c03eb4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd2f4c6b6bb17231ac04b3344e9a39df2cad79d0
+ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815499"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740639"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Como detectar, habilitar e desabilitar SMBv1, SMBv2 e SMBv3 no Windows
 
@@ -35,7 +35,7 @@ No Windows 7 e no Windows Server 2008 R2, desabilitar o SMBv2 desativa a seguint
 - Suporte a MTU grande-para uso completo de Ethernet de 10 Gigabye (GB)    
 - Eficiência de energia aprimorada-os clientes que têm arquivos abertos em um servidor podem dormir    
 
-No Windows 8, Windows 8.1, Windows 10, Windows Server 2012 e Windows Server 2016, desabilitar o SMBv3 desativa a funcionalidade a seguir (e também a funcionalidade SMBv2 descrita na lista anterior): 
+No Windows 8, Windows 8.1, Windows 10, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016 e Windows Server 2019, desabilitar o SMBv3 desativa a funcionalidade a seguir (e também a funcionalidade SMBv2 descrita na lista anterior): 
  
 - Failover transparente-os clientes reconectam-se sem interrupção para nós de cluster durante a manutenção ou failover    
 - Scale Out – acesso simultâneo a dados compartilhados em todos os nós de cluster de arquivos     
@@ -57,11 +57,11 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
 
 [Novidades do SMB](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
 
-## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-and-windows-server-2016"></a>Como remover normalmente o SMB v1 em Windows 8.1, Windows 10, Windows 2012 R2 e Windows Server 2016
+## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-windows-server-2016-and-windows-server-2019"></a>Como remover normalmente o SMB v1 em Windows 8.1, Windows 10, Windows 2012 R2, Windows Server 2016 e Windows Server 2019
 
-#### <a name="windows-server-2012-r2--2016-powershell-methods"></a>Windows Server 2012 R2 & 2016: métodos do PowerShell
+#### <a name="powershell-methods"></a>Métodos do PowerShell
 
-##### <a name="smb-v1"></a>SMB v1
+##### <a name="smb-v1-client-and-server"></a>SMB V1 (cliente e servidor)
 
 - Ocorre 
 
@@ -75,33 +75,13 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
   Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-- Desabilitar 
+- Habilitar: 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-##### <a name="smb-v2v3"></a>SMB V2/V3
-
-- Ocorre
-  
-  ```PowerShell
-  Get-SmbServerConfiguration | Select EnableSMB2Protocol
-  ```
-
-- Desativar
-
-  ```PowerShell
-  Set-SmbServerConfiguration -EnableSMB2Protocol $false
-  ```
-
-- Desabilitar
-
-  ```PowerShell
-  Set-SmbServerConfiguration -EnableSMB2Protocol $true 
-  ```
-
-#### <a name="windows-server-2012-r2-and-windows-server-2016-server-manager-method-for-disabling-smb"></a>Windows Server 2012 R2 e Windows Server 2016: método de Gerenciador do Servidor para desabilitar o SMB
+#### <a name="windows-server-2012-r2-windows-server-2016-windows-server-2019-server-manager-method-for-disabling-smb"></a>Windows Server 2012 R2, Windows Server 2016, Windows Server 2019: método de Gerenciador do Servidor para desabilitar o SMB
 
 ##### <a name="smb-v1"></a>SMB v1
 
@@ -123,13 +103,13 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
   Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-- Desabilitar 
+- Habilitar: 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-##### <a name="smb-v2v3protocol"></a>Protocolo SMB V2/V3
+##### <a name="smb-v2v3protocol-only-disables-smb-v2v3-server"></a>Protocolo SMB V2/V3 (desabilita apenas o servidor SMB V2/V3)
 
 - Ocorre 
   
@@ -143,7 +123,7 @@ Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, cons
   Set-SmbServerConfiguration –EnableSMB2Protocol $false
   ```
 
-- Desabilitar
+- Habilitar:
 
   ```PowerShell
   Set-SmbServerConfiguration –EnableSMB2Protocol $true
@@ -178,7 +158,7 @@ Você não precisa reiniciar o computador depois de executar o cmdlet **set-SMBS
   Set-SmbServerConfiguration -EnableSMB1Protocol $false
   ```
 
-- Desabilitar 
+- Habilitar: 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
@@ -198,7 +178,7 @@ Para obter mais informações, consulte [armazenamento do servidor na Microsoft]
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- Desabilitar
+- Habilitar:
   
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true
@@ -206,7 +186,7 @@ Para obter mais informações, consulte [armazenamento do servidor na Microsoft]
 
 ### <a name="for-windows-7-windows-server-2008-r2-windows-vista-and-windows-server-2008"></a>Para Windows 7, Windows Server 2008 R2, Windows Vista e Windows Server 2008
 
-Para habilitar ou desabilitar protocolos SMB em um servidor SMB que seja o Windows 7, o Windows Server 2008 R2, o Windows Vista ou o Windows Server 2008, use o Windows PowerShell ou o editor do registro. 
+Para habilitar ou desabilitar os protocolos SMB em um servidor SMB que esteja executando o Windows 7, o Windows Server 2008 R2, o Windows Vista ou o Windows Server 2008, use o Windows PowerShell ou o editor do registro. 
 
 #### <a name="powershell-methods"></a>Métodos do PowerShell
 
@@ -229,7 +209,7 @@ Desativar
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 
-Desabilitar  
+Habilitar:  
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
@@ -250,7 +230,7 @@ Desativar
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force  
 ```
 
-Desabilitar
+Habilitar:
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force 
@@ -266,7 +246,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
  
 Para habilitar ou desabilitar o SMBv1 no servidor SMB, configure a seguinte chave do registro:
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
 
 ```
 Registry entry: SMB1
@@ -277,7 +257,7 @@ Default: 1 = Enabled (No registry key is created)
 
 Para habilitar ou desabilitar o SMBv2 no servidor SMB, configure a seguinte chave do registro: 
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters**
 
 ```
 Registry entry: SMB2
@@ -287,7 +267,7 @@ Default: 1 = Enabled (No registry key is created)
 ```
 
 > [!NOTE]
-> você deve reiniciar o computador depois de fazer essas alterações. 
+> Você deve reiniciar o computador depois de fazer essas alterações. 
 
 ## <a name="how-to-detect-status-enable-and-disable-smb-protocols-on-the-smb-client"></a>Como detectar o status, habilitar e desabilitar protocolos SMB no cliente SMB
 
@@ -298,7 +278,7 @@ Default: 1 = Enabled (No registry key is created)
 
 ##### <a name="smb-v1-on-smb-client"></a>SMB v1 no cliente SMB
 
-- Detectar
+- Detect
   
   ```cmd
   sc.exe qc lanmanworkstation
@@ -311,7 +291,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= disabled
   ```
 
-- Desabilitar
+- Habilitar:
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -334,7 +314,7 @@ Para obter mais informações, consulte [armazenamento do servidor na Microsoft]
   sc.exe config mrxsmb20 start= disabled 
   ```
 
-- Desabilitar
+- Habilitar:
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -350,7 +330,7 @@ Para obter mais informações, consulte [armazenamento do servidor na Microsoft]
 
 Este procedimento configura o seguinte novo item no registro:
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters** 
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters** 
 
 - Entrada do registro: **SMB1** 
 - REG_DWORD: **0** = desabilitado   
@@ -399,7 +379,7 @@ Entrada do registro: **iniciar** REG_DWORD: **4**= desabilitado
 Entrada do registro: **DependOnService** REG_MULTI_SZ: **"Bowser", "MRxSmb20", "NSI"**   
 
 > [!NOTE]
-> o MRxSMB10 incluído padrão, que agora é removido como dependência.
+> O padrão incluído MRxSMB10, que agora é removido como dependência.
 
 Para configurar isso usando Política de Grupo, siga estas etapas:
  
