@@ -7,12 +7,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 09e09fa30a38ef5f6046f623e24be0bc7b6ce87e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: abc1a2af7353bd85e0ae7ac55debc36d63d1782f
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856749"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942285"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>Criar uma VM blindada usando o PowerShell
 
@@ -42,7 +42,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 Para cada uma das malhas de virtualização em que você deseja executar sua VM blindada, você precisará obter os metadados do guardião para os clusters HGS das malhas.
 Seu provedor de hospedagem deve ser capaz de fornecer essas informações para você.
 
-Se você estiver em um ambiente corporativo e puder se comunicar com o servidor HGS, os metadados do guardião estarão disponíveis em *http://\<HGSCLUSTERNAME\>/KeyProtection/Service/Metadata/2014-07/Metadata.xml*
+Se você estiver em um ambiente corporativo e puder se comunicar com o servidor HGS, os metadados do guardião estarão disponíveis em *http:// \<HGSCLUSTERNAME\> /KeyProtection/Service/Metadata/2014-07/metadata.xml*
 
 ## <a name="create-shielding-data-pdk-file"></a>Criar arquivo de dados de blindagem (PDK)
 
@@ -51,7 +51,7 @@ Os dados de blindagem são criptografados de modo que apenas os servidores e loc
 Uma vez criado pelo proprietário do locatário/VM, o arquivo PDK resultante deve ser copiado para a malha protegida.
 Para obter mais informações, consulte [o que são os dados de blindagem e por que ele é necessário?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary).
 
-Além disso, você precisará de um arquivo de resposta de instalação autônoma (Unattend. xml para Windows, varia para Linux). Consulte [criar um arquivo de resposta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file) para obter diretrizes sobre o que incluir no arquivo de resposta.
+Além disso, você precisará de um arquivo de resposta de instalação autônoma (unattend.xml para Windows, varia para Linux). Consulte [criar um arquivo de resposta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file) para obter diretrizes sobre o que incluir no arquivo de resposta.
 
 Execute os seguintes cmdlets em um computador com o Ferramentas de Administração de Servidor Remoto para VMs blindadas instaladas.
 Se você estiver criando um PDK para uma VM do Linux, deverá fazer isso em um servidor que executa o Windows Server, versão 1709 ou posterior.
@@ -72,6 +72,10 @@ New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner
 ```
     
 ## <a name="provision-shielded-vm-on-a-guarded-host"></a>Provisionar VM blindada em um host protegido
+Em um host que esteja executando o Windows Server 2016, você pode monitorar a VM a ser desligada para sinalizar a conclusão da tarefa de provisionamento e consultar os logs de eventos do Hyper-V para obter informações de erro se o provisionamento não for bem-sucedido.
+
+Você também pode criar um novo disco de modelo toda vez antes de criar uma nova VM blindada.
+
 Copie o arquivo de disco do modelo (ServerOS. vhdx) e o arquivo PDK (contoso. PDK) para o host protegido para se preparar para a implantação.
 
 No host protegido, instale o módulo do PowerShell de ferramentas de malha protegida, que contém o cmdlet New-ShieldedVM para simplificar o processo de provisionamento. Se o host protegido tiver acesso à Internet, execute o seguinte comando:
@@ -80,7 +84,7 @@ No host protegido, instale o módulo do PowerShell de ferramentas de malha prote
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-Você também pode baixar o módulo em outro computador que tenha acesso à Internet e copiar o módulo resultante para `C:\Program Files\WindowsPowerShell\Modules` no host protegido.
+Você também pode baixar o módulo em outro computador que tenha acesso à Internet e copiar o módulo resultante para `C:\Program Files\WindowsPowerShell\Modules` o no host protegido.
 
 ```powershell
 Save-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0 -Path C:\temp\
@@ -105,7 +109,7 @@ New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vh
 
 ```
 
-Se o seu disco de modelo contiver um sistema operacional baseado em Linux, inclua o sinalizador `-Linux` ao executar o comando:
+Se o seu disco de modelo contiver um sistema operacional baseado em Linux, inclua o `-Linux` sinalizador ao executar o comando:
 
 ```powershell
 New-ShieldedVM -Name 'MyLinuxVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait -Linux
@@ -126,7 +130,7 @@ Add-ClusterVirtualMachineRole -VMName 'MyShieldedVM' -Cluster <Hyper-V cluster n
 
 A VM blindada agora pode ser migrada ao vivo no cluster.
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 
 > [!div class="nextstepaction"]
 > [Implantar um blindado usando o VMM](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)

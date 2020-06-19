@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 812091715ed6541294650ba7e6ddde9ab1f2fecb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407022"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942315"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>Extensão do integrador do Lenovo XClarity
 
@@ -33,9 +33,19 @@ As mesmas ferramentas estão disponíveis como uma extensão de ferramenta ao ge
 
 ![Extensão do Lenovo](../../media/extend-case-study-lenovo/lenovo-3.png)
 
-A extensão de ferramenta para clusters de failover e clusters hiperconvergentes fornece um painel que exibe o status geral de integridade do hardware do cluster, alertas de status, status de consistência do firmware e relatório, consumo de energia e temperatura, e fonte de alimentação e ventilador status de integridade.
+A extensão de ferramenta para clusters de failover e clusters hiperconvergentes fornece um painel que exibe o status geral de integridade do hardware do cluster, alertas de status, status de consistência do firmware e relatório, consumo de energia e temperatura, bem como o status de integridade do ventilador e da fonte de energia.
 
-![extensão Lenovo](../../media/extend-case-study-lenovo/lenovo-4.png)
-![extensão Lenovo](../../media/extend-case-study-lenovo/lenovo-5.png)
+![Extensão Lenovo de extensão do Lenovo ](../../media/extend-case-study-lenovo/lenovo-4.png)
+ ![](../../media/extend-case-study-lenovo/lenovo-5.png)
+
+A extensão da solução e as extensões de ferramenta para servidores e clusters do Windows fornecem as funções de atualização de servidor (com reconhecimento de cluster) sem interrupção. Isso pode ajudar a evitar a interrupção da carga de trabalho durante as atualizações do servidor. Atualmente, as extensões dão suporte a atualizações de firmware individuais e atualizações de firmware de política de conformidade para quaisquer servidores Lenovo. Eles também dão suporte às atualizações de firmware/driver da melhor receita para servidores de cluster de HCI do Lenovo ThinkAgile MX.
+
+![Extensão do Lenovo](../../media/extend-case-study-lenovo/lenovo-6-fwupdate.png)
+
+A extensão de ferramenta para clusters hiperconvergentes fornece as funções de gerenciamento de pool de armazenamento/disco para servidores de cluster de HCI do Lenovo ThinkAgile MX. Essas funções incluem a exibição gráfica traseira/frontal do servidor para apresentar o status do servidor e do disco. Com a ajuda do assistente e da exibição gráfica, operações como a adição de um disco ao pool de armazenamento, a remoção de um disco do pool de armazenamento, a substituição de um disco ou a localização de um servidor/disco na iluminação dos LEDs de localização do servidor/disco se tornam muito mais fáceis.
+
+![Extensão do Lenovo](../../media/extend-case-study-lenovo/lenovo-7-diskmgr.png)
+
+Na versão 2,1, as extensões do Lenovo introduziram recursos de controle de acesso baseado em função. Esses recursos serão habilitados se o administrador do Lenovo XClarity for aplicado ao gerenciamento de hardware.
 
 Saiba mais sobre as ofertas do integrador do Lenovo XClarity para o centro de administração do Windows no [site do Lenovo](https://support.lenovo.com/us/en/solutions/ht507549).

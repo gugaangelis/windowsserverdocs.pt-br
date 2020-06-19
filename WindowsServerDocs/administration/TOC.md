@@ -1,4 +1,4 @@
-# [Gerenciamento](manage-windows-server.md)
+# [Gerenciamento](manage-windows-server.yml)
 ## [Usar o Windows Admin Center para gerenciar seu ambiente (novo!)](../manage/windows-admin-center/overview.md)
 ## Gerenciar sistemas e ambientes do Windows Server
 ### [Gerenciar o Windows Server Hybrid Cloud Print](hybrid-cloud-print/hybrid-cloud-print-overview.md)
