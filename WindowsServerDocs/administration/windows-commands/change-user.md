@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ae082ebd2b5cf98be891d8f557f9e42d7724d22
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de96280f42f1e3002c4379390367856dcdcb885a
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716092"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070178"
 ---
 # <a name="change-user"></a>change user
 
@@ -50,7 +50,7 @@ change user {/execute | /install | /query}
 
 - Quando o sistema estiver executando **Change User/install**, várias coisas ocorrerão. Todas as entradas de registro criadas são sombreadas em **HKEY_LOCAL_MACHINE \Software\microsoft\windows NT\Currentversion\Terminal Server\Install**, na subchave **\Software** ou na subchave **\MACHINE** . As subchaves adicionadas aos **HKEY_CURRENT_USER** são copiadas na subchave **\Software** e as subchaves adicionadas a **HKEY_LOCAL_MACHINE** são copiadas na subchave **\MACHINE** . Se o aplicativo consultar o diretório do Windows usando chamadas do sistema, como GetWindowsdirectory, o servidor host da sessão da área de trabalho remota retornará o diretório systemroot. Se qualquer entrada de arquivo. ini for adicionada usando chamadas do sistema, como WritePrivateProfileString, elas serão adicionadas aos arquivos. ini no diretório systemroot.
 
-- Quando o sistema retorna para **alterar User/execute**e o aplicativo tenta ler uma entrada de registro em **HKEY_CURRENT_USER** que não existe, serviços de área de trabalho remota verifica se existe uma cópia da chave na subchave **\Terminal Server\Install** . Se tiver, as subchaves serão copiadas para o local apropriado em **HKEY_CURRRENT_USER**. Se o aplicativo tentar ler um arquivo. ini que não existe, Serviços de Área de Trabalho Remota pesquisará esse arquivo. ini na raiz do sistema. Se o arquivo. ini estiver na raiz do sistema, ele será copiado para o subdiretório \Windows do diretório base do usuário. Se o aplicativo consultar o diretório do Windows, o servidor host da Sessão RD retornará o subdiretório \Windows do diretório base do usuário.
+- Quando o sistema retorna para **alterar User/execute**e o aplicativo tenta ler uma entrada de registro em **HKEY_CURRENT_USER** que não existe, serviços de área de trabalho remota verifica se existe uma cópia da chave na subchave **\Terminal Server\Install** . Se tiver, as subchaves serão copiadas para o local apropriado em **HKEY_CURRENT_USER**. Se o aplicativo tentar ler um arquivo. ini que não existe, Serviços de Área de Trabalho Remota pesquisará esse arquivo. ini na raiz do sistema. Se o arquivo. ini estiver na raiz do sistema, ele será copiado para o subdiretório \Windows do diretório base do usuário. Se o aplicativo consultar o diretório do Windows, o servidor host da Sessão RD retornará o subdiretório \Windows do diretório base do usuário.
 
 - Quando você faz logon, o Serviços de Área de Trabalho Remota verifica se seus arquivos System. ini são mais novos do que os arquivos. ini em seu computador. Se a versão do sistema for mais recente, seu arquivo. ini será substituído ou mesclado com a versão mais recente. Isso depende se o bit INISYNC, 0x40, está definido para esse arquivo. ini. A versão anterior do arquivo. ini foi renomeada como inifile. CTX. Se os valores do registro do sistema na subchave **\Terminal Server\Install** forem mais recentes do que a sua versão em **HKEY_CURRENT_USER**, sua versão das subchaves será excluída e substituída pelas novas subchaves de **\Terminal Server\Install**.
 

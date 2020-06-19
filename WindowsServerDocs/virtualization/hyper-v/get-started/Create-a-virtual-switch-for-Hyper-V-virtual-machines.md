@@ -1,5 +1,5 @@
 ---
-title: Criar um comutador virtual para máquinas virtuais do Hyper-V
+title: Criar uma opção virtual para máquinas virtuais Hyper-V
 description: Fornece instruções sobre como criar um comutador virtual usando o Gerenciador do Hyper-V ou o Windows PowerShell
 ms.prod: windows-server
 manager: dongill
@@ -9,26 +9,26 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: e27d1286945671d3f44fe2fa3220a2e223ad7c4f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 654e574ffd44e7bbc7712defe165d75e4eae5663
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860839"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070511"
 ---
-# <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Criar um comutador virtual para máquinas virtuais do Hyper-V
+# <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Criar uma opção virtual para máquinas virtuais Hyper-V
 
 >Aplica-se a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
   
 Um comutador virtual permite que máquinas virtuais criadas em hosts Hyper-V se comuniquem com outros computadores. Você pode criar um comutador virtual ao instalar pela primeira vez a função Hyper-V no Windows Server. Para criar outros comutadores virtuais, use o Gerenciador do Hyper-V ou o Windows PowerShell. Para saber mais sobre os comutadores virtuais, consulte [comutador virtual do Hyper-V](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).  
   
-A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos recursos de comutador virtual que talvez você queira usar como o [conjunto de agrupamentos incorporados (Set)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set). Mas a rede básica é razoavelmente fácil de fazer. Este tópico aborda apenas o suficiente para que você possa criar máquinas virtuais em rede no Hyper-V. Para saber mais sobre como você pode configurar sua infraestrutura de rede, examine a documentação de [rede](../../../networking/Networking.md) .   
+A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos recursos de comutador virtual que talvez você queira usar como o [conjunto de agrupamentos incorporados (Set)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set). Mas a rede básica é razoavelmente fácil de fazer. Este tópico aborda apenas o suficiente para que você possa criar máquinas virtuais em rede no Hyper-V. Para saber mais sobre como você pode configurar sua infraestrutura de rede, examine a documentação de [rede](../../../networking/index.yml) .   
   
 ## <a name="create-a-virtual-switch-by-using-hyper-v-manager"></a>Criar um comutador virtual usando o Gerenciador do Hyper-V  
   
 1.  Abra o Gerenciador do Hyper-V, selecione o nome do computador host do Hyper-V.  
   
-2.  Selecione **ação** > **Gerenciador de comutador virtual**.  
+2.  Selecione **ação**  >  **Gerenciador de comutador virtual**.  
   
     ![Captura de tela que mostra a ação de opção de menu > Gerenciador de comutador virtual](../media/Hyper-V-Action-VSwitchManager.png)  
   
@@ -37,8 +37,8 @@ A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos r
     |Tipo de conexão|Descrição|  
     |-------------------|---------------|  
     |Externo|Dá acesso às máquinas virtuais a uma rede física para se comunicar com servidores e clientes em uma rede externa. Permite que as máquinas virtuais no mesmo servidor Hyper-V se comuniquem entre si.|  
-    |Interno|Permite a comunicação entre máquinas virtuais no mesmo servidor Hyper-V e entre as máquinas virtuais e o sistema operacional do host de gerenciamento.|  
-    |Private|Permite apenas a comunicação entre as máquinas virtuais no mesmo servidor Hyper-V. Uma rede privada é isolada de todo o tráfego de rede externo no servidor Hyper-V. Esse tipo de rede é útil quando você deve criar um ambiente de rede isolado, como um domínio de teste isolado.|  
+    |Interna|Permite a comunicação entre máquinas virtuais no mesmo servidor Hyper-V e entre as máquinas virtuais e o sistema operacional do host de gerenciamento.|  
+    |Particular|Permite apenas a comunicação entre as máquinas virtuais no mesmo servidor Hyper-V. Uma rede privada é isolada de todo o tráfego de rede externo no servidor Hyper-V. Esse tipo de rede é útil quando você deve criar um ambiente de rede isolado, como um domínio de teste isolado.|  
   
 4.  Selecione **criar comutador virtual**.  
   
@@ -96,7 +96,7 @@ A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos r
 Para obter scripts mais avançados do Windows PowerShell que abrangem recursos de comutador virtual aprimorados ou novos no Windows Server 2016, consulte [acesso remoto direto à memória e agrupamento integrado de comutador](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
 
   
-## <a name="next-step"></a>Próximas etapas  
+## <a name="next-step"></a>Próxima etapa  
 [Criar uma máquina virtual com o Hyper-V](Create-a-virtual-machine-in-Hyper-V.md)  
   
 

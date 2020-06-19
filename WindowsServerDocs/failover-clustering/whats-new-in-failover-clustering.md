@@ -8,12 +8,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: cdc9280c4c7129d2e76341bd97b0ae3b8209888f
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.openlocfilehash: 431854f2e063454124092151c6788263db57b5f2
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721734"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070154"
 ---
 # <a name="whats-new-in-failover-clustering"></a>Novidades no Clustering de Failover
 
@@ -212,5 +212,5 @@ Para obter mais informações, consulte [redes de cluster de vários canais e mu
 
 ## <a name="see-also"></a>Consulte Também
 
-* [Armazenamento](../storage/storage.md)  
+* [Armazenamento](../storage/storage.yml)  
 * [O que há de novo no armazenamento no Windows Server 2016](../storage/whats-new-in-storage.md)  

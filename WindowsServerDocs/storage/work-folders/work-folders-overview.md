@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos.
-ms.openlocfilehash: 8bd60cc0ab57935a7ce2da0ca33bd0d4c840fa2b
-ms.sourcegitcommit: cb266c8ea42b9800babbbe96b17885e82b55787d
+ms.openlocfilehash: 4e670d61729d35ee9569b09e91ef5a953961241e
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795723"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070090"
 ---
 # <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
 
@@ -56,7 +56,7 @@ Se você pretende baixar ou usar pastas de trabalho no Windows 10, Windows 7 ou 
 
  O serviço Pastas de Trabalho oferece a funcionalidade a seguir.  
   
-| Funcionalidade | Disponibilidade | Description |  
+| Funcionalidade | Disponibilidade | Descrição |  
 | ------------------- | ------------------ | ----------------- |  
 | Serviço de função Pastas de Trabalho no Gerenciador do Servidor | Windows Server 2019, Windows Server 2016 ou Windows Server 2012 R2 | Os Serviços de Arquivo e Armazenamento oferece uma maneira de configurar compartilhamentos de sincronização (pastas que armazenam arquivos de trabalho do usuário), monitora Pastas de Trabalho e gerencia compartilhamentos de sincronização e o acesso de usuários |
 | Cmdlets de Pastas de Trabalho | Windows Server 2019, Windows Server 2016 ou Windows Server 2012 R2 | Um módulo do Windows PowerShell que contém cmdlets abrangentes para gerenciar servidores de Pastas de Trabalho |  
@@ -164,7 +164,7 @@ O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armaz
   
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
  Para obter informações adicionais relacionadas, consulte os seguintes recursos.  
   
@@ -175,4 +175,4 @@ Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, 
 | **Operações** | -   [Aplicativo IPAD de pastas de trabalho: perguntas frequentes](https://windows.microsoft.com/windows/work-folders-ipad-faq) (para usuários)<br />-   [Gerenciamento de certificado de Pastas de Trabalho](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx) (postagem de blog)<br />-   [Monitorando implantações de pastas de trabalho do Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx) (postagem de blog)<br />-   [Cmdlets SyncShare (pastas de trabalho) no Windows PowerShell](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [Cartão de Referência Rápida dos cmdlets de armazenamento e serviços de arquivo do PowerShell para Windows Server 2012 R2 Preview Edition](https://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
 | **Solução de problemas** | -   [Windows Server 2012 R2 – Resolvendo conflitos de portas com sites do IIS e Pastas de Trabalho](https://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx) (postagem de blog)<br />-   [Erros comuns em pastas de trabalho](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
 | **Recursos da comunidade** | -   [Fórum de armazenamento e serviços de arquivo](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [O blog da equipe de armazenamento no Microsoft-arquivo de gabinete](https://blogs.technet.com/b/filecab/)<br />-   [Consulte o blog da equipe de serviços de diretório](https://blogs.technet.com/b/askds/) |  
-| **Tecnologias relacionadas** | -   [Armazenamento no Windows Server 2016](../storage.md)<br>-   [Serviços de arquivo e armazenamento](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [Gerenciador de recursos do servidor de arquivos](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [Redirecionamento de pasta, Arquivos Offline e perfis de usuário de roaming](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [Namespaces e Replicação do DFS de DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |
+| **Tecnologias relacionadas** | -   [Armazenamento no Windows Server 2016](../storage.yml)<br>-   [Serviços de arquivo e armazenamento](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [Gerenciador de recursos do servidor de arquivos](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [Redirecionamento de pasta, Arquivos Offline e perfis de usuário de roaming](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [Namespaces e Replicação do DFS de DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |

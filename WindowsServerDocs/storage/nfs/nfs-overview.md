@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f71bc6605103f8240bcd531da3a5b58d470181
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403043"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070558"
 ---
 # <a name="network-file-system-overview"></a>Visão geral de sistema de arquivos de rede
 
@@ -118,4 +118,4 @@ A tabela a seguir fornece recursos adicionais para avaliar o NFS.
 |---|---|
 |Implantação|[Implantar o Network File System](deploy-nfs.md)|
 |Operações|[Cmdlets do NFS no Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
-|Tecnologias relacionadas|[Armazenamento no Windows Server](../storage.md)|
+|Tecnologias relacionadas|[Armazenamento no Windows Server](../storage.yml)|
