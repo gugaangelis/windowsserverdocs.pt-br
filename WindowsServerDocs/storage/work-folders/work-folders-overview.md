@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos.
-ms.openlocfilehash: 4e670d61729d35ee9569b09e91ef5a953961241e
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f48c03d97cab94f836ef6fafa77fccf07a04331b
+ms.sourcegitcommit: 44a96d505b5c96da62937f5dd2d724342ee9d835
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070090"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141025"
 ---
 # <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
 
@@ -56,7 +56,7 @@ Se você pretende baixar ou usar pastas de trabalho no Windows 10, Windows 7 ou 
 
  O serviço Pastas de Trabalho oferece a funcionalidade a seguir.  
   
-| Funcionalidade | Disponibilidade | Descrição |  
+| Funcionalidade | Disponibilidade | Description |  
 | ------------------- | ------------------ | ----------------- |  
 | Serviço de função Pastas de Trabalho no Gerenciador do Servidor | Windows Server 2019, Windows Server 2016 ou Windows Server 2012 R2 | Os Serviços de Arquivo e Armazenamento oferece uma maneira de configurar compartilhamentos de sincronização (pastas que armazenam arquivos de trabalho do usuário), monitora Pastas de Trabalho e gerencia compartilhamentos de sincronização e o acesso de usuários |
 | Cmdlets de Pastas de Trabalho | Windows Server 2019, Windows Server 2016 ou Windows Server 2012 R2 | Um módulo do Windows PowerShell que contém cmdlets abrangentes para gerenciar servidores de Pastas de Trabalho |  
@@ -140,9 +140,9 @@ A tabela a seguir aborda como diversas tecnologias de sincronização da Microso
 | | Pastas de trabalho | Arquivos Offline | OneDrive for Business | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **Resumo da tecnologia** | Sincroniza arquivos armazenados em um servidor de arquivos com computadores e dispositivos | Sincroniza arquivos armazenados em um servidor de arquivos com computadores que têm acesso à rede corporativa (pode ser substituído por Pastas de Trabalho) | Sincroniza arquivos armazenados no Office 365 ou no SharePoint com computadores e dispositivos dentro ou fora de uma rede corporativa e fornece funcionalidade de colaboração de documentos | Sincroniza arquivos pessoais armazenados no OneDrive com PCs, computadores Mac e dispositivos |
-| **Projetado para fornecer acesso de usuário a arquivos de trabalho** | Sim | Sim | Sim | Não |
+| **Projetado para fornecer acesso de usuário a arquivos de trabalho** | Yes | Sim | Sim | Não |
 | **serviço de nuvem** | Nenhum | Nenhum | Office 365 | Microsoft OneDrive |
-| **Servidores de rede interna** | Servidores de arquivos que executam o Windows Server 2012 R2 ou o Windows Server 2016 | Servidores de arquivos | SharePoint Server (opcional) | Nenhum |
+| **Servidores de rede interna** | Servidores de arquivos que executam o Windows Server 2012 R2, o Windows Server 2016 e o Windows Server 2019 | Servidores de arquivos | SharePoint Server (opcional) | Nenhum |
 | **Clientes com suporte** | PCs, iOS, Android | PCs em uma rede corporativa ou conectado por meio do DirectAccess, VPNs ou outras tecnologias de acesso remoto | PCs, iOS, Android, Windows Phone | PCs, computadores Mac, Windows Phone, iOS, Android |
   
 > [!NOTE]
@@ -160,11 +160,11 @@ O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armaz
   
 ## <a name="interoperability-with-windows-azure-virtual-machines"></a>Interoperabilidade com máquinas virtuais do Windows Azure
 
- Você pode executar esse serviço de função do Windows Server em uma máquina virtual no Windows Azure. Esse cenário foi testado com o Windows Server 2012 R2 e o Windows Server 2016.  
+ Você pode executar esse serviço de função do Windows Server em uma máquina virtual no Windows Azure. Esse cenário foi testado com o Windows Server 2012 R2, o Windows Server 2016 e o Windows Server 2019.  
   
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Veja também
 
  Para obter informações adicionais relacionadas, consulte os seguintes recursos.  
   
