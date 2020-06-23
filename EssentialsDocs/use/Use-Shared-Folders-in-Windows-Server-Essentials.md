@@ -8,12 +8,12 @@ ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6f81041a2a1938add2fd8bfc03aa492d1da266cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c0e72f37057d50f7d7164ea84c9c7771fca0de8
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852099"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217566"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>Use pastas compartilhadas no Windows Server Essentials
 
@@ -24,24 +24,24 @@ ms.locfileid: "80852099"
  Há maneiras diferentes de acessar suas pastas compartilhadas no Windows Server Essentials a partir de um dispositivo que está conectado ao servidor:  
   
 
--   [Usando o Launchpad do Windows Server Essentials](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
+-   [Uso da Barra Inicial do Windows Server Essentials](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
--   [Usando o Acesso via Web remoto](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
+-   [Uso do Acesso via Web Remoto](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Usando meu aplicativo de servidor para Windows Phone](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Uso do aplicativo My Server para Windows Phone](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Usando meu aplicativo de servidor para Windows 8](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Uso do aplicativo My Server para Windows 8](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
 ##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Usando o Launchpad do Windows Server Essentials  
  Você pode usar a Barra Inicial de qualquer computador que esteja conectado ao servidor usando o Assistente Conectar Meu Computador ao Servidor. Para obter mais informações sobre como conectar o computador ao servidor, consulte [conectar computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
 
--   [Usando o Launchpad do Windows Server Essentials](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
+-   [Uso da Barra Inicial do Windows Server Essentials](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
--   [Usando o Acesso via Web remoto](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
+-   [Uso do Acesso via Web Remoto](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Usando meu aplicativo de servidor para Windows Phone](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Uso do aplicativo My Server para Windows Phone](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Usando meu aplicativo de servidor para Windows 8](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Uso do aplicativo My Server para Windows 8](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
 ##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Usando o Launchpad do Windows Server Essentials  
  Você pode usar a Barra Inicial de qualquer computador que esteja conectado ao servidor usando o Assistente Conectar Meu Computador ao Servidor. Para obter mais informações sobre como conectar o computador ao servidor, consulte [conectar computadores ao servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
@@ -63,9 +63,9 @@ ms.locfileid: "80852099"
   
 ##  <a name="using-remote-web-access"></a><a name="BKMK_UsingRWA"></a>Usando o Acesso via Web remoto  
 
- Você pode acessar arquivos e pastas compartilhados de qualquer computador remoto usando o site de Acesso via Web Remoto. Em um computador na rede de servidor, para acessar o site Acesso via Web remoto, abra o navegador da Internet e digite https://< ServerName\>/Remote. Usando o Acesso via Web Remoto, você pode exibir e gerenciar arquivos em pastas compartilhadas. Para obter as instruções passo a passo, consulte [usar o acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
+ Você pode acessar arquivos e pastas compartilhados de qualquer computador remoto usando o site de Acesso via Web Remoto. Em um computador na rede de servidor, para acessar o site Acesso via Web remoto, abra o navegador da Internet e digite https://<ServerName \> /Remote. Usando o Acesso via Web Remoto, você pode exibir e gerenciar arquivos em pastas compartilhadas. Para obter as instruções passo a passo, consulte [usar o acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
 
- Você pode acessar arquivos e pastas compartilhados de qualquer computador remoto usando o site de Acesso via Web Remoto. Em um computador na rede de servidor, para acessar o site Acesso via Web remoto, abra o navegador da Internet e digite https://< ServerName\>/Remote. Usando o Acesso via Web Remoto, você pode exibir e gerenciar arquivos em pastas compartilhadas. Para obter as instruções passo a passo, consulte [usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
+ Você pode acessar arquivos e pastas compartilhados de qualquer computador remoto usando o site de Acesso via Web Remoto. Em um computador na rede de servidor, para acessar o site Acesso via Web remoto, abra o navegador da Internet e digite https://<ServerName \> /Remote. Usando o Acesso via Web Remoto, você pode exibir e gerenciar arquivos em pastas compartilhadas. Para obter as instruções passo a passo, consulte [usar o acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
 
   
 > [!NOTE]
@@ -90,22 +90,15 @@ ms.locfileid: "80852099"
 ##  <a name="using-my-server-app-for-windows-8"></a><a name="BKMK_App"></a>Usando meu aplicativo de servidor para Windows 8  
  Você pode acessar as pastas compartilhadas por meio do Windows 8 usando o aplicativo My Server para o Windows 8. Você pode baixar o aplicativo da e armazenamento da [Loja de Aplicativos do Windows 8](https://windows.microsoft.com/windows-8/apps).  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 -   [Gerenciar pastas do servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o armazenamento do servidor](../manage/Manage-Server-Storage-in-Windows-Server-Essentials.md)  
-  
 
 -   [Conecte-se](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [Reproduzir mídia digital](Play-Digital-Media-in-Windows-Server-Essentials.md)
-
--   [Conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [Trabalhar remotamente](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-  
--   [Reproduzir mídia digital](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

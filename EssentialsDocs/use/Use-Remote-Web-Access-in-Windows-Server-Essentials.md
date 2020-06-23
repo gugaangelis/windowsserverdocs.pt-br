@@ -8,12 +8,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5a26f331c8bfe6d30dc74d555ba5f4a4cdbd6232
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 17ed30b708ce76396d49b4dc1c3c4a4785b67fe8
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852119"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217576"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Utilizar o acesso remoto via Web no Windows Server Essentials
 
@@ -26,7 +26,7 @@ ms.locfileid: "80852119"
  Este tópico inclui as seções a seguir:  
   
 
--   [Conectar-se ao Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [Conectar-se ao Acesso via Web Remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
 -   [Compartilhar arquivos e pastas](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
@@ -36,9 +36,9 @@ ms.locfileid: "80852119"
   
 -   [Fazer logon no Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Acessar remotamente seu computador](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [Acessar remotamente o computador](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
--   [Conectar-se ao Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [Conectar-se ao Acesso via Web Remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
 -   [Compartilhar arquivos e pastas](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
@@ -48,7 +48,7 @@ ms.locfileid: "80852119"
   
 -   [Fazer logon no Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Acessar remotamente seu computador](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [Acessar remotamente o computador](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
   
 ###  <a name="log-on-to-remote-web-access"></a><a name="BKMK_1"></a>Fazer logon no Acesso via Web remoto  
@@ -56,7 +56,7 @@ ms.locfileid: "80852119"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>Para fazer logon no Acesso via Web Remoto de um computador da rede  
   
-1.  Abra um navegador da Web, digite **https://** _< nomedoservidor\>_ **/Remote** na barra de endereços e pressione Enter.  
+1.  Abra um navegador da Web, digite **https://** _<\> nomedoservidor_**/Remote** na barra de endereços e pressione Enter.  
   
     > [!NOTE]
     >  Certifique-se de incluir os s em https.  
@@ -65,7 +65,7 @@ ms.locfileid: "80852119"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>Para fazer logon no Acesso via Web Remoto de um computador remoto  
   
-1.  Abra um navegador da Web, digite **https://** _< YourDomainName\>_ **/Remote** na barra de endereços e pressione Enter.  
+1.  Abra um navegador da Web, digite **https://** _<\> YourDomainName_**/Remote** na barra de endereços e pressione Enter.  
   
     > [!NOTE]
     >  Você pode obter as informações de nome de domínio do administrador da rede. Certifique-se de incluir os s em https.  
@@ -83,7 +83,7 @@ ms.locfileid: "80852119"
   
      O computador está ligado e está disponível para uma conexão remota. Mesmo se status aparecer, você ainda pode não será capaz de se conectar a esse computador se um firewall de terceiros bloquear a conexão.  
   
--   **Offline ou em suspensão**  
+-   **Offline ou em espera**  
   
      O computador está desligado ou no modo de suspensão ou de hibernação. Se um computador estiver offline ou em espera, o status é atualizado em tempo real para que você possa saber quando o computador estará disponível.  
   
@@ -104,13 +104,9 @@ ms.locfileid: "80852119"
 ##  <a name="share-files-and-folders"></a><a name="BKMK_SharedFolders"></a>Compartilhar arquivos e pastas  
   
 
--   [Carregar e baixar arquivos no Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
+-   [Fazer upload e download de arquivos no acesso via Web Remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
   
--   [Criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
-
--   [Carregar e baixar arquivos no Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
-  
--   [Criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Criar, renomear, mover, excluir ou copiar arquivos e pastas no acesso via Web Remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
   
 ###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_UploadRWA"></a>Carregar e baixar arquivos no Acesso via Web remoto  
@@ -133,7 +129,7 @@ ms.locfileid: "80852119"
   
 #### <a name="upload-files"></a>Carregar arquivos  
   
-###### <a name="to-upload-files"></a>Para carregar arquivos  
+###### <a name="to-upload-files"></a>Carregar arquivos  
   
 1. No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.  
   
@@ -189,7 +185,7 @@ ms.locfileid: "80852119"
 > [!NOTE]
 >  Essas opções estão disponíveis somente quando você baixar vários arquivos ou pastas para o computador.  
   
-- **Arquivo executável de extração automática (. exe)**  
+- **Arquivo executável auto-extraível (.exe)**  
   
   > [!NOTE]
   >   Esta seção se aplica a um servidor que executa o Windows Server Essentials.  
@@ -199,7 +195,7 @@ ms.locfileid: "80852119"
   > [!NOTE]
   >  Essa opção oferece suporte a caracteres Unicode.  
   
-- **Pasta compactada do Windows (. zip)**  
+- **Pasta compactada Windows (. zip)**  
   
    Ao compactar um arquivo é criada uma versão compactada do arquivo que for menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto, .txt, .doc, .xls e arquivos de elementos gráficos que usam tipos de arquivo não compactado, como .bmp. Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
   
@@ -258,7 +254,7 @@ ms.locfileid: "80852119"
   
 3.  Digite um nome para a pasta e, em seguida, clique em **OK**.  
   
-##### <a name="to-rename-a-file-or-folder"></a>Para renomear um arquivo ou pasta  
+##### <a name="to-rename-a-file-or-folder"></a>Renomear um arquivo ou pasta  
   
 1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.  
   
@@ -293,13 +289,9 @@ ms.locfileid: "80852119"
 ##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>Conectar-se de um dispositivo móvel  
   
 
--   [Usar o Acesso via Web remoto de um dispositivo móvel](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Usar o Acesso Remoto via Web de um dispositivo móvel](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
   
--   [Navegadores da Web com suporte para dispositivos móveis](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
-
--   [Usar o Acesso via Web remoto de um dispositivo móvel](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
-  
--   [Navegadores da Web com suporte para dispositivos móveis](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
+-   [Compatível com navegadores Web para dispositivos móveis](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)   
 
   
 ###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>Usar o Acesso via Web remoto de um dispositivo móvel  
@@ -310,13 +302,13 @@ ms.locfileid: "80852119"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para fazer logon no Acesso via Web Remoto de um dispositivo móvel  
   
-1.  Abra um navegador da Web e digite **https://** _< YourDomainName\>_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
+1.  Abra um navegador da Web e digite **https://** _<\> YourDomainName_**/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
   
 2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso Remoto via Web .  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Alternar para a versão da área de trabalho do acesso via Web Remoto  
   
-1.  Abra um navegador da Web e digite **https://** _< YourDomainName\>_ **/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
+1.  Abra um navegador da Web e digite **https://** _<\> YourDomainName_**/Remote** na barra de endereços.  Certifique-se de incluir os s em https.  
   
 2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto, clique em **Exibir versão da área de trabalho**e clique na seta. Você está conectado à versão da área de trabalho do acesso remoto via Web .  
   
@@ -324,7 +316,7 @@ ms.locfileid: "80852119"
   
 1. Dê logoff.  
   
-2. Abra um navegador da Web e digite **https://** _< YourDomainName\>_ **/Remote/m** na barra de endereços. Certifique-se de incluir os s em https.  
+2. Abra um navegador da Web e digite **https://** _<\> YourDomainName_**/Remote/m** na barra de endereços. Certifique-se de incluir os s em https.  
   
 3. A versão móvel do Acesso via Web remoto é exibida. Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso via Web remoto.  
   
@@ -347,16 +339,11 @@ ms.locfileid: "80852119"
   
 -   Firefox  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
--   [Gerenciar Acesso via Web remotos](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
-  
+-   [Gerenciar o Acesso via Web Remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
 
--   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)  
+-   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)
   
 -   [Utilizar o Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
--   [Trabalhar remotamente](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-  
--   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 

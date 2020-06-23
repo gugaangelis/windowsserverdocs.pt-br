@@ -8,12 +8,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ad75f815173c53ca40fdc5146f6f27fbc1e2740b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3f2cd1a9746b03ba7642e78c468dafd718f84959
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852139"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217606"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Gerenciar mídia digital no Windows Server Essentials
 
@@ -26,31 +26,17 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
 -   [Visão geral de mídia digital](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Reproduzir e compartilhar mídia digital](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Executar e compartilhar mídia digital](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [Reproduzir arquivos de mídia digital compartilhados de um local remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [Executar arquivos de mídia digital compartilhada de um local remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [Adicionar arquivos de mídia digital ao servidor](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [Adicionar arquivos de mídia digital para o servidor](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
   
--   [Opções de formato de download](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Opções de formatos de download](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
   
 -   [Ferramenta de upload de arquivo fácil](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
   
 -   [Exibir e procurar mídia digital compartilhada](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
-
--   [Visão geral de mídia digital](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1)  
-  
--   [Reproduzir e compartilhar mídia digital](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)  
-  
--   [Reproduzir arquivos de mídia digital compartilhados de um local remoto](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_3)  
-  
--   [Adicionar arquivos de mídia digital ao servidor](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
-  
--   [Opções de formato de download](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
-  
--   [Ferramenta de upload de arquivo fácil](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
-  
--   [Exibir e procurar mídia digital compartilhada](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
 
   
 ##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>Visão geral de mídia digital  
@@ -85,38 +71,24 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
 -   [Enviar arquivos de mídia no Windows Server Essentials para o Windows Media Player, Xbox 360 ou para um player de mídia digital em rede](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)  
 
--   [Pesquisar e reproduzir arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1)  
-  
--   [Enviar arquivos de mídia no Windows Server Essentials para o Windows Media Player, Xbox 360 ou para um player de mídia digital em rede](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)  
 
   
 ###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>Pesquisar e reproduzir arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede  
  Quando o dispositivo estiver ingressado na rede do Windows Server Essentials, você poderá pesquisar e reproduzir arquivos de mídia digital de qualquer uma das seguintes maneiras:  
   
 
--   [Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows Media Center](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_WMC)  
+-   [Pesquisar e executar arquivos de mídia de um computador que esteja executando o Windows Media Center](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_WMC)  
   
--   [Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows usando o Windows Media Player](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
+-   [Pesquisar e executar arquivos de mídia de um computador que esteja executando o Windows usando o Windows Media Player](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
   
--   [Pesquisar e reproduzir arquivos de mídia usando o Xbox 360](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
+-   [Pesquisar e executar arquivos de mídia usando o Xbox 360](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
   
 -   [Pesquisar e reproduzir arquivos de mídia usando outros media players digitais ou receptores que são compatíveis com o Windows Server Essentials](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Other)  
   
--   [Pesquisar e reproduzir arquivos de mídia usando o recurso pastas compartilhadas do Launchpad](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
+-   [Pesquisar e executar arquivos de mídia usando o recurso de pastas compartilhadas da Barra Inicial](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
--   [Pesquisar e reproduzir mídia compartilhada usando o Acesso via Web remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
+-   [Procurar e reproduzir mídia compartilhada usando o acesso via Web Remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
 
--   [Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows Media Center](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_WMC)  
-  
--   [Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows usando o Windows Media Player](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
-  
--   [Pesquisar e reproduzir arquivos de mídia usando o Xbox 360](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
-  
--   [Pesquisar e reproduzir arquivos de mídia usando outros media players digitais ou receptores que são compatíveis com o Windows Server Essentials](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Other)  
-  
--   [Pesquisar e reproduzir arquivos de mídia usando o recurso pastas compartilhadas do Launchpad](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
-  
--   [Pesquisar e reproduzir mídia compartilhada usando o Acesso via Web remoto](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
 
   
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows Media Center  
@@ -165,7 +137,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
 2.  A partir da barra inicial, clique em **pastas compartilhadas**. Uma janela do Windows Explorer é aberta e exibe as pastas compartilhadas no servidor.  
   
-3.  Em **pesquisa** , digite o nome de um arquivo de mídia. Os resultados da busca da pesquisa serão exibidos.  
+3.  Na caixa **Pesquisa**, digite o nome de um arquivo de mídia. Os resultados da busca da pesquisa serão exibidos.  
   
     > [!NOTE]
     >  Como opção, você pode também clique duas vezes em uma pasta compartilhada para procurar o conteúdo da pasta.  
@@ -174,7 +146,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
 1.  Faça logon no Acesso Remoto via Web.  
   
-2.  Clique em **pastas compartilhadas**. A seção **pastas compartilhadas** da página da Web exibe uma lista de pastas compartilhadas no servidor.  
+2.  Clique em **Pastas Compartilhadas**. A seção **pastas compartilhadas** da página da Web exibe uma lista de pastas compartilhadas no servidor.  
   
 3.  Clique duas vezes em uma pasta para exibir o conteúdo da pasta.  
   
@@ -188,10 +160,10 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
 1. Abra um navegador da Internet.  
   
-2. Vá para o site de Acesso Remoto via Web . Digite **https://< YourDomainName\>/Remote** na barra de endereços do navegador da Internet e pressione Enter.  
+2. Vá para o site de Acesso Remoto via Web . Digite **https://<YourDomainName \> /Remote** na barra de endereços do navegador da Internet e pressione Enter.  
   
    > [!NOTE]
-   >  *< YourDomainName\>* é um espaço reservado. Ele será um nome exclusivo para o servidor, portanto, o endereço que você digitar será semelhante a **https://contoso.com/remote** . Se você não souber o nome do seu domínio, peça ao administrador que escolheu o nome de domínio quando a função Acesso remoto estiver configurada no servidor. Para obter mais informações, veja [ativar o acesso remoto via Web](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
+   >  *<YourDomainName \> * é um espaço reservado. Ele será um nome exclusivo para o seu servidor, portanto, o endereço que você digitar terá a seguinte aparência **https://contoso.com/remote** . Se você não souber o nome do seu domínio, peça ao administrador que escolheu o nome de domínio quando a função Acesso remoto estiver configurada no servidor. Para obter mais informações, veja [ativar o acesso remoto via Web](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
   
 3. Sobre a acesso remoto via Web da página de entrada, digite o nome de conta de usuário e senha e, em seguida, clique na seta.  
   
@@ -237,14 +209,14 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
  Escolha a opção a seguir que atenda às suas necessidades de downloads:  
   
-- **Arquivo ZIP compactado (. zip)**  
+- **Arquivo ZIP compactado (.zip)**  
   
    Ao compactar um arquivo é criada uma versão compactada do arquivo que for menor do que o arquivo original. A versão compactada do arquivo tem uma extensão de nome de arquivo .zip. Tipos de arquivos que são reduzidos em mais compactados são tipos de arquivo de texto (por exemplo, .txt, .doc e .xls) e arquivos de elementos gráficos que usa tipos de arquivo não compactados (como .bmp). Alguns arquivos gráficos, como arquivos. jpg e. gif, já usam compressão, o tamanho do arquivo reduz muito pouco ao ser compactado. Além disso, um documento do Word que contém muitos elementos gráficos não é reduzido quanto um documento é de texto.  
   
   > [!NOTE]
   >  Essa opção fornece suporte limitado para nomes de arquivo internacionais.  
   
-- **Arquivo executável de extração automática (. exe)**  
+- **Arquivo executável auto-extraível (.exe)**  
   
    Um arquivo executável auto-extraível é um arquivo permitido para baixar e que combina o programa de (executável) descompactação com os arquivos compactados. Quando você executar o programa executável, ele descompacta automaticamente os arquivos compactados. Isso é uma forma comum de distribuir dados compactados sem se preocupar se o destinatário tem o utilitário de descompactação certo.  
   
@@ -273,7 +245,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
 1.  Ir para a barra inicial.  
   
-2.  Clique em **pastas compartilhadas**. O Windows Explorer é aberta e exibe uma lista de pastas compartilhadas no servidor.  
+2.  Clique em **Pastas Compartilhadas**. O Windows Explorer é aberta e exibe uma lista de pastas compartilhadas no servidor.  
   
 3.  Clique duas vezes em uma pasta para exibir o conteúdo da pasta.  
   
@@ -281,11 +253,11 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   
 1.  Faça logon no Acesso Remoto via Web.  
   
-2.  Clique em **pastas compartilhadas**. A seção **pastas compartilhadas** da página da Web exibe uma lista de pastas compartilhadas no servidor.  
+2.  Clique em **Pastas Compartilhadas**. A seção **pastas compartilhadas** da página da Web exibe uma lista de pastas compartilhadas no servidor.  
   
 3.  Clique duas vezes em uma pasta para exibir o conteúdo da pasta.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 -   [Gerenciar mídia digital](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)  
   
@@ -295,10 +267,4 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 -   [Usar pastas compartilhadas](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
 -   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [Usar pastas compartilhadas](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)  
-  
--   [Trabalhar remotamente](../use/Work-Remotely-in-Windows-Server-Essentials.md)
 

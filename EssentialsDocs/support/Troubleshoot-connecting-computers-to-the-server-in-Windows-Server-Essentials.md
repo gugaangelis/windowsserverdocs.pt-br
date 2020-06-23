@@ -8,12 +8,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2d98d4cc561a3c29ce73455f38f787709149d056
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e3c6d58744f24e3027dedc41ad94ee133786a54
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852189"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217496"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de computadores que se conectam ao servidor no Windows Server Essentials
 
@@ -48,28 +48,6 @@ ms.locfileid: "80852189"
 -   Problema 10: [problema 10](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
   
 -   Problema 11: [problema 11](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
-
--   Problema 1: [problema 1](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BMRK_Package)  
-  
--   Problema 2: [problema 2](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2)  
-  
--   Problema 3: [problema 3](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2a)  
-  
--   Problema 4: [problema 4](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueNetFramework)  
-  
--   Problema 5: [problema 5](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_Time)  
-  
--   Problema 6: [problema 6](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ServiceStopped)  
-  
--   Problema 7: [problema 7](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueReconnect)  
-  
--   Problema 8: [problema 8](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_JoinWin7)  
-  
--   Problema 9: [problema 9](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueAutologon)  
-  
--   Problema 10: [problema 10](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
-  
--   Problema 11: [problema 11](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
 
   
 ##  <a name="issue-1"></a><a name="BMRK_Package"></a>Problema 1  
@@ -136,7 +114,7 @@ ms.locfileid: "80852189"
   
  **Descrição**  
   
- Quando você conecta um computador a um servidor que executa o Windows Server Essentials ou o Windows Server Essentials, o assistente tenta instalar .NET Framework versão 4.5.50709 no computador. No entanto, se uma versão anterior do .NET Framework versão 4,5 estiver presente, a versão atualizada não poderá ser instalada e a tentativa de conexão falhará com esta mensagem de erro: para executar este aplicativo, você deve instalar uma das seguintes versões do .NET Framework: V 4.5.50709. Entre em contato com seu editor de alocação para obter instruções sobre como obter a versão apropriada do .NET Framework.  
+ Quando você conecta um computador a um servidor que executa o Windows Server Essentials ou o Windows Server Essentials, o assistente tenta instalar .NET Framework versão 4.5.50709 no computador. No entanto, se uma versão anterior do .NET Framework versão 4,5 estiver presente, a versão atualizada não poderá ser instalada e a tentativa de conexão falhar com esta mensagem de erro: para executar este aplicativo, você deve instalar uma das seguintes versões do .NET Framework: V 4.5.50709. Entre em contato com seu editor de alocação para obter instruções sobre como obter a versão apropriada do .NET Framework.  
   
  **Solução**  
   
@@ -272,7 +250,7 @@ ms.locfileid: "80852189"
   
  **Descrição**  
   
- Depois de atualizar de uma versão de pré-lançamento (beta ou RC) do Windows Server Essentials para a versão de lançamento, você deve remover o software do conector de cada computador que estava conectado ao servidor e, em seguida, conectar o computador novamente para instalar o lançado versão do software do conector.  
+ Depois de atualizar de uma versão de pré-lançamento (beta ou RC) do Windows Server Essentials para a versão lançada, você deve remover o software do conector de cada computador que estava conectado ao servidor e, em seguida, conectar o computador novamente para instalar a versão de lançamento do software do conector.  
   
  No entanto, quando você remove o software do conector de um computador da rede, os arquivos de log existentes na pasta %ProgramData%\Microsoft\Windows Server\Logs\ nesse computador não são excluídos. Se você não excluir a pasta logs, os arquivos de log poderão ser corrompidos quando você conectar o computador à versão de lançamento do Windows Server Essentials.  
   
@@ -297,12 +275,12 @@ ms.locfileid: "80852189"
   
  **Solução**  
   
- Antes de atualizar o sistema operacional cliente para uma versão diferente (por exemplo, você atualiza o Windows XP para Windows Vista ou Windows Vista para o Windows 7), você deve desinstalar o software Connector. No Painel de Controle, utilize **Adicionar ou Remover Programas**. Após a conclusão da atualização do sistema operacional do cliente, você pode reinstalar o conector do cliente abrindo o*servidor*http://< >/Connect em um navegador da Web, em que <*servidor*> é o nome do servidor do Windows Server Essentials.  
+ Antes de atualizar o sistema operacional cliente para uma versão diferente (por exemplo, você atualiza o Windows XP para Windows Vista ou Windows Vista para o Windows 7), você deve desinstalar o software Connector. No Painel de Controle, utilize **Adicionar ou Remover Programas**. Após a conclusão da atualização do sistema operacional do cliente, você pode reinstalar o conector do cliente abrindo o http://<*server*>/Connect em um navegador da Web, onde <*Server*> é o nome do servidor do Windows Server Essentials.  
   
  Se você já atualizou o cliente com o software Connector instalado, use **Adicionar/Remover Programas** ou **Programas e Recursos** para desinstalar o software Connector. Em seguida, instale o software Connector novamente.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 -   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   
--   [Solução de problemas do Windows 2012 Server Essentials ConnectComputer (TechNet wiki)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)
+-   [Solucionando problemas no Windows 2012 Server Essentials ConnectComputer (Wiki do TechNet)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)

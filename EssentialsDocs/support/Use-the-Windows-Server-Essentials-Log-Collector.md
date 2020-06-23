@@ -8,12 +8,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa7ad24eec7c2732ee1c840aae678e3b0bff768c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 16fc2c8b6029a4793eafd5ca7c51e66d6bc36d80
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852159"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217426"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Usar o coletor de log do Windows Server Essentials
 
@@ -30,15 +30,10 @@ Quando você estiver solucionando problemas do computador, um representante do s
 >[Baixe o pacote de instalação do coletor de logs do Windows Server Essentials](https://www.microsoft.com/download/details.aspx?id=34821).  
   
  Para instalar e executar o coletor de log, execute as etapas nos tópicos a seguir:  
-  
 
-1. [Instalar o coletor de logs](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [Instalar o coletor de log](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2. [Executar o coletor de logs](Run-the-Windows-Server-Essentials-Log-Collector.md)  
-
-3. [Instalar o coletor de logs](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
-  
-4. [Executar o coletor de logs](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [Executar o coletor de log](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
 
 ## <a name="environment-information-collected"></a>Informações sobre o ambiente coletadas  
@@ -52,7 +47,7 @@ Quando você estiver solucionando problemas do computador, um representante do s
   
 -   Adaptadores de rede que estão vinculados ao TCP/IP  
   
--   Localidade  
+-   Local  
   
 -   Processos  
   
@@ -109,7 +104,7 @@ Quando você estiver solucionando problemas do computador, um representante do s
   
 ### <a name="server-logs-and-registry-information"></a>Logs do servidor e informações do Registro  
   
--   Logs de produto do servidor, de < ProgramData\>\Microsoft\Windows Server\Logs  
+-   Logs de produto do servidor, de <ProgramData \> \Microsoft\Windows Server\Logs  
   
 -   Tarefas Agendadas  
   
@@ -137,9 +132,9 @@ Quando você estiver solucionando problemas do computador, um representante do s
   
 ### <a name="network-computer-logs-and-registry-information"></a>Logs de computador da rede e informações do Registro  
   
--   Logs de produto do computador de rede em < ProgramData\>\Microsoft\Windows Server\Logs  
+-   Logs de produto do computador de rede em <ProgramData \> \Microsoft\Windows Server\Logs  
   
--   Arquivo de alertas de integridade em < ProgramData\>\Microsoft\Windows Server\Data  
+-   Arquivo de alertas de integridade em <ProgramData \> \Microsoft\Windows Server\Data  
   
 -   Logs do Windows Update  
   
@@ -147,7 +142,7 @@ Quando você estiver solucionando problemas do computador, um representante do s
   
 -   Informações de tarefas agendadas  
   
--   Chaves do registro de \\\ HKEY_LOCAL_MACHINE servidor \SOFTWARE\Microsoft\Windows \  
+-   Chaves do registro de \\ \ HKEY_LOCAL_MACHINE servidor \SOFTWARE\Microsoft\Windows \  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>Logs para computadores que não executam uma versão do sistema operacional Windows  
  O coletor de Log não coleta arquivos de log de computadores que não executam uma versão do sistema operacional Windows. Para computadores que não possuem o Windows, copie manualmente os seguintes arquivos de log para o mesmo local em que você está armazenando os arquivos do coletor de log.  
@@ -156,14 +151,11 @@ Quando você estiver solucionando problemas do computador, um representante do s
   
 -   Library/Logs/Windows Server.log  
   
--   Biblioteca/logs/CrashReporter/LaunchPad-< nnn\> (Copie todo o LaunchPad-< nnn\>arquivos. Crash)  
+-   Biblioteca/logs/CrashReporter/LaunchPad-<nnn \> (Copie todo o Launchpad-<arquivos nnn \> . Crash)  
   
--   Biblioteca/logs/DiagnosticReports/LaunchPad-< nnn\> (Copie todo o LaunchPad-< nnn\>arquivos. Crash)  
+-   Biblioteca/logs/DiagnosticReports/LaunchPad-<nnn \> (Copie todo o Launchpad-<arquivos nnn \> . Crash)  
   
-## <a name="see-also"></a>Consulte também  
-  
+## <a name="see-also"></a>Veja também  
 
--   [Solucionar erros do coletor de logs](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
-
--   [Solucionar erros do coletor de logs](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [Solucionar problemas de erros de coletores de log](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

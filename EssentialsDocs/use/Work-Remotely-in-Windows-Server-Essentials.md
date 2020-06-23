@@ -8,12 +8,12 @@ ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ec6b97dd153802ea2ff8b55f6ba58f3208e4abb1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8ba2cca1e346a99cc62d84ede885663fe81dfbd2
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852079"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217526"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>Trabalhar remotamente no Windows Server Essentials [SBS8]
 
@@ -24,26 +24,15 @@ ms.locfileid: "80852079"
  Os tópicos a seguir podem ajudá-lo a acessar os recursos do servidor remotamente:  
   
 
--      [Utilizar o Acesso Remoto via Web no Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+-   [Utilizar o Acesso Remoto via Web no Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
      
 -   [Usar VPN para se conectar ao Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
 -   [Usar o aplicativo meu servidor para se conectar ao Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  
   
--   [Usar o aplicativo meu servidor para Windows Phone](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Aplicativo My Server para Windows Phone.](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
   
 -   [Usar o Microsoft Office 365 com o Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
-
--   [Utilizar o Acesso Remoto via Web no Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
-  
--   [Usar VPN para se conectar ao Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
-  
--   [Usar o aplicativo meu servidor para se conectar ao Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  
-  
--   [Usar o aplicativo meu servidor para Windows Phone](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
-  
--   [Usar o Microsoft Office 365 com o Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
-
   
 > [!NOTE]
 >  Para obter informações sobre como configurar o acesso em qualquer local em seu servidor, consulte [gerenciar o acesso em qualquer local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md).  
@@ -51,8 +40,6 @@ ms.locfileid: "80852079"
 ##  <a name="use-remote-web-access-in-windows-server-essentials"></a><a name="BKMA_RWA"></a>Usar Acesso via Web remotos no Windows Server Essentials  
 
  O Acesso via Web remoto  ajuda você a permanecer conectado à sua rede do Windows Server Essentials quando estiver ausente. Para obter mais informações, consulte o tópico [usar acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
-
- O Acesso via Web remoto  ajuda você a permanecer conectado à sua rede do Windows Server Essentials quando estiver ausente. Para obter mais informações, consulte o tópico [usar acesso via Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
 
   
 ##  <a name="use-vpn-to-connect-to-windows-server-essentials"></a><a name="BKMK_3"></a>Usar VPN para se conectar ao Windows Server Essentials  
@@ -80,13 +67,13 @@ ms.locfileid: "80852079"
 
   
 ##  <a name="use-the-my-server-app-for-windows-phone"></a><a name="BKMK_2"></a>Usar o aplicativo meu servidor para Windows Phone  
- O aplicativo do Windows do meu servidor para Windows Phone (para Windows Server 2012) e o aplicativo meu servidor 2012 R2 para Windows Phone (para Windows Server Essentials) foram criados para ajudá-lo a se conectar diretamente com seus servidores por meio de telefones inteligentes enquanto trabalha em modo remoto locais. Essa é uma das várias maneiras de acessar o Windows Server Essentials depois de configurar o servidor para acesso remoto.  
+ O aplicativo do Windows do meu servidor para Windows Phone (para Windows Server 2012) e o aplicativo meu servidor 2012 R2 para Windows Phone (para Windows Server Essentials) foram criados para ajudá-lo a se conectar diretamente com seus servidores por meio de telefones inteligentes enquanto trabalha em locais remotos. Essa é uma das várias maneiras de acessar o Windows Server Essentials depois de configurar o servidor para acesso remoto.  
   
  Você pode baixar o aplicativo de armazenamento do Windows Phone:  
   
-- [Instalar meu servidor para Windows Phone](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
+- [Instalar o My Server para Windows Phone](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
   
-- [Instalar meu servidor 2012 R2 para Windows Phone](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
+- [Instalar o My Server 2012 R2 para Windows Phone](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
   
   Para obter mais informações sobre o meu aplicativo de telefone de servidor, consulte a entrada de blog [meu aplicativo de telefone do servidor para Windows Server Essentials](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx). Para obter mais informações sobre o aplicativo de telefone My Server 2012 R2, consulte a entrada no blog [Aplicativos My Server 2012 R2 de Windows e Windows Phone](https://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx).  
   
@@ -94,23 +81,14 @@ ms.locfileid: "80852079"
 
  Office 365 é um conjunto de fácil de usar ferramentas habilitados para a web que permite acessar seu email, documentos importantes, contatos e calendário de qualquer lugar e de qualquer dispositivo. Para obter mais informações, consulte o [Guia de início rápido para usar Microsoft Office 365](Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).  
 
- Office 365 é um conjunto de fácil de usar ferramentas habilitados para a web que permite acessar seu email, documentos importantes, contatos e calendário de qualquer lugar e de qualquer dispositivo. Para obter mais informações, consulte o [Guia de início rápido para usar Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).  
-
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
--   [Gerenciar acesso em qualquer local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
-  
+-   [Gerenciar o Acesso em Qualquer Local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
 
 -   [Conecte-se](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [Usar pastas compartilhadas](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
 -   [Reproduzir mídia digital](Play-Digital-Media-in-Windows-Server-Essentials.md)
-
--   [Conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [Usar pastas compartilhadas](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)  
-  
--   [Reproduzir mídia digital](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

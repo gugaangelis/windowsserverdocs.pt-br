@@ -8,12 +8,12 @@ ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f3bf875b03328b0016261bf6aff7a39c4b65bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9fb3628ed519d5faae04787dbb84da37f27d96fb
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852229"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217486"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar problemas de conectividade do Acesso Remoto via Web no Windows Server Essentials
  
@@ -65,10 +65,10 @@ ms.locfileid: "80852229"
   > [!NOTE]
   >  Nessa tabela, o endereço IP do computador que executa o Windows Server Essentials é 192.168.0.100. Você deve determinar o endereço IP do seu computador e substituir esse endereço IP por aquele mostrado na tabela.  
   
-  |Endereço IP|Protocolo (TCP/UDP)|Agendamento|Filtro de entrada|  
+  |Endereço IP|Protocolo (TCP/UDP)|Agenda|Filtro de entrada|  
   |----------------|---------------------------|--------------|--------------------|  
-  |192.168.0.100|TCP 80|{1&gt;Sempre&lt;1}|Permitir todos|  
-  |192.168.0.100|TCP 443|{1&gt;Sempre&lt;1}|Permitir todos|  
+  |192.168.0.100|TCP 80|Sempre|Permitir todos|  
+  |192.168.0.100|TCP 443|Sempre|Permitir todos|  
   
    Depois de configurar manualmente o roteador, execute o assistente para ativar Acesso via Web remoto, assegurando que você selecione a opção **ignorar a instalação do roteador** na página **introdução** .  
   
@@ -77,18 +77,15 @@ ms.locfileid: "80852229"
 > [!TIP]
 >  Certifique-se que o seu roteador tem o firmware de BIOS mais recente instalado. Você pode atualizar o firmware de BIOS para seu roteador na página da Web de configuração para ele. Para obter mais informações, veja a documentação do seu roteador. Após seu roteador ser atualizado, execute o Assistente de Configuração do Acesso em Qualquer Local.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
--   [Usar Acesso via Web remotos](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar o Acesso via Web Remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Gerenciar Acesso via Web remotos](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Gerenciar o Acesso via Web Remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Gerenciar acesso em qualquer local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Gerenciar o Acesso em Qualquer Local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
-  
-
--   [Suporte ao Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
 -   [Suporte ao Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

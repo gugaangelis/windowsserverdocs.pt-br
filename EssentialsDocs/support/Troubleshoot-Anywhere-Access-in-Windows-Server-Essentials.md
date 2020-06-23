@@ -8,12 +8,12 @@ ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ebb4f27201e7cdb8e412bc35b217185616df3cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 313b4fae48a5b70cb16cae0cfb3a7bc048ef97a3
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852249"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217556"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Solucionar problemas do Acesso em Qualquer Local no Windows Server Essentials
 
@@ -34,7 +34,7 @@ Este tópico fornece instruções gerais para usar o assistente para reparar ace
   
 3.  Clique em **Reparar**. O assistente Reparar o Acesso em Qualquer Local é iniciado.  
   
-4.  Clique em **Avançar**. O assistente analisa o Acesso em Qualquer Local, identifica o problema e tenta repará-lo.  
+4.  Clique em **Próximo**. O assistente analisa o Acesso em Qualquer Local, identifica o problema e tenta repará-lo.  
   
 5.  Se você receber um alerta quando o assistente for concluído, você pode clicar em **Tentar novamente** para tentar reparar o problema novamente. Se você continuar a receber um alerta, verifique o alerta para obter informações adicionais sobre o problema e as etapas de solução de problemas.  
   
@@ -48,13 +48,8 @@ Este tópico fornece instruções gerais para usar o assistente para reparar ace
  Se o assistente Reparar o acesso em qualquer local não conseguir reparar o acesso em qualquer local, verifique os seguintes recursos de solução de problemas para problemas relacionados ao Acesso Remoto via Web, VPN e o DirectAccess:  
   
 
--   [Solucionar problemas de conectividade de Acesso via Web remota](Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
+-   [Solucionar problemas de conectividade do Acesso via Web Remoto](Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
   
--   [Solucionar problemas do firewall](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
-
--   [Solucionar problemas de conectividade de Acesso via Web remota](../support/Troubleshoot-Remote-Web-Access-connectivity-in-Windows-Server-Essentials.md)  
-  
--   [Solucionar problemas do firewall](../support/Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)  
-
+-   [Solucionar problemas de firewall](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)
   
 -   Verifique o [Fórum do Windows Server Essentials](https://social.technet.microsoft.com/Forums/winserveressentials/threads) para obter os problemas mais recentes relatados pela Comunidade do Windows Server Essentials.

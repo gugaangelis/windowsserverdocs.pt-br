@@ -8,12 +8,12 @@ ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4ea922142b43e35d6f17207d448c48b2da52ebc8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ecffbfd3157720ad2762ba77d528af05e5abf53f
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852279"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217536"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Instalar o coletor de log do Windows Server Essentials
 
@@ -43,15 +43,11 @@ O assistente de instalação do coletor de logs do Windows Server Essentials ins
   
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Para desinstalar e reinstalar o coletor de log  
   
-1.  Abra o Dashboard.  
+1.  Abra o Painel.  
   
-2.  Clique na guia **Suplemento**, selecione **Coletor de Log** na lista e clique em **Desinstalar**.  
-  
+2.  Clique na guia **Suplemento**, selecione **Coletor de Log** na lista e clique em **Desinstalar**.
 
-3.  Baixe e instale o coletor de log executando as etapas no procedimento anterior, [Para instalar o coletor de log](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
-
-3.  Baixe e instale o coletor de log executando as etapas no procedimento anterior, [Para instalar o coletor de log](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
-
+3.  Baixe e instale o coletor de log executando as etapas no procedimento anterior, [Para instalar o coletor de log](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).   
   
 ### <a name="manually-install-the-log-collector"></a>Instalar o coletor de log manualmente  
  Se o assistente de instalação falhar ao instalar o coletor de log, você pode instalar o coletor de log em um único computador usando o procedimento a seguir.  

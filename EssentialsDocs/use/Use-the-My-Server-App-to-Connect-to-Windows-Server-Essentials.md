@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 4e40b57f-6917-43ef-92e0-030baa9d2b99
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: c6ef1a599a97768f54b1c980eeb22194beccc454
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 3fbe3824792432f5631729110fb0e9a548f6e05d
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313103"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217546"
 ---
 # <a name="use-the-my-server-app-to-connect-to-windows-server-essentials"></a>Usar o aplicativo My Server para se conectar ao Windows Server Essentials
 
@@ -32,29 +32,15 @@ Os aplicativos de servidor para o Windows Server Essentials permitem que você s
   
 -   [Requisitos do sistema operacional](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_OS)  
   
--   [Instalar meu servidor](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_Install)  
+-   [Instalar o My Server](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_Install)  
   
--   [Usar meu servidor](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_UseServer)  
+-   [Usar o My Server](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_UseServer)  
   
--   [Recursos do meu servidor](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_Features)  
+-   [Recursos do My Server](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_Features)  
   
--   [Como se conectar ao seu servidor de sua rede local](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_ConnectServer)  
+-   [Como se conectar ao seu servidor da sua rede local](Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_ConnectServer)  
 
->  Para acessar recursos no Windows Server Essentials do seu Windows Phone, use o aplicativo de telefone do meu servidor (para Windows Server Essentials) ou o aplicativo de telefone do meu servidor 2012 R2 (para Windows Server Essentials). Para obter informações sobre o meu aplicativo de telefone do servidor, consulte [usar o aplicativo do meu servidor para Windows Phone](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2). Para obter informações sobre o aplicativo de telefone My Server 2012 R2, consulte a entrada no blog [My Server 2012 R2 Windows and Windows Phone apps (Aplicativos My Server 2012 R2 para Windows e Windows Phone)](https://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx).  
-  
-## <a name="in-this-topic"></a>Neste tópico  
-  
--   [O que há de novo no meu servidor 2012 R2](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_WhatsNew)  
-  
--   [Requisitos do sistema operacional](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_OS)  
-  
--   [Instalar meu servidor](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_Install)  
-  
--   [Usar meu servidor](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_UseServer)  
-  
--   [Recursos do meu servidor](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_Features)  
-  
--   [Como se conectar ao seu servidor de sua rede local](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md#BKMK_ConnectServer)  
+>  Para acessar recursos no Windows Server Essentials do seu Windows Phone, use o aplicativo de telefone do meu servidor (para Windows Server Essentials) ou o aplicativo de telefone do meu servidor 2012 R2 (para Windows Server Essentials). Para obter informações sobre o meu aplicativo de telefone do servidor, consulte [usar o aplicativo do meu servidor para Windows Phone](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2). Para obter informações sobre o aplicativo de telefone My Server 2012 R2, consulte a entrada no blog [My Server 2012 R2 Windows and Windows Phone apps (Aplicativos My Server 2012 R2 para Windows e Windows Phone)](https://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx).
 
   
 ##  <a name="whats-new-in-my-server-2012-r2"></a><a name="BKMK_WhatsNew"></a>O que há de novo no meu servidor 2012 R2  
@@ -74,18 +60,18 @@ Os aplicativos de servidor para o Windows Server Essentials permitem que você s
   
 1.  Instale o aplicativo My Server apropriado de [Aplicativos para Windows](https://windows.microsoft.com/windows-8/apps) em seu laptop, computador ou dispositivo Surface baseado no Windows.  
   
-    |Sistema operacional do servidor|{1&gt;{2&gt;Baixar&lt;2}&lt;1}|  
+    |Sistema operacional do servidor|Baixar|  
     |-----------------------------|--------------|  
-    | Windows Server Essentials|[Meu servidor](https://apps.microsoft.com/webpdp/app/19d94f81-db21-4234-8b49-806694dbbaea)|  
-    | Windows Server Essentials|[Meu servidor 2012 R2](https://apps.microsoft.com/webpdp/app/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
+    | Windows Server Essentials|[My Server](https://apps.microsoft.com/webpdp/app/19d94f81-db21-4234-8b49-806694dbbaea)|  
+    | Windows Server Essentials|[My Server 2012 R2](https://apps.microsoft.com/webpdp/app/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
   
-2.  Se você quiser ser capaz de usar o nome do servidor para se conectar ao servidor do Windows Server Essentials por uma intranet e seu dispositivo tiver o sistema operacional Windows 8 ou Windows RT, instale o certificado padrão CAROOT. cer no computador executando o seguinte Procedure. A instalação manual de um certificado não é necessária no Windows 8.1 e no Windows RT 8,1.  
+2.  Se você quiser ser capaz de usar o nome do servidor para se conectar ao servidor do Windows Server Essentials por uma intranet e seu dispositivo tiver o sistema operacional Windows 8 ou Windows RT, instale o certificado padrão CAROOT. cer no seu computador executando o procedimento a seguir. A instalação manual de um certificado não é necessária no Windows 8.1 e no Windows RT 8,1.  
   
 ###  <a name="to-install-a-certificate-for-my-server-on-your-windows-8-windows-81-or-windows-rt-device"></a><a name="BKMK_InstallCert"></a>Para instalar um certificado para o meu servidor no dispositivo Windows 8, Windows 8.1 ou Windows RT  
   
 1.  Abra um navegador da Web no computador e baixe o certificado padrão, CAROOT.cer, do servidor. Para fazer isso, digite o seguinte, substituindo o nome do seu servidor (por exemplo, **marketing.contoso.com**) for <*servername*>:  
   
-     **http://< ServerName\>/Connect/default.aspx? Get = caroot. cer**  
+     **http://<ServerName \> /Connect/default.aspx? Get = caroot. cer**  
   
 2.  Instale o certificado:  
   
@@ -121,10 +107,10 @@ Os aplicativos de servidor para o Windows Server Essentials permitem que você s
   
 ### <a name="features-of-the-my-server-and-my-server-2012-r2-apps-for-windows-server-essentials"></a>Recursos dos aplicativos My Server e My Server 2012 R2 para Windows Server Essentials  
   
-|Conjunto de recursos|Descrição|  
+|Conjunto de recursos|Description|  
 |-----------------|-----------------|  
 |Gerenciar alertas|-(Somente administradores) resolva os alertas no servidor ou ignore alertas que não exigem ação. Ative ou desative notificações (configurações de **Permissões**, opção **Notificações**)<br />-(Contas de usuário padrão) exibir alertas de integridade de rede.<br />     **Observação:** Para que um usuário exiba alertas em meu servidor, a configuração o **usuário pode exibir alertas de integridade de rede** deve ser selecionada em configurações **gerais** da conta de usuário. Para obter mais informações, consulte [Manage user accounts using the Dashboard](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8).|  
-|Gerenciar dispositivos|(Somente administradores)<br /><br /> -Quando você estiver conectado ao servidor do Windows Server Essentials, exiba detalhes sobre cada computador conectado na exibição **dispositivos** . Os dispositivos offline são sombreados.<br />-Iniciar e parar backups de computadores conectados.<br />-Ativar ou desativar notificações no meu servidor. (Configurações de **Permissões**, opção **Notificações**)<br /><br /> Todos os usuários:<br /><br /> -Exibir os computadores cliente aos quais sua conta de usuário tem acesso. (Exibição **Dispositivos**)<br />-Monitorar alertas para esses computadores. (Exibição **Alertas**)<br />-(Somente no meu servidor 2012 R2) Conecte-se a esses computadores usando o Acesso via Web remoto. (Exibição **Dispositivo**, botão **Conexão Remota**)|  
+|Gerenciar dispositivos|(Somente para administradores)<br /><br /> -Quando você estiver conectado ao servidor do Windows Server Essentials, exiba detalhes sobre cada computador conectado na exibição **dispositivos** . Os dispositivos offline são sombreados.<br />-Iniciar e parar backups de computadores conectados.<br />-Ativar ou desativar notificações no meu servidor. (Configurações de **Permissões**, opção **Notificações**)<br /><br /> Todos os usuários:<br /><br /> -Exibir os computadores cliente aos quais sua conta de usuário tem acesso. (Exibição **Dispositivos**)<br />-Monitorar alertas para esses computadores. (Exibição **Alertas**)<br />-(Somente no meu servidor 2012 R2) Conecte-se a esses computadores usando o Acesso via Web remoto. (Exibição **Dispositivo**, botão **Conexão Remota**)|  
 |Conectar-se a computadores usando a Área de Trabalho Remota|(Somente meu servidor 2012 R2) Abra uma sessão de Área de Trabalho Remota com o servidor do Windows Server Essentials ou um computador cliente. (Exibição **Dispositivo**, botão **Conexão Remota**)<br /><br /> **Observação:** Para habilitar esse recurso, baixe e instale o [aplicativo área de trabalho remota](https://apps.microsoft.com/webpdp/app/051f560e-5e9b-4dad-8b2e-fa5e0b05a480) de aplicativos para Windows em seu computador. As contas de usuário padrão podem se conectar a dispositivos nos quais têm permissão para entrar. Para habilitar um usuário para entrar em um computador, adicione o computador à guia **Acesso ao computador** da conta do usuário. Para obter mais informações, consulte [Assign user accounts permission to log on to specific network computers](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2).|  
 |Gerenciar usuários|(Somente administradores) Altere a senha de uma conta de usuário. Encerrar a sessão de um usuário no servidor. (Configurações de **Usuários**)|  
 |Trabalhar com arquivos compartilhados|<ul><li>Carregue e baixe arquivos de arquivos compartilhados (pastas compartilhadas às quais você tem acesso no servidor), seu compartilhamento privado ou, de um dispositivo Windows 8.1, SkyDrive ou armazenamento de rede. Crie pastas. Adicione (carregue), edite e exclua arquivos do servidor.</li><li>Veja o status da transferência durante o carregamento ou download de um arquivo. Cancele uma transferência. Resolva conflitos de arquivo.</li><li>Trabalhe ininterruptamente com arquivos e pastas no computador local, o servidor, SkyDrive ou armazenamento de rede. As listas de arquivos mostram pastas que você usou recentemente em seu computador, no SkyDrive ou no armazenamento de rede, junto com as pastas compartilhadas no servidor e permitem navegar pelas pastas em qualquer um desses locais.</li><li>Pesquise pastas e arquivos no servidor. Clique em um arquivo para baixá-lo e abri-lo no aplicativo padrão. No modo offline, pesquise apenas arquivos offline.</li><li>Compartilhe fotos, músicas e vídeos. Clique em um arquivo para abri-lo em uma imagem, música ou player de vídeo do Windows 8. Ou use **Abrir** ou **Abrir com** para abrir o arquivo em um outro aplicativo. Como sempre, você pode tornar o aplicativo escolhido o aplicativo padrão para esse tipo de mídia.<br /><br />     **Observação:** Por padrão, a funcionalidade de streaming de mídia não está disponível no Windows Server Essentials e no Windows Server 2012 R2 com a função de experiência do Windows Server Essentials instalada. Para obter mais informações, consulte [gerenciar mídia digital](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md).<br /><br /> <ul><li>**Imagens**: na exibição **Imagens**, toque em uma imagem para abri-la. Toque na imagem novamente para retornar ao modo de exibição em miniatura no My Server.</li><li>**Música** -no modo de exibição **música** , exiba álbuns ou músicas compartilhadas no servidor. Toque em um item para abri-lo no player de música.</li><li>**Vídeos** -clique em uma miniatura na exibição de **vídeos** para abrir o player de vídeo.</li></ul></li></ul>|  
@@ -140,7 +126,7 @@ Os aplicativos de servidor para o Windows Server Essentials permitem que você s
   
 1.  No seu Windows Phone que executa o Windows 8 ou o Windows 8.1, abra o Internet Explorer.  
   
-2.  Na barra de endereços, digite **http://< nomedoservidor\>/Connect/default.aspx? Get = caroot. cer**e pressione Enter.  
+2.  Na barra de endereços, digite **http://<nomedoservidor \> /Connect/default.aspx? Get = caroot. cer**e pressione Enter.  
   
 3.  Quando a instalação do certificado caroot.cer for solicitada, clique em **Instalar**.  
   
@@ -153,7 +139,7 @@ Os aplicativos de servidor para o Windows Server Essentials permitem que você s
   
 1.  Em um computador que executa o Windows 8 ou o Windows 8.1, abra o Internet Explorer.  
   
-2.  Na barra de endereços, digite **http://< nomedoservidor\>/Connect/default.aspx? Get = caroot. cer**e pressione Enter.  
+2.  Na barra de endereços, digite **http://<nomedoservidor \> /Connect/default.aspx? Get = caroot. cer**e pressione Enter.  
   
 3.  Quando a instalação do certificado caroot.cer for solicitada, clique em **Abrir**.  
   
@@ -168,22 +154,17 @@ Os aplicativos de servidor para o Windows Server Essentials permitem que você s
     > [!NOTE]
     >  Após a instalação do certificado ser concluída, você pode entrar no aplicativo My Server para Windows 8 ou Windows 8.1 usando o nome do seu servidor e suas credenciais de rede.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 -   [Visão geral da integração de serviços para o Windows Server Essentials-parte 1](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)  
   
 -   [Visão geral da integração de serviços para o Windows Server Essentials-parte 2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)  
   
--   [Gerenciar acesso em qualquer local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Gerenciar o Acesso em Qualquer Local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
--   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
-  
+-   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)    
 
 -   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [Utilizar o Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
--   [Trabalhar remotamente](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-  
--   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 

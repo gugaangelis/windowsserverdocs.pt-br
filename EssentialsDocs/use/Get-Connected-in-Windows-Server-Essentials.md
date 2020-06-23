@@ -8,50 +8,50 @@ ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7591efcc896dd382afd50cf0e360e28e0cb08f3e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e0a2ae1045ee9cfe40d9245aca1ffc2551492cf
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852149"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217596"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Manter-se conectado no Windows Server Essentials [A_Web_Client_H2]
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
- Você pode conectar os computadores ao servidor do Windows Server Essentials usando o software Connector. O software Connector é instalado quando você conectar um computador ao servidor usando o Conector usando Connecte um computador ao Assistente do servidor. Você pode iniciar este assistente digitando **http://< servername\>/Connect**, em que **< ServerName\>** é o nome do seu servidor.  
+ Você pode conectar os computadores ao servidor do Windows Server Essentials usando o software Connector. O software Connector é instalado quando você conectar um computador ao servidor usando o Conector usando Connecte um computador ao Assistente do servidor. Você pode iniciar esse assistente digitando **http://<ServerName \> /Connect**, em que **<ServerName \> ** é o nome do seu servidor.  
 
  Neste tópico:  
 
 
--   [Preparar para conectar computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_A)  
+-   [Preparação para conectar os computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_A)  
 
--   [Conectar computadores ao servidor usando o software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_B)  
+-   [Conectar computadores ao servidor usando o software Connector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_B)  
 
--   [Usar o Launchpad](Get-Connected-in-Windows-Server-Essentials.md#BKMK_C)  
+-   [Usar a Barra Inicial](Get-Connected-in-Windows-Server-Essentials.md#BKMK_C)  
 
--   [Preparar para conectar computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_A)  
+-   [Preparação para conectar os computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_A)  
 
--   [Conectar computadores ao servidor usando o software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_B)  
+-   [Conectar computadores ao servidor usando o software Connector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_B)  
 
--   [Usar o Launchpad](Get-Connected-in-Windows-Server-Essentials.md#BKMK_C)  
+-   [Usar a Barra Inicial](Get-Connected-in-Windows-Server-Essentials.md#BKMK_C)  
 
 
 ##  <a name="prepare-to-connect-computers-to-the-server"></a><a name="BKMK_A"></a>Preparar para conectar computadores ao servidor  
  Esta seção discute o software Connector, os sistemas operacionais com suporte no Windows Server Essentials, as tarefas de pré-requisito devem ser concluídas antes de conectar os computadores ao servidor, e as alterações feitas pelo servidor nos computadores ao executar o software Connector.  
 
 
--   [Visão geral do software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Visão geral do software Connector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_1)  
 
 -   [Pré-requisitos para conectar um computador ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2)  
 
 -   [Pré-requisitos para conectar um computador Mac à rede](Get-Connected-in-Windows-Server-Essentials.md#BKMK_3)  
 
--   [Sistemas operacionais com suporte para computadores cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [Sistemas operacionais compatíveis para computadores cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)  
 
--   [Altera o servidor que faz para um computador cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Alterações que servidor realiza no computador cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_5)  
 
--   [Informações de nome de usuário e senha de rede](Get-Connected-in-Windows-Server-Essentials.md#BKMK_6)  
+-   [Nome de usuário da rede e senha.](Get-Connected-in-Windows-Server-Essentials.md#BKMK_6)  
 
 -   [Conta do administrador do servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_7)  
 
@@ -60,17 +60,17 @@ ms.locfileid: "80852149"
 ###  <a name="connector-software-overview"></a><a name="BKMK_1"></a>Visão geral do software do conector  
  O software Conector para o sistema operacional Windows Server Essentials conecta os computadores em sua rede para o servidor do Windows Server Essentials. Quando você conecta computadores ao servidor, o software Connector permite que você faça backup automaticamente nos computadores e monitore sua integridade. O software Connector também permite configurar e administrar remotamente o servidor do Windows Server Essentials. O software Connector é instalado quando você conectar um computador cliente para o servidor. Para obter instruções detalhadas sobre como se conectar os computadores cliente ao servidor do Windows Server Essentials, consulte [conectar computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9) posteriormente neste tópico.  
 
--   [Visão geral do software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Visão geral do software Connector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_1)  
 
 -   [Pré-requisitos para conectar um computador ao servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_2)  
 
 -   [Pré-requisitos para conectar um computador Mac à rede](Get-Connected-in-Windows-Server-Essentials.md#BKMK_3)  
 
--   [Sistemas operacionais com suporte para computadores cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [Sistemas operacionais compatíveis para computadores cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)  
 
--   [Altera o servidor que faz para um computador cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Alterações que servidor realiza no computador cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_5)  
 
--   [Informações de nome de usuário e senha de rede](Get-Connected-in-Windows-Server-Essentials.md#BKMK_6)  
+-   [Nome de usuário da rede e senha.](Get-Connected-in-Windows-Server-Essentials.md#BKMK_6)  
 
 -   [Conta do administrador do servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_7)  
 
@@ -97,7 +97,7 @@ ms.locfileid: "80852149"
 
 -   O computador cliente atende aos requisitos mínimos de sistema:  
 
-    -   Processador de 1,4 GHz ou mais rápido  
+    -   1.4 GHz ou processador mais rápido.  
 
     -   1 GB de RAM ou mais  
 
@@ -139,7 +139,7 @@ ms.locfileid: "80852149"
 
 -   Certifique-se de que o computador atende aos seguintes requisitos mínimos de sistema:  
 
-    -   Processador de 1,4 GHz ou mais rápido  
+    -   1.4 GHz ou processador mais rápido.  
 
     -   1 GB de RAM ou mais  
 
@@ -176,7 +176,7 @@ ms.locfileid: "80852149"
 
 - Windows 8 Pro  
 
-- Windows 8 Enterprise  
+- O Windows 8 Enterprise  
 
   **Sistemas operacionais Windows 8.1**  
 
@@ -184,7 +184,7 @@ ms.locfileid: "80852149"
 
 - Windows 8.1 Pro  
 
-- Windows 8,1 Enterprise  
+- Windows 8.1 Enterprise  
 
   **Sistemas operacionais Windows 10**  
 
@@ -192,7 +192,7 @@ ms.locfileid: "80852149"
 
 - Windows 10 Pro  
 
-- Windows 10 Enterprise  
+- Windows 10 Enterprise  
 
 - Windows 10 Education  
 
@@ -232,7 +232,7 @@ ms.locfileid: "80852149"
 
 - Windows 8 Pro  
 
-- Windows 8 Enterprise  
+- O Windows 8 Enterprise  
 
   **Sistemas operacionais Windows 10**  
 
@@ -240,7 +240,7 @@ ms.locfileid: "80852149"
 
 - Windows 10 Pro  
 
-- Windows 10 Enterprise  
+- Windows 10 Enterprise  
 
 - Windows 10 Education  
 
@@ -268,9 +268,9 @@ ms.locfileid: "80852149"
 
 -   Configura as portas do Firewall do Windows no computador para permitir que funcionem os seguintes recursos:  
 
-    -   Sistema de Rede Básico  
+    -   Rede Principal  
 
-    -   Serviços de Área de Trabalho Remota  
+    -   Serviços da área de trabalho Remota  
 
 -   Faz as seguintes alterações no computador para facilitar backups:  
 
@@ -326,7 +326,7 @@ ms.locfileid: "80852149"
 
 1.  Clique em **Iniciar**, clique com botão direito do **computador**e clique em **Propriedades**.  
 
-2.  Em **Nome do computador, domínio e configurações de grupo de trabalho**, clique em **Alterar configurações**.  
+2.  Em **configurações de grupo de trabalho, o domínio e o nome do computador**, clique em **alterar configurações**.  
 
     > [!NOTE]
     >  Se você for solicitado para uma senha de administrador ou uma confirmação, digite a senha do domínio ou forneça a confirmação.  
@@ -348,35 +348,19 @@ ms.locfileid: "80852149"
 
 -   [Conectar computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)  
 
--   [Conectar computadores a um servidor do Windows Server Essentials sem ingressar no domínio](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)  
+-   [Conectar computadores a um servidor do Windows Server Essentials sem entrar no domínio](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)  
 
--   [Instalar o software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)  
+-   [Instalar o software Connector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)  
 
--   [Mover dados e configurações do computador manualmente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_12)  
+-   [Mover dados do computador e as configurações manualmente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_12)  
 
--   [Transferir vários perfis de usuário durante a implantação do computador](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Transfer)  
+-   [Transferir vários perfis de usuário durante a implantação no computador](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Transfer)  
 
--   [Desinstalar o software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)  
+-   [Desinstalar o software Connector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)  
 
--   [Desconecte o computador do ou reconecte o computador ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_14)  
+-   [Desconecta o computador do servidor ou reconecta seu computador.](Get-Connected-in-Windows-Server-Essentials.md#BKMK_14)  
 
--   [Como o backup funciona com modos de suspensão e hibernação](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Sleep)  
-
--   [Conectar computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)  
-
--   [Conectar computadores a um servidor do Windows Server Essentials sem ingressar no domínio](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)  
-
--   [Instalar o software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)  
-
--   [Mover dados e configurações do computador manualmente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_12)  
-
--   [Transferir vários perfis de usuário durante a implantação do computador](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Transfer)  
-
--   [Desinstalar o software do conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)  
-
--   [Desconecte o computador do ou reconecte o computador ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_14)  
-
--   [Como o backup funciona com modos de suspensão e hibernação](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Sleep)  
+-   [Como funciona a suspensão de backup e hibernação](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Sleep)  
 
 
 ###  <a name="connect-computers-to-the-server"></a><a name="BKMK_9"></a>Conectar computadores ao servidor  
@@ -406,14 +390,14 @@ ms.locfileid: "80852149"
 
 2.  Abra um navegador de Internet, como o Internet Explorer.  
 
-3.  Na barra de endereços, digite **http://< servername\>/Connect**e pressione Enter.  
+3.  Na barra de endereços, digite **http://<ServerName \> /Connect**e pressione Enter.  
 
     > [!NOTE]
-    >  Se o computador estiver em um local remoto fora da rede do Windows Server Essentials, para executar o assistente para conectar um computador ao servidor, digite **http://< nome_do_domínio\>/Connect** na barra de endereços do navegador da Web (em que < domínio\> é o nome de domínio da sua organização). Você pode obter as informações de nome de domínio do administrador da rede.  
+    >  Se o computador estiver em um local remoto fora da rede do Windows Server Essentials, para executar o assistente para conectar um computador ao servidor, digite **http://<\> /Connect** na barra de endereços do seu navegador da Web (em que <domínio \> é o nome de domínio da sua organização). Você pode obter as informações de nome de domínio do administrador da rede.  
 
-4.  A página **Conectar o computador ao servidor** será exibida. Siga um destes procedimentos:  
+4.  A página **Conectar o computador ao servidor** será exibida. Realize um dos seguintes procedimentos:  
 
-    -   Para um computador que executa o sistema operacional Windows, clique em **Baixar software para Windows**.  
+    -   Para um computador que executa o sistema operacional Windows, clique em **Baixar software para Windows **.  
 
     -   Em um computador executando o Mac OS X ou posterior, clique em **Baixar software para Mac**.  
 
@@ -466,13 +450,13 @@ ms.locfileid: "80852149"
 
 -   Este método não pode ser usado para conectar um computador externa para o servidor.  
 
-#### <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
+#### <a name="prerequisites"></a>Pré-requisitos  
 
 -   O computador deve ter uma conexão física com a rede local.  
 
 -   Um dos seguintes sistemas operacionais deve ser instalado no computador:  
 
-    -   Windows 10 Pro, Windows 10 Enterprise  
+    -   Windows 10 pro, Windows 10 Enterprise  
 
     -    Windows 8.1 Pro, Windows 8.1 Enterprise, Windows 8 Pro, Windows 8 Enterprise  
 
@@ -499,9 +483,9 @@ ms.locfileid: "80852149"
 
 2.  Abra um prompt de comando com direitos de administrador.  
 
-    -   No Windows 10, clique no botão **Iniciar** , selecione **todos os aplicativos** -> **Ferramentas do sistema Windows** -> **prompt de comando**, clique com o botão direito do mouse em prompt de comando e clique em **Executar como administrador**.  
+    -   No Windows 10, clique no botão **Iniciar** , selecione **todos os aplicativos**  ->  **Ferramentas do sistema Windows**  ->  **prompt de comando**, clique com o botão direito do mouse em prompt de comando e clique em **Executar como administrador**.  
 
-    -   No Windows 8, na página **inicial** , digite **comando** e pressione Enter. Nos resultados, clique com botão direito **Prompt de comando**e clique em **executar como administrador**.  
+    -   No Windows 8, na página **inicial** , digite **comando** e pressione Enter. Nos resultados, clique com botão direito **Prompt de comando** e clique em **executar como administrador**.  
 
     -   No Windows 7, no menu **Iniciar** , digite **comando** na caixa de pesquisa, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.  
 
@@ -521,17 +505,17 @@ ms.locfileid: "80852149"
 
 1.  Faça logon no servidor que você deseja conectar à rede Windows Server Essentials.  
 
-2.  Abra um navegador da Internet e, na barra de endereços, digite **http://< servername\>/Connect**, em que *< ServerName\>* é o nome do servidor que está executando o Windows Server Essentials e pressione Enter.  
+2.  Abra um navegador da Internet e, na barra de endereços, digite **http://<ServerName \> /Connect**, em que *<ServerName \> * é o nome do servidor que executa o Windows Server Essentials e pressione Enter.  
 
 3.  Se a configuração de segurança aprimorada do Internet Explorer estiver habilitada no servidor que você está tentando se conectar à rede Windows Server Essentials, execute o seguinte; Caso contrário, ignore esta etapa.  
 
     1.  Para aceitar a mensagem de bloqueio, clique em **fechar**.  
 
-    2.  Adicione o site **http://< servername\>/Connect** aos sites confiáveis da seguinte maneira:  
+    2.  Adicione o site do **http://<ServerName \> /Connect** aos sites confiáveis da seguinte maneira:  
 
         1.  No painel de navegação do navegador, clique em **ferramentas**e clique em **opções da Internet**.  
 
-        2.  Clique na guia de **segurança** , e em seguida, clique em **Sites confiáveis**.  
+        2.  Clique na guia de **segurança**, e em seguida, clique em **Sites confiáveis**.  
 
         3.  Clique em **Sites**.  
 
@@ -567,7 +551,7 @@ ms.locfileid: "80852149"
 
 - Não haverá nenhum ponto de entrada para TrayApp, Barra Inicial e cliente do Painel.  
 
-- O segundo servidor está listado nos **servidores** grupo de **dispositivos** .  
+- O segundo servidor está listado nos **servidores** grupo de **dispositivos**.  
 
 - Porque o backup do computador cliente não é compatível com o segundo servidor, o status do backup fica exibido como **não tem suporte**. Além disso, não se você selecionar o segundo servidor e com o botão direito, há nenhum backup e restauração tarefas relacionadas exibidas para o segundo servidor.  
 
@@ -578,10 +562,10 @@ ms.locfileid: "80852149"
 - O status de Política de Grupo do segundo servidor é exibido como **não aplicável**.  
 
 ###  <a name="install-the-connector-software"></a><a name="BKMK_11"></a>Instalar o software do conector  
- O software Connector no Windows Server Essentials é instalado quando você conecta o computador ao servidor usando a conectar um computador para o Assistente do servidor. Você pode iniciar esse assistente digitando **http://< servername\>/Connect** na barra de endereços do seu navegador da Web (em que *< ServerName\>* é o nome do seu servidor).  
+ O software Connector no Windows Server Essentials é instalado quando você conecta o computador ao servidor usando a conectar um computador para o Assistente do servidor. Você pode iniciar esse assistente digitando **http://<ServerName \> /Connect** na barra de endereços do seu navegador da Web (em que *<\> * ServerName é o nome do seu servidor).  
 
 > [!NOTE]
->  Se o computador estiver em um local remoto, para executar o assistente para conectar um computador ao servidor, digite **http://< nomedodomínio\>/Connect** na barra de endereços do seu navegador da Web (em que *< domínio\>* é o nome de domínio da sua organização). Você pode obter as informações de nome de domínio do administrador da rede.  
+>  Se o seu computador estiver em um local remoto, para executar o assistente para conectar um computador ao servidor, digite **http://<nome_do_domínio \> /Connect** na barra de endereços do navegador da Web (em que *<domínio \> * é o nome de domínio da sua organização). Você pode obter as informações de nome de domínio do administrador da rede.  
 
  O software Connector faz o seguinte:  
 
@@ -615,7 +599,7 @@ ms.locfileid: "80852149"
 
 ##### <a name="to-uninstall-connector-software-from-a-computer"></a>Para desinstalar o software Connector em um computador  
 
-1.  Em um computador que esteja executando o Windows 7, o Windows 8, o Windows 8.1 ou o Windows 10, abra o **painel de controle**e, na seção **programas** , clique em **Exibir atualizações instaladas**.  
+1.  De um computador que está executando o Windows 7, Windows 8, Windows 8.1 ou Windows 10, abra o **Painel de Controle** e, em seguida, na seção de **Programas**, clique em **Exibir atualizações instaladas**.  
 
 2.  Na lista de programas instalados, selecione **Windows Server Essentials Connector**e clique em **desinstalar**.  
 
@@ -660,13 +644,13 @@ ms.locfileid: "80852149"
 ##  <a name="use-the-launchpad"></a><a name="BKMK_C"></a>Usar o Launchpad  
  Você pode usar a barra inicial para acessar recursos compartilhados do servidor do Windows Server Essentials, realizar backups de computador e responder a alertas de integridade do sistema.  
 
--   [Visão geral do Launchpad](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
+-   [Visão geral da barra inicial](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
 
--   [Usar o Launchpad com um computador Mac](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
+-   [Usar a Barra Inicial com um computador Mac](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
 
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
 
--   [Solucionar problemas de conexão de computadores com o servidor](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md)  
+-   [Solucionar problemas de computadores que se conectam ao servidor](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md)  
 
 -   [Gerenciar contas de usuário](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)  
 
